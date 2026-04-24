@@ -20,10 +20,9 @@
 static struct DD t[] = {
 #include "sanity/exp2.h"
 #include "special/exp2.h"
-
 };
 
-static void Exp2TestOne(struct DD* p, int* err)
+static void Exp2TestOne(struct DD *p, int *err)
 {
 #pragma STDC FENV_ACCESS ON
     double y;
@@ -44,8 +43,13 @@ static void Exp2TestOne(struct DD* p, int* err)
         } else {
             (*err)++;
         }
-        printf(
-            "%s:%d: bad fp exception: %s exp2(%a)=%a, want %s", p->file, p->line, Rstr(p->r), excX, excY, Estr(p->e));
+        printf("%s:%d: bad fp exception: %s exp2(%a)=%a, want %s",
+               p->file,
+               p->line,
+               Rstr(p->r),
+               excX,
+               excY,
+               Estr(p->e));
         printf(" got %s\n", Estr(e));
     }
     d = Ulperr(y, p->y, p->dy);

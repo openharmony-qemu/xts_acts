@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,8 +27,10 @@
 //   3/ The high and low hexadecimal halves of the expected corresponding output
 // Some special cases. Much to do here
 T(ROUND_TO_NEAREST,                  0x0p+0,                  0x0p+0,                  0x1p+0,          0x0p+0, 0)
-T(ROUND_TO_NEAREST,                  0x1p+1,            -0x1.0ccp+10,                  0x0p+0,         -0x1p-1, INEXACT|UNDERFLOW) // 2^-1075
-T(ROUND_TO_NEAREST,                  0x1p+1,            -0x1.0c8p+10,               0x1p-1074,          0x0p+0, 0) // 2^-1074
+T(ROUND_TO_NEAREST,                  0x1p+1,            -0x1.0ccp+10,
+  0x0p+0,         -0x1p-1, INEXACT|UNDERFLOW) // 2^-1075
+T(ROUND_TO_NEAREST,                  0x1p+1,            -0x1.0c8p+10,
+  0x1p-1074,          0x0p+0, 0) // 2^-1074
 // Some exact mid-point cases. Subnormal cases are missing.
 T(ROUND_TO_NEAREST,           0x1.cfdd8p+17,                0x1.8p+1,   0x1.7cbf0571d6e62p+53,          0x1p-1, INEXACT)
 T(ROUND_TO_NEAREST,       0x1.927a0f5b2p+35,                0x1.8p+0,   0x1.64d79ee5e5b8ep+53,         -0x1p-1, INEXACT)

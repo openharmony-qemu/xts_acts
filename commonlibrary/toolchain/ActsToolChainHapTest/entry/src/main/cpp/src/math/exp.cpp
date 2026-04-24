@@ -22,10 +22,9 @@ static struct DD t[] = {
 #include "sanity/exp.h"
 #include "special/exp.h"
 #include "ucb/exp.h"
-
 };
 
-static void ExpTestOne(struct DD* p, int* err)
+static void ExpTestOne(struct DD *p, int *err)
 {
 #pragma STDC FENV_ACCESS ON
     double y;
@@ -41,7 +40,13 @@ static void ExpTestOne(struct DD* p, int* err)
     if (!Checkexcept(e, p->e, p->r)) {
         const double excX = static_cast<double>(p->x);
         const double excY = static_cast<double>(p->y);
-        printf("%s:%d: bad fp exception: %s exp(%a)=%a, want %s", p->file, p->line, Rstr(p->r), excX, excY, Estr(p->e));
+        printf("%s:%d: bad fp exception: %s exp(%a)=%a, want %s",
+               p->file,
+               p->line,
+               Rstr(p->r),
+               excX,
+               excY,
+               Estr(p->e));
         printf(" got %s\n", Estr(e));
         (*err)++;
     }

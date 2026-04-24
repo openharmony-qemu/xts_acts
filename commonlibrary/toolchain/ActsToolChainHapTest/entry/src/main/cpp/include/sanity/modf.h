@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,10 @@
 #ifndef SANITY_MODF_H_H
 #define SANITY_MODF_H_H
 
-T(ROUND_TO_NEAREST,   -0x1.02239f3c6a8f1p+3,    -0x1.11cf9e354788p-4,          0x0p+0,                 -0x1p+3,          0x0p+0, 0)
-T(ROUND_TO_NEAREST,    0x1.161868e18bc67p+2,     0x1.61868e18bc67p-2,          0x0p+0,                  0x1p+2,          0x0p+0, 0)
+T(ROUND_TO_NEAREST,   -0x1.02239f3c6a8f1p+3,    -0x1.11cf9e354788p-4,
+  0x0p+0,                 -0x1p+3,          0x0p+0, 0)
+T(ROUND_TO_NEAREST,    0x1.161868e18bc67p+2,     0x1.61868e18bc67p-2,
+  0x0p+0,                  0x1p+2,          0x0p+0, 0)
 T(ROUND_TO_NEAREST,   -0x1.0c34b3e01e6e7p+3,    -0x1.86967c03cdcep-2,          0x0p+0,                 -0x1p+3,          0x0p+0, 0)
 T(ROUND_TO_NEAREST,   -0x1.a206f0a19dcc4p+2,    -0x1.1037850cee62p-1,          0x0p+0,               -0x1.8p+2,          0x0p+0, 0)
 T(ROUND_TO_NEAREST,    0x1.288bbb0d6a1e6p+3,     0x1.117761ad43ccp-2,          0x0p+0,                0x1.2p+3,          0x0p+0, 0)

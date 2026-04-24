@@ -13,13 +13,14 @@
  * limitations under the License.
  */
 
+#include <dlfcn.h>
+#include <cstdio>
+#include <stdlib.h>
 #include "functionalext.h"
 #include "ldso_dlopen_config_abs_path.h"
-#include <dlfcn.h>
-#include <stdio.h>
-#include <stdlib.h>
 
-static int LdsoDlopenConfigAbsPath5Test_impl(){
+static int LdsoDlopenConfigAbsPath5Test_impl()
+{
     if (!CheckPrerequisites()) {
         printf("CheckPrerequisites failed\n");
         return g_tStatus;
@@ -30,7 +31,7 @@ static int LdsoDlopenConfigAbsPath5Test_impl(){
         printf("OpenSo with abs path failed\n");
         g_tStatus = 1;
     }
-    
+
     return g_tStatus;
 }
 

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,10 @@
 #ifndef SANITY_REMQUO_H_H
 #define SANITY_REMQUO_H_H
 
-T(ROUND_TO_NEAREST,   -0x1.02239f3c6a8f1p+3,     0x1.22484b9ef31fp+2,    0x1.01256314447f8p+0,          0x0p+0,          -2, 0)
-T(ROUND_TO_NEAREST,    0x1.161868e18bc67p+2,   -0x1.1c6a6cdce75e8p+3,    0x1.161868e18bc67p+2,          0x0p+0,           0, 0)
+T(ROUND_TO_NEAREST,   -0x1.02239f3c6a8f1p+3,     0x1.22484b9ef31fp+2,
+  0x1.01256314447f8p+0,          0x0p+0,          -2, 0)
+T(ROUND_TO_NEAREST,    0x1.161868e18bc67p+2,   -0x1.1c6a6cdce75e8p+3,
+  0x1.161868e18bc67p+2,          0x0p+0,           0, 0)
 T(ROUND_TO_NEAREST,   -0x1.0c34b3e01e6e7p+3,   -0x1.61bde29e83f6dp+1,    -0x1.7324f49dbaaap-4,          0x0p+0,           3, 0)
 T(ROUND_TO_NEAREST,   -0x1.a206f0a19dcc4p+2,    0x1.24527f7b576acp+2,    -0x1.f6d1c4991986p+0,          0x0p+0,          -1, 0)
 T(ROUND_TO_NEAREST,    0x1.288bbb0d6a1e6p+3,    0x1.33edd910a3c01p+2,    -0x1.6c43c0673436p-2,          0x0p+0,           2, 0)
