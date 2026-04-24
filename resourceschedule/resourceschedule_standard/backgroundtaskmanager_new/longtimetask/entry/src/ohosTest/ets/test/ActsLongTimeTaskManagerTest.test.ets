@@ -1611,20 +1611,20 @@ export default function LongTimeTaskManagerTest() {
       })
 
     /**
-     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_10000
-     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_10000
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0100
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0100
      * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskMode of MODE_NEARLINK value is 14
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_10000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_10000 begin---');
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0100 begin---');
 
         try {
           let type: number = backgroundTaskManager.BackgroundTaskMode.MODE_NEARLINK;
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_10000 backgroundTaskManager BackgroundTaskMode MODE_NEARLINK: ' + type);
+          console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0100 backgroundTaskManager BackgroundTaskMode MODE_NEARLINK: ' + type);
           expect(type).assertEqual(14);
           done();
         } catch (error) {
@@ -1632,20 +1632,20 @@ export default function LongTimeTaskManagerTest() {
           hilog.info(DOMAIN, TAG, 'aa error: %{public}s', JSON.stringify(error));
         }
 
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_10000 end---');
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0100 end---');
     })
 
     /**
-     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_20000
-     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_20000
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0200
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0200
      * @tc.desc   Test that the startBackgroundRunning function and stopBackgroundRunning and updateBackgroundRunning function normal call with MODE_NEARLINK
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_20000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_20000 begin---');
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0200 begin---');
 
         try {
           let want = await wantAgent.getWantAgent(wantAgentInfo);
@@ -1663,48 +1663,48 @@ export default function LongTimeTaskManagerTest() {
           let res = await backgroundTaskManager.startBackgroundRunning(ability.context, continuousTaskRequest);
 
           hilog.info(DOMAIN, TAG,
-            'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_20000 startBackgroundRunning promise run success.');
+            'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0200 startBackgroundRunning promise run success.');
           hilog.info(DOMAIN, TAG,
-            'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_20000 startBackgroundRunning promise res: %{public}s',
+            'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0200 startBackgroundRunning promise res: %{public}s',
             JSON.stringify(res));
           let continuousTaskId = res.continuousTaskId
           let slotType = res.slotType
           let contentType = res.contentType
           let notificationId = res.notificationId
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_20000 updateBackgroundRunning ContinuousTaskNotification continuousTaskId ' +
+          console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0200 updateBackgroundRunning ContinuousTaskNotification continuousTaskId ' +
             continuousTaskId);
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_20000 updateBackgroundRunning ContinuousTaskNotification slotType ' +
+          console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0200 updateBackgroundRunning ContinuousTaskNotification slotType ' +
             slotType);
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_20000 updateBackgroundRunning ContinuousTaskNotification contentType ' +
+          console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0200 updateBackgroundRunning ContinuousTaskNotification contentType ' +
             contentType);
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_20000 updateBackgroundRunning ContinuousTaskNotification notificationId ' +
+          console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0200 updateBackgroundRunning ContinuousTaskNotification notificationId ' +
             notificationId);
           expect(continuousTaskId).assertLarger(-1);
           expect(slotType).assertLarger(-1);
           expect(contentType).assertLarger(-1);
           expect(notificationId).assertLarger(-1);
           continuousTaskRequest.continuousTaskId = res.continuousTaskId
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_20000 startBackgroundRunning ContinuousTaskNotification continuousTaskId ' +
+          console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0200 startBackgroundRunning ContinuousTaskNotification continuousTaskId ' +
           continuousTaskRequest.continuousTaskId);
 
           let updateRes = await backgroundTaskManager.updateBackgroundRunning(ability.context, continuousTaskRequest);
 
           hilog.info(DOMAIN, TAG,
-            'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_20000 updateBackgroundRunning promise res: %{public}s',
+            'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0200 updateBackgroundRunning promise res: %{public}s',
             JSON.stringify(res));
-          console.info("SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_20000 Operation updateBackgroundRunning succeeded");
+          console.info("SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0200 Operation updateBackgroundRunning succeeded");
 
           let updateContinuousTaskId = updateRes.continuousTaskId
           let updateSlotType = updateRes.slotType
           let updateContentType = updateRes.contentType
           let updateNotificationId = updateRes.notificationId
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_20000 updateBackgroundRunning ContinuousTaskNotification continuousTaskId ' +
+          console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0200 updateBackgroundRunning ContinuousTaskNotification continuousTaskId ' +
             updateContinuousTaskId);
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_20000 updateBackgroundRunning ContinuousTaskNotification slotType ' +
+          console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0200 updateBackgroundRunning ContinuousTaskNotification slotType ' +
             updateSlotType);
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_20000 updateBackgroundRunning ContinuousTaskNotification contentType ' +
+          console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0200 updateBackgroundRunning ContinuousTaskNotification contentType ' +
             updateContentType);
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_20000 updateBackgroundRunning ContinuousTaskNotification notificationId ' +
+          console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0200 updateBackgroundRunning ContinuousTaskNotification notificationId ' +
             updateNotificationId);
           expect(updateContinuousTaskId).assertLarger(-1);
           expect(updateSlotType).assertLarger(-1);
@@ -1712,20 +1712,20 @@ export default function LongTimeTaskManagerTest() {
           expect(updateNotificationId).assertLarger(-1);
 
           backgroundTaskManager.stopBackgroundRunning(ability.context, res.continuousTaskId).then(() => {
-            console.info("SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_20000 Operation stopBackgroundRunning succeeded");
+            console.info("SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0200 Operation stopBackgroundRunning succeeded");
             done();
           }).catch((error: BusinessError) => {
-            console.error(`SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_20000 Operation stopBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
+            console.error(`SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0200 Operation stopBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
             done();
           });
         } catch (error) {
           let e: BusinessError = error as BusinessError;
-          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_20000 aa error: %{public}s', JSON.stringify(error));
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0200 aa error: %{public}s', JSON.stringify(error));
           expect(false).assertTrue();
           done();
         }
 
-        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_20000 end---');
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0200 end---');
     })
 
     /**
@@ -1798,6 +1798,8 @@ export default function LongTimeTaskManagerTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(DOMAIN, TAG, 'aa error: %{public}s', JSON.stringify(e));
+          expect(false).assertTrue();
+          done();
         }
 
         hilog.info(DOMAIN, TAG, '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0500 end---');
@@ -1823,6 +1825,8 @@ export default function LongTimeTaskManagerTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(DOMAIN, TAG, 'aa error: %{public}s', JSON.stringify(e));
+          expect(false).assertTrue();
+          done();
         }
 
         hilog.info(DOMAIN, TAG, '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0600 end---');
@@ -1848,6 +1852,8 @@ export default function LongTimeTaskManagerTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(DOMAIN, TAG, 'aa error: %{public}s', JSON.stringify(e));
+          expect(false).assertTrue();
+          done();
         }
 
         hilog.info(DOMAIN, TAG, '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0700 end---');
@@ -1873,6 +1879,8 @@ export default function LongTimeTaskManagerTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(DOMAIN, TAG, 'aa error: %{public}s', JSON.stringify(e));
+          expect(false).assertTrue();
+          done();
         }
 
         hilog.info(DOMAIN, TAG, '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0800 end---');
@@ -1898,6 +1906,8 @@ export default function LongTimeTaskManagerTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(DOMAIN, TAG, 'aa error: %{public}s', JSON.stringify(e));
+          expect(false).assertTrue();
+          done();
         }
 
         hilog.info(DOMAIN, TAG, '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_0900 end---');
@@ -1923,6 +1933,8 @@ export default function LongTimeTaskManagerTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(DOMAIN, TAG, 'aa error: %{public}s', JSON.stringify(e));
+          expect(false).assertTrue();
+          done();
         }
 
         hilog.info(DOMAIN, TAG, '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_1000 end---');
@@ -1948,6 +1960,8 @@ export default function LongTimeTaskManagerTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(DOMAIN, TAG, 'aa error: %{public}s', JSON.stringify(e));
+          expect(false).assertTrue();
+          done();
         }
 
         hilog.info(DOMAIN, TAG, '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_1100 end---');
@@ -1973,6 +1987,8 @@ export default function LongTimeTaskManagerTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(DOMAIN, TAG, 'aa error: %{public}s', JSON.stringify(e));
+          expect(false).assertTrue();
+          done();
         }
 
         hilog.info(DOMAIN, TAG, '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_1200 end---');
@@ -1998,6 +2014,8 @@ export default function LongTimeTaskManagerTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(DOMAIN, TAG, 'aa error: %{public}s', JSON.stringify(e));
+          expect(false).assertTrue();
+          done();
         }
 
         hilog.info(DOMAIN, TAG, '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_1300 end---');
@@ -2023,6 +2041,8 @@ export default function LongTimeTaskManagerTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(DOMAIN, TAG, 'aa error: %{public}s', JSON.stringify(e));
+          expect(false).assertTrue();
+          done();
         }
 
         hilog.info(DOMAIN, TAG, '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_1400 end---');
