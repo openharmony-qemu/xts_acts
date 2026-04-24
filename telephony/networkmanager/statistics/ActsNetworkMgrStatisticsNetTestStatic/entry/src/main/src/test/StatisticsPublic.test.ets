@@ -578,14 +578,14 @@ export default function statisticsHasNetTest() {
                 const bundleInfo = bundleManager.getBundleInfoForSelfSync(bundleFlags);
                 if(bundleInfo != undefined){
                     const appInfo = bundleInfo.appInfo;
-                    hilog.info(domain, tag, '%{pbulic}s', caseName + ': appInfo is' + appInfo);
+                    hilog.info(domain, tag, '%{public}s', caseName + ': appInfo is' + appInfo);
                     if(appInfo && appInfo.uid !== undefined){
                         uid = appInfo.uid;
                     }
                 }
                 let httpRequest = http.createHttp();
                 hilog.info(domain, tag, '%{public}s', caseName + 'create http');
-                httpRequest.request('https://www.baidu.com').then((data : http.HttpResponse) => {
+                await httpRequest.request('https://www.baidu.com').then((data : http.HttpResponse) => {
                     hilog.info(domain, tag, '%{public}s', caseName + 'httpResponse result is : ' + data);                    
                 }).catch((error : Error) => {
                     let err = error as BusinessError;
@@ -629,7 +629,7 @@ export default function statisticsHasNetTest() {
                 const bundleInfo = bundleManager.getBundleInfoForSelfSync(bundleFlags);
                 if(bundleInfo != undefined){
                     const appInfo = bundleInfo.appInfo;
-                    hilog.info(domain, tag, '%{pbulic}s', caseName + ': appInfo is' + appInfo);
+                    hilog.info(domain, tag, '%{public}s', caseName + ': appInfo is' + appInfo);
                     if(appInfo && appInfo.uid !== undefined){
                         uid = appInfo.uid;
                     }
@@ -670,7 +670,7 @@ export default function statisticsHasNetTest() {
                 const bundleInfo = bundleManager.getBundleInfoForSelfSync(bundleFlags);
                 if(bundleInfo != undefined){
                     const appInfo = bundleInfo.appInfo;
-                    hilog.info(domain, tag, '%{pbulic}s', caseName + ': appInfo is' + appInfo);
+                    hilog.info(domain, tag, '%{public}s', caseName + ': appInfo is' + appInfo);
                     if(appInfo && appInfo.uid !== undefined){
                         uid = appInfo.uid;
                     }
@@ -713,7 +713,7 @@ export default function statisticsHasNetTest() {
                 const bundleInfo = bundleManager.getBundleInfoForSelfSync(bundleFlags);
                 if(bundleInfo != undefined){
                     const appInfo = bundleInfo.appInfo;
-                    hilog.info(domain, tag, '%{pbulic}s', caseName + ': appInfo is' + appInfo);
+                    hilog.info(domain, tag, '%{public}s', caseName + ': appInfo is' + appInfo);
                     if(appInfo && appInfo.uid !== undefined){
                         uid = appInfo.uid;
                     }
@@ -1131,8 +1131,8 @@ export default function statisticsHasNetTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL1
          */
-        it("SUB_Manager_NetStatsInfo_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            let caseName: string = 'SUB_Manager_NetStatsInfo_0100';
+        it("testManagerNetStatsInfo_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testManagerNetStatsInfo_static_0100';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
                 let netStatsInfo : statistics.NetStatsInfo ={
@@ -1162,8 +1162,8 @@ export default function statisticsHasNetTest() {
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL1
          */
-        it("SUB_Manager_NetWorkInfo_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            let caseName: string = 'SUB_Manager_NetWorkInfo_0100';
+        it("testManagerNetWorkInfo_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testManagerNetWorkInfo_static_0100';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
                 let netWorkInfo : statistics.NetworkInfo ={
