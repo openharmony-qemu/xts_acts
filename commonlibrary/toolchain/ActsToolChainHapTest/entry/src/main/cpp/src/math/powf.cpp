@@ -24,7 +24,7 @@ static struct FfF t[] = {
 
 };
 
-static int PowfTest_impl(void)
+static int PowfTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     float y;
@@ -82,5 +82,5 @@ static int PowfTest_impl(void)
 
 int PowfTest(void)
 {
-    return PowfTest_impl();
+    return PowfTestImpl();
 }

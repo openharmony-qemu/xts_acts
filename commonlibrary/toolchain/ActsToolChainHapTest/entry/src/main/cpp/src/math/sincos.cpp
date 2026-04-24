@@ -22,7 +22,7 @@ static struct DDd t[] = {
 #include "special/sincos.h"
 };
 
-static int SincosTest_impl(void)
+static int SincosTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     double ysin, ycos;
@@ -78,6 +78,6 @@ static int SincosTest_impl(void)
 
 int SincosTest(void)
 {
-    return SincosTest_impl();
+    return SincosTestImpl();
 }
 

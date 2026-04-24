@@ -20,10 +20,10 @@
 
 static inline bool InitDlopenConfigAbsPathPolicy(void)
 {
-    typedef bool (*func_t)(void);
-    static func_t func = nullptr;
+    typedef bool (*FuncT)(void);
+    static FuncT func = nullptr;
     if (!func) {
-        func = (func_t)dlsym(RTLD_DEFAULT, "InitDlopenConfigAbsPathPolicy");
+        func = (FuncT)dlsym(RTLD_DEFAULT, "InitDlopenConfigAbsPathPolicy");
         if (!func) {
             fprintf(stderr, "InitDlopenConfigAbsPathPolicy not found\n");
             return false;
@@ -34,10 +34,10 @@ static inline bool InitDlopenConfigAbsPathPolicy(void)
 
 static inline bool CheckPrerequisites(void)
 {
-    typedef bool (*func_t)(void);
-    static func_t func = nullptr;
+    typedef bool (*FuncT)(void);
+    static FuncT func = nullptr;
     if (!func) {
-        func = (func_t)dlsym(RTLD_DEFAULT, "CheckPrerequisites");
+        func = (FuncT)dlsym(RTLD_DEFAULT, "CheckPrerequisites");
         if (!func) {
             fprintf(stderr, "CheckPrerequisites not found\n");
             return false;
@@ -48,10 +48,10 @@ static inline bool CheckPrerequisites(void)
 
 static inline bool OpenSo(bool arg1, bool arg2)
 {
-    typedef bool (*func_t)(bool, bool);
-    static func_t func = nullptr;
+    typedef bool (*FuncT)(bool, bool);
+    static FuncT func = nullptr;
     if (!func) {
-        func = (func_t)dlsym(RTLD_DEFAULT, "OpenSo");
+        func = (FuncT)dlsym(RTLD_DEFAULT, "OpenSo");
         if (!func) {
             fprintf(stderr, "OpenSo not found\n");
             return false;
@@ -62,12 +62,12 @@ static inline bool OpenSo(bool arg1, bool arg2)
 
 typedef void(FuncType)(bool flag);
 
-static inline bool dlopen_config_abs_path_policy_func(bool flag)
+static inline bool DlopenConfigAbsPathPolicyFunc(bool flag)
 {
-    typedef bool (*func_t)(bool);
-    static func_t func = nullptr;
+    typedef bool (*FuncT)(bool);
+    static FuncT func = nullptr;
     if (!func) {
-        func = (func_t)dlsym(RTLD_DEFAULT, "dlopen_config_abs_path_policy_func");
+        func = (FuncT)dlsym(RTLD_DEFAULT, "dlopen_config_abs_path_policy_func");
         if (!func) {
             fprintf(stderr, "dlopen_config_abs_path_policy_func not found\n");
             return false;

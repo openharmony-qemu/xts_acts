@@ -43,7 +43,7 @@ static void PrintLgammafMismatch(const struct FFi* p, double y, int sign, float 
            p->dy);
 }
 
-static int LgammafTest_impl(void)
+static int LgammafTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     int yi;
@@ -94,5 +94,5 @@ static int LgammafTest_impl(void)
 
 int LgammafTest(void)
 {
-    return LgammafTest_impl();
+    return LgammafTestImpl();
 }

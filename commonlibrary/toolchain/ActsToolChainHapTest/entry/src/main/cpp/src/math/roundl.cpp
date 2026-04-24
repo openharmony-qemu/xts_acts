@@ -29,7 +29,7 @@ static struct LL t[] = {
 #endif
 };
 
-static int RoundlTest_impl(void)
+static int RoundlTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     long double y;
@@ -78,5 +78,5 @@ static int RoundlTest_impl(void)
 
 int RoundlTest(void)
 {
-    return RoundlTest_impl();
+    return RoundlTestImpl();
 }

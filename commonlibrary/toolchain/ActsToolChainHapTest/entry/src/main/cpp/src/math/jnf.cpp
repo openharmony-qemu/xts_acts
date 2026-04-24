@@ -22,7 +22,7 @@ static struct FiF t[] = {
 #include "special/jnf.h"
 };
 
-static int JnfTest_impl(void)
+static int JnfTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     double y;
@@ -76,6 +76,6 @@ static int JnfTest_impl(void)
 
 int JnfTest(void)
 {
-    return JnfTest_impl();
+    return JnfTestImpl();
 }
 

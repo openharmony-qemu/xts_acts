@@ -24,7 +24,7 @@ static struct DD t[] = {
 #include "special/exp10.h"
 };
 
-static int Exp10Test_impl(void)
+static int Exp10TestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     double y;
@@ -32,8 +32,8 @@ static int Exp10Test_impl(void)
     int e, i, err = 0;
     struct DD* p;
 
-    typedef double (*exp10_func)(double);
-    exp10_func exp10 = (exp10_func)dlsym(RTLD_DEFAULT, "exp10");
+    typedef double (*Exp10Func)(double);
+    Exp10Func exp10 = (Exp10Func)dlsym(RTLD_DEFAULT, "exp10");
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
@@ -76,6 +76,6 @@ static int Exp10Test_impl(void)
 
 int Exp10Test(void)
 {
-    return Exp10Test_impl();
+    return Exp10TestImpl();
 }
 

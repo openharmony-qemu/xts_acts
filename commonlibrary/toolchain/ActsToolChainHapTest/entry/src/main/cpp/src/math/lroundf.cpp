@@ -23,7 +23,7 @@ static struct FI t[] = {
 
 };
 
-static int LroundfTest_impl(void)
+static int LroundfTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     long long yi;
@@ -61,5 +61,5 @@ static int LroundfTest_impl(void)
 
 int LroundfTest(void)
 {
-    return LroundfTest_impl();
+    return LroundfTestImpl();
 }

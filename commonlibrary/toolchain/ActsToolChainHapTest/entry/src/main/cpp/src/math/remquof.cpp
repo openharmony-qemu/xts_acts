@@ -30,7 +30,7 @@ static bool HasRemquofQuotientMismatch(const struct FfFi* p, int quotient)
             ((quotient & REMQUO_LOW_BITS_MASK) != (p->i & REMQUO_LOW_BITS_MASK) || (quotient < 0) != (p->i < 0)));
 }
 
-static int RemquofTest_impl(void)
+static int RemquofTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     int yi;
@@ -85,5 +85,5 @@ static int RemquofTest_impl(void)
 
 int RemquofTest(void)
 {
-    return RemquofTest_impl();
+    return RemquofTestImpl();
 }

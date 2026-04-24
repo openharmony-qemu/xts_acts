@@ -23,7 +23,7 @@ static struct DiD t[] = {
 
 };
 
-static int LdexpTest_impl(void)
+static int LdexpTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     double y;
@@ -74,5 +74,5 @@ static int LdexpTest_impl(void)
 
 int LdexpTest(void)
 {
-    return LdexpTest_impl();
+    return LdexpTestImpl();
 }

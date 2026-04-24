@@ -23,7 +23,7 @@ static struct DD t[] = {
 #include "special/tanh.h"
 };
 
-static int TanhTest_impl(void)
+static int TanhTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     double y;
@@ -74,5 +74,5 @@ static int TanhTest_impl(void)
 
 int TanhTest(void)
 {
-    return TanhTest_impl();
+    return TanhTestImpl();
 }

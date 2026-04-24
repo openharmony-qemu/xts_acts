@@ -23,7 +23,7 @@ static struct DdD t[] = {
 
 };
 
-static int ScalbTest_impl(void)
+static int ScalbTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     double y;
@@ -74,6 +74,6 @@ static int ScalbTest_impl(void)
 
 int ScalbTest(void)
 {
-    return ScalbTest_impl();
+    return ScalbTestImpl();
 }
 

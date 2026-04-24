@@ -23,7 +23,7 @@ static struct FF t[] = {
 #include "ucb/acosf.h"
 };
 
-static int AcosfTest_impl(void)
+static int AcosfTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     float y;
@@ -74,5 +74,5 @@ static int AcosfTest_impl(void)
 
 int AcosfTest(void)
 {
-    return AcosfTest_impl();
+    return AcosfTestImpl();
 }

@@ -23,7 +23,7 @@ static struct DD t[] = {
 
 };
 
-static int J0Test_impl(void)
+static int J0TestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     double y;
@@ -70,6 +70,6 @@ static int J0Test_impl(void)
 
 int J0Test(void)
 {
-    return J0Test_impl();
+    return J0TestImpl();
 }
 

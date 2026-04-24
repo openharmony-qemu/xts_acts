@@ -23,7 +23,7 @@ static struct DD t[] = {
 
 };
 
-static int TgammaTest_impl(void)
+static int TgammaTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     double y;
@@ -77,5 +77,5 @@ static int TgammaTest_impl(void)
 
 int TgammaTest(void)
 {
-    return TgammaTest_impl();
+    return TgammaTestImpl();
 }

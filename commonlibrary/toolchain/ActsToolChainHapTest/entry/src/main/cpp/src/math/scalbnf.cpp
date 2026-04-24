@@ -23,7 +23,7 @@ static struct FiF t[] = {
 
 };
 
-static int ScalbnfTest_impl(void)
+static int ScalbnfTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     double y;
@@ -74,5 +74,5 @@ static int ScalbnfTest_impl(void)
 
 int ScalbnfTest(void)
 {
-    return ScalbnfTest_impl();
+    return ScalbnfTestImpl();
 }

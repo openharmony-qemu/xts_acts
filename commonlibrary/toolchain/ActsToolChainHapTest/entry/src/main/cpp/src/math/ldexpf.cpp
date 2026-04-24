@@ -23,7 +23,7 @@ static struct FiF t[] = {
 
 };
 
-static int LdexpfTest_impl(void)
+static int LdexpfTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     float y;
@@ -77,5 +77,5 @@ static int LdexpfTest_impl(void)
 
 int LdexpfTest(void)
 {
-    return LdexpfTest_impl();
+    return LdexpfTestImpl();
 }

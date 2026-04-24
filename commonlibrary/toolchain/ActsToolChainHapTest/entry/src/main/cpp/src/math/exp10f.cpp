@@ -25,7 +25,7 @@ static struct FF t[] = {
 
 };
 
-static int Exp10fTest_impl(void)
+static int Exp10fTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     float y;
@@ -33,8 +33,8 @@ static int Exp10fTest_impl(void)
     int e, i, err = 0;
     struct FF* p;
 
-    typedef float (*exp10f_func)(float);
-    exp10f_func exp10f = (exp10f_func)dlsym(RTLD_DEFAULT, "exp10f");
+    typedef float (*Exp10fFunc)(float);
+    Exp10fFunc exp10f = (Exp10fFunc)dlsym(RTLD_DEFAULT, "exp10f");
     if (!exp10f) {
         t_error("exp10f function not found\n");
         return 1;
@@ -81,6 +81,6 @@ static int Exp10fTest_impl(void)
 
 int Exp10fTest(void)
 {
-    return Exp10fTest_impl();
+    return Exp10fTestImpl();
 }
 

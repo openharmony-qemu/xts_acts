@@ -23,7 +23,7 @@ static struct FfF t[] = {
 
 };
 
-static int ScalbfTest_impl(void)
+static int ScalbfTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     float y;
@@ -74,6 +74,6 @@ static int ScalbfTest_impl(void)
 
 int ScalbfTest(void)
 {
-    return ScalbfTest_impl();
+    return ScalbfTestImpl();
 }
 

@@ -22,7 +22,7 @@ static struct FfF t[] = {
 #include "special/fdimf.h"
 };
 
-static int FdimfTest_impl(void)
+static int FdimfTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     float y;
@@ -78,5 +78,5 @@ static int FdimfTest_impl(void)
 
 int FdimfTest(void)
 {
-    return FdimfTest_impl();
+    return FdimfTestImpl();
 }

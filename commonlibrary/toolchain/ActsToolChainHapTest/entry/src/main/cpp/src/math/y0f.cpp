@@ -23,7 +23,7 @@ static struct FF t[] = {
 
 };
 
-static int Y0fTest_impl(void)
+static int Y0fTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     float y;
@@ -78,6 +78,6 @@ static int Y0fTest_impl(void)
 
 int Y0fTest(void)
 {
-    return Y0fTest_impl();
+    return Y0fTestImpl();
 }
 

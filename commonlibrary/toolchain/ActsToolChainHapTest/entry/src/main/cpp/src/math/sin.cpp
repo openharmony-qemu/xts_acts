@@ -24,7 +24,7 @@ static struct DD t[] = {
 #include "special/sin.h"
 };
 
-static int SinTest_impl(void)
+static int SinTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     double y;
@@ -79,5 +79,5 @@ static int SinTest_impl(void)
 
 int SinTest(void)
 {
-    return SinTest_impl();
+    return SinTestImpl();
 }

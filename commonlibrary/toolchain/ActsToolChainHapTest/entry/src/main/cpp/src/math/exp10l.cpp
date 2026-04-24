@@ -30,7 +30,7 @@ static struct LL t[] = {
 #endif
 };
 
-static int Exp10lTest_impl(void)
+static int Exp10lTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     long double y;
@@ -38,8 +38,8 @@ static int Exp10lTest_impl(void)
     int e, i, err = 0;
     struct LL* p;
 
-    typedef long double (*exp10l_func)(long double);
-    exp10l_func exp10l = (exp10l_func)dlsym(RTLD_DEFAULT, "exp10l");
+    typedef long double (*Exp10lFunc)(long double);
+    Exp10lFunc exp10l = (Exp10lFunc)dlsym(RTLD_DEFAULT, "exp10l");
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
@@ -81,6 +81,6 @@ static int Exp10lTest_impl(void)
 
 int Exp10lTest(void)
 {
-    return Exp10lTest_impl();
+    return Exp10lTestImpl();
 }
 

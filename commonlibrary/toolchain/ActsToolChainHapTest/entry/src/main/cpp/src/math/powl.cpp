@@ -36,7 +36,7 @@ static struct LlL t[] = {
 #endif
 };
 
-static int PowlTest_impl(void)
+static int PowlTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     long double y;
@@ -87,5 +87,5 @@ static int PowlTest_impl(void)
 
 int PowlTest(void)
 {
-    return PowlTest_impl();
+    return PowlTestImpl();
 }

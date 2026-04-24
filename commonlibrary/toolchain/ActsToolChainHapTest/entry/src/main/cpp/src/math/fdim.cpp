@@ -23,7 +23,7 @@ static struct DdD t[] = {
 
 };
 
-static int FdimTest_impl(void)
+static int FdimTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     double y;
@@ -76,5 +76,5 @@ static int FdimTest_impl(void)
 
 int FdimTest(void)
 {
-    return FdimTest_impl();
+    return FdimTestImpl();
 }

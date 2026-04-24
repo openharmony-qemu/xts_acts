@@ -46,7 +46,7 @@ static void PrintSincoslMismatch(const struct LLl* p, long double ysin, long dou
            p->dy2);
 }
 
-static int SincoslTest_impl(void)
+static int SincoslTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     long double ysin;
@@ -93,5 +93,5 @@ static int SincoslTest_impl(void)
 
 int SincoslTest(void)
 {
-    return SincoslTest_impl();
+    return SincoslTestImpl();
 }

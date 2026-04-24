@@ -22,7 +22,7 @@ static struct DiD t[] = {
 #include "special/jn.h"
 };
 
-static int JnTest_impl(void)
+static int JnTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     double y;
@@ -76,6 +76,6 @@ static int JnTest_impl(void)
 
 int JnTest(void)
 {
-    return JnTest_impl();
+    return JnTestImpl();
 }
 

@@ -24,7 +24,7 @@ static struct FF t[] = {
 
 };
 
-static int SinfTest_impl(void)
+static int SinfTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     float y;
@@ -73,5 +73,5 @@ static int SinfTest_impl(void)
 
 int SinfTest(void)
 {
-    return SinfTest_impl();
+    return SinfTestImpl();
 }

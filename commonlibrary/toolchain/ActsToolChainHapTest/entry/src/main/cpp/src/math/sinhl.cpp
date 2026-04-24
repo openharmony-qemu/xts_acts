@@ -36,7 +36,7 @@ static struct LL t[] = {
 #endif
 };
 
-static int SinhlTest_impl(void)
+static int SinhlTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     long double y;
@@ -88,5 +88,5 @@ static int SinhlTest_impl(void)
 
 int SinhlTest(void)
 {
-    return SinhlTest_impl();
+    return SinhlTestImpl();
 }

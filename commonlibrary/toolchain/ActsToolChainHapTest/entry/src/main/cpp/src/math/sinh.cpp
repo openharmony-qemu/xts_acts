@@ -25,7 +25,7 @@ static struct DD t[] = {
 
 };
 
-static int SinhTest_impl(void)
+static int SinhTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     double y;
@@ -83,5 +83,5 @@ static int SinhTest_impl(void)
 
 int SinhTest(void)
 {
-    return SinhTest_impl();
+    return SinhTestImpl();
 }

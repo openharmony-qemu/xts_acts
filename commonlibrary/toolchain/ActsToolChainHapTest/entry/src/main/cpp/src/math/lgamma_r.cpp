@@ -23,7 +23,7 @@ static struct DDi t[] = {
 
 };
 
-static int LgammaRTest_impl(void)
+static int LgammaRTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     int yi;
@@ -82,6 +82,6 @@ static int LgammaRTest_impl(void)
 
 int LgammaRTest(void)
 {
-    return LgammaRTest_impl();
+    return LgammaRTestImpl();
 }
 

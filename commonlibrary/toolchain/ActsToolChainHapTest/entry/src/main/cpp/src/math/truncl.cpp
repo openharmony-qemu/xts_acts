@@ -27,7 +27,7 @@ static struct LL t[] = {
 #endif
 };
 
-static int TrunclTest_impl(void)
+static int TrunclTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     long double y;
@@ -78,5 +78,5 @@ static int TrunclTest_impl(void)
 
 int TrunclTest(void)
 {
-    return TrunclTest_impl();
+    return TrunclTestImpl();
 }

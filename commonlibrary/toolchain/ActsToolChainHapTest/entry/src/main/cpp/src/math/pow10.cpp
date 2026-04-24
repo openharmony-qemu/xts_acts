@@ -24,7 +24,7 @@ static struct DD t[] = {
 
 };
 
-static int Pow10Test_impl(void)
+static int Pow10TestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     double y;
@@ -32,8 +32,8 @@ static int Pow10Test_impl(void)
     int e, i, err = 0;
     struct DD* p;
 
-    typedef double (*pow10_func)(double);
-    pow10_func pow10 = (pow10_func)dlsym(RTLD_DEFAULT, "pow10");
+    typedef double (*Pow10Func)(double);
+    Pow10Func pow10 = (Pow10Func)dlsym(RTLD_DEFAULT, "pow10");
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
@@ -77,6 +77,6 @@ static int Pow10Test_impl(void)
 
 int Pow10Test(void)
 {
-    return Pow10Test_impl();
+    return Pow10TestImpl();
 }
 

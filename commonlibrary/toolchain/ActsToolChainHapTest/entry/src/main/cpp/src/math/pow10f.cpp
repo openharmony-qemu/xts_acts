@@ -23,7 +23,7 @@ static struct FF t[] = {
 
 };
 
-static int Pow10fTest_impl(void)
+static int Pow10fTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     float y;
@@ -33,8 +33,8 @@ static int Pow10fTest_impl(void)
     int err = 0;
     struct FF* p;
 
-    typedef float (*pow10f_func)(float);
-    pow10f_func pow10f = (pow10f_func)dlsym(RTLD_DEFAULT, "pow10f");
+    typedef float (*Pow10fFunc)(float);
+    Pow10fFunc pow10f = (Pow10fFunc)dlsym(RTLD_DEFAULT, "pow10f");
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
@@ -77,6 +77,6 @@ static int Pow10fTest_impl(void)
 
 int Pow10fTest(void)
 {
-    return Pow10fTest_impl();
+    return Pow10fTestImpl();
 }
 

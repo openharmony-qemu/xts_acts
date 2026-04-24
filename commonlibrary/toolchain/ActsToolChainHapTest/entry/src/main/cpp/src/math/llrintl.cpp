@@ -29,7 +29,7 @@ static struct LI t[] = {
 #endif
 };
 
-static int LlrintlTest_impl(void)
+static int LlrintlTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     long long yi;
@@ -67,5 +67,5 @@ static int LlrintlTest_impl(void)
 
 int LlrintlTest(void)
 {
-    return LlrintlTest_impl();
+    return LlrintlTestImpl();
 }

@@ -24,7 +24,7 @@ static struct FF t[] = {
 
 };
 
-static int TanfTest_impl(void)
+static int TanfTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     float y;
@@ -77,5 +77,5 @@ static int TanfTest_impl(void)
 
 int TanfTest(void)
 {
-    return TanfTest_impl();
+    return TanfTestImpl();
 }

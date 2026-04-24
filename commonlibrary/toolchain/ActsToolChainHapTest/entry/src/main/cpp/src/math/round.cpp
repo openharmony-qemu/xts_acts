@@ -22,7 +22,7 @@ static struct DD t[] = {
 #include "special/round.h"
 };
 
-static int RoundTest_impl(void)
+static int RoundTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     double y;
@@ -73,5 +73,5 @@ static int RoundTest_impl(void)
 
 int RoundTest(void)
 {
-    return RoundTest_impl();
+    return RoundTestImpl();
 }

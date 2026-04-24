@@ -41,7 +41,7 @@ static void PrintModffMismatch(const struct FFf* p, float y, float yi, float d, 
            p->dy2);
 }
 
-static int ModffTest_impl(void)
+static int ModffTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     float y;
@@ -88,5 +88,5 @@ static int ModffTest_impl(void)
 
 int ModffTest(void)
 {
-    return ModffTest_impl();
+    return ModffTestImpl();
 }

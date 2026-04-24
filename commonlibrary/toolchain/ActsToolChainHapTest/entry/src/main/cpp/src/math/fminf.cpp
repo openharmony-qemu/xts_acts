@@ -23,7 +23,7 @@ static struct FfF t[] = {
 
 };
 
-static int FminfTest_impl(void)
+static int FminfTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     float y;
@@ -76,5 +76,5 @@ static int FminfTest_impl(void)
 
 int FminfTest(void)
 {
-    return FminfTest_impl();
+    return FminfTestImpl();
 }

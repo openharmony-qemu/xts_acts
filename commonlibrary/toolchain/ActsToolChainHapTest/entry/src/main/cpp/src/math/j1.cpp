@@ -22,7 +22,7 @@ static struct DD t[] = {
 #include "special/j1.h"
 };
 
-static int J1Test_impl(void)
+static int J1TestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     double y;
@@ -68,6 +68,6 @@ static int J1Test_impl(void)
 
 int J1Test(void)
 {
-    return J1Test_impl();
+    return J1TestImpl();
 }
 

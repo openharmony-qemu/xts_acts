@@ -41,7 +41,7 @@ static void PrintSincosfMismatch(const struct FFf* p, float ysin, float ycos, fl
            p->dy2);
 }
 
-static int SincosfTest_impl(void)
+static int SincosfTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     float ysin;
@@ -87,5 +87,5 @@ static int SincosfTest_impl(void)
 
 int SincosfTest(void)
 {
-    return SincosfTest_impl();
+    return SincosfTestImpl();
 }

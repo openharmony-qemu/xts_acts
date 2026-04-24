@@ -22,7 +22,7 @@ static struct DdD t[] = {
 #include "special/fmin.h"
 };
 
-static int FminTest_impl(void)
+static int FminTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     double y;
@@ -75,5 +75,5 @@ static int FminTest_impl(void)
 
 int FminTest(void)
 {
-    return FminTest_impl();
+    return FminTestImpl();
 }

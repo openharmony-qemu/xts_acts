@@ -19,15 +19,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static int LdsoDlopenConfigAbsPath12Test_impl()
+static int LdsoDlopenConfigAbsPath12TestImpl()
 {
     if (!CheckPrerequisites()) {
         printf("CheckPrerequisites failed\n");
         return g_tStatus;
     }
 
-    dlopen_config_abs_path_policy_func(false);
-    dlopen_config_abs_path_policy_func(true);
+    DlopenConfigAbsPathPolicyFunc(false);
+    DlopenConfigAbsPathPolicyFunc(true);
     if (OpenSo(false, false)) {
         printf("OpenSo with abs path succeed\n");
         g_tStatus = 1;
@@ -38,5 +38,5 @@ static int LdsoDlopenConfigAbsPath12Test_impl()
 
 int LdsoDlopenConfigAbsPath12Test(void)
 {
-    return LdsoDlopenConfigAbsPath12Test_impl();
+    return LdsoDlopenConfigAbsPath12TestImpl();
 }

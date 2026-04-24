@@ -24,7 +24,7 @@ static struct DdD t[] = {
 #include "../../include/special/pow.h"
 };
 
-static int PowTest_impl(void)
+static int PowTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     double y;
@@ -81,5 +81,5 @@ static int PowTest_impl(void)
 
 int PowTest(void)
 {
-    return PowTest_impl();
+    return PowTestImpl();
 }

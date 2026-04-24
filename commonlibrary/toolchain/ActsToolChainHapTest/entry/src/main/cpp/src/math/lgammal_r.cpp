@@ -27,7 +27,7 @@ static struct LLi t[] = {
 #endif
 };
 
-static int LgammalRTest_impl(void)
+static int LgammalRTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     int yi;
@@ -84,6 +84,6 @@ static int LgammalRTest_impl(void)
 
 int LgammalRTest(void)
 {
-    return LgammalRTest_impl();
+    return LgammalRTestImpl();
 }
 

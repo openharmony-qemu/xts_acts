@@ -23,7 +23,7 @@ static struct DD t[] = {
 
 };
 
-static int LogbTest_impl(void)
+static int LogbTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     double y;
@@ -72,5 +72,5 @@ static int LogbTest_impl(void)
 
 int LogbTest(void)
 {
-    return LogbTest_impl();
+    return LogbTestImpl();
 }

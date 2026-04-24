@@ -23,7 +23,7 @@ static struct FF t[] = {
 
 };
 
-static int LogbfTest_impl(void)
+static int LogbfTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     float y;
@@ -72,5 +72,5 @@ static int LogbfTest_impl(void)
 
 int LogbfTest(void)
 {
-    return LogbfTest_impl();
+    return LogbfTestImpl();
 }

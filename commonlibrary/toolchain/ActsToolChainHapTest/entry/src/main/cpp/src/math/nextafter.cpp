@@ -23,7 +23,7 @@ static struct DdD t[] = {
 
 };
 
-static int NextafterTest_impl(void)
+static int NextafterTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     double y;
@@ -76,5 +76,5 @@ static int NextafterTest_impl(void)
 
 int NextafterTest(void)
 {
-    return NextafterTest_impl();
+    return NextafterTestImpl();
 }

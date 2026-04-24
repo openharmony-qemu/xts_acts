@@ -23,7 +23,7 @@ static struct FfF t[] = {
 
 };
 
-static int RemainderfTest_impl(void)
+static int RemainderfTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     float y;
@@ -77,5 +77,5 @@ static int RemainderfTest_impl(void)
 
 int RemainderfTest(void)
 {
-    return RemainderfTest_impl();
+    return RemainderfTestImpl();
 }

@@ -23,7 +23,7 @@ static struct FFi t[] = {
 
 };
 
-static int LgammafRTest_impl(void)
+static int LgammafRTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     int yi;
@@ -80,6 +80,6 @@ static int LgammafRTest_impl(void)
 
 int LgammafRTest(void)
 {
-    return LgammafRTest_impl();
+    return LgammafRTestImpl();
 }
 

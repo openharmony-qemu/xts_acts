@@ -29,7 +29,7 @@ static struct LL t[] = {
 #endif
 };
 
-static int Pow10lTest_impl(void)
+static int Pow10lTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     long double y;
@@ -37,8 +37,8 @@ static int Pow10lTest_impl(void)
     int e, i, err = 0;
     struct LL* p;
 
-    typedef double (*pow10l_func)(double);
-    pow10l_func pow10l = (pow10l_func)dlsym(RTLD_DEFAULT, "pow10l");
+    typedef double (*Pow10lFunc)(double);
+    Pow10lFunc pow10l = (Pow10lFunc)dlsym(RTLD_DEFAULT, "pow10l");
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
@@ -81,6 +81,6 @@ static int Pow10lTest_impl(void)
 
 int Pow10lTest(void)
 {
-    return Pow10lTest_impl();
+    return Pow10lTestImpl();
 }
 

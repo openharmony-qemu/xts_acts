@@ -23,7 +23,7 @@ static struct DD t[] = {
 #include "special/log2.h"
 };
 
-static int Log2Test_impl(void)
+static int Log2TestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     double y;
@@ -74,5 +74,5 @@ static int Log2Test_impl(void)
 
 int Log2Test(void)
 {
-    return Log2Test_impl();
+    return Log2TestImpl();
 }

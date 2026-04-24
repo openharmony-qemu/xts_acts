@@ -43,7 +43,7 @@ static void PrintLgammaMismatch(const struct DDi* p, double y, int sign, float d
            p->dy);
 }
 
-static int LgammaTest_impl(void)
+static int LgammaTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     int yi;
@@ -94,5 +94,5 @@ static int LgammaTest_impl(void)
 
 int LgammaTest(void)
 {
-    return LgammaTest_impl();
+    return LgammaTestImpl();
 }

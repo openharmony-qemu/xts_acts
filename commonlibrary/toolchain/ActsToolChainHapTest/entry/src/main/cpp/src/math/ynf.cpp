@@ -22,7 +22,7 @@ static struct FiF t[] = {
 #include "../../include/special/ynf.h"
 };
 
-static int YnfTest_impl(void)
+static int YnfTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     double y;
@@ -79,6 +79,6 @@ static int YnfTest_impl(void)
 
 int YnfTest(void)
 {
-    return YnfTest_impl();
+    return YnfTestImpl();
 }
 

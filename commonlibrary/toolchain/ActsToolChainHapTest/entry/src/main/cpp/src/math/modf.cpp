@@ -22,7 +22,7 @@ static struct DDd t[] = {
 #include "special/modf.h"
 };
 
-static int ModfTest_impl(void)
+static int ModfTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     double y, yi;
@@ -79,6 +79,6 @@ static int ModfTest_impl(void)
 
 int ModfTest(void)
 {
-    return ModfTest_impl();
+    return ModfTestImpl();
 }
 

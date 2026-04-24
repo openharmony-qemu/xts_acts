@@ -23,7 +23,7 @@ static struct FF t[] = {
 
 };
 
-static int TgammafTest_impl(void)
+static int TgammafTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     float y;
@@ -74,5 +74,5 @@ static int TgammafTest_impl(void)
 
 int TgammafTest(void)
 {
-    return TgammafTest_impl();
+    return TgammafTestImpl();
 }

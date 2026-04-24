@@ -22,7 +22,7 @@ static struct DiD t[] = {
 #include "special/yn.h"
 };
 
-static int YnTest_impl(void)
+static int YnTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     double y;
@@ -75,6 +75,6 @@ static int YnTest_impl(void)
 
 int YnTest(void)
 {
-    return YnTest_impl();
+    return YnTestImpl();
 }
 

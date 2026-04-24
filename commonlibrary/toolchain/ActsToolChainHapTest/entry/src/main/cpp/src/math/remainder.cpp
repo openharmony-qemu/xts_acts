@@ -23,7 +23,7 @@ static struct DdD t[] = {
 
 };
 
-static int RemainderTest_impl(void)
+static int RemainderTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     double y;
@@ -77,5 +77,5 @@ static int RemainderTest_impl(void)
 
 int RemainderTest(void)
 {
-    return RemainderTest_impl();
+    return RemainderTestImpl();
 }
