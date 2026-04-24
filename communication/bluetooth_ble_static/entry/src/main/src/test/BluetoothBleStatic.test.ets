@@ -2738,6 +2738,7 @@ export default function bluetoothBleTest() {
                         expect(err.code === 2902054).assertTrue();
                     }else{
                         expect().assertFail();
+                    }
                 }
             }
             hilog.info(domain, tag, `${caseName} test end`);
