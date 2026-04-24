@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <stdint.h>
-#include <stdio.h>
+#include <cstdint>
+#include <cstdio>
 #include "mtest.h"
 
 static struct DdD t[] = {
@@ -22,47 +22,64 @@ static struct DdD t[] = {
 #include "ucb/pow.h"
 #include "../../include/sanity/pow.h"
 #include "../../include/special/pow.h"
-
 };
 
-static int PowTest_impl(void){
-	#pragma STDC FENV_ACCESS ON
-	double y;
-	float d;
-	int e, i, err = 0;
-	struct DdD *p;
+static int PowTest_impl(void)
+{
+#pragma STDC FENV_ACCESS ON
+    double y;
+    float d;
+    int e;
+    int i;
+    int err = 0;
+    struct DdD *p;
 
-	for (i = 0; i < sizeof t/sizeof *t; i++) {
-		p = t + i;
+    for (i = 0; i < sizeof t / sizeof *t; i++) {
+        p = t + i;
 
-		if (p->r < 0)
-			continue;
-		fesetround(p->r);
-		feclearexcept(FE_ALL_EXCEPT);
-		y = pow(p->x, p->x2);
-		e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
-
-		if (!Checkexcept(e, p->e, p->r)) {
-			if (fabs(y) < 0x1p-1022 && (e|INEXACT) == (INEXACT|UNDERFLOW))
-				printf("X ");
-			else
-				err++;
-			printf("%s:%d: bad fp exception: %s pow(%a,%a)=%a, want %s",
-				p->file, p->line, Rstr(p->r), p->x, p->x2, p->y, Estr(p->e));
-			printf(" got %s\n", Estr(e));
-		}
-		d = Ulperr(y, p->y, p->dy);
-		if (!Checkulp(d, p->r)) {
-			printf("%s:%d: %s pow(%a,%a) want %a got %a ulperr %.3f = %a + %a\n",
-				p->file, p->line, Rstr(p->r), p->x, p->x2, p->y, y, d, d-p->dy, p->dy);
-			err++;
-		}
-	}
-	return !!err;
+        if (p->r < 0) {
+            continue;
+        }
+        fesetround(p->r);
+        feclearexcept(FE_ALL_EXCEPT);
+        y = pow(p->x, p->x2);
+        e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
+        if (!Checkexcept(e, p->e, p->r)) {
+            if (fabs(y) < 0x1p-1022 && (e | INEXACT) == (INEXACT | UNDERFLOW)) {
+                printf("X ");
+            } else {
+                err++;
+            }
+            printf("%s:%d: bad fp exception: %s pow(%a,%a)=%a, want %s",
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->x2,
+                   p->y,
+                   Estr(p->e));
+            printf(" got %s\n", Estr(e));
+        }
+        d = Ulperr(y, p->y, p->dy);
+        if (!Checkulp(d, p->r)) {
+            printf("%s:%d: %s pow(%a,%a) want %a got %a ulperr %.3f = %a + %a\n",
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->x2,
+                   p->y,
+                   y,
+                   d,
+                   d - p->dy,
+                   p->dy);
+            err++;
+        }
+    }
+    return !!err;
 }
 
 int PowTest(void)
 {
     return PowTest_impl();
 }
-

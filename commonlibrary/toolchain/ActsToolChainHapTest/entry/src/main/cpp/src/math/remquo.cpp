@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include <stdint.h>
+#include <cstdint>
 #include <stdio.h>
 #include "mtest.h"
 
@@ -22,44 +22,64 @@ static struct DdDi t[] = {
 #include "special/remquo.h"
 };
 
-static int RemquoTest_impl(void){
-	#pragma STDC FENV_ACCESS ON
-	int yi;
-	double y;
-	float d;
-	int e, i, err = 0;
-	struct DdDi *p;
+static int RemquoTest_impl(void)
+{
+#pragma STDC FENV_ACCESS ON
+    int yi;
+    double y;
+    float d;
+    int e;
+    int i;
+    int err = 0;
+    struct DdDi* p;
 
-	for (i = 0; i < sizeof t/sizeof *t; i++) {
-		p = t + i;
+    for (i = 0; i < sizeof t / sizeof *t; i++) {
+        p = t + i;
 
-		if (p->r < 0)
-			continue;
-		fesetround(p->r);
-		feclearexcept(FE_ALL_EXCEPT);
-		y = remquo(p->x, p->x2, &yi);
-		e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
+        if (p->r < 0) {
+            continue;
+        }
+        fesetround(p->r);
+        feclearexcept(FE_ALL_EXCEPT);
+        y = remquo(p->x, p->x2, &yi);
+        e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
 
-		if (!Checkexcept(e, p->e, p->r)) {
-			printf("%s:%d: bad fp exception: %s remquo(%a,%a)=%a,%lld, want %s",
-				p->file, p->line, Rstr(p->r), p->x, p->x2, p->y, p->i, Estr(p->e));
-			printf(" got %s\n", Estr(e));
-			err++;
-		}
-		d = Ulperr(y, p->y, p->dy);
-		if (!Checkcr(y, p->y, p->r) ||
-		(!isnan(p->y) && (yi & 7) != (p->i & 7)) ||
-		(!isnan(p->y) && (yi < 0) != (p->i < 0))) {
-			printf("%s:%d: %s remquo(%a,%a) want %a,%lld got %a,%d ulperr %.3f = %a + %a\n",
-				p->file, p->line, Rstr(p->r), p->x, p->x2, p->y, p->i, y, yi, d, d-p->dy, p->dy);
-			err++;
-		}
-	}
-	return !!err;
+        if (!Checkexcept(e, p->e, p->r)) {
+            printf("%s:%d: bad fp exception: %s remquo(%a,%a)=%a,%lld, want %s",
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->x2,
+                   p->y,
+                   p->i,
+                   Estr(p->e));
+            printf(" got %s\n", Estr(e));
+            err++;
+        }
+        d = Ulperr(y, p->y, p->dy);
+        if (!Checkcr(y, p->y, p->r) || (!isnan(p->y) && (yi & 7) != (p->i & 7)) ||
+            (!isnan(p->y) && (yi < 0) != (p->i < 0))) {
+            printf("%s:%d: %s remquo(%a,%a) want %a,%lld got %a,%d ulperr %.3f = %a + %a\n",
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->x2,
+                   p->y,
+                   p->i,
+                   y,
+                   yi,
+                   d,
+                   d - p->dy,
+                   p->dy);
+            err++;
+        }
+    }
+    return !!err;
 }
 
 int RemquoTest(void)
 {
     return RemquoTest_impl();
 }
-
