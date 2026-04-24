@@ -16,19 +16,18 @@
 #ifndef SPECIAL_MODFF_H_H
 #define SPECIAL_MODFF_H_H
 
-T(ROUND_TO_NEAREST,          0x0p+0,          0x0p+0,          0x0p+0,          0x0p+0,          0x0p+0, 0)
-T(ROUND_TO_NEAREST,         -0x0p+0,         -0x0p+0,          0x0p+0,         -0x0p+0,          0x0p+0, 0)
-T(ROUND_TO_NEAREST,          0x1p-1,          0x1p-1,          0x0p+0,          0x0p+0,          0x0p+0, 0)
-T(ROUND_TO_NEAREST,         -0x1p-1,         -0x1p-1,          0x0p+0,         -0x0p+0,          0x0p+0, 0)
-T(ROUND_TO_NEAREST,          0x1p+0,          0x0p+0,          0x0p+0,          0x1p+0,          0x0p+0, 0)
-T(ROUND_TO_NEAREST,         -0x1p+0,         -0x0p+0,          0x0p+0,         -0x1p+0,          0x0p+0, 0)
-T(ROUND_TO_NEAREST,        0x1.8p+0,          0x1p-1,          0x0p+0,          0x1p+0,          0x0p+0, 0)
-T(ROUND_TO_NEAREST,       -0x1.8p+0,         -0x1p-1,          0x0p+0,         -0x1p+0,          0x0p+0, 0)
-T(ROUND_TO_NEAREST,          0x1p+1,          0x0p+0,          0x0p+0,          0x1p+1,          0x0p+0, 0)
-T(ROUND_TO_NEAREST,         -0x1p+1,         -0x0p+0,          0x0p+0,         -0x1p+1,          0x0p+0, 0)
-T(ROUND_TO_NEAREST,             INF,          0x0p+0,          0x0p+0,             INF,          0x0p+0, 0)
-T(ROUND_TO_NEAREST,            -INF,         -0x0p+0,          0x0p+0,            -INF,          0x0p+0, 0)
-T(ROUND_TO_NEAREST,             NAN,             NAN,          0x0p+0,             NAN,          0x0p+0, 0)
+T(ROUND_TO_NEAREST, 0x0p+0, 0x0p+0, 0x0p+0, 0x0p+0, 0x0p+0, 0)
+T(ROUND_TO_NEAREST, -0x0p+0, -0x0p+0, 0x0p+0, -0x0p+0, 0x0p+0, 0)
+T(ROUND_TO_NEAREST, 0x1p-1, 0x1p-1, 0x0p+0, 0x0p+0, 0x0p+0, 0)
+T(ROUND_TO_NEAREST, -0x1p-1, -0x1p-1, 0x0p+0, -0x0p+0, 0x0p+0, 0)
+T(ROUND_TO_NEAREST, 0x1p+0, 0x0p+0, 0x0p+0, 0x1p+0, 0x0p+0, 0)
+T(ROUND_TO_NEAREST, -0x1p+0, -0x0p+0, 0x0p+0, -0x1p+0, 0x0p+0, 0)
+T(ROUND_TO_NEAREST, 0x1.8p+0, 0x1p-1, 0x0p+0, 0x1p+0, 0x0p+0, 0)
+T(ROUND_TO_NEAREST, -0x1.8p+0, -0x1p-1, 0x0p+0, -0x1p+0, 0x0p+0, 0)
+T(ROUND_TO_NEAREST, 0x1p+1, 0x0p+0, 0x0p+0, 0x1p+1, 0x0p+0, 0)
+T(ROUND_TO_NEAREST, -0x1p+1, -0x0p+0, 0x0p+0, -0x1p+1, 0x0p+0, 0)
+T(ROUND_TO_NEAREST, INF, 0x0p+0, 0x0p+0, INF, 0x0p+0, 0)
+T(ROUND_TO_NEAREST, -INF, -0x0p+0, 0x0p+0, -INF, 0x0p+0, 0)
+T(ROUND_TO_NEAREST, NAN, NAN, 0x0p+0, NAN, 0x0p+0, 0)
 
 #endif // SPECIAL_MODFF_H_H
-

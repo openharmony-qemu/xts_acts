@@ -16,25 +16,25 @@
 #ifndef SPECIAL_LROUNDF_H_H
 #define SPECIAL_LROUNDF_H_H
 
-T(ROUND_TO_NEAREST,          0x0p+0,           0, 0)
-T(ROUND_TO_NEAREST,         -0x0p+0,           0, 0)
-T(ROUND_TO_NEAREST,          0x1p-1,           1, INEXACT)
-T(ROUND_TO_NEAREST,         -0x1p-1,          -1, INEXACT)
-T(ROUND_TO_NEAREST,          0x1p+0,           1, 0)
-T(ROUND_TO_NEAREST,         -0x1p+0,          -1, 0)
-T(ROUND_TO_NEAREST,     0x1.0001p+0,           1, INEXACT)
-T(ROUND_TO_NEAREST,    -0x1.0001p+0,          -1, INEXACT)
-T(ROUND_TO_NEAREST,     0x1.ffffp-1,           1, INEXACT)
-T(ROUND_TO_NEAREST,    -0x1.ffffp-1,          -1, INEXACT)
-T(ROUND_TO_NEAREST,        0x1p-100,           0, INEXACT)
-T(ROUND_TO_NEAREST,       -0x1p-100,           0, INEXACT)
-// TODO: return value is unspecified
+T(ROUND_TO_NEAREST, 0x0p+0, 0, 0)
+T(ROUND_TO_NEAREST, -0x0p+0, 0, 0)
+T(ROUND_TO_NEAREST, 0x1p-1, 1, INEXACT)
+T(ROUND_TO_NEAREST, -0x1p-1, -1, INEXACT)
+T(ROUND_TO_NEAREST, 0x1p+0, 1, 0)
+T(ROUND_TO_NEAREST, -0x1p+0, -1, 0)
+T(ROUND_TO_NEAREST, 0x1.0001p+0, 1, INEXACT)
+T(ROUND_TO_NEAREST, -0x1.0001p+0, -1, INEXACT)
+T(ROUND_TO_NEAREST, 0x1.ffffp-1, 1, INEXACT)
+T(ROUND_TO_NEAREST, -0x1.ffffp-1, -1, INEXACT)
+T(ROUND_TO_NEAREST, 0x1p-100, 0, INEXACT)
+T(ROUND_TO_NEAREST, -0x1p-100, 0, INEXACT)
+// Return value is unspecified.
 #if INVALID
-T(ROUND_TO_NEAREST,             NAN,           0, INVALID)
-T(ROUND_TO_NEAREST,             INF,           0, INVALID)
-T(ROUND_TO_NEAREST,            -INF,           0, INVALID)
-T(ROUND_TO_NEAREST,        0x1p+100,           0, INVALID)
-T(ROUND_TO_NEAREST,       -0x1p+100,           0, INVALID)
+T(ROUND_TO_NEAREST, NAN, 0, INVALID)
+T(ROUND_TO_NEAREST, INF, 0, INVALID)
+T(ROUND_TO_NEAREST, -INF, 0, INVALID)
+T(ROUND_TO_NEAREST, 0x1p+100, 0, INVALID)
+T(ROUND_TO_NEAREST, -0x1p+100, 0, INVALID)
 #endif
 
 #endif // SPECIAL_LROUNDF_H_H

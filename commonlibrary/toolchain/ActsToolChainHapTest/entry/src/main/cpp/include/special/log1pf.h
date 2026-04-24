@@ -16,15 +16,14 @@
 #ifndef SPECIAL_LOG1PF_H_H
 #define SPECIAL_LOG1PF_H_H
 
-T(ROUND_TO_NEAREST,          0x0p+0,          0x0p+0,          0x0p+0, 0)
-T(ROUND_TO_NEAREST,         -0x0p+0,         -0x0p+0,          0x0p+0, 0)
-T(ROUND_TO_NEAREST,       -0x1p-100,       -0x1p-100,         0x1p-78, INEXACT)
-T(ROUND_TO_NEAREST,          0x1p+0,    0x1.62e43p-1,    0x1.05c61p-5, INEXACT)
-T(ROUND_TO_NEAREST,         -0x1p+0,            -INF,          0x0p+0, DIVBYZERO)
-T(ROUND_TO_NEAREST,             INF,             INF,          0x0p+0, 0)
-T(ROUND_TO_NEAREST,            -INF,             NAN,          0x0p+0, INVALID)
-T(ROUND_TO_NEAREST,             NAN,             NAN,          0x0p+0, 0)
-T(ROUND_TO_NEAREST,-0x1.fffffcp-127,-0x1.fffffcp-127,        0x1p-104, INEXACT|UNDERFLOW)
+T(ROUND_TO_NEAREST, 0x0p+0, 0x0p+0, 0x0p+0, 0)
+T(ROUND_TO_NEAREST, -0x0p+0, -0x0p+0, 0x0p+0, 0)
+T(ROUND_TO_NEAREST, -0x1p-100, -0x1p-100, 0x1p-78, INEXACT)
+T(ROUND_TO_NEAREST, 0x1p+0, 0x1.62e43p-1, 0x1.05c61p-5, INEXACT)
+T(ROUND_TO_NEAREST, -0x1p+0, -INF, 0x0p+0, DIVBYZERO)
+T(ROUND_TO_NEAREST, INF, INF, 0x0p+0, 0)
+T(ROUND_TO_NEAREST, -INF, NAN, 0x0p+0, INVALID)
+T(ROUND_TO_NEAREST, NAN, NAN, 0x0p+0, 0)
+T(ROUND_TO_NEAREST, -0x1.fffffcp-127, -0x1.fffffcp-127, 0x1p-104, INEXACT | UNDERFLOW)
 
 #endif // SPECIAL_LOG1PF_H_H
-
