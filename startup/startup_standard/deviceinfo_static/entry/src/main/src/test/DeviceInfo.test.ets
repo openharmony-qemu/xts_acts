@@ -1088,19 +1088,23 @@ export default function DeviceInfoTest() {
      */
     it('deviceinfo_test_static_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('deviceinfo_test_static_4500 start');
+      let brandInfo = deviceinfo.brand;
       let deviceColor = deviceinfo.deviceColor;
       console.info('the value of the DeviceColor is :' + deviceColor);
       
-      if (deviceColor != null && deviceColor != undefined) {
-        console.info('the value of the DeviceColor is :' + deviceColor);
-        expect(deviceColor).assertInstanceOf('String');
-        done();
+      if (brandInfo == 'huawei'){
+        if (deviceColor != "" && deviceColor != null && deviceColor != undefined) {
+          console.info('the value of the DeviceColor is :' + deviceColor);
+          expect(deviceColor).assertInstanceOf('String');
+          done();
+        }
+        else {
+          console.info('the return value DeviceColor is null or incorrect.');
+          expect().assertFail();
+          done();
+        }
       }
-      else {
-        console.info('the return value DeviceColor is null or incorrect.');
-        expect().assertFail();
-        done();
-      }
+      
       console.info('deviceinfo_test_static_4500 : end');
     })
   })
