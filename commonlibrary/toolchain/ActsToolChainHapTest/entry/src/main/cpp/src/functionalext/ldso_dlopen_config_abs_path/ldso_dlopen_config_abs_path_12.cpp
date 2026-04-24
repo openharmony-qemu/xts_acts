@@ -19,7 +19,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static int LdsoDlopenConfigAbsPath12Test_impl(){
+static int LdsoDlopenConfigAbsPath12Test_impl()
+{
     if (!CheckPrerequisites()) {
         printf("CheckPrerequisites failed\n");
         return g_tStatus;
