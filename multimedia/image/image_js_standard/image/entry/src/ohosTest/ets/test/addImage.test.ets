@@ -39,7 +39,6 @@ interface DecodingOptions {
 export default function addImage() {
     describe("addImage", () => {
         const RGBA_8888 = image.PixelMapFormat.RGBA_8888;
-        let incSouce: image.ImageSource;
         beforeAll(async () => {
             console.info("beforeAll case");
         });
@@ -48,13 +47,6 @@ export default function addImage() {
         });
         afterEach(async () => {
             console.info("afterEach case");
-            if (incSouce != undefined) {
-                try {
-                    await incSouce.release();
-                } catch (error) {
-                    console.info("incSouce release faile :" + error);
-                }
-            }
         });
         afterAll(async () => {
             console.info("afterAll case");
@@ -101,6 +93,7 @@ export default function addImage() {
             console.info(`${testNum} 0001 ` + testimagebuffer.length);
             let bufferSize = 5000;
             let offset = 0;
+            let incSouce: image.ImageSource;
             if (type == "sourceOpts") {
                 console.info(`${testNum} have sourceopts`);
                 incSouce = image.CreateIncrementalSource(new ArrayBuffer(1), opts);
@@ -133,11 +126,13 @@ export default function addImage() {
                 incSouce.createPixelMap(decodingOptions, (err, pixelmap) => {
                     if (err) {
                         console.info(`${testNum} createPixelMap err: ` + err);
+                        incSouce.release();
                         expect(false).assertTrue();
                         done();
                         return;
                     }
                     console.info(`${testNum} 0004` + pixelmap);
+                    incSouce.release();
                     expect(pixelmap != undefined).assertTrue();
                     pixelmap.release();
                     done();
@@ -153,6 +148,7 @@ export default function addImage() {
             console.info(`${testNum} 0001 ` + testimagebuffer.length);
             let bufferSize = 5000;
             let offset = 0;
+            let incSouce: image.ImageSource;
             if (type == "sourceOpts") {
                 incSouce = image.CreateIncrementalSource(new ArrayBuffer(1), opts);
             } else {
@@ -187,11 +183,13 @@ export default function addImage() {
                 incSouce.createPixelMap(decodingOptions, (err, pixelmap) => {
                     if (err) {
                         console.info(`${testNum} createPixelMap err: ` + err);
+                        incSouce.release();
                         expect(false).assertTrue();
                         done();
                         return;
                     }
                     console.info(`${testNum} 0004` + pixelmap);
+                    incSouce.release();
                     expect(pixelmap != undefined).assertTrue();
                     pixelmap.release();
                     done();
@@ -387,6 +385,7 @@ export default function addImage() {
             let numberY = 4.0;
             let res = false;
             pixelmap.scaleSync(numberX, numberY);
+            await pixelmap.release();
             res = true;
             if (!res) {
                 console.info('SUB_MULTIMEDIA_IMAGE_SCALE_PIXELMAP_SYNC_0100 scale2x1 failed');
@@ -422,6 +421,7 @@ export default function addImage() {
             let numberY = 1.0;
             let res = false;
             pixelmap.scaleSync(numberX, numberY);
+            await pixelmap.release();
             res = true;
             if (!res) {
                 console.info('SUB_MULTIMEDIA_IMAGE_SCALE_PIXELMAP_SYNC_0200 scale2x1 failed');
@@ -455,6 +455,7 @@ export default function addImage() {
             }
             let res = false;
             pixelmap.opacitySync(0.8);
+            await pixelmap.release();
             res = true;
             if (!res) {
                 console.info('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_SYNC_ALPHA_0100 failed');
@@ -478,10 +479,13 @@ export default function addImage() {
             let imageSource = image.createImageSource(imageData);
             if (imageSource != undefined) {
                 let pixelMap = imageSource.createPixelMapSync();
+                await imageSource.release();
                 if (pixelMap != undefined) {
                     let alphaPixelMap = pixelMap.createAlphaPixelmapSync();
+                    await pixelMap.release();
                     if (alphaPixelMap != undefined) {
                         let imageInfo = alphaPixelMap.getImageInfoSync();
+                        await alphaPixelMap.release();
                         expect(imageInfo.pixelFormat == 6).assertTrue();
                         console.info('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_SYNC_0100 success ');
                         done();
@@ -514,10 +518,13 @@ export default function addImage() {
             let imageSource = image.createImageSource(imageData);
             if (imageSource != undefined) {
                 let pixelMap = imageSource.createPixelMapSync();
+                await imageSource.release();
                 if (pixelMap != undefined) {
                     let alphaPixelMap = pixelMap.createAlphaPixelmapSync();
+                    await pixelMap.release();
                     if (alphaPixelMap != undefined) {
                         let imageInfo = alphaPixelMap.getImageInfoSync();
+                        await alphaPixelMap.release();
                         expect(imageInfo.pixelFormat == 6).assertTrue();
                         console.info('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_SYNC_0200 success ');
                         done();
@@ -550,10 +557,13 @@ export default function addImage() {
             let imageSource = image.createImageSource(imageData);
             if (imageSource != undefined) {
                 let pixelMap = imageSource.createPixelMapSync();
+                await imageSource.release();
                 if (pixelMap != undefined) {
                     let alphaPixelMap = pixelMap.createAlphaPixelmapSync();
+                    await pixelMap.release();
                     if (alphaPixelMap != undefined) {
                         let imageInfo = alphaPixelMap.getImageInfoSync();
+                        await alphaPixelMap.release();
                         expect(imageInfo.pixelFormat == 6).assertTrue();
                         console.info('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_SYNC_0300 success ');
                         done();
@@ -586,10 +596,13 @@ export default function addImage() {
             let imageSource = image.createImageSource(imageData);
             if (imageSource != undefined) {
                 let pixelMap = imageSource.createPixelMapSync();
+                await imageSource.release();
                 if (pixelMap != undefined) {
                     let alphaPixelMap = pixelMap.createAlphaPixelmapSync();
+                    await pixelMap.release();
                     if (alphaPixelMap != undefined) {
                         let imageInfo = alphaPixelMap.getImageInfoSync();
+                        await alphaPixelMap.release();
                         expect(imageInfo.pixelFormat == 6).assertTrue();
                         console.info('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_SYNC_0400 success ');
                         done();
@@ -634,6 +647,7 @@ export default function addImage() {
             let numberY = 1.0;
             let res = false;
             pixelmap.translateSync(numberX, numberY);
+            await pixelmap.release();
             res = true;
             if (!res) {
                 console.info('SUB_MULTIMEDIA_IMAGE_TRANSLATE_PIXELMAP_SYNC_0100 failed');
@@ -669,6 +683,7 @@ export default function addImage() {
             let numberY = 3.0;
             let res = false;
             pixelmap.translateSync(numberX, numberY);
+            await pixelmap.release();
             res = true;
             if (!res) {
                 console.info('SUB_MULTIMEDIA_IMAGE_TRANSLATE_PIXELMAP_SYNC_0200 failed');
@@ -702,6 +717,7 @@ export default function addImage() {
             }
             let res = false;
             pixelmap.rotateSync(90.0);
+            await pixelmap.release();
             res = true;
             if (!res) {
                 console.info('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_SYNC_0100 failed');
@@ -735,6 +751,7 @@ export default function addImage() {
             }
             let res = false;
             pixelmap.flipSync(false, true);
+            await pixelmap.release();
             res = true;
             if (!res) {
                 console.info('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_SYNC_0100 failed');
@@ -773,6 +790,7 @@ export default function addImage() {
             }
             let res = false;
             pixelmap.cropSync(region);
+            await pixelmap.release();
             res = true;
             if (!res) {
                 console.info('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_SYNC_0100 failed');
