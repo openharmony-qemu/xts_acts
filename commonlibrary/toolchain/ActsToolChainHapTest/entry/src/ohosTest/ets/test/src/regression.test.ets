@@ -703,5 +703,201 @@ export default function regression_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   execle_env
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_EXECLE_ENV_0100
+     * @tc.desc   libc-test execle-env
+     */
+    it("execle_env", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("execle-env");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   ftello_unflushed_append
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_FTELLO_UNFLUSHED_APPEND_0100
+     * @tc.desc   libc-test ftello-unflushed-append
+     */
+    it("ftello_unflushed_append", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("ftello-unflushed-append");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   malloc_double_free_check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_MALLOC_DOUBLE_FREE_CHECK_0100
+     * @tc.desc   libc-test malloc-double-free-check
+     */
+    it("malloc_double_free_check", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("malloc-double-free-check");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   malloc_encode_pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_MALLOC_ENCODE_POINTER_0100
+     * @tc.desc   libc-test malloc-encode-pointer
+     */
+    it("malloc_encode_pointer", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("malloc-encode-pointer");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   malloc_modify_pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_MALLOC_MODIFY_POINTER_0100
+     * @tc.desc   libc-test malloc-modify-pointer
+     */
+    it("malloc_modify_pointer", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("malloc-modify-pointer");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   malloc_oom
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_MALLOC_OOM_0100
+     * @tc.desc   libc-test malloc-oom
+     */
+    it("malloc_oom", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("malloc-oom");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   malloc_safe_unlink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_MALLOC_SAFE_UNLINK_0100
+     * @tc.desc   libc-test malloc-safe-unlink
+     */
+    it("malloc_safe_unlink", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("malloc-safe-unlink");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   pthread_robust_detach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_ROBUST_DETACH_0100
+     * @tc.desc   libc-test pthread-robust-detach
+     */
+    it("pthread_robust_detach", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread-robust-detach");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   pthread_cond_smasher
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_COND_SMASHER_0100
+     * @tc.desc   libc-test pthread_cond-smasher
+     */
+    it("pthread_cond_smasher", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_cond-smasher");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   pthread_create_oom
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_CREATE_OOM_0100
+     * @tc.desc   libc-test pthread_create-oom
+     */
+    it("pthread_create_oom", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_create-oom");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   pthread_once_deadlock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_ONCE_DEADLOCK_0100
+     * @tc.desc   libc-test pthread_once-deadlock
+     */
+    it("pthread_once_deadlock", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_once-deadlock");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   pthread_rwlock_ebusy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_RWLOCK_EBUSY_0100
+     * @tc.desc   libc-test pthread_rwlock-ebusy
+     */
+    it("pthread_rwlock_ebusy", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_rwlock-ebusy");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   setenv_oom
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_SETENV_OOM_0100
+     * @tc.desc   libc-test setenv-oom
+     */
+    it("setenv_oom", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("setenv-oom");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   tls_get_new_dtv
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_TLS_GET_NEW_DTV_0100
+     * @tc.desc   libc-test tls_get_new-dtv
+     */
+    it("tls_get_new_dtv", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("tls_get_new-dtv");
+      expect(result).assertEqual(0);
+      done();
+    });
+
   });
 }
