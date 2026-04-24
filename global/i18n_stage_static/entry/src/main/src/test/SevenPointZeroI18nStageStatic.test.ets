@@ -1028,5 +1028,149 @@ export default function SevenPointZeroI18nStageStaticTest() {
       }
     })
 
+    /**
+     * @tc.name   i18n_setUnicodeWrappedBidDirection_static_0100
+     * @tc.number SUB_GLOBAL_MIRRORDISPLAY_STATIC_0100
+     * @tc.desc   test setUnicodeWrappedBidDirection with LTR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidDirection_static_0100', Level.LEVEL2, async (): Promise<void> => {
+      let res: string = '知己';
+      let ltr: string = i18n.I18NUtil.setUnicodeWrappedBidDirection(res, 'LTR');
+      let LTR: string = '海内存' + ltr + '，天涯若比邻。';
+      console.log('i18n_setUnicodeWrappedBidDirection_static_0100 value:', LTR);
+      expect(LTR).assertEqual('海内存' + '\u2066' + '知己' + '\u2069' + '，天涯若比邻。');
+    })
+
+    /**
+     * @tc.name   i18n_setUnicodeWrappedBidDirection_static_0200
+     * @tc.number SUB_GLOBAL_MIRRORDISPLAY_STATIC_0200
+     * @tc.desc   test setUnicodeWrappedBidDirection with RTL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidDirection_static_0200', Level.LEVEL2, async (): Promise<void> => {
+      let res: string = '知己';
+      let rtl: string = i18n.I18NUtil.setUnicodeWrappedBidDirection(res, 'RTL');
+      let RTL: string = '海内存' + rtl + '，天涯若比邻。';
+      console.log('i18n_setUnicodeWrappedBidDirection_static_0200 value:', RTL);
+      expect(RTL).assertEqual('海内存' + '\u2067' + '知己' + '\u2069' + '，天涯若比邻。');
+    })
+
+    /**
+     * @tc.name   i18n_setUnicodeWrappedBidDirection_static_0300
+     * @tc.number SUB_GLOBAL_MIRRORDISPLAY_STATIC_0300
+     * @tc.desc   test setUnicodeWrappedBidDirection with RTL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidDirection_static_0300', Level.LEVEL2, async (): Promise<void> => {
+      let res: string = 'AB';
+      let rtl: string = i18n.I18NUtil.setUnicodeWrappedBidDirection(res, 'RTL');
+      let RTL: string = '海内存' + rtl + '，天涯若比邻。';
+      console.log('i18n_setUnicodeWrappedBidDirection_static_0300 value:', RTL);
+      expect(RTL).assertEqual('海内存' + '\u2067' + 'AB' + '\u2069' + '，天涯若比邻。');
+    })
+
+    /**
+     * @tc.name   i18n_setUnicodeWrappedBidDirection_static_0400
+     * @tc.number SUB_GLOBAL_MIRRORDISPLAY_STATIC_0400
+     * @tc.desc   test setUnicodeWrappedBidDirection with RTL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidDirection_static_0400', Level.LEVEL2, async (): Promise<void> => {
+      let res: string = '0 1 2 3';
+      let rtl: string = i18n.I18NUtil.setUnicodeWrappedBidDirection(res, 'RTL');
+      let RTL: string = '海内存' + rtl + '，天涯若比邻。';
+      console.log('i18n_setUnicodeWrappedBidDirection_static_0400 value:', RTL);
+      expect(RTL).assertEqual('海内存' + '\u2067' + '0 1 2 3' + '\u2069' + '，天涯若比邻。');
+    })
+
+    /**
+     * @tc.name   i18n_setUnicodeWrappedBidDirection_static_0500
+     * @tc.number SUB_GLOBAL_MIRRORDISPLAY_STATIC_0500
+     * @tc.desc   test setUnicodeWrappedBidDirection with RTL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidDirection_static_0500', Level.LEVEL2, async (): Promise<void> => {
+      let res: string = 'تفاحة';
+      let ltr: string = i18n.I18NUtil.setUnicodeWrappedBidDirection(res, 'LTR');
+      let LTR: string = 'Apple is a fruit, AR name is ' + ltr + ', is very delicious.';
+      console.log('i18n_setUnicodeWrappedBidDirection_static_0500 value:', LTR);
+      expect(LTR).assertEqual('Apple is a fruit, AR name is ' + '\u2066' + 'تفاحة' + '\u2069' + ', is very delicious.');
+    })
+
+    /**
+     * @tc.name   i18n_setUnicodeWrappedBidDirection_static_0600
+     * @tc.number SUB_GLOBAL_MIRRORDISPLAY_STATIC_0600
+     * @tc.desc   test setUnicodeWrappedBidDirection with RTL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidDirection_static_0600', Level.LEVEL2, async (): Promise<void> => {
+      let res: string = 'تفاحة';
+      let rtl: string = i18n.I18NUtil.setUnicodeWrappedBidDirection(res, 'RTL');
+      let RTL: string = 'Apple is a fruit, AR name is ' + rtl + ', is very delicious.';
+      console.log('i18n_setUnicodeWrappedBidDirection_static_0600 value:', RTL);
+      expect(RTL).assertEqual('Apple is a fruit, AR name is ' + '\u2067' + 'تفاحة' + '\u2069' + ', is very delicious.');
+    })
+
+    /**
+     * @tc.name   i18n_setUnicodeWrappedBidDirection_static_0700
+     * @tc.number SUB_GLOBAL_MIRRORDISPLAY_STATIC_0700
+     * @tc.desc   test setUnicodeWrappedBidDirection with RTL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidDirection_static_0700', Level.LEVEL2, async (): Promise<void> => {
+      let res: string = 'تفاحة';
+      let ltr: string = i18n.I18NUtil.setUnicodeWrappedBidDirection(res, 'LTR');
+      let LTR: string = 'الرقم' + ':' + ltr + ',' + '.الرقم';
+      console.log('i18n_setUnicodeWrappedBidDirection_static_0700 value:', LTR);
+      expect(LTR).assertEqual('الرقم' +':'+ '\u2066' + 'تفاحة' + '\u2069' + ',' + '.الرقم');
+    })
+
+    /**
+     * @tc.name   i18n_setUnicodeWrappedBidDirection_static_0800
+     * @tc.number SUB_GLOBAL_MIRRORDISPLAY_STATIC_0800
+     * @tc.desc   test setUnicodeWrappedBidDirection with RTL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidDirection_static_0800', Level.LEVEL2, async (): Promise<void> => {
+      let res: string = 'تفاحة';
+      let rtl: string = i18n.I18NUtil.setUnicodeWrappedBidDirection(res, 'RTL');
+      let RTL: string = 'الرقم' + ':' + rtl + ',' + '.الرقم';
+      console.log('i18n_setUnicodeWrappedBidDirection_static_0800 value:', RTL);
+      expect(RTL).assertEqual('الرقم' +':'+ '\u2067' + 'تفاحة' + '\u2069' + ',' + '.الرقم');
+    })
+
+    /**
+     * @tc.name   i18n_setUnicodeWrappedBidDirection_static_0900
+     * @tc.number SUB_GLOBAL_MIRRORDISPLAY_STATIC_0900
+     * @tc.desc   test setUnicodeWrappedBidDirection with ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidDirection_static_0900', Level.LEVEL2, async (): Promise<void> => {
+      let res: string = '';
+      let ltr: string = i18n.I18NUtil.setUnicodeWrappedBidDirection(res, 'LTR');
+      let LTR: string = '海内存' + ltr + '，天涯若比邻。';
+      console.log('i18n_setUnicodeWrappedBidDirection_static_0900 value:', LTR);
+      expect(LTR).assertEqual('海内存' + '\u2066' + '\u2069' + '，天涯若比邻。');
+    })
+
   })
 }
