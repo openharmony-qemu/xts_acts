@@ -9743,6 +9743,160 @@ static napi_value AudioSessionManager_SetBehavior_004(napi_env env, napi_callbac
     LOG("AudioSessionManager_SetBehavior_004 fail, result is: %{public}d", result);
     return res;
 }
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioCapturer_Start(audioCapturer);
+    OH_AudioStream_Result result = OH_AudioCapturer_SetMuteHint(audioCapturer, true);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+        if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0100 fail, result is: %{public}d", result);
+    return res;
+}
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0200(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioCapturer_Start(audioCapturer);
+    OH_AudioStream_Result result = OH_AudioCapturer_SetMuteHint(audioCapturer, false);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+        if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0200 fail, result is: %{public}d", result);
+    return res;
+}
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0300(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioCapturer_Start(audioCapturer);
+    OH_AudioStream_Result result = OH_AudioCapturer_SetMuteHint(nullptr, true);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+        if (result == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0300 fail, result is: %{public}d", result);
+    return res;
+}
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0400(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioStream_Result result = OH_AudioCapturer_SetMuteHint(audioCapturer, true);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+        if (result == AUDIOSTREAM_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0400 fail, result is: %{public}d", result);
+    return res;
+}
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSessionManager *audioManager = nullptr;
+    OH_AudioManager_GetAudioSessionManager(&audioManager);
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioCapturer_Start(audioCapturer);
+    OH_AudioCommon_Result result = OH_AudioSessionManager_SetCaptureMuteHint(audioManager, true);
+    OH_AudioSessionManager_DeactivateAudioSession(audioManager);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+        if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0100 fail, result is: %{public}d", result);
+    return res;
+}
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0200(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSessionManager *audioManager = nullptr;
+    OH_AudioManager_GetAudioSessionManager(&audioManager);
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioCapturer_Start(audioCapturer);
+    OH_AudioCommon_Result result = OH_AudioSessionManager_SetCaptureMuteHint(audioManager, false);
+    OH_AudioSessionManager_DeactivateAudioSession(audioManager);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+        if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0200 fail, result is: %{public}d", result);
+    return res;
+}
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0300(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSessionManager *audioManager = nullptr;
+    OH_AudioManager_GetAudioSessionManager(&audioManager);
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioCapturer_Start(audioCapturer);
+    OH_AudioCommon_Result result = OH_AudioSessionManager_SetCaptureMuteHint(nullptr, true);
+    OH_AudioSessionManager_DeactivateAudioSession(audioManager);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+        if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0300 fail, result is: %{public}d", result);
+    return res;
+}
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0400(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSessionManager *audioManager = nullptr;
+    OH_AudioManager_GetAudioSessionManager(&audioManager);
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioCommon_Result result = OH_AudioSessionManager_SetCaptureMuteHint(audioManager, true);
+    OH_AudioSessionManager_DeactivateAudioSession(audioManager);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+        if (result == AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0400 fail, result is: %{public}d", result);
+    return res;
+}
 
 static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERENUM_0300(napi_env env, napi_callback_info info)
 {
@@ -9905,6 +10059,22 @@ static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTUREVOICEREAPTED_0100(napi_env en
 
 EXTERN_C_START
 napi_property_descriptor desc1[] = {
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+ 	{"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0200, nullptr, nullptr, nullptr, napi_default, nullptr},
+ 	{"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0300", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0300, nullptr, nullptr, nullptr, napi_default, nullptr},
+ 	{"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0400", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0400, nullptr, nullptr, nullptr, napi_default, nullptr},
+ 	{"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+ 	{"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0200, nullptr, nullptr, nullptr, napi_default, nullptr},
+ 	{"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0300", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0300, nullptr, nullptr, nullptr, napi_default, nullptr},
+ 	{"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0400", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0400, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"AudioSuiteRendererGetLatency_0100", nullptr, AudioSuiteRendererGetLatency_0100,
     nullptr, nullptr, nullptr, napi_default, nullptr},
     {"AudioSuiteRendererGetLatency_0200", nullptr, AudioSuiteRendererGetLatency_0200,
