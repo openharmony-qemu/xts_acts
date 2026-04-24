@@ -15,9 +15,11 @@
 import AreaChangeErrorCodeTest from './onAreaChange/AreaChangeErrorCodeTest.test'
 import RegisterCommonAreaApproximateChangeEventTest from './onAreaChange/RegisterCommonAreaApproximateChangeEventTest.test'
 import UnregisterCommonAreaApproximateChangeEventTest from './onAreaChange/UnregisterCommonAreaApproximateChangeEventTest.test'
+import OrphanCharOptimizationTest from './orphanCharOptimization/orphanCharOptimizationTest.test'
 
 export default function testsuite() {
   RegisterCommonAreaApproximateChangeEventTest();
   UnregisterCommonAreaApproximateChangeEventTest();
   AreaChangeErrorCodeTest();
+  OrphanCharOptimizationTest();
 }
