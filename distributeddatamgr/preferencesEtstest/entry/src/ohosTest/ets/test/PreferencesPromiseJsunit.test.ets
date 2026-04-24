@@ -623,7 +623,7 @@ export default function preferencesPromiseTest(){
 
         /**
          * @tc.name   testPreferencesGetpreferencesMaxValuePromiseTest_0100
-         * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_2600
+         * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_4000
          * @tc.desc   name is max value
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -646,7 +646,7 @@ export default function preferencesPromiseTest(){
 
         /**
          * @tc.name   testPreferencesGetpreferencesMaxValuePromiseTest_0200
-         * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_2700
+         * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_4100
          * @tc.desc   name is max value
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -860,7 +860,7 @@ export default function preferencesPromiseTest(){
           })
 
         /**
-         * @tc.name   testPreferencesDeletePreferencesMaxValueCallBackErrTest_0100
+         * @tc.name   testPreferencesDeletePreferencesMaxValueCallBackTest_0100
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_3600
          * @tc.desc   name is max value
          * @tc.type   FUNCTION
@@ -868,7 +868,7 @@ export default function preferencesPromiseTest(){
          * @tc.level  LEVEL2
          */
         
-        it("testPreferencesDeletePreferencesMaxValueCallBackErrTest_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        it("testPreferencesDeletePreferencesMaxValueCallBackTest_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             try {
               console.info( TAG + "mPreferences.dir length is " + context.preferencesDir.length);
               let NAME_MAX1 = 'a'.repeat(4096-context.preferencesDir.length-1);
