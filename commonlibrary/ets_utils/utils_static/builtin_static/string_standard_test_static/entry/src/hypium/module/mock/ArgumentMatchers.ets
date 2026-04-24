@@ -20,9 +20,9 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export class MatcherInfo {
-  type_: string;
-  value: Object;
-  needMatch: boolean;
+  public type_: string;
+  public value: Object;
+  public needMatch: boolean;
 
   constructor(type_: string, value: Object, needMatch: boolean) {
     this.type_ = type_;
@@ -171,7 +171,11 @@ export class ArgumentMatchers {
       let needMatch = (stubSetKey as MatcherInfo).needMatch !== false;
       let isContained = (arg as string).includes ((stubSetKey as MatcherInfo).value as string);
       return isContained === needMatch
-    } else if (stubSetKey instanceof MatcherInfo && (stubSetKey as MatcherInfo).type_ === ArgumentMatchers.CONTAIN_SUBARRAY && Array.isArray(arg)) {
+    } else if (
+      stubSetKey instanceof MatcherInfo &&
+      (stubSetKey as MatcherInfo).type_ === ArgumentMatchers.CONTAIN_SUBARRAY &&
+      Array.isArray(arg)
+    ) {
       let needMatch = (stubSetKey as MatcherInfo).needMatch !== false;
       let isContained = false;
       let containedValue: Object[] = (stubSetKey as MatcherInfo).value as Object[];

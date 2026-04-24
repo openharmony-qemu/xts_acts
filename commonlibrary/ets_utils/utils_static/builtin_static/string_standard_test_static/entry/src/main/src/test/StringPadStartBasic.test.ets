@@ -853,7 +853,7 @@ export default function StringPadStartBasicTest(): void {
 
     /**
      * @tc.name   StringPadStart_UTF16Length_001
-     * @tc.number SUB_BUILTINS_STRING_PADSTART_UTF16_0200
+     * @tc.number SUB_BUILTINS_STRING_PADSTART_ENCUNIT_0300
      * @tc.desc   Test padStart() verifies UTF-16 encoding unit length calculation
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2340,7 +2340,7 @@ export default function StringPadStartBasicTest(): void {
 
     /**
      * @tc.name   StringPadStart_UTF16LengthCalc_001
-     * @tc.number SUB_BUILTINS_STRING_PADSTART_UTF16LEN_0200
+     * @tc.number SUB_BUILTINS_STRING_PADSTART_ENCCALC_0400
      * @tc.desc   Test padStart() uses UTF-16 encoding unit length
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2796,7 +2796,7 @@ export default function StringPadStartBasicTest(): void {
 
     /**
      * @tc.name   StringPadStart_UTF16Emoji_001
-     * @tc.number SUB_BUILTINS_STRING_PADSTART_UTF16EMOJI_0200
+     * @tc.number SUB_BUILTINS_STRING_PADSTART_SURPAIR_0500
      * @tc.desc   Test padStart() verifies emoji is 2 UTF-16 units
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
