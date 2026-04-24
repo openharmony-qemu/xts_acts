@@ -161,3 +161,7 @@ export const GridEmptyTest_001: () => number;
 export const GridEmptyTest_002: () => number;
 export const GridEmptyTest_003: () => number;
 export const GridEmptyTest_004: () => number;
+export const WaterFlowEmptyTest_001: () => number;
+export const WaterFlowEmptyTest_002: () => number;
+export const WaterFlowEmptyTest_003: () => number;
+export const WaterFlowEmptyTest_004: () => number;
