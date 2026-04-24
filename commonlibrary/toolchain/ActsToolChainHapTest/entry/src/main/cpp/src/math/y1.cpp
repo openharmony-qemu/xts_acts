@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-#define _XOPEN_SOURCE 700
 #include <stdint.h>
 #include <stdio.h>
 #include "mtest.h"
@@ -24,14 +23,15 @@ static struct DD t[] = {
 
 };
 
-static int Y1Test_impl(void){
-    #pragma STDC FENV_ACCESS ON
+static int Y1Test_impl(void)
+{
+#pragma STDC FENV_ACCESS ON
     double y;
     float d;
     int e, i, err = 0;
-    struct DD *p;
+    struct DD* p;
 
-    for (i = 0; i < sizeof t/sizeof *t; i++) {
+    for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
 
         if (p->r < 0)
@@ -39,12 +39,12 @@ static int Y1Test_impl(void){
         fesetround(p->r);
         feclearexcept(FE_ALL_EXCEPT);
         y = y1(p->x);
-        e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
+        e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
 
 #ifndef __aarch64__
         if (!Checkexcept(e, p->e, p->r)) {
-            printf("%s:%d: bad fp exception: %s y1(%a)=%a, want %s",
-                p->file, p->line, Rstr(p->r), p->x, p->y, Estr(p->e));
+            printf(
+                "%s:%d: bad fp exception: %s y1(%a)=%a, want %s", p->file, p->line, Rstr(p->r), p->x, p->y, Estr(p->e));
             printf(" got %s\n", Estr(e));
             err++;
         }
@@ -52,7 +52,15 @@ static int Y1Test_impl(void){
         d = Ulperr(y, p->y, p->dy);
         if ((!(p->x < 0) && !Checkulp(d, p->r)) || (p->x < 0 && !isnan(y) && y != -INF)) {
             printf("%s:%d: %s y1(%a) want %a got %a ulperr %.3f = %a + %a\n",
-                p->file, p->line, Rstr(p->r), p->x, p->y, y, d, d-p->dy, p->dy);
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->y,
+                   y,
+                   d,
+                   d - p->dy,
+                   p->dy);
             err++;
         }
     }

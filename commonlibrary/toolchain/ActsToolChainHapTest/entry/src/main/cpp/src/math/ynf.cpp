@@ -13,8 +13,6 @@
  * limitations under the License.
  */
 
-#define _DEFAULT_SOURCE 1
-#define _BSD_SOURCE 1
 #include <stdint.h>
 #include <stdio.h>
 #include "mtest.h"
@@ -24,14 +22,15 @@ static struct FiF t[] = {
 #include "../../include/special/ynf.h"
 };
 
-static int YnfTest_impl(void){
-    #pragma STDC FENV_ACCESS ON
+static int YnfTest_impl(void)
+{
+#pragma STDC FENV_ACCESS ON
     double y;
     float d;
     int e, i, bad, err = 0;
-    struct FiF *p;
+    struct FiF* p;
 
-    for (i = 0; i < sizeof t/sizeof *t; i++) {
+    for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
 
         if (p->r < 0)
@@ -39,12 +38,18 @@ static int YnfTest_impl(void){
         fesetround(p->r);
         feclearexcept(FE_ALL_EXCEPT);
         y = ynf(p->i, p->x);
-        e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
+        e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
 
 #ifndef __aarch64__
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s ynf(%lld, %a)=%a, want %s",
-                p->file, p->line, Rstr(p->r), p->i, p->x, p->y, Estr(p->e));
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->i,
+                   p->x,
+                   p->y,
+                   Estr(p->e));
             printf(" got %s\n", Estr(e));
             err++;
         }
@@ -57,7 +62,16 @@ static int YnfTest_impl(void){
             else
                 err++;
             printf("%s:%d: %s ynf(%lld, %a) want %a got %a, ulperr %.3f = %a + %a\n",
-                p->file, p->line, Rstr(p->r), p->i, p->x, p->y, y, d, d-p->dy, p->dy);
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->i,
+                   p->x,
+                   p->y,
+                   y,
+                   d,
+                   d - p->dy,
+                   p->dy);
         }
     }
     return !!err;
