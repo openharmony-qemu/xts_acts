@@ -29,6 +29,7 @@ const KEY_TEST_BOOL_ARRAY_ELEMENT = 'key_test_bool_array';
 const KEY_TEST_BIGINT = 'key_test_bigint';
 const NAME_MAX = 'a'.repeat(255);
 const NAME_MAX1 = 'a'.repeat(256);
+const TAG = "[PREFERENCES_JSUNIT_TEST]";
 let mPreferences;
 
 export default function preferencesPromiseTest(){
@@ -634,7 +635,7 @@ export default function preferencesPromiseTest(){
               let mPreferences = await dataPreferences.getPreferences(context, NAME_MAX);
               console.info( TAG + "mPreferences is " + mPreferences);
               mPreferences.put(KEY_TEST_STRING_ELEMENT, '333333');
-              let ret = await mPreferences.get(key, 'default');
+              let ret = await mPreferences.get(KEY_TEST_STRING_ELEMENT, 'default');
               expect(ret).assertEqual('333333');
               done();
             } catch (err) {
