@@ -97,7 +97,7 @@ export default function BuiltinsArrayLastIndexOfTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayLastIndexOfTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(42);
+      const arr = Array.create<number>(42, 0);
       const result = arr.lastIndexOf(42);
 
       expect(result).assertEqual(-1);
@@ -112,7 +112,7 @@ export default function BuiltinsArrayLastIndexOfTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayLastIndexOfTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(42);
+      const arr = Array.create<number>(42, 0);
       const result = arr.lastIndexOf(100);
 
       expect(result).assertEqual(-1);
@@ -257,7 +257,7 @@ export default function BuiltinsArrayLastIndexOfTest() {
      */
     it('builtinsArrayLastIndexOfTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const size = 1000;
-      const arr = new Array<number>(size);
+      const arr = Array.create<number>(size, 0);
       for (let i = 0; i < size; i++) {
         arr[i] = i % 100;
       }
@@ -440,7 +440,7 @@ export default function BuiltinsArrayLastIndexOfTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayLastIndexOfTest2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(42);
+      const arr = Array.create<number>(42, NaN);
       const result1 = arr.lastIndexOf(42, 0);
       expect(result1).assertEqual(-1);
 

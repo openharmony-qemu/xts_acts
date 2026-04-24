@@ -47,7 +47,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayCopyWithinTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -73,7 +73,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCopyWithinTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -95,7 +95,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCopyWithinTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -121,7 +121,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCopyWithinTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -143,7 +143,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayCopyWithinTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -165,7 +165,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayCopyWithinTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -187,7 +187,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCopyWithinTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(0);
+      const arr = new Array<number>();
       
       const result = arr.copyWithin(0);
       
@@ -204,7 +204,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCopyWithinTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, NaN);
       arr[0] = 42;
       
       const result = arr.copyWithin(0);
@@ -222,7 +222,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCopyWithinTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -248,7 +248,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCopyWithinTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -274,7 +274,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCopyWithinTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -300,7 +300,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCopyWithinTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -326,7 +326,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCopyWithinTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -348,7 +348,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCopyWithinTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -370,7 +370,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayCopyWithinTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -392,7 +392,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayCopyWithinTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -414,7 +414,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCopyWithinTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(0);
+      const arr = new Array<number>();
       
       const result = arr.copyWithin(0, 0);
       
@@ -431,7 +431,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCopyWithinTest1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, NaN);
       arr[0] = 42;
       
       const result = arr.copyWithin(0, 0);
@@ -449,7 +449,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCopyWithinTest1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -475,7 +475,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCopyWithinTest2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -501,7 +501,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCopyWithinTest2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -523,7 +523,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCopyWithinTest2200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -545,7 +545,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCopyWithinTest2300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -567,7 +567,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayCopyWithinTest2400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -589,7 +589,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayCopyWithinTest2500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -611,7 +611,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCopyWithinTest2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(0);
+      const arr = new Array<number>();
       
       const result = arr.copyWithin(0, 0, 0);
       
@@ -628,7 +628,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCopyWithinTest2700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, NaN);
       arr[0] = 42;
       
       const result = arr.copyWithin(0, 0, 1);
@@ -646,7 +646,7 @@ export default function BuiltinsArrayCopyWithinTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayCopyWithinTest2800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;

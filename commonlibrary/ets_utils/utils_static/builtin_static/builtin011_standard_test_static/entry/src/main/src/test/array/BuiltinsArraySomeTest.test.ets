@@ -52,7 +52,7 @@ export default function BuiltinsArraySomeTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArraySomeTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -75,7 +75,7 @@ export default function BuiltinsArraySomeTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySomeTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -98,7 +98,7 @@ export default function BuiltinsArraySomeTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySomeTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(0);
+      const arr = new Array<number>();
       
       const result = arr.some((value: number, index: int, array: Array<number>) => {
         return value > 0;
@@ -116,7 +116,7 @@ export default function BuiltinsArraySomeTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySomeTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, NaN);
       arr[0] = 42;
       
       const result = arr.some((value: number, index: int, array: Array<number>) => {
@@ -135,7 +135,7 @@ export default function BuiltinsArraySomeTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySomeTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -169,10 +169,10 @@ export default function BuiltinsArraySomeTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySomeTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Person>(3);
-      arr[0] = { name: "Alice", age: 25 };
-      arr[1] = { name: "Bob", age: 30 };
-      arr[2] = { name: "Charlie", age: 35 };
+      const arr = new Array<Person>();
+      arr.push({ name: "Alice", age: 25 } as Person);
+      arr.push({ name: "Bob", age: 30 } as Person);
+      arr.push({ name: "Charlie", age: 35 } as Person);
       
       const result = arr.some((value: Person, index: int, array: Array<Person>) => {
         return value.age > 30;
@@ -190,7 +190,7 @@ export default function BuiltinsArraySomeTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySomeTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 10;
       arr[1] = 20;
       arr[2] = 30;
@@ -211,7 +211,7 @@ export default function BuiltinsArraySomeTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySomeTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -240,7 +240,7 @@ export default function BuiltinsArraySomeTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySomeTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 10;
       arr[1] = 2;
       arr[2] = 3;
@@ -267,7 +267,7 @@ export default function BuiltinsArraySomeTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySomeTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -294,7 +294,7 @@ export default function BuiltinsArraySomeTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArraySomeTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -321,7 +321,7 @@ export default function BuiltinsArraySomeTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArraySomeTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;

@@ -52,7 +52,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayToSplicedTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -82,7 +82,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -103,7 +103,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -128,7 +128,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -152,7 +152,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -176,7 +176,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayToSplicedTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -197,7 +197,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayToSplicedTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -221,7 +221,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(0);
+      const arr = new Array<number>();
       
       const result = arr.toSpliced(0);
       
@@ -239,7 +239,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, NaN);
       arr[0] = 42;
       
       const result = arr.toSpliced(0);
@@ -259,10 +259,10 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Person>(3);
-      arr[0] = { name: "Alice", age: 25 };
-      arr[1] = { name: "Bob", age: 30 };
-      arr[2] = { name: "Charlie", age: 35 };
+      const arr = new Array<Person>();
+      arr.push({ name: "Alice", age: 25 } as Person);
+      arr.push({ name: "Bob", age: 30 } as Person);
+      arr.push({ name: "Charlie", age: 35 } as Person);
       
       const result = arr.toSpliced(1);
       
@@ -280,7 +280,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayToSplicedTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -313,7 +313,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -341,7 +341,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -367,7 +367,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -391,7 +391,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -417,7 +417,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -442,7 +442,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayToSplicedTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -466,7 +466,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayToSplicedTest1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -491,10 +491,10 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Person>(3);
-      arr[0] = { name: "Alice", age: 25 };
-      arr[1] = { name: "Bob", age: 30 };
-      arr[2] = { name: "Charlie", age: 35 };
+      const arr = new Array<Person>();
+      arr.push({ name: "Alice", age: 25 } as Person);
+      arr.push({ name: "Bob", age: 30 } as Person);
+      arr.push({ name: "Charlie", age: 35 } as Person);
       
       const newPerson: Person = { name: "David", age: 40 };
       const result = arr.toSpliced(1, 1, newPerson);
@@ -516,7 +516,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(0);
+      const arr = new Array<number>();
       
       const result = arr.toSpliced(0, 0, 1, 2, 3);
       
@@ -537,7 +537,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayToSplicedTest2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -558,7 +558,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest2200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -583,7 +583,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest2300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -608,7 +608,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest2400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -634,7 +634,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest2500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -658,7 +658,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -682,7 +682,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest2700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -706,7 +706,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest2800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -728,7 +728,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest2900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -752,7 +752,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayToSplicedTest3000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -774,7 +774,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayToSplicedTest3100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -798,7 +798,7 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest3200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(0);
+      const arr = new Array<number>();
       
       const result = arr.toSpliced(0, 0);
       
@@ -816,10 +816,10 @@ export default function BuiltinsArrayToSplicedTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayToSplicedTest3300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Person>(3);
-      arr[0] = { name: "Alice", age: 25 };
-      arr[1] = { name: "Bob", age: 30 };
-      arr[2] = { name: "Charlie", age: 35 };
+      const arr = new Array<Person>();
+      arr.push({ name: "Alice", age: 25 } as Person);
+      arr.push({ name: "Bob", age: 30 } as Person);
+      arr.push({ name: "Charlie", age: 35 } as Person);
       
       const result = arr.toSpliced(1, 1);
       

@@ -52,7 +52,7 @@ export default function BuiltinsArrayFindIndexTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayFindIndexTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, 0);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -75,7 +75,7 @@ export default function BuiltinsArrayFindIndexTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFindIndexTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, 0);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -96,7 +96,7 @@ export default function BuiltinsArrayFindIndexTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFindIndexTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(0);
+      const arr = new Array<number>();
       
       const result = arr.findIndex((value: number, index: int, array: Array<number>) => {
         return value === 1;
@@ -114,7 +114,7 @@ export default function BuiltinsArrayFindIndexTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFindIndexTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, 0);
       arr[0] = 42;
       
       const result = arr.findIndex((value: number, index: int, array: Array<number>) => {
@@ -133,7 +133,7 @@ export default function BuiltinsArrayFindIndexTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFindIndexTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, 0);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -167,7 +167,7 @@ export default function BuiltinsArrayFindIndexTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFindIndexTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Person>(3);
+      const arr = Array.create<Person>(3, { name: "Alice", age: 25 } as Person);
       arr[0] = { name: "Alice", age: 25 };
       arr[1] = { name: "Bob", age: 30 };
       arr[2] = { name: "Charlie", age: 35 };
@@ -188,7 +188,7 @@ export default function BuiltinsArrayFindIndexTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFindIndexTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, 0);
       arr[0] = 10;
       arr[1] = 20;
       arr[2] = 30;
@@ -211,7 +211,7 @@ export default function BuiltinsArrayFindIndexTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFindIndexTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, 0);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -238,7 +238,7 @@ export default function BuiltinsArrayFindIndexTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFindIndexTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, 0);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -265,7 +265,7 @@ export default function BuiltinsArrayFindIndexTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFindIndexTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, 0);
       arr[0] = 100;
       arr[1] = 2147483647;
       arr[2] = 200;
@@ -286,7 +286,7 @@ export default function BuiltinsArrayFindIndexTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFindIndexTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, 0);
       arr[0] = 100;
       arr[1] = -2147483648;
       arr[2] = 200;
@@ -307,7 +307,7 @@ export default function BuiltinsArrayFindIndexTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFindIndexTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, 0);
       arr[0] = -5;
       arr[1] = -10;
       arr[2] = -15;

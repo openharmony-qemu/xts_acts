@@ -62,7 +62,7 @@ export default function BuiltinsArrayFilterTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayFilterTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, 0);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -85,7 +85,7 @@ export default function BuiltinsArrayFilterTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFilterTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, 0);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -106,7 +106,7 @@ export default function BuiltinsArrayFilterTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFilterTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, 0);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -124,7 +124,7 @@ export default function BuiltinsArrayFilterTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFilterTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(4);
+      const arr = Array.create<number>(4, 0);
       arr[0] = 10;
       arr[1] = 20;
       arr[2] = 30;
@@ -145,7 +145,7 @@ export default function BuiltinsArrayFilterTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFilterTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, 0);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -166,7 +166,7 @@ export default function BuiltinsArrayFilterTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFilterTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<string>(4);
+      const arr = Array.create<string>(4, '');
       arr[0] = 'apple';
       arr[1] = 'banana';
       arr[2] = 'cherry';
@@ -186,7 +186,7 @@ export default function BuiltinsArrayFilterTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFilterTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, 0);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -205,7 +205,7 @@ export default function BuiltinsArrayFilterTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayFilterTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, 0);
       arr[0] = 10;
       arr[1] = 20;
       arr[2] = 30;
@@ -230,7 +230,7 @@ export default function BuiltinsArrayFilterTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayFilterTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(10);
+      const arr = Array.create<number>(10, 0);
       for (let i = 0; i < 10; i++) {
         arr[i] = i + 1;
       }
@@ -256,7 +256,7 @@ export default function BuiltinsArrayFilterTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayFilterTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, 0);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -279,7 +279,7 @@ export default function BuiltinsArrayFilterTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayFilterTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, 0);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -306,7 +306,7 @@ export default function BuiltinsArrayFilterTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayFilterTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(4);
+      const arr = Array.create<number>(4, 0);
       arr[0] = 10;
       arr[1] = 20;
       arr[2] = 30;

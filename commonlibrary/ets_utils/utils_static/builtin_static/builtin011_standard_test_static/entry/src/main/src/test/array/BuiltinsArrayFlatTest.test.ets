@@ -47,9 +47,9 @@ export default function BuiltinsArrayFlatTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayFlatTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<Array<number> | number>(3);
+      const arr = Array.create<Array<number> | number>(3, NaN);
       arr[0] = 1;
-      const innerArr1 = new Array<number>(2);
+      const innerArr1 = Array.create<number>(2, NaN);
       innerArr1[0] = 2;
       innerArr1[1] = 3;
       arr[1] = innerArr1;
@@ -75,9 +75,9 @@ export default function BuiltinsArrayFlatTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFlatTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Array<number> | number>(3);
+      const arr = Array.create<Array<number> | number>(3, NaN);
       arr[0] = 1;
-      const innerArr1 = new Array<number>(2);
+      const innerArr1 = Array.create<number>(2, NaN);
       innerArr1[0] = 2;
       innerArr1[1] = 3;
       arr[1] = innerArr1;
@@ -102,14 +102,14 @@ export default function BuiltinsArrayFlatTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFlatTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Array<Array<number>> | number>(2);
+      const arr = Array.create<Array<Array<number>> | number>(2, NaN);
       arr[0] = 1;
-      const innerArr1 = new Array<Array<number>>(2);
-      const innerInnerArr1 = new Array<number>(2);
+      const innerArr1 = new Array<Array<number>>(2, () => new Array<number>());
+      const innerInnerArr1 = Array.create<number>(2, NaN);
       innerInnerArr1[0] = 2;
       innerInnerArr1[1] = 3;
       innerArr1[0] = innerInnerArr1;
-      const innerInnerArr2 = new Array<number>(2);
+      const innerInnerArr2 = Array.create<number>(2, NaN);
       innerInnerArr2[0] = 4;
       innerInnerArr2[1] = 5;
       innerArr1[1] = innerInnerArr2;
@@ -136,9 +136,9 @@ export default function BuiltinsArrayFlatTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFlatTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Array<number> | number>(3);
+      const arr = Array.create<Array<number> | number>(3, NaN);
       arr[0] = 1;
-      const innerArr1 = new Array<number>(2);
+      const innerArr1 = Array.create<number>(2, NaN);
       innerArr1[0] = 2;
       innerArr1[1] = 3;
       arr[1] = innerArr1;
@@ -163,9 +163,9 @@ export default function BuiltinsArrayFlatTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayFlatTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<Array<number> | number>(3);
+      const arr = Array.create<Array<number> | number>(3, NaN);
       arr[0] = 1;
-      const innerArr1 = new Array<number>(2);
+      const innerArr1 = Array.create<number>(2, NaN);
       innerArr1[0] = 2;
       innerArr1[1] = 3;
       arr[1] = innerArr1;
@@ -190,14 +190,14 @@ export default function BuiltinsArrayFlatTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayFlatTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<Array<Array<number>> | number>(2);
+      const arr = Array.create<Array<Array<number>> | number>(2, NaN);
       arr[0] = 1;
-      const innerArr1 = new Array<Array<number>>(2);
-      const innerInnerArr1 = new Array<number>(2);
+      const innerArr1 = new Array<Array<number>>(2, () => new Array<number>());
+      const innerInnerArr1 = Array.create<number>(2, NaN);
       innerInnerArr1[0] = 2;
       innerInnerArr1[1] = 3;
       innerArr1[0] = innerInnerArr1;
-      const innerInnerArr2 = new Array<number>(2);
+      const innerInnerArr2 = Array.create<number>(2, NaN);
       innerInnerArr2[0] = 4;
       innerInnerArr2[1] = 5;
       innerArr1[1] = innerInnerArr2;
@@ -224,7 +224,7 @@ export default function BuiltinsArrayFlatTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFlatTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Array<number> | number>(0);
+      const arr = new Array<Array<number> | number>();
       
       const result = arr.flat<number>(1);
       
@@ -242,7 +242,7 @@ export default function BuiltinsArrayFlatTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFlatTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -266,15 +266,15 @@ export default function BuiltinsArrayFlatTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFlatTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Array<Array<Array<number>>> | number>(2);
+      const arr = Array.create<Array<Array<Array<number>>> | number>(2, NaN);
       arr[0] = 1;
-      const innerArr1 = new Array<Array<Array<number>>>(1);
-      const innerInnerArr1 = new Array<Array<number>>(1);
-      const innerInnerInnerArr1 = new Array<number>(2);
+      const innerArr1 = new Array<Array<Array<number>>>();
+      const innerInnerArr1 = new Array<Array<number>>();
+      const innerInnerInnerArr1 = Array.create<number>(2, NaN);
       innerInnerInnerArr1[0] = 2;
       innerInnerInnerArr1[1] = 3;
-      innerInnerArr1[0] = innerInnerInnerArr1;
-      innerArr1[0] = innerInnerArr1;
+      innerInnerArr1.push(innerInnerInnerArr1);
+      innerArr1.push(innerInnerArr1);
       arr[1] = innerArr1;
       
       const result = arr.flat<number>(3);
@@ -296,14 +296,14 @@ export default function BuiltinsArrayFlatTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFlatTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Array<Array<number>> | number>(2);
+      const arr = Array.create<Array<Array<number>> | number>(2, NaN);
       arr[0] = 1;
-      const innerArr1 = new Array<Array<number>>(2);
-      const innerInnerArr1 = new Array<number>(2);
+      const innerArr1 = new Array<Array<number>>(2, () => new Array<number>());
+      const innerInnerArr1 = Array.create<number>(2, NaN);
       innerInnerArr1[0] = 2;
       innerInnerArr1[1] = 3;
       innerArr1[0] = innerInnerArr1;
-      const innerInnerArr2 = new Array<number>(2);
+      const innerInnerArr2 = Array.create<number>(2, NaN);
       innerInnerArr2[0] = 4;
       innerInnerArr2[1] = 5;
       innerArr1[1] = innerInnerArr2;
@@ -328,9 +328,9 @@ export default function BuiltinsArrayFlatTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayFlatTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<Array<number> | number>(3);
+      const arr = Array.create<Array<number> | number>(3, NaN);
       arr[0] = 1;
-      const innerArr1 = new Array<number>(2);
+      const innerArr1 = Array.create<number>(2, NaN);
       innerArr1[0] = 2;
       innerArr1[1] = 3;
       arr[1] = innerArr1;
@@ -356,7 +356,7 @@ export default function BuiltinsArrayFlatTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFlatTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Array<number> | number>(0);
+      const arr = new Array<Array<number> | number>();
       
       const result = arr.flat<number>();
       
@@ -374,7 +374,7 @@ export default function BuiltinsArrayFlatTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFlatTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -398,14 +398,14 @@ export default function BuiltinsArrayFlatTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFlatTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Array<Array<number>> | number>(2);
+      const arr = Array.create<Array<Array<number>> | number>(2, NaN);
       arr[0] = 1;
-      const innerArr1 = new Array<Array<number>>(2);
-      const innerInnerArr1 = new Array<number>(2);
+      const innerArr1 = new Array<Array<number>>(2, () => new Array<number>());
+      const innerInnerArr1 = Array.create<number>(2, NaN);
       innerInnerArr1[0] = 2;
       innerInnerArr1[1] = 3;
       innerArr1[0] = innerInnerArr1;
-      const innerInnerArr2 = new Array<number>(2);
+      const innerInnerArr2 = Array.create<number>(2, NaN);
       innerInnerArr2[0] = 4;
       innerInnerArr2[1] = 5;
       innerArr1[1] = innerInnerArr2;
