@@ -33,220 +33,225 @@ const int SERVICE_UNKNOEN = -2;
 const int FAMILY_NOTSUPPORTED = -6;
 const int SOCKTYPE_NOTSUPPORTED = -8;
 
-static inline void init_hint(struct addrinfo* hint)
-{
-    memset(hint, 0, sizeof(*hint));
-}
-
 /**
- * @tc.name      : getaddrinfo_0100
+ * @tc.name      : Getaddrinfo0100
  * @tc.desc      : Each parameter is valid, the ai_flags of hint is AI_PASSIVE, which can resolve the IP
  *                 address of the host name.
  * @tc.level     : Level 0
  */
-void getaddrinfo_0100(void)
+void Getaddrinfo0100(void)
 {
-    struct addrinfo *result, hint;
-    init_hint(&hint);
+    struct addrinfo* result;
+    struct addrinfo hint;
+    InitHint(&hint);
     InitHint(&hint);
     hint.ai_flags = AI_PASSIVE;
     hint.ai_family = AF_UNSPEC;
     int ret = getaddrinfo("127.0.0.1", nullptr, &hint, &result);
-    EXPECT_EQ("getaddrinfo_0100", ret, GETADDRINFO_RESULT);
+    EXPECT_EQ("Getaddrinfo0100", ret, GETADDRINFO_RESULT);
     if (ret == GETADDRINFO_RESULT && result != nullptr) {
-        EXPECT_TRUE("getaddrinfo_0100", result->ai_addr != nullptr);
+        EXPECT_TRUE("Getaddrinfo0100", result->ai_addr != nullptr);
         freeaddrinfo(result);
         result = nullptr;
     }
 }
 
 /**
- * @tc.name      : getaddrinfo_0200
+ * @tc.name      : Getaddrinfo0200
  * @tc.desc      : Each parameter is valid and can resolve the IP address of the host name.
  * @tc.level     : Level 0
  */
-void getaddrinfo_0200(void)
+void Getaddrinfo0200(void)
 {
-    struct addrinfo *result, hint;
-    init_hint(&hint);
+    struct addrinfo* result;
+    struct addrinfo hint;
+    InitHint(&hint);
     InitHint(&hint);
     hint.ai_flags = AI_ALL;
     hint.ai_family = AF_UNSPEC;
     int ret = getaddrinfo("127.0.0.1", nullptr, &hint, &result);
-    EXPECT_EQ("getaddrinfo_0200", ret, GETADDRINFO_RESULT);
+    EXPECT_EQ("Getaddrinfo0200", ret, GETADDRINFO_RESULT);
     if (ret == GETADDRINFO_RESULT && result != nullptr) {
-        EXPECT_TRUE("getaddrinfo_0200", result->ai_addr != nullptr);
+        EXPECT_TRUE("Getaddrinfo0200", result->ai_addr != nullptr);
         freeaddrinfo(result);
         result = nullptr;
     }
 }
 
 /**
- * @tc.name      : getaddrinfo_0300
+ * @tc.name      : Getaddrinfo0300
  * @tc.desc      : Each parameter is valid and can resolve the IP address of the host name
  *                 (hint.ai_flags =AI_NUMERICHOST).
  * @tc.level     : Level 0
  */
-void getaddrinfo_0300(void)
+void Getaddrinfo0300(void)
 {
-    struct addrinfo *result, hint;
-    init_hint(&hint);
+    struct addrinfo* result;
+    struct addrinfo hint;
+    InitHint(&hint);
     InitHint(&hint);
     hint.ai_flags = AI_NUMERICHOST;
     hint.ai_family = AF_INET6;
     char buf[] = "fe80::bed5:4695:6cac:bef8";
     int ret = getaddrinfo(buf, nullptr, &hint, &result);
-    EXPECT_EQ("getaddrinfo_0300", ret, GETADDRINFO_RESULT);
+    EXPECT_EQ("Getaddrinfo0300", ret, GETADDRINFO_RESULT);
     if (ret == GETADDRINFO_RESULT && result != nullptr) {
-        EXPECT_TRUE("getaddrinfo_0300", result->ai_addr != nullptr);
+        EXPECT_TRUE("Getaddrinfo0300", result->ai_addr != nullptr);
         freeaddrinfo(result);
         result = nullptr;
     }
 }
 
 /**
- * @tc.name      : getaddrinfo_0400
+ * @tc.name      : Getaddrinfo0400
  * @tc.desc      : Each parameter is valid and can resolve the IP address of the host name(hint =AI_V4MAPPED).
  * @tc.level     : Level 0
  */
-void getaddrinfo_0400(void)
+void Getaddrinfo0400(void)
 {
-    struct addrinfo *result, hint;
-    init_hint(&hint);
+    struct addrinfo* result;
+    struct addrinfo hint;
+    InitHint(&hint);
     InitHint(&hint);
     hint.ai_flags = AI_V4MAPPED;
     hint.ai_family = AF_INET6;
     int ret = getaddrinfo("127.0.0.1", nullptr, &hint, &result);
-    EXPECT_EQ("getaddrinfo_0400", ret, GETADDRINFO_RESULT);
+    EXPECT_EQ("Getaddrinfo0400", ret, GETADDRINFO_RESULT);
     if (ret == GETADDRINFO_RESULT && result != nullptr) {
-        EXPECT_TRUE("getaddrinfo_0400", result->ai_addr != nullptr);
+        EXPECT_TRUE("Getaddrinfo0400", result->ai_addr != nullptr);
         freeaddrinfo(result);
         result = nullptr;
     }
 }
 
 /**
- * @tc.name      : getaddrinfo_0500
+ * @tc.name      : Getaddrinfo0500
  * @tc.desc      : Each parameter is valid and can resolve the IP address of the host name(hint =AI_V4MAPPED).
  * @tc.level     : Level 0
  */
-void getaddrinfo_0500(void)
+void Getaddrinfo0500(void)
 {
-    struct addrinfo *result, hint;
-    init_hint(&hint);
+    struct addrinfo* result;
+    struct addrinfo hint;
+    InitHint(&hint);
     InitHint(&hint);
     hint.ai_flags = AI_V4MAPPED;
     hint.ai_family = AF_UNSPEC;
     int ret = getaddrinfo("127.0.0.1", nullptr, &hint, &result);
-    EXPECT_EQ("getaddrinfo_0500", ret, GETADDRINFO_RESULT);
+    EXPECT_EQ("Getaddrinfo0500", ret, GETADDRINFO_RESULT);
     if (ret == GETADDRINFO_RESULT && result != nullptr) {
-        EXPECT_TRUE("getaddrinfo_0500", result->ai_addr != nullptr);
+        EXPECT_TRUE("Getaddrinfo0500", result->ai_addr != nullptr);
         freeaddrinfo(result);
         result = nullptr;
     }
 }
 
 /**
- * @tc.name      : getaddrinfo_0600
+ * @tc.name      : Getaddrinfo0600
  * @tc.desc      : Each parameter is valid and can resolve the IP address of
  *                 the host name(hint.ai_flags =AI_ADDRCONFIG).
  * @tc.level     : Level 0
  */
-void getaddrinfo_0600(void)
+void Getaddrinfo0600(void)
 {
-    struct addrinfo *result, hint;
-    init_hint(&hint);
+    struct addrinfo* result;
+    struct addrinfo hint;
+    InitHint(&hint);
     InitHint(&hint);
     hint.ai_flags = AI_ADDRCONFIG;
     hint.ai_family = AF_UNSPEC;
     int ret = getaddrinfo("127.0.0.1", nullptr, &hint, &result);
-    EXPECT_EQ("getaddrinfo_0600", ret, GETADDRINFO_RESULT);
+    EXPECT_EQ("Getaddrinfo0600", ret, GETADDRINFO_RESULT);
     if (ret == GETADDRINFO_RESULT && result != nullptr) {
-        EXPECT_TRUE("getaddrinfo_0600", result->ai_addr != nullptr);
+        EXPECT_TRUE("Getaddrinfo0600", result->ai_addr != nullptr);
         freeaddrinfo(result);
         result = nullptr;
     }
 }
 
 /**
- * @tc.name      : getaddrinfo_0700
+ * @tc.name      : Getaddrinfo0700
  * @tc.desc      : Each parameter is valid and can resolve the IP address
  *                 of the host name(hint.ai_flags =AI_NUMERICSERV).
  * @tc.level     : Level 1
  */
-void getaddrinfo_0700(void)
+void Getaddrinfo0700(void)
 {
-    struct addrinfo *result, hint;
-    init_hint(&hint);
+    struct addrinfo* result;
+    struct addrinfo hint;
+    InitHint(&hint);
     InitHint(&hint);
     hint.ai_flags = AI_NUMERICSERV;
     hint.ai_family = AF_UNSPEC;
     int ret = getaddrinfo("127.0.0.1", nullptr, &hint, &result);
-    EXPECT_EQ("getaddrinfo_0700", ret, GETADDRINFO_RESULT);
+    EXPECT_EQ("Getaddrinfo0700", ret, GETADDRINFO_RESULT);
     if (ret == GETADDRINFO_RESULT && result != nullptr) {
-        EXPECT_TRUE("getaddrinfo_0700", result->ai_addr != nullptr);
+        EXPECT_TRUE("Getaddrinfo0700", result->ai_addr != nullptr);
         freeaddrinfo(result);
         result = nullptr;
     }
 }
 
 /**
- * @tc.name      : getaddrinfo_0800
+ * @tc.name      : Getaddrinfo0800
  * @tc.desc      : Each parameter is valid and can resolve the IP address of the host name(hint =nullptr).
  * @tc.level     : Level 1
  */
-void getaddrinfo_0800(void)
+void Getaddrinfo0800(void)
 {
     struct addrinfo* result;
     int ret = getaddrinfo("127.0.0.1", nullptr, nullptr, &result);
-    EXPECT_EQ("getaddrinfo_0800", ret, GETADDRINFO_RESULT);
-    EXPECT_TRUE("getaddrinfo_0800", result->ai_addr != nullptr);
+    EXPECT_EQ("Getaddrinfo0800", ret, GETADDRINFO_RESULT);
+    EXPECT_TRUE("Getaddrinfo0800", result->ai_addr != nullptr);
     freeaddrinfo(result);
     result = nullptr;
 }
 
 /**
- * @tc.name      : getaddrinfo_0900
+ * @tc.name      : Getaddrinfo0900
  * @tc.desc      : Invalid parameter, Hint’s ai_flags is invalid, can not resolve the IP address of the host name.
  * @tc.level     : Level 2
  */
-void getaddrinfo_0900(void)
+void Getaddrinfo0900(void)
 {
-    struct addrinfo *result, hint;
-    init_hint(&hint);
+    struct addrinfo* result;
+    struct addrinfo hint;
+    InitHint(&hint);
     InitHint(&hint);
     hint.ai_flags = 0x4000;
     hint.ai_family = AF_UNSPEC;
     int ret = getaddrinfo("127.0.0.1", nullptr, &hint, &result);
-    EXPECT_EQ("getaddrinfo_0900", ret, FLAGS_FIELD);
+    EXPECT_EQ("Getaddrinfo0900", ret, FLAGS_FIELD);
 }
 
 /**
- * @tc.name      : getaddrinfo_1000
+ * @tc.name      : Getaddrinfo1000
  * @tc.desc      : Invalid parameter, Hint’s ai_family is invalid, can not resolve the IP address of the host name.
  * @tc.level     : Level 2
  */
-void getaddrinfo_1000(void)
+void Getaddrinfo1000(void)
 {
-    struct addrinfo *result, hint;
-    init_hint(&hint);
+    struct addrinfo* result;
+    struct addrinfo hint;
+    InitHint(&hint);
     InitHint(&hint);
     hint.ai_flags = AI_ALL;
     hint.ai_family = PF_AX25;
     int ret = getaddrinfo("127.0.0.1", nullptr, &hint, &result);
-    EXPECT_EQ("getaddrinfo_1000", ret, FAMILY_NOTSUPPORTED);
+    EXPECT_EQ("Getaddrinfo1000", ret, FAMILY_NOTSUPPORTED);
 }
 
 /**
- * @tc.name      : getaddrinfo_1100
+ * @tc.name      : Getaddrinfo1100
  * @tc.desc      : The parameters are invalid,hint ai_flags is AI_NUMERICHOST,
  *                 host format is incorrect, can not resolve the host name Ip address.
  * @tc.level     : Level 2
  */
-void getaddrinfo_1100(void)
+void Getaddrinfo1100(void)
 {
-    struct addrinfo *result, hint;
-    init_hint(&hint);
+    struct addrinfo* result;
+    struct addrinfo hint;
+    InitHint(&hint);
     InitHint(&hint);
     hint.ai_flags = AI_NUMERICHOST;
     hint.ai_family = AF_INET6;
@@ -258,109 +263,113 @@ void getaddrinfo_1100(void)
     strcat(one, three);
     strcat(one, four);
     int ret = getaddrinfo(one, nullptr, &hint, &result);
-    EXPECT_EQ("getaddrinfo_1100", ret, SERVICE_UNKNOEN);
+    EXPECT_EQ("Getaddrinfo1100", ret, SERVICE_UNKNOEN);
 }
 
 /**
- * @tc.name      : getaddrinfo_1200
+ * @tc.name      : Getaddrinfo1200
  * @tc.desc      : The parameter is invalid, host is nullptr, SERV is nullptr, and the IP address of the
  *                 host name can not be resolved.
  * @tc.level     : Level 2
  */
-void getaddrinfo_1200(void)
+void Getaddrinfo1200(void)
 {
-    struct addrinfo *result, hint;
-    init_hint(&hint);
+    struct addrinfo* result;
+    struct addrinfo hint;
+    InitHint(&hint);
     InitHint(&hint);
     hint.ai_flags = AI_NUMERICHOST;
     hint.ai_family = AF_INET6;
     int ret = getaddrinfo(nullptr, nullptr, &hint, &result);
-    EXPECT_EQ("getaddrinfo_1200", ret, SERVICE_UNKNOEN);
+    EXPECT_EQ("Getaddrinfo1200", ret, SERVICE_UNKNOEN);
 }
 
 /**
- * @tc.name      : getaddrinfo_1300
+ * @tc.name      : Getaddrinfo1300
  * @tc.desc      : The parameter is invalid and the IP address of the host name can not be resolved.
  * @tc.level     : Level 2
  */
-void getaddrinfo_1300(void)
+void Getaddrinfo1300(void)
 {
-    struct addrinfo *result, hint;
-    init_hint(&hint);
+    struct addrinfo* result;
+    struct addrinfo hint;
+    InitHint(&hint);
     InitHint(&hint);
     hint.ai_flags = AI_CANONNAME;
     hint.ai_family = AF_INET;
     hint.ai_protocol = IPPROTO_UDP;
     hint.ai_socktype = SOCK_STREAM;
     int ret = getaddrinfo("127.0.0.1", nullptr, &hint, &result);
-    EXPECT_EQ("getaddrinfo_1300", ret, SOCKTYPE_NOTSUPPORTED);
+    EXPECT_EQ("Getaddrinfo1300", ret, SOCKTYPE_NOTSUPPORTED);
 }
 
 /**
- * @tc.name      : getaddrinfo_1400
+ * @tc.name      : Getaddrinfo1400
  * @tc.desc      : The parameter is invalid and the IP address of the host name can not be resolved.
  * @tc.level     : Level 2
  */
-void getaddrinfo_1400(void)
+void Getaddrinfo1400(void)
 {
-    struct addrinfo *result, hint;
-    init_hint(&hint);
+    struct addrinfo* result;
+    struct addrinfo hint;
+    InitHint(&hint);
     InitHint(&hint);
     hint.ai_flags = AI_CANONNAME;
     hint.ai_family = AF_INET;
     hint.ai_protocol = IPPROTO_TCP;
     hint.ai_socktype = SOCK_DGRAM;
     int ret = getaddrinfo("127.0.0.1", nullptr, &hint, &result);
-    EXPECT_EQ("getaddrinfo_1400", ret, SOCKTYPE_NOTSUPPORTED);
+    EXPECT_EQ("Getaddrinfo1400", ret, SOCKTYPE_NOTSUPPORTED);
 }
 
 /**
- * @tc.name      : getaddrinfo_1500
+ * @tc.name      : Getaddrinfo1500
  * @tc.desc      : The parameter is invalid and the IP address of the host name can not be resolved.
  * @tc.level     : Level 2
  */
-void getaddrinfo_1500(void)
+void Getaddrinfo1500(void)
 {
-    struct addrinfo *result, hint;
-    init_hint(&hint);
+    struct addrinfo* result;
+    struct addrinfo hint;
+    InitHint(&hint);
     InitHint(&hint);
     hint.ai_flags = AI_CANONNAME;
     hint.ai_family = AF_INET;
     hint.ai_socktype = SOCK_RAW;
     int ret = getaddrinfo("127.0.0.1", "2000", &hint, &result);
-    EXPECT_EQ("getaddrinfo_1500", ret, SOCKTYPE_NOTSUPPORTED);
+    EXPECT_EQ("Getaddrinfo1500", ret, SOCKTYPE_NOTSUPPORTED);
 }
 
-static void* test_all_cases(void* arg)
+static void* TestAllCases(void* arg)
 {
-    getaddrinfo_0100();
-    getaddrinfo_0200();
-    getaddrinfo_0300();
-    getaddrinfo_0400();
-    getaddrinfo_0500();
-    getaddrinfo_0600();
-    getaddrinfo_0700();
-    getaddrinfo_0800();
-    getaddrinfo_0900();
-    getaddrinfo_1000();
-    getaddrinfo_1100();
-    getaddrinfo_1200();
-    getaddrinfo_1300();
-    getaddrinfo_1400();
-    getaddrinfo_1500();
+    Getaddrinfo0100();
+    Getaddrinfo0200();
+    Getaddrinfo0300();
+    Getaddrinfo0400();
+    Getaddrinfo0500();
+    Getaddrinfo0600();
+    Getaddrinfo0700();
+    Getaddrinfo0800();
+    Getaddrinfo0900();
+    Getaddrinfo1000();
+    Getaddrinfo1100();
+    Getaddrinfo1200();
+    Getaddrinfo1300();
+    Getaddrinfo1400();
+    Getaddrinfo1500();
     return arg;
 }
 
-static void do_test_concurrently(void* (*test)(void* arg), size_t num_threads)
+static void do_test_concurrently(void* (*test)(void* arg), size_t numThreads)
 {
-    pthread_t* threads = (pthread_t*)malloc(sizeof(pthread_t) * num_threads);
+    pthread_t* threads = (pthread_t*)malloc(sizeof(pthread_t) * numThreads);
     if (threads == nullptr) {
         t_error("Failed to allocate memory: %s\n", strerror(errno));
         return;
     }
 
     size_t last = 0;
-    while (last < num_threads) {
+    while (last < numThreads) {
         if (pthread_create(&(threads[last]), nullptr, test, nullptr)) {
             t_error("Failed to create thread: %s\n", strerror(errno));
             break;
@@ -378,10 +387,10 @@ static void do_test_concurrently(void* (*test)(void* arg), size_t num_threads)
     return;
 }
 
-static int GetaddrinfoTest_impl(int argc, char* argv[])
+static int GetaddrinfoTestImpl(int argc, char* argv[])
 {
-    size_t num_threads = 1;
-    do_test_concurrently(test_all_cases, num_threads);
+    size_t numThreads = 1;
+    do_test_concurrently(TestAllCases, numThreads);
 
     return t_status;
 }
@@ -390,5 +399,5 @@ int GetaddrinfoTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return GetaddrinfoTest_impl(1, libcArgv);
+    return GetaddrinfoTestImpl(1, libcArgv);
 }

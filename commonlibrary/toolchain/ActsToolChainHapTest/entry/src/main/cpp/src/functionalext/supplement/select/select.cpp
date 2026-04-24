@@ -39,7 +39,8 @@ void select_0100(void)
     struct timeval timeout;
     timeout.tv_sec = 5;
     timeout.tv_usec = 0;
-    fd_set readfds, writefds;
+    fd_set readfds;
+    fd_set writefds;
     FD_ZERO(&readfds);
     FD_ZERO(&writefds);
     FD_SET(0, &readfds);
@@ -59,7 +60,8 @@ void select_0200(void)
 {
     struct timeval timeout;
     timeout.tv_sec = -50;
-    fd_set readfds, writefds;
+    fd_set readfds;
+    fd_set writefds;
     FD_ZERO(&readfds);
     FD_ZERO(&writefds);
     FD_SET(0, &readfds);
@@ -79,7 +81,8 @@ void select_0300(void)
 {
     struct timeval timeout;
     timeout.tv_sec = 0;
-    fd_set readfds, writefds;
+    fd_set readfds;
+    fd_set writefds;
     int fd1, fd2;
     FD_ZERO(&readfds);
     FD_ZERO(&writefds);

@@ -29,8 +29,9 @@
 const int SUCCESS = 0;
 #define BUF_SIZE (100)
 #define PORT 22881
+constexpr int ACCEPT_BACKLOG = 2;
 #define WAIT() pthread_barrier_wait(&g_barrier)
-static const char* g_localHost = "127.0.0.1";
+static const char* LOCAL_HOST = "127.0.0.1";
 static pthread_barrier_t g_barrier;
 
 void* ServerTaskOne(void* arg)
@@ -50,7 +51,7 @@ void* ServerTaskOne(void* arg)
     }
     struct sockaddr_in srvAddr = { 0 };
     srvAddr.sin_family = AF_INET;
-    srvAddr.sin_addr.s_addr = inet_addr(g_localHost);
+    srvAddr.sin_addr.s_addr = inet_addr(LOCAL_HOST);
     srvAddr.sin_port = htons(PORT);
     rets = bind(sListen, reinterpret_cast<struct sockaddr*>(&srvAddr), sizeof(srvAddr));
     if (rets != 0) {
@@ -59,7 +60,7 @@ void* ServerTaskOne(void* arg)
         *ret = -1;
         return ret;
     }
-    rets = listen(sListen, 2);
+    rets = listen(sListen, ACCEPT_BACKLOG);
     if (rets != 0) {
         WAIT();
         close(sListen);
@@ -71,7 +72,7 @@ void* ServerTaskOne(void* arg)
     socklen_t clnAddrLen = sizeof(clnAddr);
     int sClient = -1;
     sClient = accept4(sListen, reinterpret_cast<struct sockaddr*>(&clnAddr), &clnAddrLen, 0);
-    EXPECT_NE("accept4_0100", sClient, -1);
+    EXPECT_NE("Accept40100", sClient, -1);
     close(sClient);
     close(sListen);
     return ret;
@@ -94,7 +95,7 @@ void* ServerTaskTwo(void* arg)
     }
     struct sockaddr_in srvAddr = { 0 };
     srvAddr.sin_family = AF_INET;
-    srvAddr.sin_addr.s_addr = inet_addr(g_localHost);
+    srvAddr.sin_addr.s_addr = inet_addr(LOCAL_HOST);
     srvAddr.sin_port = htons(PORT);
     rets = bind(sListen, reinterpret_cast<struct sockaddr*>(&srvAddr), sizeof(srvAddr));
     if (rets != 0) {
@@ -103,7 +104,7 @@ void* ServerTaskTwo(void* arg)
         *ret = -1;
         return ret;
     }
-    rets = listen(sListen, 2);
+    rets = listen(sListen, ACCEPT_BACKLOG);
     if (rets != 0) {
         WAIT();
         close(sListen);
@@ -115,7 +116,7 @@ void* ServerTaskTwo(void* arg)
     socklen_t clnAddrLen = sizeof(clnAddr);
     int sClient = -1;
     sClient = accept4(sListen, reinterpret_cast<struct sockaddr*>(&clnAddr), &clnAddrLen, SOCK_NONBLOCK);
-    EXPECT_NE("accept4_0200", sClient, -1);
+    EXPECT_NE("Accept40200", sClient, -1);
     close(sClient);
     close(sListen);
     return ret;
@@ -138,7 +139,7 @@ void* ServerTaskThree(void* arg)
     }
     struct sockaddr_in srvAddr = { 0 };
     srvAddr.sin_family = AF_INET;
-    srvAddr.sin_addr.s_addr = inet_addr(g_localHost);
+    srvAddr.sin_addr.s_addr = inet_addr(LOCAL_HOST);
     srvAddr.sin_port = htons(PORT);
     rets = bind(sListen, reinterpret_cast<struct sockaddr*>(&srvAddr), sizeof(srvAddr));
     if (rets != 0) {
@@ -147,7 +148,7 @@ void* ServerTaskThree(void* arg)
         *ret = -1;
         return ret;
     }
-    rets = listen(sListen, 2);
+    rets = listen(sListen, ACCEPT_BACKLOG);
     if (rets != 0) {
         WAIT();
         close(sListen);
@@ -159,7 +160,7 @@ void* ServerTaskThree(void* arg)
     socklen_t clnAddrLen = sizeof(clnAddr);
     int sClient = -1;
     sClient = accept4(sListen, reinterpret_cast<struct sockaddr*>(&clnAddr), &clnAddrLen, SOCK_CLOEXEC);
-    EXPECT_NE("accept4_0300", sClient, -1);
+    EXPECT_NE("Accept40300", sClient, -1);
     close(sClient);
     close(sListen);
     return ret;
@@ -182,7 +183,7 @@ void* ServerTaskFive(void* arg)
     }
     struct sockaddr_in srvAddr = { 0 };
     srvAddr.sin_family = AF_INET;
-    srvAddr.sin_addr.s_addr = inet_addr(g_localHost);
+    srvAddr.sin_addr.s_addr = inet_addr(LOCAL_HOST);
     srvAddr.sin_port = htons(PORT);
     rets = bind(sListen, reinterpret_cast<struct sockaddr*>(&srvAddr), sizeof(srvAddr));
     if (rets != 0) {
@@ -191,7 +192,7 @@ void* ServerTaskFive(void* arg)
         *ret = -1;
         return ret;
     }
-    rets = listen(sListen, 2);
+    rets = listen(sListen, ACCEPT_BACKLOG);
     if (rets != 0) {
         WAIT();
         close(sListen);
@@ -202,8 +203,8 @@ void* ServerTaskFive(void* arg)
     struct sockaddr_in clnAddr = { 0 };
     socklen_t clnAddrLen = sizeof(clnAddr);
     int sClient = -1;
-    sClient = accept4(sListen, 0, &clnAddrLen, SOCK_CLOEXEC);
-    EXPECT_NE("accept4_0500", sClient, -1);
+    sClient = accept4(sListen, nullptr, &clnAddrLen, SOCK_CLOEXEC);
+    EXPECT_NE("Accept40500", sClient, -1);
     close(sClient);
     close(sListen);
     return ret;
@@ -225,14 +226,14 @@ void* ServerTaskSix(void* arg)
     }
     struct sockaddr_in srvAddr = { 0 };
     srvAddr.sin_family = AF_INET;
-    srvAddr.sin_addr.s_addr = inet_addr(g_localHost);
+    srvAddr.sin_addr.s_addr = inet_addr(LOCAL_HOST);
     srvAddr.sin_port = htons(PORT);
     rets = bind(sListen, reinterpret_cast<struct sockaddr*>(&srvAddr), sizeof(srvAddr));
     if (rets != 0) {
         close(sListen);
         *ret = -1;
     }
-    rets = listen(sListen, 2);
+    rets = listen(sListen, ACCEPT_BACKLOG);
     if (rets != 0) {
         close(sListen);
         *ret = -1;
@@ -241,8 +242,8 @@ void* ServerTaskSix(void* arg)
     struct sockaddr_in clnAddr = { 0 };
     socklen_t clnAddrLen = sizeof(clnAddr);
     int sClient = 0;
-    sClient = accept4(sListen, reinterpret_cast<struct sockaddr*>(&clnAddr), 0, 0);
-    EXPECT_EQ("accept4_0600", sClient, -1);
+    sClient = accept4(sListen, reinterpret_cast<struct sockaddr*>(&clnAddr), nullptr, 0);
+    EXPECT_EQ("Accept40600", sClient, -1);
     close(sClient);
     close(sListen);
     return ret;
@@ -255,7 +256,7 @@ void* ClientTask(void* arg)
     WAIT();
     struct sockaddr_in srvAddr = { 0 };
     srvAddr.sin_family = AF_INET;
-    srvAddr.sin_addr.s_addr = inet_addr(g_localHost);
+    srvAddr.sin_addr.s_addr = inet_addr(LOCAL_HOST);
     srvAddr.sin_port = htons(PORT);
     int ret = connect(clnFd, reinterpret_cast<struct sockaddr*>(&srvAddr), sizeof(srvAddr));
     if (ret != 0) {
@@ -266,147 +267,152 @@ void* ClientTask(void* arg)
 }
 
 /**
- * @tc.name      : accept4_0100
+ * @tc.name      : Accept40100
  * @tc.desc      : Each parameter is valid, the flag parameter is 0, and the socket connection can be accepted.
  * @tc.level     : Level 0
  */
-void accept4_0100(void)
+void Accept40100(void)
 {
     pthread_t srv;
     pthread_t cli;
-    int ret = pthread_barrier_init(&g_barrier, 0, 2);
-    EXPECT_EQ("accept4_0100", SUCCESS, ret);
+    int ret = pthread_barrier_init(&g_barrier, nullptr, ACCEPT_BACKLOG);
+    EXPECT_EQ("Accept40100", SUCCESS, ret);
     ret = pthread_create(&srv, nullptr, ServerTaskOne, nullptr);
-    EXPECT_EQ("accept4_0100", SUCCESS, ret);
+    EXPECT_EQ("Accept40100", SUCCESS, ret);
     ret = pthread_create(&cli, nullptr, ClientTask, nullptr);
-    EXPECT_EQ("accept4_0100", SUCCESS, ret);
+    EXPECT_EQ("Accept40100", SUCCESS, ret);
     ret = pthread_join(cli, nullptr);
-    EXPECT_EQ("accept4_0100", SUCCESS, ret);
+    EXPECT_EQ("Accept40100", SUCCESS, ret);
     ret = pthread_join(srv, nullptr);
-    EXPECT_EQ("accept4_0100", SUCCESS, ret);
+    EXPECT_EQ("Accept40100", SUCCESS, ret);
     ret = pthread_barrier_destroy(&g_barrier);
-    EXPECT_EQ("accept4_0100", SUCCESS, ret);
+    EXPECT_EQ("Accept40100", SUCCESS, ret);
 }
 
 /**
- * @tc.name      : accept4_0200
+ * @tc.name      : Accept40200
  * @tc.desc      : Each parameter is valid, the flag parameter is SOCK_NONBLOCK, which can accept socket connection.
  * @tc.level     : Level 1
  */
-void accept4_0200(void)
+void Accept40200(void)
 {
     pthread_t srv;
     pthread_t cli;
-    int ret = pthread_barrier_init(&g_barrier, 0, 2);
-    EXPECT_EQ("accept4_0200", SUCCESS, ret);
+    int ret = pthread_barrier_init(&g_barrier, nullptr, ACCEPT_BACKLOG);
+    EXPECT_EQ("Accept40200", SUCCESS, ret);
     ret = pthread_create(&srv, nullptr, ServerTaskTwo, nullptr);
-    EXPECT_EQ("accept4_0200", SUCCESS, ret);
+    EXPECT_EQ("Accept40200", SUCCESS, ret);
     ret = pthread_create(&cli, nullptr, ClientTask, nullptr);
-    EXPECT_EQ("accept4_0200", SUCCESS, ret);
+    EXPECT_EQ("Accept40200", SUCCESS, ret);
     ret = pthread_join(cli, nullptr);
-    EXPECT_EQ("accept4_0200", SUCCESS, ret);
+    EXPECT_EQ("Accept40200", SUCCESS, ret);
     ret = pthread_join(srv, nullptr);
-    EXPECT_EQ("accept4_0200", SUCCESS, ret);
+    EXPECT_EQ("Accept40200", SUCCESS, ret);
     ret = pthread_barrier_destroy(&g_barrier);
-    EXPECT_EQ("accept4_0200", SUCCESS, ret);
+    EXPECT_EQ("Accept40200", SUCCESS, ret);
 }
 
 /**
- * @tc.name      : accept4_0300
+ * @tc.name      : Accept40300
  * @tc.desc      : Each parameter is valid, the flag parameter is SOCK_CLOEXEC, which can accept socket connection.
  * @tc.level     : Level 1
  */
-void accept4_0300(void)
+void Accept40300(void)
 {
     pthread_t srv;
     pthread_t cli;
-    int ret = pthread_barrier_init(&g_barrier, 0, 2);
-    EXPECT_EQ("accept4_0300", SUCCESS, ret);
+    int ret = pthread_barrier_init(&g_barrier, nullptr, ACCEPT_BACKLOG);
+    EXPECT_EQ("Accept40300", SUCCESS, ret);
     ret = pthread_create(&srv, nullptr, ServerTaskThree, nullptr);
-    EXPECT_EQ("accept4_0300", SUCCESS, ret);
+    EXPECT_EQ("Accept40300", SUCCESS, ret);
     ret = pthread_create(&cli, nullptr, ClientTask, nullptr);
-    EXPECT_EQ("accept4_0300", SUCCESS, ret);
+    EXPECT_EQ("Accept40300", SUCCESS, ret);
     ret = pthread_join(cli, nullptr);
-    EXPECT_EQ("accept4_0300", SUCCESS, ret);
+    EXPECT_EQ("Accept40300", SUCCESS, ret);
     ret = pthread_join(srv, nullptr);
-    EXPECT_EQ("accept4_0300", SUCCESS, ret);
+    EXPECT_EQ("Accept40300", SUCCESS, ret);
     ret = pthread_barrier_destroy(&g_barrier);
-    EXPECT_EQ("accept4_0300", SUCCESS, ret);
+    EXPECT_EQ("Accept40300", SUCCESS, ret);
 }
 
 /**
- * @tc.name      : accept4_0400
+ * @tc.name      : Accept40400
  * @tc.desc      : The fd parameter is invalid, socket connection cannot be accepted.
  * @tc.level     : Level 2
  */
-void accept4_0400(void)
+void Accept40400(void)
 {
     struct sockaddr_in clnAddr = { 0 };
     socklen_t clnAddrLen = sizeof(clnAddr);
     int sClient = 0;
     sClient = accept4(0, reinterpret_cast<struct sockaddr*>(&clnAddr), &clnAddrLen, 0);
-    EXPECT_EQ("accept4_0400", sClient, -1);
+    EXPECT_EQ("Accept40400", sClient, -1);
 }
 
 /**
- * @tc.name      : accept4_0500
+ * @tc.name      : Accept40500
  * @tc.desc      : The addr parameter is invalid, socket connection can be accepted.
  * @tc.level     : Level 1
  */
-void accept4_0500(void)
+void Accept40500(void)
 {
     pthread_t srv;
     pthread_t cli;
-    int ret = pthread_barrier_init(&g_barrier, 0, 2);
-    EXPECT_EQ("accept4_0500", SUCCESS, ret);
+    int ret = pthread_barrier_init(&g_barrier, nullptr, ACCEPT_BACKLOG);
+    EXPECT_EQ("Accept40500", SUCCESS, ret);
     ret = pthread_create(&srv, nullptr, ServerTaskFive, nullptr);
-    EXPECT_EQ("accept4_0500", SUCCESS, ret);
+    EXPECT_EQ("Accept40500", SUCCESS, ret);
     ret = pthread_create(&cli, nullptr, ClientTask, nullptr);
-    EXPECT_EQ("accept4_0500", SUCCESS, ret);
+    EXPECT_EQ("Accept40500", SUCCESS, ret);
     ret = pthread_join(cli, nullptr);
-    EXPECT_EQ("accept4_0500", SUCCESS, ret);
+    EXPECT_EQ("Accept40500", SUCCESS, ret);
     ret = pthread_join(srv, nullptr);
-    EXPECT_EQ("accept4_0500", SUCCESS, ret);
+    EXPECT_EQ("Accept40500", SUCCESS, ret);
     ret = pthread_barrier_destroy(&g_barrier);
-    EXPECT_EQ("accept4_0500", SUCCESS, ret);
+    EXPECT_EQ("Accept40500", SUCCESS, ret);
 }
 
 /**
- * @tc.name      : accept4_0600
+ * @tc.name      : Accept40600
  * @tc.desc      : The len parameter is invalid, socket connection cannot be accepted.
  * @tc.level     : Level 2
  */
-void accept4_0600(void)
+void Accept40600(void)
 {
     pthread_t srv;
     pthread_t cli;
-    int ret = pthread_barrier_init(&g_barrier, 0, 2);
-    EXPECT_EQ("accept4_0600", SUCCESS, ret);
+    int ret = pthread_barrier_init(&g_barrier, nullptr, ACCEPT_BACKLOG);
+    EXPECT_EQ("Accept40600", SUCCESS, ret);
     ret = pthread_create(&srv, nullptr, ServerTaskSix, nullptr);
-    EXPECT_EQ("accept4_0600", SUCCESS, ret);
+    EXPECT_EQ("Accept40600", SUCCESS, ret);
     ret = pthread_create(&cli, nullptr, ClientTask, nullptr);
-    EXPECT_EQ("accept4_0600", SUCCESS, ret);
+    EXPECT_EQ("Accept40600", SUCCESS, ret);
     ret = pthread_join(cli, nullptr);
-    EXPECT_EQ("accept4_0600", SUCCESS, ret);
+    EXPECT_EQ("Accept40600", SUCCESS, ret);
     ret = pthread_join(srv, nullptr);
-    EXPECT_EQ("accept4_0600", SUCCESS, ret);
+    EXPECT_EQ("Accept40600", SUCCESS, ret);
     ret = pthread_barrier_destroy(&g_barrier);
-    EXPECT_EQ("accept4_0600", SUCCESS, ret);
+    EXPECT_EQ("Accept40600", SUCCESS, ret);
 }
-static int accept4Test_with_args(int argc, char* argv[])
+static int Accept4TestWithArgs(int argc, char* argv[])
 {
-    accept4_0100();
-    accept4_0200();
-    accept4_0300();
-    accept4_0400();
-    accept4_0500();
-    accept4_0600();
+    Accept40100();
+    Accept40200();
+    Accept40300();
+    Accept40400();
+    Accept40500();
+    Accept40600();
     return t_status;
+}
+
+int Accept4Test(void)
+{
+    static char libcProg[] = "libc_test";
+    char* libcArgv[] = { libcProg, nullptr };
+    return Accept4TestWithArgs(1, libcArgv);
 }
 
 int accept4Test(void)
 {
-    static char libcProg[] = "libc_test";
-    char* libcArgv[] = { libcProg, nullptr };
-    return accept4Test_with_args(1, libcArgv);
+    return Accept4Test();
 }

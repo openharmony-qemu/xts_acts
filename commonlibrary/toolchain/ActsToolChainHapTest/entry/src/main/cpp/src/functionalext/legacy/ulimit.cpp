@@ -25,7 +25,7 @@
  * @tc.desc      : Test ulimit() with UL_SETFSIZE
  * @tc.level     : Level 0
  */
-static void ulimit_0100(void)
+static void Ulimit0100(void)
 {
     typedef long (*ulimit_func)(int, ...);
     ulimit_func ulimit = (ulimit_func)dlsym(RTLD_DEFAULT, "ulimit");
@@ -49,7 +49,7 @@ static void ulimit_0100(void)
  * @tc.desc      : Test ulimit() with UL_GETFSIZE
  * @tc.level     : Level 1
  */
-static void ulimit_0200(void)
+static void Ulimit0200(void)
 {
     typedef long (*ulimit_func)(int, ...);
     ulimit_func ulimit = (ulimit_func)dlsym(RTLD_DEFAULT, "ulimit");
@@ -73,7 +73,7 @@ static void ulimit_0200(void)
  * @tc.desc      : Test ulimit() with UL_SETFSIZE and invalid args
  * @tc.level     : Level 2
  */
-static void ulimit_0300(void)
+static void Ulimit0300(void)
 {
     typedef long (*ulimit_func)(int, ...);
     ulimit_func ulimit = (ulimit_func)dlsym(RTLD_DEFAULT, "ulimit");
@@ -94,9 +94,9 @@ static void ulimit_0300(void)
 
 static int UlimitTest_impl(void)
 {
-    ulimit_0100();
-    ulimit_0200();
-    ulimit_0300();
+    Ulimit0100();
+    Ulimit0200();
+    Ulimit0300();
     return t_status;
 }
 

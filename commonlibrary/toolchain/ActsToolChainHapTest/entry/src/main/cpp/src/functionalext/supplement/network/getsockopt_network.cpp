@@ -39,362 +39,362 @@ static int DoGetsockopt(int sockfd, int level, int optname)
 }
 
 /**
- * @tc.name      : getsockopt_0100
+ * @tc.name      : Getsockopt0100
  * @tc.desc      : SOL_SOCKET,SO_DEBUG
  * @tc.level     : Level 0
  */
-void getsockopt_0100(void)
+void Getsockopt0100(void)
 {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     int content = DoGetsockopt(sockfd, SOL_SOCKET, SO_DEBUG);
-    EXPECT_EQ("getsockopt_0100", content, 0);
+    EXPECT_EQ("Getsockopt0100", content, 0);
     close(sockfd);
 }
 
 /**
- * @tc.name      : getsockopt_0200
+ * @tc.name      : Getsockopt0200
  * @tc.desc      : SOL_SOCKET,SO_REUSEADDR
  * @tc.level     : Level 0
  */
-void getsockopt_0200(void)
+void Getsockopt0200(void)
 {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     int content = DoGetsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR);
-    EXPECT_EQ("getsockopt_0200", content, 0);
+    EXPECT_EQ("Getsockopt0200", content, 0);
     close(sockfd);
 }
 
 /**
- * @tc.name      : getsockopt_0300
+ * @tc.name      : Getsockopt0300
  * @tc.desc      : SOL_SOCKET,SO_TYPE
  * @tc.level     : Level 0
  */
-void getsockopt_0300(void)
+void Getsockopt0300(void)
 {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     int content = DoGetsockopt(sockfd, SOL_SOCKET, SO_TYPE);
-    EXPECT_EQ("getsockopt_0300", content, 0);
+    EXPECT_EQ("Getsockopt0300", content, 0);
     close(sockfd);
 }
 
 /**
- * @tc.name      : getsockopt_0400
+ * @tc.name      : Getsockopt0400
  * @tc.desc      : SOL_SOCKET,SO_ERROR
  * @tc.level     : Level 0
  */
-void getsockopt_0400(void)
+void Getsockopt0400(void)
 {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     int content = DoGetsockopt(sockfd, SOL_SOCKET, SO_ERROR);
-    EXPECT_EQ("getsockopt_0400", content, 0);
+    EXPECT_EQ("Getsockopt0400", content, 0);
     close(sockfd);
 }
 
 /**
- * @tc.name      : getsockopt_0500
+ * @tc.name      : Getsockopt0500
  * @tc.desc      : SOL_SOCKET,SO_DONTROUTE
  * @tc.level     : Level 0
  */
-void getsockopt_0500(void)
+void Getsockopt0500(void)
 {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     int content = DoGetsockopt(sockfd, SOL_SOCKET, SO_DONTROUTE);
-    EXPECT_EQ("getsockopt_0500", content, 0);
+    EXPECT_EQ("Getsockopt0500", content, 0);
     close(sockfd);
 }
 
 /**
- * @tc.name      : getsockopt_0600
+ * @tc.name      : Getsockopt0600
  * @tc.desc      : SOL_SOCKET,SO_BROADCAST
  * @tc.level     : Level 0
  */
-void getsockopt_0600(void)
+void Getsockopt0600(void)
 {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     int content = DoGetsockopt(sockfd, SOL_SOCKET, SO_BROADCAST);
-    EXPECT_EQ("getsockopt_0600", content, 0);
+    EXPECT_EQ("Getsockopt0600", content, 0);
     close(sockfd);
 }
 
 /**
- * @tc.name      : getsockopt_0700
+ * @tc.name      : Getsockopt0700
  * @tc.desc      : SOL_SOCKET,SO_SNDBUF
  * @tc.level     : Level 0
  */
-void getsockopt_0700(void)
+void Getsockopt0700(void)
 {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     int content = DoGetsockopt(sockfd, SOL_SOCKET, SO_SNDBUF);
-    EXPECT_EQ("getsockopt_0700", content, 0);
+    EXPECT_EQ("Getsockopt0700", content, 0);
     close(sockfd);
 }
 
 /**
- * @tc.name      : getsockopt_0800
+ * @tc.name      : Getsockopt0800
  * @tc.desc      : SOL_SOCKET,SO_RCVBUF
  * @tc.level     : Level 0
  */
-void getsockopt_0800(void)
+void Getsockopt0800(void)
 {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     int content = DoGetsockopt(sockfd, SOL_SOCKET, SO_RCVBUF);
-    EXPECT_EQ("getsockopt_0800", content, 0);
+    EXPECT_EQ("Getsockopt0800", content, 0);
     close(sockfd);
 }
 
 /**
- * @tc.name      : getsockopt_0900
+ * @tc.name      : Getsockopt0900
  * @tc.desc      : SOL_SOCKET,SO_KEEPALIVE
  * @tc.level     : Level 0
  */
-void getsockopt_0900(void)
+void Getsockopt0900(void)
 {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     int content = DoGetsockopt(sockfd, SOL_SOCKET, SO_KEEPALIVE);
-    EXPECT_EQ("getsockopt_0900", content, 0);
+    EXPECT_EQ("Getsockopt0900", content, 0);
     close(sockfd);
 }
 
 /**
- * @tc.name      : getsockopt_1000
+ * @tc.name      : Getsockopt1000
  * @tc.desc      : SOL_SOCKET,SO_OOBINLINE
  * @tc.level     : Level 0
  */
-void getsockopt_1000(void)
+void Getsockopt1000(void)
 {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     int content = DoGetsockopt(sockfd, SOL_SOCKET, SO_OOBINLINE);
-    EXPECT_EQ("getsockopt_1000", content, 0);
+    EXPECT_EQ("Getsockopt1000", content, 0);
     close(sockfd);
 }
 
 /**
- * @tc.name      : getsockopt_1100
+ * @tc.name      : Getsockopt1100
  * @tc.desc      : SOL_SOCKET,SO_LINGER
  * @tc.level     : Level 0
  */
-void getsockopt_1100(void)
+void Getsockopt1100(void)
 {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     int content = DoGetsockopt(sockfd, SOL_SOCKET, SO_LINGER);
-    EXPECT_EQ("getsockopt_1100", content, 0);
+    EXPECT_EQ("Getsockopt1100", content, 0);
     close(sockfd);
 }
 
 /**
- * @tc.name      : getsockopt_1200
+ * @tc.name      : Getsockopt1200
  * @tc.desc      : SOL_SOCKET,SO_RCVLOWAT
  * @tc.level     : Level 0
  */
-void getsockopt_1200(void)
+void Getsockopt1200(void)
 {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     int content = DoGetsockopt(sockfd, SOL_SOCKET, SO_RCVLOWAT);
-    EXPECT_EQ("getsockopt_1200", content, 0);
+    EXPECT_EQ("Getsockopt1200", content, 0);
     close(sockfd);
 }
 
 /**
- * @tc.name      : getsockopt_1300
+ * @tc.name      : Getsockopt1300
  * @tc.desc      : SOL_SOCKET,SO_SNDLOWAT
  * @tc.level     : Level 0
  */
-void getsockopt_1300(void)
+void Getsockopt1300(void)
 {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     int content = DoGetsockopt(sockfd, SOL_SOCKET, SO_SNDLOWAT);
-    EXPECT_EQ("getsockopt_1300", content, 0);
+    EXPECT_EQ("Getsockopt1300", content, 0);
     close(sockfd);
 }
 
 /**
- * @tc.name      : getsockopt_1400
+ * @tc.name      : Getsockopt1400
  * @tc.desc      : SOL_SOCKET,O_RCVTIMEO
  * @tc.level     : Level 1
  */
-void getsockopt_1400(void)
+void Getsockopt1400(void)
 {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     int content = DoGetsockopt(sockfd, SOL_SOCKET, SO_RCVTIMEO);
-    EXPECT_EQ("getsockopt_1400", content, 0);
+    EXPECT_EQ("Getsockopt1400", content, 0);
     close(sockfd);
 }
 
 /**
- * @tc.name      : getsockopt_1500
+ * @tc.name      : Getsockopt1500
  * @tc.desc      : SOL_SOCKET,SO_SNDTIMEO
  * @tc.level     : Level 1
  */
-void getsockopt_1500(void)
+void Getsockopt1500(void)
 {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     int content = DoGetsockopt(sockfd, SOL_SOCKET, SO_SNDTIMEO);
-    EXPECT_EQ("getsockopt_1500", content, 0);
+    EXPECT_EQ("Getsockopt1500", content, 0);
     close(sockfd);
 }
 
 /**
- * @tc.name      : getsockopt_1600
+ * @tc.name      : Getsockopt1600
  * @tc.desc      : SOL_SOCKET,SO_TIMESTAMP
  * @tc.level     : Level 1
  */
-void getsockopt_1600(void)
+void Getsockopt1600(void)
 {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     int content = DoGetsockopt(sockfd, SOL_SOCKET, SO_TIMESTAMP);
-    EXPECT_EQ("getsockopt_1600", content, 0);
+    EXPECT_EQ("Getsockopt1600", content, 0);
     close(sockfd);
 }
 
 /**
- * @tc.name      : getsockopt_1700
+ * @tc.name      : Getsockopt1700
  * @tc.desc      : SOL_SOCKET,SO_TIMESTAMPNS
  * @tc.level     : Level 1
  */
-void getsockopt_1700(void)
+void Getsockopt1700(void)
 {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     int content = DoGetsockopt(sockfd, SOL_SOCKET, SO_TIMESTAMPNS);
-    EXPECT_EQ("getsockopt_1700", content, 0);
+    EXPECT_EQ("Getsockopt1700", content, 0);
     close(sockfd);
 }
 
 /**
- * @tc.name      : getsockopt_1800
+ * @tc.name      : Getsockopt1800
  * @tc.desc      : IPPROTO_IP,IP_HDRINCL
  * @tc.level     : Level 1
  */
-void getsockopt_1800(void)
+void Getsockopt1800(void)
 {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     int content = DoGetsockopt(sockfd, IPPROTO_IP, IP_HDRINCL);
-    EXPECT_EQ("getsockopt_1800", content, 0);
+    EXPECT_EQ("Getsockopt1800", content, 0);
     close(sockfd);
 }
 
 /**
- * @tc.name      : getsockopt_1900
+ * @tc.name      : Getsockopt1900
  * @tc.desc      : IPPROTO_IP,IP_OPTIONS
  * @tc.level     : Level 1
  */
-void getsockopt_1900(void)
+void Getsockopt1900(void)
 {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     int content = DoGetsockopt(sockfd, IPPROTO_IP, IP_OPTIONS);
-    EXPECT_EQ("getsockopt_1900", content, 0);
+    EXPECT_EQ("Getsockopt1900", content, 0);
     close(sockfd);
 }
 
 /**
- * @tc.name      : getsockopt_2000
+ * @tc.name      : Getsockopt2000
  * @tc.desc      : IPPROTO_IP,IP_TOS
  * @tc.level     : Level 1
  */
-void getsockopt_2000(void)
+void Getsockopt2000(void)
 {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     int content = DoGetsockopt(sockfd, IPPROTO_IP, IP_TOS);
-    EXPECT_EQ("getsockopt_2000", content, 0);
+    EXPECT_EQ("Getsockopt2000", content, 0);
     close(sockfd);
 }
 
 /**
- * @tc.name      : getsockopt_2100
+ * @tc.name      : Getsockopt2100
  * @tc.desc      : IPPROTO_IP,IP_TTL
  * @tc.level     : Level 1
  */
-void getsockopt_2100(void)
+void Getsockopt2100(void)
 {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     int content = DoGetsockopt(sockfd, IPPROTO_IP, IP_TTL);
-    EXPECT_EQ("getsockopt_2100", content, 0);
+    EXPECT_EQ("Getsockopt2100", content, 0);
     close(sockfd);
 }
 
 /**
- * @tc.name      : getsockopt_2200
+ * @tc.name      : Getsockopt2200
  * @tc.desc      : IPPROTO_IP,TCP_MAXSEGs
  * @tc.level     : Level 1
  */
-void getsockopt_2200(void)
+void Getsockopt2200(void)
 {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     int content = DoGetsockopt(sockfd, IPPROTO_IP, TCP_MAXSEG);
-    EXPECT_EQ("getsockopt_2200", content, 0);
+    EXPECT_EQ("Getsockopt2200", content, 0);
     close(sockfd);
 }
 
 /**
- * @tc.name      : getsockopt_2300
+ * @tc.name      : Getsockopt2300
  * @tc.desc      : IPPROTO_IP,TCP_NODELAY
  * @tc.level     : Level 1
  */
-void getsockopt_2300(void)
+void Getsockopt2300(void)
 {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     int content = DoGetsockopt(sockfd, IPPROTO_IP, TCP_NODELAY);
-    EXPECT_EQ("getsockopt_2200", content, 0);
+    EXPECT_EQ("Getsockopt2200", content, 0);
     close(sockfd);
 }
 
 /**
- * @tc.name      : getsockopt_2400
+ * @tc.name      : Getsockopt2400
  * @tc.desc      : SOL_SOCKET,SO_RCVBUF
  * @tc.level     : Level 2
  */
-void getsockopt_2400(void)
+void Getsockopt2400(void)
 {
     int optval = 0;
     socklen_t optlen = sizeof(optval);
     int content = getsockopt(0, SOL_SOCKET, SO_RCVBUF, &optval, &optlen);
-    EXPECT_EQ("getsockopt_2400", content, -1);
+    EXPECT_EQ("Getsockopt2400", content, -1);
 }
 
 /**
- * @tc.name      : getsockopt_2500
+ * @tc.name      : Getsockopt2500
  * @tc.desc      : SOL_SOCKET,SO_DEBUG nullptr
  * @tc.level     : Level 2
  */
-void getsockopt_2500(void)
+void Getsockopt2500(void)
 {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     int optval = 0;
     int content = getsockopt(sockfd, SOL_SOCKET, SO_DEBUG, &optval, nullptr);
-    EXPECT_EQ("getsockopt_2500", content, -1);
+    EXPECT_EQ("Getsockopt2500", content, -1);
     close(sockfd);
 }
 
-static int GetsockoptNetworkTest_impl(void)
+static int GetsockoptNetworkTestImpl(void)
 {
-    getsockopt_0100();
-    getsockopt_0200();
-    getsockopt_0300();
-    getsockopt_0400();
-    getsockopt_0500();
-    getsockopt_0600();
-    getsockopt_0700();
-    getsockopt_0800();
-    getsockopt_0900();
-    getsockopt_1000();
-    getsockopt_1100();
-    getsockopt_1200();
-    getsockopt_1300();
-    getsockopt_1400();
-    getsockopt_1500();
-    getsockopt_1600();
-    getsockopt_1700();
-    getsockopt_1800();
-    getsockopt_1900();
-    getsockopt_2000();
-    getsockopt_2100();
-    getsockopt_2200();
-    getsockopt_2300();
-    getsockopt_2400();
-    getsockopt_2500();
+    Getsockopt0100();
+    Getsockopt0200();
+    Getsockopt0300();
+    Getsockopt0400();
+    Getsockopt0500();
+    Getsockopt0600();
+    Getsockopt0700();
+    Getsockopt0800();
+    Getsockopt0900();
+    Getsockopt1000();
+    Getsockopt1100();
+    Getsockopt1200();
+    Getsockopt1300();
+    Getsockopt1400();
+    Getsockopt1500();
+    Getsockopt1600();
+    Getsockopt1700();
+    Getsockopt1800();
+    Getsockopt1900();
+    Getsockopt2000();
+    Getsockopt2100();
+    Getsockopt2200();
+    Getsockopt2300();
+    Getsockopt2400();
+    Getsockopt2500();
     return t_status;
 }
 
 int GetsockoptNetworkTest(void)
 {
-    return GetsockoptNetworkTest_impl();
+    return GetsockoptNetworkTestImpl();
 }

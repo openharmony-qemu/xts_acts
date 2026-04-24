@@ -17,6 +17,8 @@
 #include <sys/file.h>
 #include "functionalext.h"
 
+constexpr int LSEEK_OFFSET = 2;
+
 /**
  * @tc.name      : flock_0100
  * @tc.desc      : Each parameter is valid, the op parameter is LOCK_SH, which can lock the file
@@ -27,7 +29,7 @@ void flock_0100(void)
     int result = -1;
     int fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, TEST_MODE);
     EXPECT_NE("flock_0100", fd, -1);
-    lseek(fd, 2, SEEK_SET);
+    lseek(fd, LSEEK_OFFSET, SEEK_SET);
 
     result = flock(fd, LOCK_SH);
     EXPECT_EQ("flock_0100", result, 0);
@@ -45,7 +47,7 @@ void flock_0200(void)
     int result = -1;
     int fd = open("//data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, TEST_MODE);
     EXPECT_NE("flock_0200", fd, -1);
-    lseek(fd, 2, SEEK_SET);
+    lseek(fd, LSEEK_OFFSET, SEEK_SET);
 
     result = flock(fd, LOCK_SH | LOCK_NB);
     EXPECT_EQ("flock_0200", result, 0);
@@ -63,7 +65,7 @@ void flock_0300(void)
     int result = -1;
     int fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, TEST_MODE);
     EXPECT_NE("flock_0300", fd, -1);
-    lseek(fd, 2, SEEK_SET);
+    lseek(fd, LSEEK_OFFSET, SEEK_SET);
 
     result = flock(fd, LOCK_EX);
     EXPECT_EQ("flock_0300", result, 0);
@@ -81,7 +83,7 @@ void flock_0400(void)
     int result = -1;
     int fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, TEST_MODE);
     EXPECT_NE("flock_0400", fd, -1);
-    lseek(fd, 2, SEEK_SET);
+    lseek(fd, LSEEK_OFFSET, SEEK_SET);
 
     result = flock(fd, LOCK_EX | LOCK_NB);
     EXPECT_EQ("flock_0400", result, 0);
@@ -99,7 +101,7 @@ void flock_0500(void)
     int result = -1;
     int fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, TEST_MODE);
     EXPECT_NE("flock_0500", fd, -1);
-    lseek(fd, 2, SEEK_SET);
+    lseek(fd, LSEEK_OFFSET, SEEK_SET);
 
     result = flock(fd, LOCK_UN);
     EXPECT_EQ("flock_0500", result, 0);
@@ -128,7 +130,7 @@ void flock_0700()
     int result = 0;
     int fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, TEST_MODE);
     EXPECT_NE("flock_0700", fd, -1);
-    lseek(fd, 2, SEEK_SET);
+    lseek(fd, LSEEK_OFFSET, SEEK_SET);
 
     result = flock(fd, 0);
     EXPECT_EQ("flock_0700", result, -1);

@@ -28,8 +28,8 @@ typedef void (*TEST_FUN)();
 #define BUF_SIZE (100)
 #define PORT 2288
 #define WAIT() pthread_barrier_wait(&g_barrier)
-static const char* g_cliMsg = "Hello, this is client";
-static const char* g_localHost = "127.0.0.1";
+static const char* CLI_MSG = "Hello, this is client";
+static const char* LOCAL_HOST = "127.0.0.1";
 static pthread_barrier_t g_barrier;
 
 static void* SampleServerTask()
@@ -45,7 +45,7 @@ static void* SampleServerTask()
     rets = setsockopt(sListen, SOL_SOCKET, SO_REUSEADDR, &flag, sizeof(int));
     struct sockaddr_in srvAddr = { 0 };
     srvAddr.sin_family = AF_INET;
-    srvAddr.sin_addr.s_addr = inet_addr(g_localHost);
+    srvAddr.sin_addr.s_addr = inet_addr(LOCAL_HOST);
     srvAddr.sin_port = htons(PORT);
     rets = bind(sListen, reinterpret_cast<struct sockaddr*>(&srvAddr), sizeof(srvAddr));
     if (rets != 0) {
@@ -83,14 +83,14 @@ static void* SampleClientTask()
     WAIT();
     struct sockaddr_in srvAddr = { 0 };
     srvAddr.sin_family = AF_INET;
-    srvAddr.sin_addr.s_addr = inet_addr(g_localHost);
+    srvAddr.sin_addr.s_addr = inet_addr(LOCAL_HOST);
     srvAddr.sin_port = htons(PORT);
     int ret = connect(clnFd, reinterpret_cast<struct sockaddr*>(&srvAddr), sizeof(srvAddr));
     EXPECT_EQ("send_0100", 0, ret);
     if (ret == 0) {
         static char buf[BUF_SIZE + 1] = { 0 };
         memset(buf, '\0', BUF_SIZE);
-        strcpy(buf, g_cliMsg);
+        strcpy(buf, CLI_MSG);
         int sendRet = send(clnFd, buf, sizeof(buf), 0);
         EXPECT_EQ("send_0100", sendRet, sizeof(buf));
     }
@@ -111,7 +111,7 @@ void* SampleServerNullTask()
     rets = setsockopt(sListen, SOL_SOCKET, SO_REUSEADDR, &flag, sizeof(int));
     struct sockaddr_in srvAddr = { 0 };
     srvAddr.sin_family = AF_INET;
-    srvAddr.sin_addr.s_addr = inet_addr(g_localHost);
+    srvAddr.sin_addr.s_addr = inet_addr(LOCAL_HOST);
     srvAddr.sin_port = htons(PORT);
     rets = bind(sListen, reinterpret_cast<struct sockaddr*>(&srvAddr), sizeof(srvAddr));
     if (rets != 0) {
@@ -146,14 +146,14 @@ void* SampleClientNullTask()
     WAIT();
     struct sockaddr_in srvAddr = { 0 };
     srvAddr.sin_family = AF_INET;
-    srvAddr.sin_addr.s_addr = inet_addr(g_localHost);
+    srvAddr.sin_addr.s_addr = inet_addr(LOCAL_HOST);
     srvAddr.sin_port = htons(PORT);
     int ret = connect(clnFd, reinterpret_cast<struct sockaddr*>(&srvAddr), sizeof(srvAddr));
     EXPECT_EQ("send_0200", 0, ret);
     if (ret == 0) {
         static char buf[BUF_SIZE + 1] = { 0 };
         memset(buf, '\0', BUF_SIZE);
-        strcpy(buf, g_cliMsg);
+        strcpy(buf, CLI_MSG);
         int result = send(clnFd, nullptr, sizeof(buf), 0);
         EXPECT_EQ("send_0200", result, -1);
     }
@@ -166,23 +166,23 @@ void* SampleClientNullTask()
  * @tc.desc      : Verify that the client sent successfully
  * @tc.level     : Level 0
  */
-void send_0100(void)
+void Send0100(void)
 {
     pthread_t srv;
     pthread_t cli;
     int ret = pthread_barrier_init(&g_barrier, nullptr, 2);
     EXPECT_EQ("send_0100", 0, ret);
 
-    typedef int (*pthread_create_func)(pthread_t*, const pthread_attr_t*, void* (*)(), void*);
-    pthread_create_func pthread_create = reinterpret_cast<pthread_create_func>(dlsym(RTLD_DEFAULT, "pthread_create"));
-    if (!pthread_create) {
-        EXPECT_PTRNE("send_0100", pthread_create, nullptr);
+    typedef int (*PthreadCreateFunc)(pthread_t*, const pthread_attr_t*, void* (*)(), void*);
+    PthreadCreateFunc pthreadCreate = reinterpret_cast<PthreadCreateFunc>(dlsym(RTLD_DEFAULT, "pthread_create"));
+    if (!pthreadCreate) {
+        EXPECT_PTRNE("send_0100", pthreadCreate, nullptr);
         return;
     }
 
-    ret = pthread_create(&srv, nullptr, SampleServerTask, nullptr);
+    ret = pthreadCreate(&srv, nullptr, SampleServerTask, nullptr);
     EXPECT_EQ("send_0100", 0, ret);
-    ret = pthread_create(&cli, nullptr, SampleClientTask, nullptr);
+    ret = pthreadCreate(&cli, nullptr, SampleClientTask, nullptr);
     EXPECT_EQ("send_0100", 0, ret);
     ret = pthread_join(cli, nullptr);
     EXPECT_EQ("send_0100", 0, ret);
@@ -197,23 +197,23 @@ void send_0100(void)
  * @tc.desc      : Verify that client send failed when parameter is invalid
  * @tc.level     : Level 2
  */
-void send_0200(void)
+void Send0200(void)
 {
     pthread_t srv;
     pthread_t cli;
     int ret = pthread_barrier_init(&g_barrier, nullptr, 2);
     EXPECT_EQ("send_0200", 0, ret);
 
-    typedef int (*pthread_create_func)(pthread_t*, const pthread_attr_t*, void* (*)(), void*);
-    pthread_create_func pthread_create = reinterpret_cast<pthread_create_func>(dlsym(RTLD_DEFAULT, "pthread_create"));
-    if (!pthread_create) {
-        EXPECT_PTRNE("send_0200", pthread_create, nullptr);
+    typedef int (*PthreadCreateFunc)(pthread_t*, const pthread_attr_t*, void* (*)(), void*);
+    PthreadCreateFunc pthreadCreate = reinterpret_cast<PthreadCreateFunc>(dlsym(RTLD_DEFAULT, "pthread_create"));
+    if (!pthreadCreate) {
+        EXPECT_PTRNE("send_0200", pthreadCreate, nullptr);
         return;
     }
 
-    ret = pthread_create(&srv, nullptr, SampleServerNullTask, nullptr);
+    ret = pthreadCreate(&srv, nullptr, SampleServerNullTask, nullptr);
     EXPECT_EQ("send_0200", 0, ret);
-    ret = pthread_create(&cli, nullptr, SampleClientNullTask, nullptr);
+    ret = pthreadCreate(&cli, nullptr, SampleClientNullTask, nullptr);
     EXPECT_EQ("send_0200", 0, ret);
     ret = pthread_join(cli, nullptr);
     EXPECT_EQ("send_0200", 0, ret);
@@ -223,12 +223,12 @@ void send_0200(void)
     EXPECT_EQ("send_0200", 0, ret);
 }
 
-static TEST_FUN G_Fun_Array[] = { send_0100, send_0200 };
-static int SendTest_impl(int argc, char* argv[])
+static TEST_FUN g_gFunArray[] = { Send0100, Send0200 };
+static int SendTestImpl(int argc, char* argv[])
 {
-    int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
+    int num = sizeof(g_gFunArray) / sizeof(TEST_FUN);
     for (int pos = 0; pos < num; ++pos) {
-        G_Fun_Array[pos]();
+        g_gFunArray[pos]();
     }
 
     return t_status;
@@ -238,5 +238,5 @@ int SendTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return SendTest_impl(1, libcArgv);
+    return SendTestImpl(1, libcArgv);
 }

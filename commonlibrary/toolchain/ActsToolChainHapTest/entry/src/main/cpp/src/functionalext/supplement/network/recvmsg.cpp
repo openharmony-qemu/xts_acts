@@ -67,7 +67,7 @@ int check_recv_message(int sockfd)
     return -1;
 }
 
-void send_message(int flag, const char* msg)
+void SendMessage(int flag, const char* msg)
 {
     int sockfd = socket(AF_INET, SOCK_DGRAM, IPPROTO_IP);
     if (sockfd == -1) {
@@ -162,7 +162,7 @@ void recvmsg_0100(void)
         recv_message(0, "recvmsg_0100");
     } else if (pid > 0) {
         sleep(1);
-        send_message(0, "recvmsg_0100");
+        SendMessage(0, "recvmsg_0100");
         wait(nullptr);
     } else {
         t_error("recvmsg_0100 fork error");

@@ -27,122 +27,123 @@
 #define LIB_PATH_FOR_HISYSEVENT_TEST_0006 "/lib/ld-musl-aarch64.so.1"
 
 #define TEST_LIB_LOADING_TIME 20
+#define HISYSEVENT_WAIT_US 100000
 
 typedef void (*TEST_FUN)(void);
 
 /**
- * @tc.name      : ldso_debug_test_0001
+ * @tc.name      : LdsoDebugTest0001
  * @tc.desc      : Loading three dsos and unload them not in order.
  * @tc.level     : Level 0
  */
-void ldso_debug_test_0001(void)
+void LdsoDebugTest0001(void)
 {
     printf("[%s][Line: %d][%s]: entry\n", __FILE__, __LINE__, __func__);
 
-    void* handle_lib1 = dlopen(LIB_PATH_1, RTLD_NOW);
-    EXPECT_PTRNE("ldso_debug_test_0001", handle_lib1, NULL);
-    void* handle_lib2 = dlopen(LIB_PATH_2, RTLD_NOW);
-    EXPECT_PTRNE("ldso_debug_test_0001", handle_lib2, NULL);
-    void* handle_lib3 = dlopen(LIB_PATH_3, RTLD_NOW);
-    EXPECT_PTRNE("ldso_debug_test_0001", handle_lib3, NULL);
+    void* handleLib1 = dlopen(LIB_PATH_1, RTLD_NOW);
+    EXPECT_PTRNE("LdsoDebugTest0001", handleLib1, NULL);
+    void* handleLib2 = dlopen(LIB_PATH_2, RTLD_NOW);
+    EXPECT_PTRNE("LdsoDebugTest0001", handleLib2, NULL);
+    void* handleLib3 = dlopen(LIB_PATH_3, RTLD_NOW);
+    EXPECT_PTRNE("LdsoDebugTest0001", handleLib3, NULL);
 
-    EXPECT_EQ("ldso_debug_test_0001", dlclose(handle_lib1), 0);
-    EXPECT_EQ("ldso_debug_test_0001", dlclose(handle_lib3), 0);
-    EXPECT_EQ("ldso_debug_test_0001", dlclose(handle_lib2), 0);
+    EXPECT_EQ("LdsoDebugTest0001", dlclose(handleLib1), 0);
+    EXPECT_EQ("LdsoDebugTest0001", dlclose(handleLib3), 0);
+    EXPECT_EQ("LdsoDebugTest0001", dlclose(handleLib2), 0);
 
     printf("[%s][Line: %d][%s]: end\n", __FILE__, __LINE__, __func__);
 }
 
 /**
- * @tc.name      : ldso_debug_test_0002
+ * @tc.name      : LdsoDebugTest0002
  * @tc.desc      : Loading one dso and reload it for 20 times.
  * @tc.level     : Level 0
  */
-void ldso_debug_test_0002(void)
+void LdsoDebugTest0002(void)
 {
     printf("[%s][Line: %d][%s]: entry\n", __FILE__, __LINE__, __func__);
 
-    void* handle_lib1 = dlopen(LIB_PATH_1, RTLD_NOW);
-    EXPECT_PTRNE("ldso_debug_test_0002", handle_lib1, NULL);
+    void* handleLib1 = dlopen(LIB_PATH_1, RTLD_NOW);
+    EXPECT_PTRNE("LdsoDebugTest0002", handleLib1, NULL);
 
     for (int i = 0; i < TEST_LIB_LOADING_TIME; i++) {
-        handle_lib1 = dlopen(LIB_PATH_1, RTLD_NOW);
-        EXPECT_PTRNE("ldso_debug_test_0002", handle_lib1, NULL);
+        handleLib1 = dlopen(LIB_PATH_1, RTLD_NOW);
+        EXPECT_PTRNE("LdsoDebugTest0002", handleLib1, NULL);
     }
 
-    EXPECT_EQ("ldso_debug_test_0002", dlclose(handle_lib1), 0);
+    EXPECT_EQ("LdsoDebugTest0002", dlclose(handleLib1), 0);
 
     printf("[%s][Line: %d][%s]: end\n", __FILE__, __LINE__, __func__);
 }
 
 /**
- * @tc.name      : ldso_debug_test_0003
+ * @tc.name      : LdsoDebugTest0003
  * @tc.desc      : Loading a dso which depends on non-existing dso.
  * @tc.level     : Level 0
  */
-void ldso_debug_test_0003(void)
+void LdsoDebugTest0003(void)
 {
     printf("[%s][Line: %d][%s]: entry\n", __FILE__, __LINE__, __func__);
 
-    EXPECT_EQ("ldso_debug_test_0003", rename(LIB_PATH_5, LIB_PATH_BAK), 0);
+    EXPECT_EQ("LdsoDebugTest0003", rename(LIB_PATH_5, LIB_PATH_BAK), 0);
 
-    void* handle_lib4 = dlopen(LIB_PATH_4, RTLD_NOW);
-    EXPECT_PTREQ("ldso_debug_test_0003", handle_lib4, NULL);
+    void* handleLib4 = dlopen(LIB_PATH_4, RTLD_NOW);
+    EXPECT_PTREQ("LdsoDebugTest0003", handleLib4, NULL);
 
-    EXPECT_EQ("ldso_debug_test_0003", rename(LIB_PATH_BAK, LIB_PATH_5), 0);
+    EXPECT_EQ("LdsoDebugTest0003", rename(LIB_PATH_BAK, LIB_PATH_5), 0);
 
     printf("[%s][Line: %d][%s]: end\n", __FILE__, __LINE__, __func__);
 }
 
 /**
- * @tc.name      : ldso_debug_test_0004
+ * @tc.name      : LdsoDebugTest0004
  * @tc.desc      : Loading a dso which is not exist.
  * @tc.level     : Level 0
  */
-void ldso_debug_test_0004(void)
+void LdsoDebugTest0004(void)
 {
     printf("[%s][Line: %d][%s]: entry\n", __FILE__, __LINE__, __func__);
 
-    void* handle_lib6 = dlopen(LIB_PATH_6, RTLD_NOW);
-    EXPECT_PTREQ("ldso_debug_test_0004", handle_lib6, NULL);
+    void* handleLib6 = dlopen(LIB_PATH_6, RTLD_NOW);
+    EXPECT_PTREQ("LdsoDebugTest0004", handleLib6, NULL);
 
     printf("[%s][Line: %d][%s]: end\n", __FILE__, __LINE__, __func__);
 }
 
 /**
- * @tc.name      : ldso_debug_test_0005
+ * @tc.name      : LdsoDebugTest0005
  * @tc.desc      : Verify HiSysEvent is NOT triggered.
  * @tc.level     : Level 0
  */
-void ldso_debug_test_0005(void)
+void LdsoDebugTest0005(void)
 {
     printf("[%s][Line: %d][%s]: entry\n", __FILE__, __LINE__, __func__);
 
     FILE* fp = NULL;
     char line[512] = { 0 };
-    char expected_str[512] = { 0 };
-    int event_found = 0;
+    char expectedStr[512] = { 0 };
+    int eventFound = 0;
     extern char* __progname;
 
     void* handle = dlopen(LIB_PATH_FOR_HISYSEVENT_TEST_0005, RTLD_NOW);
-    EXPECT_PTRNE("ldso_debug_test_0005", handle, NULL);
+    EXPECT_PTRNE("LdsoDebugTest0005", handle, NULL);
 
-    usleep(100000);
+    usleep(HISYSEVENT_WAIT_US);
 
     fp = popen("hisysevent -l -n DLOPEN_WITH_ABSOLUTE_PATH 2>/dev/null", "r");
     if (fp != NULL) {
-        snprintf(expected_str, sizeof(expected_str), "%s:%s", __progname, LIB_PATH_FOR_HISYSEVENT_TEST_0005);
+        snprintf(expectedStr, sizeof(expectedStr), "%s:%s", __progname, LIB_PATH_FOR_HISYSEVENT_TEST_0005);
 
         // Search for the expected string in HiSysEvent output
         while (fgets(line, sizeof(line), fp) != NULL) {
-            if (strstr(line, expected_str) != NULL) {
-                event_found = 1;
+            if (strstr(line, expectedStr) != NULL) {
+                eventFound = 1;
                 printf("[%s][Line: %d][%s] failed: data should NOT be found: %s", __FILE__, __LINE__, __func__, line);
                 break;
             }
         }
         pclose(fp);
-        EXPECT_EQ("ldso_debug_test_0005_event_found", event_found, 0);
+        EXPECT_EQ("ldso_debug_test_0005_event_found", eventFound, 0);
     } else {
         t_error("%s: failed to run hisysevent command\n", __func__);
     }
@@ -155,38 +156,38 @@ void ldso_debug_test_0005(void)
 }
 
 /**
- * @tc.name      : ldso_debug_test_0006
+ * @tc.name      : LdsoDebugTest0006
  * @tc.desc      : Verify HiSysEvent is triggered when dlopen file path contains special headers.
  * @tc.level     : Level 0
  */
-void ldso_debug_test_0006(void)
+void LdsoDebugTest0006(void)
 {
     printf("[%s][Line: %d][%s]: entry\n", __FILE__, __LINE__, __func__);
 
     FILE* fp = NULL;
     char line[512] = { 0 };
-    char expected_str[512] = { 0 };
-    int event_found = 0;
+    char expectedStr[512] = { 0 };
+    int eventFound = 0;
     extern char* __progname;
 
     void* handle = dlopen(LIB_PATH_FOR_HISYSEVENT_TEST_0006, RTLD_NOW);
-    EXPECT_PTRNE("ldso_debug_test_0006", handle, NULL);
+    EXPECT_PTRNE("LdsoDebugTest0006", handle, NULL);
 
-    usleep(100000);
+    usleep(HISYSEVENT_WAIT_US);
 
     fp = popen("hisysevent -l -n DLOPEN_WITH_ABSOLUTE_PATH 2>/dev/null", "r");
     if (fp != NULL) {
-        snprintf(expected_str, sizeof(expected_str), "%s:%s", __progname, LIB_PATH_FOR_HISYSEVENT_TEST_0006);
+        snprintf(expectedStr, sizeof(expectedStr), "%s:%s", __progname, LIB_PATH_FOR_HISYSEVENT_TEST_0006);
 
         while (fgets(line, sizeof(line), fp) != NULL) {
-            if (strstr(line, expected_str) != NULL) {
-                event_found = 1;
+            if (strstr(line, expectedStr) != NULL) {
+                eventFound = 1;
                 printf("[%s][Line: %d][%s] success: HiSysEvent found: %s", __FILE__, __LINE__, __func__, line);
                 break;
             }
         }
         pclose(fp);
-        EXPECT_EQ("ldso_debug_test_0006_event_found", event_found, 1);
+        EXPECT_EQ("ldso_debug_test_0006_event_found", eventFound, 1);
     } else {
         printf("[%s][Line: %d][%s]: Warning - failed to run hisysevent command\n", __FILE__, __LINE__, __func__);
     }
@@ -198,17 +199,16 @@ void ldso_debug_test_0006(void)
     printf("[%s][Line: %d][%s]: end\n", __FILE__, __LINE__, __func__);
 }
 
-static TEST_FUN G_Fun_Array[] = {
-    ldso_debug_test_0001, ldso_debug_test_0002, ldso_debug_test_0003,
-    ldso_debug_test_0004, ldso_debug_test_0005, ldso_debug_test_0006,
+static TEST_FUN g_gFunArray[] = {
+    LdsoDebugTest0001, LdsoDebugTest0002, LdsoDebugTest0003, LdsoDebugTest0004, LdsoDebugTest0005, LdsoDebugTest0006,
 };
 
-static int LdsoDebugTestTest_impl(void)
+static int LdsoDebugTestTestImpl(void)
 {
     printf("[%s][Line: %d][%s]: entry\n", __FILE__, __LINE__, __func__);
-    int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
+    int num = sizeof(g_gFunArray) / sizeof(TEST_FUN);
     for (int pos = 0; pos < num; ++pos) {
-        G_Fun_Array[pos]();
+        g_gFunArray[pos]();
     }
     printf("[%s][Line: %d][%s]: end\n", __FILE__, __LINE__, __func__);
     return 0;
@@ -216,5 +216,5 @@ static int LdsoDebugTestTest_impl(void)
 
 int LdsoDebugTestTest(void)
 {
-    return LdsoDebugTestTest_impl();
+    return LdsoDebugTestTestImpl();
 }

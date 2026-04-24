@@ -14,7 +14,7 @@
  */
 
 // by Jens Gustedt from http://www.openwall.com/lists/musl/2014/08/11/1
-// c11 threads test was removed and t_error messages were added
+// c11 THREADS test was removed and t_error messages were added
 // the test deadlocks with a broken cond var implementation so
 // cond_waits were changed to cond_timedwaits with short timeout
 #include <errno.h>
@@ -26,31 +26,31 @@
 
 #include <pthread.h>
 
-#define VERSION "POSIX threads"
+#define VERSION "POSIX THREADS"
 
-typedef pthread_mutex_t mutex;
-typedef pthread_cond_t condition;
+typedef pthread_mutex_t Mutex;
+typedef pthread_cond_t Condition;
 typedef pthread_t thread;
 typedef void* thread_ret;
 
 #define mutex_init(M) pthread_mutex_init((M), 0)
-#define mutex_destroy pthread_mutex_destroy
-#define mutex_lock pthread_mutex_lock
-#define mutex_unlock pthread_mutex_unlock
+#define MUTEX_DESTROY pthread_mutex_destroy
+#define MUTEX_LOCK pthread_mutex_lock
+#define MUTEX_UNLOCK pthread_mutex_unlock
 
 #define condition_init(C) pthread_cond_init((C), 0)
-#define condition_destroy pthread_cond_destroy
-#define condition_wait pthread_cond_wait
-#define condition_timedwait pthread_cond_timedwait
-#define condition_signal pthread_cond_signal
-#define condition_broadcast pthread_cond_broadcast
+#define CONDITION_DESTROY pthread_cond_destroy
+#define CONDITION_WAIT pthread_cond_wait
+#define CONDITION_TIMEDWAIT pthread_cond_timedwait
+#define CONDITION_SIGNAL pthread_cond_signal
+#define CONDITION_BROADCAST pthread_cond_broadcast
 
 #define thread_create(ID, START, ARG) pthread_create(ID, 0, START, ARG)
-#define thread_join pthread_join
+#define THREAD_JOIN pthread_join
 
 #define gettime(TS) clock_gettime(CLOCK_REALTIME, (TS))
 
-#define errorstring strerror
+#define ERRORSTRING strerror
 
 #ifdef __GLIBC__
 #define LIBRARY "glibc"
@@ -73,21 +73,21 @@ typedef void* thread_ret;
 #define tell(...) trace(__VA_ARGS__)
 
 enum {
-    phases = 10,
-    threads = 10,
+    PHASES = 10,
+    THREADS = 10,
 };
 
-static thread id[threads];
-static unsigned args[threads];
+static thread g_id[THREADS];
+static unsigned g_args[THREADS];
 
-static mutex mut[phases];
-static unsigned inside[phases];
+static Mutex g_mut[PHASES];
+static unsigned g_inside[PHASES];
 
-static condition cond_client;
-static condition cond_main;
-static unsigned volatile phase;
+static Condition g_condClient;
+static Condition g_condMain;
+static unsigned volatile g_phase;
 
-static void settimeout(struct timespec* ts)
+static void Settimeout(struct timespec* ts)
 {
     if (clock_gettime(CLOCK_REALTIME, ts))
         t_error("clock_gettime failed: %s\n", strerror(errno));
@@ -98,106 +98,106 @@ static void settimeout(struct timespec* ts)
     }
 }
 
-static thread_ret client(void* arg)
+static thread_ret Client(void* arg)
 {
     struct timespec ts;
     unsigned* number = (unsigned*)arg;
-    for (unsigned i = 0; i < phases; ++i) {
-        trace("thread %u in phase %u\n", *number, i);
-        mutex_lock(&mut[i]);
-        ++inside[i];
-        if (inside[i] == threads) {
+    for (unsigned i = 0; i < PHASES; ++i) {
+        trace("thread %u in g_phase %u\n", *number, i);
+        MUTEX_LOCK(&g_mut[i]);
+        ++g_inside[i];
+        if (g_inside[i] == THREADS) {
             trace("thread %u is last, signalling main\n", *number);
-            int ret = condition_signal(&cond_main);
-            trace("thread %u is last, signalling main, %s\n", *number, errorstring(ret));
+            int ret = CONDITION_SIGNAL(&g_condMain);
+            trace("thread %u is last, signalling main, %s\n", *number, ERRORSTRING(ret));
             if (ret)
-                t_error("thread %u is last in phase %u, signalling main failed: %s\n", *number, i, errorstring(ret));
+                t_error("thread %u is last in g_phase %u, signalling main failed: %s\n", *number, i, ERRORSTRING(ret));
         }
-        while (i == phase) {
-            tell("thread %u in phase %u (%u), waiting\n", *number, i, phase);
-            settimeout(&ts);
-            int ret = condition_timedwait(&cond_client, &mut[i], &ts);
-            trace("thread %u in phase %u (%u), finished, %s\n", *number, i, phase, errorstring(ret));
+        while (i == g_phase) {
+            tell("thread %u in g_phase %u (%u), waiting\n", *number, i, g_phase);
+            Settimeout(&ts);
+            int ret = CONDITION_TIMEDWAIT(&g_condClient, &g_mut[i], &ts);
+            trace("thread %u in g_phase %u (%u), finished, %s\n", *number, i, g_phase, ERRORSTRING(ret));
             if (ret) {
-                t_error("thread %u in phase %u (%u) finished waiting: %s\n", *number, i, phase, errorstring(ret));
+                t_error("thread %u in g_phase %u (%u) finished waiting: %s\n", *number, i, g_phase, ERRORSTRING(ret));
                 exit(t_status);
             }
         }
-        int ret = mutex_unlock(&mut[i]);
-        trace("thread %u in phase %u (%u), has unlocked mutex: %s\n", *number, i, phase, errorstring(ret));
+        int ret = MUTEX_UNLOCK(&g_mut[i]);
+        trace("thread %u in g_phase %u (%u), has unlocked Mutex: %s\n", *number, i, g_phase, ERRORSTRING(ret));
         if (ret)
-            t_error("thread %u in phase %u (%u), failed to unlock: %s\n", *number, i, phase, errorstring(ret));
+            t_error("thread %u in g_phase %u (%u), failed to unlock: %s\n", *number, i, g_phase, ERRORSTRING(ret));
     }
     return 0;
 }
 
-static int PthreadCondSmasherTest_impl(void)
+static int PthreadCondSmasherTestImpl(void)
 {
     struct timespec ts;
 
     tell("start up of main, using %s, library %s\n", VERSION, LIBRARY);
-    condition_init(&cond_client);
-    condition_init(&cond_main);
-    for (unsigned i = 0; i < phases; ++i) {
-        mutex_init(&mut[i]);
+    condition_init(&g_condClient);
+    condition_init(&g_condMain);
+    for (unsigned i = 0; i < PHASES; ++i) {
+        mutex_init(&g_mut[i]);
     }
-    mutex_lock(&mut[0]);
+    MUTEX_LOCK(&g_mut[0]);
 
-    for (unsigned i = 0; i < threads; ++i) {
-        args[i] = i;
-        thread_create(&id[i], client, &args[i]);
+    for (unsigned i = 0; i < THREADS; ++i) {
+        g_args[i] = i;
+        thread_create(&g_id[i], Client, &g_args[i]);
     }
 
-    while (phase < phases) {
-        while (inside[phase] < threads) {
-            trace("main seeing %u threads in phase %u, waiting\n", inside[phase], phase);
-            settimeout(&ts);
-            int ret = condition_timedwait(&cond_main, &mut[phase], &ts);
-            tell("main seeing %u threads in phase %u, %s\n", inside[phase], phase, errorstring(ret));
+    while (g_phase < PHASES) {
+        while (g_inside[g_phase] < THREADS) {
+            trace("main seeing %u THREADS in g_phase %u, waiting\n", g_inside[g_phase], g_phase);
+            Settimeout(&ts);
+            int ret = CONDITION_TIMEDWAIT(&g_condMain, &g_mut[g_phase], &ts);
+            tell("main seeing %u THREADS in g_phase %u, %s\n", g_inside[g_phase], g_phase, ERRORSTRING(ret));
             if (ret) {
-                t_error("main thread in phase %u (%u threads inside), finished waiting: %s\n",
-                        phase,
-                        inside[phase],
-                        errorstring(ret));
+                t_error("main thread in g_phase %u (%u THREADS g_inside), finished waiting: %s\n",
+                        g_phase,
+                        g_inside[g_phase],
+                        ERRORSTRING(ret));
                 return t_status;
             }
         }
-        /* now we know that everybody is waiting inside, lock the next
-           mutex, if any, such that nobody can enter the next phase
+        /* now we know that everybody is waiting g_inside, lock the next
+           Mutex, if any, such that nobody can enter the next g_phase
            without our permission. */
-        if (phase < phases - 1)
-            mutex_lock(&mut[phase + 1]);
-        /* Now signal all clients, update the phase count and release the
-           mutex they are waiting for. */
-        int ret = condition_broadcast(&cond_client);
-        trace("main has broadcast to %u: %s\n", phase, errorstring(ret));
+        if (g_phase < PHASES - 1)
+            MUTEX_LOCK(&g_mut[g_phase + 1]);
+        /* Now signal all clients, update the g_phase count and release the
+           Mutex they are waiting for. */
+        int ret = CONDITION_BROADCAST(&g_condClient);
+        trace("main has broadcast to %u: %s\n", g_phase, ERRORSTRING(ret));
         if (ret)
-            t_error("main broadcast in phase %u failed: %s\n", phase, errorstring(ret));
-        ++phase;
-        ret = mutex_unlock(&mut[phase - 1]);
-        trace("main has unlocked mutex %u: %s\n", phase - 1, errorstring(ret));
+            t_error("main broadcast in g_phase %u failed: %s\n", g_phase, ERRORSTRING(ret));
+        ++g_phase;
+        ret = MUTEX_UNLOCK(&g_mut[g_phase - 1]);
+        trace("main has unlocked Mutex %u: %s\n", g_phase - 1, ERRORSTRING(ret));
         if (ret)
-            t_error("main failed to unlock mutex %u: %s\n", phase - 1, errorstring(ret));
+            t_error("main failed to unlock Mutex %u: %s\n", g_phase - 1, ERRORSTRING(ret));
     }
 
     trace("main finished loop\n");
 
-    for (unsigned i = 0; i < threads; ++i) {
+    for (unsigned i = 0; i < THREADS; ++i) {
         trace("main joining thread %u\n", i);
-        thread_ret join_ret = 0;
-        int ret = thread_join(id[i], &join_ret);
-        trace("main joining thread %u: %s\n", i, errorstring(ret));
+        thread_ret joinRet = 0;
+        int ret = THREAD_JOIN(g_id[i], &joinRet);
+        trace("main joining thread %u: %s\n", i, ERRORSTRING(ret));
         if (ret)
-            t_error("main failed join thread %u: %s\n", i, errorstring(ret));
+            t_error("main failed join thread %u: %s\n", i, ERRORSTRING(ret));
     }
 
     /* C functions to destroy the control structures don't return error
        information, so we can't check for errors, here. */
-    for (unsigned i = 0; i < phases; ++i) {
-        mutex_destroy(&mut[i]);
+    for (unsigned i = 0; i < PHASES; ++i) {
+        MUTEX_DESTROY(&g_mut[i]);
     }
-    condition_destroy(&cond_main);
-    condition_destroy(&cond_client);
+    CONDITION_DESTROY(&g_condMain);
+    CONDITION_DESTROY(&g_condClient);
 
     tell("shut down of main, using %s, library %s\n", VERSION, LIBRARY);
 
@@ -206,5 +206,5 @@ static int PthreadCondSmasherTest_impl(void)
 
 int PthreadCondSmasherTest(void)
 {
-    return PthreadCondSmasherTest_impl();
+    return PthreadCondSmasherTestImpl();
 }

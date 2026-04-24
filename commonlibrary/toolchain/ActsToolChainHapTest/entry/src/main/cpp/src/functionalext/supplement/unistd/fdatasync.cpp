@@ -19,30 +19,31 @@
 
 typedef void (*TEST_FUN)();
 
-static const char* path = "/data/storage/el2/base/cache/readtest.txt";
+static const char* PATH = "/data/storage/el2/base/cache/readtest.txt";
+constexpr int BUFFER_SIZE = 1024;
 
 /**
  * @tc.name      : fdatasync_0100
  * @tc.desc      : Verify flush kernel's cache (parameter valid)
  * @tc.level     : Level 0
  */
-void fdatasync_0100()
+void Fdatasync0100()
 {
     char str[] = "hello";
-    char buffer[1024] = { "\0" };
-    int fd = open(path, O_RDWR | O_CREAT, TEST_MODE);
+    char buffer[BUFFER_SIZE] = { "\0" };
+    int fd = open(PATH, O_RDWR | O_CREAT, TEST_MODE);
     EXPECT_NE("fdatasync_0100", fd, -1);
 
     write(fd, str, sizeof(str));
     lseek(fd, 0L, SEEK_SET);
-    read(fd, buffer, 1024);
+    read(fd, buffer, BUFFER_SIZE);
 
     int result = fdatasync(fd);
     EXPECT_EQ("fdatasync_0100", result, 0);
     EXPECT_STREQ("fdatasync_0100", buffer, "hello");
 
     close(fd);
-    remove(path);
+    remove(PATH);
 }
 
 /**
@@ -50,18 +51,18 @@ void fdatasync_0100()
  * @tc.desc      : Verify failed to flush kernel's cache (file close)
  * @tc.level     : Level 2
  */
-void fdatasync_0200()
+void Fdatasync0200()
 {
     char str[] = "hello\n";
-    char buffer[1024] = { "\0" };
-    int fd = open(path, O_RDWR | O_CREAT, TEST_MODE);
+    char buffer[BUFFER_SIZE] = { "\0" };
+    int fd = open(PATH, O_RDWR | O_CREAT, TEST_MODE);
     EXPECT_NE("fdatasync_0100", fd, -1);
     close(fd);
 
     int result = fdatasync(fd);
     EXPECT_EQ("fdatasync_0200", result, -1);
 
-    remove(path);
+    remove(PATH);
 }
 
 /**
@@ -69,23 +70,23 @@ void fdatasync_0200()
  * @tc.desc      : Validation failed to flush kernel's cache (invalid parameter)
  * @tc.level     : Level 2
  */
-void fdatasync_0300()
+void Fdatasync0300()
 {
     int result = fdatasync(-1);
     EXPECT_EQ("fdatasync_0300", result, -1);
 }
 
-static TEST_FUN G_Fun_Array[] = {
-    fdatasync_0100,
-    fdatasync_0200,
-    fdatasync_0300,
+static TEST_FUN g_gFunArray[] = {
+    Fdatasync0100,
+    Fdatasync0200,
+    Fdatasync0300,
 };
 
-static int FdatasyncTest_impl(int argc, char* argv[])
+static int FdatasyncTestImpl(int argc, char* argv[])
 {
-    int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
+    int num = sizeof(g_gFunArray) / sizeof(TEST_FUN);
     for (int pos = 0; pos < num; ++pos) {
-        G_Fun_Array[pos]();
+        g_gFunArray[pos]();
     }
 
     return t_status;
@@ -94,6 +95,6 @@ static int FdatasyncTest_impl(int argc, char* argv[])
 int FdatasyncTest(void)
 {
     static char libcProg[] = "libc_test";
-    char* libcArgv[] = { libcProg, NULL };
-    return FdatasyncTest_impl(1, libcArgv);
+    char* libcArgv[] = { libcProg, nullptr };
+    return FdatasyncTestImpl(1, libcArgv);
 }

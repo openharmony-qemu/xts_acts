@@ -18,7 +18,7 @@
 #include "asctime_data.h"
 #include "functionalext.h"
 
-static time_t gTime = 1659177614;
+static time_t g_time = 1659177614;
 
 /**
  * @tc.name      : asctime_0100
@@ -37,7 +37,7 @@ void asctime_0100(void)
 
         setenv("TZ", handlerChar, 1);
         tzset();
-        struct tm* timeptr = localtime(&gTime);
+        struct tm* timeptr = localtime(&g_time);
         if (!timeptr) {
             EXPECT_PTRNE("asctime_0100", timeptr, nullptr);
             return;

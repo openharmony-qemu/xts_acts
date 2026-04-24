@@ -19,7 +19,7 @@
 #include "functionalext.h"
 #include "gmtime_data.h"
 
-static time_t gTime = 1659177614;
+static time_t g_time = 1659177614;
 static int16_t gYearBase = 1900;
 static int16_t gBufferSize = 500;
 
@@ -40,7 +40,7 @@ void gmtime_r_0100(void)
         setenv("TZ", handlerChar, 1);
         tzset();
         struct tm res = { 0 };
-        struct tm* gmtm = gmtime_r(&gTime, &res);
+        struct tm* gmtm = gmtime_r(&g_time, &res);
         char buff[gBufferSize];
         int cnt = sprintf(buff,
                           "%d-%d-%d %d:%d:%d wday=%d,yday=%d,isdst=%d,gmtoff=%ld,zone=%s",

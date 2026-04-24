@@ -19,7 +19,7 @@
 #include "localtime_data.h"
 #include "time64_functions.h"
 
-static time_t gTime = 1659177614;
+static time_t g_time = 1659177614;
 static int16_t gYearBase = 1900;
 static int16_t gBufferSize = 500;
 
@@ -42,7 +42,7 @@ void localtime_0100(void)
         setenv("TZ", handlerChar, 1);
         tzset();
         struct tm* localtm;
-        localtm = localtime(&gTime);
+        localtm = localtime(&g_time);
         char buff[gBufferSize];
         int cnt = sprintf(buff,
                           "%d-%d-%d %d:%d:%d wday=%d,yday=%d,isdst=%d,gmtoff=%ld,zone=%s",
@@ -80,7 +80,7 @@ void localtime64_0100(void)
         setenv("TZ", handlerChar, 1);
         tzset();
         struct tm* localtm;
-        localtm = __localtime64(&gTime);
+        localtm = __localtime64(&g_time);
         char buff[gBufferSize];
         int cnt = sprintf(buff,
                           "%d-%d-%d %d:%d:%d wday=%d,yday=%d,isdst=%d,gmtoff=%ld,zone=%s",

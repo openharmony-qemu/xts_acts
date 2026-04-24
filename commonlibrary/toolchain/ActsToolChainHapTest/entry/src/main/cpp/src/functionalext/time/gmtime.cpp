@@ -18,7 +18,7 @@
 #include "functionalext.h"
 #include "gmtime_data.h"
 
-static time_t gTime = 1659177614;
+static time_t g_time = 1659177614;
 static int16_t gYearBase = 1900;
 static int16_t gBufferSize = 500;
 
@@ -39,7 +39,7 @@ void gmtime_0100(void)
         setenv("TZ", handlerChar, 1);
         tzset();
         struct tm* gmtm;
-        gmtm = gmtime(&gTime);
+        gmtm = gmtime(&g_time);
         char buff[gBufferSize];
         int cnt = sprintf(buff,
                           "%d-%d-%d %d:%d:%d wday=%d,yday=%d,isdst=%d,gmtoff=%ld,zone=%s",

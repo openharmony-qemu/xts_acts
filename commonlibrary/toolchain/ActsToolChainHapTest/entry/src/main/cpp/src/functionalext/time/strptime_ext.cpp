@@ -19,9 +19,9 @@
 #include "functionalext.h"
 #include "strptime_data.h"
 
-static int16_t gBufferSize = 256;
-static time_t gTime = 1659177614;
-static int16_t gYearBase = 1900;
+static int16_t g_bufferSize = 256;
+static time_t g_time = 1659177614;
+static int16_t g_yearBase = 1900;
 
 /**
  * @tc.name      : strptime_0100
@@ -40,8 +40,8 @@ void strptime_0100(void)
 
         setenv("TZ", handlerChar, 1);
         tzset();
-        char buffer[gBufferSize];
-        struct tm* timeptr = localtime(&gTime);
+        char buffer[g_bufferSize];
+        struct tm* timeptr = localtime(&g_time);
         if (!timeptr) {
             EXPECT_PTRNE("strptime_0100", timeptr, nullptr);
             return;
@@ -78,8 +78,8 @@ void strptime_0200(void)
 
         setenv("TZ", handlerChar, 1);
         tzset();
-        char buffer[gBufferSize];
-        struct tm* timeptr = localtime(&gTime);
+        char buffer[g_bufferSize];
+        struct tm* timeptr = localtime(&g_time);
         if (!timeptr) {
             EXPECT_TRUE("strptime_0200", timeptr == nullptr);
             return;
@@ -88,11 +88,11 @@ void strptime_0200(void)
         EXPECT_TRUE("strptime_0200", len > 0);
         struct tm tmTime = { 0 };
         strptime(buffer, "%c %Z%z", &tmTime);
-        char buffResult[gBufferSize];
+        char buffResult[g_bufferSize];
 
         int cnt = sprintf(buffResult,
                           "%d-%d-%d %d:%d:%d wday=%d,yday=%d,isdst=%d,gmtoff=%ld,zone=%s",
-                          (tmTime.tm_year + gYearBase),
+                          (tmTime.tm_year + g_yearBase),
                           tmTime.tm_mon,
                           tmTime.tm_mday,
                           tmTime.tm_hour,
@@ -119,8 +119,8 @@ void strptime_0300(void)
     char* buffer = "2022-04-10";
     struct tm tmTime = { 0 };
     strptime(buffer, "%F", &tmTime);
-    char buffResult[gBufferSize];
-    int cnt = sprintf(buffResult, "%04d-%02d-%02d", (tmTime.tm_year + gYearBase), tmTime.tm_mon + 1, tmTime.tm_mday);
+    char buffResult[g_bufferSize];
+    int cnt = sprintf(buffResult, "%04d-%02d-%02d", (tmTime.tm_year + g_yearBase), tmTime.tm_mon + 1, tmTime.tm_mday);
     EXPECT_TRUE("strptime_0300", cnt > 0);
     EXPECT_STREQ("strptime_0300", buffer, buffResult);
 }
@@ -136,7 +136,7 @@ void strptime_0400(void)
     char* buffer = "23";
     struct tm tmTime = { 0 };
     strptime(buffer, "%g", &tmTime);
-    char buffResult[gBufferSize];
+    char buffResult[g_bufferSize];
     int cnt = sprintf(buffResult, "%d", tmTime.tm_year);
     EXPECT_TRUE("strptime_0400", cnt > 0);
     EXPECT_STREQ("strptime_0400", buffer, buffResult);
@@ -153,7 +153,7 @@ void strptime_0500(void)
     const char* buffer = "16";
     struct tm tmTime = { 0 };
     strptime(buffer, " %k", &tmTime);
-    char buffResult[gBufferSize];
+    char buffResult[g_bufferSize];
     int cnt = sprintf(buffResult, "%d", tmTime.tm_hour);
     EXPECT_TRUE("strptime_0500", cnt > 0);
     EXPECT_STREQ("strptime_0500", buffer, buffResult);
@@ -170,7 +170,7 @@ void strptime_0600(void)
     const char* buffer = " 4";
     struct tm tmTime = { 0 };
     strptime(buffer, " %l", &tmTime);
-    char buffResult[gBufferSize];
+    char buffResult[g_bufferSize];
     int cnt = sprintf(buffResult, "%d", tmTime.tm_hour);
     EXPECT_TRUE("strptime_0600", cnt > 0);
     EXPECT_STREQ("strptime_0600", "4", buffResult);
@@ -196,7 +196,7 @@ void strptime_0700(void)
     struct tm tmTime = { 0 };
     strptime(buffer, "%s", &tmTime);
     second = mktime(&tmTime);
-    char buffResult[gBufferSize];
+    char buffResult[g_bufferSize];
     int cnt = sprintf(buffResult, "%lld", second);
     EXPECT_TRUE("strptime_0700", cnt > 0);
     EXPECT_STREQ("strptime_0700", buffer, buffResult);
@@ -213,7 +213,7 @@ void strptime_0800(void)
     const char* buffer = "1";
     struct tm tmTime = { 0 };
     strptime(buffer, "%u", &tmTime);
-    char buffResult[gBufferSize];
+    char buffResult[g_bufferSize];
     int cnt = sprintf(buffResult, "%d", tmTime.tm_wday);
     EXPECT_TRUE("strptime_0800", cnt > 0);
     EXPECT_STREQ("strptime_0800", buffer, buffResult);
@@ -230,8 +230,8 @@ void strptime_0900(void)
     const char* buffer = "30-Oct-2021";
     struct tm tmTime = { 0 };
     strptime(buffer, "%v", &tmTime);
-    char buffResult[gBufferSize];
-    int cnt = sprintf(buffResult, "%d-%d-%d", (tmTime.tm_year + gYearBase), tmTime.tm_mon, tmTime.tm_mday);
+    char buffResult[g_bufferSize];
+    int cnt = sprintf(buffResult, "%d-%d-%d", (tmTime.tm_year + g_yearBase), tmTime.tm_mon, tmTime.tm_mday);
     EXPECT_TRUE("strptime_0900", cnt > 0);
     EXPECT_STREQ("strptime_0900", "2021-9-30", buffResult);
 }
@@ -247,7 +247,7 @@ void strptime_1000(void)
     const char* buffer = "2021-01-23";
     struct tm tmTime = { 0 };
     char* result = strptime(buffer, "%G", &tmTime);
-    char buffResult[gBufferSize];
+    char buffResult[g_bufferSize];
     int cnt = sprintf(buffResult, "%s", result);
     EXPECT_TRUE("strptime_1000", cnt > 0);
     EXPECT_STREQ("strptime_1000", "-01-23", buffResult);
@@ -264,7 +264,7 @@ void strptime_1100(void)
     const char* buffer = "23";
     struct tm tmTime = { 0 };
     strptime(buffer, "%j", &tmTime);
-    char buffResult[gBufferSize];
+    char buffResult[g_bufferSize];
     int cnt = sprintf(buffResult, "%d", tmTime.tm_yday);
     EXPECT_TRUE("strptime_1100", cnt > 0);
     EXPECT_STREQ("strptime_1100", "22", buffResult);
@@ -287,13 +287,13 @@ void strptime_1200(void)
 
     setenv("TZ", handlerChar, 1);
     tzset();
-    struct tm* timeptr = localtime(&gTime);
+    struct tm* timeptr = localtime(&g_time);
     if (!timeptr) {
         EXPECT_PTRNE("strptime_1200", timeptr, nullptr);
         return;
     }
     strptime(buffer, "%P", timeptr);
-    char buffResult[gBufferSize];
+    char buffResult[g_bufferSize];
     int cnt = sprintf(buffResult, "%d", timeptr->tm_hour);
     EXPECT_TRUE("strptime_1200", cnt > 0);
     EXPECT_STREQ("strptime_1200", "6", buffResult);
@@ -316,13 +316,13 @@ void strptime_1300(void)
 
     setenv("TZ", handlerChar, 1);
     tzset();
-    struct tm* timeptr = localtime(&gTime);
+    struct tm* timeptr = localtime(&g_time);
     if (!timeptr) {
         EXPECT_PTRNE("strptime_1300", timeptr, nullptr);
         return;
     }
     strptime(buffer, "%P", timeptr);
-    char buffResult[gBufferSize];
+    char buffResult[g_bufferSize];
     int cnt = sprintf(buffResult, "%d", timeptr->tm_hour);
     EXPECT_TRUE("strptime_1300", cnt > 0);
     EXPECT_STREQ("strptime_1300", "18", buffResult);
@@ -339,7 +339,7 @@ void strptime_1400(void)
     const char* buffer = "30-Oct-2021";
     struct tm tmTime = { 0 };
     char* result = strptime(buffer, "%U", &tmTime);
-    char buffResult[gBufferSize];
+    char buffResult[g_bufferSize];
     int cnt = sprintf(buffResult, "%s", result);
     EXPECT_TRUE("strptime_1400", cnt > 0);
     EXPECT_STREQ("strptime_1400", "-Oct-2021", buffResult);
@@ -356,7 +356,7 @@ void strptime_1500(void)
     const char* buffer = "1";
     struct tm tmTime = { 0 };
     char* result = strptime(buffer, "%w", &tmTime);
-    char buffResult[gBufferSize];
+    char buffResult[g_bufferSize];
     int cnt = sprintf(buffResult, "%d", tmTime.tm_wday);
     EXPECT_TRUE("strptime_1500", cnt > 0);
     EXPECT_STREQ("strptime_1500", "1", buffResult);
@@ -373,8 +373,8 @@ void strptime_1600(void)
     const char* buffer = "Oct-30-2021";
     struct tm tmTime = { 0 };
     strptime(buffer, "%v", &tmTime);
-    char buffResult[gBufferSize];
-    int cnt = sprintf(buffResult, "%d-%d-%d", (tmTime.tm_year + gYearBase), tmTime.tm_mon, tmTime.tm_mday);
+    char buffResult[g_bufferSize];
+    int cnt = sprintf(buffResult, "%d-%d-%d", (tmTime.tm_year + g_yearBase), tmTime.tm_mon, tmTime.tm_mday);
     EXPECT_TRUE("strptime_1600", cnt > 0);
     EXPECT_STREQ("strptime_1600", "1900-0-0", buffResult);
 }
@@ -390,7 +390,7 @@ void strptime_1700(void)
     const char* buffer = "16-Spring";
     struct tm tmTime = { 0 };
     char* result = strptime(buffer, "%V", &tmTime);
-    char buffResult[gBufferSize];
+    char buffResult[g_bufferSize];
     int cnt = sprintf(buffResult, "%s", result);
     EXPECT_TRUE("strptime_1700", cnt > 0);
     EXPECT_STREQ("strptime_1700", "-Spring", buffResult);
@@ -407,7 +407,7 @@ void strptime_1800(void)
     const char* buffer = "+03";
     struct tm tmTime = { 0 };
     char* result = strptime(buffer, "%Z", &tmTime);
-    char buffResult[gBufferSize];
+    char buffResult[g_bufferSize];
     int cnt = sprintf(buffResult, "%s", tmTime.__tm_zone);
     EXPECT_TRUE("strptime_1800", cnt > 0);
     EXPECT_STREQ("strptime_1800", "+03", buffResult);
@@ -424,7 +424,7 @@ void strptime_1900(void)
     const char* buffer = "-03";
     struct tm tmTime = { 0 };
     char* result = strptime(buffer, "%Z", &tmTime);
-    char buffResult[gBufferSize];
+    char buffResult[g_bufferSize];
     int cnt = sprintf(buffResult, "%s", tmTime.__tm_zone);
     EXPECT_TRUE("strptime_1900", cnt > 0);
     EXPECT_STREQ("strptime_1900", "-03", buffResult);
@@ -455,7 +455,7 @@ void strptime_2100(void)
     const char* buffer = "2022-4-10";
     struct tm tmTime = { 0 };
     char* result = strptime(buffer, "%+2F", &tmTime);
-    char buffResult[gBufferSize];
+    char buffResult[g_bufferSize];
     int cnt = sprintf(buffResult, "%d", tmTime.tm_mday);
     EXPECT_TRUE("strptime_2100", cnt > 0);
     EXPECT_STREQ("strptime_2100", "10", buffResult);
@@ -481,12 +481,12 @@ void strptime_2200(void)
  * type according to a specific time format
  * @tc.level     : Level 1
  */
-void strptime_2300(void)
+void Strptime2300(void)
 {
     const char* buffer = "2022";
     struct tm tmTime = { 0 };
     char* result = strptime(buffer, "%C", &tmTime);
-    char buffResult[gBufferSize];
+    char buffResult[g_bufferSize];
     int cnt = sprintf(buffResult, "%s", result);
     EXPECT_TRUE("strptime_2300", cnt > 0);
     EXPECT_STREQ("strptime_2300", "22", buffResult);
@@ -498,7 +498,7 @@ void strptime_2300(void)
  * type according to a specific time format
  * @tc.level     : Level 2
  */
-void strptime_2400(void)
+void Strptime2400(void)
 {
     const char* buffer = "";
     struct tm tmTime = { 0 };
@@ -531,7 +531,7 @@ void strptime_2600(void)
     const char* buffer = " 1";
     struct tm tmTime = { 0 };
     char* result = strptime(buffer, "%n%t", &tmTime);
-    char buffResult[gBufferSize];
+    char buffResult[g_bufferSize];
     int cnt = sprintf(buffResult, "%s", result);
     EXPECT_TRUE("strptime_2600", cnt > 0);
     EXPECT_STREQ("strptime_2600", "1", buffResult);
@@ -543,12 +543,12 @@ void strptime_2600(void)
  * type according to a specific time format
  * @tc.level     : Level 1
  */
-void strptime_2700(void)
+void Strptime2700(void)
 {
     const char* buffer = "08:38:20";
     struct tm tmTime = { 0 };
     char* result = strptime(buffer, "%r", &tmTime);
-    char buffResult[gBufferSize];
+    char buffResult[g_bufferSize];
     int cnt = sprintf(buffResult, "%d:%d:%d", tmTime.tm_hour, tmTime.tm_min, tmTime.tm_sec);
     EXPECT_TRUE("strptime_2700", cnt > 0);
     EXPECT_STREQ("strptime_2700", "8:38:20", buffResult);
@@ -588,7 +588,7 @@ void strptime_2900(void)
  * type according to a specific time format
  * @tc.level     : Level 2
  */
-void strptime_3000(void)
+void Strptime3000(void)
 {
     const char* buffer = "+1";
     struct tm tmTime = { 0 };
@@ -649,8 +649,8 @@ void strptime_3400(void)
     const char* buffer = "04/10/22";
     struct tm tmTime = { 0 };
     char* result = strptime(buffer, "%x", &tmTime);
-    char buffResult[gBufferSize];
-    int cnt = sprintf(buffResult, "%d/%d/%d", (tmTime.tm_mon + 1), tmTime.tm_mday, (tmTime.tm_year + gYearBase));
+    char buffResult[g_bufferSize];
+    int cnt = sprintf(buffResult, "%d/%d/%d", (tmTime.tm_mon + 1), tmTime.tm_mday, (tmTime.tm_year + g_yearBase));
     EXPECT_TRUE("strptime_3400", cnt > 0);
     EXPECT_STREQ("strptime_3400", "4/10/2022", buffResult);
 }
@@ -675,12 +675,12 @@ void strptime_3500(void)
  * type according to a specific time format
  * @tc.level     : Level 1
  */
-void strptime_3600(void)
+void Strptime3600(void)
 {
     const char* buffer = "08:10:20";
     struct tm tmTime = { 0 };
     char* result = strptime(buffer, "%X", &tmTime);
-    char buffResult[gBufferSize];
+    char buffResult[g_bufferSize];
     int cnt = sprintf(buffResult, "%d:%d:%d", tmTime.tm_hour, tmTime.tm_min, tmTime.tm_sec);
     EXPECT_TRUE("strptime_3600", cnt > 0);
     EXPECT_STREQ("strptime_3600", "8:10:20", buffResult);
@@ -706,7 +706,7 @@ void strptime_3700(void)
  * type according to a specific time format
  * @tc.level     : Level 2
  */
-void strptime_3800(void)
+void Strptime3800(void)
 {
     const char* buffer = "";
     struct tm tmTime = { 0 };
@@ -728,7 +728,7 @@ void strptime_3900(void)
     EXPECT_FALSE("strptime_3900", result);
 }
 
-static int StrptimeExtTest_impl(void)
+static int StrptimeExtTestImpl(void)
 {
     strptime_0100();
     strptime_0200();
@@ -752,27 +752,27 @@ static int StrptimeExtTest_impl(void)
     strptime_2000();
     strptime_2100();
     strptime_2200();
-    strptime_2300();
-    strptime_2400();
+    Strptime2300();
+    Strptime2400();
     strptime_2500();
     strptime_2600();
-    strptime_2700();
+    Strptime2700();
     strptime_2800();
     strptime_2900();
-    strptime_3000();
+    Strptime3000();
     strptime_3100();
     strptime_3200();
     strptime_3300();
     strptime_3400();
     strptime_3500();
-    strptime_3600();
+    Strptime3600();
     strptime_3700();
-    strptime_3800();
+    Strptime3800();
     strptime_3900();
     return t_status;
 }
 
 int StrptimeExtTest(void)
 {
-    return StrptimeExtTest_impl();
+    return StrptimeExtTestImpl();
 }

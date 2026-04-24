@@ -35,13 +35,13 @@ const int SIZE = 128;
 void iswalnum_l_0100(void)
 {
     wchar_t c = 'a';
-    locale_t m_locale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
-    if (m_locale == nullptr) {
+    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
+    if (mLocale == nullptr) {
         return;
     }
-    int ret = iswalnum_l(c, m_locale);
+    int ret = iswalnum_l(c, mLocale);
     EXPECT_NE("iswalnum_l_0100", ret, 0);
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -53,13 +53,13 @@ void iswalnum_l_0100(void)
 void iswalnum_l_0200(void)
 {
     wchar_t c = '1';
-    locale_t m_locale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
-    if (m_locale == nullptr) {
+    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
+    if (mLocale == nullptr) {
         return;
     }
-    int ret = iswalnum_l('1', m_locale);
+    int ret = iswalnum_l('1', mLocale);
     EXPECT_NE("iswalnum_l_0200", ret, 0);
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -71,13 +71,13 @@ void iswalnum_l_0200(void)
 void iswalnum_l_0300(void)
 {
     wchar_t c = '*';
-    locale_t m_locale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
-    if (m_locale == nullptr) {
+    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
+    if (mLocale == nullptr) {
         return;
     }
-    int ret = iswalnum_l('*', m_locale);
+    int ret = iswalnum_l('*', mLocale);
     EXPECT_EQ("iswalnum_l_0300", ret, 0);
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -88,19 +88,19 @@ void iswalnum_l_0300(void)
  */
 void iswalnum_l_0400(void)
 {
-    locale_t m_locale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
-    if (m_locale == nullptr) {
+    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
+    if (mLocale == nullptr) {
         return;
     }
     int total = 0;
     for (int i = 0; i < SIZE; i++) {
-        int ret = iswalnum_l(static_cast<wchar_t>(i), m_locale);
+        int ret = iswalnum_l(static_cast<wchar_t>(i), mLocale);
         if (ret) {
             total++;
         }
     }
     EXPECT_EQ("iswalnum_l_0400", total, COUNT);
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -111,10 +111,10 @@ void iswalnum_l_0400(void)
  */
 void iswalnum_l_0500(void)
 {
-    locale_t m_locale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
+    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
-        int ret = iswalnum_l(static_cast<wchar_t>(i), m_locale);
+        int ret = iswalnum_l(static_cast<wchar_t>(i), mLocale);
         if (ret) {
             total++;
         }
@@ -130,10 +130,10 @@ void iswalnum_l_0500(void)
  */
 void iswalnum_l_0600(void)
 {
-    locale_t m_locale = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
+    locale_t mLocale = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
-        int ret = iswalnum_l(static_cast<wchar_t>(i), m_locale);
+        int ret = iswalnum_l(static_cast<wchar_t>(i), mLocale);
         if (ret) {
             total++;
         }
@@ -149,12 +149,12 @@ void iswalnum_l_0600(void)
  */
 void iswalnum_l_0700(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
-    if (m_locale == nullptr) {
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
+    if (mLocale == nullptr) {
         return;
     }
-    int ret = iswalnum_l(static_cast<wchar_t>(MAX_VALUE), m_locale);
-    freelocale(m_locale);
+    int ret = iswalnum_l(static_cast<wchar_t>(MAX_VALUE), mLocale);
+    freelocale(mLocale);
     EXPECT_EQ("iswalnum_l_0700", ret, CMPFLAG);
 }
 
@@ -166,12 +166,12 @@ void iswalnum_l_0700(void)
  */
 void iswalnum_l_0800(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
-    if (m_locale == nullptr) {
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
+    if (mLocale == nullptr) {
         return;
     }
-    int ret = iswalnum_l(static_cast<wchar_t>(MAX_VALUE), m_locale);
-    freelocale(m_locale);
+    int ret = iswalnum_l(static_cast<wchar_t>(MAX_VALUE), mLocale);
+    freelocale(mLocale);
     EXPECT_EQ("iswalnum_l_0800", ret, CMPFLAG);
 }
 

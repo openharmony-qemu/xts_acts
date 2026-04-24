@@ -28,163 +28,163 @@ const int SIZE = 128;
 #define MAX_VALUE 4294967295
 
 /*
- * @tc.name      : iswgraph_l_0100
+ * @tc.name      : IswgraphL0100
  * @tc.desc      : Verify iswgraph_l process success. When that the entered character is a letter (parameter is 'a'
  *                 has a graphical representation).
  * @tc.level     : Level 0
  */
-void iswgraph_l_0100(void)
+void IswgraphL0100(void)
 {
     wchar_t c = 'a';
-    locale_t m_locale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
-    if (m_locale == nullptr) {
+    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
+    if (mLocale == nullptr) {
         return;
     }
-    int ret = iswgraph_l(c, m_locale);
-    EXPECT_NE("iswgraph_l_0100", ret, 0);
-    freelocale(m_locale);
+    int ret = iswgraph_l(c, mLocale);
+    EXPECT_NE("IswgraphL0100", ret, 0);
+    freelocale(mLocale);
 }
 
 /*
- * @tc.name      : iswgraph_l_0200
+ * @tc.name      : IswgraphL0200
  * @tc.desc      : Verify iswgraph_l process success. When that the entered character is not a letter (parameter is '!'
  *                 has a graphical representation).
  * @tc.level     : Level 2
  */
-void iswgraph_l_0200(void)
+void IswgraphL0200(void)
 {
     wchar_t c = '!';
-    locale_t m_locale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
-    if (m_locale == nullptr) {
+    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
+    if (mLocale == nullptr) {
         return;
     }
-    int ret = iswgraph_l(c, m_locale);
-    EXPECT_NE("iswgraph_l_0200", ret, 0);
-    freelocale(m_locale);
+    int ret = iswgraph_l(c, mLocale);
+    EXPECT_NE("IswgraphL0200", ret, 0);
+    freelocale(mLocale);
 }
 
 /*
- * @tc.name      : iswgraph_l_0300
+ * @tc.name      : IswgraphL0300
  * @tc.desc      : Verify iswgraph_l process success. When that the entered character is not has a graphical
  * representation.
  * @tc.level     : Level 2
  */
-void iswgraph_l_0300(void)
+void IswgraphL0300(void)
 {
     wchar_t c = ' ';
-    locale_t m_locale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
-    if (m_locale == nullptr) {
+    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
+    if (mLocale == nullptr) {
         return;
     }
-    int ret = iswgraph_l(c, m_locale);
-    EXPECT_EQ("iswgraph_l_0300", ret, 0);
-    freelocale(m_locale);
+    int ret = iswgraph_l(c, mLocale);
+    EXPECT_EQ("IswgraphL0300", ret, 0);
+    freelocale(mLocale);
 }
 
 /**
- * @tc.name      : iswgraph_l_0400
+ * @tc.name      : IswgraphL0400
  * @tc.desc      : Verify iswgraph_l process success. Determine the number of control characters in the ascii code
  * table.
  * @tc.level     : Level 1
  */
-void iswgraph_l_0400(void)
+void IswgraphL0400(void)
 {
-    locale_t m_locale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
-    if (m_locale == nullptr) {
+    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
+    if (mLocale == nullptr) {
         return;
     }
     int total = 0;
     for (int i = 0; i < SIZE; i++) {
-        int ret = iswgraph_l(static_cast<wchar_t>(i), m_locale);
+        int ret = iswgraph_l(static_cast<wchar_t>(i), mLocale);
         if (ret) {
             total++;
         }
     }
-    EXPECT_EQ("iswgraph_l_0400", total, COUNT);
-    freelocale(m_locale);
+    EXPECT_EQ("IswgraphL0400", total, COUNT);
+    freelocale(mLocale);
 }
 
 /**
- * @tc.name      : iswgraph_l_0500
+ * @tc.name      : IswgraphL0500
  * @tc.desc      : Verify iswgraph_l process success. Determine the number of control characters in the ascii code
  * table.
  * @tc.level     : Level 1
  */
-void iswgraph_l_0500(void)
+void IswgraphL0500(void)
 {
-    locale_t m_locale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
+    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
-        int ret = iswgraph_l(static_cast<wchar_t>(i), m_locale);
+        int ret = iswgraph_l(static_cast<wchar_t>(i), mLocale);
         if (ret) {
             total++;
         }
     }
-    EXPECT_EQ("iswgraph_l_0500", total, ALNUM_WINT_COUNT);
+    EXPECT_EQ("IswgraphL0500", total, ALNUM_WINT_COUNT);
 }
 
 /**
- * @tc.name      : iswgraph_l_0600
+ * @tc.name      : IswgraphL0600
  * @tc.desc      : Verify iswgraph_l process success. Determine the number of control characters in the ascii code
  * table.
  * @tc.level     : Level 1
  */
-void iswgraph_l_0600(void)
+void IswgraphL0600(void)
 {
-    locale_t m_locale = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
+    locale_t mLocale = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
-        int ret = iswgraph_l(static_cast<wchar_t>(i), m_locale);
+        int ret = iswgraph_l(static_cast<wchar_t>(i), mLocale);
         if (ret) {
             total++;
         }
     }
-    EXPECT_EQ("iswgraph_l_0600", total, ALNUM_WINT_COUNT);
+    EXPECT_EQ("IswgraphL0600", total, ALNUM_WINT_COUNT);
 }
 
 /**
- * @tc.name      : iswgraph_l_0700
+ * @tc.name      : IswgraphL0700
  * @tc.desc      : Verify iswgraph_l process success. Input parameter is the maximum value of int, please verify that
  * the return is CMPFLAG code table.
  * @tc.level     : Level 1
  */
-void iswgraph_l_0700(void)
+void IswgraphL0700(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
-    int ret = iswgraph_l(static_cast<wchar_t>(MAX_VALUE), m_locale);
-    freelocale(m_locale);
-    EXPECT_EQ("iswgraph_l_0700", ret, CMPFLAG);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
+    int ret = iswgraph_l(static_cast<wchar_t>(MAX_VALUE), mLocale);
+    freelocale(mLocale);
+    EXPECT_EQ("IswgraphL0700", ret, CMPFLAG);
 }
 
 /**
- * @tc.name      : iswgraph_l_0800
+ * @tc.name      : IswgraphL0800
  * @tc.desc      : Verify iswgraph_l process success. Input parameter is the maximum value of int, please verify that
  * the return is CMPFLAG code table.
  * @tc.level     : Level 1
  */
-void iswgraph_l_0800(void)
+void IswgraphL0800(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
-    int ret = iswgraph_l(static_cast<wchar_t>(MAX_VALUE), m_locale);
-    freelocale(m_locale);
-    EXPECT_EQ("iswgraph_l_0800", ret, CMPFLAG);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
+    int ret = iswgraph_l(static_cast<wchar_t>(MAX_VALUE), mLocale);
+    freelocale(mLocale);
+    EXPECT_EQ("IswgraphL0800", ret, CMPFLAG);
 }
 
-static int IswgraphLTest_impl(int argc, char* argv[])
+static int IswgraphLTestImpl(int argc, char* argv[])
 {
-    typedef void (*set_wctype_icu_enable_func)(void);
-    set_wctype_icu_enable_func set_wctype_icu_enable =
-        reinterpret_cast<set_wctype_icu_enable_func>(dlsym(RTLD_DEFAULT, "set_wctype_icu_enable"));
-    if (set_wctype_icu_enable != nullptr) {
-        set_wctype_icu_enable();
+    typedef void (*SetWctypeIcuEnableFunc)(void);
+    SetWctypeIcuEnableFunc setWctypeIcuEnable =
+        reinterpret_cast<SetWctypeIcuEnableFunc>(dlsym(RTLD_DEFAULT, "setWctypeIcuEnable"));
+    if (setWctypeIcuEnable != nullptr) {
+        setWctypeIcuEnable();
     }
-    iswgraph_l_0100();
-    iswgraph_l_0200();
-    iswgraph_l_0300();
-    iswgraph_l_0400();
+    IswgraphL0100();
+    IswgraphL0200();
+    IswgraphL0300();
+    IswgraphL0400();
     // Skip full Unicode sweeps to reduce environment sensitivity.
-    iswgraph_l_0700();
-    iswgraph_l_0800();
+    IswgraphL0700();
+    IswgraphL0800();
     return t_status;
 }
 
@@ -192,5 +192,5 @@ int IswgraphLTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return IswgraphLTest_impl(1, libcArgv);
+    return IswgraphLTestImpl(1, libcArgv);
 }

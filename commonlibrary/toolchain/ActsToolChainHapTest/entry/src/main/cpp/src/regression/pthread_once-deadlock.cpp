@@ -28,32 +28,34 @@
     if (f)   \
     t_error(#f " failed: %s\n", strerror(errno))
 
-static int count;
+static int g_count;
+constexpr long ONE_HUNDRED_MILLION_NS = 100 * 1000 * 1000;
+constexpr long ONE_BILLION_NS = 1000 * 1000 * 1000;
 
-static void init(void)
+static void Init(void)
 {
-    count++;
+    g_count++;
 }
 
-static void* start(void* arg)
+static void* Start(void* arg)
 {
     void** a = (void**)arg;
     int r;
     E(sem_post((sem_t*)a[1]));
-    T(pthread_once((pthread_once_t*)a[0], init));
+    T(pthread_once((pthread_once_t*)a[0], Init));
     E(sem_post((sem_t*)a[1]));
-    return 0;
+    return nullptr;
 }
 
-static int deadlocked(sem_t* s)
+static int Deadlocked(sem_t* s)
 {
     struct timespec ts;
 
     E(sem_wait(s));
     E(clock_gettime(CLOCK_REALTIME, &ts));
-    ts.tv_nsec += 100 * 1000 * 1000;
-    if (ts.tv_nsec >= 1000 * 1000 * 1000) {
-        ts.tv_nsec -= 1000 * 1000 * 1000;
+    ts.tv_nsec += ONE_HUNDRED_MILLION_NS;
+    if (ts.tv_nsec >= ONE_BILLION_NS) {
+        ts.tv_nsec -= ONE_BILLION_NS;
         ts.tv_sec += 1;
     }
     errno = 0;
@@ -64,11 +66,15 @@ static int deadlocked(sem_t* s)
     return 1;
 }
 
-static int PthreadOnceDeadlockTest_impl(void)
+static int PthreadOnceDeadlockTestImpl(void)
 {
-    pthread_t t1, t2, t3;
+    pthread_t t1;
+    pthread_t t2;
+    pthread_t t3;
     pthread_once_t once = PTHREAD_ONCE_INIT;
-    sem_t s1, s2, s3;
+    sem_t s1;
+    sem_t s2;
+    sem_t s3;
     void* a1[] = { &once, &s1 };
     void* a2[] = { &once, &s2 };
     void* a3[] = { &once, &s3 };
@@ -78,17 +84,21 @@ static int PthreadOnceDeadlockTest_impl(void)
     E(sem_init(&s1, 0, 0));
     E(sem_init(&s2, 0, 0));
     E(sem_init(&s3, 0, 0));
-    T(pthread_create(&t1, 0, start, a1));
-    T(pthread_create(&t2, 0, start, a2));
-    T(pthread_create(&t3, 0, start, a3));
-    if (!deadlocked(&s1))
+    T(pthread_create(&t1, nullptr, Start, a1));
+    T(pthread_create(&t2, nullptr, Start, a2));
+    T(pthread_create(&t3, nullptr, Start, a3));
+    if (!Deadlocked(&s1)) {
         T(pthread_join(t1, &p));
-    if (!deadlocked(&s2))
+    }
+    if (!Deadlocked(&s2)) {
         T(pthread_join(t2, &p));
-    if (!deadlocked(&s3))
+    }
+    if (!Deadlocked(&s3)) {
         T(pthread_join(t3, &p));
-    if (count != 1)
-        t_error("pthread_once ran init %d times instead of once\n", count);
+    }
+    if (g_count != 1) {
+        t_error("pthread_once ran init %d times instead of once\n", g_count);
+    }
     E(sem_destroy(&s1));
     E(sem_destroy(&s2));
     E(sem_destroy(&s3));
@@ -97,5 +107,5 @@ static int PthreadOnceDeadlockTest_impl(void)
 
 int PthreadOnceDeadlockTest(void)
 {
-    return PthreadOnceDeadlockTest_impl();
+    return PthreadOnceDeadlockTestImpl();
 }

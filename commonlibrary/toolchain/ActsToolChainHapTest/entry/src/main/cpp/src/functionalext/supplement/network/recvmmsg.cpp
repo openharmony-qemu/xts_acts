@@ -24,8 +24,13 @@
 #include "test.h"
 
 const int SLEEP_TIME = 2;
+constexpr int RECVMMSG_PORT = 1234;
+constexpr int PAYLOAD_ONE_LEN = 3;
+constexpr int PAYLOAD_TWO_LEN = 3;
+constexpr int PAYLOAD_THREE_LEN = 5;
+constexpr int MMSG_BATCH_SIZE = 2;
 
-void sendsss(void)
+void Sendsss(void)
 {
     int sockfd;
     struct sockaddr_in addr;
@@ -41,7 +46,7 @@ void sendsss(void)
 
     addr.sin_family = AF_INET;
     addr.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
-    addr.sin_port = htons(1234);
+    addr.sin_port = htons(RECVMMSG_PORT);
     if (connect(sockfd, reinterpret_cast<struct sockaddr*>(&addr), sizeof(addr)) == -1) {
         t_error("recvmmsg_0100 connect error");
         exit(EXIT_FAILURE);
@@ -53,32 +58,34 @@ void sendsss(void)
 
     memset(msg1, 0, sizeof(msg1));
     msg1[0].iov_base = payload1;
-    msg1[0].iov_len = 3;
+    msg1[0].iov_len = PAYLOAD_ONE_LEN;
     msg1[1].iov_base = payload2;
-    msg1[1].iov_len = 3;
+    msg1[1].iov_len = PAYLOAD_TWO_LEN;
 
     memset(&msg2, 0, sizeof(msg2));
     msg2.iov_base = payload3;
-    msg2.iov_len = 5;
+    msg2.iov_len = PAYLOAD_THREE_LEN;
 
     memset(msg, 0, sizeof(msg));
     msg[0].msg_hdr.msg_iov = msg1;
-    msg[0].msg_hdr.msg_iovlen = 2;
+    msg[0].msg_hdr.msg_iovlen = MMSG_BATCH_SIZE;
 
     msg[1].msg_hdr.msg_iov = &msg2;
     msg[1].msg_hdr.msg_iovlen = 1;
 
-    retval = sendmmsg(sockfd, msg, 2, 0);
-    if (retval == -1)
+    retval = sendmmsg(sockfd, msg, MMSG_BATCH_SIZE, 0);
+    if (retval == -1) {
         t_error("recvmmsg_0100 sendmmsg error");
+    }
 }
 
-void recvsss(void)
+void Recvsss(void)
 {
 #define VLEN 10
 #define BUFSIZE 200
 #define TIMEOUT 1
-    int sockfd, retval;
+    int sockfd;
+    int retval;
     struct sockaddr_in addr;
     struct mmsghdr msgs[VLEN];
     struct iovec iovecs[VLEN];
@@ -93,7 +100,7 @@ void recvsss(void)
 
     addr.sin_family = AF_INET;
     addr.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
-    addr.sin_port = htons(1234);
+    addr.sin_port = htons(RECVMMSG_PORT);
     if (bind(sockfd, reinterpret_cast<struct sockaddr*>(&addr), sizeof(addr)) == -1) {
         t_error("recvmmsg_0100 recv bind error");
         exit(EXIT_FAILURE);
@@ -122,14 +129,14 @@ void recvsss(void)
  * @tc.desc      : Test recvmmsg to recv messages through socket
  * @tc.level     : Level 0
  */
-static int RecvmmsgTest_impl(int argc, char* argv[])
+static int RecvmmsgTestImpl(int argc, char* argv[])
 {
     pid_t pid = fork();
     if (pid > 0) {
-        recvsss();
+        Recvsss();
     } else if (pid == 0) {
         sleep(SLEEP_TIME);
-        sendsss();
+        Sendsss();
     } else {
         t_error("recvmmsg_0100 fork error");
     }
@@ -140,5 +147,5 @@ int RecvmmsgTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return RecvmmsgTest_impl(1, libcArgv);
+    return RecvmmsgTestImpl(1, libcArgv);
 }

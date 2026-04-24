@@ -19,7 +19,7 @@
 #include "timegm_data.h"
 
 extern "C" time_t __timegm_time64(struct tm*);
-static time_t gTime = 1659177614;
+static time_t g_time = 1659177614;
 
 /**
  * @tc.name      : timegm_0100
@@ -38,7 +38,7 @@ void timegm_0100(void)
 
         setenv("TZ", handlerChar, 1);
         tzset();
-        struct tm* timeptr = localtime(&gTime);
+        struct tm* timeptr = localtime(&g_time);
         if (!timeptr) {
             EXPECT_PTRNE("timegm_0100", timeptr, NULL);
             return;
@@ -65,7 +65,7 @@ void timegm_time64_0100(void)
 
         setenv("TZ", handlerChar, 1);
         tzset();
-        struct tm* timeptr = localtime(&gTime);
+        struct tm* timeptr = localtime(&g_time);
         if (!timeptr) {
             EXPECT_PTRNE("timegm_time64_0100", timeptr, NULL);
             return;

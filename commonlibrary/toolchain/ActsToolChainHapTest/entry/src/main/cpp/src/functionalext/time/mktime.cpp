@@ -19,7 +19,7 @@
 #include "mktime_data.h"
 #include "time64_functions.h"
 
-static time_t gTime = 1659177614;
+static time_t g_time = 1659177614;
 
 extern "C" time_t __mktime64(struct tm*);
 /**
@@ -38,7 +38,7 @@ static void mktime_0100(void)
 
         setenv("TZ", handlerChar, 1);
         tzset();
-        struct tm* timeptr = localtime(&gTime);
+        struct tm* timeptr = localtime(&g_time);
         if (!timeptr) {
             EXPECT_PTRNE("mktime_0100", timeptr, NULL);
             return;
@@ -64,7 +64,7 @@ void mktime64_0100(void)
 
         setenv("TZ", handlerChar, 1);
         tzset();
-        struct tm* timeptr = localtime(&gTime);
+        struct tm* timeptr = localtime(&g_time);
         if (!timeptr) {
             EXPECT_PTRNE("mktime64_0100", timeptr, NULL);
             return;

@@ -18,7 +18,7 @@
 #include "asctime_data.h"
 #include "functionalext.h"
 
-static time_t gTime = 1659177614;
+static time_t g_time = 1659177614;
 static int16_t gBufferSize = 256;
 
 static bool test_asctime_r_result(const char* test_name, struct tm* timeptr, const char* expected)
@@ -55,7 +55,7 @@ void asctime_r_0100(void)
         }
         setenv("TZ", handlerChar, 1);
         tzset();
-        struct tm* timeptr = localtime(&gTime);
+        struct tm* timeptr = localtime(&g_time);
         if (!timeptr) {
             EXPECT_PTRNE("asctime_r_0100", timeptr, nullptr);
             return;
