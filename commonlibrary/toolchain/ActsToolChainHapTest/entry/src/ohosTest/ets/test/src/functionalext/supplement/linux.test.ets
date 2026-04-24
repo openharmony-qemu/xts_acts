@@ -561,5 +561,131 @@ export default function linux_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   ppoll_time64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_PPOLL_TIME_SIXTY_FOUR_BASIC_0100
+     * @tc.desc   libc-test __ppoll_time64
+     */
+    it("ppoll_time64", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("__ppoll_time64");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   clock_adjtime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_CLOCK_ADJTIME_0100
+     * @tc.desc   libc-test clock_adjtime
+     */
+    it("clock_adjtime", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("clock_adjtime");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   fallocate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_FALLOCATE_0100
+     * @tc.desc   libc-test fallocate
+     */
+    it("fallocate", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("fallocate");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   fgetxattr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_FGETXATTR_0100
+     * @tc.desc   libc-test fgetxattr
+     */
+    it("fgetxattr", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("fgetxattr");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   flock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_FLOCK_0100
+     * @tc.desc   libc-test flock
+     */
+    it("flock", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("flock");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   inotify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_INOTIFY_0100
+     * @tc.desc   libc-test inotify
+     */
+    it("inotify", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("inotify");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   membarrier
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_MEMBARRIER_0100
+     * @tc.desc   libc-test membarrier
+     */
+    it("membarrier", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("membarrier");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   ppoll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_PPOLL_0100
+     * @tc.desc   libc-test ppoll
+     */
+    it("ppoll", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("ppoll");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   utimes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_UTIMES_0100
+     * @tc.desc   libc-test utimes
+     */
+    it("utimes", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("utimes");
+      expect(result).assertEqual(0);
+      done();
+    });
+
   });
 }

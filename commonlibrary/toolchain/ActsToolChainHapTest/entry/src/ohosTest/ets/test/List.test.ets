@@ -67,6 +67,13 @@ import unittest from "./src/functionalext/unittest.test";
 import src_math from "./src/math.test";
 import nativehook from "./src/nativehook.test";
 import regression from "./src/regression.test";
+import sigchain from "./src/functionalext/sigchain.test";
+import functionalext_ldso_debug from "./src/functionalext/ldso_debug.test";
+import functionalext_legacy from "./src/functionalext/legacy.test";
+import functionalext_thread from "./src/functionalext/thread.test";
+import ldso from "./src/functionalext/supplement/ldso.test";
+import env from "./src/functionalext/supplement/manual/env.test";
+
 
 export default function testsuite() {
   api();
@@ -123,4 +130,10 @@ export default function testsuite() {
   src_math();
   nativehook();
   regression();
+  sigchain();
+  functionalext_ldso_debug();
+  functionalext_legacy();
+  functionalext_thread();
+  ldso();
+  env();
 }
