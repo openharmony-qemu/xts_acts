@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 #define _DEFAULT_SOURCE 1
 #define _BSD_SOURCE 1
 #define _GNU_SOURCE 1
-#include <stdint.h>
+#include <cstdint>
 #include <stdio.h>
 #include "mtest.h"
 
@@ -26,46 +26,64 @@ static struct DDi t[] = {
 
 };
 
-static int LgammaRTest_impl(void){
-	#pragma STDC FENV_ACCESS ON
-	int yi;
-	double y;
-	float d;
-	int e, i, bad, err = 0;
-	struct DDi *p;
+static int LgammaRTest_impl(void)
+{
+#pragma STDC FENV_ACCESS ON
+    int yi;
+    double y;
+    float d;
+    int e, i, bad, err = 0;
+    struct DDi* p;
 
-	for (i = 0; i < sizeof t/sizeof *t; i++) {
-		p = t + i;
+    for (i = 0; i < sizeof t / sizeof *t; i++) {
+        p = t + i;
 
-		if (p->r < 0)
-			continue;
-		fesetround(p->r);
-		feclearexcept(FE_ALL_EXCEPT);
-		y = lgamma_r(p->x, &yi);
-		e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
+        if (p->r < 0) {
+            continue;
+        }
+        fesetround(p->r);
+        feclearexcept(FE_ALL_EXCEPT);
+        y = lgamma_r(p->x, &yi);
+        e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
 
-		if (!Checkexcept(e, p->e, p->r)) {
-			printf("%s:%d: bad fp exception: %s lgamma_r(%a)=%a,%lld, want %s",
-				p->file, p->line, Rstr(p->r), p->x, p->y, p->i, Estr(p->e));
-			printf(" got %s\n", Estr(e));
-			err++;
-		}
-		d = Ulperr(y, p->y, p->dy);
-		bad = !isnan(p->x) && p->x!=-INF && !(p->e&DIVBYZERO) && yi != p->i;
-		if (bad || !Checkulp(d, p->r)) {
-			if (!bad && fabsf(d) < 11.0f)
-				printf("X ");
-			else
-				err++;
-			printf("%s:%d: %s lgamma_r(%a) want %a,%lld got %a,%d ulperr %.3f = %a + %a\n",
-				p->file, p->line, Rstr(p->r), p->x, p->y, p->i, y, yi, d, d-p->dy, p->dy);
-		}
-	}
-	return !!err;
+        if (!Checkexcept(e, p->e, p->r)) {
+            printf("%s:%d: bad fp exception: %s lgamma_r(%a)=%a,%lld, want %s",
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->y,
+                   p->i,
+                   Estr(p->e));
+            printf(" got %s\n", Estr(e));
+            err++;
+        }
+        d = Ulperr(y, p->y, p->dy);
+        bad = !isnan(p->x) && p->x != -INF && !(p->e & DIVBYZERO) && yi != p->i;
+        if (bad || !Checkulp(d, p->r)) {
+            if (!bad && fabsf(d) < 11.0f) {
+                printf("X ");
+            } else {
+                err++;
+            }
+            printf("%s:%d: %s lgamma_r(%a) want %a,%lld got %a,%d ulperr %.3f = %a + %a\n",
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->y,
+                   p->i,
+                   y,
+                   yi,
+                   d,
+                   d - p->dy,
+                   p->dy);
+        }
+    }
+    return !!err;
 }
 
 int LgammaRTest(void)
 {
     return LgammaRTest_impl();
 }
-
