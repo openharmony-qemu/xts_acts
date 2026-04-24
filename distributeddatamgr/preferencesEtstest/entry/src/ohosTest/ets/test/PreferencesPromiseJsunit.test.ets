@@ -867,7 +867,6 @@ export default function preferencesPromiseTest(){
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        
         it("testPreferencesDeletePreferencesMaxValueCallBackTest_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             try {
               console.info( TAG + "mPreferences.dir length is " + context.preferencesDir.length);
