@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <stdint.h>
-#include <stdio.h>
+#include <cstdint>
+#include <cstdio>
 #include "mtest.h"
 
 static struct FF t[] = {
@@ -23,41 +23,44 @@ static struct FF t[] = {
 
 };
 
-static int RoundfTest_impl(void){
-	#pragma STDC FENV_ACCESS ON
-	float y;
-	float d;
-	int e, i, err = 0;
-	struct FF *p;
+static int RoundfTest_impl(void)
+{
+#pragma STDC FENV_ACCESS ON
+    float y;
+    float d;
+    int e;
+    int i;
+    int err = 0;
+    struct FF *p;
 
-	for (i = 0; i < sizeof t/sizeof *t; i++) {
-		p = t + i;
+    for (i = 0; i < sizeof t / sizeof *t; i++) {
+        p = t + i;
 
-		if (p->r < 0)
-			continue;
-		fesetround(p->r);
-		feclearexcept(FE_ALL_EXCEPT);
-		y = roundf(p->x);
-		e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
+        if (p->r < 0) {
+            continue;
+        }
+        fesetround(p->r);
+        feclearexcept(FE_ALL_EXCEPT);
+        y = roundf(p->x);
+        e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
 
-		if (!Checkexceptall(e, p->e, p->r) && (e|INEXACT) != p->e) {
-			printf("%s:%d: bad fp exception: %s roundf(%a)=%a, want %s",
-				p->file, p->line, Rstr(p->r), p->x, p->y, Estr(p->e));
-			printf(" got %s\n", Estr(e));
-			err++;
-		}
-		d = Ulperrf(y, p->y, p->dy);
-		if (!Checkcr(y, p->y, p->r)) {
-			printf("%s:%d: %s roundf(%a) want %a got %a ulperr %.3f = %a + %a\n",
-				p->file, p->line, Rstr(p->r), p->x, p->y, y, d, d-p->dy, p->dy);
-			err++;
-		}
-	}
-	return !!err;
+        if (!Checkexceptall(e, p->e, p->r) && (e | INEXACT) != p->e) {
+            printf("%s:%d: bad fp exception: %s roundf(%a)=%a, want %s",
+                p->file, p->line, Rstr(p->r), p->x, p->y, Estr(p->e));
+            printf(" got %s\n", Estr(e));
+            err++;
+        }
+        d = Ulperrf(y, p->y, p->dy);
+        if (!Checkcr(y, p->y, p->r)) {
+            printf("%s:%d: %s roundf(%a) want %a got %a ulperr %.3f = %a + %a\n",
+                p->file, p->line, Rstr(p->r), p->x, p->y, y, d, d - p->dy, p->dy);
+            err++;
+        }
+    }
+    return !!err;
 }
 
 int RoundfTest(void)
 {
     return RoundfTest_impl();
 }
-

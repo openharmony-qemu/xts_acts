@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,16 +13,16 @@
  * limitations under the License.
  */
 
-#include <stdint.h>
+#include <cstdint>
 #include <stdio.h>
 #include "mtest.h"
 
 static struct LL t[] = {
 #if LDBL_MANT_DIG == 53
 #include "crlibm/sin.h"
-#include "ucb/sin.h"
 #include "sanity/sin.h"
 #include "special/sin.h"
+#include "ucb/sin.h"
 
 #elif LDBL_MANT_DIG == 64
 #include "sanity/sinl.h"
@@ -31,41 +31,55 @@ static struct LL t[] = {
 #endif
 };
 
-static int SinlTest_impl(void){
-	#pragma STDC FENV_ACCESS ON
-	long double y;
-	float d;
-	int e, i, err = 0;
-	struct LL *p;
+static int SinlTest_impl(void)
+{
+#pragma STDC FENV_ACCESS ON
+    long double y;
+    float d;
+    int e, i, err = 0;
+    struct LL* p;
 
-	for (i = 0; i < sizeof t/sizeof *t; i++) {
-		p = t + i;
+    for (i = 0; i < sizeof t / sizeof *t; i++) {
+        p = t + i;
 
-		if (p->r < 0)
-			continue;
-		fesetround(p->r);
-		feclearexcept(FE_ALL_EXCEPT);
-		y = sinl(p->x);
-		e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
+        if (p->r < 0) {
+            continue;
+        }
+        fesetround(p->r);
+        feclearexcept(FE_ALL_EXCEPT);
+        y = sinl(p->x);
+        e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
 
-		if (!Checkexcept(e, p->e, p->r)) {
-			printf("%s:%d: bad fp exception: %s sinl(%La)=%La, want %s",
-				p->file, p->line, Rstr(p->r), p->x, p->y, Estr(p->e));
-			printf(" got %s\n", Estr(e));
-			err++;
-		}
-		d = Ulperrl(y, p->y, p->dy);
-		if (!Checkulp(d, p->r)) {
-			printf("%s:%d: %s sinl(%La) want %La got %La ulperr %.3f = %a + %a\n",
-				p->file, p->line, Rstr(p->r), p->x, p->y, y, d, d-p->dy, p->dy);
-			err++;
-		}
-	}
-	return !!err;
+        if (!Checkexcept(e, p->e, p->r)) {
+            printf("%s:%d: bad fp exception: %s sinl(%La)=%La, want %s",
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->y,
+                   Estr(p->e));
+            printf(" got %s\n", Estr(e));
+            err++;
+        }
+        d = Ulperrl(y, p->y, p->dy);
+        if (!Checkulp(d, p->r)) {
+            printf("%s:%d: %s sinl(%La) want %La got %La ulperr %.3f = %a + %a\n",
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->y,
+                   y,
+                   d,
+                   d - p->dy,
+                   p->dy);
+            err++;
+        }
+    }
+    return !!err;
 }
 
 int SinlTest(void)
 {
     return SinlTest_impl();
 }
-

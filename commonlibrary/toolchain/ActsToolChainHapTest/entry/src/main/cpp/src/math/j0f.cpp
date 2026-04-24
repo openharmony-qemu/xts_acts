@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,40 +25,45 @@ static struct FF t[] = {
 
 };
 
-static int J0fTest_impl(void){
-	#pragma STDC FENV_ACCESS ON
-	float y;
-	float d;
-	int e, i, err = 0;
-	struct FF *p;
+static int J0fTest_impl(void)
+{
+#pragma STDC FENV_ACCESS ON
+    float y;
+    float d;
+    int e;
+    int i;
+    int err = 0;
+    struct FF *p;
 
-	for (i = 0; i < sizeof t/sizeof *t; i++) {
-		p = t + i;
+    for (i = 0; i < sizeof t / sizeof *t; i++) {
+        p = t + i;
 
-		if (p->r < 0)
-			continue;
-		fesetround(p->r);
-		feclearexcept(FE_ALL_EXCEPT);
-		y = j0f(p->x);
-		e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
+        if (p->r < 0) {
+            continue;
+        }
+        fesetround(p->r);
+        feclearexcept(FE_ALL_EXCEPT);
+        y = j0f(p->x);
+        e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
 
-		if (!Checkexcept(e, p->e, p->r)) {
-			printf("%s:%d: bad fp exception: %s j0f(%a)=%a, want %s",
-				p->file, p->line, Rstr(p->r), p->x, p->y, Estr(p->e));
-			printf(" got %s\n", Estr(e));
-			err++;
-		}
-		d = Ulperrf(y, p->y, p->dy);
-		if (!Checkulp(d, p->r)) {
-			if (fabsf(d) < 0x1p23f)
-				printf("X ");
-			else
-				err++;
-			printf("%s:%d: %s j0f(%a) want %a got %a ulperr %.3f = %a + %a\n",
-				p->file, p->line, Rstr(p->r), p->x, p->y, y, d, d-p->dy, p->dy);
-		}
-	}
-	return !!err;
+        if (!Checkexcept(e, p->e, p->r)) {
+            printf("%s:%d: bad fp exception: %s j0f(%a)=%a, want %s",
+                p->file, p->line, Rstr(p->r), p->x, p->y, Estr(p->e));
+            printf(" got %s\n", Estr(e));
+            err++;
+        }
+        d = Ulperrf(y, p->y, p->dy);
+        if (!Checkulp(d, p->r)) {
+            if (fabsf(d) < 0x1p23f) {
+                printf("X ");
+            } else {
+                err++;
+            }
+            printf("%s:%d: %s j0f(%a) want %a got %a ulperr %.3f = %a + %a\n",
+                p->file, p->line, Rstr(p->r), p->x, p->y, y, d, d - p->dy, p->dy);
+        }
+    }
+    return !!err;
 }
 
 int J0fTest(void)
