@@ -851,7 +851,7 @@ export default function dataShareConfigPublishTest() {
     /**
      * @tc.name   dataShareConfigPublishTest028
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0080
-     * @tc.desc   uri is 32
+     * @tc.desc   uri is 64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -859,7 +859,7 @@ export default function dataShareConfigPublishTest() {
     it('dataShareConfigPublishTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
         let proxyData: dataShare.ProxyData[] = [];
-        for (let i = 0; i < 32; i++) {
+        for (let i = 0; i < 64; i++) {
           let testUri = "datashareproxy://com.acts.dataShare.config.static/test" + i;
           let g_proxyDataAllowTest: dataShare.ProxyData = {
             uri: testUri,
@@ -889,7 +889,7 @@ export default function dataShareConfigPublishTest() {
     /**
      * @tc.name   dataShareConfigPublishTest029
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0100
-     * @tc.desc   uri is 33
+     * @tc.desc   uri is 65
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -897,7 +897,7 @@ export default function dataShareConfigPublishTest() {
     it('dataShareConfigPublishTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
         let proxyData: dataShare.ProxyData[] = [];
-        for (let i = 0; i < 33; i++) {
+        for (let i = 0; i < 65; i++) {
           let testUri = "datashareproxy://com.acts.dataShare.config.static/test" + i;
           let g_proxyDataAllowTest: dataShare.ProxyData = {
             uri: testUri,
@@ -923,7 +923,7 @@ export default function dataShareConfigPublishTest() {
     /**
      * @tc.name   dataShareConfigPublishTest030
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0090
-     * @tc.desc   uri is 32,then add uri
+     * @tc.desc   uri is 64,then add uri
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -931,7 +931,7 @@ export default function dataShareConfigPublishTest() {
     it('dataShareConfigPublishTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       try {
         let proxyData: dataShare.ProxyData[] = [];
-        for (let i = 0; i < 32; i++) {
+        for (let i = 0; i < 64; i++) {
           let testUri = "datashareproxy://com.acts.dataShare.config.static/test" + i;
           let g_proxyDataAllowTest: dataShare.ProxyData = {
             uri: testUri,
