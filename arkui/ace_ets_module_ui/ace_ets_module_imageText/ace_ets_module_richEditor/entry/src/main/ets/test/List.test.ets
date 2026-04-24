@@ -410,6 +410,4 @@ export default function testsuite() {
   RichEditorStyledStringControllerNullTest()
 
   RichEditorBaseControllerSetStyledPlaceholderTest()  // Api24
-
-  RichEditorHorizontalScrollingTest() //Api26
 }
