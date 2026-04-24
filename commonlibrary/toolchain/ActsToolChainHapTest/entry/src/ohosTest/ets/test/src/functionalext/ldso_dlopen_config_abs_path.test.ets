@@ -1,5 +1,5 @@
 import * as testNapi from 'libentry.so';
-import { describe, it, expect } from '@ohos/hypium';
+import { describe, it, expect, Level } from '@ohos/hypium';
 
 export default function FunctionalextLdsoDlopenConfigAbsPathTestGroupTest() {
   describe('ActsToolChainHapTest_src_functionalext_ldso_dlopen_config_abs_path', () => {
@@ -11,7 +11,7 @@ export default function FunctionalextLdsoDlopenConfigAbsPathTestGroupTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ldso_dlopen_config_abs_path_1', 0, async (done: Function) => {
+    it('ldso_dlopen_config_abs_path_1', Level.LEVEL0, async (done: Function) => {
       const result = await testNapi.runTest('ldso_dlopen_config_abs_path_1');
       expect(result).assertEqual(0);
       done();
@@ -24,7 +24,7 @@ export default function FunctionalextLdsoDlopenConfigAbsPathTestGroupTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ldso_dlopen_config_abs_path_10', 0, async (done: Function) => {
+    it('ldso_dlopen_config_abs_path_10', Level.LEVEL0, async (done: Function) => {
       const result = await testNapi.runTest('ldso_dlopen_config_abs_path_10');
       expect(result).assertEqual(0);
       done();
@@ -37,7 +37,7 @@ export default function FunctionalextLdsoDlopenConfigAbsPathTestGroupTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ldso_dlopen_config_abs_path_11', 0, async (done: Function) => {
+    it('ldso_dlopen_config_abs_path_11', Level.LEVEL0, async (done: Function) => {
       const result = await testNapi.runTest('ldso_dlopen_config_abs_path_11');
       expect(result).assertEqual(0);
       done();
@@ -50,7 +50,7 @@ export default function FunctionalextLdsoDlopenConfigAbsPathTestGroupTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ldso_dlopen_config_abs_path_12', 0, async (done: Function) => {
+    it('ldso_dlopen_config_abs_path_12', Level.LEVEL0, async (done: Function) => {
       const result = await testNapi.runTest('ldso_dlopen_config_abs_path_12');
       expect(result).assertEqual(0);
       done();
@@ -63,7 +63,7 @@ export default function FunctionalextLdsoDlopenConfigAbsPathTestGroupTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ldso_dlopen_config_abs_path_13', 0, async (done: Function) => {
+    it('ldso_dlopen_config_abs_path_13', Level.LEVEL0, async (done: Function) => {
       const result = await testNapi.runTest('ldso_dlopen_config_abs_path_13');
       expect(result).assertEqual(0);
       done();
@@ -76,7 +76,7 @@ export default function FunctionalextLdsoDlopenConfigAbsPathTestGroupTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ldso_dlopen_config_abs_path_14', 0, async (done: Function) => {
+    it('ldso_dlopen_config_abs_path_14', Level.LEVEL0, async (done: Function) => {
       const result = await testNapi.runTest('ldso_dlopen_config_abs_path_14');
       expect(result).assertEqual(0);
       done();
@@ -89,7 +89,7 @@ export default function FunctionalextLdsoDlopenConfigAbsPathTestGroupTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ldso_dlopen_config_abs_path_15', 0, async (done: Function) => {
+    it('ldso_dlopen_config_abs_path_15', Level.LEVEL0, async (done: Function) => {
       const result = await testNapi.runTest('ldso_dlopen_config_abs_path_15');
       expect(result).assertEqual(0);
       done();
@@ -102,7 +102,7 @@ export default function FunctionalextLdsoDlopenConfigAbsPathTestGroupTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ldso_dlopen_config_abs_path_16', 0, async (done: Function) => {
+    it('ldso_dlopen_config_abs_path_16', Level.LEVEL0, async (done: Function) => {
       const result = await testNapi.runTest('ldso_dlopen_config_abs_path_16');
       expect(result).assertEqual(0);
       done();
@@ -115,7 +115,7 @@ export default function FunctionalextLdsoDlopenConfigAbsPathTestGroupTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ldso_dlopen_config_abs_path_2', 0, async (done: Function) => {
+    it('ldso_dlopen_config_abs_path_2', Level.LEVEL0, async (done: Function) => {
       const result = await testNapi.runTest('ldso_dlopen_config_abs_path_2');
       expect(result).assertEqual(0);
       done();
@@ -128,7 +128,7 @@ export default function FunctionalextLdsoDlopenConfigAbsPathTestGroupTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ldso_dlopen_config_abs_path_3', 0, async (done: Function) => {
+    it('ldso_dlopen_config_abs_path_3', Level.LEVEL0, async (done: Function) => {
       const result = await testNapi.runTest('ldso_dlopen_config_abs_path_3');
       expect(result).assertEqual(0);
       done();
@@ -141,7 +141,7 @@ export default function FunctionalextLdsoDlopenConfigAbsPathTestGroupTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ldso_dlopen_config_abs_path_4', 0, async (done: Function) => {
+    it('ldso_dlopen_config_abs_path_4', Level.LEVEL0, async (done: Function) => {
       const result = await testNapi.runTest('ldso_dlopen_config_abs_path_4');
       expect(result).assertEqual(0);
       done();
@@ -154,7 +154,7 @@ export default function FunctionalextLdsoDlopenConfigAbsPathTestGroupTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ldso_dlopen_config_abs_path_5', 0, async (done: Function) => {
+    it('ldso_dlopen_config_abs_path_5', Level.LEVEL0, async (done: Function) => {
       const result = await testNapi.runTest('ldso_dlopen_config_abs_path_5');
       expect(result).assertEqual(0);
       done();
@@ -167,7 +167,7 @@ export default function FunctionalextLdsoDlopenConfigAbsPathTestGroupTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ldso_dlopen_config_abs_path_6', 0, async (done: Function) => {
+    it('ldso_dlopen_config_abs_path_6', Level.LEVEL0, async (done: Function) => {
       const result = await testNapi.runTest('ldso_dlopen_config_abs_path_6');
       expect(result).assertEqual(0);
       done();
@@ -180,7 +180,7 @@ export default function FunctionalextLdsoDlopenConfigAbsPathTestGroupTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ldso_dlopen_config_abs_path_7', 0, async (done: Function) => {
+    it('ldso_dlopen_config_abs_path_7', Level.LEVEL0, async (done: Function) => {
       const result = await testNapi.runTest('ldso_dlopen_config_abs_path_7');
       expect(result).assertEqual(0);
       done();
@@ -193,7 +193,7 @@ export default function FunctionalextLdsoDlopenConfigAbsPathTestGroupTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ldso_dlopen_config_abs_path_8', 0, async (done: Function) => {
+    it('ldso_dlopen_config_abs_path_8', Level.LEVEL0, async (done: Function) => {
       const result = await testNapi.runTest('ldso_dlopen_config_abs_path_8');
       expect(result).assertEqual(0);
       done();
@@ -206,7 +206,7 @@ export default function FunctionalextLdsoDlopenConfigAbsPathTestGroupTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('ldso_dlopen_config_abs_path_9', 0, async (done: Function) => {
+    it('ldso_dlopen_config_abs_path_9', Level.LEVEL0, async (done: Function) => {
       const result = await testNapi.runTest('ldso_dlopen_config_abs_path_9');
       expect(result).assertEqual(0);
       done();
