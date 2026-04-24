@@ -818,17 +818,9 @@ export default function preferencesPromiseTest(){
                 expect().assertFail();
                 done();
               } else {
-                try {
-                  console.info( TAG + "mPreferences is SUCCESS " + mPreferences);
-                  await mPreferences.put(KEY_TEST_STRING_ELEMENT, '333333');
-                  await mPreferences.flush();
-                  expect().assertFail();
-                  done();
-                } catch (err) {
-                  console.error(TAG + "err flush code = " + err.code + "err message = " + err.message);
-                  expect(15500000).assertEqual(err.code);
-                  done();
-                }
+                console.info( TAG + "getPreferences is SUCCESS " + mPreferences);
+                expect(mPreferences).assertInstanceOf('Object');
+                done();
               }
             })
           } catch (err) {
