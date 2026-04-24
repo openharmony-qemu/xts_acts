@@ -138,6 +138,7 @@ export default function addImage() {
                     done();
                 });
             } else {
+                await incSouce.release();
                 expect(false).assertTrue();
                 done();
             }
@@ -195,6 +196,7 @@ export default function addImage() {
                     done();
                 });
             } else {
+                await incSouce.release();
                 expect(false).assertTrue();
                 done();
             }
