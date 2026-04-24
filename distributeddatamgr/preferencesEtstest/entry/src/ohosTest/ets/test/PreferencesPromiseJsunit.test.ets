@@ -618,5 +618,22 @@ export default function preferencesPromiseTest(){
             let pre2 = await mPreferences.get(KEY_TEST_BIGINT, BigInt(0));
             expect(bigint === pre2).assertTrue();
         })
+
+        /**
+         * @tc.name   testPreferencesGetpreferencesMaxValuePromise0100
+         * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_2600
+         * @tc.desc   get string promise interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+         it('testPreferencesGetpreferencesMaxValuePromise0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
+            let mPreferences = await dataPreferences.getPreferences(context, NAME);
+            console.info(Tag + "mPreferences is" + mPreferences);
+            await mPreferences.put(KEY_TEST_BIGINT, '33333');
+            await mPreferences.flush();
+            expect().assertFail();
+            done();
+            })
     })
 }
