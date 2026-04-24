@@ -1313,7 +1313,7 @@ export default function StringPadEndBasicTest(): void {
 
     /**
      * @tc.name   StringPadEnd_DifferentTruncatePos_001
-     * @tc.number SUB_BUILTINS_STRING_PADEND_DIFFTRUNC_0100
+     * @tc.number SUB_BUILTINS_STRING_PADEND_DIFFTRUNC_0200
      * @tc.desc   Test padEnd() with different truncate positions
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

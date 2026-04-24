@@ -32,21 +32,21 @@ export class MatcherInfo {
 }
 
 export class ArgumentMatchers {
-    static ANY = '<any>';
-    static ANY_STRING = '<any String>';
-    static ANY_BOOLEAN = '<any Boolean>';
-    static ANY_NUMBER = '<any Number>';
-    static ANY_OBJECT = '<any Object>';
-    static ANY_FUNCTION = '<any Function>';
-    static MATCH_REGEXS = '<match regexs>';
-    static NOT_STRING = '<not String>';
-    static NOT_BOOLEAN = '<not boolean>';
-    static NOT_NUMBER = '<not Number>';
-    static NOT_OBJECT = '<not Object>';
-    static NOT_FUNCTION = '<not Function>';
-    static CONTAIN_VALUE = '<contain value>';
-    static CONTAIN_SUBSTRING = '<contain subString>';
-    static CONTAIN_SUBARRAY = '<contain subArray>';
+    public static ANY = '<any>';
+    public static ANY_STRING = '<any String>';
+    public static ANY_BOOLEAN = '<any Boolean>';
+    public static ANY_NUMBER = '<any Number>';
+    public static ANY_OBJECT = '<any Object>';
+    public static ANY_FUNCTION = '<any Function>';
+    public static MATCH_REGEXS = '<match regexs>';
+    public static NOT_STRING = '<not String>';
+    public static NOT_BOOLEAN = '<not boolean>';
+    public static NOT_NUMBER = '<not Number>';
+    public static NOT_OBJECT = '<not Object>';
+    public static NOT_FUNCTION = '<not Function>';
+    public static CONTAIN_VALUE = '<contain value>';
+    public static CONTAIN_SUBSTRING = '<contain subString>';
+    public static CONTAIN_SUBARRAY = '<contain subArray>';
 
   constructor() {
   }
@@ -99,14 +99,14 @@ export class ArgumentMatchers {
   }
 
   static containSubstring(subString: string): MatcherInfo {
-    if (typeof subString === "string") {
+    if (typeof subString === 'string') {
       return new MatcherInfo(ArgumentMatchers.CONTAIN_SUBSTRING, subString, true);
     }
     throw Error('not a string');
   }
 
   static notContainSubstring(subString: string): MatcherInfo {
-    if (typeof subString === "string") {
+    if (typeof subString === 'string') {
       return new MatcherInfo(ArgumentMatchers.CONTAIN_SUBSTRING, subString, false);
     }
     throw Error('not a string');
@@ -120,14 +120,14 @@ export class ArgumentMatchers {
     return new MatcherInfo(ArgumentMatchers.CONTAIN_VALUE, element, false);
   }
 
-  static containSubArray(subArray: Array<Object>): MatcherInfo {
+  static containSubArray(subArray: Object[]): MatcherInfo {
     if (Array.isArray(subArray)) {
       return new MatcherInfo(ArgumentMatchers.CONTAIN_SUBARRAY, subArray, true);
     }
     throw Error('not an Array');
   }
 
-  static notContainSubArray(subArray: Array<Object>): MatcherInfo {
+  static notContainSubArray(subArray: Object[]): MatcherInfo {
     if (Array.isArray(subArray)) {
       return new MatcherInfo(ArgumentMatchers.CONTAIN_SUBARRAY, subArray, false);
     }
@@ -174,8 +174,8 @@ export class ArgumentMatchers {
     } else if (stubSetKey instanceof MatcherInfo && (stubSetKey as MatcherInfo).type_ === ArgumentMatchers.CONTAIN_SUBARRAY && Array.isArray(arg)) {
       let needMatch = (stubSetKey as MatcherInfo).needMatch !== false;
       let isContained = false;
-      let containedValue: Array<Object> = (stubSetKey as MatcherInfo).value as Object[]
-      let value: Array<Object> = arg as Object[]
+      let containedValue: Object[] = (stubSetKey as MatcherInfo).value as Object[];
+      let value: Object[] = arg as Object[];
       isContained = containedValue.every((item: Object) => {
         for (let index = 0; index < value.length; index++) {
           if (value[index] === item) {
@@ -185,7 +185,11 @@ export class ArgumentMatchers {
         return false;
       })
       return isContained === needMatch
-    } else if (stubSetKey instanceof MatcherInfo && (stubSetKey as MatcherInfo).type_ === ArgumentMatchers.CONTAIN_VALUE && Array.isArray(arg)) {
+    } else if (
+      stubSetKey instanceof MatcherInfo &&
+      (stubSetKey as MatcherInfo).type_ === ArgumentMatchers.CONTAIN_VALUE &&
+      Array.isArray(arg)
+    ) {
       let needMatch = (stubSetKey as MatcherInfo).needMatch !== false;
       let isContained = false;
       let arr = arg as Object[]

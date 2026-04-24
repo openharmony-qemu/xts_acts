@@ -853,7 +853,7 @@ export default function StringPadStartBasicTest(): void {
 
     /**
      * @tc.name   StringPadStart_UTF16Length_001
-     * @tc.number SUB_BUILTINS_STRING_PADSTART_UTF16_0100
+     * @tc.number SUB_BUILTINS_STRING_PADSTART_UTF16_0200
      * @tc.desc   Test padStart() verifies UTF-16 encoding unit length calculation
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1149,7 +1149,7 @@ export default function StringPadStartBasicTest(): void {
 
     /**
      * @tc.name   StringPadStart_LargeValue_001
-     * @tc.number SUB_BUILTINS_STRING_PADSTART_LARGE_0100
+     * @tc.number SUB_BUILTINS_STRING_PADSTART_LARGE_0200
      * @tc.desc   Test padStart() with large targetLength value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1524,7 +1524,7 @@ export default function StringPadStartBasicTest(): void {
 
     /**
      * @tc.name   StringPadStart_WithRepeat_001
-     * @tc.number SUB_BUILTINS_STRING_PADSTART_REPEAT_0100
+     * @tc.number SUB_BUILTINS_STRING_PADSTART_REPEAT_0200
      * @tc.desc   Test padStart() combined with repeat
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2340,7 +2340,7 @@ export default function StringPadStartBasicTest(): void {
 
     /**
      * @tc.name   StringPadStart_UTF16LengthCalc_001
-     * @tc.number SUB_BUILTINS_STRING_PADSTART_UTF16LEN_0100
+     * @tc.number SUB_BUILTINS_STRING_PADSTART_UTF16LEN_0200
      * @tc.desc   Test padStart() uses UTF-16 encoding unit length
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2475,7 +2475,7 @@ export default function StringPadStartBasicTest(): void {
 
     /**
      * @tc.name   StringPadStart_SymmetryWithPadEnd_001
-     * @tc.number SUB_BUILTINS_STRING_PADSTART_SYM_0100
+     * @tc.number SUB_BUILTINS_STRING_PADSTART_SYM_0200
      * @tc.desc   Test padStart() symmetry with padEnd()
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2504,7 +2504,7 @@ export default function StringPadStartBasicTest(): void {
 
     /**
      * @tc.name   StringPadStart_ReturnType_001
-     * @tc.number SUB_BUILTINS_STRING_PADSTART_RETTYPE_0100
+     * @tc.number SUB_BUILTINS_STRING_PADSTART_RETTYPE_0200
      * @tc.desc   Test padStart() always returns string type
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2535,7 +2535,7 @@ export default function StringPadStartBasicTest(): void {
 
     /**
      * @tc.name   StringPadStart_BMPChar_001
-     * @tc.number SUB_BUILTINS_STRING_PADSTART_BMP_0100
+     * @tc.number SUB_BUILTINS_STRING_PADSTART_BMP_0200
      * @tc.desc   Test padStart() with BMP character padString
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2754,7 +2754,7 @@ export default function StringPadStartBasicTest(): void {
 
     /**
      * @tc.name   StringPadStart_TabChar_001
-     * @tc.number SUB_BUILTINS_STRING_PADSTART_TAB_0100
+     * @tc.number SUB_BUILTINS_STRING_PADSTART_TAB_0200
      * @tc.desc   Test padStart() with tab character
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2768,7 +2768,7 @@ export default function StringPadStartBasicTest(): void {
 
     /**
      * @tc.name   StringPadStart_NewlineChar_001
-     * @tc.number SUB_BUILTINS_STRING_PADSTART_NEWLINE_0100
+     * @tc.number SUB_BUILTINS_STRING_PADSTART_NEWLINE_0200
      * @tc.desc   Test padStart() with newline character
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2782,7 +2782,7 @@ export default function StringPadStartBasicTest(): void {
 
     /**
      * @tc.name   StringPadStart_CarriageReturn_001
-     * @tc.number SUB_BUILTINS_STRING_PADSTART_CR_0100
+     * @tc.number SUB_BUILTINS_STRING_PADSTART_CR_0200
      * @tc.desc   Test padStart() with carriage return character
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2796,7 +2796,7 @@ export default function StringPadStartBasicTest(): void {
 
     /**
      * @tc.name   StringPadStart_UTF16Emoji_001
-     * @tc.number SUB_BUILTINS_STRING_PADSTART_UTF16EMOJI_0100
+     * @tc.number SUB_BUILTINS_STRING_PADSTART_UTF16EMOJI_0200
      * @tc.desc   Test padStart() verifies emoji is 2 UTF-16 units
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

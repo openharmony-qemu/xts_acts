@@ -71,7 +71,8 @@ function assertMatchObjInternal(actualValue: AnyType, expected: AnyType[], depth
     try {
       if (actualKeys.includes(key)) {
         actualValueHasKey = true;
-        actualValueForProperty = (reflect.Value.of(actualValue as object) as ClassValue).getFieldByName(key).getData() as AnyType;
+        const actualClassValue = reflect.Value.of(actualValue as object) as ClassValue;
+        actualValueForProperty = actualClassValue.getFieldByName(key).getData() as AnyType;
       }
     } catch (e) {
       actualValueHasKey = false;

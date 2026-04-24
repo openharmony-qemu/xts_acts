@@ -1596,7 +1596,7 @@ export default function StringToWellFormedBasicTest(): void {
 
     /**
      * @tc.name   StringToWellFormed_ConsecutiveLoneTrailOnly_008
-     * @tc.number SUB_BUILTINS_STRING_TOWELLFORMED_SURROGATE_0750
+     * @tc.number SUB_BUILTINS_STRING_TOWELLFORMED_SURROGATE_1500
      * @tc.desc   Test toWellFormed with three consecutive lone trail surrogates only
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1666,7 +1666,7 @@ export default function StringToWellFormedBasicTest(): void {
 
     /**
      * @tc.name   StringToWellFormed_LeadTrailAlternating_013
-     * @tc.number SUB_BUILTINS_STRING_TOWELLFORMED_SURROGATE_1150
+     * @tc.number SUB_BUILTINS_STRING_TOWELLFORMED_SURROGATE_1600
      * @tc.desc   Test toWellFormed with four consecutive lone lead surrogates (each replaced with U+FFFD)
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

@@ -2625,14 +2625,6 @@ export default function StringMatchAllBasicTest(): void {
     });
 
     /**
-     * @tc.name   StringMatchAll_OptionalCaptureGroup_001
-     * @tc.number SUB_BUILTINS_STRING_MATCHALL_OPTCP_0100
-     * @tc.desc   Test matchAll with optional capture group
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    /**
      * @tc.name   StringMatchAll_NamedCaptureGroupMixed_001
      * @tc.number SUB_BUILTINS_STRING_MATCHALL_NAMCPMIX_0100
      * @tc.desc   Test matchAll with numbered and named capture groups (test205)
@@ -2646,6 +2638,14 @@ export default function StringMatchAllBasicTest(): void {
       expect(result.resultSurname).assertEqual(result.expectedSurname);
     });
 
+    /**
+     * @tc.name   StringMatchAll_OptionalCaptureGroup_001
+     * @tc.number SUB_BUILTINS_STRING_MATCHALL_OPTCP_0100
+     * @tc.desc   Test matchAll with optional capture group
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
     it('StringMatchAll_OptionalCaptureGroup_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let result = matchAllHelperTest.test206();
       expect(result.result).assertEqual(result.expected);
