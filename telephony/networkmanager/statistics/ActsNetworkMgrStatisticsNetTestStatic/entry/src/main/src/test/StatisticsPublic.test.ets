@@ -1126,7 +1126,7 @@ export default function statisticsHasNetTest() {
 
         /**
          * @tc.name   testManagerNetStatsInfo_static_0100
-         * @tc.number SUB_Manager_NetStatsInfo_0100
+         * @tc.number SUB_Manager_NetStatsInfo_Property_0100
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -1157,7 +1157,7 @@ export default function statisticsHasNetTest() {
 
         /**
          * @tc.name   testManagerNetWorkInfo_static_0100
-         * @tc.number SUB_Manager_NetWorkInfo_0100
+         * @tc.number SUB_Manager_NetWorkInfo_Property_0100
          * @tc.desc   Function test
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
