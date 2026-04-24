@@ -159,11 +159,6 @@ struct LazyForEachCustomComponentFreeze {
       List({ space: 3 }) {
         LazyForEach(this.data, (item: string) => {
           FreezeChild({ message: this.message, index: item })
-        }, (item: string) => item, {customComponentFreezeMode: null})
-      }.cachedCount(5).height(38).width(200)
-      List({ space: 3 }) {
-        LazyForEach(this.data, (item: string) => {
-          FreezeChild({ message: this.message, index: item })
         }, (item: string) => item, {customComponentFreezeMode: undefined})
       }.cachedCount(5).height(38).width(200)
     }.width('100%').height('100%')
