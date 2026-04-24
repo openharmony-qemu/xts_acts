@@ -25,13 +25,13 @@
  * @tc.desc      : Test the timegm result when tm exceeds the limit
  * @tc.level     : Level 0
  */
-void unlink_0100(void)
+void Unlink0100(void)
 {
     char path[PATH_MAX] = { 0 };
     FILE_ABSOLUTE_PATH("/data/storage/el2/base/cache/test_unlink.txt", path);
     int fd = open(path, O_CREAT, TEST_MODE);
-    int error_code = -1;
-    if (fd == error_code) {
+    int errorCode = -1;
+    if (fd == errorCode) {
         t_error("%s unlink create file error", __func__);
         return;
     }
@@ -47,21 +47,21 @@ void unlink_0100(void)
  * @tc.desc      : Test the timegm result when tm exceeds the limit
  * @tc.level     : Level 1
  */
-void unlink_0200(void)
+void Unlink0200(void)
 {
     char path[PATH_MAX] = { 0 };
     FILE_ABSOLUTE_PATH("/data/storage/el2/base/cache/unexist_test_unlink.txt", path);
     int result = unlink(path);
-    int error_code = -1;
-    if (result != error_code) {
+    int errorCode = -1;
+    if (result != errorCode) {
         t_error("%s unlink get result is %d not want -1", __func__, result);
     }
 }
 
-static int UnlinkTest_impl(int argc, char* argv[])
+static int UnlinkTestImpl(int argc, char* argv[])
 {
-    unlink_0100();
-    unlink_0200();
+    Unlink0100();
+    Unlink0200();
     return t_status;
 }
 
@@ -69,5 +69,5 @@ int UnlinkTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return UnlinkTest_impl(1, libcArgv);
+    return UnlinkTestImpl(1, libcArgv);
 }

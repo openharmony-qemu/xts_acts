@@ -27,7 +27,7 @@
  * @tc.desc      : read data into multiple buffers
  * @tc.level     : Level 0
  */
-void readv_0100(void)
+void Readv0100(void)
 {
     char path[PATH_MAX] = { 0 };
     FILE_ABSOLUTE_PATH(STR_FILE_TXT, path);
@@ -73,7 +73,7 @@ void readv_0100(void)
  * @tc.desc      : read data into multiple buffers with invalid parameters
  * @tc.level     : Level 2
  */
-void readv_0200(void)
+void Readv0200(void)
 {
     errno = 0;
     ssize_t result = readv(-1, nullptr, -1);
@@ -86,10 +86,10 @@ void readv_0200(void)
     }
 }
 
-static int ReadvTest_impl(int argc, char* argv[])
+static int ReadvTestImpl(int argc, char* argv[])
 {
-    readv_0100();
-    readv_0200();
+    Readv0100();
+    Readv0200();
 
     return t_status;
 }
@@ -98,5 +98,5 @@ int ReadvTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return ReadvTest_impl(1, libcArgv);
+    return ReadvTestImpl(1, libcArgv);
 }

@@ -23,7 +23,7 @@
  * @tc.desc      : delete a name and possibly the file it refers to
  * @tc.level     : Level 0
  */
-void unlinkat_0100(void)
+void Unlinkat0100(void)
 {
     char path[PATH_MAX] = { 0 };
     FILE_ABSOLUTE_PATH(STR_FILE_TXT, path);
@@ -45,7 +45,7 @@ void unlinkat_0100(void)
  * @tc.desc      : delete a name and possibly the file it refers to with AT_REMOVEDIR flag
  * @tc.level     : Level 2
  */
-void unlinkat_0200(void)
+void Unlinkat0200(void)
 {
     errno = 0;
     char path[PATH_MAX] = { 0 };
@@ -60,10 +60,10 @@ void unlinkat_0200(void)
     }
 }
 
-static int UnlinkatTest_impl(int argc, char* argv[])
+static int UnlinkatTestImpl(int argc, char* argv[])
 {
-    unlinkat_0100();
-    unlinkat_0200();
+    Unlinkat0100();
+    Unlinkat0200();
 
     return t_status;
 }
@@ -71,6 +71,6 @@ static int UnlinkatTest_impl(int argc, char* argv[])
 int UnlinkatTest(void)
 {
     static char libcProg[] = "libc_test";
-    char* libcArgv[] = { libcProg, NULL };
-    return UnlinkatTest_impl(1, libcArgv);
+    char* libcArgv[] = { libcProg, nullptr };
+    return UnlinkatTestImpl(1, libcArgv);
 }

@@ -60,8 +60,9 @@ static int Deadlocked(sem_t* s)
     }
     errno = 0;
     E(sem_timedwait(s, &ts));
-    if (errno != ETIMEDOUT)
+    if (errno != ETIMEDOUT) {
         return 0;
+    }
     t_error("pthread_once deadlocked\n");
     return 1;
 }

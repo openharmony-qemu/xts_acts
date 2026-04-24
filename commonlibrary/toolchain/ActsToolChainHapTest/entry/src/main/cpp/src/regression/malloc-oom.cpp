@@ -20,21 +20,29 @@
 #include "libc_common_memfill.h"
 #include "libc_test_shim.h"
 
-int malloc_oomTest()
+constexpr size_t MALLOC_OOM_SIZE = 50000;
+
+int MallocOomTest()
 {
     int status = SUCCESS_CODE;
-#define t_status status
 
-    if (t_memfill() < 0)
+    if (t_memfill() < 0) {
         LibcTestError(&status, "memfill failed\n");
+    }
 
     errno = 0;
-    if (malloc(50000))
+    if (malloc(MALLOC_OOM_SIZE)) {
         LibcTestError(&status, "malloc was successful\n");
-    if (errno != ENOMEM)
+    }
+    if (errno != ENOMEM) {
         LibcTestError(&status, "expected ENOMEM, got %s\n", strerror(errno));
+    }
 
-    _Exit(t_status);
+    _Exit(status);
     return status;
-#undef t_status
+}
+
+int malloc_oomTest()
+{
+    return MallocOomTest();
 }

@@ -21,26 +21,32 @@
 #include <sys/resource.h>
 #include "libc_common_memfill.h"
 #include "libc_test_shim.h"
-int setenv_oomTest()
+int SetenvOomTest()
 {
     int status = SUCCESS_CODE;
-#define t_status status
 
     char buf[10000];
 
-    if (t_memfill() < 0)
+    if (t_memfill() < 0) {
         LibcTestError(&status, "memfill failed\n");
+    }
 
     memset(buf, 'x', sizeof buf);
     buf[sizeof buf - 1] = 0;
 
     errno = 0;
-    if (setenv("TESTVAR", buf, 1) != -1)
+    if (setenv("TESTVAR", buf, 1) != -1) {
         return status;
-    if (errno != ENOMEM)
+    }
+    if (errno != ENOMEM) {
         LibcTestError(&status, "expected ENOMEM, got %s\n", strerror(errno));
+    }
 
-    _Exit(t_status);
+    _Exit(status);
     return status;
-#undef t_status
+}
+
+int setenv_oomTest()
+{
+    return SetenvOomTest();
 }

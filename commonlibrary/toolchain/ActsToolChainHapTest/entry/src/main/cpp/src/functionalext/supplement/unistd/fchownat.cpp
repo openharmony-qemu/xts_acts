@@ -34,7 +34,7 @@
  * @note         : fchownat() requires privileged access to change file ownership. On unprivileged platforms,
  *                 this test verifies that the call fails gracefully with EPERM.
  */
-void fchownat_0100(void)
+void Fchownat0100(void)
 {
     int fd = open(FCHOWNAT_TEST_FILE, O_RDWR | O_CREAT, TEST_MODE);
     if (fd < 0) {
@@ -44,15 +44,15 @@ void fchownat_0100(void)
     EXPECT_TRUE("fchownat_0100", fd >= 0);
 
     // Get original ownership
-    struct stat buf_before;
-    if (fstat(fd, &buf_before) != 0) {
+    struct stat bufBefore;
+    if (fstat(fd, &bufBefore) != 0) {
         t_error("fchownat_0100: fstat before fchownat failed (errno=%d)\n", errno);
         close(fd);
         remove(FCHOWNAT_TEST_FILE);
         return;
     }
 
-    printf("fchownat_0100: Original uid=%d, gid=%d\n", buf_before.st_uid, buf_before.st_gid);
+    printf("fchownat_0100: Original uid=%d, gid=%d\n", bufBefore.st_uid, bufBefore.st_gid);
 
     // Try to change ownership to root (uid=0, gid=0)
     int ret = fchownat(fd, FCHOWNAT_TEST_FILE, 0, 0, AT_SYMLINK_NOFOLLOW);
@@ -77,14 +77,14 @@ void fchownat_0100(void)
     printf("fchownat_0100: fchownat succeeded (running with privileges)\n");
 
     // Verify the ownership was changed
-    struct stat buf_after;
-    int st = fstat(fd, &buf_after);
+    struct stat bufAfter;
+    int st = fstat(fd, &bufAfter);
     if (st == 0) {
-        EXPECT_EQ("fchownat_0100", buf_after.st_uid, 0);
-        EXPECT_EQ("fchownat_0100", buf_after.st_gid, 0);
+        EXPECT_EQ("fchownat_0100", bufAfter.st_uid, 0);
+        EXPECT_EQ("fchownat_0100", bufAfter.st_gid, 0);
 
         // Restore original ownership
-        fchownat(fd, FCHOWNAT_TEST_FILE, buf_before.st_uid, buf_before.st_gid, AT_SYMLINK_NOFOLLOW);
+        fchownat(fd, FCHOWNAT_TEST_FILE, bufBefore.st_uid, bufBefore.st_gid, AT_SYMLINK_NOFOLLOW);
     }
 
     close(fd);
@@ -98,7 +98,7 @@ void fchownat_0100(void)
  * @note         : fchownat() requires privileged access to change file ownership. On unprivileged platforms,
  *                 this test verifies that the call fails gracefully with EPERM.
  */
-void fchownat_0200(void)
+void Fchownat0200(void)
 {
     int fd = open(FCHOWNAT_TEST_FILE, O_RDWR | O_CREAT, TEST_MODE);
     if (fd < 0) {
@@ -109,14 +109,14 @@ void fchownat_0200(void)
     close(fd); // Close before using AT_FDCWD
 
     // Get original ownership
-    struct stat buf_before;
-    if (stat(FCHOWNAT_TEST_FILE, &buf_before) != 0) {
+    struct stat bufBefore;
+    if (stat(FCHOWNAT_TEST_FILE, &bufBefore) != 0) {
         t_error("fchownat_0200: stat before fchownat failed (errno=%d)\n", errno);
         remove(FCHOWNAT_TEST_FILE);
         return;
     }
 
-    printf("fchownat_0200: Original uid=%d, gid=%d\n", buf_before.st_uid, buf_before.st_gid);
+    printf("fchownat_0200: Original uid=%d, gid=%d\n", bufBefore.st_uid, bufBefore.st_gid);
 
     // Try to change ownership to root using AT_FDCWD
     int ret = fchownat(AT_FDCWD, FCHOWNAT_TEST_FILE, 0, 0, AT_SYMLINK_NOFOLLOW);
@@ -139,23 +139,23 @@ void fchownat_0200(void)
     printf("fchownat_0200: fchownat with AT_FDCWD succeeded (running with privileges)\n");
 
     // Verify the ownership was changed
-    struct stat buf_after;
-    int st = stat(FCHOWNAT_TEST_FILE, &buf_after);
+    struct stat bufAfter;
+    int st = stat(FCHOWNAT_TEST_FILE, &bufAfter);
     if (st == 0) {
-        EXPECT_EQ("fchownat_0200", buf_after.st_uid, 0);
-        EXPECT_EQ("fchownat_0200", buf_after.st_gid, 0);
+        EXPECT_EQ("fchownat_0200", bufAfter.st_uid, 0);
+        EXPECT_EQ("fchownat_0200", bufAfter.st_gid, 0);
 
         // Restore original ownership
-        fchownat(AT_FDCWD, FCHOWNAT_TEST_FILE, buf_before.st_uid, buf_before.st_gid, AT_SYMLINK_NOFOLLOW);
+        fchownat(AT_FDCWD, FCHOWNAT_TEST_FILE, bufBefore.st_uid, bufBefore.st_gid, AT_SYMLINK_NOFOLLOW);
     }
 
     remove(FCHOWNAT_TEST_FILE);
 }
 
-static int FchownatTest_impl(int argc, char* argv[])
+static int FchownatTestImpl(int argc, char* argv[])
 {
-    fchownat_0100();
-    fchownat_0200();
+    Fchownat0100();
+    Fchownat0200();
     return t_status;
 }
 
@@ -163,5 +163,5 @@ int FchownatTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return FchownatTest_impl(1, libcArgv);
+    return FchownatTestImpl(1, libcArgv);
 }

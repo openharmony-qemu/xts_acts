@@ -19,69 +19,69 @@
 #include "functionalext.h"
 
 static time_t g_time = 1659177614;
-static int16_t gBufferSize = 256;
+static int16_t g_bufferSize = 256;
 
-static bool test_asctime_r_result(const char* test_name, struct tm* timeptr, const char* expected)
+static bool test_asctime_r_result(const char* testName, struct tm* timeptr, const char* expected)
 {
-    char buffer[gBufferSize];
-    memset(buffer, 0, gBufferSize);
+    char buffer[g_bufferSize];
+    memset(buffer, 0, g_bufferSize);
     char* result = asctime_r(timeptr, buffer);
     // Critical fix: nullptr pointer check (prevent segmentation fault)
-    if (result == nullptr || result < buffer || result >= buffer + gBufferSize) {
-        t_error("%s: invalid return pointer (%p)\n", test_name, result);
+    if (result == nullptr || result < buffer || result >= buffer + g_bufferSize) {
+        t_error("%s: invalid return pointer (%p)\n", testName, result);
         return false;
     }
     result[strlen(result) - 1] = 0x00;
     // Critical fix: Compatibility with musl libc space differences (1 or 2 spaces are acceptable)
     bool match = (strcmp(result, expected) == 0) || (strlen(expected) > 8 && strncmp(expected, result, 8) == 0 &&
                                                      strcmp(expected + 9, result + (result[8] == ' ' ? 9 : 8)) == 0);
-    EXPECT_TRUE(test_name, match);
+    EXPECT_TRUE(testName, match);
     return match;
 }
 
 /**
- * @tc.name      : asctime_r_0100
+ * @tc.name      : AsctimeR0100
  * @tc.desc      : according to different time zones, take an argument representing broken-down time,
  * which is a representation separated into year, month, day, and so on
  * @tc.level     : Level 0
  */
-void asctime_r_0100(void)
+void AsctimeR0100(void)
 {
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(test_asctime_data) / sizeof(test_asctime_data[0])); i++) {
         const char* handlerChar = test_handle_path(test_asctime_data[i].tz);
         if (!handlerChar) {
-            t_error("asctime_r_0100 failed: handlerChar is NULL\n");
+            t_error("AsctimeR0100 failed: handlerChar is NULL\n");
             continue;
         }
         setenv("TZ", handlerChar, 1);
         tzset();
         struct tm* timeptr = localtime(&g_time);
         if (!timeptr) {
-            EXPECT_PTRNE("asctime_r_0100", timeptr, nullptr);
+            EXPECT_PTRNE("AsctimeR0100", timeptr, nullptr);
             return;
         }
-        char s[gBufferSize];
+        char s[g_bufferSize];
         char* returnStr = asctime_r(timeptr, s);
         if (returnStr == nullptr) {
-            EXPECT_FALSE("asctime_r_0100", returnStr == nullptr);
+            EXPECT_FALSE("AsctimeR0100", returnStr == nullptr);
             return;
         }
 
         returnStr[strlen(returnStr) - 1] = 0x00;
-        EXPECT_STREQ("asctime_r_0100", test_asctime_data[i].result, returnStr);
+        EXPECT_STREQ("AsctimeR0100", test_asctime_data[i].result, returnStr);
     }
 }
 
 /**
- * @tc.name      : asctime_r_0200
+ * @tc.name      : AsctimeR0200
  * @tc.desc      : Test asctime_r with boundary time values (min/max valid tm struct values)
  * @tc.level     : Level 1
  */
-void asctime_r_0200(void)
+void AsctimeR0200(void)
 {
     // Test minimum valid time values
     // Critical fix: tm_wday/tm_yday must match the actual date (prevent musl libc internal crash)
-    struct tm min_tm = {
+    struct tm minTm = {
         .tm_sec = 0,   // Min seconds (0-59)
         .tm_min = 0,   // Min minutes (0-59)
         .tm_hour = 0,  // Min hours (0-23)
@@ -93,10 +93,10 @@ void asctime_r_0200(void)
         .tm_isdst = 0  // No daylight saving time
     };
 
-    test_asctime_r_result("asctime_r_0200(min)", &min_tm, "Thu Jan  1 00:00:00 1970");
+    test_asctime_r_result("AsctimeR0200(min)", &minTm, "Thu Jan  1 00:00:00 1970");
 
     // Test maximum valid time values
-    struct tm max_tm = {
+    struct tm maxTm = {
         .tm_sec = 59,   // Max seconds (0-59)
         .tm_min = 59,   // Max minutes (0-59)
         .tm_hour = 23,  // Max hours (0-23)
@@ -108,46 +108,50 @@ void asctime_r_0200(void)
         .tm_isdst = 0   // No daylight saving time
     };
 
-    test_asctime_r_result("asctime_r_0200(max)", &max_tm, "Sun Dec  31 23:59:59 2023");
+    test_asctime_r_result("AsctimeR0200(max)", &maxTm, "Sun Dec  31 23:59:59 2023");
 }
 
 /**
- * @tc.name      : asctime_r_0300
+ * @tc.name      : AsctimeR0300
  * @tc.desc      : Test asctime_r with leap year and special date values (Feb 29, end of leap year)
  * @tc.level     : Level 1
  */
-void asctime_r_0300(void)
+void AsctimeR0300(void)
 {
     // Leap year (2020) Feb 29
-    struct tm leap_day = { .tm_sec = 10,
-                           .tm_min = 20,
-                           .tm_hour = 15,
-                           .tm_mday = 29,
-                           .tm_mon = 1,    // February (0-based)
-                           .tm_year = 120, // 2020 (1900 + 120)
-                           .tm_wday = 6,   // Saturday
-                           .tm_yday = 59,  // 59th day of leap year
-                           .tm_isdst = 0 };
+    struct tm leapDay = { .tm_sec = 10,
+                          .tm_min = 20,
+                          .tm_hour = 15,
+                          .tm_mday = 29,
+                          .tm_mon = 1,    // February (0-based)
+                          .tm_year = 120, // 2020 (1900 + 120)
+                          .tm_wday = 6,   // Saturday
+                          .tm_yday = 59,  // 59th day of leap year
+                          .tm_isdst = 0 };
 
     // End of leap year (2020 Dec 31)
-    struct tm leap_year_end = { .tm_sec = 59,
-                                .tm_min = 59,
-                                .tm_hour = 23,
-                                .tm_mday = 31,
-                                .tm_mon = 11,   // December
-                                .tm_year = 120, // 2020
-                                .tm_wday = 4,   // Thursday
-                                .tm_yday = 365, // Last day of leap year
-                                .tm_isdst = 0 };
+    struct tm leapYearEnd = { .tm_sec = 59,
+                              .tm_min = 59,
+                              .tm_hour = 23,
+                              .tm_mday = 31,
+                              .tm_mon = 11,   // December
+                              .tm_year = 120, // 2020
+                              .tm_wday = 4,   // Thursday
+                              .tm_yday = 365, // Last day of leap year
+                              .tm_isdst = 0 };
 
-    test_asctime_r_result("asctime_r_0300(leap day)", &leap_day, "Sat Feb  29 15:20:10 2020");
-    test_asctime_r_result("asctime_r_0300(leap year end)", &leap_year_end, "Thu Dec  31 23:59:59 2020");
+    test_asctime_r_result("AsctimeR0300(leap day)", &leapDay, "Sat Feb  29 15:20:10 2020");
+    test_asctime_r_result("AsctimeR0300(leap year end)", &leapYearEnd, "Thu Dec  31 23:59:59 2020");
 }
 
+int AsctimeRTest(void)
+{
+    AsctimeR0100();
+    AsctimeR0200();
+    AsctimeR0300();
+    return t_status;
+}
 int asctime_rTest(void)
 {
-    asctime_r_0100();
-    asctime_r_0200();
-    asctime_r_0300();
-    return t_status;
+    return AsctimeRTest();
 }

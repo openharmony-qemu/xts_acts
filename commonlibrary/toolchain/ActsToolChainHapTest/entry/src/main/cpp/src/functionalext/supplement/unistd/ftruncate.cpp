@@ -28,7 +28,7 @@ const int FILE_SECOND = 100;
  * @tc.desc      : The parameter length is 0, which can clear the file content.
  * @tc.level     : Level 0
  */
-void ftruncate_0100(void)
+void Ftruncate0100(void)
 {
     const char* ptr = "/data/storage/el2/base/cache/test.txt";
     FILE* fptr = fopen(ptr, "w");
@@ -50,7 +50,7 @@ void ftruncate_0100(void)
  *                 which can clear the file content.
  * @tc.level     : Level 0
  */
-void ftruncate_0200(void)
+void Ftruncate0200(void)
 {
     const char* ptr = "/data/storage/el2/base/cache/test.txt";
     FILE* fptr = fopen(ptr, "w");
@@ -71,7 +71,7 @@ void ftruncate_0200(void)
  * @tc.desc      : The parameter length is greater than the file size,which can clear the file content.
  * @tc.level     : Level 0
  */
-void ftruncate_0300(void)
+void Ftruncate0300(void)
 {
     const char* ptr = "/data/storage/el2/base/cache/test.txt";
     FILE* fptr = fopen(ptr, "w");
@@ -92,7 +92,7 @@ void ftruncate_0300(void)
  * @tc.desc      : The fd parameter is nullptr,the file content cannot be cleared.
  * @tc.level     : Level 2
  */
-void ftruncate_0400(void)
+void Ftruncate0400(void)
 {
     const char* ptr = "/data/storage/el2/base/cache/test.txt";
     FILE* fptr = fopen(ptr, "w");
@@ -105,12 +105,12 @@ void ftruncate_0400(void)
     ptr = nullptr;
 }
 
-static int FtruncateTest_impl(int argc, char* argv[])
+static int FtruncateTestImpl(int argc, char* argv[])
 {
-    ftruncate_0100();
-    ftruncate_0200();
-    ftruncate_0300();
-    ftruncate_0400();
+    Ftruncate0100();
+    Ftruncate0200();
+    Ftruncate0300();
+    Ftruncate0400();
 
     return t_status;
 }
@@ -119,5 +119,5 @@ int FtruncateTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return FtruncateTest_impl(1, libcArgv);
+    return FtruncateTestImpl(1, libcArgv);
 }

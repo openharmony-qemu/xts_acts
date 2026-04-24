@@ -27,7 +27,7 @@
  * @tc.desc      : Call ttyname_r to get the file name through the file handle
  * @tc.level     : Level 0
  */
-void ttyname_r_0100(void)
+void TtynameR0100(void)
 {
     int fd = open("/data/storage/el2/base/cache/tempfile_forttyname.txt", O_CREAT, TEST_MODE);
     char buf[128];
@@ -45,7 +45,7 @@ void ttyname_r_0100(void)
  * @tc.desc      : Test the ttyname_r result when a non-existing file is passed in
  * @tc.level     : Level 1
  */
-void ttyname_r_0200(void)
+void TtynameR0200(void)
 {
     int fd = open("/dev/null", O_WRONLY);
     char buf[1];
@@ -56,10 +56,10 @@ void ttyname_r_0200(void)
     close(fd);
 }
 
-static int TtynameRTest_impl(int argc, char* argv[])
+static int TtynameRTestImpl(int argc, char* argv[])
 {
-    ttyname_r_0100();
-    ttyname_r_0200();
+    TtynameR0100();
+    TtynameR0200();
     return t_status;
 }
 
@@ -67,5 +67,5 @@ int TtynameRTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return TtynameRTest_impl(1, libcArgv);
+    return TtynameRTestImpl(1, libcArgv);
 }

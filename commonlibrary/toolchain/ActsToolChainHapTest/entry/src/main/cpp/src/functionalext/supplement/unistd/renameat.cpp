@@ -32,9 +32,10 @@
  * @tc.desc      : When newname already exists, test the renameat function
  * @tc.level     : Level 0
  */
-void renameat_0100(void)
+void Renameat0100(void)
 {
-    int oldfd, newfd;
+    int oldfd;
+    int newfd;
     char oldPath[] = "/data/storage/el2/base/cache/renameat.txt";
     char newPath[] = "/data/storage/el2/base/cache/newrenameat.txt";
     const char* msg = "test code";
@@ -117,9 +118,9 @@ void renameat_0100(void)
     remove(newPath);
 }
 
-static int RenameatTest_impl(int argc, char* argv[])
+static int RenameatTestImpl(int argc, char* argv[])
 {
-    renameat_0100();
+    Renameat0100();
     return t_status;
 }
 
@@ -127,5 +128,5 @@ int RenameatTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return RenameatTest_impl(1, libcArgv);
+    return RenameatTestImpl(1, libcArgv);
 }

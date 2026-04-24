@@ -23,14 +23,15 @@ const int FAILED = -1;
  * @tc.desc     : The parameter flags is O_CLOEXEC, which can assign the old file descriptor to the new file descriptor
  * @tc.level    : Level 0
  */
-void dup3_0100(void)
+void Dup30100(void)
 {
     int fd = open("/data/storage/el2/base/cache/dup3test.txt", O_RDWR | O_CREAT, TEST_MODE);
-    EXPECT_TRUE("dup3_0100", fd >= 0);
+    EXPECT_TRUE("Dup30100", fd >= 0);
     int ret = dup3(fd, fileno(stderr), O_CLOEXEC);
-    EXPECT_EQ("dup3_0100", ret, fileno(stderr));
+    EXPECT_EQ("Dup30100", ret, fileno(stderr));
     close(fd);
-    remove("/data/storage/el2/base/cache/dup3test.txt");
+    int removeRet = remove("/data/storage/el2/base/cache/dup3test.txt");
+    EXPECT_EQ("Dup30100", removeRet, 0);
 }
 
 /**
@@ -38,11 +39,11 @@ void dup3_0100(void)
  * @tc.desc     : The parameter old is invalid, the old file descriptor cannot be assigned to the new file descriptor.
  * @tc.level    : Level 2
  */
-void dup3_0200(void)
+void Dup30200(void)
 {
     int fd = -1;
     int ret = dup3(fd, fileno(stderr), O_CLOEXEC);
-    EXPECT_EQ("dup3_0200", ret, FAILED);
+    EXPECT_EQ("Dup30200", ret, FAILED);
 }
 
 /**
@@ -50,28 +51,34 @@ void dup3_0200(void)
  * @tc.desc     : The parameter new is invalid, the old file descriptor cannot be assigned to the new file descriptor.
  * @tc.level    : Level 2
  */
-void dup3_0300(void)
+void Dup30300(void)
 {
     int newfd = -1;
     int fd = open("/data/storage/el2/base/cache/readtest.txt", O_RDWR | O_CREAT, TEST_MODE);
-    EXPECT_TRUE("dup3_0300", fd >= 0);
+    EXPECT_TRUE("Dup30300", fd >= 0);
     int ret = dup3(fd, newfd, O_CLOEXEC);
-    EXPECT_EQ("dup3_0300", ret, FAILED);
+    EXPECT_EQ("Dup30300", ret, FAILED);
     close(fd);
-    remove("/data/storage/el2/base/cache/readtest.txt");
+    int removeRet = remove("/data/storage/el2/base/cache/readtest.txt");
+    EXPECT_EQ("Dup30300", removeRet, 0);
 }
 
-static int dup3Test_with_args(int argc, char* argv[])
+static int Dup3TestWithArgs(int argc, char* argv[])
 {
-    dup3_0100();
-    dup3_0200();
-    dup3_0300();
+    Dup30100();
+    Dup30200();
+    Dup30300();
     return t_status;
+}
+
+int Dup3Test(void)
+{
+    static char libcProg[] = "libc_test";
+    char* libcArgv[] = { libcProg, nullptr };
+    return Dup3TestWithArgs(1, libcArgv);
 }
 
 int dup3Test(void)
 {
-    static char libcProg[] = "libc_test";
-    char* libcArgv[] = { libcProg, NULL };
-    return dup3Test_with_args(1, libcArgv);
+    return Dup3Test();
 }

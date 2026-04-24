@@ -19,21 +19,25 @@
 #include "libc_test_shim.h"
 #define N 10
 
-#define T_STATUS(status, c) ((c) || (LibcTestError(&(status), #c " failed\n"), 0))
-#define T_STATUS_PTR(statusPtr, c) ((c) || (LibcTestError((statusPtr), #c " failed\n"), 0))
+static void CheckStatus(int* status, bool condition, const char* message)
+{
+    if (!condition) {
+        LibcTestError(status, "%s failed\n", message);
+    }
+}
 
-static pthread_barrier_t b;
-static void* mod;
+static pthread_barrier_t g_b;
+static void* g_mod;
 
-static void* start(void* a)
+static void* Start(void* a)
 {
     int* status = static_cast<int*>(a);
     void* sym = nullptr;
     void* (*f)(void) = nullptr;
 
-    pthread_barrier_wait(&b);
-    sym = dlsym(mod, "f");
-    T_STATUS_PTR(status, sym);
+    pthread_barrier_wait(&g_b);
+    sym = dlsym(g_mod, "f");
+    CheckStatus(status, sym != nullptr, "dlsym(g_mod, \"f\")");
     if (sym) {
         f = reinterpret_cast<void* (*)()>(sym);
         (void)f();
@@ -41,31 +45,38 @@ static void* start(void* a)
     return SUCCESS_CODE;
 }
 
-int tls_get_new_dtvTest()
+int TlsGetNewDtvTest()
 {
     int status = SUCCESS_CODE;
 
     pthread_t td[N];
     int i;
 
-    pthread_barrier_init(&b, 0, N + 1);
-    for (i = 0; i < N; i++)
-        T_STATUS(status, !pthread_create(td + i, 0, start, &status));
-
-    mod = dlopen("/data/storage/el1/bundle/libs/arm/libtls_get_new-dtv_dso.so", RTLD_NOW);
-    if (mod == nullptr) {
-        mod = dlopen("/data/storage/el1/bundle/libs/arm64/libtls_get_new-dtv_dso.so", RTLD_NOW);
+    pthread_barrier_init(&g_b, nullptr, N + 1);
+    for (i = 0; i < N; i++) {
+        CheckStatus(&status, !pthread_create(td + i, nullptr, Start, &status), "pthread_create");
     }
-    if (mod == nullptr) {
-        pthread_barrier_wait(&b);
+
+    g_mod = dlopen("/data/storage/el1/bundle/libs/arm/libtls_get_new-dtv_dso.so", RTLD_NOW);
+    if (g_mod == nullptr) {
+        g_mod = dlopen("/data/storage/el1/bundle/libs/arm64/libtls_get_new-dtv_dso.so", RTLD_NOW);
+    }
+    if (g_mod == nullptr) {
+        pthread_barrier_wait(&g_b);
         for (i = 0; i < N; i++) {
-            pthread_join(td[i], 0);
+            pthread_join(td[i], nullptr);
         }
         return status;
     }
-    pthread_barrier_wait(&b);
+    pthread_barrier_wait(&g_b);
 
-    for (i = 0; i < N; i++)
-        T_STATUS(status, !pthread_join(td[i], 0));
+    for (i = 0; i < N; i++) {
+        CheckStatus(&status, !pthread_join(td[i], nullptr), "pthread_join");
+    }
     return status;
+}
+
+int tls_get_new_dtvTest()
+{
+    return TlsGetNewDtvTest();
 }

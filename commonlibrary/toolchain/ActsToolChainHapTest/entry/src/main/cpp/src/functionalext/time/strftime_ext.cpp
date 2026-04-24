@@ -37,16 +37,16 @@ constexpr int TM_HOUR_13 = 13;
 constexpr int TM_YEAR_NEG_1999 = -1999;
 
 /**
- * @tc.name      : strftime_0100
+ * @tc.name      : Strftime0100
  * @tc.desc      : according to different time zones, format date
  * @tc.level     : Level 0
  */
-void strftime_0100(void)
+void Strftime0100(void)
 {
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(test_asctime_data) / sizeof(test_asctime_data[0])); i++) {
         const char* handlerChar = test_handle_path(test_asctime_data[i].tz);
         if (!handlerChar) {
-            t_error("strftime_0100 failed: handlerChar is NULL\n");
+            t_error("Strftime0100 failed: handlerChar is NULL\n");
             continue;
         }
 
@@ -55,26 +55,26 @@ void strftime_0100(void)
         char buffer[g_bufferSize];
         struct tm* timeptr = localtime(&g_time);
         if (!timeptr) {
-            EXPECT_PTRNE("strftime_0100", timeptr, NULL);
+            EXPECT_PTRNE("Strftime0100", timeptr, NULL);
             return;
         }
         size_t count = strftime(buffer, sizeof(buffer) - 1, "%c", timeptr);
-        EXPECT_TRUE("strftime_0100", count > 0);
-        EXPECT_STREQ("strftime_0100", buffer, test_asctime_data[i].result);
+        EXPECT_TRUE("Strftime0100", count > 0);
+        EXPECT_STREQ("Strftime0100", buffer, test_asctime_data[i].result);
     }
 }
 
 /**
- * @tc.name      : strftime_0200
+ * @tc.name      : Strftime0200
  * @tc.desc      : according to different time zones, format date
  * @tc.level     : Level 0
  */
-void strftime_0200(void)
+void Strftime0200(void)
 {
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(test_strftime_data) / sizeof(test_strftime_data[0])); i++) {
         const char* handlerChar = test_handle_path(test_strftime_data[i].tz);
         if (!handlerChar) {
-            t_error("strftime_0200 failed: handlerChar is NULL\n");
+            t_error("Strftime0200 failed: handlerChar is NULL\n");
             continue;
         }
 
@@ -82,26 +82,26 @@ void strftime_0200(void)
         tzset();
         struct tm* timeptr = localtime(&g_time);
         if (!timeptr) {
-            EXPECT_PTRNE("strftime_0200", timeptr, NULL);
+            EXPECT_PTRNE("Strftime0200", timeptr, NULL);
             return;
         }
         char buffer[g_bufferSize];
         size_t count = strftime(buffer, sizeof(buffer) - 1, "%c %Z%z", timeptr);
-        EXPECT_TRUE("strftime_0200", count > 0);
-        EXPECT_STREQ("strftime_0200", buffer, test_strftime_data[i].result);
+        EXPECT_TRUE("Strftime0200", count > 0);
+        EXPECT_STREQ("Strftime0200", buffer, test_strftime_data[i].result);
     }
 }
 
 /**
- * @tc.name      : strftime_0300
+ * @tc.name      : Strftime0300
  * @tc.desc      : according to different time zones, format date
  * @tc.level     : Level 0
  */
-void strftime_0300(void)
+void Strftime0300(void)
 {
     const char* handlerChar = test_handle_path("Pacific/Pitcairn");
     if (!handlerChar) {
-        t_error("strftime_0300 failed: handlerChar is NULL\n");
+        t_error("Strftime0300 failed: handlerChar is NULL\n");
         return;
     }
 
@@ -109,25 +109,25 @@ void strftime_0300(void)
     tzset();
     struct tm* timeptr = localtime(&g_time);
     if (!timeptr) {
-        EXPECT_PTRNE("strftime_0300", timeptr, NULL);
+        EXPECT_PTRNE("Strftime0300", timeptr, NULL);
         return;
     }
     char buffer[g_bufferSize];
     size_t count = strftime(buffer, sizeof(buffer) - 1, "%k", timeptr);
-    EXPECT_TRUE("strftime_0300", count > 0);
-    EXPECT_STREQ("strftime_0300", buffer, " 2");
+    EXPECT_TRUE("Strftime0300", count > 0);
+    EXPECT_STREQ("Strftime0300", buffer, " 2");
 }
 
 /**
- * @tc.name      : strftime_0400
+ * @tc.name      : Strftime0400
  * @tc.desc      : according to different time zones, format date
  * @tc.level     : Level 0
  */
-void strftime_0400(void)
+void Strftime0400(void)
 {
     const char* handlerChar = test_handle_path("Asia/Shanghai");
     if (!handlerChar) {
-        t_error("strftime_0400 failed: handlerChar is NULL\n");
+        t_error("Strftime0400 failed: handlerChar is NULL\n");
         return;
     }
 
@@ -135,17 +135,17 @@ void strftime_0400(void)
     tzset();
     struct tm* timeptr = localtime(&g_time);
     if (!timeptr) {
-        EXPECT_PTRNE("strftime_0400", timeptr, NULL);
+        EXPECT_PTRNE("Strftime0400", timeptr, NULL);
         return;
     }
     char buffer[g_bufferSize];
     size_t count = strftime(buffer, sizeof(buffer) - 1, "%k", timeptr);
-    EXPECT_TRUE("strftime_0400", count > 0);
-    EXPECT_STREQ("strftime_0400", buffer, "18");
+    EXPECT_TRUE("Strftime0400", count > 0);
+    EXPECT_STREQ("Strftime0400", buffer, "18");
 }
 
 /**
- * @tc.name      : strftime_0500
+ * @tc.name      : Strftime0500
  * @tc.desc      : according to different time zones, format date
  * @tc.level     : Level 0
  */
@@ -153,7 +153,7 @@ void Strftime0500(void)
 {
     const char* handlerChar = test_handle_path("Asia/Shanghai");
     if (!handlerChar) {
-        t_error("strftime_0500 failed: handlerChar is NULL\n");
+        t_error("Strftime0500 failed: handlerChar is NULL\n");
         return;
     }
 
@@ -161,25 +161,25 @@ void Strftime0500(void)
     tzset();
     struct tm* timeptr = localtime(&g_time);
     if (!timeptr) {
-        EXPECT_PTRNE("strftime_0500", timeptr, NULL);
+        EXPECT_PTRNE("Strftime0500", timeptr, NULL);
         return;
     }
     char buffer[g_bufferSize];
     size_t count = strftime(buffer, sizeof(buffer) - 1, "%I", timeptr);
-    EXPECT_TRUE("strftime_0500", count > 0);
-    EXPECT_STREQ("strftime_0500", buffer, "06");
+    EXPECT_TRUE("Strftime0500", count > 0);
+    EXPECT_STREQ("Strftime0500", buffer, "06");
 }
 
 /**
- * @tc.name      : strftime_0600
+ * @tc.name      : Strftime0600
  * @tc.desc      : according to different time zones, format date
  * @tc.level     : Level 0
  */
-void strftime_0600(void)
+void Strftime0600(void)
 {
     const char* handlerChar = test_handle_path("Asia/Shanghai");
     if (!handlerChar) {
-        t_error("strftime_0600 failed: handlerChar is NULL\n");
+        t_error("Strftime0600 failed: handlerChar is NULL\n");
         return;
     }
 
@@ -187,25 +187,25 @@ void strftime_0600(void)
     tzset();
     struct tm* timeptr = localtime(&g_time);
     if (!timeptr) {
-        EXPECT_PTRNE("strftime_0600", timeptr, NULL);
+        EXPECT_PTRNE("Strftime0600", timeptr, NULL);
         return;
     }
     char buffer[g_bufferSize];
     size_t count = strftime(buffer, sizeof(buffer) - 1, "%P", timeptr);
-    EXPECT_TRUE("strftime_0600", count > 0);
-    EXPECT_STREQ("strftime_0600", buffer, "pm");
+    EXPECT_TRUE("Strftime0600", count > 0);
+    EXPECT_STREQ("Strftime0600", buffer, "pm");
 }
 
 /**
- * @tc.name      : strftime_0700
+ * @tc.name      : Strftime0700
  * @tc.desc      : according to different time zones, format date
  * @tc.level     : Level 0
  */
-void strftime_0700(void)
+void Strftime0700(void)
 {
     const char* handlerChar = test_handle_path("Asia/Shanghai");
     if (!handlerChar) {
-        t_error("strftime_0700 failed: handlerChar is NULL\n");
+        t_error("Strftime0700 failed: handlerChar is NULL\n");
         return;
     }
 
@@ -213,25 +213,25 @@ void strftime_0700(void)
     tzset();
     struct tm* timeptr = localtime(&g_time);
     if (!timeptr) {
-        EXPECT_PTRNE("strftime_0700", timeptr, NULL);
+        EXPECT_PTRNE("Strftime0700", timeptr, NULL);
         return;
     }
     char buffer[g_bufferSize];
     size_t count = strftime(buffer, sizeof(buffer) - 1, "%v", timeptr);
-    EXPECT_TRUE("strftime_0700", count > 0);
-    EXPECT_STREQ("strftime_0700", buffer, "30-Jul-2022");
+    EXPECT_TRUE("Strftime0700", count > 0);
+    EXPECT_STREQ("Strftime0700", buffer, "30-Jul-2022");
 }
 
 /**
- * @tc.name      : strftime_0800
+ * @tc.name      : Strftime0800
  * @tc.desc      : according to different time zones, format date
  * @tc.level     : Level 0
  */
-void strftime_0800(void)
+void Strftime0800(void)
 {
     const char* handlerChar = test_handle_path("Asia/Shanghai");
     if (!handlerChar) {
-        t_error("strftime_0800 failed: handlerChar is NULL\n");
+        t_error("Strftime0800 failed: handlerChar is NULL\n");
         return;
     }
 
@@ -239,25 +239,25 @@ void strftime_0800(void)
     tzset();
     struct tm* timeptr = localtime(&g_time);
     if (!timeptr) {
-        EXPECT_PTRNE("strftime_0800", timeptr, NULL);
+        EXPECT_PTRNE("Strftime0800", timeptr, NULL);
         return;
     }
     char buffer[g_bufferSize];
     size_t count = strftime(buffer, sizeof(buffer) - 1, "%j", timeptr);
-    EXPECT_TRUE("strftime_0800", count > 0);
-    EXPECT_STREQ("strftime_0800", buffer, "211");
+    EXPECT_TRUE("Strftime0800", count > 0);
+    EXPECT_STREQ("Strftime0800", buffer, "211");
 }
 
 /**
- * @tc.name      : strftime_0900
+ * @tc.name      : Strftime0900
  * @tc.desc      : according to different time zones, format date
  * @tc.level     : Level 0
  */
-void strftime_0900(void)
+void Strftime0900(void)
 {
     const char* handlerChar = test_handle_path("Asia/Shanghai");
     if (!handlerChar) {
-        t_error("strftime_0900 failed: handlerChar is NULL\n");
+        t_error("Strftime0900 failed: handlerChar is NULL\n");
         return;
     }
 
@@ -265,25 +265,25 @@ void strftime_0900(void)
     tzset();
     struct tm* timeptr = localtime(&g_time);
     if (!timeptr) {
-        EXPECT_PTRNE("strftime_0900", timeptr, NULL);
+        EXPECT_PTRNE("Strftime0900", timeptr, NULL);
         return;
     }
     char buffer[g_bufferSize];
     size_t count = strftime(buffer, sizeof(buffer) - 1, "%l", timeptr);
-    EXPECT_TRUE("strftime_0900", count > 0);
-    EXPECT_STREQ("strftime_0900", buffer, " 6");
+    EXPECT_TRUE("Strftime0900", count > 0);
+    EXPECT_STREQ("Strftime0900", buffer, " 6");
 }
 
 /**
- * @tc.name      : strftime_1000
+ * @tc.name      : Strftime1000
  * @tc.desc      : according to different time zones, format date
  * @tc.level     : Level 0
  */
-void strftime_1000(void)
+void Strftime1000(void)
 {
     const char* handlerChar = test_handle_path("Asia/Shanghai");
     if (!handlerChar) {
-        t_error("strftime_1000 failed: handlerChar is NULL\n");
+        t_error("Strftime1000 failed: handlerChar is NULL\n");
         return;
     }
 
@@ -291,7 +291,7 @@ void strftime_1000(void)
     tzset();
     struct tm* timeptr = localtime(&g_time);
     if (!timeptr) {
-        EXPECT_PTRNE("strftime_1000", timeptr, NULL);
+        EXPECT_PTRNE("Strftime1000", timeptr, NULL);
         return;
     }
     timeptr->tm_mday = TM_DAY_31;
@@ -302,34 +302,34 @@ void strftime_1000(void)
 
     char buffer[g_bufferSize];
     size_t count = strftime(buffer, sizeof(buffer) - 1, "%V", timeptr);
-    EXPECT_TRUE("strftime_1000", count > 0);
-    EXPECT_STREQ("strftime_1000", buffer, "01");
+    EXPECT_TRUE("Strftime1000", count > 0);
+    EXPECT_STREQ("Strftime1000", buffer, "01");
 }
 
 /**
- * @tc.name      : strftime_1100
+ * @tc.name      : Strftime1100
  * @tc.desc      : according to different time zones, format date
  * @tc.level     : Level 0
  */
-void strftime_1100(void)
+void Strftime1100(void)
 {
     struct tm tm = { 0 };
     char buffer[g_bufferSize];
     size_t count = strftime(buffer, sizeof(buffer) - 1, "%l", &tm);
-    EXPECT_TRUE("strftime_1100", count > 0);
-    EXPECT_STREQ("strftime_1100", buffer, "12");
+    EXPECT_TRUE("Strftime1100", count > 0);
+    EXPECT_STREQ("Strftime1100", buffer, "12");
 }
 
 /**
- * @tc.name      : strftime_1200
+ * @tc.name      : Strftime1200
  * @tc.desc      : according to different time zones, format date
  * @tc.level     : Level 0
  */
-void strftime_1200(void)
+void Strftime1200(void)
 {
     const char* handlerChar = test_handle_path("Asia/Shanghai");
     if (!handlerChar) {
-        t_error("strftime_1200 failed: handlerChar is NULL\n");
+        t_error("Strftime1200 failed: handlerChar is NULL\n");
         return;
     }
 
@@ -337,7 +337,7 @@ void strftime_1200(void)
     tzset();
     struct tm* timeptr = localtime(&g_time);
     if (!timeptr) {
-        EXPECT_PTRNE("strftime_1200", timeptr, NULL);
+        EXPECT_PTRNE("Strftime1200", timeptr, NULL);
         return;
     }
     timeptr->tm_mday = TM_DAY_28;
@@ -348,20 +348,20 @@ void strftime_1200(void)
 
     char buffer[g_bufferSize];
     size_t count = strftime(buffer, sizeof(buffer) - 1, "%G", timeptr);
-    EXPECT_TRUE("strftime_1200", count > 0);
-    EXPECT_STREQ("strftime_1200", buffer, "2101");
+    EXPECT_TRUE("Strftime1200", count > 0);
+    EXPECT_STREQ("Strftime1200", buffer, "2101");
 }
 
 /**
- * @tc.name      : strftime_1300
+ * @tc.name      : Strftime1300
  * @tc.desc      : according to different time zones, format date
  * @tc.level     : Level 1
  */
-void strftime_1300(void)
+void Strftime1300(void)
 {
     const char* handlerChar = test_handle_path("Asia/Shanghai");
     if (!handlerChar) {
-        t_error("strftime_1300 failed: handlerChar is NULL\n");
+        t_error("Strftime1300 failed: handlerChar is NULL\n");
         return;
     }
 
@@ -369,7 +369,7 @@ void strftime_1300(void)
     tzset();
     struct tm* timeptr = localtime(&g_time);
     if (!timeptr) {
-        EXPECT_PTRNE("strftime_1300", timeptr, NULL);
+        EXPECT_PTRNE("Strftime1300", timeptr, NULL);
         return;
     }
     timeptr->tm_mday = TM_DAY_28;
@@ -380,20 +380,20 @@ void strftime_1300(void)
 
     char buffer[g_bufferSize];
     size_t count = strftime(buffer, sizeof(buffer) - 1, "%G", timeptr);
-    EXPECT_TRUE("strftime_1300", count > 0);
-    EXPECT_STREQ("strftime_1300", buffer, "2000");
+    EXPECT_TRUE("Strftime1300", count > 0);
+    EXPECT_STREQ("Strftime1300", buffer, "2000");
 }
 
 /**
- * @tc.name      : strftime_1400
+ * @tc.name      : Strftime1400
  * @tc.desc      : according to different time zones, format date
  * @tc.level     : Level 1
  */
-void strftime_1400(void)
+void Strftime1400(void)
 {
     const char* handlerChar = test_handle_path("Asia/Shanghai");
     if (!handlerChar) {
-        t_error("strftime_1400 failed: handlerChar is NULL\n");
+        t_error("Strftime1400 failed: handlerChar is NULL\n");
         return;
     }
 
@@ -401,7 +401,7 @@ void strftime_1400(void)
     tzset();
     struct tm* timeptr = localtime(&g_time);
     if (!timeptr) {
-        EXPECT_PTRNE("strftime_1400", timeptr, NULL);
+        EXPECT_PTRNE("Strftime1400", timeptr, NULL);
         return;
     }
     timeptr->tm_mday = TM_DAY_28;
@@ -412,20 +412,20 @@ void strftime_1400(void)
 
     char buffer[g_bufferSize];
     size_t count = strftime(buffer, sizeof(buffer) - 1, "%G", timeptr);
-    EXPECT_TRUE("strftime_1400", count > 0);
-    EXPECT_STREQ("strftime_1400", buffer, "2002");
+    EXPECT_TRUE("Strftime1400", count > 0);
+    EXPECT_STREQ("Strftime1400", buffer, "2002");
 }
 
 /**
- * @tc.name      : strftime_1500
+ * @tc.name      : Strftime1500
  * @tc.desc      : according to different time zones, format date
  * @tc.level     : Level 1
  */
-void strftime_1500(void)
+void Strftime1500(void)
 {
     const char* handlerChar = test_handle_path("Asia/Shanghai");
     if (!handlerChar) {
-        t_error("strftime_1500 failed: handlerChar is NULL\n");
+        t_error("Strftime1500 failed: handlerChar is NULL\n");
         return;
     }
 
@@ -433,26 +433,26 @@ void strftime_1500(void)
     tzset();
     struct tm* timeptr = localtime(&g_time);
     if (!timeptr) {
-        EXPECT_PTRNE("strftime_1500", timeptr, NULL);
+        EXPECT_PTRNE("Strftime1500", timeptr, NULL);
         return;
     }
 
     char buffer[g_bufferSize];
     size_t count = strftime(buffer, sizeof(buffer) - 1, "%B", timeptr);
-    EXPECT_TRUE("strftime_1500", count > 0);
-    EXPECT_STREQ("strftime_1500", buffer, "July");
+    EXPECT_TRUE("Strftime1500", count > 0);
+    EXPECT_STREQ("Strftime1500", buffer, "July");
 }
 
 /**
- * @tc.name      : strftime_1600
+ * @tc.name      : Strftime1600
  * @tc.desc      : according to different time zones, format date
  * @tc.level     : Level 1
  */
-void strftime_1600(void)
+void Strftime1600(void)
 {
     const char* handlerChar = test_handle_path("Asia/Shanghai");
     if (!handlerChar) {
-        t_error("strftime_1600 failed: handlerChar is NULL\n");
+        t_error("Strftime1600 failed: handlerChar is NULL\n");
         return;
     }
 
@@ -460,63 +460,63 @@ void strftime_1600(void)
     tzset();
     struct tm* timeptr = localtime(&g_time);
     if (!timeptr) {
-        EXPECT_PTRNE("strftime_1600", timeptr, NULL);
+        EXPECT_PTRNE("Strftime1600", timeptr, NULL);
         return;
     }
     timeptr->tm_mon = TM_DECEMBER + 1;
 
     char buffer[g_bufferSize];
     size_t count = strftime(buffer, sizeof(buffer) - 1, "%B", timeptr);
-    EXPECT_TRUE("strftime_1600", count > 0);
-    EXPECT_STREQ("strftime_1600", buffer, "-");
+    EXPECT_TRUE("Strftime1600", count > 0);
+    EXPECT_STREQ("Strftime1600", buffer, "-");
 }
 
 /**
- * @tc.name      : strftime_1700
+ * @tc.name      : Strftime1700
  * @tc.desc      : according to different time zones, format date
  * @tc.level     : Level 1
  */
-void strftime_1700(void)
+void Strftime1700(void)
 {
     struct tm tm = { 0 };
     tm.tm_hour = TM_HOUR_13;
     char buffer[g_bufferSize];
     size_t count = strftime(buffer, sizeof(buffer) - 1, "%l", &tm);
-    EXPECT_TRUE("strftime_1700", count > 0);
-    EXPECT_STREQ("strftime_1700", buffer, " 1");
+    EXPECT_TRUE("Strftime1700", count > 0);
+    EXPECT_STREQ("Strftime1700", buffer, " 1");
 }
 
 /**
- * @tc.name      : strftime_1800
+ * @tc.name      : Strftime1800
  * @tc.desc      : according to different time zones, format date
  * @tc.level     : Level 1
  */
-void strftime_1800(void)
+void Strftime1800(void)
 {
     struct tm tm = { 0 };
     char buffer[g_bufferSize];
     size_t count = strftime(buffer, sizeof(buffer) - 1, "%u", &tm);
-    EXPECT_TRUE("strftime_1800", count > 0);
-    EXPECT_STREQ("strftime_1800", buffer, "7");
+    EXPECT_TRUE("Strftime1800", count > 0);
+    EXPECT_STREQ("Strftime1800", buffer, "7");
 }
 
 /**
- * @tc.name      : strftime_1900
+ * @tc.name      : Strftime1900
  * @tc.desc      : according to different time zones, format date
  * @tc.level     : Level 1
  */
-void strftime_1900(void)
+void Strftime1900(void)
 {
     struct tm tm = { 0 };
     tm.tm_wday = TM_WDAY_3;
     char buffer[g_bufferSize];
     size_t count = strftime(buffer, sizeof(buffer) - 1, "%u", &tm);
-    EXPECT_TRUE("strftime_1900", count > 0);
-    EXPECT_STREQ("strftime_1900", buffer, "3");
+    EXPECT_TRUE("Strftime1900", count > 0);
+    EXPECT_STREQ("Strftime1900", buffer, "3");
 }
 
 /**
- * @tc.name      : strftime_2000
+ * @tc.name      : Strftime2000
  * @tc.desc      : according to different time zones, format date
  * @tc.level     : Level 1
  */
@@ -526,94 +526,94 @@ void Strftime2000(void)
     tm.tm_year = TM_YEAR_NEG_1999;
     char buffer[g_bufferSize];
     size_t count = strftime(buffer, sizeof(buffer) - 1, "%-y", &tm);
-    EXPECT_TRUE("strftime_2000", count > 0);
-    EXPECT_STREQ("strftime_2000", buffer, "99");
+    EXPECT_TRUE("Strftime2000", count > 0);
+    EXPECT_STREQ("Strftime2000", buffer, "99");
 }
 
 /**
- * @tc.name      : strftime_2100
+ * @tc.name      : Strftime2100
  * @tc.desc      : according to different time zones, format date
  * @tc.level     : Level 1
  */
-void strftime_2100(void)
+void Strftime2100(void)
 {
     struct tm tm = { 0 };
     tm.tm_isdst = -1;
     char buffer[g_bufferSize];
     size_t count = strftime(buffer, sizeof(buffer) - 1, "%z", &tm);
-    EXPECT_TRUE("strftime_2100", count == 0);
-    EXPECT_STREQ("strftime_2100", buffer, "");
+    EXPECT_TRUE("Strftime2100", count == 0);
+    EXPECT_STREQ("Strftime2100", buffer, "");
 }
 
 /**
- * @tc.name      : strftime_2200
+ * @tc.name      : Strftime2200
  * @tc.desc      : according to different time zones, format date
  * @tc.level     : Level 1
  */
-void strftime_2200(void)
+void Strftime2200(void)
 {
     struct tm tm = { 0 };
     tm.tm_isdst = -1;
     char buffer[g_bufferSize];
     size_t count = strftime(buffer, sizeof(buffer) - 1, "%Z", &tm);
-    EXPECT_TRUE("strftime_2200", count == 0);
-    EXPECT_STREQ("strftime_2200", buffer, "");
+    EXPECT_TRUE("Strftime2200", count == 0);
+    EXPECT_STREQ("Strftime2200", buffer, "");
 }
 
 /**
- * @tc.name      : strftime_2300
+ * @tc.name      : Strftime2300
  * @tc.desc      : according to different time zones, format date
  * @tc.level     : Level 1
  */
-void strftime_2300(void)
+void Strftime2300(void)
 {
     struct tm tm = { 0 };
     char buffer[g_bufferSize];
     size_t count = strftime(buffer, sizeof(buffer) - 1, "%E%", &tm);
-    EXPECT_TRUE("strftime_2300", count > 0);
-    EXPECT_STREQ("strftime_2300", buffer, "%");
+    EXPECT_TRUE("Strftime2300", count > 0);
+    EXPECT_STREQ("Strftime2300", buffer, "%");
 }
 
 /**
- * @tc.name      : strftime_2200
+ * @tc.name      : Strftime2200
  * @tc.desc      : according to different time zones, format date
  * @tc.level     : Level 1
  */
-void strftime_2400(void)
+void Strftime2400(void)
 {
     struct tm tm = { 0 };
     char buffer[g_bufferSize];
     size_t count = strftime(buffer, sizeof(buffer) - 1, "%O%", &tm);
-    EXPECT_TRUE("strftime_2400", count > 0);
-    EXPECT_STREQ("strftime_2400", buffer, "%");
+    EXPECT_TRUE("Strftime2400", count > 0);
+    EXPECT_STREQ("Strftime2400", buffer, "%");
 }
 
 static int StrftimeExtTestImpl(void)
 {
-    strftime_0100();
-    strftime_0200();
-    strftime_0300();
-    strftime_0400();
+    Strftime0100();
+    Strftime0200();
+    Strftime0300();
+    Strftime0400();
     Strftime0500();
-    strftime_0600();
-    strftime_0700();
-    strftime_0800();
-    strftime_0900();
-    strftime_1000();
-    strftime_1100();
-    strftime_1200();
-    strftime_1300();
-    strftime_1400();
-    strftime_1500();
-    strftime_1600();
-    strftime_1700();
-    strftime_1800();
-    strftime_1900();
+    Strftime0600();
+    Strftime0700();
+    Strftime0800();
+    Strftime0900();
+    Strftime1000();
+    Strftime1100();
+    Strftime1200();
+    Strftime1300();
+    Strftime1400();
+    Strftime1500();
+    Strftime1600();
+    Strftime1700();
+    Strftime1800();
+    Strftime1900();
     Strftime2000();
-    strftime_2100();
-    strftime_2200();
-    strftime_2300();
-    strftime_2400();
+    Strftime2100();
+    Strftime2200();
+    Strftime2300();
+    Strftime2400();
     return t_status;
 }
 

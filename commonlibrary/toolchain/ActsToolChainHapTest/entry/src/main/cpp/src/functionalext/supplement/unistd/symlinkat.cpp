@@ -27,23 +27,24 @@
 #endif
 
 /**
- * @tc.name      : symlinkat_0100
+ * @tc.name      : Symlinkat0100
  * @tc.desc      : Create a symbolic link to the specified file
  * @tc.level     : Level 0
  * @note         : Symbolic links may not be supported on all filesystems or platforms.
  */
-void symlinkat_0100(void)
+void Symlinkat0100(void)
 {
     char buffer[BUFSIZ];
-    const char* path_name = "/data/storage/el2/base/cache";
-    const char* file_name = "/data/storage/el2/base/cache/symlinkat.txt";
-    const char* symlink_name = "mysymlinkat";
+    const char* pathName = "/data/storage/el2/base/cache";
+    const char* fileName = "/data/storage/el2/base/cache/symlinkat.txt";
+    const char* symlinkName = "mysymlinkat";
     ssize_t sz;
     DIR* dp;
-    int fdd, fdf;
+    int fdd;
+    int fdf;
 
     // Create target file with proper permissions
-    fdf = open(file_name, O_RDWR | O_CREAT | O_TRUNC, TEST_MODE);
+    fdf = open(fileName, O_RDWR | O_CREAT | O_TRUNC, TEST_MODE);
     if (fdf == -1) {
         t_error("%s: open/creat failed (errno=%d)\n", __func__, errno);
         return;
@@ -51,10 +52,10 @@ void symlinkat_0100(void)
     close(fdf);
 
     // Open directory
-    dp = opendir(path_name);
+    dp = opendir(pathName);
     if (dp == nullptr) {
         t_error("%s: opendir failed (errno=%d)\n", __func__, errno);
-        unlink(file_name);
+        unlink(fileName);
         return;
     }
 
@@ -62,58 +63,58 @@ void symlinkat_0100(void)
     if (fdd < 0) {
         t_error("%s: dirfd failed (errno=%d)\n", __func__, errno);
         closedir(dp);
-        unlink(file_name);
+        unlink(fileName);
         return;
     }
 
     // Create symbolic link
-    if (symlinkat(file_name, fdd, symlink_name) < 0) {
+    if (symlinkat(fileName, fdd, symlinkName) < 0) {
         printf("%s: symlinkat failed (errno=%d). ", __func__, errno);
         printf("Symbolic links may not be supported on this platform/filesystem.\n");
         closedir(dp);
-        unlink(file_name);
+        unlink(fileName);
         return;
     }
 
     // Read the symbolic link target
     memset(buffer, 0, sizeof(buffer));
-    sz = readlinkat(fdd, symlink_name, buffer, sizeof(buffer) - 1);
+    sz = readlinkat(fdd, symlinkName, buffer, sizeof(buffer) - 1);
     if (sz < 0) {
         t_error("%s: readlinkat failed (errno=%d)\n", __func__, errno);
-        unlinkat(fdd, symlink_name, 0);
+        unlinkat(fdd, symlinkName, 0);
         closedir(dp);
-        unlink(file_name);
+        unlink(fileName);
         return;
     }
     buffer[sz] = '\0'; // Null-terminate the string
 
     // Verify the link target
-    if (strcmp(buffer, file_name) != 0) {
-        t_error("%s: buffer is '%s', expected '%s'\n", __func__, buffer, file_name);
+    if (strcmp(buffer, fileName) != 0) {
+        t_error("%s: buffer is '%s', expected '%s'\n", __func__, buffer, fileName);
     }
 
     // Cleanup
-    unlinkat(fdd, symlink_name, 0);
+    unlinkat(fdd, symlinkName, 0);
     closedir(dp);
-    unlink(file_name);
+    unlink(fileName);
 }
 
 /**
- * @tc.name      : symlinkat_0200
+ * @tc.name      : Symlinkat0200
  * @tc.desc      : Create a symbolic link even when the target file does not exist
  * @tc.level     : Level 1
  * @note         : Symbolic links can point to non-existent targets (dangling links).
  */
-void symlinkat_0200(void)
+void Symlinkat0200(void)
 {
-    const char* path_name = "/data/storage/el2/base/cache";
-    const char* file_name = "/data/storage/el2/base/cache/nonexistent_symlinkat_target.txt";
-    const char* symlink_name = "mysymlinkat_dangling";
+    const char* pathName = "/data/storage/el2/base/cache";
+    const char* fileName = "/data/storage/el2/base/cache/nonexistent_symlinkat_target.txt";
+    const char* symlinkName = "mysymlinkat_dangling";
     DIR* dp;
     int fd;
 
     // Open directory
-    dp = opendir(path_name);
+    dp = opendir(pathName);
     if (dp == nullptr) {
         t_error("%s: opendir failed (errno=%d)\n", __func__, errno);
         return;
@@ -127,7 +128,7 @@ void symlinkat_0200(void)
     }
 
     // Create symbolic link to non-existent file (this should succeed)
-    if (symlinkat(file_name, fd, symlink_name) < 0) {
+    if (symlinkat(fileName, fd, symlinkName) < 0) {
         printf("%s: symlinkat failed (errno=%d). ", __func__, errno);
         printf("Symbolic links may not be supported on this platform/filesystem.\n");
         closedir(dp);
@@ -135,14 +136,14 @@ void symlinkat_0200(void)
     }
 
     // Cleanup
-    unlinkat(fd, symlink_name, 0);
+    unlinkat(fd, symlinkName, 0);
     closedir(dp);
 }
 
-static int SymlinkatTest_impl(int argc, char* argv[])
+static int SymlinkatTestImpl(int argc, char* argv[])
 {
-    symlinkat_0100();
-    symlinkat_0200();
+    Symlinkat0100();
+    Symlinkat0200();
     return t_status;
 }
 
@@ -150,5 +151,5 @@ int SymlinkatTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return SymlinkatTest_impl(1, libcArgv);
+    return SymlinkatTestImpl(1, libcArgv);
 }

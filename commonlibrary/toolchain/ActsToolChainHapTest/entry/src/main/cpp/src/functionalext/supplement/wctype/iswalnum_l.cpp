@@ -27,12 +27,12 @@ const int SIZE = 128;
 #define MAX_VALUE 4294967295
 
 /**
- * @tc.name      : iswalnum_l_0100
+ * @tc.name      : IswalnumL0100
  * @tc.desc      : Verify iswalnum_l process success. The parameter c is an English letter,
  *                 and it is judged that the input character is a letter.
  * @tc.level     : Level 0
  */
-void iswalnum_l_0100(void)
+void IswalnumL0100(void)
 {
     wchar_t c = 'a';
     locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
@@ -40,17 +40,17 @@ void iswalnum_l_0100(void)
         return;
     }
     int ret = iswalnum_l(c, mLocale);
-    EXPECT_NE("iswalnum_l_0100", ret, 0);
+    EXPECT_NE("IswalnumL0100", ret, 0);
     freelocale(mLocale);
 }
 
 /**
- * @tc.name      : iswalnum_l_0200
+ * @tc.name      : IswalnumL0200
  * @tc.desc      : Verify iswalnum_l process success. The parameter c is an English number,
  *                 and it is judged that the input character is a number.
  * @tc.level     : Level 0
  */
-void iswalnum_l_0200(void)
+void IswalnumL0200(void)
 {
     wchar_t c = '1';
     locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
@@ -58,17 +58,17 @@ void iswalnum_l_0200(void)
         return;
     }
     int ret = iswalnum_l('1', mLocale);
-    EXPECT_NE("iswalnum_l_0200", ret, 0);
+    EXPECT_NE("IswalnumL0200", ret, 0);
     freelocale(mLocale);
 }
 
 /**
- * @tc.name      : iswalnum_l_0300
+ * @tc.name      : IswalnumL0300
  * @tc.desc      : Verify iswalnum_l process success. The parameter c is an special character,
  *                 and it is judged that the input character is not a letter or a number.
  * @tc.level     : Level 2
  */
-void iswalnum_l_0300(void)
+void IswalnumL0300(void)
 {
     wchar_t c = '*';
     locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
@@ -76,17 +76,17 @@ void iswalnum_l_0300(void)
         return;
     }
     int ret = iswalnum_l('*', mLocale);
-    EXPECT_EQ("iswalnum_l_0300", ret, 0);
+    EXPECT_EQ("IswalnumL0300", ret, 0);
     freelocale(mLocale);
 }
 
 /**
- * @tc.name      : iswalnum_l_0400
+ * @tc.name      : IswalnumL0400
  * @tc.desc      : Verify iswalnum_l process success. Determine the number of letters and numbers in the ascii
  *                 code table.
  * @tc.level     : Level 1
  */
-void iswalnum_l_0400(void)
+void IswalnumL0400(void)
 {
     locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
     if (mLocale == nullptr) {
@@ -99,17 +99,17 @@ void iswalnum_l_0400(void)
             total++;
         }
     }
-    EXPECT_EQ("iswalnum_l_0400", total, COUNT);
+    EXPECT_EQ("IswalnumL0400", total, COUNT);
     freelocale(mLocale);
 }
 
 /**
- * @tc.name      : iswalnum_l_0500
+ * @tc.name      : IswalnumL0500
  * @tc.desc      : Verify iswalnum_l process success. Determine the number of letters and numbers in the ascii
  *                 code table.
  * @tc.level     : Level 1
  */
-void iswalnum_l_0500(void)
+void IswalnumL0500(void)
 {
     locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
     int total = 0;
@@ -119,16 +119,16 @@ void iswalnum_l_0500(void)
             total++;
         }
     }
-    EXPECT_EQ("iswalnum_l_0400", total, ALNUM_WINT_COUNT);
+    EXPECT_EQ("IswalnumL0400", total, ALNUM_WINT_COUNT);
 }
 
 /**
- * @tc.name      : iswalnum_l_0600
+ * @tc.name      : IswalnumL0600
  * @tc.desc      : Verify iswalnum_l process success. Determine the number of letters and numbers in the ascii
  *                 code table.
  * @tc.level     : Level 1
  */
-void iswalnum_l_0600(void)
+void IswalnumL0600(void)
 {
     locale_t mLocale = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
     int total = 0;
@@ -138,16 +138,16 @@ void iswalnum_l_0600(void)
             total++;
         }
     }
-    EXPECT_EQ("iswalnum_l_0400", total, ALNUM_WINT_COUNT);
+    EXPECT_EQ("IswalnumL0400", total, ALNUM_WINT_COUNT);
 }
 
 /**
- * @tc.name      : iswalnum_l_0700
+ * @tc.name      : IswalnumL0700
  * @tc.desc      : Verify iswalnum_l process success. Input parameter is the maximum value of int, please verify that
  * the return is CMPFLAG
  * @tc.level     : Level 1
  */
-void iswalnum_l_0700(void)
+void IswalnumL0700(void)
 {
     locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     if (mLocale == nullptr) {
@@ -155,16 +155,16 @@ void iswalnum_l_0700(void)
     }
     int ret = iswalnum_l(static_cast<wchar_t>(MAX_VALUE), mLocale);
     freelocale(mLocale);
-    EXPECT_EQ("iswalnum_l_0700", ret, CMPFLAG);
+    EXPECT_EQ("IswalnumL0700", ret, CMPFLAG);
 }
 
 /**
- * @tc.name      : iswalnum_l_0800
+ * @tc.name      : IswalnumL0800
  * @tc.desc      : Verify iswalnum_l process success. Input parameter is the maximum value of int, please verify that
  * the return is CMPFLAG code table.
  * @tc.level     : Level 1
  */
-void iswalnum_l_0800(void)
+void IswalnumL0800(void)
 {
     locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     if (mLocale == nullptr) {
@@ -172,29 +172,29 @@ void iswalnum_l_0800(void)
     }
     int ret = iswalnum_l(static_cast<wchar_t>(MAX_VALUE), mLocale);
     freelocale(mLocale);
-    EXPECT_EQ("iswalnum_l_0800", ret, CMPFLAG);
+    EXPECT_EQ("IswalnumL0800", ret, CMPFLAG);
 }
 
-static int IswalnumLTest_impl(void)
+static int IswalnumLTestImpl(void)
 {
-    typedef void (*set_wctype_icu_enable_func)(void);
-    set_wctype_icu_enable_func set_wctype_icu_enable =
-        reinterpret_cast<set_wctype_icu_enable_func>(dlsym(RTLD_DEFAULT, "set_wctype_icu_enable"));
-    if (set_wctype_icu_enable != nullptr) {
-        set_wctype_icu_enable();
+    typedef void (*SetWctypeIcuEnableFunc)(void);
+    SetWctypeIcuEnableFunc setWctypeIcuEnable =
+        reinterpret_cast<SetWctypeIcuEnableFunc>(dlsym(RTLD_DEFAULT, "setWctypeIcuEnable"));
+    if (setWctypeIcuEnable != nullptr) {
+        setWctypeIcuEnable();
     }
-    iswalnum_l_0100();
-    iswalnum_l_0200();
-    iswalnum_l_0300();
-    iswalnum_l_0400();
+    IswalnumL0100();
+    IswalnumL0200();
+    IswalnumL0300();
+    IswalnumL0400();
     // Full Unicode scan is extremely environment dependent and slow on some devices.
     // Keep deterministic ASCII/basic cases for portability.
-    iswalnum_l_0700();
-    iswalnum_l_0800();
+    IswalnumL0700();
+    IswalnumL0800();
     return t_status;
 }
 
 int IswalnumLTest(void)
 {
-    return IswalnumLTest_impl();
+    return IswalnumLTestImpl();
 }

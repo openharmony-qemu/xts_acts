@@ -20,7 +20,7 @@
 
 #define DEFAULT_GUARD_SIZE 8192
 
-static void pthread_guard_size_0100(void)
+static void PthreadGuardSize0100(void)
 {
     pthread_attr_t attr = { 0 };
     size_t guard_size = 0;
@@ -33,20 +33,20 @@ static void pthread_guard_size_0100(void)
 #endif
 }
 
-static TEST_FUN G_Fun_Array[] = {
-    pthread_guard_size_0100,
+static TEST_FUN g_gFunArray[] = {
+    PthreadGuardSize0100,
 };
 
-static int PthreadGuardSizeTest_impl(void)
+static int PthreadGuardSizeTestImpl(void)
 {
-    int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
+    int num = sizeof(g_gFunArray) / sizeof(TEST_FUN);
     for (int pos = 0; pos < num; ++pos) {
-        G_Fun_Array[pos]();
+        g_gFunArray[pos]();
     }
     return t_status;
 }
 
 int PthreadGuardSizeTest(void)
 {
-    return PthreadGuardSizeTest_impl();
+    return PthreadGuardSizeTestImpl();
 }

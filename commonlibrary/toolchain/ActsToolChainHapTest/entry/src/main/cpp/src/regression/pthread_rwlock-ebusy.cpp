@@ -20,47 +20,60 @@
 #include <string.h>
 #include "test.h"
 
-#define T(f)       \
-    if ((r = (f))) \
-    t_error(#f " failed: %s\n", strerror(r))
+static void CheckResult(int r, const char* name)
+{
+    if (r != 0) {
+        t_error("%s failed: %s\n", name, strerror(r));
+    }
+}
 
-static void* tryrdlock(void* arg)
+static void* Tryrdlock(void* arg)
 {
     int r = pthread_rwlock_tryrdlock((pthread_rwlock_t*)arg);
-    if (r != EBUSY)
+    if (r != EBUSY) {
         t_error("tryrdlock for wrlocked lock returned %s, want EBUSY\n", strerror(r));
-    return 0;
+    }
+    return nullptr;
 }
 
-static void* trywrlock(void* arg)
+static void* Trywrlock(void* arg)
 {
     int r = pthread_rwlock_trywrlock((pthread_rwlock_t*)arg);
-    if (r != EBUSY)
+    if (r != EBUSY) {
         t_error("trywrlock for rdlocked lock returned %s, want EBUSY\n", strerror(r));
-    return 0;
+    }
+    return nullptr;
 }
 
-static int PthreadRwlockEbusyTest_impl(void)
+static int PthreadRwlockEbusyTestImpl(void)
 {
     pthread_t t;
     pthread_rwlock_t rw = PTHREAD_RWLOCK_INITIALIZER;
     void* p;
-    int r;
+    int r = 0;
 
-    T(pthread_rwlock_rdlock(&rw));
-    T(pthread_create(&t, 0, trywrlock, &rw));
-    T(pthread_join(t, &p));
-    T(pthread_rwlock_unlock(&rw));
+    r = pthread_rwlock_rdlock(&rw);
+    CheckResult(r, "pthread_rwlock_rdlock(&rw)");
+    r = pthread_create(&t, nullptr, Trywrlock, &rw);
+    CheckResult(r, "pthread_create(&t, nullptr, Trywrlock, &rw)");
+    r = pthread_join(t, &p);
+    CheckResult(r, "pthread_join(t, &p)");
+    r = pthread_rwlock_unlock(&rw);
+    CheckResult(r, "pthread_rwlock_unlock(&rw)");
 
-    T(pthread_rwlock_wrlock(&rw));
-    T(pthread_create(&t, 0, tryrdlock, &rw));
-    T(pthread_join(t, &p));
-    T(pthread_rwlock_unlock(&rw));
+    r = pthread_rwlock_wrlock(&rw);
+    CheckResult(r, "pthread_rwlock_wrlock(&rw)");
+    r = pthread_create(&t, nullptr, Tryrdlock, &rw);
+    CheckResult(r, "pthread_create(&t, nullptr, Tryrdlock, &rw)");
+    r = pthread_join(t, &p);
+    CheckResult(r, "pthread_join(t, &p)");
+    r = pthread_rwlock_unlock(&rw);
+    CheckResult(r, "pthread_rwlock_unlock(&rw)");
 
     return t_status;
 }
 
 int PthreadRwlockEbusyTest(void)
 {
-    return PthreadRwlockEbusyTest_impl();
+    return PthreadRwlockEbusyTestImpl();
 }

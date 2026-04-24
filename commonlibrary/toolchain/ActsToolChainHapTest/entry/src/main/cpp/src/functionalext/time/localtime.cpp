@@ -20,8 +20,8 @@
 #include "time64_functions.h"
 
 static time_t g_time = 1659177614;
-static int16_t gYearBase = 1900;
-static int16_t gBufferSize = 500;
+static int16_t g_yearBase = 1900;
+static int16_t g_bufferSize = 500;
 
 extern "C" struct tm* __localtime64(const time_t*);
 /**
@@ -30,23 +30,22 @@ extern "C" struct tm* __localtime64(const time_t*);
  * to the current time system offset to local time
  * @tc.level     : Level 0
  */
-void localtime_0100(void)
+void Localtime0100(void)
 {
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(test_localtime_data) / sizeof(test_localtime_data[0])); i++) {
         const char* handlerChar = test_handle_path(test_localtime_data[i].tz);
         if (!handlerChar) {
-            t_error("localtime_0100 failed: handlerChar is NULL\n");
+            t_error("Localtime0100 failed: handlerChar is NULL\n");
             continue;
         }
 
         setenv("TZ", handlerChar, 1);
         tzset();
-        struct tm* localtm;
-        localtm = localtime(&g_time);
-        char buff[gBufferSize];
+        struct tm* localtm = localtime(&g_time);
+        char buff[g_bufferSize];
         int cnt = sprintf(buff,
                           "%d-%d-%d %d:%d:%d wday=%d,yday=%d,isdst=%d,gmtoff=%ld,zone=%s",
-                          (localtm->tm_year + gYearBase),
+                          (localtm->tm_year + g_yearBase),
                           localtm->tm_mon,
                           localtm->tm_mday,
                           localtm->tm_hour,
@@ -57,8 +56,8 @@ void localtime_0100(void)
                           localtm->tm_isdst,
                           localtm->tm_gmtoff,
                           localtm->tm_zone);
-        EXPECT_TRUE("localtime_0100", cnt > 0);
-        EXPECT_STREQ("localtime_0100", test_localtime_data[i].result, buff);
+        EXPECT_TRUE("Localtime0100", cnt > 0);
+        EXPECT_STREQ("Localtime0100", test_localtime_data[i].result, buff);
     }
 }
 
@@ -68,23 +67,22 @@ void localtime_0100(void)
  * to the current time system offset to local time
  * @tc.level     : Level 0
  */
-void localtime64_0100(void)
+void Localtime640100(void)
 {
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(test_localtime_data) / sizeof(test_localtime_data[0])); i++) {
         const char* handlerChar = test_handle_path(test_localtime_data[i].tz);
         if (!handlerChar) {
-            t_error("localtime64_0100 failed: handlerChar is NULL\n");
+            t_error("Localtime640100 failed: handlerChar is NULL\n");
             continue;
         }
 
         setenv("TZ", handlerChar, 1);
         tzset();
-        struct tm* localtm;
-        localtm = __localtime64(&g_time);
-        char buff[gBufferSize];
+        struct tm* localtm = __localtime64(&g_time);
+        char buff[g_bufferSize];
         int cnt = sprintf(buff,
                           "%d-%d-%d %d:%d:%d wday=%d,yday=%d,isdst=%d,gmtoff=%ld,zone=%s",
-                          (localtm->tm_year + gYearBase),
+                          (localtm->tm_year + g_yearBase),
                           localtm->tm_mon,
                           localtm->tm_mday,
                           localtm->tm_hour,
@@ -95,19 +93,19 @@ void localtime64_0100(void)
                           localtm->tm_isdst,
                           localtm->tm_gmtoff,
                           localtm->tm_zone);
-        EXPECT_TRUE("localtime64_0100", cnt > 0);
-        EXPECT_STREQ("localtime64_0100", test_localtime_data[i].result, buff);
+        EXPECT_TRUE("Localtime640100", cnt > 0);
+        EXPECT_STREQ("Localtime640100", test_localtime_data[i].result, buff);
     }
 }
 
-static int LocaltimeTest_impl(void)
+static int LocaltimeTestImpl(void)
 {
-    localtime_0100();
-    localtime64_0100();
+    Localtime0100();
+    Localtime640100();
     return t_status;
 }
 
 int LocaltimeTest(void)
 {
-    return LocaltimeTest_impl();
+    return LocaltimeTestImpl();
 }

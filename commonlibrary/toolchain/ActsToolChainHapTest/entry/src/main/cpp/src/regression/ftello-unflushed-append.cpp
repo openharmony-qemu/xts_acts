@@ -22,14 +22,19 @@
 #include <string.h>
 #include <unistd.h>
 #include "libc_test_shim.h"
-#define ASSERT(c)                                                                   \
-    do {                                                                            \
-        errno = 0;                                                                  \
-        if (!(c))                                                                   \
-            LibcTestError(&status, "%s failed (errno: %s)\n", #c, strerror(errno)); \
-    } while (0)
 
-int ftello_unflushed_appendTest()
+constexpr off_t EXPECT_OFFSET_7 = 7;
+constexpr int FD_MIN_VALID = 2;
+
+static void AssertCondition(int* status, bool condition, const char* expr)
+{
+    errno = 0;
+    if (!condition) {
+        LibcTestError(status, "%s failed (errno: %s)\n", expr, strerror(errno));
+    }
+}
+
+int FtelloUnflushedAppendTest()
 {
     int status = SUCCESS_CODE;
 
@@ -38,24 +43,37 @@ int ftello_unflushed_appendTest()
     FILE* f;
     off_t off;
 
-    ASSERT((fd = mkstemp(tmp)) > 2);
-    ASSERT(write(fd, "abcd", 4) == 4);
-    ASSERT(close(fd) == 0);
+    fd = mkstemp(tmp);
+    AssertCondition(&status, fd > FD_MIN_VALID, "mkstemp(tmp) > FD_MIN_VALID");
+    AssertCondition(&status, write(fd, "abcd", 4) == 4, "write(fd, \"abcd\", 4) == 4");
+    AssertCondition(&status, close(fd) == 0, "close(fd) == 0");
 
-    ASSERT((fd = open(tmp, O_WRONLY)) > 2);
-    ASSERT(f = fdopen(fd, "a"));
+    fd = open(tmp, O_WRONLY);
+    AssertCondition(&status, fd > FD_MIN_VALID, "open(tmp, O_WRONLY) > FD_MIN_VALID");
+    f = fdopen(fd, "a");
+    AssertCondition(&status, f != nullptr, "fdopen(fd, \"a\")");
     if (f) {
-        ASSERT(fwrite("efg", 1, 3, f) == 3);
-        ASSERT((off = ftello(f)) != -1);
-        if (off != 7)
+        AssertCondition(&status, fwrite("efg", 1, 3, f) == 3, "fwrite(\"efg\", 1, 3, f) == 3");
+        off = ftello(f);
+        AssertCondition(&status, off != -1, "ftello(f) != -1");
+        if (off != EXPECT_OFFSET_7) {
             LibcTestError(&status, "ftello is broken before flush: got %lld, want 7\n", static_cast<long long>(off));
-        ASSERT(fflush(f) == 0);
-        ASSERT((off = ftello(f)) != -1);
-        if (off != 7)
+        }
+        AssertCondition(&status, fflush(f) == 0, "fflush(f) == 0");
+        off = ftello(f);
+        AssertCondition(&status, off != -1, "ftello(f) != -1");
+        if (off != EXPECT_OFFSET_7) {
             LibcTestError(&status, "ftello is broken after flush: got %lld, want 7\n", static_cast<long long>(off));
-        ASSERT(fclose(f) == 0);
+        }
+        AssertCondition(&status, fclose(f) == 0, "fclose(f) == 0");
     }
-    if (fd > 2)
-        ASSERT(unlink(tmp) == 0);
+    if (fd > FD_MIN_VALID) {
+        AssertCondition(&status, unlink(tmp) == 0, "unlink(tmp) == 0");
+    }
     return status;
+}
+
+int ftello_unflushed_appendTest()
+{
+    return FtelloUnflushedAppendTest();
 }

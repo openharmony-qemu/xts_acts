@@ -35,30 +35,30 @@ struct meta_in {
     uintptr_t* mem;
 };
 
-struct group_in {
+struct GroupIn {
     struct meta_in* meta;
 };
 
-static struct group_in* get_group(const uint8_t* p)
+static struct GroupIn* get_group(const uint8_t* p)
 {
     int offset = *(const uint16_t*)(p - OFF_OFFSET);
 
     if (p[FIRST_OFFSET]) {
         offset = *(uint32_t*)(p - FIRST_OFF_OFFSET);
     }
-    struct group_in* base = (struct group_in*)(p - UNIT * offset - UNIT);
+    struct GroupIn* base = (struct GroupIn*)(p - UNIT * offset - UNIT);
     return base;
 }
 
-static void handler(int s) {}
+static void Handler(int s) {}
 
-static int child(void)
+static int Child(void)
 {
     void* d0;
     void* d1;
 
-    struct group_in* g0 = nullptr;
-    struct group_in* g1 = nullptr;
+    struct GroupIn* g0 = nullptr;
+    struct GroupIn* g1 = nullptr;
 
     for (int i = 0; i < TEST_NUM; ++i) {
         d0 = malloc(MALLOC_SIZE_S);
@@ -76,17 +76,21 @@ static int child(void)
         }
         g1 = get_group((const uint8_t*)d1);
 
-        if ((uintptr_t)g0->meta->mem == (uintptr_t)g0)
+        if ((uintptr_t)g0->meta->mem == (uintptr_t)g0) {
             t_error("encoding pointer is equal to real pointer 1\n");
+        }
 
-        if ((uintptr_t)g1->meta->mem == (uintptr_t)g1)
+        if ((uintptr_t)g1->meta->mem == (uintptr_t)g1) {
             t_error("encoding pointer is equal to real pointer 2\n");
+        }
 
-        if ((uintptr_t)g0->meta->prev->next == (uintptr_t)g0->meta->mem)
+        if ((uintptr_t)g0->meta->prev->next == (uintptr_t)g0->meta->mem) {
             t_error("encoding pointer is equal to real pointer 1\n");
+        }
 
-        if ((uintptr_t)g1->meta->prev->next == (uintptr_t)g1->meta->mem)
+        if ((uintptr_t)g1->meta->prev->next == (uintptr_t)g1->meta->mem) {
             t_error("encoding pointer is equal to real pointer 2\n");
+        }
 
         free(d0);
         free(d1);
@@ -95,20 +99,20 @@ static int child(void)
     return 0;
 }
 
-static pid_t start_child(void)
+static pid_t StartChild(void)
 {
     pid_t pid;
     int ret;
     pid = fork();
     if (pid == 0) {
-        ret = child();
+        ret = Child();
         t_error("child process normally out with %d\n", ret);
         return ret;
     }
     return pid;
 }
 
-static int MallocEncodePointerTest_impl(int argc, char* argv[])
+static int MallocEncodePointerTestImpl(int argc, char* argv[])
 {
     sigset_t set;
     int status;
@@ -117,24 +121,26 @@ static int MallocEncodePointerTest_impl(int argc, char* argv[])
 
     sigemptyset(&set);
     sigaddset(&set, SIGCHLD);
-    sigprocmask(SIG_BLOCK, &set, 0);
-    signal(SIGCHLD, handler);
-    remove_all_special_handler(SIGSEGV);
+    sigprocmask(SIG_BLOCK, &set, nullptr);
+    signal(SIGCHLD, Handler);
+    RemoveAllSpecialHandler(SIGSEGV);
 
-    pid = start_child();
+    pid = StartChild();
     if (pid == -1) {
         t_error("%s fork failed: %s\n", argv[0], strerror(errno));
         return -1;
     }
     // 修改后
     struct timespec timeout = { 5, 0 };
-    if (sigtimedwait(&set, 0, &timeout) == -1) {
-        if (errno == EAGAIN)
+    if (sigtimedwait(&set, nullptr, &timeout) == -1) {
+        if (errno == EAGAIN) {
             flag = 1;
-        else
+        } else {
             t_error("%s sigtimedwait failed: %s\n", argv[0], strerror(errno));
-        if (kill(pid, SIGKILL) == -1)
+        }
+        if (kill(pid, SIGKILL) == -1) {
             t_error("%s kill failed: %s\n", argv[0], strerror(errno));
+        }
     }
 
     if (waitpid(pid, &status, 0) != pid) {
@@ -161,5 +167,5 @@ int MallocEncodePointerTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return MallocEncodePointerTest_impl(1, libcArgv);
+    return MallocEncodePointerTestImpl(1, libcArgv);
 }

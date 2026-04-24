@@ -29,47 +29,47 @@
 #define MALLOC_SIZE_L 100
 #define TEST_NUM 512
 
-struct meta_in {
-    struct meta_in *prev, *next;
+struct MetaIn {
+    struct MetaIn *prev, *next;
     uintptr_t* mem;
 };
 
-struct group_in {
-    struct meta_in* meta;
+struct GroupIn {
+    struct MetaIn* meta;
 };
 
-static struct group_in* get_group(const uint8_t* p)
+static struct GroupIn* GetGroup(const uint8_t* p)
 {
     int offset = *(const uint16_t*)(p - OFF_OFFSET);
 
     if (p[FIRST_OFFSET]) {
         offset = *(uint32_t*)(p - FIRST_OFF_OFFSET);
     }
-    struct group_in* base = (struct group_in*)(p - UNIT * offset - UNIT);
+    struct GroupIn* base = (struct GroupIn*)(p - UNIT * offset - UNIT);
     return base;
 }
 
-static void handler(int s) {}
+static void Handler(int s) {}
 
-static volatile void* tmp;
+static volatile void* g_tmp;
 
-int set_devide_chunk(size_t size)
+int SetDevideChunk(size_t size)
 {
-    if (!(tmp = malloc(size))) {
+    if (!(g_tmp = malloc(size))) {
         t_error("Malloc failed: %s\n", strerror(errno));
         return -1;
     }
     return 0;
 }
 
-static int child(void)
+static int Child(void)
 {
     uint8_t* c1;
     uint8_t* c2;
 
     uint8_t* temp;
-    struct group_in* g1 = nullptr;
-    struct group_in* g2 = nullptr;
+    struct GroupIn* g1 = nullptr;
+    struct GroupIn* g2 = nullptr;
 
     for (int i = 0; i < TEST_NUM; ++i) {
         c1 = (uint8_t*)malloc(MALLOC_SIZE_S);
@@ -77,13 +77,13 @@ static int child(void)
             t_error("Malloc failed: %s\n", strerror(errno));
             return -1;
         }
-        g1 = get_group(c1);
+        g1 = GetGroup(c1);
         c2 = (uint8_t*)malloc(MALLOC_SIZE_L);
         if (!c2) {
             t_error("Malloc failed: %s\n", strerror(errno));
             return -1;
         }
-        g2 = get_group(c2);
+        g2 = GetGroup(c2);
         g2->meta = g1->meta;
         free(c2);
         free(c1);
@@ -92,20 +92,20 @@ static int child(void)
     return 0;
 }
 
-static pid_t start_child(void)
+static pid_t StartChild(void)
 {
     pid_t pid;
     int ret;
     pid = fork();
     if (pid == 0) {
-        ret = child();
+        ret = Child();
         t_error("child process normally out with %d\n", ret);
         return ret;
     }
     return pid;
 }
 
-static int MallocSafeUnlinkTest_impl(int argc, char* argv[])
+static int MallocSafeUnlinkTestImpl(int argc, char* argv[])
 {
     sigset_t set;
     int status;
@@ -114,23 +114,25 @@ static int MallocSafeUnlinkTest_impl(int argc, char* argv[])
 
     sigemptyset(&set);
     sigaddset(&set, SIGCHLD);
-    sigprocmask(SIG_BLOCK, &set, 0);
-    signal(SIGCHLD, handler);
+    sigprocmask(SIG_BLOCK, &set, nullptr);
+    signal(SIGCHLD, Handler);
     signal(SIGILL, SIG_DFL);
 
-    pid = start_child();
+    pid = StartChild();
     if (pid == -1) {
         t_error("%s fork failed: %s\n", argv[0], strerror(errno));
         return -1;
     }
     struct timespec timeout = { 5, 0 };
-    if (sigtimedwait(&set, 0, &timeout) == -1) {
-        if (errno == EAGAIN)
+    if (sigtimedwait(&set, nullptr, &timeout) == -1) {
+        if (errno == EAGAIN) {
             flag = 1;
-        else
+        } else {
             t_error("%s sigtimedwait failed: %s\n", argv[0], strerror(errno));
-        if (kill(pid, SIGKILL) == -1)
+        }
+        if (kill(pid, SIGKILL) == -1) {
             t_error("%s kill failed: %s\n", argv[0], strerror(errno));
+        }
     }
 
     if (waitpid(pid, &status, 0) != pid) {
@@ -157,5 +159,5 @@ int MallocSafeUnlinkTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return MallocSafeUnlinkTest_impl(1, libcArgv);
+    return MallocSafeUnlinkTestImpl(1, libcArgv);
 }

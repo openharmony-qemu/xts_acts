@@ -23,30 +23,30 @@ const int SIZE = 20;
  * @tc.desc      : The parameters are valid and the actual number of characters can be read.
  * @tc.level     : Level 0
  */
-void read_0100(void)
+void Read0100(void)
 {
     char str[] = "this is a readtest\n";
     char buffer[1024] = { 0 };
     int fd = open("/data/storage/el2/base/cache/readtest.txt", O_RDWR | O_CREAT, TEST_MODE);
-    EXPECT_TRUE("read_0100", fd >= 0);
+    EXPECT_TRUE("Read0100", fd >= 0);
     int retwrite = write(fd, str, sizeof(str));
-    EXPECT_EQ("read_0100", retwrite, SIZE);
+    EXPECT_EQ("Read0100", retwrite, SIZE);
     lseek(fd, 0, SEEK_SET);
     int size = read(fd, buffer, 1024);
-    EXPECT_EQ("read_0100", size, SIZE);
+    EXPECT_EQ("Read0100", size, SIZE);
     close(fd);
     remove("/data/storage/el2/base/cache/readtest.txt");
 }
 
-static int ReadTest_impl(int argc, char* argv[])
+static int ReadTestImpl(int argc, char* argv[])
 {
-    read_0100();
+    Read0100();
     return t_status;
 }
 
 int ReadTest(void)
 {
     static char libcProg[] = "libc_test";
-    char* libcArgv[] = { libcProg, NULL };
-    return ReadTest_impl(1, libcArgv);
+    char* libcArgv[] = { libcProg, nullptr };
+    return ReadTestImpl(1, libcArgv);
 }

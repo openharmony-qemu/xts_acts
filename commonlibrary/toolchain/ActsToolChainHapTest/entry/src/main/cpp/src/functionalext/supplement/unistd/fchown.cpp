@@ -25,13 +25,14 @@
 typedef void (*TEST_FUN)();
 const int COUNT_ZERO = 0;
 const int COUNT_NEFATIVE = -1;
+constexpr int INVALID_FD = -1;
 
 /**
- * @tc.name      : fchown_0100
+ * @tc.name      : Fchown0100
  * @tc.desc      : Parameter is valid and can change the user and group of the file's owner
  * @tc.level     : Level 0
  */
-void fchown_0100()
+void Fchown0100()
 {
     int fd = open("/data/storage/el2/base/cache/test.txt", O_RDONLY | O_CREAT, TEST_MODE);
     EXPECT_NE("fchown_0100", fd, -1);
@@ -41,24 +42,24 @@ void fchown_0100()
 
     int result = fchown(fd, 0, 0);
     struct stat buff;
-    int stat_result = fstat(fd, &buff);
+    int statResult = fstat(fd, &buff);
 
-    if (result == 0 && stat_result == 0) {
-        EXPECT_EQ("fchown_0100", buff.st_uid, 0);
-        EXPECT_EQ("fchown_0100", buff.st_gid, 0);
+    if (result == 0 && statResult == 0) {
+        EXPECT_EQ("Fchown0100", buff.st_uid, 0);
+        EXPECT_EQ("Fchown0100", buff.st_gid, 0);
     } else {
-        printf("fchown_0100: fchown not supported without root privileges (result=%d, errno=%d)\n", result, errno);
+        printf("Fchown0100: fchown not supported without root privileges (result=%d, errno=%d)\n", result, errno);
     }
     close(fd);
     remove("/data/storage/el2/base/cache/test.txt");
 }
 
 /**
- * @tc.name      : fchown_0200
+ * @tc.name      : Fchown0200
  * @tc.desc      : Parameter valid, can change the file owner of the user
  * @tc.level     : Level 0
  */
-void fchown_0200()
+void Fchown0200()
 {
     int fd = open("/data/storage/el2/base/cache/test.txt", O_RDONLY | O_CREAT, TEST_MODE);
     EXPECT_NE("fchown_0200", fd, -1);
@@ -68,23 +69,23 @@ void fchown_0200()
 
     int result = fchown(fd, 0, -1);
     struct stat buff;
-    int stat_result = fstat(fd, &buff);
+    int statResult = fstat(fd, &buff);
 
-    if (result == 0 && stat_result == 0) {
-        EXPECT_EQ("fchown_0200", buff.st_uid, 0);
+    if (result == 0 && statResult == 0) {
+        EXPECT_EQ("Fchown0200", buff.st_uid, 0);
     } else {
-        printf("fchown_0200: fchown not supported without root privileges (result=%d, errno=%d)\n", result, errno);
+        printf("Fchown0200: fchown not supported without root privileges (result=%d, errno=%d)\n", result, errno);
     }
     close(fd);
     remove("/data/storage/el2/base/cache/test.txt");
 }
 
 /**
- * @tc.name      : fchown_0300
+ * @tc.name      : Fchown0300
  * @tc.desc      : Parameter valid to change the owner group of the file
  * @tc.level     : Level 0
  */
-void fchown_0300()
+void Fchown0300()
 {
     int fd = open("/data/storage/el2/base/cache/test.txt", O_RDONLY | O_CREAT, TEST_MODE);
     EXPECT_NE("fchown_0300", fd, -1);
@@ -94,23 +95,23 @@ void fchown_0300()
 
     int result = fchown(fd, -1, 0);
     struct stat buff;
-    int stat_result = fstat(fd, &buff);
+    int statResult = fstat(fd, &buff);
 
-    if (result == 0 && stat_result == 0) {
-        EXPECT_EQ("fchown_0300", buff.st_gid, 0);
+    if (result == 0 && statResult == 0) {
+        EXPECT_EQ("Fchown0300", buff.st_gid, 0);
     } else {
-        printf("fchown_0300: fchown not supported without root privileges (result=%d, errno=%d)\n", result, errno);
+        printf("Fchown0300: fchown not supported without root privileges (result=%d, errno=%d)\n", result, errno);
     }
     close(fd);
     remove("/data/storage/el2/base/cache/test.txt");
 }
 
 /**
- * @tc.name      : fchown_0400
+ * @tc.name      : Fchown0400
  * @tc.desc      : The user and group of the file's owner cannot be changed
  * @tc.level     : Level 2
  */
-void fchown_0400()
+void Fchown0400()
 {
     int fd = open("/data/storage/el2/base/cache/test.txt", O_RDONLY | O_CREAT, TEST_MODE);
     EXPECT_NE("fchown_0400", fd, -1);
@@ -118,17 +119,17 @@ void fchown_0400()
         return;
     }
     close(fd);
-    int result = fchown(fd, 0, 0);
-    EXPECT_EQ("fchown_0400", result, COUNT_NEFATIVE);
+    int result = fchown(INVALID_FD, 0, 0);
+    EXPECT_EQ("Fchown0400", result, COUNT_NEFATIVE);
     remove("/data/storage/el2/base/cache/test.txt");
 }
 
 /**
- * @tc.name      : fchown_0500
+ * @tc.name      : Fchown0500
  * @tc.desc      : The user and group of the file's owner cannot be changed
  * @tc.level     : Level 2
  */
-void fchown_0500()
+void Fchown0500()
 {
     int fd = open("/data/storage/el2/base/cache/test.txt", O_RDONLY | O_CREAT, TEST_MODE);
     EXPECT_NE("fchown_0500", fd, -1);
@@ -136,21 +137,21 @@ void fchown_0500()
         return;
     }
 
-    int result = fchown(-1, 0, 0);
-    EXPECT_EQ("fchown_0500", result, COUNT_NEFATIVE);
+    int result = fchown(INVALID_FD, 0, 0);
+    EXPECT_EQ("Fchown0500", result, COUNT_NEFATIVE);
     close(fd);
     remove("/data/storage/el2/base/cache/test.txt");
 }
 
-static TEST_FUN G_Fun_Array[] = {
-    fchown_0100, fchown_0200, fchown_0300, fchown_0400, fchown_0500,
+static TEST_FUN g_gFunArray[] = {
+    Fchown0100, Fchown0200, Fchown0300, Fchown0400, Fchown0500,
 };
 
-static int FchownTest_impl(int argc, char* argv[])
+static int FchownTestImpl(int argc, char* argv[])
 {
-    int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
+    int num = sizeof(g_gFunArray) / sizeof(TEST_FUN);
     for (int pos = 0; pos < num; ++pos) {
-        G_Fun_Array[pos]();
+        g_gFunArray[pos]();
     }
 
     return t_status;
@@ -159,6 +160,6 @@ static int FchownTest_impl(int argc, char* argv[])
 int FchownTest(void)
 {
     static char libcProg[] = "libc_test";
-    char* libcArgv[] = { libcProg, NULL };
-    return FchownTest_impl(1, libcArgv);
+    char* libcArgv[] = { libcProg, nullptr };
+    return FchownTestImpl(1, libcArgv);
 }

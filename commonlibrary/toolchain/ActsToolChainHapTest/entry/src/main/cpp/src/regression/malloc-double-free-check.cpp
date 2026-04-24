@@ -62,7 +62,7 @@ static int MallocDoubleFreeCheckTest_impl(int argc, char* argv[])
     sigaddset(&set, SIGCHLD);
     sigprocmask(SIG_BLOCK, &set, 0);
     signal(SIGCHLD, handler);
-    remove_all_special_handler(SIGSEGV);
+    RemoveAllSpecialHandler(SIGSEGV);
 
     pid = start_child();
     if (pid == -1) {

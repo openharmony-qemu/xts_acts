@@ -21,59 +21,63 @@
 #include <time.h>
 #include "test.h"
 
-#define TX(r, f, x)                                                                                                 \
-    (((r) = (f)) == x ||                                                                                            \
-     (t_error(#f " failed: (pshared==%d) got %d \"%s\" want %d \"%s\"\n", pshared, r, strerror(r), x, strerror(x)), \
+#define TX(r, f, x)                                                                                                   \
+    (((r) = (f)) == x ||                                                                                              \
+     (t_error(#f " failed: (pshared==%d) got %d \"%s\" want %d \"%s\"\n", g_pshared, r, strerror(r), x, strerror(x)), \
       0))
 #define T(r, f) TX(r, f, 0)
 
-static pthread_barrier_t barrier2;
-static int pshared;
+static pthread_barrier_t g_barrier2;
+static int g_pshared;
+constexpr int NANOSECONDS_100M = 100 * 1000 * 1000;
+constexpr int NANOSECONDS_1S = 1000 * 1000 * 1000;
 
-static void* start_lock(void* arg)
+static void* StartLock(void* arg)
 {
     pthread_mutex_lock((pthread_mutex_t*)arg);
-    pthread_barrier_wait(&barrier2);
-    return 0;
+    pthread_barrier_wait(&g_barrier2);
+    return nullptr;
 }
 
-static void f()
+static void F()
 {
     pthread_t td;
     int r;
-    pthread_mutexattr_t mtx_a;
+    pthread_mutexattr_t mtxA;
     pthread_mutex_t mtx;
     struct timespec ts;
 
-    T(r, pthread_barrier_init(&barrier2, 0, 2));
-    T(r, pthread_mutexattr_init(&mtx_a));
+    T(r, pthread_barrier_init(&g_barrier2, nullptr, 2));
+    T(r, pthread_mutexattr_init(&mtxA));
     /* skip robust attr on this toolchain */
-    if (pshared)
-        T(r, pthread_mutexattr_setpshared(&mtx_a, PTHREAD_PROCESS_SHARED));
-    T(r, pthread_mutex_init(&mtx, &mtx_a));
-    T(r, pthread_create(&td, 0, start_lock, &mtx));
+    if (g_pshared) {
+        T(r, pthread_mutexattr_setpshared(&mtxA, PTHREAD_PROCESS_SHARED));
+    }
+    T(r, pthread_mutex_init(&mtx, &mtxA));
+    T(r, pthread_create(&td, nullptr, StartLock, &mtx));
     T(r, pthread_detach(td));
-    pthread_barrier_wait(&barrier2);
-    pthread_barrier_destroy(&barrier2);
+    pthread_barrier_wait(&g_barrier2);
+    pthread_barrier_destroy(&g_barrier2);
 
     // enough time to ensure that the detached thread is dead
     clock_gettime(CLOCK_REALTIME, &ts);
-    ts.tv_nsec += 100 * 1000 * 1000;
-    if (ts.tv_nsec >= 1000 * 1000 * 1000) {
+    ts.tv_nsec += NANOSECONDS_100M;
+    if (ts.tv_nsec >= NANOSECONDS_1S) {
         ts.tv_sec++;
-        ts.tv_nsec -= 1000 * 1000 * 1000;
+        ts.tv_nsec -= NANOSECONDS_1S;
     }
 
     TX(r, pthread_mutex_timedlock(&mtx, &ts), EOWNERDEAD);
 }
 
-static int PthreadRobustDetachTest_impl(void)
+static int PthreadRobustDetachTestImpl(void)
 {
     // test non-pshared and pshared robust mutexes as well
+    F();
     return 0;
 }
 
 int PthreadRobustDetachTest(void)
 {
-    return PthreadRobustDetachTest_impl();
+    return PthreadRobustDetachTestImpl();
 }

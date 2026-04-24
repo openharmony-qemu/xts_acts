@@ -17,28 +17,28 @@
 #include <unistd.h>
 #include "functionalext.h"
 
-static const char* path = "/data/storage/el2/base/cache/test.txt";
+static const char* PATH = "/data/storage/el2/base/cache/test.txt";
 
 /**
  * @tc.name      : fsync_0100
  * @tc.desc      : Tests of fsync on file descriptors in different modes
  * @tc.level     : Level 0
  */
-void fsync_0100(void)
+void Fsync0100(void)
 {
-    int fd = open(path, O_RDWR | O_CREAT, TEST_MODE);
+    int fd = open(PATH, O_RDWR | O_CREAT, TEST_MODE);
     EXPECT_TRUE("fsync_0100", fd >= 0);
 
     int result = fsync(fd);
     EXPECT_EQ("fsync_0100", result, 0);
     close(fd);
 
-    fd = open(path, O_RDONLY);
+    fd = open(PATH, O_RDONLY);
     result = fsync(fd);
     EXPECT_EQ("fsync_0100", result, 0);
     close(fd);
 
-    remove(path);
+    remove(PATH);
 }
 
 /**
@@ -46,7 +46,7 @@ void fsync_0100(void)
  * @tc.desc      : fd is a directory
  * @tc.level     : Level 1
  */
-void fsync_0200(void)
+void Fsync0200(void)
 {
     int fd = open("/data/storage/el2/base/cache/", O_RDONLY);
     EXPECT_NE("fsync_0200", fd, -1);
@@ -61,7 +61,7 @@ void fsync_0200(void)
  * @tc.desc      : Can't sync an invalid fd
  * @tc.level     : Level 2
  */
-void fsync_0300(void)
+void Fsync0300(void)
 {
     errno = 0;
     int result = fsync(-1);
@@ -69,11 +69,11 @@ void fsync_0300(void)
     EXPECT_EQ("fsync_0300", errno, EBADF);
 }
 
-static int FsyncTest_impl(int argc, char* argv[])
+static int FsyncTestImpl(int argc, char* argv[])
 {
-    fsync_0100();
-    fsync_0200();
-    fsync_0300();
+    Fsync0100();
+    Fsync0200();
+    Fsync0300();
 
     return t_status;
 }
@@ -81,6 +81,6 @@ static int FsyncTest_impl(int argc, char* argv[])
 int FsyncTest(void)
 {
     static char libcProg[] = "libc_test";
-    char* libcArgv[] = { libcProg, NULL };
-    return FsyncTest_impl(1, libcArgv);
+    char* libcArgv[] = { libcProg, nullptr };
+    return FsyncTestImpl(1, libcArgv);
 }

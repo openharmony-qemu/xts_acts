@@ -27,36 +27,41 @@
  *       On HarmonyOS, /bin/sh is not available and exec family functions may be
  *       restricted. This test checks for platform support and skips if unavailable.
  */
-int execle_envTest(void)
+int ExecleEnvTest(void)
 {
     // First check if we can even access a shell
-    const char* shell_paths[] = { "/bin/sh",
-                                  "/system/bin/sh", // Android/HarmonyOS location
-                                  "/bin/bash",
-                                  nullptr };
+    const char* shellPaths[] = { "/bin/sh",
+                                 "/system/bin/sh", // Android/HarmonyOS location
+                                 "/bin/bash",
+                                 nullptr };
 
-    const char* shell_path = nullptr;
-    for (int i = 0; shell_paths[i] != nullptr; i++) {
-        if (access(shell_paths[i], F_OK | X_OK) == 0) {
-            shell_path = shell_paths[i];
+    const char* shellPath = nullptr;
+    for (int i = 0; shellPaths[i] != nullptr; i++) {
+        if (access(shellPaths[i], F_OK | X_OK) == 0) {
+            shellPath = shellPaths[i];
             break;
         }
     }
 
-    if (shell_path == nullptr) {
+    if (shellPath == nullptr) {
         printf("execle_envTest: No shell found on this platform.\n");
         printf("execle_envTest: Skipping execle environment variable test.\n");
         return 0; // Skip test gracefully
     }
 
-    printf("execle_envTest: Found shell at %s\n", shell_path);
+    printf("execle_envTest: Found shell at %s\n", shellPath);
 
-    char* env[] = { "VAR=abc", "PATH=/usr/bin:/bin", 0 };
+    char* env[] = { "VAR=abc", "PATH=/usr/bin:/bin", nullptr };
 
-    execle(shell_path, "sh", "-c", "[ \"$VAR\" = abc ] || { echo 'env is not passed'; exit 1; }", nullptr, env);
+    execle(shellPath, "sh", "-c", "[ \"$VAR\" = abc ] || { echo 'env is not passed'; exit 1; }", nullptr, env);
 
     // If execle returns, it failed
-    int saved_errno = errno;
-    t_error("execle failed: %s (errno=%d)\n", strerror(saved_errno), saved_errno);
+    int savedErrno = errno;
+    t_error("execle failed: %s (errno=%d)\n", strerror(savedErrno), savedErrno);
     return 1;
+}
+
+int execle_envTest(void)
+{
+    return ExecleEnvTest();
 }

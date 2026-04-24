@@ -20,20 +20,20 @@
 #include "gmtime_data.h"
 
 static time_t g_time = 1659177614;
-static int16_t gYearBase = 1900;
-static int16_t gBufferSize = 500;
+static int16_t g_yearBase = 1900;
+static int16_t g_bufferSize = 500;
 
 /**
  * @tc.name      : gmtime_r_0100
  * @tc.desc      : according to different time zones, convert date and time to GMT time
  * @tc.level     : Level 0
  */
-void gmtime_r_0100(void)
+void GmtimeR0100(void)
 {
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(test_gmtime_data) / sizeof(test_gmtime_data[0])); i++) {
         const char* handlerChar = test_handle_path(test_gmtime_data[i].tz);
         if (!handlerChar) {
-            t_error("gmtime_r_0100 failed: handlerChar is NULL\n");
+            t_error("GmtimeR0100 failed: handlerChar is NULL\n");
             continue;
         }
 
@@ -41,10 +41,10 @@ void gmtime_r_0100(void)
         tzset();
         struct tm res = { 0 };
         struct tm* gmtm = gmtime_r(&g_time, &res);
-        char buff[gBufferSize];
+        char buff[g_bufferSize];
         int cnt = sprintf(buff,
                           "%d-%d-%d %d:%d:%d wday=%d,yday=%d,isdst=%d,gmtoff=%ld,zone=%s",
-                          (gmtm->tm_year + gYearBase),
+                          (gmtm->tm_year + g_yearBase),
                           gmtm->tm_mon,
                           gmtm->tm_mday,
                           gmtm->tm_hour,
@@ -55,8 +55,8 @@ void gmtime_r_0100(void)
                           gmtm->tm_isdst,
                           gmtm->tm_gmtoff,
                           gmtm->tm_zone);
-        EXPECT_TRUE("gmtime_r_0100", cnt > 0);
-        EXPECT_STREQ("gmtime_r_0100", test_gmtime_data[i].result, buff);
+        EXPECT_TRUE("GmtimeR0100", cnt > 0);
+        EXPECT_STREQ("GmtimeR0100", test_gmtime_data[i].result, buff);
     }
 }
 
@@ -65,22 +65,22 @@ void gmtime_r_0100(void)
  * @tc.desc      : test gmtime_r() with invalid input paramter
  * @tc.level     : Level 2
  */
-void gmtime_r_0200(void)
+void GmtimeR0200(void)
 {
-    time_t invalid_time = INT_MAX * 31622400LL + 1;
+    time_t invalidTime = INT_MAX * 31622400LL + 1;
     struct tm res = { 0 };
-    struct tm* gmtm = gmtime_r(&invalid_time, &res);
-    EXPECT_TRUE("gmtime_r_0200", nullptr == static_cast<void*>(gmtm));
+    struct tm* gmtm = gmtime_r(&invalidTime, &res);
+    EXPECT_TRUE("GmtimeR0200", static_cast<void*>(gmtm) == nullptr);
 }
 
-static int GmtimeRTest_impl(void)
+static int GmtimeRTestImpl(void)
 {
-    gmtime_r_0100();
-    gmtime_r_0200();
+    GmtimeR0100();
+    GmtimeR0200();
     return t_status;
 }
 
 int GmtimeRTest(void)
 {
-    return GmtimeRTest_impl();
+    return GmtimeRTestImpl();
 }
