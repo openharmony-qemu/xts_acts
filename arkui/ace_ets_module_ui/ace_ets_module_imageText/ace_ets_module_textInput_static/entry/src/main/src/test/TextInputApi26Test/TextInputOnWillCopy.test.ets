@@ -44,7 +44,7 @@ export default function TextInputOnWillCopyTest() {
           console.info("get TextInputOnWillCopy state pages.name: " + JSON.stringify(pages.name));
           routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push TextInputOnWillCopy success: " + JSON.stringify(result));
+          console.info("push TextInputOnWillCopy success ");
         }
       } catch (err) {
         console.error("push TextInputOnWillCopy page error: " + err);

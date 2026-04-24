@@ -43,7 +43,7 @@ export default function TextOnWillCopyTest() {
         if (!("TextOnWillCopy" == pages.name)) {
           console.info("get TextOnWillCopy state pages.name:" + JSON.stringify(pages.name));
           routerInstance.replaceUrl(options);
-          console.info("push TextOnWillCopy success " + JSON.stringify(result));
+          console.info("push TextOnWillCopy success ");
         }
       } catch (err) {
           console.error("push TextOnWillCopy page error:" + err);

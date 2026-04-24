@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -44,7 +44,7 @@ export default function TextAreaOnWillCopyTest() {
           console.info("get TextAreaOnWillCopy state pages.name: " + JSON.stringify(pages.name));
           routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push TextAreaOnWillCopy success: " + JSON.stringify(result));
+          console.info("push TextAreaOnWillCopy success");
         }
       } catch (err) {
         console.error("push TextAreaOnWillCopy page error: " + err);

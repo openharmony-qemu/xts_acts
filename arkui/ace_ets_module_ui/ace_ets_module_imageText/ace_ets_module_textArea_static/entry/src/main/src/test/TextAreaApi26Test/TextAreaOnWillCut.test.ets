@@ -44,7 +44,7 @@ export default function TextAreaOnWillCutTest() {
           console.info("get TextAreaOnWillCut state pages.name: " + JSON.stringify(pages.name));
           routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push TextAreaOnWillCut success: " + JSON.stringify(result));
+          console.info("push TextAreaOnWillCut success");
         }
       } catch (err) {
         console.error("push TextAreaOnWillCut page error: " + err);

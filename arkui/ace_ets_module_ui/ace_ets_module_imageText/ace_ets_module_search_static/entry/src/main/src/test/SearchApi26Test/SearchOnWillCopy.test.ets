@@ -44,7 +44,7 @@ export default function SearchOnWillCopyTest() {
           console.info("get SearchOnWillCopy state pages.name: " + JSON.stringify(pages.name));
           routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push SearchOnWillCopy success: " + JSON.stringify(result));
+          console.info("push SearchOnWillCopy success ");
         }
       } catch (err) {
         console.error("push SearchOnWillCopy page error: " + err);

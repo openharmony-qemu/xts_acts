@@ -43,7 +43,7 @@ export default function TextInputOnWillCutTest() {
           console.info("get TextInputOnWillCut state pages.name: " + JSON.stringify(pages.name));
           routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push TextInputOnWillCut success: " + JSON.stringify(result));
+          console.info("push TextInputOnWillCut success ");
         }
       } catch (err) {
         console.error("push TextInputOnWillCut page error: " + err);

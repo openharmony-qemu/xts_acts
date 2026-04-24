@@ -43,7 +43,7 @@ export default function SearchOnWillCutTest() {
           console.info("get SearchOnWillCut state pages.name: " + JSON.stringify(pages.name));
           routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push SearchOnWillCut success: " + JSON.stringify(result));
+          console.info("push SearchOnWillCut success ");
         }
       } catch (err) {
         console.error("push SearchOnWillCut page error: " + err);
