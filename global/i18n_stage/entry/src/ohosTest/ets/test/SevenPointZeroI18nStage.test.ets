@@ -917,5 +917,147 @@ export default function SevenPointZeroI18nStageTest() {
       }
     })
 
+    /**
+     * @tc.name i18n_setAppDefaultTimeZoneById_test_0400
+     * @tc.number SUB_GLOBAL_AppsSettingTimeZone_test_0400
+     * @tc.desc test getAppDefaultTimeZone with Asia/Shanghai
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setAppDefaultTimeZoneById_test_0400', Level.LEVEL2, () => {
+      let getAppTimeZone: i18n.TimeZone = i18n.TimeZone.getAppDefaultTimeZone();
+      let value: string = getAppTimeZone.getID();
+      console.log('i18n_setAppDefaultTimeZoneById_test_0400 value:', value);
+      expect(value).assertEqual('Asia/Shanghai');
+    })
+
+    /**
+     * @tc.name i18n_setAppDefaultTimeZoneById_test_0100
+     * @tc.number SUB_GLOBAL_AppsSettingTimeZone_test_0100
+     * @tc.desc test setAppDefaultTimeZoneById with Asia/Hong_Kong
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setAppDefaultTimeZoneById_test_0100', Level.LEVEL2, () => {
+      i18n.TimeZone.setAppDefaultTimeZoneById('Asia/Hong_Kong');
+      let getAppTimeZone: i18n.TimeZone = i18n.TimeZone.getAppDefaultTimeZone();
+      let value: string = getAppTimeZone.getID();
+      let value2: string = getAppTimeZone.getDisplayName();
+      console.log('i18n_setAppDefaultTimeZoneById_test_0100 value:', value);
+      expect(value).assertEqual('Asia/Hong_Kong');
+      expect(value2).assertEqual('香港标准时间');
+    })
+
+    /**
+     * @tc.name i18n_setAppDefaultTimeZoneById_test_0200
+     * @tc.number SUB_GLOBAL_AppsSettingTimeZone_test_0200
+     * @tc.desc test setAppDefaultTimeZoneById with America/New_York
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setAppDefaultTimeZoneById_test_0200', Level.LEVEL2, () => {
+      i18n.TimeZone.setAppDefaultTimeZoneById('America/New_York');
+      let getAppTimeZone: i18n.TimeZone = i18n.TimeZone.getAppDefaultTimeZone();
+      let value: string = getAppTimeZone.getID();
+      let value2: string = getAppTimeZone.getDisplayName();
+      console.log('i18n_setAppDefaultTimeZoneById_test_0200 value:', value);
+      expect(value).assertEqual('America/New_York');
+      expect(value2).assertEqual('北美东部时间');
+    })
+
+    /**
+     * @tc.name i18n_setAppDefaultTimeZoneById_test_0300
+     * @tc.number SUB_GLOBAL_AppsSettingTimeZone_test_0300
+     * @tc.desc test setAppDefaultTimeZoneById with America/New_York
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setAppDefaultTimeZoneById_test_0300', Level.LEVEL2, () => {
+      i18n.TimeZone.setAppDefaultTimeZoneById('America/New_York');
+      let getAppTimeZone: i18n.TimeZone = i18n.TimeZone.getAppDefaultTimeZone();
+      let value: string = getAppTimeZone.getID();
+      let dateTimeFormat: Intl.DateTimeFormat = new Intl.DateTimeFormat('zh-Hans-CN', {
+        timeZone: value,
+        dateStyle: 'long',
+        timeStyle: 'long',
+      });
+      let date: Date = new Date(2025, 4, 13, 12, 30);
+      let dateFormat = dateTimeFormat.format(date);
+      console.log('i18n_setAppDefaultTimeZoneById_test_0300 value:', dateFormat);
+      expect(dateFormat).assertEqual('2025年5月13日 GMT-4 上午12:30:00');
+    })
+
+    /**
+     * @tc.name i18n_setAppDefaultTimeZoneById_test_0500
+     * @tc.number SUB_GLOBAL_AppsSettingTimeZone_test_0500
+     * @tc.desc test getAppDefaultTimeZone with Asia/123
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setAppDefaultTimeZoneById_test_0500', Level.LEVEL2, () => {
+      try{
+        i18n.TimeZone.setAppDefaultTimeZoneById('Asia/123');
+      } catch (e) {
+        console.log('i18n_setAppDefaultTimeZoneById_test_0500 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(8900001);
+      }
+    })
+
+    /**
+     * @tc.name i18n_setAppDefaultTimeZoneById_test_0600
+     * @tc.number SUB_GLOBAL_AppsSettingTimeZone_test_0600
+     * @tc.desc test getAppDefaultTimeZone with Asia/123
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setAppDefaultTimeZoneById_test_0600', Level.LEVEL2, () => {
+      try{
+        i18n.TimeZone.setAppDefaultTimeZoneById('');
+      } catch (e) {
+        console.log('i18n_setAppDefaultTimeZoneById_test_0600 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(8900001);
+      }
+    })
+
+    /**
+     * @tc.name i18n_setAppDefaultTimeZoneById_test_0700
+     * @tc.number SUB_GLOBAL_AppsSettingTimeZone_test_0700
+     * @tc.desc test getAppDefaultTimeZone with null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setAppDefaultTimeZoneById_test_0700', Level.LEVEL2, () => {
+      try{
+        i18n.TimeZone.setAppDefaultTimeZoneById(null);
+      } catch (e) {
+        console.log('i18n_setAppDefaultTimeZoneById_test_0700 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(8900001);
+      }
+    })
+
+    /**
+     * @tc.name i18n_setAppDefaultTimeZoneById_test_0800
+     * @tc.number SUB_GLOBAL_AppsSettingTimeZone_test_0800
+     * @tc.desc test getAppDefaultTimeZone with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setAppDefaultTimeZoneById_test_0800', Level.LEVEL2, () => {
+      try{
+        i18n.TimeZone.setAppDefaultTimeZoneById(undefined);
+      } catch (e) {
+        console.log('i18n_setAppDefaultTimeZoneById_test_0800 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(8900001);
+      }
+    })
+
   })
 }
