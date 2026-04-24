@@ -811,25 +811,31 @@ export default function preferencesPromiseTest(){
          * @tc.level  LEVEL2
          */
         it("testPreferencesGetPreferencesMaxValueCallBackTest_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-            try {
-              dataPreferences.getPreferences(context, NAME_MAX, async (err, mPreferences) =>{
-                if (err) {
-                  console.error(TAG + "err code = " + err.code + "err message = " + err.message);
-                  expect(15500000).assertEqual(err.code);
-                  done();
-                } else {
+          try {
+            dataPreferences.getPreferences(context, NAME_MAX1, async (err, mPreferences) =>{
+              if (err) {
+                console.error(TAG + "err code = " + err.code + "err message = " + err.message);
+                expect().assertFail();
+                done();
+              } else {
+                try {
                   console.info( TAG + "mPreferences is SUCCESS " + mPreferences);
                   await mPreferences.put(KEY_TEST_STRING_ELEMENT, '333333');
                   await mPreferences.flush();
                   expect().assertFail();
                   done();
+                } catch (err) {
+                  console.error(TAG + "err flush code = " + err.code + "err message = " + err.message);
+                  expect(15500000).assertEqual(err.code);
+                  done();
                 }
-              })
-            } catch (err) {
-              console.error(TAG + "catch err code = " + err.code + "err message = " + err.message);
-              expect().assertFail();
-              done();
-            }
+              }
+            })
+          } catch (err) {
+            console.error(TAG + "catch err code = " + err.code + "err message = " + err.message);
+            expect().assertFail();
+            done();
+          }
         })
 
         /**
