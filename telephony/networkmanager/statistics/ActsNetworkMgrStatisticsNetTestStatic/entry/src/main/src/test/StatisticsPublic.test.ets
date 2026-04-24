@@ -591,6 +591,7 @@ export default function statisticsHasNetTest() {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName + 'http catch err is : ' + JSON.stringify(err.code));                             
                 })
+                httpRequest.destroy();
                 hilog.info(domain, tag, '%{public}s', caseName +': current uid is'+ uid);
                 statistics.getUidRxBytes(uid).then((stats: long) => {
                     hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+stats);
