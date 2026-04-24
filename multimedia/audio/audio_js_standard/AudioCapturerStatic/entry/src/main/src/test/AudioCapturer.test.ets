@@ -4343,13 +4343,13 @@ export default function audioCapturer() {
  	    it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_STATIC_1200',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         let Tag: string = 'SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_STATIC_1200';
  	      let audioStreamInfo: audio.AudioStreamInfo = {
- 	        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+ 	        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
  	        channels: audio.AudioChannel.CHANNEL_2,
  	        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
  	        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
  	      };
  	      let audioCapturerInfo: audio.AudioCapturerInfo = {
- 	        source: audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION,
+ 	        source: audio.SourceType.SOURCE_TYPE_MIC,
  	        capturerFlags: 0
  	      };
  	      let audioCapturerOptions: audio.AudioCapturerOptions = {
@@ -4363,7 +4363,7 @@ export default function audioCapturer() {
           expect(false).assertTrue();
  	      } catch (error) {
  	        console.log(`${Tag}: Capturer run fail,err : ${error.message},Code:${error.code}`);
- 	        expect(error.code).assertEqual(6800301);
+ 	        expect(error.code).assertEqual(6800103);
  	      } finally {
           try {
             await audioCapturer!.release();
@@ -4388,13 +4388,13 @@ export default function audioCapturer() {
  	      let audioManager: audio.AudioManager = audio.getAudioManager();
  	      let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
  	      let audioStreamInfo: audio.AudioStreamInfo = {
- 	        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+ 	        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
  	        channels: audio.AudioChannel.CHANNEL_2,
  	        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
  	        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
  	      };
  	      let audioCapturerInfo: audio.AudioCapturerInfo = {
- 	        source: audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION,
+ 	        source: audio.SourceType.SOURCE_TYPE_MIC,
  	        capturerFlags: 0
  	      };
  	      let audioCapturerOptions: audio.AudioCapturerOptions = {
@@ -4428,13 +4428,13 @@ export default function audioCapturer() {
  	      let audioManager: audio.AudioManager = audio.getAudioManager();
  	      let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
  	      let audioStreamInfo: audio.AudioStreamInfo = {
- 	        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+ 	        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
  	        channels: audio.AudioChannel.CHANNEL_2,
  	        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
  	        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
  	      };
  	      let audioCapturerInfo: audio.AudioCapturerInfo = {
- 	        source: audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION,
+ 	        source: audio.SourceType.SOURCE_TYPE_MIC,
  	        capturerFlags: 0
  	      };
  	      let audioCapturerOptions: audio.AudioCapturerOptions = {
@@ -4468,13 +4468,13 @@ export default function audioCapturer() {
  	      let audioManager: audio.AudioManager = audio.getAudioManager();
  	      let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
  	      let audioStreamInfo: audio.AudioStreamInfo = {
- 	        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+ 	        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
  	        channels: audio.AudioChannel.CHANNEL_2,
  	        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
  	        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
  	      };
  	      let audioCapturerInfo: audio.AudioCapturerInfo = {
- 	        source: audio.SourceType.SOURCE_TYPE_VOICE_COMMUNICATION,
+ 	        source: audio.SourceType.SOURCE_TYPE_MIC,
  	        capturerFlags: 0
  	      };
  	      let audioCapturerOptions: audio.AudioCapturerOptions = {
@@ -4488,7 +4488,7 @@ export default function audioCapturer() {
           expect(false).assertTrue();
  	      } catch (error) {
  	        console.log(`${Tag}: Capturer run fail,err : ${error.message},Code:${error.code}`);
- 	        expect(error.code).assertEqual(6800301);
+ 	        expect(error.code).assertEqual(6800103);
  	      } finally {
           try {
             await audioCapturer!.release();
