@@ -37,10 +37,10 @@ let testAbilityContext:common.UIAbilityContext;
 export default function listSwipeAction12EndJsunit() {
   describe('listSwipeAction12EndTest', () => {
 
-    waitForCompletion(async ()=>{ 
+    (async ()=>{ 
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
-    })
+    })().awaitSync()
 
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!;
     beforeAll(async (): Promise<void> => {

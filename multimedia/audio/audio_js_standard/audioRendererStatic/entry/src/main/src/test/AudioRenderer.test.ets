@@ -201,7 +201,7 @@ export default function audioRendererTest() {
       let rlen = 0;
       let buf = new ArrayBuffer(bufferSize);
       let writeDataCallback: audio.AudioRendererWriteDataCallback = (buf: ArrayBuffer) => {
-        return waitForCompletion(async () => {
+        return (async () => {
           while (rlen < totalSize / 4) {
             rlen += ss.readSync(buf);
             console.info(`${TagFrmwkRender}: BufferAudioFramework: bytes read from file: ${rlen}`);
@@ -221,7 +221,7 @@ export default function audioRendererTest() {
             });
           }
           return audio.AudioDataCallbackResult.VALID;
-        })
+        })().awaitSync()
       };
       audioRen!.onWriteData(writeDataCallback);
 
@@ -1914,7 +1914,7 @@ export default function audioRendererTest() {
         while (rlen < totalSize / 10) {
           rlen += ss.readSync(buf);
           console.info(`${TagFrmwkRender}:BufferAudioFramework: bytes read from file: ${rlen}`);
-          waitForCompletion(async () => {await Utils.msSleep(waitTime);})
+          Utils.msSleep(waitTime).awaitSync()
         }
         return audio.AudioDataCallbackResult.VALID;
       };

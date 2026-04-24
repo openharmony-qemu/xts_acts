@@ -105,7 +105,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         };
         try {
           await notificationManager.publish(notificationRequest).then(() => {
-            waitForCompletion(async () => {
+            (async () => {
               console.info(TEST_SUITE_NAME + TAG + " publish success");
               await Utils.msSleep(1000)
               await notificationManager.getActiveNotifications()
@@ -124,7 +124,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                   expect(false).assertTrue();
                   done()
                 });
-            })
+            })().awaitSync()
           }).catch((err: Error):void => {
             console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
             expect(false).assertTrue();
@@ -169,7 +169,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         };
         try {
           await notificationManager.publish(notificationRequest).then(() => {
-            waitForCompletion(async () => {
+            (async () => {
               console.info(TEST_SUITE_NAME + TAG + " publish success");
               await Utils.msSleep(1000)
               await notificationManager.getActiveNotifications()
@@ -188,7 +188,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                   expect(false).assertTrue();
                   done()
                 });
-            })
+            })().awaitSync()
           }).catch((err: Error):void => {
             console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
             expect(false).assertTrue();
@@ -233,7 +233,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         };
         try {
           await notificationManager.publish(notificationRequest).then(() => {
-            waitForCompletion(async () => {
+            (async () => {
               console.info(TEST_SUITE_NAME + TAG + " publish success");
               await Utils.msSleep(1000)
               await notificationManager.getActiveNotifications()
@@ -252,7 +252,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                   expect(false).assertTrue();
                   done()
                 });
-            })
+            })().awaitSync()
           }).catch((err: Error):void => {
             console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
             expect(false).assertTrue();
@@ -297,7 +297,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         };
         try {
           await notificationManager.publish(notificationRequest).then(() => {
-            waitForCompletion(async () => {
+            (async () => {
               console.info(TEST_SUITE_NAME + TAG + " publish success");
               await Utils.msSleep(1000)
               await notificationManager.getActiveNotifications()
@@ -316,7 +316,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                   expect(false).assertTrue();
                   done()
                 });
-            })
+            })().awaitSync()
           }).catch((err: Error):void => {
             console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
             expect(false).assertTrue();

@@ -86,9 +86,9 @@ struct RichEditorCustomSpan012 {
 
    onPageShow() {
     console.info('aboutToAppear initial imagePixelMap');
-    waitForCompletion(async ()=>{
+    (async ()=>{
       this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.icon'));
-    })
+    })().awaitSync()
   }
 
   private async getPixmapFromMedia(resource: Resource): Promise<image.PixelMap> {

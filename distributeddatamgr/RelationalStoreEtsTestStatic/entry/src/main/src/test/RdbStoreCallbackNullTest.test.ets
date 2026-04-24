@@ -832,7 +832,7 @@ export default function RdbStoreCallbackNullTest(){
 			} else {
 			  console.info(TAG + `${caseName} success`);
 			  expect(rdbStore!== undefined).assertEqual(true);
-			  waitForCompletion(async () => {await (rdbStore as relationalStore.RdbStore).close();})
+			  (rdbStore as relationalStore.RdbStore).close().awaitSync()
 			  relationalStore.getRdbStore(context!, storeConfig1, (err, rdbStore1) => {
 				if (err) {
 				console.error(TAG + `${caseName} fail2: code=${err.code}, msg=${err.message}`);
@@ -841,7 +841,7 @@ export default function RdbStoreCallbackNullTest(){
 				} else {
 				console.info(TAG + `${caseName} success2`);
 				expect(rdbStore1!== undefined).assertEqual(true);
-			    waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig1);})
+			    relationalStore.deleteRdbStore(context!, storeConfig1).awaitSync()
 				done();
 				}
 			});
@@ -944,7 +944,7 @@ export default function RdbStoreCallbackNullTest(){
 			} else {
 			  console.info(TAG + `${caseName} success`);
 			  expect(rdbStore!== undefined).assertEqual(true);
-			  waitForCompletion(async () => {await (rdbStore as relationalStore.RdbStore).close();})
+			  (rdbStore as relationalStore.RdbStore).close().awaitSync()
 			  relationalStore.getRdbStore(context!, storeConfig1, (err, rdbStore1) => {
 				if (err) {
 				console.error(TAG + `${caseName} fail2: code=${err.code}, msg=${err.message}`);
@@ -953,7 +953,7 @@ export default function RdbStoreCallbackNullTest(){
 				} else {
 				console.info(TAG + `${caseName} success2`);
 				expect(rdbStore1!== undefined).assertEqual(true);
-			    waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig1);})
+			    relationalStore.deleteRdbStore(context!, storeConfig1).awaitSync()
 				done();
 				}
 			});
@@ -1001,7 +1001,7 @@ export default function RdbStoreCallbackNullTest(){
 			} else {
 			  console.info(TAG + `${caseName} success`);
 			  expect(rdbStore!== undefined).assertEqual(true);
-			  waitForCompletion(async () => {await (rdbStore as relationalStore.RdbStore).close();})
+			  (rdbStore as relationalStore.RdbStore).close().awaitSync()
 			  relationalStore.getRdbStore(context!, storeConfig1, (err, rdbStore1) => {
 				if (err) {
 				console.error(TAG + `${caseName} fail2: code=${err.code}, msg=${err.message}`);
@@ -1010,7 +1010,7 @@ export default function RdbStoreCallbackNullTest(){
 				} else {
 				console.info(TAG + `${caseName} success2`);
 				expect(rdbStore1!== undefined).assertEqual(true);
-			    waitForCompletion(async () => {await relationalStore.deleteRdbStore(context!, storeConfig1);})
+			    relationalStore.deleteRdbStore(context!, storeConfig1).awaitSync()
 				done();
 				}
 			});

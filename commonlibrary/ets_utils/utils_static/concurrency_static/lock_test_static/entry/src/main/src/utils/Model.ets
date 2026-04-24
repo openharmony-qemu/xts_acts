@@ -9,9 +9,7 @@ export class Event {
   }
 
   public Wait(): boolean {
-    return waitForCompletion<boolean>(() => {
-      return this.promise;
-    });
+    return this.promise.awaitSync();
   }
 
   public Fire(val: boolean = true): void {

@@ -188,6 +188,28 @@ export default function SecurityCryptoFwVectorTestUnit() {
       let g_index: number = 0;
       let g_vector_failed_index: number = 0;
       try {
+        let symVectors: v.symVectorData[] = v.symVectors;
+        for (let vector of symVectors) {
+          let algName: string = vector.symAlgName;
+          let mode: string = vector.mode;
+          let bits: number = vector.bits;
+          g_index = vector.index;
+          for (let data of vector.symVectorSpec) {
+            let iv: number[] = data.iv;
+            let padding: string = data.padding;
+            let symKeyAlgName: string = `${algName}${bits}`;
+            let algEncDecName = `${algName}${bits}|${mode}|${padding}`;
+            let symKey: cryptoFramework.SymKey = await v.convertSymKey(symKeyAlgName, data);
+            let paramSpec: cryptoFramework.IvParamsSpec = genIvParamsSpec(iv);
+            let expectCipher: cryptoFramework.DataBlob = v.numberArrayToDataBlob(data.cipherText);
+            let plainText: cryptoFramework.DataBlob = v.numberArrayToDataBlob(data.plainText);
+            let cipherText: dataSpec = encryptDecryptMessageSync(algEncDecName, true, symKey, plainText, paramSpec);
+            let ret: boolean  = commonUtils.compareDataBlob(cipherText.data, expectCipher);
+            g_vector_failed_index = data.index;
+            expect(ret).assertTrue();
+            console.info("#################### algEncDecName:" + algEncDecName)
+          }
+        }
       } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         console.info("[FAILED] g_index:" + g_index + " g_vector_failed_index:" + g_vector_failed_index)
@@ -208,6 +230,41 @@ export default function SecurityCryptoFwVectorTestUnit() {
       let g_index: number = 0;
       let g_vector_failed_index: number = 0;
       try {
+        let symAeadVectors: v.symVectorData[] = v.symAeadVectors
+        for (let vector of symAeadVectors) {
+          let algName: string = vector.symAlgName;
+          let mode: string = vector.mode;
+          let bits: number = vector.bits;
+          let specAlgName: string = mode == "GCM" ? "GcmParamsSpec" : "CcmParamsSpec";
+          g_index = vector.index;
+          for (let data of vector.symVectorSpec) {
+            let iv: number[] = data.iv;
+            let aad: number[] = data.aad;
+            let tag: number[] = data.tag;
+            let padding: string = data.padding;
+            let not_run: boolean = data.not_run ? true : false;
+            g_vector_failed_index = data.index;
+            if (not_run) {
+              continue
+            }
+            let symKeyAlgName: string = `${algName}${bits}`;
+            let algEncDecName = `${algName}${bits}|${mode}|${padding}`;
+            let symKey: cryptoFramework.SymKey = await v.convertSymKey(symKeyAlgName, data);
+            let paramSpec: cryptoFramework.GcmParamsSpec = genGcmOrCcmParamsSpec(iv, aad, tag, specAlgName);
+            let expectCipher: cryptoFramework.DataBlob = v.numberArrayToDataBlob(data.cipherText);
+            let plainText: cryptoFramework.DataBlob = v.numberArrayToDataBlob(data.plainText)
+            let cipherData: dataGcmOrCCMSpec = tagEncryptDecryptMessageSync(algEncDecName, true, symKey, plainText, paramSpec);
+            console.info("################### cipherData.paramSpec.authTag:" + commonUtils.decToHexString({data:cipherData.paramSpec.authTag.data}))
+            console.info("################### tag                         :" + tag)
+            console.info("################### expectCipher                :" + expectCipher.data)
+            console.info("################### data.plainText              :" + data.plainText)
+            console.info("################### plainText                   :" + plainText.data)
+            let ret: boolean  = commonUtils.compareDataBlob(cipherData.data, expectCipher);
+            ret = ret && commonUtils.compareDataBlob(cipherData.paramSpec.authTag, {data: new Uint8Array(tag)});
+            expect(ret).assertTrue();
+            console.info("################### algEncDecName:" + algEncDecName)
+          }
+        }
       } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         console.info("[FAILED] g_index:" + g_index + " g_vector_failed_index:" + g_vector_failed_index)
@@ -228,6 +285,43 @@ export default function SecurityCryptoFwVectorTestUnit() {
       let g_index: number = 0;
       let g_vector_failed_index: number = 0;
       try {
+        let agreementVectors: v.agreementVectorData[] = v.agreementVectors;
+        for (let vector of agreementVectors) {
+          let algName: string = vector.algName;
+          g_index = vector.index;
+          for (let data of vector.agreementVectorSpec) {
+            let peer_priKey: string = data.peer_priKey;
+            let peer_pubKey: string = data.peer_pubKey;
+            let local_priKey: string = data.local_priKey;
+            let local_pubKey: string = data.local_pubKey;
+            let sharedKey: number[] = data.sharedKey;
+            let not_run: boolean = data.not_run ? true : false;
+            g_vector_failed_index = data.index;
+            if (not_run) {
+              continue
+            }
+            let peer_Spec: cryptoFramework.X25519KeyPairSpec = {
+              algName: algName,
+              specType: cryptoFramework.AsyKeySpecType.KEY_PAIR_SPEC,
+              sk: BigInt(peer_priKey),
+              pk: BigInt(peer_pubKey)
+            };
+            let local_Spec: cryptoFramework.X25519KeyPairSpec = {
+              algName: algName,
+              specType: cryptoFramework.AsyKeySpecType.KEY_PAIR_SPEC,
+              sk: BigInt(local_priKey),
+              pk: BigInt(local_pubKey)
+            };
+            let peer_generator: cryptoFramework.AsyKeyGeneratorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(peer_Spec);
+            let peer_keyPair: cryptoFramework.KeyPair = await peer_generator.generateKeyPair();
+            let local_generator: cryptoFramework.AsyKeyGeneratorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(local_Spec);
+            let local_keyPair: cryptoFramework.KeyPair = await local_generator.generateKeyPair();
+            let agreement: cryptoFramework.KeyAgreement = cryptoFramework.createKeyAgreement(algName);
+            let secret: cryptoFramework.DataBlob = await agreement.generateSecret(peer_keyPair.priKey, local_keyPair.pubKey);
+            let ret: boolean = commonUtils.compareDataBlob(secret, {data: new Uint8Array(sharedKey)});
+            expect(ret).assertTrue();
+          }
+        }
       } catch (error) {
         console.error(`“${error}“, error code: ${error.code}`);
         console.info("[FAILED] g_index:" + g_index + " g_vector_failed_index:" + g_vector_failed_index)

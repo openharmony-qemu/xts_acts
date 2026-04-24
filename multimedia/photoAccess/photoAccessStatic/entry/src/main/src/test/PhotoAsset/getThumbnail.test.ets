@@ -60,7 +60,7 @@ export default function getThumbnailTest(): void {
       try {
         let asset: photoAccessHelper.PhotoAsset = await getFileAsset(testNum, fetchOps);
         asset.getThumbnail(size, (err: BusinessError<void> | null, pixelMap: image.PixelMap | undefined): void => {
-          waitForCompletion(async () => {
+          (async () => {
             try {
               if (err == undefined) {
                 hilog.info(domain, tag, '%{public}s', `${testNum} getThumbnail failed; error: ${err}`);
@@ -74,7 +74,7 @@ export default function getThumbnailTest(): void {
               console.info(`${testNum} error: ${error}`);
             }
             done();
-          })
+          })().awaitSync()
         })
       } catch (error) {
         hilog.info(domain, tag, '%{public}s', `${testNum} failed; error: ${error}`);
