@@ -31,6 +31,7 @@ import AddComponentContentNullUndefinedTest from './frameNodeTest/AddComponentCo
 import createFrameNodesUIContextIntTest from './frameNodeTest/createFrameNodesUIContextIntTest.test';
 import GetFrameNodeByIdTest from './frameNodeTest/GetFrameNodeById.test';
 import GetFrameNodeByUniqueIdTest from './frameNodeTest/GetFrameNodeByUniqueId.test';
+import LazyForEachReleaseStrategyTest from './frameNodeTest/LazyForEachReleaseStrategy.test';
 
 export default function testsuite() {
   APIsetOnclickTest();
@@ -52,4 +53,5 @@ export default function testsuite() {
   createFrameNodesUIContextIntTest()
   GetFrameNodeByIdTest()
   GetFrameNodeByUniqueIdTest()
+  LazyForEachReleaseStrategyTest()
 }
