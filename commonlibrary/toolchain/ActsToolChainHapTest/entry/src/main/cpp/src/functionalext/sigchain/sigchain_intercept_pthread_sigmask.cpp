@@ -55,12 +55,12 @@ static void sigchain_intercept_pthread_sigmask_001()
     };
     sigaction(SIGUSR2, &siga2, nullptr);
 
-    struct signal_chain_action sigusr2 = {
+    struct SIGNAL_CHAIN_ACTION sigusr2 = {
         .sca_sigaction = sigchain_special_handler2,
-        .sca_mask = {},
-        .sca_flags = 0,
+        .scaMask = {},
+        .scaFlags = 0,
     };
-    add_special_signal_handler(SIGUSR2, &sigusr2);
+    AddSpecialSignalHandler(SIGUSR2, &sigusr2);
 
     sigset_t set = { 0 };
     int signo[SIGCHIAN_TEST_SIGNAL_NUM_1] = { SIGUSR2 };
@@ -106,18 +106,18 @@ static void sigchain_intercept_pthread_sigmask_002()
     };
     sigaction(SIGPWR, &siga2, nullptr);
 
-    struct signal_chain_action sigsegv = {
+    struct SIGNAL_CHAIN_ACTION sigsegv = {
         .sca_sigaction = sigchain_special_handler3,
-        .sca_mask = {},
-        .sca_flags = 0,
+        .scaMask = {},
+        .scaFlags = 0,
     };
-    add_special_signal_handler(SIGPWR, &sigsegv);
+    AddSpecialSignalHandler(SIGPWR, &sigsegv);
 
     sigset_t set = { 0 };
     int signo[SIGCHIAN_TEST_SIGNAL_NUM_1] = { SIGPWR };
     SIGCHAIN_TEST_SET_MASK(set, "sigchain_intercept_pthread_sigmask_002", signo, SIGCHIAN_TEST_SIGNAL_NUM_1);
 
-    remove_special_signal_handler(SIGPWR, sigchain_special_handler3);
+    RemoveSpecialSignalHandler(SIGPWR, sigchain_special_handler3);
 
     raise(SIGPWR);
     if (get_sigchain_mask_enable()) {

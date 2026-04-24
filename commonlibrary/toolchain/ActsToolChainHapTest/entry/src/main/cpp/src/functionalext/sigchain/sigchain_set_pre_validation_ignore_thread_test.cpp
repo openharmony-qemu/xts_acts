@@ -23,15 +23,18 @@
 #include "sigchain_util.h"
 #include "test.h"
 
-static int g_special_handler_count = 0;
-static pthread_t g_main_thread_id;
+static int g_specialHandlerCount = 0;
+static pthread_t g_mainThreadId;
+constexpr int THREAD_SIGNAL_COUNT = 50;
+constexpr int PROCESS_SIGNAL_COUNT = 100;
+constexpr useconds_t SLEEP_US = 1000;
 
 /**
  * @brief the special handler for SIGPIPE
  */
-static bool special_handler_sigpipe(int signo, siginfo_t* siginfo, void* ucontext_raw)
+static bool special_handler_sigpipe(int signo, siginfo_t* siginfo, void* ucontextRaw)
 {
-    g_special_handler_count++;
+    g_specialHandlerCount++;
     EXPECT_EQ("sigchain_set_pre_validation_ignore_thread", signo, SIGPIPE);
     return false;
 }
@@ -39,11 +42,11 @@ static bool special_handler_sigpipe(int signo, siginfo_t* siginfo, void* ucontex
 /**
  * @brief Thread function to send SIGPIPE to main thread
  */
-static void* thread_func(void* arg)
+static void* ThreadFunc(void* arg)
 {
-    for (int i = 0; i < 50; i++) {
-        pthread_kill(g_main_thread_id, SIGPIPE);
-        usleep(1000);
+    for (int i = 0; i < THREAD_SIGNAL_COUNT; i++) {
+        pthread_kill(g_mainThreadId, SIGPIPE);
+        usleep(SLEEP_US);
     }
     return nullptr;
 }
@@ -55,7 +58,7 @@ static void* thread_func(void* arg)
  *                 Expected: child process exits normally.
  * @tc.level     : Level 0
  */
-static void sigchain_set_pre_validation_ignore_thread_001()
+static void SigchainSetPreValidationIgnoreThread001()
 {
     pid_t pid = fork();
     if (pid < 0) {
@@ -64,17 +67,17 @@ static void sigchain_set_pre_validation_ignore_thread_001()
     }
 
     if (pid == 0) {
-        g_special_handler_count = 0;
-        g_main_thread_id = pthread_self();
+        g_specialHandlerCount = 0;
+        g_mainThreadId = pthread_self();
 
-        set_sigchain_pre_validation_ignore(1);
+        SetSigchainPreValidationIgnore(1);
 
-        struct signal_chain_action sigpipe = {
+        struct SIGNAL_CHAIN_ACTION sigpipe = {
             .sca_sigaction = special_handler_sigpipe,
-            .sca_mask = {},
-            .sca_flags = 0,
+            .scaMask = {},
+            .scaFlags = 0,
         };
-        add_special_signal_handler(SIGPIPE, &sigpipe);
+        AddSpecialSignalHandler(SIGPIPE, &sigpipe);
 
         struct sigaction sigac = {
             .sa_handler = SIG_IGN,
@@ -84,18 +87,18 @@ static void sigchain_set_pre_validation_ignore_thread_001()
         sigaction(SIGPIPE, &sigac, nullptr);
 
         pthread_t thread;
-        if (pthread_create(&thread, nullptr, thread_func, nullptr) != 0) {
+        if (pthread_create(&thread, nullptr, ThreadFunc, nullptr) != 0) {
             exit(1);
         }
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < PROCESS_SIGNAL_COUNT; i++) {
             raise(SIGPIPE);
-            usleep(1000);
+            usleep(SLEEP_US);
         }
 
         pthread_join(thread, nullptr);
 
-        if (g_special_handler_count >= 100) {
+        if (g_specialHandlerCount >= PROCESS_SIGNAL_COUNT) {
             exit(0);
         } else {
             exit(1);
@@ -105,24 +108,24 @@ static void sigchain_set_pre_validation_ignore_thread_001()
     int status;
     waitpid(pid, &status, 0);
 
-    int exit_code = 0;
+    int exitCode = 0;
     if (WIFEXITED(status)) {
-        exit_code = WEXITSTATUS(status);
+        exitCode = WEXITSTATUS(status);
     }
 
-    EXPECT_EQ("sigchain_set_pre_validation_ignore_thread_001", exit_code, 0);
+    EXPECT_EQ("sigchain_set_pre_validation_ignore_thread_001", exitCode, 0);
     EXPECT_TRUE("sigchain_set_pre_validation_ignore_thread_001", WIFEXITED(status));
 
-    set_sigchain_pre_validation_ignore(0);
+    SetSigchainPreValidationIgnore(0);
 }
 
-static int SigchainSetPreValidationIgnoreThreadTestTest_impl(void)
+static int SigchainSetPreValidationIgnoreThreadTestTestImpl(void)
 {
-    sigchain_set_pre_validation_ignore_thread_001();
+    SigchainSetPreValidationIgnoreThread001();
     return t_status;
 }
 
 int SigchainSetPreValidationIgnoreThreadTestTest(void)
 {
-    return SigchainSetPreValidationIgnoreThreadTestTest_impl();
+    return SigchainSetPreValidationIgnoreThreadTestTestImpl();
 }

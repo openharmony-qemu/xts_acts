@@ -22,7 +22,7 @@
  * @tc.desc      : Verify that memory move is successful (parameters are valid)
  * @tc.level     : Level 0
  */
-void resTraceMove_0100(void)
+void ResTraceMove0100(void)
 {
     char* oldMem = (char*)malloc(1 * sizeof(char));
     char* newMem = (char*)malloc(1 * sizeof(char));
@@ -31,13 +31,13 @@ void resTraceMove_0100(void)
     free(newMem);
 }
 
-static int ResTraceMoveTest_impl(void)
+static int ResTraceMoveTestImpl(void)
 {
-    resTraceMove_0100();
+    ResTraceMove0100();
     return t_status;
 }
 
 int ResTraceMoveTest(void)
 {
-    return ResTraceMoveTest_impl();
+    return ResTraceMoveTestImpl();
 }

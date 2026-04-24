@@ -43,33 +43,33 @@ static bool sigchain_special_sigabrt_handler2(int signo, siginfo_t* siginfo, voi
 
 /**
  * @tc.name      : SigchainRmSpecialHandler001
- * @tc.desc      : The signal is not registered with the kernel, call remove_special_signal_handler to remove
+ * @tc.desc      : The signal is not registered with the kernel, call RemoveSpecialSignalHandler to remove
  *                 two special handlers
  * @tc.level     : Level 0
  */
 static void SigchainRmSpecialHandler001()
 {
-    struct signal_chain_action sigcont = {
+    struct SIGNAL_CHAIN_ACTION sigcont = {
         .sca_sigaction = sigchain_special_sigabrt_handler1,
-        .sca_mask = {},
-        .sca_flags = 0,
+        .scaMask = {},
+        .scaFlags = 0,
     };
-    add_special_signal_handler(SIGCONT, &sigcont);
+    AddSpecialSignalHandler(SIGCONT, &sigcont);
 
-    struct signal_chain_action sigcont1 = {
+    struct SIGNAL_CHAIN_ACTION sigcont1 = {
         .sca_sigaction = sigchain_special_sigabrt_handler2,
-        .sca_mask = {},
-        .sca_flags = SIGCHAIN_ALLOW_NORETURN,
+        .scaMask = {},
+        .scaFlags = SIGCHAIN_ALLOW_NORETURN,
     };
-    add_special_signal_handler(SIGCONT, &sigcont1);
+    AddSpecialSignalHandler(SIGCONT, &sigcont1);
 
     if (get_sigchain_mask_enable()) {
         sigset_t set = { 0 };
         int signo[SIGCHIAN_TEST_SIGNAL_NUM_1] = { SIGCONT };
         SIGCHAIN_TEST_SET_MASK(set, "SigchainRmSpecialHandler001", signo, SIGCHIAN_TEST_SIGNAL_NUM_1);
     }
-    remove_special_signal_handler(SIGCONT, sigchain_special_sigabrt_handler1);
-    remove_special_signal_handler(SIGCONT, sigchain_special_sigabrt_handler2);
+    RemoveSpecialSignalHandler(SIGCONT, sigchain_special_sigabrt_handler1);
+    RemoveSpecialSignalHandler(SIGCONT, sigchain_special_sigabrt_handler2);
 
     raise(SIGCONT);
     EXPECT_EQ("SigchainRmSpecialHandler001", g_count, 0);
@@ -107,7 +107,7 @@ static void SignalSighupHandler(int signo)
 /**
  * @tc.name      : SigchainRmSpecialHandler002
  * @tc.desc      : The signal is registered with the kernel(Using signal), call
- *                 remove_special_signal_handler to remove two special handlers
+ *                 RemoveSpecialSignalHandler to remove two special handlers
  * @tc.level     : Level 0
  */
 static void SigchainRmSpecialHandler002()
@@ -115,27 +115,27 @@ static void SigchainRmSpecialHandler002()
     g_count = 0;
     signal(SIGHUP, SignalSighupHandler);
 
-    struct signal_chain_action sighup = {
+    struct SIGNAL_CHAIN_ACTION sighup = {
         .sca_sigaction = sigchain_special_sighup_handler1,
-        .sca_mask = {},
-        .sca_flags = 0,
+        .scaMask = {},
+        .scaFlags = 0,
     };
-    add_special_signal_handler(SIGHUP, &sighup);
+    AddSpecialSignalHandler(SIGHUP, &sighup);
 
-    struct signal_chain_action sighup1 = {
+    struct SIGNAL_CHAIN_ACTION sighup1 = {
         .sca_sigaction = sigchain_special_sighup_handler2,
-        .sca_mask = {},
-        .sca_flags = 0,
+        .scaMask = {},
+        .scaFlags = 0,
     };
-    add_special_signal_handler(SIGHUP, &sighup1);
+    AddSpecialSignalHandler(SIGHUP, &sighup1);
 
     if (get_sigchain_mask_enable()) {
         sigset_t set = { 0 };
         int signo[SIGCHIAN_TEST_SIGNAL_NUM_1] = { SIGHUP };
         SIGCHAIN_TEST_SET_MASK(set, "SigchainRmSpecialHandler002", signo, SIGCHIAN_TEST_SIGNAL_NUM_1);
     }
-    remove_special_signal_handler(SIGHUP, sigchain_special_sighup_handler1);
-    remove_special_signal_handler(SIGHUP, sigchain_special_sighup_handler2);
+    RemoveSpecialSignalHandler(SIGHUP, sigchain_special_sighup_handler1);
+    RemoveSpecialSignalHandler(SIGHUP, sigchain_special_sighup_handler2);
 
     raise(SIGHUP);
     EXPECT_EQ("SigchainRmSpecialHandler002", g_count, SIGCHIAN_TEST_SIGNAL_NUM_1);
@@ -173,7 +173,7 @@ static void SignalSigusr2Sigaction(int signo)
 /**
  * @tc.name      : SigchainRmSpecialHandler003
  * @tc.desc      : The signal is registered with the kernel(Using sigaction), call
- *                 remove_special_signal_handler to remove two special handlers
+ *                 RemoveSpecialSignalHandler to remove two special handlers
  * @tc.level     : Level 0
  */
 static void SigchainRmSpecialHandler003()
@@ -184,19 +184,19 @@ static void SigchainRmSpecialHandler003()
     };
     sigaction(SIGUSR2, &sigac, NULL);
 
-    struct signal_chain_action sigusr2 = {
+    struct SIGNAL_CHAIN_ACTION sigusr2 = {
         .sca_sigaction = sigchain_special_sigusr2_handler1,
-        .sca_mask = {},
-        .sca_flags = 0,
+        .scaMask = {},
+        .scaFlags = 0,
     };
-    add_special_signal_handler(SIGUSR2, &sigusr2);
+    AddSpecialSignalHandler(SIGUSR2, &sigusr2);
 
-    struct signal_chain_action sigusr21 = {
+    struct SIGNAL_CHAIN_ACTION sigusr21 = {
         .sca_sigaction = sigchain_special_sigusr2_handler2,
-        .sca_mask = {},
-        .sca_flags = 0,
+        .scaMask = {},
+        .scaFlags = 0,
     };
-    add_special_signal_handler(SIGUSR2, &sigusr21);
+    AddSpecialSignalHandler(SIGUSR2, &sigusr21);
 
     if (get_sigchain_mask_enable()) {
         sigset_t set = { 0 };
@@ -204,8 +204,8 @@ static void SigchainRmSpecialHandler003()
         SIGCHAIN_TEST_SET_MASK(set, "SigchainRmSpecialHandler003", signo, SIGCHIAN_TEST_SIGNAL_NUM_1);
     }
 
-    remove_special_signal_handler(SIGUSR2, sigchain_special_sigusr2_handler1);
-    remove_special_signal_handler(SIGUSR2, sigchain_special_sigusr2_handler2);
+    RemoveSpecialSignalHandler(SIGUSR2, sigchain_special_sigusr2_handler1);
+    RemoveSpecialSignalHandler(SIGUSR2, sigchain_special_sigusr2_handler2);
     raise(SIGUSR2);
     EXPECT_EQ("SigchainRmSpecialHandler003", g_count, SIGCHIAN_TEST_SIGNAL_NUM_1);
 }
@@ -222,26 +222,26 @@ static bool sigchain_special_sigterm_handler(int signo, siginfo_t* siginfo, void
 
 /**
  * @tc.name      : SigchainRmSpecialHandler004
- * @tc.desc      : The signal is not registered with the kernel, call remove_special_signal_handler to remove
+ * @tc.desc      : The signal is not registered with the kernel, call RemoveSpecialSignalHandler to remove
  *                 a special handler.
  * @tc.level     : Level 0
  */
 static void SigchainRmSpecialHandler004()
 {
     g_count = 0;
-    struct signal_chain_action sigcont = {
+    struct SIGNAL_CHAIN_ACTION sigcont = {
         .sca_sigaction = sigchain_special_sigterm_handler,
-        .sca_mask = {},
-        .sca_flags = 0,
+        .scaMask = {},
+        .scaFlags = 0,
     };
-    add_special_signal_handler(SIGCONT, &sigcont);
+    AddSpecialSignalHandler(SIGCONT, &sigcont);
 
     if (get_sigchain_mask_enable()) {
         sigset_t set = { 0 };
         int signo[SIGCHIAN_TEST_SIGNAL_NUM_1] = { SIGCONT };
         SIGCHAIN_TEST_SET_MASK(set, "SigchainRmSpecialHandler004", signo, SIGCHIAN_TEST_SIGNAL_NUM_1);
     }
-    remove_special_signal_handler(SIGCONT, sigchain_special_sigterm_handler);
+    RemoveSpecialSignalHandler(SIGCONT, sigchain_special_sigterm_handler);
 
     raise(SIGCONT);
     EXPECT_EQ("SigchainRmSpecialHandler004", g_count, 0);
@@ -268,7 +268,7 @@ static void Signal64Handler(int signo)
 
 /**
  * @tc.name      : SigchainRmSpecialHandler005
- * @tc.desc      : The signal is registered with the kernel(Using signal), call remove_special_signal_handler to remove
+ * @tc.desc      : The signal is registered with the kernel(Using signal), call RemoveSpecialSignalHandler to remove
  *                 a special handler.
  * @tc.level     : Level 0
  */
@@ -277,19 +277,19 @@ static void SigchainRmSpecialHandler005()
     g_count = 0;
     signal(SIGCHAIN_SIGNAL_64, Signal64Handler);
 
-    struct signal_chain_action sighup = {
+    struct SIGNAL_CHAIN_ACTION sighup = {
         .sca_sigaction = sigchain_special_64_handler,
-        .sca_mask = {},
-        .sca_flags = 0,
+        .scaMask = {},
+        .scaFlags = 0,
     };
-    add_special_signal_handler(SIGCHAIN_SIGNAL_64, &sighup);
+    AddSpecialSignalHandler(SIGCHAIN_SIGNAL_64, &sighup);
 
     if (get_sigchain_mask_enable()) {
         sigset_t set = { 0 };
         int signo[SIGCHIAN_TEST_SIGNAL_NUM_1] = { SIGCHAIN_SIGNAL_64 };
         SIGCHAIN_TEST_SET_MASK(set, "SigchainRmSpecialHandler005", signo, SIGCHIAN_TEST_SIGNAL_NUM_1);
     }
-    remove_special_signal_handler(SIGCHAIN_SIGNAL_64, sigchain_special_64_handler);
+    RemoveSpecialSignalHandler(SIGCHAIN_SIGNAL_64, sigchain_special_64_handler);
 
     raise(SIGCHAIN_SIGNAL_64);
     EXPECT_EQ("SigchainRmSpecialHandler005", g_count, SIGCHIAN_TEST_SIGNAL_NUM_1);
@@ -316,7 +316,7 @@ static void Signal37Sigaction(int signo)
 
 /**
  * @tc.name      : SigchainRmSpecialHandler006
- * @tc.desc      : The signal is registered with the kernel(Using sigaction), call remove_special_signal_handler
+ * @tc.desc      : The signal is registered with the kernel(Using sigaction), call RemoveSpecialSignalHandler
  *                 to remove a special handler.
  * @tc.level     : Level 0
  */
@@ -328,19 +328,19 @@ static void SigchainRmSpecialHandler006()
     };
     sigaction(SIGCHAIN_SIGNAL_37, &sigac, NULL);
 
-    struct signal_chain_action sig37 = {
+    struct SIGNAL_CHAIN_ACTION sig37 = {
         .sca_sigaction = sigchain_special_37_handler,
-        .sca_mask = {},
-        .sca_flags = 0,
+        .scaMask = {},
+        .scaFlags = 0,
     };
-    add_special_signal_handler(SIGCHAIN_SIGNAL_37, &sig37);
+    AddSpecialSignalHandler(SIGCHAIN_SIGNAL_37, &sig37);
 
     if (get_sigchain_mask_enable()) {
         sigset_t set = { 0 };
         int signo[SIGCHIAN_TEST_SIGNAL_NUM_1] = { SIGCHAIN_SIGNAL_37 };
         SIGCHAIN_TEST_SET_MASK(set, "SigchainRmSpecialHandler006", signo, SIGCHIAN_TEST_SIGNAL_NUM_1);
     }
-    remove_special_signal_handler(SIGCHAIN_SIGNAL_37, sigchain_special_37_handler);
+    RemoveSpecialSignalHandler(SIGCHAIN_SIGNAL_37, sigchain_special_37_handler);
 
     raise(SIGCHAIN_SIGNAL_37);
     EXPECT_EQ("SigchainRmSpecialHandler006", g_count, SIGCHIAN_TEST_SIGNAL_NUM_1);
@@ -374,7 +374,7 @@ static void SignalQuitSigaction(int signo)
 
 /**
  * @tc.name      : SigchainRmAllSpecialHandler007
- * @tc.desc      : The signal is registered with the kernel(Using sigaction), call remove_special_signal_handler
+ * @tc.desc      : The signal is registered with the kernel(Using sigaction), call RemoveSpecialSignalHandler
  *                 to remove a special handler.
  * @tc.level     : Level 0
  */
@@ -386,26 +386,26 @@ static void SigchainRmAllSpecialHandler007()
     };
     sigaction(SIGQUIT, &sigac, NULL);
 
-    struct signal_chain_action sigquit = {
+    struct SIGNAL_CHAIN_ACTION sigquit = {
         .sca_sigaction = sigchain_special_quit_handler,
-        .sca_mask = {},
-        .sca_flags = 0,
+        .scaMask = {},
+        .scaFlags = 0,
     };
-    add_special_signal_handler(SIGQUIT, &sigquit);
+    AddSpecialSignalHandler(SIGQUIT, &sigquit);
 
-    struct signal_chain_action sigquit1 = {
+    struct SIGNAL_CHAIN_ACTION sigquit1 = {
         .sca_sigaction = sigchain_special_quit_handler1,
-        .sca_mask = {},
-        .sca_flags = 0,
+        .scaMask = {},
+        .scaFlags = 0,
     };
-    add_special_signal_handler(SIGQUIT, &sigquit1);
+    AddSpecialSignalHandler(SIGQUIT, &sigquit1);
 
     if (get_sigchain_mask_enable()) {
         sigset_t set = { 0 };
         int signo[SIGCHIAN_TEST_SIGNAL_NUM_1] = { SIGQUIT };
         SIGCHAIN_TEST_SET_MASK(set, "SigchainRmAllSpecialHandler007", signo, SIGCHIAN_TEST_SIGNAL_NUM_1);
     }
-    remove_all_special_handler(SIGQUIT);
+    RemoveAllSpecialHandler(SIGQUIT);
 
     raise(SIGQUIT);
     EXPECT_EQ("SigchainRmAllSpecialHandler007", g_count, SIGCHIAN_TEST_SIGNAL_NUM_1);

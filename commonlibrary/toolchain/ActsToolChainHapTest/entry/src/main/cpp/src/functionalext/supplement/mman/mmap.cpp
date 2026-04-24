@@ -23,17 +23,19 @@
 const int EOK = 0;
 const int SUCCESS = 0;
 const int FAILED = -1;
+constexpr mode_t FILE_MODE_0777 = 0777;
 #define OFF_MASK ((-0x2000ULL << (8 * sizeof(long) - 1)) | (4096ULL - 1))
 
 /**
- * @tc.name      : mmap_0100
+ * @tc.name      : Mmap0100
  * @tc.desc      : The parameters are valid, prot is PROT_READ,
  *                 and flags is MAP_PRIVATE, which can map the file content into memory
  * @tc.level     : Level 0
  */
-void mmap_0100(void)
+void Mmap0100(void)
 {
-    int fd, mm;
+    int fd;
+    int mm;
     void* start;
     const char* ptr = "/data/storage/el2/base/cache/test.txt";
     static char str[] = "this is a sample!";
@@ -47,7 +49,7 @@ void mmap_0100(void)
     int back = stat(ptr, &statbuff);
     fclose(fptr);
 
-    fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, 0777);
+    fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, FILE_MODE_0777);
     EXPECT_NE("mmap_0100", fd, -1);
     start = mmap(nullptr, statbuff.st_size, PROT_READ, MAP_PRIVATE, fd, 0);
     EXPECT_EQ("mmap_0100", back, SUCCESS);
@@ -63,14 +65,15 @@ void mmap_0100(void)
 }
 
 /**
- * @tc.name      : mmap_0200
+ * @tc.name      : Mmap0200
  * @tc.desc      : The parameters are valid, prot is PROT_READ|PROT_WRITE,
  *                 and flags is MAP_SHARED, which can map the file content into memory
  * @tc.level     : Level 0
  */
-void mmap_0200(void)
+void Mmap0200(void)
 {
-    int fd, mm;
+    int fd;
+    int mm;
     void* start;
     const char* ptr = "/data/storage/el2/base/cache/test.txt";
     static char str[] = "this is a sample!";
@@ -85,7 +88,7 @@ void mmap_0200(void)
 
     int back = stat(ptr, &statbuff);
     fclose(fptr);
-    fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, 0777);
+    fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, FILE_MODE_0777);
     EXPECT_NE("mmap_0200", fd, -1);
     start = mmap(nullptr, statbuff.st_size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
     EXPECT_EQ("mmap_0200", back, SUCCESS);
@@ -101,12 +104,12 @@ void mmap_0200(void)
 }
 
 /**
- * @tc.name      : mmap_0300
+ * @tc.name      : Mmap0300
  * @tc.desc      : The parameters are valid, prot is PROT_READ|PROT_WRITE, and flags is MAP_SHARED|MAP_ANON,
  *                 which can map the file content into memory
  * @tc.level     : Level 1
  */
-void mmap_0300(void)
+void Mmap0300(void)
 {
     void* start;
     int mm;
@@ -117,14 +120,15 @@ void mmap_0300(void)
 }
 
 /**
- * @tc.name      : mmap_0400
+ * @tc.name      : Mmap0400
  * @tc.desc      : The parameters are valid, prot is PROT_EXEC, and flags is MAP_LOCKED,
  *                 which can map the file content into memory
  * @tc.level     : Level 1
  */
-void mmap_0400(void)
+void Mmap0400(void)
 {
-    int fd, mm;
+    int fd;
+    int mm;
     void* start;
     const char* ptr = "/data/storage/el2/base/cache/test.txt";
     static char str[] = "this is a sample!";
@@ -139,7 +143,7 @@ void mmap_0400(void)
 
     int back = stat(ptr, &statbuff);
     fclose(fptr);
-    fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, 0777);
+    fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, FILE_MODE_0777);
     EXPECT_NE("mmap_0400", fd, -1);
     start = mmap(nullptr, statbuff.st_size, PROT_EXEC, MAP_PRIVATE | MAP_LOCKED, fd, 0);
     EXPECT_EQ("mmap_0400", back, SUCCESS);
@@ -154,14 +158,15 @@ void mmap_0400(void)
 }
 
 /**
- * @tc.name      : mmap_0500
+ * @tc.name      : Mmap0500
  * @tc.desc      : The parameters are valid, prot is PROT_READ|PROT_WRITE, and flags is MAP_PRIVATE|MAP_DENYWRITE,
  *                 which can map the file content into memory
  * @tc.level     : Level 1
  */
-void mmap_0500(void)
+void Mmap0500(void)
 {
-    int fd, mm;
+    int fd;
+    int mm;
     void* start;
     const char* ptr = "/data/storage/el2/base/cache/test.txt";
     static char str[] = "this is a sample!";
@@ -176,7 +181,7 @@ void mmap_0500(void)
 
     int back = stat(ptr, &statbuff);
     fclose(fptr);
-    fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, 0777);
+    fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, FILE_MODE_0777);
     EXPECT_NE("mmap_0500", fd, -1);
 
     start = mmap(nullptr, statbuff.st_size, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_DENYWRITE, fd, 0);
@@ -192,14 +197,15 @@ void mmap_0500(void)
 }
 
 /**
- * @tc.name      : mmap_0600
+ * @tc.name      : Mmap0600
  * @tc.desc      : The parameters are valid, prot is PROT_NONE, and flags is MAP_PRIVATE|MAP_FIXED,
  *                 which can map the file content into memory
  * @tc.level     : Level 2
  */
-void mmap_0600(void)
+void Mmap0600(void)
 {
-    int fd, mm;
+    int fd;
+    int mm;
     void* start;
     const char* ptr = "/data/storage/el2/base/cache/test.txt";
     static char str[] = "this is a sample!";
@@ -227,12 +233,12 @@ void mmap_0600(void)
 }
 
 /**
- * @tc.name      : mmap_0700
+ * @tc.name      : Mmap0700
  * @tc.desc      : The parameter is invalid, the off parameter is OFF_MASK,
  *                 the file content cannot be mapped into memory
  * @tc.level     : Level 2
  */
-void mmap_0700(void)
+void Mmap0700(void)
 {
     int fd;
     void* start;
@@ -249,7 +255,7 @@ void mmap_0700(void)
 
     int back = stat(ptr, &statbuff);
     fclose(fptr);
-    fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, 0777);
+    fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, FILE_MODE_0777);
     EXPECT_NE("mmap_0700", fd, -1);
 
     start = mmap(nullptr, statbuff.st_size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, OFF_MASK);
@@ -263,12 +269,12 @@ void mmap_0700(void)
 }
 
 /**
- * @tc.name      : mmap_0800
+ * @tc.name      : Mmap0800
  * @tc.desc      : The parameter is invalid, the len parameter exceeds the maximum value,
  *                 and the file content cannot be mapped into memory
  * @tc.level     : Level 2
  */
-void mmap_0800(void)
+void Mmap0800(void)
 {
     int fd;
     void* start;
@@ -282,7 +288,7 @@ void mmap_0800(void)
     EXPECT_TRUE("mmap_0800", fgetc(fptr) != EOF);
 
     fclose(fptr);
-    fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, 0777);
+    fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, FILE_MODE_0777);
     EXPECT_NE("mmap_0800", fd, -1);
 
     start = mmap(nullptr, PTRDIFF_MAX + 1, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
@@ -295,11 +301,11 @@ void mmap_0800(void)
 }
 
 /**
- * @tc.name      : mmap_0900
+ * @tc.name      : Mmap0900
  * @tc.desc      : The parameter is invalid, the len parameter is 0, the file content cannot be mapped into memory
  * @tc.level     : Level 2
  */
-void mmap_0900(void)
+void Mmap0900(void)
 {
     int fd;
     void* start;
@@ -313,7 +319,7 @@ void mmap_0900(void)
     EXPECT_TRUE("mmap_0900", fgetc(fptr) != EOF);
 
     fclose(fptr);
-    fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, 0777);
+    fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, FILE_MODE_0777);
     EXPECT_NE("mmap_0900", fd, -1);
 
     start = mmap(nullptr, 0, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
@@ -326,12 +332,12 @@ void mmap_0900(void)
 }
 
 /**
- * @tc.name      : mmap_1000
+ * @tc.name      : Mmap1000
  * @tc.desc      : The parameter is invalid, the flags parameter is MAP_SHARED|MAP_ANON, and the off parameter is
  *                 not an integer multiple of the page, the file content cannot be mapped into the memory
  * @tc.level     : Level 2
  */
-void mmap_1000(void)
+void Mmap1000(void)
 {
     int fd;
     void* start;
@@ -348,7 +354,7 @@ void mmap_1000(void)
 
     int back = stat(ptr, &statbuff);
     fclose(fptr);
-    fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, 0777);
+    fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, FILE_MODE_0777);
     EXPECT_NE("mmap_1000", fd, -1);
 
     start = mmap(nullptr, statbuff.st_size, PROT_READ | PROT_WRITE, MAP_SHARED | MAP_ANON, fd, getpagesize() - 1);
@@ -362,14 +368,15 @@ void mmap_1000(void)
 }
 
 /**
- * @tc.name      : mmap_1100
+ * @tc.name      : Mmap1100
  * @tc.desc      : The parameter is invalid, start is not an integer multiple of the page,
  *                 and the file content cannot be mapped into memory
  * @tc.level     : Level 1
  */
-void mmap_1100(void)
+void Mmap1100(void)
 {
-    int fd, mm;
+    int fd;
+    int mm;
     void* start;
     const char* ptr = "/data/storage/el2/base/cache/test.txt";
     static char str[] = "this is a sample!";
@@ -384,7 +391,7 @@ void mmap_1100(void)
 
     int back = stat(ptr, &statbuff);
     fclose(fptr);
-    fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, 0777);
+    fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, FILE_MODE_0777);
     EXPECT_NE("mmap_1100", fd, -1);
 
     int get = getpagesize() - 1;
@@ -400,19 +407,19 @@ void mmap_1100(void)
     close(fd);
 }
 
-static int MmapTest_impl(int argc, char* argv[])
+static int MmapTestImpl(int argc, char* argv[])
 {
-    mmap_0100();
-    mmap_0200();
-    mmap_0300();
-    mmap_0400();
-    mmap_0500();
-    mmap_0600();
-    mmap_0700();
-    mmap_0800();
-    mmap_0900();
-    mmap_1000();
-    mmap_1100();
+    Mmap0100();
+    Mmap0200();
+    Mmap0300();
+    Mmap0400();
+    Mmap0500();
+    Mmap0600();
+    Mmap0700();
+    Mmap0800();
+    Mmap0900();
+    Mmap1000();
+    Mmap1100();
 
     return t_status;
 }
@@ -421,5 +428,5 @@ int MmapTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return MmapTest_impl(1, libcArgv);
+    return MmapTestImpl(1, libcArgv);
 }

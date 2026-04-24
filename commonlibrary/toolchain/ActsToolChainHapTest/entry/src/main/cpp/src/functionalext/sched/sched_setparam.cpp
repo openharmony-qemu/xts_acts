@@ -28,22 +28,21 @@ typedef void (*TEST_FUN)(void);
  * @tc.level     : Level 1
  */
 
-static void sched_setparam_0010(void)
+static void SchedSetparam0010(void)
 {
     struct sched_param param;
-    int maxpri, minpri;
-    pid_t pid;
-    int sched;
+    int maxpri;
+    int minpri;
+    pid_t pid = getpid();
+    int sched = SCHED_OTHER;
 
-    pid = getpid();
-    sched = SCHED_OTHER;
     maxpri = sched_get_priority_max(sched);
     minpri = sched_get_priority_min(sched);
     if (maxpri == -1 || minpri == -1) {
         t_error("get maxpriority or minpriority failed");
     }
     param.sched_priority = 0; // 取值范围:minpri~maxpri
-    EXPECT_EQ("sched_setparam_0010", sched_setparam(pid, &param), 0);
+    EXPECT_EQ("SchedSetparam0010", sched_setparam(pid, &param), 0);
 }
 
 /**
@@ -51,23 +50,22 @@ static void sched_setparam_0010(void)
  * @tc.desc      : When param is nullptr, call sched_setparam.
  * @tc.level     : Level 2
  */
-static void sched_setparam_0020(void)
+static void SchedSetparam0020(void)
 {
-    pid_t pid;
-    pid = getpid();
-    EXPECT_EQ("sched_setparam_0020", sched_setparam(pid, nullptr), -1);
+    pid_t pid = getpid();
+    EXPECT_EQ("SchedSetparam0020", sched_setparam(pid, nullptr), -1);
 }
 
-static TEST_FUN G_Fun_Array[] = {
-    sched_setparam_0010,
-    sched_setparam_0020,
+static TEST_FUN g_gFunArray[] = {
+    SchedSetparam0010,
+    SchedSetparam0020,
 };
 
-static int SchedSetparamTest_impl(void)
+static int SchedSetparamTestImpl(void)
 {
-    int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
+    int num = sizeof(g_gFunArray) / sizeof(TEST_FUN);
     for (int pos = 0; pos < num; ++pos) {
-        G_Fun_Array[pos]();
+        g_gFunArray[pos]();
     }
 
     return t_status;
@@ -75,5 +73,5 @@ static int SchedSetparamTest_impl(void)
 
 int SchedSetparamTest(void)
 {
-    return SchedSetparamTest_impl();
+    return SchedSetparamTestImpl();
 }

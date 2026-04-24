@@ -22,20 +22,20 @@
  * @tc.desc      : Verify that memory allocation is successful (parameters are valid)
  * @tc.level     : Level 0
  */
-void restrace_0100(void)
+void Restrace0100(void)
 {
     char* mem = (char*)malloc(1 * sizeof(char));
     restrace(RES_GPU_VK, mem, 1, TAG_RES_GPU_VK, true);
     free(mem);
 }
 
-static int RestraceTest_impl(void)
+static int RestraceTestImpl(void)
 {
-    restrace_0100();
+    Restrace0100();
     return t_status;
 }
 
 int RestraceTest(void)
 {
-    return RestraceTest_impl();
+    return RestraceTestImpl();
 }

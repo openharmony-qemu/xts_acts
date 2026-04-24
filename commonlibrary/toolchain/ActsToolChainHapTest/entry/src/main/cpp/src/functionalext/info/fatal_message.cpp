@@ -45,7 +45,7 @@ static const int WAIT_TIME = 1;
  * @tc.desc      : Test the function of get_fatal_message.
  * @tc.level     : Level 0
  */
-static void fatal_message_0010(void)
+static void FatalMessage0010(void)
 {
     fatal_msg_t* fatal_message = get_fatal_message();
     EXPECT_TRUE(fatal_message == nullptr);
@@ -56,7 +56,7 @@ static void fatal_message_0010(void)
  * @tc.desc      : Test the function of set_fatal_message.
  * @tc.level     : Level 0
  */
-static void fatal_message_0020(void)
+static void FatalMessage0020(void)
 {
     const char msg[1024] = { "abcdefghijklmnopqrstuvwxyz1234567890" };
     fatal_msg_t* fatal_message = nullptr;
@@ -84,7 +84,7 @@ static void fatal_message_0020(void)
  * @tc.desc      : Test the multiple processes of set_fatal_message.
  * @tc.level     : Level 0
  */
-static void fatal_message_0030(void)
+static void FatalMessage0030(void)
 {
     fatal_msg_t* fatal_message = nullptr;
 
@@ -135,7 +135,7 @@ static void fatal_message_0030(void)
  *                  One of the threads crashed.
  * @tc.level     : Level 0
  */
-static void fatal_message_0040(void)
+static void FatalMessage0040(void)
 {
     fatal_msg_t* fatal_message = nullptr;
 
@@ -204,11 +204,12 @@ void* ThreadFun2(void* arg)
  * @tc.desc      : Test the multithreading of set_fatal_message.
  * @tc.level     : Level 0
  */
-static void fatal_message_0050(void)
+static void FatalMessage0050(void)
 {
     const char msgThread[1024] = { "msgThread" };
     int res;
-    pthread_t fatalMessageThread1, fatalMessageThread2;
+    pthread_t fatalMessageThread1;
+    pthread_t fatalMessageThread2;
 
     set_fatal_message(msgThread);
     res = pthread_create(&fatalMessageThread1, nullptr, ThreadFun1, const_cast<char*>(msgThread));
@@ -230,7 +231,7 @@ static void fatal_message_0050(void)
  * @tc.desc      : Test the function of null message.
  * @tc.level     : Level 0
  */
-static void fatal_message_0060(void)
+static void FatalMessage0060(void)
 {
     const char* msg = nullptr;
     fatal_msg_t* fatal_message = nullptr;
@@ -254,7 +255,7 @@ static void fatal_message_0060(void)
  * @tc.desc      : Test the function of multi call set_fatal_message.
  * @tc.level     : Level 0
  */
-static void fatal_message_0070(void)
+static void FatalMessage0070(void)
 {
     const char msg[1024] = { "abcdefghijklmnopqrstuvwxyz1234567890" };
     const char msg1[1024] = { "abcdefghijklmnopqr" };
@@ -281,18 +282,19 @@ static void fatal_message_0070(void)
     }
 }
 
-static TEST_FUN G_Fun_Array[] = { fatal_message_0010, fatal_message_0020, fatal_message_0030, fatal_message_0040,
-                                  fatal_message_0050, fatal_message_0060, fatal_message_0070 };
+static TEST_FUN g_gFunArray[] = { FatalMessage0010, FatalMessage0020, FatalMessage0030, FatalMessage0040,
+                                  FatalMessage0050, FatalMessage0060, FatalMessage0070 };
 
-static int FatalMessageTest_impl(void)
+static int FatalMessageTestImpl(void)
 {
-    int childPid, childRet;
-    int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
+    int childPid;
+    int childRet;
+    int num = sizeof(g_gFunArray) / sizeof(TEST_FUN);
     for (int pos = 0; pos < num; ++pos) {
         // Run each function in a new process to
         // keep the initial state of fatal_message.
         if ((childPid = fork()) == 0) {
-            G_Fun_Array[pos]();
+            g_gFunArray[pos]();
             exit(0);
         }
         waitpid(childPid, &childRet, 0);
@@ -304,5 +306,5 @@ static int FatalMessageTest_impl(void)
 
 int FatalMessageTest(void)
 {
-    return FatalMessageTest_impl();
+    return FatalMessageTestImpl();
 }

@@ -18,13 +18,15 @@
 #include "functionalext.h"
 
 typedef void (*TEST_FUN)();
+constexpr mode_t EXPECT_MODE_34815 = 34815;
+constexpr mode_t EXPECT_MODE_33279 = 33279;
 
 /**
  * @tc.name      : fchmod_0100
  * @tc.desc      : Verify the permission to modify the file (parameters are set separately)
  * @tc.level     : Level 0
  */
-void fchmod_0100()
+void Fchmod0100()
 {
     struct stat buf;
     const char* path = "/data/storage/el2/base/cache/test.txt";
@@ -36,7 +38,7 @@ void fchmod_0100()
                             S_IXGRP | S_IROTH | S_IWOTH | S_IXOTH);
     stat(path, &buf);
     EXPECT_EQ("fchmod_0100", result, 0);
-    EXPECT_EQ("fchmod_0100", buf.st_mode, 34815);
+    EXPECT_EQ("fchmod_0100", buf.st_mode, EXPECT_MODE_34815);
     close(fd);
     remove(path);
 }
@@ -46,7 +48,7 @@ void fchmod_0100()
  * @tc.desc      : Verify permission to modify files (overall parameter settings)
  * @tc.level     : Level 0
  */
-void fchmod_0200()
+void Fchmod0200()
 {
     struct stat buf;
     const char* path = "/data/storage/el2/base/cache/test.txt";
@@ -54,7 +56,7 @@ void fchmod_0200()
     int result = fchmod(fd, S_IRWXU | S_IRWXG | S_IRWXO);
     stat(path, &buf);
     EXPECT_EQ("fchmod_0200", result, 0);
-    EXPECT_EQ("fchmod_0200", buf.st_mode, 33279);
+    EXPECT_EQ("fchmod_0200", buf.st_mode, EXPECT_MODE_33279);
     close(fd);
     remove(path);
 }
@@ -64,23 +66,23 @@ void fchmod_0200()
  * @tc.desc      : Failed to verify permission to modify file (fd parameter is invalid)
  * @tc.level     : Level 2
  */
-void fchmod_0300()
+void Fchmod0300()
 {
     int result = fchmod(-1, S_IRWXU | S_IRWXG | S_IRWXO);
     EXPECT_EQ("fchmod_0300", result, -1);
 }
 
-static TEST_FUN G_Fun_Array[] = {
-    fchmod_0100,
-    fchmod_0200,
-    fchmod_0300,
+static TEST_FUN g_gFunArray[] = {
+    Fchmod0100,
+    Fchmod0200,
+    Fchmod0300,
 };
 
-static int FchmodTest_impl(int argc, char* argv[])
+static int FchmodTestImpl(int argc, char* argv[])
 {
-    int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
+    int num = sizeof(g_gFunArray) / sizeof(TEST_FUN);
     for (int pos = 0; pos < num; ++pos) {
-        G_Fun_Array[pos]();
+        g_gFunArray[pos]();
     }
 
     return t_status;
@@ -89,6 +91,6 @@ static int FchmodTest_impl(int argc, char* argv[])
 int FchmodTest(void)
 {
     static char libcProg[] = "libc_test";
-    char* libcArgv[] = { libcProg, NULL };
-    return FchmodTest_impl(1, libcArgv);
+    char* libcArgv[] = { libcProg, nullptr };
+    return FchmodTestImpl(1, libcArgv);
 }

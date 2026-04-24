@@ -21,25 +21,31 @@
  * @tc.desc      : Verify that the stream and its associated file system description file can be closed
  * @tc.level     : Level 0
  */
-void endmntent_0100(void)
+void Endmntent0100(void)
 {
     FILE* fp = fopen("/data/storage/el2/base/cache/test.txt", "w+");
-    EXPECT_PTRNE("endmntent_0100", fp, NULL);
+    EXPECT_PTRNE("Endmntent0100", fp, nullptr);
 
     int result = endmntent(fp);
-    EXPECT_EQ("endmntent_0100", result, 1);
-    remove("/data/storage/el2/base/cache/test.txt");
+    EXPECT_EQ("Endmntent0100", result, 1);
+    int removeRet = remove("/data/storage/el2/base/cache/test.txt");
+    EXPECT_EQ("Endmntent0100", removeRet, 0);
 }
 
-static int endmntentTest_with_args(int argc, char* argv[])
+static int EndmntentTestWithArgs(int argc, char* argv[])
 {
-    endmntent_0100();
+    Endmntent0100();
     return t_status;
+}
+
+int EndmntentTest(void)
+{
+    static char libcProg[] = "libc_test";
+    char* libcArgv[] = { libcProg, nullptr };
+    return EndmntentTestWithArgs(1, libcArgv);
 }
 
 int endmntentTest(void)
 {
-    static char libcProg[] = "libc_test";
-    char* libcArgv[] = { libcProg, NULL };
-    return endmntentTest_with_args(1, libcArgv);
+    return EndmntentTest();
 }

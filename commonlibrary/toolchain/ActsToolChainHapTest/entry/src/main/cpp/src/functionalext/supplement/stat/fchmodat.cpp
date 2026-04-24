@@ -18,9 +18,9 @@
 #include "filepath_util.h"
 #include "functionalext.h"
 
-int success = 36863;
-int SUCCESS = 33279;
-static int failed = -1;
+int g_success = 36863;
+int g_successValue = 33279;
+static int g_failed = -1;
 static const mode_t MODE_MASK = 07777;
 
 /**
@@ -28,7 +28,7 @@ static const mode_t MODE_MASK = 07777;
  * @tc.desc      : Verify the permission to modify the file (parameters are set separately)
  * @tc.level     : Level 0
  */
-void fchmodat_0100(void)
+void Fchmodat0100(void)
 {
     int fd;
     struct stat buf;
@@ -46,7 +46,7 @@ void fchmodat_0100(void)
         remove(path);
         return;
     }
-    EXPECT_EQ("fchmodat_0100", (buf.st_mode & MODE_MASK), (success & MODE_MASK));
+    EXPECT_EQ("fchmodat_0100", (buf.st_mode & MODE_MASK), (g_success & MODE_MASK));
     close(fd);
     remove(path);
 }
@@ -56,7 +56,7 @@ void fchmodat_0100(void)
  * @tc.desc      : Verify permission to modify files (overall parameter settings)
  * @tc.level     : Level 0
  */
-void fchmodat_0200(void)
+void Fchmodat0200(void)
 {
     int fd;
     struct stat buf;
@@ -70,7 +70,7 @@ void fchmodat_0200(void)
         remove(path);
         return;
     }
-    EXPECT_EQ("fchmodat_0200", (buf.st_mode & MODE_MASK), (SUCCESS & MODE_MASK));
+    EXPECT_EQ("fchmodat_0200", (buf.st_mode & MODE_MASK), (g_successValue & MODE_MASK));
     close(fd);
     remove(path);
 }
@@ -80,18 +80,18 @@ void fchmodat_0200(void)
  * @tc.desc      : Failed to verify permission to modify file (fd parameter is invalid)
  * @tc.level     : Level 2
  */
-void fchmodat_0300(void)
+void Fchmodat0300(void)
 {
     int result =
         fchmodat(-1, "/data/storage/el2/base/cache/test.txt", S_IRWXU | S_IRWXG | S_IRWXO, AT_SYMLINK_NOFOLLOW);
-    EXPECT_EQ("fchmodat_0300", result, failed);
+    EXPECT_EQ("fchmodat_0300", result, g_failed);
 }
 
-static int FchmodatTest_impl(int argc, char* argv[])
+static int FchmodatTestImpl(int argc, char* argv[])
 {
-    fchmodat_0100();
-    fchmodat_0200();
-    fchmodat_0300();
+    Fchmodat0100();
+    Fchmodat0200();
+    Fchmodat0300();
 
     return t_status;
 }
@@ -99,6 +99,6 @@ static int FchmodatTest_impl(int argc, char* argv[])
 int FchmodatTest(void)
 {
     static char libcProg[] = "libc_test";
-    char* libcArgv[] = { libcProg, NULL };
-    return FchmodatTest_impl(1, libcArgv);
+    char* libcArgv[] = { libcProg, nullptr };
+    return FchmodatTestImpl(1, libcArgv);
 }

@@ -17,25 +17,29 @@
 #include "functionalext.h"
 #include "include/src/functionalext/supplement/misc.h"
 
+constexpr int CHAR_GROUP_BASE = 6;
+constexpr int UPPERCASE_OFFSET = 12;
+constexpr int LOWERCASE_OFFSET = 38;
+
 extern "C" long a64l(const char* s)
 {
     if (s == nullptr) {
         return 0;
     }
     long result = 0;
-    for (int i = 0; i < 6 && s[i] != '\0'; ++i) {
+    for (int i = 0; i < CHAR_GROUP_BASE && s[i] != '\0'; ++i) {
         unsigned char ch = static_cast<unsigned char>(s[i]);
         int value = -1;
         if (ch >= '.' && ch <= '9') {
             value = ch - '.';
         } else if (ch >= 'A' && ch <= 'Z') {
-            value = ch - 'A' + 12;
+            value = ch - 'A' + UPPERCASE_OFFSET;
         } else if (ch >= 'a' && ch <= 'z') {
-            value = ch - 'a' + 38;
+            value = ch - 'a' + LOWERCASE_OFFSET;
         } else {
             break;
         }
-        result |= (static_cast<long>(value) << (6 * i));
+        result |= (static_cast<long>(value) << (CHAR_GROUP_BASE * i));
     }
     return result;
 }
@@ -49,85 +53,90 @@ extern "C" long a64l(const char* s)
 #define VALUE_ZZZZZ 1073741823
 
 /**
- * @tc.name      : a64l_0100
+ * @tc.name      : A64l0100
  * @tc.desc      : Verify normal character
  * @tc.level     : Level 0
  */
-void a64l_0100(void)
+void A64l0100(void)
 {
     long result1 = a64l("0");
     long result2 = a64l("A");
     long result3 = a64l("z");
     long result4 = a64l("./");
-    EXPECT_EQ("a64l_0100", result1, VALUE_0); // expect result is 2
-    EXPECT_EQ("a64l_0100", result2, VALUE_A); // expect result is 12
-    EXPECT_EQ("a64l_0100", result3, VALUE_Z); // expect result is 63
-    EXPECT_EQ("a64l_0100", result4, VALUE);   // expect result is 64
+    EXPECT_EQ("A64l0100", result1, VALUE_0); // expect result is 2
+    EXPECT_EQ("A64l0100", result2, VALUE_A); // expect result is 12
+    EXPECT_EQ("A64l0100", result3, VALUE_Z); // expect result is 63
+    EXPECT_EQ("A64l0100", result4, VALUE);   // expect result is 64
 }
 
 /**
- * @tc.name      : a64l_0200
+ * @tc.name      : A64l0200
  * @tc.desc      : Verify multi character
  * @tc.level     : Level 0
  */
-void a64l_0200(void)
+void A64l0200(void)
 {
     long result1 = a64l("0123");
     long result2 = a64l("ABCD");
-    EXPECT_EQ("a64l_0200", result1, VALUE_0123); // (2 | (3 << 6) | (4 << 12) | (5 << 18))
-    EXPECT_EQ("a64l_0200", result2, VALUE_ABCD); // (12 | (13 << 6) | (14 << 12) | (15 << 18)
+    EXPECT_EQ("A64l0200", result1, VALUE_0123); // (2 | (3 << 6) | (4 << 12) | (5 << 18))
+    EXPECT_EQ("A64l0200", result2, VALUE_ABCD); // (12 | (13 << 6) | (14 << 12) | (15 << 18)
 }
 
 /**
- * @tc.name      : a64l_0300
+ * @tc.name      : A64l0300
  * @tc.desc      : Verify illegal character
  * @tc.level     : Level 0
  */
-void a64l_0300(void)
+void A64l0300(void)
 {
     long result1 = a64l("A@B");
     long result2 = a64l("0#");
-    EXPECT_EQ("a64l_0300", result1, VALUE_A); // expect result is 12
-    EXPECT_EQ("a64l_0300", result2, VALUE_0); // expect result is 2
+    EXPECT_EQ("A64l0300", result1, VALUE_A); // expect result is 12
+    EXPECT_EQ("A64l0300", result2, VALUE_0); // expect result is 2
 }
 
 /**
- * @tc.name      : a64l_0400
+ * @tc.name      : A64l0400
  * @tc.desc      : Verify empty characters
  * @tc.level     : Level 0
  */
-void a64l_0400(void)
+void A64l0400(void)
 {
     long result = a64l("");
-    EXPECT_EQ("a64l_0400", result, 0);
+    EXPECT_EQ("A64l0400", result, 0);
 }
 
 /**
- * @tc.name      : a64l_0500
+ * @tc.name      : A64l0500
  * @tc.desc      : Verify the maximum length
  * @tc.level     : Level 0
  */
-void a64l_0500(void)
+void A64l0500(void)
 {
     long result1 = a64l("zzzzzz");
     long result2 = a64l("zzzzz");
-    EXPECT_EQ("a64l_0500", result1, -1); // (63 | (63 << 6) | (63 << 12) | (63 << 18) | (63 << 24) | (63 << 30))
-    EXPECT_EQ("a64l_0500", result2, VALUE_ZZZZZ); // (63 | (63 << 6) | (63 << 12) | (63 << 18) | (63 << 24))
+    EXPECT_EQ("A64l0500", result1, -1);          // (63 | (63 << 6) | (63 << 12) | (63 << 18) | (63 << 24) | (63 << 30))
+    EXPECT_EQ("A64l0500", result2, VALUE_ZZZZZ); // (63 | (63 << 6) | (63 << 12) | (63 << 18) | (63 << 24))
 }
 
-static int a64lTest_with_args(int argc, char* argv[])
+static int A64lTestWithArgs(int argc, char* argv[])
 {
-    a64l_0100();
-    a64l_0200();
-    a64l_0300();
-    a64l_0400();
-    a64l_0500();
+    A64l0100();
+    A64l0200();
+    A64l0300();
+    A64l0400();
+    A64l0500();
     return t_status;
+}
+
+int A64lTest(void)
+{
+    static char libcProg[] = "libc_test";
+    char* libcArgv[] = { libcProg, nullptr };
+    return A64lTestWithArgs(1, libcArgv);
 }
 
 int a64lTest(void)
 {
-    static char libcProg[] = "libc_test";
-    char* libcArgv[] = { libcProg, nullptr };
-    return a64lTest_with_args(1, libcArgv);
+    return A64lTest();
 }

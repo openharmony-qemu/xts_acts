@@ -28,9 +28,9 @@
 #define TEST_BUF_SIZE 256
 #define TEST_TIMEOUT 5
 
-static const char* text = "This is a simple test case.";
+static const char* TEXT = "This is a simple test case.";
 
-void fill_socket_addr(struct sockaddr_in* addr)
+void FillSocketAddr(struct sockaddr_in* addr)
 {
     if (addr) {
         bzero(addr, sizeof(struct sockaddr_in));
@@ -40,7 +40,7 @@ void fill_socket_addr(struct sockaddr_in* addr)
     }
 }
 
-int check_recv_message(int sockfd)
+int CheckRecvMessage(int sockfd)
 {
     struct timeval t;
     fd_set rset;
@@ -76,22 +76,22 @@ void SendMessage(int flag, const char* msg)
     }
 
     struct sockaddr_in addr;
-    struct msghdr msg_send;
-    struct iovec iov_send;
+    struct msghdr msgSend;
+    struct iovec iovSend;
     char buf[TEST_BUF_SIZE];
 
-    fill_socket_addr(&addr);
-    memset(&msg_send, 0x0, sizeof(struct msghdr));
-    memset(&iov_send, 0x0, sizeof(struct iovec));
+    FillSocketAddr(&addr);
+    memset(&msgSend, 0x0, sizeof(struct msghdr));
+    memset(&iovSend, 0x0, sizeof(struct iovec));
 
-    iov_send.iov_base = buf;
-    iov_send.iov_len = TEST_BUF_SIZE;
-    snprintf(buf, sizeof(buf), "%s", text);
+    iovSend.iov_base = buf;
+    iovSend.iov_len = TEST_BUF_SIZE;
+    snprintf(buf, sizeof(buf), "%s", TEXT);
 
-    msg_send.msg_iovlen = 1;
-    msg_send.msg_iov = &iov_send;
-    msg_send.msg_control = 0;
-    msg_send.msg_controllen = 0;
+    msgSend.msg_iovlen = 1;
+    msgSend.msg_iov = &iovSend;
+    msgSend.msg_control = nullptr;
+    msgSend.msg_controllen = 0;
 
     if (connect(sockfd, reinterpret_cast<struct sockaddr*>(&addr), sizeof(addr)) == -1) {
         close(sockfd);
@@ -99,12 +99,12 @@ void SendMessage(int flag, const char* msg)
         return;
     }
 
-    int ret = sendmsg(sockfd, &msg_send, flag);
+    int ret = sendmsg(sockfd, &msgSend, flag);
     close(sockfd);
     EXPECT_TRUE(msg, ret > 0);
 }
 
-int recv_message(int flag, const char* msg)
+int RecvMessage(int flag, const char* msg)
 {
     int sockfd = socket(AF_INET, SOCK_DGRAM, IPPROTO_IP);
     if (sockfd == -1) {
@@ -113,25 +113,25 @@ int recv_message(int flag, const char* msg)
     }
 
     struct sockaddr_in addr;
-    struct msghdr msg_recv;
-    struct iovec iov_recv;
+    struct msghdr msgRecv;
+    struct iovec iovRecv;
     char buf[TEST_BUF_SIZE];
     char control[TEST_BUF_SIZE];
 
-    fill_socket_addr(&addr);
-    memset(&msg_recv, 0x0, sizeof(struct msghdr));
-    memset(&iov_recv, 0x0, sizeof(struct iovec));
+    FillSocketAddr(&addr);
+    memset(&msgRecv, 0x0, sizeof(struct msghdr));
+    memset(&iovRecv, 0x0, sizeof(struct iovec));
     memset(buf, 0x0, sizeof(buf));
 
-    iov_recv.iov_base = static_cast<void*>(buf);
-    iov_recv.iov_len = TEST_BUF_SIZE;
+    iovRecv.iov_base = static_cast<void*>(buf);
+    iovRecv.iov_len = TEST_BUF_SIZE;
 
-    msg_recv.msg_name = &addr;
-    msg_recv.msg_iovlen = 1;
-    msg_recv.msg_iov = &iov_recv;
-    msg_recv.msg_control = control;
-    msg_recv.msg_controllen = TEST_BUF_SIZE;
-    msg_recv.msg_flags = 0;
+    msgRecv.msg_name = &addr;
+    msgRecv.msg_iovlen = 1;
+    msgRecv.msg_iov = &iovRecv;
+    msgRecv.msg_control = control;
+    msgRecv.msg_controllen = TEST_BUF_SIZE;
+    msgRecv.msg_flags = 0;
 
     if (bind(sockfd, reinterpret_cast<struct sockaddr*>(&addr), sizeof(addr)) == -1) {
         close(sockfd);
@@ -139,12 +139,12 @@ int recv_message(int flag, const char* msg)
         exit(1);
     }
 
-    int ret = check_recv_message(sockfd);
+    int ret = CheckRecvMessage(sockfd);
     EXPECT_TRUE(msg, ret > 0);
     if (ret > 0) {
-        ret = recvmsg(sockfd, &msg_recv, flag);
+        ret = recvmsg(sockfd, &msgRecv, flag);
         EXPECT_TRUE(msg, ret > 0);
-        EXPECT_STREQ(msg, static_cast<char*>(iov_recv.iov_base), text);
+        EXPECT_STREQ(msg, static_cast<char*>(iovRecv.iov_base), TEXT);
     }
     close(sockfd);
     exit(0);
@@ -155,11 +155,11 @@ int recv_message(int flag, const char* msg)
  * @tc.desc      : Test recvmsg to recv messages through socket
  * @tc.level     : Level 0
  */
-void recvmsg_0100(void)
+void Recvmsg0100(void)
 {
     pid_t pid = fork();
     if (pid == 0) {
-        recv_message(0, "recvmsg_0100");
+        RecvMessage(0, "recvmsg_0100");
     } else if (pid > 0) {
         sleep(1);
         SendMessage(0, "recvmsg_0100");
@@ -169,13 +169,13 @@ void recvmsg_0100(void)
     }
 }
 
-static int RecvmsgTest_impl(void)
+static int RecvmsgTestImpl(void)
 {
-    recvmsg_0100();
+    Recvmsg0100();
     return t_status;
 }
 
 int RecvmsgTest(void)
 {
-    return RecvmsgTest_impl();
+    return RecvmsgTestImpl();
 }

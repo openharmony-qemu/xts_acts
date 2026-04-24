@@ -24,17 +24,18 @@ constexpr int LSEEK_OFFSET = 2;
  * @tc.desc      : Each parameter is valid, the op parameter is LOCK_SH, which can lock the file
  * @tc.level     : Level 0
  */
-void flock_0100(void)
+void Flock0100(void)
 {
     int result = -1;
     int fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, TEST_MODE);
-    EXPECT_NE("flock_0100", fd, -1);
+    EXPECT_NE("Flock0100", fd, -1);
     lseek(fd, LSEEK_OFFSET, SEEK_SET);
 
     result = flock(fd, LOCK_SH);
-    EXPECT_EQ("flock_0100", result, 0);
+    EXPECT_EQ("Flock0100", result, 0);
     close(fd);
-    remove("/data/storage/el2/base/cache/test.txt");
+    int removeRet = remove("/data/storage/el2/base/cache/test.txt");
+    EXPECT_EQ("Flock0100", removeRet, 0);
 }
 
 /**
@@ -42,17 +43,18 @@ void flock_0100(void)
  * @tc.desc      : Each parameter is valid, the op parameter is LOCK_SH|LOCK_NB, which can lock the file
  * @tc.level     : Level 1
  */
-void flock_0200(void)
+void Flock0200(void)
 {
     int result = -1;
     int fd = open("//data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, TEST_MODE);
-    EXPECT_NE("flock_0200", fd, -1);
+    EXPECT_NE("Flock0200", fd, -1);
     lseek(fd, LSEEK_OFFSET, SEEK_SET);
 
     result = flock(fd, LOCK_SH | LOCK_NB);
-    EXPECT_EQ("flock_0200", result, 0);
+    EXPECT_EQ("Flock0200", result, 0);
     close(fd);
-    remove("/data/storage/el2/base/cache/test.txt");
+    int removeRet = remove("/data/storage/el2/base/cache/test.txt");
+    EXPECT_EQ("Flock0200", removeRet, 0);
 }
 
 /**
@@ -60,17 +62,18 @@ void flock_0200(void)
  * @tc.desc      : Each parameter is valid, the op parameter is LOCK_EX, which can lock the file
  * @tc.level     : Level 0
  */
-void flock_0300(void)
+void Flock0300(void)
 {
     int result = -1;
     int fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, TEST_MODE);
-    EXPECT_NE("flock_0300", fd, -1);
+    EXPECT_NE("Flock0300", fd, -1);
     lseek(fd, LSEEK_OFFSET, SEEK_SET);
 
     result = flock(fd, LOCK_EX);
-    EXPECT_EQ("flock_0300", result, 0);
+    EXPECT_EQ("Flock0300", result, 0);
     close(fd);
-    remove("/data/storage/el2/base/cache/test.txt");
+    int removeRet = remove("/data/storage/el2/base/cache/test.txt");
+    EXPECT_EQ("Flock0300", removeRet, 0);
 }
 
 /**
@@ -78,17 +81,18 @@ void flock_0300(void)
  * @tc.desc      : Each parameter is valid, the op parameter is LOCK_EX|LOCK_NB, which can lock the file
  * @tc.level     : Level 1
  */
-void flock_0400(void)
+void Flock0400(void)
 {
     int result = -1;
     int fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, TEST_MODE);
-    EXPECT_NE("flock_0400", fd, -1);
+    EXPECT_NE("Flock0400", fd, -1);
     lseek(fd, LSEEK_OFFSET, SEEK_SET);
 
     result = flock(fd, LOCK_EX | LOCK_NB);
-    EXPECT_EQ("flock_0400", result, 0);
+    EXPECT_EQ("Flock0400", result, 0);
     close(fd);
-    remove("/data/storage/el2/base/cache/test.txt");
+    int removeRet = remove("/data/storage/el2/base/cache/test.txt");
+    EXPECT_EQ("Flock0400", removeRet, 0);
 }
 
 /**
@@ -96,17 +100,18 @@ void flock_0400(void)
  * @tc.desc      : Each parameter is valid, the op parameter is LOCK_UN, which can release the file lock state
  * @tc.level     : Level 0
  */
-void flock_0500(void)
+void Flock0500(void)
 {
     int result = -1;
     int fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, TEST_MODE);
-    EXPECT_NE("flock_0500", fd, -1);
+    EXPECT_NE("Flock0500", fd, -1);
     lseek(fd, LSEEK_OFFSET, SEEK_SET);
 
     result = flock(fd, LOCK_UN);
-    EXPECT_EQ("flock_0500", result, 0);
+    EXPECT_EQ("Flock0500", result, 0);
     close(fd);
-    remove("/data/storage/el2/base/cache/test.txt");
+    int removeRet = remove("/data/storage/el2/base/cache/test.txt");
+    EXPECT_EQ("Flock0500", removeRet, 0);
 }
 
 /**
@@ -114,10 +119,10 @@ void flock_0500(void)
  * @tc.desc      : The fd parameter is invalid, the file cannot be locked
  * @tc.level     : Level 2
  */
-void flock_0600(void)
+void Flock0600(void)
 {
     int result = flock(-1, LOCK_EX);
-    EXPECT_EQ("flock_0600", result, -1);
+    EXPECT_EQ("Flock0600", result, -1);
 }
 
 /**
@@ -125,34 +130,35 @@ void flock_0600(void)
  * @tc.desc      : The op parameter is invalid, the file cannot be locked
  * @tc.level     : Level 2
  */
-void flock_0700()
+void Flock0700()
 {
     int result = 0;
     int fd = open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, TEST_MODE);
-    EXPECT_NE("flock_0700", fd, -1);
+    EXPECT_NE("Flock0700", fd, -1);
     lseek(fd, LSEEK_OFFSET, SEEK_SET);
 
     result = flock(fd, 0);
-    EXPECT_EQ("flock_0700", result, -1);
+    EXPECT_EQ("Flock0700", result, -1);
     close(fd);
-    remove("/data/storage/el2/base/cache/test.txt");
+    int removeRet = remove("/data/storage/el2/base/cache/test.txt");
+    EXPECT_EQ("Flock0700", removeRet, 0);
 }
 
-static int FlockTest_impl(int argc, char* argv[])
+static int FlockTestImpl(int argc, char* argv[])
 {
-    flock_0100();
-    flock_0200();
-    flock_0300();
-    flock_0400();
-    flock_0500();
-    flock_0600();
-    flock_0700();
+    Flock0100();
+    Flock0200();
+    Flock0300();
+    Flock0400();
+    Flock0500();
+    Flock0600();
+    Flock0700();
     return t_status;
 }
 
 int FlockTest(void)
 {
     static char libcProg[] = "libc_test";
-    char* libcArgv[] = { libcProg, NULL };
-    return FlockTest_impl(1, libcArgv);
+    char* libcArgv[] = { libcProg, nullptr };
+    return FlockTestImpl(1, libcArgv);
 }

@@ -22,11 +22,11 @@ const int32_t COUNT_ZERO = 0;
 const int32_t COUNT_ONE = 1;
 
 /**
- * @tc.name      : __signbit_0100
+ * @tc.name      : Signbit0100
  * @tc.desc      : When the float value is 0, test the return value of the function
  * @tc.level     : Level 0
  */
-void __signbit_0100()
+void Signbit0100()
 {
     double x = 0;
     int result = __signbit(x);
@@ -34,11 +34,11 @@ void __signbit_0100()
 }
 
 /**
- * @tc.name      : __signbit_0200
+ * @tc.name      : Signbit0200
  * @tc.desc      : When the float value is 3.14, test the return value of the function
  * @tc.level     : Level 0
  */
-void __signbit_0200()
+void Signbit0200()
 {
     double x = 3.14;
     int result = __signbit(x);
@@ -46,11 +46,11 @@ void __signbit_0200()
 }
 
 /**
- * @tc.name      : __signbit_0300
+ * @tc.name      : Signbit0300
  * @tc.desc      : When the float value is -3.14, test the return value of the function
  * @tc.level     : Level 0
  */
-void __signbit_0300()
+void Signbit0300()
 {
     double x = -3.14;
     int result = __signbit(x);
@@ -58,12 +58,12 @@ void __signbit_0300()
 }
 
 /**
- * @tc.name      : __signbit_0400
+ * @tc.name      : Signbit0400
  * @tc.desc      : When the double value is negative zero (-0.0),
                    test the return value of the function
  * @tc.level     : Level 1
  */
-void __signbit_0400()
+void Signbit0400()
 {
     double x = -0.0;
     int result = __signbit(x);
@@ -71,12 +71,12 @@ void __signbit_0400()
 }
 
 /**
- * @tc.name      : __signbit_0500
+ * @tc.name      : Signbit0500
  * @tc.desc      : When the double value is positive infinity (INFINITY),
                    test the return value of the function
  * @tc.level     : Level 1
  */
-void __signbit_0500()
+void Signbit0500()
 {
     double x = INFINITY;
     int result = __signbit(x);
@@ -84,12 +84,12 @@ void __signbit_0500()
 }
 
 /**
- * @tc.name      : __signbit_0600
+ * @tc.name      : Signbit0600
  * @tc.desc      : When the double value is negative infinity (-INFINITY),
                    test the return value of the function
  * @tc.level     : Level 1
  */
-void __signbit_0600()
+void Signbit0600()
 {
     double x = -INFINITY;
     int result = __signbit(x);
@@ -97,27 +97,27 @@ void __signbit_0600()
 }
 
 /**
- * @tc.name      : __signbit_0700
+ * @tc.name      : Signbit0700
  * @tc.desc      : When the double value is NAN, test the return value of the function
  * @tc.level     : Level 1
  */
-void __signbit_0700()
+void Signbit0700()
 {
     double x = NAN;
     int result = __signbit(x);
     // NAN's sign bit is preserved, here we use negative NAN (optional, positive NAN returns COUNT_ZERO)
-    double x_neg_nan = -NAN;
-    int result_neg_nan = __signbit(x_neg_nan);
-    EXPECT_EQ("_signbit_0700", result_neg_nan, COUNT_ONE);
+    double xNegNan = -NAN;
+    int resultNegNan = __signbit(xNegNan);
+    EXPECT_EQ("_signbit_0700", resultNegNan, COUNT_ONE);
 }
 
 /**
- * @tc.name      : __signbit_0800
+ * @tc.name      : Signbit0800
  * @tc.desc      : When the float value is a small positive number (0.0001f),
                    test the return value of the function
  * @tc.level     : Level 0
  */
-void __signbit_0800()
+void Signbit0800()
 {
     float x = 0.0001f;
     int result = __signbit(x);
@@ -125,12 +125,12 @@ void __signbit_0800()
 }
 
 /**
- * @tc.name      : __signbit_0900
+ * @tc.name      : Signbit0900
  * @tc.desc      : When the float value is a small negative number (-0.0001f),
                    test the return value of the function
  * @tc.level     : Level 0
  */
-void __signbit_0900()
+void Signbit0900()
 {
     float x = -0.0001f;
     int result = __signbit(x);
@@ -138,12 +138,12 @@ void __signbit_0900()
 }
 
 /**
- * @tc.name      : __signbit_1000
+ * @tc.name      : Signbit1000
  * @tc.desc      : When the long double value is positive (123.456L), test the return value
                    of the function
  * @tc.level     : Level 0
  */
-void __signbit_1000()
+void Signbit1000()
 {
     long double x = 123.456L;
     int result = __signbit(x);
@@ -151,12 +151,12 @@ void __signbit_1000()
 }
 
 /**
- * @tc.name      : __signbit_1100
+ * @tc.name      : Signbit1100
  * @tc.desc      : When the long double value is negative (-123.456L), test the return value
                    of the function
  * @tc.level     : Level 0
  */
-void __signbit_1100()
+void Signbit1100()
 {
     long double x = -123.456L;
     int result = __signbit(x);
@@ -164,12 +164,12 @@ void __signbit_1100()
 }
 
 /**
- * @tc.name      : __signbit_1200
+ * @tc.name      : Signbit1200
  * @tc.desc      : When the double value is the maximum positive normal number (DBL_MAX),
                    test the return value of the function
  * @tc.level     : Level 0
  */
-void __signbit_1200()
+void Signbit1200()
 {
     double x = DBL_MAX;
     int result = __signbit(x);
@@ -177,12 +177,12 @@ void __signbit_1200()
 }
 
 /**
- * @tc.name      : __signbit_1300
+ * @tc.name      : Signbit1300
  * @tc.desc      : When the double value is the minimum negative normal number (-DBL_MAX),
                    test the return value of the function
  * @tc.level     : Level 0
  */
-void __signbit_1300()
+void Signbit1300()
 {
     double x = -DBL_MAX;
     int result = __signbit(x);
@@ -190,12 +190,12 @@ void __signbit_1300()
 }
 
 /**
- * @tc.name      : __signbit_1400
+ * @tc.name      : Signbit1400
  * @tc.desc      : When the double value is a positive subnormal number (DBL_MIN / 2.0),
                    test the return value of the function
  * @tc.level     : Level 2
  */
-void __signbit_1400()
+void Signbit1400()
 {
     double x = DBL_MIN / 2.0;
     int result = __signbit(x);
@@ -203,29 +203,28 @@ void __signbit_1400()
 }
 
 /**
- * @tc.name      : __signbit_1500
+ * @tc.name      : Signbit1500
  * @tc.desc      : When the double value is a negative subnormal number (-(DBL_MIN / 2.0)),
                    test the return value of the function
  * @tc.level     : Level 2
  */
-void __signbit_1500()
+void Signbit1500()
 {
     double x = -(DBL_MIN / 2.0);
     int result = __signbit(x);
     EXPECT_EQ("_signbit_1500", result, COUNT_ONE);
 }
 
-static TEST_FUN G_Fun_Array[] = {
-    __signbit_0100, __signbit_0200, __signbit_0300, __signbit_0400, __signbit_0500,
-    __signbit_0600, __signbit_0700, __signbit_0800, __signbit_0900, __signbit_1000,
-    __signbit_1100, __signbit_1200, __signbit_1300, __signbit_1400, __signbit_1500,
+static TEST_FUN g_gFunArray[] = {
+    Signbit0100, Signbit0200, Signbit0300, Signbit0400, Signbit0500, Signbit0600, Signbit0700, Signbit0800,
+    Signbit0900, Signbit1000, Signbit1100, Signbit1200, Signbit1300, Signbit1400, Signbit1500,
 };
 
-static int SignbitInnerTest_with_args(int argc, char* argv[])
+static int SignbitInnerTestWithArgs(int argc, char* argv[])
 {
-    int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
+    int num = sizeof(g_gFunArray) / sizeof(TEST_FUN);
     for (int pos = 0; pos < num; ++pos) {
-        G_Fun_Array[pos]();
+        g_gFunArray[pos]();
     }
 
     return t_status;
@@ -234,6 +233,6 @@ static int SignbitInnerTest_with_args(int argc, char* argv[])
 int SignbitInnerTest(void)
 {
     static char libcProg[] = "libc_test";
-    char* libcArgv[] = { libcProg, NULL };
-    return SignbitInnerTest_with_args(1, libcArgv);
+    char* libcArgv[] = { libcProg, nullptr };
+    return SignbitInnerTestWithArgs(1, libcArgv);
 }

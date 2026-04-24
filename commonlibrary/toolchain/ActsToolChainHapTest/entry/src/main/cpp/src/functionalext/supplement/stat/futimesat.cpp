@@ -19,7 +19,8 @@
 #include "test.h"
 #include "time64_functions.h"
 
-static const char* path = "/data/storage/el2/base/cache";
+static const char* PATH = "/data/storage/el2/base/cache";
+constexpr size_t WRITE_LEN = 5;
 
 extern "C" int __futimesat_time64(int, const char*, const struct timeval[2]);
 /**
@@ -27,19 +28,19 @@ extern "C" int __futimesat_time64(int, const char*, const struct timeval[2]);
  * @tc.desc      : Change timestamps of a file relative to a directory file descriptor
  * @tc.level     : Level 0
  */
-void futimesat_0100(void)
+void Futimesat0100(void)
 {
-    int dir_fd = open(path, O_RDONLY | O_DIRECTORY);
-    if (dir_fd < 0) {
+    int dirFd = open(PATH, O_RDONLY | O_DIRECTORY);
+    if (dirFd < 0) {
         t_error("%s open failed\n", __func__);
     }
 
-    int fd = openat(dir_fd, "test.txt", O_CREAT | O_RDWR | O_EXCL, 0666);
+    int fd = openat(dirFd, "test.txt", O_CREAT | O_RDWR | O_EXCL, 0666);
     if (fd < 0) {
         t_error("%s openat failed\n", __func__);
     }
 
-    write(fd, "helloworld", 5);
+    write(fd, "helloworld", WRITE_LEN);
 
     struct stat st1;
     if (fstat(fd, &st1) != 0) {
@@ -53,13 +54,13 @@ void futimesat_0100(void)
     tv[1].tv_sec = st1.st_mtime + 1;
     tv[1].tv_usec = 0;
 
-    int result = futimesat(dir_fd, "test.txt", tv);
+    int result = futimesat(dirFd, "test.txt", tv);
     if (result != 0) {
         t_error("%s futimesat failed\n", __func__);
     }
 
     struct stat st2;
-    if (fstatat(dir_fd, "test.txt", &st2, 0) != 0) {
+    if (fstatat(dirFd, "test.txt", &st2, 0) != 0) {
         t_error("%s fstatat failed\n", __func__);
     }
 
@@ -67,11 +68,11 @@ void futimesat_0100(void)
         t_error("%s stat shows different mtime\n", __func__);
     }
 
-    if (unlinkat(dir_fd, "test.txt", 0) != 0) {
+    if (unlinkat(dirFd, "test.txt", 0) != 0) {
         t_error("%s unlinkat failed\n", __func__);
     }
 
-    close(dir_fd);
+    close(dirFd);
 }
 
 /**
@@ -79,28 +80,28 @@ void futimesat_0100(void)
  * @tc.desc      : Test the return value of the function when timeval is NULL
  * @tc.level     : Level 1
  */
-void futimesat_0200(void)
+void Futimesat0200(void)
 {
-    int dir_fd = open(path, O_RDONLY | O_DIRECTORY);
-    if (dir_fd < 0) {
+    int dirFd = open(PATH, O_RDONLY | O_DIRECTORY);
+    if (dirFd < 0) {
         t_error("%s open failed\n", __func__);
     }
 
-    int fd = openat(dir_fd, "test.txt", O_CREAT | O_RDWR | O_EXCL, 0666);
+    int fd = openat(dirFd, "test.txt", O_CREAT | O_RDWR | O_EXCL, 0666);
     if (fd < 0) {
         t_error("%s openat failed\n", __func__);
     }
 
-    int result = futimesat(dir_fd, "test.txt", NULL);
+    int result = futimesat(dirFd, "test.txt", nullptr);
     if (result != 0) {
         t_error("%s futimesat failed\n", __func__);
     }
 
-    if (unlinkat(dir_fd, "test.txt", 0) != 0) {
+    if (unlinkat(dirFd, "test.txt", 0) != 0) {
         t_error("%s unlinkat failed\n", __func__);
     }
 
-    close(dir_fd);
+    close(dirFd);
 }
 
 /**
@@ -108,9 +109,9 @@ void futimesat_0200(void)
  * @tc.desc      : Test the return value of the function when dirfd is invalid
  * @tc.level     : Level 2
  */
-void futimesat_0300(void)
+void Futimesat0300(void)
 {
-    int result = futimesat(-1, "/data/storage/el2/base/cache/test.txt", NULL);
+    int result = futimesat(-1, "/data/storage/el2/base/cache/test.txt", nullptr);
     if (result != -1) {
         t_error("%s futimesat should be failed\n", __func__);
     }
@@ -121,9 +122,9 @@ void futimesat_0300(void)
  * @tc.desc      : Test the return value of the function when pathname is invalid
  * @tc.level     : Level 2
  */
-void futimesat_0400(void)
+void Futimesat0400(void)
 {
-    int result = futimesat(AT_FDCWD, NULL, NULL);
+    int result = futimesat(AT_FDCWD, nullptr, nullptr);
     if (result != -1) {
         t_error("%s futimesat should be failed\n", __func__);
     }
@@ -134,43 +135,43 @@ void futimesat_0400(void)
  * @tc.desc      : Test the return value of the function when timeval is NULL
  * @tc.level     : Level 1
  */
-void futimesat_time64_0200(void)
+void FutimesatTime640200(void)
 {
-    int dir_fd = open(path, O_RDONLY | O_DIRECTORY);
-    if (dir_fd < 0) {
+    int dirFd = open(PATH, O_RDONLY | O_DIRECTORY);
+    if (dirFd < 0) {
         t_error("%s open failed\n", __func__);
     }
 
-    int fd = openat(dir_fd, "test.txt", O_CREAT | O_RDWR | O_EXCL, 0666);
+    int fd = openat(dirFd, "test.txt", O_CREAT | O_RDWR | O_EXCL, 0666);
     if (fd < 0) {
         t_error("%s openat failed\n", __func__);
     }
 
-    int result = __futimesat_time64(dir_fd, "test.txt", NULL);
+    int result = __futimesat_time64(dirFd, "test.txt", nullptr);
     if (result != 0) {
         t_error("%s __futimesat_time64 failed\n", __func__);
     }
 
-    if (unlinkat(dir_fd, "test.txt", 0) != 0) {
+    if (unlinkat(dirFd, "test.txt", 0) != 0) {
         t_error("%s unlinkat failed\n", __func__);
     }
 
-    close(dir_fd);
+    close(dirFd);
 }
 
-static int FutimesatTest_impl(int argc, char* argv[])
+static int FutimesatTestImpl(int argc, char* argv[])
 {
-    futimesat_0100();
-    futimesat_0200();
-    futimesat_0300();
-    futimesat_0400();
-    futimesat_time64_0200();
+    Futimesat0100();
+    Futimesat0200();
+    Futimesat0300();
+    Futimesat0400();
+    FutimesatTime640200();
     return t_status;
 }
 
 int FutimesatTest(void)
 {
     static char libcProg[] = "libc_test";
-    char* libcArgv[] = { libcProg, NULL };
-    return FutimesatTest_impl(1, libcArgv);
+    char* libcArgv[] = { libcProg, nullptr };
+    return FutimesatTestImpl(1, libcArgv);
 }

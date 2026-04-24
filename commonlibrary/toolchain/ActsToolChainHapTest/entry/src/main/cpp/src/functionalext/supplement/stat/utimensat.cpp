@@ -21,7 +21,7 @@
 #include "functionalext.h"
 #include "time64_functions.h"
 
-const long sec = 123840;
+const long SEC = 123840;
 
 extern "C" int __utimensat_time64(int, const char*, const struct timespec[2], int);
 /**
@@ -29,12 +29,12 @@ extern "C" int __utimensat_time64(int, const char*, const struct timespec[2], in
  * @tc.desc      : change file timestamps with nanosecond precision
  * @tc.level     : Level 0
  */
-void utimensat_0100(void)
+void Utimensat0100(void)
 {
     char path[PATH_MAX] = { 0 };
     FILE_ABSOLUTE_PATH(STR_FILE_TXT, path);
     int fd = open(path, O_RDWR | O_CREAT, TEST_MODE);
-    struct timespec times[] = { { .tv_sec = 0 }, { .tv_sec = sec } };
+    struct timespec times[] = { { .tv_sec = 0 }, { .tv_sec = SEC } };
 
     int result = utimensat(fd, path, times, 0);
     if (result != 0) {
@@ -49,7 +49,7 @@ void utimensat_0100(void)
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
-    if (statbuf.st_mtim.tv_sec != sec) {
+    if (statbuf.st_mtim.tv_sec != SEC) {
         t_error("%s failed: statbuf.st_mtim.tv_sec = %ld\n", __func__, statbuf.st_mtim.tv_sec);
     }
 
@@ -61,7 +61,7 @@ void utimensat_0100(void)
  * @tc.desc      : change file timestamps with invalid parameters
  * @tc.level     : Level 2
  */
-void utimensat_0200(void)
+void Utimensat0200(void)
 {
     errno = 0;
     int result = utimensat(-1, nullptr, nullptr, 0);
@@ -79,12 +79,12 @@ void utimensat_0200(void)
  * @tc.desc      : change file timestamps with nanosecond precision
  * @tc.level     : Level 0
  */
-void utimensat_time64_0100(void)
+void UtimensatTime640100(void)
 {
     char path[PATH_MAX] = { 0 };
     FILE_ABSOLUTE_PATH(STR_FILE_TXT, path);
     int fd = open(path, O_RDWR | O_CREAT, TEST_MODE);
-    struct timespec times[] = { { .tv_sec = 0 }, { .tv_sec = sec } };
+    struct timespec times[] = { { .tv_sec = 0 }, { .tv_sec = SEC } };
 
     int result = __utimensat_time64(fd, path, times, 0);
     if (result != 0) {
@@ -99,18 +99,18 @@ void utimensat_time64_0100(void)
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
-    if (statbuf.st_mtim.tv_sec != sec) {
+    if (statbuf.st_mtim.tv_sec != SEC) {
         t_error("%s failed: statbuf.st_mtim.tv_sec = %ld\n", __func__, statbuf.st_mtim.tv_sec);
     }
 
     remove(path);
 }
 
-static int UtimensatTest_impl(int argc, char* argv[])
+static int UtimensatTestImpl(int argc, char* argv[])
 {
-    utimensat_0100();
-    utimensat_0200();
-    utimensat_time64_0100();
+    Utimensat0100();
+    Utimensat0200();
+    UtimensatTime640100();
 
     return t_status;
 }
@@ -119,5 +119,5 @@ int UtimensatTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return UtimensatTest_impl(1, libcArgv);
+    return UtimensatTestImpl(1, libcArgv);
 }

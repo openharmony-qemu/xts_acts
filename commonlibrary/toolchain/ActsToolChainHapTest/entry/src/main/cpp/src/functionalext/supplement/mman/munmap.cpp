@@ -22,32 +22,35 @@
  * @tc.desc      : Verify that the parameters are valid to unmap the memory
  * @tc.level     : Level 0
  */
-void munmap_0100(void)
+void Munmap0100(void)
 {
     const char* ptr = "/data/storage/el2/base/cache/test.txt";
     const char str[] = "this is a sample!";
     FILE* fptr = fopen(ptr, "w+");
-    EXPECT_PTRNE("munmap_0100", fptr, NULL);
+    EXPECT_PTRNE("Munmap0100", fptr, nullptr);
 
-    struct stat statbuff;
-    fwrite(str, sizeof(char), strlen(str), fptr);
-    fseek(fptr, 0L, SEEK_SET);
-    void* p_map = mmap(NULL, sizeof(char) * 10, PROT_READ | PROT_WRITE, MAP_SHARED, fileno(fptr), 0);
-    fclose(fptr);
-    int data = munmap(p_map, sizeof(char) * 10);
-    EXPECT_EQ("munmap_0100", data, 0);
-    remove(ptr);
+    size_t writeCount = fwrite(str, sizeof(char), strlen(str), fptr);
+    EXPECT_EQ("Munmap0100", writeCount, strlen(str));
+    int seekRet = fseek(fptr, 0L, SEEK_SET);
+    EXPECT_EQ("Munmap0100", seekRet, 0);
+    void* pMap = mmap(nullptr, sizeof(char) * 10, PROT_READ | PROT_WRITE, MAP_SHARED, fileno(fptr), 0);
+    int closeRet = fclose(fptr);
+    EXPECT_EQ("Munmap0100", closeRet, 0);
+    int data = munmap(pMap, sizeof(char) * 10);
+    EXPECT_EQ("Munmap0100", data, 0);
+    int removeRet = remove(ptr);
+    EXPECT_EQ("Munmap0100", removeRet, 0);
 }
 
-static int MunmapTest_impl(int argc, char* argv[])
+static int MunmapTestImpl(int argc, char* argv[])
 {
-    munmap_0100();
+    Munmap0100();
     return t_status;
 }
 
 int MunmapTest(void)
 {
     static char libcProg[] = "libc_test";
-    char* libcArgv[] = { libcProg, NULL };
-    return MunmapTest_impl(1, libcArgv);
+    char* libcArgv[] = { libcProg, nullptr };
+    return MunmapTestImpl(1, libcArgv);
 }

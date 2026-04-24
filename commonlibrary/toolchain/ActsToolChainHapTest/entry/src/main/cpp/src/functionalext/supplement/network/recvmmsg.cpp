@@ -35,7 +35,8 @@ void Sendsss(void)
     int sockfd;
     struct sockaddr_in addr;
     struct mmsghdr msg[2];
-    struct iovec msg1[2], msg2;
+    struct iovec msg1[2];
+    struct iovec msg2;
     int retval;
 
     sockfd = socket(AF_INET, SOCK_DGRAM, 0);

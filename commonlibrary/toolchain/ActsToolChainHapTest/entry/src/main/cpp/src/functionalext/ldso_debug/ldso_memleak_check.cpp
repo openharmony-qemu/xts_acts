@@ -17,20 +17,26 @@
 #include "functionalext.h"
 
 #define MAX_BUF 256
-static const char* g_libPath_1 = "/data/storage/el1/bundle/libs/arm/libldso_debug_test_lib_6.so";
-static const char* g_libPath_2 = "/data/storage/el1/bundle/libs/arm/libldso_debug_test_lib_8.so";
-static const char* g_libPath_3 = "/data/storage/el1/bundle/libs/arm/libldso_debug_test_lib_9.so";
+static const char LIB_PATH_1[] = "/data/storage/el1/bundle/libs/arm/libldso_debug_test_lib_6.so";
+static const char LIB_PATH_1_ARM64[] = "/data/storage/el1/bundle/libs/arm64/libldso_debug_test_lib_6.so";
+static const char LIB_PATH_2[] = "/data/storage/el1/bundle/libs/arm/libldso_debug_test_lib_8.so";
+static const char LIB_PATH_2_ARM64[] = "/data/storage/el1/bundle/libs/arm64/libldso_debug_test_lib_8.so";
+static const char LIB_PATH_3[] = "/data/storage/el1/bundle/libs/arm/libldso_debug_test_lib_9.so";
+static const char LIB_PATH_3_ARM64[] = "/data/storage/el1/bundle/libs/arm64/libldso_debug_test_lib_9.so";
 
 static bool FileExists(const char* path)
 {
     return (path != nullptr && access(path, F_OK) == 0);
 }
 
-static int check_loaded(char* so)
+static int CheckLoaded(char* so)
 {
     int pid = getpid();
     char path[MAX_BUF] = { 0 };
-    sprintf(path, "/proc/%d/maps", pid);
+    int ret = snprintf(path, sizeof(path), "/proc/%d/maps", pid);
+    if (ret < 0) {
+        return 0;
+    }
     FILE* fp = fopen(path, "r");
     if (fp == nullptr) {
         return 0;
@@ -39,11 +45,13 @@ static int check_loaded(char* so)
     char buffer[MAX_BUF] = { 0 };
     while (fgets(buffer, MAX_BUF, fp) != nullptr) {
         if (strstr(buffer, so) != nullptr) {
-            fclose(fp);
+            int closeRet = fclose(fp);
+            EXPECT_EQ("CheckLoaded", closeRet, 0);
             return 1;
         }
     }
-    fclose(fp);
+    int closeRet = fclose(fp);
+    EXPECT_EQ("CheckLoaded", closeRet, 0);
     return 0;
 }
 
@@ -54,24 +62,22 @@ static int check_loaded(char* so)
  *                 so the dlopen will fail, and we will check there is no memleak for so libldso_debug_test_lib_6.so
  * @tc.level     : Level 0
  */
-void ldso_memleak_check_0100(void)
+void LdsoMemleakCheck0100(void)
 {
-    if (!FileExists(g_libPath_1)) {
-        g_libPath_1 = "/data/storage/el1/bundle/libs/arm64/libldso_debug_test_lib_6.so";
-    }
-    if (!FileExists(g_libPath_1)) {
+    const char* libPath1 = FileExists(LIB_PATH_1) ? LIB_PATH_1 : LIB_PATH_1_ARM64;
+    if (!FileExists(libPath1)) {
         return;
     }
-    void* handle = dlopen(g_libPath_1, RTLD_NOW);
+    void* handle = dlopen(libPath1, RTLD_NOW);
     if (handle != nullptr) {
-        t_error("dlopen(name=%s, mode=%d) should fail\n", g_libPath_1, RTLD_NOW);
+        t_error("dlopen(name=%s, mode=%d) should fail\n", libPath1, RTLD_NOW);
     }
     char* error = dlerror();
     if (error != nullptr && strstr(error, "libldso_debug_test_lib_7.so") == nullptr) {
         t_error("libldso_debug_test_lib_7.so should be not found, %s\n", error);
     }
-    if (check_loaded(const_cast<char*>(g_libPath_1))) {
-        t_error("This so file should not exist in maps, %s\n", const_cast<char*>(g_libPath_1));
+    if (CheckLoaded(const_cast<char*>(libPath1))) {
+        t_error("This so file should not exist in maps, %s\n", const_cast<char*>(libPath1));
     }
 }
 
@@ -84,31 +90,29 @@ void ldso_memleak_check_0100(void)
  *                 and libldso_debug_test_lib_9.so
  * @tc.level     : Level 0
  */
-void ldso_memleak_check_0200(void)
+void LdsoMemleakCheck0200(void)
 {
-    if (!FileExists(g_libPath_2)) {
-        g_libPath_2 = "/data/storage/el1/bundle/libs/arm64/libldso_debug_test_lib_8.so";
-        g_libPath_3 = "/data/storage/el1/bundle/libs/arm64/libldso_debug_test_lib_9.so";
-    }
-    if (!FileExists(g_libPath_2)) {
+    const char* libPath2 = FileExists(LIB_PATH_2) ? LIB_PATH_2 : LIB_PATH_2_ARM64;
+    const char* libPath3 = FileExists(LIB_PATH_3) ? LIB_PATH_3 : LIB_PATH_3_ARM64;
+    if (!FileExists(libPath2)) {
         return;
     }
-    void* handle = dlopen(g_libPath_2, RTLD_NOW);
+    void* handle = dlopen(libPath2, RTLD_NOW);
     if (handle != nullptr) {
-        t_error("dlopen(name=%s, mode=%d) should fail\n", g_libPath_2, RTLD_NOW);
+        t_error("dlopen(name=%s, mode=%d) should fail\n", libPath2, RTLD_NOW);
     }
-    if (check_loaded(const_cast<char*>(g_libPath_2))) {
-        t_error("This so file should not exist in maps, %s\n", const_cast<char*>(g_libPath_2));
+    if (CheckLoaded(const_cast<char*>(libPath2))) {
+        t_error("This so file should not exist in maps, %s\n", const_cast<char*>(libPath2));
     }
-    if (check_loaded(const_cast<char*>(g_libPath_3))) {
-        t_error("This so file should not exist in maps, %s\n", const_cast<char*>(g_libPath_3));
+    if (CheckLoaded(const_cast<char*>(libPath3))) {
+        t_error("This so file should not exist in maps, %s\n", const_cast<char*>(libPath3));
     }
 }
 
-static int LdsoMemleakCheckTest_impl(int argc, char* argv[])
+static int LdsoMemleakCheckTestImpl(int argc, char* argv[])
 {
-    ldso_memleak_check_0100();
-    ldso_memleak_check_0200();
+    LdsoMemleakCheck0100();
+    LdsoMemleakCheck0200();
     return t_status;
 }
 
@@ -116,5 +120,5 @@ int LdsoMemleakCheckTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return LdsoMemleakCheckTest_impl(1, libcArgv);
+    return LdsoMemleakCheckTestImpl(1, libcArgv);
 }

@@ -21,40 +21,41 @@
 #define TEST_BUFFER_SIZE 128
 #define TEST_DATA_COUNT 10
 
-struct inotify_test {
+struct InotifyTestData {
     int fd;
     int wd;
     uint32_t mask;
 };
 
-static int inotify_init_test(void)
+static int InotifyInitTest(void)
 {
     errno = 0;
     return inotify_init();
 }
 
-static int inotify_add_watch_test(int fd, uint32_t mask)
+static int InotifyAddWatchTest(int fd, uint32_t mask)
 {
     errno = 0;
     return inotify_add_watch(fd, "/data/storage/el2/base/cache/", mask);
 }
 
-static int inotify_rm_watch_test(int fd, int wd)
+static int InotifyRmWatchTest(int fd, int wd)
 {
     errno = 0;
     return inotify_rm_watch(fd, wd);
 }
 
-static void inotify_test(const char* msg)
+static void RunInotifyTest(const char* msg)
 {
-    int fd = inotify_init_test();
+    int fd = InotifyInitTest();
     EXPECT_NE(msg, fd, ERREXPECT);
     if (fd == -1) {
         return;
     }
 
-    int i, j;
-    struct inotify_test data[TEST_DATA_COUNT] = {
+    int i;
+    int j;
+    struct InotifyTestData data[TEST_DATA_COUNT] = {
         { .fd = fd, .wd = -1, .mask = IN_ACCESS },        { .fd = fd, .wd = -1, .mask = IN_MODIFY },
         { .fd = fd, .wd = -1, .mask = IN_ATTRIB },        { .fd = fd, .wd = -1, .mask = IN_CLOSE_WRITE },
         { .fd = fd, .wd = -1, .mask = IN_CLOSE_NOWRITE }, { .fd = fd, .wd = -1, .mask = IN_OPEN },
@@ -63,14 +64,14 @@ static void inotify_test(const char* msg)
     };
 
     for (i = 0; i < TEST_DATA_COUNT; i++) {
-        data[i].wd = inotify_add_watch_test(fd, data[i].mask);
+        data[i].wd = InotifyAddWatchTest(fd, data[i].mask);
         EXPECT_NE(msg, data[i].wd, ERREXPECT);
     }
 
     for (i = 0; i < TEST_DATA_COUNT; i++) {
         for (j = i; j >= 0; j--) {
             if (data[j].wd != data[i].wd) {
-                int ret = inotify_rm_watch_test(fd, data[i].wd);
+                int ret = InotifyRmWatchTest(fd, data[i].wd);
                 EXPECT_EQ(msg, ret, CMPFLAG);
                 break;
             }
@@ -80,37 +81,37 @@ static void inotify_test(const char* msg)
 }
 
 /**
- * @tc.name      : inotify_init_0100
+ * @tc.name      : InotifyInit0100
  * @tc.desc      : initialize an inotify instance
  * @tc.level     : Level 0
  */
-void inotify_init_0100(void)
+void InotifyInit0100(void)
 {
-    int fd = inotify_init_test();
-    EXPECT_NE("inotify_init_0100", fd, ERREXPECT);
-    EXPECT_EQ("inotify_init_0100", errno, CMPFLAG);
+    int fd = InotifyInitTest();
+    EXPECT_NE("InotifyInit0100", fd, ERREXPECT);
+    EXPECT_EQ("InotifyInit0100", errno, CMPFLAG);
     close(fd);
 }
 
 /**
- * @tc.name      : inotify_add_watch_0100
+ * @tc.name      : InotifyAddWatch0100
  * @tc.desc      : add some watches to an initialized inotify instance
  * @tc.level     : Level 0
  */
-void inotify_add_watch_0100(void)
+void InotifyAddWatch0100(void)
 {
-    inotify_test("inotify_add_watch_0100");
+    RunInotifyTest("InotifyAddWatch0100");
 }
 
 /**
- * @tc.name      : inotify_add_watch_0200
+ * @tc.name      : InotifyAddWatch0200
  * @tc.desc      : Using the wrong fd, add some monitoring events to the inotify instance
  * @tc.level     : Level 2
  */
-void inotify_add_watch_0200(void)
+void InotifyAddWatch0200(void)
 {
     int i;
-    struct inotify_test data[TEST_DATA_COUNT] = {
+    struct InotifyTestData data[TEST_DATA_COUNT] = {
         { .fd = -1, .wd = -1, .mask = IN_ACCESS },        { .fd = -1, .wd = -1, .mask = IN_MODIFY },
         { .fd = -1, .wd = -1, .mask = IN_ATTRIB },        { .fd = -1, .wd = -1, .mask = IN_CLOSE_WRITE },
         { .fd = -1, .wd = -1, .mask = IN_CLOSE_NOWRITE }, { .fd = -1, .wd = -1, .mask = IN_OPEN },
@@ -119,54 +120,54 @@ void inotify_add_watch_0200(void)
     };
 
     for (i = 0; i < TEST_DATA_COUNT; i++) {
-        data[i].wd = inotify_add_watch_test(data[i].fd, data[i].mask);
-        EXPECT_EQ("inotify_add_watch_0100", data[i].wd, ERREXPECT);
+        data[i].wd = InotifyAddWatchTest(data[i].fd, data[i].mask);
+        EXPECT_EQ("InotifyAddWatch0100", data[i].wd, ERREXPECT);
     }
 }
 
 /**
- * @tc.name      : inotify_rm_watch_0100
+ * @tc.name      : InotifyRmWatch0100
  * @tc.desc      : Remove some monitoring events from the inotify instance
  * @tc.level     : Level 0
  */
-void inotify_rm_watch_0100(void)
+void InotifyRmWatch0100(void)
 {
-    inotify_test("inotify_rm_watch_0100");
+    RunInotifyTest("InotifyRmWatch0100");
 }
 
 /**
- * @tc.name      : inotify_rm_watch_0200
+ * @tc.name      : InotifyRmWatch0200
  * @tc.desc      : Provide exception parameter to remove monitoring event from inotify instance
  * @tc.level     : Level 2
  */
-void inotify_rm_watch_0200(void)
+void InotifyRmWatch0200(void)
 {
-    int fd = inotify_init_test();
+    int fd = InotifyInitTest();
     if (fd == -1) {
         return;
     }
 
     int ret = inotify_rm_watch(fd, -1);
-    EXPECT_EQ("inotify_rm_watch_0200", ret, ERREXPECT);
+    EXPECT_EQ("InotifyRmWatch0200", ret, ERREXPECT);
     close(fd);
 
     ret = inotify_rm_watch(-1, -1);
-    EXPECT_EQ("inotify_rm_watch_0200", ret, ERREXPECT);
+    EXPECT_EQ("InotifyRmWatch0200", ret, ERREXPECT);
 }
 
-static int InotifyTest_impl(void)
+static int InotifyTestImpl(void)
 {
-    inotify_init_0100();
+    InotifyInit0100();
 
-    inotify_add_watch_0100();
-    inotify_add_watch_0200();
+    InotifyAddWatch0100();
+    InotifyAddWatch0200();
 
-    inotify_rm_watch_0100();
-    inotify_rm_watch_0200();
+    InotifyRmWatch0100();
+    InotifyRmWatch0200();
     return t_status;
 }
 
 int InotifyTest(void)
 {
-    return InotifyTest_impl();
+    return InotifyTestImpl();
 }

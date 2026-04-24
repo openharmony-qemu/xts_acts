@@ -27,6 +27,7 @@
 typedef void (*TEST_FUN)();
 #define BUF_SIZE (100)
 #define PORT 2288
+constexpr int LISTEN_BACKLOG = 2;
 #define WAIT() pthread_barrier_wait(&g_barrier)
 static const char* CLI_MSG = "Hello, this is client";
 static const char* LOCAL_HOST = "127.0.0.1";
@@ -53,7 +54,7 @@ static void* SampleServerTask()
         *ret = -1;
         return ret;
     }
-    rets = listen(sListen, 2);
+    rets = listen(sListen, LISTEN_BACKLOG);
     if (rets != 0) {
         close(sListen);
         *ret = -1;
@@ -119,7 +120,7 @@ void* SampleServerNullTask()
         *ret = -1;
         return ret;
     }
-    rets = listen(sListen, 2);
+    rets = listen(sListen, LISTEN_BACKLOG);
     if (rets != 0) {
         close(sListen);
         *ret = -1;

@@ -25,17 +25,19 @@
  * @tc.desc      : The test stops the socket transmission through the shutdown function
  * @tc.level     : Level 0
  */
-void shutdown_0100(void)
+void Shutdown0100(void)
 {
+    constexpr int TEST_PORT = 9898;
+    constexpr int LISTEN_BACKLOG = 5;
     int sd = socket(AF_INET, SOCK_STREAM, 0);
-    struct sockaddr_in server_addr;
-    bzero(&server_addr, sizeof(server_addr));
-    server_addr.sin_addr.s_addr = INADDR_ANY;
-    server_addr.sin_addr.s_addr = INADDR_ANY;
-    server_addr.sin_port = htons(9898);
-    server_addr.sin_family = AF_INET;
-    bind(sd, (struct sockaddr*)(&server_addr), sizeof(server_addr));
-    listen(sd, 5);
+    struct sockaddr_in serverAddr;
+    bzero(&serverAddr, sizeof(serverAddr));
+    serverAddr.sin_addr.s_addr = INADDR_ANY;
+    serverAddr.sin_addr.s_addr = INADDR_ANY;
+    serverAddr.sin_port = htons(TEST_PORT);
+    serverAddr.sin_family = AF_INET;
+    bind(sd, reinterpret_cast<struct sockaddr*>(&serverAddr), sizeof(serverAddr));
+    listen(sd, LISTEN_BACKLOG);
     int result = shutdown(sd, 0);
     if (result != 0) {
         t_error("%s shutdown get result is %d are not 0", __func__, result);
@@ -43,9 +45,9 @@ void shutdown_0100(void)
     close(sd);
 }
 
-static int ShutdownTest_impl(int argc, char* argv[])
+static int ShutdownTestImpl(int argc, char* argv[])
 {
-    shutdown_0100();
+    Shutdown0100();
     return t_status;
 }
 
@@ -53,5 +55,5 @@ int ShutdownTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return ShutdownTest_impl(1, libcArgv);
+    return ShutdownTestImpl(1, libcArgv);
 }

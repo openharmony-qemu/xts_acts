@@ -32,7 +32,7 @@
 #include "functionalext.h"
 
 #define PORT 22882
-static const char* g_localHost = "127.0.0.1";
+static const char* LOCAL_HOST = "127.0.0.1";
 #define BUF_SIZE (100)
 static pthread_barrier_t g_barrier;
 #define WAIT() pthread_barrier_wait(&g_barrier)
@@ -50,7 +50,7 @@ void* SampleServerTask()
     rets = setsockopt(sListen, SOL_SOCKET, SO_REUSEADDR, &flag, sizeof(int));
     struct sockaddr_in srvAddr = { 0 };
     srvAddr.sin_family = AF_INET;
-    srvAddr.sin_addr.s_addr = inet_addr(g_localHost);
+    srvAddr.sin_addr.s_addr = inet_addr(LOCAL_HOST);
     srvAddr.sin_port = htons(PORT);
     rets = bind(sListen, reinterpret_cast<struct sockaddr*>(&srvAddr), sizeof(srvAddr));
     if (rets != 0) {
@@ -59,7 +59,8 @@ void* SampleServerTask()
         *ret = -1;
         return ret;
     }
-    rets = listen(sListen, 2);
+    constexpr int LISTEN_BACKLOG = 2;
+    rets = listen(sListen, LISTEN_BACKLOG);
     if (rets != 0) {
         WAIT();
         close(sListen);
@@ -80,7 +81,7 @@ void* SampleServerTask()
     static char recordAddr[BUF_SIZE + 1] = { 0 };
     memset(recordAddr, '\0', BUF_SIZE);
     strcpy(recordAddr, inet_ntoa((reinterpret_cast<struct sockaddr_in*>(&addr))->sin_addr));
-    EXPECT_STREQ("getpeername_0100", g_localHost, recordAddr);
+    EXPECT_STREQ("getpeername_0100", LOCAL_HOST, recordAddr);
     EXPECT_EQ("getpeername_0100", 0, rets);
     close(sClient);
     close(sListen);
@@ -93,7 +94,7 @@ void* SampleClientTask()
     WAIT();
     struct sockaddr_in srvAddr = { 0 };
     srvAddr.sin_family = AF_INET;
-    srvAddr.sin_addr.s_addr = inet_addr(g_localHost);
+    srvAddr.sin_addr.s_addr = inet_addr(LOCAL_HOST);
     srvAddr.sin_port = htons(PORT);
     int ret = connect(clnFd, reinterpret_cast<struct sockaddr*>(&srvAddr), sizeof(srvAddr));
     EXPECT_EQ("getpeername_0100", 0, ret);
@@ -106,22 +107,22 @@ void* SampleClientTask()
  * @tc.desc      : Get the address associated with the socket
  * @tc.level     : Level 0
  */
-void getpeername_0100()
+void Getpeername0100()
 {
     pthread_t srv;
     pthread_t cli;
-    int ret = pthread_barrier_init(&g_barrier, 0, 2);
+    int ret = pthread_barrier_init(&g_barrier, nullptr, 2);
     EXPECT_EQ("getpeername_0100", 0, ret);
 
-    typedef int (*pthread_create_func)(pthread_t*, const pthread_attr_t*, void* (*)(), void*);
-    pthread_create_func pthread_create = reinterpret_cast<pthread_create_func>(dlsym(RTLD_DEFAULT, "pthread_create"));
-    if (!pthread_create) {
-        EXPECT_PTRNE("getpeername_0100", pthread_create, nullptr);
+    typedef int (*PthreadCreateFunc)(pthread_t*, const pthread_attr_t*, void* (*)(), void*);
+    PthreadCreateFunc pthreadCreate = reinterpret_cast<PthreadCreateFunc>(dlsym(RTLD_DEFAULT, "pthread_create"));
+    if (!pthreadCreate) {
+        EXPECT_PTRNE("getpeername_0100", pthreadCreate, nullptr);
         return;
     }
-    ret = pthread_create(&srv, nullptr, SampleServerTask, nullptr);
+    ret = pthreadCreate(&srv, nullptr, SampleServerTask, nullptr);
     EXPECT_EQ("getpeername_0100", 0, ret);
-    ret = pthread_create(&cli, nullptr, SampleClientTask, nullptr);
+    ret = pthreadCreate(&cli, nullptr, SampleClientTask, nullptr);
     EXPECT_EQ("getpeername_0100", 0, ret);
     ret = pthread_join(cli, nullptr);
     EXPECT_EQ("getpeername_0100", 0, ret);
@@ -131,12 +132,12 @@ void getpeername_0100()
     EXPECT_EQ("getpeername_0100", 0, ret);
 }
 
-static TEST_FUN G_Fun_Array[] = { getpeername_0100 };
-static int GetpeernameTest_impl(int argc, char* argv[])
+static TEST_FUN g_gFunArray[] = { Getpeername0100 };
+static int GetpeernameTestImpl(int argc, char* argv[])
 {
-    int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
+    int num = sizeof(g_gFunArray) / sizeof(TEST_FUN);
     for (int pos = 0; pos < num; ++pos) {
-        G_Fun_Array[pos]();
+        g_gFunArray[pos]();
     }
 
     return t_status;
@@ -146,5 +147,5 @@ int GetpeernameTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return GetpeernameTest_impl(1, libcArgv);
+    return GetpeernameTestImpl(1, libcArgv);
 }

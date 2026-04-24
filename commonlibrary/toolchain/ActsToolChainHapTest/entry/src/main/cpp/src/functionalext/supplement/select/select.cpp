@@ -28,101 +28,103 @@ extern "C" int
     __select_time64(int, fd_set* __restrict, fd_set* __restrict, fd_set* __restrict, struct timeval* __restrict);
 const int32_t COUNT_ZERO = 0;
 const int32_t COUNT_FAILED = -1;
+constexpr int32_t SELECT_TIMEOUT_SEC = 5;
+constexpr int32_t SELECT_INVALID_TIMEOUT_SEC = -50;
+constexpr int32_t SELECT_NFDS = 2;
+constexpr int32_t SELECT_STDIN_FD = 0;
+constexpr int32_t SELECT_STDOUT_FD = 1;
 
 /**
- * @tc.name      : select_0100
+ * @tc.name      : Select0100
  * @tc.desc      : Verify that the monitoring descriptor is successful (valid parameters)
  * @tc.level     : Level 0
  */
-void select_0100(void)
+void Select0100(void)
 {
     struct timeval timeout;
-    timeout.tv_sec = 5;
+    timeout.tv_sec = SELECT_TIMEOUT_SEC;
     timeout.tv_usec = 0;
     fd_set readfds;
     fd_set writefds;
     FD_ZERO(&readfds);
     FD_ZERO(&writefds);
-    FD_SET(0, &readfds);
-    FD_SET(1, &writefds);
-    int result;
-    result = select(2, &readfds, &writefds, 0, &timeout);
-    EXPECT_TRUE("select_0100", result > 0);
+    FD_SET(SELECT_STDIN_FD, &readfds);
+    FD_SET(SELECT_STDOUT_FD, &writefds);
+    int result = select(SELECT_NFDS, &readfds, &writefds, nullptr, &timeout);
+    EXPECT_TRUE("Select0100", result > 0);
 }
 
 /**
- * @tc.name      : select_0200
+ * @tc.name      : Select0200
  * @tc.desc      : Failed to validate monitoring descriptor
  *                 (invalid parameter, microsecond invalid value in timeout structure)
  * @tc.level     : Level 2
  */
-void select_0200(void)
+void Select0200(void)
 {
     struct timeval timeout;
-    timeout.tv_sec = -50;
+    timeout.tv_sec = SELECT_INVALID_TIMEOUT_SEC;
     fd_set readfds;
     fd_set writefds;
     FD_ZERO(&readfds);
     FD_ZERO(&writefds);
-    FD_SET(0, &readfds);
-    FD_SET(1, &writefds);
-    int result;
-    result = select(2, &readfds, &writefds, 0, &timeout);
-    EXPECT_EQ("select_0200", result, COUNT_FAILED);
+    FD_SET(SELECT_STDIN_FD, &readfds);
+    FD_SET(SELECT_STDOUT_FD, &writefds);
+    int result = select(SELECT_NFDS, &readfds, &writefds, nullptr, &timeout);
+    EXPECT_EQ("Select0200", result, COUNT_FAILED);
 }
 
 /**
- * @tc.name      : select_0300
+ * @tc.name      : Select0300
  * @tc.desc      : Validation monitoring descriptor failed
  *                 (invalid parameter, invalid parameter added to descriptor set)
  * @tc.level     : Level 1
  */
-void select_0300(void)
+void Select0300(void)
 {
     struct timeval timeout;
     timeout.tv_sec = 0;
     fd_set readfds;
     fd_set writefds;
-    int fd1, fd2;
+    constexpr int32_t SELECT_INVALID_FD = 2;
     FD_ZERO(&readfds);
     FD_ZERO(&writefds);
-    FD_SET(2, &readfds);
-    FD_SET(2, &writefds);
-    int result;
-    result = select(2, &readfds, &writefds, 0, &timeout);
-    EXPECT_EQ("select_0300", result, COUNT_ZERO);
+    FD_SET(SELECT_INVALID_FD, &readfds);
+    FD_SET(SELECT_INVALID_FD, &writefds);
+    int result = select(SELECT_NFDS, &readfds, &writefds, nullptr, &timeout);
+    EXPECT_EQ("Select0300", result, COUNT_ZERO);
 }
 
 /**
- * @tc.name      : select_time64_0100
+ * @tc.name      : SelectTime640100
  * @tc.desc      : Verify that the monitoring descriptor is successful (valid parameters)
  * @tc.level     : Level 0
  */
-void select_time64_0100(void)
+void SelectTime640100(void)
 {
     struct timeval timeout;
-    timeout.tv_sec = 5;
+    timeout.tv_sec = SELECT_TIMEOUT_SEC;
     timeout.tv_usec = 0;
-    fd_set readfds, writefds;
+    fd_set readfds;
+    fd_set writefds;
     FD_ZERO(&readfds);
     FD_ZERO(&writefds);
-    FD_SET(0, &readfds);
-    FD_SET(1, &writefds);
-    int result;
-    result = __select_time64(2, &readfds, &writefds, 0, &timeout);
-    EXPECT_TRUE("select_time64_0100", result > 0);
+    FD_SET(SELECT_STDIN_FD, &readfds);
+    FD_SET(SELECT_STDOUT_FD, &writefds);
+    int result = __select_time64(SELECT_NFDS, &readfds, &writefds, nullptr, &timeout);
+    EXPECT_TRUE("SelectTime640100", result > 0);
 }
 
-static int SelectTest_impl(void)
+static int SelectTestImpl(void)
 {
-    select_0100();
-    select_0200();
-    select_0300();
-    select_time64_0100();
+    Select0100();
+    Select0200();
+    Select0300();
+    SelectTime640100();
     return t_status;
 }
 
 int SelectTest(void)
 {
-    return SelectTest_impl();
+    return SelectTestImpl();
 }

@@ -29,7 +29,7 @@ extern "C" int __futimes_time64(int, const struct timeval[2]);
  * @tc.desc      : All parameters are valid, TV is not 0, and futimes can modify the timestamp of the file.
  * @tc.level     : Level 0
  */
-void futimes_0100(void)
+void Futimes0100(void)
 {
     int ret = -1;
     struct stat s;
@@ -40,8 +40,9 @@ void futimes_0100(void)
     tv[1].tv_usec = 0;
     int fd = open("/data/storage/el2/base/cache/futimes.txt", O_RDWR | O_CREAT, 777);
     ret = futimes(fd, tv);
-    EXPECT_EQ("futimes_0100", ret, SUCCESS);
-    remove("/data/storage/el2/base/cache/futimes.txt");
+    EXPECT_EQ("Futimes0100", ret, SUCCESS);
+    int removeRet = remove("/data/storage/el2/base/cache/futimes.txt");
+    EXPECT_EQ("Futimes0100", removeRet, SUCCESS);
 }
 
 /**
@@ -49,13 +50,14 @@ void futimes_0100(void)
  * @tc.desc      : All parameters are valid, TV is 0, and futimes can modify the timestamp of the file.
  * @tc.level     : Level 1
  */
-void futimes_0200(void)
+void Futimes0200(void)
 {
     int ret = -1;
     int fd = open("/data/storage/el2/base/cache/futimes.txt", O_RDWR | O_CREAT, 777);
-    ret = futimes(fd, 0);
-    EXPECT_EQ("futimes_0200", ret, SUCCESS);
-    remove("/data/storage/el2/base/cache/futimes.txt");
+    ret = futimes(fd, nullptr);
+    EXPECT_EQ("Futimes0200", ret, SUCCESS);
+    int removeRet = remove("/data/storage/el2/base/cache/futimes.txt");
+    EXPECT_EQ("Futimes0200", removeRet, SUCCESS);
 }
 
 /**
@@ -63,13 +65,13 @@ void futimes_0200(void)
  * @tc.desc      : The fd argument is invalid and the futimes function cannot modify the timestamp of the file.
  * @tc.level     : Level 2
  */
-void futimes_0300(void)
+void Futimes0300(void)
 {
     int ret = -1;
     static struct timeval tv[2] = { { 0L, 0L }, { 0L, 0L } };
     int fd = open("/data/storage/el2/base/cache/futimes.txt", O_RDWR);
     ret = futimes(fd, tv);
-    EXPECT_EQ("/data/storage/el2/base/cache/futimes_0300", ret, FAIL);
+    EXPECT_EQ("/data/storage/el2/base/cache/Futimes0300", ret, FAIL);
 }
 
 /**
@@ -77,7 +79,7 @@ void futimes_0300(void)
  * @tc.desc      : All parameters are valid, TV is not 0, and futimes can modify the timestamp of the file.
  * @tc.level     : Level 0
  */
-void futimes_time64_0100(void)
+void FutimesTime640100(void)
 {
     int ret = -1;
     struct stat s;
@@ -88,16 +90,17 @@ void futimes_time64_0100(void)
     tv[1].tv_usec = 0;
     int fd = open("/data/storage/el2/base/cache/futimes.txt", O_RDWR | O_CREAT, 777);
     ret = __futimes_time64(fd, tv);
-    EXPECT_EQ("futimes_time64_0100", ret, SUCCESS);
-    remove("/data/storage/el2/base/cache/futimes.txt");
+    EXPECT_EQ("FutimesTime640100", ret, SUCCESS);
+    int removeRet = remove("/data/storage/el2/base/cache/futimes.txt");
+    EXPECT_EQ("FutimesTime640100", removeRet, SUCCESS);
 }
 
-static int FutimesTest_impl(int argc, char* argv[])
+static int FutimesTestImpl(int argc, char* argv[])
 {
-    futimes_0100();
-    futimes_0200();
-    futimes_0300();
-    futimes_time64_0100();
+    Futimes0100();
+    Futimes0200();
+    Futimes0300();
+    FutimesTime640100();
     return t_status;
 }
 
@@ -105,5 +108,5 @@ int FutimesTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return FutimesTest_impl(1, libcArgv);
+    return FutimesTestImpl(1, libcArgv);
 }

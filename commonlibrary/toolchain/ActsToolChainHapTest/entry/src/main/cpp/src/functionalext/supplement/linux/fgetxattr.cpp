@@ -25,7 +25,7 @@
  * @tc.desc      : Verify that the extended attribute value can be obtained.
  * @tc.level     : Level 0
  */
-void fgetxattr_0100(void)
+void Fgetxattr0100(void)
 {
     const char* path = "/data/storage/el2/base/cache/fgetxattr.txt";
     char name[] = "user.x";
@@ -50,9 +50,9 @@ void fgetxattr_0100(void)
     remove(path);
 }
 
-static int FgetxattrTest_impl(int argc, char* argv[])
+static int FgetxattrTestImpl(int argc, char* argv[])
 {
-    fgetxattr_0100();
+    Fgetxattr0100();
     return t_status;
 }
 
@@ -60,5 +60,5 @@ int FgetxattrTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return FgetxattrTest_impl(1, libcArgv);
+    return FgetxattrTestImpl(1, libcArgv);
 }

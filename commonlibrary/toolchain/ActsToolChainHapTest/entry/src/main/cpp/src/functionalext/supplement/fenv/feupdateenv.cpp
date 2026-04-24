@@ -21,23 +21,23 @@
  * @tc.desc      : The parameter is valid and can save the currently raised floating-point exception.
  * @tc.level     : Level 0
  */
-void feupdateenv_0100(void)
+void Feupdateenv0100(void)
 {
     int ret = -1;
     fenv_t envp;
     ret = feupdateenv(&envp);
-    EXPECT_EQ("feupdateenv_0100", ret, 0);
+    EXPECT_EQ("Feupdateenv0100", ret, 0);
 }
 
-static int FeupdateenvTest_impl(int argc, char* argv[])
+static int FeupdateenvTestImpl(int argc, char* argv[])
 {
-    feupdateenv_0100();
+    Feupdateenv0100();
     return t_status;
 }
 
 int FeupdateenvTest(void)
 {
     static char libcProg[] = "libc_test";
-    char* libcArgv[] = { libcProg, NULL };
-    return FeupdateenvTest_impl(1, libcArgv);
+    char* libcArgv[] = { libcProg, nullptr };
+    return FeupdateenvTestImpl(1, libcArgv);
 }

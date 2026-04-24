@@ -22,10 +22,10 @@
  * @tc.desc      : Validate that the result is 1-1e+15 when the input parameter is 0-15.
  * @tc.level     : Level 0
  */
-void pow10_0100(void)
+void Pow100100(void)
 {
-    typedef double (*pow10_func)(double);
-    pow10_func pow10 = reinterpret_cast<pow10_func>(dlsym(RTLD_DEFAULT, "pow10"));
+    typedef double (*Pow10Func)(double);
+    Pow10Func pow10 = reinterpret_cast<Pow10Func>(dlsym(RTLD_DEFAULT, "pow10"));
     if (!pow10) {
         EXPECT_PTRNE("pow10_0100", pow10, nullptr);
         return;
@@ -34,9 +34,11 @@ void pow10_0100(void)
     double ret0 = pow10(0);
     EXPECT_EQ("pow10_0100", ret0, 1.0);
     double ret1 = pow10(1);
-    EXPECT_EQ("pow10_0100", ret1, 10.0);
+    constexpr double RET_10 = 10.0;
+    EXPECT_EQ("pow10_0100", ret1, RET_10);
     double ret2 = pow10(2);
-    EXPECT_EQ("pow10_0100", ret2, 100.0);
+    constexpr double RET_100 = 100.0;
+    EXPECT_EQ("pow10_0100", ret2, RET_100);
     double ret3 = pow10(3);
     EXPECT_EQ("pow10_0100", ret3, 1e+03);
     double ret4 = pow10(4);
@@ -70,10 +72,10 @@ void pow10_0100(void)
  * @tc.desc      : Validate that the result is 1e+16 when the input parameter is 16.
  * @tc.level     : Level 0
  */
-void pow10_0200(void)
+void Pow100200(void)
 {
-    typedef double (*pow10_func)(double);
-    pow10_func pow10 = reinterpret_cast<pow10_func>(dlsym(RTLD_DEFAULT, "pow10"));
+    typedef double (*Pow10Func)(double);
+    Pow10Func pow10 = reinterpret_cast<Pow10Func>(dlsym(RTLD_DEFAULT, "pow10"));
     double ret = pow10(16);
     EXPECT_EQ("pow10_0200", ret, 1e+16);
 }
@@ -83,12 +85,13 @@ void pow10_0200(void)
  * @tc.desc      : Validate that the result is 0.1 when the input parameter is -1.
  * @tc.level     : Level 0
  */
-void pow10_0300(void)
+void Pow100300(void)
 {
-    typedef double (*pow10_func)(double);
-    pow10_func pow10 = reinterpret_cast<pow10_func>(dlsym(RTLD_DEFAULT, "pow10"));
+    typedef double (*Pow10Func)(double);
+    Pow10Func pow10 = reinterpret_cast<Pow10Func>(dlsym(RTLD_DEFAULT, "pow10"));
     double ret = pow10(-1);
-    EXPECT_EQ("pow10_0300", ret, 0.1);
+    constexpr double RET_0P1 = 0.1;
+    EXPECT_EQ("pow10_0300", ret, RET_0P1);
 }
 
 /**
@@ -96,10 +99,10 @@ void pow10_0300(void)
  * @tc.desc      : Validate that the result is 1e+100 when the input parameter is 100.
  * @tc.level     : Level 0
  */
-void pow10_0400(void)
+void Pow100400(void)
 {
-    typedef double (*pow10_func)(double);
-    pow10_func pow10 = reinterpret_cast<pow10_func>(dlsym(RTLD_DEFAULT, "pow10"));
+    typedef double (*Pow10Func)(double);
+    Pow10Func pow10 = reinterpret_cast<Pow10Func>(dlsym(RTLD_DEFAULT, "pow10"));
     double ret = pow10(100);
     EXPECT_EQ("pow10_0400", ret, 1e+100);
 }
@@ -109,21 +112,21 @@ void pow10_0400(void)
  * @tc.desc      : Validate that the result is 1e-100 when the input parameter is -100.
  * @tc.level     : Level 0
  */
-void pow10_0500(void)
+void Pow100500(void)
 {
-    typedef double (*pow10_func)(double);
-    pow10_func pow10 = reinterpret_cast<pow10_func>(dlsym(RTLD_DEFAULT, "pow10"));
+    typedef double (*Pow10Func)(double);
+    Pow10Func pow10 = reinterpret_cast<Pow10Func>(dlsym(RTLD_DEFAULT, "pow10"));
     double ret = pow10(-100);
     EXPECT_EQ("pow10_0500", ret, 1e-100);
 }
 
-static int FunctionalextPow10Test_impl(int argc, char* argv[])
+static int FunctionalextPow10TestImpl(int argc, char* argv[])
 {
-    pow10_0100();
-    pow10_0200();
-    pow10_0300();
-    pow10_0400();
-    pow10_0500();
+    Pow100100();
+    Pow100200();
+    Pow100300();
+    Pow100400();
+    Pow100500();
     return t_status;
 }
 
@@ -131,5 +134,5 @@ int FunctionalextPow10Test(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return FunctionalextPow10Test_impl(1, libcArgv);
+    return FunctionalextPow10TestImpl(1, libcArgv);
 }

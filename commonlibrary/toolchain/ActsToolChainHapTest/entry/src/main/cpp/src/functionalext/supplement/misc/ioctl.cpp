@@ -35,12 +35,12 @@
 #include "functionalext.h"
 
 typedef void (*TEST_FUN)();
-unsigned char TEST_IOCTL_ACCESS_TOKEN_ID = 'A';
-unsigned int GET_TOKEN_ID = 1;
-unsigned int SET_TOKEN_ID = 2;
-const char device_tokenid[] = "/dev/access_token_id";
-#define TEST_TOKENID_GET_TOKENID _IOR(TEST_IOCTL_ACCESS_TOKEN_ID, GET_TOKEN_ID, unsigned long long)
-#define TEST_TOKENID_SET_TOKENID _IOW(TEST_IOCTL_ACCESS_TOKEN_ID, SET_TOKEN_ID, unsigned long long)
+unsigned char g_testIoctlAccessTokenId = 'A';
+unsigned int g_getTokenId = 1;
+unsigned int g_setTokenId = 2;
+const char DEVICE_TOKENID[] = "/dev/access_token_id";
+#define TEST_TOKENID_GET_TOKENID _IOR(g_testIoctlAccessTokenId, g_getTokenId, unsigned long long)
+#define TEST_TOKENID_SET_TOKENID _IOW(g_testIoctlAccessTokenId, g_setTokenId, unsigned long long)
 static unsigned long long GetRand64(void)
 {
     unsigned long long randValue = 0;
@@ -53,39 +53,39 @@ static unsigned long long GetRand64(void)
 }
 
 /**
- * @tc.name      : ioctl_0100
+ * @tc.name      : Ioctl0100
  * @tc.desc      : Verify ioctl management of character device.
  * @tc.level     : Level 0
  */
-void ioctl_0100(void)
+void Ioctl0100(void)
 {
     unsigned long long tokenGet;
     unsigned long long token = GetRand64();
-    int fd = open(device_tokenid, O_RDWR);
+    int fd = open(DEVICE_TOKENID, O_RDWR);
     if (fd < 0) {
-        printf("open %s failed\n", device_tokenid);
+        printf("open %s failed\n", DEVICE_TOKENID);
         return;
     }
     int ret = ioctl(fd, TEST_TOKENID_GET_TOKENID, &token);
-    EXPECT_EQ("ioctl_0100", 0, ret);
+    EXPECT_EQ("Ioctl0100", 0, ret);
     ret = ioctl(fd, TEST_TOKENID_GET_TOKENID, &tokenGet);
-    EXPECT_EQ("ioctl_0100", 0, ret);
-    EXPECT_EQ("ioctl_0100", 0, ret);
+    EXPECT_EQ("Ioctl0100", 0, ret);
+    EXPECT_EQ("Ioctl0100", 0, ret);
 }
 
 /**
- * @tc.name      : ioctl_0200
+ * @tc.name      : Ioctl0200
  * @tc.desc      : Verify ioctl management of network device.
  * @tc.level     : Level 0
  */
-void ioctl_0200(void)
+void Ioctl0200(void)
 {
     int sockFd = socket(AF_INET, SOCK_DGRAM, 0);
     if (sockFd < 0) {
         printf("socket failed\n");
         return;
     }
-    EXPECT_NE("ioctl_0200", -1, sockFd);
+    EXPECT_NE("Ioctl0200", -1, sockFd);
     struct ifreq ifr[3];
     struct ifconf ifc = { 0 };
     ifc.ifc_len = 3 * sizeof(struct ifreq);
@@ -116,20 +116,20 @@ void ioctl_0200(void)
         return;
     }
     struct sockaddr_in* srvAddr = (struct sockaddr_in*)&ifrAddr.ifr_addr;
-    EXPECT_STREQ("ioctl_0200", interAddr, inet_ntoa(srvAddr->sin_addr));
+    EXPECT_STREQ("Ioctl0200", interAddr, inet_ntoa(srvAddr->sin_addr));
     close(sockFd);
 }
 
-static TEST_FUN G_Fun_Array[] = {
-    ioctl_0100,
-    ioctl_0200,
+static TEST_FUN g_gFunArray[] = {
+    Ioctl0100,
+    Ioctl0200,
 };
 
-static int IoctlTest_impl(int argc, char* argv[])
+static int IoctlTestImpl(int argc, char* argv[])
 {
-    int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
+    int num = sizeof(g_gFunArray) / sizeof(TEST_FUN);
     for (int pos = 0; pos < num; ++pos) {
-        G_Fun_Array[pos]();
+        g_gFunArray[pos]();
     }
 
     return t_status;
@@ -139,5 +139,5 @@ int IoctlTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return IoctlTest_impl(1, libcArgv);
+    return IoctlTestImpl(1, libcArgv);
 }

@@ -25,7 +25,7 @@
  * @tc.desc      : The parameters are valid and can listen for client connections.
  * @tc.level     : Level 0
  */
-void listen_0100(void)
+void Listen0100(void)
 {
     int fd = -1;
     fd = socket(AF_INET, SOCK_STREAM, 0);
@@ -42,9 +42,9 @@ void listen_0100(void)
     close(fd);
 }
 
-static int ListenTest_impl(int argc, char* argv[])
+static int ListenTestImpl(int argc, char* argv[])
 {
-    listen_0100();
+    Listen0100();
 
     return t_status;
 }
@@ -53,5 +53,5 @@ int ListenTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return ListenTest_impl(1, libcArgv);
+    return ListenTestImpl(1, libcArgv);
 }

@@ -29,18 +29,18 @@
  * @note         : This test requires fork() and PTY support, which may not be available
  *                 on all platforms (e.g., HarmonyOS/OpenHarmony).
  */
-void forkpty_0100(void)
+void Forkpty0100(void)
 {
     int master;
-    pid_t pid = forkpty(&master, nullptr, nullptr, nullptr);
-
+    pid_t pid;
+    pid = forkpty(&master, nullptr, nullptr, nullptr);
     if (pid < 0) {
-        printf("forkpty_0100: forkpty failed (errno=%d). ", errno);
+        printf("Forkpty0100: forkpty failed (errno=%d). ", errno);
         printf("This function requires fork() and PTY support, which may not be available on this platform.\n");
         return;
     }
 
-    char* sign_r = "1";
+    char* signR = "1";
     char list1[2] = { 0 };
     char list2[2] = { 0 };
     FILE* fp;
@@ -48,31 +48,33 @@ void forkpty_0100(void)
     if (pid == 0) {
         fp = fopen("/data/storage/el2/base/cache/test1.txt", "w+");
         if (!fp) {
-            t_error("forkpty_0100: child failed to open test1.txt for writing");
+            t_error("Forkpty0100: child failed to open test1.txt for writing");
             exit(EXIT_FAILURE);
         }
-        fwrite(sign_r, sizeof(char), strlen(sign_r), fp);
+        fwrite(signR, sizeof(char), strlen(signR), fp);
         fclose(fp);
         exit(EXIT_SUCCESS);
     } else {
         wait(nullptr);
         fp = fopen("/data/storage/el2/base/cache/test2.txt", "w+");
         if (!fp) {
-            t_error("forkpty_0100: parent failed to open test2.txt for writing");
+            t_error("Forkpty0100: parent failed to open test2.txt for writing");
             return;
         }
-        fwrite(sign_r, sizeof(char), strlen(sign_r), fp);
+        fwrite(signR, sizeof(char), strlen(signR), fp);
         fclose(fp);
 
         FILE* fp1 = fopen("/data/storage/el2/base/cache/test1.txt", "r");
         FILE* fp2 = fopen("/data/storage/el2/base/cache/test2.txt", "r");
 
         if (!fp1 || !fp2) {
-            t_error("forkpty_0100: failed to open files for reading");
-            if (fp1)
+            t_error("Forkpty0100: failed to open files for reading");
+            if (fp1) {
                 fclose(fp1);
-            if (fp2)
+            }
+            if (fp2) {
                 fclose(fp2);
+            }
             remove("/data/storage/el2/base/cache/test1.txt");
             remove("/data/storage/el2/base/cache/test2.txt");
             return;
@@ -80,8 +82,8 @@ void forkpty_0100(void)
 
         fread(list1, sizeof(list1), 1, fp1);
         fread(list2, sizeof(list2), 1, fp2);
-        EXPECT_EQ("forkpty_0100", list1[0], '1');
-        EXPECT_EQ("forkpty_0100", list2[0], '1');
+        EXPECT_EQ("Forkpty0100", list1[0], '1');
+        EXPECT_EQ("Forkpty0100", list2[0], '1');
         fclose(fp1);
         fclose(fp2);
         remove("/data/storage/el2/base/cache/test1.txt");
@@ -89,9 +91,9 @@ void forkpty_0100(void)
     }
 }
 
-static int ForkptyTest_impl(int argc, char* argv[])
+static int ForkptyTestImpl(int argc, char* argv[])
 {
-    forkpty_0100();
+    Forkpty0100();
     return t_status;
 }
 
@@ -99,5 +101,5 @@ int ForkptyTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return ForkptyTest_impl(1, libcArgv);
+    return ForkptyTestImpl(1, libcArgv);
 }

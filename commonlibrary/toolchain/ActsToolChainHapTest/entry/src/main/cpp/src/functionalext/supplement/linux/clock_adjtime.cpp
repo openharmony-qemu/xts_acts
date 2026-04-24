@@ -20,7 +20,7 @@
 #include <time.h>
 #include "functionalext.h"
 
-void exception_handler(int sig)
+void ExceptionHandler(int sig)
 {
     exit(t_status);
 }
@@ -30,106 +30,111 @@ int __clock_adjtime64(clockid_t, struct timex*);
 }
 
 /**
- * @tc.name      : clock_adjtime_0100
+ * @tc.name      : ClockAdjtime0100
  * @tc.desc      : Verify that the kernel time can be adjusted (all parameters are valid, clock_id is CLOCK_REALTIME)
  * @tc.level     : Level 0
  */
-void clock_adjtime_0100(void)
+void ClockAdjtime0100(void)
 {
     struct timex tx;
     memset(&tx, 0, sizeof(tx));
 
     int result = clock_adjtime(CLOCK_REALTIME, &tx);
-    EXPECT_NE("clock_adjtime_0100", result, -1);
+    EXPECT_NE("ClockAdjtime0100", result, -1);
 }
 
 /**
- * @tc.name      : clock_adjtime_0200
+ * @tc.name      : ClockAdjtime0200
  * @tc.desc      : Verify that the kernel time can not be adjusted (each parameter is valid, clock_id is
  *                 CLOCK_MONOTONIC)
  * @tc.level     : Level 2
  */
-void clock_adjtime_0200(void)
+void ClockAdjtime0200(void)
 {
     struct timex tx = { ADJ_OFFSET_SS_READ };
 
     int result = clock_adjtime(CLOCK_MONOTONIC, &tx);
-    EXPECT_EQ("clock_adjtime_0200", result, -1);
+    EXPECT_EQ("ClockAdjtime0200", result, -1);
 }
 
 /**
- * @tc.name      : clock_adjtime_0300
+ * @tc.name      : ClockAdjtime0300
  * @tc.desc      : Verify that the kernel time can not be adjusted (all parameters are valid, clock_id is
  *                 CLOCK_PROCESS_CPUTIME_ID)
  * @tc.level     : Level 2
  */
-void clock_adjtime_0300(void)
+void ClockAdjtime0300(void)
 {
     struct timex tx;
     memset(&tx, 0, sizeof(tx));
 
     int result = clock_adjtime(CLOCK_PROCESS_CPUTIME_ID, &tx);
-    EXPECT_EQ("clock_adjtime_0300", result, -1);
+    EXPECT_EQ("ClockAdjtime0300", result, -1);
 }
 
 /**
- * @tc.name      : clock_adjtime_0400
+ * @tc.name      : ClockAdjtime0400
  * @tc.desc      : Verify that the kernel time can not be adjusted (all parameters are valid, clock_id is
  *                 CLOCK_THREAD_CPUTIME_ID)
  * @tc.level     : Level 2
  */
-void clock_adjtime_0400(void)
+void ClockAdjtime0400(void)
 {
     struct timex tx = { 0 };
     memset(&tx, 0, sizeof(tx));
 
     int result = clock_adjtime(CLOCK_THREAD_CPUTIME_ID, &tx);
-    EXPECT_EQ("clock_adjtime_0400", result, -1);
+    EXPECT_EQ("ClockAdjtime0400", result, -1);
 }
 
 /**
- * @tc.name      : clock_adjtime_0500
+ * @tc.name      : ClockAdjtime0500
  * @tc.desc      : Verify that kernel time cannot be adjusted (tx parameter invalid)
  * @tc.level     : Level 2
  */
-void clock_adjtime_0500(void)
+void ClockAdjtime0500(void)
 {
-    signal(SIGSEGV, exception_handler);
+    signal(SIGSEGV, ExceptionHandler);
 
     errno = 0;
     int result = clock_adjtime(CLOCK_REALTIME, nullptr);
-    EXPECT_EQ("clock_adjtime_0500", result, -1);
-    EXPECT_EQ("clock_adjtime_0500", errno, EFAULT);
+    EXPECT_EQ("ClockAdjtime0500", result, -1);
+    EXPECT_EQ("ClockAdjtime0500", errno, EFAULT);
 }
 
 /**
- * @tc.name      : clock_adjtime64_0100
+ * @tc.name      : ClockAdjtime640100
  * @tc.desc      : Verify that the kernel time can be adjusted (all parameters are valid, clock_id is CLOCK_REALTIME)
  * @tc.level     : Level 0
  */
-void clock_adjtime64_0100(void)
+void ClockAdjtime640100(void)
 {
     struct timex tx;
     memset(&tx, 0, sizeof(tx));
 
     int result = __clock_adjtime64(CLOCK_REALTIME, &tx);
-    EXPECT_NE("clock_adjtime64_0100", result, -1);
+    EXPECT_NE("ClockAdjtime640100", result, -1);
 }
 
-static int clock_adjtimeTest_with_args(int argc, char* argv[])
+static int ClockAdjtimeTestWithArgs(int argc, char* argv[])
 {
-    clock_adjtime_0100();
-    clock_adjtime_0200();
-    clock_adjtime_0300();
-    clock_adjtime_0400();
-    clock_adjtime_0500();
-    clock_adjtime64_0100();
+    ClockAdjtime0100();
+    ClockAdjtime0200();
+    ClockAdjtime0300();
+    ClockAdjtime0400();
+    ClockAdjtime0500();
+    ClockAdjtime640100();
     return t_status;
+}
+
+int ClockAdjtimeTest(void)
+{
+    static char libcProg[] = "libc_test";
+    char* libcArgv[] = { libcProg, nullptr };
+    return ClockAdjtimeTestWithArgs(1, libcArgv);
 }
 
 int clock_adjtimeTest(void)
 {
-    static char libcProg[] = "libc_test";
-    char* libcArgv[] = { libcProg, nullptr };
-    return clock_adjtimeTest_with_args(1, libcArgv);
+    return ClockAdjtimeTest();
 }

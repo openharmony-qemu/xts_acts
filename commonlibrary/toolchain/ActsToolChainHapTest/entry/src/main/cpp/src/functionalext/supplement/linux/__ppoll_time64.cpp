@@ -24,18 +24,18 @@
  * @tc.desc      : Listen for readable file event (illegal parameter)
  * @tc.level     : Level 2
  */
-void ppoll_time64_0300(void)
+void PpollTime640300(void)
 {
     struct timespec timeout;
     timeout.tv_sec = 1;
     timeout.tv_nsec = 0;
 
     int ret = ppoll(nullptr, 1, &timeout, nullptr);
-    EXPECT_EQ("ppoll_time64_0300", ret, ERREXPECT);
+    EXPECT_EQ("PpollTime640300", ret, ERREXPECT);
 }
 
 int PpollTime64CompatTest(void)
 {
-    ppoll_time64_0300();
+    PpollTime640300();
     return t_status;
 }

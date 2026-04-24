@@ -22,20 +22,20 @@
  * @tc.desc      : Verify that memory free region is successful (parameters are valid)
  * @tc.level     : Level 0
  */
-void resTraceFreeRegion_0100(void)
+void ResTraceFreeRegion0100(void)
 {
     char* mem = (char*)malloc(1 * sizeof(char));
     resTraceFreeRegion(RES_ARKTS_HEAP_MASK, mem, 1);
     free(mem);
 }
 
-static int ResTraceFreeRegionTest_impl(void)
+static int ResTraceFreeRegionTestImpl(void)
 {
-    resTraceFreeRegion_0100();
+    ResTraceFreeRegion0100();
     return t_status;
 }
 
 int ResTraceFreeRegionTest(void)
 {
-    return ResTraceFreeRegionTest_impl();
+    return ResTraceFreeRegionTestImpl();
 }

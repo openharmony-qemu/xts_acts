@@ -22,20 +22,20 @@
  * @tc.desc      : Verify that memory allocation is successful (parameters are valid)
  * @tc.level     : Level 0
  */
-void restraceExt_0100(void)
+void RestraceExt0100(void)
 {
     char* mem = (char*)malloc(1 * sizeof(char));
     restraceExt(RES_ARK_GLOBAL_HANDLE, mem, 1, TAG_RES_ARK_GLOBAL_HANDLE, true, true);
     free(mem);
 }
 
-static int RestraceExtTest_impl(void)
+static int RestraceExtTestImpl(void)
 {
-    restraceExt_0100();
+    RestraceExt0100();
     return t_status;
 }
 
 int RestraceExtTest(void)
 {
-    return RestraceExtTest_impl();
+    return RestraceExtTestImpl();
 }

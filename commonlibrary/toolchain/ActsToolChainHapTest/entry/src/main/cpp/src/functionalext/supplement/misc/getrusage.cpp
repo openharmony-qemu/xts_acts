@@ -22,11 +22,11 @@ extern "C" int __getrusage_time64(int, struct rusage*);
  * @tc.desc      : Verify the program running time (parameter is RUSAGE_SELF)
  * @tc.level     : Level 0
  */
-void getrusage_0100(void)
+void Getrusage0100(void)
 {
     struct rusage usage;
     int result = getrusage(RUSAGE_SELF, &usage);
-    EXPECT_EQ("getrusage_0100", result, 0);
+    EXPECT_EQ("Getrusage0100", result, 0);
 }
 
 /**
@@ -34,11 +34,11 @@ void getrusage_0100(void)
  * @tc.desc      : Verify the program running time (parameter is RUSAGE_CHILDREN)
  * @tc.level     : Level 1
  */
-void getrusage_0200(void)
+void Getrusage0200(void)
 {
     struct rusage usage;
     int result = getrusage(RUSAGE_CHILDREN, &usage);
-    EXPECT_EQ("getrusage_0200", result, 0);
+    EXPECT_EQ("Getrusage0200", result, 0);
 }
 
 /**
@@ -46,11 +46,11 @@ void getrusage_0200(void)
  * @tc.desc      : Verify the program running time (parameter is RUSAGE_THREAD)
  * @tc.level     : Level 1
  */
-void getrusage_0300(void)
+void Getrusage0300(void)
 {
     struct rusage usage;
     int result = getrusage(RUSAGE_THREAD, &usage);
-    EXPECT_EQ("getrusage_0300", result, 0);
+    EXPECT_EQ("Getrusage0300", result, 0);
 }
 
 /**
@@ -58,11 +58,11 @@ void getrusage_0300(void)
  * @tc.desc      : Verify that the program running time cannot be obtained (parameter is 100)
  * @tc.level     : Level 2
  */
-void getrusage_0400(void)
+void Getrusage0400(void)
 {
     struct rusage usage;
     int result = getrusage(100, &usage);
-    EXPECT_EQ("getrusage_0400", result, -1);
+    EXPECT_EQ("Getrusage0400", result, -1);
 }
 
 /**
@@ -70,11 +70,11 @@ void getrusage_0400(void)
  * @tc.desc      : Verify that the program running time cannot be obtained (parameter is RUSAGE_SELF)
  * @tc.level     : Level 2
  */
-void getrusage_0500(void)
+void Getrusage0500(void)
 {
     struct rusage usage;
     int result = getrusage(RUSAGE_SELF, NULL);
-    EXPECT_EQ("getrusage_0500", result, -1);
+    EXPECT_EQ("Getrusage0500", result, -1);
 }
 
 /**
@@ -82,25 +82,25 @@ void getrusage_0500(void)
  * @tc.desc      : Verify the program running time (parameter is RUSAGE_SELF)
  * @tc.level     : Level 0
  */
-void getrusage_time64_0100(void)
+void GetrusageTime640100(void)
 {
     struct rusage usage;
     int result = __getrusage_time64(RUSAGE_SELF, &usage);
-    EXPECT_EQ("getrusage_time64_0100", result, 0);
+    EXPECT_EQ("GetrusageTime640100", result, 0);
 }
 
-static int GetrusageTest_impl(void)
+static int GetrusageTestImpl(void)
 {
-    getrusage_0100();
-    getrusage_0200();
-    getrusage_0300();
-    getrusage_0400();
-    getrusage_0500();
-    getrusage_time64_0100();
+    Getrusage0100();
+    Getrusage0200();
+    Getrusage0300();
+    Getrusage0400();
+    Getrusage0500();
+    GetrusageTime640100();
     return t_status;
 }
 
 int GetrusageTest(void)
 {
-    return GetrusageTest_impl();
+    return GetrusageTestImpl();
 }

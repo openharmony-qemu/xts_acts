@@ -25,7 +25,7 @@ const int FAILED = 0;
  * @tc.desc      : The parameter is 0.0, it is judged that the parameter is a finite value.
  * @tc.level     : Level 0
  */
-void finite_0100(void)
+void Finite0100(void)
 {
     int ret = finite(0.0);
     EXPECT_EQ("finite_0100", ret, SUCCESS);
@@ -36,7 +36,7 @@ void finite_0100(void)
  * @tc.desc      : The parameter is DBL_MIN/2.0, and it is judged that the parameter is a finite value
  * @tc.level     : Level 0
  */
-void finite_0200(void)
+void Finite0200(void)
 {
     int ret = finite(__DBL_MIN__ / 2);
     EXPECT_EQ("finite_0100", ret, SUCCESS);
@@ -47,7 +47,7 @@ void finite_0200(void)
  * @tc.desc      : If the parameter is NAN, it is judged that the parameter is not a finite value.
  * @tc.level     : Level 2
  */
-void finite_0300(void)
+void Finite0300(void)
 {
     int ret = finite(NAN);
     EXPECT_EQ("finite_0100", ret, FAILED);
@@ -58,7 +58,7 @@ void finite_0300(void)
  * @tc.desc      : If the parameter is INFINITY, it is judged that the parameter is not a finite value.
  * @tc.level     : Level 2
  */
-void finite_0400(void)
+void Finite0400(void)
 {
     int ret = finite(INFINITY);
     EXPECT_EQ("finite_0400", ret, FAILED);
@@ -69,7 +69,7 @@ void finite_0400(void)
  * @tc.desc      : If the parameter is sqrt(-1.0), it is judged that the parameter is not a finite value.
  * @tc.level     : Level 2
  */
-void finite_0500(void)
+void Finite0500(void)
 {
     int ret = finite(sqrt(-1.0));
     EXPECT_EQ("finite_0500", ret, FAILED);
@@ -80,21 +80,21 @@ void finite_0500(void)
  * @tc.desc      : If the parameter is exp(800), it is judged that the parameter is not a finite value.
  * @tc.level     : Level 2
  */
-void finite_0600(void)
+void Finite0600(void)
 {
     int ret = finite(exp(800));
     EXPECT_EQ("finite_0600", ret, FAILED);
 }
 
-static TEST_FUN G_Fun_Array[] = {
-    finite_0100, finite_0200, finite_0300, finite_0400, finite_0500, finite_0600,
+static TEST_FUN g_gFunArray[] = {
+    Finite0100, Finite0200, Finite0300, Finite0400, Finite0500, Finite0600,
 };
 
-static int FiniteTest_impl(int argc, char* argv[])
+static int FiniteTestImpl(int argc, char* argv[])
 {
-    int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
+    int num = sizeof(g_gFunArray) / sizeof(TEST_FUN);
     for (int pos = 0; pos < num; ++pos) {
-        G_Fun_Array[pos]();
+        g_gFunArray[pos]();
     }
 
     return t_status;
@@ -104,5 +104,5 @@ int FiniteTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return FiniteTest_impl(1, libcArgv);
+    return FiniteTestImpl(1, libcArgv);
 }

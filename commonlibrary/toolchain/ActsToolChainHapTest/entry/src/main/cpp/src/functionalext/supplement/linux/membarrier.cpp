@@ -23,17 +23,17 @@
  *                 (all parameters are valid, CMD is not equal to MEMBARRIER_CMD_PRIVATE_EXPEDITED)
  * @tc.level     : Level 0
  */
-void membarrier_0100(void)
+void Membarrier0100(void)
 {
-    typedef int (*membarrier_func)(int, int);
-    membarrier_func membarrier = (membarrier_func)dlsym(RTLD_DEFAULT, "membarrier");
+    typedef int (*MembarrierFunc)(int, int);
+    MembarrierFunc membarrier = (MembarrierFunc)dlsym(RTLD_DEFAULT, "membarrier");
     if (!membarrier) {
-        EXPECT_PTRNE("membarrier_0100", membarrier, NULL);
+        EXPECT_PTRNE("Membarrier0100", membarrier, nullptr);
         return;
     }
 
     int result = membarrier(MEMBARRIER_CMD_REGISTER_PRIVATE_EXPEDITED, 0);
-    EXPECT_EQ("membarrier_0100", result, 0);
+    EXPECT_EQ("Membarrier0100", result, 0);
 }
 
 /**
@@ -41,17 +41,17 @@ void membarrier_0100(void)
  * @tc.desc      : Verify memory masking (valid with CMD equal to MEMBARRIER_CMD_PRIVATE_EXPEDITED)
  * @tc.level     : Level 1
  */
-void membarrier_0200(void)
+void Membarrier0200(void)
 {
-    typedef int (*membarrier_func)(int, int);
-    membarrier_func membarrier = (membarrier_func)dlsym(RTLD_DEFAULT, "membarrier");
+    typedef int (*MembarrierFunc)(int, int);
+    MembarrierFunc membarrier = (MembarrierFunc)dlsym(RTLD_DEFAULT, "membarrier");
     if (!membarrier) {
-        EXPECT_PTRNE("membarrier_0200", membarrier, NULL);
+        EXPECT_PTRNE("Membarrier0200", membarrier, nullptr);
         return;
     }
 
     int result = membarrier(MEMBARRIER_CMD_PRIVATE_EXPEDITED, 0);
-    EXPECT_EQ("membarrier_0200", result, 0);
+    EXPECT_EQ("Membarrier0200", result, 0);
 }
 
 /**
@@ -59,30 +59,30 @@ void membarrier_0200(void)
  * @tc.desc      : Verify that memory masking is not possible (CMD argument is invalid)
  * @tc.level     : Level 2
  */
-void membarrier_0300(void)
+void Membarrier0300(void)
 {
-    typedef int (*membarrier_func)(int, int);
-    membarrier_func membarrier = (membarrier_func)dlsym(RTLD_DEFAULT, "membarrier");
+    typedef int (*MembarrierFunc)(int, int);
+    MembarrierFunc membarrier = (MembarrierFunc)dlsym(RTLD_DEFAULT, "membarrier");
     if (!membarrier) {
-        EXPECT_PTRNE("membarrier_0300", membarrier, NULL);
+        EXPECT_PTRNE("Membarrier0300", membarrier, nullptr);
         return;
     }
 
     int result = membarrier(-1, 0);
-    EXPECT_EQ("membarrier_0300", result, -1);
+    EXPECT_EQ("Membarrier0300", result, -1);
 }
 
-static int MembarrierTest_impl(int argc, char* argv[])
+static int MembarrierTestImpl(int argc, char* argv[])
 {
-    membarrier_0100();
-    membarrier_0200();
-    membarrier_0300();
+    Membarrier0100();
+    Membarrier0200();
+    Membarrier0300();
     return t_status;
 }
 
 int MembarrierTest(void)
 {
     static char libcProg[] = "libc_test";
-    char* libcArgv[] = { libcProg, NULL };
-    return MembarrierTest_impl(1, libcArgv);
+    char* libcArgv[] = { libcProg, nullptr };
+    return MembarrierTestImpl(1, libcArgv);
 }

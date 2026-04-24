@@ -37,10 +37,10 @@
 #define BUF_SIZE (100)
 #define PORT 22883
 #define WAIT() pthread_barrier_wait(&g_barrier)
-static const char* g_cliMsg = "Hello, this is client";
-static const char* g_localHost = "127.0.0.1";
+static const char* CLI_MSG = "Hello, this is client";
+static const char* LOCAL_HOST = "127.0.0.1";
 static pthread_barrier_t g_barrier;
-int bufSize = 0;
+int g_bufSize = 0;
 
 void* SampleServerTask(void* arg)
 {
@@ -60,7 +60,7 @@ void* SampleServerTask(void* arg)
     }
     struct sockaddr_in srvAddr = { 0 };
     srvAddr.sin_family = AF_INET;
-    srvAddr.sin_addr.s_addr = inet_addr(g_localHost);
+    srvAddr.sin_addr.s_addr = inet_addr(LOCAL_HOST);
     srvAddr.sin_port = htons(PORT);
     rets = bind(sListen, reinterpret_cast<struct sockaddr*>(&srvAddr), sizeof(srvAddr));
     if (rets != 0) {
@@ -70,7 +70,8 @@ void* SampleServerTask(void* arg)
         *sign = -1;
         return sign;
     }
-    rets = listen(sListen, 2);
+    constexpr int LISTEN_BACKLOG = 2;
+    rets = listen(sListen, LISTEN_BACKLOG);
     if (rets != 0) {
         printf("[Server] listen fail!\n");
         WAIT();
@@ -90,7 +91,7 @@ void* SampleServerTask(void* arg)
     static char buf[BUF_SIZE + 1] = { 0 };
     memset(buf, '\0', BUF_SIZE);
     rets = recv(sClient, buf, sizeof(buf), 0);
-    EXPECT_EQ("recv_0100", rets, bufSize);
+    EXPECT_EQ("recv_0100", rets, g_bufSize);
     close(sClient);
     close(sListen);
     return sign;
@@ -103,7 +104,7 @@ void* SampleClientTask(void* arg)
     WAIT();
     struct sockaddr_in srvAddr = { 0 };
     srvAddr.sin_family = AF_INET;
-    srvAddr.sin_addr.s_addr = inet_addr(g_localHost);
+    srvAddr.sin_addr.s_addr = inet_addr(LOCAL_HOST);
     srvAddr.sin_port = htons(PORT);
     int sign = connect(clnFd, reinterpret_cast<struct sockaddr*>(&srvAddr), sizeof(srvAddr));
     EXPECT_EQ("recv_0100", 0, sign);
@@ -112,8 +113,8 @@ void* SampleClientTask(void* arg)
     }
     static char buf[BUF_SIZE + 1] = { 0 };
     memset(buf, '\0', BUF_SIZE);
-    strcpy(buf, g_cliMsg);
-    bufSize = sizeof(buf);
+    strcpy(buf, CLI_MSG);
+    g_bufSize = sizeof(buf);
     int sendRet = send(clnFd, buf, sizeof(buf), 0);
     EXPECT_EQ("recv_0100", sendRet, sizeof(buf));
     close(clnFd);
@@ -125,12 +126,12 @@ void* SampleClientTask(void* arg)
  * @tc.desc      : Verify that the server recv successfully
  * @tc.level     : Level 0
  */
-void recv_0100()
+void Recv0100()
 {
     pthread_t srv;
     pthread_t cli;
 
-    int sign = pthread_barrier_init(&g_barrier, 0, 2);
+    int sign = pthread_barrier_init(&g_barrier, nullptr, 2);
     EXPECT_EQ("recv_0100", 0, sign);
 
     sign = pthread_create(&srv, nullptr, SampleServerTask, nullptr);
@@ -147,9 +148,9 @@ void recv_0100()
     EXPECT_EQ("recv_0100", 0, sign);
 }
 
-static int RecvTest_impl(int argc, char* argv[])
+static int RecvTestImpl(int argc, char* argv[])
 {
-    recv_0100();
+    Recv0100();
     return t_status;
 }
 
@@ -157,5 +158,5 @@ int RecvTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return RecvTest_impl(1, libcArgv);
+    return RecvTestImpl(1, libcArgv);
 }

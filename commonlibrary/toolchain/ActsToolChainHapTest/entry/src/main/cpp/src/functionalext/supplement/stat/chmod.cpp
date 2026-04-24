@@ -22,8 +22,9 @@
  * @tc.desc      : Verify the permission to modify the file (the mode parameter is set separately)
  * @tc.level     : Level 0
  */
-void chmod_0100(void)
+void Chmod0100(void)
 {
+    constexpr mode_t EXPECT_MODE_34815 = 34815;
     struct stat buf;
     open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, TEST_MODE);
     int result = chmod("/data/storage/el2/base/cache/test.txt",
@@ -31,7 +32,7 @@ void chmod_0100(void)
                            S_IXGRP | S_IROTH | S_IWOTH | S_IXOTH);
     stat("/data/storage/el2/base/cache/test.txt", &buf);
     EXPECT_EQ("chmod_0100", result, 0);
-    EXPECT_EQ("chmod_0100", buf.st_mode, 34815);
+    EXPECT_EQ("chmod_0100", buf.st_mode, EXPECT_MODE_34815);
     remove("/data/storage/el2/base/cache/test.txt");
 }
 
@@ -40,15 +41,15 @@ void chmod_0100(void)
  * @tc.desc      : Verify the permission to modify the file (the overall setting of the mode parameter)
  * @tc.level     : Level 2
  */
-void chmod_0200(void)
+void Chmod0200(void)
 {
-
+    constexpr mode_t EXPECT_MODE_33279 = 33279;
     struct stat buf;
     open("/data/storage/el2/base/cache/test.txt", O_RDWR | O_CREAT, TEST_MODE);
     int result = chmod("/data/storage/el2/base/cache/test.txt", S_IRWXU | S_IRWXG | S_IRWXO);
     stat("/data/storage/el2/base/cache/test.txt", &buf);
     EXPECT_EQ("chmod_0200", result, 0);
-    EXPECT_EQ("chmod_0200", buf.st_mode, 33279);
+    EXPECT_EQ("chmod_0200", buf.st_mode, EXPECT_MODE_33279);
     remove("/data/storage/el2/base/cache/test.txt");
 }
 
@@ -57,7 +58,7 @@ void chmod_0200(void)
  * @tc.desc      : Verify that file permissions cannot be modified (parameter invalid)
  * @tc.level     : Level 2
  */
-void chmod_0300(void)
+void Chmod0300(void)
 {
     int result = chmod("/data/storage/el2/base/cache/AAA.txt",
                        S_ISUID | S_ISGID | S_ISVTX | S_IRUSR | S_IWUSR | S_IXUSR | S_IRGRP | S_IWGRP | S_IXGRP |
@@ -65,17 +66,22 @@ void chmod_0300(void)
     EXPECT_EQ("chmod_0300", result, -1);
 }
 
-static int chmodTest_with_args(int argc, char* argv[])
+static int ChmodTestWithArgs(int argc, char* argv[])
 {
-    chmod_0100();
-    chmod_0200();
-    chmod_0300();
+    Chmod0100();
+    Chmod0200();
+    Chmod0300();
     return t_status;
+}
+
+int ChmodTest(void)
+{
+    static char libcProg[] = "libc_test";
+    char* libcArgv[] = { libcProg, nullptr };
+    return ChmodTestWithArgs(1, libcArgv);
 }
 
 int chmodTest(void)
 {
-    static char libcProg[] = "libc_test";
-    char* libcArgv[] = { libcProg, NULL };
-    return chmodTest_with_args(1, libcArgv);
+    return ChmodTest();
 }

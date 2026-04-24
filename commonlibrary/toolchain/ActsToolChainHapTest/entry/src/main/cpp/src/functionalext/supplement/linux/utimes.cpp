@@ -26,7 +26,7 @@ extern "C" int __utimes_time64(const char*, const struct timeval[2]);
  * @tc.desc      : Change file last access and modification times
  * @tc.level     : Level 0
  */
-void utimes_0100(void)
+void Utimes0100(void)
 {
     const char* path = "/data/storage/el2/base/cache/utimes.txt";
     int fd = open(path, O_RDWR | O_RSYNC | O_CREAT, 0664);
@@ -37,7 +37,10 @@ void utimes_0100(void)
     close(fd);
     struct stat buf1;
     struct stat buf2;
-    time_t t_mold, t_aold, t_now, t_new;
+    time_t t_mold;
+    time_t t_aold;
+    time_t t_now;
+    time_t tNew;
     stat(path, &buf1);
 
     t_mold = buf1.st_mtime;
@@ -47,8 +50,8 @@ void utimes_0100(void)
         t_error("%s utimes failed", __func__);
     } else {
         stat(path, &buf2);
-        t_new = buf2.st_mtime;
-        if (t_new != t_now) {
+        tNew = buf2.st_mtime;
+        if (tNew != t_now) {
             t_error("%s utimes failed", __func__);
         }
     }
@@ -60,7 +63,7 @@ void utimes_0100(void)
  * @tc.desc      : Specify time to change file last access and modification time
  * @tc.level     : Level 1
  */
-void utimes_0200(void)
+void Utimes0200(void)
 {
     const char* path = "/data/storage/el2/base/cache/utimes.txt";
     int fd = open(path, O_RDWR | O_RSYNC | O_CREAT, 0664);
@@ -89,7 +92,7 @@ void utimes_0200(void)
  * @tc.desc      : Change file last access and modification times
  * @tc.level     : Level 0
  */
-void utimes_time64_0100(void)
+void UtimesTime640100(void)
 {
     const char* path = "/data/storage/el2/base/cache/utimes_time64.txt";
     int fd = open(path, O_RDWR | O_RSYNC | O_CREAT, 0664);
@@ -100,7 +103,10 @@ void utimes_time64_0100(void)
     close(fd);
     struct stat buf1;
     struct stat buf2;
-    time_t t_mold, t_aold, t_now, t_new;
+    time_t t_mold;
+    time_t t_aold;
+    time_t t_now;
+    time_t tNew;
     stat(path, &buf1);
 
     t_mold = buf1.st_mtime;
@@ -110,19 +116,19 @@ void utimes_time64_0100(void)
         t_error("%s __utimes_time64 failed", __func__);
     } else {
         stat(path, &buf2);
-        t_new = buf2.st_mtime;
-        if (t_new != t_now) {
+        tNew = buf2.st_mtime;
+        if (tNew != t_now) {
             t_error("%s __utimes_time64 failed", __func__);
         }
     }
     remove(path);
 }
 
-static int UtimesTest_impl(int argc, char* argv[])
+static int UtimesTestImpl(int argc, char* argv[])
 {
-    utimes_0100();
-    utimes_0200();
-    utimes_time64_0100();
+    Utimes0100();
+    Utimes0200();
+    UtimesTime640100();
     return t_status;
 }
 
@@ -130,5 +136,5 @@ int UtimesTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return UtimesTest_impl(1, libcArgv);
+    return UtimesTestImpl(1, libcArgv);
 }

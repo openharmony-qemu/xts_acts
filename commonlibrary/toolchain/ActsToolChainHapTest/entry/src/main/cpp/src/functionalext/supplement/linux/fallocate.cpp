@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+#include <errno.h>
 #include <fcntl.h>
 #include "functionalext.h"
 
@@ -25,18 +26,19 @@ const int FAILED = -1;
  * @tc.desc      : The parameter mode is 0, which can expand the file space.
  * @tc.level     : Level 0
  */
-void fallocate_0100()
+void Fallocate0100()
 {
     char str[] = "this is a fatest\n";
     char buffer[1024] = { 0 };
     int fd = open("/data/storage/el2/base/cache/fatest.txt", O_RDWR | O_CREAT, TEST_MODE);
-    EXPECT_TRUE("fallocate_0100", fd >= 0);
+    EXPECT_TRUE("Fallocate0100", fd >= 0);
     int retwrite = write(fd, str, sizeof(str));
-    EXPECT_EQ("fallocate_0100", retwrite, SIZE);
+    EXPECT_EQ("Fallocate0100", retwrite, SIZE);
     int ret = fallocate(fd, 0, 4096, 4096 * 3);
-    EXPECT_EQ("fallocate_0100", ret, SUCCESS);
+    EXPECT_EQ("Fallocate0100", ret, SUCCESS);
     close(fd);
-    remove("/data/storage/el2/base/cache/fatest.txt");
+    int removeRet = remove("/data/storage/el2/base/cache/fatest.txt");
+    EXPECT_EQ("Fallocate0100", removeRet, SUCCESS);
 }
 
 /**
@@ -44,18 +46,19 @@ void fallocate_0100()
  * @tc.desc      : The parameter mode is FALLOC_FL_KEEP_SIZE, which can expand the file space.
  * @tc.level     : Level 1
  */
-void fallocate_0200(void)
+void Fallocate0200(void)
 {
     char str[] = "this is a fatest\n";
     char buffer[1024] = { 0 };
     int fd = open("/data/storage/el2/base/cache/fatest.txt", O_RDWR | O_CREAT, TEST_MODE);
-    EXPECT_TRUE("fallocate_0200", fd >= 0);
+    EXPECT_TRUE("Fallocate0200", fd >= 0);
     int retwrite = write(fd, str, sizeof(str));
-    EXPECT_EQ("fallocate_0200", retwrite, SIZE);
+    EXPECT_EQ("Fallocate0200", retwrite, SIZE);
     int ret = fallocate(fd, FALLOC_FL_KEEP_SIZE, 4096, 4096 * 3);
-    EXPECT_EQ("fallocate_0200", ret, SUCCESS);
+    EXPECT_EQ("Fallocate0200", ret, SUCCESS);
     close(fd);
-    remove("/data/storage/el2/base/cache/fatest.txt");
+    int removeRet = remove("/data/storage/el2/base/cache/fatest.txt");
+    EXPECT_EQ("Fallocate0200", removeRet, SUCCESS);
 }
 
 /**
@@ -63,19 +66,20 @@ void fallocate_0200(void)
  * @tc.desc      : The parameter mode is FALLOC_FL_KEEP_SIZE|FALLOC_FL_PUNCH_HOLE, which can release file space.
  * @tc.level     : Level 1
  */
-void fallocate_0300(void)
+void Fallocate0300(void)
 {
     char str[] = "this is a fatest\n";
     char buffer[1024] = { 0 };
     int fd = open("/data/storage/el2/base/cache/fatest.txt", O_RDWR | O_CREAT, TEST_MODE);
-    EXPECT_TRUE("fallocate_0300", fd >= 0);
+    EXPECT_TRUE("Fallocate0300", fd >= 0);
     int retwrite = write(fd, str, sizeof(str));
-    EXPECT_EQ("fallocate_0300", retwrite, SIZE);
+    EXPECT_EQ("Fallocate0300", retwrite, SIZE);
     lseek(fd, 0, SEEK_SET);
     int ret = fallocate(fd, FALLOC_FL_KEEP_SIZE | FALLOC_FL_PUNCH_HOLE, 4096, 4096 * 3);
-    EXPECT_EQ("fallocate_0300", ret, SUCCESS);
+    EXPECT_EQ("Fallocate0300", ret, SUCCESS);
     close(fd);
-    remove("/data/storage/el2/base/cache/fatest.txt");
+    int removeRet = remove("/data/storage/el2/base/cache/fatest.txt");
+    EXPECT_EQ("Fallocate0300", removeRet, SUCCESS);
 }
 
 /**
@@ -83,27 +87,28 @@ void fallocate_0300(void)
  * @tc.desc      : The parameter fd is invalid, the mode is FALLOC_FL_KEEP_SIZE, and the file space cannot be expanded
  * @tc.level     : Level 1
  */
-void fallocate_0400(void)
+void Fallocate0400(void)
 {
     int fd = -1;
     int ret = fallocate(fd, FALLOC_FL_KEEP_SIZE, 4096, 4096 * 3);
-    EXPECT_EQ("fallocate_0400", ret, FAILED);
+    EXPECT_EQ("Fallocate0400", ret, FAILED);
     close(fd);
-    remove("/data/storage/el2/base/cache/fatest.txt");
+    int removeRet = remove("/data/storage/el2/base/cache/fatest.txt");
+    EXPECT_TRUE("Fallocate0400", removeRet == SUCCESS || errno == ENOENT);
 }
 
-static int FallocateTest_impl(int argc, char* argv[])
+static int FallocateTestImpl(int argc, char* argv[])
 {
-    fallocate_0100();
-    fallocate_0200();
-    fallocate_0300();
-    fallocate_0400();
+    Fallocate0100();
+    Fallocate0200();
+    Fallocate0300();
+    Fallocate0400();
     return t_status;
 }
 
 int FallocateTest(void)
 {
     static char libcProg[] = "libc_test";
-    char* libcArgv[] = { libcProg, NULL };
-    return FallocateTest_impl(1, libcArgv);
+    char* libcArgv[] = { libcProg, nullptr };
+    return FallocateTestImpl(1, libcArgv);
 }

@@ -24,7 +24,7 @@ extern "C" int __sched_rr_get_interval_time64(pid_t, struct timespec*);
  * @tc.desc      : get the SCHED_RR interval for the named process
  * @tc.level     : Level 0
  */
-void sched_rr_get_interval_0100(void)
+void SchedRrGetInterval0100(void)
 {
     pid_t pid = getpid();
     struct timespec ts = { 0 };
@@ -47,7 +47,7 @@ void sched_rr_get_interval_0100(void)
  * @tc.desc      : get the SCHED_RR interval for an invalid process
  * @tc.level     : Level 2
  */
-void sched_rr_get_interval_0200(void)
+void SchedRrGetInterval0200(void)
 {
     pid_t pid = -1;
     struct timespec ts = { 0 };
@@ -65,7 +65,7 @@ void sched_rr_get_interval_0200(void)
  * @tc.desc      : get the SCHED_RR interval for the named process
  * @tc.level     : Level 0
  */
-void sched_rr_get_interval_time64_0100(void)
+void SchedRrGetIntervalTime640100(void)
 {
     pid_t pid = getpid();
     struct timespec ts = { 0 };
@@ -83,17 +83,17 @@ void sched_rr_get_interval_time64_0100(void)
     }
 }
 
-static int SchedRrGetIntervalTest_impl(int argc, char* argv[])
+static int SchedRrGetIntervalTestImpl(int argc, char* argv[])
 {
-    sched_rr_get_interval_0100();
-    sched_rr_get_interval_0200();
-    sched_rr_get_interval_time64_0100();
+    SchedRrGetInterval0100();
+    SchedRrGetInterval0200();
+    SchedRrGetIntervalTime640100();
     return t_status;
 }
 
 int SchedRrGetIntervalTest(void)
 {
     static char libcProg[] = "libc_test";
-    char* libcArgv[] = { libcProg, NULL };
-    return SchedRrGetIntervalTest_impl(1, libcArgv);
+    char* libcArgv[] = { libcProg, nullptr };
+    return SchedRrGetIntervalTestImpl(1, libcArgv);
 }

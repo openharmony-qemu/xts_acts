@@ -17,106 +17,111 @@
 #include <unistd.h>
 #include "functionalext.h"
 
-static int successfully = 0;
-int failed = -1;
+static int g_successfully = 0;
+int g_failed = -1;
 
 /*
- * @tc.name      : daemon_0100
+ * @tc.name      : Daemon0100
  * @tc.desc      : Verify that the working directory of the daemon can be changed (parameters is 0)
  * @tc.level     : Level 0
  */
-void daemon_0100(void)
+void Daemon0100(void)
 {
     pid_t pid;
     int result = daemon(0, 0);
-    EXPECT_EQ("daemon_0100", result, successfully);
+    EXPECT_EQ("Daemon0100", result, g_successfully);
 }
 
 /*
- * @tc.name      : daemon_0200
+ * @tc.name      : Daemon0200
  * @tc.desc      : Verify that the working directory of the daemon can be changed (parameters is 7)
  * @tc.level     : Level 0
  */
-void daemon_0200(void)
+void Daemon0200(void)
 {
     pid_t pid;
     int result = daemon(7, 0);
-    EXPECT_EQ("daemon_0200", result, successfully);
+    EXPECT_EQ("Daemon0200", result, g_successfully);
     int fd = open("/dev/null", O_RDWR);
-    EXPECT_EQ("daemon_0200", fd, successfully);
+    EXPECT_EQ("Daemon0200", fd, g_successfully);
 }
 
 /*
- * @tc.name      : daemon_0300
+ * @tc.name      : Daemon0300
  * @tc.desc      : Verify that the working directory of the daemon cannot be changed
  *                 (the nochdir parameter has no effect)
  * @tc.level     : Level 2
  */
-void daemon_0300(void)
+void Daemon0300(void)
 {
     pid_t pid;
     int result = daemon(0, -1);
-    EXPECT_EQ("daemon_0300", result, failed);
+    EXPECT_EQ("Daemon0300", result, g_failed);
 }
 
 /*
- * @tc.name      : daemon_0400
+ * @tc.name      : Daemon0400
  * @tc.desc      : Verify that the working directory of the daemon cannot be changed
  *                 (the noclose parameter has no effect)
  * @tc.level     : Level 2
  */
-void daemon_0400(void)
+void Daemon0400(void)
 {
     pid_t pid;
     int result = daemon(-1, -1);
-    EXPECT_EQ("daemon_0400", result, failed);
+    EXPECT_EQ("Daemon0400", result, g_failed);
     int fd = open("/dev/null", O_RDWR);
-    EXPECT_EQ("daemon_0400", fd, failed);
+    EXPECT_EQ("Daemon0400", fd, g_failed);
 }
 
 /*
- * @tc.name      : daemon_0500
+ * @tc.name      : Daemon0500
  * @tc.desc      : Verify that the working directory of the daemon cannot be changed (parameter invalid)
  * @tc.level     : Level 2
  */
-void daemon_0500(void)
+void Daemon0500(void)
 {
     pid_t pid;
     int result = daemon(0, 0);
-    EXPECT_EQ("daemon_0500", result, successfully);
+    EXPECT_EQ("Daemon0500", result, g_successfully);
     pid = fork();
-    EXPECT_EQ("daemon_0500", pid, failed);
+    EXPECT_EQ("Daemon0500", pid, g_failed);
 }
 
 /*
- * @tc.name      : daemon_0600
+ * @tc.name      : Daemon0600
  * @tc.desc      : Verify that the working directory of the daemon cannot be changed (parameter invalid)
  * @tc.level     : Level 2
  */
-void daemon_0600(void)
+void Daemon0600(void)
 {
     pid_t pid;
     int result = daemon(0, 0);
-    EXPECT_EQ("daemon_0600", result, successfully);
+    EXPECT_EQ("Daemon0600", result, g_successfully);
     int mode = setsid();
-    EXPECT_EQ("daemon_0600", mode, failed);
+    EXPECT_EQ("Daemon0600", mode, g_failed);
 }
 
-static int daemonTest_with_args(int argc, char* argv[])
+static int DaemonTestWithArgs(int argc, char* argv[])
 {
-    daemon_0100();
-    daemon_0200();
-    daemon_0300();
-    daemon_0400();
-    daemon_0500();
-    daemon_0600();
+    Daemon0100();
+    Daemon0200();
+    Daemon0300();
+    Daemon0400();
+    Daemon0500();
+    Daemon0600();
 
     return t_status;
 }
 
-int daemonTest(void)
+int DaemonTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return daemonTest_with_args(1, libcArgv);
+    return DaemonTestWithArgs(1, libcArgv);
+}
+
+int daemonTest(void)
+{
+    return DaemonTest();
 }
