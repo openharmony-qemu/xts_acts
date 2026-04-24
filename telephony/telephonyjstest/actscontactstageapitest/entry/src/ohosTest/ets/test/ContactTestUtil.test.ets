@@ -17,6 +17,23 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { fileIo as fs } from '@kit.CoreFileKit';
 import { image } from '@kit.ImageKit';
 import fileUri from '@ohos.file.fileuri';
+import contact from '@ohos.contact';
+
+export async function HasCard(): Promise<boolean> {
+  let context: Context = AppStorage.get('context') as Context;
+
+  return new Promise<boolean>((resolve) => {
+    contact.queryMyCard(context, (err, data) => {
+      if (err) {
+        console.info("before test err = " + JSON.stringify(err));
+        resolve(false);
+      } else {
+        console.info("before test data = " + JSON.stringify(data));
+        resolve(!!data);
+      }
+    });
+  });
+}
 
 export async function SavePhoto(fileName: string) {
   let fileDir = abilityDelegatorRegistry.getAbilityDelegator().getAppContext().filesDir;
