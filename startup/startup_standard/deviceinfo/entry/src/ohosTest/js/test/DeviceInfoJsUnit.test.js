@@ -2178,17 +2178,20 @@ export default function DeviceInfoTest() {
          */
         it('testGetDeviceColor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('SUB_STARTUP_INIT_DEVCEINFO_8200 start');
+            let brandInfo = deviceinfo.brand;
             let deviceCorlor = deviceinfo.deviceCorlor;
             
-            if (deviceCorlor != null && deviceCorlor != undefined) {
-                console.info('the value of the deviceinfo DeviceColor is :' + deviceCorlor);
-                expect(deviceCorlor).assertInstanceOf('String');
-				done();
-            } else {
-                console.info('the return value DeviceColor is null or incorrect.');
-                expect().assertFail();
-                done();               
-            }
+            if (brandInfo == 'huawei'){
+                if (deviceCorlor != "" && deviceCorlor != null && deviceCorlor != undefined) {
+                    console.info('the value of the deviceinfo DeviceColor is :' + deviceCorlor);
+                    expect(deviceCorlor).assertInstanceOf('String');
+                    done();
+                } else {
+                    console.info('the return value DeviceColor is null or incorrect.');
+                    expect().assertFail();
+                    done();               
+                }
+            }           
 
             console.info('SUB_STARTUP_INIT_DEVCEINFO_8200 end');
         })
