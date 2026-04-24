@@ -596,7 +596,7 @@ export default function ActsHiDebugHiProfilerTest() {
     })
 
     /**
-     * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_2600
+     * @tc.number SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2600
      * @tc.name testHidebugHiprofilerInterface26
      * @tc.desc 验证OH_HiDebug_StartProfiler接口type参数传入THREAD，config参数maxDuration传入0，返回值11400411
      * @tc.size MediumTest
@@ -604,22 +604,22 @@ export default function ActsHiDebugHiProfilerTest() {
      * @tc.level Level2
      */
     it('testHidebugHiprofilerInterface26', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      console.info("SUB_DFX_DFR_Hiprofiler_Interface_2600 start");
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2600 start");
       try {
         let res = testNapi.startProfiler(1, 0, 1, 30, 1, 384);
         expect(res == 11400411).assertTrue();
-        console.info("SUB_DFX_DFR_Hiprofiler_Interface_2600 success");
+        console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2600 success");
         done();
       } catch (err) {
-        console.error(`SUB_DFX_DFR_Hiprofiler_Interface_2600 > err code: ${err.code}, err msg: ${err.message}`)
+        console.error(`SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2600 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
         done();
       }
-      console.info("SUB_DFX_DFR_Hiprofiler_Interface_2600 end");
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2600 end");
     })
 
     /**
-     * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_2700
+     * @tc.number SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2700
      * @tc.name testHidebugHiprofilerInterface27
      * @tc.desc 验证OH_HiDebug_StartProfiler接口type参数传入NATIVE，config参数maxDuration传入0，返回值11400411
      * @tc.size MediumTest
@@ -627,22 +627,22 @@ export default function ActsHiDebugHiProfilerTest() {
      * @tc.level Level2
      */
     it('testHidebugHiprofilerInterface27', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      console.info("SUB_DFX_DFR_Hiprofiler_Interface_2700 start");
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2700 start");
       try {
         let res = testNapi.startProfiler(2, 0, 1, 30, 1, 384);
         expect(res == 11400411).assertTrue();
-        console.info("SUB_DFX_DFR_Hiprofiler_Interface_2700 success");
+        console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2700 success");
         done();
       } catch (err) {
-        console.error(`SUB_DFX_DFR_Hiprofiler_Interface_2700 > err code: ${err.code}, err msg: ${err.message}`)
+        console.error(`SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2700 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
         done();
       }
-      console.info("SUB_DFX_DFR_Hiprofiler_Interface_2700 end");
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2700 end");
     })
 
     /**
-     * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_2800
+     * @tc.number SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2800
      * @tc.name testHidebugHiprofilerInterface28
      * @tc.desc 验证OH_HiDebug_StartProfiler接口type参数传入GPU，config参数maxDuration传入0，返回值11400411
      * @tc.size MediumTest
@@ -650,22 +650,22 @@ export default function ActsHiDebugHiProfilerTest() {
      * @tc.level Level2
      */
     it('testHidebugHiprofilerInterface28', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      console.info("SUB_DFX_DFR_Hiprofiler_Interface_2800 start");
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2800 start");
       try {
         let res = testNapi.startProfiler(3, 0, 1, 30, 1, 384);
         expect(res == 11400411).assertTrue();
-        console.info("SUB_DFX_DFR_Hiprofiler_Interface_2800 success");
+        console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2800 success");
         done();
       } catch (err) {
-        console.error(`SUB_DFX_DFR_Hiprofiler_Interface_2800 > err code: ${err.code}, err msg: ${err.message}`)
+        console.error(`SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2800 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
         done();
       }
-      console.info("SUB_DFX_DFR_Hiprofiler_Interface_2800 end");
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2800 end");
     })
 
     /**
-     * @tc.number SUB_DFX_DFR_Hiprofiler_Interface_2900
+     * @tc.number SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2900
      * @tc.name testHidebugHiprofilerInterface29
      * @tc.desc 验证OH_HiDebug_StartProfiler接口type参数传入GLOBAL_HANDLE，config参数maxDuration传入0，返回值11400411
      * @tc.size MediumTest
@@ -673,18 +673,18 @@ export default function ActsHiDebugHiProfilerTest() {
      * @tc.level Level2
      */
     it('testHidebugHiprofilerInterface29', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      console.info("SUB_DFX_DFR_Hiprofiler_Interface_2900 start");
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2900 start");
       try {
         let res = testNapi.startProfiler(4, 0, 1, 30, 1, 384);
         expect(res == 11400411).assertTrue();
-        console.info("SUB_DFX_DFR_Hiprofiler_Interface_2900 success");
+        console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2900 success");
         done();
       } catch (err) {
-        console.error(`SUB_DFX_DFR_Hiprofiler_Interface_2900 > err code: ${err.code}, err msg: ${err.message}`)
+        console.error(`SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2900 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
         done();
       }
-      console.info("SUB_DFX_DFR_Hiprofiler_Interface_2900 end");
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2900 end");
     })
   })
 }
