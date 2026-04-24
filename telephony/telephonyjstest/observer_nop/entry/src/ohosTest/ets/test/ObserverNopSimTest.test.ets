@@ -69,8 +69,8 @@ export default function observerNopSimTest() {
         observer.onGetSimActiveState(slotId, (data: boolean) => {
           console.info(`${caseName} data: ${data}}`);
           ExpectFail();
+          done();
         });
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(error.code === 201);
@@ -94,8 +94,8 @@ export default function observerNopSimTest() {
         observer.offGetSimActiveState((data: boolean) => {
           console.info(`${caseName} data: ${data}}`);
           ExpectFail();
+          done();
         });
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(error.code === 201);

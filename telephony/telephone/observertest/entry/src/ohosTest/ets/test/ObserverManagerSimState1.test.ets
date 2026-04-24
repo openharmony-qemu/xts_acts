@@ -544,8 +544,8 @@ export default function observerManagerSimStateTest1() {
         observer.onGetSimActiveState(null, (data: boolean) => {
           console.info(`${caseName} data: ${data}}`);
           ExpectFail();
+          done();
         });
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(error.code == 401);
@@ -570,8 +570,8 @@ export default function observerManagerSimStateTest1() {
         observer.onGetSimActiveState(slotId, (data: boolean) => {
           console.info(`${caseName} data: ${data}}`);
           ExpectFail();
+          done();
         });
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(error.code == 8300001);
@@ -597,8 +597,8 @@ export default function observerManagerSimStateTest1() {
         observer.onGetSimActiveState(slotId, (data: boolean) => {
           console.info(`${caseName} data: ${data}}`);
           ExpectTrue(data);
+          done();
         });
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectFail();
@@ -656,8 +656,8 @@ export default function observerManagerSimStateTest1() {
         observer.onGetSimActiveState(slotId, (data: boolean) => {
           console.info(`${caseName} data: ${data}`);
           ExpectFail();
+          done();
         });
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectTrue(error.code == 8300001);
@@ -681,8 +681,8 @@ export default function observerManagerSimStateTest1() {
         observer.onGetSimActiveState(undefined, (data: boolean) => {
           console.info(`${caseName} data: ${data}}`);
           ExpectFail();
+          done();
         });
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectTrue(error.code == 401);
@@ -711,6 +711,7 @@ export default function observerManagerSimStateTest1() {
             observer.offGetSimActiveState((res: boolean) => {
               console.info(`${caseName} res: ${res}}`);
               ExpectTrue(res);
+              done();
             });
           } else {
             console.info(`${caseName} , The SIM card is not activated`);
@@ -718,7 +719,6 @@ export default function observerManagerSimStateTest1() {
             done();
           }
         });
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectFail();
