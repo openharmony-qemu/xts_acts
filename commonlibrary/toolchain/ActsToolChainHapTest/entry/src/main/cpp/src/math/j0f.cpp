@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,8 +13,6 @@
  * limitations under the License.
  */
 
-#define _DEFAULT_SOURCE 1
-#define _BSD_SOURCE 1
 #include <stdint.h>
 #include <stdio.h>
 #include "mtest.h"
@@ -33,7 +31,7 @@ static int J0fTest_impl(void)
     int e;
     int i;
     int err = 0;
-    struct FF *p;
+    struct FF* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
@@ -48,7 +46,12 @@ static int J0fTest_impl(void)
 
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s j0f(%a)=%a, want %s",
-                p->file, p->line, Rstr(p->r), p->x, p->y, Estr(p->e));
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->y,
+                   Estr(p->e));
             printf(" got %s\n", Estr(e));
             err++;
         }
@@ -60,7 +63,15 @@ static int J0fTest_impl(void)
                 err++;
             }
             printf("%s:%d: %s j0f(%a) want %a got %a ulperr %.3f = %a + %a\n",
-                p->file, p->line, Rstr(p->r), p->x, p->y, y, d, d - p->dy, p->dy);
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->y,
+                   y,
+                   d,
+                   d - p->dy,
+                   p->dy);
         }
     }
     return !!err;

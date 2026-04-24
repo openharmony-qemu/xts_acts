@@ -30,7 +30,7 @@ static int FdimfTest_impl(void)
     int e;
     int i;
     int err = 0;
-    struct FfF *p;
+    struct FfF* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;

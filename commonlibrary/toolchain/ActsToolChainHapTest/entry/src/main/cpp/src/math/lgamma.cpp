@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-#define _XOPEN_SOURCE 700
 #include <cstdint>
 #include <cstdio>
 #include "mtest.h"
@@ -22,6 +21,27 @@ static struct DDi t[] = {
 #include "sanity/lgamma.h"
 #include "special/lgamma.h"
 };
+
+static bool HasLgammaSignMismatch(const struct DDi* p, int sign)
+{
+    return !isnan(p->x) && p->x != -INF && !(p->e & DIVBYZERO) && sign != p->i;
+}
+
+static void PrintLgammaMismatch(const struct DDi* p, double y, int sign, float d)
+{
+    printf("%s:%d: %s lgamma(%a) want %a,%lld got %a,%d ulperr %.3f = %a + %a\n",
+           p->file,
+           p->line,
+           Rstr(p->r),
+           p->x,
+           p->y,
+           p->i,
+           y,
+           sign,
+           d,
+           d - p->dy,
+           p->dy);
+}
 
 static int LgammaTest_impl(void)
 {
@@ -33,7 +53,7 @@ static int LgammaTest_impl(void)
     int i;
     int bad;
     int err = 0;
-    struct DDi *p;
+    struct DDi* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
@@ -59,25 +79,14 @@ static int LgammaTest_impl(void)
             err++;
         }
         d = Ulperr(y, p->y, p->dy);
-        bad = !isnan(p->x) && p->x != -INF && !(p->e & DIVBYZERO) && yi != p->i;
+        bad = HasLgammaSignMismatch(p, yi);
         if (bad || !Checkulp(d, p->r)) {
             if (!bad && fabsf(d) < 11.0f) {
                 printf("X ");
             } else {
                 err++;
             }
-            printf("%s:%d: %s lgamma(%a) want %a,%lld got %a,%d ulperr %.3f = %a + %a\n",
-                   p->file,
-                   p->line,
-                   Rstr(p->r),
-                   p->x,
-                   p->y,
-                   p->i,
-                   y,
-                   yi,
-                   d,
-                   d - p->dy,
-                   p->dy);
+            PrintLgammaMismatch(p, y, yi, d);
         }
     }
     return !!err;

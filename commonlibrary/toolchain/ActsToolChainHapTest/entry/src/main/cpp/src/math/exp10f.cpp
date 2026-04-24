@@ -14,11 +14,10 @@
  */
 
 #include "test.h"
-#define _GNU_SOURCE 1
+#include <dlfcn.h>
 #include <stdint.h>
 #include <stdio.h>
 #include "mtest.h"
-#include <dlfcn.h>
 
 static struct FF t[] = {
 #include "sanity/exp10f.h"
@@ -26,12 +25,13 @@ static struct FF t[] = {
 
 };
 
-static int Exp10fTest_impl(void){
-    #pragma STDC FENV_ACCESS ON
+static int Exp10fTest_impl(void)
+{
+#pragma STDC FENV_ACCESS ON
     float y;
     float d;
     int e, i, err = 0;
-    struct FF *p;
+    struct FF* p;
 
     typedef float (*exp10f_func)(float);
     exp10f_func exp10f = (exp10f_func)dlsym(RTLD_DEFAULT, "exp10f");
@@ -39,8 +39,8 @@ static int Exp10fTest_impl(void){
         t_error("exp10f function not found\n");
         return 1;
     }
-    
-    for (i = 0; i < sizeof t/sizeof *t; i++) {
+
+    for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
 
         if (p->r < 0)
@@ -48,18 +48,31 @@ static int Exp10fTest_impl(void){
         fesetround(p->r);
         feclearexcept(FE_ALL_EXCEPT);
         y = exp10f(p->x);
-        e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
+        e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
 
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s exp10f(%a)=%a, want %s",
-                p->file, p->line, Rstr(p->r), p->x, p->y, Estr(p->e));
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->y,
+                   Estr(p->e));
             printf(" got %s\n", Estr(e));
             err++;
         }
         d = Ulperrf(y, p->y, p->dy);
         if (!Checkulp(d, p->r)) {
             printf("%s:%d: %s exp10f(%a) want %a got %a ulperr %.3f = %a + %a\n",
-                p->file, p->line, Rstr(p->r), p->x, p->y, y, d, d-p->dy, p->dy);
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->y,
+                   y,
+                   d,
+                   d - p->dy,
+                   p->dy);
             err++;
         }
     }

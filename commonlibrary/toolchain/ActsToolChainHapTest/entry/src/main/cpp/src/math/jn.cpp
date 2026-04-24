@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-#define _XOPEN_SOURCE 700
 #include <stdint.h>
 #include <stdio.h>
 #include "mtest.h"
@@ -23,14 +22,15 @@ static struct DiD t[] = {
 #include "special/jn.h"
 };
 
-static int JnTest_impl(void){
-    #pragma STDC FENV_ACCESS ON
+static int JnTest_impl(void)
+{
+#pragma STDC FENV_ACCESS ON
     double y;
     float d;
     int e, i, err = 0;
-    struct DiD *p;
+    struct DiD* p;
 
-    for (i = 0; i < sizeof t/sizeof *t; i++) {
+    for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
 
         if (p->r < 0)
@@ -38,11 +38,17 @@ static int JnTest_impl(void){
         fesetround(p->r);
         feclearexcept(FE_ALL_EXCEPT);
         y = jn(p->i, p->x);
-        e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
+        e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
 
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s jn(%lld, %a)=%a, want %s",
-                p->file, p->line, Rstr(p->r), p->i, p->x, p->y, Estr(p->e));
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->i,
+                   p->x,
+                   p->y,
+                   Estr(p->e));
             printf(" got %s\n", Estr(e));
             err++;
         }
@@ -53,7 +59,16 @@ static int JnTest_impl(void){
             else
                 err++;
             printf("%s:%d: %s jn(%lld, %a) want %a got %a, ulperr %.3f = %a + %a\n",
-                p->file, p->line, Rstr(p->r), p->i, p->x, p->y, y, d, d-p->dy, p->dy);
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->i,
+                   p->x,
+                   p->y,
+                   y,
+                   d,
+                   d - p->dy,
+                   p->dy);
         }
     }
     return !!err;

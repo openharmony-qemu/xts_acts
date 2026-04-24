@@ -13,13 +13,14 @@
  * limitations under the License.
  */
 
-#include "functionalext.h"
-#include "ldso_dlopen_config_abs_path.h"
 #include <dlfcn.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "functionalext.h"
+#include "ldso_dlopen_config_abs_path.h"
 
-static int LdsoDlopenConfigAbsPath9Test_impl(){
+static int LdsoDlopenConfigAbsPath9Test_impl()
+{
     if (!CheckPrerequisites()) {
         printf("CheckPrerequisites failed\n");
         return g_tStatus;

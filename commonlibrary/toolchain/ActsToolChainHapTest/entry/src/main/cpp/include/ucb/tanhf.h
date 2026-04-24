@@ -18,19 +18,18 @@
 
 // tanh(+-max) = +-1
 T(ROUND_TO_NEAREST, 0x1.fffffep+127, 0x1p+0, 0x0p+0, INEXACT)
-T(ROUND_TO_NEAREST,-0x1.fffffep+127,-0x1p+0, 0x0p+0, INEXACT)
-T(RZ, 0x1.fffffep+127, 0x1.fffffep-1,-0x1p+0, INEXACT)
-T(RZ,-0x1.fffffep+127,-0x1.fffffep-1, 0x1p+0, INEXACT)
+T(ROUND_TO_NEAREST, -0x1.fffffep+127, -0x1p+0, 0x0p+0, INEXACT)
+T(RZ, 0x1.fffffep+127, 0x1.fffffep-1, -0x1p+0, INEXACT)
+T(RZ, -0x1.fffffep+127, -0x1.fffffep-1, 0x1p+0, INEXACT)
 T(RU, 0x1.fffffep+127, 0x1p+0, 0x0p+0, INEXACT)
-T(RU,-0x1.fffffep+127,-0x1.fffffep-1, 0x1p+0, INEXACT)
-T(RD, 0x1.fffffep+127, 0x1.fffffep-1,-0x1p+0, INEXACT)
-T(RD,-0x1.fffffep+127,-0x1p+0, 0x0p+0, INEXACT)
+T(RU, -0x1.fffffep+127, -0x1.fffffep-1, 0x1p+0, INEXACT)
+T(RD, 0x1.fffffep+127, 0x1.fffffep-1, -0x1p+0, INEXACT)
+T(RD, -0x1.fffffep+127, -0x1p+0, 0x0p+0, INEXACT)
 
 // tanh(tiny) :=: tiny
 T(ROUND_TO_NEAREST, 0x1p-29, 0x1p-29, 0x1.555556p-37, INEXACT)
-T(ROUND_TO_NEAREST,-0x1p-29,-0x1p-29,-0x1.555556p-37, INEXACT)
+T(ROUND_TO_NEAREST, -0x1p-29, -0x1p-29, -0x1.555556p-37, INEXACT)
 T(ROUND_TO_NEAREST, 0x1p-126, 0x1p-126, 0x0p+0, INEXACT)
-T(ROUND_TO_NEAREST,-0x1p-126,-0x1p-126, 0x0p+0, INEXACT)
+T(ROUND_TO_NEAREST, -0x1p-126, -0x1p-126, 0x0p+0, INEXACT)
 
 #endif // UCB_TANHF_H_H
-

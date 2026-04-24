@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-#define _XOPEN_SOURCE 700
 #include <cstdint>
 #include <cstdio>
 #include "mtest.h"
@@ -31,7 +30,7 @@ static int J1Test_impl(void)
     int e;
     int i;
     int err = 0;
-    struct DD *p;
+    struct DD* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
@@ -44,13 +43,8 @@ static int J1Test_impl(void)
         y = j1(p->x);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
         if (!Checkexcept(e, p->e, p->r)) {
-            printf("%s:%d: bad fp exception: %s j1(%a)=%a, want %s",
-                   p->file,
-                   p->line,
-                   Rstr(p->r),
-                   p->x,
-                   p->y,
-                   Estr(p->e));
+            printf(
+                "%s:%d: bad fp exception: %s j1(%a)=%a, want %s", p->file, p->line, Rstr(p->r), p->x, p->y, Estr(p->e));
             printf(" got %s\n", Estr(e));
             err++;
         }
@@ -76,3 +70,4 @@ int J1Test(void)
 {
     return J1Test_impl();
 }
+

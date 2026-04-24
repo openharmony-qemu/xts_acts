@@ -16,20 +16,19 @@
 #ifndef UCB_TANH_H_H
 #define UCB_TANH_H_H
 
-T(ROUND_TO_NEAREST,                  0x0p+0,                  0x0p+0,          0x0p+0, 0)
-T(ROUND_TO_NEAREST,                 -0x0p+0,                 -0x0p+0,          0x0p+0, 0)
-T(ROUND_TO_NEAREST,               0x1p-1074,               0x1p-1074,          0x0p+0, INEXACT|UNDERFLOW)
-T(ROUND_TO_NEAREST,              -0x1p-1074,              -0x1p-1074,          0x0p+0, INEXACT|UNDERFLOW)
-T(ROUND_TO_NEAREST,               0x1p-1042,               0x1p-1042,          0x0p+0, INEXACT|UNDERFLOW)
-T(ROUND_TO_NEAREST,              -0x1p-1042,              -0x1p-1042,          0x0p+0, INEXACT|UNDERFLOW)
-T(ROUND_TO_NEAREST,               0x1p-1022,               0x1p-1022,          0x0p+0, INEXACT)
-T(ROUND_TO_NEAREST,              -0x1p-1022,              -0x1p-1022,          0x0p+0, INEXACT)
-T(ROUND_TO_NEAREST,                 0x1p-67,                 0x1p-67,          0x0p+0, INEXACT)
-T(ROUND_TO_NEAREST,                -0x1p-67,                -0x1p-67,          0x0p+0, INEXACT)
-T(ROUND_TO_NEAREST, 0x1.fffffffffffffp+1023,                  0x1p+0,          0x0p+0, INEXACT)
-T(ROUND_TO_NEAREST,-0x1.fffffffffffffp+1023,                 -0x1p+0,          0x0p+0, INEXACT)
-T(ROUND_TO_NEAREST,                     INF,                  0x1p+0,          0x0p+0, 0)
-T(ROUND_TO_NEAREST,                    -INF,                 -0x1p+0,          0x0p+0, 0)
+T(ROUND_TO_NEAREST, 0x0p+0, 0x0p+0, 0x0p+0, 0)
+T(ROUND_TO_NEAREST, -0x0p+0, -0x0p+0, 0x0p+0, 0)
+T(ROUND_TO_NEAREST, 0x1p-1074, 0x1p-1074, 0x0p+0, INEXACT | UNDERFLOW)
+T(ROUND_TO_NEAREST, -0x1p-1074, -0x1p-1074, 0x0p+0, INEXACT | UNDERFLOW)
+T(ROUND_TO_NEAREST, 0x1p-1042, 0x1p-1042, 0x0p+0, INEXACT | UNDERFLOW)
+T(ROUND_TO_NEAREST, -0x1p-1042, -0x1p-1042, 0x0p+0, INEXACT | UNDERFLOW)
+T(ROUND_TO_NEAREST, 0x1p-1022, 0x1p-1022, 0x0p+0, INEXACT)
+T(ROUND_TO_NEAREST, -0x1p-1022, -0x1p-1022, 0x0p+0, INEXACT)
+T(ROUND_TO_NEAREST, 0x1p-67, 0x1p-67, 0x0p+0, INEXACT)
+T(ROUND_TO_NEAREST, -0x1p-67, -0x1p-67, 0x0p+0, INEXACT)
+T(ROUND_TO_NEAREST, 0x1.fffffffffffffp+1023, 0x1p+0, 0x0p+0, INEXACT)
+T(ROUND_TO_NEAREST, -0x1.fffffffffffffp+1023, -0x1p+0, 0x0p+0, INEXACT)
+T(ROUND_TO_NEAREST, INF, 0x1p+0, 0x0p+0, 0)
+T(ROUND_TO_NEAREST, -INF, -0x1p+0, 0x0p+0, 0)
 
 #endif // UCB_TANH_H_H
-

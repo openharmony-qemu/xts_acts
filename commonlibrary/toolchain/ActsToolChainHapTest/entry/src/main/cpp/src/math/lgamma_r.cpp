@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,9 +13,6 @@
  * limitations under the License.
  */
 
-#define _DEFAULT_SOURCE 1
-#define _BSD_SOURCE 1
-#define _GNU_SOURCE 1
 #include <cstdint>
 #include <stdio.h>
 #include "mtest.h"
@@ -87,3 +84,4 @@ int LgammaRTest(void)
 {
     return LgammaRTest_impl();
 }
+
