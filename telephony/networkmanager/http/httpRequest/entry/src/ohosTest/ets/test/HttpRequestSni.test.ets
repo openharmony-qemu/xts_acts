@@ -1,7 +1,7 @@
 import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { http } from '@kit.NetworkKit';
 
-const BASE_URL = "https://23.106.128.32";
+const BASE_URL = "https://146.56.217.118:7808";
 const EMPTY_MSG = "__SNI_EMPTY__";
 const SLEEP_TIME = 3000;
 interface ResponseData {

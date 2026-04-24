@@ -42,7 +42,7 @@ export default function WebSocketTest() {
   describe("WebSocketTest", (): void => {
 
     hilog.info(domain, tag, '%{public}s', 'describe start');
-    let availableWebSocketAddress: string = 'ws://echo.websocket.org';
+    let availableWebSocketAddress: string = 'wss://websocket-echo.moyufangge.com';
 
 
     /**
