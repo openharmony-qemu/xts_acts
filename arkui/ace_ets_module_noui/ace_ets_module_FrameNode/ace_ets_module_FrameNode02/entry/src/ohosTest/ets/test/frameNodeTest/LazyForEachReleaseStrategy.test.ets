@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,19 +12,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from "@ohos/hypium"
 import router from '@ohos.router';
-import Utils from '../../MainAbility/common/Utils';
-import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/common/Common';
-
+import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import CommonFunc from '../../MainAbility/utils/Common';
+import {MessageManager,Callback} from '../../MainAbility/utils/MessageManager';
 export default function LazyForEachReleaseStrategyTest() {
-  describe('LazyForEachReleaseStrategyTest', () => {
+  describe('LazyForEachReleaseStrategy', () => {
     beforeEach(async (done: Function) => {
-      console.info("LazyForEachReleaseStrategyTest beforeEach start");
+      console.info("LazyForEachReleaseStrategy beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/CommonCustom/LazyForEachReleaseStrategy",
+        url: 'MainAbility/pages/frameNode/LazyForEachReleaseStrategy',
       }
       try {
         router.clear();
@@ -42,27 +40,68 @@ export default function LazyForEachReleaseStrategyTest() {
       }
       done();
     });
+    afterEach(async () => {
+      await CommonFunc.sleep(1000);
+      console.info(" LazyForEachReleaseStrategy after each called");
+    });
 
     /**
      * @tc.name   LazyForEachReleaseStrategyTest_0100
-     * @tc.number SUB_ARKUI_API_LazyForEachReleaseStrategyTest_0100
-     * @tc.desc   ArkUIAPI
+     * @tc.number LazyForEachReleaseStrategyTest_0100
+     * @tc.desc   List type FrameNode node
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('LazyForEachReleaseStrategyTest_0100', Level.LEVEL2, async (done: Function) => {
-      console.info('[LazyForEachReleaseStrategyTest_0100] START');
-      let driver = await Driver.create()
-      await CommonFunc.sleep(2000);
-
+    it('LazyForEachReleaseStrategyTest_0100', Level.LEVEL0, async (done: Function) => {
+      console.info('LazyForEachReleaseStrategyTest_0100 START');
+      await CommonFunc.sleep(1000);
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('LazyForEach_Item_0');
-      console.info('LazyForEachReleaseStrategyTest_0100 releaseStrategy:' + JSON.parse(strJson).$attrs.style);
+      let obj: ESObject = JSON.parse(strJson);
+      console.info("[LazyForEachReleaseStrategyTest_0100] component obj is: " + JSON.stringify(obj));
       expect(LazyForEachReleaseStrategy.PROGRESSIVE).assertEqual(1);
-
       console.info('[LazyForEachReleaseStrategyTest_0100] END');
       done();
     });
 
+    /**
+     * @tc.name   LazyForEachReleaseStrategyTest_0200
+     * @tc.number LazyForEachReleaseStrategyTest_0200
+     * @tc.desc   ListItem type FrameNode node
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('LazyForEachReleaseStrategyTest_0200', Level.LEVEL0, async (done: Function) => {
+      console.info('LazyForEachReleaseStrategyTest_0200 START');
+      await CommonFunc.sleep(1000);
+      let strJson = getInspectorByKey('LazyForEach_Item_1');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info("[LazyForEachReleaseStrategyTest_0200] component obj is: " + JSON.stringify(obj));
+      expect(LazyForEachReleaseStrategy.BATCH).assertEqual(0);
+      console.info('[LazyForEachReleaseStrategyTest_0200] END');
+      done();
+    });
+
+    /**
+     * @tc.name   LazyForEachReleaseStrategyTest_0300
+     * @tc.number LazyForEachReleaseStrategyTest_0300
+     * @tc.desc   ListItem type FrameNode node
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('LazyForEachReleaseStrategyTest_0300', Level.LEVEL0, async (done: Function) => {
+      console.info('LazyForEachReleaseStrategyTest_0300 START');
+      await CommonFunc.sleep(1000);
+      let strJson = getInspectorByKey('LazyForEach_Item_2');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info("[LazyForEachReleaseStrategyTest_0300] component obj is: " + JSON.stringify(obj));
+      expect(LazyForEachReleaseStrategy.Undefined).assertEqual('undefined');
+      console.info('[LazyForEachReleaseStrategyTest_0300] END');
+      done();
+    });
   })
 }
