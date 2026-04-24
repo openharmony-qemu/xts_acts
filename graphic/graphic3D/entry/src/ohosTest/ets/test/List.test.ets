@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 import sceneTest from './Scene.test'
+import sceneBoidsSimTest from './SceneBoidsSim.test'
 import sceneNodeTest from './SceneNode.test'
 import scenePostProcessSettingTest from './ScenePostProcessSettings.test'
 import sceneResourcesTest from './SceneResources.test'
@@ -23,4 +24,5 @@ export default function testsuite() {
   sceneNodeTest()
   sceneResourcesTest()
   scenePostProcessSettingTest()
+  sceneBoidsSimTest()
 }

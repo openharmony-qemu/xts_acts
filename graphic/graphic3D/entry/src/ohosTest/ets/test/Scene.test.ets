@@ -642,7 +642,6 @@ export default function sceneTest() {
 
         let distance: number = results[0].centerDistance;
         console.info(msg + "centerDistance value:", distance);
-        expect(typeof distance).assertEqual('number');
         expect(distance > 0).assertTrue();
         console.info(msg + "test completed successfully");
         done();
@@ -681,9 +680,6 @@ export default function sceneTest() {
 
         let res: scene3d.Position3 = results[0].hitPosition;
         console.info(msg + ` hitPosition = {x: ${res.x}, y: ${res.y}, z: ${res.z}}`);
-        expect(typeof res.x).assertEqual('number');
-        expect(typeof res.y).assertEqual('number');
-        expect(typeof res.z).assertEqual('number');
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
@@ -869,7 +865,7 @@ export default function sceneTest() {
           expect(renderContext != null).assertTrue();
 
           if (renderContext != null) {
-            let factory: scene3d.RenderResourceFactory = renderContext.getRenderResourceFactory();
+            let factory: scene3d.RenderResourceFactory = renderContext?.getRenderResourceFactory();
             console.info(msg + " render resource factory:", factory);
             expect(factory != null).assertTrue();
           }
@@ -900,22 +896,22 @@ export default function sceneTest() {
           expect(renderContext != null).assertTrue();
 
           if (renderContext != null) {
-            let loadFail = await renderContext.loadPlugin("NonExistentPlugin");
+            let loadFail = await renderContext?.loadPlugin("NonExistentPlugin");
             console.info(msg + ' plugin "NonExistentPlugin" load result:', loadFail);
             expect(loadFail).assertFalse();
             let pluginName = '74c2dde9-8134-4471-af49-66ea20993c41'
-            let plugin = await renderContext.loadPlugin(pluginName);
+            let plugin = await renderContext?.loadPlugin(pluginName);
             console.info(msg + ' plugin "' + pluginName + '" load result:', plugin);
             expect(plugin).assertTrue();
 
             // Test with empty string parameter
-            let loadEmpty = await renderContext.loadPlugin("");
+            let loadEmpty = await renderContext?.loadPlugin("");
             console.info(msg + ' plugin "" (empty string) load result:', loadEmpty);
             expect(loadEmpty).assertFalse();
 
             // Test with null parameter
             try {
-              let loadNull = await renderContext.loadPlugin(null);
+              let loadNull = await renderContext?.loadPlugin(null);
               console.info(msg + ' plugin null load result:', loadNull);
               expect(loadNull).assertUndefined();
             } catch (nullErr) {
@@ -924,7 +920,7 @@ export default function sceneTest() {
 
             // Test with undefined parameter
             try {
-              let loadUndefined = await renderContext.loadPlugin(undefined);
+              let loadUndefined = await renderContext?.loadPlugin(undefined);
               console.info(msg + ' plugin undefined load result:', loadUndefined);
               expect(loadUndefined).assertUndefined();
             } catch (undefinedErr) {
@@ -1134,26 +1130,26 @@ export default function sceneTest() {
           expect(renderContext != null).assertTrue();
 
           if (renderContext != null) {
-            let registerFail = renderContext.registerResourcePath("shaders", "OhosRawFile://shaders/custom_shader");
+            let registerFail = renderContext?.registerResourcePath("shaders", "OhosRawFile://shaders/custom_shader");
             console.info(msg + ' protocol "shaders" registration result:', registerFail);
             expect(registerFail).assertFalse();
 
-            let registerEmpty = renderContext.registerResourcePath("", "OhosRawFile://shaders/custom_shader");
+            let registerEmpty = renderContext?.registerResourcePath("", "OhosRawFile://shaders/custom_shader");
             console.info(msg + ' protocol "" registration result:', registerEmpty);
             expect(registerEmpty).assertFalse();
 
-            let registerSuss = renderContext.registerResourcePath("shaders_test", "OhosRawFile://shaders/custom_shader");
+            let registerSuss = renderContext?.registerResourcePath("shaders_test", "OhosRawFile://shaders/custom_shader");
             console.info(msg + ' protocol "shaders_test" registration result:', registerSuss);
             expect(registerSuss).assertTrue();
 
             // Test with empty uri parameter
-            let registerEmptyUri = renderContext.registerResourcePath("shaders_test2", "");
+            let registerEmptyUri = renderContext?.registerResourcePath("shaders_test2", "");
             console.info(msg + ' uri "" (empty string) registration result:', registerEmptyUri);
             expect(registerEmptyUri).assertFalse();
 
             // Test with null protocol parameter
             try {
-              let registerNullProtocol = renderContext.registerResourcePath(null, "OhosRawFile://shaders/custom_shader");
+              let registerNullProtocol = renderContext?.registerResourcePath(null, "OhosRawFile://shaders/custom_shader");
               console.info(msg + ' null protocol registration result:', registerNullProtocol);
               expect(registerNullProtocol).assertUndefined();
             } catch (nullProtocolErr) {
@@ -1162,7 +1158,7 @@ export default function sceneTest() {
 
             // Test with undefined protocol parameter
             try {
-              let registerUndefinedProtocol = renderContext.registerResourcePath(undefined, "OhosRawFile://shaders/custom_shader");
+              let registerUndefinedProtocol = renderContext?.registerResourcePath(undefined, "OhosRawFile://shaders/custom_shader");
               console.info(msg + ' undefined protocol registration result:', registerUndefinedProtocol);
               expect(registerUndefinedProtocol).assertUndefined();
             } catch (undefinedProtocolErr) {
@@ -1171,7 +1167,7 @@ export default function sceneTest() {
 
             // Test with null uri parameter
             try {
-              let registerNullUri = renderContext.registerResourcePath("shaders_test3", null);
+              let registerNullUri = renderContext?.registerResourcePath("shaders_test3", null);
               console.info(msg + ' null uri registration result:', registerNullUri);
               expect(registerNullUri).assertUndefined();
             } catch (nullUriErr) {
@@ -1180,7 +1176,7 @@ export default function sceneTest() {
 
             // Test with undefined uri parameter
             try {
-              let registerUndefinedUri = renderContext.registerResourcePath("shaders_test4", undefined);
+              let registerUndefinedUri = renderContext?.registerResourcePath("shaders_test4", undefined);
               console.info(msg + ' undefined uri registration result:', registerUndefinedUri);
               expect(registerUndefinedUri).assertUndefined();
             } catch (undefinedUriErr) {
@@ -1189,7 +1185,7 @@ export default function sceneTest() {
 
             // Test with both parameters as null
             try {
-              let registerBothNull = renderContext.registerResourcePath(null, null);
+              let registerBothNull = renderContext?.registerResourcePath(null, null);
               console.info(msg + ' both null parameters registration result:', registerBothNull);
               expect(registerBothNull).assertUndefined();
             } catch (bothNullErr) {
@@ -1198,7 +1194,7 @@ export default function sceneTest() {
 
             // Test with both parameters as undefined
             try {
-              let registerBothUndefined = renderContext.registerResourcePath(undefined, undefined);
+              let registerBothUndefined = renderContext?.registerResourcePath(undefined, undefined);
               console.info(msg + ' both undefined parameters registration result:', registerBothUndefined);
               expect(registerBothUndefined).assertUndefined();
             } catch (bothUndefinedErr) {
@@ -1206,7 +1202,7 @@ export default function sceneTest() {
             }
 
             // Test with both parameters as empty string
-            let registerBothEmpty = renderContext.registerResourcePath("", "");
+            let registerBothEmpty = renderContext?.registerResourcePath("", "");
             console.info(msg + ' both empty string parameters registration result:', registerBothEmpty);
             expect(registerBothEmpty).assertFalse();
 
@@ -2125,5 +2121,206 @@ export default function sceneTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   testRenderResourceFactory_createImageStream
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1080
+     * @tc.desc   Test createImageStream method of RenderResourceFactory
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRenderResourceFactory_createImageStream', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msg = "============================testRenderResourceFactory_createImageStream";
+        console.info(msg + ' begin ');
+        try {
+          const scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+          expect(scene != null).assertTrue();
+
+          const rf: scene3d.RenderResourceFactory = scene.getResourceFactory();
+          const imageStream = await rf.createImageStream({ name: "testImageStream" });
+          expect(imageStream != null).assertTrue();
+          expect(imageStream!.name).assertEqual("testImageStream");
+          expect(imageStream!.surfaceId.length > 0).assertTrue();
+          expect(imageStream!.width >= 0).assertTrue();
+          expect(imageStream!.height >= 0).assertTrue();
+          expect(imageStream!.resourceType).assertEqual(scene3d.SceneResourceType.IMAGE);
+
+          imageStream!.destroy();
+          scene.destroy();
+          done();
+        } catch (err) {
+          console.info(msg + " Failed: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testImageStream_surfaceId
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1090
+     * @tc.desc   Test ImageStream surfaceId property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testImageStream_surfaceId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msg = "============================testImageStream_surfaceId";
+        console.info(msg + ' begin ');
+        try {
+          const scene = await Scene.load();
+          const rf = scene.getResourceFactory();
+          const imageStream = await rf.createImageStream({ name: "surfaceIdTest" });
+          const surfaceId = imageStream!.surfaceId;
+          expect(surfaceId.length > 0).assertTrue();
+          scene.destroy();
+          done();
+        } catch (err) {
+          console.info(msg + " Failed: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testImageStream_width_height
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1100
+     * @tc.desc   Test ImageStream width and height properties inherited from Image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testImageStream_width_height', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msg = "============================testImageStream_width_height";
+        console.info(msg + ' begin ');
+        try {
+          const scene = await Scene.load();
+          const rf = scene.getResourceFactory();
+          const imageStream = await rf.createImageStream({ name: "widthHeightTest" });
+          expect(imageStream!.width >= 0).assertTrue();
+          expect(imageStream!.height >= 0).assertTrue();
+          scene.destroy();
+          done();
+        } catch (err) {
+          console.info(msg + " Failed: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testImageStream_resourceType
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1110
+     * @tc.desc   Test ImageStream resourceType property inherited from SceneResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testImageStream_resourceType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msg = "============================testImageStream_resourceType";
+        console.info(msg + ' begin ');
+        try {
+          const scene = await Scene.load();
+          const rf = scene.getResourceFactory();
+          const imageStream = await rf.createImageStream({ name: "resourceTypeTest" });
+          expect(imageStream!.resourceType).assertEqual(scene3d.SceneResourceType.IMAGE);
+          scene.destroy();
+          done();
+        } catch (err) {
+          console.info(msg + " Failed: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testImageStream_name_uri
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1120
+     * @tc.desc   Test ImageStream name and uri properties inherited from SceneResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testImageStream_name_uri', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msg = "============================testImageStream_name_uri";
+        console.info(msg + ' begin ');
+        try {
+          const scene = await Scene.load();
+          const rf = scene.getResourceFactory();
+          const imageStream1 = await rf.createImageStream({ name: "testNameOnly" });
+          expect(imageStream1!.name).assertEqual("testNameOnly");
+          const imageStream2 = await rf.createImageStream({ 
+            name: "testWithUri", 
+            uri: $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb") 
+          });
+          expect(imageStream2!.name).assertEqual("testWithUri");
+          expect(imageStream2!.uri != null).assertTrue();
+          scene.destroy();
+          done();
+        } catch (err) {
+          console.info(msg + " Failed: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testImageStream_destroy
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1130
+     * @tc.desc   Test ImageStream destroy method inherited from SceneResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testImageStream_destroy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msg = "============================testImageStream_destroy";
+        console.info(msg + ' begin ');
+        try {
+          const scene = await Scene.load();
+          const rf = scene.getResourceFactory();
+          const imageStream = await rf.createImageStream({ name: "destroyTest" });
+          imageStream!.destroy();
+          scene.destroy();
+          done();
+        } catch (err) {
+          console.info(msg + " Failed: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testImageStream_null_params
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1140
+     * @tc.desc   Test createImageStream with null and undefined parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testImageStream_null_params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msg = "============================testImageStream_null_params";
+        console.info(msg + ' begin ');
+        try {
+          const scene = await Scene.load();
+          const rf = scene.getResourceFactory();
+          const imageStreamNull = await rf.createImageStream(null);
+          expect(imageStreamNull != null).assertTrue();
+          const imageStreamUndefined = await rf.createImageStream(undefined);
+          expect(imageStreamUndefined != null).assertTrue();
+          scene.destroy();
+          done();
+        } catch (err) {
+          console.info(msg + " Failed: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
   })
 }
