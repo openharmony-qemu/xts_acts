@@ -96,11 +96,11 @@ export default function bluetoothBleTest() {
             gattServerDevice = ble.createGattServer();
             bleScanner = ble.createBleScanner();
             try {
-                let deviceName = connection.getLocalName()
-                nLength = deviceName.length
-                console.info(`deviceName.length = ${nLength}`)
+                let deviceName = connection.getLocalName();
+                nLength = deviceName.length;
+                console.info(`deviceName.length = ${nLength}`);
             }catch (err){
-                expect(Number(err.code)).assertEqual(801)
+                expect(Number(err.code)).assertEqual(801);
             }
             hilog.info(domain, tag, '%{public}s', 'beforeAll end');
         })
@@ -2119,7 +2119,7 @@ export default function bluetoothBleTest() {
                     serviceData: [serviceDataUnit],
                     includeDeviceName: true
                 };
-                console.info(`${caseName} deviceName.length = ${nLength}`)
+                console.info(`${caseName} deviceName.length = ${nLength}`);
                 ble.startAdvertising(setting, advData);
                 hilog.info(domain, tag, `${caseName} startAdvertising success`);
                 ble.stopAdvertising();
@@ -2384,7 +2384,7 @@ export default function bluetoothBleTest() {
                     serviceData: [serviceDataUnit],
                     includeDeviceName: true
                 };
-                console.info(`${caseName} deviceName.length = ${nLength}`)
+                console.info(`${caseName} deviceName.length = ${nLength}`);
                 ble.startAdvertising(setting, advData, advResponse);
                 hilog.info(domain, tag, `${caseName} startAdvertising success`);
                 ble.stopAdvertising();
@@ -2720,7 +2720,7 @@ export default function bluetoothBleTest() {
                     advertisingResponse: advData,
                     duration: 0
                 };
-                console.info(`${caseName} deviceName.length = ${nLength}`)
+                console.info(`${caseName} deviceName.length = ${nLength}`);
                 let advHandle = 0xFF;
                 await ble.startAdvertising(advertisingParams).then((outAdvHandle) => {
                     advHandle = outAdvHandle
