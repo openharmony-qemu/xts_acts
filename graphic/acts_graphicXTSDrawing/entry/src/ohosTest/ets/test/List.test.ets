@@ -33,6 +33,7 @@ import drawingTsPath3Test from './Path3.test';
 import drawingTsPath5Test from './Path5.test';
 import drawingTsPath6Test from './Path6.test';
 import drawingTsPath7Test from './Path7.test';
+import drawingTsPath8Test from './Path8.test';
 import drawingTsCanvasTest from './Canvas.test';
 import drawingTsCanvasPart2Test from './CanvasPart2.test';
 import drawingTsCanvasPart3Test from './CanvasPart3.test';
@@ -82,6 +83,7 @@ export default function testsuite() {
   drawingTsPath5Test();
   drawingTsPath6Test();
   drawingTsPath7Test();
+  drawingTsPath8Test();
   drawingTsCanvasTest();
   drawingTsCanvasPart2Test();
   drawingTsCanvasPart3Test();

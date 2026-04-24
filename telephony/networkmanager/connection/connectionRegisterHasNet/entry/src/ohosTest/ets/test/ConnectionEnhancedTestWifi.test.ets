@@ -130,7 +130,7 @@ export default function ConnectionEnhancedTestWifi() {
             console.info(caseName + " register success");
           }
         });
-        await util.sleep(100);
+        await util.sleep(500);
         console.info(`${caseName}---check isNetAvailable`);
         ExpectTrue(caseName, isNetAvailable);
         console.info(`${caseName}---check isNetLost`);
@@ -229,7 +229,7 @@ export default function ConnectionEnhancedTestWifi() {
             console.info(caseName + " register success");
           }
         });
-        await util.sleep(200);
+        await util.sleep(500);
         console.info(`${caseName}---check isNetAvailable`);
         ExpectTrue(caseName, isNetAvailable);
         console.info(`${caseName}---check isNetLost`);

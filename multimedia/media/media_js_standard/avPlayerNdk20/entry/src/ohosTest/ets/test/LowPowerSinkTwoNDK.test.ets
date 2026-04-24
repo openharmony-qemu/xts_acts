@@ -1112,6 +1112,40 @@ export default function LowPowerSinkNdk2Test() {
         done()
       }
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetLoudnessGain_0300
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetLoudnessGain_0300
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetLoudnessGain_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (canIUse("SystemCapability.Multimedia.Media.LowPowerAVSink")) {
+        console.info("====>SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetLoudnessGain_0300 start====");
+        let result: number = lowpoweraudiosinkndk.OH_LowPowerAudioSink_SetLoudnessGain0300();
+        expect(0).assertEqual(result);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetLoudnessGain_0400
+     * @tc.number SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetLoudnessGain_0400
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetLoudnessGain_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      if (canIUse("SystemCapability.Multimedia.Media.LowPowerAVSink")) {
+        console.info("====>SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetLoudnessGain_0400 start====");
+        let result: number = lowpoweraudiosinkndk.OH_LowPowerAudioSink_SetLoudnessGain0400();
+        expect(0).assertEqual(result);
+        done()
+      }
+    })
     
     /**
      * @tc.name   SUB_MULTIMEIDA_OH_LowPowerAudioSink_SetPlaybackSpeed_0100

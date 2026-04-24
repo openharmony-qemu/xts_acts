@@ -787,6 +787,11 @@ export class XComponentModifier implements AttributeModifier<XComponentAttribute
   }
 }
 
+function commonStyle(this: SpanAttribute, componentKey: string) {
+  this.key(componentKey)
+  return this
+}
+
 @Entry
 @Component
 struct ZIndexPage {
@@ -1576,7 +1581,7 @@ struct ZIndexPage {
       if (this.targetView == 'Span') {
         Text() {
           Span('Span1')
-            .applyStyles(this.fancy)
+            .commonStyle(this.componentKey)
         }
       }
     }

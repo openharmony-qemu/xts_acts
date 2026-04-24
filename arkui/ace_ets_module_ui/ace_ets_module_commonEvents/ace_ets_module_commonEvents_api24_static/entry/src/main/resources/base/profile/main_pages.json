@@ -5,7 +5,8 @@
     "MainAbility/pages/GestureApiProbe/GestureApiProbe",
     "MainAbility/pages/CommonEventApiProbe/CommonEventApiProbe",
     "MainAbility/pages/CommonDragEventProbe/CommonDragEventProbe",
-    "MainAbility/pages/CommonKeyEventProbe/CommonKeyEventProbe"
+    "MainAbility/pages/CommonKeyEventProbe/CommonKeyEventProbe",
+    "MainAbility/pages/autoHideComponentUniqueIds/AutoHideComponentUniqueIdsPage"
 
   ]
 }

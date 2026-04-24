@@ -16,22 +16,20 @@
 #include <csignal>
 #include "functionalext.h"
 
-namespace {
-constexpr int K_EXPECTED_SIG_RT_MAX = 64;
-} // namespace
+#define SIGRTMAX_VALUE 64
 
 /*
- * @tc.name      : LibcCurrentSigrtmax0100
+ * @tc.name      : libc_current_sigrtmax_0100
  * @tc.desc      : Verify that the number of available signals can be obtained
  * @tc.level     : Level 0
  */
 void LibcCurrentSigrtmax0100(void)
 {
     int result = __libc_current_sigrtmax();
-    EXPECT_EQ("LibcCurrentSigrtmax0100", result, K_EXPECTED_SIG_RT_MAX);
+    EXPECT_EQ("libc_current_sigrtmax_0100", result, SIGRTMAX_VALUE);
 }
 
-static int LibcCurrentSigrtmaxTestWithArgs(int argc, char* argv[])
+static int LibcCurrentSigrtmaxTestWithArgs(int argc, char *argv[])
 {
     LibcCurrentSigrtmax0100();
 
@@ -40,7 +38,7 @@ static int LibcCurrentSigrtmaxTestWithArgs(int argc, char* argv[])
 
 int LibcCurrentSigrtmaxTest(void)
 {
-    static char libcProgStub[] = "libc_test";
-    char* libcArgvStub[] = { libcProgStub, nullptr };
-    return LibcCurrentSigrtmaxTestWithArgs(1, libcArgvStub);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return LibcCurrentSigrtmaxTestWithArgs(1, libcArgv);
 }

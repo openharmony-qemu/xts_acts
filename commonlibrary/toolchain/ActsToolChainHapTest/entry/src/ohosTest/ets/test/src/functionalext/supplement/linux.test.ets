@@ -172,6 +172,201 @@ export default function linux_group_test() {
       done();
     });
     /**
+     * @tc.name   flistxattr
+     * @tc.number SUB_THIRDPARTY_MUSL_FLISTXATTR_0100
+     * @tc.desc   libc-test flistxattr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("flistxattr", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("flistxattr");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   fremovexattr
+     * @tc.number SUB_THIRDPARTY_MUSL_FREMOVEXATTR_0100
+     * @tc.desc   libc-test fremovexattr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("fremovexattr", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("fremovexattr");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   fsetxattr
+     * @tc.number SUB_THIRDPARTY_MUSL_FSETXATTR_0100
+     * @tc.desc   libc-test fsetxattr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("fsetxattr", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("fsetxattr");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   getdents
+     * @tc.number SUB_THIRDPARTY_MUSL_GETDENTS_0100
+     * @tc.desc   libc-test getdents
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("getdents", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("getdents");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   name_to_handle_at
+     * @tc.number SUB_THIRDPARTY_MUSL_NAME_TO_HANDLE_AT_0100
+     * @tc.desc   libc-test name_to_handle_at
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("name_to_handle_at", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("name_to_handle_at");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   process_vm
+     * @tc.number SUB_THIRDPARTY_MUSL_PROCESS_VM_0100
+     * @tc.desc   libc-test process_vm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("process_vm", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("process_vm");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   remap_file_pages
+     * @tc.number SUB_THIRDPARTY_MUSL_REMAP_FILE_PAGES_0100
+     * @tc.desc   libc-test remap_file_pages
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("remap_file_pages", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("remap_file_pages");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   removexattr
+     * @tc.number SUB_THIRDPARTY_MUSL_REMOVEXATTR_0100
+     * @tc.desc   libc-test removexattr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("removexattr", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("removexattr");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   sbrk
+     * @tc.number SUB_THIRDPARTY_MUSL_SBRK_0100
+     * @tc.desc   libc-test sbrk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("sbrk", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("sbrk");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   setxattr
+     * @tc.number SUB_THIRDPARTY_MUSL_SETXATTR_0100
+     * @tc.desc   libc-test setxattr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("setxattr", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("setxattr");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   swapoff
+     * @tc.number SUB_THIRDPARTY_MUSL_SWAPOFF_0100
+     * @tc.desc   libc-test swapoff
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("swapoff", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("swapoff");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   swapon
+     * @tc.number SUB_THIRDPARTY_MUSL_SWAPON_0100
+     * @tc.desc   libc-test swapon
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("swapon", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("swapon");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   tee
+     * @tc.number SUB_THIRDPARTY_MUSL_TEE_0100
+     * @tc.desc   libc-test tee
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("tee", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("tee");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   timerfd_gettime
+     * @tc.number SUB_THIRDPARTY_MUSL_TIMERFD_GETTIME_0100
+     * @tc.desc   libc-test timerfd_gettime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("timerfd_gettime", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("timerfd_gettime");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   timerfd_settime
+     * @tc.number SUB_THIRDPARTY_MUSL_TIMERFD_SETTIME_0100
+     * @tc.desc   libc-test timerfd_settime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("timerfd_settime", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("timerfd_settime");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
      * @tc.name   fanotify_init
      * @tc.number SUB_THIRDPARTY_MUSL_FANOTIFY_INIT_0100
      * @tc.desc   libc-test fanotify_init

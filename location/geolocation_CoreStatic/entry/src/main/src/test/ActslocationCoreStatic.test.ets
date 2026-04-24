@@ -55,33 +55,6 @@ export default function actslocationTest() {
         hilog.info(domain, tag, '%{public}s', 'describe start');
         beforeAll(async() => {
           await changedLocationMode()
-          let  isWifiActive : boolean = wifiMg.isWifiActive() as boolean
-          if(!isWifiActive){
-            console.info("======> wifi_test/enable wifi: false" );
-          }
-
-          try {
-            let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
-            console.info("======> Internet WifiLinkedInfo : " + JSON.stringify(data));
-            console.info("======> Internet speed : " + JSON.stringify(data.linkSpeed));
-            console.info("======> Internet chload : " + JSON.stringify(data.chload));
-            console.info("======> Internet rssi : " + JSON.stringify(data.rssi));
-
-            if (data.connState == wifiMg.ConnState.CONNECTED) {
-              console.info("======> WLAN connection established ");
-            } else {
-              expect().message("======> WLAN Network error").assertFail();
-
-            }
-            if (data.chload >= 900 || data.rssi <= -80) {
-              expect().message("======> WLAN Network error").assertFail();
-            } else if (data.chload >= 500) {
-              console.info("======> The internet connection is poor. ");
-            }
-          } catch (err) {
-            console.info("======> getLinkedInfo promise failed, err :" + JSON.stringify(err));
-            throw (err as Error);
-          }
           hilog.info(domain, tag, 'beforeAll start');
           let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
           hilog.info(domain, tag, 'beforeAll AbilityDelegator');
@@ -109,16 +82,39 @@ export default function actslocationTest() {
             await Utils.clickRequestPermission('仅使用期间允许');
             await Utils.clickRequestPermission('始终允许');
             hilog.info(domain, tag, '%{public}s', 'beforeAll end');
+            await Utils.msSleep(1000);
         })
 
         beforeEach(async (): Promise<void> => {
-            hilog.info(domain, tag, '%{public}s', 'beforeEach start');
-            try {
-                hilog.info(domain, tag, '%{public}s', 'beforeEach end');
-            } catch (err) {
-                err = err as BusinessError;
-                hilog.error(domain, tag, '%{public}s', 'beforeEach get failed, err: ' + err);
+          hilog.info(domain, tag, '%{public}s', 'beforeEach start');
+          let  isWifiActive : boolean = wifiMg.isWifiActive() as boolean
+          if(!isWifiActive){
+            console.info("======> wifi_test/enable wifi: false" );
+          }
+
+          try {
+            let data: wifiMg.WifiLinkedInfo = await wifiMg.getLinkedInfo();
+            console.info("======> Internet WifiLinkedInfo : " + JSON.stringify(data));
+            console.info("======> Internet speed : " + JSON.stringify(data.linkSpeed));
+            console.info("======> Internet chload : " + JSON.stringify(data.chload));
+            console.info("======> Internet rssi : " + JSON.stringify(data.rssi));
+
+            if (data.connState == wifiMg.ConnState.CONNECTED) {
+              console.info("======> WLAN connection established ");
+            } else {
+              expect().message("======> WLAN Network error").assertFail();
+
             }
+            if (data.chload >= 900 || data.rssi <= -80) {
+              expect().message("======> WLAN Network error").assertFail();
+            } else if (data.chload >= 500) {
+              console.info("======> The internet connection is poor. ");
+            }
+          } catch (err) {
+            console.info("======> getLinkedInfo promise failed, err :" + JSON.stringify(err));
+            throw (err as Error);
+          }
+          hilog.info(domain, tag, '%{public}s', 'beforeEach end');
         })
 
 
@@ -1424,6 +1420,63 @@ export default function actslocationTest() {
         }
         done();
       })
+
+      /**
+         * @tc.number  SUB_Location_core_isGnssServiceSupported_0100
+         * @tc.name  SUB_Location_core_isGnssServiceSupported_0100
+         * @tc.desc  isGnssServiceSupported(): boolean
+         * @tc.level  Level 2
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
+         */
+        it('SUB_Location_core_isGnssServiceSupported_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            try {
+                let isSupported: boolean = geoLocationManager.isGnssServiceSupported();
+                console.info('SUB_Location_core_isGnssServiceSupported_0100: isSupported=' + isSupported);
+                expect(typeof isSupported).assertEqual('boolean');
+            } catch (err) {
+                console.error('SUB_Location_core_isGnssServiceSupported_0100 errCode:' + err.code + ', message:' + err.message);
+                expect(err.code).assertEqual(3301000);
+            }
+        })
+
+        /**
+         * @tc.number  SUB_Location_core_isGnssFenceServiceSupported_0100
+         * @tc.name  SUB_Location_core_isGnssFenceServiceSupported_0100
+         * @tc.desc  isGnssFenceServiceSupported(): boolean
+         * @tc.level  Level 2
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
+         */
+        it('SUB_Location_core_isGnssFenceServiceSupported_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            try {
+                let isSupported: boolean = geoLocationManager.isGnssFenceServiceSupported();
+                console.info('SUB_Location_core_isGnssFenceServiceSupported_0100: isSupported=' + isSupported);
+                expect(typeof isSupported).assertEqual('boolean');
+            } catch (err) {
+                console.error('SUB_Location_core_isGnssFenceServiceSupported_0100 errCode:' + err.code + ', message:' + err.message);
+                expect(err.code).assertEqual(3301000);
+            }
+        })
+
+        /**
+         * @tc.number  SUB_Location_core_isCachedGnssServiceSupported_0100
+         * @tc.name  SUB_Location_core_isCachedGnssServiceSupported_0100
+         * @tc.desc  isCachedGnssServiceSupported(): boolean
+         * @tc.level  Level 2
+         * @tc.type  Function
+         * @tc.size  MEDIUMTEST
+         */
+        it('SUB_Location_core_isCachedGnssServiceSupported_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+            try {
+                let isSupported: boolean = geoLocationManager.isCachedGnssServiceSupported();
+                console.info('SUB_Location_core_isCachedGnssServiceSupported_0100: isSupported=' + isSupported);
+                expect(typeof isSupported).assertEqual('boolean');
+            } catch (err) {
+                console.error('SUB_Location_core_isCachedGnssServiceSupported_0100 errCode:' + err.code + ', message:' + err.message);
+                expect(err.code).assertEqual(3301000);
+            }
+        })
 
       /**
        * @tc.name   SUB_geoLocationManager_core_isWlanBssidMatched_0200

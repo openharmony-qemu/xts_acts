@@ -43,6 +43,9 @@ export const DrawingPointDestroy: (caseName: number) => number;
 // Point GetSet related functions
 export const DrawingPointGetSet: (caseName: number) => number;
 
+// Point Negate Offset related functions
+export const DrawingPointNegateOffset: (caseName: number) => number;
+
 // Region Basic Operations related functions
 export const DrawingRegionBasicOperations: (caseName: number) => number;
 

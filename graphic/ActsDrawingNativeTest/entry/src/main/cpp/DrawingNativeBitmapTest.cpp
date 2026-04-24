@@ -21,12 +21,15 @@
 #define DRAWING_NUMBER_3 3
 #define DRAWING_NUMBER_4 4
 #define DRAWING_NUMBER_5 5
+#define DRAWING_NUMBER_10 10
 #define DRAWING_NUMBER_47 47
 #define DRAWING_NUMBER_48 48
 #define DRAWING_NUMBER_100 100
 #define DRAWING_NUMBER_192 192
+#define DRAWING_NUMBER_256 256
 #define DRAWING_NUMBER_400 400
 #define DRAWING_NUMBER_500 500
+#define DRAWING_NUMBER_512 512
 #define DRAWING_NUMBER_565 565
 #define DRAWING_NUMBER_1000 1000
 #define DRAWING_NUMBER_2000 2000
@@ -878,6 +881,75 @@ int TestBitmapBuildMaximum()
     return OH_DRAWING_SUCCESS;
 }
 
+int TestBitmapGetRowBytesNormal()
+{
+    DrawingNativeBitmapTestSetUp();
+    uint32_t width = DRAWING_NUMBER_256;
+    uint32_t height = DRAWING_NUMBER_256;
+    OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
+    OH_Drawing_BitmapFormat bitmapFormat{COLOR_FORMAT_ARGB_4444, ALPHA_FORMAT_OPAQUE};
+    OH_Drawing_BitmapBuild(bitmap, width, height, &bitmapFormat);
+    uint32_t bytes = 0;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_BitmapGetRowBytes(bitmap, &bytes);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(bytes, DRAWING_NUMBER_512);
+    OH_Drawing_BitmapDestroy(bitmap);
+    DrawingNativeBitmapTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestBitmapGetRowBytesNull()
+{
+    DrawingNativeBitmapTestSetUp();
+    uint32_t width = DRAWING_NUMBER_256;
+    uint32_t height = DRAWING_NUMBER_256;
+    OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
+    OH_Drawing_BitmapFormat bitmapFormat{COLOR_FORMAT_ARGB_4444, ALPHA_FORMAT_OPAQUE};
+    OH_Drawing_BitmapBuild(bitmap, width, height, &bitmapFormat);
+    uint32_t bytes = 0;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_BitmapGetRowBytes(nullptr, &bytes);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(bytes, 0);
+    OH_Drawing_BitmapDestroy(bitmap);
+    DrawingNativeBitmapTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestBitmapGetRowBytesAbnormal()
+{
+    DrawingNativeBitmapTestSetUp();
+    uint32_t width = 0;
+    uint32_t height = DRAWING_NUMBER_256;
+    OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
+    OH_Drawing_BitmapFormat bitmapFormat{COLOR_FORMAT_ARGB_4444, ALPHA_FORMAT_OPAQUE};
+    OH_Drawing_BitmapBuild(bitmap, width, height, &bitmapFormat);
+    uint32_t bytes = 0;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_BitmapGetRowBytes(bitmap, &bytes);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(bytes, 0);
+    OH_Drawing_BitmapDestroy(bitmap);
+    DrawingNativeBitmapTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestBitmapGetRowBytesMultipleCalls()
+{
+    DrawingNativeBitmapTestSetUp();
+    uint32_t width = DRAWING_NUMBER_256;
+    uint32_t height = DRAWING_NUMBER_256;
+    OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
+    OH_Drawing_BitmapFormat bitmapFormat{COLOR_FORMAT_ARGB_4444, ALPHA_FORMAT_OPAQUE};
+    OH_Drawing_BitmapBuild(bitmap, width, height, &bitmapFormat);
+    uint32_t bytes = 0;
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_BitmapGetRowBytes(bitmap, &bytes);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(bytes, DRAWING_NUMBER_512);
+    }
+    OH_Drawing_BitmapDestroy(bitmap);
+    DrawingNativeBitmapTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS

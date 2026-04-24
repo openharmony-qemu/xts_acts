@@ -45,6 +45,123 @@ export default function time_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   clock_getres
+     * @tc.number SUB_THIRDPARTY_MUSL_CLOCK_GETRES_0100
+     * @tc.desc   libc-test clock_getres
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("clock_getres", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("clock_getres");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   gmtime_r_sup
+     * @tc.number SUB_THIRDPARTY_MUSL_GMTIME_R_SUP_0100
+     * @tc.desc   libc-test gmtime_r_sup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("gmtime_r_sup", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("gmtime_r_sup");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   gmtime_sup
+     * @tc.number SUB_THIRDPARTY_MUSL_GMTIME_SUP_0100
+     * @tc.desc   libc-test gmtime_sup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("gmtime_sup", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("gmtime_sup");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   nanosleep
+     * @tc.number SUB_THIRDPARTY_MUSL_NANOSLEEP_0100
+     * @tc.desc   libc-test nanosleep
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("nanosleep", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("nanosleep");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   timer_getoverrun
+     * @tc.number SUB_THIRDPARTY_MUSL_TIMER_GETOVERRUN_0100
+     * @tc.desc   libc-test timer_getoverrun
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("timer_getoverrun", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("timer_getoverrun");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   timer_gettime
+     * @tc.number SUB_THIRDPARTY_MUSL_TIMER_GETTIME_0100
+     * @tc.desc   libc-test timer_gettime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("timer_gettime", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("timer_gettime");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   timer_settime
+     * @tc.number SUB_THIRDPARTY_MUSL_TIMER_SETTIME_0100
+     * @tc.desc   libc-test timer_settime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("timer_settime", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("timer_settime");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   timespec_get
+     * @tc.number SUB_THIRDPARTY_MUSL_TIMESPEC_GET_0100
+     * @tc.desc   libc-test timespec_get
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("timespec_get", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("timespec_get");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   utime_sup
+     * @tc.number SUB_THIRDPARTY_MUSL_UTIME_SUP_0100
+     * @tc.desc   libc-test utime_sup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("utime_sup", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("utime_sup");
+      expect(result).assertEqual(0);
+      done();
+    });
 
     /**
      * @tc.name   difftime_sup

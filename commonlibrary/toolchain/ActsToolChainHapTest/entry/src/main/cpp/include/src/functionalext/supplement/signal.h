@@ -20,5 +20,10 @@ int GetitimerTime64Test();
 int LibcCurrentSigrtmaxTest();
 int LibcCurrentSigrtminTest();
 int SetitimerTime64Test();
+int SigholdTest();
+int SigpauseTest();
+int SigrelseTest();
+int SigsetTest();
+int SigsuspendTest();
 
 #endif // SRC_FUNCTIONALEXT_SUPPLEMENT_SIGNAL_H_H

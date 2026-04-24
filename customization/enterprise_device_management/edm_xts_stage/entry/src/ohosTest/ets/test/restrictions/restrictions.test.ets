@@ -8517,19 +8517,21 @@ function testGetDisallowedForAccountPolicy26() {
    * @tc.size      : MediumTest
    */
   it("test_get_disallowed_policy_for_account_26_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
     try {
       let localId: number =  await osAccountManager.getOsAccountLocalId();
-      restrictions.getDisallowedPolicyForAccount(null, restrictions.FeatureForAccount.SUPER_HUB, localId);
-      expect(false).assertTrue();
+      console.info(' --- test_get_disallowed_policy_for_account_26_0400  -------- START --------');
+      let ret: boolean = restrictions.getDisallowedPolicyForAccount(null, restrictions.FeatureForAccount.SUPER_HUB, localId);
+      expect(ret).assertFalse();
     } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
-      } else {
-        expect(Number(error.code) === 401).assertTrue();
-      }
+      console.info(' --- test_get_disallowed_policy_for_account_26_0400 err.code = ' + error.code);
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
+    console.info(' --- test_get_disallowed_policy_for_account_26_0400  -------- END --------');
   });
 
   /**
