@@ -19,9 +19,9 @@
 
 static struct LL t[] = {
 #if LDBL_MANT_DIG == 53
-#include "ucb/tanh.h"
 #include "sanity/tanh.h"
 #include "special/tanh.h"
+#include "ucb/tanh.h"
 
 #elif LDBL_MANT_DIG == 64
 #include "sanity/tanhl.h"
@@ -35,14 +35,15 @@ static struct LL t[] = {
 #endif
 };
 
-static int TanhlTest_impl(void){
-    #pragma STDC FENV_ACCESS ON
+static int TanhlTest_impl(void)
+{
+#pragma STDC FENV_ACCESS ON
     long double y;
     float d;
     int e, i, err = 0;
-    struct LL *p;
+    struct LL* p;
 
-    for (i = 0; i < sizeof t/sizeof *t; i++) {
+    for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
 
         if (p->r < 0)
@@ -50,18 +51,31 @@ static int TanhlTest_impl(void){
         fesetround(p->r);
         feclearexcept(FE_ALL_EXCEPT);
         y = tanhl(p->x);
-        e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
+        e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
 
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s tanhl(%La)=%La, want %s",
-                p->file, p->line, Rstr(p->r), p->x, p->y, Estr(p->e));
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->y,
+                   Estr(p->e));
             printf(" got %s\n", Estr(e));
             err++;
         }
         d = Ulperrl(y, p->y, p->dy);
         if (!Checkulp(d, p->r)) {
             printf("%s:%d: %s tanhl(%La) want %La got %La ulperr %.3f = %a + %a\n",
-                p->file, p->line, Rstr(p->r), p->x, p->y, y, d, d-p->dy, p->dy);
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->y,
+                   y,
+                   d,
+                   d - p->dy,
+                   p->dy);
             err++;
         }
     }
@@ -72,4 +86,3 @@ int TanhlTest(void)
 {
     return TanhlTest_impl();
 }
-

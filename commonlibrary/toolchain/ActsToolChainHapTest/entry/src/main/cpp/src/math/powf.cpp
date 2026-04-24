@@ -18,23 +18,23 @@
 #include "mtest.h"
 
 static struct FfF t[] = {
-#include "ucb/powf.h"
 #include "sanity/powf.h"
 #include "special/powf.h"
+#include "ucb/powf.h"
 
 };
 
-static int PowfTest_impl(void )
+static int PowfTest_impl(void)
 {
-    #pragma STDC FENV_ACCESS ON
+#pragma STDC FENV_ACCESS ON
     float y;
     float d;
     int e;
     int i;
     int err = 0;
-    struct FfF *p;
+    struct FfF* p;
 
-    for (i = 0; i < sizeof t/sizeof *t; i++) {
+    for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
 
         if (p->r < 0)
@@ -42,23 +42,38 @@ static int PowfTest_impl(void )
         fesetround(p->r);
         feclearexcept(FE_ALL_EXCEPT);
         y = powf(p->x, p->x2);
-        e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
+        e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
 
 #ifndef __aarch64__
         if (!Checkexcept(e, p->e, p->r)) {
-            if (fabsf(y) < 0x1p-126f && (e|INEXACT) == (INEXACT|UNDERFLOW))
+            if (fabsf(y) < 0x1p-126f && (e | INEXACT) == (INEXACT | UNDERFLOW))
                 printf("X ");
             else
                 err++;
             printf("%s:%d: bad fp exception: %s powf(%a,%a)=%a, want %s",
-                p->file, p->line, Rstr(p->r), p->x, p->x2, p->y, Estr(p->e));
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->x2,
+                   p->y,
+                   Estr(p->e));
             printf(" got %s\n", Estr(e));
         }
 #endif
         d = Ulperrf(y, p->y, p->dy);
         if (!Checkulp(d, p->r)) {
             printf("%s:%d: %s powf(%a,%a) want %a got %a ulperr %.3f = %a + %a\n",
-                p->file, p->line, Rstr(p->r), p->x, p->x2, p->y, y, d, d-p->dy, p->dy);
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->x2,
+                   p->y,
+                   y,
+                   d,
+                   d - p->dy,
+                   p->dy);
             err++;
         }
     }
@@ -69,4 +84,3 @@ int PowfTest(void)
 {
     return PowfTest_impl();
 }
-

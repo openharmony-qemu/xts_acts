@@ -13,9 +13,6 @@
  * limitations under the License.
  */
 
-#define _DEFAULT_SOURCE 1
-#define _BSD_SOURCE 1
-#define _XOPEN_SOURCE 700
 #include <cstdint>
 #include <cstdio>
 #include "mtest.h"
@@ -24,6 +21,27 @@ static struct FFi t[] = {
 #include "sanity/lgammaf.h"
 #include "special/lgammaf.h"
 };
+
+static bool HasLgammafSignMismatch(const struct FFi* p, int sign)
+{
+    return !isnan(p->x) && p->x != -INF && !(p->e & DIVBYZERO) && sign != p->i;
+}
+
+static void PrintLgammafMismatch(const struct FFi* p, double y, int sign, float d)
+{
+    printf("%s:%d: %s lgammaf(%a) want %a,%lld got %a,%d ulperr %.3f = %a + %a\n",
+           p->file,
+           p->line,
+           Rstr(p->r),
+           p->x,
+           p->y,
+           p->i,
+           y,
+           sign,
+           d,
+           d - p->dy,
+           p->dy);
+}
 
 static int LgammafTest_impl(void)
 {
@@ -35,7 +53,7 @@ static int LgammafTest_impl(void)
     int i;
     int bad;
     int err = 0;
-    struct FFi *p;
+    struct FFi* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
@@ -61,25 +79,14 @@ static int LgammafTest_impl(void)
             err++;
         }
         d = Ulperrf(y, p->y, p->dy);
-        bad = !isnan(p->x) && p->x != -INF && !(p->e & DIVBYZERO) && yi != p->i;
+        bad = HasLgammafSignMismatch(p, yi);
         if (bad || !Checkulp(d, p->r)) {
             if (!bad && fabsf(d) < 2.0f) {
                 printf("X ");
             } else {
                 err++;
             }
-            printf("%s:%d: %s lgammaf(%a) want %a,%lld got %a,%d ulperr %.3f = %a + %a\n",
-                   p->file,
-                   p->line,
-                   Rstr(p->r),
-                   p->x,
-                   p->y,
-                   p->i,
-                   y,
-                   yi,
-                   d,
-                   d - p->dy,
-                   p->dy);
+            PrintLgammafMismatch(p, y, yi, d);
         }
     }
     return !!err;

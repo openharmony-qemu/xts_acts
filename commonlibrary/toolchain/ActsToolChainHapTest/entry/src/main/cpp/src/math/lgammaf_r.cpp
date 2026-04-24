@@ -13,9 +13,6 @@
  * limitations under the License.
  */
 
-#define _DEFAULT_SOURCE 1
-#define _BSD_SOURCE 1
-#define _GNU_SOURCE 1
 #include <stdint.h>
 #include <stdio.h>
 #include "mtest.h"
@@ -26,15 +23,16 @@ static struct FFi t[] = {
 
 };
 
-static int LgammafRTest_impl(void){
-    #pragma STDC FENV_ACCESS ON
+static int LgammafRTest_impl(void)
+{
+#pragma STDC FENV_ACCESS ON
     int yi;
     double y;
     float d;
     int e, i, bad, err = 0;
-    struct FFi *p;
+    struct FFi* p;
 
-    for (i = 0; i < sizeof t/sizeof *t; i++) {
+    for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
 
         if (p->r < 0)
@@ -42,23 +40,39 @@ static int LgammafRTest_impl(void){
         fesetround(p->r);
         feclearexcept(FE_ALL_EXCEPT);
         y = lgammaf_r(p->x, &yi);
-        e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
+        e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
 
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s lgammaf_r(%a)=%a,%lld, want %s",
-                p->file, p->line, Rstr(p->r), p->x, p->y, p->i, Estr(p->e));
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->y,
+                   p->i,
+                   Estr(p->e));
             printf(" got %s\n", Estr(e));
             err++;
         }
         d = Ulperrf(y, p->y, p->dy);
-        bad = !isnan(p->x) && p->x!=-INF && !(p->e&DIVBYZERO) && yi != p->i;
+        bad = !isnan(p->x) && p->x != -INF && !(p->e & DIVBYZERO) && yi != p->i;
         if (bad || !Checkulp(d, p->r)) {
             if (!bad && fabsf(d) < 2.0f)
                 printf("X ");
             else
                 err++;
             printf("%s:%d: %s lgammaf_r(%a) want %a,%lld got %a,%d ulperr %.3f = %a + %a\n",
-                p->file, p->line, Rstr(p->r), p->x, p->y, p->i, y, yi, d, d-p->dy, p->dy);
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->y,
+                   p->i,
+                   y,
+                   yi,
+                   d,
+                   d - p->dy,
+                   p->dy);
         }
     }
     return !!err;

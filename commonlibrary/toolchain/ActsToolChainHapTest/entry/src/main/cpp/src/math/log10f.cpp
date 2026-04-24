@@ -18,20 +18,21 @@
 #include "mtest.h"
 
 static struct FF t[] = {
-#include "ucb/log10f.h"
 #include "sanity/log10f.h"
 #include "special/log10f.h"
+#include "ucb/log10f.h"
 
 };
 
-static int Log10fTest_impl(void){
-    #pragma STDC FENV_ACCESS ON
+static int Log10fTest_impl(void)
+{
+#pragma STDC FENV_ACCESS ON
     float y;
     float d;
     int e, i, err = 0;
-    struct FF *p;
+    struct FF* p;
 
-    for (i = 0; i < sizeof t/sizeof *t; i++) {
+    for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
 
         if (p->r < 0)
@@ -39,18 +40,31 @@ static int Log10fTest_impl(void){
         fesetround(p->r);
         feclearexcept(FE_ALL_EXCEPT);
         y = log10f(p->x);
-        e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
+        e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
 
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s log10f(%a)=%a, want %s",
-                p->file, p->line, Rstr(p->r), p->x, p->y, Estr(p->e));
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->y,
+                   Estr(p->e));
             printf(" got %s\n", Estr(e));
             err++;
         }
         d = Ulperrf(y, p->y, p->dy);
         if (!Checkulp(d, p->r)) {
             printf("%s:%d: %s log10f(%a) want %a got %a ulperr %.3f = %a + %a\n",
-                p->file, p->line, Rstr(p->r), p->x, p->y, y, d, d-p->dy, p->dy);
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->y,
+                   y,
+                   d,
+                   d - p->dy,
+                   p->dy);
             err++;
         }
     }
@@ -61,4 +75,3 @@ int Log10fTest(void)
 {
     return Log10fTest_impl();
 }
-

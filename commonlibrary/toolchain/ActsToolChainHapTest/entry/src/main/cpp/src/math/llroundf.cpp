@@ -23,13 +23,14 @@ static struct FI t[] = {
 
 };
 
-static int LlroundfTest_impl(void){
-    #pragma STDC FENV_ACCESS ON
+static int LlroundfTest_impl(void)
+{
+#pragma STDC FENV_ACCESS ON
     long long yi;
     int e, i, err = 0;
-    struct FI *p;
+    struct FI* p;
 
-    for (i = 0; i < sizeof t/sizeof *t; i++) {
+    for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
 
         if (p->r < 0)
@@ -37,17 +38,21 @@ static int LlroundfTest_impl(void){
         fesetround(p->r);
         feclearexcept(FE_ALL_EXCEPT);
         yi = llroundf(p->x);
-        e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
+        e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
 
-        if (!Checkexcept(e, p->e, p->r) && (e|INEXACT) != p->e) {
+        if (!Checkexcept(e, p->e, p->r) && (e | INEXACT) != p->e) {
             printf("%s:%d: bad fp exception: %s llroundf(%a)=%lld, want %s",
-                p->file, p->line, Rstr(p->r), p->x, p->i, Estr(p->e));
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->i,
+                   Estr(p->e));
             printf(" got %s\n", Estr(e));
             err++;
         }
-        if (!(p->e&INVALID) && yi != p->i) {
-            printf("%s:%d: %s llroundf(%a) want %lld got %lld\n",
-                p->file, p->line, Rstr(p->r), p->x, p->i, yi);
+        if (!(p->e & INVALID) && yi != p->i) {
+            printf("%s:%d: %s llroundf(%a) want %lld got %lld\n", p->file, p->line, Rstr(p->r), p->x, p->i, yi);
             err++;
         }
     }
@@ -58,4 +63,3 @@ int LlroundfTest(void)
 {
     return LlroundfTest_impl();
 }
-

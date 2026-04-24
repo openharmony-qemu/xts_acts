@@ -35,17 +35,17 @@ static struct LL t[] = {
 #endif
 };
 
-static int Log1plTest_impl(void )
+static int Log1plTest_impl(void)
 {
-    #pragma STDC FENV_ACCESS ON
+#pragma STDC FENV_ACCESS ON
     long double y;
     float d;
     int e;
     int i;
     int err = 0;
-    struct LL *p;
+    struct LL* p;
 
-    for (i = 0; i < sizeof t/sizeof *t; i++) {
+    for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
 
         if (p->r < 0)
@@ -53,18 +53,31 @@ static int Log1plTest_impl(void )
         fesetround(p->r);
         feclearexcept(FE_ALL_EXCEPT);
         y = log1pl(p->x);
-        e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
+        e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
 
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s log1pl(%La)=%La, want %s",
-                p->file, p->line, Rstr(p->r), p->x, p->y, Estr(p->e));
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->y,
+                   Estr(p->e));
             printf(" got %s\n", Estr(e));
             err++;
         }
         d = Ulperrl(y, p->y, p->dy);
         if (!Checkulp(d, p->r)) {
             printf("%s:%d: %s log1pl(%La) want %La got %La ulperr %.3f = %a + %a\n",
-                p->file, p->line, Rstr(p->r), p->x, p->y, y, d, d-p->dy, p->dy);
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->y,
+                   y,
+                   d,
+                   d - p->dy,
+                   p->dy);
             err++;
         }
     }
@@ -75,4 +88,3 @@ int Log1plTest(void)
 {
     return Log1plTest_impl();
 }
-

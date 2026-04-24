@@ -43,7 +43,7 @@ static int Log2lTest_impl(void)
     int e;
     int i;
     int err = 0;
-    struct LL *p;
+    struct LL* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;

@@ -22,6 +22,14 @@ static struct DdDi t[] = {
 #include "special/remquo.h"
 };
 
+static constexpr int REMQUO_LOW_BITS_MASK = 7;
+
+static bool HasRemquoQuotientMismatch(const struct DdDi* p, int quotient)
+{
+    return (!isnan(p->y) &&
+            ((quotient & REMQUO_LOW_BITS_MASK) != (p->i & REMQUO_LOW_BITS_MASK) || (quotient < 0) != (p->i < 0)));
+}
+
 static int RemquoTest_impl(void)
 {
 #pragma STDC FENV_ACCESS ON
@@ -58,8 +66,7 @@ static int RemquoTest_impl(void)
             err++;
         }
         d = Ulperr(y, p->y, p->dy);
-        if (!Checkcr(y, p->y, p->r) || (!isnan(p->y) && (yi & 7) != (p->i & 7)) ||
-            (!isnan(p->y) && (yi < 0) != (p->i < 0))) {
+        if (!Checkcr(y, p->y, p->r) || HasRemquoQuotientMismatch(p, yi)) {
             printf("%s:%d: %s remquo(%a,%a) want %a,%lld got %a,%d ulperr %.3f = %a + %a\n",
                    p->file,
                    p->line,

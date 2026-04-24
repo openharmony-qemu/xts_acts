@@ -22,6 +22,25 @@ static struct FFf t[] = {
 #include "special/modff.h"
 };
 
+static void PrintModffMismatch(const struct FFf* p, float y, float yi, float d, float di)
+{
+    printf("%s:%d: %s modff(%a) want %a,%a got %a,%a, ulperr %.3f = %a + %a, %.3f = %a + %a\n",
+           p->file,
+           p->line,
+           Rstr(p->r),
+           p->x,
+           p->y,
+           p->y2,
+           y,
+           yi,
+           d,
+           d - p->dy,
+           p->dy,
+           di,
+           di - p->dy2,
+           p->dy2);
+}
+
 static int ModffTest_impl(void)
 {
 #pragma STDC FENV_ACCESS ON
@@ -32,7 +51,7 @@ static int ModffTest_impl(void)
     int e;
     int i;
     int err = 0;
-    struct FFf *p;
+    struct FFf* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
@@ -60,21 +79,7 @@ static int ModffTest_impl(void)
         d = Ulperr(y, p->y, p->dy);
         di = Ulperr(yi, p->y2, p->dy2);
         if (!Checkcr(y, p->y, p->r) || !Checkcr(yi, p->y2, p->r)) {
-            printf("%s:%d: %s modff(%a) want %a,%a got %a,%a, ulperr %.3f = %a + %a, %.3f = %a + %a\n",
-                   p->file,
-                   p->line,
-                   Rstr(p->r),
-                   p->x,
-                   p->y,
-                   p->y2,
-                   y,
-                   yi,
-                   d,
-                   d - p->dy,
-                   p->dy,
-                   di,
-                   di - p->dy2,
-                   p->dy2);
+            PrintModffMismatch(p, y, yi, d, di);
             err++;
         }
     }

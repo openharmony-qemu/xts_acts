@@ -23,13 +23,14 @@ static struct DI t[] = {
 
 };
 
-static int LlrintTest_impl(void){
-    #pragma STDC FENV_ACCESS ON
+static int LlrintTest_impl(void)
+{
+#pragma STDC FENV_ACCESS ON
     long long yi;
     int e, i, err = 0;
-    struct DI *p;
+    struct DI* p;
 
-    for (i = 0; i < sizeof t/sizeof *t; i++) {
+    for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
 
         if (p->r < 0)
@@ -37,17 +38,21 @@ static int LlrintTest_impl(void){
         fesetround(p->r);
         feclearexcept(FE_ALL_EXCEPT);
         yi = llrint(p->x);
-        e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
+        e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
 
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s llrint(%a)=%lld, want %s",
-                p->file, p->line, Rstr(p->r), p->x, p->i, Estr(p->e));
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->i,
+                   Estr(p->e));
             printf(" got %s\n", Estr(e));
             err++;
         }
-        if (!(p->e&INVALID) && yi != p->i) {
-            printf("%s:%d: %s llrint(%a) want %lld got %lld\n",
-                p->file, p->line, Rstr(p->r), p->x, p->i, yi);
+        if (!(p->e & INVALID) && yi != p->i) {
+            printf("%s:%d: %s llrint(%a) want %lld got %lld\n", p->file, p->line, Rstr(p->r), p->x, p->i, yi);
             err++;
         }
     }
@@ -58,4 +63,3 @@ int LlrintTest(void)
 {
     return LlrintTest_impl();
 }
-

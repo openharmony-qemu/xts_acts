@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-#define _GNU_SOURCE 1
 #include <cstdint>
 #include <cstdio>
 #include "mtest.h"
@@ -37,7 +36,7 @@ static int LgammalRTest_impl(void)
     int e;
     int i;
     int err = 0;
-    struct LLi *p;
+    struct LLi* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
@@ -87,3 +86,4 @@ int LgammalRTest(void)
 {
     return LgammalRTest_impl();
 }
+

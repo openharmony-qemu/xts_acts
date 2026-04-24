@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-#define _GNU_SOURCE 1
 #include <cstdint>
 #include <cstdio>
 #include "mtest.h"
@@ -27,6 +26,25 @@ static struct LLl t[] = {
 #include "special/sincosl.h"
 #endif
 };
+
+static void PrintSincoslMismatch(const struct LLl* p, long double ysin, long double ycos, float dsin, float dcos)
+{
+    printf("%s:%d: %s sincosl(%La) want %La,%La got %La,%La, ulperr %.3f = %a + %a, %.3f = %a + %a\n",
+           p->file,
+           p->line,
+           Rstr(p->r),
+           p->x,
+           p->y,
+           p->y2,
+           ysin,
+           ycos,
+           dsin,
+           dsin - p->dy,
+           p->dy,
+           dcos,
+           dcos - p->dy2,
+           p->dy2);
+}
 
 static int SincoslTest_impl(void)
 {
@@ -66,21 +84,7 @@ static int SincoslTest_impl(void)
         dsin = Ulperr(ysin, p->y, p->dy);
         dcos = Ulperr(ycos, p->y2, p->dy2);
         if (!Checkulp(dsin, p->r) || !Checkulp(dcos, p->r)) {
-            printf("%s:%d: %s sincosl(%La) want %La,%La got %La,%La, ulperr %.3f = %a + %a, %.3f = %a + %a\n",
-                   p->file,
-                   p->line,
-                   Rstr(p->r),
-                   p->x,
-                   p->y,
-                   p->y2,
-                   ysin,
-                   ycos,
-                   dsin,
-                   dsin - p->dy,
-                   p->dy,
-                   dcos,
-                   dcos - p->dy2,
-                   p->dy2);
+            PrintSincoslMismatch(p, ysin, ycos, dsin, dcos);
             err++;
         }
     }

@@ -13,32 +13,30 @@
  * limitations under the License.
  */
 
-#define _GNU_SOURCE 1
 #include <cstdint>
 #include <cstdio>
-#include "mtest.h"
 #include <dlfcn.h>
+#include "mtest.h"
 static struct FF t[] = {
 #include "sanity/pow10f.h"
 #include "special/exp10f.h"
 
 };
 
-static int Pow10fTest_impl(void )
+static int Pow10fTest_impl(void)
 {
-    #pragma STDC FENV_ACCESS ON
+#pragma STDC FENV_ACCESS ON
     float y;
     float d;
     int e;
     int i;
     int err = 0;
-    struct FF *p;
+    struct FF* p;
 
     typedef float (*pow10f_func)(float);
     pow10f_func pow10f = (pow10f_func)dlsym(RTLD_DEFAULT, "pow10f");
 
-    
-    for (i = 0; i < sizeof t/sizeof *t; i++) {
+    for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
 
         if (p->r < 0)
@@ -46,18 +44,31 @@ static int Pow10fTest_impl(void )
         fesetround(p->r);
         feclearexcept(FE_ALL_EXCEPT);
         y = pow10f(p->x);
-        e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
+        e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
 
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s pow10f(%a)=%a, want %s",
-                p->file, p->line, Rstr(p->r), p->x, p->y, Estr(p->e));
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->y,
+                   Estr(p->e));
             printf(" got %s\n", Estr(e));
             err++;
         }
         d = Ulperrf(y, p->y, p->dy);
         if (!Checkulp(d, p->r)) {
             printf("%s:%d: %s pow10f(%a) want %a got %a ulperr %.3f = %a + %a\n",
-                p->file, p->line, Rstr(p->r), p->x, p->y, y, d, d-p->dy, p->dy);
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->y,
+                   y,
+                   d,
+                   d - p->dy,
+                   p->dy);
             err++;
         }
     }

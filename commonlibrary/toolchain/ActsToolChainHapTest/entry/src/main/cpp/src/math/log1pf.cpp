@@ -31,7 +31,7 @@ static int Log1pfTest_impl(void)
     int e;
     int i;
     int err = 0;
-    struct FF *p;
+    struct FF* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
@@ -47,7 +47,12 @@ static int Log1pfTest_impl(void)
 #ifndef __aarch64__
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s log1pf(%a)=%a, want %s",
-                p->file, p->line, Rstr(p->r), p->x, p->y, Estr(p->e));
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->y,
+                   Estr(p->e));
             printf(" got %s\n", Estr(e));
             err++;
         }
@@ -55,7 +60,15 @@ static int Log1pfTest_impl(void)
         d = Ulperrf(y, p->y, p->dy);
         if (!Checkulp(d, p->r)) {
             printf("%s:%d: %s log1pf(%a) want %a got %a ulperr %.3f = %a + %a\n",
-                p->file, p->line, Rstr(p->r), p->x, p->y, y, d, d - p->dy, p->dy);
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->y,
+                   y,
+                   d,
+                   d - p->dy,
+                   p->dy);
             err++;
         }
     }

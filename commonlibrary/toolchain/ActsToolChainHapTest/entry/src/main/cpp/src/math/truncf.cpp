@@ -23,14 +23,15 @@ static struct FF t[] = {
 
 };
 
-static int TruncfTest_impl(void){
-    #pragma STDC FENV_ACCESS ON
+static int TruncfTest_impl(void)
+{
+#pragma STDC FENV_ACCESS ON
     float y;
     float d;
     int e, i, err = 0;
-    struct FF *p;
+    struct FF* p;
 
-    for (i = 0; i < sizeof t/sizeof *t; i++) {
+    for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
 
         if (p->r < 0)
@@ -38,18 +39,31 @@ static int TruncfTest_impl(void){
         fesetround(p->r);
         feclearexcept(FE_ALL_EXCEPT);
         y = truncf(p->x);
-        e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
+        e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
 
-        if (!Checkexceptall(e, p->e, p->r) && (e|INEXACT) != p->e) {
+        if (!Checkexceptall(e, p->e, p->r) && (e | INEXACT) != p->e) {
             printf("%s:%d: bad fp exception: %s truncf(%a)=%a, want %s",
-                p->file, p->line, Rstr(p->r), p->x, p->y, Estr(p->e));
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->y,
+                   Estr(p->e));
             printf(" got %s\n", Estr(e));
             err++;
         }
         d = Ulperrf(y, p->y, p->dy);
         if (!Checkcr(y, p->y, p->r)) {
             printf("%s:%d: %s truncf(%a) want %a got %a ulperr %.3f = %a + %a\n",
-                p->file, p->line, Rstr(p->r), p->x, p->y, y, d, d-p->dy, p->dy);
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->y,
+                   y,
+                   d,
+                   d - p->dy,
+                   p->dy);
             err++;
         }
     }
@@ -60,4 +74,3 @@ int TruncfTest(void)
 {
     return TruncfTest_impl();
 }
-

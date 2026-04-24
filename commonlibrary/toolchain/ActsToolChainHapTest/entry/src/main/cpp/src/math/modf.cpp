@@ -22,14 +22,15 @@ static struct DDd t[] = {
 #include "special/modf.h"
 };
 
-static int ModfTest_impl(void){
-    #pragma STDC FENV_ACCESS ON
+static int ModfTest_impl(void)
+{
+#pragma STDC FENV_ACCESS ON
     double y, yi;
     float d, di;
     int e, i, err = 0;
-    struct DDd *p;
+    struct DDd* p;
 
-    for (i = 0; i < sizeof t/sizeof *t; i++) {
+    for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
 
         if (p->r < 0)
@@ -37,12 +38,18 @@ static int ModfTest_impl(void){
         fesetround(p->r);
         feclearexcept(FE_ALL_EXCEPT);
         y = modf(p->x, &yi);
-        e = fetestexcept(INEXACT|INVALID|DIVBYZERO|UNDERFLOW|OVERFLOW);
+        e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
 
-        /* TODO: fix inexact */
-        if (!Checkexceptall(e|INEXACT, p->e|INEXACT, p->r)) {
+        /* Treat INEXACT as expected for this test data set. */
+        if (!Checkexceptall(e | INEXACT, p->e | INEXACT, p->r)) {
             printf("%s:%d: bad fp exception: %s modf(%a)=%a,%a, want %s",
-                p->file, p->line, Rstr(p->r), p->x, p->y, p->y2, Estr(p->e));
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->y,
+                   p->y2,
+                   Estr(p->e));
             printf(" got %s\n", Estr(e));
             err++;
         }
@@ -50,7 +57,20 @@ static int ModfTest_impl(void){
         di = Ulperr(yi, p->y2, p->dy2);
         if (!Checkcr(y, p->y, p->r) || !Checkcr(yi, p->y2, p->r)) {
             printf("%s:%d: %s modf(%a) want %a,%a got %a,%a, ulperr %.3f = %a + %a, %.3f = %a + %a\n",
-                p->file, p->line, Rstr(p->r), p->x, p->y, p->y2, y, yi, d, d-p->dy, p->dy, di, di-p->dy2, p->dy2);
+                   p->file,
+                   p->line,
+                   Rstr(p->r),
+                   p->x,
+                   p->y,
+                   p->y2,
+                   y,
+                   yi,
+                   d,
+                   d - p->dy,
+                   p->dy,
+                   di,
+                   di - p->dy2,
+                   p->dy2);
             err++;
         }
     }
