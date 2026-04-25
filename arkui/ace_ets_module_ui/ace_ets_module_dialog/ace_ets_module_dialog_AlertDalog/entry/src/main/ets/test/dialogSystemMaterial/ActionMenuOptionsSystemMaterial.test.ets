@@ -13,17 +13,19 @@
  * limitations under the License.
  */
 
-import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "@ohos/hypium"
-import { Driver, ON } from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/common/Common'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { Driver, ON, Component } from '@ohos.UiTest';
+import { router } from '@kit.ArkUI';
+import Utils from '../../MainAbility/common/Utils';
+import CommonFunc from '../../MainAbility/common/Common';
+
 
 export default function ActionMenuOptionsSystemMaterial() {
   describe('ActionMenuOptionsSystemMaterial', () => {
 
     beforeEach(async (done: Function) => {
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/systemMaterial/ActionMenuOptionsSystemMaterial',
+        url: 'MainAbility/pages/dialogSystemMaterial/ActionMenuOptionsSystemMaterial',
       }
       try {
         router.clear();
@@ -32,7 +34,7 @@ export default function ActionMenuOptionsSystemMaterial() {
         if (!('ActionMenuOptionsSystemMaterial' == pages.name)) {
           console.info('get ActionMenuOptionsSystemMaterial state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options)
-          await CommonFunc.sleep(2000);
+          await CommonFunc.sleep(1000);
           console.info('push ActionMenuOptionsSystemMaterial page success ' + JSON.stringify(result));
         }
       } catch (err) {
@@ -71,7 +73,11 @@ export default function ActionMenuOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
 
       let titleText = await driver.findComponent(ON.text('ActionMenu Undefined'));
-      expect(titleText).not().assertUndefined();
+      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+      let dialog: ESObject = obj.$children[1]
+      let date = JSON.stringify(obj.$children[1].$children[0])
+      console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
+      expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
       console.info('ActionMenuOptionsSystemMaterial_0100 Menu title is visible');
 
       await CommonFunc.sleep(500);
@@ -99,7 +105,11 @@ export default function ActionMenuOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
 
       let titleText = await driver.findComponent(ON.text('ActionMenu HDS THICK'));
-      expect(titleText).not().assertUndefined();
+      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+      let dialog: ESObject = obj.$children[1]
+      let date = JSON.stringify(obj.$children[1].$children[0])
+      console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
+      expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
       console.info('ActionMenuOptionsSystemMaterial_0200 Menu title is visible');
 
       await CommonFunc.sleep(500);
@@ -127,7 +137,12 @@ export default function ActionMenuOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
 
       let titleText = await driver.findComponent(ON.text('ActionMenu SEMI_TRANSPARENT'));
-      expect(titleText).not().assertUndefined();
+      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+      let dialog: ESObject = obj.$children[1]
+      let date = JSON.stringify(obj.$children[1].$children[0])
+      console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
+      expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.SEMI_TRANSPARENT');
+
       console.info('ActionMenuOptionsSystemMaterial_0300 Menu title is visible');
 
       await CommonFunc.sleep(500);
@@ -155,9 +170,14 @@ export default function ActionMenuOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
 
       let titleText = await driver.findComponent(ON.text('ActionMenu Immersive THICK'));
-      expect(titleText).not().assertUndefined();
-      console.info('ActionMenuOptionsSystemMaterial_0400 Menu title is visible');
+      
 
+      console.info('ActionMenuOptionsSystemMaterial_0400 Menu title is visible');
+      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+      let dialog: ESObject = obj.$children[1]
+      let date = JSON.stringify(obj.$children[1].$children[0])
+      console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
+      expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.SEMI_TRANSPARENT');
       await CommonFunc.sleep(500);
       let closeButton = await driver.findComponent(ON.text('Button1'));
       await closeButton.click();
@@ -211,7 +231,11 @@ export default function ActionMenuOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
 
       let titleText = await driver.findComponent(ON.text('ActionMenu NONE'));
-      expect(titleText).not().assertUndefined();
+      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+      let dialog: ESObject = obj.$children[1]
+      let date = JSON.stringify(obj.$children[1].$children[0])
+      console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
+      expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
       console.info('ActionMenuOptionsSystemMaterial_0600 Menu title is visible');
 
       await CommonFunc.sleep(500);

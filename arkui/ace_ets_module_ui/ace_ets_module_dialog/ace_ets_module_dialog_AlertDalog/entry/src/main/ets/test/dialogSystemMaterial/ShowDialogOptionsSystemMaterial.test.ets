@@ -13,10 +13,11 @@
  * limitations under the License.
  */
 
-import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "@ohos/hypium"
-import { Driver, ON } from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/common/Common'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { Driver, ON, Component } from '@ohos.UiTest';
+import { router } from '@kit.ArkUI';
+import Utils from '../../MainAbility/common/Utils';
+import CommonFunc from '../../MainAbility/common/Common';
 
 export default function ShowDialogOptionsSystemMaterial() {
   describe('ShowDialogOptionsSystemMaterial', () => {
@@ -58,13 +59,12 @@ export default function ShowDialogOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
 
       let titleText = await driver.findComponent(ON.text('ShowDialog Undefined'));
-      // expect(titleText).not().assertUndefined();
+      
       let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       let dialog: ESObject = obj.$children[1]
       let date = JSON.stringify(obj.$children[1].$children[0])
-      // JSON.parse(date).$attrs.systemMaterial.material.type
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('undefined');
+      expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
       // obj"MaterialType.SEMI_TRANSPARENT"
       console.info('ShowDialogOptionsSystemMaterial_0100 Dialog Undefined is visible');
 
@@ -93,7 +93,11 @@ export default function ShowDialogOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
 
       let titleText = await driver.findComponent(ON.text('ShowDialog HDS THICK'));
-      expect(titleText).not().assertUndefined();
+      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+      let dialog: ESObject = obj.$children[1]
+      let date = JSON.stringify(obj.$children[1].$children[0])
+      console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
+      expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
       console.info('ShowDialogOptionsSystemMaterial_0200 Dialog HDS THICK is visible');
 
       await CommonFunc.sleep(500);
@@ -121,7 +125,11 @@ export default function ShowDialogOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
 
       let titleText = await driver.findComponent(ON.text('ShowDialog SEMI_TRANSPARENT'));
-      expect(titleText).not().assertUndefined();
+      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+      let dialog: ESObject = obj.$children[1]
+      let date = JSON.stringify(obj.$children[1].$children[0])
+      console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
+      expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.SEMI_TRANSPARENT');
       console.info('ShowDialogOptionsSystemMaterial_0300 Dialog SEMI_TRANSPARENT is visible');
 
       await CommonFunc.sleep(500);
@@ -149,7 +157,11 @@ export default function ShowDialogOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
 
       let titleText = await driver.findComponent(ON.text('ShowDialog Immersive THICK'));
-      expect(titleText).not().assertUndefined();
+      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+      let dialog: ESObject = obj.$children[1]
+      let date = JSON.stringify(obj.$children[1].$children[0])
+      console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
+      expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
       console.info('ShowDialogOptionsSystemMaterial_0400 Dialog Immersive THICK is visible');
 
       await CommonFunc.sleep(500);
@@ -177,7 +189,11 @@ export default function ShowDialogOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
 
       let titleText = await driver.findComponent(ON.text('ShowDialog Immersive ULTRA_THIN'));
-      expect(titleText).not().assertUndefined();
+      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+      let dialog: ESObject = obj.$children[1]
+      let date = JSON.stringify(obj.$children[1].$children[0])
+      console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
+      expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
       console.info('ShowDialogOptionsSystemMaterial_0500 Dialog Immersive ULTRA_THIN is visible');
 
       await CommonFunc.sleep(500);
@@ -205,7 +221,11 @@ export default function ShowDialogOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
 
       let titleText = await driver.findComponent(ON.text('ShowDialog NONE'));
-      expect(titleText).not().assertUndefined();
+      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+      let dialog: ESObject = obj.$children[1]
+      let date = JSON.stringify(obj.$children[1].$children[0])
+      console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
+      expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
       console.info('ShowDialogOptionsSystemMaterial_0600 Dialog NONE is visible');
 
       await CommonFunc.sleep(500);

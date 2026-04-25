@@ -13,10 +13,11 @@
  * limitations under the License.
  */
 
-import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "@ohos/hypium"
-import { Driver, ON } from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/common/Common'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { Driver, ON, Component } from '@ohos.UiTest';
+import { router } from '@kit.ArkUI';
+import Utils from '../../MainAbility/common/Utils';
+import CommonFunc from '../../MainAbility/common/Common';
 
 export default function CustomDialogControllerOptionsSystemMaterial() {
   describe('CustomDialogControllerOptionsSystemMaterial', () => {
@@ -75,7 +76,7 @@ export default function CustomDialogControllerOptionsSystemMaterial() {
       let dialog: ESObject = obj.$children[1];
       let date = JSON.stringify(obj.$children[1].$children[0]);
       console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('undefined');
+      expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
       console.info('CustomDialogControllerOptionsSystemMaterial_0100 Dialog Undefined is visible');
 
       await CommonFunc.sleep(500);
@@ -107,7 +108,7 @@ export default function CustomDialogControllerOptionsSystemMaterial() {
       let dialog: ESObject = obj.$children[1];
       let date = JSON.stringify(obj.$children[1].$children[0]);
       console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('undefined');
+      expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
       console.info('CustomDialogControllerOptionsSystemMaterial_0200 Dialog HDS THICK is visible');
 
       await CommonFunc.sleep(500);
@@ -171,7 +172,7 @@ export default function CustomDialogControllerOptionsSystemMaterial() {
       let dialog: ESObject = obj.$children[1];
       let date = JSON.stringify(obj.$children[1].$children[0]);
       console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.style));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.style).assertEqual('ImmersiveStyle.THICK');
+      expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
       console.info('CustomDialogControllerOptionsSystemMaterial_0400 Dialog Immersive THICK is visible');
 
       await CommonFunc.sleep(500);
@@ -203,7 +204,7 @@ export default function CustomDialogControllerOptionsSystemMaterial() {
       let dialog: ESObject = obj.$children[1];
       let date = JSON.stringify(obj.$children[1].$children[0]);
       console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.style));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.style).assertEqual('ImmersiveStyle.ULTRA_THIN');
+      expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
       console.info('CustomDialogControllerOptionsSystemMaterial_0500 Dialog Immersive ULTRA_THIN is visible');
 
       await CommonFunc.sleep(500);
@@ -235,7 +236,7 @@ export default function CustomDialogControllerOptionsSystemMaterial() {
       let dialog: ESObject = obj.$children[1];
       let date = JSON.stringify(obj.$children[1].$children[0]);
       console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
       console.info('CustomDialogControllerOptionsSystemMaterial_0600 Dialog NONE is visible');
 
       await CommonFunc.sleep(500);

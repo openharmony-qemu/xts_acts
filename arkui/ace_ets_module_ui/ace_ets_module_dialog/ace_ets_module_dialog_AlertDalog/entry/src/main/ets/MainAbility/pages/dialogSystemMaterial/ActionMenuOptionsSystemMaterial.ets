@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 // import { hdsMaterial } from "@kit.UIDesignKit";
 import { uiMaterial } from "@kit.ArkUI";
 
@@ -37,21 +38,12 @@ struct ActionMenuOptionsSystemMaterial {
             });
           })
 
+        // 未开源暂用undefined
         Button('hdsMaterial THICK')
           .id('hds_thick')
           .height('8%')
           .onClick(() => {
             let material: SystemUiMaterial | undefined = undefined;
-            // if (this.isNewMaterialSupported) {
-            //   material = new hdsMaterial.Material({
-            //     backgroundMaterial: {
-            //       type: hdsMaterial.MaterialType.ADAPTIVE,
-            //       scenario: hdsMaterial.ScenarioType.THICK,
-            //       level: hdsMaterial.MaterialLevel.ADAPTIVE,
-            //       darkMode: hdsMaterial.DarkMode.ADAPTIVE
-            //     }
-            //   });
-            // }
             this.getUIContext().getPromptAction().showActionMenu({
               title: 'ActionMenu HDS THICK',
               buttons: [

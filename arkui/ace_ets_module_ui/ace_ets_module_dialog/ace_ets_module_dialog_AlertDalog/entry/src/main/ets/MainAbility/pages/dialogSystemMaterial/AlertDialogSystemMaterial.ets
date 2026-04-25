@@ -47,16 +47,7 @@ struct AlertDialogSystemMaterial {
           .height('8%')
           .onClick(() => {
             let material: SystemUiMaterial | undefined = undefined;
-            // if (this.isNewMaterialSupported) {
-            //   material = new hdsMaterial.Material({
-            //     backgroundMaterial: {
-            //       type: hdsMaterial.MaterialType.ADAPTIVE,
-            //       scenario: hdsMaterial.ScenarioType.THICK,
-            //       level: hdsMaterial.MaterialLevel.ADAPTIVE,
-            //       darkMode: hdsMaterial.DarkMode.ADAPTIVE
-            //     }
-            //   });
-            // }
+            
             this.getUIContext().showAlertDialog({
               title: 'AlertDialog HDS THICK',
               message: 'systemMaterial hdsMaterial.Material THICK test',
