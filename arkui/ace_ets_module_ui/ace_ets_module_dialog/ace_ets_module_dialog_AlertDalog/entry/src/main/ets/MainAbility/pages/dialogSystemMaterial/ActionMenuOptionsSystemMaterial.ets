@@ -13,13 +13,12 @@
  * limitations under the License.
  */
 
-// import { hdsMaterial } from "@kit.UIDesignKit";
-import { uiMaterial } from "@kit.ArkUI";
+
+import { uiMaterial } from '@kit.ArkUI';
 
 @Entry
 @Component
 struct ActionMenuOptionsSystemMaterial {
-  // isNewMaterialSupported = hdsMaterial.getSystemMaterialTypes().length > 0;
 
   build() {
     Column({ space: 5 }) {

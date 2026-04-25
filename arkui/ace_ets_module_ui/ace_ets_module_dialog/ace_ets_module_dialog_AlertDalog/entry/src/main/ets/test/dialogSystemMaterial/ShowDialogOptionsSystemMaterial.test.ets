@@ -43,15 +43,15 @@ export default function ShowDialogOptionsSystemMaterial() {
     });
 
     /**
-     * @tc.name   ShowDialogOptionsSystemMaterial_0100
-     * @tc.number SUB_ACE_ShowDialogOptionsSystemMaterial_0100
+     * @tc.name   SUB_ACE_ShowDialogOptionsSystemMaterial_001
+     * @tc.number SUB_ACE_ShowDialogOptionsSystemMaterial_001
      * @tc.desc   To test ShowDialogOptions systemMaterial property with undefined parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ShowDialogOptionsSystemMaterial_0100',  Level.LEVEL0, async (done: Function) => {
-      console.info('ShowDialogOptionsSystemMaterial_0100 START');
+    it('SUB_ACE_ShowDialogOptionsSystemMaterial_001',  Level.LEVEL0, async (done: Function) => {
+      console.info('SUB_ACE_ShowDialogOptionsSystemMaterial_001 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('undefined'));
@@ -66,26 +66,26 @@ export default function ShowDialogOptionsSystemMaterial() {
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
       expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
       // obj"MaterialType.SEMI_TRANSPARENT"
-      console.info('ShowDialogOptionsSystemMaterial_0100 Dialog Undefined is visible');
+      console.info('SUB_ACE_ShowDialogOptionsSystemMaterial_001 Dialog Undefined is visible');
 
       await CommonFunc.sleep(500);
       let okButton = await driver.findComponent(ON.text('OK'));
       await okButton.click();
       await CommonFunc.sleep(1000);
-      console.info('ShowDialogOptionsSystemMaterial_0100 END');
+      console.info('SUB_ACE_ShowDialogOptionsSystemMaterial_001 END');
       done();
     });
 
     /**
-     * @tc.name   ShowDialogOptionsSystemMaterial_0200
-     * @tc.number SUB_ACE_ShowDialogOptionsSystemMaterial_0200
+     * @tc.name   SUB_ACE_ShowDialogOptionsSystemMaterial_002
+     * @tc.number SUB_ACE_ShowDialogOptionsSystemMaterial_002
      * @tc.desc   To test ShowDialogOptions systemMaterial property with hdsMaterial.Material THICK
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ShowDialogOptionsSystemMaterial_0200',  Level.LEVEL0, async (done: Function) => {
-      console.info('ShowDialogOptionsSystemMaterial_0200 START');
+    it('SUB_ACE_ShowDialogOptionsSystemMaterial_002',  Level.LEVEL0, async (done: Function) => {
+      console.info('SUB_ACE_ShowDialogOptionsSystemMaterial_002 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('hds_thick'));
@@ -98,26 +98,26 @@ export default function ShowDialogOptionsSystemMaterial() {
       let date = JSON.stringify(obj.$children[1].$children[0])
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
       expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
-      console.info('ShowDialogOptionsSystemMaterial_0200 Dialog HDS THICK is visible');
+      console.info('SUB_ACE_ShowDialogOptionsSystemMaterial_002 Dialog HDS THICK is visible');
 
       await CommonFunc.sleep(500);
       let okButton = await driver.findComponent(ON.text('OK'));
       await okButton.click();
       await CommonFunc.sleep(1000);
-      console.info('ShowDialogOptionsSystemMaterial_0200 END');
+      console.info('SUB_ACE_ShowDialogOptionsSystemMaterial_002 END');
       done();
     });
 
     /**
-     * @tc.name   ShowDialogOptionsSystemMaterial_0300
-     * @tc.number SUB_ACE_ShowDialogOptionsSystemMaterial_0300
+     * @tc.name   SUB_ACE_ShowDialogOptionsSystemMaterial_003
+     * @tc.number SUB_ACE_ShowDialogOptionsSystemMaterial_003
      * @tc.desc   To test ShowDialogOptions systemMaterial property with uiMaterial.Material SEMI_TRANSPARENT
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ShowDialogOptionsSystemMaterial_0300',  Level.LEVEL0, async (done: Function) => {
-      console.info('ShowDialogOptionsSystemMaterial_0300 START');
+    it('SUB_ACE_ShowDialogOptionsSystemMaterial_003',  Level.LEVEL0, async (done: Function) => {
+      console.info('SUB_ACE_ShowDialogOptionsSystemMaterial_003 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('semi_transparent'));
@@ -130,26 +130,26 @@ export default function ShowDialogOptionsSystemMaterial() {
       let date = JSON.stringify(obj.$children[1].$children[0])
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
       expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.SEMI_TRANSPARENT');
-      console.info('ShowDialogOptionsSystemMaterial_0300 Dialog SEMI_TRANSPARENT is visible');
+      console.info('SUB_ACE_ShowDialogOptionsSystemMaterial_003 Dialog SEMI_TRANSPARENT is visible');
 
       await CommonFunc.sleep(500);
       let okButton = await driver.findComponent(ON.text('OK'));
       await okButton.click();
       await CommonFunc.sleep(1000);
-      console.info('ShowDialogOptionsSystemMaterial_0300 END');
+      console.info('SUB_ACE_ShowDialogOptionsSystemMaterial_003 END');
       done();
     });
 
     /**
-     * @tc.name   ShowDialogOptionsSystemMaterial_0400
-     * @tc.number SUB_ACE_ShowDialogOptionsSystemMaterial_0400
+     * @tc.name   SUB_ACE_ShowDialogOptionsSystemMaterial_004
+     * @tc.number SUB_ACE_ShowDialogOptionsSystemMaterial_004
      * @tc.desc   To test ShowDialogOptions systemMaterial property with uiMaterial.ImmersiveMaterial THICK
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ShowDialogOptionsSystemMaterial_0400',  Level.LEVEL0, async (done: Function) => {
-      console.info('ShowDialogOptionsSystemMaterial_0400 START');
+    it('SUB_ACE_ShowDialogOptionsSystemMaterial_004',  Level.LEVEL0, async (done: Function) => {
+      console.info('SUB_ACE_ShowDialogOptionsSystemMaterial_004 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('immersive_thick'));
@@ -162,26 +162,26 @@ export default function ShowDialogOptionsSystemMaterial() {
       let date = JSON.stringify(obj.$children[1].$children[0])
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
       expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
-      console.info('ShowDialogOptionsSystemMaterial_0400 Dialog Immersive THICK is visible');
+      console.info('SUB_ACE_ShowDialogOptionsSystemMaterial_004 Dialog Immersive THICK is visible');
 
       await CommonFunc.sleep(500);
       let okButton = await driver.findComponent(ON.text('OK'));
       await okButton.click();
       await CommonFunc.sleep(1000);
-      console.info('ShowDialogOptionsSystemMaterial_0400 END');
+      console.info('SUB_ACE_ShowDialogOptionsSystemMaterial_004 END');
       done();
     });
 
     /**
-     * @tc.name   ShowDialogOptionsSystemMaterial_0500
-     * @tc.number SUB_ACE_ShowDialogOptionsSystemMaterial_0500
+     * @tc.name   SUB_ACE_ShowDialogOptionsSystemMaterial_005
+     * @tc.number SUB_ACE_ShowDialogOptionsSystemMaterial_005
      * @tc.desc   To test ShowDialogOptions systemMaterial property with uiMaterial.ImmersiveMaterial ULTRA_THIN
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ShowDialogOptionsSystemMaterial_0500',  Level.LEVEL0, async (done: Function) => {
-      console.info('ShowDialogOptionsSystemMaterial_0500 START');
+    it('SUB_ACE_ShowDialogOptionsSystemMaterial_005',  Level.LEVEL0, async (done: Function) => {
+      console.info('SUB_ACE_ShowDialogOptionsSystemMaterial_005 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('immersive_ultra_thin'));
@@ -194,26 +194,26 @@ export default function ShowDialogOptionsSystemMaterial() {
       let date = JSON.stringify(obj.$children[1].$children[0])
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
       expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
-      console.info('ShowDialogOptionsSystemMaterial_0500 Dialog Immersive ULTRA_THIN is visible');
+      console.info('SUB_ACE_ShowDialogOptionsSystemMaterial_005 Dialog Immersive ULTRA_THIN is visible');
 
       await CommonFunc.sleep(500);
       let okButton = await driver.findComponent(ON.text('OK'));
       await okButton.click();
       await CommonFunc.sleep(1000);
-      console.info('ShowDialogOptionsSystemMaterial_0500 END');
+      console.info('SUB_ACE_ShowDialogOptionsSystemMaterial_005 END');
       done();
     });
 
     /**
-     * @tc.name   ShowDialogOptionsSystemMaterial_0600
-     * @tc.number SUB_ACE_ShowDialogOptionsSystemMaterial_0600
+     * @tc.name   SUB_ACE_ShowDialogOptionsSystemMaterial_006
+     * @tc.number SUB_ACE_ShowDialogOptionsSystemMaterial_006
      * @tc.desc   To test ShowDialogOptions systemMaterial property with uiMaterial.Material NONE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ShowDialogOptionsSystemMaterial_0600',  Level.LEVEL0, async (done: Function) => {
-      console.info('ShowDialogOptionsSystemMaterial_0600 START');
+    it('SUB_ACE_ShowDialogOptionsSystemMaterial_006',  Level.LEVEL0, async (done: Function) => {
+      console.info('SUB_ACE_ShowDialogOptionsSystemMaterial_006 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('none'));
@@ -226,13 +226,13 @@ export default function ShowDialogOptionsSystemMaterial() {
       let date = JSON.stringify(obj.$children[1].$children[0])
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
       expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
-      console.info('ShowDialogOptionsSystemMaterial_0600 Dialog NONE is visible');
+      console.info('SUB_ACE_ShowDialogOptionsSystemMaterial_006 Dialog NONE is visible');
 
       await CommonFunc.sleep(500);
       let okButton = await driver.findComponent(ON.text('OK'));
       await okButton.click();
       await CommonFunc.sleep(1000);
-      console.info('ShowDialogOptionsSystemMaterial_0600 END');
+      console.info('SUB_ACE_ShowDialogOptionsSystemMaterial_006 END');
       done();
     });
   })

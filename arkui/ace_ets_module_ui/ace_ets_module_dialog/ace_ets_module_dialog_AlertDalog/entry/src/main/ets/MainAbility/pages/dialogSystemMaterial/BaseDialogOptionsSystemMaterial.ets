@@ -12,9 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// import { hdsMaterial } from "@kit.UIDesignKit";
-import { uiMaterial } from "@kit.ArkUI";
-import { promptAction } from "@kit.ArkUI";
+
+import { uiMaterial } from '@kit.ArkUI';
+import { promptAction } from '@kit.ArkUI';
 
 @Entry
 @Component
@@ -25,8 +25,7 @@ struct BaseDialogOptionsSystemMaterial {
   @State dialogId4: number = -1;
   @State dialogId5: number = -1;
   @State dialogId6: number = -1;
-  // isNewMaterialSupported = hdsMaterial.getSystemMaterialTypes().length > 0;
-
+ 
   @Builder
   customDialogBuilder() {
     Column() {
@@ -98,16 +97,6 @@ struct BaseDialogOptionsSystemMaterial {
           .height('8%')
           .onClick(() => {
             let material: SystemUiMaterial | undefined = undefined;
-            // if (this.isNewMaterialSupported) {
-            //   material = new hdsMaterial.Material({
-            //     backgroundMaterial: {
-            //       type: hdsMaterial.MaterialType.ADAPTIVE,
-            //       scenario: hdsMaterial.ScenarioType.THICK,
-            //       level: hdsMaterial.MaterialLevel.ADAPTIVE,
-            //       darkMode: hdsMaterial.DarkMode.ADAPTIVE
-            //     }
-            //   });
-            // }
             promptAction.openCustomDialog({
               builder: () => {
                 this.customDialogBuilder()
