@@ -14,3 +14,7 @@
  */
 export const AreaChangeErrorCode001: () => number;
 export const AreaChangeErrorCode002: () => number;
+export const GestureInterceptErrorCode001: () => number;
+export const GestureInterceptErrorCode002: () => number;
+export const GestureInterceptErrorCode003: () => number;
+export const GestureInterceptErrorCode004: () => number;

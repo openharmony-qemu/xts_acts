@@ -15,3 +15,7 @@
 export const RegisterCommonAreaApproximateChangeEventTest: (a: string) => void;
 
 export const UnregisterCommonAreaApproximateChangeEventTest: (a: string) => void;
+
+export const GestureInterceptTest: (a: string) => void;
+
+export const PassThroughTest: (a: string) => void;

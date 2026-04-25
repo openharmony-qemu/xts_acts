@@ -24,6 +24,8 @@ add_library(nativerender SHARED
     NapiRenderInitTest.cpp
     onAreaChange/RegisterCommonAreaApproximateChangeEventTest.cpp
     onAreaChange/UnregisterCommonAreaApproximateChangeEventTest.cpp
+    gestureIntercept/GestureInterceptTest.cpp
+    passThrough/PassThroughTest.cpp
 )
 
  add_library(nativeNode SHARED 
