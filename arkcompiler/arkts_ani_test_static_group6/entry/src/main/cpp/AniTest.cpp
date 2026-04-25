@@ -15,11 +15,34 @@
 
 #include "Common.h"
 #include "VersionInfo.h"
+#include "AttachDetachTest.h"
 
 namespace {
     std::array methods = {
         ani_native_function{"test_GetVersion", ":i",
                             reinterpret_cast<void *>(test_GetVersion)},
+        ani_native_function{"test_AttachDetach", ":i",
+                            reinterpret_cast<void *>(test_AttachDetach)},
+        ani_native_function{"test_AttachDetach_WithInterop", ":i",
+                            reinterpret_cast<void *>(test_AttachDetach_WithInterop)},
+        ani_native_function{"test_Attach_InvalidResult", ":i",
+                            reinterpret_cast<void *>(test_Attach_InvalidResult)},
+        ani_native_function{"test_Attach_InvalidVersion", ":i",
+                            reinterpret_cast<void *>(test_Attach_InvalidVersion)},
+        ani_native_function{"test_Attach_InvalidOption", ":i",
+                            reinterpret_cast<void *>(test_Attach_InvalidOption)},
+        ani_native_function{"test_Attach_RepeatAttach", ":i",
+                            reinterpret_cast<void *>(test_Attach_RepeatAttach)},
+        ani_native_function{"test_Attach_RepeatDetach", ":i",
+                            reinterpret_cast<void *>(test_Attach_RepeatDetach)},
+        ani_native_function{"test_Detach_WithoutAttach", ":i",
+                            reinterpret_cast<void *>(test_Detach_WithoutAttach)},
+        ani_native_function{"test_ConcurrentAttach", ":i",
+                            reinterpret_cast<void *>(test_ConcurrentAttach)},
+        ani_native_function{"test_ConcurrentMainThreadWorker", ":i",
+                            reinterpret_cast<void *>(test_ConcurrentMainThreadWorker)},
+        ani_native_function{"test_CreateObjectInWorker", ":i",
+                            reinterpret_cast<void *>(test_CreateObjectInWorker)},
     };
 }
 
