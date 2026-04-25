@@ -16,6 +16,9 @@
 #include "manager/PluginManagerTest.h"
 #include "onAreaChange/RegisterCommonAreaApproximateChangeEventTest.h"
 #include "onAreaChange/UnregisterCommonAreaApproximateChangeEventTest.h"
+#include "orphanCharOptimization/containerTest.h"
+#include "orphanCharOptimization/orphanCharOptimizationTest.h"
+
 namespace ArkUICapiTest {
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
