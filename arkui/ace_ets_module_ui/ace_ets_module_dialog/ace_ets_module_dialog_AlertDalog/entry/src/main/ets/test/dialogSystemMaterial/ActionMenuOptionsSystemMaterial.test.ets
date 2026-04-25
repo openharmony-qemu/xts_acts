@@ -158,7 +158,7 @@ export default function ActionMenuOptionsSystemMaterial() {
 
     /**
      * @tc.name   ActionMenuOptionsSystemMaterial_0400
-     * @tc.number SUB_ARKUI_API_AcActionMenuOptionsSystemMaterial_004
+     * @tc.number SUB_ARKUI_API_AcActionMenuOptionsSystemMaterial_0400
      * @tc.desc   To test ActionMenuOptions systemMaterial property with uiMaterial.ImmersiveMaterial THICK
      * @tc.desc   ArkUIAPI 
      * @tc.type   FUNCTION 

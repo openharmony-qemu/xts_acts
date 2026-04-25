@@ -229,8 +229,8 @@ export default function CustomDialogControllerOptionsSystemMaterial() {
      * @tc.size   MEDIUMTEST 
      * @tc.level  LEVEL2 
      */
-    it('SUB_ACE_CustomDialogControllerOptionsSystemMaterial_0600', Level.LEVEL2, async (done: Function) => {
-      console.info('SUB_ACE_CustomDialogControllerOptionsSystemMaterial_0600 START');
+    it('CustomDialogControllerOptionsSystemMaterial_0600', Level.LEVEL2, async (done: Function) => {
+      console.info('CustomDialogControllerOptionsSystemMaterial_0600 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('none'));
@@ -243,13 +243,13 @@ export default function CustomDialogControllerOptionsSystemMaterial() {
       let date = JSON.stringify(obj.$children[1].$children[0]);
       console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type));
       expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
-      console.info('SUB_ACE_CustomDialogControllerOptionsSystemMaterial_0600 Dialog NONE is visible');
+      console.info('CustomDialogControllerOptionsSystemMaterial_0600 Dialog NONE is visible');
 
       await CommonFunc.sleep(500);
       let closeButton = await driver.findComponent(ON.text('Close'));
       await closeButton.click();
       await CommonFunc.sleep(1000);
-      console.info('SUB_ACE_CustomDialogControllerOptionsSystemMaterial_0600 END');
+      console.info('CustomDialogControllerOptionsSystemMaterial_0600 END');
       done();
     });
   })

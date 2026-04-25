@@ -56,16 +56,16 @@ export default function BaseDialogOptionsSystemMaterial() {
     });
 
     /**
-     * @tc.name   BaseDialogOptionsSystemMaterial_001
-     * @tc.number SUB_ARKUI_API_BaseDialogOptionsSystemMaterial_001
+     * @tc.name   BaseDialogOptionsSystemMaterial_0100
+     * @tc.number SUB_ARKUI_API_BaseDialogOptionsSystemMaterial_0100
      * @tc.desc   To test BaseDialogOptions systemMaterial property with undefined parameter
      * @tc.desc   ArkUIAPI 
      * @tc.type   FUNCTION 
      * @tc.size   MEDIUMTEST 
      * @tc.level  LEVEL2 
      */
-    it('BaseDialogOptionsSystemMaterial_001', Level.LEVEL2, async (done: Function) => {
-      console.info('BaseDialogOptionsSystemMaterial_001 START');
+    it('BaseDialogOptionsSystemMaterial_0100', Level.LEVEL2, async (done: Function) => {
+      console.info('BaseDialogOptionsSystemMaterial_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('undefined'));
@@ -78,27 +78,27 @@ export default function BaseDialogOptionsSystemMaterial() {
       let date = JSON.stringify(obj.$children[1].$children[0])
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
       expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');  
-      console.info('BaseDialogOptionsSystemMaterial_001 Dialog Undefined is visible');
+      console.info('BaseDialogOptionsSystemMaterial_0100 Dialog Undefined is visible');
 
       await CommonFunc.sleep(500);
       let closeButton = await driver.findComponent(ON.text('Close'));
       await closeButton.click();
       await CommonFunc.sleep(1000);
-      console.info('BaseDialogOptionsSystemMaterial_001 END');
+      console.info('BaseDialogOptionsSystemMaterial_0100 END');
       done();
     });
 
     /**
-     * @tc.name   BaseDialogOptionsSystemMaterial_002
-     * @tc.number SUB_ARKUI_API_BaseDialogOptionsSystemMaterial_002
+     * @tc.name   BaseDialogOptionsSystemMaterial_0200
+     * @tc.number SUB_ARKUI_API_BaseDialogOptionsSystemMaterial_0200
      * @tc.desc   To test BaseDialogOptions systemMaterial property with hdsMaterial.Material THICK
      * @tc.desc   ArkUIAPI 
      * @tc.type   FUNCTION 
      * @tc.size   MEDIUMTEST 
      * @tc.level  LEVEL2 
      */
-    it('BaseDialogOptionsSystemMaterial_002', Level.LEVEL2, async (done: Function) => {
-      console.info('BaseDialogOptionsSystemMaterial_002 START');
+    it('BaseDialogOptionsSystemMaterial_0200', Level.LEVEL2, async (done: Function) => {
+      console.info('BaseDialogOptionsSystemMaterial_0200 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('hds_thick'));
@@ -111,27 +111,27 @@ export default function BaseDialogOptionsSystemMaterial() {
       let date = JSON.stringify(obj.$children[1].$children[0])
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
       expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');  
-      console.info('BaseDialogOptionsSystemMaterial_002 Dialog HDS THICK is visible');
+      console.info('BaseDialogOptionsSystemMaterial_0200 Dialog HDS THICK is visible');
 
       await CommonFunc.sleep(500);
       let closeButton = await driver.findComponent(ON.text('Close'));
       await closeButton.click();
       await CommonFunc.sleep(1000);
-      console.info('BaseDialogOptionsSystemMaterial_002 END');
+      console.info('BaseDialogOptionsSystemMaterial_0200 END');
       done();
     });
 
     /**
-     * @tc.name   BaseDialogOptionsSystemMaterial_003
-     * @tc.number SUB_ARKUI_API_BaseDialogOptionsSystemMaterial_003
+     * @tc.name   BaseDialogOptionsSystemMaterial_0300
+     * @tc.number SUB_ARKUI_API_BaseDialogOptionsSystemMaterial_0300
      * @tc.desc   To test BaseDialogOptions systemMaterial property with uiMaterial.Material SEMI_TRANSPARENT
      * @tc.desc   ArkUIAPI 
      * @tc.type   FUNCTION 
      * @tc.size   MEDIUMTEST 
      * @tc.level  LEVEL2 
      */
-    it('BaseDialogOptionsSystemMaterial_003', Level.LEVEL2, async (done: Function) => {
-      console.info('BaseDialogOptionsSystemMaterial_003 START');
+    it('BaseDialogOptionsSystemMaterial_0300', Level.LEVEL2, async (done: Function) => {
+      console.info('BaseDialogOptionsSystemMaterial_0300 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('semi_transparent'));
@@ -144,27 +144,27 @@ export default function BaseDialogOptionsSystemMaterial() {
       let date = JSON.stringify(obj.$children[1].$children[0])
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
       expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.SEMI_TRANSPARENT');
-      console.info('BaseDialogOptionsSystemMaterial_003 Dialog SEMI_TRANSPARENT is visible');
+      console.info('BaseDialogOptionsSystemMaterial_0300 Dialog SEMI_TRANSPARENT is visible');
 
       await CommonFunc.sleep(500);
       let closeButton = await driver.findComponent(ON.text('Close'));
       await closeButton.click();
       await CommonFunc.sleep(1000);
-      console.info('BaseDialogOptionsSystemMaterial_003 END');
+      console.info('BaseDialogOptionsSystemMaterial_0300 END');
       done();
     });
 
     /**
-     * @tc.name   BaseDialogOptionsSystemMaterial_004
-     * @tc.number SUB_ARKUI_API_BaseDialogOptionsSystemMaterial_004
+     * @tc.name   BaseDialogOptionsSystemMaterial_0400
+     * @tc.number SUB_ARKUI_API_BaseDialogOptionsSystemMaterial_0400
      * @tc.desc   To test BaseDialogOptions systemMaterial property with uiMaterial.ImmersiveMaterial THICK
      * @tc.desc   ArkUIAPI 
      * @tc.type   FUNCTION 
      * @tc.size   MEDIUMTEST 
      * @tc.level  LEVEL2 
      */
-    it('BaseDialogOptionsSystemMaterial_004', Level.LEVEL2, async (done: Function) => {
-      console.info('BaseDialogOptionsSystemMaterial_004 START');
+    it('BaseDialogOptionsSystemMaterial_0400', Level.LEVEL2, async (done: Function) => {
+      console.info('BaseDialogOptionsSystemMaterial_0400 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('immersive_thick'));
@@ -177,27 +177,27 @@ export default function BaseDialogOptionsSystemMaterial() {
       let date = JSON.stringify(obj.$children[1].$children[0])
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
       expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');  
-      console.info('BaseDialogOptionsSystemMaterial_004 Dialog Immersive THICK is visible');
+      console.info('BaseDialogOptionsSystemMaterial_0400 Dialog Immersive THICK is visible');
 
       await CommonFunc.sleep(500);
       let closeButton = await driver.findComponent(ON.text('Close'));
       await closeButton.click();
       await CommonFunc.sleep(1000);
-      console.info('BaseDialogOptionsSystemMaterial_004 END');
+      console.info('BaseDialogOptionsSystemMaterial_0400 END');
       done();
     });
 
     /**
-     * @tc.name   BaseDialogOptionsSystemMaterial_005
-     * @tc.number SUB_ARKUI_API_BaseDialogOptionsSystemMaterial_005
+     * @tc.name   BaseDialogOptionsSystemMaterial_0500
+     * @tc.number SUB_ARKUI_API_BaseDialogOptionsSystemMaterial_0500
      * @tc.desc   To test BaseDialogOptions systemMaterial property with uiMaterial.ImmersiveMaterial ULTRA_THIN
      * @tc.desc   ArkUIAPI 
      * @tc.type   FUNCTION 
      * @tc.size   MEDIUMTEST 
      * @tc.level  LEVEL2 
      */
-    it('BaseDialogOptionsSystemMaterial_005', Level.LEVEL2, async (done: Function) => {
-      console.info('BaseDialogOptionsSystemMaterial_005 START');
+    it('BaseDialogOptionsSystemMaterial_0500', Level.LEVEL2, async (done: Function) => {
+      console.info('BaseDialogOptionsSystemMaterial_0500 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('immersive_ultra_thin'));
@@ -210,13 +210,13 @@ export default function BaseDialogOptionsSystemMaterial() {
       let date = JSON.stringify(obj.$children[1].$children[0])
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
       expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');  
-      console.info('BaseDialogOptionsSystemMaterial_005 Dialog Immersive ULTRA_THIN is visible');
+      console.info('BaseDialogOptionsSystemMaterial_0500 Dialog Immersive ULTRA_THIN is visible');
 
       await CommonFunc.sleep(500);
       let closeButton = await driver.findComponent(ON.text('Close'));
       await closeButton.click();
       await CommonFunc.sleep(1000);
-      console.info('BaseDialogOptionsSystemMaterial_005 END');
+      console.info('BaseDialogOptionsSystemMaterial_0500 END');
       done();
     });
 
