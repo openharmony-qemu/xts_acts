@@ -8829,6 +8829,486 @@ function testSetDisallowedForAccountPolicy26() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_for_account_distributed_transmission_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_0100
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_for_account_distributed_transmission_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, true, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_for_account_distributed_transmission_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_0300
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION with byod admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_for_account_distributed_transmission_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, true, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_for_account_distributed_transmission_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_0400
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_for_account_distributed_transmission_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicyForAccount(INVALID_WANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, true, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_for_account_distributed_transmission_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_0500
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION with super admin disallow true
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_for_account_distributed_transmission_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number = await osAccountManager.getOsAccountLocalId();
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, true, localId);
+      let ret = restrictions.getDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, localId);
+      expect(ret).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_for_account_distributed_transmission_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_0600
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION with super admin disallow false
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_for_account_distributed_transmission_0600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number = await osAccountManager.getOsAccountLocalId();
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, false, localId);
+      let ret = restrictions.getDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, localId);
+      expect(ret).assertFalse();
+    } catch (error) {
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_for_account_distributed_transmission_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_0700
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_for_account_distributed_transmission_0700", Level.LEVEL2, async (done: Function) => {
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number = await osAccountManager.getOsAccountLocalId();
+      restrictions.setDisallowedPolicyForAccount(null, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, true, localId);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_for_account_distributed_transmission_0800
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_0800
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_for_account_distributed_transmission_0800", Level.LEVEL2, async (done: Function) => {
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number = await osAccountManager.getOsAccountLocalId();
+      restrictions.setDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, true, localId);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_for_account_distributed_transmission_0900
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_0900
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION with null feature
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_for_account_distributed_transmission_0900", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number = await osAccountManager.getOsAccountLocalId();
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, null, true, localId);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_for_account_distributed_transmission_1000
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_1000
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION with undefined feature
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_for_account_distributed_transmission_1000", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number = await osAccountManager.getOsAccountLocalId();
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, undefined, true, localId);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_for_account_distributed_transmission_1100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_1100
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION with null disallow
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_for_account_distributed_transmission_1100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number = await osAccountManager.getOsAccountLocalId();
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, null, localId);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_for_account_distributed_transmission_1200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_1200
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION with undefined disallow
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_for_account_distributed_transmission_1200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number = await osAccountManager.getOsAccountLocalId();
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, undefined, localId);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_for_account_distributed_transmission_1300
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_1300
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION with null accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_for_account_distributed_transmission_1300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, true, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_for_account_distributed_transmission_1400
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_1400
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION with undefined accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_for_account_distributed_transmission_1400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, true, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_for_account_distributed_transmission_1500
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_1500
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION with invalid accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_for_account_distributed_transmission_1500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number = await osAccountManager.getOsAccountLocalId();
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, true, localId + 10000);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else if (Number(error.code) === 401) {
+        expect(Number(error.code) === 401).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_for_account_distributed_transmission_1600
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_1600
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION with user 0
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_for_account_distributed_transmission_1600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    const userId = 0;
+    try {
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, true, userId);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_for_account_distributed_transmission_1700
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_1700
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION set then get then reset
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_for_account_distributed_transmission_1700", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number = await osAccountManager.getOsAccountLocalId();
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, true, localId);
+      let ret = restrictions.getDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, localId);
+      expect(ret).assertTrue();
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, false, localId);
+      ret = restrictions.getDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, localId);
+      expect(ret).assertFalse();
+    } catch (error) {
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_for_account_distributed_transmission_1800
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_1800
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount conflict with setDisallowedPolicyForAccount string feature
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_for_account_distributed_transmission_1800", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    let localId: number = 100;
+    try {
+      localId = await osAccountManager.getOsAccountLocalId();
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, true, localId);
+      let ret = restrictions.getDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, localId);
+      expect(ret).assertTrue();
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, LABEL_DISTRIBUTED_TRANSMISSION, true, localId);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200010).assertTrue();
+      }
+    } finally {
+      try {
+        restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, false, localId);
+      } catch (error) {
+        // do not do anything
+      }
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_for_account_distributed_transmission_1900
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_1900
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount string feature conflict with FeatureForAccount
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_for_account_distributed_transmission_1900", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    let localId: number = 100;
+    try {
+      localId = await osAccountManager.getOsAccountLocalId();
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, LABEL_DISTRIBUTED_TRANSMISSION, true, localId);
+      let ret = restrictions.getDisallowedPolicyForAccount(SELFWANT, LABEL_DISTRIBUTED_TRANSMISSION, localId);
+      expect(ret).assertTrue();
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, true, localId);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200010).assertTrue();
+      }
+    } finally {
+      try {
+        restrictions.setDisallowedPolicyForAccount(SELFWANT, LABEL_DISTRIBUTED_TRANSMISSION, false, localId);
+      } catch (error) {
+        // do not do anything
+      }
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testGetDisallowedForAccountPolicy26() {
@@ -9060,6 +9540,306 @@ function testGetDisallowedForAccountPolicy26() {
       } else {
         expect(Number(error.code) === 401).assertTrue();
       }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_for_account_distributed_transmission_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_0100
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_for_account_distributed_transmission_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_for_account_distributed_transmission_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_0300
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION with byod admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_for_account_distributed_transmission_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      restrictions.getDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_for_account_distributed_transmission_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_0400
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_for_account_distributed_transmission_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.getDisallowedPolicyForAccount(INVALID_WANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_for_account_distributed_transmission_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_0500
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_for_account_distributed_transmission_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number = await osAccountManager.getOsAccountLocalId();
+      let ret = restrictions.getDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, localId);
+      expect(ret).assertFalse();
+    } catch (error) {
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_for_account_distributed_transmission_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_0600
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_for_account_distributed_transmission_0600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number = await osAccountManager.getOsAccountLocalId();
+      let ret: boolean = restrictions.getDisallowedPolicyForAccount(null, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, localId);
+      expect(ret).assertFalse();
+    } catch (error) {
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_for_account_distributed_transmission_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_0700
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION with undefined admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_for_account_distributed_transmission_0700", Level.LEVEL2, async (done: Function) => {
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number = await osAccountManager.getOsAccountLocalId();
+      restrictions.getDisallowedPolicyForAccount(undefined, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, localId);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_for_account_distributed_transmission_0800
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_0800
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION with null feature
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_for_account_distributed_transmission_0800", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number = await osAccountManager.getOsAccountLocalId();
+      restrictions.getDisallowedPolicyForAccount(SELFWANT, null, localId);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_for_account_distributed_transmission_0900
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_0900
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION with undefined feature
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_for_account_distributed_transmission_0900", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number = await osAccountManager.getOsAccountLocalId();
+      restrictions.getDisallowedPolicyForAccount(SELFWANT, undefined, localId);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_for_account_distributed_transmission_1000
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_1000
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION with null accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_for_account_distributed_transmission_1000", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.getDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_for_account_distributed_transmission_1100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_1100
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION with undefined accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_for_account_distributed_transmission_1100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.getDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_for_account_distributed_transmission_1200
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_1200
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION with invalid accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_for_account_distributed_transmission_1200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number = await osAccountManager.getOsAccountLocalId();
+      restrictions.getDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, localId + 1);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else if (Number(error.code) === 401) {
+        expect(Number(error.code) === 401).assertTrue();
+      } else {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_for_account_distributed_transmission_1300
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_FOR_ACCOUNT_DISTRIBUTED_TRANSMISSION_JS_1300
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount DISTRIBUTED_TRANSMISSION set then get
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_for_account_distributed_transmission_1300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    try {
+      let localId: number = await osAccountManager.getOsAccountLocalId();
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, true, localId);
+      let ret = restrictions.getDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, localId);
+      expect(ret).assertTrue();
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.DISTRIBUTED_TRANSMISSION, false, localId);
+    } catch (error) {
+      expect(Number(error.code) === 801).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
