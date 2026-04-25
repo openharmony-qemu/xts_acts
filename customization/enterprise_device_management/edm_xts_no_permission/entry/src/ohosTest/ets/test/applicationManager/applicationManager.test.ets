@@ -1011,5 +1011,82 @@ export default function applicationManagerTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   test_addHideLauncherIcon_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDHIDELAUNCHERICON_NO_PERMISSION_JS_0100
+     * @tc.desc   test addHideLauncherIcon with permission denied 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addHideLauncherIcon_0100", Level.LEVEL2, async (done: Function) => {
+      const TEST_BUNDLE_NAMES: Array<string> = ['com.test.bundle1', 'com.test.bundle2'];
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.addHideLauncherIcon(SELFWANT, TEST_BUNDLE_NAMES);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code === 801).assertTrue();
+        } else {
+          expect(error.code === 201).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeHideLauncherIcon_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEHIDELAUNCHERICON_NO_PERMISSION_JS_0100
+     * @tc.desc   test removeHideLauncherIcon with permission denied 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeHideLauncherIcon_0100", Level.LEVEL2, async (done: Function) => {
+      const TEST_BUNDLE_NAMES: Array<string> = ['com.test.bundle1', 'com.test.bundle2'];
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.removeHideLauncherIcon(SELFWANT, TEST_BUNDLE_NAMES);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code === 801).assertTrue();
+        } else {
+          expect(error.code === 201).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_getHideLauncherIcon_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETHIDELAUNCHERICON_NO_PERMISSION_JS_0100
+     * @tc.desc   test getHideLauncherIcon with permission denied 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getHideLauncherIcon_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.getHideLauncherIcon(SELFWANT);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code === 801).assertTrue();
+        } else {
+          expect(error.code === 201).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
   })
 }
