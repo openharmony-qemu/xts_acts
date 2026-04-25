@@ -35,12 +35,13 @@ import promptActionCloseToastTest from './promptaction/PromptActionCloseToast.te
 import promptActionShowDialogTest from './promptaction/PromptActionShowDialogTest.test';
 import LevelOrderClampNullUndefinedTest from './promptaction/LevelOrderClampNullUndefined.test';
 import PromptActionMethodNullUndefinedTest from './promptaction/PromptActionMethodNullUndefined.test';
-import AlertDialogdialogSystemMaterial from './dialogSystemMaterial/AlertDialogSystemMaterial.test';
-import ShowDialogOptionsdialogSystemMaterial from './dialogSystemMaterial/ShowDialogOptionsSystemMaterial.test';
-import BaseDialogOptionsdialogSystemMaterial from './dialogSystemMaterial/BaseDialogOptionsSystemMaterial.test';
-import ActionMenuOptionsdialogSystemMaterial from './dialogSystemMaterial/ActionMenuOptionsSystemMaterial.test';
-import CustomDialogControllerOptionsdialogSystemMaterial from './dialogSystemMaterial/CustomDialogControllerOptionsSystemMaterial.test';
-import ActionSheetOptionsdialogSystemMaterial from './dialogSystemMaterial/ActionSheetOptionsSystemMaterial.test';
+
+import ActionMenuOptionsSystemMaterialTest from './dialogSystemMaterial/ActionMenuOptionsSystemMaterial.test';
+import ActionSheetOptionsSystemMaterialTest from './dialogSystemMaterial/ActionSheetOptionsSystemMaterial.test';
+import AlertDialogSystemMaterialTest from './dialogSystemMaterial/AlertDialogSystemMaterial.test';
+import BaseDialogOptionsSystemMaterialTest from './dialogSystemMaterial/BaseDialogOptionsSystemMaterial.test';
+import CustomDialogControllerOptionsSystemMaterialTest from './dialogSystemMaterial/CustomDialogControllerOptionsSystemMaterial.test';
+import ShowDialogOptionsSystemMaterialTest from './dialogSystemMaterial/ShowDialogOptionsSystemMaterial.test';
 
 export default function testsuite() {
   AlertDialogAJsunit();
@@ -65,11 +66,12 @@ export default function testsuite() {
   ShowAlertDialogNullUndefinedTest();
  	LevelOrderClampNullUndefinedTest();
  	PromptActionMethodNullUndefinedTest();
-  AlertDialogdialogSystemMaterial();
-  ShowDialogOptionsdialogSystemMaterial();
-  BaseDialogOptionsdialogSystemMaterial();
-  ActionMenuOptionsdialogSystemMaterial();
-  CustomDialogControllerOptionsdialogSystemMaterial();
-  ActionSheetOptionsdialogSystemMaterial();
+
+  ActionMenuOptionsSystemMaterialTest();
+  ActionSheetOptionsSystemMaterialTest();
+  AlertDialogSystemMaterialTest();
+  BaseDialogOptionsSystemMaterialTest();
+  CustomDialogControllerOptionsSystemMaterialTest();
+  ShowDialogOptionsSystemMaterialTest();
   
 }
