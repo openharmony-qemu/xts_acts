@@ -38,6 +38,7 @@ import AVPlayervideoSizeChangeSuppTest from './media/AVPlayervideoSizeChangeOnOF
 import AVPlayerSetDecryptionConfigSuppTest from './media/AVPlayerSetDecryptionConfig.test';
 import AVPlayerAddSubtitleFromUrlSuppTest from './media/AVPlayerAddSubtitleFromUrl.test';
 import MediaAPIEnumSupplementTest from "./media/MediaAPIEnumSupplement.test";
+import AVPlayerTrackFilterTest from "./media/AVPlayerTrackFilterTest.test";
 
 export default function testsuite() {
   AVPlayerLocalDeprecatedTest();
@@ -65,5 +66,6 @@ export default function testsuite() {
   AVPlayerSetDecryptionConfigSuppTest();
   AVPlayerAddSubtitleFromUrlSuppTest();
   MediaAPIEnumSupplementTest();
+  AVPlayerTrackFilterTest();
 }
 

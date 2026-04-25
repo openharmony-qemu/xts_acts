@@ -36,6 +36,7 @@ struct Index {
         xComponentController.setXComponentSurfaceRect({ surfaceWidth: 640, surfaceHeight: 480 });
         indexSurfaceId = xComponentController.getXComponentSurfaceId();
         console.info(TAG, 'indexSurfaceId: ' + indexSurfaceId);
+        globalThis.value = indexSurfaceId
       })
     }
     .width('640px')
