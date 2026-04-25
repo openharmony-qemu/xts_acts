@@ -18,7 +18,9 @@ import { Vec2, Rotation3, SceneResourceParameters, SceneNodeParameters, Scene, S
   CameraParameters,
   EffectParameters,
   Effect,
-  Camera} from '@ohos.graphics.scene'
+  Camera,
+  PCFConfig,
+  ShadowAlgorithmType} from '@ohos.graphics.scene'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import * as scene3d from '@ohos.graphics.scene'
 
@@ -2322,5 +2324,215 @@ export default function sceneTest() {
           done();
         }
       })
+    /**
+     * @tc.name   testPCFConfig_create
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5400
+     * @tc.desc   Test PCFConfig constructor creates valid instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPCFConfig_create', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msg = "============================testPCFConfig_create";
+        console.info(msg + ' begin ');
+        try {
+          let scene = await Scene.load();
+          expect(scene != null).assertTrue();
+
+          let pcfConfig = new PCFConfig();
+          expect(pcfConfig != null).assertTrue();
+
+          scene!.destroy();
+          done();
+        } catch (err) {
+          console.info(msg + " Failed: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testPCFConfig_shadowSampleRadius_default
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5500
+     * @tc.desc   Test PCFConfig shadowSampleRadius default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPCFConfig_shadowSampleRadius_default', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msg = "============================testPCFConfig_shadowSampleRadius_default";
+        console.info(msg + ' begin ');
+        try {
+          let scene = await Scene.load();
+          expect(scene != null).assertTrue();
+
+          let pcfConfig = new PCFConfig();
+          expect(pcfConfig.shadowSampleRadius).assertEqual(5.0);
+
+          scene!.destroy();
+          done();
+        } catch (err) {
+          console.info(msg + " Failed: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testPCFConfig_shadowSampleRadius_set
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5600
+     * @tc.desc   Test PCFConfig shadowSampleRadius set and get
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPCFConfig_shadowSampleRadius_set', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let msg = "============================testPCFConfig_shadowSampleRadius_set";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load();
+        expect(scene != null).assertTrue();
+
+        let pcfConfig = new PCFConfig();
+        pcfConfig.shadowSampleRadius = 10.0;
+        expect(pcfConfig.shadowSampleRadius).assertEqual(10.0);
+
+        pcfConfig.shadowSampleRadius = 0;
+        expect(pcfConfig.shadowSampleRadius).assertEqual(0);
+
+        pcfConfig.shadowSampleRadius = undefined;
+        expect(pcfConfig.shadowSampleRadius).assertEqual(undefined);
+
+        scene!.destroy();
+        done();
+      } catch (err) {
+        console.info(msg + " Failed: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testPCFConfig_shadowSampleCount_default
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5700
+     * @tc.desc   Test PCFConfig shadowSampleCount default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPCFConfig_shadowSampleCount_default', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let msg = "============================testPCFConfig_shadowSampleCount_default";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load();
+        expect(scene != null).assertTrue();
+
+        let pcfConfig = new PCFConfig();
+        expect(pcfConfig.shadowSampleCount).assertEqual(16);
+
+        scene!.destroy();
+        done();
+      } catch (err) {
+        console.info(msg + " Failed: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testPCFConfig_shadowSampleCount_set
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5800
+     * @tc.desc   Test PCFConfig shadowSampleCount set and get
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPCFConfig_shadowSampleCount_set', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let msg = "============================testPCFConfig_shadowSampleCount_set";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load();
+        expect(scene != null).assertTrue();
+
+        let pcfConfig = new PCFConfig();
+        pcfConfig.shadowSampleCount = 32;
+        expect(pcfConfig.shadowSampleCount).assertEqual(32);
+
+        pcfConfig.shadowSampleCount = 0;
+        expect(pcfConfig.shadowSampleCount).assertEqual(0);
+
+        pcfConfig.shadowSampleCount = undefined;
+        expect(pcfConfig.shadowSampleCount).assertEqual(undefined);
+
+        scene!.destroy();
+        done();
+      } catch (err) {
+        console.info(msg + " Failed: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testPCFConfig_shadowAlgorithmType
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5900
+     * @tc.desc   Test PCFConfig shadowAlgorithmType returns PCF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPCFConfig_shadowAlgorithmType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let msg = "============================testPCFConfig_shadowAlgorithmType";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load();
+        expect(scene != null).assertTrue();
+
+        let pcfConfig = new PCFConfig();
+        expect(pcfConfig.shadowAlgorithmType).assertEqual(ShadowAlgorithmType.PCF);
+        expect(ShadowAlgorithmType.PCF).assertEqual(0);
+
+        scene!.destroy();
+        done();
+      } catch (err) {
+        console.info(msg + " Failed: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testRenderConfiguration_softShadowConfig
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_6000
+     * @tc.desc   Test RenderConfiguration softShadowConfig property set and get
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRenderConfiguration_softShadowConfig', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let msg = "============================testRenderConfiguration_softShadowConfig";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load();
+        let rc = scene!.renderConfiguration;
+
+        expect(rc!.softShadowConfig).assertEqual(undefined);
+
+        rc!.softShadowConfig = new PCFConfig();
+        expect(rc!.softShadowConfig != null).assertTrue();
+
+        rc!.softShadowConfig = undefined;
+        expect(rc!.softShadowConfig).assertEqual(undefined);
+
+        scene!.destroy();
+        done();
+      } catch (err) {
+        console.info(msg + " Failed: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
   })
 }
