@@ -21,6 +21,12 @@ import GestureStaticSuiteTest from './GestureStaticSuite/GestureStaticSuite.test
 import UIContextGestureTest from './UIContextGestureTest/UIContextGesture.test';
 import UIContextUIObserverApiTest from './UIContextUIObserverApiTest/UIContextUIObserverApi.test';
 import AutoHideComponentUniqueIdsTest from './autoHideComponentUniqueIds/AutoHideComponentUniqueIdsTest.test';
+import getCurrentLocalPositionTest_ClickEvent from './getCurrentLocalPositionTest/getCurrentLocalPositionTest_ClickEvent.test';
+import getCurrentLocalPositionTest_TouchEvent from './getCurrentLocalPositionTest/getCurrentLocalPositionTest_TouchEvent.test';
+import getCurrentLocalPositionTest_MouseEvent from './getCurrentLocalPositionTest/getCurrentLocalPositionTest_MouseEvent.test';
+import getCurrentLocalPositionTest_AxisEvent from './getCurrentLocalPositionTest/getCurrentLocalPositionTest_AxisEvent.test';
+import getCurrentLocalPositionTest_EventLocationInfo from './getCurrentLocalPositionTest/getCurrentLocalPositionTest_EventLocationInfo.test';
+import getCurrentLocalPositionTest_FingerInfo from './getCurrentLocalPositionTest/getCurrentLocalPositionTest_FingerInfo.test';
 
 export default function testsuite() {
   DragControllerTest();
@@ -31,4 +37,10 @@ export default function testsuite() {
   UIContextGestureTest();
   UIContextUIObserverApiTest();
   AutoHideComponentUniqueIdsTest();
+  getCurrentLocalPositionTest_ClickEvent();
+  getCurrentLocalPositionTest_TouchEvent();
+  getCurrentLocalPositionTest_MouseEvent();
+  getCurrentLocalPositionTest_AxisEvent();
+  getCurrentLocalPositionTest_EventLocationInfo();
+  getCurrentLocalPositionTest_FingerInfo();
 }
