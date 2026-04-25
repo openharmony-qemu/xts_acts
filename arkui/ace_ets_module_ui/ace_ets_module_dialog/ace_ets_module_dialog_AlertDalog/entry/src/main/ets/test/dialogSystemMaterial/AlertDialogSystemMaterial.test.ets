@@ -43,15 +43,16 @@ export default function AlertDialogSystemMaterial() {
     });
 
     /**
-     * @tc.name   SUB_ACE_AlertDialogSystemMaterial_0100
-     * @tc.number SUB_ACE_AlertDialogSystemMaterial_0100
+     * @tc.name   AlertDialogSystemMaterial_0100
+     * @tc.number SUB_ARKUI_API_AlertDialogSystemMaterial_0100
      * @tc.desc   To test AlertDialog systemMaterial property with undefined parameter
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+     * @tc.type   FUNCTION 
+     * @tc.size   MEDIUMTEST 
+     * @tc.level  LEVEL2 
      */
-    it('SUB_ACE_AlertDialogSystemMaterial_0100',  Level.LEVEL0, async (done: Function) => {
-      console.info('SUB_ACE_AlertDialogSystemMaterial_0100 START');
+    it('AlertDialogSystemMaterial_0100',  Level.LEVEL2, async (done: Function) => {
+      console.info('AlertDialogSystemMaterial_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('undefined'));
@@ -64,26 +65,27 @@ export default function AlertDialogSystemMaterial() {
       let date = JSON.stringify(obj.$children[1].$children[0])
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
       expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
-      console.info('SUB_ACE_AlertDialogSystemMaterial_0100 Dialog Undefined is visible');
+      console.info('AlertDialogSystemMaterial_0100 Dialog Undefined is visible');
 
       await CommonFunc.sleep(500);
       let okButton = await driver.findComponent(ON.text('OK'));
       await okButton.click();
       await CommonFunc.sleep(1000);
-      console.info('SUB_ACE_AlertDialogSystemMaterial_0100 END');
+      console.info('AlertDialogSystemMaterial_0100 END');
       done();
     });
 
     /**
-     * @tc.name   SUB_ACE_AlertDialogSystemMaterial_0200
-     * @tc.number SUB_ACE_AlertDialogSystemMaterial_0200
+     * @tc.name   AlertDialogSystemMaterial_0200
+     * @tc.number SUB_ARKUI_API_AlertDialogSystemMaterial_0200
      * @tc.desc   To test AlertDialog systemMaterial property with hdsMaterial.Material THICK
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+     * @tc.type   FUNCTION 
+     * @tc.size   MEDIUMTEST 
+     * @tc.level  LEVEL2 
      */
-    it('SUB_ACE_AlertDialogSystemMaterial_0200',  Level.LEVEL0, async (done: Function) => {
-      console.info('SUB_ACE_AlertDialogSystemMaterial_0200 START');
+    it('AlertDialogSystemMaterial_0200',  Level.LEVEL2, async (done: Function) => {
+      console.info('AlertDialogSystemMaterial_0200 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('hds_thick'));
@@ -96,26 +98,27 @@ export default function AlertDialogSystemMaterial() {
       let date = JSON.stringify(obj.$children[1].$children[0])
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
       expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
-      console.info('SUB_ACE_AlertDialogSystemMaterial_0200 Dialog HDS THICK is visible');
+      console.info('AlertDialogSystemMaterial_0200 Dialog HDS THICK is visible');
 
       await CommonFunc.sleep(500);
       let okButton = await driver.findComponent(ON.text('OK'));
       await okButton.click();
       await CommonFunc.sleep(1000);
-      console.info('SUB_ACE_AlertDialogSystemMaterial_0200 END');
+      console.info('AlertDialogSystemMaterial_0200 END');
       done();
     });
 
     /**
-     * @tc.name   SUB_ACE_AlertDialogSystemMaterial_0300
-     * @tc.number SUB_ACE_AlertDialogSystemMaterial_0300
+     * @tc.name   AlertDialogSystemMaterial_0300
+     * @tc.number SUB_ARKUI_API_AlertDialogSystemMaterial_0300
      * @tc.desc   To test AlertDialog systemMaterial property with uiMaterial.Material SEMI_TRANSPARENT
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+     * @tc.type   FUNCTION 
+     * @tc.size   MEDIUMTEST 
+     * @tc.level  LEVEL2 
      */
-    it('SUB_ACE_AlertDialogSystemMaterial_0300',  Level.LEVEL0, async (done: Function) => {
-      console.info('SUB_ACE_AlertDialogSystemMaterial_0300 START');
+    it('AlertDialogSystemMaterial_0300',  Level.LEVEL2, async (done: Function) => {
+      console.info('AlertDialogSystemMaterial_0300 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('semi_transparent'));
@@ -128,26 +131,27 @@ export default function AlertDialogSystemMaterial() {
       let date = JSON.stringify(obj.$children[1].$children[0])
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
       expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.SEMI_TRANSPARENT');
-      console.info('SUB_ACE_AlertDialogSystemMaterial_0300 Dialog SEMI_TRANSPARENT is visible');
+      console.info('AlertDialogSystemMaterial_0300 Dialog SEMI_TRANSPARENT is visible');
 
       await CommonFunc.sleep(500);
       let okButton = await driver.findComponent(ON.text('OK'));
       await okButton.click();
       await CommonFunc.sleep(1000);
-      console.info('SUB_ACE_AlertDialogSystemMaterial_0300 END');
+      console.info('AlertDialogSystemMaterial_0300 END');
       done();
     });
 
     /**
-     * @tc.name   SUB_ACE_AlertDialogSystemMaterial_0400
-     * @tc.number SUB_ACE_AlertDialogSystemMaterial_0400
+     * @tc.name   AlertDialogSystemMaterial_0400
+     * @tc.number SUB_ARKUI_API_AlertDialogSystemMaterial_0400
      * @tc.desc   To test AlertDialog systemMaterial property with uiMaterial.ImmersiveMaterial THICK
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+     * @tc.type   FUNCTION 
+     * @tc.size   MEDIUMTEST 
+     * @tc.level  LEVEL2 
      */
-    it('SUB_ACE_AlertDialogSystemMaterial_0400',  Level.LEVEL0, async (done: Function) => {
-      console.info('SUB_ACE_AlertDialogSystemMaterial_0400 START');
+    it('AlertDialogSystemMaterial_0400',  Level.LEVEL2, async (done: Function) => {
+      console.info('AlertDialogSystemMaterial_0400 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('immersive_thick'));
@@ -160,26 +164,27 @@ export default function AlertDialogSystemMaterial() {
       let date = JSON.stringify(obj.$children[1].$children[0])
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
       expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
-      console.info('SUB_ACE_AlertDialogSystemMaterial_0400 Dialog Immersive THICK is visible');
+      console.info('AlertDialogSystemMaterial_0400 Dialog Immersive THICK is visible');
 
       await CommonFunc.sleep(500);
       let okButton = await driver.findComponent(ON.text('OK'));
       await okButton.click();
       await CommonFunc.sleep(1000);
-      console.info('SUB_ACE_AlertDialogSystemMaterial_0400 END');
+      console.info('AlertDialogSystemMaterial_0400 END');
       done();
     });
 
     /**
-     * @tc.name   SUB_ACE_AlertDialogSystemMaterial_0500
-     * @tc.number SUB_ACE_AlertDialogSystemMaterial_0500
+     * @tc.name   AlertDialogSystemMaterial_0500
+     * @tc.number SUB_ARKUI_API_AlertDialogSystemMaterial_0500
      * @tc.desc   To test AlertDialog systemMaterial property with uiMaterial.ImmersiveMaterial ULTRA_THIN
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+     * @tc.type   FUNCTION 
+     * @tc.size   MEDIUMTEST 
+     * @tc.level  LEVEL2 
      */
-    it('SUB_ACE_AlertDialogSystemMaterial_0500', Level.LEVEL0, async (done: Function) => {
-      console.info('SUB_ACE_AlertDialogSystemMaterial_0500 START');
+    it('AlertDialogSystemMaterial_0500', Level.LEVEL2, async (done: Function) => {
+      console.info('AlertDialogSystemMaterial_0500 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('immersive_ultra_thin'));
@@ -192,26 +197,27 @@ export default function AlertDialogSystemMaterial() {
       let date = JSON.stringify(obj.$children[1].$children[0])
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
       expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
-      console.info('SUB_ACE_AlertDialogSystemMaterial_0500 Dialog Immersive ULTRA_THIN is visible');
+      console.info('AlertDialogSystemMaterial_0500 Dialog Immersive ULTRA_THIN is visible');
 
       await CommonFunc.sleep(500);
       let okButton = await driver.findComponent(ON.text('OK'));
       await okButton.click();
       await CommonFunc.sleep(1000);
-      console.info('SUB_ACE_AlertDialogSystemMaterial_0500 END');
+      console.info('AlertDialogSystemMaterial_0500 END');
       done();
     });
 
     /**
-     * @tc.name   SUB_ACE_AlertDialogSystemMaterial_0600
-     * @tc.number SUB_ACE_AlertDialogSystemMaterial_0600
+     * @tc.name   AlertDialogSystemMaterial_0600
+     * @tc.number SUB_ARKUI_API_AlertDialogSystemMaterial_0600
      * @tc.desc   To test AlertDialog systemMaterial property with uiMaterial.Material NONE
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+     * @tc.type   FUNCTION 
+     * @tc.size   MEDIUMTEST 
+     * @tc.level  LEVEL2 
      */
-    it('SUB_ACE_AlertDialogSystemMaterial_0600',  Level.LEVEL0, async (done: Function) => {
-      console.info('SUB_ACE_AlertDialogSystemMaterial_0600 START');
+    it('AlertDialogSystemMaterial_0600',  Level.LEVEL2, async (done: Function) => {
+      console.info('AlertDialogSystemMaterial_0600 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('none'));
@@ -224,13 +230,13 @@ export default function AlertDialogSystemMaterial() {
       let date = JSON.stringify(obj.$children[1].$children[0])
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
       expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
-      console.info('SUB_ACE_AlertDialogSystemMaterial_0600 Dialog NONE is visible');
+      console.info('AlertDialogSystemMaterial_0600 Dialog NONE is visible');
 
       await CommonFunc.sleep(500);
       let okButton = await driver.findComponent(ON.text('OK'));
       await okButton.click();
       await CommonFunc.sleep(1000);
-      console.info('SUB_ACE_AlertDialogSystemMaterial_0600 END');
+      console.info('AlertDialogSystemMaterial_0600 END');
       done();
     });
   })

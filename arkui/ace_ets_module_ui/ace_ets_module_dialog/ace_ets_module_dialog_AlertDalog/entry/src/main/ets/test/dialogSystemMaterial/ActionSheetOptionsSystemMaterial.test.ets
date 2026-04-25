@@ -56,15 +56,16 @@ export default function ActionSheetOptionsSystemMaterial() {
     });
 
     /**
-     * @tc.name   SUB_ACE_ActionSheetOptionsSystemMaterial_0100
-     * @tc.number SUB_ACE_ActionSheetOptionsSystemMaterial_0100
+     * @tc.name   ActionSheetOptionsSystemMaterial_0100
+     * @tc.number SUB_ARKUI_API_ActionSheetOptionsSystemMaterial_0100
      * @tc.desc   To test ActionSheetOptions systemMaterial property with undefined parameter
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+     * @tc.type   FUNCTION 
+     * @tc.size   MEDIUMTEST 
+     * @tc.level  LEVEL2 
      */
-    it('SUB_ACE_ActionSheetOptionsSystemMaterial_0100', Level.LEVEL0, async (done: Function) => {
-      console.info('SUB_ACE_ActionSheetOptionsSystemMaterial_0100 START');
+    it('ActionSheetOptionsSystemMaterial_0100', Level.LEVEL2, async (done: Function) => {
+      console.info('ActionSheetOptionsSystemMaterial_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('undefined'));
@@ -77,26 +78,27 @@ export default function ActionSheetOptionsSystemMaterial() {
       let date = JSON.stringify(obj.$children[1].$children[0])
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
       expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
-      console.info('SUB_ACE_ActionSheetOptionsSystemMaterial_0100 Sheet title is visible');
+      console.info('ActionSheetOptionsSystemMaterial_0100 Sheet title is visible');
 
       await CommonFunc.sleep(500);
       let closeButton = await driver.findComponent(ON.text('Confirm'));
       await closeButton.click();
       await CommonFunc.sleep(1000);
-      console.info('SUB_ACE_ActionSheetOptionsSystemMaterial_0100 END');
+      console.info('ActionSheetOptionsSystemMaterial_0100 END');
       done();
     });
 
     /**
-     * @tc.name   SUB_ACE_ActionSheetOptionsSystemMaterial_0200
-     * @tc.number SUB_ACE_ActionSheetOptionsSystemMaterial_0200
+     * @tc.name   ActionSheetOptionsSystemMaterial_0200
+     * @tc.number SUB_ARKUI_API_ActionSheetOptionsSystemMaterial_0200
      * @tc.desc   To test ActionSheetOptions systemMaterial property with hdsMaterial.Material THICK
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+     * @tc.type   FUNCTION 
+     * @tc.size   MEDIUMTEST 
+     * @tc.level  LEVEL2 
      */
-    it('SUB_ACE_ActionSheetOptionsSystemMaterial_0200', Level.LEVEL0, async (done: Function) => {
-      console.info('SUB_ACE_ActionSheetOptionsSystemMaterial_0200 START');
+    it('ActionSheetOptionsSystemMaterial_0200', Level.LEVEL2, async (done: Function) => {
+      console.info('ActionSheetOptionsSystemMaterial_0200 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('hds_thick'));
@@ -109,26 +111,27 @@ export default function ActionSheetOptionsSystemMaterial() {
       let date = JSON.stringify(obj.$children[1].$children[0])
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
       expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
-      console.info('SUB_ACE_ActionSheetOptionsSystemMaterial_0200 Sheet title is visible');
+      console.info('ActionSheetOptionsSystemMaterial_0200 Sheet title is visible');
 
       await CommonFunc.sleep(500);
       let closeButton = await driver.findComponent(ON.text('Confirm'));
       await closeButton.click();
       await CommonFunc.sleep(1000);
-      console.info('SUB_ACE_ActionSheetOptionsSystemMaterial_0200 END');
+      console.info('ActionSheetOptionsSystemMaterial_0200 END');
       done();
     });
 
     /**
-     * @tc.name   SUB_ACE_ActionSheetOptionsSystemMaterial_0300
-     * @tc.number SUB_ACE_ActionSheetOptionsSystemMaterial_0300
+     * @tc.name   ActionSheetOptionsSystemMaterial_0300
+     * @tc.number SUB_ARKUI_API_ActionSheetOptionsSystemMaterial_0300
      * @tc.desc   To test ActionSheetOptions systemMaterial property with uiMaterial.Material SEMI_TRANSPARENT
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+     * @tc.type   FUNCTION 
+     * @tc.size   MEDIUMTEST 
+     * @tc.level  LEVEL2 
      */
-    it('SUB_ACE_ActionSheetOptionsSystemMaterial_0300', Level.LEVEL0, async (done: Function) => {
-      console.info('SUB_ACE_ActionSheetOptionsSystemMaterial_0300 START');
+    it('ActionSheetOptionsSystemMaterial_0300', Level.LEVEL2, async (done: Function) => {
+      console.info('ActionSheetOptionsSystemMaterial_0300 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('semi_transparent'));
@@ -141,26 +144,27 @@ export default function ActionSheetOptionsSystemMaterial() {
       let date = JSON.stringify(obj.$children[1].$children[0]);
       console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type));
       expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.SEMI_TRANSPARENT');
-      console.info('SUB_ACE_ActionSheetOptionsSystemMaterial_0300 Sheet title is visible');
+      console.info('ActionSheetOptionsSystemMaterial_0300 Sheet title is visible');
 
       await CommonFunc.sleep(500);
       let closeButton = await driver.findComponent(ON.text('Confirm'));
       await closeButton.click();
       await CommonFunc.sleep(1000);
-      console.info('SUB_ACE_ActionSheetOptionsSystemMaterial_0300 END');
+      console.info('ActionSheetOptionsSystemMaterial_0300 END');
       done();
     });
 
     /**
-     * @tc.name   SUB_ACE_ActionSheetOptionsSystemMaterial_0400
-     * @tc.number SUB_ACE_ActionSheetOptionsSystemMaterial_0400
+     * @tc.name   ActionSheetOptionsSystemMaterial_0400
+     * @tc.number SUB_ARKUI_API_ActionSheetOptionsSystemMaterial_0400
      * @tc.desc   To test ActionSheetOptions systemMaterial property with uiMaterial.ImmersiveMaterial THICK
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+     * @tc.type   FUNCTION 
+     * @tc.size   MEDIUMTEST 
+     * @tc.level  LEVEL2 
      */
-    it('SUB_ACE_ActionSheetOptionsSystemMaterial_0400', Level.LEVEL0, async (done: Function) => {
-      console.info('SUB_ACE_ActionSheetOptionsSystemMaterial_0400 START');
+    it('ActionSheetOptionsSystemMaterial_0400', Level.LEVEL2, async (done: Function) => {
+      console.info('ActionSheetOptionsSystemMaterial_0400 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('immersive_thick'));
@@ -173,26 +177,27 @@ export default function ActionSheetOptionsSystemMaterial() {
       let date = JSON.stringify(obj.$children[1].$children[0])
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
       expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
-      console.info('SUB_ACE_ActionSheetOptionsSystemMaterial_0400 Sheet title is visible');
+      console.info('ActionSheetOptionsSystemMaterial_0400 Sheet title is visible');
 
       await CommonFunc.sleep(500);
       let closeButton = await driver.findComponent(ON.text('Confirm'));
       await closeButton.click();
       await CommonFunc.sleep(1000);
-      console.info('SUB_ACE_ActionSheetOptionsSystemMaterial_0400 END');
+      console.info('ActionSheetOptionsSystemMaterial_0400 END');
       done();
     });
 
     /**
-     * @tc.name   SUB_ACE_ActionSheetOptionsSystemMaterial_0500
-     * @tc.number SUB_ACE_ActionSheetOptionsSystemMaterial_0500
+     * @tc.name   ActionSheetOptionsSystemMaterial_0500
+     * @tc.number SUB_ARKUI_API_ActionSheetOptionsSystemMaterial_0500
      * @tc.desc   To test ActionSheetOptions systemMaterial property with uiMaterial.ImmersiveMaterial ULTRA_THIN
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+     * @tc.type   FUNCTION 
+     * @tc.size   MEDIUMTEST 
+     * @tc.level  LEVEL2 
      */
-    it('SUB_ACE_ActionSheetOptionsSystemMaterial_0500', Level.LEVEL0, async (done: Function) => {
-      console.info('SUB_ACE_ActionSheetOptionsSystemMaterial_0500 START');
+    it('ActionSheetOptionsSystemMaterial_0500', Level.LEVEL2, async (done: Function) => {
+      console.info('ActionSheetOptionsSystemMaterial_0500 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('immersive_ultra_thin'));
@@ -205,26 +210,27 @@ export default function ActionSheetOptionsSystemMaterial() {
       let date = JSON.stringify(obj.$children[1].$children[0])
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
       expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
-      console.info('SUB_ACE_ActionSheetOptionsSystemMaterial_0500 Sheet title is visible');
+      console.info('ActionSheetOptionsSystemMaterial_0500 Sheet title is visible');
 
       await CommonFunc.sleep(500);
       let closeButton = await driver.findComponent(ON.text('Confirm'));
       await closeButton.click();
       await CommonFunc.sleep(1000);
-      console.info('SUB_ACE_ActionSheetOptionsSystemMaterial_0500 END');
+      console.info('ActionSheetOptionsSystemMaterial_0500 END');
       done();
     });
 
     /**
-     * @tc.name   SUB_ACE_ActionSheetOptionsSystemMaterial_0600
-     * @tc.number SUB_ACE_ActionSheetOptionsSystemMaterial_0600
+     * @tc.name   ActionSheetOptionsSystemMaterial_0600
+     * @tc.number SUB_ARKUI_API_ActionSheetOptionsSystemMaterial_0600
      * @tc.desc   To test ActionSheetOptions systemMaterial property with uiMaterial.Material NONE
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+     * @tc.type   FUNCTION 
+     * @tc.size   MEDIUMTEST 
+     * @tc.level  LEVEL2 
      */
-    it('SUB_ACE_ActionSheetOptionsSystemMaterial_0600', Level.LEVEL0, async (done: Function) => {
-      console.info('SUB_ACE_ActionSheetOptionsSystemMaterial_0600 START');
+    it('ActionSheetOptionsSystemMaterial_0600', Level.LEVEL2, async (done: Function) => {
+      console.info('ActionSheetOptionsSystemMaterial_0600 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('none'));
@@ -237,13 +243,13 @@ export default function ActionSheetOptionsSystemMaterial() {
       let date = JSON.stringify(obj.$children[1].$children[0])
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
       expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');
-      console.info('SUB_ACE_ActionSheetOptionsSystemMaterial_0600 Sheet title is visible');
+      console.info('ActionSheetOptionsSystemMaterial_0600 Sheet title is visible');
 
       await CommonFunc.sleep(500);
       let closeButton = await driver.findComponent(ON.text('Confirm'));
       await closeButton.click();
       await CommonFunc.sleep(1000);
-      console.info('SUB_ACE_ActionSheetOptionsSystemMaterial_0600 END');
+      console.info('ActionSheetOptionsSystemMaterial_0600 END');
       done();
     });
   })
