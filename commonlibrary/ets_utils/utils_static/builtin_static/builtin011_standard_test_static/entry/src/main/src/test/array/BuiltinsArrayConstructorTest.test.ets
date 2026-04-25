@@ -118,8 +118,7 @@ export default function BuiltinsArrayConstructorTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayConstructorTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr: Array<number> = new Array<number>(5);
-      arr.fill(0);
+      const arr: Array<number> = Array.create<number>(5, 0);
       expect(arr.length).assertEqual(5);
       expect(arr[0]).assertEqual(0);
       expect(arr[2]).assertEqual(0);
@@ -407,7 +406,7 @@ export default function BuiltinsArrayConstructorTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayConstructorTest2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr: Array<number> = new Array<number>(0);
+      const arr: Array<number> = new Array<number>();
       expect(arr.length).assertEqual(0);
     });
 
@@ -420,7 +419,7 @@ export default function BuiltinsArrayConstructorTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayConstructorTest2200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr: Array<number> = new Array<number>(5);
+      const arr: Array<number> = Array.create<number>(5, NaN);
       for (let index = 0; index < arr.length; index++) {
         arr[index] = index * 2;
       }
@@ -441,7 +440,7 @@ export default function BuiltinsArrayConstructorTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayConstructorTest2300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr: Array<number> = new Array<number>(1);
+      const arr: Array<number> = Array.create<number>(1, NaN);
       arr[0] = 42;
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(42);
@@ -457,41 +456,13 @@ export default function BuiltinsArrayConstructorTest(): void {
      */
     it('builtinsArrayConstructorTest2400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const maxInt = 1000;
-      const arr: Array<number> = new Array<number>(maxInt);
+      const arr: Array<number> = Array.create<number>(maxInt, NaN);
       for (let index = 0; index < arr.length; index++) {
         arr[index] = index;
       }
       expect(arr.length).assertEqual(maxInt);
       expect(arr[0]).assertEqual(0);
       expect(arr[999]).assertEqual(999);
-    });
-
-    /**
-     * @tc.name    builtinsArrayConstructorTest2500
-     * @tc.number  SUB_BUILTINS_ARRAY_CONSTRUCTOR_TEST_2500
-     * @tc.desc    Verify constructor with negative arrayLen throws exception
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL1
-     */
-    it('builtinsArrayConstructorTest2500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      expect(() => {
-        new Array<number>(-5);
-      }).assertThrow('size = -5');
-    });
-
-    /**
-     * @tc.name    builtinsArrayConstructorTest2600
-     * @tc.number  SUB_BUILTINS_ARRAY_CONSTRUCTOR_TEST_2600
-     * @tc.desc    Verify constructor with arrayLen=int min value throws exception
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL2
-     */
-    it('builtinsArrayConstructorTest2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      expect(() => {
-        new Array<number>(-2147483648);
-      }).assertThrow('size = -2147483648');
     });
 
     /**
@@ -503,7 +474,7 @@ export default function BuiltinsArrayConstructorTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayConstructorTest2700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr: Array<string> = new Array<string>(3);
+      const arr: Array<string> = Array.create<string>(3, '');
       for (let index = 0; index < arr.length; index++) {
         arr[index] = `Item ${index}`;
       }
@@ -522,9 +493,9 @@ export default function BuiltinsArrayConstructorTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayConstructorTest2800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr: Array<TestObj> = new Array<TestObj>(2);
-      for (let index = 0; index < arr.length; index++) {
-        arr[index] = new TestObj(index, `Test ${index}`);
+      const arr: Array<TestObj> = new Array<TestObj>();
+      for (let index = 0; index < 2; index++) {
+        arr.push(new TestObj(index, `Test ${index}`));
       }
       expect(arr.length).assertEqual(2);
       expect(arr[0].id).assertEqual(0);
@@ -542,7 +513,7 @@ export default function BuiltinsArrayConstructorTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayConstructorTest2900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr: Array<boolean> = new Array<boolean>(3);
+      const arr: Array<boolean> = Array.create<boolean>(3, false);
       for (let index = 0; index < arr.length; index++) {
         arr[index] = index % 2 === 0;
       }
@@ -550,20 +521,6 @@ export default function BuiltinsArrayConstructorTest(): void {
       expect(arr[0]).assertEqual(true);
       expect(arr[1]).assertEqual(false);
       expect(arr[2]).assertEqual(true);
-    });
-
-    /**
-     * @tc.name    builtinsArrayConstructorTest3000
-     * @tc.number  SUB_BUILTINS_ARRAY_CONSTRUCTOR_TEST_3000
-     * @tc.desc    Verify constructor with arrayLen=2147483647 throws OOM exception
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL2
-     */
-    it('builtinsArrayConstructorTest3000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      expect(() => {
-        new Array<number>(2147483647);
-      }).assertThrow('OOM when allocating array');
     });
 
     /**
@@ -575,7 +532,7 @@ export default function BuiltinsArrayConstructorTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayConstructorTest3100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr: Array<number> = new Array<number>(3);
+      const arr: Array<number> = Array.create<number>(3, NaN);
       for (let index = 0; index < arr.length; index++) {
         arr[index] = 2147483647;
       }
@@ -594,7 +551,7 @@ export default function BuiltinsArrayConstructorTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayConstructorTest3200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr: Array<number> = new Array<number>(3);
+      const arr: Array<number> = Array.create<number>(3, NaN);
       for (let index = 0; index < arr.length; index++) {
         arr[index] = -2147483648;
       }
@@ -613,7 +570,7 @@ export default function BuiltinsArrayConstructorTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayConstructorTest3300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr: Array<number> = new Array<number>(3);
+      const arr: Array<number> = Array.create<number>(3, NaN);
       for (let index = 0; index < arr.length; index++) {
         arr[index] = 2147483647 - index;
       }
@@ -632,7 +589,7 @@ export default function BuiltinsArrayConstructorTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayConstructorTest3400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr: Array<number> = new Array<number>(3);
+      const arr: Array<number> = Array.create<number>(3, NaN);
       for (let index = 0; index < arr.length; index++) {
         arr[index] = -2147483648 + index;
       }
@@ -651,7 +608,7 @@ export default function BuiltinsArrayConstructorTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayConstructorTest3500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr: Array<number> = new Array<number>(3);
+      const arr: Array<number> = Array.create<number>(3, NaN);
       for (let index = 0; index < arr.length; index++) {
         arr[index] = index * 2147483647;
       }
@@ -659,34 +616,6 @@ export default function BuiltinsArrayConstructorTest(): void {
       expect(arr[0]).assertEqual(0);
       expect(arr[1]).assertEqual(2147483647);
       expect(arr[2]).assertEqual(-2);
-    });
-
-    /**
-     * @tc.name    builtinsArrayConstructorTest3600
-     * @tc.number  SUB_BUILTINS_ARRAY_CONSTRUCTOR_TEST_3600
-     * @tc.desc    Verify constructor with arrayLen=2147483646 (int max - 1) throws OOM exception
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL2
-     */
-    it('builtinsArrayConstructorTest3600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      expect(() => {
-        new Array<number>(2147483646);
-      }).assertThrow('OOM when allocating array');
-    });
-
-    /**
-     * @tc.name    builtinsArrayConstructorTest3700
-     * @tc.number  SUB_BUILTINS_ARRAY_CONSTRUCTOR_TEST_3700
-     * @tc.desc    Verify constructor with arrayLen=2147483645 (int max - 2) throws OOM exception
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL2
-     */
-    it('builtinsArrayConstructorTest3700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      expect(() => {
-        new Array<number>(2147483645);
-      }).assertThrow('OOM when allocating array');
     });
 
     /**
@@ -698,7 +627,7 @@ export default function BuiltinsArrayConstructorTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayConstructorTest3800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr: Array<number> = new Array<number>(4);
+      const arr: Array<number> = Array.create<number>(4, NaN);
       for (let index = 0; index < arr.length; index++) {
         if (index === 0) {
           arr[index] = 2147483647;

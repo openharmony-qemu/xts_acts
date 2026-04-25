@@ -63,7 +63,7 @@ export default function BuiltinsArrayPopTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayPopTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, NaN);
       arr[0] = 10;
       const result = arr.pop();
       
@@ -80,7 +80,7 @@ export default function BuiltinsArrayPopTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayPopTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -101,7 +101,7 @@ export default function BuiltinsArrayPopTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPopTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -132,7 +132,7 @@ export default function BuiltinsArrayPopTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPopTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<string>(2);
+      const arr = Array.create<string>(2, '');
       arr[0] = 'first';
       arr[1] = 'second';
       const result = arr.pop();
@@ -153,9 +153,7 @@ export default function BuiltinsArrayPopTest() {
     it('builtinsArrayPopTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const obj1: Record<string, string> = { "name": 'test1' };
       const obj2: Record<string, string> = { "name": 'test2' };
-      const arr = new Array<Record<string, string>>(2);
-      arr[0] = obj1;
-      arr[1] = obj2;
+      const arr = new Array<Record<string, string>>(obj1, obj2);
       const result = arr.pop();
       
       expect(arr.length).assertEqual(1);

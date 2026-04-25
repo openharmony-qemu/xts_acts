@@ -47,7 +47,7 @@ export default function BuiltinsArraySliceTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArraySliceTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -71,7 +71,7 @@ export default function BuiltinsArraySliceTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySliceTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -93,7 +93,7 @@ export default function BuiltinsArraySliceTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySliceTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -117,7 +117,7 @@ export default function BuiltinsArraySliceTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySliceTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -136,7 +136,7 @@ export default function BuiltinsArraySliceTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySliceTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -155,7 +155,7 @@ export default function BuiltinsArraySliceTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArraySliceTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -177,7 +177,7 @@ export default function BuiltinsArraySliceTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArraySliceTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -196,7 +196,7 @@ export default function BuiltinsArraySliceTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySliceTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(0);
+      const arr = new Array<number>();
       
       const result = arr.slice(0);
       
@@ -212,7 +212,7 @@ export default function BuiltinsArraySliceTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySliceTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, NaN);
       arr[0] = 42;
       
       const result = arr.slice(0);
@@ -230,7 +230,7 @@ export default function BuiltinsArraySliceTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySliceTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -254,7 +254,7 @@ export default function BuiltinsArraySliceTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySliceTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -278,7 +278,7 @@ export default function BuiltinsArraySliceTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySliceTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -297,7 +297,7 @@ export default function BuiltinsArraySliceTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySliceTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -316,7 +316,7 @@ export default function BuiltinsArraySliceTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySliceTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -338,7 +338,7 @@ export default function BuiltinsArraySliceTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySliceTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -360,7 +360,7 @@ export default function BuiltinsArraySliceTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySliceTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -384,7 +384,7 @@ export default function BuiltinsArraySliceTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySliceTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -408,7 +408,7 @@ export default function BuiltinsArraySliceTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArraySliceTest1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -427,7 +427,7 @@ export default function BuiltinsArraySliceTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArraySliceTest1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -446,7 +446,7 @@ export default function BuiltinsArraySliceTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySliceTest2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -469,7 +469,7 @@ export default function BuiltinsArraySliceTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySliceTest2100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -492,7 +492,7 @@ export default function BuiltinsArraySliceTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySliceTest2200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;

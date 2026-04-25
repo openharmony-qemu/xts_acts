@@ -257,7 +257,7 @@ export default function BuiltinsArrayGetTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayGetTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(10000);
+      const arr = new Array<number>(10000, (i) => i);
       for (let i = 0; i < 10000; i++) {
         arr[i] = i;
       }

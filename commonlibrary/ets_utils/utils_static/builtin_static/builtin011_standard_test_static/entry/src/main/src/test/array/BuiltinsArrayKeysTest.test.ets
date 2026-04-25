@@ -62,7 +62,7 @@ export default function BuiltinsArrayKeysTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayKeysTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -83,7 +83,7 @@ export default function BuiltinsArrayKeysTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayKeysTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<string>(2);
+      const arr = Array.create<string>(2, '');
       arr[0] = 'a';
       arr[1] = 'b';
       const iterator = arr.keys();
@@ -104,9 +104,7 @@ export default function BuiltinsArrayKeysTest() {
     it('builtinsArrayKeysTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const obj1: Record<string, string> = { "name": 'test1' };
       const obj2: Record<string, string> = { "name": 'test2' };
-      const arr = new Array<Record<string, string>>(2);
-      arr[0] = obj1;
-      arr[1] = obj2;
+      const arr = new Array<Record<string, string>>(obj1, obj2);
       const iterator = arr.keys();
       
       expect(iterator.next().value).assertEqual(0);
@@ -123,7 +121,7 @@ export default function BuiltinsArrayKeysTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayKeysTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(4);
+      const arr = Array.create<number>(4, NaN);
       arr[0] = 10;
       arr[1] = 20;
       arr[2] = 30;
@@ -150,7 +148,7 @@ export default function BuiltinsArrayKeysTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayKeysTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(2);
+      const arr = Array.create<number>(2, NaN);
       const iterator = arr.keys();
 
       expect(iterator !== undefined && iterator !== null).assertTrue();

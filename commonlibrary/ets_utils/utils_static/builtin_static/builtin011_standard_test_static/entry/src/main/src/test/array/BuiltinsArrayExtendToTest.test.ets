@@ -47,7 +47,7 @@ export default function BuiltinsArrayExtendToTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayExtendToTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(2);
+      const arr = Array.create<number>(2, 0);
       arr[0] = 1;
       arr[1] = 2;
       const initialValue = 0;
@@ -72,7 +72,7 @@ export default function BuiltinsArrayExtendToTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayExtendToTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, 0);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -96,7 +96,7 @@ export default function BuiltinsArrayExtendToTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayExtendToTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, 0);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -120,7 +120,7 @@ export default function BuiltinsArrayExtendToTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayExtendToTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(2);
+      const arr = Array.create<number>(2, 0);
       const initialValue = 0;
       const newLength = -5;
       
@@ -138,7 +138,7 @@ export default function BuiltinsArrayExtendToTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayExtendToTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(2);
+      const arr = Array.create<number>(2, 0);
       arr[0] = 1;
       arr[1] = 2;
       const initialValue = 0;
@@ -160,7 +160,7 @@ export default function BuiltinsArrayExtendToTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayExtendToTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(0);
+      const arr = new Array<number>();
       const initialValue = 10;
       const newLength = 1;
       
@@ -179,9 +179,9 @@ export default function BuiltinsArrayExtendToTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayExtendToTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Record<string, string>>(1);
+      const arr = new Array<Record<string, string>>();
       const initialValue1: Record<string, string> = { "name": 'test1' };
-      arr[0] = initialValue1;
+      arr.push(initialValue1);
       const initialValue2: Record<string, string> = { "name": 'test2' };
       const newLength = 3;
       
@@ -202,7 +202,7 @@ export default function BuiltinsArrayExtendToTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayExtendToTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(2);
+      const arr = Array.create<number>(2, 0);
       arr[0] = 1;
       arr[1] = 2;
       const initialValue = 0;
@@ -225,7 +225,7 @@ export default function BuiltinsArrayExtendToTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayExtendToTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(2);
+      const arr = Array.create<number>(2, 0);
       const initialValue = 0;
       const newLength = -2147483648;
       
@@ -243,7 +243,7 @@ export default function BuiltinsArrayExtendToTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayExtendToTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(2);
+      const arr = Array.create<number>(2, 0);
       arr[0] = 1;
       arr[1] = 2;
       const initialValue = 0;

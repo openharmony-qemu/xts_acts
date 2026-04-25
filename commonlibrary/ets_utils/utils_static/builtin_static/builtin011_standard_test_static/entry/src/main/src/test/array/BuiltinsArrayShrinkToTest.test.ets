@@ -47,7 +47,7 @@ export default function BuiltinsArrayShrinkToTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayShrinkToTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -72,7 +72,7 @@ export default function BuiltinsArrayShrinkToTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayShrinkToTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -95,7 +95,7 @@ export default function BuiltinsArrayShrinkToTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayShrinkToTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -118,7 +118,7 @@ export default function BuiltinsArrayShrinkToTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayShrinkToTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(2);
+      const arr = Array.create<number>(2, NaN);
       const newLength = -5;
       
       expect(() => {
@@ -135,7 +135,7 @@ export default function BuiltinsArrayShrinkToTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayShrinkToTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -155,7 +155,7 @@ export default function BuiltinsArrayShrinkToTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayShrinkToTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(2);
+      const arr = Array.create<number>(2, NaN);
       const newLength = -2147483648;
       
       expect(() => {
@@ -172,7 +172,7 @@ export default function BuiltinsArrayShrinkToTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayShrinkToTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
