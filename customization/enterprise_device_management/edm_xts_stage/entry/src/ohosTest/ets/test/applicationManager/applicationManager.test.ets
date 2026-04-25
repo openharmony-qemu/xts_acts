@@ -1011,11 +1011,7 @@ export default function applicationManagerTest() {
         applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200001).assertTrue();
-        }
+        expect(Number(error.code) === 9200001).assertTrue();
       }
       done();
     })
@@ -1023,16 +1019,12 @@ export default function applicationManagerTest() {
     /**
      * @tc.name   test_addFreezeExemptedApps_002
      * @tc.number SUB_CUSTOMIZATION_EDM_ADDFREEZEEXEMPTEDAPPS_002
-     * @tc.desc   test addFreezeExemptedApps method with byod admin for !2in1
+     * @tc.desc   test addFreezeExemptedApps method with byod admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it("test_addFreezeExemptedApps_002", Level.LEVEL2, async (done: Function) => {
-      if (sysDeviceInfo.deviceType == '2in1') {
-        done();
-        return;
-      }
       try {
         let freezeExemptedApps: Array<common.ApplicationInstance> = [
           {
@@ -1055,29 +1047,29 @@ export default function applicationManagerTest() {
     /**
      * @tc.name   test_addFreezeExemptedApps_003
      * @tc.number SUB_CUSTOMIZATION_EDM_ADDFREEZEEXEMPTEDAPPS_003
-     * @tc.desc   test addFreezeExemptedApps method with byod admin for 2in1
+     * @tc.desc   test addFreezeExemptedApps method with normal admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it("test_addFreezeExemptedApps_003", Level.LEVEL2, async (done: Function) => {
-      if (sysDeviceInfo.deviceType != '2in1') {
-        done();
-        return;
-      }
       try {
         let freezeExemptedApps: Array<common.ApplicationInstance> = [
           {
-            appIdentifier:"1230215522310701824",
+            appIdentifier:"1230215522310701825",
             accountId:DEFAULT_USER_ID,
             appIndex:0
           }
         ];
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
         applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 801).assertTrue();
+        if (Number(error.code) === 9200002) {
+          expect(Number(error.code) === 9200002).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -1098,11 +1090,7 @@ export default function applicationManagerTest() {
         applicationManager.addFreezeExemptedApps(SELFWANT, null);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1130,11 +1118,7 @@ export default function applicationManagerTest() {
         applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1162,11 +1146,7 @@ export default function applicationManagerTest() {
         applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200012).assertTrue();
-        }
+        expect(Number(error.code) === 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1200,11 +1180,7 @@ export default function applicationManagerTest() {
         applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200012).assertTrue();
-        }
+        expect(Number(error.code) === 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1227,11 +1203,7 @@ export default function applicationManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_addFreezeExemptedApps_008 error 401 is expected, actually catch: ' + error.code);
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200012).assertTrue();
-        }
+        expect(Number(error.code) === 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1258,11 +1230,7 @@ export default function applicationManagerTest() {
         applicationManager.removeFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200001).assertTrue();
-        }
+        expect(Number(error.code) === 9200001).assertTrue();
       }
       done();
     })
@@ -1270,16 +1238,12 @@ export default function applicationManagerTest() {
     /**
      * @tc.name   test_removeFreezeExemptedApps_002
      * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEFREEZEEXEMPTEDAPPS_002
-     * @tc.desc   test removeFreezeExemptedApps method with byod admin for !2in1
+     * @tc.desc   test removeFreezeExemptedApps method with byod admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it("test_removeFreezeExemptedApps_002", Level.LEVEL2, async (done: Function) => {
-      if (sysDeviceInfo.deviceType == '2in1') {
-        done();
-        return;
-      }
       try {
         let freezeExemptedApps: Array<common.ApplicationInstance> = [
           {
@@ -1302,29 +1266,29 @@ export default function applicationManagerTest() {
     /**
      * @tc.name   test_removeFreezeExemptedApps_003
      * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEFREEZEEXEMPTEDAPPS_003
-     * @tc.desc   test removeFreezeExemptedApps method with byod admin for 2in1
+     * @tc.desc   test removeFreezeExemptedApps method with normal admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it("test_removeFreezeExemptedApps_003", Level.LEVEL2, async (done: Function) => {
-      if (sysDeviceInfo.deviceType != '2in1') {
-        done();
-        return;
-      }
       try {
         let freezeExemptedApps: Array<common.ApplicationInstance> = [
           {
-            appIdentifier:"1230215522310701824",
+            appIdentifier:"1230215522310701825",
             accountId:DEFAULT_USER_ID,
             appIndex:0
           }
         ];
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
         applicationManager.removeFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 801).assertTrue();
+        if (Number(error.code) === 9200002) {
+          expect(Number(error.code) === 9200002).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -1345,11 +1309,7 @@ export default function applicationManagerTest() {
         applicationManager.removeFreezeExemptedApps(SELFWANT, null);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1377,11 +1337,7 @@ export default function applicationManagerTest() {
         applicationManager.removeFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1417,11 +1373,7 @@ export default function applicationManagerTest() {
         applicationManager.removeFreezeExemptedApps(SELFWANT, removeApps);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200012).assertTrue();
-        }
+        expect(Number(error.code) === 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1467,11 +1419,7 @@ export default function applicationManagerTest() {
         applicationManager.removeFreezeExemptedApps(SELFWANT, removeApps);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200012).assertTrue();
-        }
+        expect(Number(error.code) === 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1493,12 +1441,7 @@ export default function applicationManagerTest() {
         applicationManager.removeFreezeExemptedApps(SELFWANT, applicationInstances);
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- test_removeFreezeExemptedApps_008 error 401 is expected, actually catch: ' + error.code);
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200012).assertTrue();
-        }
+        expect(Number(error.code) === 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1518,11 +1461,7 @@ export default function applicationManagerTest() {
         applicationManager.getFreezeExemptedApps(SELFWANT);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200001).assertTrue();
-        }
+        expect(Number(error.code) === 9200001).assertTrue();
       }
       done();
     })
@@ -1530,16 +1469,12 @@ export default function applicationManagerTest() {
     /**
      * @tc.name   test_getFreezeExemptedApps_002
      * @tc.number SUB_CUSTOMIZATION_EDM_GETFREEZEEXEMPTEDAPPS_002
-     * @tc.desc   test getFreezeExemptedApps method with byod admin for !2in1
+     * @tc.desc   test getFreezeExemptedApps method with byod admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it("test_getFreezeExemptedApps_002", Level.LEVEL2, async (done: Function) => {
-      if (sysDeviceInfo.deviceType == '2in1') {
-        done();
-        return;
-      }
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         applicationManager.getFreezeExemptedApps(SELFWANT);
@@ -1555,22 +1490,18 @@ export default function applicationManagerTest() {
     /**
      * @tc.name   test_getFreezeExemptedApps_003
      * @tc.number SUB_CUSTOMIZATION_EDM_GETFREEZEEXEMPTEDAPPS_003
-     * @tc.desc   test getFreezeExemptedApps method with byod admin for 2in1
+     * @tc.desc   test getFreezeExemptedApps method with normal admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it("test_getFreezeExemptedApps_003", Level.LEVEL2, async (done: Function) => {
-      if (sysDeviceInfo.deviceType != '2in1') {
-        done();
-        return;
-      }
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
         let res = applicationManager.getFreezeExemptedApps(SELFWANT);
-        expect(false).assertTrue();
+        expect(res.length === 0).assertTrue();
       } catch (error) {
-        expect(error.code == 801).assertTrue();
+        expect(Number(error.code) === 9200002).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -1587,17 +1518,10 @@ export default function applicationManagerTest() {
      */
     it("test_getFreezeExemptedApps_004", Level.LEVEL2, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         applicationManager.getFreezeExemptedApps(null);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
+        expect(Number(error.code) === 401).assertTrue();
       }
       done();
     })
@@ -1616,7 +1540,7 @@ export default function applicationManagerTest() {
         let res = applicationManager.getFreezeExemptedApps(SELFWANT);
         expect(res.length == 0).assertTrue();
       } catch (error) {
-        expect(error.code == 801).assertTrue();
+        expect(false).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }

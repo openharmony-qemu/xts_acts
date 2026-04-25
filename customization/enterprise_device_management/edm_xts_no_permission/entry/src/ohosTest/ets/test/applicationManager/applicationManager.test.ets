@@ -443,11 +443,7 @@ export default function applicationManagerTest() {
         applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 201).assertTrue();
-        }
+        expect(Number(error.code) === 201).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -475,11 +471,7 @@ export default function applicationManagerTest() {
         applicationManager.removeFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 201).assertTrue();
-        }
+        expect(Number(error.code) === 201).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -500,11 +492,7 @@ export default function applicationManagerTest() {
         applicationManager.getFreezeExemptedApps(SELFWANT);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 201).assertTrue();
-        }
+        expect(Number(error.code) === 201).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
