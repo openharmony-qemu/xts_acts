@@ -216,15 +216,15 @@ export default function BaseDialogOptionsSystemMaterial() {
     });
 
     /**
-     * @tc.name   SUB_ACE_BaseDialogOptionsSystemMaterial_006
-     * @tc.number SUB_ACE_BaseDialogOptionsSystemMaterial_006
+     * @tc.name   SUB_ACE_BaseDialogOptionsSystemMaterial_0600
+     * @tc.number SUB_ACE_BaseDialogOptionsSystemMaterial_0600
      * @tc.desc   To test BaseDialogOptions systemMaterial property with uiMaterial.Material NONE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ACE_BaseDialogOptionsSystemMaterial_006', Level.LEVEL0, async (done: Function) => {
-      console.info('SUB_ACE_BaseDialogOptionsSystemMaterial_006 START');
+    it('SUB_ACE_BaseDialogOptionsSystemMaterial_0600', Level.LEVEL0, async (done: Function) => {
+      console.info('SUB_ACE_BaseDialogOptionsSystemMaterial_0600 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('none'));
@@ -237,13 +237,13 @@ export default function BaseDialogOptionsSystemMaterial() {
       let date = JSON.stringify(obj.$children[1].$children[0])
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
       expect(JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type)).assertEqual('MaterialType.NONE');  
-      console.info('SUB_ACE_BaseDialogOptionsSystemMaterial_006 Dialog NONE is visible');
+      console.info('SUB_ACE_BaseDialogOptionsSystemMaterial_0600 Dialog NONE is visible');
 
       await CommonFunc.sleep(500);
       let closeButton = await driver.findComponent(ON.text('Close'));
       await closeButton.click();
       await CommonFunc.sleep(1000);
-      console.info('SUB_ACE_BaseDialogOptionsSystemMaterial_006 END');
+      console.info('SUB_ACE_BaseDialogOptionsSystemMaterial_0600 END');
       done();
     });
   })
