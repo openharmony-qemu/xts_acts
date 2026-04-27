@@ -27,6 +27,7 @@ import getCurrentLocalPositionTest_MouseEvent from './getCurrentLocalPositionTes
 import getCurrentLocalPositionTest_AxisEvent from './getCurrentLocalPositionTest/getCurrentLocalPositionTest_AxisEvent.test';
 import getCurrentLocalPositionTest_EventLocationInfo from './getCurrentLocalPositionTest/getCurrentLocalPositionTest_EventLocationInfo.test';
 import getCurrentLocalPositionTest_FingerInfo from './getCurrentLocalPositionTest/getCurrentLocalPositionTest_FingerInfo.test';
+import expectedUpdateIntervalTest from './CommonEventOnAreaChangeTest/expectedUpdateInterval.test';
 
 export default function testsuite() {
   DragControllerTest();
@@ -43,4 +44,5 @@ export default function testsuite() {
   getCurrentLocalPositionTest_AxisEvent();
   getCurrentLocalPositionTest_EventLocationInfo();
   getCurrentLocalPositionTest_FingerInfo();
+  expectedUpdateIntervalTest();
 }
