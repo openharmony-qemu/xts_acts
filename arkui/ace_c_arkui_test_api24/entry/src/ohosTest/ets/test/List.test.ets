@@ -24,8 +24,9 @@ import arkuiNativeCapiNativeNode from './arkui_native/ArkUICapiGenerated_native_
 import arkuiNativeCapiNativeType from './arkui_native/ArkUICapiGenerated_native_type.test'
 import arkuiNativeCapiStyledString from './arkui_native/ArkUICapiGenerated_styled_string.test'
 import arkuiNativeCapiUiInputEvent from './arkui_native/ArkUICapiGenerated_ui_input_event.test'
-import TextGetCharacterTest from './TextGetCharacter/TextGetCharacterTest.test'
 import PointerEventGetCurrentLocalTest from './pointerEventGetCurrentLocal/PointerEventGetCurrentLocalTest.test'
+import TextGetCharacterTest from './TextGetCharacter/TextGetCharacterTest.test'
+import CrossLanguageOptionsSupportFiveMethodsTest from './FrameNode/CrossLanguageOptionsSupportFiveMethodsTest.test'
 
 export default function testsuite() {
   matrix4Test();
@@ -40,6 +41,7 @@ export default function testsuite() {
   arkuiNativeCapiNativeType();
   arkuiNativeCapiStyledString();
   arkuiNativeCapiUiInputEvent();
-  TextGetCharacterTest();
   PointerEventGetCurrentLocalTest();
+  TextGetCharacterTest();
+  CrossLanguageOptionsSupportFiveMethodsTest();
 }
