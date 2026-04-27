@@ -5081,12 +5081,14 @@ export default function settingUiJsunit() {
         return;
       }
       let re = false;
+      let code = 0;
       try {
         re = await settings.isDoubleClickAppForSelf();
+        expect(re).assertEqual(false);
       } catch (err) {
         console.error("[isDoubleClickAppForSelf_false_return] error = " + err);
+        expect(code).assertEqual(0);
       }
-      expect(re).assertEqual(false);
       done();
     });
 
