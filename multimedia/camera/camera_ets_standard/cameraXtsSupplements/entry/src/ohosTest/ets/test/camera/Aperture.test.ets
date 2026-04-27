@@ -25,7 +25,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { describe, beforeAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { indexSurfaceId } from '../../testability/pages/Index';
-import { driveFn, getPermission } from '../common';
+import { driveFn, getPermission ,sleep} from '../common';
 
 const TAG: string = 'xts-API24ApertureTest.tag';
 
@@ -399,9 +399,11 @@ export default function ApertureTest() {
         if (supportedApertures.length > 0) {
           // 设置物理光圈值为最小边界值
           let minAperture = supportedApertures[0];
-          console.info(TAG, testName + ' set aperture to min: ' + minAperture);
+          console.info(TAG, testName + ' set aperture to min: ' + JSON.stringify(minAperture));
+          photoSession.setZoomRatio(minAperture.zoomRange[0]);
+          await sleep(1000);
           photoSession.setPhysicalAperture(minAperture.apertures[0]);
-
+          await sleep(1000);
           // 设置生效验证：获取当前物理光圈值验证设置是否生效
           let currentAperture: number = photoSession.getPhysicalAperture();
           console.info(TAG, testName + ' currentAperture: ' + currentAperture);
@@ -536,9 +538,11 @@ export default function ApertureTest() {
         if (supportedApertures.length > 0) {
           // 设置物理光圈值为最大边界值
           let maxAperture = supportedApertures[supportedApertures.length - 1];
-          console.info(TAG, testName + ' set aperture to max: ' + maxAperture);
+          console.info(TAG, testName + ' set aperture to min: ' + JSON.stringify(maxAperture));
+          photoSession.setZoomRatio(maxAperture.zoomRange[0]);
+          await sleep(1000);
           photoSession.setPhysicalAperture(maxAperture.apertures[0]);
-
+          await sleep(1000);
           // 设置生效验证：获取当前物理光圈值验证设置是否生效
           let currentAperture: number = photoSession.getPhysicalAperture();
           console.info(TAG, testName + ' currentAperture: ' + currentAperture);
@@ -670,13 +674,15 @@ export default function ApertureTest() {
         let supportedApertures = photoSession.getSupportedPhysicalApertures();
         console.info(TAG, testName + ' supportedApertures: ' + JSON.stringify(supportedApertures));
 
-        if (supportedApertures.length > 1) {
+        if (supportedApertures.length > 0) {
           // 设置物理光圈值为中间值
           let middleIndex: number = Math.floor(supportedApertures.length / 2);
           let middleAperture = supportedApertures[middleIndex];
-          console.info(TAG, testName + ' set aperture to middle: ' + middleAperture);
+          console.info(TAG, testName + ' set aperture to middle: ' + JSON.stringify(middleAperture));
+          photoSession.setZoomRatio(middleAperture.zoomRange[0]);
+          await sleep(1000);
           photoSession.setPhysicalAperture(middleAperture.apertures[0]);
-
+          await sleep(1000);
           // 设置生效验证：获取当前物理光圈值验证设置是否生效
           let currentAperture: number = photoSession.getPhysicalAperture();
           console.info(TAG, testName + ' currentAperture: ' + currentAperture);
