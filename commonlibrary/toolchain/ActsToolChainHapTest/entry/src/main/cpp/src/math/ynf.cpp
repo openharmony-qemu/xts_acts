@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,7 +57,6 @@ static int YnfTestImpl(void)
         feclearexcept(FE_ALL_EXCEPT);
         y = ynf(p->i, p->x);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
 #ifndef __aarch64__
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s ynf(%lld, %a)=%a, want %s",

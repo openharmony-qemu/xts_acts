@@ -56,7 +56,7 @@ static void Expm1fTestOne(struct FF *p, int *err)
         const double ulpAbs = static_cast<double>(d);
         const double ulpMinusDy = static_cast<double>(d - p->dy);
         const double dyVal = static_cast<double>(p->dy);
-        printf("%s:%d: %s expm1f(%a) want %a got %a Ulperr %.3f = %a + %a\n",
+        printf("%s:%d: %s expm1f(%a) want %a got %a Ulperr %.3f = %.3f + %.3f\n",
                p->file,
                p->line,
                Rstr(p->r),
