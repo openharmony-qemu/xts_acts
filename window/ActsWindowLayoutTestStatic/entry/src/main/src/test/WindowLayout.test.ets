@@ -2466,8 +2466,7 @@ export default function WindowLayoutTest() {
             win = await windowStage!.getMainWindow();
             hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.getMainWindow success');
             expect(!!win).assertTrue();
-            (win as window.Window).maximize().then(async ()=>{
-                await Utils.msSleep(1000)
+            (win as window.Window).maximize().then(()=>{
                 (win as window.Window).moveWindowToAsync(300, 300).then(() => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
                     expect(false).assertTrue();
@@ -2557,11 +2556,10 @@ export default function WindowLayoutTest() {
             win = await windowStage!.getMainWindow();
             hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.getMainWindow success');
             expect(!!win).assertTrue();
-            (win as window.Window).maximize().then(async ()=>{
+            (win as window.Window).maximize().then(()=>{
                 let moveConfiguration:window.MoveConfiguration = {
                     displayId:0
                 };
-                await Utils.msSleep(1000)
                 (win as window.Window).moveWindowToAsync(300, 300, moveConfiguration ).then(() => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
                     expect(false).assertTrue();
@@ -2734,9 +2732,8 @@ export default function WindowLayoutTest() {
             win = await windowStage!.getMainWindow();
             hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.getMainWindow success');
             expect(!!win).assertTrue();
-            (win as window.Window).maximize().then(async ()=>{
+            (win as window.Window).maximize().then(()=>{
                  hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.MainWindow maximize success');
-                 await Utils.msSleep(1000)
                 (win as window.Window).moveWindowToGlobal(300, 300).then(() => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
                     expect(false).assertTrue();
@@ -2826,12 +2823,11 @@ export default function WindowLayoutTest() {
             win = await windowStage!.getMainWindow();
             hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.getMainWindow success');
             expect(!!win).assertTrue();
-            (win as window.Window).maximize().then(async ()=>{
+            (win as window.Window).maximize().then(()=>{
                 hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.MainWindow maximize success');
                 let moveConfiguration:window.MoveConfiguration = {
                     displayId:0
                 };
-                await Utils.msSleep(1000)
                 (win as window.Window).moveWindowToGlobal(300, 300, moveConfiguration).then(() => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
                     expect(false).assertTrue();
@@ -3006,8 +3002,7 @@ export default function WindowLayoutTest() {
             win = await windowStage!.getMainWindow();
             hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.getMainWindow success');
             expect(!!win).assertTrue();
-            (win as window.Window).maximize().then(async ()=>{
-                await Utils.msSleep(1000)
+            (win as window.Window).maximize().then(()=>{
                 (win as window.Window).moveWindowToGlobalDisplay(300, 300).then(() => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
                     expect(false).assertTrue();
