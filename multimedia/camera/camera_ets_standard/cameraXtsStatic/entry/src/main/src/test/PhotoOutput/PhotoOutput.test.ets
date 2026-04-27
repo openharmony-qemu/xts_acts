@@ -40,6 +40,7 @@ let mVideoSurfaceId: string | undefined;
 let mPhotoSession: camera.PhotoSession | undefined;
 let mVideoSession: camera.VideoSession | undefined;
 let mAVRecorder: media.AVRecorder | undefined;
+let mPhoto: camera.Photo | undefined;
 let mCaptureStartInfo: camera.CaptureStartInfo | undefined;
 let mFrameShutterInfo: camera.FrameShutterInfo | undefined;
 let mFrameShutterEndInfo: camera.FrameShutterEndInfo | undefined;
