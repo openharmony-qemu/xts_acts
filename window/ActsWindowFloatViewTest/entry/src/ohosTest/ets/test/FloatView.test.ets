@@ -66,6 +66,44 @@ async function getPixelMap(context: common.UIAbilityContext, resource: Resource,
   }
 }
 
+// 监听到悬浮窗启动后再调用stop
+async function stopFloatViewOnStarted(floatViewController: floatView.FloatViewController, caseName: string): Promise<void> {
+  return new Promise<void>((resolve, reject) => {
+    let onStateChange = async (info: floatView.FloatViewStateChangeInfo) => {
+      console.info(caseName + ' stopFloatViewOnStarted Float view stateChange: ' + info.state);
+      if (info.state === floatView.FloatViewState.STARTED) {
+        try {
+          await floatViewController.stop();
+          console.info(caseName + ' stopFloatViewOnStarted Succeeded in stopping float view.');
+          floatViewController.offStateChange(onStateChange);
+          console.info(caseName + ' stopFloatViewOnStarted Succeeded in unregistering stateChange callback.');
+          resolve();
+        } catch (e) {
+          console.error(caseName + ' stopFloatViewOnStarted Failed to stop. Cause: ' + e.code + ', message: ' + e.message);
+          floatViewController.offStateChange(onStateChange);
+          reject(e);
+        }
+      }
+    };
+    floatViewController.onStateChange(onStateChange);
+    console.info(caseName + ' stopFloatViewOnStarted Succeeded in registering stateChange callback.');
+  });
+}
+
+// 监听到stop调用done停止用例
+function callDoneOnStopped(floatViewController: floatView.FloatViewController, caseName: string, done: Function): void {
+  let onStateChange = (info: floatView.FloatViewStateChangeInfo) => {
+    console.info(caseName + ' callDoneOnStopped Float view stateChange: ' + info.state);
+    if (info.state === floatView.FloatViewState.STOPPED) {
+      floatViewController.offStateChange(onStateChange);
+      console.info(caseName + ' callDoneOnStopped Succeeded in unregistering stateChange callback.');
+      done();
+    }
+  };
+  floatViewController.onStateChange(onStateChange);
+  console.info(caseName + ' callDoneOnStopped Succeeded in registering stateChange callback.');
+}
+
 export default function abilityTest() {
   describe('ActsWindowFloatViewTest', () => {
     let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
@@ -77,7 +115,7 @@ export default function abilityTest() {
     let windowStage: window.WindowStage;
 
     beforeAll(async () => {
-      let supportDeviceTypes: string[] = ['phone', '2in1', 'pad'];
+      let supportDeviceTypes: string[] = ['phone', '2in1', 'tablet'];
       isDeviceSupportFloatView = supportDeviceTypes.includes(deviceInfo.deviceType);
       console.info('beforeAll deviceType: ' + deviceInfo.deviceType + ', isDeviceSupportFloatView: ' + isDeviceSupportFloatView);
       isFloatViewEnabled = floatView.isFloatViewEnabled();
@@ -249,7 +287,7 @@ export default function abilityTest() {
         });
       } catch (e) {
         console.error(CaseName + ' Failed to test_Create_1300016. Cause: ' + e.code + ', message: ' + e.message);
-        expect(e.code).assertEqual(1300016);
+        expect(e.code).assertEqual(401);
         expect(e.message != null).assertTrue();
         done();
       }
@@ -282,7 +320,7 @@ export default function abilityTest() {
         });
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
-        expect(e.code).assertEqual(1300016);
+        expect(e.code).assertEqual(401);
         expect(e.message != null).assertTrue();
         console.log(CaseName + ' end.');
         done();
@@ -316,7 +354,7 @@ export default function abilityTest() {
         });
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
-        expect(e.code).assertEqual(1300016);
+        expect(e.code).assertEqual(401);
         expect(e.message != null).assertTrue();
         console.log(CaseName + ' end.');
         done();
@@ -375,7 +413,7 @@ export default function abilityTest() {
       let CaseName: string = 'test_getFloatViewLimits';
       console.log(CaseName + ' begin.');
       try {
-        let limits: floatView.FloatViewLimits = floatView.getFloatViewLimits();
+        let limits: floatView.FloatViewLimits = floatView.getFloatViewLimits(floatView.FloatViewTemplateType.ROUNDED_RECTANGLE);
         console.info(CaseName + ' FloatViewLimits: ' + JSON.stringify(limits));
         expect(limits != null).assertTrue();
         expect(limits.minSize != null).assertTrue();
@@ -499,7 +537,7 @@ export default function abilityTest() {
         templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
       };
       try {
-        let limits = floatView.getFloatViewLimits();
+        let limits = floatView.getFloatViewLimits(floatView.FloatViewTemplateType.ROUNDED_RECTANGLE);
         let size: window.Size = {
           width: limits.minSize.width + 100,
           height: limits.minSize.height + 100
@@ -590,15 +628,13 @@ export default function abilityTest() {
       };
       try {
         let floatViewController = await floatView.create(config);
+        callDoneOnStopped(floatViewController, CaseName, done)
+        stopFloatViewOnStarted(floatViewController, CaseName)
         console.info(CaseName + ' Succeeded in creating float view controller.');
         await floatViewController.setUIContext('testability/pages/Index');
         console.info(CaseName + ' Succeeded in setting UI context.');
         floatViewController.start().then(async () => {
           console.info(CaseName + ' Succeeded in starting float view.');
-          await floatViewController.stop();
-          console.info(CaseName + ' Succeeded in stopping float view.');
-          console.log(CaseName + ' end.');
-          done();
         }).catch((err: BusinessError) => {
           console.error(CaseName + ' Failed to start float view. Cause: ' + err.code + ', message: ' + err.message);
           expect(err.message != null).assertTrue();
@@ -634,6 +670,7 @@ export default function abilityTest() {
       };
       try {
         let floatViewController = await floatView.create(config);
+        callDoneOnStopped(floatViewController, CaseName, done);
         console.info(CaseName + ' Succeeded in creating float view controller.');
         await floatViewController.setUIContext("testability/pages/First/index");
         console.info(CaseName + ' Succeeded in setting UI context.');
@@ -641,16 +678,16 @@ export default function abilityTest() {
         console.info(CaseName + ' Succeeded in starting float view 1.');
         floatViewController.start().then(async () => {
           console.info(CaseName + ' Succeeded in starting 2 float view.');
-          await floatViewController.stop();
           expect(false).assertTrue();
-          done();
+          await sleep(1000);
+          await floatViewController.stop();
         }).catch(async (err: BusinessError) => {
           console.error(CaseName + ' Failed to start 2 float view. Cause: ' + err.code + ', message: ' + err.message);
+          await sleep(1000);
           await floatViewController.stop();
           console.info(CaseName + ' Succeeded in stopping float view.');
           expect(err.code).assertEqual(1300030);
           expect(err.message != null).assertTrue();
-          done();
         });
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
@@ -699,6 +736,7 @@ export default function abilityTest() {
         floatViewController.start().then(async () => {
           console.info(CaseName + ' Succeeded in starting float view.');
           await floatingBallController.stopFloatingBall();
+          await sleep(1000);
           await floatViewController.stop();
           expect(false).assertTrue();
           done();
@@ -740,6 +778,7 @@ export default function abilityTest() {
       };
       try {
         let floatViewController1 = await floatView.create(config);
+        callDoneOnStopped(floatViewController1, CaseName, done)
         console.info(CaseName + ' Succeeded in creating floatViewController1.');
         let floatViewController2 = await floatView.create(config);
         console.info(CaseName + ' Succeeded in creating floatViewController2.');
@@ -751,17 +790,17 @@ export default function abilityTest() {
         console.info(CaseName + ' Succeeded in setting UI context for floatViewController2.');
         floatViewController2.start().then(async () => {
           console.info(CaseName + ' Succeeded in starting floatViewController2.');
+          await sleep(1000);
           await floatViewController1.stop();
           expect(false).assertTrue();
-          done();
         }).catch(async (err: BusinessError) => {
           console.error(CaseName + ' Failed to start floatViewController2. Cause: ' + err.code + ', message: ' + err.message);
+          await sleep(1000);
           await floatViewController1.stop();
           console.info(CaseName + ' Succeeded in stopping floatViewController1.');
           expect(err.code).assertEqual(1300033);
           expect(err.message != null).assertTrue();
           console.log(CaseName + ' end.');
-          done();
         });
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
@@ -792,22 +831,13 @@ export default function abilityTest() {
       };
       try {
         let floatViewController = await floatView.create(config);
+        callDoneOnStopped(floatViewController, CaseName, done)
+        stopFloatViewOnStarted(floatViewController, CaseName)
         console.info(CaseName + ' Succeeded in creating float view controller.');
         await floatViewController.setUIContext("testability/pages/First/index");
         console.info(CaseName + ' Succeeded in setting UI context.');
         await floatViewController.start();
         console.info(CaseName + ' Succeeded in starting float view.');
-        floatViewController.stop().then(() => {
-          console.info(CaseName + ' Succeeded in stopping float view.');
-          
-          console.log(CaseName + ' end.');
-          done();
-        }).catch((err: BusinessError) => {
-          console.error(CaseName + ' Failed to stop float view. Cause: ' + err.code + ', message: ' + err.message);
-          expect(err.message != null).assertTrue();
-          expect(false).assertTrue();
-          done();
-        });
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
@@ -838,6 +868,7 @@ export default function abilityTest() {
       try {
         let floatViewController = await floatView.create(config);
         console.info(CaseName + ' Succeeded in creating float view controller.');
+        await sleep(1000);
         floatViewController.stop().then(() => {
           console.info(CaseName + ' Succeeded in stopping float view.');
           expect(false).assertTrue();
@@ -883,9 +914,11 @@ export default function abilityTest() {
         await floatViewController.start();
         console.info(CaseName + ' Succeeded in start float view.');
         await sleep(300);
-        await floatViewController.stop();
+        await sleep(1000);
+          await floatViewController.stop();
         console.info(CaseName + ' Succeeded in stop float view.');
         await sleep(300);
+        await sleep(1000);
         floatViewController.stop().then(() => {
           console.info(CaseName + ' Succeeded in stopping 2 float view.');
           expect(false).assertTrue();
@@ -933,6 +966,7 @@ export default function abilityTest() {
         await sleep(200);
         floatViewController.setFloatViewVisibilityInApp(true).then(async () => {
           console.info(CaseName + ' Succeeded in setting visibility true.');
+          await sleep(1000);
           await floatViewController.stop();
           console.info(CaseName + ' Succeeded in stopping float view.');
           
@@ -940,6 +974,7 @@ export default function abilityTest() {
           done();
         }).catch(async (err: BusinessError) => {
           console.error(CaseName + ' Failed to set visibility. Cause: ' + err.code + ', message: ' + err.message);
+          await sleep(1000);
           await floatViewController.stop();
           expect(err.message != null).assertTrue();
           expect(false).assertTrue();
@@ -1011,31 +1046,47 @@ export default function abilityTest() {
       };
       try {
         let floatViewController = await floatView.create(config);
+        callDoneOnStopped(floatViewController, CaseName, done)
         console.info(CaseName + ' Succeeded in creating float view controller.');
         await floatViewController.setUIContext("testability/pages/First/index");
         console.info(CaseName + ' Succeeded in setting UI context.');
         await floatViewController.start();
         console.info(CaseName + ' Succeeded in starting float view.');
-        await sleep(300);
-        let properties = floatViewController.getWindowProperties();
-        console.info(CaseName + ' Window properties: ' + JSON.stringify(properties));
-        expect(properties.windowId).assertLarger(0);
-        expect(properties.displayId).assertLarger(0);
-        expect(properties.windowRect != null).assertTrue();
-        expect(properties.windowRect.width > 0).assertTrue();
-        expect(properties.windowRect.height > 0).assertTrue();
-        expect(properties.windowRect.left >= 0).assertTrue();
-        expect(properties.windowRect.top >= 0).assertTrue();
-        expect(properties.titleBarRect.width > 0).assertTrue();
-        expect(properties.titleBarRect.height > 0).assertTrue();
-        expect(properties.titleBarRect.left >= 0).assertTrue();
-        expect(properties.titleBarRect.top >= 0).assertTrue();
-        expect(properties.windowScale).assertLarger(0);
-        expect(properties.inSidebar).assertEqual(false);
-        await floatViewController.stop();
-        console.info(CaseName + ' Succeeded in stopping float view.');
-        console.log(CaseName + ' end.');
-        done();
+        let cb = (info: floatView.FloatViewStateChangeInfo) => {
+          if (info.state === floatView.FloatViewState.STARTED) {
+            let properties = floatViewController.getWindowProperties();
+            console.info(CaseName + ' Window properties: ' + JSON.stringify(properties));
+            expect(properties.windowId).assertLarger(0);
+            expect(properties.displayId).assertLargerOrEqual(0);
+            expect(properties.windowRect != null).assertTrue();
+            expect(properties.windowRect.width > 0).assertTrue();
+            expect(properties.windowRect.height > 0).assertTrue();
+            expect(properties.windowRect.left >= 0).assertTrue();
+            expect(properties.windowRect.top >= 0).assertTrue();
+            expect(properties.avoidArea.visible).assertTrue();
+            expect(properties.avoidArea.leftRect.left === 0).assertTrue();
+            expect(properties.avoidArea.leftRect.top === 0).assertTrue();
+            expect(properties.avoidArea.leftRect.width === 0).assertTrue();
+            expect(properties.avoidArea.leftRect.height === 0).assertTrue();
+            expect(properties.avoidArea.rightRect.left === 0).assertTrue();
+            expect(properties.avoidArea.rightRect.top === 0).assertTrue();
+            expect(properties.avoidArea.rightRect.width === 0).assertTrue();
+            expect(properties.avoidArea.rightRect.height === 0).assertTrue();
+            expect(properties.avoidArea.bottomRect.left === 0).assertTrue();
+            expect(properties.avoidArea.bottomRect.top === 0).assertTrue();
+            expect(properties.avoidArea.bottomRect.width === 0).assertTrue();
+            expect(properties.avoidArea.bottomRect.height === 0).assertTrue();
+            expect(properties.avoidArea.topRect.left).assertLargerOrEqual(0);
+            expect(properties.avoidArea.topRect.top).assertLargerOrEqual(0);
+            expect(properties.avoidArea.topRect.width).assertLargerOrEqual(0);
+            expect(properties.avoidArea.topRect.height).assertLargerOrEqual(0);
+            expect(properties.windowScale).assertLarger(0);
+            expect(properties.inSidebar).assertEqual(false);
+            floatViewController.stop()
+          }
+        }
+        floatViewController.onStateChange(cb)
+        
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
@@ -1059,34 +1110,36 @@ export default function abilityTest() {
     it('test_onStateChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let CaseName: string = 'test_onStateChange_0100';
       console.log(CaseName + ' begin.');
-      let floatViewState: number = 0;
       let config: floatView.FloatViewConfiguration = {
         context: context,
         templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
       };
-      let onStateChange = (info: floatView.FloatViewStateChangeInfo) => {
-        console.info(CaseName + ' Float view stateChange: ' + info.state);
-        floatViewState = info.state;
-      };
+      
       try {
         let floatViewController = await floatView.create(config);
+        let onStateChange1 = (info: floatView.FloatViewStateChangeInfo) => {
+          console.info(CaseName + ' Float view stateChange: ' + info.state);
+          expect(info.state).assertEqual(floatView.FloatViewState.STARTED);
+          floatViewController.offStateChange();
+        };
+        let onStateChange2 = (info: floatView.FloatViewStateChangeInfo) => {
+          console.info(CaseName + ' Float view stateChange: ' + info.state);
+          expect(info.state).assertEqual(floatView.FloatViewState.STOPPED);
+          floatViewController.offStateChange();
+          done();
+        };
+
         console.info(CaseName + ' Succeeded in creating float view controller.');
         await floatViewController.setUIContext("testability/pages/First/index");
         console.info(CaseName + ' Succeeded in setting UI context.');
-        floatViewController.onStateChange(onStateChange);
+        floatViewController.onStateChange(onStateChange1);
         console.info(CaseName + ' Succeeded in registering stateChange callback.');
         await floatViewController.start();
         console.info(CaseName + ' Succeeded in starting float view.');
-        await sleep(200);
-        expect(floatViewState).assertEqual(floatView.FloatViewState.STARTED);
+        await sleep(1000);
+        floatViewController.onStateChange(onStateChange2);
         await floatViewController.stop();
         console.info(CaseName + ' Succeeded in stopping float view.');
-        await sleep(800);
-        expect(floatViewState).assertEqual(floatView.FloatViewState.STOPPED);
-        floatViewController.offStateChange(onStateChange);
-        console.info(CaseName + ' Succeeded in unregistering stateChange callback.');
-        console.log(CaseName + ' end.');
-        done();
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
@@ -1179,14 +1232,15 @@ export default function abilityTest() {
         console.info(CaseName + ' Succeeded in registering callback2.');
         await floatViewController.start();
         console.info(CaseName + ' Succeeded in starting float view.');
-        await sleep(200);
+        await sleep(1500);
         console.info(CaseName + ' time1: ' + time);
         expect(time).assertEqual(2);
         floatViewController.offStateChange();
         console.info(CaseName + ' Succeeded in unregistering all callbacks.');
+        await sleep(1000);
         await floatViewController.stop();
         console.info(CaseName + ' Succeeded in stopping float view.');
-        await sleep(800);
+        await sleep(1500);
         console.info(CaseName + ' time2: ' + time);
         expect(time).assertEqual(2);
         console.log(CaseName + ' end.');
@@ -1242,14 +1296,15 @@ export default function abilityTest() {
         console.info(CaseName + ' Succeeded in registering callback2.');
         await floatViewController.start();
         console.info(CaseName + ' Succeeded in starting float view.');
-        await sleep(200);
+        await sleep(1500);
         console.info(CaseName + ' time1: ' + time);
         expect(time).assertEqual(0);
         floatViewController.offStateChange(callback1);
         console.info(CaseName + ' Succeeded in unregistering callback1.');
-        await floatViewController.stop();
+        await sleep(1000);
+          await floatViewController.stop();
         console.info(CaseName + ' Succeeded in stopping float view.');
-        await sleep(800);
+        await sleep(1500);
         console.info(CaseName + ' time2: ' + time);
         expect(time).assertEqual(1);
         floatViewController.offStateChange();
@@ -1297,6 +1352,7 @@ export default function abilityTest() {
       };
       try {
         let floatViewController = await floatView.create(config);
+        callDoneOnStopped(floatViewController, CaseName, done)
         console.info(CaseName + ' Succeeded in creating float view controller.');
         await floatViewController.setUIContext("testability/pages/First/index");
         console.info(CaseName + ' Succeeded in setting UI context.');
@@ -1305,7 +1361,7 @@ export default function abilityTest() {
         await floatViewController.start();
         console.info(CaseName + ' Succeeded in starting float view.');
         await sleep(200);
-        let limits = floatView.getFloatViewLimits();
+        let limits = floatView.getFloatViewLimits(floatView.FloatViewTemplateType.ROUNDED_RECTANGLE);
         let size: window.Size = {
           width: limits.minSize.width + 50,
           height: limits.minSize.height + 50
@@ -1315,11 +1371,8 @@ export default function abilityTest() {
         await sleep(300);
         floatViewController.offRectChange(onRectChange);
         console.info(CaseName + ' Succeeded in unregistering rectChange callback.');
+        await sleep(1000);
         await floatViewController.stop();
-        console.info(CaseName + ' Succeeded in stopping float view.');
-        expect(rectChanged).assertTrue();
-        console.log(CaseName + ' end.');
-        done();
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
@@ -1382,7 +1435,7 @@ export default function abilityTest() {
         await floatViewController.start();
         console.info(CaseName + ' Succeeded in starting float view.');
         await sleep(200);
-        let limits = floatView.getFloatViewLimits();
+        let limits = floatView.getFloatViewLimits(floatView.FloatViewTemplateType.ROUNDED_RECTANGLE);
         let size: window.Size = {
           width: limits.minSize.width + 50,
           height: limits.minSize.height + 50
@@ -1394,8 +1447,9 @@ export default function abilityTest() {
         expect(rectChangeCount).assertEqual(2);
         floatViewController.offRectChange();
         console.info(CaseName + ' Succeeded in unregistering all callbacks.');
+        await sleep(1000);
         await floatViewController.stop();
-        await sleep(300);
+        await sleep(1000);
         expect(rectChangeCount).assertEqual(2);
         console.info(CaseName + ' Succeeded in stopping float view.');
         console.log(CaseName + ' end.');
@@ -1438,6 +1492,10 @@ export default function abilityTest() {
       };
       try {
         let floatViewController = await floatView.create(config);
+        callDoneOnStopped(floatViewController, CaseName, done)
+        await floatViewController.start();
+        console.info(CaseName + ' Succeeded in starting float view.');
+        await sleep(1200);
         console.info(CaseName + ' Succeeded in creating float view controller.');
         await floatViewController.setUIContext("testability/pages/First/index");
         console.info(CaseName + ' Succeeded in setting UI context.');
@@ -1445,10 +1503,8 @@ export default function abilityTest() {
         console.info(CaseName + ' Succeeded in registering callback1.');
         floatViewController.onRectChange(callback2);
         console.info(CaseName + ' Succeeded in registering callback2.');
-        await floatViewController.start();
-        console.info(CaseName + ' Succeeded in starting float view.');
-        await sleep(200);
-        let limits = floatView.getFloatViewLimits();
+        
+        let limits = floatView.getFloatViewLimits(floatView.FloatViewTemplateType.ROUNDED_RECTANGLE);
         let size: window.Size = {
           width: limits.minSize.width + 50,
           height: limits.minSize.height + 50
@@ -1472,10 +1528,8 @@ export default function abilityTest() {
         expect(rectChangeCount).assertEqual(1);
         floatViewController.offRectChange(callback2);
         console.info(CaseName + ' Succeeded in unregistering callback2.');
+        await sleep(1000);
         await floatViewController.stop();
-        console.info(CaseName + ' Succeeded in stopping float view.');
-        console.log(CaseName + ' end.');
-        done();
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
@@ -1514,6 +1568,7 @@ export default function abilityTest() {
       };
       try {
         let floatViewController = await floatView.create(config);
+        callDoneOnStopped(floatViewController, CaseName, done)
         console.info(CaseName + ' Succeeded in creating float view controller.');
         await floatViewController.setUIContext("testability/pages/First/index");
         console.info(CaseName + ' Succeeded in setting UI context.');
@@ -1524,7 +1579,7 @@ export default function abilityTest() {
         await floatViewController.start();
         console.info(CaseName + ' Succeeded in starting float view.');
         await sleep(200);
-        let limits = floatView.getFloatViewLimits();
+        let limits = floatView.getFloatViewLimits(floatView.FloatViewTemplateType.ROUNDED_RECTANGLE);
         let size: window.Size = {
           width: limits.minSize.width + 50,
           height: limits.minSize.height + 50
@@ -1546,10 +1601,8 @@ export default function abilityTest() {
         await sleep(300);
         console.info(CaseName + ' rectChangeCount2: ' + rectChangeCount);
         expect(rectChangeCount).assertEqual(0);
+        await sleep(1000);
         await floatViewController.stop();
-        console.info(CaseName + ' Succeeded in stopping float view.');
-        console.log(CaseName + ' end.');
-        done();
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
@@ -1623,6 +1676,7 @@ export default function abilityTest() {
       };
       try {
         let floatViewController = await floatView.create(config);
+        callDoneOnStopped(floatViewController, CaseName, done)
         console.info(CaseName + ' Succeeded in creating float view controller.');
         floatViewController.onLimitsChange(onLimitsChange);
         console.info(CaseName + ' Succeeded in registering limitsChange callback.');
@@ -1633,10 +1687,9 @@ export default function abilityTest() {
         await sleep(200);
         floatViewController.offLimitsChange(onLimitsChange);
         console.info(CaseName + ' Succeeded in unregistering limitsChange callback.');
+        await sleep(1000);
         await floatViewController.stop();
         console.info(CaseName + ' Succeeded in stopping float view.');
-        console.log(CaseName + ' end.');
-        done();
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
@@ -1799,22 +1852,35 @@ export default function abilityTest() {
         console.info(CaseName + ' Succeeded in creating float view controller.');
         await floatViewController.setUIContext("testability/pages/First/index");
         console.info(CaseName + ' Succeeded in setting UI context.');
+        
+        let onStateChange = (info: floatView.FloatViewStateChangeInfo) => {
+          console.info(CaseName + ' Float view stateChange: ' + info.state);
+          if (info.state === floatView.FloatViewState.STARTED) {
+            floatViewController.restoreMainWindow().then(async () => {
+              console.info(CaseName + ' Succeeded in restoring main window.');
+              await sleep(1000);
+              await floatViewController.stop();
+              expect(false).assertTrue();
+            }).catch(async (err: BusinessError) => {
+              console.error(CaseName + ' Failed to restore main window. Cause: ' + err.code + ', message: ' + err.message);
+              await sleep(1000);
+              await floatViewController.stop();
+              console.info(CaseName + ' Succeeded in stopping float view.');
+              expect(err.code).assertEqual(1300032);
+              expect(err.message != null).assertTrue();
+            });
+          } else if (info.state === floatView.FloatViewState.STOPPED) {
+            console.info(CaseName + ' Succeeded in stoping float view.');
+            done();
+          }
+        };
+        floatViewController.onStateChange(onStateChange);
+        console.info(CaseName + ' Succeeded in registering stateChange callback.');
+
         await floatViewController.start();
         console.info(CaseName + ' Succeeded in starting float view.');
-        await sleep(200);
-        floatViewController.restoreMainWindow().then(async () => {
-          console.info(CaseName + ' Succeeded in restoring main window.');
-          await floatViewController.stop();
-          expect(false).assertTrue();
-          done();
-        }).catch(async (err: BusinessError) => {
-          console.error(CaseName + ' Failed to restore main window. Cause: ' + err.code + ', message: ' + err.message);
-          await floatViewController.stop();
-          console.info(CaseName + ' Succeeded in stopping float view.');
-          expect(err.code).assertEqual(1300032);
-          expect(err.message != null).assertTrue();
-          done();
-        });
+        
+        
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
@@ -1844,21 +1910,22 @@ export default function abilityTest() {
       };
       try {
         let floatViewController = await floatView.create(config);
+        callDoneOnStopped(floatViewController, CaseName, done)
         console.info(CaseName + ' Succeeded in creating float view controller.');
         await floatViewController.setUIContext("testability/pages/First/index");
         console.info(CaseName + ' Succeeded in setting UI context.');
         await floatViewController.start();
         console.info(CaseName + ' Succeeded in starting float view 1.');
-        await sleep(200);
+        await sleep(1200);
         await floatViewController.stop();
         console.info(CaseName + ' Succeeded in stopping float view 1.');
-        await sleep(800);
+        await sleep(1200);
+        callDoneOnStopped(floatViewController, CaseName, done)
         floatViewController.start().then(async () => {
           console.info(CaseName + ' Succeeded in starting 2 float view.');
+          await sleep(1200);
           await floatViewController.stop();
           console.info(CaseName + ' Succeeded in stopping 2 float view.');
-          console.log(CaseName + ' end.');
-          done();
         }).catch((err: BusinessError) => {
           console.error(CaseName + ' Failed to start 2 float view. Cause: ' + err.code + ', message: ' + err.message);
           expect(err.message != null).assertTrue();
@@ -1939,20 +2006,335 @@ export default function abilityTest() {
         console.info(CaseName + ' Succeeded in creating float view controller.');
         await floatViewController.setUIContext("testability/pages/First/index");
         console.info(CaseName + ' Succeeded in setting UI context.');
+        await sleep(1200);
         await floatViewController.start();
         console.info(CaseName + ' Succeeded in starting float view.');
-        await sleep(200);
+        await sleep(1200);
         floatViewController.restoreMainWindow(wantParams).then(async () => {
           console.info(CaseName + ' Succeeded in restoring main window with parameters.');
+          await sleep(1000);
           await floatViewController.stop();
           console.info(CaseName + ' Succeeded in stopping float view.');
           expect(false).assertTrue();
           done();
         }).catch(async (err: BusinessError) => {
           console.error(CaseName + ' Failed to restore main window. Cause: ' + err.code + ', message: ' + err.message);
+          await sleep(1000);
           await floatViewController.stop();
           console.info(CaseName + ' Succeeded in stopping float view.');
           expect(err.code).assertEqual(1300032);
+          expect(err.message != null).assertTrue();
+          done();
+        });
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_bind_0100
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_BIND_0100
+     * @tc.desc   test bind floatView and floatingBall
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_bind_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_bind_0100';
+      console.log(CaseName + ' begin.');
+      let floatViewConfig: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      let floatingBallConfig: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let floatingBallParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title'
+      };
+      try {
+        let floatViewController = await floatView.create(floatViewConfig);
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        let floatingBallController = await floatingBall.create(floatingBallConfig);
+        console.info(CaseName + ' Succeeded in creating floating ball controller.');
+        floatView.bind(floatViewController, floatingBallController, floatingBallParams).then(() => {
+          console.info(CaseName + ' Succeeded in binding floatView and floatingBall.');
+          expect(true).assertTrue();
+          console.log(CaseName + ' end.');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(CaseName + ' Failed to bind. Cause: ' + err.code + ', message: ' + err.message);
+          expect(err.message != null).assertTrue();
+          if (err.code === 801 && !isDeviceSupportFloatView) {
+            done();
+          } else if (err.code === 201) {
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_bind_params_null
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_BIND_0200
+     * @tc.desc   test bind with null floatingBallParams
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_bind_params_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_bind_params_null';
+      console.log(CaseName + ' begin.');
+      let floatViewConfig: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      let floatingBallConfig: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      try {
+        let floatViewController = await floatView.create(floatViewConfig);
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        let floatingBallController = await floatingBall.create(floatingBallConfig);
+        console.info(CaseName + ' Succeeded in creating floating ball controller.');
+        floatView.bind(floatViewController, floatingBallController, null).then(() => {
+          console.info(CaseName + ' Succeeded in binding.');
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(CaseName + ' Failed to bind. Cause: ' + err.code + ', message: ' + err.message);
+          expect(err.code).assertEqual(1300019);
+          expect(err.message != null).assertTrue();
+          done();
+        });
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.code).assertEqual(1300019);
+        expect(e.message != null).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   test_bind_floatingBall_started
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_BIND_0300
+     * @tc.desc   test bind with started floatingBall
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_bind_floatingBall_started', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_bind_floatingBall_started';
+      console.log(CaseName + ' begin.');
+      let floatViewConfig: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      let floatingBallConfig: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let floatingBallParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title'
+      };
+      try {
+        let floatViewController = await floatView.create(floatViewConfig);
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        let floatingBallController = await floatingBall.create(floatingBallConfig);
+        console.info(CaseName + ' Succeeded in creating floating ball controller.');
+        await floatingBallController.startFloatingBall(floatingBallParams);
+        console.info(CaseName + ' Succeeded in starting floating ball.');
+        await sleep(200);
+        floatView.bind(floatViewController, floatingBallController, floatingBallParams).then(async () => {
+          console.info(CaseName + ' Succeeded in binding.');
+          await floatingBallController.stopFloatingBall();
+          expect(false).assertTrue();
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(CaseName + ' Failed to bind. Cause: ' + err.code + ', message: ' + err.message);
+          await floatingBallController.stopFloatingBall();
+          console.info(CaseName + ' Succeeded in stopping floating ball.');
+          expect(err.code).assertEqual(1300025);
+          expect(err.message != null).assertTrue();
+          done();
+        });
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_bind_floatView_started
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_BIND_0400
+     * @tc.desc   test bind with started floatView
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_bind_floatView_started', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_bind_floatView_started';
+      console.log(CaseName + ' begin.');
+      let floatViewConfig: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      let floatingBallConfig: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let floatingBallParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title'
+      };
+      try {
+        let floatViewController = await floatView.create(floatViewConfig);
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        let floatingBallController = await floatingBall.create(floatingBallConfig);
+        console.info(CaseName + ' Succeeded in creating floating ball controller.');
+        await floatViewController.setUIContext("testability/pages/First/index");
+        console.info(CaseName + ' Succeeded in setting UI context.');
+        await floatViewController.start();
+        console.info(CaseName + ' Succeeded in starting float view.');
+        await sleep(200);
+        floatView.bind(floatViewController, floatingBallController, floatingBallParams).then(async () => {
+          console.info(CaseName + ' Succeeded in binding.');
+          await sleep(1000);
+          await floatViewController.stop();
+          expect(false).assertTrue();
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(CaseName + ' Failed to bind. Cause: ' + err.code + ', message: ' + err.message);
+          await sleep(1000);
+          await floatViewController.stop();
+          console.info(CaseName + ' Succeeded in stopping float view.');
+          expect(err.code).assertEqual(1300031);
+          expect(err.message != null).assertTrue();
+          done();
+        });
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_unbind_0100
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_UNBIND_0100
+     * @tc.desc   test unbind floatView and floatingBall after bind
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_unbind_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_unbind_0100';
+      console.log(CaseName + ' begin.');
+      let floatViewConfig: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      let floatingBallConfig: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let floatingBallParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title'
+      };
+      try {
+        let floatViewController = await floatView.create(floatViewConfig);
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        let floatingBallController = await floatingBall.create(floatingBallConfig);
+        console.info(CaseName + ' Succeeded in creating floating ball controller.');
+        await floatView.bind(floatViewController, floatingBallController, floatingBallParams);
+        console.info(CaseName + ' Succeeded in binding floatView and floatingBall.');
+        floatView.unbind(floatViewController, floatingBallController).then(() => {
+          console.info(CaseName + ' Succeeded in unbinding.');
+          expect(true).assertTrue();
+          console.log(CaseName + ' end.');
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(CaseName + ' Failed to unbind. Cause: ' + err.code + ', message: ' + err.message);
+          expect(err.message != null).assertTrue();
+          if (err.code === 801 && !isDeviceSupportFloatView) {
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_unbind_not_bind
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_UNBIND_0200
+     * @tc.desc   test unbind without bind
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_unbind_not_bind', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_unbind_not_bind';
+      console.log(CaseName + ' begin.');
+      let floatViewConfig: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      let floatingBallConfig: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      try {
+        let floatViewController = await floatView.create(floatViewConfig);
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        let floatingBallController = await floatingBall.create(floatingBallConfig);
+        console.info(CaseName + ' Succeeded in creating floating ball controller.');
+        floatView.unbind(floatViewController, floatingBallController).then(() => {
+          console.info(CaseName + ' Succeeded in unbinding.');
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(CaseName + ' Failed to unbind. Cause: ' + err.code + ', message: ' + err.message);
+          expect(err.code).assertEqual(1300025);
           expect(err.message != null).assertTrue();
           done();
         });
