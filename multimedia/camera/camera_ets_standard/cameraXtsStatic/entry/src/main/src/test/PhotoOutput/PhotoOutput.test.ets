@@ -1351,6 +1351,45 @@ export default function PhotoOutputToStaticTest():void {
             } else {
               console.info(TAG,
                 testName + ' succeed to listen photoAssetAvailable on, photoAsset: ' + JSON.stringify(photoAsset));
+              mPhotoOutput?.offPhotoAssetAvailable();
+              expect(photoAsset == null).assertFalse();
+            }
+          });
+          await mPhotoOutput!.capture();
+          await releasePhotoSession();
+        }
+        done();
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        await releasePhotoSession();
+        done();
+      }
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PHOTOOUTPUT_on_photoAvailable_listen_static_0100
+     * @tc.number SUB_MULTIMEDIA_PHOTOOUTPUT_on_photoAvailable_listen_static_0100
+     * @tc.desc   No abnormal scenarios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PHOTOOUTPUT_on_photoAvailable_listen_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const testName = 'SUB_MULTIMEDIA_PHOTOOUTPUT_on_photoAvailable_listen_static_0100';
+      console.info(TAG, testName + ' begin.');
+      try {
+        if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
+          console.info(TAG, testName + ' cameraManager is null.');
+          expect().assertFail();
+        } else {
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+          mPhotoOutput?.onPhotoAvailable((error, mPhoto) => {
+            if (error !== undefined && error!.code !== 0) {
+              expect().assertFail();
+            } else {
+              console.info(TAG,
+                testName + ' succeed to listen photoAssetAvailable on, photoAsset: ' + JSON.stringify(photoAsset));
               mPhotoOutput?.offPhotoAvailable();
               expect(photoAsset == null).assertFalse();
             }
@@ -1366,17 +1405,16 @@ export default function PhotoOutputToStaticTest():void {
         done();
       }
     })
-
     /**
-     * @tc.name   SUB_MULTIMEDIA_PHOTOOUTPUT_ON_PHOTOAVAILABLE_LISTEN_STATIC_0100
-     * @tc.number SUB_MULTIMEDIA_PHOTOOUTPUT_ON_PHOTOAVAILABLE_LISTEN_STATIC_0100
+     * @tc.name   SUB_MULTIMEDIA_PHOTOOUTPUT_ON_CAPTUREPHOTOAVAILABLE_LISTEN_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_PHOTOOUTPUT_ON_CAPTUREPHOTOAVAILABLE_LISTEN_STATIC_0100
      * @tc.desc   No abnormal scenarios
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_PHOTOOUTPUT_ON_PHOTOAVAILABLE_LISTEN_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const testName = 'SUB_MULTIMEDIA_PHOTOOUTPUT_ON_PHOTOAVAILABLE_LISTEN_STATIC_0100';
+    it('SUB_MULTIMEDIA_PHOTOOUTPUT_ON_CAPTUREPHOTOAVAILABLE_LISTEN_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const testName = 'SUB_MULTIMEDIA_PHOTOOUTPUT_ON_CAPTUREPHOTOAVAILABLE_LISTEN_STATIC_0100';
       console.info(TAG, testName + ' begin.');
       try {
         if (isEmptyCameraManager(mCameraManager) && isEmptyCameraDevice(mCameraDeviceArray)) {
