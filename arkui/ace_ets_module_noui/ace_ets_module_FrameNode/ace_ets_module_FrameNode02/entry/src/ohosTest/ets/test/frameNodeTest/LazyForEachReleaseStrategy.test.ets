@@ -18,9 +18,9 @@ import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayR
 import CommonFunc from '../../MainAbility/utils/Common';
 import {MessageManager,Callback} from '../../MainAbility/utils/MessageManager';
 export default function LazyForEachReleaseStrategyTest() {
-  describe('LazyForEachReleaseStrategy', () => {
+  describe('LazyForEachReleaseStrategyTest', () => {
     beforeEach(async (done: Function) => {
-      console.info("LazyForEachReleaseStrategy beforeEach start");
+      console.info("LazyForEachReleaseStrategyTest beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/frameNode/LazyForEachReleaseStrategy',
       }
@@ -42,7 +42,7 @@ export default function LazyForEachReleaseStrategyTest() {
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);
-      console.info(" LazyForEachReleaseStrategy after each called");
+      console.info("LazyForEachReleaseStrategy after each called");
     });
 
     /**
