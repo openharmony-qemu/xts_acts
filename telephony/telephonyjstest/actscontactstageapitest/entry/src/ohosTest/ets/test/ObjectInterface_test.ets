@@ -205,7 +205,7 @@ export default function ObjectInterfaceTest() {
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
-    */
+     */
     it("contactsApi_queryMyCard_test_100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
       if (HasCard()) {
@@ -232,7 +232,7 @@ export default function ObjectInterfaceTest() {
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
-    */
+     */
     it("contactsApi_queryMyCard_test_200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
       if (HasCard()) {
@@ -259,7 +259,7 @@ export default function ObjectInterfaceTest() {
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
-    */
+     */
     it("contactsApi_queryMyCard_test_300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
       if (HasCard()) {
