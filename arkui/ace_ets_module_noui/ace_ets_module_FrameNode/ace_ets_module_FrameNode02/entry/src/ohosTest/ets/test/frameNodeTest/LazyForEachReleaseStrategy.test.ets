@@ -99,7 +99,7 @@ export default function LazyForEachReleaseStrategyTest() {
       let strJson = getInspectorByKey('LazyForEach_Item_2');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[LazyForEachReleaseStrategyTest_0300] component obj is: " + JSON.stringify(obj));
-      expect(LazyForEachReleaseStrategy.Undefined).assertEqual('undefined');
+      expect(releaseStrategy).assertEqual(undefined);
       console.info('[LazyForEachReleaseStrategyTest_0300] END');
       done();
     });
