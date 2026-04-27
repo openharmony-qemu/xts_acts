@@ -53,7 +53,7 @@ export default function LazyForEachReleaseStrategyTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('lazyForEachReleaseStrategyTest_0100', Level.LEVEL0, async (done: Function) => {
+    it('SUB_ARKUI_API_LazyForEachReleaseStrategyTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ARKUI_API_LazyForEachReleaseStrategyTest_0100 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
