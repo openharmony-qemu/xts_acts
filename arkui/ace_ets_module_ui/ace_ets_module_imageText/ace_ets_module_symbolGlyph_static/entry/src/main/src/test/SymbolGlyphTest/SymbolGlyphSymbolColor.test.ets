@@ -80,7 +80,7 @@ export default function SymbolGlyphSymbolColorTest() {
  	  */
  	it('symbolGlyphSymbolColor_string_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
  	  console.info('[symbolGlyphSymbolColor_string_0100] START');
- 	  let strJson = inspector.getInspectorByKey('symbolGlyph_symbolColor_colorEnum');
+ 	  let strJson = inspector.getInspectorByKey('symbolGlyph_symbolColor_string');
       console.info('[symbolColor] =' + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontColor'));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontColor'))
         .assertEqual('#FFFF0000');
