@@ -21,6 +21,7 @@ import ApplySync001 from './uiutilsTest/ApplySync001.test';
 import FlushUpdates001 from './uiutilsTest/FlushUpdates001.test';
 import FlushErrorCode from './uiutilsTest/FlushErrorCode.test';
 import uiUtilsNullUndefinedTest from './uiutilsTest/UIUtilsNullUndefinedTest.test';
+import GlobalReusePoolTest from './uiutilsTest/GlobalReusePool.test';
 import getTarget1Test from './getTargetTest/getTarget1.test';
 import getTarget2Test from './getTargetTest/getTarget2.test';
 import getTarget3Test from './getTargetTest/getTarget3.test';
@@ -152,4 +153,5 @@ export default function testsuite() {
     persistStorageATest();
     Enum001();
     DecoratorInfoTest();
+    GlobalReusePoolTest();
 }
