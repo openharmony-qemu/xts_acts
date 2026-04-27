@@ -29,7 +29,7 @@ export async function HasCard(): Promise<boolean> {
         resolve(false);
       } else {
         console.info("before test data = " + JSON.stringify(data));
-        resolve(!!data);
+        resolve(data !== null && data !== undefined && Object.keys(data).length > 0);
       }
     });
   });
