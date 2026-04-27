@@ -2456,7 +2456,7 @@ export default function SevenPointZeroI18nStageTest() {
      */
     it('SUB_GLOBAL_I18N_DaylightSavingTime_Test_0100', Level.LEVEL2, () => {
       let date: Date = new Date(2027, 10, 10, 10, 20, 30, 123);
-      let timeZone:i18n.TimeZone = i18n.getTimeZone('Asia/Shanghai');
+      let timeZone: i18n.TimeZone = i18n.getTimeZone('Asia/Shanghai');
       let value: boolean = timeZone.isDaylightSavingTime(date);
       console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_0100 value:', value);
       expect(value).assertEqual(false);
