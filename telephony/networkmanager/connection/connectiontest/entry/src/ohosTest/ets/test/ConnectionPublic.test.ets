@@ -13,12 +13,27 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType, beforeAll, beforeEach, afterAll, afterEach } from '@ohos/hypium';
 import connection from '@ohos.net.connection';
 import { BusinessError } from '@ohos.base';
 import socket from '@ohos.net.socket';
+import { Driver, ON, MatchPattern } from '@ohos.UiTest';
 import {common } from '@kit.AbilityKit';
 import {policy } from '@kit.NetworkKit';
+
+export async function clickRequestPermission(mess: string): Promise<void> {
+  try {
+    console.info('connection clickRequestPermission start');
+    let driver = Driver.create();
+    let permissionButton = await driver.waitForComponent(ON.text(mess, MatchPattern.CONTAINS), 2000);
+    if (permissionButton !== null) {
+      await permissionButton.click();
+      console.info('connection clickRequestPermission end');
+    }
+  } catch (err) {
+    console.info('connection clickRequestPermission failed');
+  }
+}
 
 const ExpectFail: () => void = () => {
   try {
@@ -82,6 +97,21 @@ function isValidIp(ip: string): boolean {
 
 export default function ConnectionPublicTest() {
   describe('ConnectionPublicTest', () => {
+
+    beforeAll(async (done: Function) => {
+      await clickRequestPermission("使用");
+      await sleep(2000);
+      console.info('beforeAllTest start');
+    });
+    beforeEach(() => {
+      console.info('beforeEachTest start');
+    });
+    afterEach(() => {
+      console.info('afterEachTest start');
+    });
+    afterAll(() => {
+      console.info('afterAllTest start');
+    });
 
     /**
      * @tc.name   testNetworkMgrConnectionHasDefaultNet0100
@@ -10081,7 +10111,7 @@ export default function ConnectionPublicTest() {
     /**
      * @tc.name   testNetworkMgrConnectionTraceRoute1200
      * @tc.number SUB_NetworkMgr_Connection_TraceRoute_1200
-     * @tc.desc   Test the destination is "0.0.0.1"
+     * @tc.desc   Test the destination is "100.103.222.12"
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -10090,7 +10120,7 @@ export default function ConnectionPublicTest() {
       const caseName: string = "testNetworkMgrConnectionTraceRoute1200";
       console.info(`${caseName} test Start`);
       try {
-        let destination = "0.0.0.1";
+        let destination = "100.103.222.12";
         let option: connection.TraceRouteOptions = {
           maxJumpNumber: 30,
           packetsType: connection.PacketsType.NETCONN_PACKETS_ICMP,
@@ -10655,7 +10685,7 @@ export default function ConnectionPublicTest() {
     /**
      * @tc.name   testNetworkMgrConnectionQueryProbeResult0900
      * @tc.number SUB_NetworkMgr_Connection_QueryProbeResult_0900
-     * @tc.desc   Test the destination is "0.0.0.1"
+     * @tc.desc   Test the destination is "100.103.222.12"
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -10664,7 +10694,7 @@ export default function ConnectionPublicTest() {
       const caseName: string = "testNetworkMgrConnectionQueryProbeResult0900";
       console.info(`${caseName} test Start`);
       try {
-        let destination = "0.0.0.1";
+        let destination = "100.103.222.12";
         let duration = 6;
         connection.queryProbeResult(destination, duration).then((ProbeResultInfo: connection.ProbeResultInfo) => {
           console.info(`${caseName} ProbeResultInfo: ${JSON.stringify(ProbeResultInfo)}`);
