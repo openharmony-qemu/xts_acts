@@ -1285,22 +1285,6 @@ export default function SevenPointZeroI18nStageStaticTest() {
     })
 
     /**
-     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0600
-     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0600
-     * @tc.desc test getAppDefaultTimeZone with
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL2
-     */
-    it('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0600', Level.LEVEL2, () => {
-      let date: Date = new Date(2026, 0, 1, 10, 20, 30);
-      let iso = new i18n.ISO8601DateTimeFormat();
-      let value: string = iso.format(date);
-      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0600 value:', value);
-      expect(value).assertEqual('2026-01-01T02:20:30Z');
-    })
-
-    /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0700
      * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0700
      * @tc.desc test getAppDefaultTimeZone with calendar

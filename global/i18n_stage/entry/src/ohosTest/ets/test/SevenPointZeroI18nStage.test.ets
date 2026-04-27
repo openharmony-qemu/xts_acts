@@ -1279,7 +1279,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_test_0100
-     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_test_0100
+     * @tc.number SUB_GLOBAL_I18N_ISO8601DateTimeFormat_0100
      * @tc.desc test getAppDefaultTimeZone with Asia/Shanghai
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -1302,7 +1302,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_test_0200
-     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_test_0200
+     * @tc.number SUB_GLOBAL_I18N_ISO8601DateTimeFormat_0200
      * @tc.desc test getAppDefaultTimeZone with America/New_York
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -1325,7 +1325,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_test_0300
-     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_test_0300
+     * @tc.number SUB_GLOBAL_I18N_ISO8601DateTimeFormat_0300
      * @tc.desc test getAppDefaultTimeZone with Asia/Kolkata
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -1347,7 +1347,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_test_0400
-     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_test_0400
+     * @tc.number SUB_GLOBAL_I18N_ISO8601DateTimeFormat_0400
      * @tc.desc test getAppDefaultTimeZone with Africa/Cairo
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -1369,7 +1369,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_test_0500
-     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_test_0500
+     * @tc.number SUB_GLOBAL_I18N_ISO8601DateTimeFormat_0500
      * @tc.desc test getAppDefaultTimeZone with Asia/Riyadh
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -1391,7 +1391,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_test_0600
-     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_test_0600
+     * @tc.number SUB_GLOBAL_I18N_ISO8601DateTimeFormat_0600
      * @tc.desc test getAppDefaultTimeZone with
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -1407,7 +1407,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_test_0700
-     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_test_0700
+     * @tc.number SUB_GLOBAL_I18N_ISO8601DateTimeFormat_0700
      * @tc.desc test getAppDefaultTimeZone with calendar
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -1423,7 +1423,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_test_0800
-     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_test_0800
+     * @tc.number SUB_GLOBAL_I18N_ISO8601DateTimeFormat_0800
      * @tc.desc test getAppDefaultTimeZone with milliSeconds
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -1439,7 +1439,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_test_0900
-     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_test_0900
+     * @tc.number SUB_GLOBAL_I18N_ISO8601DateTimeFormat_0900
      * @tc.desc test getAppDefaultTimeZone with timeZone
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -1456,7 +1456,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_test_1000
-     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_test_1000
+     * @tc.number SUB_GLOBAL_I18N_ISO8601DateTimeFormat_1000
      * @tc.desc test getAppDefaultTimeZone with timeZone
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -1472,7 +1472,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_GetTimeZone_NullString_Test_1100
-     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_getTimeZone_nullString_test_1100
+     * @tc.number SUB_GLOBAL_I18N_ISO8601DateTimeFormat_1100
      * @tc.desc test getAppDefaultTimeZone with timeZone
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -1494,7 +1494,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_GetTimeZone_Null_Test_1200
-     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_getTimeZone_null_test_1200
+     * @tc.number SUB_GLOBAL_I18N_ISO8601DateTimeFormat_1200
      * @tc.desc test getAppDefaultTimeZone with timeZone
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -1516,7 +1516,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_GetTimeZone_Undefined_Test_1300
-     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_getTimeZone_undefined_test_1300
+     * @tc.number SUB_GLOBAL_I18N_ISO8601DateTimeFormat_1300
      * @tc.desc test getAppDefaultTimeZone with getTimeZone
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -1538,7 +1538,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_DateFormat_Undefined_Test_1400
-     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_dateFormat_undefined_Test_1400
+     * @tc.number SUB_GLOBAL_I18N_ISO8601DateTimeFormat_1400
      * @tc.desc test getAppDefaultTimeZone with dateFormat
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -1560,7 +1560,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_TimePrecision_Undefined_Test_1500
-     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_timePrecision_undefined_test_1500
+     * @tc.number SUB_GLOBAL_I18N_ISO8601DateTimeFormat_1500
      * @tc.desc test getAppDefaultTimeZone with timePrecision
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -1582,7 +1582,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_Format_Null_Test_1600
-     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_format_null_test_1600
+     * @tc.number SUB_GLOBAL_I18N_ISO8601DateTimeFormat_1600
      * @tc.desc test getAppDefaultTimeZone with format
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -1607,7 +1607,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_Format_Undefined_Test_1700
-     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_format_undefined_test_1700
+     * @tc.number SUB_GLOBAL_I18N_ISO8601DateTimeFormat_1700
      * @tc.desc test getAppDefaultTimeZone with format
      * @tc.type FUNCTION
      * @tc.size MEDIUM
@@ -1632,7 +1632,7 @@ export default function SevenPointZeroI18nStageTest() {
 
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_SeparatorStyle_Undefined_Test_1800
-     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_separatorStyle_undefined_test_1800
+     * @tc.number SUB_GLOBAL_I18N_ISO8601DateTimeFormat_1800
      * @tc.desc test getAppDefaultTimeZone with separatorStyle
      * @tc.type FUNCTION
      * @tc.size MEDIUM
