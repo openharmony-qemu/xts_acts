@@ -960,6 +960,8 @@ export default function SevenPointZeroI18nStageStaticTest() {
      * @tc.level  LEVEL2
      */
     it('i18n_setAppDefaultTimeZoneById_static_0100', Level.LEVEL2, async (): Promise<void> => {
+      let timeZone: i18n.TimeZone = i18n.getTimeZone();
+      let GetID: string = timeZone.getID();
       i18n.TimeZone.setAppDefaultTimeZoneById('Asia/Hong_Kong');
       let getAppTimeZone: i18n.TimeZone = i18n.TimeZone.getAppDefaultTimeZone();
       let value: string = getAppTimeZone.getID();
@@ -967,6 +969,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
       console.log('i18n_setAppDefaultTimeZoneById_static_0100 value:', value);
       expect(value).assertEqual('Asia/Hong_Kong');
       expect(value2).assertEqual('香港标准时间');
+      i18n.TimeZone.setAppDefaultTimeZoneById(GetID);
     })
 
     /**
@@ -978,6 +981,8 @@ export default function SevenPointZeroI18nStageStaticTest() {
      * @tc.level  LEVEL2
      */
     it('i18n_setAppDefaultTimeZoneById_static_0200', Level.LEVEL2, async (): Promise<void> => {
+      let timeZone: i18n.TimeZone = i18n.getTimeZone();
+      let GetID: string = timeZone.getID();
       i18n.TimeZone.setAppDefaultTimeZoneById('America/New_York');
       let getAppTimeZone: i18n.TimeZone = i18n.TimeZone.getAppDefaultTimeZone();
       let value: string = getAppTimeZone.getID();
@@ -985,6 +990,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
       console.log('i18n_setAppDefaultTimeZoneById_static_0200 value:', value);
       expect(value).assertEqual('America/New_York');
       expect(value2).assertEqual('北美东部时间');
+      i18n.TimeZone.setAppDefaultTimeZoneById(GetID);
     })
 
     /**
@@ -996,6 +1002,8 @@ export default function SevenPointZeroI18nStageStaticTest() {
      * @tc.level  LEVEL2
      */
     it('i18n_setAppDefaultTimeZoneById_static_0300', Level.LEVEL2, async (): Promise<void> => {
+      let timeZone: i18n.TimeZone = i18n.getTimeZone();
+      let GetID: string = timeZone.getID();
       i18n.TimeZone.setAppDefaultTimeZoneById('America/New_York');
       let getAppTimeZone: i18n.TimeZone = i18n.TimeZone.getAppDefaultTimeZone();
       let value: string = getAppTimeZone.getID();
@@ -1009,6 +1017,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
       let dateFormat = dateTimeFormat.format(date);
       console.log('i18n_setAppDefaultTimeZoneById_static_0300 value:', dateFormat);
       expect(dateFormat).assertEqual('2025年5月13日 GMT-4 上午12:30:00');
+      i18n.TimeZone.setAppDefaultTimeZoneById(GetID);
     })
 
     /**
