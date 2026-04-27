@@ -2446,6 +2446,187 @@ export default function SevenPointZeroI18nStageTest() {
       }
     })
 
+    /**
+     * @tc.name SUB_GLOBAL_I18N_DaylightSavingTime_Test_0100
+     * @tc.number SUB_GLOBAL_I18N_DaylightSavingTime_Test_0100
+     * @tc.desc test isDaylightSavingTime with date
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_I18N_DaylightSavingTime_Test_0100', Level.LEVEL2, () => {
+      let date: Date = new Date(2027, 10, 10, 10, 20, 30, 123);
+      let timeZone:i18n.TimeZone = i18n.getTimeZone('Asia/Shanghai');
+      let value: boolean = timeZone.isDaylightSavingTime(date);
+      console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_0100 value:', value);
+      expect(value).assertEqual(false);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_I18N_DaylightSavingTime_Test_0200
+     * @tc.number SUB_GLOBAL_I18N_DaylightSavingTime_Test_0200
+     * @tc.desc test isDaylightSavingTime with date
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_I18N_DaylightSavingTime_Test_0200', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 2, 29, 7, 59, 30, 123);
+      let timeZone:i18n.TimeZone = i18n.getTimeZone('Europe/Chisinau');
+      let value: boolean = timeZone.isDaylightSavingTime(date);
+      console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_0200 value:', value);
+      expect(value).assertEqual(false);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_I18N_DaylightSavingTime_Test_0300
+     * @tc.number SUB_GLOBAL_I18N_DaylightSavingTime_Test_0300
+     * @tc.desc test isDaylightSavingTime with date
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_I18N_DaylightSavingTime_Test_0300', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 2, 29, 9, 0, 0, 0);
+      let timeZone:i18n.TimeZone = i18n.getTimeZone('Europe/Chisinau');
+      let value: boolean = timeZone.isDaylightSavingTime(date);
+      console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_0300 value:', value);
+      expect(value).assertEqual(true);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_I18N_DaylightSavingTime_Test_0400
+     * @tc.number SUB_GLOBAL_I18N_DaylightSavingTime_Test_0400
+     * @tc.desc test isDaylightSavingTime with date
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_I18N_DaylightSavingTime_Test_0400', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 9, 25, 8, 59, 0, 0);
+      let timeZone:i18n.TimeZone = i18n.getTimeZone('Europe/Chisinau');
+      let value: boolean = timeZone.isDaylightSavingTime(date);
+      console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_0400 value:', value);
+      expect(value).assertEqual(true);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_I18N_DaylightSavingTime_Test_0500
+     * @tc.number SUB_GLOBAL_I18N_DaylightSavingTime_Test_0500
+     * @tc.desc test isDaylightSavingTime with date
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_I18N_DaylightSavingTime_Test_0500', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 9, 25, 9, 0, 0, 0);
+      let timeZone:i18n.TimeZone = i18n.getTimeZone('Europe/Chisinau');
+      let value: boolean = timeZone.isDaylightSavingTime(date);
+      console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_0500 value:', value);
+      expect(value).assertEqual(false);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_I18N_DaylightSavingTime_Test_0600
+     * @tc.number SUB_GLOBAL_I18N_DaylightSavingTime_Test_0600
+     * @tc.desc test isDaylightSavingTime with date
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_I18N_DaylightSavingTime_Test_0600', Level.LEVEL2, () => {
+      let date: Date = new Date(2024, 9, 6, 11, 0, 0, 0);
+      let timeZone:i18n.TimeZone = i18n.getTimeZone('America/Asuncion');
+      let value: boolean = timeZone.isDaylightSavingTime(date);
+      console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_0600 value:', value);
+      expect(value).assertEqual(false);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_I18N_DaylightSavingTime_Test_0700
+     * @tc.number SUB_GLOBAL_I18N_DaylightSavingTime_Test_0700
+     * @tc.desc test isDaylightSavingTime with date
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_I18N_DaylightSavingTime_Test_0700', Level.LEVEL2, () => {
+      let date: Date = new Date(2024, 9, 6, 12, 0, 0, 0);
+      let timeZone:i18n.TimeZone = i18n.getTimeZone('America/Asuncion');
+      let value: boolean = timeZone.isDaylightSavingTime(date);
+      console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_0700 value:', value);
+      expect(value).assertEqual(true);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_I18N_DaylightSavingTime_Test_0800
+     * @tc.number SUB_GLOBAL_I18N_DaylightSavingTime_Test_0800
+     * @tc.desc test isDaylightSavingTime with date
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_I18N_DaylightSavingTime_Test_0800', Level.LEVEL2, () => {
+      let date: Date = new Date(2025, 9, 6, 11, 0, 0, 0);
+      let timeZone:i18n.TimeZone = i18n.getTimeZone('America/Asuncion');
+      let value: boolean = timeZone.isDaylightSavingTime(date);
+      console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_0800 value:', value);
+      expect(value).assertEqual(false);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_I18N_DaylightSavingTime_Test_0900
+     * @tc.number SUB_GLOBAL_I18N_DaylightSavingTime_Test_0900
+     * @tc.desc test isDaylightSavingTime with date
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_I18N_DaylightSavingTime_Test_0900', Level.LEVEL2, () => {
+      let date: Date = new Date(2025, 9, 6, 1, 0, 0, 0);
+      let timeZone:i18n.TimeZone = i18n.getTimeZone();
+      let value: boolean = timeZone.isDaylightSavingTime(date);
+      console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_0900 value:', value);
+      expect(value).assertEqual(false);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_I18N_DaylightSavingTime_Test_1000
+     * @tc.number SUB_GLOBAL_I18N_DaylightSavingTime_Test_1000
+     * @tc.desc test isDaylightSavingTime with date
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_I18N_DaylightSavingTime_Test_1000', Level.LEVEL2, () => {
+      try {
+        let timeZone:i18n.TimeZone = i18n.getTimeZone();
+        let value: boolean = timeZone.isDaylightSavingTime(undefined);
+        console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_1000 value:', value);
+      } catch (e) {
+        console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_1000 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_I18N_DaylightSavingTime_Test_1100
+     * @tc.number SUB_GLOBAL_I18N_DaylightSavingTime_Test_1100
+     * @tc.desc test isDaylightSavingTime with date
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_I18N_DaylightSavingTime_Test_1100', Level.LEVEL2, () => {
+      try {
+        let timeZone:i18n.TimeZone = i18n.getTimeZone();
+        let value: boolean = timeZone.isDaylightSavingTime(null);
+        console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_1100 value:', value);
+      } catch (e) {
+        console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_1100 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(401);
+      }
+    })
 
   })
 }
