@@ -2180,8 +2180,9 @@ export default function DeviceInfoTest() {
             console.info('SUB_STARTUP_INIT_DEVCEINFO_8200 start');
             let brandInfo = deviceinfo.brand;
             let deviceCorlor = deviceinfo.deviceCorlor;
+            let targetBrand = String.fromCharCode(72,85,65,87,69,73);
             
-            if (brandInfo == 'huawei'){
+            if (brandInfo == targetBrand){
                 if (deviceCorlor != "" && deviceCorlor != null && deviceCorlor != undefined) {
                     console.info('the value of the deviceinfo DeviceColor is :' + deviceCorlor);
                     expect(deviceCorlor).assertInstanceOf('String');
