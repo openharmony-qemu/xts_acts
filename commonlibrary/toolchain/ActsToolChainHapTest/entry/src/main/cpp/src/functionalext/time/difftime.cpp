@@ -14,8 +14,8 @@
  */
 
 #include <cstdlib>
+#include <ctime>
 #include <dlfcn.h>
-#include <time.h>
 #include "difftime_data.h"
 #include "functionalext.h"
 

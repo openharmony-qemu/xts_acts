@@ -16,11 +16,11 @@
 #include <arpa/inet.h>
 #include <cctype>
 #include <cstdio>
+#include <cstdlib>
 #include <cstring>
 #include <dlfcn.h>
 #include <netinet/in.h>
 #include <pthread.h>
-#include <stdlib.h>
 #include <sys/socket.h>
 #include "functionalext.h"
 

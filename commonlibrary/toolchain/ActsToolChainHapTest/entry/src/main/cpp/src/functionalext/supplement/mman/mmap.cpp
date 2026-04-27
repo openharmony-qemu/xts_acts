@@ -395,7 +395,8 @@ void Mmap1100(void)
     EXPECT_NE("mmap_1100", fd, -1);
 
     int get = getpagesize() - 1;
-    start = mmap((void*)(&get), statbuff.st_size, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_DENYWRITE, fd, 0);
+    start = mmap(
+        reinterpret_cast<void*>(&get), statbuff.st_size, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_DENYWRITE, fd, 0);
     EXPECT_EQ("mmap_1100", back, SUCCESS);
     EXPECT_TRUE("mmap_1100", start != MAP_FAILED);
     mm = munmap(start, statbuff.st_size);

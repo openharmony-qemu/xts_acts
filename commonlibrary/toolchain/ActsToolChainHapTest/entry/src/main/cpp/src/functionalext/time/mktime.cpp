@@ -14,8 +14,8 @@
  */
 
 #include <cstdlib>
+#include <ctime>
 #include <dlfcn.h>
-#include <time.h>
 #include "functionalext.h"
 #include "mktime_data.h"
 #include "time64_functions.h"

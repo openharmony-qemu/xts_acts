@@ -32,7 +32,7 @@
 
 #define FORK(fpid)                     \
     do {                               \
-        if (fpid < 0) {                \
+        if ((fpid) < 0) {              \
             t_error("error in fork!"); \
         }                              \
     } while (0)

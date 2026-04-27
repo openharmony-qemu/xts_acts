@@ -116,7 +116,7 @@ void Ioctl0200(void)
         close(sockFd);
         return;
     }
-    struct sockaddr_in* srvAddr = (struct sockaddr_in*)&ifrAddr.ifr_addr;
+    struct sockaddr_in* srvAddr = reinterpret_cast<struct sockaddr_in*>(&ifrAddr.ifr_addr);
     EXPECT_STREQ("Ioctl0200", interAddr, inet_ntoa(srvAddr->sin_addr));
     close(sockFd);
 }

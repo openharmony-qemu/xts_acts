@@ -14,11 +14,11 @@
  */
 
 #include <arpa/inet.h>
+#include <cstdio>
 #include <cstdlib>
 #include <cstring>
 #include <ctime>
 #include <netinet/ip.h>
-#include <stdio.h>
 #include <sys/select.h>
 #include <sys/socket.h>
 #include <sys/wait.h>

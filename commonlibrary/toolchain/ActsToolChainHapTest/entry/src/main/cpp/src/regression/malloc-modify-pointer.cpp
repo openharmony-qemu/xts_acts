@@ -104,7 +104,7 @@ static int MallocModifyPointerTest_impl(int argc, char* argv[])
 
     sigemptyset(&set);
     sigaddset(&set, SIGCHLD);
-    sigprocmask(SIG_BLOCK, &set, 0);
+    sigprocmask(SIG_BLOCK, &set, nullptr);
     signal(SIGCHLD, handler);
     signal(SIGILL, SIG_DFL);
 
@@ -114,7 +114,7 @@ static int MallocModifyPointerTest_impl(int argc, char* argv[])
         return -1;
     }
     struct timespec timeout = { 5, 0 };
-    if (sigtimedwait(&set, 0, &timeout) == -1) {
+    if (sigtimedwait(&set, nullptr, &timeout) == -1) {
         if (errno == EAGAIN)
             flag = 1;
         else

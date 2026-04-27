@@ -29,9 +29,9 @@ void* getmntent_rOne(void* arg)
     if ((fptr = fopen("/proc/mounts", "r")) == nullptr) {
         t_error("%s Error! fopen failed\n", __func__);
     }
-    fscanf(fptr, "%[^\n]", c);
+    fscanf(fptr, "%999s", c);
     fclose(fptr);
-    sscanf(c, "%99[^ ]", str);
+    sscanf(c, "%99s", str);
     struct mntent* m = nullptr;
     struct mntent mntbuf;
     memset(&m, 0x00, sizeof(m));
@@ -58,7 +58,7 @@ void getmntent_r_0100(void)
 {
     pthread_t srv;
     pthread_t cli;
-    int ret = pthread_barrier_init(&g_barrier, 0, 2);
+    int ret = pthread_barrier_init(&g_barrier, nullptr, 2);
     EXPECT_EQ("getmntent_r_0100", 0, ret);
     ret = pthread_create(&srv, nullptr, getmntent_rOne, nullptr);
     EXPECT_EQ("getmntent_r_0100", 0, ret);

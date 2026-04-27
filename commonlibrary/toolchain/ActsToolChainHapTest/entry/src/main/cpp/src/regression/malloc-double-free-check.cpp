@@ -13,11 +13,11 @@
  * limitations under the License.
  */
 
+#include <cerrno>
+#include <csignal>
+#include <cstdlib>
 #include <cstring>
-#include <errno.h>
 #include <sigchain.h>
-#include <signal.h>
-#include <stdlib.h>
 #include <sys/wait.h>
 #include <unistd.h>
 #include "test.h"

@@ -13,12 +13,12 @@
  * limitations under the License.
  */
 
+#include <cstdio>
+#include <ctime>
 #include <dlfcn.h>
 #include <fcntl.h>
-#include <stdio.h>
 #include <sys/stat.h>
 #include <sys/time.h>
-#include <time.h>
 #include "test.h"
 
 using Utime64Func = int (*)(const char*, const struct timeval[2]);

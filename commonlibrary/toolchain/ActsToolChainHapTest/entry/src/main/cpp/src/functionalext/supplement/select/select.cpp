@@ -17,11 +17,11 @@
 #include <cstdint>
 #include <cstdio>
 #include <cstdlib>
+#include <ctime>
 #include <dlfcn.h>
 #include <fcntl.h>
 #include <sys/select.h>
 #include <sys/time.h>
-#include <time.h>
 #include <unistd.h>
 #include "functionalext.h"
 

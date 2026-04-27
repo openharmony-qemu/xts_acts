@@ -15,9 +15,11 @@
 
 #include <csignal>
 #include <cstdlib>
+#include <dlfcn.h>
 #include "functionalext.h"
 
-extern "C" void __stack_chk_fail(void);
+using StackChkFailFunc = void (*)();
+constexpr const char* STACK_CHK_FAIL_SYMBOL = "__stack_chk_fail";
 
 const int32_t INIT_LEN = 0;
 const int32_t INCREASE_LEN = 1;
@@ -47,12 +49,17 @@ static void Killfunc(int signu)
  */
 void a_stack_chk_fail_0100(void)
 {
+    StackChkFailFunc stackChkFail = reinterpret_cast<StackChkFailFunc>(dlsym(RTLD_DEFAULT, STACK_CHK_FAIL_SYMBOL));
+    if (stackChkFail == nullptr) {
+        t_error("%s dlsym __stack_chk_fail failed\n", __func__);
+        return;
+    }
     struct sigaction act, oldact;
     act.sa_handler = Killfunc;
     act.sa_flags = 0;
     sigaction(SIGILL, &act, &oldact);
     sigaction(SIGSEGV, &act, &oldact);
-    __stack_chk_fail();
+    stackChkFail();
     EXPECT_EQ("a_stack_chk_fail_0100", flag, INCREASE_LEN);
 }
 

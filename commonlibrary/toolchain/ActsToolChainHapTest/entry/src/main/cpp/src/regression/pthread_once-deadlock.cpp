@@ -15,8 +15,8 @@
 
 // commit: 7e6be42a77989c01155bdc7333ea58206e1563d4 2011-03-08
 // pthread_once should not deadlock
+#include <cerrno>
 #include <cstring>
-#include <errno.h>
 #include <pthread.h>
 #include <semaphore.h>
 #include "test.h"

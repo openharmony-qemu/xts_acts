@@ -16,10 +16,10 @@
 // commit 3af2edee150484940916eba1984f78c3b965dd05 2014-02-07
 // fix ftello result for append streams with unflushed output
 #include <cerrno>
+#include <cstdio>
 #include <cstdlib>
 #include <cstring>
 #include <fcntl.h>
-#include <stdio.h>
 #include <unistd.h>
 #include "libc_test_shim.h"
 

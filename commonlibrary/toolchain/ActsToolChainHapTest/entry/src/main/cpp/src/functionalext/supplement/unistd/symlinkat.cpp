@@ -14,10 +14,10 @@
  */
 
 #include <cerrno>
+#include <cstdio>
 #include <cstring>
 #include <dirent.h>
 #include <fcntl.h>
-#include <stdio.h>
 #include <sys/stat.h>
 #include <unistd.h>
 #include "test.h"

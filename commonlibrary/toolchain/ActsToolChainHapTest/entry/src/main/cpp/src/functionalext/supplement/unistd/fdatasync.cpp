@@ -58,6 +58,7 @@ void Fdatasync0200()
     int fd = open(PATH, O_RDWR | O_CREAT, TEST_MODE);
     EXPECT_NE("fdatasync_0100", fd, -1);
     close(fd);
+    fd = -1;
 
     int result = fdatasync(fd);
     EXPECT_EQ("fdatasync_0200", result, -1);

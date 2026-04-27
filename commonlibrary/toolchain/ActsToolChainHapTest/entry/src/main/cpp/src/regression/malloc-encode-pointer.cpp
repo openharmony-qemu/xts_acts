@@ -14,10 +14,10 @@
  */
 
 #include <cerrno>
+#include <csignal>
 #include <cstdlib>
 #include <cstring>
 #include <sigchain.h>
-#include <signal.h>
 #include <sys/wait.h>
 #include <unistd.h>
 #include "test.h"

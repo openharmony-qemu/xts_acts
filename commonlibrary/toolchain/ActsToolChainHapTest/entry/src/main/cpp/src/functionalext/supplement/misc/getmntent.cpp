@@ -25,18 +25,18 @@ void getmntent_0100(void)
 {
     char c[1000];
     char str[100];
-    FILE* fptr = NULL;
-    if ((fptr = fopen("/proc/mounts", "r")) == NULL) {
+    FILE* fptr = nullptr;
+    if ((fptr = fopen("/proc/mounts", "r")) == nullptr) {
         t_error("%s Error! fopen failed\n", __func__);
     }
-    fscanf(fptr, "%999[^\n]", c);
+    fscanf(fptr, "%999s", c);
     fclose(fptr);
-    sscanf(c, "%99[^ ]", str);
-    struct mntent* m = NULL;
+    sscanf(c, "%99s", str);
+    struct mntent* m = nullptr;
     FILE* ffp = setmntent("/proc/mounts", "r");
-    EXPECT_PTRNE("getmntent_0100", ffp, NULL);
+    EXPECT_PTRNE("getmntent_0100", ffp, nullptr);
     m = getmntent(ffp);
-    EXPECT_TRUE("getmntent_0100", m != NULL);
+    EXPECT_TRUE("getmntent_0100", m != nullptr);
     EXPECT_EQ("getmntent_0100", strcmp(m->mnt_fsname, str), 0);
 
     endmntent(ffp);
@@ -53,15 +53,15 @@ void getmntent_0200(void)
     char* str = "This is a test";
     static const char* path = "/data/storage/el2/base/cache/getmntent.txt";
     FILE* fp = fopen(path, "w");
-    EXPECT_PTRNE("getmntent_0200", fp, NULL);
+    EXPECT_PTRNE("getmntent_0200", fp, nullptr);
     fputs(str, fp);
     fclose(fp);
-    struct mntent* m = NULL;
+    struct mntent* m = nullptr;
     FILE* ffp = setmntent(path, "r");
-    EXPECT_PTRNE("getmntent_0200", ffp, NULL);
+    EXPECT_PTRNE("getmntent_0200", ffp, nullptr);
 
     m = getmntent(ffp);
-    EXPECT_EQ("getmntent_0200", m, NULL);
+    EXPECT_EQ("getmntent_0200", m, nullptr);
     endmntent(ffp);
     remove(path);
 }

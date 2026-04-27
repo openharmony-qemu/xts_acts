@@ -15,8 +15,8 @@
 
 #include <cerrno>
 #include <cstdio>
+#include <cstring>
 #include <sched.h>
-#include <string.h>
 #include "functionalext.h"
 #include "test.h"
 

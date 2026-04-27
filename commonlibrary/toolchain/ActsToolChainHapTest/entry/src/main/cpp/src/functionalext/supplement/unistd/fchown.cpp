@@ -14,10 +14,10 @@
  */
 
 #include <csignal>
+#include <cstdint>
+#include <cstdio>
+#include <cstdlib>
 #include <fcntl.h>
-#include <stdint.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include <sys/stat.h>
 #include <unistd.h>
 #include "functionalext.h"

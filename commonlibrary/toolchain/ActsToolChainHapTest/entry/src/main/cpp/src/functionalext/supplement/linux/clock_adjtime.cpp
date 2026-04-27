@@ -16,9 +16,9 @@
 #include <cerrno>
 #include <csignal>
 #include <cstdlib>
+#include <ctime>
 #include <dlfcn.h>
 #include <sys/timex.h>
-#include <time.h>
 #include "functionalext.h"
 
 void ExceptionHandler(int sig)

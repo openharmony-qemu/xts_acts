@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
+#include <cstdlib>
 #include <ctime>
-#include <stdlib.h>
 #include "functionalext.h"
 #include "gmtime_data.h"
 

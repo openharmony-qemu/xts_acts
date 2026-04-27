@@ -14,9 +14,9 @@
  */
 
 #include <cerrno>
+#include <cstdio>
 #include <cstdlib>
 #include <fcntl.h>
-#include <stdio.h>
 #include <sys/stat.h>
 #include <unistd.h>
 #include "functionalext.h"
