@@ -21,7 +21,7 @@
 static time_t g_time = 1659177614;
 static int16_t g_bufferSize = 256;
 
-static bool test_asctime_r_result(const char* testName, struct tm* timeptr, const char* expected)
+static bool TestAsctimeRResult(const char* testName, struct tm* timeptr, const char* expected)
 {
     char buffer[g_bufferSize];
     memset(buffer, 0, g_bufferSize);
@@ -93,7 +93,7 @@ void AsctimeR0200(void)
         .tm_isdst = 0  // No daylight saving time
     };
 
-    test_asctime_r_result("AsctimeR0200(min)", &minTm, "Thu Jan  1 00:00:00 1970");
+    TestAsctimeRResult("AsctimeR0200(min)", &minTm, "Thu Jan  1 00:00:00 1970");
 
     // Test maximum valid time values
     struct tm maxTm = {
@@ -108,7 +108,7 @@ void AsctimeR0200(void)
         .tm_isdst = 0   // No daylight saving time
     };
 
-    test_asctime_r_result("AsctimeR0200(max)", &maxTm, "Sun Dec  31 23:59:59 2023");
+    TestAsctimeRResult("AsctimeR0200(max)", &maxTm, "Sun Dec  31 23:59:59 2023");
 }
 
 /**
@@ -140,8 +140,8 @@ void AsctimeR0300(void)
                               .tm_yday = 365, // Last day of leap year
                               .tm_isdst = 0 };
 
-    test_asctime_r_result("AsctimeR0300(leap day)", &leapDay, "Sat Feb  29 15:20:10 2020");
-    test_asctime_r_result("AsctimeR0300(leap year end)", &leapYearEnd, "Thu Dec  31 23:59:59 2020");
+    TestAsctimeRResult("AsctimeR0300(leap day)", &leapDay, "Sat Feb  29 15:20:10 2020");
+    TestAsctimeRResult("AsctimeR0300(leap year end)", &leapYearEnd, "Thu Dec  31 23:59:59 2020");
 }
 
 int AsctimeRTest(void)
@@ -151,7 +151,7 @@ int AsctimeRTest(void)
     AsctimeR0300();
     return t_status;
 }
-int asctime_rTest(void)
+int AsctimeRTestCompat(void)
 {
     return AsctimeRTest();
 }

@@ -78,7 +78,7 @@ int Dup3Test(void)
     return Dup3TestWithArgs(1, libcArgv);
 }
 
-int dup3Test(void)
+int Dup3TestCompat(void)
 {
     return Dup3Test();
 }

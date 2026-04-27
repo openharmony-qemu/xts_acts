@@ -71,8 +71,8 @@ void Strftime0100(void)
  */
 void Strftime0200(void)
 {
-    for (int32_t i = 0; i < static_cast<int32_t>(sizeof(test_strftime_data) / sizeof(test_strftime_data[0])); i++) {
-        const char* handlerChar = test_handle_path(test_strftime_data[i].tz);
+    for (int32_t i = 0; i < static_cast<int32_t>(sizeof(TEST_STRFTIME_DATA) / sizeof(TEST_STRFTIME_DATA[0])); i++) {
+        const char* handlerChar = TestHandlePath(TEST_STRFTIME_DATA[i].tz);
         if (!handlerChar) {
             t_error("Strftime0200 failed: handlerChar is NULL\n");
             continue;
@@ -88,7 +88,7 @@ void Strftime0200(void)
         char buffer[g_bufferSize];
         size_t count = strftime(buffer, sizeof(buffer) - 1, "%c %Z%z", timeptr);
         EXPECT_TRUE("Strftime0200", count > 0);
-        EXPECT_STREQ("Strftime0200", buffer, test_strftime_data[i].result);
+        EXPECT_STREQ("Strftime0200", buffer, TEST_STRFTIME_DATA[i].result);
     }
 }
 

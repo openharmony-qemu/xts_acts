@@ -273,7 +273,7 @@ int DlIteratePhdrTest(void)
     return DlIteratePhdrTestWithArgs(1, libcArgv);
 }
 
-int dl_iterate_phdrTest(void)
+int DlIteratePhdrTestCompat(void)
 {
     return DlIteratePhdrTest();
 }

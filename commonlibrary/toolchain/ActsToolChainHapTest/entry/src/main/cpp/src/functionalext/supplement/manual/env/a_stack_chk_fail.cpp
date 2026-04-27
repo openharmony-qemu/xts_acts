@@ -64,7 +64,7 @@ void a_stack_chk_fail_0100(void)
     EXPECT_EQ("a_stack_chk_fail_0100", flag, INCREASE_LEN);
 }
 
-int a_stack_chk_failTest(void)
+int AStackChkFailTestCompat(void)
 {
     a_stack_chk_fail_0100();
     return t_status;

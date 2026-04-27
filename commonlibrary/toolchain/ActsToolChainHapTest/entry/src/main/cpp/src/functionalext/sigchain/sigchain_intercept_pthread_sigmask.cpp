@@ -86,7 +86,7 @@ static bool sigchain_special_handler3(int signo, siginfo_t* siginfo, void* ucont
 /**
  * @brief the signal handler
  */
-static void signal_handler3(int signo)
+static void SignalHandler3(int signo)
 {
     g_count++;
     EXPECT_EQ("sigchain_intercept_pthread_sigmask_002", signo, SIGPWR);
@@ -102,7 +102,7 @@ static void SigchainInterceptPthreadSigmask002()
 {
     g_count = 0;
     struct sigaction siga2 = {
-        .sa_handler = signal_handler3,
+        .sa_handler = SignalHandler3,
     };
     sigaction(SIGPWR, &siga2, nullptr);
 

@@ -42,7 +42,7 @@ typedef struct time_test_time_struct TimeTestTimeStruct;
 #define TimeTestDoubleStruct time_test_double_struct
 #define TimeTestTimeStruct time_test_time_struct
 
-inline const char* test_handle_path(const char* tz)
+inline const char* TestHandlePath(const char* tz)
 {
     const char* p = tz;
     if (tz) {
@@ -56,6 +56,6 @@ inline const char* test_handle_path(const char* tz)
     return p;
 }
 
-#define TestHandlePath test_handle_path
+#define test_handle_path TestHandlePath
 
 #endif

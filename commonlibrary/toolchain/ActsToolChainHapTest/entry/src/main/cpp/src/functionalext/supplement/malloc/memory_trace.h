@@ -85,11 +85,11 @@ extern "C" {
 #define FD_SIZE 1
 #define THREAD_SIZE 1
 
-inline void memtrace(void* addr, size_t size, const char* tag, bool is_using){};
-inline void restrace(unsigned long long mask, void* addr, size_t size, const char* tag, bool is_using){};
-inline void restraceFd(unsigned long long mask, int fd, const char* tag, bool is_using){};
+inline void memtrace(void* addr, size_t size, const char* tag, bool isUsing){};
+inline void restrace(unsigned long long mask, void* addr, size_t size, const char* tag, bool isUsing){};
+inline void restraceFd(unsigned long long mask, int fd, const char* tag, bool isUsing){};
 inline void
-    restraceExt(unsigned long long mask, void* addr, size_t size, const char* tag, bool is_using, bool isWeakRef){};
+    restraceExt(unsigned long long mask, void* addr, size_t size, const char* tag, bool isUsing, bool isWeakRef){};
 inline void resTraceMove(unsigned long long mask, void* oldAddr, void* newAddr, size_t newSize){};
 inline void resTraceFreeRegion(unsigned long long mask, void* addr, size_t size){};
 #ifdef __cplusplus

@@ -41,7 +41,7 @@ int SleepTest();
 int UsleepTest();
 int WritevTest();
 
-int dup3Test();
+int Dup3TestCompat();
 int FaccessatTest();
 int FchownTest();
 int FchownatTest();

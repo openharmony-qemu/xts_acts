@@ -21,7 +21,7 @@
 #include <unistd.h>
 #include "test.h"
 
-static void handler(int s) {}
+static void Handler(int s) {}
 
 uint8_t* p0;
 uint8_t* p1;
@@ -105,7 +105,7 @@ static int MallocModifyPointerTestImpl(int argc, char* argv[])
     sigemptyset(&set);
     sigaddset(&set, SIGCHLD);
     sigprocmask(SIG_BLOCK, &set, nullptr);
-    auto oldSigChld = signal(SIGCHLD, handler);
+    auto oldSigChld = signal(SIGCHLD, Handler);
     if (oldSigChld == SIG_ERR) {
         t_error("%s signal SIGCHLD failed: %s\n", argv[0], strerror(errno));
         return -1;

@@ -27,8 +27,8 @@
  */
 static void Ulimit0100(void)
 {
-    typedef long (*ulimit_func)(int, ...);
-    ulimit_func ulimit = (ulimit_func)dlsym(RTLD_DEFAULT, "ulimit");
+    typedef long (*UlimitFunc)(int, ...);
+    UlimitFunc ulimit = (UlimitFunc)dlsym(RTLD_DEFAULT, "ulimit");
     if (!ulimit) {
         EXPECT_PTRNE("ulimit_0100", ulimit, NULL);
         return;
@@ -51,8 +51,8 @@ static void Ulimit0100(void)
  */
 static void Ulimit0200(void)
 {
-    typedef long (*ulimit_func)(int, ...);
-    ulimit_func ulimit = (ulimit_func)dlsym(RTLD_DEFAULT, "ulimit");
+    typedef long (*UlimitFunc)(int, ...);
+    UlimitFunc ulimit = (UlimitFunc)dlsym(RTLD_DEFAULT, "ulimit");
     if (!ulimit) {
         EXPECT_PTRNE("ulimit_0200", ulimit, NULL);
         return;
@@ -75,8 +75,8 @@ static void Ulimit0200(void)
  */
 static void Ulimit0300(void)
 {
-    typedef long (*ulimit_func)(int, ...);
-    ulimit_func ulimit = (ulimit_func)dlsym(RTLD_DEFAULT, "ulimit");
+    typedef long (*UlimitFunc)(int, ...);
+    UlimitFunc ulimit = (UlimitFunc)dlsym(RTLD_DEFAULT, "ulimit");
     if (!ulimit) {
         EXPECT_PTRNE("ulimit_0300", ulimit, NULL);
         return;

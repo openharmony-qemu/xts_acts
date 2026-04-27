@@ -83,7 +83,7 @@ int ChmodTest(void)
     return ChmodTestWithArgs(1, libcArgv);
 }
 
-int chmodTest(void)
+int ChmodTestCompat(void)
 {
     return ChmodTest();
 }

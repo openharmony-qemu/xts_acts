@@ -19,7 +19,7 @@
 #include "time_test_data.h"
 
 /* Keep a small dataset to avoid missing-header build failures. */
-inline constexpr struct time_test_string_struct test_strftime_data[] = {
+inline constexpr struct time_test_string_struct TEST_STRFTIME_DATA[] = {
     { "Europe/Madrid", "Sat Jul 30 12:40:14 2022 CEST+0200" },
     { "Europe/Astrakhan", "Sat Jul 30 14:40:14 2022 +04+0400" },
     { "Europe/Kaliningrad", "Sat Jul 30 12:40:14 2022 EET+0200" },

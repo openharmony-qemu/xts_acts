@@ -18,5 +18,5 @@
 
 int AStackChkFailTest();
 
-int a_stack_chk_failTest();
+int AStackChkFailTestCompat();
 #endif // SRC_FUNCTIONALEXT_SUPPLEMENT_MANUAL_ENV_H_H

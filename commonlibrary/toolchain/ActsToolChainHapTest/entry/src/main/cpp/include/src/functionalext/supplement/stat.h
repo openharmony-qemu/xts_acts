@@ -18,7 +18,7 @@
 
 int ChmodTest();
 
-int chmodTest();
+int ChmodTestCompat();
 int FchmodTest();
 int FchmodatTest();
 int FutimesatTest();
