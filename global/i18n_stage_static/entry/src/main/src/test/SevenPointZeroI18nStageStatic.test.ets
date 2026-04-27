@@ -1447,5 +1447,291 @@ export default function SevenPointZeroI18nStageStaticTest() {
       expect(value).assertEqual('2026-01-02T10:20:30.000+08:00');
     })
 
+    /**
+     * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_Static_0100
+     * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_Static_0100
+     * @tc.desc test setChineseCalendarTime with cyclicalYear 43
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_GetChineseCalendar_Test_Static_0100', Level.LEVEL2, () => {
+      let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+      let chineseCalendar: i18n.ChineseCalendar = i18n.getChineseCalendar(locale);
+      chineseCalendar.setChineseCalendarTime({
+        gregorianYear: 2026,
+        cyclicalYear: 43,
+        month: 1,
+        date: 23,
+        isLeapMonth: false,
+        hour: 10,
+        minute: 20,
+        second: 30
+      })
+      let date: Date = new Date(2026, 3, 10, 10, 20, 30);
+      let value: number = chineseCalendar.compareDays(date);
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0100 value:', value);
+      expect(value).assertEqual(-1);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_Static_0200
+     * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_Static_0200
+     * @tc.desc test setChineseCalendarTime with cyclicalYear 49
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_GetChineseCalendar_Test_Static_0200', Level.LEVEL2, () => {
+      let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+      let chineseCalendar: i18n.ChineseCalendar = i18n.getChineseCalendar(locale);
+      chineseCalendar.setChineseCalendarTime({
+        gregorianYear: 2026,
+        cyclicalYear: 49,
+        month: 2,
+        date: 23
+      })
+      let value1: number = chineseCalendar.get('year');
+      let value2: number = chineseCalendar.get('month');
+      let value3: number = chineseCalendar.get('date');
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0200 value1:', value1);
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0200 value2:', value2);
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0200 value3:', value3);
+      expect(value1).assertEqual(49);
+      expect(value2).assertEqual(2);
+      expect(value3).assertEqual(23);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_Static_0300
+     * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_Static_0300
+     * @tc.desc test setChineseCalendarTime with cyclicalYear 49
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_GetChineseCalendar_Test_Static_0300', Level.LEVEL2, () => {
+      let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+      let chineseCalendar: i18n.ChineseCalendar = i18n.getChineseCalendar(locale);
+      chineseCalendar.setChineseCalendarTime({
+        gregorianYear: 2026,
+        cyclicalYear: 49,
+        month: 2,
+        date: 23,
+        isLeapMonth: true,
+        hour: 10,
+        minute: 20,
+        second: 30
+      })
+      chineseCalendar.add('year', 1);
+      let value: number = chineseCalendar.get('year');
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0300 value:', value);
+      expect(value).assertEqual(50);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_Static_0400
+     * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_Static_0400
+     * @tc.desc test setChineseCalendarTime with cyclicalYear 49
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_GetChineseCalendar_Test_Static_0400', Level.LEVEL2, () => {
+      let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+      let chineseCalendar: i18n.ChineseCalendar = i18n.getChineseCalendar(locale);
+      chineseCalendar.setChineseCalendarTime({
+        gregorianYear: 2026,
+        cyclicalYear: 49,
+        month: 2,
+        date: 23,
+        isLeapMonth: true,
+        hour: 10,
+        minute: 20,
+        second: 30
+      })
+      chineseCalendar.add('date', 1);
+      let value: number = chineseCalendar.get('date');
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0400 value:', value);
+      expect(value).assertEqual(24);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_Static_0500
+     * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_Static_0500
+     * @tc.desc test setChineseCalendarTime with cyclicalYear 49
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_GetChineseCalendar_Test_Static_0500', Level.LEVEL2, () => {
+      let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+      let chineseCalendar: i18n.ChineseCalendar = i18n.getChineseCalendar(locale);
+      let date: Date = new Date(2027, 10, 10, 10, 20, 30);
+      chineseCalendar.setTime(date);
+      let value: number = chineseCalendar.get('year');
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0500 value:', value);
+      expect(value).assertEqual(44);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_Static_0600
+     * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_Static_0600
+     * @tc.desc test setChineseCalendarTime with cyclicalYear 49
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_GetChineseCalendar_Test_Static_0600', Level.LEVEL2, () => {
+      let locale: Intl.Locale = new Intl.Locale('ar-EA');
+      let chineseCalendar: i18n.ChineseCalendar = i18n.getChineseCalendar(locale);
+      chineseCalendar.setChineseCalendarTime({
+        gregorianYear: 2026,
+        cyclicalYear: 43,
+        month: 2,
+        date: 23,
+        isLeapMonth: true,
+        hour: 10,
+        minute: 20,
+        second: 30
+      })
+      let value: number = chineseCalendar.get('year');
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0600 value:', value);
+      expect(value).assertEqual(43);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_Static_0700
+     * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_Static_0700
+     * @tc.desc test setChineseCalendarTime with chinese time and time
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_GetChineseCalendar_Test_Static_0700', Level.LEVEL2, () => {
+      let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+      let chineseCalendar: i18n.ChineseCalendar = i18n.getChineseCalendar(locale);
+      chineseCalendar.setTimeZone('Asia/Shanghai');
+      let calendar = i18n.getCalendar('zh-Hans-CN', 'gregory');
+      calendar.setTimeZone('Asia/Shanghai');
+      calendar.set(1947, 2, 23);
+      chineseCalendar.setTime(calendar.getTimeInMillis());
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0700 month1:', chineseCalendar.get('month'));
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0700 date1:', chineseCalendar.get('date'));
+      expect(chineseCalendar.get('month')).assertEqual(1);
+      expect(chineseCalendar.get('date')).assertEqual(1);
+      chineseCalendar.setChineseCalendarTime({
+        gregorianYear: 1947,
+        cyclicalYear: 24,
+        month: 1,
+        date: 1,
+        isLeapMonth: true,
+      })
+      calendar.setTime(chineseCalendar.getTimeInMillis());
+      let value1: number = calendar.get('month');
+      let value2: number = calendar.get('date');
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0700 value1:', value1);
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0700 value2:', value2);
+      expect(value1).assertEqual(2);
+      expect(value2).assertEqual(23);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_Static_0800
+     * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_Static_0800
+     * @tc.desc test setChineseCalendarTime with is_leap_month 1
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_GetChineseCalendar_Test_Static_0800', Level.LEVEL2, () => {
+      let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+      let chineseCalendar: i18n.ChineseCalendar = i18n.getChineseCalendar(locale);
+      chineseCalendar.setChineseCalendarTime({
+        gregorianYear: 1947,
+        cyclicalYear: 24,
+        month: 1,
+        date: 1,
+        isLeapMonth: true,
+      })
+      let value: number = chineseCalendar.get('is_leap_month');
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0800 value:', value);
+      expect(value).assertEqual(1);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_Static_0900
+     * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_Static_0900
+     * @tc.desc test setChineseCalendarTime with is_leap_month 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_GetChineseCalendar_Test_Static_0900', Level.LEVEL2, () => {
+      let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+      let chineseCalendar: i18n.ChineseCalendar = i18n.getChineseCalendar(locale);
+      chineseCalendar.setChineseCalendarTime({
+        gregorianYear: 2026,
+        cyclicalYear: 24,
+        month: 1,
+        date: 1,
+        isLeapMonth: true,
+      })
+      let value: number = chineseCalendar.get('is_leap_month');
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0900 value:', value);
+      expect(value).assertEqual(0);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_Static_1000
+     * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_Static_1000
+     * @tc.desc test setChineseCalendarTime with is_leap_month 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_GetChineseCalendar_Test_Static_1000', Level.LEVEL2, () => {
+      let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+      let chineseCalendar: i18n.ChineseCalendar = i18n.getChineseCalendar(locale);
+      chineseCalendar.setChineseCalendarTime({
+        gregorianYear: 1947,
+        cyclicalYear: 24,
+        month: 1,
+        date: 1,
+        isLeapMonth: false,
+      })
+      let value: number = chineseCalendar.get('is_leap_month');
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_1000 value:', value);
+      expect(value).assertEqual(0);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_Static_1100
+     * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_Static_1100
+     * @tc.desc test setChineseCalendarTime with checkLeapMonth 1900, 37, 7
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_GetChineseCalendar_Test_Static_1100', Level.LEVEL2, () => {
+      let value: boolean = i18n.ChineseCalendar.checkLeapMonth(1900, 37, 7);
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_1100 value:', value);
+      expect(value).assertEqual(true);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_Static_1200
+     * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_Static_1200
+     * @tc.desc test setChineseCalendarTime with checkLeapMonth 1900, 37, 6
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_GetChineseCalendar_Test_Static_1200', Level.LEVEL2, () => {
+      let value: boolean = i18n.ChineseCalendar.checkLeapMonth(1900, 37, 6);
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_1200 value:', value);
+      expect(value).assertEqual(false);
+    })
+
   })
 }
