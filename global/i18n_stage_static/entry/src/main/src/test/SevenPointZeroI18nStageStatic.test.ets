@@ -1469,7 +1469,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
         second: 30
       })
       let date: Date = new Date(2026, 3, 10, 10, 20, 30);
-      let value: string = chineseCalendar.compareDays(date);
+      let value: number = chineseCalendar.compareDays(date);
       console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0100 value:', value);
       expect(value).assertEqual(-1);
     })
