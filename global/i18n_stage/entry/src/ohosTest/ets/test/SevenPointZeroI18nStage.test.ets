@@ -1277,5 +1277,381 @@ export default function SevenPointZeroI18nStageTest() {
       }
     })
 
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_test_0100
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_test_0100
+     * @tc.desc test getAppDefaultTimeZone with Asia/Shanghai
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_test_0100', Level.LEVEL2, () => {
+      let date: Date = new Date(2027, 10, 10, 10, 20, 30, 123);
+      let timeZone: i18n.TimeZone = i18n.getTimeZone('Asia/Shanghai');
+      let iso = new i18n.ISO8601DateTimeFormat({
+        dateFormat: 'calendar',
+        timePrecision: 'milliSeconds',
+        timeZone,
+        separatorStyle: 'basic',
+        displayTimeZone: true
+      });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_test_0100 value:', value);
+      expect(value).assertEqual('20271110T102030.123+0800');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_test_0200
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_test_0200
+     * @tc.desc test getAppDefaultTimeZone with America/New_York
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_test_0200', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 2, 10, 20, 30.123456);
+      let timeZone: i18n.TimeZone = i18n.getTimeZone('America/New_York');
+      let iso = new i18n.ISO8601DateTimeFormat({
+        dateFormat: 'ordinal',
+        timePrecision: 'seconds',
+        timeZone,
+        separatorStyle: 'extended',
+        displayTimeZone: false
+      });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_test_0200 value:', value);
+      expect(value).assertEqual('2026-001T21:20:30');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_test_0300
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_test_0300
+     * @tc.desc test getAppDefaultTimeZone with Asia/Kolkata
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_test_0300', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 2, 10, 20, 30.123456);
+      let timeZone: i18n.TimeZone = i18n.getTimeZone('Asia/Kolkata');
+      let iso = new i18n.ISO8601DateTimeFormat({
+        dateFormat: 'week',
+        timePrecision: 'minutes',
+        timeZone,
+        displayTimeZone: true
+      });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_test_0300 value:', value);
+      expect(value).assertEqual('2026-W01-6T07:50+05:30');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_test_0400
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_test_0400
+     * @tc.desc test getAppDefaultTimeZone with Africa/Cairo
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_test_0400', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 2, 10, 20, 30.123456);
+      let timeZone: i18n.TimeZone = i18n.getTimeZone('Africa/Cairo');
+      let iso = new i18n.ISO8601DateTimeFormat({
+        dateFormat: 'calendar',
+        timePrecision: 'hours',
+        timeZone,
+        displayTimeZone: true
+      });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_test_0400 value:', value);
+      expect(value).assertEqual('2026-01-02T04+02:00');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_test_0500
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_test_0500
+     * @tc.desc test getAppDefaultTimeZone with Asia/Riyadh
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_test_0500', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 1, 10, 20, 30.123456);
+      let timeZone: i18n.TimeZone = i18n.getTimeZone('Asia/Riyadh');
+      let iso = new i18n.ISO8601DateTimeFormat({
+        dateFormat: 'calendar',
+        timePrecision: 'dateOnly',
+        timeZone,
+        displayTimeZone: true
+      });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_test_0500 value:', value);
+      expect(value).assertEqual('2026-01-01');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_test_0600
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_test_0600
+     * @tc.desc test getAppDefaultTimeZone with
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_test_0600', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 1, 10, 20, 30);
+      let iso = new i18n.ISO8601DateTimeFormat();
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_test_0600 value:', value);
+      expect(value).assertEqual('2026-01-01T02:20:30Z');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_test_0700
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_test_0700
+     * @tc.desc test getAppDefaultTimeZone with calendar
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_test_0700', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 1, 10, 20, 30);
+      let iso = new i18n.ISO8601DateTimeFormat({ dateFormat: 'calendar' });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_test_0700 value:', value);
+      expect(value).assertEqual('2026-01-01T02:20:30Z');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_test_0800
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_test_0800
+     * @tc.desc test getAppDefaultTimeZone with milliSeconds
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_test_0800', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 1, 10, 20, 30);
+      let iso = new i18n.ISO8601DateTimeFormat({ timePrecision: 'milliSeconds' });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_test_0800 value:', value);
+      expect(value).assertEqual('2026-01-01T02:20:30.000Z');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_test_0900
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_test_0900
+     * @tc.desc test getAppDefaultTimeZone with timeZone
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_test_0900', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 1, 10, 20, 30);
+      let timeZone: i18n.TimeZone = i18n.getTimeZone();
+      let iso = new i18n.ISO8601DateTimeFormat({ timeZone });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_test_0800 value:', value);
+      expect(value).assertEqual('2026-01-01T10:20:30+08:00');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_test_1000
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_test_1000
+     * @tc.desc test getAppDefaultTimeZone with timeZone
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_test_1000', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 1, 10, 20, 30);
+      let iso = new i18n.ISO8601DateTimeFormat({ displayTimeZone: true });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_test_1000 value:', value);
+      expect(value).assertEqual('2026-01-01T02:20:30Z');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_GetTimeZone_NullString_Test_1100
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_getTimeZone_nullString_test_1100
+     * @tc.desc test getAppDefaultTimeZone with timeZone
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_GetTimeZone_NullString_Test_1100', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 1, 1, 20, 30);
+      let timeZone: i18n.TimeZone = i18n.getTimeZone('');
+      let iso = new i18n.ISO8601DateTimeFormat({
+        dateFormat: 'calendar',
+        timePrecision: 'milliSeconds',
+        timeZone,
+        displayTimeZone: true
+      });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_GetTimeZone_NullString_Test_1100 value:', value);
+      expect(value).assertEqual('2026-01-01T01:20:30.000+08:00');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_GetTimeZone_Null_Test_1200
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_getTimeZone_null_test_1200
+     * @tc.desc test getAppDefaultTimeZone with timeZone
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_GetTimeZone_Null_Test_1200', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 1, 1, 20, 30);
+      let timeZone: i18n.TimeZone = i18n.getTimeZone(null);
+      let iso = new i18n.ISO8601DateTimeFormat({
+        dateFormat: 'calendar',
+        timePrecision: 'milliSeconds',
+        timeZone,
+        displayTimeZone: true
+      });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_GetTimeZone_Null_Test_1200 value:', value);
+      expect(value).assertEqual('2026-01-01T01:20:30.000+08:00');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_GetTimeZone_Undefined_Test_1300
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_getTimeZone_undefined_test_1300
+     * @tc.desc test getAppDefaultTimeZone with getTimeZone
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_GetTimeZone_Undefined_Test_1300', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 1, 1, 20, 30);
+      let timeZone: i18n.TimeZone = i18n.getTimeZone(undefined);
+      let iso = new i18n.ISO8601DateTimeFormat({
+        dateFormat: 'calendar',
+        timePrecision: 'milliSeconds',
+        timeZone,
+        displayTimeZone: true
+      });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_GetTimeZone_Undefined_Test_1300 value:', value);
+      expect(value).assertEqual('2026-01-01T01:20:30.000+08:00');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_DateFormat_Undefined_Test_1400
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_dateFormat_undefined_Test_1400
+     * @tc.desc test getAppDefaultTimeZone with dateFormat
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_DateFormat_Undefined_Test_1400', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 1, 1, 20, 30);
+      let timeZone: i18n.TimeZone = i18n.getTimeZone();
+      let iso = new i18n.ISO8601DateTimeFormat({
+        dateFormat: undefined,
+        timePrecision: 'milliSeconds',
+        timeZone,
+        displayTimeZone: true
+      });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_DateFormat_Undefined_Test_1400 value:', value);
+      expect(value).assertEqual('2026-01-01T01:20:30.000+08:00');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_TimePrecision_Undefined_Test_1500
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_timePrecision_undefined_test_1500
+     * @tc.desc test getAppDefaultTimeZone with timePrecision
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_TimePrecision_Undefined_Test_1500', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 1, 1, 20, 30);
+      let timeZone: i18n.TimeZone = i18n.getTimeZone();
+      let iso = new i18n.ISO8601DateTimeFormat({
+        dateFormat: 'calendar',
+        timePrecision: undefined,
+        timeZone,
+        displayTimeZone: true
+      });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_TimePrecision_Undefined_Test_1500 value:', value);
+      expect(value).assertEqual('2026-01-01T01:20:30+08:00');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_Format_Null_Test_1600
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_format_null_test_1600
+     * @tc.desc test getAppDefaultTimeZone with format
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_Format_Null_Test_1600', Level.LEVEL2, () => {
+      try {
+        let timeZone: i18n.TimeZone = i18n.getTimeZone();
+        let iso = new i18n.ISO8601DateTimeFormat({
+          dateFormat: 'calendar',
+          timePrecision: 'milliSeconds',
+          timeZone,
+          displayTimeZone: true
+        });
+        let value: string = iso.format(null);
+        console.log('SUB_GLOBAL_ISO8601DateTimeFormat_Format_Null_Test_1600 value:', value);
+      } catch (e) {
+        console.log('SUB_GLOBAL_ISO8601DateTimeFormat_Format_Null_Test_1600 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_Format_Undefined_Test_1700
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_format_undefined_test_1700
+     * @tc.desc test getAppDefaultTimeZone with format
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_Format_Undefined_Test_1700', Level.LEVEL2, () => {
+      try {
+        let timeZone: i18n.TimeZone = i18n.getTimeZone();
+        let iso = new i18n.ISO8601DateTimeFormat({
+          dateFormat: 'calendar',
+          timePrecision: 'milliSeconds',
+          timeZone,
+          displayTimeZone: true
+        });
+        let value: string = iso.format(undefined);
+        console.log('SUB_GLOBAL_ISO8601DateTimeFormat_Format_Undefined_Test_1700 value:', value);
+      } catch (e) {
+        console.log('SUB_GLOBAL_ISO8601DateTimeFormat_Format_Undefined_Test_1700 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_SeparatorStyle_Undefined_Test_1800
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_separatorStyle_undefined_test_1800
+     * @tc.desc test getAppDefaultTimeZone with separatorStyle
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_SeparatorStyle_Undefined_Test_1800', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 2, 10, 20, 30);
+      let timeZone: i18n.TimeZone = i18n.getTimeZone();
+      let iso = new i18n.ISO8601DateTimeFormat({
+        dateFormat: 'calendar',
+        timePrecision: 'milliSeconds',
+        timeZone,
+        separatorStyle: undefined,
+        displayTimeZone: true
+      });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_SeparatorStyle_Undefined_Test_1800 value:', value);
+      expect(value).assertEqual('2026-01-02T10:20:30.000+08:00');
+    })
+
   })
 }
