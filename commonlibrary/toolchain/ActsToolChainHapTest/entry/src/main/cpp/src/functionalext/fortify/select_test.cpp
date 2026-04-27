@@ -249,7 +249,7 @@ static void fd_isset_0030(void)
     return;
 }
 
-static int SelectTestTest_impl(int argc, char *argv[]){
+static int SelectTestTest_impl(int argc, char *argv[]) {
     // RemoveAllSpecialHandler(SIGABRT);
     fd_set_0010();
     fd_set_0020();

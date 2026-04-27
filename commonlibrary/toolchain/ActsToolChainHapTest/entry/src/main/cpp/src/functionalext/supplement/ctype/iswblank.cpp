@@ -28,7 +28,7 @@
  * @tc.desc      : Whether a character in a wide string is a blank character
  * @tc.level     : Level 0
  */
-void iswblank_l_0100(void)
+void IswblankL0100(void)
 {
     const wchar_t *str = L" \t";
     const wchar_t *p = str;
@@ -43,16 +43,16 @@ void iswblank_l_0100(void)
  * @tc.desc      : Whether a character in a wide string is a blank character
  * @tc.level     : Level 0
  */
-void iswblank_l_0101(void)
+void IswblankL0101(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
     const wchar_t *str = L" \t";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswblank_l(*p, m_locale);
+        int ret = iswblank_l(*p, mLocale);
         EXPECT_EQ("iswblank_l_0101", ret, ONREXPECT);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -60,16 +60,16 @@ void iswblank_l_0101(void)
  * @tc.desc      : Whether a character in a wide string is a blank character
  * @tc.level     : Level 0
  */
-void iswblank_l_0102(void)
+void IswblankL0102(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
     const wchar_t *str = L" \t";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswblank_l(*p, m_locale);
+        int ret = iswblank_l(*p, mLocale);
         EXPECT_EQ("iswblank_l_0102", ret, ONREXPECT);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -77,7 +77,7 @@ void iswblank_l_0102(void)
  * @tc.desc      : Whether the characters in a wide string is blank characters
  * @tc.level     : Level 2
  */
-void iswblank_l_0200(void)
+void IswblankL0200(void)
 {
     const wchar_t *str = L"2!~*3Ad";
     const wchar_t *p = str;
@@ -92,16 +92,16 @@ void iswblank_l_0200(void)
  * @tc.desc      : Whether the characters in a wide string is blank characters
  * @tc.level     : Level 2
  */
-void iswblank_l_0201(void)
+void IswblankL0201(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
     const wchar_t *str = L"2!~*3Ad";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswblank_l(*p, m_locale);
+        int ret = iswblank_l(*p, mLocale);
         EXPECT_EQ("iswblank_l_0201", ret, CMPFLAG);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -109,16 +109,16 @@ void iswblank_l_0201(void)
  * @tc.desc      : Whether the characters in a wide string is blank characters
  * @tc.level     : Level 2
  */
-void iswblank_l_0202(void)
+void IswblankL0202(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
     const wchar_t *str = L"2!~*3Ad";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswblank_l(*p, m_locale);
+        int ret = iswblank_l(*p, mLocale);
         EXPECT_EQ("iswblank_l_0202", ret, CMPFLAG);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -126,17 +126,17 @@ void iswblank_l_0202(void)
  * @tc.desc      : Whether the characters in a wide string is blank characters
  * @tc.level     : Level 1
  */
-void iswblank_l_0300(void)
+void IswblankL0300(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
-        int ret = iswblank_l(i, m_locale);
+        int ret = iswblank_l(i, mLocale);
         if (ret) {
             total++;
         }
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
     EXPECT_EQ("iswblank_l_0300", total, BLANK_WINT_COUNT);
 }
 
@@ -145,17 +145,17 @@ void iswblank_l_0300(void)
  * @tc.desc      : Whether the characters in a wide string is blank characters
  * @tc.level     : Level 1
  */
-void iswblank_l_0400(void)
+void IswblankL0400(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
-        int ret = iswblank_l(i, m_locale);
+        int ret = iswblank_l(i, mLocale);
         if (ret) {
             total++;
         }
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
     EXPECT_EQ("iswblank_l_0400", total, BLANK_WINT_COUNT);
 }
 
@@ -164,24 +164,24 @@ void iswblank_l_0400(void)
  * @tc.desc      : Whether a character in a the maximum value of int is not a letter
  * @tc.level     : Level 1
  */
-void iswblank_l_0500(void)
+void IswblankL0500(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
-    int ret = iswblank_l(MAX_VALUE, m_locale);
-    freelocale(m_locale);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    int ret = iswblank_l(MAX_VALUE, mLocale);
+    freelocale(mLocale);
     EXPECT_EQ("iswblank_l_0500", ret, CMPFLAG);
 }
 
 /**
-* @tc.name      : iswblank_l_0600
-* @tc.desc      : Whether a character in a the maximum value of int is not a letter
-* @tc.level     : Level 1
-*/
-void iswblank_l_0600(void)
+ * @tc.name      : iswblank_l_0600
+ * @tc.desc      : Whether a character in a the maximum value of int is not a letter
+ * @tc.level     : Level 1
+ */
+void IswblankL0600(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
-    int ret = iswblank_l(MAX_VALUE, m_locale);
-    freelocale(m_locale);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    int ret = iswblank_l(MAX_VALUE, mLocale);
+    freelocale(mLocale);
     EXPECT_EQ("iswblank_l_0600", ret, CMPFLAG);
 }
 
@@ -190,7 +190,7 @@ void iswblank_l_0600(void)
  * @tc.desc      : Whether a character in a wide string is a blank character
  * @tc.level     : Level 0
  */
-void iswblank_0100(void)
+void Iswblank0100(void)
 {
     const wchar_t *str = L" \t";
     const wchar_t *p = str;
@@ -205,7 +205,7 @@ void iswblank_0100(void)
  * @tc.desc      : Whether the characters in a wide string is blank characters
  * @tc.level     : Level 2
  */
-void iswblank_0200(void)
+void Iswblank0200(void)
 {
     const wchar_t *str = L"2!~*3Ad";
     const wchar_t *p = str;
@@ -215,27 +215,28 @@ void iswblank_0200(void)
     }
 }
 
-static int IswblankTest_impl(void){
-    typedef void (*set_wctype_icu_enable_func)(void);
-    set_wctype_icu_enable_func set_wctype_icu_enable = (set_wctype_icu_enable_func)dlsym(RTLD_DEFAULT, "set_wctype_icu_enable");
-    set_wctype_icu_enable();
-    iswblank_l_0100();
-    iswblank_l_0101();
-    iswblank_l_0102();
-    iswblank_l_0200();
-    iswblank_l_0201();
-    iswblank_l_0202();
-    iswblank_l_0300();
-    iswblank_l_0400();
-    iswblank_l_0500();
-    iswblank_l_0600();
+static int IswblankTestImpl(void)
+{
+    typedef void (*SetWctypeIcuEnableFunc)(void);
+    SetWctypeIcuEnableFunc setWctypeIcuEnable = (SetWctypeIcuEnableFunc)dlsym(RTLD_DEFAULT, "set_wctype_icu_enable");
+    setWctypeIcuEnable();
+    IswblankL0100();
+    IswblankL0101();
+    IswblankL0102();
+    IswblankL0200();
+    IswblankL0201();
+    IswblankL0202();
+    IswblankL0300();
+    IswblankL0400();
+    IswblankL0500();
+    IswblankL0600();
 
-    iswblank_0100();
-    iswblank_0200();
+    Iswblank0100();
+    Iswblank0200();
     return g_tStatus;
 }
 
 int IswblankTest(void)
 {
-    return IswblankTest_impl();
+    return IswblankTestImpl();
 }

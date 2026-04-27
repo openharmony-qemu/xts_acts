@@ -301,7 +301,8 @@ static void fseeko_0100(void)
     }
 }
 
-static int InvalidParamTest_impl(int argc, char *argv[]){
+static int InvalidParamTest_impl(int argc, char *argv[])
+{
     clearerr_0100();
     feof_0100();
     ferror_0100();

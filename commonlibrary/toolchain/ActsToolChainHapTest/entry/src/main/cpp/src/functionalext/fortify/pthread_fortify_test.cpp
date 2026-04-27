@@ -138,7 +138,8 @@ static int test_pthread_mutex_trylock_after_destroyed(int mtype)
     return i;
 }
 
-static int PthreadFortifyTestTest_impl(int argc, char *argv[]){
+static int PthreadFortifyTestTest_impl(int argc, char *argv[])
+{
     int i;
 
     i = test_pthread_mutex_lock_after_destroyed(PTHREAD_MUTEX_NORMAL);

@@ -30,7 +30,7 @@
  * @tc.desc      : Determine whether the incoming wide character can be printed by the iswprint method
  * @tc.level     : Level 1
  */
-void iswprint_0100(void)
+void Iswprint0100(void)
 {
     wchar_t ch = L'9';
     int result = iswprint(ch);
@@ -44,7 +44,7 @@ void iswprint_0100(void)
  * @tc.desc      : Test the iswprint method by passing in a non-printable wide character
  * @tc.level     : Level 1
  */
-void iswprint_0200(void)
+void Iswprint0200(void)
 {
     wchar_t ch = L'\n';
     int result = iswprint(ch);
@@ -58,7 +58,7 @@ void iswprint_0200(void)
  * @tc.desc      : Whether the characters in a wide string are printable characters
  * @tc.level     : Level 0
  */
-void iswprint_l_0100(void)
+void IswprintL0100(void)
 {
     const wchar_t *str = L"1Aa®Â Æ";
     const wchar_t *p = str;
@@ -73,16 +73,16 @@ void iswprint_l_0100(void)
  * @tc.desc      : Whether the characters in a wide string are printable characters
  * @tc.level     : Level 0
  */
-void iswprint_l_0101(void)
+void IswprintL0101(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
     const wchar_t *str = L"1Aa®Â Æ";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswprint_l(*p, m_locale);
+        int ret = iswprint_l(*p, mLocale);
         EXPECT_EQ("iswprint_l_0101", ret, ONREXPECT);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -90,16 +90,16 @@ void iswprint_l_0101(void)
  * @tc.desc      : Whether the characters in a wide string are printable characters
  * @tc.level     : Level 0
  */
-void iswprint_l_0102(void)
+void IswprintL0102(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
     const wchar_t *str = L"1Aa®Â Æ";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswprint_l(*p, m_locale);
+        int ret = iswprint_l(*p, mLocale);
         EXPECT_EQ("iswprint_l_0102", ret, ONREXPECT);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -107,7 +107,7 @@ void iswprint_l_0102(void)
  * @tc.desc      : Whether the characters in a wide string are non-printable characters
  * @tc.level     : Level 2
  */
-void iswprint_l_0200(void)
+void IswprintL0200(void)
 {
     const wchar_t *str = L"\a\b";
     const wchar_t *p = str;
@@ -122,16 +122,16 @@ void iswprint_l_0200(void)
  * @tc.desc      : Whether the characters in a wide string are non-printable characters
  * @tc.level     : Level 2
  */
-void iswprint_l_0201(void)
+void IswprintL0201(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
     const wchar_t *str = L"\a\b";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswprint_l(*p, m_locale);
+        int ret = iswprint_l(*p, mLocale);
         EXPECT_EQ("iswprint_l_0201", ret, CMPFLAG);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -139,16 +139,16 @@ void iswprint_l_0201(void)
  * @tc.desc      : Whether the characters in a wide string are non-printable characters
  * @tc.level     : Level 2
  */
-void iswprint_l_0202(void)
+void IswprintL0202(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
     const wchar_t *str = L"\a\b";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswprint_l(*p, m_locale);
+        int ret = iswprint_l(*p, mLocale);
         EXPECT_EQ("iswprint_l_0202", ret, CMPFLAG);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -156,17 +156,17 @@ void iswprint_l_0202(void)
  * @tc.desc      : Whether the characters in a wide string are non-printable characters
  * @tc.level     : Level 2
  */
-void iswprint_l_0300(void)
+void IswprintL0300(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
-        int ret = iswprint_l(i, m_locale);
+        int ret = iswprint_l(i, mLocale);
         if (ret) {
             total++;
         }
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
     EXPECT_EQ("iswprint_l_0300", total, PRINT_WINT_COUNT);
 }
 
@@ -175,17 +175,17 @@ void iswprint_l_0300(void)
  * @tc.desc      : Whether the characters in a wide string are non-printable characters
  * @tc.level     : Level 2
  */
-void iswprint_l_0400(void)
+void IswprintL0400(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
-        int ret = iswprint_l(i, m_locale);
+        int ret = iswprint_l(i, mLocale);
         if (ret) {
             total++;
         }
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
     EXPECT_EQ("iswprint_l_0400", total, PRINT_WINT_COUNT);
 }
 
@@ -194,49 +194,50 @@ void iswprint_l_0400(void)
  * @tc.desc      : Whether a character in a the maximum value of int is not a letter
  * @tc.level     : Level 1
  */
-void iswprint_l_0500(void)
+void IswprintL0500(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
-    int ret = iswprint_l(MAX_VALUE, m_locale);
-    freelocale(m_locale);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    int ret = iswprint_l(MAX_VALUE, mLocale);
+    freelocale(mLocale);
     EXPECT_EQ("iswprint_l_0500", ret, CMPFLAG);
 }
 
 /**
-* @tc.name      : iswprint_l_0600
-* @tc.desc      : Whether a character in a the maximum value of int is not a letter
-* @tc.level     : Level 1
-*/
-void iswprint_l_0600(void)
+ * @tc.name      : iswprint_l_0600
+ * @tc.desc      : Whether a character in a the maximum value of int is not a letter
+ * @tc.level     : Level 1
+ */
+void IswprintL0600(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
-    int ret = iswprint_l(MAX_VALUE, m_locale);
-    freelocale(m_locale);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    int ret = iswprint_l(MAX_VALUE, mLocale);
+    freelocale(mLocale);
     EXPECT_EQ("iswprint_l_0600", ret, CMPFLAG);
 }
 
-static int IswprintTest_impl(int argc, char *argv[]){
-     typedef void (*set_wctype_icu_enable_func)(void);
-    set_wctype_icu_enable_func set_wctype_icu_enable = (set_wctype_icu_enable_func)dlsym(RTLD_DEFAULT, "set_wctype_icu_enable");
-    set_wctype_icu_enable();
-    iswprint_0100();
-    iswprint_0200();
-    iswprint_l_0100();
-    iswprint_l_0101();
-    iswprint_l_0102();
-    iswprint_l_0200();
-    iswprint_l_0201();
-    iswprint_l_0202();
-    iswprint_l_0300();
-    iswprint_l_0400();
-    iswprint_l_0500();
-    iswprint_l_0600();
+static int IswprintTestImpl(int argc, char *argv[])
+{
+    typedef void (*SetWctypeIcuEnableFunc)(void);
+    SetWctypeIcuEnableFunc setWctypeIcuEnable = (SetWctypeIcuEnableFunc)dlsym(RTLD_DEFAULT, "set_wctype_icu_enable");
+    setWctypeIcuEnable();
+    Iswprint0100();
+    Iswprint0200();
+    IswprintL0100();
+    IswprintL0101();
+    IswprintL0102();
+    IswprintL0200();
+    IswprintL0201();
+    IswprintL0202();
+    IswprintL0300();
+    IswprintL0400();
+    IswprintL0500();
+    IswprintL0600();
     return g_tStatus;
 }
 
 int IswprintTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return IswprintTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return IswprintTestImpl(1, libcArgv);
 }

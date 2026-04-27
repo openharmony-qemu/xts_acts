@@ -27,7 +27,7 @@
  * @tc.desc      : Whether the characters in a wide string are letters
  * @tc.level     : Level 0
  */
-void iswalpha_l_0100(void)
+void IswalphaL0100(void)
 {
     const wchar_t *str = L"aBcrWER";
     const wchar_t *p = str;
@@ -42,16 +42,16 @@ void iswalpha_l_0100(void)
  * @tc.desc      : Whether the characters in a wide string are letters
  * @tc.level     : Level 0
  */
-void iswalpha_l_0101(void)
+void IswalphaL0101(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
     const wchar_t *str = L"aBcrWER";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswalpha_l(*p, m_locale);
+        int ret = iswalpha_l(*p, mLocale);
         EXPECT_EQ("iswalpha_l_0101", ret, ONREXPECT);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -59,16 +59,16 @@ void iswalpha_l_0101(void)
  * @tc.desc      : Whether the characters in a wide string are letters
  * @tc.level     : Level 0
  */
-void iswalpha_l_0102(void)
+void IswalphaL0102(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
     const wchar_t *str = L"aBcrWER";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswalpha_l(*p, m_locale);
+        int ret = iswalpha_l(*p, mLocale);
         EXPECT_EQ("iswalpha_l_0102", ret, ONREXPECT);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -76,7 +76,7 @@ void iswalpha_l_0102(void)
  * @tc.desc      : Whether a character in a wide string is not a letter
  * @tc.level     : Level 2
  */
-void iswalpha_l_0200(void)
+void IswalphaL0200(void)
 {
     const wchar_t *str = L"2!~*";
     const wchar_t *p = str;
@@ -91,16 +91,16 @@ void iswalpha_l_0200(void)
  * @tc.desc      : Whether a character in a wide string is not a letter
  * @tc.level     : Level 2
  */
-void iswalpha_l_0201(void)
+void IswalphaL0201(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
     const wchar_t *str = L"2!~*";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswalpha_l(*p, m_locale);
+        int ret = iswalpha_l(*p, mLocale);
         EXPECT_EQ("iswalpha_l_0201", ret, CMPFLAG);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -108,16 +108,16 @@ void iswalpha_l_0201(void)
  * @tc.desc      : Whether a character in a wide string is not a letter
  * @tc.level     : Level 2
  */
-void iswalpha_l_0202(void)
+void IswalphaL0202(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
     const wchar_t *str = L"2!~*";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswalpha_l(*p, m_locale);
+        int ret = iswalpha_l(*p, mLocale);
         EXPECT_EQ("iswalpha_l_0202", ret, CMPFLAG);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -125,17 +125,17 @@ void iswalpha_l_0202(void)
  * @tc.desc      : Whether a character in a wide string is not a letter
  * @tc.level     : Level 1
  */
-void iswalpha_l_0300(void)
+void IswalphaL0300(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
-        int ret = iswalpha_l(i, m_locale);
+        int ret = iswalpha_l(i, mLocale);
         if (ret) {
             total++;
         }
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
     EXPECT_EQ("iswalpha_l_0300", total, ALPHA_WINT_COUNT);
 }
 
@@ -144,17 +144,17 @@ void iswalpha_l_0300(void)
  * @tc.desc      : Whether a character in a wide string is not a letter
  * @tc.level     : Level 1
  */
-void iswalpha_l_0400(void)
+void IswalphaL0400(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
-        int ret = iswalpha_l(i, m_locale);
+        int ret = iswalpha_l(i, mLocale);
         if (ret) {
             total++;
         }
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
     EXPECT_EQ("iswalpha_l_0300", total, ALPHA_WINT_COUNT);
 }
 
@@ -163,45 +163,46 @@ void iswalpha_l_0400(void)
  * @tc.desc      : Whether a character in a wide string is not a letter
  * @tc.level     : Level 1
  */
-void iswalpha_l_0500(void)
+void IswalphaL0500(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
-    int ret = iswalpha_l(MAX_VALUE, m_locale);
-    freelocale(m_locale);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    int ret = iswalpha_l(MAX_VALUE, mLocale);
+    freelocale(mLocale);
     EXPECT_EQ("iswalpha_l_0500", ret, CMPFLAG);
 }
 
 /**
-* @tc.name      : iswalpha_l_0600
-* @tc.desc      : Whether a character in a wide string is not a letter
-* @tc.level     : Level 1
-*/
-void iswalpha_l_0600(void)
+ * @tc.name      : iswalpha_l_0600
+ * @tc.desc      : Whether a character in a wide string is not a letter
+ * @tc.level     : Level 1
+ */
+void IswalphaL0600(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
-    int ret = iswalpha_l(MAX_VALUE, m_locale);
-    freelocale(m_locale);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    int ret = iswalpha_l(MAX_VALUE, mLocale);
+    freelocale(mLocale);
     EXPECT_EQ("iswalpha_l_0600", ret, CMPFLAG);
 }
 
-static int IswalphaTest_impl(void){
-     typedef void (*set_wctype_icu_enable_func)(void);
-    set_wctype_icu_enable_func set_wctype_icu_enable = (set_wctype_icu_enable_func)dlsym(RTLD_DEFAULT, "set_wctype_icu_enable");
-    set_wctype_icu_enable();
-    iswalpha_l_0100();
-    iswalpha_l_0101();
-    iswalpha_l_0102();
-    iswalpha_l_0200();
-    iswalpha_l_0201();
-    iswalpha_l_0202();
-    iswalpha_l_0300();
-    iswalpha_l_0400();
-    iswalpha_l_0500();
-    iswalpha_l_0600();
+static int IswalphaTestImpl(void)
+{
+    typedef void (*SetWctypeIcuEnableFunc)(void);
+    SetWctypeIcuEnableFunc setWctypeIcuEnable = (SetWctypeIcuEnableFunc)dlsym(RTLD_DEFAULT, "set_wctype_icu_enable");
+    setWctypeIcuEnable();
+    IswalphaL0100();
+    IswalphaL0101();
+    IswalphaL0102();
+    IswalphaL0200();
+    IswalphaL0201();
+    IswalphaL0202();
+    IswalphaL0300();
+    IswalphaL0400();
+    IswalphaL0500();
+    IswalphaL0600();
     return g_tStatus;
 }
 
 int IswalphaTest(void)
 {
-    return IswalphaTest_impl();
+    return IswalphaTestImpl();
 }

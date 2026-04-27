@@ -30,7 +30,7 @@
  * @tc.desc      : Use the iswdigit function to determine whether the incoming wide character is a decimal number
  * @tc.level     : Level 0
  */
-void iswdigit_0100(void)
+void Iswdigit0100(void)
 {
     wchar_t ch = L'9';
     int result = iswdigit(ch);
@@ -44,7 +44,7 @@ void iswdigit_0100(void)
  * @tc.desc      : Test iswdigit when a non-decimal digit is passed in
  * @tc.level     : Level 1
  */
-void iswdigit_0200(void)
+void Iswdigit0200(void)
 {
     wchar_t ch = L'A';
     int result = iswdigit(ch);
@@ -58,7 +58,7 @@ void iswdigit_0200(void)
  * @tc.desc      : Whether a character in a wide string is a number character
  * @tc.level     : Level 0
  */
-void iswdigit_l_0100(void)
+void IswdigitL0100(void)
 {
     const wchar_t *str = L"1234567890";
     const wchar_t *p = str;
@@ -73,16 +73,16 @@ void iswdigit_l_0100(void)
  * @tc.desc      : Whether a character in a wide string is a number character
  * @tc.level     : Level 0
  */
-void iswdigit_l_0101(void)
+void IswdigitL0101(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
     const wchar_t *str = L"1234567890";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswdigit_l(*p, m_locale);
+        int ret = iswdigit_l(*p, mLocale);
         EXPECT_EQ("iswdigit_l_0101", ret, ONREXPECT);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -90,16 +90,16 @@ void iswdigit_l_0101(void)
  * @tc.desc      : Whether a character in a wide string is a number character
  * @tc.level     : Level 0
  */
-void iswdigit_l_0102(void)
+void IswdigitL0102(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
     const wchar_t *str = L"1234567890";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswdigit_l(*p, m_locale);
+        int ret = iswdigit_l(*p, mLocale);
         EXPECT_EQ("iswdigit_l_0102", ret, ONREXPECT);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -107,7 +107,7 @@ void iswdigit_l_0102(void)
  * @tc.desc      : Whether a character in a wide string is a non-number character
  * @tc.level     : Level 2
  */
-void iswdigit_l_0200(void)
+void IswdigitL0200(void)
 {
     const wchar_t *str = L"ewqWRE!~*Ad";
     const wchar_t *p = str;
@@ -122,16 +122,16 @@ void iswdigit_l_0200(void)
  * @tc.desc      : Whether a character in a wide string is a non-number character
  * @tc.level     : Level 2
  */
-void iswdigit_l_0201(void)
+void IswdigitL0201(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
     const wchar_t *str = L"ewqWRE!~*Ad";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswdigit_l(*p, m_locale);
+        int ret = iswdigit_l(*p, mLocale);
         EXPECT_EQ("iswdigit_l_0201", ret, CMPFLAG);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -139,16 +139,16 @@ void iswdigit_l_0201(void)
  * @tc.desc      : Whether a character in a wide string is a non-number character
  * @tc.level     : Level 2
  */
-void iswdigit_l_0202(void)
+void IswdigitL0202(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
     const wchar_t *str = L"ewqWRE!~*Ad";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswdigit_l(*p, m_locale);
+        int ret = iswdigit_l(*p, mLocale);
         EXPECT_EQ("iswdigit_l_0202", ret, CMPFLAG);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -156,17 +156,17 @@ void iswdigit_l_0202(void)
  * @tc.desc      : Whether a character in a wide string is a non-number character
  * @tc.level     : Level 2
  */
-void iswdigit_l_0300(void)
+void IswdigitL0300(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
-        int ret = iswdigit_l(i, m_locale);
+        int ret = iswdigit_l(i, mLocale);
         if (ret) {
             total++;
         }
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
     EXPECT_EQ("iswdigit_l_0300", total, DIGIT_WINT_COUNT);
 }
 
@@ -175,17 +175,17 @@ void iswdigit_l_0300(void)
  * @tc.desc      : Whether a character in a wide string is a non-number character
  * @tc.level     : Level 2
  */
-void iswdigit_l_0400(void)
+void IswdigitL0400(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
-        int ret = iswdigit_l(i, m_locale);
+        int ret = iswdigit_l(i, mLocale);
         if (ret) {
             total++;
         }
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
     EXPECT_EQ("iswdigit_l_0400", total, DIGIT_WINT_COUNT);
 }
 
@@ -194,49 +194,50 @@ void iswdigit_l_0400(void)
  * @tc.desc      : Whether a character in a the maximum value of int is not a letter
  * @tc.level     : Level 1
  */
-void iswdigit_l_0500(void)
+void IswdigitL0500(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
-    int ret = iswdigit_l(MAX_VALUE, m_locale);
-    freelocale(m_locale);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    int ret = iswdigit_l(MAX_VALUE, mLocale);
+    freelocale(mLocale);
     EXPECT_EQ("iswdigit_l_0500", ret, CMPFLAG);
 }
 
 /**
-* @tc.name      : iswdigit_l_0600
-* @tc.desc      : Whether a character in a the maximum value of int is not a letter
-* @tc.level     : Level 1
-*/
-void iswdigit_l_0600(void)
+ * @tc.name      : iswdigit_l_0600
+ * @tc.desc      : Whether a character in a the maximum value of int is not a letter
+ * @tc.level     : Level 1
+ */
+void IswdigitL0600(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
-    int ret = iswdigit_l(MAX_VALUE, m_locale);
-    freelocale(m_locale);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    int ret = iswdigit_l(MAX_VALUE, mLocale);
+    freelocale(mLocale);
     EXPECT_EQ("iswdigit_l_0600", ret, CMPFLAG);
 }
 
-static int IswdigitTest_impl(int argc, char *argv[]){
-     typedef void (*set_wctype_icu_enable_func)(void);
-    set_wctype_icu_enable_func set_wctype_icu_enable = (set_wctype_icu_enable_func)dlsym(RTLD_DEFAULT, "set_wctype_icu_enable");
-    set_wctype_icu_enable();
-    iswdigit_0100();
-    iswdigit_0200();
-    iswdigit_l_0100();
-    iswdigit_l_0101();
-    iswdigit_l_0102();
-    iswdigit_l_0200();
-    iswdigit_l_0201();
-    iswdigit_l_0202();
-    iswdigit_l_0300();
-    iswdigit_l_0400();
-    iswdigit_l_0500();
-    iswdigit_l_0600();
+static int IswdigitTestImpl(int argc, char *argv[])
+{
+    typedef void (*SetWctypeIcuEnableFunc)(void);
+    SetWctypeIcuEnableFunc setWctypeIcuEnable = (SetWctypeIcuEnableFunc)dlsym(RTLD_DEFAULT, "set_wctype_icu_enable");
+    setWctypeIcuEnable();
+    Iswdigit0100();
+    Iswdigit0200();
+    IswdigitL0100();
+    IswdigitL0101();
+    IswdigitL0102();
+    IswdigitL0200();
+    IswdigitL0201();
+    IswdigitL0202();
+    IswdigitL0300();
+    IswdigitL0400();
+    IswdigitL0500();
+    IswdigitL0600();
     return g_tStatus;
 }
 
 int IswdigitTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return IswdigitTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return IswdigitTestImpl(1, libcArgv);
 }

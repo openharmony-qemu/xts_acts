@@ -30,7 +30,7 @@
  * @tc.desc      : Use the iswlower method to determine whether the incoming wide character is a lowercase letter
  * @tc.level     : Level 0
  */
-void iswlower_0100(void)
+void Iswlower0100(void)
 {
     wchar_t ch = L'a';
     int result = iswlower(ch);
@@ -44,7 +44,7 @@ void iswlower_0100(void)
  * @tc.desc      : Test the return value of iswlower when uppercase letters are passed in
  * @tc.level     : Level 1
  */
-void iswlower_0200(void)
+void Iswlower0200(void)
 {
     wchar_t ch = L'A';
     int result = iswlower(ch);
@@ -58,7 +58,7 @@ void iswlower_0200(void)
  * @tc.desc      : Test the return value of iswlower when passing in a number
  * @tc.level     : Level 1
  */
-void iswlower_0300(void)
+void Iswlower0300(void)
 {
     wchar_t ch = L'1';
     int result = iswlower(ch);
@@ -72,7 +72,7 @@ void iswlower_0300(void)
  * @tc.desc      : Whether the characters in a wide string is lower character
  * @tc.level     : Level 0
  */
-void iswlower_l_0100(void)
+void IswlowerL0100(void)
 {
     const wchar_t *str = L"abcdefghijklmnopqrstuvwxyz";
     const wchar_t *p = str;
@@ -87,16 +87,16 @@ void iswlower_l_0100(void)
  * @tc.desc      : Whether the characters in a wide string is lower character
  * @tc.level     : Level 0
  */
-void iswlower_l_0101(void)
+void IswlowerL0101(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
     const wchar_t *str = L"abcdefghijklmnopqrstuvwxyz";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswlower_l(*p, m_locale);
+        int ret = iswlower_l(*p, mLocale);
         EXPECT_EQ("iswlower_l_0101", ret, ONREXPECT);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -104,16 +104,16 @@ void iswlower_l_0101(void)
  * @tc.desc      : Whether the characters in a wide string is lower character
  * @tc.level     : Level 0
  */
-void iswlower_l_0102(void)
+void IswlowerL0102(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
     const wchar_t *str = L"abcdefghijklmnopqrstuvwxyz";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswlower_l(*p, m_locale);
+        int ret = iswlower_l(*p, mLocale);
         EXPECT_EQ("iswlower_l_0102", ret, ONREXPECT);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -121,7 +121,7 @@ void iswlower_l_0102(void)
  * @tc.desc      : Whether the characters in a wide string are non-lower character
  * @tc.level     : Level 2
  */
-void iswlower_l_0200(void)
+void IswlowerL0200(void)
 {
     const wchar_t *str = L"12ABC!@#";
     const wchar_t *p = str;
@@ -136,16 +136,16 @@ void iswlower_l_0200(void)
  * @tc.desc      : Whether the characters in a wide string are non-lower character
  * @tc.level     : Level 2
  */
-void iswlower_l_0201(void)
+void IswlowerL0201(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
     const wchar_t *str = L"12ABC!@#";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswlower_l(*p, m_locale);
+        int ret = iswlower_l(*p, mLocale);
         EXPECT_EQ("iswlower_l_0201", ret, CMPFLAG);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -153,16 +153,16 @@ void iswlower_l_0201(void)
  * @tc.desc      : Whether the characters in a wide string are non-lower character
  * @tc.level     : Level 2
  */
-void iswlower_l_0202(void)
+void IswlowerL0202(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
     const wchar_t *str = L"12ABC!@#";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswlower_l(*p, m_locale);
+        int ret = iswlower_l(*p, mLocale);
         EXPECT_EQ("iswlower_l_0202", ret, CMPFLAG);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -170,17 +170,17 @@ void iswlower_l_0202(void)
  * @tc.desc      : Whether the characters in a wide string are non-lower character
  * @tc.level     : Level 2
  */
-void iswlower_l_0300(void)
+void IswlowerL0300(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
-        int ret = iswlower_l(i, m_locale);
+        int ret = iswlower_l(i, mLocale);
         if (ret) {
             total++;
         }
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
     EXPECT_EQ("iswlower_l_0300", total, LOWER_WINT_COUNT);
 }
 
@@ -189,17 +189,17 @@ void iswlower_l_0300(void)
  * @tc.desc      : Whether the characters in a wide string are non-lower character
  * @tc.level     : Level 2
  */
-void iswlower_l_0400(void)
+void IswlowerL0400(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
-        int ret = iswlower_l(i, m_locale);
+        int ret = iswlower_l(i, mLocale);
         if (ret) {
             total++;
         }
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
     EXPECT_EQ("iswlower_l_0400", total, LOWER_WINT_COUNT);
 }
 
@@ -208,50 +208,51 @@ void iswlower_l_0400(void)
  * @tc.desc      : Whether a character in a the maximum value of int is not a letter
  * @tc.level     : Level 1
  */
-void iswlower_l_0500(void)
+void IswlowerL0500(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
-    int ret = iswlower_l(MAX_VALUE, m_locale);
-    freelocale(m_locale);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    int ret = iswlower_l(MAX_VALUE, mLocale);
+    freelocale(mLocale);
     EXPECT_EQ("iswlower_l_0500", ret, CMPFLAG);
 }
 
 /**
-* @tc.name      : iswlower_l_0600
-* @tc.desc      : Whether a character in a the maximum value of int is not a letter
-* @tc.level     : Level 1
-*/
-void iswlower_l_0600(void)
+ * @tc.name      : iswlower_l_0600
+ * @tc.desc      : Whether a character in a the maximum value of int is not a letter
+ * @tc.level     : Level 1
+ */
+void IswlowerL0600(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
-    int ret = iswlower_l(MAX_VALUE, m_locale);
-    freelocale(m_locale);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    int ret = iswlower_l(MAX_VALUE, mLocale);
+    freelocale(mLocale);
     EXPECT_EQ("iswlower_l_0600", ret, CMPFLAG);
 }
 
-static int IswlowerTest_impl(int argc, char *argv[]){
-    typedef void (*set_wctype_icu_enable_func)(void);
-    set_wctype_icu_enable_func set_wctype_icu_enable = (set_wctype_icu_enable_func)dlsym(RTLD_DEFAULT, "set_wctype_icu_enable");
-    set_wctype_icu_enable();
-    iswlower_0100();
-    iswlower_0200();
-    iswlower_0300();
-    iswlower_l_0100();
-    iswlower_l_0101();
-    iswlower_l_0102();
-    iswlower_l_0200();
-    iswlower_l_0201();
-    iswlower_l_0202();
-    iswlower_l_0300();
-    iswlower_l_0400();
-    iswlower_l_0500();
-    iswlower_l_0600();
+static int IswlowerTestImpl(int argc, char *argv[])
+{
+    typedef void (*SetWctypeIcuEnableFunc)(void);
+    SetWctypeIcuEnableFunc setWctypeIcuEnable = (SetWctypeIcuEnableFunc)dlsym(RTLD_DEFAULT, "set_wctype_icu_enable");
+    setWctypeIcuEnable();
+    Iswlower0100();
+    Iswlower0200();
+    Iswlower0300();
+    IswlowerL0100();
+    IswlowerL0101();
+    IswlowerL0102();
+    IswlowerL0200();
+    IswlowerL0201();
+    IswlowerL0202();
+    IswlowerL0300();
+    IswlowerL0400();
+    IswlowerL0500();
+    IswlowerL0600();
     return g_tStatus;
 }
 
 int IswlowerTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return IswlowerTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return IswlowerTestImpl(1, libcArgv);
 }

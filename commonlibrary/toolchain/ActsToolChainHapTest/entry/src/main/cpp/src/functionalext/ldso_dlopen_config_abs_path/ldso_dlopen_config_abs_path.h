@@ -44,7 +44,8 @@ static inline bool CheckPrerequisites(void) {
     return func();
 }
 
-static inline bool OpenSo(bool arg1, bool arg2) {
+static inline bool OpenSo(bool arg1, bool arg2)
+{
     typedef bool (*func_t)(bool, bool);
     static func_t func = NULL;
     if (!func) {
@@ -59,7 +60,8 @@ static inline bool OpenSo(bool arg1, bool arg2) {
 
 typedef void(FuncType)(bool flag);
 
-static inline bool dlopen_config_abs_path_policy_func(bool flag) {
+static inline bool dlopen_config_abs_path_policy_func(bool flag)
+{
     typedef bool (*func_t)(bool);
     static func_t func = NULL;
     if (!func) {

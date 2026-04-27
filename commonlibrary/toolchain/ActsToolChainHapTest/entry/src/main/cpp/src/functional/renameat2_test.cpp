@@ -222,7 +222,8 @@ static void CloseFolder(DIR *dir)
     }
 }
 
-static int Renameat2TestTest_impl(void){
+static int Renameat2TestTest_impl(void)
+{
     DIR *dir = opendir(g_dirPath);
     if (dir == NULL) {
         t_error("%s open dir failed, errno: %d\n", __func__, errno);

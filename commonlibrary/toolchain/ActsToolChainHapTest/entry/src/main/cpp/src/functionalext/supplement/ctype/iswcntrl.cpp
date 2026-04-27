@@ -25,11 +25,11 @@
 #define UNICODE_SIZE 1114111
 #define MAX_VALUE 4294967295
 
-void iswcntrl_test(wchar_t ch, int want, char *func_name)
+void IswcntrlTest(wchar_t ch, int want, char *funcName)
 {
     int result = iswcntrl(ch);
     if (result != want) {
-        t_error("%s iswcntrl get result is %d are not %d\n", func_name, result, want);
+        t_error("%s iswcntrl get result is %d are not %d\n", funcName, result, want);
     }
 }
 
@@ -38,7 +38,7 @@ void iswcntrl_test(wchar_t ch, int want, char *func_name)
  * @tc.desc      : Whether a character in a wide string is a control character
  * @tc.level     : Level 0
  */
-void iswcntrl_l_0100(void)
+void IswcntrlL0100(void)
 {
     const wchar_t *str = L"\b";
     const wchar_t *p = str;
@@ -53,16 +53,16 @@ void iswcntrl_l_0100(void)
  * @tc.desc      : Whether a character in a wide string is a control character
  * @tc.level     : Level 0
  */
-void iswcntrl_l_0101(void)
+void IswcntrlL0101(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
     const wchar_t *str = L"\b";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswcntrl_l(*p, m_locale);
+        int ret = iswcntrl_l(*p, mLocale);
         EXPECT_EQ("iswcntrl_l_0101", ret, ONREXPECT);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -70,16 +70,16 @@ void iswcntrl_l_0101(void)
  * @tc.desc      : Whether a character in a wide string is a control character
  * @tc.level     : Level 0
  */
-void iswcntrl_l_0102(void)
+void IswcntrlL0102(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
     const wchar_t *str = L"\b";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswcntrl_l(*p, m_locale);
+        int ret = iswcntrl_l(*p, mLocale);
         EXPECT_EQ("iswcntrl_l_0102", ret, ONREXPECT);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -87,7 +87,7 @@ void iswcntrl_l_0102(void)
  * @tc.desc      : Whether a character in a wide string is a non-control character
  * @tc.level     : Level 2
  */
-void iswcntrl_l_0200(void)
+void IswcntrlL0200(void)
 {
     const wchar_t *str = L"2!~*3Ad";
     const wchar_t *p = str;
@@ -102,16 +102,16 @@ void iswcntrl_l_0200(void)
  * @tc.desc      : Whether a character in a wide string is a non-control character
  * @tc.level     : Level 2
  */
-void iswcntrl_l_0201(void)
+void IswcntrlL0201(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
     const wchar_t *str = L"2!~*3Ad";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswcntrl_l(*p, m_locale);
+        int ret = iswcntrl_l(*p, mLocale);
         EXPECT_EQ("iswcntrl_l_0201", ret, CMPFLAG);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -119,16 +119,16 @@ void iswcntrl_l_0201(void)
  * @tc.desc      : Whether a character in a wide string is a non-control character
  * @tc.level     : Level 2
  */
-void iswcntrl_l_0202(void)
+void IswcntrlL0202(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
     const wchar_t *str = L"2!~*3Ad";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswcntrl_l(*p, m_locale);
+        int ret = iswcntrl_l(*p, mLocale);
         EXPECT_EQ("iswcntrl_l_0202", ret, CMPFLAG);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -136,17 +136,17 @@ void iswcntrl_l_0202(void)
  * @tc.desc      : Whether a character in a wide string is a non-control character
  * @tc.level     : Level 2
  */
-void iswcntrl_l_0300(void)
+void IswcntrlL0300(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
-        int ret = iswcntrl_l(i, m_locale);
+        int ret = iswcntrl_l(i, mLocale);
         if (ret) {
             total++;
         }
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
     EXPECT_EQ("iswcntrl_l_0300", total, CNTRL_WINT_COUNT);
 }
 
@@ -155,17 +155,17 @@ void iswcntrl_l_0300(void)
  * @tc.desc      : Whether a character in a wide string is a non-control character
  * @tc.level     : Level 2
  */
-void iswcntrl_l_0400(void)
+void IswcntrlL0400(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
-        int ret = iswcntrl_l(i, m_locale);
+        int ret = iswcntrl_l(i, mLocale);
         if (ret) {
             total++;
         }
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
     EXPECT_EQ("iswcntrl_l_0400", total, CNTRL_WINT_COUNT);
 }
 
@@ -174,31 +174,32 @@ void iswcntrl_l_0400(void)
  * @tc.desc      : Whether a character in a the maximum value of int is not a letter
  * @tc.level     : Level 1
  */
-void iswcntrl_l_0500(void)
+void IswcntrlL0500(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
-    int ret = iswcntrl_l(MAX_VALUE, m_locale);
-    freelocale(m_locale);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    int ret = iswcntrl_l(MAX_VALUE, mLocale);
+    freelocale(mLocale);
     EXPECT_EQ("iswcntrl_l_0500", ret, CMPFLAG);
 }
 
 /**
-* @tc.name      : iswcntrl_l_0600
-* @tc.desc      : Whether a character in a the maximum value of int is not a letter
-* @tc.level     : Level 1
-*/
-void iswcntrl_l_0600(void)
+ * @tc.name      : iswcntrl_l_0600
+ * @tc.desc      : Whether a character in a the maximum value of int is not a letter
+ * @tc.level     : Level 1
+ */
+void IswcntrlL0600(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
-    int ret = iswcntrl_l(MAX_VALUE, m_locale);
-    freelocale(m_locale);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    int ret = iswcntrl_l(MAX_VALUE, mLocale);
+    freelocale(mLocale);
     EXPECT_EQ("iswcntrl_l_0600", ret, CMPFLAG);
 }
 
-static int IswcntrlTest_impl(int argc, char *argv[]){
-    typedef void (*set_wctype_icu_enable_func)(void);
-    set_wctype_icu_enable_func set_wctype_icu_enable = (set_wctype_icu_enable_func)dlsym(RTLD_DEFAULT, "set_wctype_icu_enable");
-    set_wctype_icu_enable();
+static int IswcntrlTestImpl(int argc, char *argv[])
+{
+    typedef void (*SetWctypeIcuEnableFunc)(void);
+    SetWctypeIcuEnableFunc setWctypeIcuEnable = (SetWctypeIcuEnableFunc)dlsym(RTLD_DEFAULT, "set_wctype_icu_enable");
+    setWctypeIcuEnable();
     char *ret = setlocale(LC_ALL, "en_US.utf8");
     if (!ret) {
         printf("\n");
@@ -208,42 +209,42 @@ static int IswcntrlTest_impl(int argc, char *argv[]){
      * @tc.desc      : Test if a wide character is a control character
      * @tc.level     : Level 0
      */
-    iswcntrl_test(L'\n', 1, "iswcntrl_0100");
+    IswcntrlTest(L'\n', 1, "iswcntrl_0100");
     /**
      * @tc.name      : iswcntrl_0200
      * @tc.desc      : Test whether the wide character is a control character, the incoming character is A
      * @tc.level     : Level 1
      */
-    iswcntrl_test(L'A', 0, "iswcntrl_0200");
+    IswcntrlTest(L'A', 0, "iswcntrl_0200");
     /**
      * @tc.name      : iswcntrl_0300
      * @tc.desc      : Test whether the wide character is a control character, the incoming character is \u2028
      * @tc.level     : Level 1
      */
-    iswcntrl_test(L'\u2028', 1, "iswcntrl_0300");
+    IswcntrlTest(L'\u2028', 1, "iswcntrl_0300");
     /**
      * @tc.name      : iswcntrl_0400
      * @tc.desc      : Test whether the wide character is a control character, the incoming character is \ufff9
      * @tc.level     : Level 1
      */
-    iswcntrl_test(L'\ufff9', 1, "iswcntrl_0400");
+    IswcntrlTest(L'\ufff9', 1, "iswcntrl_0400");
 
-    iswcntrl_l_0100();
-    iswcntrl_l_0101();
-    iswcntrl_l_0102();
-    iswcntrl_l_0200();
-    iswcntrl_l_0201();
-    iswcntrl_l_0202();
-    iswcntrl_l_0300();
-    iswcntrl_l_0400();
-    iswcntrl_l_0500();
-    iswcntrl_l_0600();
+    IswcntrlL0100();
+    IswcntrlL0101();
+    IswcntrlL0102();
+    IswcntrlL0200();
+    IswcntrlL0201();
+    IswcntrlL0202();
+    IswcntrlL0300();
+    IswcntrlL0400();
+    IswcntrlL0500();
+    IswcntrlL0600();
     return g_tStatus;
 }
 
 int IswcntrlTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return IswcntrlTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return IswcntrlTestImpl(1, libcArgv);
 }

@@ -30,7 +30,7 @@
  * @tc.desc      : Use the iswpunct method to determine whether the incoming wide character is a punctuation mark
  * @tc.level     : Level 0
  */
-void iswpunct_0100(void)
+void Iswpunct0100(void)
 {
     wchar_t ch = L',';
     int result = iswpunct(ch);
@@ -44,7 +44,7 @@ void iswpunct_0100(void)
  * @tc.desc      : Test iswpunct method for wide characters passed in non-punctuation marks
  * @tc.level     : Level 1
  */
-void iswpunct_0200(void)
+void Iswpunct0200(void)
 {
     wchar_t ch = L'A';
     int result = iswpunct(ch);
@@ -58,7 +58,7 @@ void iswpunct_0200(void)
  * @tc.desc      : Whether the characters in a wide string are punctuation marks
  * @tc.level     : Level 0
  */
-void iswpunct_l_0100(void)
+void IswpunctL0100(void)
 {
     const wchar_t *str = L"!！，。？?";
     const wchar_t *p = str;
@@ -73,16 +73,16 @@ void iswpunct_l_0100(void)
  * @tc.desc      : Whether the characters in a wide string are punctuation marks
  * @tc.level     : Level 0
  */
-void iswpunct_l_0101(void)
+void IswpunctL0101(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
     const wchar_t *str = L"!！，。？?";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswpunct_l(*p, m_locale);
+        int ret = iswpunct_l(*p, mLocale);
         EXPECT_EQ("iswpunct_l_0101", ret, ONREXPECT);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -90,16 +90,16 @@ void iswpunct_l_0101(void)
  * @tc.desc      : Whether the characters in a wide string are punctuation marks
  * @tc.level     : Level 0
  */
-void iswpunct_l_0102(void)
+void IswpunctL0102(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
     const wchar_t *str = L"!！，。？?";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswpunct_l(*p, m_locale);
+        int ret = iswpunct_l(*p, mLocale);
         EXPECT_EQ("iswpunct_l_0102", ret, ONREXPECT);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -107,7 +107,7 @@ void iswpunct_l_0102(void)
  * @tc.desc      : Whether the characters in a wide string are non-punctuation marks
  * @tc.level     : Level 2
  */
-void iswpunct_l_0200(void)
+void IswpunctL0200(void)
 {
     const wchar_t *str = L"1AaÂÆ";
     const wchar_t *p = str;
@@ -122,16 +122,16 @@ void iswpunct_l_0200(void)
  * @tc.desc      : Whether the characters in a wide string are non-punctuation marks
  * @tc.level     : Level 2
  */
-void iswpunct_l_0201(void)
+void IswpunctL0201(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
     const wchar_t *str = L"1AaÂÆ";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswpunct_l(*p, m_locale);
+        int ret = iswpunct_l(*p, mLocale);
         EXPECT_EQ("iswpunct_l_0201", ret, CMPFLAG);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -139,16 +139,16 @@ void iswpunct_l_0201(void)
  * @tc.desc      : Whether the characters in a wide string are non-punctuation marks
  * @tc.level     : Level 2
  */
-void iswpunct_l_0202(void)
+void IswpunctL0202(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
     const wchar_t *str = L"1AaÂÆ";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswpunct_l(*p, m_locale);
+        int ret = iswpunct_l(*p, mLocale);
         EXPECT_EQ("iswpunct_l_0202", ret, CMPFLAG);
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -156,17 +156,17 @@ void iswpunct_l_0202(void)
  * @tc.desc      : Whether the characters in a wide string are non-punctuation marks
  * @tc.level     : Level 2
  */
-void iswpunct_l_0300(void)
+void IswpunctL0300(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
-        int ret = iswpunct_l(i, m_locale);
+        int ret = iswpunct_l(i, mLocale);
         if (ret) {
             total++;
         }
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
     EXPECT_EQ("iswpunct_l_0300", total, PUNCT_WINT_COUNT);
 }
 
@@ -175,17 +175,17 @@ void iswpunct_l_0300(void)
  * @tc.desc      : Whether the characters in a wide string are non-punctuation marks
  * @tc.level     : Level 2
  */
-void iswpunct_l_0400(void)
+void IswpunctL0400(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
-        int ret = iswpunct_l(i, m_locale);
+        int ret = iswpunct_l(i, mLocale);
         if (ret) {
             total++;
         }
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
     EXPECT_EQ("iswpunct_l_0400", total, PUNCT_WINT_COUNT);
 }
 
@@ -194,49 +194,50 @@ void iswpunct_l_0400(void)
  * @tc.desc      : Whether a character in a the maximum value of int is not a letter
  * @tc.level     : Level 1
  */
-void iswpunct_l_0500(void)
+void IswpunctL0500(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
-    int ret = iswpunct_l(MAX_VALUE, m_locale);
-    freelocale(m_locale);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    int ret = iswpunct_l(MAX_VALUE, mLocale);
+    freelocale(mLocale);
     EXPECT_EQ("iswpunct_l_0500", ret, CMPFLAG);
 }
 
 /**
-* @tc.name      : iswpunct_l_0600
-* @tc.desc      : Whether a character in a the maximum value of int is not a letter
-* @tc.level     : Level 1
-*/
-void iswpunct_l_0600(void)
+ * @tc.name      : iswpunct_l_0600
+ * @tc.desc      : Whether a character in a the maximum value of int is not a letter
+ * @tc.level     : Level 1
+ */
+void IswpunctL0600(void)
 {
-    locale_t m_locale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
-    int ret = iswpunct_l(MAX_VALUE, m_locale);
-    freelocale(m_locale);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    int ret = iswpunct_l(MAX_VALUE, mLocale);
+    freelocale(mLocale);
     EXPECT_EQ("iswpunct_l_0600", ret, CMPFLAG);
 }
 
-static int IswpunctTest_impl(int argc, char *argv[]){
-     typedef void (*set_wctype_icu_enable_func)(void);
-    set_wctype_icu_enable_func set_wctype_icu_enable = (set_wctype_icu_enable_func)dlsym(RTLD_DEFAULT, "set_wctype_icu_enable");
-    set_wctype_icu_enable();
-    iswpunct_0100();
-    iswpunct_0200();
-    iswpunct_l_0100();
-    iswpunct_l_0101();
-    iswpunct_l_0102();
-    iswpunct_l_0200();
-    iswpunct_l_0201();
-    iswpunct_l_0202();
-    iswpunct_l_0300();
-    iswpunct_l_0400();
-    iswpunct_l_0500();
-    iswpunct_l_0600();
+static int IswpunctTestImpl(int argc, char *argv[])
+{
+    typedef void (*SetWctypeIcuEnableFunc)(void);
+    SetWctypeIcuEnableFunc setWctypeIcuEnable = (SetWctypeIcuEnableFunc)dlsym(RTLD_DEFAULT, "set_wctype_icu_enable");
+    setWctypeIcuEnable();
+    Iswpunct0100();
+    Iswpunct0200();
+    IswpunctL0100();
+    IswpunctL0101();
+    IswpunctL0102();
+    IswpunctL0200();
+    IswpunctL0201();
+    IswpunctL0202();
+    IswpunctL0300();
+    IswpunctL0400();
+    IswpunctL0500();
+    IswpunctL0600();
     return g_tStatus;
 }
 
 int IswpunctTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return IswpunctTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return IswpunctTestImpl(1, libcArgv);
 }
