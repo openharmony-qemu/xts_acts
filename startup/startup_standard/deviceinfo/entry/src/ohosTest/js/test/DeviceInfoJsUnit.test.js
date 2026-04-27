@@ -2181,6 +2181,7 @@ export default function DeviceInfoTest() {
             let brandInfo = deviceinfo.brand;
             console.info('the value of the deviceinfo brand is :' + brandInfo);
             let deviceCorlor = deviceinfo.deviceCorlor;
+            console.info('the value of the DeviceColor is :' + deviceColor);
             let targetBrand = String.fromCharCode(72,85,65,87,69,73);
             
             if (brandInfo == targetBrand){
