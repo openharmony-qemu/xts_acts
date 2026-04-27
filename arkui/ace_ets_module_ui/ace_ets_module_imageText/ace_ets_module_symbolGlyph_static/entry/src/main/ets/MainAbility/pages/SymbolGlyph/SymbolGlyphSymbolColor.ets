@@ -27,15 +27,15 @@ struct SymbolGlyphSymbolColor {
   greenColor: ColorMetrics[] = [ColorMetrics.numeric(0x00FF00)];
   blackColor: ColorMetrics[] = [ColorMetrics.rgba(0, 0, 0, 1.0)];
 
-  @State RGBRed: ColorMetrics = ColorMetrics.colorWithSpace(ColorSpace.SRGB, 1, 0, 0, 1);
-  @State RGBGreen: ColorMetrics = ColorMetrics.colorWithSpace(ColorSpace.SRGB, 0, 1, 0, 1);
-  @State RGBBlue: ColorMetrics = ColorMetrics.colorWithSpace(ColorSpace.SRGB, 0, 0, 1, 1);
+  @State rGBRed: ColorMetrics = ColorMetrics.colorWithSpace(ColorSpace.SRGB, 1, 0, 0, 1);
+  @State rGBGreen: ColorMetrics = ColorMetrics.colorWithSpace(ColorSpace.SRGB, 0, 1, 0, 1);
+  @State rGBBlue: ColorMetrics = ColorMetrics.colorWithSpace(ColorSpace.SRGB, 0, 0, 1, 1);
 
   @State p3Red: ColorMetrics = ColorMetrics.colorWithSpace(ColorSpace.DISPLAY_P3, 1, 0, 0, 1);
   @State p3Green: ColorMetrics = ColorMetrics.colorWithSpace(ColorSpace.DISPLAY_P3, 0, 1, 0, 1);
   @State p3Blue: ColorMetrics = ColorMetrics.colorWithSpace(ColorSpace.DISPLAY_P3, 0, 0, 1, 1);
 
-  rGBColor: ColorMetrics[] = [this.RGBRed,this.RGBGreen,this.RGBBlue];
+  rGBColor: ColorMetrics[] = [this.rGBRed,this.rGBGreen,this.rGBBlue];
   p3Color: ColorMetrics[] = [this.p3Red,this.p3Green,this.p3Blue];
 
   build() {
