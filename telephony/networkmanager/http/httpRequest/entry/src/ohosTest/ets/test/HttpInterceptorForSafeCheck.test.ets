@@ -255,7 +255,6 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             }
           });
-          done();
         } catch (error) {
           const err: BusinessError = error as BusinessError;
           console.info(`${TAG} ${caseName} catch ERROR-->:${JSON.stringify(err)}`);

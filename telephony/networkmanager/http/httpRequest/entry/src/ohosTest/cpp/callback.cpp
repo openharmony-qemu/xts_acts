@@ -26,6 +26,7 @@ static const int GLOBAL_NETSTACK = 0xFF00;
 static const char *TAG = "[netstack]";
 
 static std::mutex g_queueMutex;
+static std::mutex g_callbackMapMutex;
 static std::queue<CallbackData> g_callbackQueue;
 static std::map<std::string, ThreadSafeCallback> g_threadSafeCallbackMap = { };
 

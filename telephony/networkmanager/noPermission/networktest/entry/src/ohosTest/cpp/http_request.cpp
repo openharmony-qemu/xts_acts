@@ -64,7 +64,13 @@ void(THttpOnVoidCallback)(void)
 int32_t SendHttpGetRequest(const char *url)
 {
     Http_Request *request = OH_Http_CreateRequest(url);
+    if (request == nullptr) {
+        return -1;
+    }
     request->options = (Http_RequestOptions *)calloc(1, sizeof(Http_RequestOptions));
+    if (request->options == nullptr) {
+        return -1;
+    }
     Http_ResponseCallback callback = TestResponseCallback;
     Http_EventsHandler handler = { 0 };
 
@@ -85,6 +91,9 @@ int32_t SendHttpGetRequest(const char *url)
     OH_Http_SetHeaderValue(header, "Accept", "application/json");
     OH_Http_SetHeaderValue(header, "aaaaa", "11111");
     request->options->headers = header;
+    if (header == nullptr) {
+        return -1;
+    }
     auto ret = OH_Http_Request(request, callback, handler);
     return ret;
 }
