@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <math.h>
-#include <stdlib.h>
+#include <cmath>
+#include <cstdlib>
 #include "functionalext.h"
 
 /**

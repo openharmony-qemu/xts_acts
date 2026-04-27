@@ -13,11 +13,9 @@
  * limitations under the License.
  */
 
-// commit 543787039098c121917cb5f3e129d84b61afa61b 2013-10-04
-// setenv should not crash on oom
-#include <errno.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cerrno>
+#include <cstdlib>
+#include <cstring>
 #include <sys/resource.h>
 #include "libc_common_memfill.h"
 #include "libc_test_shim.h"

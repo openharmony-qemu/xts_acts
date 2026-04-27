@@ -13,11 +13,11 @@
  * limitations under the License.
  */
 
-#include <errno.h>
+#include <cerrno>
+#include <cstdlib>
+#include <cstring>
 #include <sigchain.h>
 #include <signal.h>
-#include <stdlib.h>
-#include <string.h>
 #include <sys/wait.h>
 #include <unistd.h>
 #include "test.h"
@@ -138,8 +138,9 @@ static int MallocEncodePointerTestImpl(int argc, char* argv[])
         } else {
             t_error("%s sigtimedwait failed: %s\n", argv[0], strerror(errno));
         }
-        if (kill(pid, SIGKILL) == -1) {
-            t_error("%s kill failed: %s\n", argv[0], strerror(errno));
+        union sigval signalValue = { .sival_int = 0 };
+        if (sigqueue(pid, SIGKILL, signalValue) == -1) {
+            t_error("%s sigqueue failed: %s\n", argv[0], strerror(errno));
         }
     }
 

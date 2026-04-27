@@ -14,9 +14,9 @@
  */
 
 #include <arpa/inet.h>
+#include <cstdio>
+#include <cstring>
 #include <netinet/in.h>
-#include <stdio.h>
-#include <string.h>
 #include <sys/socket.h>
 #include "test.h"
 

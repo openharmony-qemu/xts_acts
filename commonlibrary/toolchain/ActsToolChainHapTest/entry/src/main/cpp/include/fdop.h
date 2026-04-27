@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+#ifndef FDOP_H
+#define FDOP_H
+
 #define FDOP_CLOSE 1
 #define FDOP_DUP2 2
 #define FDOP_OPEN 3
@@ -26,7 +29,4 @@ struct fdop {
     char path[];
 };
 
-#define malloc __libc_malloc
-#define calloc __libc_calloc
-#define realloc undef
-#define free __libc_free
+#endif

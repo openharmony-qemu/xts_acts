@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
-#include <errno.h>
+#include <cerrno>
+#include <cstdio>
+#include <cstring>
 #include <fcntl.h>
-#include <stdio.h>
-#include <string.h>
 #include <sys/uio.h>
 
 #include "filepath_util.h"

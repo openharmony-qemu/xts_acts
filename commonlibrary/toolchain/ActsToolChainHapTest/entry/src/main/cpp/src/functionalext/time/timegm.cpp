@@ -13,12 +13,14 @@
  * limitations under the License.
  */
 
-#include <stdlib.h>
-#include <time.h>
+#include <cstdlib>
+#include <ctime>
+#include <dlfcn.h>
 #include "functionalext.h"
 #include "timegm_data.h"
 
-extern "C" time_t __timegm_time64(struct tm*);
+using Timegm64Func = time_t (*)(struct tm*);
+constexpr const char* TIMEGM64_SYMBOL = "__timegm_time64";
 static time_t g_time = 1659177614;
 
 /**
@@ -55,6 +57,11 @@ void timegm_0100(void)
  */
 void timegm_time64_0100(void)
 {
+    Timegm64Func timegm64 = reinterpret_cast<Timegm64Func>(dlsym(RTLD_DEFAULT, TIMEGM64_SYMBOL));
+    if (timegm64 == nullptr) {
+        t_error("timegm_time64_0100 failed: dlsym __timegm_time64 failed\n");
+        return;
+    }
     time_t timeThis;
     for (int32_t i = 0; i < (int32_t)(sizeof(test_timegm_data) / sizeof(test_timegm_data[0])); i++) {
         const char* handlerChar = test_handle_path(test_timegm_data[i].tz);
@@ -70,7 +77,7 @@ void timegm_time64_0100(void)
             EXPECT_PTRNE("timegm_time64_0100", timeptr, NULL);
             return;
         }
-        timeThis = __timegm_time64(timeptr);
+        timeThis = timegm64(timeptr);
         EXPECT_EQ("timegm_time64_0100", test_timegm_data[i].result, timeThis);
     }
 }

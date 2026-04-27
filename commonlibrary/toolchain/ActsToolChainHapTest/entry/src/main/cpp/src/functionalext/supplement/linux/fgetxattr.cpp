@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
+#include <cstdio>
+#include <cstring>
 #include <fcntl.h>
-#include <stdio.h>
-#include <string.h>
 #include <sys/xattr.h>
 #include "functionalext.h"
 #include "test.h"

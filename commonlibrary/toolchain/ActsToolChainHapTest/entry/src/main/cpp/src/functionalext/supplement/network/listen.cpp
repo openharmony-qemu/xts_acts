@@ -14,8 +14,8 @@
  */
 
 #include <arpa/inet.h>
+#include <cstring>
 #include <netinet/in.h>
-#include <string.h>
 #include <sys/socket.h>
 #include <unistd.h>
 #include "functionalext.h"

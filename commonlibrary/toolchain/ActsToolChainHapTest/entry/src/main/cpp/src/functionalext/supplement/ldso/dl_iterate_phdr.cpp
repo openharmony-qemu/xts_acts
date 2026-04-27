@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
+#include <cstdlib>
 #include <dlfcn.h>
 #include <link.h>
 #include <pthread.h>
-#include <stdlib.h>
 #include <sys/wait.h>
 #include "functionalext.h"
 #include "test.h"
@@ -31,7 +31,7 @@ static pthread_mutex_t g_lock2;
 
 static int HeaderHandler(struct dl_phdr_info* info, size_t size, void* data)
 {
-    void* addrhead = (void*)(info->dlpi_addr + info->dlpi_phdr[0].p_vaddr);
+    void* addrhead = reinterpret_cast<void*>(info->dlpi_addr + info->dlpi_phdr[0].p_vaddr);
     if ((strcmp(info->dlpi_name, "/data/libtest.so") == 0) && (addrhead != nullptr)) {
         return 1;
     }
@@ -42,7 +42,7 @@ static int g_sameNameCount = 0;
 
 static int SameNameCountHandler(struct dl_phdr_info* info, size_t size, void* data)
 {
-    void* addrhead = (void*)(info->dlpi_addr + info->dlpi_phdr[0].p_vaddr);
+    void* addrhead = reinterpret_cast<void*>(info->dlpi_addr + info->dlpi_phdr[0].p_vaddr);
     if ((strcmp(info->dlpi_name, "/data/libtest.so") == 0) && (addrhead != nullptr)) {
         g_sameNameCount++;
     }

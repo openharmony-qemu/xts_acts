@@ -13,19 +13,21 @@
  * limitations under the License.
  */
 
+#include <csignal>
+#include <cstdint>
+#include <cstdio>
+#include <cstdlib>
+#include <dlfcn.h>
 #include <fcntl.h>
-#include <signal.h>
-#include <stdint.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include <sys/select.h>
 #include <sys/time.h>
 #include <time.h>
 #include <unistd.h>
 #include "functionalext.h"
 
-extern "C" int
-    __select_time64(int, fd_set* __restrict, fd_set* __restrict, fd_set* __restrict, struct timeval* __restrict);
+using SelectTime64Func =
+    int (*)(int, fd_set* __restrict, fd_set* __restrict, fd_set* __restrict, struct timeval* __restrict);
+constexpr const char* SELECT_TIME64_SYMBOL = "__select_time64";
 const int32_t COUNT_ZERO = 0;
 const int32_t COUNT_FAILED = -1;
 constexpr int32_t SELECT_TIMEOUT_SEC = 5;
@@ -102,6 +104,11 @@ void Select0300(void)
  */
 void SelectTime640100(void)
 {
+    SelectTime64Func selectTime64 = reinterpret_cast<SelectTime64Func>(dlsym(RTLD_DEFAULT, SELECT_TIME64_SYMBOL));
+    if (selectTime64 == nullptr) {
+        t_error("SelectTime640100 dlsym __select_time64 failed\n");
+        return;
+    }
     struct timeval timeout;
     timeout.tv_sec = SELECT_TIMEOUT_SEC;
     timeout.tv_usec = 0;
@@ -111,7 +118,7 @@ void SelectTime640100(void)
     FD_ZERO(&writefds);
     FD_SET(SELECT_STDIN_FD, &readfds);
     FD_SET(SELECT_STDOUT_FD, &writefds);
-    int result = __select_time64(SELECT_NFDS, &readfds, &writefds, nullptr, &timeout);
+    int result = selectTime64(SELECT_NFDS, &readfds, &writefds, nullptr, &timeout);
     EXPECT_TRUE("SelectTime640100", result > 0);
 }
 

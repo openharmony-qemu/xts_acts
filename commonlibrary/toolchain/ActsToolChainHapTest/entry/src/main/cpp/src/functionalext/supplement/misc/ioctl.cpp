@@ -15,19 +15,19 @@
 
 #include <arpa/inet.h>
 #include <arpa/nameser.h>
-#include <ctype.h>
+#include <cctype>
+#include <cerrno>
+#include <cstdint>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 #include <dlfcn.h>
-#include <errno.h>
 #include <fcntl.h>
 #include <net/if.h>
 #include <netdb.h>
 #include <poll.h>
 #include <pthread.h>
 #include <resolv.h>
-#include <stdint.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <sys/ioctl.h>
 #include <sys/socket.h>
 #include <sys/stat.h>
@@ -39,6 +39,7 @@ unsigned char g_testIoctlAccessTokenId = 'A';
 unsigned int g_getTokenId = 1;
 unsigned int g_setTokenId = 2;
 const char DEVICE_TOKENID[] = "/dev/access_token_id";
+constexpr int IFREQ_BUFFER_COUNT = 3;
 #define TEST_TOKENID_GET_TOKENID _IOR(g_testIoctlAccessTokenId, g_getTokenId, unsigned long long)
 #define TEST_TOKENID_SET_TOKENID _IOW(g_testIoctlAccessTokenId, g_setTokenId, unsigned long long)
 static unsigned long long GetRand64(void)
@@ -86,9 +87,9 @@ void Ioctl0200(void)
         return;
     }
     EXPECT_NE("Ioctl0200", -1, sockFd);
-    struct ifreq ifr[3];
+    struct ifreq ifr[IFREQ_BUFFER_COUNT];
     struct ifconf ifc = { 0 };
-    ifc.ifc_len = 3 * sizeof(struct ifreq);
+    ifc.ifc_len = IFREQ_BUFFER_COUNT * sizeof(struct ifreq);
     ifc.ifc_buf = reinterpret_cast<char*>(ifr);
     int ret = ioctl(sockFd, SIOCGIFCONF, &ifc);
     if (ret != 0) {

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include <errno.h>
+#include <cerrno>
 #include <pthread.h>
 
 #include "pthread_util.h"

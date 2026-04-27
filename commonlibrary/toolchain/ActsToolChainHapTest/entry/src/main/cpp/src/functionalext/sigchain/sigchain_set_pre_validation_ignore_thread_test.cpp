@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
+#include <csignal>
+#include <cstdlib>
 #include <pthread.h>
 #include <sigchain.h>
-#include <signal.h>
-#include <stdlib.h>
 #include <sys/wait.h>
 #include <unistd.h>
 #include "functionalext.h"

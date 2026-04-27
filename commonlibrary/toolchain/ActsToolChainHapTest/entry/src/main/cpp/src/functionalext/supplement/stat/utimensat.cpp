@@ -13,9 +13,10 @@
  * limitations under the License.
  */
 
-#include <errno.h>
+#include <cerrno>
+#include <cstdio>
+#include <dlfcn.h>
 #include <fcntl.h>
-#include <stdio.h>
 #include <sys/stat.h>
 #include "filepath_util.h"
 #include "functionalext.h"
@@ -23,7 +24,8 @@
 
 const long SEC = 123840;
 
-extern "C" int __utimensat_time64(int, const char*, const struct timespec[2], int);
+using UtimensatTime64Func = int (*)(int, const char*, const struct timespec[2], int);
+constexpr const char* UTIMENSAT_TIME64_SYMBOL = "__utimensat_time64";
 /**
  * @tc.name      : utimensat_0100
  * @tc.desc      : change file timestamps with nanosecond precision
@@ -81,12 +83,18 @@ void Utimensat0200(void)
  */
 void UtimensatTime640100(void)
 {
+    UtimensatTime64Func utimensatTime64 =
+        reinterpret_cast<UtimensatTime64Func>(dlsym(RTLD_DEFAULT, UTIMENSAT_TIME64_SYMBOL));
+    if (utimensatTime64 == nullptr) {
+        t_error("%s failed: dlsym __utimensat_time64 failed\n", __func__);
+        return;
+    }
     char path[PATH_MAX] = { 0 };
     FILE_ABSOLUTE_PATH(STR_FILE_TXT, path);
     int fd = open(path, O_RDWR | O_CREAT, TEST_MODE);
     struct timespec times[] = { { .tv_sec = 0 }, { .tv_sec = SEC } };
 
-    int result = __utimensat_time64(fd, path, times, 0);
+    int result = utimensatTime64(fd, path, times, 0);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }

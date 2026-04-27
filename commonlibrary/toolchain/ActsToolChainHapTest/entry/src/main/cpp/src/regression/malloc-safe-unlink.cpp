@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
-#include <errno.h>
-#include <signal.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cerrno>
+#include <csignal>
+#include <cstdlib>
+#include <cstring>
 #include <sys/wait.h>
 #include <unistd.h>
 #include "test.h"
@@ -28,6 +28,7 @@
 #define MALLOC_SIZE_S 50
 #define MALLOC_SIZE_L 100
 #define TEST_NUM 512
+constexpr int KILL_SIGVAL = 0;
 
 struct MetaIn {
     struct MetaIn *prev, *next;
@@ -55,6 +56,10 @@ static volatile void* g_tmp;
 
 int SetDevideChunk(size_t size)
 {
+    if (size == 0 || size > SIZE_MAX / sizeof(unsigned char)) {
+        t_error("Invalid alloc size: %zu\n", size);
+        return -1;
+    }
     if (!(g_tmp = malloc(size))) {
         t_error("Malloc failed: %s\n", strerror(errno));
         return -1;
@@ -130,8 +135,9 @@ static int MallocSafeUnlinkTestImpl(int argc, char* argv[])
         } else {
             t_error("%s sigtimedwait failed: %s\n", argv[0], strerror(errno));
         }
-        if (kill(pid, SIGKILL) == -1) {
-            t_error("%s kill failed: %s\n", argv[0], strerror(errno));
+        union sigval signalValue = { .sival_int = KILL_SIGVAL };
+        if (sigqueue(pid, SIGKILL, signalValue) == -1) {
+            t_error("%s sigqueue failed: %s\n", argv[0], strerror(errno));
         }
     }
 

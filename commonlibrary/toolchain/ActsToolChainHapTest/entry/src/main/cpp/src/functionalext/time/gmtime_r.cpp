@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-#include <limits.h>
+#include <climits>
+#include <ctime>
 #include <stdlib.h>
-#include <time.h>
 #include "functionalext.h"
 #include "gmtime_data.h"
 

@@ -31,7 +31,7 @@ void* getmntent_rOne(void* arg)
     }
     fscanf(fptr, "%[^\n]", c);
     fclose(fptr);
-    sscanf(c, "%[^ ]", str);
+    sscanf(c, "%99[^ ]", str);
     struct mntent* m = nullptr;
     struct mntent mntbuf;
     memset(&m, 0x00, sizeof(m));

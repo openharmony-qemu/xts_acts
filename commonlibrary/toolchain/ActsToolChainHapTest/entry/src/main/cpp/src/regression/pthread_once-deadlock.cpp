@@ -15,15 +15,19 @@
 
 // commit: 7e6be42a77989c01155bdc7333ea58206e1563d4 2011-03-08
 // pthread_once should not deadlock
+#include <cstring>
 #include <errno.h>
 #include <pthread.h>
 #include <semaphore.h>
-#include <string.h>
 #include "test.h"
 
-#define T(f)       \
-    if ((r = (f))) \
-    t_error(#f " failed: %s\n", strerror(r))
+#define T(f)                                                 \
+    do {                                                     \
+        int macroRet = (f);                                  \
+        if (macroRet != 0) {                                 \
+            t_error(#f " failed: %s\n", strerror(macroRet)); \
+        }                                                    \
+    } while (0)
 #define E(f) \
     if (f)   \
     t_error(#f " failed: %s\n", strerror(errno))
@@ -40,7 +44,6 @@ static void Init(void)
 static void* Start(void* arg)
 {
     void** a = (void**)arg;
-    int r;
     E(sem_post((sem_t*)a[1]));
     T(pthread_once((pthread_once_t*)a[0], Init));
     E(sem_post((sem_t*)a[1]));
@@ -80,7 +83,6 @@ static int PthreadOnceDeadlockTestImpl(void)
     void* a2[] = { &once, &s2 };
     void* a3[] = { &once, &s3 };
     void* p;
-    int r;
 
     E(sem_init(&s1, 0, 0));
     E(sem_init(&s2, 0, 0));

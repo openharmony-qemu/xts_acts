@@ -13,9 +13,10 @@
  * limitations under the License.
  */
 
-#include <errno.h>
-#include <signal.h>
-#include <stdlib.h>
+#include <cerrno>
+#include <csignal>
+#include <cstdlib>
+#include <dlfcn.h>
 #include <sys/timex.h>
 #include <time.h>
 #include "functionalext.h"
@@ -25,9 +26,8 @@ void ExceptionHandler(int sig)
     exit(t_status);
 }
 
-extern "C" {
-int __clock_adjtime64(clockid_t, struct timex*);
-}
+using ClockAdjtime64Func = int (*)(clockid_t, struct timex*);
+constexpr const char* CLOCK_ADJTIME64_SYMBOL = "__clock_adjtime64";
 
 /**
  * @tc.name      : ClockAdjtime0100
@@ -109,10 +109,16 @@ void ClockAdjtime0500(void)
  */
 void ClockAdjtime640100(void)
 {
+    ClockAdjtime64Func clockAdjtime64 =
+        reinterpret_cast<ClockAdjtime64Func>(dlsym(RTLD_DEFAULT, CLOCK_ADJTIME64_SYMBOL));
+    if (clockAdjtime64 == nullptr) {
+        t_error("ClockAdjtime640100 dlsym __clock_adjtime64 failed\n");
+        return;
+    }
     struct timex tx;
     memset(&tx, 0, sizeof(tx));
 
-    int result = __clock_adjtime64(CLOCK_REALTIME, &tx);
+    int result = clockAdjtime64(CLOCK_REALTIME, &tx);
     EXPECT_NE("ClockAdjtime640100", result, -1);
 }
 

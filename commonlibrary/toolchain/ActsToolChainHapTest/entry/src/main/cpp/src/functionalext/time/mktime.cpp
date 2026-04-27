@@ -13,7 +13,8 @@
  * limitations under the License.
  */
 
-#include <stdlib.h>
+#include <cstdlib>
+#include <dlfcn.h>
 #include <time.h>
 #include "functionalext.h"
 #include "mktime_data.h"
@@ -21,7 +22,8 @@
 
 static time_t g_time = 1659177614;
 
-extern "C" time_t __mktime64(struct tm*);
+using Mktime64Func = time_t (*)(struct tm*);
+constexpr const char* MKTIME64_SYMBOL = "__mktime64";
 /**
  * @tc.name      : mktime_0100
  * @tc.desc      : according to different time zones, convert time to seconds in duration since 1970-1-1
@@ -55,6 +57,11 @@ static void mktime_0100(void)
  */
 void mktime64_0100(void)
 {
+    Mktime64Func mktime64 = reinterpret_cast<Mktime64Func>(dlsym(RTLD_DEFAULT, MKTIME64_SYMBOL));
+    if (mktime64 == nullptr) {
+        t_error("mktime64_0100 failed: dlsym __mktime64 failed\n");
+        return;
+    }
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(test_mktime_data) / sizeof(test_mktime_data[0])); i++) {
         const char* handlerChar = test_handle_path(test_mktime_data[i].tz);
         if (!handlerChar) {
@@ -69,7 +76,7 @@ void mktime64_0100(void)
             EXPECT_PTRNE("mktime64_0100", timeptr, NULL);
             return;
         }
-        time_t mk = __mktime64(timeptr);
+        time_t mk = mktime64(timeptr);
         EXPECT_EQ("mktime64_0100", mk, test_mktime_data[i].result);
     }
 }

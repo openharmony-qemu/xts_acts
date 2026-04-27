@@ -15,11 +15,11 @@
 
 #include <info/fatal_message.h>
 
-#include <errno.h>
+#include <cerrno>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 #include <pthread.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <sys/wait.h>
 #include <test.h>
 #include <unistd.h>
@@ -186,7 +186,7 @@ void* ThreadFun1(void* arg)
     }
     fatal_msg_t* fatal_message = get_fatal_message();
     EXPECT_TRUE(strcmp(fatal_message->msg, static_cast<char*>(arg)) == 0);
-    pthread_exit((void*)"ThreadFun1 Exit");
+    return nullptr;
 }
 
 void* ThreadFun2(void* arg)
@@ -196,7 +196,7 @@ void* ThreadFun2(void* arg)
     }
     fatal_msg_t* fatal_message = get_fatal_message();
     EXPECT_TRUE(strcmp(fatal_message->msg, static_cast<char*>(arg)) == 0);
-    pthread_exit((void*)"ThreadFun2 Exit");
+    return nullptr;
 }
 
 /**

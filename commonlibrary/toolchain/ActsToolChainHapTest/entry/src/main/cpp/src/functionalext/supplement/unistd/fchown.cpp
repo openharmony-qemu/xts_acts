@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
+#include <csignal>
 #include <fcntl.h>
-#include <signal.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>

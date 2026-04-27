@@ -16,12 +16,13 @@
 __thread char v[123];
 __thread int x = 42;
 __thread long double y;
+enum { TLS_BYTE_MOD = 16 };
 
 void* f()
 {
     int i;
     for (i = 0; i < sizeof v; i++)
-        v[i] = i % 16;
+        v[i] = i % TLS_BYTE_MOD;
     return v;
 }
 void* g()

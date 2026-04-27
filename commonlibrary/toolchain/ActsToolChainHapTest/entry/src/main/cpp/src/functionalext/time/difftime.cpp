@@ -13,12 +13,14 @@
  * limitations under the License.
  */
 
-#include <stdlib.h>
+#include <cstdlib>
+#include <dlfcn.h>
 #include <time.h>
 #include "difftime_data.h"
 #include "functionalext.h"
 
-extern "C" double __difftime64(time_t, time_t);
+using Difftime64Func = double (*)(time_t, time_t);
+constexpr const char* DIFFTIME64_SYMBOL = "__difftime64";
 /**
  * @tc.name      : difftime_0100
  * @tc.desc      : according to different time zones, calculate the time difference between two moments
@@ -52,6 +54,11 @@ static void difftime_0100(void)
  */
 void difftime64_0100(void)
 {
+    Difftime64Func difftime64 = reinterpret_cast<Difftime64Func>(dlsym(RTLD_DEFAULT, DIFFTIME64_SYMBOL));
+    if (difftime64 == nullptr) {
+        t_error("difftime64_0100 failed: dlsym __difftime64 failed\n");
+        return;
+    }
     time_t timeStart = 20000;
     time_t timeEnd = 20010;
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(test_difftime_data) / sizeof(test_difftime_data[0])); i++) {
@@ -64,7 +71,7 @@ void difftime64_0100(void)
         setenv("TZ", handlerChar, 1);
         tzset();
         double returnVal;
-        returnVal = __difftime64(timeEnd, timeStart);
+        returnVal = difftime64(timeEnd, timeStart);
         EXPECT_TRUE("difftime64_0100",
                     abs(test_difftime_data[i].result - returnVal) >= 0 &&
                         abs(test_difftime_data[i].result - returnVal) < 1);

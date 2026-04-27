@@ -15,9 +15,9 @@
 
 // commit: e5dd18319bbd47c89aac5e1571771958a43e067d 2011-03-08
 // pthread_rwlock_try* should fail with EBUSY
-#include <errno.h>
+#include <cerrno>
+#include <cstring>
 #include <pthread.h>
-#include <string.h>
 #include "test.h"
 
 static void CheckResult(int r, const char* name)

@@ -13,12 +13,12 @@
  * limitations under the License.
  */
 
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 #include <dirent.h>
 #include <errno.h>
 #include <fcntl.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <sys/stat.h>
 #include <unistd.h>
 #include "test.h"

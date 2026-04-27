@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-#include <locale.h>
-#include <stdlib.h>
-#include <time.h>
+#include <clocale>
+#include <cstdlib>
+#include <ctime>
 #include "asctime_data.h"
 #include "functionalext.h"
 

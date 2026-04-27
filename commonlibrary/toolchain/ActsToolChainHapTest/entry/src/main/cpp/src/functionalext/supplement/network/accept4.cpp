@@ -14,13 +14,13 @@
  */
 
 #include <arpa/inet.h>
-#include <ctype.h>
+#include <cctype>
+#include <cstdint>
+#include <cstdlib>
 #include <dlfcn.h>
 #include <fcntl.h>
 #include <netdb.h>
 #include <pthread.h>
-#include <stdint.h>
-#include <stdlib.h>
 #include <sys/socket.h>
 #include <sys/stat.h>
 #include <unistd.h>

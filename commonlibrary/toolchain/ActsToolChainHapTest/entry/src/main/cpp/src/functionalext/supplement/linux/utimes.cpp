@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+#include <dlfcn.h>
 #include <fcntl.h>
 #include <stdio.h>
 #include <sys/stat.h>
@@ -20,7 +21,8 @@
 #include <time.h>
 #include "test.h"
 
-extern "C" int __utimes_time64(const char*, const struct timeval[2]);
+using Utime64Func = int (*)(const char*, const struct timeval[2]);
+constexpr const char* UTIMES_TIME64_SYMBOL = "__utimes_time64";
 /**
  * @tc.name      : utimes_0100
  * @tc.desc      : Change file last access and modification times
@@ -112,7 +114,13 @@ void UtimesTime640100(void)
     t_mold = buf1.st_mtime;
     t_aold = buf1.st_atime;
     t_now = time(nullptr);
-    if (__utimes_time64(path, nullptr) != 0) {
+    Utime64Func utimesTime64 = reinterpret_cast<Utime64Func>(dlsym(RTLD_DEFAULT, UTIMES_TIME64_SYMBOL));
+    if (utimesTime64 == nullptr) {
+        t_error("%s dlsym __utimes_time64 failed", __func__);
+        remove(path);
+        return;
+    }
+    if (utimesTime64(path, nullptr) != 0) {
         t_error("%s __utimes_time64 failed", __func__);
     } else {
         stat(path, &buf2);

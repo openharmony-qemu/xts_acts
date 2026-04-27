@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
+#include <cstdio>
 #include <errno.h>
 #include <fcntl.h>
-#include <stdio.h>
 #include <sys/stat.h>
 #include <unistd.h>
 #include "functionalext.h"

@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
-#include <errno.h>
+#include <cerrno>
+#include <cstdlib>
 #include <fcntl.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <sys/stat.h>
 #include <unistd.h>
 #include "functionalext.h"

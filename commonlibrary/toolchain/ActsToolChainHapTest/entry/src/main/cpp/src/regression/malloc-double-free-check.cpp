@@ -13,16 +13,17 @@
  * limitations under the License.
  */
 
+#include <cstring>
 #include <errno.h>
 #include <sigchain.h>
 #include <signal.h>
 #include <stdlib.h>
-#include <string.h>
 #include <sys/wait.h>
 #include <unistd.h>
 #include "test.h"
 
 static void handler(int s) {}
+constexpr time_t WAIT_SECONDS = 5;
 
 static int child(void)
 {
@@ -60,7 +61,7 @@ static int MallocDoubleFreeCheckTest_impl(int argc, char* argv[])
 
     sigemptyset(&set);
     sigaddset(&set, SIGCHLD);
-    sigprocmask(SIG_BLOCK, &set, 0);
+    sigprocmask(SIG_BLOCK, &set, nullptr);
     signal(SIGCHLD, handler);
     RemoveAllSpecialHandler(SIGSEGV);
 
@@ -70,15 +71,16 @@ static int MallocDoubleFreeCheckTest_impl(int argc, char* argv[])
         return -1;
     }
     timespec ts{};
-    ts.tv_sec = 5;
+    ts.tv_sec = WAIT_SECONDS;
     ts.tv_nsec = 0;
-    if (sigtimedwait(&set, 0, &ts) == -1) { /* Wait for 5 seconds */
+    if (sigtimedwait(&set, nullptr, &ts) == -1) { /* Wait for 5 seconds */
         if (errno == EAGAIN)
             flag = 1;
         else
             t_error("%s sigtimedwait failed: %s\n", argv[0], strerror(errno));
-        if (kill(pid, SIGKILL) == -1)
-            t_error("%s kill failed: %s\n", argv[0], strerror(errno));
+        union sigval signalValue = { .sival_int = 0 };
+        if (sigqueue(pid, SIGKILL, signalValue) == -1)
+            t_error("%s sigqueue failed: %s\n", argv[0], strerror(errno));
     }
 
     if (waitpid(pid, &status, 0) != pid) {

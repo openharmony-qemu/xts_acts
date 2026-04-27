@@ -15,10 +15,10 @@
 
 // commit 2b2aff37aced66e4a50a38a14607a9b1dc0ee001 2013-10-03
 // execle should pass env properly
-#include <errno.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cerrno>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 #include <unistd.h>
 #include "test.h"
 

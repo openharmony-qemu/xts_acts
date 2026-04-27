@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+#include <dlfcn.h>
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <sys/time.h>
@@ -22,7 +23,8 @@
 static const char* PATH = "/data/storage/el2/base/cache";
 constexpr size_t WRITE_LEN = 5;
 
-extern "C" int __futimesat_time64(int, const char*, const struct timeval[2]);
+using FutimesatTime64Func = int (*)(int, const char*, const struct timeval[2]);
+constexpr const char* FUTIMESAT_TIME64_SYMBOL = "__futimesat_time64";
 /**
  * @tc.name      : futimesat_0100
  * @tc.desc      : Change timestamps of a file relative to a directory file descriptor
@@ -137,6 +139,12 @@ void Futimesat0400(void)
  */
 void FutimesatTime640200(void)
 {
+    FutimesatTime64Func futimesatTime64 =
+        reinterpret_cast<FutimesatTime64Func>(dlsym(RTLD_DEFAULT, FUTIMESAT_TIME64_SYMBOL));
+    if (futimesatTime64 == nullptr) {
+        t_error("%s dlsym __futimesat_time64 failed\n", __func__);
+        return;
+    }
     int dirFd = open(PATH, O_RDONLY | O_DIRECTORY);
     if (dirFd < 0) {
         t_error("%s open failed\n", __func__);
@@ -147,7 +155,7 @@ void FutimesatTime640200(void)
         t_error("%s openat failed\n", __func__);
     }
 
-    int result = __futimesat_time64(dirFd, "test.txt", nullptr);
+    int result = futimesatTime64(dirFd, "test.txt", nullptr);
     if (result != 0) {
         t_error("%s __futimesat_time64 failed\n", __func__);
     }

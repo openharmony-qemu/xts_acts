@@ -30,6 +30,22 @@
 #define HISYSEVENT_WAIT_US 100000
 
 typedef void (*TEST_FUN)(void);
+constexpr int PROC_CMDLINE_BUF_LEN = 256;
+
+static const char* GetProcessName()
+{
+    static char processName[PROC_CMDLINE_BUF_LEN] = { 0 };
+    FILE* cmdline = fopen("/proc/self/cmdline", "r");
+    if (cmdline == nullptr) {
+        return "unknown_process";
+    }
+    if (fgets(processName, sizeof(processName), cmdline) == nullptr || processName[0] == '\0') {
+        fclose(cmdline);
+        return "unknown_process";
+    }
+    fclose(cmdline);
+    return processName;
+}
 
 /**
  * @tc.name      : LdsoDebugTest0001
@@ -105,7 +121,7 @@ void LdsoDebugTest0004(void)
     printf("[%s][Line: %d][%s]: entry\n", __FILE__, __LINE__, __func__);
 
     void* handleLib6 = dlopen(LIB_PATH_6, RTLD_NOW);
-    EXPECT_PTREQ("LdsoDebugTest0004", handleLib6, NULL);
+    EXPECT_PTREQ("LdsoDebugTest0004", handleLib6, nullptr);
 
     printf("[%s][Line: %d][%s]: end\n", __FILE__, __LINE__, __func__);
 }
@@ -123,7 +139,6 @@ void LdsoDebugTest0005(void)
     char line[512] = { 0 };
     char expectedStr[512] = { 0 };
     int eventFound = 0;
-    extern char* __progname;
 
     void* handle = dlopen(LIB_PATH_FOR_HISYSEVENT_TEST_0005, RTLD_NOW);
     EXPECT_PTRNE("LdsoDebugTest0005", handle, NULL);
@@ -132,7 +147,7 @@ void LdsoDebugTest0005(void)
 
     fp = popen("hisysevent -l -n DLOPEN_WITH_ABSOLUTE_PATH 2>/dev/null", "r");
     if (fp != NULL) {
-        snprintf(expectedStr, sizeof(expectedStr), "%s:%s", __progname, LIB_PATH_FOR_HISYSEVENT_TEST_0005);
+        snprintf(expectedStr, sizeof(expectedStr), "%s:%s", GetProcessName(), LIB_PATH_FOR_HISYSEVENT_TEST_0005);
 
         // Search for the expected string in HiSysEvent output
         while (fgets(line, sizeof(line), fp) != NULL) {
@@ -168,7 +183,6 @@ void LdsoDebugTest0006(void)
     char line[512] = { 0 };
     char expectedStr[512] = { 0 };
     int eventFound = 0;
-    extern char* __progname;
 
     void* handle = dlopen(LIB_PATH_FOR_HISYSEVENT_TEST_0006, RTLD_NOW);
     EXPECT_PTRNE("LdsoDebugTest0006", handle, NULL);
@@ -177,7 +191,7 @@ void LdsoDebugTest0006(void)
 
     fp = popen("hisysevent -l -n DLOPEN_WITH_ABSOLUTE_PATH 2>/dev/null", "r");
     if (fp != NULL) {
-        snprintf(expectedStr, sizeof(expectedStr), "%s:%s", __progname, LIB_PATH_FOR_HISYSEVENT_TEST_0006);
+        snprintf(expectedStr, sizeof(expectedStr), "%s:%s", GetProcessName(), LIB_PATH_FOR_HISYSEVENT_TEST_0006);
 
         while (fgets(line, sizeof(line), fp) != NULL) {
             if (strstr(line, expectedStr) != NULL) {

@@ -14,12 +14,12 @@
  */
 
 #include <bits/alltypes.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <ctime>
 #include <netinet/ip.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <sys/socket.h>
-#include <time.h>
 #include <unistd.h>
 #include "test.h"
 

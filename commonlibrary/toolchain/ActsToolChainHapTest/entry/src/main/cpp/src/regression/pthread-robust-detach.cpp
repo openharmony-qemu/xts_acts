@@ -15,15 +15,16 @@
 
 // commit 12e1e324683a1d381b7f15dd36c99b37dd44d940 2015-04-10
 // robust mutex should work with detached threads too
-#include <errno.h>
+#include <cerrno>
+#include <cstring>
+#include <ctime>
 #include <pthread.h>
-#include <string.h>
-#include <time.h>
 #include "test.h"
 
 #define TX(r, f, x)                                                                                                   \
-    (((r) = (f)) == x ||                                                                                              \
-     (t_error(#f " failed: (pshared==%d) got %d \"%s\" want %d \"%s\"\n", g_pshared, r, strerror(r), x, strerror(x)), \
+    (((r) = (f)) == (x) ||                                                                                            \
+     (t_error(                                                                                                        \
+          #f " failed: (pshared==%d) got %d \"%s\" want %d \"%s\"\n", g_pshared, (r), strerror(r), (x), strerror(x)), \
       0))
 #define T(r, f) TX(r, f, 0)
 

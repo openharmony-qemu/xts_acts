@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include <fenv.h>
+#include <cfenv>
 #include "functionalext.h"
 
 /**

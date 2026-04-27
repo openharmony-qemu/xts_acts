@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
+#include <ctime>
 #include <fcntl.h>
 #include <poll.h>
 #include <sys/stat.h>
-#include <time.h>
 #include "functionalext.h"
 
 /**

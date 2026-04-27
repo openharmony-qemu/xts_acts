@@ -18,7 +18,7 @@
 
 #include "time_test_data.h"
 
-static const struct time_test_double_struct test_difftime_data[] = {
+inline constexpr struct time_test_double_struct test_difftime_data[] = {
     { "Pacific/Rarotonga", 10.000000 },
     { "Pacific/Wake", 10.000000 },
     { "Pacific/Tarawa", 10.000000 },

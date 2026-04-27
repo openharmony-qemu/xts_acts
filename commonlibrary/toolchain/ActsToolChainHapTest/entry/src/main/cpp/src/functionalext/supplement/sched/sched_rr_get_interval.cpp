@@ -13,12 +13,14 @@
  * limitations under the License.
  */
 
-#include <errno.h>
+#include <cerrno>
+#include <dlfcn.h>
 #include <sched.h>
 
 #include "test.h"
 
-extern "C" int __sched_rr_get_interval_time64(pid_t, struct timespec*);
+using SchedRrGetInterval64Func = int (*)(pid_t, struct timespec*);
+constexpr const char* SCHED_RR_GET_INTERVAL64_SYMBOL = "__sched_rr_get_interval_time64";
 /**
  * @tc.name      : sched_rr_get_interval_0100
  * @tc.desc      : get the SCHED_RR interval for the named process
@@ -67,11 +69,17 @@ void SchedRrGetInterval0200(void)
  */
 void SchedRrGetIntervalTime640100(void)
 {
+    SchedRrGetInterval64Func schedRrGetInterval64 =
+        reinterpret_cast<SchedRrGetInterval64Func>(dlsym(RTLD_DEFAULT, SCHED_RR_GET_INTERVAL64_SYMBOL));
+    if (schedRrGetInterval64 == nullptr) {
+        t_error("%s failed: dlsym __sched_rr_get_interval_time64 failed\n", __func__);
+        return;
+    }
     pid_t pid = getpid();
     struct timespec ts = { 0 };
 
     errno = 0;
-    int result = __sched_rr_get_interval_time64(pid, &ts);
+    int result = schedRrGetInterval64(pid, &ts);
     if (result != 0 || errno != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
         t_error("%s failed: errno = %d\n", __func__, errno);

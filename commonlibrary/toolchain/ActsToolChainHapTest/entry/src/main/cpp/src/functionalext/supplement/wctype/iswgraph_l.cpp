@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
+#include <clocale>
+#include <cstdlib>
+#include <cwchar>
+#include <cwctype>
 #include <dlfcn.h>
-#include <locale.h>
-#include <stdlib.h>
-#include <wchar.h>
-#include <wctype.h>
 #include "functionalext.h"
 
 const int COUNT = 94;

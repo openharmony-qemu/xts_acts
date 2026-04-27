@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
+#include <cstdio>
+#include <cstring>
 #include <fcntl.h>
-#include <stdio.h>
-#include <string.h>
 #include <unistd.h>
 #include "filepath_util.h"
 #include "functionalext.h"

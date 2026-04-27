@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
+#include <cstdlib>
+#include <cwchar>
 #include <sigchain.h>
-#include <stdlib.h>
-#include <wchar.h>
 #include "functionalext.h"
 #include "sigchain_util.h"
 #include "test.h"

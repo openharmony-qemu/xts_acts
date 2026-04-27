@@ -13,8 +13,9 @@
  * limitations under the License.
  */
 
-#include <stdlib.h>
-#include <time.h>
+#include <cstdlib>
+#include <ctime>
+#include <dlfcn.h>
 #include "functionalext.h"
 #include "localtime_data.h"
 #include "time64_functions.h"
@@ -23,7 +24,8 @@ static time_t g_time = 1659177614;
 static int16_t g_yearBase = 1900;
 static int16_t g_bufferSize = 500;
 
-extern "C" struct tm* __localtime64_r(const time_t* __restrict, struct tm* __restrict);
+using Localtime64RFunc = struct tm* (*)(const time_t* __restrict, struct tm* __restrict);
+constexpr const char* LOCALTIME64_R_SYMBOL = "__localtime64_r";
 /**
  * @tc.name      : localtime_r_0100
  * @tc.desc      : according to different time zones, converts the time in seconds from 1970-1-1 0:00
@@ -71,6 +73,11 @@ void LocaltimeR0100(void)
  */
 void Localtime64R0100(void)
 {
+    Localtime64RFunc localtime64R = reinterpret_cast<Localtime64RFunc>(dlsym(RTLD_DEFAULT, LOCALTIME64_R_SYMBOL));
+    if (localtime64R == nullptr) {
+        t_error("Localtime64R0100 failed: dlsym __localtime64_r failed\n");
+        return;
+    }
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(test_localtime_data) / sizeof(test_localtime_data[0])); i++) {
         const char* handlerChar = test_handle_path(test_localtime_data[i].tz);
         if (!handlerChar) {
@@ -82,7 +89,7 @@ void Localtime64R0100(void)
         tzset();
         struct tm* localtm = nullptr;
         struct tm res = { 0 };
-        localtm = __localtime64_r(&g_time, &res);
+        localtm = localtime64R(&g_time, &res);
         char buff[g_bufferSize];
         int cnt = sprintf(buff,
                           "%d-%d-%d %d:%d:%d wday=%d,yday=%d,isdst=%d,gmtoff=%ld,zone=%s",

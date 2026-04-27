@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <errno.h>
-#include <stdlib.h>
+#include <cerrno>
+#include <cstdlib>
 #include <sys/inotify.h>
 #include "functionalext.h"
 

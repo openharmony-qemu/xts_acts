@@ -14,13 +14,13 @@
  */
 
 #include <arpa/inet.h>
-#include <ctype.h>
+#include <cctype>
+#include <cstdio>
+#include <cstring>
 #include <dlfcn.h>
 #include <netinet/in.h>
 #include <pthread.h>
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <sys/socket.h>
 #include "functionalext.h"
 

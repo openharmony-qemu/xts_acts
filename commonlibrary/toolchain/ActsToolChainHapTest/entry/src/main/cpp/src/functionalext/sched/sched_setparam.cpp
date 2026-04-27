@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-#include <errno.h>
+#include <cerrno>
+#include <cstdio>
 #include <sched.h>
-#include <stdio.h>
 #include <string.h>
 #include "functionalext.h"
 #include "test.h"

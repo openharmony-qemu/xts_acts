@@ -17,11 +17,11 @@
 // c11 THREADS test was removed and t_error messages were added
 // the test deadlocks with a broken cond var implementation so
 // cond_waits were changed to cond_timedwaits with short timeout
-#include <errno.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
+#include <cerrno>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <ctime>
 #include "test.h"
 
 #include <pthread.h>
@@ -76,6 +76,8 @@ enum {
     PHASES = 10,
     THREADS = 10,
 };
+constexpr long ONE_BILLION_NS = 1000 * 1000 * 1000;
+constexpr long HALF_SECOND_NS = 500 * 1000 * 1000;
 
 static thread g_id[THREADS];
 static unsigned g_args[THREADS];
@@ -91,9 +93,9 @@ static void Settimeout(struct timespec* ts)
 {
     if (clock_gettime(CLOCK_REALTIME, ts))
         t_error("clock_gettime failed: %s\n", strerror(errno));
-    ts->tv_nsec += 500 * 1000 * 1000;
-    if (ts->tv_nsec >= 1000 * 1000 * 1000) {
-        ts->tv_nsec -= 1000 * 1000 * 1000;
+    ts->tv_nsec += HALF_SECOND_NS;
+    if (ts->tv_nsec >= ONE_BILLION_NS) {
+        ts->tv_nsec -= ONE_BILLION_NS;
         ts->tv_sec++;
     }
 }
@@ -128,7 +130,7 @@ static thread_ret Client(void* arg)
         if (ret)
             t_error("thread %u in g_phase %u (%u), failed to unlock: %s\n", *number, i, g_phase, ERRORSTRING(ret));
     }
-    return 0;
+    return nullptr;
 }
 
 static int PthreadCondSmasherTestImpl(void)
@@ -184,7 +186,7 @@ static int PthreadCondSmasherTestImpl(void)
 
     for (unsigned i = 0; i < THREADS; ++i) {
         trace("main joining thread %u\n", i);
-        thread_ret joinRet = 0;
+        thread_ret joinRet = nullptr;
         int ret = THREAD_JOIN(g_id[i], &joinRet);
         trace("main joining thread %u: %s\n", i, ERRORSTRING(ret));
         if (ret)

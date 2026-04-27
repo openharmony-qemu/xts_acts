@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include <math.h>
+#include <cmath>
 #include "functionalext.h"
 
 typedef void (*TEST_FUN)();

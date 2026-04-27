@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <stdlib.h>
-#include <time.h>
+#include <cstdlib>
+#include <ctime>
 #include "asctime_data.h"
 #include "functionalext.h"
 #include "strftime_data.h"

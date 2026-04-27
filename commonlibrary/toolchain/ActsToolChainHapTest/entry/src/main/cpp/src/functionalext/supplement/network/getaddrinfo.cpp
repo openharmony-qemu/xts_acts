@@ -13,11 +13,11 @@
  * limitations under the License.
  */
 
-#include <errno.h>
+#include <cerrno>
+#include <cstdlib>
+#include <cstring>
 #include <netdb.h>
 #include <pthread.h>
-#include <stdlib.h>
-#include <string.h>
 #include <sys/socket.h>
 
 #include "functionalext.h"
@@ -362,7 +362,11 @@ static void* TestAllCases(void* arg)
 
 static void do_test_concurrently(void* (*test)(void* arg), size_t numThreads)
 {
-    pthread_t* threads = (pthread_t*)malloc(sizeof(pthread_t) * numThreads);
+    if (numThreads > (SIZE_MAX / sizeof(pthread_t))) {
+        t_error("Invalid thread count: %zu\n", numThreads);
+        return;
+    }
+    pthread_t* threads = static_cast<pthread_t*>(malloc(sizeof(pthread_t) * numThreads));
     if (threads == nullptr) {
         t_error("Failed to allocate memory: %s\n", strerror(errno));
         return;

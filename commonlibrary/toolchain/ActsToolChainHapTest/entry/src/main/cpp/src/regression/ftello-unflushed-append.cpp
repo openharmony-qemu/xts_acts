@@ -15,16 +15,18 @@
 
 // commit 3af2edee150484940916eba1984f78c3b965dd05 2014-02-07
 // fix ftello result for append streams with unflushed output
-#include <errno.h>
+#include <cerrno>
+#include <cstdlib>
+#include <cstring>
 #include <fcntl.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <unistd.h>
 #include "libc_test_shim.h"
 
 constexpr off_t EXPECT_OFFSET_7 = 7;
 constexpr int FD_MIN_VALID = 2;
+constexpr size_t WRITE_LEN_4 = 4;
+constexpr size_t WRITE_LEN_3 = 3;
 
 static void AssertCondition(int* status, bool condition, const char* expr)
 {
@@ -45,7 +47,8 @@ int FtelloUnflushedAppendTest()
 
     fd = mkstemp(tmp);
     AssertCondition(&status, fd > FD_MIN_VALID, "mkstemp(tmp) > FD_MIN_VALID");
-    AssertCondition(&status, write(fd, "abcd", 4) == 4, "write(fd, \"abcd\", 4) == 4");
+    AssertCondition(
+        &status, write(fd, "abcd", WRITE_LEN_4) == WRITE_LEN_4, "write(fd, \"abcd\", WRITE_LEN_4) == WRITE_LEN_4");
     AssertCondition(&status, close(fd) == 0, "close(fd) == 0");
 
     fd = open(tmp, O_WRONLY);
@@ -53,7 +56,9 @@ int FtelloUnflushedAppendTest()
     f = fdopen(fd, "a");
     AssertCondition(&status, f != nullptr, "fdopen(fd, \"a\")");
     if (f) {
-        AssertCondition(&status, fwrite("efg", 1, 3, f) == 3, "fwrite(\"efg\", 1, 3, f) == 3");
+        AssertCondition(&status,
+                        fwrite("efg", 1, WRITE_LEN_3, f) == WRITE_LEN_3,
+                        "fwrite(\"efg\", 1, WRITE_LEN_3, f) == WRITE_LEN_3");
         off = ftello(f);
         AssertCondition(&status, off != -1, "ftello(f) != -1");
         if (off != EXPECT_OFFSET_7) {

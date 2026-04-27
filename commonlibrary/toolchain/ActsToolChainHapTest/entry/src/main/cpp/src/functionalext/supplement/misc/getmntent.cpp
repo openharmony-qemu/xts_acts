@@ -29,9 +29,9 @@ void getmntent_0100(void)
     if ((fptr = fopen("/proc/mounts", "r")) == NULL) {
         t_error("%s Error! fopen failed\n", __func__);
     }
-    fscanf(fptr, "%[^\n]", c);
+    fscanf(fptr, "%999[^\n]", c);
     fclose(fptr);
-    sscanf(c, "%[^ ]", str);
+    sscanf(c, "%99[^ ]", str);
     struct mntent* m = NULL;
     FILE* ffp = setmntent("/proc/mounts", "r");
     EXPECT_PTRNE("getmntent_0100", ffp, NULL);

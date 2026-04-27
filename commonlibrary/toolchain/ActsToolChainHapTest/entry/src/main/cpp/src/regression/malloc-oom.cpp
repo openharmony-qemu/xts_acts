@@ -14,9 +14,9 @@
  */
 
 // malloc should set errno on oom
+#include <cstring>
 #include <errno.h>
 #include <stdlib.h>
-#include <string.h>
 #include "libc_common_memfill.h"
 #include "libc_test_shim.h"
 

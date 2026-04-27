@@ -13,10 +13,12 @@
  * limitations under the License.
  */
 
+#include <dlfcn.h>
 #include <sys/resource.h>
 #include "functionalext.h"
 
-extern "C" int __getrusage_time64(int, struct rusage*);
+using GetrusageTime64Func = int (*)(int, struct rusage*);
+constexpr const char* GETRUSAGE_TIME64_SYMBOL = "__getrusage_time64";
 /**
  * @tc.name      : getrusage_0100
  * @tc.desc      : Verify the program running time (parameter is RUSAGE_SELF)
@@ -84,8 +86,14 @@ void Getrusage0500(void)
  */
 void GetrusageTime640100(void)
 {
+    GetrusageTime64Func getrusageTime64 =
+        reinterpret_cast<GetrusageTime64Func>(dlsym(RTLD_DEFAULT, GETRUSAGE_TIME64_SYMBOL));
+    if (getrusageTime64 == nullptr) {
+        t_error("%s failed: dlsym __getrusage_time64 failed\n", __func__);
+        return;
+    }
     struct rusage usage;
-    int result = __getrusage_time64(RUSAGE_SELF, &usage);
+    int result = getrusageTime64(RUSAGE_SELF, &usage);
     EXPECT_EQ("GetrusageTime640100", result, 0);
 }
 

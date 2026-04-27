@@ -36,7 +36,7 @@ void posix_spawn_file_actions_addopen_0100(void)
     int ret = posix_spawn_file_actions_addopen(&fa, fd, "/data/storage/el2/base/cache", O_RDWR | O_CREAT, S_IXGRP);
     EXPECT_EQ("posix_spawn_file_actions_addopen_0100", ret, CMPFLAG);
     if (ret == 0) {
-        ptr = (struct fdop*)fa.__actions;
+        ptr = reinterpret_cast<struct fdop*>(fa.__actions);
         EXPECT_EQ("posix_spawn_file_actions_addopen_0100", ptr->cmd, FDOP_OPEN);
         EXPECT_EQ("posix_spawn_file_actions_addopen_0100", ptr->fd, fd);
         EXPECT_EQ("posix_spawn_file_actions_addopen_0100", ptr->oflag, O_RDWR | O_CREAT);
@@ -62,7 +62,7 @@ void posix_spawn_file_actions_addopen_0200(void)
         &fa, fd, "/data/storage/el2/base/cache", O_RDONLY | O_CREAT, S_IXGRP | S_IROTH | S_IWOTH);
     EXPECT_EQ("posix_spawn_file_actions_addopen_0200", ret, CMPFLAG);
     if (ret == 0) {
-        ptr = (struct fdop*)fa.__actions;
+        ptr = reinterpret_cast<struct fdop*>(fa.__actions);
         EXPECT_EQ("posix_spawn_file_actions_addopen_0200", ptr->cmd, FDOP_OPEN);
         EXPECT_EQ("posix_spawn_file_actions_addopen_0200", ptr->fd, fd);
         EXPECT_EQ("posix_spawn_file_actions_addopen_0200", ptr->oflag, O_RDONLY | O_CREAT);
@@ -88,7 +88,7 @@ void posix_spawn_file_actions_addopen_0300(void)
         &fa, fd, "/data/storage/el2/base/cache", O_WRONLY | O_CREAT, S_IXGRP | S_IROTH | S_IWOTH);
     EXPECT_EQ("posix_spawn_file_actions_addopen_0300", ret, CMPFLAG);
     if (ret == 0) {
-        ptr = (struct fdop*)fa.__actions;
+        ptr = reinterpret_cast<struct fdop*>(fa.__actions);
         EXPECT_EQ("posix_spawn_file_actions_addopen_0300", ptr->cmd, FDOP_OPEN);
         EXPECT_EQ("posix_spawn_file_actions_addopen_0300", ptr->fd, fd);
         EXPECT_EQ("posix_spawn_file_actions_addopen_0300", ptr->oflag, O_WRONLY | O_CREAT);

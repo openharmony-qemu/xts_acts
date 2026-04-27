@@ -15,10 +15,10 @@
 
 // commit: 59666802fba592a59f2f4ea4dcb053287fd55826 2011-02-15
 // pthread_create should return EAGAIN on failure
-#include <errno.h>
+#include <cerrno>
+#include <cstdlib>
+#include <cstring>
 #include <pthread.h>
-#include <stdlib.h>
-#include <string.h>
 #include "libc_common_memfill.h"
 #include "libc_test_shim.h"
 static void* start(void* arg)
@@ -29,20 +29,18 @@ static void* start(void* arg)
 int pthread_create_oomTest()
 {
     int status = SUCCESS_CODE;
-#define t_status status
 
     pthread_t td;
     int r, arg;
 
     if (t_memfill() < 0)
         LibcTestError(&status, "memfill failed\n");
-    r = pthread_create(&td, 0, start, &arg);
+    r = pthread_create(&td, nullptr, start, &arg);
     if (r == 0)
         LibcTestError(&status, "pthread_create succeeded\n");
     else if (r != EAGAIN)
         LibcTestError(&status, "pthread_create should fail with EAGAIN but failed with %d (%s)\n", r, strerror(r));
 
-    _Exit(t_status);
+    _Exit(status);
     return status;
-#undef t_status
 }

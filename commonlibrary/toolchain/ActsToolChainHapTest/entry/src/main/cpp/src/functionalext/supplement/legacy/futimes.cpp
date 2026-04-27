@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+#include <dlfcn.h>
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <sys/time.h>
@@ -23,7 +24,8 @@
 const int FAIL = -1;
 const int SUCCESS = 0;
 
-extern "C" int __futimes_time64(int, const struct timeval[2]);
+using FutimesTime64Func = int (*)(int, const struct timeval[2]);
+constexpr const char* FUTIMES_TIME64_SYMBOL = "__futimes_time64";
 /**
  * @tc.name      : futimes_0100
  * @tc.desc      : All parameters are valid, TV is not 0, and futimes can modify the timestamp of the file.
@@ -81,6 +83,11 @@ void Futimes0300(void)
  */
 void FutimesTime640100(void)
 {
+    FutimesTime64Func futimesTime64 = reinterpret_cast<FutimesTime64Func>(dlsym(RTLD_DEFAULT, FUTIMES_TIME64_SYMBOL));
+    if (futimesTime64 == nullptr) {
+        t_error("%s dlsym __futimes_time64 failed\n", __func__);
+        return;
+    }
     int ret = -1;
     struct stat s;
     static struct timeval tv[2] = { { 0L, 0L }, { 0L, 0L } };
@@ -89,7 +96,7 @@ void FutimesTime640100(void)
     tv[1].tv_sec = s.st_mtime;
     tv[1].tv_usec = 0;
     int fd = open("/data/storage/el2/base/cache/futimes.txt", O_RDWR | O_CREAT, 777);
-    ret = __futimes_time64(fd, tv);
+    ret = futimesTime64(fd, tv);
     EXPECT_EQ("FutimesTime640100", ret, SUCCESS);
     int removeRet = remove("/data/storage/el2/base/cache/futimes.txt");
     EXPECT_EQ("FutimesTime640100", removeRet, SUCCESS);

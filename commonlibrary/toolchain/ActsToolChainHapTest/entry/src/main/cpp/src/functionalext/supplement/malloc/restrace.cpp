@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include <stdlib.h>
+#include <cstdlib>
 #include "functionalext.h"
 #include "memory_trace.h"
 
@@ -24,7 +24,7 @@
  */
 void Restrace0100(void)
 {
-    char* mem = (char*)malloc(1 * sizeof(char));
+    char* mem = static_cast<char*>(malloc(1 * sizeof(char)));
     restrace(RES_GPU_VK, mem, 1, TAG_RES_GPU_VK, true);
     free(mem);
 }
