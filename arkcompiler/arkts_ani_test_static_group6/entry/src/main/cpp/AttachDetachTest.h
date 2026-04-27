@@ -19,7 +19,7 @@
 #include "Common.h"
 #include <atomic>
 #include <thread>
-#include "hilog/log.h"if (env->Object_CallMethod_Int(testObj, g_sumMethod, &sumResult, 7, 8) != ANI_OK) {
+#include "hilog/log.h"
 
 ani_int test_AttachDetach([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
