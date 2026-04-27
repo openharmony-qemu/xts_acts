@@ -15,7 +15,8 @@
  */
 
 import {
-  Entry, TextTimerController, Column, TextTimer,Row, Component, $r, Color, ContentModifier,RichEditor, RowOptions, Scroll, ColumnOptions,
+  Entry, TextTimerController, Column, TextTimer,Row, Component, $r, Color,
+  ContentModifier,RichEditor, RowOptions, Scroll, ColumnOptions,
   State,TextTimerConfiguration,WrappedBuilder,Stack,Alignment,Text,Circle,wrapBuilder
 } from '@kit.ArkUI'
 
