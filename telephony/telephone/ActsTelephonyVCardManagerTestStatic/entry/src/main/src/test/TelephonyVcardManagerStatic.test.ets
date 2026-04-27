@@ -400,7 +400,6 @@ export default function TelephonyVcardManagerStatic() {
           hilog.info(domain, tag, `${caseName} test start 111, filePath: ${JSON.stringify(filePath)}`);
           await vcard.importVCard(context, filePath);
           hilog.info(domain, tag, `${caseName} success`);
-          expect(true).assertTrue();
           done();
         } catch (error) {
           hilog.info(domain, tag, `${caseName} failed, catch: error->${JSON.stringify(error)}`);
@@ -822,9 +821,9 @@ export default function TelephonyVcardManagerStatic() {
         hilog.info(domain, tag, `${caseName} test start`);
         try {
           context = AppStorage.get<common.UIAbilityContext>("Context") as common.UIAbilityContext;
-          await vcard.exportVCard(context, predicates);
+          let address: string = await vcard.exportVCard(context, predicates);
           hilog.info(domain, tag, `${caseName} success`);
-          expect(true).assertTrue();
+          expect(address !== null).assertTrue();
           done();
         } catch (error) {
           let err = error as BusinessError;
