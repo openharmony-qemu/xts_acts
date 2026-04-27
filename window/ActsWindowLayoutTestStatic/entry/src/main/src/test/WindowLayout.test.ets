@@ -860,7 +860,6 @@ export default function WindowLayoutTest() {
                                     hilog.info(domain, tag,`${message} succeed setSystemAvoidAreaEnabled`);
                                     await dialogWindowClass.destroyWindow();
                                     await Utils.msSleep(1000);
-                                    expect(true).assertTrue();
                                     done();
                                 })().awaitSync()
                             }).catch((err: Error):PromiseLike<void>|undefined => {
