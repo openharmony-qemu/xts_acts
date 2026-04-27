@@ -44,7 +44,6 @@ static int FmodfTestImpl(void)
         feclearexcept(FE_ALL_EXCEPT);
         y = fmodf(p->x, p->x2);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s fmodf(%a,%a)=%a, want %s",
                    p->file,
@@ -59,7 +58,7 @@ static int FmodfTestImpl(void)
         }
         d = Ulperrf(y, p->y, p->dy);
         if (!Checkcr(y, p->y, p->r)) {
-            printf("%s:%d: %s fmodf(%a,%a) want %a got %a ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s fmodf(%a,%a) want %a got %a ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),

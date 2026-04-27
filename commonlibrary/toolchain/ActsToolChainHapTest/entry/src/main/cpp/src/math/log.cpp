@@ -57,7 +57,7 @@ static int LogTestImpl(void)
         }
         d = Ulperr(y, p->y, p->dy);
         if (!Checkulp(d, p->r)) {
-            printf("%s:%d: %s log(%a) want %a got %a Ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s log(%a) want %a got %a Ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),

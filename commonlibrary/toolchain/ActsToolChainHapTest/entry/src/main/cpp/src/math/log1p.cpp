@@ -29,7 +29,9 @@ static int Log1pTestImpl(void)
 #pragma STDC FENV_ACCESS ON
     double y;
     float d;
-    int e, i, err = 0;
+    int e;
+    int i;
+    int err = 0;
     struct DD* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
@@ -40,7 +42,6 @@ static int Log1pTestImpl(void)
         fesetround(p->r);
         feclearexcept(FE_ALL_EXCEPT);
         y = log1p(p->x);
-        e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
 
 #ifndef __aarch64__
         if (!Checkexcept(e, p->e, p->r)) {
@@ -57,7 +58,7 @@ static int Log1pTestImpl(void)
 #endif
         d = Ulperr(y, p->y, p->dy);
         if (!Checkulp(d, p->r)) {
-            printf("%s:%d: %s log1p(%a) want %a got %a ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s log1p(%a) want %a got %a ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),

@@ -48,7 +48,6 @@ static int RemainderlTestImpl(void)
         feclearexcept(FE_ALL_EXCEPT);
         y = remainderl(p->x, p->x2);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s remainderl(%La,%La)=%La, want %s",
                    p->file,
@@ -63,7 +62,7 @@ static int RemainderlTestImpl(void)
         }
         d = Ulperrl(y, p->y, p->dy);
         if (!Checkcr(y, p->y, p->r)) {
-            printf("%s:%d: %s remainderl(%La,%La) want %La got %La ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s remainderl(%La,%La) want %La got %La ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),

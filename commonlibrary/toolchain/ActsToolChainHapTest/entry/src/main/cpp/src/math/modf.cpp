@@ -22,6 +22,25 @@ static struct DDd t[] = {
 #include "special/modf.h"
 };
 
+static void PrintModfMismatch(const struct DDd* p, double y, double yi, float d, float di)
+{
+    printf("%s:%d: %s modf(%a) want %a,%a got %a,%a, ulperr %.3f = %.3f + %.3f, %.3f = %.3f + %.3f\n",
+           p->file,
+           p->line,
+           Rstr(p->r),
+           p->x,
+           p->y,
+           p->y2,
+           y,
+           static_cast<double>(yi),
+           d,
+           d - p->dy,
+           p->dy,
+           di,
+           static_cast<double>(di - p->dy2),
+           p->dy2);
+}
+
 static int ModfTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
@@ -42,7 +61,6 @@ static int ModfTestImpl(void)
         feclearexcept(FE_ALL_EXCEPT);
         y = modf(p->x, &yi);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         /* Treat INEXACT as expected for this test data set. */
         if (!Checkexceptall(e | INEXACT, p->e | INEXACT, p->r)) {
             printf("%s:%d: bad fp exception: %s modf(%a)=%a,%a, want %s",
@@ -59,21 +77,7 @@ static int ModfTestImpl(void)
         d = Ulperr(y, p->y, p->dy);
         di = Ulperr(yi, p->y2, p->dy2);
         if (!Checkcr(y, p->y, p->r) || !Checkcr(yi, p->y2, p->r)) {
-            printf("%s:%d: %s modf(%a) want %a,%a got %a,%a, ulperr %.3f = %a + %a, %.3f = %a + %a\n",
-                   p->file,
-                   p->line,
-                   Rstr(p->r),
-                   p->x,
-                   p->y,
-                   p->y2,
-                   y,
-                   (double)yi,
-                   d,
-                   d - p->dy,
-                   p->dy,
-                   di,
-                   (double)(di - p->dy2),
-                   p->dy2);
+            PrintModfMismatch(p, y, yi, d, di);
             err++;
         }
     }

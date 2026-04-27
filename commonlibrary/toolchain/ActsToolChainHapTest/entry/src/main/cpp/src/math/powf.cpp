@@ -53,14 +53,14 @@ static int ReportPowfUlp(const struct FfF* p, float y, float d)
     if (Checkulp(d, p->r)) {
         return 0;
     }
-    printf("%s:%d: %s powf(%a,%a) want %a got %a ulperr %.3f = %a + %a\n",
+    printf("%s:%d: %s powf(%a,%a) want %a got %a ulperr %.3f = %.3f + %.3f\n",
            p->file,
            p->line,
            Rstr(p->r),
            p->x,
            p->x2,
            p->y,
-           (double)y,
+           static_cast<double>(y),
            d,
            d - p->dy,
            p->dy);

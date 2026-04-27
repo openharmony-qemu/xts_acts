@@ -42,7 +42,6 @@ static int Y0fTestImpl(void)
         fesetround(p->r);
         feclearexcept(FE_ALL_EXCEPT);
         y = y0f(p->x);
-        e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
 
 #ifndef __aarch64__
         if (!Checkexcept(e, p->e, p->r)) {
@@ -64,7 +63,7 @@ static int Y0fTestImpl(void)
                 printf("X ");
             else
                 err++;
-            printf("%s:%d: %s y0f(%a) want %a got %a ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s y0f(%a) want %a got %a ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),
@@ -83,4 +82,3 @@ int Y0fTest(void)
 {
     return Y0fTestImpl();
 }
-

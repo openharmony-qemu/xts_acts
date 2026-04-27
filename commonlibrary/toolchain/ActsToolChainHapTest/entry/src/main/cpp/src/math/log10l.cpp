@@ -55,7 +55,6 @@ static int Log10lTestImpl(void)
         feclearexcept(FE_ALL_EXCEPT);
         y = log10l(p->x);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s log10l(%La)=%La, want %s",
                    p->file,
@@ -69,7 +68,7 @@ static int Log10lTestImpl(void)
         }
         d = Ulperrl(y, p->y, p->dy);
         if (!Checkulp(d, p->r)) {
-            printf("%s:%d: %s log10l(%La) want %La got %La ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s log10l(%La) want %La got %La ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),

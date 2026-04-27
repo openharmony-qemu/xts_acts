@@ -58,7 +58,7 @@ static int Exp10TestImpl(void)
         }
         d = Ulperr(y, p->y, p->dy);
         if (!Checkulp(d, p->r)) {
-            printf("%s:%d: %s exp10(%a) want %a got %a ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s exp10(%a) want %a got %a ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),

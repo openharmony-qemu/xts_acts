@@ -22,6 +22,25 @@ static struct DDd t[] = {
 #include "special/sincos.h"
 };
 
+static void PrintSincosMismatch(const struct DDd* p, double ysin, double ycos, float dsin, float dcos)
+{
+    printf("%s:%d: %s sincos(%a) want %a,%a got %a,%a, ulperr %.3f = %.3f + %.3f, %.3f = %.3f + %.3f\n",
+           p->file,
+           p->line,
+           Rstr(p->r),
+           p->x,
+           p->y,
+           p->y2,
+           static_cast<double>(ysin),
+           ycos,
+           dsin,
+           dsin - p->dy,
+           p->dy,
+           dcos,
+           static_cast<double>(dcos - p->dy2),
+           p->dy2);
+}
+
 static int SincosTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
@@ -43,7 +62,6 @@ static int SincosTestImpl(void)
         feclearexcept(FE_ALL_EXCEPT);
         sincos(p->x, &ysin, &ycos);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s sincos(%a)=%a,%a, want %s",
                    p->file,
@@ -59,21 +77,7 @@ static int SincosTestImpl(void)
         dsin = Ulperr(ysin, p->y, p->dy);
         dcos = Ulperr(ycos, p->y2, p->dy2);
         if (!Checkulp(dsin, p->r) || !Checkulp(dcos, p->r)) {
-            printf("%s:%d: %s sincos(%a) want %a,%a got %a,%a, ulperr %.3f = %a + %a, %.3f = %a + %a\n",
-                   p->file,
-                   p->line,
-                   Rstr(p->r),
-                   p->x,
-                   p->y,
-                   p->y2,
-                   (double)ysin,
-                   ycos,
-                   dsin,
-                   dsin - p->dy,
-                   p->dy,
-                   dcos,
-                   (double)(dcos - p->dy2),
-                   p->dy2);
+            PrintSincosMismatch(p, ysin, ycos, dsin, dcos);
             err++;
         }
     }

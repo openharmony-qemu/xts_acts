@@ -36,7 +36,9 @@ static int RemquofTestImpl(void)
     int yi;
     float y;
     float d;
-    int e, i, err = 0;
+    int e;
+    int i;
+    int err = 0;
     struct FfFi* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
@@ -62,7 +64,7 @@ static int RemquofTestImpl(void)
         }
         d = Ulperr(y, p->y, p->dy);
         if (!Checkcr(y, p->y, p->r) || HasRemquofQuotientMismatch(p, yi)) {
-            printf("%s:%d: %s remquof(%a,%a) want %a,%lld got %a,%d ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s remquof(%a,%a) want %a,%lld got %a,%d ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),

@@ -43,7 +43,6 @@ static int LogfTestImpl(void)
         feclearexcept(FE_ALL_EXCEPT);
         y = logf(p->x);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s logf(%a)=%a, want %s",
                    p->file,
@@ -57,7 +56,7 @@ static int LogfTestImpl(void)
         }
         d = Ulperrf(y, p->y, p->dy);
         if (!Checkulp(d, p->r)) {
-            printf("%s:%d: %s logf(%a) want %a got %a ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s logf(%a) want %a got %a ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),

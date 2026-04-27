@@ -47,7 +47,6 @@ static int LlroundlTestImpl(void)
         feclearexcept(FE_ALL_EXCEPT);
         yi = llroundl(p->x);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexcept(e, p->e, p->r) && (e | INEXACT) != p->e) {
             printf("%s:%d: bad fp exception: %s llroundl(%La)=%lld, want %s",
                    p->file,

@@ -34,7 +34,9 @@ static int FminlTestImpl(void)
 #pragma STDC FENV_ACCESS ON
     long double y;
     float d;
-    int e, i, err = 0;
+    int e;
+    int i;
+    int err = 0;
     struct LlL* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
@@ -59,7 +61,7 @@ static int FminlTestImpl(void)
         }
         d = Ulperrl(y, p->y, p->dy);
         if (!Checkcr(y, p->y, p->r)) {
-            printf("%s:%d: %s fminl(%La,%La) want %La got %La ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s fminl(%La,%La) want %La got %La ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),

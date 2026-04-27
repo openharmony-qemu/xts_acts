@@ -55,7 +55,6 @@ static int PowlTestImpl(void)
         feclearexcept(FE_ALL_EXCEPT);
         y = powl(p->x, p->x2);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s powl(%La,%La)=%La, want %s",
                    p->file,
@@ -70,7 +69,7 @@ static int PowlTestImpl(void)
         }
         d = Ulperrl(y, p->y, p->dy);
         if (!Checkulp(d, p->r)) {
-            printf("%s:%d: %s powl(%La,%La) want %La got %La ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s powl(%La,%La) want %La got %La ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),

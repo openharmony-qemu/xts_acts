@@ -23,6 +23,27 @@ static struct DDi t[] = {
 
 };
 
+static bool HasLgammaRSignMismatch(const struct DDi* p, int sign)
+{
+    return !isnan(p->x) && p->x != -INF && !(p->e & DIVBYZERO) && sign != p->i;
+}
+
+static void PrintLgammaRMismatch(const struct DDi* p, double y, int sign, float d)
+{
+    printf("%s:%d: %s lgamma_r(%a) want %a,%lld got %a,%d ulperr %.3f = %.3f + %.3f\n",
+           p->file,
+           p->line,
+           Rstr(p->r),
+           p->x,
+           p->y,
+           p->i,
+           static_cast<double>(y),
+           sign,
+           d,
+           static_cast<double>(d - p->dy),
+           p->dy);
+}
+
 static int LgammaRTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
@@ -57,25 +78,14 @@ static int LgammaRTestImpl(void)
             err++;
         }
         d = Ulperr(y, p->y, p->dy);
-        bad = !isnan(p->x) && p->x != -INF && !(p->e & DIVBYZERO) && yi != p->i;
+        bad = HasLgammaRSignMismatch(p, yi);
         if (bad || !Checkulp(d, p->r)) {
             if (!bad && fabsf(d) < 11.0f) {
                 printf("X ");
             } else {
                 err++;
             }
-            printf("%s:%d: %s lgamma_r(%a) want %a,%lld got %a,%d ulperr %.3f = %a + %a\n",
-                   p->file,
-                   p->line,
-                   Rstr(p->r),
-                   p->x,
-                   p->y,
-                   p->i,
-                   (double)y,
-                   yi,
-                   d,
-                   (double)(d - p->dy),
-                   p->dy);
+            PrintLgammaRMismatch(p, y, yi, d);
         }
     }
     return !!err;

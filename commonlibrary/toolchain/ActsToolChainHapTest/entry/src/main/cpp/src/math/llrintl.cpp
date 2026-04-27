@@ -33,7 +33,9 @@ static int LlrintlTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     long long yi;
-    int e, i, err = 0;
+    int e;
+    int i;
+    int err = 0;
     struct LI* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
@@ -45,7 +47,6 @@ static int LlrintlTestImpl(void)
         feclearexcept(FE_ALL_EXCEPT);
         yi = llrintl(p->x);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s llrintl(%La)=%lld, want %s",
                    p->file,

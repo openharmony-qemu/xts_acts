@@ -41,7 +41,9 @@ static int LoglTestImpl(void)
 #pragma STDC FENV_ACCESS ON
     long double y;
     float d;
-    int e, i, err = 0;
+    int e;
+    int i;
+    int err = 0;
     struct LL* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
@@ -53,7 +55,6 @@ static int LoglTestImpl(void)
         feclearexcept(FE_ALL_EXCEPT);
         y = logl(p->x);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s logl(%La)=%La, want %s",
                    p->file,
@@ -67,7 +68,7 @@ static int LoglTestImpl(void)
         }
         d = Ulperrl(y, p->y, p->dy);
         if (!Checkulp(d, p->r)) {
-            printf("%s:%d: %s logl(%La) want %La got %La ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s logl(%La) want %La got %La ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),

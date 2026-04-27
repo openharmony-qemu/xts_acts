@@ -29,17 +29,17 @@ static bool HasLgammafSignMismatch(const struct FFi* p, int sign)
 
 static void PrintLgammafMismatch(const struct FFi* p, double y, int sign, float d)
 {
-    printf("%s:%d: %s lgammaf(%a) want %a,%lld got %a,%d ulperr %.3f = %a + %a\n",
+    printf("%s:%d: %s lgammaf(%a) want %a,%lld got %a,%d ulperr %.3f = %.3f + %.3f\n",
            p->file,
            p->line,
            Rstr(p->r),
            p->x,
            p->y,
            p->i,
-           (double)y,
+           static_cast<double>(y),
            sign,
-           (double)d,
-           (double)(d - p->dy),
+           static_cast<double>(d),
+           static_cast<double>(d - p->dy),
            p->dy);
 }
 

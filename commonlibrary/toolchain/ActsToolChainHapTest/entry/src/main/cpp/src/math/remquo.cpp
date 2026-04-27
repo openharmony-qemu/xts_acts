@@ -51,7 +51,6 @@ static int RemquoTestImpl(void)
         feclearexcept(FE_ALL_EXCEPT);
         y = remquo(p->x, p->x2, &yi);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s remquo(%a,%a)=%a,%lld, want %s",
                    p->file,
@@ -67,7 +66,7 @@ static int RemquoTestImpl(void)
         }
         d = Ulperr(y, p->y, p->dy);
         if (!Checkcr(y, p->y, p->r) || HasRemquoQuotientMismatch(p, yi)) {
-            printf("%s:%d: %s remquo(%a,%a) want %a,%lld got %a,%d ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s remquo(%a,%a) want %a,%lld got %a,%d ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),

@@ -22,6 +22,21 @@ static struct FiF t[] = {
 #include "../../include/special/ynf.h"
 };
 
+static void PrintYnfMismatch(const struct FiF* p, double y, float d)
+{
+    printf("%s:%d: %s ynf(%lld, %a) want %a got %a, ulperr %.3f = %.3f + %.3f\n",
+           p->file,
+           p->line,
+           Rstr(p->r),
+           p->i,
+           p->x,
+           p->y,
+           y,
+           d,
+           static_cast<double>(d - p->dy),
+           p->dy);
+}
+
 static int YnfTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
@@ -64,17 +79,7 @@ static int YnfTestImpl(void)
                 printf("X ");
             else
                 err++;
-            printf("%s:%d: %s ynf(%lld, %a) want %a got %a, ulperr %.3f = %a + %a\n",
-                   p->file,
-                   p->line,
-                   Rstr(p->r),
-                   p->i,
-                   p->x,
-                   p->y,
-                   y,
-                   d,
-                   (double)(d - p->dy),
-                   p->dy);
+            PrintYnfMismatch(p, y, d);
         }
     }
     return !!err;
@@ -84,4 +89,3 @@ int YnfTest(void)
 {
     return YnfTestImpl();
 }
-

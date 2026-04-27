@@ -27,6 +27,25 @@ static struct LLl t[] = {
 #endif
 };
 
+static void PrintModflMismatch(const struct LLl* p, long double y, long double yi, float d, float di)
+{
+    printf("%s:%d: %s modf(%La) want %La,%La got %La,%La, ulperr %.3f = %.3f + %.3f, %.3f = %.3f + %.3f\n",
+           p->file,
+           p->line,
+           Rstr(p->r),
+           p->x,
+           p->y,
+           p->y2,
+           y,
+           static_cast<long double>(yi),
+           d,
+           static_cast<double>(d - p->dy),
+           p->dy,
+           di,
+           static_cast<double>(di - p->dy2),
+           p->dy2);
+}
+
 static int ModflTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
@@ -47,7 +66,6 @@ static int ModflTestImpl(void)
         feclearexcept(FE_ALL_EXCEPT);
         y = modfl(p->x, &yi);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         /* Treat INEXACT as expected for this test data set. */
         if (!Checkexceptall(e | INEXACT, p->e | INEXACT, p->r)) {
             printf("%s:%d: bad fp exception: %s modf(%La)=%La,%La, want %s",
@@ -64,21 +82,7 @@ static int ModflTestImpl(void)
         d = Ulperr(y, p->y, p->dy);
         di = Ulperr(yi, p->y2, p->dy2);
         if (!Checkcr(y, p->y, p->r) || !Checkcr(yi, p->y2, p->r)) {
-            printf("%s:%d: %s modf(%La) want %La,%La got %La,%La, ulperr %.3f = %a + %a, %.3f = %a + %a\n",
-                   p->file,
-                   p->line,
-                   Rstr(p->r),
-                   p->x,
-                   p->y,
-                   p->y2,
-                   y,
-                   (long double)yi,
-                   d,
-                   (double)(d - p->dy),
-                   p->dy,
-                   di,
-                   (double)(di - p->dy2),
-                   p->dy2);
+            PrintModflMismatch(p, y, yi, d, di);
             err++;
         }
     }

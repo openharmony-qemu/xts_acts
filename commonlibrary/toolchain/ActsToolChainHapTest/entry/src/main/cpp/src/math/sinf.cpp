@@ -29,7 +29,9 @@ static int SinfTestImpl(void)
 #pragma STDC FENV_ACCESS ON
     float y;
     float d;
-    int e, i, err = 0;
+    int e;
+    int i;
+    int err = 0;
     struct FF* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
@@ -53,7 +55,7 @@ static int SinfTestImpl(void)
         }
         d = Ulperrf(y, p->y, p->dy);
         if (!Checkulp(d, p->r)) {
-            printf("%s:%d: %s sinf(%a) want %a got %a ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s sinf(%a) want %a got %a ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),

@@ -64,7 +64,7 @@ static int LgammalRTestImpl(void)
         // 2 ulp errors allowed
         if ((p->r == ROUND_TO_NEAREST && fabs(d) > 2) ||
             (!isnan(p->x) && p->x != -INF && !(p->e & DIVBYZERO) && yi != p->i)) {
-            printf("%s:%d: %s lgammal_r(%La) want %La,%lld got %La,%d ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s lgammal_r(%La) want %La,%lld got %La,%d ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),

@@ -56,7 +56,7 @@ static int YnTestImpl(void)
 #endif
         d = Ulperr(y, p->y, p->dy);
         if ((!(p->x < 0) && !Checkulp(d, p->r)) || (p->x < 0 && !isnan(y) && y != -INF)) {
-            printf("%s:%d: %s yn(%lld, %a) want %a got %a, ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s yn(%lld, %a) want %a got %a, ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),

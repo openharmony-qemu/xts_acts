@@ -29,7 +29,9 @@ static int Pow10TestImpl(void)
 #pragma STDC FENV_ACCESS ON
     double y;
     float d;
-    int e, i, err = 0;
+    int e;
+    int i;
+    int err = 0;
     struct DD* p;
 
     typedef double (*Pow10Func)(double);
@@ -57,7 +59,7 @@ static int Pow10TestImpl(void)
         }
         d = Ulperr(y, p->y, p->dy);
         if (!Checkulp(d, p->r)) {
-            printf("%s:%d: %s pow10(%a) want %a got %a ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s pow10(%a) want %a got %a ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),

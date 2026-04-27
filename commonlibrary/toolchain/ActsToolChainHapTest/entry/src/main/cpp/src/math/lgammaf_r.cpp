@@ -23,6 +23,27 @@ static struct FFi t[] = {
 
 };
 
+static bool HasLgammafRSignMismatch(const struct FFi* p, int sign)
+{
+    return !isnan(p->x) && p->x != -INF && !(p->e & DIVBYZERO) && sign != p->i;
+}
+
+static void PrintLgammafRMismatch(const struct FFi* p, double y, int sign, float d)
+{
+    printf("%s:%d: %s lgammaf_r(%a) want %a,%lld got %a,%d ulperr %.3f = %.3f + %.3f\n",
+           p->file,
+           p->line,
+           Rstr(p->r),
+           p->x,
+           p->y,
+           p->i,
+           static_cast<double>(y),
+           sign,
+           d,
+           static_cast<double>(d - p->dy),
+           p->dy);
+}
+
 static int LgammafRTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
@@ -44,7 +65,6 @@ static int LgammafRTestImpl(void)
         feclearexcept(FE_ALL_EXCEPT);
         y = lgammaf_r(p->x, &yi);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s lgammaf_r(%a)=%a,%lld, want %s",
                    p->file,
@@ -58,24 +78,13 @@ static int LgammafRTestImpl(void)
             err++;
         }
         d = Ulperrf(y, p->y, p->dy);
-        bad = !isnan(p->x) && p->x != -INF && !(p->e & DIVBYZERO) && yi != p->i;
+        bad = HasLgammafRSignMismatch(p, yi);
         if (bad || !Checkulp(d, p->r)) {
             if (!bad && fabsf(d) < 2.0f)
                 printf("X ");
             else
                 err++;
-            printf("%s:%d: %s lgammaf_r(%a) want %a,%lld got %a,%d ulperr %.3f = %a + %a\n",
-                   p->file,
-                   p->line,
-                   Rstr(p->r),
-                   p->x,
-                   p->y,
-                   p->i,
-                   (double)y,
-                   yi,
-                   d,
-                   (double)(d - p->dy),
-                   p->dy);
+            PrintLgammafRMismatch(p, y, yi, d);
         }
     }
     return !!err;

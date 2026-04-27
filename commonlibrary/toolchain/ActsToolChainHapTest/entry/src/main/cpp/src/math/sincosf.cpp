@@ -24,20 +24,20 @@ static struct FFf t[] = {
 
 static void PrintSincosfMismatch(const struct FFf* p, float ysin, float ycos, float dsin, float dcos)
 {
-    printf("%s:%d: %s sincosf(%a) want %a,%a got %a,%a, ulperr %.3f = %a + %a, %.3f = %a + %a\n",
+    printf("%s:%d: %s sincosf(%a) want %a,%a got %a,%a, ulperr %.3f = %.3f + %.3f, %.3f = %.3f + %.3f\n",
            p->file,
            p->line,
            Rstr(p->r),
            p->x,
            p->y,
            p->y2,
-           (double)ysin,
-           (double)ycos,
-           (double)dsin,
-           (double)(dsin - p->dy),
+           static_cast<double>(ysin),
+           static_cast<double>(ycos),
+           static_cast<double>(dsin),
+           static_cast<double>(dsin - p->dy),
            p->dy,
            dcos,
-           (double)(dcos - p->dy2),
+           static_cast<double>(dcos - p->dy2),
            p->dy2);
 }
 

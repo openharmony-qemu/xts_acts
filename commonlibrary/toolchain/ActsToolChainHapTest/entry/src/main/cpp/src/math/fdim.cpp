@@ -28,7 +28,9 @@ static int FdimTestImpl(void)
 #pragma STDC FENV_ACCESS ON
     double y;
     float d;
-    int e, i, err = 0;
+    int e;
+    int i;
+    int err = 0;
     struct DdD* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
@@ -55,7 +57,7 @@ static int FdimTestImpl(void)
 #endif
         d = Ulperr(y, p->y, p->dy);
         if (!Checkcr(y, p->y, p->r)) {
-            printf("%s:%d: %s fdim(%a,%a) want %a got %a ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s fdim(%a,%a) want %a got %a ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),

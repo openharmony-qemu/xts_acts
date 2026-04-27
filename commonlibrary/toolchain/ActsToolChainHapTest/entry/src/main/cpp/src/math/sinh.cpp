@@ -53,7 +53,7 @@ static int ReportSinhUlp(const struct DD* p, double y, float d)
     } else {
         return 1;
     }
-    printf("%s:%d: %s sinh(%a) want %a got %a ulperr %.3f = %a + %a\n",
+    printf("%s:%d: %s sinh(%a) want %a got %a ulperr %.3f = %.3f + %.3f\n",
            p->file,
            p->line,
            Rstr(p->r),

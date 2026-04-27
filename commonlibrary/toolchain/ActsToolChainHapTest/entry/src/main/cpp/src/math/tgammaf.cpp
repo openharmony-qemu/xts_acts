@@ -41,7 +41,6 @@ static int TgammafTestImpl(void)
         fesetround(p->r);
         feclearexcept(FE_ALL_EXCEPT);
         y = tgammaf(p->x);
-        e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
 
 #ifndef __aarch64__
         if (!Checkexcept(e, p->e, p->r)) {
@@ -58,7 +57,7 @@ static int TgammafTestImpl(void)
 #endif
         d = Ulperrf(y, p->y, p->dy);
         if (!Checkulp(d, p->r)) {
-            printf("%s:%d: %s tgammaf(%a) want %a got %a ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s tgammaf(%a) want %a got %a ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),

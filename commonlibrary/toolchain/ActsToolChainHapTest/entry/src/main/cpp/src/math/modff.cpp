@@ -24,16 +24,16 @@ static struct FFf t[] = {
 
 static void PrintModffMismatch(const struct FFf* p, float y, float yi, float d, float di)
 {
-    printf("%s:%d: %s modff(%a) want %a,%a got %a,%a, ulperr %.3f = %a + %a, %.3f = %a + %a\n",
+    printf("%s:%d: %s modff(%a) want %a,%a got %a,%a, ulperr %.3f = %.3f + %.3f, %.3f = %.3f + %.3f\n",
            p->file,
            p->line,
            Rstr(p->r),
            p->x,
            p->y,
            p->y2,
-           (double)y,
-           (double)yi,
-           (double)d,
+           static_cast<double>(y),
+           static_cast<double>(yi),
+           static_cast<double>(d),
            d - p->dy,
            p->dy,
            di,

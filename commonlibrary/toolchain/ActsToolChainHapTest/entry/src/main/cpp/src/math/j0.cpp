@@ -54,7 +54,7 @@ static int J0TestImpl(void)
                 printf("X ");
             else
                 err++;
-            printf("%s:%d: %s j0(%a) want %a got %a ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s j0(%a) want %a got %a ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),

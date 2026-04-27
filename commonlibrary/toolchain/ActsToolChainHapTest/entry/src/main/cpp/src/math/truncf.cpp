@@ -28,7 +28,9 @@ static int TruncfTestImpl(void)
 #pragma STDC FENV_ACCESS ON
     float y;
     float d;
-    int e, i, err = 0;
+    int e;
+    int i;
+    int err = 0;
     struct FF* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
@@ -40,7 +42,6 @@ static int TruncfTestImpl(void)
         feclearexcept(FE_ALL_EXCEPT);
         y = truncf(p->x);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexceptall(e, p->e, p->r) && (e | INEXACT) != p->e) {
             printf("%s:%d: bad fp exception: %s truncf(%a)=%a, want %s",
                    p->file,
@@ -54,7 +55,7 @@ static int TruncfTestImpl(void)
         }
         d = Ulperrf(y, p->y, p->dy);
         if (!Checkcr(y, p->y, p->r)) {
-            printf("%s:%d: %s truncf(%a) want %a got %a ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s truncf(%a) want %a got %a ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),

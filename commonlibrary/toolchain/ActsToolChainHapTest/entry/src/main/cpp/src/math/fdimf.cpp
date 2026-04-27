@@ -41,7 +41,6 @@ static int FdimfTestImpl(void)
         fesetround(p->r);
         feclearexcept(FE_ALL_EXCEPT);
         y = fdimf(p->x, p->x2);
-        e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
 
 #ifndef __aarch64__
         if (!Checkexceptall(e, p->e, p->r)) {
@@ -59,7 +58,7 @@ static int FdimfTestImpl(void)
 #endif
         d = Ulperrf(y, p->y, p->dy);
         if (!Checkcr(y, p->y, p->r)) {
-            printf("%s:%d: %s fdimf(%a,%a) want %a got %a ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s fdimf(%a,%a) want %a got %a ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),

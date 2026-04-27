@@ -62,7 +62,7 @@ static int PowTestImpl(void)
         }
         d = Ulperr(y, p->y, p->dy);
         if (!Checkulp(d, p->r)) {
-            printf("%s:%d: %s pow(%a,%a) want %a got %a ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s pow(%a,%a) want %a got %a ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),

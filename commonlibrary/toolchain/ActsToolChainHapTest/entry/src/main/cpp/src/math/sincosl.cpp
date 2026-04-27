@@ -29,20 +29,20 @@ static struct LLl t[] = {
 
 static void PrintSincoslMismatch(const struct LLl* p, long double ysin, long double ycos, float dsin, float dcos)
 {
-    printf("%s:%d: %s sincosl(%La) want %La,%La got %La,%La, ulperr %.3f = %a + %a, %.3f = %a + %a\n",
+    printf("%s:%d: %s sincosl(%La) want %La,%La got %La,%La, ulperr %.3f = %.3f + %.3f, %.3f = %.3f + %.3f\n",
            p->file,
            p->line,
            Rstr(p->r),
            p->x,
            p->y,
            p->y2,
-           (long double)ysin,
-           (long double)ycos,
-           (double)dsin,
-           (double)(dsin - p->dy),
+           static_cast<long double>(ysin),
+           static_cast<long double>(ycos),
+           static_cast<double>(dsin),
+           static_cast<double>(dsin - p->dy),
            p->dy,
            dcos,
-           (double)(dcos - p->dy2),
+           static_cast<double>(dcos - p->dy2),
            p->dy2);
 }
 

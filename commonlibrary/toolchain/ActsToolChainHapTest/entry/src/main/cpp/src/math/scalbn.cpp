@@ -42,7 +42,6 @@ static int ScalbnTestImpl(void)
         feclearexcept(FE_ALL_EXCEPT);
         y = scalbn(p->x, p->i);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexceptall(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s scalbn(%a, %lld)=%a, want %s",
                    p->file,
@@ -57,7 +56,7 @@ static int ScalbnTestImpl(void)
         }
         d = Ulperr(y, p->y, p->dy);
         if (!Checkcr(y, p->y, p->r)) {
-            printf("%s:%d: %s scalbn(%a, %lld) want %a got %a, ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s scalbn(%a, %lld) want %a got %a, ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),

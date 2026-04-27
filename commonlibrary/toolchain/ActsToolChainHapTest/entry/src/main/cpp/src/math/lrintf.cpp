@@ -41,7 +41,6 @@ static int LrintfTestImpl(void)
         feclearexcept(FE_ALL_EXCEPT);
         yi = lrintf(p->x);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s lrintf(%a)=%lld, want %s",
                    p->file,

@@ -30,7 +30,9 @@ static int Log10TestImpl(void)
 #pragma STDC FENV_ACCESS ON
     double y;
     float d;
-    int e, i, err = 0;
+    int e;
+    int i;
+    int err = 0;
     struct DD* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
@@ -42,7 +44,6 @@ static int Log10TestImpl(void)
         feclearexcept(FE_ALL_EXCEPT);
         y = log10(p->x);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s log10(%a)=%a, want %s",
                    p->file,
@@ -56,7 +57,7 @@ static int Log10TestImpl(void)
         }
         d = Ulperr(y, p->y, p->dy);
         if (!Checkulp(d, p->r)) {
-            printf("%s:%d: %s log10(%a) want %a got %a ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s log10(%a) want %a got %a ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),

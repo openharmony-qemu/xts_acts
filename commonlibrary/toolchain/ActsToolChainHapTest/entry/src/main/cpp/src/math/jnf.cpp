@@ -27,7 +27,9 @@ static int JnfTestImpl(void)
 #pragma STDC FENV_ACCESS ON
     double y;
     float d;
-    int e, i, err = 0;
+    int e;
+    int i;
+    int err = 0;
     struct FiF* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
@@ -39,7 +41,6 @@ static int JnfTestImpl(void)
         feclearexcept(FE_ALL_EXCEPT);
         y = jnf(p->i, p->x);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s jnf(%lld, %a)=%a, want %s",
                    p->file,
@@ -58,7 +59,7 @@ static int JnfTestImpl(void)
                 printf("X ");
             else
                 err++;
-            printf("%s:%d: %s jnf(%lld, %a) want %a got %a, ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s jnf(%lld, %a) want %a got %a, ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),

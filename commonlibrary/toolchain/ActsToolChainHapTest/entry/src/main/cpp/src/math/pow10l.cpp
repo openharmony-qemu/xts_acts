@@ -63,7 +63,7 @@ static int Pow10lTestImpl(void)
         }
         d = Ulperrl(y, p->y, p->dy);
         if (!Checkulp(d, p->r)) {
-            printf("%s:%d: %s pow10l(%La) want %La got %La ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s pow10l(%La) want %La got %La ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),

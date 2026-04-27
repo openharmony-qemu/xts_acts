@@ -27,7 +27,9 @@ static int LroundTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     long long yi;
-    int e, i, err = 0;
+    int e;
+    int i;
+    int err = 0;
     struct DI* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {

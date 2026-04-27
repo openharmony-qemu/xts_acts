@@ -62,7 +62,7 @@ static int SinTestImpl(void)
             } else {
                 err++;
             }
-            printf("%s:%d: %s sin(%a) want %a got %a Ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s sin(%a) want %a got %a Ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),

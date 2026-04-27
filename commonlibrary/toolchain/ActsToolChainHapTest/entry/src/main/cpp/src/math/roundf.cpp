@@ -55,7 +55,7 @@ static int RoundfTestImpl(void)
         }
         d = Ulperrf(y, p->y, p->dy);
         if (!Checkcr(y, p->y, p->r)) {
-            printf("%s:%d: %s roundf(%a) want %a got %a ulperr %.3f = %a + %a\n",
+            printf("%s:%d: %s roundf(%a) want %a got %a ulperr %.3f = %.3f + %.3f\n",
                    p->file,
                    p->line,
                    Rstr(p->r),
