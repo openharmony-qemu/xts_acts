@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ T(ROUND_TO_NEAREST,                0x1.ap+3,    0x1.3fcba16d50143p+4,  -0x1.a695
 T(ROUND_TO_NEAREST,                0x1.cp+3,    0x1.68d5a9c3b32cep+4,    0x1.da276p-2,           1, INEXACT)
 T(ROUND_TO_NEAREST,                0x1.ep+3,    0x1.930f3df162a42p+4,  -0x1.e1a3a2p-2,           1, INEXACT)
 T(ROUND_TO_NEAREST,                  0x1p+4,    0x1.be636a63fd346p+4,  -0x1.623db2p-2,           1, INEXACT)
-T(ROUND_TO_NEAREST,                  0x1p+5,     0x1.385e6fd9e5a4p+6,  -0x1.007d88p-2,           1, INEXACT)
+T(ROUND_TO_NEAREST,                  0x1p+5,     0x1.385e6fd9e5a4p+6,  -0x1.007D88p-2,           1, INEXACT)
 T(ROUND_TO_NEAREST,                  0x1p+6,    0x1.9204c51e7c761p+7,  -0x1.7279cep-2,           1, INEXACT)
 T(ROUND_TO_NEAREST,                  0x1p+7,    0x1.eb8daec863182p+8,   0x1.0c2678p-5,           1, INEXACT)
 T(ROUND_TO_NEAREST,               0x1.1ap+7,    0x1.159c32993e34fp+9,  -0x1.d4b39cp-3,           1, INEXACT)
@@ -200,7 +200,7 @@ T(ROUND_TO_NEAREST,    0x1.573fae561f648p+7,     0x1.62e42fefa39fp+9,  -0x1.2d0c
 T(ROUND_TO_NEAREST,    0x1.edd3c07ee0b0bp+6,    0x1.d59bfdf24c9ffp+8,   0x1.0f21c8p-3,           1, INEXACT)
 T(ROUND_TO_NEAREST,   -0x1.edd3c07ee0b0bp+6,   -0x1.d9457172bbc24p+8,  -0x1.006ddcp-2,           1, INEXACT)
 T(ROUND_TO_NEAREST,    0x1.8b0fcd324d5a2p+3,    0x1.25a113a5c4e94p+4,   0x1.1d5e24p-2,           1, INEXACT)
-T(ROUND_TO_NEAREST,   -0x1.8b0fcd324d5a2p+3,   -0x1.39914352dc9c6p+4,    0x1.d8544p-3,          -1, INEXACT)
+T(ROUND_TO_NEAREST,   -0x1.8b0fcd324d5a2p+3,   -0x1.39914352dc9c6p+4,    0x1.D8544p-3,          -1, INEXACT)
 T(ROUND_TO_NEAREST,   -0x1.0000000000123p+7,   -0x1.d6e31e237e42bp+8,  -0x1.5408bep-2,          -1, INEXACT)
 T(ROUND_TO_NEAREST,   -0x1.0000123456789p+7,   -0x1.e786399c9ac9dp+8,   0x1.9c0646p-2,          -1, INEXACT)
 T(ROUND_TO_NEAREST,   -0x1.0123456789123p+7,   -0x1.f2003a26fc4c9p+8,  -0x1.68dbc2p-3,          -1, INEXACT)

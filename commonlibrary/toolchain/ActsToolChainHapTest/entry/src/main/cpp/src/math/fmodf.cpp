@@ -14,7 +14,7 @@
  */
 
 #include <cstdint>
-#include <stdio.h>
+#include <cstdio>
 #include "mtest.h"
 
 static struct FfF t[] = {
@@ -66,9 +66,9 @@ static int FmodfTestImpl(void)
                    p->x,
                    p->x2,
                    p->y,
-                   y,
-                   d,
-                   d - p->dy,
+                   (double)y,
+                   (double)d,
+                   (double)(d - p->dy),
                    p->dy);
             err++;
         }

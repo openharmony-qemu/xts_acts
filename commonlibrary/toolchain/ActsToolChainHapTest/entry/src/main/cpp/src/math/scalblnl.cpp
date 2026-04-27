@@ -14,7 +14,7 @@
  */
 
 #include <cstdint>
-#include <stdio.h>
+#include <cstdio>
 #include "mtest.h"
 
 static struct LiL t[] = {
@@ -34,12 +34,13 @@ static int ScalblnlTestImpl(void)
 #pragma STDC FENV_ACCESS ON
     long double y;
     float d;
-    int e, i, err = 0;
+    int e;
+    int i;
+    int err = 0;
     struct LiL* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
-
         if (p->r < 0) {
             continue;
         }
@@ -47,7 +48,6 @@ static int ScalblnlTestImpl(void)
         feclearexcept(FE_ALL_EXCEPT);
         y = scalblnl(p->x, p->i);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexceptall(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s scalblnl(%La, %lld)=%La, want %s",
                    p->file,
@@ -69,9 +69,9 @@ static int ScalblnlTestImpl(void)
                    p->x,
                    p->i,
                    p->y,
-                   y,
-                   d,
-                   d - p->dy,
+                   (long double)y,
+                   (double)d,
+                   (double)(d - p->dy),
                    p->dy);
             err++;
         }

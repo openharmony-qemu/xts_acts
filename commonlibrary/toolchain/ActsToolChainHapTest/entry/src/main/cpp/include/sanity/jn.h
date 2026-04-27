@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ T(ROUND_TO_NEAREST,    0x1.288bbb0d6a1e6p+3,           2,     0x1.904ebb8f3e76p-
 T(ROUND_TO_NEAREST,    0x1.52efd0cd80497p-1,           3,    0x1.815a0471e7b9fp-8,    0x1.40aa2p-3, INEXACT)
 T(ROUND_TO_NEAREST,   -0x1.a05cc754481d1p-2,           4,   0x1.2816cfe1d5454p-14,   0x1.49e706p-2, INEXACT)
 T(ROUND_TO_NEAREST,    0x1.1f9ef934745cbp-1,           5,   0x1.e274364abf2d5p-17,   0x1.fbe5c8p-2, INEXACT)
-T(ROUND_TO_NEAREST,    0x1.8c5db097f7442p-1,           6,   0x1.32d8157822faep-18,  -0x1.6bc402p-6, INEXACT)
+T(ROUND_TO_NEAREST,    0x1.8c5db097f7442p-1,           6,   0x1.32D8157822faep-18,  -0x1.6bc402p-6, INEXACT)
 T(ROUND_TO_NEAREST,   -0x1.5b86ea8118a0ep-1,           7,   -0x1.b39a9fa627d2p-24,    0x1.308cbp-3, INEXACT)
 
 #endif // SANITY_JN_H_H

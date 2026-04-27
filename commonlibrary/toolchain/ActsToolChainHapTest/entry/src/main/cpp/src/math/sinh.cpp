@@ -25,6 +25,47 @@ static struct DD t[] = {
 
 };
 
+#ifndef __aarch64__
+static int ReportSinhExcept(const struct DD* p, int e)
+{
+    if (Checkexcept(e, p->e, p->r)) {
+        return 0;
+    }
+    printf("%s:%d: bad fp exception: %s sinh(%a)=%a, want %s",
+           p->file,
+           p->line,
+           Rstr(p->r),
+           p->x,
+           p->y,
+           Estr(p->e));
+    printf(" got %s\n", Estr(e));
+    return 1;
+}
+#endif
+
+static int ReportSinhUlp(const struct DD* p, double y, float d)
+{
+    if (Checkulp(d, p->r)) {
+        return 0;
+    }
+    if (fabsf(d) < 2.0f || p->r != ROUND_TO_NEAREST) {
+        printf("X ");
+    } else {
+        return 1;
+    }
+    printf("%s:%d: %s sinh(%a) want %a got %a ulperr %.3f = %a + %a\n",
+           p->file,
+           p->line,
+           Rstr(p->r),
+           p->x,
+           p->y,
+           y,
+           d,
+           d - p->dy,
+           p->dy);
+    return 0;
+}
+
 static int SinhTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
@@ -47,36 +88,10 @@ static int SinhTestImpl(void)
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
 
 #ifndef __aarch64__
-        if (!Checkexcept(e, p->e, p->r)) {
-            printf("%s:%d: bad fp exception: %s sinh(%a)=%a, want %s",
-                   p->file,
-                   p->line,
-                   Rstr(p->r),
-                   p->x,
-                   p->y,
-                   Estr(p->e));
-            printf(" got %s\n", Estr(e));
-            err++;
-        }
+        err += ReportSinhExcept(p, e);
 #endif
         d = Ulperr(y, p->y, p->dy);
-        if (!Checkulp(d, p->r)) {
-            if (fabsf(d) < 2.0f || p->r != ROUND_TO_NEAREST) {
-                printf("X ");
-            } else {
-                err++;
-            }
-            printf("%s:%d: %s sinh(%a) want %a got %a ulperr %.3f = %a + %a\n",
-                   p->file,
-                   p->line,
-                   Rstr(p->r),
-                   p->x,
-                   p->y,
-                   y,
-                   d,
-                   d - p->dy,
-                   p->dy);
-        }
+        err += ReportSinhUlp(p, y, d);
     }
     return !!err;
 }

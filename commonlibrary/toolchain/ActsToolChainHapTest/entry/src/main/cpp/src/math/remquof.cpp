@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <stdint.h>
-#include <stdio.h>
+#include <cstdint>
+#include <cstdio>
 #include "mtest.h"
 
 static struct FfFi t[] = {
@@ -41,14 +41,12 @@ static int RemquofTestImpl(void)
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
-
         if (p->r < 0)
             continue;
         fesetround(p->r);
         feclearexcept(FE_ALL_EXCEPT);
         y = remquof(p->x, p->x2, &yi);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s remquof(%a,%a)=%a,%lld, want %s",
                    p->file,
@@ -72,7 +70,7 @@ static int RemquofTestImpl(void)
                    p->x2,
                    p->y,
                    p->i,
-                   y,
+                   (double)y,
                    yi,
                    d,
                    d - p->dy,

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <stdint.h>
-#include <stdio.h>
+#include <cstdint>
+#include <cstdio>
 #include "mtest.h"
 
 static struct DdD t[] = {
@@ -35,14 +35,12 @@ static int NextafterTestImpl(void)
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
-
         if (p->r < 0)
             continue;
         fesetround(p->r);
         feclearexcept(FE_ALL_EXCEPT);
         y = nextafter(p->x, p->x2);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexceptall(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s nextafter(%a,%a)=%a, want %s",
                    p->file,
@@ -64,9 +62,9 @@ static int NextafterTestImpl(void)
                    p->x,
                    p->x2,
                    p->y,
-                   y,
+                   (double)y,
                    d,
-                   d - p->dy,
+                   (double)(d - p->dy),
                    p->dy);
             err++;
         }

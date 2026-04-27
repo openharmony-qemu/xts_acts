@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ T(ROUND_TO_NEAREST,   0x1.288bbcp+3,           2,   0x1.904ec6p-3,   0x1.f826c6p
 T(ROUND_TO_NEAREST,    0x1.52efdp-1,           3,   0x1.815a02p-8,   0x1.f13c2cp-4, INEXACT)
 T(ROUND_TO_NEAREST,  -0x1.a05cc8p-2,           4,  0x1.2816d2p-14,    0x1.bdd79p-4, INEXACT)
 T(ROUND_TO_NEAREST,   0x1.1f9efap-1,           5,  0x1.e2743cp-17,  -0x1.d9c372p-2, INEXACT)
-T(ROUND_TO_NEAREST,    0x1.8c5dbp-1,           6,  0x1.32d812p-18,   -0x1.76a6fp-2, INEXACT)
+T(ROUND_TO_NEAREST,    0x1.8c5dbp-1,           6,  0x1.32D812p-18,   -0x1.76a6fp-2, INEXACT)
 T(ROUND_TO_NEAREST,  -0x1.5b86eap-1,           7, -0x1.b39a9cp-24,   -0x1.83c12p-2, INEXACT)
 
 #endif // SANITY_JNF_H_H

@@ -16,8 +16,8 @@
 #include "functionalext.h"
 #include "ldso_dlopen_config_abs_path.h"
 #include <dlfcn.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 
 static int LdsoDlopenConfigAbsPath12TestImpl()
 {

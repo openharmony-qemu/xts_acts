@@ -66,8 +66,8 @@ static int FdimfTestImpl(void)
                    p->x,
                    p->x2,
                    p->y,
-                   y,
-                   d,
+                   (double)y,
+                   (double)d,
                    d - p->dy,
                    p->dy);
             err++;

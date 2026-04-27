@@ -15,7 +15,7 @@
 
 #include <dlfcn.h>
 #include <cstdio>
-#include <stdlib.h>
+#include <cstdlib>
 #include "functionalext.h"
 #include "ldso_dlopen_config_abs_path.h"
 

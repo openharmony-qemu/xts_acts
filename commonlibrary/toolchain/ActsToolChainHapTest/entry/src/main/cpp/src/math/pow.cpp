@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,9 +69,9 @@ static int PowTestImpl(void)
                    p->x,
                    p->x2,
                    p->y,
-                   y,
-                   d,
-                   d - p->dy,
+                   (double)y,
+                   (double)d,
+                   (double)(d - p->dy),
                    p->dy);
             err++;
         }

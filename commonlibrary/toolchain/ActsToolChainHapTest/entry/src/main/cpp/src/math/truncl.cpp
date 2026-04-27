@@ -66,8 +66,8 @@ static int TrunclTestImpl(void)
                    Rstr(p->r),
                    p->x,
                    p->y,
-                   y,
-                   d,
+                   (long double)y,
+                   (double)d,
                    d - p->dy,
                    p->dy);
             err++;

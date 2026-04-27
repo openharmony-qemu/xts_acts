@@ -35,7 +35,6 @@ static int NextafterfTestImpl(void)
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
-
         if (p->r < 0) {
             continue;
         }
@@ -43,7 +42,6 @@ static int NextafterfTestImpl(void)
         feclearexcept(FE_ALL_EXCEPT);
         y = nextafterf(p->x, p->x2);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexceptall(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s nextafterf(%a,%a)=%a, want %s",
                    p->file,
@@ -65,7 +63,7 @@ static int NextafterfTestImpl(void)
                    p->x,
                    p->x2,
                    p->y,
-                   y,
+                   (double)y,
                    d,
                    d - p->dy,
                    p->dy);

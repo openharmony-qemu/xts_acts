@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,13 +36,13 @@ static void PrintSincoslMismatch(const struct LLl* p, long double ysin, long dou
            p->x,
            p->y,
            p->y2,
-           ysin,
-           ycos,
-           dsin,
-           dsin - p->dy,
+           (long double)ysin,
+           (long double)ycos,
+           (double)dsin,
+           (double)(dsin - p->dy),
            p->dy,
            dcos,
-           dcos - p->dy2,
+           (double)(dcos - p->dy2),
            p->dy2);
 }
 
@@ -60,7 +60,6 @@ static int SincoslTestImpl(void)
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
-
         if (p->r < 0) {
             continue;
         }
@@ -68,7 +67,6 @@ static int SincoslTestImpl(void)
         feclearexcept(FE_ALL_EXCEPT);
         sincosl(p->x, &ysin, &ycos);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s sincosl(%La)=%La,%La, want %s",
                    p->file,

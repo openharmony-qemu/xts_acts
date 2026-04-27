@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <stdint.h>
-#include <stdio.h>
+#include <cstdint>
+#include <cstdio>
 #include "mtest.h"
 
 static struct FF t[] = {
@@ -28,19 +28,19 @@ static int LogbfTestImpl(void)
 #pragma STDC FENV_ACCESS ON
     float y;
     float d;
-    int e, i, err = 0;
+    int e;
+    int i;
+    int err = 0;
     struct FF* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
-
         if (p->r < 0)
             continue;
         fesetround(p->r);
         feclearexcept(FE_ALL_EXCEPT);
         y = logbf(p->x);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexceptall(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s logbf(%a)=%a, want %s",
                    p->file,
@@ -60,9 +60,9 @@ static int LogbfTestImpl(void)
                    Rstr(p->r),
                    p->x,
                    p->y,
-                   y,
-                   d,
-                   d - p->dy,
+                   (double)y,
+                   (double)d,
+                   (double)(d - p->dy),
                    p->dy);
             err++;
         }

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,13 +31,13 @@ static void PrintSincosfMismatch(const struct FFf* p, float ysin, float ycos, fl
            p->x,
            p->y,
            p->y2,
-           ysin,
-           ycos,
-           dsin,
-           dsin - p->dy,
+           (double)ysin,
+           (double)ycos,
+           (double)dsin,
+           (double)(dsin - p->dy),
            p->dy,
            dcos,
-           dcos - p->dy2,
+           (double)(dcos - p->dy2),
            p->dy2);
 }
 

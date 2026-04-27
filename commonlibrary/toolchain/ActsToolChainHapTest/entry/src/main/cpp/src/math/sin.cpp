@@ -68,9 +68,9 @@ static int SinTestImpl(void)
                    Rstr(p->r),
                    p->x,
                    p->y,
-                   y,
-                   d,
-                   d - p->dy,
+                   (double)y,
+                   (double)d,
+                   (double)(d - p->dy),
                    p->dy);
         }
     }

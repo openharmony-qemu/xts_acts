@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <stdint.h>
-#include <stdio.h>
+#include <cstdint>
+#include <cstdio>
 #include "mtest.h"
 
 static struct FF t[] = {
@@ -35,7 +35,6 @@ static int J0fTestImpl(void)
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
-
         if (p->r < 0) {
             continue;
         }
@@ -43,7 +42,6 @@ static int J0fTestImpl(void)
         feclearexcept(FE_ALL_EXCEPT);
         y = j0f(p->x);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s j0f(%a)=%a, want %s",
                    p->file,
@@ -68,7 +66,7 @@ static int J0fTestImpl(void)
                    Rstr(p->r),
                    p->x,
                    p->y,
-                   y,
+                   (double)y,
                    d,
                    d - p->dy,
                    p->dy);

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,8 +63,8 @@ static int FminTestImpl(void)
                    p->x,
                    p->x2,
                    p->y,
-                   y,
-                   d,
+                   (double)y,
+                   (double)d,
                    d - p->dy,
                    p->dy);
             err++;

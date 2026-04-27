@@ -14,7 +14,7 @@
  */
 
 #include <cstdint>
-#include <stdio.h>
+#include <cstdio>
 #include "mtest.h"
 
 static struct DdDi t[] = {
@@ -75,10 +75,10 @@ static int RemquoTestImpl(void)
                    p->x2,
                    p->y,
                    p->i,
-                   y,
+                   (double)y,
                    yi,
                    d,
-                   d - p->dy,
+                   (double)(d - p->dy),
                    p->dy);
             err++;
         }

@@ -14,7 +14,7 @@
  */
 
 #include <cstdint>
-#include <stdio.h>
+#include <cstdio>
 #include "mtest.h"
 
 static struct FF t[] = {
@@ -62,9 +62,9 @@ static int AcosfTestImpl(void)
                    Rstr(p->r),
                    p->x,
                    p->y,
-                   y,
-                   d,
-                   d - p->dy,
+                   (double)y,
+                   (double)d,
+                   (double)(d - p->dy),
                    p->dy);
             err++;
         }

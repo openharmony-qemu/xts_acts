@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <stdint.h>
-#include <stdio.h>
+#include <cstdint>
+#include <cstdio>
 #include "mtest.h"
 
 static struct FF t[] = {
@@ -34,14 +34,12 @@ static int SinfTestImpl(void)
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
-
         if (p->r < 0)
             continue;
         fesetround(p->r);
         feclearexcept(FE_ALL_EXCEPT);
         y = sinf(p->x);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s sinf(%a)=%a, want %s",
                    p->file,
@@ -61,9 +59,9 @@ static int SinfTestImpl(void)
                    Rstr(p->r),
                    p->x,
                    p->y,
-                   y,
+                   (double)y,
                    d,
-                   d - p->dy,
+                   (double)(d - p->dy),
                    p->dy);
             err++;
         }

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <stdint.h>
-#include <stdio.h>
+#include <cstdint>
+#include <cstdio>
 #include "mtest.h"
 
 static struct LI t[] = {
@@ -33,19 +33,19 @@ static int LrintlTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
     long long yi;
-    int e, i, err = 0;
+    int e;
+    int i;
+    int err = 0;
     struct LI* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
-
         if (p->r < 0)
             continue;
         fesetround(p->r);
         feclearexcept(FE_ALL_EXCEPT);
         yi = lrintl(p->x);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s lrintl(%La)=%lld, want %s",
                    p->file,

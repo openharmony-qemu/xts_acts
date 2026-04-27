@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <stdint.h>
-#include <stdio.h>
+#include <cstdint>
+#include <cstdio>
 #include "mtest.h"
 
 static struct FFi t[] = {
@@ -29,7 +29,10 @@ static int LgammafRTestImpl(void)
     int yi;
     double y;
     float d;
-    int e, i, bad, err = 0;
+    int e;
+    int i;
+    int bad;
+    int err = 0;
     struct FFi* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
@@ -68,10 +71,10 @@ static int LgammafRTestImpl(void)
                    p->x,
                    p->y,
                    p->i,
-                   y,
+                   (double)y,
                    yi,
                    d,
-                   d - p->dy,
+                   (double)(d - p->dy),
                    p->dy);
         }
     }

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,10 +71,10 @@ static int LgammalRTestImpl(void)
                    p->x,
                    p->y,
                    p->i,
-                   y,
+                   (long double)y,
                    yi,
-                   d,
-                   d - p->dy,
+                   (double)d,
+                   (double)(d - p->dy),
                    p->dy);
             err++;
         }

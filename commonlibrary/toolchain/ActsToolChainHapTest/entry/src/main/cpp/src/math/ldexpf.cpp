@@ -14,7 +14,7 @@
  */
 
 #include <cstdint>
-#include <stdio.h>
+#include <cstdio>
 #include "mtest.h"
 
 static struct FiF t[] = {
@@ -65,9 +65,9 @@ static int LdexpfTestImpl(void)
                    p->x,
                    p->i,
                    p->y,
-                   y,
-                   d,
-                   d - p->dy,
+                   (double)y,
+                   (double)d,
+                   (double)(d - p->dy),
                    p->dy);
             err++;
         }

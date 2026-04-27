@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,10 +36,10 @@ static void PrintLgammaMismatch(const struct DDi* p, double y, int sign, float d
            p->x,
            p->y,
            p->i,
-           y,
+           (double)y,
            sign,
-           d,
-           d - p->dy,
+           (double)d,
+           (double)(d - p->dy),
            p->dy);
 }
 

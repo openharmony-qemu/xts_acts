@@ -35,7 +35,6 @@ static int RoundfTestImpl(void)
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
-
         if (p->r < 0) {
             continue;
         }
@@ -43,7 +42,6 @@ static int RoundfTestImpl(void)
         feclearexcept(FE_ALL_EXCEPT);
         y = roundf(p->x);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexceptall(e, p->e, p->r) && (e | INEXACT) != p->e) {
             printf("%s:%d: bad fp exception: %s roundf(%a)=%a, want %s",
                    p->file,
@@ -65,7 +63,7 @@ static int RoundfTestImpl(void)
                    p->y,
                    y,
                    d,
-                   d - p->dy,
+                   (double)(d - p->dy),
                    p->dy);
             err++;
         }

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <stdint.h>
-#include <stdio.h>
+#include <cstdint>
+#include <cstdio>
 #include "mtest.h"
 
 static struct LL t[] = {
@@ -41,7 +41,9 @@ static int Log10lTestImpl(void)
 #pragma STDC FENV_ACCESS ON
     long double y;
     float d;
-    int e, i, err = 0;
+    int e;
+    int i;
+    int err = 0;
     struct LL* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
@@ -73,7 +75,7 @@ static int Log10lTestImpl(void)
                    Rstr(p->r),
                    p->x,
                    p->y,
-                   y,
+                   (long double)y,
                    d,
                    d - p->dy,
                    p->dy);

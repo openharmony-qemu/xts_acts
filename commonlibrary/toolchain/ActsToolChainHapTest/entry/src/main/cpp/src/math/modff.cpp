@@ -31,9 +31,9 @@ static void PrintModffMismatch(const struct FFf* p, float y, float yi, float d, 
            p->x,
            p->y,
            p->y2,
-           y,
-           yi,
-           d,
+           (double)y,
+           (double)yi,
+           (double)d,
            d - p->dy,
            p->dy,
            di,
@@ -55,7 +55,6 @@ static int ModffTestImpl(void)
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
-
         if (p->r < 0) {
             continue;
         }
@@ -63,7 +62,6 @@ static int ModffTestImpl(void)
         feclearexcept(FE_ALL_EXCEPT);
         y = modff(p->x, &yi);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexceptall(e | INEXACT, p->e | INEXACT, p->r)) {
             printf("%s:%d: bad fp exception: %s modff(%a)=%a,%a, want %s",
                    p->file,

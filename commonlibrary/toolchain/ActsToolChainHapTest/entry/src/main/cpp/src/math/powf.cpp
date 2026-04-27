@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <stdint.h>
-#include <stdio.h>
+#include <cstdint>
+#include <cstdio>
 #include "mtest.h"
 
 static struct FfF t[] = {
@@ -23,6 +23,49 @@ static struct FfF t[] = {
 #include "ucb/powf.h"
 
 };
+
+#ifndef __aarch64__
+static int ReportPowfExcept(const struct FfF* p, int e, float y)
+{
+    if (Checkexcept(e, p->e, p->r)) {
+        return 0;
+    }
+    if (fabsf(y) < 0x1p-126f && (e | INEXACT) == (INEXACT | UNDERFLOW)) {
+        printf("X ");
+    } else {
+        return 1;
+    }
+    printf("%s:%d: bad fp exception: %s powf(%a,%a)=%a, want %s",
+           p->file,
+           p->line,
+           Rstr(p->r),
+           p->x,
+           p->x2,
+           p->y,
+           Estr(p->e));
+    printf(" got %s\n", Estr(e));
+    return 0;
+}
+#endif
+
+static int ReportPowfUlp(const struct FfF* p, float y, float d)
+{
+    if (Checkulp(d, p->r)) {
+        return 0;
+    }
+    printf("%s:%d: %s powf(%a,%a) want %a got %a ulperr %.3f = %a + %a\n",
+           p->file,
+           p->line,
+           Rstr(p->r),
+           p->x,
+           p->x2,
+           p->y,
+           (double)y,
+           d,
+           d - p->dy,
+           p->dy);
+    return 1;
+}
 
 static int PowfTestImpl(void)
 {
@@ -36,46 +79,17 @@ static int PowfTestImpl(void)
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
-
         if (p->r < 0)
             continue;
         fesetround(p->r);
         feclearexcept(FE_ALL_EXCEPT);
         y = powf(p->x, p->x2);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
 #ifndef __aarch64__
-        if (!Checkexcept(e, p->e, p->r)) {
-            if (fabsf(y) < 0x1p-126f && (e | INEXACT) == (INEXACT | UNDERFLOW))
-                printf("X ");
-            else
-                err++;
-            printf("%s:%d: bad fp exception: %s powf(%a,%a)=%a, want %s",
-                   p->file,
-                   p->line,
-                   Rstr(p->r),
-                   p->x,
-                   p->x2,
-                   p->y,
-                   Estr(p->e));
-            printf(" got %s\n", Estr(e));
-        }
+        err += ReportPowfExcept(p, e, y);
 #endif
         d = Ulperrf(y, p->y, p->dy);
-        if (!Checkulp(d, p->r)) {
-            printf("%s:%d: %s powf(%a,%a) want %a got %a ulperr %.3f = %a + %a\n",
-                   p->file,
-                   p->line,
-                   Rstr(p->r),
-                   p->x,
-                   p->x2,
-                   p->y,
-                   y,
-                   d,
-                   d - p->dy,
-                   p->dy);
-            err++;
-        }
+        err += ReportPowfUlp(p, y, d);
     }
     return !!err;
 }

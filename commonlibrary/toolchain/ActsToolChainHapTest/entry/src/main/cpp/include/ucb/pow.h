@@ -1,5 +1,23 @@
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef UCB_POW_H_H
+#define UCB_POW_H_H
+
 // Copyright (C) 1988-1994 Sun Microsystems, Inc. 2550 Garcia Avenue
-// Mountain View, CalifoROUND_TO_NEARESTia  94043 All rights reserved.
+// Mountain View, California  94043 All rights reserved.
 //
 // Any person is hereby authorized to download, copy, use, create bug fixes,
 // and distribute, subject to the following conditions:
@@ -32,7 +50,7 @@
 // part of Sun Microsystems, Inc. ("Sun") or any of its affiliated
 // companies to assist in its use, correction, modification or
 // enhancement.  Nevertheless, and without creating any obligation on its
-// part, Sun welcomes your comments conceROUND_TO_NEARESTing the software and requests
+// part, Sun welcomes your comments concerning the software and requests
 // that they be sent to fdlibm-comments@sunpro.sun.com.
 // anything **0 is 1
 T(ROUND_TO_NEAREST, 0x0p+0, 0x0p+0, 0x1p+0, 0x0p+0, 0)
@@ -1579,3 +1597,5 @@ T(RZ, -0x1p-1021, 0x1p+1, 0x0p+0, -0x0p+0, INEXACT | UNDERFLOW)
 T(RZ, -0x1p-1020, 0x1p+1, 0x0p+0, -0x0p+0, INEXACT | UNDERFLOW)
 T(RZ, NAN, 0x1p+1, NAN, 0x0p+0, 0)
 T(RZ, NAN, 0x1p+1, NAN, 0x0p+0, 0)
+
+#endif

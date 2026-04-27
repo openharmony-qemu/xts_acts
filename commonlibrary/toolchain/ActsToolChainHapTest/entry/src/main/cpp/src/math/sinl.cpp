@@ -14,7 +14,7 @@
  */
 
 #include <cstdint>
-#include <stdio.h>
+#include <cstdio>
 #include "mtest.h"
 
 static struct LL t[] = {
@@ -36,12 +36,13 @@ static int SinlTestImpl(void)
 #pragma STDC FENV_ACCESS ON
     long double y;
     float d;
-    int e, i, err = 0;
+    int e;
+    int i;
+    int err = 0;
     struct LL* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
-
         if (p->r < 0) {
             continue;
         }
@@ -49,7 +50,6 @@ static int SinlTestImpl(void)
         feclearexcept(FE_ALL_EXCEPT);
         y = sinl(p->x);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s sinl(%La)=%La, want %s",
                    p->file,
@@ -69,9 +69,9 @@ static int SinlTestImpl(void)
                    Rstr(p->r),
                    p->x,
                    p->y,
-                   y,
-                   d,
-                   d - p->dy,
+                   (long double)y,
+                   (double)d,
+                   (double)(d - p->dy),
                    p->dy);
             err++;
         }

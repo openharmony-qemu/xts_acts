@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <stdint.h>
-#include <stdio.h>
+#include <cstdint>
+#include <cstdio>
 #include "mtest.h"
 
 static struct DDd t[] = {
@@ -25,9 +25,13 @@ static struct DDd t[] = {
 static int SincosTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
-    double ysin, ycos;
-    float dsin, dcos;
-    int e, i, err = 0;
+    double ysin;
+    double ycos;
+    float dsin;
+    float dcos;
+    int e;
+    int i;
+    int err = 0;
     struct DDd* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
@@ -62,13 +66,13 @@ static int SincosTestImpl(void)
                    p->x,
                    p->y,
                    p->y2,
-                   ysin,
+                   (double)ysin,
                    ycos,
                    dsin,
                    dsin - p->dy,
                    p->dy,
                    dcos,
-                   dcos - p->dy2,
+                   (double)(dcos - p->dy2),
                    p->dy2);
             err++;
         }

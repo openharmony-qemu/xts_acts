@@ -65,8 +65,8 @@ static int Log1pfTestImpl(void)
                    Rstr(p->r),
                    p->x,
                    p->y,
-                   y,
-                   d,
+                   (double)y,
+                   (double)d,
                    d - p->dy,
                    p->dy);
             err++;

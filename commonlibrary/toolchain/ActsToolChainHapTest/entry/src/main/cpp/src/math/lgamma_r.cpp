@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  */
 
 #include <cstdint>
-#include <stdio.h>
+#include <cstdio>
 #include "mtest.h"
 
 static struct DDi t[] = {
@@ -29,12 +29,14 @@ static int LgammaRTestImpl(void)
     int yi;
     double y;
     float d;
-    int e, i, bad, err = 0;
+    int e;
+    int i;
+    int bad;
+    int err = 0;
     struct DDi* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
-
         if (p->r < 0) {
             continue;
         }
@@ -42,7 +44,6 @@ static int LgammaRTestImpl(void)
         feclearexcept(FE_ALL_EXCEPT);
         y = lgamma_r(p->x, &yi);
         e = fetestexcept(INEXACT | INVALID | DIVBYZERO | UNDERFLOW | OVERFLOW);
-
         if (!Checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s lgamma_r(%a)=%a,%lld, want %s",
                    p->file,
@@ -70,10 +71,10 @@ static int LgammaRTestImpl(void)
                    p->x,
                    p->y,
                    p->i,
-                   y,
+                   (double)y,
                    yi,
                    d,
-                   d - p->dy,
+                   (double)(d - p->dy),
                    p->dy);
         }
     }

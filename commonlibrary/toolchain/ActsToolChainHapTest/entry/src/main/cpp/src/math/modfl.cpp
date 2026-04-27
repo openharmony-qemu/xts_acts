@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <stdint.h>
-#include <stdio.h>
+#include <cstdint>
+#include <cstdio>
 #include "mtest.h"
 
 static struct LLl t[] = {
@@ -30,14 +30,17 @@ static struct LLl t[] = {
 static int ModflTestImpl(void)
 {
 #pragma STDC FENV_ACCESS ON
-    long double y, yi;
-    float d, di;
-    int e, i, err = 0;
+    long double y;
+    long double yi;
+    float d;
+    float di;
+    int e;
+    int i;
+    int err = 0;
     struct LLl* p;
 
     for (i = 0; i < sizeof t / sizeof *t; i++) {
         p = t + i;
-
         if (p->r < 0)
             continue;
         fesetround(p->r);
@@ -69,12 +72,12 @@ static int ModflTestImpl(void)
                    p->y,
                    p->y2,
                    y,
-                   yi,
+                   (long double)yi,
                    d,
-                   d - p->dy,
+                   (double)(d - p->dy),
                    p->dy,
                    di,
-                   di - p->dy2,
+                   (double)(di - p->dy2),
                    p->dy2);
             err++;
         }
