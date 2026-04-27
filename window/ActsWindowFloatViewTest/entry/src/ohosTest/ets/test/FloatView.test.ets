@@ -2067,8 +2067,6 @@ export default function abilityTest() {
         console.info(CaseName + ' Succeeded in creating floating ball controller.');
         floatView.bind(floatViewController, floatingBallController, floatingBallParams).then(() => {
           console.info(CaseName + ' Succeeded in binding floatView and floatingBall.');
-          expect(true).assertTrue();
-          console.log(CaseName + ' end.');
           done();
         }).catch((err: BusinessError) => {
           console.error(CaseName + ' Failed to bind. Cause: ' + err.code + ', message: ' + err.message);
@@ -2280,7 +2278,6 @@ export default function abilityTest() {
         console.info(CaseName + ' Succeeded in binding floatView and floatingBall.');
         floatView.unbind(floatViewController, floatingBallController).then(() => {
           console.info(CaseName + ' Succeeded in unbinding.');
-          expect(true).assertTrue();
           console.log(CaseName + ' end.');
           done();
         }).catch((err: BusinessError) => {
