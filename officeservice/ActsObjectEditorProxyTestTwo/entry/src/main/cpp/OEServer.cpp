@@ -35,6 +35,7 @@ static AbilityRuntime_ContextHandle g_context = nullptr;
 static AbilityRuntime_ExtensionInstanceHandle g_abilityExtensionInstanceHandle = nullptr;
 static ContentEmbed_ExtensionInstanceHandle g_instanceHandle = nullptr;
 static ContentEmbed_ObjectHandle g_objectHandle = nullptr;
+static constexpr int32_t OBJECT_SIZE = 1024;
 
 static void NativeOnCreate(ContentEmbed_ExtensionInstanceHandle instance, AbilityBase_Want *want);
 static void NativeOnDestroy(ContentEmbed_ExtensionInstanceHandle instance);
@@ -54,9 +55,6 @@ static int32_t TestExtensionGetEmbedContext_Normal_Extension()
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_GetContentEmbedContext(g_instanceHandle,
         &ceContext);
     OH_LOG_INFO(LOG_APP, "TestExtensionGetContent_Normal code1: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
-        return static_cast<int32_t>(code);
-    }
     if (code == CE_ERR_NULL_POINTER && ceContext == nullptr) {
         return static_cast<int32_t>(code);
     }
@@ -72,9 +70,6 @@ static int32_t TestExtensionGetContent_Normal_Extension()
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_GetContentEmbedContext(g_instanceHandle,
         &ceContext);
     OH_LOG_INFO(LOG_APP, "TestExtensionGetContent_Normal code1: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
-        return static_cast<int32_t>(code);
-    }
     if (code == CE_ERR_NULL_POINTER && ceContext == nullptr) {
         return static_cast<int32_t>(code);
     }
@@ -93,9 +88,6 @@ static int32_t TestExtensionGetExtensionInstance_Normal_Extension()
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_GetExtensionInstance(
         g_abilityExtensionInstanceHandle, &instanceHandle);
     OH_LOG_INFO(LOG_APP, "TestExtensionGetExtensionInstance_Normal_Extension code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
-        return static_cast<int32_t>(code);
-    }
     if (code == CE_ERR_NULL_POINTER && instanceHandle == nullptr) {
         return static_cast<int32_t>(code);
     }
@@ -110,9 +102,6 @@ static int32_t TestExtensionRegisterOnCreateFunc_Normal_Extension()
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_RegisterOnCreateFunc(
         g_instanceHandle, NativeOnCreate);
     OH_LOG_INFO(LOG_APP, "TestExtensionRegisterOnCreateFunc_Normal_Extension code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
-        return static_cast<int32_t>(code);
-    }
     if (code == CE_ERR_OK) {
         return static_cast<int32_t>(code);
     }
@@ -124,9 +113,6 @@ static int32_t TestExtensionRegisterOnDestroyFunc_Normal_Extension()
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_RegisterOnDestroyFunc(
         g_instanceHandle, NativeOnDestroy);
     OH_LOG_INFO(LOG_APP, "TestExtensionRegisterOnDestroyFunc_Normal_Extension code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
-        return static_cast<int32_t>(code);
-    }
     if (code == CE_ERR_OK) {
         return static_cast<int32_t>(code);
     }
@@ -138,9 +124,6 @@ static int32_t TestExtensionRegisterOnObjectAttachFunc_Normal_Extension()
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_RegisterOnObjectAttachFunc(
         g_instanceHandle, RegisterOnObjectAttachFunc);
     OH_LOG_INFO(LOG_APP, "TestExtensionRegisterOnObjectAttachFunc_Normal_Extension code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
-        return static_cast<int32_t>(code);
-    }
     if (code == CE_ERR_OK) {
         return static_cast<int32_t>(code);
     }
@@ -152,9 +135,6 @@ static int32_t TestExtensionUnRegisterOnObjectAttachFunc_Normal_Extension()
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_UnRegisterOnObjectAttachFunc(
         g_instanceHandle);
     OH_LOG_INFO(LOG_APP, "TestExtensionUnRegisterOnObjectAttachFunc_Normal_Extension code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
-        return static_cast<int32_t>(code);
-    }
     if (code == CE_ERR_OK) {
         OH_ContentEmbed_Extension_RegisterOnObjectAttachFunc(
             g_instanceHandle, RegisterOnObjectAttachFunc);
@@ -168,9 +148,6 @@ static int32_t TestExtensionRegisterOnObjectDetachFunc_Normal_Extension()
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_RegisterOnObjectDetachFunc(
         g_instanceHandle, RegisterOnObjectDetachFunc);
     OH_LOG_INFO(LOG_APP, "TestExtensionRegisterOnObjectDetachFunc_Normal_Extension code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
-        return static_cast<int32_t>(code);
-    }
     if (code == CE_ERR_OK) {
         return static_cast<int32_t>(code);
     }
@@ -182,9 +159,6 @@ static int32_t TestExtensionUnRegisterOnObjectDetachFunc_Normal_Extension()
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_UnRegisterOnObjectDetachFunc(
         g_instanceHandle);
     OH_LOG_INFO(LOG_APP, "TestExtensionUnRegisterOnObjectDetachFunc_Normal_Extension code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
-        return static_cast<int32_t>(code);
-    }
     if (code == CE_ERR_OK) {
         OH_ContentEmbed_Extension_RegisterOnObjectDetachFunc(
             g_instanceHandle, RegisterOnObjectDetachFunc);
@@ -198,9 +172,6 @@ static int32_t TestExtensionRegisterOnWriteToDataStreamFunc_Normal_Extension()
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_RegisterOnWriteToDataStreamFunc(
         g_objectHandle, NativeOnWriteToDataStream);
     OH_LOG_INFO(LOG_APP, "TestExtensionRegisterOnWriteToDataStreamFunc_Normal_Extension code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
-        return static_cast<int32_t>(code);
-    }
     if (code == CE_ERR_OK) {
         return static_cast<int32_t>(code);
     }
@@ -212,9 +183,6 @@ static int32_t TestExtensionRegisterOnGetSnapshotFunc_Normal_Extension()
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_RegisterOnGetSnapshotFunc(
         g_objectHandle, NativeOnGetSnapShot);
     OH_LOG_INFO(LOG_APP, "TestExtensionRegisterOnGetSnapshotFunc_Normal_Extension code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
-        return static_cast<int32_t>(code);
-    }
     if (code == CE_ERR_OK) {
         return static_cast<int32_t>(code);
     }
@@ -226,9 +194,6 @@ static int32_t TestExtensionRegisterOnDoEditFunc_Normal_Extension()
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_RegisterOnDoEditFunc(
         g_objectHandle, NativeOnDoEdit);
     OH_LOG_INFO(LOG_APP, "TestExtensionRegisterOnDoEditFunc_Normal_Extension code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
-        return static_cast<int32_t>(code);
-    }
     if (code == CE_ERR_OK) {
         return static_cast<int32_t>(code);
     }
@@ -240,9 +205,6 @@ static int32_t TestExtensionRegisterOnGetEditStatusFunc_Normal_Extension()
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_RegisterOnGetEditStatusFunc(
         g_objectHandle, NativeOnGetEditStatusFunc);
     OH_LOG_INFO(LOG_APP, "TestExtensionRegisterOnGetEditStatusFunc_Normal_Extension code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
-        return static_cast<int32_t>(code);
-    }
     if (code == CE_ERR_OK) {
         return static_cast<int32_t>(code);
     }
@@ -254,9 +216,6 @@ static int32_t TestExtensionRegisterOnGetCapabilityFunc_Normal_Extension()
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_RegisterOnGetCapabilityFunc(
         g_objectHandle, NativeOnGetCapability);
     OH_LOG_INFO(LOG_APP, "TestExtensionRegisterOnGetCapabilityFunc_Normal_Extension code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
-        return static_cast<int32_t>(code);
-    }
     if (code == CE_ERR_OK) {
         return static_cast<int32_t>(code);
     }
@@ -269,9 +228,6 @@ static int32_t TestExtensionGetContentEmbedDocument_Normal_Extension()
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_GetContentEmbedDocument(
         g_objectHandle, &document);
     OH_LOG_INFO(LOG_APP, "TestExtensionGetContentEmbedDocument_Normal_Extension code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
-        return static_cast<int32_t>(code);
-    }
     if (code == CE_ERR_NULL_POINTER && document == nullptr) {
         return static_cast<int32_t>(code);
     }
@@ -285,10 +241,20 @@ static int32_t TestExtensionCallbackToOnUpdate_Normal_Extension()
 {
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_CallbackToOnUpdate(g_objectHandle);
     OH_LOG_INFO(LOG_APP, "TestExtensionCallbackToOnUpdate_Normal_Extension code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
+    if (code == CE_ERR_OK) {
         return static_cast<int32_t>(code);
     }
-    if (code == CE_ERR_OK) {
+    return -1;
+}
+
+static int32_t TestExtensionCallbackToOnUpdateWithError()
+{
+    unsigned char* buffer = new unsigned char[OBJECT_SIZE]();
+    ContentEmbed_ObjectHandle object = reinterpret_cast<ContentEmbed_ObjectHandle>(buffer);
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_CallbackToOnUpdate(object);
+    OH_LOG_INFO(LOG_APP, "TestExtensionCallbackToOnUpdateWithError code: %{public}d", code);
+    delete[] buffer;
+    if (code == CE_ERR_CLIENT_CALLBACK_NOT_REGISTERED || code == CE_ERR_CLIENT_CALLBACK_FAILED) {
         return static_cast<int32_t>(code);
     }
     return -1;
@@ -298,10 +264,20 @@ static int32_t TestExtensionCallbackToOnError_Normal_Extension()
 {
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_CallbackToOnError(g_objectHandle, CE_ERR_OK);
     OH_LOG_INFO(LOG_APP, "TestExtensionCallbackToOnError_Normal_Extension code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
+    if (code == CE_ERR_OK) {
         return static_cast<int32_t>(code);
     }
-    if (code == CE_ERR_OK) {
+    return -1;
+}
+
+static int32_t TestExtensionCallbackToOnErrorWithError()
+{
+    unsigned char* buffer = new unsigned char[OBJECT_SIZE]();
+    ContentEmbed_ObjectHandle object = reinterpret_cast<ContentEmbed_ObjectHandle>(buffer);
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_CallbackToOnError(object, CE_ERR_OK);
+    OH_LOG_INFO(LOG_APP, "TestExtensionCallbackToOnErrorWithError code: %{public}d", code);
+    delete[] buffer;
+    if (code == CE_ERR_CLIENT_CALLBACK_NOT_REGISTERED || code == CE_ERR_CLIENT_CALLBACK_FAILED) {
         return static_cast<int32_t>(code);
     }
     return -1;
@@ -320,14 +296,37 @@ static int32_t TestExtensionCallbackToOnEditingFinished_Normal_Extension()
     return -1;
 }
 
+static int32_t TestExtensionCallbackToOnEditingFinishedWithError()
+{
+    unsigned char* buffer = new unsigned char[OBJECT_SIZE]();
+    ContentEmbed_ObjectHandle object = reinterpret_cast<ContentEmbed_ObjectHandle>(buffer);
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_CallbackToOnEditingFinished(object, true);
+    OH_LOG_INFO(LOG_APP, "TestExtensionCallbackToOnEditingFinishedWithError code: %{public}d", code);
+    delete[] buffer;
+    if (code == CE_ERR_CLIENT_CALLBACK_NOT_REGISTERED || code == CE_ERR_CLIENT_CALLBACK_FAILED) {
+        return static_cast<int32_t>(code);
+    }
+    return -1;
+}
+
 static int32_t TestExtensionCallbackToOnExtensionStopped_Normal_Extension()
 {
     ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_CallbackToOnExtensionStopped(g_instanceHandle);
     OH_LOG_INFO(LOG_APP, "TestExtensionCallbackToOnExtensionStopped_Normal_Extension code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
+    if (code == CE_ERR_OK) {
         return static_cast<int32_t>(code);
     }
-    if (code == CE_ERR_OK) {
+    return -1;
+}
+
+static int32_t TestExtensionCallbackToOnExtensionStoppedWithError()
+{
+    unsigned char* buffer = new unsigned char[OBJECT_SIZE]();
+    ContentEmbed_ExtensionInstanceHandle object = reinterpret_cast<ContentEmbed_ExtensionInstanceHandle>(buffer);
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_Extension_CallbackToOnExtensionStopped(object);
+    OH_LOG_INFO(LOG_APP, "TestExtensionCallbackToOnExtensionStoppedWithError code: %{public}d", code);
+    delete[] buffer;
+    if (code == CE_ERR_CLIENT_CALLBACK_NOT_REGISTERED || code == CE_ERR_CLIENT_CALLBACK_FAILED) {
         return static_cast<int32_t>(code);
     }
     return -1;

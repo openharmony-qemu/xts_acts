@@ -33,6 +33,7 @@ static ContentEmbed_ExtensionProxy* g_registerProxy = nullptr;
 static void* g_contextPtr = nullptr;
 static std::string normalOEid = "000209FF-BBBB-DDDD-CAAA-000000000046";
 static const size_t FILE_PATH_SIZE = 256;
+static constexpr int32_t TEST_LIMIT = 100;
 
 const char* testExtensionGetContextNormal = "testExtensionGetContextNormal";
 const char* testExtensionGetEmbedContextNormal = "testExtensionGetEmbedContextNormal";
@@ -151,6 +152,7 @@ napi_value initObjectServiceConnect(napi_env env, napi_callback_info info)
     char oeid[] = "000209FF-BBBB-DDDD-CAAA-000000000046";
     ContentEmbed_Document* oeDocument;
     napi_value result;
+    g_contextPtr = contextPtr;
     ContentEmbed_ErrorCode errCode = OH_ContentEmbed_CreateDocumentByOEid(oeid, &oeDocument);
     OH_LOG_INFO(LOG_APP, "initObjectServiceConnect OH_ContentEmbed_CreateDocumentByOEid ret: %{public}d", errCode);
     if (errCode == CE_ERR_DEVICE_NOT_SUPPORTED) {
@@ -169,7 +171,6 @@ napi_value initObjectServiceConnect(napi_env env, napi_callback_info info)
     OH_LOG_INFO(LOG_APP, "initObjectServiceConnect CreateProxy ret: %{public}d", errCode);
     if (errCode == CE_ERR_OK) {
         napi_create_int32(env, errCode, &result);
-        g_contextPtr = contextPtr;
         g_proxy = proxy;
         HandleRegisterOEid();
         return result;
@@ -386,7 +387,7 @@ napi_value TestExtensionGetContent_Normal(napi_env env, napi_callback_info info)
     return result;
 }
 
-napi_value TestDocumentRead_Normal(napi_env env, napi_callback_info info)
+napi_value TestDocumentStreamRead_Normal(napi_env env, napi_callback_info info)
 {
     napi_value result;
     if (!g_IsSupport) {
@@ -395,14 +396,14 @@ napi_value TestDocumentRead_Normal(napi_env env, napi_callback_info info)
     }
     ContentEmbed_Document* oeDocument = nullptr;
     ContentEmbed_ErrorCode errCode = OH_ContentEmbed_Proxy_GetDocument(g_proxy, &oeDocument);
-    OH_LOG_INFO(LOG_APP, "TestDocumentRead_Normal get document ret: %{public}d", errCode);
+    OH_LOG_INFO(LOG_APP, "TestDocumentStreamRead_Normal get document ret: %{public}d", errCode);
     if (errCode != CE_ERR_OK) {
         napi_create_int32(env, -1, &result);
         return result;
     }
     ContentEmbed_Storage* rootStorage = nullptr;
     errCode = OH_ContentEmbed_Document_GetRootStorage(oeDocument, &rootStorage);
-    OH_LOG_INFO(LOG_APP, "TestDocumentRead_Normal get root storage ret: %{public}d", errCode);
+    OH_LOG_INFO(LOG_APP, "TestDocumentStreamRead_Normal get root storage ret: %{public}d", errCode);
     if (errCode != CE_ERR_OK) {
         napi_create_int32(env, -1, &result);
         return result;
@@ -410,7 +411,7 @@ napi_value TestDocumentRead_Normal(napi_env env, napi_callback_info info)
     const char* name = "normal";
     ContentEmbed_Stream* stream = nullptr;
     errCode = OH_ContentEmbed_Storage_CreateStream(rootStorage, name, &stream);
-    OH_LOG_INFO(LOG_APP, "TestDocumentRead_Normal create stream ret: %{public}d", errCode);
+    OH_LOG_INFO(LOG_APP, "TestDocumentStreamRead_Normal create stream ret: %{public}d", errCode);
     if (errCode != CE_ERR_OK) {
         napi_create_int32(env, -1, &result);
         return result;
@@ -418,7 +419,7 @@ napi_value TestDocumentRead_Normal(napi_env env, napi_callback_info info)
     unsigned char message[] = "test";
     size_t num = 0;
     errCode = OH_ContentEmbed_Stream_Write(stream, message, 4, &num); // 4: message length
-    OH_LOG_INFO(LOG_APP, "TestDocumentRead_Normal write ret: %{public}d", errCode);
+    OH_LOG_INFO(LOG_APP, "TestDocumentStreamRead_Normal write ret: %{public}d", errCode);
     if (errCode != CE_ERR_OK) {
         napi_create_int32(env, -1, &result);
         return result;
@@ -426,7 +427,7 @@ napi_value TestDocumentRead_Normal(napi_env env, napi_callback_info info)
     unsigned char *buffer = nullptr;
     size_t bytesRead = 0;
     errCode = OH_ContentEmbed_Stream_Read(stream, &buffer, BUF_SIZE, &bytesRead);
-    OH_LOG_INFO(LOG_APP, "TestDocumentRead_Normal read ret: %{public}d", errCode);
+    OH_LOG_INFO(LOG_APP, "TestDocumentStreamRead_Normal read ret: %{public}d", errCode);
     if (errCode == CE_ERR_OK) {
         delete[] buffer;
         napi_create_int32(env, errCode, &result);
@@ -1659,7 +1660,7 @@ napi_value TestProxyGetSnapshot_Normal(napi_env env, napi_callback_info info)
 
 napi_value TestProxyStartWork_Error(napi_env env, napi_callback_info info)
 {
-    char oeid[] = "111209FF-BBBB-DDDD-CAAA-0000000000AA";
+    char oeid[] = "111209FF-BBBB-DDDD-CAAA-220000000046";
     ContentEmbed_Document* oeDocument;
     napi_value result;
     ContentEmbed_ErrorCode errCode = OH_ContentEmbed_CreateDocumentByOEid(oeid, &oeDocument);
@@ -1972,6 +1973,38 @@ napi_value TestProxyMultiExtension_Normal(napi_env env, napi_callback_info info)
     if (errCode == CE_ERR_OK) {
         napi_create_int32(env, errCode, &result);
         return result;
+    }
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+napi_value TestStartWorkLimit(napi_env env, napi_callback_info info)
+{
+    ContentEmbed_Document* oeDocument;
+    napi_value result;
+    ContentEmbed_ErrorCode errCode = OH_ContentEmbed_CreateDocumentByOEid(normalOEid.c_str(), &oeDocument);
+    OH_LOG_INFO(LOG_APP, "TestStartWorkLimit document ret: %{public}d", errCode);
+    if (errCode == CE_ERR_DEVICE_NOT_SUPPORTED) {
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+    OH_LOG_INFO(LOG_APP, "TestStartWorkLimit CreateProxy ret: %{public}d", errCode);
+    for (int i = 0; i < TEST_LIMIT; ++i) {
+        errCode = OH_ContentEmbed_CreateDocumentByOEid(normalOEid.c_str(), &oeDocument);
+        OH_LOG_INFO(LOG_APP, "TestStartWorkLimit document ret: %{public}d", errCode);
+        if (errCode != CE_ERR_OK) {
+            napi_create_int32(env, -1, &result);
+            return result;
+        }
+        ContentEmbed_ExtensionProxy* proxy = nullptr;
+        errCode = CreateProxy(g_contextPtr, oeDocument, &proxy);
+        OH_LOG_INFO(LOG_APP, "TestStartWorkLimit CreateProxy ret: %{public}d", errCode);
+        if (errCode == CE_ERR_CONNECT_LIMIT_EXCEED) {
+            napi_create_int32(env, errCode, &result);
+            return result;
+        }
+        errCode = OH_ContentEmbed_DestroyExtensionProxy(proxy);
+        OH_LOG_INFO(LOG_APP, "TestStartWorkLimit DestroyExtensionProxy ret: %{public}d", errCode);
     }
     napi_create_int32(env, -1, &result);
     return result;

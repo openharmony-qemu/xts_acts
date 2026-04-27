@@ -78,6 +78,31 @@ static napi_value TestProxyGetContentEmbedFormatByOEidAndLocale_Normal(napi_env 
     return result;
 }
 
+static napi_value TestProxyGetContentEmbedFormatByOEidAndLocale_Abnormal(napi_env env, napi_callback_info info)
+{
+    ContentEmbed_Format *format = nullptr;
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateContentEmbedFormat(&format);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetContentEmbedFormatByOEidAndLocale_Abnormal create code: %{public}d", code);
+    napi_value result;
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    if (format == nullptr) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    char oeid[] = "TTT209FF-BBBB-DDDD-CAAA-000000000046";
+    code = OH_ContentEmbed_GetContentEmbedFormatByOEidAndLocale(oeid, "", format);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetContentEmbedFormatByOEidAndLocale_Abnormal code: %{public}d", code);
+    if (code == CE_ERR_SYSTEM_ABNORMAL) {
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
 static napi_value TestProxyGetIconFromFormat_Normal(napi_env env, napi_callback_info info)
 {
     ContentEmbed_Format *format = nullptr;
@@ -162,6 +187,118 @@ static napi_value TestProxyGetFileNameExtensionsFromFormat_Normal(napi_env env, 
     return result;
 }
 
+static napi_value TestDocumentRead_Normal(napi_env env, napi_callback_info info)
+{
+    ContentEmbed_Document* oeDocument;
+    napi_value result;
+    char oeid[] = "000209FF-BBBB-DDDD-CAAA-000000000046";
+    ContentEmbed_ErrorCode errCode = OH_ContentEmbed_CreateDocumentByOEid(oeid, &oeDocument);
+    OH_LOG_INFO(LOG_APP, "TestDocumentRead_Normal document ret: %{public}d", errCode);
+    if (errCode == CE_ERR_DEVICE_NOT_SUPPORTED) {
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+    if (oeDocument == nullptr) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    uint8_t buffer[] = "";
+    size_t readSize = 0;
+    errCode = OH_ContentEmbed_Document_Read(buffer, 0, oeDocument, 0, &readSize);
+    OH_LOG_INFO(LOG_APP, "TestDocumentRead_Normal failed code: %{public}d", readSize);
+    if (errCode == CE_ERR_OK) {
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestDocumentGetStream_Empty(napi_env env, napi_callback_info info)
+{
+    ContentEmbed_Document* oeDocument;
+    napi_value result;
+    char oeid[] = "000209FF-BBBB-DDDD-CAAA-000000000046";
+    ContentEmbed_ErrorCode errCode = OH_ContentEmbed_CreateDocumentByOEid(oeid, &oeDocument);
+    OH_LOG_INFO(LOG_APP, "TestDocumentGetStream_Empty document ret: %{public}d", errCode);
+    if (errCode == CE_ERR_DEVICE_NOT_SUPPORTED) {
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+    ContentEmbed_Storage *rootStorage = nullptr;
+    errCode = OH_ContentEmbed_Document_GetRootStorage(oeDocument, &rootStorage);
+    OH_LOG_INFO(LOG_APP, "TestDocumentGetStream_Empty get root storage code: %{public}d", errCode);
+    if (errCode != CE_ERR_OK) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    ContentEmbed_Stream *stream = nullptr;
+    errCode = OH_ContentEmbed_Storage_GetStream(rootStorage, "", &stream);
+    OH_LOG_INFO(LOG_APP, "TestDocumentGetStream_Empty get stream code: %{public}d", errCode);
+    if (errCode != CE_ERR_PARAM_INVALID) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value TestDocumentDeleteEntry_Empty(napi_env env, napi_callback_info info)
+{
+    ContentEmbed_Document* oeDocument;
+    napi_value result;
+    char oeid[] = "000209FF-BBBB-DDDD-CAAA-000000000046";
+    ContentEmbed_ErrorCode errCode = OH_ContentEmbed_CreateDocumentByOEid(oeid, &oeDocument);
+    OH_LOG_INFO(LOG_APP, "TestDocumentGetStream_Empty document ret: %{public}d", errCode);
+    if (errCode == CE_ERR_DEVICE_NOT_SUPPORTED) {
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+    ContentEmbed_Storage *rootStorage = nullptr;
+    errCode = OH_ContentEmbed_Document_GetRootStorage(oeDocument, &rootStorage);
+    OH_LOG_INFO(LOG_APP, "TestDocumentDeleteEntry_Empty get root storage code: %{public}d", errCode);
+    if (errCode != CE_ERR_OK) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    errCode = OH_ContentEmbed_Storage_DeleteEntry(rootStorage, "");
+    OH_LOG_INFO(LOG_APP, "TestDocumentDeleteEntry_Empty delete entry code: %{public}d", errCode);
+    if (errCode != CE_ERR_PARAM_INVALID) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value TestDocumentGetOEid_Empty(napi_env env, napi_callback_info info)
+{
+    ContentEmbed_Document* oeDocument;
+    napi_value result;
+    char oeid[] = "000209FF-BBBB-DDDD-CAAA-000000000046";
+    ContentEmbed_ErrorCode errCode = OH_ContentEmbed_CreateDocumentByOEid(oeid, &oeDocument);
+    OH_LOG_INFO(LOG_APP, "TestDocumentGetOEid_Empty document ret: %{public}d", errCode);
+    if (errCode == CE_ERR_DEVICE_NOT_SUPPORTED) {
+        napi_create_int32(env, errCode, &result);
+        return result;
+    }
+    ContentEmbed_Storage *rootStorage = nullptr;
+    errCode = OH_ContentEmbed_Document_GetRootStorage(oeDocument, &rootStorage);
+    OH_LOG_INFO(LOG_APP, "TestDocumentGetOEid_Empty get root storage code: %{public}d", errCode);
+    if (errCode != CE_ERR_OK) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    errCode = OH_ContentEmbed_Storage_GetOEid(rootStorage, "", 0);
+    OH_LOG_INFO(LOG_APP, "TestDocumentGetOEid_Empty get oeid code: %{public}d", errCode);
+    if (errCode != CE_ERR_PARAM_INVALID) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -172,6 +309,9 @@ static napi_value Init(napi_env env, napi_value exports)
         {"TestProxyGetContentEmbedFormatByOEidAndLocale_Normal", nullptr,
             TestProxyGetContentEmbedFormatByOEidAndLocale_Normal,
             nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestProxyGetContentEmbedFormatByOEidAndLocale_Abnormal", nullptr,
+            TestProxyGetContentEmbedFormatByOEidAndLocale_Abnormal,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestProxyGetIconFromFormat_Normal", nullptr,
             TestProxyGetIconFromFormat_Normal,
             nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -181,122 +321,26 @@ static napi_value Init(napi_env env, napi_value exports)
         {"TestProxyGetFileNameExtensionsFromFormat_Normal", nullptr,
             TestProxyGetFileNameExtensionsFromFormat_Normal,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"initObjectServiceConnect", nullptr,
-            initObjectServiceConnect,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestExtensionGetContent_Normal", nullptr,
-            TestExtensionGetContent_Normal,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestDocumentRead_Normal", nullptr,
             TestDocumentRead_Normal,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestExtensionGetEmbedContent_Normal", nullptr,
-            TestExtensionGetEmbedContent_Normal,
+        {"TestDocumentGetStream_Empty", nullptr,
+            TestDocumentGetStream_Empty,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestExtensionGetExtensionInstance_Normal", nullptr,
-            TestExtensionGetExtensionInstance_Normal,
+        {"TestDocumentDeleteEntry_Empty", nullptr,
+            TestDocumentDeleteEntry_Empty,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestExtensionRegisterOnCreateFunc_Normal", nullptr,
-            TestExtensionRegisterOnCreateFunc_Normal,
+        {"TestDocumentGetOEid_Empty", nullptr,
+            TestDocumentGetOEid_Empty,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestExtensionRegisterOnDestroyFunc_Normal", nullptr,
-            TestExtensionRegisterOnDestroyFunc_Normal,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestExtensionRegisterOnObjectAttachFunc_Normal", nullptr,
-            TestExtensionRegisterOnObjectAttachFunc_Normal,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestExtensionUnRegisterOnObjectAttachFunc_Normal", nullptr,
-            TestExtensionUnRegisterOnObjectAttachFunc_Normal,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestExtensionRegisterOnObjectDetachFunc_Normal", nullptr,
-            TestExtensionRegisterOnObjectDetachFunc_Normal,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestExtensionUnRegisterOnObjectDetachFunc_Normal", nullptr,
-            TestExtensionUnRegisterOnObjectDetachFunc_Normal,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestExtensionRegisterOnWriteToDataStreamFunc_Normal", nullptr,
-            TestExtensionRegisterOnWriteToDataStreamFunc_Normal,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestExtensionRegisterOnGetSnapshotFunc_Normal", nullptr,
-            TestExtensionRegisterOnGetSnapshotFunc_Normal,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestExtensionRegisterOnDoEditFunc_Normal", nullptr,
-            TestExtensionRegisterOnDoEditFunc_Normal,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestExtensionRegisterOnGetEditStatusFunc_Normal", nullptr,
-            TestExtensionRegisterOnGetEditStatusFunc_Normal,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestExtensionRegisterOnGetCapabilityFunc_Normal", nullptr,
-            TestExtensionRegisterOnGetCapabilityFunc_Normal,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestExtensionGetContentEmbedDocument_Normal", nullptr,
-            TestExtensionGetContentEmbedDocument_Normal,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestExtensionCallbackToOnUpdate_Normal", nullptr,
-            TestExtensionCallbackToOnUpdate_Normal,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestExtensionCallbackToOnError_Normal", nullptr,
-            TestExtensionCallbackToOnError_Normal,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestExtensionCallbackToOnEditingFinished_Normal", nullptr,
-            TestExtensionCallbackToOnEditingFinished_Normal,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestExtensionCallbackToOnExtensionStopped_Normal", nullptr,
-            TestExtensionCallbackToOnExtensionStopped_Normal,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestExtensionSetSnapshot_Normal", nullptr,
-            TestExtensionSetSnapshot_Normal,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestExtensionContextStartSelfUIAbility_Normal", nullptr,
-            TestExtensionContextStartSelfUIAbility_Normal,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestExtensionContextStartSelfUIAbilityWithStartOptions_Normal", nullptr,
-            TestExtensionContextStartSelfUIAbilityWithStartOptions_Normal,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestExtensionContextTerminateAbility_Normal", nullptr,
-            TestExtensionContextTerminateAbility_Normal,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestProxyGetSnapshot_NotSupported", nullptr,
-            TestProxyGetSnapshot_NotSupported,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestProxyGetSnapshot_ExtensionError", nullptr,
-            TestProxyGetSnapshot_ExtensionError,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestProxyGetSnapshot_Normal", nullptr,
-            TestProxyGetSnapshot_Normal,
+        {"initObjectServiceConnect", nullptr,
+            initObjectServiceConnect,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestProxyStartWork_Error", nullptr,
             TestProxyStartWork_Error,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestProxyStartWork_Normal", nullptr,
-            TestProxyStartWork_Normal,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestProxyStopWork_Normal", nullptr,
-            TestProxyStopWork_Normal,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestProxyDoEdit_NotSupported", nullptr,
-            TestProxyDoEdit_NotSupported,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestProxyDoEdit_ExtensionError", nullptr,
-            TestProxyDoEdit_ExtensionError,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestProxyDoEdit_Normal", nullptr,
-            TestProxyDoEdit_Normal,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestProxyGetEditStatus_ExtensionError", nullptr,
-            TestProxyGetEditStatus_ExtensionError,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestProxyGetEditStatus_Normal", nullptr,
-            TestProxyGetEditStatus_Normal,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestProxyGetCapability_ExtensionError", nullptr,
-            TestProxyGetCapability_ExtensionError,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestProxyGetCapability_Normal", nullptr,
-            TestProxyGetCapability_Normal,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestProxyMultiExtension_Normal", nullptr,
-            TestProxyMultiExtension_Normal,
+        {"TestStartWorkLimit", nullptr,
+            TestStartWorkLimit,
             nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

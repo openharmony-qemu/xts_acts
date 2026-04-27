@@ -79,8 +79,7 @@ export default function proxyTest() {
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
       let result = testNapi.TestProxyGetFormatFromInfo_Normal();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_DEVICE_NOT_SUPPORTED ||
-        result === CE_ERR_NULL_POINTER;
+      let expectResult = result === CE_ERR_OK || result === CE_ERR_DEVICE_NOT_SUPPORTED;
       expect(expectResult).assertTrue();
     })
 
@@ -98,8 +97,7 @@ export default function proxyTest() {
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
       let result = testNapi.TestProxyGetContentEmbedFormatByOEidAndLocale_Normal();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_DEVICE_NOT_SUPPORTED ||
-        result === CE_ERR_NULL_POINTER;
+      let expectResult = result === CE_ERR_OK || result === CE_ERR_DEVICE_NOT_SUPPORTED;
       expect(expectResult).assertTrue();
     })
 
@@ -117,27 +115,63 @@ export default function proxyTest() {
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
       let result = testNapi.TestProxyGetIconFromFormat_Normal();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_NULL_POINTER ||
+      let expectResult = result === CE_ERR_OK || result === CE_ERR_DEVICE_NOT_SUPPORTED;
+      expect(expectResult).assertTrue();
+    })
+
+    /**
+     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_GetContentEmbedFormatByOEidAndLocale_Abnormal_0100
+     * @tc.number SUB_Object_Editor_OH_ContentEmbed_GetContentEmbedFormatByOEidAndLocale_Abnormal_0100
+     * @tc.desc   Test OH_ContentEmbed_GetContentEmbedFormatByOEidAndLocale with abnormal case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Object_Editor_OH_ContentEmbed_GetContentEmbedFormatByOEidAndLocale_Abnormal_0100',
+      Level.LEVEL0, async () => {
+      await msSleep(1000);
+      let tag = 'SUB_Object_Editor_OH_ContentEmbed_GetContentEmbedFormatByOEidAndLocale_Abnormal_0100';
+      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
+      let result = testNapi.TestProxyGetContentEmbedFormatByOEidAndLocale_Abnormal();
+      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
+      let expectResult = result === CE_ERR_SYSTEM_ABNORMAL || result === CE_ERR_DEVICE_NOT_SUPPORTED;
+      expect(expectResult).assertTrue();
+    })
+
+    /**
+     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_GetContentEmbedInfo_0100
+     * @tc.number SUB_Object_Editor_OH_ContentEmbed_GetContentEmbedInfo_0100
+     * @tc.desc   Test OH_ContentEmbed_GetContentEmbedInfo with normal case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Object_Editor_OH_ContentEmbed_GetContentEmbedInfo_0100', Level.LEVEL0, async () => {
+      await msSleep(1000);
+      let tag = 'SUB_Object_Editor_OH_ContentEmbed_GetContentEmbedInfo_0100';
+      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
+      let result = testNapi.TestProxyGetContentEmbedInfo_Normal();
+      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
+      let expectResult = result === CE_ERR_OK || result === CE_ERR_SYSTEM_ABNORMAL ||
         result === CE_ERR_DEVICE_NOT_SUPPORTED;
       expect(expectResult).assertTrue();
     })
 
     /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_GetContent_Normal_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_GetContent_Normal_0100
-     * @tc.desc   Test OH_ContentEmbed_GetContent_Normal with normal case
+     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_GetFileNameExtensionsFromFormat_0100
+     * @tc.number SUB_Object_Editor_OH_ContentEmbed_GetFileNameExtensionsFromFormat_0100
+     * @tc.desc   Test OH_ContentEmbed_GetFileNameExtensionsFromFormat with normal case
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Object_Editor_OH_ContentEmbed_GetContent_Normal_0100', Level.LEVEL0, async () => {
+    it('SUB_Object_Editor_OH_ContentEmbed_GetFileNameExtensionsFromFormat_0100', Level.LEVEL0, async () => {
       await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_GetContent_Normal_0100';
+      let tag = 'SUB_Object_Editor_OH_ContentEmbed_GetFileNameExtensionsFromFormat_0100';
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestExtensionGetContent_Normal();
+      let result = testNapi.TestProxyGetFileNameExtensionsFromFormat_Normal();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_NULL_POINTER ||
-        result === CE_ERR_DEVICE_NOT_SUPPORTED;
+      let expectResult = result === CE_ERR_OK || result === CE_ERR_DEVICE_NOT_SUPPORTED;
       expect(expectResult).assertTrue();
     })
 
@@ -155,494 +189,39 @@ export default function proxyTest() {
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
       let result = testNapi.TestDocumentRead_Normal();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_NULL_POINTER ||
-        result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_GetEmbedContent_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_GetEmbedContent_0100
-     * @tc.desc   Test OH_ContentEmbed_GetEmbedContent with normal case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_GetEmbedContent_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_GetEmbedContent_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestExtensionGetEmbedContent_Normal();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_NULL_POINTER ||
-        result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_GetExtensionInstance_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_GetExtensionInstance_0100
-     * @tc.desc   Test OH_ContentEmbed_GetExtensionInstance with normal case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_GetExtensionInstance_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_GetExtensionInstance_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestExtensionGetExtensionInstance_Normal();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_NULL_POINTER ||
-        result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_RegisterOnCreateFunc_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_RegisterOnCreateFunc_0100
-     * @tc.desc   Test OH_ContentEmbed_RegisterOnCreateFunc with normal case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_RegisterOnCreateFunc_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_RegisterOnCreateFunc_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestExtensionRegisterOnCreateFunc_Normal();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_NULL_POINTER ||
-        result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_RegisterOnDestroyFunc_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_RegisterOnDestroyFunc_0100
-     * @tc.desc   Test OH_ContentEmbed_RegisterOnDestroyFunc with normal case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_RegisterOnDestroyFunc_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_RegisterOnDestroyFunc_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestExtensionRegisterOnDestroyFunc_Normal();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_NULL_POINTER ||
-        result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_RegisterOnObjectAttachFunc_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_RegisterOnObjectAttachFunc_0100
-     * @tc.desc   Test OH_ContentEmbed_RegisterOnObjectAttachFunc with normal case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_RegisterOnObjectAttachFunc_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_RegisterOnObjectAttachFunc_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestExtensionRegisterOnObjectAttachFunc_Normal();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_NULL_POINTER ||
-        result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_UnRegisterOnObjectAttachFunc_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_UnRegisterOnObjectAttachFunc_0100
-     * @tc.desc   Test OH_ContentEmbed_UnRegisterOnObjectAttachFunc with normal case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_UnRegisterOnObjectAttachFunc_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_UnRegisterOnObjectAttachFunc_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestExtensionUnRegisterOnObjectAttachFunc_Normal();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_NULL_POINTER ||
-        result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_RegisterOnObjectDetachFunc_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_RegisterOnObjectDetachFunc_0100
-     * @tc.desc   Test OH_ContentEmbed_RegisterOnObjectDetachFunc with normal case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_RegisterOnObjectDetachFunc_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_RegisterOnObjectDetachFunc_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestExtensionRegisterOnObjectDetachFunc_Normal();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_NULL_POINTER ||
-        result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_UnRegisterOnObjectDetachFunc_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_UnRegisterOnObjectDetachFunc_0100
-     * @tc.desc   Test OH_ContentEmbed_UnRegisterOnObjectDetachFunc with normal case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_UnRegisterOnObjectDetachFunc_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_UnRegisterOnObjectDetachFunc_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestExtensionUnRegisterOnObjectDetachFunc_Normal();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_NULL_POINTER ||
-        result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_RegisterOnWriteToDataStreamFunc_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_RegisterOnWriteToDataStreamFunc_0100
-     * @tc.desc   Test OH_ContentEmbed_RegisterOnWriteToDataStreamFunc with normal case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_RegisterOnWriteToDataStreamFunc_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_RegisterOnWriteToDataStreamFunc_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestExtensionRegisterOnWriteToDataStreamFunc_Normal();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_NULL_POINTER ||
-        result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_RegisterOnGetSnapshotFunc_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_RegisterOnGetSnapshotFunc_0100
-     * @tc.desc   Test OH_ContentEmbed_RegisterOnGetSnapshotFunc with normal case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_RegisterOnGetSnapshotFunc_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_RegisterOnGetSnapshotFunc_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestExtensionRegisterOnGetSnapshotFunc_Normal();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_NULL_POINTER ||
-        result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_RegisterOnDoEditFunc_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_RegisterOnDoEditFunc_0100
-     * @tc.desc   Test OH_ContentEmbed_RegisterOnDoEditFunc with normal case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_RegisterOnDoEditFunc_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_RegisterOnDoEditFunc_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestExtensionRegisterOnDoEditFunc_Normal();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_NULL_POINTER ||
-        result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_RegisterOnGetEditStatusFunc_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_RegisterOnGetEditStatusFunc_0100
-     * @tc.desc   Test OH_ContentEmbed_RegisterOnGetEditStatusFunc with normal case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_RegisterOnGetEditStatusFunc_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_RegisterOnGetEditStatusFunc_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestExtensionRegisterOnGetEditStatusFunc_Normal();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_NULL_POINTER ||
-        result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_RegisterOnGetCapabilityFunc_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_RegisterOnGetCapabilityFunc_0100
-     * @tc.desc   Test OH_ContentEmbed_RegisterOnGetCapabilityFunc with normal case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_RegisterOnGetCapabilityFunc_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_RegisterOnGetCapabilityFunc_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestExtensionRegisterOnGetCapabilityFunc_Normal();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_NULL_POINTER ||
-        result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_GetContentEmbedDocument_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_GetContentEmbedDocument_0100
-     * @tc.desc   Test OH_ContentEmbed_GetContentEmbedDocument with normal case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_GetContentEmbedDocument_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_GetContentEmbedDocument_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestExtensionGetContentEmbedDocument_Normal();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_NULL_POINTER ||
-        result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_CallbackToOnUpdate_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_CallbackToOnUpdate_0100
-     * @tc.desc   Test OH_ContentEmbed_CallbackToOnUpdate with normal case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_CallbackToOnUpdate_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_CallbackToOnUpdate_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestExtensionCallbackToOnUpdate_Normal();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_NULL_POINTER ||
-        result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_CallbackToOnError_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_CallbackToOnError_0100
-     * @tc.desc   Test OH_ContentEmbed_CallbackToOnError with normal case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_CallbackToOnError_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_CallbackToOnError_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestExtensionCallbackToOnError_Normal();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_NULL_POINTER ||
-        result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_CallbackToOnEditingFinished_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_CallbackToOnEditingFinished_0100
-     * @tc.desc   Test OH_ContentEmbed_CallbackToOnEditingFinished with normal case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_CallbackToOnEditingFinished_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_CallbackToOnEditingFinished_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestExtensionCallbackToOnEditingFinished_Normal();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_NULL_POINTER ||
-        result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_CallbackToOnExtensionStopped_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_CallbackToOnExtensionStopped_0100
-     * @tc.desc   Test OH_ContentEmbed_CallbackToOnExtensionStopped with normal case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_CallbackToOnExtensionStopped_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_CallbackToOnExtensionStopped_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestExtensionCallbackToOnExtensionStopped_Normal();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_NULL_POINTER ||
-        result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_SetSnapshot_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_SetSnapshot_0100
-     * @tc.desc   Test OH_ContentEmbed_SetSnapshot with normal case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_SetSnapshot_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_SetSnapshot_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestExtensionSetSnapshot_Normal();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_NULL_POINTER ||
-        result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_ContextStartSelfUIAbility_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_ContextStartSelfUIAbility_0100
-     * @tc.desc   Test OH_ContentEmbed_ContextStartSelfUIAbility with normal case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_ContextStartSelfUIAbility_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_ContextStartSelfUIAbility_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestExtensionContextStartSelfUIAbility_Normal();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_NULL_POINTER ||
-        result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_ContextStartSelfUIAbilityWithStartOptions_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_ContextStartSelfUIAbilityWithStartOptions_0100
-     * @tc.desc   Test OH_ContentEmbed_ContextStartSelfUIAbilityWithStartOptions with normal case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_ContextStartSelfUIAbilityWithStartOptions_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_ContextStartSelfUIAbilityWithStartOptions_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestExtensionContextStartSelfUIAbilityWithStartOptions_Normal();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_NULL_POINTER ||
-        result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_ContextTerminateAbility_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_ContextTerminateAbility_0100
-     * @tc.desc   Test OH_ContentEmbed_ContextTerminateAbility with normal case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_ContextTerminateAbility_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_ContextTerminateAbility_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestExtensionContextTerminateAbility_Normal();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_NULL_POINTER ||
-        result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_ProxyGetSnapshot_NotSupported_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_ProxyGetSnapshot_NotSupported_0100
-     * @tc.desc   Test OH_ContentEmbed_ProxyGetSnapshot with not supported case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_ProxyGetSnapshot_NotSupported_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_ProxyGetSnapshot_NotSupported_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestProxyGetSnapshot_NotSupported();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_EXTENSION_NOT_SUPPORT || result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_ProxyGetSnapshot_ExtensionError_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_ProxyGetSnapshot_ExtensionError_0100
-     * @tc.desc   Test OH_ContentEmbed_ProxyGetSnapshot with extension error case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_ProxyGetSnapshot_ExtensionError_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_ProxyGetSnapshot_ExtensionError_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestProxyGetSnapshot_ExtensionError();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_EXTENSION_ERROR || result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_ProxyGetSnapshot_Normal_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_ProxyGetSnapshot_Normal_0100
-     * @tc.desc   Test OH_ContentEmbed_ProxyGetSnapshot with normal case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_ProxyGetSnapshot_Normal_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_ProxyGetSnapshot_Normal_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestProxyGetSnapshot_Normal();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
       let expectResult = result === CE_ERR_OK || result === CE_ERR_DEVICE_NOT_SUPPORTED;
       expect(expectResult).assertTrue();
     })
 
     /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_ProxyStartWork_Error_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_ProxyStartWork_Error_0100
-     * @tc.desc   Test OH_ContentEmbed_ProxyStartWork with error case
+     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_TestStartWorkLimit_0100
+     * @tc.number SUB_Object_Editor_OH_ContentEmbed_TestStartWorkLimit_0100
+     * @tc.desc   Test OH_ContentEmbed TestStartWorkLimit
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Object_Editor_OH_ContentEmbed_ProxyStartWork_Error_0100', Level.LEVEL0, async () => {
+    it('SUB_Object_Editor_OH_ContentEmbed_TestStartWorkLimit_0100', Level.LEVEL0, async () => {
       await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_ProxyStartWork_Error_0100';
+      let tag = 'SUB_Object_Editor_OH_ContentEmbed_TestStartWorkLimit_0100';
+      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
+      let result = testNapi.TestStartWorkLimit();
+      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
+      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_CONNECT_LIMIT_EXCEED;
+      expect(expectResult).assertTrue();
+    })
+
+    /**
+     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_TestProxyStartWork_Error_0100
+     * @tc.number SUB_Object_Editor_OH_ContentEmbed_TestProxyStartWork_Error_0100
+     * @tc.desc   Test OH_ContentEmbed TestProxyStartWork_Error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Object_Editor_OH_ContentEmbed_TestProxyStartWork_Error_0100', Level.LEVEL0, async () => {
+      await msSleep(1000);
+      let tag = 'SUB_Object_Editor_OH_ContentEmbed_TestProxyStartWork_Error_0100';
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
       let result = testNapi.TestProxyStartWork_Error();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
@@ -651,182 +230,56 @@ export default function proxyTest() {
     })
 
     /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_ProxyStartWork_Normal_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_ProxyStartWork_Normal_0100
-     * @tc.desc   Test OH_ContentEmbed_ProxyStartWork with normal case
+     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_DocumentGetStream_Empty_0100
+     * @tc.number SUB_Object_Editor_OH_ContentEmbed_DocumentGetStream_Empty_0100
+     * @tc.desc   Test OH_ContentEmbed_DocumentGetStream_Empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Object_Editor_OH_ContentEmbed_ProxyStartWork_Normal_0100', Level.LEVEL0, async () => {
+    it('SUB_Object_Editor_OH_ContentEmbed_DocumentGetStream_Empty_0100', Level.LEVEL0, async () => {
       await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_ProxyStartWork_Normal_0100';
+      let tag = 'SUB_Object_Editor_OH_ContentEmbed_DocumentGetStream_Empty_0100';
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestProxyStartWork_Normal();
+      let result = testNapi.TestDocumentGetStream_Empty();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_DEVICE_NOT_SUPPORTED;
+      let expectResult = result === CE_ERR_PARAM_INVALID || result === CE_ERR_DEVICE_NOT_SUPPORTED;
       expect(expectResult).assertTrue();
     })
 
     /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_ProxyStopWork_Normal_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_ProxyStopWork_Normal_0100
-     * @tc.desc   Test OH_ContentEmbed_ProxyStopWork with normal case
+     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_DocumentDeleteEntry_Empty_0100
+     * @tc.number SUB_Object_Editor_OH_ContentEmbed_DocumentDeleteEntry_Empty_0100
+     * @tc.desc   Test OH_ContentEmbed_DocumentDeleteEntry_Empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Object_Editor_OH_ContentEmbed_ProxyStopWork_Normal_0100', Level.LEVEL0, async () => {
+    it('SUB_Object_Editor_OH_ContentEmbed_DocumentDeleteEntry_Empty_0100', Level.LEVEL0, async () => {
       await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_ProxyStopWork_Normal_0100';
+      let tag = 'SUB_Object_Editor_OH_ContentEmbed_DocumentDeleteEntry_Empty_0100';
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestProxyStopWork_Normal();
+      let result = testNapi.TestDocumentDeleteEntry_Empty();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_DEVICE_NOT_SUPPORTED;
+      let expectResult = result === CE_ERR_PARAM_INVALID || result === CE_ERR_DEVICE_NOT_SUPPORTED;
       expect(expectResult).assertTrue();
     })
 
     /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_ProxyDoEdit_NotSupported_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_ProxyDoEdit_NotSupported_0100
-     * @tc.desc   Test OH_ContentEmbed_ProxyDoEdit with not supported case
+     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_DocumentGetOEid_Empty_0100
+     * @tc.number SUB_Object_Editor_OH_ContentEmbed_DocumentGetOEid_Empty_0100
+     * @tc.desc   Test OH_ContentEmbed_DocumentGetOEid_Empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Object_Editor_OH_ContentEmbed_ProxyDoEdit_NotSupported_0100', Level.LEVEL0, async () => {
+    it('SUB_Object_Editor_OH_ContentEmbed_DocumentGetOEid_Empty_0100', Level.LEVEL0, async () => {
       await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_ProxyDoEdit_NotSupported_0100';
+      let tag = 'SUB_Object_Editor_OH_ContentEmbed_DocumentGetOEid_Empty_0100';
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestProxyDoEdit_NotSupported();
+      let result = testNapi.TestDocumentGetOEid_Empty();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_EXTENSION_NOT_SUPPORT || result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_ProxyDoEdit_ExtensionError_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_ProxyDoEdit_ExtensionError_0100
-     * @tc.desc   Test OH_ContentEmbed_ProxyDoEdit with extension error case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_ProxyDoEdit_ExtensionError_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_ProxyDoEdit_ExtensionError_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestProxyDoEdit_ExtensionError();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_EXTENSION_ERROR || result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_ProxyDoEdit_Normal_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_ProxyDoEdit_Normal_0100
-     * @tc.desc   Test OH_ContentEmbed_ProxyDoEdit with normal case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_ProxyDoEdit_Normal_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_ProxyDoEdit_Normal_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestProxyDoEdit_Normal();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_ProxyGetEditStatus_ExtensionError_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_ProxyGetEditStatus_ExtensionError_0100
-     * @tc.desc   Test OH_ContentEmbed_ProxyGetEditStatus with extension error case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_ProxyGetEditStatus_ExtensionError_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_ProxyGetEditStatus_ExtensionError_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestProxyGetEditStatus_ExtensionError();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_EXTENSION_ERROR || result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_ProxyGetEditStatus_Normal_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_ProxyGetEditStatus_Normal_0100
-     * @tc.desc   Test OH_ContentEmbed_ProxyGetEditStatus with normal case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_ProxyGetEditStatus_Normal_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_ProxyGetEditStatus_Normal_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestProxyGetEditStatus_Normal();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_ProxyGetCapability_ExtensionError_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_ProxyGetCapability_ExtensionError_0100
-     * @tc.desc   Test OH_ContentEmbed_ProxyGetCapability with extension error case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_ProxyGetCapability_ExtensionError_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_ProxyGetCapability_ExtensionError_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestProxyGetCapability_ExtensionError();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_EXTENSION_ERROR || result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_ProxyGetCapability_Normal_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_ProxyGetCapability_Normal_0100
-     * @tc.desc   Test OH_ContentEmbed_ProxyGetCapability with normal case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_ProxyGetCapability_Normal_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_ProxyGetCapability_Normal_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestProxyGetCapability_Normal();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_DEVICE_NOT_SUPPORTED;
-      expect(expectResult).assertTrue();
-    })
-
-    /**
-     * @tc.name   SUB_Object_Editor_OH_ContentEmbed_ProxyMultiExtension_Normal_0100
-     * @tc.number SUB_Object_Editor_OH_ContentEmbed_ProxyMultiExtension_Normal_0100
-     * @tc.desc   Test OH_ContentEmbed_ProxyMultiExtension with normal case
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Object_Editor_OH_ContentEmbed_ProxyMultiExtension_Normal_0100', Level.LEVEL0, async () => {
-      await msSleep(1000);
-      let tag = 'SUB_Object_Editor_OH_ContentEmbed_ProxyMultiExtension_Normal_0100';
-      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
-      let result = testNapi.TestProxyMultiExtension_Normal();
-      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_OK || result === CE_ERR_DEVICE_NOT_SUPPORTED;
+      let expectResult = result === CE_ERR_PARAM_INVALID || result === CE_ERR_DEVICE_NOT_SUPPORTED;
       expect(expectResult).assertTrue();
     })
   })

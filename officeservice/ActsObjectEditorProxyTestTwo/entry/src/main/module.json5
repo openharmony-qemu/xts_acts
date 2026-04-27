@@ -49,7 +49,7 @@
     "extensionAbilities": [
       {
         "name": "OEExtAbility",
-        "srcEntry": "libentry.so",
+        "srcEntry": "./ets/entryability/OEExtAbility.ets",
         "type": "contentEmbed",
         "exported": true,
         "metadata": [
