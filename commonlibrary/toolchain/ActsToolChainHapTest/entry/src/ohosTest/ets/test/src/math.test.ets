@@ -957,7 +957,7 @@ export default function math_group_test() {
 
     /**
      * @tc.name   exp10
-     * @tc.number SUB_THIRDPARTY_MUSL_EXP10_0100
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP_TEN_0100
      * @tc.desc   libc-test exp10
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -971,7 +971,7 @@ export default function math_group_test() {
 
     /**
      * @tc.name   exp10f
-     * @tc.number SUB_THIRDPARTY_MUSL_EXP10F_0100
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP_TEN_F_0100
      * @tc.desc   libc-test exp10f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -985,7 +985,7 @@ export default function math_group_test() {
 
     /**
      * @tc.name   exp10l
-     * @tc.number SUB_THIRDPARTY_MUSL_EXP10L_0100
+     * @tc.number SUB_THIRDPARTY_MUSL_EXP_TEN_L_0100
      * @tc.desc   libc-test exp10l
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1111,7 +1111,7 @@ export default function math_group_test() {
 
     /**
      * @tc.name   j0
-     * @tc.number SUB_THIRDPARTY_MUSL_J0_0100
+     * @tc.number SUB_THIRDPARTY_MUSL_J_ZERO_0100
      * @tc.desc   libc-test j0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1125,7 +1125,7 @@ export default function math_group_test() {
 
     /**
      * @tc.name   j0f
-     * @tc.number SUB_THIRDPARTY_MUSL_J0F_0100
+     * @tc.number SUB_THIRDPARTY_MUSL_J_ZERO_F_0100
      * @tc.desc   libc-test j0f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1139,7 +1139,7 @@ export default function math_group_test() {
 
     /**
      * @tc.name   j1
-     * @tc.number SUB_THIRDPARTY_MUSL_J1_0100
+     * @tc.number SUB_THIRDPARTY_MUSL_J_ONE_0100
      * @tc.desc   libc-test j1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1391,7 +1391,7 @@ export default function math_group_test() {
 
     /**
      * @tc.name   log10
-     * @tc.number SUB_THIRDPARTY_MUSL_LOG10_0100
+     * @tc.number SUB_THIRDPARTY_MUSL_LOG_TEN_0100
      * @tc.desc   libc-test log10
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1405,7 +1405,7 @@ export default function math_group_test() {
 
     /**
      * @tc.name   log10f
-     * @tc.number SUB_THIRDPARTY_MUSL_LOG10F_0100
+     * @tc.number SUB_THIRDPARTY_MUSL_LOG_TEN_F_0100
      * @tc.desc   libc-test log10f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1419,7 +1419,7 @@ export default function math_group_test() {
 
     /**
      * @tc.name   log10l
-     * @tc.number SUB_THIRDPARTY_MUSL_LOG10L_0100
+     * @tc.number SUB_THIRDPARTY_MUSL_LOG_TEN_L_0100
      * @tc.desc   libc-test log10l
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1433,7 +1433,7 @@ export default function math_group_test() {
 
     /**
      * @tc.name   log1p
-     * @tc.number SUB_THIRDPARTY_MUSL_LOG1P_0100
+     * @tc.number SUB_THIRDPARTY_MUSL_LOG_ONE_P_0100
      * @tc.desc   libc-test log1p
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1447,7 +1447,7 @@ export default function math_group_test() {
 
     /**
      * @tc.name   log1pf
-     * @tc.number SUB_THIRDPARTY_MUSL_LOG1PF_0100
+     * @tc.number SUB_THIRDPARTY_MUSL_LOG_ONE_PF_0100
      * @tc.desc   libc-test log1pf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1461,7 +1461,7 @@ export default function math_group_test() {
 
     /**
      * @tc.name   log1pl
-     * @tc.number SUB_THIRDPARTY_MUSL_LOG1PL_0100
+     * @tc.number SUB_THIRDPARTY_MUSL_LOG_ONE_PL_0100
      * @tc.desc   libc-test log1pl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1475,7 +1475,7 @@ export default function math_group_test() {
 
     /**
      * @tc.name   log2
-     * @tc.number SUB_THIRDPARTY_MUSL_LOG2_0100
+     * @tc.number SUB_THIRDPARTY_MUSL_LOG_TWO_0100
      * @tc.desc   libc-test log2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1489,7 +1489,7 @@ export default function math_group_test() {
 
     /**
      * @tc.name   log2f
-     * @tc.number SUB_THIRDPARTY_MUSL_LOG2F_0100
+     * @tc.number SUB_THIRDPARTY_MUSL_LOG_TWO_F_0100
      * @tc.desc   libc-test log2f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1503,7 +1503,7 @@ export default function math_group_test() {
 
     /**
      * @tc.name   log2l
-     * @tc.number SUB_THIRDPARTY_MUSL_LOG2L_0100
+     * @tc.number SUB_THIRDPARTY_MUSL_LOG_TWO_L_0100
      * @tc.desc   libc-test log2l
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1769,7 +1769,7 @@ export default function math_group_test() {
 
     /**
      * @tc.name   pow10
-     * @tc.number SUB_THIRDPARTY_MUSL_POW10_0100
+     * @tc.number SUB_THIRDPARTY_MUSL_POW_TEN_0100
      * @tc.desc   libc-test pow10
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1783,7 +1783,7 @@ export default function math_group_test() {
 
     /**
      * @tc.name   pow10f
-     * @tc.number SUB_THIRDPARTY_MUSL_POW10F_0100
+     * @tc.number SUB_THIRDPARTY_MUSL_POW_TEN_F_0100
      * @tc.desc   libc-test pow10f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1797,7 +1797,7 @@ export default function math_group_test() {
 
     /**
      * @tc.name   pow10l
-     * @tc.number SUB_THIRDPARTY_MUSL_POW10L_0100
+     * @tc.number SUB_THIRDPARTY_MUSL_POW_TEN_L_0100
      * @tc.desc   libc-test pow10l
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2357,7 +2357,7 @@ export default function math_group_test() {
 
     /**
      * @tc.name   y0
-     * @tc.number SUB_THIRDPARTY_MUSL_Y0_0100
+     * @tc.number SUB_THIRDPARTY_MUSL_Y_ZERO_0100
      * @tc.desc   libc-test y0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2371,7 +2371,7 @@ export default function math_group_test() {
 
     /**
      * @tc.name   y0f
-     * @tc.number SUB_THIRDPARTY_MUSL_Y0F_0100
+     * @tc.number SUB_THIRDPARTY_MUSL_Y_ZERO_F_0100
      * @tc.desc   libc-test y0f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2385,7 +2385,7 @@ export default function math_group_test() {
 
     /**
      * @tc.name   y1
-     * @tc.number SUB_THIRDPARTY_MUSL_Y1_0100
+     * @tc.number SUB_THIRDPARTY_MUSL_Y_ONE_0100
      * @tc.desc   libc-test y1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2399,7 +2399,7 @@ export default function math_group_test() {
 
     /**
      * @tc.name   y1f
-     * @tc.number SUB_THIRDPARTY_MUSL_Y1F_0100
+     * @tc.number SUB_THIRDPARTY_MUSL_Y_ONE_F_0100
      * @tc.desc   libc-test y1f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
