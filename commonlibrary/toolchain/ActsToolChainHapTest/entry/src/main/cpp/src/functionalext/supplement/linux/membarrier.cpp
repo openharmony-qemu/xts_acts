@@ -77,7 +77,7 @@ static int MembarrierTestImpl(int argc, char* argv[])
     Membarrier0100();
     Membarrier0200();
     Membarrier0300();
-    return t_status;
+    return T_STATUS;
 }
 
 int MembarrierTest(void)

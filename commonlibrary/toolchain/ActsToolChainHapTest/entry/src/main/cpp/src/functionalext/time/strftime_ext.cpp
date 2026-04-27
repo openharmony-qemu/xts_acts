@@ -44,7 +44,7 @@ constexpr int TM_YEAR_NEG_1999 = -1999;
 void Strftime0100(void)
 {
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(test_asctime_data) / sizeof(test_asctime_data[0])); i++) {
-        const char* handlerChar = test_handle_path(test_asctime_data[i].tz);
+        const char* handlerChar = TEST_HANDLE_PATH(test_asctime_data[i].tz);
         if (!handlerChar) {
             t_error("Strftime0100 failed: handlerChar is NULL\n");
             continue;
@@ -99,7 +99,7 @@ void Strftime0200(void)
  */
 void Strftime0300(void)
 {
-    const char* handlerChar = test_handle_path("Pacific/Pitcairn");
+    const char* handlerChar = TEST_HANDLE_PATH("Pacific/Pitcairn");
     if (!handlerChar) {
         t_error("Strftime0300 failed: handlerChar is NULL\n");
         return;
@@ -125,7 +125,7 @@ void Strftime0300(void)
  */
 void Strftime0400(void)
 {
-    const char* handlerChar = test_handle_path("Asia/Shanghai");
+    const char* handlerChar = TEST_HANDLE_PATH("Asia/Shanghai");
     if (!handlerChar) {
         t_error("Strftime0400 failed: handlerChar is NULL\n");
         return;
@@ -151,7 +151,7 @@ void Strftime0400(void)
  */
 void Strftime0500(void)
 {
-    const char* handlerChar = test_handle_path("Asia/Shanghai");
+    const char* handlerChar = TEST_HANDLE_PATH("Asia/Shanghai");
     if (!handlerChar) {
         t_error("Strftime0500 failed: handlerChar is NULL\n");
         return;
@@ -177,7 +177,7 @@ void Strftime0500(void)
  */
 void Strftime0600(void)
 {
-    const char* handlerChar = test_handle_path("Asia/Shanghai");
+    const char* handlerChar = TEST_HANDLE_PATH("Asia/Shanghai");
     if (!handlerChar) {
         t_error("Strftime0600 failed: handlerChar is NULL\n");
         return;
@@ -203,7 +203,7 @@ void Strftime0600(void)
  */
 void Strftime0700(void)
 {
-    const char* handlerChar = test_handle_path("Asia/Shanghai");
+    const char* handlerChar = TEST_HANDLE_PATH("Asia/Shanghai");
     if (!handlerChar) {
         t_error("Strftime0700 failed: handlerChar is NULL\n");
         return;
@@ -229,7 +229,7 @@ void Strftime0700(void)
  */
 void Strftime0800(void)
 {
-    const char* handlerChar = test_handle_path("Asia/Shanghai");
+    const char* handlerChar = TEST_HANDLE_PATH("Asia/Shanghai");
     if (!handlerChar) {
         t_error("Strftime0800 failed: handlerChar is NULL\n");
         return;
@@ -255,7 +255,7 @@ void Strftime0800(void)
  */
 void Strftime0900(void)
 {
-    const char* handlerChar = test_handle_path("Asia/Shanghai");
+    const char* handlerChar = TEST_HANDLE_PATH("Asia/Shanghai");
     if (!handlerChar) {
         t_error("Strftime0900 failed: handlerChar is NULL\n");
         return;
@@ -281,7 +281,7 @@ void Strftime0900(void)
  */
 void Strftime1000(void)
 {
-    const char* handlerChar = test_handle_path("Asia/Shanghai");
+    const char* handlerChar = TEST_HANDLE_PATH("Asia/Shanghai");
     if (!handlerChar) {
         t_error("Strftime1000 failed: handlerChar is NULL\n");
         return;
@@ -327,7 +327,7 @@ void Strftime1100(void)
  */
 void Strftime1200(void)
 {
-    const char* handlerChar = test_handle_path("Asia/Shanghai");
+    const char* handlerChar = TEST_HANDLE_PATH("Asia/Shanghai");
     if (!handlerChar) {
         t_error("Strftime1200 failed: handlerChar is NULL\n");
         return;
@@ -359,7 +359,7 @@ void Strftime1200(void)
  */
 void Strftime1300(void)
 {
-    const char* handlerChar = test_handle_path("Asia/Shanghai");
+    const char* handlerChar = TEST_HANDLE_PATH("Asia/Shanghai");
     if (!handlerChar) {
         t_error("Strftime1300 failed: handlerChar is NULL\n");
         return;
@@ -391,7 +391,7 @@ void Strftime1300(void)
  */
 void Strftime1400(void)
 {
-    const char* handlerChar = test_handle_path("Asia/Shanghai");
+    const char* handlerChar = TEST_HANDLE_PATH("Asia/Shanghai");
     if (!handlerChar) {
         t_error("Strftime1400 failed: handlerChar is NULL\n");
         return;
@@ -423,7 +423,7 @@ void Strftime1400(void)
  */
 void Strftime1500(void)
 {
-    const char* handlerChar = test_handle_path("Asia/Shanghai");
+    const char* handlerChar = TEST_HANDLE_PATH("Asia/Shanghai");
     if (!handlerChar) {
         t_error("Strftime1500 failed: handlerChar is NULL\n");
         return;
@@ -450,7 +450,7 @@ void Strftime1500(void)
  */
 void Strftime1600(void)
 {
-    const char* handlerChar = test_handle_path("Asia/Shanghai");
+    const char* handlerChar = TEST_HANDLE_PATH("Asia/Shanghai");
     if (!handlerChar) {
         t_error("Strftime1600 failed: handlerChar is NULL\n");
         return;
@@ -614,7 +614,7 @@ static int StrftimeExtTestImpl(void)
     Strftime2200();
     Strftime2300();
     Strftime2400();
-    return t_status;
+    return T_STATUS;
 }
 
 int StrftimeExtTest(void)

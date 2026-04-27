@@ -22,7 +22,7 @@ int CtimeTest();
 int CtimeRTest();
 int DifftimeTest();
 
-int asctimeTest();
+int AsctimeTest();
 int AsctimeRTestCompat();
 int GmtimeTest();
 int GmtimeRTest();

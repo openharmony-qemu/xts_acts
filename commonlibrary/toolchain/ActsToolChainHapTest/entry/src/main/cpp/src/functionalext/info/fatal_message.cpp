@@ -301,7 +301,7 @@ static int FatalMessageTestImpl(void)
         EXPECT_TRUE(childRet == 0);
     }
 
-    return t_status;
+    return T_STATUS;
 }
 
 int FatalMessageTest(void)

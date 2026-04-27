@@ -18,7 +18,7 @@
 
 #include "time_test_data.h"
 
-static const struct time_test_time_struct test_timegm_data[] = {
+static const struct time_test_time_struct TEST_TIMEGM_DATA[] = {
     { "Europe/London", 1659181214 },
     { "Europe/Moscow", 1659188414 },
     { "Europe/Ulyanovsk", 1659192014 },
@@ -94,4 +94,6 @@ static const struct time_test_time_struct test_timegm_data[] = {
 
 };
 
+
+#define test_timegm_data TEST_TIMEGM_DATA
 #endif

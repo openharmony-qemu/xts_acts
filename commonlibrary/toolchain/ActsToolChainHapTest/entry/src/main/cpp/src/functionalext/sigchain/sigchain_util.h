@@ -51,7 +51,7 @@
 #define SIGCHAIN_SIGNAL_56 56
 #define SIGCHAIN_SIGNAL_64 64
 
-inline bool get_sigchain_mask_enable()
+inline bool GetSigchainMaskEnable()
 {
 #ifdef OHOS_ENABLE_PARAMETER
     static CachedHandle sigchain_procmask_handle = NULL;
@@ -67,5 +67,7 @@ inline bool get_sigchain_mask_enable()
 #endif
     return false;
 }
+
+#define get_sigchain_mask_enable GetSigchainMaskEnable
 
 #endif

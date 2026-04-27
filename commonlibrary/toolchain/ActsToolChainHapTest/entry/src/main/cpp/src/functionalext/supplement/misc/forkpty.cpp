@@ -94,7 +94,7 @@ void Forkpty0100(void)
 static int ForkptyTestImpl(int argc, char* argv[])
 {
     Forkpty0100();
-    return t_status;
+    return T_STATUS;
 }
 
 int ForkptyTest(void)

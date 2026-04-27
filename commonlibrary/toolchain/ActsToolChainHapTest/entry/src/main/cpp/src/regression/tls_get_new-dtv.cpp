@@ -76,7 +76,7 @@ int TlsGetNewDtvTest()
     return status;
 }
 
-int tls_get_new_dtvTest()
+int TlsGetNewDtvTestCompat()
 {
     return TlsGetNewDtvTest();
 }

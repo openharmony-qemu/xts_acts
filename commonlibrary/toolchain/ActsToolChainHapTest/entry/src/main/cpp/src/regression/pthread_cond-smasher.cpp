@@ -91,8 +91,9 @@ static unsigned volatile g_phase;
 
 static void Settimeout(struct timespec* ts)
 {
-    if (clock_gettime(CLOCK_REALTIME, ts))
+    if (clock_gettime(CLOCK_REALTIME, ts)) {
         t_error("clock_gettime failed: %s\n", strerror(errno));
+    }
     ts->tv_nsec += HALF_SECOND_NS;
     if (ts->tv_nsec >= ONE_BILLION_NS) {
         ts->tv_nsec -= ONE_BILLION_NS;
@@ -122,13 +123,14 @@ static thread_ret Client(void* arg)
             trace("thread %u in g_phase %u (%u), finished, %s\n", *number, i, g_phase, ERRORSTRING(ret));
             if (ret) {
                 t_error("thread %u in g_phase %u (%u) finished waiting: %s\n", *number, i, g_phase, ERRORSTRING(ret));
-                exit(t_status);
+                exit(T_STATUS);
             }
         }
         int ret = MUTEX_UNLOCK(&g_mut[i]);
         trace("thread %u in g_phase %u (%u), has unlocked Mutex: %s\n", *number, i, g_phase, ERRORSTRING(ret));
-        if (ret)
+        if (ret) {
             t_error("thread %u in g_phase %u (%u), failed to unlock: %s\n", *number, i, g_phase, ERRORSTRING(ret));
+        }
     }
     return nullptr;
 }
@@ -161,14 +163,15 @@ static int PthreadCondSmasherTestImpl(void)
                         g_phase,
                         g_inside[g_phase],
                         ERRORSTRING(ret));
-                return t_status;
+                return T_STATUS;
             }
         }
         /* now we know that everybody is waiting g_inside, lock the next
            Mutex, if any, such that nobody can enter the next g_phase
            without our permission. */
-        if (g_phase < PHASES - 1)
+        if (g_phase < PHASES - 1) {
             MUTEX_LOCK(&g_mut[g_phase + 1]);
+        }
         /* Now signal all clients, update the g_phase count and release the
            Mutex they are waiting for. */
         int ret = CONDITION_BROADCAST(&g_condClient);
@@ -178,8 +181,9 @@ static int PthreadCondSmasherTestImpl(void)
         ++g_phase;
         ret = MUTEX_UNLOCK(&g_mut[g_phase - 1]);
         trace("main has unlocked Mutex %u: %s\n", g_phase - 1, ERRORSTRING(ret));
-        if (ret)
+        if (ret) {
             t_error("main failed to unlock Mutex %u: %s\n", g_phase - 1, ERRORSTRING(ret));
+        }
     }
 
     trace("main finished loop\n");
@@ -189,8 +193,9 @@ static int PthreadCondSmasherTestImpl(void)
         thread_ret joinRet = nullptr;
         int ret = THREAD_JOIN(g_id[i], &joinRet);
         trace("main joining thread %u: %s\n", i, ERRORSTRING(ret));
-        if (ret)
+        if (ret) {
             t_error("main failed join thread %u: %s\n", i, ERRORSTRING(ret));
+        }
     }
 
     /* C functions to destroy the control structures don't return error
@@ -203,7 +208,7 @@ static int PthreadCondSmasherTestImpl(void)
 
     tell("shut down of main, using %s, library %s\n", VERSION, LIBRARY);
 
-    return t_status;
+    return T_STATUS;
 }
 
 int PthreadCondSmasherTest(void)

@@ -28,7 +28,7 @@ int ResQueryTest();
 int ResQuerydomainTest();
 int SendmmsgTest();
 
-int accept4Test();
+int Accept4Test();
 int FreeaddrinfoTest();
 int FreeifaddrsTest();
 int GaiStrerrorTest();

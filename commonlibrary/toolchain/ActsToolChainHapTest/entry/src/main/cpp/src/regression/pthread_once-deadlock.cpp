@@ -105,7 +105,7 @@ static int PthreadOnceDeadlockTestImpl(void)
     E(sem_destroy(&s1));
     E(sem_destroy(&s2));
     E(sem_destroy(&s3));
-    return t_status;
+    return T_STATUS;
 }
 
 int PthreadOnceDeadlockTest(void)

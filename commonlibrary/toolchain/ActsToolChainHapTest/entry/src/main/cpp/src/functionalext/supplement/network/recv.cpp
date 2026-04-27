@@ -70,8 +70,8 @@ void* SampleServerTask(void* arg)
         *sign = -1;
         return sign;
     }
-    constexpr int LISTEN_BACKLOG = 2;
-    rets = listen(sListen, LISTEN_BACKLOG);
+    constexpr int listenBacklog = 2;
+    rets = listen(sListen, listenBacklog);
     if (rets != 0) {
         printf("[Server] listen fail!\n");
         WAIT();
@@ -151,7 +151,7 @@ void Recv0100()
 static int RecvTestImpl(int argc, char* argv[])
 {
     Recv0100();
-    return t_status;
+    return T_STATUS;
 }
 
 int RecvTest(void)

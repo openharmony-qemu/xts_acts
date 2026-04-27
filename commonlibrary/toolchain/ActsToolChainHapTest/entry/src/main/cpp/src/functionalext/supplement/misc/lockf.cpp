@@ -116,7 +116,7 @@ static int LockfTestImpl(void)
     Lockf0200();
     Lockf0300();
     Lockf0400();
-    return t_status;
+    return T_STATUS;
 }
 
 int LockfTest(void)

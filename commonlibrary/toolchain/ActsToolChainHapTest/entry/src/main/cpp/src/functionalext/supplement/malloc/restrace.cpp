@@ -32,7 +32,7 @@ void Restrace0100(void)
 static int RestraceTestImpl(void)
 {
     Restrace0100();
-    return t_status;
+    return T_STATUS;
 }
 
 int RestraceTest(void)

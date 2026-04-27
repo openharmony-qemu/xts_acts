@@ -128,7 +128,7 @@ static int SelectTestImpl(void)
     Select0200();
     Select0300();
     SelectTime640100();
-    return t_status;
+    return T_STATUS;
 }
 
 int SelectTest(void)

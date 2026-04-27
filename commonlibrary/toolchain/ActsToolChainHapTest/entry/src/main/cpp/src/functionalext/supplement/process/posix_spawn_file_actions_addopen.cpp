@@ -21,11 +21,11 @@
 #include "functionalext.h"
 
 /**
- * @tc.name      : posix_spawn_file_actions_addopen_0100
+ * @tc.name      : PosixSpawnFileActionsAddopen0100
  * @tc.desc      : Set the behavior property of the open file to the spawn file actions object
  * @tc.level     : Level 0
  */
-void posix_spawn_file_actions_addopen_0100(void)
+void PosixSpawnFileActionsAddopen0100(void)
 {
     posix_spawn_file_actions_t fa;
     struct fdop* ptr = NULL;
@@ -34,25 +34,25 @@ void posix_spawn_file_actions_addopen_0100(void)
 
     int fd = 10;
     int ret = posix_spawn_file_actions_addopen(&fa, fd, "/data/storage/el2/base/cache", O_RDWR | O_CREAT, S_IXGRP);
-    EXPECT_EQ("posix_spawn_file_actions_addopen_0100", ret, CMPFLAG);
+    EXPECT_EQ("PosixSpawnFileActionsAddopen0100", ret, CMPFLAG);
     if (ret == 0) {
         ptr = reinterpret_cast<struct fdop*>(fa.__actions);
-        EXPECT_EQ("posix_spawn_file_actions_addopen_0100", ptr->cmd, FDOP_OPEN);
-        EXPECT_EQ("posix_spawn_file_actions_addopen_0100", ptr->fd, fd);
-        EXPECT_EQ("posix_spawn_file_actions_addopen_0100", ptr->oflag, O_RDWR | O_CREAT);
-        EXPECT_EQ("posix_spawn_file_actions_addopen_0100", ptr->mode, S_IXGRP);
-        EXPECT_STREQ("posix_spawn_file_actions_addopen_0100", ptr->path, "/data/storage/el2/base/cache");
+        EXPECT_EQ("PosixSpawnFileActionsAddopen0100", ptr->cmd, FDOP_OPEN);
+        EXPECT_EQ("PosixSpawnFileActionsAddopen0100", ptr->fd, fd);
+        EXPECT_EQ("PosixSpawnFileActionsAddopen0100", ptr->oflag, O_RDWR | O_CREAT);
+        EXPECT_EQ("PosixSpawnFileActionsAddopen0100", ptr->mode, S_IXGRP);
+        EXPECT_STREQ("PosixSpawnFileActionsAddopen0100", ptr->path, "/data/storage/el2/base/cache");
     }
 
     posix_spawn_file_actions_destroy(&fa);
 }
 
 /**
- * @tc.name      : posix_spawn_file_actions_addopen_0200
+ * @tc.name      : PosixSpawnFileActionsAddopen0200
  * @tc.desc      : Set the behavior property of the open file to the spawn file actions object
  * @tc.level     : Level 0
  */
-void posix_spawn_file_actions_addopen_0200(void)
+void PosixSpawnFileActionsAddopen0200(void)
 {
     posix_spawn_file_actions_t fa;
     struct fdop* ptr = NULL;
@@ -60,25 +60,25 @@ void posix_spawn_file_actions_addopen_0200(void)
     posix_spawn_file_actions_init(&fa);
     int ret = posix_spawn_file_actions_addopen(
         &fa, fd, "/data/storage/el2/base/cache", O_RDONLY | O_CREAT, S_IXGRP | S_IROTH | S_IWOTH);
-    EXPECT_EQ("posix_spawn_file_actions_addopen_0200", ret, CMPFLAG);
+    EXPECT_EQ("PosixSpawnFileActionsAddopen0200", ret, CMPFLAG);
     if (ret == 0) {
         ptr = reinterpret_cast<struct fdop*>(fa.__actions);
-        EXPECT_EQ("posix_spawn_file_actions_addopen_0200", ptr->cmd, FDOP_OPEN);
-        EXPECT_EQ("posix_spawn_file_actions_addopen_0200", ptr->fd, fd);
-        EXPECT_EQ("posix_spawn_file_actions_addopen_0200", ptr->oflag, O_RDONLY | O_CREAT);
-        EXPECT_EQ("posix_spawn_file_actions_addopen_0200", ptr->mode, S_IXGRP | S_IROTH | S_IWOTH);
-        EXPECT_STREQ("posix_spawn_file_actions_addopen_0200", ptr->path, "/data/storage/el2/base/cache");
+        EXPECT_EQ("PosixSpawnFileActionsAddopen0200", ptr->cmd, FDOP_OPEN);
+        EXPECT_EQ("PosixSpawnFileActionsAddopen0200", ptr->fd, fd);
+        EXPECT_EQ("PosixSpawnFileActionsAddopen0200", ptr->oflag, O_RDONLY | O_CREAT);
+        EXPECT_EQ("PosixSpawnFileActionsAddopen0200", ptr->mode, S_IXGRP | S_IROTH | S_IWOTH);
+        EXPECT_STREQ("PosixSpawnFileActionsAddopen0200", ptr->path, "/data/storage/el2/base/cache");
     }
 
     ret = posix_spawn_file_actions_destroy(&fa);
 }
 
 /**
- * @tc.name      : posix_spawn_file_actions_addopen_0300
+ * @tc.name      : PosixSpawnFileActionsAddopen0300
  * @tc.desc      : Set the behavior property of the open file to the spawn file actions object
  * @tc.level     : Level 0
  */
-void posix_spawn_file_actions_addopen_0300(void)
+void PosixSpawnFileActionsAddopen0300(void)
 {
     posix_spawn_file_actions_t fa;
     struct fdop* ptr = NULL;
@@ -86,28 +86,28 @@ void posix_spawn_file_actions_addopen_0300(void)
     posix_spawn_file_actions_init(&fa);
     int ret = posix_spawn_file_actions_addopen(
         &fa, fd, "/data/storage/el2/base/cache", O_WRONLY | O_CREAT, S_IXGRP | S_IROTH | S_IWOTH);
-    EXPECT_EQ("posix_spawn_file_actions_addopen_0300", ret, CMPFLAG);
+    EXPECT_EQ("PosixSpawnFileActionsAddopen0300", ret, CMPFLAG);
     if (ret == 0) {
         ptr = reinterpret_cast<struct fdop*>(fa.__actions);
-        EXPECT_EQ("posix_spawn_file_actions_addopen_0300", ptr->cmd, FDOP_OPEN);
-        EXPECT_EQ("posix_spawn_file_actions_addopen_0300", ptr->fd, fd);
-        EXPECT_EQ("posix_spawn_file_actions_addopen_0300", ptr->oflag, O_WRONLY | O_CREAT);
-        EXPECT_EQ("posix_spawn_file_actions_addopen_0300", ptr->mode, S_IXGRP | S_IROTH | S_IWOTH);
-        EXPECT_STREQ("posix_spawn_file_actions_addopen_0300", ptr->path, "/data/storage/el2/base/cache");
+        EXPECT_EQ("PosixSpawnFileActionsAddopen0300", ptr->cmd, FDOP_OPEN);
+        EXPECT_EQ("PosixSpawnFileActionsAddopen0300", ptr->fd, fd);
+        EXPECT_EQ("PosixSpawnFileActionsAddopen0300", ptr->oflag, O_WRONLY | O_CREAT);
+        EXPECT_EQ("PosixSpawnFileActionsAddopen0300", ptr->mode, S_IXGRP | S_IROTH | S_IWOTH);
+        EXPECT_STREQ("PosixSpawnFileActionsAddopen0300", ptr->path, "/data/storage/el2/base/cache");
     }
 
     ret = posix_spawn_file_actions_destroy(&fa);
 }
 
-static int PosixSpawnFileActionsAddopenTest_impl(void)
+static int PosixSpawnFileActionsAddopenTestImpl(void)
 {
-    posix_spawn_file_actions_addopen_0100();
-    posix_spawn_file_actions_addopen_0200();
-    posix_spawn_file_actions_addopen_0300();
-    return t_status;
+    PosixSpawnFileActionsAddopen0100();
+    PosixSpawnFileActionsAddopen0200();
+    PosixSpawnFileActionsAddopen0300();
+    return T_STATUS;
 }
 
 int PosixSpawnFileActionsAddopenTest(void)
 {
-    return PosixSpawnFileActionsAddopenTest_impl();
+    return PosixSpawnFileActionsAddopenTestImpl();
 }

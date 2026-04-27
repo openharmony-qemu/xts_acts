@@ -32,7 +32,7 @@ void ResTraceFreeRegion0100(void)
 static int ResTraceFreeRegionTestImpl(void)
 {
     ResTraceFreeRegion0100();
-    return t_status;
+    return T_STATUS;
 }
 
 int ResTraceFreeRegionTest(void)

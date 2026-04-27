@@ -110,7 +110,7 @@ static int GetmntentRTestImpl(int argc, char* argv[])
     GetmntentR0100();
     GetmntentR0200();
 
-    return t_status;
+    return T_STATUS;
 }
 
 int GetmntentRTest(void)

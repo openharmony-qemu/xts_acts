@@ -122,7 +122,7 @@ static void SigchainSetPreValidationIgnoreThread001()
 static int SigchainSetPreValidationIgnoreThreadTestTestImpl(void)
 {
     SigchainSetPreValidationIgnoreThread001();
-    return t_status;
+    return T_STATUS;
 }
 
 int SigchainSetPreValidationIgnoreThreadTestTest(void)

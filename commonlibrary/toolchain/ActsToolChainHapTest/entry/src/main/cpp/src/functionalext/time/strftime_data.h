@@ -37,4 +37,6 @@ inline constexpr struct time_test_string_struct TEST_STRFTIME_DATA[] = {
     { "Europe/Rome", "Sat Jul 30 12:40:14 2022 CEST+0200" },
 };
 
+
+#define test_strftime_data TEST_STRFTIME_DATA
 #endif

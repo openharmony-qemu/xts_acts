@@ -33,17 +33,14 @@ extern "C" {
 
 extern volatile int g_tStatus;
 #define T_STATUS g_tStatus
-#ifndef t_status
-#define t_status T_STATUS
-#endif
 #ifndef FILE_ABSOLUTE_PATH
 #define FILE_ABSOLUTE_PATH(src, dst)                     \
     do {                                                 \
         (void)snprintf((dst), sizeof(dst), "%s", (src)); \
     } while (0)
 #endif
-#ifndef t_memfill
-#define t_memfill TMemfill
+#ifndef T_MEMFILL
+#define T_MEMFILL TMemfill
 #endif
 
 #define T_LOC2(l) __FILE__ ":" #l

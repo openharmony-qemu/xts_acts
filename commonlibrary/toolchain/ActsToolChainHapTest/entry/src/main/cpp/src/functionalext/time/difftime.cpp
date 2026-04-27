@@ -31,7 +31,7 @@ static void Difftime0100(void)
     time_t timeStart = 20000;
     time_t timeEnd = 20010;
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(test_difftime_data) / sizeof(test_difftime_data[0])); i++) {
-        const char* handlerChar = test_handle_path(test_difftime_data[i].tz);
+        const char* handlerChar = TEST_HANDLE_PATH(test_difftime_data[i].tz);
         if (!handlerChar) {
             t_error("Difftime0100 failed: handlerChar is NULL\n");
             continue;
@@ -62,7 +62,7 @@ void Difftime640100(void)
     time_t timeStart = 20000;
     time_t timeEnd = 20010;
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(test_difftime_data) / sizeof(test_difftime_data[0])); i++) {
-        const char* handlerChar = test_handle_path(test_difftime_data[i].tz);
+        const char* handlerChar = TEST_HANDLE_PATH(test_difftime_data[i].tz);
         if (!handlerChar) {
             t_error("Difftime640100 failed: handlerChar is NULL\n");
             continue;
@@ -82,5 +82,5 @@ int DifftimeTest(void)
 {
     Difftime0100();
     Difftime640100();
-    return t_status;
+    return T_STATUS;
 }

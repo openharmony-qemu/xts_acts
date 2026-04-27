@@ -96,7 +96,7 @@ static int SchedRrGetIntervalTestImpl(int argc, char* argv[])
     SchedRrGetInterval0100();
     SchedRrGetInterval0200();
     SchedRrGetIntervalTime640100();
-    return t_status;
+    return T_STATUS;
 }
 
 int SchedRrGetIntervalTest(void)

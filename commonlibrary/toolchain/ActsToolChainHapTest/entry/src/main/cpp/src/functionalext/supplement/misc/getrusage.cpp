@@ -105,7 +105,7 @@ static int GetrusageTestImpl(void)
     Getrusage0400();
     Getrusage0500();
     GetrusageTime640100();
-    return t_status;
+    return T_STATUS;
 }
 
 int GetrusageTest(void)

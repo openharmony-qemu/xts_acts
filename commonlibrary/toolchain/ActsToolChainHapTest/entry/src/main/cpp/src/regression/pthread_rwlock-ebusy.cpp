@@ -70,7 +70,7 @@ static int PthreadRwlockEbusyTestImpl(void)
     r = pthread_rwlock_unlock(&rw);
     CheckResult(r, "pthread_rwlock_unlock(&rw)");
 
-    return t_status;
+    return T_STATUS;
 }
 
 int PthreadRwlockEbusyTest(void)

@@ -164,7 +164,7 @@ static int InotifyTestImpl(void)
 
     InotifyRmWatch0100();
     InotifyRmWatch0200();
-    return t_status;
+    return T_STATUS;
 }
 
 int InotifyTest(void)

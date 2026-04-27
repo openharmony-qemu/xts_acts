@@ -174,7 +174,7 @@ static int FutimesatTestImpl(int argc, char* argv[])
     Futimesat0300();
     Futimesat0400();
     FutimesatTime640200();
-    return t_status;
+    return T_STATUS;
 }
 
 int FutimesatTest(void)

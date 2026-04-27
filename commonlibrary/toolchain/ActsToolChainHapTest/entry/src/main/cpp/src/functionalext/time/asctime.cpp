@@ -29,7 +29,7 @@ static time_t g_time = 1659177614;
 void Asctime0100(void)
 {
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(test_asctime_data) / sizeof(test_asctime_data[0])); i++) {
-        const char* handlerChar = test_handle_path(test_asctime_data[i].tz);
+        const char* handlerChar = TEST_HANDLE_PATH(test_asctime_data[i].tz);
         if (!handlerChar) {
             t_error("Asctime0100 failed: handlerChar is NULL\n");
             continue;
@@ -195,9 +195,9 @@ int AsctimeTest(void)
     Asctime0200();
     Asctime0300();
     Asctime0400();
-    return t_status;
+    return T_STATUS;
 }
-int asctimeTest(void)
+int AsctimeTestCompat(void)
 {
     return AsctimeTest();
 }

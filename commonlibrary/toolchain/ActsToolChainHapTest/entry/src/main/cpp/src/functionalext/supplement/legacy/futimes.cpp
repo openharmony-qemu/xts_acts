@@ -108,7 +108,7 @@ static int FutimesTestImpl(int argc, char* argv[])
     Futimes0200();
     Futimes0300();
     FutimesTime640100();
-    return t_status;
+    return T_STATUS;
 }
 
 int FutimesTest(void)

@@ -127,7 +127,7 @@ static int FunctionalextPow10TestImpl(int argc, char* argv[])
     Pow100300();
     Pow100400();
     Pow100500();
-    return t_status;
+    return T_STATUS;
 }
 
 int FunctionalextPow10Test(void)

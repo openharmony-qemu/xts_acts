@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#ifndef _MEMORY_TRACE_H
-#define _MEMORY_TRACE_H
+#ifndef MEMORY_TRACE_H
+#define MEMORY_TRACE_H
 
 #include <unistd.h>
 
@@ -85,13 +85,20 @@ extern "C" {
 #define FD_SIZE 1
 #define THREAD_SIZE 1
 
-inline void memtrace(void* addr, size_t size, const char* tag, bool isUsing){};
-inline void restrace(unsigned long long mask, void* addr, size_t size, const char* tag, bool isUsing){};
-inline void restraceFd(unsigned long long mask, int fd, const char* tag, bool isUsing){};
+inline void Memtrace(void* addr, size_t size, const char* tag, bool isUsing){};
+inline void Restrace(unsigned long long mask, void* addr, size_t size, const char* tag, bool isUsing){};
+inline void RestraceFd(unsigned long long mask, int fd, const char* tag, bool isUsing){};
 inline void
-    restraceExt(unsigned long long mask, void* addr, size_t size, const char* tag, bool isUsing, bool isWeakRef){};
-inline void resTraceMove(unsigned long long mask, void* oldAddr, void* newAddr, size_t newSize){};
-inline void resTraceFreeRegion(unsigned long long mask, void* addr, size_t size){};
+    RestraceExt(unsigned long long mask, void* addr, size_t size, const char* tag, bool isUsing, bool isWeakRef){};
+inline void ResTraceMove(unsigned long long mask, void* oldAddr, void* newAddr, size_t newSize){};
+inline void ResTraceFreeRegion(unsigned long long mask, void* addr, size_t size){};
+
+#define memtrace Memtrace
+#define restrace Restrace
+#define restraceFd RestraceFd
+#define restraceExt RestraceExt
+#define resTraceMove ResTraceMove
+#define resTraceFreeRegion ResTraceFreeRegion
 #ifdef __cplusplus
 }
 #endif

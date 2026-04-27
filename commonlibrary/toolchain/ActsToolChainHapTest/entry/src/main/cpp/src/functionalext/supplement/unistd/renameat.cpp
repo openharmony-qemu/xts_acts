@@ -121,7 +121,7 @@ void Renameat0100(void)
 static int RenameatTestImpl(int argc, char* argv[])
 {
     Renameat0100();
-    return t_status;
+    return T_STATUS;
 }
 
 int RenameatTest(void)

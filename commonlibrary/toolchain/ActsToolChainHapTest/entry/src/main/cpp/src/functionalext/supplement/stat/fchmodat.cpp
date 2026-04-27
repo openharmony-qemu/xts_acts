@@ -97,7 +97,7 @@ static int FchmodatTestImpl(int argc, char* argv[])
     Fchmodat0200();
     Fchmodat0300();
 
-    return t_status;
+    return T_STATUS;
 }
 
 int FchmodatTest(void)

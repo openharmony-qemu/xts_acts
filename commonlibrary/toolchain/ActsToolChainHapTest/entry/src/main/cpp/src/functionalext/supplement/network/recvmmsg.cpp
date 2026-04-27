@@ -141,7 +141,7 @@ static int RecvmmsgTestImpl(int argc, char* argv[])
     } else {
         t_error("recvmmsg_0100 fork error");
     }
-    return t_status;
+    return T_STATUS;
 }
 
 int RecvmmsgTest(void)

@@ -360,7 +360,7 @@ static void* TestAllCases(void* arg)
     return arg;
 }
 
-static void do_test_concurrently(void* (*test)(void* arg), size_t numThreads)
+static void DoTestConcurrently(void* (*test)(void* arg), size_t numThreads)
 {
     if (numThreads > (SIZE_MAX / sizeof(pthread_t))) {
         t_error("Invalid thread count: %zu\n", numThreads);
@@ -394,9 +394,9 @@ static void do_test_concurrently(void* (*test)(void* arg), size_t numThreads)
 static int GetaddrinfoTestImpl(int argc, char* argv[])
 {
     size_t numThreads = 1;
-    do_test_concurrently(TestAllCases, numThreads);
+    DoTestConcurrently(TestAllCases, numThreads);
 
-    return t_status;
+    return T_STATUS;
 }
 
 int GetaddrinfoTest(void)

@@ -191,7 +191,7 @@ static int IswalnumLTestImpl(void)
     // Keep deterministic ASCII/basic cases for portability.
     IswalnumL0700();
     IswalnumL0800();
-    return t_status;
+    return T_STATUS;
 }
 
 int IswalnumLTest(void)

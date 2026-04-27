@@ -37,5 +37,5 @@ void PpollTime640300(void)
 int PpollTime64CompatTest(void)
 {
     PpollTime640300();
-    return t_status;
+    return T_STATUS;
 }

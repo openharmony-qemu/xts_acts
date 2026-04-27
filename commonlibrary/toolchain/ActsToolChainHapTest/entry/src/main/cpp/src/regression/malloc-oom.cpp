@@ -26,7 +26,7 @@ int MallocOomTest()
 {
     int status = SUCCESS_CODE;
 
-    if (t_memfill() < 0) {
+    if (T_MEMFILL() < 0) {
         LibcTestError(&status, "memfill failed\n");
     }
 
@@ -42,7 +42,7 @@ int MallocOomTest()
     return status;
 }
 
-int malloc_oomTest()
+int MallocOomTestCompat()
 {
     return MallocOomTest();
 }

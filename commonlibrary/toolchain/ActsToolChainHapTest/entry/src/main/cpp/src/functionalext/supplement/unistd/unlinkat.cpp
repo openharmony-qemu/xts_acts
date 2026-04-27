@@ -65,7 +65,7 @@ static int UnlinkatTestImpl(int argc, char* argv[])
     Unlinkat0100();
     Unlinkat0200();
 
-    return t_status;
+    return T_STATUS;
 }
 
 int UnlinkatTest(void)

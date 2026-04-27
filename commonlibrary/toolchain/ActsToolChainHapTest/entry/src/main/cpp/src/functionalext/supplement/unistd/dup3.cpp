@@ -68,7 +68,7 @@ static int Dup3TestWithArgs(int argc, char* argv[])
     Dup30100();
     Dup30200();
     Dup30300();
-    return t_status;
+    return T_STATUS;
 }
 
 int Dup3Test(void)

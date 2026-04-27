@@ -184,7 +184,7 @@ void DlIteratePhdr0500(void)
     ret = dl_iterate_phdr(HeaderHandler, nullptr);
     EXPECT_EQ("DlIteratePhdr0500", static_cast<int>(ret), 1);
     // create oom start
-    if (t_memfill() < 0) {
+    if (T_MEMFILL() < 0) {
         EXPECT_TRUE("DlIteratePhdr0500", false);
     }
     errno = 0;
@@ -263,7 +263,7 @@ static int DlIteratePhdrTestWithArgs(int argc, char* argv[])
     DlIteratePhdr0600();
     system("rm -rf /data/libtest.so");
     exit(EXIT_SUCCESS);
-    return t_status;
+    return T_STATUS;
 }
 
 int DlIteratePhdrTest(void)

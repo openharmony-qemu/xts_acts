@@ -144,7 +144,7 @@ static int SymlinkatTestImpl(int argc, char* argv[])
 {
     Symlinkat0100();
     Symlinkat0200();
-    return t_status;
+    return T_STATUS;
 }
 
 int SymlinkatTest(void)

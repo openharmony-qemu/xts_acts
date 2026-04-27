@@ -78,7 +78,7 @@ static int GetmntentTestImpl(void)
 {
     Getmntent0100();
     Getmntent0200();
-    return t_status;
+    return T_STATUS;
 }
 
 int GetmntentTest(void)

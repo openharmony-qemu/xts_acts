@@ -227,7 +227,7 @@ static int SignbitInnerTestWithArgs(int argc, char* argv[])
         g_gFunArray[pos]();
     }
 
-    return t_status;
+    return T_STATUS;
 }
 
 int SignbitInnerTest(void)

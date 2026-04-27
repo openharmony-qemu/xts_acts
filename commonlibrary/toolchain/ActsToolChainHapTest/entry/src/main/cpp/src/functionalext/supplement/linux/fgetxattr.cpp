@@ -53,7 +53,7 @@ void Fgetxattr0100(void)
 static int FgetxattrTestImpl(int argc, char* argv[])
 {
     Fgetxattr0100();
-    return t_status;
+    return T_STATUS;
 }
 
 int FgetxattrTest(void)

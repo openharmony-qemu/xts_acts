@@ -48,7 +48,7 @@ static bool TestAsctimeRResult(const char* testName, struct tm* timeptr, const c
 void AsctimeR0100(void)
 {
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(test_asctime_data) / sizeof(test_asctime_data[0])); i++) {
-        const char* handlerChar = test_handle_path(test_asctime_data[i].tz);
+        const char* handlerChar = TEST_HANDLE_PATH(test_asctime_data[i].tz);
         if (!handlerChar) {
             t_error("AsctimeR0100 failed: handlerChar is NULL\n");
             continue;
@@ -149,7 +149,7 @@ int AsctimeRTest(void)
     AsctimeR0100();
     AsctimeR0200();
     AsctimeR0300();
-    return t_status;
+    return T_STATUS;
 }
 int AsctimeRTestCompat(void)
 {

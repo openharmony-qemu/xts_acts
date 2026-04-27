@@ -172,7 +172,7 @@ void Recvmsg0100(void)
 static int RecvmsgTestImpl(void)
 {
     Recvmsg0100();
-    return t_status;
+    return T_STATUS;
 }
 
 int RecvmsgTest(void)

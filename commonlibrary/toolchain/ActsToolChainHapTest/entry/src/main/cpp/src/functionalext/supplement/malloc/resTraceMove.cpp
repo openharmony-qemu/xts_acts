@@ -34,7 +34,7 @@ void ResTraceMove0100(void)
 static int ResTraceMoveTestImpl(void)
 {
     ResTraceMove0100();
-    return t_status;
+    return T_STATUS;
 }
 
 int ResTraceMoveTest(void)

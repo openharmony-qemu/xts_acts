@@ -91,7 +91,7 @@ static int ReadvTestImpl(int argc, char* argv[])
     Readv0100();
     Readv0200();
 
-    return t_status;
+    return T_STATUS;
 }
 
 int ReadvTest(void)

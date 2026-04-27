@@ -32,7 +32,7 @@ static int16_t g_yearBase = 1900;
 void Strptime0100(void)
 {
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(test_asctime_data) / sizeof(test_asctime_data[0])); i++) {
-        const char* handlerChar = test_handle_path(test_asctime_data[i].tz);
+        const char* handlerChar = TEST_HANDLE_PATH(test_asctime_data[i].tz);
         if (!handlerChar) {
             t_error("Strptime0100 failed: handlerChar is NULL\n");
             continue;
@@ -70,7 +70,7 @@ void Strptime0100(void)
 void Strptime0200(void)
 {
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(test_strptime_data) / sizeof(test_strptime_data[0])); i++) {
-        const char* handlerChar = test_handle_path(test_strptime_data[i].tz);
+        const char* handlerChar = TEST_HANDLE_PATH(test_strptime_data[i].tz);
         if (!handlerChar) {
             t_error("Strptime0200 failed: handlerChar is NULL\n");
             continue;
@@ -185,7 +185,7 @@ void Strptime0600(void)
 void Strptime0700(void)
 {
     const char* buffer = "1659177614";
-    const char* handlerChar = test_handle_path(test_asctime_data[0].tz);
+    const char* handlerChar = TEST_HANDLE_PATH(test_asctime_data[0].tz);
     if (!handlerChar) {
         t_error("Strptime0700 failed: handlerChar is NULL\n");
         return;
@@ -279,7 +279,7 @@ void Strptime1100(void)
 void Strptime1200(void)
 {
     const char* buffer = "am";
-    const char* handlerChar = test_handle_path("Asia/Shanghai");
+    const char* handlerChar = TEST_HANDLE_PATH("Asia/Shanghai");
     if (!handlerChar) {
         t_error("Strptime1200 failed: handlerChar is NULL\n");
         return;
@@ -308,7 +308,7 @@ void Strptime1200(void)
 void Strptime1300(void)
 {
     const char* buffer = "pm";
-    const char* handlerChar = test_handle_path("Asia/Shanghai");
+    const char* handlerChar = TEST_HANDLE_PATH("Asia/Shanghai");
     if (!handlerChar) {
         t_error("Strptime1300 failed: handlerChar is NULL\n");
         return;
@@ -769,7 +769,7 @@ static int StrptimeExtTestImpl(void)
     Strptime3700();
     Strptime3800();
     Strptime3900();
-    return t_status;
+    return T_STATUS;
 }
 
 int StrptimeExtTest(void)

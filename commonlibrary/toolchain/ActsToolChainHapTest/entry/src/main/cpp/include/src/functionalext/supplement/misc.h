@@ -19,8 +19,8 @@
 int A64lTest();
 int EndmntentTest();
 
-int a64lTest();
-int endmntentTest();
+int A64lTest();
+int EndmntentTest();
 int FfsTest();
 int FfslTest();
 int FfsllTest();

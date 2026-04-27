@@ -27,6 +27,6 @@ int TMemfill();
 #ifdef __cplusplus
 }
 #endif
-#ifndef t_memfill
-#define t_memfill TMemfill
+#ifndef T_MEMFILL
+#define T_MEMFILL TMemfill
 #endif

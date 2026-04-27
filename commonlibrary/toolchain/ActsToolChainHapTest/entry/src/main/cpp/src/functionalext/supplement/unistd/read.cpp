@@ -41,7 +41,7 @@ void Read0100(void)
 static int ReadTestImpl(int argc, char* argv[])
 {
     Read0100();
-    return t_status;
+    return T_STATUS;
 }
 
 int ReadTest(void)

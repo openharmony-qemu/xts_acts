@@ -56,10 +56,10 @@
 #define CHECK_STEP_TWO 2
 #define CHECK_STEP_ONE 1
 
-static int CARRY = 4;
-static int SHMID_CHECK_STEP = 0;
-static long unsigned int ONE_KB = 1024;
-static int FLAG = 0666;
+static int g_carry = 4;
+static int g_shmidCheckStep = 0;
+static long unsigned int g_oneKb = 1024;
+static int g_flag = 0666;
 
 typedef void (*TEST_FUN)(void);
 

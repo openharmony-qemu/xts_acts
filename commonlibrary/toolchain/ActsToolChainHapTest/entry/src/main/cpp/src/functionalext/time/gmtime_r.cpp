@@ -31,7 +31,7 @@ static int16_t g_bufferSize = 500;
 void GmtimeR0100(void)
 {
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(test_gmtime_data) / sizeof(test_gmtime_data[0])); i++) {
-        const char* handlerChar = test_handle_path(test_gmtime_data[i].tz);
+        const char* handlerChar = TestHandlePath(test_gmtime_data[i].tz);
         if (!handlerChar) {
             t_error("GmtimeR0100 failed: handlerChar is NULL\n");
             continue;
@@ -77,7 +77,7 @@ static int GmtimeRTestImpl(void)
 {
     GmtimeR0100();
     GmtimeR0200();
-    return t_status;
+    return T_STATUS;
 }
 
 int GmtimeRTest(void)

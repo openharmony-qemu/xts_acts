@@ -46,7 +46,7 @@ static int ListenTestImpl(int argc, char* argv[])
 {
     Listen0100();
 
-    return t_status;
+    return T_STATUS;
 }
 
 int ListenTest(void)

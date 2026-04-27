@@ -27,17 +27,17 @@
  */
 void Shutdown0100(void)
 {
-    constexpr int TEST_PORT = 9898;
-    constexpr int LISTEN_BACKLOG = 5;
+    constexpr int testPort = 9898;
+    constexpr int listenBacklog = 5;
     int sd = socket(AF_INET, SOCK_STREAM, 0);
     struct sockaddr_in serverAddr;
     bzero(&serverAddr, sizeof(serverAddr));
     serverAddr.sin_addr.s_addr = INADDR_ANY;
     serverAddr.sin_addr.s_addr = INADDR_ANY;
-    serverAddr.sin_port = htons(TEST_PORT);
+    serverAddr.sin_port = htons(testPort);
     serverAddr.sin_family = AF_INET;
     bind(sd, reinterpret_cast<struct sockaddr*>(&serverAddr), sizeof(serverAddr));
-    listen(sd, LISTEN_BACKLOG);
+    listen(sd, listenBacklog);
     int result = shutdown(sd, 0);
     if (result != 0) {
         t_error("%s shutdown get result is %d are not 0", __func__, result);
@@ -48,7 +48,7 @@ void Shutdown0100(void)
 static int ShutdownTestImpl(int argc, char* argv[])
 {
     Shutdown0100();
-    return t_status;
+    return T_STATUS;
 }
 
 int ShutdownTest(void)

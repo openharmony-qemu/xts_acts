@@ -18,7 +18,7 @@
 
 #include "time_test_data.h"
 
-const struct time_test_time_struct test_mktime_data[] = {
+const struct time_test_time_struct TEST_MKTIME_DATA[] = {
     { "Pacific/Rarotonga", 1659177614 },
     { "Pacific/Wake", 1659177614 },
     { "Pacific/Tarawa", 1659177614 },
@@ -458,4 +458,6 @@ const struct time_test_time_struct test_mktime_data[] = {
     { "EST5EDT", 1659177614 },
 };
 
+
+#define test_mktime_data TEST_MKTIME_DATA
 #endif

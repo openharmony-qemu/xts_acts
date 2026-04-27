@@ -86,7 +86,7 @@ static int PpollTestImpl(void)
     Ppoll0100();
     Ppoll0200();
     Ppoll0300();
-    return t_status;
+    return T_STATUS;
 }
 
 int PpollTest(void)

@@ -27,8 +27,8 @@
 #define CMPFLAG 0
 #define ERREXPECT (-1)
 #define ONREXPECT 1
-#ifndef t_status
-#define t_status T_STATUS
+#ifndef T_STATUS
+#define T_STATUS T_STATUS
 #endif
 #ifndef FILE_ABSOLUTE_PATH
 #define FILE_ABSOLUTE_PATH(src, dst)                     \

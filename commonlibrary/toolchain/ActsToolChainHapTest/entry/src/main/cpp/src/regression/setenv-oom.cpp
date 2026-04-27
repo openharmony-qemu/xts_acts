@@ -25,7 +25,7 @@ int SetenvOomTest()
 
     char buf[10000];
 
-    if (t_memfill() < 0) {
+    if (T_MEMFILL() < 0) {
         LibcTestError(&status, "memfill failed\n");
     }
 

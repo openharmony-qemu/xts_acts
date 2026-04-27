@@ -18,7 +18,7 @@
 
 #include "time_test_data.h"
 
-inline constexpr struct time_test_string_struct test_localtime_data[] = {
+inline constexpr struct time_test_string_struct TEST_LOCALTIME_DATA[] = {
     { "Europe/London", "2022-6-30 11:40:14 wday=6,yday=210,isdst=1,gmtoff=3600,zone=BST" },
     { "Europe/Moscow", "2022-6-30 13:40:14 wday=6,yday=210,isdst=0,gmtoff=10800,zone=MSK" },
     { "Europe/Ulyanovsk", "2022-6-30 14:40:14 wday=6,yday=210,isdst=0,gmtoff=14400,zone=+04" },
@@ -93,4 +93,6 @@ inline constexpr struct time_test_string_struct test_localtime_data[] = {
     { "HST", "2022-6-30 0:40:14 wday=6,yday=210,isdst=0,gmtoff=-36000,zone=HST" },
 };
 
+
+#define test_localtime_data TEST_LOCALTIME_DATA
 #endif

@@ -21,10 +21,10 @@ int DnExpandEmptyTest();
 int DnExpandPtr0Test();
 int ExecleEnvTest();
 int SetenvOomTestCompat();
-int pthread_create_oomTest();
+int PthreadCreateOomTest();
 int FtelloUnflushedAppendTestCompat();
-int tls_get_new_dtvTest();
-int malloc_oomTest();
+int TlsGetNewDtvTest();
+int MallocOomTest();
 
 int ExecleEnvTestCompat();
 int IconvRoundtripsTest();

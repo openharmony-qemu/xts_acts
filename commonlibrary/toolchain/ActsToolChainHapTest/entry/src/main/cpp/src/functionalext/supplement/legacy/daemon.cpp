@@ -111,7 +111,7 @@ static int DaemonTestWithArgs(int argc, char* argv[])
     Daemon0500();
     Daemon0600();
 
-    return t_status;
+    return T_STATUS;
 }
 
 int DaemonTest(void)

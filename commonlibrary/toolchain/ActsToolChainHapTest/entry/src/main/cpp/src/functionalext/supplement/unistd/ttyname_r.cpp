@@ -60,7 +60,7 @@ static int TtynameRTestImpl(int argc, char* argv[])
 {
     TtynameR0100();
     TtynameR0200();
-    return t_status;
+    return T_STATUS;
 }
 
 int TtynameRTest(void)

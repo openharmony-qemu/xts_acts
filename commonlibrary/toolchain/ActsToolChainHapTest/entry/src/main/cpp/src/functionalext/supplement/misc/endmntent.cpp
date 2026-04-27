@@ -35,7 +35,7 @@ void Endmntent0100(void)
 static int EndmntentTestWithArgs(int argc, char* argv[])
 {
     Endmntent0100();
-    return t_status;
+    return T_STATUS;
 }
 
 int EndmntentTest(void)
@@ -45,7 +45,7 @@ int EndmntentTest(void)
     return EndmntentTestWithArgs(1, libcArgv);
 }
 
-int endmntentTest(void)
+int EndmntentTestCompat(void)
 {
     return EndmntentTest();
 }

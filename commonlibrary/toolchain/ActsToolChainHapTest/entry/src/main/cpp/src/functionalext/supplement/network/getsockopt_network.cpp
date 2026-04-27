@@ -391,7 +391,7 @@ static int GetsockoptNetworkTestImpl(void)
     Getsockopt2300();
     Getsockopt2400();
     Getsockopt2500();
-    return t_status;
+    return T_STATUS;
 }
 
 int GetsockoptNetworkTest(void)

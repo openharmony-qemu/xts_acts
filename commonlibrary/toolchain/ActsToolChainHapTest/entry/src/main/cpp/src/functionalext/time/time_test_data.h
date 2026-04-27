@@ -20,27 +20,30 @@
 #include <cstring>
 #include <ctime>
 
-struct time_test_string_struct {
+struct TimeTestStringStruct {
     const char* tz;
     const char* result;
 };
 
-struct time_test_double_struct {
+struct TimeTestDoubleStruct {
     const char* tz;
     const double result;
 };
 
-struct time_test_time_struct {
+struct TimeTestTimeStruct {
     const char* tz;
     const time_t result;
 };
 
-typedef struct time_test_string_struct TimeTestStringStruct;
-typedef struct time_test_double_struct TimeTestDoubleStruct;
-typedef struct time_test_time_struct TimeTestTimeStruct;
-#define TimeTestStringStruct time_test_string_struct
-#define TimeTestDoubleStruct time_test_double_struct
-#define TimeTestTimeStruct time_test_time_struct
+typedef struct TimeTestStringStruct TimeTestStringStructAlias;
+typedef struct TimeTestDoubleStruct TimeTestDoubleStructAlias;
+typedef struct TimeTestTimeStruct TimeTestTimeStructAlias;
+#define TIME_TEST_STRING_STRUCT TimeTestStringStruct
+#define TIME_TEST_DOUBLE_STRUCT TimeTestDoubleStruct
+#define TIME_TEST_TIME_STRUCT TimeTestTimeStruct
+#define time_test_string_struct TimeTestStringStruct
+#define time_test_double_struct TimeTestDoubleStruct
+#define time_test_time_struct TimeTestTimeStruct
 
 inline const char* TestHandlePath(const char* tz)
 {
@@ -56,6 +59,7 @@ inline const char* TestHandlePath(const char* tz)
     return p;
 }
 
+#define TEST_HANDLE_PATH TestHandlePath
 #define test_handle_path TestHandlePath
 
 #endif

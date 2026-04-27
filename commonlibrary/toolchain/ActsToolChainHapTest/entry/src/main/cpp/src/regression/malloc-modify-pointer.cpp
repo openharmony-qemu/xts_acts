@@ -33,18 +33,18 @@ uint8_t* p1;
 #define MALLOC_SIZE_S (10 * sizeof(uintptr_t))
 #define TEST_NUM 512
 
-volatile void* tmp[TEST_NUM];
+volatile void* g_tmp[TEST_NUM];
 
 struct meta_in {
     struct meta_in *prev, *next;
     uintptr_t* mem;
 };
 
-struct group_in {
+struct GroupIn {
     struct meta_in* meta;
 };
 
-static struct group_in* GetGroup(uint8_t* p)
+static struct GroupIn* GetGroup(uint8_t* p)
 {
     int offset = *(uint16_t*)(p - OFF_OFFSET);
 
@@ -52,13 +52,13 @@ static struct group_in* GetGroup(uint8_t* p)
         offset = *(uint32_t*)(p - FIRST_OFF_OFFSET);
     }
 
-    struct group_in* base = (struct group_in*)(p - UNIT * offset - UNIT);
+    struct GroupIn* base = (struct GroupIn*)(p - UNIT * offset - UNIT);
     return base;
 }
 
 static int Child(void)
 {
-    struct group_in* g = nullptr;
+    struct GroupIn* g = nullptr;
 
     p0 = (uint8_t*)malloc(MALLOC_SIZE_S);
     if (!p0) {
@@ -66,18 +66,18 @@ static int Child(void)
         return -1;
     }
     /* Malloc a dividing chunk to avoid combination of neighbouring freed chunk */
-    tmp[0] = malloc(MALLOC_SIZE_S);
+    g_tmp[0] = malloc(MALLOC_SIZE_S);
 
     g = GetGroup(p0);
-    free(const_cast<void*>(tmp[0]));
+    free(const_cast<void*>(g_tmp[0]));
     g->meta += 1;
 
     for (int i = 0; i < TEST_NUM; ++i) {
-        tmp[i] = malloc(MALLOC_SIZE_S);
+        g_tmp[i] = malloc(MALLOC_SIZE_S);
     }
 
     for (int i = 0; i < TEST_NUM; ++i) {
-        free(const_cast<void*>(tmp[i]));
+        free(const_cast<void*>(g_tmp[i]));
     }
     return 0;
 }
@@ -123,13 +123,15 @@ static int MallocModifyPointerTestImpl(int argc, char* argv[])
     }
     struct timespec timeout = { 5, 0 };
     if (sigtimedwait(&set, nullptr, &timeout) == -1) {
-        if (errno == EAGAIN)
+        if (errno == EAGAIN) {
             flag = 1;
-        else
+        } else {
             t_error("%s sigtimedwait failed: %s\n", argv[0], strerror(errno));
+        }
         union sigval signalValue = { .sival_int = 0 };
-        if (sigqueue(pid, SIGKILL, signalValue) == -1)
+        if (sigqueue(pid, SIGKILL, signalValue) == -1) {
             t_error("%s sigqueue failed: %s\n", argv[0], strerror(errno));
+        }
     }
 
     if (waitpid(pid, &status, 0) != pid) {

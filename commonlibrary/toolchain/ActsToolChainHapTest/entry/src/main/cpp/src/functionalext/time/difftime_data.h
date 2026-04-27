@@ -18,7 +18,7 @@
 
 #include "time_test_data.h"
 
-inline constexpr struct time_test_double_struct test_difftime_data[] = {
+inline constexpr struct time_test_double_struct TEST_DIFFTIME_DATA[] = {
     { "Pacific/Rarotonga", 10.000000 },
     { "Pacific/Wake", 10.000000 },
     { "Pacific/Tarawa", 10.000000 },
@@ -457,4 +457,6 @@ inline constexpr struct time_test_double_struct test_difftime_data[] = {
     { "HST", 10.000000 },
     { "EST5EDT", 10.000000 },
 };
+
+#define test_difftime_data TEST_DIFFTIME_DATA
 #endif

@@ -73,7 +73,7 @@ static int ChmodTestWithArgs(int argc, char* argv[])
     Chmod0100();
     Chmod0200();
     Chmod0300();
-    return t_status;
+    return T_STATUS;
 }
 
 int ChmodTest(void)

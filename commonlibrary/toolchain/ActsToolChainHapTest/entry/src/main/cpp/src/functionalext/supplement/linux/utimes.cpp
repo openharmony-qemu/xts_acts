@@ -149,7 +149,7 @@ static int UtimesTestImpl(int argc, char* argv[])
     Utimes0100();
     Utimes0200();
     UtimesTime640100();
-    return t_status;
+    return T_STATUS;
 }
 
 int UtimesTest(void)

@@ -126,7 +126,7 @@ static int UtimensatTestImpl(int argc, char* argv[])
     Utimensat0200();
     UtimensatTime640100();
 
-    return t_status;
+    return T_STATUS;
 }
 
 int UtimensatTest(void)

@@ -26,7 +26,7 @@ static int g_count = 0;
 /**
  * @brief the special handler
  */
-static bool sigchain_special_handler2(int signo, siginfo_t* siginfo, void* ucontext_raw)
+static bool sigchain_special_handler2(int signo, siginfo_t* siginfo, void* ucontextRaw)
 {
     g_count++;
     EXPECT_EQ("sigchain_intercept_pthread_sigmask_001", signo, SIGUSR2);
@@ -76,7 +76,7 @@ static void SigchainInterceptPthreadSigmask001()
 /**
  * @brief the special handler
  */
-static bool sigchain_special_handler3(int signo, siginfo_t* siginfo, void* ucontext_raw)
+static bool sigchain_special_handler3(int signo, siginfo_t* siginfo, void* ucontextRaw)
 {
     g_count++;
     EXPECT_FALSE("sigchain_intercept_pthread_sigmask_002", true);
@@ -176,7 +176,7 @@ static int SigchainInterceptPthreadSigmaskTestImpl(void)
     SigchainInterceptPthreadSigmask002();
     SigchainInterceptPthreadSigmask003();
     SigchainInterceptPthreadSigmask004();
-    return t_status;
+    return T_STATUS;
 }
 
 int SigchainInterceptPthreadSigmaskTest(void)

@@ -124,7 +124,7 @@ static int FtruncateTestImpl(int argc, char* argv[])
     Ftruncate0300();
     Ftruncate0400();
 
-    return t_status;
+    return T_STATUS;
 }
 
 int FtruncateTest(void)

@@ -32,7 +32,7 @@ void Timegm0100(void)
 {
     time_t timeThis;
     for (int32_t i = 0; i < (int32_t)(sizeof(test_timegm_data) / sizeof(test_timegm_data[0])); i++) {
-        const char* handlerChar = test_handle_path(test_timegm_data[i].tz);
+        const char* handlerChar = TEST_HANDLE_PATH(test_timegm_data[i].tz);
         if (!handlerChar) {
             t_error("Timegm0100 failed: handlerChar is NULL\n");
             continue;
@@ -64,7 +64,7 @@ void TimegmTime640100(void)
     }
     time_t timeThis;
     for (int32_t i = 0; i < (int32_t)(sizeof(test_timegm_data) / sizeof(test_timegm_data[0])); i++) {
-        const char* handlerChar = test_handle_path(test_timegm_data[i].tz);
+        const char* handlerChar = TEST_HANDLE_PATH(test_timegm_data[i].tz);
         if (!handlerChar) {
             t_error("TimegmTime640100 failed: handlerChar is NULL\n");
             continue;
@@ -86,7 +86,7 @@ static int TimegmTestImpl(void)
 {
     Timegm0100();
     TimegmTime640100();
-    return t_status;
+    return T_STATUS;
 }
 
 int TimegmTest(void)

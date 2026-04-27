@@ -62,7 +62,7 @@ static int UnlinkTestImpl(int argc, char* argv[])
 {
     Unlink0100();
     Unlink0200();
-    return t_status;
+    return T_STATUS;
 }
 
 int UnlinkTest(void)

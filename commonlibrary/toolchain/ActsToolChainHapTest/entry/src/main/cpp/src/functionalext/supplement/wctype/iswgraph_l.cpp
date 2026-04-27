@@ -185,7 +185,7 @@ static int IswgraphLTestImpl(int argc, char* argv[])
     // Skip full Unicode sweeps to reduce environment sensitivity.
     IswgraphL0700();
     IswgraphL0800();
-    return t_status;
+    return T_STATUS;
 }
 
 int IswgraphLTest(void)

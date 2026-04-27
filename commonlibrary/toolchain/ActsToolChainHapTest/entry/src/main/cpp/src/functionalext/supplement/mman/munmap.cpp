@@ -45,7 +45,7 @@ void Munmap0100(void)
 static int MunmapTestImpl(int argc, char* argv[])
 {
     Munmap0100();
-    return t_status;
+    return T_STATUS;
 }
 
 int MunmapTest(void)

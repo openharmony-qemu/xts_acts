@@ -76,7 +76,7 @@ static int FsyncTestImpl(int argc, char* argv[])
     Fsync0200();
     Fsync0300();
 
-    return t_status;
+    return T_STATUS;
 }
 
 int FsyncTest(void)

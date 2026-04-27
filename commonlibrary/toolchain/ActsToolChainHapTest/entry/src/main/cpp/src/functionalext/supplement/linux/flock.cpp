@@ -153,7 +153,7 @@ static int FlockTestImpl(int argc, char* argv[])
     Flock0500();
     Flock0600();
     Flock0700();
-    return t_status;
+    return T_STATUS;
 }
 
 int FlockTest(void)

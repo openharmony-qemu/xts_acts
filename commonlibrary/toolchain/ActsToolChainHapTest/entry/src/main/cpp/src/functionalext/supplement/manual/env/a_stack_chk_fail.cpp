@@ -23,18 +23,18 @@ constexpr const char* STACK_CHK_FAIL_SYMBOL = "__stack_chk_fail";
 
 const int32_t INIT_LEN = 0;
 const int32_t INCREASE_LEN = 1;
-static int32_t flag = 0;
+static int32_t g_flag = 0;
 
 static void Killfunc(int signu)
 {
     switch (signu) {
         case SIGILL:
-            flag++;
-            EXPECT_EQ("a_stack_chk_fail_0100 exception", flag, INCREASE_LEN);
+            g_flag++;
+            EXPECT_EQ("AStackChkFail0100 exception", g_flag, INCREASE_LEN);
             exit(0);
         case SIGSEGV:
-            flag++;
-            EXPECT_EQ("a_stack_chk_fail_0100 exception", flag, INCREASE_LEN);
+            g_flag++;
+            EXPECT_EQ("AStackChkFail0100 exception", g_flag, INCREASE_LEN);
             exit(0);
         default:
             break;
@@ -43,11 +43,11 @@ static void Killfunc(int signu)
 }
 
 /**
- * @tc.name      : a_stack_chk_fail_0100
+ * @tc.name      : AStackChkFail0100
  * @tc.desc      : Verify stack check fail process success
  * @tc.level     : Level 0
  */
-void a_stack_chk_fail_0100(void)
+void AStackChkFail0100(void)
 {
     StackChkFailFunc stackChkFail = reinterpret_cast<StackChkFailFunc>(dlsym(RTLD_DEFAULT, STACK_CHK_FAIL_SYMBOL));
     if (stackChkFail == nullptr) {
@@ -61,11 +61,11 @@ void a_stack_chk_fail_0100(void)
     sigaction(SIGILL, &act, &oldact);
     sigaction(SIGSEGV, &act, &oldact);
     stackChkFail();
-    EXPECT_EQ("a_stack_chk_fail_0100", flag, INCREASE_LEN);
+    EXPECT_EQ("AStackChkFail0100", g_flag, INCREASE_LEN);
 }
 
 int AStackChkFailTestCompat(void)
 {
-    a_stack_chk_fail_0100();
-    return t_status;
+    AStackChkFail0100();
+    return T_STATUS;
 }

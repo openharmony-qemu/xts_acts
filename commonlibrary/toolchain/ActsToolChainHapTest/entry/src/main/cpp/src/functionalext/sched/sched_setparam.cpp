@@ -68,7 +68,7 @@ static int SchedSetparamTestImpl(void)
         g_gFunArray[pos]();
     }
 
-    return t_status;
+    return T_STATUS;
 }
 
 int SchedSetparamTest(void)

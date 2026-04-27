@@ -421,7 +421,7 @@ static int SigchainRmSpecialHandlerTestImpl(void)
     SigchainRmSpecialHandler005();
     SigchainRmSpecialHandler006();
     SigchainRmAllSpecialHandler007();
-    return t_status;
+    return T_STATUS;
 }
 
 int SigchainRmSpecialHandlerTest(void)

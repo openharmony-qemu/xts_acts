@@ -113,7 +113,7 @@ static int LdsoMemleakCheckTestImpl(int argc, char* argv[])
 {
     LdsoMemleakCheck0100();
     LdsoMemleakCheck0200();
-    return t_status;
+    return T_STATUS;
 }
 
 int LdsoMemleakCheckTest(void)

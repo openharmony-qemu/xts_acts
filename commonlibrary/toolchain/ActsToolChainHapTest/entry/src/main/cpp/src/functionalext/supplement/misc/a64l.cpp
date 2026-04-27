@@ -21,7 +21,7 @@ constexpr int CHAR_GROUP_BASE = 6;
 constexpr int UPPERCASE_OFFSET = 12;
 constexpr int LOWERCASE_OFFSET = 38;
 
-extern "C" long a64l(const char* s)
+extern "C" long A64l(const char* s)
 {
     if (s == nullptr) {
         return 0;
@@ -59,10 +59,10 @@ extern "C" long a64l(const char* s)
  */
 void A64l0100(void)
 {
-    long result1 = a64l("0");
-    long result2 = a64l("A");
-    long result3 = a64l("z");
-    long result4 = a64l("./");
+    long result1 = A64l("0");
+    long result2 = A64l("A");
+    long result3 = A64l("z");
+    long result4 = A64l("./");
     EXPECT_EQ("A64l0100", result1, VALUE_0); // expect result is 2
     EXPECT_EQ("A64l0100", result2, VALUE_A); // expect result is 12
     EXPECT_EQ("A64l0100", result3, VALUE_Z); // expect result is 63
@@ -76,8 +76,8 @@ void A64l0100(void)
  */
 void A64l0200(void)
 {
-    long result1 = a64l("0123");
-    long result2 = a64l("ABCD");
+    long result1 = A64l("0123");
+    long result2 = A64l("ABCD");
     EXPECT_EQ("A64l0200", result1, VALUE_0123); // (2 | (3 << 6) | (4 << 12) | (5 << 18))
     EXPECT_EQ("A64l0200", result2, VALUE_ABCD); // (12 | (13 << 6) | (14 << 12) | (15 << 18)
 }
@@ -89,8 +89,8 @@ void A64l0200(void)
  */
 void A64l0300(void)
 {
-    long result1 = a64l("A@B");
-    long result2 = a64l("0#");
+    long result1 = A64l("A@B");
+    long result2 = A64l("0#");
     EXPECT_EQ("A64l0300", result1, VALUE_A); // expect result is 12
     EXPECT_EQ("A64l0300", result2, VALUE_0); // expect result is 2
 }
@@ -102,7 +102,7 @@ void A64l0300(void)
  */
 void A64l0400(void)
 {
-    long result = a64l("");
+    long result = A64l("");
     EXPECT_EQ("A64l0400", result, 0);
 }
 
@@ -113,8 +113,8 @@ void A64l0400(void)
  */
 void A64l0500(void)
 {
-    long result1 = a64l("zzzzzz");
-    long result2 = a64l("zzzzz");
+    long result1 = A64l("zzzzzz");
+    long result2 = A64l("zzzzz");
     EXPECT_EQ("A64l0500", result1, -1);          // (63 | (63 << 6) | (63 << 12) | (63 << 18) | (63 << 24) | (63 << 30))
     EXPECT_EQ("A64l0500", result2, VALUE_ZZZZZ); // (63 | (63 << 6) | (63 << 12) | (63 << 18) | (63 << 24))
 }
@@ -126,7 +126,7 @@ static int A64lTestWithArgs(int argc, char* argv[])
     A64l0300();
     A64l0400();
     A64l0500();
-    return t_status;
+    return T_STATUS;
 }
 
 int A64lTest(void)
@@ -136,7 +136,7 @@ int A64lTest(void)
     return A64lTestWithArgs(1, libcArgv);
 }
 
-int a64lTest(void)
+int A64lTestCompat(void)
 {
     return A64lTest();
 }

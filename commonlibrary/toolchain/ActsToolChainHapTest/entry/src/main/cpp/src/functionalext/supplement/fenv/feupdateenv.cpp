@@ -32,7 +32,7 @@ void Feupdateenv0100(void)
 static int FeupdateenvTestImpl(int argc, char* argv[])
 {
     Feupdateenv0100();
-    return t_status;
+    return T_STATUS;
 }
 
 int FeupdateenvTest(void)

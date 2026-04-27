@@ -43,7 +43,7 @@ static int PthreadGuardSizeTestImpl(void)
     for (int pos = 0; pos < num; ++pos) {
         g_gFunArray[pos]();
     }
-    return t_status;
+    return T_STATUS;
 }
 
 int PthreadGuardSizeTest(void)

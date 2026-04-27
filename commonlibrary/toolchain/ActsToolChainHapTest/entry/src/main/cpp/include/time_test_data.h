@@ -35,6 +35,9 @@ struct TimeTestTimeStruct {
     const time_t result;
 };
 
+#define TIME_TEST_STRING_STRUCT TimeTestStringStruct
+#define TIME_TEST_DOUBLE_STRUCT TimeTestDoubleStruct
+#define TIME_TEST_TIME_STRUCT TimeTestTimeStruct
 #define time_test_string_struct TimeTestStringStruct
 #define time_test_double_struct TimeTestDoubleStruct
 #define time_test_time_struct TimeTestTimeStruct
@@ -54,5 +57,6 @@ static const char* TestHandlePath(const char* tz)
 }
 
 #define test_handle_path TestHandlePath
+#define TEST_HANDLE_PATH TestHandlePath
 
 #endif

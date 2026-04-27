@@ -232,7 +232,7 @@ static int SendTestImpl(int argc, char* argv[])
         g_gFunArray[pos]();
     }
 
-    return t_status;
+    return T_STATUS;
 }
 
 int SendTest(void)

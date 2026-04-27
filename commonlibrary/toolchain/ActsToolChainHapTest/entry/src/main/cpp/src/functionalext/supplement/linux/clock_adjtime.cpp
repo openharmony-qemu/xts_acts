@@ -23,7 +23,7 @@
 
 void ExceptionHandler(int sig)
 {
-    exit(t_status);
+    exit(T_STATUS);
 }
 
 using ClockAdjtime64Func = int (*)(clockid_t, struct timex*);
@@ -130,7 +130,7 @@ static int ClockAdjtimeTestWithArgs(int argc, char* argv[])
     ClockAdjtime0400();
     ClockAdjtime0500();
     ClockAdjtime640100();
-    return t_status;
+    return T_STATUS;
 }
 
 int ClockAdjtimeTest(void)
@@ -140,7 +140,7 @@ int ClockAdjtimeTest(void)
     return ClockAdjtimeTestWithArgs(1, libcArgv);
 }
 
-int clock_adjtimeTest(void)
+int ClockAdjtimeTestCompat(void)
 {
     return ClockAdjtimeTest();
 }

@@ -164,7 +164,7 @@ static int FchownatTestImpl(int argc, char* argv[])
 {
     Fchownat0100();
     Fchownat0200();
-    return t_status;
+    return T_STATUS;
 }
 
 int FchownatTest(void)

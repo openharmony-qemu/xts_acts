@@ -103,7 +103,7 @@ static int FallocateTestImpl(int argc, char* argv[])
     Fallocate0200();
     Fallocate0300();
     Fallocate0400();
-    return t_status;
+    return T_STATUS;
 }
 
 int FallocateTest(void)

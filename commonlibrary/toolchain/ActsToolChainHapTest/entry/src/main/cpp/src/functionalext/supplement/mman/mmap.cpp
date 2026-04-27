@@ -422,7 +422,7 @@ static int MmapTestImpl(int argc, char* argv[])
     Mmap1000();
     Mmap1100();
 
-    return t_status;
+    return T_STATUS;
 }
 
 int MmapTest(void)

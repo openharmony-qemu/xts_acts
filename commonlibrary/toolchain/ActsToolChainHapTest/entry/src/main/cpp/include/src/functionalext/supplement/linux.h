@@ -49,7 +49,7 @@ int TeeTest();
 int TimerfdGettimeTest();
 int TimerfdSettimeTest();
 
-int clock_adjtimeTest();
+int ClockAdjtimeTest();
 int FallocateTest();
 int FanotifyInitTest();
 int FgetxattrTest();

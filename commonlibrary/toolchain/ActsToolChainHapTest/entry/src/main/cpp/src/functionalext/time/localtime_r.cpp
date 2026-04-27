@@ -35,7 +35,7 @@ constexpr const char* LOCALTIME64_R_SYMBOL = "__localtime64_r";
 void LocaltimeR0100(void)
 {
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(test_localtime_data) / sizeof(test_localtime_data[0])); i++) {
-        const char* handlerChar = test_handle_path(test_localtime_data[i].tz);
+        const char* handlerChar = TEST_HANDLE_PATH(test_localtime_data[i].tz);
         if (!handlerChar) {
             t_error("LocaltimeR0100 failed: handlerChar is NULL\n");
             continue;
@@ -79,7 +79,7 @@ void Localtime64R0100(void)
         return;
     }
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(test_localtime_data) / sizeof(test_localtime_data[0])); i++) {
-        const char* handlerChar = test_handle_path(test_localtime_data[i].tz);
+        const char* handlerChar = TEST_HANDLE_PATH(test_localtime_data[i].tz);
         if (!handlerChar) {
             t_error("Localtime64R0100 failed: handlerChar is NULL\n");
             continue;
@@ -113,7 +113,7 @@ static int LocaltimeRTestImpl(void)
 {
     LocaltimeR0100();
     Localtime64R0100();
-    return t_status;
+    return T_STATUS;
 }
 
 int LocaltimeRTest(void)

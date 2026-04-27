@@ -22,7 +22,7 @@
 #include <unistd.h>
 #include "test.h"
 
-static void handler(int s) {}
+static void Handler(int s) {}
 constexpr time_t WAIT_SECONDS = 5;
 
 static int Child(void)
@@ -62,7 +62,7 @@ static int MallocDoubleFreeCheckTestImpl(int argc, char* argv[])
     sigemptyset(&set);
     sigaddset(&set, SIGCHLD);
     sigprocmask(SIG_BLOCK, &set, nullptr);
-    auto oldSigChld = signal(SIGCHLD, handler);
+    auto oldSigChld = signal(SIGCHLD, Handler);
     if (oldSigChld == SIG_ERR) {
         t_error("%s signal SIGCHLD failed: %s\n", argv[0], strerror(errno));
         return -1;
@@ -78,13 +78,15 @@ static int MallocDoubleFreeCheckTestImpl(int argc, char* argv[])
     ts.tv_sec = WAIT_SECONDS;
     ts.tv_nsec = 0;
     if (sigtimedwait(&set, nullptr, &ts) == -1) { /* Wait for 5 seconds */
-        if (errno == EAGAIN)
+        if (errno == EAGAIN) {
             flag = 1;
-        else
+        } else {
             t_error("%s sigtimedwait failed: %s\n", argv[0], strerror(errno));
+        }
         union sigval signalValue = { .sival_int = 0 };
-        if (sigqueue(pid, SIGKILL, signalValue) == -1)
+        if (sigqueue(pid, SIGKILL, signalValue) == -1) {
             t_error("%s sigqueue failed: %s\n", argv[0], strerror(errno));
+        }
     }
 
     if (waitpid(pid, &status, 0) != pid) {
@@ -104,7 +106,7 @@ static int MallocDoubleFreeCheckTestImpl(int argc, char* argv[])
     } else {
         t_error("%s child process finished normally\n", argv[0]);
     }
-    return t_status;
+    return T_STATUS;
 }
 
 int MallocDoubleFreeCheckTest(void)

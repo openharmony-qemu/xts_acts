@@ -26,7 +26,7 @@ static void* Start(void* arg)
     return SUCCESS_CODE;
 }
 
-int pthread_create_oomTest()
+int PthreadCreateOomTest()
 {
     int status = SUCCESS_CODE;
 
@@ -34,13 +34,15 @@ int pthread_create_oomTest()
     int r;
     int arg;
 
-    if (t_memfill() < 0)
+    if (T_MEMFILL() < 0) {
         LibcTestError(&status, "memfill failed\n");
+    }
     r = pthread_create(&td, nullptr, Start, &arg);
-    if (r == 0)
+    if (r == 0) {
         LibcTestError(&status, "pthread_create succeeded\n");
-    else if (r != EAGAIN)
+    } else if (r != EAGAIN) {
         LibcTestError(&status, "pthread_create should fail with EAGAIN but failed with %d (%s)\n", r, strerror(r));
+    }
 
     _Exit(status);
     return status;

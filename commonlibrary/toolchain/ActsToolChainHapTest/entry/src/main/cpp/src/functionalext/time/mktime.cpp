@@ -32,7 +32,7 @@ constexpr const char* MKTIME64_SYMBOL = "__mktime64";
 static void Mktime0100(void)
 {
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(test_mktime_data) / sizeof(test_mktime_data[0])); i++) {
-        const char* handlerChar = test_handle_path(test_mktime_data[i].tz);
+        const char* handlerChar = TEST_HANDLE_PATH(test_mktime_data[i].tz);
         if (!handlerChar) {
             t_error("Mktime0100 failed: handlerChar is NULL\n");
             continue;
@@ -63,7 +63,7 @@ void Mktime640100(void)
         return;
     }
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(test_mktime_data) / sizeof(test_mktime_data[0])); i++) {
-        const char* handlerChar = test_handle_path(test_mktime_data[i].tz);
+        const char* handlerChar = TEST_HANDLE_PATH(test_mktime_data[i].tz);
         if (!handlerChar) {
             t_error("Mktime640100 failed: handlerChar is NULL\n");
             continue;
@@ -85,7 +85,7 @@ static int MktimeTestImpl(void)
 {
     Mktime0100();
     Mktime640100();
-    return t_status;
+    return T_STATUS;
 }
 
 int MktimeTest(void)

@@ -97,7 +97,7 @@ static int UlimitTestImpl(void)
     Ulimit0100();
     Ulimit0200();
     Ulimit0300();
-    return t_status;
+    return T_STATUS;
 }
 
 int UlimitTest(void)

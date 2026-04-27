@@ -402,7 +402,7 @@ static int Accept4TestWithArgs(int argc, char* argv[])
     Accept40400();
     Accept40500();
     Accept40600();
-    return t_status;
+    return T_STATUS;
 }
 
 int Accept4Test(void)
@@ -412,7 +412,7 @@ int Accept4Test(void)
     return Accept4TestWithArgs(1, libcArgv);
 }
 
-int accept4Test(void)
+int Accept4TestCompat(void)
 {
     return Accept4Test();
 }
