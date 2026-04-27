@@ -173,19 +173,6 @@ struct MyComponent {
       .height(60)
       .borderWidth(1)
       .id('LazyForEach_Item_1')
-
-      List({ space: 3, scroller: this.scroller }) {
-        LazyForEach(this.data, (item: string) => {
-          ListItem() {
-            ListItemComponent({ item: item, h: this.h }).borderWidth(1)
-          }
-        }, (item: string) => {
-          return item;
-        }, { releaseStrategy：undefined })
-      }.cachedCount(5)
-      .height(60)
-      .borderWidth(1)
-      .id('LazyForEach_Item_2')
     }
   }
 }
