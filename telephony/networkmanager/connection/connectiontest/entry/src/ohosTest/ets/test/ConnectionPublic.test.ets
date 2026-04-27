@@ -9705,7 +9705,6 @@ export default function ConnectionPublicTest() {
         done();
       });
 
-///
     /**
      * @tc.name   testNetworkMgrConnectionTraceRoute0100
      * @tc.number SUB_NetworkMgr_Connection_TraceRoute_0100
