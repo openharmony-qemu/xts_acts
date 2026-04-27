@@ -1671,7 +1671,7 @@ export default function SevenPointZeroI18nStageTest() {
      * @tc.level LEVEL2
      */
     it('SUB_GLOBAL_GetChineseCalendar_Test_0100', Level.LEVEL2, () => {
-      let local: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+      let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
       let chineseCalendar: i18n.ChineseCalendar = i18n.getChineseCalendar(locale);
       chineseCalendar.setChineseCalendarTime({
         gregorianYear: 2026,
@@ -1698,7 +1698,7 @@ export default function SevenPointZeroI18nStageTest() {
      * @tc.level LEVEL2
      */
     it('SUB_GLOBAL_GetChineseCalendar_Test_0200', Level.LEVEL2, () => {
-      let local: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+      let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
       let chineseCalendar: i18n.ChineseCalendar = i18n.getChineseCalendar(locale);
       chineseCalendar.setChineseCalendarTime({
         gregorianYear: 2026,
@@ -1818,7 +1818,7 @@ export default function SevenPointZeroI18nStageTest() {
     /**
      * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_0700
      * @tc.number SUB_GLOBAL_I18N_LunarAloneSetting_Test_0700
-     * @tc.desc test setChineseCalendarTime with
+     * @tc.desc test setChineseCalendarTime with chinese time and time
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL2
@@ -1970,7 +1970,7 @@ export default function SevenPointZeroI18nStageTest() {
     /**
      * @tc.name SUB_GLOBAL_GetChineseCalendar_Undefined_Test_1400
      * @tc.number SUB_GLOBAL_I18N_LunarAloneSetting_Undefined_Test_1400
-     * @tc.desc test setChineseCalendarTime with null
+     * @tc.desc test setChineseCalendarTime with Undefined
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL2
@@ -2006,7 +2006,7 @@ export default function SevenPointZeroI18nStageTest() {
     /**
      * @tc.name SUB_GLOBAL_GetChineseCalendar_Undefined_Test_1600
      * @tc.number SUB_GLOBAL_I18N_LunarAloneSetting_Undefined_Test_1600
-     * @tc.desc test setChineseCalendarTime with null
+     * @tc.desc test setChineseCalendarTime with undefined
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL2

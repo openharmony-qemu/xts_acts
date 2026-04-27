@@ -1456,7 +1456,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
      * @tc.level LEVEL2
      */
     it('SUB_GLOBAL_GetChineseCalendar_Test_Static_0100', Level.LEVEL2, () => {
-      let local: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+      let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
       let chineseCalendar: i18n.ChineseCalendar = i18n.getChineseCalendar(locale);
       chineseCalendar.setChineseCalendarTime({
         gregorianYear: 2026,
@@ -1483,7 +1483,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
      * @tc.level LEVEL2
      */
     it('SUB_GLOBAL_GetChineseCalendar_Test_Static_0200', Level.LEVEL2, () => {
-      let local: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+      let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
       let chineseCalendar: i18n.ChineseCalendar = i18n.getChineseCalendar(locale);
       chineseCalendar.setChineseCalendarTime({
         gregorianYear: 2026,
@@ -1603,7 +1603,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
     /**
      * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_Static_0700
      * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_Static_0700
-     * @tc.desc test setChineseCalendarTime with
+     * @tc.desc test setChineseCalendarTime with chinese time and time
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL2
