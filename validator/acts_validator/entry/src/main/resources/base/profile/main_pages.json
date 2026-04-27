@@ -195,6 +195,7 @@
     "pages/ArkUI/pluginComponent/Plugin",
     "pages/ArkUI/CapiDragDropTest",
     "pages/ArkUI/CapionDigitalCrown",
-    "pages/ArkUI/PassThrough"
+    "pages/ArkUI/PassThrough",
+    "pages/ArkUI/MenuColorMode"
   ]
 }

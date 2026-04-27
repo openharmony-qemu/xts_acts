@@ -162,6 +162,7 @@ struct IndexPage {
     { title: 'CapiDragDrop', uri: 'pages/ArkUI/CapiDragDropTest' },
     { title: 'CapionDigitalCrown', uri: 'pages/ArkUI/CapionDigitalCrown' },
     { title: 'PassThrough', uri: 'pages/ArkUI/PassThrough' },
+    { title: 'MenuColorMode', uri: 'pages/ArkUI/MenuColorMode' },
 
   ]
   @State ColorObject: Object[] = letColor;
