@@ -1450,7 +1450,7 @@ export default function SevenPointZeroI18nStageTest() {
       let timeZone: i18n.TimeZone = i18n.getTimeZone();
       let iso = new i18n.ISO8601DateTimeFormat({ timeZone });
       let value: string = iso.format(date);
-      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_test_0800 value:', value);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_test_0900 value:', value);
       expect(value).assertEqual('2026-01-01T10:20:30+08:00');
     })
 

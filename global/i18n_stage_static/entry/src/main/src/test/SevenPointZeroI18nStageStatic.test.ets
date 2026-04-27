@@ -1204,7 +1204,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
      * @tc.level LEVEL2
      */
     it('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0200', Level.LEVEL2, () => {
-      let date: Date = new Date(2026, 0, 2, 10, 20, 30.123456);
+      let date: Date = new Date(2026, 0, 2, 10, 20, 30, 0);
       let timeZone: i18n.TimeZone = i18n.getTimeZone('America/New_York');
       let iso = new i18n.ISO8601DateTimeFormat({
         dateFormat: 'ordinal',
@@ -1227,7 +1227,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
      * @tc.level LEVEL2
      */
     it('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0300', Level.LEVEL2, () => {
-      let date: Date = new Date(2026, 0, 2, 10, 20, 30.123456);
+      let date: Date = new Date(2026, 0, 2, 10, 20, 30, 0);
       let timeZone: i18n.TimeZone = i18n.getTimeZone('Asia/Kolkata');
       let iso = new i18n.ISO8601DateTimeFormat({
         dateFormat: 'week',
@@ -1249,7 +1249,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
      * @tc.level LEVEL2
      */
     it('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0400', Level.LEVEL2, () => {
-      let date: Date = new Date(2026, 0, 2, 10, 20, 30.123456);
+      let date: Date = new Date(2026, 0, 2, 10, 20, 30, 0);
       let timeZone: i18n.TimeZone = i18n.getTimeZone('Africa/Cairo');
       let iso = new i18n.ISO8601DateTimeFormat({
         dateFormat: 'calendar',
@@ -1271,7 +1271,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
      * @tc.level LEVEL2
      */
     it('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0500', Level.LEVEL2, () => {
-      let date: Date = new Date(2026, 0, 1, 10, 20, 30.123456);
+      let date: Date = new Date(2026, 0, 1, 10, 20, 30, 0);
       let timeZone: i18n.TimeZone = i18n.getTimeZone('Asia/Riyadh');
       let iso = new i18n.ISO8601DateTimeFormat({
         dateFormat: 'calendar',
@@ -1293,7 +1293,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
      * @tc.level LEVEL2
      */
     it('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0700', Level.LEVEL2, () => {
-      let date: Date = new Date(2026, 0, 1, 10, 20, 30);
+      let date: Date = new Date(2026, 0, 1, 10, 20, 30, 0);
       let iso = new i18n.ISO8601DateTimeFormat({ dateFormat: 'calendar' });
       let value: string = iso.format(date);
       console.log('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0700 value:', value);
@@ -1309,7 +1309,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
      * @tc.level LEVEL2
      */
     it('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0800', Level.LEVEL2, () => {
-      let date: Date = new Date(2026, 0, 1, 10, 20, 30);
+      let date: Date = new Date(2026, 0, 1, 10, 20, 30, 0);
       let iso = new i18n.ISO8601DateTimeFormat({ timePrecision: 'milliSeconds' });
       let value: string = iso.format(date);
       console.log('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0800 value:', value);
@@ -1325,7 +1325,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
      * @tc.level LEVEL2
      */
     it('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0900', Level.LEVEL2, () => {
-      let date: Date = new Date(2026, 0, 1, 10, 20, 30);
+      let date: Date = new Date(2026, 0, 1, 10, 20, 30, 0);
       let timeZone: i18n.TimeZone = i18n.getTimeZone();
       let iso = new i18n.ISO8601DateTimeFormat({ timeZone });
       let value: string = iso.format(date);
@@ -1342,7 +1342,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
      * @tc.level LEVEL2
      */
     it('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_1000', Level.LEVEL2, () => {
-      let date: Date = new Date(2026, 0, 1, 10, 20, 30);
+      let date: Date = new Date(2026, 0, 1, 10, 20, 30, 0);
       let iso = new i18n.ISO8601DateTimeFormat({ displayTimeZone: true });
       let value: string = iso.format(date);
       console.log('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_1000 value:', value);
@@ -1351,14 +1351,14 @@ export default function SevenPointZeroI18nStageStaticTest() {
 
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_GetTimeZone_NullString_Test_Static_1100
-     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_getTimeZone_nullString_Test_Static_1100
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_GetTimeZone_nullString_Test_Static_1100
      * @tc.desc test getAppDefaultTimeZone with timeZone
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL2
      */
     it('SUB_GLOBAL_ISO8601DateTimeFormat_GetTimeZone_NullString_Test_Static_1100', Level.LEVEL2, () => {
-      let date: Date = new Date(2026, 0, 1, 1, 20, 30);
+      let date: Date = new Date(2026, 0, 1, 1, 20, 30, 0);
       let timeZone: i18n.TimeZone = i18n.getTimeZone('');
       let iso = new i18n.ISO8601DateTimeFormat({
         dateFormat: 'calendar',
@@ -1373,14 +1373,14 @@ export default function SevenPointZeroI18nStageStaticTest() {
 
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_DateFormat_Undefined_Test_Static_1400
-     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_dateFormat_undefined_Test_Static_1400
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_DateFormat_Undefined_Test_Static_1400
      * @tc.desc test getAppDefaultTimeZone with dateFormat
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL2
      */
     it('SUB_GLOBAL_ISO8601DateTimeFormat_DateFormat_Undefined_Test_Static_1400', Level.LEVEL2, () => {
-      let date: Date = new Date(2026, 0, 1, 1, 20, 30);
+      let date: Date = new Date(2026, 0, 1, 1, 20, 30, 0);
       let timeZone: i18n.TimeZone = i18n.getTimeZone();
       let iso = new i18n.ISO8601DateTimeFormat({
         dateFormat: undefined,
@@ -1395,14 +1395,14 @@ export default function SevenPointZeroI18nStageStaticTest() {
 
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_TimePrecision_Undefined_Test_Static_1500
-     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_timePrecision_undefined_Test_Static_1500
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_TimePrecision_Undefined_Test_Static_1500
      * @tc.desc test getAppDefaultTimeZone with timePrecision
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL2
      */
     it('SUB_GLOBAL_ISO8601DateTimeFormat_TimePrecision_Undefined_Test_Static_1500', Level.LEVEL2, () => {
-      let date: Date = new Date(2026, 0, 1, 1, 20, 30);
+      let date: Date = new Date(2026, 0, 1, 1, 20, 30, 0);
       let timeZone: i18n.TimeZone = i18n.getTimeZone();
       let iso = new i18n.ISO8601DateTimeFormat({
         dateFormat: 'calendar',
@@ -1417,14 +1417,14 @@ export default function SevenPointZeroI18nStageStaticTest() {
 
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_SeparatorStyle_Undefined_Test_Static_1800
-     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_separatorStyle_undefined_Test_Static_1800
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_SeparatorStyle_Undefined_Test_Static_1800
      * @tc.desc test getAppDefaultTimeZone with separatorStyle
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL2
      */
     it('SUB_GLOBAL_ISO8601DateTimeFormat_SeparatorStyle_Undefined_Test_Static_1800', Level.LEVEL2, () => {
-      let date: Date = new Date(2026, 0, 2, 10, 20, 30);
+      let date: Date = new Date(2026, 0, 2, 10, 20, 30, 0);
       let timeZone: i18n.TimeZone = i18n.getTimeZone();
       let iso = new i18n.ISO8601DateTimeFormat({
         dateFormat: 'calendar',
