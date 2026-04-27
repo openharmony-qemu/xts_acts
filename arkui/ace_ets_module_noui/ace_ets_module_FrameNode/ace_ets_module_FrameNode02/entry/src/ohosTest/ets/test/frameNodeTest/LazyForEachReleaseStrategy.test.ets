@@ -67,7 +67,7 @@ export default function LazyForEachReleaseStrategyTest() {
     });
 
     /**
-     * @tc.name   LazyForEachReleaseStrategyTest_0200
+     * @tc.name   SUB_ARKUI_API_LazyForEachReleaseStrategyTest_0200
      * @tc.number SUB_ARKUI_API_LazyForEachReleaseStrategyTest_0200
      * @tc.desc   ListItem type FrameNode node
      * @tc.type   FUNCTION
