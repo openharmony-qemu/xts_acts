@@ -12,44 +12,51 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level,Size,TestType } from "@ohos/hypium"
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "@ohos/hypium"
-import { Driver, ON } from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/common/Common'
+import { Driver, ON, BY } from '@ohos.UiTest';
+import CommonFunc from '../../MainAbility/common/Common';
+
 
 export default function TipsOptionsSystemMaterial() {
   describe('TipsOptionsSystemMaterial', () => {
-
     beforeEach(async (done: Function) => {
+      console.info("TipsOptionsSystemMaterial beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/popupSystemMaterial/TipsOptionsSystemMaterial',
       }
       try {
         router.clear();
         let pages = router.getState();
-        console.info('get TipsOptionsSystemMaterial state success ' + JSON.stringify(pages));
-        if (!('TipsOptionsSystemMaterial' == pages.name)) {
-          console.info('get TipsOptionsSystemMaterial state success ' + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options)
+        console.info("get TipsOptionsSystemMaterial state pages: " + JSON.stringify(pages));
+        if (!("TipsOptionsSystemMaterial" == pages.name)) {
+          console.info("get TipsOptionsSystemMaterial state pages.name: " + JSON.stringify(pages.name));
+          let result = await router.push(options);
           await CommonFunc.sleep(2000);
-          console.info('push TipsOptionsSystemMaterial page success ' + JSON.stringify(result));
+          console.info("push TipsOptionsSystemMaterial success: " + JSON.stringify(result));
         }
       } catch (err) {
-        console.error('push TipsOptionsSystemMaterial page error ' + JSON.stringify(err));
+        console.error("push TipsOptionsSystemMaterial page error: " + err);
+        expect().assertFail();
       }
-      done()
+      done();
+    })
+
+    afterEach(async () => {
+      await CommonFunc.sleep(1000);
+      console.info("TipsOptionsSystemMaterial after each called");
     });
 
     /**
      * @tc.name   TipsOptionsSystemMaterial_0100
-     * @tc.number SUB_ACE_TipsOptionsSystemMaterial_0100
+     * @tc.number SUB_ARKUI_API_TipsOptionsSystemMaterial_0100
      * @tc.desc   To test TipsOptions systemMaterial property with undefined parameter
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+	   * @tc.type   FUNCTION 
+	   * @tc.size   MEDIUMTEST 
+     * @tc.level  LEVEL2
      */
-    it('TipsOptionsSystemMaterial_0100', Level.LEVEL0, async (done: Function) => {
+    it('TipsOptionsSystemMaterial_0100', Level.LEVEL2, async (done: Function) => {
       console.info('TipsOptionsSystemMaterial_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -69,13 +76,14 @@ export default function TipsOptionsSystemMaterial() {
 
     /**
      * @tc.name   TipsOptionsSystemMaterial_0200
-     * @tc.number SUB_ACE_TipsOptionsSystemMaterial_0200
+     * @tc.number SUB_ARKUI_API_TipsOptionsSystemMaterial_0200
      * @tc.desc   To test TipsOptions systemMaterial property with hdsMaterial.Material THICK
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+	   * @tc.type   FUNCTION 
+	   * @tc.size   MEDIUMTEST 
+     * @tc.level  LEVEL2
      */
-    it('TipsOptionsSystemMaterial_0200', Level.LEVEL0, async (done: Function) => {
+    it('TipsOptionsSystemMaterial_0200', Level.LEVEL2, async (done: Function) => {
       console.info('TipsOptionsSystemMaterial_0200 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -91,13 +99,14 @@ export default function TipsOptionsSystemMaterial() {
 
     /**
      * @tc.name   TipsOptionsSystemMaterial_0300
-     * @tc.number SUB_ACE_TipsOptionsSystemMaterial_0300
+     * @tc.number SUB_ARKUI_API_TipsOptionsSystemMaterial_0300
      * @tc.desc   To test TipsOptions systemMaterial property with uiMaterial.Material SEMI_TRANSPARENT
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+	   * @tc.type   FUNCTION 
+	   * @tc.size   MEDIUMTEST 
+     * @tc.level  LEVEL2
      */
-    it('TipsOptionsSystemMaterial_0300', Level.LEVEL0, async (done: Function) => {
+    it('TipsOptionsSystemMaterial_0300', Level.LEVEL2, async (done: Function) => {
       console.info('TipsOptionsSystemMaterial_0300 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -113,13 +122,14 @@ export default function TipsOptionsSystemMaterial() {
 
     /**
      * @tc.name   TipsOptionsSystemMaterial_0400
-     * @tc.number SUB_ACE_TipsOptionsSystemMaterial_0400
+     * @tc.number SUB_ARKUI_API_TipsOptionsSystemMaterial_0400
      * @tc.desc   To test TipsOptions systemMaterial property with uiMaterial.ImmersiveMaterial THICK
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+	   * @tc.type   FUNCTION 
+	   * @tc.size   MEDIUMTEST 
+     * @tc.level  LEVEL2
      */
-    it('TipsOptionsSystemMaterial_0400', Level.LEVEL0, async (done: Function) => {
+    it('TipsOptionsSystemMaterial_0400', Level.LEVEL2, async (done: Function) => {
       console.info('TipsOptionsSystemMaterial_0400 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -135,13 +145,14 @@ export default function TipsOptionsSystemMaterial() {
 
     /**
      * @tc.name   TipsOptionsSystemMaterial_0500
-     * @tc.number SUB_ACE_TipsOptionsSystemMaterial_0500
+     * @tc.number SUB_ARKUI_API_TipsOptionsSystemMaterial_0500
      * @tc.desc   To test TipsOptions systemMaterial property with uiMaterial.ImmersiveMaterial ULTRA_THIN
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+	   * @tc.type   FUNCTION 
+	   * @tc.size   MEDIUMTEST 
+     * @tc.level  LEVEL2
      */
-    it('TipsOptionsSystemMaterial_0500', Level.LEVEL0, async (done: Function) => {
+    it('TipsOptionsSystemMaterial_0500', Level.LEVEL2, async (done: Function) => {
       console.info('TipsOptionsSystemMaterial_0500 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -157,13 +168,14 @@ export default function TipsOptionsSystemMaterial() {
 
     /**
      * @tc.name   TipsOptionsSystemMaterial_0600
-     * @tc.number SUB_ACE_TipsOptionsSystemMaterial_0600
+     * @tc.number SUB_ARKUI_API_TipsOptionsSystemMaterial_0600
      * @tc.desc   To test TipsOptions systemMaterial property with uiMaterial.Material NONE
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+	   * @tc.type   FUNCTION 
+	   * @tc.size   MEDIUMTEST 
+     * @tc.level  LEVEL2
      */
-    it('TipsOptionsSystemMaterial_0600', Level.LEVEL0, async (done: Function) => {
+    it('TipsOptionsSystemMaterial_0600', Level.LEVEL2, async (done: Function) => {
       console.info('TipsOptionsSystemMaterial_0600 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -176,5 +188,6 @@ export default function TipsOptionsSystemMaterial() {
       console.info('TipsOptionsSystemMaterial_0600 END');
       done();
     });
+
   })
 }

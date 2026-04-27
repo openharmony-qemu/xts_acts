@@ -27,10 +27,10 @@
     "MainAbility/pages/Menu/isShownContextMenuNull",
     "MainAbility/pages/Menu/bindContentCoverNullUndefined",
 
-    "MainAbility/pages/systemMaterial/SheetOptionsSystemMaterial",
+    "MainAbility/pages/popupSystemMaterial/CustomPopupOptionsSystemMaterial",
+    "MainAbility/pages/popupSystemMaterial/SheetOptionsSystemMaterial",
     "MainAbility/pages/popupSystemMaterial/PopupCommonOptionsSystemMaterial",
     "MainAbility/pages/popupSystemMaterial/PopupOptionsSystemMaterial",
-    "MainAbility/pages/popupSystemMaterial/CustomPopupOptionsSystemMaterial",
     "MainAbility/pages/popupSystemMaterial/TipsOptionsSystemMaterial"
   ]
 }

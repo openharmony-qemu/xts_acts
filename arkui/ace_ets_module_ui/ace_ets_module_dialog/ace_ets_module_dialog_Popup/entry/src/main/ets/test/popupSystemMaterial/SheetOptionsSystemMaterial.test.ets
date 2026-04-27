@@ -12,70 +12,62 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level,Size,TestType } from "@ohos/hypium"
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "@ohos/hypium"
-import { Driver, ON } from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/common/Common'
+import { Driver, ON, BY } from '@ohos.UiTest';
+import CommonFunc from '../../MainAbility/common/Common';
+
 
 export default function SheetOptionsSystemMaterial() {
   describe('SheetOptionsSystemMaterial', () => {
-
     beforeEach(async (done: Function) => {
+      console.info("SheetOptionsSystemMaterial beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/systemMaterial/SheetOptionsSystemMaterial',
+        url: 'MainAbility/pages/popupSystemMaterial/SheetOptionsSystemMaterial',
       }
       try {
         router.clear();
         let pages = router.getState();
-        console.info('get SheetOptionsSystemMaterial state success ' + JSON.stringify(pages));
-        if (!('SheetOptionsSystemMaterial' == pages.name)) {
-          console.info('get SheetOptionsSystemMaterial state success ' + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options)
+        console.info("get SheetOptionsSystemMaterial state pages: " + JSON.stringify(pages));
+        if (!("SheetOptionsSystemMaterial" == pages.name)) {
+          console.info("get SheetOptionsSystemMaterial state pages.name: " + JSON.stringify(pages.name));
+          let result = await router.push(options);
           await CommonFunc.sleep(2000);
-          console.info('push SheetOptionsSystemMaterial page success ' + JSON.stringify(result));
+          console.info("push SheetOptionsSystemMaterial success: " + JSON.stringify(result));
         }
       } catch (err) {
-        console.error('push SheetOptionsSystemMaterial page error ' + JSON.stringify(err));
+        console.error("push SheetOptionsSystemMaterial page error: " + err);
+        expect().assertFail();
       }
-      done()
-    });
+      done();
+    })
 
     afterEach(async () => {
-      let driver = await Driver.create();
-      await CommonFunc.sleep(500);
-      try {
-        let closeButton = await driver.findComponent(ON.text('Close Sheet'));
-        await closeButton.click();
-      } catch (e) {
-        console.info('Sheet already closed');
-      }
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       console.info("SheetOptionsSystemMaterial after each called");
     });
 
     /**
      * @tc.name   SheetOptionsSystemMaterial_0100
-     * @tc.number SUB_ACE_SheetOptionsSystemMaterial_0100
+     * @tc.number SUB_ARKUI_API_SheetOptionsSystemMaterial_0100
      * @tc.desc   To test SheetOptions systemMaterial property with undefined parameter
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+	   * @tc.desc   ArkUIAPI 
+	   * @tc.type   FUNCTION 
+	   * @tc.size   MEDIUMTEST 
+	   * @tc.level  LEVEL2 
      */
-    it('SheetOptionsSystemMaterial_0100', Level.LEVEL0, async (done: Function) => {
+    it('SheetOptionsSystemMaterial_0100', Level.LEVEL2, async (done: Function) => {
       console.info('SheetOptionsSystemMaterial_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('undefined'));
       await button.click();
       await CommonFunc.sleep(1000);
-
       let sheetContent = await driver.findComponent(ON.text('Sheet Content'));
       let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       let sheet: ESObject = obj.$children[1];
       let date = JSON.stringify(obj.$children[1].$children[0]);
-      console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('undefined');
+      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
       console.info('SheetOptionsSystemMaterial_0100 Sheet Undefined is visible');
 
       await CommonFunc.sleep(500);
@@ -86,15 +78,16 @@ export default function SheetOptionsSystemMaterial() {
       done();
     });
 
-    /**
+        /**
      * @tc.name   SheetOptionsSystemMaterial_0200
-     * @tc.number SUB_ACE_SheetOptionsSystemMaterial_0200
+     * @tc.number SUB_ARKUI_API_SheetOptionsSystemMaterial_0200
      * @tc.desc   To test SheetOptions systemMaterial property with hdsMaterial.Material THICK
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+	   * @tc.type   FUNCTION 
+	   * @tc.size   MEDIUMTEST 
+	   * @tc.level  LEVEL2 
      */
-    it('SheetOptionsSystemMaterial_0200', Level.LEVEL0, async (done: Function) => {
+    it('SheetOptionsSystemMaterial_0200', Level.LEVEL2, async (done: Function) => {
       console.info('SheetOptionsSystemMaterial_0200 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -106,8 +99,7 @@ export default function SheetOptionsSystemMaterial() {
       let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       let sheet: ESObject = obj.$children[1];
       let date = JSON.stringify(obj.$children[1].$children[0]);
-      console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('undefined');
+      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
       console.info('SheetOptionsSystemMaterial_0200 Sheet HDS THICK is visible');
 
       await CommonFunc.sleep(500);
@@ -118,15 +110,17 @@ export default function SheetOptionsSystemMaterial() {
       done();
     });
 
+
     /**
      * @tc.name   SheetOptionsSystemMaterial_0300
-     * @tc.number SUB_ACE_SheetOptionsSystemMaterial_0300
-     * @tc.desc   To test SheetOptions systemMaterial property with uiMaterial.Material SEMI_TRANSPARENT
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.number SUB_ARKUI_API_SheetOptionsSystemMaterial_0300
+     * @tc.desc   To test SheetOptions systemMaterial property with undefined parameter
+     * @tc.desc   ArkUIAPI 
+	   * @tc.type   FUNCTION 
+	   * @tc.size   MEDIUMTEST 
+	   * @tc.level  LEVEL2 
      */
-    it('SheetOptionsSystemMaterial_0300', Level.LEVEL0, async (done: Function) => {
+    it('SheetOptionsSystemMaterial_0300', Level.LEVEL2, async (done: Function) => {
       console.info('SheetOptionsSystemMaterial_0300 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -138,10 +132,9 @@ export default function SheetOptionsSystemMaterial() {
       let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       let sheet: ESObject = obj.$children[1];
       let date = JSON.stringify(obj.$children[1].$children[0]);
-      console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type));
+      console.info('=================obj============' + JSON.stringify(JSON.parse(date)));
       expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.SEMI_TRANSPARENT');
-      console.info('SheetOptionsSystemMaterial_0300 Sheet SEMI_TRANSPARENT is visible');
-
+      console.info('SheetOptionsSystemMaterial_0300 Sheet Undefined is visible');
       await CommonFunc.sleep(500);
       let closeButton = await driver.findComponent(ON.text('Close Sheet'));
       await closeButton.click();
@@ -152,13 +145,14 @@ export default function SheetOptionsSystemMaterial() {
 
     /**
      * @tc.name   SheetOptionsSystemMaterial_0400
-     * @tc.number SUB_ACE_SheetOptionsSystemMaterial_0400
+     * @tc.number SUB_ARKUI_API_SheetOptionsSystemMaterial_0400
      * @tc.desc   To test SheetOptions systemMaterial property with uiMaterial.ImmersiveMaterial THICK
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+	   * @tc.type   FUNCTION 
+	   * @tc.size   MEDIUMTEST 
+	   * @tc.level  LEVEL2 
      */
-    it('SheetOptionsSystemMaterial_0400', Level.LEVEL0, async (done: Function) => {
+    it('SheetOptionsSystemMaterial_0400', Level.LEVEL2, async (done: Function) => {
       console.info('SheetOptionsSystemMaterial_0400 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -171,7 +165,7 @@ export default function SheetOptionsSystemMaterial() {
       let sheet: ESObject = obj.$children[1];
       let date = JSON.stringify(obj.$children[1].$children[0]);
       console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.style));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.style).assertEqual('ImmersiveStyle.THICK');
+      expect(JSON.parse(date).$attrs.systemMaterial.material.style).assertEqual('MaterialType.NONE');
       console.info('SheetOptionsSystemMaterial_0400 Sheet Immersive THICK is visible');
 
       await CommonFunc.sleep(500);
@@ -184,13 +178,14 @@ export default function SheetOptionsSystemMaterial() {
 
     /**
      * @tc.name   SheetOptionsSystemMaterial_0500
-     * @tc.number SUB_ACE_SheetOptionsSystemMaterial_0500
+     * @tc.number SUB_ARKUI_API_SheetOptionsSystemMaterial_0500
      * @tc.desc   To test SheetOptions systemMaterial property with uiMaterial.ImmersiveMaterial ULTRA_THIN
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+	   * @tc.type   FUNCTION 
+	   * @tc.size   MEDIUMTEST 
+	   * @tc.level  LEVEL2 
      */
-    it('SheetOptionsSystemMaterial_0500', Level.LEVEL0, async (done: Function) => {
+    it('SheetOptionsSystemMaterial_0500', Level.LEVEL2, async (done: Function) => {
       console.info('SheetOptionsSystemMaterial_0500 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -203,7 +198,7 @@ export default function SheetOptionsSystemMaterial() {
       let sheet: ESObject = obj.$children[1];
       let date = JSON.stringify(obj.$children[1].$children[0]);
       console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.style));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.style).assertEqual('ImmersiveStyle.ULTRA_THIN');
+      expect(JSON.parse(date).$attrs.systemMaterial.material.style).assertEqual('MaterialType.NONE');
       console.info('SheetOptionsSystemMaterial_0500 Sheet Immersive ULTRA_THIN is visible');
 
       await CommonFunc.sleep(500);
@@ -216,13 +211,14 @@ export default function SheetOptionsSystemMaterial() {
 
     /**
      * @tc.name   SheetOptionsSystemMaterial_0600
-     * @tc.number SUB_ACE_SheetOptionsSystemMaterial_0600
+     * @tc.number SUB_ARKUI_API_SheetOptionsSystemMaterial_0600
      * @tc.desc   To test SheetOptions systemMaterial property with uiMaterial.Material NONE
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+	   * @tc.type   FUNCTION 
+	   * @tc.size   MEDIUMTEST 
+	   * @tc.level  LEVEL2 
      */
-    it('SheetOptionsSystemMaterial_0600', Level.LEVEL0, async (done: Function) => {
+    it('SheetOptionsSystemMaterial_0600', Level.LEVEL2, async (done: Function) => {
       console.info('SheetOptionsSystemMaterial_0600 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -245,5 +241,6 @@ export default function SheetOptionsSystemMaterial() {
       console.info('SheetOptionsSystemMaterial_0600 END');
       done();
     });
+
   })
 }

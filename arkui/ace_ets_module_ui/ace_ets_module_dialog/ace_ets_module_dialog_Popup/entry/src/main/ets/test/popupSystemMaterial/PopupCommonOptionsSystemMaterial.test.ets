@@ -13,56 +13,50 @@
  * limitations under the License.
  */
 
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level,Size,TestType } from "@ohos/hypium"
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "@ohos/hypium"
-import { Driver, ON } from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/common/Common'
+import { Driver, ON, BY } from '@ohos.UiTest';
+import CommonFunc from '../../MainAbility/common/Common';
 
 export default function PopupCommonOptionsSystemMaterial() {
   describe('PopupCommonOptionsSystemMaterial', () => {
-
     beforeEach(async (done: Function) => {
+      console.info("PopupCommonOptionsSystemMaterial beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/popupSystemMaterial/PopupCommonOptionsSystemMaterial',
       }
       try {
         router.clear();
         let pages = router.getState();
-        console.info('get PopupCommonOptionsSystemMaterial state success ' + JSON.stringify(pages));
-        if (!('PopupCommonOptionsSystemMaterial' == pages.name)) {
-          console.info('get PopupCommonOptionsSystemMaterial state success ' + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options)
+        console.info("get PopupCommonOptionsSystemMaterial state pages: " + JSON.stringify(pages));
+        if (!("PopupCommonOptionsSystemMaterial" == pages.name)) {
+          console.info("get PopupCommonOptionsSystemMaterial state pages.name: " + JSON.stringify(pages.name));
+          let result = await router.push(options);
           await CommonFunc.sleep(2000);
-          console.info('push PopupCommonOptionsSystemMaterial page success ' + JSON.stringify(result));
+          console.info("push PopupCommonOptionsSystemMaterial success: " + JSON.stringify(result));
         }
       } catch (err) {
-        console.error('push PopupCommonOptionsSystemMaterial page error ' + JSON.stringify(err));
+        console.error("push PopupCommonOptionsSystemMaterial page error: " + err);
+        expect().assertFail();
       }
-      done()
-    });
+      done();
+    })
 
     afterEach(async () => {
-      let driver = await Driver.create();
-      await CommonFunc.sleep(500);
-      try {
-        let closeButton = await driver.findComponent(ON.text('Close'));
-        await closeButton.click();
-      } catch (e) {
-        console.info('Popup already closed');
-      }
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       console.info("PopupCommonOptionsSystemMaterial after each called");
     });
 
     /**
      * @tc.name   PopupCommonOptionsSystemMaterial_0100
-     * @tc.number SUB_ACE_PopupCommonOptionsSystemMaterial_0100
+     * @tc.number SUB_ARKUI_API_PopupCommonOptionsSystemMaterial_0100
      * @tc.desc   To test PopupCommonOptions systemMaterial property with undefined parameter
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+	   * @tc.type   FUNCTION 
+	   * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
-    it('PopupCommonOptionsSystemMaterial_0100', Level.LEVEL0, async (done: Function) => {
+    it('PopupCommonOptionsSystemMaterial_0100', Level.LEVEL2, async (done: Function) => {
       console.info('PopupCommonOptionsSystemMaterial_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -88,13 +82,14 @@ export default function PopupCommonOptionsSystemMaterial() {
 
     /**
      * @tc.name   PopupCommonOptionsSystemMaterial_0200
-     * @tc.number SUB_ACE_PopupCommonOptionsSystemMaterial_0200
+     * @tc.number SUB_ARKUI_API_PopupCommonOptionsSystemMaterial_0200
      * @tc.desc   To test PopupCommonOptions systemMaterial property with hdsMaterial.Material THICK
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+	   * @tc.type   FUNCTION 
+	   * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
-    it('PopupCommonOptionsSystemMaterial_0200', Level.LEVEL0, async (done: Function) => {
+    it('PopupCommonOptionsSystemMaterial_0200', Level.LEVEL2, async (done: Function) => {
       console.info('PopupCommonOptionsSystemMaterial_0200 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -120,13 +115,14 @@ export default function PopupCommonOptionsSystemMaterial() {
 
     /**
      * @tc.name   PopupCommonOptionsSystemMaterial_0300
-     * @tc.number SUB_ACE_PopupCommonOptionsSystemMaterial_0300
+     * @tc.number SUB_ARKUI_API_PopupCommonOptionsSystemMaterial_0300
      * @tc.desc   To test PopupCommonOptions systemMaterial property with uiMaterial.Material SEMI_TRANSPARENT
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+	   * @tc.type   FUNCTION 
+	   * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
-    it('PopupCommonOptionsSystemMaterial_0300', Level.LEVEL0, async (done: Function) => {
+    it('PopupCommonOptionsSystemMaterial_0300', Level.LEVEL2, async (done: Function) => {
       console.info('PopupCommonOptionsSystemMaterial_0300 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -152,13 +148,14 @@ export default function PopupCommonOptionsSystemMaterial() {
 
     /**
      * @tc.name   PopupCommonOptionsSystemMaterial_0400
-     * @tc.number SUB_ACE_PopupCommonOptionsSystemMaterial_0400
+     * @tc.number SUB_ARKUI_API_PopupCommonOptionsSystemMaterial_0400
      * @tc.desc   To test PopupCommonOptions systemMaterial property with uiMaterial.ImmersiveMaterial THICK
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+	   * @tc.type   FUNCTION 
+	   * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
-    it('PopupCommonOptionsSystemMaterial_0400', Level.LEVEL0, async (done: Function) => {
+    it('PopupCommonOptionsSystemMaterial_0400', Level.LEVEL2, async (done: Function) => {
       console.info('PopupCommonOptionsSystemMaterial_0400 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -184,13 +181,14 @@ export default function PopupCommonOptionsSystemMaterial() {
 
     /**
      * @tc.name   PopupCommonOptionsSystemMaterial_0500
-     * @tc.number SUB_ACE_PopupCommonOptionsSystemMaterial_0500
+     * @tc.number SUB_ARKUI_API_PopupCommonOptionsSystemMaterial_0500
      * @tc.desc   To test PopupCommonOptions systemMaterial property with uiMaterial.ImmersiveMaterial ULTRA_THIN
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+	   * @tc.type   FUNCTION 
+	   * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
-    it('PopupCommonOptionsSystemMaterial_0500', Level.LEVEL0, async (done: Function) => {
+    it('PopupCommonOptionsSystemMaterial_0500', Level.LEVEL2, async (done: Function) => {
       console.info('PopupCommonOptionsSystemMaterial_0500 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -216,13 +214,14 @@ export default function PopupCommonOptionsSystemMaterial() {
 
     /**
      * @tc.name   PopupCommonOptionsSystemMaterial_0600
-     * @tc.number SUB_ACE_PopupCommonOptionsSystemMaterial_0600
+     * @tc.number SUB_ARKUI_API_PopupCommonOptionsSystemMaterial_0600
      * @tc.desc   To test PopupCommonOptions systemMaterial property with uiMaterial.Material NONE
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.desc   ArkUIAPI 
+	   * @tc.type   FUNCTION 
+	   * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
-    it('PopupCommonOptionsSystemMaterial_0600', Level.LEVEL0, async (done: Function) => {
+    it('PopupCommonOptionsSystemMaterial_0600', Level.LEVEL2, async (done: Function) => {
       console.info('PopupCommonOptionsSystemMaterial_0600 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -245,5 +244,6 @@ export default function PopupCommonOptionsSystemMaterial() {
       console.info('PopupCommonOptionsSystemMaterial_0600 END');
       done();
     });
+
   })
 }
