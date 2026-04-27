@@ -2180,14 +2180,14 @@ export default function DeviceInfoTest() {
             console.info('SUB_STARTUP_INIT_DEVCEINFO_8200 start');
             let brandInfo = deviceinfo.brand;
             console.info('the value of the deviceinfo brand is :' + brandInfo);
-            let deviceCorlor = deviceinfo.deviceCorlor;
+            let deviceColor = deviceinfo.deviceColor;
             console.info('the value of the DeviceColor is :' + deviceColor);
             let targetBrand = String.fromCharCode(72,85,65,87,69,73);
             
             if (brandInfo == targetBrand){
-                if (deviceCorlor != "" && deviceCorlor != null && deviceCorlor != undefined) {
-                    console.info('the value of the deviceinfo DeviceColor is :' + deviceCorlor);
-                    expect(deviceCorlor).assertInstanceOf('String');
+                if (deviceColor != "" && deviceColor != null && deviceColor != undefined) {
+                    console.info('the value of the deviceinfo DeviceColor is :' + deviceColor);
+                    expect(deviceColor).assertInstanceOf('String');
                     done();
                 } else {
                     console.info('the return value DeviceColor is null or incorrect.');
@@ -2195,7 +2195,7 @@ export default function DeviceInfoTest() {
                     done();               
                 }
             }else{
-                expect(deviceCorlor == "").assertTrue();
+                expect(deviceColor == "").assertTrue();
                 done();
             }           
 
