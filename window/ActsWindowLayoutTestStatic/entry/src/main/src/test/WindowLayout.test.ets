@@ -3389,8 +3389,7 @@ export default function WindowLayoutTest() {
             win = await windowStage!.getMainWindow();
             hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.getMainWindow success');
             expect(!!win).assertTrue();
-            (win as window.Window).maximize().then(async ()=>{
-                await Utils.msSleep(1000)
+            (win as window.Window).maximize().then(()=>{
                 (win as window.Window).resizeAsync(500, 1000).then(()=>{    
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in changing the window size.');
                     expect(false).assertTrue();
