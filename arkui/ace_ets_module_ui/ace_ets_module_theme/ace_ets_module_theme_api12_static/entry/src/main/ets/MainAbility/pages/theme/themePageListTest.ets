@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -67,7 +67,7 @@ struct themePageList {
       Column({ space: '8vp' } as ColumnOptions) {
         Text(`未使用WithTheme`).height('5%')
         // 点击按钮切换局部换肤
-        Button(`切换theme配色：${this.themeNames[this.themeIndex as Int]}`).height('5%')
+        Button(`切换theme配色：${this.themeNames[this.themeIndex.toInt()]}`).height('5%')
           .onClick((e:ClickEvent) => {
             this.themeIndex = (this.themeIndex + 1) % themePageList.themeCount;
           }).key('themeClick')
@@ -92,7 +92,7 @@ struct themePageList {
         top: '50vp'
       } as Margin)
 
-      WithTheme({ theme: this.themeArray[this.themeIndex as Int] }) { // WithTheme作用域
+      WithTheme({ theme: this.themeArray[this.themeIndex.toInt()] }) { // WithTheme作用域
         Column({ space: '8vp' } as ColumnOptions) {
           Text(`使用WithTheme`).key('themeText')
           List({ space: 20, initialIndex: 0 }) {
