@@ -221,15 +221,15 @@ export default function SymbolGlyphSymbolColorTest() {
 
 
     /**
- 	 * @tc.name   symbolGlyphSymbolColor_p3Color_0100
- 	 * @tc.number SUB_ARKUI_SYMBOLGLYPH_SYMBOLCOLOR_P3COLOR_0100
+ 	 * @tc.name   symbolGlyphSymbolColor_displayP3Color_0100
+ 	 * @tc.number SUB_ARKUI_SYMBOLGLYPH_SYMBOLCOLOR_DISPLAY_P3_0100
  	 * @tc.desc   Test SymbolGlyph symbolColor property with p3Color
  	 * @tc.type   FUNCTION
  	 * @tc.size   SMALLTEST
  	 * @tc.level  LEVEL2
  	 */
- 	it('symbolGlyphSymbolColor_p3Color_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
- 	  console.info('[symbolGlyphSymbolColor_p3Color_0100] START');
+ 	it('symbolGlyphSymbolColor_displayP3Color_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+ 	  console.info('[symbolGlyphSymbolColor_displayP3Color_0100] START');
  	  let strJson1 = inspector.getInspectorByKey('symbolGlyph_symbolColor_p3Color');
  	  console.info('[symbolColor1] =' + JSON.parseJsonElement(strJson1).getElement('$attrs').getString('fontColor'));
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('fontColor'))
@@ -238,7 +238,7 @@ export default function SymbolGlyphSymbolColorTest() {
         .assertContain('#FF00FF00');
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('fontColor'))
         .assertContain('#FF0000FF');
- 	  console.info('[symbolGlyphSymbolColor_p3Color_0100] END');
+ 	  console.info('[symbolGlyphSymbolColor_displayP3Color_0100] END');
       done();
  	})
 
