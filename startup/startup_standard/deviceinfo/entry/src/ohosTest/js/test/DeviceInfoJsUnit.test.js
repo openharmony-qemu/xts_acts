@@ -2179,6 +2179,7 @@ export default function DeviceInfoTest() {
         it('testGetDeviceColor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('SUB_STARTUP_INIT_DEVCEINFO_8200 start');
             let brandInfo = deviceinfo.brand;
+            console.info('the value of the deviceinfo brand is :' + brandInfo);
             let deviceCorlor = deviceinfo.deviceCorlor;
             let targetBrand = String.fromCharCode(72,85,65,87,69,73);
             
@@ -2192,6 +2193,9 @@ export default function DeviceInfoTest() {
                     expect().assertFail();
                     done();               
                 }
+            }else{
+                expect(deviceCorlor == "").assertTrue();
+                done();
             }           
 
             console.info('SUB_STARTUP_INIT_DEVCEINFO_8200 end');
