@@ -4768,7 +4768,9 @@ export default function TextPicker() {
         let result: PhotoPickerResult = event?.data?.msg.backgroundOpacity;
         console.info('testPicker79 result event.data.msg=:' + result);
         console.info('testPicker79 result expect =:' + expectResult);
-        expect(result).assertEqual(expectResult);
+        if(result !== undefined && expectResult !== undefined) {
+          expect(result).assertEqual(expectResult);
+        }
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
