@@ -28,7 +28,7 @@ static void *threadfuncA(void *arg)
  * @tc.desc      : Verify pthread_getschedparam process success
  * @tc.level     : Level 1
  */
-void pthread_getschedparam_0100(void)
+void PthreadGetschedparam0100(void)
 {
     pthread_t ph;
     pthread_create(&ph, NULL, threadfuncA, NULL);
@@ -37,15 +37,16 @@ void pthread_getschedparam_0100(void)
     int32_t ret = pthread_getschedparam(ph, &policy, &sp);
     void *thread_result = NULL;
     pthread_join(ph, &thread_result);
-    EXPECT_EQ("pthread_getschedparam_0100", ret, 0);
+    EXPECT_EQ("PthreadGetschedparam0100", ret, 0);
 }
 
-static int PthreadGetschedparamTestTest_impl(void){
-    pthread_getschedparam_0100();
+static int PthreadGetschedparamTestImpl(void)
+{
+    PthreadGetschedparam0100();
     return g_tStatus;
 }
 
 int PthreadGetschedparamTestTest(void)
 {
-    return PthreadGetschedparamTestTest_impl();
+    return PthreadGetschedparamTestImpl();
 }

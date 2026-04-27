@@ -26,7 +26,7 @@
  * @tc.desc      : Convert wide characters to lowercase via towlower
  * @tc.level     : Level 0
  */
-void towlower_0100(void)
+void Towlower0100(void)
 {
     wint_t wt = L'\u0190';
     wint_t result = towlower(wt);
@@ -41,7 +41,7 @@ void towlower_0100(void)
  * @tc.desc      : Test that the incoming character exceeds the function limit
  * @tc.level     : Level 1
  */
-void towlower_0200(void)
+void Towlower0200(void)
 {
     wint_t wt = 0x20000;
     wint_t result = towlower(wt);
@@ -56,29 +56,29 @@ void towlower_0200(void)
  *                 Input parameters are Uppercase letters, verify conversion to Lowercase letters.
  * @tc.level     : Level 1
  */
-void towlower_l_0100(void)
+void TowlowerL0100(void)
 {
-    locale_t m_locale = newlocale(LC_ALL_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", NULL);
     const char *upstr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const char *lowstr = "abcdefghijklmnopqrstuvwxyz";
     const char *up = upstr;
     const char *lp = lowstr;
     wint_t res = 0;
 
-    if (!m_locale) {
+    if (!mLocale) {
         t_error("Test case %s failed to call function newlocale\n", __FUNCTION__);
         return;
     }
 
     while (up && *up != '\0' && lp && *lp != '\0') {
-        res = towlower_l(*up, m_locale);
+        res = towlower_l(*up, mLocale);
         if (res != *lp) {
             t_error("Test case %s failed, get result is %c but want get value %c\n", __FUNCTION__, (char)res, *lp);
         }
         up++;
         lp++;
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -87,26 +87,26 @@ void towlower_l_0100(void)
  *                 Input parameters as numbers, verify conversion to Lowercase letters.
  * @tc.level     : Level 1
  */
-void towlower_l_0200(void)
+void TowlowerL0200(void)
 {
-    locale_t m_locale = newlocale(LC_ALL_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", NULL);
     const char *str = "0123456789";
     const char *p = str;
     wint_t res = 0;
 
-    if (!m_locale) {
+    if (!mLocale) {
         t_error("Test case %s failed to call function newlocale\n", __FUNCTION__);
         return;
     }
 
     while (p && *p != '\0') {
-        res = towlower_l(*p, m_locale);
+        res = towlower_l(*p, mLocale);
         if (res != *p) {
             t_error("Test case %s failed, result is %c but want get value %c \n", __FUNCTION__, (char)res, *p);
         }
         p++;
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -115,26 +115,26 @@ void towlower_l_0200(void)
  *                 Input parameters as numbers, verify conversion to Lowercase letters.
  * @tc.level     : Level 1
  */
-void towlower_l_0300(void)
+void TowlowerL0300(void)
 {
-    locale_t m_locale = newlocale(LC_ALL_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_ALL_MASK, "zh_CN", NULL);
     const char *str = "0123456789";
     const char *p = str;
     wint_t res = 0;
 
-    if (!m_locale) {
+    if (!mLocale) {
         t_error("Test case %s failed to call function newlocale\n", __FUNCTION__);
         return;
     }
 
     while (p && *p != '\0') {
-        res = towlower_l(*p, m_locale);
+        res = towlower_l(*p, mLocale);
         if (res != *p) {
             t_error("Test case %s failed, result is %c but want get value %c \n", __FUNCTION__, (char)res, *p);
         }
         p++;
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -143,29 +143,29 @@ void towlower_l_0300(void)
  *                 Input parameters are Uppercase letters, verify conversion to Lowercase letters.
  * @tc.level     : Level 1
  */
-void towlower_l_0400(void)
+void TowlowerL0400(void)
 {
-    locale_t m_locale = newlocale(LC_ALL_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_ALL_MASK, "zh_CN", NULL);
     const char *upstr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const char *lowstr = "abcdefghijklmnopqrstuvwxyz";
     const char *up = upstr;
     const char *lp = lowstr;
     wint_t res = 0;
 
-    if (!m_locale) {
+    if (!mLocale) {
         t_error("Test case %s failed to call function newlocale\n", __FUNCTION__);
         return;
     }
 
     while (up && *up != '\0' && lp && *lp != '\0') {
-        res = towlower_l(*up, m_locale);
+        res = towlower_l(*up, mLocale);
         if (res != *lp) {
             t_error("Test case %s failed, get result is %c but want get value %c\n", __FUNCTION__, (char)res, *lp);
         }
         up++;
         lp++;
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -174,51 +174,52 @@ void towlower_l_0400(void)
  *                 Input parameter is the maximum value of int, please verify that the return is -1
  * @tc.level     : Level 1
  */
-void towlower_l_0500(void)
- {
-    locale_t m_locale = newlocale(LC_ALL_MASK, "zh_CN", NULL);
-    wint_t res = towlower_l(MAX_VALUE, m_locale);
+void TowlowerL0500(void)
+{
+    locale_t mLocale = newlocale(LC_ALL_MASK, "zh_CN", NULL);
+    wint_t res = towlower_l(MAX_VALUE, mLocale);
     if (res != -1) {
         t_error("Test case %s failed, get result is -1 but want get value %d\n", __FUNCTION__, res);
-    } 
-    freelocale(m_locale);
- }
+    }
+    freelocale(mLocale);
+}
 
- /**
+/**
  * @tc.name      : towlower_l_0600
  * @tc.desc      : Verify towlower_l process success when using the en_US.UTF-8 character set.
  *                 Input parameter is the maximum value of int, please verify that the return is -1
  * @tc.level     : Level 1
  */
-void towlower_l_0600(void)
- {
-    locale_t m_locale = newlocale(LC_ALL_MASK, "en_US.UTF-8", NULL);
-    wint_t res = towlower_l(MAX_VALUE, m_locale);
+void TowlowerL0600(void)
+{
+    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", NULL);
+    wint_t res = towlower_l(MAX_VALUE, mLocale);
     if (res != -1) {
         t_error("Test case %s failed, get result is -1 but want get value %d\n", __FUNCTION__, res);
-    } 
-    freelocale(m_locale);
- }
+    }
+    freelocale(mLocale);
+}
 
 
-static int TowlowerTest_impl(int argc, char *argv[]){
-     typedef void (*set_wctype_icu_enable_func)(void);
-    set_wctype_icu_enable_func set_wctype_icu_enable = (set_wctype_icu_enable_func)dlsym(RTLD_DEFAULT, "set_wctype_icu_enable");
-    set_wctype_icu_enable();
-    towlower_0100();
-    towlower_0200();
-    towlower_l_0100();
-    towlower_l_0200();
-    towlower_l_0300();
-    towlower_l_0400();
-    towlower_l_0500();
-    towlower_l_0600();
+static int TowlowerTestImpl(int argc, char *argv[])
+{
+    typedef void (*SetWctypeIcuEnableFunc)(void);
+    SetWctypeIcuEnableFunc setWctypeIcuEnable = (SetWctypeIcuEnableFunc)dlsym(RTLD_DEFAULT, "set_wctype_icu_enable");
+    setWctypeIcuEnable();
+    Towlower0100();
+    Towlower0200();
+    TowlowerL0100();
+    TowlowerL0200();
+    TowlowerL0300();
+    TowlowerL0400();
+    TowlowerL0500();
+    TowlowerL0600();
     return g_tStatus;
 }
 
 int TowlowerTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return TowlowerTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return TowlowerTestImpl(1, libcArgv);
 }

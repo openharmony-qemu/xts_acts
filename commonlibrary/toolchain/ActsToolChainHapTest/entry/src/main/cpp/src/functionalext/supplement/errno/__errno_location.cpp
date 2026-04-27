@@ -17,12 +17,15 @@
 #include <errno.h>
 #include "test.h"
 
+// Test constant for errno value
+#define TEST_ERRNO_VALUE 10
+
 /**
  * @tc.name      : __errno_location_0100
  * @tc.desc      : Test the __errno_location method to get the errno address
  * @tc.level     : Level 0
  */
-void __errno_location_0100(void)
+void ErrnoLocation0100(void)
 {
     int result = *__errno_location();
     if (result != 0) {
@@ -35,9 +38,9 @@ void __errno_location_0100(void)
  * @tc.desc      : The result returned by __errno_location when the value of errno has just been changed
  * @tc.level     : Level 1
  */
-void __errno_location_0200(void)
+void ErrnoLocation0200(void)
 {
-    errno = 10;
+    errno = TEST_ERRNO_VALUE;
     int result = *__errno_location();
     if (result != errno) {
         t_error("%s __errno_location get errno code is %d are not want %d\n", __func__, result, errno);
@@ -50,7 +53,7 @@ void __errno_location_0200(void)
  * @tc.desc      : Test the address returned by __errno_location and compare it with the errno address
  * @tc.level     : Level 1
  */
-void __errno_location_0300(void)
+void ErrnoLocation0300(void)
 {
     int *result = __errno_location();
     if (result != &errno) {
@@ -58,17 +61,17 @@ void __errno_location_0300(void)
     }
 }
 
-static int ErrnoLocationTest_impl(int argc, char *argv[])
+static int ErrnoLocationTestImpl(int argc, char *argv[])
 {
-    __errno_location_0100();
-    __errno_location_0200();
-    __errno_location_0300();
+    ErrnoLocation0100();
+    ErrnoLocation0200();
+    ErrnoLocation0300();
     return g_tStatus;
 }
 
 int ErrnoLocationTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return ErrnoLocationTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return ErrnoLocationTestImpl(1, libcArgv);
 }

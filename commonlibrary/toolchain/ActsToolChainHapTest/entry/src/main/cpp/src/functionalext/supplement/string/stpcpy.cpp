@@ -110,7 +110,8 @@ void stpcpy_0400(void)
     strcpy(NULL, src);
 }
 
-static int StpcpyTest_impl(int argc, char *argv[]){
+static int StpcpyTest_impl(int argc, char *argv[])
+{
     stpcpy_0100();
     stpcpy_0200();
     stpcpy_0300();

@@ -28,29 +28,30 @@ static void *threadfuncA(void *arg)
  * @tc.desc      : Verify pthread_getattr_np process success
  * @tc.level     : Level 0
  */
-void pthread_getattr_np_0100(void)
+void PthreadGetattrNp0100(void)
 {
     pthread_t ph;
     pthread_create(&ph, NULL, threadfuncA, NULL);
     pthread_attr_t attr;
     pthread_attr_init(&attr);
-    void *thread_result = NULL;
+    void *threadResult = NULL;
     int32_t ret = pthread_getattr_np(ph, &attr);
     pthread_attr_destroy(&attr);
-    pthread_join(ph, &thread_result);
+    pthread_join(ph, &threadResult);
     void *stack = NULL;
     size_t stacksize;
     pthread_attr_getstack(&attr, &stack, &stacksize);
-    EXPECT_PTRNE("pthread_getattr_np_0100", stack, NULL);
+    EXPECT_PTRNE("PthreadGetattrNp0100", stack, NULL);
 }
 
-static int PthreadGetattrNpTestTest_impl(void){
-    pthread_getattr_np_0100();
+static int PthreadGetattrNpTestImpl(void)
+{
+    PthreadGetattrNp0100();
     return g_tStatus;
 }
 
 int PthreadGetattrNpTestTest(void)
 {
-    return PthreadGetattrNpTestTest_impl();
+    return PthreadGetattrNpTestImpl();
 }
 

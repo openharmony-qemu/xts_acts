@@ -19,6 +19,9 @@
 #include <sys/time.h>
 #include "test.h"
 
+// Timer interval in microseconds (100ms)
+#define TIMER_INTERVAL_USEC 100000
+
 static int count = 0;
 
 static void expireTimer(int signo)
@@ -58,30 +61,31 @@ static void signalHandler(int signo)
  * @tc.desc      : Set value of an interval timer
  * @tc.level     : Level 0
  */
-static void setitimer_0100(void)
+static void Setitimer0100(void)
 {
     signal(SIGALRM, signalHandler);
     struct itimerval it;
     memset(&it, 0, sizeof(it));
 
     it.it_value.tv_sec = 0;
-    it.it_value.tv_usec = 100000;
+    it.it_value.tv_usec = TIMER_INTERVAL_USEC;
     it.it_interval.tv_sec = 0;
-    it.it_interval.tv_usec = 100000;
+    it.it_interval.tv_usec = TIMER_INTERVAL_USEC;
 
     if (setitimer(ITIMER_REAL, &it, NULL)) {
         t_error("%s set timer failed", __func__);
     }
 }
 
-static int SetitimerTest_impl(int argc, char *argv[]){
-    setitimer_0100();
+static int SetitimerTestImpl(int argc, char *argv[])
+{
+    Setitimer0100();
     return g_tStatus;
 }
 
 int SetitimerTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return SetitimerTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return SetitimerTestImpl(1, libcArgv);
 }

@@ -29,14 +29,14 @@ void OnceRun(void)
 static void *threadfuncA(void *arg)
 {
     int32_t ret = pthread_once(&g_once, OnceRun);
-    EXPECT_EQ("pthread_once_0100", ret, 0);
+    EXPECT_EQ("PthreadOnce0100", ret, 0);
     return arg;
 }
 
 static void *threadfuncB(void *arg)
 {
     int32_t ret = pthread_once(&g_once, OnceRun);
-    EXPECT_EQ("pthread_once_0100", ret, 0);
+    EXPECT_EQ("PthreadOnce0100", ret, 0);
     return arg;
 }
 
@@ -45,7 +45,7 @@ static void *threadfuncB(void *arg)
  * @tc.desc:      Verify process pthread_mutex_once success.
  * @tc.level:     level 0.
  */
-void pthread_once_0100(void)
+void PthreadOnce0100(void)
 {
     pthread_t tid1, tid2;
     pthread_create(&tid1, NULL, threadfuncA, NULL);
@@ -54,12 +54,13 @@ void pthread_once_0100(void)
     pthread_join(tid2, NULL);
 }
 
-static int PthreadOnceTestTest_impl(void){
-    pthread_once_0100();
+static int PthreadOnceTestImpl(void)
+{
+    PthreadOnce0100();
     return g_tStatus;
 }
 
 int PthreadOnceTestTest(void)
 {
-    return PthreadOnceTestTest_impl();
+    return PthreadOnceTestImpl();
 }

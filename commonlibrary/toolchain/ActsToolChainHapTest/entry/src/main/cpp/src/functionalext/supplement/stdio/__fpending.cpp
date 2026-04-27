@@ -24,16 +24,16 @@ static const char *path = "/data/storage/el2/base/cache/fpending.txt";
  *                 get the number of bytes in the current buffer.
  * @tc.level     : Level 0
  */
-void __fpending_0100(void)
+void Fpending0100(void)
 {
     char *str = "This is a test";
     FILE *fp = fopen(path, "w");
-    EXPECT_PTRNE("__fpending_0100", fp, NULL);
+    EXPECT_PTRNE("Fpending0100", fp, NULL);
 
     fputs(str, fp);
     size_t ret = __fpending(fp);
-    EXPECT_TRUE("__fpending_0100", ret > 0);
-    EXPECT_EQ("__fpending_0100", ret, strlen(str));
+    EXPECT_TRUE("Fpending0100", ret > 0);
+    EXPECT_EQ("Fpending0100", ret, strlen(str));
 
     fclose(fp);
     remove(path);
@@ -45,16 +45,16 @@ void __fpending_0100(void)
  *                 et the number of bytes in the current buffer.
  * @tc.level     : Level 1
  */
-void __fpending_0200(void)
+void Fpending0200(void)
 {
     char *str = "This is a test";
     FILE *fp = fopen(path, "w");
-    EXPECT_PTRNE("__fpending_0200", fp, NULL);
+    EXPECT_PTRNE("Fpending0200", fp, NULL);
 
     fputs(str, fp);
     fflush(fp);
     size_t ret = __fpending(fp);
-    EXPECT_EQ("__fpending_0200", ret, 0);
+    EXPECT_EQ("Fpending0200", ret, 0);
 
     fclose(fp);
     remove(path);
@@ -66,34 +66,34 @@ void __fpending_0200(void)
  *                 the current buffer cannot be obtained.
  * @tc.level     : Level 2
  */
-void __fpending_0300(void)
+void Fpending0300(void)
 {
     char *str = "This is a test";
     FILE *fp = fopen(path, "w");
-    EXPECT_PTRNE("__fpending_0300", fp, NULL);
+    EXPECT_PTRNE("Fpending0300", fp, NULL);
 
     fputs(str, fp);
     fclose(fp);
 
     FILE *ffp = fopen(path, "r");
     size_t ret = __fpending(ffp);
-    EXPECT_EQ("__fpending_0300", ret, 0);
+    EXPECT_EQ("Fpending0300", ret, 0);
 
     fclose(ffp);
     remove(path);
 }
 
-static int __fpendingTest_with_args(int argc, char *argv[])
+static int FpendingTestWithArgs(int argc, char *argv[])
 {
-    __fpending_0100();
-    __fpending_0200();
-    __fpending_0300();
+    Fpending0100();
+    Fpending0200();
+    Fpending0300();
     return g_tStatus;
 }
 
 int FpendingTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return __fpendingTest_with_args(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return FpendingTestWithArgs(1, libcArgv);
 }

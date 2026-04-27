@@ -24,9 +24,9 @@ static void *threadfuncA(void *arg)
 {
     int32_t value = 0;
     int32_t ret = pthread_setspecific(g_key, &value);
-    EXPECT_EQ("pthread_setspecific_0100", ret, 0);
+    EXPECT_EQ("PthreadSetspecific0100", ret, 0);
     int32_t *keyRet = (int32_t *)pthread_getspecific(g_key);
-    EXPECT_EQ("pthread_setspecific_0100", *keyRet, 0);
+    EXPECT_EQ("PthreadSetspecific0100", *keyRet, 0);
     return arg;
 }
 
@@ -34,11 +34,11 @@ static void *threadfuncB(void *arg)
 {
     int32_t value = 0;
     int32_t ret = pthread_setspecific(g_key, &value);
-    EXPECT_EQ("pthread_setspecific_0200", ret, 0);
+    EXPECT_EQ("PthreadSetspecific0200", ret, 0);
     ret = pthread_setspecific(g_key, &value);
-    EXPECT_EQ("pthread_setspecific_0200", ret, 0);
+    EXPECT_EQ("PthreadSetspecific0200", ret, 0);
     int32_t *keyRet = (int32_t *)pthread_getspecific(g_key);
-    EXPECT_EQ("pthread_setspecific_0200", *keyRet, 0);
+    EXPECT_EQ("PthreadSetspecific0200", *keyRet, 0);
     return arg;
 }
 
@@ -47,7 +47,7 @@ static void *threadfuncB(void *arg)
  * @tc.desc:      Verify call pthread_setspecific once process success.
  * @tc.level:     level 0.
  */
-void pthread_setspecific_0100(void)
+void PthreadSetspecific0100(void)
 {
     pthread_key_create(&g_key, NULL);
     pthread_t tid1;
@@ -61,7 +61,7 @@ void pthread_setspecific_0100(void)
  * @tc.desc:      Verify call pthread_setspecific twice process success.
  * @tc.level:     level 0
  */
-void pthread_setspecific_0200(void)
+void PthreadSetspecific0200(void)
 {
     pthread_key_create(&g_key, NULL);
     pthread_t tid2;
@@ -70,14 +70,15 @@ void pthread_setspecific_0200(void)
     pthread_key_delete(g_key);
 }
 
-static int PthreadSetspecificTestTest_impl(void){
-    pthread_setspecific_0100();
-    pthread_setspecific_0200();
+static int PthreadSetspecificTestImpl(void)
+{
+    PthreadSetspecific0100();
+    PthreadSetspecific0200();
     return g_tStatus;
 }
 
 int PthreadSetspecificTestTest(void)
 {
-    return PthreadSetspecificTestTest_impl();
+    return PthreadSetspecificTestImpl();
 }
 

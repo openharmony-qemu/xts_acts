@@ -29,7 +29,7 @@ typedef void (*TEST_FUN)();
  * @tc.desc      : Verify that host information can be obtained (all parameters are valid, fd is AF_INET)
  * @tc.level     : Level 0
  */
-void gethostbyname2_0100(void)
+void Gethostbyname20100(void)
 {
     bool flag = false;
     struct hostent *hptr;
@@ -37,8 +37,8 @@ void gethostbyname2_0100(void)
     if (hptr != NULL) {
         flag = true;
     }
-    EXPECT_TRUE("gethostbyname2_0100", flag);
-    EXPECT_STREQ("gethostbyname2_0100", hptr->h_name, "127.0.0.1");
+    EXPECT_TRUE("Gethostbyname20100", flag);
+    EXPECT_STREQ("Gethostbyname20100", hptr->h_name, "127.0.0.1");
 }
 
 /**
@@ -46,7 +46,7 @@ void gethostbyname2_0100(void)
  * @tc.desc      : Verify that the host information can be obtained (all parameters are valid, fd is AF_INET6)
  * @tc.level     : Level 0
  */
-void gethostbyname2_0200(void)
+void Gethostbyname20200(void)
 {
     bool flag = false;
     struct hostent *hptr;
@@ -54,8 +54,8 @@ void gethostbyname2_0200(void)
     if (hptr != NULL) {
         flag = true;
     }
-    EXPECT_TRUE("gethostbyname2_0200", flag);
-    EXPECT_STREQ("gethostbyname2_0200", hptr->h_name, "::1");
+    EXPECT_TRUE("Gethostbyname20200", flag);
+    EXPECT_STREQ("Gethostbyname20200", hptr->h_name, "::1");
 }
 
 /**
@@ -63,7 +63,7 @@ void gethostbyname2_0200(void)
  * @tc.desc      : Verify cannot get host information (name parameter invalid)
  * @tc.level     : Level 2
  */
-void gethostbyname2_0300(void)
+void Gethostbyname20300(void)
 {
     bool flag = false;
     struct hostent *hptr;
@@ -71,7 +71,7 @@ void gethostbyname2_0300(void)
     if (hptr == NULL) {
         flag = true;
     }
-    EXPECT_TRUE("gethostbyname2_0300", flag);
+    EXPECT_TRUE("Gethostbyname20300", flag);
 }
 
 /**
@@ -79,7 +79,7 @@ void gethostbyname2_0300(void)
  * @tc.desc      : Verify that host information cannot be obtained (fd parameter invalid)
  * @tc.level     : Level 2
  */
-void gethostbyname2_0400(void)
+void Gethostbyname20400(void)
 {
     bool flag = false;
     struct hostent *hptr;
@@ -87,17 +87,18 @@ void gethostbyname2_0400(void)
     if (hptr == NULL) {
         flag = true;
     }
-    EXPECT_TRUE("gethostbyname2_0400", flag);
+    EXPECT_TRUE("Gethostbyname20400", flag);
 }
 
 static TEST_FUN G_Fun_Array[] = {
-    gethostbyname2_0100,
-    gethostbyname2_0200,
-    gethostbyname2_0300,
-    gethostbyname2_0400,
+    Gethostbyname20100,
+    Gethostbyname20200,
+    Gethostbyname20300,
+    Gethostbyname20400,
 };
 
-static int Gethostbyname2Test_impl(int argc, char *argv[]){
+static int Gethostbyname2TestImpl(int argc, char *argv[])
+{
     int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
     for (int pos = 0; pos < num; ++pos) {
         G_Fun_Array[pos]();
@@ -108,7 +109,7 @@ static int Gethostbyname2Test_impl(int argc, char *argv[]){
 
 int Gethostbyname2Test(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return Gethostbyname2Test_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return Gethostbyname2TestImpl(1, libcArgv);
 }

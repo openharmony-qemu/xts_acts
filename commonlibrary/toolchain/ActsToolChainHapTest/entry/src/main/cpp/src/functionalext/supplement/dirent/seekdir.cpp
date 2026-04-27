@@ -24,7 +24,7 @@
 
 static const char *path = "/data/storage/el2/base/cache/";
 
-static void handler(int sig)
+static void Handler(int sig)
 {
     exit(g_tStatus);
 }
@@ -34,7 +34,7 @@ static void handler(int sig)
  * @tc.desc      : set the position of the next readdir() call in the directory stream
  * @tc.level     : Level 0
  */
-void seekdir_0100(void)
+void Seekdir0100(void)
 {
     DIR *dir = opendir(path);
     if (dir == NULL) {
@@ -58,8 +58,8 @@ void seekdir_0100(void)
         t_error("%s failed: readdir\n", __func__);
     }
 
-    char d_name[BUFSIZ] = {0};
-    strcpy(d_name, result->d_name);
+    char dName[BUFSIZ] = {0};
+    strcpy(dName, result->d_name);
 
     errno = 0;
     seekdir(dir, offset);
@@ -72,8 +72,8 @@ void seekdir_0100(void)
         t_error("%s failed: readdir\n", __func__);
     }
 
-    if (strcmp(result->d_name, d_name)) {
-        t_error("%s failed: strcmp. result->d_name = %s, d_name = %s\n", __func__, result->d_name, d_name);
+    if (strcmp(result->d_name, dName)) {
+        t_error("%s failed: strcmp. result->d_name = %s, dName = %s\n", __func__, result->d_name, dName);
     }
 
     closedir(dir);
@@ -96,8 +96,8 @@ void seekdir_0200(void)
         t_error("%s failed: readdir\n", __func__);
     }
 
-    char d_name[BUFSIZ] = {0};
-    strcpy(d_name, result->d_name);
+    char dName[BUFSIZ] = {0};
+    strcpy(dName, result->d_name);
 
     errno = 0;
     seekdir(dir, 0);
@@ -110,8 +110,8 @@ void seekdir_0200(void)
         t_error("%s failed: readdir\n", __func__);
     }
 
-    if (strcmp(result->d_name, d_name)) {
-        t_error("%s failed: strcmp. result->d_name = %s, d_name = %s\n", __func__, result->d_name, d_name);
+    if (strcmp(result->d_name, dName)) {
+        t_error("%s failed: strcmp. result->d_name = %s, dName = %s\n", __func__, result->d_name, dName);
     }
 
     closedir(dir);
@@ -124,14 +124,15 @@ void seekdir_0200(void)
  */
 void seekdir_0300(void)
 {
-    signal(SIGSEGV, handler);
+    signal(SIGSEGV, Handler);
 
     DIR *dir = NULL;
     seekdir(dir, -1);
 }
 
-static int SeekdirTest_impl(int argc, char *argv[]){
-    seekdir_0100();
+static int SeekdirTestImpl(int argc, char *argv[])
+{
+    Seekdir0100();
     seekdir_0200();
     seekdir_0300();
 
@@ -140,7 +141,7 @@ static int SeekdirTest_impl(int argc, char *argv[]){
 
 int SeekdirTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return SeekdirTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return SeekdirTestImpl(1, libcArgv);
 }

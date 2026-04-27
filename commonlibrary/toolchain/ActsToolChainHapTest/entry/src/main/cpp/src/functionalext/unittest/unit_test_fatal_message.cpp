@@ -54,7 +54,8 @@ static TEST_FUN G_Fun_Array[] = {
     fatal_message_0010,
 };
 
-static int UnittestFatalMessageTest_impl(void){
+static int UnittestFatalMessageTest_impl(void)
+{
     int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
     for (int pos = 0; pos < num; ++pos) {
         G_Fun_Array[pos]();

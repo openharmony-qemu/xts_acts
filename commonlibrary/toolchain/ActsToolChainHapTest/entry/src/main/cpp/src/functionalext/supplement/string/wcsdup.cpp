@@ -20,7 +20,13 @@
 #include <wchar.h>
 #include "test.h"
 
-static void deal_aberrant(int code)
+// Test constants for wcsdup operations
+#define NUM_COPIES 5
+#define LONG_STRING_SIZE 1024
+#define LONG_STRING_LENGTH 1023
+#define ALPHABET_SIZE 26
+
+static void DealAberrant(int code)
 {
     if (code != SIGSEGV) {
         t_error("wcsdup_0200 code is %d are not SIGSEGV", __func__, code);
@@ -33,7 +39,7 @@ static void deal_aberrant(int code)
  * @tc.desc      : Call wcsdup to get a newly allocated wide string
  * @tc.level     : Level 0
  */
-void wcsdup_0100(void)
+void Wcsdup0100(void)
 {
     wchar_t *src = L"hello";
     wchar_t *result = wcsdup(src);
@@ -52,9 +58,9 @@ void wcsdup_0100(void)
  * @tc.desc      : Test the wcsdup result when the incoming null
  * @tc.level     : Level 2
  */
-void wcsdup_0200(void)
+void Wcsdup0200(void)
 {
-    signal(SIGSEGV, deal_aberrant);
+    signal(SIGSEGV, DealAberrant);
     wchar_t *result = wcsdup(NULL);
 }
 
@@ -63,7 +69,7 @@ void wcsdup_0200(void)
  * @tc.desc      : Copy an empty wide string
  * @tc.level     : Level 1
  */
-void wcsdup_0300(void)
+void Wcsdup0300(void)
 {
     wchar_t *src = L"";
     wchar_t *result = wcsdup(src);
@@ -90,7 +96,7 @@ void wcsdup_0300(void)
  * @tc.desc      : Copy wide string with Unicode characters
  * @tc.level     : Level 1
  */
-void wcsdup_0400(void)
+void Wcsdup0400(void)
 {
     wchar_t *src = L"Hello, 世界! 🌍";
     wchar_t *result = wcsdup(src);
@@ -119,7 +125,7 @@ void wcsdup_0400(void)
  * @tc.desc      : Verify copied string is independent memory
  * @tc.level     : Level 2
  */
-void wcsdup_0500(void)
+void Wcsdup0500(void)
 {
     wchar_t src[] = L"TestString";
     wchar_t *result = wcsdup(src);
@@ -153,7 +159,7 @@ void wcsdup_0500(void)
  * @tc.desc      : Test with extremely large string
  * @tc.level     : Level 2
  */
-void wcsdup_0600(void)
+void Wcsdup0600(void)
 {
     // This test might fail on systems with enough memory
     // It's testing edge case for memory allocation
@@ -185,7 +191,7 @@ void wcsdup_0600(void)
  * @tc.desc      : Copy string with control characters
  * @tc.level     : Level 1
  */
-void wcsdup_0700(void)
+void Wcsdup0700(void)
 {
     wchar_t src[] = L"Line1\nLine2\tTab\\Backslash\x01Control";
     wchar_t *result = wcsdup(src);
@@ -212,7 +218,7 @@ void wcsdup_0700(void)
  * @tc.desc      : Verify null terminator is properly copied
  * @tc.level     : Level 1
  */
-void wcsdup_0800(void)
+void Wcsdup0800(void)
 {
     wchar_t *src = L"Test";
     wchar_t *result = wcsdup(src);
@@ -242,14 +248,14 @@ void wcsdup_0800(void)
  * @tc.desc      : Call wcsdup multiple times
  * @tc.level     : Level 1
  */
-void wcsdup_0900(void)
+void Wcsdup0900(void)
 {
     wchar_t *src = L"MultipleCopy";
-    wchar_t *copies[5];
+    wchar_t *copies[NUM_COPIES];
     int i;
     
     // Create multiple copies
-    for (i = 0; i < 5; i++) {
+    for (i = 0; i < NUM_COPIES; i++) {
         copies[i] = wcsdup(src);
         if (copies[i] == NULL) {
             t_error("%s Memory allocation failed at iteration %d\n", __func__, i);
@@ -266,12 +272,12 @@ void wcsdup_0900(void)
     }
     
     // Verify all copies are independent
-    for (i = 0; i < 5; i++) {
+    for (i = 0; i < NUM_COPIES; i++) {
         copies[i][0] = L'0' + i;  // Modify first character
     }
     
-    for (i = 0; i < 5; i++) {
-        for (int j = i + 1; j < 5; j++) {
+    for (i = 0; i < NUM_COPIES; i++) {
+        for (int j = i + 1; j < NUM_COPIES; j++) {
             if (wcscmp(copies[i], copies[j]) == 0) {
                 t_error("%s Copies %d and %d are not independent\n", __func__, i, j);
             }
@@ -279,7 +285,7 @@ void wcsdup_0900(void)
     }
     
     // Clean up
-    for (i = 0; i < 5; i++) {
+    for (i = 0; i < NUM_COPIES; i++) {
         free(copies[i]);
     }
 }
@@ -289,7 +295,7 @@ void wcsdup_0900(void)
  * @tc.desc      : Verify returned pointer is valid for writing
  * @tc.level     : Level 2
  */
-void wcsdup_1000(void)
+void Wcsdup1000(void)
 {
     wchar_t *src = L"ReadOnly";
     wchar_t *result = wcsdup(src);
@@ -319,14 +325,14 @@ void wcsdup_1000(void)
  * @tc.desc      : Copy a long wide string
  * @tc.level     : Level 1
  */
-void wcsdup_1100(void)
+void Wcsdup1100(void)
 {
     // Create a long string
-    wchar_t long_str[1024];
-    for (int i = 0; i < 1023; i++) {
-        long_str[i] = L'A' + (i % 26);
+    wchar_t long_str[LONG_STRING_SIZE];
+    for (int i = 0; i < LONG_STRING_LENGTH; i++) {
+        long_str[i] = L'A' + (i % ALPHABET_SIZE);
     }
-    long_str[1023] = L'\0';
+    long_str[LONG_STRING_LENGTH] = L'\0';
     
     wchar_t *result = wcsdup(long_str);
     
@@ -340,31 +346,32 @@ void wcsdup_1100(void)
     }
     
     // Verify length
-    if (wcslen(result) != 1023) {
+    if (wcslen(result) != LONG_STRING_LENGTH) {
         t_error("%s Long string length incorrect: %zu\n", __func__, wcslen(result));
     }
     
     free(result);
 }
 
-static int WcsdupTest_impl(int argc, char *argv[]){
-    wcsdup_0100();
-    wcsdup_0200();
-    wcsdup_0300();
-    wcsdup_0400();
-    wcsdup_0500();
-    wcsdup_0600();
-    wcsdup_0700();
-    wcsdup_0800();
-    wcsdup_0900();
-    wcsdup_1000();
-    wcsdup_1100();
+static int WcsdupTest_impl(int argc, char *argv[])
+{
+    Wcsdup0100();
+    Wcsdup0200();
+    Wcsdup0300();
+    Wcsdup0400();
+    Wcsdup0500();
+    Wcsdup0600();
+    Wcsdup0700();
+    Wcsdup0800();
+    Wcsdup0900();
+    Wcsdup1000();
+    Wcsdup1100();
     return g_tStatus;
 }
 
 int WcsdupTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return WcsdupTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return WcsdupTest_impl(1, libcArgv);
 }

@@ -35,7 +35,6 @@ const int32_t CREAT_MODE = TEST_MODE;
 static void rewind_0100(void)
 {
     const char *filepath = "/data/storage/el2/base/cache/rewind_0100.txt";
-    
     // Create file using creat()
     int32_t fd = creat(filepath, CREAT_MODE);
     if (fd < 0) {
@@ -51,7 +50,7 @@ static void rewind_0100(void)
         remove(filepath);
         return;
     }
-    
+
     // Write content to file
     char str[] = "test";
     size_t written = fwrite(str, 1, strlen(str), fptr);
@@ -61,7 +60,7 @@ static void rewind_0100(void)
         remove(filepath);
         return;
     }
-    
+
     int32_t ret = fclose(fptr);
     EXPECT_EQ("rewind_0100", ret, 0);
 
@@ -72,7 +71,7 @@ static void rewind_0100(void)
         remove(filepath);
         return;
     }
-    
+
     // Read one character to move file position
     int ch = fgetc(fptr);
     if (ch == EOF) {
@@ -81,28 +80,28 @@ static void rewind_0100(void)
         remove(filepath);
         return;
     }
-    
+
     // Verify we're not at EOF yet (there should be more data)
     // After reading 't', we should not be at EOF
-    
     // Rewind to beginning of file
     rewind(fptr);
-    
+
     // After rewind, EOF flag should be cleared
     EXPECT_FALSE("rewind_0100", feof(fptr));
-    
+
     // Verify we can read from the beginning again
     ch = fgetc(fptr);
     if (ch != 't') {
-        t_error("rewind_0100: after rewind, expected 't' but got '%c' (EOF=%d)\n", 
+        t_error("rewind_0100: after rewind, expected 't' but got '%c' (EOF=%d)\n",
                 ch == EOF ? '?' : ch, feof(fptr));
     }
-    
+
     fclose(fptr);
     remove(filepath);
 }
 
-static int RewindTest_impl(void){
+static int RewindTest_impl(void)
+{
     rewind_0100();
     return g_tStatus;
 }

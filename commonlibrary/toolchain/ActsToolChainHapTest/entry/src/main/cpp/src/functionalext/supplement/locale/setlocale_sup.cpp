@@ -155,7 +155,8 @@ static void setlocale_0600(void)
     }
 }
 
-static int SetlocaleSupTest_impl(void){
+static int SetlocaleSupTest_impl(void)
+{
     setlocale_0100();
     setlocale_0200();
     setlocale_0300();

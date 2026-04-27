@@ -24,9 +24,9 @@ static void *threadfuncA(void *arg)
 {
     int32_t value = 0;
     int32_t ret = pthread_setspecific(g_key, &value);
-    EXPECT_EQ("pthread_getspecific_0100", ret, 0);
+    EXPECT_EQ("PthreadGetspecific0100", ret, 0);
     int32_t *keyRet = (int32_t *)pthread_getspecific(g_key);
-    EXPECT_EQ("pthread_getspecific_0100", *keyRet, 0);
+    EXPECT_EQ("PthreadGetspecific0100", *keyRet, 0);
     return arg;
 }
 
@@ -35,7 +35,7 @@ static void *threadfuncA(void *arg)
  * @tc.desc:      Verify pthread_getspecific process success.
  * @tc.level:     level 0
  */
-void pthread_getspecific_0100(void)
+void PthreadGetspecific0100(void)
 {
     pthread_key_create(&g_key, NULL);
     pthread_t tid1;
@@ -44,13 +44,14 @@ void pthread_getspecific_0100(void)
     pthread_key_delete(g_key);
 }
 
-static int PthreadGetspecificTestTest_impl(void){
-    pthread_getspecific_0100();
+static int PthreadGetspecificTestImpl(void)
+{
+    PthreadGetspecific0100();
     return g_tStatus;
 }
 
 int PthreadGetspecificTestTest(void)
 {
-    return PthreadGetspecificTestTest_impl();
+    return PthreadGetspecificTestImpl();
 }
 

@@ -41,7 +41,8 @@
             t_error("%s strrchr(%s,NULL) returned %s is not ''\n", #no, #str, result); \
     }
 
-static int StrrchrTest_impl(int argc, char *argv[]){
+static int StrrchrTest_impl(int argc, char *argv[])
+{
     /**
      * @tc.name      : strrchr_0100
      * @tc.desc      : Get the position of the last occurrence of a character in a string

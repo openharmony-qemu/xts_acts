@@ -50,12 +50,12 @@ void testfunc(void *arg)
  * @tc.desc:      Verify pthread_key_create process success when second args is null.
  * @tc.desc:      level 0
  */
-void pthread_key_create_0100(void)
+void PthreadKeyCreate0100(void)
 {
     pthread_t tid1;
     pthread_create(&tid1, NULL, threadfuncA, NULL);
     int32_t ret = pthread_key_create(&g_key, NULL);
-    EXPECT_EQ("pthread_key_create_0100", ret, 0);
+    EXPECT_EQ("PthreadKeyCreate0100", ret, 0);
     pthread_join(tid1, NULL);
     pthread_key_delete(g_key);
 }
@@ -65,23 +65,24 @@ void pthread_key_create_0100(void)
  * @tc.desc:      Verify pthread_key_create process success when second args is not null.
  * @tc.desc:      level 1
  */
-void pthread_key_create_0200(void)
+void PthreadKeyCreate0200(void)
 {
     pthread_t tid2;
     int32_t ret = pthread_key_create(&g_key, testfunc);
     pthread_create(&tid2, NULL, threadfuncB, NULL);
     pthread_join(tid2, NULL);
-    EXPECT_EQ("pthread_key_create_0200", ret, 0);
+    EXPECT_EQ("PthreadKeyCreate0200", ret, 0);
 }
 
-static int PthreadKeyCreateTestTest_impl(void){
-    pthread_key_create_0100();
-    pthread_key_create_0200();
+static int PthreadKeyCreateTestImpl(void)
+{
+    PthreadKeyCreate0100();
+    PthreadKeyCreate0200();
     return g_tStatus;
 }
 
 int PthreadKeyCreateTestTest(void)
 {
-    return PthreadKeyCreateTestTest_impl();
+    return PthreadKeyCreateTestImpl();
 }
 

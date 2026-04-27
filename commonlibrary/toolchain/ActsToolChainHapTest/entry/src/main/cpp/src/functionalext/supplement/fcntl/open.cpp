@@ -16,6 +16,10 @@
 #include <fcntl.h>
 #include "functionalext.h"
 
+// Test constants for file operations
+#define TEST_STRING_LENGTH 5
+#define EXPECTED_FD_VALUE 2
+
 typedef void (*TEST_FUN)();
 
 static const char *path = "/data/storage/el2/base/cache/test.txt";
@@ -32,7 +36,7 @@ void open_0100(void)
     int fd = open(path, O_RDONLY + O_CREAT, TEST_MODE);
     int len = write(fd, s, sizeof(s));
     ssize_t size = read(fd, buffer, sizeof(buffer));
-    EXPECT_MT("open_0100", fd, 2);
+    EXPECT_MT("open_0100", fd, EXPECTED_FD_VALUE);
     EXPECT_EQ("open_0100", len, -1);
     EXPECT_STREQ("open_0100", buffer, "");
 
@@ -62,10 +66,10 @@ void open_0300(void)
     char buffer[80] = {0};
     int fd = open(path, O_WRONLY + O_CREAT, TEST_MODE);
     ssize_t size = read(fd, buffer, sizeof(buffer));
-    EXPECT_MT("open_0300", fd, 2);
+    EXPECT_MT("open_0300", fd, EXPECTED_FD_VALUE);
     EXPECT_STREQ("open_0300", buffer, "");
     int len = write(fd, s, sizeof(s));
-    EXPECT_EQ("open_0300", len, 5);
+    EXPECT_EQ("open_0300", len, TEST_STRING_LENGTH);
     close(fd);
     remove(path);
 }
@@ -92,10 +96,10 @@ void open_0500(void)
     char buffer[80] = {0};
     int fd = open(path, O_RDWR | O_APPEND + O_CREAT, TEST_MODE);
     ssize_t size = read(fd, buffer, sizeof(buffer));
-    EXPECT_MT("open_0500", fd, 2);
+    EXPECT_MT("open_0500", fd, EXPECTED_FD_VALUE);
     EXPECT_STREQ("open_0500", buffer, "");
     int len = write(fd, s, sizeof(s));
-    EXPECT_EQ("open_0500", len, 5);
+    EXPECT_EQ("open_0500", len, TEST_STRING_LENGTH);
     close(fd);
     remove(path);
 }
@@ -140,10 +144,10 @@ void open_0800(void)
     char buffer[80] = {0};
     int fd = open(path, O_RDWR | O_CREAT, TEST_MODE);
     ssize_t size = read(fd, buffer, sizeof(buffer));
-    EXPECT_MT("open_0800", fd, 2);
+    EXPECT_MT("open_0800", fd, EXPECTED_FD_VALUE);
     EXPECT_STREQ("open_0800", buffer, "");
     int len = write(fd, s, sizeof(s));
-    EXPECT_EQ("open_0800", len, 5);
+    EXPECT_EQ("open_0800", len, TEST_STRING_LENGTH);
     close(fd);
     remove(path);
 }
@@ -159,10 +163,10 @@ void open_0900(void)
     char buffer[80] = {0};
     int fd = open(path, O_RDWR | O_CLOEXEC + O_CREAT, TEST_MODE);
     ssize_t size = read(fd, buffer, sizeof(buffer));
-    EXPECT_MT("open_0900", fd, 2);
+    EXPECT_MT("open_0900", fd, EXPECTED_FD_VALUE);
     EXPECT_STREQ("open_0900", buffer, "");
     int len = write(fd, s, sizeof(s));
-    EXPECT_EQ("open_0900", len, 5);
+    EXPECT_EQ("open_0900", len, TEST_STRING_LENGTH);
     close(fd);
     remove(path);
 }
@@ -180,7 +184,8 @@ static TEST_FUN G_Fun_Array[] = {
 
 };
 
-static int OpenTest_impl(int argc, char *argv[]){
+static int OpenTest_impl(int argc, char *argv[])
+{
     int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
     for (int pos = 0; pos < num; ++pos) {
         G_Fun_Array[pos]();

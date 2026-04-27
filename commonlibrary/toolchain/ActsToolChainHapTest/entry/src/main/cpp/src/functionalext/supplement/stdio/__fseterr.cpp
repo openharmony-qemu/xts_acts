@@ -21,27 +21,27 @@
  * @tc.desc      : Set stream in error
  * @tc.level     : Level 0
  */
-void __fseterr_0100(void)
+void Fseterr0100(void)
 {
     FILE *fp = fopen("/dev/null", "w");
 
-    EXPECT_FALSE("__fseterr_0100", ferror(fp));
+    EXPECT_FALSE("Fseterr0100", ferror(fp));
     __fseterr(fp);
-    EXPECT_TRUE("__fseterr_0100", ferror(fp));
+    EXPECT_TRUE("Fseterr0100", ferror(fp));
     clearerr(fp);
-    EXPECT_FALSE("__fseterr_0100", ferror(fp));
+    EXPECT_FALSE("Fseterr0100", ferror(fp));
     fclose(fp);
 }
 
-static int __fseterrTest_with_args(int argc, char *argv[])
+static int FseterrTestWithArgs(int argc, char *argv[])
 {
-    __fseterr_0100();
+    Fseterr0100();
     return g_tStatus;
 }
 
 int FseterrTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return __fseterrTest_with_args(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return FseterrTestWithArgs(1, libcArgv);
 }

@@ -23,17 +23,17 @@ static const char *path = "/data/storage/el2/base/cache/freadable.txt";
  * @tc.desc      : The parameters are valid, and the file can be judged to be readable.
  * @tc.level     : Level 0
  */
-void __freadable_0100(void)
+void Freadable0100(void)
 {
     char buf[100];
     FILE *fp = fopen(path, "w");
-    EXPECT_PTRNE("__freadable_0100", fp, NULL);
+    EXPECT_PTRNE("Freadable0100", fp, NULL);
     fclose(fp);
     FILE *ffp = fopen(path, "r");
-    EXPECT_PTRNE("__freadable_0100", ffp, NULL);
+    EXPECT_PTRNE("Freadable0100", ffp, NULL);
 
     size_t ret = __freadable(ffp);
-    EXPECT_NE("__freadable_0100", ret, 0);
+    EXPECT_NE("Freadable0100", ret, 0);
 
     fclose(ffp);
     remove(path);
@@ -44,28 +44,28 @@ void __freadable_0100(void)
  * @tc.desc      : The parameters are valid, and the file can be judged to be unreadable.
  * @tc.level     : Level 1
  */
-void __freadable_0200(void)
+void Freadable0200(void)
 {
     FILE *fp = fopen(path, "wb");
-    EXPECT_PTRNE("__freadable_0200", fp, NULL);
+    EXPECT_PTRNE("Freadable0200", fp, NULL);
 
     size_t ret = __freadable(fp);
-    EXPECT_EQ("__freadable_0200", ret, 0);
+    EXPECT_EQ("Freadable0200", ret, 0);
 
     fclose(fp);
     remove(path);
 }
 
-static int __freadableTest_with_args(int argc, char *argv[])
+static int FreadableTestWithArgs(int argc, char *argv[])
 {
-    __freadable_0100();
-    __freadable_0200();
+    Freadable0100();
+    Freadable0200();
     return g_tStatus;
 }
 
 int FreadableTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return __freadableTest_with_args(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return FreadableTestWithArgs(1, libcArgv);
 }

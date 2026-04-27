@@ -21,7 +21,7 @@
 
 #define BUFF_SIZE (40)
 
-static void handler(int sig)
+static void Handler(int sig)
 {
     exit(g_tStatus);
 }
@@ -31,7 +31,7 @@ static void handler(int sig)
  * @tc.desc      : Copies the C wide string pointed by wcs into the array pointed by des
  * @tc.level     : Level 0
  */
-void wcscpy_0100(void)
+void Wcscpy0100(void)
 {
     wchar_t wcs[] = L"wcscpy test";
     wchar_t des[BUFF_SIZE];
@@ -63,14 +63,15 @@ void wcscpy_0200(void)
  */
 void wcscpy_0300(void)
 {
-    signal(SIGSEGV, handler);
+    signal(SIGSEGV, Handler);
 
     wchar_t wcs[] = L"wcscpy test";
     wcscpy(NULL, wcs);
 }
 
-static int WcscpyTest_impl(int argc, char *argv[]){
-    wcscpy_0100();
+static int WcscpyTestImpl(int argc, char *argv[])
+{
+    Wcscpy0100();
     wcscpy_0200();
     wcscpy_0300();
     return g_tStatus;
@@ -78,7 +79,7 @@ static int WcscpyTest_impl(int argc, char *argv[]){
 
 int WcscpyTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return WcscpyTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return WcscpyTestImpl(1, libcArgv);
 }

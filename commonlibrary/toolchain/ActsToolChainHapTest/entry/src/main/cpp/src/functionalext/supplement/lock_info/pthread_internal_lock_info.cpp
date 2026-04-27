@@ -113,7 +113,8 @@ void PthreadInternalLockInfoTestCase(void)
     printf("hilogResult=%d\n", hilogResult);
 }
 
-static int PthreadInternalLockInfoTest_impl(void){
+static int PthreadInternalLockInfoTest_impl(void)
+{
     // 解除限制
     system("/bin/hilog -Q pidoff");
     system("/bin/hilog -Q domainoff");

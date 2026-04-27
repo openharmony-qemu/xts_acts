@@ -122,7 +122,8 @@ void semtimedop_time64_0200(void)
     }
 }
 
-static int SemtimedopTest_impl(int argc, char *argv[]){
+static int SemtimedopTest_impl(int argc, char *argv[])
+{
     // semtimedop_0100();
     // semtimedop_0200();
     // semtimedop_time64_0200();

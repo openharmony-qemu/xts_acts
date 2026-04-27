@@ -138,7 +138,8 @@ void ProcessRetry()
     assert(0);
 }
 
-static int UnittestFatalMessageAssertFailDialogTest_impl(void){
+static int UnittestFatalMessageAssertFailDialogTest_impl(void)
+{
     signal(SIGUSR1, SIG_DFL);
     pid_t pid1, pid2, pid3;
     int status;

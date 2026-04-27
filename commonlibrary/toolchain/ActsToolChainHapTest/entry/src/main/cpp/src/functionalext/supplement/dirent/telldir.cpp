@@ -66,7 +66,8 @@ void telldir_0200(void)
     telldir(dir);
 }
 
-static int TelldirTest_impl(int argc, char *argv[]){
+static int TelldirTest_impl(int argc, char *argv[])
+{
     telldir_0100();
     telldir_0200();
     return g_tStatus;

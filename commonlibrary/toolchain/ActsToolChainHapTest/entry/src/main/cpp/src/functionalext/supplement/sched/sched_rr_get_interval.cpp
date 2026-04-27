@@ -83,7 +83,8 @@ void sched_rr_get_interval_time64_0100(void)
     }
 }
 
-static int SchedRrGetIntervalTest_impl(int argc, char *argv[]){
+static int SchedRrGetIntervalTest_impl(int argc, char *argv[])
+{
     sched_rr_get_interval_0100();
     sched_rr_get_interval_0200();
     sched_rr_get_interval_time64_0100();

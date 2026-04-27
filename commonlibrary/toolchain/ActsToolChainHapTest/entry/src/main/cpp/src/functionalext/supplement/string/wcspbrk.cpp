@@ -18,6 +18,10 @@
 #include <string.h>
 #include "test.h"
 
+// Test constants for wcspbrk operations
+#define CHARACTER_OFFSET_2 2
+#define CHARACTER_OFFSET_5 5
+
 /**
  * @tc.name      : wcspbrk_0100
  * @tc.desc      : Test wcspbrk to get the first occurrence of the target character in the source string
@@ -54,13 +58,13 @@ void wcspbrk_0200(void)
  * @tc.desc      : Test the result of wcspbrk when the target character appears in the middle of the source character
  * @tc.level     : Level 1
  */
-void wcspbrk_0300(void)
+void Wcspbrk0300(void)
 {
     const wchar_t *s = L"hello, world!";
     // 修复：使用 const wchar_t* 接收返回值
     const wchar_t *result = wcspbrk(s, L"l");
-    if (wcscmp(result, s + 2) != 0) {
-        t_error("%s wcspbrk get result is %lc are not %lc\n", __func__, *result, *(s + 2));
+    if (wcscmp(result, s + CHARACTER_OFFSET_2) != 0) {
+        t_error("%s wcspbrk get result is %lc are not %lc\n", __func__, *result, *(s + CHARACTER_OFFSET_2));
     }
 }
 
@@ -74,22 +78,23 @@ void wcspbrk_0400(void)
     const wchar_t *s = L"hello, world!";
     // 修复：使用 const wchar_t* 接收返回值
     const wchar_t *result = wcspbrk(s, L",. !");
-    if (wcscmp(result, s + 5) != 0) {
-        t_error("%s wcspbrk get result is %lc are not %lc\n", __func__, *result, *(s + 5));
+    if (wcscmp(result, s + CHARACTER_OFFSET_5) != 0) {
+        t_error("%s wcspbrk get result is %lc are not %lc\n", __func__, *result, *(s + CHARACTER_OFFSET_5));
     }
 }
 
-static int WcspbrkTest_impl(int argc, char *argv[]){
+static int WcspbrkTestImpl(int argc, char *argv[])
+{
     wcspbrk_0100();
     wcspbrk_0200();
-    wcspbrk_0300();
+    Wcspbrk0300();
     wcspbrk_0400();
     return g_tStatus;
 }
 
 int WcspbrkTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return WcspbrkTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return WcspbrkTestImpl(1, libcArgv);
 }

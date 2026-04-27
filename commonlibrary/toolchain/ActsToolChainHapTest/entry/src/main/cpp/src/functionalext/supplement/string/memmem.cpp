@@ -16,6 +16,11 @@
 #include <string.h>
 #include "functionalext.h"
 
+// Test constants for memmem operations
+#define PARTIAL_MATCH_LENGTH 3
+#define BINARY_DATA_OFFSET 2
+#define NEEDLE_LENGTH 2
+
 /**
  * @tc.name      : memmem_0100
  * @tc.desc      : Normal value test, assert whether the address value of the return value is
@@ -53,7 +58,7 @@ void memmem_0200(void)
     ptr = (char *)memmem(buffer, sizeof(buffer), "musl", errlen);
     EXPECT_PTREQ("memmem_0200", ptr, NULL);
 
-    ptr = (char *)memmem(buffer, sizeof(buffer), "muls", 3);
+    ptr = (char *)memmem(buffer, sizeof(buffer), "muls", PARTIAL_MATCH_LENGTH);
     EXPECT_PTREQ("memmem_0200", ptr, NULL);
 }
 
@@ -93,7 +98,7 @@ void memmem_0500(void)
     const unsigned char buffer[] = {0x01, 0x02, 0x03, 0x04, 0x05};
     const unsigned char needle[] = {0x03, 0x04};
     char *ptr = (char *)memmem(buffer, sizeof(buffer), needle, sizeof(needle));
-    EXPECT_PTREQ("memmem_0500", ptr, (char *)buffer + 2);
+    EXPECT_PTREQ("memmem_0500", ptr, (char *)buffer + BINARY_DATA_OFFSET);
 }
 
 /**
@@ -118,7 +123,7 @@ void memmem_0700(void)
 {
     const char buffer[] = "test musl";
     const char needle[] = "musx";
-    char *ptr = (char *)memmem(buffer, sizeof(buffer), needle, 3); // Only compare first 3 chars
+    char *ptr = (char *)memmem(buffer, sizeof(buffer), needle, PARTIAL_MATCH_LENGTH); // Only compare first 3 chars
     EXPECT_PTREQ("memmem_0700", ptr, buffer + 5);
 }
 
@@ -135,7 +140,8 @@ void memmem_0800(void)
     EXPECT_PTREQ("memmem_0800", ptr, NULL);
 }
 
-static int MemmemTest_impl(void){
+static int MemmemTest_impl(void)
+{
     memmem_0100();
     memmem_0200();
     memmem_0300();

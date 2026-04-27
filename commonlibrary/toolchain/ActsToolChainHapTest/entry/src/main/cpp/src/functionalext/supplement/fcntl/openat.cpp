@@ -51,7 +51,8 @@ void openat_0200(void)
     EXPECT_EQ("openat_0200", ret, ERREXPECT);
 }
 
-static int OpenatTest_impl(void){
+static int OpenatTest_impl(void)
+{
     openat_0100();
     openat_0200();
     return g_tStatus;

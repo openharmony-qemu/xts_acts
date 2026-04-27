@@ -16,6 +16,8 @@
 #include <stdio_ext.h>
 #include "functionalext.h"
 
+#define BUFFER_SIZE 100
+
 static const char *path = "/data/storage/el2/base/cache/freading.txt";
 
 /**
@@ -24,7 +26,7 @@ static const char *path = "/data/storage/el2/base/cache/freading.txt";
  *                 be judged to be read-only.
  * @tc.level     : Level 0
  */
-void __freading_0100(void)
+void Freading0100(void)
 {
     char *str = "This is a test";
     FILE *fp = fopen(path, "w");
@@ -32,7 +34,7 @@ void __freading_0100(void)
     fclose(fp);
     FILE *ffp = fopen(path, "r");
     size_t ret = __freading(ffp);
-    EXPECT_NE("__freading_0100", ret, 0);
+    EXPECT_NE("Freading0100", ret, 0);
     fclose(ffp);
     remove(path);
 }
@@ -43,17 +45,17 @@ void __freading_0100(void)
  *                 stream has been read.
  * @tc.level     : Level 0
  */
-void __freading_0200(void)
+void Freading0200(void)
 {
     char *str = "This is a test";
     FILE *fp = fopen(path, "w");
     fputs(str, fp);
     fclose(fp);
     FILE *ffp = fopen(path, "r");
-    char buf[100];
-    fgets(buf, 100, ffp);
+    char buf[BUFFER_SIZE];
+    fgets(buf, BUFFER_SIZE, ffp);
     size_t ret = __freading(ffp);
-    EXPECT_NE("__freading_0200", ret, 0);
+    EXPECT_NE("Freading0200", ret, 0);
     fclose(ffp);
     remove(path);
 }
@@ -64,28 +66,28 @@ void __freading_0200(void)
  *                 has not been read.
  * @tc.level     : Level 2
  */
-void __freading_0300(void)
+void Freading0300(void)
 {
     char *str = "This is a test";
     FILE *fp = fopen(path, "w");
     fputs(str, fp);
     size_t ret = __freading(fp);
-    EXPECT_EQ("__freading_0300", ret, 0);
+    EXPECT_EQ("Freading0300", ret, 0);
     fclose(fp);
     remove(path);
 }
 
-static int __freadingTest_with_args(int argc, char *argv[])
+static int FreadingTestWithArgs(int argc, char *argv[])
 {
-    __freading_0100();
-    __freading_0200();
-    __freading_0300();
+    Freading0100();
+    Freading0200();
+    Freading0300();
     return g_tStatus;
 }
 
 int FreadingTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return __freadingTest_with_args(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return FreadingTestWithArgs(1, libcArgv);
 }

@@ -1,23 +1,16 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to
- * deal in the Software without restriction, including without limitation the
- * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
- * sell copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
- * IN THE SOFTWARE.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 #include <stdio.h>
@@ -34,29 +27,29 @@
  *                 Input parameters are Uppercase letters, verify conversion to Lowercase letters.
  * @tc.level     : Level 1
  */
-void towupper_l_0100(void)
+void TowupperL0100(void)
 {
-    locale_t m_locale = newlocale(LC_ALL_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", NULL);
     const char *upstr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const char *lowstr = "abcdefghijklmnopqrstuvwxyz";
     const char *up = upstr;
     const char *lp = lowstr;
     wint_t res = 0;
 
-    if (!m_locale) {
+    if (!mLocale) {
         t_error("Test case %s failed to call function newlocale\n", __FUNCTION__);
         return;
     }
 
     while (up && *up != '\0' && lp && *lp != '\0') {
-        res = towupper_l(*lp, m_locale);
+        res = towupper_l(*lp, mLocale);
         if (res != *up) {
             t_error("Test case %s failed, get result is %c but want get value %c\n", __FUNCTION__, (char)res, *lp);
         }
         up++;
         lp++;
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -65,26 +58,26 @@ void towupper_l_0100(void)
  *                 Input parameters as numbers, verify conversion to Lowercase letters.
  * @tc.level     : Level 1
  */
-void towupper_l_0200(void)
+void TowupperL0200(void)
 {
-    locale_t m_locale = newlocale(LC_ALL_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", NULL);
     const char *str = "0123456789";
     const char *p = str;
     wint_t res = 0;
 
-    if (!m_locale) {
+    if (!mLocale) {
         t_error("Test case %s failed to call function newlocale\n", __FUNCTION__);
         return;
     }
 
     while (p && *p != '\0') {
-        res = towupper_l(*p, m_locale);
+        res = towupper_l(*p, mLocale);
         if (res != *p) {
             t_error("Test case %s failed, result is %c but want get value %c \n", __FUNCTION__, (char)res, *p);
         }
         p++;
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -93,26 +86,26 @@ void towupper_l_0200(void)
  *                 Input parameters as numbers, verify conversion to Lowercase letters.
  * @tc.level     : Level 1
  */
-void towupper_l_0300(void)
+void TowupperL0300(void)
 {
-    locale_t m_locale = newlocale(LC_ALL_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_ALL_MASK, "zh_CN", NULL);
     const char *str = "0123456789";
     const char *p = str;
     wint_t res = 0;
 
-    if (!m_locale) {
+    if (!mLocale) {
         t_error("Test case %s failed to call function newlocale\n", __FUNCTION__);
         return;
     }
 
     while (p && *p != '\0') {
-        res = towupper_l(*p, m_locale);
+        res = towupper_l(*p, mLocale);
         if (res != *p) {
             t_error("Test case %s failed, result is %c but want get value %c \n", __FUNCTION__, (char)res, *p);
         }
         p++;
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -121,29 +114,29 @@ void towupper_l_0300(void)
  *                 Input parameters are Uppercase letters, verify conversion to Lowercase letters.
  * @tc.level     : Level 1
  */
-void towupper_l_0400(void)
+void TowupperL0400(void)
 {
-    locale_t m_locale = newlocale(LC_ALL_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_ALL_MASK, "zh_CN", NULL);
     const char *upstr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const char *lowstr = "abcdefghijklmnopqrstuvwxyz";
     const char *up = upstr;
     const char *lp = lowstr;
     wint_t res = 0;
 
-    if (!m_locale) {
+    if (!mLocale) {
         t_error("Test case %s failed to call function newlocale\n", __FUNCTION__);
         return;
     }
 
     while (up && *up != '\0' && lp && *lp != '\0') {
-        res = towupper_l(*lp, m_locale);
+        res = towupper_l(*lp, mLocale);
         if (res != *up) {
             t_error("Test case %s failed, get result is %c but want get value %c\n", __FUNCTION__, (char)res, *lp);
         }
         up++;
         lp++;
     }
-    freelocale(m_locale);
+    freelocale(mLocale);
 }
 
 /**
@@ -152,48 +145,49 @@ void towupper_l_0400(void)
  *                 Input parameter is the maximum value of int, please verify that the return is -1
  * @tc.level     : Level 1
  */
-void towupper_l_0500(void)
- {
-    locale_t m_locale = newlocale(LC_ALL_MASK, "zh_CN", NULL);
-    wint_t res = towupper_l(MAX_VALUE, m_locale);
+void TowupperL0500(void)
+{
+    locale_t mLocale = newlocale(LC_ALL_MASK, "zh_CN", NULL);
+    wint_t res = towupper_l(MAX_VALUE, mLocale);
     if (res != -1) {
         t_error("Test case %s failed, get result is -1 but want get value %d\n", __FUNCTION__, res);
-    } 
-    freelocale(m_locale);
- }
+    }
+    freelocale(mLocale);
+}
 
- /**
+/**
  * @tc.name      : towupper_l_0600
  * @tc.desc      : Verify towupper_l process success when using the en_US.UTF-8 character set.
  *                 Input parameter is the maximum value of int, please verify that the return is -1
  * @tc.level     : Level 1
  */
-void towupper_l_0600(void)
- {
-    locale_t m_locale = newlocale(LC_ALL_MASK, "en_US.UTF-8", NULL);
-    wint_t res = towupper_l(MAX_VALUE, m_locale);
+void TowupperL0600(void)
+{
+    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", NULL);
+    wint_t res = towupper_l(MAX_VALUE, mLocale);
     if (res != -1) {
         t_error("Test case %s failed, get result is -1 but want get value %d\n", __FUNCTION__, res);
-    } 
-    freelocale(m_locale);
- }
+    }
+    freelocale(mLocale);
+}
 
-static int TowupperLTest_impl(int argc, char *argv[]){
-     typedef void (*set_wctype_icu_enable_func)(void);
-    set_wctype_icu_enable_func set_wctype_icu_enable = (set_wctype_icu_enable_func)dlsym(RTLD_DEFAULT, "set_wctype_icu_enable");
-    set_wctype_icu_enable();
-    towupper_l_0100();
-    towupper_l_0200();
-    towupper_l_0300();
-    towupper_l_0400();
-    towupper_l_0500();
-    towupper_l_0600();
+static int TowupperLTestImpl(int argc, char *argv[])
+{
+    typedef void (*SetWctypeIcuEnableFunc)(void);
+    SetWctypeIcuEnableFunc setWctypeIcuEnable = (SetWctypeIcuEnableFunc)dlsym(RTLD_DEFAULT, "set_wctype_icu_enable");
+    setWctypeIcuEnable();
+    TowupperL0100();
+    TowupperL0200();
+    TowupperL0300();
+    TowupperL0400();
+    TowupperL0500();
+    TowupperL0600();
     return g_tStatus;
 }
 
 int TowupperLTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return TowupperLTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return TowupperLTestImpl(1, libcArgv);
 }

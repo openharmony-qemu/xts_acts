@@ -79,7 +79,8 @@ void rewinddir_0200(void)
     rewinddir(dir);
 }
 
-static int RewinddirTest_impl(int argc, char *argv[]){
+static int RewinddirTest_impl(int argc, char *argv[])
+{
     rewinddir_0100();
     rewinddir_0200();
 

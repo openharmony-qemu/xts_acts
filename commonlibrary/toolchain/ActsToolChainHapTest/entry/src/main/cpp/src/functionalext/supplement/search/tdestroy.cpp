@@ -81,7 +81,8 @@ void tdestroy_0100(void)
     }
 }
 
-static int TdestroyTest_impl(int argc, char *argv[]){
+static int TdestroyTest_impl(int argc, char *argv[])
+{
     tdestroy_0100();
     return g_tStatus;
 }

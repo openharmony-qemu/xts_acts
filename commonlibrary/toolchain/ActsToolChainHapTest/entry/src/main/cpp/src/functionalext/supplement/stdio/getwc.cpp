@@ -21,7 +21,7 @@
  * @tc.desc      : Verify that wide characters can be obtained from the file (parameters are valid)
  * @tc.level     : Level 0
  */
-void getwc_0100(void)
+void Getwc0100(void)
 {
     const char *ptr = "/data/storage/el2/base/cache/test.txt";
     FILE *fptr = fopen(ptr, "w+");
@@ -35,12 +35,13 @@ void getwc_0100(void)
     remove(ptr);
 }
 
-static int GetwcTest_impl(void){
-    getwc_0100();
+static int GetwcTestImpl(void)
+{
+    Getwc0100();
     return g_tStatus;
 }
 
 int GetwcTest(void)
 {
-    return GetwcTest_impl();
+    return GetwcTestImpl();
 }

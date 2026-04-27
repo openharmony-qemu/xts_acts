@@ -24,27 +24,28 @@
 
 typedef void (*TEST_FUN)();
 const int32_t COUNT_ZERO = 0;
+#define HOST_BUFFER_SIZE 1024
 
 /**
  * @tc.name      : gethostbyname_r_0100
  * @tc.desc      : Verify that the host information can be obtained
  * @tc.level     : Level 0
  */
-void gethostbyname_r_0100(void)
+void GethostbynameR0100(void)
 {
     bool flag = false;
     int result = 10;
     struct hostent h;
-    char buf[1024] = "\0";
+    char buf[HOST_BUFFER_SIZE] = "\0";
     size_t buflen;
     struct hostent *res = NULL;
     int err;
-    result = gethostbyname_r("127.0.0.1", &h, buf, 1024, &res, &err);
+    result = gethostbyname_r("127.0.0.1", &h, buf, HOST_BUFFER_SIZE, &res, &err);
     if (result == 0) {
         flag = true;
     }
-    EXPECT_TRUE("gethostbyname_r_0100", flag);
-    EXPECT_STREQ("gethostbyname_r_0100", h.h_name, "127.0.0.1");
+    EXPECT_TRUE("GethostbynameR0100", flag);
+    EXPECT_STREQ("GethostbynameR0100", h.h_name, "127.0.0.1");
 }
 
 /**
@@ -52,38 +53,39 @@ void gethostbyname_r_0100(void)
  * @tc.desc      : The host information cannot be obtained
  * @tc.level     : Level 2
  */
-void gethostbyname_r_0200(void)
+void GethostbynameR0200(void)
 {
     bool flag = false;
     int result = 10;
     struct hostent h;
-    char buf[1024] = "\0";
+    char buf[HOST_BUFFER_SIZE] = "\0";
     size_t buflen;
     struct hostent *res = NULL;
     int err;
-    result = gethostbyname_r("127.0.w.1", &h, buf, 1024, &res, &err);
+    result = gethostbyname_r("127.0.w.1", &h, buf, HOST_BUFFER_SIZE, &res, &err);
     if (result != 0) {
         flag = true;
     }
-    EXPECT_TRUE("gethostbyname_r_0200", flag);
+    EXPECT_TRUE("GethostbynameR0200", flag);
 }
 
-static TEST_FUN G_Fun_Array[] = {
-    gethostbyname_r_0100,
-    gethostbyname_r_0200,
+static TEST_FUN g_gFunArray[] = {
+    GethostbynameR0100,
+    GethostbynameR0200,
 };
 
-static int GethostbynameRTest_impl(int argc, char *argv[]){
-    int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
+static int GethostbynameRTestImpl(int argc, char *argv[])
+{
+    int num = sizeof(g_gFunArray) / sizeof(TEST_FUN);
     for (int pos = 0; pos < num; ++pos) {
-        G_Fun_Array[pos]();
+        g_gFunArray[pos]();
     }
     return g_tStatus;
 }
 
 int GethostbynameRTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return GethostbynameRTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return GethostbynameRTestImpl(1, libcArgv);
 }

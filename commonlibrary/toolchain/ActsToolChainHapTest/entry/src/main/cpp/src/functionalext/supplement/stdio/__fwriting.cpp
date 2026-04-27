@@ -28,13 +28,13 @@ const int32_t NUM_ZERO = 0;
  * @tc.desc      : Verify that the file stream is write-only
  * @tc.level     : Level 0
  */
-void __fwriting_0100(void)
+void Fwriting0100(void)
 {
     char ptr[PATH_MAX] = {0};
     FILE_ABSOLUTE_PATH(STR_FREAD_TEST_TXT, ptr);
     FILE *fptr = fopen(ptr, "w");
     int result = __fwriting(fptr);
-    EXPECT_NE("__fwriting_0100", result, NUM_ZERO);
+    EXPECT_NE("Fwriting0100", result, NUM_ZERO);
     fclose(fptr);
     remove(ptr);
 }
@@ -44,7 +44,7 @@ void __fwriting_0100(void)
  * @tc.desc      : The last operation on the stream was a write operation
  * @tc.level     : Level 0
  */
-void __fwriting_0200(void)
+void Fwriting0200(void)
 {
     const char *wrstring = "helloworld";
     char ptr[PATH_MAX] = {0};
@@ -52,7 +52,7 @@ void __fwriting_0200(void)
     FILE *fptr = fopen(ptr, "w+");
     fwrite(wrstring, sizeof(char), strlen(wrstring), fptr);
     int result = __fwriting(fptr);
-    EXPECT_NE("__fwriting_0200", result, NUM_ZERO);
+    EXPECT_NE("Fwriting0200", result, NUM_ZERO);
     fclose(fptr);
     remove(ptr);
 }
@@ -62,7 +62,7 @@ void __fwriting_0200(void)
  * @tc.desc      : The last operation on the stream was not a write operation
  * @tc.level     : Level 2
  */
-void __fwriting_0300(void)
+void Fwriting0300(void)
 {
     char abc[100] = {0};
     const char *wrstring = "helloworld";
@@ -73,22 +73,22 @@ void __fwriting_0300(void)
     fseek(fptr, 0, SEEK_SET);
     int32_t rsize = fread(abc, 1, 10, fptr);
     int result = __fwriting(fptr);
-    EXPECT_EQ("__fwriting_0300", result, NUM_ZERO);
+    EXPECT_EQ("Fwriting0300", result, NUM_ZERO);
     fclose(fptr);
     remove(ptr);
 }
 
-static int __fwritingTest_with_args(int argc, char *argv[])
+static int FwritingTestWithArgs(int argc, char *argv[])
 {
-    __fwriting_0100();
-    __fwriting_0200();
-    __fwriting_0300();
+    Fwriting0100();
+    Fwriting0200();
+    Fwriting0300();
     return g_tStatus;
 }
 
 int FwritingTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return __fwritingTest_with_args(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return FwritingTestWithArgs(1, libcArgv);
 }

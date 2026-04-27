@@ -24,7 +24,7 @@ const int32_t NUM_ZERO = 0;
  * @tc.desc      : Verify that the file is writable (parameters are valid)
  * @tc.level     : Level 0
  */
-void __fwritable_0100(void)
+void Fwritable0100(void)
 {
     char ptr[PATH_MAX] = {0};
     FILE_ABSOLUTE_PATH(STR_FREAD_TEST_TXT, ptr);
@@ -33,7 +33,7 @@ void __fwritable_0100(void)
         t_error("%s fopen failed\n", __func__);
     }
     int result = __fwritable(fptr);
-    EXPECT_NE("__fwritable_0100", result, NUM_ZERO);
+    EXPECT_NE("Fwritable0100", result, NUM_ZERO);
     fclose(fptr);
     remove(ptr);
 }
@@ -43,7 +43,7 @@ void __fwritable_0100(void)
  * @tc.desc      : Verify file is not writable (parameter invalid)
  * @tc.level     : Level 1
  */
-void __fwritable_0200(void)
+void Fwritable0200(void)
 {
     char ptr[PATH_MAX] = {0};
     FILE_ABSOLUTE_PATH(STR_FREAD_TEST_TXT, ptr);
@@ -52,21 +52,21 @@ void __fwritable_0200(void)
         t_error("%s fopen failed\n", __func__);
     }
     int result = __fwritable(fptr);
-    EXPECT_EQ("__fwritable_0200", result, NUM_ZERO);
+    EXPECT_EQ("Fwritable0200", result, NUM_ZERO);
     fclose(fptr);
     remove(ptr);
 }
 
-static int __fwritableTest_with_args(int argc, char *argv[])
+static int FwritableTestWithArgs(int argc, char *argv[])
 {
-    __fwritable_0100();
-    __fwritable_0200();
+    Fwritable0100();
+    Fwritable0200();
     return g_tStatus;
 }
 
 int FwritableTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return __fwritableTest_with_args(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return FwritableTestWithArgs(1, libcArgv);
 }

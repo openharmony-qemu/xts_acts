@@ -92,7 +92,8 @@ void opendir_0300(void)
     }
 }
 
-static int OpendirTest_impl(int argc, char *argv[]){
+static int OpendirTest_impl(int argc, char *argv[])
+{
     opendir_0100();
     opendir_0200();
     opendir_0300();

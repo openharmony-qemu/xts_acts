@@ -46,7 +46,7 @@ static void *threadfuncC(void *arg)
  * @tc.desc:      Verify process pthread_mutex_un_lock once success.
  * @tc.level:     level 0.
  */
-static void pthread_mutex_un_lock_0100(void)
+static void PthreadMutexUnLock0100(void)
 {
     int32_t type = PTHREAD_MUTEX_RECURSIVE;
     pthread_mutex_init(&g_mutex, (pthread_mutexattr_t *)(&type));
@@ -61,7 +61,7 @@ static void pthread_mutex_un_lock_0100(void)
  *                that is not this thread.
  * @tc.level:     level 2.
  */
-static void pthread_mutex_un_lock_0200(void)
+static void PthreadMutexUnLock0200(void)
 {
     int32_t type = PTHREAD_MUTEX_RECURSIVE;
     pthread_mutex_init(&g_mutex, (pthread_mutexattr_t *)(&type));
@@ -73,9 +73,10 @@ static void pthread_mutex_un_lock_0200(void)
     pthread_mutex_destroy(&g_mutex);
 }
 
-static int PthreadMutexUnlockTestTest_impl(void){
-    pthread_mutex_un_lock_0100();
-    pthread_mutex_un_lock_0200();
+static int PthreadMutexUnlockTestTest_impl(void)
+{
+    PthreadMutexUnLock0100();
+    PthreadMutexUnLock0200();
     return g_tStatus;
 }
 

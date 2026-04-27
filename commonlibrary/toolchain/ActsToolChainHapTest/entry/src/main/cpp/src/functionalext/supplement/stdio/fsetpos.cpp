@@ -122,7 +122,8 @@ void fsetpos_0400()
     wrstring = NULL;
 }
 
-static int FsetposTest_impl(int argc, char *argv[]){
+static int FsetposTest_impl(int argc, char *argv[])
+{
     fsetpos_0100();
     fsetpos_0200();
     fsetpos_0300();

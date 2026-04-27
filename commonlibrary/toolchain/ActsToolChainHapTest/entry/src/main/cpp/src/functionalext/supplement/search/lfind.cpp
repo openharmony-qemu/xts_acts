@@ -57,7 +57,8 @@ void lfind_0200(void)
     EXPECT_PTREQ("lfind_0200", ret, NULL);
 }
 
-static int LfindTest_impl(void){
+static int LfindTest_impl(void)
+{
     lfind_0100();
     lfind_0200();
     return g_tStatus;

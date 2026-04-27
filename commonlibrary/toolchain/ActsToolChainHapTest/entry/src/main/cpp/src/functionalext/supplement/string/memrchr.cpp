@@ -52,7 +52,8 @@ void memrchr_0200(void)
     EXPECT_PTREQ("memrchr_0200", ret, NULL);
 }
 
-static int MemrchrTest_impl(void){
+static int MemrchrTest_impl(void)
+{
     memrchr_0100();
     memrchr_0200();
     return g_tStatus;

@@ -19,6 +19,9 @@
 
 #define POSITIVE_NUM 0
 #define NEGATIVE_NUM 1
+#define FCVT_DECIMAL_PLACES 2
+#define FCVT_DECIMAL_POINT 3
+#define FCVT_LARGE_DECIMAL_PLACES 10
 
 /**
  * @tc.name      : fcvt_0100
@@ -30,10 +33,10 @@ void fcvt_0100()
     int decpt, sign;
     typedef char* (*fcvt_func)(double value, int ndigit, int *decpt, int *sign);
     fcvt_func fcvt = (fcvt_func)dlsym(RTLD_DEFAULT, "fcvt");
-    char *result = fcvt(123.456, 2, &decpt, &sign);
+    char *result = fcvt(123.456, FCVT_DECIMAL_PLACES, &decpt, &sign);
     printf("result==%s\n", result);
     EXPECT_STREQ("fcvt_0100", result, "12346");
-    EXPECT_EQ("fcvt_0100_decpt", decpt, 3);
+    EXPECT_EQ("fcvt_0100_decpt", decpt, FCVT_DECIMAL_POINT);
     EXPECT_EQ("fcvt_0100_sign", sign, POSITIVE_NUM);
 }
 
@@ -42,10 +45,10 @@ void fcvt_0200()
     int decpt, sign;
     typedef char* (*fcvt_func)(double value, int ndigit, int *decpt, int *sign);
     fcvt_func fcvt = (fcvt_func)dlsym(RTLD_DEFAULT, "fcvt");
-    char *result = fcvt(123.454, 2, &decpt, &sign);
+    char *result = fcvt(123.454, FCVT_DECIMAL_PLACES, &decpt, &sign);
     printf("result==%s\n", result);
     EXPECT_STREQ("fcvt_0100", result, "12345");
-    EXPECT_EQ("fcvt_0100_decpt", decpt, 3);
+    EXPECT_EQ("fcvt_0100_decpt", decpt, FCVT_DECIMAL_POINT);
     EXPECT_EQ("fcvt_0100_sign", sign, POSITIVE_NUM);
 }
 /**
@@ -75,10 +78,10 @@ void fcvt_0400()
     int decpt, sign;
     typedef char* (*fcvt_func)(double value, int ndigit, int *decpt, int *sign);
     fcvt_func fcvt = (fcvt_func)dlsym(RTLD_DEFAULT, "fcvt");
-    char *result = fcvt(-123.456, 2, &decpt, &sign);
+    char *result = fcvt(-123.456, FCVT_DECIMAL_PLACES, &decpt, &sign);
     printf("result==%s\n", result);
     EXPECT_STREQ("fcvt_0400", result, "12346");
-    EXPECT_EQ("fcvt_0400_decpt", decpt, 3);
+    EXPECT_EQ("fcvt_0400_decpt", decpt, FCVT_DECIMAL_POINT);
     EXPECT_EQ("fcvt_0400_sign", sign, NEGATIVE_NUM);
 }
 
@@ -92,15 +95,16 @@ void fcvt_0500()
     int decpt, sign;
     typedef char* (*fcvt_func)(double value, int ndigit, int *decpt, int *sign);
     fcvt_func fcvt = (fcvt_func)dlsym(RTLD_DEFAULT, "fcvt");
-    char *result = fcvt(123.456, 10, &decpt, &sign);
+    char *result = fcvt(123.456, FCVT_LARGE_DECIMAL_PLACES, &decpt, &sign);
     printf("result==%s\n", result);
     // Here, the expected string is just an example, you might need to adjust based on actual behavior.
     EXPECT_STREQ("fcvt_0500", result, "1234560000000");
-    EXPECT_EQ("fcvt_0500_decpt", decpt, 3);
+    EXPECT_EQ("fcvt_0500_decpt", decpt, FCVT_DECIMAL_POINT);
     EXPECT_EQ("fcvt_0500_sign", sign, POSITIVE_NUM);
 }
 
-static int FunctionalextFcvtTest_impl(void){
+static int FunctionalextFcvtTest_impl(void)
+{
     fcvt_0100();
     fcvt_0200();
     fcvt_0300();

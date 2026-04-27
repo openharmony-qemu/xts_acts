@@ -18,6 +18,8 @@
 #include "functionalext.h"
 
 const int32_t INIT_LEN = 0;
+#define READ_SIZE 10
+#define FLUSH_SIZE 20
 
 /**
  * @tc.name      : flushlbf_0100
@@ -44,7 +46,7 @@ void flushlbf_0100(void)
     _flushlbf();
 
     fseek(fp, 0, SEEK_SET);
-    fread(buffer, 1, 20, fp);
+    fread(buffer, 1, FLUSH_SIZE, fp);
     EXPECT_STREQ("flushlbf_0100", buffer, array);
 
     fclose(stdin);

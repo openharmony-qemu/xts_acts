@@ -43,7 +43,7 @@ void fdopendir_0100(void)
  * @tc.desc      : The fd parameter is invalid (0), the directory information of the file cannot be obtained.
  * @tc.level     : Level 2
  */
-void fdopendir_0200(void)
+void Fdopendir0200(void)
 {
     DIR *dir = fdopendir(0);
     EXPECT_EQ("fdopendir_0200", dir, NULL);
@@ -68,7 +68,7 @@ void fdopendir_0300(void)
  * @tc.desc      : Each parameter is valid, and the directory information of the file can be obtained.
  * @tc.level     : Level 2
  */
-void fdopendir_0400(void)
+void Fdopendir0400(void)
 {
     DIR *dir = NULL;
     int fd = open("/data/storage/el2/base/cache/test.txt", O_RDONLY);
@@ -77,17 +77,18 @@ void fdopendir_0400(void)
     remove("/data/storage/el2/base/cache/test.txt");
 }
 
-static int FdopendirTest_impl(int argc, char *argv[]){
+static int FdopendirTestImpl(int argc, char *argv[])
+{
     fdopendir_0100();
-    fdopendir_0200();
+    Fdopendir0200();
     fdopendir_0300();
-    fdopendir_0400();
+    Fdopendir0400();
     return g_tStatus;
 }
 
 int FdopendirTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return FdopendirTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return FdopendirTestImpl(1, libcArgv);
 }

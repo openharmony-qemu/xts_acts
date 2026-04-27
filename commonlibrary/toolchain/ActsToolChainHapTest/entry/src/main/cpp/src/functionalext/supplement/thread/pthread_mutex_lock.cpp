@@ -26,7 +26,7 @@ static int32_t g_run_max_count = 1000;
 static void *threadfuncA(void *arg)
 {
     int32_t ret = pthread_mutex_lock(&g_mutex);
-    EXPECT_EQ("pthread_mutex_lock_0100", ret, 0);
+    EXPECT_EQ("PthreadMutexLock0100", ret, 0);
     pthread_mutex_unlock(&g_mutex);
     return arg;
 }
@@ -35,7 +35,7 @@ static void *threadfuncB(void *arg)
 {
     int32_t ret = pthread_mutex_lock(&g_mutex);
     ret = pthread_mutex_lock(&g_mutex);
-    EXPECT_EQ("pthread_mutex_lock_0200", ret, 0);
+    EXPECT_EQ("PthreadMutexLock0200", ret, 0);
     pthread_mutex_unlock(&g_mutex);
     return arg;
 }
@@ -45,7 +45,7 @@ static void *threadfuncC(void *arg)
     g_count++;
     int32_t ret = pthread_mutex_lock(&g_mutex);
     if (g_count == INT_MAX) {
-        EXPECT_EQ("pthread_mutex_lock_0300", ret, EAGAIN);
+        EXPECT_EQ("PthreadMutexLock0300", ret, EAGAIN);
     }
     pthread_mutex_unlock(&g_mutex);
     return arg;
@@ -56,7 +56,7 @@ static void *threadfuncD(void *arg)
 {
     int32_t ret = pthread_mutex_lock(&g_mutex);
     ret = pthread_mutex_lock(&g_mutex);
-    EXPECT_EQ("pthread_mutex_lock_0400", ret, EDEADLK);
+    EXPECT_EQ("PthreadMutexLock0400", ret, EDEADLK);
     pthread_mutex_unlock(&g_mutex);
     return arg;
 }
@@ -66,7 +66,7 @@ static void *threadfuncD(void *arg)
  * @tc.desc:      Verify process pthread_mutex_lock once success when pthread_mutex_init second args is null.
  * @tc.level:     level 0
  */
-static void pthread_mutex_lock_0100(void)
+static void PthreadMutexLock0100(void)
 {
     pthread_mutex_init(&g_mutex, NULL);
     pthread_t tid1;
@@ -80,7 +80,7 @@ static void pthread_mutex_lock_0100(void)
  *                PTHREAD_MUTEX_NORMAL.
  * @tc.level:     level 1
  */
-void pthread_mutex_lock_0200(void)
+void PthreadMutexLock0200(void)
 {
     int32_t type = PTHREAD_MUTEX_RECURSIVE;
     pthread_mutex_init(&g_mutex, (pthread_mutexattr_t *)(&type));
@@ -95,7 +95,7 @@ void pthread_mutex_lock_0200(void)
  *                PTHREAD_MUTEX_RECURSIVE.
  * @tc.level:     level 2
  */
-void pthread_mutex_lock_0300(void)
+void PthreadMutexLock0300(void)
 {
     int32_t type = PTHREAD_MUTEX_RECURSIVE;
     pthread_mutex_init(&g_mutex, (pthread_mutexattr_t *)(&type));
@@ -112,7 +112,7 @@ void pthread_mutex_lock_0300(void)
  *                PTHREAD_MUTEX_RECURSIVE.
  * @tc.level:     level 2
  */
-void pthread_mutex_lock_0400(void)
+void PthreadMutexLock0400(void)
 {
     int32_t type = PTHREAD_MUTEX_ERRORCHECK;
     pthread_mutex_init(&g_mutex, (pthread_mutexattr_t *)(&type));
@@ -121,15 +121,16 @@ void pthread_mutex_lock_0400(void)
     pthread_join(tid4, NULL);
 }
 
-static int PthreadMutexLockTestTest_impl(void){
-    pthread_mutex_lock_0100();
-    pthread_mutex_lock_0200();
-    pthread_mutex_lock_0300();
-    pthread_mutex_lock_0400();
+static int PthreadMutexLockTestImpl(void)
+{
+    PthreadMutexLock0100();
+    PthreadMutexLock0200();
+    PthreadMutexLock0300();
+    PthreadMutexLock0400();
     return g_tStatus;
 }
 
 int PthreadMutexLockTestTest(void)
 {
-    return PthreadMutexLockTestTest_impl();
+    return PthreadMutexLockTestImpl();
 }

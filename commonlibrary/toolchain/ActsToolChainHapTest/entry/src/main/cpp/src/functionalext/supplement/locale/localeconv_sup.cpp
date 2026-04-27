@@ -63,7 +63,8 @@ static void localeconv_0300(void)
     // Add the implementation of localeconv_0300 here
 }
 
-static int LocaleconvSupTest_impl(void){
+static int LocaleconvSupTest_impl(void)
+{
     localeconv_0300();
 
     return g_tStatus;

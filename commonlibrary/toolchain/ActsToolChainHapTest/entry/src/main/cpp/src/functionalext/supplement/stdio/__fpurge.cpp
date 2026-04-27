@@ -16,37 +16,39 @@
 #include <stdio_ext.h>
 #include "functionalext.h"
 
+#define BUFFER_SIZE 100
+
 /**
  * @tc.name      : __fpurge_0100
  * @tc.desc      : Each parameter value is valid and can be used to completely clear the data in the buffer.
  * @tc.level     : Level 0
  */
-void __fpurge_0100()
+void Fpurge0100()
 {
-    char buf[100];
+    char buf[BUFFER_SIZE];
     char *str = "This is a test";
     FILE *fp = fopen("/data/storage/el2/base/cache/fpurge.txt", "w");
-    EXPECT_PTRNE("__fpurge_0100", fp, NULL);
+    EXPECT_PTRNE("Fpurge0100", fp, NULL);
 
     fputs(str, fp);
     size_t ret = __fpurge(fp);
-    fgets(buf, 100, fp);
-    EXPECT_EQ("__fpurge_0100", strstr(buf, str), 0);
-    EXPECT_EQ("__fpurge_0100", ret, 0);
+    fgets(buf, BUFFER_SIZE, fp);
+    EXPECT_EQ("Fpurge0100", strstr(buf, str), 0);
+    EXPECT_EQ("Fpurge0100", ret, 0);
 
     fclose(fp);
     remove("/data/storage/el2/base/cache/fpurge.txt");
 }
 
-static int __fpurgeTest_with_args(int argc, char *argv[])
+static int FpurgeTestWithArgs(int argc, char *argv[])
 {
-    __fpurge_0100();
+    Fpurge0100();
     return g_tStatus;
 }
 
 int FpurgeTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return __fpurgeTest_with_args(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return FpurgeTestWithArgs(1, libcArgv);
 }

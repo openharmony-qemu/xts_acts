@@ -58,7 +58,8 @@ void wcstoimax_0200(void)
     intmax_t result = wcstoimax(NULL, NULL, 0);
 }
 
-static int WcstoimaxTest_impl(int argc, char *argv[]){
+static int WcstoimaxTest_impl(int argc, char *argv[])
+{
     wcstoimax_0100();
     wcstoimax_0200();
     return g_tStatus;

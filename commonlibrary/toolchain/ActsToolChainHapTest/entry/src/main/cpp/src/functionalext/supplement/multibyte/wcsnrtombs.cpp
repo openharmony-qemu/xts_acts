@@ -49,7 +49,7 @@ static void wcsnrtombs_0100(void)
  * @tc.desc      : Conversion of wide characters to multibyte characters when wn < n
  * @tc.level     : Level 1
  */
-void wcsnrtombs_0200(void)
+void Wcsnrtombs0200(void)
 {
     const wchar_t src[] = L"test wcsnrtombs";
     const wchar_t *p;
@@ -93,16 +93,17 @@ void wcsnrtombs_0300(void)
     }
 }
 
-static int WcsnrtombsTest_impl(int argc, char *argv[]){
+static int WcsnrtombsTestImpl(int argc, char *argv[])
+{
     wcsnrtombs_0100();
-    wcsnrtombs_0200();
+    Wcsnrtombs0200();
     wcsnrtombs_0300();
     return g_tStatus;
 }
 
 int WcsnrtombsTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return WcsnrtombsTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return WcsnrtombsTestImpl(1, libcArgv);
 }

@@ -67,7 +67,8 @@ static void uselocale_0200(void)
     }
 }
 
-static int UselocaleSupTest_impl(void){
+static int UselocaleSupTest_impl(void)
+{
     uselocale_0100();
     uselocale_0200();
 

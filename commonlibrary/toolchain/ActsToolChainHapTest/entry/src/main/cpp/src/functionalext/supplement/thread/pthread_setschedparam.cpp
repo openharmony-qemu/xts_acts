@@ -34,7 +34,7 @@ void *threadfuncA(void *arg)
  * @tc.desc      : Verify pthread_setschedparam process success when scheduling policy is SCHED_OTHER and priority is 0
  * @tc.level     : Level 1
  */
-static void pthread_setschedparam_0100(void)
+static void PthreadSetschedparam0100(void)
 {
     pthread_t tid;
     sem_init(&g_sem, 0, 0);
@@ -42,19 +42,20 @@ static void pthread_setschedparam_0100(void)
     struct sched_param sched;
     sched.sched_priority = 0;
     int32_t ret = pthread_setschedparam(tid, SCHED_OTHER, &sched);
-    EXPECT_EQ("pthread_setschedparam_0100", ret, 0);
+    EXPECT_EQ("PthreadSetschedparam0100", ret, 0);
     int32_t semRet = sem_post(&g_sem);
-    EXPECT_EQ("pthread_setschedparam_0100", semRet, 0);
+    EXPECT_EQ("PthreadSetschedparam0100", semRet, 0);
     pthread_join(tid, NULL);
     sem_destroy(&g_sem);
 }
 
-static int PthreadSetschedparamTestTest_impl(void){
-    pthread_setschedparam_0100();
+static int PthreadSetschedparamTestImpl(void)
+{
+    PthreadSetschedparam0100();
     return g_tStatus;
 }
 
 int PthreadSetschedparamTestTest(void)
 {
-    return PthreadSetschedparamTestTest_impl();
+    return PthreadSetschedparamTestImpl();
 }

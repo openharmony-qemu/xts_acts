@@ -21,7 +21,7 @@
 
 #define BUF_SIZE (13)
 
-static void handler(int sig)
+static void Handler(int sig)
 {
     exit(g_tStatus);
 }
@@ -31,7 +31,7 @@ static void handler(int sig)
  * @tc.desc      : copy a string returning a pointer to its end
  * @tc.level     : Level 0
  */
-void stpncpy_0100(void)
+void Stpncpy0100(void)
 {
     char buf[BUF_SIZE];
     memset(buf, 'A', sizeof(buf));
@@ -105,14 +105,15 @@ void stpncpy_0300(void)
  */
 void stpncpy_0400(void)
 {
-    signal(SIGSEGV, handler);
+    signal(SIGSEGV, Handler);
 
     char *src = "Hello world!";
     stpncpy(NULL, src, strlen(src));
 }
 
-static int StpncpyTest_impl(int argc, char *argv[]){
-    stpncpy_0100();
+static int StpncpyTestImpl(int argc, char *argv[])
+{
+    Stpncpy0100();
     stpncpy_0200();
     stpncpy_0300();
     stpncpy_0400();
@@ -122,7 +123,7 @@ static int StpncpyTest_impl(int argc, char *argv[]){
 
 int StpncpyTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return StpncpyTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return StpncpyTestImpl(1, libcArgv);
 }

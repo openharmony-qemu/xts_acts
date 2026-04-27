@@ -91,7 +91,8 @@ static void newlocale_0300(void)
     }
 }
 
-static int NewlocaleSupTest_impl(void){
+static int NewlocaleSupTest_impl(void)
+{
     newlocale_0100();
     newlocale_0200();
     newlocale_0300();

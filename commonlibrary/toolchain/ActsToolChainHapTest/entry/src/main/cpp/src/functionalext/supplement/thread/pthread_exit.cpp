@@ -30,21 +30,22 @@ static void *threadfuncA(void *arg)
  * @tc.desc      : Verify pthread_exit process success
  * @tc.level     : Level 1
  */
-void pthread_exit_0100(void)
+void PthreadExit0100(void)
 {
     pthread_t ph;
     int32_t ret = pthread_create(&ph, NULL, threadfuncA, NULL);
     void *thread_result = NULL;
     pthread_join(ph, &thread_result);
-    EXPECT_STREQ("pthread_exit_0100", (char *)thread_result, "pthread_exit_0100");
+    EXPECT_STREQ("PthreadExit0100", (char *)thread_result, "pthread_exit_0100");
 }
 
-static int PthreadExitTestTest_impl(void){
-    pthread_exit_0100();
+static int PthreadExitTestImpl(void)
+{
+    PthreadExit0100();
     return g_tStatus;
 }
 
 int PthreadExitTestTest(void)
 {
-    return PthreadExitTestTest_impl();
+    return PthreadExitTestImpl();
 }
