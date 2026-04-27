@@ -47,7 +47,7 @@ export default function LazyForEachReleaseStrategyTest() {
 
     /**
      * @tc.name   LazyForEachReleaseStrategyTest_0100
-     * @tc.number LazyForEachReleaseStrategyTest_0100
+     * @tc.number SUB_ARKUI_API_LazyForEachReleaseStrategyTest_0100
      * @tc.desc   List type FrameNode node
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -68,7 +68,7 @@ export default function LazyForEachReleaseStrategyTest() {
 
     /**
      * @tc.name   LazyForEachReleaseStrategyTest_0200
-     * @tc.number LazyForEachReleaseStrategyTest_0200
+     * @tc.number SUB_ARKUI_API_LazyForEachReleaseStrategyTest_0200
      * @tc.desc   ListItem type FrameNode node
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -87,7 +87,7 @@ export default function LazyForEachReleaseStrategyTest() {
 
     /**
      * @tc.name   LazyForEachReleaseStrategyTest_0300
-     * @tc.number LazyForEachReleaseStrategyTest_0300
+     * @tc.number SUB_ARKUI_API_LazyForEachReleaseStrategyTest_0300
      * @tc.desc   ListItem type FrameNode node
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
