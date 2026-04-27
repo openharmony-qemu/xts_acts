@@ -58,6 +58,7 @@ export const TestGetExposureDurationSucc: () => number;
 export const TestGetExposureDurationWithUnconfiguredStream: () => number;
 export const TestAddDeferredSurfaceSucc: (a:string) => number;
 export const TestAddDeferredSurfaceErr: (a:string) => number;
+export const TestAddDeferredSurfaceWithEmptyStr: (a:string) => number;
 export const OHCaptureSessionDeleteSupportedEffectTypes: (a:number) => number;
 export const OHCaptureSessionGetSupportedEffectTypesSupp: () => number;
 export const captureSessionRegisterIsoChangeCallback: (a:number) => number;

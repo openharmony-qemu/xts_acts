@@ -1011,7 +1011,7 @@ export default function cameraJSUnitOutput() {
             hilog.info(domain, tag, "Error in SUB_MULTIMEDIA_CAMERA_METADATA_OUTPUT_CALLBACK_ON_ERROR_STATIC_0100 FAILED: " +
             err.message);
           }
-          waitForCompletion(async () => {await Utils.msSleep(1000);})
+          Utils.msSleep(1000).awaitSync()
           done();
         })
       }
@@ -1042,7 +1042,7 @@ export default function cameraJSUnitOutput() {
             hilog.info(domain, tag, "Error in SUB_MULTIMEDIA_CAMERA_METADATA_OUTPUT_CALLBACK_OFF_ERROR_STATIC_0100 FAILED: " +
             err.message);
           }
-          waitForCompletion(async () => {await Utils.msSleep(1000);})
+          Utils.msSleep(1000).awaitSync()
           done();
         })
       }
@@ -1460,7 +1460,7 @@ export default function cameraJSUnitOutput() {
             err.message);
             expect().assertFail();
           }
-          waitForCompletion(async () => {await Utils.msSleep(1000);})
+          Utils.msSleep(1000).awaitSync()
           done();
         })
         await Utils.msSleep(1000);
@@ -1496,7 +1496,7 @@ export default function cameraJSUnitOutput() {
             hilog.info(domain, tag, "Error in SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_CALLBACK_ON_FRAME_END_STATIC_0100 FAILED: " +
             err.message);
           }
-          waitForCompletion(async () => {await Utils.msSleep(1000);})
+          Utils.msSleep(1000).awaitSync()
           done();
         })
       }
@@ -1528,7 +1528,7 @@ export default function cameraJSUnitOutput() {
             hilog.info(domain, tag, "Error in SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_CALLBACK_ON_ERROR_STATIC_0100 FAILED: " +
             err.message);
           }
-          waitForCompletion(async () => {await Utils.msSleep(1000);})
+          Utils.msSleep(1000).awaitSync()
           done();
         })
       }
@@ -1778,7 +1778,7 @@ export default function cameraJSUnitOutput() {
       photoOutput!.offCaptureReady((err: BusinessError | null) => {
         hilog.info(domain, tag, `photo output stop listen on captureReady failed: ${err!.code}`);
         expect(true).assertFalse()
-        waitForCompletion(async () => {await Utils.msSleep(1000);})
+        Utils.msSleep(1000).awaitSync()
         done();
       })
       hilog.info(domain, tag, `photo output stop listen on captureReady success`);
@@ -1816,7 +1816,7 @@ export default function cameraJSUnitOutput() {
             hilog.info(domain, tag, "Error in SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_FRAME_SHUTTER_STATIC_0100 FAILED: " +
             err.message);
           }
-          waitForCompletion(async () => {await Utils.msSleep(1000);})
+          Utils.msSleep(1000).awaitSync()
           done();
         })
         await Utils.msSleep(1000);
@@ -1892,7 +1892,7 @@ export default function cameraJSUnitOutput() {
             err.message);
             expect().assertFail();
           }
-          waitForCompletion(async () => {await Utils.msSleep(1000);})
+          Utils.msSleep(1000).awaitSync()
           done();
         })
       }
@@ -1994,7 +1994,7 @@ export default function cameraJSUnitOutput() {
       photoOutput!.onEstimatedCaptureDuration((err: BusinessError |null, data:double | undefined) => {
         hilog.info(domain, tag, `photo output start listen on estimatedCaptureDuration failed: ${err!.code}`);
         expect(true).assertFalse()
-        waitForCompletion(async () => {await Utils.msSleep(1000);})
+        Utils.msSleep(1000).awaitSync()
         done();
       })
       hilog.info(domain, tag, `photo output start listen on estimatedCaptureDuration success`);
@@ -2056,7 +2056,7 @@ export default function cameraJSUnitOutput() {
       photoOutput!.offEstimatedCaptureDuration((err: BusinessError | null, data: double | undefined) => {
         hilog.info(domain, tag, `photo output stop listen on estimatedCaptureDuration failed: ${err!.code}`);
         expect(true).assertFalse()
-        waitForCompletion(async () => {await Utils.msSleep(1000);})
+        Utils.msSleep(1000).awaitSync()
         done();
       })
       hilog.info(domain, tag, `photo output stop listen on estimatedCaptureDuration success`);
@@ -2572,7 +2572,7 @@ export default function cameraJSUnitOutput() {
           hilog.info(domain, tag, "Error in SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_FRAME_SHUTTER_STATIC_0100 FAILED: " +
           err.message);
         }
-        waitForCompletion(async () => {await Utils.msSleep(1000);})
+        Utils.msSleep(1000).awaitSync()
         done();
       })
       expect(1 == 1).assertTrue();
@@ -2603,7 +2603,7 @@ export default function cameraJSUnitOutput() {
       photoOutput!.onFrameShutterEnd((err: BusinessError | null, data: cameraObj.FrameShutterEndInfo | undefined) => {
         hilog.info(domain, tag, `photo output start listen on frameShutterEnd failed: ${err!.code}`);
         expect(true).assertFalse()
-        waitForCompletion(async () => {await Utils.msSleep(1000);})
+        Utils.msSleep(1000).awaitSync()
         done();
       })
       hilog.info(domain, tag, `photo output start listen on frameShutterEnd success`);
@@ -2640,7 +2640,7 @@ export default function cameraJSUnitOutput() {
       photoOutput!.offFrameShutterEnd((err: BusinessError | null, data: cameraObj.FrameShutterEndInfo | undefined) => {
         hilog.info(domain, tag, `photo output stop listen on frameShutterEnd failed: ${err!.code}`);
         expect(true).assertFalse()
-        waitForCompletion(async () => {await Utils.msSleep(1000);})
+        Utils.msSleep(1000).awaitSync()
         done();
       })
       hilog.info(domain, tag, `photo output stop listen on frameShutterEnd success`);
@@ -2714,7 +2714,7 @@ export default function cameraJSUnitOutput() {
       photoOutput!.onCaptureReady((err: BusinessError | null) => {
         hilog.info(domain, tag, `photo output start listen on captureReady failed: ${err!.code}`);
         expect(true).assertFalse()
-        waitForCompletion(async () => {await Utils.msSleep(1000);})
+        Utils.msSleep(1000).awaitSync()
         done();
       })
       hilog.info(domain, tag, `photo output start listen on captureReady success`);

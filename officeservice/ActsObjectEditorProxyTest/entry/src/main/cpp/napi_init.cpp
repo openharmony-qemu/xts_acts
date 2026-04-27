@@ -135,7 +135,7 @@ static napi_value TestProxyGetContentEmbedInfo_EmptyLocal(napi_env env, napi_cal
     }
     code = OH_ContentEmbed_GetContentEmbedInfo("", embedInfo);
     OH_LOG_INFO(LOG_APP, "TestProxyGetContentEmbedInfo_EmptyLocal failed code: %{public}d", code);
-    if (code == CE_ERR_SYSTEM_ABNORMAL || code == CE_ERR_OK) {
+    if (code == CE_PERMISSION_DENIED) {
         napi_value result;
         napi_create_int32(env, code, &result);
         return result;
@@ -157,7 +157,7 @@ static napi_value TestProxyGetContentEmbedInfo_LocaleInvalid(napi_env env, napi_
     }
     code = OH_ContentEmbed_GetContentEmbedInfo("TestProxyGetContentEmbedInfo_LocaleInvalid", embedInfo);
     OH_LOG_INFO(LOG_APP, "TestProxyGetContentEmbedInfo_LocaleInvalid failed code: %{public}d", code);
-    if (code == CE_ERR_SYSTEM_ABNORMAL) {
+    if (code == CE_PERMISSION_DENIED) {
         napi_value result;
         napi_create_int32(env, code, &result);
         return result;
@@ -179,7 +179,7 @@ static napi_value TestProxyGetContentEmbedInfo_Normal(napi_env env, napi_callbac
     }
     code = OH_ContentEmbed_GetContentEmbedInfo("zh-CN", embedInfo);
     OH_LOG_INFO(LOG_APP, "TestProxyGetContentEmbedInfo_Normal failed code: %{public}d", code);
-    if (code == CE_ERR_SYSTEM_ABNORMAL || code == CE_ERR_OK) {
+    if (code == CE_PERMISSION_DENIED) {
         napi_value result;
         napi_create_int32(env, code, &result);
         return result;
@@ -267,7 +267,7 @@ static napi_value TestProxyGetFormatFromInfo_NullInfo(napi_env env, napi_callbac
     ContentEmbed_Format *format = nullptr;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_GetFormatFromInfo(nullptr, 0, &format);
     OH_LOG_INFO(LOG_APP, "TestProxyGetFormatFromInfo_NullInfo failed code: %{public}d", code);
-    if (code == CE_ERR_PARAM_INVALID) {
+    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, code, &result);
         return result;
@@ -472,7 +472,7 @@ static napi_value TestProxyGetContentEmbedFormatByOEidAndLocale_NullLocale(napi_
     }
     code = OH_ContentEmbed_GetContentEmbedFormatByOEidAndLocale("test.oeid", nullptr, format);
     OH_LOG_INFO(LOG_APP, "TestProxyGetContentEmbedFormatByOEidAndLocale_NullLocale code: %{public}d", code);
-    if (code == CE_ERR_SYSTEM_ABNORMAL) {
+    if (code == CE_PERMISSION_DENIED) {
         napi_value result;
         napi_create_int32(env, code, &result);
         return result;
@@ -494,7 +494,7 @@ static napi_value TestProxyGetContentEmbedFormatByOEidAndLocale_EmptyOEid(napi_e
     }
     code = OH_ContentEmbed_GetContentEmbedFormatByOEidAndLocale("", "zh-CN", format);
     OH_LOG_INFO(LOG_APP, "TestProxyGetContentEmbedFormatByOEidAndLocale_EmptyOEid code: %{public}d", code);
-    if (code == CE_ERR_SYSTEM_ABNORMAL) {
+    if (code == CE_PERMISSION_DENIED) {
         napi_value result;
         napi_create_int32(env, code, &result);
         return result;
@@ -516,7 +516,7 @@ static napi_value TestProxyGetContentEmbedFormatByOEidAndLocale_EmptyLocale(napi
     }
     code = OH_ContentEmbed_GetContentEmbedFormatByOEidAndLocale("OEID", "", format);
     OH_LOG_INFO(LOG_APP, "TestProxyGetContentEmbedFormatByOEidAndLocale_EmptyLocale code: %{public}d", code);
-    if (code == CE_ERR_SYSTEM_ABNORMAL) {
+    if (code == CE_PERMISSION_DENIED) {
         napi_value result;
         napi_create_int32(env, code, &result);
         return result;
@@ -702,7 +702,7 @@ static napi_value TestProxyGetNameAndDescriptionFromFormat_Normal(napi_env env, 
     char description[MAX_DESCRIPTION_LENGTH] = {0};
     code = OH_ContentEmbed_GetNameAndDescriptionFromFormat(format, name, description);
     OH_LOG_INFO(LOG_APP, "TestProxyGetNameAndDescriptionFromFormat_Normal get code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_OK) {
+    if (code == CE_ERR_OK) {
         napi_value result;
         napi_create_int32(env, code, &result);
         return result;
@@ -1421,7 +1421,7 @@ static napi_value TestProxyStartWork_ConnectFailed(napi_env env, napi_callback_i
     OH_LOG_INFO(LOG_APP, "TestProxyStartWork_ConnectFailed code: %{public}d", code);
     code = OH_ContentEmbed_Proxy_StartWork(proxy);
     OH_LOG_INFO(LOG_APP, "TestProxyStartWork_ConnectFailed code: %{public}d", code);
-    if (code == CE_ERR_SYSTEM_ABNORMAL) {
+    if (code == CE_PERMISSION_DENIED) {
         napi_value result;
         napi_create_int32(env, code, &result);
         return result;

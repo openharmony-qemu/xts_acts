@@ -123,3 +123,6 @@ export const OH_Rdb_CreateCryptoParam0400: () => number;
 export const OH_Rdb_CreateCryptoParam0500: () => number;
 export const OH_Rdb_CreateCryptoParam0600: () => number;
 export const OH_Rdb_CreateCryptoParam0700: () => number;
+export const OH_Values_IsNull_Abormal_0100: () => number;
+export const OH_Values_IsNull_Abormal_0200: () => number;
+export const OH_Values_IsNull_Abormal_0300: () => number;

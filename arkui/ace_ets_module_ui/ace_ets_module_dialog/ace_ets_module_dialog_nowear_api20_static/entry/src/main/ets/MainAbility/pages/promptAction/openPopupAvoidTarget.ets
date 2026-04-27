@@ -83,9 +83,12 @@ struct OpenPopupAvoidTarget {
   @State maxH: Double = 365
   private uiContext: UIContext = this.getUIContext();
   private promptAction: PromptAction = this.uiContext.getPromptAction();
-  private contentNode: ComponentContent = new ComponentContent(this.uiContext, wrapBuilder(popupBuilder3));
-  private contentNode1: ComponentContent = new ComponentContent(this.uiContext, wrapBuilder(popupBuilder4));
-  private contentNode2: ComponentContent = new ComponentContent(this.uiContext, wrapBuilder(popupBuilder5));
+  private contentNode: ComponentContent<Object> =
+    new ComponentContent<Object>(this.uiContext, wrapBuilder(popupBuilder3));
+  private contentNode1: ComponentContent<Object> =
+    new ComponentContent<Object>(this.uiContext, wrapBuilder(popupBuilder4));
+  private contentNode2: ComponentContent<Object> =
+    new ComponentContent<Object>(this.uiContext, wrapBuilder(popupBuilder5));
 
   onPageShow(): void {
     const displayInfo = display.getDefaultDisplaySync();

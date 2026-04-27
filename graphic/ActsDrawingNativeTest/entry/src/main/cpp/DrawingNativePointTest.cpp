@@ -326,6 +326,123 @@ int TestPointSetMultipleCalls()
     return OH_DRAWING_SUCCESS;
 }
 
+int TestPointNegateNormal()
+{
+    DrawingNativePointTestSetUp();
+    OH_Drawing_Point *point = OH_Drawing_PointCreate(10.0f, 10.0f);
+    EXPECT_NE(point, nullptr);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PointNegate(point);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    float x = 0;
+    float y = 0;
+    OH_Drawing_PointGetX(point, &x);
+    OH_Drawing_PointGetY(point, &y);
+    EXPECT_EQ(x, -10.0f);
+    EXPECT_EQ(y, -10.0f);
+    OH_Drawing_PointDestroy(point);
+    DrawingNativePointTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestPointNegateNull()
+{
+    DrawingNativePointTestSetUp();
+    OH_Drawing_Point *point = OH_Drawing_PointCreate(10.0f, 10.0f);
+    EXPECT_NE(point, nullptr);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PointNegate(nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    float x = 0;
+    float y = 0;
+    OH_Drawing_PointGetX(point, &x);
+    OH_Drawing_PointGetY(point, &y);
+    EXPECT_EQ(x, 10.0f);
+    EXPECT_EQ(y, 10.0f);
+    OH_Drawing_PointDestroy(point);
+    DrawingNativePointTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestPointNegateMultipleCalls()
+{
+    DrawingNativePointTestSetUp();
+    OH_Drawing_Point *point = OH_Drawing_PointCreate(10.0f, 10.0f);
+    EXPECT_NE(point, nullptr);
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_PointNegate(point);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    }
+    OH_Drawing_PointDestroy(point);
+    DrawingNativePointTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestPointOffsetNormal()
+{
+    DrawingNativePointTestSetUp();
+    OH_Drawing_Point *point = OH_Drawing_PointCreate(10.0f, 10.0f);
+    EXPECT_NE(point, nullptr);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PointOffset(point, 10.0f, 10.0f);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    float x = 0;
+    float y = 0;
+    OH_Drawing_PointGetX(point, &x);
+    OH_Drawing_PointGetY(point, &y);
+    EXPECT_EQ(x, 20.0f);
+    EXPECT_EQ(y, 20.0f);
+    OH_Drawing_PointDestroy(point);
+    DrawingNativePointTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestPointOffsetNull()
+{
+    DrawingNativePointTestSetUp();
+    OH_Drawing_Point *point = OH_Drawing_PointCreate(10.0f, 10.0f);
+    EXPECT_NE(point, nullptr);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PointOffset(nullptr, 10.0f, 10.0f);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    float x = 0;
+    float y = 0;
+    OH_Drawing_PointGetX(point, &x);
+    OH_Drawing_PointGetY(point, &y);
+    EXPECT_EQ(x, 10.0f);
+    EXPECT_EQ(y, 10.0f);
+    errorCode = OH_Drawing_PointOffset(point, 0, 10.0f);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    OH_Drawing_PointGetX(point, &x);
+    OH_Drawing_PointGetY(point, &y);
+    EXPECT_EQ(x, 10.0f);
+    EXPECT_EQ(y, 20.0f);
+    errorCode = OH_Drawing_PointOffset(point, 10.0f, 0);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    OH_Drawing_PointGetX(point, &x);
+    OH_Drawing_PointGetY(point, &y);
+    EXPECT_EQ(x, 20.0f);
+    EXPECT_EQ(y, 20.0f);
+    OH_Drawing_PointDestroy(point);
+    DrawingNativePointTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestPointOffsetMultipleCalls()
+{
+    DrawingNativePointTestSetUp();
+    OH_Drawing_Point *point = OH_Drawing_PointCreate(10.0f, 10.0f);
+    EXPECT_NE(point, nullptr);
+    float x = 0;
+    float y = 0;
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_PointOffset(point, 10.0f, 10.0f);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        OH_Drawing_PointGetX(point, &x);
+        OH_Drawing_PointGetY(point, &y);
+        EXPECT_EQ(x, 20.0f + i * 10.0f);
+        EXPECT_EQ(y, 20.0f + i * 10.0f);
+    }
+    OH_Drawing_PointDestroy(point);
+    DrawingNativePointTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS

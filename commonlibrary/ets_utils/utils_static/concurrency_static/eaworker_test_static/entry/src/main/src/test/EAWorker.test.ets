@@ -1953,7 +1953,7 @@ export default function EAWorkerTest() {
         try {
           const workerPromise = new Promise<() => Promise<number>>((resolve, reject) => {
             worker.run<void>((input: () => Promise<number>) => {
-              waitForCompletion(async () => {
+              (async () => {
                 try {
                   const value = await input();
                   const additionalValue = await Promise.resolve(10);
@@ -1962,7 +1962,7 @@ export default function EAWorkerTest() {
                   err = err as Error;
                   reject(err);
                 }
-              })
+              })().awaitSync()
             }, inputFunction);
           });
           const resultFunc = await workerPromise;

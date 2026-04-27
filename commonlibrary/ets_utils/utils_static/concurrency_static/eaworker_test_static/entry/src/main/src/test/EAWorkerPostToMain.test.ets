@@ -584,19 +584,19 @@ export default function EAWorkerPostToMainTest(): void {
                 const TAG: string = 'testPostToMainFromMultipleWorkers';
                 console.info(`${TAG} test start`);
                 const numWorkers: int = 3;
-                const workers: Array<EAWorker> = new Array<EAWorker>(numWorkers);
-                const jobs: Array<Job<void>> = new Array<Job<void>>(numWorkers);
+                const workers = Array.create<EAWorker | undefined>(numWorkers, undefined);
+                const jobs = Array.create<Job<void> | undefined>(numWorkers, undefined);
                 let counter: int = 0;
 
                 try {
                     for (let i = 0; i < numWorkers; i++) {
                         workers[i] = new EAWorker();
-                        workers[i].start();
+                        workers[i]!.start();
                     }
 
                     for (let i = 0; i < numWorkers; i++) {
                         const workerId = i;
-                        jobs[i] = workers[i].run<void>((): void => {
+                        jobs[i] = workers[i]!.run<void>((): void => {
                             const jobInMain = EAWorker.postToMain<void>((): void => {
                                 counter++;
                             });
@@ -605,7 +605,7 @@ export default function EAWorkerPostToMainTest(): void {
                     }
 
                     for (let i = 0; i < numWorkers; i++) {
-                        jobs[i].Await();
+                        jobs[i]!.Await();
                     }
 
                     expect(counter).assertEqual(3);
@@ -615,7 +615,7 @@ export default function EAWorkerPostToMainTest(): void {
                 } finally {
                     for (let i = 0; i < numWorkers; i++) {
                         try {
-                            workers[i].quit();
+                            workers[i]!.quit();
                         } catch (error) {
                             console.warn(`${TAG} catch quit error for worker ${i}: ${error.message}`);
                         }
@@ -1001,7 +1001,7 @@ export default function EAWorkerPostToMainTest(): void {
                     worker.start();
 
                     const job = worker.run<void>((): void => {
-                        const jobs: Array<Job<int>> = new Array<Job<int>>(iterations);
+                        const jobs = Array.create<Job<int> | undefined>(iterations, undefined);
                         for (let i = 0; i < iterations; i++) {
                             jobs[i] = EAWorker.postToMain<int>((): int => {
                                 return 1;
@@ -1010,7 +1010,7 @@ export default function EAWorkerPostToMainTest(): void {
 
                         let sum: int = 0;
                         for (let i = 0; i < iterations; i++) {
-                            sum += jobs[i].Await() as int;
+                            sum += jobs[i]!.Await() as int;
                         }
                         result = sum;
                     });

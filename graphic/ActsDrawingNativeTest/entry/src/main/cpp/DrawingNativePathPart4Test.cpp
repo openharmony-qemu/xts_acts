@@ -68,7 +68,7 @@ int TestPathGetPointDataNormal()
     EXPECT_EQ(points[1].y, 100.0f);
     // 4. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -86,14 +86,14 @@ int TestPathGetPointDataNull()
     uint32_t count = DRAWING_NUMBER_10;
     OH_Drawing_Point2D points[count];
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathGetPointData(nullptr, points, &count);
-    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     errorCode = OH_Drawing_PathGetPointData(path, nullptr, &count);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     errorCode = OH_Drawing_PathGetPointData(path, points, nullptr);
-    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     // 4. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -114,7 +114,7 @@ int TestPathGetPointDatAbnormal()
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     // 4. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -138,7 +138,7 @@ int TestPathGetPointDataMultipleCalls()
     }
     // 4. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -172,7 +172,7 @@ int TestPathGetVerbDataNormal()
     EXPECT_EQ(verbs[DRAWING_NUMBER_5], CLOSE);
     // 7. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -196,14 +196,14 @@ int TestPathGetVerbDataNull()
     uint32_t count = DRAWING_NUMBER_10;
     OH_Drawing_PathIteratorVerb verbs[count];
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathGetVerbData(nullptr, verbs, &count);
-    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     errorCode = OH_Drawing_PathGetVerbData(path, nullptr, &count);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     errorCode = OH_Drawing_PathGetVerbData(path, verbs, nullptr);
-    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     // 7. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -230,7 +230,7 @@ int TestPathGetVerbDataAbnormal()
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     // 7. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -259,7 +259,7 @@ int TestPathGetVerbDataMultipleCalls()
     }
     // 7. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -284,7 +284,7 @@ int TestPathGetConicWeightNormal()
     EXPECT_EQ(conicWeights[0], 0.5f);
     // 5. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -304,14 +304,14 @@ int TestPathGetConicWeightNull()
     uint32_t count = DRAWING_NUMBER_10;
     float conicWeights[count];
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathGetConicWeightData(nullptr, conicWeights, &count);
-    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     errorCode = OH_Drawing_PathGetConicWeightData(path, nullptr, &count);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     errorCode = OH_Drawing_PathGetConicWeightData(path, conicWeights, nullptr);
-    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     // 5. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -329,14 +329,14 @@ int TestPathGetConicWeightAbnormal()
     OH_Drawing_PathConicTo(path, 50.0f, 50.0f, 100.0f, 100.0f, 0.5f);
     OH_Drawing_PathClose(path);
     uint32_t count = 0;
-    float conicWeights[count];
+    float conicWeights[1];
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathGetConicWeightData(path, conicWeights, &count);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(count, DRAWING_NUMBER_1);
     EXPECT_EQ(conicWeights[0], 0.5f);
     // 5. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -363,7 +363,7 @@ int TestPathGetConicWeightMultipleCalls()
     }
     // 5. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -386,7 +386,7 @@ int TestPathConvertToSvgStringNormal1()
     EXPECT_EQ(strcmp(str, "M0 0L100 100L0 0Z"), 0);
     // 5. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -419,7 +419,7 @@ int TestPathConvertToSvgStringNormal2()
     EXPECT_EQ(strcmp(str, "M0 0L100 100L0 0Z"), 0);
     // 5. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -437,14 +437,14 @@ int TestPathConvertToSvgStringNull()
     char str[DRAWING_NUMBER_10] = {0};
     size_t strSize = sizeof(str);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathConvertToSvgString(nullptr, str, &strSize);
-    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     errorCode = OH_Drawing_PathConvertToSvgString(path, nullptr, &strSize);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     errorCode = OH_Drawing_PathConvertToSvgString(path, str, nullptr);
-    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     // 5. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -462,10 +462,10 @@ int TestPathConvertToSvgStringAbnormal()
     char str[DRAWING_NUMBER_1] = {0};
     size_t strSize = sizeof(str);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathConvertToSvgString(path, str, &strSize);
-    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     // 5. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
-    DrawingNativePathPart4TestSetUp();
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 
@@ -488,7 +488,145 @@ int TestPathConvertToSvgStringMultipleCalls()
     }
     // 5. Free memory by calling OH_Drawing_PathDestroy
     OH_Drawing_PathDestroy(path);
+    DrawingNativePathPart4TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestPathGetLastPointNormal()
+{
     DrawingNativePathPart4TestSetUp();
+    // 1. Create a path object by calling OH_Drawing_PathCreate
+    OH_Drawing_Path *path = OH_Drawing_PathCreate();
+    EXPECT_NE(path, nullptr);
+    // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
+    OH_Drawing_PathMoveTo(path, 0, 0);
+    // 3. Add a line segment from the last point of the path to the target point by calling OH_Drawing_PathLineTo
+    OH_Drawing_PathLineTo(path, 100.0f, 100.0f);
+    OH_Drawing_Point2D point[1] = {};
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathGetLastPoint(path, point);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(point[0].x, 100.0f);
+    EXPECT_EQ(point[0].y, 100.0f);
+    // 4. Free memory by calling OH_Drawing_PathDestroy
+    OH_Drawing_PathDestroy(path);
+    DrawingNativePathPart4TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestPathGetLastPointNull()
+{
+    DrawingNativePathPart4TestSetUp();
+    // 1. Create a path object by calling OH_Drawing_PathCreate
+    OH_Drawing_Path *path = OH_Drawing_PathCreate();
+    EXPECT_NE(path, nullptr);
+    OH_Drawing_Point2D point[1] = {};
+    // 2. Create an empty path
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathGetLastPoint(path, point);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(point[0].x, 0);
+    EXPECT_EQ(point[0].y, 0);
+    // 3. Passing in a nullptr
+    errorCode = OH_Drawing_PathGetLastPoint(nullptr, point);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    errorCode = OH_Drawing_PathGetLastPoint(path, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    // 4. Free memory by calling OH_Drawing_PathDestroy
+    OH_Drawing_PathDestroy(path);
+    DrawingNativePathPart4TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestPathGetLastPointMultipleCalls()
+{
+    DrawingNativePathPart4TestSetUp();
+    // 1. Create a path object by calling OH_Drawing_PathCreate
+    OH_Drawing_Path *path = OH_Drawing_PathCreate();
+    EXPECT_NE(path, nullptr);
+    // 2. Set the starting point of the path by calling OH_Drawing_PathMoveTo
+    OH_Drawing_PathMoveTo(path, 0, 0);
+    // 3. Add a line segment from the last point of the path to the target point by calling OH_Drawing_PathLineTo
+    OH_Drawing_PathLineTo(path, 100.0f, 100.0f);
+    OH_Drawing_Point2D point[1] = {};
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_PathGetLastPoint(path, point);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(point[0].x, 100.0f);
+        EXPECT_EQ(point[0].y, 100.0f);
+    }
+    // 5. Free memory by calling OH_Drawing_PathDestroy
+    OH_Drawing_PathDestroy(path);
+    DrawingNativePathPart4TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestPathIsEqualNormal()
+{
+    DrawingNativePathPart4TestSetUp();
+    OH_Drawing_Path *path = OH_Drawing_PathCreate();
+    EXPECT_NE(path, nullptr);
+    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathLineTo(path, 100.0f, 100.0f);
+    OH_Drawing_Path *other = OH_Drawing_PathCreate();
+    EXPECT_NE(other, nullptr);
+    OH_Drawing_PathMoveTo(other, 0, 0);
+    OH_Drawing_PathLineTo(other, 100.0f, 100.0f);
+    bool equal = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathIsEqual(path, other, &equal);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(equal, true);
+    OH_Drawing_PathDestroy(path);
+    OH_Drawing_PathDestroy(other);
+    DrawingNativePathPart4TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestPathIsEqualNull()
+{
+    DrawingNativePathPart4TestSetUp();
+    OH_Drawing_Path *path = OH_Drawing_PathCreate();
+    EXPECT_NE(path, nullptr);
+    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathLineTo(path, 100.0f, 100.0f);
+    OH_Drawing_Path *other = OH_Drawing_PathCreate();
+    EXPECT_NE(other, nullptr);
+    OH_Drawing_PathMoveTo(other, 0, 0);
+    OH_Drawing_PathLineTo(other, 100.0f, 100.0f);
+    bool equal = false;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathIsEqual(nullptr, other, &equal);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(equal, false);
+    errorCode = OH_Drawing_PathIsEqual(path, nullptr, &equal);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(equal, false);
+    errorCode = OH_Drawing_PathIsEqual(path, other, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    EXPECT_EQ(equal, false);
+    OH_Drawing_PathDestroy(path);
+    OH_Drawing_PathDestroy(other);
+    DrawingNativePathPart4TestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestPathIsEqualMultipleCalls()
+{
+    DrawingNativePathPart4TestSetUp();
+    OH_Drawing_Path *path = OH_Drawing_PathCreate();
+    EXPECT_NE(path, nullptr);
+    OH_Drawing_PathMoveTo(path, 0, 0);
+    OH_Drawing_PathLineTo(path, 100.0f, 100.0f);
+    OH_Drawing_Path *other = OH_Drawing_PathCreate();
+    EXPECT_NE(other, nullptr);
+    OH_Drawing_PathMoveTo(other, 0, 0);
+    OH_Drawing_PathLineTo(other, 100.0f, 100.0f);
+    bool equal = false;
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_PathIsEqual(path, other, &equal);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(equal, true);
+    }
+    OH_Drawing_PathDestroy(path);
+    OH_Drawing_PathDestroy(other);
+    DrawingNativePathPart4TestTearDown();
     return OH_DRAWING_SUCCESS;
 }
 } // namespace Drawing

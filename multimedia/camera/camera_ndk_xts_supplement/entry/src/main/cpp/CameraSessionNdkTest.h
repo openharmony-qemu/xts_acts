@@ -54,6 +54,7 @@ napi_value TestIsTorchLevelControlSupportedSucc(napi_env env, napi_callback_info
 napi_value TestSetTorchModeOnWithLevelErr(napi_env env, napi_callback_info info);
 napi_value TestAddDeferredSurfaceSucc(napi_env env, napi_callback_info info);
 napi_value TestAddDeferredSurfaceErr(napi_env env, napi_callback_info info);
+napi_value TestAddDeferredSurfaceWithEmptyStr(napi_env env, napi_callback_info info);
 napi_value TestGetPhysicalApertureSucc(napi_env env, napi_callback_info info);
 napi_value TestGetPhysicalApertureWithNullSession(napi_env env, napi_callback_info info);
 napi_value TestGetPhysicalApertureWithUnconfiguredSession(napi_env env, napi_callback_info info);

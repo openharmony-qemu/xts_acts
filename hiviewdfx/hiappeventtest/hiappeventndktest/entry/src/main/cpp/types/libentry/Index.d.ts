@@ -129,3 +129,4 @@ export const OhHiappEventSetEventConfig40: () => number;
 export const OhHiappEventSetEventConfig41: () => number;
 export const OhHiappEventSetEventConfig42: () => number;
 export const OhHiappEventSetEventConfig43: () => number;
+export const OhHiappEventSetEventConfigMinidump: (a: number) => number;

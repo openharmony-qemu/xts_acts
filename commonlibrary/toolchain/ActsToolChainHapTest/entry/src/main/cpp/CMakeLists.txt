@@ -38,9 +38,35 @@ add_library(
     src/functional/pthread_gettid_np.cpp
     src/functional/sched_cpualloc.cpp
     src/functional/sched_setscheduler.cpp
-    src/functional/search_insque.cpp
-    src/functional/search_lsearch.cpp
-    src/functional/setjmp.cpp
+     src/functional/search_insque.cpp
+     src/functional/search_lsearch.cpp
+     src/functional/search_tsearch.cpp
+     src/functional/setjmp.cpp
+     src/functional/clocale_mbfuncs.cpp
+     src/functional/dl_multithread_lock.cpp
+     src/functional/dl_multithread_test.cpp
+     src/functional/fdopen.cpp
+     src/functional/fcntl.cpp
+     src/functional/fopencookie_test.cpp
+     src/functional/inet_pton.cpp
+     src/functional/pthread_cond.cpp
+     src/functional/pthread_mutex.cpp
+     src/functional/pthread_mutex_pi.cpp
+     src/functional/pthread_tsd.cpp
+     src/functional/sem_init.cpp
+     src/functional/snprintf.cpp
+     src/functional/sscanf.cpp
+     src/functional/string.cpp
+     src/functional/string_memmem.cpp
+     src/functional/string_memset.cpp
+     src/functional/strtod.cpp
+     src/functional/strtof.cpp
+     src/functional/swprintf.cpp
+     src/functional/time.cpp
+     src/functional/tls_align.cpp
+     src/functional/tls_align_dlopen.cpp
+     src/functional/tls_init_dlopen.cpp
+     src/functional/tls_local_exec.cpp
     src/functional/sscanf_long.cpp
     src/functional/string_memcpy.cpp
     src/functional/string_strcspn.cpp
@@ -77,6 +103,12 @@ add_library(
     src/functionalext/supplement/linux/eventfd.cpp
     src/functionalext/supplement/linux/eventfd_read.cpp
     src/functionalext/supplement/linux/eventfd_write.cpp
+    src/functionalext/supplement/linux/flistxattr.cpp
+    src/functionalext/supplement/linux/fremovexattr.cpp
+    src/functionalext/supplement/linux/fsetxattr.cpp
+    src/functionalext/supplement/linux/getdents.cpp
+    src/functionalext/supplement/linux/name_to_handle_at.cpp
+    src/functionalext/supplement/linux/process_vm.cpp
     src/functionalext/supplement/linux/readahead.cpp
     src/functionalext/supplement/locale/duplocale_sup.cpp
     src/functionalext/supplement/malloc/aligned_alloc.cpp
@@ -89,6 +121,7 @@ add_library(
     src/functionalext/supplement/multibyte/c16rtomb.cpp
     src/functionalext/supplement/multibyte/c32rtomb.cpp
     src/functionalext/supplement/network/__h_errno_location.cpp
+    src/functionalext/supplement/network/__recvmmsg_time64.cpp
     src/functionalext/supplement/network/dn_comp.cpp
     src/functionalext/supplement/network/dn_skipname.cpp
     src/functionalext/supplement/prng/drand48.cpp
@@ -100,6 +133,8 @@ add_library(
     src/functionalext/supplement/setjmp/_setjmp.cpp
      src/functionalext/supplement/signal/__libc_current_sigrtmax.cpp
      src/functionalext/supplement/signal/__libc_current_sigrtmin.cpp
+    src/functionalext/supplement/signal/__getitimer_time64.cpp
+    src/functionalext/supplement/signal/__setitimer_time64.cpp
     src/functionalext/supplement/signal/sigpending.cpp
      src/functionalext/supplement/stdio/__fbufsize.cpp
      src/functionalext/supplement/stdio/__flbf.cpp
@@ -117,9 +152,22 @@ add_library(
     src/functionalext/supplement/termios/cfsetospeed.cpp
     src/functionalext/supplement/thread/cnd_init.cpp
     src/functionalext/supplement/thread/cnd_signal.cpp
+    src/functionalext/supplement/thread/cnd_broadcast.cpp
+    src/functionalext/supplement/thread/cnd_timedwait.cpp
+    src/functionalext/supplement/thread/cnd_wait.cpp
     src/functionalext/supplement/time/clock.cpp
     src/functionalext/supplement/time/clock_getcpuclockid.cpp
+    src/functionalext/supplement/time/clock_getres.cpp
     src/functionalext/supplement/time/difftime_sup.cpp
+    src/functionalext/supplement/time/gmtime_r_sup.cpp
+    src/functionalext/supplement/time/gmtime_sup.cpp
+    src/functionalext/supplement/time/nanosleep.cpp
+    src/functionalext/supplement/time/timer_create.cpp
+    src/functionalext/supplement/time/timer_getoverrun.cpp
+    src/functionalext/supplement/time/timer_gettime.cpp
+    src/functionalext/supplement/time/timer_settime.cpp
+    src/functionalext/supplement/time/timespec_get.cpp
+    src/functionalext/supplement/time/utime_sup.cpp
     src/functionalext/supplement/time/wcsftime.cpp
      src/functionalext/supplement/unistd/alarm.cpp
     src/functionalext/supplement/unistd/chdir.cpp
@@ -214,6 +262,7 @@ add_library(
     src/regression/wcsstr-false-negative.cpp
     strverscmp_impl.cpp
     print.cpp
+    time64_functions.cpp
     src/functional/iconv_open.cpp
     src/functional/iconv_test.cpp
     src/functional/mbc.cpp
@@ -284,9 +333,18 @@ add_library(
     src/functionalext/supplement/linux/quotactl.cpp
     src/functionalext/supplement/linux/setfsgid.cpp
     src/functionalext/supplement/linux/setfsuid.cpp
+    src/functionalext/supplement/linux/remap_file_pages.cpp
+    src/functionalext/supplement/linux/removexattr.cpp
+    src/functionalext/supplement/linux/sbrk.cpp
+    src/functionalext/supplement/linux/setxattr.cpp
+    src/functionalext/supplement/linux/swapoff.cpp
+    src/functionalext/supplement/linux/swapon.cpp
+    src/functionalext/supplement/linux/tee.cpp
     src/functionalext/supplement/linux/signalfd.cpp
     src/functionalext/supplement/linux/sysinfo.cpp
     src/functionalext/supplement/linux/timerfd_create.cpp
+    src/functionalext/supplement/linux/timerfd_gettime.cpp
+    src/functionalext/supplement/linux/timerfd_settime.cpp
     src/functionalext/supplement/linux/vmsplice.cpp
     src/functionalext/supplement/locale/langinfo_sup.cpp
     src/functionalext/supplement/locale/wcscoll.cpp
@@ -353,14 +411,20 @@ add_library(
     src/functionalext/supplement/network/htons.cpp
     src/functionalext/supplement/network/if_indextoname.cpp
     src/functionalext/supplement/network/if_nameindex.cpp
+    src/functionalext/supplement/network/inet_addr.cpp
     src/functionalext/supplement/network/inet_aton.cpp
     src/functionalext/supplement/network/inet_lnaof.cpp
+    src/functionalext/supplement/network/inet_ntop.cpp
     src/functionalext/supplement/network/inet_makeaddr.cpp
     src/functionalext/supplement/network/inet_netof.cpp
     src/functionalext/supplement/network/inet_network.cpp
     src/functionalext/supplement/network/inet_ntoa.cpp
     src/functionalext/supplement/network/proto.cpp
+    src/functionalext/supplement/network/res_mkquery.cpp
+    src/functionalext/supplement/network/res_query.cpp
+    src/functionalext/supplement/network/res_querydomain.cpp
     src/functionalext/supplement/network/sendmsg.cpp
+    src/functionalext/supplement/network/sendmmsg.cpp
     src/functionalext/supplement/network/setprotoent.cpp
     src/functionalext/supplement/network/socketpair.cpp
     src/functionalext/supplement/passwd/getgrent.cpp
@@ -381,6 +445,7 @@ add_library(
     src/functionalext/supplement/prng/srand48.cpp
     src/functionalext/supplement/process/fexecve.cpp
     src/functionalext/supplement/process/fexecverely.cpp
+    src/functionalext/supplement/process/fork.cpp
     src/functionalext/supplement/process/posix_spawn.cpp
     src/functionalext/supplement/process/posix_spawnattr_getflags.cpp
     src/functionalext/supplement/process/posix_spawnattr_getpgroup.cpp
@@ -408,10 +473,54 @@ add_library(
     src/functionalext/supplement/signal/sigaction.cpp
     src/functionalext/supplement/signal/sigignore.cpp
     src/functionalext/supplement/signal/sigqueue.cpp
+    src/functionalext/supplement/signal/sighold.cpp
+    src/functionalext/supplement/signal/sigpause.cpp
+    src/functionalext/supplement/signal/sigrelse.cpp
+    src/functionalext/supplement/signal/sigset.cpp
+    src/functionalext/supplement/signal/sigsuspend.cpp
     src/functionalext/supplement/signal/sigwait.cpp
     src/functionalext/supplement/signal/sigwaitinfo.cpp
     src/functionalext/supplement/stat/umask.cpp
     src/functionalext/supplement/stdio/fflush.cpp
+    src/functionalext/supplement/stdio/asprintf.cpp
+    src/functionalext/supplement/stdio/dprintf.cpp
+    src/functionalext/supplement/stdio/fgetln.cpp
+    src/functionalext/supplement/stdio/fgetpos.cpp
+    src/functionalext/supplement/stdio/fgets.cpp
+    src/functionalext/supplement/stdio/fgetws.cpp
+    src/functionalext/supplement/stdio/flockfile.cpp
+    src/functionalext/supplement/stdio/fprintf.cpp
+    src/functionalext/supplement/stdio/fputc.cpp
+    src/functionalext/supplement/stdio/fputs.cpp
+    src/functionalext/supplement/stdio/fputwc.cpp
+    src/functionalext/supplement/stdio/fputws.cpp
+    src/functionalext/supplement/stdio/freopen.cpp
+    src/functionalext/supplement/stdio/fseeko.cpp
+    src/functionalext/supplement/stdio/ftell.cpp
+    src/functionalext/supplement/stdio/ftrylockfile.cpp
+    src/functionalext/supplement/stdio/funlockfile.cpp
+    src/functionalext/supplement/stdio/fwide.cpp
+    src/functionalext/supplement/stdio/fwprintf.cpp
+    src/functionalext/supplement/stdio/fwrite.cpp
+    src/functionalext/supplement/stdio/getc.cpp
+    src/functionalext/supplement/stdio/getc_unlocked.cpp
+    src/functionalext/supplement/stdio/getchar.cpp
+    src/functionalext/supplement/stdio/getchar_unlocked.cpp
+    src/functionalext/supplement/stdio/getdelim.cpp
+    src/functionalext/supplement/stdio/getline.cpp
+    src/functionalext/supplement/stdio/putw.cpp
+    src/functionalext/supplement/stdio/remove.cpp
+    src/functionalext/supplement/stdio/rename.cpp
+    src/functionalext/supplement/stdio/setbuf.cpp
+    src/functionalext/supplement/stdio/setbuffer.cpp
+    src/functionalext/supplement/stdio/setlinebuf.cpp
+    src/functionalext/supplement/stdio/setvbuf.cpp
+    src/functionalext/supplement/stdio/ungetwc.cpp
+    src/functionalext/supplement/stdio/vdprintf.cpp
+    src/functionalext/supplement/stdio/vfprintf.cpp
+    src/functionalext/supplement/stdio/vfscanf.cpp
+    src/functionalext/supplement/stdio/vfwprintf.cpp
+    src/functionalext/supplement/stdio/vfwscanf.cpp
     src/functionalext/supplement/stdio/open_wmemstream.cpp
     src/functionalext/supplement/stdio/printf.cpp
     src/functionalext/supplement/stdio/putc_unlocked.cpp
@@ -483,9 +592,25 @@ add_library(
     src/functionalext/supplement/string/wmemmove.cpp
     src/functionalext/supplement/string/wmemset.cpp
     src/functionalext/supplement/temp/mktemp.cpp
+    src/functionalext/supplement/temp/mkostemp.cpp
+    src/functionalext/supplement/temp/mkostemps.cpp
+    src/functionalext/supplement/temp/mkstemp.cpp
+    src/functionalext/supplement/temp/mkstemps.cpp
     src/functionalext/supplement/thread/mtx_init.cpp
     src/functionalext/supplement/thread/mtx_lock.cpp
+    src/functionalext/supplement/thread/mtx_timedlock.cpp
+    src/functionalext/supplement/thread/mtx_trylock.cpp
+    src/functionalext/supplement/thread/mtx_unlock.cpp
     src/functionalext/supplement/thread/pthread_atfork.cpp
+    src/functionalext/supplement/thread/call_once.cpp
+    src/functionalext/supplement/thread/pthread_detach.cpp
+    src/functionalext/supplement/thread/pthread_equal.cpp
+    src/functionalext/supplement/thread/pthread_join.cpp
+    src/functionalext/supplement/thread/pthread_self.cpp
+    src/functionalext/supplement/thread/pthread_setschedprio.cpp
+    src/functionalext/supplement/thread/pthread_spin_lock.cpp
+    src/functionalext/supplement/thread/pthread_spin_trylock.cpp
+    src/functionalext/supplement/thread/pthread_spin_unlock.cpp
     src/functionalext/supplement/thread/pthread_attr_destroy.cpp
     src/functionalext/supplement/thread/pthread_attr_get.cpp
     src/functionalext/supplement/thread/pthread_attr_getstack.cpp
@@ -499,11 +624,14 @@ add_library(
     src/functionalext/supplement/thread/pthread_attr_setstacksize.cpp
     src/functionalext/supplement/thread/pthread_barrier_destroy.cpp
     src/functionalext/supplement/thread/pthread_barrier_init.cpp
+    src/functionalext/supplement/thread/pthread_barrier_wait.cpp
     src/functionalext/supplement/thread/pthread_barrierattr_init.cpp
     src/functionalext/supplement/thread/pthread_barrierattr_setpshared.cpp
     src/functionalext/supplement/thread/pthread_cond_broadcast.cpp
     src/functionalext/supplement/thread/pthread_cond_destroy.cpp
+    src/functionalext/supplement/thread/pthread_cond_init.cpp
     src/functionalext/supplement/thread/pthread_cond_signal.cpp
+    src/functionalext/supplement/thread/pthread_cond_timedwait_sup.cpp
     src/functionalext/supplement/thread/pthread_cond_wait.cpp
     src/functionalext/supplement/thread/pthread_condattr_destroy.cpp
     src/functionalext/supplement/thread/pthread_condattr_init.cpp
@@ -513,6 +641,7 @@ add_library(
     src/functionalext/supplement/thread/pthread_key_delete.cpp
     src/functionalext/supplement/thread/pthread_mutex_destroy.cpp
     src/functionalext/supplement/thread/pthread_mutex_init.cpp
+    src/functionalext/supplement/thread/pthread_mutex_timedlock.cpp
     src/functionalext/supplement/thread/pthread_mutex_trylock.cpp
     src/functionalext/supplement/thread/pthread_mutexattr_destroy.cpp
     src/functionalext/supplement/thread/pthread_mutexattr_setprotocol.cpp
@@ -520,12 +649,20 @@ add_library(
     src/functionalext/supplement/thread/pthread_mutexattr_settype.cpp
     src/functionalext/supplement/thread/pthread_rwlock_destroy.cpp
     src/functionalext/supplement/thread/pthread_rwlock_rdlock_sup.cpp
+    src/functionalext/supplement/thread/pthread_rwlock_timedrdlock.cpp
+    src/functionalext/supplement/thread/pthread_rwlock_timedwrlock.cpp
     src/functionalext/supplement/thread/pthread_rwlock_tryrdlock.cpp
     src/functionalext/supplement/thread/pthread_rwlock_trywrlock.cpp
     src/functionalext/supplement/thread/pthread_rwlockattr_destroy.cpp
     src/functionalext/supplement/thread/pthread_rwlockattr_init.cpp
     src/functionalext/supplement/thread/pthread_rwlockattr_setpshared.cpp
     src/functionalext/supplement/thread/pthread_sigmask.cpp
+    src/functionalext/supplement/thread/thrd_create.cpp
+    src/functionalext/supplement/thread/thrd_current.cpp
+    src/functionalext/supplement/thread/thrd_detach.cpp
+    src/functionalext/supplement/thread/thrd_equal.cpp
+    src/functionalext/supplement/thread/thrd_join.cpp
+    src/functionalext/supplement/thread/thrd_sleep.cpp
     src/functionalext/supplement/thread/thrd_yield.cpp
     src/functionalext/supplement/thread/tss_set.cpp
     src/functionalext/supplement/time/mktime_sup.cpp
@@ -547,6 +684,9 @@ add_library(
     src/functionalext/supplement/unistd/sleep.cpp
     src/functionalext/supplement/unistd/usleep.cpp
     src/functionalext/supplement/unistd/writev.cpp
+    src/functionalext/supplement/unistd/access.cpp
+    src/functionalext/supplement/unistd/fchdir.cpp
+    src/functionalext/supplement/unistd/nice.cpp
     src/functionalext/supplement/wctype/iswctype_l.cpp
     src/functionalext/supplement/wctype/iswgraph.cpp
     src/functionalext/unittest/unit_test_assert_fail.cpp
@@ -615,3 +755,19 @@ target_link_libraries(
     libace_napi.z.so
     libhilog_ndk.z.so
 )
+
+
+add_library(DlcloseRecursive SHARED lib/dlclose_recursive.cpp)
+set_target_properties(DlcloseRecursive PROPERTIES OUTPUT_NAME "dlclose_recursive")
+
+add_library(DlMultithreadDso SHARED lib/dl_multithread_test_dso.c lib/print.c)
+set_target_properties(DlMultithreadDso PROPERTIES OUTPUT_NAME "dl_multithread_test_dso")
+
+add_library(TlsInitDlopen SHARED lib/tls_init_dso.c)
+set_target_properties(TlsInitDlopen PROPERTIES OUTPUT_NAME "tls_init_dso")
+
+add_library(DlOpenDso SHARED lib/dlopen_dso.c)
+set_target_properties(DlOpenDso PROPERTIES OUTPUT_NAME "dlopen_dso")
+
+add_library(DlOpenInit SHARED lib/dlopen_init.c)
+set_target_properties(DlOpenInit PROPERTIES OUTPUT_NAME "dlopen_init")

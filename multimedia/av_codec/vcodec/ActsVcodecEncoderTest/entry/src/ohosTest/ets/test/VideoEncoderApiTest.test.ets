@@ -694,5 +694,65 @@ export default function VideoEncoderApiTest() {
       let result: number = await testNapi.runApiTest(49);
       expect(result).assertEqual(0);
     });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_0900
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_0900
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_0900', Level.LEVEL2, async () => {
+      let result: number = await testNapi.runApiTest(50);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_1000
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_1000
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_1000', Level.LEVEL2, async () => {
+      let result: number = await testNapi.runApiTest(51);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_1100
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_1100
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_1100', Level.LEVEL2, async () => {
+      let result: number = await testNapi.runApiTest(52);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_1200
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_1200
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_1200', Level.LEVEL2, async () => {
+      let result: number = await testNapi.runApiTest(53);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_1300
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_1300
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_SYNC_API_1300', Level.LEVEL2, async () => {
+      let result: number = await testNapi.runApiTest(54);
+      expect(result).assertEqual(0);
+    });
   });
 }

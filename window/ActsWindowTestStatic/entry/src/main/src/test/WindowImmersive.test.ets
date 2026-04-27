@@ -49,7 +49,7 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
-        waitForCompletion(async () => {await Utils.msSleep(1000)})
+        Utils.msSleep(1000).awaitSync()
         let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
         resolve(windowStageStart);
     })
@@ -1025,7 +1025,7 @@ export default function WindowImmersiveTest() {
                     await (subWin! as window.Window).destroyWindow();
                     done()
                 }).catch((err: Error) => {
-                    waitForCompletion(async () => {
+                    (async () => {
                     console.error(msgStr + 'Failed to call setTitleAndDockHoverShown. Cause: ' + JSON.stringify(err));
                     await (subWin! as window.Window).destroyWindow();
                     if (err.code == 801) {
@@ -1034,7 +1034,7 @@ export default function WindowImmersiveTest() {
                         expect(err.code).assertEqual(1300004);
                     }
                     done()
-                    })
+                    })().awaitSync()
                 });
             } catch (exception) {
                 console.error(msgStr + 'Failed to set the call setTitleAndDockHoverShown. Cause:' +

@@ -69,5 +69,25 @@ export default function webViewControllerRemoveCacheTest() {
         await Utils.msSleep(6000);
         done();
       })
+
+    /**
+     * @tc.name   testRemoveCacheStatic003
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_REMOVECACHE_0300
+     * @tc.desc   test removeCache false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRemoveCacheStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(3000);
+        Utils.emitEvent("testRemoveCache003", 10)
+        await Utils.msSleep(3000);
+        Utils.registerEvent("testRemoveCache003", 17100001, 20260331, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebViewControllerRemoveCacheTestButton', 10, '');
+        await Utils.msSleep(6000);
+        done();
+      })
   })
 }

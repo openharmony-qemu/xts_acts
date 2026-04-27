@@ -51,7 +51,7 @@ export default function ClientAuthenticationHandlerTestTwo() {
       Utils.registerEvent('emitClientAuthenticationHandlerConfirm002', true, 25131101, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('clientAuthenticationHandlerButtonTwo', 10, '');
-      await Utils.msSleep(2000);
+      await Utils.msSleep(6000);
       done();
     })
     /**

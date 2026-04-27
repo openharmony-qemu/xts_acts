@@ -57,7 +57,7 @@ export default function HttpRequestMaxAutoRedirectsWithInterceptorTest() {
   describe('HttpRequest_MaxAutoRedirects_WithInterceptor_Test', () => {
     let httpRequest: http.HttpRequest;
     // Test server address
-    const BASE_URL = 'http://23.106.128.32:1088/redirect';
+    const BASE_URL = 'https://httpbin.moyufangge.com/redirect';
 
     beforeEach(() => {
       console.info('[WithInterceptor] beforeEach: create HttpRequest with interceptor');

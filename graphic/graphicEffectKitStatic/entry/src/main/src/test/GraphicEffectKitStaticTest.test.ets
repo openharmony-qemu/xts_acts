@@ -47,13 +47,13 @@ export default function GraphicEffectKitStaticTest() {
     })
     /**
      * @tc.name   effectKitTest_static_0100
-     * @tc.number effectKitTest_static_0100
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_0100
      * @tc.desc   effect for test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         // effectKit test codes
         hilog.info(domain, tag, '%{public}s', 'effectKit test START');
@@ -100,13 +100,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   effectKitTest_static_0200
-     * @tc.number effectKitTest_static_0200
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_0200
      * @tc.desc   effect for test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           let radius = 30;
@@ -131,13 +131,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   effectKitTest_static_0300
-     * @tc.number effectKitTest_static_0300
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_0300
      * @tc.desc   effect for test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msg = 'testTileMode'
         console.log(msg + ' begin')
@@ -150,13 +150,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   effectKitTest_static_0400
-     * @tc.number effectKitTest_static_0400
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_0400
      * @tc.desc   effect for test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           let bright1 = 0.0;
@@ -182,13 +182,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   effectKitTest_static_0500
-     * @tc.number effectKitTest_static_0500
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_0500
      * @tc.desc   effect for test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let headFilter = effectKit.createEffect(pixelMap!);
         if (headFilter != null) {
@@ -203,13 +203,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   effectKitTest_static_0600
-     * @tc.number effectKitTest_static_0600
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_0600
      * @tc.desc   effect for test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let headFilter = effectKit.createEffect(pixelMap!);
         if (headFilter != null) {
@@ -224,13 +224,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   effectKitTest_static_0700
-     * @tc.number effectKitTest_static_0700
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_0700
      * @tc.desc   effect for test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let colorMatrix: Array<number> = [
           0.2126, 0.7152, 0.0722, 0, 0,
@@ -251,13 +251,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   effectKitTest_static_0800
-     * @tc.number effectKitTest_static_0800
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_0800
      * @tc.desc   effect for test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
           let colorPicker: effectKit.ColorPicker = await effectKit.createColorPicker(pixelMap!);
@@ -285,13 +285,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   effectKitTest_static_0900
-     * @tc.number effectKitTest_static_0900
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_0900
      * @tc.desc   effect for test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         effectKit.createColorPicker(pixelMap!).then((colorPicker: effectKit.ColorPicker) => {
           try {
@@ -317,13 +317,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   effectKitTest_static_1000
-     * @tc.number effectKitTest_static_1000
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_1000
      * @tc.desc   effect for test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         effectKit.createColorPicker(pixelMap!).then((colorPicker: effectKit.ColorPicker) => {
           try {
@@ -345,13 +345,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   effectKitTest_static_1100
-     * @tc.number effectKitTest_static_1100
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_1100
      * @tc.desc   effect for test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         effectKit.createColorPicker(pixelMap!).then((colorPicker: effectKit.ColorPicker) => {
           try {
@@ -374,13 +374,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   effectKitTest_static_1200
-     * @tc.number effectKitTest_static_1200
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_1200
      * @tc.desc   effect for test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         effectKit.createColorPicker(pixelMap!).then((colorPicker: effectKit.ColorPicker) => {
           try {
@@ -402,13 +402,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   effectKitTest_static_1300
-     * @tc.number effectKitTest_static_1300
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_1300
      * @tc.desc   effect for test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         effectKit.createColorPicker(pixelMap!).then((colorPicker: effectKit.ColorPicker) => {
           try {
@@ -429,13 +429,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   effectKitTest_static_1400
-     * @tc.number effectKitTest_static_1400
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_1400
      * @tc.desc   effect for test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         effectKit.createColorPicker(pixelMap!).then((colorPicker: effectKit.ColorPicker) => {
           try {
@@ -457,13 +457,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   effectKitTest_static_1500
-     * @tc.number effectKitTest_static_1500
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_1500
      * @tc.desc   effect for test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
 
         effectKit.createColorPicker(pixelMap!).then((colorPicker: effectKit.ColorPicker) => {
@@ -487,7 +487,7 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   effectKitTest_static_1600
-     * @tc.number effectKitTest_static_1600
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_1600
      * @tc.desc   effect for test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -508,13 +508,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   effectKitTest_static_1700
-     * @tc.number effectKitTest_static_1700
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_1700
      * @tc.desc   effect for test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         effectKit.createColorPicker(pixelMap!, (error, colorPicker) => {
           if (error) {
@@ -530,13 +530,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   effectKitTest_static_1800
-     * @tc.number effectKitTest_static_1800
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_1800
      * @tc.desc   effect for test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         effectKit.createColorPicker(pixelMap!, [0, 0, 1, 1], (error, colorPicker) => {
           if (error) {
@@ -552,13 +552,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   effectKitTest_static_1900
-     * @tc.number effectKitTest_static_1900
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_1900
      * @tc.desc   effect for test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', 'effectKit test START');
         const opts: image.InitializationOptions = {
@@ -621,13 +621,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   effectKitTest_static_2000
-     * @tc.number effectKitTest_static_2000
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_2000
      * @tc.desc   effect for test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data testGetTopProportionColors_2 '
         let imageSource: image.ImageSource = image.createImageSource(testJpg.buffer) as image.ImageSource;
@@ -657,13 +657,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   effectKitTest_static_2100
-     * @tc.number effectKitTest_static_2100
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_2100
      * @tc.desc   effect for test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("effectKitTest_static_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("effectKitTest_static_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data testGetTopProportionColors_2 '
         let imageSource: image.ImageSource = image.createImageSource(testJpg.buffer) as image.ImageSource;
@@ -683,7 +683,7 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   effectKitTest_static_2200
-     * @tc.number effectKitTest_static_2200
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_2200
      * @tc.desc   effect for test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -710,7 +710,7 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   effectKitTest_static_2300
-     * @tc.number effectKitTest_static_2300
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_2300
      * @tc.desc   effect for test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -733,7 +733,7 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   effectKitTest_static_2400
-     * @tc.number effectKitTest_static_2400
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_2400
      * @tc.desc   effect for test getHighestSaturationColor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -761,7 +761,7 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   effectKitTest_static_2500
-     * @tc.number effectKitTest_static_2500
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_2500
      * @tc.desc   effect for test getHighestSaturationColor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -789,13 +789,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   createEffectEnumStatic001
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_001
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_2600
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createEffectEnumStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createEffectEnumStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createEffectEnumStatic001 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -818,13 +818,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   createEffectEnumStatic002
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_002
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_2700
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createEffectEnumStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createEffectEnumStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createEffectEnumStatic002 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -847,13 +847,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   createEffectEnumStatic003
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_003
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_2800
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createEffectEnumStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createEffectEnumStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createEffectEnumStatic003 ';
         const color: ArrayBuffer = new ArrayBuffer(96);
@@ -875,13 +875,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   createEffectEnumStatic004
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_004
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_2900
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createEffectEnumStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createEffectEnumStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createEffectEnumStatic004 ';
         const color: ArrayBuffer = new ArrayBuffer(96);
@@ -903,13 +903,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   createColorPicker_Promise_one_static_001
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_005
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_3000
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Promise_one_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Promise_one_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Promise_one_static_001 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -931,13 +931,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   createColorPicker_Promise_one_static_002
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_006
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_3100
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Promise_one_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Promise_one_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Promise_one_static_002 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -959,13 +959,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   createColorPicker_Promise_one_static_003
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_007
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_3200
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Promise_one_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Promise_one_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Promise_one_static_003 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -988,13 +988,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   createColorPicker_Promise_one_static_004
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_008
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_3300
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Promise_one_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Promise_one_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Promise_one_static_004 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1017,13 +1017,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   createColorPicker_Promise_two_static_001
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_009
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_3400
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Promise_two_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Promise_two_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Promise_two_static_001 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1045,13 +1045,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   createColorPicker_Promise_two_static_002
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_010
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_3500
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Promise_two_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Promise_two_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Promise_two_static_002 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1073,13 +1073,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   createColorPicker_Promise_two_static_003
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_011
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_3600
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Promise_two_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Promise_two_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Promise_two_static_003 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1102,13 +1102,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   createColorPicker_Promise_two_static_004
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_012
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_3700
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Promise_two_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Promise_two_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Promise_two_static_004 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1131,13 +1131,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   createColorPicker_Callback_one_static_001
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_013
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_3800
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Callback_one_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Callback_one_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Callback_one_static_001 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1167,13 +1167,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   createColorPicker_Callback_one_static_002
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_014
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_3900
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Callback_one_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Callback_one_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Callback_one_static_002 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1203,13 +1203,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   createColorPicker_Callback_one_static_003
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_015
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_4000
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Callback_one_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Callback_one_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Callback_one_static_003 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1239,13 +1239,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   createColorPicker_Callback_one_static_004
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_016
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_4100
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Callback_one_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Callback_one_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Callback_one_static_004 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1275,13 +1275,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   createColorPicker_Callback_two_static_001
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_017
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_4200
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Callback_two_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Callback_two_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Callback_two_static_001 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1311,13 +1311,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   createColorPicker_Callback_two_static_002
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_018
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_4300
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Callback_two_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Callback_two_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Callback_two_static_002 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1347,13 +1347,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   createColorPicker_Callback_two_static_003
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_019
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_4400
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Callback_two_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Callback_two_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Callback_two_static_003 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1383,13 +1383,13 @@ export default function GraphicEffectKitStaticTest() {
 
     /**
      * @tc.name   createColorPicker_Callback_two_static_004
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_020
+     * @tc.number SUB_GRAPHIC_effectKitTest_static_4500
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('createColorPicker_Callback_two_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('createColorPicker_Callback_two_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let msgStr = 'www data createColorPicker_Callback_two_static_004 ';
         console.log("effectKitTest" + msgStr + 'begin');

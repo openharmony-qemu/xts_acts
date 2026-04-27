@@ -213,5 +213,1069 @@ export default function SevenPointZeroI18nStageTest() {
       expect(info.confidence).assertEqual(0);
     })
 
+    /**
+     * @tc.name test_SymbolDateTimeFormat_0100
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_0100
+     * @tc.desc test SymbolDateTimeFormat with empty SymbolDateTimeFormatOptions param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolDateTimeFormat_0100', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
+      let customSymbol: i18n.SymbolDateTimeFormatOptions = {};
+      try {
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolDateTimeFormat_0100 result:', options.amPMSymbol);
+        expect(options.amPMSymbol?.toString() == "AM,PM").assertTrue();
+      } catch (e) {
+        console.log('test_SymbolDateTimeFormat_0100 catch error:', e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_0200
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_0200
+     * @tc.desc test SymbolDateTimeFormat with undefined SymbolDateTimeFormatOptions param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolDateTimeFormat_0200', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
+      try {
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale, undefined);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolDateTimeFormat_0200 result:', options.amPMSymbol);
+        expect(options.amPMSymbol?.toString() == "AM,PM").assertTrue();
+      } catch (e) {
+        console.log('test_SymbolDateTimeFormat_0200 catch error:', e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_0300
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_0300
+     * @tc.desc test SymbolDateTimeFormat with custom PM character
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolDateTimeFormat_0300', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
+      let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": ["test1", "test2"], "timeStyle": "full" };
+      let date: Date = new Date(2026, 2, 18, 14, 8);
+      try {
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
+        let dateFormat = symbolFormat.format(date);
+        console.log('test_SymbolDateTimeFormat_0300 result:', dateFormat);
+        expect(dateFormat).assertContain("test2");
+      } catch (e) {
+        console.log('test_SymbolDateTimeFormat_0300 catch error:', e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_0400
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_0400
+     * @tc.desc test SymbolDateTimeFormat with custom AM character
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolDateTimeFormat_0400', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
+      let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": ["test1", "test2"], "timeStyle": "full" };
+      let date: Date = new Date(2026, 2, 18, 10, 8);
+      try {
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
+        let dateFormat = symbolFormat.format(date);
+        console.log('test_SymbolDateTimeFormat_0400 result:', dateFormat);
+        expect(dateFormat).assertContain("test1");
+      } catch (e) {
+        console.log('test_SymbolDateTimeFormat_0400 catch error:', e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_0500
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_0500
+     * @tc.desc test SymbolDateTimeFormat with resolvedOptions
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolDateTimeFormat_0500', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
+      let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": ["test1", "test2"] };
+      try {
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolDateTimeFormat_0500 result:', options.amPMSymbol);
+        expect(options.amPMSymbol?.toString() == "test1,test2").assertTrue();
+      } catch (e) {
+        console.log('test_SymbolDateTimeFormat_0500 catch error:', e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_0600
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_0600
+     * @tc.desc test SymbolDateTimeFormat with empty amPMSymbol param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolDateTimeFormat_0600', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
+      let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": [] };
+      try {
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
+        symbolFormat.resolvedOptions();
+        console.log('test_SymbolDateTimeFormat_0600 result:');
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('test_SymbolDateTimeFormat_0600 catch error:', e.code + e.message);
+        expect(Number(e.code) === 890001).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_0700
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_0700
+     * @tc.desc test SymbolDateTimeFormat with undefined amPMSymbol param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolDateTimeFormat_0700', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
+      let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": undefined };
+      try {
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
+        symbolFormat.resolvedOptions();
+        console.log('test_SymbolDateTimeFormat_0700 result:');
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('test_SymbolDateTimeFormat_0700 catch error:', e.code + e.message);
+        expect(Number(e.code) === 401).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_0100
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_0800
+     * @tc.desc test SymbolNumberFormat with empty SymbolNumberFormatOptions
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_0100', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "numberingSystem": "latn" });
+      let customSymbol: i18n.SymbolNumberFormatOptions = {};
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolNumberFormat_0100 result:', options.zero);
+        expect(options.zero === '0').assertTrue();
+      } catch (e) {
+        console.log('test_SymbolNumberFormat_0100 catch error:', e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_0200
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_0900
+     * @tc.desc test SymbolNumberFormat with undefined SymbolNumberFormatOptions
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_0200', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "numberingSystem": "latn" });
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, undefined);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolNumberFormat_0200 result:', options.zero);
+        expect(options.zero === '0').assertTrue();
+      } catch (e) {
+        console.log('test_SymbolNumberFormat_0200 catch error:', e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_0300
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_1000
+     * @tc.desc test SymbolNumberFormat with custom 0 character
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_0300', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "numberingSystem": "latn" });
+      let customSymbol: i18n.SymbolNumberFormatOptions = { "zero": "B" };
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let numberFormat = symbolFormat.format(12345.06);
+        console.log('test_SymbolNumberFormat_0300 result:', numberFormat);
+        expect(numberFormat === '12,345.B6').assertTrue();
+      } catch (e) {
+        console.log('test_SymbolNumberFormat_0300 catch error:', e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_0400
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_1100
+     * @tc.desc test SymbolNumberFormat with
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_0400', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "numberingSystem": "latn" });
+      let customSymbol: i18n.SymbolNumberFormatOptions = { "zero": "B" };
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolNumberFormat_0400 result:', options.zero);
+        expect(options.zero === 'B').assertTrue();
+      } catch (e) {
+        console.log('test_SymbolNumberFormat_0400 catch error:', e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_0500
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_1200
+     * @tc.desc test SymbolNumberFormat with empty SymbolNumberFormatOptions param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_0500', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "numberingSystem": "latn" });
+      let customSymbol: i18n.SymbolNumberFormatOptions = { "zero": "" };
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolNumberFormat_0500 result:', options.zero);
+        expect(options.zero === '').assertTrue();
+      } catch (e) {
+        console.log('test_SymbolNumberFormat_0500 catch error:', e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_0600
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_1300
+     * @tc.desc test SymbolNumberFormat with undefined SymbolNumberFormatOptions param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_0600', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "numberingSystem": "latn" });
+      let customSymbol: i18n.SymbolNumberFormatOptions = { "zero": undefined };
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolNumberFormat_0600 result:', options.zero);
+        expect(options.zero === '0').assertTrue();
+      } catch (e) {
+        console.log('test_SymbolNumberFormat_0600 catch error:', e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_0700
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_1400
+     * @tc.desc test SymbolNumberFormat with custom null character
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_0700', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "numberingSystem": "latn" });
+      let customSymbol: i18n.SymbolNumberFormatOptions = { "nan": "B" };
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let numberFormat = symbolFormat.format(NaN);
+        console.log('test_SymbolNumberFormat_0700 result:', numberFormat);
+        expect(numberFormat === 'B').assertTrue();
+      } catch (e) {
+        console.log('test_SymbolNumberFormat_0700 catch error:', e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_0800
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_1500
+     * @tc.desc test SymbolNumberFormat with resolvedOptions function
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_0800', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "numberingSystem": "latn" });
+      let customSymbol: i18n.SymbolNumberFormatOptions = { "nan": "B" };
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolNumberFormat_0800 result:', options.nan);
+        expect(options.nan === 'B').assertTrue();
+      } catch (e) {
+        console.log('test_SymbolNumberFormat_0800 catch error:', e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_0900
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_1600
+     * @tc.desc test SymbolNumberFormat with empty nan option
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_0900', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "numberingSystem": "latn" });
+      let customSymbol: i18n.SymbolNumberFormatOptions = { "nan": "" };
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolNumberFormat_0900 result:', options.nan);
+        expect(options.nan === '').assertTrue();
+      } catch (e) {
+        console.log('test_SymbolNumberFormat_0900 catch error:', e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_1000
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_1700
+     * @tc.desc test SymbolNumberFormat with undefined nan option
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_1000', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "numberingSystem": "latn" });
+      let customSymbol: i18n.SymbolNumberFormatOptions = { "nan": undefined };
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolNumberFormat_1000 result:', options.nan);
+        expect(options.nan === 'NaN').assertTrue();
+      } catch (e) {
+        console.log('test_SymbolNumberFormat_1000 catch error:', e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_1100
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_1800
+     * @tc.desc test SymbolNumberFormat with custom minusSign character
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_1100', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "numberingSystem": "latn" });
+      let customSymbol: i18n.SymbolNumberFormatOptions = { "minusSign": "B" };
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let numberFormat = symbolFormat.format(-12345.06);
+        console.log('test_SymbolNumberFormat_1100 result:', numberFormat);
+        expect(numberFormat === 'B12,345.06').assertTrue();
+      } catch (e) {
+        console.log('test_SymbolNumberFormat_1100 catch error:', e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_1200
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_1900
+     * @tc.desc test SymbolNumberFormat with resolvedOptions
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_1200', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "numberingSystem": "latn" });
+      let customSymbol: i18n.SymbolNumberFormatOptions = { "minusSign": "B" };
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolNumberFormat_1200 result:', options.minusSign);
+        expect(options.minusSign === 'B').assertTrue();
+      } catch (e) {
+        console.log('test_SymbolNumberFormat_1200 catch error:', e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_1300
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_2000
+     * @tc.desc test SymbolNumberFormat with empty minusSign param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_1300', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "numberingSystem": "latn" });
+      let customSymbol: i18n.SymbolNumberFormatOptions = { "minusSign": "" };
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolNumberFormat_1300 result:', options.minusSign);
+        expect(options.minusSign === '').assertTrue();
+      } catch (e) {
+        console.log('test_SymbolNumberFormat_1300 catch error:', e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_1400
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_2100
+     * @tc.desc test SymbolNumberFormat with undefined minusSign param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_1400', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US', { 'numberingSystem': 'latn' });
+      let customSymbol: i18n.SymbolNumberFormatOptions = {'minusSign': undefined };
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolNumberFormat_1400 result:' + options.minusSign);
+        expect(options.minusSign === '-').assertTrue();
+      }catch(e){
+        console.log('test_SymbolNumberFormat_1400 catch error:' + e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_1500
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_2200
+     * @tc.desc test SymbolNumberFormat with custom plusSign param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_1500', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US', { 'numberingSystem': 'latn' });
+      let customSymbol: i18n.SymbolNumberFormatOptions = {'plusSign': 'B', signDisplay: 'always'};
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let numberFormat = symbolFormat.format(12345.06);
+        console.log('test_SymbolNumberFormat_1500 result:' + numberFormat);
+        expect(numberFormat === 'B12,345.06').assertTrue();
+      }catch(e){
+        console.log('test_SymbolNumberFormat_1500 catch error:' + e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_1600
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_2300
+     * @tc.desc test SymbolNumberFormat with resolveOptions
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_1600', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US', { 'numberingSystem': 'latn' });
+      let customSymbol: i18n.SymbolNumberFormatOptions = {'plusSign': 'B'};
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolNumberFormat_1600 result:' + options.plusSign);
+        expect(options.plusSign === 'B').assertTrue();
+      }catch(e){
+        console.log('test_SymbolNumberFormat_1600 catch error:' + e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_1700
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_2400
+     * @tc.desc test SymbolNumberFormat with empty plusSign param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_1700', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US', { 'numberingSystem': 'latn' });
+      let customSymbol: i18n.SymbolNumberFormatOptions = {'plusSign': ""};
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolNumberFormat_1700 result:' + options.plusSign);
+        expect(options.plusSign === '').assertTrue();
+      }catch(e){
+        console.log('test_SymbolNumberFormat_1700 catch error:' + e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_1800
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_2500
+     * @tc.desc test SymbolNumberFormat with empty plusSign param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_1800', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US', { 'numberingSystem': 'latn' });
+      let customSymbol: i18n.SymbolNumberFormatOptions = {'plusSign': undefined};
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolNumberFormat_1800 result:' + options.plusSign);
+        expect(options.plusSign === '+').assertTrue();
+      }catch(e){
+        console.log('test_SymbolNumberFormat_1800 catch error:' + e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_1900
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_2600
+     * @tc.desc test SymbolNumberFormat with custom infinity symbol
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_1900', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US');
+      let customSymbol: i18n.SymbolNumberFormatOptions = { 'infinity': 'B' };
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let numberFormat = symbolFormat.format(Infinity);
+        console.log('test_SymbolNumberFormat_1900 result:' + numberFormat);
+        expect(numberFormat === 'B').assertTrue();
+      }catch(e){
+        console.log('test_SymbolNumberFormat_1900 catch error:' + e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_2000
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_2700
+     * @tc.desc test SymbolNumberFormat with resolvedOptions
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_2000', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US');
+      let customSymbol: i18n.SymbolNumberFormatOptions = { 'infinity': 'B' };
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolNumberFormat_2000 result:' + options.infinity);
+        expect(options.infinity === 'B').assertTrue();
+      }catch(e){
+        console.log('test_SymbolNumberFormat_2000 catch error:' + e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_2100
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_2800
+     * @tc.desc test SymbolNumberFormat with resolvedOptions
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_2100', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US');
+      let customSymbol: i18n.SymbolNumberFormatOptions = { 'infinity': '' };
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolNumberFormat_2100 result:' + options.infinity);
+        expect(options.infinity === '').assertTrue();
+      }catch(e){
+        console.log('test_SymbolNumberFormat_2100 catch error:' + e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_2200
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_2900
+     * @tc.desc test SymbolNumberFormat with undefined infinity param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_2200', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US');
+      let customSymbol: i18n.SymbolNumberFormatOptions = { 'infinity': undefined };
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolNumberFormat_2200 result:' + options.infinity);
+        expect(options.infinity === '∞').assertTrue();
+      }catch(e){
+        console.log('test_SymbolNumberFormat_2200 catch error:' + e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_2300
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_3000
+     * @tc.desc test SymbolNumberFormat with undefined infinity param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_2300', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US');
+      let customSymbol: i18n.SymbolNumberFormatOptions = { 'groupingSeparator': '-' };
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let numberFormat = symbolFormat.format(123456);
+        console.log('test_SymbolNumberFormat_2300 result:' + numberFormat);
+        expect(numberFormat === '123-456').assertTrue();
+      }catch(e){
+        console.log('test_SymbolNumberFormat_2300 catch error:' + e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_2400
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_3100
+     * @tc.desc test SymbolNumberFormat with groupingSeparator
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_2400', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US');
+      let customSymbol: i18n.SymbolNumberFormatOptions = { 'groupingSeparator': '-' };
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolNumberFormat_2400 result:' + options.groupingSeparator);
+        expect(options.groupingSeparator === '-').assertTrue();
+      }catch(e){
+        console.log('test_SymbolNumberFormat_2400 catch error:' + e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_2600
+     * @tc.number SUB_GLOBAL_I18N_customSymbol_3200
+     * @tc.desc test SymbolNumberFormat with empty groupingSeparator param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_2600', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US');
+      let customSymbol: i18n.SymbolNumberFormatOptions = { 'groupingSeparator': undefined };
+      try {
+        let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+        let options = symbolFormat.resolvedOptions();
+        console.log('test_SymbolNumberFormat_2600 result:' + options.groupingSeparator);
+        expect(options.groupingSeparator === ',').assertTrue();
+      }catch(e){
+        console.log('test_SymbolNumberFormat_2600 catch error:' + e.code + e.message);
+        expect(false).assertTrue();
+      }
+    })
+
+    /**
+     * @tc.name i18n_setAppDefaultTimeZoneById_test_0400
+     * @tc.number SUB_GLOBAL_AppsSettingTimeZone_test_0400
+     * @tc.desc test getAppDefaultTimeZone with Asia/Shanghai
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setAppDefaultTimeZoneById_test_0400', Level.LEVEL2, () => {
+      let getAppTimeZone: i18n.TimeZone = i18n.TimeZone.getAppDefaultTimeZone();
+      let value: string = getAppTimeZone.getID();
+      console.log('i18n_setAppDefaultTimeZoneById_test_0400 value:', value);
+      expect(value).assertEqual('Asia/Shanghai');
+    })
+
+    /**
+     * @tc.name i18n_setAppDefaultTimeZoneById_test_0100
+     * @tc.number SUB_GLOBAL_AppsSettingTimeZone_test_0100
+     * @tc.desc test setAppDefaultTimeZoneById with Asia/Hong_Kong
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setAppDefaultTimeZoneById_test_0100', Level.LEVEL2, () => {
+      i18n.TimeZone.setAppDefaultTimeZoneById('Asia/Hong_Kong');
+      let getAppTimeZone: i18n.TimeZone = i18n.TimeZone.getAppDefaultTimeZone();
+      let value: string = getAppTimeZone.getID();
+      let value2: string = getAppTimeZone.getDisplayName();
+      console.log('i18n_setAppDefaultTimeZoneById_test_0100 value:', value);
+      expect(value).assertEqual('Asia/Hong_Kong');
+      expect(value2).assertEqual('香港标准时间');
+    })
+
+    /**
+     * @tc.name i18n_setAppDefaultTimeZoneById_test_0200
+     * @tc.number SUB_GLOBAL_AppsSettingTimeZone_test_0200
+     * @tc.desc test setAppDefaultTimeZoneById with America/New_York
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setAppDefaultTimeZoneById_test_0200', Level.LEVEL2, () => {
+      i18n.TimeZone.setAppDefaultTimeZoneById('America/New_York');
+      let getAppTimeZone: i18n.TimeZone = i18n.TimeZone.getAppDefaultTimeZone();
+      let value: string = getAppTimeZone.getID();
+      let value2: string = getAppTimeZone.getDisplayName();
+      console.log('i18n_setAppDefaultTimeZoneById_test_0200 value:', value);
+      expect(value).assertEqual('America/New_York');
+      expect(value2).assertEqual('北美东部时间');
+    })
+
+    /**
+     * @tc.name i18n_setAppDefaultTimeZoneById_test_0300
+     * @tc.number SUB_GLOBAL_AppsSettingTimeZone_test_0300
+     * @tc.desc test setAppDefaultTimeZoneById with America/New_York
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setAppDefaultTimeZoneById_test_0300', Level.LEVEL2, () => {
+      i18n.TimeZone.setAppDefaultTimeZoneById('America/New_York');
+      let getAppTimeZone: i18n.TimeZone = i18n.TimeZone.getAppDefaultTimeZone();
+      let value: string = getAppTimeZone.getID();
+      let dateTimeFormat: Intl.DateTimeFormat = new Intl.DateTimeFormat('zh-Hans-CN', {
+        timeZone: value,
+        dateStyle: 'long',
+        timeStyle: 'long',
+      });
+      let date: Date = new Date(2025, 4, 13, 12, 30);
+      let dateFormat = dateTimeFormat.format(date);
+      console.log('i18n_setAppDefaultTimeZoneById_test_0300 value:', dateFormat);
+      expect(dateFormat).assertEqual('2025年5月13日 GMT-4 上午12:30:00');
+    })
+
+    /**
+     * @tc.name i18n_setAppDefaultTimeZoneById_test_0500
+     * @tc.number SUB_GLOBAL_AppsSettingTimeZone_test_0500
+     * @tc.desc test getAppDefaultTimeZone with Asia/123
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setAppDefaultTimeZoneById_test_0500', Level.LEVEL2, () => {
+      try{
+        i18n.TimeZone.setAppDefaultTimeZoneById('Asia/123');
+      } catch (e) {
+        console.log('i18n_setAppDefaultTimeZoneById_test_0500 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(8900001);
+      }
+    })
+
+    /**
+     * @tc.name i18n_setAppDefaultTimeZoneById_test_0600
+     * @tc.number SUB_GLOBAL_AppsSettingTimeZone_test_0600
+     * @tc.desc test getAppDefaultTimeZone with Asia/123
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setAppDefaultTimeZoneById_test_0600', Level.LEVEL2, () => {
+      try{
+        i18n.TimeZone.setAppDefaultTimeZoneById('');
+      } catch (e) {
+        console.log('i18n_setAppDefaultTimeZoneById_test_0600 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(8900001);
+      }
+    })
+
+    /**
+     * @tc.name i18n_setAppDefaultTimeZoneById_test_0700
+     * @tc.number SUB_GLOBAL_AppsSettingTimeZone_test_0700
+     * @tc.desc test getAppDefaultTimeZone with null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setAppDefaultTimeZoneById_test_0700', Level.LEVEL2, () => {
+      try{
+        i18n.TimeZone.setAppDefaultTimeZoneById(null);
+      } catch (e) {
+        console.log('i18n_setAppDefaultTimeZoneById_test_0700 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(8900001);
+      }
+    })
+
+    /**
+     * @tc.name i18n_setAppDefaultTimeZoneById_test_0800
+     * @tc.number SUB_GLOBAL_AppsSettingTimeZone_test_0800
+     * @tc.desc test getAppDefaultTimeZone with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setAppDefaultTimeZoneById_test_0800', Level.LEVEL2, () => {
+      try{
+        i18n.TimeZone.setAppDefaultTimeZoneById(undefined);
+      } catch (e) {
+        console.log('i18n_setAppDefaultTimeZoneById_test_0800 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(8900001);
+      }
+    })
+
+    /**
+     * @tc.name i18n_setUnicodeWrappedBidiDirection_test_0100
+     * @tc.number SUB_GLOBAL_MirrorDisplay_test_0100
+     * @tc.desc test setUnicodeWrappedBidiDirection with LTR
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidiDirection_test_0100', Level.LEVEL2, () => {
+      let res: string = '知己';
+      let ltr: string = i18n.I18NUtil.setUnicodeWrappedBidiDirection(res, 'LTR');
+      let LTR: string = '海内存'+ltr+'，天涯若比邻。';
+      console.log('i18n_setUnicodeWrappedBidiDirection_test_0100 value:', LTR);
+      expect(LTR).assertEqual('海内存'+'\u2066'+'知己'+'\u2069'+'，天涯若比邻。');
+    })
+
+    /**
+     * @tc.name i18n_setUnicodeWrappedBidiDirection_test_0200
+     * @tc.number SUB_GLOBAL_MirrorDisplay_test_0200
+     * @tc.desc test setUnicodeWrappedBidiDirection with RTL
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidiDirection_test_0200', Level.LEVEL2, () => {
+      let res: string = '知己';
+      let rtl: string = i18n.I18NUtil.setUnicodeWrappedBidiDirection(res, 'RTL');
+      let RTL: string = '海内存'+rtl+'，天涯若比邻。';
+      console.log('i18n_setUnicodeWrappedBidiDirection_test_0200 value:', RTL);
+      expect(RTL).assertEqual('海内存'+'\u2067'+'知己'+'\u2069'+'，天涯若比邻。');
+    })
+
+    /**
+     * @tc.name i18n_setUnicodeWrappedBidiDirection_test_0300
+     * @tc.number SUB_GLOBAL_MirrorDisplay_test_0300
+     * @tc.desc test setUnicodeWrappedBidiDirection with RTL
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidiDirection_test_0300', Level.LEVEL2, () => {
+      let res: string = 'AB';
+      let rtl: string = i18n.I18NUtil.setUnicodeWrappedBidiDirection(res, 'RTL');
+      let RTL: string = '海内存'+rtl+'，天涯若比邻。';
+      console.log('i18n_setUnicodeWrappedBidiDirection_test_0300 value:', RTL);
+      expect(RTL).assertEqual('海内存'+'\u2067'+'AB'+'\u2069'+'，天涯若比邻。');
+    })
+
+    /**
+     * @tc.name i18n_setUnicodeWrappedBidiDirection_test_0400
+     * @tc.number SUB_GLOBAL_MirrorDisplay_test_0400
+     * @tc.desc test setUnicodeWrappedBidiDirection with RTL
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidiDirection_test_0400', Level.LEVEL2, () => {
+      let res: string = '0 1 2 3';
+      let rtl: string = i18n.I18NUtil.setUnicodeWrappedBidiDirection(res, 'RTL');
+      let RTL: string = '海内存'+rtl+'，天涯若比邻。';
+      console.log('i18n_setUnicodeWrappedBidiDirection_test_0400 value:', RTL);
+      expect(RTL).assertEqual('海内存'+'\u2067'+'0 1 2 3'+'\u2069'+'，天涯若比邻。');
+    })
+
+    /**
+     * @tc.name i18n_setUnicodeWrappedBidiDirection_test_0500
+     * @tc.number SUB_GLOBAL_MirrorDisplay_test_0500
+     * @tc.desc test setUnicodeWrappedBidiDirection with RTL
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidiDirection_test_0500', Level.LEVEL2, () => {
+      let res: string = 'تفاحة';
+      let ltr: string = i18n.I18NUtil.setUnicodeWrappedBidiDirection(res, 'LTR');
+      let LTR: string = 'Apple is a fruit, AR name is '+ltr+', is very delicious.';
+      console.log('i18n_setUnicodeWrappedBidiDirection_test_0500 value:', LTR);
+      expect(LTR).assertEqual('Apple is a fruit, AR name is '+'\u2066'+'تفاحة'+'\u2069'+', is very delicious.');
+    })
+
+    /**
+     * @tc.name i18n_setUnicodeWrappedBidiDirection_test_0600
+     * @tc.number SUB_GLOBAL_MirrorDisplay_test_0600
+     * @tc.desc test setUnicodeWrappedBidiDirection with RTL
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidiDirection_test_0600', Level.LEVEL2, () => {
+      let res: string = 'تفاحة';
+      let rtl: string = i18n.I18NUtil.setUnicodeWrappedBidiDirection(res, 'RTL');
+      let RTL: string = 'Apple is a fruit, AR name is '+rtl+', is very delicious.';
+      console.log('i18n_setUnicodeWrappedBidiDirection_test_0600 value:', RTL);
+      expect(RTL).assertEqual('Apple is a fruit, AR name is '+'\u2067'+'تفاحة'+'\u2069'+', is very delicious.');
+    })
+
+    /**
+     * @tc.name i18n_setUnicodeWrappedBidiDirection_test_0700
+     * @tc.number SUB_GLOBAL_MirrorDisplay_test_0700
+     * @tc.desc test setUnicodeWrappedBidiDirection with RTL
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidiDirection_test_0700', Level.LEVEL2, () => {
+      let res: string = 'تفاحة';
+      let ltr: string = i18n.I18NUtil.setUnicodeWrappedBidiDirection(res, 'LTR');
+      let LTR: string = 'الرقم'+':'+ltr+','+'.الرقم';
+      console.log('i18n_setUnicodeWrappedBidiDirection_test_0700 value:', LTR);
+      expect(LTR).assertEqual('الرقم'+':'+'\u2066'+'تفاحة'+'\u2069'+','+'.الرقم');
+    })
+
+    /**
+     * @tc.name i18n_setUnicodeWrappedBidiDirection_test_0800
+     * @tc.number SUB_GLOBAL_MirrorDisplay_test_0800
+     * @tc.desc test setUnicodeWrappedBidiDirection with RTL
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidiDirection_test_0800', Level.LEVEL2, () => {
+      let res: string = 'تفاحة';
+      let rtl: string = i18n.I18NUtil.setUnicodeWrappedBidiDirection(res, 'RTL');
+      let RTL: string = 'الرقم'+':'+rtl+','+'.الرقم';
+      console.log('i18n_setUnicodeWrappedBidiDirection_test_0800 value:', RTL);
+      expect(RTL).assertEqual('الرقم'+':'+'\u2067'+'تفاحة'+'\u2069'+','+'.الرقم');
+    })
+
+    /**
+     * @tc.name i18n_setUnicodeWrappedBidiDirection_test_0900
+     * @tc.number SUB_GLOBAL_MirrorDisplay_test_0900
+     * @tc.desc test setUnicodeWrappedBidiDirection with ''
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidiDirection_test_0900', Level.LEVEL2, () => {
+      let res: string = '';
+      let ltr: string = i18n.I18NUtil.setUnicodeWrappedBidiDirection(res, 'LTR');
+      let LTR: string = '海内存'+ltr+'，天涯若比邻。';
+      console.log('i18n_setUnicodeWrappedBidiDirection_test_0900 value:', LTR);
+      expect(LTR).assertEqual('海内存'+'\u2066'+'\u2069'+'，天涯若比邻。');
+    })
+
+    /**
+     * @tc.name i18n_setUnicodeWrappedBidiDirection_test_1000
+     * @tc.number SUB_GLOBAL_MirrorDisplay_test_1000
+     * @tc.desc test setUnicodeWrappedBidiDirection with null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidiDirection_test_1000', Level.LEVEL2, () => {
+      try{
+        let ltr: string = i18n.I18NUtil.setUnicodeWrappedBidiDirection(null, 'LTR');
+        expect(ltr).assertFail();
+      } catch (e) {
+        console.log('i18n_setUnicodeWrappedBidiDirection_test_1000 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name i18n_setUnicodeWrappedBidiDirection_test_1100
+     * @tc.number SUB_GLOBAL_MirrorDisplay_test_1100
+     * @tc.desc test setUnicodeWrappedBidiDirection with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidiDirection_test_1100', Level.LEVEL2, () => {
+      try{
+        let ltr: string = i18n.I18NUtil.setUnicodeWrappedBidiDirection(undefined, 'LTR');
+        expect(ltr).assertFail();
+      } catch (e) {
+        console.log('i18n_setUnicodeWrappedBidiDirection_test_1100 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name i18n_setUnicodeWrappedBidiDirection_test_1200
+     * @tc.number SUB_GLOBAL_MirrorDisplay_test_1200
+     * @tc.desc test setUnicodeWrappedBidiDirection with null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidiDirection_test_1200', Level.LEVEL2, () => {
+      try{
+        let res: string = '知己';
+        let ltr: string = i18n.I18NUtil.setUnicodeWrappedBidiDirection(res, null);
+        expect(ltr).assertFail();
+      } catch (e) {
+        console.log('i18n_setUnicodeWrappedBidiDirection_test_1200 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name i18n_setUnicodeWrappedBidiDirection_test_1300
+     * @tc.number SUB_GLOBAL_MirrorDisplay_test_1300
+     * @tc.desc test setUnicodeWrappedBidiDirection with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidiDirection_test_1300', Level.LEVEL2, () => {
+      try{
+        let res: string = '知己';
+        let ltr: string = i18n.I18NUtil.setUnicodeWrappedBidiDirection(res, undefined);
+        expect(ltr).assertFail();
+      } catch (e) {
+        console.log('i18n_setUnicodeWrappedBidiDirection_test_1300 code&message:', e.code + e.message);
+        expect(Number(e.code)).assertEqual(401);
+      }
+    })
+
   })
 }

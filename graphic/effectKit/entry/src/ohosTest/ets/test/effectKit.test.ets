@@ -1190,9 +1190,9 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
               console.info(msgStr + "Napi color[ARGB]=" + color.alpha + "," + color.red + "," + color.green + "," + color.blue);
               expect(color != null).assertTrue();
               expect(color.alpha).assertEqual(255);
-              expect(color.red).assertEqual(177);
-              expect(color.green).assertEqual(175);
-              expect(color.blue).assertEqual(160);
+              expect(color.red).assertEqual(245);
+              expect(color.green).assertEqual(245);
+              expect(color.blue).assertEqual(243);
               console.info(msgStr + "Napi get main color end");
               done();
             }).catch((ex: BusinessError) => {
@@ -1544,9 +1544,9 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
             console.info(msgStr + "Napi color[ARGB]=" + color.alpha + "," + color.red + "," + color.green + "," + color.blue);
             expect(color != null).assertTrue();
             expect(color.alpha).assertEqual(255);
-            expect(color.red).assertEqual(177);
-            expect(color.green).assertEqual(175);
-            expect(color.blue).assertEqual(160);
+            expect(color.red).assertEqual(245);
+            expect(color.green).assertEqual(245);
+            expect(color.blue).assertEqual(243);
             console.info(msgStr + "Napi get main sync color end");
             done();
           }).catch((ex: BusinessError) => {

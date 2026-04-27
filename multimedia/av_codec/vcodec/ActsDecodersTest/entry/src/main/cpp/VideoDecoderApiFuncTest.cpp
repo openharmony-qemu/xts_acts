@@ -25,6 +25,8 @@
 #include <fcntl.h>
 #include <string>
 #include <sys/stat.h>
+#include <iostream>
+#include <unistd.h>
 
 // 测试常量定义
 constexpr int MAX_DECODER_INSTANCES = 64;        // 最大解码器实例数
@@ -769,6 +771,161 @@ int VideoAv1DecCapApi0017()
             return -1;
         }
         return 0;
+    }
+    return 0;
+}
+
+// Obtain a list of supported capabilities and their names for the video encoder
+int VideoEncCapApi0018()
+{
+    uint32_t count = 0;
+    OH_AVCapability **capabilityList = nullptr;
+    const char *codecNameType = nullptr;
+    const char *codecNameMimeType = nullptr;
+    capabilityList = OH_AVCodec_GetCapabilityList(OH_AVCODEC_TYPE_VIDEO_ENCODER, &count);
+    if (capabilityList == nullptr || count == 0) {
+        return -1;
+    }
+    for (uint32_t i = 0; i < count; ++i) {
+        codecNameType = OH_AVCapability_GetName(capabilityList[i]);
+        codecNameMimeType = OH_AVCapability_GetMimeType(capabilityList[i]);
+        cout << "codecNameType= " << codecNameType << endl;
+        cout << "codecNameMimeType= " << codecNameMimeType << endl;
+    }
+    return 0;
+}
+
+// Obtain a list of supported capabilities and their names for the video decoder
+int VideoDecCapApi0019()
+{
+    uint32_t count = 0;
+    OH_AVCapability **capabilityList = nullptr;
+    const char *codecNameType = nullptr;
+    const char *codecNameMimeType = nullptr;
+    capabilityList = OH_AVCodec_GetCapabilityList(OH_AVCODEC_TYPE_VIDEO_DECODER, &count);
+    if (capabilityList == nullptr || count == 0) {
+        return -1;
+    }
+    for (uint32_t i = 0; i < count; ++i) {
+        codecNameType = OH_AVCapability_GetName(capabilityList[i]);
+        codecNameMimeType = OH_AVCapability_GetMimeType(capabilityList[i]);
+        cout << "codecNameType= " << codecNameType << endl;
+        cout << "codecNameMimeType= " << codecNameMimeType << endl;
+    }
+    return 0;
+}
+
+// Obtain a list of supported capabilities and their names for the audio encoder
+int VideoEncCapApi0020()
+{
+    uint32_t count = 0;
+    OH_AVCapability **capabilityList = nullptr;
+    const char *codecNameType = nullptr;
+    const char *codecNameMimeType = nullptr;
+    capabilityList = OH_AVCodec_GetCapabilityList(OH_AVCODEC_TYPE_AUDIO_ENCODER, &count);
+    if (capabilityList == nullptr || count == 0) {
+        return -1;
+    }
+    for (uint32_t i = 0; i < count; ++i) {
+        codecNameType = OH_AVCapability_GetName(capabilityList[i]);
+        codecNameMimeType = OH_AVCapability_GetMimeType(capabilityList[i]);
+        cout << "codecNameType= " << codecNameType << endl;
+        cout << "codecNameMimeType= " << codecNameMimeType << endl;
+    }
+    return 0;
+}
+
+// Obtain a list of supported capabilities and their names for the audio DECODER
+int VideoDecCapApi0021()
+{
+    uint32_t count = 0;
+    OH_AVCapability **capabilityList = nullptr;
+    const char *codecNameType = nullptr;
+    const char *codecNameMimeType = nullptr;
+    capabilityList = OH_AVCodec_GetCapabilityList(OH_AVCODEC_TYPE_AUDIO_DECODER, &count);
+    if (capabilityList == nullptr || count == 0) {
+        return -1;
+    }
+    for (uint32_t i = 0; i < count; ++i) {
+        codecNameType = OH_AVCapability_GetName(capabilityList[i]);
+        codecNameMimeType = OH_AVCapability_GetMimeType(capabilityList[i]);
+        cout << "codecNameType= " << codecNameType << endl;
+        cout << "codecNameMimeType= " << codecNameMimeType << endl;
+    }
+    return 0;
+}
+
+// Check the encoder type
+int VideoEncCapApi0022()
+{
+    OH_AVCapability *capHevcHw = nullptr;
+    bool checkMimeType = true;
+    capHevcHw = OH_AVCodec_GetCapabilityByCategory(
+        OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
+    if (capHevcHw == nullptr) {
+        return 0;
+    }
+    checkMimeType = OH_AVCapability_CheckMimeType(capHevcHw, OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
+    if (!checkMimeType) {
+        return -1;
+    }
+    return 0;
+}
+
+// Check the secure decoder type
+int VideoDecCapApi0023()
+{
+    uint32_t count = 0;
+    if (access("/system/lib64/media/", 0)) {
+        return 0;
+    }
+    OH_AVCapability **capabilityList = OH_AVCodec_GetCapabilityList(OH_AVCODEC_TYPE_VIDEO_DECODER, &count);
+    if (capabilityList == nullptr || count == 0) {
+        return -1;
+    }
+    for (uint32_t i = 0; i < count; ++i) {
+        if (OH_AVCapability_IsSecure(capabilityList[i])) {
+            return 0;
+        }
+    }
+    return -1;
+}
+
+// Check the encoder type
+int VideoDecCapApi0024()
+{
+    bool checkMimeType = true;
+    checkMimeType = OH_AVCapability_CheckMimeType(nullptr, OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
+    if (!checkMimeType) {
+        return -1;
+    }
+    return 0;
+}
+
+// Check the encoder type
+int VideoDecCapApi0025()
+{
+    OH_AVCapability *capHevcHw = nullptr;
+    bool checkMimeType = true;
+    capHevcHw = OH_AVCodec_GetCapabilityByCategory(
+        OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
+    if (capHevcHw == nullptr) {
+        return 0;
+    }
+    checkMimeType = OH_AVCapability_CheckMimeType(capHevcHw, nullptr);
+    if (!checkMimeType) {
+        return -1;
+    }
+    return 0;
+}
+
+// Check the encoder type
+int VideoDecCapApi0026()
+{
+    bool checkMimeType = true;
+    checkMimeType = OH_AVCapability_IsSecure(nullptr);
+    if (!checkMimeType) {
+        return -1;
     }
     return 0;
 }

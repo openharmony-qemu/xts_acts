@@ -14,8 +14,9 @@
  */
 
 import webInitTest from './WebInitTest.test'
-
+import webViewInitTest from "./WebInitTest2.test";
 
 export default function testsuite() {
     webInitTest();
+    webViewInitTest();
 }

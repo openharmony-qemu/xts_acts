@@ -1974,3 +1974,23 @@ napi_value AVSessionRegisterSetLoopModeCallbackInvalidParam(napi_env env, napi_c
     }
     return retValue;
 }
+
+napi_value AVSessionCreateNullInvalidParam(napi_env env, napi_callback_info info)
+{
+    const char *sessionTag = "";
+    const char *bundleName = "MyBundleName";
+    const char *abilityName = "MyAbilityName";
+    OH_AVSession *avsession = nullptr;
+    AVSession_Type sessionType = SESSION_TYPE_AUDIO;
+    int32_t createResult = OH_AVSession_Create(sessionType, sessionTag, bundleName, abilityName, &avsession);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "OH_AVSession_Create",
+        "OH_AVSession_Create result: %{public}d", createResult);
+    OH_AVSession_Destroy(avsession);
+    napi_value retValue;
+    if (createResult == AV_SESSION_ERR_SERVICE_EXCEPTION) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}

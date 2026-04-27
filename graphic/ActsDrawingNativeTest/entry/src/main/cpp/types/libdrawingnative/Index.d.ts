@@ -43,6 +43,9 @@ export const DrawingPointDestroy: (caseName: number) => number;
 // Point GetSet related functions
 export const DrawingPointGetSet: (caseName: number) => number;
 
+// Point Negate Offset related functions
+export const DrawingPointNegateOffset: (caseName: number) => number;
+
 // Region Basic Operations related functions
 export const DrawingRegionBasicOperations: (caseName: number) => number;
 
@@ -255,6 +258,9 @@ export const DrawingCanvasDrawPixelMapRectConstraint: (caseName: number) => numb
 
 // Canvas Part5 DrawPixelMapMesh related functions
 export const DrawingCanvasDrawPixelMapMesh: (caseName: number) => number;
+
+// Canvas Part6 DrawingCanvasResetClip related functions
+export const DrawingCanvasResetClip: (caseName: number) => number;
 
 // ColorFilter CreateBlendMode related functions
 export const DrawingColorFilterCreateBlendMode: (caseName: number) => number;

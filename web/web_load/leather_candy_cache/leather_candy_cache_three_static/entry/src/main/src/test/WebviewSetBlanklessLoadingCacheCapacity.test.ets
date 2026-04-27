@@ -55,9 +55,11 @@ export default function ActsAceWebviewEnableBackForwardCache() {
       await Utils.msSleep(2000);
     })
 
+
+
     /**
      * @tc.name   testSetBlanklessLoadingCacheCapacityStatic
-     * @tc.number SUB_ACE_WEBVIEW_ENABLEBACKFORWARDCACHE_API_2603261011
+     * @tc.number SUB_ACE_WEBVIEW_ENABLEBACKFORWARDCACHE_API_0001
      * @tc.desc   test setBlanklessLoadingCacheCapacity
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -69,6 +71,26 @@ export default function ActsAceWebviewEnableBackForwardCache() {
         Utils.emitEvent(emitKey, 10);
         await Utils.msSleep(2000);
         Utils.registerEvent('testSetBlanklessLoadingCacheCapacityStatic', 'success', 2603261011, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webviewEnableBackForwardCacheButton', 10, '');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testEmulateTouchFromMouseEventStatic002
+     * @tc.number SUB_ACE_WEBVIEW_EMULATOUCHFROMMOUSE_API_0001
+     * @tc.desc   test EmulateTouchFromMouse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEmulateTouchFromMouseEventStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        emitKey = 'emitEmulateTouchFromMouseEventStatic002'
+        Utils.emitEvent(emitKey, 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testEmulateTouchFromMouseEventStatic002', '17100001', 2630141801, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('webviewEnableBackForwardCacheButton', 10, '');
         await Utils.msSleep(6000);

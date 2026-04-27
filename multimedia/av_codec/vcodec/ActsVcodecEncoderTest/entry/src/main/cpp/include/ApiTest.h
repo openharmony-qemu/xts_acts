@@ -66,6 +66,11 @@ extern int VideoEncodeSyncApi0050Test();
 extern int VideoEncodeSyncApi0060Test();
 extern int VideoEncodeSyncApi0070Test();
 extern int VideoEncodeSyncApi0080Test();
+extern int VideoEncodeApiAdd0010();
+extern int VideoEncodeApiAdd0020();
+extern int VideoEncodeApiAdd0030();
+extern int VideoEncodeApiAdd0040();
+extern int VideoEncodeApiAdd0050();
 
 extern void InitApiTest();
 extern void TestTearDownApi();

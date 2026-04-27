@@ -125,10 +125,10 @@ async function testSetPlaybackSpeed(fd: media.AVFileDescriptor, done: () => void
     }
   }).catch(mediaTestBase.catchCallback);
   avPlayer!!.onStateChange((state: media.AVPlayerState, reason: media.StateChangeReason) => {
-    waitForCompletion(async () => {
+    (async () => {
       console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
       await handleState(state.toString(), operationRecord);
-    })
+    })().awaitSync()
   });
   avPlayer!!.onPlaybackRateDone(callback);
   console.info(`register playbackRateDone`);

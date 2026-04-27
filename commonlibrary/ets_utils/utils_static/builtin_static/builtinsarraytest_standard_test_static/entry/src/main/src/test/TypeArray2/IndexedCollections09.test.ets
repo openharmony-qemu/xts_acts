@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -451,7 +451,7 @@ export default function IndexedCollections09Test() {
         const TAG = 'testArrayConstruct0002';
         console.log(TAG + ' start');
 
-        const arr17: undefined[] = new Array<undefined>(5);
+        const arr17: undefined[] = Array.create<undefined>(5, undefined);
         const result17: boolean = arr17.length === 5 && arr17[0] === undefined;
         expect(result17).assertTrue();
 
@@ -628,7 +628,7 @@ export default function IndexedCollections09Test() {
         const TAG = 'testArrayConstruct0010';
         console.log(TAG + ' start');
 
-        const arr25: number[] = new Array<number>(0);
+        const arr25: number[] = new Array<number>();
         const result25: boolean = arr25.length === 0;
         expect(result25).assertTrue();
 
@@ -650,7 +650,7 @@ export default function IndexedCollections09Test() {
         const TAG = 'testArrayConstruct0011';
         console.log(TAG + ' start');
 
-        const arr26: number[] = new Array<number>(1000000);
+        const arr26: number[] = Array.create<number>(1000000, 0);
         const result26: boolean = arr26.length === 1000000;
         expect(result26).assertTrue();
 
@@ -739,7 +739,7 @@ export default function IndexedCollections09Test() {
         console.log(TAG + ' start');
 
         const arr30a: number[] = Array.of<number>(3);
-        const arr30b: number[] = new Array<number>(3);
+        const arr30b: number[] = Array.create<number>(3, NaN);
         const result30: boolean = arr30a.length === 1 && arr30b.length === 3;
         expect(result30).assertTrue();
 
@@ -853,7 +853,7 @@ export default function IndexedCollections09Test() {
         const TAG = 'testArrayFrom0003';
         console.log(TAG + ' start');
 
-        let a: number[] = new Array<number>(0);
+        let a: number[] = new Array<number>();
         const b = a.$_iterator();
         const arr35: number[] = Array.from<number>(b);
         const result35: boolean = arr35.length === 0;
@@ -1386,7 +1386,7 @@ export default function IndexedCollections09Test() {
         const TAG = 'testArraySparse0017';
         console.log(TAG + ' start');
 
-        const arr59: number[] = new Array<number>(3);
+        const arr59: number[] = Array.create<number>(3, NaN);
         const result59: boolean = arr59.length === 3;
 
         expect(result59).assertTrue();
@@ -1409,7 +1409,7 @@ export default function IndexedCollections09Test() {
         const TAG = 'testArraySparse0018';
         console.log(TAG + ' start');
 
-        const arr60: number[] = new Array<number>(3);
+        const arr60: number[] = Array.create<number>(3, NaN);
         let count60: number = 0;
         arr60.forEach(() => {
           count60++

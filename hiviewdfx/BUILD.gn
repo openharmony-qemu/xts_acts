@@ -33,6 +33,7 @@ group("hiviewdfxtestacts") {
       "hicheckertest/hicheckerteststatic:ActsHicheckerStaticTest",
       "hicheckertest/jsleakwatchertest:ActsJsLeakWatcherTest",
       "hicollietest/hicolliendktest:ActsHicollieTest",
+      "hicollietest/hicollieFreezeNdktest:ActsHicollieFreezeTest",
       "hidebugtest/hidebugtestcoltest:ActsHiDebugColTest",
       "hidebugtest/hidebugtestjstest:ActsHiDebugTest",
       "hidebugtest/hidebugtestnewtest:ActsHiDebugNewTest",

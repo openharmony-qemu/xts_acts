@@ -1175,6 +1175,75 @@ export default function AVScreenCaptureNdkTest() {
           done()
         }
       })
+    
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPrivacyMaskMode_0200
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPrivacyMaskMode_0200
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPrivacyMaskMode_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPrivacyMaskMode_0200 start====");
+          let result: number = avscreencapture.OH_AVScreenCapture_StrategyForPrivacyMaskMode0200();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPrivacyMaskMode_0200 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPrivacyMaskMode_0300
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPrivacyMaskMode_0300
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPrivacyMaskMode_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPrivacyMaskMode_0300 start====");
+          let result: number = avscreencapture.OH_AVScreenCapture_StrategyForPrivacyMaskMode0300();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPrivacyMaskMode_0300 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+    
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPrivacyMaskMode_0400
+     * @tc.number SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPrivacyMaskMode_0400
+     * @tc.desc   test OH_AVScreenCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPrivacyMaskMode_0400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPrivacyMaskMode_0400 start====");
+          let result: number = avscreencapture.OH_AVScreenCapture_StrategyForPrivacyMaskMode0400();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForPrivacyMaskMode_0400 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
 
     /**
      * @tc.name   SUB_MULTIMEIDA_OH_AVScreenCapture_StrategyForCanvasFollowRotation0100
@@ -2459,6 +2528,29 @@ export default function AVScreenCaptureNdkTest() {
           done()
         } catch (err) {
           console.error("====>SUB_MULTIMEIDA_OH_AVScreenCapture_GetMultiDisplayIdsSelected0101 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_ScreenCapture_StateCodeEnum_0300
+     * @tc.number SUB_MULTIMEIDA_OH_ScreenCapture_StateCodeEnum_0300
+     * @tc.desc   test OH_AVScreenCaptureStateCode_Enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_ScreenCapture_StateCodeEnum_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_ScreenCapture_StateCodeEnum_0300 start====");
+          let result: number = avscreencapture.OH_AVScreenCaptureStateCode_Enum();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_ScreenCapture_StateCodeEnum_0300 catch err: " + err);
           expect(false).assertEqual(true);
           done()
         }

@@ -502,5 +502,83 @@ export default function DrawingNativePath2Test() {
       const result = libDrawingNative.DrawingPathPart4GetData(16);
       expect(result).assertEqual(0);
     })
+
+    /**
+     * @tc.name   testPathGetLastPointNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_1800
+     * @tc.desc   test for testPathGetLastPointNormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPathGetLastPointNormal', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingPathPart4GetData(17);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPathGetLastPointNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_1900
+     * @tc.desc   test for testPathGetLastPointNull
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPathGetLastPointNull', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPathPart4GetData(18);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPathGetLastPointMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_2000
+     * @tc.desc   test for testPathGetLastPointMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPathGetLastPointMultipleCalls', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPathPart4GetData(19);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPathIsEqualNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_2100
+     * @tc.desc   test for testPathIsEqualNormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPathIsEqualNormal', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingPathPart4GetData(20);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPathIsEqualNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_2200
+     * @tc.desc   test for testPathIsEqualNull
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPathIsEqualNull', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPathPart4GetData(21);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPathIsEqualMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_2300
+     * @tc.desc   test for testPathIsEqualMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPathIsEqualMultipleCalls', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPathPart4GetData(22);
+      expect(result).assertEqual(0);
+    })
   })
 }
