@@ -199,12 +199,12 @@ export default function ObjectInterfaceTest() {
     let cdata:contact.Contact = contactData;
 
     /**
-    * @tc.name   contactsApi_queryMyCard_test_100
-    * @tc.number contactsApi_queryMyCard_test_100
-    * @tc.desc   contactsApi_queryMyCard_test_100
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL0
+      * @tc.name   contactsApi_queryMyCard_test_100
+      * @tc.number contactsApi_queryMyCard_test_100
+      * @tc.desc   contactsApi_queryMyCard_test_100
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
     */
     it("contactsApi_queryMyCard_test_100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -226,12 +226,12 @@ export default function ObjectInterfaceTest() {
       sleep(500);
     });
     /**
-    * @tc.name   contactsApi_queryMyCard_test_200
-    * @tc.number contactsApi_queryMyCard_test_200
-    * @tc.desc   contactsApi_queryMyCard_test_200
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL0
+      * @tc.name   contactsApi_queryMyCard_test_200
+      * @tc.number contactsApi_queryMyCard_test_200
+      * @tc.desc   contactsApi_queryMyCard_test_200
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
     */
     it("contactsApi_queryMyCard_test_200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
@@ -253,12 +253,12 @@ export default function ObjectInterfaceTest() {
       sleep(500);
     });
     /**
-    * @tc.name   contactsApi_queryMyCard_test_300
-    * @tc.number contactsApi_queryMyCard_test_300
-    * @tc.desc   contactsApi_queryMyCard_test_300
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL0
+      * @tc.name   contactsApi_queryMyCard_test_300
+      * @tc.number contactsApi_queryMyCard_test_300
+      * @tc.desc   contactsApi_queryMyCard_test_300
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
     */
     it("contactsApi_queryMyCard_test_300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
