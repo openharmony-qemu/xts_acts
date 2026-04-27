@@ -92,7 +92,7 @@ static void Ulimit0300(void)
     EXPECT_LONGEQ("ulimit_0300", -1, result);
 }
 
-static int UlimitTest_impl(void)
+static int UlimitTestImpl(void)
 {
     Ulimit0100();
     Ulimit0200();
@@ -102,5 +102,5 @@ static int UlimitTest_impl(void)
 
 int UlimitTest(void)
 {
-    return UlimitTest_impl();
+    return UlimitTestImpl();
 }

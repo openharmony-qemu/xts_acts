@@ -48,7 +48,8 @@ void Fchownat0100(void)
     if (fstat(fd, &bufBefore) != 0) {
         t_error("fchownat_0100: fstat before fchownat failed (errno=%d)\n", errno);
         close(fd);
-        remove(FCHOWNAT_TEST_FILE);
+        int removeRet = remove(FCHOWNAT_TEST_FILE);
+        EXPECT_EQ("fchownat_0100", removeRet, 0);
         return;
     }
 
@@ -63,12 +64,14 @@ void Fchownat0100(void)
             printf("fchownat_0100: fchownat failed as expected without privileges (errno=%d)\n", errno);
             printf("fchownat_0100: Changing file ownership requires root privileges.\n");
             close(fd);
-            remove(FCHOWNAT_TEST_FILE);
+            int removeRet = remove(FCHOWNAT_TEST_FILE);
+            EXPECT_EQ("fchownat_0100", removeRet, 0);
             return; // Don't fail the test
         } else {
             t_error("fchownat_0100: fchownat failed with unexpected errno=%d\n", errno);
             close(fd);
-            remove(FCHOWNAT_TEST_FILE);
+            int removeRet = remove(FCHOWNAT_TEST_FILE);
+            EXPECT_EQ("fchownat_0100", removeRet, 0);
             return;
         }
     }
@@ -88,7 +91,8 @@ void Fchownat0100(void)
     }
 
     close(fd);
-    remove(FCHOWNAT_TEST_FILE);
+    int removeRet = remove(FCHOWNAT_TEST_FILE);
+    EXPECT_EQ("fchownat_0100", removeRet, 0);
 }
 
 /**
@@ -112,7 +116,8 @@ void Fchownat0200(void)
     struct stat bufBefore;
     if (stat(FCHOWNAT_TEST_FILE, &bufBefore) != 0) {
         t_error("fchownat_0200: stat before fchownat failed (errno=%d)\n", errno);
-        remove(FCHOWNAT_TEST_FILE);
+        int removeRet = remove(FCHOWNAT_TEST_FILE);
+        EXPECT_EQ("fchownat_0200", removeRet, 0);
         return;
     }
 
@@ -126,11 +131,13 @@ void Fchownat0200(void)
         if (errno == EPERM || errno == EACCES) {
             printf("fchownat_0200: fchownat with AT_FDCWD failed as expected without privileges (errno=%d)\n", errno);
             printf("fchownat_0200: Changing file ownership requires root privileges.\n");
-            remove(FCHOWNAT_TEST_FILE);
+            int removeRet = remove(FCHOWNAT_TEST_FILE);
+            EXPECT_EQ("fchownat_0200", removeRet, 0);
             return; // Don't fail the test
         } else {
             t_error("fchownat_0200: fchownat with AT_FDCWD failed with unexpected errno=%d\n", errno);
-            remove(FCHOWNAT_TEST_FILE);
+            int removeRet = remove(FCHOWNAT_TEST_FILE);
+            EXPECT_EQ("fchownat_0200", removeRet, 0);
             return;
         }
     }
@@ -149,7 +156,8 @@ void Fchownat0200(void)
         fchownat(AT_FDCWD, FCHOWNAT_TEST_FILE, bufBefore.st_uid, bufBefore.st_gid, AT_SYMLINK_NOFOLLOW);
     }
 
-    remove(FCHOWNAT_TEST_FILE);
+    int removeRet = remove(FCHOWNAT_TEST_FILE);
+    EXPECT_EQ("fchownat_0200", removeRet, 0);
 }
 
 static int FchownatTestImpl(int argc, char* argv[])

@@ -43,7 +43,8 @@ void Fdatasync0100()
     EXPECT_STREQ("fdatasync_0100", buffer, "hello");
 
     close(fd);
-    remove(PATH);
+    int removeRet = remove(PATH);
+    EXPECT_EQ("fdatasync_0100", removeRet, 0);
 }
 
 /**
@@ -63,7 +64,8 @@ void Fdatasync0200()
     int result = fdatasync(fd);
     EXPECT_EQ("fdatasync_0200", result, -1);
 
-    remove(PATH);
+    int removeRet = remove(PATH);
+    EXPECT_EQ("fdatasync_0200", removeRet, 0);
 }
 
 /**

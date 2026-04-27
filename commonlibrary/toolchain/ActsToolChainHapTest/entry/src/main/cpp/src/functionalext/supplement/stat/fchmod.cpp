@@ -40,7 +40,8 @@ void Fchmod0100()
     EXPECT_EQ("fchmod_0100", result, 0);
     EXPECT_EQ("fchmod_0100", buf.st_mode, EXPECT_MODE_34815);
     close(fd);
-    remove(path);
+    int removeRet = remove(path);
+    EXPECT_EQ("fchmod_0100", removeRet, 0);
 }
 
 /**
@@ -58,7 +59,8 @@ void Fchmod0200()
     EXPECT_EQ("fchmod_0200", result, 0);
     EXPECT_EQ("fchmod_0200", buf.st_mode, EXPECT_MODE_33279);
     close(fd);
-    remove(path);
+    int removeRet = remove(path);
+    EXPECT_EQ("fchmod_0200", removeRet, 0);
 }
 
 /**

@@ -122,7 +122,11 @@ static int MallocEncodePointerTestImpl(int argc, char* argv[])
     sigemptyset(&set);
     sigaddset(&set, SIGCHLD);
     sigprocmask(SIG_BLOCK, &set, nullptr);
-    signal(SIGCHLD, Handler);
+    auto oldSigChld = signal(SIGCHLD, Handler);
+    if (oldSigChld == SIG_ERR) {
+        t_error("%s signal SIGCHLD failed: %s\n", argv[0], strerror(errno));
+        return -1;
+    }
     RemoveAllSpecialHandler(SIGSEGV);
 
     pid = StartChild();

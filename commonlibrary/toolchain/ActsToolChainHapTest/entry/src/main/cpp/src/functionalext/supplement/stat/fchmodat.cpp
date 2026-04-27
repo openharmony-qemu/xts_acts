@@ -43,12 +43,14 @@ void Fchmodat0100(void)
     stat(path, &buf);
     if (result != 0) {
         close(fd);
-        remove(path);
+        int removeRet = remove(path);
+        EXPECT_EQ("fchmodat_0100", removeRet, 0);
         return;
     }
     EXPECT_EQ("fchmodat_0100", (buf.st_mode & MODE_MASK), (g_success & MODE_MASK));
     close(fd);
-    remove(path);
+    int removeRet = remove(path);
+    EXPECT_EQ("fchmodat_0100", removeRet, 0);
 }
 
 /**
@@ -67,12 +69,14 @@ void Fchmodat0200(void)
     stat(path, &buf);
     if (result != 0) {
         close(fd);
-        remove(path);
+        int removeRet = remove(path);
+        EXPECT_EQ("fchmodat_0200", removeRet, 0);
         return;
     }
     EXPECT_EQ("fchmodat_0200", (buf.st_mode & MODE_MASK), (g_successValue & MODE_MASK));
     close(fd);
-    remove(path);
+    int removeRet = remove(path);
+    EXPECT_EQ("fchmodat_0200", removeRet, 0);
 }
 
 /**

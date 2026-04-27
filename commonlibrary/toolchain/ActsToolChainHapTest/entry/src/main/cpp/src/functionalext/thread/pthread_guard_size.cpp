@@ -23,13 +23,13 @@
 static void PthreadGuardSize0100(void)
 {
     pthread_attr_t attr = { 0 };
-    size_t guard_size = 0;
+    size_t guardSize = 0;
     pthread_attr_init(&attr);
-    pthread_attr_getguardsize(&attr, &guard_size);
+    pthread_attr_getguardsize(&attr, &guardSize);
 #ifdef TARGET_GUARD_SIZE
-    TEST(guard_size == TARGET_GUARD_SIZE);
+    TEST(guardSize == TARGET_GUARD_SIZE);
 #else
-    TEST(guard_size == DEFAULT_GUARD_SIZE);
+    TEST(guardSize == DEFAULT_GUARD_SIZE);
 #endif
 }
 

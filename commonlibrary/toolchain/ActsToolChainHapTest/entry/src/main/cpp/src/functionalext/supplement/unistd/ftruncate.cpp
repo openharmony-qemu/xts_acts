@@ -33,13 +33,16 @@ void Ftruncate0100(void)
     const char* ptr = "/data/storage/el2/base/cache/test.txt";
     FILE* fptr = fopen(ptr, "w");
     struct stat statbuff;
-    fprintf(fptr, "%s", "this is a sample!");
+    int writeRet = fprintf(fptr, "%s", "this is a sample!");
+    EXPECT_NE("ftruncate_0100", writeRet, FAILED);
     int freturn = ftruncate(fileno(fptr), 0);
     EXPECT_EQ("ftruncate_0100", freturn, SUCCESS);
     stat(ptr, &statbuff);
     EXPECT_EQ("ftruncate_0100", statbuff.st_size, FILE_ZERO);
-    fclose(fptr);
-    remove(ptr);
+    int closeRet = fclose(fptr);
+    EXPECT_EQ("ftruncate_0100", closeRet, SUCCESS);
+    int removeRet = remove(ptr);
+    EXPECT_EQ("ftruncate_0100", removeRet, SUCCESS);
     fptr = nullptr;
     ptr = nullptr;
 }
@@ -55,13 +58,16 @@ void Ftruncate0200(void)
     const char* ptr = "/data/storage/el2/base/cache/test.txt";
     FILE* fptr = fopen(ptr, "w");
     struct stat statbuff;
-    fprintf(fptr, "%s", "this is a sample!");
+    int writeRet = fprintf(fptr, "%s", "this is a sample!");
+    EXPECT_NE("ftruncate_0200", writeRet, FAILED);
     int freturn = ftruncate(fileno(fptr), 10);
     EXPECT_EQ("ftruncate_0200", freturn, SUCCESS);
     stat(ptr, &statbuff);
     EXPECT_EQ("ftruncate_0200", static_cast<int>(statbuff.st_size), FILE_FIRST);
-    fclose(fptr);
-    remove(ptr);
+    int closeRet = fclose(fptr);
+    EXPECT_EQ("ftruncate_0200", closeRet, SUCCESS);
+    int removeRet = remove(ptr);
+    EXPECT_EQ("ftruncate_0200", removeRet, SUCCESS);
     fptr = nullptr;
     ptr = nullptr;
 }
@@ -76,13 +82,16 @@ void Ftruncate0300(void)
     const char* ptr = "/data/storage/el2/base/cache/test.txt";
     FILE* fptr = fopen(ptr, "w");
     struct stat statbuff;
-    fprintf(fptr, "%s", "this is a sample!");
+    int writeRet = fprintf(fptr, "%s", "this is a sample!");
+    EXPECT_NE("ftruncate_0300", writeRet, FAILED);
     int freturn = ftruncate(fileno(fptr), 100);
     EXPECT_EQ("ftruncate_0300", freturn, SUCCESS);
     stat(ptr, &statbuff);
     EXPECT_EQ("ftruncate_0300", static_cast<int>(statbuff.st_size), FILE_SECOND);
-    fclose(fptr);
-    remove(ptr);
+    int closeRet = fclose(fptr);
+    EXPECT_EQ("ftruncate_0300", closeRet, SUCCESS);
+    int removeRet = remove(ptr);
+    EXPECT_EQ("ftruncate_0300", removeRet, SUCCESS);
     fptr = nullptr;
     ptr = nullptr;
 }
@@ -96,11 +105,14 @@ void Ftruncate0400(void)
 {
     const char* ptr = "/data/storage/el2/base/cache/test.txt";
     FILE* fptr = fopen(ptr, "w");
-    fprintf(fptr, "%s", "this is a sample!");
+    int writeRet = fprintf(fptr, "%s", "this is a sample!");
+    EXPECT_NE("ftruncate_0400", writeRet, FAILED);
     int freturn = ftruncate(0, 10);
     EXPECT_EQ("ftruncate_0400", freturn, FAILED);
-    fclose(fptr);
-    remove(ptr);
+    int closeRet = fclose(fptr);
+    EXPECT_EQ("ftruncate_0400", closeRet, SUCCESS);
+    int removeRet = remove(ptr);
+    EXPECT_EQ("ftruncate_0400", removeRet, SUCCESS);
     fptr = nullptr;
     ptr = nullptr;
 }

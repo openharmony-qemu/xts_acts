@@ -36,7 +36,7 @@ static bool sigchain_special_handler2(int signo, siginfo_t* siginfo, void* ucont
 /**
  * @brief the signal handler
  */
-static void signal_handler2(int signo)
+static void SignalHandler2(int signo)
 {
     g_count++;
     EXPECT_EQ("sigchain_intercept_pthread_sigmask_001", signo, SIGUSR2);
@@ -48,10 +48,10 @@ static void signal_handler2(int signo)
  *                 on pthread_sigmask.
  * @tc.level     : Level 0
  */
-static void sigchain_intercept_pthread_sigmask_001()
+static void SigchainInterceptPthreadSigmask001()
 {
     struct sigaction siga2 = {
-        .sa_handler = signal_handler2,
+        .sa_handler = SignalHandler2,
     };
     sigaction(SIGUSR2, &siga2, nullptr);
 
@@ -98,7 +98,7 @@ static void signal_handler3(int signo)
  *                 Test the influence of sigchain on pthread_sigmask.
  * @tc.level     : Level 0
  */
-static void sigchain_intercept_pthread_sigmask_002()
+static void SigchainInterceptPthreadSigmask002()
 {
     g_count = 0;
     struct sigaction siga2 = {
@@ -130,7 +130,7 @@ static void sigchain_intercept_pthread_sigmask_002()
 /**
  * @brief the signal handler
  */
-static void signal_handler1(int signo)
+static void SignalHandler1(int signo)
 {
     g_count++;
     EXPECT_FALSE("sigchain_intercept_pthread_sigmask_001", true);
@@ -142,11 +142,11 @@ static void signal_handler1(int signo)
  *                 on pthread_sigmask.
  * @tc.level     : Level 0
  */
-static void sigchain_intercept_pthread_sigmask_003()
+static void SigchainInterceptPthreadSigmask003()
 {
     g_count = 0;
     struct sigaction siga1 = {
-        .sa_handler = signal_handler1,
+        .sa_handler = SignalHandler1,
     };
     sigaction(SIGHUP, &siga1, nullptr);
 
@@ -162,7 +162,7 @@ static void sigchain_intercept_pthread_sigmask_003()
  * @tc.desc      : The new set is null, call pthread_sigmask.
  * @tc.level     : Level 0
  */
-static void sigchain_intercept_pthread_sigmask_004()
+static void SigchainInterceptPthreadSigmask004()
 {
     int result = pthread_sigmask(SIG_BLOCK, nullptr, nullptr);
     if (result != 0) {
@@ -170,16 +170,16 @@ static void sigchain_intercept_pthread_sigmask_004()
     }
 }
 
-static int SigchainInterceptPthreadSigmaskTest_impl(void)
+static int SigchainInterceptPthreadSigmaskTestImpl(void)
 {
-    sigchain_intercept_pthread_sigmask_001();
-    sigchain_intercept_pthread_sigmask_002();
-    sigchain_intercept_pthread_sigmask_003();
-    sigchain_intercept_pthread_sigmask_004();
+    SigchainInterceptPthreadSigmask001();
+    SigchainInterceptPthreadSigmask002();
+    SigchainInterceptPthreadSigmask003();
+    SigchainInterceptPthreadSigmask004();
     return t_status;
 }
 
 int SigchainInterceptPthreadSigmaskTest(void)
 {
-    return SigchainInterceptPthreadSigmaskTest_impl();
+    return SigchainInterceptPthreadSigmaskTestImpl();
 }

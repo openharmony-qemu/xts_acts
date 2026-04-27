@@ -19,20 +19,20 @@
 #include "gmtime_data.h"
 
 static time_t g_time = 1659177614;
-static int16_t gYearBase = 1900;
-static int16_t gBufferSize = 500;
+static int16_t g_yearBase = 1900;
+static int16_t g_bufferSize = 500;
 
 /**
  * @tc.name      : gmtime_0100
  * @tc.desc      : according to different time zones, convert date and time to GMT time
  * @tc.level     : Level 0
  */
-void gmtime_0100(void)
+void Gmtime0100(void)
 {
     for (int32_t i = 0; i < (int32_t)(sizeof(test_gmtime_data) / sizeof(test_gmtime_data[0])); i++) {
         const char* handlerChar = test_handle_path(test_gmtime_data[i].tz);
         if (!handlerChar) {
-            t_error("gmtime_0100 failed: handlerChar is NULL\n");
+            t_error("Gmtime0100 failed: handlerChar is NULL\n");
             continue;
         }
 
@@ -40,10 +40,10 @@ void gmtime_0100(void)
         tzset();
         struct tm* gmtm;
         gmtm = gmtime(&g_time);
-        char buff[gBufferSize];
+        char buff[g_bufferSize];
         int cnt = sprintf(buff,
                           "%d-%d-%d %d:%d:%d wday=%d,yday=%d,isdst=%d,gmtoff=%ld,zone=%s",
-                          (gmtm->tm_year + gYearBase),
+                          (gmtm->tm_year + g_yearBase),
                           gmtm->tm_mon,
                           gmtm->tm_mday,
                           gmtm->tm_hour,
@@ -54,18 +54,18 @@ void gmtime_0100(void)
                           gmtm->tm_isdst,
                           gmtm->tm_gmtoff,
                           gmtm->tm_zone);
-        EXPECT_TRUE("gmtime_0100", cnt > 0);
-        EXPECT_STREQ("gmtime_0100", test_gmtime_data[i].result, buff);
+        EXPECT_TRUE("Gmtime0100", cnt > 0);
+        EXPECT_STREQ("Gmtime0100", test_gmtime_data[i].result, buff);
     }
 }
 
-static int GmtimeTest_impl(void)
+static int GmtimeTestImpl(void)
 {
-    gmtime_0100();
+    Gmtime0100();
     return t_status;
 }
 
 int GmtimeTest(void)
 {
-    return GmtimeTest_impl();
+    return GmtimeTestImpl();
 }

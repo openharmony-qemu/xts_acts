@@ -20,19 +20,19 @@
 #include "functionalext.h"
 
 static time_t g_time = 1659177614;
-static int16_t gBufferSize = 80;
+static int16_t g_bufferSize = 80;
 
 /**
  * @tc.name      : strftime_l_0100
  * @tc.desc      : according to different time zones, format date
  * @tc.level     : Level 0
  */
-void strftime_l_0100(void)
+void StrftimeL0100(void)
 {
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(test_asctime_data) / sizeof(test_asctime_data[0])); i++) {
         const char* handlerChar = test_handle_path(test_asctime_data[i].tz);
         if (!handlerChar) {
-            t_error("strftime_l_0100 failed: handlerChar is NULL\n");
+            t_error("StrftimeL0100 failed: handlerChar is NULL\n");
             continue;
         }
 
@@ -40,23 +40,23 @@ void strftime_l_0100(void)
         tzset();
         struct tm* timeptr = localtime(&g_time);
         if (!timeptr) {
-            EXPECT_PTRNE("strftime_l_0100", timeptr, nullptr);
+            EXPECT_PTRNE("StrftimeL0100", timeptr, nullptr);
             return;
         }
-        char buffer[gBufferSize];
-        locale_t m_locale = newlocale(LC_ALL_MASK, "en_US", nullptr);
-        strftime_l(buffer, sizeof(buffer) - 1, "%c", timeptr, m_locale);
-        EXPECT_STREQ("strftime_l_0100", buffer, test_asctime_data[i].result);
+        char buffer[g_bufferSize];
+        locale_t mLocale = newlocale(LC_ALL_MASK, "en_US", nullptr);
+        strftime_l(buffer, sizeof(buffer) - 1, "%c", timeptr, mLocale);
+        EXPECT_STREQ("StrftimeL0100", buffer, test_asctime_data[i].result);
     }
 }
 
-static int StrftimeLTest_impl(void)
+static int StrftimeLTestImpl(void)
 {
-    strftime_l_0100();
+    StrftimeL0100();
     return t_status;
 }
 
 int StrftimeLTest(void)
 {
-    return StrftimeLTest_impl();
+    return StrftimeLTestImpl();
 }

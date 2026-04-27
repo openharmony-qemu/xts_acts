@@ -78,7 +78,7 @@ int FtelloUnflushedAppendTest()
     return status;
 }
 
-int ftello_unflushed_appendTest()
+int FtelloUnflushedAppendTestCompat()
 {
     return FtelloUnflushedAppendTest();
 }

@@ -54,7 +54,8 @@ void a_stack_chk_fail_0100(void)
         t_error("%s dlsym __stack_chk_fail failed\n", __func__);
         return;
     }
-    struct sigaction act, oldact;
+    struct sigaction act;
+    struct sigaction oldact;
     act.sa_handler = Killfunc;
     act.sa_flags = 0;
     sigaction(SIGILL, &act, &oldact);

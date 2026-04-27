@@ -88,11 +88,11 @@ void Select0300(void)
     timeout.tv_sec = 0;
     fd_set readfds;
     fd_set writefds;
-    constexpr int32_t SELECT_INVALID_FD = 2;
+    constexpr int32_t selectInvalidFd = 2;
     FD_ZERO(&readfds);
     FD_ZERO(&writefds);
-    FD_SET(SELECT_INVALID_FD, &readfds);
-    FD_SET(SELECT_INVALID_FD, &writefds);
+    FD_SET(selectInvalidFd, &readfds);
+    FD_SET(selectInvalidFd, &writefds);
     int result = select(SELECT_NFDS, &readfds, &writefds, nullptr, &timeout);
     EXPECT_EQ("Select0300", result, COUNT_ZERO);
 }

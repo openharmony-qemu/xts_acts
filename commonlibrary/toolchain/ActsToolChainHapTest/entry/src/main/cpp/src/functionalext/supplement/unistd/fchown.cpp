@@ -51,7 +51,8 @@ void Fchown0100()
         printf("Fchown0100: fchown not supported without root privileges (result=%d, errno=%d)\n", result, errno);
     }
     close(fd);
-    remove("/data/storage/el2/base/cache/test.txt");
+    int removeRet = remove("/data/storage/el2/base/cache/test.txt");
+    EXPECT_EQ("Fchown0100", removeRet, COUNT_ZERO);
 }
 
 /**
@@ -77,7 +78,8 @@ void Fchown0200()
         printf("Fchown0200: fchown not supported without root privileges (result=%d, errno=%d)\n", result, errno);
     }
     close(fd);
-    remove("/data/storage/el2/base/cache/test.txt");
+    int removeRet = remove("/data/storage/el2/base/cache/test.txt");
+    EXPECT_EQ("Fchown0200", removeRet, COUNT_ZERO);
 }
 
 /**
@@ -103,7 +105,8 @@ void Fchown0300()
         printf("Fchown0300: fchown not supported without root privileges (result=%d, errno=%d)\n", result, errno);
     }
     close(fd);
-    remove("/data/storage/el2/base/cache/test.txt");
+    int removeRet = remove("/data/storage/el2/base/cache/test.txt");
+    EXPECT_EQ("Fchown0300", removeRet, COUNT_ZERO);
 }
 
 /**
@@ -121,7 +124,8 @@ void Fchown0400()
     close(fd);
     int result = fchown(INVALID_FD, 0, 0);
     EXPECT_EQ("Fchown0400", result, COUNT_NEFATIVE);
-    remove("/data/storage/el2/base/cache/test.txt");
+    int removeRet = remove("/data/storage/el2/base/cache/test.txt");
+    EXPECT_EQ("Fchown0400", removeRet, COUNT_ZERO);
 }
 
 /**
@@ -140,7 +144,8 @@ void Fchown0500()
     int result = fchown(INVALID_FD, 0, 0);
     EXPECT_EQ("Fchown0500", result, COUNT_NEFATIVE);
     close(fd);
-    remove("/data/storage/el2/base/cache/test.txt");
+    int removeRet = remove("/data/storage/el2/base/cache/test.txt");
+    EXPECT_EQ("Fchown0500", removeRet, COUNT_ZERO);
 }
 
 static TEST_FUN g_gFunArray[] = {

@@ -28,13 +28,13 @@ static time_t g_time = 1659177614;
  * @tc.desc      : according to different time zones, return a timestamp from 1970-1-1 to the specified date
  * @tc.level     : Level 0
  */
-void timegm_0100(void)
+void Timegm0100(void)
 {
     time_t timeThis;
     for (int32_t i = 0; i < (int32_t)(sizeof(test_timegm_data) / sizeof(test_timegm_data[0])); i++) {
         const char* handlerChar = test_handle_path(test_timegm_data[i].tz);
         if (!handlerChar) {
-            t_error("timegm_0100 failed: handlerChar is NULL\n");
+            t_error("Timegm0100 failed: handlerChar is NULL\n");
             continue;
         }
 
@@ -42,11 +42,11 @@ void timegm_0100(void)
         tzset();
         struct tm* timeptr = localtime(&g_time);
         if (!timeptr) {
-            EXPECT_PTRNE("timegm_0100", timeptr, NULL);
+            EXPECT_PTRNE("Timegm0100", timeptr, NULL);
             return;
         }
         timeThis = timegm(timeptr);
-        EXPECT_EQ("timegm_0100", test_timegm_data[i].result, timeThis);
+        EXPECT_EQ("Timegm0100", test_timegm_data[i].result, timeThis);
     }
 }
 
@@ -55,18 +55,18 @@ void timegm_0100(void)
  * @tc.desc      : according to different time zones, return a timestamp from 1970-1-1 to the specified date
  * @tc.level     : Level 0
  */
-void timegm_time64_0100(void)
+void TimegmTime640100(void)
 {
     Timegm64Func timegm64 = reinterpret_cast<Timegm64Func>(dlsym(RTLD_DEFAULT, TIMEGM64_SYMBOL));
     if (timegm64 == nullptr) {
-        t_error("timegm_time64_0100 failed: dlsym __timegm_time64 failed\n");
+        t_error("TimegmTime640100 failed: dlsym __timegm_time64 failed\n");
         return;
     }
     time_t timeThis;
     for (int32_t i = 0; i < (int32_t)(sizeof(test_timegm_data) / sizeof(test_timegm_data[0])); i++) {
         const char* handlerChar = test_handle_path(test_timegm_data[i].tz);
         if (!handlerChar) {
-            t_error("timegm_time64_0100 failed: handlerChar is NULL\n");
+            t_error("TimegmTime640100 failed: handlerChar is NULL\n");
             continue;
         }
 
@@ -74,22 +74,22 @@ void timegm_time64_0100(void)
         tzset();
         struct tm* timeptr = localtime(&g_time);
         if (!timeptr) {
-            EXPECT_PTRNE("timegm_time64_0100", timeptr, NULL);
+            EXPECT_PTRNE("TimegmTime640100", timeptr, NULL);
             return;
         }
         timeThis = timegm64(timeptr);
-        EXPECT_EQ("timegm_time64_0100", test_timegm_data[i].result, timeThis);
+        EXPECT_EQ("TimegmTime640100", test_timegm_data[i].result, timeThis);
     }
 }
 
-static int TimegmTest_impl(void)
+static int TimegmTestImpl(void)
 {
-    timegm_0100();
-    timegm_time64_0100();
+    Timegm0100();
+    TimegmTime640100();
     return t_status;
 }
 
 int TimegmTest(void)
 {
-    return TimegmTest_impl();
+    return TimegmTestImpl();
 }

@@ -29,12 +29,12 @@ constexpr const char* MKTIME64_SYMBOL = "__mktime64";
  * @tc.desc      : according to different time zones, convert time to seconds in duration since 1970-1-1
  * @tc.level     : Level 0
  */
-static void mktime_0100(void)
+static void Mktime0100(void)
 {
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(test_mktime_data) / sizeof(test_mktime_data[0])); i++) {
         const char* handlerChar = test_handle_path(test_mktime_data[i].tz);
         if (!handlerChar) {
-            t_error("mktime_0100 failed: handlerChar is NULL\n");
+            t_error("Mktime0100 failed: handlerChar is NULL\n");
             continue;
         }
 
@@ -42,11 +42,11 @@ static void mktime_0100(void)
         tzset();
         struct tm* timeptr = localtime(&g_time);
         if (!timeptr) {
-            EXPECT_PTRNE("mktime_0100", timeptr, NULL);
+            EXPECT_PTRNE("Mktime0100", timeptr, NULL);
             return;
         }
         time_t mk = mktime(timeptr);
-        EXPECT_EQ("mktime_0100", mk, test_mktime_data[i].result);
+        EXPECT_EQ("Mktime0100", mk, test_mktime_data[i].result);
     }
 }
 
@@ -55,17 +55,17 @@ static void mktime_0100(void)
  * @tc.desc      : according to different time zones, convert time to seconds in duration since 1970-1-1
  * @tc.level     : Level 0
  */
-void mktime64_0100(void)
+void Mktime640100(void)
 {
     Mktime64Func mktime64 = reinterpret_cast<Mktime64Func>(dlsym(RTLD_DEFAULT, MKTIME64_SYMBOL));
     if (mktime64 == nullptr) {
-        t_error("mktime64_0100 failed: dlsym __mktime64 failed\n");
+        t_error("Mktime640100 failed: dlsym __mktime64 failed\n");
         return;
     }
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(test_mktime_data) / sizeof(test_mktime_data[0])); i++) {
         const char* handlerChar = test_handle_path(test_mktime_data[i].tz);
         if (!handlerChar) {
-            t_error("mktime64_0100 failed: handlerChar is NULL\n");
+            t_error("Mktime640100 failed: handlerChar is NULL\n");
             continue;
         }
 
@@ -73,22 +73,22 @@ void mktime64_0100(void)
         tzset();
         struct tm* timeptr = localtime(&g_time);
         if (!timeptr) {
-            EXPECT_PTRNE("mktime64_0100", timeptr, NULL);
+            EXPECT_PTRNE("Mktime640100", timeptr, NULL);
             return;
         }
         time_t mk = mktime64(timeptr);
-        EXPECT_EQ("mktime64_0100", mk, test_mktime_data[i].result);
+        EXPECT_EQ("Mktime640100", mk, test_mktime_data[i].result);
     }
 }
 
-static int MktimeTest_impl(void)
+static int MktimeTestImpl(void)
 {
-    mktime_0100();
-    mktime64_0100();
+    Mktime0100();
+    Mktime640100();
     return t_status;
 }
 
 int MktimeTest(void)
 {
-    return MktimeTest_impl();
+    return MktimeTestImpl();
 }

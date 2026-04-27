@@ -59,8 +59,8 @@ void* SampleServerTask()
         *ret = -1;
         return ret;
     }
-    constexpr int LISTEN_BACKLOG = 2;
-    rets = listen(sListen, LISTEN_BACKLOG);
+    constexpr int listenBacklog = 2;
+    rets = listen(sListen, listenBacklog);
     if (rets != 0) {
         WAIT();
         close(sListen);

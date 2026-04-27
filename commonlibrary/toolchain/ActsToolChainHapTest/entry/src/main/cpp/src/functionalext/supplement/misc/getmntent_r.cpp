@@ -20,7 +20,7 @@
 static pthread_barrier_t g_barrier;
 #define WAIT() pthread_barrier_wait(&g_barrier)
 
-void* getmntent_rOne(void* arg)
+void* GetmntentROne(void* arg)
 {
     char c[1000];
     char str[100];
@@ -29,12 +29,14 @@ void* getmntent_rOne(void* arg)
     if ((fptr = fopen("/proc/mounts", "r")) == nullptr) {
         t_error("%s Error! fopen failed\n", __func__);
     }
-    fscanf(fptr, "%999s", c);
-    fclose(fptr);
-    sscanf(c, "%99s", str);
+    int readRet = fscanf(fptr, "%999s", c);
+    EXPECT_NE("getmntent_r_0100", readRet, EOF);
+    int closeRet = fclose(fptr);
+    EXPECT_EQ("getmntent_r_0100", closeRet, 0);
+    int parseRet = sscanf(c, "%99s", str);
+    EXPECT_EQ("getmntent_r_0100", parseRet, 1);
     struct mntent* m = nullptr;
     struct mntent mntbuf;
-    memset(&m, 0x00, sizeof(m));
     memset(&strings[0], 0x00, sizeof(strings));
     FILE* ffp = setmntent("/proc/mounts", "r");
     EXPECT_PTRNE("getmntent_r_0100", ffp, nullptr);
@@ -45,7 +47,8 @@ void* getmntent_rOne(void* arg)
     EXPECT_EQ("getmntent_r_0100", strcmp(m->mnt_fsname, str), 0);
     EXPECT_EQ("getmntent_r_0100", strcmp(mntbuf.mnt_fsname, str), 0);
 
-    endmntent(ffp);
+    int endRet = endmntent(ffp);
+    EXPECT_EQ("getmntent_r_0100", endRet, 1);
     return m;
 }
 
@@ -54,15 +57,15 @@ void* getmntent_rOne(void* arg)
  * @tc.desc      : Multiple threads simultaneously read file information.
  * @tc.level     : Level 0
  */
-void getmntent_r_0100(void)
+void GetmntentR0100(void)
 {
     pthread_t srv;
     pthread_t cli;
     int ret = pthread_barrier_init(&g_barrier, nullptr, 2);
     EXPECT_EQ("getmntent_r_0100", 0, ret);
-    ret = pthread_create(&srv, nullptr, getmntent_rOne, nullptr);
+    ret = pthread_create(&srv, nullptr, GetmntentROne, nullptr);
     EXPECT_EQ("getmntent_r_0100", 0, ret);
-    ret = pthread_create(&cli, nullptr, getmntent_rOne, nullptr);
+    ret = pthread_create(&cli, nullptr, GetmntentROne, nullptr);
     EXPECT_EQ("getmntent_r_0100", 0, ret);
     ret = pthread_join(cli, nullptr);
     EXPECT_EQ("getmntent_r_0100", 0, ret);
@@ -77,7 +80,7 @@ void getmntent_r_0100(void)
  * @tc.desc      : The f parameter is invalid, reading the file information failed.
  * @tc.level     : Level 2
  */
-void getmntent_r_0200(void)
+void GetmntentR0200(void)
 {
     char c[1000];
     char str[100];
@@ -86,24 +89,26 @@ void getmntent_r_0200(void)
     static const char* path = "/data/storage/el2/base/cache/getmntent.txt";
     FILE* fptr = fopen(path, "w");
     EXPECT_TRUE("getmntent_r_0200", fptr != nullptr);
-    fclose(fptr);
+    int closeRet = fclose(fptr);
+    EXPECT_EQ("getmntent_r_0200", closeRet, 0);
 
     struct mntent* m = nullptr;
     struct mntent mntbuf;
-    memset(&m, 0x00, sizeof(m));
     memset(&strings[0], 0x00, sizeof(strings));
     FILE* ffp = setmntent(path, "r");
     EXPECT_PTRNE("getmntent_r_0200", ffp, nullptr);
     m = getmntent_r(ffp, &mntbuf, strings, sizeof(strings));
     EXPECT_EQ("getmntent_r_0200", m, nullptr);
-    endmntent(ffp);
-    remove(path);
+    int endRet = endmntent(ffp);
+    EXPECT_EQ("getmntent_r_0200", endRet, 1);
+    int removeRet = remove(path);
+    EXPECT_EQ("getmntent_r_0200", removeRet, 0);
 }
 
-static int GetmntentRTest_impl(int argc, char* argv[])
+static int GetmntentRTestImpl(int argc, char* argv[])
 {
-    getmntent_r_0100();
-    getmntent_r_0200();
+    GetmntentR0100();
+    GetmntentR0200();
 
     return t_status;
 }
@@ -112,5 +117,5 @@ int GetmntentRTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return GetmntentRTest_impl(1, libcArgv);
+    return GetmntentRTestImpl(1, libcArgv);
 }

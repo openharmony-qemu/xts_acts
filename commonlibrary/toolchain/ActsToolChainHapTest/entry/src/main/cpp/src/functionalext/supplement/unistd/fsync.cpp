@@ -38,7 +38,8 @@ void Fsync0100(void)
     EXPECT_EQ("fsync_0100", result, 0);
     close(fd);
 
-    remove(PATH);
+    int removeRet = remove(PATH);
+    EXPECT_EQ("fsync_0100", removeRet, 0);
 }
 
 /**

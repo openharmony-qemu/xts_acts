@@ -25,7 +25,7 @@
 static void handler(int s) {}
 constexpr time_t WAIT_SECONDS = 5;
 
-static int child(void)
+static int Child(void)
 {
     void* ptr = malloc(10);
     if (!ptr) {
@@ -39,20 +39,20 @@ static int child(void)
     return 0;
 }
 
-static pid_t start_child(void)
+static pid_t StartChild(void)
 {
     pid_t pid;
     int ret;
     pid = fork();
     if (pid == 0) {
-        ret = child();
+        ret = Child();
         t_error("child process normally out with %d\n", ret);
         return ret;
     }
     return pid;
 }
 
-static int MallocDoubleFreeCheckTest_impl(int argc, char* argv[])
+static int MallocDoubleFreeCheckTestImpl(int argc, char* argv[])
 {
     sigset_t set;
     int status;
@@ -62,10 +62,14 @@ static int MallocDoubleFreeCheckTest_impl(int argc, char* argv[])
     sigemptyset(&set);
     sigaddset(&set, SIGCHLD);
     sigprocmask(SIG_BLOCK, &set, nullptr);
-    signal(SIGCHLD, handler);
+    auto oldSigChld = signal(SIGCHLD, handler);
+    if (oldSigChld == SIG_ERR) {
+        t_error("%s signal SIGCHLD failed: %s\n", argv[0], strerror(errno));
+        return -1;
+    }
     RemoveAllSpecialHandler(SIGSEGV);
 
-    pid = start_child();
+    pid = StartChild();
     if (pid == -1) {
         t_error("%s fork failed: %s\n", argv[0], strerror(errno));
         return -1;
@@ -107,5 +111,5 @@ int MallocDoubleFreeCheckTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return MallocDoubleFreeCheckTest_impl(1, libcArgv);
+    return MallocDoubleFreeCheckTestImpl(1, libcArgv);
 }

@@ -39,25 +39,28 @@ void Utimes0100(void)
     close(fd);
     struct stat buf1;
     struct stat buf2;
-    time_t t_mold;
-    time_t t_aold;
-    time_t t_now;
+    time_t tMold;
+    time_t tAold;
+    time_t tNow;
     time_t tNew;
     stat(path, &buf1);
 
-    t_mold = buf1.st_mtime;
-    t_aold = buf1.st_atime;
-    t_now = time(nullptr);
+    tMold = buf1.st_mtime;
+    tAold = buf1.st_atime;
+    tNow = time(nullptr);
     if (utimes(path, nullptr) != 0) {
         t_error("%s utimes failed", __func__);
     } else {
         stat(path, &buf2);
         tNew = buf2.st_mtime;
-        if (tNew != t_now) {
+        if (tNew != tNow) {
             t_error("%s utimes failed", __func__);
         }
     }
-    remove(path);
+    int removeRet = remove(path);
+    if (removeRet != 0) {
+        t_error("%s remove failed", __func__);
+    }
 }
 
 /**
@@ -86,7 +89,10 @@ void Utimes0200(void)
             t_error("%s utimes failed", __func__);
         }
     }
-    remove(path);
+    int removeRet = remove(path);
+    if (removeRet != 0) {
+        t_error("%s remove failed", __func__);
+    }
 }
 
 /**
@@ -105,19 +111,22 @@ void UtimesTime640100(void)
     close(fd);
     struct stat buf1;
     struct stat buf2;
-    time_t t_mold;
-    time_t t_aold;
-    time_t t_now;
+    time_t tMold;
+    time_t tAold;
+    time_t tNow;
     time_t tNew;
     stat(path, &buf1);
 
-    t_mold = buf1.st_mtime;
-    t_aold = buf1.st_atime;
-    t_now = time(nullptr);
+    tMold = buf1.st_mtime;
+    tAold = buf1.st_atime;
+    tNow = time(nullptr);
     Utime64Func utimesTime64 = reinterpret_cast<Utime64Func>(dlsym(RTLD_DEFAULT, UTIMES_TIME64_SYMBOL));
     if (utimesTime64 == nullptr) {
         t_error("%s dlsym __utimes_time64 failed", __func__);
-        remove(path);
+        int removeRet = remove(path);
+        if (removeRet != 0) {
+            t_error("%s remove failed", __func__);
+        }
         return;
     }
     if (utimesTime64(path, nullptr) != 0) {
@@ -125,11 +134,14 @@ void UtimesTime640100(void)
     } else {
         stat(path, &buf2);
         tNew = buf2.st_mtime;
-        if (tNew != t_now) {
+        if (tNew != tNow) {
             t_error("%s __utimes_time64 failed", __func__);
         }
     }
-    remove(path);
+    int removeRet = remove(path);
+    if (removeRet != 0) {
+        t_error("%s remove failed", __func__);
+    }
 }
 
 static int UtimesTestImpl(int argc, char* argv[])

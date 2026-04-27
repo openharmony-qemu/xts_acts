@@ -21,7 +21,7 @@
  * @tc.desc      : The parameters are valid and the file information can be read.
  * @tc.level     : Level 0
  */
-void getmntent_0100(void)
+void Getmntent0100(void)
 {
     char c[1000];
     char str[100];
@@ -29,9 +29,12 @@ void getmntent_0100(void)
     if ((fptr = fopen("/proc/mounts", "r")) == nullptr) {
         t_error("%s Error! fopen failed\n", __func__);
     }
-    fscanf(fptr, "%999s", c);
-    fclose(fptr);
-    sscanf(c, "%99s", str);
+    int readRet = fscanf(fptr, "%999s", c);
+    EXPECT_NE("getmntent_0100", readRet, EOF);
+    int closeRet = fclose(fptr);
+    EXPECT_EQ("getmntent_0100", closeRet, 0);
+    int parseRet = sscanf(c, "%99s", str);
+    EXPECT_EQ("getmntent_0100", parseRet, 1);
     struct mntent* m = nullptr;
     FILE* ffp = setmntent("/proc/mounts", "r");
     EXPECT_PTRNE("getmntent_0100", ffp, nullptr);
@@ -39,7 +42,8 @@ void getmntent_0100(void)
     EXPECT_TRUE("getmntent_0100", m != nullptr);
     EXPECT_EQ("getmntent_0100", strcmp(m->mnt_fsname, str), 0);
 
-    endmntent(ffp);
+    int endRet = endmntent(ffp);
+    EXPECT_EQ("getmntent_0100", endRet, 1);
 }
 
 /**
@@ -47,33 +51,37 @@ void getmntent_0100(void)
  * @tc.desc      : Invalid parameter, failed to read file information.
  * @tc.level     : Level 2
  */
-void getmntent_0200(void)
+void Getmntent0200(void)
 {
     char c[1000];
     char* str = "This is a test";
     static const char* path = "/data/storage/el2/base/cache/getmntent.txt";
     FILE* fp = fopen(path, "w");
     EXPECT_PTRNE("getmntent_0200", fp, nullptr);
-    fputs(str, fp);
-    fclose(fp);
+    int putsRet = fputs(str, fp);
+    EXPECT_NE("getmntent_0200", putsRet, EOF);
+    int closeRet = fclose(fp);
+    EXPECT_EQ("getmntent_0200", closeRet, 0);
     struct mntent* m = nullptr;
     FILE* ffp = setmntent(path, "r");
     EXPECT_PTRNE("getmntent_0200", ffp, nullptr);
 
     m = getmntent(ffp);
     EXPECT_EQ("getmntent_0200", m, nullptr);
-    endmntent(ffp);
-    remove(path);
+    int endRet = endmntent(ffp);
+    EXPECT_EQ("getmntent_0200", endRet, 1);
+    int removeRet = remove(path);
+    EXPECT_EQ("getmntent_0200", removeRet, 0);
 }
 
-static int GetmntentTest_impl(void)
+static int GetmntentTestImpl(void)
 {
-    getmntent_0100();
-    getmntent_0200();
+    Getmntent0100();
+    Getmntent0200();
     return t_status;
 }
 
 int GetmntentTest(void)
 {
-    return GetmntentTest_impl();
+    return GetmntentTestImpl();
 }

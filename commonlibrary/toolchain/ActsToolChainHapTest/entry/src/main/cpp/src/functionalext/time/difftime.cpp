@@ -26,14 +26,14 @@ constexpr const char* DIFFTIME64_SYMBOL = "__difftime64";
  * @tc.desc      : according to different time zones, calculate the time difference between two moments
  * @tc.level     : Level 0
  */
-static void difftime_0100(void)
+static void Difftime0100(void)
 {
     time_t timeStart = 20000;
     time_t timeEnd = 20010;
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(test_difftime_data) / sizeof(test_difftime_data[0])); i++) {
         const char* handlerChar = test_handle_path(test_difftime_data[i].tz);
         if (!handlerChar) {
-            t_error("difftime_0100 failed: handlerChar is NULL\n");
+            t_error("Difftime0100 failed: handlerChar is NULL\n");
             continue;
         }
 
@@ -41,7 +41,7 @@ static void difftime_0100(void)
         tzset();
         double returnVal;
         returnVal = difftime(timeEnd, timeStart);
-        EXPECT_TRUE("difftime_0100",
+        EXPECT_TRUE("Difftime0100",
                     abs(test_difftime_data[i].result - returnVal) >= 0 &&
                         abs(test_difftime_data[i].result - returnVal) < 1);
     }
@@ -52,11 +52,11 @@ static void difftime_0100(void)
  * @tc.desc      : according to different time zones, calculate the time difference between two moments
  * @tc.level     : Level 0
  */
-void difftime64_0100(void)
+void Difftime640100(void)
 {
     Difftime64Func difftime64 = reinterpret_cast<Difftime64Func>(dlsym(RTLD_DEFAULT, DIFFTIME64_SYMBOL));
     if (difftime64 == nullptr) {
-        t_error("difftime64_0100 failed: dlsym __difftime64 failed\n");
+        t_error("Difftime640100 failed: dlsym __difftime64 failed\n");
         return;
     }
     time_t timeStart = 20000;
@@ -64,7 +64,7 @@ void difftime64_0100(void)
     for (int32_t i = 0; i < static_cast<int32_t>(sizeof(test_difftime_data) / sizeof(test_difftime_data[0])); i++) {
         const char* handlerChar = test_handle_path(test_difftime_data[i].tz);
         if (!handlerChar) {
-            t_error("difftime_0100 failed: handlerChar is NULL\n");
+            t_error("Difftime640100 failed: handlerChar is NULL\n");
             continue;
         }
 
@@ -72,15 +72,15 @@ void difftime64_0100(void)
         tzset();
         double returnVal;
         returnVal = difftime64(timeEnd, timeStart);
-        EXPECT_TRUE("difftime64_0100",
+        EXPECT_TRUE("Difftime640100",
                     abs(test_difftime_data[i].result - returnVal) >= 0 &&
                         abs(test_difftime_data[i].result - returnVal) < 1);
     }
 }
 
-int difftimeTest(void)
+int DifftimeTest(void)
 {
-    difftime_0100();
-    difftime64_0100();
+    Difftime0100();
+    Difftime640100();
     return t_status;
 }

@@ -55,7 +55,10 @@ void Utimensat0100(void)
         t_error("%s failed: statbuf.st_mtim.tv_sec = %ld\n", __func__, statbuf.st_mtim.tv_sec);
     }
 
-    remove(path);
+    int removeRet = remove(path);
+    if (removeRet != 0) {
+        t_error("%s failed: remove ret = %d\n", __func__, removeRet);
+    }
 }
 
 /**
@@ -111,7 +114,10 @@ void UtimensatTime640100(void)
         t_error("%s failed: statbuf.st_mtim.tv_sec = %ld\n", __func__, statbuf.st_mtim.tv_sec);
     }
 
-    remove(path);
+    int removeRet = remove(path);
+    if (removeRet != 0) {
+        t_error("%s failed: remove ret = %d\n", __func__, removeRet);
+    }
 }
 
 static int UtimensatTestImpl(int argc, char* argv[])

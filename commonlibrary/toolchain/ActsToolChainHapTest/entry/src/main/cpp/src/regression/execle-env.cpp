@@ -61,7 +61,7 @@ int ExecleEnvTest(void)
     return 1;
 }
 
-int execle_envTest(void)
+int ExecleEnvTestCompat(void)
 {
     return ExecleEnvTest();
 }

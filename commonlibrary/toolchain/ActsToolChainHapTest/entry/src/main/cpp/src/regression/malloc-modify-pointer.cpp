@@ -44,7 +44,7 @@ struct group_in {
     struct meta_in* meta;
 };
 
-static struct group_in* get_group(uint8_t* p)
+static struct group_in* GetGroup(uint8_t* p)
 {
     int offset = *(uint16_t*)(p - OFF_OFFSET);
 
@@ -56,7 +56,7 @@ static struct group_in* get_group(uint8_t* p)
     return base;
 }
 
-static int child(void)
+static int Child(void)
 {
     struct group_in* g = nullptr;
 
@@ -68,7 +68,7 @@ static int child(void)
     /* Malloc a dividing chunk to avoid combination of neighbouring freed chunk */
     tmp[0] = malloc(MALLOC_SIZE_S);
 
-    g = get_group(p0);
+    g = GetGroup(p0);
     free(const_cast<void*>(tmp[0]));
     g->meta += 1;
 
@@ -82,20 +82,20 @@ static int child(void)
     return 0;
 }
 
-static pid_t start_child(void)
+static pid_t StartChild(void)
 {
     pid_t pid;
     int ret;
     pid = fork();
     if (pid == 0) {
-        ret = child();
+        ret = Child();
         t_error("child process normally out with %d\n", ret);
         return ret;
     }
     return pid;
 }
 
-static int MallocModifyPointerTest_impl(int argc, char* argv[])
+static int MallocModifyPointerTestImpl(int argc, char* argv[])
 {
     sigset_t set;
     int status;
@@ -105,10 +105,18 @@ static int MallocModifyPointerTest_impl(int argc, char* argv[])
     sigemptyset(&set);
     sigaddset(&set, SIGCHLD);
     sigprocmask(SIG_BLOCK, &set, nullptr);
-    signal(SIGCHLD, handler);
-    signal(SIGILL, SIG_DFL);
+    auto oldSigChld = signal(SIGCHLD, handler);
+    if (oldSigChld == SIG_ERR) {
+        t_error("%s signal SIGCHLD failed: %s\n", argv[0], strerror(errno));
+        return -1;
+    }
+    auto oldSigIll = signal(SIGILL, SIG_DFL);
+    if (oldSigIll == SIG_ERR) {
+        t_error("%s signal SIGILL failed: %s\n", argv[0], strerror(errno));
+        return -1;
+    }
 
-    pid = start_child();
+    pid = StartChild();
     if (pid == -1) {
         t_error("%s fork failed: %s\n", argv[0], strerror(errno));
         return -1;
@@ -148,5 +156,5 @@ int MallocModifyPointerTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return MallocModifyPointerTest_impl(1, libcArgv);
+    return MallocModifyPointerTestImpl(1, libcArgv);
 }

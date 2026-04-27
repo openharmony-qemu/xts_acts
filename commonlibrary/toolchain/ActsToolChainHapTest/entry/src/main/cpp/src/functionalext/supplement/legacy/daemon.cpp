@@ -121,7 +121,7 @@ int DaemonTest(void)
     return DaemonTestWithArgs(1, libcArgv);
 }
 
-int daemonTest(void)
+int DaemonTestCompat(void)
 {
     return DaemonTest();
 }

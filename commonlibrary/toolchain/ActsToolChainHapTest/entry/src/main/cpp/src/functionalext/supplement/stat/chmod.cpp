@@ -33,7 +33,8 @@ void Chmod0100(void)
     stat("/data/storage/el2/base/cache/test.txt", &buf);
     EXPECT_EQ("chmod_0100", result, 0);
     EXPECT_EQ("chmod_0100", buf.st_mode, EXPECT_MODE_34815);
-    remove("/data/storage/el2/base/cache/test.txt");
+    int removeRet = remove("/data/storage/el2/base/cache/test.txt");
+    EXPECT_EQ("chmod_0100", removeRet, 0);
 }
 
 /*
@@ -50,7 +51,8 @@ void Chmod0200(void)
     stat("/data/storage/el2/base/cache/test.txt", &buf);
     EXPECT_EQ("chmod_0200", result, 0);
     EXPECT_EQ("chmod_0200", buf.st_mode, EXPECT_MODE_33279);
-    remove("/data/storage/el2/base/cache/test.txt");
+    int removeRet = remove("/data/storage/el2/base/cache/test.txt");
+    EXPECT_EQ("chmod_0200", removeRet, 0);
 }
 
 /*

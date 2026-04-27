@@ -120,8 +120,16 @@ static int MallocSafeUnlinkTestImpl(int argc, char* argv[])
     sigemptyset(&set);
     sigaddset(&set, SIGCHLD);
     sigprocmask(SIG_BLOCK, &set, nullptr);
-    signal(SIGCHLD, Handler);
-    signal(SIGILL, SIG_DFL);
+    auto oldSigChld = signal(SIGCHLD, Handler);
+    if (oldSigChld == SIG_ERR) {
+        t_error("%s signal SIGCHLD failed: %s\n", argv[0], strerror(errno));
+        return -1;
+    }
+    auto oldSigIll = signal(SIGILL, SIG_DFL);
+    if (oldSigIll == SIG_ERR) {
+        t_error("%s signal SIGILL failed: %s\n", argv[0], strerror(errno));
+        return -1;
+    }
 
     pid = StartChild();
     if (pid == -1) {

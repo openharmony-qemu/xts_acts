@@ -24,7 +24,6 @@ int DifftimeTest();
 
 int asctimeTest();
 int asctime_rTest();
-int difftimeTest();
 int GmtimeTest();
 int GmtimeRTest();
 int LocaltimeTest();

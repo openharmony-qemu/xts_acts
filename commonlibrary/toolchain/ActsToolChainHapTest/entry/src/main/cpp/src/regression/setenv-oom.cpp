@@ -44,7 +44,7 @@ int SetenvOomTest()
     return status;
 }
 
-int setenv_oomTest()
+int SetenvOomTestCompat()
 {
     return SetenvOomTest();
 }

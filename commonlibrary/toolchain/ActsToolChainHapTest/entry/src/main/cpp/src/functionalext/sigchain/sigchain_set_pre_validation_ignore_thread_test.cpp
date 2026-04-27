@@ -32,7 +32,7 @@ constexpr useconds_t SLEEP_US = 1000;
 /**
  * @brief the special handler for SIGPIPE
  */
-static bool special_handler_sigpipe(int signo, siginfo_t* siginfo, void* ucontextRaw)
+static bool SpecialHandlerSigpipe(int signo, siginfo_t* siginfo, void* ucontextRaw)
 {
     g_specialHandlerCount++;
     EXPECT_EQ("sigchain_set_pre_validation_ignore_thread", signo, SIGPIPE);
@@ -73,7 +73,7 @@ static void SigchainSetPreValidationIgnoreThread001()
         SetSigchainPreValidationIgnore(1);
 
         struct SIGNAL_CHAIN_ACTION sigpipe = {
-            .sca_sigaction = special_handler_sigpipe,
+            .sca_sigaction = SpecialHandlerSigpipe,
             .scaMask = {},
             .scaFlags = 0,
         };

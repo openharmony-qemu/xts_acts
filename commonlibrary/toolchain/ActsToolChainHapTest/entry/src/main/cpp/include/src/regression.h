@@ -20,13 +20,13 @@ int DaemonFailureTest();
 int DnExpandEmptyTest();
 int DnExpandPtr0Test();
 int ExecleEnvTest();
-int setenv_oomTest();
+int SetenvOomTestCompat();
 int pthread_create_oomTest();
-int ftello_unflushed_appendTest();
+int FtelloUnflushedAppendTestCompat();
 int tls_get_new_dtvTest();
 int malloc_oomTest();
 
-int execle_envTest();
+int ExecleEnvTestCompat();
 int IconvRoundtripsTest();
 int MallocDoubleFreeCheckTest();
 int MallocEncodePointerTest();

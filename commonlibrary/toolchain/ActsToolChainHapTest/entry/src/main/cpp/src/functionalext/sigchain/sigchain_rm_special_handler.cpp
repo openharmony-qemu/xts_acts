@@ -407,7 +407,8 @@ static void SigchainRmAllSpecialHandler007()
     }
     RemoveAllSpecialHandler(SIGQUIT);
 
-    raise(SIGQUIT);
+    int raiseRet = raise(SIGQUIT);
+    EXPECT_EQ("SigchainRmAllSpecialHandler007", raiseRet, 0);
     EXPECT_EQ("SigchainRmAllSpecialHandler007", g_count, SIGCHIAN_TEST_SIGNAL_NUM_1);
 }
 

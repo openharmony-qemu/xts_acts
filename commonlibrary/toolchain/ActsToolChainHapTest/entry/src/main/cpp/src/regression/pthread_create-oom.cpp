@@ -21,7 +21,7 @@
 #include <pthread.h>
 #include "libc_common_memfill.h"
 #include "libc_test_shim.h"
-static void* start(void* arg)
+static void* Start(void* arg)
 {
     return SUCCESS_CODE;
 }
@@ -31,11 +31,12 @@ int pthread_create_oomTest()
     int status = SUCCESS_CODE;
 
     pthread_t td;
-    int r, arg;
+    int r;
+    int arg;
 
     if (t_memfill() < 0)
         LibcTestError(&status, "memfill failed\n");
-    r = pthread_create(&td, nullptr, start, &arg);
+    r = pthread_create(&td, nullptr, Start, &arg);
     if (r == 0)
         LibcTestError(&status, "pthread_create succeeded\n");
     else if (r != EAGAIN)
