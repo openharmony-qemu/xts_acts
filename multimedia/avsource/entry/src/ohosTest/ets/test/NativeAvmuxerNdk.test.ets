@@ -34,14 +34,14 @@ export default function nativeavmuxerNdkTest() {
     });
 
     /**
-     * @tc.name   testOHAVMuxerCreate002
+     * @tc.name   testOHAVMuxerCreateFlv001
      * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVMUXER_OH_AVMUXER_CREATE_0200
      * @tc.desc   test OH_AVMuxer_Create
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testOHAVMuxerCreate002', Level.LEVEL0, async (done: Function) => {
+    it('testOHAVMuxerCreateFlv001', Level.LEVEL0, async (done: Function) => {
       let result: number = nativeavmuxer.oHAVMuxerCreateFlv();
       expect(result).assertEqual(0);
       done();

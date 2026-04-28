@@ -28,24 +28,63 @@
 #define FAIL (-1)
 #define SUCCESS (0)
 #define NO_SOUNDBED_LAYOUT (-1)
+#define SAMPLERATE_32000 (32000)
+#define SAMPLERATE_44100 (44100)
+#define SAMPLERATE_48000 (48000)
+#define SAMPLERATE_INVALID (0)
+#define BITRATE_ZERO (0)
+#define BITRATE_32KBPS (32000)
+#define BITRATE_44KBPS (44000)
+#define BITRATE_96KBPS (96000)
+#define BITRATE_152KBPS (152000)
+#define BITRATE_192KBPS (192000)
+#define BITRATE_256KBPS (256000)
+#define BITRATE_320KBPS (320000)
+#define BITRATE_400KBPS (400000)
+#define BITRATE_832KBPS (832000)
+#define BITRATE_900KBPS (900000)
+#define OBJECT_ZERO (0)
+#define OBJECT_NUM_2 (2)
+#define OBJECT_NUM_10 (10)
+#define OBJECT_NUM_11 (11)
+#define OBJECT_INVALID (-1)
+#define CARTESIAN_ZERO (0.0f)
+#define CARTESIAN_MIN (-1.0f)
+#define CARTESIAN_MIN_INVALID (-1.1f)
+#define CARTESIAN_MAX (1.0f)
+#define CARTESIAN_MAX_INVALID (1.1f)
+#define AZIMUTH_MIN (-180.0f)
+#define AZIMUTH_MIN_INVALID (-180.1f)
+#define AZIMUTH_MAX (180.0f)
+#define AZIMUTH_MAX_INVALID (180.1f)
+#define ELEVATION_MIN (-90.0f)
+#define ELEVATION_MIN_INVALID (-90.1f)
+#define ELEVATION_MAX (90.0f)
+#define ELEVATION_MAX_INVALID (90.1f)
+#define DISTANCE_MIN (0.0f)
+#define DISTANCE_MIN_INVALID (-0.1f)
+#define DISTANCE_MAX (1.0f)
+#define DISTANCE_MAX_INVALID (1.1f)
+
 using namespace std;
 
 static OH_AVFormat *g_format = nullptr;
 static int32_t g_mode = OH_AUDIO_VIVID_SIGNAL_FORMAT_MONO;
 static int32_t g_sampleFormat = OH_BitsPerSample::SAMPLE_S16LE;
-static int32_t g_sampleRate = 32000;
+static int32_t g_sampleRate = SAMPLERATE_32000;
 static int64_t g_soundbedChannelLayout = OH_AudioChannelLayout::CH_LAYOUT_MONO;
-static int64_t g_soundbedBitrate = 44000;
-static int32_t g_objNum = 0;
-static int64_t g_objBitrate = 0;
+static int64_t g_soundbedBitrate = BITRATE_44KBPS;
+static int32_t g_objNum = OBJECT_ZERO;
+static int64_t g_objBitrate = BITRATE_ZERO;
 static OH_AudioObjectPosition g_pos = {
     .isCartesian = true,
-    .pos.cartesian.x = 0.0f,
-    .pos.cartesian.y = 0.0f,
-    .pos.cartesian.z = 0.5f,
+    .pos.cartesian.x = CARTESIAN_ZERO,
+    .pos.cartesian.y = CARTESIAN_ZERO,
+    .pos.cartesian.z = CARTESIAN_ZERO,
 };
 
-static bool isSupportAudioVivid() {
+static bool IsSupportAudioVivid() 
+{
     OH_AVCapability* capability = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_AUDIO_VIVID, true);
     if (capability != nullptr) {
         return true;
@@ -80,60 +119,59 @@ static void Init(int32_t mode, bool isCartesian)
     if (mode == OH_AUDIO_VIVID_SIGNAL_FORMAT_MONO) {
         g_mode = OH_AUDIO_VIVID_SIGNAL_FORMAT_MONO;
         g_sampleFormat = OH_BitsPerSample::SAMPLE_S16LE;
-        g_sampleRate = 32000;
+        g_sampleRate = SAMPLERATE_32000;
         g_soundbedChannelLayout = OH_AudioChannelLayout::CH_LAYOUT_MONO;
-        g_soundbedBitrate = 44000;
-        g_objNum = 0;
-        g_objBitrate = 0;
+        g_soundbedBitrate = BITRATE_44KBPS;
+        g_objNum = OBJECT_ZERO;
+        g_objBitrate = BITRATE_ZERO;
     } else if (mode == OH_AUDIO_VIVID_SIGNAL_FORMAT_STEREO) {
         g_mode = OH_AUDIO_VIVID_SIGNAL_FORMAT_STEREO;
         g_sampleFormat = OH_BitsPerSample::SAMPLE_S16LE;
-        g_sampleRate = 32000;
+        g_sampleRate = SAMPLERATE_32000;
         g_soundbedChannelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO;
-        g_soundbedBitrate = 44000;
-        g_objNum = 0;
-        g_objBitrate = 0;        
+        g_soundbedBitrate = BITRATE_44KBPS;
+        g_objNum = OBJECT_ZERO;
+        g_objBitrate = BITRATE_ZERO;
     } else if (mode == OH_AUDIO_VIVID_SIGNAL_FORMAT_MC) {
         g_mode = OH_AUDIO_VIVID_SIGNAL_FORMAT_MC;
         g_sampleFormat = OH_BitsPerSample::SAMPLE_S16LE;
-        g_sampleRate = 32000;
+        g_sampleRate = SAMPLERATE_32000;
         g_soundbedChannelLayout = OH_AudioChannelLayout::CH_LAYOUT_5POINT1;
-        g_soundbedBitrate = 96000;
-        g_objNum = 0;
-        g_objBitrate = 0;   
+        g_soundbedBitrate = BITRATE_96KBPS;
+        g_objNum = OBJECT_ZERO;
+        g_objBitrate = BITRATE_ZERO;
     } else {
         g_mode = OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX;
         g_sampleFormat = OH_BitsPerSample::SAMPLE_S16LE;
-        g_sampleRate = 32000;
+        g_sampleRate = SAMPLERATE_32000;
         g_soundbedChannelLayout = OH_AudioChannelLayout::CH_LAYOUT_5POINT1;
-        g_soundbedBitrate = 96000;
-        g_objNum = 2;
-        g_objBitrate = 32000;   
+        g_soundbedBitrate = BITRATE_96KBPS;
+        g_objNum = OBJECT_NUM_2;
+        g_objBitrate = BITRATE_32KBPS;
     }
 
     if (isCartesian) {
         g_pos = {
             .isCartesian = true,
-            .pos.cartesian.x = 0.0f,
-            .pos.cartesian.y = 0.0f,
-            .pos.cartesian.z = 0.5f,
+            .pos.cartesian.x = CARTESIAN_ZERO,
+            .pos.cartesian.y = CARTESIAN_ZERO,
+            .pos.cartesian.z = CARTESIAN_ZERO,
         };
     } else {
         g_pos = {
             .isCartesian = false,
-            .pos.polar.azimuth = 0.0f,
-            .pos.polar.elevation = 0.0f,
-            .pos.polar.distance = 0.0f,
-        };        
+            .pos.polar.azimuth = CARTESIAN_ZERO,
+            .pos.polar.elevation = CARTESIAN_ZERO,
+            .pos.polar.distance = CARTESIAN_ZERO,
+        };
     }
-
 }
 
 static napi_value MonoModeSampleRateCheck(napi_env env, napi_callback_info info)
 {
     int backParam = FAIL;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MONO, true);
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         g_format = OH_AVFormat_Create();
         int32_t errNum = 0;
         OH_AVErrCode ret;
@@ -146,7 +184,7 @@ static napi_value MonoModeSampleRateCheck(napi_env env, napi_callback_info info)
         }
         // 44.1K
         OH_AudioCodec_Reset(codec);
-        g_sampleRate = 44100;
+        g_sampleRate = SAMPLERATE_44100;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_OK) {
@@ -154,7 +192,7 @@ static napi_value MonoModeSampleRateCheck(napi_env env, napi_callback_info info)
         }
         // 48K
         OH_AudioCodec_Reset(codec);
-        g_sampleRate = 48000;
+        g_sampleRate = SAMPLERATE_48000;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_OK) {
@@ -162,7 +200,7 @@ static napi_value MonoModeSampleRateCheck(napi_env env, napi_callback_info info)
         }
         // invalid
         OH_AudioCodec_Reset(codec);
-        g_sampleRate = 0;
+        g_sampleRate = SAMPLERATE_INVALID;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_INVALID_VAL) {
@@ -188,7 +226,7 @@ static napi_value MonoModeSampleFormatCheck(napi_env env, napi_callback_info inf
 {
     int backParam = FAIL;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MONO, true);
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         g_format = OH_AVFormat_Create();
         int32_t errNum = 0;
         OH_AVErrCode ret;
@@ -235,13 +273,13 @@ static napi_value MonoModeBitrateCheck(napi_env env, napi_callback_info info)
 {
     int backParam = FAIL;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MONO, true);
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         g_format = OH_AVFormat_Create();
         int32_t errNum = 0;
         OH_AVErrCode ret;
         OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_VIVID, true);
         // 0kbps
-        g_soundbedBitrate = 0;
+        g_soundbedBitrate = BITRATE_ZERO;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_OK) {
@@ -249,7 +287,7 @@ static napi_value MonoModeBitrateCheck(napi_env env, napi_callback_info info)
         }
         // 192kbps
         OH_AudioCodec_Reset(codec);
-        g_soundbedBitrate = 192000;
+        g_soundbedBitrate = BITRATE_192KBPS;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_OK) {
@@ -257,7 +295,7 @@ static napi_value MonoModeBitrateCheck(napi_env env, napi_callback_info info)
         }
         // 256kbps
         OH_AudioCodec_Reset(codec);
-        g_soundbedBitrate = 256000;
+        g_soundbedBitrate = BITRATE_256KBPS;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_OK) {
@@ -283,7 +321,7 @@ static napi_value StereoModeSampleRateCheck(napi_env env, napi_callback_info inf
 {
     int backParam = FAIL;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_STEREO, true);
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         g_format = OH_AVFormat_Create();
         g_mode = OH_AUDIO_VIVID_SIGNAL_FORMAT_STEREO;
         int32_t errNum = 0;
@@ -297,7 +335,7 @@ static napi_value StereoModeSampleRateCheck(napi_env env, napi_callback_info inf
         }
         // 44.1K
         OH_AudioCodec_Reset(codec);
-        g_sampleRate = 44100;
+        g_sampleRate = SAMPLERATE_44100;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_OK) {
@@ -305,7 +343,7 @@ static napi_value StereoModeSampleRateCheck(napi_env env, napi_callback_info inf
         }
         // 48K
         OH_AudioCodec_Reset(codec);
-        g_sampleRate = 48000;
+        g_sampleRate = SAMPLERATE_48000;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_OK) {
@@ -313,7 +351,7 @@ static napi_value StereoModeSampleRateCheck(napi_env env, napi_callback_info inf
         }
         // invalid
         OH_AudioCodec_Reset(codec);
-        g_sampleRate = 0;
+        g_sampleRate = SAMPLERATE_INVALID;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_INVALID_VAL) {
@@ -339,7 +377,7 @@ static napi_value StereoModeSampleFormatCheck(napi_env env, napi_callback_info i
 {
     int backParam = FAIL;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_STEREO, true);
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         g_format = OH_AVFormat_Create();
         int32_t errNum = 0;
         OH_AVErrCode ret;
@@ -386,13 +424,13 @@ static napi_value StereoModeBitrateCheck(napi_env env, napi_callback_info info)
 {
     int backParam = FAIL;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_STEREO, true);
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         g_format = OH_AVFormat_Create();
         int32_t errNum = 0;
         OH_AVErrCode ret;
         OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_VIVID, true);
         // 0kbps
-        g_soundbedBitrate = 0;
+        g_soundbedBitrate = BITRATE_ZERO;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_OK) {
@@ -400,7 +438,7 @@ static napi_value StereoModeBitrateCheck(napi_env env, napi_callback_info info)
         }
         // 320kbps
         OH_AudioCodec_Reset(codec);
-        g_soundbedBitrate = 320000;
+        g_soundbedBitrate = BITRATE_320KBPS;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_OK) {
@@ -408,7 +446,7 @@ static napi_value StereoModeBitrateCheck(napi_env env, napi_callback_info info)
         }
         // 400kbps
         OH_AudioCodec_Reset(codec);
-        g_soundbedBitrate = 400000;
+        g_soundbedBitrate = BITRATE_400KBPS;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_OK) {
@@ -434,7 +472,7 @@ static napi_value MCModeSampleRateCheck(napi_env env, napi_callback_info info)
 {
     int backParam = FAIL;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MC, true);
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         g_format = OH_AVFormat_Create();
         int32_t errNum = 0;
         OH_AVErrCode ret;
@@ -447,7 +485,7 @@ static napi_value MCModeSampleRateCheck(napi_env env, napi_callback_info info)
         }
         // 44.1K
         OH_AudioCodec_Reset(codec);
-        g_sampleRate = 44100;
+        g_sampleRate = SAMPLERATE_44100;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_OK) {
@@ -455,7 +493,7 @@ static napi_value MCModeSampleRateCheck(napi_env env, napi_callback_info info)
         }
         // 48K
         OH_AudioCodec_Reset(codec);
-        g_sampleRate = 48000;
+        g_sampleRate = SAMPLERATE_48000;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_OK) {
@@ -463,7 +501,7 @@ static napi_value MCModeSampleRateCheck(napi_env env, napi_callback_info info)
         }
         // invalid
         OH_AudioCodec_Reset(codec);
-        g_sampleRate = 0;
+        g_sampleRate = SAMPLERATE_INVALID;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_INVALID_VAL) {
@@ -489,7 +527,7 @@ static napi_value MCModeSampleFormatCheck(napi_env env, napi_callback_info info)
 {
     int backParam = FAIL;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MC, true);
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         g_format = OH_AVFormat_Create();
         int32_t errNum = 0;
         OH_AVErrCode ret;
@@ -536,7 +574,7 @@ static napi_value MCModeChannelLayoutCheck(napi_env env, napi_callback_info info
 {
     int backParam = FAIL;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MC, true);
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         g_format = OH_AVFormat_Create();
         int32_t errNum = 0;
         OH_AVErrCode ret;
@@ -587,13 +625,13 @@ static napi_value MCModeBitrateCheck(napi_env env, napi_callback_info info)
 {
     int backParam = FAIL;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MC, true);
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         g_format = OH_AVFormat_Create();
         int32_t errNum = 0;
         OH_AVErrCode ret;
         OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_VIVID, true);
         // 96kbps
-        g_soundbedBitrate = 96000;
+        g_soundbedBitrate = BITRATE_96KBPS;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_OK) {
@@ -601,7 +639,7 @@ static napi_value MCModeBitrateCheck(napi_env env, napi_callback_info info)
         }
         // 832kbps
         OH_AudioCodec_Reset(codec);
-        g_soundbedBitrate = 832000;
+        g_soundbedBitrate = BITRATE_832KBPS;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_OK) {
@@ -609,7 +647,7 @@ static napi_value MCModeBitrateCheck(napi_env env, napi_callback_info info)
         }
         // 900kbps
         OH_AudioCodec_Reset(codec);
-        g_soundbedBitrate = 900000;
+        g_soundbedBitrate = BITRATE_900KBPS;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_OK) {
@@ -635,7 +673,7 @@ static napi_value MixModeSampleRateCheck(napi_env env, napi_callback_info info)
 {
     int backParam = FAIL;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         g_format = OH_AVFormat_Create();
         int32_t errNum = 0;
         OH_AVErrCode ret;
@@ -648,7 +686,7 @@ static napi_value MixModeSampleRateCheck(napi_env env, napi_callback_info info)
         }
         // 48K
         OH_AudioCodec_Reset(codec);
-        g_sampleRate = 48000;
+        g_sampleRate = SAMPLERATE_48000;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_OK) {
@@ -656,7 +694,7 @@ static napi_value MixModeSampleRateCheck(napi_env env, napi_callback_info info)
         }
         // invalid
         OH_AudioCodec_Reset(codec);
-        g_sampleRate = 0;
+        g_sampleRate = SAMPLERATE_INVALID;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_INVALID_VAL) {
@@ -682,7 +720,7 @@ static napi_value MixModeSampleFormatCheck(napi_env env, napi_callback_info info
 {
     int backParam = FAIL;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         g_format = OH_AVFormat_Create();
         int32_t errNum = 0;
         OH_AVErrCode ret;
@@ -729,7 +767,7 @@ static napi_value MixModeChannelLayoutCheck(napi_env env, napi_callback_info inf
 {
     int backParam = FAIL;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         g_format = OH_AVFormat_Create();
         int32_t errNum = 0;
         OH_AVErrCode ret;
@@ -777,13 +815,13 @@ static napi_value MixModeBitrateCheck(napi_env env, napi_callback_info info)
 {
     int backParam = FAIL;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         g_format = OH_AVFormat_Create();
         int32_t errNum = 0;
         OH_AVErrCode ret;
         OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_VIVID, true);
         // 152kbps
-        g_soundbedBitrate = 152000;
+        g_soundbedBitrate = BITRATE_152KBPS;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_OK) {
@@ -791,7 +829,7 @@ static napi_value MixModeBitrateCheck(napi_env env, napi_callback_info info)
         }
         // 832kbps
         OH_AudioCodec_Reset(codec);
-        g_soundbedBitrate = 832000;
+        g_soundbedBitrate = BITRATE_832KBPS;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_OK) {
@@ -799,7 +837,7 @@ static napi_value MixModeBitrateCheck(napi_env env, napi_callback_info info)
         }
         // 900kbps
         OH_AudioCodec_Reset(codec);
-        g_soundbedBitrate = 900000;
+        g_soundbedBitrate = BITRATE_900KBPS;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_OK) {
@@ -825,9 +863,9 @@ static napi_value MixModeObjNumCheck(napi_env env, napi_callback_info info)
 {
     int backParam = FAIL;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         g_format = OH_AVFormat_Create();
-        g_objNum = 10;
+        g_objNum = OBJECT_NUM_10;
         int32_t errNum = 0;
         OH_AVErrCode ret;
         OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_VIVID, true);
@@ -839,7 +877,7 @@ static napi_value MixModeObjNumCheck(napi_env env, napi_callback_info info)
         }
         // invalid
         OH_AudioCodec_Reset(codec);
-        g_objNum = -1;
+        g_objNum = OBJECT_INVALID;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_INVALID_VAL) {
@@ -847,7 +885,7 @@ static napi_value MixModeObjNumCheck(napi_env env, napi_callback_info info)
         }
         // 5.1 + 11obj
         OH_AudioCodec_Reset(codec);
-        g_objNum = 11;
+        g_objNum = OBJECT_NUM_11;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_INVALID_VAL) {
@@ -873,13 +911,13 @@ static napi_value MixModeObjBitrateCheck(napi_env env, napi_callback_info info)
 {
     int backParam = FAIL;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         g_format = OH_AVFormat_Create();
         int32_t errNum = 0;
         OH_AVErrCode ret;
         OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_VIVID, true);
         // obj 32kbps
-        g_objBitrate = 32000;
+        g_objBitrate = BITRATE_32KBPS;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_OK) {
@@ -887,7 +925,7 @@ static napi_value MixModeObjBitrateCheck(napi_env env, napi_callback_info info)
         }
         // obj 96kbps
         OH_AudioCodec_Reset(codec);
-        g_objBitrate = 96000;
+        g_objBitrate = BITRATE_96KBPS;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_OK) {
@@ -895,7 +933,7 @@ static napi_value MixModeObjBitrateCheck(napi_env env, napi_callback_info info)
         }
         // obj 192kbps
         OH_AudioCodec_Reset(codec);
-        g_objBitrate = 192000;
+        g_objBitrate = BITRATE_192KBPS;
         SetAudioVividFormat();
         ret = OH_AudioCodec_Configure(codec, g_format);
         if (ret != AV_ERR_OK) {
@@ -925,7 +963,7 @@ static napi_value CreateMonoMode(napi_env env, napi_callback_info info)
     OH_AVErrCode ret;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MONO, true);
     SetAudioVividFormat();
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         ret = OH_AudioVividMetaBuilder_Create(&builder, g_format);
         if (ret == AV_ERR_OK && builder != nullptr) {
             backParam = SUCCESS;
@@ -951,7 +989,7 @@ static napi_value CreateStereoMode(napi_env env, napi_callback_info info)
     OH_AVErrCode ret;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_STEREO, true);
     SetAudioVividFormat();
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         ret = OH_AudioVividMetaBuilder_Create(&builder, g_format);
         if (ret == AV_ERR_OK && builder != nullptr) {
             backParam = SUCCESS;
@@ -977,7 +1015,7 @@ static napi_value CreateMCMode(napi_env env, napi_callback_info info)
     OH_AVErrCode ret;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MC, true);
     SetAudioVividFormat();
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         ret = OH_AudioVividMetaBuilder_Create(&builder, g_format);
         if (ret == AV_ERR_OK && builder != nullptr) {
             backParam = SUCCESS;
@@ -1003,7 +1041,7 @@ static napi_value CreateMixMode(napi_env env, napi_callback_info info)
     OH_AVErrCode ret;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
     SetAudioVividFormat();
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         int32_t errNum = 0;
         // 7.1.2
         ret = OH_AudioVividMetaBuilder_Create(&builder, g_format);
@@ -1051,9 +1089,9 @@ static napi_value CreateObjNumCheck(napi_env env, napi_callback_info info)
     OH_AudioVividMetaBuilder *builder = nullptr;
     OH_AVErrCode ret;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
-    g_objNum = 10;
+    g_objNum = OBJECT_NUM_10;
     SetAudioVividFormat();
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         int32_t errNum = 0;
         // 5.1 + 10obj
         ret = OH_AudioVividMetaBuilder_Create(&builder, g_format);
@@ -1063,7 +1101,7 @@ static napi_value CreateObjNumCheck(napi_env env, napi_callback_info info)
         OH_AudioVividMetaBuilder_Destroy(builder);
         builder = nullptr;
         // 5.1 + 11obj
-        g_objNum = 11;
+        g_objNum = OBJECT_NUM_11;
         SetAudioVividFormat();
         ret = OH_AudioVividMetaBuilder_Create(&builder, g_format);
         if (ret == AV_ERR_OK || builder != nullptr) {
@@ -1094,7 +1132,7 @@ static napi_value UpdateObjectPosIndexCheck(napi_env env, napi_callback_info inf
     OH_AVErrCode ret;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
     SetAudioVividFormat();
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         int32_t errNum = 0;
         ret = OH_AudioVividMetaBuilder_Create(&builder, g_format);
         if (ret != AV_ERR_OK || builder == nullptr) {
@@ -1133,25 +1171,25 @@ static napi_value UpdateObjectPosXCheck(napi_env env, napi_callback_info info)
     OH_AVErrCode ret;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
     SetAudioVividFormat();
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         int32_t errNum = 0;
         ret = OH_AudioVividMetaBuilder_Create(&builder, g_format);
         if (ret != AV_ERR_OK || builder == nullptr) {
             errNum++;
         }
-        g_pos.pos.cartesian.x = -1.0f;
+        g_pos.pos.cartesian.x = CARTESIAN_MIN;
         if (OH_AudioVividMetaBuilder_UpdateObjectPos(builder, 0, g_pos) != AV_ERR_OK) {
             errNum++;
         }
-        g_pos.pos.cartesian.x = 1.0f;
+        g_pos.pos.cartesian.x = CARTESIAN_MAX;
         if (OH_AudioVividMetaBuilder_UpdateObjectPos(builder, 0, g_pos) != AV_ERR_OK) {
             errNum++;
         }
-        g_pos.pos.cartesian.x = -1.1f;
+        g_pos.pos.cartesian.x = CARTESIAN_MIN_INVALID;
         if (OH_AudioVividMetaBuilder_UpdateObjectPos(builder, 0, g_pos) != AV_ERR_INVALID_VAL) {
             errNum++;
         }
-        g_pos.pos.cartesian.x = 1.1f;
+        g_pos.pos.cartesian.x = CARTESIAN_MAX_INVALID;
         if (OH_AudioVividMetaBuilder_UpdateObjectPos(builder, 0, g_pos) != AV_ERR_INVALID_VAL) {
             errNum++;
         }
@@ -1180,25 +1218,25 @@ static napi_value UpdateObjectPosYCheck(napi_env env, napi_callback_info info)
     OH_AVErrCode ret;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
     SetAudioVividFormat();
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         int32_t errNum = 0;
         ret = OH_AudioVividMetaBuilder_Create(&builder, g_format);
         if (ret != AV_ERR_OK || builder == nullptr) {
             errNum++;
         }
-        g_pos.pos.cartesian.y = -1.0f;
+        g_pos.pos.cartesian.y = CARTESIAN_MIN;
         if (OH_AudioVividMetaBuilder_UpdateObjectPos(builder, 0, g_pos) != AV_ERR_OK) {
             errNum++;
         }
-        g_pos.pos.cartesian.y = 1.0f;
+        g_pos.pos.cartesian.y = CARTESIAN_MAX;
         if (OH_AudioVividMetaBuilder_UpdateObjectPos(builder, 0, g_pos) != AV_ERR_OK) {
             errNum++;
         }
-        g_pos.pos.cartesian.y = -1.1f;
+        g_pos.pos.cartesian.y = CARTESIAN_MIN_INVALID;
         if (OH_AudioVividMetaBuilder_UpdateObjectPos(builder, 0, g_pos) != AV_ERR_INVALID_VAL) {
             errNum++;
         }
-        g_pos.pos.cartesian.y = 1.1f;
+        g_pos.pos.cartesian.y = CARTESIAN_MAX_INVALID;
         if (OH_AudioVividMetaBuilder_UpdateObjectPos(builder, 0, g_pos) != AV_ERR_INVALID_VAL) {
             errNum++;
         }
@@ -1227,25 +1265,25 @@ static napi_value UpdateObjectPosZCheck(napi_env env, napi_callback_info info)
     OH_AVErrCode ret;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
     SetAudioVividFormat();
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         int32_t errNum = 0;
         ret = OH_AudioVividMetaBuilder_Create(&builder, g_format);
         if (ret != AV_ERR_OK || builder == nullptr) {
             errNum++;
         }
-        g_pos.pos.cartesian.z = -1.0f;
+        g_pos.pos.cartesian.z = CARTESIAN_MIN;
         if (OH_AudioVividMetaBuilder_UpdateObjectPos(builder, 0, g_pos) != AV_ERR_OK) {
             errNum++;
         }
-        g_pos.pos.cartesian.z = 1.0f;
+        g_pos.pos.cartesian.z = CARTESIAN_MAX;
         if (OH_AudioVividMetaBuilder_UpdateObjectPos(builder, 0, g_pos) != AV_ERR_OK) {
             errNum++;
         }
-        g_pos.pos.cartesian.z = -1.1f;
+        g_pos.pos.cartesian.z = CARTESIAN_MIN_INVALID;
         if (OH_AudioVividMetaBuilder_UpdateObjectPos(builder, 0, g_pos) != AV_ERR_INVALID_VAL) {
             errNum++;
         }
-        g_pos.pos.cartesian.z = 1.1f;
+        g_pos.pos.cartesian.z = CARTESIAN_MAX_INVALID;
         if (OH_AudioVividMetaBuilder_UpdateObjectPos(builder, 0, g_pos) != AV_ERR_INVALID_VAL) {
             errNum++;
         }
@@ -1274,25 +1312,25 @@ static napi_value UpdateObjectPosAzimuthCheck(napi_env env, napi_callback_info i
     OH_AVErrCode ret;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, false);
     SetAudioVividFormat();
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         int32_t errNum = 0;
         ret = OH_AudioVividMetaBuilder_Create(&builder, g_format);
         if (ret != AV_ERR_OK || builder == nullptr) {
             errNum++;
         }
-        g_pos.pos.polar.azimuth = -180.0f;
+        g_pos.pos.polar.azimuth = AZIMUTH_MIN;
         if (OH_AudioVividMetaBuilder_UpdateObjectPos(builder, 0, g_pos) != AV_ERR_OK) {
             errNum++;
         }
-        g_pos.pos.polar.azimuth = 180.0f;
+        g_pos.pos.polar.azimuth = AZIMUTH_MAX;
         if (OH_AudioVividMetaBuilder_UpdateObjectPos(builder, 0, g_pos) != AV_ERR_OK) {
             errNum++;
         }
-        g_pos.pos.polar.azimuth = -180.1f;
+        g_pos.pos.polar.azimuth = AZIMUTH_MIN_INVALID;
         if (OH_AudioVividMetaBuilder_UpdateObjectPos(builder, 0, g_pos) != AV_ERR_INVALID_VAL) {
             errNum++;
         }
-        g_pos.pos.polar.azimuth = 180.1f;
+        g_pos.pos.polar.azimuth = AZIMUTH_MAX_INVALID;
         if (OH_AudioVividMetaBuilder_UpdateObjectPos(builder, 0, g_pos) != AV_ERR_INVALID_VAL) {
             errNum++;
         }
@@ -1321,25 +1359,25 @@ static napi_value UpdateObjectPosElevationCheck(napi_env env, napi_callback_info
     OH_AVErrCode ret;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, false);
     SetAudioVividFormat();
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         int32_t errNum = 0;
         ret = OH_AudioVividMetaBuilder_Create(&builder, g_format);
         if (ret != AV_ERR_OK || builder == nullptr) {
             errNum++;
         }
-        g_pos.pos.polar.elevation = -90.0f;
+        g_pos.pos.polar.elevation = ELEVATION_MIN;
         if (OH_AudioVividMetaBuilder_UpdateObjectPos(builder, 0, g_pos) != AV_ERR_OK) {
             errNum++;
         }
-        g_pos.pos.polar.elevation = 90.0f;
+        g_pos.pos.polar.elevation = ELEVATION_MAX;
         if (OH_AudioVividMetaBuilder_UpdateObjectPos(builder, 0, g_pos) != AV_ERR_OK) {
             errNum++;
         }
-        g_pos.pos.polar.elevation = -90.1f;
+        g_pos.pos.polar.elevation = ELEVATION_MIN_INVALID;
         if (OH_AudioVividMetaBuilder_UpdateObjectPos(builder, 0, g_pos) != AV_ERR_INVALID_VAL) {
             errNum++;
         }
-        g_pos.pos.polar.elevation = 90.1f;
+        g_pos.pos.polar.elevation = ELEVATION_MAX_INVALID;
         if (OH_AudioVividMetaBuilder_UpdateObjectPos(builder, 0, g_pos) != AV_ERR_INVALID_VAL) {
             errNum++;
         }
@@ -1368,25 +1406,25 @@ static napi_value UpdateObjectPosDistanceCheck(napi_env env, napi_callback_info 
     OH_AVErrCode ret;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, false);
     SetAudioVividFormat();
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         int32_t errNum = 0;
         ret = OH_AudioVividMetaBuilder_Create(&builder, g_format);
         if (ret != AV_ERR_OK || builder == nullptr) {
             errNum++;
         }
-        g_pos.pos.polar.distance = 0.0f;
+        g_pos.pos.polar.distance = DISTANCE_MIN;
         if (OH_AudioVividMetaBuilder_UpdateObjectPos(builder, 0, g_pos) != AV_ERR_OK) {
             errNum++;
         }
-        g_pos.pos.polar.distance = 1.0f;
+        g_pos.pos.polar.distance = DISTANCE_MAX;
         if (OH_AudioVividMetaBuilder_UpdateObjectPos(builder, 0, g_pos) != AV_ERR_OK) {
             errNum++;
         }
-        g_pos.pos.polar.distance = -0.1f;
+        g_pos.pos.polar.distance = DISTANCE_MIN_INVALID;
         if (OH_AudioVividMetaBuilder_UpdateObjectPos(builder, 0, g_pos) != AV_ERR_INVALID_VAL) {
             errNum++;
         }
-        g_pos.pos.polar.distance = 1.1f;
+        g_pos.pos.polar.distance = DISTANCE_MAX_INVALID;
         if (OH_AudioVividMetaBuilder_UpdateObjectPos(builder, 0, g_pos) != AV_ERR_INVALID_VAL) {
             errNum++;
         }
@@ -1415,7 +1453,7 @@ static napi_value UpdateObjectGainIndexCheck(napi_env env, napi_callback_info in
     OH_AVErrCode ret;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
     SetAudioVividFormat();
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         int32_t errNum = 0;
         ret = OH_AudioVividMetaBuilder_Create(&builder, g_format);
         if (ret != AV_ERR_OK || builder == nullptr) {
@@ -1454,7 +1492,7 @@ static napi_value UpdateObjectGainGainCheck(napi_env env, napi_callback_info inf
     OH_AVErrCode ret;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
     SetAudioVividFormat();
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         int32_t errNum = 0;
         ret = OH_AudioVividMetaBuilder_Create(&builder, g_format);
         if (ret != AV_ERR_OK || builder == nullptr) {
@@ -1498,10 +1536,10 @@ static napi_value CreateBuilderNullCheck(napi_env env, napi_callback_info info)
     OH_AVErrCode ret;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
     SetAudioVividFormat();
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         ret = OH_AudioVividMetaBuilder_Create(nullptr, g_format);
         if (ret == AV_ERR_INVALID_VAL) {
-             backParam = SUCCESS;
+            backParam = SUCCESS;
         }
     } else {
         ret = OH_AudioVividMetaBuilder_Create(&builder, g_format);
@@ -1523,7 +1561,7 @@ static napi_value CreateFormatNullCheck(napi_env env, napi_callback_info info)
     OH_AVErrCode ret;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
     SetAudioVividFormat();
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         ret = OH_AudioVividMetaBuilder_Create(&builder, nullptr);
         if (ret == AV_ERR_INVALID_VAL) {
              backParam = SUCCESS;
@@ -1548,7 +1586,7 @@ static napi_value UpdateObjectPosBuilderNullCheck(napi_env env, napi_callback_in
     OH_AVErrCode ret;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
     SetAudioVividFormat();
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         ret = OH_AudioVividMetaBuilder_UpdateObjectPos(nullptr, 0, g_pos);
         if (ret == AV_ERR_INVALID_VAL) {
             backParam = SUCCESS;
@@ -1573,7 +1611,7 @@ static napi_value UpdateObjectGainBuilderNullCheck(napi_env env, napi_callback_i
     OH_AVErrCode ret;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
     SetAudioVividFormat();
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         ret = OH_AudioVividMetaBuilder_UpdateObjectGain(nullptr, 0, 2.0f);
         if (ret == AV_ERR_INVALID_VAL) {
             backParam = SUCCESS;
@@ -1598,7 +1636,7 @@ static napi_value GetMetaLenBuilderNullCheck(napi_env env, napi_callback_info in
     OH_AVErrCode ret;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
     SetAudioVividFormat();
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         int32_t len;
         ret = OH_AudioVividMetaBuilder_GetMetaLen(nullptr, true, &len);
         if (ret == AV_ERR_INVALID_VAL) {
@@ -1625,7 +1663,7 @@ static napi_value GetMetaLenLenNullCheck(napi_env env, napi_callback_info info)
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
     SetAudioVividFormat();
 
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         OH_AudioVividMetaBuilder_Create(&builder, g_format);
         ret = OH_AudioVividMetaBuilder_GetMetaLen(builder, true, nullptr);
         if (ret == AV_ERR_INVALID_VAL) {
@@ -1653,7 +1691,7 @@ static napi_value GetMetaBuilderNullCheck(napi_env env, napi_callback_info info)
     OH_AVErrCode ret;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
     SetAudioVividFormat();
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         int32_t len;
         OH_AudioVividMetaBuilder_Create(&builder, g_format);
         ret = OH_AudioVividMetaBuilder_GetMetaLen(builder, true, &len);
@@ -1687,7 +1725,7 @@ static napi_value GetMetaBufferNullCheck(napi_env env, napi_callback_info info)
     OH_AVErrCode ret;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
     SetAudioVividFormat();
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         int32_t len;
         OH_AudioVividMetaBuilder_Create(&builder, g_format);
         ret = OH_AudioVividMetaBuilder_GetMetaLen(builder, true, &len);
@@ -1719,7 +1757,7 @@ static napi_value DestroyBuilderNullCheck(napi_env env, napi_callback_info info)
     OH_AVErrCode ret;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX, true);
     SetAudioVividFormat();
-    if (isSupportAudioVivid()) {
+    if (IsSupportAudioVivid()) {
         ret = OH_AudioVividMetaBuilder_Destroy(nullptr);
         if (ret == AV_ERR_INVALID_VAL) {
              backParam = SUCCESS;
