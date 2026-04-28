@@ -14,7 +14,7 @@
  */
 
 import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium";
-import { fs, nextFileName, prepareFile, FILE_CONTENT} from "./Common";
+import { fs, nextFileName, prepareFile, FILE_CONTENT} from "./Common.test.ets";
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { ListFileExtOptions, FileFilter } from '@ohos.file.fs';
 

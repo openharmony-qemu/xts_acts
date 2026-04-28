@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import ListFileExtTest from './ListFileExt.ets';
+import ListFileExtTest from './ListFileExt.test.ets';
 
 export default function testsuite() {
   ListFileExtTest();
