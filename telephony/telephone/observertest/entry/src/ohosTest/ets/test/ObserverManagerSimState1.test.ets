@@ -693,6 +693,31 @@ export default function observerManagerSimStateTest1() {
     });
 
     /**
+     * @tc.name   testTelephonyObserverOffGetSimActiveState0300
+     * @tc.number SUB_Telephony_Observer_OffGetSimActiveState_0300
+     * @tc.desc   Cancel callback when the sim active state is updated.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverOffGetSimActiveState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverOffGetSimActiveState0300';
+      console.info(`${caseName} test start`);
+      try {
+        let callback: (data: boolean) => void = (data: boolean) => {
+          console.info(`${caseName} data: ${data}`);
+        }
+        observer.offGetSimActiveState(callback);
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
      * @tc.name   testTelephonyObserverOffGetSimActiveState0100
      * @tc.number SUB_Telephony_Observer_OffGetSimActiveState_0100
      * @tc.desc   Cancel callback when the sim active state is updated.
@@ -756,29 +781,5 @@ export default function observerManagerSimStateTest1() {
       console.info(`${caseName} test end`);
     });
 
-    /**
-     * @tc.name   testTelephonyObserverOffGetSimActiveState0300
-     * @tc.number SUB_Telephony_Observer_OffGetSimActiveState_0300
-     * @tc.desc   Cancel callback when the sim active state is updated.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testTelephonyObserverOffGetSimActiveState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let caseName: string = 'testTelephonyObserverOffGetSimActiveState0300';
-      console.info(`${caseName} test start`);
-      try {
-        let callback: (data: boolean) => void = (data: boolean) => {
-          console.info(`${caseName} data: ${data}`);
-        }
-        observer.offGetSimActiveState(callback);
-        done();
-      } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
-        ExpectFail();
-        done();
-      }
-      console.info(`${caseName} test end`);
-    });
   });
 }
