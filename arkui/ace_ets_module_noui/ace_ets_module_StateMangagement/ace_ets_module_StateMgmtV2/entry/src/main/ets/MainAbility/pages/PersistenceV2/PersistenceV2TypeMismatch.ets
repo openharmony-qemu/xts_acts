@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { PersistenceV2, Type } from "@kit.ArkUI";
+import { PersistenceV2, Type } from '@kit.ArkUI';
 
 @ObservedV2
 class SampleChildPersistenceV2TypeMismatch {
@@ -50,7 +50,11 @@ struct PersistenceV2TypeMismatch {
         .height('5%')
         .onClick(() => {
           try {
-            const obj = { childId: 1, groupId: 1, set: new ClsPersistenceV2TypeMismatch() } as ESObject as SampleChildPersistenceV2TypeMismatch;
+            const obj = { 
+              childId: 1, 
+              groupId: 1, 
+              set: new ClsPersistenceV2TypeMismatch() 
+              } as ESObject as SampleChildPersistenceV2TypeMismatch;
             this.p.father = obj;
             this.resultText = 'SUCCESS: Type mismatch handled';
           } catch (err) {

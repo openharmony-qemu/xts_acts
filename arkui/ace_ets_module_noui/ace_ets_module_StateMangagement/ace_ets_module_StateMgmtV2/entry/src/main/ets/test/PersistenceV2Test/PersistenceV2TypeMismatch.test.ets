@@ -50,15 +50,15 @@ export default function PersistenceV2TypeMismatchTest() {
     afterAll(async () => {});
 
     /**
-     * @tc.name   PersistenceV2TypeMismatch_001
-     * @tc.number SUB_ARUI_PERSISTENCEV2_TYPEMISMATCH_001
+     * @tc.name   PersistenceV2TypeMismatch_0100
+     * @tc.number SUB_ARUI_PERSISTENCEV2_TYPEMISMATCH_0100
      * @tc.desc   Test PersistenceV2 handling type mismatch in nested object structure
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('PersistenceV2TypeMismatch_001', Level.LEVEL0, async () => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'PersistenceV2TypeMismatch_001 begin');
+    it('PersistenceV2TypeMismatch_0100', Level.LEVEL0, async () => {
+      hilog.info(0x0000, 'testTag', '%{public}s', 'PersistenceV2TypeMismatch_0100 begin');
       await CommonFunc.sleep(1000);
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
@@ -85,7 +85,7 @@ export default function PersistenceV2TypeMismatchTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'ChildId text: ' + childIdText);
       expect(childIdText).assertContain('ChildId: 1');
       PersistenceV2.remove('SamplePersistenceV2TypeMismatch')
-      hilog.info(0x0000, 'testTag', '%{public}s', 'PersistenceV2TypeMismatch_001 end');
+      hilog.info(0x0000, 'testTag', '%{public}s', 'PersistenceV2TypeMismatch_0100 end');
     });
   });
 }
