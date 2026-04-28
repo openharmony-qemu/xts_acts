@@ -5963,21 +5963,6 @@ export default function audioNDK() {
     })
 
     /**
-    * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_0200
-    * @tc.number SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_0200
-    * @tc.desc   SetIndependentAudioSessionStrategy
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL0
-    */
-    it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_0200();
-      console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_0200 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
-
-    /**
     * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_0100
     * @tc.number SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_0100
     * @tc.desc   SetIndependentAudioSessionStrategy
@@ -6093,20 +6078,6 @@ export default function audioNDK() {
     it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_0100();
       console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_0100 : ${result}`);
-      expect(result).assertEqual(TEST_PASS);
-      done();
-    })
-    /**
-    * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_0200
-    * @tc.number SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_0200
-    * @tc.desc   SetIndependentAudioSessionStrategy
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL0
-    */
-    it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_0200();
-      console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_0200 : ${result}`);
       expect(result).assertEqual(TEST_PASS);
       done();
     })

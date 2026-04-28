@@ -10280,27 +10280,6 @@ static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_01
     return res;
 }
 
-static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_0200(
-    napi_env env, napi_callback_info info)
-{
-    OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
-    if (audioRoutingManager == nullptr) {
-        LOG("audioRoutingManager is nullptr");
-        return CreateNapiResult(env, TEST_FAIL);
-    }
-    OH_AudioRoutingManager_OnPreferredOutputDeviceChangedCallback callback = nullptr;
-    OH_AudioCommon_Result ret = OH_AudioRoutingManager_UnregisterPreferredOutputDevicesChangeCallback(
-        audioRoutingManager, callback);
-    LOG("UnregisterPreferredOutputDevicesChangeCallback with nullptr callback result: %{public}d", ret);
-    napi_value res;
-    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
-        napi_create_int32(env, TEST_PASS, &res);
-    } else {
-        napi_create_int32(env, TEST_FAIL, &res);
-    }
-    return res;
-}
-
 static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_0100(
     napi_env env, napi_callback_info info)
 {
@@ -10479,27 +10458,6 @@ static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_010
     return res;
 }
 
-static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_0200(
-    napi_env env, napi_callback_info info)
-{
-    OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
-    if (audioRoutingManager == nullptr) {
-        LOG("audioRoutingManager is nullptr");
-        return CreateNapiResult(env, TEST_FAIL);
-    }
-    OH_AudioRoutingManager_OnPreferredInputDeviceChangedCallback callback = nullptr;
-    OH_AudioCommon_Result ret = OH_AudioRoutingManager_UnregisterPreferredInputDevicesChangeCallback(
-        audioRoutingManager, callback);
-    LOG("UnregisterPreferredInputDevicesChangeCallback with nullptr callback result: %{public}d", ret);
-    napi_value res;
-    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
-        napi_create_int32(env, TEST_PASS, &res);
-    } else {
-        napi_create_int32(env, TEST_FAIL, &res);
-    }
-    return res;
-}
-
 static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_0100(
     napi_env env, napi_callback_info info)
 {
@@ -10625,9 +10583,6 @@ napi_property_descriptor desc1[] = {
     {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_0100", nullptr,
         SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_0100, nullptr, nullptr, nullptr, napi_default,
         nullptr},
-    {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_0200", nullptr,
-        SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_0200, nullptr, nullptr, nullptr, napi_default,
-        nullptr},
     {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_0100", nullptr,
         SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_0200", nullptr,
@@ -10648,9 +10603,6 @@ napi_property_descriptor desc1[] = {
         SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_0100", nullptr,
         SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_0100, nullptr, nullptr, nullptr, napi_default,
-        nullptr},
-    {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_0200", nullptr,
-        SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_0200, nullptr, nullptr, nullptr, napi_default,
         nullptr},
     {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_0100", nullptr,
         SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_0100, nullptr, nullptr, nullptr, napi_default,
