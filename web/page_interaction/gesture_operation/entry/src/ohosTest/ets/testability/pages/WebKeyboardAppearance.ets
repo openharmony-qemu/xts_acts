@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,14 +16,14 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
 
-const EVENT_ID_SET_SUITE_KEY = 187001;
+const EVENT_ID_SET_SUITE_KEY = 186001;
 
 @Entry
 @Component
-struct WebAttributeKeyboardAppearance {
+struct WebKeyboardAppearance {
   @State str: string = "";
   @State isReceive: number = -1;
-  @State appearanceMode: WebKeyboardAppearanceMode | undefined = WebKeyboardAppearanceMode.NONE_IMMERSIVE;
+  @State appearanceMode: WebKeyboardAppearanceMode = WebKeyboardAppearanceMode.NONE_IMMERSIVE;
   controller: web_webview.WebviewController = new web_webview.WebviewController();
   @State isPageEnd: number = -1;
 
@@ -40,7 +40,7 @@ struct WebAttributeKeyboardAppearance {
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-    console.info("WebAttributeKeyboardAppearance page valueChangeCallBack");
+    console.info("WebKeyboardAppearance page valueChangeCallBack");
     if (eventData != null) {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
@@ -53,118 +53,111 @@ struct WebAttributeKeyboardAppearance {
   build() {
     Column() {
       Row() {
-        Button("web click").key('webAttributeKeyboardAppearanceButton').onClick(async () => {
+        Button("web click").key('webKeyboardAppearanceButton').onClick(async () => {
           console.info("key==>" + this.str)
           await Utils.waitForExist(() => this.isReceive, this.str + ' isReceive', 1, 1000);
           await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
           switch (this.str) {
-            case "emitWebAttributeKeyboardAppearance001": {
+            case "emitKeyboardAppearance001": {
               try {
                 this.appearanceMode = WebKeyboardAppearanceMode.NONE_IMMERSIVE;
-                Utils.emitEvent(true, 187010);
+                Utils.emitEvent(true, 186010);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(false, 187010);
+                Utils.emitEvent(false, 186010);
               }
               break;
             }
-            case "emitWebAttributeKeyboardAppearance002": {
+            case "emitKeyboardAppearance002": {
               try {
                 this.appearanceMode = WebKeyboardAppearanceMode.IMMERSIVE;
-                Utils.emitEvent(true, 187020);
+                Utils.emitEvent(true, 186020);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(false, 187020);
+                Utils.emitEvent(false, 186020);
               }
               break;
             }
-            case "emitWebAttributeKeyboardAppearance003": {
+            case "emitKeyboardAppearance003": {
               try {
                 this.appearanceMode = WebKeyboardAppearanceMode.LIGHT_IMMERSIVE;
-                Utils.emitEvent(true, 187030);
+                Utils.emitEvent(true, 186030);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(false, 187030);
+                Utils.emitEvent(false, 186030);
               }
               break;
             }
-            case "emitWebAttributeKeyboardAppearance004": {
+            case "emitKeyboardAppearance004": {
               try {
                 this.appearanceMode = WebKeyboardAppearanceMode.DARK_IMMERSIVE;
-                Utils.emitEvent(true, 187040);
+                Utils.emitEvent(true, 186040);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(false, 187040);
+                Utils.emitEvent(false, 186040);
               }
               break;
             }
-            case "emitWebAttributeKeyboardAppearance005": {
+            case "emitKeyboardAppearance005": {
               try {
                 this.appearanceMode = WebKeyboardAppearanceMode.NONE_IMMERSIVE;
-                this.appearanceMode = WebKeyboardAppearanceMode.DARK_IMMERSIVE;
+                this.appearanceMode = WebKeyboardAppearanceMode.IMMERSIVE;
+                Utils.emitEvent(true, 186050);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(false, 186050);
+              }
+              break;
+            }
+            case "emitKeyboardAppearance006": {
+              try {
+                this.appearanceMode = WebKeyboardAppearanceMode.IMMERSIVE;
                 this.appearanceMode = WebKeyboardAppearanceMode.LIGHT_IMMERSIVE;
-                Utils.emitEvent(true, 187050);
+                Utils.emitEvent(true, 186060);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(false, 187050);
+                Utils.emitEvent(false, 186060);
               }
               break;
             }
-            case "emitWebAttributeKeyboardAppearance006": {
-              try {
-                this.appearanceMode = WebKeyboardAppearanceMode.IMMERSIVE;
-                this.appearanceMode = WebKeyboardAppearanceMode.NONE_IMMERSIVE;
-                this.appearanceMode = WebKeyboardAppearanceMode.IMMERSIVE;
-                Utils.emitEvent(true, 187060);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(false, 187060);
-              }
-              break;
-            }
-            case "emitWebAttributeKeyboardAppearance007": {
+            case "emitKeyboardAppearance007": {
               try {
                 this.appearanceMode = WebKeyboardAppearanceMode.LIGHT_IMMERSIVE;
-                this.appearanceMode = WebKeyboardAppearanceMode.IMMERSIVE;
-                this.appearanceMode = WebKeyboardAppearanceMode.NONE_IMMERSIVE;
                 this.appearanceMode = WebKeyboardAppearanceMode.DARK_IMMERSIVE;
-                Utils.emitEvent(true, 187070);
+                Utils.emitEvent(true, 186070);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(false, 187070);
+                Utils.emitEvent(false, 186070);
               }
               break;
             }
-            case "emitWebAttributeKeyboardAppearance008": {
+            case "emitKeyboardAppearance008": {
               try {
                 this.appearanceMode = WebKeyboardAppearanceMode.DARK_IMMERSIVE;
+                this.appearanceMode = WebKeyboardAppearanceMode.NONE_IMMERSIVE;
+                Utils.emitEvent(true, 186080);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(false, 186080);
+              }
+              break;
+            }
+            case "emitKeyboardAppearance009": {
+              try {
                 this.appearanceMode = WebKeyboardAppearanceMode.LIGHT_IMMERSIVE;
-                this.appearanceMode = WebKeyboardAppearanceMode.IMMERSIVE;
-                this.appearanceMode = WebKeyboardAppearanceMode.NONE_IMMERSIVE;
-                Utils.emitEvent(true, 187080);
+                Utils.emitEvent(true, 186090);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(false, 187080);
+                Utils.emitEvent(false, 186090);
               }
               break;
             }
-            case "emitWebAttributeKeyboardAppearance009": {
+            case "emitKeyboardAppearance010": {
               try {
-                this.appearanceMode = undefined;
-                Utils.emitEvent(true, 187090);
+                Utils.emitEvent(true, 186100);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(false, 187090);
-              }
-              break;
-            }
-            case "emitWebAttributeKeyboardAppearance010": {
-              try {
-                this.appearanceMode = undefined;
-                Utils.emitEvent(true, 187100);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(false, 187100);
+                Utils.emitEvent(false, 186100);
               }
               break;
             }
@@ -175,7 +168,7 @@ struct WebAttributeKeyboardAppearance {
       }
 
       Web({ src: $rawfile('indexFive.html'), controller: this.controller })
-        .key('WebAttributeKeyboardAppearanceWeb')
+        .key('WebKeyboardAppearanceWeb')
         .javaScriptAccess(true)
         .fileAccess(true)
         .imageAccess(true)
