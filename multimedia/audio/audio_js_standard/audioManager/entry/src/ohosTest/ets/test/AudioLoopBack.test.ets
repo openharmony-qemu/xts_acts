@@ -2697,6 +2697,577 @@ export default function audioLoopBack() {
       }).catch((err: BusinessError) => {
         console.error(`AudioLoopback Created : ERROR : ${err}`);
       });
-    })    
+    })
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_INPUTDEVICE_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_INPUTDEVICE_0100
+     * @tc.desc    AudioDevicePair inputDevice property normal value test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_INPUTDEVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_INPUTDEVICE_0100 start`);
+      try {
+        audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+        
+        let devicePairs: audio.AudioDevicePair[] = audioLoopback.getSupportedDevicePairs();
+        if (devicePairs.length > 0) {
+          let firstPair: audio.AudioDevicePair = devicePairs[0];
+          expect(firstPair.inputDevice).assertInstanceOf('array');
+          expect(firstPair.inputDevice.deviceRole).assertEqual(audio.AudioDeviceRole.INPUT_DEVICE);
+          console.info(`${TAG}: inputDevice.deviceType: ${firstPair.inputDevice.deviceType}`);
+        } else {
+          console.info(`${TAG}: No device pairs available, test passed`);
+        }
+        console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_INPUTDEVICE_0100 end`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_INPUTDEVICE_0100 error: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(6800301);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_OUTPUTDEVICE_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_OUTPUTDEVICE_0100
+     * @tc.desc    AudioDevicePair outputDevice property normal value test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_OUTPUTDEVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_OUTPUTDEVICE_0100 start`);
+      try {
+        audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+        
+        let devicePairs: audio.AudioDevicePair[] = audioLoopback.getSupportedDevicePairs();
+        if (devicePairs.length > 0) {
+          let firstPair: audio.AudioDevicePair = devicePairs[0];
+          expect(firstPair.outputDevice).assertInstanceOf('array');
+          expect(firstPair.outputDevice.deviceRole).assertEqual(audio.AudioDeviceRole.OUTPUT_DEVICE);
+          console.info(`${TAG}: outputDevice.deviceType: ${firstPair.outputDevice.deviceType}`);
+        } else {
+          console.info(`${TAG}: No device pairs available, test passed`);
+        }
+        console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_OUTPUTDEVICE_0100 end`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_OUTPUTDEVICE_0100 error: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(6800301);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_BOTHDEVICES_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_BOTHDEVICES_0100
+     * @tc.desc    AudioDevicePair both inputDevice and outputDevice properties test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_BOTHDEVICES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_BOTHDEVICES_0100 start`);
+      try {
+        audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+                
+        let devicePairs: audio.AudioDevicePair[] = audioLoopback.getSupportedDevicePairs();
+        if (devicePairs.length > 0) {
+          for (let i = 0; i < devicePairs.length; i++) {
+            let pair: audio.AudioDevicePair = devicePairs[i];
+            expect(pair.inputDevice).assertInstanceOf('array');
+            expect(pair.outputDevice).assertInstanceOf('array');
+            expect(pair.inputDevice.deviceRole).assertEqual(audio.AudioDeviceRole.INPUT_DEVICE);
+            expect(pair.outputDevice.deviceRole).assertEqual(audio.AudioDeviceRole.OUTPUT_DEVICE);
+            console.info(`${TAG}: Pair ${i}: inputDevice=${pair.inputDevice.deviceType}, outputDevice=${pair.outputDevice.deviceType}`);
+          }
+        } else {
+          console.info(`${TAG}: No device pairs available, test passed`);
+        }
+        console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_BOTHDEVICES_0100 end`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_BOTHDEVICES_0100 error: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(6800301);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_0100
+     * @tc.desc    AudioLoopback getVolume method normal value test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_0100 start`);
+      try {
+        audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+                
+        await audioLoopback.enable(true);
+        let volume: number = await audioLoopback.getVolume();
+        expect(typeof volume).assertEqual('number');
+        expect(volume).assertLargerOrEqual(0.0);
+        expect(volume).assertLessOrEqual(1.0);
+        console.info(`${TAG}: getVolume success, volume: ${volume}`);
+        console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_0100 end`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_0100 error: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(6800301);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_0200
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_0200
+     * @tc.desc    AudioLoopback getVolume method return value type test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_0200 start`);
+      try {
+        audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+                
+        await audioLoopback.enable(true);
+        let volume: number = await audioLoopback.getVolume();
+        console.info(`${TAG}: getVolume return type is number: ${typeof volume}`);
+        expect(typeof volume).assertEqual('number');
+        console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_0200 end`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_0200 error: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(6800301);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_BOUNDARY_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_BOUNDARY_0100
+     * @tc.desc    AudioLoopback setVolume outside test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_BOUNDARY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_BOUNDARY_0100 start`);
+      try {
+        audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+                
+        await audioLoopback.enable(true);
+        await audioLoopback.setVolume(1.5);
+        let volume: number = await audioLoopback.getVolume();
+        expect(volume).assertEqual(1.5);
+        console.info(`${TAG}: setVolume(1.5) then getVolume: ${volume}`);
+        
+        console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_BOUNDARY_0100 end`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_BOUNDARY_0100 error: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(6800101);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_BEFORE_ENABLE_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_BEFORE_ENABLE_0100
+     * @tc.desc    AudioLoopback getVolume method before enable state test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_BEFORE_ENABLE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_BEFORE_ENABLE_0100 start`);
+      try {
+        audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+                
+        let volume: number = await audioLoopback.getVolume();
+        expect(typeof volume).assertEqual('number');
+        expect(volume).assertLargerOrEqual(0.0);
+        expect(volume).assertLessOrEqual(1.0);
+        console.info(`${TAG}: getVolume before enable: ${volume}`);
+        console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_BEFORE_ENABLE_0100 end`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_BEFORE_ENABLE_0100 error: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(6800301);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_0100
+     * @tc.desc    AudioLoopback getSupportedDevicePairs method normal value test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_0100 start`);
+      try {
+        audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+                
+        let devicePairs: audio.AudioDevicePair[] = audioLoopback.getSupportedDevicePairs();
+        expect(Array.isArray(devicePairs)).assertTrue();
+        console.info(`${TAG}: getSupportedDevicePairs success, count: ${devicePairs.length}`);
+        
+        if (devicePairs.length > 0) {
+          for (let i = 0; i < devicePairs.length; i++) {
+            console.info(`${TAG}: DevicePair ${i}:`);
+            console.info(`${TAG}:   inputDevice: ${devicePairs[i].inputDevice.deviceType}`);
+            console.info(`${TAG}:   outputDevice: ${devicePairs[i].outputDevice.deviceType}`);
+          }
+        }
+        console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_0100 end`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_0100 error: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(6800301);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_0200
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_0200
+     * @tc.desc    AudioLoopback getSupportedDevicePairs method return type test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_0200 start`);
+      try {
+        audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+                
+        let devicePairs: audio.AudioDevicePair[] = audioLoopback.getSupportedDevicePairs();
+        expect(Array.isArray(devicePairs)).assertTrue();
+        expect(devicePairs.length).assertLargerOrEqual(0);
+        
+        if (devicePairs.length > 0) {
+          for (let pair of devicePairs) {
+            expect(pair).assertInstanceOf('object');
+            expect(pair.inputDevice).assertInstanceOf('object');
+            expect(pair.outputDevice).assertInstanceOf('object');
+          }
+        }
+        console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_0200 end`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_0200 error: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(6800301);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_EMPTY_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_EMPTY_0100
+     * @tc.desc    AudioLoopback getSupportedDevicePairs method empty array test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_EMPTY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_EMPTY_0100 start`);
+      try {
+        audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+                
+        let devicePairs: audio.AudioDevicePair[] = audioLoopback.getSupportedDevicePairs();
+        if (devicePairs.length === 0) {
+          expect(devicePairs).assertInstanceOf('array');
+          expect(devicePairs.length).assertEqual(0);
+          console.info(`${TAG}: No supported device pairs, empty array returned`);
+        } else {
+          console.info(`${TAG}: Device pairs available, count: ${devicePairs.length}`);
+        }
+        console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_EMPTY_0100 end`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_EMPTY_0100 error: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(6800301);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_MULTIPLE_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_MULTIPLE_0100
+     * @tc.desc    AudioLoopback getSupportedDevicePairs method multiple pairs test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_MULTIPLE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_MULTIPLE_0100 start`);
+      try {
+        audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+                
+        let devicePairs: audio.AudioDevicePair[] = audioLoopback.getSupportedDevicePairs();
+        if (devicePairs.length > 1) {
+          for (let i = 0; i < devicePairs.length; i++) {
+            let pair: audio.AudioDevicePair = devicePairs[i];
+            expect(pair.inputDevice).assertInstanceOf('array');
+            expect(pair.outputDevice).assertInstanceOf('array');
+            console.info(`${TAG}: Pair ${i}: input=${pair.inputDevice.deviceType}, output=${pair.outputDevice.deviceType}`);
+          }
+          console.info(`${TAG}: Multiple device pairs available`);
+        } else {
+          console.info(`${TAG}: Single or no device pair available`);
+        }
+        console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_MULTIPLE_0100 end`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_MULTIPLE_0100 error: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(6800301);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_0100
+     * @tc.desc    AudioLoopback getPreferredDevicePair method normal value test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_0100 start`);
+      try {
+        audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+        
+        let preferredPair: audio.AudioDevicePair | null = audioLoopback.getPreferredDevicePair();
+        if (preferredPair !== null) {
+          expect(preferredPair.inputDevice).assertInstanceOf('array');
+          expect(preferredPair.outputDevice).assertInstanceOf('array');
+          console.info(`${TAG}: Preferred input device: ${preferredPair.inputDevice.deviceType}`);
+          console.info(`${TAG}: Preferred output device: ${preferredPair.outputDevice.deviceType}`);
+        } else {
+          console.info(`${TAG}: No preferred device pair available, returned null`);
+        }
+        console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_0100 end`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_0100 error: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(6800301);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_0200
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_0200
+     * @tc.desc    AudioLoopback getPreferredDevicePair method return type test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_0200 start`);
+      try {
+        audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+      
+        
+        let preferredPair: audio.AudioDevicePair | null = audioLoopback.getPreferredDevicePair();
+        if (preferredPair !== null) {
+          expect(preferredPair).assertInstanceOf('object');
+          expect(preferredPair.inputDevice).assertInstanceOf('object');
+          expect(preferredPair.outputDevice).assertInstanceOf('object');
+          expect(preferredPair.inputDevice.deviceRole).assertEqual(audio.AudioDeviceRole.INPUT_DEVICE);
+          expect(preferredPair.outputDevice.deviceRole).assertEqual(audio.AudioDeviceRole.OUTPUT_DEVICE);
+        } else {
+          expect(preferredPair).assertNull();
+        }
+        console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_0200 end`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_0200 error: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(6800301);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_NULL_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_NULL_0100
+     * @tc.desc    AudioLoopback getPreferredDevicePair method null return test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_NULL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_NULL_0100 start`);
+      try {
+        audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+        
+        let devicePairs: audio.AudioDevicePair[] = audioLoopback.getSupportedDevicePairs();
+        let preferredPair: audio.AudioDevicePair | null = audioLoopback.getPreferredDevicePair();
+        
+        if (devicePairs.length === 0) {
+          expect(preferredPair).assertNull();
+          console.info(`${TAG}: No supported device pairs, preferredPair is null`);
+        } else {
+          if (preferredPair !== null) {
+            expect(preferredPair).assertInstanceOf('array');
+            console.info(`${TAG}: Preferred pair exists`);
+          } else {
+            expect(preferredPair).assertNull();
+            console.info(`${TAG}: Preferred pair is null despite supported pairs exist`);
+          }
+        }
+        console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_NULL_0100 end`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_NULL_0100 error: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(6800301);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_CONSISTENCY_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_CONSISTENCY_0100
+     * @tc.desc    AudioLoopback getPreferredDevicePair consistency with getSupportedDevicePairs test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_CONSISTENCY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_CONSISTENCY_0100 start`);
+      try {
+        audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+        
+        let devicePairs: audio.AudioDevicePair[] = audioLoopback.getSupportedDevicePairs();
+        let preferredPair: audio.AudioDevicePair | null = audioLoopback.getPreferredDevicePair();
+        
+        if (preferredPair !== null && devicePairs.length > 0) {
+          let foundInSupported: boolean = false;
+          for (let pair of devicePairs) {
+            if (pair.inputDevice.deviceType === preferredPair.inputDevice.deviceType &&
+                pair.outputDevice.deviceType === preferredPair.outputDevice.deviceType) {
+              foundInSupported = true;
+              break;
+            }
+          }
+          expect(foundInSupported).assertTrue();
+          console.info(`${TAG}: Preferred pair found in supported pairs`);
+        } else {
+          console.info(`${TAG}: No preferred pair or no supported pairs`);
+        }
+        console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_CONSISTENCY_0100 end`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_CONSISTENCY_0100 error: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(6800301);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_AFTER_ENABLE_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_AFTER_ENABLE_0100
+     * @tc.desc    AudioLoopback getPreferredDevicePair after enable state test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_AFTER_ENABLE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_AFTER_ENABLE_0100 start`);
+      try {
+        audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+        
+        let preferredPairBefore: audio.AudioDevicePair | null = audioLoopback.getPreferredDevicePair();
+        
+        await audioLoopback.enable(true);
+        
+        let preferredPairAfter: audio.AudioDevicePair | null = audioLoopback.getPreferredDevicePair();
+        
+        if (preferredPairBefore !== null && preferredPairAfter !== null) {
+          console.info(`${TAG}: Before enable: input=${preferredPairBefore.inputDevice.deviceType}`);
+          console.info(`${TAG}: After enable: input=${preferredPairAfter.inputDevice.deviceType}`);
+        } else {
+          console.info(`${TAG}: Preferred pair null before or after enable`);
+        }
+        console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_AFTER_ENABLE_0100 end`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_AFTER_ENABLE_0100 error: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(6800301);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_LOOPBACK_MULTIPLE_CALLS_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_LOOPBACK_MULTIPLE_CALLS_0100
+     * @tc.desc    AudioLoopback multiple calls to getVolume, getSupportedDevicePairs, getPreferredDevicePair test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_MULTIPLE_CALLS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_MULTIPLE_CALLS_0100 start`);
+      try {
+        audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);        
+        
+        await audioLoopback.enable(true);
+        
+        let volume1: number = await audioLoopback.getVolume();
+        let volume2: number = await audioLoopback.getVolume();
+        expect(volume1).assertEqual(volume2);
+        console.info(`${TAG}: Multiple getVolume calls return same value: ${volume1}`);
+        
+        let pairs1: audio.AudioDevicePair[] = audioLoopback.getSupportedDevicePairs();
+        let pairs2: audio.AudioDevicePair[] = audioLoopback.getSupportedDevicePairs();
+        expect(pairs1.length).assertEqual(pairs2.length);
+        console.info(`${TAG}: Multiple getSupportedDevicePairs calls return same count: ${pairs1.length}`);
+        
+        let preferred1: audio.AudioDevicePair | null = audioLoopback.getPreferredDevicePair();
+        let preferred2: audio.AudioDevicePair | null = audioLoopback.getPreferredDevicePair();
+        if (preferred1 !== null && preferred2 !== null) {
+          expect(preferred1.inputDevice.deviceType).assertEqual(preferred2.inputDevice.deviceType);
+          expect(preferred1.outputDevice.deviceType).assertEqual(preferred2.outputDevice.deviceType);
+        } else {
+          expect(preferred1 === null && preferred2 === null).assertTrue();
+        }
+        console.info(`${TAG}: Multiple getPreferredDevicePair calls return consistent results`);
+        
+        console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_MULTIPLE_CALLS_0100 end`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_MULTIPLE_CALLS_0100 error: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(6800301);
+        done();
+      }
+    });     
   })
 }
