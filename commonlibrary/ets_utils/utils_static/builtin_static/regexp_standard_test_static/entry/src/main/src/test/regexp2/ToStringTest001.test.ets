@@ -157,7 +157,7 @@ export default function toStringTest(): void {
     /**
      * @tc.name testToString0103
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TOSTRING_TEST_0400
-     * @tc.desc Test ctor regex arg
+     * @tc.desc Test ctor string arg
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
@@ -306,7 +306,7 @@ export default function toStringTest(): void {
       if (supportsRegExp('(?<name>\\w+)')) {
         return;
       }
-      expect(supportsRegExp('(?<name>\\w+)')).assertFalse();
+      return;
     });
 
     /**
@@ -362,7 +362,7 @@ export default function toStringTest(): void {
       if (supportsRegExp('(?<=\\$)\\d+')) {
         return;
       }
-      expect(supportsRegExp('(?<=\\$)\\d+')).assertFalse();
+      return;
     });
 
     /**
@@ -542,7 +542,7 @@ export default function toStringTest(): void {
       if (supportsRegExp('test', 's')) {
         return;
       }
-      expect(supportsRegExp('test', 's')).assertFalse();
+      return;
     });
 
     /**
@@ -596,7 +596,7 @@ export default function toStringTest(): void {
       if (supportsRegExp('test', 'd')) {
         return;
       }
-      expect(supportsRegExp('test', 'd')).assertFalse();
+      return;
     });
 
     /**
@@ -638,7 +638,7 @@ export default function toStringTest(): void {
       if (supportsRegExp('test', 'gimsuy')) {
         return;
       }
-      expect(supportsRegExp('test', 'gimsuy')).assertFalse();
+      return;
     });
 
     /**
@@ -668,7 +668,7 @@ export default function toStringTest(): void {
       if (supportsRegExp('test', 'gimsud')) {
         return;
       }
-      expect(supportsRegExp('test', 'gimsud')).assertFalse();
+      return;
     });
 
     /**
@@ -807,7 +807,7 @@ export default function toStringTest(): void {
      * @tc.level LEVEL1
      */
     it('testToString0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const dynamicPattern = 'test' + Math.random();
+      const dynamicPattern = 'test_dynamic_pattern';
       const re = new RegExp(dynamicPattern);
       expect(re.toString().includes(dynamicPattern)).assertTrue();
     });
@@ -1133,7 +1133,7 @@ export default function toStringTest(): void {
      */
     it('testToString0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp('test');
-      expect('regex is: ' + re).assertEqual('regex is: /test/');
+      expect(`regex is: ${re}`).assertEqual('regex is: /test/');
     });
 
     /**
@@ -1508,7 +1508,7 @@ export default function toStringTest(): void {
       if (supportsRegExp('\\p{Script=Hiragana}', 'u')) {
         return;
       }
-      expect(supportsRegExp('\\p{Script=Hiragana}', 'u')).assertFalse();
+      return;
     });
 
     /**
@@ -1538,7 +1538,7 @@ export default function toStringTest(): void {
       if (supportsRegExp('\\p{Letter}+', 'u')) {
         return;
       }
-      expect(supportsRegExp('\\p{Letter}+', 'u')).assertFalse();
+      return;
     });
 
     /**
@@ -1607,9 +1607,9 @@ export default function toStringTest(): void {
       const pat = '(?<quote>[\'"])\\k<quote>';
       if (supportsRegExp(pat)) {
         expect(new RegExp(pat).toString()).assertEqual('/(?<quote>[\'"])\\k<quote>/');
-      } else {
-        expect(supportsRegExp(pat)).assertFalse();
+        return;
       }
+      return;
     });
 
     /**
