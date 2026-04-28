@@ -25,6 +25,10 @@
     "MainAbility/pages/Menu/bindContextMenuNull",
     "MainAbility/pages/Menu/bindContextResponseNull",
     "MainAbility/pages/Menu/isShownContextMenuNull",
-    "MainAbility/pages/Menu/bindContentCoverNullUndefined"
+    "MainAbility/pages/Menu/bindContentCoverNullUndefined",
+    "MainAbility/pages/uimaterial/ImmersiveStyleTest",
+    "MainAbility/pages/uimaterial/ImmersiveOptionsMaterialColor",
+    "MainAbility/pages/uimaterial/ImmersiveOptionsColorInvert",
+    "MainAbility/pages/uimaterial/ImmersiveOptionsApplyShadow"
   ]
 }

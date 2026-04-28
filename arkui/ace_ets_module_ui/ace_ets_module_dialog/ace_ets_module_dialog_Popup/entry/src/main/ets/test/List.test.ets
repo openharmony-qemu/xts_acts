@@ -39,6 +39,11 @@ import presentCustomDialogNullAndUndefinedTest from './PromptActionNullAndUndefi
 import updatePopupNullAndUndefinedTest from './PromptActionNullAndUndefined/updatePopupNullAndUndefinedTest.test';
 import closePopupNullAndUndefinedTest from './PromptActionNullAndUndefined/closePopupNullAndUndefinedTest.test';
 
+import ImmersiveStyleTest from './uimaterial/ImmersiveStyleTest.test';
+import ImmersiveOptionsMaterialColorTest from './uimaterial/ImmersiveOptionsMaterialColor.test';
+import ImmersiveOptionsColorInvertTest from './uimaterial/ImmersiveOptionsColorInvert.test';
+import ImmersiveOptionsApplyShadowTest from './uimaterial/ImmersiveOptionsApplyShadow.test';
+
 export default function testsuite() {
   showActionMenuNullAndUndefinedTest();
   showActionMenuCallbackNullAndUndefinedTest();
@@ -64,25 +69,10 @@ export default function testsuite() {
   isShownContextMenuNull();
   bindContentCoverNullUndefined();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  ImmersiveStyleTest();
+  ImmersiveOptionsMaterialColorTest();
+  ImmersiveOptionsColorInvertTest();
+  ImmersiveOptionsApplyShadowTest();
 
 	
 }
