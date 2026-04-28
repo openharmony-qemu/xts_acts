@@ -196,7 +196,7 @@ export default function MutexLockTest(): void {
           count++
           lock4.unlock()
         })
-        await workerJob.Await()
+        await workerJob
         eaw.join()
         while (count < 6) {
           await Utils.msSleep(200)
@@ -293,7 +293,7 @@ export default function MutexLockTest(): void {
             count++
             lock.unlock()
           })
-          eaw.join()
+          eaw.quit()
         }
         await lock.lock()
         count++
@@ -342,7 +342,7 @@ export default function MutexLockTest(): void {
             }
             lock.unlock()
           })
-          eaw.join()
+          eaw.quit()
         }
         await lock.lock()
         count++
@@ -394,7 +394,7 @@ export default function MutexLockTest(): void {
               } finally {
                 lock.unlock()
               }
-            }).Await()
+            })
           } catch (e) {
           }
           eaw.join()

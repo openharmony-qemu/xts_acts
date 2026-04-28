@@ -288,13 +288,13 @@ export default function workerLocalTest() {
         })
         let eaw = new EAWorker()
         eaw.start()
-        eaw.run<void>(() => {
+        await eaw.run<void>(() => {
           expect(wl.get().length).assertEqual(0)
           wl.set(getArr(2000, 3000))
           expect(wl.get().length).assertEqual(1000)
           expect(wl.get()[999]).assertEqual(2999)
-        }).Await()
-        eaw.join()
+        })
+        await eaw.join()
         await pro
         expect(wl.get()[999]).assertEqual(999)
         Done()
@@ -335,7 +335,7 @@ export default function workerLocalTest() {
         })
         let eaw = new EAWorker()
         eaw.start()
-        eaw.run<void>(() => {
+        await eaw.run<void>(() => {
           expect(wl.get()).assertEqual(0)
           for (let i = 0; i < 1000; i++) {
             wl.set(wl.get() + 1)
@@ -343,8 +343,8 @@ export default function workerLocalTest() {
           expect(wl.get()).assertEqual(1000)
           wl.delete()
           expect(wl.get()).assertEqual(0)
-        }).Await()
-        eaw.join()
+        })
+        await eaw.join()
         await pro
         expect(wl.get()).assertEqual(1000)
         Done()
@@ -393,7 +393,7 @@ export default function workerLocalTest() {
         })
         let eaw = new EAWorker()
         eaw.start()
-        eaw.run<void>(() => {
+        await eaw.run<void>(() => {
           expect(wl.get()).assertEqual(0)
           for (let i = 0; i < 100; i++) {
             wl.set(i)
@@ -402,8 +402,8 @@ export default function workerLocalTest() {
             expect(wl.get()).assertEqual(0)
           }
           expect(wl.get()).assertEqual(0)
-        }).Await()
-        eaw.join()
+        })
+        await eaw.join()
         await pro
         expect(wl.get()).assertEqual(1)
         Done()
@@ -432,12 +432,12 @@ export default function workerLocalTest() {
           expect(wl.get().a2).assertEqual(i)
         }
         let group = new taskpool.TaskGroup()
-        let jobs: Job<void>[] = []
+        let promises: Promise<void>[] = []
         for (let i = 0; i < 10; i++) {
           group.addTask(() => {
             let eaw = new EAWorker()
             eaw.start()
-            let job = eaw.run<void>(() => {
+            let promise = eaw.run<void>(() => {
               expect(wl.get().a1).assertEqual('a1')
               expect(wl.get().a2).assertEqual(1.0)
               for (let i = 0; i < 100; i++) {
@@ -449,7 +449,7 @@ export default function workerLocalTest() {
               expect(wl.get().a1).assertEqual('a1')
               expect(wl.get().a2).assertEqual(1.0)
             })
-            jobs.push(job)
+            promises.push(promise)
             eaw.join()
           })
         }
@@ -473,7 +473,7 @@ export default function workerLocalTest() {
         })
         let eaw = new EAWorker()
         eaw.start()
-        let job = eaw.run<void>(() => {
+        await eaw.run<void>(() => {
           expect(wl.get().a1).assertEqual('a1')
           expect(wl.get().a2).assertEqual(1.0)
           for (let i = 0; i < 100; i++) {
@@ -485,9 +485,11 @@ export default function workerLocalTest() {
           expect(wl.get().a1).assertEqual('a1')
           expect(wl.get().a2).assertEqual(1.0)
         })
-        eaw.join()
+        await eaw.join()
         await pro
-        jobs.forEach(job => job.Await())
+        for (const p of promises) {
+          await p
+        }
         expect(wl.get().a1).assertEqual('a99')
         expect(wl.get().a2).assertEqual(99)
         Done()
@@ -515,14 +517,14 @@ export default function workerLocalTest() {
         })
 
         let pros: Promise<Any>[] = []
-        let jobs: Job<void>[] = []
+        let promises: Promise<void>[] = []
         let eaw = new EAWorker()
         eaw.start()
-        jobs.push(eaw.run<void>(() => {
+        promises.push(eaw.run<void>(() => {
           pros.push(taskpool.execute(task))
           let eaw1 = new EAWorker()
           eaw1.start()
-          jobs.push(eaw1.run<void>(()=>{
+          promises.push(eaw1.run<void>(()=>{
             expect(wl.get()).assertEqual('init')
             for (let i = 0; i < 100; i++) {
               wl.set(wl.get() + i)
@@ -531,7 +533,7 @@ export default function workerLocalTest() {
             }
             let eaw2 = new EAWorker()
             eaw2.start()
-            jobs.push(eaw2.run<void>(()=>{
+            promises.push(eaw2.run<void>(()=>{
               expect(wl.get()).assertEqual('init')
               for (let i = 0; i < 100; i++) {
                 wl.set(wl.get() + i)
@@ -543,8 +545,10 @@ export default function workerLocalTest() {
           }))
           eaw1.join()
         }))
-        eaw.join()
-        jobs.forEach(job => job.Await())
+        await eaw.join()
+        for (const p of promises) {
+          await p
+        }
         await Promise.all(pros)
         expect(wl.get()).assertEqual('init')
         Done()

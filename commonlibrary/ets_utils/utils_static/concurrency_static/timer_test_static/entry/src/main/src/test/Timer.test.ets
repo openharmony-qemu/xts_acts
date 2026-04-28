@@ -1272,8 +1272,7 @@ export default function TimerTest1() {
       const TAG: string = 'TimerTest041';
       console.info(`${TAG} test start`);
       // Define a task with timer that returns a boolean
-      const timerTask = (): boolean => {
-        return (async () => {
+      const timerTask = async (): Promise<boolean> => {
           let timerExecuted: boolean = false;
           let timeoutId: number | null = null;
           timeoutId = setTimeout(() => {
@@ -1287,7 +1286,6 @@ export default function TimerTest1() {
             console.log(`${TAG}: Timer cleared in taskpool`);
           }
           return timerExecuted;
-        })().awaitSync()
       };
       try {
         const task1 = taskpool.execute(timerTask);
