@@ -1,3 +1,18 @@
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 import {
@@ -7,6 +22,10 @@ import {
   execCoercesObjectWithToString,
   execObjectCreateNullThrowsTypeError
 } from './RegExpHelper';
+
+function hasOwn(obj: Object, key: string): boolean {
+  return obj.hasOwnProperty(key);
+}
 
 function supportsRegExp(pattern: string, flags: string = ''): boolean {
   try {
@@ -561,6 +580,7 @@ export default function execTest002(): void {
       
       
       expect(out[0]).assertEqual('hello');
+      expect(hasOwn(out as Object, 'indices')).assertFalse();
     });
 
     /**
@@ -749,8 +769,7 @@ export default function execTest002(): void {
         }
       }
       if (!posSupported && !negSupported) {
-        expect(supportsRegExp('\\d(?=def)')).assertFalse();
-        expect(supportsRegExp('\\d(?!def)')).assertFalse();
+        return;
       }
     });
 
@@ -766,7 +785,6 @@ export default function execTest002(): void {
       
       
       if (!supportsLookbehindSemantics()) {
-        expect(supportsLookbehindSemantics()).assertFalse();
         return;
       }
       const posLb = supportsRegExp('(?<=:)\\d+');
@@ -788,8 +806,7 @@ export default function execTest002(): void {
         }
       }
       if (!posLb && !negLb) {
-        expect(supportsRegExp('(?<=:)\\d+')).assertFalse();
-        expect(supportsRegExp('(?<!abc)\\d+')).assertFalse();
+        return;
       }
     });
 
@@ -1723,7 +1740,6 @@ export default function execTest002(): void {
       const out = new RegExp('[dDeEaAbBcCfF0-9]+').exec('ID=DeAdBeEf');
       expect(out !== null).assertTrue();
       if (out !== null) {
-        
         expect(out[0]).assertEqual('D');
         expect(out.index).assertEqual(1);
       }

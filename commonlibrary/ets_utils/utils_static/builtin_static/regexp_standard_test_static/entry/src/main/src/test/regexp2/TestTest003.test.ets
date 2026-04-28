@@ -48,64 +48,64 @@ export default function testTest003(): void {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.name testTest0203
+     * @tc.name testTest0215
      * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_EXT_TEST_0200
      * @tc.desc Test zero width
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('testTest0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(new RegExp('\\b').test('test')).assertTrue();
     });
 
     /**
-     * @tc.name testTest0204
+     * @tc.name testTest0216
      * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_EXT_TEST_0300
      * @tc.desc Test empty alternative
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('testTest0204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(new RegExp('a|').test('')).assertTrue();
       expect(new RegExp('a|').test('a')).assertTrue();
     });
 
     /**
-     * @tc.name testTest0205
+     * @tc.name testTest0217
      * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_EXT_TEST_0400
      * @tc.desc Test double anchor
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('testTest0205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(new RegExp('^^').test('test')).assertTrue();
     });
 
     /**
-     * @tc.name testTest0206
+     * @tc.name testTest0218
      * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_EXT_TEST_0500
      * @tc.desc Test nested star
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('testTest0206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(new RegExp('(a)*').test('')).assertTrue();
       expect(new RegExp('((a)*)*').test('')).assertTrue();
     });
 
     /**
-     * @tc.name testTest0207
+     * @tc.name testTest0219
      * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_EXT_TEST_0600
      * @tc.desc Test special combo
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('testTest0207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = '\\d\\w\\s';
       const re = new RegExp('\\\\\\w\\\\\\w\\\\\\w');
       expect(re.test(str)).assertTrue();
@@ -134,14 +134,14 @@ export default function testTest003(): void {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.name testTest0208
+     * @tc.name testTest0220
      * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_EXT_TEST_0700
      * @tc.desc Test form email validation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('testTest0208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const validateEmail = (email: string): boolean => {
         const re = new RegExp('^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$');
         return re.test(email);
@@ -151,70 +151,70 @@ export default function testTest003(): void {
     });
 
     /**
-     * @tc.name testTest0209
+     * @tc.name testTest0221
      * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_EXT_TEST_0800
      * @tc.desc Test data cleaning
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('testTest0209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const isClean = (s: string): boolean => new RegExp('^[a-zA-Z0-9\\s]+$').test(s);
       expect(isClean('Hello World 123')).assertTrue();
       expect(isClean('Hello@World')).assertFalse();
     });
 
     /**
-     * @tc.name testTest0210
+     * @tc.name testTest0222
      * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_EXT_TEST_0900
      * @tc.desc Test search keyword
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('testTest0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const isValidKeyword = (k: string): boolean => new RegExp('^[a-zA-Z0-9\\s\\-_]{2,50}$').test(k);
       expect(isValidKeyword('search-term')).assertTrue();
       expect(isValidKeyword('a')).assertFalse();
     });
 
     /**
-     * @tc.name testTest0211
+     * @tc.name testTest0223
      * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_EXT_TEST_1000
      * @tc.desc Test log analysis
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('testTest0211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const isErrorLog = (log: string): boolean => log.indexOf('[ERROR]') !== -1;
+    it('testTest0223', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const isErrorLog = (log: string): boolean => new RegExp('\\[ERROR\\]').test(log);
       expect(isErrorLog('[INFO] Processing')).assertFalse();
       expect(isErrorLog('[ERROR] Failed')).assertTrue();
     });
 
     /**
-     * @tc.name testTest0212
+     * @tc.name testTest0224
      * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_EXT_TEST_1100
      * @tc.desc Test config line
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('testTest0212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0224', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const isValidConfigLine = (line: string): boolean => new RegExp('^[a-zA-Z_]\\w*\\s*=\\s*[^#]+').test(line);
       expect(isValidConfigLine('key=value')).assertTrue();
       expect(isValidConfigLine('123key=value')).assertFalse();
     });
 
     /**
-     * @tc.name testTest0213
+     * @tc.name testTest0225
      * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_EXTRA_TEST_0100
      * @tc.desc Test dotAll s flag spans newline when supported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('testTest0213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0225', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = 'hello\nworld';
       if (!supportsRegExp('hello.*world', 's')) {
         return;
@@ -224,14 +224,14 @@ export default function testTest003(): void {
     });
 
     /**
-     * @tc.name testTest0214
+     * @tc.name testTest0226
      * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_EXTRA_TEST_0200
      * @tc.desc Test dot with u flag matches supplementary plane when supported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('testTest0214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0226', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = String.fromCodePoint(0x1D306);
       if (!supportsRegExp('.', 'u')) {
         return;

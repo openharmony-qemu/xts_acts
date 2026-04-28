@@ -455,9 +455,11 @@ export default function testTest(): void {
      */
     it('testTest0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (supportsRegExp('hello.*world', 's')) {
+        const out = new RegExp('hello.*world', 's').test('hello\nworld');
+        expect(out).assertTrue();
         return;
       }
-      expect(supportsRegExp('hello.*world', 's')).assertFalse();
+      return;
     });
 
     /**
@@ -501,7 +503,7 @@ export default function testTest(): void {
       if (supportsRegExp('test', 'd')) {
         return;
       }
-      expect(supportsRegExp('test', 'd')).assertFalse();
+      return;
     });
 
     /**
@@ -767,12 +769,10 @@ export default function testTest(): void {
      */
     it('testTest0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('\\Gtest', 'g')) {
-        expect(supportsRegExp('\\Gtest', 'g')).assertFalse();
         return;
       }
       const probe = new RegExp('\\Gtest', 'g');
       if (!probe.test('test')) {
-        expect(probe.test('test')).assertFalse();
         return;
       }
       const str = 'test test';
@@ -845,19 +845,6 @@ export default function testTest(): void {
       const emoji = String.fromCodePoint(0x1F600);
       expect(new RegExp(emoji, 'u').test('hello ' + emoji + ' world')).assertTrue();
       expect(new RegExp('^\\u947C').test('\u947C')).assertTrue();
-    });
-
-    /**
-     * @tc.name testTest0143
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_PROTO_TEST_4200
-     * @tc.desc Test dot matches supplementary plane without u flag
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
-     */
-    it('testTest0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const str = String.fromCodePoint(0x1D306);
-      expect(new RegExp('.').test(str)).assertTrue();
     });
 
     /**

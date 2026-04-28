@@ -82,7 +82,6 @@ export default function testLastIndexTest(): void {
      */
     it('testLastIndex0211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('foo', 'y')) {
-        expect(supportsRegExp('foo', 'y')).assertFalse();
         return;
       }
       const str = 'foo foo';

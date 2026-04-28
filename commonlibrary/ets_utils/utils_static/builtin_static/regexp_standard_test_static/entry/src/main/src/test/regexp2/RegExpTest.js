@@ -693,7 +693,7 @@ export function webMultipleReplaceChain() {
 
 export function webComplexEmailRedact() {
   const str = 'Email: test@example.com, admin@test.org';
-  const emailRegex = new RegExp('\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b', 'g');
+  const emailRegex = new RegExp('\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}\\b', 'g');
   return str.replace(emailRegex, '[REDACTED]');
 }
 
@@ -1006,6 +1006,18 @@ export function splitCustomSplitterNonArrayReturn() {
 
 export function splitLimitStringInput() {
   return 'a b c'.split(' ', 2);
+}
+
+export function splitLimitInfinityInput() {
+  return 'a b c'.split(new RegExp('\\s', ''), Infinity);
+}
+
+export function splitLimitMinusInfinityInput() {
+  return 'a b c'.split(new RegExp('\\s', ''), -Infinity);
+}
+
+export function splitLimitNaNInput() {
+  return 'a b c'.split(new RegExp('\\s', ''), NaN);
 }
 
 export function splitSeparatorNullInput() {

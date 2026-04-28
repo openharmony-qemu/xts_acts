@@ -110,7 +110,6 @@ export default function execTest003(): void {
      */
     it('testExec0176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('(?<=test)123')) {
-        expect(supportsRegExp('(?<=test)123')).assertFalse();
         return;
       }
       const result1 = ExecSpecial.matchPositiveLookbehind("test123");
@@ -132,7 +131,7 @@ export default function execTest003(): void {
       if (supportsRegExp('(?<=test)123')) {
         return;
       }
-      expect(supportsRegExp('(?<=test)123')).assertFalse();
+      return;
     });
 
     /**
@@ -145,7 +144,6 @@ export default function execTest003(): void {
      */
     it('testExec0178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       if (!supportsRegExp('(?<!test)123')) {
-        expect(supportsRegExp('(?<!test)123')).assertFalse();
         return;
       }
       const result1 = ExecSpecial.matchNegativeLookbehind("abc123");
@@ -167,7 +165,7 @@ export default function execTest003(): void {
       if (supportsRegExp('(?<!test)123')) {
         return;
       }
-      expect(supportsRegExp('(?<!test)123')).assertFalse();
+      return;
     });
   });
 

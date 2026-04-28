@@ -33,6 +33,7 @@ import {
   splitSubclassConstructorSplitCount,
   splitCustomSymbolObject,
   splitThisTypeErrors,
+  splitThisNullTypeErrors,
   splitNonRegExpThisThrows,
   splitRegexLikeObjectCallThrows,
   splitRegexLikeObjectCallOut,
@@ -47,6 +48,9 @@ import {
   splitCustomSplitterValidate,
   splitCustomSplitterNonArrayReturn,
   splitLimitStringInput,
+  splitLimitInfinityInput,
+  splitLimitMinusInfinityInput,
+  splitLimitNaNInput,
   splitSeparatorNullInput,
   splitSeparatorNumberInput,
   splitSeparatorObjectInput,
@@ -344,7 +348,7 @@ export default function splitTest(): void {
      */
     it('testSplit0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = 'line1\nline2\nline3'.split(new RegExp("$", "m"));
-      expect(out.length >= 3).assertTrue();
+      expect(out.length).assertEqual(3);
     });
 
     /**
@@ -384,7 +388,7 @@ export default function splitTest(): void {
      */
     it('testSplit0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = 'line1\nline2'.split(new RegExp(".+", "s"));
-      expect(out.length >= 1).assertTrue();
+      expect(out.length).assertEqual(2);
     });
 
     /**
@@ -741,7 +745,7 @@ export default function splitTest(): void {
      */
     it('testSplit0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = 'test123'.split(new RegExp("\\B", ""));
-      expect(out.length > 1).assertTrue();
+      expect(out.length).assertEqual(7);
     });
 
     /**
@@ -801,7 +805,7 @@ export default function splitTest(): void {
     /**
      * @tc.name testSplit0143
      * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_4400
-     * @tc.desc Test G assertion
+     * @tc.desc Test start anchor pattern
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
@@ -887,7 +891,7 @@ export default function splitTest(): void {
     /**
      * @tc.name testSplit0148
      * @tc.number SUB_COMMONLIBRARY_REGEXP_SPLIT_TEST_4900
-     * @tc.desc Test limit float
+     * @tc.desc Test limit integer
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
@@ -917,8 +921,7 @@ export default function splitTest(): void {
      * @tc.level LEVEL1
      */
     it('testSplit0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      
-      expect('a b c'.split(new RegExp("\\s", ""), 2147483647).length).assertEqual(3);
+      expect(splitLimitInfinityInput().length).assertEqual(0);
     });
 
     /**
@@ -930,8 +933,7 @@ export default function splitTest(): void {
      * @tc.level LEVEL1
      */
     it('testSplit0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      
-      expect('a b c'.split(new RegExp("\\s", ""), 0).length).assertEqual(0);
+      expect(splitLimitMinusInfinityInput().length).assertEqual(0);
     });
 
     /**
@@ -943,8 +945,7 @@ export default function splitTest(): void {
      * @tc.level LEVEL1
      */
     it('testSplit0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      
-      expect('a b c'.split(new RegExp("\\s", ""), 0).length).assertEqual(0);
+      expect(splitLimitNaNInput().length).assertEqual(0);
     });
 
     /**
@@ -1195,7 +1196,7 @@ export default function splitTest(): void {
         return;
       }
       
-      expect('aaab'.split(new RegExp('(?>a*)b')).length >= 1).assertTrue();
+      expect('aaab'.split(new RegExp('(?>a*)b')).length).assertEqual(2);
     });
 
     /**
@@ -1501,7 +1502,7 @@ export default function splitTest(): void {
     it('testSplit0188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re = new RegExp("test", "y");
       const out = 'testtest'.split(re);
-      expect(out.length >= 2).assertTrue();
+      expect(out.length).assertEqual(3);
     });
 
     /**
@@ -1537,8 +1538,13 @@ export default function splitTest(): void {
      * @tc.level LEVEL1
      */
     it('testSplit0191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(splitThisTypeErrors()).assertTrue();
+      expect(splitThisNullTypeErrors()).assertTrue();
     });
+
+
+
+
+
 
     /**
      * @tc.name testSplit0192
@@ -1690,7 +1696,8 @@ export default function splitTest(): void {
      */
     it('testSplit0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = splitFunctionInput();
-      expect(out.length >= 1).assertTrue();
+      expect(out.length).assertEqual(1);
+      expect(out[0]).assertEqual('demo');
     });
   });
 }

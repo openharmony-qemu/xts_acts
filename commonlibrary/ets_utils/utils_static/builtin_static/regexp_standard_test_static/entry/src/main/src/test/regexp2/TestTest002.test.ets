@@ -148,9 +148,9 @@ export default function testTest002(): void {
         [new RegExp('a+b'), 'b', false],
         [new RegExp('a+b'), 'ab', true],
         [new RegExp('a{3}'), 'aaab', true],
-        [new RegExp('a{3}'), 'aa' + 'b', false],
+        [new RegExp('a{3}'), 'aab', false],
         [new RegExp('a{2,4}b'), 'ab', false],
-        [new RegExp('a{2,4}b'), 'aa' + 'b', true],
+        [new RegExp('a{2,4}b'), 'aab', true],
         [new RegExp('a{2,4}b'), 'aaaaab', true],
       ];
       for (let i = 0; i < cases.length; i++) {

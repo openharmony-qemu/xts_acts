@@ -203,7 +203,7 @@ export default function splitTest002(): void {
     it('testSplit0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = 'foo-bar_baz'.split(new RegExp('\\b'));
       
-      expect(out.length >= 3).assertTrue();
+      expect(out.length).assertEqual(3);
       expect(out.join('')).assertEqual('foo-bar_baz');
     });
 
@@ -267,10 +267,14 @@ export default function splitTest002(): void {
      */
     it('testSplit0214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const out = 'a-1-b'.split(new RegExp('(-)(\\d)?'));
-      expect(out.length >= 5).assertTrue();
+      expect(out.length).assertEqual(7);
       expect(out[0]).assertEqual('a');
       expect(out[1]).assertEqual('-');
       expect(out[2]).assertEqual('1');
+      expect(out[3]).assertEqual('');
+      expect(out[4]).assertEqual('-');
+      expect(out[5]).assertEqual('');
+      expect(out[6]).assertEqual('b');
     });
 
     /**
@@ -317,10 +321,10 @@ export default function splitTest002(): void {
     it('testSplit0217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const input = 'a\nb\nc';
       const out1 = input.split(new RegExp('.'));
-      expect(out1.length >= 2).assertTrue();
+      expect(out1.length).assertEqual(4);
       if (supportsRegExp('.', 's')) {
         const out2 = input.split(new RegExp('.', 's'));
-        expect(out2.length >= 2).assertTrue();
+        expect(out2.length).assertEqual(6);
       }
     });
 

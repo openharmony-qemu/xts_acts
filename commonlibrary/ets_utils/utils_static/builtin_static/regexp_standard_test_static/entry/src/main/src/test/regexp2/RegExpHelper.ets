@@ -112,6 +112,7 @@ import {
   splitSubclassConstructorSplitCount as splitSubclassConstructorSplitCountImpl,
   splitCustomSymbolObject as splitCustomSymbolObjectImpl,
   splitThisTypeErrors as splitThisTypeErrorsImpl,
+  splitThisNullTypeErrors as splitThisNullTypeErrorsImpl,
   splitNonRegExpThisThrows as splitNonRegExpThisThrowsImpl,
   splitRegexLikeObjectCallResult as splitRegexLikeObjectCallResultImpl,
   splitRegexLikeObjectCallThrows as splitRegexLikeObjectCallThrowsImpl,
@@ -127,6 +128,9 @@ import {
   splitCustomSplitterValidate as splitCustomSplitterValidateImpl,
   splitCustomSplitterNonArrayReturn as splitCustomSplitterNonArrayReturnImpl,
   splitLimitStringInput as splitLimitStringInputImpl,
+  splitLimitInfinityInput as splitLimitInfinityInputImpl,
+  splitLimitMinusInfinityInput as splitLimitMinusInfinityInputImpl,
+  splitLimitNaNInput as splitLimitNaNInputImpl,
   splitSeparatorNullInput as splitSeparatorNullInputImpl,
   splitSeparatorNumberInput as splitSeparatorNumberInputImpl,
   splitSeparatorObjectInput as splitSeparatorObjectInputImpl,
@@ -576,6 +580,10 @@ export function splitThisTypeErrors(): boolean {
   return splitThisTypeErrorsImpl() as boolean;
 }
 
+export function splitThisNullTypeErrors(): boolean {
+  return splitThisNullTypeErrorsImpl() as boolean;
+}
+
 export function splitNonRegExpThisThrows(): boolean {
   return splitNonRegExpThisThrowsImpl() as boolean;
 }
@@ -634,6 +642,18 @@ export function splitCustomSplitterNonArrayReturn(): string[] {
 
 export function splitLimitStringInput(): string[] {
   return splitLimitStringInputImpl() as string[];
+}
+
+export function splitLimitInfinityInput(): string[] {
+  return splitLimitInfinityInputImpl() as string[];
+}
+
+export function splitLimitMinusInfinityInput(): string[] {
+  return splitLimitMinusInfinityInputImpl() as string[];
+}
+
+export function splitLimitNaNInput(): string[] {
+  return splitLimitNaNInputImpl() as string[];
 }
 
 export function splitSeparatorNullInput(): string[] {

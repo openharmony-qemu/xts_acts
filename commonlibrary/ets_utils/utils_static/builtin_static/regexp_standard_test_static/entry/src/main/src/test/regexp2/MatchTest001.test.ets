@@ -29,20 +29,8 @@ import {
   stringMatchAllEqualsRegExpSymbolMatchAllCount
 } from './RegExpHelper';
 
-interface UrlParameterGroups {
-  name?: string;
-  value?: string;
-}
-
-interface LogEntryGroups {
-  date?: string;
-  level?: string;
-  message?: string;
-}
-
-interface HtmlTagGroups {
-  tagName?: string;
-  content?: string;
+function hasOwn(obj: Object, key: string): boolean {
+  return obj.hasOwnProperty(key);
 }
 
 interface CustomObject {
@@ -58,15 +46,8 @@ function supportsRegExp(pattern: string, flags: string = ''): boolean {
   }
 }
 
-function createRegexFromFunction(): RegExp {
-  // ArkTS forbids RegExp literals in this profile; the constructor keeps the same pattern/flags semantics.
-  return new RegExp("cat|dog", "g");
-}
-
 // Nested hypDescribe blocks group scenarios by spec topic (flags, inheritance, errors) for faster failure attribution.
 export default function matchTest(): void {
-  const filterLevel1: Int = TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1;
-
   // Core Symbol.matchAll iterator: yields exec-shaped matches for global patterns before advanced flags.
   hypDescribe('MatchAll_Basic_Function_Tests', () => {
     beforeAll(() => {
@@ -208,15 +189,17 @@ export default function matchTest(): void {
         const str: string = "test test";
         let threw: boolean = false;
         let isTypeError: boolean = false;
+        let caught: Object | undefined = undefined;
         try {
           regexpSymbolMatchAll(regex, str).next();
         } catch (e) {
           threw = true;
           isTypeError = e instanceof TypeError;
+          caught = e as Object;
         }
         if (threw) {
-          
-          expect(threw).assertTrue();
+          // Some engines throw non-TypeError here; accept any Error subtype.
+          expect(isTypeError || caught instanceof Error).assertTrue();
           return;
         }
         
@@ -257,14 +240,17 @@ export default function matchTest(): void {
         const str: string = "123 456 789";
         let threw: boolean = false;
         let isTypeError: boolean = false;
+        let caught: Object | undefined = undefined;
         try {
           Array.from(regexpSymbolMatchAll(regex, str));
         } catch (e) {
           threw = true;
           isTypeError = e instanceof TypeError;
+          caught = e as Object;
         }
         if (threw) {
-          expect(threw).assertTrue();
+          // Some engines throw non-TypeError here; accept any Error subtype.
+          expect(isTypeError || caught instanceof Error).assertTrue();
           return;
         }
         const it = regexpSymbolMatchAll(regex, str);
@@ -603,7 +589,9 @@ export default function matchTest(): void {
 
           expect(results[0]).not().assertUndefined();
           expect(results[0][0]).assertEqual("123");
+          expect(hasOwn(results[0] as Object, 'indices')).assertFalse();
           expect(results[1][0]).assertEqual("456");
+          expect(hasOwn(results[1] as Object, 'indices')).assertFalse();
         });
 
         /**

@@ -135,7 +135,7 @@ export default function instancePropertiesTest(): void {
         expect(r.flags.indexOf('s') >= 0).assertTrue();
         return;
       }
-      expect(supportsRegExp('hello', 's')).assertFalse();
+      return;
     });
 
     /**
@@ -210,13 +210,9 @@ export default function instancePropertiesTest(): void {
       expect(new RegExp('test').unicode).assertFalse();
       if (supportsRegExp('test', 'y')) {
         expect(new RegExp('test', 'y').sticky).assertTrue();
-      } else {
-        expect(supportsRegExp('test', 'y')).assertFalse();
       }
       if (supportsRegExp('test', 'u')) {
         expect(new RegExp('test', 'u').unicode).assertTrue();
-      } else {
-        expect(supportsRegExp('test', 'u')).assertFalse();
       }
     });
 

@@ -1154,7 +1154,7 @@ export default function execTest(): void {
       if (supportsRegExp('test', 'd')) {
         return;
       }
-      expect(supportsRegExp('test', 'd')).assertFalse();
+      return;
     });
   
     /**

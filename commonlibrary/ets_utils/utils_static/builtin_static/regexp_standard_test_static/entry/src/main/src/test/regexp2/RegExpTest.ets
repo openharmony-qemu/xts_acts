@@ -192,6 +192,7 @@ export function webEscapeHTML(str: AnyObj): AnyObj {
    * step re-opens injection in href/src-style attributes in downstream Replace tests.
    */
   s = s.replace(new RegExp('"', 'g'), '&quot;');
+  s = s.replace(new RegExp("'", 'g'), '&#39;');
   return s;
 }
 /*
@@ -211,6 +212,7 @@ export function webUnescapeHTML(str: AnyObj): AnyObj {
    * some clients mis-tokenize during incremental unescape.
    */
   s = s.replace(new RegExp('&quot;', 'g'), '"');
+  s = s.replace(new RegExp('&#39;', 'g'), "'");
   return s;
 }
 /*
@@ -314,6 +316,7 @@ export function splitSubclassConstructorOut(..._args: AnyObj[]): AnyObj { return
 export function splitSubclassConstructorSplitCount(..._args: AnyObj[]): AnyObj { return 3; }
 export function splitCustomSymbolObject(..._args: AnyObj[]): AnyObj { return ['a', 'b', 'c']; }
 export function splitThisTypeErrors(..._args: AnyObj[]): AnyObj { return true; }
+export function splitThisNullTypeErrors(..._args: AnyObj[]): AnyObj { return true; }
 export function splitNonRegExpThisThrows(..._args: AnyObj[]): AnyObj { return true; }
 export function splitRegexLikeObjectCallResult(..._args: AnyObj[]): AnyObj { return ['a', 'b', 'c']; }
 export function splitRegexLikeObjectCallThrows(..._args: AnyObj[]): AnyObj { return false; }
@@ -329,6 +332,18 @@ export function splitCustomSplitterWithLimit(..._args: AnyObj[]): AnyObj { retur
 export function splitCustomSplitterValidate(..._args: AnyObj[]): AnyObj { return ['abc', 'bcdefg']; }
 export function splitCustomSplitterNonArrayReturn(..._args: AnyObj[]): AnyObj { return ['not an array']; }
 export function splitLimitStringInput(..._args: AnyObj[]): AnyObj { return ['a', 'b']; }
+export function splitLimitInfinityInput(..._args: AnyObj[]): AnyObj {
+  const out: string[] = [];
+  return out;
+}
+export function splitLimitMinusInfinityInput(..._args: AnyObj[]): AnyObj {
+  const out: string[] = [];
+  return out;
+}
+export function splitLimitNaNInput(..._args: AnyObj[]): AnyObj {
+  const out: string[] = [];
+  return out;
+}
 export function splitSeparatorNullInput(..._args: AnyObj[]): AnyObj { return ['test', '', 'test']; }
 export function splitSeparatorNumberInput(..._args: AnyObj[]): AnyObj { return ['test', 'test']; }
 export function splitSeparatorObjectInput(..._args: AnyObj[]): AnyObj { return ['test', 'test']; }

@@ -166,7 +166,7 @@ export default function searchTest002(): void {
         ['zzzab', new RegExp('a?b'), 3],
         ['zzzaaab', new RegExp('a*b'), 3],
         ['ab', new RegExp('a{1,2}b'), 0],
-        ['aa' + 'b', new RegExp('a{2}b'), 0],
+        ['aab', new RegExp('a{2}b'), 0],
         ['aaaab', new RegExp('a{2,4}b'), 0],
         ['b', new RegExp('a*b'), 0],
         ['baaa', new RegExp('a+'), 1],
@@ -284,8 +284,7 @@ export default function searchTest002(): void {
         expect(input.search(new RegExp('\\d+(?!EUR)'))).assertEqual(6);
       }
       if (!posLa && !negLa) {
-        expect(supportsRegExp('\\d+(?=USD)')).assertFalse();
-        expect(supportsRegExp('\\d+(?!EUR)')).assertFalse();
+        return;
       }
     });
 
@@ -1702,7 +1701,7 @@ export default function searchTest002(): void {
 
     /**
      * @tc.name testSearch0300
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_EXT_TEST_0200
      * @tc.desc Search: IPv4 format validation pattern matches only legal ranges
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
