@@ -27,6 +27,7 @@ import {
   pushCreateAsset,
   sleep,
   getPermission,
+  createMovingPhoto,
   driveFn
 } from '../common'
 import common from '@ohos.app.ability.common';
@@ -1167,6 +1168,92 @@ export default function getTest() {
         done();
       } catch(error) {
         console.error(`${testNum} :: get asset mediaSuffix failed ! error = ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   get_local_asset_size_001
+     * @tc.number Sub_MediaLibrary_Get_Local_Asset_Size_001
+     * @tc.desc   image get LOCAL_ASSET_SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('get_local_asset_size_001', Level.LEVEL1, async (done: Function) => {
+      const testNum = 'get_local_asset_size_001';
+      try {
+        const displayName = 'getTest.jpg';
+        const fetchOps: photoAccessHelper.FetchOptions = photoFetchOption(testNum, photoKeys.DISPLAY_NAME, displayName);
+        await checkProvisionAsset(done, testNum, displayName);
+        let asset: photoAccessHelper.PhotoAsset = await getFileAsset(testContext, testNum, fetchOps);
+        let size = asset.get(photoAccessHelper.PhotoKeys.SIZE);
+        console.log(`${testNum} :: get PhotoAsset ${asset.displayName} size = ${size}`);
+        let localAssetSize = asset.get(photoAccessHelper.PhotoKeys.LOCAL_ASSET_SIZE);
+        console.log(`${testNum} :: get PhotoAsset ${asset.displayName} localAssetSize = ${localAssetSize}`);
+        expect(size).assertEqual(localAssetSize);
+        done();
+      } catch(error) {
+        console.error(`${testNum} :: get asset LOCAL_ASSET_SIZE failed ! error = ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   get_local_asset_size_002
+     * @tc.number Sub_MediaLibrary_Get_Local_Asset_Size_002
+     * @tc.desc   video get LOCAL_ASSET_SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('get_local_asset_size_002', Level.LEVEL1, async (done: Function) => {
+      const testNum = 'get_local_asset_size_002';
+      try {
+        const displayName = 'getTest.mp4';
+        const fetchOps: photoAccessHelper.FetchOptions = photoFetchOption(testNum, photoKeys.DISPLAY_NAME, displayName);
+        await checkProvisionAsset(done, testNum, displayName);
+        let asset: photoAccessHelper.PhotoAsset = await getFileAsset(testContext, testNum, fetchOps);
+        let size = asset.get(photoAccessHelper.PhotoKeys.SIZE);
+        console.log(`${testNum} :: get PhotoAsset ${asset.displayName} size = ${size}`);
+        let localAssetSize = asset.get(photoAccessHelper.PhotoKeys.LOCAL_ASSET_SIZE);
+        console.log(`${testNum} :: get PhotoAsset ${asset.displayName} localAssetSize = ${localAssetSize}`);
+        expect(size).assertEqual(localAssetSize);
+        done();
+      } catch(error) {
+        console.error(`${testNum} :: get asset LOCAL_ASSET_SIZE failed ! error = ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   get_local_asset_size_003
+     * @tc.number Sub_MediaLibrary_Get_Local_Asset_Size_003
+     * @tc.desc   movingphoto get LOCAL_ASSET_SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('get_local_asset_size_003', Level.LEVEL1, async (done: Function) => {
+      const testNum = 'get_local_asset_size_003';
+      try {
+        const displayName = 'getMovingPhotoTest.jpg';
+        const title = 'getMovingPhotoTest';
+        await createMovingPhoto(testNum, testContext, title);
+        const fetchOps: photoAccessHelper.FetchOptions = photoFetchOption(testNum, photoKeys.DISPLAY_NAME, displayName);
+        await checkProvisionAsset(done, testNum, displayName);
+        let asset: photoAccessHelper.PhotoAsset = await getFileAsset(testContext, testNum, fetchOps);
+        let size = asset.get(photoAccessHelper.PhotoKeys.SIZE);
+        console.log(`${testNum} :: get PhotoAsset ${asset.displayName} size = ${size}`);
+        let localAssetSize = asset.get(photoAccessHelper.PhotoKeys.LOCAL_ASSET_SIZE);
+        console.log(`${testNum} :: get PhotoAsset ${asset.displayName} localAssetSize = ${localAssetSize}`);
+        expect(size).assertEqual(localAssetSize);
+        done();
+      } catch(error) {
+        console.error(`${testNum} :: get asset LOCAL_ASSET_SIZE failed ! error = ${error}`);
         expect(false).assertTrue();
         done();
       }
