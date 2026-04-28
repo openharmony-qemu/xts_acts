@@ -1760,7 +1760,7 @@ static napi_value DestroyBuilderNullCheck(napi_env env, napi_callback_info info)
     if (IsSupportAudioVivid()) {
         ret = OH_AudioVividMetaBuilder_Destroy(nullptr);
         if (ret == AV_ERR_INVALID_VAL) {
-             backParam = SUCCESS;
+            backParam = SUCCESS;
         }
     } else {
         ret = OH_AudioVividMetaBuilder_Create(&builder, g_format);
