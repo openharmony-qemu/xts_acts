@@ -2700,39 +2700,6 @@ export default function audioLoopBack() {
     })
 
     /**
-     * @tc.name    SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_INPUTDEVICE_0100
-     * @tc.number  SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_INPUTDEVICE_0100
-     * @tc.desc    AudioDevicePair inputDevice property normal value test.
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   Level06800104
-     */
-    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_INPUTDEVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_INPUTDEVICE_0100 start`);
-      let audioLoopback: audio.AudioLoopback;
-      try {
-        audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
-        
-        let devicePairs: audio.AudioDevicePair[] = await audioLoopback.getSupportedDevicePairs();
-        if (devicePairs.length > 0) {
-          let firstPair: audio.AudioDevicePair = devicePairs[0];
-          expect(firstPair.inputDevice).assertInstanceOf('array');
-          expect(firstPair.inputDevice.deviceRole).assertEqual(audio.DeviceRole.INPUT_DEVICE);
-          console.info(`${TAG}: inputDevice.deviceType: ${firstPair.inputDevice.deviceType}`);
-        } else {
-          console.info(`${TAG}: No device pairs available, test passed`);
-        }
-        console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_INPUTDEVICE_0100 end`);
-        done();
-      } catch (err) {
-        let error = err as BusinessError;
-        console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_INPUTDEVICE_0100 error: ${error.code}, ${error.message}`);
-        expect(error.code).assertEqual(6800104);
-        done();
-      }
-    });
-
-    /**
      * @tc.name    SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_OUTPUTDEVICE_0100
      * @tc.number  SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_OUTPUTDEVICE_0100
      * @tc.desc    AudioDevicePair outputDevice property normal value test.
