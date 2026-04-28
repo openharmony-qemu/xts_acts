@@ -5221,6 +5221,347 @@ export default function windowImmersiveTest() {
     })
 
 
+    /**
+     * @tc.name   testGetWindowAvoidAreaTypeFloatNavigation
+     * @tc.number SUB_BASIC_WMS_FLOAT_NAVIGATION_0100
+     * @tc.desc   验证主窗口调用getWindowAvoidArea(TYPE_FLOAT_NAVIGATION)返回有效的AvoidArea对象
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetWindowAvoidAreaTypeFloatNavigation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testGetWindowAvoidAreaTypeFloatNavigation';
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      try {
+        let windowClass = windowStage.getMainWindowSync();
+        let avoidArea = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_FLOAT_NAVIGATION);
+        console.info(`${caseName} avoidArea: ${JSON.stringify(avoidArea)}`);
+        expect(avoidArea !== null).assertTrue();
+        expect(avoidArea.topRect !== null).assertTrue();
+        expect(avoidArea.rightRect !== null).assertTrue();
+        expect(avoidArea.bottomRect !== null).assertTrue();
+        expect(avoidArea.leftRect !== null).assertTrue();
+        expect(avoidArea.topRect.left).assertLargerOrEqual(0);
+        expect(avoidArea.topRect.top).assertLargerOrEqual(0);
+        expect(avoidArea.topRect.width).assertLargerOrEqual(0);
+        expect(avoidArea.topRect.height).assertLargerOrEqual(0);
+        expect(avoidArea.rightRect.left).assertLargerOrEqual(0);
+        expect(avoidArea.rightRect.top).assertLargerOrEqual(0);
+        expect(avoidArea.rightRect.width).assertLargerOrEqual(0);
+        expect(avoidArea.rightRect.height).assertLargerOrEqual(0);
+        expect(avoidArea.bottomRect.left).assertLargerOrEqual(0);
+        expect(avoidArea.bottomRect.top).assertLargerOrEqual(0);
+        expect(avoidArea.bottomRect.width).assertLargerOrEqual(0);
+        expect(avoidArea.bottomRect.height).assertLargerOrEqual(0);
+        expect(avoidArea.leftRect.left).assertLargerOrEqual(0);
+        expect(avoidArea.leftRect.top).assertLargerOrEqual(0);
+        expect(avoidArea.leftRect.width).assertLargerOrEqual(0);
+        expect(avoidArea.leftRect.height).assertLargerOrEqual(0);
+        done();
+      } catch (exception) {
+        console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testGetWindowAvoidAreaTypeFloatNavigationEnabled
+     * @tc.number SUB_BASIC_WMS_FLOAT_NAVIGATION_0200
+     * @tc.desc   验证启用浮动导航避让区域后，getWindowAvoidArea(TYPE_FLOAT_NAVIGATION)返回非空避让区域
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetWindowAvoidAreaTypeFloatNavigationEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testGetWindowAvoidAreaTypeFloatNavigationEnabled';
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      try {
+        let windowClass = windowStage.getMainWindowSync();
+        await windowClass.setFloatNavigationAvoidAreaEnabled(true);
+        console.info(`${caseName} Succeeded in setting FloatNavigationAvoidAreaEnabled true.`);
+        await sleep(500);
+        let isEnabled = windowClass.isFloatNavigationAvoidAreaEnabled();
+        console.info(`${caseName} isFloatNavigationAvoidAreaEnabled: ${isEnabled}`);
+        expect(isEnabled).assertEqual(true);
+        let avoidArea = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_FLOAT_NAVIGATION);
+        console.info(`${caseName} avoidArea: ${JSON.stringify(avoidArea)}`);
+        expect(avoidArea !== null).assertTrue();
+        expect(avoidArea.topRect !== null).assertTrue();
+        expect(avoidArea.rightRect !== null).assertTrue();
+        expect(avoidArea.bottomRect !== null).assertTrue();
+        expect(avoidArea.leftRect !== null).assertTrue();
+        await windowClass.setFloatNavigationAvoidAreaEnabled(false);
+        console.info(`${caseName} Succeeded in setting FloatNavigationAvoidAreaEnabled false.`);
+        done();
+      } catch (exception) {
+        console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testGetWindowAvoidAreaTypeFloatNavigationDisabled
+     * @tc.number SUB_BASIC_WMS_FLOAT_NAVIGATION_0300
+     * @tc.desc   验证禁用浮动导航避让区域后，getWindowAvoidArea(TYPE_FLOAT_NAVIGATION)返回全0避让区域
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetWindowAvoidAreaTypeFloatNavigationDisabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testGetWindowAvoidAreaTypeFloatNavigationDisabled';
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      try {
+        let windowClass = windowStage.getMainWindowSync();
+        await windowClass.setFloatNavigationAvoidAreaEnabled(false);
+        console.info(`${caseName} Succeeded in setting FloatNavigationAvoidAreaEnabled false.`);
+        await sleep(500);
+        let isEnabled = windowClass.isFloatNavigationAvoidAreaEnabled();
+        console.info(`${caseName} isFloatNavigationAvoidAreaEnabled: ${isEnabled}`);
+        expect(isEnabled).assertEqual(false);
+        let avoidArea = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_FLOAT_NAVIGATION);
+        console.info(`${caseName} avoidArea: ${JSON.stringify(avoidArea)}`);
+        expect(avoidArea !== null).assertTrue();
+        expect(avoidArea.topRect.width).assertEqual(0);
+        expect(avoidArea.topRect.height).assertEqual(0);
+        expect(avoidArea.rightRect.width).assertEqual(0);
+        expect(avoidArea.rightRect.height).assertEqual(0);
+        expect(avoidArea.bottomRect.width).assertEqual(0);
+        expect(avoidArea.bottomRect.height).assertEqual(0);
+        expect(avoidArea.leftRect.width).assertEqual(0);
+        expect(avoidArea.leftRect.height).assertEqual(0);
+        done();
+      } catch (exception) {
+        console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testFloatNavigationAvoidAreaVisibleProperty
+     * @tc.number SUB_BASIC_WMS_FLOAT_NAVIGATION_0400
+     * @tc.desc   验证TYPE_FLOAT_NAVIGATION避让区域visible属性正确性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloatNavigationAvoidAreaVisibleProperty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testFloatNavigationAvoidAreaVisibleProperty';
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      try {
+        let windowClass = windowStage.getMainWindowSync();
+        await windowClass.setFloatNavigationAvoidAreaEnabled(true);
+        console.info(`${caseName} Succeeded in setting FloatNavigationAvoidAreaEnabled true.`);
+        await sleep(500);
+        let avoidArea = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_FLOAT_NAVIGATION);
+        console.info(`${caseName} avoidArea: ${JSON.stringify(avoidArea)}`);
+        expect(avoidArea !== null).assertTrue();
+        expect(typeof avoidArea.visible === 'boolean').assertTrue();
+        await windowClass.setFloatNavigationAvoidAreaEnabled(false);
+        console.info(`${caseName} Succeeded in setting FloatNavigationAvoidAreaEnabled false.`);
+        done();
+      } catch (exception) {
+        console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testFloatNavigationAvoidAreaRectProperties
+     * @tc.number SUB_BASIC_WMS_FLOAT_NAVIGATION_0500
+     * @tc.desc   验证TYPE_FLOAT_NAVIGATION避让区域四个Rect属性(leftRect/topRect/rightRect/bottomRect)非null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFloatNavigationAvoidAreaRectProperties', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testFloatNavigationAvoidAreaRectProperties';
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      try {
+        let windowClass = windowStage.getMainWindowSync();
+        let avoidArea = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_FLOAT_NAVIGATION);
+        console.info(`${caseName} avoidArea: ${JSON.stringify(avoidArea)}`);
+        expect(avoidArea !== null).assertTrue();
+        expect(avoidArea.topRect !== null).assertTrue();
+        expect(avoidArea.rightRect !== null).assertTrue();
+        expect(avoidArea.bottomRect !== null).assertTrue();
+        expect(avoidArea.leftRect !== null).assertTrue();
+        expect(typeof avoidArea.topRect.left === 'number').assertTrue();
+        expect(typeof avoidArea.topRect.top === 'number').assertTrue();
+        expect(typeof avoidArea.topRect.width === 'number').assertTrue();
+        expect(typeof avoidArea.topRect.height === 'number').assertTrue();
+        expect(typeof avoidArea.rightRect.left === 'number').assertTrue();
+        expect(typeof avoidArea.rightRect.top === 'number').assertTrue();
+        expect(typeof avoidArea.rightRect.width === 'number').assertTrue();
+        expect(typeof avoidArea.rightRect.height === 'number').assertTrue();
+        expect(typeof avoidArea.bottomRect.left === 'number').assertTrue();
+        expect(typeof avoidArea.bottomRect.top === 'number').assertTrue();
+        expect(typeof avoidArea.bottomRect.width === 'number').assertTrue();
+        expect(typeof avoidArea.bottomRect.height === 'number').assertTrue();
+        expect(typeof avoidArea.leftRect.left === 'number').assertTrue();
+        expect(typeof avoidArea.leftRect.top === 'number').assertTrue();
+        expect(typeof avoidArea.leftRect.width === 'number').assertTrue();
+        expect(typeof avoidArea.leftRect.height === 'number').assertTrue();
+        done();
+      } catch (exception) {
+        console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testFloatNavigationAvoidAreaRectValues
+     * @tc.number SUB_BASIC_WMS_FLOAT_NAVIGATION_0600
+     * @tc.desc   验证TYPE_FLOAT_NAVIGATION避让区域Rect各属性值(left/top/width/height)合理性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFloatNavigationAvoidAreaRectValues', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'testFloatNavigationAvoidAreaRectValues';
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      try {
+        let windowClass = windowStage.getMainWindowSync();
+        await windowClass.setFloatNavigationAvoidAreaEnabled(true);
+        console.info(`${caseName} Succeeded in setting FloatNavigationAvoidAreaEnabled true.`);
+        await sleep(500);
+        let avoidArea = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_FLOAT_NAVIGATION);
+        console.info(`${caseName} avoidArea: ${JSON.stringify(avoidArea)}`);
+        expect(avoidArea !== null).assertTrue();
+        expect(avoidArea.topRect.left).assertLargerOrEqual(0);
+        expect(avoidArea.topRect.top).assertLargerOrEqual(0);
+        expect(avoidArea.topRect.width).assertLargerOrEqual(0);
+        expect(avoidArea.topRect.height).assertLargerOrEqual(0);
+        expect(avoidArea.rightRect.left).assertLargerOrEqual(0);
+        expect(avoidArea.rightRect.top).assertLargerOrEqual(0);
+        expect(avoidArea.rightRect.width).assertLargerOrEqual(0);
+        expect(avoidArea.rightRect.height).assertLargerOrEqual(0);
+        expect(avoidArea.bottomRect.left).assertLargerOrEqual(0);
+        expect(avoidArea.bottomRect.top).assertLargerOrEqual(0);
+        expect(avoidArea.bottomRect.width).assertLargerOrEqual(0);
+        expect(avoidArea.bottomRect.height).assertLargerOrEqual(0);
+        expect(avoidArea.leftRect.left).assertLargerOrEqual(0);
+        expect(avoidArea.leftRect.top).assertLargerOrEqual(0);
+        expect(avoidArea.leftRect.width).assertLargerOrEqual(0);
+        expect(avoidArea.leftRect.height).assertLargerOrEqual(0);
+        await windowClass.setFloatNavigationAvoidAreaEnabled(false);
+        console.info(`${caseName} Succeeded in setting FloatNavigationAvoidAreaEnabled false.`);
+        done();
+      } catch (exception) {
+        console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetFloatNavigationAvoidAreaEnabledTrue
+     * @tc.number SUB_BASIC_WMS_FLOAT_NAVIGATION_0700
+     * @tc.desc   验证setFloatNavigationAvoidAreaEnabled(true)设置成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetFloatNavigationAvoidAreaEnabledTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testSetFloatNavigationAvoidAreaEnabledTrue';
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      try {
+        let windowClass = windowStage.getMainWindowSync();
+        await windowClass.setFloatNavigationAvoidAreaEnabled(true);
+        console.info(`${caseName} Succeeded in setting FloatNavigationAvoidAreaEnabled true.`);
+        await sleep(500);
+        let isEnabled = windowClass.isFloatNavigationAvoidAreaEnabled();
+        console.info(`${caseName} isFloatNavigationAvoidAreaEnabled: ${isEnabled}`);
+        expect(isEnabled).assertEqual(true);
+        await windowClass.setFloatNavigationAvoidAreaEnabled(false);
+        console.info(`${caseName} Succeeded in setting FloatNavigationAvoidAreaEnabled false.`);
+        done();
+      } catch (exception) {
+        console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetFloatNavigationAvoidAreaEnabledFalse
+     * @tc.number SUB_BASIC_WMS_FLOAT_NAVIGATION_0800
+     * @tc.desc   验证setFloatNavigationAvoidAreaEnabled(false)设置成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetFloatNavigationAvoidAreaEnabledFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testSetFloatNavigationAvoidAreaEnabledFalse';
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      try {
+        let windowClass = windowStage.getMainWindowSync();
+        await windowClass.setFloatNavigationAvoidAreaEnabled(false);
+        console.info(`${caseName} Succeeded in setting FloatNavigationAvoidAreaEnabled false.`);
+        await sleep(500);
+        let isEnabled = windowClass.isFloatNavigationAvoidAreaEnabled();
+        console.info(`${caseName} isFloatNavigationAvoidAreaEnabled: ${isEnabled}`);
+        expect(isEnabled).assertEqual(false);
+        done();
+      } catch (exception) {
+        console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+
+    /**
+     * @tc.name   testFloatNavigationAvoidAreaInFreeWindowMode
+     * @tc.number SUB_BASIC_WMS_FLOAT_NAVIGATION_0900
+     * @tc.desc   验证自由窗口模式下的TYPE_FLOAT_NAVIGATION避让区域行为
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testFloatNavigationAvoidAreaInFreeWindowMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'testFloatNavigationAvoidAreaInFreeWindowMode';
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      try {
+        if (isFreeWindowMode == true) {
+          let windowClass = windowStage.getMainWindowSync();
+          await windowClass.setFloatNavigationAvoidAreaEnabled(true);
+          console.info(`${caseName} Succeeded in setting FloatNavigationAvoidAreaEnabled true.`);
+          await sleep(500);
+          let avoidArea = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_FLOAT_NAVIGATION);
+          console.info(`${caseName} avoidArea: ${JSON.stringify(avoidArea)}`);
+          expect(avoidArea !== null).assertTrue();
+          expect(avoidArea.topRect !== null).assertTrue();
+          expect(avoidArea.rightRect !== null).assertTrue();
+          expect(avoidArea.bottomRect !== null).assertTrue();
+          expect(avoidArea.leftRect !== null).assertTrue();
+          await windowClass.setFloatNavigationAvoidAreaEnabled(false);
+          console.info(`${caseName} Succeeded in setting FloatNavigationAvoidAreaEnabled false.`);
+          done();
+        } else {
+          console.info(`${caseName} not support, isFreeWindowMode: ${isFreeWindowMode}`);
+          done();
+        }
+      } catch (exception) {
+        console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
   })
 }
 
