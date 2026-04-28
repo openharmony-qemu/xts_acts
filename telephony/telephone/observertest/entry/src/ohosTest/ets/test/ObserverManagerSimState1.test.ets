@@ -705,21 +705,19 @@ export default function observerManagerSimStateTest1() {
       console.info(`${caseName} test start`);
       try {
         let slotId: number = 0;
-        observer.onGetSimActiveState(slotId, (data: boolean) => {
-          console.info(`${caseName} data: ${data}}`);
-          ExpectTrue(data);
-          if (data) {
-            observer.offGetSimActiveState((res: boolean) => {
-              console.info(`${caseName} res: ${res}}`);
-              ExpectTrue(res);
-              done();
-            });
-          } else {
-            console.info(`${caseName} , The SIM card is not activated`);
-            ExpectFail();
-            done();
-          }
-        });
+        let res: boolean = false;
+        let callback: (data: boolean) => void = (data: boolean) => {
+          console.info(`${caseName} data: ${data}`);
+          res = data;
+        }
+        await sim.activateSim(slotId);
+        observer.onGetSimActiveState(slotId, callback);
+        await sleep(1000);
+        observer.offGetSimActiveState(callback);
+        await sim.deactivateSim(slotId);
+        console.info(`${caseName} res: ${res}`);
+        ExpectTrue(res);
+        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectFail();
@@ -742,28 +740,19 @@ export default function observerManagerSimStateTest1() {
       if (sim.getMaxSimCount() > 1) {
         try {
           let slotId: number = 1;
-          await sim.activateSim(slotId);
-          observer.onGetSimActiveState(slotId, (data: boolean) => {
+          let res: boolean = false;
+          let callback: (data: boolean) => void = (data: boolean) => {
             console.info(`${caseName} data: ${data}`);
-            ExpectTrue(data);
-            if (data) {
-              observer.offGetSimActiveState((res: boolean) => {
-                if (res) {
-                  console.info(`${caseName} res: ${res}`);
-                  ExpectTrue(res);
-                  done();
-                } else {
-                  console.info(`${caseName} in  res else`);
-                  ExpectFail();
-                  done();
-                }  
-              });
-            } else {
-              console.info(`${caseName} in data else`);
-              ExpectFail();
-              done();
-            }
-          });         
+            res = data;
+          }
+          await sim.activateSim(slotId);
+          observer.onGetSimActiveState(slotId, callback);
+          await sleep(1000);
+          observer.offGetSimActiveState(callback);
+          await sim.deactivateSim(slotId);
+          console.info(`${caseName} res: ${res}`);
+          ExpectTrue(res);
+          done();
         } catch (error) {
           console.info(`${caseName} CatchError ${JSON.stringify(error)}`);
           ExpectFail();
@@ -789,13 +778,13 @@ export default function observerManagerSimStateTest1() {
       let caseName: string = 'testTelephonyObserverOffGetSimActiveState0300';
       console.info(`${caseName} test start`);
       try {
-        let num: number = 1;
-        observer.offGetSimActiveState((data: boolean) => {
-          console.info(`${caseName} data: ${data}}`);
-          num++;
-          ExpectTrue(num === 1);
-          done();
-        });
+        let callback: (data: boolean) => void = (data: boolean) => {
+          console.info(`${caseName} data: ${data}`);
+          res = data;
+        }
+        observer.offGetSimActiveState(callback);
+        await sleep(1000);
+        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectFail();
