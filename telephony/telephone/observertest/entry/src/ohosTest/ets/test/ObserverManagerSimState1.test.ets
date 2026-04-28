@@ -709,16 +709,13 @@ export default function observerManagerSimStateTest1() {
         let callback: (data: boolean) => void = (data: boolean) => {
           console.info(`${caseName} data: ${data}`);
           res = data;
-        }
-        await sim.activateSim(slotId);
-        observer.onGetSimActiveState(slotId, callback);
-
-        setTimeout(() => {
-          observer.offGetSimActiveState(callback);
+          observer.offGetSimActiveState();
           console.info(`${caseName} res: ${res}`);
           ExpectTrue(res);
           done();
-        }, 1000)
+        }
+        await sim.activateSim(slotId);
+        observer.onGetSimActiveState(slotId, callback);
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectFail();
@@ -745,16 +742,14 @@ export default function observerManagerSimStateTest1() {
           let callback: (data: boolean) => void = (data: boolean) => {
             console.info(`${caseName} data: ${data}`);
             res = data;
+            observer.offGetSimActiveState();
+            console.info(`${caseName} res: ${res}`);
+            ExpectTrue(res);
+            done();
           }
           await sim.activateSim(slotId);
           observer.onGetSimActiveState(slotId, callback);
 
-          setTimeout(() => {
-            observer.offGetSimActiveState(callback);
-            console.info(`${caseName} res: ${res}`);
-            ExpectTrue(res);
-            done();
-          }, 1000)
         } catch (error) {
           console.info(`${caseName} CatchError ${JSON.stringify(error)}`);
           ExpectFail();
