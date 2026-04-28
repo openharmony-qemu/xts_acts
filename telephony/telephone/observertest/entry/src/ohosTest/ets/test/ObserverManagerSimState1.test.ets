@@ -704,10 +704,7 @@ export default function observerManagerSimStateTest1() {
       let caseName: string = 'testTelephonyObserverOffGetSimActiveState0300';
       console.info(`${caseName} test start`);
       try {
-        let callback: (data: boolean) => void = (data: boolean) => {
-          console.info(`${caseName} data: ${data}`);
-        }
-        observer.offGetSimActiveState(callback);
+        observer.offGetSimActiveState();
         done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
@@ -730,13 +727,14 @@ export default function observerManagerSimStateTest1() {
       console.info(`${caseName} test start`);
       try {
         let slotId: number = 0;
-        await sim.activateSim(slotId);
-        observer.onGetSimActiveState(slotId, (data: boolean) => {
+        let callback: (data: boolean) => void = (data: boolean) => {
           console.info(`${caseName} data: ${data}`);
           ExpectTrue(data);
-          observer.offGetSimActiveState();
+          observer.offGetSimActiveState(callback);
           done();
-        });
+        }
+        await sim.activateSim(slotId);
+        observer.onGetSimActiveState(slotId, callback);
         console.info(`${caseName} slotId: ${slotId}`);
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}`);
@@ -760,13 +758,14 @@ export default function observerManagerSimStateTest1() {
       if (sim.getMaxSimCount() > 1) {
         try {
           let slotId: number = 1;
-          await sim.activateSim(slotId);
-          observer.onGetSimActiveState(slotId, (data: boolean) => {
+          let callback: (data: boolean) => void = (data: boolean) => {
             console.info(`${caseName} data: ${data}`);
             ExpectTrue(data);
-            observer.offGetSimActiveState();
+            observer.offGetSimActiveState(callback);
             done();
-          });
+          }
+          await sim.activateSim(slotId);
+          observer.onGetSimActiveState(slotId, callback);
           console.info(`${caseName} slotId: ${slotId}`);
         } catch (error) {
           console.info(`${caseName} CatchError ${JSON.stringify(error)}`);
