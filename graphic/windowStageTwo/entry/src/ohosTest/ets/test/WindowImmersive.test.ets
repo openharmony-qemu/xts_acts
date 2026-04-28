@@ -1543,7 +1543,7 @@ export default function windowImmersiveTest() {
         await windowClass.setWindowSystemBarEnable(['status', 'navigation']);
         console.info(`${caseName} Succeeded in setting the status bar to be visible.`);
         await sleep(1000);
-        if(isFreeWindowMode || deviceType == 'wearable' || deviceType == 'tv'){
+        if(isFreeWindowMode || deviceType == 'wearable'){
           expect(flag).assertEqual(0)
           done()
         }else{
