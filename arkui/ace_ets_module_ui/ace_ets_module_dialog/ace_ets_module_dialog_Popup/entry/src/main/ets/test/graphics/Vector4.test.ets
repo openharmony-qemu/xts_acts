@@ -18,13 +18,6 @@ import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "@
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common'
 
-interface Vector4Type {
-  x: number;
-  y: number;
-  z: number;
-  w: number;
-}
-
 export default function Vector4TestSuite() {
   describe('Vector4Test', () => {
 
@@ -55,7 +48,7 @@ export default function Vector4TestSuite() {
 
     /**
      * @tc.name   Vector4Test_0100
-     * @tc.number SUB_ACE_Vector4Test_0100
+     * @tc.number SUB_ARKUI_API_Vector4_0100
      * @tc.desc   Test Vector4 x positive value button
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -85,7 +78,7 @@ export default function Vector4TestSuite() {
 
     /**
      * @tc.name   Vector4Test_0200
-     * @tc.number SUB_ACE_Vector4Test_0200
+     * @tc.number SUB_ARKUI_API_Vector4_0200
      * @tc.desc   Test Vector4 x negative value button
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -111,7 +104,7 @@ export default function Vector4TestSuite() {
 
     /**
      * @tc.name   Vector4Test_0300
-     * @tc.number SUB_ACE_Vector4Test_0300
+     * @tc.number SUB_ARKUI_API_Vector4_0300
      * @tc.desc   Test Vector4 all positive values button
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -156,7 +149,7 @@ export default function Vector4TestSuite() {
 
     /**
      * @tc.name   Vector4Test_0400
-     * @tc.number SUB_ACE_Vector4Test_0400
+     * @tc.number SUB_ARKUI_API_Vector4_0400
      * @tc.desc   Test Vector4 all negative values button
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -197,7 +190,7 @@ export default function Vector4TestSuite() {
 
     /**
      * @tc.name   Vector4Test_0500
-     * @tc.number SUB_ACE_Vector4Test_0500
+     * @tc.number SUB_ARKUI_API_Vector4_0500
      * @tc.desc   Test Vector4 all zero values button
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -238,7 +231,7 @@ export default function Vector4TestSuite() {
 
     /**
      * @tc.name   Vector4Test_0600
-     * @tc.number SUB_ACE_Vector4Test_0600
+     * @tc.number SUB_ARKUI_API_Vector4_0600
      * @tc.desc   Test Vector4 all max values button (x=1, y=1, z=1, w=1)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -279,7 +272,7 @@ export default function Vector4TestSuite() {
 
     /**
      * @tc.name   Vector4Test_0700
-     * @tc.number SUB_ACE_Vector4Test_0700
+     * @tc.number SUB_ARKUI_API_Vector4_0700
      * @tc.desc   Test Vector4 all min values button (x=-1, y=-1, z=-1, w=-1)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -315,32 +308,6 @@ export default function Vector4TestSuite() {
       console.info('Vector4Test_0700 text_w: ' + textAttrW);
 
       console.info('Vector4Test_0700 END');
-      done();
-    });
-
-    /**
-     * @tc.name   Vector4Test_0800
-     * @tc.number SUB_ACE_Vector4Test_0800
-     * @tc.desc   Test Vector4 type definition
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('Vector4Test_0800', Level.LEVEL0, async (done: Function) => {
-      console.info('Vector4Test_0800 START');
-
-      let vector: Vector4Type = { x: 0.1, y: -0.1, z: 0.2, w: -0.2 };
-      expect(vector.x).assertEqual(0.1);
-      expect(vector.y).assertEqual(-0.1);
-      expect(vector.z).assertEqual(0.2);
-      expect(vector.w).assertEqual(-0.2);
-      console.info('Vector4Test_0800 barrelDistortion: ' + JSON.stringify(vector));
-      console.info('Vector4Test_0800 x(left): ' + vector.x);
-      console.info('Vector4Test_0800 y(right): ' + vector.y);
-      console.info('Vector4Test_0800 z(top): ' + vector.z);
-      console.info('Vector4Test_0800 w(bottom): ' + vector.w);
-
-      console.info('Vector4Test_0800 END');
       done();
     });
   })

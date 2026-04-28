@@ -44,6 +44,14 @@ import ImmersiveOptionsMaterialColorTest from './uimaterial/ImmersiveOptionsMate
 import ImmersiveOptionsColorInvertTest from './uimaterial/ImmersiveOptionsColorInvert.test';
 import ImmersiveOptionsApplyShadowTest from './uimaterial/ImmersiveOptionsApplyShadow.test';
 
+import Vector4TestSuite from './graphics/Vector4.test';
+import DepthVector3Test from './spatialEffect/DepthVector3.test';
+import DepthVector4Test from './spatialEffect/DepthVector4.test';
+import DepthColorRGBTest from './spatialEffect/DepthColorRGB.test';
+import SpatialPositionTest from './spatialEffect/SpatialPosition.test';
+import SpatialEffectParamsPositionTest from './spatialEffect/SpatialEffectParamsPosition.test';
+import SpatialEffectParamsOcclusionWeightTest from './spatialEffect/SpatialEffectParamsOcclusionWeight.test';
+
 export default function testsuite() {
   showActionMenuNullAndUndefinedTest();
   showActionMenuCallbackNullAndUndefinedTest();
@@ -74,5 +82,12 @@ export default function testsuite() {
   ImmersiveOptionsColorInvertTest();
   ImmersiveOptionsApplyShadowTest();
 
+  Vector4TestSuite();
+  DepthVector3Test();
+  DepthVector4Test();
+  DepthColorRGBTest();
+  SpatialPositionTest();
+  SpatialEffectParamsPositionTest();
+  SpatialEffectParamsOcclusionWeightTest();
 	
 }
