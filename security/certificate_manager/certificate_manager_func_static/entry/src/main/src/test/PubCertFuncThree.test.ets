@@ -342,7 +342,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
         } catch (err) {
           let error: BusinessError = err as BusinessError;
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1700 failed. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(17500011);
+          expect(error.code).assertEqual(17500010);
         }
       } else {
         try {
