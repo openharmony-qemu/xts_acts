@@ -5843,16 +5843,327 @@ export default function audioNDK() {
     })
 
     /**
-    * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOCAPTUREVOICEREAPTED_0100
-    * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOCAPTUREVOICEREAPTED_0100
+    * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_001
+    * @tc.number SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_001
     * @tc.desc   SetIndependentAudioSessionStrategy
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL0
     */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIOCAPTUREVOICEREAPTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_AUDIOCAPTUREVOICEREAPTED_0100();
-      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_AUDIOCAPTUREVOICEREAPTED_0100 : ${result}`);
+    it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_001();
+      console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_001 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_002
+    * @tc.number SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_002
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_002();
+      console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_002 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_001
+    * @tc.number SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_001
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_001();
+      console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_001 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_002
+    * @tc.number SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_002
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_002();
+      console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_002 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_003
+    * @tc.number SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_003
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_003();
+      console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_003 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_004
+    * @tc.number SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_004
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_004();
+      console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_004 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_001
+    * @tc.number SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_001
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_001();
+      console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_001 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_001
+    * @tc.number SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_001
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_001();
+      console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_001 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_002
+    * @tc.number SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_002
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_002();
+      console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_002 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_001
+    * @tc.number SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_001
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_001();
+      console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_001 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_002
+    * @tc.number SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_002
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_002();
+      console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_002 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_001
+    * @tc.number SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_001
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_001();
+      console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_001 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_002
+    * @tc.number SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_002
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_002();
+      console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_002 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_003
+    * @tc.number SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_003
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_003();
+      console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_003 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_004
+    * @tc.number SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_004
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_004();
+      console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_004 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_001
+    * @tc.number SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_001
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_001();
+      console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_001 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_001
+    * @tc.number SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_001
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_001();
+      console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_001 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+    /**
+    * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_002
+    * @tc.number SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_002
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_002();
+      console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_002 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+    /**
+    * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_001
+    * @tc.number SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_001
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_001();
+      console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_001 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+    /**
+    * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_002
+    * @tc.number SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_002
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_002();
+      console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_002 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+    /**
+    * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_001
+    * @tc.number SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_001
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_001();
+      console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_001 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+    * @tc.name   SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_002
+    * @tc.number SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_002
+    * @tc.desc   SetIndependentAudioSessionStrategy
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_002();
+      console.info(`Tag: SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_002 : ${result}`);
       expect(result).assertEqual(TEST_PASS);
       done();
     })
