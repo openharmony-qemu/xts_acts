@@ -10057,6 +10057,51 @@ static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTUREVOICEREAPTED_0100(napi_env en
     return res;
 }
 
+static int32_t PreferredInputDeviceChangedCallback(
+    OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray)
+{
+    LOG("PreferredInputDeviceChangedCallback triggered");
+    if (audioDeviceDescriptorArray == nullptr) {
+        LOG("audioDeviceDescriptorArray is nullptr");
+        return 0;
+    }
+    LOG("audioDeviceDescriptorArray size: %{public}d", audioDeviceDescriptorArray->size);
+    return 0;
+}
+
+static int32_t PreferredOutputDeviceChangedCallbackTest(
+    OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray)
+{
+    LOG("PreferredOutputDeviceChangedCallbackTest called");
+    return AUDIOCOMMON_RESULT_SUCCESS;
+}
+
+static int32_t PreferredInputDeviceChangedCallbackTest(
+    OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray)
+{
+    LOG("PreferredInputDeviceChangedCallbackTest called");
+    return AUDIOCOMMON_RESULT_SUCCESS;
+}
+
+OH_AudioRoutingManager* GetAudioRoutingManager()
+{
+    OH_AudioRoutingManager *audioRoutingManager = nullptr;
+    OH_AudioCommon_Result result = OH_AudioManager_GetAudioRoutingManager(&audioRoutingManager);
+    if (result == AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAudioRoutingManager success");
+        return audioRoutingManager;
+    }
+    LOG("GetAudioRoutingManager failed, result: %{public}d", result);
+    return nullptr;
+}
+
+napi_value CreateNapiResult(napi_env env, int32_t resultValue)
+{
+    napi_value result;
+    napi_create_int32(env, resultValue, &result);
+    return result;
+}
+
 static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_001(
     napi_env env, napi_callback_info info)
 {
