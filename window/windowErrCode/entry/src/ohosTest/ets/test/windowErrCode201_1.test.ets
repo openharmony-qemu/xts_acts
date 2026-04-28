@@ -185,7 +185,21 @@ export default function windowErrCode201_1() {
           }
         }
       }else{
-        done();
+        try {
+          mainWindowClass.setWindowContainerModalColor(activeColor, inactiveColor);
+          console.info(`${message} Succeeded in setting window container modal color.`);
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+          if (exception.code === 801) {
+            console.info(`${message} Capability not supported.`);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }
       }
     });
 

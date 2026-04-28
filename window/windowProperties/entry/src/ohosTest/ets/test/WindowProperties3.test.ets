@@ -68,11 +68,6 @@ export default function windowPropertiesTest3() {
       let touchableRects: Array<window.Rect> = [
         { left: 100, top: 100, width: 200, height: 200 }
       ];
-      if (deviceType !== '2in1') {
-        console.info(`${message} Not 2in1 device, skip.`);
-        done();
-        return;
-      }
       try {
         await mainWindowClass.setTouchableAreas(touchableRects);
         console.info(`${message} Succeeded in setting touchable areas.`);
@@ -80,14 +75,20 @@ export default function windowPropertiesTest3() {
       } catch (exception) {
         exception = exception as BusinessError;
         console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
-        if (exception.code === 801) {
-          console.info(`${message} Capability not supported.`);
-          done();
-        } else {
+        if (deviceType === '2in1') {
           expect().assertFail();
           done();
+        }else{
+          if (exception.code === 201) {
+            console.info(`${message} Capability not supported.`);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
         }
       }
+
     });
 
     /**
@@ -105,11 +106,6 @@ export default function windowPropertiesTest3() {
         { left: 0, top: 50, width: 150, height: 200 },
         { left: 300, top: 300, width: 100, height: 100 }
       ];
-      if (deviceType !== '2in1') {
-        console.info(`${message} Not 2in1 device, skip.`);
-        done();
-        return;
-      }
       try {
         await mainWindowClass.setTouchableAreas(touchableRects);
         console.info(`${message} Succeeded in setting touchable areas.`);
@@ -117,14 +113,20 @@ export default function windowPropertiesTest3() {
       } catch (exception) {
         exception = exception as BusinessError;
         console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
-        if (exception.code === 801) {
-          console.info(`${message} Capability not supported.`);
-          done();
-        } else {
+        if (deviceType === '2in1') {
           expect().assertFail();
           done();
+        }else{
+          if (exception.code === 201) {
+            console.info(`${message} Capability not supported.`);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
         }
       }
+
     });
 
     /**
@@ -141,11 +143,6 @@ export default function windowPropertiesTest3() {
       for (let i = 0; i < 10; i++) {
         touchableRects.push({ left: i * 50, top: i * 50, width: 100, height: 100 });
       }
-      if (deviceType !== '2in1') {
-        console.info(`${message} Not 2in1 device, skip.`);
-        done();
-        return;
-      }
       try {
         await mainWindowClass.setTouchableAreas(touchableRects);
         console.info(`${message} Succeeded in setting touchable areas.`);
@@ -153,14 +150,20 @@ export default function windowPropertiesTest3() {
       } catch (exception) {
         exception = exception as BusinessError;
         console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
-        if (exception.code === 801) {
-          console.info(`${message} Capability not supported.`);
-          done();
-        } else {
+        if (deviceType === '2in1') {
           expect().assertFail();
           done();
+        }else{
+          if (exception.code === 201) {
+            console.info(`${message} Capability not supported.`);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
         }
       }
+
     });
 
     /**
@@ -174,11 +177,6 @@ export default function windowPropertiesTest3() {
     it('testSetTouchableAreas_emptyArray', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let message = 'testSetTouchableAreas_emptyArray';
       let touchableRects: Array<window.Rect> = [];
-      if (deviceType !== '2in1') {
-        console.info(`${message} Not 2in1 device, skip.`);
-        done();
-        return;
-      }
       try {
         await mainWindowClass.setTouchableAreas(touchableRects);
         console.info(`${message} Succeeded in setting touchable areas.`);
@@ -186,14 +184,20 @@ export default function windowPropertiesTest3() {
       } catch (exception) {
         exception = exception as BusinessError;
         console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
-        if (exception.code === 801) {
-          console.info(`${message} Capability not supported.`);
-          done();
-        } else {
+        if (deviceType === '2in1') {
           expect().assertFail();
           done();
+        }else{
+          if (exception.code === 201) {
+            console.info(`${message} Capability not supported.`);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
         }
       }
+
     });
 
     /**
@@ -209,11 +213,6 @@ export default function windowPropertiesTest3() {
       let touchableRects: Array<window.Rect> = [
         { left: 0, top: 0, width: windowRect.width, height: windowRect.height }
       ];
-      if (deviceType !== '2in1') {
-        console.info(`${message} Not 2in1 device, skip.`);
-        done();
-        return;
-      }
       try {
         await mainWindowClass.setTouchableAreas(touchableRects);
         console.info(`${message} Succeeded in setting touchable areas.`);
@@ -221,12 +220,17 @@ export default function windowPropertiesTest3() {
       } catch (exception) {
         exception = exception as BusinessError;
         console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
-        if (exception.code === 801) {
-          console.info(`${message} Capability not supported.`);
-          done();
-        } else {
+        if (deviceType === '2in1') {
           expect().assertFail();
           done();
+        }else{
+          if (exception.code === 201) {
+            console.info(`${message} Capability not supported.`);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
         }
       }
     });
@@ -245,11 +249,6 @@ export default function windowPropertiesTest3() {
       for (let i = 0; i < 11; i++) {
         touchableRects.push({ left: i * 30, top: i * 30, width: 50, height: 50 });
       }
-      if (deviceType !== '2in1') {
-        console.info(`${message} Not 2in1 device, skip.`);
-        done();
-        return;
-      }
       try {
         await mainWindowClass.setTouchableAreas(touchableRects);
         console.error(`${message} Should not succeed.`);
@@ -267,6 +266,7 @@ export default function windowPropertiesTest3() {
           done();
         }
       }
+
     });
 
     /**
@@ -282,11 +282,6 @@ export default function windowPropertiesTest3() {
       let touchableRects: Array<window.Rect> = [
         { left: -100, top: 0, width: 200, height: 200 }
       ];
-      if (deviceType !== '2in1') {
-        console.info(`${message} Not 2in1 device, skip.`);
-        done();
-        return;
-      }
       try {
         await mainWindowClass.setTouchableAreas(touchableRects);
         console.error(`${message} Should not succeed.`);
@@ -304,6 +299,7 @@ export default function windowPropertiesTest3() {
           done();
         }
       }
+
     });
 
     /**
@@ -319,11 +315,6 @@ export default function windowPropertiesTest3() {
       let touchableRects: Array<window.Rect> = [
         { left: 100, top: 100, width: -200, height: 200 }
       ];
-      if (deviceType !== '2in1') {
-        console.info(`${message} Not 2in1 device, skip.`);
-        done();
-        return;
-      }
       try {
         await mainWindowClass.setTouchableAreas(touchableRects);
         console.error(`${message} Should not succeed.`);
@@ -341,6 +332,7 @@ export default function windowPropertiesTest3() {
           done();
         }
       }
+
     });
 
     /**
@@ -356,26 +348,27 @@ export default function windowPropertiesTest3() {
       let touchableRects: Array<window.Rect> = [
         { left: 100.5, top: 100.5, width: 200.5, height: 200.5 }
       ];
-      if (deviceType !== '2in1') {
-        console.info(`${message} Not 2in1 device, skip.`);
-        done();
-        return;
-      }
       try {
         await mainWindowClass.setTouchableAreas(touchableRects);
-        console.info(`${message} Succeeded in setting touchable areas with float params.`);
+        console.info(`${message} Succeeded in setting touchable areas.`);
         done();
       } catch (exception) {
         exception = exception as BusinessError;
         console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
-        if (exception.code === 801) {
-          console.info(`${message} Capability not supported.`);
-          done();
-        } else {
+        if (deviceType === '2in1') {
           expect().assertFail();
           done();
+        }else{
+          if (exception.code === 201) {
+            console.info(`${message} Capability not supported.`);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
         }
       }
+
     });
 
     /**
@@ -391,26 +384,27 @@ export default function windowPropertiesTest3() {
       let touchableRects: Array<window.Rect> = [
         { left: 0, top: 0, width: 0, height: 0 }
       ];
-      if (deviceType !== '2in1') {
-        console.info(`${message} Not 2in1 device, skip.`);
-        done();
-        return;
-      }
       try {
         await mainWindowClass.setTouchableAreas(touchableRects);
-        console.info(`${message} Succeeded in setting touchable areas with zero params.`);
+        console.info(`${message} Succeeded in setting touchable areas.`);
         done();
       } catch (exception) {
         exception = exception as BusinessError;
         console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
-        if (exception.code === 801) {
-          console.info(`${message} Capability not supported.`);
-          done();
-        } else {
+        if (deviceType === '2in1') {
           expect().assertFail();
           done();
+        }else{
+          if (exception.code === 201) {
+            console.info(`${message} Capability not supported.`);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
         }
       }
+
     });
 
     /**
@@ -426,11 +420,6 @@ export default function windowPropertiesTest3() {
       let touchableRects: Array<window.Rect> = [
         { left: 100, top: 100, width: 200, height: 200 }
       ];
-      if (deviceType !== '2in1') {
-        console.info(`${message} Not 2in1 device, skip.`);
-        done();
-        return;
-      }
       let config: window.Configuration = {
         name: 'testSetTouchableAreas_windowDestroyed',
         windowType: window.WindowType.TYPE_DIALOG,
@@ -479,27 +468,17 @@ export default function windowPropertiesTest3() {
       let message = 'testSetWindowContainerModalColor_standardRGB';
       let activeColor: string = '#FF0000';
       let inactiveColor: string = '#00FF00';
-      if (deviceType === '2in1') {
-        try {
-          mainWindowClass.setWindowContainerModalColor(activeColor, inactiveColor);
-          console.info(`${message} Succeeded in setting window container modal color.`);
-          done();
-        } catch (exception) {
-          exception = exception as BusinessError;
-          console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+      try {
+        mainWindowClass.setWindowContainerModalColor(activeColor, inactiveColor);
+        console.info(`${message} Succeeded in setting window container modal color.`);
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (deviceType === '2in1') {
           expect().assertFail();
           done();
-        }
-      } else {
-        console.info(`${message} Not 2in1 device, expect 801.`);
-        try {
-          mainWindowClass.setWindowContainerModalColor(activeColor, inactiveColor);
-          console.error(`${message} Should not succeed.`);
-          expect().assertFail();
-          done();
-        } catch (exception) {
-          exception = exception as BusinessError;
-          console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        }else{
           if (exception.code === 801) {
             console.info(`${message} Expected error 801.`);
             expect(exception.code).assertEqual(801);
@@ -510,6 +489,7 @@ export default function windowPropertiesTest3() {
           }
         }
       }
+
     });
 
     /**
@@ -524,27 +504,17 @@ export default function windowPropertiesTest3() {
       let message = 'testSetWindowContainerModalColor_ARGB';
       let activeColor: string = '#80FF0000';
       let inactiveColor: string = '#8000FF00';
-      if (deviceType === '2in1') {
-        try {
-          mainWindowClass.setWindowContainerModalColor(activeColor, inactiveColor);
-          console.info(`${message} Succeeded in setting window container modal color.`);
-          done();
-        } catch (exception) {
-          exception = exception as BusinessError;
-          console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+      try {
+        mainWindowClass.setWindowContainerModalColor(activeColor, inactiveColor);
+        console.info(`${message} Succeeded in setting window container modal color.`);
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (deviceType === '2in1') {
           expect().assertFail();
           done();
-        }
-      } else {
-        console.info(`${message} Not 2in1 device, expect 801.`);
-        try {
-          mainWindowClass.setWindowContainerModalColor(activeColor, inactiveColor);
-          console.error(`${message} Should not succeed.`);
-          expect().assertFail();
-          done();
-        } catch (exception) {
-          exception = exception as BusinessError;
-          console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        }else{
           if (exception.code === 801) {
             console.info(`${message} Expected error 801.`);
             expect(exception.code).assertEqual(801);
@@ -555,6 +525,7 @@ export default function windowPropertiesTest3() {
           }
         }
       }
+
     });
 
     /**
@@ -569,27 +540,17 @@ export default function windowPropertiesTest3() {
       let message = 'testSetWindowContainerModalColor_transparent';
       let activeColor: string = '#00000000';
       let inactiveColor: string = '#00000000';
-      if (deviceType === '2in1') {
-        try {
-          mainWindowClass.setWindowContainerModalColor(activeColor, inactiveColor);
-          console.info(`${message} Succeeded in setting window container modal color.`);
-          done();
-        } catch (exception) {
-          exception = exception as BusinessError;
-          console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+      try {
+        mainWindowClass.setWindowContainerModalColor(activeColor, inactiveColor);
+        console.info(`${message} Succeeded in setting window container modal color.`);
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (deviceType === '2in1') {
           expect().assertFail();
           done();
-        }
-      } else {
-        console.info(`${message} Not 2in1 device, expect 801.`);
-        try {
-          mainWindowClass.setWindowContainerModalColor(activeColor, inactiveColor);
-          console.error(`${message} Should not succeed.`);
-          expect().assertFail();
-          done();
-        } catch (exception) {
-          exception = exception as BusinessError;
-          console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        }else{
           if (exception.code === 801) {
             console.info(`${message} Expected error 801.`);
             expect(exception.code).assertEqual(801);
@@ -614,27 +575,17 @@ export default function windowPropertiesTest3() {
       let message = 'testSetWindowContainerModalColor_lowercase';
       let activeColor: string = '#ff0000';
       let inactiveColor: string = '#00ff00';
-      if (deviceType === '2in1') {
-        try {
-          mainWindowClass.setWindowContainerModalColor(activeColor, inactiveColor);
-          console.info(`${message} Succeeded in setting window container modal color.`);
-          done();
-        } catch (exception) {
-          exception = exception as BusinessError;
-          console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+      try {
+        mainWindowClass.setWindowContainerModalColor(activeColor, inactiveColor);
+        console.info(`${message} Succeeded in setting window container modal color.`);
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (deviceType === '2in1') {
           expect().assertFail();
           done();
-        }
-      } else {
-        console.info(`${message} Not 2in1 device, expect 801.`);
-        try {
-          mainWindowClass.setWindowContainerModalColor(activeColor, inactiveColor);
-          console.error(`${message} Should not succeed.`);
-          expect().assertFail();
-          done();
-        } catch (exception) {
-          exception = exception as BusinessError;
-          console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        }else{
           if (exception.code === 801) {
             console.info(`${message} Expected error 801.`);
             expect(exception.code).assertEqual(801);
@@ -659,72 +610,26 @@ export default function windowPropertiesTest3() {
       let message = 'testSetWindowContainerModalColor_focusStateChange';
       let activeColor: string = '#FFFFFF';
       let inactiveColor: string = '#CCCCCC';
-      if (deviceType === '2in1') {
-        try {
-          mainWindowClass.setWindowContainerModalColor(activeColor, inactiveColor);
-          console.info(`${message} Succeeded in setting window container modal color.`);
-          done();
-        } catch (exception) {
-          exception = exception as BusinessError;
-          console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
-          expect().assertFail();
-          done();
-        }
-      } else {
-        console.info(`${message} Not 2in1 device, expect 801.`);
-        try {
-          mainWindowClass.setWindowContainerModalColor(activeColor, inactiveColor);
-          console.error(`${message} Should not succeed.`);
-          expect().assertFail();
-          done();
-        } catch (exception) {
-          exception = exception as BusinessError;
-          console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
-          if (exception.code === 801) {
-            console.info(`${message} Expected error 801.`);
-            expect(exception.code).assertEqual(801);
-            done();
-          } else {
-            expect().assertFail();
-            done();
-          }
-        }
-      }
-    });
-
-    /**
-     * @tc.name   testSetWindowContainerModalColor_nonPCDevice
-     * @tc.number SUB_WINDOW_SETWINDOWCONTAINERMODALCOLOR_ERROR_801_0100
-     * @tc.desc   非PC设备调用，验证801
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testSetWindowContainerModalColor_nonPCDevice', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let message = 'testSetWindowContainerModalColor_nonPCDevice';
-      let activeColor: string = '#FF0000';
-      let inactiveColor: string = '#00FF00';
-      if (deviceType !== '2in1') {
-        try {
-          mainWindowClass.setWindowContainerModalColor(activeColor, inactiveColor);
-          console.error(`${message} Should not succeed.`);
-          expect().assertFail();
-          done();
-        } catch (exception) {
-          exception = exception as BusinessError;
-          console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
-          if (exception.code === 801) {
-            console.info(`${message} Expected error 801.`);
-            expect(exception.code).assertEqual(801);
-            done();
-          } else {
-            expect().assertFail();
-            done();
-          }
-        }
-      } else {
-        console.info(`${message} This is 2in1 device, skip error test.`);
+      try {
+        mainWindowClass.setWindowContainerModalColor(activeColor, inactiveColor);
+        console.info(`${message} Succeeded in setting window container modal color.`);
         done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (deviceType === '2in1') {
+          expect().assertFail();
+          done();
+        }else{
+          if (exception.code === 801) {
+            console.info(`${message} Expected error 801.`);
+            expect(exception.code).assertEqual(801);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }
       }
     });
 
@@ -786,11 +691,6 @@ export default function windowPropertiesTest3() {
       let message = 'testSetWindowContainerModalColor_subWindow';
       let activeColor: string = '#FF0000';
       let inactiveColor: string = '#00FF00';
-      if (deviceType !== '2in1') {
-        console.info(`${message} Not 2in1 device, skip.`);
-        done();
-        return;
-      }
       let config: window.Configuration = {
         name: 'testSetWindowContainerModalColor_subWindow',
         windowType: window.WindowType.TYPE_DIALOG,
@@ -811,7 +711,11 @@ export default function windowPropertiesTest3() {
             console.info(`${message} Expected error 1300004.`);
             expect(exception.code).assertEqual(1300004);
             done();
-          } else {
+          } else if (exception.code === 801){
+            console.info(`${message} Expected error 801.`);
+            expect(exception.code).assertEqual(801);
+            done();
+          } else{
             expect().assertFail();
             done();
           }
@@ -916,98 +820,56 @@ export default function windowPropertiesTest3() {
       let message = 'testGetAllWindowLayoutInfo_excludeSystemWindows';
       let displayId: number = mainWindowClass.getWindowProperties().displayId ?? 0;
       let option: window.WindowInfoOptions = { excludeSystemWindows: true };
-      try {
-        let data = await window.getAllWindowLayoutInfo(displayId, option);
-        console.info(`${message} Succeeded in getting window layout info. Data: ${JSON.stringify(data)}`);
-        expect(data.length > 0).assertTrue();
-        if (data.length > 0) {
-          let rect = data[0].windowRect;
-          expect(rect.left >= 0).assertTrue();
-          expect(rect.top >= 0).assertTrue();
-          expect(rect.width > 0).assertTrue();
-          expect(rect.height > 0).assertTrue();
-          let alpha = data[0].windowAlpha;
-          expect(alpha! >= 0 && alpha! <= 1).assertTrue();
-        }
-        done();
-      } catch (exception) {
-        exception = exception as BusinessError;
-        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
-        if (exception.code === 801) {
-          console.info(`${message} Capability not supported.`);
-          done();
-        } else {
-          expect().assertFail();
-          done();
-        }
-      }
-    });
 
-    /**
-     * @tc.name   testGetAllWindowLayoutInfo_validDisplayId
-     * @tc.number SUB_WINDOW_GETALLWINDOWLAYOUTINFO_FUNCTION_0400
-     * @tc.desc   使用有效displayId，获取该屏幕的窗口布局信息
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testGetAllWindowLayoutInfo_validDisplayId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let message = 'testGetAllWindowLayoutInfo_validDisplayId';
-      let displayId: number = mainWindowClass.getWindowProperties().displayId ?? 0;
-      console.info(`${message} displayId: ${displayId}`);
-      try {
-        let data = await window.getAllWindowLayoutInfo(displayId);
-        console.info(`${message} Succeeded in getting window layout info. Data: ${JSON.stringify(data)}`);
-        expect(data.length > 0).assertTrue();
-        if (data.length > 0) {
-          let rect = data[0].windowRect;
-          expect(rect.left >= 0).assertTrue();
-          expect(rect.top >= 0).assertTrue();
-          expect(rect.width > 0).assertTrue();
-          expect(rect.height > 0).assertTrue();
-          let alpha = data[0].windowAlpha;
-          expect(alpha! >= 0 && alpha! <= 1).assertTrue();
-        }
-        done();
-      } catch (exception) {
-        exception = exception as BusinessError;
-        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
-        if (exception.code === 801) {
-          console.info(`${message} Capability not supported.`);
-          done();
-        } else {
-          expect().assertFail();
-          done();
-        }
-      }
-    });
+      let config: window.Configuration = {
+        name: 'testGetAllWindowLayoutInfo_excludeSystemWindows',
+        windowType: window.WindowType.TYPE_DIALOG,
+        decorEnabled: true,
+        ctx: context
+      };
 
-    /**
-     * @tc.name   testGetAllWindowLayoutInfo_notSupportSyscap
-     * @tc.number SUB_WINDOW_GETALLWINDOWLAYOUTINFO_ERROR_801_0100
-     * @tc.desc   不支持SessionManager系统能力的设备调用，验证801
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testGetAllWindowLayoutInfo_notSupportSyscap', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let message = 'testGetAllWindowLayoutInfo_notSupportSyscap';
-      let displayId: number = 0;
-      if (!isSyscapSessionManagerSupported) {
+      try {
+        let testWindow = await window.createWindow(config);
+        console.info(`${message} createWindow success.`);
+        await testWindow.resize(500, 500);
+        console.info(`${message} resize success.`);
+        await testWindow.setUIContent("testability/pages/Index1");
+        console.info(`${message} setUIContent success.`);
+        await testWindow.showWindow();
+        console.info(`${message} showWindow success.`);
+        await testWindow.moveWindowTo(100, 100);
+        console.info(`${message} moveWindowTo success.`);
+
         try {
-          await window.getAllWindowLayoutInfo(displayId);
-          console.error(`${message} Should not succeed.`);
-          expect().assertFail();
+          let data = await window.getAllWindowLayoutInfo(displayId, option);
+          console.info(`${message} Succeeded in getting window layout info. Data: ${JSON.stringify(data)}`);
+          let flag = false
+          for (let i = 0; i < data.length; i++) {
+            if (data[i].windowRect.width === 500 && data[i].windowRect.height === 500) {
+              flag = true
+            }
+          }
+          expect(flag).assertTrue()
           done();
         } catch (exception) {
           exception = exception as BusinessError;
-          expect(exception.code).assertEqual(801);
-          done();
+          console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+          if (exception.code === 801) {
+            console.info(`${message} Capability not supported.`);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        } finally {
+          await testWindow.destroyWindow();
         }
-      } else {
-        console.info(`${message} Syscap supported, skip.`);
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${message} Failed to create window. Cause: ${err.code}, ${err.message}`);
         done();
       }
+
     });
 
     /**
