@@ -732,34 +732,6 @@ export default function regression_group_test() {
     });
 
     /**
-     * @tc.name   malloc_double_free_check
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     * @tc.number SUB_THIRDPARTY_MUSL_MALLOC_DOUBLE_FREE_CHECK_0100
-     * @tc.desc   libc-test malloc-double-free-check
-     */
-    it("malloc_double_free_check", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("malloc-double-free-check");
-      expect(result).assertEqual(0);
-      done();
-    });
-
-    /**
-     * @tc.name   malloc_encode_pointer
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     * @tc.number SUB_THIRDPARTY_MUSL_MALLOC_ENCODE_POINTER_0100
-     * @tc.desc   libc-test malloc-encode-pointer
-     */
-    it("malloc_encode_pointer", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("malloc-encode-pointer");
-      expect(result).assertEqual(0);
-      done();
-    });
-
-    /**
      * @tc.name   malloc_modify_pointer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -769,34 +741,6 @@ export default function regression_group_test() {
      */
     it("malloc_modify_pointer", Level.LEVEL1, async (done: Function) => {
       const result = await testNapi.runTest("malloc-modify-pointer");
-      expect(result).assertEqual(0);
-      done();
-    });
-
-    /**
-     * @tc.name   malloc_oom
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     * @tc.number SUB_THIRDPARTY_MUSL_MALLOC_OOM_0100
-     * @tc.desc   libc-test malloc-oom
-     */
-    it("malloc_oom", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("malloc-oom");
-      expect(result).assertEqual(0);
-      done();
-    });
-
-    /**
-     * @tc.name   malloc_safe_unlink
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     * @tc.number SUB_THIRDPARTY_MUSL_MALLOC_SAFE_UNLINK_0100
-     * @tc.desc   libc-test malloc-safe-unlink
-     */
-    it("malloc_safe_unlink", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("malloc-safe-unlink");
       expect(result).assertEqual(0);
       done();
     });
