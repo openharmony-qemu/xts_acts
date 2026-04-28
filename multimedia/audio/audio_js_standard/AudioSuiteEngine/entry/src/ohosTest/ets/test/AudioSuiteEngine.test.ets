@@ -4092,5 +4092,276 @@ export default function AudioSuiteEngineTest() {
       done();
     })
 
+/**
+      * @tc.name       SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_0100
+      * @tc.number     SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_0100
+      * @tc.desc       AudioConverter create with valid format test.
+      * @tc.type       FUNCTION
+      * @tc.size       MEDIUMTEST
+      * @tc.level      LEVEL 0
+      */
+    it('SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_0100 start ====>');
+      let result : number = audiosuiteenginetest.SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_0100();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_0100 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_PARAM_ERROR_0100
+     * @tc.number     SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_PARAM_ERROR_0100
+     * @tc.desc       AudioConverter create with null outputFormat and converter test.
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_PARAM_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_PARAM_ERROR_0100 start ====>');
+      let result : number = audiosuiteenginetest.SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_PARAM_ERROR_0100();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_PARAM_ERROR_0100 end ====>');
+      done();
+    })
+
+/**
+      * @tc.name       SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_PARAM_ERROR_0200
+      * @tc.number     SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_PARAM_ERROR_0200
+      * @tc.desc       AudioConverter create with null inputFormat test.
+      * @tc.type       FUNCTION
+      * @tc.size       MEDIUMTEST
+      * @tc.level      LEVEL 2
+      */
+    it('SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_PARAM_ERROR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_PARAM_ERROR_0200 start ====>');
+      let result : number = audiosuiteenginetest.SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_PARAM_ERROR_0200();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_PARAM_ERROR_0200 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_PARAM_ERROR_0300
+     * @tc.number     SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_PARAM_ERROR_0300
+     * @tc.desc       AudioConverter create with null converter pointer test.
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_PARAM_ERROR_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_PARAM_ERROR_0300 start ====>');
+      let result : number = audiosuiteenginetest.SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_PARAM_ERROR_0300();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_PARAM_ERROR_0300 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_UNSUPPORTED_0100
+     * @tc.number     SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_UNSUPPORTED_0100
+     * @tc.desc       AudioConverter create with unsupported format test.
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_UNSUPPORTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_UNSUPPORTED_0100 start ====>');
+      let result : number = audiosuiteenginetest.SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_UNSUPPORTED_0100();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_CREATE_UNSUPPORTED_0100 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       SUB_MULTIMEDIA_AUDIO_CONVERTER_DESTROY_0100
+     * @tc.number     SUB_MULTIMEDIA_AUDIO_CONVERTER_DESTROY_0100
+     * @tc.desc       AudioConverter destroy with valid converter test.
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CONVERTER_DESTROY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_DESTROY_0100 start ====>');
+      let result : number = audiosuiteenginetest.SUB_MULTIMEDIA_AUDIO_CONVERTER_DESTROY_0100();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_DESTROY_0100 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       SUB_MULTIMEDIA_AUDIO_CONVERTER_DESTROY_PARAM_ERROR_0100
+     * @tc.number     SUB_MULTIMEDIA_AUDIO_CONVERTER_DESTROY_PARAM_ERROR_0100
+     * @tc.desc       AudioConverter destroy with null converter test.
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CONVERTER_DESTROY_PARAM_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_DESTROY_PARAM_ERROR_0100 start ====>');
+      let result : number = audiosuiteenginetest.SUB_MULTIMEDIA_AUDIO_CONVERTER_DESTROY_PARAM_ERROR_0100();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_DESTROY_PARAM_ERROR_0100 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       SUB_MULTIMEDIA_AUDIO_CONVERTER_DESTROY_DUPLICATE_0100
+     * @tc.number     SUB_MULTIMEDIA_AUDIO_CONVERTER_DESTROY_DUPLICATE_0100
+     * @tc.desc       AudioConverter destroy twice test.
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CONVERTER_DESTROY_DUPLICATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_DESTROY_DUPLICATE_0100 start ====>');
+      let result : number = audiosuiteenginetest.SUB_MULTIMEDIA_AUDIO_CONVERTER_DESTROY_DUPLICATE_0100();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_DESTROY_DUPLICATE_0100 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_PARAM_ERROR_0100
+     * @tc.number     SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_PARAM_ERROR_0100
+     * @tc.desc       AudioConverter setInputCallback with null converter test.
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_PARAM_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_PARAM_ERROR_0100 start ====>');
+      let result : number = audiosuiteenginetest.SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_PARAM_ERROR_0100();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_PARAM_ERROR_0100 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_NOTINITIALIZED_0100
+     * @tc.number     SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_NOTINITIALIZED_0100
+     * @tc.desc       AudioConverter setInputCallback after destroy test.
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_NOTINITIALIZED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_NOTINITIALIZED_0100 start ====>');
+      let result : number = audiosuiteenginetest.SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_NOTINITIALIZED_0100();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_NOTINITIALIZED_0100 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_PARAM_ERROR_0300
+     * @tc.number     SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_PARAM_ERROR_0300
+     * @tc.desc       AudioConverter setInputCallback with all null parameters test.
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_PARAM_ERROR_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_PARAM_ERROR_0300 start ====>');
+      let result : number = audiosuiteenginetest.SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_PARAM_ERROR_0300();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_PARAM_ERROR_0300 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_0100
+     * @tc.number     SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_0100
+     * @tc.desc       AudioConverter process with valid parameters test.
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_0100 start ====>');
+      let result : number = audiosuiteenginetest.SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_0100();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_0100 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0100
+     * @tc.number     SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0100
+     * @tc.desc       AudioConverter process with null converter test.
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0100 start ====>');
+      let result : number = audiosuiteenginetest.SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0100();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0100 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_CALLBACK_NOT_SET_0100
+     * @tc.number     SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_CALLBACK_NOT_SET_0100
+     * @tc.desc       AudioConverter process without setting callback test.
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_CALLBACK_NOT_SET_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_CALLBACK_NOT_SET_0100 start ====>');
+      let result : number = audiosuiteenginetest.SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_CALLBACK_NOT_SET_0100();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_CALLBACK_NOT_SET_0100 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0200
+     * @tc.number     SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0200
+     * @tc.desc       AudioConverter process with null output buffer test.
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0200 start ====>');
+      let result : number = audiosuiteenginetest.SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0200();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0200 end ====>');
+      done();
+    })
+
+    /**
+     * @tc.name       SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0300
+     * @tc.number     SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0300
+     * @tc.desc       AudioConverter process with null outputSize pointer test.
+     * @tc.type       FUNCTION
+     * @tc.size       MEDIUMTEST
+     * @tc.level      LEVEL 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0300 start ====>');
+      let result : number = audiosuiteenginetest.SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0300();
+      expect(result).assertEqual(TEST_RESULT.TEST_PASS);
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0300 end ====>');
+      done();
+    })
   })
 }
