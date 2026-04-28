@@ -2180,7 +2180,8 @@ export default function DeviceInfoTest() {
             console.info('SUB_STARTUP_INIT_DEVCEINFO_8200 start');
             let deviceColor = deviceinfo.deviceColor;
             console.info('the value of the DeviceColor is :' + deviceColor);
-            expect(deviceColor != undefined).assertTrue();          
+            expect(deviceColor != undefined).assertTrue();
+            done();          
             console.info('SUB_STARTUP_INIT_DEVCEINFO_8200 end');
         })
     })
