@@ -34,6 +34,20 @@ export default function nativeavmuxerNdkTest() {
     });
 
     /**
+     * @tc.name   testOHAVMuxerCreate002
+     * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVMUXER_OH_AVMUXER_CREATE_0200
+     * @tc.desc   test OH_AVMuxer_Create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHAVMuxerCreate002', Level.LEVEL0, async (done: Function) => {
+      let result: number = nativeavmuxer.oHAVMuxerCreateFlv();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
      * @tc.name   testOHAVMuxerSetRotation001
      * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVMUXER_OH_AVMUXER_SETROTATION_0100
      * @tc.desc   test OH_AVMuxer_SetRotation
