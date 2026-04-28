@@ -58,7 +58,7 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
 
     /**
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0100
-     * @tc.int    SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0100
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0100
      * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskMode of MODE_NEARLINK value is 14
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -82,7 +82,7 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
 
     /**
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0200
-     * @tc.int    SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0200
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0200
      * @tc.desc   Test that the startBackgroundRunning function and stopBackgroundRunning and updateBackgroundRunning function normal call with MODE_NEARLINK
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -158,7 +158,7 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
 
     /**
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0300
-     * @tc.int    SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0300
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0300
      * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskDetailedCancelReason of USER_CANCEL_REMOVE_NOTIFICATION
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -182,7 +182,7 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
 
     /**
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0400
-     * @tc.int    SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0400
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0400
      * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskDetailedCancelReason of SYSTEM_CANCEL_DATA_TRANSFER_LOW_SPEED
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -206,7 +206,7 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
 
     /**
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0500
-     * @tc.int    SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0500
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0500
      * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskDetailedCancelReason of SYSTEM_CANCEL_AUDIO_PLAYBACK_NOT_USE_AVSESSION
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -231,7 +231,7 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
 
     /**
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0600
-     * @tc.int    SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0600
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0600
      * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskDetailedCancelReason of SYSTEM_CANCEL_AUDIO_PLAYBACK_NOT_RUNNING
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -256,7 +256,7 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
 
     /**
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0700
-     * @tc.int    SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0700
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0700
      * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskDetailedCancelReason of SYSTEM_CANCEL_AUDIO_RECORDING_NOT_RUNNING
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -281,7 +281,7 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
 
     /**
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0800
-     * @tc.int    SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0800
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0800
      * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskDetailedCancelReason of SYSTEM_CANCEL_NOT_USE_LOCATION
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -306,7 +306,7 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
 
     /**
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0900
-     * @tc.int    SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0900
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0900
      * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskDetailedCancelReason of SYSTEM_CANCEL_NOT_USE_BLUETOOTH
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -331,7 +331,7 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
 
     /**
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1000
-     * @tc.int    SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1000
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1000
      * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskDetailedCancelReason of SYSTEM_CANCEL_NOT_USE_MULTI_DEVICE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -356,7 +356,7 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
 
     /**
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1100
-     * @tc.int    SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1100
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1100
      * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskDetailedCancelReason of SYSTEM_CANCEL_USE_ILLEGALLY
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -381,7 +381,7 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
 
     /**
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1200
-     * @tc.int    SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1200
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1200
      * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskDetailedCancelReason of SYSTEM_CANCEL_DATA_TRANSFER_NOT_UPDATE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -406,7 +406,7 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
 
     /**
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1300
-     * @tc.int    SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1300
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1300
      * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskDetailedCancelReason of SYSTEM_CANCEL_VOIP_NOT_RUNNING
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -431,7 +431,7 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
 
     /**
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1400
-     * @tc.int    SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1400
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1400
      * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskDetailedCancelReason of SYSTEM_CANCEL_USER_UNAUTHORIZED
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -456,7 +456,7 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
 
     /**
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1500
-     * @tc.int    SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1500
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1500
      * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_VOIP_NOT_USED
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -480,7 +480,7 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
 
     /**
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1600
-     * @tc.int    SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1600
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1600
      * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_BLUETOOTH_DATA_NOT_EXIST
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -504,7 +504,7 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
 
     /**
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1700
-     * @tc.int    SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1700
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1700
      * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_POSITION_NOT_MOVED
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -528,7 +528,7 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
 
     /**
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1800
-     * @tc.int    SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1800
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1800
      * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_AUDIO_PLAYBACK_MUTE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -552,7 +552,7 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
 
     /**
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1900
-     * @tc.int    SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1900
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1900
      * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_NEARLINK_NOT_USED
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -576,7 +576,7 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
 
     /**
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_2000
-     * @tc.int    SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_2000
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_2000
      * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_NEARLINK_DATA_NOT_EXIST
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -600,7 +600,7 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
 
     /**
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_2100
-     * @tc.int    SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_2100
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_2100
      * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_USER_UNAUTHORIZED
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
