@@ -2675,7 +2675,30 @@ export default function audioLoopBack() {
         console.error(`AudioLoopback Created : ERROR : ${err}`);
       });
     })
-    
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOLOOPBACK_SETEQUALIZERPRESET_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOLOOPBACK_SETEQUALIZERPRESET_0100
+     * @tc.desc   getStatus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_AUDIOLOOPBACK_SETEQUALIZERPRESET_0100", Level.LEVEL2, async () => {
+      let audioLoopback: audio.AudioLoopback;
+      audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE).then((data) => {
+        audioLoopback = data;
+        console.info('AudioLoopback Created : SUCCESS');
+        try {
+          let ret: boolean = audioLoopback.setEqualizerPreset(-10);
+          expect(ret).assertFalse();
+        } catch (err) {
+          console.error(`setEqualizerPreset :ERROR: ${err}`);
+        }
+      }).catch((err: BusinessError) => {
+        console.error(`AudioLoopback Created : ERROR : ${err}`);
+      });
+    })
+        
     /**
      * @tc.name    SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_INPUTDEVICE_0100
      * @tc.number  SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_INPUTDEVICE_0100
