@@ -742,6 +742,7 @@ export default function windowPropertiesTest3() {
     it('testGetAllWindowLayoutInfo_noOption', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let message = 'testGetAllWindowLayoutInfo_noOption';
       let displayId: number = mainWindowClass.getWindowProperties().displayId ?? 0;
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
       try {
         let data = await window.getAllWindowLayoutInfo(displayId);
         console.info(`${message} Succeeded in getting window layout info. Data: ${JSON.stringify(data)}`);
@@ -759,13 +760,19 @@ export default function windowPropertiesTest3() {
       } catch (exception) {
         exception = exception as BusinessError;
         console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
-        if (exception.code === 801) {
-          console.info(`${message} Capability not supported.`);
-          done();
-        } else {
+        if (isSupport === false){
+          if (exception.code === 801) {
+            console.info(`${message} Capability not supported.`);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }else{
           expect().assertFail();
           done();
         }
+
       }
     });
 
@@ -781,6 +788,7 @@ export default function windowPropertiesTest3() {
       let message = 'testGetAllWindowLayoutInfo_defaultOption';
       let displayId: number = mainWindowClass.getWindowProperties().displayId ?? 0;
       let option: window.WindowInfoOptions = {};
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
       try {
         let data = await window.getAllWindowLayoutInfo(displayId, option);
         console.info(`${message} Succeeded in getting window layout info. Data: ${JSON.stringify(data)}`);
@@ -798,10 +806,15 @@ export default function windowPropertiesTest3() {
       } catch (exception) {
         exception = exception as BusinessError;
         console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
-        if (exception.code === 801) {
-          console.info(`${message} Capability not supported.`);
-          done();
-        } else {
+        if (isSupport === false){
+          if (exception.code === 801) {
+            console.info(`${message} Capability not supported.`);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }else{
           expect().assertFail();
           done();
         }
@@ -820,6 +833,7 @@ export default function windowPropertiesTest3() {
       let message = 'testGetAllWindowLayoutInfo_excludeSystemWindows';
       let displayId: number = mainWindowClass.getWindowProperties().displayId ?? 0;
       let option: window.WindowInfoOptions = { excludeSystemWindows: true };
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
 
       let config: window.Configuration = {
         name: 'testGetAllWindowLayoutInfo_excludeSystemWindows',
@@ -854,10 +868,15 @@ export default function windowPropertiesTest3() {
         } catch (exception) {
           exception = exception as BusinessError;
           console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
-          if (exception.code === 801) {
-            console.info(`${message} Capability not supported.`);
-            done();
-          } else {
+          if (isSupport === false){
+            if (exception.code === 801) {
+              console.info(`${message} Capability not supported.`);
+              done();
+            } else {
+              expect().assertFail();
+              done();
+            }
+          }else{
             expect().assertFail();
             done();
           }
@@ -883,6 +902,7 @@ export default function windowPropertiesTest3() {
     it('testGetAllWindowLayoutInfo_invalidDisplayId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let message = 'testGetAllWindowLayoutInfo_invalidDisplayId';
       let displayId: number = -1;
+
       try {
         await window.getAllWindowLayoutInfo(displayId);
         console.error(`${message} Should not succeed.`);
@@ -891,17 +911,15 @@ export default function windowPropertiesTest3() {
       } catch (exception) {
         exception = exception as BusinessError;
         console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
-        if (exception.code === 801) {
-          console.info(`${message} Capability not supported.`);
-          done();
-        } else if (exception.code === 401) {
+        if (exception.code === 401) {
           console.info(`${message} Expected error 401.`);
           expect(exception.code).assertEqual(401);
           done();
-        } else {
+        }else{
           expect().assertFail();
           done();
         }
+
       }
     });
 
@@ -917,6 +935,7 @@ export default function windowPropertiesTest3() {
       let message = 'testGetAllWindowLayoutInfo_invalidAboveWindowId';
       let displayId: number = mainWindowClass.getWindowProperties().displayId ?? 0;
       let option: window.WindowInfoOptions = { foregroundAboveWindow: -1 };
+
       try {
         await window.getAllWindowLayoutInfo(displayId, option);
         console.error(`${message} Should not succeed.`);
@@ -925,15 +944,9 @@ export default function windowPropertiesTest3() {
       } catch (exception) {
         exception = exception as BusinessError;
         console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
-        if (exception.code === 801) {
-          console.info(`${message} Capability not supported.`);
-          done();
-        } else if (exception.code === 1300016) {
-          console.info(`${message} Expected error 1300016.`);
+        if (exception.code === 1300016) {
+          console.info(`${message} Expected error 401.`);
           expect(exception.code).assertEqual(1300016);
-          done();
-        } else {
-          expect().assertFail();
           done();
         }
       }
@@ -951,6 +964,7 @@ export default function windowPropertiesTest3() {
       let message = 'testGetAllWindowLayoutInfo_invalidBelowWindowId';
       let displayId: number = mainWindowClass.getWindowProperties().displayId ?? 0;
       let option: window.WindowInfoOptions = { foregroundBelowWindow: -1 };
+
       try {
         await window.getAllWindowLayoutInfo(displayId, option);
         console.error(`${message} Should not succeed.`);
@@ -959,15 +973,9 @@ export default function windowPropertiesTest3() {
       } catch (exception) {
         exception = exception as BusinessError;
         console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
-        if (exception.code === 801) {
-          console.info(`${message} Capability not supported.`);
-          done();
-        } else if (exception.code === 1300016) {
-          console.info(`${message} Expected error 1300016.`);
+        if (exception.code === 1300016) {
+          console.info(`${message} Expected error 401.`);
           expect(exception.code).assertEqual(1300016);
-          done();
-        } else {
-          expect().assertFail();
           done();
         }
       }
@@ -990,6 +998,8 @@ export default function windowPropertiesTest3() {
         foregroundBelowWindow: mainWindowId,
         foregroundAboveWindow: mainWindowId
       };
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+
       try {
         let data = await window.getAllWindowLayoutInfo(displayId, option);
         console.info(`${message} Succeeded in getting window layout info. Data: ${JSON.stringify(data)}`);
@@ -999,10 +1009,15 @@ export default function windowPropertiesTest3() {
       } catch (exception) {
         exception = exception as BusinessError;
         console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
-        if (exception.code === 801) {
-          console.info(`${message} Capability not supported.`);
-          done();
-        } else {
+        if (isSupport === false){
+          if (exception.code === 801) {
+            console.info(`${message} Capability not supported.`);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }else{
           expect().assertFail();
           done();
         }
