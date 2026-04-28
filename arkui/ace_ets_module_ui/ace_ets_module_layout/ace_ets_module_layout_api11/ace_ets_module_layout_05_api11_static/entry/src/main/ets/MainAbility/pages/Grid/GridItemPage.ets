@@ -32,7 +32,7 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct GridItemPage {
-  @State numbers: string[] = Array.from(Array(16).keys() as Iterable<int>).map((item: int) => String(item));
+  @State numbers: string[] = Array.from(Array(16).keys()).map((item: int) => item.toString())
   @State rowStart: int = 1
   @State rowEnd: int = 4
   @State columnStart: int = 1
