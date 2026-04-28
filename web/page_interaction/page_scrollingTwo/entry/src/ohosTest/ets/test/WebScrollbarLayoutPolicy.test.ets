@@ -60,7 +60,7 @@ export default function WebScrollbarLayoutPolicyTest() {
 
     /**
      * @tc.name   testScrollbarLayoutPolicy00
-     * @tc.number WebScrollbarLayoutPolicyTest_0100
+     * @tc.number SUB_WEB_SCROLLLAYOUT_POLICY_0100
      * @tc.desc   scrollbarLayoutPolicy CONTENT test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -79,7 +79,7 @@ export default function WebScrollbarLayoutPolicyTest() {
 
     /**
      * @tc.name   testScrollbarLayoutPolicy002
-     * @tc.number WebScrollbarLayoutPolicyTest_0200
+     * @tc.number SUB_WEB_SCROLLLAYOUT_POLICY_0200
      * @tc.desc   scrollbarLayoutPolicy SYSTEM test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -98,7 +98,7 @@ export default function WebScrollbarLayoutPolicyTest() {
 
     /**
      * @tc.name   testScrollbarLayoutPolicy003
-     * @tc.number WebScrollbarLayoutPolicyTest_0300
+     * @tc.number SUB_WEB_SCROLLLAYOUT_POLICY_0300
      * @tc.desc   scrollbarLayoutPolicy switch CONTENT to SYSTEM test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -117,7 +117,7 @@ export default function WebScrollbarLayoutPolicyTest() {
 
     /**
      * @tc.name   testScrollbarLayoutPolicy004
-     * @tc.number WebScrollbarLayoutPolicyTest_0400
+     * @tc.number SUB_WEB_SCROLLLAYOUT_POLICY_0400
      * @tc.desc   scrollbarLayoutPolicy switch SYSTEM to CONTENT test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -136,7 +136,7 @@ export default function WebScrollbarLayoutPolicyTest() {
 
     /**
      * @tc.name   testScrollbarLayoutPolicy005
-     * @tc.number WebScrollbarLayoutPolicyTest_0500
+     * @tc.number SUB_WEB_SCROLLLAYOUT_POLICY_0500
      * @tc.desc   scrollbarLayoutPolicy set CONTENT twice test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -155,7 +155,7 @@ export default function WebScrollbarLayoutPolicyTest() {
 
     /**
      * @tc.name   testScrollbarLayoutPolicy006
-     * @tc.number WebScrollbarLayoutPolicyTest_0600
+     * @tc.number SUB_WEB_SCROLLLAYOUT_POLICY_0600
      * @tc.desc   scrollbarLayoutPolicy set SYSTEM twice test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
