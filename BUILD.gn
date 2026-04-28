@@ -17,18 +17,6 @@ import("test_targets.gni")
 if (os_level == "standard") {
   assert(XTS_SUITENAME != "")
   if (build_xts == true && XTS_SUITENAME == "acts") {
-    action("init_ark_jsvm") {
-      script = "init_ark_runtime_jsvm.py"
-      _output_stamp = "${target_gen_dir}/init_ark_runtime_jsvm.stamp"
-      args = [
-        "--root-path",
-        rebase_path("//test/xts/acts/"),
-        "--output",
-        rebase_path(_output_stamp),
-      ]
-      outputs = [ _output_stamp ]
-    }
-
     _subsystem_conf_path =
         "${root_build_dir}/build_configs/subsystem_info/src_subsystem_info.json"
 
@@ -37,7 +25,6 @@ if (os_level == "standard") {
       build_targets = all_test_targets
       subsystem_conf_path = _subsystem_conf_path
       extra_deps = [
-        ":init_ark_jsvm",
         "${XTS_ROOT}/tools/others/query:libQuery",
         "testtools:deploy_testtools",
       ]
@@ -48,7 +35,6 @@ if (os_level == "standard") {
       build_targets = all_test_targets_ivi
       subsystem_conf_path = _subsystem_conf_path
       extra_deps = [
-        ":init_ark_jsvm",
         "testtools:deploy_testtools",
       ]
     }
@@ -58,7 +44,6 @@ if (os_level == "standard") {
       build_targets = all_test_targets_intellitv
       subsystem_conf_path = _subsystem_conf_path
       extra_deps = [
-        ":init_ark_jsvm",
         "testtools:deploy_testtools",
       ]
     }
@@ -68,7 +53,6 @@ if (os_level == "standard") {
       build_targets = all_test_targets_wearable
       subsystem_conf_path = _subsystem_conf_path
       extra_deps = [
-        ":init_ark_jsvm",
         "testtools:deploy_testtools",
       ]
     }
