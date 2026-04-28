@@ -462,14 +462,14 @@ export default function dataShareConfigGetTest() {
     /**
      * @tc.name   dataShareConfigGetTest014
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0510
-     * @tc.desc   [uri] more than 32
+     * @tc.desc   [uri] equal 64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('dataShareConfigGetTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let uris: string[] = [];
-      for (let i = 0; i < 32; i++) {
+      for (let i = 0; i < 64; i++) {
         let testUri = "datashareproxy://com.acts.dataShare.config/testMore" + i;
         uris.push(testUri);
       }
@@ -491,14 +491,14 @@ export default function dataShareConfigGetTest() {
     /**
      * @tc.name   dataShareConfigGetTest015
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0520
-     * @tc.desc   [uri] more than 32
+     * @tc.desc   [uri] more than 64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('dataShareConfigGetTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let uris: string[] = [];
-      for (let i = 0; i < 33; i++) {
+      for (let i = 0; i < 65; i++) {
         let testUri = "datashareproxy://com.acts.dataShare.config/test" + i;
         uris.push(testUri);
       }

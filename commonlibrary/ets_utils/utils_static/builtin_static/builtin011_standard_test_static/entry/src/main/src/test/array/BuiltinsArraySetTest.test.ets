@@ -272,7 +272,7 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySetTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
 
       for (let i = 0; i < 5; i++) {
         arr[i] = i * 10;
@@ -294,7 +294,7 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySetTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       const idx = 2;
       const val = -100;
 
@@ -312,7 +312,7 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArraySetTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       const idx = 2;
       const val = 2147483647;
 
@@ -330,7 +330,7 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArraySetTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       const idx = 2;
       const val = -2147483648;
 
@@ -348,7 +348,7 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySetTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       const idx = 2;
       const val = 3.14159;
 
@@ -474,7 +474,7 @@ export default function BuiltinsArraySetTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySetTest2400',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, NaN);
       const idx = 0;
       const val = 100;
 

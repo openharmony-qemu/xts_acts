@@ -33,6 +33,11 @@ import getCurrentLocalPositionTest_MouseEvent from './getCurrentLocalPositionTes
 import getCurrentLocalPositionTest_AxisEvent from './getCurrentLocalPositionTest/getCurrentLocalPositionTest_AxisEvent.test';
 import getCurrentLocalPositionTest_EventLocationInfo from './getCurrentLocalPositionTest/getCurrentLocalPositionTest_EventLocationInfo.test';
 import getCurrentLocalPositionTest_FingerInfo from './getCurrentLocalPositionTest/getCurrentLocalPositionTest_FingerInfo.test';
+import getHistoricalPoints from './getHistoricalPointsTest/getHistoricalPoints.test';
+import getHistoricalPoints_displayX from './getHistoricalPointsTest/getHistoricalPoints_displayX.test';
+import getHistoricalPoints_globalDisplayX from './getHistoricalPointsTest/getHistoricalPoints_globalDisplayX.test';
+import getHistoricalPoints_windowX from './getHistoricalPointsTest/getHistoricalPoints_windowX.test';
+
 
 export default function testsuite() {
   TapGesture1();
@@ -54,5 +59,9 @@ export default function testsuite() {
   getCurrentLocalPositionTest_MouseEvent();
   getCurrentLocalPositionTest_AxisEvent();
   getCurrentLocalPositionTest_EventLocationInfo();
+  getHistoricalPoints();
   getCurrentLocalPositionTest_FingerInfo();
+  getHistoricalPoints_displayX();
+  getHistoricalPoints_globalDisplayX();
+  getHistoricalPoints_windowX();
 }

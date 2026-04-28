@@ -2881,6 +2881,34 @@ export default function avRecorderTest() {
       expect(String(media.ContainerFormatType.CFT_AAC)).assertEqual('aac');
       done();
     });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_SETMETADATA_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_SETMETADATA_static_0100
+     * @tc.desc   set metadata
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_SETMETADATA_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_SETMETADATA_static_0100 start')
+      let timestamp = Date.now();
+      let filename = `avRecorder_${timestamp}.wav`;
+      fdObject = await commonFun.getFd(filename);
+      fdPath = 'fd://' + fdObject.fdNumber;
+      console.info('case fdPath is: ' + fdPath);
+      avConfig.url = fdPath;
+      console.info('avConfig.url ' + avConfig.url);
+      avConfig.profile.fileFormat = FORMAT_WAV;
+      avConfig.profile.audioCodec = ENCORDER_WAV;
+      avConfig.profile.audioBitrate = 64000;
+      avConfig.profile.audioChannels = 1;
+      avConfig.profile.audioSampleRate = 8000;
+      let result = await commonFun.avRecorderSetMetadataTest(avConfig, RECORDER_TIME, done);
+      expect(result).assertEqual(true);
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_SETMETADATA_static_0100 end');
+      done();
+    });
   })
 }
 

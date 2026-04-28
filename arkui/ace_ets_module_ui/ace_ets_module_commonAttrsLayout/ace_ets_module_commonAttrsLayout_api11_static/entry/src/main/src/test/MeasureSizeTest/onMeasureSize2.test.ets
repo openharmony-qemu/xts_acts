@@ -36,7 +36,7 @@ export default function onMeasureSize2() {
   describe('onMeasureSize2', () => {
     console.info("onMeasureSize2 beforeAll start");
 
-    waitForCompletion(async ()=>{await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")})
+    UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility").awaitSync()
 
 
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!

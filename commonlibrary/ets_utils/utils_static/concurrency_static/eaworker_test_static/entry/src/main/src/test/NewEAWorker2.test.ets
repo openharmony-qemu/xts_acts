@@ -1172,7 +1172,7 @@ export default function NewEAWorkerTes2() {
         let errMessage = '';
         try {
           EAWorker.main().postTask(() => {
-            waitForCompletion(async () => {
+            (async () => {
               try {
                 new Promise<number>((resolve) => {
                   resolve(1);
@@ -1189,7 +1189,7 @@ export default function NewEAWorkerTes2() {
               } catch (error) {
                 expect(false).assertFail()
               }
-            })
+            })().awaitSync()
           });
         } catch (error) {
         } finally {
@@ -1309,7 +1309,7 @@ export default function NewEAWorkerTes2() {
         let errMessage = '';
         try {
           EAWorker.main().postTask(() => {
-            waitForCompletion(async () => {
+            (async () => {
               worker.start();
               worker.setUncaughtExceptionHandler((error: Error) => {
                 errMessage = error.message;
@@ -1320,7 +1320,7 @@ export default function NewEAWorkerTes2() {
               await Utils.msSleep(1000);
               expect(errMessage).assertContain('Worker function exception')
               worker.join();
-            })
+            })().awaitSync()
           })
         } catch (error) {
           expect(false).assertFail();
@@ -1348,7 +1348,7 @@ export default function NewEAWorkerTes2() {
         const worker = new EAWorker();
         try {
           EAWorker.main().postTask(() => {
-            waitForCompletion(async () => {
+            (async () => {
               worker.start();
               worker.run<void>(() => {
                 flag = true;
@@ -1356,7 +1356,7 @@ export default function NewEAWorkerTes2() {
               await Utils.msSleep(1000);
               expect(flag).assertTrue();
               worker.join();
-            })
+            })().awaitSync()
           })
         } catch (error) {
           expect(false).assertFail();

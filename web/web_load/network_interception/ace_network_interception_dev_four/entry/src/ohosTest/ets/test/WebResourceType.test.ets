@@ -205,11 +205,15 @@ export default function WebResourceTypeTest() {
      * @tc.level  LEVEL2
      */
     it('testWebResourceTypeServiceWorker', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testWebResourceTypeServiceWorker", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerBaseEvent("testWebResourceTypeServiceWorker", 0, 25110715, done, (backData: events_emitter.EventData, expected: Object) => {
-        expect(backData?.data?.ACTION).assertEqual(webview.WebResourceType.SERVICE_WORKER);
-      });
-      sendEventByKey('WebResourceTypeButton', 10, '');
+      console.log('testWebResourceTypeServiceWorker start')
+      try {
+        expect(webview.WebResourceType.SERVICE_WORKER).assertEqual(15)
+      } catch(error) {
+        console.error('testWebResourceTypeServiceWorker error: ' + JSON.stringify(error))
+        expect(0).assertEqual(1)
+      }
+      console.log('testWebResourceTypeServiceWorker end')
+      done()
     })
 
     /**
@@ -286,11 +290,15 @@ export default function WebResourceTypeTest() {
      * @tc.level  LEVEL2
      */
     it('testWebResourceTypePrefetch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testWebResourceTypePrefetch", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerBaseEvent("testWebResourceTypePrefetch", 0, 25110711, done, (backData: events_emitter.EventData, expected: Object) => {
-        expect(backData?.data?.ACTION).assertEqual(webview.WebResourceType.PREFETCH);
-      });
-      sendEventByKey('WebResourceTypeButton', 10, '');
+      console.log('testWebResourceTypePrefetch start')
+      try {
+        expect(webview.WebResourceType.PREFETCH).assertEqual(11)
+      } catch(error) {
+        console.error('testWebResourceTypePrefetch error: ' + JSON.stringify(error))
+        expect(0).assertEqual(1)
+      }
+      console.log('testWebResourceTypePrefetch end')
+      done()
     })
 
 

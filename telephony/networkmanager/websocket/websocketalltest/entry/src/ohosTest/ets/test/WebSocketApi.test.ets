@@ -4788,6 +4788,7 @@ export default function WebSocketApiTest() {
     it('testNetworkMgrWebSocketOnOffCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketOnOffCallback0100';
       let isOnEvent = 0;
+      let isSendOk = false;
       console.info(`${caseName} test start`);
       try {
         ws.on('error', (err: BusinessError) => {
@@ -4811,6 +4812,7 @@ export default function WebSocketApiTest() {
               console.info(`${caseName}---end`);
             }else{
               console.info(`${caseName} send success and calue is: `+value)
+              isSendOk = true;
             }
           })
         }
@@ -4843,7 +4845,14 @@ export default function WebSocketApiTest() {
         let onDataEndCallback02 = () => {
           isOnEvent +=1;
           console.info(`${caseName} onDataEndCallback02 dataEnd `);
-          ws.close()
+          const checkSendOk = () => {
+            if (isSendOk) {
+              ws.close();
+            } else {
+              setTimeout(checkSendOk, 50)
+            }
+          }
+          checkSendOk();
         }
         let onCloseCallback01 = (err: BusinessError, data: webSocket.CloseResult) => {
           console.info(`${caseName} onCloseCallback01 close ,closeResult is `+JSON.stringify(data));

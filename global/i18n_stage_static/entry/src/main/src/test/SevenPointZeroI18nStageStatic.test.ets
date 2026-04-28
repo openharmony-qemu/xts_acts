@@ -960,6 +960,8 @@ export default function SevenPointZeroI18nStageStaticTest() {
      * @tc.level  LEVEL2
      */
     it('i18n_setAppDefaultTimeZoneById_static_0100', Level.LEVEL2, async (): Promise<void> => {
+      let timeZone: i18n.TimeZone = i18n.getTimeZone();
+      let GetID: string = timeZone.getID();
       i18n.TimeZone.setAppDefaultTimeZoneById('Asia/Hong_Kong');
       let getAppTimeZone: i18n.TimeZone = i18n.TimeZone.getAppDefaultTimeZone();
       let value: string = getAppTimeZone.getID();
@@ -967,6 +969,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
       console.log('i18n_setAppDefaultTimeZoneById_static_0100 value:', value);
       expect(value).assertEqual('Asia/Hong_Kong');
       expect(value2).assertEqual('香港标准时间');
+      i18n.TimeZone.setAppDefaultTimeZoneById(GetID);
     })
 
     /**
@@ -978,6 +981,8 @@ export default function SevenPointZeroI18nStageStaticTest() {
      * @tc.level  LEVEL2
      */
     it('i18n_setAppDefaultTimeZoneById_static_0200', Level.LEVEL2, async (): Promise<void> => {
+      let timeZone: i18n.TimeZone = i18n.getTimeZone();
+      let GetID: string = timeZone.getID();
       i18n.TimeZone.setAppDefaultTimeZoneById('America/New_York');
       let getAppTimeZone: i18n.TimeZone = i18n.TimeZone.getAppDefaultTimeZone();
       let value: string = getAppTimeZone.getID();
@@ -985,6 +990,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
       console.log('i18n_setAppDefaultTimeZoneById_static_0200 value:', value);
       expect(value).assertEqual('America/New_York');
       expect(value2).assertEqual('北美东部时间');
+      i18n.TimeZone.setAppDefaultTimeZoneById(GetID);
     })
 
     /**
@@ -996,6 +1002,8 @@ export default function SevenPointZeroI18nStageStaticTest() {
      * @tc.level  LEVEL2
      */
     it('i18n_setAppDefaultTimeZoneById_static_0300', Level.LEVEL2, async (): Promise<void> => {
+      let timeZone: i18n.TimeZone = i18n.getTimeZone();
+      let GetID: string = timeZone.getID();
       i18n.TimeZone.setAppDefaultTimeZoneById('America/New_York');
       let getAppTimeZone: i18n.TimeZone = i18n.TimeZone.getAppDefaultTimeZone();
       let value: string = getAppTimeZone.getID();
@@ -1009,6 +1017,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
       let dateFormat = dateTimeFormat.format(date);
       console.log('i18n_setAppDefaultTimeZoneById_static_0300 value:', dateFormat);
       expect(dateFormat).assertEqual('2025年5月13日 GMT-4 上午12:30:00');
+      i18n.TimeZone.setAppDefaultTimeZoneById(GetID);
     })
 
     /**
@@ -1026,6 +1035,846 @@ export default function SevenPointZeroI18nStageStaticTest() {
         console.log('i18n_setAppDefaultTimeZoneById_static_0500 code&message:', e.code + e.message);
         expect(Number(e.code)).assertEqual(8900001);
       }
+    })
+
+    /**
+     * @tc.name   i18n_setUnicodeWrappedBidiDirection_static_0100
+     * @tc.number SUB_GLOBAL_MIRRORDISPLAY_STATIC_0100
+     * @tc.desc   test setUnicodeWrappedBidiDirection with LTR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidiDirection_static_0100', Level.LEVEL2, async (): Promise<void> => {
+      let res: string = '知己';
+      let ltr: string = i18n.I18NUtil.setUnicodeWrappedBidiDirection(res, 'LTR');
+      let LTR: string = '海内存' + ltr + '，天涯若比邻。';
+      console.log('i18n_setUnicodeWrappedBidiDirection_static_0100 value:', LTR);
+      expect(LTR).assertEqual('海内存' + '\u2066' + '知己' + '\u2069' + '，天涯若比邻。');
+    })
+
+    /**
+     * @tc.name   i18n_setUnicodeWrappedBidiDirection_static_0200
+     * @tc.number SUB_GLOBAL_MIRRORDISPLAY_STATIC_0200
+     * @tc.desc   test setUnicodeWrappedBidiDirection with RTL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidiDirection_static_0200', Level.LEVEL2, async (): Promise<void> => {
+      let res: string = '知己';
+      let rtl: string = i18n.I18NUtil.setUnicodeWrappedBidiDirection(res, 'RTL');
+      let RTL: string = '海内存' + rtl + '，天涯若比邻。';
+      console.log('i18n_setUnicodeWrappedBidiDirection_static_0200 value:', RTL);
+      expect(RTL).assertEqual('海内存' + '\u2067' + '知己' + '\u2069' + '，天涯若比邻。');
+    })
+
+    /**
+     * @tc.name   i18n_setUnicodeWrappedBidiDirection_static_0300
+     * @tc.number SUB_GLOBAL_MIRRORDISPLAY_STATIC_0300
+     * @tc.desc   test setUnicodeWrappedBidiDirection with RTL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidiDirection_static_0300', Level.LEVEL2, async (): Promise<void> => {
+      let res: string = 'AB';
+      let rtl: string = i18n.I18NUtil.setUnicodeWrappedBidiDirection(res, 'RTL');
+      let RTL: string = '海内存' + rtl + '，天涯若比邻。';
+      console.log('i18n_setUnicodeWrappedBidiDirection_static_0300 value:', RTL);
+      expect(RTL).assertEqual('海内存' + '\u2067' + 'AB' + '\u2069' + '，天涯若比邻。');
+    })
+
+    /**
+     * @tc.name   i18n_setUnicodeWrappedBidiDirection_static_0400
+     * @tc.number SUB_GLOBAL_MIRRORDISPLAY_STATIC_0400
+     * @tc.desc   test setUnicodeWrappedBidiDirection with RTL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidiDirection_static_0400', Level.LEVEL2, async (): Promise<void> => {
+      let res: string = '0 1 2 3';
+      let rtl: string = i18n.I18NUtil.setUnicodeWrappedBidiDirection(res, 'RTL');
+      let RTL: string = '海内存' + rtl + '，天涯若比邻。';
+      console.log('i18n_setUnicodeWrappedBidiDirection_static_0400 value:', RTL);
+      expect(RTL).assertEqual('海内存' + '\u2067' + '0 1 2 3' + '\u2069' + '，天涯若比邻。');
+    })
+
+    /**
+     * @tc.name   i18n_setUnicodeWrappedBidiDirection_static_0500
+     * @tc.number SUB_GLOBAL_MIRRORDISPLAY_STATIC_0500
+     * @tc.desc   test setUnicodeWrappedBidiDirection with RTL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidiDirection_static_0500', Level.LEVEL2, async (): Promise<void> => {
+      let res: string = 'تفاحة';
+      let ltr: string = i18n.I18NUtil.setUnicodeWrappedBidiDirection(res, 'LTR');
+      let LTR: string = 'Apple is a fruit, AR name is ' + ltr + ', is very delicious.';
+      console.log('i18n_setUnicodeWrappedBidiDirection_static_0500 value:', LTR);
+      expect(LTR).assertEqual('Apple is a fruit, AR name is ' + '\u2066' + 'تفاحة' + '\u2069' + ', is very delicious.');
+    })
+
+    /**
+     * @tc.name   i18n_setUnicodeWrappedBidiDirection_static_0600
+     * @tc.number SUB_GLOBAL_MIRRORDISPLAY_STATIC_0600
+     * @tc.desc   test setUnicodeWrappedBidiDirection with RTL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidiDirection_static_0600', Level.LEVEL2, async (): Promise<void> => {
+      let res: string = 'تفاحة';
+      let rtl: string = i18n.I18NUtil.setUnicodeWrappedBidiDirection(res, 'RTL');
+      let RTL: string = 'Apple is a fruit, AR name is ' + rtl + ', is very delicious.';
+      console.log('i18n_setUnicodeWrappedBidiDirection_static_0600 value:', RTL);
+      expect(RTL).assertEqual('Apple is a fruit, AR name is ' + '\u2067' + 'تفاحة' + '\u2069' + ', is very delicious.');
+    })
+
+    /**
+     * @tc.name   i18n_setUnicodeWrappedBidiDirection_static_0700
+     * @tc.number SUB_GLOBAL_MIRRORDISPLAY_STATIC_0700
+     * @tc.desc   test setUnicodeWrappedBidiDirection with RTL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidiDirection_static_0700', Level.LEVEL2, async (): Promise<void> => {
+      let res: string = 'تفاحة';
+      let ltr: string = i18n.I18NUtil.setUnicodeWrappedBidiDirection(res, 'LTR');
+      let LTR: string = 'الرقم' + ':' + ltr + ',' + '.الرقم';
+      console.log('i18n_setUnicodeWrappedBidiDirection_static_0700 value:', LTR);
+      expect(LTR).assertEqual('الرقم' +':'+ '\u2066' + 'تفاحة' + '\u2069' + ',' + '.الرقم');
+    })
+
+    /**
+     * @tc.name   i18n_setUnicodeWrappedBidiDirection_static_0800
+     * @tc.number SUB_GLOBAL_MIRRORDISPLAY_STATIC_0800
+     * @tc.desc   test setUnicodeWrappedBidiDirection with RTL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidiDirection_static_0800', Level.LEVEL2, async (): Promise<void> => {
+      let res: string = 'تفاحة';
+      let rtl: string = i18n.I18NUtil.setUnicodeWrappedBidiDirection(res, 'RTL');
+      let RTL: string = 'الرقم' + ':' + rtl + ',' + '.الرقم';
+      console.log('i18n_setUnicodeWrappedBidiDirection_static_0800 value:', RTL);
+      expect(RTL).assertEqual('الرقم' +':'+ '\u2067' + 'تفاحة' + '\u2069' + ',' + '.الرقم');
+    })
+
+    /**
+     * @tc.name   i18n_setUnicodeWrappedBidiDirection_static_0900
+     * @tc.number SUB_GLOBAL_MIRRORDISPLAY_STATIC_0900
+     * @tc.desc   test setUnicodeWrappedBidiDirection with ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('i18n_setUnicodeWrappedBidiDirection_static_0900', Level.LEVEL2, async (): Promise<void> => {
+      let res: string = '';
+      let ltr: string = i18n.I18NUtil.setUnicodeWrappedBidiDirection(res, 'LTR');
+      let LTR: string = '海内存' + ltr + '，天涯若比邻。';
+      console.log('i18n_setUnicodeWrappedBidiDirection_static_0900 value:', LTR);
+      expect(LTR).assertEqual('海内存' + '\u2066' + '\u2069' + '，天涯若比邻。');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0100
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0100
+     * @tc.desc test getAppDefaultTimeZone with Asia/Shanghai
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0100', Level.LEVEL2, () => {
+      let date: Date = new Date(2027, 10, 10, 10, 20, 30, 123);
+      let timeZone: i18n.TimeZone = i18n.getTimeZone('Asia/Shanghai');
+      let iso = new i18n.ISO8601DateTimeFormat({
+        dateFormat: 'calendar',
+        timePrecision: 'milliSeconds',
+        timeZone,
+        separatorStyle: 'basic',
+        displayTimeZone: true
+      });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0100 value:', value);
+      expect(value).assertEqual('20271110T102030.123+0800');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0200
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0200
+     * @tc.desc test getAppDefaultTimeZone with America/New_York
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0200', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 2, 10, 20, 30, 0);
+      let timeZone: i18n.TimeZone = i18n.getTimeZone('America/New_York');
+      let iso = new i18n.ISO8601DateTimeFormat({
+        dateFormat: 'ordinal',
+        timePrecision: 'seconds',
+        timeZone,
+        separatorStyle: 'extended',
+        displayTimeZone: false
+      });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0200 value:', value);
+      expect(value).assertEqual('2026-001T21:20:30');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0300
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0300
+     * @tc.desc test getAppDefaultTimeZone with Asia/Kolkata
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0300', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 2, 10, 20, 30, 0);
+      let timeZone: i18n.TimeZone = i18n.getTimeZone('Asia/Kolkata');
+      let iso = new i18n.ISO8601DateTimeFormat({
+        dateFormat: 'week',
+        timePrecision: 'minutes',
+        timeZone,
+        displayTimeZone: true
+      });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0300 value:', value);
+      expect(value).assertEqual('2026-W01-6T07:50+05:30');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0400
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0400
+     * @tc.desc test getAppDefaultTimeZone with Africa/Cairo
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0400', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 2, 10, 20, 30, 0);
+      let timeZone: i18n.TimeZone = i18n.getTimeZone('Africa/Cairo');
+      let iso = new i18n.ISO8601DateTimeFormat({
+        dateFormat: 'calendar',
+        timePrecision: 'hours',
+        timeZone,
+        displayTimeZone: true
+      });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0400 value:', value);
+      expect(value).assertEqual('2026-01-02T04+02:00');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0500
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0500
+     * @tc.desc test getAppDefaultTimeZone with Asia/Riyadh
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0500', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 1, 10, 20, 30, 0);
+      let timeZone: i18n.TimeZone = i18n.getTimeZone('Asia/Riyadh');
+      let iso = new i18n.ISO8601DateTimeFormat({
+        dateFormat: 'calendar',
+        timePrecision: 'dateOnly',
+        timeZone,
+        displayTimeZone: true
+      });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0500 value:', value);
+      expect(value).assertEqual('2026-01-01');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0700
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0700
+     * @tc.desc test getAppDefaultTimeZone with calendar
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0700', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 1, 10, 20, 30, 0);
+      let iso = new i18n.ISO8601DateTimeFormat({ dateFormat: 'calendar' });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0700 value:', value);
+      expect(value).assertEqual('2026-01-01T02:20:30Z');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0800
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0800
+     * @tc.desc test getAppDefaultTimeZone with milliSeconds
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0800', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 1, 10, 20, 30, 0);
+      let iso = new i18n.ISO8601DateTimeFormat({ timePrecision: 'milliSeconds' });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0800 value:', value);
+      expect(value).assertEqual('2026-01-01T02:20:30.000Z');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0900
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0900
+     * @tc.desc test getAppDefaultTimeZone with timeZone
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0900', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 1, 10, 20, 30, 0);
+      let timeZone: i18n.TimeZone = i18n.getTimeZone();
+      let iso = new i18n.ISO8601DateTimeFormat({ timeZone });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0800 value:', value);
+      expect(value).assertEqual('2026-01-01T10:20:30+08:00');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_1000
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_1000
+     * @tc.desc test getAppDefaultTimeZone with timeZone
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_1000', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 1, 10, 20, 30, 0);
+      let iso = new i18n.ISO8601DateTimeFormat({ displayTimeZone: true });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_1000 value:', value);
+      expect(value).assertEqual('2026-01-01T02:20:30Z');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_GetTimeZone_NullString_Test_Static_1100
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_GetTimeZone_nullString_Test_Static_1100
+     * @tc.desc test getAppDefaultTimeZone with timeZone
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_GetTimeZone_NullString_Test_Static_1100', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 1, 1, 20, 30, 0);
+      let timeZone: i18n.TimeZone = i18n.getTimeZone('');
+      let iso = new i18n.ISO8601DateTimeFormat({
+        dateFormat: 'calendar',
+        timePrecision: 'milliSeconds',
+        timeZone,
+        displayTimeZone: true
+      });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_GetTimeZone_NullString_Test_Static_1100 value:', value);
+      expect(value).assertEqual('2026-01-01T01:20:30.000+08:00');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_DateFormat_Undefined_Test_Static_1400
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_DateFormat_Undefined_Test_Static_1400
+     * @tc.desc test getAppDefaultTimeZone with dateFormat
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_DateFormat_Undefined_Test_Static_1400', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 1, 1, 20, 30, 0);
+      let timeZone: i18n.TimeZone = i18n.getTimeZone();
+      let iso = new i18n.ISO8601DateTimeFormat({
+        dateFormat: undefined,
+        timePrecision: 'milliSeconds',
+        timeZone,
+        displayTimeZone: true
+      });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_DateFormat_Undefined_Test_Static_1400 value:', value);
+      expect(value).assertEqual('2026-01-01T01:20:30.000+08:00');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_TimePrecision_Undefined_Test_Static_1500
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_TimePrecision_Undefined_Test_Static_1500
+     * @tc.desc test getAppDefaultTimeZone with timePrecision
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_TimePrecision_Undefined_Test_Static_1500', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 1, 1, 20, 30, 0);
+      let timeZone: i18n.TimeZone = i18n.getTimeZone();
+      let iso = new i18n.ISO8601DateTimeFormat({
+        dateFormat: 'calendar',
+        timePrecision: undefined,
+        timeZone,
+        displayTimeZone: true
+      });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_TimePrecision_Undefined_Test_Static_1500 value:', value);
+      expect(value).assertEqual('2026-01-01T01:20:30+08:00');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_SeparatorStyle_Undefined_Test_Static_1800
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_SeparatorStyle_Undefined_Test_Static_1800
+     * @tc.desc test getAppDefaultTimeZone with separatorStyle
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_SeparatorStyle_Undefined_Test_Static_1800', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 2, 10, 20, 30, 0);
+      let timeZone: i18n.TimeZone = i18n.getTimeZone();
+      let iso = new i18n.ISO8601DateTimeFormat({
+        dateFormat: 'calendar',
+        timePrecision: 'milliSeconds',
+        timeZone,
+        separatorStyle: undefined,
+        displayTimeZone: true
+      });
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_SeparatorStyle_Undefined_Test_Static_1800 value:', value);
+      expect(value).assertEqual('2026-01-02T10:20:30.000+08:00');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_Static_0100
+     * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_Static_0100
+     * @tc.desc test setChineseCalendarTime with cyclicalYear 43
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_GetChineseCalendar_Test_Static_0100', Level.LEVEL2, () => {
+      let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+      let chineseCalendar: i18n.ChineseCalendar = i18n.getChineseCalendar(locale);
+      chineseCalendar.setChineseCalendarTime({
+        gregorianYear: 2026,
+        cyclicalYear: 43,
+        month: 1,
+        date: 23,
+        isLeapMonth: false,
+        hour: 10,
+        minute: 20,
+        second: 30
+      })
+      let date: Date = new Date(2026, 3, 10, 10, 20, 30);
+      let value: number = chineseCalendar.compareDays(date);
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0100 value:', value);
+      expect(value).assertEqual(-1);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_Static_0200
+     * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_Static_0200
+     * @tc.desc test setChineseCalendarTime with cyclicalYear 49
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_GetChineseCalendar_Test_Static_0200', Level.LEVEL2, () => {
+      let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+      let chineseCalendar: i18n.ChineseCalendar = i18n.getChineseCalendar(locale);
+      chineseCalendar.setChineseCalendarTime({
+        gregorianYear: 2026,
+        cyclicalYear: 49,
+        month: 2,
+        date: 23
+      })
+      let value1: number = chineseCalendar.get('year');
+      let value2: number = chineseCalendar.get('month');
+      let value3: number = chineseCalendar.get('date');
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0200 value1:', value1);
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0200 value2:', value2);
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0200 value3:', value3);
+      expect(value1).assertEqual(49);
+      expect(value2).assertEqual(2);
+      expect(value3).assertEqual(23);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_Static_0300
+     * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_Static_0300
+     * @tc.desc test setChineseCalendarTime with cyclicalYear 49
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_GetChineseCalendar_Test_Static_0300', Level.LEVEL2, () => {
+      let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+      let chineseCalendar: i18n.ChineseCalendar = i18n.getChineseCalendar(locale);
+      chineseCalendar.setChineseCalendarTime({
+        gregorianYear: 2026,
+        cyclicalYear: 49,
+        month: 2,
+        date: 23,
+        isLeapMonth: true,
+        hour: 10,
+        minute: 20,
+        second: 30
+      })
+      chineseCalendar.add('year', 1);
+      let value: number = chineseCalendar.get('year');
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0300 value:', value);
+      expect(value).assertEqual(50);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_Static_0400
+     * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_Static_0400
+     * @tc.desc test setChineseCalendarTime with cyclicalYear 49
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_GetChineseCalendar_Test_Static_0400', Level.LEVEL2, () => {
+      let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+      let chineseCalendar: i18n.ChineseCalendar = i18n.getChineseCalendar(locale);
+      chineseCalendar.setChineseCalendarTime({
+        gregorianYear: 2026,
+        cyclicalYear: 49,
+        month: 2,
+        date: 23,
+        isLeapMonth: true,
+        hour: 10,
+        minute: 20,
+        second: 30
+      })
+      chineseCalendar.add('date', 1);
+      let value: number = chineseCalendar.get('date');
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0400 value:', value);
+      expect(value).assertEqual(24);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_Static_0500
+     * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_Static_0500
+     * @tc.desc test setChineseCalendarTime with cyclicalYear 49
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_GetChineseCalendar_Test_Static_0500', Level.LEVEL2, () => {
+      let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+      let chineseCalendar: i18n.ChineseCalendar = i18n.getChineseCalendar(locale);
+      let date: Date = new Date(2027, 10, 10, 10, 20, 30);
+      chineseCalendar.setTime(date);
+      let value: number = chineseCalendar.get('year');
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0500 value:', value);
+      expect(value).assertEqual(44);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_Static_0600
+     * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_Static_0600
+     * @tc.desc test setChineseCalendarTime with cyclicalYear 49
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_GetChineseCalendar_Test_Static_0600', Level.LEVEL2, () => {
+      let locale: Intl.Locale = new Intl.Locale('ar-EA');
+      let chineseCalendar: i18n.ChineseCalendar = i18n.getChineseCalendar(locale);
+      chineseCalendar.setChineseCalendarTime({
+        gregorianYear: 2026,
+        cyclicalYear: 43,
+        month: 2,
+        date: 23,
+        isLeapMonth: true,
+        hour: 10,
+        minute: 20,
+        second: 30
+      })
+      let value: number = chineseCalendar.get('year');
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0600 value:', value);
+      expect(value).assertEqual(43);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_Static_0700
+     * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_Static_0700
+     * @tc.desc test setChineseCalendarTime with chinese time and time
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_GetChineseCalendar_Test_Static_0700', Level.LEVEL2, () => {
+      let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+      let chineseCalendar: i18n.ChineseCalendar = i18n.getChineseCalendar(locale);
+      chineseCalendar.setTimeZone('Asia/Shanghai');
+      let calendar = i18n.getCalendar('zh-Hans-CN', 'gregory');
+      calendar.setTimeZone('Asia/Shanghai');
+      calendar.set(1947, 2, 23);
+      chineseCalendar.setTime(calendar.getTimeInMillis());
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0700 month1:', chineseCalendar.get('month'));
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0700 date1:', chineseCalendar.get('date'));
+      expect(chineseCalendar.get('month')).assertEqual(1);
+      expect(chineseCalendar.get('date')).assertEqual(1);
+      chineseCalendar.setChineseCalendarTime({
+        gregorianYear: 1947,
+        cyclicalYear: 24,
+        month: 1,
+        date: 1,
+        isLeapMonth: true,
+      })
+      calendar.setTime(chineseCalendar.getTimeInMillis());
+      let value1: number = calendar.get('month');
+      let value2: number = calendar.get('date');
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0700 value1:', value1);
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0700 value2:', value2);
+      expect(value1).assertEqual(2);
+      expect(value2).assertEqual(23);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_Static_0800
+     * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_Static_0800
+     * @tc.desc test setChineseCalendarTime with is_leap_month 1
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_GetChineseCalendar_Test_Static_0800', Level.LEVEL2, () => {
+      let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+      let chineseCalendar: i18n.ChineseCalendar = i18n.getChineseCalendar(locale);
+      chineseCalendar.setChineseCalendarTime({
+        gregorianYear: 1947,
+        cyclicalYear: 24,
+        month: 1,
+        date: 1,
+        isLeapMonth: true,
+      })
+      let value: number = chineseCalendar.get('is_leap_month');
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0800 value:', value);
+      expect(value).assertEqual(1);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_Static_0900
+     * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_Static_0900
+     * @tc.desc test setChineseCalendarTime with is_leap_month 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_GetChineseCalendar_Test_Static_0900', Level.LEVEL2, () => {
+      let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+      let chineseCalendar: i18n.ChineseCalendar = i18n.getChineseCalendar(locale);
+      chineseCalendar.setChineseCalendarTime({
+        gregorianYear: 2026,
+        cyclicalYear: 24,
+        month: 1,
+        date: 1,
+        isLeapMonth: true,
+      })
+      let value: number = chineseCalendar.get('is_leap_month');
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_0900 value:', value);
+      expect(value).assertEqual(0);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_Static_1000
+     * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_Static_1000
+     * @tc.desc test setChineseCalendarTime with is_leap_month 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_GetChineseCalendar_Test_Static_1000', Level.LEVEL2, () => {
+      let locale: Intl.Locale = new Intl.Locale('zh-Hans-CN');
+      let chineseCalendar: i18n.ChineseCalendar = i18n.getChineseCalendar(locale);
+      chineseCalendar.setChineseCalendarTime({
+        gregorianYear: 1947,
+        cyclicalYear: 24,
+        month: 1,
+        date: 1,
+        isLeapMonth: false,
+      })
+      let value: number = chineseCalendar.get('is_leap_month');
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_1000 value:', value);
+      expect(value).assertEqual(0);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_Static_1100
+     * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_Static_1100
+     * @tc.desc test setChineseCalendarTime with checkLeapMonth 1900, 37, 7
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_GetChineseCalendar_Test_Static_1100', Level.LEVEL2, () => {
+      let value: boolean = i18n.ChineseCalendar.checkLeapMonth(1900, 37, 7);
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_1100 value:', value);
+      expect(value).assertEqual(true);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_GetChineseCalendar_Test_Static_1200
+     * @tc.number SUB_GLOBAL_GetChineseCalendar_Test_Static_1200
+     * @tc.desc test setChineseCalendarTime with checkLeapMonth 1900, 37, 6
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_GetChineseCalendar_Test_Static_1200', Level.LEVEL2, () => {
+      let value: boolean = i18n.ChineseCalendar.checkLeapMonth(1900, 37, 6);
+      console.log('SUB_GLOBAL_GetChineseCalendar_Test_Static_1200 value:', value);
+      expect(value).assertEqual(false);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0100
+     * @tc.number SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0100
+     * @tc.desc test isDaylightSavingTime with date
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0100', Level.LEVEL2, () => {
+      let date: Date = new Date(2027, 10, 10, 10, 20, 30, 123);
+      let timeZone:i18n.TimeZone = i18n.getTimeZone('Asia/Shanghai');
+      let value: boolean = timeZone.isDaylightSavingTime(date);
+      console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0100 value:', value);
+      expect(value).assertEqual(false);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0200
+     * @tc.number SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0200
+     * @tc.desc test isDaylightSavingTime with date
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0200', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 2, 29, 7, 59, 30, 123);
+      let timeZone:i18n.TimeZone = i18n.getTimeZone('Europe/Chisinau');
+      let value: boolean = timeZone.isDaylightSavingTime(date);
+      console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0200 value:', value);
+      expect(value).assertEqual(false);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0300
+     * @tc.number SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0300
+     * @tc.desc test isDaylightSavingTime with date
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0300', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 2, 29, 9, 0, 0, 0);
+      let timeZone:i18n.TimeZone = i18n.getTimeZone('Europe/Chisinau');
+      let value: boolean = timeZone.isDaylightSavingTime(date);
+      console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0300 value:', value);
+      expect(value).assertEqual(true);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0400
+     * @tc.number SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0400
+     * @tc.desc test isDaylightSavingTime with date
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0400', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 9, 25, 8, 59, 0, 0);
+      let timeZone:i18n.TimeZone = i18n.getTimeZone('Europe/Chisinau');
+      let value: boolean = timeZone.isDaylightSavingTime(date);
+      console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0400 value:', value);
+      expect(value).assertEqual(true);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0500
+     * @tc.number SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0500
+     * @tc.desc test isDaylightSavingTime with date
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0500', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 9, 25, 9, 0, 0, 0);
+      let timeZone:i18n.TimeZone = i18n.getTimeZone('Europe/Chisinau');
+      let value: boolean = timeZone.isDaylightSavingTime(date);
+      console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0500 value:', value);
+      expect(value).assertEqual(false);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0600
+     * @tc.number SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0600
+     * @tc.desc test isDaylightSavingTime with date
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0600', Level.LEVEL2, () => {
+      let date: Date = new Date(2024, 9, 6, 11, 0, 0, 0);
+      let timeZone:i18n.TimeZone = i18n.getTimeZone('America/Asuncion');
+      let value: boolean = timeZone.isDaylightSavingTime(date);
+      console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0600 value:', value);
+      expect(value).assertEqual(false);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0700
+     * @tc.number SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0700
+     * @tc.desc test isDaylightSavingTime with date
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0700', Level.LEVEL2, () => {
+      let date: Date = new Date(2024, 9, 6, 12, 0, 0, 0);
+      let timeZone:i18n.TimeZone = i18n.getTimeZone('America/Asuncion');
+      let value: boolean = timeZone.isDaylightSavingTime(date);
+      console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0700 value:', value);
+      expect(value).assertEqual(true);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0800
+     * @tc.number SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0800
+     * @tc.desc test isDaylightSavingTime with date
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0800', Level.LEVEL2, () => {
+      let date: Date = new Date(2025, 9, 6, 11, 0, 0, 0);
+      let timeZone:i18n.TimeZone = i18n.getTimeZone('America/Asuncion');
+      let value: boolean = timeZone.isDaylightSavingTime(date);
+      console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0800 value:', value);
+      expect(value).assertEqual(false);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0900
+     * @tc.number SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0900
+     * @tc.desc test isDaylightSavingTime with date
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0900', Level.LEVEL2, () => {
+      let date: Date = new Date(2025, 9, 6, 1, 0, 0, 0);
+      let timeZone:i18n.TimeZone = i18n.getTimeZone();
+      let value: boolean = timeZone.isDaylightSavingTime(date);
+      console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0900 value:', value);
+      expect(value).assertEqual(false);
     })
 
   })

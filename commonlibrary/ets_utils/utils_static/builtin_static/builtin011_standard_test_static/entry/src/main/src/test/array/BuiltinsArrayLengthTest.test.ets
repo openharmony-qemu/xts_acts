@@ -64,7 +64,7 @@ export default function BuiltinsArrayLengthTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayLengthTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
 
       const result = arr.length;
       const expected = 5;
@@ -265,7 +265,7 @@ export default function BuiltinsArrayLengthTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayLengthTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr.fill(0);
 
       const result = arr.length;
@@ -283,7 +283,7 @@ export default function BuiltinsArrayLengthTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayLengthTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(10000);
+      const arr = new Array<number>(10000, (i) => i);
       for (let i = 0; i < 10000; i++) {
         arr[i] = i;
       }

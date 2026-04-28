@@ -941,6 +941,7 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
           if(zoomRatioRange!= undefined && zoomRatioRange.length > 0) {
             console.info(TAG, testName, "zoomRatioRange",zoomRatioRange);
             mPhotoSession.setZoomRatio(zoomRatioRange[0]);
+            await sleep(1000)
             let res = mPhotoSession.getZoomRatio();
             console.info(TAG, testName, ' setZoomRatio.zoomRatioRange[0]', zoomRatioRange[0]);
             expect(res).assertEqual(zoomRatioRange[0])

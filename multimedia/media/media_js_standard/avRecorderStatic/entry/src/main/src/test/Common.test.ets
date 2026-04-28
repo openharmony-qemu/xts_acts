@@ -195,6 +195,19 @@ export default class Commmon {
     return avRecorder;
   }
 
+  async createAVRecorder(): Promise<media.AVRecorder | undefined> {
+    console.info('case createAVRecorder called');
+    try {
+      let avRecorder: media.AVRecorder | undefined = await media.createAVRecorder();
+      if (avRecorder) {
+        return avRecorder;
+      }
+    } catch (error) {
+      console.info(`createAVRecorder catchCallback, error: ${error}`);
+    };
+    return undefined;
+  }
+
   AV_RECORDER_STATE: StateObject = {
     IDLE: 'idle',
     PREPARED: 'prepared',
@@ -232,6 +245,22 @@ export default class Commmon {
       }).catch((err: Error) => {
         console.info('prepare failed and catch error is ' + err.message);
       });
+    }
+  }
+
+  setMetadata(avRecorder: media.AVRecorder) {
+    if (typeof (avRecorder) == 'undefined') {
+    } else {
+      console.info('setMetadata in current state' + avRecorder.state);
+      let meta: Record<string, string> = {
+        'com.openharmony.userdefine': '10',
+        'com.openharmony.userdefine2': '20'
+      };
+      try {
+        avRecorder.setMetadata(meta);
+      } catch (err) {
+        console.error('Failed to set metadata and catch error is ' + err.message);
+      }
     }
   }
 
@@ -485,7 +514,7 @@ export default class Commmon {
         case 'started':
           console.info(`case avRecorderWithCallBack is started`)
           expect(avRecorder.state).assertEqual('started');
-          waitForCompletion(async () => {await this.sleep(recorderTime);})
+          this.sleep(recorderTime).awaitSync()
           this.stopCallback(avRecorder);
           break;
         case 'paused':
@@ -1399,7 +1428,7 @@ export default class Commmon {
         case 'started':
           console.info(`case getInputSurfaceTest33 state is started`)
           expect(avRecorder.state).assertEqual('started');
-          waitForCompletion(async () => {await this.sleep(recorderTime);})
+          this.sleep(recorderTime).awaitSync()
           console.info(`case getInputSurfaceTest33 111`)
           this.getInputSurfacePromise(avRecorder)
           console.info(`case getInputSurfaceTest33 222`)
@@ -1446,7 +1475,7 @@ export default class Commmon {
         case 'started':
           console.info(`case getInputSurfaceTest34 state is started`)
           expect(avRecorder.state).assertEqual('started');
-          waitForCompletion(async () => {await this.sleep(recorderTime);})
+          this.sleep(recorderTime).awaitSync()
           this.pausePromise(avRecorder)
           break;
         case 'paused':
@@ -1485,7 +1514,7 @@ export default class Commmon {
     done: () => void) {
     console.info(`case getInputSurfaceTest35 in`);
     avRecorder.onStateChange((state: media.AVRecorderState, reason: media.StateChangeReason) => {
-      waitForCompletion(async () => {
+      (async () => {
       console.info('case state has changed, new state is :' + state);
       switch (state) {
         case 'prepared':
@@ -1521,7 +1550,7 @@ export default class Commmon {
         default:
           console.info('case state is unknown');
       }
-      })
+      })().awaitSync()
     });
     avRecorder.onError((err: BusinessError|null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
@@ -1540,7 +1569,7 @@ export default class Commmon {
     done: () => void) {
     console.info(`case getInputSurfaceTest36 in`);
     avRecorder.onStateChange((state: media.AVRecorderState, reason: media.StateChangeReason) => {
-      waitForCompletion(async () => {
+      (async () => {
       console.info('case state has changed, new state is :' + state);
       switch (state) {
         case 'prepared':
@@ -1576,7 +1605,7 @@ export default class Commmon {
         default:
           console.info('case state is unknown');
       }
-    })
+    })().awaitSync()
     });
     avRecorder.onError((err: BusinessError|null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
@@ -1595,7 +1624,7 @@ export default class Commmon {
     done: () => void) {
     console.info(`case getInputSurfaceTest37 in`);
     avRecorder.onStateChange((state: media.AVRecorderState, reason: media.StateChangeReason) => {
-      waitForCompletion(async () => {
+      (async () => {
       console.info('case state has changed, new state is :' + state);
       switch (state) {
         case "idle":
@@ -1630,7 +1659,7 @@ export default class Commmon {
         default:
           console.info('case state is unknown');
       }
-    })
+    })().awaitSync()
     });
     avRecorder.onError((err: BusinessError|null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
@@ -1789,7 +1818,7 @@ export default class Commmon {
         case 'started':
           console.info(`case getAVRecorderConfigTest41 state is started`)
           expect(avRecorder.state).assertEqual('started');
-          waitForCompletion(async () => {await this.sleep(recorderTime);})
+          this.sleep(recorderTime).awaitSync()
           console.info(`case getAVRecorderConfigTest41 111`)
           this.getAVRecorderConfigPromise(avConfig, avRecorder)
           console.info(`case getAVRecorderConfigTest41 222`)
@@ -1836,7 +1865,7 @@ export default class Commmon {
         case 'started':
           console.info(`case getAVRecorderConfigTest42 state is started`)
           expect(avRecorder.state).assertEqual('started');
-          waitForCompletion(async () => {await this.sleep(recorderTime);})
+          this.sleep(recorderTime).awaitSync()
           this.pausePromise(avRecorder)
           break;
         case 'paused':
@@ -1875,7 +1904,7 @@ export default class Commmon {
     done: () => void) {
     console.info(`case getAVRecorderConfigTest43 in`);
     avRecorder.onStateChange((state: media.AVRecorderState, reason: media.StateChangeReason) => {
-      waitForCompletion(async () => {
+      (async () => {
       console.info('case state has changed, new state is :' + state);
       switch (state) {
         case 'prepared':
@@ -1911,7 +1940,7 @@ export default class Commmon {
         default:
           console.info('case state is unknown');
       }
-    })
+    })().awaitSync()
     });
     avRecorder.onError((err: BusinessError|null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
@@ -1930,7 +1959,7 @@ export default class Commmon {
     done: () => void) {
     console.info(`case getAVRecorderConfigTest44 in`);
     avRecorder.onStateChange((state: media.AVRecorderState, reason: media.StateChangeReason) => {
-      waitForCompletion(async () => {
+      (async () => {
       console.info('case state has changed, new state is :' + state);
       switch (state) {
         case 'prepared':
@@ -1966,7 +1995,7 @@ export default class Commmon {
         default:
           console.info('case state is unknown');
       }
-    })
+    })().awaitSync()
     });
     avRecorder.onError((err: BusinessError|null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
@@ -1978,7 +2007,7 @@ export default class Commmon {
     done: () => void) {
     console.info(`case getAVRecorderConfigTest45 in`);
     avRecorder.onStateChange((state: media.AVRecorderState, reason: media.StateChangeReason) => {
-      waitForCompletion(async () => {
+      (async () => {
       console.info('case state has changed, new state is :' + state);
       switch (state) {
         case "idle":
@@ -2013,7 +2042,7 @@ export default class Commmon {
         default:
           console.info('case state is unknown');
       }
-    })
+    })().awaitSync()
     });
     avRecorder.onError((err: BusinessError|null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
@@ -2710,6 +2739,34 @@ export default class Commmon {
     let avg = totalTime / 10;
     console.info("releaseTimeTestPromise avg time  is :" + avg)
     done();
+  }
+
+  async avRecorderSetMetadataTest(avConfig: media.AVRecorderConfig, recorderTime: number, done: () => void): Promise<boolean> {
+    let avRecorder: media.AVRecorder | undefined = await this.createAVRecorder();
+    if (avRecorder) {
+      try {
+        console.info('case avConfig.url is ' + avConfig.url);
+        await this.preparePromise(avRecorder, avConfig);
+        this.setMetadata(avRecorder);
+        await this.startPromise(avRecorder, recorderTime);
+        await this.stopPromise(avRecorder);
+        await avRecorder.reset().then(() => {
+          console.info('reset avRecorderSetMetadataTest success');
+        }).catch((err: Error) => {
+          console.info('reset avRecorderSetMetadataTest failed and catch error is ' + err.message);
+        });
+        await this.releaseDone(avRecorder, done);
+        return true;
+      } catch (err) {
+        console.error('avRecorderSetMetadataTest failed with error: ' + (err as Error).message);
+        done();
+        return false;
+      }
+    } else {
+      console.error('avRecorder is undefined');
+      done();
+      return false;
+    }
   }
 
   AV_RECORDER_AUDIO_STATE: AudioRecorderState = {

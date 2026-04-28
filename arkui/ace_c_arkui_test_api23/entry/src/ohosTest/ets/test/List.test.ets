@@ -51,6 +51,7 @@ import refreshAttrsTest from './refresh/RefreshAttrsTest.test'
 import ImageAntialiasedTest from './imageTest/ImageAntialiasedTest.test'
 import ListEmptyTest from "./list/ListEmptyTest.test";
 import GridEmptyTest from "./grid/GridEmptyTest.test";
+import WaterFlowEmptyTest from "./waterFlow/WaterFlowEmptyTest.test";
 import TextInputDeletBackward from "./deleteBackward/DeleteBackwardTest.test";
 import TextAreaDeletBackward from "./deleteBackward/TextAreaDeleteBackwardTest.test";
 import TextTest from "./TextTest/TextTest.test";
@@ -104,6 +105,7 @@ export default function testsuite() {
   ImageAntialiasedTest();
   ListEmptyTest();
   GridEmptyTest();
+  WaterFlowEmptyTest();
   SelectedDragPreviewStyleTextTest()
   SelectedDragPreviewStyleTextAreaTest()
   SelectedDragPreviewStyleTextInputTest()

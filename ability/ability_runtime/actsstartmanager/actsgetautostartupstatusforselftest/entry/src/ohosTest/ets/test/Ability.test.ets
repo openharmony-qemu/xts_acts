@@ -18,6 +18,7 @@ import { autoStartupManager, common } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { worker, MessageEvents } from '@kit.ArkTS';
 import commonEventManager from '@ohos.commonEventManager';
+import systemParameterEnhance from "@ohos.systemParameterEnhance";
 
 let context: common.UIAbilityContext;
 let mySubscriber: commonEventManager.CommonEventSubscriber;
@@ -137,6 +138,25 @@ export default function abilityTest() {
         expect().assertFail();
         done();
       }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_IsAutoStartupSupported_0100
+     * @tc.number SUB_Ability_AbilityRuntime_IsAutoStartupSupported_0100
+     * @tc.desc   Test isAutoStartupSupported() returns boolean value based on system parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_IsAutoStartupSupported_0100', Level.LEVEL0, async (done: Function) => {
+      let autoStartupEnabled: string = systemParameterEnhance.getSync('const.product.appboot.setting.enabled');
+      let isSupported: boolean = autoStartupManager.isAutoStartupSupported();
+      if (autoStartupEnabled === 'true') {
+        expect(isSupported).assertTrue();
+      } else {
+        expect(isSupported).assertFalse();
+      }
+      done();
     })
 
   })

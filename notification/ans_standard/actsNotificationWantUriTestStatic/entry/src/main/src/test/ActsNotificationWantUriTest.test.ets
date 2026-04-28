@@ -86,7 +86,7 @@ function getWantAgentByUri(uri: string): WantAgent | undefined {
         `${TEST_SUITE_NAME}#getWantAgentByUri getWantAgent failed, code:${err.code} message:${err.message}`);
     }
   });
-  waitForCompletion(async()=> {await Utils.msSleep(WAIT_TIME4000);});
+  Utils.msSleep(WAIT_TIME4000).awaitSync();
   return wantAgent1;
 }
 

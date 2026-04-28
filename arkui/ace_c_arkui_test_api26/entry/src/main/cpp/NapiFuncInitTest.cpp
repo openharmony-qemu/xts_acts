@@ -14,6 +14,7 @@
  */
 #include "common/common.h"
 #include "onAreaChange/AreaChangeErrorCodeTest.cpp"
+#include "gestureIntercept/GestureErrorCodeTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -27,6 +28,10 @@ static napi_value Init(napi_env env, napi_value exports)
     napi_property_descriptor desc[] = {
         {"AreaChangeErrorCode001", nullptr, AreaChangeErrorCode001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"AreaChangeErrorCode002", nullptr, AreaChangeErrorCode002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GestureInterceptErrorCode001", nullptr, GestureInterceptErrorCode001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GestureInterceptErrorCode002", nullptr, GestureInterceptErrorCode002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GestureInterceptErrorCode003", nullptr, GestureInterceptErrorCode003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GestureInterceptErrorCode004", nullptr, GestureInterceptErrorCode004, nullptr, nullptr, nullptr, napi_default, nullptr},
         };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

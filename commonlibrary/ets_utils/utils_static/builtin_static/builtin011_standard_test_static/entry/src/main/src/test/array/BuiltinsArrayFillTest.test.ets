@@ -51,7 +51,7 @@ export default function BuiltinsArrayFillTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayFillTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, 0);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -73,7 +73,7 @@ export default function BuiltinsArrayFillTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFillTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, 0);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -99,7 +99,7 @@ export default function BuiltinsArrayFillTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFillTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, 0);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -125,7 +125,7 @@ export default function BuiltinsArrayFillTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFillTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, 0);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -151,7 +151,7 @@ export default function BuiltinsArrayFillTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFillTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, 0);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -177,7 +177,7 @@ export default function BuiltinsArrayFillTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFillTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, 0);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -199,7 +199,7 @@ export default function BuiltinsArrayFillTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFillTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, 0);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -221,7 +221,7 @@ export default function BuiltinsArrayFillTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFillTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, 0);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -243,7 +243,7 @@ export default function BuiltinsArrayFillTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFillTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, 0);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -265,7 +265,7 @@ export default function BuiltinsArrayFillTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayFillTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, 0);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -287,7 +287,7 @@ export default function BuiltinsArrayFillTest(): void {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayFillTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, 0);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -309,7 +309,7 @@ export default function BuiltinsArrayFillTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFillTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(0);
+      const arr = new Array<number>();
       
       const result = arr.fill(0);
       
@@ -326,7 +326,7 @@ export default function BuiltinsArrayFillTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFillTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1);
+      const arr = Array.create<number>(1, 0);
       arr[0] = 42;
       
       const result = arr.fill(0);
@@ -347,7 +347,7 @@ export default function BuiltinsArrayFillTest(): void {
 
       
       const obj: TestObject = { "value": 42 };
-      const arr = new Array<TestObject>(3);
+      const arr = Array.create<TestObject>(3, obj);
       
       const result = arr.fill(obj);
       

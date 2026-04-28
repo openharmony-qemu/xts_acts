@@ -27,7 +27,7 @@ export default function calendarPickerOnChangeTest() {
 
   describe('CalendarPickerOnChangeTest', () => {
     let PAGE_TAG = 'CalendarPickerOnChangeTest';
-    waitForCompletion(async ()=>{await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_testwearcrop.static", "EntryAbility")})
+    UtilsTest.startAbility("com.openharmony.arkui_capi_xts_testwearcrop.static", "EntryAbility").awaitSync()
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!
 
     beforeAll(async (): Promise<void> => {

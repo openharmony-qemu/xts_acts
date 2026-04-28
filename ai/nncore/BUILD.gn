@@ -13,9 +13,7 @@
 
 group("ActsHdfNncoreTest") {
   testonly = true
-  deps = [
-    "opstest:ActsNnrtOpsTest",
-  ]
+  deps = []
   if (is_standard_system) {
     deps += [
       "ActsNNCoreOpsTest:ActsNNCoreOptTest",

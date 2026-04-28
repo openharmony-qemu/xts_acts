@@ -1543,7 +1543,7 @@ export default function windowImmersiveTest() {
         await windowClass.setWindowSystemBarEnable(['status', 'navigation']);
         console.info(`${caseName} Succeeded in setting the status bar to be visible.`);
         await sleep(1000);
-        if(isFreeWindowMode || deviceType == 'wearable'){
+        if(isFreeWindowMode || deviceType == 'wearable' || deviceType == 'tv'){
           expect(flag).assertEqual(0)
           done()
         }else{
@@ -2264,7 +2264,7 @@ export default function windowImmersiveTest() {
           await sleep(100);
           let avoidArea = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);
           console.info(`${caseName} Get Window Avoid Area: ${JSON.stringify(avoidArea)}`);
-          if(isFreeWindowMode || deviceType == 'wearable'){
+          if(isFreeWindowMode || deviceType == 'wearable' || deviceType == 'tv'){
             expect(avoidArea.topRect.height).assertEqual(0);
             done();
           }else{

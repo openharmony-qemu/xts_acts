@@ -63,7 +63,7 @@ export default function BuiltinsArraySpliceTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArraySpliceTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -85,7 +85,7 @@ export default function BuiltinsArraySpliceTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArraySpliceTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -111,7 +111,7 @@ export default function BuiltinsArraySpliceTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySpliceTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -133,7 +133,7 @@ export default function BuiltinsArraySpliceTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySpliceTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -159,7 +159,7 @@ export default function BuiltinsArraySpliceTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySpliceTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -181,7 +181,7 @@ export default function BuiltinsArraySpliceTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArraySpliceTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -203,7 +203,7 @@ export default function BuiltinsArraySpliceTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArraySpliceTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -225,7 +225,7 @@ export default function BuiltinsArraySpliceTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySpliceTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<string>(4);
+      const arr = Array.create<string>(4, '');
       arr[0] = 'a';
       arr[1] = 'b';
       arr[2] = 'c';
@@ -252,7 +252,7 @@ export default function BuiltinsArraySpliceTest() {
       const obj1: Record<string, string> = { "name": 'test1' };
       const obj2: Record<string, string> = { "name": 'test2' };
       const obj3: Record<string, string> = { "name": 'test3' };
-      const arr = new Array<Record<string, string>>(3);
+      const arr = Array.create<Record<string, string>>(3, obj1);
       arr[0] = obj1;
       arr[1] = obj2;
       arr[2] = obj3;
@@ -274,7 +274,7 @@ export default function BuiltinsArraySpliceTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArraySpliceTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -300,7 +300,7 @@ export default function BuiltinsArraySpliceTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArraySpliceTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(5);
+      const arr = Array.create<number>(5, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -328,7 +328,7 @@ export default function BuiltinsArraySpliceTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySpliceTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -350,7 +350,7 @@ export default function BuiltinsArraySpliceTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySpliceTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -374,7 +374,7 @@ export default function BuiltinsArraySpliceTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySpliceTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -396,7 +396,7 @@ export default function BuiltinsArraySpliceTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySpliceTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -418,7 +418,7 @@ export default function BuiltinsArraySpliceTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArraySpliceTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -441,7 +441,7 @@ export default function BuiltinsArraySpliceTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArraySpliceTest1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(3);
+      const arr = Array.create<number>(3, NaN);
       arr[0] = 1;
       arr[1] = 2;
       arr[2] = 3;
@@ -464,7 +464,7 @@ export default function BuiltinsArraySpliceTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySpliceTest1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<string>(4);
+      const arr = Array.create<string>(4, '');
       arr[0] = 'a';
       arr[1] = 'b';
       arr[2] = 'c';
@@ -495,7 +495,7 @@ export default function BuiltinsArraySpliceTest() {
       const obj3: Record<string, string> = { "name": 'test3' };
       const obj4: Record<string, string> = { "name": 'test4' };
       const obj5: Record<string, string> = { "name": 'test5' };
-      const arr = new Array<Record<string, string>>(3);
+      const arr = Array.create<Record<string, string>>(3, obj1);
       arr[0] = obj1;
       arr[1] = obj2;
       arr[2] = obj3;

@@ -75,7 +75,7 @@ async function testHMACDigestPromise(HMACAlgoName: string, keyAlgoName: string):
         await globalHMAC.update(inBlob);
       })
       .then<cryptoFramework.DataBlob>(() => {
-        return waitForCompletion(async () => {return await globalHMAC.doFinal();}) as cryptoFramework.DataBlob
+        return (async () => {return await globalHMAC.doFinal();})().awaitSync() as cryptoFramework.DataBlob
       })
       .then((macOutput: cryptoFramework.DataBlob) => {
         console.log("HMAC result:" + macOutput.data);

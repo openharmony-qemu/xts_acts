@@ -16,6 +16,11 @@
 #include "manager/PluginManagerTest.h"
 #include "onAreaChange/RegisterCommonAreaApproximateChangeEventTest.h"
 #include "onAreaChange/UnregisterCommonAreaApproximateChangeEventTest.h"
+#include "orphanCharOptimization/containerTest.h"
+#include "orphanCharOptimization/orphanCharOptimizationTest.h"
+#include "gestureIntercept/GestureInterceptTest.h"
+#include "passThrough/PassThroughTest.h"
+
 namespace ArkUICapiTest {
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
@@ -32,7 +37,10 @@ static napi_value Init(napi_env env, napi_value exports)
                 nullptr, nullptr, nullptr, napi_default, nullptr},
         {"UnregisterCommonAreaApproximateChangeEventTest", nullptr, 
             UnregisterCommonAreaApproximateChangeEventTest::CreateNativeNode,nullptr, nullptr, nullptr, napi_default, nullptr},
-        
+        {"GestureInterceptTest", nullptr, GestureInterceptTest::CreateNativeNode,
+                nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"PassThroughTest", nullptr, PassThroughTest::CreateNativeNode,
+                nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");
