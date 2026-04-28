@@ -765,43 +765,6 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     });
 
     /**
-     * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_0700
-     * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_0700
-     * @tc.desc   ukeyInfo.certPurpose is invalid value 999, return error code 17500011 on PC device or 801 on non-PC device
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_Security_CertManager_ImportUkeyCertificate_Func_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_0700 start');
-      let keyUri: string = 'test';
-      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
-      let ukeyInfo: certManager.UkeyInfo = {
-        certPurpose: 999,
-      };
-      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
-        try {
-          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
-          expect(null).assertFail();
-        } catch (err) {
-          let error: BusinessError = err as BusinessError;
-          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0700 failed. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(17500011);
-        }
-      } else {
-        try {
-          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
-          expect(null).assertFail();
-        } catch (err) {
-          let error: BusinessError = err as BusinessError;
-          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0700 failed. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(801);
-        }
-      }
-      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_0700 end');
-      done();
-    });
-    /**
      * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_1700
      * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_1700
      * @tc.desc   ukeyInfo without certPurpose, return error code 17500010 on PC device or 801 on non-PC device

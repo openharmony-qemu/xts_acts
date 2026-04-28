@@ -21,8 +21,8 @@ import { priRsaCredData } from './utils/common/common_parameter';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "../../../hypium/index";
 import hilog from '@ohos.hilog';
 import { canIUse } from '@internal.full.global';
-let domain: int = 0x0000;
-let tag: string = 'testTag';
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
   describe('certManagerPubCertJsAPIFunctionTestUnitThree', (): void => {
@@ -320,6 +320,41 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
         }
       }
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_0600 end');
+      done();
+    });
+	/**
+     * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1700
+     * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1700
+     * @tc.desc   ukeyInfo without certPurpose, return error code 17500010 on PC device or 801 on non-PC device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1700 start');
+      let keyUri: string = 'test';
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      let ukeyInfo: certManager.UkeyInfo = {};
+      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
+        try {
+          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1700 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(17500011);
+        }
+      } else {
+        try {
+          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1700 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(801);
+        }
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1700 end');
       done();
     });
   })
