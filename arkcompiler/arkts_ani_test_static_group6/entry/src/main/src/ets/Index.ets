@@ -13,8 +13,35 @@
  * limitations under the License.
  */
 
+export class TestClass {
+  public constructor () {}
+  public sum(a: int, b: int): int {
+    return a + b;
+  }
+
+  public newClass (): TestClass{
+    return new TestClass();
+  }
+
+  static multiply(a: number, b: number): number {
+    return a * b;
+  }
+
+}
+
 export class Foo {
   native test_GetVersion(): int;
+  native test_AttachDetach(): int;
+  native test_AttachDetach_WithInterop(): int;
+  native test_Attach_InvalidResult(): int;
+  native test_Attach_InvalidVersion(): int;
+  native test_Attach_InvalidOption(): int;
+  native test_Attach_RepeatAttach(): int;
+  native test_Attach_RepeatDetach(): int;
+  native test_Detach_WithoutAttach(): int;
+  native test_ConcurrentAttach(): int;
+  native test_ConcurrentMainThreadWorker(): int;
+  native test_CreateObjectInWorker(): int;
 
   constructor() {
   }

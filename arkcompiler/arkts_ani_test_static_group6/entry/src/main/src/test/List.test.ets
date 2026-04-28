@@ -14,7 +14,9 @@
  */
 
 import versionInfoTest from "./ActsVersionInfo.test";
+import AttachThreadTest from './ActsAttachThread.test'
 
-export default function testsuite() {
+export default function testsuite() :void{
     versionInfoTest();
+    AttachThreadTest();
 }
