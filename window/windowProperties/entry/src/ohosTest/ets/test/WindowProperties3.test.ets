@@ -237,7 +237,7 @@ export default function windowPropertiesTest3() {
 
     /**
      * @tc.name   testSetTouchableAreas_exceedMaxRects
-     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_ERROR_1300016_0100
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_FUNCTION_0600
      * @tc.desc   设置超过最大数量（11个）的可触摸区域，验证1300016
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -271,7 +271,7 @@ export default function windowPropertiesTest3() {
 
     /**
      * @tc.name   testSetTouchableAreas_outOfWindowRange
-     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_ERROR_1300016_0200
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_FUNCTION_0700
      * @tc.desc   设置超出窗口范围的可触摸区域，验证1300016
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -304,7 +304,7 @@ export default function windowPropertiesTest3() {
 
     /**
      * @tc.name   testSetTouchableAreas_negativeWidthHeight
-     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_ERROR_1300016_0300
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_FUNCTION_0800
      * @tc.desc   设置宽/高为负值的可触摸区域，验证1300016
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -409,7 +409,7 @@ export default function windowPropertiesTest3() {
 
     /**
      * @tc.name   testSetTouchableAreas_windowDestroyed
-     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_ERROR_1300002_0100
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_BOUNDARY_0300
      * @tc.desc   窗口销毁后调用，验证1300002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -635,7 +635,7 @@ export default function windowPropertiesTest3() {
 
     /**
      * @tc.name   testSetWindowContainerModalColor_windowDestroyed
-     * @tc.number SUB_WINDOW_SETWINDOWCONTAINERMODALCOLOR_ERROR_1300002_0100
+     * @tc.number SUB_WINDOW_SETWINDOWCONTAINERMODALCOLOR_FUNCTION_0600
      * @tc.desc   窗口销毁后调用，验证1300002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -681,7 +681,7 @@ export default function windowPropertiesTest3() {
 
     /**
      * @tc.name   testSetWindowContainerModalColor_subWindow
-     * @tc.number SUB_WINDOW_SETWINDOWCONTAINERMODALCOLOR_ERROR_1300004_0100
+     * @tc.number SUB_WINDOW_SETWINDOWCONTAINERMODALCOLOR_FUNCTION_0700
      * @tc.desc   子窗口调用，验证1300004
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -893,7 +893,7 @@ export default function windowPropertiesTest3() {
 
     /**
      * @tc.name   testGetAllWindowLayoutInfo_invalidDisplayId
-     * @tc.number SUB_WINDOW_GETALLWINDOWLAYOUTINFO_ERROR_401_0100
+     * @tc.number SUB_WINDOW_GETALLWINDOWLAYOUTINFO_FUNCTION_0400
      * @tc.desc   使用无效displayId（负数），验证401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -925,7 +925,7 @@ export default function windowPropertiesTest3() {
 
     /**
      * @tc.name   testGetAllWindowLayoutInfo_invalidAboveWindowId
-     * @tc.number SUB_WINDOW_GETALLWINDOWLAYOUTINFO_ERROR_1300016_0200
+     * @tc.number SUB_WINDOW_GETALLWINDOWLAYOUTINFO_FUNCTION_0500
      * @tc.desc   foregroundAboveWindow传入不存在windowId，验证1300016
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -954,7 +954,7 @@ export default function windowPropertiesTest3() {
 
     /**
      * @tc.name   testGetAllWindowLayoutInfo_invalidBelowWindowId
-     * @tc.number SUB_WINDOW_GETALLWINDOWLAYOUTINFO_ERROR_1300016_0300
+     * @tc.number SUB_WINDOW_GETALLWINDOWLAYOUTINFO_FUNCTION_0600
      * @tc.desc   foregroundBelowWindow传入不存在windowId，验证1300016
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
