@@ -358,8 +358,8 @@ namespace matchHelperTest {
   export function testObjectParam(): MatchStringResult {
     const str: string = '[object Object] is default';
     const obj: MatchHelperEmptyObject = new MatchHelperEmptyObject();
-    const m: RegExpMatchArray | null = str.match(new RegExp('\\[object Object\\]'));
-    const _keep: string = String(obj);
+    const pattern: string = String(obj);
+    const m: RegExpMatchArray | null = str.match(pattern);
     return { result: m !== null ? m[0] : undefined };
   }
 
