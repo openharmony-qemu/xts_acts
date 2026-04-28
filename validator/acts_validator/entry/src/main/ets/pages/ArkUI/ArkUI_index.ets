@@ -163,6 +163,7 @@ struct IndexPage {
     { title: 'CapionDigitalCrown', uri: 'pages/ArkUI/CapionDigitalCrown' },
     { title: 'PassThrough', uri: 'pages/ArkUI/PassThrough' },
     { title: 'MenuColorMode', uri: 'pages/ArkUI/MenuColorMode' },
+    { title: 'SetCustomCursor', uri: 'pages/ArkUI/SetCustomCursor' },
 
   ]
   @State ColorObject: Object[] = letColor;
