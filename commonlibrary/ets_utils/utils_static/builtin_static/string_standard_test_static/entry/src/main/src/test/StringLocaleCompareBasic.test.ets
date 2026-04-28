@@ -82,8 +82,7 @@ namespace localeCompareHelperTest {
       invokeLocaleCompare(null, 'test');
       return { hasError: false, type: null };
     } catch (e) {
-      const err = e as Error;
-      return { hasError: true, type: err.name };
+      return { hasError: true, type: e.name };
     }
   }
 
@@ -92,8 +91,7 @@ namespace localeCompareHelperTest {
       invokeLocaleCompare(undefined, 'test');
       return { hasError: false, type: null };
     } catch (e) {
-      const err = e as Error;
-      return { hasError: true, type: err.name };
+      return { hasError: true, type: e.name };
     }
   }
 

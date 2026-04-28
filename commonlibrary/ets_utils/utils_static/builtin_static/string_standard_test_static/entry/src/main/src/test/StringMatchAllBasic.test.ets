@@ -373,7 +373,7 @@ export namespace matchAllHelperTest {
     str.matchAll(regexp);
     return { isSyntaxError: false };
   } catch (e) {
-    const n = (e as Error).name;
+    const n = e.name;
     return { isSyntaxError: n === 'SyntaxError' || n === 'TypeError' || n === 'Error' };
   }
 }
@@ -2992,8 +2992,14 @@ export default function StringMatchAllBasicTest(): void {
      */
     it('StringMatchAll_SplitWithMatchAll_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let result = matchAllHelperTest.test305();
-      const pr = result.result as Array<string>;
-      const ex = result.expected as Array<string>;
+      let pr: Array<string> = [];
+      let ex: Array<string> = [];
+      if (result.result !== null) {
+        pr = result.result;
+      }
+      if (result.expected !== null) {
+        ex = result.expected;
+      }
       expect(pr.length).assertEqual(ex.length);
       for (let i = 0; i < pr.length; i++) {
         expect(pr[i]).assertEqual(ex[i]);

@@ -160,11 +160,11 @@ class MatchHelperObjectThis {
 }
 
 function isTypeErrorInstance(e: Object): boolean {
-  return (e instanceof TypeError) || ((e as Error).name === 'TypeError');
+  return (e instanceof TypeError) || (e.name === 'TypeError');
 }
 
 function isSyntaxErrorInstance(e: Object): boolean {
-  return (e instanceof SyntaxError) || ((e as Error).name === 'SyntaxError');
+  return (e instanceof SyntaxError) || (e.name === 'SyntaxError');
 }
 
 namespace matchHelperTest {
@@ -213,7 +213,7 @@ namespace matchHelperTest {
       const regex: RegExp = new RegExp('[abc');
       'test'.match(regex);
     } catch (e) {
-      const n = (e as Error).name;
+      const n = e.name;
       isSyntaxError = isSyntaxErrorInstance(e) || n === 'TypeError' || n === 'Error';
     }
     return { isSyntaxError: isSyntaxError };
@@ -225,7 +225,7 @@ namespace matchHelperTest {
       const regex: RegExp = new RegExp('(abc');
       'test'.match(regex);
     } catch (e) {
-      const n = (e as Error).name;
+      const n = e.name;
       isSyntaxError = isSyntaxErrorInstance(e) || n === 'TypeError' || n === 'Error';
     }
     return { isSyntaxError: isSyntaxError };
@@ -237,7 +237,7 @@ namespace matchHelperTest {
       const regex: RegExp = new RegExp('a**');
       'test'.match(regex);
     } catch (e) {
-      const n = (e as Error).name;
+      const n = e.name;
       isSyntaxError = isSyntaxErrorInstance(e) || n === 'TypeError' || n === 'Error';
     }
     return { isSyntaxError: isSyntaxError };
@@ -249,7 +249,7 @@ namespace matchHelperTest {
       const regex: RegExp = new RegExp('\\x1');
       'test'.match(regex);
     } catch (e) {
-      const n = (e as Error).name;
+      const n = e.name;
       isSyntaxError = isSyntaxErrorInstance(e) || n === 'TypeError' || n === 'Error';
     }
     return { isSyntaxError: isSyntaxError };
@@ -750,8 +750,14 @@ export default function StringMatchBasicTest(): void {
      */
     it('StringMatch_Conditional_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const result = matchHelperTest.testConditionalMatcher();
-      const r1 = result.result1 as Array<string>;
-      const r2 = result.result2 as Array<string>;
+      let r1: Array<string> = [];
+      let r2: Array<string> = [];
+      if (result.result1 !== null) {
+        r1 = result.result1;
+      }
+      if (result.result2 !== null) {
+        r2 = result.result2;
+      }
       expect(r1[0]).assertEqual('long');
       expect(r2[0]).assertEqual('short');
     });
@@ -767,7 +773,10 @@ export default function StringMatchBasicTest(): void {
     it('StringMatch_UpperCaseTransform_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const result = matchHelperTest.testUpperCaseMatcher();
       expect(result.result !== null).assertTrue();
-      const arr = result.result as Array<string>;
+      let arr: Array<string> = [];
+      if (result.result !== null) {
+        arr = result.result;
+      }
       expect(arr[0]).assertEqual('HELLO');
       expect(arr[1]).assertEqual('WORLD');
     });
@@ -783,7 +792,10 @@ export default function StringMatchBasicTest(): void {
     it('StringMatch_CustomRegexClass_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const result = matchHelperTest.testCustomRegexClass();
       expect(result.result !== null).assertTrue();
-      const arr = result.result as Array<string>;
+      let arr: Array<string> = [];
+      if (result.result !== null) {
+        arr = result.result;
+      }
       expect(arr[0]).assertEqual('World');
     });
 
@@ -798,7 +810,10 @@ export default function StringMatchBasicTest(): void {
     it('StringMatch_PatternMatcherClass_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const result = matchHelperTest.testPatternMatcherClass();
       expect(result.result !== null).assertTrue();
-      const arr = result.result as Array<string>;
+      let arr: Array<string> = [];
+      if (result.result !== null) {
+        arr = result.result;
+      }
       expect(arr.length).assertEqual(2);
       expect(arr[0]).assertEqual('hello');
       expect(arr[1]).assertEqual('world');

@@ -34,7 +34,7 @@ export namespace normalizeExceptionHelper {
     try {
       str.normalize('INVALID');
     } catch (e) {
-      const name = (e as Error).name;
+      const name = e.name;
       isRangeError = name === 'RangeError' || name === 'TypeError';
     }
     return { isRangeError };
@@ -47,7 +47,7 @@ export namespace normalizeExceptionHelper {
       str.normalize('BAD');
       hasValidMessage = true;
     } catch (e) {
-      const msg: string = (e as Error).message;
+      const msg: string = e.message;
       hasValidMessage = msg.includes('form') || msg.includes('normalize') || msg.length > 0;
     }
     return { hasValidMessage };
@@ -56,10 +56,9 @@ export namespace normalizeExceptionHelper {
   export function test003(): TypeErrorFlagResult {
     let isTypeError: boolean = false;
     try {
-      const num: number = 123;
-      (num as unknown as string).normalize('NFC');
+      String.prototype.normalize.call(123, 'NFC');
     } catch (e) {
-      isTypeError = (e as Error).name === 'TypeError';
+      isTypeError = e.name === 'TypeError';
     }
     return { isTypeError };
   }
@@ -67,8 +66,7 @@ export namespace normalizeExceptionHelper {
   export function test004(): TypeErrorFlagResult {
     let isTypeError: boolean = false;
     try {
-      const r: string | null = null;
-      (r as string).normalize('NFC');
+      String.prototype.normalize.call(null, 'NFC');
     } catch (_e) {
       isTypeError = true;
     }
@@ -78,8 +76,7 @@ export namespace normalizeExceptionHelper {
   export function test005(): TypeErrorFlagResult {
     let isTypeError: boolean = false;
     try {
-      const r: string | undefined = undefined;
-      (r as string).normalize('NFC');
+      String.prototype.normalize.call(undefined, 'NFC');
     } catch (_e) {
       isTypeError = true;
     }

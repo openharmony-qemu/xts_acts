@@ -123,7 +123,7 @@ export namespace padStartBasicHelper {
       const result: string = 'abc'.padStart(2147483647, '0');
       return { thrown: false, result };
     } catch (e) {
-      return { thrown: true, errorName: (e as Error).name };
+      return { thrown: true, errorName: e.name };
     }
   }
 
@@ -132,9 +132,8 @@ export namespace padStartBasicHelper {
       const result: string = 'a'.padStart(2147483647, 'b');
       return { isRangeError: false, result };
     } catch (e) {
-      const err = e as Error;
-      const name = err.name;
-      const msg = (err.message || '').toLowerCase();
+      const name = e.name;
+      const msg = (e.message || '').toLowerCase();
       const isRangeError = name === 'RangeError' ||
         (name === 'Error' && (msg.includes('range') || msg.includes('length') || msg.includes('memory') || msg.includes('alloc')));
       return { isRangeError, errorName: name };
@@ -147,7 +146,7 @@ export namespace padStartBasicHelper {
       const result: string = 'abc'.padStart(maxLen, '0');
       return { isRangeError: false, result };
     } catch (e) {
-      return { isRangeError: (e as Error).name === 'RangeError', errorName: (e as Error).name };
+      return { isRangeError: e.name === 'RangeError', errorName: e.name };
     }
   }
 
@@ -156,7 +155,7 @@ export namespace padStartBasicHelper {
       const result: string = 'a'.padStart(1073741824, 'b');
       return { isError: false, result };
     } catch (e) {
-      return { isError: true, errorName: (e as Error).name };
+      return { isError: true, errorName: e.name };
     }
   }
 
@@ -168,10 +167,9 @@ export namespace padStartBasicHelper {
   export function testSymbolTarget(): TypeErrorResult {
     let isTypeError: boolean = false;
     try {
-      const bad: Object = {};
-      ('x' as string).padStart(bad as int, '0');
+      String.prototype.padStart.call(null, 10, '0');
     } catch (e) {
-      isTypeError = (e as Error).name === 'TypeError';
+      isTypeError = e.name === 'TypeError';
     }
     return { isTypeError };
   }
@@ -179,10 +177,9 @@ export namespace padStartBasicHelper {
   export function testSymbolPad(): TypeErrorResult {
     let isTypeError: boolean = false;
     try {
-      const badPad: Object = {};
-      ('x' as string).padStart(10, badPad as string);
+      String.prototype.padStart.call(undefined, 10, '0');
     } catch (e) {
-      isTypeError = (e as Error).name === 'TypeError';
+      isTypeError = e.name === 'TypeError';
     }
     return { isTypeError };
   }
@@ -291,7 +288,7 @@ export namespace padStartBasicHelper {
       obj.valueOf();
       return { isError: false };
     } catch (e) {
-      return { isError: true, errorName: (e as Error).name };
+      return { isError: true, errorName: e.name };
     }
   }
 
@@ -307,7 +304,7 @@ export namespace padStartBasicHelper {
       'abc'.padStart(5, obj.toString());
       return { isError: false };
     } catch (e) {
-      return { isError: true, errorName: (e as Error).name };
+      return { isError: true, errorName: e.name };
     }
   }
 }

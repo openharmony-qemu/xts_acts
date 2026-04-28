@@ -414,7 +414,7 @@ export namespace toWellFormedBasicHelper {
       twfCall(obj);
       return { threwError: false };
     } catch (e) {
-      return { threwError: true, isTypeError: (e instanceof Error) && (e as Error).name === 'TypeError' };
+      return { threwError: true, isTypeError: (e instanceof Error) && e.name === 'TypeError' };
     }
   }
 
@@ -423,7 +423,7 @@ export namespace toWellFormedBasicHelper {
       twfCall(null);
       return { threwError: false };
     } catch (e) {
-      return { threwError: true, isTypeError: (e instanceof Error) && (e as Error).name === 'TypeError' };
+      return { threwError: true, isTypeError: (e instanceof Error) && e.name === 'TypeError' };
     }
   }
 
@@ -432,7 +432,7 @@ export namespace toWellFormedBasicHelper {
       twfCall(undefined);
       return { threwError: false };
     } catch (e) {
-      return { threwError: true, isTypeError: (e instanceof Error) && (e as Error).name === 'TypeError' };
+      return { threwError: true, isTypeError: (e instanceof Error) && e.name === 'TypeError' };
     }
   }
 
@@ -441,7 +441,7 @@ export namespace toWellFormedBasicHelper {
       twfCall(123);
       return { threwError: false };
     } catch (e) {
-      return { threwError: true, isTypeError: (e instanceof Error) && (e as Error).name === 'TypeError' };
+      return { threwError: true, isTypeError: (e instanceof Error) && e.name === 'TypeError' };
     }
   }
 
@@ -450,7 +450,7 @@ export namespace toWellFormedBasicHelper {
       twfCall(true);
       return { threwError: false };
     } catch (e) {
-      return { threwError: true, isTypeError: (e instanceof Error) && (e as Error).name === 'TypeError' };
+      return { threwError: true, isTypeError: (e instanceof Error) && e.name === 'TypeError' };
     }
   }
 

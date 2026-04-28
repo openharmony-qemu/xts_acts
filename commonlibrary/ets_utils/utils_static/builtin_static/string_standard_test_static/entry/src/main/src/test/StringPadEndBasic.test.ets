@@ -71,9 +71,8 @@ export namespace padEndBoundaryHelper {
     try {
       str.padEnd(2147483647, 'x');
     } catch (e) {
-      const err = e as Error;
-      const name = err.name;
-      const msg = (err.message || '').toLowerCase();
+      const name = e.name;
+      const msg = (e.message || '').toLowerCase();
       isRangeError = name === 'RangeError' ||
         (name === 'Error' && (msg.includes('range') || msg.includes('length') || msg.includes('memory') || msg.includes('alloc')));
     }
@@ -86,7 +85,7 @@ export namespace padEndBoundaryHelper {
       const bad: Object = {};
       ('x' as string).padEnd(bad as int, '*');
     } catch (e) {
-      isTypeError = (e as Error).name === 'TypeError';
+      isTypeError = e.name === 'TypeError';
     }
     return { isTypeError };
   }
@@ -97,9 +96,8 @@ export namespace padEndBoundaryHelper {
     try {
       str.padEnd(2147483647, 'x');
     } catch (e) {
-      const err = e as Error;
-      const name = err.name;
-      const msg = (err.message || '').toLowerCase();
+      const name = e.name;
+      const msg = (e.message || '').toLowerCase();
       isRangeError = name === 'RangeError' ||
         (name === 'Error' && (msg.includes('range') || msg.includes('length') || msg.includes('memory') || msg.includes('alloc')));
     }
@@ -159,7 +157,7 @@ export namespace padEndBoundaryHelper {
     try {
       str.padEnd(2147483647, '*');
     } catch (e) {
-      isRangeError = (e as Error).name === 'RangeError';
+      isRangeError = e.name === 'RangeError';
     }
     return { isRangeError };
   }
@@ -170,7 +168,7 @@ export namespace padEndBoundaryHelper {
       const badPad: Object = {};
       ('x' as string).padEnd(10, badPad as string);
     } catch (e) {
-      isTypeError = (e as Error).name === 'TypeError';
+      isTypeError = e.name === 'TypeError';
     }
     return { isTypeError };
   }
