@@ -60,7 +60,7 @@ export default function WebScrollDirectionalLockTest() {
 
     /**
      * @tc.name   testScrollDirectionalLock001
-     * @tc.number SUB_WEB_WEBATTRIBUTE_ENABLESCROLLDIRECTIONALLOCK_PARAM_001
+     * @tc.number SUB_WEB_WEBATTRIBUTE_ENABLESCROLLDIRECTIONALLOCK_PARAM_0100
      * @tc.desc   enableScrollDirectionalLock enable true with ScrollDirectionalLockType.ALL test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -79,7 +79,7 @@ export default function WebScrollDirectionalLockTest() {
 
     /**
      * @tc.name   testScrollDirectionalLock002
-     * @tc.number SUB_WEB_WEBATTRIBUTE_ENABLESCROLLDIRECTIONALLOCK_PARAM_002
+     * @tc.number SUB_WEB_WEBATTRIBUTE_ENABLESCROLLDIRECTIONALLOCK_PARAM_0200
      * @tc.desc   enableScrollDirectionalLock enable true with ScrollDirectionalLockType.NESTED_SCROLL test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -98,7 +98,7 @@ export default function WebScrollDirectionalLockTest() {
 
     /**
      * @tc.name   testScrollDirectionalLock003
-     * @tc.number SUB_WEB_WEBATTRIBUTE_ENABLESCROLLDIRECTIONALLOCK_PARAM_003
+     * @tc.number SUB_WEB_WEBATTRIBUTE_ENABLESCROLLDIRECTIONALLOCK_PARAM_0300
      * @tc.desc   enableScrollDirectionalLock enable false with ScrollDirectionalLockType.ALL test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -117,7 +117,7 @@ export default function WebScrollDirectionalLockTest() {
 
     /**
      * @tc.name   testScrollDirectionalLock004
-     * @tc.number SUB_WEB_WEBATTRIBUTE_ENABLESCROLLDIRECTIONALLOCK_PARAM_004
+     * @tc.number SUB_WEB_WEBATTRIBUTE_ENABLESCROLLDIRECTIONALLOCK_PARAM_0400
      * @tc.desc   enableScrollDirectionalLock enable false with ScrollDirectionalLockType.NESTED_SCROLL test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -136,7 +136,7 @@ export default function WebScrollDirectionalLockTest() {
 
     /**
      * @tc.name   testScrollDirectionalLock005
-     * @tc.number SUB_WEB_WEBATTRIBUTE_ENABLESCROLLDIRECTIONALLOCK_PARAM_005
+     * @tc.number SUB_WEB_WEBATTRIBUTE_ENABLESCROLLDIRECTIONALLOCK_PARAM_0500
      * @tc.desc   enableScrollDirectionalLock switch type from ALL to NESTED_SCROLL test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -155,7 +155,7 @@ export default function WebScrollDirectionalLockTest() {
 
     /**
      * @tc.name   testScrollDirectionalLock006
-     * @tc.number SUB_WEB_WEBATTRIBUTE_ENABLESCROLLDIRECTIONALLOCK_PARAM_006
+     * @tc.number SUB_WEB_WEBATTRIBUTE_ENABLESCROLLDIRECTIONALLOCK_PARAM_0600
      * @tc.desc   enableScrollDirectionalLock switch type from NESTED_SCROLL to ALL test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -174,7 +174,7 @@ export default function WebScrollDirectionalLockTest() {
 
     /**
      * @tc.name   testScrollDirectionalLock007
-     * @tc.number SUB_WEB_WEBATTRIBUTE_ENABLESCROLLDIRECTIONALLOCK_PARAM_007
+     * @tc.number SUB_WEB_WEBATTRIBUTE_ENABLESCROLLDIRECTIONALLOCK_PARAM_0700
      * @tc.desc   enableScrollDirectionalLock switch value from true to false with ALL type test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -193,7 +193,7 @@ export default function WebScrollDirectionalLockTest() {
 
     /**
      * @tc.name   testScrollDirectionalLock008
-     * @tc.number SUB_WEB_WEBATTRIBUTE_ENABLESCROLLDIRECTIONALLOCK_PARAM_008
+     * @tc.number SUB_WEB_WEBATTRIBUTE_ENABLESCROLLDIRECTIONALLOCK_PARAM_0800
      * @tc.desc   enableScrollDirectionalLock switch value from false to true with NESTED_SCROLL type test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -212,7 +212,7 @@ export default function WebScrollDirectionalLockTest() {
 
     /**
      * @tc.name   testScrollDirectionalLock009
-     * @tc.number SUB_WEB_WEBATTRIBUTE_ENABLESCROLLDIRECTIONALLOCK_PARAM_009
+     * @tc.number SUB_WEB_WEBATTRIBUTE_ENABLESCROLLDIRECTIONALLOCK_PARAM_0900
      * @tc.desc   enableScrollDirectionalLock set same type ALL twice test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -231,7 +231,7 @@ export default function WebScrollDirectionalLockTest() {
 
     /**
      * @tc.name   testScrollDirectionalLock010
-     * @tc.number SUB_WEB_WEBATTRIBUTE_ENABLESCROLLDIRECTIONALLOCK_PARAM_010
+     * @tc.number SUB_WEB_WEBATTRIBUTE_ENABLESCROLLDIRECTIONALLOCK_PARAM_1100
      * @tc.desc   enableScrollDirectionalLock set same type NESTED_SCROLL twice test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
