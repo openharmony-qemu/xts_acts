@@ -83,7 +83,7 @@ static OH_AudioObjectPosition g_pos = {
     .pos.cartesian.z = CARTESIAN_ZERO,
 };
 
-static bool IsSupportAudioVivid() 
+static bool IsSupportAudioVivid()
 {
     OH_AVCapability* capability = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_AUDIO_VIVID, true);
     if (capability != nullptr) {
@@ -1564,7 +1564,7 @@ static napi_value CreateFormatNullCheck(napi_env env, napi_callback_info info)
     if (IsSupportAudioVivid()) {
         ret = OH_AudioVividMetaBuilder_Create(&builder, nullptr);
         if (ret == AV_ERR_INVALID_VAL) {
-             backParam = SUCCESS;
+            backParam = SUCCESS;
         }
     } else {
         ret = OH_AudioVividMetaBuilder_Create(&builder, g_format);
