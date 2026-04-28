@@ -38,7 +38,7 @@ export default function GlobalReusePoolTest() {
         router.clear();
         let pages = router.getState();
         console.info("get current pages:" + JSON.stringify(pages));
-        if (!("GlobalReusePoolTest" == pages.name)) {
+        if (!("GlobalReusePool" == pages.name)) {
           console.info("get GlobalReusePoolTest pages.name:" + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
