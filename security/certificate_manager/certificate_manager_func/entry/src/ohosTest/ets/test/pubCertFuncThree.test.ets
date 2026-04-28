@@ -804,7 +804,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     /**
      * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_1700
      * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_1700
-     * @tc.desc   ukeyInfo without certPurpose, return error code 17500011 on PC device or 801 on non-PC device
+     * @tc.desc   ukeyInfo without certPurpose, return error code 17500010 on PC device or 801 on non-PC device
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
