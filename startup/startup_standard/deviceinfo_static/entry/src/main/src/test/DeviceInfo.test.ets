@@ -1091,6 +1091,7 @@ export default function DeviceInfoTest() {
       let deviceColor = deviceinfo.deviceColor;
       console.info('the value of the DeviceColor is :' + deviceColor);
       expect(deviceColor != undefined).assertTrue();
+      done();
       console.info('deviceinfo_test_static_4500 : end');
     })
   })
