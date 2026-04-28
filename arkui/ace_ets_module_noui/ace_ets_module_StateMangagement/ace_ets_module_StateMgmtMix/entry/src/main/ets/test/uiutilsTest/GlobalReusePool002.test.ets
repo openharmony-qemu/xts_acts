@@ -22,7 +22,10 @@ import CommonFunc from '../../MainAbility/common/Common';
 export default function GlobalReusePool002Test() {
   let driver: Driver;
   describe('GlobalReusePool002Test', () => {
-
+    beforeAll(async () => {
+      driver = Driver.create();
+      await driver.delayMs(1000)
+    });
     beforeEach(async (done: Function) => {
       console.info("GlobalReusePool002Test setup start");
       let options: router.RouterOptions = {
