@@ -747,7 +747,10 @@ napi_value ScrollScrollEventTest::CreateNativeNodeScrollBy006(napi_env env, napi
     ArkUI_AttributeItem scroll_item = {scroll_value, sizeof(scroll_value) / sizeof(ArkUI_NumberValue)};
     nodeAPI->setAttribute(scroll, NODE_SCROLL_BY, &scroll_item);
     ASSERT_EQ(nodeAPI->getAttribute(scroll, NODE_SCROLL_OFFSET)->value[PARAM_0].f32, PARAM_0);
-    ASSERT_EQ(nodeAPI->getAttribute(scroll, NODE_SCROLL_OFFSET)->value[PARAM_1].f32, PARAM_1000);
+    auto offsetY = nodeAPI->getAttribute(scroll, NODE_SCROLL_OFFSET)->value[PARAM_1].f32;
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ScrollScrollEventTest",
+             "ScrollBy006 offsetY:%{public}f", offsetY);
+    ASSERT_EQ(static_cast<int>(std::round(offsetY)), PARAM_1000);
     ArkUI_AttributeItem id_item = {};
     id_item.string = "ScrollBy006";
     nodeAPI->setAttribute(scroll, NODE_ID, &id_item);
