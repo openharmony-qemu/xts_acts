@@ -5103,7 +5103,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"usbGetNonRootHubsOne", nullptr, UsbGetNonRootHubsOne, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"usbGetNonRootHubsTwo", nullptr, UsbGetNonRootHubsTwo, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"usbGetNonRootHubsThree", nullptr, UsbGetNonRootHubsThree, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"usbControlTransferTwo", nullptr, UsbControlTransferTwo, nullptr, nullptr, nullptr, napi_default, nullptr},       
+        {"usbControlTransferTwo", nullptr, UsbControlTransferTwo, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"usbControlTransferGetStatus", nullptr, UsbControlTransferGetStatus,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"usbControlTransferSetFeature", nullptr, UsbControlTransferSetFeature,
