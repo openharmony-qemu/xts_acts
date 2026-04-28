@@ -671,3 +671,82 @@ napi_value OHMIDIDeviceFlushOutputPortInvalidDevice(napi_env env, napi_callback_
     napi_create_int32(env, returnValue, &result);
     return result;
 }
+
+EXTERN_C_START
+static napi_value Init(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {
+        {"OHMIDIClientCreateInvalidClient", nullptr, OHMIDIClientCreateInvalidClient, nullptr, nullptr,
+        nullptr, napi_default, nullptr},
+        {"OHMIDIClientCreateTooManyClient", nullptr, OHMIDIClientCreateTooManyClient, nullptr, nullptr,
+        nullptr, napi_default, nullptr},
+        {"OHMIDIClientDestroyInvalidClient", nullptr, OHMIDIClientDestroyInvalidClient, nullptr, nullptr,
+        nullptr, napi_default, nullptr},
+        {"OHMIDIClientGetDeviceCountInvalidClient", nullptr, OHMIDIClientGetDeviceCountInvalidClient, nullptr,
+        nullptr, nullptr, napi_default, nullptr},
+        {"OHMIDIClientGetDeviceCountInvalidCount", nullptr, OHMIDIClientGetDeviceCountInvalidCount, nullptr,
+        nullptr, nullptr, napi_default, nullptr},
+        {"OHMIDIClientGetDeviceInfosInvalidClient", nullptr, OHMIDIClientGetDeviceInfosInvalidClient, nullptr,
+        nullptr, nullptr, napi_default, nullptr},
+        {"OHMIDIClientGetDeviceInfosInvalidInfos", nullptr, OHMIDIClientGetDeviceInfosInvalidInfos, nullptr,
+        nullptr, nullptr, napi_default, nullptr},
+        {"OHMIDIClientGetDeviceInfosInvalidDeviceCount", nullptr, OHMIDIClientGetDeviceInfosInvalidDeviceCount,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OHMIDIClientOpenDeviceInvalidClient", nullptr, OHMIDIClientOpenDeviceInvalidClient, nullptr, nullptr,
+        nullptr, napi_default, nullptr},
+        {"OHMIDIClientOpenDeviceInvalidDevice", nullptr, OHMIDIClientOpenDeviceInvalidDevice, nullptr, nullptr,
+        nullptr, napi_default, nullptr},
+        {"OHMIDIClientOpenBLEDeviceInvalidClient", nullptr, OHMIDIClientOpenBLEDeviceInvalidClient, nullptr,
+        nullptr, nullptr, napi_default, nullptr},
+        {"OHMIDIClientCloseDeviceInvalidClient", nullptr, OHMIDIClientCloseDeviceInvalidClient, nullptr, nullptr,
+        nullptr, napi_default, nullptr},
+        {"OHMIDIClientCloseDeviceInvalidDevice", nullptr, OHMIDIClientCloseDeviceInvalidDevice, nullptr, nullptr,
+        nullptr, napi_default, nullptr},
+        {"OHMIDIClientGetPortCountInvalidClient", nullptr, OHMIDIClientGetPortCountInvalidClient, nullptr, nullptr,
+        nullptr, napi_default, nullptr},
+        {"OHMIDIClientGetPortCountInvalidDeviceId", nullptr, OHMIDIClientGetPortCountInvalidDeviceId, nullptr,
+        nullptr, nullptr, napi_default, nullptr},
+        {"OHMIDIClientGetPortCountInvalidCount", nullptr, OHMIDIClientGetPortCountInvalidCount, nullptr, nullptr,
+        nullptr, napi_default, nullptr},
+        {"OHMIDIClientGetPortInfosInvalidClient", nullptr, OHMIDIClientGetPortInfosInvalidClient, nullptr, nullptr,
+        nullptr, napi_default, nullptr},
+        {"OHMIDIClientGetPortInfosInvalidDeviceId", nullptr, OHMIDIClientGetPortInfosInvalidDeviceId, nullptr,
+        nullptr, nullptr, napi_default, nullptr},
+        {"OHMIDIClientGetPortInfosInvalidInfos", nullptr, OHMIDIClientGetPortInfosInvalidInfos, nullptr, nullptr,
+        nullptr, napi_default, nullptr},
+        {"OHMIDIClientGetPortInfosInvalidPortCount", nullptr, OHMIDIClientGetPortInfosInvalidPortCount, nullptr,
+        nullptr, nullptr, napi_default, nullptr},
+        {"OHMIDIDeviceOpenInputPortInvalidDevice", nullptr, OHMIDIDeviceOpenInputPortInvalidDevice, nullptr, nullptr,
+        nullptr, napi_default, nullptr},
+        {"OHMIDIDeviceOpenOutputPortInvalidDevice", nullptr, OHMIDIDeviceOpenOutputPortInvalidDevice, nullptr,
+        nullptr, nullptr, napi_default, nullptr},
+        {"OHMIDIDeviceCloseInputPortInvalidDevice", nullptr, OHMIDIDeviceCloseInputPortInvalidDevice, nullptr,
+        nullptr, nullptr, napi_default, nullptr},
+        {"OHMIDIDeviceCloseOutputPortInvalidDevice", nullptr, OHMIDIDeviceCloseOutputPortInvalidDevice, nullptr,
+        nullptr, nullptr, napi_default, nullptr},
+        {"OHMIDIDeviceSendInvalidDevice", nullptr, OHMIDIDeviceSendInvalidDevice, nullptr, nullptr,
+        nullptr, napi_default, nullptr},
+        {"OHMIDIDeviceSendSysExInvalidDevice", nullptr, OHMIDIDeviceSendSysExInvalidDevice, nullptr, nullptr,
+        nullptr, napi_default, nullptr},
+        {"OHMIDIDeviceFlushOutputPortInvalidDevice", nullptr, OHMIDIDeviceFlushOutputPortInvalidDevice, nullptr,
+        nullptr, nullptr, napi_default, nullptr},
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    return exports;
+}
+EXTERN_C_END
+
+static napi_module demoModule = {
+    .nm_version = 1,
+    .nm_flags = 0,
+    .nm_filename = nullptr,
+    .nm_register_func = Init,
+    .nm_modname = "midi",
+    .nm_priv = ((void *)0),
+    .reserved = { 0 },
+};
+
+extern "C" __attribute__((constructor)) void RegisterModule(void)
+{
+    napi_module_register(&demoModule);
+}

@@ -14,7 +14,7 @@
  */
 
 import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
-import AudioKitTest from 'libentry.so'
+import AudioKitTest from 'libmidi.so'
 
 export default function AudioMidiTest() {
   describe('AudioMidiTest', () => {
