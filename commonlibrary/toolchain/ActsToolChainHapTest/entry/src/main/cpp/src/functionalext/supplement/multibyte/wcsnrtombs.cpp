@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
-#include <locale.h>
-#include <stdio.h>
-#include <string.h>
-#include <wchar.h>
+#include <clocale>
+#include <cstdio>
+#include <cstring>
+#include <cwchar>
 #include "test.h"
 
 /**
@@ -24,7 +24,7 @@
  * @tc.desc      : Convert wn wide characters in a wide string to a multibyte string
  * @tc.level     : Level 0
  */
-static void wcsnrtombs_0100(void)
+static void Wcsnrtombs0100(void)
 {
     const wchar_t src[] = L"test wcsnrtombs";
     const wchar_t *p;
@@ -74,7 +74,7 @@ void Wcsnrtombs0200(void)
  * @tc.desc      : Conversion of wide characters to multibyte characters when dst=NULL
  * @tc.level     : Level 2
  */
-void wcsnrtombs_0300(void)
+void Wcsnrtombs0300(void)
 {
     const wchar_t src[] = L"test wcsnrtombs";
     const wchar_t *p;
@@ -95,9 +95,9 @@ void wcsnrtombs_0300(void)
 
 static int WcsnrtombsTestImpl(int argc, char *argv[])
 {
-    wcsnrtombs_0100();
+    Wcsnrtombs0100();
     Wcsnrtombs0200();
-    wcsnrtombs_0300();
+    Wcsnrtombs0300();
     return g_tStatus;
 }
 

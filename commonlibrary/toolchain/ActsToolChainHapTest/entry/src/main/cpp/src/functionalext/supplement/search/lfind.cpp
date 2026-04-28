@@ -30,7 +30,7 @@ int compare(int *x, int *y)
  * @tc.desc      : Verify lfind process success.
  * @tc.level     : level 0.
  */
-void lfind_0100(void)
+void Lfind0100(void)
 {
     int array[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     size_t nlength = LENGTH1;
@@ -46,7 +46,7 @@ void lfind_0100(void)
  * @tc.desc      : Verify lfind process fail because key not is array.
  * @tc.level     : level 2.
  */
-void lfind_0200(void)
+void Lfind0200(void)
 {
     int array[5] = {1, 2, 3, 4, 5};
     size_t nlength = LENGTH2;
@@ -57,14 +57,14 @@ void lfind_0200(void)
     EXPECT_PTREQ("lfind_0200", ret, NULL);
 }
 
-static int LfindTest_impl(void)
+static int LfindTestImpl(void)
 {
-    lfind_0100();
-    lfind_0200();
+    Lfind0100();
+    Lfind0200();
     return g_tStatus;
 }
 
 int LfindTest(void)
 {
-    return LfindTest_impl();
+    return LfindTestImpl();
 }

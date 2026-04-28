@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <locale.h>
-#include <stdlib.h>
+#include <clocale>
+#include <cstdlib>
 #include "functionalext.h"
 
 /**
@@ -22,7 +22,7 @@
  * @tc.desc      : Asserts whether the result returned when uselocale passes a null pointer is the global locale
  * @tc.level     : Level 0
  */
-static void uselocale_0100(void)
+static void Uselocale0100(void)
 {
     char *rev = setlocale(LC_ALL, "C");
     if (!rev) {
@@ -40,7 +40,7 @@ static void uselocale_0100(void)
  *                 used using the custom locale using the uselocale function
  * @tc.level     : Level 0
  */
-static void uselocale_0200(void)
+static void Uselocale0200(void)
 {
     char *rev = setlocale(LC_ALL, "C");
     if (!rev) {
@@ -67,15 +67,15 @@ static void uselocale_0200(void)
     }
 }
 
-static int UselocaleSupTest_impl(void)
+static int UselocaleSupTestImpl(void)
 {
-    uselocale_0100();
-    uselocale_0200();
+    Uselocale0100();
+    Uselocale0200();
 
     return g_tStatus;
 }
 
 int UselocaleSupTest(void)
 {
-    return UselocaleSupTest_impl();
+    return UselocaleSupTestImpl();
 }

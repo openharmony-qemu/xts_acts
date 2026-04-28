@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include <stdlib.h>
+#include <cstdlib>
 #include "functionalext.h"
 
 extern "C" int __cxa_atexit(void (*func)(void *), void *arg, void *dso);
@@ -22,16 +22,16 @@ const int32_t INIT_LEN = 0;
 const int32_t INCREASE_LEN = 1;
 const int32_t COUNT = 32;
 const int32_t SLOT_LEN = 10;
-void exitFunc(void *arg){};
+void ExitFunc(void *arg){};
 
 /**
  * @tc.name:      cxa_atexit_0100
  * @tc.desc:      Verify cxa_atexit process success when second and third args is null.
  * @tc.level:     level 1.
  */
-void cxa_atexit_0100(void)
+void CxaAtexit0100(void)
 {
-    int32_t ret = __cxa_atexit(exitFunc, NULL, NULL);
+    int32_t ret = __cxa_atexit(ExitFunc, NULL, NULL);
     EXPECT_EQ("cxa_atexit_0100", ret, INIT_LEN);
 }
 
@@ -40,11 +40,11 @@ void cxa_atexit_0100(void)
  * @tc.desc:      Verify cxa atexit process success when third args is null and slot less than COUNT.
  * @tc.level:     level 0.
  */
-void cxa_atexit_0200(void)
+void CxaAtexit0200(void)
 {
     int32_t slot = SLOT_LEN;
     int32_t var = INIT_LEN;
-    int32_t ret = __cxa_atexit(exitFunc, &var, NULL);
+    int32_t ret = __cxa_atexit(ExitFunc, &var, NULL);
     EXPECT_LT("cxa_atexit_0200", slot + INCREASE_LEN, COUNT);
     EXPECT_EQ("cxa_atexit_0200", ret, 0);
 }
@@ -54,26 +54,26 @@ void cxa_atexit_0200(void)
  * @tc.desc:      Verify cxa atexit process success when third args is null and slot equal COUNT.
  * @tc.level:     level 1.
  */
-void cxa_atexit_0300(void)
+void CxaAtexit0300(void)
 {
     int32_t slot = COUNT;
     int32_t var = 0;
-    int32_t ret = __cxa_atexit(exitFunc, &var, NULL);
+    int32_t ret = __cxa_atexit(ExitFunc, &var, NULL);
     EXPECT_EQ("cxa_atexit_0300", slot, COUNT);
     EXPECT_EQ("cxa_atexit_0300", ret, 0);
 }
 
-static int ACxaAtexitTest_impl(int argc, char *argv[])
+static int ACxaAtexitTestImpl(int argc, char *argv[])
 {
-    cxa_atexit_0100();
-    cxa_atexit_0200();
-    cxa_atexit_0300();
+    CxaAtexit0100();
+    CxaAtexit0200();
+    CxaAtexit0300();
     return g_tStatus;
 }
 
 int ACxaAtexitTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return ACxaAtexitTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return ACxaAtexitTestImpl(1, libcArgv);
 }

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include <stdio.h>
+#include <cstdio>
 #include "functionalext.h"
 
 const int SUCCESS = 0;
@@ -60,7 +60,7 @@ void fsetpos_0200()
     fpos_t pos;
     FILE *fptr = fopen(ptr, "w+");
     fwrite(wstring, sizeof(char), strlen(wstring), fptr);
-    fseek(fptr, 10, SEEK_SET);
+    fseek(fptr, HALF_SIZE, SEEK_SET);
     fgetpos(fptr, &pos);
     int data = fsetpos(fptr, &pos);
     EXPECT_EQ("fsetpos_0200", data, SUCCESS);
@@ -86,7 +86,7 @@ void fsetpos_0300()
     fpos_t pos;
     FILE *fptr = fopen(ptr, "w+");
     fwrite(wstring, sizeof(char), strlen(wstring), fptr);
-    fseek(fptr, 20, SEEK_SET);
+    fseek(fptr, SIZE, SEEK_SET);
     fgetpos(fptr, &pos);
     int data = fsetpos(fptr, &pos);
     EXPECT_EQ("fsetpos_0300", data, SUCCESS);
@@ -104,7 +104,7 @@ void fsetpos_0300()
  * @tc.desc      : The pos parameter is valid, and the file pointer cannot be set.
  * @tc.level     : Level 2
  */
-void fsetpos_0400()
+void Fsetpos0400()
 {
     char str[100] = {0};
     const char *ptr = "/data/storage/el2/base/cache/test.txt";
@@ -122,18 +122,18 @@ void fsetpos_0400()
     wrstring = NULL;
 }
 
-static int FsetposTest_impl(int argc, char *argv[])
+static int FsetposTestImpl(int argc, char *argv[])
 {
     fsetpos_0100();
     fsetpos_0200();
     fsetpos_0300();
-    fsetpos_0400();
+    Fsetpos0400();
     return g_tStatus;
 }
 
 int FsetposTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return FsetposTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return FsetposTestImpl(1, libcArgv);
 }

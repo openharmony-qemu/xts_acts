@@ -13,10 +13,10 @@
  * limitations under the License.
  */
  
-#include <inttypes.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include <cinttypes>
+#include <cstdlib>
+#include <cstdio>
+#include <cstring>
 #include "test.h"
 
 // Test constants for qsort operations
@@ -25,17 +25,17 @@
 #define TEST_ARRAY_END_SIZE 1026
 #define TEST_ARRAY_MAX_SIZE 1026
 
-static int scmp(const void *a, const void *b)
+static int Scmp(const void *a, const void *b)
 {
     return strcmp(*(char **)a, *(char **)b);
 }
 
-static int icmp(const void *a, const void *b)
+static int Icmp(const void *a, const void *b)
 {
     return *(int*)a - *(int*)b;
 }
 
-static int ccmp(const void *a, const void *b)
+static int Ccmp(const void *a, const void *b)
 {
     return *(char*)a - *(char*)b;
 }
@@ -57,7 +57,7 @@ static const char *s[] = {
     "Lulu", "Quincy", "Osama", "Riley",
     "Ursula", "Sam"
 };
-static const char *s_sorted[] = {
+static const char *g_sSorted[] = {
     "Alice", "Bob", "Ceres", "Drepper",
     "Emeralda", "Frank", "Gedun", "Helga",
     "Irina", "John", "Karnica", "Lulu",
@@ -73,16 +73,16 @@ static int g_n[] = {
     343, 45545, 454, 324, 22, 34344, 233, 45345, 343,
     848405, 3434, 3434344, 3535, 93994, 2230404, 4334
 };
-static int n_sorted[] = {
+static int g_nSorted[] = {
     22, 233, 324, 343, 343, 394, 454, 3434,
     3535, 4334, 4334, 5454, 33434, 34344, 45345, 45545,
     93994, 232323, 848405, 879045, 2230404, 3434344, 99405644
 };
 
-static void str_test(const char **a, const char **aSorted, int len)
+static void StrTest(const char **a, const char **aSorted, int len)
 {
     int i;
-    qsort(a, len, sizeof *a, scmp);
+    qsort(a, len, sizeof *a, Scmp);
     for (i=0; i<len; i++) {
         if (strcmp(a[i], aSorted[i]) != 0) {
             t_error("string sort failed at index %d\n", i);
@@ -94,10 +94,10 @@ static void str_test(const char **a, const char **aSorted, int len)
     }
 }
 
-static void int_test(int *a, int *aSorted, int len)
+static void IntTest(int *a, int *aSorted, int len)
 {
     int i;
-    qsort(a, len, sizeof *a, icmp);
+    qsort(a, len, sizeof *a, Icmp);
     for (i=0; i<len; i++) {
         if (a[i] != aSorted[i]) {
             t_error("integer sort failed at index %d\n", i);
@@ -109,7 +109,7 @@ static void int_test(int *a, int *aSorted, int len)
     }
 }
 
-static void uint64_gen(uint64_t *p, uint64_t *p_sorted, int n)
+static void Uint64Gen(uint64_t *p, uint64_t *pSorted, int n)
 {
     int i;
     uint64_t r = 0;
@@ -118,7 +118,7 @@ static void uint64_gen(uint64_t *p, uint64_t *p_sorted, int n)
         r += rand() % RANDOM_MODULUS;
         p[i] = r;
     }
-    memcpy(p_sorted, p, n * sizeof *p);
+    memcpy(pSorted, p, n * sizeof *p);
 
     for (i = n - 1; i > 0; i--) {
         int j = rand() % (i + 1);
@@ -128,7 +128,7 @@ static void uint64_gen(uint64_t *p, uint64_t *p_sorted, int n)
     }
 }
 
-static void uint64_test(uint64_t *a, uint64_t *aSorted, int len)
+static void Uint64Test(uint64_t *a, uint64_t *aSorted, int len)
 {
     int i;
     qsort(a, len, sizeof *a, cmp64);
@@ -145,7 +145,7 @@ static void uint64_test(uint64_t *a, uint64_t *aSorted, int len)
 
 #define T(a, aSorted) do { \
     char p[] = a; \
-    qsort(p, sizeof p - 1, 1, ccmp); \
+    qsort(p, sizeof p - 1, 1, Ccmp); \
     if (memcmp(p, aSorted, sizeof p) != 0) { \
         t_error("character sort failed\n"); \
         TPrintf("\tgot:  \"%s\"\n", p); \
@@ -153,7 +153,7 @@ static void uint64_test(uint64_t *a, uint64_t *aSorted, int len)
     } \
 } while (0)
 
-static void char_test(void)
+static void CharTest(void)
 {
     T("", "");
     T("1", "1");
@@ -184,22 +184,23 @@ static void char_test(void)
     T("49735862185236174", "11223344556677889");
 }
 
-static int QsortTest_impl(void)
+static int QsortTestImpl(void)
 {
     int i;
 
-    str_test(s, s_sorted, sizeof s/sizeof*s);
-    int_test(g_n, n_sorted, sizeof g_n/sizeof*g_n);
-    char_test();
+    StrTest(s, g_sSorted, sizeof s/sizeof*s);
+    IntTest(g_n, g_nSorted, sizeof g_n/sizeof*g_n);
+    CharTest();
     for (i = TEST_ARRAY_START_SIZE; i<=TEST_ARRAY_END_SIZE; i++) {
-        uint64_t p[TEST_ARRAY_MAX_SIZE], p_sorted[TEST_ARRAY_MAX_SIZE];
-        uint64_gen(p, p_sorted, i);
-        uint64_test(p, p_sorted, i);
+        uint64_t p[TEST_ARRAY_MAX_SIZE];
+        uint64_t pSorted[TEST_ARRAY_MAX_SIZE];
+        Uint64Gen(p, pSorted, i);
+        Uint64Test(p, pSorted, i);
     }
     return g_tStatus;
 }
 
 int QsortTest(void)
 {
-    return QsortTest_impl();
+    return QsortTestImpl();
 }

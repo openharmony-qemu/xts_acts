@@ -13,15 +13,15 @@
  * limitations under the License.
  */
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <signal.h>
-#include <wchar.h>
-#include <inttypes.h>
+#include <cstdio>
+#include <cstring>
+#include <cstdlib>
+#include <csignal>
+#include <cwchar>
+#include <cinttypes>
 #include "test.h"
 
-void deal_aberrant(int code)
+void DealAberrant(int code)
 {
     if (code != SIGSEGV) {
         t_error("wcstoumax_0200 code is %d are not SIGSEGV", __func__, code);
@@ -34,7 +34,7 @@ void deal_aberrant(int code)
  * @tc.desc      : Test wcstoumax to get numeric part in wide string
  * @tc.level     : Level 0
  */
-void wcstoumax_0100(void)
+void Wcstoumax0100(void)
 {
     wchar_t *end = NULL;
     uintmax_t want = 123U;
@@ -52,22 +52,22 @@ void wcstoumax_0100(void)
  * @tc.desc      : Test the result of the wcstoumax method when the incoming parameter is empty
  * @tc.level     : Level 2
  */
-void wcstoumax_0200(void)
+void Wcstoumax0200(void)
 {
-    signal(SIGSEGV, deal_aberrant);
+    signal(SIGSEGV, DealAberrant);
     uintmax_t result = wcstoumax(NULL, NULL, 0);
 }
 
-static int WcstoumaxTest_impl(int argc, char *argv[])
+static int WcstoumaxTestImpl(int argc, char *argv[])
 {
-    wcstoumax_0100();
-    wcstoumax_0200();
+    Wcstoumax0100();
+    Wcstoumax0200();
     return g_tStatus;
 }
 
 int WcstoumaxTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return WcstoumaxTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return WcstoumaxTestImpl(1, libcArgv);
 }

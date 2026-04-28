@@ -13,15 +13,15 @@
  * limitations under the License.
  */
 
-#include <signal.h>
-#include <stdlib.h>
-#include <string.h>
+#include <csignal>
+#include <cstdlib>
+#include <cstring>
 
 #include "test.h"
 
 #define BUF_SIZE (13)
 
-static void handler(int sig)
+static void Handler(int sig)
 {
     exit(g_tStatus);
 }
@@ -31,7 +31,7 @@ static void handler(int sig)
  * @tc.desc      : copy a string returning a pointer to its end
  * @tc.level     : Level 0
  */
-void stpcpy_0100(void)
+void Stpcpy0100(void)
 {
     char buf[BUF_SIZE];
     memset(buf, 'A', sizeof(buf));
@@ -58,7 +58,7 @@ void stpcpy_0100(void)
  * @tc.desc      : copy an empty string returning a pointer to its end
  * @tc.level     : Level 1
  */
-void stpcpy_0200(void)
+void Stpcpy0200(void)
 {
     char buf[1];
 
@@ -82,7 +82,7 @@ void stpcpy_0200(void)
  * @tc.desc      : copy a string with the same size
  * @tc.level     : Level 1
  */
-void stpcpy_0300(void)
+void Stpcpy0300(void)
 {
     char buf[BUF_SIZE];
     memset(buf, 'A', sizeof(buf));
@@ -102,27 +102,27 @@ void stpcpy_0300(void)
  * @tc.desc      : copy a string to a NULL pointer
  * @tc.level     : Level 2
  */
-void stpcpy_0400(void)
+void Stpcpy0400(void)
 {
-    signal(SIGSEGV, handler);
+    signal(SIGSEGV, Handler);
 
     char *src = "Hello world!";
     strcpy(NULL, src);
 }
 
-static int StpcpyTest_impl(int argc, char *argv[])
+static int StpcpyTestImpl(int argc, char *argv[])
 {
-    stpcpy_0100();
-    stpcpy_0200();
-    stpcpy_0300();
-    stpcpy_0400();
+    Stpcpy0100();
+    Stpcpy0200();
+    Stpcpy0300();
+    Stpcpy0400();
 
     return g_tStatus;
 }
 
 int StpcpyTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return StpcpyTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return StpcpyTestImpl(1, libcArgv);
 }

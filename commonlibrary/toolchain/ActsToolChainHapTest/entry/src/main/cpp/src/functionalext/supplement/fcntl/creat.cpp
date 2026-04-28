@@ -22,7 +22,7 @@
  * @tc.desc      : Each parameter is valid and a new file can be created.
  * @tc.level     : Level 0
  */
-void creat_0100(void)
+void Creat0100(void)
 {
     int fd = -1;
     const char *ptr = "/data/storage/el2/base/cache/creattest.txt";
@@ -38,7 +38,7 @@ void creat_0100(void)
  * @tc.desc      : The filename parameter is invalid, a new file cannot be created.
  * @tc.level     : Level 2
  */
-void creat_0200(void)
+void Creat0200(void)
 {
     int fd = 0;
     const char *ptr = "";
@@ -54,7 +54,7 @@ void creat_0200(void)
  * @tc.desc      : The mode parameter is invalid and a new file cannot be created.
  * @tc.level     : Level 0
  */
-void creat_0300(void)
+void Creat0300(void)
 {
     int fd = 0;
     const char *ptr = "/data/storage/el2/base/cache/creattest.txt";
@@ -65,17 +65,17 @@ void creat_0300(void)
     ptr = NULL;
 }
 
-static int CreatTest_with_args(int argc, char *argv[])
+static int CreatTestWithArgs(int argc, char *argv[])
 {
-    creat_0100();
-    creat_0200();
-    creat_0300();
+    Creat0100();
+    Creat0200();
+    Creat0300();
     return g_tStatus;
 }
 
 int CreatTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return CreatTest_with_args(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return CreatTestWithArgs(1, libcArgv);
 }

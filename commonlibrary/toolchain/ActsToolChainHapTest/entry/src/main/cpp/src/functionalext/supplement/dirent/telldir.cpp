@@ -14,14 +14,14 @@
  */
 
 #include <dirent.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include <csignal>
+#include <cstdio>
+#include <cstdlib>
 #include "test.h"
 
 static const char *path = "/data/storage/el2/base/cache/";
 
-static void handler(int sig)
+static void Handler(int sig)
 {
     exit(g_tStatus);
 }
@@ -31,7 +31,7 @@ static void handler(int sig)
  * @tc.desc      : Get the current read position of the parameter dir directory stream
  * @tc.level     : Level 0
  */
-void telldir_0100(void)
+void Telldir0100(void)
 {
     DIR *dir;
     struct dirent *ptr;
@@ -58,24 +58,24 @@ void telldir_0100(void)
  * @tc.desc      : Catch exception when parameter dir is NULL
  * @tc.level     : Level 2
  */
-void telldir_0200(void)
+void Telldir0200(void)
 {
-    signal(SIGSEGV, handler);
+    signal(SIGSEGV, Handler);
 
     DIR *dir = NULL;
     telldir(dir);
 }
 
-static int TelldirTest_impl(int argc, char *argv[])
+static int TelldirTestImpl(int argc, char *argv[])
 {
-    telldir_0100();
-    telldir_0200();
+    Telldir0100();
+    Telldir0200();
     return g_tStatus;
 }
 
 int TelldirTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return TelldirTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return TelldirTestImpl(1, libcArgv);
 }

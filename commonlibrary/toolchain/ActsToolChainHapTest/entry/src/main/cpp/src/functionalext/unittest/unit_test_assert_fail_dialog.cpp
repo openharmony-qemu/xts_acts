@@ -13,16 +13,16 @@
  * limitations under the License.
  */
 
-#include <stdio.h>
-#include <assert.h>
+#include <cstdio>
+#include <cassert>
 #include <info/fatal_message.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#include <string.h>
-#include <stdlib.h>
+#include <cstring>
+#include <cstdlib>
 #include <dlfcn.h>
-#include <signal.h>
+#include <csignal>
 
 #undef assert
 #define assert(x) ((void)((x) || (__assert_fail(#x, __FILE__, __LINE__, __func__),0)))
@@ -138,10 +138,12 @@ void ProcessRetry()
     assert(0);
 }
 
-static int UnittestFatalMessageAssertFailDialogTest_impl(void)
+static int UnittestFatalMessageAssertFailDialogTestImpl(void)
 {
     signal(SIGUSR1, SIG_DFL);
-    pid_t pid1, pid2, pid3;
+    pid_t pid1;
+    pid_t pid2;
+    pid_t pid3;
     int status;
 
     // Create the first child process
@@ -201,5 +203,5 @@ static int UnittestFatalMessageAssertFailDialogTest_impl(void)
 
 int UnittestFatalMessageAssertFailDialogTest(void)
 {
-    return UnittestFatalMessageAssertFailDialogTest_impl();
+    return UnittestFatalMessageAssertFailDialogTestImpl();
 }

@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-#include <signal.h>
-#include <stdlib.h>
-#include <string.h>
+#include <csignal>
+#include <cstdlib>
+#include <cstring>
 
 #include "test.h"
 
@@ -58,7 +58,7 @@ void Stpncpy0100(void)
  * @tc.desc      : copy an empty string returning a pointer to its end
  * @tc.level     : Level 1
  */
-void stpncpy_0200(void)
+void Stpncpy0200(void)
 {
     char buf[1];
     memset(buf, 0, sizeof(buf));
@@ -83,7 +83,7 @@ void stpncpy_0200(void)
  * @tc.desc      : copy a string with the same size
  * @tc.level     : Level 1
  */
-void stpncpy_0300(void)
+void Stpncpy0300(void)
 {
     char buf[BUF_SIZE];
     memset(buf, 'A', sizeof(buf));
@@ -103,7 +103,7 @@ void stpncpy_0300(void)
  * @tc.desc      : copy a string to a NULL pointer
  * @tc.level     : Level 2
  */
-void stpncpy_0400(void)
+void Stpncpy0400(void)
 {
     signal(SIGSEGV, Handler);
 
@@ -114,9 +114,9 @@ void stpncpy_0400(void)
 static int StpncpyTestImpl(int argc, char *argv[])
 {
     Stpncpy0100();
-    stpncpy_0200();
-    stpncpy_0300();
-    stpncpy_0400();
+    Stpncpy0200();
+    Stpncpy0300();
+    Stpncpy0400();
 
     return g_tStatus;
 }

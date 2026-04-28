@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <locale.h>
-#include <stdlib.h>
+#include <clocale>
+#include <cstdlib>
 #include "functionalext.h"
 
 /**
@@ -22,7 +22,7 @@
  * @tc.desc      : Asserts whether duplocale returns a null value for the global locale
  * @tc.level     : Level 0
  */
-static void duplocale_0100(void)
+static void Duplocale0100(void)
 {
     char *lo = setlocale(LC_ALL, "C");
     if (!lo) {
@@ -30,11 +30,11 @@ static void duplocale_0100(void)
         return;
     }
 
-    locale_t newlocale_ = duplocale(LC_GLOBAL_LOCALE);
-    EXPECT_TRUE("duplocale_0100", newlocale_);
-    if (newlocale_) {
-        freelocale(newlocale_);
-        newlocale_ = NULL;
+    locale_t newLocale = duplocale(LC_GLOBAL_LOCALE);
+    EXPECT_TRUE("duplocale_0100", newLocale);
+    if (newLocale) {
+        freelocale(newLocale);
+        newLocale = NULL;
     }
 }
 
@@ -44,7 +44,7 @@ static void duplocale_0100(void)
  * expecting that the results of the two calls are not equal
  * @tc.level     : Level 0
  */
-static void duplocale_0200(void)
+static void Duplocale0200(void)
 {
     char *lo = setlocale(LC_ALL, "C");
     if (!lo) {
@@ -55,20 +55,20 @@ static void duplocale_0200(void)
     locale_t global = duplocale(LC_GLOBAL_LOCALE);
     EXPECT_PTRNE("duplocale_0200", global, NULL);
 
-    locale_t newlocale_ = newlocale(LC_ALL_MASK, "en_US", NULL);
-    EXPECT_PTRNE("duplocale_0200", newlocale_, NULL);
+    locale_t newLocale = newlocale(LC_ALL_MASK, "en_US", NULL);
+    EXPECT_PTRNE("duplocale_0200", newLocale, NULL);
 
-    locale_t clonelocale = duplocale(newlocale_);
-    EXPECT_PTRNE("duplocale_0200", clonelocale, NULL);
-    EXPECT_PTRNE("duplocale_0200", clonelocale, global);
+    locale_t cloneLocale = duplocale(newLocale);
+    EXPECT_PTRNE("duplocale_0200", cloneLocale, NULL);
+    EXPECT_PTRNE("duplocale_0200", cloneLocale, global);
 
-    if (clonelocale) {
-        freelocale(clonelocale);
-        clonelocale = NULL;
+    if (cloneLocale) {
+        freelocale(cloneLocale);
+        cloneLocale = NULL;
     }
-    if (newlocale_) {
-        freelocale(newlocale_);
-        newlocale_ = NULL;
+    if (newLocale) {
+        freelocale(newLocale);
+        newLocale = NULL;
     }
     if (global) {
         freelocale(global);
@@ -78,7 +78,7 @@ static void duplocale_0200(void)
 
 int DuplocaleTest(void)
 {
-    duplocale_0100();
-    duplocale_0200();
+    Duplocale0100();
+    Duplocale0200();
     return g_tStatus;
 }

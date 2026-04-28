@@ -13,15 +13,15 @@
  * limitations under the License.
  */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <signal.h>
-#include <wchar.h>
-#include <inttypes.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <csignal>
+#include <cwchar>
+#include <cinttypes>
 #include "test.h"
 
-static void deal_aberrant(int code)
+static void DealAberrant(int code)
 {
     if (code != SIGSEGV) {
         t_error("wcstoimax_0200 code is %d are not SIGSEGV", __func__, code);
@@ -34,7 +34,7 @@ static void deal_aberrant(int code)
  * @tc.desc      : Test wcstoimax to get numeric part in wide string
  * @tc.level     : Level 0
  */
-void wcstoimax_0100(void)
+void Wcstoimax0100(void)
 {
     wchar_t *end = NULL;
     intmax_t want = 123;
@@ -52,22 +52,22 @@ void wcstoimax_0100(void)
  * @tc.desc      : Test the result of the wcstoimax method when the incoming parameter is empty
  * @tc.level     : Level 2
  */
-void wcstoimax_0200(void)
+void Wcstoimax0200(void)
 {
-    signal(SIGSEGV, deal_aberrant);
+    signal(SIGSEGV, DealAberrant);
     intmax_t result = wcstoimax(NULL, NULL, 0);
 }
 
-static int WcstoimaxTest_impl(int argc, char *argv[])
+static int WcstoimaxTestImpl(int argc, char *argv[])
 {
-    wcstoimax_0100();
-    wcstoimax_0200();
+    Wcstoimax0100();
+    Wcstoimax0200();
     return g_tStatus;
 }
 
 int WcstoimaxTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return WcstoimaxTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return WcstoimaxTestImpl(1, libcArgv);
 }

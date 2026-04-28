@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include <string.h>
+#include <cstring>
 #include "functionalext.h"
 
 #define TEST_AT_FDCWD (-100)
@@ -24,7 +24,7 @@
  * @tc.desc      : Search for a character in the specified memory block
  * @tc.level     : Level 0
  */
-void memrchr_0100(void)
+void Memrchr0100(void)
 {
     const char *src = "this is memrchr_0100 test.";
 
@@ -45,21 +45,21 @@ void memrchr_0100(void)
  * @tc.desc      : Provide an exception parameter to search for characters in the specified memory block
  * @tc.level     : Level 2
  */
-void memrchr_0200(void)
+void Memrchr0200(void)
 {
     const char *src = "this is memrchr_0200 test.";
     char *ret = (char *)memrchr(src, 'r', 0);
     EXPECT_PTREQ("memrchr_0200", ret, NULL);
 }
 
-static int MemrchrTest_impl(void)
+static int MemrchrTestImpl(void)
 {
-    memrchr_0100();
-    memrchr_0200();
+    Memrchr0100();
+    Memrchr0200();
     return g_tStatus;
 }
 
 int MemrchrTest(void)
 {
-    return MemrchrTest_impl();
+    return MemrchrTestImpl();
 }

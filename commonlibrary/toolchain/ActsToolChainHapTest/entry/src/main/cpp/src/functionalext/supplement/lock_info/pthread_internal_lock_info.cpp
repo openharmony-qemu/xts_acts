@@ -14,13 +14,12 @@
  */
 
 #include <hilog_adapter.h>
-#include <stdlib.h>
+#include <cstdlib>
 #include "functionalext.h"
 #include "test.h"
-#include <stdio.h>
-#include <stdbool.h>
-#include <time.h>
-#include <errno.h>
+#include <cstdio>
+#include <ctime>
+#include <cerrno>
 #include <pthread.h>
 #include <sys/un.h>
 #include <bits/alltypes.h>
@@ -29,7 +28,7 @@
 #include <fcntl.h>
 #include <dirent.h>
 #include <securec.h>
-#include <signal.h>
+#include <csignal>
 
 #define NEGATIVE_ONE (-1)
 #define ZERO (0)
@@ -85,10 +84,7 @@ bool CheckHiLogPrint(char *needToMatch)
     return flag;
 }
 
-#include <stdio.h>
-#include <signal.h>
 #include <unistd.h>
-#include <stdlib.h>
 
 #define FREEZE_SIGNAL_35 (35)
 
@@ -113,7 +109,7 @@ void PthreadInternalLockInfoTestCase(void)
     printf("hilogResult=%d\n", hilogResult);
 }
 
-static int PthreadInternalLockInfoTest_impl(void)
+static int PthreadInternalLockInfoTestImpl(void)
 {
     // 解除限制
     system("/bin/hilog -Q pidoff");
@@ -128,5 +124,5 @@ static int PthreadInternalLockInfoTest_impl(void)
 
 int PthreadInternalLockInfoTest(void)
 {
-    return PthreadInternalLockInfoTest_impl();
+    return PthreadInternalLockInfoTestImpl();
 }

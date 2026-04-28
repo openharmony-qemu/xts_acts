@@ -13,11 +13,11 @@
  * limitations under the License.
  */
 
-#include <locale.h>
-#include <stdlib.h>
+#include <clocale>
+#include <cstdlib>
 #include "functionalext.h"
 
-static const int lcMarkArry[] = {LC_PAPER_MASK,
+static const int g_lcMarkArry[] = {LC_PAPER_MASK,
     LC_NAME_MASK,
     LC_ADDRESS_MASK,
     LC_TELEPHONE_MASK,
@@ -30,19 +30,19 @@ static const int lcMarkArry[] = {LC_PAPER_MASK,
  * @tc.desc      : Check whether the LC_ALL type is passed to newlocale to create a custom locale environment
  * @tc.level     : Level 0
  */
-static void newlocale_0100(void)
+static void Newlocale0100(void)
 {
     char *lo = setlocale(LC_ALL, "C");
     if (!lo) {
         EXPECT_PTRNE("newlocale_0100", lo, NULL);
         return;
     }
-    locale_t newlocale_ = newlocale(LC_ALL_MASK, "en_US", NULL);
-    EXPECT_PTRNE("newlocale_0100", newlocale_, NULL);
+    locale_t newLocale = newlocale(LC_ALL_MASK, "en_US", NULL);
+    EXPECT_PTRNE("newlocale_0100", newLocale, NULL);
 
-    if (newlocale_) {
-        freelocale(newlocale_);
-        newlocale_ = NULL;
+    if (newLocale) {
+        freelocale(newLocale);
+        newLocale = NULL;
     }
 }
 
@@ -51,19 +51,19 @@ static void newlocale_0100(void)
  * @tc.desc      : Check whether the LC_ALL type is passed to newlocale to create a custom locale environment
  * @tc.level     : Level 0
  */
-static void newlocale_0200(void)
+static void Newlocale0200(void)
 {
     char *lo = setlocale(LC_ALL, "C");
     if (!lo) {
         EXPECT_PTRNE("newlocale_0200", lo, NULL);
         return;
     }
-    locale_t newlocale_ = newlocale(LC_ALL_MASK, "C", NULL);
-    EXPECT_PTRNE("newlocale_0200", newlocale_, NULL);
+    locale_t newLocale = newlocale(LC_ALL_MASK, "C", NULL);
+    EXPECT_PTRNE("newlocale_0200", newLocale, NULL);
 
-    if (newlocale_) {
-        freelocale(newlocale_);
-        newlocale_ = NULL;
+    if (newLocale) {
+        freelocale(newLocale);
+        newLocale = NULL;
     }
 }
 
@@ -73,34 +73,34 @@ static void newlocale_0200(void)
  * by passing different LC data types to newlocale
  * @tc.level     : Level 0
  */
-static void newlocale_0300(void)
+static void Newlocale0300(void)
 {
     char *lo = setlocale(LC_ALL, "C");
     if (!lo) {
         EXPECT_PTRNE("newlocale_0300", lo, NULL);
         return;
     }
-    for (int i = 0; i < sizeof(lcMarkArry) / sizeof(lcMarkArry[0]); i++) {
-        locale_t newlocale_ = newlocale(lcMarkArry[i], "en_US", NULL);
-        EXPECT_PTRNE("newlocale_0300", newlocale_, NULL);
+    for (int i = 0; i < sizeof(g_lcMarkArry) / sizeof(g_lcMarkArry[0]); i++) {
+        locale_t newLocale = newlocale(g_lcMarkArry[i], "en_US", NULL);
+        EXPECT_PTRNE("newlocale_0300", newLocale, NULL);
 
-        if (newlocale_) {
-            freelocale(newlocale_);
-            newlocale_ = NULL;
+        if (newLocale) {
+            freelocale(newLocale);
+            newLocale = NULL;
         }
     }
 }
 
-static int NewlocaleSupTest_impl(void)
+static int NewlocaleSupTestImpl(void)
 {
-    newlocale_0100();
-    newlocale_0200();
-    newlocale_0300();
+    Newlocale0100();
+    Newlocale0200();
+    Newlocale0300();
 
     return g_tStatus;
 }
 
 int NewlocaleSupTest(void)
 {
-    return NewlocaleSupTest_impl();
+    return NewlocaleSupTestImpl();
 }

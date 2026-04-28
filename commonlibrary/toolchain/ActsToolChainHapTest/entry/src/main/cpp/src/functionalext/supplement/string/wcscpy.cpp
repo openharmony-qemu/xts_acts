@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
-#include <signal.h>
-#include <stdlib.h>
-#include <string.h>
-#include <wchar.h>
+#include <csignal>
+#include <cstdlib>
+#include <cstring>
+#include <cwchar>
 #include "test.h"
 
 #define BUFF_SIZE (40)
@@ -46,7 +46,7 @@ void Wcscpy0100(void)
  * @tc.desc      : Copy when wcs is an empty string
  * @tc.level     : Level 1
  */
-void wcscpy_0200(void)
+void Wcscpy0200(void)
 {
     wchar_t wcs[] = L"";
     wchar_t des[] = L"wcscpy test";
@@ -61,7 +61,7 @@ void wcscpy_0200(void)
  * @tc.desc      : des is empty, the program is abnormal
  * @tc.level     : Level 2
  */
-void wcscpy_0300(void)
+void Wcscpy0300(void)
 {
     signal(SIGSEGV, Handler);
 
@@ -72,8 +72,8 @@ void wcscpy_0300(void)
 static int WcscpyTestImpl(int argc, char *argv[])
 {
     Wcscpy0100();
-    wcscpy_0200();
-    wcscpy_0300();
+    Wcscpy0200();
+    Wcscpy0300();
     return g_tStatus;
 }
 

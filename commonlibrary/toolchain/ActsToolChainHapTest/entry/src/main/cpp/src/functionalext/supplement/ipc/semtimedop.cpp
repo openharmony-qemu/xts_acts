@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-#include <errno.h>
+#include <cerrno>
+#include <cstring>
 #include <fcntl.h>
-#include <string.h>
 #include <sys/sem.h>
 
 #include "filepath_util.h"
@@ -27,7 +27,7 @@ extern "C" int __semtimedop_time64(int, struct sembuf *, size_t, const struct ti
  * @tc.desc      : System V semaphore operations
  * @tc.level     : Level 0
  */
-void semtimedop_0100(void)
+void Semtimedop0100(void)
 {
     char path[PATH_MAX] = {0};
     FILE_ABSOLUTE_PATH(STR_FILE_TXT, path);
@@ -91,7 +91,7 @@ void semtimedop_0100(void)
  * @tc.desc      : System V semaphore operations with invalid parameters
  * @tc.level     : Level 2
  */
-void semtimedop_0200(void)
+void Semtimedop0200(void)
 {
     errno = 0;
     int result = semtimedop(-1, NULL, -1, NULL);
@@ -109,7 +109,7 @@ void semtimedop_0200(void)
  * @tc.desc      : System V semaphore operations with invalid parameters
  * @tc.level     : Level 2
  */
-void semtimedop_time64_0200(void)
+void SemtimedopTime640200(void)
 {
     errno = 0;
     int result = __semtimedop_time64(-1, NULL, -1, NULL);
@@ -122,18 +122,18 @@ void semtimedop_time64_0200(void)
     }
 }
 
-static int SemtimedopTest_impl(int argc, char *argv[])
+static int SemtimedopTestImpl(int argc, char *argv[])
 {
-    // semtimedop_0100();
-    // semtimedop_0200();
-    // semtimedop_time64_0200();
+    // Semtimedop0100();
+    // Semtimedop0200();
+    // SemtimedopTime640200();
 
     return g_tStatus;
 }
 
 int SemtimedopTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return SemtimedopTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return SemtimedopTestImpl(1, libcArgv);
 }

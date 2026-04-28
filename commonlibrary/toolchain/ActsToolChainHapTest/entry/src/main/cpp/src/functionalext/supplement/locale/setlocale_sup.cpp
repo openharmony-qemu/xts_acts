@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-#include <locale.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include <clocale>
+#include <cstdlib>
+#include <cstdio>
 #include "functionalext.h"
 
 #define TEST_LC_COUNT 7
@@ -42,7 +42,7 @@ static const char envforlocale[][TEST_LC_LENGTH] = {
  *                 when the character set passed in for different data types is NULL
  * @tc.level     : Level 0
  */
-static void setlocale_0100(void)
+static void Setlocale0100(void)
 {
     const int num = sizeof(LcArry) / sizeof(LcArry[0]);
     for (int i = 0; i < num; i++) {
@@ -61,7 +61,7 @@ static void setlocale_0100(void)
  *                 when the default value "C" is passed in for different LC data types
  * @tc.level     : Level 0
  */
-static void setlocale_0200(void)
+static void Setlocale0200(void)
 {
     const int num = sizeof(LcArry) / sizeof(LcArry[0]);
     for (int i = 0; i < num; i++) {
@@ -80,7 +80,7 @@ static void setlocale_0200(void)
  * @tc.desc      : Asserts whether the result returned is null when an exception LC data type is passed in
  * @tc.level     : Level 2
  */
-static void setlocale_0300(void)
+static void Setlocale0300(void)
 {
     const char *locale1 = setlocale(PARAM_ERROR_VALUE_1, NULL);
     if (locale1) {
@@ -99,7 +99,7 @@ static void setlocale_0300(void)
  *                 when the environment variable is set to da_DK for different LC data types
  * @tc.level     : Level 0
  */
-static void setlocale_0400(void)
+static void Setlocale0400(void)
 {
     for (unsigned int i = 0; i < sizeof(envforlocale) / sizeof(envforlocale[0]); i++) {
         setenv(envforlocale[i], "da_DK", 1);
@@ -117,7 +117,7 @@ static void setlocale_0400(void)
  *                 when the character set passed in for different LC data types is set to en_ZA
  * @tc.level     : Level 0
  */
-static void setlocale_0500(void)
+static void Setlocale0500(void)
 {
     char *rev = setlocale(LC_ALL, "C");
     if (!rev) {
@@ -139,7 +139,7 @@ static void setlocale_0500(void)
  *                 function is used to pass LC_ALL, the corresponding field returned by the function is ar_QA
  * @tc.level     : Level 0
  */
-static void setlocale_0600(void)
+static void Setlocale0600(void)
 {
     for (unsigned int i = 0; i < sizeof(envforlocale) / sizeof(envforlocale[0]); i++) {
         int count = 0;
@@ -155,19 +155,19 @@ static void setlocale_0600(void)
     }
 }
 
-static int SetlocaleSupTest_impl(void)
+static int SetlocaleSupTestImpl(void)
 {
-    setlocale_0100();
-    setlocale_0200();
-    setlocale_0300();
-    setlocale_0400();
-    setlocale_0500();
-    setlocale_0300();
+    Setlocale0100();
+    Setlocale0200();
+    Setlocale0300();
+    Setlocale0400();
+    Setlocale0500();
+    Setlocale0600();
 
     return g_tStatus;
 }
 
 int SetlocaleSupTest(void)
 {
-    return SetlocaleSupTest_impl();
+    return SetlocaleSupTestImpl();
 }

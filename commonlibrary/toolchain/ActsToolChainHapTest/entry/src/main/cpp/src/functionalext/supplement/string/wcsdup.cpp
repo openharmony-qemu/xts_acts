@@ -13,11 +13,11 @@
  * limitations under the License.
  */
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <signal.h>
-#include <wchar.h>
+#include <cstdio>
+#include <cstring>
+#include <cstdlib>
+#include <csignal>
+#include <cwchar>
 #include "test.h"
 
 // Test constants for wcsdup operations
@@ -25,6 +25,12 @@
 #define LONG_STRING_SIZE 1024
 #define LONG_STRING_LENGTH 1023
 #define ALPHABET_SIZE 26
+#define WRITE_INDEX_0 0
+#define WRITE_INDEX_1 1
+#define WRITE_INDEX_2 2
+#define WRITE_INDEX_3 3
+#define WRITE_INDEX_4 4
+#define WRITE_INDEX_5 5
 
 static void DealAberrant(int code)
 {
@@ -306,12 +312,12 @@ void Wcsdup1000(void)
     }
     
     // Test that we can write to the returned memory
-    result[0] = L'W';
-    result[1] = L'r';
-    result[2] = L'i';
-    result[3] = L't';
-    result[4] = L'e';
-    result[5] = L'\0';
+    result[WRITE_INDEX_0] = L'W';
+    result[WRITE_INDEX_1] = L'r';
+    result[WRITE_INDEX_2] = L'i';
+    result[WRITE_INDEX_3] = L't';
+    result[WRITE_INDEX_4] = L'e';
+    result[WRITE_INDEX_5] = L'\0';
     
     if (wcscmp(result, L"Write") != 0) {
         t_error("%s Cannot write to returned memory\n", __func__);
@@ -353,7 +359,7 @@ void Wcsdup1100(void)
     free(result);
 }
 
-static int WcsdupTest_impl(int argc, char *argv[])
+static int WcsdupTestImpl(int argc, char *argv[])
 {
     Wcsdup0100();
     Wcsdup0200();
@@ -373,5 +379,5 @@ int WcsdupTest(void)
 {
     static char libcProg[] = "libc_test";
     char *libcArgv[] = { libcProg, NULL };
-    return WcsdupTest_impl(1, libcArgv);
+    return WcsdupTestImpl(1, libcArgv);
 }

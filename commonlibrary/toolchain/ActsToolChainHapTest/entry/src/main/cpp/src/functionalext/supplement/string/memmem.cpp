@@ -13,13 +13,14 @@
  * limitations under the License.
  */
 
-#include <string.h>
+#include <cstring>
 #include "functionalext.h"
 
 // Test constants for memmem operations
 #define PARTIAL_MATCH_LENGTH 3
 #define BINARY_DATA_OFFSET 2
 #define NEEDLE_LENGTH 2
+#define MUSL_OFFSET 5
 
 /**
  * @tc.name      : memmem_0100
@@ -27,7 +28,7 @@
  *                 the created buffer address
  * @tc.level     : Level 0
  */
-void memmem_0100(void)
+void Memmem0100(void)
 {
     const char buffer[] = "musl test";
     const char cmp[] = "musl";
@@ -48,7 +49,7 @@ void memmem_0100(void)
  * @tc.desc      : Assert whether the returned value of an invalid parameter is null
  * @tc.level     : Level 2
  */
-void memmem_0200(void)
+void Memmem0200(void)
 {
     const char buffer[] = "musl test";
     size_t buflen = sizeof(buffer) / sizeof(buffer[0]);
@@ -67,7 +68,7 @@ void memmem_0200(void)
  * @tc.desc      : Verify memmem returns NULL when substring not found
  * @tc.level     : Level 1
  */
-void memmem_0300(void)
+void Memmem0300(void)
 {
     const char buffer[] = "test musl";
     const char needle[] = "notfound";
@@ -80,7 +81,7 @@ void memmem_0300(void)
  * @tc.desc      : Verify memmem handles empty needle correctly
  * @tc.level     : Level 1
  */
-void memmem_0400(void)
+void Memmem0400(void)
 {
     const char buffer[] = "test musl";
     const char needle[] = "";
@@ -93,7 +94,7 @@ void memmem_0400(void)
  * @tc.desc      : Verify memmem handles binary data correctly
  * @tc.level     : Level 2
  */
-void memmem_0500(void)
+void Memmem0500(void)
 {
     const unsigned char buffer[] = {0x01, 0x02, 0x03, 0x04, 0x05};
     const unsigned char needle[] = {0x03, 0x04};
@@ -106,7 +107,7 @@ void memmem_0500(void)
  * @tc.desc      : Verify memmem returns NULL when needle larger than haystack
  * @tc.level     : Level 2
  */
-void memmem_0600(void)
+void Memmem0600(void)
 {
     const char buffer[] = "test";
     const char needle[] = "test string";
@@ -119,12 +120,12 @@ void memmem_0600(void)
  * @tc.desc      : Verify memmem finds partial matches correctly
  * @tc.level     : Level 2
  */
-void memmem_0700(void)
+void Memmem0700(void)
 {
     const char buffer[] = "test musl";
     const char needle[] = "musx";
     char *ptr = (char *)memmem(buffer, sizeof(buffer), needle, PARTIAL_MATCH_LENGTH); // Only compare first 3 chars
-    EXPECT_PTREQ("memmem_0700", ptr, buffer + 5);
+    EXPECT_PTREQ("memmem_0700", ptr, buffer + MUSL_OFFSET);
 }
 
 /**
@@ -132,7 +133,7 @@ void memmem_0700(void)
  * @tc.desc      : Verify memmem handles zero-length haystack correctly
  * @tc.level     : Level 2
  */
-void memmem_0800(void)
+void Memmem0800(void)
 {
     const char buffer[] = "";
     const char needle[] = "test";
@@ -140,21 +141,21 @@ void memmem_0800(void)
     EXPECT_PTREQ("memmem_0800", ptr, NULL);
 }
 
-static int MemmemTest_impl(void)
+static int MemmemTestImpl(void)
 {
-    memmem_0100();
-    memmem_0200();
-    memmem_0300();
-    memmem_0400();
-    memmem_0500();
-    memmem_0600();
-    memmem_0700();
-    memmem_0800();
+    Memmem0100();
+    Memmem0200();
+    Memmem0300();
+    Memmem0400();
+    Memmem0500();
+    Memmem0600();
+    Memmem0700();
+    Memmem0800();
 
     return g_tStatus;
 }
 
 int MemmemTest(void)
 {
-    return MemmemTest_impl();
+    return MemmemTestImpl();
 }

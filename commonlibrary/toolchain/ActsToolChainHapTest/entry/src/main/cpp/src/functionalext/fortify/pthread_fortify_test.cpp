@@ -15,11 +15,11 @@
 
 #include <pthread.h>
 #include <semaphore.h>
-#include <stdio.h>
-#include <errno.h>
-#include <string.h>
+#include <cstdio>
+#include <cerrno>
+#include <cstring>
+#include <csignal>
 #include "test.h"
-#include <signal.h>
 #include <sys/wait.h>
 #include <sigchain.h>
 #include "fortify_test.h"
@@ -28,7 +28,7 @@
 #define T(f) if ((r=(f))) t_error(#f " failed: %s\n", strerror(r))
 #define E(f) if (f) t_error(#f " failed: %s\n", strerror(errno))
 
-static void *pthread_mutex_lock_after_destroyed(void *arg)
+static void *PthreadMutexLockAfterDestroyed(void *arg)
 {
     void **a = (void**)arg;
 
@@ -36,7 +36,7 @@ static void *pthread_mutex_lock_after_destroyed(void *arg)
     return 0;
 }
 
-static int test_pthread_mutex_lock_after_destroyed(int mtype)
+static int TestPthreadMutexLockAfterDestroyed(int mtype)
 {
     pthread_t t;
     pthread_mutex_t m;
@@ -49,13 +49,13 @@ static int test_pthread_mutex_lock_after_destroyed(int mtype)
     T(pthread_mutexattr_settype(&ma, mtype));
     T(pthread_mutex_init((pthread_mutex_t*)a[0], &ma));
     T(pthread_mutexattr_destroy(&ma));
-    T(pthread_create(&t, 0, pthread_mutex_lock_after_destroyed, a));
+    T(pthread_create(&t, 0, PthreadMutexLockAfterDestroyed, a));
     T(pthread_mutex_destroy((pthread_mutex_t*)a[0]));
     T(pthread_join(t, &p));
     return i;
 }
 
-static void *pthread_mutex_unlock_after_destroyed(void *arg)
+static void *PthreadMutexUnlockAfterDestroyed(void *arg)
 {
     void **a = (void**)arg;
 
@@ -63,7 +63,7 @@ static void *pthread_mutex_unlock_after_destroyed(void *arg)
     return 0;
 }
 
-static int test_pthread_mutex_unlock_after_destroyed(int mtype)
+static int TestPthreadMutexUnlockAfterDestroyed(int mtype)
 {
     pthread_t t;
     pthread_mutex_t m;
@@ -76,13 +76,13 @@ static int test_pthread_mutex_unlock_after_destroyed(int mtype)
     T(pthread_mutexattr_settype(&ma, mtype));
     T(pthread_mutex_init((pthread_mutex_t*)a[0], &ma));
     T(pthread_mutexattr_destroy(&ma));
-    T(pthread_create(&t, 0, pthread_mutex_unlock_after_destroyed, a));
+    T(pthread_create(&t, 0, PthreadMutexUnlockAfterDestroyed, a));
     T(pthread_mutex_destroy((pthread_mutex_t*)a[0]));
     T(pthread_join(t, &p));
     return i;
 }
 
-static void *pthread_mutex_timedlock_after_destroyed(void *arg)
+static void *PthreadMutexTimedlockAfterDestroyed(void *arg)
 {
     void **a = (void**)arg;
     struct timespec ts;
@@ -92,7 +92,7 @@ static void *pthread_mutex_timedlock_after_destroyed(void *arg)
     return 0;
 }
 
-static int test_pthread_mutex_timedlock_after_destroyed(int mtype)
+static int TestPthreadMutexTimedlockAfterDestroyed(int mtype)
 {
     pthread_t t;
     pthread_mutex_t m;
@@ -105,13 +105,13 @@ static int test_pthread_mutex_timedlock_after_destroyed(int mtype)
     T(pthread_mutexattr_settype(&ma, mtype));
     T(pthread_mutex_init((pthread_mutex_t*)a[0], &ma));
     T(pthread_mutexattr_destroy(&ma));
-    T(pthread_create(&t, 0, pthread_mutex_timedlock_after_destroyed, a));
+    T(pthread_create(&t, 0, PthreadMutexTimedlockAfterDestroyed, a));
     T(pthread_mutex_destroy((pthread_mutex_t*)a[0]));
     T(pthread_join(t, &p));
     return i;
 }
 
-static void *pthread_mutex_trylock_after_destroyed(void *arg)
+static void *PthreadMutexTrylockAfterDestroyed(void *arg)
 {
     void **a = (void**)arg;
 
@@ -119,7 +119,7 @@ static void *pthread_mutex_trylock_after_destroyed(void *arg)
     return 0;
 }
 
-static int test_pthread_mutex_trylock_after_destroyed(int mtype)
+static int TestPthreadMutexTrylockAfterDestroyed(int mtype)
 {
     pthread_t t;
     pthread_mutex_t m;
@@ -132,57 +132,61 @@ static int test_pthread_mutex_trylock_after_destroyed(int mtype)
     T(pthread_mutexattr_settype(&ma, mtype));
     T(pthread_mutex_init((pthread_mutex_t*)a[0], &ma));
     T(pthread_mutexattr_destroy(&ma));
-    T(pthread_create(&t, 0, pthread_mutex_trylock_after_destroyed, a));
+    T(pthread_create(&t, 0, PthreadMutexTrylockAfterDestroyed, a));
     T(pthread_mutex_destroy((pthread_mutex_t*)a[0]));
     T(pthread_join(t, &p));
     return i;
 }
 
-static int PthreadFortifyTestTest_impl(int argc, char *argv[])
+static int PthreadFortifyTestTestImpl(int argc, char *argv[])
 {
     int i;
 
-    i = test_pthread_mutex_lock_after_destroyed(PTHREAD_MUTEX_NORMAL);
+    i = TestPthreadMutexLockAfterDestroyed(PTHREAD_MUTEX_NORMAL);
     if (i != 0) {
         t_error("PTHREAD_MUTEX_NORMAL lock failed after destroyed, got %s\n", strerror(i));
     }
-    i = test_pthread_mutex_lock_after_destroyed(PTHREAD_MUTEX_ERRORCHECK);
+    i = TestPthreadMutexLockAfterDestroyed(PTHREAD_MUTEX_ERRORCHECK);
     if (i != 0) {
         t_error("PTHREAD_MUTEX_ERRORCHECK lock failed after destroyed, got %s\n", strerror(i));
     }
-    i = test_pthread_mutex_lock_after_destroyed(PTHREAD_MUTEX_RECURSIVE);
+    i = TestPthreadMutexLockAfterDestroyed(PTHREAD_MUTEX_RECURSIVE);
     if (i != 0) {
         t_error("PTHREAD_MUTEX_RECURSIVE lock failed after destroyed, got %s\n", strerror(i));
     }
-    i = test_pthread_mutex_unlock_after_destroyed(PTHREAD_MUTEX_ERRORCHECK);
+    i = TestPthreadMutexUnlockAfterDestroyed(PTHREAD_MUTEX_ERRORCHECK);
     if (i == 0) {
         t_error("PTHREAD_MUTEX_ERRORCHECK unlock failed after destroyed, got %s\n", strerror(i));
     }
-    i = test_pthread_mutex_unlock_after_destroyed(PTHREAD_MUTEX_RECURSIVE);
+    i = TestPthreadMutexUnlockAfterDestroyed(PTHREAD_MUTEX_RECURSIVE);
     if (i == 0) {
         t_error("PTHREAD_MUTEX_RECURSIVE unlock failed after destroyed, got %s\n", strerror(i));
     }
-    i = test_pthread_mutex_timedlock_after_destroyed(PTHREAD_MUTEX_NORMAL);
+    i = TestPthreadMutexUnlockAfterDestroyed(PTHREAD_MUTEX_NORMAL);
+    if (i == 0) {
+        t_error("PTHREAD_MUTEX_NORMAL unlock failed after destroyed, got %s\n", strerror(i));
+    }
+    i = TestPthreadMutexTimedlockAfterDestroyed(PTHREAD_MUTEX_NORMAL);
     if (i != 0) {
         t_error("PTHREAD_MUTEX_NORMAL timedlock failed after destroyed, got %s\n", strerror(i));
     }
-    i = test_pthread_mutex_timedlock_after_destroyed(PTHREAD_MUTEX_ERRORCHECK);
+    i = TestPthreadMutexTimedlockAfterDestroyed(PTHREAD_MUTEX_ERRORCHECK);
     if (i != 0) {
         t_error("PTHREAD_MUTEX_ERRORCHECK timedlock failed after destroyed, got %s\n", strerror(i));
     }
-    i = test_pthread_mutex_timedlock_after_destroyed(PTHREAD_MUTEX_RECURSIVE);
+    i = TestPthreadMutexTimedlockAfterDestroyed(PTHREAD_MUTEX_RECURSIVE);
     if (i != 0) {
         t_error("PTHREAD_MUTEX_RECURSIVE timedlock failed after destroyed, got %s\n", strerror(i));
     }
-    i = test_pthread_mutex_trylock_after_destroyed(PTHREAD_MUTEX_ERRORCHECK);
+    i = TestPthreadMutexTrylockAfterDestroyed(PTHREAD_MUTEX_ERRORCHECK);
     if (i != 0) {
         t_error("PTHREAD_MUTEX_NORMAL trylock failed after destroyed, got %s\n", strerror(i));
     }
-    i = test_pthread_mutex_trylock_after_destroyed(PTHREAD_MUTEX_ERRORCHECK);
+    i = TestPthreadMutexTrylockAfterDestroyed(PTHREAD_MUTEX_NORMAL);
     if (i != 0) {
         t_error("PTHREAD_MUTEX_ERRORCHECK trylock failed after destroyed, got %s\n", strerror(i));
     }
-    i = test_pthread_mutex_trylock_after_destroyed(PTHREAD_MUTEX_RECURSIVE);
+    i = TestPthreadMutexTrylockAfterDestroyed(PTHREAD_MUTEX_RECURSIVE);
     if (i != 0) {
         t_error("PTHREAD_MUTEX_RECURSIVE trylock failed after destroyed, got %s\n", strerror(i));
     }
@@ -191,7 +195,7 @@ static int PthreadFortifyTestTest_impl(int argc, char *argv[])
 
 int PthreadFortifyTestTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return PthreadFortifyTestTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return PthreadFortifyTestTestImpl(1, libcArgv);
 }

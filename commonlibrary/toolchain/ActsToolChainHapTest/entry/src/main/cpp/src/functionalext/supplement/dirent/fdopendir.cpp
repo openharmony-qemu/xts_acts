@@ -13,12 +13,10 @@
  * limitations under the License.
  */
 
-#include <stdbool.h>
 #include <dirent.h>
 #include <dlfcn.h>
 #include <fcntl.h>
-#include <stdlib.h>
-#include <stdbool.h>
+#include <cstdlib>
 #include <unistd.h>
 #include "functionalext.h"
 
@@ -27,7 +25,7 @@
  * @tc.desc      : Each parameter is valid, and the directory information can be obtained.
  * @tc.level     : Level 0
  */
-void fdopendir_0100(void)
+void Fdopendir0100(void)
 {
     bool flag = false;
     DIR *dir = NULL;
@@ -55,7 +53,7 @@ void Fdopendir0200(void)
  *                 of the file cannot be obtained.
  * @tc.level     : Level 2
  */
-void fdopendir_0300(void)
+void Fdopendir0300(void)
 {
     DIR *dir = NULL;
     int fd = open("/data/storage/el2/base/cache/test.txt", O_RDONLY);
@@ -79,9 +77,9 @@ void Fdopendir0400(void)
 
 static int FdopendirTestImpl(int argc, char *argv[])
 {
-    fdopendir_0100();
+    Fdopendir0100();
     Fdopendir0200();
-    fdopendir_0300();
+    Fdopendir0300();
     Fdopendir0400();
     return g_tStatus;
 }

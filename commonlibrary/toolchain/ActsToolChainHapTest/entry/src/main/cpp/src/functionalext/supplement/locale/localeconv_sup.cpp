@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-#include <limits.h>
-#include <locale.h>
-#include <stdlib.h>
+#include <climits>
+#include <clocale>
+#include <cstdlib>
 #include "functionalext.h"
 
 /**
@@ -23,7 +23,7 @@
  * @tc.desc      : Asserts whether the localeconv function returns a value that is expected by default
  * @tc.level     : Level 0
  */
-static void localeconv_0100(void)
+static void Localeconv0100(void)
 {
     struct lconv *pconv = localeconv();
     if (pconv == NULL) {
@@ -58,19 +58,19 @@ static void localeconv_0100(void)
 #endif
 }
 
-static void localeconv_0300(void)
+static void Localeconv0300(void)
 {
     // Add the implementation of localeconv_0300 here
 }
 
-static int LocaleconvSupTest_impl(void)
+static int LocaleconvSupTestImpl(void)
 {
-    localeconv_0300();
+    Localeconv0300();
 
     return g_tStatus;
 }
 
 int LocaleconvSupTest(void)
 {
-    return LocaleconvSupTest_impl();
+    return LocaleconvSupTestImpl();
 }

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
  
-#include <tgmath.h>
+#include <ctgmath>
 #include <complex>
 #include "test.h"
 
@@ -34,7 +34,7 @@
 #define TEST_POW_EXPONENT_FLOAT 0.5f
 #define TEST_POW_EXPONENT_DOUBLE 0.5
 
-static int TgmathTest_impl(void)
+static int TgmathTestImpl(void)
 {
     long i;
 
@@ -74,5 +74,5 @@ static int TgmathTest_impl(void)
 
 int TgmathTest(void)
 {
-    return TgmathTest_impl();
+    return TgmathTestImpl();
 }

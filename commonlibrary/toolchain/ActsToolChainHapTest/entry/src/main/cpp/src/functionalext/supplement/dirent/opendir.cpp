@@ -13,21 +13,22 @@
  * limitations under the License.
  */
 
-#include <errno.h>
+#include <cerrno>
 #include <dirent.h>
-#include <string.h>
-#include "test.h"
+#include <cstring>
 #include <sys/stat.h>
-#include <stdio.h>
+#include <cstdio>
+#include <unistd.h>
+#include "test.h"
 /*
  * @tc.name      : opendir_0100
  * @tc.desc      : Verify that the parameters are valid to open the specified directory
  * @tc.level     : Level 0
  */
-void opendir_0100(void)
+void Opendir0100(void)
 {
     errno = 0;
-    char *path = "/data/storage/el2/base/cache/opendirtest";
+    const char *path = "/data/storage/el2/base/cache/opendirtest";
     if (access(path, F_OK) == 0) {
         remove(path);
     }
@@ -62,7 +63,7 @@ void opendir_0100(void)
  * @tc.desc      : When the path is not a folder or not exit, test the return value of the function
  * @tc.level     : Level 2
  */
-void opendir_0200(void)
+void Opendir0200(void)
 {
     DIR *dir1 = opendir("/dev/null");
     if (dir1) {
@@ -84,7 +85,7 @@ void opendir_0200(void)
  * @tc.desc      : When the path is NULL, test the return value of the function
  * @tc.level     : Level 2
  */
-void opendir_0300(void)
+void Opendir0300(void)
 {
     DIR *dir = opendir(NULL);
     if (dir) {
@@ -92,19 +93,19 @@ void opendir_0300(void)
     }
 }
 
-static int OpendirTest_impl(int argc, char *argv[])
+static int OpendirTestImpl(int argc, char *argv[])
 {
-    opendir_0100();
-    opendir_0200();
-    opendir_0300();
+    Opendir0100();
+    Opendir0200();
+    Opendir0300();
 
     return g_tStatus;
 }
 
 int OpendirTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return OpendirTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return OpendirTestImpl(1, libcArgv);
 }
 

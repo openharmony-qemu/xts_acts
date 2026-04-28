@@ -13,21 +13,21 @@
  * limitations under the License.
  */
 
-#include <errno.h>
-#include <signal.h>
+#include <cerrno>
+#include <csignal>
 #include <pthread.h>
 #include <sys/wait.h>
-#include "stdio.h"
+#include <cstdio>
 #include <pthread.h>
-#include <limits.h>
-#include <locale.h>
-#include <wchar.h>
-#include <stdlib.h>
+#include <climits>
+#include <clocale>
+#include <cwchar>
+#include <cstdlib>
 #include <dirent.h>
 #include <utime.h>
 #include "functionalext.h"
 
-static int compare(const void *p, const void *q)
+static int Compare(const void *p, const void *q)
 {
     return (*(int *)p - *(int *)q);
 }
@@ -36,7 +36,7 @@ static int compare(const void *p, const void *q)
  * @tc.desc      : Verify clearerr with invalid parameter
  * @tc.level     : Level 2
  */
-static void clearerr_0100(void)
+static void Clearerr0100(void)
 {
     pid_t pid = fork();
     if (pid == -1) {
@@ -58,7 +58,7 @@ static void clearerr_0100(void)
  * @tc.desc      : Verify clearerr with invalid parameter
  * @tc.level     : Level 2
  */
-void feof_0100(void)
+void Feof0100(void)
 {
     pid_t pid = fork();
     if (pid == -1) {
@@ -80,7 +80,7 @@ void feof_0100(void)
  * @tc.desc      : Verify clearerr with invalid parameter
  * @tc.level     : Level 2
  */
-void ferror_0100(void)
+void Ferror0100(void)
 {
     pid_t pid = fork();
     if (pid == -1) {
@@ -102,7 +102,7 @@ void ferror_0100(void)
  * @tc.desc      : Verify clearerr with invalid parameter
  * @tc.level     : Level 2
  */
-void fgetc_0100(void)
+void Fgetc0100(void)
 {
     pid_t pid = fork();
     if (pid == -1) {
@@ -124,7 +124,7 @@ void fgetc_0100(void)
  * @tc.desc      : Verify clearerr with invalid parameter
  * @tc.level     : Level 2
  */
-static void fgets_0100(void)
+static void Fgets0100(void)
 {
     pid_t pid = fork();
     if (pid == -1) {
@@ -147,8 +147,7 @@ static void fgets_0100(void)
  * @tc.desc      : Verify clearerr with invalid parameter
  * @tc.level     : Level 2
  */
-static 
-    void fprintf_0100(void)
+static void Fprintf0100(void)
 {
     pid_t pid = fork();
     if (pid == -1) {
@@ -171,7 +170,7 @@ static
  * @tc.desc      : Verify clearerr with invalid parameter
  * @tc.level     : Level 2
  */
-static void fputc_0100(void)
+static void Fputc0100(void)
 {
     pid_t pid = fork();
     if (pid == -1) {
@@ -193,7 +192,7 @@ static void fputc_0100(void)
  * @tc.desc      : Verify clearerr with invalid parameter
  * @tc.level     : Level 2
  */
-static void fputs_0100(void)
+static void Fputs0100(void)
 {
     pid_t pid = fork();
     if (pid == -1) {
@@ -215,7 +214,7 @@ static void fputs_0100(void)
  * @tc.desc      : Verify clearerr with invalid parameter
  * @tc.level     : Level 2
  */
-static void fread_0600(void)
+static void Fread0600(void)
 {
     pid_t pid = fork();
     if (pid == -1) {
@@ -238,7 +237,7 @@ static void fread_0600(void)
  * @tc.desc      : Verify clearerr with invalid parameter
  * @tc.level     : Level 2
  */
-static void fscanf_0100(void)
+static void Fscanf0100(void)
 {
     pid_t pid = fork();
     if (pid == -1) {
@@ -261,7 +260,7 @@ static void fscanf_0100(void)
  * @tc.desc      : Verify clearerr with invalid parameter
  * @tc.level     : Level 2
  */
-static void fseek_0100(void)
+static void Fseek0100(void)
 {
     pid_t pid = fork();
     if (pid == -1) {
@@ -284,7 +283,7 @@ static void fseek_0100(void)
  * @tc.desc      : Verify clearerr with invalid parameter
  * @tc.level     : Level 2
  */
-static void fseeko_0100(void)
+static void Fseeko0100(void)
 {
     pid_t pid = fork();
     if (pid == -1) {
@@ -301,27 +300,25 @@ static void fseeko_0100(void)
     }
 }
 
-static int InvalidParamTest_impl(int argc, char *argv[])
+static int InvalidParamTestImpl(int argc, char *argv[])
 {
-    clearerr_0100();
-    feof_0100();
-    ferror_0100();
-    fgetc_0100();
-    fgets_0100();
-    fprintf_0100();
-    fputc_0100();
-    fputs_0100();
-    fread_0600();
-    fscanf_0100();
-    fseek_0100();
-    fseeko_0100();
-
+    Clearerr0100();
+    Feof0100();
+    Ferror0100();
+    Fgetc0100();
+    Fgets0100();
+    Fprintf0100();
+    Fputc0100();
+    Fputs0100();
+    Fread0600();
+    Fscanf0100();
+    Fseek0100();
     return g_tStatus;
 }
 
 int InvalidParamTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return InvalidParamTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return InvalidParamTestImpl(1, libcArgv);
 }

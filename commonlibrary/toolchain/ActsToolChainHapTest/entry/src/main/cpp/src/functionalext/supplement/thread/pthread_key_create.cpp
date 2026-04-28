@@ -14,14 +14,14 @@
  */
 
 #include <pthread.h>
-#include <stdlib.h>
+#include <cstdlib>
 #include <unistd.h>
 #include "functionalext.h"
 
 static int32_t g_sleep_time = 2;
 static pthread_key_t g_key;
 
-static void *threadfuncA(void *arg)
+static void *ThreadfuncA(void *arg)
 {
     sleep(g_sleep_time);
     int32_t value = 0;
@@ -32,7 +32,7 @@ static void *threadfuncA(void *arg)
     return arg;
 }
 
-static void *threadfuncB(void *arg)
+static void *ThreadfuncB(void *arg)
 {
     int32_t value = 0;
     int32_t ret = pthread_setspecific(g_key, &value);
@@ -42,7 +42,7 @@ static void *threadfuncB(void *arg)
     return arg;
 }
 
-void testfunc(void *arg)
+void Testfunc(void *arg)
 {}
 
 /**
@@ -53,7 +53,7 @@ void testfunc(void *arg)
 void PthreadKeyCreate0100(void)
 {
     pthread_t tid1;
-    pthread_create(&tid1, NULL, threadfuncA, NULL);
+    pthread_create(&tid1, NULL, ThreadfuncA, NULL);
     int32_t ret = pthread_key_create(&g_key, NULL);
     EXPECT_EQ("PthreadKeyCreate0100", ret, 0);
     pthread_join(tid1, NULL);
@@ -68,8 +68,8 @@ void PthreadKeyCreate0100(void)
 void PthreadKeyCreate0200(void)
 {
     pthread_t tid2;
-    int32_t ret = pthread_key_create(&g_key, testfunc);
-    pthread_create(&tid2, NULL, threadfuncB, NULL);
+    int32_t ret = pthread_key_create(&g_key, Testfunc);
+    pthread_create(&tid2, NULL, ThreadfuncB, NULL);
     pthread_join(tid2, NULL);
     EXPECT_EQ("PthreadKeyCreate0200", ret, 0);
 }

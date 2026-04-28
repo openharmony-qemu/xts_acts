@@ -21,7 +21,7 @@
  * @tc.desc      : Verify that the directory structure can be sorted alphabetically
  * @tc.level     : Level 0
  */
-void alphasort_0100(void)
+void Alphasort0100(void)
 {
     struct dirent **namelist;
     int total = scandir("/data/storage/el2/base/cache", &namelist, 0, alphasort);
@@ -33,23 +33,23 @@ void alphasort_0100(void)
  * @tc.desc      : Verify that the directory structure cannot be sorted alphabetically
  * @tc.level     : Level 2
  */
-void alphasort_0200(void)
+void Alphasort0200(void)
 {
     struct dirent **namelist;
     int total = scandir(NULL, &namelist, 0, alphasort);
     EXPECT_TRUE("alphasort_0100", total < 0);
 }
 
-static int AlphasortTest_with_args(int argc, char *argv[])
+static int AlphasortTestWithArgs(int argc, char *argv[])
 {
-    alphasort_0100();
-    alphasort_0200();
+    Alphasort0100();
+    Alphasort0200();
     return g_tStatus;
 }
 
 int AlphasortTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return AlphasortTest_with_args(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return AlphasortTestWithArgs(1, libcArgv);
 }

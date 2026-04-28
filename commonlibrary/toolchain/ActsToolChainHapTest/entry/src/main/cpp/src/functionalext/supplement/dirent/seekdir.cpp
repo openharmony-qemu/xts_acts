@@ -14,11 +14,11 @@
  */
 
 #include <dirent.h>
-#include <errno.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cerrno>
+#include <csignal>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 
 #include "test.h"
 
@@ -84,7 +84,7 @@ void Seekdir0100(void)
  * @tc.desc      : set the position of the next readdir() call in the directory stream to zero
  * @tc.level     : Level 1
  */
-void seekdir_0200(void)
+void Seekdir0200(void)
 {
     DIR *dir = opendir(path);
     if (dir == NULL) {
@@ -122,7 +122,7 @@ void seekdir_0200(void)
  * @tc.desc      : set the position of the next readdir() call in the directory stream with NULL
  * @tc.level     : Level 2
  */
-void seekdir_0300(void)
+void Seekdir0300(void)
 {
     signal(SIGSEGV, Handler);
 
@@ -133,8 +133,8 @@ void seekdir_0300(void)
 static int SeekdirTestImpl(int argc, char *argv[])
 {
     Seekdir0100();
-    seekdir_0200();
-    seekdir_0300();
+    Seekdir0200();
+    Seekdir0300();
 
     return g_tStatus;
 }

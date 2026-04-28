@@ -14,13 +14,13 @@
  */
 
 #include <dirent.h>
-#include <signal.h>
-#include <stdlib.h>
-#include <string.h>
+#include <csignal>
+#include <cstdlib>
+#include <cstring>
 
 #include "filepath_util.h"
 
-static void handler(int sig)
+static void Handler(int sig)
 {
     exit(g_tStatus);
 }
@@ -30,7 +30,7 @@ static void handler(int sig)
  * @tc.desc      : reset directory stream
  * @tc.level     : Level 0
  */
-void rewinddir_0100(void)
+void Rewinddir0100(void)
 {
     char name[PATH_MAX] = {0};
     FILE_ABSOLUTE_DIR(name);
@@ -71,25 +71,25 @@ void rewinddir_0100(void)
  * @tc.desc      : reset directory stream with a NULL dir
  * @tc.level     : Level 2
  */
-void rewinddir_0200(void)
+void Rewinddir0200(void)
 {
-    signal(SIGSEGV, handler);
+    signal(SIGSEGV, Handler);
 
     DIR *dir = NULL;
     rewinddir(dir);
 }
 
-static int RewinddirTest_impl(int argc, char *argv[])
+static int RewinddirTestImpl(int argc, char *argv[])
 {
-    rewinddir_0100();
-    rewinddir_0200();
+    Rewinddir0100();
+    Rewinddir0200();
 
     return g_tStatus;
 }
 
 int RewinddirTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return RewinddirTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return RewinddirTestImpl(1, libcArgv);
 }

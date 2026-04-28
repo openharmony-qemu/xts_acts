@@ -13,11 +13,11 @@
  * limitations under the License.
  */
 
-#include <ctype.h>
-#include <stdio.h>
-#include <wchar.h>
-#include <wctype.h>
-#include <locale.h>
+#include <cctype>
+#include <cstdio>
+#include <cwchar>
+#include <cwctype>
+#include <clocale>
 
 #define XDIGIT_WINT_COUNT 704
 #define UNICODE_SIZE 1114111

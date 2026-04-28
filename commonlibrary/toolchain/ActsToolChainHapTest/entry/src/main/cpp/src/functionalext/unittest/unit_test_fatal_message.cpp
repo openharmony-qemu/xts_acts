@@ -15,10 +15,10 @@
 
 #include <info/fatal_message.h>
 
-#include <errno.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cerrno>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 #include <test.h>
 #include <pthread.h>
 #include <unistd.h>
@@ -32,7 +32,7 @@ static const int WAIT_TIME = 1;
  * @tc.desc      : Test the function of set_fatal_message.
  * @tc.level     : Level 0
  */
-static void fatal_message_0010(void)
+static void FatalMessage0010(void)
 {
     const char msg[1024] = {"abcdefghijklmnopqrstuvwxyz1234567890"};
     fatal_msg_t *fatal_message = NULL;
@@ -50,15 +50,15 @@ static void fatal_message_0010(void)
     }
 }
 
-static TEST_FUN G_Fun_Array[] = {
-    fatal_message_0010,
+static TEST_FUN g_gFunArray[] = {
+    FatalMessage0010,
 };
 
-static int UnittestFatalMessageTest_impl(void)
+static int UnittestFatalMessageTestImpl(void)
 {
-    int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
+    int num = sizeof(g_gFunArray) / sizeof(TEST_FUN);
     for (int pos = 0; pos < num; ++pos) {
-        G_Fun_Array[pos]();
+        g_gFunArray[pos]();
     }
 
     return g_tStatus;
@@ -66,5 +66,5 @@ static int UnittestFatalMessageTest_impl(void)
 
 int UnittestFatalMessageTest(void)
 {
-    return UnittestFatalMessageTest_impl();
+    return UnittestFatalMessageTestImpl();
 }

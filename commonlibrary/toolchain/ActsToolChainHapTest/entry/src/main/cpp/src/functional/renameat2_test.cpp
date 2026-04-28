@@ -14,11 +14,11 @@
  */
 #include <dirent.h>
 #include <fcntl.h>
-#include <stdio.h>
-#include <string.h>
+#include <cstdio>
+#include <cstring>
 #include <sys/stat.h>
 #include <unistd.h>
-#include <errno.h>
+#include <cerrno>
 #include "test.h"
 #define BUFFER_SIZE 1024
 #define RENAME_ZERO 0
@@ -222,7 +222,7 @@ static void CloseFolder(DIR *dir)
     }
 }
 
-static int Renameat2TestTest_impl(void)
+static int Renameat2TestTestImpl(void)
 {
     DIR *dir = opendir(g_dirPath);
     if (dir == NULL) {
@@ -267,5 +267,5 @@ static int Renameat2TestTest_impl(void)
 
 int Renameat2TestTest(void)
 {
-    return Renameat2TestTest_impl();
+    return Renameat2TestTestImpl();
 }

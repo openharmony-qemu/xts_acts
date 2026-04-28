@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
-#include <stdio.h>
-#include <ctype.h>
-#include <wctype.h>
-#include <locale.h>
+#include <cstdio>
+#include <cctype>
+#include <cwctype>
+#include <clocale>
 #include <dlfcn.h>
 #include "test.h"
 

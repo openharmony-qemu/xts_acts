@@ -13,19 +13,19 @@
  * limitations under the License.
  */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 #include "test.h"
 
-static int exit_num = 0;
-static int is_register = 0;
+static int g_exitNum = 0;
+static int g_isRegister = 0;
 
 /**
  * @tc.name      : atexit_0100
  * @tc.desc      : Construct repeated call
  * @tc.level     : Level 0
  */
-void atexit_0100(void)
+static void Atexit0100(void)
 {
     printf("%s is registered\n", __func__);
 }
@@ -35,15 +35,15 @@ void atexit_0100(void)
  * @tc.desc      : Register atexit_0100 when execute atexit_0200
  * @tc.level     : Level 0
  */
-void atexit_0200(void)
+static void Atexit0200(void)
 {
-    exit_num++;
-    if (!is_register) {
-        int result = atexit(atexit_0100);
+    g_exitNum++;
+    if (!g_isRegister) {
+        int result = atexit(Atexit0100);
         if (result != 0) {
             t_error("atexit_0200 error get result is not 0\n");
         }
-        is_register = 1;
+        g_isRegister = 1;
     }
 }
 
@@ -52,21 +52,21 @@ void atexit_0200(void)
  * @tc.desc      : Execute atexit_0300 when exit to check whether atexit_0200 is double-call
  * @tc.level     : Level 0
  */
-void atexit_0300(void)
+static void Atexit0300(void)
 {
-    if (exit_num > 1) {
-        t_error("exit_num from atexit_0200 error get result is not 1, now is %d\n", exit_num);
+    if (g_exitNum > 1) {
+        t_error("exit_num from atexit_0200 error get result is not 1, now is %d\n", g_exitNum);
     }
 }
 
-static int DoubleExitTest_impl(int argc, char *argv[])
+static int DoubleExitTestImpl(int argc, char *argv[])
 {
     int result = 0;
-    result = atexit(atexit_0300);
+    result = atexit(Atexit0300);
     if (result != 0) {
         t_error("atexit_0300 error get result is not 0\n");
     }
-    result = atexit(atexit_0200);
+    result = atexit(Atexit0200);
     if (result != 0) {
         t_error("atexit_0200 error get result is not 0\n");
     }
@@ -75,7 +75,7 @@ static int DoubleExitTest_impl(int argc, char *argv[])
 
 int DoubleExitTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return DoubleExitTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return DoubleExitTestImpl(1, libcArgv);
 }

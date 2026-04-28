@@ -22,7 +22,7 @@
  * @tc.desc      : Open /dev/null
  * @tc.level     : Level 0
  */
-void openat_0100(void)
+void Openat0100(void)
 {
     int ret = openat(0, "/dev/null", O_CREAT, TEST_MODE);
     EXPECT_NE("openat_0100", ret, ERREXPECT);
@@ -39,7 +39,7 @@ void openat_0100(void)
  * @tc.desc      : Open file openat_test does not exist
  * @tc.level     : Level 2
  */
-void openat_0200(void)
+void Openat0200(void)
 {
     int ret = openat(0, "openat_test", O_CREAT, TEST_MODE);
     EXPECT_EQ("openat_0200", ret, ERREXPECT);
@@ -51,14 +51,14 @@ void openat_0200(void)
     EXPECT_EQ("openat_0200", ret, ERREXPECT);
 }
 
-static int OpenatTest_impl(void)
+static int OpenatTestImpl(void)
 {
-    openat_0100();
-    openat_0200();
+    Openat0100();
+    Openat0200();
     return g_tStatus;
 }
 
 int OpenatTest(void)
 {
-    return OpenatTest_impl();
+    return OpenatTestImpl();
 }

@@ -16,17 +16,17 @@
 #include "functionalext.h"
 #include "ldso_dlopen_config_abs_path.h"
 #include <dlfcn.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 
-static int LdsoDlopenConfigAbsPath5Test_impl()
+static int LdsoDlopenConfigAbsPath5TestImpl()
 {
     if (!CheckPrerequisites()) {
         printf("CheckPrerequisites failed\n");
         return g_tStatus;
     }
 
-    dlopen_config_abs_path_policy_func(true);
+    DlopenConfigAbsPathPolicyFunc(true);
     if (!OpenSo(true, true)) {
         printf("OpenSo with abs path failed\n");
         g_tStatus = 1;
@@ -37,5 +37,5 @@ static int LdsoDlopenConfigAbsPath5Test_impl()
 
 int LdsoDlopenConfigAbsPath5Test(void)
 {
-    return LdsoDlopenConfigAbsPath5Test_impl();
+    return LdsoDlopenConfigAbsPath5TestImpl();
 }

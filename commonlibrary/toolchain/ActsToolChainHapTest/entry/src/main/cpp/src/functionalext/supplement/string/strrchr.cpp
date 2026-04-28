@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <stdio.h>
-#include <string.h>
+#include <cstdio>
+#include <cstring>
 #include "test.h"
 
 // 修复：把 char* 改成 const char*
@@ -41,7 +41,7 @@
             t_error("%s strrchr(%s,NULL) returned %s is not ''\n", #no, #str, result); \
     }
 
-static int StrrchrTest_impl(int argc, char *argv[])
+static int StrrchrTestImpl(int argc, char *argv[])
 {
     /**
      * @tc.name      : strrchr_0100
@@ -78,7 +78,7 @@ static int StrrchrTest_impl(int argc, char *argv[])
 
 int StrrchrTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return StrrchrTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return StrrchrTestImpl(1, libcArgv);
 }

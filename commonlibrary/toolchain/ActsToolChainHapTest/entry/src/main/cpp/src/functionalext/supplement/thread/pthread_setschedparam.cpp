@@ -14,7 +14,7 @@
  */
 
 #include <pthread.h>
-#include <stdlib.h>
+#include <cstdlib>
 #include <unistd.h>
 #include <semaphore.h>
 #include "functionalext.h"

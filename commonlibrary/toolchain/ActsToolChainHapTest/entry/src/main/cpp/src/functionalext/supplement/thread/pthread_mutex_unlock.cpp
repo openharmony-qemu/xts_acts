@@ -14,13 +14,13 @@
  */
 
 #include <pthread.h>
-#include <stdlib.h>
+#include <cstdlib>
 #include <unistd.h>
 #include "functionalext.h"
 
 static pthread_mutex_t g_mutex;
 
-static void *threadfuncA(void *arg)
+static void *ThreadfuncA(void *arg)
 {
     int32_t ret = pthread_mutex_lock(&g_mutex);
     ret = pthread_mutex_unlock(&g_mutex);
@@ -28,13 +28,13 @@ static void *threadfuncA(void *arg)
     return arg;
 }
 
-static void *threadfuncB(void *arg)
+static void *ThreadfuncB(void *arg)
 {
     pthread_mutex_lock(&g_mutex);
     return arg;
 }
 
-static void *threadfuncC(void *arg)
+static void *ThreadfuncC(void *arg)
 {
     int32_t ret = pthread_mutex_unlock(&g_mutex);
     EXPECT_EQ("pthread_mutex_un_lock_0200", ret, EPERM);
@@ -51,7 +51,7 @@ static void PthreadMutexUnLock0100(void)
     int32_t type = PTHREAD_MUTEX_RECURSIVE;
     pthread_mutex_init(&g_mutex, (pthread_mutexattr_t *)(&type));
     pthread_t tid1;
-    pthread_create(&tid1, NULL, threadfuncA, NULL);
+    pthread_create(&tid1, NULL, ThreadfuncA, NULL);
     pthread_join(tid1, NULL);
 }
 
@@ -65,15 +65,16 @@ static void PthreadMutexUnLock0200(void)
 {
     int32_t type = PTHREAD_MUTEX_RECURSIVE;
     pthread_mutex_init(&g_mutex, (pthread_mutexattr_t *)(&type));
-    pthread_t tid2, tid3;
-    pthread_create(&tid2, NULL, threadfuncB, NULL);
+    pthread_t tid2;
+    pthread_t tid3;
+    pthread_create(&tid2, NULL, ThreadfuncB, NULL);
     pthread_join(tid2, NULL);
-    pthread_create(&tid3, NULL, threadfuncC, NULL);
+    pthread_create(&tid3, NULL, ThreadfuncC, NULL);
     pthread_join(tid3, NULL);
     pthread_mutex_destroy(&g_mutex);
 }
 
-static int PthreadMutexUnlockTestTest_impl(void)
+static int PthreadMutexUnlockTestTestImpl(void)
 {
     PthreadMutexUnLock0100();
     PthreadMutexUnLock0200();
@@ -82,5 +83,5 @@ static int PthreadMutexUnlockTestTest_impl(void)
 
 int PthreadMutexUnlockTestTest(void)
 {
-    return PthreadMutexUnlockTestTest_impl();
+    return PthreadMutexUnlockTestTestImpl();
 }

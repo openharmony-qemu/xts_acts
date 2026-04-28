@@ -14,11 +14,10 @@
  */
 
 #include <fcntl.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <errno.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <cerrno>
 #include "functionalext.h"
 
 #ifndef TEST_MODE
@@ -32,7 +31,7 @@ const int32_t CREAT_MODE = TEST_MODE;
  * @tc.desc      : Verify rewind process success
  * @tc.level     : Level 0
  */
-static void rewind_0100(void)
+static void Rewind0100(void)
 {
     const char *filepath = "/data/storage/el2/base/cache/rewind_0100.txt";
     // Create file using creat()
@@ -100,13 +99,13 @@ static void rewind_0100(void)
     remove(filepath);
 }
 
-static int RewindTest_impl(void)
+static int RewindTestImpl(void)
 {
-    rewind_0100();
+    Rewind0100();
     return g_tStatus;
 }
 
 int RewindTest(void)
 {
-    return RewindTest_impl();
+    return RewindTestImpl();
 }

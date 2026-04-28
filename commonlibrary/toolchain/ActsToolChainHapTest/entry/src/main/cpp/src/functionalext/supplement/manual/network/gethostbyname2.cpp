@@ -14,12 +14,11 @@
  */
 
 #include <arpa/inet.h>
-#include <ctype.h>
+#include <cctype>
 #include <netinet/in.h>
 #include <netdb.h>
-#include <stdio.h>
+#include <cstdio>
 #include <sys/socket.h>
-#include <stdbool.h>
 #include "functionalext.h"
 
 typedef void (*TEST_FUN)();

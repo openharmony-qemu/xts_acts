@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-#include <stdio.h>
-#include <ctype.h>
-#include <wctype.h>
+#include <cstdio>
+#include <cctype>
+#include <cwctype>
 #include <dlfcn.h>
 #include <functionalext.h>
 #include "test.h"

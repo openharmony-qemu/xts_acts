@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-#include <signal.h>
-#include <stdio.h>
-#include <string.h>
+#include <csignal>
+#include <cstdio>
+#include <cstring>
 #include <sys/time.h>
 #include "test.h"
 

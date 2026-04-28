@@ -15,9 +15,9 @@
 #ifndef _FORTIFY_TEST_H
 #define _FORTIFY_TEST_H
 
-#include <errno.h>
-#include <signal.h>
-#include <stdlib.h>
+#include <cerrno>
+#include <csignal>
+#include <cstdlib>
 #include "test.h"
 
 #define TEST(c, ...) ((c) || (t_error(#c " failed: \n" __VA_ARGS__),0))

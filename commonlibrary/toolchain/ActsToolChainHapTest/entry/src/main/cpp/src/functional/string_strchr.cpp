@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <string.h>
-#include <stdint.h>
+#include <cstring>
+#include <cstdint>
 #include "test.h"
 
 // Test constants for string operations
@@ -27,22 +27,22 @@
 #define CHAR_MASK 127
 #define MAX_CHAR_VALUE 255
 
-static char buf[TEST_BUFFER_SIZE];
+static char g_buf[TEST_BUFFER_SIZE];
 
 static void *aligned(void *p)
 {
     return reinterpret_cast<void*>((reinterpret_cast<uintptr_t>(p) + ALIGNMENT_OFFSET) & static_cast<uintptr_t>(-CACHE_LINE_SIZE));
 }
 
-static void *aligncpy(const void *p, size_t len, size_t a)
+static void *Aligncpy(const void *p, size_t len, size_t a)
 {
-    return memcpy(reinterpret_cast<char*>(aligned(buf))+a, p, len);
+    return memcpy(reinterpret_cast<char*>(aligned(g_buf))+a, p, len);
 }
 
 #define N(s, c) { \
     int align; \
     for (align=0; align<ALIGNMENT_ITERATIONS; align++) { \
-        char *p = reinterpret_cast<char*>(aligncpy(s, sizeof s, align)); \
+        char *p = reinterpret_cast<char*>(Aligncpy(s, sizeof s, align)); \
         char *q = strchr(p, c); \
         if (q) \
             t_error("strchr(%s,%s) with align=%d returned str+%d, wanted 0\n", #s, #c, align, q-p); \
@@ -52,7 +52,7 @@ static void *aligncpy(const void *p, size_t len, size_t a)
 #define T(s, c, n) { \
     int align; \
     for (align=0; align<ALIGNMENT_ITERATIONS; align++) { \
-        char *p = reinterpret_cast<char*>(aligncpy(s, sizeof s, align)); \
+        char *p = reinterpret_cast<char*>(Aligncpy(s, sizeof s, align)); \
         char *q = strchr(p, c); \
         if (q == 0) \
             t_error("strchr(%s,%s) with align=%d returned 0, wanted str+%d\n", #s, #c, align, n); \
@@ -61,7 +61,7 @@ static void *aligncpy(const void *p, size_t len, size_t a)
     } \
 }
 
-static int StringStrchrTest_impl(void)
+static int StringStrchrTestImpl(void)
 {
     int i;
     char a[ARRAY_SIZE_A];
@@ -105,5 +105,5 @@ static int StringStrchrTest_impl(void)
 
 int StringStrchrTest(void)
 {
-    return StringStrchrTest_impl();
+    return StringStrchrTestImpl();
 }

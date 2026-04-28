@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-#include <errno.h>
-#include <signal.h>
-#include <string.h>
+#include <cerrno>
+#include <csignal>
+#include <cstring>
 #include <sys/wait.h>
 #include <sys/select.h>
 // #include <sigchain.h>
@@ -24,17 +24,17 @@
 #include "test.h"
 
 /**
- * @tc.name     : fd_set_0010
+ * @tc.name     : FdSet0010
  * @tc.desc     : test FD_SET with normal fd
  * @tc.level    : Level 1
  */
-static void fd_set_0010(void)
+static void FdSet0010(void)
 {
     fd_set readfds;
     FD_ZERO(&readfds);
     int sockfd = 0;
     FD_SET(sockfd, &readfds);
-    EXPECT_EQ(fd_set_0010, (&readfds)->fds_bits[0], 1);
+    EXPECT_EQ(FdSet0010, (&readfds)->fds_bits[0], 1);
 
     return;
 }
@@ -44,7 +44,7 @@ static void fd_set_0010(void)
  * @tc.desc     : test FD_SET with fd < 0
  * @tc.level    : Level 2
  */
-static void fd_set_0020(void)
+static void FdSet0020(void)
 {
     struct sigaction sigabrt = {
         .sa_handler = SignalHandler,
@@ -80,7 +80,7 @@ static void fd_set_0020(void)
  * @tc.desc     : test FD_SET with fd >= 1024
  * @tc.level    : Level 2
  */
-static void fd_set_0030(void)
+static void FdSet0030(void)
 {
     struct sigaction sigabrt = {
         .sa_handler = SignalHandler,
@@ -116,14 +116,14 @@ static void fd_set_0030(void)
  * @tc.desc     : test FD_CLR with normal fd
  * @tc.level    : Level 1
  */
-static void fd_clr_0010(void)
+static void FdClr0010(void)
 {
     fd_set readfds;
     FD_ZERO(&readfds);
     int sockfd = 0;
     FD_SET(sockfd, &readfds);
     FD_CLR(sockfd, &readfds);
-    EXPECT_EQ(fd_set_0010, (&readfds)->fds_bits[0], 0);
+    EXPECT_EQ(FdSet0010, (&readfds)->fds_bits[0], 0);
     
     return;
 }
@@ -133,7 +133,7 @@ static void fd_clr_0010(void)
  * @tc.desc     : test FD_CLR with fd < 0
  * @tc.level    : Level 2
  */
-static void fd_clr_0020(void)
+static void FdClr0020(void)
 {
     struct sigaction sigabrt = {
         .sa_handler = SignalHandler,
@@ -169,7 +169,7 @@ static void fd_clr_0020(void)
  * @tc.desc     : test FD_CLR with fd >= 1024
  * @tc.level    : Level 2
  */
-static void fd_clr_0030(void)
+static void FdClr0030(void)
 {
     struct sigaction sigabrt = {
         .sa_handler = SignalHandler,
@@ -205,14 +205,14 @@ static void fd_clr_0030(void)
  * @tc.desc     : test FD_ISSET with normal fd
  * @tc.level    : Level 1
  */
-static void fd_isset_0010(void)
+static void FdIsset0010(void)
 {
     fd_set readfds;
     FD_ZERO(&readfds);
     int sockfd = 0;
     FD_SET(sockfd, &readfds);
     int res = FD_ISSET(sockfd, &readfds);
-    EXPECT_EQ(fd_set_0010, res, 1);
+    EXPECT_EQ(FdSet0010, res, 1);
     
     return;
 }
@@ -222,13 +222,13 @@ static void fd_isset_0010(void)
  * @tc.desc     : test FD_ISSET with fd < 0
  * @tc.level    : Level 2
  */
-static void fd_isset_0020(void)
+static void FdIsset0020(void)
 {
     fd_set readfds;
     FD_ZERO(&readfds);
     int sockfd = -1;
     int res = FD_ISSET(sockfd, &readfds);
-    EXPECT_EQ(fd_set_0010, res, 0);
+    EXPECT_EQ(FdSet0010, res, 0);
     
     return;
 }
@@ -238,34 +238,34 @@ static void fd_isset_0020(void)
  * @tc.desc     : test FD_ISSET with fd >= 1024
  * @tc.level    : Level 2
  */
-static void fd_isset_0030(void)
+static void FdIsset0030(void)
 {
     fd_set readfds;
     FD_ZERO(&readfds);
     int sockfd = 1024;
     int res = FD_ISSET(sockfd, &readfds);
-    EXPECT_EQ(fd_set_0010, res, 0);
+    EXPECT_EQ(FdSet0010, res, 0);
     
     return;
 }
 
-static int SelectTestTest_impl(int argc, char *argv[]) {
+static int SelectTestTestImpl(int argc, char *argv[]) {
     // RemoveAllSpecialHandler(SIGABRT);
-    fd_set_0010();
-    fd_set_0020();
-    fd_set_0030();
-    fd_clr_0010();
-    fd_clr_0020();
-    fd_clr_0030();
-    fd_isset_0010();
-    fd_isset_0020();
-    fd_isset_0030();
+    FdSet0010();
+    FdSet0020();
+    FdSet0030();
+    FdClr0010();
+    FdClr0020();
+    FdClr0030();
+    FdIsset0010();
+    FdIsset0020();
+    FdIsset0030();
     return g_tStatus;
 }
 
 int SelectTestTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return SelectTestTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return SelectTestTestImpl(1, libcArgv);
 }

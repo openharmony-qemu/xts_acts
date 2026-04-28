@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-#include <signal.h>
-#include <stdlib.h>
-#include <wchar.h>
+#include <csignal>
+#include <cstdlib>
+#include <cwchar>
 
 #include "test.h"
 
@@ -31,6 +31,9 @@
 #define COPY_SIZE_7 7
 #define COPY_SIZE_8 8
 #define COPY_SIZE_10 10
+#define NULL_CHAR_INDEX_0 0
+#define NULL_CHAR_INDEX_1 1
+#define NULL_CHAR_INDEX_2 2
 
 static void Handler(int sig)
 {
@@ -204,18 +207,18 @@ void Wcsncpy0800(void)
 void Wcsncpy0900(void)
 {
     wchar_t src[] = L"A\0BC";  // Null in middle
-    wchar_t dest[10];
-    wmemset(dest, L'X', 10);
+    wchar_t dest[BUFFER_SIZE_XLARGE];
+    wmemset(dest, L'X', BUFFER_SIZE_XLARGE);
     
-    wcsncpy(dest, src, 8);
+    wcsncpy(dest, src, COPY_SIZE_8);
     
     // Should copy 'A' and null, then pad with nulls
-    if (dest[0] != L'A' || dest[1] != L'\0') {
+    if (dest[NULL_CHAR_INDEX_0] != L'A' || dest[NULL_CHAR_INDEX_1] != L'\0') {
         t_error("%s Copy of string with null failed\n", __func__);
     }
     
     // Positions 2-7 should be null
-    for (int i = 2; i < 8; i++) {
+    for (int i = NULL_CHAR_INDEX_2; i < COPY_SIZE_8; i++) {
         if (dest[i] != L'\0') {
             t_error("%s Position %d not null\n", __func__, i);
         }

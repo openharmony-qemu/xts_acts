@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
-#include <ctype.h>
-#include <wchar.h>
-#include <wctype.h>
-#include <locale.h>
+#include <cctype>
+#include <cwchar>
+#include <cwctype>
+#include <clocale>
 #include "functionalext.h"
 
 #define BLANK_WINT_COUNT 18

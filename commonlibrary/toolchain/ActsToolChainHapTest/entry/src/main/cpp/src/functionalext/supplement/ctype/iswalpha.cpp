@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
-#include <ctype.h>
-#include <wchar.h>
-#include <wctype.h>
-#include <locale.h>
+#include <cctype>
+#include <cwchar>
+#include <cwctype>
+#include <clocale>
 #include "functionalext.h"
 
 #define ALPHA_WINT_COUNT 136726

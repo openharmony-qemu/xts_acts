@@ -26,7 +26,7 @@ const int32_t INIT_LEN = 0;
  * @tc.desc      : Verify that flushing the line buffer was successful.
  * @tc.level     : Level 0
  */
-void flushlbf_0100(void)
+void Flushlbf0100(void)
 {
     char buffer[1024] = {0};
     char array[] = "This is a test!";
@@ -55,15 +55,15 @@ void flushlbf_0100(void)
     remove(path);
 }
 
-static int _flushlbfTest_with_args(int argc, char *argv[])
+static int FlushlbfTestWithArgs(int argc, char *argv[])
 {
-    flushlbf_0100();
+    Flushlbf0100();
     return g_tStatus;
 }
 
 int FlushlbfTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return _flushlbfTest_with_args(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return FlushlbfTestWithArgs(1, libcArgv);
 }

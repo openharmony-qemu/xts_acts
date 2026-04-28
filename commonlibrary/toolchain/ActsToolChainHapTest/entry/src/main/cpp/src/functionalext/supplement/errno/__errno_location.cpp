@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <stdio.h>
-#include <errno.h>
+#include <cstdio>
+#include <cerrno>
 #include "test.h"
 
 // Test constant for errno value

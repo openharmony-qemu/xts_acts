@@ -22,18 +22,18 @@
 
 typedef void (*TEST_FUN)();
 
-static const char *path = "/data/storage/el2/base/cache/test.txt";
+static const char *g_path = "/data/storage/el2/base/cache/test.txt";
 
 /*
  * @tc.name      : open_0100
  * @tc.desc      : Verify file open mode is O_RDONLY
  * @tc.level     : Level 0
  */
-void open_0100(void)
+void Open0100(void)
 {
     char s[] = "test";
     char buffer[80] = {0};
-    int fd = open(path, O_RDONLY + O_CREAT, TEST_MODE);
+    int fd = open(g_path, O_RDONLY + O_CREAT, TEST_MODE);
     int len = write(fd, s, sizeof(s));
     ssize_t size = read(fd, buffer, sizeof(buffer));
     EXPECT_MT("open_0100", fd, EXPECTED_FD_VALUE);
@@ -41,7 +41,7 @@ void open_0100(void)
     EXPECT_STREQ("open_0100", buffer, "");
 
     close(fd);
-    remove(path);
+    remove(g_path);
 }
 
 /*
@@ -49,9 +49,9 @@ void open_0100(void)
  * @tc.desc      : Verify file open mode is O_RDONLY (file does not exist)
  * @tc.level     : Level 2
  */
-void open_0200(void)
+void Open0200(void)
 {
-    int fd = open(path, O_RDONLY);
+    int fd = open(g_path, O_RDONLY);
     EXPECT_EQ("open_0200", fd, -1);
 }
 
@@ -60,18 +60,18 @@ void open_0200(void)
  * @tc.desc      : Verify file open mode is O_WRONLY
  * @tc.level     : Level 0
  */
-void open_0300(void)
+void Open0300(void)
 {
     char s[] = "test";
     char buffer[80] = {0};
-    int fd = open(path, O_WRONLY + O_CREAT, TEST_MODE);
+    int fd = open(g_path, O_WRONLY + O_CREAT, TEST_MODE);
     ssize_t size = read(fd, buffer, sizeof(buffer));
     EXPECT_MT("open_0300", fd, EXPECTED_FD_VALUE);
     EXPECT_STREQ("open_0300", buffer, "");
     int len = write(fd, s, sizeof(s));
     EXPECT_EQ("open_0300", len, TEST_STRING_LENGTH);
     close(fd);
-    remove(path);
+    remove(g_path);
 }
 
 /*
@@ -79,9 +79,9 @@ void open_0300(void)
  * @tc.desc      : Verify file open mode is O_WRONLY(file does not exist)
  * @tc.level     : Level 2
  */
-void open_0400(void)
+void Open0400(void)
 {
-    int fd = open(path, O_WRONLY);
+    int fd = open(g_path, O_WRONLY);
     EXPECT_EQ("open_0400", fd, -1);
 }
 
@@ -90,18 +90,18 @@ void open_0400(void)
  * @tc.desc      : Verify file open mode is O_RDWR | O_APPEND
  * @tc.level     : Level 0
  */
-void open_0500(void)
+void Open0500(void)
 {
     char s[] = "test";
     char buffer[80] = {0};
-    int fd = open(path, O_RDWR | O_APPEND + O_CREAT, TEST_MODE);
+    int fd = open(g_path, O_RDWR | O_APPEND + O_CREAT, TEST_MODE);
     ssize_t size = read(fd, buffer, sizeof(buffer));
     EXPECT_MT("open_0500", fd, EXPECTED_FD_VALUE);
     EXPECT_STREQ("open_0500", buffer, "");
     int len = write(fd, s, sizeof(s));
     EXPECT_EQ("open_0500", len, TEST_STRING_LENGTH);
     close(fd);
-    remove(path);
+    remove(g_path);
 }
 
 /*
@@ -109,11 +109,11 @@ void open_0500(void)
  * @tc.desc      : Verify file open mode is O_RDWR | O_APPEND(file does not exist)
  * @tc.level     : Level 1
  */
-void open_0600(void)
+void Open0600(void)
 {
     char s[] = "test";
     char buffer[80] = {0};
-    int fd = open(path, O_RDWR | O_APPEND);
+    int fd = open(g_path, O_RDWR | O_APPEND);
     ssize_t size = read(fd, buffer, sizeof(buffer));
     EXPECT_EQ("open_0600", fd, -1);
     EXPECT_STREQ("open_0600", buffer, "");
@@ -127,9 +127,9 @@ void open_0600(void)
  * @tc.desc      : Verify file open mode is O_RDWR | O_APPEND(file pathname is invalid)
  * @tc.level     : Level 2
  */
-void open_0700(void)
+void Open0700(void)
 {
-    int fd = open(path, O_RDWR | O_APPEND);
+    int fd = open(g_path, O_RDWR | O_APPEND);
     EXPECT_EQ("open_0700", fd, -1);
 }
 
@@ -138,18 +138,18 @@ void open_0700(void)
  * @tc.desc      : Verify file open mode is O_RDWR | O_CREAT
  * @tc.level     : Level 0
  */
-void open_0800(void)
+void Open0800(void)
 {
     char s[] = "test";
     char buffer[80] = {0};
-    int fd = open(path, O_RDWR | O_CREAT, TEST_MODE);
+    int fd = open(g_path, O_RDWR | O_CREAT, TEST_MODE);
     ssize_t size = read(fd, buffer, sizeof(buffer));
     EXPECT_MT("open_0800", fd, EXPECTED_FD_VALUE);
     EXPECT_STREQ("open_0800", buffer, "");
     int len = write(fd, s, sizeof(s));
     EXPECT_EQ("open_0800", len, TEST_STRING_LENGTH);
     close(fd);
-    remove(path);
+    remove(g_path);
 }
 
 /*
@@ -157,38 +157,38 @@ void open_0800(void)
  * @tc.desc      : Verify file open mode is O_RDWR | O_CLOEXEC
  * @tc.level     : Level 0
  */
-void open_0900(void)
+void Open0900(void)
 {
     char s[] = "test";
     char buffer[80] = {0};
-    int fd = open(path, O_RDWR | O_CLOEXEC + O_CREAT, TEST_MODE);
+    int fd = open(g_path, O_RDWR | O_CLOEXEC + O_CREAT, TEST_MODE);
     ssize_t size = read(fd, buffer, sizeof(buffer));
     EXPECT_MT("open_0900", fd, EXPECTED_FD_VALUE);
     EXPECT_STREQ("open_0900", buffer, "");
     int len = write(fd, s, sizeof(s));
     EXPECT_EQ("open_0900", len, TEST_STRING_LENGTH);
     close(fd);
-    remove(path);
+    remove(g_path);
 }
 
-static TEST_FUN G_Fun_Array[] = {
-    open_0100,
-    open_0200,
-    open_0300,
-    open_0400,
-    open_0500,
-    open_0600,
-    open_0700,
-    open_0800,
-    open_0900,
+static TEST_FUN g_gFunArray[] = {
+    Open0100,
+    Open0200,
+    Open0300,
+    Open0400,
+    Open0500,
+    Open0600,
+    Open0700,
+    Open0800,
+    Open0900,
 
 };
 
-static int OpenTest_impl(int argc, char *argv[])
+static int OpenTestImpl(int argc, char *argv[])
 {
-    int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
+    int num = sizeof(g_gFunArray) / sizeof(TEST_FUN);
     for (int pos = 0; pos < num; ++pos) {
-        G_Fun_Array[pos]();
+        g_gFunArray[pos]();
     }
 
     return g_tStatus;
@@ -196,8 +196,8 @@ static int OpenTest_impl(int argc, char *argv[])
 
 int OpenTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return OpenTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return OpenTestImpl(1, libcArgv);
 }
 

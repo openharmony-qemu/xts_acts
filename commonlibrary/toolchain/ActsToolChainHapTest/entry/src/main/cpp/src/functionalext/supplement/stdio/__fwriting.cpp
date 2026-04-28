@@ -13,11 +13,11 @@
  * limitations under the License.
  */
 
-#include <stdio.h>
+#include <cstdio>
 #include <stdio_ext.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <stddef.h>
+#include <cstdlib>
+#include <cstdint>
+#include <cstddef>
 #include "functionalext.h"
 #include "filepath_util.h"
 

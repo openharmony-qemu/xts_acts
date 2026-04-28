@@ -14,7 +14,7 @@
  */
 
 #include <pthread.h>
-#include <stdlib.h>
+#include <cstdlib>
 #include <unistd.h>
 #include "functionalext.h"
 
@@ -47,7 +47,8 @@ static void *threadfuncB(void *arg)
  */
 void PthreadOnce0100(void)
 {
-    pthread_t tid1, tid2;
+    pthread_t tid1;
+    pthread_t tid2;
     pthread_create(&tid1, NULL, threadfuncA, NULL);
     pthread_create(&tid2, NULL, threadfuncB, NULL);
     pthread_join(tid1, NULL);

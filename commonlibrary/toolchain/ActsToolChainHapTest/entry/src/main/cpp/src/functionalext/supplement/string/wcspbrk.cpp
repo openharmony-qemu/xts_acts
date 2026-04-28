@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-#include <wchar.h>
-#include <stdio.h>
-#include <string.h>
+#include <cwchar>
+#include <cstdio>
+#include <cstring>
 #include "test.h"
 
 // Test constants for wcspbrk operations
@@ -27,7 +27,7 @@
  * @tc.desc      : Test wcspbrk to get the first occurrence of the target character in the source string
  * @tc.level     : Level 0
  */
-void wcspbrk_0100(void)
+void Wcspbrk0100(void)
 {
     const wchar_t *s = L"hello, world!";
     // 修复：使用 const wchar_t* 接收返回值
@@ -43,7 +43,7 @@ void wcspbrk_0100(void)
  *                 character
  * @tc.level     : Level 1
  */
-void wcspbrk_0200(void)
+void Wcspbrk0200(void)
 {
     const wchar_t *s = L"hello, world!";
     // 修复：使用 const wchar_t* 接收返回值
@@ -73,7 +73,7 @@ void Wcspbrk0300(void)
  * @tc.desc      : Test the result of wcspbrk when the target character is punctuation
  * @tc.level     : Level 1
  */
-void wcspbrk_0400(void)
+void Wcspbrk0400(void)
 {
     const wchar_t *s = L"hello, world!";
     // 修复：使用 const wchar_t* 接收返回值
@@ -85,10 +85,10 @@ void wcspbrk_0400(void)
 
 static int WcspbrkTestImpl(int argc, char *argv[])
 {
-    wcspbrk_0100();
-    wcspbrk_0200();
+    Wcspbrk0100();
+    Wcspbrk0200();
     Wcspbrk0300();
-    wcspbrk_0400();
+    Wcspbrk0400();
     return g_tStatus;
 }
 

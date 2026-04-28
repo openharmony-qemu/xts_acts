@@ -13,11 +13,11 @@
  * limitations under the License.
  */
 
-#include <ctype.h>
-#include <stdio.h>
-#include <wchar.h>
-#include <wctype.h>
-#include <locale.h>
+#include <cctype>
+#include <cstdio>
+#include <cwchar>
+#include <cwctype>
+#include <clocale>
 
 #include "functionalext.h"
 #include "test.h"
