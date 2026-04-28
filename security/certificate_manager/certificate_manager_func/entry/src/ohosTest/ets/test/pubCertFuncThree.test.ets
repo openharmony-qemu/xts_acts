@@ -692,7 +692,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     /**
      * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_0300
      * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_0300
-     * @tc.desc   keyUri is empty string, return error code 17500011 on PC device or 801 on non-PC device
+     * @tc.desc   keyUri is empty string, return error code 17500011
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -704,24 +704,13 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
       let ukeyInfo: certManager.UkeyInfo = {
         certPurpose: certManager.CertificatePurpose.PURPOSE_SIGN,
       };
-      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
-        try {
+	  try {
           await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
           expect(null).assertFail();
         } catch (err) {
           let error: BusinessError = err as BusinessError;
           console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0300 failed. Code: ${error.code}, message: ${error.message}`);
           expect(error.code).assertEqual(17500011);
-        }
-      } else {
-        try {
-          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
-          expect(null).assertFail();
-        } catch (err) {
-          let error: BusinessError = err as BusinessError;
-          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0300 failed. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(801);
-        }
       }
       console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_0300 end');
       done();
@@ -729,7 +718,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
     /**
      * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_0600
      * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_0600
-     * @tc.desc   cert is empty Uint8Array, return error code 17500011 on PC device or 801 on non-PC device
+     * @tc.desc   cert is empty Uint8Array, return error code 17500011
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -741,24 +730,13 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
       let ukeyInfo: certManager.UkeyInfo = {
         certPurpose: certManager.CertificatePurpose.PURPOSE_SIGN,
       };
-      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
-        try {
+	  try {
           await certManager.importUkeyCertificate(keyUri, emptyCertData, ukeyInfo);
           expect(null).assertFail();
         } catch (err) {
           let error: BusinessError = err as BusinessError;
           console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0600 failed. Code: ${error.code}, message: ${error.message}`);
           expect(error.code).assertEqual(17500011);
-        }
-      } else {
-        try {
-          await certManager.importUkeyCertificate(keyUri, emptyCertData, ukeyInfo);
-          expect(null).assertFail();
-        } catch (err) {
-          let error: BusinessError = err as BusinessError;
-          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0600 failed. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(801);
-        }
       }
       console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_0600 end');
       done();

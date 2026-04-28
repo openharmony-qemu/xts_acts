@@ -176,7 +176,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
     /**
      * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_0800
      * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_0800
-     * @tc.desc   keyUri is null, return error code 401 on PC device or 801 on non-PC device
+     * @tc.desc   keyUri is null, return error code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -187,24 +187,13 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
       let ukeyInfo: certManager.UkeyInfo = {
         certPurpose: certManager.CertificatePurpose.PURPOSE_SIGN,
       };
-      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
-        try {
-          await certManager.importUkeyCertificate(null, certData, ukeyInfo);
-          expect(null).assertFail();
-        } catch (err) {
-          let error: BusinessError = err as BusinessError;
-          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0800 failed. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(401);
-        }
-      } else {
-        try {
-          await certManager.importUkeyCertificate(null, certData, ukeyInfo);
-          expect(null).assertFail();
-        } catch (err) {
-          let error: BusinessError = err as BusinessError;
-          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0800 failed. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(801);
-        }
+      try {
+        await certManager.importUkeyCertificate(null, certData, ukeyInfo);
+        expect(null).assertFail();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0800 failed. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
       }
       console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_0800 end');
       done();
@@ -213,7 +202,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
     /**
      * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_0900
      * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_0900
-     * @tc.desc   keyUri is undefined, return error code 401 on PC device or 801 on non-PC device
+     * @tc.desc   keyUri is undefined, return error code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -224,24 +213,13 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
       let ukeyInfo: certManager.UkeyInfo = {
         certPurpose: certManager.CertificatePurpose.PURPOSE_SIGN,
       };
-      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
-        try {
-          await certManager.importUkeyCertificate(undefined, certData, ukeyInfo);
-          expect(null).assertFail();
-        } catch (err) {
-          let error: BusinessError = err as BusinessError;
-          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0900 failed. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(401);
-        }
-      } else {
-        try {
-          await certManager.importUkeyCertificate(undefined, certData, ukeyInfo);
-          expect(null).assertFail();
-        } catch (err) {
-          let error: BusinessError = err as BusinessError;
-          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0900 failed. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(801);
-        }
+      try {
+        await certManager.importUkeyCertificate(undefined, certData, ukeyInfo);
+        expect(null).assertFail();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0900 failed. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
       }
       console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_0900 end');
       done();
@@ -250,7 +228,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
     /**
      * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_1000
      * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_1000
-     * @tc.desc   cert is null, return error code 401 on PC device or 801 on non-PC device
+     * @tc.desc   cert is null, return error code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -261,24 +239,13 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
       let ukeyInfo: certManager.UkeyInfo = {
         certPurpose: certManager.CertificatePurpose.PURPOSE_SIGN,
       };
-      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
-        try {
-          await certManager.importUkeyCertificate(keyUri, null, ukeyInfo);
-          expect(null).assertFail();
-        } catch (err) {
-          let error: BusinessError = err as BusinessError;
-          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1000 failed. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(401);
-        }
-      } else {
-        try {
-          await certManager.importUkeyCertificate(keyUri, null, ukeyInfo);
-          expect(null).assertFail();
-        } catch (err) {
-          let error: BusinessError = err as BusinessError;
-          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1000 failed. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(801);
-        }
+      try {
+        await certManager.importUkeyCertificate(keyUri, null, ukeyInfo);
+        expect(null).assertFail();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1000 failed. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
       }
       console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1000 end');
       done();
@@ -287,7 +254,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
     /**
      * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_1100
      * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_1100
-     * @tc.desc   cert is undefined, return error code 401 on PC device or 801 on non-PC device
+     * @tc.desc   cert is undefined, return error code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -298,24 +265,13 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
       let ukeyInfo: certManager.UkeyInfo = {
         certPurpose: certManager.CertificatePurpose.PURPOSE_SIGN,
       };
-      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
-        try {
-          await certManager.importUkeyCertificate(keyUri, undefined, ukeyInfo);
-          expect(null).assertFail();
-        } catch (err) {
-          let error: BusinessError = err as BusinessError;
-          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1100 failed. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(401);
-        }
-      } else {
-        try {
-          await certManager.importUkeyCertificate(keyUri, undefined, ukeyInfo);
-          expect(null).assertFail();
-        } catch (err) {
-          let error: BusinessError = err as BusinessError;
-          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1100 failed. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(801);
-        }
+      try {
+        await certManager.importUkeyCertificate(keyUri, undefined, ukeyInfo);
+        expect(null).assertFail();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1100 failed. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
       }
       console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1100 end');
       done();
@@ -324,7 +280,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
     /**
      * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_1200
      * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_1200
-     * @tc.desc   ukeyInfo is null, return error code 401 on PC device or 801 on non-PC device
+     * @tc.desc   ukeyInfo is null, return error code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -333,24 +289,13 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
       console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1200 start');
       let keyUri: string = 'test';
       let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
-      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
-        try {
-          await certManager.importUkeyCertificate(keyUri, certData, null);
-          expect(null).assertFail();
-        } catch (err) {
-          let error: BusinessError = err as BusinessError;
-          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1200 failed. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(401);
-        }
-      } else {
-        try {
-          await certManager.importUkeyCertificate(keyUri, certData, null);
-          expect(null).assertFail();
-        } catch (err) {
-          let error: BusinessError = err as BusinessError;
-          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1200 failed. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(801);
-        }
+      try {
+        await certManager.importUkeyCertificate(keyUri, certData, null);
+        expect(null).assertFail();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1200 failed. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
       }
       console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1200 end');
       done();
@@ -359,7 +304,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
     /**
      * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_1300
      * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_1300
-     * @tc.desc   ukeyInfo is undefined, return error code 401 on PC device or 801 on non-PC device
+     * @tc.desc   ukeyInfo is undefined, return error code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -368,24 +313,13 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
       console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1300 start');
       let keyUri: string = 'test';
       let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
-      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
-        try {
-          await certManager.importUkeyCertificate(keyUri, certData, undefined);
-          expect(null).assertFail();
-        } catch (err) {
-          let error: BusinessError = err as BusinessError;
-          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1300 failed. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(401);
-        }
-      } else {
-        try {
-          await certManager.importUkeyCertificate(keyUri, certData, undefined);
-          expect(null).assertFail();
-        } catch (err) {
-          let error: BusinessError = err as BusinessError;
-          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1300 failed. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(801);
-        }
+      try {
+        await certManager.importUkeyCertificate(keyUri, certData, undefined);
+        expect(null).assertFail();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1300 failed. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(401);
       }
       console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1300 end');
       done();

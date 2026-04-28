@@ -262,24 +262,13 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
       let ukeyInfo: certManager.UkeyInfo = {
         certPurpose: certManager.CertificatePurpose.PURPOSE_SIGN,
       };
-      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
-        try {
-          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
-          expect(null).assertFail();
-        } catch (err) {
-          let error: BusinessError = err as BusinessError;
-          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_0300 failed. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(17500011);
-        }
-      } else {
-        try {
-          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
-          expect(null).assertFail();
-        } catch (err) {
-          let error: BusinessError = err as BusinessError;
-          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_0300 failed. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(801);
-        }
+	  try {
+        await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+        expect(null).assertFail();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_0300 failed. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(17500011);
       }
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_0300 end');
       done();
@@ -300,24 +289,13 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
       let ukeyInfo: certManager.UkeyInfo = {
         certPurpose: certManager.CertificatePurpose.PURPOSE_SIGN,
       };
-      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
-        try {
-          await certManager.importUkeyCertificate(keyUri, emptyCertData, ukeyInfo);
-          expect(null).assertFail();
-        } catch (err) {
-          let error: BusinessError = err as BusinessError;
-          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_0600 failed. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(17500011);
-        }
-      } else {
-        try {
-          await certManager.importUkeyCertificate(keyUri, emptyCertData, ukeyInfo);
-          expect(null).assertFail();
-        } catch (err) {
-          let error: BusinessError = err as BusinessError;
-          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_0600 failed. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(801);
-        }
+	  try {
+        await certManager.importUkeyCertificate(keyUri, emptyCertData, ukeyInfo);
+        expect(null).assertFail();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_0600 failed. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(17500011);
       }
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_0600 end');
       done();
