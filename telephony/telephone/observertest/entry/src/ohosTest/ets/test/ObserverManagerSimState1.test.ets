@@ -780,7 +780,6 @@ export default function observerManagerSimStateTest1() {
       try {
         let callback: (data: boolean) => void = (data: boolean) => {
           console.info(`${caseName} data: ${data}`);
-          res = data;
         }
         observer.offGetSimActiveState(callback);
         await sleep(1000);
