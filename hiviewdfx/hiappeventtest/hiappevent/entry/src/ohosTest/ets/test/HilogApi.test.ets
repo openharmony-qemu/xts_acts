@@ -32,7 +32,6 @@ export default function HilogApi() {
       try {
         hilog.debug(0x0000, 'HILOGTEST', 'Test message for valid domain');
         console.info('hilogDebugDomainValidRange0100 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogDebugDomainValidRange0100 error: ${JSON.stringify(error)}`);
@@ -54,7 +53,6 @@ export default function HilogApi() {
       try {
         hilog.debug(0xFFFF, 'HILOGTEST', 'Test message for valid domain');
         console.info('hilogDebugDomainValidRange0200 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogDebugDomainValidRange0200 error: ${JSON.stringify(error)}`);
@@ -76,7 +74,6 @@ export default function HilogApi() {
       try {
         hilog.debug(0xDFFFFFFF, 'HILOGTEST', 'Test message for upper boundary domain');
         console.info('hilogDebugDomainValidRange0300 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogDebugDomainValidRange0300 error: ${JSON.stringify(error)}`);
@@ -140,7 +137,6 @@ export default function HilogApi() {
       try {
         hilog.debug(0xD002100, boundaryTag, 'Test message for boundary tag length');
         console.info('hilogDebugTagValidLength0100 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogDebugTagValidLength0100 error: ${JSON.stringify(error)}`);
@@ -163,7 +159,6 @@ export default function HilogApi() {
       try {
         hilog.debug(0xD002100, longTag, 'Test message for exceeding tag length');
         console.info('hilogDebugTagInvalidLength0100 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogDebugTagInvalidLength0100 error: ${JSON.stringify(error)}`);
@@ -186,7 +181,6 @@ export default function HilogApi() {
       try {
         hilog.debug(0xD002100, veryLongTag, 'Test message for very long tag');
         console.info('hilogDebugTagInvalidLength0200 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogDebugTagInvalidLength0200 error: ${JSON.stringify(error)}`);
@@ -207,8 +201,7 @@ export default function HilogApi() {
       console.info('hilogDebugEmptyTag0100 start');
       try {
         hilog.debug(0xD002100, '', 'Test message for empty tag');
-        console.info('hilogDebugEmptyTag0100 end');
-        expect(true).assertTrue();
+        console.info('hilogDebugEmptyTag0100 end'); 
         done();
       } catch (error) {
         console.error(`hilogDebugEmptyTag0100 error: ${JSON.stringify(error)}`);
@@ -230,7 +223,6 @@ export default function HilogApi() {
       try {
         hilog.debug(0xD002100, null, 'Test message for null tag');
         console.info('hilogDebugNullTag0100 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogDebugNullTag0100 error: ${JSON.stringify(error)}`);
@@ -254,7 +246,6 @@ export default function HilogApi() {
       try {
         hilog.info(0x0000, 'HILOGTEST', 'Test message for valid domain');
         console.info('hilogInfoDomainValidRange0100 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogInfoDomainValidRange0100 error: ${JSON.stringify(error)}`);
@@ -276,7 +267,6 @@ export default function HilogApi() {
       try {
         hilog.info(0xFFFF, 'HILOGTEST', 'Test message for valid domain');
         console.info('hilogInfoDomainValidRange0200 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogInfoDomainValidRange0200 error: ${JSON.stringify(error)}`);
@@ -298,7 +288,6 @@ export default function HilogApi() {
       try {
         hilog.info(0xDFFFFFFF, 'HILOGTEST', 'Test message for upper boundary domain');
         console.info('hilogInfoDomainValidRange0300 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogInfoDomainValidRange0300 error: ${JSON.stringify(error)}`);
@@ -363,7 +352,6 @@ export default function HilogApi() {
       try {
         hilog.info(0xD002100, boundaryTag, 'Test message for boundary tag length');
         console.info('hilogInfoTagValidLength0100 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogInfoTagValidLength0100 error: ${JSON.stringify(error)}`);
@@ -385,8 +373,7 @@ export default function HilogApi() {
       let longTag: string = generateLongString(32);
       try {
         hilog.info(0xD002100, longTag, 'Test message for exceeding tag length');
-        console.info('hilogInfoTagInvalidLength0100 end');
-        expect(true).assertTrue();
+        console.info('hilogInfoTagInvalidLength0100 end'); 
         done();
       } catch (error) {
         console.error(`hilogInfoTagInvalidLength0100 error: ${JSON.stringify(error)}`);
@@ -409,7 +396,6 @@ export default function HilogApi() {
       try {
         hilog.info(0xD002100, veryLongTag, 'Test message for very long tag');
         console.info('hilogInfoTagInvalidLength0200 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogInfoTagInvalidLength0200 error: ${JSON.stringify(error)}`);
@@ -431,7 +417,6 @@ export default function HilogApi() {
       try {
         hilog.info(0xD002100, '', 'Test message for empty tag');
         console.info('hilogInfoEmptyTag0100 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogInfoEmptyTag0100 error: ${JSON.stringify(error)}`);
@@ -453,7 +438,6 @@ export default function HilogApi() {
       try {
         hilog.info(0xD002100, null, 'Test message for null tag');
         console.info('hilogInfoNullTag0100 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogInfoNullTag0100 error: ${JSON.stringify(error)}`);
@@ -477,7 +461,6 @@ export default function HilogApi() {
       try {
         hilog.warn(0x0000, 'HILOGTEST', 'Test message for valid domain');
         console.info('hilogWarnDomainValidRange0100 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogWarnDomainValidRange0100 error: ${JSON.stringify(error)}`);
@@ -499,7 +482,6 @@ export default function HilogApi() {
       try {
         hilog.warn(0xFFFF, 'HILOGTEST', 'Test message for valid domain');
         console.info('hilogWarnDomainValidRange0200 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogWarnDomainValidRange0200 error: ${JSON.stringify(error)}`);
@@ -521,7 +503,6 @@ export default function HilogApi() {
       try {
         hilog.warn(0xDFFFFFFF, 'HILOGTEST', 'Test message for upper boundary domain');
         console.info('hilogWarnDomainValidRange0300 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogWarnDomainValidRange0300 error: ${JSON.stringify(error)}`);
@@ -586,7 +567,6 @@ export default function HilogApi() {
       try {
         hilog.warn(0xD002100, boundaryTag, 'Test message for boundary tag length');
         console.info('hilogWarnTagValidLength0100 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogWarnTagValidLength0100 error: ${JSON.stringify(error)}`);
@@ -609,7 +589,6 @@ export default function HilogApi() {
       try {
         hilog.warn(0xD002100, longTag, 'Test message for exceeding tag length');
         console.info('hilogWarnTagInvalidLength0100 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogWarnTagInvalidLength0100 error: ${JSON.stringify(error)}`);
@@ -632,7 +611,6 @@ export default function HilogApi() {
       try {
         hilog.warn(0xD002100, veryLongTag, 'Test message for very long tag');
         console.info('hilogWarnTagInvalidLength0200 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogWarnTagInvalidLength0200 error: ${JSON.stringify(error)}`);
@@ -654,7 +632,6 @@ export default function HilogApi() {
       try {
         hilog.warn(0xD002100, '', 'Test message for empty tag');
         console.info('hilogWarnEmptyTag0100 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogWarnEmptyTag0100 error: ${JSON.stringify(error)}`);
@@ -676,7 +653,6 @@ export default function HilogApi() {
       try {
         hilog.warn(0xD002100, null, 'Test message for null tag');
         console.info('hilogWarnNullTag0100 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogWarnNullTag0100 error: ${JSON.stringify(error)}`);
@@ -700,7 +676,6 @@ export default function HilogApi() {
       try {
         hilog.error(0x0000, 'HILOGTEST', 'Test message for valid domain');
         console.info('hilogErrorDomainValidRange0100 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogErrorDomainValidRange0100 error: ${JSON.stringify(error)}`);
@@ -722,7 +697,6 @@ export default function HilogApi() {
       try {
         hilog.error(0xFFFF, 'HILOGTEST', 'Test message for valid domain');
         console.info('hilogErrorDomainValidRange0200 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogErrorDomainValidRange0200 error: ${JSON.stringify(error)}`);
@@ -744,7 +718,6 @@ export default function HilogApi() {
       try {
         hilog.error(0xDFFFFFFF, 'HILOGTEST', 'Test message for upper boundary domain');
         console.info('hilogErrorDomainValidRange0300 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogErrorDomainValidRange0300 error: ${JSON.stringify(error)}`);
@@ -809,7 +782,6 @@ export default function HilogApi() {
       try {
         hilog.error(0xD002100, boundaryTag, 'Test message for boundary tag length');
         console.info('hilogErrorTagValidLength0100 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogErrorTagValidLength0100 error: ${JSON.stringify(error)}`);
@@ -832,7 +804,6 @@ export default function HilogApi() {
       try {
         hilog.error(0xD002100, longTag, 'Test message for exceeding tag length');
         console.info('hilogErrorTagInvalidLength0100 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogErrorTagInvalidLength0100 error: ${JSON.stringify(error)}`);
@@ -855,7 +826,6 @@ export default function HilogApi() {
       try {
         hilog.error(0xD002100, veryLongTag, 'Test message for very long tag');
         console.info('hilogErrorTagInvalidLength0200 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogErrorTagInvalidLength0200 error: ${JSON.stringify(error)}`);
@@ -877,7 +847,6 @@ export default function HilogApi() {
       try {
         hilog.error(0xD002100, '', 'Test message for empty tag');
         console.info('hilogErrorEmptyTag0100 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogErrorEmptyTag0100 error: ${JSON.stringify(error)}`);
@@ -899,7 +868,6 @@ export default function HilogApi() {
       try {
         hilog.error(0xD002100, null, 'Test message for null tag');
         console.info('hilogErrorNullTag0100 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogErrorNullTag0100 error: ${JSON.stringify(error)}`);
@@ -923,7 +891,6 @@ export default function HilogApi() {
       try {
         hilog.fatal(0x0000, 'HILOGTEST', 'Test message for valid domain');
         console.info('hilogFatalDomainValidRange0100 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogFatalDomainValidRange0100 error: ${JSON.stringify(error)}`);
@@ -945,7 +912,6 @@ export default function HilogApi() {
       try {
         hilog.fatal(0xFFFF, 'HILOGTEST', 'Test message for valid domain');
         console.info('hilogFatalDomainValidRange0200 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogFatalDomainValidRange0200 error: ${JSON.stringify(error)}`);
@@ -967,7 +933,6 @@ export default function HilogApi() {
       try {
         hilog.fatal(0xDFFFFFFF, 'HILOGTEST', 'Test message for upper boundary domain');
         console.info('hilogFatalDomainValidRange0300 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogFatalDomainValidRange0300 error: ${JSON.stringify(error)}`);
@@ -1032,7 +997,6 @@ export default function HilogApi() {
       try {
         hilog.fatal(0xD002100, boundaryTag, 'Test message for boundary tag length');
         console.info('hilogFatalTagValidLength0100 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogFatalTagValidLength0100 error: ${JSON.stringify(error)}`);
@@ -1055,7 +1019,6 @@ export default function HilogApi() {
       try {
         hilog.fatal(0xD002100, longTag, 'Test message for exceeding tag length');
         console.info('hilogFatalTagInvalidLength0100 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogFatalTagInvalidLength0100 error: ${JSON.stringify(error)}`);
@@ -1078,7 +1041,6 @@ export default function HilogApi() {
       try {
         hilog.fatal(0xD002100, veryLongTag, 'Test message for very long tag');
         console.info('hilogFatalTagInvalidLength0200 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogFatalTagInvalidLength0200 error: ${JSON.stringify(error)}`);
@@ -1100,7 +1062,6 @@ export default function HilogApi() {
       try {
         hilog.fatal(0xD002100, '', 'Test message for empty tag');
         console.info('hilogFatalEmptyTag0100 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogFatalEmptyTag0100 error: ${JSON.stringify(error)}`);
@@ -1122,7 +1083,6 @@ export default function HilogApi() {
       try {
         hilog.fatal(0xD002100, null, 'Test message for null tag');
         console.info('hilogFatalNullTag0100 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogFatalNullTag0100 error: ${JSON.stringify(error)}`);
@@ -1150,7 +1110,6 @@ export default function HilogApi() {
         hilog.error(0x0, 'HILOGTEST', 'error with domain 0');
         hilog.fatal(0x0, 'HILOGTEST', 'fatal with domain 0');
         console.info('hilogDomainZeroValue0100 end');
-        expect(true).assertTrue();
         done();
       } catch (error) {
         console.error(`hilogDomainZeroValue0100 error: ${JSON.stringify(error)}`);
