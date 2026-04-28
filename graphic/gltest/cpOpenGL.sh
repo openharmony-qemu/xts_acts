@@ -16,8 +16,8 @@
 set -e
 root_opengl_path=$1
 mkdir -p  "suites/acts/acts/testcases/opengldata"
-cp -rf "$root_opengl_path/third_party/vk-gl-cts/external/openglcts/data" "suites/acts/acts/testcases/opengldata"
-cp -rf "$root_opengl_path/third_party/vk-gl-cts/external/openglcts/data/mustpass" "suites/acts/acts/testcases/opengldata"
+cp -rf "$root_opengl_path/third_party/vk-gl-cts/external/openglcts/data/gl_cts/data" "suites/acts/acts/testcases/opengldata"
+cp -rf "$root_opengl_path/third_party/vk-gl-cts/external/openglcts/data/gl_cts/data/mustpass" "suites/acts/acts/testcases/opengldata"
 
 cp -rf "graphic/graphic_2d/glcts" "suites/acts/acts/testcases/opengldata/mustpass"
 
@@ -32,5 +32,5 @@ cp -rf "$root_opengl_path/test/xts/acts/graphic/gltest/genlocal.py" "suites/acts
 cp -rf "graphic/graphic_2d/libdeqp_ohos_platform.z.so" "suites/acts/acts/testcases/opengldata"
 cp -rf "graphic/graphic_2d/librosen_context.z.so" "suites/acts/acts/testcases/opengldata"
 cp -rf "xts/acts/libdeqp_amber.z.so" "suites/acts/acts/testcases/opengldata"
-cp -rf "thirdparty/glslang/libdeqp_spirv.z.so" "suites/acts/acts/testcases/opengldata"
-cp -rf "thirdparty/glslang/libdeqp_spvremapper.z.so" "suites/acts/acts/testcases/opengldata" 
+cp -rf "thirdparty/vk-gl-cts/libdeqp_spirv.z.so" "suites/acts/acts/testcases/opengldata"
+cp -rf "thirdparty/vk-gl-cts/libdeqp_spvremapper.z.so" "suites/acts/acts/testcases/opengldata" 

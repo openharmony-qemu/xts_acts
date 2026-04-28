@@ -17,10 +17,10 @@ set -e
 root_vkgl_path=$1
 mkdir -p  "suites/acts/acts/testcases/vkgldata"
 cp -rf "$root_vkgl_path/third_party/vk-gl-cts/data" "suites/acts/acts/testcases/vkgldata"
-cp -rf "$root_vkgl_path/third_party/vk-gl-cts/external/openglcts/data" "suites/acts/acts/testcases/vkgldata"
+cp -rf "$root_vkgl_path/third_party/vk-gl-cts/external/openglcts/data/gl_cts/data" "suites/acts/acts/testcases/vkgldata"
 tar czvf "vkgldata.tar.gz" -C "suites/acts/acts/testcases/vkgldata" "."
 mv "vkgldata.tar.gz" "suites/acts/acts/testcases/vkgldata"
 cp -rf "graphic/graphic_2d/libdeqp_ohos_platform.z.so" "suites/acts/acts/testcases/vkgldata"
 cp -rf "graphic/graphic_2d/librosen_context.z.so" "suites/acts/acts/testcases/vkgldata"
-cp -rf "thirdparty/glslang/libdeqp_spirv.z.so" "suites/acts/acts/testcases/vkgldata"
-cp -rf "thirdparty/glslang/libdeqp_spvremapper.z.so" "suites/acts/acts/testcases/vkgldata"
+cp -rf "thirdparty/vk-gl-cts/libdeqp_spirv.z.so" "suites/acts/acts/testcases/vkgldata"
+cp -rf "thirdparty/vk-gl-cts/libdeqp_spvremapper.z.so" "suites/acts/acts/testcases/vkgldata"
