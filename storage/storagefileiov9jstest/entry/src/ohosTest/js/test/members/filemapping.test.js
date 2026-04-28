@@ -164,7 +164,7 @@ export default function fileIOFileMapping() {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_mmap_sync_005 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
         fileIO.closeSync(file);
         fileIO.unlinkSync(fpath);
       }
@@ -191,7 +191,7 @@ export default function fileIOFileMapping() {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_mmap_sync_006 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
         fileIO.closeSync(file);
         fileIO.unlinkSync(fpath);
       }
@@ -218,7 +218,7 @@ export default function fileIOFileMapping() {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_mmap_sync_007 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
         fileIO.closeSync(file);
         fileIO.unlinkSync(fpath);
       }
@@ -428,7 +428,7 @@ export default function fileIOFileMapping() {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_setPosition_001 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
         mapping.unmapSync();
         fileIO.closeSync(file);
         fileIO.unlinkSync(fpath);
@@ -459,7 +459,7 @@ export default function fileIOFileMapping() {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_setPosition_002 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
         mapping.unmapSync();
         fileIO.closeSync(file);
         fileIO.unlinkSync(fpath);
@@ -546,7 +546,7 @@ export default function fileIOFileMapping() {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_capacity_001 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900052).assertTrue();
+        expect(e.code === 13900052).assertTrue();
         fileIO.closeSync(file);
         fileIO.unlinkSync(fpath);
       }
@@ -605,7 +605,7 @@ export default function fileIOFileMapping() {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_setLimit_001 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
         mapping.unmapSync();
         fileIO.closeSync(file);
         fileIO.unlinkSync(fpath);
@@ -636,7 +636,7 @@ export default function fileIOFileMapping() {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_setLimit_002 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
         mapping.unmapSync();
         fileIO.closeSync(file);
         fileIO.unlinkSync(fpath);
@@ -695,7 +695,7 @@ export default function fileIOFileMapping() {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_getLimit_001 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900052).assertTrue();
+        expect(e.code === 13900052).assertTrue();
         fileIO.closeSync(file);
         fileIO.unlinkSync(fpath);
       }
@@ -757,7 +757,7 @@ export default function fileIOFileMapping() {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_flip_001 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900052).assertTrue();
+        expect(e.code === 13900052).assertTrue();
         fileIO.closeSync(file);
         fileIO.unlinkSync(fpath);
       }
@@ -935,7 +935,7 @@ export default function fileIOFileMapping() {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_read_error_000 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
         mapping.unmapSync();
         fileIO.closeSync(file);
         fileIO.unlinkSync(fpath);
@@ -999,7 +999,7 @@ export default function fileIOFileMapping() {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_read_error_002 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900052).assertTrue();
+        expect(e.code === 13900052).assertTrue();
         mapping.unmapSync();
         fileIO.closeSync(file);
         fileIO.unlinkSync(fpath);
@@ -1179,7 +1179,7 @@ export default function fileIOFileMapping() {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_write_error_001 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
         mapping.unmapSync();
         fileIO.closeSync(file);
         fileIO.unlinkSync(fpath);
@@ -1211,7 +1211,7 @@ export default function fileIOFileMapping() {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_write_error_002 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900052).assertTrue();
+        expect(e.code === 13900052).assertTrue();
         fileIO.closeSync(file);
         fileIO.unlinkSync(fpath);
       }
@@ -1450,7 +1450,7 @@ export default function fileIOFileMapping() {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_msyncSync_error_000 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900020).assertTrue();
+        expect(e.code === 13900020).assertTrue();
         mapping.unmapSync();
         fileIO.closeSync(file);
         fileIO.unlinkSync(fpath);
@@ -1568,7 +1568,7 @@ export default function fileIOFileMapping() {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_unmap_released_000 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900052).assertTrue();
+        expect(e.code === 13900052).assertTrue();
         fileIO.closeSync(file);
         fileIO.unlinkSync(fpath);
       }
@@ -1599,7 +1599,7 @@ export default function fileIOFileMapping() {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_unmap_released_001 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code == 13900052).assertTrue();
+        expect(e.code === 13900052).assertTrue();
         fileIO.closeSync(file);
         fileIO.unlinkSync(fpath);
       }
