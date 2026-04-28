@@ -10057,6 +10057,29 @@ static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTUREVOICEREAPTED_0100(napi_env en
     return res;
 }
 
+static int32_t PreferredOutputDeviceChangedCallback(
+    OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray)
+{
+    LOG("PreferredOutputDeviceChangedCallback triggered");
+    if (audioDeviceDescriptorArray == nullptr) {
+        LOG("audioDeviceDescriptorArray is nullptr");
+        return 0;
+    }
+    int size = audioDeviceDescriptorArray->size;
+        for (int index = 0; index < size; index++) {
+            OH_AudioDeviceDescriptor *audioDeviceDescriptor = audioDeviceDescriptorArray->descriptors[index];
+            if (audioDeviceDescriptor) {
+                OH_AudioDevice_Role deviceRole = AUDIO_DEVICE_ROLE_OUTPUT;
+                OH_AudioDeviceDescriptor_GetDeviceRole(audioDeviceDescriptor, &deviceRole);
+                OH_AudioDevice_Type deviceType = AUDIO_DEVICE_TYPE_INVALID;
+                OH_AudioDeviceDescriptor_GetDeviceType(audioDeviceDescriptor, &deviceType);
+                LOG("Receive new device: DeviceRole: %{public}d, DeviceType: %{public}d\n", deviceRole, deviceType);
+            }
+        }
+    LOG("audioDeviceDescriptorArray size: %{public}d", size);
+    return 0;
+}
+
 static int32_t PreferredInputDeviceChangedCallback(
     OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray)
 {
