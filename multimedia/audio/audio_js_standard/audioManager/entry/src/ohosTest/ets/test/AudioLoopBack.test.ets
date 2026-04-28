@@ -2705,7 +2705,7 @@ export default function audioLoopBack() {
      * @tc.desc    AudioDevicePair inputDevice property normal value test.
      * @tc.type    Function
      * @tc.size    MediumTest
-     * @tc.level   Level0
+     * @tc.level   Level06800104
      */
     it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_INPUTDEVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_INPUTDEVICE_0100 start`);
@@ -2727,7 +2727,7 @@ export default function audioLoopBack() {
       } catch (err) {
         let error = err as BusinessError;
         console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_INPUTDEVICE_0100 error: ${error.code}, ${error.message}`);
-        expect(error.code).assertEqual(6800301);
+        expect(error.code).assertEqual(6800104);
         done();
       }
     });
@@ -2760,7 +2760,7 @@ export default function audioLoopBack() {
       } catch (err) {
         let error = err as BusinessError;
         console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_OUTPUTDEVICE_0100 error: ${error.code}, ${error.message}`);
-        expect(error.code).assertEqual(6800301);
+        expect(error.code).assertEqual(6800104);
         done();
       }
     });
@@ -2797,7 +2797,7 @@ export default function audioLoopBack() {
       } catch (err) {
         let error = err as BusinessError;
         console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_BOTHDEVICES_0100 error: ${error.code}, ${error.message}`);
-        expect(error.code).assertEqual(6800301);
+        expect(error.code).assertEqual(6800104);
         done();
       }
     });
@@ -2827,7 +2827,7 @@ export default function audioLoopBack() {
       } catch (err) {
         let error = err as BusinessError;
         console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_0100 error: ${error.code}, ${error.message}`);
-        expect(error.code).assertEqual(6800301);
+        expect(error.code).assertEqual(6800104);
         done();
       }
     });
@@ -2855,7 +2855,7 @@ export default function audioLoopBack() {
       } catch (err) {
         let error = err as BusinessError;
         console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_0200 error: ${error.code}, ${error.message}`);
-        expect(error.code).assertEqual(6800301);
+        expect(error.code).assertEqual(6800104);
         done();
       }
     });
@@ -2914,7 +2914,7 @@ export default function audioLoopBack() {
       } catch (err) {
         let error = err as BusinessError;
         console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_BEFORE_ENABLE_0100 error: ${error.code}, ${error.message}`);
-        expect(error.code).assertEqual(6800301);
+        expect(error.code).assertEqual(6800104);
         done();
       }
     });
@@ -2949,7 +2949,7 @@ export default function audioLoopBack() {
       } catch (err) {
         let error = err as BusinessError;
         console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_0100 error: ${error.code}, ${error.message}`);
-        expect(error.code).assertEqual(6800301);
+        expect(error.code).assertEqual(6800104);
         done();
       }
     });
@@ -2984,7 +2984,7 @@ export default function audioLoopBack() {
       } catch (err) {
         let error = err as BusinessError;
         console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_0200 error: ${error.code}, ${error.message}`);
-        expect(error.code).assertEqual(6800301);
+        expect(error.code).assertEqual(6800104);
         done();
       }
     });
@@ -3016,7 +3016,7 @@ export default function audioLoopBack() {
       } catch (err) {
         let error = err as BusinessError;
         console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_EMPTY_0100 error: ${error.code}, ${error.message}`);
-        expect(error.code).assertEqual(6800301);
+        expect(error.code).assertEqual(6800104);
         done();
       }
     });
@@ -3052,7 +3052,7 @@ export default function audioLoopBack() {
       } catch (err) {
         let error = err as BusinessError;
         console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_MULTIPLE_0100 error: ${error.code}, ${error.message}`);
-        expect(error.code).assertEqual(6800301);
+        expect(error.code).assertEqual(6800104);
         done();
       }
     });
@@ -3085,7 +3085,7 @@ export default function audioLoopBack() {
       } catch (err) {
         let error = err as BusinessError;
         console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_0100 error: ${error.code}, ${error.message}`);
-        expect(error.code).assertEqual(6800301);
+        expect(error.code).assertEqual(6800104);
         done();
       }
     });
@@ -3118,7 +3118,7 @@ export default function audioLoopBack() {
       } catch (err) {
         let error = err as BusinessError;
         console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_0200 error: ${error.code}, ${error.message}`);
-        expect(error.code).assertEqual(6800301);
+        expect(error.code).assertEqual(6800104);
         done();
       }
     });
@@ -3157,7 +3157,7 @@ export default function audioLoopBack() {
       } catch (err) {
         let error = err as BusinessError;
         console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_NULL_0100 error: ${error.code}, ${error.message}`);
-        expect(error.code).assertEqual(6800301);
+        expect(error.code).assertEqual(6800104);
         done();
       }
     });
@@ -3198,7 +3198,7 @@ export default function audioLoopBack() {
       } catch (err) {
         let error = err as BusinessError;
         console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_CONSISTENCY_0100 error: ${error.code}, ${error.message}`);
-        expect(error.code).assertEqual(6800301);
+        expect(error.code).assertEqual(6800104);
         done();
       }
     });
@@ -3234,7 +3234,7 @@ export default function audioLoopBack() {
       } catch (err) {
         let error = err as BusinessError;
         console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_AFTER_ENABLE_0100 error: ${error.code}, ${error.message}`);
-        expect(error.code).assertEqual(6800301);
+        expect(error.code).assertEqual(6800104);
         done();
       }
     });
@@ -3280,7 +3280,7 @@ export default function audioLoopBack() {
       } catch (err) {
         let error = err as BusinessError;
         console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_MULTIPLE_CALLS_0100 error: ${error.code}, ${error.message}`);
-        expect(error.code).assertEqual(6800301);
+        expect(error.code).assertEqual(6800104);
         done();
       }
     });     
