@@ -201,9 +201,12 @@ export default function ContactInterfaceStageTest() {
      */
     it("SUB_Telephony_ContactsApi_queryMyCard_test_0100", TestType.FUNCTION | Size.SmallTest | Level.LEVEL3, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
-      if (HasCard()) {
+      let isHasCard = await HasCard();
+      if (isHasCard) {
         console.info("SUB_Telephony_ContactsApi_queryMyCard_test_0100 has card");
+        ExpectTrue();
         done();
+        return;
       }
       contact.queryMyCard(context, (err, data) => {
         if (err) {
@@ -230,9 +233,12 @@ export default function ContactInterfaceStageTest() {
      */
     it("SUB_Telephony_ContactsApi_queryMyCard_test_0200", TestType.FUNCTION | Size.SmallTest | Level.LEVEL2, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
-      if (HasCard()) {
+      let isHasCard = await HasCard();
+      if (isHasCard) {
         console.info("SUB_Telephony_ContactsApi_queryMyCard_test_0200 has card");
+        ExpectTrue();
         done();
+        return;
       }
       contact.queryMyCard(context, attr, (err, data) => {
         if (err) {
@@ -259,9 +265,12 @@ export default function ContactInterfaceStageTest() {
      */
     it("SUB_Telephony_ContactsApi_queryMyCard_test_0300", TestType.FUNCTION | Size.SmallTest | Level.LEVEL2, async (done:Function) => {
       let context: Context = AppStorage.get('context') as Context;
-      if (HasCard()) {
+      let isHasCard = await HasCard();
+      if (isHasCard) {
         console.info("SUB_Telephony_ContactsApi_queryMyCard_test_0300 has card");
+        ExpectTrue();
         done();
+        return;
       }
       let promise = contact.queryMyCard(context, attr);
       promise.then((data) => {
