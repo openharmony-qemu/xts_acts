@@ -36,7 +36,7 @@ void Alphasort0100(void)
 void Alphasort0200(void)
 {
     struct dirent **namelist;
-    int total = scandir(NULL, &namelist, 0, alphasort);
+    int total = scandir(nullptr, &namelist, 0, alphasort);
     EXPECT_TRUE("alphasort_0100", total < 0);
 }
 
@@ -50,6 +50,6 @@ static int AlphasortTestWithArgs(int argc, char *argv[])
 int AlphasortTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return AlphasortTestWithArgs(1, libcArgv);
 }

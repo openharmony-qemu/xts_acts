@@ -35,31 +35,31 @@ void Rewinddir0100(void)
     char name[PATH_MAX] = {0};
     FILE_ABSOLUTE_DIR(name);
     DIR *dir = opendir(name);
-    if (dir == NULL) {
+    if (dir == nullptr) {
         t_error("%s failed: opendir. name = %s\n", __func__, name);
         return;
     }
 
     struct dirent *result = readdir(dir);
-    if (result == NULL) {
+    if (result == nullptr) {
         t_error("%s failed: readdir\n", __func__);
         return;
     }
 
-    char *d_name = result->d_name;
+    char *dName = result->d_name;
 
-    while ((result = readdir(dir)) != NULL) {
+    while ((result = readdir(dir)) != nullptr) {
     }
 
     rewinddir(dir);
     result = readdir(dir);
-    if (result == NULL) {
+    if (result == nullptr) {
         t_error("%s failed: readdir\n", __func__);
         return;
     }
 
-    if (strcmp(d_name, result->d_name)) {
-        t_error("%s failed: strcmp. d_name = %s, result->d_name = %s\n", __func__, d_name, result->d_name);
+    if (strcmp(dName, result->d_name)) {
+        t_error("%s failed: strcmp. dName = %s, result->d_name = %s\n", __func__, dName, result->d_name);
         return;
     }
 
@@ -75,7 +75,7 @@ void Rewinddir0200(void)
 {
     signal(SIGSEGV, Handler);
 
-    DIR *dir = NULL;
+    DIR *dir = nullptr;
     rewinddir(dir);
 }
 
@@ -90,6 +90,6 @@ static int RewinddirTestImpl(int argc, char *argv[])
 int RewinddirTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return RewinddirTestImpl(1, libcArgv);
 }

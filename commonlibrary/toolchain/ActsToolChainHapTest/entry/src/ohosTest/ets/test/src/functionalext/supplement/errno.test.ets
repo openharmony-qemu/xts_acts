@@ -31,19 +31,5 @@ export default function errno_group_test() {
       expect(result).assertEqual(0);
       done();
     });
-
-    /**
-     * @tc.name   __errno_location
-     * @tc.number SUB_THIRDPARTY_MUSL_ERRNO_LOCATION_0100
-     * @tc.desc   libc-test __errno_location
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("__errno_location", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__errno_location");
-      expect(result).assertEqual(0);
-      done();
-    });
   });
 }

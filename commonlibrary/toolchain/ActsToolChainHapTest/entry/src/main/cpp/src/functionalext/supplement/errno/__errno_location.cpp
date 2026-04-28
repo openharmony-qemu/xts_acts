@@ -72,6 +72,6 @@ static int ErrnoLocationTestImpl(int argc, char *argv[])
 int ErrnoLocationTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return ErrnoLocationTestImpl(1, libcArgv);
 }

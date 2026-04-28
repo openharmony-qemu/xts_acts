@@ -29,7 +29,7 @@
  */
 void TowupperL0100(void)
 {
-    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
     const char *upstr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const char *lowstr = "abcdefghijklmnopqrstuvwxyz";
     const char *up = upstr;
@@ -60,7 +60,7 @@ void TowupperL0100(void)
  */
 void TowupperL0200(void)
 {
-    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
     const char *str = "0123456789";
     const char *p = str;
     wint_t res = 0;
@@ -88,7 +88,7 @@ void TowupperL0200(void)
  */
 void TowupperL0300(void)
 {
-    locale_t mLocale = newlocale(LC_ALL_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
     const char *str = "0123456789";
     const char *p = str;
     wint_t res = 0;
@@ -116,7 +116,7 @@ void TowupperL0300(void)
  */
 void TowupperL0400(void)
 {
-    locale_t mLocale = newlocale(LC_ALL_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
     const char *upstr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const char *lowstr = "abcdefghijklmnopqrstuvwxyz";
     const char *up = upstr;
@@ -147,7 +147,7 @@ void TowupperL0400(void)
  */
 void TowupperL0500(void)
 {
-    locale_t mLocale = newlocale(LC_ALL_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
     wint_t res = towupper_l(MAX_VALUE, mLocale);
     if (res != -1) {
         t_error("Test case %s failed, get result is -1 but want get value %d\n", __FUNCTION__, res);
@@ -163,7 +163,7 @@ void TowupperL0500(void)
  */
 void TowupperL0600(void)
 {
-    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
     wint_t res = towupper_l(MAX_VALUE, mLocale);
     if (res != -1) {
         t_error("Test case %s failed, get result is -1 but want get value %d\n", __FUNCTION__, res);
@@ -188,6 +188,6 @@ static int TowupperLTestImpl(int argc, char *argv[])
 int TowupperLTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return TowupperLTestImpl(1, libcArgv);
 }

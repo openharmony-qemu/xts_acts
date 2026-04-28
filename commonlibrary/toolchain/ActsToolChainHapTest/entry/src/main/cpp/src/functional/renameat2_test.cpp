@@ -35,7 +35,7 @@ static char g_newMsg[] = "newrenameat2";
 static void WriteFile(char *path, char *msg)
 {
     FILE *file = fopen(path, "w+");
-    if (file == NULL) {
+    if (file == nullptr) {
         g_error++;
         return;
     }
@@ -54,7 +54,7 @@ static void WriteFile(char *path, char *msg)
 static void ReadFile(char *path, size_t len, char *buf)
 {
     FILE *file = fopen(path, "r");
-    if (file == NULL) {
+    if (file == nullptr) {
         g_error++;
         return;
     }
@@ -225,7 +225,7 @@ static void CloseFolder(DIR *dir)
 static int Renameat2TestTestImpl(void)
 {
     DIR *dir = opendir(g_dirPath);
-    if (dir == NULL) {
+    if (dir == nullptr) {
         t_error("%s open dir failed, errno: %d\n", __func__, errno);
         return 1;
     }

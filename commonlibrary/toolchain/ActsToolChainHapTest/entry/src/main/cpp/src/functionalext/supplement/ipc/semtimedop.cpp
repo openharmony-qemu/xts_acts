@@ -124,10 +124,6 @@ void SemtimedopTime640200(void)
 
 static int SemtimedopTestImpl(int argc, char *argv[])
 {
-    // Semtimedop0100();
-    // Semtimedop0200();
-    // SemtimedopTime640200();
-
     return g_tStatus;
 }
 

@@ -117,10 +117,10 @@ void Wcsdup0400(void)
     }
     
     // Verify length
-    size_t src_len = wcslen(src);
+    size_t srcLen = wcslen(src);
     size_t resultLen = wcslen(result);
-    if (src_len != resultLen) {
-        t_error("%s Length mismatch: src=%zu, result=%zu\n", __func__, src_len, resultLen);
+    if (srcLen != resultLen) {
+        t_error("%s Length mismatch: src=%zu, result=%zu\n", __func__, srcLen, resultLen);
     }
     
     free(result);

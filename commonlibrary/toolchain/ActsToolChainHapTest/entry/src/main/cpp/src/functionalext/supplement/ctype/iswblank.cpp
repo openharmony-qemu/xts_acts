@@ -33,7 +33,7 @@ void IswblankL0100(void)
     const wchar_t *str = L" \t";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswblank_l(*p, NULL);
+        int ret = iswblank_l(*p, nullptr);
         EXPECT_EQ("iswblank_l_0100", ret, ONREXPECT);
     }
 }
@@ -45,7 +45,7 @@ void IswblankL0100(void)
  */
 void IswblankL0101(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     const wchar_t *str = L" \t";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -62,7 +62,7 @@ void IswblankL0101(void)
  */
 void IswblankL0102(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     const wchar_t *str = L" \t";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -82,7 +82,7 @@ void IswblankL0200(void)
     const wchar_t *str = L"2!~*3Ad";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswblank_l(*p, NULL);
+        int ret = iswblank_l(*p, nullptr);
         EXPECT_EQ("iswblank_l_0200", ret, CMPFLAG);
     }
 }
@@ -94,7 +94,7 @@ void IswblankL0200(void)
  */
 void IswblankL0201(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     const wchar_t *str = L"2!~*3Ad";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -111,7 +111,7 @@ void IswblankL0201(void)
  */
 void IswblankL0202(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     const wchar_t *str = L"2!~*3Ad";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -128,7 +128,7 @@ void IswblankL0202(void)
  */
 void IswblankL0300(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
         int ret = iswblank_l(i, mLocale);
@@ -147,7 +147,7 @@ void IswblankL0300(void)
  */
 void IswblankL0400(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
         int ret = iswblank_l(i, mLocale);
@@ -166,7 +166,7 @@ void IswblankL0400(void)
  */
 void IswblankL0500(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     int ret = iswblank_l(MAX_VALUE, mLocale);
     freelocale(mLocale);
     EXPECT_EQ("iswblank_l_0500", ret, CMPFLAG);
@@ -179,7 +179,7 @@ void IswblankL0500(void)
  */
 void IswblankL0600(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     int ret = iswblank_l(MAX_VALUE, mLocale);
     freelocale(mLocale);
     EXPECT_EQ("iswblank_l_0600", ret, CMPFLAG);

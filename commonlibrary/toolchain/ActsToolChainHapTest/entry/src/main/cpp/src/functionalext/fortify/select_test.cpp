@@ -18,7 +18,7 @@
 #include <cstring>
 #include <sys/wait.h>
 #include <sys/select.h>
-// #include <sigchain.h>
+#include <sigchain.h>
 #include "fortify_test.h"
 #include "functionalext.h"
 #include "test.h"
@@ -49,7 +49,7 @@ static void FdSet0020(void)
     struct sigaction sigabrt = {
         .sa_handler = SignalHandler,
     };
-    sigaction(SIGABRT, &sigabrt, NULL);
+    sigaction(SIGABRT, &sigabrt, nullptr);
 
     int status;
     int pid = fork();
@@ -85,7 +85,7 @@ static void FdSet0030(void)
     struct sigaction sigabrt = {
         .sa_handler = SignalHandler,
     };
-    sigaction(SIGABRT, &sigabrt, NULL);
+    sigaction(SIGABRT, &sigabrt, nullptr);
 
     int status;
     int pid = fork();
@@ -138,7 +138,7 @@ static void FdClr0020(void)
     struct sigaction sigabrt = {
         .sa_handler = SignalHandler,
     };
-    sigaction(SIGABRT, &sigabrt, NULL);
+    sigaction(SIGABRT, &sigabrt, nullptr);
 
     int status;
     int pid = fork();
@@ -174,7 +174,7 @@ static void FdClr0030(void)
     struct sigaction sigabrt = {
         .sa_handler = SignalHandler,
     };
-    sigaction(SIGABRT, &sigabrt, NULL);
+    sigaction(SIGABRT, &sigabrt, nullptr);
 
     int status;
     int pid = fork();
@@ -249,8 +249,8 @@ static void FdIsset0030(void)
     return;
 }
 
-static int SelectTestTestImpl(int argc, char *argv[]) {
-    // RemoveAllSpecialHandler(SIGABRT);
+static int SelectTestTestImpl(int argc, char *argv[])
+{
     FdSet0010();
     FdSet0020();
     FdSet0030();
@@ -266,6 +266,6 @@ static int SelectTestTestImpl(int argc, char *argv[]) {
 int SelectTestTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return SelectTestTestImpl(1, libcArgv);
 }

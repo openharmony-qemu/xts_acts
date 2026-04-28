@@ -39,7 +39,7 @@ void Telldir0100(void)
     dir = opendir(PATH);
     long offset1 = telldir(dir);
     long offset2 = 0;
-    while ((ptr = readdir(dir)) != NULL) {
+    while ((ptr = readdir(dir)) != nullptr) {
         counter++;
 
         if (counter > 1) {
@@ -62,7 +62,7 @@ void Telldir0200(void)
 {
     signal(SIGSEGV, Handler);
 
-    DIR *dir = NULL;
+    DIR *dir = nullptr;
     telldir(dir);
 }
 
@@ -76,6 +76,6 @@ static int TelldirTestImpl(int argc, char *argv[])
 int TelldirTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return TelldirTestImpl(1, libcArgv);
 }

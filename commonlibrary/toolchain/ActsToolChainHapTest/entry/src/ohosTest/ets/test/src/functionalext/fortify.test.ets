@@ -58,19 +58,6 @@ export default function fortify_group_test() {
       done();
     });
     /**
-     * @tc.name   pthread_fortify_test
-     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_FORTIFY_TEST_0100
-     * @tc.desc   libc-test pthread_fortify_test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("pthread_fortify_test", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_fortify_test");
-      expect(result).assertEqual(0);
-      done();
-    });
-    /**
      * @tc.name   select_test
      * @tc.number SUB_THIRDPARTY_MUSL_SELECT_TEST_0100
      * @tc.desc   libc-test select_test

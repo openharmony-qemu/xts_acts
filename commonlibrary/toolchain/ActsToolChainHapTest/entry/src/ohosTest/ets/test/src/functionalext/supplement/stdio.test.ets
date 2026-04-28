@@ -874,7 +874,7 @@ export default function stdio_group_test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("__fpending", Level.LEVEL1, async (done: Function) => {
+    it("test_fpending", Level.LEVEL1, async (done: Function) => {
       const result = await testNapi.runTest("__fpending");
       expect(result).assertEqual(0);
       done();
@@ -887,7 +887,7 @@ export default function stdio_group_test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("__fpurge", Level.LEVEL1, async (done: Function) => {
+    it("test_fpurge", Level.LEVEL1, async (done: Function) => {
       const result = await testNapi.runTest("__fpurge");
       expect(result).assertEqual(0);
       done();
@@ -900,7 +900,7 @@ export default function stdio_group_test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("__freadable", Level.LEVEL1, async (done: Function) => {
+    it("test_freadable", Level.LEVEL1, async (done: Function) => {
       const result = await testNapi.runTest("__freadable");
       expect(result).assertEqual(0);
       done();
@@ -913,7 +913,7 @@ export default function stdio_group_test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("__freading", Level.LEVEL1, async (done: Function) => {
+    it("test_freading", Level.LEVEL1, async (done: Function) => {
       const result = await testNapi.runTest("__freading");
       expect(result).assertEqual(0);
       done();
@@ -926,7 +926,7 @@ export default function stdio_group_test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("__fseterr", Level.LEVEL1, async (done: Function) => {
+    it("test_fseterr", Level.LEVEL1, async (done: Function) => {
       const result = await testNapi.runTest("__fseterr");
       expect(result).assertEqual(0);
       done();
@@ -939,7 +939,7 @@ export default function stdio_group_test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("__fwritable", Level.LEVEL1, async (done: Function) => {
+    it("test_fwritable", Level.LEVEL1, async (done: Function) => {
       const result = await testNapi.runTest("__fwritable");
       expect(result).assertEqual(0);
       done();
@@ -952,7 +952,7 @@ export default function stdio_group_test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("__fwriting", Level.LEVEL1, async (done: Function) => {
+    it("test_fwriting", Level.LEVEL1, async (done: Function) => {
       const result = await testNapi.runTest("__fwriting");
       expect(result).assertEqual(0);
       done();
@@ -965,7 +965,7 @@ export default function stdio_group_test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("_flushlbf", Level.LEVEL1, async (done: Function) => {
+    it("test_flushlbf", Level.LEVEL1, async (done: Function) => {
       const result = await testNapi.runTest("_flushlbf");
       expect(result).assertEqual(0);
       done();

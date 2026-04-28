@@ -42,6 +42,6 @@ static int FseterrTestWithArgs(int argc, char *argv[])
 int FseterrTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return FseterrTestWithArgs(1, libcArgv);
 }

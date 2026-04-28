@@ -18,7 +18,8 @@
 #include <dlfcn.h>
 #include <cstdio>
 
-static inline bool InitDlopenConfigAbsPathPolicy(void) {
+static inline bool InitDlopenConfigAbsPathPolicy(void)
+{
     typedef bool (*FuncT)(void);
     static FuncT func = nullptr;
     if (!func) {
@@ -31,7 +32,8 @@ static inline bool InitDlopenConfigAbsPathPolicy(void) {
     return func();
 }
 
-static inline bool CheckPrerequisites(void) {
+static inline bool CheckPrerequisites(void)
+{
     typedef bool (*FuncT)(void);
     static FuncT func = nullptr;
     if (!func) {

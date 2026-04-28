@@ -28,7 +28,7 @@ void Fpurge0100()
     char buf[BUFFER_SIZE];
     char *str = "This is a test";
     FILE *fp = fopen("/data/storage/el2/base/cache/fpurge.txt", "w");
-    EXPECT_PTRNE("Fpurge0100", fp, NULL);
+    EXPECT_PTRNE("Fpurge0100", fp, nullptr);
 
     fputs(str, fp);
     size_t ret = __fpurge(fp);
@@ -49,6 +49,6 @@ static int FpurgeTestWithArgs(int argc, char *argv[])
 int FpurgeTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return FpurgeTestWithArgs(1, libcArgv);
 }

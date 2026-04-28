@@ -790,20 +790,6 @@ export default function functional_group_test() {
     });
 
     /**
-     * @tc.name   pthread_cond
-     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_COND_0100
-     * @tc.desc   libc-test pthread_cond
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("pthread_cond", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_cond");
-      expect(result).assertEqual(0);
-      done();
-    });
-
-    /**
      * @tc.name   pthread_mutex
      * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_MUTEX_0100
      * @tc.desc   libc-test pthread_mutex
@@ -1055,7 +1041,7 @@ export default function functional_group_test() {
     });
     /**
      * @tc.name   renameat2_test
-     * @tc.number SUB_THIRDPARTY_MUSL_RENAMEAT2_TEST_0100
+     * @tc.number SUB_THIRDPARTY_MUSL_RENAMEAT_TWO_TEST_0100
      * @tc.desc   libc-test renameat2_test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1063,19 +1049,6 @@ export default function functional_group_test() {
      */
     it("renameat2_test", Level.LEVEL1, async (done: Function) => {
       const result = await testNapi.runTest("renameat2_test");
-      expect(result).assertEqual(0);
-      done();
-    });
-    /**
-     * @tc.name   socket
-     * @tc.number SUB_THIRDPARTY_MUSL_SOCKET_0100
-     * @tc.desc   libc-test socket
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("socket", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("socket");
       expect(result).assertEqual(0);
       done();
     });

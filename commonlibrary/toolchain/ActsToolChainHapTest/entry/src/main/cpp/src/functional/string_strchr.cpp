@@ -31,7 +31,8 @@ static char g_buf[TEST_BUFFER_SIZE];
 
 static void *Aligned(void *p)
 {
-    return reinterpret_cast<void*>((reinterpret_cast<uintptr_t>(p) + ALIGNMENT_OFFSET) & static_cast<uintptr_t>(-CACHE_LINE_SIZE));
+    return reinterpret_cast<void*>((reinterpret_cast<uintptr_t>(p) + ALIGNMENT_OFFSET) &
+                                    static_cast<uintptr_t>(-CACHE_LINE_SIZE));
 }
 
 static void *Aligncpy(const void *p, size_t len, size_t a)

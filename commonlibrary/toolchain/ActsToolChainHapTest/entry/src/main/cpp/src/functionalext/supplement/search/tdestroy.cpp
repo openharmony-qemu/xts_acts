@@ -21,8 +21,8 @@
 #include "test.h"
 
 #define ARRAY_SIZE (10)
-static void *g_root = NULL;
-static int g_free_calls = 0;
+static void *g_root = nullptr;
+static int g_freeCalls = 0;
 
 static void *MallocNode(unsigned n)
 {
@@ -34,7 +34,7 @@ static void *MallocNode(unsigned n)
     exit(EXIT_FAILURE);
 }
 
-int cmp_node(const void *pa, const void *pb)
+int CmpNode(const void *pa, const void *pb)
 {
     if (*(int *)pa < *(int *)pb) {
         return -1;
@@ -48,7 +48,7 @@ int cmp_node(const void *pa, const void *pb)
 void NodeFree(void *p)
 {
     free(p);
-    g_free_calls++;
+    g_freeCalls++;
 }
 
 /**
@@ -68,8 +68,8 @@ void Tdestroy0100(void)
     for (i = 0; i < ARRAY_SIZE; i++) {
         ptr =  (int *)MallocNode(sizeof(int));
         *ptr = array[i];
-        val = tsearch((void *)ptr, &g_root, cmp_node);
-        if (val == NULL) {
+        val = tsearch((void *)ptr, &g_root, CmpNode);
+        if (val == nullptr) {
             exit(EXIT_FAILURE);
         } else if ((*(int **)val) != ptr) {
             free(ptr);
@@ -77,8 +77,8 @@ void Tdestroy0100(void)
     }
 
     tdestroy(g_root, NodeFree);
-    if (g_free_calls != ARRAY_SIZE) {
-        t_error("%s tdestroy failed, g_free_calls is %d\n", __func__, g_free_calls);
+    if (g_freeCalls != ARRAY_SIZE) {
+        t_error("%s tdestroy failed, g_freeCalls is %d\n", __func__, g_freeCalls);
     }
 }
 
@@ -91,6 +91,6 @@ static int TdestroyTestImpl(int argc, char *argv[])
 int TdestroyTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return TdestroyTestImpl(1, libcArgv);
 }

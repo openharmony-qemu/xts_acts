@@ -35,7 +35,6 @@ void Fwritable0100(void)
     int result = __fwritable(fptr);
     EXPECT_NE("Fwritable0100", result, NUM_ZERO);
     fclose(fptr);
-    remove(ptr);
 }
 
 /**

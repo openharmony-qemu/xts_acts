@@ -27,10 +27,10 @@ void Freadable0100(void)
 {
     char buf[100];
     FILE *fp = fopen(PATH, "w");
-    EXPECT_PTRNE("Freadable0100", fp, NULL);
+    EXPECT_PTRNE("Freadable0100", fp, nullptr);
     fclose(fp);
     FILE *ffp = fopen(PATH, "r");
-    EXPECT_PTRNE("Freadable0100", ffp, NULL);
+    EXPECT_PTRNE("Freadable0100", ffp, nullptr);
 
     size_t ret = __freadable(ffp);
     EXPECT_NE("Freadable0100", ret, 0);
@@ -47,7 +47,7 @@ void Freadable0100(void)
 void Freadable0200(void)
 {
     FILE *fp = fopen(PATH, "wb");
-    EXPECT_PTRNE("Freadable0200", fp, NULL);
+    EXPECT_PTRNE("Freadable0200", fp, nullptr);
 
     size_t ret = __freadable(fp);
     EXPECT_EQ("Freadable0200", ret, 0);
@@ -66,6 +66,6 @@ static int FreadableTestWithArgs(int argc, char *argv[])
 int FreadableTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return FreadableTestWithArgs(1, libcArgv);
 }

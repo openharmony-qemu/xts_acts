@@ -28,12 +28,12 @@
 void Fdopendir0100(void)
 {
     bool flag = false;
-    DIR *dir = NULL;
+    DIR *dir = nullptr;
     int fd = open("/data/storage/el2/base/cache", O_RDONLY);
     EXPECT_NE("fdopendir_0100", fd, -1);
 
     dir = fdopendir(fd);
-    EXPECT_TRUE("fdopendir_0100", dir != 0);
+    EXPECT_TRUE("fdopendir_0100", dir != nullptr);
 }
 
 /**
@@ -44,7 +44,7 @@ void Fdopendir0100(void)
 void Fdopendir0200(void)
 {
     DIR *dir = fdopendir(0);
-    EXPECT_EQ("fdopendir_0200", dir, NULL);
+    EXPECT_EQ("fdopendir_0200", dir, nullptr);
 }
 
 /**
@@ -55,10 +55,10 @@ void Fdopendir0200(void)
  */
 void Fdopendir0300(void)
 {
-    DIR *dir = NULL;
+    DIR *dir = nullptr;
     int fd = open("/data/storage/el2/base/cache/test.txt", O_RDONLY);
     dir = fdopendir(fd);
-    EXPECT_EQ("fdopendir_0300", dir, NULL);
+    EXPECT_EQ("fdopendir_0300", dir, nullptr);
 }
 
 /**
@@ -68,10 +68,10 @@ void Fdopendir0300(void)
  */
 void Fdopendir0400(void)
 {
-    DIR *dir = NULL;
+    DIR *dir = nullptr;
     int fd = open("/data/storage/el2/base/cache/test.txt", O_RDONLY);
     dir = fdopendir(fd);
-    EXPECT_EQ("fdopendir_0400", dir, NULL);
+    EXPECT_EQ("fdopendir_0400", dir, nullptr);
     remove("/data/storage/el2/base/cache/test.txt");
 }
 
@@ -87,6 +87,6 @@ static int FdopendirTestImpl(int argc, char *argv[])
 int FdopendirTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return FdopendirTestImpl(1, libcArgv);
 }

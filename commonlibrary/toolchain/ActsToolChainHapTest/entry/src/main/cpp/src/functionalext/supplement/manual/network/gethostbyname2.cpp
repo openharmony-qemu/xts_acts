@@ -32,7 +32,7 @@ void Gethostbyname20100(void)
 {
     struct hostent *hptr = gethostbyname2("127.0.0.1", AF_INET);
     bool flag = false;
-    if (hptr != NULL) {
+    if (hptr != nullptr) {
         flag = true;
     }
     EXPECT_TRUE("Gethostbyname20100", flag);
@@ -48,7 +48,7 @@ void Gethostbyname20200(void)
 {
     struct hostent *hptr = gethostbyname2("::1", AF_INET6);
     bool flag = false;
-    if (hptr != NULL) {
+    if (hptr != nullptr) {
         flag = true;
     }
     EXPECT_TRUE("Gethostbyname20200", flag);
@@ -64,7 +64,7 @@ void Gethostbyname20300(void)
 {
     struct hostent *hptr = gethostbyname2("127.0.w.1", AF_INET6);
     bool flag = false;
-    if (hptr == NULL) {
+    if (hptr == nullptr) {
         flag = true;
     }
     EXPECT_TRUE("Gethostbyname20300", flag);
@@ -79,7 +79,7 @@ void Gethostbyname20400(void)
 {
     struct hostent *hptr = gethostbyname2("::1", AF_INET);
     bool flag = false;
-    if (hptr == NULL) {
+    if (hptr == nullptr) {
         flag = true;
     }
     EXPECT_TRUE("Gethostbyname20400", flag);
@@ -105,6 +105,6 @@ static int Gethostbyname2TestImpl(int argc, char *argv[])
 int Gethostbyname2Test(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return Gethostbyname2TestImpl(1, libcArgv);
 }

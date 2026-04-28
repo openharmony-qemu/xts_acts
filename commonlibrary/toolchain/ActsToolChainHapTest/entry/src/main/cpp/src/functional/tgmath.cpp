@@ -58,27 +58,37 @@ static int TgmathTestImpl(void)
     }
 
     if (sizeof pow(sqrt(TEST_POW_BASE_INT), TEST_POW_EXPONENT_FLOAT) != sizeof(double)) {
-        t_error("sizeof pow(sqrt(8), 0.5f) want %d got %d\n", (int)sizeof(double), (int)sizeof pow(sqrt(TEST_POW_BASE_INT), TEST_POW_EXPONENT_FLOAT));
+        t_error("sizeof pow(sqrt(8), 0.5f) want %d got %d\n", (int)sizeof(double),
+                (int)sizeof pow(sqrt(TEST_POW_BASE_INT), TEST_POW_EXPONENT_FLOAT));
     }
     if (sizeof pow(TEST_POW_BASE_DOUBLE, TEST_POW_EXPONENT_DOUBLE) != sizeof(double)) {
-        t_error("sizeof pow(2.0, 0.5) want %d got %d\n", (int)sizeof(double), (int)sizeof pow(TEST_POW_BASE_DOUBLE, TEST_POW_EXPONENT_DOUBLE));
+        t_error("sizeof pow(2.0, 0.5) want %d got %d\n", (int)sizeof(double),
+                (int)sizeof pow(TEST_POW_BASE_DOUBLE, TEST_POW_EXPONENT_DOUBLE));
     }
     if (sizeof pow(TEST_POW_BASE_FLOAT, TEST_POW_EXPONENT_FLOAT) != sizeof(float)) {
-        t_error("sizeof pow(2.0f, 0.5f) want %d got %d\n", (int)sizeof(float), (int)sizeof pow(TEST_POW_BASE_FLOAT, TEST_POW_EXPONENT_FLOAT));
+        t_error("sizeof pow(2.0f, 0.5f) want %d got %d\n", (int)sizeof(float),
+                (int)sizeof pow(TEST_POW_BASE_FLOAT, TEST_POW_EXPONENT_FLOAT));
     }
-    if (sizeof pow(TEST_POW_BASE_DOUBLE, std::complex<double>(TEST_POW_EXPONENT_DOUBLE, 0.0)) != sizeof(std::complex<double>)) {
-        t_error("sizeof pow(2.0, complex(0.5,0.0)) want %d got %d\n", (int)sizeof(std::complex<double>), (int)sizeof pow(TEST_POW_BASE_DOUBLE, std::complex<double>(TEST_POW_EXPONENT_DOUBLE, 0.0)));
+    if (sizeof pow(TEST_POW_BASE_DOUBLE, std::complex<double>(TEST_POW_EXPONENT_DOUBLE, 0.0)) !=
+        sizeof(std::complex<double>)) {
+        t_error("sizeof pow(2.0, complex(0.5,0.0)) want %d got %d\n",
+                (int)sizeof(std::complex<double>),
+                (int)sizeof pow(TEST_POW_BASE_DOUBLE,
+                                std::complex<double>(TEST_POW_EXPONENT_DOUBLE, 0.0)));
     }
 
     if (pow(TEST_POW_BASE_DOUBLE, TEST_POW_EXPONENT_DOUBLE) != TEST_SQRT_DOUBLE_RESULT) {
-        t_error("pow(2.0, 0.5) want 0x1.6a09e667f3bcdp+0 got %a\n", pow(TEST_POW_BASE_DOUBLE, TEST_POW_EXPONENT_DOUBLE));
+        t_error("pow(2.0, 0.5) want 0x1.6a09e667f3bcdp+0 got %a\n",
+                pow(TEST_POW_BASE_DOUBLE, TEST_POW_EXPONENT_DOUBLE));
     }
 
     if (pow(TEST_POW_BASE_INT_SIMPLE, TEST_POW_EXPONENT_DOUBLE) != TEST_SQRT_DOUBLE_RESULT) {
-        t_error("pow(2, 0.5) want 0x1.6a09e667f3bcdp+0 got %a\n", pow(TEST_POW_BASE_INT_SIMPLE, TEST_POW_EXPONENT_DOUBLE));
+        t_error("pow(2, 0.5) want 0x1.6a09e667f3bcdp+0 got %a\n",
+                pow(TEST_POW_BASE_INT_SIMPLE, TEST_POW_EXPONENT_DOUBLE));
     }
     if (pow(TEST_POW_BASE_INT_SIMPLE, TEST_POW_EXPONENT_FLOAT) != TEST_SQRT_DOUBLE_RESULT) {
-        t_error("pow(2, 0.5f) want 0x1.6a09e667f3bcdp+0 got %a\n", pow(TEST_POW_BASE_INT_SIMPLE, TEST_POW_EXPONENT_FLOAT));
+        t_error("pow(2, 0.5f) want 0x1.6a09e667f3bcdp+0 got %a\n",
+                pow(TEST_POW_BASE_INT_SIMPLE, TEST_POW_EXPONENT_FLOAT));
     }
 
     return g_tStatus;

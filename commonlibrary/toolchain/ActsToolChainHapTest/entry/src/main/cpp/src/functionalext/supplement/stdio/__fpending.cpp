@@ -28,7 +28,7 @@ void Fpending0100(void)
 {
     char *str = "This is a test";
     FILE *fp = fopen(PATH, "w");
-    EXPECT_PTRNE("Fpending0100", fp, NULL);
+    EXPECT_PTRNE("Fpending0100", fp, nullptr);
 
     fputs(str, fp);
     size_t ret = __fpending(fp);
@@ -49,7 +49,7 @@ void Fpending0200(void)
 {
     char *str = "This is a test";
     FILE *fp = fopen(PATH, "w");
-    EXPECT_PTRNE("Fpending0200", fp, NULL);
+    EXPECT_PTRNE("Fpending0200", fp, nullptr);
 
     fputs(str, fp);
     fflush(fp);
@@ -70,7 +70,7 @@ void Fpending0300(void)
 {
     char *str = "This is a test";
     FILE *fp = fopen(PATH, "w");
-    EXPECT_PTRNE("Fpending0300", fp, NULL);
+    EXPECT_PTRNE("Fpending0300", fp, nullptr);
 
     fputs(str, fp);
     fclose(fp);
@@ -94,6 +94,6 @@ static int FpendingTestWithArgs(int argc, char *argv[])
 int FpendingTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return FpendingTestWithArgs(1, libcArgv);
 }

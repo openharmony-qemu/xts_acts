@@ -33,7 +33,7 @@ static void *PthreadMutexLockAfterDestroyed(void *arg)
     void **a = (void**)arg;
 
     *(int*)a[1] = pthread_mutex_lock((pthread_mutex_t*)a[0]);
-    return 0;
+    return nullptr;
 }
 
 static int TestPthreadMutexLockAfterDestroyed(int mtype)
@@ -49,7 +49,7 @@ static int TestPthreadMutexLockAfterDestroyed(int mtype)
     T(pthread_mutexattr_settype(&ma, mtype));
     T(pthread_mutex_init((pthread_mutex_t*)a[0], &ma));
     T(pthread_mutexattr_destroy(&ma));
-    T(pthread_create(&t, 0, PthreadMutexLockAfterDestroyed, a));
+    T(pthread_create(&t, nullptr, PthreadMutexLockAfterDestroyed, a));
     T(pthread_mutex_destroy((pthread_mutex_t*)a[0]));
     T(pthread_join(t, &p));
     return i;
@@ -60,7 +60,7 @@ static void *PthreadMutexUnlockAfterDestroyed(void *arg)
     void **a = (void**)arg;
 
     *(int*)a[1] = pthread_mutex_unlock((pthread_mutex_t*)a[0]);
-    return 0;
+    return nullptr;
 }
 
 static int TestPthreadMutexUnlockAfterDestroyed(int mtype)
@@ -76,7 +76,7 @@ static int TestPthreadMutexUnlockAfterDestroyed(int mtype)
     T(pthread_mutexattr_settype(&ma, mtype));
     T(pthread_mutex_init((pthread_mutex_t*)a[0], &ma));
     T(pthread_mutexattr_destroy(&ma));
-    T(pthread_create(&t, 0, PthreadMutexUnlockAfterDestroyed, a));
+    T(pthread_create(&t, nullptr, PthreadMutexUnlockAfterDestroyed, a));
     T(pthread_mutex_destroy((pthread_mutex_t*)a[0]));
     T(pthread_join(t, &p));
     return i;
@@ -89,7 +89,7 @@ static void *PthreadMutexTimedlockAfterDestroyed(void *arg)
     clock_gettime(CLOCK_REALTIME, &ts);
     ts.tv_sec += 1;
     *(int*)a[1] = pthread_mutex_timedlock((pthread_mutex_t*)a[0], &ts);
-    return 0;
+    return nullptr;
 }
 
 static int TestPthreadMutexTimedlockAfterDestroyed(int mtype)
@@ -105,7 +105,7 @@ static int TestPthreadMutexTimedlockAfterDestroyed(int mtype)
     T(pthread_mutexattr_settype(&ma, mtype));
     T(pthread_mutex_init((pthread_mutex_t*)a[0], &ma));
     T(pthread_mutexattr_destroy(&ma));
-    T(pthread_create(&t, 0, PthreadMutexTimedlockAfterDestroyed, a));
+    T(pthread_create(&t, nullptr, PthreadMutexTimedlockAfterDestroyed, a));
     T(pthread_mutex_destroy((pthread_mutex_t*)a[0]));
     T(pthread_join(t, &p));
     return i;
@@ -116,7 +116,7 @@ static void *PthreadMutexTrylockAfterDestroyed(void *arg)
     void **a = (void**)arg;
 
     *(int*)a[1] = pthread_mutex_trylock((pthread_mutex_t*)a[0]);
-    return 0;
+    return nullptr;
 }
 
 static int TestPthreadMutexTrylockAfterDestroyed(int mtype)
@@ -132,7 +132,7 @@ static int TestPthreadMutexTrylockAfterDestroyed(int mtype)
     T(pthread_mutexattr_settype(&ma, mtype));
     T(pthread_mutex_init((pthread_mutex_t*)a[0], &ma));
     T(pthread_mutexattr_destroy(&ma));
-    T(pthread_create(&t, 0, PthreadMutexTrylockAfterDestroyed, a));
+    T(pthread_create(&t, nullptr, PthreadMutexTrylockAfterDestroyed, a));
     T(pthread_mutex_destroy((pthread_mutex_t*)a[0]));
     T(pthread_join(t, &p));
     return i;

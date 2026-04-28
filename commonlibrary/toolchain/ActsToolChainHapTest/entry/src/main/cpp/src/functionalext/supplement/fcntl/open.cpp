@@ -22,7 +22,7 @@
 
 typedef void (*TEST_FUN)();
 
-static const char *g_path = "/data/storage/el2/base/cache/test.txt";
+static const char *PATH = "/data/storage/el2/base/cache/test.txt";
 
 /*
  * @tc.name      : open_0100
@@ -33,7 +33,7 @@ void Open0100(void)
 {
     char s[] = "test";
     char buffer[80] = {0};
-    int fd = open(g_path, O_RDONLY + O_CREAT, TEST_MODE);
+    int fd = open(PATH, O_RDONLY + O_CREAT, TEST_MODE);
     int len = write(fd, s, sizeof(s));
     ssize_t size = read(fd, buffer, sizeof(buffer));
     EXPECT_MT("open_0100", fd, EXPECTED_FD_VALUE);
@@ -41,7 +41,7 @@ void Open0100(void)
     EXPECT_STREQ("open_0100", buffer, "");
 
     close(fd);
-    remove(g_path);
+    remove(PATH);
 }
 
 /*
@@ -51,7 +51,7 @@ void Open0100(void)
  */
 void Open0200(void)
 {
-    int fd = open(g_path, O_RDONLY);
+    int fd = open(PATH, O_RDONLY);
     EXPECT_EQ("open_0200", fd, -1);
 }
 
@@ -64,14 +64,14 @@ void Open0300(void)
 {
     char s[] = "test";
     char buffer[80] = {0};
-    int fd = open(g_path, O_WRONLY + O_CREAT, TEST_MODE);
+    int fd = open(PATH, O_WRONLY + O_CREAT, TEST_MODE);
     ssize_t size = read(fd, buffer, sizeof(buffer));
     EXPECT_MT("open_0300", fd, EXPECTED_FD_VALUE);
     EXPECT_STREQ("open_0300", buffer, "");
     int len = write(fd, s, sizeof(s));
     EXPECT_EQ("open_0300", len, TEST_STRING_LENGTH);
     close(fd);
-    remove(g_path);
+    remove(PATH);
 }
 
 /*
@@ -81,7 +81,7 @@ void Open0300(void)
  */
 void Open0400(void)
 {
-    int fd = open(g_path, O_WRONLY);
+    int fd = open(PATH, O_WRONLY);
     EXPECT_EQ("open_0400", fd, -1);
 }
 
@@ -94,14 +94,14 @@ void Open0500(void)
 {
     char s[] = "test";
     char buffer[80] = {0};
-    int fd = open(g_path, O_RDWR | O_APPEND + O_CREAT, TEST_MODE);
+    int fd = open(PATH, O_RDWR | O_APPEND + O_CREAT, TEST_MODE);
     ssize_t size = read(fd, buffer, sizeof(buffer));
     EXPECT_MT("open_0500", fd, EXPECTED_FD_VALUE);
     EXPECT_STREQ("open_0500", buffer, "");
     int len = write(fd, s, sizeof(s));
     EXPECT_EQ("open_0500", len, TEST_STRING_LENGTH);
     close(fd);
-    remove(g_path);
+    remove(PATH);
 }
 
 /*
@@ -113,7 +113,7 @@ void Open0600(void)
 {
     char s[] = "test";
     char buffer[80] = {0};
-    int fd = open(g_path, O_RDWR | O_APPEND);
+    int fd = open(PATH, O_RDWR | O_APPEND);
     ssize_t size = read(fd, buffer, sizeof(buffer));
     EXPECT_EQ("open_0600", fd, -1);
     EXPECT_STREQ("open_0600", buffer, "");
@@ -129,7 +129,7 @@ void Open0600(void)
  */
 void Open0700(void)
 {
-    int fd = open(g_path, O_RDWR | O_APPEND);
+    int fd = open(PATH, O_RDWR | O_APPEND);
     EXPECT_EQ("open_0700", fd, -1);
 }
 
@@ -142,14 +142,14 @@ void Open0800(void)
 {
     char s[] = "test";
     char buffer[80] = {0};
-    int fd = open(g_path, O_RDWR | O_CREAT, TEST_MODE);
+    int fd = open(PATH, O_RDWR | O_CREAT, TEST_MODE);
     ssize_t size = read(fd, buffer, sizeof(buffer));
     EXPECT_MT("open_0800", fd, EXPECTED_FD_VALUE);
     EXPECT_STREQ("open_0800", buffer, "");
     int len = write(fd, s, sizeof(s));
     EXPECT_EQ("open_0800", len, TEST_STRING_LENGTH);
     close(fd);
-    remove(g_path);
+    remove(PATH);
 }
 
 /*
@@ -161,14 +161,14 @@ void Open0900(void)
 {
     char s[] = "test";
     char buffer[80] = {0};
-    int fd = open(g_path, O_RDWR | O_CLOEXEC + O_CREAT, TEST_MODE);
+    int fd = open(PATH, O_RDWR | O_CLOEXEC + O_CREAT, TEST_MODE);
     ssize_t size = read(fd, buffer, sizeof(buffer));
     EXPECT_MT("open_0900", fd, EXPECTED_FD_VALUE);
     EXPECT_STREQ("open_0900", buffer, "");
     int len = write(fd, s, sizeof(s));
     EXPECT_EQ("open_0900", len, TEST_STRING_LENGTH);
     close(fd);
-    remove(g_path);
+    remove(PATH);
 }
 
 static TEST_FUN g_gFunArray[] = {

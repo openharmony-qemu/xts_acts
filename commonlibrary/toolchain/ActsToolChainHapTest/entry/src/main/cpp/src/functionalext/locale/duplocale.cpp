@@ -26,7 +26,7 @@ static void Duplocale0100(void)
 {
     char *lo = setlocale(LC_ALL, "C");
     if (!lo) {
-        EXPECT_PTRNE("duplocale_0100", lo, NULL);
+        EXPECT_PTRNE("duplocale_0100", lo, nullptr);
         return;
     }
 
@@ -34,7 +34,7 @@ static void Duplocale0100(void)
     EXPECT_TRUE("duplocale_0100", newLocale);
     if (newLocale) {
         freelocale(newLocale);
-        newLocale = NULL;
+        newLocale = nullptr;
     }
 }
 
@@ -48,31 +48,31 @@ static void Duplocale0200(void)
 {
     char *lo = setlocale(LC_ALL, "C");
     if (!lo) {
-        EXPECT_PTRNE("duplocale_0200", lo, NULL);
+        EXPECT_PTRNE("duplocale_0200", lo, nullptr);
         return;
     }
 
     locale_t global = duplocale(LC_GLOBAL_LOCALE);
-    EXPECT_PTRNE("duplocale_0200", global, NULL);
+    EXPECT_PTRNE("duplocale_0200", global, nullptr);
 
-    locale_t newLocale = newlocale(LC_ALL_MASK, "en_US", NULL);
-    EXPECT_PTRNE("duplocale_0200", newLocale, NULL);
+    locale_t newLocale = newlocale(LC_ALL_MASK, "en_US", nullptr);
+    EXPECT_PTRNE("duplocale_0200", newLocale, nullptr);
 
     locale_t cloneLocale = duplocale(newLocale);
-    EXPECT_PTRNE("duplocale_0200", cloneLocale, NULL);
+    EXPECT_PTRNE("duplocale_0200", cloneLocale, nullptr);
     EXPECT_PTRNE("duplocale_0200", cloneLocale, global);
 
     if (cloneLocale) {
         freelocale(cloneLocale);
-        cloneLocale = NULL;
+        cloneLocale = nullptr;
     }
     if (newLocale) {
         freelocale(newLocale);
-        newLocale = NULL;
+        newLocale = nullptr;
     }
     if (global) {
         freelocale(global);
-        global = NULL;
+        global = nullptr;
     }
 }
 

@@ -42,7 +42,7 @@ void WaitUntilSignal(int signum)
     struct timespec timeout;
     timeout.tv_sec = 0;          // 秒部分为 0
     timeout.tv_nsec = 500000000; // 纳秒部分为 500000000，即 0.5 秒
-    (void)sigtimedwait(&set, NULL, &timeout);
+    (void)sigtimedwait(&set, nullptr, &timeout);
 }
 
 // 检查是否有相应的日志生成，如果有当前日志，则返回true，如果没有则返回false
@@ -65,13 +65,13 @@ bool CheckHiLogPrint(char *needToMatch)
     finalCommand[READ_SIZE] = '\0';
     char buffer[BUFFER_SIZE];
     FILE* pipe = popen(finalCommand, "r");
-    if (pipe == NULL) {
+    if (pipe == nullptr) {
         printf("CheckHiLogPrint: Failed to run command\n");
         return false;
     }
 
     // 读取命令输出并打印
-    while (fgets(buffer, BUFFER_SIZE, pipe) != NULL) {
+    while (fgets(buffer, BUFFER_SIZE, pipe) != nullptr) {
         printf("%s", buffer);
         flag = true;
     }

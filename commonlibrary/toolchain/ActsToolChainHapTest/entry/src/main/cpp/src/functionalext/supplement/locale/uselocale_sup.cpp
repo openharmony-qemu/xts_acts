@@ -26,11 +26,11 @@ static void Uselocale0100(void)
 {
     char *rev = setlocale(LC_ALL, "C");
     if (!rev) {
-        EXPECT_PTRNE("uselocale_0100", rev, NULL);
+        EXPECT_PTRNE("uselocale_0100", rev, nullptr);
         return;
     }
-    locale_t usenow = uselocale(NULL);
-    EXPECT_PTRNE("uselocale_0100", usenow, NULL);
+    locale_t usenow = uselocale(nullptr);
+    EXPECT_PTRNE("uselocale_0100", usenow, nullptr);
     EXPECT_PTREQ("uselocale_0100", usenow, LC_GLOBAL_LOCALE);
 }
 
@@ -44,26 +44,26 @@ static void Uselocale0200(void)
 {
     char *rev = setlocale(LC_ALL, "C");
     if (!rev) {
-        EXPECT_PTRNE("uselocale_0200", rev, NULL);
+        EXPECT_PTRNE("uselocale_0200", rev, nullptr);
         return;
     }
-    uselocale(NULL);
-    locale_t newLocale = newlocale(LC_PAPER_MASK, "en_ZA", NULL);
+    uselocale(nullptr);
+    locale_t newLocale = newlocale(LC_PAPER_MASK, "en_ZA", nullptr);
     if (newLocale) {
-        EXPECT_PTREQ("uselocale_0200", newLocale, NULL);
+        EXPECT_PTREQ("uselocale_0200", newLocale, nullptr);
         freelocale(newLocale);
-        newLocale = NULL;
+        newLocale = nullptr;
         return;
     }
-    newLocale = newlocale(LC_PAPER_MASK, "C.UTF-8", NULL);
+    newLocale = newlocale(LC_PAPER_MASK, "C.UTF-8", nullptr);
     locale_t usenow = uselocale(newLocale);
     EXPECT_PTREQ("uselocale_0200", usenow, LC_GLOBAL_LOCALE);
-    locale_t it = uselocale(NULL);
+    locale_t it = uselocale(nullptr);
     EXPECT_PTREQ("uselocale_0200", it, newLocale);
 
     if (newLocale) {
         freelocale(newLocale);
-        newLocale = NULL;
+        newLocale = nullptr;
     }
 }
 

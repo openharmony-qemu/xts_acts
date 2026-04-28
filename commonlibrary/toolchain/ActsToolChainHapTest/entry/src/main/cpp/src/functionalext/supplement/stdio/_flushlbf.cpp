@@ -33,11 +33,11 @@ void Flushlbf0100(void)
     const char *path = "/data/storage/el2/base/cache/test.txt";
 
     FILE *fd = fopen(path, "w+");
-    EXPECT_PTRNE("flushlbf_0100", fd, NULL);
+    EXPECT_PTRNE("flushlbf_0100", fd, nullptr);
 
     fprintf(fd, "%s", array);
     FILE *fp = freopen("/data/storage/el2/base/cache/test.txt", "r", stdin);
-    EXPECT_PTRNE("flushlbf_0100", fp, NULL);
+    EXPECT_PTRNE("flushlbf_0100", fp, nullptr);
 
     fseek(fp, 0, SEEK_SET);
     int32_t rsize = fread(buffer, 1, 10, fd);
@@ -64,6 +64,6 @@ static int FlushlbfTestWithArgs(int argc, char *argv[])
 int FlushlbfTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return FlushlbfTestWithArgs(1, libcArgv);
 }

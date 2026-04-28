@@ -37,14 +37,14 @@ static void Handler(int sig)
 void Seekdir0100(void)
 {
     DIR *dir = opendir(PATH);
-    if (dir == NULL) {
+    if (dir == nullptr) {
         t_error("%s failed: opendir. PATH = %s\n", __func__, PATH);
     }
 
     int counter = 0;
     struct dirent *result;
     long offset = 0;
-    while ((result = readdir(dir)) != NULL) {
+    while ((result = readdir(dir)) != nullptr) {
         counter++;
 
         if (counter > 1) {
@@ -54,7 +54,7 @@ void Seekdir0100(void)
     }
 
     result = readdir(dir);
-    if (result == NULL) {
+    if (result == nullptr) {
         t_error("%s failed: readdir\n", __func__);
     }
 
@@ -68,7 +68,7 @@ void Seekdir0100(void)
     }
 
     result = readdir(dir);
-    if (result == NULL) {
+    if (result == nullptr) {
         t_error("%s failed: readdir\n", __func__);
     }
 
@@ -87,12 +87,12 @@ void Seekdir0100(void)
 void Seekdir0200(void)
 {
     DIR *dir = opendir(PATH);
-    if (dir == NULL) {
+    if (dir == nullptr) {
         t_error("%s failed: opendir. PATH = %s\n", __func__, PATH);
     }
 
     struct dirent *result = readdir(dir);
-    if (result == NULL) {
+    if (result == nullptr) {
         t_error("%s failed: readdir\n", __func__);
     }
 
@@ -106,7 +106,7 @@ void Seekdir0200(void)
     }
 
     result = readdir(dir);
-    if (result == NULL) {
+    if (result == nullptr) {
         t_error("%s failed: readdir\n", __func__);
     }
 
@@ -126,7 +126,7 @@ void Seekdir0300(void)
 {
     signal(SIGSEGV, Handler);
 
-    DIR *dir = NULL;
+    DIR *dir = nullptr;
     seekdir(dir, -1);
 }
 
@@ -142,6 +142,6 @@ static int SeekdirTestImpl(int argc, char *argv[])
 int SeekdirTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return SeekdirTestImpl(1, libcArgv);
 }
