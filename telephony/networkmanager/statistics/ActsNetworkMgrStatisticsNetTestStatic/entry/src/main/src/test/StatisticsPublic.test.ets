@@ -588,8 +588,7 @@ export default function statisticsHasNetTest() {
                 try {
                     let data : http.HttpResponse = await httpRequest.request('https://www.baidu.com');
                     hilog.info(domain, tag, '%{public}s', caseName + 'httpResponse result is : ' + data);                    
-                }.catch(error : Error) => {
-                    let err = error as BusinessError;
+                }catch(err) => {
                     hilog.info(domain, tag, '%{public}s', caseName + 'http catch err is : ' + JSON.stringify(err.code));                             
                 }
                 httpRequest.destroy();
