@@ -8452,10 +8452,10 @@ static int32_t MyAudioConverterRequestDataCallback(void* userData, const void** 
     OH_AudioConverter_InputStatus* outStatus)
 {
     static char audioData[4096];
-    std::fill(audioData, audioData + 4096, 1);
+    std::fill(audioData, audioData + REQUEST_FRAME_SIZE, 1);
     *outInputData = audioData;
     *outStatus = OH_AudioConverter_InputStatus::AUDIOCONVERTER_INPUT_HAVE_DATA;
-    return 4096;
+    return REQUEST_FRAME_SIZE;
 }
 
 static int32_t MyAudioConverterRequestDataCallbackFinished(void* userData, const void** outInputData,
@@ -8822,7 +8822,8 @@ static napi_value SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_0100(napi_env env, napi
         if (result == OH_AudioConverter_Result::AUDIOCONVERTER_SUCCESS) {
             char outputBuffer[8192];
             int32_t outputSize = 0;
-            result = OH_AudioConverter_Process(converter, outputBuffer, 8192, &outputSize);
+            int32_t proSize = 8192;
+            result = OH_AudioConverter_Process(converter, outputBuffer, proSize, &outputSize);
             OH_AudioConverter_Destroy(converter);
             if (result == OH_AudioConverter_Result::AUDIOCONVERTER_SUCCESS) {
                 napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
@@ -8872,7 +8873,8 @@ static napi_value SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_CALLBACK_NOT_SET_0100(n
     if (result == OH_AudioConverter_Result::AUDIOCONVERTER_SUCCESS) {
         char outputBuffer[8192];
         int32_t outputSize = 0;
-        result = OH_AudioConverter_Process(converter, outputBuffer, 8192, &outputSize);
+        int32_t proSize = 8192;
+        result = OH_AudioConverter_Process(converter, outputBuffer, proSize, &outputSize);
         OH_AudioConverter_Destroy(converter);
         if (result == OH_AudioConverter_Result::AUDIOCONVERTER_ERROR_CALLBACK_NOT_SET) {
             napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
@@ -8908,7 +8910,8 @@ static napi_value SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0200(napi_e
         if (result == OH_AudioConverter_Result::AUDIOCONVERTER_SUCCESS) {
             char outputBuffer[8192];
             int32_t outputSize = 0;
-            result = OH_AudioConverter_Process(converter, nullptr, 8192, &outputSize);
+            int32_t proSize = 8192;
+            result = OH_AudioConverter_Process(converter, nullptr, proSize, &outputSize);
             OH_AudioConverter_Destroy(converter);
             if (result == OH_AudioConverter_Result::AUDIOCONVERTER_ERROR_INVALID_PARAM) {
                 napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
@@ -8945,7 +8948,8 @@ static napi_value SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_PARAM_ERROR_0300(napi_e
         result = OH_AudioConverter_SetInputCallback(converter, MyAudioConverterRequestDataCallback, g_userData);
         if (result == OH_AudioConverter_Result::AUDIOCONVERTER_SUCCESS) {
             char outputBuffer[8192];
-            result = OH_AudioConverter_Process(converter, outputBuffer, 8192, nullptr);
+            int32_t proSize = 8192;
+            result = OH_AudioConverter_Process(converter, outputBuffer, proSize, nullptr);
             OH_AudioConverter_Destroy(converter);
             if (result == OH_AudioConverter_Result::AUDIOCONVERTER_ERROR_INVALID_PARAM) {
                 napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
@@ -8983,7 +8987,8 @@ static napi_value SUB_MULTIMEDIA_AUDIO_CONVERTER_PROCESS_BUFFER_TOO_SMALL_0100(n
         if (result == OH_AudioConverter_Result::AUDIOCONVERTER_SUCCESS) {
             char outputBuffer[10];
             int32_t outputSize = 0;
-            result = OH_AudioConverter_Process(converter, outputBuffer, 10, &outputSize);
+            int32_t proSize = 10;
+            result = OH_AudioConverter_Process(converter, outputBuffer, proSize, &outputSize);
             OH_AudioConverter_Destroy(converter);
             if (result == OH_AudioConverter_Result::AUDIOCONVERTER_ERROR_BUFFER_TOO_SMALL) {
                 napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
