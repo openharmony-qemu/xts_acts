@@ -56,8 +56,8 @@ export namespace normalizeExceptionHelper {
   export function test003(): TypeErrorFlagResult {
     let isTypeError: boolean = false;
     try {
-      const s: string = `${123}`;
-      s.normalize('NFC');
+      const num: number = 123;
+      (num as unknown as string).normalize('NFC');
     } catch (e) {
       isTypeError = (e as Error).name === 'TypeError';
     }
@@ -128,14 +128,14 @@ export default function StringNormalizeExceptionTest(): void {
     /**
      * @tc.name   StringNormalize_Exception_Type_001
      * @tc.number SUB_BUILTINS_STRING_NORMALIZE_EXCEPTION_0300
-     * @tc.desc   String primitive normalize('NFC') must not throw TypeError (use template literal receiver)
+     * @tc.desc   Test normalize called on non-string (number) throws TypeError
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it('StringNormalize_Exception_Type_001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let result = normalizeExceptionHelper.test003();
-      expect(result.isTypeError).assertFalse();
+      expect(result.isTypeError).assertTrue();
     });
 
     /**
