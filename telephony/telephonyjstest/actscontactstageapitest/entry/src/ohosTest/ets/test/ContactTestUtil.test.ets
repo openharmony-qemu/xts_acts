@@ -25,6 +25,7 @@ export async function HasCard(): Promise<boolean> {
     if (!context) {
       console.info("failed to get context from AppStorage");
       resolve(false);
+      return;
     }
     contact.queryMyCard(context, (err, data) => {
       if (err) {
