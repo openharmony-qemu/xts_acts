@@ -28,6 +28,8 @@ import getCurrentLocalPositionTest_AxisEvent from './getCurrentLocalPositionTest
 import getCurrentLocalPositionTest_EventLocationInfo from './getCurrentLocalPositionTest/getCurrentLocalPositionTest_EventLocationInfo.test';
 import getCurrentLocalPositionTest_FingerInfo from './getCurrentLocalPositionTest/getCurrentLocalPositionTest_FingerInfo.test';
 import expectedUpdateIntervalTest from './CommonEventOnAreaChangeTest/expectedUpdateInterval.test';
+import gestureInterceptTest from './gestureIntercept/gestureInterceptTest.test';
+import globalListenerTest from './globalListener/globalListenerTest.test';
 
 export default function testsuite() {
   DragControllerTest();
@@ -45,4 +47,6 @@ export default function testsuite() {
   getCurrentLocalPositionTest_EventLocationInfo();
   getCurrentLocalPositionTest_FingerInfo();
   expectedUpdateIntervalTest();
+  gestureInterceptTest();
+  globalListenerTest();
 }

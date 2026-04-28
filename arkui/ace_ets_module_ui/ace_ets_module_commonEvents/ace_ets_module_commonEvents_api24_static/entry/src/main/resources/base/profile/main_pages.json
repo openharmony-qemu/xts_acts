@@ -13,6 +13,8 @@
     "MainAbility/pages/getCurrentLocalPosition/getCurrentLocalPosition_AxisEvent",
     "MainAbility/pages/getCurrentLocalPosition/getCurrentLocalPosition_EventLocationInfo",
     "MainAbility/pages/getCurrentLocalPosition/getCurrentLocalPosition_FingerInfo",
-    "MainAbility/pages/CommonEventOnAreaChange/expectedUpdateInterval"
+    "MainAbility/pages/CommonEventOnAreaChange/expectedUpdateInterval",
+    "MainAbility/pages/gestureIntercept/gestureInterceptTest",
+    "MainAbility/pages/globalListener/globalListenerTest"
   ]
 }
