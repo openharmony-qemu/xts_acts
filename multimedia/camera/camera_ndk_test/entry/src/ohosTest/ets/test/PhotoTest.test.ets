@@ -2794,14 +2794,14 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.name   testOHExposureStateChangeCallback0100
+     * @tc.name   SUB_MULTIMEDIA_OHCAMERANDK_OHExposureStateChangeCallback_0100
      * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHExposureStateChangeCallback0100
      * @tc.desc   Test OH_CaptureSession_RegisterExposureStateChangeCallback OH_CaptureSession_UnregisterExposureStateChangeCallback in normal condition.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_OH_CAMERANDK_OHExposureStateChangeCallback_0100', Level.LEVEL0, () => {
+    it('SUB_MULTIMEDIA_OHCAMERANDK_OHExposureStateChangeCallback_0100', Level.LEVEL0, () => {
       captureSessionstart();
       let ret = cameraObj.oHCaptureSessionRegisterExposureStateChangeCallback();
       if (ret != 0) {
@@ -2816,28 +2816,28 @@ export default function PhotoTest() {
     })
  
     /**
-     * @tc.name   testOHExposureStateChangeCallback0200
+     * @tc.name   SUB_MULTIMEDIA_OHCAMERANDK_OHExposureStateChangeCallback_0200
      * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHExposureStateChangeCallback0200
      * @tc.desc   Test OH_CaptureSession_RegisterExposureStateChangeCallback without session.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_OH_CAMERANDK_OHExposureStateChangeCallback_0200', Level.LEVEL0, () => {
+    it('SUB_MULTIMEDIA_OHCAMERANDK_OHExposureStateChangeCallback_0200', Level.LEVEL0, () => {
       captureSessionstart();
       let ret = cameraObj.oHCaptureSessionRegisterExposureStateChangeCallbackWithoutSession();
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
  
     /**
-     * @tc.name   testOHExposureStateChangeCallback0300
+     * @tc.name   SUB_MULTIMEDIA_OHCAMERANDK_OHExposureStateChangeCallback_0300
      * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHExposureStateChangeCallback0300
      * @tc.desc   Test OH_CaptureSession_UnregisterExposureStateChangeCallback without session.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_OH_CAMERANDK_OHExposureStateChangeCallback_0300', Level.LEVEL0, () => {
+    it('SUB_MULTIMEDIA_OHCAMERANDK_OHExposureStateChangeCallback_0300', Level.LEVEL0, () => {
       captureSessionstart();
       let ret = cameraObj.oHCaptureSessionUnregisterExposureStateChangeCallbackWithoutSession();
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
