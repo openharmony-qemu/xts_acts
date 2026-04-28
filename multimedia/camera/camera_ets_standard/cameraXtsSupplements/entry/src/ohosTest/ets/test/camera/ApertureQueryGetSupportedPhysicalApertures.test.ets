@@ -331,6 +331,13 @@ export default function ApertureQueryGetSupportedPhysicalAperturesTest() {
         expect(Array.isArray(apertures1)).assertTrue();
         expect(Array.isArray(apertures2)).assertTrue();
         console.info(TAG, testName + ' success.');
+          // 17. 验证两次调用返回值长度一致 
+          expect(apertures1.length).assertEqual(apertures2.length); 
+          // 18. 验证两次调用返回值内容一致 
+          for (let i = 0; i < apertures1.length; i++) { 
+            expect(apertures1[i]).assertEqual(apertures2[i]); 
+          } 
+        console.info(TAG, testName + ' success.');
         done();
       } catch (error) {
         // ========== 错误处理 ==========
