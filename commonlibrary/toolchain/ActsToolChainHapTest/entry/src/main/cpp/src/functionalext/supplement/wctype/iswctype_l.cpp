@@ -28,10 +28,12 @@ struct LocaleGuard {
             freelocale(loc);
         }
     }
-    locale_t Get() const { return loc; }
+    locale_t Get() const
+    {
+        return loc;
+    }
 };
 } // namespace
-
 
 const int COUNT = 62;
 

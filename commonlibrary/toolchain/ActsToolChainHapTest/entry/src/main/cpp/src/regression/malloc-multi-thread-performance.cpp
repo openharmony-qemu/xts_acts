@@ -23,7 +23,7 @@
 #include "test.h"
 
 namespace {
-std::atomic<int> g_mallocTestHadErr{0};
+std::atomic<int> g_mallocTestHadErr{ 0 };
 } // namespace
 
 #define THREAD_MAX_N 8
