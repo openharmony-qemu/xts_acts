@@ -4765,7 +4765,7 @@ export default function TextPicker() {
       pickerOptions.backgroundOpacity = 0.5;
       let callback = (event: events_emitter.EventData) => {
         let expectResult: number| undefined = pickerOptions.backgroundOpacity;
-        let result: PhotoPickerResult = event?.data?.msg.backgroundOpacity;
+        let result: number | undefined = event?.data?.msg.backgroundOpacity;
         console.info('testPicker79 result event.data.msg=:' + result);
         console.info('testPicker79 result expect =:' + expectResult);
         if(result !== undefined && expectResult !== undefined) {
