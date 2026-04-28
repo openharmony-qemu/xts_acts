@@ -9755,6 +9755,7 @@ export default function ConnectionPublicTest() {
         connection.queryTraceRoute(destination, option).then((TraceRouteInfo: connection.TraceRouteInfo[]) => {
           console.info(`${caseName} TraceRouteInfo: ${JSON.stringify(TraceRouteInfo)}`);
           console.info(`${caseName} TraceRouteInfo jumpNo: ${JSON.stringify(TraceRouteInfo[0].jumpNo)}`);
+          let jumpNo: number = TraceRouteInfo[0].jumpNo;
           ExpectTrue(jumpNo === 1);
           console.info(`${caseName}---End`);
           done();
