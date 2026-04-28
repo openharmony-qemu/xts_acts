@@ -16,10 +16,16 @@ import AreaChangeErrorCodeTest from './onAreaChange/AreaChangeErrorCodeTest.test
 import RegisterCommonAreaApproximateChangeEventTest from './onAreaChange/RegisterCommonAreaApproximateChangeEventTest.test'
 import UnregisterCommonAreaApproximateChangeEventTest from './onAreaChange/UnregisterCommonAreaApproximateChangeEventTest.test'
 import OrphanCharOptimizationTest from './orphanCharOptimization/orphanCharOptimizationTest.test'
+import GestureInterceptTest from './gestureIntercept/GestureInterceptTest.test'
+import gestureErrorCodeTest from './gestureIntercept/GestureErrorCodeTest.test'
+import passThroughTest from './passThrough/PassThroughTest.test'
 
 export default function testsuite() {
   RegisterCommonAreaApproximateChangeEventTest();
   UnregisterCommonAreaApproximateChangeEventTest();
   AreaChangeErrorCodeTest();
   OrphanCharOptimizationTest();
+  passThroughTest();
+  gestureErrorCodeTest();
+  GestureInterceptTest();
 }

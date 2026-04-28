@@ -307,8 +307,8 @@ export default function abilityTest() {
       hilog.info(0x0000, 'testTag', `${tcNumber} connectNative: ${connId}`);
     } catch (err) {
       hilog.info(0x0000, 'testTag', `${tcNumber} connect or disconnect failed: ${JSON.stringify(err)}`);
-        expect(Number(err.code)).assertEqual(801);
-        hilog.info(0x0000, 'SUB_WEB_WebNativeMessagingExtension_0300testTag801','888');
+      expect(Number(err.code)).assertEqual(801);
+      hilog.info(0x0000, 'SUB_WEB_WebNativeMessagingExtension_0300testTag801','888');
       done();
     }
   })
@@ -382,8 +382,8 @@ export default function abilityTest() {
       hilog.info(0x0000, 'testTag', `${tcNumber} connectNative: ${connId}`);
     } catch (err) {
       hilog.info(0x0000, 'testTag', `${tcNumber} connect or disconnect failed: ${JSON.stringify(err)}`);
-        expect(Number(err.code)).assertEqual(801);
-        hilog.info(0x0000, 'SUB_WEB_WebNativeMessagingExtension_0400testTag801','202020');
+      expect(Number(err.code)).assertEqual(801);
+      hilog.info(0x0000, 'SUB_WEB_WebNativeMessagingExtension_0400testTag801','202020');
       done();
     }
   })

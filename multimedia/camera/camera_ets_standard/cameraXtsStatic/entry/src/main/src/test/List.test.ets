@@ -3,6 +3,7 @@ import CameraManagerTest from "./Manager/CameraManagerTest.test";
 import CameraVideoSessionErrorTest from "./cameraVideoSession/CameraVideoSessionErrorTest.test";
 import CameraVideoSessionTest from "./cameraVideoSession/CameraVideoSessionTest.test";
 import PhotoOutputStaticTest from "./cameraPhotoSession/CameraPhotoSessionTest.test";
+import PhotoOutputToStaticTest from "./PhotoOutput/PhotoOutput.test";
 
 export default function testsuite() {
   cameraNoPermissionStaticTest();
@@ -10,4 +11,5 @@ export default function testsuite() {
   CameraVideoSessionTest();
   CameraVideoSessionErrorTest();
   PhotoOutputStaticTest();
+  PhotoOutputToStaticTest();
 }

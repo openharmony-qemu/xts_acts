@@ -48,7 +48,8 @@
           "bluetoothInteraction",
           "audioRecording",
           "dataTransfer",
-          "specialScenarioProcessing"
+          "specialScenarioProcessing",
+          "nearlink"
         ]
       }
     ],

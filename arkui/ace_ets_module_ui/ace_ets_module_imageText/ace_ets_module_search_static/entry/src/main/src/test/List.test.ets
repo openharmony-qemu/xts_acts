@@ -15,7 +15,11 @@
  */
 
 import SearchStyleTest from './SearchStyleTest/SearchStyle.test';
+import SearchOnWillCopyTest from './SearchApi26Test/SearchOnWillCopy.test';
+import SearchOnWillCutTest from './SearchApi26Test/SearchOnWillCut.test';
 
 export default function testsuite() {
   SearchStyleTest();
+  SearchOnWillCopyTest();
+ 	SearchOnWillCutTest();
 }

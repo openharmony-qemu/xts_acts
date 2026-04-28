@@ -39,6 +39,8 @@ import AVPlayerSetDecryptionConfigSuppTest from './media/AVPlayerSetDecryptionCo
 import AVPlayerAddSubtitleFromUrlSuppTest from './media/AVPlayerAddSubtitleFromUrl.test';
 import MediaAPIEnumSupplementTest from "./media/MediaAPIEnumSupplement.test";
 import AVPlayerTrackFilterTest from "./media/AVPlayerTrackFilterTest.test";
+import AVPlayerGetLoadedTimeRangesTest from './media/AVPlayerGetLoadedTimeRangesTest.test';
+import AVPlayerGeTSeekableTimeRangesTest from './media/AVPlayerGeTSeekableTimeRangesTest.test';
 
 export default function testsuite() {
   AVPlayerLocalDeprecatedTest();
@@ -67,5 +69,7 @@ export default function testsuite() {
   AVPlayerAddSubtitleFromUrlSuppTest();
   MediaAPIEnumSupplementTest();
   AVPlayerTrackFilterTest();
+  AVPlayerGetLoadedTimeRangesTest();
+ 	AVPlayerGeTSeekableTimeRangesTest();
 }
 
