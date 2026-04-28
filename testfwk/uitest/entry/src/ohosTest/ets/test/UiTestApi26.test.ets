@@ -1,5 +1,5 @@
-        /**
- * Copyright (c) 2026 Huawei Device Co., Ltd.
+/**
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -838,6 +838,66 @@ export default function uitestApi26Test() {
       expect(text).assertNull();
       await stopApplication('com.uitestScene.acts')
       console.info(`${TestTag}, testDriverSwipeBetweenWithAllBoundaryValues end`);
+    });
+
+    /**
+     * @tc.name   testDriverSwipeBetweenSpeedOutOfRangeLow
+     * @tc.number SUB_testfwk_UITEST_SWIPEBETWEEN_BOUNDARY_3100
+     * @tc.desc   Test swipeBetween with speed out of range (< 200)。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverSwipeBetweenSpeedOutOfRangeLow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`${TestTag}, testDriverSwipeBetweenSpeedOutOfRangeLow start`);
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver.delayMs(waitUiReadyMs)
+      let disPlay = await display.getDefaultDisplay();
+      console.info(`${TestTag}, testDriverSwipeBetweenSpeedOutOfRangeLow disPlay is: ${JSON.stringify(disPlay)}`);
+      let scroll = await driver.findComponent(ON.type('Scroll'))
+      let rect = await scroll.getBounds()
+      let center = await scroll.getBoundsCenter()
+      const options: TouchOptions = { speed: 199 };
+      await driver.swipeBetween({
+        x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4)
+      , displayId: disPlay.id
+      },
+        { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4), displayId: disPlay.id }, options)
+      await driver.delayMs(waitUiReadyMs)
+      let text = await driver.findComponent(ON.text('toast'))
+      expect(text).assertNull();
+      await stopApplication('com.uitestScene.acts')
+      console.info(`${TestTag}, testDriverSwipeBetweenSpeedOutOfRangeLow end`);
+    });
+
+    /**
+     * @tc.name   testDriverSwipeBetweenSpeedOutOfRangeHigh
+     * @tc.number SUB_testfwk_UITEST_SWIPEBETWEEN_ERROR_0500
+     * @tc.desc   Test swipeBetween with speed out of range (> 40000)。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverSwipeBetweenSpeedOutOfRangeHigh', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`${TestTag}, testDriverSwipeBetweenSpeedOutOfRangeHigh start`);
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver.delayMs(waitUiReadyMs)
+      let disPlay = await display.getDefaultDisplay();
+      console.info(`${TestTag}, testDriverSwipeBetweenSpeedOutOfRangeHigh disPlay is: ${JSON.stringify(disPlay)}`);
+      let scroll = await driver.findComponent(ON.type('Scroll'))
+      let rect = await scroll.getBounds()
+      let center = await scroll.getBoundsCenter()
+      const options: TouchOptions = { speed: 40001 };
+      await driver.swipeBetween({
+        x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4)
+      , displayId: disPlay.id
+      },
+        { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4), displayId: disPlay.id }, options)
+      await driver.delayMs(waitUiReadyMs)
+      let text = await driver.findComponent(ON.text('toast'))
+      expect(text).assertNull();
+      await stopApplication('com.uitestScene.acts')
+      console.info(`${TestTag}, testDriverSwipeBetweenSpeedOutOfRangeHigh end`);
     });
 
   })

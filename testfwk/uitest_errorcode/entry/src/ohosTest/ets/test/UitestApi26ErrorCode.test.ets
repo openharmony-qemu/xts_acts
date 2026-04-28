@@ -471,48 +471,8 @@ export default function uitestApi26ErrorTest() {
     });
 
     /**
-     * @tc.name   testDriverSwipeBetweenSpeedOutOfRangeLow
-     * @tc.number SUB_testfwk_UITEST_SWIPEBETWEEN_ERROR_0400
-     * @tc.desc   Test swipeBetween with speed out of range (< 200), expecting error 17000007
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testDriverSwipeBetweenSpeedOutOfRangeLow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.info(`${TestTag}, testDriverSwipeBetweenSpeedOutOfRangeLow start`);
-      const options: TouchOptions = { speed: 199 };
-      try {
-        await driver.swipeBetween({x: 100, y: 100}, {x: 200, y: 200}, options)
-      } catch (err) {
-        console.info(`${TestTag}, testDriverSwipeBetweenSpeedOutOfRangeLow error is: ${JSON.stringify(err)}`)
-        expect().assertFail();
-      }
-      console.info(`${TestTag}, testDriverSwipeBetweenSpeedOutOfRangeLow end`);
-    });
-
-    /**
-     * @tc.name   testDriverSwipeBetweenSpeedOutOfRangeHigh
-     * @tc.number SUB_testfwk_UITEST_SWIPEBETWEEN_ERROR_0500
-     * @tc.desc   Test swipeBetween with speed out of range (> 40000), expecting error 17000007
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testDriverSwipeBetweenSpeedOutOfRangeHigh', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.info(`${TestTag}, testDriverSwipeBetweenSpeedOutOfRangeHigh start`);
-      const options: TouchOptions = { speed: 40001 };
-      try {
-        await driver.swipeBetween({x: 100, y: 100}, {x: 200, y: 200}, options)
-      } catch (err) {
-        console.info(`${TestTag}, testDriverSwipeBetweenSpeedOutOfRangeHigh error is: ${JSON.stringify(err)}`)
-        expect().assertFail();
-      }
-      console.info(`${TestTag}, testDriverSwipeBetweenSpeedOutOfRangeHigh end`);
-    });
-
-    /**
      * @tc.name   testDriverSwipeBetweenDisplayIdDiff
-     * @tc.number SUB_testfwk_UITEST_SWIPEBETWEEN_ERROR_0600
+     * @tc.number SUB_testfwk_UITEST_SWIPEBETWEEN_ERROR_0400
      * @tc.desc   Test swipeBetween with speed out of range (> 40000), expecting error 17000007
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -533,7 +493,7 @@ export default function uitestApi26ErrorTest() {
 
     /**
      * @tc.name   testDriverSwipeBetweenConcurrentCall
-     * @tc.number SUB_testfwk_UITEST_SWIPEBETWEEN_ERROR_1100
+     * @tc.number SUB_testfwk_UITEST_SWIPEBETWEEN_ERROR_0500
      * @tc.desc   Test swipeBetween with concurrent call, expecting error 17000002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -559,7 +519,7 @@ export default function uitestApi26ErrorTest() {
 
     /**
      * @tc.name   testDriverSwipeBetweenNullFrom
-     * @tc.number SUB_testfwk_UITEST_SWIPEBETWEEN_ERROR_0700
+     * @tc.number SUB_testfwk_UITEST_SWIPEBETWEEN_ERROR_0600
      * @tc.desc   Test swipeBetween with null from parameter, expecting error 17000007
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -580,7 +540,7 @@ export default function uitestApi26ErrorTest() {
 
     /**
      * @tc.name   testDriverSwipeBetweenUndefinedFrom
-     * @tc.number SUB_testfwk_UITEST_SWIPEBETWEEN_ERROR_0800
+     * @tc.number SUB_testfwk_UITEST_SWIPEBETWEEN_ERROR_0700
      * @tc.desc   Test swipeBetween with undefined from parameter, expecting error 17000007
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -601,7 +561,7 @@ export default function uitestApi26ErrorTest() {
 
     /**
      * @tc.name   testDriverSwipeBetweenNullTo
-     * @tc.number SUB_testfwk_UITEST_SWIPEBETWEEN_ERROR_0900
+     * @tc.number SUB_testfwk_UITEST_SWIPEBETWEEN_ERROR_0800
      * @tc.desc   Test swipeBetween with null to parameter, expecting error 17000007
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -622,7 +582,7 @@ export default function uitestApi26ErrorTest() {
 
     /**
      * @tc.name   testDriverSwipeBetweenUndefinedTo
-     * @tc.number SUB_testfwk_UITEST_SWIPEBETWEEN_ERROR_1000
+     * @tc.number SUB_testfwk_UITEST_SWIPEBETWEEN_ERROR_0900
      * @tc.desc   Test swipeBetween with undefined to parameter, expecting error 17000007
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

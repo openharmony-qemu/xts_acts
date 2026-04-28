@@ -299,7 +299,8 @@ export default function UiTest() {
       console.info(`${TestTag}, testDriverDragBetweenSpeedMaxBoundary start`);
       try {
         const options: TouchOptions = { speed: 40000, duration: 3500 };
-        await driver.dragBetween({x: 100, y: 100}, {x: 100, y: 100}, options);
+        let result = await driver.dragBetween({x: 100, y: 100}, {x: 100, y: 100}, options);
+        expect(result).assertNull();
       } catch (error) {
         expect().assertFail();
       }
