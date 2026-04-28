@@ -127,26 +127,31 @@ struct MyComponent {
         .onClick(() => {
           this.scroller.scrollToIndex(20); // 滑动场景
         })
+        .height(20)
 
       Button('modifyAllData')
         .onClick(() => {
           this.data.modifyAllData(); //
         })
+        .height(20)
 
       Button('deleteData(0, 5)')
         .onClick(() => {
           this.data.deleteData(0, 5); //
         })
+        .height(20)
 
       Button('height(50)')
         .onClick(() => {
           this.h = 50
         })
+        .height(20)
 
       Button('height(20)')
         .onClick(() => {
           this.h = 20
         })
+        .height(20)
 
       List({ space: 3, scroller: this.scroller }) {
         LazyForEach(this.data, (item: string) => {
@@ -157,7 +162,7 @@ struct MyComponent {
           return item;
         }, { releaseStrategy: LazyForEachReleaseStrategy.PROGRESSIVE })
       }.cachedCount(5)
-      .height(60)
+      .height(50)
       .borderWidth(1)
       .id('LazyForEach_Item_0')
 
@@ -170,7 +175,7 @@ struct MyComponent {
           return item;
         }, { releaseStrategy: LazyForEachReleaseStrategy.BATCH })
       }.cachedCount(5)
-      .height(60)
+      .height(50)
       .borderWidth(1)
       .id('LazyForEach_Item_1')
     }

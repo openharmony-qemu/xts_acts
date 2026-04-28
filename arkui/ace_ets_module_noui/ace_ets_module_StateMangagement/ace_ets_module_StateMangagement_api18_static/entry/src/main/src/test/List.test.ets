@@ -35,6 +35,7 @@ import AddMonitorTwoDimensionalArray from './AddMonitorTest/AddMonitorTwoDimensi
 import BasicPrefetcherMethods from './Prefetcher/BasicPrefetcherMethods.test';
 import IDataSourcePrefetchingMethods from './Prefetcher/IDataSourcePrefetchingMethods.test';
 import ReuseObjectRawTest from './ReuseObject/ReuseObjectRawTest.test';
+import LazyForEachReleaseStrategyTest from './LazyForeach/LazyForEachReleaseStrategyTest.test';
 
 export default function testsuite() {
   ArrayLikeStringTest(); 
@@ -58,4 +59,5 @@ export default function testsuite() {
   BasicPrefetcherMethods();
   IDataSourcePrefetchingMethods();
   ReuseObjectRawTest(); 
+  LazyForEachReleaseStrategyTest();
 }
