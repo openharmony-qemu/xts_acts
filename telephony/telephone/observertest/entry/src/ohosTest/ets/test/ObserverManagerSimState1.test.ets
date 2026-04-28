@@ -708,8 +708,8 @@ export default function observerManagerSimStateTest1() {
         await sim.activateSim(slotId);
         observer.onGetSimActiveState(slotId, (data: boolean) => {
           console.info(`${caseName} data: ${data}`);
-          observer.offGetSimActiveState();
           ExpectTrue(data);
+          observer.offGetSimActiveState();
           done();
         });
         console.info(`${caseName} slotId: ${slotId}`);
@@ -738,8 +738,8 @@ export default function observerManagerSimStateTest1() {
           await sim.activateSim(slotId);
           observer.onGetSimActiveState(slotId, (data: boolean) => {
             console.info(`${caseName} data: ${data}`);
-            observer.offGetSimActiveState();
             ExpectTrue(data);
+            observer.offGetSimActiveState();
             done();
           });
           console.info(`${caseName} slotId: ${slotId}`);
