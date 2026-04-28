@@ -2707,8 +2707,9 @@ export default function audioLoopBack() {
      * @tc.size    MediumTest
      * @tc.level   Level0
      */
-    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_INPUTDEVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_INPUTDEVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_INPUTDEVICE_0100 start`);
+      let audioLoopback: audio.AudioLoopback;
       try {
         audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
         
@@ -2716,7 +2717,7 @@ export default function audioLoopBack() {
         if (devicePairs.length > 0) {
           let firstPair: audio.AudioDevicePair = devicePairs[0];
           expect(firstPair.inputDevice).assertInstanceOf('array');
-          expect(firstPair.inputDevice.deviceRole).assertEqual(audio.AudioDeviceRole.INPUT_DEVICE);
+          expect(firstPair.inputDevice.deviceRole).assertEqual(audio.DeviceRole.INPUT_DEVICE);
           console.info(`${TAG}: inputDevice.deviceType: ${firstPair.inputDevice.deviceType}`);
         } else {
           console.info(`${TAG}: No device pairs available, test passed`);
@@ -2739,8 +2740,9 @@ export default function audioLoopBack() {
      * @tc.size    MediumTest
      * @tc.level   Level0
      */
-    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_OUTPUTDEVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_OUTPUTDEVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_OUTPUTDEVICE_0100 start`);
+      let audioLoopback: audio.AudioLoopback;
       try {
         audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
         
@@ -2748,7 +2750,7 @@ export default function audioLoopBack() {
         if (devicePairs.length > 0) {
           let firstPair: audio.AudioDevicePair = devicePairs[0];
           expect(firstPair.outputDevice).assertInstanceOf('array');
-          expect(firstPair.outputDevice.deviceRole).assertEqual(audio.AudioDeviceRole.OUTPUT_DEVICE);
+          expect(firstPair.outputDevice.deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
           console.info(`${TAG}: outputDevice.deviceType: ${firstPair.outputDevice.deviceType}`);
         } else {
           console.info(`${TAG}: No device pairs available, test passed`);
@@ -2771,8 +2773,9 @@ export default function audioLoopBack() {
      * @tc.size    MediumTest
      * @tc.level   Level0
      */
-    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_BOTHDEVICES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_BOTHDEVICES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_BOTHDEVICES_0100 start`);
+      let audioLoopback: audio.AudioLoopback;
       try {
         audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
                 
@@ -2782,8 +2785,8 @@ export default function audioLoopBack() {
             let pair: audio.AudioDevicePair = devicePairs[i];
             expect(pair.inputDevice).assertInstanceOf('array');
             expect(pair.outputDevice).assertInstanceOf('array');
-            expect(pair.inputDevice.deviceRole).assertEqual(audio.AudioDeviceRole.INPUT_DEVICE);
-            expect(pair.outputDevice.deviceRole).assertEqual(audio.AudioDeviceRole.OUTPUT_DEVICE);
+            expect(pair.inputDevice.deviceRole).assertEqual(audio.DeviceRole.INPUT_DEVICE);
+            expect(pair.outputDevice.deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
             console.info(`${TAG}: Pair ${i}: inputDevice=${pair.inputDevice.deviceType}, outputDevice=${pair.outputDevice.deviceType}`);
           }
         } else {
@@ -2807,8 +2810,9 @@ export default function audioLoopBack() {
      * @tc.size    MediumTest
      * @tc.level   Level0
      */
-    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_0100 start`);
+      let audioLoopback: audio.AudioLoopback;
       try {
         audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
                 
@@ -2836,8 +2840,9 @@ export default function audioLoopBack() {
      * @tc.size    MediumTest
      * @tc.level   Level1
      */
-    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_0200 start`);
+      let audioLoopback: audio.AudioLoopback;
       try {
         audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
                 
@@ -2863,8 +2868,9 @@ export default function audioLoopBack() {
      * @tc.size    MediumTest
      * @tc.level   Level2
      */
-    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_BOUNDARY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_BOUNDARY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_BOUNDARY_0100 start`);
+      let audioLoopback: audio.AudioLoopback;
       try {
         audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
                 
@@ -2892,8 +2898,9 @@ export default function audioLoopBack() {
      * @tc.size    MediumTest
      * @tc.level   Level2
      */
-    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_BEFORE_ENABLE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_BEFORE_ENABLE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_BEFORE_ENABLE_0100 start`);
+      let audioLoopback: audio.AudioLoopback;
       try {
         audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
                 
@@ -2920,8 +2927,9 @@ export default function audioLoopBack() {
      * @tc.size    MediumTest
      * @tc.level   Level0
      */
-    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_0100 start`);
+      let audioLoopback: audio.AudioLoopback;
       try {
         audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
                 
@@ -2954,8 +2962,9 @@ export default function audioLoopBack() {
      * @tc.size    MediumTest
      * @tc.level   Level1
      */
-    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_0200 start`);
+      let audioLoopback: audio.AudioLoopback;
       try {
         audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
                 
@@ -2988,8 +2997,9 @@ export default function audioLoopBack() {
      * @tc.size    MediumTest
      * @tc.level   Level2
      */
-    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_EMPTY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_EMPTY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_EMPTY_0100 start`);
+      let audioLoopback: audio.AudioLoopback;
       try {
         audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
                 
@@ -3019,8 +3029,9 @@ export default function audioLoopBack() {
      * @tc.size    MediumTest
      * @tc.level   Level2
      */
-    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_MULTIPLE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_MULTIPLE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_MULTIPLE_0100 start`);
+      let audioLoopback: audio.AudioLoopback;
       try {
         audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
                 
@@ -3054,8 +3065,9 @@ export default function audioLoopBack() {
      * @tc.size    MediumTest
      * @tc.level   Level0
      */
-    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_0100 start`);
+      let audioLoopback: audio.AudioLoopback;
       try {
         audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
         
@@ -3086,19 +3098,18 @@ export default function audioLoopBack() {
      * @tc.size    MediumTest
      * @tc.level   Level1
      */
-    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_0200 start`);
+      let audioLoopback: audio.AudioLoopback;
       try {
         audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
-      
-        
         let preferredPair: audio.AudioDevicePair | null = audioLoopback.getPreferredDevicePair();
         if (preferredPair !== null) {
           expect(preferredPair).assertInstanceOf('object');
           expect(preferredPair.inputDevice).assertInstanceOf('object');
           expect(preferredPair.outputDevice).assertInstanceOf('object');
-          expect(preferredPair.inputDevice.deviceRole).assertEqual(audio.AudioDeviceRole.INPUT_DEVICE);
-          expect(preferredPair.outputDevice.deviceRole).assertEqual(audio.AudioDeviceRole.OUTPUT_DEVICE);
+          expect(preferredPair.inputDevice.deviceRole).assertEqual(audio.DeviceRole.INPUT_DEVICE);
+          expect(preferredPair.outputDevice.deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
         } else {
           expect(preferredPair).assertNull();
         }
@@ -3120,8 +3131,9 @@ export default function audioLoopBack() {
      * @tc.size    MediumTest
      * @tc.level   Level2
      */
-    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_NULL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_NULL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_NULL_0100 start`);
+      let audioLoopback: audio.AudioLoopback;
       try {
         audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
         
@@ -3158,8 +3170,9 @@ export default function audioLoopBack() {
      * @tc.size    MediumTest
      * @tc.level   Level2
      */
-    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_CONSISTENCY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_CONSISTENCY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_CONSISTENCY_0100 start`);
+      let audioLoopback: audio.AudioLoopback;
       try {
         audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
         
@@ -3198,8 +3211,9 @@ export default function audioLoopBack() {
      * @tc.size    MediumTest
      * @tc.level   Level2
      */
-    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_AFTER_ENABLE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_AFTER_ENABLE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_AFTER_ENABLE_0100 start`);
+      let audioLoopback: audio.AudioLoopback;
       try {
         audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
         
@@ -3233,8 +3247,9 @@ export default function audioLoopBack() {
      * @tc.size    MediumTest
      * @tc.level   Level2
      */
-    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_MULTIPLE_CALLS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+    it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_MULTIPLE_CALLS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_MULTIPLE_CALLS_0100 start`);
+      let audioLoopback: audio.AudioLoopback;
       try {
         audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);        
         
