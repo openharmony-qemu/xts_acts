@@ -1575,6 +1575,67 @@ static napi_value UsbControlTransferNoInit(napi_env env, napi_callback_info info
     return result;
 }
 
+static napi_value UsbGetNonRootHubsOne(napi_env env, napi_callback_info info)
+{
+    int32_t usbInitReturnValue = OH_Usb_Init();
+    NAPI_ASSERT(env, usbInitReturnValue == PARAM_0, "OH_Usb_Init failed");
+    struct Usb_NonRootHubArray nonRootHubArray;
+    nonRootHubArray.nonRootHubIds = new uint64_t[MAX_USB_DEVICE_NUM];
+    if (nonRootHubArray.nonRootHubIds == nullptr) {
+        OH_Usb_Release();
+        napi_value result = nullptr;
+        NAPI_CALL(env, napi_create_int32(env, USB_DDK_MEMORY_ERROR, &result));
+        return result;
+    }
+    int32_t returnValue = OH_Usb_GetNonRootHubs(&nonRootHubArray);
+    OH_Usb_Release();
+    delete[] nonRootHubArray.nonRootHubIds;
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    return result;
+}
+
+static napi_value UsbGetNonRootHubsTwo(napi_env env, napi_callback_info info)
+{
+    struct Usb_NonRootHubArray nonRootHubArray;
+    nonRootHubArray.nonRootHubIds = new uint64_t[MAX_USB_DEVICE_NUM];
+    int32_t returnValue = OH_Usb_GetNonRootHubs(&nonRootHubArray);
+    delete[] nonRootHubArray.nonRootHubIds;
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    return result;
+}
+
+static napi_value UsbGetNonRootHubsThree(napi_env env, napi_callback_info info)
+{
+    int32_t usbInitReturnValue = OH_Usb_Init();
+    NAPI_ASSERT(env, usbInitReturnValue == PARAM_0, "OH_Usb_Init failed");
+    int32_t returnValue = OH_Usb_GetNonRootHubs(nullptr);
+    OH_Usb_Release();
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    return result;
+}
+
+static napi_value UsbControlTransferTwo(napi_env env, napi_callback_info info)
+{
+    int32_t usbInitReturnValue = OH_Usb_Init();
+    NAPI_ASSERT(env, usbInitReturnValue == PARAM_0, "OH_Usb_Init failed");
+    uint64_t deviceId = PARAM_1;
+    struct UsbControlRequestSetup setup;
+    uint8_t data[USB_DDK_TEST_BUF_SIZE] = {PARAM_0};
+    setup.bmRequestType = 0x80;
+    setup.bRequest = 0x06;
+    setup.wValue = (0x01 << PARAM_8) | 0x00;
+    setup.wIndex = 0x0000;
+    setup.wLength = 0x0012;
+    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, 100);
+    OH_Usb_Release();
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    return result;
+}
+
 static napi_value IsScsiDevice(napi_env env, napi_callback_info info)
 {
     uint64_t deviceId = GetDeviceId(env, info);
@@ -5039,6 +5100,10 @@ static napi_value Init(napi_env env, napi_value exports)
         {"usbGetDevicesOne", nullptr, UsbGetDevicesOne, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"usbGetDevicesTwo", nullptr, UsbGetDevicesTwo, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"usbGetDevicesThree", nullptr, UsbGetDevicesThree, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbGetNonRootHubsOne", nullptr, UsbGetNonRootHubsOne, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbGetNonRootHubsTwo", nullptr, UsbGetNonRootHubsTwo, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbGetNonRootHubsThree", nullptr, UsbGetNonRootHubsThree, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbControlTransferTwo", nullptr, UsbControlTransferTwo, nullptr, nullptr, nullptr, napi_default, nullptr},       
         {"usbControlTransferGetStatus", nullptr, UsbControlTransferGetStatus,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"usbControlTransferSetFeature", nullptr, UsbControlTransferSetFeature,
