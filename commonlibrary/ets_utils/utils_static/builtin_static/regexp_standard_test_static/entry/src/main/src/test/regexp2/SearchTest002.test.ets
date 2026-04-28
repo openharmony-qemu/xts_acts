@@ -162,12 +162,12 @@ export default function searchTest002(): void {
         ['xxdogyy', new RegExp('(dog|cat)'), 2],
         ['xxcowyy', new RegExp('(dog|cat)'), -1],
         ['abc123', new RegExp('(?:abc)\\d+'), 0],
-        ['zzzab', new RegExp('a+b'), 3],
-        ['zzzab', new RegExp('a?b'), 3],
-        ['zzzaaab', new RegExp('a*b'), 3],
+        ['zzz' + 'ab', new RegExp('a+b'), 3],
+        ['zzz' + 'ab', new RegExp('a?b'), 3],
+        ['zzz' + 'a'.repeat(3) + 'b', new RegExp('a*b'), 3],
         ['ab', new RegExp('a{1,2}b'), 0],
-        ['aab', new RegExp('a{2}b'), 0],
-        ['aaaab', new RegExp('a{2,4}b'), 0],
+        ['a'.repeat(2) + 'b', new RegExp('a{2}b'), 0],
+        ['a'.repeat(4) + 'b', new RegExp('a{2,4}b'), 0],
         ['b', new RegExp('a*b'), 0],
         ['baaa', new RegExp('a+'), 1],
         ['a123b456b', new RegExp('a.*b'), 0],
@@ -786,7 +786,7 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0242', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect('xxaaabyy'.search(new RegExp('a{2,4}b'))).assertEqual(2);
+      expect(('xx' + 'a'.repeat(3) + 'byy').search(new RegExp('a{2,4}b'))).assertEqual(2);
       expect('xxb'.search(new RegExp('a*b'))).assertEqual(2);
       expect('xxab'.search(new RegExp('a+b'))).assertEqual(2);
     });
@@ -1500,7 +1500,7 @@ export default function searchTest002(): void {
     it('testSearch0289', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       
       
-      const str = 'aaab';
+      const str = 'a'.repeat(3) + 'b';
       if (supportsRegExp('a*+b')) {
         expect(str.search(new RegExp('a*+b'))).assertEqual(0);
       } else {
@@ -1715,7 +1715,7 @@ export default function searchTest002(): void {
 
     /**
      * @tc.name testSearch0301
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_EXT_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_EXT_TEST_1100
      * @tc.desc Search: phone-like validation allows common dash grouping
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST

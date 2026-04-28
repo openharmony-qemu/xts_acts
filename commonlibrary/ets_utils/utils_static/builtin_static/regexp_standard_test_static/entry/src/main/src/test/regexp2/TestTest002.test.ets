@@ -144,14 +144,14 @@ export default function testTest002(): void {
     it('testTest0206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const cases: Array<[RegExp, string, boolean]> = [
         [new RegExp('a*b'), 'b', true],
-        [new RegExp('a*b'), 'aaab', true],
+        [new RegExp('a*b'), 'a'.repeat(3) + 'b', true],
         [new RegExp('a+b'), 'b', false],
         [new RegExp('a+b'), 'ab', true],
-        [new RegExp('a{3}'), 'aaab', true],
-        [new RegExp('a{3}'), 'aab', false],
+        [new RegExp('a{3}'), 'a'.repeat(3) + 'b', true],
+        [new RegExp('a{3}'), 'a'.repeat(2) + 'b', false],
         [new RegExp('a{2,4}b'), 'ab', false],
-        [new RegExp('a{2,4}b'), 'aab', true],
-        [new RegExp('a{2,4}b'), 'aaaaab', true],
+        [new RegExp('a{2,4}b'), 'a'.repeat(2) + 'b', true],
+        [new RegExp('a{2,4}b'), 'a'.repeat(5) + 'b', true],
       ];
       for (let i = 0; i < cases.length; i++) {
         const [re, input, expected] = cases[i];
