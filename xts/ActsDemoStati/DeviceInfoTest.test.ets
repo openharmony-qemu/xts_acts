@@ -30,7 +30,7 @@ import {
   export default function xmlTest1() {
     describe('xmlTest1', (): void => {
          /**
-         * @tc.number  Sub_Location_core_getCurrentLocation_0100
+         * @tc.number  Sub_Loca_core_getCurrentLocation_0100
          * @tc.name  Sub_Location_core_getCurrentLocation_0100
          * @tc.desc  onLocationError(callback: Callback<LocationError>): void
          * @tc.level  Level 0
@@ -114,7 +114,7 @@ import {
       })
 
       /**
-       * @tc.number  Sub_Location_core_getCurrentLocation_0200
+       * @tc.number  Sub_Loca_core_getCurrentLocation_0200
        * @tc.name  Sub_Location_core_getCurrentLocation_0200
        * @tc.desc  getCurrentLocation(callback: AsyncCallback<Location>): void
        * @tc.level  Level 0
