@@ -1174,15 +1174,15 @@ export default function getTest() {
     });
 
     /**
-     * @tc.name   get_local_asset_size_001
-     * @tc.number Sub_MediaLibrary_Get_Local_Asset_Size_001
+     * @tc.name   SUB_MultiMedia_MediaLibrary_get_local_asset_size_Test_0100
+     * @tc.number SUB_MultiMedia_MediaLibrary_get_local_asset_size_Test_0100
      * @tc.desc   image get LOCAL_ASSET_SIZE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('get_local_asset_size_001', Level.LEVEL1, async (done: Function) => {
-      const testNum = 'get_local_asset_size_001';
+    it('SUB_MultiMedia_MediaLibrary_get_local_asset_size_Test_0100', Level.LEVEL1, async (done: Function) => {
+      const testNum = 'SUB_MultiMedia_MediaLibrary_get_local_asset_size_Test_0100';
       try {
         const displayName = 'getTest.jpg';
         const fetchOps: photoAccessHelper.FetchOptions = photoFetchOption(testNum, photoKeys.DISPLAY_NAME, displayName);
@@ -1202,15 +1202,15 @@ export default function getTest() {
     });
 
     /**
-     * @tc.name   get_local_asset_size_002
-     * @tc.number Sub_MediaLibrary_Get_Local_Asset_Size_002
+     * @tc.name   SUB_MultiMedia_MediaLibrary_get_local_asset_size_Test_0200
+     * @tc.number SUB_MultiMedia_MediaLibrary_get_local_asset_size_Test_0200
      * @tc.desc   video get LOCAL_ASSET_SIZE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('get_local_asset_size_002', Level.LEVEL1, async (done: Function) => {
-      const testNum = 'get_local_asset_size_002';
+    it('SUB_MultiMedia_MediaLibrary_get_local_asset_size_Test_0200', Level.LEVEL1, async (done: Function) => {
+      const testNum = 'SUB_MultiMedia_MediaLibrary_get_local_asset_size_Test_0200';
       try {
         const displayName = 'getTest.mp4';
         const fetchOps: photoAccessHelper.FetchOptions = photoFetchOption(testNum, photoKeys.DISPLAY_NAME, displayName);
@@ -1230,15 +1230,15 @@ export default function getTest() {
     });
 
     /**
-     * @tc.name   get_local_asset_size_003
-     * @tc.number Sub_MediaLibrary_Get_Local_Asset_Size_003
+     * @tc.name   SUB_MultiMedia_MediaLibrary_get_local_asset_size_Test_0300
+     * @tc.number SUB_MultiMedia_MediaLibrary_get_local_asset_size_Test_0300
      * @tc.desc   movingphoto get LOCAL_ASSET_SIZE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('get_local_asset_size_003', Level.LEVEL1, async (done: Function) => {
-      const testNum = 'get_local_asset_size_003';
+    it('SUB_MultiMedia_MediaLibrary_get_local_asset_size_Test_0300', Level.LEVEL1, async (done: Function) => {
+      const testNum = 'SUB_MultiMedia_MediaLibrary_get_local_asset_size_Test_0300';
       try {
         const displayName = 'getMovingPhotoTest.jpg';
         const title = 'getMovingPhotoTest';
