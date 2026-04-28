@@ -393,7 +393,7 @@ export default function ListFileExtTest() {
         expect(false).assertTrue();
       } catch (err) {
         console.log('filefs_test_listfileext_sync_011 has failed for ' + err.message + ', code:' + err.code);
-        expect(err.code == 13900002 && err.message == 'No such file or directory').assertTrue();
+        expect(err.code === 13900002 && err.message == 'No such file or directory').assertTrue();
       }
     });
 
