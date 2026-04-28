@@ -21,15 +21,20 @@ import contact from '@ohos.contact';
 
 export async function HasCard(): Promise<boolean> {
   let context: Context = AppStorage.get('context') as Context;
-
+  if (!context) {
+    console.info("failed to get context from AppStorage");
+    resolve(false);
+    return;
+  }
   return new Promise<boolean>((resolve) => {
     contact.queryMyCard(context, (err, data) => {
       if (err) {
         console.info("before test err = " + JSON.stringify(err));
         resolve(false);
       } else {
-        console.info("before test data = " + JSON.stringify(data));
-        resolve(data !== null && data !== undefined && Object.keys(data).length > 0);
+        let isExist = data !== null && data !== undefined && Object.keys(data).length > 0;
+        console.info("before test HasCard resust is " + JSON.stringify(isExist));
+        resolve(isExist);
       }
     });
   });

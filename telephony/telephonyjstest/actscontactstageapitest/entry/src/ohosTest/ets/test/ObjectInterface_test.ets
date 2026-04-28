@@ -211,7 +211,7 @@ export default function ObjectInterfaceTest() {
       let isHasCard = await HasCard();
       if (isHasCard) {
         console.info("contactsApi_queryMyCard_test_100 has card");
-        ExpectTrue();
+        ExpectTrue(true);
         done();
         return;
       }
@@ -241,7 +241,7 @@ export default function ObjectInterfaceTest() {
       let isHasCard = await HasCard();
       if (isHasCard) {
         console.info("contactsApi_queryMyCard_test_200 has card");
-        ExpectTrue();
+        ExpectTrue(true);
         done();
         return;
       }
@@ -271,7 +271,7 @@ export default function ObjectInterfaceTest() {
       let isHasCard = await HasCard();
       if (isHasCard) {
         console.info("contactsApi_queryMyCard_test_300 has card");
-        ExpectTrue();
+        ExpectTrue(true);
         done();
         return;
       }
