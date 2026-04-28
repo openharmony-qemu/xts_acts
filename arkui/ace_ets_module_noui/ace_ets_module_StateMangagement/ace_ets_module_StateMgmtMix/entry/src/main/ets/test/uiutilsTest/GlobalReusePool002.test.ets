@@ -15,18 +15,13 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { sleep, startPage } from '../../../uiutils/commonUtils';
 import { Driver, ON } from '@ohos.UiTest';
+import router from '@ohos.router';
+import CommonFunc from '../../MainAbility/common/Common';
 
 export default function GlobalReusePool002Test() {
   let driver: Driver;
   describe('GlobalReusePool002Test', () => {
-    beforeAll(async () => {
-      driver = Driver.create();
-      hilog.info(0x0000, 'GlobalReusePool002Test', 'beforeAll: start test page');
-      await startPage('pages/globalreuse/GlobalReusePool');
-      await sleep(1000);
-    });
 
     beforeEach(async (done: Function) => {
       console.info("GlobalReusePool002Test setup start");
