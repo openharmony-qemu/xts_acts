@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -85,7 +85,7 @@ it('CalendarPickerDialog_static_0100', Level.LEVEL2, async (done: () => void): P
       expect(properties.type).assertEqual(1)//1表示系统告警窗口TYPE_SYSTEM_ALERT
 
       await CommonFunc.sleep(1000);
-      driver!.click(Math.round(AppStorage.get<number>("winLeft") as number + UIContext.resolveUIContext()!.vp2px(100)) as Int,Math.round(AppStorage.get<number>("winTop") as number + UIContext.resolveUIContext()!.vp2px(100)) as Int);
+      driver!.click(Math.round(AppStorage.get<number>("winLeft") as number + UIContext.resolveUIContext()!.vp2px(100)).toInt(),Math.round(AppStorage.get<number>("winTop") as number + UIContext.resolveUIContext()!.vp2px(100)).toInt());
       await CommonFunc.sleep(1000);
       console.info('[CalendarPickerDialog_static_0100] END');
       done();

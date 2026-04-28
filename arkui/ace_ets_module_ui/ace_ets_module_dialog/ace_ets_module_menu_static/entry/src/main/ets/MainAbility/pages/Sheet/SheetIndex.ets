@@ -98,7 +98,7 @@ struct SheetIndex {
           modalTransition: ModalTransition.DEFAULT,
           keyboardAvoidMode: SheetKeyboardAvoidMode.POPUP_SHEET,
           onDetentsDidChange: (value: Int) => {
-            this.value = value as number
+            this.value = value.toDouble()
             console.log('BindSheet onDetentsDidChange.' + value)
           }
         })

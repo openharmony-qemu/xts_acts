@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -74,10 +74,10 @@ it('OnTextSelectionChangeTest_static_0010', Level.LEVEL2, async (done: ()=> void
       let driver = Driver.create();
       await CommonFunc.sleep(500);
         let textRect = CommonFunc.getComponentRectOnScreen('OnTextSelectionChange_text');
-        let clickX1 = Math.round(textRect.left + 2) as int
-        let clickX2 = Math.round(textRect.right - 2) as int
-        let clickX3 = Math.round(textRect.right + 10) as int
-        let clickY = Math.round((textRect.bottom + textRect.top)/2) as int
+        let clickX1 = Math.round(textRect.left + 2).toInt()
+        let clickX2 = Math.round(textRect.right - 2).toInt()
+        let clickX3 = Math.round(textRect.right + 10).toInt()
+        let clickY = Math.round((textRect.bottom + textRect.top)/2).toInt()
         await driver.mouseDrag({ x: clickX1, y: clickY },{ x: clickX2, y: clickY }, 600);
         await CommonFunc.sleep(1000);
         console.info('[OnTextSelectionChangeTest_0010] get1: ' + AppStorage.get<string>('OnTextSelectionChange'));
@@ -112,8 +112,8 @@ it('OnTextSelectionChangeTest_static_0020', Level.LEVEL2, async (done: ()=> void
 
         expect(AppStorage.get<string>('OnTextSelectionChange')).assertEqual('start:3,end:11');
         let textRect = CommonFunc.getComponentRectOnScreen('OnTextSelectionChange_text');
-        let clickX = Math.round((textRect.left + textRect.right)/2) as int
-        let clickY = Math.round(textRect.bottom - 10) as int
+        let clickX = Math.round((textRect.left + textRect.right)/2).toInt()
+        let clickY = Math.round(textRect.bottom - 10).toInt()
         // 鼠标左键点击文本外，文本取消选中
         await driver.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_LEFT);
         await CommonFunc.sleep(1000);
@@ -136,8 +136,8 @@ it('OnTextSelectionChangeTest_static_0030', Level.LEVEL2, async (done: ()=>void)
         console.info('[OnTextSelectionChangeTest_0030] get1: ' + AppStorage.get<string>('OnTextSelectionChange'));
         expect(AppStorage.get<string>('OnTextSelectionChange')).assertEqual('start:3,end:8');
         let textRect = CommonFunc.getComponentRectOnScreen('OnTextSelectionChange_text');
-        let clickX = Math.round(textRect.right + 10) as int
-        let clickY = Math.round((textRect.bottom + textRect.top)/2) as int
+        let clickX = Math.round(textRect.right + 10).toInt()
+        let clickY = Math.round((textRect.bottom + textRect.top)/2).toInt()
         await driver.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_LEFT);
         await CommonFunc.sleep(1000);
         console.info('[OnTextSelectionChangeTest_0030] get2: ' +
