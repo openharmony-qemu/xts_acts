@@ -468,6 +468,12 @@ public:
     Camera_ErrorCode GetLensFocalLength(int useCaseCode);
     Camera_ErrorCode GetMinimumFocusDistance(int useCaseCode);
 
+    // exposure state callback
+    Camera_ErrorCode RegisterExposureStateChangeCallback();
+    Camera_ErrorCode UnregisterExposureStateChangeCallback();
+    Camera_ErrorCode RegisterExposureStateChangeCallbackWithoutSession();
+    Camera_ErrorCode UnregisterExposureStateChangeCallbackWithoutSession();
+
     // test aid
     Camera_ErrorCode SetSceneMode(int useCaseCode);
     Camera_ErrorCode GetCameraFromCameras(Camera_Device* cameras, Camera_Device** camera,
