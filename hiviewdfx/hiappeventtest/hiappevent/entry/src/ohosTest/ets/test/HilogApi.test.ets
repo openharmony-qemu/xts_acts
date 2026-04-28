@@ -7,8 +7,8 @@ function generateLongString(length: number): string {
   }
   return str;
 }
-export default function hilogApi() {
-  describe('hilogApi', () => {
+export default function HilogApi() {
+  describe('HilogApi', () => {
     beforeAll(() => {
       console.info('HilogParamSpecTest beforeAll called');
     });
