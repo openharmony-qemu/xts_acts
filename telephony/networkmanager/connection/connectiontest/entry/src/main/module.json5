@@ -44,7 +44,7 @@
         }
       },
       {
-        "name" : "ohos.permission.APPROXIMATELY_LOCATION"，
+        "name" : "ohos.permission.APPROXIMATELY_LOCATION",
         "reason" : "$string:location_reason",
         "usedScene" : {
           "abilities" : ["EntryAbility"],
