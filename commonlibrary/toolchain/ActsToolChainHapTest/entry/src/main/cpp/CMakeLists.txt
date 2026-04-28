@@ -216,6 +216,106 @@ add_library(
     src/math/erfcf.cpp
     src/math/erff.cpp
     src/math/erfl.cpp
+     src/math/acosf.cpp
+     src/math/exp10.cpp
+     src/math/exp10f.cpp
+     src/math/exp10l.cpp
+     src/math/fdim.cpp
+     src/math/fmin.cpp
+     src/math/fminf.cpp
+     src/math/fminl.cpp
+     src/math/fmod.cpp
+     src/math/fmodf.cpp
+     src/math/fmodl.cpp
+     src/math/j0.cpp
+     src/math/j0f.cpp
+     src/math/j1.cpp
+     src/math/jn.cpp
+     src/math/jnf.cpp
+     src/math/ldexp.cpp
+     src/math/ldexpf.cpp
+     src/math/ldexpl.cpp
+     src/math/lgamma.cpp
+     src/math/lgamma_r.cpp
+     src/math/lgammaf.cpp
+     src/math/lgammaf_r.cpp
+     src/math/lgammal_r.cpp
+     src/math/llrint.cpp
+     src/math/llrintf.cpp
+     src/math/llrintl.cpp
+     src/math/llround.cpp
+     src/math/llroundf.cpp
+     src/math/llroundl.cpp
+     src/math/log.cpp
+     src/math/log10.cpp
+     src/math/log10f.cpp
+     src/math/log10l.cpp
+     src/math/log1pl.cpp
+     src/math/log2.cpp
+     src/math/log2f.cpp
+     src/math/log2l.cpp
+     src/math/logb.cpp
+     src/math/logbf.cpp
+     src/math/logbl.cpp
+     src/math/logf.cpp
+     src/math/logl.cpp
+     src/math/lrint.cpp
+     src/math/lrintf.cpp
+     src/math/lrintl.cpp
+     src/math/lround.cpp
+     src/math/lroundf.cpp
+     src/math/lroundl.cpp
+     src/math/modf.cpp
+     src/math/modff.cpp
+     src/math/modfl.cpp
+     src/math/nextafter.cpp
+     src/math/nextafterf.cpp
+     src/math/nextafterl.cpp
+     src/math/pow.cpp
+     src/math/pow10.cpp
+     src/math/pow10f.cpp
+     src/math/pow10l.cpp
+     src/math/powf.cpp
+     src/math/powl.cpp
+     src/math/remainder.cpp
+     src/math/remainderf.cpp
+     src/math/remainderl.cpp
+     src/math/remquo.cpp
+     src/math/remquof.cpp
+     src/math/remquol.cpp
+     src/math/round.cpp
+     src/math/roundf.cpp
+     src/math/roundl.cpp
+     src/math/scalb.cpp
+     src/math/scalbf.cpp
+     src/math/scalbln.cpp
+     src/math/scalblnf.cpp
+     src/math/scalblnl.cpp
+     src/math/scalbn.cpp
+     src/math/scalbnf.cpp
+     src/math/scalbnl.cpp
+     src/math/sin.cpp
+     src/math/sincos.cpp
+     src/math/sincosf.cpp
+     src/math/sincosl.cpp
+     src/math/sinf.cpp
+     src/math/sinh.cpp
+     src/math/sinhf.cpp
+     src/math/sinhl.cpp
+     src/math/sinl.cpp
+     src/math/tan.cpp
+     src/math/tanh.cpp
+     src/math/tanhf.cpp
+     src/math/tanhl.cpp
+     src/math/tanl.cpp
+     src/math/trunc.cpp
+     src/math/truncf.cpp
+     src/math/truncl.cpp
+     src/math/y0.cpp
+     src/math/y1.cpp
+     src/math/y1f.cpp
+     src/math/yn.cpp
+     src/math/ynf.cpp
     src/regression/daemon-failure.cpp
     src/regression/dn_expand-empty.cpp
     src/regression/dn_expand-ptr-0.cpp
@@ -279,6 +379,22 @@ add_library(
     src/functionalext/backtrace/unittest_backtrace.cpp
     src/functionalext/fortify/invalid_param_b.cpp
     src/functionalext/ldso_cfi/large_size_library/large_size_test.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_1.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_10.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_11.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_12.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_13.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_14.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_15.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_16.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_2.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_3.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_4.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_5.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_6.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_7.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_8.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_9.cpp
     src/functionalext/locale/localeconv.cpp
     src/functionalext/locale/localeconv_multithread.cpp
     src/functionalext/locale/newlocale.cpp

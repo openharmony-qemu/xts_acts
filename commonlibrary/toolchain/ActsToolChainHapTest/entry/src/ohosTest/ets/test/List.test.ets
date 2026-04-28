@@ -19,6 +19,7 @@ import functional from "./src/functional.test";
 import fortify from "./src/functionalext/fortify.test";
 import info from "./src/functionalext/info.test";
 import ldso_cfi from "./src/functionalext/ldso_cfi.test";
+import functionalext_ldso_dlopen_config_abs_path from "./src/functionalext/ldso_dlopen_config_abs_path.test";
 import src_functionalext_locale from "./src/functionalext/locale.test";
 import functionalext_backtrace from "./src/functionalext/backtrace.test";
 import conf from "./src/functionalext/supplement/conf.test";
@@ -75,6 +76,7 @@ export default function testsuite() {
   fortify();
   info();
   ldso_cfi();
+  functionalext_ldso_dlopen_config_abs_path();
   src_functionalext_locale();
   functionalext_backtrace();
   conf();
