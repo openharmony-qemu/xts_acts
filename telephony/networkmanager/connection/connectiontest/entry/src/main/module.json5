@@ -28,6 +28,28 @@
       },
       {
         "name" :  "ohos.permission.GET_NETWORK_INFO"
+      },
+      {
+        "name":"ohos.permission.SET_PAC_URL"
+      },
+      {
+        "name" : "ohos.permission.ACCESS_NET_TRACE_INFO"
+      },
+      {
+        "name" : "ohos.permission.LOCATION",
+        "reason" : "$string:location_reason",   //授权原因 (必须配 string 资源)
+        "usedScene" : {
+          "abilities" : ["EntryAbility"],
+          "when" : "inues"      //使用时授权
+        }
+      },
+      {
+        "name" : "ohos.permission.APPROXIMATELY_LOCATION",
+        "reason" : "$string:location_reason",
+        "usedScene" : {
+          "abilities" : ["EntryAbility"],
+          "when" : "inues"
+        }
       }
     ],
     "deliveryWithInstall": true,
