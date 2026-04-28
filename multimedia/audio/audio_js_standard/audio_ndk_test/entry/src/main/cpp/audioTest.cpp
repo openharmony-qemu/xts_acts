@@ -10102,7 +10102,7 @@ napi_value CreateNapiResult(napi_env env, int32_t resultValue)
     return result;
 }
 
-static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_001(
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0100(
     napi_env env, napi_callback_info info)
 {
     OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
@@ -10127,7 +10127,7 @@ static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_001(
     return res;
 }
 
-static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_002(
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0200(
     napi_env env, napi_callback_info info)
 {
     OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
@@ -10152,7 +10152,7 @@ static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_002(
     return res;
 }
 
-static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_001(
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0100(
     napi_env env, napi_callback_info info)
 {
     OH_AudioRoutingManager *audioRoutingManager = nullptr;
@@ -10171,7 +10171,7 @@ static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_001(
     return res;
 }
 
-static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_002(
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0200(
     napi_env env, napi_callback_info info)
 {
     OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
@@ -10193,7 +10193,7 @@ static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_002(
     return res;
 }
 
-static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_003(
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0300(
     napi_env env, napi_callback_info info)
 {
     OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
@@ -10216,7 +10216,7 @@ static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_003(
     return res;
 }
 
-static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_004(
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0400(
     napi_env env, napi_callback_info info)
 {
     OH_AudioRoutingManager *audioRoutingManager = nullptr;
@@ -10234,7 +10234,7 @@ static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_004(
     return res;
 }
 
-static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_001(
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_0100(
     napi_env env, napi_callback_info info)
 {
     OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
@@ -10262,7 +10262,7 @@ static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_001(
     return CreateNapiResult(env, TEST_FAIL);
 }
 
-static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_001(
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_0100(
     napi_env env, napi_callback_info info)
 {
     OH_AudioRoutingManager *audioRoutingManager = nullptr;
@@ -10280,7 +10280,7 @@ static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_00
     return res;
 }
 
-static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_002(
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_0200(
     napi_env env, napi_callback_info info)
 {
     OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
@@ -10301,7 +10301,7 @@ static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_00
     return res;
 }
 
-static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_001(
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_0100(
     napi_env env, napi_callback_info info)
 {
     OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
@@ -10326,7 +10326,7 @@ static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_001(
     return res;
 }
 
-static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_002(
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_0200(
     napi_env env, napi_callback_info info)
 {
     OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
@@ -10351,7 +10351,7 @@ static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_002(
     return res;
 }
 
-static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_001(
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0100(
     napi_env env, napi_callback_info info)
 {
     OH_AudioRoutingManager *audioRoutingManager = nullptr;
@@ -10370,7 +10370,7 @@ static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_001(
     return res;
 }
 
-static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_002(
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0200(
     napi_env env, napi_callback_info info)
 {
     OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
@@ -10392,7 +10392,7 @@ static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_002(
     return res;
 }
 
-static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_003(
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0300(
     napi_env env, napi_callback_info info)
 {
     OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
@@ -10415,7 +10415,7 @@ static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_003(
     return res;
 }
 
-static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_004(
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0400(
     napi_env env, napi_callback_info info)
 {
     OH_AudioRoutingManager *audioRoutingManager = nullptr;
@@ -10433,7 +10433,7 @@ static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_004(
     return res;
 }
 
-static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_001(
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_0100(
     napi_env env, napi_callback_info info)
 {
     OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
@@ -10461,7 +10461,7 @@ static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_001(
     return CreateNapiResult(env, TEST_FAIL);
 }
 
-static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_001(
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_0100(
     napi_env env, napi_callback_info info)
 {
     OH_AudioRoutingManager *audioRoutingManager = nullptr;
@@ -10479,7 +10479,7 @@ static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_001
     return res;
 }
 
-static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_002(
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_0200(
     napi_env env, napi_callback_info info)
 {
     OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
@@ -10500,7 +10500,7 @@ static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_002
     return res;
 }
 
-static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_001(
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_0100(
     napi_env env, napi_callback_info info)
 {
     OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
@@ -10529,7 +10529,7 @@ static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER
     return CreateNapiResult(env, TEST_FAIL);
 }
 
-static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_002(
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_0200(
     napi_env env, napi_callback_info info)
 {
     OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
@@ -10551,7 +10551,7 @@ static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER
     return res;
 }
 
-static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_001(
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_0100(
     napi_env env, napi_callback_info info)
 {
     OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
@@ -10580,7 +10580,7 @@ static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_
     return CreateNapiResult(env, TEST_FAIL);
 }
 
-static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_002(
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_0200(
     napi_env env, napi_callback_info info)
 {
     OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
