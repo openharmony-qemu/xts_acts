@@ -133,6 +133,7 @@ export function photoFetchOption(testNum: string, key: string, value: string | n
       'thumb_size',
       photoAccessHelper.PhotoKeys.DETAIL_TIME,
       photoAccessHelper.PhotoKeys.DATE_TAKEN_MS,
+      photoAccessHelper.PhotoKeys.LOCAL_ASSET_SIZE,
       'all_exif'),
     predicates: predicates
   };
