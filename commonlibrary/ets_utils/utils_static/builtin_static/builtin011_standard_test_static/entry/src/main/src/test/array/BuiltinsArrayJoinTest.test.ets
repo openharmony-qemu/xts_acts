@@ -35,7 +35,7 @@ interface GeneratedTypeLiteralInterface_1 {
 
 type MixedType = number | string | boolean | GeneratedTypeLiteralInterface_1;
 
-export default function BuiltinsArrayJoinTest() {
+export default function BuiltinsArrayJoinTest() : void{
   describe("BuiltinsArrayJoinTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -67,7 +67,12 @@ export default function BuiltinsArrayJoinTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayJoinTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       const result = arr.join('undefined');
 
@@ -83,7 +88,12 @@ export default function BuiltinsArrayJoinTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayJoinTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       const result = arr.join('null');
 
@@ -99,7 +109,12 @@ export default function BuiltinsArrayJoinTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayJoinTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       const result = arr.join('');
 
@@ -115,7 +130,10 @@ export default function BuiltinsArrayJoinTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayJoinTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
       const separator = ' !"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ ';
 
       const result = arr.join(separator);
@@ -132,7 +150,10 @@ export default function BuiltinsArrayJoinTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayJoinTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
       let asciiSeparator = '';
       for (let i = 32; i <= 126; i++) {
         asciiSeparator += String.fromCharCode(i);
@@ -152,7 +173,10 @@ export default function BuiltinsArrayJoinTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayJoinTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
       const separator = ' !!""##$$%%&&\'\'(()))**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~ ';
 
       const result = arr.join(separator);
@@ -169,7 +193,10 @@ export default function BuiltinsArrayJoinTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayJoinTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
 
       const separator = '\b\n\r\t\\\'\"\0';
 
@@ -187,7 +214,10 @@ export default function BuiltinsArrayJoinTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayJoinTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
       const separator = '\ud83d\udc46\ud83d\udc7f\ud83d\udc40\ud83d\udcaf\ud83c\udf85\ud83d\ude3c' +
         '\ud83d\udd27\ud83d\udc87\ud83e\udd3c\u200d\u2642\ufe0f\ud83d\udee2\ud83c\udc04\ud83c\udff4';
 
@@ -205,7 +235,10 @@ export default function BuiltinsArrayJoinTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayJoinTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
 
       const separator = '\udc04\ud83d\udff4';
 
@@ -223,7 +256,10 @@ export default function BuiltinsArrayJoinTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayJoinTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
       const keywords = ['0', 'NaN', ''];
 
       for (const keyword of keywords) {
@@ -241,7 +277,10 @@ export default function BuiltinsArrayJoinTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayJoinTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr: number[] = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
 
       const largeSeparator = init(1000);
       const startTime1 = Date.now();
@@ -271,7 +310,10 @@ export default function BuiltinsArrayJoinTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayJoinTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr: number[] = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
       let str = '{k1:value1,k2:value2}';
       let result = str.substring(0, str.length - 2);
 
@@ -290,7 +332,10 @@ export default function BuiltinsArrayJoinTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayJoinTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr: number[] = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
 
       const largeStr = "a".repeat(1024);
       
@@ -307,7 +352,10 @@ export default function BuiltinsArrayJoinTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayJoinTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr: number[] = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
 
       let largeStr = "a".repeat(100000);
 
@@ -326,8 +374,8 @@ export default function BuiltinsArrayJoinTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayJoinTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>();
-      
+      const arr: number[] = Array.create<number>(0, 0);
+
       const result = arr.join();
       
       expect(result).assertEqual('');
@@ -342,12 +390,11 @@ export default function BuiltinsArrayJoinTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayJoinTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Person>(
-        { name: 'Alice', age: 30 },
-        { name: 'Bob', age: 25 },
-        { name: 'Charlie', age: 35 }
-      );
-      
+      const arr: Person[] = Array.create<Person>(3, { name: '', age: 0 });
+      arr[0] = { name: 'Alice', age: 30 };
+      arr[1] = { name: 'Bob', age: 25 };
+      arr[2] = { name: 'Charlie', age: 35 };
+
       const result = arr.join(',');
 
       expect(result).assertEqual('[object Object],[object Object],[object Object]');

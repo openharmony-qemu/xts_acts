@@ -20,7 +20,7 @@ interface Person {
   age: number;
 }
 
-export default function BuiltinsArrayPushArrayTest() {
+export default function BuiltinsArrayPushArrayTest() : void{
   describe("BuiltinsArrayPushArrayTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -52,7 +52,10 @@ export default function BuiltinsArrayPushArrayTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayPushArrayTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr: number[] = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
       const result = arr.pushArray();
 
       expect(result).assertEqual(3);
@@ -71,7 +74,9 @@ export default function BuiltinsArrayPushArrayTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPushArrayTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2);
+      const arr: number[] = Array.create<number>(2, 0);
+      arr[0] = 1;
+      arr[1] = 2;
       const result = arr.pushArray(3);
 
       expect(result).assertEqual(3);
@@ -90,7 +95,8 @@ export default function BuiltinsArrayPushArrayTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPushArrayTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr: Array<number> = [1];
+      const arr: Array<number> = Array.create<number>(1, 0);
+      arr[0] = 1;
       const result = arr.pushArray(2, 3, 4, 5);
 
       expect(result).assertEqual(5);
@@ -111,7 +117,8 @@ export default function BuiltinsArrayPushArrayTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPushArrayTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<string>('hello');
+      const arr: string[] = Array.create<string>(1, '');
+      arr[0] = 'hello';
       const result = arr.pushArray('world');
 
       expect(result).assertEqual(2);
@@ -129,7 +136,8 @@ export default function BuiltinsArrayPushArrayTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPushArrayTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<string>('a');
+      const arr: string[] = Array.create<string>(1, '');
+      arr[0] = 'a';
       const result = arr.pushArray('b', 'c', 'd');
 
       expect(result).assertEqual(4);
@@ -149,7 +157,8 @@ export default function BuiltinsArrayPushArrayTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPushArrayTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<boolean>(true);
+      const arr: boolean[] = Array.create<boolean>(1, false);
+      arr[0] = true;
       const result = arr.pushArray(false, true);
 
       expect(result).assertEqual(3);
@@ -168,7 +177,8 @@ export default function BuiltinsArrayPushArrayTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPushArrayTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Person>({ name: 'Alice', age: 25 });
+      const arr: Person[] = Array.create<Person>(1, { name: '', age: 0 });
+      arr[0] = { name: 'Alice', age: 25 };
       const result = arr.pushArray({ name: 'Bob', age: 30 });
 
       expect(result).assertEqual(2);
@@ -186,7 +196,7 @@ export default function BuiltinsArrayPushArrayTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPushArrayTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Person>();
+      const arr: Person[] = [];
       const result = arr.pushArray(
         { name: 'Alice', age: 25 },
         { name: 'Bob', age: 30 },
@@ -209,7 +219,8 @@ export default function BuiltinsArrayPushArrayTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPushArrayTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr: Array<number | null | undefined> = [1];
+      const arr: Array<number | null | undefined> = Array.create<number | null | undefined>(1, 0);
+      arr[0] = 1;
       const result = arr.pushArray(null, undefined);
 
       expect(result).assertEqual(3);
@@ -228,7 +239,7 @@ export default function BuiltinsArrayPushArrayTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPushArrayTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
       const result = arr.pushArray(1, 2, 3);
 
       expect(result).assertEqual(3);
@@ -265,7 +276,8 @@ export default function BuiltinsArrayPushArrayTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPushArrayTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1.0);
+      const arr: number[] = Array.create<number>(1, 0);
+      arr[0] = 1.0;
       const result = arr.pushArray(2.5, 3.14);
 
       expect(result).assertEqual(3);
@@ -284,7 +296,8 @@ export default function BuiltinsArrayPushArrayTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPushArrayTest1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Array<number>>([1, 2]);
+      const arr: number[][] = Array.create<number[]>(1, []);
+      arr[0] = [1, 2];
       const result = arr.pushArray([3, 4], [5, 6]);
 
       expect(result).assertEqual(3);
@@ -306,7 +319,7 @@ export default function BuiltinsArrayPushArrayTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayPushArrayTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
       const elements: number[] = [];
       for (let i = 0; i < 100; i++) {
         elements.push(i);
@@ -328,7 +341,7 @@ export default function BuiltinsArrayPushArrayTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPushArrayTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr: number[] = [1, 2, 3];
       const result1 = arr.pushArray(4);
       expect(result1).assertEqual(4);
 
@@ -406,7 +419,7 @@ export default function BuiltinsArrayPushArrayTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPushArrayTest1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(10, 20);
+      const arr: number[] = [10, 20];
       const result = arr.pushArray(30, 40, 50);
 
       expect(result).assertEqual(5);
@@ -427,7 +440,7 @@ export default function BuiltinsArrayPushArrayTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPushArrayTest2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<string>('a');
+      const arr: string[] = ['a'];
       const result = arr.pushArray('', 'b');
 
       expect(result).assertEqual(3);

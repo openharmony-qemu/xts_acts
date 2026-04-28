@@ -308,8 +308,8 @@ export default function BuiltinsArrayFillTest(): void {
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsArrayFillTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>();
+    it('builtinsArrayFillTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const arr: number[] = Array.create<number>(0, 0);
       
       const result = arr.fill(0);
       

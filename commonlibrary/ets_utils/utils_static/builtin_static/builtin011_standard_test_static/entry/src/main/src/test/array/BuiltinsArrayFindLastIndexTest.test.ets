@@ -36,7 +36,7 @@ export default function BuiltinsArrayFindLastIndexTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayFindLastIndexTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
       const result = arr.findLastIndex((element: number, index: int, array: Array<number>): boolean => {
         return element > 5;
       });
@@ -52,7 +52,16 @@ export default function BuiltinsArrayFindLastIndexTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayFindLastIndexTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5, 6, 7, 8, 9);
+      const arr: number[] = Array.create<number>(9, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
+      arr[5] = 6;
+      arr[6] = 7;
+      arr[7] = 8;
+      arr[8] = 9;
       const result = arr.findLastIndex((element: number, index: int, array: Array<number>): boolean => {
         return element > 5;
       });
@@ -68,7 +77,12 @@ export default function BuiltinsArrayFindLastIndexTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayFindLastIndexTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
       const result = arr.findLastIndex((element: number, index: int, array: Array<number>): boolean => {
         return element > 5;
       });
@@ -84,7 +98,12 @@ export default function BuiltinsArrayFindLastIndexTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFindLastIndexTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(10, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 10;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
       const result = arr.findLastIndex((element: number, index: int, array: Array<number>): boolean => {
         return element > 5;
       });
@@ -100,7 +119,12 @@ export default function BuiltinsArrayFindLastIndexTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFindLastIndexTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 10);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 10;
       const result = arr.findLastIndex((element: number, index: int, array: Array<number>): boolean => {
         return element > 5;
       });
@@ -116,7 +140,12 @@ export default function BuiltinsArrayFindLastIndexTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFindLastIndexTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(10, 20, 30, 40, 50);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 10;
+      arr[1] = 20;
+      arr[2] = 30;
+      arr[3] = 40;
+      arr[4] = 50;
       const result = arr.findLastIndex((element: number, index: int, array: Array<number>): boolean => {
         return element > 5;
       });
@@ -132,7 +161,11 @@ export default function BuiltinsArrayFindLastIndexTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFindLastIndexTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<string>('apple', 'banana', 'cherry', 'date');
+      const arr: string[] = Array.create<string>(4, '');
+      arr[0] = 'apple';
+      arr[1] = 'banana';
+      arr[2] = 'cherry';
+      arr[3] = 'date';
       const result = arr.findLastIndex((element: string, index: int, array: Array<string>): boolean => {
         return element.length > 5;
       });
@@ -180,7 +213,12 @@ export default function BuiltinsArrayFindLastIndexTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFindLastIndexTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
       const result = arr.findLastIndex((element: number, index: int, array: Array<number>): boolean => {
         return index === 2;
       });
