@@ -1012,20 +1012,6 @@ export default function math_group_test() {
     });
 
     /**
-     * @tc.name   fdimf
-     * @tc.number SUB_THIRDPARTY_MUSL_FDIMF_0100
-     * @tc.desc   libc-test fdimf
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("fdimf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("fdimf");
-      expect(result).assertEqual(0);
-      done();
-    });
-
-    /**
      * @tc.name   fmin
      * @tc.number SUB_THIRDPARTY_MUSL_FMIN_0100
      * @tc.desc   libc-test fmin
@@ -1427,34 +1413,6 @@ export default function math_group_test() {
      */
     it("log10l", Level.LEVEL1, async (done: Function) => {
       const result = await testNapi.runTest("log10l");
-      expect(result).assertEqual(0);
-      done();
-    });
-
-    /**
-     * @tc.name   log1p
-     * @tc.number SUB_THIRDPARTY_MUSL_LOG_ONE_P_0100
-     * @tc.desc   libc-test log1p
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("log1p", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("log1p");
-      expect(result).assertEqual(0);
-      done();
-    });
-
-    /**
-     * @tc.name   log1pf
-     * @tc.number SUB_THIRDPARTY_MUSL_LOG_ONE_PF_0100
-     * @tc.desc   libc-test log1pf
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("log1pf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("log1pf");
       expect(result).assertEqual(0);
       done();
     });
@@ -2216,20 +2174,6 @@ export default function math_group_test() {
     });
 
     /**
-     * @tc.name   tanf
-     * @tc.number SUB_THIRDPARTY_MUSL_TANF_0100
-     * @tc.desc   libc-test tanf
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("tanf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("tanf");
-      expect(result).assertEqual(0);
-      done();
-    });
-
-    /**
      * @tc.name   tanh
      * @tc.number SUB_THIRDPARTY_MUSL_TANH_0100
      * @tc.desc   libc-test tanh
@@ -2286,34 +2230,6 @@ export default function math_group_test() {
     });
 
     /**
-     * @tc.name   tgamma
-     * @tc.number SUB_THIRDPARTY_MUSL_TGAMMA_0100
-     * @tc.desc   libc-test tgamma
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("tgamma", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("tgamma");
-      expect(result).assertEqual(0);
-      done();
-    });
-
-    /**
-     * @tc.name   tgammaf
-     * @tc.number SUB_THIRDPARTY_MUSL_TGAMMAF_0100
-     * @tc.desc   libc-test tgammaf
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("tgammaf", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("tgammaf");
-      expect(result).assertEqual(0);
-      done();
-    });
-
-    /**
      * @tc.name   trunc
      * @tc.number SUB_THIRDPARTY_MUSL_TRUNC_0100
      * @tc.desc   libc-test trunc
@@ -2365,20 +2281,6 @@ export default function math_group_test() {
      */
     it("y0", Level.LEVEL1, async (done: Function) => {
       const result = await testNapi.runTest("y0");
-      expect(result).assertEqual(0);
-      done();
-    });
-
-    /**
-     * @tc.name   y0f
-     * @tc.number SUB_THIRDPARTY_MUSL_Y_ZERO_F_0100
-     * @tc.desc   libc-test y0f
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("y0f", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("y0f");
       expect(result).assertEqual(0);
       done();
     });

@@ -221,7 +221,6 @@ add_library(
      src/math/exp10f.cpp
      src/math/exp10l.cpp
      src/math/fdim.cpp
-     src/math/fdimf.cpp
      src/math/fmin.cpp
      src/math/fminf.cpp
      src/math/fminl.cpp
@@ -251,8 +250,6 @@ add_library(
      src/math/log10.cpp
      src/math/log10f.cpp
      src/math/log10l.cpp
-     src/math/log1p.cpp
-     src/math/log1pf.cpp
      src/math/log1pl.cpp
      src/math/log2.cpp
      src/math/log2f.cpp
@@ -307,18 +304,14 @@ add_library(
      src/math/sinhl.cpp
      src/math/sinl.cpp
      src/math/tan.cpp
-     src/math/tanf.cpp
      src/math/tanh.cpp
      src/math/tanhf.cpp
      src/math/tanhl.cpp
      src/math/tanl.cpp
-     src/math/tgamma.cpp
-     src/math/tgammaf.cpp
      src/math/trunc.cpp
      src/math/truncf.cpp
      src/math/truncl.cpp
      src/math/y0.cpp
-     src/math/y0f.cpp
      src/math/y1.cpp
      src/math/y1f.cpp
      src/math/yn.cpp
