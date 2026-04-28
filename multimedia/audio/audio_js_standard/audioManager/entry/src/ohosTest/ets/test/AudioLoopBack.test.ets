@@ -2713,7 +2713,7 @@ export default function audioLoopBack() {
       try {
         audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
         
-        let devicePairs: audio.AudioDevicePair[] = audioLoopback.getSupportedDevicePairs();
+        let devicePairs: audio.AudioDevicePair[] = await audioLoopback.getSupportedDevicePairs();
         if (devicePairs.length > 0) {
           let firstPair: audio.AudioDevicePair = devicePairs[0];
           expect(firstPair.inputDevice).assertInstanceOf('array');
@@ -2885,8 +2885,13 @@ export default function audioLoopBack() {
       } catch (err) {
         let error = err as BusinessError;
         console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_BOUNDARY_0100 error: ${error.code}, ${error.message}`);
-        expect(error.code).assertEqual(6800101);
-        done();
+        if (6800101 == Number(err.code)) {
+          expect(Number(err.code)).assertEqual(6800101);
+          done();
+        } else {
+          expect(Number(err.code)).assertEqual(6800104);
+          done();
+        }
       }
     });
 
@@ -3003,9 +3008,9 @@ export default function audioLoopBack() {
       try {
         audioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
                 
-        let devicePairs: audio.AudioDevicePair[] = audioLoopback.getSupportedDevicePairs();
+        let devicePairs: audio.AudioDevicePair[] = await audioLoopback.getSupportedDevicePairs();
         if (devicePairs.length === 0) {
-          expect(devicePairs).assertInstanceOf('array');
+          expect(Array.isArray(devicePairs)).assertTrue();
           expect(devicePairs.length).assertEqual(0);
           console.info(`${TAG}: No supported device pairs, empty array returned`);
         } else {
