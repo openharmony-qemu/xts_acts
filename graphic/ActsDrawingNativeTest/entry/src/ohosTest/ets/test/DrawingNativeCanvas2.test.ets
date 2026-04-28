@@ -1510,5 +1510,44 @@ export default function DrawingNativeCanvas2Test() {
       const result = libDrawingNative.DrawingCanvasDrawPixelMapMesh(10);
       expect(result).assertEqual(0);
     })
+
+    /**
+     * @tc.name   testCanvasResetClipNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingCanvasResetClip_0100
+     * @tc.desc   test for testCanvasResetClipNormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testCanvasResetClipNormal', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasResetClip(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasResetClipNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingCanvasResetClip_0200
+     * @tc.desc   test for testCanvasResetClipNull
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testCanvasResetClipNull', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasResetClip(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testCanvasResetClipMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingCanvasResetClip_0300
+     * @tc.desc   test for testCanvasResetClipMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testCanvasResetClipMultipleCalls', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingCanvasResetClip(2);
+      expect(result).assertEqual(0);
+    })
   })
 }

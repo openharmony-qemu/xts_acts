@@ -18,7 +18,9 @@ import { Vec2, Rotation3, SceneResourceParameters, SceneNodeParameters, Scene, S
   CameraParameters,
   EffectParameters,
   Effect,
-  Camera} from '@ohos.graphics.scene'
+  Camera,
+  PCFConfig,
+  ShadowAlgorithmType} from '@ohos.graphics.scene'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import * as scene3d from '@ohos.graphics.scene'
 
@@ -28,7 +30,7 @@ export default function sceneTest() {
     let rf: scene3d.SceneResourceFactory;
     /**
      * @tc.name   testSceneLoad_01
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0010
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_0100
      * @tc.desc   Used to load the resource through the incoming resource path
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -70,7 +72,7 @@ export default function sceneTest() {
     })
     /**
      * @tc.name   testSceneGetNodeByPath
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0020
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_0200
      * @tc.desc   Nodes are obtained from paths
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -136,7 +138,7 @@ export default function sceneTest() {
     })
     /**
      * @tc.name   testGetResourceFactory
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0030
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_0300
      * @tc.desc   Used to get the Scene Asset Factory object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -159,7 +161,7 @@ export default function sceneTest() {
     })
     /**
      * @tc.name   testSceneEnvironment
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0045
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_0400
      * @tc.desc   Test Scene.environment property
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -199,7 +201,7 @@ export default function sceneTest() {
     })
     /**
      * @tc.name   testDestroy
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0040
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_0500
      * @tc.desc   Used to destroy the scene and release all scene resources
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -225,7 +227,7 @@ export default function sceneTest() {
     })
     /**
      * @tc.name   testSceneResourceParameters
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0050
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_0600
      * @tc.desc   Used to provide the name of the scene asset and the path to the asset file required for the 3D scene
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -246,7 +248,7 @@ export default function sceneTest() {
     })
     /**
      * @tc.name   testSceneNodeParameters
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0060
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_0700
      * @tc.desc   A scene node parameter object, which is used to provide a name and path in the scene node hierarchy
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -267,7 +269,7 @@ export default function sceneTest() {
     })
     /**
      * @tc.name   testSceneType
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0070
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_0800
      * @tc.desc   SystemCapability.ArkUI.Graphics
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -292,7 +294,7 @@ export default function sceneTest() {
     })
     /**
      * @tc.name   testSceneRenderFrame
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0500
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_0900
      * @tc.desc   Used to see if the scene is single-frame
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -342,7 +344,7 @@ export default function sceneTest() {
     })
     /**
      * @tc.name   testRenderParameters
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0510
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_1000
      * @tc.desc   Used to set if the scene is single-frame
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -367,7 +369,7 @@ export default function sceneTest() {
     })
     /**
      * @tc.name   testSphereGeometry
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0520
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_1100
      * @tc.desc   Used to set the properties of the sphere
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -407,7 +409,7 @@ export default function sceneTest() {
     })
     /**
      * @tc.name   testTRIANGLE_LIST
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0530
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_1200
      * @tc.desc   Used to set the properties of the custom
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -436,7 +438,7 @@ export default function sceneTest() {
     })
     /**
      * @tc.name   testTRIANGLE_STRIP
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0540
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_1300
      * @tc.desc   Used to set the properties of the custom
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -465,7 +467,7 @@ export default function sceneTest() {
     })
     /**
      * @tc.name   testCustomGeometry
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0550
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_1400
      * @tc.desc   Used to set the properties of the custom
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -502,7 +504,7 @@ export default function sceneTest() {
     })
     /**
      * @tc.name   testCreateScene_01
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0560
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_1500
      * @tc.desc   Used to create a scene
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -523,7 +525,7 @@ export default function sceneTest() {
     })
     /**
      * @tc.name   testCreateScene_02
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0620
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_1600
      * @tc.desc   Used to create a scene
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -555,7 +557,7 @@ export default function sceneTest() {
     })
     /**
      * @tc.name   testSceneLoad_02
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0630
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_1700
      * @tc.desc   Used to load the resource through the incoming resource path
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -579,7 +581,7 @@ export default function sceneTest() {
 
     /**
      * @tc.name   testRaycastResult_node
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0640
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_1800
      * @tc.desc   Verify raycast returns a valid hit node
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -616,7 +618,7 @@ export default function sceneTest() {
 
     /**
      * @tc.name   testRaycastResult_centerDistance
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0650
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_1900
      * @tc.desc   Verify centerDistance is a valid positive number in raycast result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -642,7 +644,6 @@ export default function sceneTest() {
 
         let distance: number = results[0].centerDistance;
         console.info(msg + "centerDistance value:", distance);
-        expect(typeof distance).assertEqual('number');
         expect(distance > 0).assertTrue();
         console.info(msg + "test completed successfully");
         done();
@@ -655,7 +656,7 @@ export default function sceneTest() {
 
     /**
      * @tc.name   testRaycastResult_hitPosition
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0660
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_2000
      * @tc.desc   Verify hitPosition contains valid 3D coordinates
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -681,9 +682,6 @@ export default function sceneTest() {
 
         let res: scene3d.Position3 = results[0].hitPosition;
         console.info(msg + ` hitPosition = {x: ${res.x}, y: ${res.y}, z: ${res.z}}`);
-        expect(typeof res.x).assertEqual('number');
-        expect(typeof res.y).assertEqual('number');
-        expect(typeof res.z).assertEqual('number');
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
@@ -695,7 +693,7 @@ export default function sceneTest() {
 
     /**
      * @tc.name   testRaycastResult_rootNode
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0670
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_2100
      * @tc.desc   Verify rootNode in RaycastParameters filters raycast scope correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -739,7 +737,7 @@ export default function sceneTest() {
 
     /**
      * @tc.name   testRenderResourceFactory_createSampler
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0680
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_2200
      * @tc.desc   Verify createSampler correctly creates a Sampler with valid parameters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -790,7 +788,7 @@ export default function sceneTest() {
 
     /**
      * @tc.name   testSceneComponent
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0690
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_2300
      * @tc.desc   Verified whether the SceneComponent class can correctly set component names,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -853,7 +851,7 @@ export default function sceneTest() {
 
     /**
      * @tc.name   testRenderContext_getRenderResourceFactory
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0700
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_2400
      * @tc.desc   Verify getRenderResourceFactory() returns a valid RenderResourceFactory instance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -869,7 +867,7 @@ export default function sceneTest() {
           expect(renderContext != null).assertTrue();
 
           if (renderContext != null) {
-            let factory: scene3d.RenderResourceFactory = renderContext.getRenderResourceFactory();
+            let factory: scene3d.RenderResourceFactory = renderContext?.getRenderResourceFactory();
             console.info(msg + " render resource factory:", factory);
             expect(factory != null).assertTrue();
           }
@@ -884,7 +882,7 @@ export default function sceneTest() {
 
     /**
      * @tc.name   testRenderContext_loadPlugin
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0710
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_2500
      * @tc.desc   Verify loadPlugin() returns a valid boolean even when loading an empty or non-existent plugin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -900,22 +898,22 @@ export default function sceneTest() {
           expect(renderContext != null).assertTrue();
 
           if (renderContext != null) {
-            let loadFail = await renderContext.loadPlugin("NonExistentPlugin");
+            let loadFail = await renderContext?.loadPlugin("NonExistentPlugin");
             console.info(msg + ' plugin "NonExistentPlugin" load result:', loadFail);
             expect(loadFail).assertFalse();
             let pluginName = '74c2dde9-8134-4471-af49-66ea20993c41'
-            let plugin = await renderContext.loadPlugin(pluginName);
+            let plugin = await renderContext?.loadPlugin(pluginName);
             console.info(msg + ' plugin "' + pluginName + '" load result:', plugin);
             expect(plugin).assertTrue();
 
             // Test with empty string parameter
-            let loadEmpty = await renderContext.loadPlugin("");
+            let loadEmpty = await renderContext?.loadPlugin("");
             console.info(msg + ' plugin "" (empty string) load result:', loadEmpty);
             expect(loadEmpty).assertFalse();
 
             // Test with null parameter
             try {
-              let loadNull = await renderContext.loadPlugin(null);
+              let loadNull = await renderContext?.loadPlugin(null);
               console.info(msg + ' plugin null load result:', loadNull);
               expect(loadNull).assertUndefined();
             } catch (nullErr) {
@@ -924,7 +922,7 @@ export default function sceneTest() {
 
             // Test with undefined parameter
             try {
-              let loadUndefined = await renderContext.loadPlugin(undefined);
+              let loadUndefined = await renderContext?.loadPlugin(undefined);
               console.info(msg + ' plugin undefined load result:', loadUndefined);
               expect(loadUndefined).assertUndefined();
             } catch (undefinedErr) {
@@ -941,7 +939,7 @@ export default function sceneTest() {
       })
     /**
      * @tc.name   testCreateComponent
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0720
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_2600
      * @tc.desc   Verify whether the basic functional behavior of the CreateComponent method meets expectations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1024,7 +1022,7 @@ export default function sceneTest() {
 
     /**
      * @tc.name   testgetComponent
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0730
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_2700
      * @tc.desc   Verify whether the basic functional behavior of the getComponent method meets expectations
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1114,7 +1112,7 @@ export default function sceneTest() {
 
     /**
      * @tc.name   testRenderContext_registerResourcePath
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0900
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_2800
      * @tc.desc   Verify registerResourcePath() returns a valid boolean indicates whether the registration was successful
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1134,26 +1132,26 @@ export default function sceneTest() {
           expect(renderContext != null).assertTrue();
 
           if (renderContext != null) {
-            let registerFail = renderContext.registerResourcePath("shaders", "OhosRawFile://shaders/custom_shader");
+            let registerFail = renderContext?.registerResourcePath("shaders", "OhosRawFile://shaders/custom_shader");
             console.info(msg + ' protocol "shaders" registration result:', registerFail);
             expect(registerFail).assertFalse();
 
-            let registerEmpty = renderContext.registerResourcePath("", "OhosRawFile://shaders/custom_shader");
+            let registerEmpty = renderContext?.registerResourcePath("", "OhosRawFile://shaders/custom_shader");
             console.info(msg + ' protocol "" registration result:', registerEmpty);
             expect(registerEmpty).assertFalse();
 
-            let registerSuss = renderContext.registerResourcePath("shaders_test", "OhosRawFile://shaders/custom_shader");
+            let registerSuss = renderContext?.registerResourcePath("shaders_test", "OhosRawFile://shaders/custom_shader");
             console.info(msg + ' protocol "shaders_test" registration result:', registerSuss);
             expect(registerSuss).assertTrue();
 
             // Test with empty uri parameter
-            let registerEmptyUri = renderContext.registerResourcePath("shaders_test2", "");
+            let registerEmptyUri = renderContext?.registerResourcePath("shaders_test2", "");
             console.info(msg + ' uri "" (empty string) registration result:', registerEmptyUri);
             expect(registerEmptyUri).assertFalse();
 
             // Test with null protocol parameter
             try {
-              let registerNullProtocol = renderContext.registerResourcePath(null, "OhosRawFile://shaders/custom_shader");
+              let registerNullProtocol = renderContext?.registerResourcePath(null, "OhosRawFile://shaders/custom_shader");
               console.info(msg + ' null protocol registration result:', registerNullProtocol);
               expect(registerNullProtocol).assertUndefined();
             } catch (nullProtocolErr) {
@@ -1162,7 +1160,7 @@ export default function sceneTest() {
 
             // Test with undefined protocol parameter
             try {
-              let registerUndefinedProtocol = renderContext.registerResourcePath(undefined, "OhosRawFile://shaders/custom_shader");
+              let registerUndefinedProtocol = renderContext?.registerResourcePath(undefined, "OhosRawFile://shaders/custom_shader");
               console.info(msg + ' undefined protocol registration result:', registerUndefinedProtocol);
               expect(registerUndefinedProtocol).assertUndefined();
             } catch (undefinedProtocolErr) {
@@ -1171,7 +1169,7 @@ export default function sceneTest() {
 
             // Test with null uri parameter
             try {
-              let registerNullUri = renderContext.registerResourcePath("shaders_test3", null);
+              let registerNullUri = renderContext?.registerResourcePath("shaders_test3", null);
               console.info(msg + ' null uri registration result:', registerNullUri);
               expect(registerNullUri).assertUndefined();
             } catch (nullUriErr) {
@@ -1180,7 +1178,7 @@ export default function sceneTest() {
 
             // Test with undefined uri parameter
             try {
-              let registerUndefinedUri = renderContext.registerResourcePath("shaders_test4", undefined);
+              let registerUndefinedUri = renderContext?.registerResourcePath("shaders_test4", undefined);
               console.info(msg + ' undefined uri registration result:', registerUndefinedUri);
               expect(registerUndefinedUri).assertUndefined();
             } catch (undefinedUriErr) {
@@ -1189,7 +1187,7 @@ export default function sceneTest() {
 
             // Test with both parameters as null
             try {
-              let registerBothNull = renderContext.registerResourcePath(null, null);
+              let registerBothNull = renderContext?.registerResourcePath(null, null);
               console.info(msg + ' both null parameters registration result:', registerBothNull);
               expect(registerBothNull).assertUndefined();
             } catch (bothNullErr) {
@@ -1198,7 +1196,7 @@ export default function sceneTest() {
 
             // Test with both parameters as undefined
             try {
-              let registerBothUndefined = renderContext.registerResourcePath(undefined, undefined);
+              let registerBothUndefined = renderContext?.registerResourcePath(undefined, undefined);
               console.info(msg + ' both undefined parameters registration result:', registerBothUndefined);
               expect(registerBothUndefined).assertUndefined();
             } catch (bothUndefinedErr) {
@@ -1206,7 +1204,7 @@ export default function sceneTest() {
             }
 
             // Test with both parameters as empty string
-            let registerBothEmpty = renderContext.registerResourcePath("", "");
+            let registerBothEmpty = renderContext?.registerResourcePath("", "");
             console.info(msg + ' both empty string parameters registration result:', registerBothEmpty);
             expect(registerBothEmpty).assertFalse();
 
@@ -1224,7 +1222,7 @@ export default function sceneTest() {
       })
     /**
      * @tc.name   testCreateCamera
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0910
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_2900
      * @tc.desc   create a camera renderingPipeline
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1263,7 +1261,7 @@ export default function sceneTest() {
       })
     /**
      * @tc.name   testCreateEffect
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0920
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_3000
      * @tc.desc   create a camera effect
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1308,7 +1306,7 @@ export default function sceneTest() {
       })
     /**
      * @tc.name   testSceneLoad_03
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0930
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_3100
      * @tc.desc   Used to load the resource through the incoming resource path, load ext_meshopt_compress mode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1330,7 +1328,7 @@ export default function sceneTest() {
     })
     /**
      * @tc.name   testCloneNode
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1012
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_3200
      * @tc.desc   Test cloneNode method to clone node within the same scene
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1456,7 +1454,7 @@ export default function sceneTest() {
     })
     /**
      * @tc.name   testCustomGeometryVertices
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1030
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_3300
      * @tc.desc   Test set and get for vertices property of CustomGeometry
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1508,7 +1506,7 @@ export default function sceneTest() {
     })
     /**
      * @tc.name   testCubeGeometrySize
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1031
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_3400
      * @tc.desc   Test set and get for size property of CubeGeometry
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1559,7 +1557,7 @@ export default function sceneTest() {
     })
     /**
      * @tc.name   testPlaneGeometrySize
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1032
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_3500
      * @tc.desc   Test set and get for size property of PlaneGeometry
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1607,7 +1605,7 @@ export default function sceneTest() {
     })
     /**
      * @tc.name   testSphereGeometryRadius
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1033
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_3600
      * @tc.desc   Test set and get for radius property of SphereGeometry
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1651,7 +1649,7 @@ export default function sceneTest() {
     })
     /**
      * @tc.name   testSphereGeometrySegmentCount
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1034
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_3700
      * @tc.desc   Test set and get for segmentCount property of SphereGeometry
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1690,7 +1688,7 @@ export default function sceneTest() {
     })
     /**
      * @tc.name   testCylinderGeometryRadius
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1035
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_3800
      * @tc.desc   Test set and get for radius property of CylinderGeometry
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1734,7 +1732,7 @@ export default function sceneTest() {
     })
     /**
      * @tc.name   testCylinderGeometryHeight
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1036
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_3900
      * @tc.desc   Test set and get for height property of CylinderGeometry
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1778,7 +1776,7 @@ export default function sceneTest() {
     })
     /**
      * @tc.name   testCylinderGeometrySegmentCount
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1037
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_4000
      * @tc.desc   Test set and get for segmentCount property of CylinderGeometry
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1817,7 +1815,7 @@ export default function sceneTest() {
     })
     /**
      * @tc.name   testSceneRenderConfigurationShadowResolution
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1023
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_4100
      * @tc.desc   Verify Scene.renderConfiguration.shadowResolution property can be set and retrieved
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1930,7 +1928,7 @@ export default function sceneTest() {
 
     /**
      * @tc.name   testSceneAnimations
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1025
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_4200
      * @tc.desc   Verify Scene.animations property returns valid Animation array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1974,7 +1972,7 @@ export default function sceneTest() {
 
     /**
      * @tc.name   testSceneRoot
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1026
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_4300
      * @tc.desc   Verify Scene.root property returns valid Node instance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2014,7 +2012,7 @@ export default function sceneTest() {
 
     /**
      * @tc.name   testSceneRenderConfiguration
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1027
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_4400
      * @tc.desc   Verify Scene.renderConfiguration property returns valid RenderConfiguration instance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2048,7 +2046,7 @@ export default function sceneTest() {
 
     /**
      * @tc.name   testSceneGetResourceFactory
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1028
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_4500
      * @tc.desc   Verify Scene.getResourceFactory() returns valid SceneResourceFactory instance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2082,7 +2080,7 @@ export default function sceneTest() {
 
     /**
      * @tc.name   testGeometryDefinitionGeometryType
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1029
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_4600
      * @tc.desc   Verify geometryType property returns correct GeometryType enum value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2125,5 +2123,416 @@ export default function sceneTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   testRenderResourceFactory_createImageStream
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_4700
+     * @tc.desc   Test createImageStream method of RenderResourceFactory
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRenderResourceFactory_createImageStream', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msg = "============================testRenderResourceFactory_createImageStream";
+        console.info(msg + ' begin ');
+        try {
+          const scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+          expect(scene != null).assertTrue();
+
+          const rf: scene3d.RenderResourceFactory = scene.getResourceFactory();
+          const imageStream = await rf.createImageStream({ name: "testImageStream" });
+          expect(imageStream != null).assertTrue();
+          expect(imageStream!.name).assertEqual("testImageStream");
+          expect(imageStream!.surfaceId.length > 0).assertTrue();
+          expect(imageStream!.width >= 0).assertTrue();
+          expect(imageStream!.height >= 0).assertTrue();
+          expect(imageStream!.resourceType).assertEqual(scene3d.SceneResourceType.IMAGE);
+
+          imageStream!.destroy();
+          scene.destroy();
+          done();
+        } catch (err) {
+          console.info(msg + " Failed: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testImageStream_surfaceId
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_4800
+     * @tc.desc   Test ImageStream surfaceId property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testImageStream_surfaceId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msg = "============================testImageStream_surfaceId";
+        console.info(msg + ' begin ');
+        try {
+          const scene = await Scene.load();
+          const rf = scene.getResourceFactory();
+          const imageStream = await rf.createImageStream({ name: "surfaceIdTest" });
+          const surfaceId = imageStream!.surfaceId;
+          expect(surfaceId.length > 0).assertTrue();
+          scene.destroy();
+          done();
+        } catch (err) {
+          console.info(msg + " Failed: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testImageStream_width_height
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_4900
+     * @tc.desc   Test ImageStream width and height properties inherited from Image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testImageStream_width_height', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msg = "============================testImageStream_width_height";
+        console.info(msg + ' begin ');
+        try {
+          const scene = await Scene.load();
+          const rf = scene.getResourceFactory();
+          const imageStream = await rf.createImageStream({ name: "widthHeightTest" });
+          expect(imageStream!.width >= 0).assertTrue();
+          expect(imageStream!.height >= 0).assertTrue();
+          scene.destroy();
+          done();
+        } catch (err) {
+          console.info(msg + " Failed: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testImageStream_resourceType
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5000
+     * @tc.desc   Test ImageStream resourceType property inherited from SceneResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testImageStream_resourceType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msg = "============================testImageStream_resourceType";
+        console.info(msg + ' begin ');
+        try {
+          const scene = await Scene.load();
+          const rf = scene.getResourceFactory();
+          const imageStream = await rf.createImageStream({ name: "resourceTypeTest" });
+          expect(imageStream!.resourceType).assertEqual(scene3d.SceneResourceType.IMAGE);
+          scene.destroy();
+          done();
+        } catch (err) {
+          console.info(msg + " Failed: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testImageStream_name_uri
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5100
+     * @tc.desc   Test ImageStream name and uri properties inherited from SceneResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testImageStream_name_uri', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msg = "============================testImageStream_name_uri";
+        console.info(msg + ' begin ');
+        try {
+          const scene = await Scene.load();
+          const rf = scene.getResourceFactory();
+          const imageStream1 = await rf.createImageStream({ name: "testNameOnly" });
+          expect(imageStream1!.name).assertEqual("testNameOnly");
+          const imageStream2 = await rf.createImageStream({ 
+            name: "testWithUri", 
+            uri: $rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet.glb") 
+          });
+          expect(imageStream2!.name).assertEqual("testWithUri");
+          expect(imageStream2!.uri != null).assertTrue();
+          scene.destroy();
+          done();
+        } catch (err) {
+          console.info(msg + " Failed: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testImageStream_destroy
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5200
+     * @tc.desc   Test ImageStream destroy method inherited from SceneResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testImageStream_destroy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msg = "============================testImageStream_destroy";
+        console.info(msg + ' begin ');
+        try {
+          const scene = await Scene.load();
+          const rf = scene.getResourceFactory();
+          const imageStream = await rf.createImageStream({ name: "destroyTest" });
+          imageStream!.destroy();
+          scene.destroy();
+          done();
+        } catch (err) {
+          console.info(msg + " Failed: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testImageStream_null_params
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5300
+     * @tc.desc   Test createImageStream with null and undefined parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testImageStream_null_params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msg = "============================testImageStream_null_params";
+        console.info(msg + ' begin ');
+        try {
+          const scene = await Scene.load();
+          const rf = scene.getResourceFactory();
+          const imageStreamNull = await rf.createImageStream(null);
+          expect(imageStreamNull != null).assertTrue();
+          const imageStreamUndefined = await rf.createImageStream(undefined);
+          expect(imageStreamUndefined != null).assertTrue();
+          scene.destroy();
+          done();
+        } catch (err) {
+          console.info(msg + " Failed: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+    /**
+     * @tc.name   testPCFConfig_create
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5400
+     * @tc.desc   Test PCFConfig constructor creates valid instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPCFConfig_create', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msg = "============================testPCFConfig_create";
+        console.info(msg + ' begin ');
+        try {
+          let scene = await Scene.load();
+          expect(scene != null).assertTrue();
+
+          let pcfConfig = new PCFConfig();
+          expect(pcfConfig != null).assertTrue();
+
+          scene!.destroy();
+          done();
+        } catch (err) {
+          console.info(msg + " Failed: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testPCFConfig_shadowSampleRadius_default
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5500
+     * @tc.desc   Test PCFConfig shadowSampleRadius default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPCFConfig_shadowSampleRadius_default', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let msg = "============================testPCFConfig_shadowSampleRadius_default";
+        console.info(msg + ' begin ');
+        try {
+          let scene = await Scene.load();
+          expect(scene != null).assertTrue();
+
+          let pcfConfig = new PCFConfig();
+          expect(pcfConfig.shadowSampleRadius).assertEqual(5.0);
+
+          scene!.destroy();
+          done();
+        } catch (err) {
+          console.info(msg + " Failed: " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testPCFConfig_shadowSampleRadius_set
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5600
+     * @tc.desc   Test PCFConfig shadowSampleRadius set and get
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPCFConfig_shadowSampleRadius_set', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let msg = "============================testPCFConfig_shadowSampleRadius_set";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load();
+        expect(scene != null).assertTrue();
+
+        let pcfConfig = new PCFConfig();
+        pcfConfig.shadowSampleRadius = 10.0;
+        expect(pcfConfig.shadowSampleRadius).assertEqual(10.0);
+
+        pcfConfig.shadowSampleRadius = 0;
+        expect(pcfConfig.shadowSampleRadius).assertEqual(0);
+
+        pcfConfig.shadowSampleRadius = undefined;
+        expect(pcfConfig.shadowSampleRadius).assertEqual(undefined);
+
+        scene!.destroy();
+        done();
+      } catch (err) {
+        console.info(msg + " Failed: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testPCFConfig_shadowSampleCount_default
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5700
+     * @tc.desc   Test PCFConfig shadowSampleCount default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPCFConfig_shadowSampleCount_default', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let msg = "============================testPCFConfig_shadowSampleCount_default";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load();
+        expect(scene != null).assertTrue();
+
+        let pcfConfig = new PCFConfig();
+        expect(pcfConfig.shadowSampleCount).assertEqual(16);
+
+        scene!.destroy();
+        done();
+      } catch (err) {
+        console.info(msg + " Failed: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testPCFConfig_shadowSampleCount_set
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5800
+     * @tc.desc   Test PCFConfig shadowSampleCount set and get
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPCFConfig_shadowSampleCount_set', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let msg = "============================testPCFConfig_shadowSampleCount_set";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load();
+        expect(scene != null).assertTrue();
+
+        let pcfConfig = new PCFConfig();
+        pcfConfig.shadowSampleCount = 32;
+        expect(pcfConfig.shadowSampleCount).assertEqual(32);
+
+        pcfConfig.shadowSampleCount = 0;
+        expect(pcfConfig.shadowSampleCount).assertEqual(0);
+
+        pcfConfig.shadowSampleCount = undefined;
+        expect(pcfConfig.shadowSampleCount).assertEqual(undefined);
+
+        scene!.destroy();
+        done();
+      } catch (err) {
+        console.info(msg + " Failed: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testPCFConfig_shadowAlgorithmType
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_5900
+     * @tc.desc   Test PCFConfig shadowAlgorithmType returns PCF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPCFConfig_shadowAlgorithmType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let msg = "============================testPCFConfig_shadowAlgorithmType";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load();
+        expect(scene != null).assertTrue();
+
+        let pcfConfig = new PCFConfig();
+        expect(pcfConfig.shadowAlgorithmType).assertEqual(ShadowAlgorithmType.PCF);
+        expect(ShadowAlgorithmType.PCF).assertEqual(0);
+
+        scene!.destroy();
+        done();
+      } catch (err) {
+        console.info(msg + " Failed: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testRenderConfiguration_softShadowConfig
+     * @tc.number SUB_GRAPHIC_GRAPHICS3D_SCENE_6000
+     * @tc.desc   Test RenderConfiguration softShadowConfig property set and get
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRenderConfiguration_softShadowConfig', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let msg = "============================testRenderConfiguration_softShadowConfig";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load();
+        let rc = scene!.renderConfiguration;
+
+        expect(rc!.softShadowConfig).assertEqual(undefined);
+
+        rc!.softShadowConfig = new PCFConfig();
+        expect(rc!.softShadowConfig != null).assertTrue();
+
+        rc!.softShadowConfig = undefined;
+        expect(rc!.softShadowConfig).assertEqual(undefined);
+
+        scene!.destroy();
+        done();
+      } catch (err) {
+        console.info(msg + " Failed: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
   })
 }

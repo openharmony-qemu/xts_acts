@@ -30,7 +30,7 @@ class EntryAbility extends UIAbility {
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onWindowStageCreate');
-    windowStage.loadContent('pages/geolocationPermissions', (err: BusinessError<void>|null, data: undefined): void => {
+    windowStage.loadContent('pages/WebUserAgentMetadata', (err: BusinessError<void> | null): void => {
       hilog.info(0x0000, 'testTag EntryAbility', 'loadContent entering');
       if (err?.code) {
         hilog.info(0x0000, 'testTag EntryAbility', 'loadContent error');

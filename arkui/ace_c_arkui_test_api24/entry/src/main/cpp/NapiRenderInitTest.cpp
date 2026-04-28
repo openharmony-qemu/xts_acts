@@ -19,6 +19,7 @@
 #include "EllipsisMode/EllipsisModeCenterTest.h"
 #include "EllipsisMode/EllipsisModeStartTest.h"
 #include "TextGetCharacter/TextGetCharacterTest.h"
+#include "pointerEventGetCurrentLocal/PointerEventGetCurrentLocalTest.h"
 namespace ArkUICapiTest {
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
@@ -40,7 +41,9 @@ static napi_value Init(napi_env env, napi_value exports)
         {"EllipsisModeStartTest", nullptr, EllipsisModeStartTest::CreateNativeNode, 
                 nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextGetCharacterTest", nullptr, ArkUICApiDemo::TextGetCharacterTest::CreateNativeNode, 
-                nullptr, nullptr, nullptr, napi_default, nullptr}, 
+                nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"PointerEventGetCurrentLocalTest", nullptr, PointerEventGetCurrentLocalTest::CreateNativeNode,
+                nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

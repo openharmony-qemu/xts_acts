@@ -37,6 +37,7 @@
 #define CONSTANT_6 6
 #define CONSTANT_7 7
 #define CONSTANT_8 8
+#define CONSTANT_25 25
 
 #define CONSTANT_500 500
 #define CONSTANT_1000 1000
@@ -1806,6 +1807,41 @@ napi_value testNativeWindowNativeWindowHandleOptSetGetBufferGeometryAbnormal(nap
     flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_BUFFER_GEOMETRY, "abc", "abc");
     if (flag != NATIVE_ERROR_OK) { // 应为 失败
         napi_create_int32(env, CONSTANT_2 * CONSTANT_1000 + CONSTANT_3, &result);
+        return result;
+    }
+    delete initNative;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value testNativeWindowNativeWindowHandleOptCodeAbnormal(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    InitNativeWindow* initNative = new InitNativeWindow();
+    OHNativeWindow *nativeWindow = nullptr;
+    nativeWindow = initNative->returnNativeWindow();
+    if (nativeWindow == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    initNative->returnNativeImage();
+
+    int32_t width = 0;
+    int32_t height = 0;
+    int64_t desiredPresentTimeStamp = 0;
+    int32_t flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, -CONSTANT_1, NULL, NULL);
+    if (flag != NATIVE_ERROR_OK) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_DESIRED_PRESENT_TIMESTAMP, desiredPresentTimeStamp);
+    if (flag != NATIVE_ERROR_OK) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, CONSTANT_25, &height, &width);
+    if (flag != NATIVE_ERROR_OK) {
+        napi_create_int32(env, FAIL, &result);
         return result;
     }
     delete initNative;

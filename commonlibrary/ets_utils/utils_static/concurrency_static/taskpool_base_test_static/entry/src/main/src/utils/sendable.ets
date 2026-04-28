@@ -20,12 +20,12 @@ export class SimpleSendable {
 
 
 class SendableArrayClass {
-  public arr : number[]  = new Array<number>(100);
+  public arr : number[]  = Array.create<number>(100, 0);
 }
 
 
 function sendableArrayFunc() : number {
-  let arr : number[] = new Array<number>(100);
+  let arr : number[] = Array.create<number>(100, 0);
   return arr[0];
 }
 

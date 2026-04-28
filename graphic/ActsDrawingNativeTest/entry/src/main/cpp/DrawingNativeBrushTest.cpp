@@ -823,9 +823,9 @@ int TestBrushGetRedFloatNormal()
     DrawingNativeBrushTestSetUp();
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     float r = 0;
-    OH_Drawing_BrushSetColor4f(brush, 1.0f, 0.4f, 1.0f, 0.2f, nullptr);
+    OH_Drawing_BrushSetColor4f(brush, 1.0f, 1.0f, 1.0f, 0.2f, nullptr);
     EXPECT_EQ(OH_Drawing_BrushGetRedFloat(brush, &r), OH_DRAWING_SUCCESS);
-    EXPECT_EQ(r, 0.4f);
+    EXPECT_EQ(r, 1.0f);
     OH_Drawing_BrushDestroy(brush);
     DrawingNativeBrushTestTearDown();
     return OH_DRAWING_SUCCESS;

@@ -21,6 +21,10 @@
         "MainAbility/pages/getCurrentLocalPosition/getCurrentLocalPosition_MouseEvent",
         "MainAbility/pages/getCurrentLocalPosition/getCurrentLocalPosition_AxisEvent",
         "MainAbility/pages/getCurrentLocalPosition/getCurrentLocalPosition_EventLocationInfo",
-        "MainAbility/pages/getCurrentLocalPosition/getCurrentLocalPosition_FingerInfo"
+        "MainAbility/pages/getHistoricalPoints/getHistoricalPoints",
+        "MainAbility/pages/getCurrentLocalPosition/getCurrentLocalPosition_FingerInfo",
+        "MainAbility/pages/getHistoricalPoints/getHistoricalPoints_displayX",
+        "MainAbility/pages/getHistoricalPoints/getHistoricalPoints_windowX",
+        "MainAbility/pages/getHistoricalPoints/getHistoricalPoints_globalDisplayX"
     ]
 }

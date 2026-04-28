@@ -1,3 +1,5 @@
+'use static';
+
 /**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,8 +14,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-'use static';
 
 import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { Driver, ON } from '@kit.TestKit';
@@ -72,23 +72,17 @@ export default function DividerTest() {
      */
     it('dividerDefault', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ARKUI_NEW] DividerTest execute: dividerDefault START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        const driver = Driver.create();
-        const comp = await driver.findComponent(ON.id('dividerDefault'));
-        expect(!!comp).assertEqual(true);
-        let strJson = inspector.getInspectorByKey('dividerDefault');
-        let node = JSON.parseJsonElement(strJson);
-        expect(node != null).assertTrue();
-        let attrs = node.getElement('$attrs');
-        expect(attrs != null).assertTrue();
-        console.info('[ARKUI_NEW] DividerTest execute: dividerDefault END');
-        done();
-      } catch (error) {
-        console.error('[ARKUI_NEW] DividerTest execute: dividerDefault error:' + error);
-        expect().assertFail();
-        done();
-      }
+      await CommonFunc.sleep(SLEEP_TIME);
+      const driver = Driver.create();
+      const comp = await driver.findComponent(ON.id('dividerDefault'));
+      expect(!!comp).assertEqual(true);
+      let strJson = inspector.getInspectorByKey('dividerDefault');
+      let node = JSON.parseJsonElement(strJson);
+      expect(node != null).assertTrue();
+      let attrs = node.getElement('$attrs');
+      expect(attrs != null).assertTrue();
+      console.info('[ARKUI_NEW] DividerTest execute: dividerDefault END');
+      done();
     });
 
     /**
@@ -101,26 +95,20 @@ export default function DividerTest() {
      */
     it('dividerVerticalTrue', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ARKUI_NEW] DividerTest execute: dividerVerticalTrue START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        const driver = Driver.create();
-        const comp = await driver.findComponent(ON.id('dividerVerticalTrue'));
-        expect(!!comp).assertEqual(true);
-        let strJson = inspector.getInspectorByKey('dividerVerticalTrue');
-        let node = JSON.parseJsonElement(strJson);
-        expect(node != null).assertTrue();
-        let attrs = node.getElement('$attrs');
-        expect(attrs != null).assertTrue();
-        let vertical = attrs.getString('vertical');
-        console.info('[ARKUI_NEW] dividerVerticalTrue vertical = ' + vertical);
-        expect(vertical != null && vertical != undefined).assertTrue();
-        console.info('[ARKUI_NEW] DividerTest execute: dividerVerticalTrue END');
-        done();
-      } catch (error) {
-        console.error('[ARKUI_NEW] DividerTest execute: dividerVerticalTrue error:' + error);
-        expect().assertFail();
-        done();
-      }
+      await CommonFunc.sleep(SLEEP_TIME);
+      const driver = Driver.create();
+      const comp = await driver.findComponent(ON.id('dividerVerticalTrue'));
+      expect(!!comp).assertEqual(true);
+      let strJson = inspector.getInspectorByKey('dividerVerticalTrue');
+      let node = JSON.parseJsonElement(strJson);
+      expect(node != null).assertTrue();
+      let attrs = node.getElement('$attrs');
+      expect(attrs != null).assertTrue();
+      let vertical = attrs.getString('vertical');
+      console.info('[ARKUI_NEW] dividerVerticalTrue vertical = ' + vertical);
+      expect(vertical != null && vertical != undefined).assertTrue();
+      console.info('[ARKUI_NEW] DividerTest execute: dividerVerticalTrue END');
+      done();
     });
 
     /**
@@ -133,26 +121,20 @@ export default function DividerTest() {
      */
     it('dividerVerticalFalse', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ARKUI_NEW] DividerTest execute: dividerVerticalFalse START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        const driver = Driver.create();
-        const comp = await driver.findComponent(ON.id('dividerVerticalFalse'));
-        expect(!!comp).assertEqual(true);
-        let strJson = inspector.getInspectorByKey('dividerVerticalFalse');
-        let node = JSON.parseJsonElement(strJson);
-        expect(node != null).assertTrue();
-        let attrs = node.getElement('$attrs');
-        expect(attrs != null).assertTrue();
-        let vertical = attrs.getString('vertical');
-        console.info('[ARKUI_NEW] dividerVerticalFalse vertical = ' + vertical);
-        expect(vertical != null && vertical != undefined).assertTrue();
-        console.info('[ARKUI_NEW] DividerTest execute: dividerVerticalFalse END');
-        done();
-      } catch (error) {
-        console.error('[ARKUI_NEW] DividerTest execute: dividerVerticalFalse error:' + error);
-        expect().assertFail();
-        done();
-      }
+      await CommonFunc.sleep(SLEEP_TIME);
+      const driver = Driver.create();
+      const comp = await driver.findComponent(ON.id('dividerVerticalFalse'));
+      expect(!!comp).assertEqual(true);
+      let strJson = inspector.getInspectorByKey('dividerVerticalFalse');
+      let node = JSON.parseJsonElement(strJson);
+      expect(node != null).assertTrue();
+      let attrs = node.getElement('$attrs');
+      expect(attrs != null).assertTrue();
+      let vertical = attrs.getString('vertical');
+      console.info('[ARKUI_NEW] dividerVerticalFalse vertical = ' + vertical);
+      expect(vertical != null && vertical != undefined).assertTrue();
+      console.info('[ARKUI_NEW] DividerTest execute: dividerVerticalFalse END');
+      done();
     });
 
     /**
@@ -165,26 +147,20 @@ export default function DividerTest() {
      */
     it('dividerColorRed', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ARKUI_NEW] DividerTest execute: dividerColorRed START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        const driver = Driver.create();
-        const comp = await driver.findComponent(ON.id('dividerColorRed'));
-        expect(!!comp).assertEqual(true);
-        let strJson = inspector.getInspectorByKey('dividerColorRed');
-        let node = JSON.parseJsonElement(strJson);
-        expect(node != null).assertTrue();
-        let attrs = node.getElement('$attrs');
-        expect(attrs != null).assertTrue();
-        let color = attrs.getString('color');
-        console.info('[ARKUI_NEW] dividerColorRed color = ' + color);
-        expect(color != null && color.indexOf('FF0000') >= 0).assertTrue();
-        console.info('[ARKUI_NEW] DividerTest execute: dividerColorRed END');
-        done();
-      } catch (error) {
-        console.error('[ARKUI_NEW] DividerTest execute: dividerColorRed error:' + error);
-        expect().assertFail();
-        done();
-      }
+      await CommonFunc.sleep(SLEEP_TIME);
+      const driver = Driver.create();
+      const comp = await driver.findComponent(ON.id('dividerColorRed'));
+      expect(!!comp).assertEqual(true);
+      let strJson = inspector.getInspectorByKey('dividerColorRed');
+      let node = JSON.parseJsonElement(strJson);
+      expect(node != null).assertTrue();
+      let attrs = node.getElement('$attrs');
+      expect(attrs != null).assertTrue();
+      let color = attrs.getString('color');
+      console.info('[ARKUI_NEW] dividerColorRed color = ' + color);
+      expect(color != null && color.indexOf('FF0000') >= 0).assertTrue();
+      console.info('[ARKUI_NEW] DividerTest execute: dividerColorRed END');
+      done();
     });
 
     /**
@@ -197,26 +173,20 @@ export default function DividerTest() {
      */
     it('dividerStrokeWidth5', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ARKUI_NEW] DividerTest execute: dividerStrokeWidth5 START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        const driver = Driver.create();
-        const comp = await driver.findComponent(ON.id('dividerStrokeWidth5'));
-        expect(!!comp).assertEqual(true);
-        let strJson = inspector.getInspectorByKey('dividerStrokeWidth5');
-        let node = JSON.parseJsonElement(strJson);
-        expect(node != null).assertTrue();
-        let attrs = node.getElement('$attrs');
-        expect(attrs != null).assertTrue();
-        let strokeWidth = attrs.getString('strokeWidth');
-        console.info('[ARKUI_NEW] dividerStrokeWidth5 strokeWidth = ' + strokeWidth);
-        expect(strokeWidth != null && strokeWidth != undefined && strokeWidth.length > 0).assertTrue();
-        console.info('[ARKUI_NEW] DividerTest execute: dividerStrokeWidth5 END');
-        done();
-      } catch (error) {
-        console.error('[ARKUI_NEW] DividerTest execute: dividerStrokeWidth5 error:' + error);
-        expect().assertFail();
-        done();
-      }
+      await CommonFunc.sleep(SLEEP_TIME);
+      const driver = Driver.create();
+      const comp = await driver.findComponent(ON.id('dividerStrokeWidth5'));
+      expect(!!comp).assertEqual(true);
+      let strJson = inspector.getInspectorByKey('dividerStrokeWidth5');
+      let node = JSON.parseJsonElement(strJson);
+      expect(node != null).assertTrue();
+      let attrs = node.getElement('$attrs');
+      expect(attrs != null).assertTrue();
+      let strokeWidth = attrs.getString('strokeWidth');
+      console.info('[ARKUI_NEW] dividerStrokeWidth5 strokeWidth = ' + strokeWidth);
+      expect(strokeWidth != null && strokeWidth != undefined && strokeWidth.length > 0).assertTrue();
+      console.info('[ARKUI_NEW] DividerTest execute: dividerStrokeWidth5 END');
+      done();
     });
 
     /**
@@ -229,26 +199,20 @@ export default function DividerTest() {
      */
     it('dividerStrokeWidth10px', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ARKUI_NEW] DividerTest execute: dividerStrokeWidth10px START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        const driver = Driver.create();
-        const comp = await driver.findComponent(ON.id('dividerStrokeWidth10px'));
-        expect(!!comp).assertEqual(true);
-        let strJson = inspector.getInspectorByKey('dividerStrokeWidth10px');
-        let node = JSON.parseJsonElement(strJson);
-        expect(node != null).assertTrue();
-        let attrs = node.getElement('$attrs');
-        expect(attrs != null).assertTrue();
-        let strokeWidth = attrs.getString('strokeWidth');
-        console.info('[ARKUI_NEW] dividerStrokeWidth10px strokeWidth = ' + strokeWidth);
-        expect(strokeWidth != null && strokeWidth != undefined && strokeWidth.length > 0).assertTrue();
-        console.info('[ARKUI_NEW] DividerTest execute: dividerStrokeWidth10px END');
-        done();
-      } catch (error) {
-        console.error('[ARKUI_NEW] DividerTest execute: dividerStrokeWidth10px error:' + error);
-        expect().assertFail();
-        done();
-      }
+      await CommonFunc.sleep(SLEEP_TIME);
+      const driver = Driver.create();
+      const comp = await driver.findComponent(ON.id('dividerStrokeWidth10px'));
+      expect(!!comp).assertEqual(true);
+      let strJson = inspector.getInspectorByKey('dividerStrokeWidth10px');
+      let node = JSON.parseJsonElement(strJson);
+      expect(node != null).assertTrue();
+      let attrs = node.getElement('$attrs');
+      expect(attrs != null).assertTrue();
+      let strokeWidth = attrs.getString('strokeWidth');
+      console.info('[ARKUI_NEW] dividerStrokeWidth10px strokeWidth = ' + strokeWidth);
+      expect(strokeWidth != null && strokeWidth != undefined && strokeWidth.length > 0).assertTrue();
+      console.info('[ARKUI_NEW] DividerTest execute: dividerStrokeWidth10px END');
+      done();
     });
 
     /**
@@ -261,27 +225,21 @@ export default function DividerTest() {
      */
     it('dividerLineCapButt', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ARKUI_NEW] DividerTest execute: dividerLineCapButt START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        expect(LineCapStyle.Butt).assertEqual(0);
-        const driver = Driver.create();
-        const comp = await driver.findComponent(ON.id('dividerLineCapButt'));
-        expect(!!comp).assertEqual(true);
-        let strJson = inspector.getInspectorByKey('dividerLineCapButt');
-        let node = JSON.parseJsonElement(strJson);
-        expect(node != null).assertTrue();
-        let attrs = node.getElement('$attrs');
-        expect(attrs != null).assertTrue();
-        let lineCap = attrs.getString('lineCap');
-        console.info('[ARKUI_NEW] dividerLineCapButt lineCap = ' + lineCap);
-        expect(lineCap != null && lineCap != undefined && lineCap.length > 0).assertTrue();
-        console.info('[ARKUI_NEW] DividerTest execute: dividerLineCapButt END');
-        done();
-      } catch (error) {
-        console.error('[ARKUI_NEW] DividerTest execute: dividerLineCapButt error:' + error);
-        expect().assertFail();
-        done();
-      }
+      await CommonFunc.sleep(SLEEP_TIME);
+      expect(LineCapStyle.Butt).assertEqual(0);
+      const driver = Driver.create();
+      const comp = await driver.findComponent(ON.id('dividerLineCapButt'));
+      expect(!!comp).assertEqual(true);
+      let strJson = inspector.getInspectorByKey('dividerLineCapButt');
+      let node = JSON.parseJsonElement(strJson);
+      expect(node != null).assertTrue();
+      let attrs = node.getElement('$attrs');
+      expect(attrs != null).assertTrue();
+      let lineCap = attrs.getString('lineCap');
+      console.info('[ARKUI_NEW] dividerLineCapButt lineCap = ' + lineCap);
+      expect(lineCap != null && lineCap != undefined && lineCap.length > 0).assertTrue();
+      console.info('[ARKUI_NEW] DividerTest execute: dividerLineCapButt END');
+      done();
     });
 
     /**
@@ -294,27 +252,21 @@ export default function DividerTest() {
      */
     it('dividerLineCapRound', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ARKUI_NEW] DividerTest execute: dividerLineCapRound START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        expect(LineCapStyle.Round).assertEqual(1);
-        const driver = Driver.create();
-        const comp = await driver.findComponent(ON.id('dividerLineCapRound'));
-        expect(!!comp).assertEqual(true);
-        let strJson = inspector.getInspectorByKey('dividerLineCapRound');
-        let node = JSON.parseJsonElement(strJson);
-        expect(node != null).assertTrue();
-        let attrs = node.getElement('$attrs');
-        expect(attrs != null).assertTrue();
-        let lineCap = attrs.getString('lineCap');
-        console.info('[ARKUI_NEW] dividerLineCapRound lineCap = ' + lineCap);
-        expect(lineCap != null && lineCap != undefined && lineCap.length > 0).assertTrue();
-        console.info('[ARKUI_NEW] DividerTest execute: dividerLineCapRound END');
-        done();
-      } catch (error) {
-        console.error('[ARKUI_NEW] DividerTest execute: dividerLineCapRound error:' + error);
-        expect().assertFail();
-        done();
-      }
+      await CommonFunc.sleep(SLEEP_TIME);
+      expect(LineCapStyle.Round).assertEqual(1);
+      const driver = Driver.create();
+      const comp = await driver.findComponent(ON.id('dividerLineCapRound'));
+      expect(!!comp).assertEqual(true);
+      let strJson = inspector.getInspectorByKey('dividerLineCapRound');
+      let node = JSON.parseJsonElement(strJson);
+      expect(node != null).assertTrue();
+      let attrs = node.getElement('$attrs');
+      expect(attrs != null).assertTrue();
+      let lineCap = attrs.getString('lineCap');
+      console.info('[ARKUI_NEW] dividerLineCapRound lineCap = ' + lineCap);
+      expect(lineCap != null && lineCap != undefined && lineCap.length > 0).assertTrue();
+      console.info('[ARKUI_NEW] DividerTest execute: dividerLineCapRound END');
+      done();
     });
 
     /**
@@ -327,27 +279,22 @@ export default function DividerTest() {
      */
     it('dividerLineCapSquare', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ARKUI_NEW] DividerTest execute: dividerLineCapSquare START');
-      try {
-        await CommonFunc.sleep(SLEEP_TIME);
-        expect(LineCapStyle.Square).assertEqual(2);
-        const driver = Driver.create();
-        const comp = await driver.findComponent(ON.id('dividerLineCapSquare'));
-        expect(!!comp).assertEqual(true);
-        let strJson = inspector.getInspectorByKey('dividerLineCapSquare');
-        let node = JSON.parseJsonElement(strJson);
-        expect(node != null).assertTrue();
-        let attrs = node.getElement('$attrs');
-        expect(attrs != null).assertTrue();
-        let lineCap = attrs.getString('lineCap');
-        console.info('[ARKUI_NEW] dividerLineCapSquare lineCap = ' + lineCap);
-        expect(lineCap != null && lineCap != undefined && lineCap.length > 0).assertTrue();
-        console.info('[ARKUI_NEW] DividerTest execute: dividerLineCapSquare END');
-        done();
-      } catch (error) {
-        console.error('[ARKUI_NEW] DividerTest execute: dividerLineCapSquare error:' + error);
-        expect().assertFail();
-        done();
-      }
+      await CommonFunc.sleep(SLEEP_TIME);
+      expect(LineCapStyle.Square).assertEqual(2);
+      const driver = Driver.create();
+      const comp = await driver.findComponent(ON.id('dividerLineCapSquare'));
+      expect(!!comp).assertEqual(true);
+      let strJson = inspector.getInspectorByKey('dividerLineCapSquare');
+      let node = JSON.parseJsonElement(strJson);
+      expect(node != null).assertTrue();
+      let attrs = node.getElement('$attrs');
+      expect(attrs != null).assertTrue();
+      let lineCap = attrs.getString('lineCap');
+      console.info('[ARKUI_NEW] dividerLineCapSquare lineCap = ' + lineCap);
+      expect(lineCap != null && lineCap != undefined && lineCap.length > 0).assertTrue();
+      console.info('[ARKUI_NEW] DividerTest execute: dividerLineCapSquare END');
+      done();
     });
+    
   });
 }

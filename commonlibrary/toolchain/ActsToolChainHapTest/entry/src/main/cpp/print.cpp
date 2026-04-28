@@ -19,6 +19,10 @@
 #include "CommonTool.h"
 #include "test.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 volatile int g_tStatus = 0;
 
 int TPrintf(const char* s, ...)
@@ -35,3 +39,7 @@ int TPrintf(const char* s, ...)
     va_end(ap);
     return -1;
 }
+
+#ifdef __cplusplus
+}
+#endif

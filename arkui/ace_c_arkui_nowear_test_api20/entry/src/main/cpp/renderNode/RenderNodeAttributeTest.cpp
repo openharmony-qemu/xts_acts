@@ -633,12 +633,12 @@ static napi_value TestShadowRadius(napi_env env, napi_callback_info info)
     auto rsNode = OH_ArkUI_RenderNodeUtils_CreateNode();
     OH_ArkUI_RenderNodeUtils_AddRenderNode(Custom, rsNode);
     
-    float radius = 0;
+    float radius = -1;
     auto result = OH_ArkUI_RenderNodeUtils_GetShadowRadius(rsNode, &radius);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk OH_ArkUI_RenderNodeUtils_GetShadowRadius result=%{public}d", result);
     ASSERT_EQ(result, ARKUI_ERROR_CODE_NO_ERROR);
-    ASSERT_EQ(radius, 0);
+    ASSERT_EQ(radius, -1);
 
     auto ret1 = OH_ArkUI_RenderNodeUtils_SetShadowRadius(rsNode, NUMBER_100);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",

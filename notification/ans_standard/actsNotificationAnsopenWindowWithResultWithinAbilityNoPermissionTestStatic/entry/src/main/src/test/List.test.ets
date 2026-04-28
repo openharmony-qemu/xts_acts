@@ -1,5 +1,0 @@
-
-import ActsNotificationAnsopenWindowWithResultWithinAbilityNoPermissionStaticTest from './ActsNotificationAnsopenWindowWithResultWithinAbilityNoPermissionStaticTest.test';
-export default function testsuite() {
-  ActsNotificationAnsopenWindowWithResultWithinAbilityNoPermissionStaticTest();
-}

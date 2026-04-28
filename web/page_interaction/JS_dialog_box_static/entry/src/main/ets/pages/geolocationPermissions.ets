@@ -24,7 +24,7 @@ import { JsProxyObject } from '../../src/test/Interfaces';
 import { Callback } from '@ohos.base'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
-class StringFields {
+export class StringFields {
   str: string = '';
 }
 

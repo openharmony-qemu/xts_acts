@@ -43,6 +43,8 @@
     "MainAbility/pages/MenuNullUndefined/closeMenu",
     "MainAbility/pages/MenuNullUndefined/openMenu",
     "MainAbility/pages/MenuNullUndefined/updateMenu",
-    "MainAbility/pages/MenuItemNull/MenuItemNull"
+    "MainAbility/pages/MenuItemNull/MenuItemNull",
+    "MainAbility/pages/Menu/scrollBar",
+    "MainAbility/pages/Menu/maxHeight"
   ]
 }

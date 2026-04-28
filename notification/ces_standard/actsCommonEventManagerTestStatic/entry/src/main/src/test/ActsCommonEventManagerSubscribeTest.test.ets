@@ -399,7 +399,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
             }
           })
 
-          waitForCompletion(async () => {await Utils.msSleep(1000)})
+          Utils.msSleep(1000).awaitSync()
           count = 0;
           console.info(TAG+`getAbortCommonEventSync isaborted ${isaborted}`)
           subscriber!.clearAbortCommonEventSync()
@@ -469,7 +469,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
         done()
       }
       commonEventManager.subscribe(subscriber!, (err: BusinessError | null, data: commonEventManager.CommonEventData|undefined)=> {
-      waitForCompletion(async () => {
+      (async () => {
         if (err) {
           console.error(TAG+`subscribe failed, code is ${err.code}, message is ${err.message}`)
           expect(false).assertTrue()
@@ -528,7 +528,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
             done()
           })
         }
-      })
+      })().awaitSync()
       })
 
       let publishCB=(err: BusinessError|null)=> {

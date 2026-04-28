@@ -23,7 +23,10 @@ import { GlobalContext } from '../../../../src/main/ets/pages/HomePage';
 import certManagerDialog from '@ohos.security.certManagerDialog';
 import deviceInfo from '@ohos.deviceInfo';
 import type common from '@ohos.app.ability.common';
-
+function generateString(len: number){
+  let str: string = 'a';
+  return str.repeat(len);
+}
 let caCert = new Uint8Array([0x30, 0x82, 0x04, 0x31, 0x30, 0x82, 0x03, 0x19, 0xa0, 0x03, 0x02, 0x01, 0x02, 0x02, 0x01, 0x00,
   0x30, 0x0d, 0x06, 0x09, 0x2a, 0x86, 0x48, 0x86, 0xf7, 0x0d, 0x01, 0x01, 0x05, 0x05, 0x00, 0x30,
   0x81, 0x95, 0x31, 0x0b, 0x30, 0x09, 0x06, 0x03, 0x55, 0x04, 0x06, 0x13, 0x02, 0x47, 0x52, 0x31,
@@ -273,7 +276,7 @@ export default function api16CertFuncTestTwoUnit() {
       // This API supports only one parameter: clear action function.
     })
 	
-	/**
+	  /**
      * @tc.name   SUB_Security_CertManager_InstallUserTrustedCertificates_0000
      * @tc.number SUB_Security_CertManager_InstallUserTrustedCertificates_0000
      * @tc.desc   normal test
@@ -699,6 +702,56 @@ export default function api16CertFuncTestTwoUnit() {
       }
       done();
     });
+    /**
+    * @tc.name   SUB_Security_CertManager_OpenUninstallCertificateDialog_0100
+     * @tc.number SUB_Security_CertManager_OpenUninstallCertificateDialog_0100
+     * @tc.desc   Call OpenUninstallCertificateDialog interface with length of certUri is 255 return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_CertManager_OpenUninstallCertificateDialog_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_OpenUninstallCertificateDialog_0100: started ");
+      let uir ='oh:t=c;o=object;u=100;a=20010044';
+      let uriObject = generateString(255-27);
+      const context :common.Context = GlobalContext.getContext();
+      if (deviceInfo.deviceType == '2in1') {
+        let certificateType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CA_CERT;
+        try {
+          await certManagerDialog.openUninstallCertificateDialog(context, certificateType, uir.replace("object", uriObject))
+          expect(null).assertFail();
+        } catch (err) {
+          console.log("SUB_Security_CertManager_OpenUninstallCertificateDialog_0100: e.code " + err.code);
+          expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_OPERATION_FAILED);
+        }
+      }
+      done();
+    });
+    /**
+    * @tc.name   SUB_Security_CertManager_OpenUninstallCertificateDialog_0200
+     * @tc.number SUB_Security_CertManager_OpenUninstallCertificateDialog_0200
+     * @tc.desc   Call OpenUninstallCertificateDialog interface with length of certUri is 256 return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_CertManager_OpenUninstallCertificateDialog_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_OpenUninstallCertificateDialog_0200: started ");
+      let uir ='oh:t=c;o=object;u=100;a=20010044';
+      let uriObject = generateString(256-27);
+      const context :common.Context = GlobalContext.getContext();
+      if (deviceInfo.deviceType == '2in1') {
+        let certificateType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CA_CERT;
+        try {
+          await certManagerDialog.openUninstallCertificateDialog(context, certificateType, uir.replace("object", uriObject))
+          expect(null).assertFail();
+        } catch (err) {
+          console.log("SUB_Security_CertManager_OpenUninstallCertificateDialog_0200: e.code " + err.code);
+          expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_OPERATION_FAILED);
+        }
+      }
+      done();
+    });
 
 
     /**
@@ -945,7 +998,6 @@ export default function api16CertFuncTestTwoUnit() {
       }
       done();
     });
-
     /**
      * @tc.name   SUB_Security_CertManager_InstallCaCert_0107
      * @tc.number SUB_Security_CertManager_InstallCaCert_0107
@@ -1750,6 +1802,87 @@ export default function api16CertFuncTestTwoUnit() {
       }
       done();
     });
-  
+	  /**
+     * @tc.name   SUB_Security_CertManager_getUserTrustedCertificate_0100
+     * @tc.number SUB_Security_CertManager_getUserTrustedCertificate_0100
+     * @tc.desc   Call getUserTrustedCertificate interface with length of certUri is 255 return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_getUserTrustedCertificate_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_Security_CertManager_getUserTrustedCertificate_0100 start');
+      let uri = generateString(255);
+      try{
+        await certManager.getUserTrustedCertificate(uri);
+        expect(null).assertFail();
+      }catch(error){
+        console.error("SUB_Security_CertManager_getUserTrustedCertificate_0100 failed to get user trusted certificate.")
+        expect(error.code).assertEqual(401);
+      }
+      console.info('SUB_Security_CertManager_getUserTrustedCertificate_0100 end');
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_getUserTrustedCertificate_0200
+     * @tc.number SUB_Security_CertManager_getUserTrustedCertificate_0200
+     * @tc.desc   Call getUserTrustedCertificate interface with length of certUri is 256 return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_getUserTrustedCertificate_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_Security_CertManager_getUserTrustedCertificate_0200 start');
+      let uri = generateString(256);
+      try{
+        await certManager.getUserTrustedCertificate(uri);
+        expect(null).assertFail();
+      }catch(error){
+        console.error("SUB_Security_CertManager_getUserTrustedCertificate_0200 failed to get user trusted certificate.")
+        expect(error.code).assertEqual(401);
+      }
+      console.info('SUB_Security_CertManager_getUserTrustedCertificate_0200 end');
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0100
+     * @tc.number SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0100
+     * @tc.desc   Call uninstallUserTrustedCertificateSync interface with length of certUri is 255 return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0100 start');
+      try{
+        await certManager.uninstallUserTrustedCertificateSync(generateString(255));
+        expect(null).assertFail();
+      }catch(error){
+        console.error("SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0100 failed to uninstall user trusted certificate.")
+        expect(error.code).assertEqual(401);
+      }
+      console.info('SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0100 end');
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0200
+     * @tc.number SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0200
+     * @tc.desc   Call uninstallUserTrustedCertificateSync interface with length of certUri is 256 return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0200 start');
+      try{
+        await certManager.uninstallUserTrustedCertificateSync(generateString(256));
+        expect(null).assertFail();
+      }catch(error){
+        console.error("SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0200 failed to uninstall user trusted certificate.")
+        expect(error.code).assertEqual(401);
+      }
+      console.info('SUB_Security_CertManager_uninstallUserTrustedCertificateSync_0200 end');
+      done();
+    });
   })
 }

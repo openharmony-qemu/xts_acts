@@ -21,5 +21,11 @@ int RecvmmsgTime64Test();
 int Accept4Test();
 int DnCompTest();
 int DnSkipnameTest();
+int InetAddrTest();
+int InetNtopTest();
+int ResMkqueryTest();
+int ResQueryTest();
+int ResQuerydomainTest();
+int SendmmsgTest();
 
 #endif // SRC_FUNCTIONALEXT_SUPPLEMENT_NETWORK_H_H

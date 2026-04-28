@@ -98,7 +98,7 @@ export default function RichEditorQueryLayout020() {
       let delLayoutStyleText = await delLayoutStyle.getText();
       await CommonFunc.sleep(500);
       expect(delLayoutStyleText.indexOf('"borderRadius":"10.00px"') > 0).assertEqual(true);
-      expect(delLayoutStyleText.indexOf('"margin":{"top":"21.00px","left":"21.00px","right":"21.00px","bottom":"21.00px"}') > 0).assertEqual(true);
+      expect(delLayoutStyleText.indexOf('"margin":{"top":"21.00px","right":"21.00px","bottom":"21.00px","left":"21.00px"}') > 0).assertEqual(true);
 
       let paragraphStyle = await (driver.findComponent(ON.id('paragraphStyle')) as Promise<Component>);
       let paragraphStyleText = await paragraphStyle.getText();

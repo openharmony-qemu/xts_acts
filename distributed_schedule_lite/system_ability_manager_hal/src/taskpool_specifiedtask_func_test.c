@@ -257,6 +257,16 @@ static BOOL SpecifiedTaskFuncTestSuiteSetUp(void)
 
 static BOOL SpecifiedTaskFuncTestSuiteTearDown(void)
 {
+    SAMGR_GetInstance()->UnregisterFeatureApi("SpecifiedT01", "featureName501");
+    SAMGR_GetInstance()->UnregisterFeature("SpecifiedT01", "featureName501");
+    SAMGR_GetInstance()->UnregisterDefaultFeatureApi("SpecifiedT01");
+    SAMGR_GetInstance()->UnregisterService("SpecifiedT01");
+    
+    SAMGR_GetInstance()->UnregisterFeatureApi("SpecifiedT02", "featureName501");
+    SAMGR_GetInstance()->UnregisterFeature("SpecifiedT02", "featureName501");
+    SAMGR_GetInstance()->UnregisterDefaultFeatureApi("SpecifiedT02");
+    SAMGR_GetInstance()->UnregisterService("SpecifiedT02");
+    
     return TRUE;
 }
 
@@ -290,6 +300,8 @@ LITE_TEST_CASE(SpecifiedTaskFuncTestSuite, testSpecifiedTask0010, Function | Med
     TEST_ASSERT_EQUAL_INT(result2 == 0, TRUE);
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(g_createFeature.featureCalledCount == 1, TRUE);
+    free(request.data);
+    request.data = NULL;
 
     // *************************** //
     DefaultFeatureApi *defaultApi = GetDefaultIUnknown("SpecifiedT01");
@@ -312,6 +324,8 @@ LITE_TEST_CASE(SpecifiedTaskFuncTestSuite, testSpecifiedTask0010, Function | Med
     TEST_ASSERT_EQUAL_INT(result2 == 0, TRUE);
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(g_service[0].serviceCalledCount == 1, TRUE);
+    free(request2.data);
+    request2.data = NULL;
 };
 
 /**
@@ -344,6 +358,8 @@ LITE_TEST_CASE(SpecifiedTaskFuncTestSuite, testSpecifiedTask0020, Function | Med
     TEST_ASSERT_EQUAL_INT(result2 == 0, TRUE);
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(g_createFeature.featureCalledCount == 1, TRUE);
+    free(request.data);
+    request.data = NULL;
 
     // *************************** //
     DefaultFeatureApi *defaultApi = GetDefaultIUnknown("SpecifiedT02");
@@ -366,6 +382,8 @@ LITE_TEST_CASE(SpecifiedTaskFuncTestSuite, testSpecifiedTask0020, Function | Med
     TEST_ASSERT_EQUAL_INT(result2 == 0, TRUE);
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(g_service[0].serviceCalledCount == 1, TRUE);
+    free(request2.data);
+    request2.data = NULL;
 };
 
 /**
@@ -391,6 +409,8 @@ LITE_TEST_CASE(SpecifiedTaskFuncTestSuite, testSpecifiedTask0030, Function | Med
     }
     strcpy_s(request.data, request.len, body);
     defaultApi->SendRequestProxyDF(&(g_service[0].identity), &request, NULL);
+    free(request.data);
+    request.data = NULL;
 
     DefaultFeatureApi *defaultApi2 = GetDefaultIUnknown("SpecifiedT01");
     if (defaultApi2 == NULL) {
@@ -405,6 +425,8 @@ LITE_TEST_CASE(SpecifiedTaskFuncTestSuite, testSpecifiedTask0030, Function | Med
     }
     strcpy_s(request2.data, request2.len, body2);
     defaultApi2->SendRequestProxyDF(&(g_service[1].identity), &request2, NULL);
+    free(request2.data);
+    request2.data = NULL;
 
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(g_servicePoint1 == g_servicePoint2, TRUE);

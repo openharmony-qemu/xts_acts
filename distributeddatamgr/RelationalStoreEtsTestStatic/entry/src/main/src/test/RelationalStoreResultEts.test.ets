@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -63,7 +63,7 @@ let STORE_CONFIG2 :data_relationalStore.StoreConfig = {
 let rdbStore: data_relationalStore.RdbStore | undefined;
 let rdbStore1: data_relationalStore.RdbStore | undefined;
 let rdbStore2: data_relationalStore.RdbStore | undefined;
-let vbs :Array<data_relationalStore.ValuesBucket> = new Array<data_relationalStore.ValuesBucket>(3);
+let vbs :Array<data_relationalStore.ValuesBucket> = [];
 const valueBucket0 :data_relationalStore.ValuesBucket = {
   "data1": "hello",
   "data2": 10 as long,
@@ -82,9 +82,9 @@ const valueBucket2 :data_relationalStore.ValuesBucket = {
   "data3": 100000.9,
   "data4": new Uint8Array(0),
 }
-vbs[0] = valueBucket0
-vbs[1] = valueBucket1
-vbs[2] = valueBucket2
+vbs.push(valueBucket0)
+vbs.push(valueBucket1)
+vbs.push(valueBucket2)
 
 let options:data_relationalStore.TransactionOptions = {
   transactionType:data_relationalStore.TransactionType.DEFERRED
@@ -261,7 +261,7 @@ export default function RdbResultSetTest() {
     it('testRdbTransactionInsert0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRdbTransactionInsert0001 start *************');
       await rdbStore1!.execute(CREATE_TABLE_TESTTRANS);
-      let vbs :Array<data_relationalStore.ValuesBucket> = new Array<data_relationalStore.ValuesBucket>(1);
+      let vbs :Array<data_relationalStore.ValuesBucket> = [];
       let u8 = new Uint8Array([1, 2, 3])
       try {
         const rdbTrans = await rdbStore1!.createTransaction(options);
@@ -271,7 +271,7 @@ export default function RdbResultSetTest() {
           "salary": 100.5,
           "blobType": u8,
         }
-        vbs[0] = valueBucket
+        vbs.push(valueBucket)
         let num = await rdbTrans.batchInsert(TABLE_NAME, vbs);
         hilog.info(domain, tag, 'Insert %{public}d rows.', num);
 
@@ -299,7 +299,7 @@ export default function RdbResultSetTest() {
     it('testRdbTransactionInsert0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '************* testRdbTransactionInsert0002 start *************');
       await rdbStore1!.execute(CREATE_TABLE_TESTTRANS);
-      let vbs :Array<data_relationalStore.ValuesBucket> = new Array<data_relationalStore.ValuesBucket>(3);
+      let vbs :Array<data_relationalStore.ValuesBucket> = [];
       let u8 = new Uint8Array([1, 2, 3]);
       try {
         const rdbTrans = await rdbStore1!.createTransaction(options);
@@ -309,7 +309,7 @@ export default function RdbResultSetTest() {
           "salary": 100.5,
           "blobType": u8,
         }
-        vbs[0] = valueBucket
+        vbs.push(valueBucket)
 
         const valueBucket1 :data_relationalStore.ValuesBucket = {
           "name": "zhangsan",
@@ -317,7 +317,7 @@ export default function RdbResultSetTest() {
           "salary": 9.5,
           "blobType": u8,
         }
-        vbs[1] = valueBucket1
+        vbs.push(valueBucket1)
 
         const valueBucket2 :data_relationalStore.ValuesBucket = {
           "name": "wangwu",
@@ -325,7 +325,7 @@ export default function RdbResultSetTest() {
           "salary": 99.0,
           "blobType": u8,
         }
-        vbs[2] = valueBucket2
+        vbs.push(valueBucket2)
 
         let num =await rdbTrans.batchInsert(TABLE_NAME, vbs);
         hilog.info(domain, tag, 'Insert %{public}d rows.', num)

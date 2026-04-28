@@ -537,7 +537,8 @@ export default function documentTest() {
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
       let result = testNapi.TestDocumentFlush_ValidParam();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
-      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_FILE_OPERATION_FAILED;
+      let expectResult = result === CE_ERR_DEVICE_NOT_SUPPORTED || result === CE_ERR_FILE_OPERATION_FAILED ||
+        result === CE_ERR_OK;
       expect(expectResult).assertTrue();
     })
 

@@ -527,12 +527,12 @@ export default function fileIOWatcher() {
       expect(res).assertTrue();
 
       try {
-        let resWatcher: Watcher[] = new Array<Watcher>(5);
-        resWatcher[0] = fs.createWatcher(dpath, watcherEvent.get('IN_OPEN', 0x00000020), callback);
-        resWatcher[1] = fs.createWatcher(dpath, watcherEvent.get('IN_ACCESS', 0x00000001), callback);
-        resWatcher[2] = fs.createWatcher(dpath, watcherEvent.get('IN_CLOSE_NOWRITE', 0x00000010), callback);
-        resWatcher[3] = fs.createWatcher(dpath, watcherEvent.get('IN_MODIFY', 0x00000002), callback);
-        resWatcher[4] = fs.createWatcher(dpath, watcherEvent.get('IN_CLOSE_WRITE', 0x00000008), callback);
+        let resWatcher: Watcher[] = new Array<Watcher>();
+        resWatcher.push(fs.createWatcher(dpath, watcherEvent.get('IN_OPEN', 0x00000020), callback));
+        resWatcher.push(fs.createWatcher(dpath, watcherEvent.get('IN_ACCESS', 0x00000001), callback));
+        resWatcher.push(fs.createWatcher(dpath, watcherEvent.get('IN_CLOSE_NOWRITE', 0x00000010), callback));
+        resWatcher.push(fs.createWatcher(dpath, watcherEvent.get('IN_MODIFY', 0x00000002), callback));
+        resWatcher.push(fs.createWatcher(dpath, watcherEvent.get('IN_CLOSE_WRITE', 0x00000008), callback));
         resWatcher.forEach(element => { element.start(); });
         let file1 = fs.openSync(fpath1, fs.OpenMode.READ_ONLY);
         let file2 = fs.openSync(fpath2, fs.OpenMode.READ_WRITE);

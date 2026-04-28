@@ -25,9 +25,9 @@ import {
 import Utils from './Util.test';
 import { BaseClass, sleep } from '../utils/Model';
 
-export default function RWLockEnhancedTest() {
+export default function RWLockEnhancedTest(): void {
   describe('RWLockEnhancedTest', (): void => {
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.msSleep(200);
     })
 
@@ -43,18 +43,18 @@ export default function RWLockEnhancedTest() {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedReadToWriteUpgrade';
         console.info(`${TAG} test start`);
-        let rwLock = new RWLock();
+        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
         let rLock = rwLock.readLock();
         let wLock = rwLock.writeLock();
         let result = new AtomicReference<string>('');
 
-        rLock.lock();
+        await rLock.lock();
         result.exchange(result.load() + 'R');
 
         let worker = new EAWorker();
         worker.start();
-        let job = worker.run<void>(() => {
-          wLock.lock();
+        let job = worker.run<Promise<void>>(async (): Promise<void> => {
+          await wLock.lock();
           result.exchange(result.load() + 'W');
           wLock.unlock();
         });
@@ -62,7 +62,7 @@ export default function RWLockEnhancedTest() {
         await sleep(200);
         rLock.unlock();
 
-        job.Await();
+        await job.Await();
         worker.join();
         await sleep(200);
 
@@ -83,19 +83,19 @@ export default function RWLockEnhancedTest() {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedWriteToReadReadDowngrade';
         console.info(`${TAG} test start`);
-        let rwLock = new RWLock();
+        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
         let rLock = rwLock.readLock();
         let wLock = rwLock.writeLock();
         let result = new AtomicReference<string>('');
         let workerCompleted = new AtomicInt(0);
 
-        wLock.lock();
+        await wLock.lock();
         result.exchange(result.load() + 'W1');
 
         let worker = new EAWorker();
         worker.start();
-        worker.run<void>(() => {
-          rLock.lock();
+        worker.run<Promise<void>>(async (): Promise<void> => {
+          await rLock.lock();
           result.exchange(result.load() + 'R');
           rLock.unlock();
           workerCompleted.fetchAdd(1);
@@ -127,15 +127,15 @@ export default function RWLockEnhancedTest() {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedMultipleReadLocksNested';
         console.info(`${TAG} test start`);
-        let rwLock = new RWLock();
+        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
         let rLock1 = rwLock.readLock();
         let rLock2 = rwLock.readLock();
         let count = new AtomicInt(0);
 
-        rLock1.lock();
+        await rLock1.lock();
         count.fetchAdd(1);
 
-        rLock2.lock();
+        await rLock2.lock();
         count.fetchAdd(1);
 
         rLock2.unlock();
@@ -158,7 +158,7 @@ export default function RWLockEnhancedTest() {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedWriterStarvation';
         console.info(`${TAG} test start`);
-        let rwLock = new RWLock();
+        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
         let rLock = rwLock.readLock();
         let wLock = rwLock.writeLock();
         let writerExecuted = new AtomicInt(0);
@@ -166,10 +166,10 @@ export default function RWLockEnhancedTest() {
         let readCompleted = new AtomicInt(0);
 
         for (let i = 0; i < 20; i++) {
-          taskpool.execute(() => {
-            rLock.lock();
+          taskpool.execute(async (): Promise<void> => {
+            await rLock.lock();
             readCount.fetchAdd(1);
-            setTimeout(() => {
+            setTimeout((): void => {
               rLock.unlock();
               readCompleted.fetchAdd(1);
             }, 30);
@@ -180,8 +180,8 @@ export default function RWLockEnhancedTest() {
           await sleep(50);
         }
 
-        taskpool.execute(() => {
-          wLock.lock();
+        taskpool.execute(async (): Promise<void> => {
+          await wLock.lock();
           writerExecuted.fetchAdd(1);
           wLock.unlock();
         });
@@ -208,7 +208,7 @@ export default function RWLockEnhancedTest() {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedReaderStarvation';
         console.info(`${TAG} test start`);
-        let rwLock = new RWLock();
+        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
         let rLock = rwLock.readLock();
         let wLock = rwLock.writeLock();
         let readerExecuted = new AtomicInt(0);
@@ -216,10 +216,10 @@ export default function RWLockEnhancedTest() {
         let writeCompleted = new AtomicInt(0);
 
         for (let i = 0; i < 10; i++) {
-          taskpool.execute(() => {
-            wLock.lock();
+          taskpool.execute(async (): Promise<void> => {
+            await wLock.lock();
             writeCount.fetchAdd(1);
-            setTimeout(() => {
+            setTimeout((): void => {
               wLock.unlock();
               writeCompleted.fetchAdd(1);
             }, 20);
@@ -230,8 +230,8 @@ export default function RWLockEnhancedTest() {
           await sleep(50);
         }
 
-        taskpool.execute(() => {
-          rLock.lock();
+        taskpool.execute(async (): Promise<void> => {
+          await rLock.lock();
           readerExecuted.fetchAdd(1);
           rLock.unlock();
         });
@@ -258,7 +258,7 @@ export default function RWLockEnhancedTest() {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedMassiveReadersWriters';
         console.info(`${TAG} test start`);
-        let rwLock = new RWLock();
+        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
         let readCount = new AtomicInt(0);
         let writeCount = new AtomicInt(0);
         let readCompleted = new AtomicInt(0);
@@ -266,11 +266,12 @@ export default function RWLockEnhancedTest() {
         let class1 = new BaseClass();
 
         for (let i = 0; i < 50; i++) {
-          taskpool.execute(() => {
-            rwLock.readLock().lock();
+          taskpool.execute(async (): Promise<void> => {
+            let readLock = rwLock.readLock();
+            await readLock.lock();
             readCount.fetchAdd(1);
-            class1.increaseCount();
-            rwLock.readLock().unlock();
+            await class1.increaseCount();
+            readLock.unlock();
             readCompleted.fetchAdd(1);
           });
         }
@@ -278,11 +279,12 @@ export default function RWLockEnhancedTest() {
         for (let i = 0; i < 5; i++) {
           let eaw = new EAWorker();
           eaw.start();
-          eaw.run<void>(() => {
-            rwLock.writeLock().lock();
+          eaw.run<Promise<void>>(async (): Promise<void> => {
+            let writeLock = rwLock.writeLock();
+            await writeLock.lock();
             writeCount.fetchAdd(1);
-            class1.increaseCount();
-            rwLock.writeLock().unlock();
+            await class1.increaseCount();
+            writeLock.unlock();
             writeCompleted.fetchAdd(1);
           }).Await();
           eaw.join();
@@ -309,18 +311,18 @@ export default function RWLockEnhancedTest() {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedAlternatingReadWrite';
         console.info(`${TAG} test start`);
-        let rwLock = new RWLock();
+        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
         let rLock = rwLock.readLock();
         let wLock = rwLock.writeLock();
         let sequence: string[] = [];
         let iterations = 10;
 
         for (let i = 0; i < iterations; i++) {
-          rLock.lock();
+          await rLock.lock();
           sequence.push('R');
           rLock.unlock();
 
-          wLock.lock();
+          await wLock.lock();
           sequence.push('W');
           wLock.unlock();
         }
@@ -342,18 +344,19 @@ export default function RWLockEnhancedTest() {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedReaderDataConsistency';
         console.info(`${TAG} test start`);
-        let rwLock = new RWLock();
+        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
         let data: BaseClass = new BaseClass();
         let writeCount = new AtomicInt(0);
         let readCount = new AtomicInt(0);
 
         let eaw = new EAWorker();
         eaw.start();
-        eaw.run<void>(():void => {
-          rwLock.writeLock().lock();
-          data.increaseCount();
+        eaw.run<Promise<void>>(async (): Promise<void> => {
+          let writeLock = rwLock.writeLock();
+          await writeLock.lock();
+          await data.increaseCount();
           writeCount.fetchAdd(1);
-          rwLock.writeLock().unlock();
+          writeLock.unlock();
         }).Await();
         eaw.join();
         while (writeCount.load() < 1) {
@@ -361,11 +364,12 @@ export default function RWLockEnhancedTest() {
         }
 
         for (let i = 0; i < 10; i++) {
-          taskpool.execute(() => {
-            rwLock.readLock().lock();
-            let val = data.getCount();
+          taskpool.execute(async (): Promise<void> => {
+            let readLock = rwLock.readLock();
+            await readLock.lock();
+            await data.getCount();
             readCount.fetchAdd(1);
-            rwLock.readLock().unlock();
+            readLock.unlock();
           });
         }
 
@@ -391,25 +395,25 @@ export default function RWLockEnhancedTest() {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedWriterExclusivity';
         console.info(`${TAG} test start`);
-        let rwLock = new RWLock();
+        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
         let wLock = rwLock.writeLock();
         let concurrentWrites = new AtomicInt(0);
         let maxConcurrent = new AtomicInt(0);
         let workerStarted = new AtomicInt(0);
         let workerCompleted = new AtomicInt(0);
 
-        wLock.lock();
+        await wLock.lock();
 
         let worker = new EAWorker();
         worker.start();
-        let job = worker.run<void>(() => {
+        let job = worker.run<Promise<void>>(async (): Promise<void> => {
           workerStarted.fetchAdd(1);
-          wLock.lock();
+          await wLock.lock();
           concurrentWrites.fetchAdd(1);
           if (concurrentWrites.load() > maxConcurrent.load()) {
             maxConcurrent.store(concurrentWrites.load());
           }
-          setTimeout(() => {
+          setTimeout((): void => {
             concurrentWrites.fetchSub(1);
             wLock.unlock();
             workerCompleted.fetchAdd(1);
@@ -427,7 +431,7 @@ export default function RWLockEnhancedTest() {
         while (workerCompleted.load() < 1) {
           await sleep(50);
         }
-        job.Await();
+        await job.Await();
         worker.join();
 
         console.info(`${TAG} max concurrent writes: ${maxConcurrent.load()}`);
@@ -447,11 +451,11 @@ export default function RWLockEnhancedTest() {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedReadLockDoubleUnlock';
         console.info(`${TAG} test start`);
-        let rwLock = new RWLock();
+        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
         let rLock = rwLock.readLock();
         let errorCount = 0;
 
-        rLock.lock();
+        await rLock.lock();
         rLock.unlock();
 
         try {
@@ -478,11 +482,11 @@ export default function RWLockEnhancedTest() {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedWriteLockDoubleUnlock';
         console.info(`${TAG} test start`);
-        let rwLock = new RWLock();
+        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
         let wLock = rwLock.writeLock();
         let errorCount = 0;
 
-        wLock.lock();
+        await wLock.lock();
         wLock.unlock();
 
         try {
@@ -509,28 +513,28 @@ export default function RWLockEnhancedTest() {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedMixedLockUsage';
         console.info(`${TAG} test start`);
-        let rwLock = new RWLock();
+        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
         let rLock = rwLock.readLock();
         let wLock = rwLock.writeLock();
         let count = new AtomicInt(0);
 
-        rLock.lock();
+        await rLock.lock();
         count.fetchAdd(1);
         rLock.unlock();
 
-        wLock.lock();
+        await wLock.lock();
         count.fetchAdd(1);
         wLock.unlock();
 
         let worker = new EAWorker();
         worker.start();
-        let job = worker.run<void>(() => {
-          rLock.lock();
+        let job = worker.run<Promise<void>>(async (): Promise<void> => {
+          await rLock.lock();
           count.fetchAdd(1);
           rLock.unlock();
         });
 
-        job.Await();
+        await job.Await();
         worker.join();
 
         console.info(`${TAG} count: ${count.load()}`);
@@ -550,17 +554,17 @@ export default function RWLockEnhancedTest() {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedConcurrentReadersSameLock';
         console.info(`${TAG} test start`);
-        let rwLock = new RWLock();
+        let rwLock = new concurrency.stackless.AsyncReadWriteLock();
         let rLock = rwLock.readLock();
         let count = new AtomicInt(0);
         let unlockCount = new AtomicInt(0);
         let readerCount = 20;
 
         for (let i = 0; i < readerCount; i++) {
-          taskpool.execute(() => {
-            rLock.lock();
+          taskpool.execute(async (): Promise<void> => {
+            await rLock.lock();
             count.fetchAdd(1);
-            setTimeout(() => {
+            setTimeout((): void => {
               rLock.unlock();
               unlockCount.fetchAdd(1);
             }, 10);
@@ -588,19 +592,21 @@ export default function RWLockEnhancedTest() {
       async (Done: () => void): Promise<void> => {
         const TAG: string = 'rwLockEnhancedMultipleRWLockInstances';
         console.info(`${TAG} test start`);
-        let lock1 = new RWLock();
-        let lock2 = new RWLock();
+        let lock1 = new concurrency.stackless.AsyncReadWriteLock();
+        let lock2 = new concurrency.stackless.AsyncReadWriteLock();
         let count1 = new AtomicInt(0);
         let count2 = new AtomicInt(0);
 
-        lock1.writeLock().lock();
-        lock2.writeLock().lock();
+        let lock1Write = lock1.writeLock();
+        let lock2Write = lock2.writeLock();
+        await lock1Write.lock();
+        await lock2Write.lock();
 
         count1.fetchAdd(1);
         count2.fetchAdd(1);
 
-        lock2.writeLock().unlock();
-        lock1.writeLock().unlock();
+        lock2Write.unlock();
+        lock1Write.unlock();
 
         console.info(`${TAG} count1: ${count1.load()}, count2: ${count2.load()}`);
         expect(count1.load()).assertEqual(1);

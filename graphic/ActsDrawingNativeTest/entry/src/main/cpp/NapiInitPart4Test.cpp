@@ -118,7 +118,7 @@ napi_value DrawingPathPart4InverseFillType(napi_env env, napi_callback_info info
     });
 }
 
-// Path Part4 InverseFillType related functions
+// Path Part4 DrawingPathPart4GetData related functions
 napi_value DrawingPathPart4GetData(napi_env env, napi_callback_info info)
 {
     return NapiTry(env, [&]() -> napi_value {
@@ -141,6 +141,12 @@ napi_value DrawingPathPart4GetData(napi_env env, napi_callback_info info)
             OHOS::Rosen::Drawing::TestPathConvertToSvgStringNull,
             OHOS::Rosen::Drawing::TestPathConvertToSvgStringAbnormal,
             OHOS::Rosen::Drawing::TestPathConvertToSvgStringMultipleCalls,
+            OHOS::Rosen::Drawing::TestPathGetLastPointNormal,
+            OHOS::Rosen::Drawing::TestPathGetLastPointNull,
+            OHOS::Rosen::Drawing::TestPathGetLastPointMultipleCalls,
+            OHOS::Rosen::Drawing::TestPathIsEqualNormal,
+            OHOS::Rosen::Drawing::TestPathIsEqualNull,
+            OHOS::Rosen::Drawing::TestPathIsEqualMultipleCalls,
         };
         int result = DispatchByCaseNum(caseNum, handlers);
         napi_value resultValue;
@@ -166,6 +172,23 @@ napi_value DrawingCanvasDrawPixelMapMesh(napi_env env, napi_callback_info info)
             OHOS::Rosen::Drawing::TestCanvasDrawPixelMapMeshAbnormal03,
             OHOS::Rosen::Drawing::TestCanvasDrawPixelMapMeshAbnormal04,
             OHOS::Rosen::Drawing::TestCanvasDrawPixelMapMeshMultipleCalls,
+        };
+        int result = DispatchByCaseNum(caseNum, handlers);
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
+// Canvas Part6 DrawingCanvasResetClip related functions
+napi_value DrawingCanvasResetClip(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        static const std::array<DrawingNativeFn, CANVAS_PART6_RESET_CLIP_HANDLER_COUNT> handlers = {
+            OHOS::Rosen::Drawing::TestCanvasResetClipNormal,
+            OHOS::Rosen::Drawing::TestCanvasResetClipNull,
+            OHOS::Rosen::Drawing::TestCanvasResetClipMultipleCalls,
         };
         int result = DispatchByCaseNum(caseNum, handlers);
         napi_value resultValue;

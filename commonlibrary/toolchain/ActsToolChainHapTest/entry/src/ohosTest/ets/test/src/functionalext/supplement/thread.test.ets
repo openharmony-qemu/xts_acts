@@ -655,5 +655,356 @@ export default function thread_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   call_once
+     * @tc.number SUB_THIRDPARTY_MUSL_CALL_ONCE_0100
+     * @tc.desc   libc-test call_once
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("call_once", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("call_once");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   cnd_broadcast
+     * @tc.number SUB_THIRDPARTY_MUSL_CND_BROADCAST_0100
+     * @tc.desc   libc-test cnd_broadcast
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("cnd_broadcast", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("cnd_broadcast");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   cnd_timedwait
+     * @tc.number SUB_THIRDPARTY_MUSL_CND_TIMEDWAIT_0100
+     * @tc.desc   libc-test cnd_timedwait
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("cnd_timedwait", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("cnd_timedwait");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   cnd_wait
+     * @tc.number SUB_THIRDPARTY_MUSL_CND_WAIT_0100
+     * @tc.desc   libc-test cnd_wait
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("cnd_wait", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("cnd_wait");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   mtx_timedlock
+     * @tc.number SUB_THIRDPARTY_MUSL_MTX_TIMEDLOCK_0100
+     * @tc.desc   libc-test mtx_timedlock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("mtx_timedlock", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("mtx_timedlock");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   mtx_trylock
+     * @tc.number SUB_THIRDPARTY_MUSL_MTX_TRYLOCK_0100
+     * @tc.desc   libc-test mtx_trylock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("mtx_trylock", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("mtx_trylock");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   mtx_unlock
+     * @tc.number SUB_THIRDPARTY_MUSL_MTX_UNLOCK_0100
+     * @tc.desc   libc-test mtx_unlock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("mtx_unlock", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("mtx_unlock");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   pthread_barrier_wait
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_BARRIER_WAIT_0100
+     * @tc.desc   libc-test pthread_barrier_wait
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pthread_barrier_wait", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_barrier_wait");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   pthread_cond_init
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_COND_INIT_0100
+     * @tc.desc   libc-test pthread_cond_init
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pthread_cond_init", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_cond_init");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   pthread_cond_timedwait_sup
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_COND_TIMEDWAIT_SUP_0100
+     * @tc.desc   libc-test pthread_cond_timedwait_sup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pthread_cond_timedwait_sup", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_cond_timedwait_sup");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   pthread_detach
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_DETACH_0100
+     * @tc.desc   libc-test pthread_detach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pthread_detach", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_detach");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   pthread_equal
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_EQUAL_0100
+     * @tc.desc   libc-test pthread_equal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pthread_equal", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_equal");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   pthread_join
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_JOIN_0100
+     * @tc.desc   libc-test pthread_join
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pthread_join", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_join");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   pthread_mutex_timedlock
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_MUTEX_TIMEDLOCK_0100
+     * @tc.desc   libc-test pthread_mutex_timedlock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pthread_mutex_timedlock", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_mutex_timedlock");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   pthread_rwlock_timedrdlock
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_RWLOCK_TIMEDRDLOCK_0100
+     * @tc.desc   libc-test pthread_rwlock_timedrdlock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pthread_rwlock_timedrdlock", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_rwlock_timedrdlock");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   pthread_rwlock_timedwrlock
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_RWLOCK_TIMEDWRLOCK_0100
+     * @tc.desc   libc-test pthread_rwlock_timedwrlock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pthread_rwlock_timedwrlock", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_rwlock_timedwrlock");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   pthread_self
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_SELF_0100
+     * @tc.desc   libc-test pthread_self
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pthread_self", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_self");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   pthread_setschedprio
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_SETSCHEDPRIO_0100
+     * @tc.desc   libc-test pthread_setschedprio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pthread_setschedprio", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_setschedprio");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   pthread_spin_lock
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_SPIN_LOCK_0100
+     * @tc.desc   libc-test pthread_spin_lock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pthread_spin_lock", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_spin_lock");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   pthread_spin_trylock
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_SPIN_TRYLOCK_0100
+     * @tc.desc   libc-test pthread_spin_trylock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pthread_spin_trylock", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_spin_trylock");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   pthread_spin_unlock
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_SPIN_UNLOCK_0100
+     * @tc.desc   libc-test pthread_spin_unlock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pthread_spin_unlock", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_spin_unlock");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   thrd_create
+     * @tc.number SUB_THIRDPARTY_MUSL_THRD_CREATE_0100
+     * @tc.desc   libc-test thrd_create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("thrd_create", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("thrd_create");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   thrd_current
+     * @tc.number SUB_THIRDPARTY_MUSL_THRD_CURRENT_0100
+     * @tc.desc   libc-test thrd_current
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("thrd_current", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("thrd_current");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   thrd_detach
+     * @tc.number SUB_THIRDPARTY_MUSL_THRD_DETACH_0100
+     * @tc.desc   libc-test thrd_detach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("thrd_detach", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("thrd_detach");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   thrd_equal
+     * @tc.number SUB_THIRDPARTY_MUSL_THRD_EQUAL_0100
+     * @tc.desc   libc-test thrd_equal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("thrd_equal", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("thrd_equal");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   thrd_join
+     * @tc.number SUB_THIRDPARTY_MUSL_THRD_JOIN_0100
+     * @tc.desc   libc-test thrd_join
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("thrd_join", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("thrd_join");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   thrd_sleep
+     * @tc.number SUB_THIRDPARTY_MUSL_THRD_SLEEP_0100
+     * @tc.desc   libc-test thrd_sleep
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("thrd_sleep", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("thrd_sleep");
+      expect(result).assertEqual(0);
+      done();
+    });
   });
 }

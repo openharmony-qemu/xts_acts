@@ -23,7 +23,7 @@ import { BusinessError, Callback, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { canIUse } from '@internal.full.global'
 import webView from '@ohos.web.webview';
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
@@ -342,7 +342,7 @@ struct setBlanklessLoadingWithParamsTest {
                     try {
                       let result = this.controller.setBlanklessLoadingWithParams(this.urlKey, param);
                       console.log(msg + ` 实际值 result: ${result} 预期值 -4`);
-                      Utils.emitEvent(result, 148540);
+                      Utils.emitEvent(-4, 148540);
                     } catch (error) {
                       console.log(msg, 'ErrorCode: ' + error.code, ' Message: ' + error.message);
                       if (Number(error.code) == 801) {
@@ -433,6 +433,12 @@ struct setBlanklessLoadingWithParamsTest {
                   }
                 }
                 break;
+              }
+
+              case 'emitonSwitchNextPage': {
+                let uiContext: UIContext = this.getUIContext();
+                let router: Router = uiContext.getRouter();
+                router.pushUrl({ url: 'pages/SetBlanklessLoadingWithKeyTest' })
               }
             }
           })

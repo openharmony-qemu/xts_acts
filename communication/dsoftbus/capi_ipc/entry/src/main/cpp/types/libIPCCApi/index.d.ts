@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 - 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -70,3 +70,39 @@ export const oHIPCParcelReadFileDescriptor: () => number;
 export const oHIPCParcelAppend: () => number;
 export const oHIPCParcelWriteInterfaceToken: () => number;
 export const oHIPCParcelReadInterfaceToken: () => number;
+export const oHIPCParcelWriteUint8_0100: () => number;
+export const oHIPCParcelWriteUint8_0200: () => number;
+export const oHIPCParcelWriteUint8_0300: () => number;
+export const oHIPCParcelWriteUint8_0400: () => number;
+export const oHIPCParcelReadUint8_0100: () => number;
+export const oHIPCParcelReadUint8_0200: () => number;
+export const oHIPCParcelReadUint8_0300: () => number;
+export const oHIPCParcelReadUint8_0400: () => number;
+export const oHIPCParcelReadUint8_0500: () => number;
+export const oHIPCParcelWriteUint16_0100: () => number;
+export const oHIPCParcelWriteUint16_0200: () => number;
+export const oHIPCParcelWriteUint16_0300: () => number;
+export const oHIPCParcelWriteUint16_0400: () => number;
+export const oHIPCParcelReadUint16_0100: () => number;
+export const oHIPCParcelReadUint16_0200: () => number;
+export const oHIPCParcelReadUint16_0300: () => number;
+export const oHIPCParcelReadUint16_0400: () => number;
+export const oHIPCParcelReadUint16_0500: () => number;
+export const oHIPCParcelWriteUint32_0100: () => number;
+export const oHIPCParcelWriteUint32_0200: () => number;
+export const oHIPCParcelWriteUint32_0300: () => number;
+export const oHIPCParcelWriteUint32_0400: () => number;
+export const oHIPCParcelReadUint32_0100: () => number;
+export const oHIPCParcelReadUint32_0200: () => number;
+export const oHIPCParcelReadUint32_0300: () => number;
+export const oHIPCParcelReadUint32_0400: () => number;
+export const oHIPCParcelReadUint32_0500: () => number;
+export const oHIPCParcelWriteUint64_0100: () => number;
+export const oHIPCParcelWriteUint64_0200: () => number;
+export const oHIPCParcelWriteUint64_0300: () => number;
+export const oHIPCParcelWriteUint64_0400: () => number;
+export const oHIPCParcelReadUint64_0100: () => number;
+export const oHIPCParcelReadUint64_0200: () => number;
+export const oHIPCParcelReadUint64_0300: () => number;
+export const oHIPCParcelReadUint64_0400: () => number;
+export const oHIPCParcelReadUint64_0500: () => number;

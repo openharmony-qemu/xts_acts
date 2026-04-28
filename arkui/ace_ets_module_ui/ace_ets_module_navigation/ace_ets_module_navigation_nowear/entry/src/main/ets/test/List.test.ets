@@ -16,9 +16,11 @@
 import EnableToolBarAdaptation from './navigation/EnableToolBarAdaptation.test'
 import OnNewParamPage from './navigation/OnNewParamPage.test'
 import PreferredOrientation from './navigation/PreferredOrientation.test'
+import navDestinationFullScreenOverlay from './navDestination/navDestinationFullScreenOverlay.test'
 
 export default function testsuite() {
   EnableToolBarAdaptation();
   OnNewParamPage();
   PreferredOrientation();
+  navDestinationFullScreenOverlay()
 }

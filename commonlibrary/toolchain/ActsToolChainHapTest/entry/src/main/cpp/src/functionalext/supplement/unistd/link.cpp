@@ -20,58 +20,58 @@
 #include "functionalext.h"
 
 /**
- * @tc.name      : Link0100
+ * @tc.name      : link_0100
  * @tc.desc      : Determine whether the created connection is successful and whether the file exists
  * @tc.level     : Level 0
  */
 void Link0100(void)
 {
-    system("touch /etc/a.Txt");
-    int result = link("/etc/a.Txt", "/etc/a_link.Txt");
-    EXPECT_EQ("Link0100", result, 0);
-    EXPECT_EQ("Link0100", access("/etc/a_link.Txt", F_OK), 0);
-    system("rm -f /etc/a_link.Txt");
+    system("touch /etc/a.txt");
+    int result = link("/etc/a.txt", "/etc/a_link.txt");
+    EXPECT_EQ("link_0100", result, 0);
+    EXPECT_EQ("link_0100", access("/etc/a_link.txt", F_OK), 0);
+    system("rm -f /etc/a_link.txt");
 }
 
 /**
- * @tc.name      : Link0200
+ * @tc.name      : link_0200
  * @tc.desc      : Determine whether the file is successfully created when creating a hard link file with the same name
  * @tc.level     : Level 2
  */
 void Link0200(void)
 {
-    if (access("/etc/a_link.Txt", F_OK) != 0) {
-        int result = link("/etc/a.Txt", "/etc/a_link.Txt");
-        EXPECT_EQ("Link0200", result, 0);
+    if (access("/etc/a_link.txt", F_OK) != 0) {
+        int result = link("/etc/a.txt", "/etc/a_link.txt");
+        EXPECT_EQ("link_0200", result, 0);
     }
-    EXPECT_NE("Link0200", link("/etc/a.Txt", "/etc/a_link.Txt"), 0);
-    EXPECT_EQ("Link0200", errno, EEXIST);
-    system("rm -f /etc/a_link.Txt");
+    EXPECT_NE("link_0200", link("/etc/a.txt", "/etc/a_link.txt"), 0);
+    EXPECT_EQ("link_0200", errno, EEXIST);
+    system("rm -f /etc/a_link.txt");
 }
 
 /**
- * @tc.name      : Link0300
+ * @tc.name      : link_0300
  * @tc.desc      : Outlier judgment
  * @tc.level     : Level 2
  */
 void Link0300(void)
 {
     int result = link(nullptr, nullptr);
-    EXPECT_EQ("Link0300", result, ERREXPECT);
-    EXPECT_EQ("Link0300", errno, EFAULT);
+    EXPECT_EQ("link_0300", result, ERREXPECT);
+    EXPECT_EQ("link_0300", errno, EFAULT);
 
-    if (access("/etc/a.Txt", F_OK) == 0) {
-        system("rm -f /etc/a.Txt");
+    if (access("/etc/a.txt", F_OK) == 0) {
+        system("rm -f /etc/a.txt");
     }
 
-    if (access("/etc/a_link.Txt", F_OK) == 0) {
-        system("rm -f /etc/a_link.Txt");
+    if (access("/etc/a_link.txt", F_OK) == 0) {
+        system("rm -f /etc/a_link.txt");
     }
 }
 
 static int LinkTestImpl(void)
 {
-    return T_STATUS;
+    return g_tStatus;
 }
 
 int LinkTest(void)

@@ -24,8 +24,8 @@ constexpr unsigned K_CND_SIGNAL_THREAD_DELAY_SEC = 2U;
 constexpr time_t K_CND_SIGNAL_WAIT_TIMEOUT_SEC = 60;
 } // namespace
 
-mtx_t g_mtx;
-cnd_t g_cndPut;
+static mtx_t g_mtx;
+static cnd_t g_cndPut;
 void CndTimedwaitfirst(void* arg)
 {
     int res = -1;

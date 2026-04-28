@@ -16,22 +16,20 @@
 #include <csignal>
 #include "functionalext.h"
 
-namespace {
-constexpr int K_EXPECTED_SIG_RT_MIN = 35;
-} // namespace
+#define SIGRTMIN_VALUE 35
 
 /*
- * @tc.name      : LibcCurrentSigrtmin0100
+ * @tc.name      : libc_current_sigrtmin_0100
  * @tc.desc      : Verify that the number of real-time signals can be obtained
  * @tc.level     : Level 0
  */
 void LibcCurrentSigrtmin0100(void)
 {
     int result = __libc_current_sigrtmin();
-    EXPECT_EQ("LibcCurrentSigrtmin0100", result, K_EXPECTED_SIG_RT_MIN);
+    EXPECT_EQ("libc_current_sigrtmin_0100", result, SIGRTMIN_VALUE);
 }
 
-static int LibcCurrentSigrtminTestWithArgs(int argc, char* argv[])
+static int LibcCurrentSigrtminTestWithArgs(int argc, char *argv[])
 {
     LibcCurrentSigrtmin0100();
     return T_STATUS;
@@ -39,7 +37,7 @@ static int LibcCurrentSigrtminTestWithArgs(int argc, char* argv[])
 
 int LibcCurrentSigrtminTest(void)
 {
-    static char libcProgStub[] = "libc_test";
-    char* libcArgvStub[] = { libcProgStub, nullptr };
-    return LibcCurrentSigrtminTestWithArgs(1, libcArgvStub);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return LibcCurrentSigrtminTestWithArgs(1, libcArgv);
 }

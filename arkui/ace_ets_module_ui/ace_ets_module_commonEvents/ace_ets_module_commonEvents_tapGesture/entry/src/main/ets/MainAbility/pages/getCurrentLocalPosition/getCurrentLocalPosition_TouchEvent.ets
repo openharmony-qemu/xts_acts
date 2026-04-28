@@ -43,7 +43,7 @@ struct GetCurrentLocalPosition_TouchEvent {
                 if (event) {
                   let localPos: Coordinate2D | undefined = event?.touches[0]?.getCurrentLocalPosition?.();
                   this.positionText =
-                    `getCurrentLocalPosition获取的坐标:x:${localPos?.x},y:${localPos?.y}`;
+                    `getCurrentLocalPosition获取的坐标:x:${Math.round(localPos?.x??0)},y:${Math.round(localPos?.y??0)}`;
                 }
               })
           }.width('100%').height('100%').justifyContent(FlexAlign.Center)

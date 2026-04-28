@@ -48,7 +48,7 @@ struct NewWebViewComp {
   }
 }
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 

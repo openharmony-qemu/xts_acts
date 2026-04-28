@@ -28,22 +28,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function SetBlanklessLoadingWithParams() {
   describe('SetBlanklessLoadingWithParams', (): void => {
     beforeAll(async (): Promise<void> => {
-      let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: 'EntryAbility',
-        moduleName:'entry',
-        onAbilityCreate: (abilitys : UIAbility) : void => {
-          testAbilityContext = abilitys.context
-        },
-      }, (err : BusinessError | null) : void => {
-        if (err != null ) {
-          console.log('-----' + err.code)
-        }
-        console.log('BusinessError  end')
-      });
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.leathercandycachetwotest.static')
-      await Utils.msSleep(5000)
       console.log('beforeAll end,%s', 'Succeed!')
     });
     beforeEach(async () => {
@@ -58,7 +43,7 @@ export default function SetBlanklessLoadingWithParams() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testSetBlanklessLoadingWithParamsStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testSetBlanklessLoadingWithParamsStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent('testSetBlanklessLoadingWithParams001', 10)
       await Utils.msSleep(3000);
@@ -75,9 +60,9 @@ export default function SetBlanklessLoadingWithParams() {
      * @tc.desc   test setBlanklessLoadingWithParams
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testSetBlanklessLoadingWithParamsStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testSetBlanklessLoadingWithParamsStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent('testSetBlanklessLoadingWithParams002', 10)
       await Utils.msSleep(3000);
@@ -94,9 +79,9 @@ export default function SetBlanklessLoadingWithParams() {
      * @tc.desc   test setBlanklessLoadingWithParams
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testSetBlanklessLoadingWithParamsStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testSetBlanklessLoadingWithParamsStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent('testSetBlanklessLoadingWithParams003', 10)
       await Utils.msSleep(3000);
@@ -132,9 +117,9 @@ export default function SetBlanklessLoadingWithParams() {
      * @tc.desc   test setBlanklessLoadingWithParams
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('testSetBlanklessLoadingWithParamsStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testSetBlanklessLoadingWithParamsStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent('testSetBlanklessLoadingWithParams005', 10)
       await Utils.msSleep(3000);
@@ -144,6 +129,22 @@ export default function SetBlanklessLoadingWithParams() {
       await Utils.msSleep(6000);
       done()
     })
-
+    /**
+     * @tc.name   SwitchNextPage
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SwitchNextPage_0700
+     * @tc.desc   SwitchNextPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent("emitonSwitchNextPage", 10)
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('setBlanklessLoadingWithParamsTestButton', 10, '');
+        await Utils.msSleep(5000);
+        done();
+      })
   })
 }

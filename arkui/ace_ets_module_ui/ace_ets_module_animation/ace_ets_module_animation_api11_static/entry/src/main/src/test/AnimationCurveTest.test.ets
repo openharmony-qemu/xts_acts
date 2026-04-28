@@ -44,12 +44,12 @@ let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 let abc: number
+const interpolate4 = (fraction: number) => {
+  abc = Number(fraction)
+}
 const interpolate3 = (fraction: number): number => {
   interpolate4(fraction)
   return abc
-}
-const interpolate4 = (fraction: number) => {
-  abc = Number(fraction)
 }
 
 export default function animationCurveTest() {

@@ -105,7 +105,7 @@ import {
 } from '../testability/pages/DataFlg';
 import { BusinessError } from "@ohos.base";
 
-export default function taskPoolAsyncRunnerAbility() {
+export default function taskPoolAsyncRunnerAbility(): void {
   describe('TaskPoolAsyncRunnerAbility', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

@@ -531,11 +531,11 @@ export default function photoAccessHelperNoPermissionStaticTest() {
                     let context: Context = Hypium.get("Context") as Context;
                     let requestId: string = '123123';
                     await photoAccessHelper.MediaAssetManager.cancelRequest(context, requestId);
-                    expect().assertFail();
                     done();
                 } catch (err) {
                     console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
-                    expect(err.code).assertEqual(201);
+                    //与动态保持一致，无权限场景不抛错误码
+                    expect().assertFail();
                     done();
                 }
             })

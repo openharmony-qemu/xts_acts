@@ -1550,5 +1550,62 @@ export default function geolocationTest_geo5() {
         done();
     })
 
+    /**
+     * @tc.name   SUB_HSS_LocationSystem_isGnssServiceSupported_0100
+     * @tc.number SUB_HSS_LocationSystem_isGnssServiceSupported_0100
+     * @tc.desc   Check whether the GNSS service is supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_LocationSystem_isGnssServiceSupported_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+        try {
+            let isSupported = geolocationm.isGnssServiceSupported();
+            console.info('[lbs_js] isGnssServiceSupported result: ' + JSON.stringify(isSupported));
+            expect(typeof isSupported).assertEqual('boolean');
+        } catch (error) {
+            console.info('[lbs_js] isGnssServiceSupported err: ' + JSON.stringify(error));
+            expect(error.code).assertEqual(3301000);
+        }
+    });
+
+    /**
+     * @tc.name   SUB_HSS_LocationSystem_isGnssFenceServiceSupported_0100
+     * @tc.number SUB_HSS_LocationSystem_isGnssFenceServiceSupported_0100
+     * @tc.desc   Check whether the GNSS fence service is supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_LocationSystem_isGnssFenceServiceSupported_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+        try {
+            let isSupported = geolocationm.isGnssFenceServiceSupported();
+            console.info('[lbs_js] isGnssFenceServiceSupported result: ' + JSON.stringify(isSupported));
+            expect(typeof isSupported).assertEqual('boolean');
+        } catch (error) {
+            console.info('[lbs_js] isGnssFenceServiceSupported err: ' + JSON.stringify(error));
+            expect(error.code).assertEqual(3301000);
+        }
+    });
+
+    /**
+     * @tc.name   SUB_HSS_LocationSystem_isCachedGnssServiceSupported_0100
+     * @tc.number SUB_HSS_LocationSystem_isCachedGnssServiceSupported_0100
+     * @tc.desc   Check whether the cached GNSS service is supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_LocationSystem_isCachedGnssServiceSupported_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+        try {
+            let isSupported = geolocationm.isCachedGnssServiceSupported();
+            console.info('[lbs_js] isCachedGnssServiceSupported result: ' + JSON.stringify(isSupported));
+            expect(typeof isSupported).assertEqual('boolean');
+        } catch (error) {
+            console.info('[lbs_js] isCachedGnssServiceSupported err: ' + JSON.stringify(error));
+            expect(error.code).assertEqual(3301000);
+        }
+    });
+
     })
 }
