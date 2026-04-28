@@ -1930,15 +1930,15 @@ export default function audioSessionManagerTest() {
     })
 
     /**
-     * @tc.name    SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_BLUETOOTH_A2DP_0300
-     * @tc.number  SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_BLUETOOTH_A2DP_0300
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_BLUETOOTH_0300
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_BLUETOOTH_0300
      * @tc.desc    AudioSessionManager setMediaOutputDevice error 6800101 BLUETOOTH_A2DP test.
      * @tc.type    Function
      * @tc.size    MediumTest
      * @tc.level   Level0
      */
-    it('SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_BLUETOOTH_A2DP_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_BLUETOOTH_A2DP_0300 start`);
+    it('SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_BLUETOOTH_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_BLUETOOTH_0300 start`);
       if (audioSessionManager === null) {
         console.error(`${TAG}: audioSessionManager is null`);
         expect(false).assertTrue();
