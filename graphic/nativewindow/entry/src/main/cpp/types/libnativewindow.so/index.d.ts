@@ -142,3 +142,6 @@ export const testNativeWindowLockBufferMultipleCalls: () => number;
 export const testNativeWindowUnLockAndFlushBufferMultipleCalls: () => number;
 export const testNativeWindowLockAndUnLockAndRequest: () => number;
 export const OHNativeErrorCodeCover: () => number;
+export const testNativeWindowNativeWindowFlushBufferAbnormalRegion: () => number;
+export const testNativeWindowNativeWindowRequestBufferDefaultWidthAndHeight: () => number;
+

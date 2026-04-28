@@ -1848,3 +1848,93 @@ napi_value testNativeWindowNativeWindowHandleOptCodeAbnormal(napi_env env, napi_
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
+
+napi_value testNativeWindowNativeWindowFlushBufferAbnormalRegion(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    // 0.
+    InitNativeWindow* initNative = new InitNativeWindow();
+    OHNativeWindow *nativeWindow = nullptr;
+    nativeWindow = initNative->returnNativeWindow();
+    if (nativeWindow == nullptr) {
+        napi_create_int32(env, CONSTANT_998899, &result);
+        return result;
+    }
+    OH_NativeImage *image = initNative->returnNativeImage();
+    OHNativeWindowBuffer *nativeWindowBuffer = nullptr;
+    int fenceFd = -1;
+    OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &nativeWindowBuffer, &fenceFd);
+
+    // 1.
+    Region::Rect rect{
+        .x = 0x00,
+        .y = 0x00,
+        .w = 0x100,
+        .h = 0x100,
+    };
+    Region region{.rects = &rect, .rectNumber = 3000};
+    int32_t flag = OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, nativeWindowBuffer, fenceFd, region);
+    if (flag != NATIVE_ERROR_OK) {
+        napi_create_int32(env, CONSTANT_1, &result);
+        return result;
+    }
+
+    // 2.
+    flag = OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, nativeWindowBuffer, fenceFd, region);
+    if (flag != NATIVE_ERROR_BUFFER_STATE_INVALID) {
+        napi_create_int32(env, CONSTANT_2, &result);
+        return result;
+    }
+    delete initNative;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value testNativeWindowNativeWindowRequestBufferDefaultWidthAndHeight(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    // 0.
+    InitNativeWindow* initNative = new InitNativeWindow(false);
+    OHNativeWindow *nativeWindow = nullptr;
+    nativeWindow = initNative->returnNativeWindow();
+    if (nativeWindow == nullptr) {
+        napi_create_int32(env, CONSTANT_998899, &result);
+        return result;
+    }
+    OH_NativeImage *image = initNative->returnNativeImage();
+    OHNativeWindowBuffer *nativeWindowBuffer = nullptr;
+    int fenceFd = -1;
+    OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &nativeWindowBuffer, &fenceFd);
+    
+    // 1.
+    int _width, _height;
+    int flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, GET_BUFFER_GEOMETRY, &_height, &_width);
+    if (flag != NATIVE_ERROR_OK) {
+        napi_create_int32(env, CONSTANT_1000 + CONSTANT_2, &result);
+        return result;
+    }
+    if (0x50 != _width || 0x50 != _height) {
+        napi_create_int32(env, CONSTANT_1000 + CONSTANT_3, &result);
+        return result;
+    }
+
+    // 2.
+    Region::Rect rect{
+        .x = 0x00,
+        .y = 0x00,
+        .w = 0x50,
+        .h = 0x50,
+    };
+    Region region{.rects = &rect};
+    flag = OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, nativeWindowBuffer, fenceFd, region);
+    if (flag != NATIVE_ERROR_OK) {
+        napi_create_int32(env, CONSTANT_1, &result);
+        return result;
+    }
+    
+    delete initNative;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
