@@ -122,7 +122,7 @@ export default function usbControlTransferTest() {
       try {
         if (dev < 0) {
           console.info("Test USB device not connected");
-          expect(true).assertTrue();
+          expect(dev).assertEqual(USB_DDK_FAILED);
           done();
           return;
         }
