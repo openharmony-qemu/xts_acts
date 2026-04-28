@@ -1281,5 +1281,157 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       }
       done();
     });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_0100
+     * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_0100
+     * @tc.desc   import USB key certificate with PURPOSE_SIGN without real USB key, return error code 17500010 on PC device or 801 on non-PC device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_ImportUkeyCertificate_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_0100 start');
+      let keyUri: string = 'test';
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      let ukeyInfo: certManager.UkeyInfo = {
+        certPurpose: certManager.CertificatePurpose.PURPOSE_SIGN,
+      };
+      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
+        try {
+          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0100 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(17500010);
+        }
+      } else {
+        try {
+          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0100 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(801);
+        }
+      }
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_0100 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_0200
+     * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_0200
+     * @tc.desc   import USB key certificate with PURPOSE_ENCRYPT without real USB key, return error code 17500010 on PC device or 801 on non-PC device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_ImportUkeyCertificate_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_0200 start');
+      let keyUri: string = 'test';
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      let ukeyInfo: certManager.UkeyInfo = {
+        certPurpose: certManager.CertificatePurpose.PURPOSE_ENCRYPT,
+      };
+      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
+        try {
+          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0200 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(17500010);
+        }
+      } else {
+        try {
+          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0200 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(801);
+        }
+      }
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_0200 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_0400
+     * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_0400
+     * @tc.desc   keyUri length equals 256 bytes, return error code 17500010 on PC device or 801 on non-PC device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_ImportUkeyCertificate_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_0400 start');
+      let keyUri: string = generateString(256);
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      let ukeyInfo: certManager.UkeyInfo = {
+        certPurpose: certManager.CertificatePurpose.PURPOSE_SIGN,
+      };
+      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
+        try {
+          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0400 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(17500010);
+        }
+      } else {
+        try {
+          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0400 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(801);
+        }
+      }
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_0400 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_1400
+     * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_1400
+     * @tc.desc   import USB key certificate with PURPOSE_DEFAULT without real USB key, return error code 17500010 on PC device or 801 on non-PC device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_ImportUkeyCertificate_Func_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1400 start');
+      let keyUri: string = 'test';
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      let ukeyInfo: certManager.UkeyInfo = {
+        certPurpose: certManager.CertificatePurpose.PURPOSE_DEFAULT,
+      };
+      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
+        try {
+          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1400 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(17500010);
+        }
+      } else {
+        try {
+          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1400 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(801);
+        }
+      }
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1400 end');
+      done();
+    });
   })
 }

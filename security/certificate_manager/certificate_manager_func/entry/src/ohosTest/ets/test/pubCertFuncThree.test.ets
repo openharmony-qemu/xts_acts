@@ -688,5 +688,153 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
         done();
       });
     });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_0300
+     * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_0300
+     * @tc.desc   keyUri is empty string, return error code 17500011 on PC device or 801 on non-PC device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_CertManager_ImportUkeyCertificate_Func_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_0300 start');
+      let keyUri: string = '';
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      let ukeyInfo: certManager.UkeyInfo = {
+        certPurpose: certManager.CertificatePurpose.PURPOSE_SIGN,
+      };
+      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
+        try {
+          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0300 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(17500011);
+        }
+      } else {
+        try {
+          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0300 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(801);
+        }
+      }
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_0300 end');
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_0600
+     * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_0600
+     * @tc.desc   cert is empty Uint8Array, return error code 17500011 on PC device or 801 on non-PC device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_CertManager_ImportUkeyCertificate_Func_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_0600 start');
+      let keyUri: string = 'test';
+      let emptyCertData: Uint8Array = new Uint8Array([]);
+      let ukeyInfo: certManager.UkeyInfo = {
+        certPurpose: certManager.CertificatePurpose.PURPOSE_SIGN,
+      };
+      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
+        try {
+          await certManager.importUkeyCertificate(keyUri, emptyCertData, ukeyInfo);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0600 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(17500011);
+        }
+      } else {
+        try {
+          await certManager.importUkeyCertificate(keyUri, emptyCertData, ukeyInfo);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0600 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(801);
+        }
+      }
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_0600 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_0700
+     * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_0700
+     * @tc.desc   ukeyInfo.certPurpose is invalid value 999, return error code 17500011 on PC device or 801 on non-PC device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_CertManager_ImportUkeyCertificate_Func_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_0700 start');
+      let keyUri: string = 'test';
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      let ukeyInfo: certManager.UkeyInfo = {
+        certPurpose: 999,
+      };
+      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
+        try {
+          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0700 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(17500011);
+        }
+      } else {
+        try {
+          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_0700 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(801);
+        }
+      }
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_0700 end');
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_1700
+     * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_1700
+     * @tc.desc   ukeyInfo without certPurpose, return error code 17500011 on PC device or 801 on non-PC device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_CertManager_ImportUkeyCertificate_Func_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1700 start');
+      let keyUri: string = 'test';
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      let ukeyInfo: certManager.UkeyInfo = {};
+      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
+        try {
+          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1700 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(17500010);
+        }
+      } else {
+        try {
+          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1700 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(801);
+        }
+      }
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1700 end');
+      done();
+    });
   })
 }
