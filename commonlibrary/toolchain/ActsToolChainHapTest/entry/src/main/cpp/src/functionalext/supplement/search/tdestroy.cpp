@@ -21,13 +21,12 @@
 #include "test.h"
 
 #define ARRAY_SIZE (10)
-static void *root = NULL;
+static void *g_root = NULL;
 static int g_free_calls = 0;
 
-static void *malloc_node(unsigned n)
+static void *MallocNode(unsigned n)
 {
-    void *p;
-    p = malloc(n);
+    void *p = malloc(n);
     if (p) {
         return p;
     }
@@ -46,7 +45,7 @@ int cmp_node(const void *pa, const void *pb)
     return 0;
 }
 
-void node_free(void *p)
+void NodeFree(void *p)
 {
     free(p);
     g_free_calls++;
@@ -67,18 +66,17 @@ void Tdestroy0100(void)
     int array[ARRAY_SIZE] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
     for (i = 0; i < ARRAY_SIZE; i++) {
-        ptr =  (int *)malloc_node(sizeof(int));
+        ptr =  (int *)MallocNode(sizeof(int));
         *ptr = array[i];
-        val = tsearch((void *)ptr, &root, cmp_node);
+        val = tsearch((void *)ptr, &g_root, cmp_node);
         if (val == NULL) {
             exit(EXIT_FAILURE);
-
         } else if ((*(int **)val) != ptr) {
             free(ptr);
         }
     }
 
-    tdestroy(root, node_free);
+    tdestroy(g_root, NodeFree);
     if (g_free_calls != ARRAY_SIZE) {
         t_error("%s tdestroy failed, g_free_calls is %d\n", __func__, g_free_calls);
     }

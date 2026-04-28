@@ -30,9 +30,8 @@ typedef void (*TEST_FUN)();
  */
 void Gethostbyname20100(void)
 {
+    struct hostent *hptr = gethostbyname2("127.0.0.1", AF_INET);
     bool flag = false;
-    struct hostent *hptr;
-    hptr = gethostbyname2("127.0.0.1", AF_INET);
     if (hptr != NULL) {
         flag = true;
     }
@@ -47,9 +46,8 @@ void Gethostbyname20100(void)
  */
 void Gethostbyname20200(void)
 {
+    struct hostent *hptr = gethostbyname2("::1", AF_INET6);
     bool flag = false;
-    struct hostent *hptr;
-    hptr = gethostbyname2("::1", AF_INET6);
     if (hptr != NULL) {
         flag = true;
     }
@@ -64,9 +62,8 @@ void Gethostbyname20200(void)
  */
 void Gethostbyname20300(void)
 {
+    struct hostent *hptr = gethostbyname2("127.0.w.1", AF_INET6);
     bool flag = false;
-    struct hostent *hptr;
-    hptr = gethostbyname2("127.0.w.1", AF_INET6);
     if (hptr == NULL) {
         flag = true;
     }
@@ -80,16 +77,15 @@ void Gethostbyname20300(void)
  */
 void Gethostbyname20400(void)
 {
+    struct hostent *hptr = gethostbyname2("::1", AF_INET);
     bool flag = false;
-    struct hostent *hptr;
-    hptr = gethostbyname2("::1", AF_INET);
     if (hptr == NULL) {
         flag = true;
     }
     EXPECT_TRUE("Gethostbyname20400", flag);
 }
 
-static TEST_FUN G_Fun_Array[] = {
+static TEST_FUN g_gFunArray[] = {
     Gethostbyname20100,
     Gethostbyname20200,
     Gethostbyname20300,
@@ -98,9 +94,9 @@ static TEST_FUN G_Fun_Array[] = {
 
 static int Gethostbyname2TestImpl(int argc, char *argv[])
 {
-    int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
+    int num = sizeof(g_gFunArray) / sizeof(TEST_FUN);
     for (int pos = 0; pos < num; ++pos) {
-        G_Fun_Array[pos]();
+        g_gFunArray[pos]();
     }
 
     return g_tStatus;

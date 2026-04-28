@@ -16,7 +16,7 @@
 #include <stdio_ext.h>
 #include "functionalext.h"
 
-static const char *path = "/data/storage/el2/base/cache/freadable.txt";
+static const char *PATH = "/data/storage/el2/base/cache/freadable.txt";
 
 /**
  * @tc.name      : __freadable_0100
@@ -26,17 +26,17 @@ static const char *path = "/data/storage/el2/base/cache/freadable.txt";
 void Freadable0100(void)
 {
     char buf[100];
-    FILE *fp = fopen(path, "w");
+    FILE *fp = fopen(PATH, "w");
     EXPECT_PTRNE("Freadable0100", fp, NULL);
     fclose(fp);
-    FILE *ffp = fopen(path, "r");
+    FILE *ffp = fopen(PATH, "r");
     EXPECT_PTRNE("Freadable0100", ffp, NULL);
 
     size_t ret = __freadable(ffp);
     EXPECT_NE("Freadable0100", ret, 0);
 
     fclose(ffp);
-    remove(path);
+    remove(PATH);
 }
 
 /**
@@ -46,14 +46,14 @@ void Freadable0100(void)
  */
 void Freadable0200(void)
 {
-    FILE *fp = fopen(path, "wb");
+    FILE *fp = fopen(PATH, "wb");
     EXPECT_PTRNE("Freadable0200", fp, NULL);
 
     size_t ret = __freadable(fp);
     EXPECT_EQ("Freadable0200", ret, 0);
 
     fclose(fp);
-    remove(path);
+    remove(PATH);
 }
 
 static int FreadableTestWithArgs(int argc, char *argv[])

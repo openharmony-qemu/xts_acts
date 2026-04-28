@@ -51,8 +51,8 @@ static void PthreadMutexUnLock0100(void)
     int32_t type = PTHREAD_MUTEX_RECURSIVE;
     pthread_mutex_init(&g_mutex, (pthread_mutexattr_t *)(&type));
     pthread_t tid1;
-    pthread_create(&tid1, NULL, ThreadfuncA, NULL);
-    pthread_join(tid1, NULL);
+    pthread_create(&tid1, nullptr, ThreadfuncA, nullptr);
+    pthread_join(tid1, nullptr);
 }
 
 /**
@@ -67,10 +67,10 @@ static void PthreadMutexUnLock0200(void)
     pthread_mutex_init(&g_mutex, (pthread_mutexattr_t *)(&type));
     pthread_t tid2;
     pthread_t tid3;
-    pthread_create(&tid2, NULL, ThreadfuncB, NULL);
-    pthread_join(tid2, NULL);
-    pthread_create(&tid3, NULL, ThreadfuncC, NULL);
-    pthread_join(tid3, NULL);
+    pthread_create(&tid2, nullptr, ThreadfuncB, nullptr);
+    pthread_join(tid2, nullptr);
+    pthread_create(&tid3, nullptr, ThreadfuncC, nullptr);
+    pthread_join(tid3, nullptr);
     pthread_mutex_destroy(&g_mutex);
 }
 

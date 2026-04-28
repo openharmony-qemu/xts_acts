@@ -18,7 +18,7 @@
 
 #define BUFFER_SIZE 100
 
-static const char *path = "/data/storage/el2/base/cache/freading.txt";
+static const char *PATH = "/data/storage/el2/base/cache/freading.txt";
 
 /**
  * @tc.name      : __freading_0100
@@ -29,14 +29,14 @@ static const char *path = "/data/storage/el2/base/cache/freading.txt";
 void Freading0100(void)
 {
     char *str = "This is a test";
-    FILE *fp = fopen(path, "w");
+    FILE *fp = fopen(PATH, "w");
     fputs(str, fp);
     fclose(fp);
-    FILE *ffp = fopen(path, "r");
+    FILE *ffp = fopen(PATH, "r");
     size_t ret = __freading(ffp);
     EXPECT_NE("Freading0100", ret, 0);
     fclose(ffp);
-    remove(path);
+    remove(PATH);
 }
 
 /**
@@ -48,16 +48,16 @@ void Freading0100(void)
 void Freading0200(void)
 {
     char *str = "This is a test";
-    FILE *fp = fopen(path, "w");
+    FILE *fp = fopen(PATH, "w");
     fputs(str, fp);
     fclose(fp);
-    FILE *ffp = fopen(path, "r");
+    FILE *ffp = fopen(PATH, "r");
     char buf[BUFFER_SIZE];
     fgets(buf, BUFFER_SIZE, ffp);
     size_t ret = __freading(ffp);
     EXPECT_NE("Freading0200", ret, 0);
     fclose(ffp);
-    remove(path);
+    remove(PATH);
 }
 
 /**
@@ -69,12 +69,12 @@ void Freading0200(void)
 void Freading0300(void)
 {
     char *str = "This is a test";
-    FILE *fp = fopen(path, "w");
+    FILE *fp = fopen(PATH, "w");
     fputs(str, fp);
     size_t ret = __freading(fp);
     EXPECT_EQ("Freading0300", ret, 0);
     fclose(fp);
-    remove(path);
+    remove(PATH);
 }
 
 static int FreadingTestWithArgs(int argc, char *argv[])

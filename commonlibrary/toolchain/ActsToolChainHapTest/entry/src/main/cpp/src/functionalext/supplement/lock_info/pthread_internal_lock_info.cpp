@@ -56,15 +56,15 @@ bool CheckHiLogPrint(char *needToMatch)
     // 1. 通过system函数读取当前hilog日志信息
     char command[] = "/bin/hilog -x | grep ";
     char finalCommand[COMMAND_SIZE];
-    int res = snprintf_s(finalCommand, COMMAND_SIZE, READ_SIZE, "%s%s", command, needToMatch);
+    int res;
+    res = snprintf_s(finalCommand, COMMAND_SIZE, READ_SIZE, "%s%s", command, needToMatch);
     if (res == NEGATIVE_ONE) {
         printf("CheckHiLogPrint command generate snprintf_s failed\n");
         return false;
     }
     finalCommand[READ_SIZE] = '\0';
     char buffer[BUFFER_SIZE];
-    FILE* pipe;
-    pipe = popen(finalCommand, "r");
+    FILE* pipe = popen(finalCommand, "r");
     if (pipe == NULL) {
         printf("CheckHiLogPrint: Failed to run command\n");
         return false;

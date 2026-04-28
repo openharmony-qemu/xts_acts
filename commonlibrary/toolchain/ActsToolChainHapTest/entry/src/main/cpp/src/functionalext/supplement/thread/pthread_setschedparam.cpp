@@ -19,11 +19,11 @@
 #include <semaphore.h>
 #include "functionalext.h"
 
-static int32_t priorityTen = 10;
-static int32_t priorityHundred = 100;
+static int32_t g_priorityTen = 10;
+static int32_t g_priorityHundred = 100;
 static sem_t g_sem;
 
-void *threadfuncA(void *arg)
+static void *ThreadfuncA(void *arg)
 {
     sem_wait(&g_sem);
     return arg;
@@ -38,14 +38,14 @@ static void PthreadSetschedparam0100(void)
 {
     pthread_t tid;
     sem_init(&g_sem, 0, 0);
-    pthread_create(&tid, NULL, threadfuncA, NULL);
+    pthread_create(&tid, nullptr, ThreadfuncA, nullptr);
     struct sched_param sched;
     sched.sched_priority = 0;
     int32_t ret = pthread_setschedparam(tid, SCHED_OTHER, &sched);
     EXPECT_EQ("PthreadSetschedparam0100", ret, 0);
     int32_t semRet = sem_post(&g_sem);
     EXPECT_EQ("PthreadSetschedparam0100", semRet, 0);
-    pthread_join(tid, NULL);
+    pthread_join(tid, nullptr);
     sem_destroy(&g_sem);
 }
 

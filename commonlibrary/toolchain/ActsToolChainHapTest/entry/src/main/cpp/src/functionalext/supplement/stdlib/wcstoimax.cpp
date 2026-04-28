@@ -36,7 +36,7 @@ static void DealAberrant(int code)
  */
 void Wcstoimax0100(void)
 {
-    wchar_t *end = NULL;
+    wchar_t *end = nullptr;
     intmax_t want = 123;
     intmax_t result = wcstoimax(L"  +123x", &end, 10);
     if (result != want) {
@@ -55,7 +55,7 @@ void Wcstoimax0100(void)
 void Wcstoimax0200(void)
 {
     signal(SIGSEGV, DealAberrant);
-    intmax_t result = wcstoimax(NULL, NULL, 0);
+    intmax_t result = wcstoimax(nullptr, nullptr, 0);
 }
 
 static int WcstoimaxTestImpl(int argc, char *argv[])
@@ -68,6 +68,6 @@ static int WcstoimaxTestImpl(int argc, char *argv[])
 int WcstoimaxTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return WcstoimaxTestImpl(1, libcArgv);
 }

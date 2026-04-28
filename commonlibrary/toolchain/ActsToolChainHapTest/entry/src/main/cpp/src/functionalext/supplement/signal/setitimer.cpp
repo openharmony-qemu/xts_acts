@@ -22,27 +22,27 @@
 // Timer interval in microseconds (100ms)
 #define TIMER_INTERVAL_USEC 100000
 
-static int count = 0;
+static int g_count = 0;
 
-static void expireTimer(int signo)
+static void ExpireTimer(int signo)
 {
     struct itimerval val;
-    count++;
-    if (count > 1) {
+    g_count++;
+    if (g_count > 1) {
         getitimer(signo, &val);
         val.it_value.tv_sec = 0;
         val.it_value.tv_usec = 0;
-        setitimer(signo, &val, NULL);
-        count = 0;
+        setitimer(signo, &val, nullptr);
+        g_count = 0;
     }
 }
 
-static void signalHandler(int signo)
+static void SignalHandler(int signo)
 {
     switch (signo) {
         case SIGALRM:
             printf("catch a SIGALRM signal\n");
-            expireTimer(signo);
+            ExpireTimer(signo);
             break;
         case SIGVTALRM:
             printf("catch a SIGVTALRM signal\n");
@@ -63,7 +63,7 @@ static void signalHandler(int signo)
  */
 static void Setitimer0100(void)
 {
-    signal(SIGALRM, signalHandler);
+    signal(SIGALRM, SignalHandler);
     struct itimerval it;
     memset(&it, 0, sizeof(it));
 
@@ -72,7 +72,7 @@ static void Setitimer0100(void)
     it.it_interval.tv_sec = 0;
     it.it_interval.tv_usec = TIMER_INTERVAL_USEC;
 
-    if (setitimer(ITIMER_REAL, &it, NULL)) {
+    if (setitimer(ITIMER_REAL, &it, nullptr)) {
         t_error("%s set timer failed", __func__);
     }
 }
@@ -86,6 +86,6 @@ static int SetitimerTestImpl(int argc, char *argv[])
 int SetitimerTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return SetitimerTestImpl(1, libcArgv);
 }

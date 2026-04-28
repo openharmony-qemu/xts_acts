@@ -66,7 +66,7 @@ void Wcscpy0300(void)
     signal(SIGSEGV, Handler);
 
     wchar_t wcs[] = L"wcscpy test";
-    wcscpy(NULL, wcs);
+    wcscpy(nullptr, wcs);
 }
 
 static int WcscpyTestImpl(int argc, char *argv[])
@@ -80,6 +80,6 @@ static int WcscpyTestImpl(int argc, char *argv[])
 int WcscpyTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return WcscpyTestImpl(1, libcArgv);
 }

@@ -76,6 +76,6 @@ static int DoubleExitTestImpl(int argc, char *argv[])
 int DoubleExitTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return DoubleExitTestImpl(1, libcArgv);
 }

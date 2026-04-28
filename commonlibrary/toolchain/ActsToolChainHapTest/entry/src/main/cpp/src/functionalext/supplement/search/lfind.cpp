@@ -20,7 +20,7 @@ const int KEY = 10;
 const int LENGTH1 = 10;
 const int LENGTH2 = 5;
 
-int compare(int *x, int *y)
+int Compare(int *x, int *y)
 {
     return (*x - *y);
 }
@@ -37,7 +37,7 @@ void Lfind0100(void)
     int key;
     int *ret;
     key = KEY;
-    ret =  (int *)lfind(&key, array, &nlength, sizeof(int), (int (*)(const void *, const void *))compare);
+    ret =  (int *)lfind(&key, array, &nlength, sizeof(int), (int (*)(const void *, const void *))Compare);
     EXPECT_NE("lfind_0100", *ret, 0);
 }
 
@@ -53,7 +53,7 @@ void Lfind0200(void)
     int key;
     int *ret;
     key = 0;
-    ret =  (int *)lfind(&key, array, &nlength, sizeof(int), (int (*)(const void *, const void *))compare);
+    ret =  (int *)lfind(&key, array, &nlength, sizeof(int), (int (*)(const void *, const void *))Compare);
     EXPECT_PTREQ("lfind_0200", ret, NULL);
 }
 

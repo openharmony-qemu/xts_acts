@@ -41,7 +41,7 @@
 #define STR_WRITE_TEST_TXT "test_write.txt"
 
 #define FILE_ABSOLUTE_PATH(file_name, path) do { \
-    if(!getcwd(path, sizeof(path))) { \
+    if (!getcwd(path, sizeof(path))) { \
         t_error("%s getcwd for path failed\n", __func__); \
         return; \
     } \

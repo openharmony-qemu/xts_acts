@@ -197,7 +197,7 @@ static int OpenTestImpl(int argc, char *argv[])
 int OpenTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return OpenTestImpl(1, libcArgv);
 }
 

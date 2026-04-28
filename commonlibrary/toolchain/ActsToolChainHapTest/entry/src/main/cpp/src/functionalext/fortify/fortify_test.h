@@ -12,15 +12,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#ifndef _FORTIFY_TEST_H
-#define _FORTIFY_TEST_H
+#ifndef FORTIFY_TEST_H
+#define FORTIFY_TEST_H
 
 #include <cerrno>
 #include <csignal>
 #include <cstdlib>
 #include "test.h"
 
-#define TEST(c, ...) ((c) || (t_error(#c " failed: \n" __VA_ARGS__),0))
+#define TEST(c, ...) ((c) || (t_error(#c " failed: \n" __VA_ARGS__), 0))
 
 static void SignalHandler(int signum)
 {

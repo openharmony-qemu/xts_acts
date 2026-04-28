@@ -22,7 +22,7 @@
 #include <fcntl.h>
 #include "test.h"
 
-#define TEST(c, ...) ((c) ? 1 : (t_error(#c" failed: " __VA_ARGS__),0))
+#define TEST(c, ...) ((c) ? 1 : (t_error(#c" failed: " __VA_ARGS__), 0))
 #define TESTE(c) (errno=0, TEST(c, "errno = %s\n", strerror(errno)))
 
 static int SocketTestImpl(void)
@@ -67,8 +67,8 @@ static int SocketTestImpl(void)
 
     TESTE(connect(c, reinterpret_cast<struct sockaddr*>(&sa), sizeof sa)==0 || errno==EINPROGRESS);
 
-    socklen_t accept_len = sizeof sa;
-    TESTE((t=accept(s, reinterpret_cast<struct sockaddr*>(&sa), &accept_len))>=0);
+    socklen_t acceptLen = sizeof sa;
+    TESTE((t=accept(s, reinterpret_cast<struct sockaddr*>(&sa), &acceptLen))>=0);
 
     close(t);
     close(c);

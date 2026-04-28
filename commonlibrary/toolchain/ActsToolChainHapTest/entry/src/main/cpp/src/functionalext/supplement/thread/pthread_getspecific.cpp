@@ -20,7 +20,7 @@
 
 static pthread_key_t g_key;
 
-static void *threadfuncA(void *arg)
+static void *ThreadfuncA(void *arg)
 {
     int32_t value = 0;
     int32_t ret = pthread_setspecific(g_key, &value);
@@ -37,10 +37,10 @@ static void *threadfuncA(void *arg)
  */
 void PthreadGetspecific0100(void)
 {
-    pthread_key_create(&g_key, NULL);
+    pthread_key_create(&g_key, nullptr);
     pthread_t tid1;
-    pthread_create(&tid1, NULL, threadfuncA, NULL);
-    pthread_join(tid1, NULL);
+    pthread_create(&tid1, nullptr, ThreadfuncA, nullptr);
+    pthread_join(tid1, nullptr);
     pthread_key_delete(g_key);
 }
 

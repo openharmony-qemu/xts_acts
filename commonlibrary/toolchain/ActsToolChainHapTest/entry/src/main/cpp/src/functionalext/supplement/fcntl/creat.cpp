@@ -30,7 +30,7 @@ void Creat0100(void)
     EXPECT_NE("creat_0100", fd, -1);
     close(fd);
     remove(ptr);
-    ptr = NULL;
+    ptr = nullptr;
 }
 
 /**
@@ -46,7 +46,7 @@ void Creat0200(void)
     EXPECT_EQ("creat_0200", fd, -1);
     close(fd);
     remove(ptr);
-    ptr = NULL;
+    ptr = nullptr;
 }
 
 /**
@@ -62,7 +62,7 @@ void Creat0300(void)
     EXPECT_EQ("creat_0300", fd, -1);
     close(fd);
     remove(ptr);
-    ptr = NULL;
+    ptr = nullptr;
 }
 
 static int CreatTestWithArgs(int argc, char *argv[])
@@ -76,6 +76,6 @@ static int CreatTestWithArgs(int argc, char *argv[])
 int CreatTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return CreatTestWithArgs(1, libcArgv);
 }

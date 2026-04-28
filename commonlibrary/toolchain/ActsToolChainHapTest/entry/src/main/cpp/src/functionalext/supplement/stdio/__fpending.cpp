@@ -16,7 +16,7 @@
 #include <stdio_ext.h>
 #include "functionalext.h"
 
-static const char *path = "/data/storage/el2/base/cache/fpending.txt";
+static const char *PATH = "/data/storage/el2/base/cache/fpending.txt";
 
 /**
  * @tc.name      : __fpending_0100
@@ -27,7 +27,7 @@ static const char *path = "/data/storage/el2/base/cache/fpending.txt";
 void Fpending0100(void)
 {
     char *str = "This is a test";
-    FILE *fp = fopen(path, "w");
+    FILE *fp = fopen(PATH, "w");
     EXPECT_PTRNE("Fpending0100", fp, NULL);
 
     fputs(str, fp);
@@ -36,7 +36,7 @@ void Fpending0100(void)
     EXPECT_EQ("Fpending0100", ret, strlen(str));
 
     fclose(fp);
-    remove(path);
+    remove(PATH);
 }
 
 /**
@@ -48,7 +48,7 @@ void Fpending0100(void)
 void Fpending0200(void)
 {
     char *str = "This is a test";
-    FILE *fp = fopen(path, "w");
+    FILE *fp = fopen(PATH, "w");
     EXPECT_PTRNE("Fpending0200", fp, NULL);
 
     fputs(str, fp);
@@ -57,7 +57,7 @@ void Fpending0200(void)
     EXPECT_EQ("Fpending0200", ret, 0);
 
     fclose(fp);
-    remove(path);
+    remove(PATH);
 }
 
 /**
@@ -69,18 +69,18 @@ void Fpending0200(void)
 void Fpending0300(void)
 {
     char *str = "This is a test";
-    FILE *fp = fopen(path, "w");
+    FILE *fp = fopen(PATH, "w");
     EXPECT_PTRNE("Fpending0300", fp, NULL);
 
     fputs(str, fp);
     fclose(fp);
 
-    FILE *ffp = fopen(path, "r");
+    FILE *ffp = fopen(PATH, "r");
     size_t ret = __fpending(ffp);
     EXPECT_EQ("Fpending0300", ret, 0);
 
     fclose(ffp);
-    remove(path);
+    remove(PATH);
 }
 
 static int FpendingTestWithArgs(int argc, char *argv[])

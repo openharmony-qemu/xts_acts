@@ -58,7 +58,7 @@ void Towlower0200(void)
  */
 void TowlowerL0100(void)
 {
-    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
     const char *upstr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const char *lowstr = "abcdefghijklmnopqrstuvwxyz";
     const char *up = upstr;
@@ -89,7 +89,7 @@ void TowlowerL0100(void)
  */
 void TowlowerL0200(void)
 {
-    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
     const char *str = "0123456789";
     const char *p = str;
     wint_t res = 0;
@@ -117,7 +117,7 @@ void TowlowerL0200(void)
  */
 void TowlowerL0300(void)
 {
-    locale_t mLocale = newlocale(LC_ALL_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
     const char *str = "0123456789";
     const char *p = str;
     wint_t res = 0;
@@ -145,7 +145,7 @@ void TowlowerL0300(void)
  */
 void TowlowerL0400(void)
 {
-    locale_t mLocale = newlocale(LC_ALL_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
     const char *upstr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const char *lowstr = "abcdefghijklmnopqrstuvwxyz";
     const char *up = upstr;
@@ -176,7 +176,7 @@ void TowlowerL0400(void)
  */
 void TowlowerL0500(void)
 {
-    locale_t mLocale = newlocale(LC_ALL_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_ALL_MASK, "zh_CN", nullptr);
     wint_t res = towlower_l(MAX_VALUE, mLocale);
     if (res != -1) {
         t_error("Test case %s failed, get result is -1 but want get value %d\n", __FUNCTION__, res);
@@ -192,7 +192,7 @@ void TowlowerL0500(void)
  */
 void TowlowerL0600(void)
 {
-    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_ALL_MASK, "en_US.UTF-8", nullptr);
     wint_t res = towlower_l(MAX_VALUE, mLocale);
     if (res != -1) {
         t_error("Test case %s failed, get result is -1 but want get value %d\n", __FUNCTION__, res);
@@ -220,6 +220,6 @@ static int TowlowerTestImpl(int argc, char *argv[])
 int TowlowerTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return TowlowerTestImpl(1, libcArgv);
 }

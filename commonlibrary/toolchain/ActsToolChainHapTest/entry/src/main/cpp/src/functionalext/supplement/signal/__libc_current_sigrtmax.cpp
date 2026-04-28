@@ -39,6 +39,6 @@ static int LibcCurrentSigrtmaxTestWithArgs(int argc, char *argv[])
 int LibcCurrentSigrtmaxTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return LibcCurrentSigrtmaxTestWithArgs(1, libcArgv);
 }

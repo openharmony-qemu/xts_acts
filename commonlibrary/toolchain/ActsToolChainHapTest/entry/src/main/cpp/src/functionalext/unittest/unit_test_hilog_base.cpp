@@ -117,7 +117,7 @@ static char* ReadHilogPopenOutput(void)
                 return nullptr;
             }
 
-            if (memcpy_s(newBuf, newSize, buf, totalRead) != 0) {
+            if (MemcpyS(newBuf, newSize, buf, totalRead) != 0) {
                 free(newBuf);
                 free(buf);
                 pclose(fp);

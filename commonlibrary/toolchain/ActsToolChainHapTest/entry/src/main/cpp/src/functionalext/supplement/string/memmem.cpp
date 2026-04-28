@@ -32,12 +32,12 @@ void Memmem0100(void)
 {
     const char buffer[] = "musl test";
     const char cmp[] = "musl";
-    char *ptr = NULL;
+    char *ptr = nullptr;
 
     for (int i = 0; i < sizeof(cmp) / sizeof(cmp[0]); i++) {
         ptr = (char *)memmem(buffer, sizeof(buffer), cmp, i);
-        if (ptr == NULL) {
-            EXPECT_PTRNE("memmem_0100", ptr, NULL);
+        if (ptr == nullptr) {
+            EXPECT_PTRNE("memmem_0100", ptr, nullptr);
             return;
         }
         EXPECT_PTREQ("memmem_0100", ptr, buffer);
@@ -54,18 +54,18 @@ void Memmem0200(void)
     const char buffer[] = "musl test";
     size_t buflen = sizeof(buffer) / sizeof(buffer[0]);
     size_t errlen = buflen + 1;
-    char *ptr = NULL;
+    char *ptr = nullptr;
 
     ptr = (char *)memmem(buffer, sizeof(buffer), "musl", errlen);
-    EXPECT_PTREQ("memmem_0200", ptr, NULL);
+    EXPECT_PTREQ("memmem_0200", ptr, nullptr);
 
     ptr = (char *)memmem(buffer, sizeof(buffer), "muls", PARTIAL_MATCH_LENGTH);
-    EXPECT_PTREQ("memmem_0200", ptr, NULL);
+    EXPECT_PTREQ("memmem_0200", ptr, nullptr);
 }
 
 /**
  * @tc.name      : memmem_0300
- * @tc.desc      : Verify memmem returns NULL when substring not found
+ * @tc.desc      : Verify memmem returns nullptr when substring not found
  * @tc.level     : Level 1
  */
 void Memmem0300(void)
@@ -73,7 +73,7 @@ void Memmem0300(void)
     const char buffer[] = "test musl";
     const char needle[] = "notfound";
     char *ptr = (char *)memmem(buffer, sizeof(buffer), needle, sizeof(needle)-1);
-    EXPECT_PTREQ("memmem_0300", ptr, NULL);
+    EXPECT_PTREQ("memmem_0300", ptr, nullptr);
 }
 
 /**
@@ -104,7 +104,7 @@ void Memmem0500(void)
 
 /**
  * @tc.name      : memmem_0600
- * @tc.desc      : Verify memmem returns NULL when needle larger than haystack
+ * @tc.desc      : Verify memmem returns nullptr when needle larger than haystack
  * @tc.level     : Level 2
  */
 void Memmem0600(void)
@@ -112,7 +112,7 @@ void Memmem0600(void)
     const char buffer[] = "test";
     const char needle[] = "test string";
     char *ptr = (char *)memmem(buffer, sizeof(buffer)-1, needle, sizeof(needle)-1);
-    EXPECT_PTREQ("memmem_0600", ptr, NULL);
+    EXPECT_PTREQ("memmem_0600", ptr, nullptr);
 }
 
 /**
@@ -138,7 +138,7 @@ void Memmem0800(void)
     const char buffer[] = "";
     const char needle[] = "test";
     char *ptr = (char *)memmem(buffer, 0, needle, sizeof(needle)-1);
-    EXPECT_PTREQ("memmem_0800", ptr, NULL);
+    EXPECT_PTREQ("memmem_0800", ptr, nullptr);
 }
 
 static int MemmemTestImpl(void)

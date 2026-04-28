@@ -63,7 +63,7 @@ void IswspaceL0100(void)
     const wchar_t *str = L" \t\n\r";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswspace_l(*p, NULL);
+        int ret = iswspace_l(*p, nullptr);
         EXPECT_EQ("iswspace_l_0100", ret, ONREXPECT);
     }
 }
@@ -75,7 +75,7 @@ void IswspaceL0100(void)
  */
 void IswspaceL0101(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     const wchar_t *str = L" \t\n\r";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -92,7 +92,7 @@ void IswspaceL0101(void)
  */
 void IswspaceL0102(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     const wchar_t *str = L" \t\n\r";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -112,7 +112,7 @@ void IswspaceL0200(void)
     const wchar_t *str = L"1AaÂÆ";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswspace_l(*p, NULL);
+        int ret = iswspace_l(*p, nullptr);
         EXPECT_EQ("iswspace_l_0200", ret, CMPFLAG);
     }
 }
@@ -124,7 +124,7 @@ void IswspaceL0200(void)
  */
 void IswspaceL0201(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     const wchar_t *str = L"1AaÂÆ";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -141,7 +141,7 @@ void IswspaceL0201(void)
  */
 void IswspaceL0202(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     const wchar_t *str = L"1AaÂÆ";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -158,7 +158,7 @@ void IswspaceL0202(void)
  */
 void IswspaceL0300(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
         int ret = iswspace_l(i, mLocale);
@@ -177,7 +177,7 @@ void IswspaceL0300(void)
  */
 void IswspaceL0400(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
         int ret = iswspace_l(i, mLocale);
@@ -196,7 +196,7 @@ void IswspaceL0400(void)
  */
 void IswspaceL0500(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     int ret = iswspace_l(MAX_VALUE, mLocale);
     freelocale(mLocale);
     EXPECT_EQ("iswspace_l_0500", ret, CMPFLAG);
@@ -209,7 +209,7 @@ void IswspaceL0500(void)
  */
 void IswspaceL0600(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     int ret = iswspace_l(MAX_VALUE, mLocale);
     freelocale(mLocale);
     EXPECT_EQ("iswspace_l_0600", ret, CMPFLAG);
@@ -238,6 +238,6 @@ static int IswspaceTestImpl(int argc, char *argv[])
 int IswspaceTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return IswspaceTestImpl(1, libcArgv);
 }

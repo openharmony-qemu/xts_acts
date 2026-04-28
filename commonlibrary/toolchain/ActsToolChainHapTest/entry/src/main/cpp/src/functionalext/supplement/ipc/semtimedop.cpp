@@ -94,7 +94,7 @@ void Semtimedop0100(void)
 void Semtimedop0200(void)
 {
     errno = 0;
-    int result = semtimedop(-1, NULL, -1, NULL);
+    int result = semtimedop(-1, nullptr, -1, nullptr);
     if (result == 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -112,7 +112,7 @@ void Semtimedop0200(void)
 void SemtimedopTime640200(void)
 {
     errno = 0;
-    int result = __semtimedop_time64(-1, NULL, -1, NULL);
+    int result = __semtimedop_time64(-1, nullptr, -1, nullptr);
     if (result == 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -134,6 +134,6 @@ static int SemtimedopTestImpl(int argc, char *argv[])
 int SemtimedopTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return SemtimedopTestImpl(1, libcArgv);
 }

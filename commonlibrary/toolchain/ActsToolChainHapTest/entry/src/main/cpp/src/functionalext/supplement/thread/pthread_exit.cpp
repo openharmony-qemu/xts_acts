@@ -18,7 +18,7 @@
 #include <unistd.h>
 #include "functionalext.h"
 
-static void *threadfuncA(void *arg)
+static void *ThreadfuncA(void *arg)
 {
     (void)arg;
     pthread_exit((void *)"pthread_exit_0100");
@@ -33,10 +33,10 @@ static void *threadfuncA(void *arg)
 void PthreadExit0100(void)
 {
     pthread_t ph;
-    int32_t ret = pthread_create(&ph, NULL, threadfuncA, NULL);
-    void *thread_result = NULL;
-    pthread_join(ph, &thread_result);
-    EXPECT_STREQ("PthreadExit0100", (char *)thread_result, "pthread_exit_0100");
+    int32_t ret = pthread_create(&ph, nullptr, ThreadfuncA, nullptr);
+    void *threadResult = nullptr;
+    pthread_join(ph, &threadResult);
+    EXPECT_STREQ("PthreadExit0100", (char *)threadResult, "pthread_exit_0100");
 }
 
 static int PthreadExitTestImpl(void)

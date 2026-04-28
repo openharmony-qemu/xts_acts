@@ -43,7 +43,7 @@ void IswcntrlL0100(void)
     const wchar_t *str = L"\b";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswcntrl_l(*p, NULL);
+        int ret = iswcntrl_l(*p, nullptr);
         EXPECT_EQ("iswcntrl_l_0100", ret, ONREXPECT);
     }
 }
@@ -55,7 +55,7 @@ void IswcntrlL0100(void)
  */
 void IswcntrlL0101(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     const wchar_t *str = L"\b";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -72,7 +72,7 @@ void IswcntrlL0101(void)
  */
 void IswcntrlL0102(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     const wchar_t *str = L"\b";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -92,7 +92,7 @@ void IswcntrlL0200(void)
     const wchar_t *str = L"2!~*3Ad";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswcntrl_l(*p, NULL);
+        int ret = iswcntrl_l(*p, nullptr);
         EXPECT_EQ("iswcntrl_l_0200", ret, CMPFLAG);
     }
 }
@@ -104,7 +104,7 @@ void IswcntrlL0200(void)
  */
 void IswcntrlL0201(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     const wchar_t *str = L"2!~*3Ad";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -121,7 +121,7 @@ void IswcntrlL0201(void)
  */
 void IswcntrlL0202(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     const wchar_t *str = L"2!~*3Ad";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -138,7 +138,7 @@ void IswcntrlL0202(void)
  */
 void IswcntrlL0300(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
         int ret = iswcntrl_l(i, mLocale);
@@ -157,7 +157,7 @@ void IswcntrlL0300(void)
  */
 void IswcntrlL0400(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
         int ret = iswcntrl_l(i, mLocale);
@@ -176,7 +176,7 @@ void IswcntrlL0400(void)
  */
 void IswcntrlL0500(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     int ret = iswcntrl_l(MAX_VALUE, mLocale);
     freelocale(mLocale);
     EXPECT_EQ("iswcntrl_l_0500", ret, CMPFLAG);
@@ -189,7 +189,7 @@ void IswcntrlL0500(void)
  */
 void IswcntrlL0600(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     int ret = iswcntrl_l(MAX_VALUE, mLocale);
     freelocale(mLocale);
     EXPECT_EQ("iswcntrl_l_0600", ret, CMPFLAG);
@@ -245,6 +245,6 @@ static int IswcntrlTestImpl(int argc, char *argv[])
 int IswcntrlTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return IswcntrlTestImpl(1, libcArgv);
 }

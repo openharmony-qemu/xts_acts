@@ -76,7 +76,7 @@ void IswlowerL0100(void)
     const wchar_t *str = L"abcdefghijklmnopqrstuvwxyz";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswlower_l(*p, NULL);
+        int ret = iswlower_l(*p, nullptr);
         EXPECT_EQ("iswlower_l_0100", ret, ONREXPECT);
     }
 }
@@ -88,7 +88,7 @@ void IswlowerL0100(void)
  */
 void IswlowerL0101(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     const wchar_t *str = L"abcdefghijklmnopqrstuvwxyz";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -105,7 +105,7 @@ void IswlowerL0101(void)
  */
 void IswlowerL0102(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     const wchar_t *str = L"abcdefghijklmnopqrstuvwxyz";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -125,7 +125,7 @@ void IswlowerL0200(void)
     const wchar_t *str = L"12ABC!@#";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswlower_l(*p, NULL);
+        int ret = iswlower_l(*p, nullptr);
         EXPECT_EQ("iswlower_l_0200", ret, CMPFLAG);
     }
 }
@@ -137,7 +137,7 @@ void IswlowerL0200(void)
  */
 void IswlowerL0201(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     const wchar_t *str = L"12ABC!@#";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -154,7 +154,7 @@ void IswlowerL0201(void)
  */
 void IswlowerL0202(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     const wchar_t *str = L"12ABC!@#";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -171,7 +171,7 @@ void IswlowerL0202(void)
  */
 void IswlowerL0300(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
         int ret = iswlower_l(i, mLocale);
@@ -190,7 +190,7 @@ void IswlowerL0300(void)
  */
 void IswlowerL0400(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
         int ret = iswlower_l(i, mLocale);
@@ -209,7 +209,7 @@ void IswlowerL0400(void)
  */
 void IswlowerL0500(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     int ret = iswlower_l(MAX_VALUE, mLocale);
     freelocale(mLocale);
     EXPECT_EQ("iswlower_l_0500", ret, CMPFLAG);
@@ -222,7 +222,7 @@ void IswlowerL0500(void)
  */
 void IswlowerL0600(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     int ret = iswlower_l(MAX_VALUE, mLocale);
     freelocale(mLocale);
     EXPECT_EQ("iswlower_l_0600", ret, CMPFLAG);
@@ -252,6 +252,6 @@ static int IswlowerTestImpl(int argc, char *argv[])
 int IswlowerTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return IswlowerTestImpl(1, libcArgv);
 }

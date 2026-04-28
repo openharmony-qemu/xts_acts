@@ -63,7 +63,7 @@ void IswprintL0100(void)
     const wchar_t *str = L"1Aa®Â Æ";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswprint_l(*p, NULL);
+        int ret = iswprint_l(*p, nullptr);
         EXPECT_EQ("iswprint_l_0100", ret, ONREXPECT);
     }
 }
@@ -75,7 +75,7 @@ void IswprintL0100(void)
  */
 void IswprintL0101(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     const wchar_t *str = L"1Aa®Â Æ";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -92,7 +92,7 @@ void IswprintL0101(void)
  */
 void IswprintL0102(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     const wchar_t *str = L"1Aa®Â Æ";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -112,7 +112,7 @@ void IswprintL0200(void)
     const wchar_t *str = L"\a\b";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswprint_l(*p, NULL);
+        int ret = iswprint_l(*p, nullptr);
         EXPECT_EQ("iswprint_l_0200", ret, CMPFLAG);
     }
 }
@@ -124,7 +124,7 @@ void IswprintL0200(void)
  */
 void IswprintL0201(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     const wchar_t *str = L"\a\b";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -141,7 +141,7 @@ void IswprintL0201(void)
  */
 void IswprintL0202(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     const wchar_t *str = L"\a\b";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -158,7 +158,7 @@ void IswprintL0202(void)
  */
 void IswprintL0300(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
         int ret = iswprint_l(i, mLocale);
@@ -177,7 +177,7 @@ void IswprintL0300(void)
  */
 void IswprintL0400(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
         int ret = iswprint_l(i, mLocale);
@@ -196,7 +196,7 @@ void IswprintL0400(void)
  */
 void IswprintL0500(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     int ret = iswprint_l(MAX_VALUE, mLocale);
     freelocale(mLocale);
     EXPECT_EQ("iswprint_l_0500", ret, CMPFLAG);
@@ -209,7 +209,7 @@ void IswprintL0500(void)
  */
 void IswprintL0600(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     int ret = iswprint_l(MAX_VALUE, mLocale);
     freelocale(mLocale);
     EXPECT_EQ("iswprint_l_0600", ret, CMPFLAG);
@@ -238,6 +238,6 @@ static int IswprintTestImpl(int argc, char *argv[])
 int IswprintTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return IswprintTestImpl(1, libcArgv);
 }

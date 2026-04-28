@@ -64,7 +64,7 @@ int Prepare(sigset_t *set)
         return result;
     }
 
-    result = sigprocmask(SIG_BLOCK, NULL, set);
+    result = sigprocmask(SIG_BLOCK, nullptr, set);
     if (result != 0) {
         return result;
     }
@@ -96,7 +96,7 @@ void Sigset0100(void)
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
 
-    result = sigprocmask(SIG_BLOCK, NULL, &set);
+    result = sigprocmask(SIG_BLOCK, nullptr, &set);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -131,7 +131,7 @@ void Sigset0200(void)
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
 
-    result = sigprocmask(SIG_BLOCK, NULL, &set);
+    result = sigprocmask(SIG_BLOCK, nullptr, &set);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -166,7 +166,7 @@ void Sigset0300(void)
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
 
-    result = sigprocmask(SIG_BLOCK, NULL, &set);
+    result = sigprocmask(SIG_BLOCK, nullptr, &set);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -201,7 +201,7 @@ void Sigset0400(void)
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
 
-    result = sigprocmask(SIG_BLOCK, NULL, &set);
+    result = sigprocmask(SIG_BLOCK, nullptr, &set);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -242,6 +242,6 @@ static int SigsetTestImpl(int argc, char *argv[])
 int SigsetTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return SigsetTestImpl(1, libcArgv);
 }

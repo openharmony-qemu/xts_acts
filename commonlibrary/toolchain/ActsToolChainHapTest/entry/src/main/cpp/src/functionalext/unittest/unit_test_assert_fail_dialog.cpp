@@ -25,7 +25,7 @@
 #include <csignal>
 
 #undef assert
-#define assert(x) ((void)((x) || (__assert_fail(#x, __FILE__, __LINE__, __func__),0)))
+#define assert(x) ((void)((x) || (__assert_fail(#x, __FILE__, __LINE__, __func__), 0)))
 
 #define FILE_ABORT "abort.txt"
 #define FILE_IGNORE "ignore.txt"
@@ -39,7 +39,7 @@ typedef enum {
     ASSERT_ABORT = 0,
     ASSERT_IGNORE = 1,
     ASSERT_RETRY = 2
-} Assert_Status;
+} AssertStatus;
 
 typedef struct {
     const char *expression;
@@ -48,12 +48,12 @@ typedef struct {
     const char *function;
 } AssertFailureInfo;
 
-typedef Assert_Status (*AssertCallback)(AssertFailureInfo);
+typedef AssertStatus (*AssertCallback)(AssertFailureInfo);
 
 void WriteToFile(const char *filename, const char *content)
 {
     FILE *file = fopen(filename, "w");
-    if (file != NULL) {
+    if (file != nullptr) {
         fprintf(file, "%s\n", content);
         fclose(file);
     } else {
@@ -67,73 +67,73 @@ char* ReadFile(const char *filename)
     FILE *file;
 
     file = fopen(filename, "r");
-    if (file == NULL) {
+    if (file == nullptr) {
         perror("fopen");
-        return NULL;
+        return nullptr;
     }
-    if (fgets(buffer, sizeof(buffer), file) == NULL) {
+    if (fgets(buffer, sizeof(buffer), file) == nullptr) {
         perror("fgets");
         fclose(file);
-        return NULL;
+        return nullptr;
     }
 
     fclose(file);
     return buffer;
 }
 
-Assert_Status CallbackFunctionAbort(AssertFailureInfo assert_fail)
+AssertStatus CallbackFunctionAbort(AssertFailureInfo assertFail)
 {
     char content[MAX_FILE_SIZE] = ASSERT_ABORT_INFO;
     WriteToFile(FILE_ABORT, content);
-    Assert_Status res = ASSERT_ABORT;
+    AssertStatus res = ASSERT_ABORT;
     return res;
 }
 
-Assert_Status CallbackFunctionIgnore(AssertFailureInfo assert_fail)
+AssertStatus CallbackFunctionIgnore(AssertFailureInfo assertFail)
 {
     char content[MAX_FILE_SIZE] = ASSERT_IGNORE_INFO;
     WriteToFile(FILE_IGNORE, content);
-    Assert_Status res = ASSERT_IGNORE;
+    AssertStatus res = ASSERT_IGNORE;
     return res;
 }
 
-Assert_Status CallbackFunctionRetry(AssertFailureInfo assert_fail)
+AssertStatus CallbackFunctionRetry(AssertFailureInfo assertFail)
 {
     char content[MAX_FILE_SIZE] = ASSERT_RETRY_INFO;
     WriteToFile(FILE_RETRY, content);
-    Assert_Status res = ASSERT_RETRY;
+    AssertStatus res = ASSERT_RETRY;
     return res;
 }
 
 void ProcessAbort()
 {
-    typedef void (*set_assert_callback_func)(AssertCallback);
-    set_assert_callback_func set_assert_callback = 
-        (set_assert_callback_func)dlsym(RTLD_DEFAULT, "set_assert_callback");
-    if (set_assert_callback) {
-        set_assert_callback(CallbackFunctionAbort);
+    typedef void (*SetAssertCallbackFunc)(AssertCallback);
+    SetAssertCallbackFunc setAssertCallback =
+        (SetAssertCallbackFunc)dlsym(RTLD_DEFAULT, "set_assert_callback");
+    if (setAssertCallback) {
+        setAssertCallback(CallbackFunctionAbort);
     }
     assert(0);
 }
 
 void ProcessIgnore()
 {
-    typedef void (*set_assert_callback_func)(AssertCallback);
-    set_assert_callback_func set_assert_callback = 
-        (set_assert_callback_func)dlsym(RTLD_DEFAULT, "set_assert_callback");
-    if (set_assert_callback) {
-        set_assert_callback(CallbackFunctionIgnore);
+    typedef void (*SetAssertCallbackFunc)(AssertCallback);
+    SetAssertCallbackFunc setAssertCallback =
+        (SetAssertCallbackFunc)dlsym(RTLD_DEFAULT, "set_assert_callback");
+    if (setAssertCallback) {
+        setAssertCallback(CallbackFunctionIgnore);
     }
     assert(0);
 }
 
 void ProcessRetry()
 {
-    typedef void (*set_assert_callback_func)(AssertCallback);
-    set_assert_callback_func set_assert_callback = 
-        (set_assert_callback_func)dlsym(RTLD_DEFAULT, "set_assert_callback");
-    if (set_assert_callback) {
-        set_assert_callback(CallbackFunctionRetry);
+    typedef void (*SetAssertCallbackFunc)(AssertCallback);
+    SetAssertCallbackFunc setAssertCallback =
+        (SetAssertCallbackFunc)dlsym(RTLD_DEFAULT, "set_assert_callback");
+    if (setAssertCallback) {
+        setAssertCallback(CallbackFunctionRetry);
     }
     assert(0);
 }
@@ -187,14 +187,14 @@ static int UnittestFatalMessageAssertFailDialogTestImpl(void)
     waitpid(pid2, &status, 0);
     waitpid(pid3, &status, 0);
 
-    char *BufferAbort = ReadFile(FILE_ABORT);
-    char *BufferIgnore = ReadFile(FILE_IGNORE);
-    char *BufferRetry = ReadFile(FILE_RETRY);
+    char *bufferAbort = ReadFile(FILE_ABORT);
+    char *bufferIgnore = ReadFile(FILE_IGNORE);
+    char *bufferRetry = ReadFile(FILE_RETRY);
 
-    if (BufferAbort && BufferIgnore && BufferRetry &&
-        strcmp(BufferAbort, ASSERT_ABORT_INFO) == 0 && 
-        strcmp(BufferIgnore, ASSERT_IGNORE_INFO) == 0 &&
-        strcmp(BufferRetry, ASSERT_RETRY_INFO) == 0) {
+    if (bufferAbort && bufferIgnore && bufferRetry &&
+        strcmp(bufferAbort, ASSERT_ABORT_INFO) == 0 &&
+        strcmp(bufferIgnore, ASSERT_IGNORE_INFO) == 0 &&
+        strcmp(bufferRetry, ASSERT_RETRY_INFO) == 0) {
         printf("All processes finished.\n");
     }
 

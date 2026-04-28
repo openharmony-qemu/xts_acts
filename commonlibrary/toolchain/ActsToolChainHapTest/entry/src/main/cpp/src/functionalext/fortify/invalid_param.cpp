@@ -42,7 +42,7 @@ static void Clearerr0100(void)
     if (pid == -1) {
         t_error("clearerr_0100: Error forking process");
     } else if (pid == 0) {
-        clearerr(NULL);
+        clearerr(nullptr);
     } else {
         int status;
         waitpid(pid, &status, 0);
@@ -64,7 +64,7 @@ void Feof0100(void)
     if (pid == -1) {
         t_error("feof_0100: Error forking process");
     } else if (pid == 0) {
-        feof(NULL);
+        feof(nullptr);
     } else {
         int status;
         waitpid(pid, &status, 0);
@@ -86,7 +86,7 @@ void Ferror0100(void)
     if (pid == -1) {
         t_error("ferror_0100: Error forking process");
     } else if (pid == 0) {
-        ferror(NULL);
+        ferror(nullptr);
     } else {
         int status;
         waitpid(pid, &status, 0);
@@ -108,7 +108,7 @@ void Fgetc0100(void)
     if (pid == -1) {
         t_error("fgetc_0100: Error forking process");
     } else if (pid == 0) {
-        fgetc(NULL);
+        fgetc(nullptr);
     } else {
         int status;
         waitpid(pid, &status, 0);
@@ -131,7 +131,7 @@ static void Fgets0100(void)
         t_error("fgets_0100: Error forking process");
     } else if (pid == 0) {
         char buffer[32];
-        fgets(buffer, sizeof(buffer), NULL);
+        fgets(buffer, sizeof(buffer), nullptr);
     } else {
         int status;
         waitpid(pid, &status, 0);
@@ -154,7 +154,7 @@ static void Fprintf0100(void)
         t_error("fprintf_0100: Error forking process");
     } else if (pid == 0) {
         char str[] = "test";
-        fprintf(NULL, "%s", str);
+        fprintf(nullptr, "%s", str);
     } else {
         int status;
         waitpid(pid, &status, 0);
@@ -176,7 +176,7 @@ static void Fputc0100(void)
     if (pid == -1) {
         t_error("fputc_0100: Error forking process");
     } else if (pid == 0) {
-        fputc('a', NULL);
+        fputc('a', nullptr);
     } else {
         int status;
         waitpid(pid, &status, 0);
@@ -198,7 +198,7 @@ static void Fputs0100(void)
     if (pid == -1) {
         t_error("fputs_0100: Error forking process");
     } else if (pid == 0) {
-        fputs("", NULL);
+        fputs("", nullptr);
     } else {
         int status;
         waitpid(pid, &status, 0);
@@ -221,7 +221,7 @@ static void Fread0600(void)
         t_error("fread_0600: Error forking process");
     } else if (pid == 0) {
         char buffer[1024];
-        fread(buffer, sizeof(char), sizeof(buffer), NULL);
+        fread(buffer, sizeof(char), sizeof(buffer), nullptr);
     } else {
         int status;
         waitpid(pid, &status, 0);
@@ -244,7 +244,7 @@ static void Fscanf0100(void)
         t_error("fscanf_0100: Error forking process");
     } else if (pid == 0) {
         char buffer[1024];
-        fscanf(NULL, "%s", buffer);
+        fscanf(nullptr, "%s", buffer);
     } else {
         int status;
         waitpid(pid, &status, 0);
@@ -267,7 +267,7 @@ static void Fseek0100(void)
         t_error("fseek_0100: Error forking process");
     } else if (pid == 0) {
         char buffer[1024];
-        fseek(NULL, 0L, SEEK_END);
+        fseek(nullptr, 0L, SEEK_END);
     } else {
         int status;
         waitpid(pid, &status, 0);
@@ -289,7 +289,7 @@ static void Fseeko0100(void)
     if (pid == -1) {
         t_error("fseeko_0100: Error forking process");
     } else if (pid == 0) {
-        fseeko(NULL, 0L, SEEK_END);
+        fseeko(nullptr, 0L, SEEK_END);
     } else {
         int status;
         waitpid(pid, &status, 0);
@@ -319,6 +319,6 @@ static int InvalidParamTestImpl(int argc, char *argv[])
 int InvalidParamTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return InvalidParamTestImpl(1, libcArgv);
 }

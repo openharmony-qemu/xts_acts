@@ -18,7 +18,7 @@
 
 #include "test.h"
 
-extern "C" int __sched_rr_get_interval_time64(pid_t, struct timespec *);
+extern "C" int SchedRrGetIntervalTime64(pid_t, struct timespec *);
 /**
  * @tc.name      : sched_rr_get_interval_0100
  * @tc.desc      : get the SCHED_RR interval for the named process
@@ -71,7 +71,7 @@ void SchedRrGetIntervalTime640100(void)
     struct timespec ts = {0};
 
     errno = 0;
-    int result = __sched_rr_get_interval_time64(pid, &ts);
+    int result = SchedRrGetIntervalTime64(pid, &ts);
     if (result != 0 || errno != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
         t_error("%s failed: errno = %d\n", __func__, errno);

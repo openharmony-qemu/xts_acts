@@ -18,53 +18,53 @@
 #include <unistd.h>
 #include "functionalext.h"
 
-int32_t COUNT = 0;
+int32_t g_count = 0;
 const int32_t INIT_LEN = 0;
 const int32_t INCREASE_LEN = 1;
 const int32_t PTHREADSTACK = 0x4001;
 const char *URL = "http://c.test.com";
 
-static void *threadfuncA(void *arg)
+static void *ThreadfuncA(void *arg)
 {
-    COUNT++;
+    g_count++;
     return arg;
 }
 
-static void *threadfunc(void *arg)
+static void *Threadfunc(void *arg)
 {
     return arg;
 }
 
 /**
  * @tc.name:      pthread_create_0100
- * @tc.desc:      Verify pthread create process sucess when attrp and arg is NULL.
+ * @tc.desc:      Verify pthread create process sucess when attrp and arg is nullptr.
  * @tc.level:     level 0.
  */
 void PthreadCreate0100(void)
 {
     pthread_t ph;
-    int32_t ret = pthread_create(&ph, NULL, threadfuncA, NULL);
-    pthread_join(ph, NULL);
+    int32_t ret = pthread_create(&ph, nullptr, ThreadfuncA, nullptr);
+    pthread_join(ph, nullptr);
     EXPECT_EQ("PthreadCreate0100", ret, INIT_LEN);
-    EXPECT_EQ("PthreadCreate0100", COUNT, INCREASE_LEN);
+    EXPECT_EQ("PthreadCreate0100", g_count, INCREASE_LEN);
 }
 
 /**
  * @tc.name:      pthread_create_0200
- * @tc.desc:      Verify pthread create process sucess when attrp is NULL.
+ * @tc.desc:      Verify pthread create process sucess when attrp is nullptr.
  * @tc.level:     level 0.
  */
 void PthreadCreate0200(void)
 {
     pthread_t ph;
-    int32_t ret = pthread_create(&ph, NULL, threadfunc, (char *)(URL));
-    pthread_join(ph, NULL);
+    int32_t ret = pthread_create(&ph, nullptr, Threadfunc, (char *)(URL));
+    pthread_join(ph, nullptr);
     EXPECT_EQ("PthreadCreate0200", ret, INIT_LEN);
 }
 
 /**
  * @tc.name:      pthread_create_0300
- * @tc.desc:      Verify pthread create process sucess when attrp is NULL.
+ * @tc.desc:      Verify pthread create process sucess when attrp is nullptr.
  * @tc.level:     level 1.
  */
 void PthreadCreate0300(void)
@@ -73,8 +73,8 @@ void PthreadCreate0300(void)
     pthread_attr_t atrr;
 
     pthread_attr_init(&atrr);
-    int32_t ret = pthread_create(&ph, &atrr, threadfunc, (char *)(URL));
-    pthread_join(ph, NULL);
+    int32_t ret = pthread_create(&ph, &atrr, Threadfunc, (char *)(URL));
+    pthread_join(ph, nullptr);
     EXPECT_EQ("PthreadCreate0300", ret, INIT_LEN);
 }
 
@@ -87,7 +87,7 @@ void PthreadCreate0400(void)
 {
     int32_t ret;
     pthread_t ph;
-    void *stackAddr = NULL;
+    void *stackAddr = nullptr;
     pthread_attr_t attr;
     int32_t pageSize = getpagesize();
     pthread_attr_init(&attr);
@@ -101,8 +101,8 @@ void PthreadCreate0400(void)
         EXPECT_NE("PthreadCreate0400", ret, 0);
         return;
     }
-    ret = pthread_create(&ph, &attr, threadfunc, (char *)(URL));
-    pthread_join(ph, NULL);
+    ret = pthread_create(&ph, &attr, Threadfunc, (char *)(URL));
+    pthread_join(ph, nullptr);
     pthread_attr_destroy(&attr);
     EXPECT_EQ("PthreadCreate0400", ret, INIT_LEN);
 }
@@ -119,7 +119,7 @@ void PthreadCreate0500(void)
 
     pthread_attr_init(&attr);
     pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
-    int32_t ret = pthread_create(&ph, &attr, threadfunc, (char *)(URL));
+    int32_t ret = pthread_create(&ph, &attr, Threadfunc, (char *)(URL));
     EXPECT_EQ("PthreadCreate0500", ret, INIT_LEN);
 }
 

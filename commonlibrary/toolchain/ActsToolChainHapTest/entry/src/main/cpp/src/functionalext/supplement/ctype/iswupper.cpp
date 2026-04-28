@@ -77,7 +77,7 @@ void IswupperL0100(void)
     const wchar_t *str = L"ABCDEFG";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswupper_l(*p, NULL);
+        int ret = iswupper_l(*p, nullptr);
         EXPECT_EQ("IswupperL0100", ret, ONREXPECT);
     }
 }
@@ -89,7 +89,7 @@ void IswupperL0100(void)
  */
 void IswupperL0101(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     const wchar_t *str = L"ABCDEFG";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -106,7 +106,7 @@ void IswupperL0101(void)
  */
 void IswupperL0102(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     const wchar_t *str = L"ABCDEFG";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -126,7 +126,7 @@ void IswupperL0200(void)
     const wchar_t *str = L"abcefg1";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswupper_l(*p, NULL);
+        int ret = iswupper_l(*p, nullptr);
         EXPECT_EQ("IswupperL0200", ret, CMPFLAG);
     }
 }
@@ -138,7 +138,7 @@ void IswupperL0200(void)
  */
 void IswupperL0201(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     const wchar_t *str = L"abcefg1";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -155,7 +155,7 @@ void IswupperL0201(void)
  */
 void IswupperL0202(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     const wchar_t *str = L"abcefg1";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -172,7 +172,7 @@ void IswupperL0202(void)
  */
 void IswupperL0300(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
         int ret = iswupper_l(i, mLocale);
@@ -191,7 +191,7 @@ void IswupperL0300(void)
  */
 void IswupperL0400(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
         int ret = iswupper_l(i, mLocale);
@@ -210,7 +210,7 @@ void IswupperL0400(void)
  */
 void IswupperL0500(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     int ret = iswupper_l(MAX_VALUE, mLocale);
     freelocale(mLocale);
     EXPECT_EQ("iswupper_l_0500", ret, CMPFLAG);
@@ -223,7 +223,7 @@ void IswupperL0500(void)
  */
 void IswupperL0600(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     int ret = iswupper_l(MAX_VALUE, mLocale);
     freelocale(mLocale);
     EXPECT_EQ("iswupper_l_0600", ret, CMPFLAG);
@@ -253,6 +253,6 @@ static int IswupperTestImpl(int argc, char *argv[])
 int IswupperTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return IswupperTestImpl(1, libcArgv);
 }

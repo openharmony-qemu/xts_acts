@@ -40,7 +40,7 @@ static int Ccmp(const void *a, const void *b)
     return *(char*)a - *(char*)b;
 }
 
-static int cmp64(const void *a, const void *b)
+static int Cmp64(const void *a, const void *b)
 {
     const uint64_t *ua = static_cast<const uint64_t*>(a);
     const uint64_t *ub = static_cast<const uint64_t*>(b);
@@ -48,7 +48,7 @@ static int cmp64(const void *a, const void *b)
 }
 
 /* 26 items -- even */
-static const char *s[] = {
+static const char *g_s[] = {
     "Bob", "Alice", "John", "Ceres",
     "Helga", "Drepper", "Emeralda", "Zoran",
     "Momo", "Frank", "Pema", "Xavier",
@@ -87,8 +87,9 @@ static void StrTest(const char **a, const char **aSorted, int len)
         if (strcmp(a[i], aSorted[i]) != 0) {
             t_error("string sort failed at index %d\n", i);
             TPrintf("\ti\tgot\twant\n");
-            for (i=0; i<len; i++)
+            for (i=0; i<len; i++) {
                 TPrintf("\t%d\t%s\t%s\n", i, a[i], aSorted[i]);
+            }
             break;
         }
     }
@@ -102,8 +103,9 @@ static void IntTest(int *a, int *aSorted, int len)
         if (a[i] != aSorted[i]) {
             t_error("integer sort failed at index %d\n", i);
             TPrintf("\ti\tgot\twant\n");
-            for (i=0; i<len; i++)
+            for (i=0; i<len; i++) {
                 TPrintf("\t%d\t%d\t%d\n", i, a[i], aSorted[i]);
+            }
             break;
         }
     }
@@ -131,13 +133,14 @@ static void Uint64Gen(uint64_t *p, uint64_t *pSorted, int n)
 static void Uint64Test(uint64_t *a, uint64_t *aSorted, int len)
 {
     int i;
-    qsort(a, len, sizeof *a, cmp64);
+    qsort(a, len, sizeof *a, Cmp64);
     for (i=0; i<len; i++) {
         if (a[i] != aSorted[i]) {
             t_error("uint64 sort failed at index %d\n", i);
             TPrintf("\ti\tgot\twant\n");
-            for (i=0; i<len; i++)
+            for (i=0; i<len; i++) {
                 TPrintf("\t%d\t%" PRIu64 "\t%" PRIu64 "\n", i, a[i], aSorted[i]);
+            }
             break;
         }
     }
@@ -188,7 +191,7 @@ static int QsortTestImpl(void)
 {
     int i;
 
-    StrTest(s, g_sSorted, sizeof s/sizeof*s);
+    StrTest(g_s, g_sSorted, sizeof g_s/sizeof*g_s);
     IntTest(g_n, g_nSorted, sizeof g_n/sizeof*g_n);
     CharTest();
     for (i = TEST_ARRAY_START_SIZE; i<=TEST_ARRAY_END_SIZE; i++) {

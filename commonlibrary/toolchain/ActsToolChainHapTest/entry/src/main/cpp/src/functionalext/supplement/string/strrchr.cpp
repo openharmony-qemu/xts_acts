@@ -29,8 +29,8 @@
 #define N(no, str, c)                                                                      \
     {                                                                                      \
         const char *result = strrchr(str, c);                                                    \
-        if (result != NULL)                                                                \
-            t_error("%s strrchr(%s,%s) returned %s is not NULL\n", #no, #str, #c, result); \
+        if (result != nullptr)                                                                \
+            t_error("%s strrchr(%s,%s) returned %s is not nullptr\n", #no, #str, #c, result); \
     }
 
 // 修复：把 char* 改成 const char*
@@ -38,7 +38,7 @@
     {                                                                                  \
         const char *result = strrchr(str, 0);                                                \
         if (strcmp(result, "") != 0)                                                   \
-            t_error("%s strrchr(%s,NULL) returned %s is not ''\n", #no, #str, result); \
+            t_error("%s strrchr(%s,nullptr) returned %s is not ''\n", #no, #str, result); \
     }
 
 static int StrrchrTestImpl(int argc, char *argv[])
@@ -79,6 +79,6 @@ static int StrrchrTestImpl(int argc, char *argv[])
 int StrrchrTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return StrrchrTestImpl(1, libcArgv);
 }

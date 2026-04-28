@@ -63,7 +63,7 @@ void IswdigitL0100(void)
     const wchar_t *str = L"1234567890";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswdigit_l(*p, NULL);
+        int ret = iswdigit_l(*p, nullptr);
         EXPECT_EQ("iswdigit_l_0100", ret, ONREXPECT);
     }
 }
@@ -75,7 +75,7 @@ void IswdigitL0100(void)
  */
 void IswdigitL0101(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     const wchar_t *str = L"1234567890";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -92,7 +92,7 @@ void IswdigitL0101(void)
  */
 void IswdigitL0102(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     const wchar_t *str = L"1234567890";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -112,7 +112,7 @@ void IswdigitL0200(void)
     const wchar_t *str = L"ewqWRE!~*Ad";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswdigit_l(*p, NULL);
+        int ret = iswdigit_l(*p, nullptr);
         EXPECT_EQ("iswdigit_l_0200", ret, CMPFLAG);
     }
 }
@@ -124,7 +124,7 @@ void IswdigitL0200(void)
  */
 void IswdigitL0201(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     const wchar_t *str = L"ewqWRE!~*Ad";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -141,7 +141,7 @@ void IswdigitL0201(void)
  */
 void IswdigitL0202(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     const wchar_t *str = L"ewqWRE!~*Ad";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -158,7 +158,7 @@ void IswdigitL0202(void)
  */
 void IswdigitL0300(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
         int ret = iswdigit_l(i, mLocale);
@@ -177,7 +177,7 @@ void IswdigitL0300(void)
  */
 void IswdigitL0400(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
         int ret = iswdigit_l(i, mLocale);
@@ -196,7 +196,7 @@ void IswdigitL0400(void)
  */
 void IswdigitL0500(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     int ret = iswdigit_l(MAX_VALUE, mLocale);
     freelocale(mLocale);
     EXPECT_EQ("iswdigit_l_0500", ret, CMPFLAG);
@@ -209,7 +209,7 @@ void IswdigitL0500(void)
  */
 void IswdigitL0600(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     int ret = iswdigit_l(MAX_VALUE, mLocale);
     freelocale(mLocale);
     EXPECT_EQ("iswdigit_l_0600", ret, CMPFLAG);
@@ -238,6 +238,6 @@ static int IswdigitTestImpl(int argc, char *argv[])
 int IswdigitTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return IswdigitTestImpl(1, libcArgv);
 }

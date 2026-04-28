@@ -26,8 +26,8 @@
 static void Localeconv0100(void)
 {
     struct lconv *pconv = localeconv();
-    if (pconv == NULL) {
-        EXPECT_PTRNE("localeconv_0100", pconv, NULL);
+    if (pconv == nullptr) {
+        EXPECT_PTRNE("localeconv_0100", pconv, nullptr);
         return;
     }
     EXPECT_STREQ("localeconv_0100", ".", pconv->decimal_point);

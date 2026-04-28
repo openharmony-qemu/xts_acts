@@ -42,7 +42,7 @@ void Opendir0100(void)
     }
     struct dirent *r;
     int issuccess = 0;
-    while ((r = readdir(dir)) != NULL) {
+    while ((r = readdir(dir)) != nullptr) {
         if (strcmp(r->d_name, ".") == 0) {
             issuccess = 1;
             break;
@@ -67,13 +67,13 @@ void Opendir0200(void)
 {
     DIR *dir1 = opendir("/dev/null");
     if (dir1) {
-        t_error("%s dir should be NULL\n", __func__);
+        t_error("%s dir should be nullptr\n", __func__);
     }
 
     errno = 0;
     DIR *dir2 = opendir("/does/not/exit/folder");
     if (dir2) {
-        t_error("%s dir should be NULL\n", __func__);
+        t_error("%s dir should be nullptr\n", __func__);
     }
     if (errno != ENOENT) {
         t_error("%s errno should be ENOTDIR, but now is %d\n", __func__, errno);
@@ -82,14 +82,14 @@ void Opendir0200(void)
 
 /*
  * @tc.name      : opendir_0300
- * @tc.desc      : When the path is NULL, test the return value of the function
+ * @tc.desc      : When the path is nullptr, test the return value of the function
  * @tc.level     : Level 2
  */
 void Opendir0300(void)
 {
-    DIR *dir = opendir(NULL);
+    DIR *dir = opendir(nullptr);
     if (dir) {
-        t_error("%s dir should be NULL\n", __func__);
+        t_error("%s dir should be nullptr\n", __func__);
     }
 }
 
@@ -105,7 +105,7 @@ static int OpendirTestImpl(int argc, char *argv[])
 int OpendirTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return OpendirTestImpl(1, libcArgv);
 }
 

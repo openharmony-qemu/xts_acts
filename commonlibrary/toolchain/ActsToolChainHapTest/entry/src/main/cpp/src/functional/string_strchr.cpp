@@ -29,14 +29,14 @@
 
 static char g_buf[TEST_BUFFER_SIZE];
 
-static void *aligned(void *p)
+static void *Aligned(void *p)
 {
     return reinterpret_cast<void*>((reinterpret_cast<uintptr_t>(p) + ALIGNMENT_OFFSET) & static_cast<uintptr_t>(-CACHE_LINE_SIZE));
 }
 
 static void *Aligncpy(const void *p, size_t len, size_t a)
 {
-    return memcpy(reinterpret_cast<char*>(aligned(g_buf))+a, p, len);
+    return memcpy(reinterpret_cast<char*>(Aligned(g_buf))+a, p, len);
 }
 
 #define N(s, c) { \
@@ -67,10 +67,12 @@ static int StringStrchrTestImpl(void)
     char a[ARRAY_SIZE_A];
     char s[ARRAY_SIZE_S];
 
-    for (i = 0; i < ARRAY_SIZE_A; i++)
+    for (i = 0; i < ARRAY_SIZE_A; i++) {
         a[i] = static_cast<char>((i+1) & CHAR_MASK);
-    for (i = 0; i < ARRAY_SIZE_S; i++)
+    }
+    for (i = 0; i < ARRAY_SIZE_S; i++) {
         reinterpret_cast<unsigned char*>(s)[i] = static_cast<unsigned char>(i+1);
+    }
 
     N("\0aaa", 'a')
     N("a\0bb", 'b')

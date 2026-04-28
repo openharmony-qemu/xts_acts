@@ -63,7 +63,7 @@ void IswpunctL0100(void)
     const wchar_t *str = L"!！，。？?";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswpunct_l(*p, NULL);
+        int ret = iswpunct_l(*p, nullptr);
         EXPECT_EQ("iswpunct_l_0100", ret, ONREXPECT);
     }
 }
@@ -75,7 +75,7 @@ void IswpunctL0100(void)
  */
 void IswpunctL0101(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     const wchar_t *str = L"!！，。？?";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -92,7 +92,7 @@ void IswpunctL0101(void)
  */
 void IswpunctL0102(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     const wchar_t *str = L"!！，。？?";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -112,7 +112,7 @@ void IswpunctL0200(void)
     const wchar_t *str = L"1AaÂÆ";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswpunct_l(*p, NULL);
+        int ret = iswpunct_l(*p, nullptr);
         EXPECT_EQ("iswpunct_l_0200", ret, CMPFLAG);
     }
 }
@@ -124,7 +124,7 @@ void IswpunctL0200(void)
  */
 void IswpunctL0201(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     const wchar_t *str = L"1AaÂÆ";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -141,7 +141,7 @@ void IswpunctL0201(void)
  */
 void IswpunctL0202(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     const wchar_t *str = L"1AaÂÆ";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -158,7 +158,7 @@ void IswpunctL0202(void)
  */
 void IswpunctL0300(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
         int ret = iswpunct_l(i, mLocale);
@@ -177,7 +177,7 @@ void IswpunctL0300(void)
  */
 void IswpunctL0400(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
         int ret = iswpunct_l(i, mLocale);
@@ -196,7 +196,7 @@ void IswpunctL0400(void)
  */
 void IswpunctL0500(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     int ret = iswpunct_l(MAX_VALUE, mLocale);
     freelocale(mLocale);
     EXPECT_EQ("iswpunct_l_0500", ret, CMPFLAG);
@@ -209,7 +209,7 @@ void IswpunctL0500(void)
  */
 void IswpunctL0600(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     int ret = iswpunct_l(MAX_VALUE, mLocale);
     freelocale(mLocale);
     EXPECT_EQ("iswpunct_l_0600", ret, CMPFLAG);
@@ -238,6 +238,6 @@ static int IswpunctTestImpl(int argc, char *argv[])
 int IswpunctTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return IswpunctTestImpl(1, libcArgv);
 }

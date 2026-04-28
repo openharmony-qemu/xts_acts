@@ -29,15 +29,15 @@ void Memrchr0100(void)
     const char *src = "this is memrchr_0100 test.";
 
     char *ret = (char *)memrchr(src, 'r', strlen(src));
-    EXPECT_PTRNE("memrchr_0100", ret, NULL);
+    EXPECT_PTRNE("memrchr_0100", ret, nullptr);
     EXPECT_STREQ("memrchr_0100", ret, "r_0100 test.");
 
     ret = (char *)memrchr(src, 'r', strlen("memrchr_0100 test."));
-    EXPECT_PTRNE("memrchr_0100", ret, NULL);
+    EXPECT_PTRNE("memrchr_0100", ret, nullptr);
     EXPECT_STREQ("memrchr_0100", ret, "r_0100 test.");
 
     ret = (char *)memrchr(src, 'w', strlen(src));
-    EXPECT_PTREQ("memrchr_0100", ret, NULL);
+    EXPECT_PTREQ("memrchr_0100", ret, nullptr);
 }
 
 /**
@@ -49,7 +49,7 @@ void Memrchr0200(void)
 {
     const char *src = "this is memrchr_0200 test.";
     char *ret = (char *)memrchr(src, 'r', 0);
-    EXPECT_PTREQ("memrchr_0200", ret, NULL);
+    EXPECT_PTREQ("memrchr_0200", ret, nullptr);
 }
 
 static int MemrchrTestImpl(void)

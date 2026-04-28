@@ -32,7 +32,7 @@ void IswalphaL0100(void)
     const wchar_t *str = L"aBcrWER";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswalpha_l(*p, NULL);
+        int ret = iswalpha_l(*p, nullptr);
         EXPECT_EQ("iswalpha_l_0100", ret, ONREXPECT);
     }
 }
@@ -44,7 +44,7 @@ void IswalphaL0100(void)
  */
 void IswalphaL0101(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     const wchar_t *str = L"aBcrWER";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -61,7 +61,7 @@ void IswalphaL0101(void)
  */
 void IswalphaL0102(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     const wchar_t *str = L"aBcrWER";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -81,7 +81,7 @@ void IswalphaL0200(void)
     const wchar_t *str = L"2!~*";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
-        int ret = iswalpha_l(*p, NULL);
+        int ret = iswalpha_l(*p, nullptr);
         EXPECT_EQ("iswalpha_l_0200", ret, CMPFLAG);
     }
 }
@@ -93,7 +93,7 @@ void IswalphaL0200(void)
  */
 void IswalphaL0201(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     const wchar_t *str = L"2!~*";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -110,7 +110,7 @@ void IswalphaL0201(void)
  */
 void IswalphaL0202(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     const wchar_t *str = L"2!~*";
     const wchar_t *p = str;
     while (*p++ && *p != '\0') {
@@ -127,7 +127,7 @@ void IswalphaL0202(void)
  */
 void IswalphaL0300(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
         int ret = iswalpha_l(i, mLocale);
@@ -146,7 +146,7 @@ void IswalphaL0300(void)
  */
 void IswalphaL0400(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     int total = 0;
     for (int i = 0; i < UNICODE_SIZE; i++) {
         int ret = iswalpha_l(i, mLocale);
@@ -165,7 +165,7 @@ void IswalphaL0400(void)
  */
 void IswalphaL0500(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "zh_CN", nullptr);
     int ret = iswalpha_l(MAX_VALUE, mLocale);
     freelocale(mLocale);
     EXPECT_EQ("iswalpha_l_0500", ret, CMPFLAG);
@@ -178,7 +178,7 @@ void IswalphaL0500(void)
  */
 void IswalphaL0600(void)
 {
-    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", NULL);
+    locale_t mLocale = newlocale(LC_CTYPE_MASK, "en_US.UTF-8", nullptr);
     int ret = iswalpha_l(MAX_VALUE, mLocale);
     freelocale(mLocale);
     EXPECT_EQ("iswalpha_l_0600", ret, CMPFLAG);

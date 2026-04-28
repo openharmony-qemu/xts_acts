@@ -20,7 +20,7 @@
 
 static inline bool InitDlopenConfigAbsPathPolicy(void) {
     typedef bool (*FuncT)(void);
-    static FuncT func = NULL;
+    static FuncT func = nullptr;
     if (!func) {
         func = (FuncT)dlsym(RTLD_DEFAULT, "InitDlopenConfigAbsPathPolicy");
         if (!func) {
@@ -33,7 +33,7 @@ static inline bool InitDlopenConfigAbsPathPolicy(void) {
 
 static inline bool CheckPrerequisites(void) {
     typedef bool (*FuncT)(void);
-    static FuncT func = NULL;
+    static FuncT func = nullptr;
     if (!func) {
         func = (FuncT)dlsym(RTLD_DEFAULT, "CheckPrerequisites");
         if (!func) {
@@ -47,7 +47,7 @@ static inline bool CheckPrerequisites(void) {
 static inline bool OpenSo(bool arg1, bool arg2)
 {
     typedef bool (*FuncT)(bool, bool);
-    static FuncT func = NULL;
+    static FuncT func = nullptr;
     if (!func) {
         func = (FuncT)dlsym(RTLD_DEFAULT, "OpenSo");
         if (!func) {
@@ -63,7 +63,7 @@ typedef void(FuncType)(bool flag);
 static inline bool DlopenConfigAbsPathPolicyFunc(bool flag)
 {
     typedef bool (*FuncT)(bool);
-    static FuncT func = NULL;
+    static FuncT func = nullptr;
     if (!func) {
         func = (FuncT)dlsym(RTLD_DEFAULT, "dlopen_config_abs_path_policy_func");
         if (!func) {

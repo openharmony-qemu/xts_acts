@@ -99,7 +99,7 @@ void Stpcpy0300(void)
 
 /**
  * @tc.name      : stpcpy_0400
- * @tc.desc      : copy a string to a NULL pointer
+ * @tc.desc      : copy a string to a nullptr pointer
  * @tc.level     : Level 2
  */
 void Stpcpy0400(void)
@@ -107,7 +107,7 @@ void Stpcpy0400(void)
     signal(SIGSEGV, Handler);
 
     char *src = "Hello world!";
-    strcpy(NULL, src);
+    strcpy(nullptr, src);
 }
 
 static int StpcpyTestImpl(int argc, char *argv[])
@@ -123,6 +123,6 @@ static int StpcpyTestImpl(int argc, char *argv[])
 int StpcpyTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return StpcpyTestImpl(1, libcArgv);
 }

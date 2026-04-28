@@ -67,6 +67,6 @@ static int FwritableTestWithArgs(int argc, char *argv[])
 int FwritableTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return FwritableTestWithArgs(1, libcArgv);
 }

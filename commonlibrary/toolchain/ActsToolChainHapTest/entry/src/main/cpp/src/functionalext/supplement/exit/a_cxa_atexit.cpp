@@ -31,7 +31,7 @@ void ExitFunc(void *arg){};
  */
 void CxaAtexit0100(void)
 {
-    int32_t ret = __cxa_atexit(ExitFunc, NULL, NULL);
+    int32_t ret = __cxa_atexit(ExitFunc, nullptr, nullptr);
     EXPECT_EQ("cxa_atexit_0100", ret, INIT_LEN);
 }
 
@@ -44,7 +44,7 @@ void CxaAtexit0200(void)
 {
     int32_t slot = SLOT_LEN;
     int32_t var = INIT_LEN;
-    int32_t ret = __cxa_atexit(ExitFunc, &var, NULL);
+    int32_t ret = __cxa_atexit(ExitFunc, &var, nullptr);
     EXPECT_LT("cxa_atexit_0200", slot + INCREASE_LEN, COUNT);
     EXPECT_EQ("cxa_atexit_0200", ret, 0);
 }
@@ -58,7 +58,7 @@ void CxaAtexit0300(void)
 {
     int32_t slot = COUNT;
     int32_t var = 0;
-    int32_t ret = __cxa_atexit(ExitFunc, &var, NULL);
+    int32_t ret = __cxa_atexit(ExitFunc, &var, nullptr);
     EXPECT_EQ("cxa_atexit_0300", slot, COUNT);
     EXPECT_EQ("cxa_atexit_0300", ret, 0);
 }
@@ -74,6 +74,6 @@ static int ACxaAtexitTestImpl(int argc, char *argv[])
 int ACxaAtexitTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return ACxaAtexitTestImpl(1, libcArgv);
 }

@@ -21,7 +21,7 @@
 
 static pthread_mutex_t g_mutex;
 static int32_t g_count = 0;
-static int32_t g_run_max_count = 1000;
+static int32_t g_runMaxCount = 1000;
 
 static void *ThreadfuncA(void *arg)
 {
@@ -68,10 +68,10 @@ static void *ThreadfuncD(void *arg)
  */
 static void PthreadMutexLock0100(void)
 {
-    pthread_mutex_init(&g_mutex, NULL);
+    pthread_mutex_init(&g_mutex, nullptr);
     pthread_t tid1;
-    int32_t ret = pthread_create(&tid1, NULL, ThreadfuncA, NULL);
-    pthread_join(tid1, NULL);
+    int32_t ret = pthread_create(&tid1, nullptr, ThreadfuncA, nullptr);
+    pthread_join(tid1, nullptr);
 }
 
 /**
@@ -85,8 +85,8 @@ void PthreadMutexLock0200(void)
     int32_t type = PTHREAD_MUTEX_RECURSIVE;
     pthread_mutex_init(&g_mutex, (pthread_mutexattr_t *)(&type));
     pthread_t tid2;
-    pthread_create(&tid2, NULL, ThreadfuncB, NULL);
-    pthread_join(tid2, NULL);
+    pthread_create(&tid2, nullptr, ThreadfuncB, nullptr);
+    pthread_join(tid2, nullptr);
 }
 
 /**
@@ -100,9 +100,9 @@ void PthreadMutexLock0300(void)
     int32_t type = PTHREAD_MUTEX_RECURSIVE;
     pthread_mutex_init(&g_mutex, (pthread_mutexattr_t *)(&type));
     pthread_t tid3;
-    for (int32_t i = 0; i <= g_run_max_count; i++) {
-        pthread_create(&tid3, NULL, ThreadfuncC, NULL);
-        pthread_join(tid3, NULL);
+    for (int32_t i = 0; i <= g_runMaxCount; i++) {
+        pthread_create(&tid3, nullptr, ThreadfuncC, nullptr);
+        pthread_join(tid3, nullptr);
     }
 }
 
@@ -117,8 +117,8 @@ void PthreadMutexLock0400(void)
     int32_t type = PTHREAD_MUTEX_ERRORCHECK;
     pthread_mutex_init(&g_mutex, (pthread_mutexattr_t *)(&type));
     pthread_t tid4;
-    pthread_create(&tid4, NULL, ThreadfuncD, NULL);
-    pthread_join(tid4, NULL);
+    pthread_create(&tid4, nullptr, ThreadfuncD, nullptr);
+    pthread_join(tid4, nullptr);
 }
 
 static int PthreadMutexLockTestImpl(void)

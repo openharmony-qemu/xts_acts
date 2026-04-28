@@ -22,7 +22,7 @@
 
 #include "test.h"
 
-static const char *path = "/data/storage/el2/base/cache/";
+static const char *PATH = "/data/storage/el2/base/cache/";
 
 static void Handler(int sig)
 {
@@ -36,9 +36,9 @@ static void Handler(int sig)
  */
 void Seekdir0100(void)
 {
-    DIR *dir = opendir(path);
+    DIR *dir = opendir(PATH);
     if (dir == NULL) {
-        t_error("%s failed: opendir. path = %s\n", __func__, path);
+        t_error("%s failed: opendir. PATH = %s\n", __func__, PATH);
     }
 
     int counter = 0;
@@ -86,9 +86,9 @@ void Seekdir0100(void)
  */
 void Seekdir0200(void)
 {
-    DIR *dir = opendir(path);
+    DIR *dir = opendir(PATH);
     if (dir == NULL) {
-        t_error("%s failed: opendir. path = %s\n", __func__, path);
+        t_error("%s failed: opendir. PATH = %s\n", __func__, PATH);
     }
 
     struct dirent *result = readdir(dir);

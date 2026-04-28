@@ -18,7 +18,7 @@
 #include <unistd.h>
 #include "functionalext.h"
 
-static void *threadfuncA(void *arg)
+static void *ThreadfuncA(void *arg)
 {
     return arg;
 }
@@ -31,17 +31,17 @@ static void *threadfuncA(void *arg)
 void PthreadGetattrNp0100(void)
 {
     pthread_t ph;
-    pthread_create(&ph, NULL, threadfuncA, NULL);
+    pthread_create(&ph, nullptr, ThreadfuncA, nullptr);
     pthread_attr_t attr;
     pthread_attr_init(&attr);
-    void *threadResult = NULL;
+    void *threadResult = nullptr;
     int32_t ret = pthread_getattr_np(ph, &attr);
     pthread_attr_destroy(&attr);
     pthread_join(ph, &threadResult);
-    void *stack = NULL;
+    void *stack = nullptr;
     size_t stacksize;
     pthread_attr_getstack(&attr, &stack, &stacksize);
-    EXPECT_PTRNE("PthreadGetattrNp0100", stack, NULL);
+    EXPECT_PTRNE("PthreadGetattrNp0100", stack, nullptr);
 }
 
 static int PthreadGetattrNpTestImpl(void)

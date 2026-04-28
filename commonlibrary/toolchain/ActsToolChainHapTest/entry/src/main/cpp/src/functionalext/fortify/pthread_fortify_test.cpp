@@ -196,6 +196,6 @@ static int PthreadFortifyTestTestImpl(int argc, char *argv[])
 int PthreadFortifyTestTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return PthreadFortifyTestTestImpl(1, libcArgv);
 }

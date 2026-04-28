@@ -32,7 +32,7 @@ static void Wcsnrtombs0100(void)
     char buffer[32];
     int wn = 4;
     int n = 4;
-    mbrlen(NULL, 0, &mbs);
+    mbrlen(nullptr, 0, &mbs);
     memset(buffer, 0, sizeof(buffer));
     p = src;
     int result = wcsnrtombs(buffer, &p, wn, n, &mbs);
@@ -57,7 +57,7 @@ void Wcsnrtombs0200(void)
     char buffer[32];
     int wn = 4;
     int n = 5;
-    mbrlen(NULL, 0, &mbs);
+    mbrlen(nullptr, 0, &mbs);
     memset(buffer, 0, sizeof(buffer));
     p = src;
     int result = wcsnrtombs(buffer, &p, wn, n, &mbs);
@@ -71,7 +71,7 @@ void Wcsnrtombs0200(void)
 
 /**
  * @tc.name      : wcsnrtombs_0300
- * @tc.desc      : Conversion of wide characters to multibyte characters when dst=NULL
+ * @tc.desc      : Conversion of wide characters to multibyte characters when dst=nullptr
  * @tc.level     : Level 2
  */
 void Wcsnrtombs0300(void)
@@ -79,10 +79,10 @@ void Wcsnrtombs0300(void)
     const wchar_t src[] = L"test wcsnrtombs";
     const wchar_t *p;
     mbstate_t mbs;
-    char *buffer = NULL;
+    char *buffer = nullptr;
     int wn = 4;
     int n = 4;
-    mbrlen(NULL, 0, &mbs);
+    mbrlen(nullptr, 0, &mbs);
     p = src;
     int result = wcsnrtombs(buffer, &p, wn, n, &mbs);
     if (result < 0) {
@@ -104,6 +104,6 @@ static int WcsnrtombsTestImpl(int argc, char *argv[])
 int WcsnrtombsTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return WcsnrtombsTestImpl(1, libcArgv);
 }

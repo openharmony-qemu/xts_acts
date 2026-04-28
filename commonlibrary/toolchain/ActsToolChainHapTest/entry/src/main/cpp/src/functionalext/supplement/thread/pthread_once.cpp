@@ -26,14 +26,14 @@ void OnceRun(void)
     g_count++;
 }
 
-static void *threadfuncA(void *arg)
+static void *ThreadfuncA(void *arg)
 {
     int32_t ret = pthread_once(&g_once, OnceRun);
     EXPECT_EQ("PthreadOnce0100", ret, 0);
     return arg;
 }
 
-static void *threadfuncB(void *arg)
+static void *ThreadfuncB(void *arg)
 {
     int32_t ret = pthread_once(&g_once, OnceRun);
     EXPECT_EQ("PthreadOnce0100", ret, 0);
@@ -49,10 +49,10 @@ void PthreadOnce0100(void)
 {
     pthread_t tid1;
     pthread_t tid2;
-    pthread_create(&tid1, NULL, threadfuncA, NULL);
-    pthread_create(&tid2, NULL, threadfuncB, NULL);
-    pthread_join(tid1, NULL);
-    pthread_join(tid2, NULL);
+    pthread_create(&tid1, nullptr, ThreadfuncA, nullptr);
+    pthread_create(&tid2, nullptr, ThreadfuncB, nullptr);
+    pthread_join(tid1, nullptr);
+    pthread_join(tid2, nullptr);
 }
 
 static int PthreadOnceTestImpl(void)

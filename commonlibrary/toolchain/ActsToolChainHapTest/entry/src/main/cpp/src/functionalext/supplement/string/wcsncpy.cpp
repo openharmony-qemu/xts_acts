@@ -104,7 +104,7 @@ void Wcsncpy0300(void)
 
 /**
  * @tc.name      : wcsncpy_0400
- * @tc.desc      : copy a fixed-size string of wide characters to a NULL pointer
+ * @tc.desc      : copy a fixed-size string of wide characters to a nullptr pointer
  * @tc.level     : Level 2
  */
 void Wcsncpy0400(void)
@@ -112,7 +112,7 @@ void Wcsncpy0400(void)
     signal(SIGSEGV, Handler);
 
     const wchar_t src[] = L"Hello";
-    wcsncpy(NULL, src, SIZEOF_WCHAR(src));
+    wcsncpy(nullptr, src, SIZEOF_WCHAR(src));
 }
 
 /**
@@ -341,6 +341,6 @@ static int WcsncpyTestImpl(int argc, char *argv[])
 int WcsncpyTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return WcsncpyTestImpl(1, libcArgv);
 }

@@ -24,10 +24,10 @@
 #define PARAM_ERROR_VALUE_1 13
 #define PARAM_ERROR_VALUE_2 (-1)
 
-static const int LcArry[TEST_LC_COUNT] = {
+static const int LC_ARRY[TEST_LC_COUNT] = {
     LC_PAPER, LC_NAME, LC_ADDRESS, LC_TELEPHONE, LC_MEASUREMENT, LC_IDENTIFICATION, LC_ALL};
 
-static const char envforlocale[][TEST_LC_LENGTH] = {
+static const char ENVFORLOCALE[][TEST_LC_LENGTH] = {
     "LC_PAPER",
     "LC_NAME",
     "LC_ADDRESS",
@@ -39,14 +39,14 @@ static const char envforlocale[][TEST_LC_LENGTH] = {
 /**
  * @tc.name      : setlocaletest_0100
  * @tc.desc      : Determines whether setlocale returns the default value C
- *                 when the character set passed in for different data types is NULL
+ *                 when the character set passed in for different data types is nullptr
  * @tc.level     : Level 0
  */
 static void Setlocale0100(void)
 {
-    const int num = sizeof(LcArry) / sizeof(LcArry[0]);
+    const int num = sizeof(LC_ARRY) / sizeof(LC_ARRY[0]);
     for (int i = 0; i < num; i++) {
-        const char *locale = setlocale(LcArry[i], NULL);
+        const char *locale = setlocale(LC_ARRY[i], nullptr);
         if (!locale) {
             t_error("[%s] failed\n", "setlocale_0100");
             return;
@@ -63,10 +63,10 @@ static void Setlocale0100(void)
  */
 static void Setlocale0200(void)
 {
-    const int num = sizeof(LcArry) / sizeof(LcArry[0]);
+    const int num = sizeof(LC_ARRY) / sizeof(LC_ARRY[0]);
     for (int i = 0; i < num; i++) {
-        setenv(envforlocale[i], "en-US", 1);
-        const char *locale = setlocale(LcArry[i], "C");
+        setenv(ENVFORLOCALE[i], "en-US", 1);
+        const char *locale = setlocale(LC_ARRY[i], "C");
         if (!locale) {
             t_error("[%s] failed\n", "setlocale_0200");
             return;
@@ -82,12 +82,12 @@ static void Setlocale0200(void)
  */
 static void Setlocale0300(void)
 {
-    const char *locale1 = setlocale(PARAM_ERROR_VALUE_1, NULL);
+    const char *locale1 = setlocale(PARAM_ERROR_VALUE_1, nullptr);
     if (locale1) {
         t_error("[%s] failed\n", "SetlocaleTest_0300");
     }
 
-    const char *locale2 = setlocale(PARAM_ERROR_VALUE_2, NULL);
+    const char *locale2 = setlocale(PARAM_ERROR_VALUE_2, nullptr);
     if (locale2) {
         t_error("[%s] failed\n", "SetlocaleTest_0300");
     }
@@ -101,9 +101,9 @@ static void Setlocale0300(void)
  */
 static void Setlocale0400(void)
 {
-    for (unsigned int i = 0; i < sizeof(envforlocale) / sizeof(envforlocale[0]); i++) {
-        setenv(envforlocale[i], "da_DK", 1);
-        const char *locale = setlocale(LcArry[i], "");
+    for (unsigned int i = 0; i < sizeof(ENVFORLOCALE) / sizeof(ENVFORLOCALE[0]); i++) {
+        setenv(ENVFORLOCALE[i], "da_DK", 1);
+        const char *locale = setlocale(LC_ARRY[i], "");
         if (locale) {
             t_error("[%s] failed\n", "setlocale_0400");
             return;
@@ -124,8 +124,8 @@ static void Setlocale0500(void)
         t_error("[%s] failed\n", "setlocale_0500");
         return;
     }
-    for (unsigned int i = 0; i < sizeof(LcArry) / sizeof(LcArry[0]); i++) {
-        const char *locale = setlocale(LcArry[i], "en_ZA");
+    for (unsigned int i = 0; i < sizeof(LC_ARRY) / sizeof(LC_ARRY[0]); i++) {
+        const char *locale = setlocale(LC_ARRY[i], "en_ZA");
         if (locale) {
             t_error("[%s] failed\n", "setlocale_0500");
             return;
@@ -141,12 +141,12 @@ static void Setlocale0500(void)
  */
 static void Setlocale0600(void)
 {
-    for (unsigned int i = 0; i < sizeof(envforlocale) / sizeof(envforlocale[0]); i++) {
+    for (unsigned int i = 0; i < sizeof(ENVFORLOCALE) / sizeof(ENVFORLOCALE[0]); i++) {
         int count = 0;
         char *vec[LC_ALL];
         const char *flag = ";";
 
-        setenv(envforlocale[i], "ar_QA", 1);
+        setenv(ENVFORLOCALE[i], "ar_QA", 1);
         char *locale = setlocale(LC_ALL, "");
         if (locale) {
             t_error("[%s] failed\n", "setlocale_0600");

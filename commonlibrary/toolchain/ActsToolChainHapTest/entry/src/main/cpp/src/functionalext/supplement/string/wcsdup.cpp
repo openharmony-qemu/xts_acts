@@ -49,7 +49,7 @@ void Wcsdup0100(void)
 {
     wchar_t *src = L"hello";
     wchar_t *result = wcsdup(src);
-    if (result == NULL) {
+    if (result == nullptr) {
         t_error("%s Memory allocation failed\n", __func__);
         return;
     }
@@ -67,7 +67,7 @@ void Wcsdup0100(void)
 void Wcsdup0200(void)
 {
     signal(SIGSEGV, DealAberrant);
-    wchar_t *result = wcsdup(NULL);
+    wchar_t *result = wcsdup(nullptr);
 }
 
 /**
@@ -80,7 +80,7 @@ void Wcsdup0300(void)
     wchar_t *src = L"";
     wchar_t *result = wcsdup(src);
     
-    if (result == NULL) {
+    if (result == nullptr) {
         t_error("%s Memory allocation failed for empty string\n", __func__);
         return;
     }
@@ -107,7 +107,7 @@ void Wcsdup0400(void)
     wchar_t *src = L"Hello, 世界! 🌍";
     wchar_t *result = wcsdup(src);
     
-    if (result == NULL) {
+    if (result == nullptr) {
         t_error("%s Memory allocation failed for Unicode string\n", __func__);
         return;
     }
@@ -118,9 +118,9 @@ void Wcsdup0400(void)
     
     // Verify length
     size_t src_len = wcslen(src);
-    size_t result_len = wcslen(result);
-    if (src_len != result_len) {
-        t_error("%s Length mismatch: src=%zu, result=%zu\n", __func__, src_len, result_len);
+    size_t resultLen = wcslen(result);
+    if (src_len != resultLen) {
+        t_error("%s Length mismatch: src=%zu, result=%zu\n", __func__, src_len, resultLen);
     }
     
     free(result);
@@ -136,7 +136,7 @@ void Wcsdup0500(void)
     wchar_t src[] = L"TestString";
     wchar_t *result = wcsdup(src);
     
-    if (result == NULL) {
+    if (result == nullptr) {
         t_error("%s Memory allocation failed\n", __func__);
         return;
     }
@@ -169,22 +169,22 @@ void Wcsdup0600(void)
 {
     // This test might fail on systems with enough memory
     // It's testing edge case for memory allocation
-    size_t huge_size = (size_t)-1 / sizeof(wchar_t);  // Near SIZE_MAX
-    wchar_t *src = (wchar_t *)malloc(huge_size * sizeof(wchar_t));
+    size_t hugeSize = (size_t)-1 / sizeof(wchar_t);  // Near SIZE_MAX
+    wchar_t *src = (wchar_t *)malloc(hugeSize * sizeof(wchar_t));
     
-    if (src == NULL) {
+    if (src == nullptr) {
         // Can't test if we can't allocate source
         return;
     }
     
     // Fill with something (optional)
-    wmemset(src, L'A', huge_size - 1);
-    src[huge_size - 1] = L'\0';
+    wmemset(src, L'A', hugeSize - 1);
+    src[hugeSize - 1] = L'\0';
     
     wchar_t *result = wcsdup(src);
     
-    // This should fail (return NULL) due to huge memory request
-    if (result != NULL) {
+    // This should fail (return nullptr) due to huge memory request
+    if (result != nullptr) {
         t_error("%s wcsdup should fail for huge string\n", __func__);
         free(result);
     }
@@ -202,7 +202,7 @@ void Wcsdup0700(void)
     wchar_t src[] = L"Line1\nLine2\tTab\\Backslash\x01Control";
     wchar_t *result = wcsdup(src);
     
-    if (result == NULL) {
+    if (result == nullptr) {
         t_error("%s Memory allocation failed for string with special chars\n", __func__);
         return;
     }
@@ -229,7 +229,7 @@ void Wcsdup0800(void)
     wchar_t *src = L"Test";
     wchar_t *result = wcsdup(src);
     
-    if (result == NULL) {
+    if (result == nullptr) {
         t_error("%s Memory allocation failed\n", __func__);
         return;
     }
@@ -241,9 +241,9 @@ void Wcsdup0800(void)
     }
     
     // Check that wcslen works on the result
-    size_t result_len = wcslen(result);
-    if (len != result_len) {
-        t_error("%s wcslen mismatch: expected %zu, got %zu\n", __func__, len, result_len);
+    size_t resultLen = wcslen(result);
+    if (len != resultLen) {
+        t_error("%s wcslen mismatch: expected %zu, got %zu\n", __func__, len, resultLen);
     }
     
     free(result);
@@ -263,7 +263,7 @@ void Wcsdup0900(void)
     // Create multiple copies
     for (i = 0; i < NUM_COPIES; i++) {
         copies[i] = wcsdup(src);
-        if (copies[i] == NULL) {
+        if (copies[i] == nullptr) {
             t_error("%s Memory allocation failed at iteration %d\n", __func__, i);
             // Clean up any already allocated
             for (int j = 0; j < i; j++) {
@@ -306,7 +306,7 @@ void Wcsdup1000(void)
     wchar_t *src = L"ReadOnly";
     wchar_t *result = wcsdup(src);
     
-    if (result == NULL) {
+    if (result == nullptr) {
         t_error("%s Memory allocation failed\n", __func__);
         return;
     }
@@ -334,20 +334,20 @@ void Wcsdup1000(void)
 void Wcsdup1100(void)
 {
     // Create a long string
-    wchar_t long_str[LONG_STRING_SIZE];
+    wchar_t longStr[LONG_STRING_SIZE];
     for (int i = 0; i < LONG_STRING_LENGTH; i++) {
-        long_str[i] = L'A' + (i % ALPHABET_SIZE);
+        longStr[i] = L'A' + (i % ALPHABET_SIZE);
     }
-    long_str[LONG_STRING_LENGTH] = L'\0';
+    longStr[LONG_STRING_LENGTH] = L'\0';
     
-    wchar_t *result = wcsdup(long_str);
+    wchar_t *result = wcsdup(longStr);
     
-    if (result == NULL) {
+    if (result == nullptr) {
         t_error("%s Memory allocation failed for long string\n", __func__);
         return;
     }
     
-    if (wcscmp(long_str, result) != 0) {
+    if (wcscmp(longStr, result) != 0) {
         t_error("%s Long strings are not equal\n", __func__);
     }
     
@@ -378,6 +378,6 @@ static int WcsdupTestImpl(int argc, char *argv[])
 int WcsdupTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return WcsdupTestImpl(1, libcArgv);
 }

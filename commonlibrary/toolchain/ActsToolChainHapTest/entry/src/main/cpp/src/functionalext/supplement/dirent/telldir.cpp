@@ -19,7 +19,7 @@
 #include <cstdlib>
 #include "test.h"
 
-static const char *path = "/data/storage/el2/base/cache/";
+static const char *PATH = "/data/storage/el2/base/cache/";
 
 static void Handler(int sig)
 {
@@ -36,7 +36,7 @@ void Telldir0100(void)
     DIR *dir;
     struct dirent *ptr;
     int counter = 0;
-    dir = opendir(path);
+    dir = opendir(PATH);
     long offset1 = telldir(dir);
     long offset2 = 0;
     while ((ptr = readdir(dir)) != NULL) {

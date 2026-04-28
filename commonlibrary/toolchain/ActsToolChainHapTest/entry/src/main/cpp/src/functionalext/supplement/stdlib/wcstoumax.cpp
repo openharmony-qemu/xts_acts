@@ -36,7 +36,7 @@ void DealAberrant(int code)
  */
 void Wcstoumax0100(void)
 {
-    wchar_t *end = NULL;
+    wchar_t *end = nullptr;
     uintmax_t want = 123U;
     uintmax_t result = wcstoumax(L"  +123x", &end, 10);
     if (result != want) {
@@ -55,7 +55,7 @@ void Wcstoumax0100(void)
 void Wcstoumax0200(void)
 {
     signal(SIGSEGV, DealAberrant);
-    uintmax_t result = wcstoumax(NULL, NULL, 0);
+    uintmax_t result = wcstoumax(nullptr, nullptr, 0);
 }
 
 static int WcstoumaxTestImpl(int argc, char *argv[])
@@ -68,6 +68,6 @@ static int WcstoumaxTestImpl(int argc, char *argv[])
 int WcstoumaxTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return WcstoumaxTestImpl(1, libcArgv);
 }

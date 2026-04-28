@@ -37,7 +37,7 @@ void GethostbynameR0100(void)
     struct hostent h;
     char buf[HOST_BUFFER_SIZE] = "\0";
     size_t buflen;
-    struct hostent *res = NULL;
+    struct hostent *res = nullptr;
     int err;
     result = gethostbyname_r("127.0.0.1", &h, buf, HOST_BUFFER_SIZE, &res, &err);
     if (result == 0) {
@@ -59,7 +59,7 @@ void GethostbynameR0200(void)
     struct hostent h;
     char buf[HOST_BUFFER_SIZE] = "\0";
     size_t buflen;
-    struct hostent *res = NULL;
+    struct hostent *res = nullptr;
     int err;
     result = gethostbyname_r("127.0.w.1", &h, buf, HOST_BUFFER_SIZE, &res, &err);
     if (result != 0) {
@@ -85,6 +85,6 @@ static int GethostbynameRTestImpl(int argc, char *argv[])
 int GethostbynameRTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return GethostbynameRTestImpl(1, libcArgv);
 }

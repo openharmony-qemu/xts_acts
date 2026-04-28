@@ -17,7 +17,7 @@
 #include <cstdlib>
 #include "functionalext.h"
 
-static const int g_lcMarkArry[] = {LC_PAPER_MASK,
+static const int LC_MARK_ARRY[] = {LC_PAPER_MASK,
     LC_NAME_MASK,
     LC_ADDRESS_MASK,
     LC_TELEPHONE_MASK,
@@ -34,15 +34,15 @@ static void Newlocale0100(void)
 {
     char *lo = setlocale(LC_ALL, "C");
     if (!lo) {
-        EXPECT_PTRNE("newlocale_0100", lo, NULL);
+        EXPECT_PTRNE("newlocale_0100", lo, nullptr);
         return;
     }
-    locale_t newLocale = newlocale(LC_ALL_MASK, "en_US", NULL);
-    EXPECT_PTRNE("newlocale_0100", newLocale, NULL);
+    locale_t newLocale = newlocale(LC_ALL_MASK, "en_US", nullptr);
+    EXPECT_PTRNE("newlocale_0100", newLocale, nullptr);
 
     if (newLocale) {
         freelocale(newLocale);
-        newLocale = NULL;
+        newLocale = nullptr;
     }
 }
 
@@ -55,15 +55,15 @@ static void Newlocale0200(void)
 {
     char *lo = setlocale(LC_ALL, "C");
     if (!lo) {
-        EXPECT_PTRNE("newlocale_0200", lo, NULL);
+        EXPECT_PTRNE("newlocale_0200", lo, nullptr);
         return;
     }
-    locale_t newLocale = newlocale(LC_ALL_MASK, "C", NULL);
-    EXPECT_PTRNE("newlocale_0200", newLocale, NULL);
+    locale_t newLocale = newlocale(LC_ALL_MASK, "C", nullptr);
+    EXPECT_PTRNE("newlocale_0200", newLocale, nullptr);
 
     if (newLocale) {
         freelocale(newLocale);
-        newLocale = NULL;
+        newLocale = nullptr;
     }
 }
 
@@ -77,16 +77,16 @@ static void Newlocale0300(void)
 {
     char *lo = setlocale(LC_ALL, "C");
     if (!lo) {
-        EXPECT_PTRNE("newlocale_0300", lo, NULL);
+        EXPECT_PTRNE("newlocale_0300", lo, nullptr);
         return;
     }
-    for (int i = 0; i < sizeof(g_lcMarkArry) / sizeof(g_lcMarkArry[0]); i++) {
-        locale_t newLocale = newlocale(g_lcMarkArry[i], "en_US", NULL);
-        EXPECT_PTRNE("newlocale_0300", newLocale, NULL);
+    for (int i = 0; i < sizeof(LC_MARK_ARRY) / sizeof(LC_MARK_ARRY[0]); i++) {
+        locale_t newLocale = newlocale(LC_MARK_ARRY[i], "en_US", nullptr);
+        EXPECT_PTRNE("newlocale_0300", newLocale, nullptr);
 
         if (newLocale) {
             freelocale(newLocale);
-            newLocale = NULL;
+            newLocale = nullptr;
         }
     }
 }

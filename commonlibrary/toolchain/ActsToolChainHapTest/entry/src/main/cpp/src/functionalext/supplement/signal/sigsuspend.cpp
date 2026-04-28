@@ -100,6 +100,6 @@ static int SigsuspendTestImpl(int argc, char *argv[])
 int SigsuspendTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return SigsuspendTestImpl(1, libcArgv);
 }
