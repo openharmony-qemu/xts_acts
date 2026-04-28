@@ -89,11 +89,11 @@ struct GlobalReuse002 {
         })
 
       if (this.boolVal) {
-        Text("ChildGlobal001组件")
+        Text('ChildGlobal001组件')
           .height('5%')
         ChildGlobal001()
       }else  {
-        Text("Child02Global001可复用组件")
+        Text('Child02Global001可复用组件')
           .height('5%')
         Child02Global001()
       }
