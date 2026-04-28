@@ -354,7 +354,7 @@ export default function ListFileExtTest() {
         expect(false).assertTrue();
       } catch (err) {
         console.log('filefs_test_listfileext_sync_009 has failed for ' + err.message + ', code:' + err.code);
-        expect(err.code == 13900002 && err.message == 'No such file or directory').assertTrue();
+        expect(err.code === 13900002 && err.message == 'No such file or directory').assertTrue();
       }
     });
 
@@ -375,7 +375,7 @@ export default function ListFileExtTest() {
         expect(false).assertTrue();
       } catch (err) {
         console.log('filefs_test_listfileext_sync_010 has failed for ' + err.message + ', code:' + err.code);
-        expect(err.code == 13900018 && err.message == 'Not a directory').assertTrue();
+        expect(err.code === 13900018 && err.message == 'Not a directory').assertTrue();
       }
     });
 
@@ -488,7 +488,7 @@ export default function ListFileExtTest() {
         expect(false).assertTrue();
       } catch (err) {
         console.log('filefs_test_listfileext_sync_014 has failed for ' + err.message + ', code:' + err.code);
-        expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+        expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
         fs.rmdirSync(dpath);
       }
     });
@@ -746,7 +746,7 @@ export default function ListFileExtTest() {
         expect(false).assertTrue();
       } catch (err) {
         console.log('filefs_test_listfileext_sync_022 has failed for ' + err.message + ', code:' + err.code);
-        expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+        expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
       }
     });
 
@@ -766,7 +766,7 @@ export default function ListFileExtTest() {
         expect(false).assertTrue();
       } catch (err) {
         console.log('filefs_test_listfileext_sync_023 has failed for ' + err.message + ', code:' + err.code);
-        expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+        expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
       }
     });
 
@@ -1040,7 +1040,7 @@ export default function ListFileExtTest() {
         expect(false).assertTrue();
       } catch (err) {
         console.log('filefs_test_listfileext_async_006 has failed for ' + err.message + ', code:' + err.code);
-        expect(err.code == 13900002 && err.message == 'No such file or directory').assertTrue();
+        expect(err.code === 13900002 && err.message == 'No such file or directory').assertTrue();
         done();
       }
     });
@@ -1062,7 +1062,7 @@ export default function ListFileExtTest() {
         expect(false).assertTrue();
       } catch (err) {
         console.log('filefs_test_listfileext_async_007 has failed for ' + err.message + ', code:' + err.code);
-        expect(err.code == 13900018 && err.message == 'Not a directory').assertTrue();
+        expect(err.code === 13900018 && err.message == 'Not a directory').assertTrue();
         done();
       }
     });
@@ -1154,7 +1154,7 @@ export default function ListFileExtTest() {
         expect(false).assertTrue();
       } catch (err) {
         console.log('filefs_test_listfileext_async_010 has failed for ' + err.message + ', code:' + err.code);
-        expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+        expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
         fs.rmdirSync(dpath);
         done();
       }
@@ -1457,7 +1457,7 @@ export default function ListFileExtTest() {
         expect(false).assertTrue();
       } catch (err) {
         console.log('filefs_test_listfileext_async_019 has failed for ' + err.message + ', code:' + err.code);
-        expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+        expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
         done();
       }
     });
@@ -1476,7 +1476,7 @@ export default function ListFileExtTest() {
         expect(false).assertTrue();
       } catch (err) {
         console.log('filefs_test_listfileext_async_020 has failed for ' + err.message + ', code:' + err.code);
-        expect(err.code == 13900002 && err.message == 'No such file or directory').assertTrue();
+        expect(err.code === 13900002 && err.message == 'No such file or directory').assertTrue();
         done();
       }
     });
@@ -1505,7 +1505,7 @@ export default function ListFileExtTest() {
         done();
       } catch (err) {
         console.log('filefs_test_listfileext_async_021 has failed for ' + err.message + ', code:' + err.code);
-        expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
+        expect(err.code === 13900020 && err.message == 'Invalid argument').assertTrue();
         fs.rmdirSync(dpath);
         done();
       }
