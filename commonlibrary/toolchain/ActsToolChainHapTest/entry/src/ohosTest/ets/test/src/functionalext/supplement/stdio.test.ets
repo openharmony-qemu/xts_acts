@@ -867,7 +867,7 @@ export default function stdio_group_test() {
       done();
     });
     /**
-     * @tc.name   __fpending
+     * @tc.name   test_fpending
      * @tc.number SUB_THIRDPARTY_MUSL___FPENDING_0100
      * @tc.desc   libc-test __fpending
      * @tc.type   FUNCTION
@@ -880,7 +880,7 @@ export default function stdio_group_test() {
       done();
     });
     /**
-     * @tc.name   __fpurge
+     * @tc.name   test_fpurge
      * @tc.number SUB_THIRDPARTY_MUSL___FPURGE_0100
      * @tc.desc   libc-test __fpurge
      * @tc.type   FUNCTION
@@ -893,7 +893,7 @@ export default function stdio_group_test() {
       done();
     });
     /**
-     * @tc.name   __freadable
+     * @tc.name   test_freadable
      * @tc.number SUB_THIRDPARTY_MUSL___FREADABLE_0100
      * @tc.desc   libc-test __freadable
      * @tc.type   FUNCTION
@@ -906,7 +906,7 @@ export default function stdio_group_test() {
       done();
     });
     /**
-     * @tc.name   __freading
+     * @tc.name   test_freading
      * @tc.number SUB_THIRDPARTY_MUSL___FREADING_0100
      * @tc.desc   libc-test __freading
      * @tc.type   FUNCTION
@@ -919,7 +919,7 @@ export default function stdio_group_test() {
       done();
     });
     /**
-     * @tc.name   __fseterr
+     * @tc.name   test_fseterr
      * @tc.number SUB_THIRDPARTY_MUSL___FSETERR_0100
      * @tc.desc   libc-test __fseterr
      * @tc.type   FUNCTION
@@ -932,7 +932,7 @@ export default function stdio_group_test() {
       done();
     });
     /**
-     * @tc.name   __fwritable
+     * @tc.name   test_fwritable
      * @tc.number SUB_THIRDPARTY_MUSL___FWRITABLE_0100
      * @tc.desc   libc-test __fwritable
      * @tc.type   FUNCTION
@@ -945,7 +945,7 @@ export default function stdio_group_test() {
       done();
     });
     /**
-     * @tc.name   __fwriting
+     * @tc.name   test_fwriting
      * @tc.number SUB_THIRDPARTY_MUSL___FWRITING_0100
      * @tc.desc   libc-test __fwriting
      * @tc.type   FUNCTION
@@ -958,7 +958,7 @@ export default function stdio_group_test() {
       done();
     });
     /**
-     * @tc.name   _flushlbf
+     * @tc.name   test_flushlbf
      * @tc.number SUB_THIRDPARTY_MUSL__FLUSHLBF_0100
      * @tc.desc   libc-test _flushlbf
      * @tc.type   FUNCTION
