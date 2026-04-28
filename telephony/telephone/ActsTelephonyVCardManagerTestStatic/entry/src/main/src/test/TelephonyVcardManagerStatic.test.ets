@@ -394,7 +394,7 @@ export default function TelephonyVcardManagerStatic() {
         try {
           context = AppStorage.get<common.UIAbilityContext>("Context") as common.UIAbilityContext;
           let vcardContacts: string =
-            "BEGIN:VCARD\n" + "VERSION:2.1\n" + "N:alpha123;;;;\n" + "FN:alpha123\n" + "TEL;HOME:17625524867\n" +
+            "BEGIN:VCARD\n" + "VERSION:2.1\n" + "N:alpha123;;;;\n" + "FN:alpha123\n" + "TEL;HOME:12345678123\n" +
               "END:VCARD\n";
           await rdFile(context, vcardContacts, new Date().getTime() + '');
           hilog.info(domain, tag, `${caseName} test start 111, filePath: ${JSON.stringify(filePath)}`);
@@ -424,8 +424,8 @@ export default function TelephonyVcardManagerStatic() {
         try {
           context = AppStorage.get<common.UIAbilityContext>("Context") as common.UIAbilityContext;
           let vcardContacts: string =
-            "N:alpha123;;;;\n" + "FN:alpha123\n" + "TEL;HOME:17625524867\n" + "END:VCARD\n" + "BEGIN:VCARD\n" +
-              "VERSION:2.1\n" + "N:alpha123;;;;\n" + "FN:alpha123\n" + "TEL;HOME:17625524867\n" + "END:VCARD\n";
+            "N:alpha123;;;;\n" + "FN:alpha123\n" + "TEL;HOME:12345678123\n" + "END:VCARD\n" + "BEGIN:VCARD\n" +
+              "VERSION:2.1\n" + "N:alpha123;;;;\n" + "FN:alpha123\n" + "TEL;HOME:12345678123\n" + "END:VCARD\n";
           await rdFile(context, vcardContacts, new Date().getTime() + '');
           let accountId: int = 0;
           vcard.importVCard(context, filePath, accountId, (err) => {
