@@ -2795,7 +2795,7 @@ export default function PhotoTest() {
 
     /**
      * @tc.name   SUB_MULTIMEDIA_OHCAMERANDK_OHExposureStateChangeCallback_0100
-     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHExposureStateChangeCallback0100
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHExposureStateChangeCallback_0100
      * @tc.desc   Test OH_CaptureSession_RegisterExposureStateChangeCallback OH_CaptureSession_UnregisterExposureStateChangeCallback in normal condition.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2817,7 +2817,7 @@ export default function PhotoTest() {
  
     /**
      * @tc.name   SUB_MULTIMEDIA_OHCAMERANDK_OHExposureStateChangeCallback_0200
-     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHExposureStateChangeCallback0200
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHExposureStateChangeCallback_0200
      * @tc.desc   Test OH_CaptureSession_RegisterExposureStateChangeCallback without session.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2831,7 +2831,7 @@ export default function PhotoTest() {
  
     /**
      * @tc.name   SUB_MULTIMEDIA_OHCAMERANDK_OHExposureStateChangeCallback_0300
-     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHExposureStateChangeCallback0300
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHExposureStateChangeCallback_0300
      * @tc.desc   Test OH_CaptureSession_UnregisterExposureStateChangeCallback without session.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
