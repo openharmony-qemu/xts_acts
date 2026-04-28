@@ -62,12 +62,21 @@ export default function TipsOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
 
       let button = await driver.findComponent(ON.id('undefined'));
-      expect(button).not().assertUndefined();
+            
+      let bounds = await button.getBounds();
+      let centerX = Math.floor((bounds.left + bounds.right) / 2);
+      let centerY = Math.floor((bounds.top + bounds.bottom) / 2);
+
+      await driver.mouseMoveTo({ x: centerX, y: centerY });
+
       console.info('TipsOptionsSystemMaterial_0100 Button with undefined systemMaterial exists');
+      
 
       let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       console.info('TipsOptionsSystemMaterial_0100 getInspectorTree: ' + JSON.stringify(obj));
-      expect(obj).not().assertUndefined();
+      let sheet: ESObject = obj.$children[1];
+      let date = JSON.stringify(obj.$children[1].$children[0]);
+      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
 
       await CommonFunc.sleep(500);
       console.info('TipsOptionsSystemMaterial_0100 END');
@@ -89,8 +98,17 @@ export default function TipsOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
 
       let button = await driver.findComponent(ON.id('hds_thick'));
-      expect(button).not().assertUndefined();
+      let bounds = await button.getBounds();
+      let centerX = Math.floor((bounds.left + bounds.right) / 2);
+      let centerY = Math.floor((bounds.top + bounds.bottom) / 2);
+      await driver.mouseMoveTo({ x: centerX, y: centerY });
       console.info('TipsOptionsSystemMaterial_0200 Button with hdsMaterial THICK systemMaterial exists');
+
+      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+      console.info('TipsOptionsSystemMaterial_0100 getInspectorTree: ' + JSON.stringify(obj));
+      let sheet: ESObject = obj.$children[1];
+      let date = JSON.stringify(obj.$children[1].$children[0]);
+      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
 
       await CommonFunc.sleep(500);
       console.info('TipsOptionsSystemMaterial_0200 END');
@@ -112,8 +130,16 @@ export default function TipsOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
 
       let button = await driver.findComponent(ON.id('semi_transparent'));
-      expect(button).not().assertUndefined();
+      let bounds = await button.getBounds();
+      let centerX = Math.floor((bounds.left + bounds.right) / 2);
+      let centerY = Math.floor((bounds.top + bounds.bottom) / 2);
+      await driver.mouseMoveTo({ x: centerX, y: centerY });
       console.info('TipsOptionsSystemMaterial_0300 Button with SEMI_TRANSPARENT systemMaterial exists');
+      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+      console.info('TipsOptionsSystemMaterial_0100 getInspectorTree: ' + JSON.stringify(obj));
+      let sheet: ESObject = obj.$children[1];
+      let date = JSON.stringify(obj.$children[1].$children[0]);
+      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.SEMI_TRANSPARENT');
 
       await CommonFunc.sleep(500);
       console.info('TipsOptionsSystemMaterial_0300 END');
@@ -135,9 +161,16 @@ export default function TipsOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
 
       let button = await driver.findComponent(ON.id('immersive_thick'));
-      expect(button).not().assertUndefined();
+      let bounds = await button.getBounds();
+      let centerX = Math.floor((bounds.left + bounds.right) / 2);
+      let centerY = Math.floor((bounds.top + bounds.bottom) / 2);
+      await driver.mouseMoveTo({ x: centerX, y: centerY });
       console.info('TipsOptionsSystemMaterial_0400 Button with Immersive THICK systemMaterial exists');
-
+      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+      console.info('TipsOptionsSystemMaterial_0100 getInspectorTree: ' + JSON.stringify(obj));
+      let sheet: ESObject = obj.$children[1];
+      let date = JSON.stringify(obj.$children[1].$children[0]);
+      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
       await CommonFunc.sleep(500);
       console.info('TipsOptionsSystemMaterial_0400 END');
       done();
@@ -158,9 +191,16 @@ export default function TipsOptionsSystemMaterial() {
       await CommonFunc.sleep(1000);
 
       let button = await driver.findComponent(ON.id('immersive_ultra_thin'));
-      expect(button).not().assertUndefined();
+      let bounds = await button.getBounds();
+      let centerX = Math.floor((bounds.left + bounds.right) / 2);
+      let centerY = Math.floor((bounds.top + bounds.bottom) / 2);
+      await driver.mouseMoveTo({ x: centerX, y: centerY });
       console.info('TipsOptionsSystemMaterial_0500 Button with Immersive ULTRA_THIN systemMaterial exists');
-
+      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+      console.info('TipsOptionsSystemMaterial_0100 getInspectorTree: ' + JSON.stringify(obj));
+      let sheet: ESObject = obj.$children[1];
+      let date = JSON.stringify(obj.$children[1].$children[0]);
+      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
       await CommonFunc.sleep(500);
       console.info('TipsOptionsSystemMaterial_0500 END');
       done();
@@ -179,11 +219,18 @@ export default function TipsOptionsSystemMaterial() {
       console.info('TipsOptionsSystemMaterial_0600 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-
+      let bounds = await button.getBounds();
+      let centerX = Math.floor((bounds.left + bounds.right) / 2);
+      let centerY = Math.floor((bounds.top + bounds.bottom) / 2);
+      await driver.mouseMoveTo({ x: centerX, y: centerY });
       let button = await driver.findComponent(ON.id('none'));
       expect(button).not().assertUndefined();
       console.info('TipsOptionsSystemMaterial_0600 Button with NONE systemMaterial exists');
-
+      let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
+      console.info('TipsOptionsSystemMaterial_0100 getInspectorTree: ' + JSON.stringify(obj));
+      let sheet: ESObject = obj.$children[1];
+      let date = JSON.stringify(obj.$children[1].$children[0]);
+      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
       await CommonFunc.sleep(500);
       console.info('TipsOptionsSystemMaterial_0600 END');
       done();
