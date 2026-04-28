@@ -25,6 +25,7 @@ group("storage") {
       "storageenvironmentjstest:storageenvironment_js_test",
       "storageenvironmentjsteststatic:storageenvironment_js_test_static",
       "storageenvironmentndktest:ActsStorageEnvironmentNdkTest",
+      "storagefilefsjstest:storagefilefs_js_test",
       "storagefileioerrorjstest:storagefileioerror_js_test",
       "storagefileiojstest:storagefileio_js_test",
       "storagefileiondktest:ActsStorageFileioNdkTest",
