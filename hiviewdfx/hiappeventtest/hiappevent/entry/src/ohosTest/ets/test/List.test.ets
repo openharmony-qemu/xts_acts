@@ -27,7 +27,7 @@ import Hichecker from './HiChecker.test';
 import Hilog from'./HiLog.test'
 import ErrorObserver from './ErrorObserver.test';
 import jsLeakWatcher from './JsLeakWatcher.test'
-import hilogApi from './hilogApi.test'
+import HilogApi from './HilogApi.test'
 import JsLeakWatcherParamSpecTest from './JsLeakWatcherParamSpec.test'
 import HiAppEventParamSpecTest from './HiAppEventParamSpec.test';
 
@@ -47,6 +47,6 @@ export default function testsuite() {
   ErrorObserver();
   jsLeakWatcher();
   HiAppEventParamSpecTest();
-  hilogApi();
+  HilogApi();
   JsLeakWatcherParamSpecTest();
 }
