@@ -2801,7 +2801,7 @@ export default function PhotoTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testOHExposureStateChangeCallback0100', Level.LEVEL0, () => {
+    it('SUB_MULTIMEDIA_OH_CAMERANDK_OHExposureStateChangeCallback_0100', Level.LEVEL0, () => {
       captureSessionstart();
       let ret = cameraObj.oHCaptureSessionRegisterExposureStateChangeCallback();
       if (ret != 0) {
@@ -2823,7 +2823,7 @@ export default function PhotoTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testOHExposureStateChangeCallback0200', Level.LEVEL0, () => {
+    it('SUB_MULTIMEDIA_OH_CAMERANDK_OHExposureStateChangeCallback_0200', Level.LEVEL0, () => {
       captureSessionstart();
       let ret = cameraObj.oHCaptureSessionRegisterExposureStateChangeCallbackWithoutSession();
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
@@ -2837,7 +2837,7 @@ export default function PhotoTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testOHExposureStateChangeCallback0300', Level.LEVEL0, () => {
+    it('SUB_MULTIMEDIA_OH_CAMERANDK_OHExposureStateChangeCallback_0300', Level.LEVEL0, () => {
       captureSessionstart();
       let ret = cameraObj.oHCaptureSessionUnregisterExposureStateChangeCallbackWithoutSession();
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);

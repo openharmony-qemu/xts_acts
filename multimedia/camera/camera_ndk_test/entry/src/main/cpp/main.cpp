@@ -3712,7 +3712,8 @@ static napi_value OHCaptureSessionUnregisterExposureStateChangeCallback(napi_env
     return result;
 }
  
-static napi_value OHCaptureSessionRegisterExposureStateChangeCallbackWithoutSession(napi_env env, napi_callback_info info)
+static napi_value OHCaptureSessionRegisterExposureStateChangeCallbackWithoutSession(napi_env env,
+    napi_callback_info info)
 {
     napi_value result;
     Camera_ErrorCode code = ndkCamera_->RegisterExposureStateChangeCallbackWithoutSession();
@@ -3721,7 +3722,8 @@ static napi_value OHCaptureSessionRegisterExposureStateChangeCallbackWithoutSess
     return result;
 }
  
-static napi_value OHCaptureSessionUnregisterExposureStateChangeCallbackWithoutSession(napi_env env, napi_callback_info info)
+static napi_value OHCaptureSessionUnregisterExposureStateChangeCallbackWithoutSession(napi_env env,
+    napi_callback_info info)
 {
     napi_value result;
     Camera_ErrorCode code = ndkCamera_->UnregisterExposureStateChangeCallbackWithoutSession();
@@ -4061,9 +4063,11 @@ static napi_value Init(napi_env env, napi_value exports)
         { "oHCaptureSessionUnregisterExposureStateChangeCallback", nullptr,
             OHCaptureSessionUnregisterExposureStateChangeCallback, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "oHCaptureSessionRegisterExposureStateChangeCallbackWithoutSession", nullptr,
-            OHCaptureSessionRegisterExposureStateChangeCallbackWithoutSession, nullptr, nullptr, nullptr, napi_default, nullptr },
+            OHCaptureSessionRegisterExposureStateChangeCallbackWithoutSession,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
         { "oHCaptureSessionUnregisterExposureStateChangeCallbackWithoutSession", nullptr,
-            OHCaptureSessionUnregisterExposureStateChangeCallbackWithoutSession, nullptr, nullptr, nullptr, napi_default, nullptr },
+            OHCaptureSessionUnregisterExposureStateChangeCallbackWithoutSession,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_property_descriptor desc3[] = {
         {"oHCameraManagerTorchMode", nullptr, OHCameraManagerTorchMode, nullptr, nullptr, nullptr,
