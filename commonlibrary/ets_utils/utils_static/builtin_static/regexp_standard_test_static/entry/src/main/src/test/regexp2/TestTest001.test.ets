@@ -503,7 +503,7 @@ export default function testTest(): void {
       if (supportsRegExp('test', 'd')) {
         return;
       }
-      return;
+      expect(supportsRegExp('test', 'd')).assertFalse();
     });
 
     /**

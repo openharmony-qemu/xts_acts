@@ -1149,12 +1149,10 @@ export default function execTest(): void {
      * @tc.level LEVEL1
      */
     it('testExec0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      
-      
       if (supportsRegExp('test', 'd')) {
         return;
       }
-      return;
+      expect(supportsRegExp('test', 'd')).assertFalse();
     });
   
     /**

@@ -73,7 +73,7 @@ export default function searchTest002(): void {
 
     /**
      * @tc.name testSearch0201
-     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_EXT_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_REGEXP_SEARCH_SUPPLEMENT_EXT_TEST_0300
      * @tc.desc Search returns -1 when pattern is not found
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1708,8 +1708,6 @@ export default function searchTest002(): void {
      * @tc.level LEVEL1
      */
     it('testSearch0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      
-      
       const ip = new RegExp('^((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)\\.){3}(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)$');
       expect('192.168.1.1'.search(ip)).assertEqual(0);
       expect('256.1.1.1'.search(ip)).assertEqual(-1);

@@ -283,7 +283,7 @@ export default function searchTest(): void {
         if (supportsRegExp('.', 's')) {
           return;
         }
-        return;
+        expect(supportsRegExp('.', 's')).assertFalse();
       });
 
       /**
@@ -314,7 +314,7 @@ export default function searchTest(): void {
         if (supportsRegExp('test(\\d+)', 'd')) {
           return;
         }
-        return;
+        expect(supportsRegExp('test(\\d+)', 'd')).assertFalse();
       });
     });
 
@@ -474,7 +474,7 @@ export default function searchTest(): void {
         if (supportsRegExp('\\p{Greek}', 'u')) {
           return;
         }
-        return;
+        expect(supportsRegExp('\\p{Greek}', 'u')).assertFalse();
       });
 
       /**
@@ -1011,7 +1011,7 @@ export default function searchTest(): void {
           if (supportsRegExp('\\p{Script=Hiragana}+', 'u')) {
             return;
           }
-          return;
+          expect(supportsRegExp('\\p{Script=Hiragana}+', 'u')).assertFalse();
         });
     });
 

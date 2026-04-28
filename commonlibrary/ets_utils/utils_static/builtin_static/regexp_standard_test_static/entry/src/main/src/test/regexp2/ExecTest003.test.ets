@@ -131,7 +131,7 @@ export default function execTest003(): void {
       if (supportsRegExp('(?<=test)123')) {
         return;
       }
-      return;
+      expect(supportsRegExp('(?<=test)123')).assertFalse();
     });
 
     /**
@@ -165,7 +165,7 @@ export default function execTest003(): void {
       if (supportsRegExp('(?<!test)123')) {
         return;
       }
-      return;
+      expect(supportsRegExp('(?<!test)123')).assertFalse();
     });
   });
 

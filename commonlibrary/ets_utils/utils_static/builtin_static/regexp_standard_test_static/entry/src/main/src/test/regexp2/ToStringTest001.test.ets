@@ -306,7 +306,7 @@ export default function toStringTest(): void {
       if (supportsRegExp('(?<name>\\w+)')) {
         return;
       }
-      return;
+      expect(supportsRegExp('(?<name>\\w+)')).assertFalse();
     });
 
     /**
@@ -362,7 +362,7 @@ export default function toStringTest(): void {
       if (supportsRegExp('(?<=\\$)\\d+')) {
         return;
       }
-      return;
+      expect(supportsRegExp('(?<=\\$)\\d+')).assertFalse();
     });
 
     /**
@@ -542,7 +542,7 @@ export default function toStringTest(): void {
       if (supportsRegExp('test', 's')) {
         return;
       }
-      return;
+      expect(supportsRegExp('test', 's')).assertFalse();
     });
 
     /**
@@ -596,7 +596,7 @@ export default function toStringTest(): void {
       if (supportsRegExp('test', 'd')) {
         return;
       }
-      return;
+      expect(supportsRegExp('test', 'd')).assertFalse();
     });
 
     /**
@@ -638,7 +638,7 @@ export default function toStringTest(): void {
       if (supportsRegExp('test', 'gimsuy')) {
         return;
       }
-      return;
+      expect(supportsRegExp('test', 'gimsuy')).assertFalse();
     });
 
     /**
@@ -668,7 +668,7 @@ export default function toStringTest(): void {
       if (supportsRegExp('test', 'gimsud')) {
         return;
       }
-      return;
+      expect(supportsRegExp('test', 'gimsud')).assertFalse();
     });
 
     /**
@@ -1508,7 +1508,7 @@ export default function toStringTest(): void {
       if (supportsRegExp('\\p{Script=Hiragana}', 'u')) {
         return;
       }
-      return;
+      expect(supportsRegExp('\\p{Script=Hiragana}', 'u')).assertFalse();
     });
 
     /**
@@ -1538,7 +1538,7 @@ export default function toStringTest(): void {
       if (supportsRegExp('\\p{Letter}+', 'u')) {
         return;
       }
-      return;
+      expect(supportsRegExp('\\p{Letter}+', 'u')).assertFalse();
     });
 
     /**
