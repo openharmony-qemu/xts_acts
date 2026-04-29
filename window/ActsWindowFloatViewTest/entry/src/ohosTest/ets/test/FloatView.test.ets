@@ -961,6 +961,7 @@ export default function abilityTest() {
       };
       try {
         let floatViewController = await floatView.create(config);
+        callDoneOnStopped(floatViewController, CaseName, done)
         console.info(CaseName + ' Succeeded in creating float view controller.');
         await floatViewController.setUIContext("testability/pages/First/index");
         console.info(CaseName + ' Succeeded in setting UI context.');
@@ -972,17 +973,112 @@ export default function abilityTest() {
           await sleep(1000);
           await floatViewController.stop();
           console.info(CaseName + ' Succeeded in stopping float view.');
-          
-          console.log(CaseName + ' end.');
-          done();
         }).catch(async (err: BusinessError) => {
           console.error(CaseName + ' Failed to set visibility. Cause: ' + err.code + ', message: ' + err.message);
           await sleep(1000);
           await floatViewController.stop();
           expect(err.message != null).assertTrue();
           expect(false).assertTrue();
-          done();
         });
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_setFloatViewVisibilityInApp_0200
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_1800
+     * @tc.desc   test setFloatViewVisibilityInApp true can find component, false cannot find
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_setFloatViewVisibilityInApp_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_setFloatViewVisibilityInApp_0200';
+      console.log(CaseName + ' begin.');
+      let config: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      try {
+        let floatViewController = await floatView.create(config);
+        callDoneOnStopped(floatViewController, CaseName, done)
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        await floatViewController.setUIContext("testability/pages/First/index");
+        console.info(CaseName + ' Succeeded in setting UI context.');
+        await floatViewController.start();
+        console.info(CaseName + ' Succeeded in starting float view.');
+        await sleep(200);
+        await floatViewController.setFloatViewVisibilityInApp(true);
+        console.info(CaseName + ' Succeeded in setting visibility true.');
+        await sleep(500);
+        let driver = Driver.create();
+        let iconComponent = await driver.findComponent(ON.id('FloatViewPanelView_icon'));
+        console.info(CaseName + ' Find component with visibility true: ' + JSON.stringify(iconComponent));
+        expect(iconComponent != null).assertTrue();
+        await floatViewController.setFloatViewVisibilityInApp(false);
+        console.info(CaseName + ' Succeeded in setting visibility false.');
+        await sleep(500);
+        let iconComponentFalse = await driver.findComponent(ON.id('FloatViewPanelView_icon'));
+        console.info(CaseName + ' Find component with visibility false: ' + JSON.stringify(iconComponentFalse));
+        expect(iconComponentFalse == null).assertTrue();
+        await floatViewController.stop();
+        console.info(CaseName + ' Succeeded in stopping float view.');
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_setFloatViewVisibilityInApp_stateChange
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_1810
+     * @tc.desc   test setFloatViewVisibilityInApp trigger state change callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_setFloatViewVisibilityInApp_stateChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_setFloatViewVisibilityInApp_stateChange';
+      console.log(CaseName + ' begin.');
+      let config: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      try {
+        let floatViewController = await floatView.create(config);
+        callDoneOnStopped(floatViewController, CaseName, done)
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        await floatViewController.setUIContext("testability/pages/First/index");
+        console.info(CaseName + ' Succeeded in setting UI context.');
+        let onStateChange = async (info: floatView.FloatViewStateChangeInfo) => {
+          console.info(CaseName + ' Float view stateChange: ' + info.state);
+          if (info.state === floatView.FloatViewState.STARTED) {
+            floatViewController.setFloatViewVisibilityInApp(false);
+            console.info(CaseName + ' Succeeded in setting visibility true.');
+          }
+          if (info.state === floatView.FloatViewState.HIDDEN) {
+            await floatViewController.stop();
+            console.info(CaseName + ' Succeeded in setting visibility true.');
+          }
+        };
+        floatViewController.onStateChange(onStateChange);
+        console.info(CaseName + ' Succeeded in registering stateChange callback.');
+        await floatViewController.start();
+        console.info(CaseName + ' Succeeded in starting float view.');
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
@@ -2123,9 +2219,98 @@ export default function abilityTest() {
         });
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
-        expect(e.code).assertEqual(1300019);
         expect(e.message != null).assertTrue();
-        done();
+        if (e.code === 801 && (!isDeviceSupportFloatView || !isDeviceSupportFloatBall)) {
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_bind_first_param_null
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_BIND_0500
+     * @tc.desc   test bind with null floatViewController
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_bind_first_param_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_bind_first_param_null';
+      console.log(CaseName + ' begin.');
+      let floatingBallConfig: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let floatingBallParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title'
+      };
+      try {
+        let floatingBallController = await floatingBall.create(floatingBallConfig);
+        console.info(CaseName + ' Succeeded in creating floating ball controller.');
+        floatView.bind(null, floatingBallController, floatingBallParams).then(() => {
+          console.info(CaseName + ' Succeeded in binding.');
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(CaseName + ' Failed to bind. Cause: ' + err.code + ', message: ' + err.message);
+          expect(false).assertTrue();
+          done();
+        });
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatBall) {
+          done();
+        } else {
+          expect(e.code).assertEqual(401);
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_bind_second_param_null
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_BIND_0600
+     * @tc.desc   test bind with null floatingBallController
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_bind_second_param_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_bind_second_param_null';
+      console.log(CaseName + ' begin.');
+      let floatViewConfig: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      let floatingBallParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title'
+      };
+      try {
+        let floatViewController = await floatView.create(floatViewConfig);
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        floatView.bind(floatViewController, null, floatingBallParams).then(() => {
+          console.info(CaseName + ' Succeeded in binding.');
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(CaseName + ' Failed to bind. Cause: ' + err.code + ', message: ' + err.message);
+          expect(false).assertTrue();
+          done();
+        });
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(e.code).assertEqual(401);
+          done();
+        }
       }
     })
 
@@ -2342,5 +2527,133 @@ export default function abilityTest() {
         }
       }
     })
+
+    /**
+     * @tc.name   test_bind_onStateChange_started
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_BIND_0700
+     * @tc.desc   test bind and start floatingBall, then receive STARTED callback from onStateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_bind_onStateChange_started', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_bind_onStateChange_started';
+      console.log(CaseName + ' begin.');
+      let floatViewConfig: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      let floatingBallConfig: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let floatingBallParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title'
+      };
+      try {
+        let floatViewController = await floatView.create(floatViewConfig);
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        let floatingBallController = await floatingBall.create(floatingBallConfig);
+        console.info(CaseName + ' Succeeded in creating floating ball controller.');
+        let isStarted: boolean = false;
+        let onStateChange = (info: floatView.FloatViewStateChangeInfo) => {
+          console.info(CaseName + ' Float view stateChange: ' + info.state);
+          if (info.state === floatView.FloatViewState.IN_FLOATING_BALL) {
+            console.info(CaseName + ' Received IN_FLOATING_BALL callback after starting floatingBall.');
+            isStarted = true;
+            floatingBallController.stopFloatingBall().then(() => {
+              console.info(CaseName + ' Succeeded in stopping floating ball.');
+            }).catch((err: BusinessError) => {
+              console.error(CaseName + ' Failed to stop floating ball. Cause: ' + err.code + ', message: ' + err.message);
+              expect(err.message != null).assertTrue();
+              done();
+            });
+          }
+          if (info.state === floatView.FloatViewState.STOPPED && isStarted) {
+            console.info(CaseName + ' Received STOPPED callback after stopping floating ball.');
+            floatViewController.offStateChange(onStateChange);
+            console.info(CaseName + ' Succeeded in unregistering stateChange callback.');
+            done();
+          }
+        };
+        floatViewController.onStateChange(onStateChange);
+        console.info(CaseName + ' Succeeded in registering stateChange callback.');
+        await floatView.bind(floatViewController, floatingBallController, floatingBallParams);
+        console.info(CaseName + ' Succeeded in binding floatView and floatingBall.');
+        await floatingBallController.startFloatingBall(floatingBallParams);
+        console.info(CaseName + ' Succeeded in starting floating ball.');
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && (!isDeviceSupportFloatView || !isDeviceSupportFloatBall)) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_bind_start_floatView
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_BIND_1000
+     * @tc.desc   test bind and then start floatView successfully
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_bind_start_floatView', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let CaseName: string = 'test_bind_start_floatView';
+      console.log(CaseName + ' begin.');
+      let floatViewConfig: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      let floatingBallConfig: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let floatingBallParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title'
+      };
+      try {
+        let floatViewController = await floatView.create(floatViewConfig);
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        let floatingBallController = await floatingBall.create(floatingBallConfig);
+        console.info(CaseName + ' Succeeded in creating floating ball controller.');
+        await floatViewController.setUIContext("testability/pages/First/index");
+        console.info(CaseName + ' Succeeded in setting UI context.');
+        let isStarted: boolean = false;
+        let onStateChange = async (state: floatingBall.FloatingBallState) => {
+          console.info(CaseName+ ' Floating ball stateChange: ' + state);
+          if (state === floatingBall.FloatingBallState.STARTED) {
+            try {
+              await sleep(1000);
+              await floatViewController.stop()
+              await sleep(1000);
+              done();
+            } catch (err) {
+              console.info(CaseName+ ' onStateChange err: ' + err.code + err.message);
+            }
+          }
+        };
+        floatingBallController.on('stateChange',onStateChange);
+        console.info(CaseName + ' Succeeded in registering stateChange callback.');
+        await floatView.bind(floatViewController, floatingBallController, floatingBallParams);
+        console.info(CaseName + ' Succeeded in binding floatView and floatingBall.');
+        await floatViewController.start();
+        console.info(CaseName + ' Succeeded in starting float view.');
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && (!isDeviceSupportFloatView || !isDeviceSupportFloatBall)) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
   })
 }
