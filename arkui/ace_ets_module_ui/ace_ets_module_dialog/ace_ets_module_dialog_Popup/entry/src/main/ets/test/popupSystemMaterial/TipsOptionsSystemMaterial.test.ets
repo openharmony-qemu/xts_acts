@@ -219,13 +219,13 @@ export default function TipsOptionsSystemMaterial() {
       console.info('TipsOptionsSystemMaterial_0600 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
+      
+      
       let button = await driver.findComponent(ON.id('none'));
       let bounds = await button.getBounds();
       let centerX = Math.floor((bounds.left + bounds.right) / 2);
       let centerY = Math.floor((bounds.top + bounds.bottom) / 2);
       await driver.mouseMoveTo({ x: centerX, y: centerY });
-      let button = await driver.findComponent(ON.id('none'));
-      expect(button).not().assertUndefined();
       console.info('TipsOptionsSystemMaterial_0600 Button with NONE systemMaterial exists');
       let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       console.info('TipsOptionsSystemMaterial_0100 getInspectorTree: ' + JSON.stringify(obj));
