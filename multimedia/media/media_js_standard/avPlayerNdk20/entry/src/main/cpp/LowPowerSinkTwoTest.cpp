@@ -1491,7 +1491,7 @@ static napi_value OH_LowPowerAudioSink_SetLoudnessGain0300(napi_env env, napi_ca
     test = OH_LowPowerVideoSink_StartRenderer(VideoSink);
     OH_AVErrCode errcode = OH_LowPowerAudioSink_SetLoudnessGain(AudioSink, -91);
     int32_t res = 1;
-    if (errcode == AV_ERR_OPERATE_NOT_PERMIT) {
+    if (errcode == AV_ERR_INVALID_VAL) {
         res = 0;
     }
     OH_LowPowerVideoSink_Destroy(VideoSink);
@@ -1543,7 +1543,7 @@ static napi_value OH_LowPowerAudioSink_SetLoudnessGain0400(napi_env env, napi_ca
     test = OH_LowPowerVideoSink_StartRenderer(VideoSink);
     OH_AVErrCode errcode = OH_LowPowerAudioSink_SetLoudnessGain(AudioSink, 25);
     int32_t res = 1;
-    if (errcode == AV_ERR_OPERATE_NOT_PERMIT) {
+    if (errcode == AV_ERR_INVALID_VAL) {
         res = 0;
     }
     OH_LowPowerVideoSink_Destroy(VideoSink);
