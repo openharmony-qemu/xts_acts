@@ -213,45 +213,39 @@ export default function PiPWindowTest() {
                 expect(res).assertEqual(false)
               }
               let driver = Driver.create();
-              pipWindow.create(config).then((data: pipWindow.PiPController) => {
-                pipController = data;
-                console.log(`${caseName} Succeeded in creating pip controller. Data:${data}`);
-                expect(data != null).assertTrue();
-                pipController!.onActiveStatusChange(callback);
-                await pipController!.startPiP();
-                await Utils.msSleep(1000)
-                let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
-                console.log(`${caseName} pipWindowComponent: ${JSON.stringify(pipWindowComponent)}`);
-                await Utils.msSleep(1000)
-                let pipWindowCenter = await pipWindowComponent!.getBoundsCenter();
-                console.log(`${caseName} pipWindowCenter: ${JSON.stringify(pipWindowCenter)}`);
-                let displayInfo = display.getDefaultDisplaySync();
-                console.log(`${caseName} displayInfo: ${JSON.stringify(displayInfo)}`);
-                let dragToX = pipWindowCenter.x + displayInfo.width;
-                let dragToY = pipWindowCenter.y;
-                await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX as int, dragToY);
-                await Utils.msSleep(3000);
-                let expectValue = deviceType == 'tv' ? 0 : 1
-                expect(callbackIndex).assertEqual(expectValue);
-                pipController!.stopPiP();
-                await Utils.msSleep(3000);
-                pipController?.offActiveStatusChange();
-                done();
-              }).catch((err: Error) => {
-                console.log(`${caseName} Failed1 to create pip controller. Cause` + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
-                if (err.code == 801) {
-                  expect(err.message != null).assertTrue();
-                  done();
-                }
-                else {
-                  expect().assertFail();
-                  done();
-                }
-              });
+              pipController = await pipWindow.create(config)
+              console.log(`${caseName} Succeeded in creating pip controller. Data:${pipController}`);
+              expect(pipController != null).assertTrue();
+              pipController!.onActiveStatusChange(callback);
+              await pipController!.startPiP();
+              await Utils.msSleep(1000)
+              let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
+              console.log(`${caseName} pipWindowComponent: ${JSON.stringify(pipWindowComponent)}`);
+              await Utils.msSleep(1000)
+              let pipWindowCenter = await pipWindowComponent!.getBoundsCenter();
+              console.log(`${caseName} pipWindowCenter: ${JSON.stringify(pipWindowCenter)}`);
+              let displayInfo = display.getDefaultDisplaySync();
+              console.log(`${caseName} displayInfo: ${JSON.stringify(displayInfo)}`);
+              let dragToX = pipWindowCenter.x + displayInfo.width;
+              let dragToY = pipWindowCenter.y;
+              await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX as int, dragToY);
+              await Utils.msSleep(3000);
+              let expectValue = deviceType == 'tv' ? 0 : 1
+              expect(callbackIndex).assertEqual(expectValue);
+              pipController!.stopPiP();
+              await Utils.msSleep(3000);
+              pipController?.offActiveStatusChange();
+              done();
             } catch (error) {
               console.log(`${caseName} Failed. Cause` + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
-              expect().assertFail();
-              done();
+              if (error.code == 801) {
+                expect(error.message != null).assertTrue();
+                done();
+              }
+              else {
+                expect().assertFail();
+                done();
+              }
             }
           } else {
             done()
