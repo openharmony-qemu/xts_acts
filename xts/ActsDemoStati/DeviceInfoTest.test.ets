@@ -26,6 +26,20 @@ import {
   } from '../../../../hypium/index';
   import { BusinessError } from '@ohos.base';
   import geoLocationManager from '@ohos.geoLocationManager';
+  import hilog from '@ohos.hilog'
+import { AppStorage } from '@ohos.arkui.stateManagement'
+import common from '@ohos.app.ability.common';
+import { abilityDelegatorRegistry } from '@kit.TestKit';
+import { BusinessError } from '@ohos.base';
+import AbilityStage from "@ohos.app.ability.AbilityStage"
+import { Driver, ON } from '@ohos.UiTest';
+
+let domain: int = 0x0000;
+let tag: string = 'testTag';
+let addMonitor = false;
+let removeMonitor = false;
+let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+let abilityStageContext: common.AbilityStageContext
 
   export default function xmlTest1() {
     describe('xmlTest1', (): void => {
@@ -193,6 +207,96 @@ import {
             console.error('Sub_Location_core_getCurrentLocation_0200 errCode:' + err.code + ', message:' + err.message);
             expect(err.code).assertEqual(801);
           }
+
+          hilog.info(domain, tag, 'beforeAll start');
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+          console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+      let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
+      hilog.info(domain, tag, 'beforeAll AbilityDelegator');
+      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.stagecontexttest.static")
+      await Utils.msSleep(2000);
+      hilog.info(domain, tag, 'beforeAll end');
+      
+          abilityStageContext = AppStorage.get<common.AbilityStageContext>("abilityStageContext") as common.AbilityStageContext
+      hilog.info(domain, tag, 'abilityStageContextStatic001 info ' + JSON.stringify(abilityStageContext));
+      try {
+        hilog.info(domain, tag, 'abilityStageContextStatic001 info ' + JSON.stringify(abilityStageContext));
+        if (abilityStageContext) {
+          expect(abilityStageContext != null).assertTrue();
+          let abilityInfo = abilityStageContext.currentHapModuleInfo;
+          hilog.info(domain, tag, 'abilityStageContextStatic001 info ' + JSON.stringify(abilityInfo));
+          expect(abilityInfo != null).assertTrue();
+          hilog.info(domain, tag, `abilityStageContextStatic001 abilityInfo.name: ` + abilityInfo.name);
+          expect(abilityInfo.name == "entry").assertTrue();
+          hilog.info(domain, tag, `abilityStageContextStatic001 abilityInfo.icon: ` + abilityInfo.icon);
+          expect(abilityInfo.icon == "$media:layered_image").assertTrue();
+          hilog.info(domain, tag, `abilityStageContextStatic001 abilityInfo.iconId: ` + abilityInfo.iconId);
+          expect(typeof (abilityInfo.iconId) == 'long').assertTrue();
+          hilog.info(domain, tag, `abilityStageContextStatic001 abilityInfo.label: ` + abilityInfo.label);
+          expect(abilityInfo.label == "$string:EntryAbility_label").assertTrue();
+          hilog.info(domain, tag, `abilityStageContextStatic001 abilityInfo.labelId: ` + abilityInfo.labelId);
+          expect(typeof (abilityInfo.labelId) == 'long').assertTrue();
+          hilog.info(domain, tag, `abilityStageContextStatic001 abilityInfo.description: ` + abilityInfo.description);
+          expect(abilityInfo.description == "$string:module_desc").assertTrue();
+          hilog.info(domain, tag, `abilityStageContextStatic001 abilityInfo.descriptionId: ` + abilityInfo.descriptionId);
+          expect(typeof (abilityInfo.descriptionId) == 'long').assertTrue();
+          hilog.info(domain, tag, `abilityStageContextStatic001 abilityInfo.mainElementName: ` + abilityInfo.mainElementName);
+          expect(abilityInfo.mainElementName == "EntryAbility").assertTrue();
+          hilog.info(domain, tag, `abilityStageContextStatic001 abilityInfo.metadata: ` + abilityInfo.metadata.length);
+          expect(abilityInfo.metadata.length >= 0).assertTrue();
+
+          let config = abilityStageContext.config
+          hilog.info(domain, tag, `abilityStageContextStatic001 config.language: ` + config.language);
+          expect(abilityStageContext.config.language).not().assertUndefined();
+          expect(abilityStageContext.config.language).not().assertNull();
+          hilog.info(domain, tag, `abilityStageContextStatic001 config.colorMode: ` + config.colorMode);
+          expect(abilityStageContext.config.colorMode).not().assertUndefined();
+          expect(abilityStageContext.config.colorMode).not().assertNull();
+          hilog.info(domain, tag, `abilityStageContextStatic001 config.direction: ` + config.direction);
+          expect(abilityStageContext.config.direction).not().assertUndefined();
+          expect(abilityStageContext.config.direction).not().assertNull();
+          hilog.info(domain, tag, `abilityStageContextStatic001 config.screenDensity: ` + config.screenDensity);
+          expect(abilityStageContext.config.screenDensity).not().assertUndefined();
+          expect(abilityStageContext.config.screenDensity).not().assertNull();
+          hilog.info(domain, tag, `abilityStageContextStatic001 config.displayId: ` + config.displayId);
+          expect(abilityStageContext.config.displayId).not().assertUndefined();
+          expect(abilityStageContext.config.displayId).not().assertNull();
+          hilog.info(domain, tag, `abilityStageContextStatic001 config.hasPointerDevice: ` + config.hasPointerDevice);
+          expect(abilityStageContext.config.hasPointerDevice).not().assertUndefined();
+          expect(abilityStageContext.config.hasPointerDevice).not().assertNull();
+          hilog.info(domain, tag, `abilityStageContextStatic001 config.fontId: ` + config.fontId);
+          expect(abilityStageContext.config.fontId).not().assertUndefined();
+          expect(abilityStageContext.config.fontId).not().assertNull();
+          hilog.info(domain, tag, `abilityStageContextStatic001 config.fontSizeScale: ` + config.fontSizeScale);
+          expect(abilityStageContext.config.fontSizeScale).not().assertUndefined();
+          expect(abilityStageContext.config.fontSizeScale).not().assertNull();
+          hilog.info(domain, tag, `abilityStageContextStatic001 config.fontWeightScale: ` + config.fontWeightScale);
+          expect(abilityStageContext.config.fontWeightScale).not().assertUndefined();
+          expect(abilityStageContext.config.fontWeightScale).not().assertNull();
+          hilog.info(domain, tag, `abilityStageContextStatic001 config.mcc: ` + config.mcc);
+          expect(abilityStageContext.config.mcc).not().assertUndefined();
+          expect(abilityStageContext.config.mcc).not().assertNull();
+          hilog.info(domain, tag, `abilityStageContextStatic001 config.mnc: ` + config.mnc);
+          expect(abilityStageContext.config.mnc).not().assertUndefined();
+          expect(abilityStageContext.config.mnc).not().assertNull();
+          hilog.info(domain, tag, 'abilityStageContextStatic001 config.locale: ' + config.locale);
+          expect(abilityStageContext.config.locale).not().assertUndefined();
+          expect(abilityStageContext.config.locale).not().assertNull();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, 'testAbilityInfoStatic001 fail: ' + err);
+        expect().assertFail();
+        done();
+      }
+
         done();
       });
     })
