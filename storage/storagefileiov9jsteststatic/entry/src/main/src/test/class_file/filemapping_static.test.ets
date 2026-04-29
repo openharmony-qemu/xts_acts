@@ -257,42 +257,41 @@ export default function fileIOFileMappingStatic() {
     });
 
     /**
-     * @tc.name   fileIO_test_mmap_async_static_000
-     * @tc.number SUB_DF_FILEIO_MMAP_ASYNC_STATIC_0000
-     * @tc.desc   Test mmap() interfaces. mode=READ_WRITE. Promise.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('fileIO_test_mmap_async_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
-      hilog.info(domain, tag, '%{public}s', 'fileIO_test_mmap_async_static_000 start');
-      
-      Utils.nextFileName('fileIO_test_mmap_async_static_000').then((fpath: string) => {
-        return Utils.prepareFile(fpath, FILE_CONTENT).then((result) => {
-          expect(result).assertTrue();
-          return fpath;
-        });
-      }).then((fpath: string) => {
-        let file = fs.openSync(fpath, fs.OpenMode.READ_WRITE);
-        expect(Utils.isIntNum(file.fd)).assertTrue();
+    * @tc.name   fileIO_test_mmap_async_static_000
+    * @tc.number SUB_DF_FILEIO_MMAP_ASYNC_STATIC_0000
+    * @tc.desc   Test mmap() interfaces. mode=READ_WRITE. Promise.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('fileIO_test_mmap_async_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_mmap_async_static_000 start');
         
-        fs.mmap(file, fs.MappingMode.READ_WRITE, 0, 1024).then((mapping: fs.FileMapping): void => {
-          hilog.info(domain, tag, '%{public}s', 'fileIO_test_mmap_async_static_000 capacity: ' + mapping.capacity());
-          expect(mapping.capacity() === 1024).assertTrue();
-          mapping.unmapSync();
-          fs.closeSync(file);
-          fs.unlinkSync(fpath);
-          done();
-        }).catch((err: Error): void => {
-          hilog.info(domain, tag, '%{public}s', 'fileIO_test_mmap_async_static_000 error: ' + JSON.stringify(err));
-          expect(false).assertTrue();
-          done();
-        });
-      }).catch((e: Error) => {
-        hilog.info(domain, tag, '%{public}s', 'fileIO_test_mmap_async_static_000 has failed for' + JSON.stringify(e));
-        expect(false).assertTrue();
-        done();
-      });
+        try {
+            let fpath = await Utils.nextFileName('fileIO_test_mmap_async_static_000');
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_mmap_async_static_000 fpath: ' + fpath);
+            
+            let result = await Utils.prepareFile(fpath, FILE_CONTENT);
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_mmap_async_static_000 prepareFile result: ' + result);
+            expect(result).assertTrue();
+            
+            let file = fs.openSync(fpath, fs.OpenMode.READ_WRITE);
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_mmap_async_static_000 fd: ' + file.fd);
+            expect(Utils.isIntNum(file.fd)).assertTrue();
+            
+            let mapping = await fs.mmap(file, fs.MappingMode.READ_WRITE, 0, 1024);
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_mmap_async_static_000 capacity: ' + mapping.capacity());
+            expect(mapping.capacity() === 1024).assertTrue();
+            
+            mapping.unmapSync();
+            fs.closeSync(file);
+            fs.unlinkSync(fpath);
+            
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_mmap_async_static_000 end');
+        } catch (e) {
+            hilog.info(domain, tag, '%{public}s', 'fileIO_test_mmap_async_static_000 has failed for' + JSON.stringify(e));
+            expect(false).assertTrue();
+        }
     });
 
 
@@ -376,13 +375,10 @@ export default function fileIOFileMappingStatic() {
         let file = fs.openSync(fpath, fs.OpenMode.READ_WRITE);
         expect(Utils.isIntNum(file.fd)).assertTrue();
         
-        // 先检查文件大小
         let stat = fs.statSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_mmap_async_static_003 file size: ' + stat.size);
         
-        // 确保文件至少有 1024 字节
         if (stat.size < 1024) {
-          // 扩展文件大小
           let buf = new ArrayBuffer(1024 - stat.size);
           fs.writeSync(file.fd, buf);
         }
@@ -405,7 +401,6 @@ export default function fileIOFileMappingStatic() {
         done();
       });
     });
-
 
     /**
      * @tc.name   fileIO_test_setPosition_static_000
