@@ -8,6 +8,10 @@ interface ModifyRule {
   expectValueDNG: number | string | Array<number> | Array<number | null> | null;
 }
 
+interface ReadOnlyMetaDataRuleWithType {
+  type: string,
+  newExpectValue: string | object | boolean | number | number[] | number[][];
+}
 interface ReadOnlyMetaDataRule {
   newExpectValue: string | object | boolean | number | number[] | number[][];
 }
@@ -30,6 +34,31 @@ interface WebPPropertyTypeConfig {
   rules: Map<image.WebPPropertyKey, ReadOnlyMetaDataRule>;
 }
 
+interface GifPropertyTypeConfig {
+  keys: Array<image.GifPropertyKey>;
+  rules: Map<image.GifPropertyKey, ReadOnlyMetaDataRuleWithType>;
+}
+
+interface HeifsPropertyTypeConfig {
+  keys: Array<image.HeifsPropertyKey>;
+  rules: Map<image.HeifsPropertyKey, ReadOnlyMetaDataRuleWithType>;
+}
+
+interface PngPropertyTypeConfig {
+  keys: Array<image.PngPropertyKey>;
+  rules: Map<image.PngPropertyKey, ReadOnlyMetaDataRuleWithType>;
+}
+
+interface TiffPropertyTypeConfig {
+  keys: Array<image.TiffPropertyKey>;
+  rules: Map<image.TiffPropertyKey, ReadOnlyMetaDataRuleWithType>;
+}
+
+interface JfifPropertyTypeConfig {
+  keys: Array<image.JfifPropertyKey>;
+  rules: Map<image.JfifPropertyKey, ReadOnlyMetaDataRuleWithType>;
+}
+
 interface PropertyTypeConfig2 {
   keys: Array<image.PropertyKey>;
   rules: Map<image.PropertyKey, ModifyRule2>;
@@ -45,6 +74,11 @@ interface ImagePropertyConfigType {
   arrayBuffer: PropertyTypeConfig;
   string: PropertyTypeConfig;
   webpMetadatas: WebPPropertyTypeConfig;
+  gifMetadatas: GifPropertyTypeConfig;
+  heifsMetadatas: HeifsPropertyTypeConfig;
+  pngMetadatas: PngPropertyTypeConfig;
+  jfifMetadatas: JfifPropertyTypeConfig;
+  tiffMetadatas: TiffPropertyTypeConfig;
   arrayBufferOnly: PropertyTypeConfig;
   shortModify: PropertyTypeConfig2;
   longModify: PropertyTypeConfig2;
@@ -422,6 +456,145 @@ const ImagePropertyConfig: ImagePropertyConfigType = {
       [image.WebPPropertyKey.UNCLAMPED_DELAY_TIME,  { newExpectValue: 100 }],
       [image.WebPPropertyKey.LOOP_COUNT,            { newExpectValue: 9   }],
     ])
+  },
+  gifMetadatas: {
+    keys: [
+        image.GifPropertyKey.GIF_DELAY_TIME,
+        image.GifPropertyKey.GIF_DISPOSAL_TYPE,
+        image.GifPropertyKey.GIF_HAS_GLOBAL_COLOR_MAP,
+        image.GifPropertyKey.GIF_CANVAS_WIDTH, 
+        image.GifPropertyKey.GIF_CANVAS_HEIGHT, 
+        image.GifPropertyKey.GIF_LOOP_COUNT, 
+        image.GifPropertyKey.GIF_UNCLAMPED_DELAY_TIME
+    ],
+    rules: new Map<image.GifPropertyKey, ReadOnlyMetaDataRuleWithType>([
+      [image.GifPropertyKey.GIF_DELAY_TIME,                   { type: 'short',newExpectValue: 100  }],
+      [image.GifPropertyKey.GIF_DISPOSAL_TYPE,                { type: 'short',newExpectValue: 1  }],
+      [image.GifPropertyKey.GIF_HAS_GLOBAL_COLOR_MAP,         { type: 'short',newExpectValue: true }],
+      [image.GifPropertyKey.GIF_CANVAS_WIDTH,                 { type: 'short',newExpectValue: 480 }],
+      [image.GifPropertyKey.GIF_CANVAS_HEIGHT,                { type: 'short',newExpectValue: 270   }],
+      [image.GifPropertyKey.GIF_LOOP_COUNT,                   { type: 'short',newExpectValue: 0   }],
+      [image.GifPropertyKey.GIF_UNCLAMPED_DELAY_TIME,         { type: 'short',newExpectValue: 40   }]
+    ])
+  },
+  heifsMetadatas: {
+    keys: [
+        image.HeifsPropertyKey.HEIFS_DELAY_TIME,
+        image.HeifsPropertyKey.HEIFS_UNCLAMPED_DELAY_TIME,
+        image.HeifsPropertyKey.HEIFS_CANVAS_HEIGHT,
+        image.HeifsPropertyKey.HEIFS_CANVAS_WIDTH 
+    ],
+    rules: new Map<image.HeifsPropertyKey, ReadOnlyMetaDataRuleWithType>([
+      [image.HeifsPropertyKey.HEIFS_DELAY_TIME,                   { type: 'short',newExpectValue: 20  }],
+      [image.HeifsPropertyKey.HEIFS_UNCLAMPED_DELAY_TIME,         { type: 'short',newExpectValue: 20  }],
+      [image.HeifsPropertyKey.HEIFS_CANVAS_HEIGHT,                { type: 'short',newExpectValue: 720 }],
+      [image.HeifsPropertyKey.HEIFS_CANVAS_WIDTH,                 { type: 'short',newExpectValue: 1280 }],
+      ])
+    },
+  jfifMetadatas: {
+      keys: [
+          image.JfifPropertyKey.DENSITY_UNIT,
+          image.JfifPropertyKey.X_DENSITY,
+          image.JfifPropertyKey.Y_DENSITY,
+          image.JfifPropertyKey.VERSION, 
+          image.JfifPropertyKey.IS_PROGRESSIVE        
+      ],
+      rules: new Map<image.JfifPropertyKey, ReadOnlyMetaDataRuleWithType>([
+        [image.JfifPropertyKey.DENSITY_UNIT,                 { type: 'short',newExpectValue: 1  }],
+        [image.JfifPropertyKey.X_DENSITY,               {  type: 'short',newExpectValue: 72  }],
+        [image.JfifPropertyKey.Y_DENSITY,         { type: 'short',newExpectValue: 72 }],
+        [image.JfifPropertyKey.VERSION,                  {  type: 'short',newExpectValue: false }],
+        [image.JfifPropertyKey.IS_PROGRESSIVE,                 { type: 'intArray',newExpectValue: [1,1] }],
+      ])
+  },
+  pngMetadatas: {
+      keys: [
+          image.PngPropertyKey.X_PIXELS_PER_METER,
+          image.PngPropertyKey.MODIFICATION_TIME,
+          image.PngPropertyKey.SOFTWARE,
+          image.PngPropertyKey.COPYRIGHT, 
+          image.PngPropertyKey.CREATION_TIME,
+          image.PngPropertyKey.SRGB_INTENT,
+          image.PngPropertyKey.AUTHOR,
+          image.PngPropertyKey.INTERLACE_TYPE,
+          image.PngPropertyKey.WARNING,
+          image.PngPropertyKey.Y_PIXELS_PER_METER, 
+          image.PngPropertyKey.GAMMA,
+          image.PngPropertyKey.CHROMATICITIES,
+          image.PngPropertyKey.DESCRIPTION,
+          image.PngPropertyKey.TITLE,
+          image.PngPropertyKey.COMMENT,
+          image.PngPropertyKey.DISCLAIMER, 
+          image.PngPropertyKey.CHROMATICITIES         
+      ],
+      rules: new Map<image.PngPropertyKey, ReadOnlyMetaDataRuleWithType>([
+        [image.PngPropertyKey.X_PIXELS_PER_METER,                 { type: 'short',newExpectValue: 3780  }],
+        [image.PngPropertyKey.MODIFICATION_TIME,               { type: 'string',newExpectValue: "2026-03-19 10:05:00"  }],
+        [image.PngPropertyKey.SOFTWARE,         { type: 'string',newExpectValue: "Python pypng Script" }],
+        [image.PngPropertyKey.COPYRIGHT,                  { type: 'string',newExpectValue: "Copyright (C) 2026 QA Team" }],
+        [image.PngPropertyKey.CREATION_TIME,                 { type: 'string',newExpectValue: "2026-03-19 10:00:00"  }],
+        [image.PngPropertyKey.SRGB_INTENT,                { type: 'short',newExpectValue: 0  }],
+        [image.PngPropertyKey.AUTHOR,         { type: 'string',newExpectValue: "Test Engineer" }],
+        [image.PngPropertyKey.INTERLACE_TYPE,                 { type: 'short',newExpectValue: 0 }],
+        [image.PngPropertyKey.WARNING,                 { type: 'string',newExpectValue: "Do not modify this metadata!"  }],
+        [image.PngPropertyKey.Y_PIXELS_PER_METER,               { type: 'short',newExpectValue: 3780  }],
+        [image.PngPropertyKey.GAMMA,         { type: 'double',newExpectValue: 0.45455 }],
+        [image.PngPropertyKey.CHROMATICITIES,                 { type: 'doubleArray',newExpectValue: [0.3127,0.329,0.64,0.33,0.3,0.6,0.15,0.06] }],
+        [image.PngPropertyKey.DESCRIPTION,                 { type: 'string',newExpectValue: "This image contains all possible metadata fields"  }],
+        [image.PngPropertyKey.TITLE,               { type: 'string',newExpectValue: "Complete Test Image"   }],
+        [image.PngPropertyKey.COMMENT,         { type: 'string',newExpectValue: "Generated for testing purposes" }],
+        [image.PngPropertyKey.DISCLAIMER,                  { type: 'string',newExpectValue: "For internal use only" }],
+      ])
+  },
+  tiffMetadatas: {
+      keys: [
+          image.TiffPropertyKey.DOCUMENT_NAME,
+          image.TiffPropertyKey.PHOTOMETRIC_INTERPRETATION,
+          image.TiffPropertyKey.SOFTWARE,
+          image.TiffPropertyKey.COPYRIGHT, 
+          image.TiffPropertyKey.ORIENTATION,
+          image.TiffPropertyKey.RESOLUTION_UNIT,
+          image.TiffPropertyKey.COPYRIGHT,
+          image.TiffPropertyKey.DATE_TIME,
+          image.TiffPropertyKey.IMAGE_DESCRIPTION,
+          image.TiffPropertyKey.Y_RESOLUTION, 
+          image.TiffPropertyKey.X_RESOLUTION,
+          image.TiffPropertyKey.WHITE_POINT,
+          image.TiffPropertyKey.TILE_LENGTH,
+          image.TiffPropertyKey.TRANSFER_FUNCTION,
+          image.TiffPropertyKey.TILE_WIDTH,
+          image.TiffPropertyKey.MAKE, 
+          image.TiffPropertyKey.MODEL,
+          image.TiffPropertyKey.HOST_COMPUTER,
+          image.TiffPropertyKey.COMPRESSION,
+          image.TiffPropertyKey.SOFTWARE,
+          image.TiffPropertyKey.PRIMARY_CHROMATICITIES,
+          image.TiffPropertyKey.ARTIST
+      ],
+      rules: new Map<image.TiffPropertyKey, ReadOnlyMetaDataRuleWithType>([
+        [image.TiffPropertyKey.DOCUMENT_NAME,                 { type: 'string',newExpectValue: 3780  }],
+        [image.TiffPropertyKey.PHOTOMETRIC_INTERPRETATION,                { type: 'short',newExpectValue: "2026-03-19 10:05:00"  }],
+        [image.TiffPropertyKey.SOFTWARE,         { type: 'string',newExpectValue: "Python pypng Script" }],
+        [image.TiffPropertyKey.COPYRIGHT,                  { type: 'string',newExpectValue: "Copyright (C) 2026 QA Team" }],
+        [image.TiffPropertyKey.ORIENTATION,                 { type: 'short',newExpectValue: "2026-03-19 10:00:00"  }],
+        [image.TiffPropertyKey.RESOLUTION_UNIT,                { type: 'short',newExpectValue: 0  }],
+        [image.TiffPropertyKey.COPYRIGHT,         { type: 'string',newExpectValue: "Test Engineer" }],
+        [image.TiffPropertyKey.DATE_TIME,                 { type: 'string',newExpectValue: 0 }],
+        [image.TiffPropertyKey.IMAGE_DESCRIPTION,                 { type: 'string',newExpectValue: "Do not modify this metadata!"  }],
+        [image.TiffPropertyKey.Y_RESOLUTION,                { type: 'short',newExpectValue: 3780  }],
+        [image.TiffPropertyKey.X_RESOLUTION,         { type: 'short',newExpectValue: 0.45455 }],
+        [image.TiffPropertyKey.WHITE_POINT,                 {type: 'doubleArray', newExpectValue: [100, 1, 150] }],
+        [image.TiffPropertyKey.TILE_LENGTH,                 { type: 'short',newExpectValue: "This image contains all possible metadata fields"  }],
+        [image.TiffPropertyKey.TRANSFER_FUNCTION,               {type: 'string', newExpectValue: "Complete Test Image"   }],
+        [image.TiffPropertyKey.TILE_WIDTH,         { type: 'short',newExpectValue: "Generated for testing purposes" }],
+        [image.TiffPropertyKey.MAKE,                  { type: 'string',newExpectValue: "For internal use only" }],        
+        [image.TiffPropertyKey.MODEL,                  { type: 'string',newExpectValue: "For internal use only" }],
+        [image.TiffPropertyKey.HOST_COMPUTER,                          {type: 'string', newExpectValue: [0.3127,0.329,0.64,0.33,0.3,0.6,0.15,0.06] }],
+        [image.TiffPropertyKey.COMPRESSION,                 { type: 'short',newExpectValue: [100, 1, 150] }],
+        [image.TiffPropertyKey.SOFTWARE,                 { type: 'doubleArray',newExpectValue: "This image contains all possible metadata fields"  }],
+        [image.TiffPropertyKey.PRIMARY_CHROMATICITIES,               { type: 'doubleArray',newExpectValue: "Complete Test Image"   }],
+        [image.TiffPropertyKey.ARTIST,         { type: 'string',newExpectValue: "Generated for testing purposes" }],
+        ])
   },
   shortModify: {
     keys: [

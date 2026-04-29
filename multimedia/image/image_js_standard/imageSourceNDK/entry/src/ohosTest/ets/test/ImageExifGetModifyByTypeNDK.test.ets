@@ -6077,6 +6077,391 @@ export default function ImageExifGetModifyByTypeNDK() {
       expect(result).assertTrue();
       done();
     });
+
+        /**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_GIF_0100
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_GIF_0100
+      * @tc.desc        Verify reading gif metadata as short type
+      *                 1.Create image source from gif file (test6.gif) using fd
+      *                 2.Iterate all keys in ImagePropertyConfig.gifMetadatas and read each key as short type
+      *                 3.Verify each actual value equals rule.newExpectValue
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_GIF_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_GIF_0100";
+      let result: boolean = true;
+      let propertyKeys: Array<image.GifPropertyKey> = ImagePropertyConfig.gifMetadatas.keys;
+      let gifRules: Map<image.GifPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.gifMetadatas.rules;
+      let fd: number = await getFd("test6.gif");
+      for (const key of propertyKeys) {
+        const rule = gifRules.get(key);
+        if (!rule) {
+          console.info(`${result} No rule found for key: ${key}`);
+          continue;
+        }
+        let expectedValue = rule.newExpectValue;
+        let type = rule.type;
+        const actualValue = await getPropertyValue(fd, type, key);
+        console.info(`${testTag} dhs Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        if (!compareValues(actualValue, expectedValue)) {
+          console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+          result = false;
+        }
+      }
+      console.info(`${testTag} gif metadata TestGetImageProperty Short result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_GIF_0200
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_GIF_0200
+      * @tc.desc        Verify reading gif metadata as short type
+      *                 1.Create image source from gif file (test6.gif) using fd
+      *                 2.Iterate all keys in ImagePropertyConfig.gifMetadatas and read each key as short type
+      *                 3.Verify each actual value equals rule.newExpectValue
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_GIF_0200", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_GIF_0200";
+      let result: boolean = true;
+      let propertyKeys: Array<image.GifPropertyKey> = ImagePropertyConfig.gifMetadatas.keys;
+      let gifRules: Map<image.GifPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.gifMetadatas.rules;
+      let fd: number = await getFd("test6.gif");
+      for (const key of propertyKeys) {
+        const rule = gifRules.get(key);
+        if (!rule) {
+          console.info(`${result} No rule found for key: ${key}`);
+          continue;
+        }
+        let expectedValue = rule.newExpectValue;
+        let type = rule.type;
+        if(type == 'short'){
+          type = 'long'
+        }
+        const actualValue = await getPropertyValue(fd, type, key);
+        console.info(`${testTag} dhs Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        if (!compareValues(actualValue, expectedValue)) {
+          console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+          result = false;
+        }
+      }
+      console.info(`${testTag} gif metadata TestGetImageProperty Short result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_HEIFS_0100
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_HEIFS_0100
+      * @tc.desc        Verify reading HEIFS metadata as short type
+      *                 1.Create image source from heifs file (C027.heic) using fd
+      *                 2.Iterate all keys in ImagePropertyConfig.heifsMetadatas and read each key as short type
+      *                 3.Verify each actual value equals rule.newExpectValue
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_HEIFS_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_HEIFS_0100";
+      let result: boolean = true;
+      let propertyKeys: Array<image.HeifsPropertyKey> = ImagePropertyConfig.heifsMetadatas.keys;
+      let heifsRules: Map<image.HeifsPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.heifsMetadatas.rules;
+      let fd: number = await getFd("C027.heic");
+      for (const key of propertyKeys) {
+        const rule = heifsRules.get(key);
+        if (!rule) {
+          console.info(`${result} No rule found for key: ${key}`);
+          continue;
+        }
+        let expectedValue = rule.newExpectValue;
+        let type = rule.type;
+        const actualValue = await getPropertyValue(fd, type, key);
+        console.info(`${testTag} dhs Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        if (!compareValues(actualValue, expectedValue)) {
+          console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+          result = false;
+        }
+      }
+      console.info(`${testTag} heifs metadata TestGetImageProperty Short result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_HEIFS_0200
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_HEIFS_0200
+      * @tc.desc        Verify reading HEIFS metadata as short type
+      *                 1.Create image source from heifs file (C027.heic) using fd
+      *                 2.Iterate all keys in ImagePropertyConfig.heifsMetadatas and read each key as short type
+      *                 3.Verify each actual value equals rule.newExpectValue
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_HEIFS_0200", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_HEIFS_0200";
+      let result: boolean = true;
+      let propertyKeys: Array<image.HeifsPropertyKey> = ImagePropertyConfig.heifsMetadatas.keys;
+      let heifsRules: Map<image.HeifsPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.heifsMetadatas.rules;
+      let fd: number = await getFd("C027.heic");
+      for (const key of propertyKeys) {
+        const rule = heifsRules.get(key);
+        if (!rule) {
+          console.info(`${result} No rule found for key: ${key}`);
+          continue;
+        }
+        let expectedValue = rule.newExpectValue;
+        let type = rule.type;
+        if(type == 'short'){
+          type = 'long'
+        }
+        const actualValue = await getPropertyValue(fd, type, key);
+        console.info(`${testTag} dhs Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        if (!compareValues(actualValue, expectedValue)) {
+          console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+          result = false;
+        }
+      }
+      console.info(`${testTag} heifs metadata TestGetImageProperty Short result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PNG_0100
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PNG_0100
+      * @tc.desc        Verify reading PNG metadata as short type
+      *                 1.Create image source from PNG file (test_reladeMetadata.png) using fd
+      *                 2.Iterate all keys in ImagePropertyConfig.pngMetadatas and read each key as short type
+      *                 3.Verify each actual value equals rule.newExpectValue
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PNG_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PNG_0100";
+      let result: boolean = true;
+      let propertyKeys: Array<image.PngPropertyKey> = ImagePropertyConfig.pngMetadatas.keys;
+      let pngRules: Map<image.PngPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.pngMetadatas.rules;
+      let fd: number = await getFd("test_reladeMetadata.png");
+      for (const key of propertyKeys) {
+        const rule = pngRules.get(key);
+        if (!rule) {
+          console.info(`${result} No rule found for key: ${key}`);
+          continue;
+        }
+        let expectedValue = rule.newExpectValue;
+        let type = rule.type;
+        const actualValue = await getPropertyValue(fd, type, key);
+        console.info(`${testTag} dhs Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        if (!compareValues(actualValue, expectedValue)) {
+          console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+          result = false;
+        }
+      }
+      console.info(`${testTag} png metadata TestGetImageProperty Short result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+/**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PNG_0200
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PNG_0200
+      * @tc.desc        Verify reading PNG metadata as short type
+      *                 1.Create image source from PNG file (test_reladeMetadata.png) using fd
+      *                 2.Iterate all keys in ImagePropertyConfig.pngMetadatas and read each key as short type
+      *                 3.Verify each actual value equals rule.newExpectValue
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PNG_0200", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PNG_0200";
+      let result: boolean = true;
+      let propertyKeys: Array<image.PngPropertyKey> = ImagePropertyConfig.pngMetadatas.keys;
+      let pngRules: Map<image.PngPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.pngMetadatas.rules;
+      let fd: number = await getFd("test_reladeMetadata.png");
+      for (const key of propertyKeys) {
+        const rule = pngRules.get(key);
+        if (!rule) {
+          console.info(`${result} No rule found for key: ${key}`);
+          continue;
+        }
+        let expectedValue = rule.newExpectValue;
+        let type = rule.type;
+        if(type == 'short'){
+          type = 'long';
+        }
+        const actualValue = await getPropertyValue(fd, type, key);
+        console.info(`${testTag} dhs Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        if (!compareValues(actualValue, expectedValue)) {
+          console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+          result = false;
+        }
+      }
+      console.info(`${testTag} png metadata TestGetImageProperty Short result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_JFIF_0100
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_JFIF_0100
+      * @tc.desc        Verify reading HEIFS metadata as short type
+      *                 1.Create image source from jfif file (sample2.jfif) using fd
+      *                 2.Iterate all keys in ImagePropertyConfig.jfifMetadatas and read each key as short type
+      *                 3.Verify each actual value equals rule.newExpectValue
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_JFIF_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_JFIF_0100";
+      let result: boolean = true;
+      let propertyKeys: Array<image.JfifPropertyKey> = ImagePropertyConfig.jfifMetadatas.keys;
+      let jfifRules: Map<image.JfifPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.jfifMetadatas.rules;
+      let fd: number = await getFd("sample2.jfif");
+      for (const key of propertyKeys) {
+        const rule = jfifRules.get(key);
+        if (!rule) {
+          console.info(`${result} No rule found for key: ${key}`);
+          continue;
+        }
+        let expectedValue = rule.newExpectValue;
+        let type = rule.type;
+        const actualValue = await getPropertyValue(fd, type, key);
+        console.info(`${testTag} dhs Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        if (!compareValues(actualValue, expectedValue)) {
+          console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+          result = false;
+        }
+      }
+      console.info(`${testTag} jfif metadata TestGetImageProperty Short result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_JFIF_0200
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_JFIF_0200
+      * @tc.desc        Verify reading HEIFS metadata as short type
+      *                 1.Create image source from jfif file (sample2.jfif) using fd
+      *                 2.Iterate all keys in ImagePropertyConfig.jfifMetadatas and read each key as short type
+      *                 3.Verify each actual value equals rule.newExpectValue
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_JFIF_0200", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_JFIF_0200";
+      let result: boolean = true;
+      let propertyKeys: Array<image.JfifPropertyKey> = ImagePropertyConfig.jfifMetadatas.keys;
+      let jfifRules: Map<image.JfifPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.jfifMetadatas.rules;
+      let fd: number = await getFd("sample2.jfif");
+      for (const key of propertyKeys) {
+        const rule = jfifRules.get(key);
+        if (!rule) {
+          console.info(`${result} No rule found for key: ${key}`);
+          continue;
+        }
+        let expectedValue = rule.newExpectValue;
+        let type = rule.type;
+        if(type == 'short'){
+          type = 'long'
+        }
+        const actualValue = await getPropertyValue(fd, type, key);
+        console.info(`${testTag} dhs Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        if (!compareValues(actualValue, expectedValue)) {
+          console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+          result = false;
+        }
+      }
+      console.info(`${testTag} jfif metadata TestGetImageProperty Short result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_TIFF_0100
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_TIFF_0100
+      * @tc.desc        Verify reading tiff metadata as short type
+      *                 1.Create image source from tiff file (test.tiff) using fd
+      *                 2.Iterate all keys in ImagePropertyConfig.tiffMetadatas and read each key as short type
+      *                 3.Verify each actual value equals rule.newExpectValue
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_TIFF_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_TIFF_0100";
+      let result: boolean = true;
+      let propertyKeys: Array<image.TiffPropertyKey> = ImagePropertyConfig.tiffMetadatas.keys;
+      let tiffRules: Map<image.TiffPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.tiffMetadatas.rules;
+      let fd: number = await getFd("test.tiff");
+      for (const key of propertyKeys) {
+        const rule = tiffRules.get(key);
+        if (!rule) {
+          console.info(`${result} No rule found for key: ${key}`);
+          continue;
+        }
+        let expectedValue = rule.newExpectValue;
+        let type = rule.type;
+        const actualValue = await getPropertyValue(fd, type, key);
+        console.info(`${testTag} dhs Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        if (!compareValues(actualValue, expectedValue)) {
+          console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+          result = false;
+        }
+      }
+      console.info(`${testTag} tiff metadata TestGetImageProperty Short result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+/**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_TIFF_0200
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_TIFF_0200
+      * @tc.desc        Verify reading tiff metadata as short type
+      *                 1.Create image source from tiff file (test.tiff) using fd
+      *                 2.Iterate all keys in ImagePropertyConfig.tiffMetadatas and read each key as short type
+      *                 3.Verify each actual value equals rule.newExpectValue
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_TIFF_0200", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_TIFF_0200";
+      let result: boolean = true;
+      let propertyKeys: Array<image.TiffPropertyKey> = ImagePropertyConfig.tiffMetadatas.keys;
+      let tiffRules: Map<image.TiffPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.tiffMetadatas.rules;
+      let fd: number = await getFd("test.tiff");
+      for (const key of propertyKeys) {
+        const rule = tiffRules.get(key);
+        if (!rule) {
+          console.info(`${result} No rule found for key: ${key}`);
+          continue;
+        }
+        let expectedValue = rule.newExpectValue;
+        let type = rule.type;
+        if(type == 'short'){
+          type = 'long'
+        }
+        const actualValue = await getPropertyValue(fd, type, key);
+        console.info(`${testTag} dhs Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        if (!compareValues(actualValue, expectedValue)) {
+          console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+          result = false;
+        }
+      }
+      console.info(`${testTag} tiff metadata TestGetImageProperty Short result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
     
   })
 }
