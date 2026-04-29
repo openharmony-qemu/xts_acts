@@ -19,6 +19,7 @@ import OrphanCharOptimizationTest from './orphanCharOptimization/orphanCharOptim
 import GestureInterceptTest from './gestureIntercept/GestureInterceptTest.test'
 import gestureErrorCodeTest from './gestureIntercept/GestureErrorCodeTest.test'
 import passThroughTest from './passThrough/PassThroughTest.test'
+import GetSizeLimitationTest from './getSizeLimitation/GetSizeLimitationTest.test'
 
 export default function testsuite() {
   RegisterCommonAreaApproximateChangeEventTest();
@@ -28,4 +29,5 @@ export default function testsuite() {
   passThroughTest();
   gestureErrorCodeTest();
   GestureInterceptTest();
+  GetSizeLimitationTest();
 }
