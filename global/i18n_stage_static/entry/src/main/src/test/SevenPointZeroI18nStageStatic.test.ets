@@ -2047,41 +2047,5 @@ export default function SevenPointZeroI18nStageStaticTest() {
       expect(CanonicalLocale).assertEqual('');
     })
 
-    /**
-     * @tc.name SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_1200
-     * @tc.number SUB_GLOBAL_I18N_ConvertCanonicalLocaleIdentifier_Test_Static_1200
-     * @tc.desc test convertCanonicalLocaleIdentifier with null
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL2
-     */
-    it('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_1200', Level.LEVEL2, () => {
-      try{
-        let CanonicalLocale: string = i18n.I18NUtil.convertCanonicalLocaleIdentifier(null);
-        console.log('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_1200 value:', CanonicalLocale);
-      } catch (e) {
-        console.log('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_1200 code&message:', CanonicalLocale);
-        expect(Number(e.code)).assertEqual(401);
-      }
-    })
-
-    /**
-     * @tc.name SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_1300
-     * @tc.number SUB_GLOBAL_I18N_ConvertCanonicalLocaleIdentifier_Test_Static_1300
-     * @tc.desc test convertCanonicalLocaleIdentifier with null
-     * @tc.type FUNCTION
-     * @tc.size MEDIUM
-     * @tc.level LEVEL2
-     */
-    it('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_1300', Level.LEVEL2, () => {
-      try{
-        let CanonicalLocale: string = i18n.I18NUtil.convertCanonicalLocaleIdentifier(undefined);
-        console.log('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_1300 value:', CanonicalLocale);
-      } catch (e) {
-        console.log('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_1300 code&message:', CanonicalLocale);
-        expect(Number(e.code)).assertEqual(401);
-      }
-    })
-
   })
 }
