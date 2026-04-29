@@ -99,8 +99,8 @@ export default function audioOriginalAppIdInfoTest() {
         let error = err as BusinessError;
         console.error(`${TAG}: 创建失败: ${error.code}, ${error.message}`);
         expect(false).assertTrue();
-       }
-      done();
+        done();
+      }
     })
 
     /**
@@ -139,8 +139,8 @@ export default function audioOriginalAppIdInfoTest() {
         let error = err as BusinessError;
         console.error(`${TAG}: 创建失败: ${error.code}, ${error.message}`);
         expect(false).assertTrue();
+        done();
       }
-      done();
     })
 
     /**
@@ -180,8 +180,8 @@ export default function audioOriginalAppIdInfoTest() {
         let error = err as BusinessError;
         console.error(`${TAG}: 创建失败: ${error.code}, ${error.message}`);
         expect(false).assertTrue();
+        done();
       }
-      done();
     })
 
     /**
@@ -220,8 +220,8 @@ export default function audioOriginalAppIdInfoTest() {
         let error = err as BusinessError;
         console.error(`${TAG}: 创建失败: ${error.code}, ${error.message}`);
         expect(false).assertTrue();
+        done();
       }
-      done();
     })
 
     /**
@@ -267,8 +267,8 @@ export default function audioOriginalAppIdInfoTest() {
         let error = err as BusinessError;
         console.error(`${TAG}: 创建失败: ${error.code}, ${error.message}`);
         expect(false).assertTrue();
+        done();
       }
-      done();
     })
 
     /**
@@ -314,8 +314,8 @@ export default function audioOriginalAppIdInfoTest() {
         let error = err as BusinessError;
         console.error(`${TAG}: 创建失败: ${error.code}, ${error.message}`);
         expect(false).assertTrue();
+        done();
       }
-      done();
     })
 
     /**
@@ -361,8 +361,8 @@ export default function audioOriginalAppIdInfoTest() {
         let error = err as BusinessError;
         console.error(`${TAG}: 创建失败: ${error.code}, ${error.message}`);
         expect(false).assertTrue();
+        done();
       }
-      done();
     })
 
     /**
@@ -408,8 +408,8 @@ export default function audioOriginalAppIdInfoTest() {
         let error = err as BusinessError;
         console.error(`${TAG}: 创建失败: ${error.code}, ${error.message}`);
         expect(false).assertTrue();
+        done();
       }
-      done();
     })
 
     /**
@@ -457,8 +457,8 @@ export default function audioOriginalAppIdInfoTest() {
         let error = err as BusinessError;
         console.error(`${TAG}: 创建失败: ${error.code}, ${error.message}`);
         expect(false).assertTrue();
+        done();
       }
-      done();
     })
 
     /**
@@ -508,8 +508,8 @@ export default function audioOriginalAppIdInfoTest() {
         let error = err as BusinessError;
         console.error(`${TAG}: 创建失败: ${error.code}, ${error.message}`);
         expect(false).assertTrue();
+        done();
       }
-      done();
     })
 
     /**
@@ -555,8 +555,8 @@ export default function audioOriginalAppIdInfoTest() {
         let error = err as BusinessError;
         console.error(`${TAG}: 创建失败: ${error.code}, ${error.message}`);
         expect(false).assertTrue();
-      }
-      done();
+        done();
+      };
     })
 
     /**
@@ -602,8 +602,8 @@ export default function audioOriginalAppIdInfoTest() {
         let error = err as BusinessError;
         console.error(`${TAG}: 创建失败: ${error.code}, ${error.message}`);
         expect(false).assertTrue();
+        done();
       }
-      done();
     })
 
     /**
@@ -649,8 +649,8 @@ export default function audioOriginalAppIdInfoTest() {
         let error = err as BusinessError;
         console.error(`${TAG}: 创建失败: ${error.code}, ${error.message}`);
         expect(false).assertTrue();
+        done();
       }
-      done();
     })
 
     /**
@@ -698,8 +698,8 @@ export default function audioOriginalAppIdInfoTest() {
         let error = err as BusinessError;
         console.error(`${TAG}: 启动失败: ${error.code}, ${error.message}`);
         expect(false).assertTrue();
-       }
-      done();
+        done();
+      }
     })
   })
 }
