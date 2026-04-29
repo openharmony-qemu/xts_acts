@@ -299,7 +299,7 @@ export default function SaveToExistingContactViaUITest() {
                       let onType1: On = ON.text('不保存');
                       await getComponent(driver, onType1);
                       await delay(500);
-                      let onType3: On = ON.text('picker_cancel_btn');
+                      let onType3: On = ON.id('picker_cancel_btn');
                       await getComponent(driver, onType3);
                       await delay(500);
                     }
