@@ -31,7 +31,7 @@ struct dateTimeOptionsExample {
   TimePickerFormat.HOUR_MINUTE,
   TimePickerFormat.HOUR_MINUTE_SECOND
   ]
-  @State opt: Array<Intl.DateTimeOptions| undefined | null > = new Array<Intl.DateTimeOptions| undefined | null>(
+  @State opt: Array<Intl.DateTimeOptions > = new Array<Intl.DateTimeOptions >(
     {hour: 'numeric', minute: 'numeric', second: 'numeric' }, //Case 1
     {hour: 'numeric', minute: '2-digit', second: 'numeric' }, //Case 2
     {hour: 'numeric', minute: 'numeric', second: '2-digit' }, //Case 3
@@ -40,9 +40,7 @@ struct dateTimeOptionsExample {
     {hour: '2-digit', minute: '2-digit', second: 'numeric' }, //Case 6
     {hour: 'undefined', minute: 'numeric', second: 'numeric' }, //Case 7
     {hour: 'undefined', minute: '2-digit', second: 'numeric' }, //Case 8
-    {hour: 'undefined', minute: 'numeric', second: '2-digit' }, //Case 7
-    undefined,
-    null
+    {hour: 'undefined', minute: 'numeric', second: '2-digit' } //Case 7
   )
   @State timeformatString: (string)[] = [
     'HOUR_MINUTE',

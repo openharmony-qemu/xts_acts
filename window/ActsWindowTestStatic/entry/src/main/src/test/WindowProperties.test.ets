@@ -53,7 +53,7 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
-        waitForCompletion(async () => {await Utils.msSleep(1000)})
+        Utils.msSleep(1000).awaitSync()
         hilog.info(domain, tag, `${caseName}  get windowStageStart start .`);
         let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
         hilog.info(domain, tag, `${caseName} Succeeded in get windowStageStart.`+windowStageStart);
@@ -1028,7 +1028,7 @@ export default function WindowPropertiesTest() {
                 subWin = data;
                 expect(!!subWin).assertTrue();
                 hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
-                waitForCompletion(async () => {await (subWin! as window.Window).destroyWindow();})
+                (subWin! as window.Window).destroyWindow().awaitSync()
                 try {
                 subWin!.onWindowVisibilityChange((res: boolean) => {
                 });
@@ -1069,7 +1069,7 @@ export default function WindowPropertiesTest() {
                 subWin = data;
                 expect(!!subWin).assertTrue();
                 hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
-                waitForCompletion(async () => {await (subWin! as window.Window).destroyWindow();})
+                (subWin! as window.Window).destroyWindow().awaitSync()
                 try {
                 subWin!.offWindowVisibilityChange((res: boolean) => {
                 });
@@ -1113,10 +1113,10 @@ export default function WindowPropertiesTest() {
                 hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                 try {
                 (win as window.Window).offWindowVisibilityChange();
-                waitForCompletion(async () => {await (win as window.Window).destroyWindow();})
+                (win as window.Window).destroyWindow().awaitSync()
                 done();
                 } catch (exception) {
-                waitForCompletion(async () => {await (win as window.Window).destroyWindow();})
+                (win as window.Window).destroyWindow().awaitSync()
                 hilog.error(0x0000, '[ANI]',
                     msgStr + 'Failed to disable the listener for system avoid area changes. Cause: ' +
                     JSON.stringify(exception));
@@ -1185,11 +1185,11 @@ export default function WindowPropertiesTest() {
                 }
                 try {
                 (win as window.Window).offWindowVisibilityChange();
-                waitForCompletion(async () => {await (win as window.Window).destroyWindow();})
+                (win as window.Window).destroyWindow().awaitSync()
                 done();
                 } catch (exception) {
                 exception = exception as BusinessError;
-                waitForCompletion(async () => {await (win as window.Window).destroyWindow();})
+                (win as window.Window).destroyWindow().awaitSync()
                 console.error(msgStr + 'Failed to unregister callback Cause: ' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done();
@@ -1302,7 +1302,7 @@ export default function WindowPropertiesTest() {
             subWin = data;
             expect(!!subWin).assertTrue();
             hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
-            waitForCompletion(async () => {await (subWin! as window.Window).destroyWindow();})
+            (subWin! as window.Window).destroyWindow().awaitSync()
             try {
                 subWin!.onSystemDensityChange((res: number) => {
                 });
@@ -1342,7 +1342,7 @@ export default function WindowPropertiesTest() {
                 subWin = data;
                 expect(!!subWin).assertTrue();
                 hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
-                waitForCompletion(async () => {await (subWin! as window.Window).destroyWindow();})
+                (subWin! as window.Window).destroyWindow().awaitSync()
                 try {
                 subWin!.offSystemDensityChange((res: number) => {
                 });
@@ -1877,14 +1877,14 @@ export default function WindowPropertiesTest() {
             hilog.info(domain, tag, `${caseName} Succeeded in resizing the system sub window.`);
             await Utils.msSleep(1000);
             window.getWindowsByCoordinate(displayId).then((data: Array<window.Window>) => {
-                waitForCompletion(async () => {await subWindowClass.destroyWindow();})
+                subWindowClass.destroyWindow().awaitSync()
                 hilog.info(domain, tag, `${caseName} The window displayId is: ` + displayId);
                 hilog.info(domain, tag,
                 `${caseName} Succeeded in getting window from point. Data: ` + JSON.stringify(data));
                 expect(data.length).assertEqual(2);
                 done();
             }).catch((err: Error): PromiseLike<void> | undefined => {
-                waitForCompletion(async () => {await subWindowClass.destroyWindow();})
+                subWindowClass.destroyWindow().awaitSync()
                 hilog.error(domain, tag,
                 `${caseName} Failed to get window from point. Cause code: ${err.code}, message: ${err.message}`);
 
@@ -1976,7 +1976,7 @@ export default function WindowPropertiesTest() {
                 subWin = data;
                 expect(!!subWin).assertTrue();
                 hilog.info(domain, tag, msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
-                waitForCompletion(async () => {await (subWin! as window.Window).destroyWindow();})
+                (subWin! as window.Window).destroyWindow().awaitSync()
                 try {
                 subWin!.getWindowDensityInfo();
                 hilog.error(domain, tag, msgStr + 'Succeeded in calling getWindowDensityInfo.');
@@ -2091,14 +2091,14 @@ export default function WindowPropertiesTest() {
                 `${caseName} Failed to set gesture back enabled. Cause code: ${err.code}, message: ${err.message}`);
             if (err.code === 801) {
                 hilog.info(domain, tag, `${caseName} The current device type does not support to setGestureBackEnabled.`);
-                waitForCompletion(async () => {await subWindowClass.destroyWindow();})
+                subWindowClass.destroyWindow().awaitSync()
                 expect(err.message !== null).assertTrue();
                 done();
             } else {
                 hilog.error(domain, tag, `${caseName} Unauthorized operation.`);
                 expect(err.code).assertEqual(1300004);
                 expect(err.message !== null).assertTrue();
-                waitForCompletion(async () => {await subWindowClass.destroyWindow();})
+                subWindowClass.destroyWindow().awaitSync()
                 done();
             }
             });
@@ -2134,13 +2134,13 @@ export default function WindowPropertiesTest() {
                 `${caseName} Failed to set gesture back enabled. Cause code: ${err.code}, message: ${err.message}`);
             if (err.code === 801) {
                 hilog.info(domain, tag, `${caseName} The current device type does not support to setGestureBackEnabled.`);
-                waitForCompletion(async () => {await subWindowClass.destroyWindow();})
+                subWindowClass.destroyWindow().awaitSync()
                 expect(err.message !== null).assertTrue();
                 done();
             } else {
                 hilog.error(domain, tag, `${caseName} Unauthorized operation.`);
                 expect(err.code).assertEqual(1300004);
-                waitForCompletion(async () => {await subWindowClass.destroyWindow();})
+                subWindowClass.destroyWindow().awaitSync()
                 expect(err.message !== null).assertTrue();
                 done();
             }
@@ -2235,7 +2235,7 @@ export default function WindowPropertiesTest() {
                     subWin = data;
                     expect(!!subWin).assertTrue();
                     hilog.info(domain, tag,msgStr + 'Succeeded in creating the window. Data:' + data);
-                    waitForCompletion(async () => {await subWin.destroyWindow();})
+                    subWin.destroyWindow().awaitSync()
                     try {
                         subWin!.isGestureBackEnabled();
                         hilog.error(domain, tag,msgStr + 'Succeeded in calling isGestureBackEnabled.');
@@ -2312,7 +2312,7 @@ export default function WindowPropertiesTest() {
             expect(!!tempWnd).assertTrue();
             hilog.info(domain, tag, msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
             let enabled = true;
-            waitForCompletion(async () => {await tempWnd!.destroyWindow();})
+            tempWnd!.destroyWindow().awaitSync()
             tempWnd!.setDialogBackGestureEnabled(enabled).then(() => {
                 hilog.info(domain, tag, msgStr + 'Succeeded in setting dialog window to ignore back gesture.');
                 expect(false).assertTrue();
@@ -2600,13 +2600,13 @@ export default function WindowPropertiesTest() {
             promise.then((data: window.Window) => {
                 subWindowClass = data;
                 hilog.info(domain, tag, msgStr + 'Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
-                waitForCompletion(async () => {await subWindowClass!.destroyWindow();})
+                subWindowClass!.destroyWindow().awaitSync()
                 let promise2 = subWindowClass!.snapshotIgnorePrivacy();
                 promise2.then((pixelMap: image.PixelMap) => {
                 let imageInfo: image.ImageInfo = pixelMap.getImageInfoSync();
                 hilog.info(domain, tag,
                     `${msgStr} pixelMapHeight: ${imageInfo.size.height}, pixelMapWidth: ${imageInfo.size.width}`);
-                waitForCompletion(async () => {await subWindowClass!.destroyWindow();})
+                subWindowClass!.destroyWindow().awaitSync()
                 expect(false).assertTrue();
                 done();
                 }).catch((err: Error): PromiseLike<void> | undefined => {
@@ -2631,7 +2631,7 @@ export default function WindowPropertiesTest() {
                 hilog.error(domain, tag,
                 msgStr + `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
                 expect(err.message !== null).assertTrue();
-                waitForCompletion(async () => {await subWindowClass!.destroyWindow();})
+                subWindowClass!.destroyWindow().awaitSync()
                 if (err.code === 801) {
                 hilog.info(domain, tag, msgStr + '此设备不支持');
                 done();
@@ -2817,7 +2817,7 @@ export default function WindowPropertiesTest() {
                 hilog.info(domain, tag, msgStr + 'Succeeded in calling setWindowCornerRadius.');
                 expect(false).assertTrue();
             }).catch((err: Error): PromiseLike<void> | undefined => {
-                waitForCompletion(async () => {await windowClass.destroyWindow();})
+                windowClass.destroyWindow().awaitSync()
                 hilog.error(domain, tag,
                 msgStr + 'Failed to call setWindowCornerRadius. Cause: ' + JSON.stringify(err.code) + ',errMessage: ' +
                 err.message);
@@ -2941,7 +2941,7 @@ export default function WindowPropertiesTest() {
                 hilog.error(domain, tag,
                 msgStr + 'Failed to call setWindowCornerRadius. Cause: ' + JSON.stringify(err.code) + ',errMessage: ' +
                 err.message);
-                waitForCompletion(async () => {await subWindowClass!.destroyWindow();})
+                subWindowClass!.destroyWindow().awaitSync()
                 if (err.code === 801) {
                 hilog.info(domain, tag, `${caseName} The current device type does not support to setWindowCornerRadius`);
                 expect(err.message !== null).assertTrue();
@@ -3187,7 +3187,7 @@ export default function WindowPropertiesTest() {
             }).catch((err: Error): PromiseLike<void> | undefined => {
                 console.error(msgStr + 'Failed to call setWindowGrayScale. Cause: ' + JSON.stringify(err));
                 expect(err.code).assertEqual(801);
-                waitForCompletion(async () => {await subWin!.destroyWindow();})
+                subWin!.destroyWindow().awaitSync()
                 done();
             });
             } catch (err) {

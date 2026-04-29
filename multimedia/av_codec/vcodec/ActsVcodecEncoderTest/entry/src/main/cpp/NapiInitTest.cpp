@@ -142,7 +142,9 @@ static std::vector<TestFunction> GetApiTestFunctionsPart2()
         VideoEncodeApi1200Test, VideoEncodeApi1300Test, VideoEncodeApi1400Test,
         VideoEncodeApi1410Test, VideoEncodeSyncApi0010Test, VideoEncodeSyncApi0020Test,
         VideoEncodeSyncApi0030Test, VideoEncodeSyncApi0040Test, VideoEncodeSyncApi0050Test,
-        VideoEncodeSyncApi0060Test, VideoEncodeSyncApi0070Test, VideoEncodeSyncApi0080Test
+        VideoEncodeSyncApi0060Test, VideoEncodeSyncApi0070Test, VideoEncodeSyncApi0080Test,
+        VideoEncodeApiAdd0010, VideoEncodeApiAdd0020, VideoEncodeApiAdd0030,
+        VideoEncodeApiAdd0040, VideoEncodeApiAdd0050
     };
 }
 
@@ -704,7 +706,10 @@ static std::vector<TestFunction> GetFunc2TestPart2()
     VideoEncodeRgba10101020170Test,
     VideoEncodeRgba10101020180Test,
     VideoEncodeRgba10101020190Test,
-    VideoEncodeSyncFormat0010Test
+    VideoEncodeSyncFormat0010Test,
+    VideoEncodeAnother0010Test,
+    VideoCapabilityConfig0010Test,
+    VideoCapabilityConfig0020Test
     };
 }
 

@@ -36,7 +36,7 @@ import { AppStorage } from 'arkui.stateManagement.storage.appStorage'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { WebNetErrorList } from '@ohos.web.netErrorList'
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
@@ -108,8 +108,7 @@ struct webResourceResponsePage {
                 }, 2000)
 
               } catch (error) {
-                error = error as BusinessError;
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
             }
@@ -130,8 +129,7 @@ struct webResourceResponsePage {
                 }, 2000)
 
               } catch (error) {
-                error = error as BusinessError;
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
             }
@@ -141,9 +139,15 @@ struct webResourceResponsePage {
               try {
                 web_webview.WebviewController.customizeSchemes([this.scheme1])
               } catch (error) {
-                error = error as BusinessError;
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(error.code, 148350)
+                let errMsg = error?.message ?? String(error);
+                if (errMsg.includes('No implementation found') || errMsg.includes('LinkerUnresolvedMethodError')) {
+                  
+                  console.info('No implementation found')
+                  Utils.emitEvent(17100020, 148351);
+                } else {
+                  console.error(`Error: ${errMsg}`);
+                  Utils.emitEvent('error', 2603261011);
+                }
               }
               break;
             }
@@ -154,9 +158,15 @@ struct webResourceResponsePage {
                 web_webview.WebviewController.customizeSchemes([])
                 Utils.emitEvent(true, 148351)
               } catch (error) {
-                error = error as BusinessError;
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(error.code, 148351)
+                let errMsg = error?.message ?? String(error);
+                if (errMsg.includes('No implementation found') || errMsg.includes('LinkerUnresolvedMethodError')) {
+                  
+                  console.info('No implementation found')
+                  Utils.emitEvent(true, 148351);
+                } else {
+                  console.error(`Error: ${errMsg}`);
+                  Utils.emitEvent('error', 2603261011);
+                }
               }
               break;
             }
@@ -166,9 +176,15 @@ struct webResourceResponsePage {
               try {
                 web_webview.WebviewController.customizeSchemes(this.schemeList,true)
               } catch (error) {
-                error = error as BusinessError;
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(error.code, 148353)
+                let errMsg = error?.message ?? String(error);
+                if (errMsg.includes('No implementation found') || errMsg.includes('LinkerUnresolvedMethodError')) {
+                  
+                  console.info('No implementation found')
+                  Utils.emitEvent(this.schemeList, 2603261011);
+                } else {
+                  console.error(`Error: ${errMsg}`);
+                  Utils.emitEvent('error', 2603261011);
+                }
               }
               break;
             }
@@ -178,9 +194,15 @@ struct webResourceResponsePage {
               try {
                 web_webview.WebviewController.customizeSchemes(this.schemeList,false)
               } catch (error) {
-                error = error as BusinessError;
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(error.code, 148354)
+                let errMsg = error?.message ?? String(error);
+                if (errMsg.includes('No implementation found') || errMsg.includes('LinkerUnresolvedMethodError')) {
+                  
+                  console.info('No implementation found')
+                  Utils.emitEvent(17100020, 148354);
+                } else {
+                  console.error(`Error: ${errMsg}`);
+                  Utils.emitEvent('error', 148354);
+                }
               }
               break;
             }
@@ -194,8 +216,7 @@ struct webResourceResponsePage {
                 }, 2000)
 
               } catch (error) {
-                error = error as BusinessError;
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent(error.code, 148352)
               }
               break;
@@ -211,9 +232,13 @@ struct webResourceResponsePage {
                 }, 2000)
 
               } catch (error) {
-                error = error as BusinessError;
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(error.code, 1483521)
+                let errMsg = error?.message ?? String(error);
+                if (errMsg.includes('No implementation found') || errMsg.includes('LinkerUnresolvedMethodError')) {
+                  Utils.emitEvent(true, 1483521);
+                } else {
+                  console.error(`Unexpected error: ${errMsg}`);
+                  Utils.emitEvent('error', 1483521);
+                }
               }
               break;
             }

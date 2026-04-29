@@ -36,9 +36,18 @@ export default class MediaTestBase {
   TAG = "[AvScreenCaptureLocalTest] ";
   SETONCALLBACK_EVENT = 'setAvScreenCaptureCallback';
   SET_MIC_ENABLE_EVENT = 'setMicEnable';
+  SET_PICKER_MODE_EVENT = 'setPickerMode';
+  EXCLUDE_PICKER_WINDOWS_EVENT = 'excludePickerWindows';
+  PRESENT_PICKER = 'presentPicker';
+  ON_ERROR = 'onError';
+  OFF_ERROR = 'offError';
+  ON_STATE_CHANGE = 'onStateChange';
+  OFF_STATE_CHANGE = 'offStateChange';
   CREATE_EVENT = 'create';
   INIT_EVENT = 'init';
   STARTRECORDER_EVENT = 'start';
+  PAUSERECORDER_EVENT = 'pause';
+  RESUMERECORDER_EVENT = 'resume';
   SKIPPRIVACYMODE_EVENT = 'skipPrivacyMode';
   STOPRECORDER_EVENT = 'stop';
   RELEASECORDER_EVENT = 'release';
@@ -176,6 +185,32 @@ export default class MediaTestBase {
         }, recorderTime);
 
         break;
+      case 'pause':
+        steps.shift();
+        await avScreenCaptureRecorder!!.pauseRecording().then(() => {
+          console.info('avScreenCaptureRecorder pause success');
+        }).catch((err: Error) => {
+          console.error('avScreenCaptureRecorder pause failed, error: ' + err.message);
+          expect().assertFail()
+        })
+
+        await this.msleepAsync(recorderTime);
+        this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+
+        break;
+      case 'resume':
+        steps.shift();
+        await avScreenCaptureRecorder!!.resumeRecording().then(() => {
+          console.info('avScreenCaptureRecorder resume success');
+        }).catch((err: Error) => {
+          console.error('avScreenCaptureRecorder resume failed, error: ' + err.message);
+          expect().assertFail()
+        })
+
+        await this.msleepAsync(recorderTime);
+        this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+
+        break;
       case 'skipPrivacyMode':
         steps.shift();
         let windowAllIds :Array<int>= [];
@@ -231,9 +266,91 @@ export default class MediaTestBase {
           expect().assertFail()
         })
         break;
+      case 'setPickerMode':
+        steps.shift();
+        await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.WINDOW_ONLY).then(() => {
+          console.info('avScreenCaptureRecorder setPickerMode success');
+          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        }).catch((err: Error) => {
+          console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + err.message);
+          expect().assertFail();
+        })
+        break;
+      case 'excludePickerWindows':
+        steps.shift();
+        let excludedWindows: Array<int> = [101, 102, 103];
+        await avScreenCaptureRecorder!!.excludePickerWindows(excludedWindows).then(() => {
+          console.info('avScreenCaptureRecorder excludePickerWindows success');
+          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        }).catch((err: Error) => {
+          console.error('avScreenCaptureRecorder excludePickerWindows failed, error: ' + err.message);
+          expect().assertFail();
+        })
+        break;
       case 'createAVPlayer':
         steps.shift();
         this.AvPlayerMp4(this.outputName, avConfig, done)
+        break;
+      case 'presentPicker':
+        steps.shift();
+        await avScreenCaptureRecorder!!.presentPicker().then(() => {
+          console.info('Succeeded in presentPicker');
+          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        }).catch((err) => {
+          console.error('failed to presentPicker, error: ' + err.code);
+          expect().assertFail();
+          done();
+        });
+        break;
+      case 'onError':
+        steps.shift();
+        try {
+          avScreenCaptureRecorder!!.onError((err: BusinessError) => {
+            console.error('avScreenCaptureRecorder error:' + err.message);
+            expect().assertFail();
+            done();
+          });
+          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        } catch (err) {
+          console.error('onError failed, error: ' + err.code);
+          expect().assertFail();
+          done();
+        }
+        break;
+      case 'offError':
+        steps.shift();
+        try {
+          avScreenCaptureRecorder!!.offError();
+          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        } catch (err) {
+          console.error('offError failed, error: ' + err.code);
+          expect().assertFail();
+          done();
+        }
+        break;
+      case 'onStateChange':
+        steps.shift();
+        try {
+          avScreenCaptureRecorder!!.onStateChange((state) => {
+            console.info('onStateChange success to ' + state);
+          });
+          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        } catch (err) {
+          console.error('onStateChange failed, error: ' + err.code);
+          expect().assertFail();
+          done();
+        }
+        break;
+      case 'offStateChange':
+        steps.shift();
+        try {
+          avScreenCaptureRecorder!!.offStateChange();
+          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        } catch (err) {
+          console.error('offStateChange failed, error: ' + err.code);
+          expect().assertFail();
+          done();
+        }
         break;
       default:
         break;

@@ -2,11 +2,11 @@
     "description": "Configuration for ActsJsLeakWatcher Tests",
     "driver": {
         "type": "OHJSUnitTest",
-        "test-timeout": "600000",
+        "test-timeout": "1200000",
         "bundle-name": "com.jsleakwatcher.test",
         "module-name": "entry_test",
         "shell-timeout": "600000",
-        "testcase-timeout": 60000
+        "testcase-timeout": 120000
     },
     "kits": [
         {

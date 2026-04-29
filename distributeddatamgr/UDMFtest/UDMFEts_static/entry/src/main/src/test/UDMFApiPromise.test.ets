@@ -545,7 +545,7 @@ export default function UDMFApiPromiseTest() {
 				console.log(tag, `insertData01600 success; data = ${data}, options = ${options}`);
 				unifiedDataChannel.queryData(options, (errInfo, ret) => {
 					console.log(tag, `Succeeded in querying data. size = ${ret!.length}`)
-					let ret2 = waitForCompletion(async () => { return await unifiedDataChannel.deleteData(options);})
+					let ret2 = (async () => { return await unifiedDataChannel.deleteData(options);})().awaitSync()
 					if (ret2 !== undefined) {
 					let size = ret2.length;
 					for (let i = 0; i < size; i++) {
@@ -594,7 +594,7 @@ export default function UDMFApiPromiseTest() {
 				console.log(tag, `insertData01700 success; data = ${data}, options = ${options}`);
 				unifiedDataChannel.queryData(options, (errInfo, ret) => {
 					console.log(tag, `Succeeded in querying data. size = ${ret!.length}`)
-					let ret2 = waitForCompletion(async () => { return await unifiedDataChannel.deleteData({ key: data});})
+					let ret2 = (async () => { return await unifiedDataChannel.deleteData({ key: data});})().awaitSync()
 					if (ret2 !== undefined) {
 					let size = ret2.length;
 					for (let i = 0; i < size; i++) {
@@ -647,7 +647,7 @@ export default function UDMFApiPromiseTest() {
 					intention: unifiedDataChannel.Intention.DATA_HUB,
 					key: data
 					};
-					let ret2 = waitForCompletion(async () => { return await unifiedDataChannel.deleteData(options2);})
+					let ret2 = (async () => { return await unifiedDataChannel.deleteData(options2);})().awaitSync()
 					if (ret2 !== undefined) {
 					let size = ret2.length;
 					for (let i = 0; i < size; i++) {
@@ -695,7 +695,7 @@ export default function UDMFApiPromiseTest() {
 				unifiedDataChannel.insertData(options, unifiedData, (e, data) => {
 				console.log(tag, `insertData01900 success; data = ${data}, options = ${options}`);
 				unifiedDataChannel.queryData(options, (errInfo, ret) => {
-					waitForCompletion(async () => {
+					(async () => {
 					console.log(tag, `Succeeded in querying data. size = ${ret!.length}`)
 					let options2:unifiedDataChannel.Options = {
 					intention: unifiedDataChannel.Intention.DATA_HUB,
@@ -710,7 +710,7 @@ export default function UDMFApiPromiseTest() {
 					console.log(tag + 'SUB_DistributedData_UDMF_SDK_UnifiedDataPromiseJsAPITest_1900 end');
 					done();
 					})
-					})
+					})().awaitSync()
 				})
 				});
 			} catch (e) {
@@ -746,7 +746,7 @@ export default function UDMFApiPromiseTest() {
 					intention: unifiedDataChannel.Intention.DATA_HUB,
 					key: undefined
 					};
-					let ret2 = waitForCompletion(async () => { return await unifiedDataChannel.deleteData(options2); })
+					let ret2 = (async () => { return await unifiedDataChannel.deleteData(options2); })().awaitSync()
 					if (ret2 !== undefined) {
 					let size = ret2.length;
 					for (let i = 0; i < size; i++) {

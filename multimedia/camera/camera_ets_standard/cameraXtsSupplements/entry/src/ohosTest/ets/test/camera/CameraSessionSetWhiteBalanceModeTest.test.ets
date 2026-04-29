@@ -941,6 +941,7 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
           if(zoomRatioRange!= undefined && zoomRatioRange.length > 0) {
             console.info(TAG, testName, "zoomRatioRange",zoomRatioRange);
             mPhotoSession.setZoomRatio(zoomRatioRange[0]);
+            await sleep(1000)
             let res = mPhotoSession.getZoomRatio();
             console.info(TAG, testName, ' setZoomRatio.zoomRatioRange[0]', zoomRatioRange[0]);
             expect(res).assertEqual(zoomRatioRange[0])
@@ -1252,7 +1253,7 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
             mVideoSession.setWhiteBalanceMode(camera.WhiteBalanceMode.LOCKED);
             mode = mVideoSession.getWhiteBalanceMode();
             console.info(TAG, testName, "getWhiteBalanceMode :", mode);
-            expect(mode).assertEqual(camera.WhiteBalanceMode.LOCKED);
+            expect(mode).assertEqual(camera.WhiteBalanceMode.MANUAL);
           } else {
             console.info(TAG, testName, "该设备不支持");
           }

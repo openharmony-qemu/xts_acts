@@ -19,6 +19,7 @@ import { Driver, ON } from "@kit.TestKit";
 import { display, floatingBall, window } from "@kit.ArkUI";
 import { BusinessError, settings } from "@kit.BasicServicesKit";
 import { abilityAccessCtrl, common, PermissionRequestResult, Permissions } from "@kit.AbilityKit";
+import deviceInfo from '@ohos.deviceInfo';
 
 const CAN_NOT_BUILD_STAGE = -1;
 const OK = 0;
@@ -72,6 +73,8 @@ export default function WindowTest() {
     let windowStage: window.WindowStage;
     let isPCStatus: string = '';
     let isAutoWindow: string = '';
+    let deviceType: string = deviceInfo.deviceType;
+    console.info(`deviceType: ${deviceType}`);
     beforeAll(async (done: Function) => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -902,11 +905,12 @@ export default function WindowTest() {
         console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200 displayId: ${displayId}`);
         let Result: number = windowndkapi20.test_OH_WindowManager_GetAllMainWindowInfo_0200(windowId, displayId);
         console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200 Result: ${Result}`);
-        if (isPCStatus != '') {
+        if (deviceType === '2in1') {
           expect(Result).assertEqual(WS_OK);
         } else {
           expect(Result).assertEqual(DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED);
         }
+        done();
       } catch (err) {
         console.error(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200 catch err: ` + err);
         expect(false).assertEqual(err);
@@ -924,7 +928,7 @@ export default function WindowTest() {
      */
     it('test_OH_WindowManager_GetMainWindowSnapshot_0200', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      if (isPCStatus != '') {
+      if (deviceType === '2in1') {
         try {
           console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0200 start<====`);
           let windowClass = windowStage.getMainWindowSync();
@@ -954,7 +958,7 @@ export default function WindowTest() {
      */
     it('test_OH_WindowManager_GetMainWindowSnapshot_0300', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      if (isPCStatus != '') {
+      if (deviceType === '2in1') {
         try {
           console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0300 start<====`);
           let windowClass = windowStage.getMainWindowSync();
@@ -984,7 +988,7 @@ export default function WindowTest() {
      */
     it('test_OH_WindowManager_GetMainWindowSnapshot_0400', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      if (isPCStatus != '') {
+      if (deviceType === '2in1') {
         try {
           console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0400 start<====`);
           let windowClass = windowStage.getMainWindowSync();
@@ -1014,7 +1018,7 @@ export default function WindowTest() {
      */
     it('test_OH_WindowManager_GetMainWindowSnapshot_0500', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      if (isPCStatus != '') {
+      if (deviceType === '2in1') {
         try {
           console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0500 start<====`);
           let windowClass = windowStage.getMainWindowSync();
@@ -1044,7 +1048,7 @@ export default function WindowTest() {
      */
     it('test_OH_WindowManager_GetMainWindowSnapshot_0600', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      if (isPCStatus != '') {
+      if (deviceType === '2in1') {
         try {
           console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0600 start<====`);
           let windowClass = windowStage.getMainWindowSync();
@@ -1074,7 +1078,7 @@ export default function WindowTest() {
      */
     it('test_OH_WindowManager_GetMainWindowSnapshot_0700', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      if (isPCStatus != '') {
+      if (deviceType === '2in1') {
         try {
           console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0700 start<====`);
           let windowClass = windowStage.getMainWindowSync();
@@ -1111,7 +1115,7 @@ export default function WindowTest() {
           console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0800 windowId: ${windowId}`);
           let Result: number = windowndkapi20.test_OH_WindowManager_GetMainWindowSnapshot_0800(windowId);
           console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0800 Result: ${Result}`);
-        if (isPCStatus != '') {
+        if (deviceType === '2in1') {
           expect(Result).assertEqual(WS_OK);
         } else {
           expect(Result).assertEqual(DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED);

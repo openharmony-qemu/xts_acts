@@ -201,7 +201,7 @@ export default function audioRendererTest() {
       let rlen = 0;
       let buf = new ArrayBuffer(bufferSize);
       let writeDataCallback: audio.AudioRendererWriteDataCallback = (buf: ArrayBuffer) => {
-        return waitForCompletion(async () => {
+        return (async () => {
           while (rlen < totalSize / 4) {
             rlen += ss.readSync(buf);
             console.info(`${TagFrmwkRender}: BufferAudioFramework: bytes read from file: ${rlen}`);
@@ -221,7 +221,7 @@ export default function audioRendererTest() {
             });
           }
           return audio.AudioDataCallbackResult.VALID;
-        })
+        })().awaitSync()
       };
       audioRen!.onWriteData(writeDataCallback);
 
@@ -1810,32 +1810,28 @@ export default function audioRendererTest() {
       console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
       let samplingRate: audio.AudioSamplingRate | undefined;
-      audioRen!.getStreamInfo((err, audioParamsGet) => {
-        waitForCompletion(async () => {await Utils.msSleep(100);})
-        if (err) {
-          console.log(`${TagFrmwkRender}: getStreamInfo :ERROR:  ${err.message}`);
-          resultFlag = false;
-        }
-        else {
-          console.info(`${TagFrmwkRender}: Renderer getStreamInfo: ${JSON.stringify(audioParamsGet)}`);
-          samplingRate = audioParamsGet!.samplingRate;
-        }
-      });
+      try {
+        let audioParamsGet = await audioRen!.getStreamInfo();
+        console.info(`${TagFrmwkRender}: Renderer getStreamInfo: ${JSON.stringify(audioParamsGet)}`);
+        samplingRate = audioParamsGet!.samplingRate;
+        await Utils.msSleep(100);
+      } catch (err) {
+        console.log(`${TagFrmwkRender}: getStreamInfo :ERROR:  ${err.message}`);
+        resultFlag = false;
+      }
       if (resultFlag) {
         console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
         return resultFlag;
       }
 
-      audioRen!.getRendererInfo((err, audioParamsGet) => {
-        waitForCompletion(async () => {await Utils.msSleep(100);})
-        if (err) {
-          console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
-          resultFlag = false;
-        }
-        else {
-          console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
-        }
-      });
+      try {
+        let audioParamsGet = await audioRen!.getRendererInfo();
+        console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
+        await Utils.msSleep(100);
+      } catch (err) {
+        console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
+        resultFlag = false;
+      }
       await Utils.msSleep(100);
       if (resultFlag) {
         console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
@@ -1918,7 +1914,7 @@ export default function audioRendererTest() {
         while (rlen < totalSize / 10) {
           rlen += ss.readSync(buf);
           console.info(`${TagFrmwkRender}:BufferAudioFramework: bytes read from file: ${rlen}`);
-          waitForCompletion(async () => {await Utils.msSleep(waitTime);})
+          Utils.msSleep(waitTime).awaitSync()
         }
         return audio.AudioDataCallbackResult.VALID;
       };
@@ -2241,14 +2237,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0100
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0100Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0100
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_48000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0100Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -2274,14 +2270,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0200
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0200Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0200
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_8000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0200Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_8000,
         channels: audio.AudioChannel.CHANNEL_1,
@@ -2306,14 +2302,14 @@ export default function audioRendererTest() {
       done();
     })
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0300
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0300Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0300
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_16000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0300Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_16000,
         channels: audio.AudioChannel.CHANNEL_1,
@@ -2339,14 +2335,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0400
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0400Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0400
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_24000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0400Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_24000,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -2372,14 +2368,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0500
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0500Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0500
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_44100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0500Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_1,
@@ -2405,14 +2401,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0600
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0600Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0600
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_48000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0600Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -2438,14 +2434,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0700
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0700Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0700
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_8000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0700Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_8000,
         channels: audio.AudioChannel.CHANNEL_1,
@@ -2470,14 +2466,14 @@ export default function audioRendererTest() {
       done();
     })
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0800
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0800Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0800
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_16000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0800Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_16000,
         channels: audio.AudioChannel.CHANNEL_1,
@@ -2503,14 +2499,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0900
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0900Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0900
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_24000
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_0900Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_24000,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -2536,14 +2532,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1000
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_1000Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1000
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_44100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_1000Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_1,
@@ -2569,14 +2565,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1100
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_1100Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1100
      * @tc.desc   setSpeed_getSpeed_AudioSamplingRate_44100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_1100Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_1,
@@ -2602,14 +2598,14 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1200
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_1200Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1200
      * @tc.desc   setSpeed_no_start
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_1200Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_1,
@@ -2636,14 +2632,14 @@ export default function audioRendererTest() {
       done();
     })
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1300
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_1300Adapt001
      * @tc.number SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1300
      * @tc.desc   setSpeed_invalid_number_parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SET/GET_SPEED_STATIC_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETGET_SPEED_STATIC_1300Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
         channels: audio.AudioChannel.CHANNEL_1,
@@ -3781,19 +3777,18 @@ export default function audioRendererTest() {
       }
       let audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       let mode = audio.InterruptMode.SHARE_MODE;
-      audioRenderer!.setInterruptMode(mode, (err: BusinessError<void> | null) => {
-        waitForCompletion(async () => {
-          if (err) {
-            console.info(`${TagFrmwkRender}: SetInterruptMode SHARE_MODE CALLBACK: error: ${err?.message}`);
-            expect(false).assertTrue();
-            await audioRenderer!.release();
-            done();
-          }
-          console.info(`${TagFrmwkRender}: SetInterruptMode SHARE_MODE CALLBACK: SUCCESS`);
-          await audioRenderer!.release();
-          done();
-        })
-      })
+      try {
+        await audioRenderer!.setInterruptMode(mode);
+        console.info(`${TagFrmwkRender}: SetInterruptMode SHARE_MODE CALLBACK: SUCCESS`);
+        await audioRenderer!.release();
+        done();
+      } catch (err) {
+        console.info(`${TagFrmwkRender}: SetInterruptMode SHARE_MODE CALLBACK: error: ${err?.message}`);
+        expect(false).assertTrue();
+        await audioRenderer!.release();
+        done();
+        done();
+      }
     })
 
     /**
@@ -3821,19 +3816,18 @@ export default function audioRendererTest() {
       }
       let audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       let mode = audio.InterruptMode.INDEPENDENT_MODE;
-      audioRenderer!.setInterruptMode(mode, (err: BusinessError<void> | null) => {
-        waitForCompletion(async () => {
-          if (err) {
-            console.info(`${TagFrmwkRender}: SetInterruptMode INDEPENDENT_MODE CALLBACK: error: ${err?.message}`);
-            expect(false).assertTrue();
-            await audioRenderer!.release();
-            done();
-          }
-          console.info(`${TagFrmwkRender}: SetInterruptMode INDEPENDENT_MODE CALLBACK: SUCCESS`);
-          await audioRenderer!.release();
-          done();
-        })
-      })
+      try {
+        await audioRenderer!.setInterruptMode(mode);
+        console.info(`${TagFrmwkRender}: SetInterruptMode INDEPENDENT_MODE CALLBACK: SUCCESS`);
+        await audioRenderer!.release();
+        done();
+      } catch (err) {
+        console.info(`${TagFrmwkRender}: SetInterruptMode INDEPENDENT_MODE CALLBACK: error: ${err?.message}`);
+        expect(false).assertTrue();
+        await audioRenderer!.release();
+        done();
+        done();
+      }
     })
 
     /**
@@ -3975,27 +3969,24 @@ export default function audioRendererTest() {
         rendererInfo: audioRendererInfo
       }
       let audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
-      audioRenderer!.getAudioStreamId((err: BusinessError<void> | null, data: long | undefined) => {
-        waitForCompletion(async () => {
-          if (err) {
-            console.info(`${TagFrmwkRender}: SetInterruptMode INDEPENDENT_MODE CALLBACK: error: ${err?.message}`);
-            expect(false).assertTrue();
-            await audioRenderer!.release().then(() => {
-              console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
-            }).catch((err: Error) => {
-              console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
-            });
-            done();
-          }
-          console.info(`${TagFrmwkRender}: SetInterruptMode INDEPENDENT_MODE CALLBACK: SUCCESS ${data}`);
-          await audioRenderer!.release().then(() => {
-            console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
-          }).catch((err: Error) => {
-            console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
-          });
-          done();
-        })
-      })
+      try {
+        let data = await audioRenderer!.getAudioStreamId();
+        console.info(`${TagFrmwkRender}: SetInterruptMode INDEPENDENT_MODE CALLBACK: SUCCESS ${data}`);
+        await audioRenderer!.release().then(() => {
+        console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
+        });
+        done();
+      } catch (err) {
+        console.info(`${TagFrmwkRender}: SetInterruptMode INDEPENDENT_MODE CALLBACK: error: ${err?.message}`);
+        expect(false).assertTrue();
+        await audioRenderer!.release().then(() => {
+        console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
+        }).catch((err: Error) => {
+        console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
+        });
+        done();
+        done();
+      }
     })
 
     /**
@@ -11409,14 +11400,11 @@ export default function audioRendererTest() {
 
       let bufferSize: long | undefined;
 
-      audio.createAudioRenderer(audioRendererOptions,(err: BusinessError | null, data: audio.AudioRenderer | null | undefined) => {
-        if (err) {
-          console.error(`AudioRenderer Created: Error: ${err}`);
-          expect(true).assertFalse();
-        } else {
-          console.info('AudioRenderer Created: SUCCESS');
-          audioRenderer = data;
-          data?.start((err: BusinessError | null) => {
+      try {
+        let data = await audio.createAudioRenderer(audioRendererOptions);
+        console.info('AudioRenderer Created: SUCCESS');
+        audioRenderer = data;
+        data?.start((err: BusinessError | null) => {
             if (err) {
               console.error('Renderer start failed.');
               expect(true).assertFalse();
@@ -11424,7 +11412,7 @@ export default function audioRendererTest() {
               console.info('Renderer start success.');
             }
           });
-          data?.getRendererInfo((err: BusinessError | null, audioRendererInfo: audio.AudioRendererInfo | undefined) => {
+        data?.getRendererInfo((err: BusinessError | null, audioRendererInfo: audio.AudioRendererInfo | undefined) => {
             if (err) {
               console.error(`Failed to get renderer info. Code: ${err.code}, message: ${err.message}`);
               expect(true).assertFalse();
@@ -11433,7 +11421,7 @@ export default function audioRendererTest() {
               console.info(`Succeeded in getting renderer info, AudioRendererInfo: ${JSON.stringify(audioRendererInfo)}.`);
             }
           });
-          data?.getStreamInfo((err: BusinessError | null, streamInfo: audio.AudioStreamInfo | undefined) => {
+        data?.getStreamInfo((err: BusinessError | null, streamInfo: audio.AudioStreamInfo | undefined) => {
             if (err) {
               console.error(`Failed to get StreamInfo info. Code: ${err.code}, message: ${err.message}`);
               expect(true).assertFalse();
@@ -11445,7 +11433,7 @@ export default function audioRendererTest() {
               console.info(`Renderer encoding type: ${streamInfo?.encodingType}`);
             }
           });
-          data?.getBufferSize((err: BusinessError | null, value: long | undefined) => {
+        data?.getBufferSize((err: BusinessError | null, value: long | undefined) => {
             if (err) {
               console.error('getBufferSize error');
               expect(true).assertFalse();
@@ -11454,7 +11442,7 @@ export default function audioRendererTest() {
               console.info(`AudioFrameworkRenderLog: getBufferSize: SUCCESS ${value}`);
             }
           });
-          data?.drain((err: BusinessError | null) => {
+        data?.drain((err: BusinessError | null) => {
             if (err) {
               console.error('Renderer drain failed');
               expect(true).assertFalse();
@@ -11462,8 +11450,8 @@ export default function audioRendererTest() {
               console.info('Renderer drained.');
             }
           });
-          waitForCompletion(async () => {await Utils.msSleep(1000);})
-          data?.stop((err: BusinessError | null) => {
+        await Utils.msSleep(1000);
+        data?.stop((err: BusinessError | null) => {
             if (err) {
               console.error('Renderer stop failed');
               expect(true).assertFalse();
@@ -11471,8 +11459,8 @@ export default function audioRendererTest() {
               console.info('Renderer stopped.');
             }
           });
-          waitForCompletion(async () => {await Utils.msSleep(1000);})
-          data?.release((err: BusinessError | null) => {
+        await Utils.msSleep(1000);
+        data?.release((err: BusinessError | null) => {
             if (err) {
               console.error('Renderer release failed');
               expect(true).assertFalse();
@@ -11480,8 +11468,10 @@ export default function audioRendererTest() {
               console.info('Renderer released.');
             }
           });
-        }
-      });
+      } catch (err) {
+        console.error(`AudioRenderer Created: Error: ${err}`);
+        expect(true).assertFalse();
+      }
       done();
     })
 
@@ -11516,14 +11506,11 @@ export default function audioRendererTest() {
       let audioManager = audio.getAudioManager();
       let audioVolumeManager: audio.AudioVolumeManager = audioManager.getVolumeManager();
 
-      audio.createAudioRenderer(audioRendererOptions,(err: BusinessError | null, data: audio.AudioRenderer | null | undefined) => {
-        if (err) {
-          console.error(`AudioRenderer Created: Error: ${err}`);
-          expect(true).assertFail();
-        } else {
-          console.info('AudioRenderer Created: SUCCESS');
-          audioRenderer = data;
-          audioRenderer?.getRendererInfo((err: BusinessError | null, audioRendererInfo: audio.AudioRendererInfo | undefined) => {
+      try {
+        let data = await audio.createAudioRenderer(audioRendererOptions);
+        console.info('AudioRenderer Created: SUCCESS');
+        audioRenderer = data;
+        audioRenderer?.getRendererInfo((err: BusinessError | null, audioRendererInfo: audio.AudioRendererInfo | undefined) => {
             if (err) {
               console.error(`Failed to get renderer info. Code: ${err.code}, message: ${err.message}`);
               expect(true).assertFalse();
@@ -11544,7 +11531,7 @@ export default function audioRendererTest() {
               audioVolumeManager.offAppVolumeChange(appVolumeChangeCallback);
             }
           });
-          audioRenderer?.getAudioTime((err: BusinessError | null, timestamp: long | undefined) => {
+        audioRenderer?.getAudioTime((err: BusinessError | null, timestamp: long | undefined) => {
             if (err) {
               console.error(`Failed to get AudioTime. Code: ${err.code}, message: ${err.message}`);
               expect(true).assertFalse();
@@ -11553,8 +11540,8 @@ export default function audioRendererTest() {
               expect(timestamp).assertLargerOrEqual(0);
             }
           });
-          waitForCompletion(async () => {await Utils.msSleep(1000);})
-          audioRenderer?.release((err: BusinessError | null) => {
+        await Utils.msSleep(1000);
+        audioRenderer?.release((err: BusinessError | null) => {
             if (err) {
               console.error('Renderer release failed');
               expect(true).assertFalse();
@@ -11562,8 +11549,10 @@ export default function audioRendererTest() {
               console.info('Renderer released.');
             }
           });
-        }
-      });
+      } catch (err) {
+        console.error(`AudioRenderer Created: Error: ${err}`);
+        expect(true).assertFail();
+      }
       done();
     })
 

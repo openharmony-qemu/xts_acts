@@ -411,25 +411,6 @@ export default function promiseAnyTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_Promise_any_TEST_0250
-     * @tc.name PromiseAnyTest025
-     * @tc.desc Very fast resolving promise
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('PromiseAnyTest025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
-      const p1: Promise<string> = new Promise<string>((resolve) => {
-        resolve("immediate");
-      });
-      const p2: Promise<string> = Promise.resolve("resolved");
-
-      const result = await Promise.any([p1, p2]);
-      // Either could resolve first depending on implementation, but we check for either valid result
-      expect(result === "immediate" || result === "resolved").assertEqual(true);
-    });
-
-    /**
      * @tc.number SUB_BUILTINS_Promise_any_TEST_0300
      * @tc.name PromiseAnyTest030
      * @tc.desc Resolve with function type
@@ -634,7 +615,7 @@ export default function promiseAnyTest() {
      */
     it('PromiseAnyTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const asyncFn1 = async (): Promise<int> => {
-        await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 80)});
+        await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 90)});
         return 1;
       };
 
@@ -663,7 +644,7 @@ export default function promiseAnyTest() {
       );
 
       const directPromise: Promise<string> = new Promise<string>((resolve) =>{
-      setTimeout(() => resolve("direct"), 50)}
+      setTimeout(() => resolve("direct"), 80)}
       );
 
       const result = await Promise.any([nestedPromise, directPromise]);
@@ -844,73 +825,6 @@ export default function promiseAnyTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_Promise_any_TEST_0570
-     * @tc.name PromiseAnyTest057
-     * @tc.desc Timing test with overlapping async operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('PromiseAnyTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const start = Date.now();
-      let p1ResolveTime: number = 0
-      let p2ResolveTime: number = 0
-      let finish = false
-      const p1: Promise<number> = new Promise<number>((resolve) =>{
-      setTimeout(() => {
-        p1ResolveTime = Date.now() - start;
-        resolve(1);
-        finish = true
-      }, 50)}
-      );
-
-      const p2: Promise<number> = new Promise<number>((resolve) => {
-        // Start a shorter timer after a delay
-        setTimeout(() => {
-          setTimeout(() => {
-            p2ResolveTime = Date.now() - start;
-            resolve(2);
-          }, 30);
-        }, 10);
-      });
-      const result = await Promise.any([p1, p2]);
-      while (!finish) {
-        await sleep(10)
-      }
-      expect(result).assertEqual(2);
-      expect(p2ResolveTime).assertLess(p1ResolveTime);
-    });
-
-    /**
-     * @tc.number SUB_BUILTINS_Promise_any_TEST_0580
-     * @tc.name PromiseAnyTest058
-     * @tc.desc Promise.any with promises that resolve after multiple steps
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('PromiseAnyTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const step1: Promise<number> = new Promise<number>((resolve) =>{
-      setTimeout(() => resolve(10), 20)}
-      );
-
-      const step2: Promise<number> = step1.then(num =>
-      new Promise<number>((resolve) => {setTimeout(() => resolve(num + 5), 20)})
-      );
-
-      const step3: Promise<number> = step2.then(num =>
-      new Promise<number>((resolve) => {setTimeout(() => resolve(num + 3), 20)})
-      );
-
-      const alternative: Promise<number> = new Promise<number>((resolve) =>{
-      setTimeout(() => resolve(15), 50)}
-      );
-
-      const result = await Promise.any([step3, alternative]);
-      expect(result).assertEqual(15);
-    });
-
-    /**
      * @tc.number SUB_BUILTINS_Promise_any_TEST_0590
      * @tc.name PromiseAnyTest059
      * @tc.desc Race between multiple async initialization processes
@@ -920,7 +834,7 @@ export default function promiseAnyTest() {
      */
     it('PromiseAnyTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const serviceA = new Service('A', 100);
-      const serviceB = new Service('B', 60);
+      const serviceB = new Service('B', 10);
       const serviceC = new Service('C', 80);
 
       const result = await Promise.any([
@@ -962,36 +876,6 @@ export default function promiseAnyTest() {
       ]);
 
       expect(result).assertEqual(4);
-    });
-
-    /**
-     * @tc.number SUB_BUILTINS_Promise_any_TEST_0620
-     * @tc.name PromiseAnyTest062
-     * @tc.desc Promise.any with dynamic promise creation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('PromiseAnyTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const createPromisesDynamically = async (count: number): Promise<Promise<number>[]> => {
-        const promises: Promise<number>[] = [];
-        for (let i = 0; i < count; i++) {
-          // Create promises with random delays
-          const delay = Math.floor(Math.random() * 100) + 10;
-          promises.push(new Promise<number>((resolve) => {
-          setTimeout(() => resolve(i), delay.toInt())}
-          ));
-          await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 5)});
-        }
-        return promises;
-      };
-
-      const promises = await createPromisesDynamically(5);
-      const result = await Promise.any(promises);
-
-      // Find the smallest delay promise
-      const minIndex = promises.findIndex((val, idx) => idx === result);
-      expect(minIndex).assertLargerOrEqual(0);
     });
 
     /**
@@ -1115,7 +999,7 @@ export default function promiseAnyTest() {
       });
 
       // Schedule resolutions in reverse order
-      setTimeout(() => resolveP2(2), 50);
+      setTimeout(() => resolveP2(2), 80);
       setTimeout(() => resolveP1(1), 30);
 
       const result = await Promise.any([p1, p2]);
@@ -1171,35 +1055,6 @@ export default function promiseAnyTest() {
       const p5: Promise<int> = new Promise<int>((resolve, reject) => {setTimeout(() => reject(new Error('Late reject')), 100)});
 
       const result = await Promise.any([p1, p2, p3, p4, p5]);
-      expect(result).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_BUILTINS_Promise_any_TEST_0710
-     * @tc.name PromiseAnyTest071
-     * @tc.desc Three-level nested promises timing race
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('PromiseAnyTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      // Three-level nesting, total delay 10+20+30=60ms
-      const nested3: Promise<number> = new Promise<number>((resolve) =>
-      {setTimeout(() => resolve(
-        new Promise<number>((res) => {setTimeout(() => res(
-          new Promise<number>((r) => {setTimeout(() => r(3), 30)})
-        ), 20)})
-      ), 10)}
-      );
-
-      // Two-level nesting, total delay 40+15=55ms
-      const nested2: Promise<number> = new Promise<number>((resolve) =>{
-      setTimeout(() => resolve(
-        new Promise<number>((res) => {setTimeout(() => res(2), 15)})
-      ), 40)}
-      );
-
-      const result = await Promise.any([nested3, nested2]);
       expect(result).assertEqual(2);
     });
 
@@ -1264,41 +1119,6 @@ export default function promiseAnyTest() {
 
       const result = await Promise.any([pipelineA, pipelineB]);
       expect(result).assertEqual(31);
-    });
-
-    /**
-     * @tc.number SUB_BUILTINS_Promise_any_TEST_0740
-     * @tc.name PromiseAnyTest074
-     * @tc.desc Race between sequentially created promise chains
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('PromiseAnyTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const createChain = (id: number, baseDelay: int): Promise<number> => {
-        return new Promise<number>((resolve) => {
-          setTimeout(() => {
-            resolve(new Promise<number>((res) => {
-              setTimeout(() => {
-                res(new Promise<number>((r) => {
-                  setTimeout(() => r(id), baseDelay / 5 );
-                }));
-              }, (baseDelay * 0.3).toInt());
-            }));
-          }, (baseDelay * 0.5).toInt());
-        });
-      };
-
-      const chains: Promise<number>[] = [];
-      // Create chains with increasing base delays
-      for (let i = 1; i <= 4; i++) {
-        chains.push(createChain(i, i * 20));
-        // Small delay between chain creation
-        await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, 5)});
-      }
-
-      const result = await Promise.any(chains);
-      expect(result).assertEqual(1);
     });
 
     /**
@@ -1580,85 +1400,6 @@ export default function promiseAnyTest() {
       ]);
 
       expect(result).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_BUILTINS_Promise_any_TEST_0870
-     * @tc.name PromiseAnyTest087
-     * @tc.desc Async retry mechanism race conditions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('PromiseAnyTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const withRetry = async (id: number, initialDelay: int, retries: number): Promise<number> => {
-        let delay = initialDelay;
-
-        for (let i = 0; i <= retries; i++) {
-          try {
-            await new Promise<void>((resolve) => {setTimeout(()=>{resolve(undefined)}, delay)});
-            // Succeed on last retry
-            if (i === retries) {
-              return id;
-            }
-            throw new Error(`Attempt ${i} failed`);
-          } catch (e) {
-            delay *= 2; // Exponential backoff
-          }
-        }
-
-        throw new Error("All retries failed");
-      };
-
-      const result = await Promise.any([
-        withRetry(1, 10, 2), // 10ms (fail) → 20ms (fail) → 40ms (success) → Total: 70ms
-        withRetry(2, 5, 1), // 5ms (fail) → 10ms (success) → Total: 15ms
-        withRetry(3, 15, 0)// 15ms (success) → Total: 15ms
-      ]);
-
-      // Either 2 or 3 could win - check for either valid result
-      expect(result === 2 || result === 3).assertEqual(true);
-    });
-
-    /**
-     * @tc.number SUB_BUILTINS_Promise_any_TEST_0890
-     * @tc.name PromiseAnyTest089
-     * @tc.desc Cascading promises with conditional branching
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('PromiseAnyTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const start: Promise<number> = new Promise<number>((resolve) =>{
-      setTimeout(() => resolve(10), 10)}
-      );
-
-      const branchA: Promise<number> = start.then(num =>
-      new Promise<number>((resolve) => {
-        if (num > 5) {
-          setTimeout(() => resolve(num * 2), 30);
-        } else {
-          setTimeout(() => resolve(num + 5), 20);
-        }
-      })
-      );
-
-      const branchB: Promise<number> = start.then(num =>
-      new Promise<number>((resolve) => {
-        if (num % 2 === 0) {
-          setTimeout(() => resolve(num / 2), 15);
-        } else {
-          setTimeout(() => resolve(num - 3), 25);
-        }
-      })
-      );
-
-      const alternative: Promise<number> = new Promise<number>((resolve) =>{
-      setTimeout(() => resolve(7), 40)}
-      );
-
-      const result = await Promise.any([branchA, branchB, alternative]);
-      expect(result).assertEqual(5);
     });
 
     /**

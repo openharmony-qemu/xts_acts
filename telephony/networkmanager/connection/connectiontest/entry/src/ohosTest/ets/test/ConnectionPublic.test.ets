@@ -9388,7 +9388,41 @@ export default function ConnectionPublicTest() {
           console.info(`${caseName}---End`);
         }
       });
-    
+
+    /**
+     * @tc.name   testNetworkMgrPolicyGetNetworkAccessPolicy0100
+     * @tc.number SUB_NetworkMgr_Policy_GetNetAccessPolicy_0100
+     * @tc.desc   Test etNetAccessPolicy function
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it("testNetworkMgrPolicyGetNetworkAccessPolicy0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = "testNetworkMgrPolicyGetNetworkAccessPolicy0100";
+      console.info(`${caseName}---Start`);
+      try {
+        policy.getNetAccessPolicy().then((data: policy.NetAccessPolicy) => {
+          console.info(`${caseName} getNetworkAccessPolicy data: ${JSON.stringify(data)}`);
+          if (data.allowWiFi == true && data.allowCellular == true) {
+            ExpectTrue(true);
+          } else {
+            ExpectTrue(false);
+          }
+          done();
+        }).catch((error: BusinessError) => {
+          console.error(`${caseName} getNetworkAccessPolicy error ${JSON.stringify(error)}`);
+          ExpectTrue(false)
+          done();
+          console.info(`${caseName} test end`);
+        })
+      } catch (err) {
+        console.error(`${caseName} catch err ${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+        console.info(`${caseName} test End`);
+      }
+    });
+
     /**
      * @tc.name   testNetworkMgrConnectionConnectionProperties1300
      * @tc.number SUB_NetworkMgr_Connection_ConnectionProperties_1300

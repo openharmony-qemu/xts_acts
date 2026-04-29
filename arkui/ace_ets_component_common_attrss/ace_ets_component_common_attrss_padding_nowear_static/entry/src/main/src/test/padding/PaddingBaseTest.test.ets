@@ -147,7 +147,7 @@ export default function paddingTest1() {
       // await Utils.sleep(1000);
 
       //Obtain dimensional information for target components.
-      let viewObj = Utils.getComponentByKey(data.pageConfig.componentKey);
+      let viewObj = await Utils.getComponentByKey(data.pageConfig.componentKey);
       console.info('[' + data.caseTag + '] viewObj.getElement($attrs).getElement(padding):' + viewObj.getElement('$attrs').getElement('padding'));
       console.info('[' + data.caseTag + '] data.testValue.expectValue.padding:' + data.testValue.expectValue.padding);
       console.log('[wll]'+data.caseTag+'————'+data.testValue.describe)

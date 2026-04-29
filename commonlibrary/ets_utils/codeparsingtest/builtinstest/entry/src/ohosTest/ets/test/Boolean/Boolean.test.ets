@@ -298,14 +298,14 @@ export default function BooleanTest() {
       }
     })
     /**
-     * @tc.name   textBoolean.prototype.toString0006
+     * @tc.name   textBooleanprototypetoString0006Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_1600
      * @tc.desc   Test the function of the interface prototype.toString().
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('textBoolean.prototype.toString0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('textBooleanprototypetoString0006Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'textBoolean.prototype.toString0006';
       try {
         expect(Boolean(true).toString()).assertEqual('true');
@@ -315,14 +315,14 @@ export default function BooleanTest() {
       }
     })
     /**
-     * @tc.name   textBoolean.prototype.toString0007
+     * @tc.name   textBooleanprototypetoString0007Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_1700
      * @tc.desc   Test the function of the interface prototype.toString().
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('textBoolean.prototype.toString0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('textBooleanprototypetoString0007Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'textBoolean.prototype.toString0007';
       try {
         expect(Boolean("true").toString()).assertEqual('true');
@@ -332,14 +332,14 @@ export default function BooleanTest() {
       }
     })
     /**
-     * @tc.name   textBoolean.prototype.toString0008
+     * @tc.name   textBooleanprototypetoString0008Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_1800
      * @tc.desc   Test the function of the interface prototype.toString().
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('textBoolean.prototype.toString0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('textBooleanprototypetoString0008Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'textBoolean.prototype.toString0008';
       try {
         expect(Boolean("false").toString()).assertEqual('true');
@@ -349,14 +349,14 @@ export default function BooleanTest() {
       }
     })
     /**
-     * @tc.name   textBoolean.prototype.toString0009
+     * @tc.name   textBooleanprototypetoString0009Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_1900
      * @tc.desc   Test the function of the interface prototype.toString().
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('textBoolean.prototype.toString0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('textBooleanprototypetoString0009Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'textBoolean.prototype.toString0009';
       try {
         expect(Boolean([]).toString()).assertEqual('true');
@@ -366,14 +366,14 @@ export default function BooleanTest() {
       }
     })
     /**
-     * @tc.name   textBoolean.prototype.toString0010
+     * @tc.name   textBooleanprototypetoString0010Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_2000
      * @tc.desc   Test the function of the interface prototype.toString().
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('textBoolean.prototype.toString0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('textBooleanprototypetoString0010Adapt001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'textBoolean.prototype.toString0010';
       try {
         const result = new Boolean({});

@@ -115,10 +115,10 @@ async function testPostProcessor(fd: media.AVFileDescriptor, initializedOp: Asyn
   }).catch(mediaTestBase.catchCallback);
 
   avPlayer!!.onStateChange((state: media.AVPlayerState, reason: media.StateChangeReason) => {
-    waitForCompletion(async () => {
+    (async () => {
       console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
       await handleState(state.toString(), initializedOp, preparedOp, playedOp, stoppedOp, done);
-    })
+    })().awaitSync()
   });
   avPlayer!!.onError((err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);

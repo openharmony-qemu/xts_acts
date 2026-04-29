@@ -208,6 +208,8 @@ import RichEditorControllerMethodsNullTest from './RichEditor/RichEditorControll
 import RichEditorSpanMethodsNullTest from './RichEditor/RichEditorSpanMethodsNull.test';
 import RichEditorControllerMethodsNull2Test from './RichEditor/RichEditorControllerMethodsNull2.test';
 import RichEditorStyledStringControllerNullTest from './RichEditor/RichEditorStyledStringControllerNull.test';
+import RichEditorBaseControllerSetStyledPlaceholderTest from './RichEditorApi24Test/RichEditorBaseControllerSetStyledPlaceholder.test';
+import RichEditorHorizontalScrollingTest from './RichEditorApi26Test/RichEditorHorizontalScrolling.test';
 
 export default function testsuite() {
   ActsRichEditorTest();
@@ -406,4 +408,6 @@ export default function testsuite() {
   RichEditorSpanMethodsNullTest()
   RichEditorControllerMethodsNull2Test()
   RichEditorStyledStringControllerNullTest()
+
+  RichEditorBaseControllerSetStyledPlaceholderTest()  // Api24
 }

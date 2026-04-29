@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2024 Huawei Device Co., Ltd.
+* Copyright (c) 2024-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -79,9 +79,9 @@ const valueBucket3 :relationalStore.ValuesBucket = {
   "data3": 100000.5,
   "data4": new Uint8Array([3, 4, 5]),
 }
-let vbs :Array<relationalStore.ValuesBucket> = new Array<relationalStore.ValuesBucket>(2);
-vbs[0] = valueBucket2
-vbs[1] = valueBucket3
+let vbs :Array<relationalStore.ValuesBucket> = [];
+vbs.push(valueBucket2)
+vbs.push(valueBucket3)
 
 let rdbStore: relationalStore.RdbStore | undefined;
 let rdbStore_2: relationalStore.RdbStore | undefined;

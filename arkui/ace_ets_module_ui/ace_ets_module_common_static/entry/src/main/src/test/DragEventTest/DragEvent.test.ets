@@ -64,14 +64,9 @@ export default function DragEventTest() {
         expect(source !== null).assertTrue();
         const target = await driver.findComponent(ON.id('dragEventTarget'));
         expect(target !== null).assertTrue();
-        await driver.drag(360, 75, 360, 420, 1400);
+        await (source?.dragTo(target!) as Promise<void>);
         await CommonFunc.sleep(800);
         let status = getContentByKey('dragEventGetDisplayIdStatus');
-        if (status === 'init') {
-          await driver.drag(540, 90, 540, 430, 1400);
-          await CommonFunc.sleep(800);
-          status = getContentByKey('dragEventGetDisplayIdStatus');
-        }
         console.info('getDisplayId status: ' + status);
         expect(status === 'getDisplayId_ok').assertTrue();
       } catch (error) {

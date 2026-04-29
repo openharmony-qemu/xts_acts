@@ -22,7 +22,7 @@ import { BusinessError, Callback, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
@@ -68,9 +68,13 @@ struct clientAuthenticationHandlerTest {
             case 'emitClientAuthenticationHandlerConfirm002': {
               try {
                 this.controller.clearClientAuthenticationCache();
+                setTimeout(() => {
                 this.controller.loadUrl("https://client.badssl.com");
                 console.log(this.stringObj.str + ' result==>' + this.confirm);
+                }, 1000)
+                setTimeout(() => {
                 Utils.emitEvent(this.confirm, 25131101);
+                }, 3000)
               } catch (error) {
                 console.log(this.stringObj.str + 'errorInfo==>' + error.toString());
               }

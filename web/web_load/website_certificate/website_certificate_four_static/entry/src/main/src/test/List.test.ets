@@ -14,7 +14,8 @@
  */
 
 import webAttributeTest from './HttpAuthHandler.test'
-
+import webErrorPageTest from './WebErrorPage.test'
 export default function testsuite() {
     webAttributeTest();
+    webErrorPageTest();
 }

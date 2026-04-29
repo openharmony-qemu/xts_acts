@@ -1,7 +1,7 @@
 'use static'
 
 /*
-* Copyright (C) 2024 HiHope Open Source Organization.
+* Copyright (C) 2024-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -2216,7 +2216,7 @@ export function ExpressionTest1044() {
 
 export function ExpressionTest1045() {
   const TAG = 'ExpressionTest1045';
-  let arr: int[] = new Array<int>(3);
+  let arr: int[] = Array.create<int>(3, 0);
   arr[0] = 1;
   arr[2] = 3;
   let err1: Error | undefined;
@@ -2969,7 +2969,7 @@ export function ExpressionTest1098() {
 export function ExpressionTest1100() {
   const TAG = 'ExpressionTest1100';
   let numObj: Number = new Number(Number.MAX_VALUE);
-  let arr: number[] = new Array<number>(0);
+  let arr: number[] = new Array<number>();
   let strObj: String = new String("");
 
   let result1: boolean = numObj instanceof Number;
@@ -3193,7 +3193,7 @@ export function ExpressionTest1109() {
 
 export function ExpressionTest1110() {
   const TAG = 'ExpressionTest1110';
-  let arr: number[] = new Array<number>(3);
+  let arr: number[] = Array.create<number>(3, 0);
   let maxSafe: number = Number.MAX_SAFE_INTEGER;
   arr[0] = maxSafe;
   arr[1] = maxSafe + 1;

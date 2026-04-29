@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 #include "include/NapiInitCommonTest.h"
 
 napi_value DrawingCanvasDrawRecordCmd(napi_env env, napi_callback_info info)
@@ -180,6 +181,26 @@ napi_value DrawingPointGetSet(napi_env env, napi_callback_info info)
             OHOS::Rosen::Drawing::TestPointSetNormal,
             OHOS::Rosen::Drawing::TestPointSetNull,
             OHOS::Rosen::Drawing::TestPointSetMultipleCalls,
+        };
+        int result = DispatchByCaseNum(caseNum, handlers);
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
+// Point Negate Offset related functions
+napi_value DrawingPointNegateOffset(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        static const std::array<DrawingNativeFn, POINT_NEGATE_OFFSET_HANDLER_COUNT> handlers = {
+            OHOS::Rosen::Drawing::TestPointNegateNormal,
+            OHOS::Rosen::Drawing::TestPointNegateNull,
+            OHOS::Rosen::Drawing::TestPointNegateMultipleCalls,
+            OHOS::Rosen::Drawing::TestPointOffsetNormal,
+            OHOS::Rosen::Drawing::TestPointOffsetNull,
+            OHOS::Rosen::Drawing::TestPointOffsetMultipleCalls,
         };
         int result = DispatchByCaseNum(caseNum, handlers);
         napi_value resultValue;
@@ -775,6 +796,10 @@ napi_value DrawingBitmap(napi_env env, napi_callback_info info)
             OHOS::Rosen::Drawing::TestBitmapReadPixelsMismatch,
             OHOS::Rosen::Drawing::TestBitmapReadPixelsBoundary,
             OHOS::Rosen::Drawing::TestBitmapBuildMaximum,
+            OHOS::Rosen::Drawing::TestBitmapGetRowBytesNormal,
+            OHOS::Rosen::Drawing::TestBitmapGetRowBytesNull,
+            OHOS::Rosen::Drawing::TestBitmapGetRowBytesAbnormal,
+            OHOS::Rosen::Drawing::TestBitmapGetRowBytesMultipleCalls,
         };
         int result = DispatchByCaseNum(caseNum, handlers);
         napi_value resultValue;
@@ -1216,4 +1241,3 @@ napi_value DrawingFontGetWidths(napi_env env, napi_callback_info info)
         return resultValue;
     });
 }
-

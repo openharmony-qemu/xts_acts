@@ -95,7 +95,7 @@ export default function RichEditorQueryLayout005() {
       let style = await (driver.findComponent(ON.id('style')) as Promise<Component>);
       let styleText = await style.getText();
       await CommonFunc.sleep(500);
-      expect(styleText).assertContain('"margin":{"top":"10.00vp","left":"10.00vp","right":"10.00vp","bottom":"10.00vp"}');
+      expect(styleText).assertContain('"margin":{"top":"10.00vp","right":"10.00vp","bottom":"10.00vp","left":"10.00vp"}');
       expect(styleText).assertContain('"borderRadius":"10.00vp"');
       done();
     });

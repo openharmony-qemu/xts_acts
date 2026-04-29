@@ -28,6 +28,7 @@ group("builtin_static") {
       "builtin008_standard_test_static:ActsBuiltin8StaticTest",
       "builtin009_standard_test_static:ActsBuiltin9StaticTest",
       "builtin010_standard_test_static:ActsBuiltin10StaticTest",
+      "builtin011_standard_test_static:ActsBuiltin11StaticTest",
       "date_standard_test_static:ActsDateStaticTest",
       "intl_standard_test_static:ActsIntlStaticTest",
       "number_standard_test_static:ActsNumberStaticTest",
@@ -42,6 +43,7 @@ group("builtin_static") {
       "builtinsarraytest_standard_test_static:ActsBuiltinsArrayTestStaticTest",
       "map_standard_test_static:ActsMapStaticTest",
       "set_standard_test_static:ActsSetStaticTest",
+      "sparsearray_standard_test_static:ActsSparseArrayStaticTest",
     ]
   }
 }

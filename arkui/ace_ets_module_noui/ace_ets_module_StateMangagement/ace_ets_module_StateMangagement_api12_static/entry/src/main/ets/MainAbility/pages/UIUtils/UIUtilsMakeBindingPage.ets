@@ -1,5 +1,5 @@
 import { UIUtils, Binding, MutableBinding, Local } from '@ohos.arkui.stateManagement';
-import { Entry, Column, Text, Button, Builder, ClickEvent, ComponentV2 } from '@kit.ArkUI';
+import { Entry, Column, Text, Button, Builder, ClickEvent, ComponentV2, rememberVariable, MutableVariable } from '@kit.ArkUI';
 
 @Builder
 function customButton(readOnlyParam: Binding<number>, mutableParam: MutableBinding<number>) {
@@ -16,6 +16,19 @@ function customButton(readOnlyParam: Binding<number>, mutableParam: MutableBindi
   }
 }
 
+@Builder
+function mutableVariableBuilder() {
+  let message: MutableVariable<string> = rememberVariable<string>('Hello world'); 
+  Text(`${message.value}`)
+  .id('MutableVariableText')
+  .height('5%')
+  Button('Change message in builder')
+    .height('5%')
+    .id('MutableVariableButton')
+    .onClick(() => {
+      message.value += '!'; 
+    })
+}
 
 @Entry
 @ComponentV2
@@ -48,6 +61,7 @@ struct UIUtilsMakeBindingPage {
           this.num2 = v;
         })
       )
+      mutableVariableBuilder()
     }
     .width('100%')
     .height('100%')

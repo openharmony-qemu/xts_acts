@@ -4177,7 +4177,7 @@ export default function imageExifGetModifyByTypeTest() {
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PROMISE_ERROR_0300";
       let result: boolean = false;
       const metadataTypes: Array<image.MetadataType> = [
-        20 as image.MetadataType
+        2000 as image.MetadataType
       ];
       const imageSourceApi = await getImageSource("test_exif_readWrite_jpg_v2.jpg", "fd");
       try {

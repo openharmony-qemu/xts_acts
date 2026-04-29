@@ -10,6 +10,7 @@
         "MainAbility/pages/onVisiable/onVisibleAreaApproximateChange",
         "MainAbility/pages/onVisiable/measureFromViewport",
         "MainAbility/pages/measureFromViewport/measureFromViewportOnVisible",
-        "MainAbility/pages/CommonMethod/onVisibleAreaApproximateChangeNullAndUndefined"
+        "MainAbility/pages/CommonMethod/onVisibleAreaApproximateChangeNullAndUndefined",
+        "MainAbility/pages/onAreaChange/expectedUpdateInterval"
     ]
 }

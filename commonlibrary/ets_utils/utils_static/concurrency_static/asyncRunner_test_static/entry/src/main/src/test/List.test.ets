@@ -31,7 +31,7 @@ import asyncRunnerTest from './AsyncRunner.test';
 
 
 
-export default function testsuite() {
+export default function testsuite(): void {
   taskPoolAsyncRunnerExecute();
   TaskPoolAsyncRunnerErrorTest();
   taskPoolAsyncRunnerAbility();

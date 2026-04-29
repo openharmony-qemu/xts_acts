@@ -47,7 +47,7 @@ export default function observerManagerSimStateTest1() {
     afterEach( async (done: Function) => {
       // sim 1
       let state: sim.SimState = await sim.getSimState(0);
-      if (state == sim.SimState.SIM_STATE_NOT_READY) {
+      if (state === sim.SimState.SIM_STATE_NOT_READY) {
         await sim.activateSim(0);
       }
       if (state === sim.SimState.SIM_STATE_LOCKED) {
@@ -76,7 +76,7 @@ export default function observerManagerSimStateTest1() {
         });
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
-        ExpectTrue(error.code == 401);
+        ExpectTrue(error.code === 401);
         done();
       }
       console.info(`${caseName} test end`);
@@ -101,7 +101,7 @@ export default function observerManagerSimStateTest1() {
         });
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
-        ExpectTrue(error.code == 401);
+        ExpectTrue(error.code === 401);
         done();
       }
       console.info(`${caseName} test end`);
@@ -128,7 +128,7 @@ export default function observerManagerSimStateTest1() {
         });
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
-        ExpectTrue(error.code == 8300001);
+        ExpectTrue(error.code === 8300001);
         done();
       }
       console.info(`${caseName} test end`);
@@ -155,7 +155,7 @@ export default function observerManagerSimStateTest1() {
         });
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
-        ExpectTrue(error.code == 401);
+        ExpectTrue(error.code === 401);
         done();
       }
       console.info(`${caseName} test end`);
@@ -182,7 +182,7 @@ export default function observerManagerSimStateTest1() {
         });
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
-        ExpectTrue(error.code == 401);
+        ExpectTrue(error.code === 401);
         done();
       }
       console.info(`${caseName} test end`);
@@ -209,7 +209,7 @@ export default function observerManagerSimStateTest1() {
         });
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
-        ExpectTrue(error.code == 401);
+        ExpectTrue(error.code === 401);
         done();
       }
       console.info(`${caseName} test end`);
@@ -501,7 +501,7 @@ export default function observerManagerSimStateTest1() {
         done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
-        ExpectTrue(error.code == 401);
+        ExpectTrue(error.code === 401);
         done();
       }
       console.info(`${caseName} test end`);
@@ -523,7 +523,7 @@ export default function observerManagerSimStateTest1() {
         done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
-        ExpectTrue(error.code == 401);
+        ExpectTrue(error.code === 401);
         done();
       }
       console.info(`${caseName} test end`);
@@ -544,11 +544,11 @@ export default function observerManagerSimStateTest1() {
         observer.onGetSimActiveState(null, (data: boolean) => {
           console.info(`${caseName} data: ${data}}`);
           ExpectFail();
+          done();
         });
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
-        ExpectTrue(error.code == 401);
+        ExpectTrue(error.code === 401);
         done();
       }
       console.info(`${caseName} test end`);
@@ -570,11 +570,11 @@ export default function observerManagerSimStateTest1() {
         observer.onGetSimActiveState(slotId, (data: boolean) => {
           console.info(`${caseName} data: ${data}}`);
           ExpectFail();
+          done();
         });
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
-        ExpectTrue(error.code == 8300001);
+        ExpectTrue(error.code === 8300001);
         done();
       }
       console.info(`${caseName} test end`);
@@ -593,11 +593,12 @@ export default function observerManagerSimStateTest1() {
       console.info(`${caseName} test start`);
       try {
         let slotId: number = 0;
+        await sim.activateSim(slotId);
         observer.onGetSimActiveState(slotId, (data: boolean) => {
           console.info(`${caseName} data: ${data}}`);
           ExpectTrue(data);
+          done();
         });
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
         ExpectFail();
@@ -617,18 +618,26 @@ export default function observerManagerSimStateTest1() {
     it('testTelephonyObserverOnGetSimActiveState0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverOnGetSimActiveState0400';
       console.info(`${caseName} test start`);
-      try {
-        let slotId: number = 1;
-        observer.onGetSimActiveState(slotId, (data: boolean) => {
-          console.info(`${caseName} data: ${data}`);
-          ExpectTrue(data);
-        });
-        done();
-      } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
+      if (sim.getMaxSimCount() > 1) {
+        try {
+          let slotId: number = 1;
+          await sim.activateSim(slotId);
+          observer.onGetSimActiveState(slotId, (data: boolean) => {
+            console.info(`${caseName} data: ${data}`);
+            ExpectTrue(data);
+            done();
+          });
+        } catch (error) {
+          console.info(`${caseName} catchError ${JSON.stringify(error)}`);
+          ExpectFail();
+          done();
+        }
+      } else {
+        console.info(`${caseName} This device is a single-card device`);
         ExpectFail();
         done();
       }
+      
       console.info(`${caseName} test end`);
     });
 
@@ -644,15 +653,15 @@ export default function observerManagerSimStateTest1() {
       let caseName: string = 'testTelephonyObserverOnGetSimActiveState0500';
       console.info(`${caseName} test start`);
       try {
-        let slotId: number = 2;
+        let slotId: number = 3;
         observer.onGetSimActiveState(slotId, (data: boolean) => {
           console.info(`${caseName} data: ${data}`);
           ExpectFail();
+          done();
         });
-        done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}`);
-        ExpectTrue(error.code == 8300001);
+        ExpectTrue(error.code === 8300001);
         done();
       }
       console.info(`${caseName} test end`);
@@ -673,11 +682,33 @@ export default function observerManagerSimStateTest1() {
         observer.onGetSimActiveState(undefined, (data: boolean) => {
           console.info(`${caseName} data: ${data}}`);
           ExpectFail();
+          done();
         });
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(error.code === 401);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverOffGetSimActiveState0300
+     * @tc.number SUB_Telephony_Observer_OffGetSimActiveState_0300
+     * @tc.desc   Cancel callback when the sim active state is updated.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverOffGetSimActiveState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonyObserverOffGetSimActiveState0300';
+      console.info(`${caseName} test start`);
+      try {
+        observer.offGetSimActiveState();
         done();
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
-        ExpectTrue(error.code == 401);
+        ExpectFail();
         done();
       }
       console.info(`${caseName} test end`);
@@ -696,21 +727,15 @@ export default function observerManagerSimStateTest1() {
       console.info(`${caseName} test start`);
       try {
         let slotId: number = 0;
-        observer.onGetSimActiveState(slotId, (data: boolean) => {
-          console.info(`${caseName} data: ${data}}`);
+        let callback: (data: boolean) => void = (data: boolean) => {
+          console.info(`${caseName} data: ${data}`);
           ExpectTrue(data);
-          if (data) {
-            observer.offGetSimActiveState((res: boolean) => {
-              console.info(`${caseName} res: ${res}}`);
-              ExpectTrue(res);
-            });
-          } else {
-            console.info(`${caseName} , The SIM card is not activated`);
-            ExpectFail();
-            done();
-          }
-        });
-        done();
+          observer.offGetSimActiveState(callback);
+          done();
+        }
+        await sim.activateSim(slotId);
+        observer.onGetSimActiveState(slotId, callback);
+        console.info(`${caseName} slotId: ${slotId}`);
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectFail();
@@ -730,52 +755,30 @@ export default function observerManagerSimStateTest1() {
     it('testTelephonyObserverOffGetSimActiveState0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyObserverOffGetSimActiveState0200';
       console.info(`${caseName} test start`);
-      try {
-        let slotId: number = 1;
-        observer.onGetSimActiveState(slotId, (data: boolean) => {
-          console.info(`${caseName} data: ${data}}`);
-          ExpectTrue(data);
-          if (data) {
-            observer.offGetSimActiveState((res: boolean) => {
-              console.info(`${caseName} res: ${res}}`);
-              ExpectTrue(res);
-            });
+      if (sim.getMaxSimCount() > 1) {
+        try {
+          let slotId: number = 1;
+          let callback: (data: boolean) => void = (data: boolean) => {
+            console.info(`${caseName} data: ${data}`);
+            ExpectTrue(data);
+            observer.offGetSimActiveState(callback);
+            done();
           }
-        });
-        done();
-      } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+          await sim.activateSim(slotId);
+          observer.onGetSimActiveState(slotId, callback);
+          console.info(`${caseName} slotId: ${slotId}`);
+        } catch (error) {
+          console.info(`${caseName} CatchError ${JSON.stringify(error)}`);
+          ExpectFail();
+          done();
+        }
+      } else {
+        console.info(`${caseName} This device is a single-card device`);
         ExpectFail();
         done();
       }
       console.info(`${caseName} test end`);
     });
 
-    /**
-     * @tc.name   testTelephonyObserverOffGetSimActiveState0300
-     * @tc.number SUB_Telephony_Observer_OffGetSimActiveState_0300
-     * @tc.desc   Cancel callback when the sim active state is updated.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testTelephonyObserverOffGetSimActiveState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let caseName: string = 'testTelephonyObserverOffGetSimActiveState0300';
-      console.info(`${caseName} test start`);
-      try {
-        let num: number = 1;
-        observer.offGetSimActiveState((data: boolean) => {
-          console.info(`${caseName} data: ${data}}`);
-          num++;
-        });
-        ExpectTrue(num === 1);
-        done();
-      } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
-        ExpectFail();
-        done();
-      }
-      console.info(`${caseName} test end`);
-    });
   });
 }

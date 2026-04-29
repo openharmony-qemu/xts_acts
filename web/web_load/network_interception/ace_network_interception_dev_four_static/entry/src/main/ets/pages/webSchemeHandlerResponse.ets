@@ -30,7 +30,7 @@ import { Hypium } from '../../../hypium/index';
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { WebNetErrorList } from '@ohos.web.netErrorList';
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
@@ -81,8 +81,7 @@ struct WebSchemeHandlerResponse {
                   console.log("[schemeHandler] getUrl:" + response.getUrl())
                   Utils.emitEvent(response.getUrl(), 8806)
               } catch (error) {
-                error = error as BusinessError;
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
             }
@@ -92,8 +91,7 @@ struct WebSchemeHandlerResponse {
                   console.log("[schemeHandler] getStatus:" + response.getStatus())
                   Utils.emitEvent(response.getStatus(), 8808)
                 } catch (error) {
-                  error = error as BusinessError;
-                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 }
                 break;
               }
@@ -103,8 +101,7 @@ struct WebSchemeHandlerResponse {
                   console.log("[schemeHandler] getStatusText:" + response.getStatusText())
                   Utils.emitEvent(response.getStatusText(), 8810)
                 } catch (error) {
-                  error = error as BusinessError;
-                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 }
                 break;
               }
@@ -114,8 +111,7 @@ struct WebSchemeHandlerResponse {
                   console.log("[schemeHandler] getMimeType:" + response.getMimeType())
                   Utils.emitEvent(response.getMimeType(), 8812)
                 } catch (error) {
-                  error = error as BusinessError;
-                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 }
                 break;
               }
@@ -125,8 +121,7 @@ struct WebSchemeHandlerResponse {
                   console.log("[schemeHandler] getEncoding:" + response.getEncoding())
                   Utils.emitEvent(response.getEncoding(), 8814)
                 } catch (error) {
-                  error = error as BusinessError;
-                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 }
                 break;
               }
@@ -136,8 +131,7 @@ struct WebSchemeHandlerResponse {
                   console.log("[schemeHandler] getHeaderByValue:" + response.getHeaderByName("header1"))
                   Utils.emitEvent(response.getHeaderByName("header1"), 8816)
                 } catch (error) {
-                  error = error as BusinessError;
-                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 }
                 break;
               }
@@ -147,8 +141,7 @@ struct WebSchemeHandlerResponse {
                   console.log("[schemeHandler] getNetErrorCode:" + response.getNetErrorCode())
                   Utils.emitEvent(response.getNetErrorCode(), 8818)
                 } catch (error) {
-                  error = error as BusinessError;
-                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 }
                 break;
               }

@@ -346,5 +346,38 @@ export default function cameraPhotoSessionTest() {
         done();
       }
     })
+
+    let exposureStateCallback = (exposureState: camera.ExposureState) => {
+      console.info(TAG, `exposureState: ${exposureState}.`);
+    }
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_EXPOSURE_STATE_CALLBACK_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_EXPOSURE_STATE_CALLBACK_PROMISE_0100
+     * @tc.desc   exposureinfo callback api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_EXPOSURE_STATE_CALLBACK_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_EXPOSURE_STATE_CALLBACK_PROMISE_0100--------------");
+ 
+      if (mCameraNum == 0) {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_EXPOSURE_STATE_CALLBACK_PROMISE_0100 FAILED with NoCamera");
+        expect().assertFail();
+        done();
+      } else {
+        try{
+          createCameraSessionInstance();
+          mCameraSession!.onExposureStateChange(exposureStateCallback);
+          mCameraSession!.offExposureStateChange(exposureStateCallback);
+          console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_EXPOSURE_STATE_CALLBACK_PROMISE_0100 start PASSED");
+        } catch (err) {
+            console.info(TAG + " SUB_MULTIMEDIA_CAMERA_SESSION_EXPOSURE_STATE_CALLBACK_PROMISE_0100 FAILED" + err.code);
+            expect(true).assertFalse();
+        }
+        done();
+      }
+    })
   })
 }

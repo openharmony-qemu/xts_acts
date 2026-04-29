@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -86,6 +86,7 @@ import RELOAD from './LazyForEach/RELOAD.test';
 
 import repeatVirtualScrollNullUndefinedTest from './Repeat/repeatVirtualScrollNullUndefinedTest.test';
 import lazyForEachOnDatasetChangeNullUndefinedTest from './LazyForEach/lazyForEachOnDatasetChangeNullUndefinedTest.test';
+import LazyForEachCustomComponentFreezeModeTest from './LazyForEach/LazyForEachCustomComponentFreezeModeTest.test';
 
 export default function testsuite() {
     Foreach1();
@@ -161,4 +162,5 @@ export default function testsuite() {
 
     repeatVirtualScrollNullUndefinedTest();
     lazyForEachOnDatasetChangeNullUndefinedTest();
+    LazyForEachCustomComponentFreezeModeTest();
 }

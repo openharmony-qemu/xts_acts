@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-
+#include <thread>
 #include <string>
 #include <cstdio>
 #include <cstdint>
@@ -1928,6 +1928,19 @@ static napi_value AudioRendererSetOnMarkReached_07(napi_env env, napi_callback_i
     return res;
 }
 
+void WaitForFlagWithTimeout(bool* flag, int32_t maxSeconds) {
+    int32_t elapsed = 0;
+    while (elapsed < maxSeconds * 1000) {
+        if (*flag) {
+            LOG("WaitForFlagWithTimeout return after: %{public}d", elapsed);
+            return;
+        }
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
+        elapsed += 1;
+    }
+    LOG("WaitForFlagWithTimeout timeout after: %{public}d", maxSeconds);
+}
+
 static napi_value AudioRendererSetOnMarkReached_08(napi_env env, napi_callback_info info)
 {
     g_flag = false;
@@ -1968,10 +1981,10 @@ static napi_value AudioRendererSetOnMarkReached_08(napi_env env, napi_callback_i
         return res;
     }
     LOG("audioRendererSetOnMarkReached_08 result = AUDIOSTREAM_SUCCESS");
-    int waitTime = 10;
+    int32_t waitTime = 3;
     OH_AudioRenderer_Start(audioRenderer);
     LOG("audioRendererSetOnMarkReached_08 OH_AudioRenderer_Start SUCCESS");
-    Delay(waitTime);
+    WaitForFlagWithTimeout(&g_flag, waitTime);
     OH_AudioRenderer_Stop(audioRenderer);
     LOG("audioRendererSetOnMarkReached_08 OH_AudioRenderer_Stop SUCCESS");
     if (!g_flag) {
@@ -9730,9 +9743,918 @@ static napi_value AudioSessionManager_SetBehavior_004(napi_env env, napi_callbac
     LOG("AudioSessionManager_SetBehavior_004 fail, result is: %{public}d", result);
     return res;
 }
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioCapturer_Start(audioCapturer);
+    OH_AudioStream_Result result = OH_AudioCapturer_SetMuteHint(audioCapturer, true);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+        if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0100 fail, result is: %{public}d", result);
+    return res;
+}
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0200(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioCapturer_Start(audioCapturer);
+    OH_AudioStream_Result result = OH_AudioCapturer_SetMuteHint(audioCapturer, false);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+        if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0200 fail, result is: %{public}d", result);
+    return res;
+}
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0300(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioCapturer_Start(audioCapturer);
+    OH_AudioStream_Result result = OH_AudioCapturer_SetMuteHint(nullptr, true);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+        if (result == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0300 fail, result is: %{public}d", result);
+    return res;
+}
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0400(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioStream_Result result = OH_AudioCapturer_SetMuteHint(audioCapturer, true);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+        if (result == AUDIOSTREAM_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0400 fail, result is: %{public}d", result);
+    return res;
+}
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSessionManager *audioManager = nullptr;
+    OH_AudioManager_GetAudioSessionManager(&audioManager);
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioCapturer_Start(audioCapturer);
+    OH_AudioCommon_Result result = OH_AudioSessionManager_SetCaptureMuteHint(audioManager, true);
+    OH_AudioSessionManager_DeactivateAudioSession(audioManager);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+        if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0100 fail, result is: %{public}d", result);
+    return res;
+}
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0200(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSessionManager *audioManager = nullptr;
+    OH_AudioManager_GetAudioSessionManager(&audioManager);
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioCapturer_Start(audioCapturer);
+    OH_AudioCommon_Result result = OH_AudioSessionManager_SetCaptureMuteHint(audioManager, false);
+    OH_AudioSessionManager_DeactivateAudioSession(audioManager);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+        if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0200 fail, result is: %{public}d", result);
+    return res;
+}
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0300(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSessionManager *audioManager = nullptr;
+    OH_AudioManager_GetAudioSessionManager(&audioManager);
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioCapturer_Start(audioCapturer);
+    OH_AudioCommon_Result result = OH_AudioSessionManager_SetCaptureMuteHint(nullptr, true);
+    OH_AudioSessionManager_DeactivateAudioSession(audioManager);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+        if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0300 fail, result is: %{public}d", result);
+    return res;
+}
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0400(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSessionManager *audioManager = nullptr;
+    OH_AudioManager_GetAudioSessionManager(&audioManager);
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioCommon_Result result = OH_AudioSessionManager_SetCaptureMuteHint(audioManager, true);
+    OH_AudioSessionManager_DeactivateAudioSession(audioManager);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+        if (result == AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0400 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERENUM_0300(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    uint32_t voipPrivacyTypePublic = 0x00000001;
+    if (VOIP_PRIVACY_TYPE_PUBLIC != OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("AUDIOSESSIONMANAGER_VOIP_PRIVACY_TYPE_PUBLIC fail, result is: %{public}d",
+            OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC);
+    }
+    napi_create_int32(env, TEST_PASS, &res);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioSession_Strategy strategy;
+    strategy.concurrencyMode = OH_AudioSession_ConcurrencyMode::CONCURRENCY_DEFAULT;
+    OH_AudioStream_Result result = OH_AudioCapturer_SetIndependentAudioSessionStrategy(
+        audioCapturer, &strategy,
+        OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("AUDIOCAPTURERVOICE_0100 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0200(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioSession_Strategy strategy;
+    strategy.concurrencyMode = OH_AudioSession_ConcurrencyMode::CONCURRENCY_MIX_WITH_OTHERS;
+    OH_AudioStream_Result result = OH_AudioCapturer_SetIndependentAudioSessionStrategy(
+        audioCapturer, &strategy,
+        OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("AUDIOCAPTURERVOICE_0200 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0300(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioSession_Strategy strategy;
+    strategy.concurrencyMode = OH_AudioSession_ConcurrencyMode::CONCURRENCY_DUCK_OTHERS;
+    OH_AudioStream_Result result = OH_AudioCapturer_SetIndependentAudioSessionStrategy(
+        audioCapturer, &strategy,
+        OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("AUDIOCAPTURERVOICE_0300 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0400(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioSession_Strategy strategy;
+    strategy.concurrencyMode = OH_AudioSession_ConcurrencyMode::CONCURRENCY_PAUSE_OTHERS;
+    OH_AudioStream_Result result = OH_AudioCapturer_SetIndependentAudioSessionStrategy(
+        audioCapturer, &strategy,
+        OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC);
+    OH_AudioCapturer_Release(audioCapturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("AUDIOCAPTURERVOICE_0400 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERVOICE_0500(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSessionManager* audioSessionManager;
+    OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
+    OH_AudioCommon_Result result =  OH_AudioSessionManager_SetBehavior(
+ 	    audioSessionManager, OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("AUDIOSESSIONMANAGERVOICE_0500 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_ADUIOSESSIONMANAGERVOICEREAPTED_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioSessionManager* audioSessionManager;
+    OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
+    for (int i = 0 ; i < 100 ;i++) {
+         OH_AudioCommon_Result result =  OH_AudioSessionManager_SetBehavior(
+ 	     audioSessionManager, OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC);
+         if (result == AUDIOSTREAM_SUCCESS) {
+         napi_create_int32(env, TEST_PASS, &res);
+         return res;
+         napi_create_int32(env, TEST_FAIL, &res);
+         LOG("ADUIOSESSIONMANAGERVOICEREAPTED_0100 fail, result is: %{public}d", result);
+        }
+    }
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTUREVOICEREAPTED_0100(napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder *builder = CreateCapturerBuilder();
+    OH_AudioCapturer *audioCapturer;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &audioCapturer);
+    OH_AudioSession_Strategy strategy;
+    for (int i = 0 ;i < 100; i++) {
+        strategy.concurrencyMode = OH_AudioSession_ConcurrencyMode::CONCURRENCY_PAUSE_OTHERS;
+        OH_AudioStream_Result result = OH_AudioCapturer_SetIndependentAudioSessionStrategy(
+        audioCapturer, &strategy,
+        OH_AudioSession_BehaviorFlags::VOIP_PRIVACY_TYPE_PUBLIC);
+        OH_AudioCapturer_Release(audioCapturer);
+        OH_AudioStreamBuilder_Destroy(builder);
+        if (result == AUDIOSTREAM_SUCCESS) {
+            napi_create_int32(env, TEST_PASS, &res);
+            return res;
+        }
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("AUDIOCAPTUREVOICEREAPTED_0100 fail, result is: %{public}d", result);
+    }
+    return res;
+}
+
+static int32_t PreferredOutputDeviceChangedCallback(
+    OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray)
+{
+    LOG("PreferredOutputDeviceChangedCallback triggered");
+    if (audioDeviceDescriptorArray == nullptr) {
+        LOG("audioDeviceDescriptorArray is nullptr");
+        return 0;
+    }
+    int size = audioDeviceDescriptorArray->size;
+        for (int index = 0; index < size; index++) {
+            OH_AudioDeviceDescriptor *audioDeviceDescriptor = audioDeviceDescriptorArray->descriptors[index];
+            if (audioDeviceDescriptor) {
+                OH_AudioDevice_Role deviceRole = AUDIO_DEVICE_ROLE_OUTPUT;
+                OH_AudioDeviceDescriptor_GetDeviceRole(audioDeviceDescriptor, &deviceRole);
+                OH_AudioDevice_Type deviceType = AUDIO_DEVICE_TYPE_INVALID;
+                OH_AudioDeviceDescriptor_GetDeviceType(audioDeviceDescriptor, &deviceType);
+                LOG("Receive new device: DeviceRole: %{public}d, DeviceType: %{public}d\n", deviceRole, deviceType);
+            }
+        }
+    LOG("audioDeviceDescriptorArray size: %{public}d", size);
+    return 0;
+}
+
+static int32_t PreferredInputDeviceChangedCallback(
+    OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray)
+{
+    LOG("PreferredInputDeviceChangedCallback triggered");
+    if (audioDeviceDescriptorArray == nullptr) {
+        LOG("audioDeviceDescriptorArray is nullptr");
+        return 0;
+    }
+    LOG("audioDeviceDescriptorArray size: %{public}d", audioDeviceDescriptorArray->size);
+    return 0;
+}
+
+static int32_t PreferredOutputDeviceChangedCallbackTest(
+    OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray)
+{
+    LOG("PreferredOutputDeviceChangedCallbackTest called");
+    return AUDIOCOMMON_RESULT_SUCCESS;
+}
+
+static int32_t PreferredInputDeviceChangedCallbackTest(
+    OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray)
+{
+    LOG("PreferredInputDeviceChangedCallbackTest called");
+    return AUDIOCOMMON_RESULT_SUCCESS;
+}
+
+OH_AudioRoutingManager* GetAudioRoutingManager()
+{
+    OH_AudioRoutingManager *audioRoutingManager = nullptr;
+    OH_AudioCommon_Result result = OH_AudioManager_GetAudioRoutingManager(&audioRoutingManager);
+    if (result == AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("GetAudioRoutingManager success");
+        return audioRoutingManager;
+    }
+    LOG("GetAudioRoutingManager failed, result: %{public}d", result);
+    return nullptr;
+}
+
+napi_value CreateNapiResult(napi_env env, int32_t resultValue)
+{
+    napi_value result;
+    napi_create_int32(env, resultValue, &result);
+    return result;
+}
+
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
+    if (audioRoutingManager == nullptr) {
+        LOG("audioRoutingManager is nullptr");
+        return CreateNapiResult(env, TEST_FAIL);
+    }
+    OH_AudioStream_Usage streamUsage = AUDIOSTREAM_USAGE_MUSIC;
+    OH_AudioRoutingManager_OnPreferredOutputDeviceChangedCallback callback =
+        PreferredOutputDeviceChangedCallback;
+    OH_AudioCommon_Result ret = OH_AudioRoutingManager_RegisterPreferredOutputDevicesChangeCallback(
+        audioRoutingManager, streamUsage, callback);
+    LOG("RegisterPreferredOutputDevicesChangeCallback result: %{public}d", ret);
+    napi_value res;
+    if (ret == AUDIOCOMMON_RESULT_SUCCESS) {
+        OH_AudioRoutingManager_UnregisterPreferredOutputDevicesChangeCallback(
+            audioRoutingManager, callback);
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0200(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
+    if (audioRoutingManager == nullptr) {
+        LOG("audioRoutingManager is nullptr");
+        return CreateNapiResult(env, TEST_FAIL);
+    }
+    OH_AudioStream_Usage streamUsage = AUDIOSTREAM_USAGE_GAME;
+    OH_AudioRoutingManager_OnPreferredOutputDeviceChangedCallback callback =
+        PreferredOutputDeviceChangedCallback;
+    OH_AudioCommon_Result ret = OH_AudioRoutingManager_RegisterPreferredOutputDevicesChangeCallback(
+        audioRoutingManager, streamUsage, callback);
+    LOG("RegisterPreferredOutputDevicesChangeCallback result: %{public}d", ret);
+    napi_value res;
+    if (ret == AUDIOCOMMON_RESULT_SUCCESS) {
+        OH_AudioRoutingManager_UnregisterPreferredOutputDevicesChangeCallback(
+            audioRoutingManager, callback);
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioRoutingManager *audioRoutingManager = nullptr;
+    OH_AudioStream_Usage streamUsage = AUDIOSTREAM_USAGE_MUSIC;
+    OH_AudioRoutingManager_OnPreferredOutputDeviceChangedCallback callback =
+        PreferredOutputDeviceChangedCallback;
+    OH_AudioCommon_Result ret = OH_AudioRoutingManager_RegisterPreferredOutputDevicesChangeCallback(
+        audioRoutingManager, streamUsage, callback);
+    LOG("RegisterPreferredOutputDevicesChangeCallback with nullptr manager result: %{public}d", ret);
+    napi_value res;
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0200(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
+    if (audioRoutingManager == nullptr) {
+        LOG("audioRoutingManager is nullptr");
+        return CreateNapiResult(env, TEST_FAIL);
+    }
+    OH_AudioStream_Usage streamUsage = AUDIOSTREAM_USAGE_MUSIC;
+    OH_AudioRoutingManager_OnPreferredOutputDeviceChangedCallback callback = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioRoutingManager_RegisterPreferredOutputDevicesChangeCallback(
+        audioRoutingManager, streamUsage, callback);
+    LOG("RegisterPreferredOutputDevicesChangeCallback with nullptr callback result: %{public}d", ret);
+    napi_value res;
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0300(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
+    if (audioRoutingManager == nullptr) {
+        LOG("audioRoutingManager is nullptr");
+        return CreateNapiResult(env, TEST_FAIL);
+    }
+    OH_AudioStream_Usage streamUsage = static_cast<OH_AudioStream_Usage>(-1);
+    OH_AudioRoutingManager_OnPreferredOutputDeviceChangedCallback callback =
+        PreferredOutputDeviceChangedCallback;
+    OH_AudioCommon_Result ret = OH_AudioRoutingManager_RegisterPreferredOutputDevicesChangeCallback(
+        audioRoutingManager, streamUsage, callback);
+    LOG("RegisterPreferredOutputDevicesChangeCallback with invalid streamUsage result: %{public}d", ret);
+    napi_value res;
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0400(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioRoutingManager *audioRoutingManager = nullptr;
+    OH_AudioStream_Usage streamUsage = AUDIOSTREAM_USAGE_MUSIC;
+    OH_AudioRoutingManager_OnPreferredOutputDeviceChangedCallback callback = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioRoutingManager_RegisterPreferredOutputDevicesChangeCallback(
+        audioRoutingManager, streamUsage, callback);
+    LOG("RegisterPreferredOutputDevicesChangeCallback with both nullptr result: %{public}d", ret);
+    napi_value res;
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
+    if (audioRoutingManager == nullptr) {
+        LOG("audioRoutingManager is nullptr");
+        return CreateNapiResult(env, TEST_FAIL);
+    }
+    OH_AudioStream_Usage streamUsage = AUDIOSTREAM_USAGE_MUSIC;
+    OH_AudioRoutingManager_OnPreferredOutputDeviceChangedCallback callback =
+        PreferredOutputDeviceChangedCallback;
+    OH_AudioCommon_Result ret = OH_AudioRoutingManager_RegisterPreferredOutputDevicesChangeCallback(
+        audioRoutingManager, streamUsage, callback);
+    if (ret == AUDIOCOMMON_RESULT_SUCCESS) {
+        ret = OH_AudioRoutingManager_UnregisterPreferredOutputDevicesChangeCallback(
+            audioRoutingManager, callback);
+        LOG("UnregisterPreferredOutputDevicesChangeCallback result: %{public}d", ret);
+        napi_value res;
+        if (ret == AUDIOCOMMON_RESULT_SUCCESS) {
+            napi_create_int32(env, TEST_PASS, &res);
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+        }
+        return res;
+    }
+    return CreateNapiResult(env, TEST_FAIL);
+}
+
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioRoutingManager *audioRoutingManager = nullptr;
+    OH_AudioRoutingManager_OnPreferredOutputDeviceChangedCallback callback =
+        PreferredOutputDeviceChangedCallback;
+    OH_AudioCommon_Result ret = OH_AudioRoutingManager_UnregisterPreferredOutputDevicesChangeCallback(
+        audioRoutingManager, callback);
+    LOG("UnregisterPreferredOutputDevicesChangeCallback with nullptr manager result: %{public}d", ret);
+    napi_value res;
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
+    if (audioRoutingManager == nullptr) {
+        LOG("audioRoutingManager is nullptr");
+        return CreateNapiResult(env, TEST_FAIL);
+    }
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_MIC;
+    OH_AudioRoutingManager_OnPreferredInputDeviceChangedCallback callback =
+        PreferredInputDeviceChangedCallback;
+    OH_AudioCommon_Result ret = OH_AudioRoutingManager_RegisterPreferredInputDevicesChangeCallback(
+        audioRoutingManager, sourceType, callback);
+    LOG("RegisterPreferredInputDevicesChangeCallback result: %{public}d", ret);
+    napi_value res;
+    if (ret == AUDIOCOMMON_RESULT_SUCCESS) {
+        OH_AudioRoutingManager_UnregisterPreferredInputDevicesChangeCallback(
+            audioRoutingManager, callback);
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_0200(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
+    if (audioRoutingManager == nullptr) {
+        LOG("audioRoutingManager is nullptr");
+        return CreateNapiResult(env, TEST_FAIL);
+    }
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_VOICE_RECOGNITION;
+    OH_AudioRoutingManager_OnPreferredInputDeviceChangedCallback callback =
+        PreferredInputDeviceChangedCallback;
+    OH_AudioCommon_Result ret = OH_AudioRoutingManager_RegisterPreferredInputDevicesChangeCallback(
+        audioRoutingManager, sourceType, callback);
+    LOG("RegisterPreferredInputDevicesChangeCallback result: %{public}d", ret);
+    napi_value res;
+    if (ret == AUDIOCOMMON_RESULT_SUCCESS) {
+        OH_AudioRoutingManager_UnregisterPreferredInputDevicesChangeCallback(
+            audioRoutingManager, callback);
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioRoutingManager *audioRoutingManager = nullptr;
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_MIC;
+    OH_AudioRoutingManager_OnPreferredInputDeviceChangedCallback callback =
+        PreferredInputDeviceChangedCallback;
+    OH_AudioCommon_Result ret = OH_AudioRoutingManager_RegisterPreferredInputDevicesChangeCallback(
+        audioRoutingManager, sourceType, callback);
+    LOG("RegisterPreferredInputDevicesChangeCallback with nullptr manager result: %{public}d", ret);
+    napi_value res;
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0200(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
+    if (audioRoutingManager == nullptr) {
+        LOG("audioRoutingManager is nullptr");
+        return CreateNapiResult(env, TEST_FAIL);
+    }
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_MIC;
+    OH_AudioRoutingManager_OnPreferredInputDeviceChangedCallback callback = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioRoutingManager_RegisterPreferredInputDevicesChangeCallback(
+        audioRoutingManager, sourceType, callback);
+    LOG("RegisterPreferredInputDevicesChangeCallback with nullptr callback result: %{public}d", ret);
+    napi_value res;
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0300(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
+    if (audioRoutingManager == nullptr) {
+        LOG("audioRoutingManager is nullptr");
+        return CreateNapiResult(env, TEST_FAIL);
+    }
+    OH_AudioStream_SourceType sourceType = static_cast<OH_AudioStream_SourceType>(-1);
+    OH_AudioRoutingManager_OnPreferredInputDeviceChangedCallback callback =
+        PreferredInputDeviceChangedCallback;
+    OH_AudioCommon_Result ret = OH_AudioRoutingManager_RegisterPreferredInputDevicesChangeCallback(
+        audioRoutingManager, sourceType, callback);
+    LOG("RegisterPreferredInputDevicesChangeCallback with invalid sourceType result: %{public}d", ret);
+    napi_value res;
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0400(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioRoutingManager *audioRoutingManager = nullptr;
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_MIC;
+    OH_AudioRoutingManager_OnPreferredInputDeviceChangedCallback callback = nullptr;
+    OH_AudioCommon_Result ret = OH_AudioRoutingManager_RegisterPreferredInputDevicesChangeCallback(
+        audioRoutingManager, sourceType, callback);
+    LOG("RegisterPreferredInputDevicesChangeCallback with both nullptr result: %{public}d", ret);
+    napi_value res;
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
+    if (audioRoutingManager == nullptr) {
+        LOG("audioRoutingManager is nullptr");
+        return CreateNapiResult(env, TEST_FAIL);
+    }
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_MIC;
+    OH_AudioRoutingManager_OnPreferredInputDeviceChangedCallback callback =
+        PreferredInputDeviceChangedCallback;
+    OH_AudioCommon_Result ret = OH_AudioRoutingManager_RegisterPreferredInputDevicesChangeCallback(
+        audioRoutingManager, sourceType, callback);
+    if (ret == AUDIOCOMMON_RESULT_SUCCESS) {
+        ret = OH_AudioRoutingManager_UnregisterPreferredInputDevicesChangeCallback(
+            audioRoutingManager, callback);
+        LOG("UnregisterPreferredInputDevicesChangeCallback result: %{public}d", ret);
+        napi_value res;
+        if (ret == AUDIOCOMMON_RESULT_SUCCESS) {
+            napi_create_int32(env, TEST_PASS, &res);
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+        }
+        return res;
+    }
+    return CreateNapiResult(env, TEST_FAIL);
+}
+
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioRoutingManager *audioRoutingManager = nullptr;
+    OH_AudioRoutingManager_OnPreferredInputDeviceChangedCallback callback =
+        PreferredInputDeviceChangedCallback;
+    OH_AudioCommon_Result ret = OH_AudioRoutingManager_UnregisterPreferredInputDevicesChangeCallback(
+        audioRoutingManager, callback);
+    LOG("UnregisterPreferredInputDevicesChangeCallback with nullptr manager result: %{public}d", ret);
+    napi_value res;
+    if (ret == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
+    if (audioRoutingManager == nullptr) {
+        LOG("audioRoutingManager is nullptr");
+        return CreateNapiResult(env, TEST_FAIL);
+    }
+    OH_AudioStream_Usage streamUsage = AUDIOSTREAM_USAGE_MUSIC;
+    OH_AudioRoutingManager_OnPreferredOutputDeviceChangedCallback callback =
+        PreferredOutputDeviceChangedCallbackTest;
+    OH_AudioCommon_Result ret1 = OH_AudioRoutingManager_RegisterPreferredOutputDevicesChangeCallback(
+        audioRoutingManager, streamUsage, callback);
+    LOG("Register result: %{public}d", ret1);
+    if (ret1 == AUDIOCOMMON_RESULT_SUCCESS) {
+        OH_AudioCommon_Result ret2 = OH_AudioRoutingManager_UnregisterPreferredOutputDevicesChangeCallback(
+            audioRoutingManager, callback);
+        LOG("Unregister result: %{public}d", ret2);
+        napi_value res;
+        if (ret2 == AUDIOCOMMON_RESULT_SUCCESS) {
+            napi_create_int32(env, TEST_PASS, &res);
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+        }
+        return res;
+    }
+    return CreateNapiResult(env, TEST_FAIL);
+}
+
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_0200(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
+    if (audioRoutingManager == nullptr) {
+        LOG("audioRoutingManager is nullptr");
+        return CreateNapiResult(env, TEST_FAIL);
+    }
+    OH_AudioRoutingManager_OnPreferredOutputDeviceChangedCallback callback =
+        PreferredOutputDeviceChangedCallbackTest;
+    OH_AudioCommon_Result ret1 = OH_AudioRoutingManager_UnregisterPreferredOutputDevicesChangeCallback(
+        audioRoutingManager, callback);
+    LOG("Unregister unregistered callback result: %{public}d", ret1);
+    napi_value res;
+    if (ret1 == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+}
+
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_0100(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
+    if (audioRoutingManager == nullptr) {
+        LOG("audioRoutingManager is nullptr");
+        return CreateNapiResult(env, TEST_FAIL);
+    }
+    OH_AudioStream_SourceType sourceType = AUDIOSTREAM_SOURCE_TYPE_MIC;
+    OH_AudioRoutingManager_OnPreferredInputDeviceChangedCallback callback =
+        PreferredInputDeviceChangedCallbackTest;
+    OH_AudioCommon_Result ret1 = OH_AudioRoutingManager_RegisterPreferredInputDevicesChangeCallback(
+        audioRoutingManager, sourceType, callback);
+    LOG("Register result: %{public}d", ret1);
+    if (ret1 == AUDIOCOMMON_RESULT_SUCCESS) {
+        OH_AudioCommon_Result ret2 = OH_AudioRoutingManager_UnregisterPreferredInputDevicesChangeCallback(
+            audioRoutingManager, callback);
+        LOG("Unregister result: %{public}d", ret2);
+        napi_value res;
+        if (ret2 == AUDIOCOMMON_RESULT_SUCCESS) {
+            napi_create_int32(env, TEST_PASS, &res);
+        } else {
+            napi_create_int32(env, TEST_FAIL, &res);
+        }
+        return res;
+    }
+    return CreateNapiResult(env, TEST_FAIL);
+}
+
+static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_0200(
+    napi_env env, napi_callback_info info)
+{
+    OH_AudioRoutingManager *audioRoutingManager = GetAudioRoutingManager();
+    if (audioRoutingManager == nullptr) {
+        LOG("audioRoutingManager is nullptr");
+        return CreateNapiResult(env, TEST_FAIL);
+    }
+    OH_AudioRoutingManager_OnPreferredInputDeviceChangedCallback callback =
+        PreferredInputDeviceChangedCallbackTest;
+    OH_AudioCommon_Result ret1 = OH_AudioRoutingManager_UnregisterPreferredInputDevicesChangeCallback(
+        audioRoutingManager, callback);
+    LOG("Unregister unregistered callback result: %{public}d", ret1);
+    napi_value res;
+    if (ret1 == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+    } else {
+        napi_create_int32(env, TEST_FAIL, &res);
+    }
+    return res;
+} 
 
 EXTERN_C_START
 napi_property_descriptor desc1[] = {
+    {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0100", nullptr,
+        SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0200", nullptr,
+        SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_0200, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0100", nullptr,
+        SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0100, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0200", nullptr,
+        SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0200, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0300", nullptr,
+        SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0300, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0400", nullptr,
+        SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_ERROR_0400, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_0100", nullptr,
+        SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_0100", nullptr,
+        SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_UNREGISTER_ERROR_0100, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_0100", nullptr,
+        SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_0200", nullptr,
+        SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_0200, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0100", nullptr,
+        SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0100, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0200", nullptr,
+        SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0200, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0300", nullptr,
+        SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0300, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0400", nullptr,
+        SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_ERROR_0400, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_0100", nullptr,
+        SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_0100", nullptr,
+        SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_UNREGISTER_ERROR_0100, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_0100", nullptr,
+        SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_0100, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_0200", nullptr,
+        SUB_AUDIO_ROUTING_MANAGER_PREFERRED_OUTPUT_REGISTER_UNREGISTER_0200, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_0100", nullptr,
+        SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_0100, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_0200", nullptr,
+        SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_0200, nullptr, nullptr, nullptr, napi_default,
+        nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+ 	{"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0200, nullptr, nullptr, nullptr, napi_default, nullptr},
+ 	{"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0300", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0300, nullptr, nullptr, nullptr, napi_default, nullptr},
+ 	{"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0400", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETMUTEHINT_0400, nullptr, nullptr, nullptr, napi_default, nullptr},
+ 	{"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+ 	{"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0200, nullptr, nullptr, nullptr, napi_default, nullptr},
+ 	{"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0300", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0300, nullptr, nullptr, nullptr, napi_default, nullptr},
+ 	{"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0400", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURER_SETCAPTURERMUTEHINT_0400, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"AudioSuiteRendererGetLatency_0100", nullptr, AudioSuiteRendererGetLatency_0100,
     nullptr, nullptr, nullptr, napi_default, nullptr},
     {"AudioSuiteRendererGetLatency_0200", nullptr, AudioSuiteRendererGetLatency_0200,
@@ -10433,6 +11355,22 @@ napi_property_descriptor desc3[] = {
         AudioSessionManager_SetBehavior_003, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"AudioSessionManager_SetBehavior_004", nullptr,
         AudioSessionManager_SetBehavior_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERENUM_0300", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERENUM_0300, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0200, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0300", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0300, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0400", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTURERVOICE_0400, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERVOICE_0500", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERVOICE_0500, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOCAPTUREVOICEREAPTED_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOCAPTUREVOICEREAPTED_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ADUIOSESSIONMANAGERVOICEREAPTED_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ADUIOSESSIONMANAGERVOICEREAPTED_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 static napi_value Init(napi_env env, napi_value exports)
 {

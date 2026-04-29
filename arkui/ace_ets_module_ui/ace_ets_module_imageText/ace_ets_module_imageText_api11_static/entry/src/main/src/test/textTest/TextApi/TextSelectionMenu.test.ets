@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -78,8 +78,8 @@ export default function TextSelectionMenu() {
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let text3 = CommonFunc.getComponentRectOnScreen('Text_bindSelectionMenu_test')
-      let x: int = Math.floor(((text3.right-text3.left)*0.5+text3.left)) as int
-      let y: int = Math.floor(((text3.bottom-text3.top)*0.5+text3.top)) as int
+      let x: int = Math.floor(((text3.right-text3.left)*0.5+text3.left)).toInt()
+      let y: int = Math.floor(((text3.bottom-text3.top)*0.5+text3.top)).toInt()
       await driver.mouseClick({ x: x, y: y}, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
 
@@ -108,8 +108,8 @@ export default function TextSelectionMenu() {
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let test4 = CommonFunc.getComponentRectOnScreen('text_TextResponseType')
-      let x: int = Math.floor((test4.right-test4.left)*0.2+test4.left) as int
-      let y: int = Math.floor((test4.bottom-test4.top)*0.5+test4.top) as int
+      let x: int = Math.floor((test4.right-test4.left)*0.2+test4.left).toInt()
+      let y: int = Math.floor((test4.bottom-test4.top)*0.5+test4.top).toInt()
       await driver.longClick(x, y)
       await CommonFunc.sleep(2000);
 

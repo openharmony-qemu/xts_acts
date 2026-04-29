@@ -361,7 +361,6 @@ export default function abilityTest() {
       }
       console.log(`[${caseName}]: end`)
     })
-
   })
 }
 

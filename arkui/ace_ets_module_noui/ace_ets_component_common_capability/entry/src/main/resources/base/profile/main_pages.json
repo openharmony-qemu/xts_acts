@@ -20,6 +20,7 @@
     "MainAbility/pages/nullandundefinedcoverage/ComponentObserver/ComponentObserverTest",
     "MainAbility/pages/nullandundefinedcoverage/UIInspector/UIInspectorNullUndefined",
     "MainAbility/pages/nullandundefinedcoverage/inspector/InspectorCreateComponentObserverNullUndefined",
-    "MainAbility/pages/EmbeddedComponent/EmbeddedComponentTerminationInfo"
+    "MainAbility/pages/EmbeddedComponent/EmbeddedComponentTerminationInfo",
+    "MainAbility/pages/UIContext/UIContextTest"
   ]
 }

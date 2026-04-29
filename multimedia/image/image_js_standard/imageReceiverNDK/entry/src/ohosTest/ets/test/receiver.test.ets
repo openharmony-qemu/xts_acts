@@ -1726,6 +1726,7 @@ export default function ImageReceiverTest() {
             const myData = getUserData(CALLBACK_FUC_01, 888, "on image arrive", false);
             expect(arriveOnNdkTest.imageArriveOn(receiverPhoto, myData) == IMAGE_SUCCESS).assertTrue();
             expect(arriveOnNdkTest.imageReceiverTest(receiverPhoto, CAMERA_FORMAT_JPEG, TEST_TYPE_PHOTO, receiverPreview) == IMAGE_SUCCESS).assertTrue();
+            await sleep(2000);
             const result = arriveOnNdkTest.waitForCondition(myData.callBackId, myData.num, 0);
             expect(arriveOnNdkTest.imageArriveOff(receiverPhoto, CALLBACK_FUC_DE) == IMAGE_SUCCESS).assertTrue();
             arriveOnNdkTest.releaseImageReceiver(receiverPhoto);

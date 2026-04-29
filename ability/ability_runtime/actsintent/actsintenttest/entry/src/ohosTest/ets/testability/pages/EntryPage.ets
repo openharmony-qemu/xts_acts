@@ -15,7 +15,43 @@
 
 import hilog from '@ohos.hilog';
 import { EntryIntentDecoratorInfo, InsightIntentEntry } from '@ohos.app.ability.InsightIntentDecorator';
-import { insightIntent, InsightIntentEntryExecutor } from '@kit.AbilityKit';
+import { insightIntent, InsightIntentEntryExecutor, InsightIntentEntity } from '@kit.AbilityKit';
+
+@InsightIntentEntity({
+  entityCategory: 'artist entity category',
+  parameters: {
+    '$schema': '',
+    '$id': '/schemas/ArtistClassDef',
+    'type': 'object',
+    'description': 'Information about the artist',
+    'properties': {
+      'country': {
+        'type': 'string',
+        'description': 'The artist\'s country of origin',
+        'default': 'zh'
+      },
+      'city': {
+        'type': 'string',
+        'description': 'The artist\'s city of origin'
+      },
+      'name': {
+        'type': 'string',
+        'description': 'The name of the artist',
+        'minLength': 1
+      }
+    }
+  },
+  supportedQueryProperties: ['name']
+})
+export class CustomAppIntentEntity extends insightIntent.AppIntentEntity<string> {
+  public entityId: string = 'id';
+  public displayName: string = 'displayName';
+  public name: string = '';
+
+  onQueryEntity(param: insightIntent.QueryEntityParam): Promise<Array<string>> {
+    return Promise.resolve(['']);
+  }
+}
 
 const validData: EntryIntentDecoratorInfo = {
   intentName: 'TestIntentNameEntry',
@@ -59,6 +95,7 @@ const validData2: EntryIntentDecoratorInfo = {
 export default class TestClass extends InsightIntentEntryExecutor<string>{
   public entityId: string = 'entityId'
   public songName: string = "123"
+  public customAppIntentEntity: CustomAppIntentEntity = new CustomAppIntentEntity();
 
   onExecute(): Promise<insightIntent.IntentResult<string>> {
     hilog.info(0x0000, 'PlayMusicDemo executeMode %{public}s', JSON.stringify(this.executeMode));
