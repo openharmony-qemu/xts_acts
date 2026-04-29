@@ -2795,7 +2795,7 @@ export default function SevenPointZeroI18nStageTest() {
         let CanonicalLocale: string = i18n.I18NUtil.convertCanonicalLocaleIdentifier(null);
         console.log('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_1200 value:', CanonicalLocale);
       } catch (e) {
-        console.log('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_1200 code&message:', CanonicalLocale);
+        console.log('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_1200 code&message:', e.code + e.message);
         expect(Number(e.code)).assertEqual(401);
       }
     })
@@ -2803,7 +2803,7 @@ export default function SevenPointZeroI18nStageTest() {
     /**
      * @tc.name SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_1300
      * @tc.number SUB_GLOBAL_I18N_ConvertCanonicalLocaleIdentifier_Test_1300
-     * @tc.desc test convertCanonicalLocaleIdentifier with null
+     * @tc.desc test convertCanonicalLocaleIdentifier with undefined
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL2
@@ -2813,7 +2813,7 @@ export default function SevenPointZeroI18nStageTest() {
         let CanonicalLocale: string = i18n.I18NUtil.convertCanonicalLocaleIdentifier(undefined);
         console.log('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_1300 value:', CanonicalLocale);
       } catch (e) {
-        console.log('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_1300 code&message:', CanonicalLocale);
+        console.log('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_1300 code&message:', e.code + e.message);
         expect(Number(e.code)).assertEqual(401);
       }
     })
