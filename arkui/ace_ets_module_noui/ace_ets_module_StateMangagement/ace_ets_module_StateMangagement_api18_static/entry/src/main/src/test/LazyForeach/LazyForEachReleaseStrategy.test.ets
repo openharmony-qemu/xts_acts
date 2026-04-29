@@ -105,7 +105,7 @@ export default function LazyForEachReleaseStrategyTest() {
       let strJson = inspector.getInspectorByKey('LazyForEach_Item_1');
       let obj= JSON.parseJsonElement(strJson);
       console.info("[SUB_ARKUI_API_LazyForEachReleaseStrategyTest_static_0200] component obj is: " + JSON.stringify(obj));
-      expect(LazyForEachReleaseStrategy.PROGRESSIVE).assertEqual(0);
+      expect(LazyForEachReleaseStrategy.BATCH).assertEqual(0);
       console.info('[SUB_ARKUI_API_LazyForEachReleaseStrategyTest_static_0200] END');
       done();
     });
