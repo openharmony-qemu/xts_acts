@@ -18,10 +18,8 @@ import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { Driver, ON } from '@kit.TestKit';
-
 const CAPABILITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-
 const EVENT_ID_SET_SUITE_KEY = 185001;
 let driver = Driver.create();
 let emitKey = ""
