@@ -49,7 +49,7 @@ export default function polygonJsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get Polygon state success " + JSON.stringify(pages));
-        if (!("polyLine" == pages.name)) {
+        if (!("polygon" == pages.name)) {
           console.info("get Polygon state success " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
          await UtilsTest.msSleep(2000);
@@ -70,11 +70,12 @@ export default function polygonJsunit() {
 it('testpolygon_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testpolygon_static_001 START');
       const uiContext = AppStorage.get<UIContext>('uiContent')!;
+      let driver = Driver.create();
 
       let strJsonNew = inspector.getInspectorByKey('polygon1');
       let objNew = JSON.parseJsonElement(strJsonNew);
 
-      console.info("testpolygon_static_001 objNew component  is: " + JSON.stringify(objNew.getElement('$attrs').getElement('points')));
+      console.info("testpolygon_static_001 objNew component is: " + JSON.stringifyJsonElement(objNew.getElement('$attrs').getElement('points')));
       expect(uiContext.px2vp(objNew.getElement('$attrs').getArray('points')[0][0].asDouble())).assertEqual(0);
       expect(uiContext.px2vp(objNew.getElement('$attrs').getArray('points')[0][1].asDouble())).assertEqual(0);
       expect(uiContext.px2vp(objNew.getElement('$attrs').getArray('points')[1][0].asDouble())).assertEqual(50);
@@ -82,35 +83,21 @@ it('testpolygon_static_001', Level.LEVEL0, async (done: () => void): Promise<voi
       expect(uiContext.px2vp(objNew.getElement('$attrs').getArray('points')[2][0].asDouble())).assertEqual(100);
       expect(uiContext.px2vp(objNew.getElement('$attrs').getArray('points')[2][1].asDouble())).assertEqual(0);
 
-      console.info('testpolygon_static_001 END');
-      done();
-    });
-
-    
-    
-    /**
-     * @tc.number   testpolygon_static_002
-     * @tc.name     testpolygon_static_002
-     * @tc.desc     testpolygon_static_002
-     * @tc.level    Level.LEVEL0
-     */
-it('testpolygon_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('testpolygon_static_002 START');
-      const uiContext = AppStorage.get<UIContext>('uiContent')!;
-      let driver = Driver.create();
       let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
       await button.click();
-     await UtilsTest.msSleep(2000)
-      let strJsonNew = inspector.getInspectorByKey('polygon1');
-      let objNew = JSON.parseJsonElement(strJsonNew);
-      console.info("testpolygon_static_002 objNew component  is: " + JSON.stringify(objNew.getElement('$attrs').getElement('points')));
-      expect(uiContext.px2vp(objNew.getElement('$attrs').getArray('points')[0][0].asDouble())).assertEqual(1);
-      expect(uiContext.px2vp(objNew.getElement('$attrs').getArray('points')[0][1].asDouble())).assertEqual(1);
-      expect(uiContext.px2vp(objNew.getElement('$attrs').getArray('points')[1][0].asDouble())).assertEqual(50);
-      expect(uiContext.px2vp(objNew.getElement('$attrs').getArray('points')[1][1].asDouble())).assertEqual(100);
-      expect(uiContext.px2vp(objNew.getElement('$attrs').getArray('points')[2][0].asDouble())).assertEqual(100);
-      expect(uiContext.px2vp(objNew.getElement('$attrs').getArray('points')[2][1].asDouble())).assertEqual(0);
-      console.info('testpolygon_static_002 END');
+      await UtilsTest.msSleep(2000)
+
+      let strJsonNew2 = inspector.getInspectorByKey('polygon1');
+      let objNew2 = JSON.parseJsonElement(strJsonNew2);
+      console.info("testpolygon_static_001 objNew2 component is: " + JSON.stringifyJsonElement(objNew2.getElement('$attrs').getElement('points')));
+      expect(uiContext.px2vp(objNew2.getElement('$attrs').getArray('points')[0][0].asDouble())).assertEqual(1);
+      expect(uiContext.px2vp(objNew2.getElement('$attrs').getArray('points')[0][1].asDouble())).assertEqual(1);
+      expect(uiContext.px2vp(objNew2.getElement('$attrs').getArray('points')[1][0].asDouble())).assertEqual(50);
+      expect(uiContext.px2vp(objNew2.getElement('$attrs').getArray('points')[1][1].asDouble())).assertEqual(100);
+      expect(uiContext.px2vp(objNew2.getElement('$attrs').getArray('points')[2][0].asDouble())).assertEqual(100);
+      expect(uiContext.px2vp(objNew2.getElement('$attrs').getArray('points')[2][1].asDouble())).assertEqual(0);
+
+      console.info('testpolygon_static_001 END');
       done();
     });
   })

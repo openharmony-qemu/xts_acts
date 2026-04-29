@@ -71,15 +71,15 @@ it('testpolyLineStaticStatic', Level.LEVEL0, async (done: () => void): Promise<v
       console.info('[testpolyLineStaticStatic] START');
       let strJson = inspector.getInspectorByKey('polyLine');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[testpolyLineStaticStatic] obj is : " + JSON.stringify(obj.getElement('$attrs').getElement('points')));
+      console.info("[testpolyLineStaticStatic] obj is : " + JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('points')));
 
       //原生数据
       let strJson1 = inspector.getInspectorByKey('polyLine1');
       let obj1 = JSON.parseJsonElement(strJson1);
-      console.info("[testpolyLineStaticStatic] obj is : " + JSON.stringify(obj1.getElement('$attrs').getElement('points')));
+      console.info("[testpolyLineStaticStatic] obj1 is : " + JSON.stringifyJsonElement(obj1.getElement('$attrs').getElement('points')));
 
       //与原生做对比
-      expect(JSON.stringify(obj.getElement('$attrs').getElement('points'))).assertEqual(JSON.stringify(obj1.getElement('$attrs').getElement('points')));
+      expect(JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('points'))).assertEqual(JSON.stringifyJsonElement(obj1.getElement('$attrs').getElement('points')));
 
       console.info('[testpolyLineStaticStatic] END');
       done();
@@ -106,9 +106,9 @@ it('testpolyLineStatic_001', Level.LEVEL0, async (done: () => void): Promise<voi
       let strJsonNew2 = inspector.getInspectorByKey('polyLine2'); //测试组件的key名称
       let objNew2 = JSON.parseJsonElement(strJsonNew2);
 
-      console.info("testpolyLineStatic_001 objNew component  is: " + JSON.stringify(objNew.getElement('$attrs').getElement('points')));
-      console.info("testpolyLineStatic_001 objNew2 component  is: " + JSON.stringify(objNew2.getElement('$attrs').getElement('points')));
-      expect(JSON.stringify(objNew.getElement('$attrs').getElement('points'))).assertEqual(JSON.stringify(objNew2.getElement('$attrs').getElement('points'))); //
+      console.info("testpolyLineStatic_001 objNew component  is: " + JSON.stringifyJsonElement(objNew.getElement('$attrs').getElement('points')));
+      console.info("testpolyLineStatic_001 objNew2 component  is: " + JSON.stringifyJsonElement(objNew2.getElement('$attrs').getElement('points')));
+      expect(JSON.stringifyJsonElement(objNew.getElement('$attrs').getElement('points'))).assertEqual(JSON.stringifyJsonElement(objNew2.getElement('$attrs').getElement('points'))); //
       console.info('testpolyLineStatic_001 END');
       done();
     });
