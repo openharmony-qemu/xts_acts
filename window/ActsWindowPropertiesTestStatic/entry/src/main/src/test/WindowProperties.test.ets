@@ -263,11 +263,98 @@ export default function WindowPropertiesTest() {
 
                 });
             } catch (exception) {
-                hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call setWindowPrivacyMode. Cause:' + JSON.stringify(exception));
-                expect(false).assertTrue();
-                done()
+            hilog.error(0x0000, '[ANI]',
+                msgStr + 'Failed to call setWindowPrivacyMode. Cause:' + JSON.stringify(exception));
+            expect(false).assertTrue();
+            done()
             }
         })
+
+        /**
+        * @tc.number      SUB_BASIC_WMS_IsWindowSupportWideGamut_Callback_static_0100
+        * @tc.name        testIsWindowSupportWideGamut_Callback_static_0100
+        * @tc.desc        Check whether the current window supports the wide color gamut mode
+        * @tc.size        MediumTest
+        * @tc.type        Function
+        * @tc.level       Level 3
+        */
+        it('testIsWindowSupportWideGamut_Callback_static_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testIsWindowSupportWideGamut_Callback_static_0100';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testIsWindowSupportWideGamut_Callback');
+            hilog.info(0x0000, '[ANI]', msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            try {
+            (win as window.Window).isWindowSupportWideGamut((err: BusinessError<void> | null,
+                data: Boolean | undefined): void => {
+                const errCode: number = err!.code;
+                if (errCode) {
+                hilog.error(0x0000, '[ANI]',
+                    msgStr + 'The device not support. Cause:' + JSON.stringify(err));
+                expect(err!.code).assertEqual(801)
+                done()
+                }
+                hilog.info(0x0000, '[ANI]',
+                msgStr + 'Succeeded in checking whether the window support WideGamut Data: ' + JSON.stringify(data));
+                if (data === true) {
+                expect(data).assertTrue();
+                } else {
+                expect(data).assertFalse();
+                }
+                done()
+            });
+            } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(0x0000, '[ANI]',
+                msgStr + 'The device not support. Cause: ' + JSON.stringify(exception));
+            expect(exception.code).assertEqual(801)
+            done()
+            }
+        })
+        /**
+        * @tc.number      SUB_BASIC_WMS_IsWindowSupportWideGamut_Promise_static_0100
+        * @tc.name        testIsWindowSupportWideGamut_Promise_static_0100
+        * @tc.desc        Check whether the current window supports the wide color gamut mode
+        * @tc.size        MediumTest
+        * @tc.type        Function
+        * @tc.level       Level 3
+        */
+        it('testIsWindowSupportWideGamut_Promise_static_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testIsWindowSupportWideGamut_Promise_static_0100';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testIsWindowSupportWideGamut_Promise');
+            hilog.info(0x0000, '[ANI]', msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            try {
+            await (win as window.Window).isWindowSupportWideGamut().then((data: boolean) => {
+                hilog.info(0x0000, '[ANI]',
+                msgStr + 'Succeeded in checking whether the window support WideGamut. Data: ' + JSON.stringify(data));
+                if (data === true) {
+                expect(data).assertTrue();
+                } else {
+                expect(data).assertFalse();
+                }
+                done();
+            }).catch((err: Error): PromiseLike<void> | undefined => {
+                hilog.error(0x0000, '[ANI]',
+                msgStr + 'The device not support. Cause: ' + JSON.stringify(err.code));
+                expect(err.code).assertEqual(801)
+                done();
+            });
+            } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(0x0000, '[ANI]', msgStr + 'The device not support. Cause: ' + JSON.stringify(exception.code));
+            expect(exception.code).assertEqual(801)
+            done();
+            }
+        })
+
         /**
          * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2910
          * @tc.name        testIsWindowSupportWideGamut_WindowStateAbnormal_Callback_static_0100
@@ -377,17 +464,57 @@ export default function WindowPropertiesTest() {
             }
         })
         /**
-         * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2950
-         * @tc.name        testSetWindowColorSpace_WindowStateAbnormal_Promise_static_0200
-         * @tc.desc        Set the current window to wide gamut mode or default gamut mode
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
-         */
-        it('testSetWindowColorSpace_WindowStateAbnormal_Promise_static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName : string = 'testSetWindowColorSpace_WindowStateAbnormal_Promise_static_0200';
-            let msgStr : string = 'jsunittest ' + caseName + ' ';
-            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+        * @tc.number      SUB_BASIC_WMS_SetWindowColorSpace_Callback_static_0100
+        * @tc.name        testSetWindowColorSpace_Callback_static_0100
+        * @tc.desc        Set the current window to wide gamut mode or default gamut mode
+        * @tc.size        MediumTest
+        * @tc.type        Function
+        * @tc.level       Level 3
+        */
+        it('testSetWindowColorSpace_Callback_static_0100',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testSetWindowColorSpace_Callback_static_0100';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testSetWindowColorSpace_Callback');
+            hilog.info(0x0000, '[ANI]', msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            try {
+            (win as window.Window).setWindowColorSpace(window.ColorSpace.DEFAULT,
+                (err: BusinessError<void> | null): void => {
+                const errCode: number = err!.code;
+                if (errCode) {
+                    hilog.error(0x0000, '[ANI]', msgStr + 'Failed to set window colorspace. Cause:' + JSON.stringify(err));
+                    expect(false).assertTrue();
+                    done()
+                    return;
+                }
+                hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in setting window colorspace.');
+                expect(window.ColorSpace.DEFAULT === 0).assertTrue();
+                done()
+                });
+            } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(0x0000, '[ANI]', msgStr + 'Failed to set window colorspace. Cause:' + JSON.stringify(exception));
+            expect(false).assertTrue();
+            done()
+            }
+        })
+
+        /**
+        * @tc.number      SUB_BASIC_WMS_setWindowColorSpace_1300002_Promise_static_0100
+        * @tc.name        testSetWindowColorSpace_WindowStateAbnormal_Promise_static_0200
+        * @tc.desc        Set the current window to wide gamut mode or default gamut mode
+        * @tc.size        MediumTest
+        * @tc.type        Function
+        * @tc.level       Level 3
+        */
+        it('testSetWindowColorSpace_WindowStateAbnormal_Promise_static_0200',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testSetWindowColorSpace_WindowStateAbnormal_Promise_static_0200';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin');
             let win: window.Window;
             win = await windowStage!.createSubWindow('testSetWindowColorSpace_WindowStateAbnormal_Promise');
             hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow success');
@@ -409,6 +536,42 @@ export default function WindowPropertiesTest() {
                 done();
             }
         })
+
+        /**
+        * @tc.number      SUB_BASIC_WMS_SetWindowColorSpace_Promise_static_0200
+        * @tc.name        testSetWindowColorSpace_Promise_static_0200
+        * @tc.desc        Set the current window to wide gamut mode or default gamut mode
+        * @tc.size        MediumTest
+        * @tc.type        Function
+        * @tc.level       Level 3
+        */
+        it('testSetWindowColorSpace_Promise_static_0200',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testSetWindowColorSpace_Promise_static_0200';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testSetWindowColorSpace_Promise');
+            hilog.info(0x0000, '[ANI]', msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            try {
+            await (win as window.Window).setWindowColorSpace(window.ColorSpace.WIDE_GAMUT).then(() => {
+                hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in setting window colorspace.');
+                expect(window.ColorSpace.WIDE_GAMUT === 1).assertTrue();
+                done();
+            }).catch((err: Error): PromiseLike<void> | undefined => {
+                hilog.error(0x0000, '[ANI]', msgStr + 'Failed to set window colorspace. Cause: ' + JSON.stringify(err));
+                expect(false).assertTrue();
+                done();
+            });
+            } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(0x0000, '[ANI]', msgStr + 'Failed to set window colorspace. Cause:' + JSON.stringify(exception));
+            expect(false).assertTrue();
+            done();
+            }
+        })
+
         /**
          * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2960
          * @tc.name        testSetWindowBackgroundColor_WindowStateAbnormal_static_0100
@@ -475,6 +638,48 @@ export default function WindowPropertiesTest() {
                 done();
             }
         })
+
+                /**
+        * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3011
+        * @tc.name        testSetWindowKeepScreenOn_WindowStateAbnormal_Callback_static_0101
+        * @tc.desc        Set whether the screen is steady on false
+        * @tc.size        MediumTest
+        * @tc.type        Function
+        * @tc.level       Level 3
+        */
+        it('testSetWindowKeepScreenOn_WindowStateAbnormal_Callback_static_0101',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testSetWindowKeepScreenOn_WindowStateAbnormal_Callback_static_0101';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+            let win: window.Window;
+            win = await windowStage!.createSubWindow('testSetWindowKeepScreenOn_WindowStateAbnormal_Callback_static_0101');
+            hilog.info(0x0000, '[ANI]', msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            await (win as window.Window).destroyWindow();
+            try {
+            (win as window.Window).setWindowKeepScreenOn(false, (err: BusinessError<void> | null): void => {
+                const errCode: number = err!.code;
+                if (errCode) {
+                hilog.error(0x0000, '[ANI]',
+                    msgStr + 'Failed to set the screen to be always on false. Cause:' + JSON.stringify(err));
+                expect(err!.code).assertEqual(1300002);
+                done()
+                return;
+                }
+                hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in setting the screen to be always on false');
+                expect(false).assertTrue();
+                done()
+            });
+            } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(0x0000, '[ANI]',
+                msgStr + 'Failed to set the screen to be always on false. Cause:' + JSON.stringify(exception));
+            expect(exception.code).assertEqual(1300002);
+            done();
+            }
+        })
+
         /**
          * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1740
          * @tc.name        testSetWindowKeepScreenOn_Window_State_Abnorma_static_0200
@@ -493,65 +698,124 @@ export default function WindowPropertiesTest() {
             expect(!!windowClass).assertTrue();
             await (windowClass as window.Window).destroyWindow();
             try {
-                (windowClass as window.Window).setWindowKeepScreenOn(true).then(() => {
-                    hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in setting the screen to be always on.');
-                    expect(false).assertTrue();
-                    done();
-                }).catch((err: Error):PromiseLike<void>|undefined => {
-                    hilog.info(0x0000, '[ANI]',msgStr + 'Failed to set the screen to be always on. Cause:  ' + JSON.stringify(err));
-                    expect(err.code).assertEqual(1300002);
-                    done();
-                });
+            (windowClass as window.Window).setWindowKeepScreenOn(false).then(() => {
+                hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in setting the screen to be always on.');
+                expect(false).assertTrue();
+                done();
+            }).catch((err: Error): PromiseLike<void> | undefined => {
+                hilog.info(0x0000, '[ANI]',
+                msgStr + 'Failed to set the screen to be always on. Cause:  ' + JSON.stringify(err));
+                expect(err.code).assertEqual(1300002);
+                done();
+            });
+            } catch (exception) {
+            hilog.error(0x0000, '[ANI]',
+                msgStr + 'Failed to set the screen to be always on. catch Cause: ' + JSON.stringify(exception));
+            expect(false).assertTrue();
+            done();
+            }
+        })
+
+                /**
+        * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1741
+        * @tc.name        testSetWindowKeepScreenOn_Window_State_Abnorma_static_0201
+        * @tc.desc        Set whether the screen is steady on
+        * @tc.size        MediumTest
+        * @tc.type        Function
+        * @tc.level       Level4
+        */
+        it('testSetWindowKeepScreenOn_Window_State_Abnorma_static_0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4,
+        async (done: () => void): Promise<void> => {
+            let caseName: string = 'testSetWindowKeepScreenOn_Window_State_Abnorma_static_0201';
+            let msgStr: string = 'jsUnittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+            let windowClass: window.Window;
+            windowClass = await windowStage!.createSubWindow('testSetWindowKeepScreenOn_Window_State_Abnormalx');
+            hilog.info(0x0000, '[ANI]', msgStr + 'windowStage.createSubWindow success');
+            expect(!!windowClass).assertTrue();
+            await (windowClass as window.Window).destroyWindow();
+            try {
+            (windowClass as window.Window).setWindowKeepScreenOn(true).then(() => {
+                hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in setting the screen to be always on.');
+                expect(false).assertTrue();
+                done();
+            }).catch((err: Error): PromiseLike<void> | undefined => {
+                hilog.info(0x0000, '[ANI]',
+                msgStr + 'Failed to set the screen to be always on. Cause:  ' + JSON.stringify(err));
+                expect(err.code).assertEqual(1300002);
+                done();
+            });
             } catch (exception) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the screen to be always on. catch Cause: ' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done();
             }
         })
-/**
-         * @tc.number      SUB_BASIC_WMS_GET_WINDOW_PROPERTIES_0100
-         * @tc.name        test_getWindowProperties_mainWindow_static_0100
-         * @tc.desc        test_getWindowProperties_mainWindow_static_0100
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
-         */
-        it('test_getWindowProperties_mainWindow_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+
+        /**
+        * @tc.number      SUB_BASIC_WMS_GET_WINDOW_PROPERTIES_0100
+        * @tc.name        test_getWindowProperties_mainWindow_static_0100
+        * @tc.desc        test_getWindowProperties_mainWindow_static_0100
+        * @tc.size        MediumTest
+        * @tc.type        Function
+        * @tc.level       Level 3
+        */
+        it('test_getWindowProperties_mainWindow_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+        async (done: () => void): Promise<void> => {
             let caseName: string = 'test_getWindowProperties_mainWindow_static_0100';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
-            hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin');
             try {
-                let mainWindow : window.Window= windowStage!.getMainWindowSync();
-                await Utils.msSleep(300);
-                let properties:window.WindowProperties = mainWindow.getWindowProperties();
-                hilog.info(0x0000, '[ANI]',`${caseName} :Succeeded in ogetWindowProperties info. Data: ` + JSON.stringify(properties));
-                expect(properties.windowRect.left).assertLargerOrEqual(0);
-                expect(properties.windowRect.top).assertLargerOrEqual(0);
-                expect(properties.windowRect.width).assertLarger(0);
-                expect(properties.windowRect.height).assertLarger(0);
-                expect(properties.drawableRect.left).assertLargerOrEqual(0);
-                expect(properties.drawableRect.top).assertLargerOrEqual(0);
-                expect(properties.drawableRect.width).assertLarger(0);
-                expect(properties.drawableRect.height).assertLarger(0);
-                expect(properties.isLayoutFullScreen).assertEqual(false);
-                expect(properties.focusable).assertEqual(true);
-                expect(properties.touchable).assertEqual(true);
-                expect(properties.brightness).assertEqual(-1);
-                expect(properties.isKeepScreenOn).assertEqual(false);
-                expect(properties.isPrivacyMode).assertEqual(false);
-                expect(properties.isTransparent).assertEqual(false);
-                expect(properties.isFullScreen).assertEqual(false);
-                expect(properties.id).assertLarger(0);
-                expect(properties.displayId).assertLargerOrEqual(0);
-                expect(properties.name !== null ).assertTrue();
-                // expect(properties.dimBehindValue !== null ).assertTrue();
-                // expect(properties.isRoundCorner !== null ).assertTrue();
-                expect(properties.type !== null ).assertTrue();
-                done();
-            } catch (err) {
-                hilog.error(0x0000, '[ANI]',`${caseName} :Failed . Cause code: ${err.code}, message: ${err.message}`);
+            let mainWindow: window.Window = windowStage!.getMainWindowSync();
+            await Utils.msSleep(300);
+            let properties: window.WindowProperties = mainWindow.getWindowProperties();
+            hilog.info(0x0000, '[ANI]',
+                `${caseName} :Succeeded in ogetWindowProperties info. Data: ` + JSON.stringify(properties));
+            expect(properties.windowRect.left).assertLargerOrEqual(0);
+            expect(properties.windowRect.top).assertLargerOrEqual(0);
+            expect(properties.windowRect.width).assertLarger(0);
+            expect(properties.windowRect.height).assertLarger(0);
+            expect(properties.drawableRect.left).assertLargerOrEqual(0);
+            expect(properties.drawableRect.top).assertLargerOrEqual(0);
+            expect(properties.drawableRect.width).assertLarger(0);
+            expect(properties.drawableRect.height).assertLarger(0);
+            expect(properties.globalDisplayRect!.left).assertLargerOrEqual(0);
+            expect(properties.globalDisplayRect!.top).assertLargerOrEqual(0);
+            expect(properties.globalDisplayRect!.width).assertLarger(0);
+            expect(properties.globalDisplayRect!.height).assertLarger(0);
+            expect(properties.isLayoutFullScreen).assertEqual(false);
+            expect(properties.isLayoutFullScreen !== true).assertTrue();
+            expect(properties.focusable).assertEqual(true);
+            expect(properties.focusable !== false).assertTrue();
+            expect(properties.touchable).assertEqual(true);
+            expect(properties.touchable !== false).assertTrue();
+            expect(properties.brightness).assertEqual(-1);
+            expect(properties.isKeepScreenOn).assertEqual(false);
+            expect(properties.isKeepScreenOn !== true).assertTrue();
+            expect(properties.isPrivacyMode).assertEqual(false);
+            expect(properties.isPrivacyMode !== true).assertTrue();
+            expect(properties.isTransparent).assertEqual(false);
+            expect(properties.isTransparent !== true).assertTrue();
+            expect(properties.isFullScreen).assertEqual(false);
+            expect(properties.isFullScreen !== true).assertTrue();
+            expect(properties.id).assertLarger(0);
+            expect(properties.displayId).assertLargerOrEqual(0);
+            expect(properties.name !== null).assertTrue();
+            expect(properties.type !== null).assertTrue();
+            if (properties.type === window.WindowType.TYPE_FLOAT) {
+                expect(8).assertEqual(window.WindowType.TYPE_FLOAT);
+            } else if (properties.type === window.WindowType.TYPE_DIALOG) {
+                expect(16).assertEqual(window.WindowType.TYPE_DIALOG);
+            } else if (properties.type === window.WindowType.TYPE_MAIN) {
+                expect(32).assertEqual(window.WindowType.TYPE_MAIN);
+            } else {
                 expect(false).assertTrue();
-                done();
+            }
+            done();
+            } catch (err) {
+            hilog.error(0x0000, '[ANI]', `${caseName} :Failed . Cause code: ${err.code}, message: ${err.message}`);
+            expect(false).assertTrue();
+            done();
 
             }
 
@@ -627,6 +891,46 @@ export default function WindowPropertiesTest() {
             }
         })
 
+        /**
+        * @tc.number       testOffDisplayIdChangeErrCode1300002_static_0200
+        * @tc.name         testOffDisplayIdChangeErrCode1300002_static_0200
+        * @tc.desc         testOffDisplayIdChangeErrCode1300002_static_0200
+        * @tc.size         MediumTest
+        * @tc.type         Function
+        * @tc.level        Level 3
+        */
+        it('testOffDisplayIdChangeErrCode1300002_static_0200', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = "testOffDisplayIdChangeErrCode1300002_static_0200";
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+            try {
+                let tempWnd: window.Window =
+                await windowStage!.createSubWindow('testOffDisplayIdChangeErrCode1300002_static_0200')
+                hilog.info(domain, tag, msgStr + 'windowStage.createSubWindow success');
+                await Utils.msSleep(300);
+                expect(!!tempWnd).assertTrue();
+                await tempWnd.destroyWindow();
+                hilog.info(domain, tag, msgStr + 'window.destroy success');
+                tempWnd.offDisplayIdChange();
+                hilog.info(domain, tag, msgStr + 'window.on_keyboardDidHide success');
+                expect(false).assertTrue();
+                done()
+            } catch (exception) {
+                exception = exception as BusinessError;
+                hilog.error(0x0000, '[ANI]', msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+                expect(exception.code === 1300002 || exception.code === 801).assertTrue();
+                if (exception.code !== 801) {
+                hilog.error(0x0000, '[ANI]',
+                    msgStr + 'Failed to enable the listener for keyboard show. Cause code:' + JSON.stringify(exception));
+                expect(exception.code).assertEqual(1300002);
+                } else {
+                hilog.error(0x0000, '[ANI]',
+                    msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
+                expect(exception.code).assertEqual(801);
+                }
+                done()
+            }
+        })
 
         /**
          * @tc.number       testOffDisplayIdChangeErrCode1300002_0100
@@ -872,9 +1176,15 @@ export default function WindowPropertiesTest() {
             try {
                 hilog.info(0x0000, '[ANI]', msgStr + 'try begin.');
                 let windowClass:window.Window = await windowStage!.getMainWindow();
-                windowClass.onWindowVisibilityChange((flag:boolean) => {
-                    hilog.info(0x0000, '[ANI]',msgStr + 'Window visibility changed, isVisible=' + flag);
-                });
+                const callback = (flag: boolean) => {
+                    hilog.info(0x0000, '[ANI]', msgStr + 'Window visibility changed, isVisible=' + flag);
+                    if (flag === true) {
+                    expect(flag).assertTrue();
+                    } else {
+                    expect(flag).assertFalse();
+                    }
+                }
+                windowClass.onWindowVisibilityChange(callback);
                 windowClass.offWindowVisibilityChange();
                 done();
             } catch (error) {
@@ -904,11 +1214,19 @@ export default function WindowPropertiesTest() {
             let msgStr:string = "testWindowVisibilityChange_off_Function_Callback_static_0200";
             hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
             try {
-                hilog.info(0x0000, '[ANI]', msgStr + 'try begin.');
-                let windowClass:window.Window = await windowStage!.getMainWindow();
-                windowClass.offWindowVisibilityChange();
-                hilog.info(0x0000, '[ANI]', msgStr + 'Window visibility changed');
-                done();
+            hilog.info(0x0000, '[ANI]', msgStr + 'try begin.');
+            let windowClass: window.Window = await windowStage!.getMainWindow();
+            const callback = (flag: boolean) => {
+                hilog.info(0x0000, '[ANI]', msgStr + 'Window visibility changed, isVisible=' + flag);
+                if (flag === true) {
+                expect(flag).assertTrue();
+                } else {
+                expect(flag).assertFalse();
+                }
+            }
+            windowClass.offWindowVisibilityChange(callback);
+            hilog.info(0x0000, '[ANI]', msgStr + 'Window off visibility listening');
+            done();
             } catch (error) {
                 error = error as BusinessError;
                 hilog.info(0x0000, '[ANI]', msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(error));
@@ -1243,6 +1561,43 @@ export default function WindowPropertiesTest() {
             }
         })
 
+        /**
+        * @tc.number       testGetWindowStateSnapshotPromiseErrCode1300002_0100
+        * @tc.name         testGetWindowStateSnapshotPromiseErrCode1300002_0100
+        * @tc.desc         testGetWindowStateSnapshotPromiseErrCode1300002_0100
+        * @tc.size         MediumTest
+        * @tc.type         Function
+        * @tc.level        Level 3
+        */
+        it('testGetWindowStateSnapshotPromiseErrCode1300002_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName: string = "testGetWindowStateSnapshotPromiseErrCode1300002_0100";
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+        try {
+            let tempWnd: window.Window = await windowStage!.createSubWindow('testGetWindowStateSnapshotPromiseErrCode1300002_0100')
+            hilog.info(domain, tag, msgStr + 'windowStage.createSubWindow success');
+            await Utils.msSleep(300);
+            expect(!!tempWnd).assertTrue();
+            await tempWnd.destroyWindow();
+            hilog.info(domain, tag, msgStr + 'window.destroy success');
+            await tempWnd.getWindowStateSnapshot();
+            hilog.info(domain, tag, msgStr + 'window after getWindowStateSnapshot');
+            expect(false).assertTrue();
+            done();
+        } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(0x0000, '[ANI]', msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+            if (exception.code !== 801) {
+            hilog.error(0x0000, '[ANI]', msgStr + 'Failed to getWindowStateSnapshot. Cause code:' + JSON.stringify(exception));
+            expect(exception.code).assertEqual(1300002);
+            } else {
+            hilog.error(0x0000, '[ANI]',
+                msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
+            expect(exception.code).assertEqual(801);
+            }
+            done()
+        }
+        })
 
         /**
          * @tc.number       testSnapshotPromiseErrCode1300002_0100
@@ -1543,24 +1898,31 @@ export default function WindowPropertiesTest() {
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(domain, tag,msgStr + 'begin');
             try {
-                let mainWindow:window.Window = windowStage!.getMainWindowSync();
-                let displayId:Long  = display.getDefaultDisplaySync().id;
-                let promise = window.getAllWindowLayoutInfo(displayId)
-                promise.then((data:Array<window.WindowLayoutInfo>) => {
-                    hilog.info(domain, tag,`${caseName} :Succeeded in obtaining all window layout info. Data: ` + JSON.stringify(data));
-                    hilog.info(domain, tag,`${caseName} :Succeeded in obtaining all window layout info. Data windowRect: ` + JSON.stringify(data[0].windowRect));
-                    expect(data.length).assertLargerOrEqual(1);
-                    done();
-                }).catch((err: Error):PromiseLike<void>|undefined => {
-                    hilog.error(domain, tag,`${caseName} :Failed to obtain all window layout info. Cause code: ${err.code}, message: ${err.message}`);
-                    if(err.code === 801){
-                        expect(err.message!==null).assertTrue();
-                        done();
-                    }else {
-                        expect(false).assertTrue();
-                        done();
-                    }
-                });
+            let mainWindow: window.Window = windowStage!.getMainWindowSync();
+            let displayId: Long = display.getDefaultDisplaySync().id;
+            let promise = window.getAllWindowLayoutInfo(displayId)
+            promise.then((data: Array<window.WindowLayoutInfo>) => {
+                hilog.info(domain, tag,
+                `${caseName} :Succeeded in obtaining all window layout info. Data: ` + JSON.stringify(data));
+                hilog.info(domain, tag, `${caseName} :Succeeded in obtaining all window layout info. Data windowRect: ` +
+                JSON.stringify(data[0].windowRect));
+                expect(data[0].windowRect.left).assertLargerOrEqual(0);
+                expect(data[0].windowRect.top).assertLargerOrEqual(0);
+                expect(data[0].windowRect.width).assertLarger(0);
+                expect(data[0].windowRect.height).assertLarger(0);
+                expect(data.length).assertLargerOrEqual(1);
+                done();
+            }).catch((err: Error): PromiseLike<void> | undefined => {
+                hilog.error(domain, tag,
+                `${caseName} :Failed to obtain all window layout info. Cause code: ${err.code}, message: ${err.message}`);
+                if (err.code === 801) {
+                expect(err.message !== null).assertTrue();
+                done();
+                } else {
+                expect(false).assertTrue();
+                done();
+                }
+            });
             } catch (err) {
                 err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} :Failed . Cause code: ${err.code}, message: ${err.message}`);
@@ -1981,17 +2343,68 @@ export default function WindowPropertiesTest() {
             });
         })
         /**
-         * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2930
-         * @tc.name       testGetWindowColorSpace_WindowStateAbnormal_static
-         * @tc.desc       Gets the current window gamut mode
-         * @tc.size       MediumTest
-         * @tc.type       Function
-         * @tc.level      Level 3
-         */
-        it('testGetWindowColorSpace_WindowStateAbnormal_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName:string = 'testGetWindowColorSpace_WindowStateAbnormal_static';
-            let msgStr:string = 'jsunittest ' + caseName + ' ';
-            hilog.info(domain, tag,msgStr + 'begin');
+        * @tc.number     SUB_BASIC_WMS_GetWindowColorSpace_STATIC_0100
+        * @tc.name       testGetWindowColorSpace_static
+        * @tc.desc       Gets the current window gamut mode
+        * @tc.size       MediumTest
+        * @tc.type       Function
+        * @tc.level      Level 3
+        */
+        it('testGetWindowColorSpace_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+        async (done: () => void): Promise<void> => {
+            let caseName: string = 'testGetWindowColorSpace_static';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag, msgStr + 'begin');
+            let win: window.Window = await windowStage!.createSubWindow('testGetWindowColorSpace');
+            hilog.info(domain, tag, msgStr + 'windowStage.createSubWindow success');
+            expect(!!win).assertTrue();
+            try {
+            await (win as window.Window).setWindowColorSpace(window.ColorSpace.WIDE_GAMUT).then(() => {
+                hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in setting window colorspace WIDE_GAMUT.');
+                let colorSpace = win.getWindowColorSpace();
+                expect(colorSpace === window.ColorSpace.WIDE_GAMUT).assertTrue();
+                done();
+            }).catch((err: Error): PromiseLike<void> | undefined => {
+                hilog.error(0x0000, '[ANI]', msgStr + 'Failed to set window colorspace. Cause: ' + JSON.stringify(err));
+                expect(false).assertTrue();
+                done();
+            });
+
+            await Utils.msSleep(2000);
+
+            await (win as window.Window).setWindowColorSpace(window.ColorSpace.DEFAULT).then(() => {
+                hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in setting window colorspace DEFAULT.');
+                let colorSpace = win.getWindowColorSpace();
+                expect(colorSpace === window.ColorSpace.DEFAULT).assertTrue();
+                done();
+            }).catch((err: Error): PromiseLike<void> | undefined => {
+                hilog.error(0x0000, '[ANI]', msgStr + 'Failed to set window colorspace. Cause: ' + JSON.stringify(err));
+                expect(false).assertTrue();
+                done();
+            });
+
+            } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(domain, tag, msgStr + 'Failed to load the content. Cause: ' + JSON.stringify(exception));
+            expect(false).assertTrue();
+            done();
+            }
+        })
+
+
+        /**
+        * @tc.number     SUB_BASIC_WMS_GetWindowColorSpace_WindowStateAbnormal_STATIC_0100
+        * @tc.name       testGetWindowColorSpace_WindowStateAbnormal_static
+        * @tc.desc       Gets the current window gamut mode
+        * @tc.size       MediumTest
+        * @tc.type       Function
+        * @tc.level      Level 3
+        */
+        it('testGetWindowColorSpace_WindowStateAbnormal_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+        async (done: () => void): Promise<void> => {
+            let caseName: string = 'testGetWindowColorSpace_WindowStateAbnormal_static';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag, msgStr + 'begin');
             let win: window.Window = await windowStage!.createSubWindow('testGetWindowColorSpace_WindowStateAbnormal');
             hilog.info(domain, tag,msgStr + 'windowStage.createSubWindow success');
             expect(!!win).assertTrue();
@@ -2972,6 +3385,79 @@ export default function WindowPropertiesTest() {
             }
 
         })
+
+        /**
+        * @tc.number     SUB_BASIC_WMS_OnFrameMetricsMeasured_ERRORCODE_1300002_static_0100
+        * @tc.name       testOnFrameMetricsMeasured_ERRORCODE_1300002_static
+        * @tc.desc       验证子窗销毁后注册OnFrameMetricsMeasured返回1300002错误码验证
+        * @tc.size       MediumTest
+        * @tc.type       Function
+        * @tc.level      Level 2
+        */
+        it('testOnFrameMetricsMeasured_ERRORCODE_1300002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: () => void): Promise<void> => {
+            let caseName: string = 'testOnFrameMetricsMeasured_ERRORCODE_1300002_static ';
+            console.log(caseName + 'begin');
+            let subWindowClass: window.Window = await windowStage!.createSubWindow(caseName);
+            await subWindowClass.destroyWindow();
+            try {
+            const callback = (res: window.FrameMetrics) => {
+                console.log(`${caseName} callback1 res: ${JSON.stringify(res)}`);
+            }
+            subWindowClass.onFrameMetricsMeasured(callback);
+            console.log(caseName + 'success. ');
+            expect(true).assertFail()
+            done();
+            } catch (err) {
+            err = err as BusinessError;
+            console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
+            if (err.code !== 801) {
+                expect(err.code).assertEqual(1300002);
+                expect(err.message !== null).assertTrue();
+                done();
+            } else {
+                expect(err.code).assertEqual(801);
+                done();
+            }
+            }
+        });
+
+        /**
+        * @tc.number     SUB_BASIC_WMS_OffFrameMetricsMeasured_ERRORCODE_1300002_static_0100
+        * @tc.name       testOffFrameMetricsMeasured_ERRORCODE_1300002_static
+        * @tc.desc       验证子窗销毁后注册offFrameMetricsMeasured返回1300002错误码验证
+        * @tc.size       MediumTest
+        * @tc.type       Function
+        * @tc.level      Level 2
+        */
+        it('testOffFrameMetricsMeasured_ERRORCODE_1300002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: () => void): Promise<void> => {
+            let caseName: string = 'testOffFrameMetricsMeasured_ERRORCODE_1300002_static ';
+            console.log(caseName + 'begin');
+            let subWindowClass: window.Window = await windowStage!.createSubWindow(caseName);
+            await subWindowClass.destroyWindow();
+            try {
+            const callback = (res: window.FrameMetrics) => {
+                console.log(`${caseName} callback1 res: ${JSON.stringify(res)}`);
+            }
+            subWindowClass.offFrameMetricsMeasured(callback);
+            console.log(caseName + 'success. ');
+            expect(true).assertFail()
+            done();
+            } catch (err) {
+            err = err as BusinessError;
+            console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
+            if (err.code !== 801) {
+                expect(err.code).assertEqual(1300002);
+                expect(err.message !== null).assertTrue();
+                done();
+            } else {
+                expect(err.code).assertEqual(801);
+                done();
+            }
+            }
+        });
+
         /**
          * @tc.name   testGlobalWindowModeEnum_static
          * @tc.number SUB_BASIC_WMS_GLOBALWINDOWMODE_ENUM_static_0100
@@ -3037,6 +3523,45 @@ export default function WindowPropertiesTest() {
 
             }
         })
+
+        /**
+        * @tc.number       testSnapShotSync_ErrCode1300002_static
+        * @tc.name         testSnapShotSync_ErrCode1300002_static
+        * @tc.desc         testSnapShotSync_ErrCode1300002_static
+        * @tc.size         MediumTest
+        * @tc.type         Function
+        * @tc.level        Level 3
+        */
+        it('testSnapShotSync_ErrCode1300002_static', Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName: string = "testSnapShotSync_ErrCode1300002_static";
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin.');
+        try {
+            let tempWnd: window.Window = await windowStage!.createSubWindow('testSnapShotSync_ErrCode1300002')
+            hilog.info(domain, tag, msgStr + 'windowStage.createSubWindow success');
+            await Utils.msSleep(300);
+            expect(!!tempWnd).assertTrue();
+            await tempWnd.destroyWindow();
+            hilog.info(domain, tag, msgStr + 'window.destroy success');
+            let pixelMap: image.PixelMap = tempWnd.snapshotSync();
+            hilog.info(domain, tag, msgStr + 'window after snapshotSync ');
+            expect(false).assertTrue();
+            done();
+        } catch (exception) {
+            exception = exception as BusinessError;
+            hilog.error(0x0000, '[ANI]', msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
+            if (exception.code !== 801) {
+            hilog.error(0x0000, '[ANI]', msgStr + 'Failed to snapshotSync. Cause code:' + JSON.stringify(exception));
+            expect(exception.code).assertEqual(1300002);
+            } else {
+            hilog.error(0x0000, '[ANI]',
+                msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
+            expect(exception.code).assertEqual(801);
+            }
+            done()
+        }
+        })
+
         /**
          * @tc.name   testSetWatermarkImageForAppWindowswithSizeExceedsScreenSize_static
          * @tc.number SUB_BASIC_WMS_SET_WATERMARKIMAGE_FOR_APPWINDOWS_static_0100
@@ -3237,7 +3762,46 @@ export default function WindowPropertiesTest() {
             }
 
         })
-        
+
+        /**
+        * @tc.name   testGetGlobalWindowMode_static_0100
+        * @tc.number SUB_BASIC_WMS_GETGLOBALWINDOWMODE_static_0100
+        * @tc.desc   testGetGlobalWindowMode_static_0100
+        * @tc.type   FUNCTION
+        * @tc.size   MEDIUMTEST
+        * @tc.level  LEVEL3
+        */
+        it('testGetGlobalWindowMode_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+        async (done: () => void): Promise<void> => {
+            let caseName: string = 'testGetGlobalWindowMode_static_0100';
+            let displayId: Long = display.getDefaultDisplaySync().id;
+            try {
+            window.getGlobalWindowMode(displayId).then((data) => {
+                console.info(`${caseName} Succeeded in obtaining global window mode. Data: ${data}`);
+                expect(data).assertLargerOrEqual(1);
+                done()
+            }).catch((err: Error) => {
+                console.error(`${caseName} Failed to call getGlobalWindowMode. Cause: ${JSON.stringify(err)}`);
+                if (err.code === 801) {
+                expect(err.message !== null).assertTrue();
+                done();
+                } else {
+                expect(false).assertTrue();
+                done();
+                }
+            });
+            } catch (error) {
+            console.error(`${caseName} Failed2 to call getGlobalWindowMode. Cause: ${JSON.stringify(error)},message: ${JSON.stringify(error.message)}`);
+            if (error.code === 801) {
+                expect(error.message !== null).assertTrue();
+                done();
+            } else {
+                expect(false).assertTrue();
+                done();
+            }
+            }
+        })
+
         /**
          * @tc.name   testGetGlobalWindowMode_NegativeId_1300016_static
          * @tc.number SUB_BASIC_WMS_GETGLOBALWINDOWMODE_static_0200
@@ -3427,7 +3991,180 @@ export default function WindowPropertiesTest() {
             }
         });
 
-        
+        /**
+        * @tc.number     SUB_BASIC_WMS_ON_OCCLUSIONSTATECHANGED_CHANGE_static_0300
+        * @tc.name       testOnOcclusionState_static_0300
+        * @tc.desc       验证注册OnOcclusionState监听
+        * @tc.size       MediumTest
+        * @tc.type       Function
+        * @tc.level      Level 2
+        */
+        it('testOnOcclusionState_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+        async (done: () => void): Promise<void> => {
+            let caseName: string = 'testOnOcclusionState_static_0300 ';
+            let msgStr: string = 'jsunittest ' + caseName + ' ';
+            console.log(caseName + 'begin');
+            let windowClass: window.Window = await windowStage!.getMainWindow();
+            try {
+            const callback = (res: window.OcclusionState) => {
+                console.info(caseName + ' callback res: ' + JSON.stringify(res));
+                if (res === 0) {
+                expect(0).assertEqual(window.OcclusionState.NO_OCCLUSION);
+                } else if (res === 1) {
+                expect(1).assertEqual(window.OcclusionState.PARTIAL_OCCLUSION);
+                } else if (res === 2) {
+                expect(2).assertEqual(window.OcclusionState.FULL_OCCLUSION);
+                } else {
+                hilog.error(domain, tag, msgStr + 'Unexpected res: ' + res);
+                expect(false).assertTrue();
+                }
+            }
+            windowClass.onOcclusionStateChanged(callback);
+            console.log(caseName + 'success onOcclusionStateChanged listen');
+
+            let subWindowClass: window.Window = await windowStage!.createSubWindow('subWindow');
+            hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in creating the sub window.');
+            await subWindowClass.setUIContent('pages/index2');
+            hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in loading the sub window content.');
+            await subWindowClass.showWindow();
+            hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in showing the sub window.');
+            await Utils.msSleep(1000)
+            await subWindowClass.resize(200, 200);
+            await Utils.msSleep(1000)
+            await subWindowClass.destroyWindow()
+            await Utils.msSleep(1000)
+
+            windowClass.offOcclusionStateChanged(callback);
+            windowClass.offOcclusionStateChanged();
+            done();
+            } catch (err) {
+            err = err as BusinessError;
+            console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
+            if (err.code === 801) {
+                hilog.error(domain, tag, msgStr + 'The current device type does not support this function.');
+                done();
+            } else {
+                hilog.error(domain, tag, msgStr + 'Unexpected error code: ' + err.code);
+                expect(false).assertTrue();
+                done()
+            }
+            }
+        });
+
+        /**
+        * @tc.number    SUB_BASIC_WMS_ScreenshotEventType_Enum_static_0100
+        * @tc.name      testScreenshotEventType_Enum_Value_static_0100
+        * @tc.desc      To test the enum value of ScreenshotEventType.
+        */
+        it('testScreenshotEventType_Enum_Value_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+        async (done: () => void): Promise<void> => {
+            let msgStr: string = 'testScreenshotEventType_Enum_Value_static_0100';
+            hilog.info(0x0000, '[ANI]', msgStr + ' begin');
+            try {
+            expect(0).assertEqual(window.ScreenshotEventType.SYSTEM_SCREENSHOT);
+            expect(1).assertEqual(window.ScreenshotEventType.SYSTEM_SCREENSHOT_ABORT);
+            expect(2).assertEqual(window.ScreenshotEventType.SCROLL_SHOT_START);
+            expect(3).assertEqual(window.ScreenshotEventType.SCROLL_SHOT_END);
+            expect(4).assertEqual(window.ScreenshotEventType.SCROLL_SHOT_ABORT);
+            done();
+            } catch (err) {
+            hilog.info(0x0000, '[ANI]', msgStr + 'test enum value of windowStageEventType error ' + JSON.stringify(err));
+            expect(false).assertTrue();
+            done();
+            }
+        })
+
+        /**
+         * @tc.name   testStartAbilityNeedAnimation_true_static
+         * @tc.number testStartAbilityNeedAnimation_true_static
+         * @tc.desc   testStartAbilityNeedAnimation_true_static
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('testStartAbilityNeedAnimation_true_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName:string =  'testStartAbilityNeedAnimation_true_static';
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin');
+            let wantInfo: Want = {
+                bundleName: 'com.example.actswindowtest.static',
+                abilityName: 'StartAbility'
+            };
+            let animation_param: window.StartAnimationParams = {
+                type: window.AnimationType.FADE_IN_OUT
+            };
+            let windowParam: window.WindowCreateParams = {
+                animationParams: animation_param,
+                needAnimation: true
+            };
+            let options: StartOptions = {
+                windowCreateParams: windowParam
+            };
+            try {
+                context!.startAbility(wantInfo, options).then( async() => {
+                    console.info(`${msgStr} Succeeded in starting ability.`);
+                    await Utils.msSleep(900);
+                    await Utils.msSleep(900);
+                    await terminateAbility(msgStr);
+                    console.info(`${msgStr} terminateSelf end.`);
+                    done()
+                }).catch((err: Error):PromiseLike<void>|undefined => {
+                    console.error(msgStr + `Failed to starting ability. Cause code: ${err.code}, message: ${err.message}`);
+                    expect(false).assertTrue();
+                    done()
+                });
+            } catch (err) {
+                console.error(msgStr + `Failed to starting ability. outcatch Cause code: ${err.code}, message: ${err.message}`);
+                expect(false).assertTrue();
+                done()
+            }
+        })
+
+        /**
+         * @tc.name   testStartAbilityNeedAnimation_false_static
+         * @tc.number testStartAbilityNeedAnimation_false_static
+         * @tc.desc   testStartAbilityNeedAnimation_false_static
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it('testStartAbilityNeedAnimation_false_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName:string =  'testStartAbilityNeedAnimation_false_static';
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin');
+            let wantInfo: Want = {
+                bundleName: 'com.example.actswindowtest.static',
+                abilityName: 'StartAbility'
+            };
+            let animation_param: window.StartAnimationParams = {
+                type: window.AnimationType.FADE_IN_OUT
+            };
+            let windowParam: window.WindowCreateParams = {
+                animationParams: animation_param,
+                needAnimation: false
+            };
+            let options: StartOptions = {
+                windowCreateParams: windowParam
+            };
+            try {
+                context!.startAbility(wantInfo, options).then( async() => {
+                    console.info(`${msgStr} Succeeded in starting ability.`);
+                    await Utils.msSleep(900);
+                    await Utils.msSleep(900);
+                    await terminateAbility(msgStr);
+                    console.info(`${msgStr} terminateSelf end.`);
+                    done()
+                }).catch((err: Error):PromiseLike<void>|undefined => {
+                    console.error(msgStr + `Failed to starting ability. Cause code: ${err.code}, message: ${err.message}`);
+                    expect(false).assertTrue();
+                    done()
+                });
+            } catch (err) {
+                console.error(msgStr + `Failed to starting ability. outcatch Cause code: ${err.code}, message: ${err.message}`);
+                expect(false).assertTrue();
+                done()
+            }
+        })
 
 
     })
