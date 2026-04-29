@@ -16,6 +16,7 @@
 #include "../manager/plugin_manager.h"
 #include "scroll_scroll_event_test.h"
 #include <string>
+#include <cmath>
 
 #define ON_SCROLL_SCROLL_EVENT_ID 6054
 #define ON_SCROLL_SCROLL_DID_EVENT_ID 6055
