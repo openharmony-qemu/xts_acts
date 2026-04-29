@@ -26,8 +26,9 @@ import {
   DisplayRotation,
   ResizeDirection,
   WindowMode,
-  PointerMatrix
+  PointerMatrix,
 } from '@ohos.UiTest';
+import { LazyForEachReleaseStrategy } from '@ohos.arkui.component';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -49,19 +50,19 @@ export default function LazyForEachReleaseStrategyTest() {
   describe('LazyForEachReleaseStrategyTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("LazyForEachReleaseStrategyTest beforeEach start");
-      await startAbility("com.arkui.ace.FrameNode.api12.static", "EntryAbility")
+      await startAbility("com.arkui.ace.StateMangagement.api18.static", "EntryAbility")
     });
     beforeEach(async () => {
       console.info("LazyForEachReleaseStrategyTest beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/frameNode/LazyForEachReleaseStrategy",
+        url: "MainAbility/pages/LazyForeach/LazyForEachReleaseStrategy",
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
         router.clear();
         let pages = router.getState();
         console.info("get LazyForEachReleaseStrategy state pages: " + JSON.stringify(pages));
-        if (!("frameNode" == pages.name)) {
+        if (!("LazyForEachReleaseStrategy" == pages.name)) {
           console.info("get LazyForEachReleaseStrategy state pages.name: " + JSON.stringify(pages.name));
 
           router.pushUrl(options);
