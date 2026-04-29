@@ -16,6 +16,7 @@
 #include "Common.h"
 #include "VersionInfo.h"
 #include "AttachDetachTest.h"
+#include "BoxUnBoxPrimitive.h"
 
 namespace {
     std::array methods = {
@@ -43,6 +44,38 @@ namespace {
                             reinterpret_cast<void *>(test_ConcurrentMainThreadWorker)},
         ani_native_function{"test_CreateObjectInWorker", ":i",
                             reinterpret_cast<void *>(test_CreateObjectInWorker)},
+        ani_native_function{"testBoxBooleanNative", ":i",
+                           reinterpret_cast<void *>(testBoxBooleanNative)},
+        ani_native_function{"testUnboxBooleanNative", ":i",
+                           reinterpret_cast<void *>(testUnboxBooleanNative)},
+        ani_native_function{"testBoxByteNative", ":i",
+                           reinterpret_cast<void *>(testBoxByteNative)},
+        ani_native_function{"testUnboxByteNative", ":i",
+                           reinterpret_cast<void *>(testUnboxByteNative)},
+        ani_native_function{"testBoxCharNative", ":i",
+                           reinterpret_cast<void *>(testBoxCharNative)},
+        ani_native_function{"testUnboxCharNative", ":i",
+                           reinterpret_cast<void *>(testUnboxCharNative)},
+        ani_native_function{"testBoxDoubleNative", ":i",
+                           reinterpret_cast<void *>(testBoxDoubleNative)},
+        ani_native_function{"testUnboxDoubleNative", ":i",
+                           reinterpret_cast<void *>(testUnboxDoubleNative)},
+        ani_native_function{"testBoxFloatNative", ":i",
+                           reinterpret_cast<void *>(testBoxFloatNative)},
+        ani_native_function{"testUnboxFloatNative", ":i",
+                           reinterpret_cast<void *>(testUnboxFloatNative)},
+        ani_native_function{"testBoxIntNative", ":i",
+                           reinterpret_cast<void *>(testBoxIntNative)},
+        ani_native_function{"testUnboxIntNative", ":i",
+                           reinterpret_cast<void *>(testUnboxIntNative)},
+        ani_native_function{"testBoxLongNative", ":i",
+                           reinterpret_cast<void *>(testBoxLongNative)},
+        ani_native_function{"testUnboxLongNative", ":i",
+                           reinterpret_cast<void *>(testUnboxLongNative)},
+        ani_native_function{"testBoxShortNative", ":i",
+                           reinterpret_cast<void *>(testBoxShortNative)},
+        ani_native_function{"testUnboxShortNative", ":i",
+                           reinterpret_cast<void *>(testUnboxShortNative)},
     };
 }
 
