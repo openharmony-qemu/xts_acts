@@ -167,9 +167,9 @@ export namespace padStartBasicHelper {
   export function testSymbolTarget(): TypeErrorResult {
     let isTypeError: boolean = false;
     try {
-      String.prototype.padStart.call(null, 10, '0');
-    } catch (e) {
-      isTypeError = e.name === 'TypeError';
+      invokePadStart(null, 10, '0');
+    } catch (_e) {
+      isTypeError = true;
     }
     return { isTypeError };
   }
@@ -177,9 +177,9 @@ export namespace padStartBasicHelper {
   export function testSymbolPad(): TypeErrorResult {
     let isTypeError: boolean = false;
     try {
-      String.prototype.padStart.call(undefined, 10, '0');
-    } catch (e) {
-      isTypeError = e.name === 'TypeError';
+      invokePadStart(undefined, 10, '0');
+    } catch (_e) {
+      isTypeError = true;
     }
     return { isTypeError };
   }

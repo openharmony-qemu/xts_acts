@@ -2995,10 +2995,10 @@ export default function StringMatchAllBasicTest(): void {
       let pr: Array<string> = [];
       let ex: Array<string> = [];
       if (result.result !== null) {
-        pr = result.result;
+        pr = result.result as Array<string>;
       }
       if (result.expected !== null) {
-        ex = result.expected;
+        ex = result.expected as Array<string>;
       }
       expect(pr.length).assertEqual(ex.length);
       for (let i = 0; i < pr.length; i++) {

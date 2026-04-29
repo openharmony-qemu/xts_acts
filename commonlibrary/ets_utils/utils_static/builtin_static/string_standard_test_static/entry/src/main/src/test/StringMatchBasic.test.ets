@@ -160,11 +160,11 @@ class MatchHelperObjectThis {
 }
 
 function isTypeErrorInstance(e: Object): boolean {
-  return (e instanceof TypeError) || (e.name === 'TypeError');
+  return (e instanceof TypeError);
 }
 
 function isSyntaxErrorInstance(e: Object): boolean {
-  return (e instanceof SyntaxError) || (e.name === 'SyntaxError');
+  return (e instanceof SyntaxError);
 }
 
 namespace matchHelperTest {
@@ -753,10 +753,10 @@ export default function StringMatchBasicTest(): void {
       let r1: Array<string> = [];
       let r2: Array<string> = [];
       if (result.result1 !== null) {
-        r1 = result.result1;
+        r1 = result.result1 as Array<string>;
       }
       if (result.result2 !== null) {
-        r2 = result.result2;
+        r2 = result.result2 as Array<string>;
       }
       expect(r1[0]).assertEqual('long');
       expect(r2[0]).assertEqual('short');
@@ -775,7 +775,7 @@ export default function StringMatchBasicTest(): void {
       expect(result.result !== null).assertTrue();
       let arr: Array<string> = [];
       if (result.result !== null) {
-        arr = result.result;
+        arr = result.result as Array<string>;
       }
       expect(arr[0]).assertEqual('HELLO');
       expect(arr[1]).assertEqual('WORLD');
@@ -794,7 +794,7 @@ export default function StringMatchBasicTest(): void {
       expect(result.result !== null).assertTrue();
       let arr: Array<string> = [];
       if (result.result !== null) {
-        arr = result.result;
+        arr = result.result as Array<string>;
       }
       expect(arr[0]).assertEqual('World');
     });
@@ -812,7 +812,7 @@ export default function StringMatchBasicTest(): void {
       expect(result.result !== null).assertTrue();
       let arr: Array<string> = [];
       if (result.result !== null) {
-        arr = result.result;
+        arr = result.result as Array<string>;
       }
       expect(arr.length).assertEqual(2);
       expect(arr[0]).assertEqual('hello');

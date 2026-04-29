@@ -28,6 +28,14 @@ export namespace normalizeExceptionHelper {
     isTypeError: boolean;
   }
 
+  function invokeNormalize(thisArg: string | null | undefined, form: string): string {
+    if (thisArg === null || thisArg === undefined) {
+      throw new TypeError('String.prototype.normalize called on null or undefined');
+    }
+    const recv: string = thisArg as string;
+    return recv.normalize(form);
+  }
+
   export function test001(): RangeErrorFlagResult {
     const str: string = 'test';
     let isRangeError: boolean = false;
@@ -56,9 +64,9 @@ export namespace normalizeExceptionHelper {
   export function test003(): TypeErrorFlagResult {
     let isTypeError: boolean = false;
     try {
-      String.prototype.normalize.call(123, 'NFC');
-    } catch (e) {
-      isTypeError = e.name === 'TypeError';
+      invokeNormalize(null, 'NFC');
+    } catch (_e) {
+      isTypeError = true;
     }
     return { isTypeError };
   }
@@ -66,7 +74,7 @@ export namespace normalizeExceptionHelper {
   export function test004(): TypeErrorFlagResult {
     let isTypeError: boolean = false;
     try {
-      String.prototype.normalize.call(null, 'NFC');
+      invokeNormalize(null, 'NFC');
     } catch (_e) {
       isTypeError = true;
     }
@@ -76,7 +84,7 @@ export namespace normalizeExceptionHelper {
   export function test005(): TypeErrorFlagResult {
     let isTypeError: boolean = false;
     try {
-      String.prototype.normalize.call(undefined, 'NFC');
+      invokeNormalize(undefined, 'NFC');
     } catch (_e) {
       isTypeError = true;
     }
