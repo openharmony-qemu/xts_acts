@@ -41,7 +41,6 @@ export default function boxUnBoxPrimitiveTest(): void {
       let cls = new Foo();
       let result = cls.testBoxBooleanNative();
       expect(result).assertTrue();
-      done();
     });
 
     /**
@@ -56,7 +55,6 @@ export default function boxUnBoxPrimitiveTest(): void {
       let cls = new Foo();
       let result = cls.testUnboxBooleanNative();
       expect(result).assertTrue();
-      done();
     });
 
     /**
@@ -71,7 +69,6 @@ export default function boxUnBoxPrimitiveTest(): void {
       let cls = new Foo();
       let result = cls.testBoxByteNative();
       expect(result).assertTrue();
-      done();
     });
 
     /**
@@ -86,7 +83,6 @@ export default function boxUnBoxPrimitiveTest(): void {
       let cls = new Foo();
       let result = cls.testUnboxByteNative();
       expect(result).assertTrue();
-      done();
     });
 
     /**
@@ -101,7 +97,6 @@ export default function boxUnBoxPrimitiveTest(): void {
       let cls = new Foo();
       let result = cls.testBoxCharNative();
       expect(result).assertTrue();
-      done();
     });
 
     /**
@@ -116,7 +111,6 @@ export default function boxUnBoxPrimitiveTest(): void {
       let cls = new Foo();
       let result = cls.testUnboxCharNative();
       expect(result).assertTrue();
-      done();
     });
 
     /**
@@ -131,7 +125,6 @@ export default function boxUnBoxPrimitiveTest(): void {
       let cls = new Foo();
       let result = cls.testBoxDoubleNative();
       expect(result).assertTrue();
-      done();
     });
 
     /**
@@ -146,7 +139,6 @@ export default function boxUnBoxPrimitiveTest(): void {
       let cls = new Foo();
       let result = cls.testUnboxDoubleNative();
       expect(result).assertTrue();
-      done();
     });
 
     /**
@@ -161,7 +153,6 @@ export default function boxUnBoxPrimitiveTest(): void {
       let cls = new Foo();
       let result = cls.testBoxFloatNative();
       expect(result).assertTrue();
-      done();
     });
 
     /**
@@ -176,7 +167,6 @@ export default function boxUnBoxPrimitiveTest(): void {
       let cls = new Foo();
       let result = cls.testUnboxFloatNative();
       expect(result).assertTrue();
-      done();
     });
 
     /**
@@ -191,7 +181,6 @@ export default function boxUnBoxPrimitiveTest(): void {
       let cls = new Foo();
       let result = cls.testBoxIntNative();
       expect(result).assertTrue();
-      done();
     });
 
     /**
@@ -206,7 +195,6 @@ export default function boxUnBoxPrimitiveTest(): void {
       let cls = new Foo();
       let result = cls.testUnboxIntNative();
       expect(result).assertTrue();
-      done();
     });
 
     /**
@@ -221,7 +209,6 @@ export default function boxUnBoxPrimitiveTest(): void {
       let cls = new Foo();
       let result = cls.testBoxLongNative();
       expect(result).assertTrue();
-      done();
     });
 
     /**
@@ -236,7 +223,6 @@ export default function boxUnBoxPrimitiveTest(): void {
       let cls = new Foo();
       let result = cls.testUnboxLongNative();
       expect(result).assertTrue();
-      done();
     });
 
     /**
@@ -251,7 +237,6 @@ export default function boxUnBoxPrimitiveTest(): void {
       let cls = new Foo();
       let result = cls.testBoxShortNative();
       expect(result).assertTrue();
-      done();
     });
 
     /**
@@ -266,7 +251,6 @@ export default function boxUnBoxPrimitiveTest(): void {
       let cls = new Foo();
       let result = cls.testUnboxShortNative();
       expect(result).assertTrue();
-      done();
     });
   })
 }
