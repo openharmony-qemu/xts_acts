@@ -87,6 +87,11 @@ int TestCanvasDrawLineInputDestroyed();
 int TestCanvasDrawPathNormal();
 int TestCanvasDrawPathNull();
 int TestCanvasDrawPathInputDestroyed();
+
+// Canvas ResetClip
+int TestCanvasResetClipNormal();
+int TestCanvasResetClipNull();
+int TestCanvasResetClipMultipleCalls();
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS

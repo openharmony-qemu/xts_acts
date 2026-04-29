@@ -194,6 +194,9 @@
     "pages/ArkUI/pluginComponent/Test5",
     "pages/ArkUI/pluginComponent/Plugin",
     "pages/ArkUI/CapiDragDropTest",
-    "pages/ArkUI/CapionDigitalCrown"
+    "pages/ArkUI/CapionDigitalCrown",
+    "pages/ArkUI/PassThrough",
+    "pages/ArkUI/MenuColorMode",
+    "pages/ArkUI/SetCustomCursor"
   ]
 }

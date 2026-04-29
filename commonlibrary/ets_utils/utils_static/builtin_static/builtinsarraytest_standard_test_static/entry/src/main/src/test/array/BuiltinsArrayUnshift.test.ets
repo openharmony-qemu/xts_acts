@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -271,7 +271,7 @@ export default function builtinsArrayUnshiftTest() {
       console.info(`${caseName} test start`);
       try {
         let array: number[] = [1, 2, 3];
-        const tempArray: number[] = new Array<number>(1000).fill(0);
+        const tempArray: number[] = Array.create<number>(1000, 0);
         let newValue = array.unshift(...tempArray);
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);

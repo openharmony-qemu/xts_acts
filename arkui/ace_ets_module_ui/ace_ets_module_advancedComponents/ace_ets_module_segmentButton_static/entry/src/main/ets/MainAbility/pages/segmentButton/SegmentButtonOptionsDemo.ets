@@ -39,7 +39,7 @@
 @Entry
 @Component
 struct Index {
-  @State selectedIndexes: int[] = new Array<int>(5).fill(0)
+  @State selectedIndexes: int[] = Array.create<int>(5, 0)
   @State tabOptions: SegmentButtonOptions = SegmentButtonOptions.tab({
     buttons: [{ text: '页签按钮1' }, { text: '页签按钮2' },
       { text: '页签按钮3' }] as ItemRestriction<SegmentButtonTextItem>,
@@ -82,7 +82,8 @@ struct Index {
 
           SegmentButton({
             options: this.multiplySelectCapsuleOptions,
-            selectedIndexes: this.multiplySelectCapsuleSelectedIndexes
+            selectedIndexes: this.multiplySelectCapsuleSelectedIndexes,
+            onItemClicked: undefined
           })
           Text(`${this.ints}` +  '').height('5%').id('onItemClickedIndex')
         }.width('90%')

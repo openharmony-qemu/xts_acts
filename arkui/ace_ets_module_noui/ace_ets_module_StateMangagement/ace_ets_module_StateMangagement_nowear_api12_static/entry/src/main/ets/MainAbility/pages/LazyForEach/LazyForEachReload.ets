@@ -82,7 +82,7 @@ struct ViewHolder {
 
   aboutToDisappear(): void {
     console.info(`ViewHolder: aboutToDisappear(${this.item})`)
-    this.disappearCount++
+    setTimeout(()=>{this.disappearCount++},0)
   }
 
   build() {

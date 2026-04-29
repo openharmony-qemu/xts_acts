@@ -79,6 +79,8 @@
         "MainAbility/pages/CanvasNullUndefined/offCanvasToDataURLNullUndefined",
         "MainAbility/pages/CanvasNullUndefined/canvasOnReadyNullUndefined",
         "MainAbility/pages/CanvasNullUndefined/canvasMatrixRotateNullUndefined",
-        "MainAbility/pages/migratedActs/CanvasRendererAntialiasPage"
+        "MainAbility/pages/CanvasRenderingContext2D/Antialias",
+        "MainAbility/pages/migratedActs/CanvasRendererAntialiasPage",
+        "MainAbility/pages/Canvas/CanvasImageBitmapSupportResource"
     ]
 }

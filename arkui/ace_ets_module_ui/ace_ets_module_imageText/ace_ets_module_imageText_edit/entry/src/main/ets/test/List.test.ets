@@ -72,6 +72,8 @@ import TextAreaTextDirectionTest from './TextAreaApi23Test/TextAreaTextDirection
 import TextAreaSpecialAttrsTest from './TextAreaTest/TextAreaSpecialAttrs.test';
 import TextAreaTypeTest from './TextAreaTest/TextAreaType.test';
 import TextAreaStyleTest from './TextAreaTest/TextAreaStyle.test';
+import TextAreaOnWillCopyTest from './TextAreaApi26Test/TextAreaOnWillCopy.test';
+import TextAreaOnWillCutTest from './TextAreaApi26Test/TextAreaOnWillCut.test';
 
 import TextInputOnEditChangeJsunitTest from './TextInputTest/TextInputOnEditChangeJsunitTest.test';
 import textInputApi11 from './TextInputApi11Test/textInputApi11.test'
@@ -126,6 +128,8 @@ import TextInputOnWillAttachIMETest from './TextInputApi22Test/TextInputOnWillAt
 import TextInputTextDirectionTest from './TextInputApi23Test/TextInputTextDirection.test';
 import TextInputMethodsNullTest from './TextInputTest/TextInputMethodsNull.test';
 import TextInputControllerMethodsNullTest from './TextInputTest/TextInputControllerMethodsNull.test';
+import TextInputOnWillCopyTest from './TextInputApi26Test/TextInputOnWillCopy.test';
+import TextInputOnWillCutTest from './TextInputApi26Test/TextInputOnWillCut.test';
 
 import TextAreaCompressLeadingPunctuation from './TextAreaTest/TextAreaCompressLeadingPunctuation.test';
 import TextAreaCompressLeadingPunctuationModifier from './TextAreaTest/TextAreaCompressLeadingPunctuationModifier.test';
@@ -141,12 +145,16 @@ import TextInputSelectAllNullUndefinedTest from './TextInputTest/TextInputSelect
 import TextInputSelectionMenuHiddenNullUndefinedTest from './TextInputTest/TextInputSelectionMenuHiddenNullUndefined.test';
 import TextInputTypeParamTest from './TextInputTest/TextInputTypeParam.test';
 import TextInputContentTypeParamTest from './TextInputTest/TextInputContentTypeParam.test';
+import TextInputOnNeedSoftkeyboardTest from './TextInputApi24Test/TextInputOnNeedSoftkeyboard.test';
+import TextInputOrphanCharOptimizationTest from './TextInputTest/TextInputOrphanCharOptimization.test';
 
 import TextAreaPropertiesNullUndefinedTest from './TextAreaTest/TextAreaPropertiesNullUndefined.test';
 import TextAreaPropertiesNullUndefined02Test from './TextAreaTest/TextAreaPropertiesNullUndefined02.test';
 import TextAreaPropertiesNullUndefined03Test from './TextAreaTest/TextAreaPropertiesNullUndefined03.test';
 import TextAreaMethodsNullTest from './TextAreaTest/TextAreaMethodsNull.test';
 import TextAreaControllerMethodsNullTest from './TextAreaTest/TextAreaControllerMethodsNull.test';
+import TextAreaHorizontalScrollingTest from './TextAreaApi24Test/TextAreaHorizontalScrolling.test';
+import TextAreaOrphanCharOptimizationTest from './TextAreaTest/TextAreaOrphanCharOptimization.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -210,6 +218,8 @@ export default function testsuite() {
   TextAreaSpecialAttrsTest()
   TextAreaTypeTest();
   TextAreaStyleTest();
+  TextAreaHorizontalScrollingTest()  // Api24
+  TextAreaOrphanCharOptimizationTest();
 
   // TextInputTest
   TextInputOnEditChangeJsunitTest()
@@ -284,4 +294,6 @@ export default function testsuite() {
   TextInputSelectAllNullUndefinedTest();
   TextInputSelectionMenuHiddenNullUndefinedTest();
   TextInputContentTypeParamTest();
+  TextInputOnNeedSoftkeyboardTest();  // Api24
+  TextInputOrphanCharOptimizationTest();
 }

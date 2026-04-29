@@ -70,6 +70,13 @@ struct AbstractPropertyRef {
         .height('5%')
         .onClick((e: ClickEvent) => {
           let isClear = AppStorage.clear()
+          let uiContext = this.getUIContext();
+          try {
+            let router = uiContext.getRouter();
+            AppStorage.setOrCreate<Router>('router', router);
+          } catch (error) {
+            console.log('error ' + error);
+          }
           console.info('AbstractPropertyRef clear is ' + String(isClear))
         })
     }

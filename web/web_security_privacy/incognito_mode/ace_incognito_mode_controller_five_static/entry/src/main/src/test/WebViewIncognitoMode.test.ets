@@ -250,6 +250,73 @@ export default function ActsAceWebViewIncognitoMode() {
         done();
       })
     /**
+     * @tc.name   testWebViewIncognitoModeStatic21
+     * @tc.number SUB_ACE_WEB_INCOGNITOMODE_API_STATIC_0021
+     * @tc.desc   test allowGeolocation with null origin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWebViewIncognitoModeStatic21', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        emitKey = 'emitWebViewIncognitoMode21';
+        Utils.emitEvent(emitKey, 10);
+        await Utils.msSleep(18000);
+        Utils.registerEvent('testWebViewIncognitoModeStatic21', 17100011, 20260257, done);
+        await Utils.msSleep(18000);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('webViewIncognitoModeButton'));
+        await Utils.msSleep(2000);
+        button?.click();
+        await Utils.msSleep(3000);
+        done();
+      });
+    /**
+     * @tc.name   testWebViewIncognitoModeStatic22
+     * @tc.number SUB_ACE_WEB_INCOGNITOMODE_API_STATIC_0022
+     * @tc.desc   test allowGeolocation with incognito=false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWebViewIncognitoModeStatic22', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        emitKey = 'emitWebViewIncognitoMode22';
+        Utils.emitEvent(emitKey, 10);
+        Utils.registerEvent('testWebViewIncognitoModeStatic22', 'success', 20260259, done);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('webViewIncognitoModeButton'));
+        await Utils.msSleep(2000);
+        button?.click();
+        await Utils.msSleep(3000);
+        done();
+      });
+    /**
+     * @tc.name   testWebViewIncognitoModeStatic23
+     * @tc.number SUB_ACE_WEB_INCOGNITOMODE_API_STATIC_0023
+     * @tc.desc   test deleteGeolocation with null origin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWebViewIncognitoModeStatic23', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        emitKey = 'emitWebViewIncognitoMode23';
+        Utils.emitEvent(emitKey, 10);
+        Utils.registerEvent("testGetAccessibleGeolocationCallbackValueErr", 17100011, 110520, done);
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testWebViewIncognitoModeStatic23", "ClearOrigin is wrong", 110530, done);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('webViewIncognitoModeButton'));
+        await Utils.msSleep(2000);
+        button?.click();
+        await Utils.msSleep(3000);
+        done();
+      });
+    /**
      * @tc.name testWebViewIncognitoMode01
      * @tc.number SUB_ACE_WEB_INCOGNITOMODE_API_0001
      * @tc.desc test isIncognitoMode true
@@ -262,6 +329,42 @@ export default function ActsAceWebViewIncognitoMode() {
       emitKey = 'emitWebViewIncognitoMode01'
       Utils.emitEvent(emitKey, 10);
       Utils.registerEvent('testWebViewIncognitoMode01', 'success', 8019, done);
+      await Utils.msSleep(2000)
+      inspector.sendEventByKey('webViewIncognitoModeButton', 10, '');
+      await Utils.msSleep(6000)
+      done()
+    })
+    /**
+     * @tc.name testWebViewIncognitoMode02
+     * @tc.number SUB_ACE_WEB_INCOGNITOMODE_API_0002
+     * @tc.desc test isIncognitoMode false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWebViewIncognitoMode02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(6000)
+      emitKey = 'emitWebViewIncognitoMode02'
+      Utils.emitEvent(emitKey, 10);
+      Utils.registerEvent('testWebViewIncognitoMode02', 'success', 8020, done);
+      await Utils.msSleep(2000)
+      inspector.sendEventByKey('webViewIncognitoModeButton', 10, '');
+      await Utils.msSleep(6000)
+      done()
+    })
+    /**
+     * @tc.name testWebViewIncognitoMode03
+     * @tc.number SUB_ACE_WEB_INCOGNITOMODE_API_0003
+     * @tc.desc test isIncognitoMode error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWebViewIncognitoMode03',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(6000)
+      emitKey = 'emitWebViewIncognitoMode03'
+      Utils.emitEvent(emitKey, 10);
+      Utils.registerEvent('emitWebViewIncognitoMode03', 17100001, 8021, done);
       await Utils.msSleep(2000)
       inspector.sendEventByKey('webViewIncognitoModeButton', 10, '');
       await Utils.msSleep(6000)

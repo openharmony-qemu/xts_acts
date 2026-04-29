@@ -697,7 +697,7 @@ export default function abilityTest() {
       try {
         let input: Array<int> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
         data.writeIntArray(input);
-        let res: Array<int> = new Array<int>(input.length);
+        let res: Array<int> = Array.create<int>(input.length, 0);
         data.readIntArray(res);
         expect(res).assertDeepEquals(input);
       } catch (error) {
@@ -784,7 +784,7 @@ export default function abilityTest() {
       try {
         let input: Array<double> = [1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9];
         data.writeDoubleArray(input);
-        let res: Array<double> = new Array<double>(input.length);
+        let res: Array<double> = Array.create<double>(input.length, 0);
         data.readDoubleArray(res);
         expect(res).assertDeepEquals(input);
       } catch (error) {
@@ -871,7 +871,7 @@ export default function abilityTest() {
       try {
         let input: Array<string> = ["this", "is", "a", "test", "stirng", "array"];
         data.writeStringArray(input);
-        let res: Array<string> = new Array<string>(input.length);
+        let res: Array<string> = Array.create<string>(input.length, '');
         data.readStringArray(res);
         expect(res).assertDeepEquals(input);
       } catch (error) {
@@ -958,7 +958,7 @@ export default function abilityTest() {
       try {
         let input: Array<boolean> = [false, true, false, true, false, true, false, true, false, true];
         data.writeBooleanArray(input);
-        let res: Array<boolean> = new Array<boolean>(input.length);
+        let res: Array<boolean> = Array.create<boolean>(input.length, false);
         data.readBooleanArray(res);
         expect(res).assertDeepEquals(input);
       } catch (error) {
@@ -3503,7 +3503,7 @@ export default function abilityTest() {
       try {
         let input: Array<int> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
         data.writeIntArray(input);
-        let res: Array<int> = new Array<int>(input.length);
+        let res: Array<int> = Array.create<int>(input.length, 0);
         data.reclaim();
         data.readIntArray(res);
       } catch (err) {
@@ -3594,7 +3594,7 @@ export default function abilityTest() {
       try {
         let input: Array<double> = [1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 8.1, 9.1];
         data.writeDoubleArray(input);
-        let res: Array<double> = new Array<double>(input.length);
+        let res: Array<double> = Array.create<double>(input.length, 0);
         data.reclaim();
         data.readDoubleArray(res);
       } catch (err) {
@@ -3685,7 +3685,7 @@ export default function abilityTest() {
       try {
         let input: Array<boolean> = [false, true, false, true, false, true, false, true, false, true];
         data.writeBooleanArray(input);
-        let res: Array<boolean> = new Array<boolean>(input.length);
+        let res: Array<boolean> = Array.create<boolean>(input.length, false);
         data.reclaim();
         data.readBooleanArray(res);
       } catch (err) {
@@ -3776,7 +3776,7 @@ export default function abilityTest() {
       try {
         let input: Array<string> = ["this", "is", "a", "test", "stirng", "array"];
         data.writeStringArray(input);
-        let res: Array<string> = new Array<string>(input.length);
+        let res: Array<string> = Array.create<string>(input.length, '');
         data.reclaim();
         data.readStringArray(res);
       } catch (err) {
@@ -4306,7 +4306,7 @@ export default function abilityTest() {
         let c: double = 3;
         let a: Array<double> = [b, c];
         data.writeFloatArray(a);
-        let res: Array<double> = new Array<double>(a.length);
+        let res: Array<double> = Array.create<double>(a.length, 0);
         data.readFloatArray(res);
         expect(res).assertDeepEquals(a);
       } catch (error) {
@@ -4364,7 +4364,7 @@ export default function abilityTest() {
       try {
         let input: Array<long> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
         data.writeLongArray(input);
-        let res: Array<long> = new Array<long>(input.length);
+        let res: Array<long> = Array.create<long>(input.length, 0);
         res = data.readLongArray();
         expect(res.length > 0).assertTrue();
         expect(res).assertDeepEquals(input);
@@ -4394,7 +4394,7 @@ export default function abilityTest() {
       try {
         let input: Array<long> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
         data.writeLongArray(input);
-        let res: Array<long> = new Array<long>(input.length);
+        let res: Array<long> = Array.create<long>(input.length, 0);
         data.readLongArray(res);
         expect(res).assertDeepEquals(input);
       } catch (error) {
@@ -4423,7 +4423,7 @@ export default function abilityTest() {
       try {
         let input: Array<long> = [];
         data.writeLongArray(input);
-        let res: Array<long> = new Array<long>(input.length);
+        let res: Array<long> = Array.create<long>(input.length, 0);
         res = data.readLongArray();
         expect(res.length == 0).assertTrue();
         expect(res).assertDeepEquals(input);
@@ -4453,7 +4453,7 @@ export default function abilityTest() {
       try {
         let input: Array<int> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
         data.writeShortArray(input);
-        let res: Array<int> = new Array<int>(input.length);
+        let res: Array<int> = Array.create<int>(input.length, 0);
         res = data.readShortArray();
         expect(res.length > 0).assertTrue();
         expect(res).assertDeepEquals(input);
@@ -4484,7 +4484,7 @@ export default function abilityTest() {
       try {
         let input: Array<int> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
         data.writeShortArray(input);
-        let res: Array<int> = new Array<int>(input.length);
+        let res: Array<int> = Array.create<int>(input.length, 0);
         data.readShortArray(res);
         expect(res).assertDeepEquals(input);
       } catch (error) {
@@ -4514,7 +4514,7 @@ export default function abilityTest() {
       try {
         let input: Array<int> = [];
         data.writeShortArray(input);
-        let res: Array<int> = new Array<int>(input.length);
+        let res: Array<int> = Array.create<int>(input.length, 0);
         res = data.readShortArray();
         expect(res.length == 0).assertTrue();
         expect(res).assertDeepEquals(input);
@@ -4706,7 +4706,7 @@ export default function abilityTest() {
       try {
         let input: Array<int> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
         data.writeByteArray(input);
-        let res: Array<int> = new Array<int>(input.length);
+        let res: Array<int> = Array.create<int>(input.length, 0);
         data.readByteArray(res);
         expect(res).assertDeepEquals(input);
       } catch (error) {
@@ -4974,7 +4974,7 @@ export default function abilityTest() {
         let testRemtoeObject1 = new TestRemoteObject("testObject1");
         let a: Array<rpc.IRemoteObject> = [testRemtoeObject, testRemtoeObject1];
         data.writeRemoteObjectArray(a);
-        let res: Array<rpc.IRemoteObject> = new Array<rpc.IRemoteObject>(a.length);
+        let res: Array<rpc.IRemoteObject> = Array.create<rpc.IRemoteObject>(a.length, new TestRemoteObject('test'));
         data.readRemoteObjectArray(res);
         for (let index = 0; index < res.length; index++) {
           expect(res[index] != null).assertTrue();
@@ -5007,7 +5007,7 @@ export default function abilityTest() {
         let testRemtoeObject1 = new TestRemoteObject("testObject1");
         let a: Array<rpc.IRemoteObject> = [testRemtoeObject, testRemtoeObject1];
         data.writeRemoteObjectArray(a);
-        let res: Array<rpc.IRemoteObject> = new Array<rpc.IRemoteObject>(a.length);
+        let res: Array<rpc.IRemoteObject> = new Array<rpc.IRemoteObject>();
         res = data.readRemoteObjectArray();
         expect(res.length > 0).assertTrue();
         for (let index = 0; index < res.length; index++) {
@@ -5039,7 +5039,7 @@ export default function abilityTest() {
       try {
         let a: Array<rpc.IRemoteObject> = [];
         data.writeRemoteObjectArray(a);
-        let res: Array<rpc.IRemoteObject> = new Array<rpc.IRemoteObject>(a.length);
+        let res: Array<rpc.IRemoteObject> = new Array<rpc.IRemoteObject>();
         res = data.readRemoteObjectArray();
         expect(res.length == 0).assertTrue();
       } catch (error) {
@@ -6168,7 +6168,7 @@ export default function abilityTest() {
       try {
         let input: Array<int> = [1, 2, 3, 4, 5];
         data.writeCharArray(input);
-        let res: Array<int> = new Array<int>(input.length);
+        let res: Array<int> = new Array<int>();
         res = data.readCharArray();
         expect(res).assertDeepEquals(input);
       } catch (err) {
@@ -7289,7 +7289,7 @@ export default function abilityTest() {
       try {
         let input: Array<int> = [1, 2, 3, 4, 5];
         data.writeByteArray(input);
-        let res: Array<int> = new Array<int>(input.length);
+        let res: Array<int> = Array.create<int>(input.length, 0);
         data.reclaim();
         data.readByteArray(res);
       } catch (err) {
@@ -7379,7 +7379,7 @@ export default function abilityTest() {
       try {
         let input: Array<int> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
         data.writeShortArray(input);
-        let res: Array<int> = new Array<int>(input.length);
+        let res: Array<int> = Array.create<int>(input.length, 0);
         data.reclaim();
         data.readShortArray(res);
       } catch (err) {
@@ -7470,7 +7470,7 @@ export default function abilityTest() {
       try {
         let input: Array<long> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
         data.writeLongArray(input);
-        let res: Array<long> = new Array<long>(input.length);
+        let res: Array<long> = Array.create<long>(input.length, 0);
         data.reclaim();
         data.readLongArray(res);
       } catch (err) {
@@ -7561,7 +7561,7 @@ export default function abilityTest() {
       try {
         let input: Array<double> = [1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 8.1, 9.1];
         data.writeFloatArray(input);
-        let res: Array<double> = new Array<double>(input.length);
+        let res: Array<double> = Array.create<double>(input.length, 0);
         data.reclaim();
         data.readFloatArray(res);
       } catch (err) {
@@ -7652,7 +7652,7 @@ export default function abilityTest() {
       try {
         let input: Array<int> = [1, 2, 3, 4, 5];
         data.writeCharArray(input);
-        let res: Array<int> = new Array<int>(input.length);
+        let res: Array<int> = Array.create<int>(input.length, 0);
         data.reclaim();
         data.readCharArray(res);
       } catch (err) {
@@ -7747,7 +7747,7 @@ export default function abilityTest() {
         let testRemtoeObject1 = new TestRemoteObject("testObject1");
         let a: Array<rpc.IRemoteObject> = [testRemtoeObject, testRemtoeObject1];
         data.writeRemoteObjectArray(a);
-        let res: Array<rpc.IRemoteObject> =new Array<rpc.IRemoteObject>(a.length);
+        let res: Array<rpc.IRemoteObject> = Array.create<rpc.IRemoteObject>(a.length, new TestRemoteObject('test'));
         data.reclaim();
         data.readRemoteObjectArray(res);
       } catch (err) {

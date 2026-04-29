@@ -28,14 +28,14 @@ export default function HuksAgreeEcdhTest() {
     })
     
     /**
-     * @tc.name   SecurityHuksNapiAgreeEcdh0100
-     * @tc.number Security_HUKS_NAPI_Agree_ECDH_0100
+     * @tc.name   SUB_SECURITY_HUKS_NAPI_AGREE_ECDH_0100
+     * @tc.number SUB_SECURITY_HUKS_NAPI_AGREE_ECDH_0100
      * @tc.desc   alg-ECDH, pur-AGREE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SecurityHuksNapiAgreeEcdh0100', Level.LEVEL1, () => {
+    it('SUB_SECURITY_HUKS_NAPI_AGREE_ECDH_0100', Level.LEVEL1, () => {
       const result = libHuks.HuksAgreeEcdhTest(0);
       expect(result).assertEqual(0);
     })

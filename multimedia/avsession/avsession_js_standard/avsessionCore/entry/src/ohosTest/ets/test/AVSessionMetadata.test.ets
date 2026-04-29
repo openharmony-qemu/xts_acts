@@ -725,26 +725,22 @@ export default function abilityTest() {
       let callMetadata6: callMetadata6 = {
         name: '12345678'
       };
-      try {
-        session.setCallMetadata(callMetadata6, (err: BusinessError, data: ESObject) => {
-          if (err) {
-            console.info(`${TAG}: setCallMetadataCallback set name error: code: ${err.code}, message: ${err.message}`);
+      session.setCallMetadata(callMetadata6, (err: BusinessError, data: ESObject) => {
+        if (err) {
+          console.info(`${TAG}: setCallMetadataCallback set name error: code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        } else {
+          console.info(`${TAG}: setCallMetadataCallback set name successfully`);
+          controller.getCallMetadata().then((data: ESObject) => {
+            console.info(`${TAG}: getCallMetadata name is: ${data.name}`);
+            expect(data.name).assertEqual(callMetadata6.name);
+          }).catch((err: BusinessError) => {
+            console.info(`${TAG}: getCallMetadata get name error: code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
-          } else {
-            console.info(`${TAG}: setCallMetadataCallback set name successfully`);
-            controller.getCallMetadata().then((data: ESObject) => {
-              console.info(`${TAG}: getCallMetadata name is: ${data.name}`);
-              expect(data.name).assertEqual(callMetadata6.name);
-            }).catch((err: BusinessError) => {
-              console.info(`${TAG}: getCallMetadata get name error: code: ${err.code}, message: ${err.message}`);
-              expect(false).assertTrue();
-            });
-          }
-        })
-      } catch (error) {
-        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
-        expect(false).assertTrue();
-      }
+          });
+        }
+      })
+      await sleep(300);
       done();
     })
 

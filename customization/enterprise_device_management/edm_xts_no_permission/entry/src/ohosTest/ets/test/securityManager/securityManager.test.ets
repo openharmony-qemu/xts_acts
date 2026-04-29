@@ -302,6 +302,8 @@ export default function securityManagerTest() {
     testSetPasswordPolicy();
     testGetPasswordPolicy();
 
+    testDisableScreenLockForAccount();
+
     testInstallUserCertificate();
     testGetUserCertificates();
     testUninstallUserCertificate();
@@ -314,6 +316,9 @@ export default function securityManagerTest() {
 
     testSetWatermarkImage();
     testCancelWatermarkImage();
+
+    testSetScreenWatermarkImage();
+    testCancelScreenWatermarkImage();
 
     testSetPermissionManagedState();
     testGetPermissionManagedState();
@@ -814,6 +819,146 @@ function testUninstallEnterpriseReSignatureCertificate() {
       expect(error.code == 201).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testDisableScreenLockForAccount() {
+  /**
+   * @tc.name   test_setScreenLockDisabledForAccount_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETSCREENLOCKDISABLEDFORACCOUNT_0100
+   * @tc.desc   test setScreenLockDisabledForAccount method with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setScreenLockDisabledForAccount_0100", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_setScreenLockDisabledForAccount_0100  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      securityManager.setScreenLockDisabledForAccount(SELFWANT, true);
+      console.info(' --- test_setScreenLockDisabledForAccount_0100 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_setScreenLockDisabledForAccount_0100 error 201 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+    console.info(' --- test_setScreenLockDisabledForAccount_0100  -------- END --------');
+  });
+
+  /**
+   * @tc.name   test_setScreenLockDisabledForAccount_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETSCREENLOCKDISABLEDFORACCOUNT_0200
+   * @tc.desc   test setScreenLockDisabledForAccount method with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setScreenLockDisabledForAccount_0200", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_setScreenLockDisabledForAccount_0200  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      securityManager.setScreenLockDisabledForAccount(SELFWANT, false);
+      console.info(' --- test_setScreenLockDisabledForAccount_0200 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_setScreenLockDisabledForAccount_0200 error 201 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+    console.info(' --- test_setScreenLockDisabledForAccount_0200  -------- END --------');
+  });
+
+  /**
+   * @tc.name   test_isScreenLockDisabledForAccount_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_ISSCREENLOCKDISABLEDFORACCOUNT_0300
+   * @tc.desc   test isScreenLockDisabledForAccount method with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_isScreenLockDisabledForAccount_0300", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_isScreenLockDisabledForAccount_0300  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      securityManager.isScreenLockDisabledForAccount(SELFWANT);
+      console.info(' --- test_isScreenLockDisabledForAccount_0300 error is expected, but it done.');
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_isScreenLockDisabledForAccount_0300 error 201 is expected, actually catch: ' + error.code);
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+    console.info(' --- test_isScreenLockDisabledForAccount_0300  -------- END --------');
+  });
+}
+
+function testSetScreenWatermarkImage() {
+  beforeAll((done: Function) => {
+    getPixelMap();
+    done();
+  })
+
+  /**
+   * @tc.name   test_setScreenWatermarkImage_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_SCREEN_WATERMARK_IMAGE_NO_PERMISSION_JS_0100
+   * @tc.desc   test setScreenWatermarkImage with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setScreenWatermarkImage_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setScreenWatermarkImage(SELFWANT, PIXEL_MAP);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 201).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testCancelScreenWatermarkImage() {
+  /**
+   * @tc.name   test_cancelScreenWatermarkImage_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_CANCEL_SCREEN_WATERMARK_IMAGE_NO_PERMISSION_JS_0100
+   * @tc.desc   test cancelScreenWatermarkImage with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_cancelScreenWatermarkImage_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.cancelScreenWatermarkImage(SELFWANT);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 201).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
   });

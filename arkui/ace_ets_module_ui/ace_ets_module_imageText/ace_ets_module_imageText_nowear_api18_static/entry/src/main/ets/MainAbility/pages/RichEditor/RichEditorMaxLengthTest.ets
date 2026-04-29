@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,7 +26,7 @@ struct RichEditorMaxLengthTest {
   richEditorStyledString: MutableStyledString = new MutableStyledString('');
   controller1: RichEditorController = new RichEditorController()
   @State maxLengthIndex: number = 0
-  @State maxLengthList:Array<int|undefined> = new Array<int|undefined>(-1,5,undefined,7.2 as int )
+  @State maxLengthList:Array<int|undefined> = new Array<int|undefined>(-1,5,undefined,7.2.toInt() )
   build() {
     Column() {
       Row(){
@@ -62,7 +62,7 @@ struct RichEditorMaxLengthTest {
         .width('95%')
         .margin(10)
         .height(60)
-        .maxLength(this.maxLengthList[this.maxLengthIndex as int])
+        .maxLength(this.maxLengthList[this.maxLengthIndex.toInt()])
         .backgroundColor('rgb(240,250,255)')
         .id('MaxLengthRichText')
     }

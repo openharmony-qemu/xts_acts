@@ -449,5 +449,53 @@ export default function dataShareConfigDeleteTest() {
         expect(err.code).assertEqual("401");
       }
     });
+
+    /**
+     * @tc.name   dataShareConfigDeleteTest014
+     * @tc.number SUB_DistributedData_DataShare_SDK_DeleteAll_0100
+     * @tc.desc   Delete All
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigDeleteTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let testUri2 = "datashareproxy://com.acts.dataShare.config/test2";
+      let testUri3 = "datashareproxy://com.acts.dataShare.config/test3";
+      let proxyData: dataShare.ProxyData[] = [];
+      let g_proxyDataAllowTest2: dataShare.ProxyData = {
+        uri: testUri2,
+        value: 253689.256,
+        allowList: []
+      }
+      let g_proxyDataAllowTest3: dataShare.ProxyData = {
+        uri: testUri3,
+        value: "value is ok la",
+        allowList: []
+      }
+      proxyData.push(g_proxyDataAllowTest2);
+      proxyData.push(g_proxyDataAllowTest3);
+      await g_handle!.publish(proxyData, g_config);
+      let uris = [
+        testUri1,
+        testUri2,
+        testUri3
+      ]
+      try {
+        let results = await g_handle!.get(uris, g_config);
+        results.forEach(
+          result => {
+          expect(result.result).assertEqual(dataShare.DataProxyErrorCode.SUCCESS);
+        });
+        await g_handle!.delete(g_config);
+        results = await g_handle!.get(uris, g_config);
+        results.forEach(
+          result => {
+          expect(result.result).assertEqual(dataShare.DataProxyErrorCode.URI_NOT_EXIST);
+        });
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigDeleteTest014 failed.code =" + err.code + ",message=" + err.message);
+        expect().assertFail();
+      }
+    });
   })
 }

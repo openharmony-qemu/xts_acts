@@ -12,15 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium";
 import common from '@ohos.app.ability.common';
 import { relationalStore } from '@kit.ArkData';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { UIAbility } from '@kit.AbilityKit';
 import { window } from '@kit.ArkUI';
-
-let context: common.UIAbilityContext;
 
 const TAG = "[ttt]"
 const STORE_CONFIG: relationalStore.StoreConfig = {
@@ -31,12 +29,12 @@ const CREATE_TABLE_TEST =
   "CREATE TABLE IF NOT EXISTS EMPLOYEE (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL, age INTEGER, salary REAL, blobType BLOB)";
 
 let store: relationalStore.RdbStore | undefined = undefined;
-
+const delegator = AbilityDelegatorRegistry.getAbilityDelegator();
+const context = delegator.getAppContext().getApplicationContext();
 export default function relationalStoreEtsTest() {
   describe('relationalStoreEtsTest', () => {
     beforeAll(async () => {
       console.info(TAG + 'beforeAll');
-      context = AppStorage.Get<common.UIAbilityContext>("TestAbilityContext") as common.UIAbilityContext;
     });
     beforeEach(async () => {
       console.info(TAG + 'beforeEach');
@@ -47,18 +45,17 @@ export default function relationalStoreEtsTest() {
       } catch (err) {
         console.error(TAG + `Get RdbStore failed, code is ${err.code},message is ${err.message}`);
       }
-
     });
     afterEach(async () => {
       console.info(TAG + 'afterEach');
-      store = undefined;
-      await relationalStore.deleteRdbStore(context, "RdbTest.db");
+      if(store != undefined){
+        await relationalStore.deleteRdbStore(context, "RdbTest.db");
+      }
     });
     afterAll(async () => {
       console.info(TAG + 'afterAll');
     });
     console.info(TAG + "*************Unit Test Begin*************");
-
     /**
      * @tc.name   testRdbStoreDeleteRdbStoretest0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_DeleteRdbStoretest_0100
@@ -79,7 +76,6 @@ export default function relationalStoreEtsTest() {
       }
       console.info(TAG + "************* testRdbStoreDeleteRdbStoretest0100 end *************");
     });
-
     /**
      * @tc.name   testRdbStoreDeleteRdbStoretest0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_DeleteRdbStoretest_0200
@@ -100,7 +96,6 @@ export default function relationalStoreEtsTest() {
       }
       console.info(TAG + "************* testRdbStoreDeleteRdbStoretest0200 end *************");
     });
-
     /**
      * @tc.name   testRdbStoreDeleteRdbStoretest0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_DeleteRdbStoretest_0300
@@ -123,7 +118,6 @@ export default function relationalStoreEtsTest() {
       }
       console.info(TAG + "************* testRdbStoreDeleteRdbStoretest0300 end *************");
     });
-
     /**
      * @tc.name   testRdbStoreDeleteRdbStoretest0400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_DeleteRdbStoretest_0400
@@ -1204,7 +1198,7 @@ export default function relationalStoreEtsTest() {
       }
       console.info(TAG + "************* testRdbGetBlobErrtest0200 end *************");
     });
-    
+
     /**
      * @tc.name   testRdbGetStringErrtest0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RdbGetStringErrtest_0100
@@ -1389,6 +1383,149 @@ export default function relationalStoreEtsTest() {
       console.info(TAG + "************* testRdbIsColumnNullErrtest0200 end *************");
     });
 
-    console.info(TAG + " *************Unit Test End*************");
+    /**
+     * @tc.name   testRdbStoreDeleteRdbStoretestAdd0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoreDeleteRdbStoretestAdd_0100
+     * @tc.desc   RelationalStore deleteRdbStore test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbStoreDeleteRdbStoretestAdd0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + "************* testRdbStoreDeleteRdbStoretestAdd0100 start *************");
+      let rdbName = "a".repeat(994)
+      try {
+        await relationalStore.deleteRdbStore(context, rdbName);
+        console.info(TAG + "deleteRdbStore success ");
+        expect().assertFail()
+      } catch (err) {
+        console.error(TAG + `deleteRdbStore is failed, code is ${err.code},message is ${err.message}`);
+        expect(err.code).assertEqual("401")
+      }
+      console.info(TAG + "************* testRdbStoreDeleteRdbStoretestAdd0100 end *************");
+    });
+    /**
+     * @tc.name   testRdbStoreDeleteRdbStoretestAdd0200
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoreDeleteRdbStoretestAdd_0200
+     * @tc.desc   RelationalStore deleteRdbStore test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbStoreDeleteRdbStoretestAdd0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + "************* testRdbStoreDeleteRdbStoretestAdd0200 start *************");
+      let rdbName = "a".repeat(993)
+      try {
+        let num = 0;
+        await relationalStore.deleteRdbStore(context, rdbName);
+        num += 1;
+        console.info(TAG + "deleteRdbStore success ");
+        expect(num).assertEqual(1)
+      } catch (err) {
+        console.error(TAG + `deleteRdbStore is failed, code is ${err.code},message is ${err.message}`);
+        expect().assertFail()
+      }
+      console.info(TAG + "************* testRdbStoreDeleteRdbStoretestAdd0200 end *************");
+    });
+    /**
+     * @tc.name   testRdbStoreDeleteRdbStoretestAdd0300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoreDeleteRdbStoretestAdd_0300
+     * @tc.desc   RelationalStore deleteRdbStore test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testRdbStoreDeleteRdbStoretestAdd0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + "************* testRdbStoreDeleteRdbStoretestAdd0300 start *************");
+      let rdbName = "";
+      try {
+        let num = 0;
+        await relationalStore.deleteRdbStore(context, rdbName);
+        num += 1;
+        console.info(TAG + "deleteRdbStore success");
+        expect(num).assertEqual(1)
+      } catch (err) {
+        console.error(TAG + `deleteRdbStore is failed, code is ${err.code},message is ${err.message}`);
+        expect().assertFail()
+      }
+      console.info(TAG + "************* testRdbStoreDeleteRdbStoretestAdd0300 end *************");
+    });
+    /**
+     * @tc.name   testRdbStoreDeleteRdbStoretestAdd0400
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoreDeleteRdbStoretestAdd_0400
+     * @tc.desc   RelationalStore deleteRdbStore test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testRdbStoreDeleteRdbStoretestAdd0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
+      console.info(TAG + "************* testRdbStoreDeleteRdbStoretestAdd0400 start *************");
+      let rdbName = "a".repeat(994)
+      try {
+        relationalStore.deleteRdbStore(context, rdbName, async (err: BusinessError) => {
+          expect(!err).assertFail();
+          done();
+        });
+      } catch (err) {
+        console.error(TAG + `testRdbStoreDeleteRdbStoretestAdd0400, errcode:${JSON.stringify(err)}`);
+        expect(err.code == 401).assertTrue()
+        done();
+      }
+      console.info(TAG + "************* testRdbStoreDeleteRdbStoretestAdd0400 end   *************");
+    });
+    /**
+     * @tc.name   testRdbStoreDeleteRdbStoretestAdd0500
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoreDeleteRdbStoretestAdd_0500
+     * @tc.desc   RelationalStore deleteRdbStore test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testRdbStoreDeleteRdbStoretestAdd0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
+      console.info(TAG + "************* testRdbStoreDeleteRdbStoretestAdd0500 start *************");
+      let rdbName = "a".repeat(993)
+      try {
+        relationalStore.deleteRdbStore(context, rdbName, async (err: BusinessError) => {
+          let num = 0;
+          await relationalStore.deleteRdbStore(context, rdbName);
+          num += 1;
+          console.info(TAG + "deleteRdbStore success ");
+          expect(num).assertEqual(1)
+          done()
+        });
+      } catch (err) {
+        console.error(TAG + `testRdbStoreDeleteRdbStoretestAdd0500, errcode:${JSON.stringify(err)}`);
+        expect(!err).assertFail();
+        done();
+      }
+      console.info(TAG + "************* testRdbStoreDeleteRdbStoretestAdd0500 end   *************");
+    });
+    /**
+     * @tc.name   testRdbStoreDeleteRdbStoretestAdd0600
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoreDeleteRdbStoretestAdd_0600
+     * @tc.desc   RelationalStore deleteRdbStore test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("testRdbStoreDeleteRdbStoretestAdd0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
+      console.info(TAG + "************* testRdbStoreDeleteRdbStoretestAdd0600 start *************");
+      let rdbName = ""
+      try {
+        relationalStore.deleteRdbStore(context, rdbName, async (err: BusinessError) => {
+          let num = 0;
+          await relationalStore.deleteRdbStore(context, rdbName);
+          num += 1;
+          console.info(TAG + "deleteRdbStore success ");
+          expect(num).assertEqual(1)
+          done()
+        });
+      } catch (err) {
+        console.error(TAG + `testRdbStoreDeleteRdbStoretestAdd0600, errcode:${JSON.stringify(err)}`);
+        expect(!err).assertFail();
+        done();
+      }
+      console.info(TAG + "************* testRdbStoreDeleteRdbStoretestAdd0600 end   *************");
+    });
   })
 }

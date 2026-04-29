@@ -58,6 +58,26 @@ static napi_value OHAVMuxerCreate(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value OHAVMuxerCreateFlv(napi_env env, napi_callback_info info)
+{
+    OH_AVMuxer *muxer = nullptr;
+    OH_AVOutputFormat format = AV_OUTPUT_FORMAT_FLV;
+    int fileDescribe = open("/data/storage/el2/base/haps/entry_test/files/demo.flv",
+        O_CREAT | O_RDWR | O_TRUNC, S_IRUSR | S_IWUSR);
+    LOG("OHAVMuxerCreate fd is %{public}d", fileDescribe);
+    muxer = OH_AVMuxer_Create(fileDescribe, format);
+    int returnValue = FAIL;
+    if (muxer != nullptr) {
+        returnValue = SUCCESS;
+    }
+    close(fileDescribe);
+    napi_value result = nullptr;
+    OH_AVMuxer_Destroy(muxer);
+    muxer = nullptr;
+    napi_create_int32(env, returnValue, &result);
+    return result;
+}
+
 static napi_value OHAVMuxerSetRotation(napi_env env, napi_callback_info info)
 {
     OH_AVMuxer *muxer = nullptr;
@@ -620,6 +640,7 @@ static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
         {"oHAVMuxerCreate", nullptr, OHAVMuxerCreate, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHAVMuxerCreateFlv", nullptr, OHAVMuxerCreateFlv, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHAVMuxerSetRotation", nullptr, OHAVMuxerSetRotation, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHAVMuxerSetFormat", nullptr, OHAVMuxerSetFormat, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHAVMuxerStart", nullptr, OHAVMuxerStart, nullptr, nullptr, nullptr, napi_default, nullptr},

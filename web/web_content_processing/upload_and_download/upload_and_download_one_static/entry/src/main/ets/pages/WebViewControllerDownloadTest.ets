@@ -79,6 +79,7 @@ struct WebViewControllerDownloadTest {
   @State receivedBytes: number = -1;
   @State fullPath: string = '';
   @State isDownloadFail: boolean = false;
+  @State getLastErrorCodeEnum: number = -1;
   failedDownloadSerializedData: Uint8Array  = new Uint8Array();
   failedDownload: webview.WebDownloadItem = new webview.WebDownloadItem();
 
@@ -169,6 +170,356 @@ struct WebViewControllerDownloadTest {
                 }
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic001': {
+              try {
+                  Utils.emitEvent(webview.WebDownloadErrorCode.ERROR_UNKNOWN, 260326171)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326171);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic002': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.FILE_FAILED, 260326172)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326172);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic003': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.FILE_ACCESS_DENIED, 260326173)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326173);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic004': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.FILE_NO_SPACE, 260326174)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326174);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic005': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.FILE_NAME_TOO_LONG, 260326175)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326175);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic006': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.FILE_TOO_LARGE, 260326176)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326176);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic007': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.FILE_TRANSIENT_ERROR, 260326177)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326177);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic008': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.FILE_BLOCKED, 260326178)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326178);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic009': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.FILE_TOO_SHORT, 260326179)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326179);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic010': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.FILE_HASH_MISMATCH, 260326180)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326180);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic011': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.FILE_SAME_AS_SOURCE, 260326181)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326181);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic012': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.NETWORK_FAILED, 260326182)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326182);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic013': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.NETWORK_TIMEOUT, 260326183)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326183);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic014': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.NETWORK_DISCONNECTED, 260326184)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326184);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic015': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.NETWORK_SERVER_DOWN, 260326185)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326185);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic016': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.NETWORK_INVALID_REQUEST, 260326186)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326186);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic017': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.SERVER_FAILED, 260326187)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326187);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic018': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.SERVER_NO_RANGE, 260326188)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326188);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic019': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.SERVER_BAD_CONTENT, 260326189)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326189);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic020': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.SERVER_UNAUTHORIZED, 260326190)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326190);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic021': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.SERVER_CERT_PROBLEM, 260326191)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326191);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic022': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.SERVER_FORBIDDEN, 260326192)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326192);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic023': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.SERVER_UNREACHABLE, 260326193)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326193);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic024': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.SERVER_CONTENT_LENGTH_MISMATCH, 260326194)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326194);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic025': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.SERVER_CROSS_ORIGIN_REDIRECT, 260326195)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326195);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic026': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.USER_CANCELED, 260326196)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326196);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic027': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.USER_SHUTDOWN, 260326197)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326197);
+              }
+              break;
+            }
+            case 'testWebDownloadGetLastErrorCodeEnumStatic028': {
+              try {
+                Utils.emitEvent(webview.WebDownloadErrorCode.CRASH, 260326198)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 260326198);
+              }
+              break;
+            }
+            case 'testWebDownloadGetStateEnumStatic001': {
+              try {
+                Utils.emitEvent(webview.WebDownloadState.IN_PROGRESS, 2603261981)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 2603261981);
+              }
+              break;
+            }
+            case 'testWebDownloadGetStateEnumStatic002': {
+              try {
+                Utils.emitEvent(webview.WebDownloadState.COMPLETED, 2603261982)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 2603261982);
+              }
+              break;
+            }
+            case 'testWebDownloadGetStateEnumStatic003': {
+              try {
+                Utils.emitEvent(webview.WebDownloadState.CANCELED, 2603261983)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 2603261983);
+              }
+              break;
+            }
+            case 'testWebDownloadGetStateEnumStatic004': {
+              try {
+                Utils.emitEvent(webview.WebDownloadState.INTERRUPTED, 2603261984)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 2603261984);
+              }
+              break;
+            }
+            case 'testWebDownloadGetStateEnumStatic005': {
+              try {
+                Utils.emitEvent(webview.WebDownloadState.PENDING, 2603261985)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 2603261985);
+              }
+              break;
+            }
+            case 'testWebDownloadGetStateEnumStatic006': {
+              try {
+                Utils.emitEvent(webview.WebDownloadState.PAUSED, 2603261986)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 2603261986);
+              }
+              break;
+            }
+            case 'testWebDownloadGetStateEnumStatic007': {
+              try {
+                Utils.emitEvent(webview.WebDownloadState.UNKNOWN, 2603261987)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 2603261987);
               }
               break;
             }
@@ -571,7 +922,7 @@ struct WebViewControllerDownloadTest {
               try {
                 this.controller.startDownload(this.downloadUrl);
                 webview.WebDownloadManager.setDownloadDelegate(this.delegate);
-                for (let i=0;i++;i<3) {
+                for (let i=0; i< 3; i++) {
                   if (this.downloadingItem) {
                     this.downloadingItem.cancel()
                   }
@@ -599,7 +950,6 @@ struct WebViewControllerDownloadTest {
               }
               break;
             }
-
           }
         })
       }
@@ -833,6 +1183,7 @@ struct WebViewControllerDownloadTest {
                 console.log('download failed method:' + webDownloadItem.getMethod());
                 console.log('download failed guid: ' + webDownloadItem.getGuid());
                 console.log('download failed lastErrorCode: ' + webDownloadItem.getLastErrorCode());
+                this.getLastErrorCodeEnum = webDownloadItem.getLastErrorCode();
                 webDownloadItem.cancel();
                 this.failedDownload = webDownloadItem;
                 this.failedDownloadSerializedData = webDownloadItem.serialize();

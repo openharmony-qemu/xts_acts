@@ -32,6 +32,7 @@ class StringFields {
 struct webViewIncognitoMode {
   stringObj: StringFields  = new StringFields ();
   controller: webview.WebviewController = new webview.WebviewController(undefined);
+  controller2: webview.WebviewController = new webview.WebviewController(undefined);
   @State str: string = ''
   @State javaScriptAccess: boolean = true;
   @State fileAccess: boolean = true;
@@ -42,6 +43,8 @@ struct webViewIncognitoMode {
   @State isPrivacy: boolean = false;
   @State geolocationAccess: boolean = true;
   @State incognito: boolean = false;
+  @State errorCode: int = 0;
+  @State errorMsg: string = 'failed';
 
   aboutToAppear() {
     console.info('Entry aboutToAppear');
@@ -255,6 +258,38 @@ struct webViewIncognitoMode {
               }
               break;
             }
+            case "emitWebViewIncognitoMode21": {
+              try {
+                webview.GeolocationPermissions.allowGeolocation("");
+              } catch (error) {
+                console.error(`emitallowGeolocation ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 20260257);
+              }
+              break;
+            }
+            case "emitWebViewIncognitoMode22": {
+              try {
+                webview.GeolocationPermissions.allowGeolocation("https://www.example.com", false);
+                Utils.emitEvent("success", 20260259);
+              } catch (error) {
+                console.error("allowGeolocation with incognito=false error: " + JSON.stringify(error));
+              }
+              break;
+            }
+            case "emitWebViewIncognitoMode23": {
+              try {
+                this.errorCode = 0;
+                this.errorMsg = 'failed';
+                webview.GeolocationPermissions.deleteGeolocation("");
+              } catch (error) {
+                console.error(`emitDeleteGeolocationValueNullErr ErrorCode: ${error.code},  Message: ${error.message}`);
+                this.errorCode = error.code;
+                this.errorMsg = error.message;
+              }
+              Utils.emitEvent(this.errorCode, 110520)
+              Utils.emitEvent(this.errorMsg, 110530)
+              break;
+            }
 
             case 'emitWebViewIncognitoMode01': {
               try {
@@ -273,10 +308,45 @@ struct webViewIncognitoMode {
               }
               break;
             }
-
+            case 'emitWebViewIncognitoMode02': {
+              try {
+                this.isPrivacy = false;
+                this.controller.loadUrl('https://m.baidu.com');
+                setTimeout(() => {
+                  let result = this.controller.isIncognitoMode();
+                  if (result === true) {
+                    Utils.emitEvent('fail', 8020);
+                  } else {
+                    Utils.emitEvent('success', 8020);
+                  }
+                }, 2000)
+              } catch (error) {
+                hilog.info(0X0000,"testTag",`ErrorCode: ` + error );
+              }
+              break;
+            }
+            case 'emitWebViewIncognitoMode03': {
+              try {
+                this.isPrivacy = true;
+                this.controller2.loadUrl('https://m.baidu.com');
+                setTimeout(() => {
+                  let result = this.controller.isIncognitoMode();
+                  if (result === true) {
+                    Utils.emitEvent('fail', 8021);
+                  } else {
+                    Utils.emitEvent('success', 8021);
+                  }
+                }, 2000)
+              } catch (error) {
+                hilog.info(0X0000,"testTag",`ErrorCode: ` + error );
+                Utils.emitEvent(error.code, 8021);
+              }
+              break;
+            }
           }
         })
-      }
+
+
 
       if (this.isPrivacy) {
         Web({ src: 'resource://rawfile/index.html', controller: this.controller, incognitoMode: true })
@@ -299,4 +369,5 @@ struct webViewIncognitoMode {
       }
     }
   }
+}
 }

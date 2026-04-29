@@ -139,6 +139,8 @@ napi_property_descriptor desc[] = {
     {"testNativeWindowNativeWindowHandleOptSetGetBufferGeometryAbnormal", nullptr,
      testNativeWindowNativeWindowHandleOptSetGetBufferGeometryAbnormal, nullptr, nullptr, nullptr, napi_default,
      nullptr},
+    {"testNativeWindowNativeWindowHandleOptCodeAbnormal", nullptr, testNativeWindowNativeWindowHandleOptCodeAbnormal,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
     {"testNativeWindowNativeWindowHandleOptSetGetFormatNormal", nullptr,
      testNativeWindowNativeWindowHandleOptSetGetFormatNormal, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"testNativeWindowNativeWindowHandleOptSetGetFormatAbnormal", nullptr,

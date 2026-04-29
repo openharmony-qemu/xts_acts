@@ -16,7 +16,7 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { commonEventManager } from '@kit.BasicServicesKit';
-import { common } from '@kit.AbilityKit';
+import { common, contextConstant, application } from '@kit.AbilityKit';
 import { BusinessError, systemParameterEnhance } from '@kit.BasicServicesKit';
 import eventBusPlue from '../lib/EventBusPlus';
 import wifiManager from '@ohos.wifiManager';
@@ -3093,6 +3093,200 @@ export default function ActsUIExtensionContextMethodTest() {
             console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0200] startAbility result ' + err?.code);
           })
         });
+      } else if (mpEnable === 'false') {
+        console.log(`${tag} function not enable.`);
+        expect(mpEnable).assertEqual('false');
+        done();
+      } else {
+        console.log(`${tag} wrong param`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ContextType__0100
+     * @tc.number SUB_Ability_AbilityRuntime_ContextType__0100
+     * @tc.desc   Test startAbilityforresult (promise) with valid want and null options parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ContextType__0100', Level.LEVEL0, async (done: Function) => {
+      let tag = "SUB_Ability_AbilityRuntime_ContextType__0100";
+      if (mpEnable === 'true') {
+        console.info('====> [SUB_Ability_AbilityRuntime_ContextType__0100] start ');
+        let testAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
+        let result = testAbilityContext.isContextOf(contextConstant.ContextType.UIABILITY_CONTEXT);
+        expect(result).assertTrue();
+        done();
+      } else if (mpEnable === 'false') {
+        console.log(`${tag} function not enable.`);
+        expect(mpEnable).assertEqual('false');
+        done();
+      } else {
+        console.log(`${tag} wrong param`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ContextType__0200
+     * @tc.number SUB_Ability_AbilityRuntime_ContextType__0200
+     * @tc.desc   Test startAbilityforresult (promise) with valid want and null options parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ContextType__0200', Level.LEVEL0, async (done: Function) => {
+      let tag = "SUB_Ability_AbilityRuntime_ContextType__0200";
+      if (mpEnable === 'true') {
+        console.info('====> [SUB_Ability_AbilityRuntime_ContextType__0200] start ');
+        let testAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
+        let result = testAbilityContext.isContextOf(contextConstant.ContextType.APPLICATION_CONTEXT);
+        expect(result).assertFalse();
+        done();
+      } else if (mpEnable === 'false') {
+        console.log(`${tag} function not enable.`);
+        expect(mpEnable).assertEqual('false');
+        done();
+      } else {
+        console.log(`${tag} wrong param`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ContextType__0300
+     * @tc.number SUB_Ability_AbilityRuntime_ContextType__0300
+     * @tc.desc   Test startAbilityforresult (promise) with valid want and null options parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ContextType__0300', Level.LEVEL0, async (done: Function) => {
+      let tag = "SUB_Ability_AbilityRuntime_ContextType__0300";
+      if (mpEnable === 'true') {
+        console.info('====> [SUB_Ability_AbilityRuntime_ContextType__0300] start ');
+        let applicationContext = application.getApplicationContext();
+        let result = applicationContext.isContextOf(contextConstant.ContextType.APPLICATION_CONTEXT);
+        expect(result).assertTrue();
+        done();
+      } else if (mpEnable === 'false') {
+        console.log(`${tag} function not enable.`);
+        expect(mpEnable).assertEqual('false');
+        done();
+      } else {
+        console.log(`${tag} wrong param`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ContextType__0400
+     * @tc.number SUB_Ability_AbilityRuntime_ContextType__0400
+     * @tc.desc   Test startAbilityforresult (promise) with valid want and null options parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ContextType__0400', Level.LEVEL0, async (done: Function) => {
+      let tag = "SUB_Ability_AbilityRuntime_ContextType__0400";
+      if (mpEnable === 'true') {
+        console.info('====> [SUB_Ability_AbilityRuntime_ContextType__0400] start ');
+        let applicationContext = application.getApplicationContext();
+        let result = applicationContext.isContextOf(contextConstant.ContextType.SERVICE_EXTENSION_CONTEXT);
+        expect(result).assertFalse();
+        done();
+      } else if (mpEnable === 'false') {
+        console.log(`${tag} function not enable.`);
+        expect(mpEnable).assertEqual('false');
+        done();
+      } else {
+        console.log(`${tag} wrong param`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ContextType__0500
+     * @tc.number SUB_Ability_AbilityRuntime_ContextType__0500
+     * @tc.desc   Test startAbilityforresult (promise) with valid want and null options parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ContextType__0500', Level.LEVEL0, async (done: Function) => {
+      let tag = "SUB_Ability_AbilityRuntime_ContextType__0500";
+      if (mpEnable === 'true') {
+        console.info('====> [SUB_Ability_AbilityRuntime_ContextType__0500] start ');
+        let abilityStageContext: common.AbilityStageContext = AppStorage.get<common.AbilityStageContext>('abilityStageContext') as common.AbilityStageContext;
+        let result = abilityStageContext.isContextOf(contextConstant.ContextType.ABILITY_STAGE_CONTEXT);
+        expect(result).assertTrue();
+        done();
+      } else if (mpEnable === 'false') {
+        console.log(`${tag} function not enable.`);
+        expect(mpEnable).assertEqual('false');
+        done();
+      } else {
+        console.log(`${tag} wrong param`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ContextType__0600
+     * @tc.number SUB_Ability_AbilityRuntime_ContextType__0600
+     * @tc.desc   Test startAbilityforresult (promise) with valid want and null options parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ContextType__0600', Level.LEVEL0, async (done: Function) => {
+      let tag = "SUB_Ability_AbilityRuntime_ContextType__0600";
+      if (mpEnable === 'true') {
+        console.info('====> [SUB_Ability_AbilityRuntime_ContextType__0600] start ');
+        let abilityStageContext: common.AbilityStageContext = AppStorage.get<common.AbilityStageContext>('abilityStageContext') as common.AbilityStageContext;
+        let result = abilityStageContext.isContextOf(contextConstant.ContextType.UI_SERVICE_EXTENSION_CONTEXT);
+        expect(result).assertFalse();
+        done();
+      } else if (mpEnable === 'false') {
+        console.log(`${tag} function not enable.`);
+        expect(mpEnable).assertEqual('false');
+        done();
+      } else {
+        console.log(`${tag} wrong param`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ContextType__0700
+     * @tc.number SUB_Ability_AbilityRuntime_ContextType__0700
+     * @tc.desc   Test startAbilityforresult (promise) with valid want and null options parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ContextType__0700', Level.LEVEL0, async (done: Function) => {
+      let tag = "SUB_Ability_AbilityRuntime_ContextType__0700";
+      if (mpEnable === 'true') {
+        console.info('====> [SUB_Ability_AbilityRuntime_ContextType__0700] start ');
+        expect(contextConstant.ContextType.APPLICATION_CONTEXT).assertEqual(0);
+        expect(contextConstant.ContextType.ABILITY_STAGE_CONTEXT).assertEqual(1);
+        expect(contextConstant.ContextType.UIABILITY_CONTEXT).assertEqual(2);
+        expect(contextConstant.ContextType.FORM_EXTENSION_CONTEXT).assertEqual(3);
+        expect(contextConstant.ContextType.APP_SERVICE_EXTENSION_CONTEXT).assertEqual(4);
+        expect(contextConstant.ContextType.SERVICE_EXTENSION_CONTEXT).assertEqual(5);
+        expect(contextConstant.ContextType.UI_SERVICE_EXTENSION_CONTEXT).assertEqual(6);
+        expect(contextConstant.ContextType.AUTO_FILL_EXTENSION_CONTEXT).assertEqual(7);
+        done();
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');

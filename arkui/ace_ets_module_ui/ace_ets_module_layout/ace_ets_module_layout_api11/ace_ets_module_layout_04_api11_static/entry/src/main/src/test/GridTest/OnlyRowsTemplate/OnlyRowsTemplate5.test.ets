@@ -76,7 +76,7 @@ it('SUB_ACE_GRID_OnlyRowsTemplate5_static_0500', Level.LEVEL0, async (done: () =
       await CommonFunc.sleep(2000);
 
       console.log('get Initial value')
-      let GridItem_011:RectValue = CommonFunc.getComponentRect('OnlyRowsTemplate1_GridItem_01');
+      let GridItem_011:RectValue = await CommonFunc.getComponentRect('OnlyRowsTemplate1_GridItem_01');
       console.log('assert size')
       expect(Math.round(GridItem_011.right - GridItem_011.left)).assertEqual(Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))));
       console.log('GGridItem_01.right - GridItem_01.left' + (GridItem_011.right - GridItem_011.left))

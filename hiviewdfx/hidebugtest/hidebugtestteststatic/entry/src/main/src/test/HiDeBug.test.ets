@@ -93,7 +93,7 @@ export default function HidebugJsTest() {
                 const times: number = 3;
                 let pssValue: number = 0;
                 for (let i = 0; i < times; i++) {
-                    let arr: number[] = new Array<number>(i * 100000).fill(1) as number[];
+                    let arr: number[] = Array.create<number>(i * 100000, 1) as number[];
                     let tmp: number = Number(hidebug.getPss());
                     hilog.info(0x0000, 'testTag', 'No.' + i + ' tmp: ' + tmp);
                     expect(tmp).assertLarger(pssValue);

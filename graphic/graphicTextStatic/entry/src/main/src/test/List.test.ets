@@ -31,6 +31,8 @@ import GraphicTextAPI23 from './GraphicTextAPI23.test';
 import GraphicTextAPIAdd01 from './GraphicTextAPIAdd01.test';
 import GraphicTextAPIAdd02 from './GraphicTextAPIAdd02.test';
 import GraphicTextAPI24 from './GraphicTextAPI24.test';
+import GraphicTextAPI26 from './GraphicTextAPI26.test';
+import GraphicTextAPI2602 from './GraphicTextAPI2602.test';
 export default function testsuite() {
   GraphicTextInterface();
   GraphicTextParagraphBuilder();
@@ -51,4 +53,6 @@ export default function testsuite() {
   GraphicTextAPIAdd01();
   GraphicTextAPIAdd02();
   GraphicTextAPI24();
+  GraphicTextAPI26();
+  GraphicTextAPI2602();
 }

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, expect, it, Level } from '@ohos/hypium';
+import { describe, beforeAll, expect, it, Level } from '@ohos/hypium';
 import {
   BUNDLENAME1,
   ENTINFO1,
@@ -30,7 +30,11 @@ import {
   EDM_INSTALL_PARAM_FOR_ALL_USER,
   HAP_FILE_PATH_ERROR,
   MARKET_APPS,
-  ERROR_MARKET_APPS
+  ERROR_MARKET_APPS,
+  bundleNamesInit,
+  bundleNamesOneRealInit,
+  BUNDLE_NAME_ONE_REAL_200,
+  BUNDLE_NAME_201
 } from '../commom.ets';
 
 import adminManager from '@ohos.enterprise.adminManager';
@@ -41,6 +45,12 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 export default function bundleManagerTest() {
   describe('bundleManager_test', () => {
+    beforeAll((done: Function) => {
+      bundleNamesInit();
+      bundleNamesOneRealInit();
+      done();
+    })
+
     /**
      * @tc.name   test_addAllowedInstallBundlesSync_001
      * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDINSTALLBUNDLESSYNC_001
@@ -6101,6 +6111,83 @@ export default function bundleManagerTest() {
       }
       done();
       console.info(' --- test_getInstalledBundleStorageStats_1300  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_getInstalledBundleStorageStats_1400
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETINSTALLEDBUNDLESTORAGESTATS_1400
+     * @tc.desc   test getInstalledBundleStorageStats method with accountId = -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getInstalledBundleStorageStats_1400", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_getInstalledBundleStorageStats_1400  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        const bundleNames: string[] = ['com.edm.acts.normal'];
+        let result: bundleManager.BundleStorageStats[] =
+          await bundleManager.getInstalledBundleStorageStats(SELFWANT, bundleNames, INVALID_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_getInstalledBundleStorageStats_1400 error 9200012 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9200012).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_getInstalledBundleStorageStats_1400  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_getInstalledBundleStorageStats_1500
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETINSTALLEDBUNDLESTORAGESTATS_1500
+     * @tc.desc   test getInstalledBundleStorageStats method with 200 bundle names
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getInstalledBundleStorageStats_1500", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_getInstalledBundleStorageStats_1500  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let result: bundleManager.BundleStorageStats[] =
+          await bundleManager.getInstalledBundleStorageStats(SELFWANT, BUNDLE_NAME_ONE_REAL_200, DEFAULT_USER_ID);
+        expect(result != null).assertTrue();
+        expect(result.length === 200).assertTrue();
+      } catch (error) {
+        console.info(' --- test_getInstalledBundleStorageStats_1500 error is not expected, actually catch: ' + error.code);
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_getInstalledBundleStorageStats_1500  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_getInstalledBundleStorageStats_1600
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETINSTALLEDBUNDLESTORAGESTATS_1600
+     * @tc.desc   test getInstalledBundleStorageStats method with 201 bundle names
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getInstalledBundleStorageStats_1600", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_getInstalledBundleStorageStats_1600  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let result: bundleManager.BundleStorageStats[] =
+          await bundleManager.getInstalledBundleStorageStats(SELFWANT, BUNDLE_NAME_201, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_getInstalledBundleStorageStats_1600 error 9200012 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9200012).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_getInstalledBundleStorageStats_1600  -------- END --------');
     })
   })
 }

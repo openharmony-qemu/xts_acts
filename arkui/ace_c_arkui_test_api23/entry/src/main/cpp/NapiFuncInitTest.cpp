@@ -27,6 +27,7 @@
 #include "image/ImageAntialiasedTest.cpp"
 #include "list/ListEmptyTest.cpp"
 #include "grid/GridEmptyTest.cpp"
+#include "waterFlow/WaterFlowEmptyTest.cpp"
 #include "TextMarqueeOptions/TextMarqueeOptionsTest.cpp"
 #include "TextMarqueeOptions/ControllerBaseCreatTest.cpp"
 
@@ -190,11 +191,15 @@ static napi_value Init(napi_env env, napi_value exports)
          napi_default, nullptr},
         {"TestAtomicServiceMenuBarSetVisible01", nullptr,
          TestAtomicServiceMenuBarSetVisible01, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestAccessibilityElementInfoSetComponentIdentifier001", nullptr,
+         TestAccessibilityElementInfoSetComponentIdentifier001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextSelectionTest", nullptr, MotionPathNode, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"TestIsInRenderStateReturnValue001", nullptr, TestIsInRenderStateReturnValue001,
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestIsInRenderStateReturnValue002", nullptr, TestIsInRenderStateReturnValue002,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestMoveToParam001", nullptr, TestMoveToParam001,
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testPullUpToCancelRefresh01", nullptr, TestPullUpToCancelRefresh01, nullptr, nullptr, nullptr,
          napi_default, nullptr},
@@ -212,6 +217,10 @@ static napi_value Init(napi_env env, napi_value exports)
          TestImageAntialiased004, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testImageAntialiased005", nullptr,
          TestImageAntialiased005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testImageAntialiased006", nullptr,
+         TestImageAntialiased006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testImageAntialiased007", nullptr,
+         TestImageAntialiased007, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"ListEmptyTest_001", nullptr, ListEmptyTest_001, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"ListEmptyTest_002", nullptr, ListEmptyTest_002, nullptr, nullptr, nullptr,
@@ -229,6 +238,14 @@ static napi_value Init(napi_env env, napi_value exports)
         {"GridEmptyTest_003", nullptr, GridEmptyTest_003, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"GridEmptyTest_004", nullptr, GridEmptyTest_004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"WaterFlowEmptyTest_001", nullptr, WaterFlowEmptyTest_001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"WaterFlowEmptyTest_002", nullptr, WaterFlowEmptyTest_002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"WaterFlowEmptyTest_003", nullptr, WaterFlowEmptyTest_003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"WaterFlowEmptyTest_004", nullptr, WaterFlowEmptyTest_004, nullptr, nullptr, nullptr,
          napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {

@@ -24,14 +24,14 @@ export default function effectKitBTest() {
 
     /**
      * @tc.name   testGetTopProportionColors
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICEFFECTKIT_JS_API_0010
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_0100
      * @tc.desc   Read the first color value of the image. The number is specified by colorCount. The result is written into the Color array and returned in synchronization mode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testGetTopProportionColors', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let msgStr = 'testGetTopProportionColors'
+      let msgStr = 'www data testGetTopProportionColors'
       console.log(msgStr + ' begin');
       const color = new ArrayBuffer(96);
       let opts : image.InitializationOptions = {
@@ -76,14 +76,14 @@ export default function effectKitBTest() {
 
     /**
      * @tc.name   testInvert
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICEFFECTKIT_JS_API_0020
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_0200
      * @tc.desc   Read the first color value of the image. The number is specified by colorCount. The result is written into the Color array and returned in synchronization mode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testInvert', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let msgStr = 'testInvert'
+      let msgStr = 'www data testInvert'
       console.log(msgStr + ' begin');
       const color = new ArrayBuffer(96);
       let opts : image.InitializationOptions = {
@@ -128,14 +128,14 @@ export default function effectKitBTest() {
 
     /**
      * @tc.name   testSetColorMatrix
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICEFFECTKIT_JS_API_0030
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_0300
      * @tc.desc   Read the first color value of the image. The number is specified by colorCount. The result is written into the Color array and returned in synchronization mode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testSetColorMatrix', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let msgStr = 'testSetColorMatrix'
+      let msgStr = 'www data testSetColorMatrix'
       console.log(msgStr + ' begin');
       const color = new ArrayBuffer(96);
       let opts : image.InitializationOptions = {
@@ -186,14 +186,14 @@ export default function effectKitBTest() {
 
     /**
      * @tc.name   testTileMode
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICEFFECTKIT_JS_API_0040
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_0400
      * @tc.desc   Enumeration of the shader effect tile mode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testTileMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let msg = 'testTileMode'
+      let msg = 'www data testTileMode'
       console.log(msg + ' begin')
       expect(effectKit.TileMode.CLAMP).assertEqual(0)
       expect(effectKit.TileMode.REPEAT).assertEqual(1)
@@ -204,14 +204,14 @@ export default function effectKitBTest() {
     
     /**
      * @tc.name   testBlurTileMode
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICEFFECTKIT_JS_API_0050
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_0500
      * @tc.desc   Adds the blur effect to the effect list. The result is returned to the first node of the effect list
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testBlurTileMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let msgStr = 'testBlurTileMode'
+      let msgStr = 'www data testBlurTileMode'
       console.log(msgStr + ' begin');
       const color = new ArrayBuffer(96);
       let opts : image.InitializationOptions = {
@@ -240,7 +240,7 @@ export default function effectKitBTest() {
     
     /**
      * @tc.name   testGetEffectPixelMap_useCpuRender1
-     * @tc.number testGetEffectPixelMap_useCpuRender1
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_0600
      * @tc.desc   test getEffectPixelMap useCpuRender
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -258,7 +258,7 @@ export default function effectKitBTest() {
       };
       image.createPixelMap(color, opts).then((pixelMap) => {
         effectKit.createEffect(pixelMap).grayscale().getEffectPixelMap(false).then(data => {
-          console.info('getPixelBytesNumber = ', data.getPixelBytesNumber());
+          console.info('www data  getPixelBytesNumber = ', data.getPixelBytesNumber());
           done();
         }).catch((err: BusinessError) => {
           expect().assertFail();
@@ -269,7 +269,7 @@ export default function effectKitBTest() {
     
     /**
      * @tc.name   testGetEffectPixelMap_useCpuRender2
-     * @tc.number testGetEffectPixelMap_useCpuRender2
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_0700
      * @tc.desc   test getEffectPixelMap useCpuRender
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -287,7 +287,7 @@ export default function effectKitBTest() {
       };
       image.createPixelMap(color, opts).then((pixelMap) => {
         effectKit.createEffect(pixelMap).grayscale().getEffectPixelMap(true).then(data => {
-          console.info('getPixelBytesNumber = ', data.getPixelBytesNumber());
+          console.info('www data getPixelBytesNumber = ', data.getPixelBytesNumber());
           done();
         }).catch((err: BusinessError) => {
           expect().assertFail();
@@ -298,14 +298,14 @@ export default function effectKitBTest() {
     
     /**
      * @tc.name   testGetTopProportionColors_2
-     * @tc.number testGetTopProportionColors_2
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_0800
      * @tc.desc   test getTopProportionColors
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testGetTopProportionColors_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let msgStr = 'testGetTopProportionColors_2'
+      let msgStr = 'www data testGetTopProportionColors_2'
       let imageSource = image.createImageSource(testPng.buffer);
       console.info(msgStr + "promise create pixmap.start");
       imageSource.createPixelMap().then(pixelMap => {
@@ -333,14 +333,14 @@ export default function effectKitBTest() {
     
     /**
      * @tc.name   isBlackOrWhiteOrGrayColor_2
-     * @tc.number isBlackOrWhiteOrGrayColor_2
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_0900
      * @tc.desc   test isBlackOrWhiteOrGrayColor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('isBlackOrWhiteOrGrayColor_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let msgStr = 'isBlackOrWhiteOrGrayColor_2'
+      let msgStr = 'www data isBlackOrWhiteOrGrayColor_2'
       let imageSource = image.createImageSource(testPng.buffer);
       console.info(msgStr + "promise create pixmap.start");
       imageSource.createPixelMap().then(pixelMap => {
@@ -361,7 +361,7 @@ export default function effectKitBTest() {
     
     /**
      * @tc.name   createColorPicker_callback_0100
-     * @tc.number createColorPicker_callback_0100
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_1000
      * @tc.desc   test createColorPicker callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -396,14 +396,14 @@ export default function effectKitBTest() {
     
     /**
      * @tc.name   createColorPicker_callback_0200
-     * @tc.number createColorPicker_callback_0200
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_1100
      * @tc.desc   test createColorPicker callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('createColorPicker_callback_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
-      let caseName = 'createColorPicker_callback_0200';
+      let caseName = 'www data createColorPicker_callback_0200';
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log("effectKitTest" + msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
@@ -427,13 +427,13 @@ export default function effectKitBTest() {
     
     /**
      * @tc.name   effectKitBTestCreateEffectEnum001
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_001
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_1200
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTestCreateEffectEnum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTestCreateEffectEnum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTestCreateEffectEnum001 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -450,19 +450,20 @@ export default function effectKitBTest() {
           expect(pixelMap.isStrideAlignment).assertFalse();
           let pixel = effectKit.createEffect(pixelMap);
           expect(pixel !== undefined).assertTrue();
+          console.log("effectKitTest" + msgStr + 'end');
           done();
         })
       })
 
     /**
      * @tc.name   effectKitBTestCreateEffectEnum002
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_002
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_1300
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTestCreateEffectEnum002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTestCreateEffectEnum002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTestCreateEffectEnum002 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -479,19 +480,20 @@ export default function effectKitBTest() {
           expect(pixelMap.isStrideAlignment).assertFalse();
           let pixel = effectKit.createEffect(pixelMap);
           expect(pixel !== undefined).assertTrue();
+          console.log("effectKitTest" + msgStr + 'end');
           done();
         })
       })
 
     /**
      * @tc.name   effectKitBTestCreateEffectEnum003
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_003
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_1400
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTestCreateEffectEnum003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTestCreateEffectEnum003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTestCreateEffectEnum003 ';
         const color: ArrayBuffer = new ArrayBuffer(96);
@@ -508,18 +510,19 @@ export default function effectKitBTest() {
         expect(pixelMap.isStrideAlignment).assertTrue();
         let pixel = effectKit.createEffect(pixelMap);
         expect(pixel !== undefined).assertTrue();
+        console.log("effectKitTest" + msgStr + 'end');
         done();
       })
 
     /**
      * @tc.name   effectKitBTestCreateEffectEnum004
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_004
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_1500
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTestCreateEffectEnum004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTestCreateEffectEnum004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTestCreateEffectEnum004 ';
         const color: ArrayBuffer = new ArrayBuffer(96);
@@ -536,18 +539,19 @@ export default function effectKitBTest() {
         expect(pixelMap.isStrideAlignment).assertTrue();
         let pixel = effectKit.createEffect(pixelMap);
         expect(pixel !== undefined).assertTrue();
+        console.log("effectKitTest" + msgStr + 'end');
         done();
       })
 
     /**
      * @tc.name   effectKitBTest_Promise_one_static_001
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_005
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_1600
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Promise_one_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Promise_one_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Promise_one_static_001 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -564,19 +568,20 @@ export default function effectKitBTest() {
           expect(pixelMap.isStrideAlignment).assertFalse();
           let colorPicker = await effectKit.createColorPicker(pixelMap);
           expect(colorPicker !== undefined).assertTrue();
+          console.log("effectKitTest" + msgStr + 'end');
           done();
         })
       })
 
     /**
      * @tc.name   effectKitBTest_Promise_one_static_002
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_006
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_1700
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Promise_one_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Promise_one_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Promise_one_static_002 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -593,19 +598,20 @@ export default function effectKitBTest() {
           expect(pixelMap.isStrideAlignment).assertFalse();
           let colorPicker = await effectKit.createColorPicker(pixelMap);
           expect(colorPicker !== undefined).assertTrue();
+          console.log("effectKitTest" + msgStr + 'end');
           done();
         })
       })
 
     /**
      * @tc.name   effectKitBTest_Promise_one_static_003
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_007
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_1800
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Promise_one_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Promise_one_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Promise_one_static_003 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -623,18 +629,19 @@ export default function effectKitBTest() {
         expect(pixelMap.isStrideAlignment).assertTrue();
         let colorPicker = await effectKit.createColorPicker(pixelMap);
         expect(colorPicker !== undefined).assertTrue();
+        console.log("effectKitTest" + msgStr + 'end');
         done();
       })
 
     /**
      * @tc.name   effectKitBTest_Promise_one_static_004
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_008
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_1900
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Promise_one_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Promise_one_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Promise_one_static_004 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -652,18 +659,19 @@ export default function effectKitBTest() {
         expect(pixelMap.isStrideAlignment).assertTrue();
         let colorPicker = await effectKit.createColorPicker(pixelMap);
         expect(colorPicker !== undefined).assertTrue();
+        console.log("effectKitTest" + msgStr + 'end');
         done();
       })
 
     /**
      * @tc.name   effectKitBTest_Promise_two_static_001
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_009
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_2000
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Promise_two_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Promise_two_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Promise_two_static_001 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -680,19 +688,20 @@ export default function effectKitBTest() {
           expect(pixelMap.isStrideAlignment).assertFalse();
           let colorPicker = await effectKit.createColorPicker(pixelMap, [0, 0, 1, 1]);
           expect(colorPicker !== undefined).assertTrue();
+          console.log("effectKitTest" + msgStr + 'end');
           done();
         })
       })
 
     /**
      * @tc.name   effectKitBTest_Promise_two_static_002
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_010
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_2100
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Promise_two_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Promise_two_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Promise_two_static_002 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -709,19 +718,20 @@ export default function effectKitBTest() {
           expect(pixelMap.isStrideAlignment).assertFalse();
           let colorPicker = await effectKit.createColorPicker(pixelMap, [0, 0, 1, 1]);
           expect(colorPicker !== undefined).assertTrue();
+          console.log("effectKitTest" + msgStr + 'end');
           done();
         })
       })
 
     /**
      * @tc.name   effectKitBTest_Promise_two_static_003
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_011
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_2200
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Promise_two_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Promise_two_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Promise_two_static_003 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -739,18 +749,19 @@ export default function effectKitBTest() {
         expect(pixelMap.isStrideAlignment).assertTrue();
         let colorPicker = await effectKit.createColorPicker(pixelMap, [0, 0, 1, 1]);
         expect(colorPicker !== undefined).assertTrue();
+        console.log("effectKitTest" + msgStr + 'end');
         done();
       })
 
     /**
      * @tc.name   effectKitBTest_Promise_two_static_004
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_012
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_2300
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Promise_two_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Promise_two_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Promise_two_static_004 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -768,18 +779,19 @@ export default function effectKitBTest() {
         expect(pixelMap.isStrideAlignment).assertTrue();
         let colorPicker = await effectKit.createColorPicker(pixelMap, [0, 0, 1, 1]);
         expect(colorPicker !== undefined).assertTrue();
+        console.log("effectKitTest" + msgStr + 'end');
         done();
       })
 
     /**
      * @tc.name   effectKitBTest_Callback_one_static_001
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_013
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_2400
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Callback_one_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Callback_one_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Callback_one_static_001 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -796,26 +808,27 @@ export default function effectKitBTest() {
           expect(pixelMap.isStrideAlignment).assertFalse();
           effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
             if (error) {
-              console.error('Failed to create color picker.');
+              console.error(msgStr + 'Failed to create color picker.');
               expect(false).assertTrue();
+              done();
             } else {
-              console.info('Succeeded in creating color picker.');
+              console.info(msgStr + 'Succeeded in creating color picker.');
               expect(colorPicker !== undefined).assertTrue();
+              done();
             }
           })
-          done();
         })
       })
 
     /**
      * @tc.name   effectKitBTest_Callback_one_static_002
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_014
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_2500
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Callback_one_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Callback_one_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Callback_one_static_002 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -832,26 +845,27 @@ export default function effectKitBTest() {
           expect(pixelMap.isStrideAlignment).assertFalse();
           effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
             if (error) {
-              console.error('Failed to create color picker.');
+              console.error(msgStr + 'Failed to create color picker.');
               expect(false).assertTrue();
+              done();
             } else {
-              console.info('Succeeded in creating color picker.');
+              console.info(msgStr + 'Succeeded in creating color picker.');
               expect(colorPicker !== undefined).assertTrue();
+              done();
             }
           })
-          done();
         })
       })
 
     /**
      * @tc.name   effectKitBTest_Callback_one_static_003
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_015
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_2600
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Callback_one_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Callback_one_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Callback_one_static_003 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -869,25 +883,26 @@ export default function effectKitBTest() {
         expect(pixelMap.isStrideAlignment).assertTrue();
         effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
           if (error) {
-            console.error('Failed to create color picker.');
+            console.error(msgStr + 'Failed to create color picker.');
             expect(false).assertTrue();
+            done();
           } else {
-            console.info('Succeeded in creating color picker.');
+            console.info(msgStr + 'Succeeded in creating color picker.');
             expect(colorPicker !== undefined).assertTrue();
+            done();
           }
         })
-        done();
       })
 
     /**
      * @tc.name   effectKitBTest_Callback_one_static_004
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_016
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_2700
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Callback_one_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Callback_one_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Callback_one_static_004 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -905,25 +920,26 @@ export default function effectKitBTest() {
         expect(pixelMap.isStrideAlignment).assertTrue();
         effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
           if (error) {
-            console.error('Failed to create color picker.');
+            console.error(msgStr + 'Failed to create color picker.');
             expect(false).assertTrue();
+            done();
           } else {
-            console.info('Succeeded in creating color picker.');
+            console.info(msgStr + 'Succeeded in creating color picker.');
             expect(colorPicker !== undefined).assertTrue();
+            done();
           }
         })
-        done();
       })
 
     /**
      * @tc.name   effectKitBTest_Callback_two_static_001
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_017
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_2800
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Callback_two_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Callback_two_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Callback_two_static_001 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -940,26 +956,27 @@ export default function effectKitBTest() {
           expect(pixelMap.isStrideAlignment).assertFalse();
           effectKit.createColorPicker(pixelMap, [0, 0, 1, 1], (error, colorPicker) => {
             if (error) {
-              console.error('Failed to create color picker.');
+              console.error(msgStr + 'Failed to create color picker.');
               expect(false).assertTrue();
+              done();
             } else {
-              console.info('Succeeded in creating color picker.');
+              console.info(msgStr + 'Succeeded in creating color picker.');
               expect(colorPicker !== undefined).assertTrue();
+              done();
             }
           })
-          done();
         })
       })
 
     /**
      * @tc.name   effectKitBTest_Callback_two_static_002
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_018
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_2900
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Callback_two_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Callback_two_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Callback_two_static_002 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -976,26 +993,27 @@ export default function effectKitBTest() {
           expect(pixelMap.isStrideAlignment).assertFalse();
           effectKit.createColorPicker(pixelMap, [0, 0, 1, 1], (error, colorPicker) => {
             if (error) {
-              console.error('Failed to create color picker.');
+              console.error(msgStr + 'Failed to create color picker.');
               expect(false).assertTrue();
+              done();
             } else {
-              console.info('Succeeded in creating color picker.');
+              console.info(msgStr + 'Succeeded in creating color picker.');
               expect(colorPicker !== undefined).assertTrue();
+              done();
             }
           })
-          done();
         })
       })
 
     /**
      * @tc.name   effectKitBTest_Callback_two_static_003
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_019
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_3000
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Callback_two_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Callback_two_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Callback_two_static_003 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1013,25 +1031,26 @@ export default function effectKitBTest() {
         expect(pixelMap.isStrideAlignment).assertTrue();
         effectKit.createColorPicker(pixelMap, [0, 0, 1, 1], (error, colorPicker) => {
           if (error) {
-            console.error('Failed to create color picker.');
+            console.error(msgStr + 'Failed to create color picker.');
             expect(false).assertTrue();
+            done();
           } else {
-            console.info('Succeeded in creating color picker.');
+            console.info(msgStr + 'Succeeded in creating color picker.');
             expect(colorPicker !== undefined).assertTrue();
+            done();
           }
         })
-        done();
       })
 
     /**
      * @tc.name   effectKitBTest_Callback_two_static_004
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_020
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_3100
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Callback_two_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Callback_two_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Callback_two_static_004 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1049,14 +1068,15 @@ export default function effectKitBTest() {
         expect(pixelMap.isStrideAlignment).assertTrue();
         effectKit.createColorPicker(pixelMap, [0, 0, 1, 1], (error, colorPicker) => {
           if (error) {
-            console.error('Failed to create color picker.');
+            console.error(msgStr + 'Failed to create color picker.');
             expect(false).assertTrue();
+            done();
           } else {
-            console.info('Succeeded in creating color picker.');
+            console.info(msgStr + 'Succeeded in creating color picker.');
             expect(colorPicker !== undefined).assertTrue();
+            done();
           }
         })
-        done();
       })
 
   })

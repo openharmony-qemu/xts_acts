@@ -22,6 +22,15 @@ import { UIExtensionContentSession } from '@kit.AbilityKit';
 import uiExtension from '@ohos.arkui.uiExtension';
 import { BusinessError } from '@kit.BasicServicesKit';
 
+async function msSleep(count:int) : Promise<int> {
+  return new Promise<int>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(0)
+    }, count)
+  })
+}
+
+
 @Entry
 @Component
 struct extensionCreateSubWindowWithFalseOpt {
@@ -50,7 +59,7 @@ struct extensionCreateSubWindowWithFalseOpt {
           try {
             const subWindowConfig: window.SubWindowOptions = {
               title: 'This is a subwindow',
-              decorEnabled: true,
+              decorEnabled: false,
               maximizeSupported:true,
               outlineEnabled:true
             };
@@ -66,6 +75,35 @@ struct extensionCreateSubWindowWithFalseOpt {
               console.log('testCreateSubWindowWithOptionsFollowFalse err in page, err : ' + JSON.stringify(err))
               this.message = err.code + ''
             })
+
+            setTimeout(() => {
+              const subWindowConfig1: window.SubWindowOptions = {
+                title: 'This is a subwindow',
+                decorEnabled: false,
+                maximizeSupported:true,
+                outlineEnabled:true,
+                isModal: true,
+                modalityType: window.ModalityType.WINDOW_MODALITY
+              };
+              extensionWindow!.createSubWindowWithOptions('createSubWindowWithOptionsFalse', subWindowConfig1, false).then((data: window.Window) => {
+                data!.destroyWindow()
+              })
+            }, 500)
+
+            setTimeout(() => {
+              const subWindowConfig2: window.SubWindowOptions = {
+                title: 'This is a subwindow',
+                decorEnabled: false,
+                maximizeSupported:true,
+                outlineEnabled:true,
+                isModal: true,
+                modalityType: window.ModalityType.APPLICATION_MODALITY
+              };
+              extensionWindow!.createSubWindowWithOptions('createSubWindowWithOptionsFalse', subWindowConfig2, false).then((data: window.Window) => {
+                data!.destroyWindow()
+              })
+            }, 1000)
+
           } catch (err) {
             console.log('testCreateSubWindowWithOptionsFollowFalse err in page, err : ' + JSON.stringify(err))
             this.message = err.code + ''

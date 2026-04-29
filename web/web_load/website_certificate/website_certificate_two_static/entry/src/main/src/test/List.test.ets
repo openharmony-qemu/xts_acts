@@ -14,7 +14,8 @@
  */
 
 import webSslErrorTest from './WebSslErrorTest.test'
-
+import webTwoJsunit from './WebTwoJsunit.test'
 export default function testsuite() {
   webSslErrorTest();
+  webTwoJsunit();
 }

@@ -50,7 +50,10 @@
                 "./resource/media/AVPlayer/amrnb_4.75k_8000.amr ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files",
                 "./resource/media/h263_352x288_30.mov ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files",
                 "./resource/media/videoplayer/mpeg_ts/mpeg4_mp3_480p_25r.ts ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files",
-                "./resource/media/1libvpx_720x480_60.ts ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files"
+                "./resource/media/1libvpx_720x480_60.ts ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files",
+                "./resource/media/H264_AAC.mp4 ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files",
+                "./resource/media/1libvpx_720x480_60.ts ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files",
+                "./resource/media/H264_AAC.mp4 ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files"
             ]
         },
         {

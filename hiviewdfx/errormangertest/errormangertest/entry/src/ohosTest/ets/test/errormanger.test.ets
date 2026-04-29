@@ -1359,7 +1359,7 @@ export default function ErrormangerTest() {
     /**
      * @tc.name   testErrorManger_3100
      * @tc.number SUB_DFX_DFR_Errormanger_Ets_3100
-     * @tc.desc   验证errorManager.setDefaultErrorHandler(undefined) 抛出错误码 401
+     * @tc.desc   验证errorManager.setDefaultErrorHandler(undefined) 
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -1372,7 +1372,7 @@ export default function ErrormangerTest() {
         done();
       }catch(error){
         console.info("testErrorManger_3100 err = " + error.code);
-        expect(error.code == 401).assertTrue();
+        expect(false).assertTrue();
         done();
       }
       console.info("testErrorManger_3100 end");
@@ -1509,7 +1509,7 @@ export default function ErrormangerTest() {
         done();
       } catch (err) {
         console.error(`====>testErrorManger_3700 loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code === 401).assertTrue()
+        expect(err.code === 16300004).assertTrue();
         done();
       }
     })
@@ -1551,7 +1551,7 @@ export default function ErrormangerTest() {
         done();
       } catch (err) {
         console.error(`====>testErrorManger_3900 loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code === 401).assertTrue()
+        expect(false).assertTrue();
         done();
       }
     })

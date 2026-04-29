@@ -1,4 +1,4 @@
-# Copyright (C) 2024 Huawei Device Co., Ltd.
+# Copyright (C) 2024-2026 Huawei Device Co., Ltd.
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -16,6 +16,9 @@ import("//build/ohos_var.gni")
 group("account_ndk_test") {
   testonly = true
   if (is_standard_system) {
-    deps = [ "osaccount_ndk:ActsOsAccountNdkTest" ]
+    deps = [ 
+      "osaccount_ndk:ActsOsAccountNdkTest",
+      "osaccount_ndk_nopermission:ActsOsAccountNdkNoPermissionTest"
+    ]
   }
 }

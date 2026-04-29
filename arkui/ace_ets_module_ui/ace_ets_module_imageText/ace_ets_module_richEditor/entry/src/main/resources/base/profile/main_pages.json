@@ -187,6 +187,8 @@
   "MainAbility/pages/RichEditor/RichEditorControllerMethodsNull",
   "MainAbility/pages/RichEditor/RichEditorSpanMethodsNull",
   "MainAbility/pages/RichEditor/RichEditorControllerMethodsNull2",
-  "MainAbility/pages/RichEditor/RichEditorStyledStringControllerNull"
+  "MainAbility/pages/RichEditor/RichEditorStyledStringControllerNull",
+  "MainAbility/pages/RichEditorApi24/RichEditorBaseControllerSetStyledPlaceholder",
+  "MainAbility/pages/RichEditorApi26/RichEditorHorizontalScrolling"
   ]
 }

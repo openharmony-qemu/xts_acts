@@ -363,6 +363,13 @@ static BOOL SendSharedRequestTestSuiteSetUp(void)
 
 static BOOL SendSharedRequestTestSuiteTearDown(void)
 {
+    SAMGR_GetInstance()->UnregisterFeatureApi("S_sendShareReq", "feature02");
+    SAMGR_GetInstance()->UnregisterFeature("S_sendShareReq", "feature02");
+    SAMGR_GetInstance()->UnregisterFeatureApi("S_sendShareReq", "feature03");
+    SAMGR_GetInstance()->UnregisterFeature("S_sendShareReq", "feature03");
+    SAMGR_GetInstance()->UnregisterDefaultFeatureApi("S_sendShareReq");
+    SAMGR_GetInstance()->UnregisterService("S_sendShareReq");
+    
     return TRUE;
 }
 
@@ -398,10 +405,12 @@ LITE_TEST_CASE(SendSharedRequestTestSuite, testSendSharedRequest0010, Function |
     feature->featureCalledCount = 0;
     uint32 *token = NULL;
     token = demoApi->SAMGR_SendSharedRequestProxy(&feature->identity, &request, token, DemoHandlerAndCheck);
-    
+
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(feature->featureCalledCount, 1);
     TEST_ASSERT_EQUAL_INT(strcmp(feature->latestRequest, body), 0);
+    free(request.data);
+    request.data = NULL;
 
     ReleaseIUnknown(demoApi);
 }
@@ -437,17 +446,19 @@ LITE_TEST_CASE(SendSharedRequestTestSuite, testSendSharedDirectRequest0010, Func
 
     feature->featureCalledCount = 0;
     Response response = {
-        .data = "Yes, you did!", 
+        .data = "Yes, you did!",
         .len = 0,
         };
     uint32 *token = NULL;
-    int32 result = demoApi->SAMGR_SendSharedDirectRequestProxy(&feature->identity, &request, &response, 
+    int32 result = demoApi->SAMGR_SendSharedDirectRequestProxy(&feature->identity, &request, &response,
                                                 &token, DemoHandlerAndCheck);
     TEST_ASSERT_EQUAL_INT(result, 0);
 
     osDelay(OPER_INTERVAL);
     TEST_ASSERT_EQUAL_INT(feature->featureCalledCount, 0);
-    
+    free(request.data);
+    request.data = NULL;
+
     ReleaseIUnknown(demoApi);
 }
 

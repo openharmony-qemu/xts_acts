@@ -530,5 +530,30 @@ export default function ActsmechanicManagerStaticTest() {
         hilog.info(domain, tag, `======>${LOG_NAME} end======`);
         done();
       });
+
+    /**
+     * @tc.name   SUB_CC_Business_MechKit_mechanicManager_isControlSupported_0100
+     * @tc.number SUB_CC_Business_MechKit_mechanicManager_isControlSupported_0100
+     * @tc.desc   Device supports embodied control of devices,isControlSupported接口正常调用
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('SUB_CC_Business_MechKit_mechanicManager_isControlSupported_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const LOG_NAME = `SUB_CC_Business_MechKit_mechanicManager_isControlSupported_0100`;
+        console.info(`======>${LOG_NAME} begin======`);
+        try {
+          let mechDeviceType = mechanicManager.MechDeviceType.GIMBAL_DEVICE;
+          let isControlSupported: boolean = mechanicManager.isControlSupported(mechDeviceType);
+          console.info(`${LOG_NAME} isControlSupported current return is ${isControlSupported}`);
+          expect(isControlSupported == true || isControlSupported == false).assertTrue();
+        } catch (error) {
+          console.info(`SUB_CC_Business_MechKit_mechanicManager_isControlSupported_0100 failed, code is ${error.code}, message is ${error.message}`);
+          expect().assertFail()  
+        }
+        console.info(`======>${LOG_NAME} end======`);
+        done();
+      });
   })
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,7 +30,7 @@ let domain: int = 0x0000;
 let tag: string = 'testTag';
 let store: data_relationalStore.RdbStore | undefined = undefined;
 
-let vbs :Array<data_relationalStore.ValuesBucket> = new Array<data_relationalStore.ValuesBucket>(3);
+let vbs :Array<data_relationalStore.ValuesBucket> = [];
 const valueBucket0 :data_relationalStore.ValuesBucket = {
   "data1": "hello",
   "data2": 10 as long,//
@@ -56,9 +56,9 @@ const valueBucket4 :data_relationalStore.ValuesBucket = {
   "data3": 100000.9,
   "data4": new Uint8Array(0),
 }
-vbs[0] = valueBucket0
-vbs[1] = valueBucket1
-vbs[2] = valueBucket2
+vbs.push(valueBucket0)
+vbs.push(valueBucket1)
+vbs.push(valueBucket2)
 
 const valueBucket3 :data_relationalStore.ValuesBucket = {
   "data1": "hello",

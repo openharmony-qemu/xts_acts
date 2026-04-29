@@ -85,7 +85,7 @@ it('getListItemRect6_static_0100', Level.LEVEL0, async (done: () => void): Promi
       await CommonFunc.sleep(1000);
 
       console.log('get Initial value')
-      let listItem_4: RectValue = CommonFunc.getComponentRect('getListItemRect6_listItem_4') as RectValue;
+      let listItem_4: RectValue = await CommonFunc.getComponentRect('getListItemRect6_listItem_4') as RectValue;
 
 
       let driver = Driver.create();

@@ -2054,14 +2054,14 @@ export default function BufferTest() {
     });
 
     /**
-     * @tc.name     testfrom0263
+     * @tc.name   testfrom0263Adapt001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_BUFFER_13000
      * @tc.desc   This creates a view of the ArrayBuffer without copying the underlying memory.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("  testfrom0263", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it("testfrom0263Adapt001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = new Uint8Array(2);
       arr[0] = 97;
       arr[1] = 98;

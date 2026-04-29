@@ -58,7 +58,7 @@ function isString(value: string|undefined) {
   return typeof value === "string";
 }
 
-function initCamera(testNum: string, cameraManager: camera.CameraManager, surfaceId1: string, surfaceId2: string) {
+async function initCamera(testNum: string, cameraManager: camera.CameraManager, surfaceId1: string, surfaceId2: string) {
   let cameras = cameraManager.getSupportedCameras();
   if (!cameras) {
     console.log(`${testNum} initCamera getSupportedCameras failed!`);
@@ -69,7 +69,7 @@ function initCamera(testNum: string, cameraManager: camera.CameraManager, surfac
     console.log(`${testNum} initCamera createCameraInput failed!`);
     return;
   }
-  waitForCompletion(async () => {await cameraInput.open();})
+  await cameraInput.open();
   let capability: camera.CameraOutputCapability =
     cameraManager.getSupportedOutputCapability(cameras[0], camera.SceneMode.NORMAL_VIDEO);
   if (!capability) {
@@ -101,8 +101,8 @@ function initCamera(testNum: string, cameraManager: camera.CameraManager, surfac
   session.addInput(cameraInput);
   session.addOutput(previewOutput1);
   session.addOutput(previewOutput2);
-  waitForCompletion(async () => {await session.commitConfig();})
-  waitForCompletion(async () => {await session.start();})
+  await session.commitConfig();
+  await session.start();
   console.log(`${testNum} initCamera initCamera Finished!`);
 }
 
@@ -369,7 +369,7 @@ export default function ImageReceiver() {
             done();
           });
 
-          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100', cameraManager!, surfaceId1, surfaceId2);
+          await initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100', cameraManager!, surfaceId1, surfaceId2);
         } catch (error) {
           console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
           expect(false).assertTrue();
@@ -434,7 +434,7 @@ export default function ImageReceiver() {
           receiver1.onImageArrival(() => {
             console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 on [ENTER]!");
             let latestImage: image.Image | undefined;
-            waitForCompletion(async () => {latestImage = await receiver1!.readLatestImage();})
+            (async () => {latestImage = await receiver1!.readLatestImage();})().awaitSync()
             globalImg = latestImage;
             if (latestImage != undefined) {
               console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 latestImage size: (${latestImage!.size.width}, ${latestImage!.size.height})`);
@@ -447,7 +447,7 @@ export default function ImageReceiver() {
             }
           });
 
-          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100', cameraManager!, surfaceId1, surfaceId2);
+          await initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100', cameraManager!, surfaceId1, surfaceId2);
         } catch (error) {
           console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
           expect(false).assertTrue();
@@ -498,7 +498,7 @@ export default function ImageReceiver() {
             });
           });
 
-          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100', cameraManager!, surfaceId1, surfaceId2);
+          await initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100', cameraManager!, surfaceId1, surfaceId2);
         } catch (error) {
           console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
           expect(false).assertTrue();
@@ -535,7 +535,7 @@ export default function ImageReceiver() {
           receiver1.onImageArrival(() => {
             console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 on [ENTER]!");
             let nextImage: image.Image | undefined;
-            waitForCompletion(async () => {nextImage = await receiver1!.readNextImage();})
+            (async () => {nextImage = await receiver1!.readNextImage();})().awaitSync()
             globalImg = nextImage;
             if (nextImage != undefined) {
               console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 nextImage size: (${nextImage!.size.width}, ${nextImage!.size.height})`);
@@ -548,7 +548,7 @@ export default function ImageReceiver() {
             }
           });
 
-          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100', cameraManager!, surfaceId1, surfaceId2);
+          await initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100', cameraManager!, surfaceId1, surfaceId2);
         } catch (error) {
           console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
           expect(false).assertTrue();
@@ -599,7 +599,7 @@ export default function ImageReceiver() {
             });
           });
 
-          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100', cameraManager!, surfaceId1, surfaceId2);
+          await initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100', cameraManager!, surfaceId1, surfaceId2);
         } catch (error) {
           console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
           expect(false).assertTrue();

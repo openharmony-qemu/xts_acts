@@ -149,14 +149,14 @@ export default function LocaleTest() {
     })
 
     /**
-     * @tc.name   testLocale.prototype.toString0001
+     * @tc.name   testLocaleprototypetoString0001Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOCALE_0600
      * @tc.desc   Test the function of the interface prototype.toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testLocale.prototype.toString0001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
+    it('testLocaleprototypetoString0001Adapt001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
       const TAG = "testLocale.prototype.toString0001";
       try {
         const myLocale = new Intl.Locale("fr-Latn-FR", {
@@ -172,14 +172,14 @@ export default function LocaleTest() {
     })
 
     /**
-     * @tc.name   testLocale.prototype.toString0002
+     * @tc.name   testLocaleprototypetoString0002Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOCALE_0700
      * @tc.desc   Test the function of the interface prototype.toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testLocale.prototype.toString0002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testLocaleprototypetoString0002Adapt001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testLocale.prototype.toString0002";
       try {
         const myLocale = new Intl.Locale("fr-Latn-FR", {
@@ -195,14 +195,14 @@ export default function LocaleTest() {
     })
 
     /**
-     * @tc.name   testLocale.prototype.toString0003
+     * @tc.name   testLocaleprototypetoString0003Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOCALE_0800
      * @tc.desc   Test the function of the interface prototype.toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testLocale.prototype.toString0003',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
+    it('testLocaleprototypetoString0003Adapt001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
       const TAG = "testLocale.prototype.toString0003";
       try {
         const myLocale = new Intl.Locale("fr-Latn-FR", {
@@ -218,14 +218,14 @@ export default function LocaleTest() {
     })
 
     /**
-     * @tc.name   testLocale.prototype.toString0004
+     * @tc.name   testLocaleprototypetoString0004Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOCALE_0900
      * @tc.desc   Test the function of the interface prototype.toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testLocale.prototype.toString0004',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
+    it('testLocaleprototypetoString0004Adapt001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
       const TAG = "testLocale.prototype.toString0004";
       try {
         const myLocale = new Intl.Locale("fr-Latn-FR", {
@@ -241,14 +241,14 @@ export default function LocaleTest() {
     })
 
     /**
-     * @tc.name   testLocale.prototype.baseName0001
+     * @tc.name   testLocaleprototypebaseName0001Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOCALE_1000
      * @tc.desc   Test the function of the interface prototype.baseName.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testLocale.prototype.baseName0001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
+    it('testLocaleprototypebaseName0001Adapt001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
       const TAG = "testLocale.prototype.baseName0001";
       try {
         const myLocale = new Intl.Locale("fr-Latn-FR", {
@@ -264,14 +264,14 @@ export default function LocaleTest() {
     })
 
     /**
-     * @tc.name   testLocale.prototype.baseName0002
+     * @tc.name   testLocaleprototypebaseName0002Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOCALE_1100
      * @tc.desc   Test the function of the interface prototype.baseName.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testLocale.prototype.baseName0002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
+    it('testLocaleprototypebaseName0002Adapt001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
       const TAG = "testLocale.prototype.baseName0002";
       try {
         const myLocale = new Intl.Locale("fr-Latn-FR", {
@@ -287,14 +287,14 @@ export default function LocaleTest() {
     })
 
     /**
-     * @tc.name   testLocale.prototype.baseName0003
+     * @tc.name   testLocaleprototypebaseName0003Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOCALE_1200
      * @tc.desc   Test the function of the interface prototype.baseName.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testLocale.prototype.baseName0003',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
+    it('testLocaleprototypebaseName0003Adapt001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
       const TAG = "testLocale.prototype.baseName0003";
       try {
         const myLocale = new Intl.Locale("fr-Latn-FR", {
@@ -310,14 +310,14 @@ export default function LocaleTest() {
     })
 
     /**
-     * @tc.name   testLocale.prototype.baseName0004
+     * @tc.name   testLocaleprototypebaseName0004Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOCALE_1300
      * @tc.desc   Test the function of the interface prototype.baseName.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testLocale.prototype.baseName0004',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
+    it('testLocaleprototypebaseName0004Adapt001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
       const TAG = "testLocale.prototype.baseName0004";
       try {
         const myLocale = new Intl.Locale("fr-Latn-FR", {
@@ -333,14 +333,14 @@ export default function LocaleTest() {
     })
 
     /**
-     * @tc.name   testLocale.prototype.calendar0001
+     * @tc.name   testLocaleprototypecalendar0001Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOCALE_1400
      * @tc.desc   Test the function of the interface prototype.calendar.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testLocale.prototype.calendar0001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
+    it('testLocaleprototypecalendar0001Adapt001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
       const TAG = "testLocale.prototype.calendar0001";
       try {
         const locale = new Intl.Locale("fr-FR-u-ca-buddhist");
@@ -354,14 +354,14 @@ export default function LocaleTest() {
     })
 
     /**
-     * @tc.name   testLocale.prototype.calendar0002
+     * @tc.name   testLocaleprototypecalendar0002Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOCALE_1500
      * @tc.desc   Test the function of the interface prototype.calendar.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testLocale.prototype.calendar0002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
+    it('testLocaleprototypecalendar0002Adapt001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
       const TAG = "testLocale.prototype.calendar0002";
       try {
         const locale = new Intl.Locale("fr-FR", {
@@ -377,14 +377,14 @@ export default function LocaleTest() {
     })
 
     /**
-     * @tc.name   testLocale.prototype.caseFirst0001
+     * @tc.name   testLocaleprototypecaseFirst0001Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOCALE_1600
      * @tc.desc   Test the function of the interface prototype.caseFirst.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testLocale.prototype.caseFirst0001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
+    it('testLocaleprototypecaseFirst0001Adapt001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
       const TAG = "testLocale.prototype.caseFirst0001";
       try {
         const locale = new Intl.Locale("fr-Latn-FR-u-kf-upper");
@@ -398,14 +398,14 @@ export default function LocaleTest() {
     })
 
     /**
-     * @tc.name   testLocale.prototype.caseFirst0002
+     * @tc.name   testLocaleprototypecaseFirst0002Adapt001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOCALE_1700
      * @tc.desc   Test the function of the interface prototype.caseFirst.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testLocale.prototype.caseFirst0002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
+    it('testLocaleprototypecaseFirst0002Adapt001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async() => {
       const TAG = "testLocale.prototype.caseFirst0002";
       try {
         const locale = new Intl.Locale("en-Latn-US", {

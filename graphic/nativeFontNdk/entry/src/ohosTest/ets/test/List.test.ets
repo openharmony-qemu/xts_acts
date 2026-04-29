@@ -15,8 +15,10 @@
  
 import fontTest from './font.test';
 import Font2Test from './Font2.test';
+import Font3Test from './Font3.test';
 
 export default function testsuite() {
   fontTest();
   Font2Test();
+  Font3Test();
 }
