@@ -129,7 +129,7 @@ struct CustomPopupOptionsSystemMaterial {
           })
 
         Button('NONE')
-          .id('none')
+          .id('materialTypeNone')
           .height('8%')
           .bindPopup(this.isShowPopupNone, {
             builder: customPopupBuilder,

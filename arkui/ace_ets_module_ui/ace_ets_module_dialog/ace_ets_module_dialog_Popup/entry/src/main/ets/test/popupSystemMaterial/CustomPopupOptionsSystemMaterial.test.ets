@@ -215,7 +215,7 @@ export default function CustomPopupOptionsSystemMaterial() {
       console.info('CustomPopupOptionsSystemMaterial_0600 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('none'));
+      let button = await driver.findComponent(ON.id('materialTypeNone'));
       await button.click();
       await CommonFunc.sleep(1000);
 
