@@ -48,7 +48,7 @@ export default function SuppressWarningsTypeTest() {
             expect(typeof SuppressWarningsType.COMPATIBILITY).assertEqual('string');
         });
         /**
-         * @tc.number SuppressWarningsType_TEST_003
+         * @tc.number SUB_SDK_SUPRESSWARNINGTYPE_0300
          * @tc.name SuppressWarningsType_test_003
          * @tc.desc Verify the accuracy of PERMISSION enum value, must be strictly equal to 'permission'
          * @tc.size MediumTest
