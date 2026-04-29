@@ -206,6 +206,18 @@ async function clickUpdatablePickerButton(driver: Driver) {
   await CommonFunc.sleep(1000);
 }
 
+async function clickCompletedButton(driver: Driver) {
+  console.info("testPicker clickCompletedButton");
+  let btn = await driver.findComponent(ON.id('completedButton'));
+  if (btn === null) {
+    console.info('testPicker clickCompletedButton no button');
+    return;
+  }
+  await btn.click();
+  console.info("testPicker completedButton click finish");
+  await CommonFunc.sleep(2000);
+}
+
 async function clickAlbumButton(driver: Driver) {
   console.info("testpicker create");
   let btn: Component = await driver.waitForComponent(ON.text('全部相册').type('Button'), 5000);
@@ -4794,7 +4806,7 @@ export default function TextPicker() {
       events_emitter.off(event.eventId);
       done();
     })
-    
+
     /**
      * @tc.name   SUB_PHOTO_PICKER_TEST_0100
      * @tc.number SUB_PHOTO_PICKER_TEST_0100
@@ -4824,6 +4836,138 @@ export default function TextPicker() {
         console.error(`SUB_PHOTO_PICKER_TEST_0100, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
       }
       console.info("SUB_PHOTO_PICKER_TEST_0100 finish");
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_PHOTO_PICKER_TEST_0200
+     * @tc.number SUB_PHOTO_PICKER_TEST_0200
+     * @tc.desc   Testing PickerController.completed() returns CompletedResult
+     *            with photoUris, contextRecoveryInfo and movingPhotoBadgeStates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0200', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let code: number = EventType.COMPLETED_RESULT;
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
+      pickerOptions.isMovingPhotoBadgeShown = true;
+
+      let callback = (event: events_emitter.EventData) => {
+        let result: PhotoPickerResult = event?.data?.msg;
+        console.info('SUB_PHOTO_PICKER_TEST_0200 CompletedResult =:' + JSON.stringify(result));
+        expect(result).not().assertUndefined();
+        expect(result.photoUris).not().assertUndefined();
+        expect(result.contextRecoveryInfo).not().assertUndefined();
+        expect(result.movingPhotoBadgeStates).not().assertUndefined();
+      }
+      let event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback);
+
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          eventId: code,
+          pickerOptions: pickerOptions,
+        }
+      }
+      await routeToUrl(options);
+      let strJson: string = getInspectorByKey('PhotoPickerComponent');
+      console.info("SUB_PHOTO_PICKER_TEST_0200 JSON.parse(strJson) is" + strJson);
+      expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
+      await CommonFunc.sleep(2000);
+
+      let checkBoxs: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
+      if (checkBoxs === null || checkBoxs.length <= 0) {
+        console.info("SUB_PHOTO_PICKER_TEST_0200 findComponent checkbox fail");
+      } else {
+        console.info("SUB_PHOTO_PICKER_TEST_0200 findComponent checkbox success");
+        await checkBoxs[0].click();
+        await CommonFunc.sleep(1500);
+      }
+
+      await clickCompletedButton(driver);
+
+      router.back();
+      console.info("SUB_PHOTO_PICKER_TEST_0200 finish");
+      events_emitter.off(event.eventId);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_PHOTO_PICKER_TEST_0300
+     * @tc.number SUB_PHOTO_PICKER_TEST_0300
+     * @tc.desc   Testing PickerOptions.contextRecoveryInfo property is correctly
+     *            applied to PhotoPickerComponent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0300', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let code: number = EventType.PHOTO_PICKER_INFO;
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      const contextRecoveryInfo: photoAccessHelper.ContextRecoveryInfo = {
+        albumUri: 'file://media/PhotoAlbum/1',
+        displayName: 'IMG_20240522_085513_3.jpg',
+        recommendationType: 0,
+        selectedRecommendationType: 0,
+        time: 1756371999125,
+        version: 1,
+        gridLevel: photoAccessHelper.GridLevel.STANDARD,
+        sortRule: '',
+        fileSize: 0
+      };
+      pickerOptions.contextRecoveryInfo = contextRecoveryInfo;
+
+      let callback = (event: events_emitter.EventData) => {
+        let result: PhotoPickerResult = event?.data?.msg;
+        console.info('SUB_PHOTO_PICKER_TEST_0300 result =:' + JSON.stringify(result));
+        expect(result.contextRecoveryInfo).not().assertUndefined();
+        expect(result.contextRecoveryInfo?.albumUri).assertEqual(contextRecoveryInfo.albumUri);
+        expect(result.contextRecoveryInfo?.displayName).assertEqual(contextRecoveryInfo.displayName);
+        expect(result.contextRecoveryInfo?.recommendationType).assertEqual(contextRecoveryInfo.recommendationType);
+        expect(result.contextRecoveryInfo?.selectedRecommendationType)
+          .assertEqual(contextRecoveryInfo.selectedRecommendationType);
+        expect(result.contextRecoveryInfo?.time).assertEqual(contextRecoveryInfo.time);
+        expect(result.contextRecoveryInfo?.version).assertEqual(contextRecoveryInfo.version);
+        expect(result.contextRecoveryInfo?.gridLevel).assertEqual(contextRecoveryInfo.gridLevel);
+        expect(result.contextRecoveryInfo?.sortRule).assertEqual(contextRecoveryInfo.sortRule);
+        expect(result.contextRecoveryInfo?.fileSize).assertEqual(contextRecoveryInfo.fileSize);
+      }
+      let event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback);
+
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          eventId: code,
+          pickerOptions: pickerOptions,
+        }
+      }
+      await routeToUrl(options);
+      let strJson: string = getInspectorByKey('PhotoPickerComponent');
+      console.info("SUB_PHOTO_PICKER_TEST_0300 JSON.parse(strJson) is" + strJson);
+      expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
+
+      await clickResultButton(driver);
+      router.back();
+      console.info("SUB_PHOTO_PICKER_TEST_0300 finish");
+      events_emitter.off(event.eventId);
       done();
     });
   })
