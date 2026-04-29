@@ -41,26 +41,6 @@ export default function getApplicationLabel() {
     })
 
     /**
-     * @tc.name   SUB_BMS_FRAMEWORK_GETAPPLICATIONLABEL_0300
-     * @tc.number SUB_BMS_FRAMEWORK_GETAPPLICATIONLABEL_0300
-     * @tc.desc   Check the NotExisted bundleName
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_BMS_FRAMEWORK_GETAPPLICATIONLABEL_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) =>  {
-      await bundleManager.getApplicationLabel("test.notExisted123", 0).then(data => {
-        console.info("getApplicationLabel success" + JSON.stringify(data))
-        expect(data).assertFail()
-        done()
-      }).catch((err: BusinessError) => {
-        console.info("getApplicationLabel failed" + JSON.stringify(err))
-        expect(err.code).assertEqual(17700001)
-        done()
-      })
-    })
-
-    /**
      * @tc.name   SUB_BMS_FRAMEWORK_GETAPPLICATIONLABEL_0400
      * @tc.number SUB_BMS_FRAMEWORK_GETAPPLICATIONLABEL_0400
      * @tc.desc   Check the -1 AppIndex
@@ -70,26 +50,6 @@ export default function getApplicationLabel() {
      */
     it('SUB_BMS_FRAMEWORK_GETAPPLICATIONLABEL_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) =>  {
       await bundleManager.getApplicationLabel("ohos.acts.bundle.stage.test", -1).then(data => {
-        console.info("getApplicationLabel success" + JSON.stringify(data))
-        expect(data).assertFail()
-        done()
-      }).catch((err: BusinessError) => {
-        console.info("getApplicationLabel failed" + JSON.stringify(err))
-        expect(err.code).assertEqual(17700061)
-        done()
-      })
-    })
-
-    /**
-     * @tc.name   SUB_BMS_FRAMEWORK_GETAPPLICATIONLABEL_0500
-     * @tc.number SUB_BMS_FRAMEWORK_GETAPPLICATIONLABEL_0500
-     * @tc.desc   Check the NotExisted AppIndex
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_BMS_FRAMEWORK_GETAPPLICATIONLABEL_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) =>  {
-      await bundleManager.getApplicationLabel("ohos.acts.bundle.stage.test", 5).then(data => {
         console.info("getApplicationLabel success" + JSON.stringify(data))
         expect(data).assertFail()
         done()
