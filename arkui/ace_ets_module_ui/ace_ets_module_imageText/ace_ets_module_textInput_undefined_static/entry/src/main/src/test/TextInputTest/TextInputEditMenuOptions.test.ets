@@ -131,7 +131,7 @@ export default function TextInputEditMenuOptions() {
       let obj = JSON.parseJsonElement(strJson);
       console.log('TextInputEditMenuOptions0002---obj.$attrs---' + JSON.stringifyJsonElement(obj.getElement('$attrs')));
       console.log('TextInputEditMenuOptions0002---obj.$attrs.content---' + obj.getElement('$attrs').getString('text'));
-      expect('' + obj.getElement('$attrs').getString('text')).assertEqual('undefined');
+      expect('' + obj.getElement('$attrs').getString('text')).assertEqual('');
       console.info("[TextInputEditMenuOptions0002] end");
       done();
     });

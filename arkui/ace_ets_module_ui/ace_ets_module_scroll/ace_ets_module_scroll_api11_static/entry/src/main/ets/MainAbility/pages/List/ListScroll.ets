@@ -45,7 +45,7 @@ import { RecordData } from '@ohos.base';
 @Component
 struct ListScroll {
   @State listPosition: number = 0;
-  private arr: int[] = Array.from(Array(60).keys()).map((item: int) => item)
+  private arr: int[] = Array.from(Array.create<double>(60, 0).keys()).map((item: int) => item)
   private scrollerForList: Scroller = new Scroller()
 
   build() {

@@ -19,7 +19,7 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct gridItem_testcasee {
-  @State numbers: string[] = (Array.from(Array(16).keys())).map((item: int) => item.toString())
+  @State numbers: string[] = (Array.from(Array.create<double>(16, 0).keys())).map((item: int) => item.toString())
   @State active: boolean = false
 
   build() {
