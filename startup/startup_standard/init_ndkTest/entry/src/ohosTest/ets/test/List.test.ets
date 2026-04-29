@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 import initNdkTest from './initNdk.test';
-import SuppressWarningsTypeTest from './SuppressWarningsType.test';
-import DeviceInfoApiAvailableTest from './DeviceInfoApiAvailable.test';
+import SuppressWarningsTypeTest from './SUB_SDK_SUPRESSWARNINGTYPE_01.test';
+import DeviceInfoApiAvailableTest from './SUB_SDK_DEVICEINFO_01.test';
 
 export default function testsuite() {
   initNdkTest();
