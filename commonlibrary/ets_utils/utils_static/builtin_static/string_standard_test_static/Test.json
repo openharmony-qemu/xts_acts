@@ -1,5 +1,5 @@
 {
-    "description": "Configuration for string_standard_test_static OHJSUnit tests",
+    "description": "Configuration for stringStandardTestStatic OHJSUnit tests",
     "driver": {
         "type": "OHJSUnitTest",
         "test-timeout": "180000",
