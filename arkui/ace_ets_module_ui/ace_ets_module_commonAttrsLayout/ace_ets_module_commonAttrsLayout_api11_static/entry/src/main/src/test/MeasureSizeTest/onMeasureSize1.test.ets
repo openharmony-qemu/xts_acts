@@ -35,7 +35,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function onMeasureSize1() {
 
-  waitForCompletion(async ()=>{await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")})
+  UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility").awaitSync()
 
 
   let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;

@@ -9,9 +9,7 @@ export class Event {
   }
 
   public Wait(): boolean {
-    return waitForCompletion<boolean>(() => {
-      return this.promise;
-    });
+    return this.promise.awaitSync();
   }
 
   public Fire(val: boolean = true): void {
@@ -59,9 +57,9 @@ export class SharedJob<T> {
     this.jobs = jobs;
   }
 
-  public Await(): void {
+  public async Await() {
     for (let job of this.jobs) {
-      (job as Job<void>).Await();
+      await job;
     }
   }
 }

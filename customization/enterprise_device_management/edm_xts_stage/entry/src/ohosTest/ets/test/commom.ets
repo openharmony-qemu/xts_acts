@@ -108,6 +108,7 @@ const SUBSCRIBE_EVENTS: Array<adminManager.ManagedEvent> = [
   adminManager.ManagedEvent.MANAGED_EVENT_STARTUP_GUIDE_COMPLETED,
   adminManager.ManagedEvent.MANAGED_EVENT_BOOT_COMPLETED,
   adminManager.ManagedEvent.MANAGED_EVENT_BUNDLE_UPDATED,
+  adminManager.ManagedEvent.MANAGED_EVENT_POLICIES_CHANGED
 ];
 const SUBSCRIBE_INVALID_EVENTS: Array<number> = [20, 21];
 

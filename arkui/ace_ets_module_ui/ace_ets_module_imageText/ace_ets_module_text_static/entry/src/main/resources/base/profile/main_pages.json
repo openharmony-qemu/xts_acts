@@ -1,7 +1,8 @@
-﻿{
+{
   "src": [
     "MainAbility/pages/index/index",
     "MainAbility/pages/Text/TextAttributeIndex",
-    "MainAbility/pages/Text/TextDirectionIndex"
+    "MainAbility/pages/Text/TextDirectionIndex",
+    "MainAbility/pages/TextApi26/TextOnWillCopy"
   ]
 }

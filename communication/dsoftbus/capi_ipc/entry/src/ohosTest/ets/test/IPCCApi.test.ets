@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 - 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -804,6 +804,508 @@ export default function iPCCApiTest() {
       done();
     });
 
-  })
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteUint8_0100
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteUint8_0100
+     * @tc.desc   test OH_IPCParcel_WriteUint8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_WriteUint8_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelWriteUint8_0100();
+      expect(result).assertEqual(0);
+      done();
+    });
+    
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteUint8_0200
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteUint8_0200
+     * @tc.desc   test OH_IPCParcel_WriteUint8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_WriteUint8_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelWriteUint8_0200();
+      expect(result).assertEqual(0);
+      done();
+    });
 
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteUint8_0300
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteUint8_0300
+     * @tc.desc   test OH_IPCParcel_WriteUint8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_WriteUint8_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelWriteUint8_0300();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteUint8_0400
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteUint8_0400
+     * @tc.desc   test OH_IPCParcel_WriteUint8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_WriteUint8_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelWriteUint8_0400();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadUint8_0100
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadUint8_0100
+     * @tc.desc   test OH_IPCParcel_ReadUint8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_ReadUint8_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelReadUint8_0100();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadUint8_0200
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadUint8_0200
+     * @tc.desc   test OH_IPCParcel_ReadUint8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_ReadUint8_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelReadUint8_0200();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadUint8_0300
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadUint8_0300
+     * @tc.desc   test OH_IPCParcel_ReadUint8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_ReadUint8_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelReadUint8_0300();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadUint8_0400
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadUint8_0400
+     * @tc.desc   test OH_IPCParcel_ReadUint8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_ReadUint8_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelReadUint8_0400();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadUint8_0500
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadUint8_0500
+     * @tc.desc   test OH_IPCParcel_ReadUint8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_ReadUint8_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelReadUint8_0500();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteUint16_0100
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteUint16_0100
+     * @tc.desc   test OH_IPCParcel_WriteUint16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_WriteUint16_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelWriteUint16_0100();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteUint16_0200
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteUint16_0200
+     * @tc.desc   test OH_IPCParcel_WriteUint16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_WriteUint16_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelWriteUint16_0200();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteUint16_0300
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteUint16_0300
+     * @tc.desc   test OH_IPCParcel_WriteUint16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_WriteUint16_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelWriteUint16_0300();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteUint16_0400
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteUint16_0400
+     * @tc.desc   test OH_IPCParcel_WriteUint16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_WriteUint16_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelWriteUint16_0400();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadUint16_0100
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadUint16_0100
+     * @tc.desc   test OH_IPCParcel_ReadUint16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_ReadUint16_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelReadUint16_0100();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadUint16_0200
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadUint16_0200
+     * @tc.desc   test OH_IPCParcel_ReadUint16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_ReadUint16_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelReadUint16_0200();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadUint16_0300
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadUint16_0300
+     * @tc.desc   test OH_IPCParcel_ReadUint16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_ReadUint16_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelReadUint16_0300();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadUint16_0400
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadUint16_0400
+     * @tc.desc   test OH_IPCParcel_ReadUint16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_ReadUint16_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelReadUint16_0400();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadUint16_0500
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadUint16_0500
+     * @tc.desc   test OH_IPCParcel_ReadUint16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_ReadUint16_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelReadUint16_0500();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteUint32_0100
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteUint32_0100
+     * @tc.desc   test OH_IPCParcel_WriteUint32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_WriteUint32_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelWriteUint32_0100();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteUint32_0200
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteUint32_0200
+     * @tc.desc   test OH_IPCParcel_WriteUint32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_WriteUint32_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelWriteUint32_0200();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteUint32_0300
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteUint32_0300
+     * @tc.desc   test OH_IPCParcel_WriteUint32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_WriteUint32_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelWriteUint32_0300();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteUint32_0400
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteUint32_0400
+     * @tc.desc   test OH_IPCParcel_WriteUint32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_WriteUint32_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelWriteUint32_0400();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadUint32_0100
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadUint32_0100
+     * @tc.desc   test OH_IPCParcel_ReadUint32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_ReadUint32_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelReadUint32_0100();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadUint32_0200
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadUint32_0200
+     * @tc.desc   test OH_IPCParcel_ReadUint32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_ReadUint32_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelReadUint32_0200();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadUint32_0300
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadUint32_0300
+     * @tc.desc   test OH_IPCParcel_ReadUint32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_ReadUint32_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelReadUint32_0300();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadUint32_0400
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadUint32_0400
+     * @tc.desc   test OH_IPCParcel_ReadUint32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_ReadUint32_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelReadUint32_0400();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadUint32_0500
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadUint32_0500
+     * @tc.desc   test OH_IPCParcel_ReadUint32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_ReadUint32_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelReadUint32_0500();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteUint64_0100
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteUint64_0100
+     * @tc.desc   test OH_IPCParcel_WriteUint64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_WriteUint64_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelWriteUint64_0100();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteUint64_0200
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteUint64_0200
+     * @tc.desc   test OH_IPCParcel_WriteUint64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_WriteUint64_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelWriteUint64_0200();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteUint64_0300
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteUint64_0300
+     * @tc.desc   test OH_IPCParcel_WriteUint64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_WriteUint64_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelWriteUint64_0300();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_WriteUint64_0400
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_WriteUint64_0400
+     * @tc.desc   test OH_IPCParcel_WriteUint64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_WriteUint64_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelWriteUint64_0400();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadUint64_0100
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadUint64_0100
+     * @tc.desc   test OH_IPCParcel_ReadUint64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_ReadUint64_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelReadUint64_0100();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadUint64_0200
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadUint64_0200
+     * @tc.desc   test OH_IPCParcel_ReadUint64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_ReadUint64_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelReadUint64_0200();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadUint64_0300
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadUint64_0300
+     * @tc.desc   test OH_IPCParcel_ReadUint64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_ReadUint64_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelReadUint64_0300();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadUint64_0400
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadUint64_0400
+     * @tc.desc   test OH_IPCParcel_ReadUint64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_ReadUint64_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelReadUint64_0400();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_N_IPCParcel_ReadUint64_0500
+     * @tc.number SUB_DSoftbus_IPC_N_IPCParcel_ReadUint64_0500
+     * @tc.desc   test OH_IPCParcel_ReadUint64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DSoftbus_IPC_N_IPCParcel_ReadUint64_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let result: number = iPCCApi.oHIPCParcelReadUint64_0500();
+      expect(result).assertEqual(0);
+      done();
+    });
+  })
 }

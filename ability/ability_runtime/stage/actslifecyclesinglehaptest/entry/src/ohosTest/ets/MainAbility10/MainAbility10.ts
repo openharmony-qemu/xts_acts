@@ -13,14 +13,13 @@
  * limitations under the License.
  */
 import Ability from '@ohos.app.ability.UIAbility'
-import { AbilityLifecycleCallback } from '@kit.AbilityKit';
 
 export default class MainAbility10 extends Ability {
     onCreate(want, launchParam) {
         console.log("[Demo] MainAbility10 onCreate")
         globalThis.abilityWant10 = want;
         var listKey10 = [];
-        let AbilityLifecycleCallback:AbilityLifecycleCallback = {
+        let AbilityLifecycleCallback = {
             onAbilityCreate(ability) {
                 let abilityname = ability.context.abilityInfo.name;
                 console.log("[Demo] AbilityLifecycleCallback10 onAbilityCreate abilityname:"
@@ -87,7 +86,7 @@ export default class MainAbility10 extends Ability {
             }
         }
         globalThis.applicationContext10 = this.context.getApplicationContext();
-        let lifecycleid = globalThis.applicationContext10.on('abilityLifecycle', AbilityLifecycleCallback);
+        let lifecycleid = globalThis.applicationContext10.registerAbilityLifecycleCallback(AbilityLifecycleCallback);
         console.log("[Demo] registerAbilityLifecycleCallback10 number: " + JSON.stringify(lifecycleid));
         setTimeout(function () {
             console.log("[Demo] registerAbilityLifecycleCallback10 listKey: " + JSON.stringify(listKey10));

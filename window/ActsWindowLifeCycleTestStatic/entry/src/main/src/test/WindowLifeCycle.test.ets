@@ -1383,7 +1383,7 @@ export default function WindowLifeCycleTest() {
                     };
                     try {
                         window.createWindow(windowConfig, (err: BusinessError<void>|null,data:window.Window|undefined):void => {
-                            waitForCompletion(async () => {
+                            (async () => {
                             const errCode: number = err!.code;
                             if (errCode) {
                                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(err));
@@ -1400,7 +1400,7 @@ export default function WindowLifeCycleTest() {
                             expect(!!data).assertTrue();
                             await data!.destroyWindow();
                             done();
-                            })
+                            })().awaitSync()
                         });
                     } catch (exception) {
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
@@ -1470,7 +1470,7 @@ export default function WindowLifeCycleTest() {
             let windowClass:window.Window;
             try {
                 windowStage!.createSubWindow('testCreateSubWindow_Callback',  (err: BusinessError<void>|null, data : window.Window|undefined):void => {
-                    waitForCompletion(async () => {
+                    (async () => {
                     const errCode: number = err!.code;
                     if (errCode) {
                         hilog.error(0x0000, '[ANI]', msgStr + `Failed to create the subwindow. Cause code: ${err!.code}, message: ${err!.message}`);
@@ -1481,7 +1481,7 @@ export default function WindowLifeCycleTest() {
                     hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
                     await data!.destroyWindow();
                     done();
-                    })
+                    })().awaitSync()
                 });
             } catch (exception) {
                 hilog.error(0x0000, '[ANI]', msgStr + `Failed to create the subwindow. Cause code: ${exception!.code}, message: ${exception!.message}`);

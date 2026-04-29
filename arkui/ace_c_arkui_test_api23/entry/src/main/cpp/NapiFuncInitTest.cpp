@@ -27,6 +27,7 @@
 #include "image/ImageAntialiasedTest.cpp"
 #include "list/ListEmptyTest.cpp"
 #include "grid/GridEmptyTest.cpp"
+#include "waterFlow/WaterFlowEmptyTest.cpp"
 #include "TextMarqueeOptions/TextMarqueeOptionsTest.cpp"
 #include "TextMarqueeOptions/ControllerBaseCreatTest.cpp"
 
@@ -237,6 +238,14 @@ static napi_value Init(napi_env env, napi_value exports)
         {"GridEmptyTest_003", nullptr, GridEmptyTest_003, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"GridEmptyTest_004", nullptr, GridEmptyTest_004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"WaterFlowEmptyTest_001", nullptr, WaterFlowEmptyTest_001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"WaterFlowEmptyTest_002", nullptr, WaterFlowEmptyTest_002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"WaterFlowEmptyTest_003", nullptr, WaterFlowEmptyTest_003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"WaterFlowEmptyTest_004", nullptr, WaterFlowEmptyTest_004, nullptr, nullptr, nullptr,
          napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {

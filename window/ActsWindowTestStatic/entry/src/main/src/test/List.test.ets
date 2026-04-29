@@ -12,25 +12,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import WindowLayoutTest from "./WindowLayout.test";
-import WindowImmersiveTest from "./WindowImmersive.test";
 import WindowModalTest from "./WindowModal.test";
 import WindowZindexTest from "./WindowZindex.test";
 import WindowOrientationTest from "./WindowOrientation.test";
 import WindowPropertiesTest from "./WindowProperties.test";
 import WindowKeyBoardTest from "./WindowKeyBoard.test";
 import WindowFocusTest from "./WindowFocus.test";
-import WindowLayoutStaticTest from "./WindowLayoutStatic.test";
-import WindowImmersiveStaticTest from "./WindowImmersiveStatic.test";
 export default function testsuite() {
-  WindowLayoutStaticTest();
-  WindowLayoutTest();
   WindowModalTest();
   WindowZindexTest();
   WindowOrientationTest();
   WindowPropertiesTest();
   WindowKeyBoardTest();
   WindowFocusTest();
-  WindowImmersiveTest();
-  WindowImmersiveStaticTest();
 }

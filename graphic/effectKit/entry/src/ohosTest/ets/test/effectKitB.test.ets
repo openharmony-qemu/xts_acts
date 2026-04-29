@@ -24,7 +24,7 @@ export default function effectKitBTest() {
 
     /**
      * @tc.name   testGetTopProportionColors
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICEFFECTKIT_JS_API_0010
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_0100
      * @tc.desc   Read the first color value of the image. The number is specified by colorCount. The result is written into the Color array and returned in synchronization mode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -76,7 +76,7 @@ export default function effectKitBTest() {
 
     /**
      * @tc.name   testInvert
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICEFFECTKIT_JS_API_0020
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_0200
      * @tc.desc   Read the first color value of the image. The number is specified by colorCount. The result is written into the Color array and returned in synchronization mode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -128,7 +128,7 @@ export default function effectKitBTest() {
 
     /**
      * @tc.name   testSetColorMatrix
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICEFFECTKIT_JS_API_0030
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_0300
      * @tc.desc   Read the first color value of the image. The number is specified by colorCount. The result is written into the Color array and returned in synchronization mode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -186,7 +186,7 @@ export default function effectKitBTest() {
 
     /**
      * @tc.name   testTileMode
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICEFFECTKIT_JS_API_0040
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_0400
      * @tc.desc   Enumeration of the shader effect tile mode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -204,7 +204,7 @@ export default function effectKitBTest() {
     
     /**
      * @tc.name   testBlurTileMode
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICEFFECTKIT_JS_API_0050
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_0500
      * @tc.desc   Adds the blur effect to the effect list. The result is returned to the first node of the effect list
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -240,7 +240,7 @@ export default function effectKitBTest() {
     
     /**
      * @tc.name   testGetEffectPixelMap_useCpuRender1
-     * @tc.number testGetEffectPixelMap_useCpuRender1
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_0600
      * @tc.desc   test getEffectPixelMap useCpuRender
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -269,7 +269,7 @@ export default function effectKitBTest() {
     
     /**
      * @tc.name   testGetEffectPixelMap_useCpuRender2
-     * @tc.number testGetEffectPixelMap_useCpuRender2
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_0700
      * @tc.desc   test getEffectPixelMap useCpuRender
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -298,7 +298,7 @@ export default function effectKitBTest() {
     
     /**
      * @tc.name   testGetTopProportionColors_2
-     * @tc.number testGetTopProportionColors_2
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_0800
      * @tc.desc   test getTopProportionColors
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -333,7 +333,7 @@ export default function effectKitBTest() {
     
     /**
      * @tc.name   isBlackOrWhiteOrGrayColor_2
-     * @tc.number isBlackOrWhiteOrGrayColor_2
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_0900
      * @tc.desc   test isBlackOrWhiteOrGrayColor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -361,7 +361,7 @@ export default function effectKitBTest() {
     
     /**
      * @tc.name   createColorPicker_callback_0100
-     * @tc.number createColorPicker_callback_0100
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_1000
      * @tc.desc   test createColorPicker callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -396,7 +396,7 @@ export default function effectKitBTest() {
     
     /**
      * @tc.name   createColorPicker_callback_0200
-     * @tc.number createColorPicker_callback_0200
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_1100
      * @tc.desc   test createColorPicker callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -427,13 +427,13 @@ export default function effectKitBTest() {
     
     /**
      * @tc.name   effectKitBTestCreateEffectEnum001
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_001
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_1200
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTestCreateEffectEnum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTestCreateEffectEnum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTestCreateEffectEnum001 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -457,13 +457,13 @@ export default function effectKitBTest() {
 
     /**
      * @tc.name   effectKitBTestCreateEffectEnum002
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_002
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_1300
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTestCreateEffectEnum002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTestCreateEffectEnum002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTestCreateEffectEnum002 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -487,13 +487,13 @@ export default function effectKitBTest() {
 
     /**
      * @tc.name   effectKitBTestCreateEffectEnum003
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_003
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_1400
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTestCreateEffectEnum003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTestCreateEffectEnum003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTestCreateEffectEnum003 ';
         const color: ArrayBuffer = new ArrayBuffer(96);
@@ -516,13 +516,13 @@ export default function effectKitBTest() {
 
     /**
      * @tc.name   effectKitBTestCreateEffectEnum004
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_004
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_1500
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTestCreateEffectEnum004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTestCreateEffectEnum004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTestCreateEffectEnum004 ';
         const color: ArrayBuffer = new ArrayBuffer(96);
@@ -545,13 +545,13 @@ export default function effectKitBTest() {
 
     /**
      * @tc.name   effectKitBTest_Promise_one_static_001
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_005
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_1600
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Promise_one_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Promise_one_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Promise_one_static_001 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -575,13 +575,13 @@ export default function effectKitBTest() {
 
     /**
      * @tc.name   effectKitBTest_Promise_one_static_002
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_006
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_1700
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Promise_one_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Promise_one_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Promise_one_static_002 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -605,13 +605,13 @@ export default function effectKitBTest() {
 
     /**
      * @tc.name   effectKitBTest_Promise_one_static_003
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_007
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_1800
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Promise_one_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Promise_one_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Promise_one_static_003 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -635,13 +635,13 @@ export default function effectKitBTest() {
 
     /**
      * @tc.name   effectKitBTest_Promise_one_static_004
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_008
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_1900
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Promise_one_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Promise_one_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Promise_one_static_004 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -665,13 +665,13 @@ export default function effectKitBTest() {
 
     /**
      * @tc.name   effectKitBTest_Promise_two_static_001
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_009
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_2000
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Promise_two_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Promise_two_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Promise_two_static_001 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -695,13 +695,13 @@ export default function effectKitBTest() {
 
     /**
      * @tc.name   effectKitBTest_Promise_two_static_002
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_010
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_2100
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Promise_two_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Promise_two_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Promise_two_static_002 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -725,13 +725,13 @@ export default function effectKitBTest() {
 
     /**
      * @tc.name   effectKitBTest_Promise_two_static_003
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_011
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_2200
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Promise_two_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Promise_two_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Promise_two_static_003 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -755,13 +755,13 @@ export default function effectKitBTest() {
 
     /**
      * @tc.name   effectKitBTest_Promise_two_static_004
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_012
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_2300
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Promise_two_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Promise_two_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Promise_two_static_004 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -785,13 +785,13 @@ export default function effectKitBTest() {
 
     /**
      * @tc.name   effectKitBTest_Callback_one_static_001
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_013
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_2400
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Callback_one_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Callback_one_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Callback_one_static_001 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -822,13 +822,13 @@ export default function effectKitBTest() {
 
     /**
      * @tc.name   effectKitBTest_Callback_one_static_002
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_014
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_2500
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Callback_one_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Callback_one_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Callback_one_static_002 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -859,13 +859,13 @@ export default function effectKitBTest() {
 
     /**
      * @tc.name   effectKitBTest_Callback_one_static_003
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_015
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_2600
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Callback_one_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Callback_one_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Callback_one_static_003 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -896,13 +896,13 @@ export default function effectKitBTest() {
 
     /**
      * @tc.name   effectKitBTest_Callback_one_static_004
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_016
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_2700
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Callback_one_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Callback_one_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Callback_one_static_004 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -933,13 +933,13 @@ export default function effectKitBTest() {
 
     /**
      * @tc.name   effectKitBTest_Callback_two_static_001
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_017
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_2800
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Callback_two_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Callback_two_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Callback_two_static_001 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -970,13 +970,13 @@ export default function effectKitBTest() {
 
     /**
      * @tc.name   effectKitBTest_Callback_two_static_002
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_018
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_2900
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Callback_two_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Callback_two_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Callback_two_static_002 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1007,13 +1007,13 @@ export default function effectKitBTest() {
 
     /**
      * @tc.name   effectKitBTest_Callback_two_static_003
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_019
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_3000
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Callback_two_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Callback_two_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Callback_two_static_003 ';
         console.log("effectKitTest" + msgStr + 'begin');
@@ -1044,13 +1044,13 @@ export default function effectKitBTest() {
 
     /**
      * @tc.name   effectKitBTest_Callback_two_static_004
-     * @tc.number EFFECT_KIT_GETPIXELMAP_JSAPI_static_020
+     * @tc.number SUB_GRAPHIC_effectKitTest_Method_3100
      * @tc.desc   Test getPixelMap and verify isEditable and isStrideAlignment properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('effectKitBTest_Callback_two_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('effectKitBTest_Callback_two_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         let msgStr = 'www data effectKitBTest_Callback_two_static_004 ';
         console.log("effectKitTest" + msgStr + 'begin');

@@ -14,9 +14,11 @@
  */
 import windowPropertiesTest from './WindowProperties.test';
 import windowPropertiesTest2 from './WindowProperties2.test';
+import windowPropertiesTest3 from './WindowProperties3.test';
 
 
 export default function testsuite() {
   windowPropertiesTest();
   windowPropertiesTest2();
+  windowPropertiesTest3();
 }

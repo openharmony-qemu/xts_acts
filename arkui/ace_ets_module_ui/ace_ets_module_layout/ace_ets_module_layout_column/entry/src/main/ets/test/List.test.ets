@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -63,6 +63,8 @@ import ColumnFixAtIdealSizeTest from './Column/ColumnFixAtIdealSizeTest.ets'
 import ColumnMatchParentTest from './Column/ColumnMatchParentTest.ets'
 import ColumnWrapContentTest from './Column/ColumnWrapContentTest.ets'
 import columnNullUndefinedTest from './Column/ColumnNullUndefined.test';
+import ColumnMatchParentNewFirstTest from './Column/ColumnMatchParentNewFirstTest.test';
+import ColumnMatchParentNewSecondTest from './Column/ColumnMatchParentNewSecondTest.test';
 
 
 export default function testsuite() {
@@ -116,5 +118,7 @@ export default function testsuite() {
   ColumnFixAtIdealSizeTest();
   ColumnMatchParentTest();
   ColumnWrapContentTest();
-  columnNullUndefinedTest();
+  columnNullUndefinedTest()
+  ColumnMatchParentNewFirstTest()
+  ColumnMatchParentNewSecondTest()
 }

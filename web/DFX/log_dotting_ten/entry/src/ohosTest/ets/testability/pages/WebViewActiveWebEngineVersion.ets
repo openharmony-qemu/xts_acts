@@ -79,7 +79,7 @@ struct Index {
                     let tmp_result = test_ndk.test_ndk_getActiveWebEngineVersion();
                     Utils.emitEvent(tmp_result, 20250903);
                   } else {
-                    Utils.emitEvent(webview.ArkWebEngineVersion.M132, 20250903);
+                    Utils.emitEvent(webview.ArkWebEngineVersion.M144, 20250903);
                   }
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
@@ -130,7 +130,7 @@ struct Index {
                     let tmp_result = test_ndk.test_ndk_getActiveWebEngineVersion();
                     Utils.emitEvent(tmp_result, 20250940);
                   } else {
-                    Utils.emitEvent(webview.ArkWebEngineVersion.M132, 20250940);
+                    Utils.emitEvent(webview.ArkWebEngineVersion.M144, 20250940);
                   }
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
@@ -147,7 +147,7 @@ struct Index {
                     console.log('emitActiveWebEngineVersion005' + tmp_result);
                     Utils.emitEvent(tmp_result, 20251218);
                   } else {
-                    Utils.emitEvent(webview.ArkWebEngineVersion.M132, 20251218);
+                    Utils.emitEvent(webview.ArkWebEngineVersion.M144, 20251218);
                   }
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
@@ -215,11 +215,11 @@ struct Index {
 
               case "emitIsActiveWebEngineEvergreen009": {
                 await Utils.sleep(2000);
-                if(webview.WebviewController.isActiveWebEngineEvergreen() == true || webview.WebviewController.isActiveWebEngineEvergreen() == false )
-                Utils.emitEvent(true, 20251226)
+                if(webview.WebviewController.isActiveWebEngineEvergreen() == true || webview.WebviewController.isActiveWebEngineEvergreen() == false) {
+                  Utils.emitEvent(true, 20251225)
+                }
                 break;
               }
-
 
             }
           })

@@ -194,5 +194,60 @@ export default function AVPlayerMediaSource() {
       player!!.setMediaSource(mediaSource!, playStrategy);
       done();
     });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0800
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0800
+     * @tc.desc   Local Video create Media Source With Fd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
+      let fdObject: media.AVFileDescriptor = {
+        fd: 0,
+        offset: 0,
+        length: 0
+      };
+      let mediaSource = media.createMediaSourceWithFd(fdObject);
+      expect(mediaSource != undefined).assertTrue();
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0900
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0900
+     * @tc.desc   Local Video create Media Source With DataSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
+      let dataSource: media.AVDataSrcDescriptor = {
+        fileSize: 0,
+        callback: (buffer: ArrayBuffer, length: long, pos?: long) => 0
+      };
+      let mediaSource = media.createMediaSourceWithDataSource(dataSource);
+      expect(mediaSource != undefined).assertTrue();
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_1000
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_1000
+     * @tc.desc   Local Video get MediaSource ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
+      let mediaSource = media.createMediaSourceWithUrl("http://xxx", header);
+      if(!mediaSource) {
+        console.error("Failed to create media source");
+        expect().assertFail();
+        done();
+      }
+      let id = mediaSource!!.getID();
+      expect(id).not().assertUndefined()
+      expect(id.length).assertLarger(0)
+      done();
+    });
   })
 }

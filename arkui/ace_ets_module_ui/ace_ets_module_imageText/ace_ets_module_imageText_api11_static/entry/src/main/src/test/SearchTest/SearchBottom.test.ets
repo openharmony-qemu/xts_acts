@@ -103,8 +103,8 @@ export default function search_bottom() {
         console.log('assert click before position')
         let y1 = search_01.bottom
         await (driver.click(
-          Math.round(search_01.left + (search_01.right - search_01.left) / 2) as Int,
-          Math.round(search_01.top + (search_01.bottom - search_01.top) / 2) as Int
+          Math.round(search_01.left + (search_01.right - search_01.left) / 2).toInt(),
+          Math.round(search_01.top + (search_01.bottom - search_01.top) / 2).toInt()
         ) as Promise<void>)
         await CommonFunc.sleep(1000);
         console.log('get click after Initial value')

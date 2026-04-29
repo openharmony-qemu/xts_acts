@@ -1,3 +1,5 @@
+import CrateImageSourceTest from "./image/creatImageSource/CreatImageSource.test";
+import ImageGetComponentSupp from "./image/getComponent/GetComponent.test";
 import AuxiliaryPictureGetAuxiliaryPictureInfoTest from "./Picture/Picture.test";
 import CrateImageCreatorTest from "./ImageCreator/ImageCreator.test";
 import MakerNoteHuaweiMetadataTest from "./property/Property.test";
@@ -8,14 +10,14 @@ import ImageAuxiliaryPictureGetMetadataStaticTest from "./image/AuxiliaryPicture
 import ImagePackerStaticTest from "./image/ImagePacker.test";
 
 export default function testsuite(): void {
-  ImageExifMetadataStaticTest();
   metaDataStaticTest();
   ImageAuxiliaryPictureGetMetadataStaticTest();
   ImagePackerStaticTest();
+  ImageExifMetadataStaticTest();
   AuxiliaryPictureGetAuxiliaryPictureInfoTest();
   CrateImageCreatorTest();
   MakerNoteHuaweiMetadataTest();
   ImageReceiverSupp();
-
-
+  CrateImageSourceTest();
+  ImageGetComponentSupp();
 }
