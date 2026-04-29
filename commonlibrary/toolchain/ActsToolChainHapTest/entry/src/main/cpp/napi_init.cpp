@@ -999,7 +999,6 @@ const std::unordered_map<std::string, int (*)()> kTestRegistry = {
     { "y1", &Y1Test },
     { "y1f", &Y1fTest },
     { "yn", &YnTest },
-    { "ynf", &YnfTest },
     { "iswalpha", &IswalphaTest },
     { "iswblank", &IswblankTest },
     { "iswcntrl", &IswcntrlTest },
@@ -1082,6 +1081,7 @@ const std::unordered_map<std::string, int (*)()> kTestRegistry = {
     { "creat", &CreatTest },
     { "openat", &OpenatTest },
     { "open", &OpenTest },
+    { "ynf", &YnfTest },
 };
 } // namespace
 
