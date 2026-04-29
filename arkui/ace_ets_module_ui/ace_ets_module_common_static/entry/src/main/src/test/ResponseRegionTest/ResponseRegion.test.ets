@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { describe, it, expect, beforeAll, beforeEach, afterEach, Level } from '../../../../hypium/index';
-import { Driver, ON } from '@kit.TestKit';
+import { Driver, ON, Rect } from '@kit.TestKit';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -88,7 +88,7 @@ export default function ResponseRegionTest() {
         if (button === null) {
           throw new Error('button2 is null');
         }
-        const rect = CommonFunc.getComponentRect('button2');
+        const rect = await (button?.getBounds() as Promise<Rect>)
         const clickX: int = Math.round(rect.right + (rect.right - rect.left) / 2) as int;
         const clickY: int = Math.round(rect.top + (rect.bottom - rect.top) / 2) as int;
         await driver.click(clickX, clickY);
