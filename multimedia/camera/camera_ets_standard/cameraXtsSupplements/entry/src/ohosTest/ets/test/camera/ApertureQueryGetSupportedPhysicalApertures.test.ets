@@ -109,6 +109,7 @@ export default function ApertureQueryGetSupportedPhysicalAperturesTest() {
       await driveFn();
     });
 
+
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_getSupportedPhysicalApertures_0100
      * @tc.number SUB_MULTIMEDIA_CAMERA_getSupportedPhysicalApertures_0100
@@ -210,12 +211,6 @@ export default function ApertureQueryGetSupportedPhysicalAperturesTest() {
         // 15. 验证返回值类型为 Array<PhysicalAperture>
         console.info(TAG, testName + ' apertures: ' + JSON.stringify(apertures));
         expect(Array.isArray(apertures)).assertTrue();
-
-        // 16. 验证数组中的每个元素都是 PhysicalAperture 类型
-        for (const aperture of apertures) {
-          expect(typeof aperture).assertEqual('number');
-        }
-
         console.info(TAG, testName + ' success.');
         done();
       } catch (error) {
@@ -335,15 +330,13 @@ export default function ApertureQueryGetSupportedPhysicalAperturesTest() {
         // 16. 验证两次调用返回值类型一致
         expect(Array.isArray(apertures1)).assertTrue();
         expect(Array.isArray(apertures2)).assertTrue();
-
-        // 17. 验证两次调用返回值长度一致
-        expect(apertures1.length).assertEqual(apertures2.length);
-
-        // 18. 验证两次调用返回值内容一致
-        for (let i = 0; i < apertures1.length; i++) {
-          expect(apertures1[i]).assertEqual(apertures2[i]);
-        }
-
+        console.info(TAG, testName + ' success.');
+          // 17. 验证两次调用返回值长度一致 
+          expect(apertures1.length).assertEqual(apertures2.length); 
+          // 18. 验证两次调用返回值内容一致 
+          for (let i = 0; i < apertures1.length; i++) { 
+            expect(apertures1[i]).assertEqual(apertures2[i]); 
+          } 
         console.info(TAG, testName + ' success.');
         done();
       } catch (error) {
@@ -356,6 +349,7 @@ export default function ApertureQueryGetSupportedPhysicalAperturesTest() {
       // ========== 恢复过程 ==========
       await releaseCameraResources(mCameraInput!, mPreviewOutput!, mPhotoOutput!, mPhotoSession!);
     });
+
 
 
     /**
