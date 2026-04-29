@@ -60,16 +60,16 @@ export default function LazyForEachReleaseStrategyTest() {
         const router = AppStorage.get<Router>("router") as Router
         router.clear();
         let pages = router.getState();
-        console.info("get LazyForEachReleaseStrategyTest state pages: " + JSON.stringify(pages));
+        console.info("get LazyForEachReleaseStrategy state pages: " + JSON.stringify(pages));
         if (!("frameNode" == pages.name)) {
-          console.info("get LazyForEachReleaseStrategyTest state pages.name: " + JSON.stringify(pages.name));
+          console.info("get LazyForEachReleaseStrategy state pages.name: " + JSON.stringify(pages.name));
 
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
 
         }
       } catch (err) {
-        console.error("push LazyForEachReleaseStrategyTest page error: " + err);
+        console.error("push LazyForEachReleaseStrategy page error: " + err);
         expect().assertFail();
       }
     });
