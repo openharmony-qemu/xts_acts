@@ -80,8 +80,6 @@ export default function TextInputOnNeedSoftkeyboardTest() {
       let button = await driver.findComponent(ON.id('Button_onNeedSoftkeyboard_false'))
       await button.click();
       await CommonFunc.sleep(1000);
-      await inputMethod.getController().stopInputSession();
-      await CommonFunc.sleep(500);
       expect(AppStorage.get('onNeedSoftkeyboard_false')).assertEqual('false');
       AppStorage.delete('onNeedSoftkeyboard_false')
       console.info('SUB_ARKUI_TEXTINPUT_ONEEDSOFTKEYBOARD_FALSE_PARAM_0200 END');
@@ -102,8 +100,6 @@ export default function TextInputOnNeedSoftkeyboardTest() {
       let button = await driver.findComponent(ON.id('Button_onNeedSoftkeyboard_undefined'))
       await button.click();
       await CommonFunc.sleep(1000);
-      await inputMethod.getController().stopInputSession();
-      await CommonFunc.sleep(500);
       let strJson: string = getInspectorByKey('Button_onNeedSoftkeyboard_undefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       expect(obj.$attrs.onNeedSoftkeyboard).assertEqual(undefined);
