@@ -266,4 +266,4 @@ export interface TestcaseRet {
   pass: int;
   ignore: int;
   duration: int;
-} 
+}
