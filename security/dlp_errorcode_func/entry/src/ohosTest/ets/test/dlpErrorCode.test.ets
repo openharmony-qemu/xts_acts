@@ -551,15 +551,15 @@ export default function dlpErrorCodeTest() {
     })
 
     /**
-     * @tc.name   testgenerateDlpFileForEnterprise0100
-     * @tc.number testgenerateDlpFileForEnterprise0100
+     * @tc.name   SUB_Security_DLP_generateDlpFileForEnterprise_0100
+     * @tc.number SUB_Security_DLP_generateDlpFileForEnterprise_0100
      * @tc.desc   test generateDlpFileForEnterprise 19100001
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testgenerateDlpFileForEnterprise0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      let curTag = TAG + "testgenerateDlpFileForEnterprise0100";
+    it('SUB_Security_DLP_generateDlpFileForEnterprise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let curTag = TAG + "SUB_Security_DLP_generateDlpFileForEnterprise_0100";
       console.info(curTag, "start");
       let dlpProperty: dlpPermission.DLPProperty = {
         ownerAccount: 'accountInfo.domainInfo.accountName',
