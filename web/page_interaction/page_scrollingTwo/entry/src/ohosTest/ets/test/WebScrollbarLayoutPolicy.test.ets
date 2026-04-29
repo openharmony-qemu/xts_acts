@@ -59,7 +59,7 @@ export default function WebScrollbarLayoutPolicyTest() {
     })
 
     /**
-     * @tc.name   testScrollbarLayoutPolicy00
+     * @tc.name   testScrollbarLayoutPolicy001
      * @tc.number SUB_WEB_SCROLLLAYOUT_POLICY_0100
      * @tc.desc   scrollbarLayoutPolicy CONTENT test.
      * @tc.type   FUNCTION
