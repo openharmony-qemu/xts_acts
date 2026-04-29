@@ -94,4 +94,5 @@ static const struct TimeTestStringStruct TEST_ASCTIME_DATA[] = {
     { "Europe/Madrid", "Sat Jul 30 12:40:14 2022" },
 };
 
+#define test_asctime_data TEST_ASCTIME_DATA
 #endif

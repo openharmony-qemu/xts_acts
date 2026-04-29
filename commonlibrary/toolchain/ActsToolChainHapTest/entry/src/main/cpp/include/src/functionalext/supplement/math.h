@@ -22,4 +22,14 @@ int SignbitTest();
 int SignbitfTest();
 int SignbitlTest();
 
+int FiniteTest();
+int FinitefTest();
+int FunctionalextPow10Test();
+int NanTest();
+int NanfTest();
+int NanlTest();
+int RintExtTest();
+int SignificandTest();
+int SignificandfTest();
+int SignbitInnerTest();
 #endif // SRC_FUNCTIONALEXT_SUPPLEMENT_MATH_H_H

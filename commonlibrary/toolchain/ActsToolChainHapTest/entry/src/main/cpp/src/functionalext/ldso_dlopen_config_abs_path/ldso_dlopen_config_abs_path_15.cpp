@@ -13,11 +13,11 @@
  * limitations under the License.
  */
 
-#include "functionalext.h"
-#include "ldso_dlopen_config_abs_path.h"
 #include <dlfcn.h>
 #include <cstdio>
 #include <cstdlib>
+#include "functionalext.h"
+#include "ldso_dlopen_config_abs_path.h"
 
 static int LdsoDlopenConfigAbsPath15TestImpl()
 {

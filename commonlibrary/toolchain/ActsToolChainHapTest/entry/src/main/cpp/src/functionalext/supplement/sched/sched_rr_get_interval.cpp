@@ -14,11 +14,13 @@
  */
 
 #include <cerrno>
+#include <dlfcn.h>
 #include <sched.h>
 
 #include "test.h"
 
-extern "C" int SchedRrGetIntervalTime64(pid_t, struct timespec *);
+using SchedRrGetInterval64Func = int (*)(pid_t, struct timespec*);
+constexpr const char* SCHED_RR_GET_INTERVAL64_SYMBOL = "__sched_rr_get_interval_time64";
 /**
  * @tc.name      : sched_rr_get_interval_0100
  * @tc.desc      : get the SCHED_RR interval for the named process
@@ -27,7 +29,7 @@ extern "C" int SchedRrGetIntervalTime64(pid_t, struct timespec *);
 void SchedRrGetInterval0100(void)
 {
     pid_t pid = getpid();
-    struct timespec ts = {0};
+    struct timespec ts = { 0 };
 
     errno = 0;
     int result = sched_rr_get_interval(pid, &ts);
@@ -50,7 +52,7 @@ void SchedRrGetInterval0100(void)
 void SchedRrGetInterval0200(void)
 {
     pid_t pid = -1;
-    struct timespec ts = {0};
+    struct timespec ts = { 0 };
 
     errno = 0;
     int result = sched_rr_get_interval(pid, &ts);
@@ -67,11 +69,17 @@ void SchedRrGetInterval0200(void)
  */
 void SchedRrGetIntervalTime640100(void)
 {
+    SchedRrGetInterval64Func schedRrGetInterval64 =
+        reinterpret_cast<SchedRrGetInterval64Func>(dlsym(RTLD_DEFAULT, SCHED_RR_GET_INTERVAL64_SYMBOL));
+    if (schedRrGetInterval64 == nullptr) {
+        t_error("%s failed: dlsym __sched_rr_get_interval_time64 failed\n", __func__);
+        return;
+    }
     pid_t pid = getpid();
-    struct timespec ts = {0};
+    struct timespec ts = { 0 };
 
     errno = 0;
-    int result = SchedRrGetIntervalTime64(pid, &ts);
+    int result = schedRrGetInterval64(pid, &ts);
     if (result != 0 || errno != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
         t_error("%s failed: errno = %d\n", __func__, errno);
@@ -83,17 +91,17 @@ void SchedRrGetIntervalTime640100(void)
     }
 }
 
-static int SchedRrGetIntervalTestImpl(int argc, char *argv[])
+static int SchedRrGetIntervalTestImpl(int argc, char* argv[])
 {
     SchedRrGetInterval0100();
     SchedRrGetInterval0200();
     SchedRrGetIntervalTime640100();
-    return g_tStatus;
+    return T_STATUS;
 }
 
 int SchedRrGetIntervalTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char* libcArgv[] = { libcProg, nullptr };
     return SchedRrGetIntervalTestImpl(1, libcArgv);
 }

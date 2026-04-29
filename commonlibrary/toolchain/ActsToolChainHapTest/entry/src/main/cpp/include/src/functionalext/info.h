@@ -19,4 +19,5 @@
 int ApplicationTargetSdkVersionTestTest();
 int DeviceApiVersionTest();
 
+int FatalMessageTest();
 #endif // SRC_FUNCTIONALEXT_INFO_H_H

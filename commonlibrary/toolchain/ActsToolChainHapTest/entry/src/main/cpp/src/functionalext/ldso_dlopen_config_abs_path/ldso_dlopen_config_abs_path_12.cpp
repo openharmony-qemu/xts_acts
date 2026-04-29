@@ -32,7 +32,7 @@ static int LdsoDlopenConfigAbsPath12TestImpl()
         printf("OpenSo with abs path succeed\n");
         g_tStatus = 1;
     }
-
+    
     return g_tStatus;
 }
 

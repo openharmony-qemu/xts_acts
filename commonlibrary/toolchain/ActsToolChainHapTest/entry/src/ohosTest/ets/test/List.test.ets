@@ -19,7 +19,7 @@ import functional from "./src/functional.test";
 import fortify from "./src/functionalext/fortify.test";
 import info from "./src/functionalext/info.test";
 import ldso_cfi from "./src/functionalext/ldso_cfi.test";
-import ldso_dlopen_config_abs_path from "./src/functionalext/ldso_dlopen_config_abs_path.test";
+import functionalext_ldso_dlopen_config_abs_path from "./src/functionalext/ldso_dlopen_config_abs_path.test";
 import src_functionalext_locale from "./src/functionalext/locale.test";
 import functionalext_backtrace from "./src/functionalext/backtrace.test";
 import conf from "./src/functionalext/supplement/conf.test";
@@ -71,6 +71,13 @@ import unittest from "./src/functionalext/unittest.test";
 import src_math from "./src/math.test";
 import nativehook from "./src/nativehook.test";
 import regression from "./src/regression.test";
+import sigchain from "./src/functionalext/sigchain.test";
+import functionalext_ldso_debug from "./src/functionalext/ldso_debug.test";
+import functionalext_legacy from "./src/functionalext/legacy.test";
+import functionalext_thread from "./src/functionalext/thread.test";
+import ldso from "./src/functionalext/supplement/ldso.test";
+import env from "./src/functionalext/supplement/manual/env.test";
+
 
 export default function testsuite() {
   api();
@@ -79,7 +86,7 @@ export default function testsuite() {
   fortify();
   info();
   ldso_cfi();
-  ldso_dlopen_config_abs_path();
+  functionalext_ldso_dlopen_config_abs_path();
   src_functionalext_locale();
   functionalext_backtrace();
   conf();
@@ -131,4 +138,10 @@ export default function testsuite() {
   src_math();
   nativehook();
   regression();
+  sigchain();
+  functionalext_ldso_debug();
+  functionalext_legacy();
+  functionalext_thread();
+  ldso();
+  env();
 }

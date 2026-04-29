@@ -17,13 +17,13 @@
 #define TIME64_FUNCTIONS_H
 
 #include <pthread.h>
-#include <sys/socket.h>
-#include <sys/time.h>
 #include <sys/resource.h>
 #include <sys/sem.h>
+#include <sys/socket.h>
+#include <sys/time.h>
 #include <sys/timerfd.h>
-#include <time.h>
 #include <threads.h>
+#include <time.h>
 
 #ifdef __cplusplus
 extern "C" {
