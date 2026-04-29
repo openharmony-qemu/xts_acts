@@ -18,8 +18,7 @@
  */
 export const TAG: string = '[Hypium]';
 
-export const DEFAULT: byte = 0B0000;
-
+export const DEFAULT: int8_t = 0B0000;
 export class PrintTag {
     static OHOS_REPORT_WORKER_STATUS: string = 'OHOS_REPORT_WORKER_STATUS';
     static OHOS_REPORT_ALL_RESULT: string = 'OHOS_REPORT_ALL_RESULT';
