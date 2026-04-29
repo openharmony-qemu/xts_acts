@@ -13,7 +13,7 @@ export default function DeviceInfoApiAvailableTest() {
         })
 
         /**
-         * @tc.number SUB_SDK_DEVICEINFO_0100
+         * @tc.number SUB_SDK_GONGJULIAN_DEVICEINFO_0100
          * @tc.name DeviceInfoApiAvailable_test_001
          * @tc.desc Verify apiAvailable can be called with string version and returns boolean.
          * @tc.size MediumTest
@@ -27,7 +27,7 @@ export default function DeviceInfoApiAvailableTest() {
         });
 
         /**
-         * @tc.number SUB_SDK_DEVICEINFO_0200
+         * @tc.number SUB_SDK_GONGJULIAN_DEVICEINFO_0200
          * @tc.name DeviceInfoApiAvailable_test_002
          * @tc.desc Verify apiAvailable can be called with number version and returns boolean.
          * @tc.size MediumTest

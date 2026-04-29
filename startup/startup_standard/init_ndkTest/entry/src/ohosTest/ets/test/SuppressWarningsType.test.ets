@@ -23,32 +23,32 @@ export default function SuppressWarningsTypeTest() {
             // This API supports only one parameter: clear action function.
         })
 
-        /**
-         * @tc.number SuppressWarningsType_TEST_001
-         * @tc.name SuppressWarningsType_test_001
-         * @tc.desc Verify the accuracy of COMPATIBILITY enum value, must be strictly equal to 'compatibility'
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 3
-         */
+/**
+          * @tc.number SUB_SDK_GONGJULIAN_SUPRESSWARNINGTYPE_0100
+          * @tc.name SuppressWarningsType_test_001
+          * @tc.desc Verify the accuracy of COMPATIBILITY enum value, must be strictly equal to 'compatibility'
+          * @tc.size MediumTest
+          * @tc.type Function
+          * @tc.level Level 3
+          */
         it('SuppressWarningsType_test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
             expect(SuppressWarningsType.COMPATIBILITY).assertEqual('compatibility');
             expect(typeof SuppressWarningsType.COMPATIBILITY).assertEqual('string');
         });
-        /**
-         * @tc.number SuppressWarningsType_TEST_002
-         * @tc.name SuppressWarningsType_test_002
-         * @tc.desc Verify the accuracy of SYSCAP enum value, must be strictly equal to 'syscap'
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 3
-         */
+/**
+          * @tc.number SUB_SDK_GONGJULIAN_SUPRESSWARNINGTYPE_0200
+          * @tc.name SuppressWarningsType_test_002
+          * @tc.desc Verify the accuracy of SYSCAP enum value, must be strictly equal to 'syscap'
+          * @tc.size MediumTest
+          * @tc.type Function
+          * @tc.level Level 3
+          */
         it('SuppressWarningsType_test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
             expect(SuppressWarningsType.SYSCAP).assertEqual('syscap');
             expect(typeof SuppressWarningsType.COMPATIBILITY).assertEqual('string');
         });
         /**
-         * @tc.number SUB_SDK_SUPRESSWARNINGTYPE_0300
+         * @tc.number SUB_SDK_GONGJULIAN_SUPRESSWARNINGTYPE_0300
          * @tc.name SuppressWarningsType_test_003
          * @tc.desc Verify the accuracy of PERMISSION enum value, must be strictly equal to 'permission'
          * @tc.size MediumTest
