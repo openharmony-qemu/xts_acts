@@ -207,8 +207,8 @@ export default function AttachThreadTest():void {
           const cls = new Foo();
           return cls.test_AttachDetach();
         });
-        const result = await job.Await();
-        worker.join().Await();
+        const result = await job;
+        await worker.join();
         return result;
       });
 
