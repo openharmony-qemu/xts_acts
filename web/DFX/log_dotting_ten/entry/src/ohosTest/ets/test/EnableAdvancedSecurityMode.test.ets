@@ -64,7 +64,7 @@ export default function EnableAdvancedSecurityMode() {
     })
 
     /**
-     * @tc.number     SUB_WEB_ENABLEADVANCEDSECURITYMODE_0100
+     * @tc.number     SUB_WEB_ENABLE_ADVANCEDSECURITYMODE_0100
      * @tc.name       testEnableAdvancedSecurityMode001
      * @tc.desc       enableAdvancedSecurityMode with disableJITCompilation true
      * @tc.size       MEDIUM
@@ -78,7 +78,7 @@ export default function EnableAdvancedSecurityMode() {
     })
 
     /**
-     * @tc.number     SUB_WEB_ENABLEADVANCEDSECURITYMODE_0200
+     * @tc.number     SUB_WEB_ENABLE_ADVANCEDSECURITYMODE_0200
      * @tc.name       testEnableAdvancedSecurityMode002
      * @tc.desc       enableAdvancedSecurityMode with disableJITCompilation false
      * @tc.size       MEDIUM
@@ -92,7 +92,7 @@ export default function EnableAdvancedSecurityMode() {
     })
 
     /**
-     * @tc.number     SUB_WEB_ENABLEADVANCEDSECURITYMODE_0300
+     * @tc.number     SUB_WEB_ENABLE_ADVANCEDSECURITYMODE_0300
      * @tc.name       testEnableAdvancedSecurityMode003
      * @tc.desc       enableAdvancedSecurityMode with disableWebAssembly true
      * @tc.size       MEDIUM
@@ -106,7 +106,7 @@ export default function EnableAdvancedSecurityMode() {
     })
 
     /**
-     * @tc.number     SUB_WEB_ENABLEADVANCEDSECURITYMODE_0400
+     * @tc.number     SUB_WEB_ENABLE_ADVANCEDSECURITYMODE_0400
      * @tc.name       testEnableAdvancedSecurityMode004
      * @tc.desc       enableAdvancedSecurityMode with disableWebAssembly false
      * @tc.size       MEDIUM
@@ -120,7 +120,7 @@ export default function EnableAdvancedSecurityMode() {
     })
 
     /**
-     * @tc.number     SUB_WEB_ENABLEADVANCEDSECURITYMODE_0500
+     * @tc.number     SUB_WEB_ENABLE_ADVANCEDSECURITYMODE_0500
      * @tc.name       testEnableAdvancedSecurityMode005
      * @tc.desc       enableAdvancedSecurityMode with disableWebGL true
      * @tc.size       MEDIUM
@@ -134,7 +134,7 @@ export default function EnableAdvancedSecurityMode() {
     })
 
     /**
-     * @tc.number     SUB_WEB_ENABLEADVANCEDSECURITYMODE_0600
+     * @tc.number     SUB_WEB_ENABLE_ADVANCEDSECURITYMODE_0600
      * @tc.name       testEnableAdvancedSecurityMode006
      * @tc.desc       enableAdvancedSecurityMode with disableWebGL false
      * @tc.size       MEDIUM
@@ -148,7 +148,7 @@ export default function EnableAdvancedSecurityMode() {
     })
 
     /**
-     * @tc.number     SUB_WEB_ENABLEADVANCEDSECURITYMODE_0700
+     * @tc.number     SUB_WEB_ENABLE_ADVANCEDSECURITYMODE_0700
      * @tc.name       testEnableAdvancedSecurityMode007
      * @tc.desc       enableAdvancedSecurityMode with disablePDFViewer true
      * @tc.size       MEDIUM
@@ -162,7 +162,7 @@ export default function EnableAdvancedSecurityMode() {
     })
 
     /**
-     * @tc.number     SUB_WEB_ENABLEADVANCEDSECURITYMODE_0800
+     * @tc.number     SUB_WEB_ENABLE_ADVANCEDSECURITYMODE_0800
      * @tc.name       testEnableAdvancedSecurityMode008
      * @tc.desc       enableAdvancedSecurityMode with disablePDFViewer false
      * @tc.size       MEDIUM
@@ -176,7 +176,7 @@ export default function EnableAdvancedSecurityMode() {
     })
 
     /**
-     * @tc.number     SUB_WEB_ENABLEADVANCEDSECURITYMODE_0900
+     * @tc.number     SUB_WEB_ENABLE_ADVANCEDSECURITYMODE_0900
      * @tc.name       testEnableAdvancedSecurityMode009
      * @tc.desc       enableAdvancedSecurityMode with disableMathML true
      * @tc.size       MEDIUM
@@ -190,7 +190,7 @@ export default function EnableAdvancedSecurityMode() {
     })
 
     /**
-     * @tc.number     SUB_WEB_ENABLEADVANCEDSECURITYMODE_1000
+     * @tc.number     SUB_WEB_ENABLE_ADVANCEDSECURITYMODE_1000
      * @tc.name       testEnableAdvancedSecurityMode010
      * @tc.desc       enableAdvancedSecurityMode with disableMathML false
      * @tc.size       MEDIUM
@@ -204,7 +204,7 @@ export default function EnableAdvancedSecurityMode() {
     })
 
     /**
-     * @tc.number     SUB_WEB_ENABLEADVANCEDSECURITYMODE_1100
+     * @tc.number     SUB_WEB_ENABLE_ADVANCEDSECURITYMODE_1100
      * @tc.name       testEnableAdvancedSecurityMode011
      * @tc.desc       enableAdvancedSecurityMode with disableServiceWorker true
      * @tc.size       MEDIUM
@@ -218,7 +218,7 @@ export default function EnableAdvancedSecurityMode() {
     })
 
     /**
-     * @tc.number     SUB_WEB_ENABLEADVANCEDSECURITYMODE_1200
+     * @tc.number     SUB_WEB_ENABLE_ADVANCEDSECURITYMODE_1200
      * @tc.name       testEnableAdvancedSecurityMode012
      * @tc.desc       enableAdvancedSecurityMode with disableServiceWorker false
      * @tc.size       MEDIUM
@@ -232,7 +232,7 @@ export default function EnableAdvancedSecurityMode() {
     })
 
     /**
-     * @tc.number     SUB_WEB_ENABLEADVANCEDSECURITYMODE_1300
+     * @tc.number     SUB_WEB_ENABLE_ADVANCEDSECURITYMODE_1300
      * @tc.name       testEnableAdvancedSecurityMode013
      * @tc.desc       enableAdvancedSecurityMode with disableNonProxyUDP true
      * @tc.size       MEDIUM
@@ -246,7 +246,7 @@ export default function EnableAdvancedSecurityMode() {
     })
 
     /**
-     * @tc.number     SUB_WEB_ENABLEADVANCEDSECURITYMODE_1400
+     * @tc.number     SUB_WEB_ENABLE_ADVANCEDSECURITYMODE_1400
      * @tc.name       testEnableAdvancedSecurityMode014
      * @tc.desc       enableAdvancedSecurityMode with disableNonProxyUDP false
      * @tc.size       MEDIUM
@@ -260,7 +260,7 @@ export default function EnableAdvancedSecurityMode() {
     })
 
     /**
-     * @tc.number     SUB_WEB_ENABLEADVANCEDSECURITYMODE_1500
+     * @tc.number     SUB_WEB_ENABLE_ADVANCEDSECURITYMODE_1500
      * @tc.name       testEnableAdvancedSecurityMode015
      * @tc.desc       enableAdvancedSecurityMode with all params true
      * @tc.size       MEDIUM
@@ -274,7 +274,7 @@ export default function EnableAdvancedSecurityMode() {
     })
 
     /**
-     * @tc.number     SUB_WEB_ENABLEADVANCEDSECURITYMODE_1600
+     * @tc.number     SUB_WEB_ENABLE_ADVANCEDSECURITYMODE_1600
      * @tc.name       testEnableAdvancedSecurityMode016
      * @tc.desc       enableAdvancedSecurityMode with all params false
      * @tc.size       MEDIUM
@@ -288,7 +288,7 @@ export default function EnableAdvancedSecurityMode() {
     })
 
     /**
-     * @tc.number     SUB_WEB_ENABLEADVANCEDSECURITYMODE_1700
+     * @tc.number     SUB_WEB_ENABLE_ADVANCEDSECURITYMODE_1700
      * @tc.name       testEnableAdvancedSecurityMode017
      * @tc.desc       enableAdvancedSecurityMode with disableJITCompilation disableWebAssembly disableWebGL true
      * @tc.size       MEDIUM
@@ -302,7 +302,7 @@ export default function EnableAdvancedSecurityMode() {
     })
 
     /**
-     * @tc.number     SUB_WEB_ENABLEADVANCEDSECURITYMODE_1800
+     * @tc.number     SUB_WEB_ENABLE_ADVANCEDSECURITYMODE_1800
      * @tc.name       testEnableAdvancedSecurityMode018
      * @tc.desc       enableAdvancedSecurityMode with disablePDFViewer disableMathML disableServiceWorker disableNonProxyUDP true
      * @tc.size       MEDIUM
