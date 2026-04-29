@@ -61,7 +61,7 @@ export default function WebKeyboardAppearanceTest() {
 
     /**
      * @tc.name   testKeyboardAppearance001
-     * @tc.number SUB_WEB_KEYBOARDAPPEARANCE_0100
+     * @tc.number SUB_WEB_KEYBOARD_APPEARANCE_0100
      * @tc.desc   test keyboardAppearance NONE_IMMERSIVE mode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -78,7 +78,7 @@ export default function WebKeyboardAppearanceTest() {
 
     /**
      * @tc.name   testKeyboardAppearance002
-     * @tc.number SUB_WEB_KEYBOARDAPPEARANCE_0200
+     * @tc.number SUB_WEB_KEYBOARD_APPEARANCE_0200
      * @tc.desc   test keyboardAppearance IMMERSIVE mode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -95,7 +95,7 @@ export default function WebKeyboardAppearanceTest() {
 
     /**
      * @tc.name   testKeyboardAppearance003
-     * @tc.number SUB_WEB_KEYBOARDAPPEARANCE_0300
+     * @tc.number SUB_WEB_KEYBOARD_APPEARANCE_0300
      * @tc.desc   test keyboardAppearance LIGHT_IMMERSIVE mode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -112,7 +112,7 @@ export default function WebKeyboardAppearanceTest() {
 
     /**
      * @tc.name   testKeyboardAppearance004
-     * @tc.number SUB_WEB_KEYBOARDAPPEARANCE_0400
+     * @tc.number SUB_WEB_KEYBOARD_APPEARANCE_0400
      * @tc.desc   test keyboardAppearance DARK_IMMERSIVE mode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -129,7 +129,7 @@ export default function WebKeyboardAppearanceTest() {
 
     /**
      * @tc.name   testKeyboardAppearance005
-     * @tc.number SUB_WEB_KEYBOARDAPPEARANCE_0500
+     * @tc.number SUB_WEB_KEYBOARD_APPEARANCE_0500
      * @tc.desc   test switch from NONE_IMMERSIVE to IMMERSIVE dynamically
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -146,7 +146,7 @@ export default function WebKeyboardAppearanceTest() {
 
     /**
      * @tc.name   testKeyboardAppearance006
-     * @tc.number SUB_WEB_KEYBOARDAPPEARANCE_0600
+     * @tc.number SUB_WEB_KEYBOARD_APPEARANCE_0600
      * @tc.desc   test switch from IMMERSIVE to LIGHT_IMMERSIVE dynamically
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -163,7 +163,7 @@ export default function WebKeyboardAppearanceTest() {
 
     /**
      * @tc.name   testKeyboardAppearance007
-     * @tc.number SUB_WEB_KEYBOARDAPPEARANCE_0700
+     * @tc.number SUB_WEB_KEYBOARD_APPEARANCE_0700
      * @tc.desc   test switch from LIGHT_IMMERSIVE to DARK_IMMERSIVE dynamically
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -180,7 +180,7 @@ export default function WebKeyboardAppearanceTest() {
 
     /**
      * @tc.name   testKeyboardAppearance008
-     * @tc.number SUB_WEB_KEYBOARDAPPEARANCE_0800
+     * @tc.number SUB_WEB_KEYBOARD_APPEARANCE_0800
      * @tc.desc   test switch from DARK_IMMERSIVE to NONE_IMMERSIVE dynamically
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -197,7 +197,7 @@ export default function WebKeyboardAppearanceTest() {
 
     /**
      * @tc.name   testKeyboardAppearance009
-     * @tc.number SUB_WEB_KEYBOARDAPPEARANCE_0900
+     * @tc.number SUB_WEB_KEYBOARD_APPEARANCE_0900
      * @tc.desc   test set keyboardAppearance then trigger keyboard show
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -214,7 +214,7 @@ export default function WebKeyboardAppearanceTest() {
 
     /**
      * @tc.name   testKeyboardAppearance010
-     * @tc.number SUB_WEB_KEYBOARDAPPEARANCE_1000
+     * @tc.number SUB_WEB_KEYBOARD_APPEARANCE_1000
      * @tc.desc   test default behavior without calling keyboardAppearance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
