@@ -299,6 +299,9 @@ export default function SaveToExistingContactViaUITest() {
                       let onType1: On = ON.text('不保存');
                       await getComponent(driver, onType1);
                       await delay(500);
+                      let onType3: On = ON.text('picker_cancel_btn');
+                      await getComponent(driver, onType3);
+                      await delay(500);
                     }
                 } catch (err) {
                     console.log(`${caseName} --ger component catch: err>${JSON.stringify(err)}`);
@@ -314,6 +317,10 @@ export default function SaveToExistingContactViaUITest() {
                       console.log(`${caseName} The current device type does not 
                       support: errcode>${JSON.stringify(err.code)}, message: >${JSON.stringify(err.message)}`);
                       expect(err.code).assertEqual(801);
+                      done();
+                    } else if (err.code === 16700103) {
+                      console.log(`${caseName} user cancel: errcode>${JSON.stringify(err.code)}`);
+                      expect(err.code).assertEqual(16700103);
                       done();
                     } else {
                       console.log(`${caseName} SaveToExistingContactViaUI: err>${JSON.stringify(err)}`);
