@@ -73,14 +73,14 @@ private:
     OHNativeWindow* _nativeWindow = nullptr;
 
 public:
-    InitNativeWindow(bool need_set_size=true)
+    explicit InitNativeWindow(bool needSetBufferGeometry = true)
     {
         _image = OH_ConsumerSurface_Create();
         OH_ConsumerSurface_SetDefaultSize(_image, 0x50, 0x50);
         if (_image != nullptr) {
             _nativeWindow = OH_NativeImage_AcquireNativeWindow(_image);
             if (_nativeWindow != nullptr) {
-                if (need_set_size) {
+                if (needSetBufferGeometry) {
                     OH_NativeWindow_NativeWindowHandleOpt(_nativeWindow, SET_BUFFER_GEOMETRY, width_, height_);
                 }
                 OH_NativeWindow_NativeWindowHandleOpt(_nativeWindow, SET_USAGE, usage);

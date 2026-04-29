@@ -1909,13 +1909,14 @@ napi_value testNativeWindowNativeWindowRequestBufferDefaultWidthAndHeight(napi_e
     OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &nativeWindowBuffer, &fenceFd);
     
     // 1.
-    int _width, _height;
-    int flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, GET_BUFFER_GEOMETRY, &_height, &_width);
+    int32_t width = 0;
+    int32_t height = 0;
+    int flag = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, GET_BUFFER_GEOMETRY, &height, &width);
     if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_1000 + CONSTANT_2, &result);
         return result;
     }
-    if (0x50 != _width || 0x50 != _height) {
+    if (width != 0x50 || height != 0x50) {
         napi_create_int32(env, CONSTANT_1000 + CONSTANT_3, &result);
         return result;
     }

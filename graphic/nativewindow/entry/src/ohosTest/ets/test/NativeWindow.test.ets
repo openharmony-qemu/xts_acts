@@ -1999,8 +1999,8 @@ export default function nativeWindowTest() {
 
     /**
      * @tc.name   testNativeWindowNativeWindowFlushBufferAbnormalRegion
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1705
-     * @tc.desc   testNativeWindowNativeWindowFlushBufferAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2500
+     * @tc.desc   testNativeWindowNativeWindowFlushBufferAbnormalRegion
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -2014,7 +2014,7 @@ export default function nativeWindowTest() {
 
     /**
      * @tc.name   testNativeWindowNativeWindowRequestBufferDefaultWidthAndHeight
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_1706
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2600
      * @tc.desc   testNativeWindowNativeWindowRequestBufferDefaultWidthAndHeight
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
