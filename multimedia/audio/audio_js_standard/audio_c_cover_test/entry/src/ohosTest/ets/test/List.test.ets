@@ -22,5 +22,7 @@ export default function testsuite() {
   AudioTest();
   AudioTest1();
   AudioEnumTest();
-  AudioMidiTest();
+  if (canIUse("SystemCapability.Multimedia.Audio.MIDI")) {
+    AudioMidiTest();
+  }
 }
