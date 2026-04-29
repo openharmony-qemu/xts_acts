@@ -30,7 +30,9 @@ import rpc from '@ohos.rpc';
 import { BusinessError } from '@ohos.base';
 import { Driver, ON } from '@ohos.UiTest';
 import DemoProcess from '../process/AProcess';
+import StaticDemoProcess from '../process/StaticDemoProcess';
 import childProcessManager from '@ohos.app.ability.childProcessManager';
+import { ChildProcessArgs } from '@ohos.app.ability.ChildProcessArgs';
 import window from '@ohos.window';
 import startOptions from '@ohos.app.ability.StartOptions';
 import fileIo from '@ohos.file.fs';
@@ -668,6 +670,55 @@ export default function ApiCoverStaticTest() {
       expect(moduleName).assertEqual('entry');
       expect(abilityName).assertEqual('EntryAbility');
       done();
+    });
+
+    /**
+     * @tc.name   SUB_AA_ChildProcessManager_startChildProcess_Static_0200
+     * @tc.number SUB_AA_ChildProcessManager_startChildProcess_Static_0200
+     * @tc.desc   startChildProcess successfully initiated the child process
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AA_ChildProcessManager_startChildProcess_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let tag = `SUB_AA_ChildProcessManager_startChildProcess_Static_0200`;
+      console.log(`${tag}, it begin`);
+      try {
+        let pid: int = await childProcessManager.startChildProcess("entry/src/main/ets/process/StaticDemoProcess",
+              childProcessManager.StartMode.SELF_FORK)
+        console.log(`${tag} startChildProcess success, pid: ${pid}`);
+        expect(pid>0).assertTrue();
+        done();
+      } catch (err) {
+        console.log(`${tag} startChildProcess error, errorCode: ${err.code}, errorMsg:${err.message}`);
+        expect(err.code == 16000061).assertTrue();
+        done();
+      }
+    });
+    /**
+     * @tc.name   SUB_AA_ChildProcessManager_startArkChildProcess_Static_0300
+     * @tc.number SUB_AA_ChildProcessManager_startArkChildProcess_Static_0300
+     * @tc.desc   startChildProcess successfully initiated the child process
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AA_ChildProcessManager_startArkChildProcess_Static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let tag = `SUB_AA_ChildProcessManager_startArkChildProcess_Static_0300`;
+      console.log(`${tag}, it begin`);
+      try {
+        let args: ChildProcessArgs = {
+          entryParams: "testParam"
+        };
+        let pid: int = await childProcessManager.startArkChildProcess("entry/src/main/ets/process/StaticDemoProcess",args)
+        console.log(`${tag} startChildProcess success, pid: ${pid}`);
+        expect(pid>0).assertTrue();
+        done();
+      } catch (err) {
+        console.log(`${tag} startChildProcess error, errorCode: ${err.code}, errorMsg:${err.message}`);
+        expect(err.code == 801).assertTrue();
+        done();
+      }
     });
   })
 }
