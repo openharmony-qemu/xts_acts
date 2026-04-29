@@ -223,4 +223,102 @@ int AccessTest(void);
 int FchdirTest(void);
 int NiceTest(void);
 
+// LdsoDlopenConfigAbsPath test functions
+int LdsoDlopenConfigAbsPath1Test(void);
+int LdsoDlopenConfigAbsPath2Test(void);
+int LdsoDlopenConfigAbsPath3Test(void);
+int LdsoDlopenConfigAbsPath4Test(void);
+int LdsoDlopenConfigAbsPath5Test(void);
+int LdsoDlopenConfigAbsPath6Test(void);
+int LdsoDlopenConfigAbsPath7Test(void);
+int LdsoDlopenConfigAbsPath8Test(void);
+int LdsoDlopenConfigAbsPath9Test(void);
+int LdsoDlopenConfigAbsPath10Test(void);
+int LdsoDlopenConfigAbsPath11Test(void);
+int LdsoDlopenConfigAbsPath12Test(void);
+int LdsoDlopenConfigAbsPath13Test(void);
+int LdsoDlopenConfigAbsPath14Test(void);
+int LdsoDlopenConfigAbsPath15Test(void);
+int LdsoDlopenConfigAbsPath16Test(void);
+
+// Ctype test functions
+int IswalphaTest(void);
+int IswblankTest(void);
+int IswcntrlTest(void);
+int IswdigitTest(void);
+int IswlowerTest(void);
+int IswprintTest(void);
+int IswpunctTest(void);
+int IswspaceTest(void);
+int IswupperTest(void);
+int IswxdigitTest(void);
+int TowlowerTest(void);
+int TowupperTest(void);
+int TowupperLTest(void);
+
+// Stdio test functions
+int FsetposTest(void);
+int GetwcTest(void);
+int RewindTest(void);
+
+// Thread test functions
+int PthreadCreateTestTest(void);
+int PthreadExitTestTest(void);
+int PthreadGetattrNpTestTest(void);
+int PthreadGetschedparamTestTest(void);
+int PthreadGetspecificTestTest(void);
+int PthreadKeyCreateTestTest(void);
+int PthreadMutexLockTestTest(void);
+int PthreadMutexUnlockTestTest(void);
+int PthreadOnceTestTest(void);
+int PthreadSetspecificTestTest(void);
+int PthreadSetschedparamTestTest(void);
+
+// String test functions
+int MemmemTest(void);
+int MemrchrTest(void);
+int StpcpyTest(void);
+int StpncpyTest(void);
+int StrrchrTest(void);
+int WcscpyTest(void);
+int WcsdupTest(void);
+int WcsncpyTest(void);
+int WcspbrkTest(void);
+
+// Dirent test functions
+int AlphasortTest(void);
+int FdopendirTest(void);
+int OpendirTest(void);
+int RewinddirTest(void);
+int SeekdirTest(void);
+int TelldirTest(void);
+
+// Functional test functions
+int QsortTest(void);
+int Renameat2TestTest(void);
+int SocketTest(void);
+int StringStrchrTest(void);
+int TgmathTest(void);
+
+// Locale supplement test functions
+int LocaleconvSupTest(void);
+int NewlocaleSupTest(void);
+int SetlocaleSupTest(void);
+int UselocaleSupTest(void);
+
+// Fortify test functions
+int InvalidParamTest(void);
+int PthreadFortifyTestTest(void);
+int SelectTestTest(void);
+
+// Fcntl test functions
+int CreatTest(void);
+int OpenatTest(void);
+int OpenTest(void);
+
+// Stdlib test functions
+int FunctionalextFcvtTest(void);
+int WcstoimaxTest(void);
+int WcstoumaxTest(void);
+
 #endif

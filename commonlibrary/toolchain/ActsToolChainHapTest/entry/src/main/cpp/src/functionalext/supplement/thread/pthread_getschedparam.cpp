@@ -13,18 +13,18 @@
  * limitations under the License.
  */
 
-#include <cstdlib>
 #include <pthread.h>
+#include <cstdlib>
 #include <unistd.h>
 #include "functionalext.h"
 
-void* ThreadfuncA(void* arg)
+static void *ThreadfuncA(void *arg)
 {
     return arg;
 }
 
 /**
- * @tc.name      : PthreadGetschedparam0100
+ * @tc.name      : pthread_getschedparam_0100
  * @tc.desc      : Verify pthread_getschedparam process success
  * @tc.level     : Level 1
  */
@@ -35,18 +35,18 @@ void PthreadGetschedparam0100(void)
     int policy = 0;
     struct sched_param sp;
     int32_t ret = pthread_getschedparam(ph, &policy, &sp);
-    void* threadResult = nullptr;
+    void *threadResult = nullptr;
     pthread_join(ph, &threadResult);
     EXPECT_EQ("PthreadGetschedparam0100", ret, 0);
 }
 
-static int PthreadGetschedparamTestTestImpl(void)
+static int PthreadGetschedparamTestImpl(void)
 {
     PthreadGetschedparam0100();
-    return T_STATUS;
+    return g_tStatus;
 }
 
 int PthreadGetschedparamTestTest(void)
 {
-    return PthreadGetschedparamTestTestImpl();
+    return PthreadGetschedparamTestImpl();
 }

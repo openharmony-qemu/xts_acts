@@ -59,5 +59,33 @@ export default function exit_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   a_cxa_atexit
+     * @tc.number SUB_THIRDPARTY_MUSL_CXA_ATEXIT_0100
+     * @tc.desc   libc-test a_cxa_atexit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("a_cxa_atexit", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("a_cxa_atexit");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   double_exit
+     * @tc.number SUB_THIRDPARTY_MUSL_DOUBLE_EXIT_0100
+     * @tc.desc   libc-test double_exit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("double_exit", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("double_exit");
+      expect(result).assertEqual(0);
+      done();
+    });
   });
 }

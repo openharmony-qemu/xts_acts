@@ -1026,5 +1026,57 @@ export default function functional_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   qsort
+     * @tc.number SUB_THIRDPARTY_MUSL_QSORT_0100
+     * @tc.desc   libc-test qsort
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("qsort", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("qsort");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   renameat2_test
+     * @tc.number SUB_THIRDPARTY_MUSL_RENAMEAT_TWO_TEST_0100
+     * @tc.desc   libc-test renameat2_test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("renameat2_test", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("renameat2_test");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   string_strchr
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_STRCHR_0100
+     * @tc.desc   libc-test string_strchr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("string_strchr", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("string_strchr");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   tgmath
+     * @tc.number SUB_THIRDPARTY_MUSL_TGMATH_0100
+     * @tc.desc   libc-test tgmath
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("tgmath", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("tgmath");
+      expect(result).assertEqual(0);
+      done();
+    });
   });
 }
