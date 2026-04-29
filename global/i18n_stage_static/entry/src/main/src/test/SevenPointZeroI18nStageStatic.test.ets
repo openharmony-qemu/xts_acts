@@ -1184,7 +1184,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0100
      * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0100
-     * @tc.desc test getAppDefaultTimeZone with Asia/Shanghai
+     * @tc.desc test ISO8601DateTimeFormat with Asia/Shanghai
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL2
@@ -1207,7 +1207,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0200
      * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0200
-     * @tc.desc test getAppDefaultTimeZone with America/New_York
+     * @tc.desc test ISO8601DateTimeFormat with America/New_York
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL2
@@ -1230,7 +1230,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0300
      * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0300
-     * @tc.desc test getAppDefaultTimeZone with Asia/Kolkata
+     * @tc.desc test ISO8601DateTimeFormat with Asia/Kolkata
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL2
@@ -1252,7 +1252,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0400
      * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0400
-     * @tc.desc test getAppDefaultTimeZone with Africa/Cairo
+     * @tc.desc test ISO8601DateTimeFormat with Africa/Cairo
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL2
@@ -1274,7 +1274,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0500
      * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0500
-     * @tc.desc test getAppDefaultTimeZone with Asia/Riyadh
+     * @tc.desc test ISO8601DateTimeFormat with Asia/Riyadh
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL2
@@ -1294,9 +1294,25 @@ export default function SevenPointZeroI18nStageStaticTest() {
     })
 
     /**
+     * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0600
+     * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0600
+     * @tc.desc test ISO8601DateTimeFormat with
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0600', Level.LEVEL2, () => {
+      let date: Date = new Date(2026, 0, 1, 10, 20, 30, 0);
+      let iso = new i18n.ISO8601DateTimeFormat();
+      let value: string = iso.format(date);
+      console.log('SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0600 value:', value);
+      expect(value).assertEqual('2026-01-01T02:20:30Z');
+    })
+
+    /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0700
      * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0700
-     * @tc.desc test getAppDefaultTimeZone with calendar
+     * @tc.desc test ISO8601DateTimeFormat with calendar
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL2
@@ -1312,7 +1328,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0800
      * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0800
-     * @tc.desc test getAppDefaultTimeZone with milliSeconds
+     * @tc.desc test ISO8601DateTimeFormat with milliSeconds
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL2
@@ -1328,7 +1344,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0900
      * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_0900
-     * @tc.desc test getAppDefaultTimeZone with timeZone
+     * @tc.desc test ISO8601DateTimeFormat with timeZone
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL2
@@ -1345,7 +1361,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_1000
      * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_Test_Static_1000
-     * @tc.desc test getAppDefaultTimeZone with timeZone
+     * @tc.desc test ISO8601DateTimeFormat with timeZone
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL2
@@ -1361,7 +1377,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_GetTimeZone_NullString_Test_Static_1100
      * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_GetTimeZone_nullString_Test_Static_1100
-     * @tc.desc test getAppDefaultTimeZone with timeZone
+     * @tc.desc test ISO8601DateTimeFormat with timeZone
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL2
@@ -1383,7 +1399,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_DateFormat_Undefined_Test_Static_1400
      * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_DateFormat_Undefined_Test_Static_1400
-     * @tc.desc test getAppDefaultTimeZone with dateFormat
+     * @tc.desc test ISO8601DateTimeFormat with dateFormat
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL2
@@ -1405,7 +1421,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_TimePrecision_Undefined_Test_Static_1500
      * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_TimePrecision_Undefined_Test_Static_1500
-     * @tc.desc test getAppDefaultTimeZone with timePrecision
+     * @tc.desc test ISO8601DateTimeFormat with timePrecision
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL2
@@ -1427,7 +1443,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
     /**
      * @tc.name SUB_GLOBAL_ISO8601DateTimeFormat_SeparatorStyle_Undefined_Test_Static_1800
      * @tc.number SUB_GLOBAL_ISO8601DateTimeFormat_SeparatorStyle_Undefined_Test_Static_1800
-     * @tc.desc test getAppDefaultTimeZone with separatorStyle
+     * @tc.desc test ISO8601DateTimeFormat with separatorStyle
      * @tc.type FUNCTION
      * @tc.size MEDIUM
      * @tc.level LEVEL2
@@ -1875,6 +1891,160 @@ export default function SevenPointZeroI18nStageStaticTest() {
       let value: boolean = timeZone.isDaylightSavingTime(date);
       console.log('SUB_GLOBAL_I18N_DaylightSavingTime_Test_Static_0900 value:', value);
       expect(value).assertEqual(false);
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_0100
+     * @tc.number SUB_GLOBAL_I18N_ConvertCanonicalLocaleIdentifier_Test_Static_0100
+     * @tc.desc test convertCanonicalLocaleIdentifier with ZH-hANS-cn
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_0100', Level.LEVEL2, () => {
+      let CanonicalLocale: string = i18n.I18NUtil.convertCanonicalLocaleIdentifier('ZH-hANS-cn');
+      console.log('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_0100 value:', CanonicalLocale);
+      expect(CanonicalLocale).assertEqual('zh-Hans-CN');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_0200
+     * @tc.number SUB_GLOBAL_I18N_ConvertCanonicalLocaleIdentifier_Test_Static_0200
+     * @tc.desc test convertCanonicalLocaleIdentifier with ZH-cn
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_0200', Level.LEVEL2, () => {
+      let CanonicalLocale: string = i18n.I18NUtil.convertCanonicalLocaleIdentifier('ZH-cn');
+      console.log('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_0200 value:', CanonicalLocale);
+      expect(CanonicalLocale).assertEqual('zh-CN');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_0300
+     * @tc.number SUB_GLOBAL_I18N_ConvertCanonicalLocaleIdentifier_Test_Static_0300
+     * @tc.desc test convertCanonicalLocaleIdentifier with DE
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_0300', Level.LEVEL2, () => {
+      let CanonicalLocale: string = i18n.I18NUtil.convertCanonicalLocaleIdentifier('DE');
+      console.log('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_0300 value:', CanonicalLocale);
+      expect(CanonicalLocale).assertEqual('de');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_0400
+     * @tc.number SUB_GLOBAL_I18N_ConvertCanonicalLocaleIdentifier_Test_Static_0400
+     * @tc.desc test convertCanonicalLocaleIdentifier with jp-lATN-us
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_0400', Level.LEVEL2, () => {
+      let CanonicalLocale: string = i18n.I18NUtil.convertCanonicalLocaleIdentifier('jp-lATN-us');
+      console.log('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_0400 value:', CanonicalLocale);
+      expect(CanonicalLocale).assertEqual('jp-Latn-US');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_0500
+     * @tc.number SUB_GLOBAL_I18N_ConvertCanonicalLocaleIdentifier_Test_Static_0500
+     * @tc.desc test convertCanonicalLocaleIdentifier with AR-tw
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_0500', Level.LEVEL2, () => {
+      let CanonicalLocale: string = i18n.I18NUtil.convertCanonicalLocaleIdentifier('AR-tw');
+      console.log('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_0500 value:', CanonicalLocale);
+      expect(CanonicalLocale).assertEqual('ar-TW');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_0600
+     * @tc.number SUB_GLOBAL_I18N_ConvertCanonicalLocaleIdentifier_Test_Static_0600
+     * @tc.desc test convertCanonicalLocaleIdentifier with ZHO-CN
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_0600', Level.LEVEL2, () => {
+      let CanonicalLocale: string = i18n.I18NUtil.convertCanonicalLocaleIdentifier('ZHO-CN');
+      console.log('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_0600 value:', CanonicalLocale);
+      expect(CanonicalLocale).assertEqual('zh-CN');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_0700
+     * @tc.number SUB_GLOBAL_I18N_ConvertCanonicalLocaleIdentifier_Test_Static_0700
+     * @tc.desc test convertCanonicalLocaleIdentifier with ENG-usa
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_0700', Level.LEVEL2, () => {
+      let CanonicalLocale: string = i18n.I18NUtil.convertCanonicalLocaleIdentifier('ENG-usa');
+      console.log('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_0700 value:', CanonicalLocale);
+      expect(CanonicalLocale).assertEqual('usa');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_0800
+     * @tc.number SUB_GLOBAL_I18N_ConvertCanonicalLocaleIdentifier_Test_Static_0800
+     * @tc.desc test convertCanonicalLocaleIdentifier with zh-TWN
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_0800', Level.LEVEL2, () => {
+      let CanonicalLocale: string = i18n.I18NUtil.convertCanonicalLocaleIdentifier('zh-TWN');
+      console.log('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_0800 value:', CanonicalLocale);
+      expect(CanonicalLocale).assertEqual('twn');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_0900
+     * @tc.number SUB_GLOBAL_I18N_ConvertCanonicalLocaleIdentifier_Test_Static_0900
+     * @tc.desc test convertCanonicalLocaleIdentifier with jp_Latn_US
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_0900', Level.LEVEL2, () => {
+      let CanonicalLocale: string = i18n.I18NUtil.convertCanonicalLocaleIdentifier('jp_Latn_US');
+      console.log('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_0900 value:', CanonicalLocale);
+      expect(CanonicalLocale).assertEqual('');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_1000
+     * @tc.number SUB_GLOBAL_I18N_ConvertCanonicalLocaleIdentifier_Test_Static_1000
+     * @tc.desc test convertCanonicalLocaleIdentifier with jp-Latn1-US
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_1000', Level.LEVEL2, () => {
+      let CanonicalLocale: string = i18n.I18NUtil.convertCanonicalLocaleIdentifier('jp-Latn1-US');
+      console.log('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_1000 value:', CanonicalLocale);
+      expect(CanonicalLocale).assertEqual('');
+    })
+
+    /**
+     * @tc.name SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_1100
+     * @tc.number SUB_GLOBAL_I18N_ConvertCanonicalLocaleIdentifier_Test_Static_1100
+     * @tc.desc test convertCanonicalLocaleIdentifier with nullString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_1100', Level.LEVEL2, () => {
+      let CanonicalLocale: string = i18n.I18NUtil.convertCanonicalLocaleIdentifier('');
+      console.log('SUB_GLOBAL_ConvertCanonicalLocaleIdentifier_Test_Static_1100 value:', CanonicalLocale);
+      expect(CanonicalLocale).assertEqual('');
     })
 
   })
