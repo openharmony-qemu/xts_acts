@@ -19,7 +19,7 @@
     "type": "feature",
     "description": "Please describe the basic information.",
     "mainElement": "TestAbility",
-    "deviceTypes": ["default"],
+    "deviceTypes": [],
     "deliveryWithInstall": true,
     "installationFree": false,
     "requestPermissions": [
