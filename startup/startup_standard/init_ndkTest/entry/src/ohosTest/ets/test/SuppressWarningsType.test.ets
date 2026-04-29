@@ -47,6 +47,18 @@ export default function SuppressWarningsTypeTest() {
             expect(SuppressWarningsType.SYSCAP).assertEqual('syscap');
             expect(typeof SuppressWarningsType.COMPATIBILITY).assertEqual('string');
         });
+        /**
+         * @tc.number SuppressWarningsType_TEST_003
+         * @tc.name SuppressWarningsType_test_003
+         * @tc.desc Verify the accuracy of PERMISSION enum value, must be strictly equal to 'permission'
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 3
+         */
+        it('SuppressWarningsType_test_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+            expect(SuppressWarningsType.PERMISSION).assertEqual('permission');
+            expect(typeof SuppressWarningsType.PERMISSION).assertEqual('string');
+        });
 
     });
 }
