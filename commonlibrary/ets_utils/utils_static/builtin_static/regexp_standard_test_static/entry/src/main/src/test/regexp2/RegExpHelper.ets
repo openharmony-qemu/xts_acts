@@ -103,18 +103,15 @@ import {
   splitSymbolWithLimit as splitSymbolWithLimitImpl,
   splitHasIndicesD as splitHasIndicesDImpl,
   splitSubclassOverride as splitSubclassOverrideImpl,
-  splitSubclassCallSuper as splitSubclassCallSuperImpl,
   splitSubclassCallSuperOut as splitSubclassCallSuperOutImpl,
   splitSubclassCallSuperCount as splitSubclassCallSuperCountImpl,
   splitSpeciesEffect as splitSpeciesEffectImpl,
-  splitSubclassConstructorCount as splitSubclassConstructorCountImpl,
   splitSubclassConstructorOut as splitSubclassConstructorOutImpl,
   splitSubclassConstructorSplitCount as splitSubclassConstructorSplitCountImpl,
   splitCustomSymbolObject as splitCustomSymbolObjectImpl,
   splitThisTypeErrors as splitThisTypeErrorsImpl,
   splitThisNullTypeErrors as splitThisNullTypeErrorsImpl,
   splitNonRegExpThisThrows as splitNonRegExpThisThrowsImpl,
-  splitRegexLikeObjectCallResult as splitRegexLikeObjectCallResultImpl,
   splitRegexLikeObjectCallThrows as splitRegexLikeObjectCallThrowsImpl,
   splitRegexLikeObjectCallOut as splitRegexLikeObjectCallOutImpl,
   splitSymbolInputThrows as splitSymbolInputThrowsImpl,
@@ -161,7 +158,6 @@ import {
   jsonStringifyWithToJSON as jsonStringifyWithToJSONImpl,
   regexpToStringByComputedName as regexpToStringByComputedNameImpl,
   regexpPrototypeToStringDescriptor as regexpPrototypeToStringDescriptorImpl,
-  regexpToStringReconstructable as regexpToStringReconstructableImpl,
   regexpInstanceHasOwnToString as regexpInstanceHasOwnToStringImpl,
   regexpPrototypeHasOwnToString as regexpPrototypeHasOwnToStringImpl,
   regexpToStringSameAsPrototype as regexpToStringSameAsPrototypeImpl,
@@ -544,10 +540,6 @@ export function splitSubclassOverride(): string[] {
   return splitSubclassOverrideImpl() as string[];
 }
 
-export function splitSubclassCallSuper(): Object {
-  return splitSubclassCallSuperImpl() as Object;
-}
-
 export function splitSubclassCallSuperOut(): string[] {
   return splitSubclassCallSuperOutImpl() as string[];
 }
@@ -558,10 +550,6 @@ export function splitSubclassCallSuperCount(): number {
 
 export function splitSpeciesEffect(): string[] {
   return splitSpeciesEffectImpl() as string[];
-}
-
-export function splitSubclassConstructorCount(): Object {
-  return splitSubclassConstructorCountImpl() as Object;
 }
 
 export function splitSubclassConstructorOut(): string[] {
@@ -586,10 +574,6 @@ export function splitThisNullTypeErrors(): boolean {
 
 export function splitNonRegExpThisThrows(): boolean {
   return splitNonRegExpThisThrowsImpl() as boolean;
-}
-
-export function splitRegexLikeObjectCallResult(): Object {
-  return splitRegexLikeObjectCallResultImpl() as Object;
 }
 
 export function splitRegexLikeObjectCallThrows(): boolean {
@@ -785,10 +769,6 @@ export function regexpToStringByComputedName(): string {
 
 export function regexpPrototypeToStringDescriptor(): Object {
   return regexpPrototypeToStringDescriptorImpl() as Object;
-}
-
-export function regexpToStringReconstructable(): boolean {
-  return regexpToStringReconstructableImpl() as boolean;
 }
 
 export function regexpInstanceHasOwnToString(): boolean {

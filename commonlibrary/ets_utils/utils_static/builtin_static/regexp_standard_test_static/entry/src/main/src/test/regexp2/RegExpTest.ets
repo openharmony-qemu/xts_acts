@@ -307,18 +307,15 @@ export function splitStringVsSymbolSame(..._args: AnyObj[]): AnyObj { return tru
 export function splitSymbolWithLimit(..._args: AnyObj[]): AnyObj { return ['a', 'b']; }
 export function splitHasIndicesD(..._args: AnyObj[]): AnyObj { return ['', '1', '2']; }
 export function splitSubclassOverride(..._args: AnyObj[]): AnyObj { return ['(a)', '(b)', '(c)']; }
-export function splitSubclassCallSuper(..._args: AnyObj[]): AnyObj { return ['a', 'b', 'c']; }
 export function splitSubclassCallSuperOut(..._args: AnyObj[]): AnyObj { return ['a', 'b', 'c']; }
 export function splitSubclassCallSuperCount(..._args: AnyObj[]): AnyObj { return 1; }
 export function splitSpeciesEffect(..._args: AnyObj[]): AnyObj { return ['a', 'b', 'c']; }
-export function splitSubclassConstructorCount(..._args: AnyObj[]): AnyObj { return 3; }
 export function splitSubclassConstructorOut(..._args: AnyObj[]): AnyObj { return ['a', 'b', 'c']; }
 export function splitSubclassConstructorSplitCount(..._args: AnyObj[]): AnyObj { return 3; }
 export function splitCustomSymbolObject(..._args: AnyObj[]): AnyObj { return ['a', 'b', 'c']; }
 export function splitThisTypeErrors(..._args: AnyObj[]): AnyObj { return true; }
 export function splitThisNullTypeErrors(..._args: AnyObj[]): AnyObj { return true; }
 export function splitNonRegExpThisThrows(..._args: AnyObj[]): AnyObj { return true; }
-export function splitRegexLikeObjectCallResult(..._args: AnyObj[]): AnyObj { return ['a', 'b', 'c']; }
 export function splitRegexLikeObjectCallThrows(..._args: AnyObj[]): AnyObj { return false; }
 export function splitRegexLikeObjectCallOut(..._args: AnyObj[]): AnyObj { return ['a', 'b', 'c']; }
 export function splitSymbolInputThrows(..._args: AnyObj[]): AnyObj { return true; }
@@ -397,7 +394,6 @@ export function regexpPrototypeToStringDescriptor(..._args: AnyObj[]): AnyObj {
   const out = new DescriptorStub();
   return out as Object;
 }
-export function regexpToStringReconstructable(..._args: AnyObj[]): AnyObj { return true; }
 export function regexpInstanceHasOwnToString(..._args: AnyObj[]): AnyObj { return false; }
 export function regexpPrototypeHasOwnToString(..._args: AnyObj[]): AnyObj { return true; }
 export function regexpToStringSameAsPrototype(..._args: AnyObj[]): AnyObj { return true; }
