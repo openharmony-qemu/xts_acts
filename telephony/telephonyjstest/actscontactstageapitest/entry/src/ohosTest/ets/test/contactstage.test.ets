@@ -204,7 +204,7 @@ export default function ContactInterfaceStageTest() {
       let isHasCard = await HasCard();
       if (isHasCard) {
         console.info("SUB_Telephony_ContactsApi_queryMyCard_test_0100 has card");
-        ExpectTrue(true);
+        expect(isHasCard).assertTrue();
         done();
         return;
       }
@@ -236,7 +236,7 @@ export default function ContactInterfaceStageTest() {
       let isHasCard = await HasCard();
       if (isHasCard) {
         console.info("SUB_Telephony_ContactsApi_queryMyCard_test_0200 has card");
-        ExpectTrue(true);
+        expect(isHasCard).assertTrue();
         done();
         return;
       }
@@ -268,7 +268,7 @@ export default function ContactInterfaceStageTest() {
       let isHasCard = await HasCard();
       if (isHasCard) {
         console.info("SUB_Telephony_ContactsApi_queryMyCard_test_0300 has card");
-        ExpectTrue(true);
+        expect(isHasCard).assertTrue();
         done();
         return;
       }

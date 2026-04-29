@@ -33,7 +33,7 @@ export async function HasCard(): Promise<boolean> {
         resolve(false);
       } else {
         let isExist = data !== null && data !== undefined && Object.keys(data).length > 0;
-        console.info("before test HasCard resust is " + JSON.stringify(isExist));
+        console.info(`before test HasCard resust is ${isExist}`);
         resolve(isExist);
       }
     });
