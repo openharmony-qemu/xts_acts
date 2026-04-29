@@ -1045,7 +1045,7 @@ export default function abilityTest() {
 
     /**
      * @tc.name   test_setFloatViewVisibilityInApp_stateChange
-     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_1810
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_4900
      * @tc.desc   test setFloatViewVisibilityInApp trigger state change callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
