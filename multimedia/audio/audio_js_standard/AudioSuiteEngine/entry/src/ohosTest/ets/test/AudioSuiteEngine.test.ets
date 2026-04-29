@@ -4229,19 +4229,19 @@ export default function AudioSuiteEngineTest() {
     })
 
     /**
-     * @tc.name       SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_NOTINITIALIZED_0100
-     * @tc.number     SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_NOTINITIALIZED_0100
-     * @tc.desc       AudioConverter setInputCallback after destroy test.
+     * @tc.name       SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_0100
+     * @tc.number     SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_0100
+     * @tc.desc       AudioConverter setInputCallback.
      * @tc.type       FUNCTION
      * @tc.size       MEDIUMTEST
-     * @tc.level      LEVEL 2
+     * @tc.level      LEVEL 0
      */
-    it('SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_NOTINITIALIZED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_NOTINITIALIZED_0100 start ====>');
-      let result : number = audiosuiteenginetest.SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_NOTINITIALIZED_0100();
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_0100 start ====>');
+      let result : number = audiosuiteenginetest.SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_0100();
       expect(result).assertEqual(TEST_RESULT.TEST_PASS);
-      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_NOTINITIALIZED_0100 end ====>');
+      console.info('=====> SUB_MULTIMEDIA_AUDIO_CONVERTER_SET_CALLBACK_0100 end ====>');
       done();
     })
 
