@@ -60,6 +60,7 @@ import fileIORandomAccessFileSetFilePointer from './class_randomAccessFile/SetFi
 import fileIORandomAccessFileWrite from './class_randomAccessFile/Write.test';
 import atomicFileTest from './class_atomicFile/AtomicFile.test';
 import fileIODfsConnect from './DfsConnect.test';
+import fileIOListFileExtStatic from "./ListFileExt.test";
 export default function testsuite() {
     fileIOAccess();
     fileIOClose();
@@ -108,4 +109,5 @@ export default function testsuite() {
     fileIORandomAccessFileWrite();
     atomicFileTest();
     fileIODfsConnect();
+    fileIOListFileExtStatic();
 }
