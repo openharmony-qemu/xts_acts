@@ -906,5 +906,191 @@ int NULL_CHECK_031()
     delete aDecBufferDemo;
     return AV_ERR_OK;
 }
+
+/**
+ * @tc.name   NULL_CHECK_032
+ * @tc.number NULL_CHECK_032
+ * @tc.desc   SetIntBuffer - format null check
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int NULL_CHECK_032()
+{
+    std::vector<int32_t> rectData = { 0, 0, 5, 5 };
+    int32_t* rectDepth = rectData.data();
+
+    bool ret = OH_AVFormat_SetIntBuffer(nullptr, OH_MD_KEY_SCREEN_CAPTURE_WINDOW_RECT, rectDepth, rectData.size());
+    ASSERT_EQ(ret, false);
+
+    return AV_ERR_OK;
+}
+
+/**
+ * @tc.name   NULL_CHECK_033
+ * @tc.number NULL_CHECK_033
+ * @tc.desc   SetIntBuffer - format null check
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int NULL_CHECK_033()
+{
+    OH_AVFormat* format = OH_AVFormat_Create();
+    std::vector<int32_t> rectData = { 0, 0, 5, 5 };
+    int32_t* rectDepth = rectData.data();
+
+    bool ret = OH_AVFormat_SetIntBuffer(format, nullptr, rectDepth, rectData.size());
+    
+    OH_AVFormat_Destroy(format);
+    ASSERT_EQ(ret, false);
+    return AV_ERR_OK;
+}
+
+/**
+ * @tc.name   NULL_CHECK_034
+ * @tc.number NULL_CHECK_034
+ * @tc.desc   SetIntBuffer - format null check
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int NULL_CHECK_034()
+{
+    OH_AVFormat* format = OH_AVFormat_Create();
+    std::vector<int32_t> rectData = { 0, 0, 5, 5 };
+    int32_t* rectDepth = rectData.data();
+
+    bool ret = OH_AVFormat_SetIntBuffer(format, OH_MD_KEY_SCREEN_CAPTURE_WINDOW_RECT, nullptr, rectData.size());
+    OH_AVFormat_Destroy(format);
+
+    ASSERT_EQ(ret, false);
+    return AV_ERR_OK;
+}
+
+/**
+ * @tc.name   NULL_CHECK_035
+ * @tc.number NULL_CHECK_035
+ * @tc.desc   SetIntBuffer - format null check
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int NULL_CHECK_035()
+{
+    OH_AVFormat* format = OH_AVFormat_Create();
+    std::vector<int32_t> rectData = { 0, 0, 5, 5 };
+    int32_t* rectDepth = rectData.data();
+
+    bool ret = OH_AVFormat_SetIntBuffer(format, OH_MD_KEY_SCREEN_CAPTURE_WINDOW_RECT, rectDepth, 0);
+    OH_AVFormat_Destroy(format);
+
+    ASSERT_EQ(ret, false);
+    return AV_ERR_OK;
+}
+
+/**
+ * @tc.name   NULL_CHECK_036
+ * @tc.number NULL_CHECK_036
+ * @tc.desc   GetIntBuffer - format null check
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int NULL_CHECK_036()
+{
+    OH_AVFormat* format = OH_AVFormat_Create();
+    std::vector<int32_t> rectData = { 0, 0, 5, 5 };
+    int32_t* rectDepth = rectData.data();
+
+    bool ret = OH_AVFormat_SetIntBuffer(format, OH_MD_KEY_SCREEN_CAPTURE_WINDOW_RECT, rectDepth, rectData.size());
+    ASSERT_EQ(ret, true);
+
+    int32_t *rectBuffer = nullptr;
+    size_t bufferSize;
+    
+    ret = OH_AVFormat_GetIntBuffer(nullptr, OH_MD_KEY_SCREEN_CAPTURE_WINDOW_RECT, &rectBuffer, &bufferSize);
+    OH_AVFormat_Destroy(format);
+    ASSERT_EQ(ret, false);
+    return AV_ERR_OK;
+}
+
+/**
+ * @tc.name   NULL_CHECK_037
+ * @tc.number NULL_CHECK_037
+ * @tc.desc   GetIntBuffer - format null check
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int NULL_CHECK_037()
+{
+    OH_AVFormat* format = OH_AVFormat_Create();
+    std::vector<int32_t> rectData = { 0, 0, 5, 5 };
+    int32_t* rectDepth = rectData.data();
+
+    bool ret = OH_AVFormat_SetIntBuffer(format, OH_MD_KEY_SCREEN_CAPTURE_WINDOW_RECT, rectDepth, rectData.size());
+    ASSERT_EQ(ret, true);
+
+    int32_t *rectBuffer = nullptr;
+    size_t bufferSize;
+    
+    ret = OH_AVFormat_GetIntBuffer(format, nullptr, &rectBuffer, &bufferSize);
+    OH_AVFormat_Destroy(format);
+    ASSERT_EQ(ret, false);
+    return AV_ERR_OK;
+}
+
+/**
+ * @tc.name   NULL_CHECK_038
+ * @tc.number NULL_CHECK_038
+ * @tc.desc   GetIntBuffer - format null check
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int NULL_CHECK_038()
+{
+    OH_AVFormat* format = OH_AVFormat_Create();
+    std::vector<int32_t> rectData = { 0, 0, 5, 5 };
+    int32_t* rectDepth = rectData.data();
+
+    bool ret = OH_AVFormat_SetIntBuffer(format, OH_MD_KEY_SCREEN_CAPTURE_WINDOW_RECT, rectDepth, rectData.size());
+    ASSERT_EQ(ret, true);
+
+    int32_t *rectBuffer = nullptr;
+    size_t bufferSize;
+    
+    ret = OH_AVFormat_GetIntBuffer(format, OH_MD_KEY_SCREEN_CAPTURE_WINDOW_RECT, nullptr, &bufferSize);
+    OH_AVFormat_Destroy(format);
+    ASSERT_EQ(ret, false);
+    return AV_ERR_OK;
+}
+
+/**
+ * @tc.name   NULL_CHECK_039
+ * @tc.number NULL_CHECK_039
+ * @tc.desc   GetIntBuffer - format null check
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int NULL_CHECK_039()
+{
+    OH_AVFormat* format = OH_AVFormat_Create();
+    std::vector<int32_t> rectData = { 0, 0, 5, 5 };
+    int32_t* rectDepth = rectData.data();
+
+    bool ret = OH_AVFormat_SetIntBuffer(format, OH_MD_KEY_SCREEN_CAPTURE_WINDOW_RECT, rectDepth, rectData.size());
+    ASSERT_EQ(ret, true);
+
+    int32_t *rectBuffer = nullptr;
+    size_t bufferSize;
+    
+    ret = OH_AVFormat_GetIntBuffer(format, OH_MD_KEY_SCREEN_CAPTURE_WINDOW_RECT, &rectBuffer, nullptr);
+    OH_AVFormat_Destroy(format);
+    ASSERT_EQ(ret, false);
+    return AV_ERR_OK;
+}
 } // namespace AudioDecoder
 }

@@ -54,7 +54,7 @@ static void ErfcTestOne(struct DD* p, int* err)
         } else {
             (*err)++;
         }
-        printf("%s:%d: %s erfc(%a) want %a got %a Ulperr %.3f = %a + %a\n",
+        printf("%s:%d: %s erfc(%a) want %a got %a Ulperr %.3f = %.3f + %.3f\n",
                p->file,
                p->line,
                Rstr(p->r),

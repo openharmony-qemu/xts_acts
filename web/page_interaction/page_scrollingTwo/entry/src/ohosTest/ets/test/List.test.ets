@@ -17,9 +17,13 @@ import webViewSrollableJsunit from './webViewSrollableJsunit.test'
 import webNestedScrollOptionsScrollBackwardTest from './WebNestedScrollOptionsScrollBackwardTest.test'
 import WebViewGetPageOffSet from './WebViewGetPageOffSet.test'
 import WebBackToTop from './WebBackToTop.test'
+import WebScrollbarLayoutPolicy from './WebScrollbarLayoutPolicy.test'
+import WebScrollDirectionalLock from './WebScrollDirectionalLock.test'
 export default function testsuite() {
   webNestedScrollOptionsScrollBackwardTest()
   webViewSrollableJsunit()
   WebViewGetPageOffSet()
   WebBackToTop()
+  WebScrollbarLayoutPolicy()
+  WebScrollDirectionalLock()
 }

@@ -51,7 +51,7 @@ export default function GridCallbackJsunit() {
         console.info("get GridCallbackJsunit state pages: " + JSON.stringify(pages));
         if (!("GridCallbackPage" == pages.name)) {
           console.info("get GridCallbackJsunit state pages.name: " + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {

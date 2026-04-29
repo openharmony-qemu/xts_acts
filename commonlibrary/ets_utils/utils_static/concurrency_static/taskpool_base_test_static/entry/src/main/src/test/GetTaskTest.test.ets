@@ -261,13 +261,13 @@ export default function getTaskTest() {
         let result: boolean = true;
         let eaw2 = new EAWorker()
         eaw2.start()
-        eaw2.run<void>(() => {
+        await eaw2.run<void>(() => {
           let task2: taskpool.Task | undefined = taskpool.getTask(task.taskId);
           if (task2 == undefined) {
             result = false;
           }
-        }).Await()
-        eaw2.join()
+        })
+        eaw2.quit()
         expect(result).assertFalse()
         done()
       })
@@ -285,19 +285,27 @@ export default function getTaskTest() {
         let result: boolean = true;
         let eaw = new EAWorker()
         eaw.start()
-        eaw.run<void>(() => {
+        let resolver:((value: Any)=>void) | undefined = undefined;
+        let waiter = new Promise<Any>((resolve) => {
+          resolver = resolve;
+        })
+        await eaw.run<void>(() => {
           let task: taskpool.Task = new taskpool.Task(promiseNumber, 10);
           let eaw2 = new EAWorker()
           eaw2.start()
-          eaw2.run<void>(() => {
+          let p = eaw2.run<void>(() => {
             let task2: taskpool.Task | undefined = taskpool.getTask(task.taskId);
             if (task2 == undefined) {
               result = false;
             }
-          }).Await()
-          eaw2.join()
-        }).Await()
-        eaw.join()
+          })
+          p.then(() => {
+            resolver!(undefined);
+          })
+          eaw2.quit()
+        })
+        await waiter;
+        eaw.quit()
         expect(result).assertFalse()
         done()
       })

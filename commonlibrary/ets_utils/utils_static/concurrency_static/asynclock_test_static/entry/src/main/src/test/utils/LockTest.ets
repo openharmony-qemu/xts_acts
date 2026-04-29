@@ -125,13 +125,17 @@ export async function exclusiveMultiWorkerTest() {
         return flag
       })().awaitSync()
     })
-    let workerresult = job1.Await()
-    worker.join()
-    if (workerresult === "PASSED") {
-      resolve(undefined);
-    } else {
-      reject(Error(workerresult));
-    }
+    job1.then((workerResult: string): void => {
+      worker.join()
+      if (workerResult === "PASSED") {
+        resolve(undefined);
+      } else {
+        reject(Error(workerResult));
+      }
+    }).catch((err: Error): void => {
+      worker.join()
+      reject(err);
+    });
   });
   let p2 = exclusiveMultiJob(lockName, Number(100), tidBuf, Number(1));
   return check("exclusiveMultiWorkerTest", Promise.all([p1, p2]));
@@ -215,13 +219,17 @@ export async function sharedMultiWorkerTest() {
         return flag
       })().awaitSync()
     })
-    let workerresult = job1.Await()
-    worker.join()
-    if (workerresult === "PASSED") {
-      resolve(undefined);
-    } else {
-      reject(Error(workerresult));
-    }
+    job1.then((workerresult: string): void => {
+      worker.join()
+      if (workerresult === "PASSED") {
+        resolve(undefined);
+      } else {
+        reject(Error(workerresult));
+      }
+    }).catch((err: Error): void => {
+      worker.join()
+      reject(err);
+    });
   });
   return check("sharedMultiWorkerTest", Promise.all([p1, p2]));
 }
@@ -631,8 +639,7 @@ export async function sequentialLockWorkerTest() {
       let job1 = worker.run<string>((): string => {
         return (async () => {
           let flag = ""
-          let result: Promise<void> | null = null;
-          result = lockHolderWorkerJob(data.lockName , data.timeout, data.flagBuf);
+          let result = lockHolderWorkerJob(data.lockName , data.timeout, data.flagBuf);
           await result.then(():void => {
             flag = 'PASSED'
           }, (e: Error):void => {
@@ -641,9 +648,10 @@ export async function sequentialLockWorkerTest() {
           return flag
         })().awaitSync()
       })
-      job1.Await()
-      worker.join()
-      resolve(undefined);
+      job1.then((workerResult: string): void => {
+        worker.join()
+        resolve(undefined);
+      });
   });
   let p = new Promise<void>((resolve, reject) => {
     let lockA = new AsyncLock();
@@ -1072,13 +1080,17 @@ export async function setDelayRequestAndCloseWorkerInstantlyTest(): Promise<stri
         return flag
       })().awaitSync()
     })
-    let workerresult: string = job.Await()
-    if (workerresult === 'PASSED') {
+    job.then((workerResult: string): void => {
       worker.join()
-      resolve(undefined);
-    } else {
-      reject(Error(workerresult));
-    }
+      if (workerResult === 'PASSED') {
+        resolve(undefined);
+      } else {
+        reject(Error(workerResult));
+      }
+    }).catch((err: Error): void => {
+      worker.join()
+      reject(err);
+    });
   });
   // p0 use the same lock with worker thread, if p0 resolved, means lock request created in worker thread is skipped as expected
   let p0 = lock.lockAsync(async (): Promise<void> => {

@@ -44,5 +44,31 @@ export default function fortify_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   invalid_param
+     * @tc.number SUB_THIRDPARTY_MUSL_INVALID_PARAM_0100
+     * @tc.desc   libc-test invalid_param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("invalid_param", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("invalid_param");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   select_test
+     * @tc.number SUB_THIRDPARTY_MUSL_SELECT_TEST_0100
+     * @tc.desc   libc-test select_test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("select_test", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("select_test");
+      expect(result).assertEqual(0);
+      done();
+    });
   });
 }

@@ -17,5 +17,6 @@
 #define SRC_FUNCTIONALEXT_SUPPLEMENT_SCHED_H_H
 
 int SchedCpucountTest();
+int SchedRrGetIntervalTest();
 
 #endif // SRC_FUNCTIONALEXT_SUPPLEMENT_SCHED_H_H

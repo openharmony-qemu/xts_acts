@@ -30,10 +30,12 @@ struct LocaleGuard {
             freelocale(loc);
         }
     }
-    locale_t Get() const { return loc; }
+    locale_t Get() const
+    {
+        return loc;
+    }
 };
 } // namespace
-
 
 static void EXPECT_DOUBLE_EQ(double a, double b)
 {

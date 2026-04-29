@@ -251,8 +251,8 @@ it('textAreaBC1Jsunit_static_0600', Level.LEVEL3, async (done: ()=>void) => {
       await CommonFunc.sleep(1000);
       let driverX =  Driver.create()
       let textAreaRect = CommonFunc.getComponentRectOnScreen('textArea1')
-      let clickX = Math.round((textAreaRect.right + textAreaRect.left)/2) as int
-      let clickY = Math.round((textAreaRect.bottom + textAreaRect.top)/2) as int
+      let clickX = Math.round((textAreaRect.right + textAreaRect.left)/2).toInt()
+      let clickY = Math.round((textAreaRect.bottom + textAreaRect.top)/2).toInt()
       await driverX.mouseClick({ x: clickX , y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
       let allSelect = await driver.findComponent(ON.text('全选'));
@@ -315,8 +315,8 @@ it('textAreaBC1Jsunit_static_0700', Level.LEVEL3, async (done: ()=>void) => {
       await CommonFunc.sleep(1000);
       let driverX =  Driver.create()
       let textAreaRect = CommonFunc.getComponentRectOnScreen('textArea1')
-      let clickX = Math.round((textAreaRect.right + textAreaRect.left)/2) as int
-      let clickY = Math.round((textAreaRect.bottom + textAreaRect.top)/2) as int
+      let clickX = Math.round((textAreaRect.right + textAreaRect.left)/2).toInt()
+      let clickY = Math.round((textAreaRect.bottom + textAreaRect.top)/2).toInt()
       await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
       let allSelect = await driver.findComponent(ON.text('全选'));

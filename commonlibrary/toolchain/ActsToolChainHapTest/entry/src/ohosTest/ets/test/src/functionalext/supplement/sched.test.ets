@@ -20,7 +20,7 @@ export default function sched_group_test() {
   describe("ActsToolChainHapTest_src_functionalext_supplement_sched", () => {
     /**
      * @tc.name   sched_cpucount
-     * @tc.number SUB_THIRDPARTY_MUSL_SCHED_CPUCOUNT_0100
+     * @tc.number SUB_THIRDPARTY_MUSL_SCHED_CPUCOUNT_BASIC_0100
      * @tc.desc   libc-test __sched_cpucount
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -41,6 +41,19 @@ export default function sched_group_test() {
      */
     it("sched_getaffinity", Level.LEVEL1, async (done: Function) => {
       const result = await testNapi.runTest("sched_getaffinity");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   sched_rr_get_interval
+     * @tc.number SUB_THIRDPARTY_MUSL_SCHED_RR_GET_INTERVAL_0100
+     * @tc.desc   libc-test sched_rr_get_interval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("sched_rr_get_interval", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("sched_rr_get_interval");
       expect(result).assertEqual(0);
       done();
     });
@@ -70,5 +83,6 @@ export default function sched_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+
   });
 }

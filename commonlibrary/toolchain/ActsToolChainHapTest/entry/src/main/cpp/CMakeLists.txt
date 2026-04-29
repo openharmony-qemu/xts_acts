@@ -22,13 +22,13 @@ add_library(
     napi_init.cpp
     setrlim.cpp
     src/api/main.cpp
-     src/eabi/__aeabi_memclr.cpp
-     src/eabi/__aeabi_memcpy.cpp
-     src/eabi/__aeabi_memmove.cpp
-     src/eabi/__aeabi_read_tp.cpp
+    src/eabi/__aeabi_memclr.cpp
+    src/eabi/__aeabi_memcpy.cpp
+    src/eabi/__aeabi_memmove.cpp
+    src/eabi/__aeabi_read_tp.cpp
     src/eabi/__gmtime64.cpp
-     src/eabi/__sigtimedwait_time64.cpp
-     src/functional/argv.cpp
+    src/eabi/__sigtimedwait_time64.cpp
+    src/functional/argv.cpp
     src/functional/basename.cpp
     src/functional/clock_gettime.cpp
     src/functional/crypt.cpp
@@ -83,8 +83,10 @@ add_library(
     src/functionalext/supplement/conf/get_nprocs.cpp
     src/functionalext/supplement/conf/get_phys_pages.cpp
     src/functionalext/supplement/ctype/__ctype_get_mb_cur_max.cpp
-     src/functionalext/supplement/exit/at_quick_exit.cpp
+    src/functionalext/supplement/exit/at_quick_exit.cpp
     src/functionalext/supplement/exit/atexit.cpp
+    src/functionalext/supplement/exit/a_cxa_atexit.cpp
+    src/functionalext/supplement/exit/double_exit.cpp
     src/functionalext/supplement/fenv/__flt_rounds.cpp
     src/functionalext/supplement/legacy/ftw.cpp
     src/functionalext/supplement/legacy/getdtablesize.cpp
@@ -92,8 +94,8 @@ add_library(
     src/functionalext/supplement/legacy/verrx.cpp
     src/functionalext/supplement/legacy/vwarn.cpp
     src/functionalext/supplement/legacy/vwarnx.cpp
-     src/functionalext/supplement/linux/brk.cpp
-     src/functionalext/supplement/linux/capget.cpp
+    src/functionalext/supplement/linux/brk.cpp
+    src/functionalext/supplement/linux/capget.cpp
     src/functionalext/supplement/linux/clone.cpp
     src/functionalext/supplement/linux/epoll_create.cpp
     src/functionalext/supplement/linux/epoll_create1.cpp
@@ -112,10 +114,10 @@ add_library(
     src/functionalext/supplement/linux/readahead.cpp
     src/functionalext/supplement/locale/duplocale_sup.cpp
     src/functionalext/supplement/malloc/aligned_alloc.cpp
-     src/functionalext/supplement/math/__fpclassifyf.cpp
-     src/functionalext/supplement/math/__fpclassifyl.cpp
-     src/functionalext/supplement/math/__signbitf.cpp
-     src/functionalext/supplement/math/__signbitl.cpp
+    src/functionalext/supplement/math/__fpclassifyf.cpp
+    src/functionalext/supplement/math/__fpclassifyl.cpp
+    src/functionalext/supplement/math/__signbitf.cpp
+    src/functionalext/supplement/math/__signbitl.cpp
     src/functionalext/supplement/misc/issetugid.cpp
     src/functionalext/supplement/misc/setpriority.cpp
     src/functionalext/supplement/multibyte/c16rtomb.cpp
@@ -129,21 +131,21 @@ add_library(
     src/functionalext/supplement/process/execl.cpp
     src/functionalext/supplement/sched/__sched_cpucount.cpp
     src/functionalext/supplement/sched/sched_getcpu.cpp
-     src/functionalext/supplement/setjmp/_longjmp.cpp
+    src/functionalext/supplement/setjmp/_longjmp.cpp
     src/functionalext/supplement/setjmp/_setjmp.cpp
-     src/functionalext/supplement/signal/__libc_current_sigrtmax.cpp
-     src/functionalext/supplement/signal/__libc_current_sigrtmin.cpp
+    src/functionalext/supplement/signal/__libc_current_sigrtmax.cpp
+    src/functionalext/supplement/signal/__libc_current_sigrtmin.cpp
     src/functionalext/supplement/signal/__getitimer_time64.cpp
     src/functionalext/supplement/signal/__setitimer_time64.cpp
     src/functionalext/supplement/signal/sigpending.cpp
-     src/functionalext/supplement/stdio/__fbufsize.cpp
-     src/functionalext/supplement/stdio/__flbf.cpp
+    src/functionalext/supplement/stdio/__fbufsize.cpp
+    src/functionalext/supplement/stdio/__flbf.cpp
     src/functionalext/supplement/stdio/clearerr.cpp
-     src/functionalext/supplement/stdlib/abs.cpp
-     src/functionalext/supplement/stdlib/atof.cpp
-     src/functionalext/supplement/stdlib/atoi.cpp
-     src/functionalext/supplement/stdlib/atoll.cpp
-     src/functionalext/supplement/stdlib/bsearch.cpp
+    src/functionalext/supplement/stdlib/abs.cpp
+    src/functionalext/supplement/stdlib/atof.cpp
+    src/functionalext/supplement/stdlib/atoi.cpp
+    src/functionalext/supplement/stdlib/atoll.cpp
+    src/functionalext/supplement/stdlib/bsearch.cpp
     src/functionalext/supplement/string/bzero.cpp
     src/functionalext/supplement/termios/cfgetispeed.cpp
     src/functionalext/supplement/termios/cfgetospeed.cpp
@@ -155,6 +157,7 @@ add_library(
     src/functionalext/supplement/thread/cnd_broadcast.cpp
     src/functionalext/supplement/thread/cnd_timedwait.cpp
     src/functionalext/supplement/thread/cnd_wait.cpp
+    src/functionalext/supplement/lock_info/pthread_internal_lock_info.cpp
     src/functionalext/supplement/time/clock.cpp
     src/functionalext/supplement/time/clock_getcpuclockid.cpp
     src/functionalext/supplement/time/clock_getres.cpp
@@ -169,44 +172,44 @@ add_library(
     src/functionalext/supplement/time/timespec_get.cpp
     src/functionalext/supplement/time/utime_sup.cpp
     src/functionalext/supplement/time/wcsftime.cpp
-     src/functionalext/supplement/unistd/alarm.cpp
+    src/functionalext/supplement/unistd/alarm.cpp
     src/functionalext/supplement/unistd/chdir.cpp
     src/functionalext/supplement/unistd/ctermid.cpp
     src/functionalext/supplement/unistd/gethostname.cpp
     src/functionalext/supplement/unistd/setpgrp.cpp
     src/functionalext/time/ctime.cpp
     src/functionalext/time/ctime_r.cpp
-     src/math/acos.cpp
-     src/math/acosh.cpp
-     src/math/acoshf.cpp
-     src/math/acosl.cpp
-     src/math/asin.cpp
-     src/math/asinf.cpp
-     src/math/asinh.cpp
-     src/math/asinhf.cpp
-     src/math/asinl.cpp
-     src/math/atan.cpp
-     src/math/atan2.cpp
-     src/math/atan2f.cpp
-     src/math/atan2l.cpp
-     src/math/atanf.cpp
-     src/math/atanh.cpp
-     src/math/atanhf.cpp
-     src/math/atanhl.cpp
-     src/math/atanl.cpp
-     src/math/cbrt.cpp
-     src/math/cbrtf.cpp
-     src/math/cbrtl.cpp
-     src/math/ceil.cpp
-     src/math/ceilf.cpp
-     src/math/ceill.cpp
+    src/math/acos.cpp
+    src/math/acosh.cpp
+    src/math/acoshf.cpp
+    src/math/acosl.cpp
+    src/math/asin.cpp
+    src/math/asinf.cpp
+    src/math/asinh.cpp
+    src/math/asinhf.cpp
+    src/math/asinl.cpp
+    src/math/atan.cpp
+    src/math/atan2.cpp
+    src/math/atan2f.cpp
+    src/math/atan2l.cpp
+    src/math/atanf.cpp
+    src/math/atanh.cpp
+    src/math/atanhf.cpp
+    src/math/atanhl.cpp
+    src/math/atanl.cpp
+    src/math/cbrt.cpp
+    src/math/cbrtf.cpp
+    src/math/cbrtl.cpp
+    src/math/ceil.cpp
+    src/math/ceilf.cpp
+    src/math/ceill.cpp
     src/math/copysign.cpp
     src/math/copysignf.cpp
     src/math/copysignl.cpp
-     src/math/cos.cpp
-     src/math/cosf.cpp
-     src/math/cosh.cpp
-     src/math/coshf.cpp
+    src/math/cos.cpp
+    src/math/cosf.cpp
+    src/math/cosh.cpp
+    src/math/coshf.cpp
     src/math/coshl.cpp
     src/math/cosl.cpp
     src/math/drem.cpp
@@ -216,6 +219,106 @@ add_library(
     src/math/erfcf.cpp
     src/math/erff.cpp
     src/math/erfl.cpp
+     src/math/acosf.cpp
+     src/math/exp10.cpp
+     src/math/exp10f.cpp
+     src/math/exp10l.cpp
+     src/math/fdim.cpp
+     src/math/fmin.cpp
+     src/math/fminf.cpp
+     src/math/fminl.cpp
+     src/math/fmod.cpp
+     src/math/fmodf.cpp
+     src/math/fmodl.cpp
+     src/math/j0.cpp
+     src/math/j0f.cpp
+     src/math/j1.cpp
+     src/math/jn.cpp
+     src/math/jnf.cpp
+     src/math/ldexp.cpp
+     src/math/ldexpf.cpp
+     src/math/ldexpl.cpp
+     src/math/lgamma.cpp
+     src/math/lgamma_r.cpp
+     src/math/lgammaf.cpp
+     src/math/lgammaf_r.cpp
+     src/math/lgammal_r.cpp
+     src/math/llrint.cpp
+     src/math/llrintf.cpp
+     src/math/llrintl.cpp
+     src/math/llround.cpp
+     src/math/llroundf.cpp
+     src/math/llroundl.cpp
+     src/math/log.cpp
+     src/math/log10.cpp
+     src/math/log10f.cpp
+     src/math/log10l.cpp
+     src/math/log1pl.cpp
+     src/math/log2.cpp
+     src/math/log2f.cpp
+     src/math/log2l.cpp
+     src/math/logb.cpp
+     src/math/logbf.cpp
+     src/math/logbl.cpp
+     src/math/logf.cpp
+     src/math/logl.cpp
+     src/math/lrint.cpp
+     src/math/lrintf.cpp
+     src/math/lrintl.cpp
+     src/math/lround.cpp
+     src/math/lroundf.cpp
+     src/math/lroundl.cpp
+     src/math/modf.cpp
+     src/math/modff.cpp
+     src/math/modfl.cpp
+     src/math/nextafter.cpp
+     src/math/nextafterf.cpp
+     src/math/nextafterl.cpp
+     src/math/pow.cpp
+     src/math/pow10.cpp
+     src/math/pow10f.cpp
+     src/math/pow10l.cpp
+     src/math/powf.cpp
+     src/math/powl.cpp
+     src/math/remainder.cpp
+     src/math/remainderf.cpp
+     src/math/remainderl.cpp
+     src/math/remquo.cpp
+     src/math/remquof.cpp
+     src/math/remquol.cpp
+     src/math/round.cpp
+     src/math/roundf.cpp
+     src/math/roundl.cpp
+     src/math/scalb.cpp
+     src/math/scalbf.cpp
+     src/math/scalbln.cpp
+     src/math/scalblnf.cpp
+     src/math/scalblnl.cpp
+     src/math/scalbn.cpp
+     src/math/scalbnf.cpp
+     src/math/scalbnl.cpp
+     src/math/sin.cpp
+     src/math/sincos.cpp
+     src/math/sincosf.cpp
+     src/math/sincosl.cpp
+     src/math/sinf.cpp
+     src/math/sinh.cpp
+     src/math/sinhf.cpp
+     src/math/sinhl.cpp
+     src/math/sinl.cpp
+     src/math/tan.cpp
+     src/math/tanh.cpp
+     src/math/tanhf.cpp
+     src/math/tanhl.cpp
+     src/math/tanl.cpp
+     src/math/trunc.cpp
+     src/math/truncf.cpp
+     src/math/truncl.cpp
+     src/math/y0.cpp
+     src/math/y1.cpp
+     src/math/y1f.cpp
+     src/math/yn.cpp
+     src/math/ynf.cpp
     src/regression/daemon-failure.cpp
     src/regression/dn_expand-empty.cpp
     src/regression/dn_expand-ptr-0.cpp
@@ -276,11 +379,36 @@ add_library(
     src/functional/udiv.cpp
     src/functional/wcsstr.cpp
     src/functional/wcstol.cpp
+    src/functional/qsort.cpp
+    src/functional/renameat2_test.cpp
+    src/functional/socket.cpp
+    src/functional/string_strchr.cpp
+    src/functional/tgmath.cpp
     src/functionalext/backtrace/unittest_backtrace.cpp
     src/functionalext/fortify/invalid_param_b.cpp
+    src/functionalext/fortify/invalid_param.cpp
+    src/functionalext/fortify/pthread_fortify_test.cpp
+    src/functionalext/fortify/select_test.cpp
     src/functionalext/ldso_cfi/large_size_library/large_size_test.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_1.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_10.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_11.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_12.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_13.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_14.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_15.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_16.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_2.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_3.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_4.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_5.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_6.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_7.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_8.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_9.cpp
     src/functionalext/locale/localeconv.cpp
     src/functionalext/locale/localeconv_multithread.cpp
+    src/functionalext/locale/duplocale.cpp
     src/functionalext/locale/newlocale.cpp
     src/functionalext/locale/setlocale.cpp
     src/functionalext/locale/strtod_l.cpp
@@ -291,6 +419,22 @@ add_library(
     src/functionalext/sched/sched_getparam.cpp
     src/functionalext/sched/sched_scheduler.cpp
     src/functionalext/string/strlen_test.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_1.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_2.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_3.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_4.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_5.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_6.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_7.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_8.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_9.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_10.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_11.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_12.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_13.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_14.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_15.cpp
+    src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_16.cpp
     src/functionalext/supplement/conf/fpathconf.cpp
     src/functionalext/supplement/conf/pathconf.cpp
     src/functionalext/supplement/conf/sysconf.cpp
@@ -309,7 +453,20 @@ add_library(
     src/functionalext/supplement/ctype/iswalhpa.cpp
     src/functionalext/supplement/ctype/iswalnum.cpp
     src/functionalext/supplement/ctype/iswctype.cpp
+    src/functionalext/supplement/ctype/iswalpha.cpp
+    src/functionalext/supplement/ctype/iswblank.cpp
+    src/functionalext/supplement/ctype/iswcntrl.cpp
+    src/functionalext/supplement/ctype/iswdigit.cpp
+    src/functionalext/supplement/ctype/iswlower.cpp
+    src/functionalext/supplement/ctype/iswprint.cpp
+    src/functionalext/supplement/ctype/iswpunct.cpp
+    src/functionalext/supplement/ctype/iswspace.cpp
+    src/functionalext/supplement/ctype/iswupper.cpp
+    src/functionalext/supplement/ctype/iswxdigit.cpp
     src/functionalext/supplement/ctype/isxdigit.cpp
+    src/functionalext/supplement/ctype/towlower.cpp
+    src/functionalext/supplement/ctype/towupper.cpp
+    src/functionalext/supplement/ctype/towupper_l.cpp
     src/functionalext/supplement/ctype/toascii.cpp
     src/functionalext/supplement/ctype/towctrans.cpp
     src/functionalext/supplement/ctype/wcswidth.cpp
@@ -317,9 +474,20 @@ add_library(
     src/functionalext/supplement/ctype/wctype.cpp
     src/functionalext/supplement/ctype/wcwidth.cpp
     src/functionalext/supplement/dirent/readdir.cpp
+    src/functionalext/supplement/dirent/alphasort.cpp
+    src/functionalext/supplement/dirent/fdopendir.cpp
+    src/functionalext/supplement/dirent/opendir.cpp
+    src/functionalext/supplement/dirent/rewinddir.cpp
+    src/functionalext/supplement/dirent/seekdir.cpp
+    src/functionalext/supplement/dirent/telldir.cpp
+    src/functionalext/supplement/ipc/semtimedop.cpp
     src/functionalext/supplement/env/putenv.cpp
+    src/functionalext/supplement/errno/__errno_location.cpp
     src/functionalext/supplement/errno/strerror.cpp
     src/functionalext/supplement/exit/quick_exit.cpp
+    src/functionalext/supplement/fcntl/creat.cpp
+    src/functionalext/supplement/fcntl/open.cpp
+    src/functionalext/supplement/fcntl/openat.cpp
     src/functionalext/supplement/fenv/feholdexcept.cpp
     src/functionalext/supplement/legacy/getloadavg.cpp
     src/functionalext/supplement/linux/fanotify_init.cpp
@@ -347,6 +515,10 @@ add_library(
     src/functionalext/supplement/linux/timerfd_settime.cpp
     src/functionalext/supplement/linux/vmsplice.cpp
     src/functionalext/supplement/locale/langinfo_sup.cpp
+    src/functionalext/supplement/locale/localeconv_sup.cpp
+    src/functionalext/supplement/locale/newlocale_sup.cpp
+    src/functionalext/supplement/locale/setlocale_sup.cpp
+    src/functionalext/supplement/locale/uselocale_sup.cpp
     src/functionalext/supplement/locale/wcscoll.cpp
     src/functionalext/supplement/locale/wcsxfrm.cpp
     src/functionalext/supplement/malloc/malloc_check_from_ptr.cpp
@@ -356,7 +528,9 @@ add_library(
     src/functionalext/supplement/malloc/realloc.cpp
     src/functionalext/supplement/manual/network/gethostbyaddr.cpp
     src/functionalext/supplement/manual/network/gethostbyaddr_r.cpp
+    src/functionalext/supplement/manual/network/gethostbyname2.cpp
     src/functionalext/supplement/manual/network/gethostbyname2_r.cpp
+    src/functionalext/supplement/manual/network/gethostbyname_r.cpp
     src/functionalext/supplement/manual/network/getnameinfo.cpp
     src/functionalext/supplement/math/finitef.cpp
     src/functionalext/supplement/math/nan.cpp
@@ -397,6 +571,7 @@ add_library(
     src/functionalext/supplement/multibyte/wcsrtombs.cpp
     src/functionalext/supplement/multibyte/wcstombs.cpp
     src/functionalext/supplement/multibyte/wctob.cpp
+    src/functionalext/supplement/multibyte/wcsnrtombs.cpp
     src/functionalext/supplement/multibyte/wctomb.cpp
     src/functionalext/supplement/network/freeaddrinfo.cpp
     src/functionalext/supplement/network/freeifaddrs.cpp
@@ -459,14 +634,18 @@ add_library(
     src/functionalext/supplement/process/waitid.cpp
     src/functionalext/supplement/regex/regexec.cpp
     src/functionalext/supplement/sched/sched_getaffinity.cpp
+    src/functionalext/supplement/sched/sched_rr_get_interval.cpp
     src/functionalext/supplement/sched/sched_setaffinity.cpp
     src/functionalext/supplement/sched/sched_yield.cpp
     src/functionalext/supplement/search/hcreate_r.cpp
     src/functionalext/supplement/search/hdestroy.cpp
     src/functionalext/supplement/search/hsearch_r.cpp
+    src/functionalext/supplement/search/lfind.cpp
+    src/functionalext/supplement/search/tdestroy.cpp
     src/functionalext/supplement/select/pselect.cpp
     src/functionalext/supplement/signal/getitimer.cpp
     src/functionalext/supplement/signal/kill.cpp
+    src/functionalext/supplement/signal/setitimer.cpp
     src/functionalext/supplement/signal/killpg.cpp
     src/functionalext/supplement/signal/psiginfo.cpp
     src/functionalext/supplement/signal/psignal.cpp
@@ -482,6 +661,14 @@ add_library(
     src/functionalext/supplement/signal/sigwaitinfo.cpp
     src/functionalext/supplement/stat/umask.cpp
     src/functionalext/supplement/stdio/fflush.cpp
+    src/functionalext/supplement/stdio/__fpending.cpp
+    src/functionalext/supplement/stdio/__fpurge.cpp
+    src/functionalext/supplement/stdio/__freadable.cpp
+    src/functionalext/supplement/stdio/__freading.cpp
+    src/functionalext/supplement/stdio/__fseterr.cpp
+    src/functionalext/supplement/stdio/__fwritable.cpp
+    src/functionalext/supplement/stdio/__fwriting.cpp
+    src/functionalext/supplement/stdio/_flushlbf.cpp
     src/functionalext/supplement/stdio/asprintf.cpp
     src/functionalext/supplement/stdio/dprintf.cpp
     src/functionalext/supplement/stdio/fgetln.cpp
@@ -496,6 +683,7 @@ add_library(
     src/functionalext/supplement/stdio/fputws.cpp
     src/functionalext/supplement/stdio/freopen.cpp
     src/functionalext/supplement/stdio/fseeko.cpp
+    src/functionalext/supplement/stdio/fsetpos.cpp
     src/functionalext/supplement/stdio/ftell.cpp
     src/functionalext/supplement/stdio/ftrylockfile.cpp
     src/functionalext/supplement/stdio/funlockfile.cpp
@@ -508,9 +696,11 @@ add_library(
     src/functionalext/supplement/stdio/getchar_unlocked.cpp
     src/functionalext/supplement/stdio/getdelim.cpp
     src/functionalext/supplement/stdio/getline.cpp
+    src/functionalext/supplement/stdio/getwc.cpp
     src/functionalext/supplement/stdio/putw.cpp
     src/functionalext/supplement/stdio/remove.cpp
     src/functionalext/supplement/stdio/rename.cpp
+    src/functionalext/supplement/stdio/rewind.cpp
     src/functionalext/supplement/stdio/setbuf.cpp
     src/functionalext/supplement/stdio/setbuffer.cpp
     src/functionalext/supplement/stdio/setlinebuf.cpp
@@ -554,6 +744,9 @@ add_library(
     src/functionalext/supplement/stdlib/wcstod.cpp
     src/functionalext/supplement/stdlib/wcstof.cpp
     src/functionalext/supplement/stdlib/wcstold.cpp
+    src/functionalext/supplement/stdlib/wcstoimax.cpp
+    src/functionalext/supplement/stdlib/wcstoumax.cpp
+    src/functionalext/supplement/stdlib/functionalext_fcvt.cpp
     src/functionalext/supplement/string/index.cpp
     src/functionalext/supplement/string/memccpy.cpp
     src/functionalext/supplement/string/memchr.cpp
@@ -587,6 +780,15 @@ add_library(
     src/functionalext/supplement/string/wcstok.cpp
     src/functionalext/supplement/string/wcswcs.cpp
     src/functionalext/supplement/string/wmemchr.cpp
+    src/functionalext/supplement/string/memmem.cpp
+    src/functionalext/supplement/string/memrchr.cpp
+    src/functionalext/supplement/string/stpcpy.cpp
+    src/functionalext/supplement/string/stpncpy.cpp
+    src/functionalext/supplement/string/strrchr.cpp
+    src/functionalext/supplement/string/wcscpy.cpp
+    src/functionalext/supplement/string/wcsdup.cpp
+    src/functionalext/supplement/string/wcsncpy.cpp
+    src/functionalext/supplement/string/wcspbrk.cpp
     src/functionalext/supplement/string/wmemcmp.cpp
     src/functionalext/supplement/string/wmemcpy.cpp
     src/functionalext/supplement/string/wmemmove.cpp
@@ -627,6 +829,17 @@ add_library(
     src/functionalext/supplement/thread/pthread_barrier_wait.cpp
     src/functionalext/supplement/thread/pthread_barrierattr_init.cpp
     src/functionalext/supplement/thread/pthread_barrierattr_setpshared.cpp
+    src/functionalext/supplement/thread/pthread_create.cpp
+    src/functionalext/supplement/thread/pthread_exit.cpp
+    src/functionalext/supplement/thread/pthread_getattr_np.cpp
+    src/functionalext/supplement/thread/pthread_getschedparam.cpp
+    src/functionalext/supplement/thread/pthread_getspecific.cpp
+    src/functionalext/supplement/thread/pthread_key_create.cpp
+    src/functionalext/supplement/thread/pthread_mutex_lock.cpp
+    src/functionalext/supplement/thread/pthread_mutex_unlock.cpp
+    src/functionalext/supplement/thread/pthread_once.cpp
+    src/functionalext/supplement/thread/pthread_setspecific.cpp
+    src/functionalext/supplement/thread/pthread_setschedparam.cpp
     src/functionalext/supplement/thread/pthread_cond_broadcast.cpp
     src/functionalext/supplement/thread/pthread_cond_destroy.cpp
     src/functionalext/supplement/thread/pthread_cond_init.cpp
@@ -690,6 +903,8 @@ add_library(
     src/functionalext/supplement/wctype/iswctype_l.cpp
     src/functionalext/supplement/wctype/iswgraph.cpp
     src/functionalext/unittest/unit_test_assert_fail.cpp
+    src/functionalext/unittest/unit_test_assert_fail_dialog.cpp
+    src/functionalext/unittest/unit_test_fatal_message.cpp
     src/math/exp.cpp
     src/math/exp2.cpp
     src/math/exp2f.cpp
@@ -719,7 +934,7 @@ add_library(
     src/math/ilogbf.cpp
     src/math/ilogbl.cpp
     src/math/isless.cpp
-     src/nativehook/runtest.cpp
+    src/nativehook/runtest.cpp
     src/nativehook/musl_preinit_common_stubs.cpp
     src/regression/iconv-roundtrips.cpp
     src/regression/malloc-free-performance.cpp
@@ -727,7 +942,109 @@ add_library(
     src/regression/pthread_condattr_setclock.cpp
     src/regression/raise-race.cpp
     src/regression/sigaltstack.cpp
+    src/functionalext/supplement/unistd/dup3.cpp
+    src/functionalext/supplement/unistd/faccessat.cpp
+    src/functionalext/supplement/unistd/fchown.cpp
+    src/functionalext/supplement/unistd/fchownat.cpp
+    src/functionalext/supplement/unistd/fdatasync.cpp
+    src/functionalext/supplement/unistd/fsync.cpp
+    src/functionalext/supplement/unistd/ftruncate.cpp
+    src/functionalext/supplement/unistd/read.cpp
+    src/functionalext/supplement/unistd/readv.cpp
+    src/functionalext/supplement/unistd/renameat.cpp
+    src/functionalext/supplement/unistd/symlinkat.cpp
+    src/functionalext/supplement/unistd/ttyname_r.cpp
+    src/functionalext/supplement/unistd/unlink.cpp
+    src/functionalext/supplement/unistd/unlinkat.cpp
+    src/regression/execle-env.cpp
+    src/regression/ftello-unflushed-append.cpp
+    src/regression/malloc-double-free-check.cpp
+    src/regression/malloc-encode-pointer.cpp
+    src/regression/malloc-modify-pointer.cpp
+    src/regression/malloc-oom.cpp
+    src/regression/malloc-safe-unlink.cpp
+    src/regression/pthread_cond-smasher.cpp
+    src/regression/pthread_create-oom.cpp
+    src/regression/pthread_once-deadlock.cpp
+    src/regression/pthread_rwlock-ebusy.cpp
+    src/regression/pthread-robust-detach.cpp
+    src/regression/setenv-oom.cpp
+    src/regression/tls_get_new-dtv.cpp
+    src/functionalext/time/asctime.cpp
+    src/functionalext/time/asctime_r.cpp
+    src/functionalext/time/difftime.cpp
+    src/functionalext/time/gmtime.cpp
+    src/functionalext/time/gmtime_r.cpp
+    src/functionalext/time/localtime.cpp
+    src/functionalext/time/localtime_r.cpp
+    src/functionalext/time/mktime.cpp
+    src/functionalext/time/strftime_ext.cpp
+    src/functionalext/time/strftime_l.cpp
+    src/functionalext/time/strptime_ext.cpp
+    src/functionalext/time/timegm.cpp
+    src/functionalext/supplement/network/accept4.cpp
+    src/functionalext/supplement/network/getaddrinfo.cpp
+    src/functionalext/supplement/network/getpeername.cpp
+    src/functionalext/supplement/network/getsockopt_network.cpp
+    src/functionalext/supplement/network/listen.cpp
+    src/functionalext/supplement/network/recv.cpp
+    src/functionalext/supplement/network/recvmsg.cpp
+    src/functionalext/supplement/network/recvmmsg.cpp
+    src/functionalext/supplement/network/send.cpp
+    src/functionalext/supplement/network/shutdown.cpp
+    src/functionalext/supplement/linux/__ppoll_time64.cpp
+    src/functionalext/supplement/linux/clock_adjtime.cpp
+    src/functionalext/supplement/linux/fallocate.cpp
+    src/functionalext/supplement/linux/fgetxattr.cpp
+    src/functionalext/supplement/linux/flock.cpp
+    src/functionalext/supplement/linux/inotify.cpp
+    src/functionalext/supplement/linux/membarrier.cpp
+    src/functionalext/supplement/linux/ppoll.cpp
+    src/functionalext/supplement/linux/utimes.cpp
+    src/functionalext/supplement/misc/a64l.cpp
+    src/functionalext/supplement/misc/endmntent.cpp
+    src/functionalext/supplement/misc/forkpty.cpp
+    src/functionalext/supplement/misc/getmntent.cpp
+    src/functionalext/supplement/misc/getmntent_r.cpp
+    src/functionalext/supplement/misc/getrusage.cpp
+    src/functionalext/supplement/misc/ioctl.cpp
+    src/functionalext/supplement/misc/lockf.cpp
+    src/functionalext/supplement/stat/chmod.cpp
+    src/functionalext/supplement/stat/fchmod.cpp
+    src/functionalext/supplement/stat/fchmodat.cpp
+    src/functionalext/supplement/stat/futimesat.cpp
+    src/functionalext/supplement/stat/utimensat.cpp
+    src/functionalext/supplement/malloc/resTraceFreeRegion.cpp
+    src/functionalext/supplement/malloc/resTraceMove.cpp
+    src/functionalext/supplement/malloc/restrace.cpp
+    src/functionalext/supplement/malloc/restraceExt.cpp
+    src/functionalext/sigchain/sigchain_intercept_pthread_sigmask.cpp
+    src/functionalext/sigchain/sigchain_rm_special_handler.cpp
+    src/functionalext/sigchain/sigchain_set_pre_validation_ignore_thread_test.cpp
+    src/functionalext/supplement/math/__signbit.cpp
+    src/functionalext/supplement/math/finite.cpp
+    src/functionalext/supplement/math/functionalext_pow10.cpp
+    src/functionalext/ldso_debug/ldso_debug_test.cpp
+    src/functionalext/ldso_debug/ldso_memleak_check.cpp
+    src/functionalext/supplement/legacy/daemon.cpp
+    src/functionalext/supplement/legacy/futimes.cpp
+    src/functionalext/supplement/mman/mmap.cpp
+    src/functionalext/supplement/mman/munmap.cpp
+    src/functionalext/supplement/wctype/iswalnum_l.cpp
+    src/functionalext/supplement/wctype/iswgraph_l.cpp
+    src/functionalext/info/fatal_message.cpp
+    src/functionalext/legacy/ulimit.cpp
+    src/functionalext/sched/sched_setparam.cpp
+    src/functionalext/supplement/fenv/feupdateenv.cpp
+    src/functionalext/supplement/ldso/dl_iterate_phdr.cpp
+    src/functionalext/supplement/manual/env/a_stack_chk_fail.cpp
+    src/functionalext/supplement/process/posix_spawn_file_actions_addopen.cpp
+    src/functionalext/supplement/select/select.cpp
+    src/functionalext/thread/pthread_guard_size.cpp
 )
+
+add_library(TlsGetNewDtvDso SHARED lib/tls_get_new-dtv_dso.c)
+set_target_properties(TlsGetNewDtvDso PROPERTIES OUTPUT_NAME "tls_get_new-dtv_dso")
 
 target_compile_definitions(entry PRIVATE _GNU_SOURCE=1)
 

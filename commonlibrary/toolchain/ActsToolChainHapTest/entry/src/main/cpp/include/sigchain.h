@@ -32,17 +32,36 @@ struct SignalChainAction {
     sigset_t scaMask;
     int scaFlags;
 };
+#define SIGNAL_CHAIN_ACTION SignalChainAction
 
-/* Mark the signal to the sigchain, add the special Handler to the sigchain. */
-void AddSpecialSignalHandler(int signo, struct SignalChainAction* sa);
-/* Add the special Handler at the last of sigchain chains */
-void AddSpecialHandlerAtLast(int signo, struct SignalChainAction* sa);
-/* Remove the special the Handler from the sigchain. */
-void RemoveSpecialSignalHandler(int signo, bool (*fn)(int, siginfo_t*, void*));
-/* Remove all special the Handler from the sigchain */
-void RemoveAllSpecialHandler(int signo);
-/* Set the pre_validation_ignore flag to control whether to validate SIG_IGN before calling user Handler */
-void SetSigchainPreValidationIgnore(int value);
+/* Mark the signal to the sigchain, add the special handler to the sigchain. */
+static inline void AddSpecialSignalHandler(int signo, struct SignalChainAction* sa)
+{
+    (void)signo;
+    (void)sa;
+}
+/* Add the special handler at the last of sigchain chains */
+static inline void AddSpecialHandlerAtLast(int signo, struct SignalChainAction* sa)
+{
+    (void)signo;
+    (void)sa;
+}
+/* Remove the special the handler from the sigchain. */
+static inline void RemoveSpecialSignalHandler(int signo, bool (*fn)(int, siginfo_t*, void*))
+{
+    (void)signo;
+    (void)fn;
+}
+/* Remove all special the handler from the sigchain */
+static inline void RemoveAllSpecialHandler(int signo)
+{
+    (void)signo;
+}
+/* Set the pre_validation_ignore flag to control whether to validate SIG_IGN before calling user handler */
+static inline void SetSigchainPreValidationIgnore(int value)
+{
+    (void)value;
+}
 
 #ifdef __cplusplus
 }

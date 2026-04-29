@@ -652,3 +652,11 @@ export const oHDeleteConstituentCameraDevices: (index:number) => number;
 export const oHGetLensFocalLength: (index:number) => number;
 
 export const oHGetMinimumFocusDistance: (index:number) => number;
+
+export const oHCaptureSessionRegisterExposureStateChangeCallback: () => number;
+ 
+export const oHCaptureSessionUnregisterExposureStateChangeCallback: () => number;
+ 
+export const oHCaptureSessionRegisterExposureStateChangeCallbackWithoutSession: () => number;
+ 
+export const oHCaptureSessionUnregisterExposureStateChangeCallbackWithoutSession: () => number;

@@ -189,3 +189,7 @@ export const usbControlTransferSetupNull: (a: number) => number;
 export const usbControlTransferDataNull: (a: number) => number;
 export const usbControlTransferInvalidDeviceId: (a: number) => number;
 export const usbControlTransferNoInit: (a: number) => number;
+export const usbGetNonRootHubsOne: (a: number) => number;
+export const usbGetNonRootHubsTwo: (a: number) => number;
+export const usbGetNonRootHubsThree: (a: number) => number;
+export const usbControlTransferTwo: (a: number) => number;

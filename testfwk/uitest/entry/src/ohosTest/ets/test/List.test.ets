@@ -15,7 +15,9 @@
 import UiTest from './uitest.test'
 import uitestEnumTest from './UitestEnum.test';
 import uitestUiWindowTest from './UitestUiWindow.test'
+import uitestApi26Test from './UiTestApi26.test'
 export default function testsuite() {
+  uitestApi26Test();
   UiTest();
   uitestEnumTest();
   uitestUiWindowTest();

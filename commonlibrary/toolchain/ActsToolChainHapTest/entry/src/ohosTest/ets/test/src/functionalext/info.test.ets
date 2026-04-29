@@ -51,5 +51,19 @@ export default function info_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   fatal_message
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_FATAL_MESSAGE_0100
+     * @tc.desc   libc-test fatal_message
+     */
+    it("fatal_message", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("fatal_message");
+      expect(result).assertEqual(0);
+      done();
+    });
+
   });
 }

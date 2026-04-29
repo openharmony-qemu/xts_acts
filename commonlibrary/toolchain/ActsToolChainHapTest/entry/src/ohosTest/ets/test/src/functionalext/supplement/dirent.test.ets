@@ -31,5 +31,83 @@ export default function dirent_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   alphasort
+     * @tc.number SUB_THIRDPARTY_MUSL_ALPHASORT_0100
+     * @tc.desc   libc-test alphasort
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("alphasort", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("alphasort");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   fdopendir
+     * @tc.number SUB_THIRDPARTY_MUSL_FDOPENDIR_0100
+     * @tc.desc   libc-test fdopendir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("fdopendir", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("fdopendir");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   opendir
+     * @tc.number SUB_THIRDPARTY_MUSL_OPENDIR_0100
+     * @tc.desc   libc-test opendir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("opendir", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("opendir");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   rewinddir
+     * @tc.number SUB_THIRDPARTY_MUSL_REWINDDIR_0100
+     * @tc.desc   libc-test rewinddir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("rewinddir", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("rewinddir");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   seekdir
+     * @tc.number SUB_THIRDPARTY_MUSL_SEEKDIR_0100
+     * @tc.desc   libc-test seekdir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("seekdir", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("seekdir");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   telldir
+     * @tc.number SUB_THIRDPARTY_MUSL_TELLDIR_0100
+     * @tc.desc   libc-test telldir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("telldir", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("telldir");
+      expect(result).assertEqual(0);
+      done();
+    });
   });
 }
