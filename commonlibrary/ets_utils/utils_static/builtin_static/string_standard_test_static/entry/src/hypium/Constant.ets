@@ -17,7 +17,6 @@
  * define the testcase type : TestType, Size , Level
  */
 export const TAG: string = '[Hypium]';
-
 export const DEFAULT: byte = 0B0000;
 
 export class PrintTag {
