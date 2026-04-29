@@ -14,7 +14,6 @@
  */
 
 
-
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import audio from '@ohos.multimedia.audio';
 import { BusinessError } from '@ohos.base';
@@ -2706,7 +2705,7 @@ export default function audioLoopBack() {
      * @tc.desc    AudioDevicePair inputDevice property normal value test.
      * @tc.type    Function
      * @tc.size    MediumTest
-     * @tc.level   Level06800104
+     * @tc.level   Level0
      */
       it('SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_INPUTDEVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
           if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
@@ -2843,6 +2842,7 @@ export default function audioLoopBack() {
               done();
           }
       }
+      done();
     });
 
     /**
@@ -2943,6 +2943,7 @@ export default function audioLoopBack() {
               done();
           }
       }
+      done();
     });
 
     /**
