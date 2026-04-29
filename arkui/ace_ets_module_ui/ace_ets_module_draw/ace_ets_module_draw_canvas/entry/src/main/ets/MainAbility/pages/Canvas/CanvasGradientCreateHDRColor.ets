@@ -54,11 +54,13 @@ struct CanvasGradientCreateHDRColor {
     this.context.fillStyle = '#FFFFFF';
     this.context.font = '16px sans-serif';
     this.context.textAlign = 'center';
-    this.context.fillText("SDR", 85, 180);
+    this.context.fillText('SDR', 85, 180);
 
     let gradHDR = this.context.createLinearGradient(245, 10, 320, 110)
 
-    let r = 0, g = 0, b = 0;
+    let r = 0;
+    let g = 0;
+    let b = 0;
     switch (this.selectedChannel) {
       case 'Red': r = this.hdrValue; break;
       case 'Green': g = this.hdrValue; break;

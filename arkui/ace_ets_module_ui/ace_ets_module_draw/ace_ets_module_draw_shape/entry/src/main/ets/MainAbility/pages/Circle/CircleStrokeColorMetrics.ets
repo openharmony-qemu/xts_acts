@@ -24,7 +24,9 @@ struct CircleStrokeColorMetrics {
   @State selectedChannel: ColorChannel = 'Red';
 
   private buildHDRColor(): ColorMetrics {
-    let r = 0, g = 0, b = 0;
+    let r = 0;
+    let g = 0;
+    let b = 0;
     switch (this.selectedChannel) {
       case 'Red':
         r = this.hdrValue;
