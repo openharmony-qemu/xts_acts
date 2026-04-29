@@ -365,35 +365,47 @@ export default function fileIOFileMappingStatic() {
      * @tc.level  LEVEL0
      */
     it('fileIO_test_mmap_async_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
-    hilog.info(domain, tag, '%{public}s', 'fileIO_test_mmap_async_static_003 start');
-    
-    Utils.nextFileName('fileIO_test_mmap_async_static_003').then((fpath: string) => {
-      return Utils.prepareFile(fpath, FILE_CONTENT).then((result) => {
-        expect(result).assertTrue();
-        return fpath;
-      });
-    }).then((fpath: string) => {
-      let file = fs.openSync(fpath, fs.OpenMode.READ_WRITE);
-      expect(Utils.isIntNum(file.fd)).assertTrue();
+      hilog.info(domain, tag, '%{public}s', 'fileIO_test_mmap_async_static_003 start');
       
-      fs.mmap(file.fd, fs.MappingMode.READ_WRITE, 0, 1024).then((mapping: fs.FileMapping): void => {
-        hilog.info(domain, tag, '%{public}s', 'fileIO_test_mmap_async_static_003 capacity' + mapping.capacity());
-        expect(mapping.capacity() === 1024).assertTrue();
-        mapping.unmapSync();
-        fs.closeSync(file);
-        fs.unlinkSync(fpath);
-        done();
-      }).catch((err: Error): void => {
-        hilog.info(domain, tag, '%{public}s', 'fileIO_test_mmap_async_static_003 error: ' + JSON.stringify(err));
+      Utils.nextFileName('fileIO_test_mmap_async_static_003').then((fpath: string) => {
+        return Utils.prepareFile(fpath, FILE_CONTENT).then((result) => {
+          expect(result).assertTrue();
+          return fpath;
+        });
+      }).then((fpath: string) => {
+        let file = fs.openSync(fpath, fs.OpenMode.READ_WRITE);
+        expect(Utils.isIntNum(file.fd)).assertTrue();
+        
+        // 先检查文件大小
+        let stat = fs.statSync(fpath);
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_mmap_async_static_003 file size: ' + stat.size);
+        
+        // 确保文件至少有 1024 字节
+        if (stat.size < 1024) {
+          // 扩展文件大小
+          let buf = new ArrayBuffer(1024 - stat.size);
+          fs.writeSync(file.fd, buf);
+        }
+        
+        fs.mmap(file.fd, fs.MappingMode.READ_WRITE, 0, 1024).then((mapping: fs.FileMapping): void => {
+          hilog.info(domain, tag, '%{public}s', 'fileIO_test_mmap_async_static_003 capacity' + mapping.capacity());
+          expect(mapping.capacity() === 1024).assertTrue();
+          mapping.unmapSync();
+          fs.closeSync(file);
+          fs.unlinkSync(fpath);
+          done();
+        }).catch((err: Error): void => {
+          hilog.info(domain, tag, '%{public}s', 'fileIO_test_mmap_async_static_003 error: ' + JSON.stringify(err));
+          expect(false).assertTrue();
+          done();
+        });
+      }).catch((e: Error) => {
+        hilog.info(domain, tag, '%{public}s', 'fileIO_test_mmap_async_static_003 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
         done();
       });
-    }).catch((e: Error) => {
-      hilog.info(domain, tag, '%{public}s', 'fileIO_test_mmap_async_static_003 has failed for' + JSON.stringify(e));
-      expect(false).assertTrue();
-      done();
     });
-  });
+
 
     /**
      * @tc.name   fileIO_test_setPosition_static_000
