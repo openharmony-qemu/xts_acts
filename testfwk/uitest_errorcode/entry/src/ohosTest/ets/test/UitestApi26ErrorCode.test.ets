@@ -50,7 +50,7 @@ export default function uitestApi26ErrorTest() {
       try {
         driver.delayMs(waitUiReadyMs * 3);
         await driver.clickAt(point, options);
-        expect().assertFail();;
+        expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverClickAtErrorConcurrentCallWithPressure error: ${JSON.stringify(err)}`);
         expect((err as BusinessError).code).assertEqual(AsyncErrorCode);
@@ -71,7 +71,7 @@ export default function uitestApi26ErrorTest() {
       console.log(`${TestTag}, testDriverClickAtNullPoint start`);
       try {
         await driver.clickAt(null, {pressure: 0.5});
-        expect().assertFail();;
+        expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverClickAtNullPoint error is: ${JSON.stringify(err)}`);
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
@@ -91,7 +91,7 @@ export default function uitestApi26ErrorTest() {
       console.log(`${TestTag}, testDriverClickAtUndefinedPoint start`);
       try {
         await driver.clickAt(undefined, {pressure: 0.5});
-        expect().assertFail();;
+        expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverClickAtUndefinedPoint error is: ${JSON.stringify(err)}`);
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
@@ -174,7 +174,7 @@ export default function uitestApi26ErrorTest() {
       const options: TouchOptions = { pressure: 1.5 };
       try {
         await driver.clickAt(point, options);
-        expect().assertFail();;
+        expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverClickAtErrorPressureTooLarge error is: ${JSON.stringify(err)}`);
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
@@ -356,7 +356,7 @@ export default function uitestApi26ErrorTest() {
       console.log(`${TestTag}, testDriverLongClickAtPointNull start`);
       try {
         await driver.longClickAt(null, {speed: 500});
-        expect().assertFail();;
+        expect().assertFail();
       } catch (err) {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
       }
@@ -375,7 +375,7 @@ export default function uitestApi26ErrorTest() {
       console.log(`${TestTag}, testDriverLongClickAtPointUndefined start`);
       try {
         await driver.longClickAt(undefined, {speed: 500});
-        expect().assertFail();;
+        expect().assertFail();
       } catch (err) {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
       }
@@ -398,7 +398,7 @@ export default function uitestApi26ErrorTest() {
         driver.delayMs(waitUiReadyMs * 3);
         await sleep(100);
         await driver.longClickAt(point, options);
-        expect().assertFail();;
+        expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverLongClickAtConcurrentCallWithOptions error is: ${JSON.stringify(err)}`);
         expect((err as BusinessError).code).assertEqual(AsyncErrorCode);
@@ -508,7 +508,7 @@ export default function uitestApi26ErrorTest() {
         driver.delayMs(waitUiReadyMs * 3);
         await driver.delayMs(100);
         await driver.swipeBetween(from, to, options);
-        expect().assertFail();;
+        expect().assertFail();
       } catch (err) {
         console.info(`${TestTag}, testDriverSwipeBetweenConcurrentCall error is: ${JSON.stringify(err)}`);
         expect((err as BusinessError).code).assertEqual(AsyncErrorCode);
@@ -530,7 +530,7 @@ export default function uitestApi26ErrorTest() {
       const to: Point = { x: 200, y: 200 };
       try {
         await driver.swipeBetween(null, to, {speed: 2000});
-        expect().assertFail();;
+        expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverSwipeBetweenNullFrom error is: ${JSON.stringify(err)}`);
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
@@ -551,7 +551,7 @@ export default function uitestApi26ErrorTest() {
       const to: Point = { x: 200, y: 200 };
       try {
         await driver.swipeBetween(undefined, to, {speed: 2000});
-        expect().assertFail();;
+        expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverSwipeBetweenUndefinedFrom error is: ${JSON.stringify(err)}`);
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
@@ -572,7 +572,7 @@ export default function uitestApi26ErrorTest() {
       const from: Point = { x: 100, y: 100 };
       try {
         await driver.swipeBetween(from, null, {speed: 2000});
-        expect().assertFail();;
+        expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverSwipeBetweenNullTo error is: ${JSON.stringify(err)}`);
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
@@ -593,7 +593,7 @@ export default function uitestApi26ErrorTest() {
       const from: Point = { x: 100, y: 100 };
       try {
         await driver.swipeBetween(from, undefined, {speed: 2000});
-        expect().assertFail();;
+        expect().assertFail();
       } catch (err) {
         console.log(`${TestTag}, testDriverSwipeBetweenUndefinedTo error is: ${JSON.stringify(err)}`);
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
