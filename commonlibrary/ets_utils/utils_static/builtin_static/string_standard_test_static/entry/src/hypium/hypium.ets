@@ -142,35 +142,29 @@ export class Hypium {
     }
   }
 
-  static setData(JsonData: string): boolean {
-    try {
-      const core = Core.getInstance();
-      let jsonData = JSON.parseJsonElement(JsonData);
-      let suitesValue: Array<jsonx.JsonElement> | undefined = [];
-      if (jsonData.tryGetElement("suites") !== undefined) {
-        suitesValue = jsonData.getArray("suites");
-      } else {
-        suitesValue = undefined;
-        throw Error('[hypium] setData failed: suites is null');
-      }
-      const dataDriverSuite: DataDriverSuite[] = []
-      for (const item of suitesValue) {
-        const parseSuite = Hypium.parseSuite(item);
-        dataDriverSuite.push(parseSuite);
-      }
-      const data: DataDriverData = {
-        suites: dataDriverSuite
-      }
-      const dataDriver = new DataDriver({ data });
-      if (core) {
-        core.addService('dataDriver', dataDriver);
-      } else {
-        throw Error('[hypium] setData failed: core is not created');
-      }
-      return true;
-    } catch (e) {
-      console.error(`${TAG}, setData error: ${e}`);
-      return false;
+  static setData(JsonData: string) {
+    const core = Core.getInstance();
+    let jsonData = JSON.parseJsonElement(JsonData);
+    let suitesValue: Array<jsonx.JsonElement> | undefined = [];
+    if (jsonData.tryGetElement("suites") !== undefined) {
+      suitesValue = jsonData.getArray("suites");
+    } else {
+      suitesValue = undefined;
+      throw Error('suites is null');
+    }
+    const dataDriverSuite: DataDriverSuite[] = []
+    for (const item of suitesValue) {
+      const parseSuite = Hypium.parseSuite(item);
+      dataDriverSuite.push(parseSuite);
+    }
+    const data: DataDriverData = {
+      suites: dataDriverSuite
+    }
+    const dataDriver = new DataDriver({ data });
+    if (core) {
+      core.addService('dataDriver', dataDriver);
+    } else {
+      throw Error('core is not created');
     }
   }
 
