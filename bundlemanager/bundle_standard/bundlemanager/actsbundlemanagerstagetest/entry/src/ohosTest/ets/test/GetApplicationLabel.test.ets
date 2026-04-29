@@ -22,13 +22,13 @@ export default function getApplicationLabel() {
 
     /**
      * @tc.name   testGetApplicationLabelEmptyBundleName
-     * @tc.number Sub_Bms_Framework_Query_Resource2_GetApplicationLabel_0200
+     * @tc.number SUB_BMS_FRAMEWORK_QUERY_Resource2_GetApplicationLabel_0200
      * @tc.desc   Check the empty bundleName
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGetApplicationLabelEmptyBundleName', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) =>  {
+    it('SUB_BMS_FRAMEWORK_QUERY_Resource2_GetApplicationLabel_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) =>  {
       await bundleManager.getApplicationLabel("", 0).then(data => {
         console.info("getApplicationLabel success" + JSON.stringify(data))
         expect(data).assertFail()
@@ -42,13 +42,13 @@ export default function getApplicationLabel() {
 
     /**
      * @tc.name   testGetApplicationLabelNotExistedBundleName
-     * @tc.number Sub_Bms_Framework_Query_Resource2_GetApplicationLabel_0300
+     * @tc.number SUB_BMS_FRAMEWORK_QUERY_Resource2_GetApplicationLabel_0300
      * @tc.desc   Check the NotExisted bundleName
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGetApplicationLabelNotExistedBundleName', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) =>  {
+    it('SUB_BMS_FRAMEWORK_QUERY_Resource2_GetApplicationLabel_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) =>  {
       await bundleManager.getApplicationLabel("test.notExisted123", 0).then(data => {
         console.info("getApplicationLabel success" + JSON.stringify(data))
         expect(data).assertFail()
@@ -62,13 +62,13 @@ export default function getApplicationLabel() {
 
     /**
      * @tc.name   testGetApplicationLabelInvalidAppIndex
-     * @tc.number Sub_Bms_Framework_Query_Resource2_GetApplicationLabel_0400
+     * @tc.number SUB_BMS_FRAMEWORK_QUERY_Resource2_GetApplicationLabel_0400
      * @tc.desc   Check the -1 AppIndex
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGetApplicationLabelInvalidAppIndex', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) =>  {
+    it('SUB_BMS_FRAMEWORK_QUERY_Resource2_GetApplicationLabel_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) =>  {
       await bundleManager.getApplicationLabel("ohos.acts.bundle.stage.test", -1).then(data => {
         console.info("getApplicationLabel success" + JSON.stringify(data))
         expect(data).assertFail()
@@ -82,13 +82,13 @@ export default function getApplicationLabel() {
 
     /**
      * @tc.name   testGetApplicationLabelNotExistedAppIndex
-     * @tc.number Sub_Bms_Framework_Query_Resource2_GetApplicationLabel_0500
+     * @tc.number SUB_BMS_FRAMEWORK_QUERY_Resource2_GetApplicationLabel_0500
      * @tc.desc   Check the NotExisted AppIndex
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGetApplicationLabelNotExistedAppIndex', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) =>  {
+    it('SUB_BMS_FRAMEWORK_QUERY_Resource2_GetApplicationLabel_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) =>  {
       await bundleManager.getApplicationLabel("ohos.acts.bundle.stage.test", 5).then(data => {
         console.info("getApplicationLabel success" + JSON.stringify(data))
         expect(data).assertFail()
