@@ -355,7 +355,7 @@ ani_boolean testBoxIntNative(ani_env *env)
     ASSERT_EQ(env->Primitive_Unbox_Int(boxedZero, &unboxedZero), ANI_OK);
     ASSERT_EQ(unboxedZero, 0);
 
-    ani_boolean value = 12;
+    ani_int value = 12;
     ani_object boxedValue = nullptr;
     ASSERT_EQ(env->Primitive_Box_Int(value, &boxedValue), ANI_OK);
     AssertIsInt(env, boxedValue);
@@ -382,7 +382,7 @@ ani_boolean testUnboxIntNative(ani_env *env)
 
     ani_int score = 0;
     ASSERT_EQ(env->Primitive_Unbox_Int(static_cast<ani_object>(scoreRef), &score), ANI_OK);
-    ani_boolean expectScore = 1234;
+    ani_int expectScore = 1234;
     ASSERT_EQ(score, expectScore);
     return ANI_TRUE;
 }
