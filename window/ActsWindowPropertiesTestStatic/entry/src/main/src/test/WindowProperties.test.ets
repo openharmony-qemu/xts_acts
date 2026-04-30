@@ -3525,7 +3525,7 @@ export default function WindowPropertiesTest() {
         })
 
         /**
-        * @tc.number       test_WMS_snapshotSync_static_0100
+        * @tc.number       SUB_WMS_snapshotSync_static_0100
         * @tc.name         testSnapShotSync_ErrCode1300002_static
         * @tc.desc         testSnapShotSync_ErrCode1300002_static
         * @tc.size         MediumTest
