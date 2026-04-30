@@ -28,8 +28,8 @@ import { RenderNode, ShapeMask, FrameNode, NodeController } from '@ohos.arkui.no
 // backgroundColor test
 const renderNode1 = new RenderNode();
 renderNode1.frame = { x: 0, y: 0, width: 20, height: 20 };
-renderNode1.shadowColor = 0XFF00FF00 as Int
-renderNode1.borderColor = { left: 0XFF00FF00 as Int, top: 0xFF0000FF as Int, right: 0xFF0000FF as Int, bottom: 0xFF0000FF as Int };
+renderNode1.shadowColor = 0XFF00FF00.toInt()
+renderNode1.borderColor = { left: 0XFF00FF00.toInt(), top: 0xFF0000FF.toInt(), right: 0xFF0000FF.toInt(), bottom: 0xFF0000FF.toInt() };
 const backgroundColor = renderNode1.borderColor!;
 
 // clipToFrame test
