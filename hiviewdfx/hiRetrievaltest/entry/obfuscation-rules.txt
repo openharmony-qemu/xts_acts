@@ -1,0 +1,10 @@
+# Keep rules:
+# Keep class members with public or protected access modifiers
+-keep class * {
+    public protected *;
+}
+
+# Keep class names that do not contain specific keywords
+-keep class * {
+    !public protected *;
+}
