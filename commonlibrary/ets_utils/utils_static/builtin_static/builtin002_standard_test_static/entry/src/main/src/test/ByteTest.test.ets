@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -1013,7 +1013,7 @@ export default function builtinsBytePrototypebTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'builtinsBytePrototypebTest5400'
         console.info(`${caseName}, test start`);
-        const byte1 = new Byte(Byte.MAX_VALUE - 1 as byte);
+        const byte1 = new Byte((Byte.MAX_VALUE - 1).toByte());
         const byte2 = new Byte(Byte.MAX_VALUE);
         const result = byte1.isGreaterEqualThan(byte2);
         expect(result).assertFalse();
@@ -1034,7 +1034,7 @@ export default function builtinsBytePrototypebTest() {
         const caseName = 'builtinsBytePrototypebTest5500'
         console.info(`${caseName}, test start`);
         const byte1 = new Byte(Byte.MIN_VALUE);
-        const byte2 = new Byte(Byte.MIN_VALUE + 1 as byte);
+        const byte2 = new Byte((Byte.MIN_VALUE + 1).toByte());
         const result = byte1.isGreaterEqualThan(byte2);
         expect(result).assertFalse();
         console.info(`${caseName}, test end`);
@@ -1174,7 +1174,7 @@ export default function builtinsBytePrototypebTest() {
         const caseName = 'builtinsBytePrototypebTest6200'
         console.info(`${caseName}, test start`);
         const byte1 = new Byte(Byte.MAX_VALUE);
-        const byte2 = new Byte(Byte.MAX_VALUE - 1 as byte);
+        const byte2 = new Byte((Byte.MAX_VALUE - 1).toByte());
         const result = byte1.isGreaterThan(byte2);
         expect(result).assertTrue();
         console.info(`${caseName}, test end`);
@@ -1193,7 +1193,7 @@ export default function builtinsBytePrototypebTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'builtinsBytePrototypebTest6300'
         console.info(`${caseName}, test start`);
-        const byte1 = new Byte(Byte.MIN_VALUE + 1 as byte);
+        const byte1 = new Byte((Byte.MIN_VALUE + 1).toByte());
         const byte2 = new Byte(Byte.MIN_VALUE);
         const result = byte1.isGreaterThan(byte2);
         expect(result).assertTrue();
@@ -1294,7 +1294,7 @@ export default function builtinsBytePrototypebTest() {
         const caseName = 'builtinsBytePrototypebTest6801'
         console.info(`${caseName}, test start`);
         const byte1 = new Byte(Byte.MIN_VALUE);
-        const byte2 = new Byte(Byte.MIN_VALUE + 1 as byte);
+        const byte2 = new Byte((Byte.MIN_VALUE + 1).toByte());
         const result = byte1.isLessThan(byte2);
         expect(result).assertTrue();
         console.info(`${caseName}, test end`);
@@ -1313,7 +1313,7 @@ export default function builtinsBytePrototypebTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'builtinsBytePrototypebTest6800'
         console.info(`${caseName}, test start`);
-        const byte1 = new Byte(Byte.MAX_VALUE - 1 as byte);
+        const byte1 = new Byte((Byte.MAX_VALUE - 1).toByte());
         const byte2 = new Byte(Byte.MAX_VALUE);
         const result = byte1.isLessThan(byte2);
         expect(result).assertTrue();

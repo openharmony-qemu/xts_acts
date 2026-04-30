@@ -529,7 +529,7 @@ export default function HashMapTest1() {
         return (a[0] - b[0]).toInt()
       });
       for (let i = 0; i < arr.length; i++) {
-        expect(String(arr[i])).assertEqual(String([i + 1, (hashMap.get(i + 1)! as int)]));
+        expect(String(arr[i])).assertEqual(String([i + 1, (hashMap.get(i + 1)!.toInt())]));
       }
     });
 

@@ -2452,8 +2452,8 @@ export default function Array_07Test() {
       try {
         const array: FixedArray<long> = [10000000000, 20000000000, 30000000000, 40000000000, 50000000000];
         const relStart: int = 0;
-        const relEnd: int = Number.NEGATIVE_INFINITY as int;
-        const result = slice(array, 0, Number.NEGATIVE_INFINITY as int);
+        const relEnd: int = Number.NEGATIVE_INFINITY.toInt();
+        const result = slice(array, 0, Number.NEGATIVE_INFINITY.toInt());
         const expected: FixedArray<long> = [];
         expect(result.toString()).assertEqual(expected.toString());
       } catch (err) {

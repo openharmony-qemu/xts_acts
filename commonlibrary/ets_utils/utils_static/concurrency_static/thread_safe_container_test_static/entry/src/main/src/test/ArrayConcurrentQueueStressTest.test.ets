@@ -116,7 +116,7 @@ export default function ArrayConcurrentQueueStressTest() {
         for (let i: int = 0; i < producerCount; i++) {
           totalProduced += results[i] as number;
         }
-        for (let i: int = producerCount as int; i < (producerCount + consumerCount) as int; i++) {
+        for (let i: int = producerCount.toInt(); i < (producerCount + consumerCount).toInt(); i++) {
           totalConsumed += results[i] as number;
         }
         workers.forEach((eaw: EAWorker) => {

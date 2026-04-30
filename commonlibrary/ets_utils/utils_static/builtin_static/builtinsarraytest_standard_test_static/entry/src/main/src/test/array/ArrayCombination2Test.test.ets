@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -1052,8 +1052,8 @@ export default function ArrayConstructor2Test() {
       const arr = [10, 20, 30];
       const typedArr = new Int32Array([10, 20, 30]);
 
-      expect(arr.slice(Math.floor(0.9) as int, Math.floor(2.9) as int).indexOf(20)).assertEqual(1);
-      expect(typedArr.slice(Math.floor(0.9) as int, Math.floor(2.9) as int).indexOf(20)).assertEqual(1);
+      expect(arr.slice(Math.floor(0.9).toInt(), Math.floor(2.9).toInt()).indexOf(20)).assertEqual(1);
+      expect(typedArr.slice(Math.floor(0.9).toInt(), Math.floor(2.9).toInt()).indexOf(20)).assertEqual(1);
     });
 
     /**
@@ -1143,8 +1143,8 @@ export default function ArrayConstructor2Test() {
       const arr = [88];
       const typedArr = new Int32Array([88]);
 
-      expect(arr.slice(Math.floor(NaN) as int).includes(88)).assertEqual(true);
-      expect(typedArr.slice(Math.floor(NaN) as int).includes(88)).assertEqual(true);
+      expect(arr.slice(Math.floor(NaN).toInt()).includes(88)).assertEqual(true);
+      expect(typedArr.slice(Math.floor(NaN).toInt()).includes(88)).assertEqual(true);
     });
 
     /**
@@ -1196,8 +1196,8 @@ export default function ArrayConstructor2Test() {
       const arr = [5];
       const typedArr = new Int32Array([5]);
 
-      expect(arr.slice(Math.floor(-Infinity) as int).indexOf(5)).assertEqual(0);
-      expect(typedArr.slice(Math.floor(-Infinity) as int).indexOf(5)).assertEqual(0);
+      expect(arr.slice(Math.floor(-Infinity).toInt()).indexOf(5)).assertEqual(0);
+      expect(typedArr.slice(Math.floor(-Infinity).toInt()).indexOf(5)).assertEqual(0);
     });
 
     /**
@@ -1212,7 +1212,7 @@ export default function ArrayConstructor2Test() {
       const arr = [1, [2, [3, [4]]]];
       const typedArr = new Int32Array([1, 2, 3, 4]);
 
-      expect(arr.flat<int>(Infinity as int).lastIndexOf(4)).assertEqual(3);
+      expect(arr.flat<int>(Infinity.toInt()).lastIndexOf(4)).assertEqual(3);
       expect(typedArr.lastIndexOf(4)).assertEqual(3);
     });
 
@@ -1253,8 +1253,8 @@ export default function ArrayConstructor2Test() {
       const arr = [10, 20];
       const typedArr = new Int32Array([10, 20]);
 
-      expect(arr.slice(Math.floor(0) as int, Math.floor(Infinity) as int).lastIndexOf(20)).assertEqual(1);
-      expect(typedArr.slice(Math.floor(0) as int, Math.floor(Infinity) as int).lastIndexOf(20)).assertEqual(1);
+      expect(arr.slice(Math.floor(0).toInt(), Math.floor(Infinity).toInt()).lastIndexOf(20)).assertEqual(1);
+      expect(typedArr.slice(Math.floor(0).toInt(), Math.floor(Infinity).toInt()).lastIndexOf(20)).assertEqual(1);
     });
 
     /**
@@ -2108,8 +2108,8 @@ export default function ArrayConstructor2Test() {
       const arr = [1];
       const typedArr = new Int32Array([1]);
       const hugeIndex = 4294967295;
-      expect(arr.slice(Math.floor(hugeIndex) as int).length).assertEqual(0);
-      expect(typedArr.slice(Math.floor(hugeIndex) as int).length).assertEqual(0);
+      expect(arr.slice(Math.floor(hugeIndex).toInt()).length).assertEqual(0);
+      expect(typedArr.slice(Math.floor(hugeIndex).toInt()).length).assertEqual(0);
     });
 
     /**
@@ -2275,7 +2275,7 @@ export default function ArrayConstructor2Test() {
       const arr = [1, [2, [3]]];
       const typedArr = new Int32Array([1, 2, 3]);
 
-      expect(arr.flat<int>(Math.floor(Number.MAX_SAFE_INTEGER) as int).lastIndexOf(3)).assertEqual(2);
+      expect(arr.flat<int>(Math.floor(Number.MAX_SAFE_INTEGER).toInt()).lastIndexOf(3)).assertEqual(2);
       expect(typedArr.lastIndexOf(3)).assertEqual(2);
     });
 

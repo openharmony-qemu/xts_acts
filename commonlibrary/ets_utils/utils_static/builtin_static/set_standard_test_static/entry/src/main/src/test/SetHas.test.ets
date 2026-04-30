@@ -1,6 +1,6 @@
 
 /*
-* Copyright (C) 2024 HiHope Open Source Organization.
+* Copyright (C) 2024-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -1267,7 +1267,7 @@ export default function SetHasTest() {
       }
 
       const randomIndex = Math.floor(Math.random() * 1000);
-      expect(set.has(uniqueStrings[randomIndex as int])).assertEqual(true);
+      expect(set.has(uniqueStrings[randomIndex.toInt()])).assertEqual(true);
       expect(set.has(`non-existent-${Math.random()}`)).assertEqual(false);
     });
 

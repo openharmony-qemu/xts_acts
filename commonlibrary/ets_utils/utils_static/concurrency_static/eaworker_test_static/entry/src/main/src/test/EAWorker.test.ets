@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -1619,7 +1619,7 @@ export default function EAWorkerTest() {
           let workerThreadId: number = 0;
           const mainThreadId = StdProcess.tid();
           let worker1 = await worker.run<undefined>((): undefined => {
-            workerThreadId = StdProcess.tid();
+            workerThreadId = StdProcess.tid().toDouble();
             return undefined;
           });
           expect(worker1).assertEqual(undefined);
@@ -1655,10 +1655,10 @@ export default function EAWorkerTest() {
           let worker1ThreadId: number;
           let worker2ThreadId: number;
           const task = worker.run<number>(async (): Promise<number> => {
-            worker1ThreadId = StdProcess.tid();
+            worker1ThreadId = StdProcess.tid().toDouble();
             executedFlag = true;
             const nestedTask = work2.run<number>((): number => {
-              worker2ThreadId = StdProcess.tid();
+              worker2ThreadId = StdProcess.tid().toDouble();
               executedFlag = true;
               return worker2ThreadId;
             });

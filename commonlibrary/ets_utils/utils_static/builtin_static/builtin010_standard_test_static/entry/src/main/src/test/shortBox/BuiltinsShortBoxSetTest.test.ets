@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -78,7 +78,7 @@ export default function builtinsShortBoxSetText() {
       const box = new ShortBox();
       try {
         const underflowValue: number = -32769;
-        const shortValue: short = underflowValue as short;
+        const shortValue: short = underflowValue.toShort();
         const setResult: short = box.set(shortValue);
         expect(setResult).assertEqual(32767);
       } catch (error) {
@@ -98,7 +98,7 @@ export default function builtinsShortBoxSetText() {
       const box = new ShortBox();
       try {
         const overflowValue: number = 32768;
-        const shortValue: short = overflowValue as short;
+        const shortValue: short = overflowValue.toShort();
         const setResult: short = box.set(shortValue);
         expect(setResult).assertEqual(-32768);
       } catch (error) {

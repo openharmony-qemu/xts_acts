@@ -197,7 +197,7 @@ export default function typeArrayFloat32ArrayTest() {
      */
     it('TypeArrayFloat32ArrayBufferDv0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float32Array([3.0, 1.0, 4.0, 2.0]);
-      arr.sort((a: double, b: double) => (a - b) as int);
+      arr.sort((a: double, b: double) => (a - b).toInt());
       expect(arr.toString()).assertEqual('1,2,3,4');
       expect(arr.length).assertEqual(4)
     })
@@ -722,7 +722,7 @@ export default function typeArrayFloat32ArrayTest() {
       arr.sort();
       expect(arr.toString()).assertEqual('1,2,3,10');
 
-      arr.sort((a: double, b: double) => (a - b) as int);
+      arr.sort((a: double, b: double) => (a - b).toInt());
       expect(arr.toString()).assertEqual('1,2,3,10');
     })
 
@@ -1644,7 +1644,7 @@ export default function typeArrayFloat32ArrayTest() {
         const arr = new Float32Array([3.0, 1.0, 4.0, 2.0]);
 
         arr.sort((a: double, b: double) => {
-          return (a - b) as int;
+          return (a - b).toInt();
         });
         expect(arr.toString()).assertEqual('1,2,3,4');
         expect(arr.length).assertEqual(4);
@@ -2404,7 +2404,7 @@ export default function typeArrayFloat32ArrayTest() {
         const arr = new Float32Array([3.0, 1.0, 4.0, 2.0]);
 
         arr.sort((a: double, b: double) => {
-          return (a - b) as int;
+          return (a - b).toInt();
         });
         expect(arr.toString()).assertEqual('1,2,3,4');
         expect(arr.length).assertEqual(4)
@@ -2508,7 +2508,7 @@ export default function typeArrayFloat32ArrayTest() {
           if (isNaN(b)) {
             return -1;
           }
-          return (a - b) as int;
+          return (a - b).toInt();
         });
         expect(arr[0]).assertEqual(1.0);
         expect(arr[1]).assertEqual(2.0);
@@ -2703,7 +2703,7 @@ export default function typeArrayFloat32ArrayTest() {
      */
     it('TypeArrayFloat32ArrayBufferDv0175', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([3.0, 1.0, 4.0, 2.0, 5.0]);
-      arr.sort((a: double, b: double) => (a - b) as int);
+      arr.sort((a: double, b: double) => (a - b).toInt());
       expect(arr.toString()).assertEqual('1,2,3,4,5');
       expect(arr.length).assertEqual(5);
     })

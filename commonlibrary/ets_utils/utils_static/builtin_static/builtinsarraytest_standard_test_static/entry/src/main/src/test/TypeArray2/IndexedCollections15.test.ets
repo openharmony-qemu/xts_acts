@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -1123,7 +1123,7 @@ export default function IndexedCollections15Test() {
         console.log(TAG + ' start');
 
         const arr19: number[] = [10, 2, 30];
-        const result19 = arr19.sort((a: double, b: double) => (a - b) as int);
+        const result19 = arr19.sort((a: double, b: double) => (a - b).toInt());
         expect(result19.join(',') === '2,10,30').assertTrue();
 
         console.log(TAG + ' done');
@@ -1145,7 +1145,7 @@ export default function IndexedCollections15Test() {
         console.log(TAG + ' start');
 
         const arr20: number[] = [10, 2, 30];
-        const result20 = arr20.sort((a: double, b: double) => (b - a) as int);
+        const result20 = arr20.sort((a: double, b: double) => (b - a).toInt());
         expect(result20.join(',') === '30,10,2').assertTrue();
 
         console.log(TAG + ' done');
@@ -1171,7 +1171,7 @@ export default function IndexedCollections15Test() {
           { name: 'a', age: 20 },
           { name: 'c', age: 30 }
         ];
-        const result21 = arr21.sort((a: testobj6, b: testobj6) => (a.age - b.age) as int);
+        const result21 = arr21.sort((a: testobj6, b: testobj6) => (a.age - b.age).toInt());
         expect(result21.map(o => o.age).join(',') === '20,25,30').assertTrue();
 
         console.log(TAG + ' done');
@@ -1197,7 +1197,7 @@ export default function IndexedCollections15Test() {
           { name: 'a', age: 20 },
           { name: 'c', age: 30 }
         ];
-        const result22 = arr22.sort((a: testobj7, b: testobj7) => (b.age - a.age) as int);
+        const result22 = arr22.sort((a: testobj7, b: testobj7) => (b.age - a.age).toInt());
         expect(result22.map(o => o.age).join(',') === '30,25,20').assertTrue();
 
         console.log(TAG + ' done');
@@ -1275,7 +1275,7 @@ export default function IndexedCollections15Test() {
           if (b === null) {
             return -1;
           }
-          return (a - b) as int;
+          return (a - b).toInt();
         });
 
         expect(result25.join(',') === '1,2,3,').assertTrue();
@@ -1306,7 +1306,7 @@ export default function IndexedCollections15Test() {
           if (b === undefined) {
             return -1;
           }
-          return (a - b) as int;
+          return (a - b).toInt();
         });
 
         expect(result26.join(',') === '1,2,3,').assertTrue();
@@ -1383,7 +1383,7 @@ export default function IndexedCollections15Test() {
           if (b === undefined) {
             return -1;
           }
-          return (a - b) as int;
+          return (a - b).toInt();
         });
 
         expect(result29.join(',') === '1,2,3,').assertTrue();
@@ -1407,7 +1407,7 @@ export default function IndexedCollections15Test() {
         console.log(TAG + ' start');
 
         const arr30: number[] = [2, 1, 2, 1];
-        const result30 = arr30.sort((a: double, b: double) => (a - b) as int);
+        const result30 = arr30.sort((a: double, b: double) => (a - b).toInt());
         expect(result30.join(',') === '1,1,2,2').assertTrue();
 
         console.log(TAG + ' done');

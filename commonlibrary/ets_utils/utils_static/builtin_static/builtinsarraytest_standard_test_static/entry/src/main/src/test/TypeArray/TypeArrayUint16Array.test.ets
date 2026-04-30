@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -1001,7 +1001,7 @@ export default function typeArrayUint16ArrayTest() {
      */
     it('TypeArrayUint16Array0055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([30000, 10000, 50000, 20000]);
-      const sorted = Array.from(arr).sort((a: double, b: double) => (a - b) as int);
+      const sorted = Array.from(arr).sort((a: double, b: double) => (a - b).toInt());
       expect(sorted.toString()).assertEqual('10000,20000,30000,50000');
       expect(sorted.length).assertEqual(4)
     })

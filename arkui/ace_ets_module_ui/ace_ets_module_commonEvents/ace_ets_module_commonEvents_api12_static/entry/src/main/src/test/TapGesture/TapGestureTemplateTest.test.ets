@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -93,10 +93,10 @@ it('TapGestureTemplateTest_static_0010', Level.LEVEL0, async (done: () => void):
       let timeSpace:  Int = 3000
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.click(Math.round(areaObj.left + areaWidth/2) as Int,Math.round(areaObj.top + areaHeight/2) as Int);
+      await driver.click(Math.round(areaObj.left + areaWidth/2).toInt(),Math.round(areaObj.top + areaHeight/2).toInt());
       await CommonFunc.sleep(timeSpace);
       let timeBefore:number = Date.now();
-      await driver.click(Math.round(areaObj.left + areaWidth/2) as Int,Math.round(areaObj.top + areaHeight/2) as Int);
+      await driver.click(Math.round(areaObj.left + areaWidth/2).toInt(),Math.round(areaObj.top + areaHeight/2).toInt());
       let timeAfter:number = Date.now();
       await CommonFunc.sleep(3000);
       let text1 = inspector.getInspectorByKey('TapGestureTemplate_Text01');
@@ -110,7 +110,7 @@ it('TapGestureTemplateTest_static_0010', Level.LEVEL0, async (done: () => void):
       console.log('TapGestureTemplateTest_0010 obj2 time time2-time1',time2 - time1);
       console.log('TapGestureTemplateTest_0010 obj2 time timeBefore timeAfter',timeAfter, timeBefore);
       console.log('TapGestureTemplateTest_0010 obj2 time timeSpace',timeSpace);
-      let flag: number = time2 - time1 - (timeSpace as Number) * 1000000 - (timeAfter - timeBefore)*1000000
+      let flag: number = time2 - time1 - (timeSpace.toDouble()) * 1000000 - (timeAfter - timeBefore)*1000000
       console.log('TapGestureTemplateTest_0010 flag',flag)
       console.log('TapGestureTemplateTest_0010 timeAfter - timeBefore:',timeAfter - timeBefore)
       expect( flag <= (16 * 1000000)).assertTrue();

@@ -21,7 +21,7 @@ export default function atomicsOrTest() {
       const sab = new ArrayBuffer(4);
       const ia = new Int32Array(sab);
       ia[0] = 0b1010; // 10
-      const oldValue = Atomics.or(ia, 0, 0b0110 as long); // 6
+      const oldValue = Atomics.or(ia, 0, 0b0110.toLong()); // 6
       expect(oldValue).assertEqual(10);
       expect(ia[0]).assertEqual(0b1110); // 14
     });
@@ -72,7 +72,7 @@ export default function atomicsOrTest() {
       const sab = new ArrayBuffer(4);
       const ia = new Int32Array(sab);
       ia[0] = 100;
-      const oldValue = Atomics.or(ia, 0, 0xFFFFFFFF as long);
+      const oldValue = Atomics.or(ia, 0, 0xFFFFFFFF.toLong());
       expect(oldValue).assertEqual(100);
       expect(ia[0]).assertEqual(-1);
     });
@@ -90,7 +90,7 @@ export default function atomicsOrTest() {
       const ia = new Int32Array(sab);
       ia[0] = 1;
       ia[1] = 0b100; // 4
-      const oldValue = Atomics.or(ia, 1, 0b011 as long); // 3
+      const oldValue = Atomics.or(ia, 1, 0b011.toLong()); // 3
       expect(oldValue).assertEqual(4);
       expect(ia[1]).assertEqual(0b111); // 7
       expect(ia[0]).assertEqual(1); // Unchanged
@@ -297,7 +297,7 @@ export default function atomicsOrTest() {
       const sab = new ArrayBuffer(4);
       const ia = new Int32Array(sab);
       ia[0] = 0b100; // 4
-      const oldValue = Atomics.or(ia, 0, 3.9 as long); // Coerced to 3
+      const oldValue = Atomics.or(ia, 0, 3.9.toLong()); // Coerced to 3
       expect(oldValue).assertEqual(4);
       expect(ia[0]).assertEqual(0b111); // 7
     });
@@ -365,7 +365,7 @@ export default function atomicsOrTest() {
       const sab = new ArrayBuffer(4);
       const ia = new Int32Array(sab);
       ia[0] = 12; // 0b1100
-      const orWrapper = (arr: Int32Array, idx: int, val: number) => Atomics.or(arr, idx as int, val as long);
+      const orWrapper = (arr: Int32Array, idx: int, val: number) => Atomics.or(arr, idx as int, val.toLong());
       const oldValue = orWrapper(ia, 0, 5); // 0b0101
       expect(oldValue).assertEqual(12);
       expect(ia[0]).assertEqual(13); // 0b1101
@@ -385,7 +385,7 @@ export default function atomicsOrTest() {
       ia[0] = 7; // 0b0111
 
       const outerFunc = (arr: Int32Array): number => {
-        const innerOr = (idx: number, val: number) => Atomics.or(arr, idx as int, val as long);
+        const innerOr = (idx: number, val: number) => Atomics.or(arr, idx.toInt(), val.toLong());
         return innerOr(0, 8); // 0b1000
       };
 
@@ -448,7 +448,7 @@ export default function atomicsOrTest() {
       const ia = new Int32Array(sab);
       ia[0] = 0b1010; // 10
       const mask: int = 0b0010; // Single bit set
-      const oldValue = Atomics.or(ia, 0, mask as long);
+      const oldValue = Atomics.or(ia, 0, mask.toLong());
       expect(oldValue).assertEqual(10);
       expect(ia[0]).assertEqual(10); // Bit already set, no change
     });
@@ -522,7 +522,7 @@ export default function atomicsOrTest() {
       const getMask = (bit: number) => 1 << bit;
       const dynamicOr = (arr: Int32Array, idx: int, bit: number) => {
         const mask = getMask(bit);
-        return Atomics.or(arr, idx as int, mask as long);
+        return Atomics.or(arr, idx as int, mask.toLong());
       };
 
       const oldValue = dynamicOr(ia, 0, 2); // Mask = 0b0100
@@ -542,7 +542,7 @@ export default function atomicsOrTest() {
       const sab = new ArrayBuffer(4);
       const ia = new Int32Array(sab);
       try {
-        Atomics.or(ia, 0.5 as int, 5)
+        Atomics.or(ia, 0.5.toInt(), 5)
       } catch (e) {
         expect(e.message).assertContain('');
       }
@@ -658,7 +658,7 @@ export default function atomicsOrTest() {
       const outer = (arr: Int32Array): number => {
         const inner = (idx: number, shift: number) => {
           const mask = 1 << shift;
-          return Atomics.or(arr, idx as int, mask as long);
+          return Atomics.or(arr, idx.toInt(), mask.toLong());
         };
         return inner(0, 3); // Mask = 0b1000
       };
@@ -681,7 +681,7 @@ export default function atomicsOrTest() {
       const ia = new Int32Array(sab);
       ia[0] = 10; // 0b1010
       const getMask = () => 0b0101; // 5
-      const oldValue = Atomics.or(ia, 0, getMask() as long);
+      const oldValue = Atomics.or(ia, 0, getMask().toLong());
       expect(oldValue).assertEqual(10);
       expect(ia[0]).assertEqual(15); // 0b1111
     });
@@ -789,7 +789,7 @@ export default function atomicsOrTest() {
       const outerMask: int = 0b1010; // 10
 
       const outer = (arr: Int32Array): number => {
-        const inner = (idx: number) => Atomics.or(arr, idx as int, outerMask as long);
+        const inner = (idx: number) => Atomics.or(arr, idx.toInt(), outerMask.toLong());
         return inner(0);
       };
 
@@ -812,7 +812,7 @@ export default function atomicsOrTest() {
       ia[0] = 0;
 
       const chainOr = (arr: Int32Array, idx: int, ...masks: number[]) => {
-        return masks.map(mask => Atomics.or(arr, idx as int, mask as long));
+        return masks.map(mask => Atomics.or(arr, idx as int, mask.toLong()));
       };
 
       const oldValues = chainOr(ia, 0, 1, 2, 4, 8);
@@ -860,7 +860,7 @@ export default function atomicsOrTest() {
       const sab = new ArrayBuffer(4);
       const ia = new Int32Array(sab);
       ia[0] = 5;
-      const oldValue = Atomics.or(ia, 0, NaN as long); // Coerced to 0
+      const oldValue = Atomics.or(ia, 0, NaN.toLong()); // Coerced to 0
       expect(oldValue).assertEqual(5);
       expect(ia[0]).assertEqual(5); // No change (OR with 0)
     });
@@ -897,7 +897,7 @@ export default function atomicsOrTest() {
 
       const conditionalOr = (arr: Int32Array, idx: int, useMaskA: boolean) => {
         const getMask = () => useMaskA ? 0b0100 : 0b1000;
-        return Atomics.or(arr, idx as int, getMask() as long);
+        return Atomics.or(arr, idx as int, getMask().toLong());
       };
 
       const oldValue = conditionalOr(ia, 0, true); // Use mask 0b0100
@@ -954,7 +954,7 @@ export default function atomicsOrTest() {
       const asyncOr = (arr: Int32Array, idx: int, val: number): Promise<number> => {
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const oldValue = Atomics.or(arr, idx as int, val as long);
+            const oldValue = Atomics.or(arr, idx as int, val.toLong());
             resolve(oldValue);
           }, 10);
         });
@@ -983,7 +983,7 @@ export default function atomicsOrTest() {
       const createOrPromise = (arr: Int32Array, idx: int, val: number) => {
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const old = Atomics.or(arr, idx as int, val as long);
+            const old = Atomics.or(arr, idx as int, val.toLong());
             resolve(old);
           }, 5);
         });
@@ -1017,7 +1017,7 @@ export default function atomicsOrTest() {
         return async () => {
           return new Promise<number>((resolve) => {
             setTimeout(() => {
-              const old = Atomics.or(arr, idx as int, mask as long);
+              const old = Atomics.or(arr, idx as int, mask.toLong());
               resolve(old);
             }, 10);
           });
@@ -1051,7 +1051,7 @@ export default function atomicsOrTest() {
 
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const old = Atomics.or(arr, idx as int, validMask as long);
+            const old = Atomics.or(arr, idx as int, validMask.toLong());
             resolve(old);
           }, 5);
         });
@@ -1157,7 +1157,7 @@ export default function atomicsOrTest() {
         const mask = await mockMaskApi();
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const old = Atomics.or(arr, idx as int, mask as long);
+            const old = Atomics.or(arr, idx as int, mask.toLong());
             resolve(old);
           }, 5);
         });
@@ -1270,7 +1270,7 @@ export default function atomicsOrTest() {
       const performOr = (arr: Int32Array, idx: int, mask: number): Promise<number> => {
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const old = Atomics.or(arr, idx as int, mask as long);
+            const old = Atomics.or(arr, idx as int, mask.toLong());
             resolve(old);
           }, 8);
         });
@@ -1319,7 +1319,7 @@ export default function atomicsOrTest() {
         return async (mask: number) => {
           return new Promise<number>((resolve) => {
             setTimeout(() => {
-              const old = Atomics.or(arr, targetIndex as int, mask as long);
+              const old = Atomics.or(arr, targetIndex as int, mask.toLong());
               resolve(old);
             }, 10);
           });
@@ -1379,7 +1379,7 @@ export default function atomicsOrTest() {
       const safeOr = async (arr: Int32Array, idx: int, mask: number): Promise<number | null> => {
         try {
           return await new Promise<number>((resolve) => {
-            const old = Atomics.or(arr, idx as int, mask as long);
+            const old = Atomics.or(arr, idx as int, mask.toLong());
             resolve(old);
           });
         } catch (err) {
@@ -1416,7 +1416,7 @@ export default function atomicsOrTest() {
           indexes.map((idx, i: int) => {
             return new Promise<long>((resolve) => {
               setTimeout(() => {
-                const old = Atomics.or(arr, idx as int, masks[i] as long);
+                const old = Atomics.or(arr, idx as int, masks[i].toLong());
                 resolve(old);
               }, 5);
             });
@@ -1452,7 +1452,7 @@ export default function atomicsOrTest() {
           const validMask = mask > maxMask ? maxMask : mask;
           return new Promise<number>((resolve) => {
             setTimeout(() => {
-              const old = Atomics.or(arr, idx as int, validMask as long);
+              const old = Atomics.or(arr, idx as int, validMask.toLong());
               resolve(old);
             }, 8);
           });
@@ -1581,7 +1581,7 @@ export default function atomicsOrTest() {
           maskLog.push(mask); // Log mask before use
           return new Promise<number>((resolve) => {
             setTimeout(() => {
-              const old = Atomics.or(arr, idx as int, mask as long);
+              const old = Atomics.or(arr, idx as int, mask.toLong());
               resolve(old);
             }, 7);
           });
@@ -1629,7 +1629,7 @@ export default function atomicsOrTest() {
         const mask = await getConditionalMask(currentValue);
         const innerOr = () => new Promise<number>((resolve) => {
           setTimeout(() => {
-            const old = Atomics.or(arr, idx as int, mask as long);
+            const old = Atomics.or(arr, idx as int, mask.toLong());
             resolve(old);
           }, 5);
         });
@@ -1732,14 +1732,14 @@ export default function atomicsOrTest() {
 
       const orTaskA = new Promise<number>((resolve) => {
         setTimeout(() => {
-          const old = Atomics.or(ia, 0, 0b0011 as long); // 3
+          const old = Atomics.or(ia, 0, 0b0011.toLong()); // 3
           resolve(old);
         }, 10);
       });
 
       const orTaskB = new Promise<number>((resolve) => {
         setTimeout(() => {
-          const old = Atomics.or(ia, 0, 0b1100 as long); // 12
+          const old = Atomics.or(ia, 0, 0b1100.toLong()); // 12
           resolve(old);
         }, 10);
       });
@@ -1769,7 +1769,7 @@ export default function atomicsOrTest() {
       const safeOr = async (arr: Int32Array, idx: int, mask: number): Promise<number | null> => {
         try {
           return await new Promise<number>((resolve) => {
-            const old = Atomics.or(arr, idx as int, mask as long);
+            const old = Atomics.or(arr, idx as int, mask.toLong());
             resolve(old);
           });
         } catch (err) {
@@ -1819,7 +1819,7 @@ export default function atomicsOrTest() {
           indexes.map((idx, i: int): Promise<long> => {
             const innerOr = () => new Promise<long>((resolve) => {
               setTimeout(() => {
-                const old = Atomics.or(arr, idx as int, masks[i] as long);
+                const old = Atomics.or(arr, idx as int, masks[i].toLong());
                 resolve(old);
               }, 5);
             });
@@ -1888,7 +1888,7 @@ export default function atomicsOrTest() {
 
       const orTask = new Promise<number>((resolve) => {
         setTimeout(() => {
-          const old = Atomics.or(ia, 0, 0b1100 as long); // 12
+          const old = Atomics.or(ia, 0, 0b1100.toLong()); // 12
           resolve(old);
         }, 10);
       });
@@ -1929,7 +1929,7 @@ export default function atomicsOrTest() {
           usedMasks.add(mask);
           return new Promise<number>((resolve) => {
             setTimeout(() => {
-              const old = Atomics.or(arr, idx as int, mask as long);
+              const old = Atomics.or(arr, idx as int, mask.toLong());
               resolve(old);
             }, 7);
           });
@@ -2041,7 +2041,7 @@ export default function atomicsOrTest() {
             throw new Error('Mask must be number');
           }
           return await new Promise<number>((resolve) => {
-            const old = Atomics.or(arr, idx as int, mask as long);
+            const old = Atomics.or(arr, idx as int, mask.toLong());
             resolve(old);
           });
         } catch (err) {
@@ -2077,7 +2077,7 @@ export default function atomicsOrTest() {
           cumulativeMask |= mask; // Track cumulative mask
           return new Promise<number>((resolve) => {
             setTimeout(() => {
-              const old = Atomics.or(arr, idx as int, mask as long);
+              const old = Atomics.or(arr, idx as int, mask.toLong());
               resolve(old);
             }, 7);
           });
@@ -2256,7 +2256,7 @@ export default function atomicsOrTest() {
           usedMasks.add(mask);
           return new Promise<number>((resolve) => {
             setTimeout(() => {
-              const old = Atomics.or(arr, idx as int, mask as long);
+              const old = Atomics.or(arr, idx as int, mask.toLong());
               resolve(old);
             }, 7);
           });
@@ -2302,7 +2302,7 @@ export default function atomicsOrTest() {
           .then(getMaskStep3);
         const innerOr = () => new Promise<number>((resolve) => {
           setTimeout(() => {
-            const old = Atomics.or(arr, idx as int, mask as long);
+            const old = Atomics.or(arr, idx as int, mask.toLong());
             resolve(old);
           }, 6);
         });
@@ -2375,7 +2375,7 @@ export default function atomicsOrTest() {
         const mask = await getDerivedMask(arr, idx);
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const old = Atomics.or(arr, idx as int, mask as long);
+            const old = Atomics.or(arr, idx as int, mask.toLong());
             resolve(old);
           }, 5);
         });

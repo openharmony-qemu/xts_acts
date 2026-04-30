@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -129,7 +129,7 @@ struct noBarrierComponents {
   private selectedDate: Date = new Date('2021-08-08');
   private fromStart: boolean = true;
   private step: number = 50;
-  private loop: Int = Infinity as Int;
+  private loop: Int = Infinity.toInt();
   private src: String = "Running Marquee starts rolling";
   private patternLockController: PatternLockController = new PatternLockController();
   private value1: String = 'hello world';

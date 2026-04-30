@@ -767,7 +767,7 @@ export default function BuiltinArrayFilterTest() {
       const TAG = "testBuiltinArrayFill14070";
       try {
         const arr: FixedArray<short> = [1 as short, 2 as short, 3 as short];
-        fill(arr, 9 as short, 1.5 as int, 2.9 as int);
+        fill(arr, 9 as short, 1.5.toInt(), 2.9.toInt());
         expect(arr[0]).assertEqual(1);
         expect(arr[1]).assertEqual(9);
         expect(arr[2]).assertEqual(3);

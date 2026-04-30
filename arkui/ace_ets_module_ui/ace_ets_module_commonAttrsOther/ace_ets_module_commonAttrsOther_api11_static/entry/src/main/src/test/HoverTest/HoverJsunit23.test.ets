@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -92,8 +92,8 @@ it('HoverJsunit_static_0101', Level.LEVEL0, async (done: () => void): Promise<vo
       let uiContext = AppStorage.get<UIContext>('uiContent')!;
       let driver = Driver.create()
       await driver.mouseMoveTo({
-        x: Math.round((AppStorage.get<number>("winLeft") ?? 0) + uiContext.vp2px(100)) as int,
-        y: Math.round((AppStorage.get<number>("winTop") ?? 0) + uiContext.vp2px(100)) as int
+        x: Math.round((AppStorage.get<number>("winLeft") ?? 0) + uiContext.vp2px(100)).toInt(),
+        y: Math.round((AppStorage.get<number>("winTop") ?? 0) + uiContext.vp2px(100)).toInt()
       })
       await CommonFunc.sleep(1000);
       let strJsonA = inspector.getInspectorByKey('hoverA23');
@@ -129,8 +129,8 @@ it('HoverJsunit_static_0201', Level.LEVEL0, async (done: () => void): Promise<vo
       await CommonFunc.sleep(500);
       let point = await (buttonCl?.getBoundsCenter() as Promise<Point>);
       await driver.mouseMoveTo({
-        x: Math.round(point.x + uiContext.vp2px(100)) as int,
-        y: Math.round(point.y + uiContext.vp2px(100)) as int
+        x: Math.round(point.x + uiContext.vp2px(100)).toInt(),
+        y: Math.round(point.y + uiContext.vp2px(100)).toInt()
       })
       await CommonFunc.sleep(1000);
       let strJsonA = inspector.getInspectorByKey('hoverA23');
@@ -166,8 +166,8 @@ it('HoverJsunit_static_0301', Level.LEVEL0, async (done: () => void): Promise<vo
       await CommonFunc.sleep(500);
       let point = await (buttonCl?.getBoundsCenter() as Promise<Point>);
       await driver.mouseMoveTo({
-        x: Math.round(point.x + uiContext.vp2px(100)) as int,
-        y: Math.round(point.y + uiContext.vp2px(100)) as int
+        x: Math.round(point.x + uiContext.vp2px(100)).toInt(),
+        y: Math.round(point.y + uiContext.vp2px(100)).toInt()
       })
       await CommonFunc.sleep(1000);
       let strJsonA = inspector.getInspectorByKey('hoverA23');
