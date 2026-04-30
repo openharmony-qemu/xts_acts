@@ -5029,7 +5029,7 @@ export default function settingUiJsunit() {
       }
       let code = 0;
       try {
-        settings.openDoubleClickSettingsPage(mContext?.getApplicationContext);
+        settings.openDoubleClickSettingsPage(mContext?.getApplicationContext());
       } catch (err) {
         console.error("[openDoubleClickSettingsPage_invalid_context_applicationContext] error = " + err);
         code = err?.code;
