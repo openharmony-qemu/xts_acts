@@ -242,9 +242,8 @@ export default function abilityTest() {
         hilog.info(0x0000, 'testTag', `${tcNumber} connect or disconnect failed: ${JSON.stringify(err)}`);
         expect(Number(err.code)).assertEqual(801);
         hilog.info(0x0000, 'assertEqual801','777');
+        done();
       }
-
-      done();
   })
 
 
