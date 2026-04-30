@@ -48,7 +48,7 @@ export default function AccessTokenStaticTest() {
         let bundleInfo = bundleManager.getBundleInfoForSelfSync(bundleFlags)
         let accessTokenId: long = bundleInfo.appInfo?.accessTokenId as long;
         hilog.info(domain, 'testTag', 'accessTokenId:' + accessTokenId);
-        tokenID = accessTokenId as int;
+        tokenID = accessTokenId.toInt();
       } catch (error) {
         hilog.info(domain, 'testTag', 'AccessTokenStaticTest getBundleInfoForSelf error is: ' + error.code);
       }

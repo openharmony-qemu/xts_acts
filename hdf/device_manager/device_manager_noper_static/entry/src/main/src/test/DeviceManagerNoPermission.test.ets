@@ -32,7 +32,7 @@ export default function PermissionTest(){
       try {
         let devices = deviceManager.queryDevices(deviceManager.BusType.USB);
         if (devices != null && devices.length > 0 && devices[0] != null) {
-          deviceId = devices[0].deviceId;
+          deviceId = devices[0].deviceId.toDouble();
           hilog.info(TAG, 'testTag', 'deviceId: ' + devices[0].deviceId);
           hilog.info(TAG, 'testTag', 'busType: ' + devices[0].busType);
           hilog.info(TAG, 'testTag', 'description: ' + devices[0].description);
