@@ -23,6 +23,7 @@ import certManagerDialog from '@ohos.security.certManagerDialog';
 import { priRsaCredData } from './utils/common/common_parameter';
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
+import { canIUse } from '@internal.full.global';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
@@ -272,7 +273,9 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
         expect(null).assertFail();
       } catch (err) {
         hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_OpenInstallCertificateDialog_static_0011: e.code " + err.code);
-        if (deviceInfo.deviceType === '2in1') {
+        if (!canIUse('SystemCapability.Security.CertificateDialog')) {
+          expect((err as BusinessError).code).assertEqual(801);
+        } else if (deviceInfo.deviceType === '2in1') {
           expect((err as BusinessError).code).assertEqual(29700005);
         } else {
           expect((err as BusinessError).code).assertEqual(29700004);

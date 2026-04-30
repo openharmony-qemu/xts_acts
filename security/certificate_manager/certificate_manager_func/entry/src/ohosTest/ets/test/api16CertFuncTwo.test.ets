@@ -1058,24 +1058,34 @@ export default function api16CertFuncTestTwoUnit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Security_CertManager_openAuthorzeDialog_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      console.log("SUB_Security_CertManager_openAuthorzeDialog_0101: started ");
-      try {
-        await certManagerDialog.openAuthorizeDialog(null);
-        expect(null).assertFail();
-      } catch (err) {
-        console.error(`SUB_Security_CertManager_openAuthorzeDialog_0101 Failed to authorize certificate. Code: ${err.code}, message: ${err.message}`)
-        expect(err.code).assertEqual(401);
-      }
-      try {
-        await certManagerDialog.openAuthorizeDialog(undefined);
-        expect(null).assertFail();
-      } catch (err) {
-        console.error(`SUB_Security_CertManager_openAuthorzeDialog_0101 Failed to authorize certificate. Code: ${err.code}, message: ${err.message}`)
-        expect(err.code).assertEqual(401);
-      }
-      done();
-    });
+	it('SUB_Security_CertManager_openAuthorzeDialog_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+	  console.log("SUB_Security_CertManager_openAuthorzeDialog_0101: started ");
+	  if (canIUse(SystemCapability.Security.CertificateDialog)) {
+	  }
+	  try {
+		await certManagerDialog.openAuthorizeDialog(null);
+		expect(null).assertFail();
+	  } catch (err) {
+		if (!canIUse(SystemCapability.Security.CertificateDialog)) {
+		  expect(err.code).assertEqual(801);
+		} else {
+		  console.error(`SUB_Security_CertManager_openAuthorzeDialog_0101 Failed to authorize certificate. Code: ${err.code}, message: ${err.message}`);
+		  expect(err.code).assertEqual(401);
+		}
+	  }
+	  try {
+		await certManagerDialog.openAuthorizeDialog(undefined);
+		expect(null).assertFail();
+	  } catch (err) {
+		if (!canIUse(SystemCapability.Security.CertificateDialog)) {
+		  expect(err.code).assertEqual(801);
+		} else {
+		  console.error(`SUB_Security_CertManager_openAuthorzeDialog_0101 Failed to authorize certificate. Code: ${err.code}, message: ${err.message}`);
+		  expect(err.code).assertEqual(401);
+		}
+	  }
+	  done();
+	});
     
         /**
      * @tc.number SUB_Security_CertManager_Ukey_0600
@@ -1198,7 +1208,7 @@ export default function api16CertFuncTestTwoUnit() {
      * @tc.level Level3
      * @tc.type Function
      */
-    it('SUB_Security_CertManager_Ukey_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+it('SUB_Security_CertManager_Ukey_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("SUB_Security_CertManager_Ukey_0200: started ");
       const context :common.Context = GlobalContext.getContext();
       let certTypes: Array<certManagerDialog.CertificateType> = [
@@ -1210,30 +1220,46 @@ export default function api16CertFuncTestTwoUnit() {
         await certManagerDialog.openAuthorizeDialog(null, authorizeRequest);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`SUB_Security_CertManager_Ukey_0200 Failed1 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
-        expect(error.code).assertEqual(401);
+        if (!canIUse('SystemCapability.Security.CertificateDialog')) {
+          expect(error.code).assertEqual(801);
+        } else {
+          console.error(`SUB_Security_CertManager_Ukey_0200 Failed1 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(401);
+        }
       }
       try {
         await certManagerDialog.openAuthorizeDialog(undefined, authorizeRequest);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`SUB_Security_CertManager_Ukey_0200 Failed1 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
-        expect(error.code).assertEqual(401);
+        if (!canIUse('SystemCapability.Security.CertificateDialog')) {
+          expect(error.code).assertEqual(801);
+        } else {
+          console.error(`SUB_Security_CertManager_Ukey_0200 Failed1 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(401);
+        }
       }
 
       try {
         await certManagerDialog.openAuthorizeDialog(context, null);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`SUB_Security_CertManager_Ukey_0200 Failed2 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
-        expect(error.code).assertEqual(401);
+        if (!canIUse('SystemCapability.Security.CertificateDialog')) {
+          expect(error.code).assertEqual(801);
+        } else {
+          console.error(`SUB_Security_CertManager_Ukey_0200 Failed2 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(401);
+        }
       }
       try {
         await certManagerDialog.openAuthorizeDialog(context, undefined);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`SUB_Security_CertManager_Ukey_0200 Failed2 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
-        expect(error.code).assertEqual(29700006);
+        if (!canIUse('SystemCapability.Security.CertificateDialog')) {
+          expect(error.code).assertEqual(801);
+        } else {
+          console.error(`SUB_Security_CertManager_Ukey_0200 Failed2 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(29700006);
+        }
       }
       let certTypesNull: Array<certManagerDialog.CertificateType> = [];
       let authorizeRequestNull: certManagerDialog.AuthorizeRequest = { certTypes: certTypesNull, certPurpose: certPurpose };
@@ -1241,8 +1267,12 @@ export default function api16CertFuncTestTwoUnit() {
         await certManagerDialog.openAuthorizeDialog(context, authorizeRequestNull);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`SUB_Security_CertManager_Ukey_0200 Failed3 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
-        expect(error.code).assertEqual(29700006);
+        if (!canIUse('SystemCapability.Security.CertificateDialog')) {
+          expect(error.code).assertEqual(801);
+        } else {
+          console.error(`SUB_Security_CertManager_Ukey_0200 Failed3 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(29700006);
+        }
       }
       let certTypes1: Array<certManagerDialog.CertificateType> = [999];
       let authorizeRequest1: certManagerDialog.AuthorizeRequest = { certTypes: certTypes1, certPurpose: certPurpose };
@@ -1251,8 +1281,12 @@ export default function api16CertFuncTestTwoUnit() {
         await certManagerDialog.openAuthorizeDialog(context, authorizeRequest1);
         expect(null).assertFail();
       } catch (error) {
-        console.error(`SUB_Security_CertManager_Ukey_0200 Failed3 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
-        expect(error.code).assertEqual(29700006);
+        if (!canIUse('SystemCapability.Security.CertificateDialog')) {
+          expect(error.code).assertEqual(801);
+        } else {
+          console.error(`SUB_Security_CertManager_Ukey_0200 Failed3 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(29700006);
+        }
       }
       done();
     });
@@ -1636,7 +1670,7 @@ export default function api16CertFuncTestTwoUnit() {
      * @tc.level Level3
      * @tc.type Function
      */
-    it('SUB_Security_CertManager_Ukey_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+it('SUB_Security_CertManager_Ukey_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("SUB_Security_CertManager_Ukey_1300: started ");
       if (canIUse('SystemCapability.Security.Huks.CryptoExtension')){
         const context :common.Context = GlobalContext.getContext();
@@ -1650,8 +1684,12 @@ export default function api16CertFuncTestTwoUnit() {
           await certManagerDialog.openAuthorizeDialog(context, authorizeRequest);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`SUB_Security_CertManager_Ukey_1300 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(29700007);
+          if (!canIUse('SystemCapability.Security.CertificateDialog')) {
+            expect(error.code).assertEqual(801);
+          } else {
+            console.error(`SUB_Security_CertManager_Ukey_1300 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+            expect(error.code).assertEqual(29700007);
+          }
         }
 
       } else {
