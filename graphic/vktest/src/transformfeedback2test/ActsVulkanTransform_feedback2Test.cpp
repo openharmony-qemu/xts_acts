@@ -30,13 +30,13 @@ using namespace std;
 using namespace testing::ext;
 
 // Preset action of the test suite, which is executed before the first test case
-void ActsVulkanTransformfeedback2Test::SetUpTestCase(void){}
+void ActsVulkanTransformfeedback2Test::SetUpTestCase(void) {}
 // Test suite cleanup action, which is executed after the last test case
-void ActsVulkanTransformfeedback2Test::TearDownTestCase(void){}
+void ActsVulkanTransformfeedback2Test::TearDownTestCase(void) {}
 // Preset action of the test case
-void ActsVulkanTransformfeedback2Test::SetUp(){}
+void ActsVulkanTransformfeedback2Test::SetUp() {}
 // Cleanup action of the test case
-void ActsVulkanTransformfeedback2Test::TearDown(){}
+void ActsVulkanTransformfeedback2Test::TearDown() {}
 
 /**
      * @tc.name   TestVulkanTransform_feedbackTestCase002
