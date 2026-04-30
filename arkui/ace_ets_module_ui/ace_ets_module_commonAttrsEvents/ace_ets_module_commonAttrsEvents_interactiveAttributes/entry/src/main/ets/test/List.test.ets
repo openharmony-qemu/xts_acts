@@ -35,6 +35,9 @@ import commonMethodResponseRegionListNullAndUndefinedTest
     from './CommonMethod/commonMethodResponseRegionListNullAndUndefinedTest.test';
 import commonMethodResponseRegionNullAndUndefinedTest
     from './CommonMethod/commonMethodResponseRegionNullAndUndefinedTest.test';
+import backgroundColorCreateHDRColorTest from './ColorMetrics/backgroundColorCreateHDRColorTest.test';
+import createHDRColorWithLogExposureTest from './ColorMetrics/createHDRColorWithLogExposure.test';
+import createHDRColorWithLinearExposureTest from './ColorMetrics/createHDRColorWithLinearExposure.test';
 
 export default function testsuite() {
     enableJsunit();
@@ -54,4 +57,7 @@ export default function testsuite() {
     commonMethodMouseResponseRegionNullAndUndefinedTest();
     commonMethodResponseRegionListNullAndUndefinedTest();
     commonMethodResponseRegionNullAndUndefinedTest();
+    backgroundColorCreateHDRColorTest();
+    createHDRColorWithLogExposureTest();
+    createHDRColorWithLinearExposureTest();
 }
