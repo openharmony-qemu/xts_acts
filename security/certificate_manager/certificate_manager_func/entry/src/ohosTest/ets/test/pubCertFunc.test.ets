@@ -1017,7 +1017,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-it('SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: started ");
       const context :common.Context = GlobalContext.getContext();
       let certificateType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CA_CERT;
@@ -1028,11 +1028,13 @@ it('SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020', T
       } catch (err) {
         if (!canIUse('SystemCapability.Security.CertificateDialog')) {
           expect(err.code).assertEqual(801);
-        } else if (err.code == 29700004) {
-          expect(err.code).assertEqual(29700004);
         } else {
-          console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: e.code " + err.code);
-          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+          if (err.code == 29700004) {
+            expect(err.code).assertEqual(29700004);
+          } else {
+            console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: e.code " + err.code);
+            expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+          }
         }
       }
       try {
@@ -1041,11 +1043,13 @@ it('SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020', T
       } catch (err) {
         if (!canIUse('SystemCapability.Security.CertificateDialog')) {
           expect(err.code).assertEqual(801);
-        } else if (err.code == 29700004) {
-          expect(err.code).assertEqual(29700004);
         } else {
-          console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: e.code " + err.code);
-          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+          if (err.code == 29700004) {
+            expect(err.code).assertEqual(29700004);
+          } else {
+            console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: e.code " + err.code);
+            expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+          }
         }
       }
       try {
@@ -1054,11 +1058,13 @@ it('SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020', T
       } catch (err) {
         if (!canIUse('SystemCapability.Security.CertificateDialog')) {
           expect(err.code).assertEqual(801);
-        } else if (err.code == 29700004) {
-          expect(err.code).assertEqual(29700004);
         } else {
-          console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: e.code " + err.code);
-          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+          if (err.code == 29700004) {
+            expect(err.code).assertEqual(29700004);
+          } else {
+            console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: e.code " + err.code);
+            expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+          }
         }
       }
       try {
@@ -1067,11 +1073,13 @@ it('SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020', T
       } catch (err) {
         if (!canIUse('SystemCapability.Security.CertificateDialog')) {
           expect(err.code).assertEqual(801);
-        } else if (err.code == 29700004) {
-          expect(err.code).assertEqual(29700004);
         } else {
-          console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: e.code " + err.code);
-          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+          if (err.code == 29700004) {
+            expect(err.code).assertEqual(29700004);
+          } else {
+            console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: e.code " + err.code);
+            expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+          }
         }
       }
       try {
@@ -1080,11 +1088,13 @@ it('SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020', T
       } catch (err) {
         if (!canIUse('SystemCapability.Security.CertificateDialog')) {
           expect(err.code).assertEqual(801);
-        } else if (err.code == 29700004) {
-          expect(err.code).assertEqual(29700004);
         } else {
-          console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: e.code " + err.code);
-          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+          if (err.code == 29700004) {
+            expect(err.code).assertEqual(29700004);
+          } else {
+            console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: e.code " + err.code);
+            expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+          }
         }
       }
 
@@ -1094,11 +1104,13 @@ it('SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020', T
       } catch (err) {
         if (!canIUse('SystemCapability.Security.CertificateDialog')) {
           expect(err.code).assertEqual(801);
-        } else if (err.code == 29700004) {
-          expect(err.code).assertEqual(29700004);
         } else {
-          console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: e.code " + err.code);
-          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+          if (err.code == 29700004) {
+            expect(err.code).assertEqual(29700004);
+          } else {
+            console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: e.code " + err.code);
+            expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+          }
         }
       }
       try {
@@ -1107,11 +1119,13 @@ it('SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020', T
       } catch (err) {
         if (!canIUse('SystemCapability.Security.CertificateDialog')) {
           expect(err.code).assertEqual(801);
-        } else if (err.code == 29700004) {
-          expect(err.code).assertEqual(29700004);
         } else {
-          console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: e.code " + err.code);
-          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+          if (err.code == 29700004) {
+            expect(err.code).assertEqual(29700004);
+          } else {
+            console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: e.code " + err.code);
+            expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+          }
         }
       }
 
@@ -1121,11 +1135,13 @@ it('SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020', T
       } catch (err) {
         if (!canIUse('SystemCapability.Security.CertificateDialog')) {
           expect(err.code).assertEqual(801);
-        } else if (err.code == 29700004) {
-          expect(err.code).assertEqual(29700004);
         } else {
-          console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: e.code " + err.code);
-          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+          if (err.code == 29700004) {
+            expect(err.code).assertEqual(29700004);
+          } else {
+            console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: e.code " + err.code);
+            expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+          }
         }
       }
       done();
@@ -1139,7 +1155,7 @@ it('SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020', T
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-it('SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0040: started ");
       const context :common.Context = GlobalContext.getContext();
       let certificateType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CA_CERT;
@@ -1150,16 +1166,18 @@ it('SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0040', T
       } catch (err) {
         if (!canIUse('SystemCapability.Security.CertificateDialog')) {
           expect(err.code).assertEqual(801);
-        } else if (err.code == 29700004) {
-          console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0040: e.code " + err.code);
-          expect(err.code).assertEqual(29700004);
         } else {
-          console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0040: e.code " + err.code);
-          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+          if (err.code == 29700004) {
+            console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0040: e.code " + err.code);
+            expect(err.code).assertEqual(29700004);
+          } else {
+            console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0040: e.code " + err.code);
+            expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+          }
         }
       }
       done();
-    });
+});
 
     /**
      * @tc.name   SUB_Security_CertManager_OpenInstallCertificateDialog_0011
@@ -1169,7 +1187,7 @@ it('SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0040', T
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-it('SUB_Security_CertManager_OpenInstallCertificateDialog_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_Security_CertManager_OpenInstallCertificateDialog_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_OpenInstallCertificateDialog_0011: started ");
       const context :common.Context = GlobalContext.getContext();
       let certificateType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CA_CERT;
@@ -1180,11 +1198,13 @@ it('SUB_Security_CertManager_OpenInstallCertificateDialog_0011', TestType.FUNCTI
       } catch (err) {
         if (!canIUse('SystemCapability.Security.CertificateDialog')) {
           expect(err.code).assertEqual(801);
-        } else if (err.code == 29700004) {
-          expect(err.code).assertEqual(29700004);
         } else {
-          console.log("SUB_Security_CertManager_OpenInstallCertificateDialog_0011: e.code " + err.code);
-          expect(err.code).assertEqual(29700005);
+          if (err.code == 29700004) {
+            expect(err.code).assertEqual(29700004);
+          } else {
+            console.log("SUB_Security_CertManager_OpenInstallCertificateDialog_0011: e.code " + err.code);
+            expect(err.code).assertEqual(29700005);
+          }
         }
       }
       done();
