@@ -42,6 +42,7 @@ import fileIOSetxattr from './Setxattr.test';
 import fileIOFileProperties from './class_file/File.test';
 import fileIOFileGetParent from './class_file/FileGetParent.test';
 import fileIOFileLock from './class_file/FileLock.test';
+import fileIOFileMappingStatic from './class_file/filemapping_static.test';
 import fileIOOpen from './Open.test';
 import fileIOSymlink from './Symlink.test';
 import fileIOWrite from './Write.test';
@@ -110,4 +111,5 @@ export default function testsuite() {
     atomicFileTest();
     fileIODfsConnect();
     fileIOListFileExtStatic();
+    fileIOFileMappingStatic();
 }
