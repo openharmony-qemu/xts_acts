@@ -337,21 +337,21 @@ ani_boolean testBoxIntNative(ani_env *env)
     ani_object boxedMin = nullptr;
     ASSERT_EQ(env->Primitive_Box_Int(INT32_MIN, &boxedMin), ANI_OK);
     AssertIsInt(env, boxedMin);
-    ani_boolean unboxedMin = 0;
+    ani_int unboxedMin = 0;
     ASSERT_EQ(env->Primitive_Unbox_Int(boxedMin, &unboxedMin), ANI_OK);
     ASSERT_EQ(unboxedMin, INT32_MIN);
 
     ani_object boxedMax = nullptr;
     ASSERT_EQ(env->Primitive_Box_Int(INT32_MAX, &boxedMax), ANI_OK);
     AssertIsInt(env, boxedMax);
-    ani_boolean unboxedMax = 0;
+    ani_int unboxedMax = 0;
     ASSERT_EQ(env->Primitive_Unbox_Int(boxedMax, &unboxedMax), ANI_OK);
     ASSERT_EQ(unboxedMax, INT32_MAX);
 
     ani_object boxedZero = nullptr;
     ASSERT_EQ(env->Primitive_Box_Int(0, &boxedZero), ANI_OK);
     AssertIsInt(env, boxedZero);
-    ani_boolean unboxedZero = -1;
+    ani_int unboxedZero = -1;
     ASSERT_EQ(env->Primitive_Unbox_Int(boxedZero, &unboxedZero), ANI_OK);
     ASSERT_EQ(unboxedZero, 0);
 
@@ -359,7 +359,7 @@ ani_boolean testBoxIntNative(ani_env *env)
     ani_object boxedValue = nullptr;
     ASSERT_EQ(env->Primitive_Box_Int(value, &boxedValue), ANI_OK);
     AssertIsInt(env, boxedValue);
-    ani_boolean unboxedValue = 0;
+    ani_int unboxedValue = 0;
     ASSERT_EQ(env->Primitive_Unbox_Int(boxedValue, &unboxedValue), ANI_OK);
     ASSERT_EQ(unboxedValue, value);
     return ANI_TRUE;
@@ -380,7 +380,7 @@ ani_boolean testUnboxIntNative(ani_env *env)
     ani_ref scoreRef;
     ASSERT_EQ(env->Object_GetField_Ref(messageObj, scoreField, &scoreRef), ANI_OK);
 
-    ani_boolean score = 0;
+    ani_int score = 0;
     ASSERT_EQ(env->Primitive_Unbox_Int(static_cast<ani_object>(scoreRef), &score), ANI_OK);
     ani_boolean expectScore = 1234;
     ASSERT_EQ(score, expectScore);
