@@ -592,5 +592,57 @@ export default function PowerTest() {
           done();
         }
       })
+
+    /**
+     * @tc.name   testPowerTest_static_2400
+     * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0240
+     * @tc.desc   Test the third-party application call refreshActivity will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testPowerTest_static_2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testPowerTest_static_2400';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          let configVal: string = ohos_power.getPowerConfig('scene_name_test');
+          console.info('get power config success, configVal: ' + configVal);
+          expect().assertFail();
+        } catch (error) {
+          hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
+          expect(error.code).assertEqual(202);
+        } finally {
+          hilog.info(domain, tag, `${TAG} finally`);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testPowerTest_static_2500
+     * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0250
+     * @tc.desc   Test the third-party application call refreshActivity will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testPowerTest_static_2500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testPowerTest_static_2500';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          ohos_power.setPowerConfig('scene_name_test', 'value_test');
+          console.info('set power config success');
+          expect().assertFail();
+        } catch (error) {
+          hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
+          expect(error.code).assertEqual(202);
+        } finally {
+          hilog.info(domain, tag, `${TAG} finally`);
+          done();
+        }
+      })
+
+
   });
 }
