@@ -33,10 +33,23 @@ struct backgroundColorCreateHDRColorTest {
   @State greenValue: number = 2;
   @State blueValue: number = 2;
   @State alphaValue: number | undefined = 0.5;
-
   private presetColors: PresetColor[] = [
-    { colorSpace: ColorSpace.SRGB, r: 0, g: 2.0, b: 2.0, alpha: 0.5, desc: 'SRGB RGB(0, 2.0, 2.0)' },
-    { colorSpace: ColorSpace.DISPLAY_P3, r: 0, g: 10, b: 1, alpha: undefined, desc: 'DISPLAY_P3 RGB(0, 10, 1)' },
+    {
+      colorSpace: ColorSpace.SRGB,
+      r: 0,
+      g: 2.0,
+      b: 2.0,
+      alpha: 0.5,
+      desc: 'SRGB RGB(0, 2.0, 2.0)'
+    },
+    {
+      colorSpace: ColorSpace.DISPLAY_P3,
+      r: 0,
+      g: 10,
+      b: 1,
+      alpha: undefined,
+      desc: 'DISPLAY_P3 RGB(0, 10, 1)'
+    },
   ];
 
   aboutToAppear() {
@@ -44,7 +57,8 @@ struct backgroundColorCreateHDRColorTest {
   }
 
   updateColor() {
-    this.currentColor = ColorMetrics.createHDRColor(this.colorSpace, this.redValue, this.greenValue, this.blueValue, this.alphaValue);
+    this.currentColor =
+      ColorMetrics.createHDRColor(this.colorSpace, this.redValue, this.greenValue, this.blueValue, this.alphaValue);
   }
 
   getColorSpaceName(space: ColorSpace): string {

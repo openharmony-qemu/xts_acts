@@ -28,18 +28,42 @@ interface PresetColor {
 @Entry
 @Component
 struct createHDRColorWithLinearExposure {
-  @State currentColor: ColorMetrics = ColorMetrics.createHDRColorWithLinearExposure(undefined, ColorSpace.DISPLAY_P3, 0, 0, 0, undefined);
+  @State currentColor: ColorMetrics =
+    ColorMetrics.createHDRColorWithLinearExposure(undefined, ColorSpace.DISPLAY_P3, 0, 0, 0, undefined);
   @State linearExposure: number | undefined = undefined;
   @State colorSpace: ColorSpace = ColorSpace.SRGB;
   @State redValue: number = 0;
   @State greenValue: number = 0;
   @State blueValue: number = 0;
   @State alphaValue: number | undefined = undefined;
-
   private presetColors: PresetColor[] = [
-    { linearExposure: undefined, colorSpace: ColorSpace.DISPLAY_P3, r: 0, g: 0, b: 0, alpha: undefined, desc: 'undefined-DISPLAY_P3' },
-    { linearExposure: 100.22, colorSpace: ColorSpace.SRGB, r: 1.1, g: 0.3, b: -1, alpha: 0.5, desc: '100.22-SRGB' },
-    { linearExposure: -1, colorSpace: ColorSpace.DISPLAY_P3, r: 1, g: 1, b: 1, alpha: 0.8, desc: '-1-DISPLAY_P3' },
+    {
+      linearExposure: undefined,
+      colorSpace: ColorSpace.DISPLAY_P3,
+      r: 0,
+      g: 0,
+      b: 0,
+      alpha: undefined,
+      desc: 'undefined-DISPLAY_P3'
+    },
+    {
+      linearExposure: 100.22,
+      colorSpace: ColorSpace.SRGB,
+      r: 1.1,
+      g: 0.3,
+      b: -1,
+      alpha: 0.5,
+      desc: '100.22-SRGB'
+    },
+    {
+      linearExposure: -1,
+      colorSpace: ColorSpace.DISPLAY_P3,
+      r: 1,
+      g: 1,
+      b: 1,
+      alpha: 0.8,
+      desc: '-1-DISPLAY_P3'
+    },
   ];
 
   aboutToAppear() {
@@ -47,7 +71,9 @@ struct createHDRColorWithLinearExposure {
   }
 
   updateColor() {
-    this.currentColor = ColorMetrics.createHDRColorWithLinearExposure(this.linearExposure, this.colorSpace, this.redValue, this.greenValue, this.blueValue, this.alphaValue);
+    this.currentColor =
+      ColorMetrics.createHDRColorWithLinearExposure(this.linearExposure, this.colorSpace, this.redValue,
+        this.greenValue, this.blueValue, this.alphaValue);
   }
 
   getColorSpaceName(space: ColorSpace): string {
@@ -101,7 +127,8 @@ struct createHDRColorWithLinearExposure {
               Column()
                 .width('100%')
                 .height('8%')
-                .backgroundColor(ColorMetrics.createHDRColorWithLinearExposure(item.linearExposure, item.colorSpace, item.r, item.g, item.b, item.alpha))
+                .backgroundColor(ColorMetrics.createHDRColorWithLinearExposure(item.linearExposure, item.colorSpace,
+                  item.r, item.g, item.b, item.alpha))
                 .borderRadius('1%')
 
               Text(item.desc)

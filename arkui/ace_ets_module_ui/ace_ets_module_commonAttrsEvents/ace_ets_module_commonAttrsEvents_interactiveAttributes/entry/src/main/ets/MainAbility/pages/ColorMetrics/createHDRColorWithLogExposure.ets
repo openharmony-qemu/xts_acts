@@ -28,17 +28,33 @@ interface PresetColor {
 @Entry
 @Component
 struct createHDRColorWithLogExposure {
-  @State currentColor: ColorMetrics = ColorMetrics.createHDRColorWithLogExposure(undefined, ColorSpace.DISPLAY_P3, 0, 0, 0, undefined);
+  @State currentColor: ColorMetrics =
+    ColorMetrics.createHDRColorWithLogExposure(undefined, ColorSpace.DISPLAY_P3, 0, 0, 0, undefined);
   @State exposure: number | undefined = undefined;
   @State colorSpace: ColorSpace = ColorSpace.SRGB;
   @State redValue: number | undefined = 0;
   @State greenValue: number = 0;
   @State blueValue: number = 0;
   @State alphaValue: number | undefined = undefined;
-
   private presetColors: PresetColor[] = [
-    { exposure: NaN, colorSpace: ColorSpace.DISPLAY_P3, r: 0, g: 0, b: 0, alpha: 1, desc: 'NaN-DISPLAY_P3' },
-    { exposure: 0, colorSpace: ColorSpace.SRGB, r: 1.1, g: 0.3, b: -1, alpha: 1, desc: '0-SRGB' },
+    {
+      exposure: NaN,
+      colorSpace: ColorSpace.DISPLAY_P3,
+      r: 0,
+      g: 0,
+      b: 0,
+      alpha: 1,
+      desc: 'NaN-DISPLAY_P3'
+    },
+    {
+      exposure: 0,
+      colorSpace: ColorSpace.SRGB,
+      r: 1.1,
+      g: 0.3,
+      b: -1,
+      alpha: 1,
+      desc: '0-SRGB'
+    },
   ];
 
   aboutToAppear() {
@@ -46,7 +62,9 @@ struct createHDRColorWithLogExposure {
   }
 
   updateColor() {
-    this.currentColor = ColorMetrics.createHDRColorWithLogExposure(this.exposure, this.colorSpace, this.redValue, this.greenValue, this.blueValue, this.alphaValue);
+    this.currentColor =
+      ColorMetrics.createHDRColorWithLogExposure(this.exposure, this.colorSpace, this.redValue, this.greenValue,
+        this.blueValue, this.alphaValue);
   }
 
   getColorSpaceName(space: ColorSpace): string {
@@ -76,7 +94,8 @@ struct createHDRColorWithLogExposure {
             Text(`${this.getColorSpaceName(this.colorSpace)}`)
               .id('logColorSpaceText')
 
-            Text(`RGB(${this.redValue !== undefined ? this.redValue.toFixed(2) : 'undefined'}, ${this.greenValue.toFixed(2)}, ${this.blueValue.toFixed(2)})`)
+            Text(`RGB(${this.redValue !== undefined ? this.redValue.toFixed(2) :
+              'undefined'}, ${this.greenValue.toFixed(2)}, ${this.blueValue.toFixed(2)})`)
               .id('logRgbText')
 
             Text(`Alpha: ${this.alphaValue !== undefined ? this.alphaValue.toFixed(2) : 'undefined'}`)
@@ -100,7 +119,8 @@ struct createHDRColorWithLogExposure {
               Column()
                 .width('100%')
                 .height('8%')
-                .backgroundColor(ColorMetrics.createHDRColorWithLogExposure(item.exposure, item.colorSpace, item.r ?? 0, item.g, item.b, item.alpha))
+                .backgroundColor(ColorMetrics.createHDRColorWithLogExposure(item.exposure, item.colorSpace, item.r ?? 0,
+                  item.g, item.b, item.alpha))
                 .borderRadius('1%')
 
               Text(item.desc)
