@@ -223,7 +223,7 @@ export default function imageExifGetModifyByTypeTest() {
         return actual.every((val: number, index: number) => val == expected[index]);
       }
       console.info(`dsh 1 compareValues actual is ${actual} , expected is ${expected}, actual type ${typeof actual}, expected type ${typeof expected}`);
-      return actual == expected;
+      return actual === expected;
     }
 
     const compareArrayBuffer = (
