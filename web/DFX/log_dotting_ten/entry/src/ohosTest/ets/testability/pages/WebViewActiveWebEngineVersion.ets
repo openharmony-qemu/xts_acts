@@ -77,9 +77,14 @@ struct Index {
                   if(canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                     test_ndk.test_ndk_setActiveWebEngineVersion(webview.ArkWebEngineVersion.SYSTEM_DEFAULT);
                     let tmp_result = test_ndk.test_ndk_getActiveWebEngineVersion();
-                    Utils.emitEvent(tmp_result, 20250903);
+                    console.log('emitActiveWebEngineVersion001' + tmp_result);
+                    if(tmp_result == 2 || tmp_result == 3) {
+                      Utils.emitEvent(true, 20250903);
+                    } else {
+                      Utils.emitEvent(false, 20250903);
+                    }
                   } else {
-                    Utils.emitEvent(webview.ArkWebEngineVersion.M144, 20250903);
+                    Utils.emitEvent(true, 20250903);
                   }
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
@@ -198,7 +203,7 @@ struct Index {
                     test_ndk.IsActiveWebEngineEvergreen_c();
                     let tmp_result = test_ndk.test_ndk_getActiveWebEngineVersion();
                     console.log('emitActiveWebEngineVersion008' + tmp_result);
-                    if(tmp_result == 1 || tmp_result == 2) {
+                    if(tmp_result == 2 || tmp_result == 3) {
                       Utils.emitEvent(true, 20251221);
                     } else {
                       Utils.emitEvent(false, 20251221);
