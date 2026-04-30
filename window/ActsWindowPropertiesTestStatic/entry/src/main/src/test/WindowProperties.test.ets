@@ -503,7 +503,7 @@ export default function WindowPropertiesTest() {
         })
 
         /**
-        * @tc.number      SUB_WMS_setWindowColorSpace_0100
+        * @tc.number      SUB_WMS_setWindowColorSpace_static_0100
         * @tc.name        testSetWindowColorSpace_WindowStateAbnormal_Promise_static_0200
         * @tc.desc        Set the current window to wide gamut mode or default gamut mode
         * @tc.size        MediumTest
@@ -717,7 +717,7 @@ export default function WindowPropertiesTest() {
         })
 
                 /**
-        * @tc.number      SUB_WMS_setWindowKeepScreenOn_0200
+        * @tc.number      SUB_WMS_setWindowKeepScreenOn_static_0200
         * @tc.name        testSetWindowKeepScreenOn_Window_State_Abnorma_static_0201
         * @tc.desc        Set whether the screen is steady on
         * @tc.size        MediumTest
@@ -892,7 +892,7 @@ export default function WindowPropertiesTest() {
         })
 
         /**
-        * @tc.number       SUB_WINDOW_OffDisplayIdChange_0100
+        * @tc.number       SUB_WINDOW_OffDisplayIdChange_ErrCode_0100
         * @tc.name         testOffDisplayIdChangeErrCode1300002_static_0200
         * @tc.desc         testOffDisplayIdChangeErrCode1300002_static_0200
         * @tc.size         MediumTest
@@ -1562,7 +1562,7 @@ export default function WindowPropertiesTest() {
         })
 
         /**
-        * @tc.number       test_WMS_GetWindowStateSnapshotPromiseErrCode_0100
+        * @tc.number       SUB_WMS_GetWindowStateSnapshot_ErrCode_0100
         * @tc.name         testGetWindowStateSnapshotPromiseErrCode1300002_0100
         * @tc.desc         testGetWindowStateSnapshotPromiseErrCode1300002_0100
         * @tc.size         MediumTest
@@ -3387,7 +3387,7 @@ export default function WindowPropertiesTest() {
         })
 
         /**
-        * @tc.number     SUB_WMS_OnFrameMetricsMeasured_0100
+        * @tc.number     SUB_WMS_OnFrameMetricsMeasured_ERRORCODE_0100
         * @tc.name       testOnFrameMetricsMeasured_ERRORCODE_1300002_static
         * @tc.desc       验证子窗销毁后注册OnFrameMetricsMeasured返回1300002错误码验证
         * @tc.size       MediumTest
@@ -3525,7 +3525,7 @@ export default function WindowPropertiesTest() {
         })
 
         /**
-        * @tc.number       test_WMS_snapshotSync_0100
+        * @tc.number       test_WMS_snapshotSync_static_0100
         * @tc.name         testSnapShotSync_ErrCode1300002_static
         * @tc.desc         testSnapShotSync_ErrCode1300002_static
         * @tc.size         MediumTest
@@ -4076,7 +4076,7 @@ export default function WindowPropertiesTest() {
 
         /**
          * @tc.name   testStartAbilityNeedAnimation_true_static
-         * @tc.number SUB_WINDOW_NeedAnimation_0100
+         * @tc.number SUB_WINDOW_NeedAnimation_true_0100
          * @tc.desc   testStartAbilityNeedAnimation_true_static
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -4122,7 +4122,7 @@ export default function WindowPropertiesTest() {
 
         /**
          * @tc.name   testStartAbilityNeedAnimation_false_static
-         * @tc.number SUB_WINDOW_NeedAnimation_0200
+         * @tc.number SUB_WINDOW_NeedAnimation_false_0100
          * @tc.desc   testStartAbilityNeedAnimation_false_static
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
