@@ -1060,13 +1060,11 @@ export default function api16CertFuncTestTwoUnit() {
      */
 	it('SUB_Security_CertManager_openAuthorzeDialog_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
 	  console.log("SUB_Security_CertManager_openAuthorzeDialog_0101: started ");
-	  if (canIUse(SystemCapability.Security.CertificateDialog)) {
-	  }
 	  try {
 		await certManagerDialog.openAuthorizeDialog(null);
 		expect(null).assertFail();
 	  } catch (err) {
-		if (!canIUse(SystemCapability.Security.CertificateDialog)) {
+		if (!canIUse('SystemCapability.Security.CertificateDialog')) {
 		  expect(err.code).assertEqual(801);
 		} else {
 		  console.error(`SUB_Security_CertManager_openAuthorzeDialog_0101 Failed to authorize certificate. Code: ${err.code}, message: ${err.message}`);
@@ -1077,7 +1075,7 @@ export default function api16CertFuncTestTwoUnit() {
 		await certManagerDialog.openAuthorizeDialog(undefined);
 		expect(null).assertFail();
 	  } catch (err) {
-		if (!canIUse(SystemCapability.Security.CertificateDialog)) {
+		if (!canIUse('SystemCapability.Security.CertificateDialog')) {
 		  expect(err.code).assertEqual(801);
 		} else {
 		  console.error(`SUB_Security_CertManager_openAuthorzeDialog_0101 Failed to authorize certificate. Code: ${err.code}, message: ${err.message}`);
@@ -1087,7 +1085,7 @@ export default function api16CertFuncTestTwoUnit() {
 	  done();
 	});
     
-        /**
+     /**
      * @tc.number SUB_Security_CertManager_Ukey_0600
      * @tc.name SUB_Security_CertManager_Ukey_0600
      * @tc.desc abnormal test

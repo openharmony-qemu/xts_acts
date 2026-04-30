@@ -247,7 +247,7 @@ export default function api16CertNoPermissionTestUnit() {
 		await certManagerDialog.openAuthorizeDialog(context);
 		expect(null).assertFail();
 	  } catch (err) {
-		if (!canIUse(SystemCapability.Security.CertificateDialog)) {
+		if (!canIUse('SystemCapability.Security.CertificateDialog')) {
 		  expect(err.code).assertEqual(801);
 		} else {
 		  console.error(`SUB_Security_CertManager_openAuthorzeDialog_0102 Failed to authorize certificate. Code: ${err.code}, message: ${err.message}`);
