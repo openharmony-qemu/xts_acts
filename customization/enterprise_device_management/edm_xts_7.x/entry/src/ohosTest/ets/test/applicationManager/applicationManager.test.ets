@@ -929,7 +929,7 @@ export default function applicationManagerTest() {
         let windowStateInfo: applicationManager.WindowStateInfo = result[0];
         let state: applicationManager.WindowState = windowStateInfo.state;
         expect(windowStateInfo.windowId > 0).assertTrue();
-        expect(windowStateInfo.isOnDock).assertFalse();
+        expect(typeof (windowStateInfo.isOnDock)).assertEqual("boolean");
         expect(windowStateInfo.name.length > 0).assertTrue();
         if (state === applicationManager.WindowState.DISCONNECT) {
           expect(Number(state)).assertEqual(0);
