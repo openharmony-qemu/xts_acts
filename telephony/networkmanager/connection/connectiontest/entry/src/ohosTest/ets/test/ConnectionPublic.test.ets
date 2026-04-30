@@ -102,6 +102,7 @@ export default function ConnectionPublicTest() {
       await clickRequestPermission("使用");
       await sleep(2000);
       console.info('beforeAllTest start');
+      done();
     });
     beforeEach(() => {
       console.info('beforeEachTest start');
