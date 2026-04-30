@@ -18,6 +18,8 @@ import { fileIo as fs } from '@kit.CoreFileKit';
 import { image } from '@kit.ImageKit';
 import fileUri from '@ohos.file.fileuri';
 import contact from '@ohos.contact';
+import dataShare from '@ohos.data.dataShare';
+import dataSharePredicates from '@ohos.data.dataSharePredicates';
 
 export async function deleteCard() {
   let context: Context = AppStorage.get('context') as Context;
