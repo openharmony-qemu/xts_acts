@@ -253,13 +253,11 @@ export default function TipsOptionsSystemMaterial() {
       console.info('TipsOptionsSystemMaterial_0600 Button with NONE systemMaterial exists');
       let popupText = await driver.findComponent(ON.text('TipsOptions NONE Test'));
       let popupObj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-      console.info('popupObj====='+ JSON.stringify(popupObj))
-      let date = JSON.stringify(popupObj.$children[0]);
-      console.info('popupObj====='+ JSON.stringify(popupObj.$attrs))
-      
       let popup: ESObject = popupObj.$children[1];
       let date = JSON.stringify(popupObj.$children[1].$children[0]);
       expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      
+      console.info('popupObj' + JSON.stringify(JSON.parse(date)));
 
       await CommonFunc.sleep(500);
       await driver.mouseMoveTo({ x: 1, y: 1 });
