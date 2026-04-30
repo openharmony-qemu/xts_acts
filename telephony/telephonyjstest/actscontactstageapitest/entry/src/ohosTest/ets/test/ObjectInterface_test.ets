@@ -210,7 +210,7 @@ export default function ObjectInterfaceTest() {
       try {
         let data:number = await deleteCard();
         console.info(`deleteCard success: ${data}`);
-      } catch {
+      } catch (error) {
         console.info(`deleteCard error: ${JSON.stringify(error)}`);
         done();
       }
@@ -240,7 +240,7 @@ export default function ObjectInterfaceTest() {
       try {
         let data:number = await deleteCard();
         console.info(`deleteCard success: ${data}`);
-      } catch {
+      } catch (error) {
         console.info(`deleteCard error: ${JSON.stringify(error)}`);
         done();
       }
@@ -270,7 +270,7 @@ export default function ObjectInterfaceTest() {
       try {
         let data:number = await deleteCard();
         console.info(`deleteCard success: ${data}`);
-      } catch {
+      } catch (error) {
         console.info(`deleteCard error: ${JSON.stringify(error)}`);
         done();
       }
