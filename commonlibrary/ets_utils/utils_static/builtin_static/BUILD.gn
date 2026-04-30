@@ -29,6 +29,7 @@ group("builtin_static") {
       "builtin009_standard_test_static:ActsBuiltin9StaticTest",
       "builtin010_standard_test_static:ActsBuiltin10StaticTest",
       "builtin011_standard_test_static:ActsBuiltin11StaticTest",
+      "builtin012_standard_test_static:ActsBuiltin12StaticTest",
       "date_standard_test_static:ActsDateStaticTest",
       "intl_standard_test_static:ActsIntlStaticTest",
       "number_standard_test_static:ActsNumberStaticTest",

@@ -190,22 +190,6 @@ export default function ReflectMethodGetParameterTypeTest(): void {
       expect(type2 !== undefined).assertTrue();
     });
 
-    // /**
-    //  * @tc.name    ReflectMethodGetParameterTypeTest0800
-    //  * @tc.number  SUB_REFLECT_METHOD_GET_PARAMETER_TYPE_TEST_0800
-    //  * @tc.desc    Verify empty method returns undefined for any index
-    //  * @tc.type    FUNCTION
-    //  * @tc.size    SMALLTEST
-    //  * @tc.level   LEVEL2
-    //  */
-    // it('ReflectMethodGetParameterTypeTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-    //   const cls = Class.from<TestClassForParamType>();
-    //   const method = cls.getInstanceMethod("noParams");
-    //   expect(method !== undefined).assertTrue();
-    //   const result = method!.getParameterType(0);
-    //   expect(result === undefined).assertTrue();
-    // });
-
     /**
      * @tc.name    ReflectMethodGetParameterTypeTest0800
      * @tc.number  SUB_REFLECT_METHOD_GET_PARAMETER_TYPE_TEST_0800
@@ -225,30 +209,6 @@ export default function ReflectMethodGetParameterTypeTest(): void {
         expect(result !== undefined).assertTrue();
       }
     });
-
-    // /**
-    //  * @tc.name    ReflectMethodGetParameterTypeTest1000
-    //  * @tc.number  SUB_REFLECT_METHOD_GET_PARAMETER_TYPE_TEST_1000
-    //  * @tc.desc    Verify batch parameter type retrieval
-    //  * @tc.type    FUNCTION
-    //  * @tc.size    SMALLTEST
-    //  * @tc.level   LEVEL2
-    //  */
-    // it('ReflectMethodGetParameterTypeTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-    //   const cls = Class.from<TestClassForParamType>();
-    //   const method1 = cls.getInstanceMethod("oneParam");
-    //   const method2 = cls.getInstanceMethod("threeParams");
-    //   const method3 = cls.getInstanceMethod("noParams");
-    //   expect(method1 !== undefined).assertTrue();
-    //   expect(method2 !== undefined).assertTrue();
-    //   expect(method3 !== undefined).assertTrue();
-    //   const type1 = method1!.getParameterType(0);
-    //   const type2 = method2!.getParameterType(2);
-    //   const type3 = method3!.getParameterType(0);
-    //   expect(type1 !== undefined).assertTrue();
-    //   expect(type2 !== undefined).assertTrue();
-    //   expect(type3 === undefined).assertTrue();
-    // });
 
     /**
      * @tc.name    ReflectMethodGetParameterTypeTest0900
