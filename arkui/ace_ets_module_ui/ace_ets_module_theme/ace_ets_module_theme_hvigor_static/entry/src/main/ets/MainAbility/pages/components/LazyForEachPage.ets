@@ -43,7 +43,7 @@ import { AppStorage, State, StorageLink } from '@ohos.arkui.stateManagement'
 
 export const lazyForEachThemeProperty: string = `LazyForEachThemeProperty`;
 
-class BasicDataSource implements IDataSource<string> {
+export class BasicDataSource implements IDataSource<string> {
   private listeners: DataChangeListener[] = [];
 
   public totalCount(): int {

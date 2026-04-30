@@ -43,7 +43,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 
 // ===================== Modifier 定义 =====================
 @Observed
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
   @State public enableScrollInteraction: boolean | undefined = false;
 
   applyNormalAttribute(instance: ListAttribute): void {

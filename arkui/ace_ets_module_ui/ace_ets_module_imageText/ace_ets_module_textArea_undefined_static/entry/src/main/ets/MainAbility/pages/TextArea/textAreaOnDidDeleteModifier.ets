@@ -8,7 +8,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyTextModifier implements AttributeModifier<TextAreaAttribute> {
+export class MyTextModifier implements AttributeModifier<TextAreaAttribute> {
   public isChange: boolean = true;
   public delValue: string = '';
   public delFlag: boolean = false;

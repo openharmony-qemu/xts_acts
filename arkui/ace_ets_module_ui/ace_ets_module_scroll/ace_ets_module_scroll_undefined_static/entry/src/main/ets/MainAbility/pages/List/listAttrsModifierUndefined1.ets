@@ -27,7 +27,7 @@ import hilog from '@ohos.hilog'
 import { MyDataSource } from './MyDataSource'
 
 @Observed
-class MyModifier implements AttributeModifier<ListAttribute> {
+export class MyModifier implements AttributeModifier<ListAttribute> {
   @State public isCachedCount: boolean = true;
   @State public isCachedIsShown: boolean = true;
   @State public isMaintainVisibleContentPosition: boolean = true;

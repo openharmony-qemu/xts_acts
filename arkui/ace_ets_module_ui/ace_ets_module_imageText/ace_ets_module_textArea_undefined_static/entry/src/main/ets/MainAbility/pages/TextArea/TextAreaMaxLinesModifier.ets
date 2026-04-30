@@ -5,7 +5,7 @@ import { Entry, Text, Column, Component, TextArea, Search, ColumnOptions, ClickE
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class TextAreaModifierUndefined implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifierUndefined implements AttributeModifier<TextAreaAttribute> {
   applyNormalAttribute(instance: TextAreaAttribute): void {
     instance
       .style(TextContentStyle.INLINE)
@@ -14,7 +14,7 @@ class TextAreaModifierUndefined implements AttributeModifier<TextAreaAttribute> 
 }
 
 @Observed
-class TextAreaModifierDynamicSwitch implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifierDynamicSwitch implements AttributeModifier<TextAreaAttribute> {
   public isMaxLinesDefined: boolean = true;
 
   applyNormalAttribute(instance: TextAreaAttribute): void {

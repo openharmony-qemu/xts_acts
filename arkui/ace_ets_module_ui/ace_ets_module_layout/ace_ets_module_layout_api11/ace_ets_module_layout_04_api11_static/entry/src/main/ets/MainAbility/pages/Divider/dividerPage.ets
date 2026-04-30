@@ -18,7 +18,7 @@ import { State,AppStorage } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 import { RecordData } from '@ohos.base';
 
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
   color: ResourceColor = "#FF000000";
   lineCap: LineCapStyle = LineCapStyle.Butt
   strokeWidth: number = 1

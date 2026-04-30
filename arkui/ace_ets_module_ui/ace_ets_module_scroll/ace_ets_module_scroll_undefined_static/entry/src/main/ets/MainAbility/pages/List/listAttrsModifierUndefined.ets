@@ -40,7 +40,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyModifier implements AttributeModifier<ListAttribute> {
+export class MyModifier implements AttributeModifier<ListAttribute> {
   public isAlignListItem: boolean = true;
   public isChainAnimation: boolean = true;
   public isContentStartOffset: boolean = true;

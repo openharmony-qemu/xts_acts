@@ -149,7 +149,7 @@ import { LengthUnit, typeNode } from '@ohos.arkui.node'
 import { BusinessError } from '@kit.BasicServicesKit'
 // 定义 onDidStopDragging 的 Modifier 类
 @Observed
-class OnDidStopDraggingModifier implements AttributeModifier<GridAttribute> {
+export class OnDidStopDraggingModifier implements AttributeModifier<GridAttribute> {
   private callback: (willFling: boolean) => void;
 
   constructor(callback: (willFling: boolean) => void) {

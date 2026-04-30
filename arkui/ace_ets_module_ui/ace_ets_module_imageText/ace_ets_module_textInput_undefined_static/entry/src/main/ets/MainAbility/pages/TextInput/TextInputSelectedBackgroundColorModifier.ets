@@ -6,7 +6,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
 @Observed
-class MyTextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class MyTextInputModifier implements AttributeModifier<TextInputAttribute> {
   public isChange: boolean = true;
 
   applyNormalAttribute(instance: TextInputAttribute): void {

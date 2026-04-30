@@ -22,7 +22,7 @@ import { Callback } from '@ohos.base'
 import image from '@ohos.multimedia.image';
 import web_webview from '@ohos.web.webview';
 import { BusinessError, RecordData } from '@ohos.base';
-class TestObj {
+export class TestObj {
   constructor() {
   }
   testString(test: string): string {
@@ -34,7 +34,7 @@ class TestObj {
     return test;
   }
 }
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 @Entry
