@@ -19,25 +19,16 @@ import { image } from '@kit.ImageKit';
 import fileUri from '@ohos.file.fileuri';
 import contact from '@ohos.contact';
 
-export async function HasCard(): Promise<boolean> {
+export async function deleteCard() {
   let context: Context = AppStorage.get('context') as Context;
-  return new Promise<boolean>((resolve) => {
-    if (!context) {
-      console.info("failed to get context from AppStorage");
-      resolve(false);
-      return;
-    }
-    contact.queryMyCard(context, (err, data) => {
-      if (err) {
-        console.info("before test err = " + JSON.stringify(err));
-        resolve(false);
-      } else {
-        let isExist = data !== null && data !== undefined && Object.keys(data).length > 0;
-        console.info(`before test HasCard resust is ${isExist}`);
-        resolve(isExist);
-      }
-    });
-  });
+  let DAHelper: dataShare.DataShareHelper = await dataShare.createDataShareHelper(context, 'datashare:///com.ohos.contactsdataability');
+  let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let DataSharePredicates:dataSharePredicates.DataSharePredicates = predicates.prefixKey('raw_contact_id');
+  let del: number = await DAHelper.delete('datashare:///com.ohos.contactsdataability/contacts/contact_data', DataSharePredicates);
+  let predicates1: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+  let DataSharePredicates1:dataSharePredicates.DataSharePredicates = predicates.prefixKey('id');
+  await DAHelper.delete('datashare:///com.ohos.contactsdataability/contacts/raw_contact', DataSharePredicates1);
+  return del;
 }
 
 export async function SavePhoto(fileName: string) {

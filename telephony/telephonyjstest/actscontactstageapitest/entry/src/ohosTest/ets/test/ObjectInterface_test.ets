@@ -22,7 +22,7 @@ import { BusinessError } from '@ohos.base';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
 import bundleManager from '@ohos.bundle.bundleManager';
 import account from '@ohos.account.osAccount';
-import { SavePhoto, GetUri, HasCard } from './ContactTestUtil.test';
+import { SavePhoto, GetUri, deleteCard } from './ContactTestUtil.test';
 
 function sleep (time:number):Promise<string>{
   return new Promise<string>((resolve)=>{
@@ -207,14 +207,14 @@ export default function ObjectInterfaceTest() {
      * @tc.level  LEVEL0
      */
     it("contactsApi_queryMyCard_test_100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
-      let context: Context = AppStorage.get('context') as Context;
-      let isHasCard = await HasCard();
-      if (isHasCard) {
-        console.info("contactsApi_queryMyCard_test_100 has card");
-        expect(isHasCard).assertTrue();
+      try {
+        let data:number = await deleteCard();
+        console.info(`deleteCard success: ${data}`);
+      } catch {
+        console.info(`deleteCard error: ${JSON.stringify(error)}`);
         done();
-        return;
       }
+      let context: Context = AppStorage.get('context') as Context;
       contact.queryMyCard(context,(err, data) => {
         if (err) {
           console.info("contactsApi_queryMyCard_test_100  err = " + JSON.stringify(err));
@@ -237,14 +237,14 @@ export default function ObjectInterfaceTest() {
      * @tc.level  LEVEL0
      */
     it("contactsApi_queryMyCard_test_200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
-      let context: Context = AppStorage.get('context') as Context;
-      let isHasCard = await HasCard();
-      if (isHasCard) {
-        console.info("contactsApi_queryMyCard_test_200 has card");
-        expect(isHasCard).assertTrue();
+      try {
+        let data:number = await deleteCard();
+        console.info(`deleteCard success: ${data}`);
+      } catch {
+        console.info(`deleteCard error: ${JSON.stringify(error)}`);
         done();
-        return;
       }
+      let context: Context = AppStorage.get('context') as Context;
       contact.queryMyCard(context,attr, (err, data) => {
         if (err) {
           console.info("contactsApi_queryMyCard_test_200  err = " + JSON.stringify(err));
@@ -267,14 +267,14 @@ export default function ObjectInterfaceTest() {
      * @tc.level  LEVEL0
      */
     it("contactsApi_queryMyCard_test_300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
-      let context: Context = AppStorage.get('context') as Context;
-      let isHasCard = await HasCard();
-      if (isHasCard) {
-        console.info("contactsApi_queryMyCard_test_300 has card");
-        expect(isHasCard).assertTrue();
+      try {
+        let data:number = await deleteCard();
+        console.info(`deleteCard success: ${data}`);
+      } catch {
+        console.info(`deleteCard error: ${JSON.stringify(error)}`);
         done();
-        return;
       }
+      let context: Context = AppStorage.get('context') as Context;
       let promise = contact.queryMyCard(context,attr);
       promise.then((data) => {
         console.info("contactsApi_queryMyCard_test_300  data = " + JSON.stringify(data));
