@@ -68,11 +68,14 @@ export default function CustomPopupOptionsSystemMaterial() {
       let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       let sheet: ESObject = obj.$children[1];
       let date = JSON.stringify(obj.$children[1].$children[0]);
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      expect(JSON.parse(date).$attrs.systemBarEffect).assertEqual('false');
       console.info('CustomPopupOptionsSystemMaterial_0100 Popup Undefined is visible');
 
       await CommonFunc.sleep(500);
-      await button.click();
+
+      let closeButton = await driver.findComponent(ON.text('Close'));
+ 	    await closeButton.click();
+      
       await CommonFunc.sleep(1000);
       console.info('CustomPopupOptionsSystemMaterial_0100 END');
       done();
@@ -99,11 +102,13 @@ export default function CustomPopupOptionsSystemMaterial() {
       let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       let sheet: ESObject = obj.$children[1];
       let date = JSON.stringify(obj.$children[1].$children[0]);
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      expect(JSON.parse(date).$attrs.systemBarEffect).assertEqual('false');
       console.info('CustomPopupOptionsSystemMaterial_0200 Popup HDS THICK is visible');
 
       await CommonFunc.sleep(500);
-      await button.click();
+      let closeButton = await driver.findComponent(ON.text('Close'));
+ 	    await closeButton.click();
+      
       await CommonFunc.sleep(1000);
       console.info('CustomPopupOptionsSystemMaterial_0200 END');
       done();

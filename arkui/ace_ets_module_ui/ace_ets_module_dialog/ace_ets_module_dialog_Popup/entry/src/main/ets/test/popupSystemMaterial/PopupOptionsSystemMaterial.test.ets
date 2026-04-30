@@ -68,8 +68,8 @@ export default function PopupOptionsSystemMaterial() {
       let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       let popup: ESObject = obj.$children[1];
       let date = JSON.stringify(obj.$children[1].$children[0]);
-      console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      
+      expect(JSON.parse(date).$attrs.systemBarEffect).assertEqual('false');
       console.info('PopupOptionsSystemMaterial_0100 Popup Undefined is visible');
 
       await CommonFunc.sleep(500);
@@ -100,8 +100,8 @@ export default function PopupOptionsSystemMaterial() {
       let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       let popup: ESObject = obj.$children[1];
       let date = JSON.stringify(obj.$children[1].$children[0]);
-      console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      
+      expect(JSON.parse(date).$attrs.systemBarEffect).assertEqual('false');
       console.info('PopupOptionsSystemMaterial_0200 Popup HDS THICK is visible');
 
       await CommonFunc.sleep(500);

@@ -12,24 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import { uiMaterial } from '@kit.ArkUI';
-
-@Builder
-function customPopupBuilder() {
-  Column() {
-    Text('CustomPopupOptions Test')
-      .fontSize(20)
-      .margin({ top: 20, bottom: 20 })
-    Button('Close')
-      .id('close_popup')
-      .onClick(() => {
-      })
-  }
-  .width('100%')
-  .padding(20)
-  .backgroundColor(Color.White)
-}
 
 @Entry
 @Component
@@ -41,6 +24,23 @@ struct CustomPopupOptionsSystemMaterial {
   @State isShowPopupImmersiveUltraThin: boolean = false;
   @State isShowPopupNone: boolean = false;
 
+  @Builder
+  customPopupBuilder(closeCallback: () => void) {
+    Column() {
+      Text('CustomPopupOptions Test')
+        .fontSize(20)
+        .margin({ top: 20, bottom: 20 })
+      Button('Close')
+        .id('close_popup')
+        .onClick(() => {
+          closeCallback();
+        })
+    }
+    .width('100%')
+    .padding(20)
+    .backgroundColor(Color.White)
+  }
+
   build() {
     Column({ space: 5 }) {
       Row({ space: 5 }) {
@@ -48,7 +48,9 @@ struct CustomPopupOptionsSystemMaterial {
           .id('undefined')
           .height('8%')
           .bindPopup(this.isShowPopupUndefined, {
-            builder: customPopupBuilder,
+            builder: () => this.customPopupBuilder(() => {
+              this.isShowPopupUndefined = false;
+            }),
             systemMaterial: undefined,
             onStateChange: (e) => {
               if (!e.isVisible) {
@@ -64,7 +66,9 @@ struct CustomPopupOptionsSystemMaterial {
           .id('hds_thick')
           .height('8%')
           .bindPopup(this.isShowPopupHdsThick, {
-            builder: customPopupBuilder,
+            builder: () => this.customPopupBuilder(() => {
+              this.isShowPopupHdsThick = false;
+            }),
             systemMaterial: undefined,
             onStateChange: (e) => {
               if (!e.isVisible) {
@@ -82,7 +86,9 @@ struct CustomPopupOptionsSystemMaterial {
           .id('semi_transparent')
           .height('8%')
           .bindPopup(this.isShowPopupSemiTransparent, {
-            builder: customPopupBuilder,
+            builder: () => this.customPopupBuilder(() => {
+              this.isShowPopupSemiTransparent = false;
+            }),
             systemMaterial: new uiMaterial.Material({ type: uiMaterial.MaterialType.SEMI_TRANSPARENT }),
             onStateChange: (e) => {
               if (!e.isVisible) {
@@ -98,7 +104,9 @@ struct CustomPopupOptionsSystemMaterial {
           .id('immersive_thick')
           .height('8%')
           .bindPopup(this.isShowPopupImmersiveThick, {
-            builder: customPopupBuilder,
+            builder: () => this.customPopupBuilder(() => {
+              this.isShowPopupImmersiveThick = false;
+            }),
             systemMaterial: new uiMaterial.ImmersiveMaterial({ style: uiMaterial.ImmersiveStyle.THICK }),
             onStateChange: (e) => {
               if (!e.isVisible) {
@@ -116,7 +124,9 @@ struct CustomPopupOptionsSystemMaterial {
           .id('immersive_ultra_thin')
           .height('8%')
           .bindPopup(this.isShowPopupImmersiveUltraThin, {
-            builder: customPopupBuilder,
+            builder: () => this.customPopupBuilder(() => {
+              this.isShowPopupImmersiveUltraThin = false;
+            }),
             systemMaterial: new uiMaterial.ImmersiveMaterial({ style: uiMaterial.ImmersiveStyle.ULTRA_THIN }),
             onStateChange: (e) => {
               if (!e.isVisible) {
@@ -132,7 +142,9 @@ struct CustomPopupOptionsSystemMaterial {
           .id('materialTypeNone')
           .height('8%')
           .bindPopup(this.isShowPopupNone, {
-            builder: customPopupBuilder,
+            builder: () => this.customPopupBuilder(() => {
+              this.isShowPopupNone = false;
+            }),
             systemMaterial: new uiMaterial.Material({ type: uiMaterial.MaterialType.NONE }),
             onStateChange: (e) => {
               if (!e.isVisible) {

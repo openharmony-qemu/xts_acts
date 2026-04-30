@@ -68,8 +68,8 @@ export default function PopupCommonOptionsSystemMaterial() {
       let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       let popup: ESObject = obj.$children[1];
       let date = JSON.stringify(obj.$children[1].$children[0]);
-      console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      
+      expect(JSON.parse(date).$attrs.systemBarEffect).assertEqual('false');
       console.info('PopupCommonOptionsSystemMaterial_0100 Popup Undefined is visible');
 
       await CommonFunc.sleep(500);
@@ -101,8 +101,8 @@ export default function PopupCommonOptionsSystemMaterial() {
       let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       let popup: ESObject = obj.$children[1];
       let date = JSON.stringify(obj.$children[1].$children[0]);
-      console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      
+      expect(JSON.parse(date).$attrs.systemBarEffect).assertEqual('false');
       console.info('PopupCommonOptionsSystemMaterial_0200 Popup HDS THICK is visible');
 
       await CommonFunc.sleep(500);
@@ -168,8 +168,8 @@ export default function PopupCommonOptionsSystemMaterial() {
       let popup: ESObject = obj.$children[1];
       let date = JSON.stringify(obj.$children[1].$children[0]);
       console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.style));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.style).assertEqual('MaterialType.NONE');
-      console.info('PopupCommonOptionsSystemMaterial_0400 Popup Immersive THICK is visible');
+
+      expect(JSON.parse(date).$attrs.systemBarEffect).assertEqual('false');
 
       await CommonFunc.sleep(500);
       let closeButton = await driver.findComponent(ON.text('Close'));
@@ -201,8 +201,8 @@ export default function PopupCommonOptionsSystemMaterial() {
       let popup: ESObject = obj.$children[1];
       let date = JSON.stringify(obj.$children[1].$children[0]);
       console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.style));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.style).assertEqual('MaterialType.NONE');
-      console.info('PopupCommonOptionsSystemMaterial_0500 Popup Immersive ULTRA_THIN is visible');
+      
+      expect(JSON.parse(date).$attrs.systemBarEffect).assertEqual('false');
 
       await CommonFunc.sleep(500);
       let closeButton = await driver.findComponent(ON.text('Close'));

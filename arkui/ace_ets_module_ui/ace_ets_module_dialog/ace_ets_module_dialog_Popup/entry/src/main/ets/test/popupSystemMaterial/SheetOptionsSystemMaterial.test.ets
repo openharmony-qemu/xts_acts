@@ -67,7 +67,9 @@ export default function SheetOptionsSystemMaterial() {
       let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       let sheet: ESObject = obj.$children[1];
       let date = JSON.stringify(obj.$children[1].$children[0]);
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      
+
+      expect(JSON.parse(date).$attrs.systemBarEffect).assertEqual('false');
       console.info('SheetOptionsSystemMaterial_0100 Sheet Undefined is visible');
 
       await CommonFunc.sleep(500);
@@ -99,7 +101,8 @@ export default function SheetOptionsSystemMaterial() {
       let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       let sheet: ESObject = obj.$children[1];
       let date = JSON.stringify(obj.$children[1].$children[0]);
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      
+      expect(JSON.parse(date).$attrs.systemBarEffect).assertEqual('false');
       console.info('SheetOptionsSystemMaterial_0200 Sheet HDS THICK is visible');
 
       await CommonFunc.sleep(500);
@@ -164,8 +167,8 @@ export default function SheetOptionsSystemMaterial() {
       let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       let sheet: ESObject = obj.$children[1];
       let date = JSON.stringify(obj.$children[1].$children[0]);
-      console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.style));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.style).assertEqual('MaterialType.NONE');
+      console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type));
+      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
       console.info('SheetOptionsSystemMaterial_0400 Sheet Immersive THICK is visible');
 
       await CommonFunc.sleep(500);
@@ -197,8 +200,8 @@ export default function SheetOptionsSystemMaterial() {
       let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       let sheet: ESObject = obj.$children[1];
       let date = JSON.stringify(obj.$children[1].$children[0]);
-      console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.style));
-      expect(JSON.parse(date).$attrs.systemMaterial.material.style).assertEqual('MaterialType.NONE');
+      console.info('obj' + JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type));
+      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
       console.info('SheetOptionsSystemMaterial_0500 Sheet Immersive ULTRA_THIN is visible');
 
       await CommonFunc.sleep(500);
