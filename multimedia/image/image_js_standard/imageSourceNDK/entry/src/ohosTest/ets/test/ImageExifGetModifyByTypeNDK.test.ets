@@ -52,6 +52,11 @@ interface ReadOnlyMetaDataRule {
   newExpectValue: string | object | boolean | number | number[] | number[][];
 }
 
+interface ReadOnlyMetaDataRuleWithType {
+  type: string,
+  newExpectValue: string | object | boolean | number | number[] | number[][];
+}
+
 const testArrayBufferU8: Uint8Array = new Uint8Array([1, 2, 2, 3]);
 const testArrayBuffer: ArrayBuffer = testArrayBufferU8.buffer as ArrayBuffer;
 
@@ -59,7 +64,7 @@ const testArrayBuffer: ArrayBuffer = testArrayBufferU8.buffer as ArrayBuffer;
 async function getPropertyValue(
   fd: number,
   type: string,
-  key: image.PropertyKey | image.DngPropertyKey | image.WebPPropertyKey
+  key: image.PropertyKey | image.DngPropertyKey | image.WebPPropertyKey | image.GifPropertyKey | image.HeifsPropertyKey | image.PngPropertyKey | image.TiffPropertyKey | image.JfifPropertyKey
 ): Promise<number | Array<number> | Array<number | null> | ArrayBuffer | string> {
   let task = new taskpool.Task(getPropertyValueTest, fd, type, key);
   let ret = (await taskpool.execute(task)) as number | Array<number> | Array<number | null> | ArrayBuffer | string;
@@ -140,12 +145,15 @@ export default function ImageExifGetModifyByTypeNDK() {
     ): boolean => {
       if (Array.isArray(actual) && Array.isArray(expected)) {
         if (actual.length !== expected.length) return false;
+        console.info(`dsh 1 compareValues actual is ${actual} , expected is ${expected}, actual type ${typeof actual}, expected type ${typeof expected}`);
         return actual.every((val: number | null, index: number) => {
           const expectedVal: number | null = expected[index] as number | null;
+          console.info(`dsh compareValues val is ${val} , expectedVal is ${expectedVal}, val type ${typeof val}, expectedVal type ${typeof expectedVal}`);
           if (val === null || expectedVal === null) return true;
           return val === expectedVal;
         });
       }
+      console.info(`dsh 1 compareValues actual is ${actual} , expected is ${expected}, actual type ${typeof actual}, expected type ${typeof expected}`);
       return actual === expected;
     }
 
@@ -280,7 +288,7 @@ export default function ImageExifGetModifyByTypeNDK() {
     const TestGetImagePropertyByTypeError = async (
       testNum: string,
       fileName: string,
-      Key: image.PropertyKey | image.DngPropertyKey | image.WebPPropertyKey,
+      Key: image.PropertyKey | image.DngPropertyKey | image.WebPPropertyKey | image.GifPropertyKey | image.HeifsPropertyKey | image.PngPropertyKey | image.JfifPropertyKey | image.TiffPropertyKey,
       type: string,
       errorCode: number
     ): Promise<boolean> => {
@@ -5885,18 +5893,18 @@ export default function ImageExifGetModifyByTypeNDK() {
       expect(result).assertEqual(7700204);
       done();
     });
-
-    /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_SHORT_WEBP_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_SHORT_WEBP_0100
-     * @tc.desc        Verify reading WEBP metadata as short type
-     *                 1.Create image source from WEBP file (loop_count_9.webp) using fd
-     *                 2.Iterate all keys in ImagePropertyConfig.webpMetadatas and read each key as short type
-     *                 3.Verify each actual value equals rule.newExpectValue
-     * @tc.size        MEDIUM
-     * @tc.type        Functional
-     * @tc.level       Level 0
-     */
+    
+	/**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_SHORT_WEBP_0100
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_SHORT_WEBP_0100
+      * @tc.desc        Verify reading WEBP metadata as short type
+      *                 1.Create image source from WEBP file (loop_count_9.webp) using fd
+      *                 2.Iterate all keys in ImagePropertyConfig.webpMetadatas and read each key as short type
+      *                 3.Verify each actual value equals rule.newExpectValue
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_SHORT_WEBP_0100", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_SHORT_WEBP_0100";
       let result: boolean = true;
@@ -5922,17 +5930,17 @@ export default function ImageExifGetModifyByTypeNDK() {
       done();
     });
 
-    /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LONG_WEBP_0200
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LONG_WEBP_0200
-     * @tc.desc        Verify reading WEBP metadata as long type
-     *                 1.Create image source from WEBP file (loop_count_9.webp) using fd
-     *                 2.Iterate all keys in ImagePropertyConfig.webpMetadatas and read each key as long type
-     *                 3.Verify each actual value equals rule.newExpectValue
-     * @tc.size        MEDIUM
-     * @tc.type        Functional
-     * @tc.level       Level 0
-     */
+     /**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LONG_WEBP_0200
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LONG_WEBP_0200
+      * @tc.desc        Verify reading WEBP metadata as long type
+      *                 1.Create image source from WEBP file (loop_count_9.webp) using fd
+      *                 2.Iterate all keys in ImagePropertyConfig.webpMetadatas and read each key as long type
+      *                 3.Verify each actual value equals rule.newExpectValue
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LONG_WEBP_0200", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LONG_WEBP_0200";
       let result: boolean = true;
@@ -5958,17 +5966,17 @@ export default function ImageExifGetModifyByTypeNDK() {
       done();
     });
 
-    /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_0300
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_0300
-     * @tc.desc        Verify reading WEBP metadata as intArray type
-     *                 1.Create image source from WEBP file (loop_count_9.webp) using fd
-     *                 2.Iterate all keys in ImagePropertyConfig.webpMetadatas and read each key as intArray type
-     *                 3.Verify each actual value equals [rule.newExpectValue]
-     * @tc.size        MEDIUM
-     * @tc.type        Functional
-     * @tc.level       Level 0
-     */
+     /**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_0300
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_0300
+      * @tc.desc        Verify reading WEBP metadata as intArray type
+      *                 1.Create image source from WEBP file (loop_count_9.webp) using fd
+      *                 2.Iterate all keys in ImagePropertyConfig.webpMetadatas and read each key as intArray type
+      *                 3.Verify each actual value equals [rule.newExpectValue]
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_0300", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_0300";
       let result: boolean = true;
@@ -5995,90 +6003,6 @@ export default function ImageExifGetModifyByTypeNDK() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0100
-     * @tc.desc        Verify reading WEBP property with wrong type returns READ_FAILED
-     *                 1.Create image source from WEBP file (loop_count_9.webp)
-     *                 2.Read CANVAS_WIDTH using unsupported type double
-     *                 3.Verify API returns READ_FAILED
-     * @tc.size        MEDIUM
-     * @tc.type        Functional
-     * @tc.level       Level 0
-     */
-    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0100", Level.LEVEL0, async (done:() => void)=>{
-      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0100";
-      let result: boolean = true;
-      result = await TestGetImagePropertyByTypeError(testTag, "loop_count_9.webp", 
-        image.WebPPropertyKey.CANVAS_WIDTH, "double", READ_FAILED);
-      console.info(`${testTag} webp metadata TestGetImageProperty IntArray result is: ${result}`);
-      expect(result).assertTrue();
-      done();
-    });
-
-    /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0200
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0200
-     * @tc.desc        Verify reading WEBP property with wrong type returns READ_FAILED
-     *                 1.Create image source from WEBP file (loop_count_9.webp)
-     *                 2.Read CANVAS_HEIGHT using unsupported type string
-     *                 3.Verify API returns READ_FAILED
-     * @tc.size        MEDIUM
-     * @tc.type        Functional
-     * @tc.level       Level 0
-     */
-    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0200", Level.LEVEL0, async (done:() => void)=>{
-      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0200";
-      let result: boolean = true;
-      result = await TestGetImagePropertyByTypeError(testTag, "loop_count_9.webp", 
-        image.WebPPropertyKey.CANVAS_HEIGHT, "string", READ_FAILED);
-      console.info(`${testTag} webp metadata TestGetImageProperty IntArray result is: ${result}`);
-      expect(result).assertTrue();
-      done();
-    });
-
-    /**
-    * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0300
-    * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0300
-    * @tc.desc        Verify reading WEBP property with wrong type returns READ_FAILED
-    *                 1.Create image source from WEBP file (loop_count_9.webp)
-    *                 2.Read DELAY_TIME using unsupported type doubleArray
-    *                 3.Verify API returns READ_FAILED
-    * @tc.size        MEDIUM
-    * @tc.type        Functional
-    * @tc.level       Level 0
-    */
-    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0300", Level.LEVEL0, async (done:() => void)=>{
-      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0300";
-      let result: boolean = true;
-      result = await TestGetImagePropertyByTypeError(testTag, "loop_count_9.webp", 
-        image.WebPPropertyKey.DELAY_TIME, "doubleArray", READ_FAILED);
-      console.info(`${testTag} webp metadata TestGetImageProperty IntArray result is: ${result}`);
-      expect(result).assertTrue();
-      done();
-    });
-
-    /**
-    * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0400
-    * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0400
-    * @tc.desc        Verify reading WEBP property with wrong type returns READ_FAILED
-    *                 1.Create image source from WEBP file (loop_count_9.webp)
-    *                 2.Read DELAY_TIME using unsupported type arrayBuffer
-    *                 3.Verify API returns READ_FAILED
-    * @tc.size        MEDIUM
-    * @tc.type        Functional
-    * @tc.level       Level 0
-    */
-    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0400", Level.LEVEL0, async (done:() => void)=>{
-      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0400";
-      let result: boolean = true;
-      result = await TestGetImagePropertyByTypeError(testTag, "loop_count_9.webp", 
-        image.WebPPropertyKey.DELAY_TIME, "arrayBuffer", READ_FAILED);
-      console.info(`${testTag} webp metadata TestGetImageProperty IntArray result is: ${result}`);
-      expect(result).assertTrue();
-      done();
-    });
-
-        /**
       * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_GIF_0100
       * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_GIF_0100
       * @tc.desc        Verify reading gif metadata as short type
@@ -6402,7 +6326,7 @@ export default function ImageExifGetModifyByTypeNDK() {
       let result: boolean = true;
       let propertyKeys: Array<image.TiffPropertyKey> = ImagePropertyConfig.tiffMetadatas.keys;
       let tiffRules: Map<image.TiffPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.tiffMetadatas.rules;
-      let fd: number = await getFd("test.tiff");
+      let fd: number = await getFd("tiff_xmp.tiff");
       for (const key of propertyKeys) {
         const rule = tiffRules.get(key);
         if (!rule) {
@@ -6412,9 +6336,9 @@ export default function ImageExifGetModifyByTypeNDK() {
         let expectedValue = rule.newExpectValue;
         let type = rule.type;
         const actualValue = await getPropertyValue(fd, type, key);
-        console.info(`${testTag} dhs Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        console.info(`${testTag} dhs Verification 1  failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
         if (!compareValues(actualValue, expectedValue)) {
-          console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+          console.info(`${testTag} Verification 2 failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
           result = false;
         }
       }
@@ -6439,7 +6363,7 @@ export default function ImageExifGetModifyByTypeNDK() {
       let result: boolean = true;
       let propertyKeys: Array<image.TiffPropertyKey> = ImagePropertyConfig.tiffMetadatas.keys;
       let tiffRules: Map<image.TiffPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.tiffMetadatas.rules;
-      let fd: number = await getFd("test.tiff");
+      let fd: number = await getFd("tiff_xmp.tiff");
       for (const key of propertyKeys) {
         const rule = tiffRules.get(key);
         if (!rule) {
@@ -6452,9 +6376,9 @@ export default function ImageExifGetModifyByTypeNDK() {
           type = 'long'
         }
         const actualValue = await getPropertyValue(fd, type, key);
-        console.info(`${testTag} dhs Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        console.info(`${testTag} dhs Verification 1 failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
         if (!compareValues(actualValue, expectedValue)) {
-          console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+          console.info(`${testTag} Verification 2 failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
           result = false;
         }
       }
@@ -6462,6 +6386,90 @@ export default function ImageExifGetModifyByTypeNDK() {
       expect(result).assertTrue();
       done();
     });
-    
+
+     /**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0100
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0100
+      * @tc.desc        Verify reading WEBP property with wrong type returns READ_FAILED
+      *                 1.Create image source from WEBP file (loop_count_9.webp)
+      *                 2.Read CANVAS_WIDTH using unsupported type double
+      *                 3.Verify API returns READ_FAILED
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0100";
+      let result: boolean = true;
+      result = await TestGetImagePropertyByTypeError(testTag, "loop_count_9.webp", 
+        image.WebPPropertyKey.CANVAS_WIDTH, "double", READ_FAILED);
+      console.info(`${testTag} webp metadata TestGetImageProperty IntArray result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+     /**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0200
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0200
+      * @tc.desc        Verify reading WEBP property with wrong type returns READ_FAILED
+      *                 1.Create image source from WEBP file (loop_count_9.webp)
+      *                 2.Read CANVAS_HEIGHT using unsupported type string
+      *                 3.Verify API returns READ_FAILED
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0200", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0200";
+      let result: boolean = true;
+      result = await TestGetImagePropertyByTypeError(testTag, "loop_count_9.webp", 
+        image.WebPPropertyKey.CANVAS_HEIGHT, "string", READ_FAILED);
+      console.info(`${testTag} webp metadata TestGetImageProperty IntArray result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0300
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0300
+     * @tc.desc        Verify reading WEBP property with wrong type returns READ_FAILED
+     *                 1.Create image source from WEBP file (loop_count_9.webp)
+     *                 2.Read DELAY_TIME using unsupported type doubleArray
+     *                 3.Verify API returns READ_FAILED
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0300", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0300";
+      let result: boolean = true;
+      result = await TestGetImagePropertyByTypeError(testTag, "loop_count_9.webp", 
+        image.WebPPropertyKey.DELAY_TIME, "doubleArray", READ_FAILED);
+      console.info(`${testTag} webp metadata TestGetImageProperty IntArray result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0400
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0400
+     * @tc.desc        Verify reading WEBP property with wrong type returns READ_FAILED
+     *                 1.Create image source from WEBP file (loop_count_9.webp)
+     *                 2.Read DELAY_TIME using unsupported type arrayBuffer
+     *                 3.Verify API returns READ_FAILED
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0400", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0400";
+      let result: boolean = true;
+      result = await TestGetImagePropertyByTypeError(testTag, "loop_count_9.webp", 
+        image.WebPPropertyKey.DELAY_TIME, "arrayBuffer", READ_FAILED);
+      console.info(`${testTag} webp metadata TestGetImageProperty IntArray result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
   })
 }
