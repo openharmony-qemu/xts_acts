@@ -2507,7 +2507,7 @@ export default function PiPWindowTest() {
   
           let promise1: Promise<pipWindow.PiPController> = pipWindow.create(config, xComponent);
           promise1.then((data: pipWindow.PiPController) => {
-            
+            pipController = data;
             console.info(`${caseName} Succeeded in creating pip controller. Data:${pipController}`);
             let promise2: Promise<void> = pipController!.startPiP();
             promise2.then(() => {
@@ -4533,7 +4533,7 @@ export default function PiPWindowTest() {
   
           let promise1: Promise<pipWindow.PiPController> = pipWindow.create(config, xComponent);
           promise1.then((data: pipWindow.PiPController) => {
-            
+            pipController = data;
             console.info(`${caseName} Succeeded in creating pip controller. Data:${pipController}`);
             let promise2: Promise<void> = pipController!.startPiP();
             promise2.then(() => {
@@ -4605,25 +4605,17 @@ export default function PiPWindowTest() {
             defaultWindowSizeType: 1
           };
   
-          let promise1: Promise<pipWindow.PiPController> = pipWindow.create(config, xComponent);
-          promise1.then((data: pipWindow.PiPController) => {
-            
-            console.info(`${caseName} Succeeded in creating pip controller. Data:${pipController}`);
-            let promise2: Promise<void> = pipController!.startPiP();
-            promise2.then(() => {
-              console.info(`${caseName} Succeeded in starting pip.`);
-              let promise3 : Promise<void> = pipController!.stopPiP();
-              promise3.then(() => {
-                console.info(caseName + ' Succeeded in stopping pip');
-                
-                done();
-              }).catch((err: Error) => {
-                console.error(`${caseName} Failed to stop window . Cause code: ${err.code}, message: ${err.message}`);
-                expect(false).assertTrue();
-                done();
-              });
+          pipController = await pipWindow.create(config, xComponent);
+          console.info(`${caseName} Succeeded in creating pip controller. Data:${pipController}`);
+          let promise2: Promise<void> = pipController!.startPiP();
+          promise2.then(() => {
+            console.info(`${caseName} Succeeded in starting pip.`);
+            let promise3 : Promise<void> = pipController!.stopPiP();
+            promise3.then(() => {
+              console.info(caseName + ' Succeeded in stopping pip');
+              done();
             }).catch((err: Error) => {
-              console.error(`${caseName} Failed to start pip. Cause:${err.code}, message:${err.message}`);
+              console.error(`${caseName} Failed to stop window . Cause code: ${err.code}, message: ${err.message}`);
               expect(false).assertTrue();
               done();
             });
@@ -4681,30 +4673,28 @@ export default function PiPWindowTest() {
             defaultWindowSizeType: 2
           };
   
-          let promise1: Promise<pipWindow.PiPController> = pipWindow.create(config, xComponent);
-          promise1.then((data: pipWindow.PiPController) => {
-            
-            console.info(`${caseName} Succeeded in creating pip controller. Data:${pipController}`);
-            let promise2: Promise<void> = pipController!.startPiP();
-            promise2.then(() => {
-              console.info(`${caseName} Succeeded in starting pip.`);
-              let promise3 : Promise<void> = pipController!.stopPiP();
-              promise3.then(() => {
-                console.info(caseName + ' Succeeded in stopping pip');
-                
-                done();
-              }).catch((err: Error) => {
-                console.error(`${caseName} Failed to stop window . Cause code: ${err.code}, message: ${err.message}`);
-                expect(false).assertTrue();
-                done();
-              });
+          pipController = await pipWindow.create(config, xComponent);
+          console.info(`${caseName} Succeeded in creating pip controller. Data:${pipController}`);
+          let promise2: Promise<void> = pipController!.startPiP();
+          promise2.then(() => {
+            console.info(`${caseName} Succeeded in starting pip.`);
+            let promise3 : Promise<void> = pipController!.stopPiP();
+            promise3.then(() => {
+              console.info(caseName + ' Succeeded in stopping pip');
+              
+              done();
             }).catch((err: Error) => {
-              console.error(`${caseName} Failed to start pip. Cause:${err.code}, message:${err.message}`);
+              console.error(`${caseName} Failed to stop window . Cause code: ${err.code}, message: ${err.message}`);
               expect(false).assertTrue();
               done();
             });
           }).catch((err: Error) => {
-            console.error(`${caseName} Failed to create pip controller. Cause:${err.code}, message:${err.message}`);
+            console.error(`${caseName} Failed to start pip. Cause:${err.code}, message:${err.message}`);
+            expect(false).assertTrue();
+            done();
+          });
+        } catch (err) {
+          console.error(`${caseName} Failed to create pip controller. Cause:${err.code}, message:${err.message}`);
             if (err.code == 801) {
               expect(err.message != null).assertTrue();
               done();
@@ -4712,13 +4702,6 @@ export default function PiPWindowTest() {
               expect(false).assertTrue();
               done();
             }
-          });
-  
-  
-        } catch (exception) {
-          console.error(`${caseName} Failed to get pip window info. Cause code: ${exception.code}, message: ${exception.message}`);
-          expect(false).assertTrue();
-          done();
         }
       })
         
