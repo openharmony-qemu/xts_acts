@@ -85,9 +85,7 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
 async function terminateAbility(caseName: string) {
   let pageContext:common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('pageContext') as common.UIAbilityContext
   try {
-      if (pageContext !== null && pageContext !== undefined) {
-          console.log(`${caseName} terminateSelf begin`);
-      }
+      console.log(`${caseName} terminateSelf begin`);
       pageContext.terminateSelf().then(() => {
           console.log(`${caseName} terminateSelf success`);
       }).catch((err: Error):PromiseLike<void>|undefined => {
@@ -215,7 +213,7 @@ export default function PiPWindowTest() {
               let driver = Driver.create();
               pipController = await pipWindow.create(config)
               console.log(`${caseName} Succeeded in creating pip controller. Data:${pipController}`);
-              expect(pipController != null).assertTrue();
+              expect(pipController !== undefined).assertTrue();
               pipController!.onActiveStatusChange(callback);
               await pipController!.startPiP();
               await Utils.msSleep(1000)
@@ -1896,7 +1894,7 @@ export default function PiPWindowTest() {
             
           await pipController!.startPiP()
           let count = 0;
-          pipController!.onControlPanelActionEvent((event: pipWindow.PiPActionEventType, status?: number) => {
+          pipController!.onControlPanelActionEvent((event: pipWindow.PiPActionEventType, status?: int) => {
             switch (event) {
               case 'playbackStateChanged':
                 if (status === 0) {
@@ -2019,7 +2017,7 @@ export default function PiPWindowTest() {
           await pipController!.startPiP()
 
           let count = 0;
-          pipController!.onControlPanelActionEvent((event: pipWindow.PiPActionEventType, status?: number) => {
+          pipController!.onControlPanelActionEvent((event: pipWindow.PiPActionEventType, status?: int) => {
             switch (event) {
               case 'videoStateChanged':
                 if (status === 0) {
@@ -2096,7 +2094,7 @@ export default function PiPWindowTest() {
           await  pipController!.startPiP()
 
           let count = 0;
-          pipController!.onControlPanelActionEvent((event: pipWindow.PiPActionEventType, status?: number) => {
+          pipController!.onControlPanelActionEvent((event: pipWindow.PiPActionEventType, status?: int) => {
             switch (event) {
               case 'videoStateChanged':
                 if (status === 0) {
@@ -2160,7 +2158,7 @@ export default function PiPWindowTest() {
             
           await pipController!.startPiP()
           let count = 0;
-            pipController!.onControlPanelActionEvent((event: pipWindow.PiPActionEventType, status?: number) => {
+            pipController!.onControlPanelActionEvent((event: pipWindow.PiPActionEventType, status?: int) => {
               switch (event) {
                 case 'playbackStateChanged':
                   if (status === 0) {
