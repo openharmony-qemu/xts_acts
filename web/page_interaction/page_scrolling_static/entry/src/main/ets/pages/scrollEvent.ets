@@ -22,7 +22,7 @@ import inspector from '@ohos.arkui.inspector';
 import { State } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { OnScrollEvent,$rawfile,Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component'
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
@@ -30,7 +30,7 @@ class StringFields {
 @Component
 struct scrollEventComponent {
   controller: web_webview.WebviewController = new web_webview.WebviewController(undefined);
-  stringObj: StringFields  = new StringFields ();
+  stringObj: StringFields  = new StringFields();
   @State xOffset: number = 0;
   @State yOffset: number = 0;
   @State str: string = '';

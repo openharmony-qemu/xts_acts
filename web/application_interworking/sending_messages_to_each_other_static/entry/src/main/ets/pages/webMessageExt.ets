@@ -26,7 +26,7 @@ import { Callback, RecordData } from '@ohos.base'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import image from '@ohos.multimedia.image';
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 

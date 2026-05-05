@@ -32,7 +32,7 @@ import { BusinessError, Callback } from '@ohos.base';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../src/test/Utils.test';
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 

@@ -29,14 +29,14 @@ let driver = Driver.create()
 
 const EVENT_ID_SET_SUITE_KEY = 154011;
 
-class StringFields {
+export class StringFields {
   str: string = '';
 }
 
 @Entry
 @Component
 struct WebviewControllerSetActiveWebEngineVersion {
-  stringObj: StringFields  = new StringFields ();
+  stringObj: StringFields  = new StringFields();
   controller: webview.WebviewController = new webview.WebviewController(undefined);
   @State emitKey: string = '';
   @State isReceive: number = -1;

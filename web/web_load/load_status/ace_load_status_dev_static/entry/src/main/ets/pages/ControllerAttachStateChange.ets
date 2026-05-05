@@ -24,7 +24,7 @@ import { BusinessError, Callback, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { canIUse } from '@internal.full.global'
 import { NodeController, NodeRenderType, BuilderNode } from '@ohos.arkui.node';
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 

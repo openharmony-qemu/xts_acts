@@ -22,14 +22,14 @@ import events_emitter from '@ohos.events.emitter';
 import { BusinessError, Callback, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { canIUse } from '@internal.full.global'
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
 @Entry
 @Component
 struct webViewController {
-  stringObj: StringFields  = new StringFields ();
+  stringObj: StringFields  = new StringFields();
   controller: webView.WebviewController = new webView.WebviewController(undefined);
   @State str: string = ''
   @State httpErrorReceive: Int = 0

@@ -24,7 +24,7 @@ import { Callback, RecordData } from '@ohos.base'
 import events_emitter from '@ohos.events.emitter';
 import { webview } from '@kit.ArkWeb';
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,7 +26,7 @@ import { Hypium } from '../../../hypium/index';
 import emitter from '@ohos.events.emitter';
 import webView from '@ohos.web.webview';
 import { Callback, RecordData } from '@ohos.base'
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 @Entry

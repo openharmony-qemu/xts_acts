@@ -32,7 +32,7 @@ import {
   Web
 } from '@ohos.arkui.component'
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
