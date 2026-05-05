@@ -14,7 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import time
 import requests
 import base64
 from PIL import Image
@@ -26,6 +25,13 @@ import subprocess
 import cv2
 import re
 import sqlite3
+pillow_heif.register_heif_opener()
+deviceSn = ''
+import av
+
+def heif_to_jpg_pillow(heif_path, jpg_path):
+    with Image.open(heif_path) as im:
+        im.convert("RGB").save(jpg_path, "JPEG")
 
  # === 配置 ===
 API_KEY = "sk-59c64c9efdeb4403b0287741bfd98bc4"  # 替换为你自己的 DashScope API Key
@@ -105,6 +111,10 @@ def chat_with_llm(image_path):
     except Exception as e:
         return f"Error: {e}"
 
+def Init(self):
+    global deviceSn
+    deviceSn = self.device1.device_sn
+
 def get_logger():
     """
     #====================================================================================
@@ -139,10 +149,13 @@ def get_logger():
 logger = get_logger()
 
 def getMediaLibrary():
-    cmd = f'hdc file recv /data/app/el2/100/database/com.ohos.medialibrary.medialibrarydata/rdb/media_library.db'
+    global deviceSn
+    cmd = f'hdc -t {deviceSn} file recv /data/app/el2/100/database/com.ohos.medialibrary.medialibrarydata/rdb/media_library.db'
+    logger.info(deviceSn)
     subprocess.run(['powershell', '-Command', cmd], capture_output=True, text=True, encoding='utf-8')
 
 def getMediaFileFromMediaLibrary():
+    global deviceSn
     getMediaLibrary()
 
     if os.path.exists('./media_library.db'):
@@ -157,7 +170,7 @@ def getMediaFileFromMediaLibrary():
             display_name, data = row
             if ('Video' in display_name or 'Photo' in display_name) and 'cloud/files' in data:
                 file_Path = data.replace("cloud/files", "cloud/100/files", 1)
-                cmd = f'hdc file recv {file_Path} mediaDir'
+                cmd = f'hdc -t {deviceSn} file recv {file_Path} mediaDir'
                 subprocess.run(['powershell', '-Command', cmd], capture_output=True, text=True, encoding='utf-8')
                 tail = file_Path.rsplit('/', 1)[-1]
                 src_Path = './mediaDir/' + tail
@@ -186,6 +199,51 @@ def createDirectory(path):
     """
     os.makedirs(path, exist_ok=True)
 
+
+def check_empty_video(video_path):
+    """
+    检测视频文件是否是空视频
+    使用PyAV库进行检测
+
+    参数:
+        video_path: 视频文件路径
+    """
+    if not os.path.exists(video_path):
+        print(f"文件不存在: {video_path}")
+        return
+    try:
+        container = av.open(video_path)
+
+        video_streams = [s for s in container.streams if s.type == 'video']
+        audio_streams = [s for s in container.streams if s.type == 'audio']
+
+        has_video = len(video_streams) > 0
+        has_audio = len(audio_streams) > 0
+
+        if has_video is False:
+            container.close()
+            logger.info(f"{video_path} 包含视频流: {'是' if has_video else '否'}")
+            return False
+        if has_audio is False:
+            container.close()
+            logger.info(f"{video_path} 包含视频流: {'是' if has_video else '否'}")
+            return False
+        if has_video:
+            video_stream = video_streams[0]
+            fps = video_stream.average_rate
+
+            if fps <= 1:
+                container.close()
+                logger.info(f"{video_path} 帧率小于等于1")
+                return False
+
+        container.close()
+        return True
+    except Exception as e:
+        print(f"check_empty_video 检测出错: {str(e)}")
+        return False
+
+
 def video_to_images(video_path, output_folder, frame_interval=30):
     """
     #====================================================================================
@@ -196,37 +254,41 @@ def video_to_images(video_path, output_folder, frame_interval=30):
     #====================================================================================
     """
     videoDisplayName = video_path.split('\\')[-1].split('.')[0]
+    print('video_path is ' + video_path)
     # 创建输出文件夹
     createDirectory(output_folder)
-    # 打开视频文件
-    cap = cv2.VideoCapture(video_path)
-    # 检查是否成功打开
-    if not cap.isOpened():
-        logger.error("无法打开视频文件")
-        return
-
+    isEmptyVideo = check_empty_video(video_path)
+    saved_count = 0
     frame_count = 0
-    image_count = 0
-    while True:
-        # 读取一帧
-        ret, frame = cap.read()
-        # 抽帧，每隔30帧抽一次
-        if frame_count % frame_interval != 0:
-            frame_count += 1
-            continue
-        # 如果读取失败（视频结束），退出循环
-        if not ret:
-            break
-        # 保存当前帧为图片
-        image_path = os.path.join(output_folder, f"{videoDisplayName}_frame_{frame_count:04d}.jpg")
-        cv2.imwrite(image_path, frame)
-        image_count += 1
-        frame_count += 1
-    # 释放资源
-    cap.release()
+    if isEmptyVideo is True:
+        # 打开视频文件
+        cap = cv2.VideoCapture(video_path)
+        # 检查是否成功打开
+        if not cap.isOpened():
+            logger.error("无法打开视频文件")
+            return output_folder, 0
 
-    logger.info(f"{video_path}共提取了 {image_count} 帧图片，保存在 {output_folder} 文件夹中。")
-    return output_folder, image_count
+        while True:
+            # 读取一帧
+            ret, frame = cap.read()
+            # 抽帧，每隔30帧抽一次
+
+            # 如果读取失败（视频结束）
+            if not ret:
+                # 释放资源
+                cap.release()
+                break
+            # 保存当前帧为图片
+            if frame_count % 30 == 0:
+                image_path = os.path.join(output_folder, f"{videoDisplayName}_frame_{frame_count:04d}.jpg")
+                cv2.imwrite(image_path, frame)
+                saved_count += 1
+            frame_count += 1
+        # 释放资源
+        cap.release()
+
+        logger.info(f"{video_path}共提取了 {saved_count} 帧图片，总帧数 {frame_count}，保存在 {output_folder} 文件夹中。")
+    return frame_count
 
 def check_image(path: str):
     """
