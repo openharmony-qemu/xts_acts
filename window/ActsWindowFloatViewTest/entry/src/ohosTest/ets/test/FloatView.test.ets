@@ -2655,5 +2655,57 @@ export default function abilityTest() {
       }
     })
 
+    /**
+     * @tc.name   test_setWindowSize_getWindowProperties
+     * @tc.number SUB_BASIC_WMS_FLOAT_VIEW_3700
+     * @tc.desc   test setWindowSize and verify getWindowProperties windowRect matches
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_setWindowSize_getWindowProperties', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let CaseName: string = 'test_setWindowSize_getWindowProperties';
+      console.log(CaseName + ' begin.');
+      let config: floatView.FloatViewConfiguration = {
+        context: context,
+        templateType: floatView.FloatViewTemplateType.ROUNDED_RECTANGLE
+      };
+      try {
+        let floatViewController = await floatView.create(config);
+        callDoneOnStopped(floatViewController, CaseName, done)
+        console.info(CaseName + ' Succeeded in creating float view controller.');
+        await floatViewController.setUIContext("testability/pages/First/index");
+        console.info(CaseName + ' Succeeded in setting UI context.');
+        await floatViewController.start();
+        console.info(CaseName + ' Succeeded in starting float view.');
+        await sleep(200);
+        let limits = floatView.getFloatViewLimits(floatView.FloatViewTemplateType.ROUNDED_RECTANGLE);
+        let size: window.Size = {
+          width: limits.minSize.width + 100,
+          height: limits.minSize.height + 100
+        };
+        await floatViewController.setWindowSize(size);
+        console.info(CaseName + ' Succeeded in setting window size. width: ' + size.width + ', height: ' + size.height);
+        await sleep(300);
+        let properties = floatViewController.getWindowProperties();
+        console.info(CaseName + ' Window properties: ' + JSON.stringify(properties));
+        expect(properties.windowRect.width).assertEqual(size.width);
+        expect(properties.windowRect.height).assertEqual(size.height);
+        console.info(CaseName + ' Succeeded in verifying windowRect width and height.');
+        await sleep(1000);
+        await floatViewController.stop();
+        console.info(CaseName + ' Succeeded in stopping float view.');
+      } catch (e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if (e.code === 801 && !isDeviceSupportFloatView) {
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
   })
 }
