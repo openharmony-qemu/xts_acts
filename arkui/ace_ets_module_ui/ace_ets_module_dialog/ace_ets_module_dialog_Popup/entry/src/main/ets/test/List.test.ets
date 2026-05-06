@@ -39,6 +39,13 @@ import presentCustomDialogNullAndUndefinedTest from './PromptActionNullAndUndefi
 import updatePopupNullAndUndefinedTest from './PromptActionNullAndUndefined/updatePopupNullAndUndefinedTest.test';
 import closePopupNullAndUndefinedTest from './PromptActionNullAndUndefined/closePopupNullAndUndefinedTest.test';
 
+
+import CustomPopupOptionsSystemMaterial from './popupSystemMaterial/CustomPopupOptionsSystemMaterial.test';
+import SheetOptionsSystemMaterial from './popupSystemMaterial/SheetOptionsSystemMaterial.test';
+import PopupCommonOptionsSystemMaterial from './popupSystemMaterial/PopupCommonOptionsSystemMaterial.test';
+import PopupOptionsSystemMaterial from './popupSystemMaterial/PopupOptionsSystemMaterial.test';
+import TipsOptionsSystemMaterial from './popupSystemMaterial/TipsOptionsSystemMaterial.test';
+
 export default function testsuite() {
   showActionMenuNullAndUndefinedTest();
   showActionMenuCallbackNullAndUndefinedTest();
@@ -63,26 +70,10 @@ export default function testsuite() {
   bindContextResponseNull();
   isShownContextMenuNull();
   bindContentCoverNullUndefined();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
+  
+  SheetOptionsSystemMaterial();
+  PopupCommonOptionsSystemMaterial();
+  PopupOptionsSystemMaterial();
+  CustomPopupOptionsSystemMaterial();
+  // TipsOptionsSystemMaterial();
 }
