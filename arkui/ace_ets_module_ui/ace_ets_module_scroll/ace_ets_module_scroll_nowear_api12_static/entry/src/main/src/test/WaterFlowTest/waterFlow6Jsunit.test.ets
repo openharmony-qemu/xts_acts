@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -78,7 +78,7 @@ it('waterFlow6Jsunit_static_001', Level.LEVEL1, async (done: () => void): Promis
       let width = right - left;
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width/2) as int,Math.round(top + height*0.9) as int,Math.round(left + width/2) as int,Math.round(top + height*0.1) as int);
+      await driver.swipe(Math.round(left + width/2).toInt(),Math.round(top + height*0.9).toInt(),Math.round(left + width/2).toInt(),Math.round(top + height*0.1).toInt());
       await CommonFunc.sleep(2000);
 
       let strJson1 = inspector.getInspectorByKey('waterFlow_onScrollText');

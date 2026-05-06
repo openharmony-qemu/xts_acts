@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -107,8 +107,8 @@ struct repeatWaterFlow {
               repeatChildItem({ item: ri.item })
             }
             .width('100%')
-            .height(this.itemHeightArray[(ri.item as int) % 100])
-            .backgroundColor(this.colors[(ri.item as int) % 5])
+            .height(this.itemHeightArray[(ri.item.toInt()) % 100])
+            .backgroundColor(this.colors[(ri.item.toInt()) % 5])
           })
       }
       .id('flowRepeat_event')
