@@ -53,9 +53,9 @@ export default function testTest003(): void {
      * @tc.desc Test zero width
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testTest0215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new RegExp('\\b').test('test')).assertTrue();
     });
 
@@ -65,9 +65,9 @@ export default function testTest003(): void {
      * @tc.desc Test empty alternative
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testTest0216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new RegExp('a|').test('')).assertTrue();
       expect(new RegExp('a|').test('a')).assertTrue();
     });
@@ -78,9 +78,9 @@ export default function testTest003(): void {
      * @tc.desc Test double anchor
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testTest0217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new RegExp('^^').test('test')).assertTrue();
     });
 
@@ -90,9 +90,9 @@ export default function testTest003(): void {
      * @tc.desc Test nested star
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testTest0218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new RegExp('(a)*').test('')).assertTrue();
       expect(new RegExp('((a)*)*').test('')).assertTrue();
     });
@@ -103,9 +103,9 @@ export default function testTest003(): void {
      * @tc.desc Test special combo
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testTest0219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = '\\d\\w\\s';
       const re = new RegExp('\\\\\\w\\\\\\w\\\\\\w');
       expect(re.test(str)).assertTrue();
@@ -139,9 +139,9 @@ export default function testTest003(): void {
      * @tc.desc Test form email validation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testTest0220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const validateEmail = (email: string): boolean => {
         const re = new RegExp('^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$');
         return re.test(email);
@@ -156,9 +156,9 @@ export default function testTest003(): void {
      * @tc.desc Test data cleaning
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testTest0221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const isClean = (s: string): boolean => new RegExp('^[a-zA-Z0-9\\s]+$').test(s);
       expect(isClean('Hello World 123')).assertTrue();
       expect(isClean('Hello@World')).assertFalse();
@@ -170,9 +170,9 @@ export default function testTest003(): void {
      * @tc.desc Test search keyword
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testTest0222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const isValidKeyword = (k: string): boolean => new RegExp('^[a-zA-Z0-9\\s\\-_]{2,50}$').test(k);
       expect(isValidKeyword('search-term')).assertTrue();
       expect(isValidKeyword('a')).assertFalse();
@@ -184,9 +184,9 @@ export default function testTest003(): void {
      * @tc.desc Test log analysis
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testTest0223', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0223', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const isErrorLog = (log: string): boolean => new RegExp('\\[ERROR\\]').test(log);
       expect(isErrorLog('[INFO] Processing')).assertFalse();
       expect(isErrorLog('[ERROR] Failed')).assertTrue();
@@ -198,9 +198,9 @@ export default function testTest003(): void {
      * @tc.desc Test config line
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testTest0224', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0224', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const isValidConfigLine = (line: string): boolean => new RegExp('^[a-zA-Z_]\\w*\\s*=\\s*[^#]+').test(line);
       expect(isValidConfigLine('key=value')).assertTrue();
       expect(isValidConfigLine('123key=value')).assertFalse();
@@ -212,9 +212,9 @@ export default function testTest003(): void {
      * @tc.desc Test dotAll s flag spans newline when supported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testTest0225', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0225', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = 'hello\nworld';
       if (!supportsRegExp('hello.*world', 's')) {
         return;
@@ -229,9 +229,9 @@ export default function testTest003(): void {
      * @tc.desc Test dot with u flag matches supplementary plane when supported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testTest0226', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0226', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = String.fromCodePoint(0x1D306);
       if (!supportsRegExp('.', 'u')) {
         return;

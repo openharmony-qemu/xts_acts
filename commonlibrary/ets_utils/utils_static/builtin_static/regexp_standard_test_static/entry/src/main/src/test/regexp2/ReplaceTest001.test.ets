@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -133,9 +133,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Basic String Replacement
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "Hello World, Hello Universe";
           const result = str.replace("Hello", "Hi");
           expect(result).assertEqual("Hi World, Hello Universe");
@@ -147,9 +147,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test String Replaces First Match Only
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "apple, apple, apple";
           const result = str.replace("apple", "orange");
           expect(result).assertEqual("orange, apple, apple");
@@ -161,9 +161,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Empty String Pattern
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "xxx";
           const result = str.replace("", "_");
           expect(result).assertEqual("_xxx");
@@ -175,9 +175,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Non Existent String Pattern
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "Hello World";
           const result = str.replace("goodbye", "Hi");
           expect(result).assertEqual("Hello World");
@@ -189,9 +189,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test String Pattern Escapes Special Chars
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "a.b.c";
           const result = str.replace(".", "_");
           expect(result).assertEqual("a_b.c");
@@ -225,9 +225,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Basic Regex Replacement No Flags
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "cat, dog, cat";
           const result = str.replace(new RegExp('cat'), "bird");
           expect(result).assertEqual("bird, dog, cat");
@@ -239,9 +239,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Global Replacement g Flag
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "cat, dog, cat";
           const result = str.replace(new RegExp('cat', 'g'), "bird");
           expect(result).assertEqual("bird, dog, bird");
@@ -253,9 +253,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Case Insensitive Replacement i Flag
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "Hello world, hello universe";
           const result = str.replace(new RegExp('hello', 'i'), "Hi");
           expect(result).assertEqual("Hi world, hello universe");
@@ -267,9 +267,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Multiline Replacement m Flag
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "Line1\nLine2\nLine3";
           const result = str.replace(new RegExp('^Line', 'gm'), "Row");
           expect(result).assertEqual("Row1\nRow2\nRow3");
@@ -281,9 +281,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Combined Flags gi
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "Hello HELLO hello HeLLo";
           const result = str.replace(new RegExp('hello', 'gi'), "Hi");
           expect(result).assertEqual("Hi Hi Hi Hi");
@@ -295,9 +295,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test dotAll Flag s
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "Hello\nWorld";
           const result = str.replace(new RegExp('Hello.World', 's'), "Hi");
           expect(result).assertEqual("Hi");
@@ -309,9 +309,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Unicode Flag u
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const mathSansHigh = 55349;
           const mathSansDigitZeroLow = 57240;
           const mathSansDigitOneLow = 57241;
@@ -331,9 +331,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Sticky Flag y
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "aaa";
           const regex = new RegExp('a', 'y');
           regex.lastIndex = 1;
@@ -347,9 +347,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test hasIndices Flag d
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "test123";
           try {
             const regex: RegExp = new RegExp('test(\\d+)', 'd');
@@ -388,9 +388,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Insert Dollar Sign
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "price: 100";
           const result = str.replace(new RegExp('\\d+'), "$$");
           expect(result).assertEqual("price: $");
@@ -402,9 +402,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Insert Entire Match
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "Hello World";
           const result = str.replace(new RegExp('World'), "$&!");
           expect(result).assertEqual("Hello World!");
@@ -416,9 +416,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Insert Text Before Match
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "Hello World";
           const result = str.replace(new RegExp('World'), "[$`]");
           expect(result).assertEqual("Hello [Hello ]");
@@ -430,9 +430,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Insert Text After Match
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "Hello World";
           const result = str.replace(new RegExp('Hello'), "[$']");
           expect(result).assertEqual("[ World] World");
@@ -444,9 +444,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Numbered Capture Groups
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "John Smith";
           const result = str.replace(new RegExp('(\\w+)\\s(\\w+)'), "$2, $1");
           expect(result).assertEqual("Smith, John");
@@ -458,9 +458,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Multiple Capture Groups
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "2023-12-25";
           const result = str.replace(new RegExp('(\\d{4})-(\\d{2})-(\\d{2})'), "$3/$2/$1");
           expect(result).assertEqual("25/12/2023");
@@ -472,9 +472,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Named Capture Groups
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           if (!supportsRegExp('(?<first>\\w+)\\s(?<last>\\w+)')) {
             return;
           }
@@ -489,9 +489,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Non Existent Capture Group
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "foo";
           const result = str.replace(new RegExp('(f)'), "$2");
           expect(result).assertEqual("$2oo");
@@ -503,9 +503,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test String Pattern Ignores Dollar
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "foo";
           const result = str.replace("f", "$1");
           expect(result).assertEqual("$1oo");
@@ -517,9 +517,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Nested Capture Groups
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "abc123";
           const result = str.replace(new RegExp('((\\w)(\\w))'), "$1-$2-$3");
           expect(result).assertEqual("ab-a-bc123");
@@ -553,9 +553,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Basic Function Replacement
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "Hello World";
           const result = str.replace("World", "WORLD");
           expect(result).assertEqual("Hello WORLD");
@@ -567,9 +567,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Function Receives Match
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "abc123";
           const result = str.replace(new RegExp('\\d+'), '[123]');
           expect(result).assertEqual("abc[123]");
@@ -581,9 +581,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Function Receives Capture Groups
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "John Smith";
           const result = str.replace(new RegExp('(\\w+)\\s(\\w+)'), "$2, $1");
           expect(result).assertEqual("Smith, John");
@@ -595,9 +595,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Function Receives Offset
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "abcde";
           const result = str.replace("cd", "cd@2");
           expect(result).assertEqual("abcd@2e");
@@ -609,9 +609,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Function Receives String
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "Hello";
           const result = str.replace("l", "l[5]");
           expect(result).assertEqual("Hel[5]lo");
@@ -623,9 +623,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Function Receives Named Groups
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           if (!supportsRegExp('(?<first>\\w+)\\s(?<last>\\w+)')) {
             return;
           }
@@ -640,9 +640,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Function Called Multiple Times Global
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "a1b2c3";
           const result = str.replace(new RegExp('\\d', 'g'), "X");
           expect(result).assertEqual("aXbXcX");
@@ -654,9 +654,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Unmatched Branch Capture Group
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "abc";
           const result = str.replace("a", "A").replace("b", "B");
           expect(result).assertEqual("ABc");
@@ -668,9 +668,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Temperature Conversion Example
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const f2c = (() => {
             const convert = (str: string, p1: string): string => {
               return String(((parseFloat(p1) - 32) * 5) / 9) + 'C';
@@ -700,9 +700,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Access Named Groups In Function
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           if (!supportsRegExp('(?<key>\\w+):(?<value>\\w+)', 'g')) {
             return;
           }
@@ -717,9 +717,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Function Returns Undefined
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "abc";
           const result = str.replace(new RegExp('a'), (): string => {
             return String(undefined);
@@ -733,9 +733,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Function Throws Exception
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "abc";
           let caughtError = false;
           let isExpectedError = false;
@@ -779,9 +779,9 @@ export default function replaceTest(): void {
         * @tc.desc   Test Non-global replace honors lastIndex as search start
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "abc abc";
           const regex = new RegExp('abc');
           regex.lastIndex = 4;
@@ -795,9 +795,9 @@ export default function replaceTest(): void {
         * @tc.desc   Test Global replace replaces all matches and resets lastIndex
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "abc abc abc";
           const regex = new RegExp('abc', 'g');
           regex.lastIndex = 4;
@@ -812,9 +812,9 @@ export default function replaceTest(): void {
         * @tc.desc   Test Sticky replace respects lastIndex positioning
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "aaa";
           const regex = new RegExp('a', 'y');
           regex.lastIndex = 1;
@@ -828,9 +828,9 @@ export default function replaceTest(): void {
         * @tc.desc   Test Global replace after manually setting lastIndex
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "test test";
           const regex = new RegExp('test', 'g');
           regex.lastIndex = 5;
@@ -845,9 +845,9 @@ export default function replaceTest(): void {
         * @tc.desc   Test lastIndex returns to zero after global replace
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "abc abc";
           const regex = new RegExp('abc', 'g');
           str.replace(regex, "XYZ");
@@ -883,9 +883,9 @@ export default function replaceTest(): void {
         * @tc.desc   Test Replace on empty source string
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "";
           const result = str.replace(new RegExp('a'), "b");
           expect(result).assertEqual("");
@@ -897,9 +897,9 @@ export default function replaceTest(): void {
         * @tc.desc   Test Empty-match regex inserts replacement at position zero
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "test";
           const result = str.replace(new RegExp('(?:)'), "_");
           expect(result).assertEqual("_test");
@@ -911,9 +911,9 @@ export default function replaceTest(): void {
         * @tc.desc   Test Single-character string replacement
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "a";
           const result = str.replace(new RegExp('a'), "b");
           expect(result).assertEqual("b");
@@ -925,9 +925,9 @@ export default function replaceTest(): void {
         * @tc.desc   Test Long string global replace preserves length
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "a".repeat(10000);
           const result = str.replace(new RegExp('a', 'g'), "b");
           expect(result.length).assertEqual(10000);
@@ -940,9 +940,9 @@ export default function replaceTest(): void {
         * @tc.desc   Test Replace matched segment with empty string
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "Hello World";
           const result = str.replace(new RegExp('World'), "");
           expect(result).assertEqual("Hello ");
@@ -954,9 +954,9 @@ export default function replaceTest(): void {
         * @tc.desc   Test Replace whole string using start/end anchors
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "Hello";
           const result = str.replace(new RegExp('^.*$'), "Bye");
           expect(result).assertEqual("Bye");
@@ -968,9 +968,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Emoji replace with Unicode flag on surrogate pairs
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const emoji: string = String.fromCharCode(0xD83D, 0xDE00);
           const str: string = emoji + emoji;
           const resultWithU: string = str.replace(new RegExp(emoji, 'gu'), "X");
@@ -1005,9 +1005,9 @@ export default function replaceTest(): void {
         * @tc.desc   Test Replace newline and tab with spaces
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "Hello\nWorld\t!";
           const result = str.replace(new RegExp('\\n', 'g'), " ").replace(new RegExp('\\t', 'g'), "  ");
           expect(result).assertEqual("Hello World  !");
@@ -1019,9 +1019,9 @@ export default function replaceTest(): void {
         * @tc.desc   Test Replace accented Unicode character
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "caf\u00e9";
           const result = str.replace(new RegExp('\\u00e9'), "e");
           expect(result).assertEqual("cafe");
@@ -1033,9 +1033,9 @@ export default function replaceTest(): void {
         * @tc.desc   Test Replace emoji in plain text
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const emoji: string = String.fromCharCode(0xD83D, 0xDE00);
           const str: string = "Hello " + emoji + " World";
           const result: string = str.replace(new RegExp(emoji, 'g'), ":-)");
@@ -1048,9 +1048,9 @@ export default function replaceTest(): void {
         * @tc.desc   Test Replace Unicode math digit with u flag
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const mathSansHigh = 55349;
           const mathSansDigitZeroLow = 57240;
           const mathSansDigitOneLow = 57241;
@@ -1070,9 +1070,9 @@ export default function replaceTest(): void {
         * @tc.desc   Test Surrogate pair handling with and without global u
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const emoji: string = String.fromCharCode(0xD83D, 0xDE00);
           const str: string = emoji + emoji;
           const result1: string = str.replace(new RegExp(emoji, 'u'), "X");
@@ -1087,9 +1087,9 @@ export default function replaceTest(): void {
         * @tc.desc   Test Combining character replace with u flag
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "e\u0301";
           const result = str.replace(new RegExp('\\u0301', 'u'), "");
           expect(result).assertEqual("e");
@@ -1101,9 +1101,9 @@ export default function replaceTest(): void {
         * @tc.desc   Test Partial replace in complex emoji sequence
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const emoji: string = String.fromCharCode(0xD83D, 0xDE00);
           const str: string = emoji + emoji + emoji;
           const result: string = str.replace(new RegExp(emoji, 'gu'), "XX");
@@ -1116,9 +1116,9 @@ export default function replaceTest(): void {
         * @tc.desc   Test Unicode property escape Script=Greek
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           if (!supportsRegExp('\\p{Script=Greek}', 'gu')) {
             return;
           }
@@ -1155,9 +1155,9 @@ export default function replaceTest(): void {
         * @tc.desc   Test Sticky y flag replace with lastIndex
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           if (!supportsRegExp('a', 'y')) {
             return;
           }
@@ -1174,9 +1174,9 @@ export default function replaceTest(): void {
         * @tc.desc   Test dotAll s flag matches across newline
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           if (!supportsRegExp('Hello.World', 's')) {
             return;
           }
@@ -1191,9 +1191,9 @@ export default function replaceTest(): void {
         * @tc.desc   Test Combined gim and sm flag replace behavior
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           if (!supportsRegExp('test', 'gim') || !supportsRegExp('.+', 'sm')) {
             return;
           }
@@ -1210,9 +1210,9 @@ export default function replaceTest(): void {
         * @tc.desc   Test Compare first-only vs global replace
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "test test test";
           const result1 = str.replace(new RegExp('test'), "XYZ");
           const result2 = str.replace(new RegExp('test', 'g'), "XYZ");
@@ -1248,9 +1248,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Zero Width Assertion Replacement
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           if (!supportsLookbehindSemantics()) {
             return;
           }
@@ -1265,9 +1265,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Positive Lookahead
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "abc123 def456";
           const result = str.replace(new RegExp('\\d(?=\\d)', 'g'), "*");
           expect(result).assertEqual("abc**3 def**6");
@@ -1279,9 +1279,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Negative Lookahead
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "abc1 def2";
           const result = str.replace(new RegExp('\\w(?!\\d)', 'g'), "");
           expect(result).assertEqual("c f");
@@ -1293,9 +1293,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Positive Lookbehind
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           if (!supportsLookbehindSemantics()) {
             return;
           }
@@ -1310,9 +1310,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Negative Lookbehind
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "abc100 def100";
           if (!supportsLookbehindSemantics()) {
             expect(supportsLookbehindSemantics()).assertFalse();
@@ -1328,9 +1328,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Atomic Group
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           let regex: RegExp | null = null;
           try {
             regex = new RegExp('(?>a*)bc');
@@ -1350,9 +1350,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Possessive Quantifier
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           let regex: RegExp | null = null;
           try {
             regex = new RegExp('a*+b');
@@ -1372,9 +1372,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test G Anchor
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "test test";
           const regex = new RegExp('\\Gtest', 'g');
           const result = str.replace(regex, "XYZ");
@@ -1409,9 +1409,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test String replacement
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           const str = "hello";
           const result = str.replace(new RegExp('hello'), "HELLO");
           expect(result).assertEqual("HELLO");
@@ -1423,9 +1423,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Number replacement
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           expect(replaceComplexReplaceTestWithNumber()).assertEqual("123");
         });
 
@@ -1435,9 +1435,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Object toString
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           expect(replaceComplexReplaceTestWithObjectToString()).assertEqual("REPLACED");
         });
 
@@ -1447,9 +1447,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Symbol toPrimitive
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           expect(replaceComplexReplaceTestWithSymbolToPrimitive()).assertEqual("REPLACED");
         });
 
@@ -1459,9 +1459,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test null replacement
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           expect(replaceComplexReplaceTestWithNull()).assertEqual("null");
         });
 
@@ -1471,9 +1471,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test undefined replacement
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           expect(replaceComplexReplaceTestWithUndefined()).assertEqual("undefined");
         });
 
@@ -1483,9 +1483,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Symbol replacement Throws
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           expect(replaceComplexReplaceTestWithSymbolValueThrows()).assertTrue();
         });
 
@@ -1495,9 +1495,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test BigInt replacement
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           expect(replaceComplexReplaceTestWithBigInt()).assertEqual("123");
         });
 
@@ -1507,9 +1507,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Boolean replacement
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           expect(replaceComplexReplaceTestWithBoolean()).assertEqual("true");
         });
 
@@ -1519,9 +1519,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Array replacement
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           expect(replaceComplexReplaceTestWithArray()).assertEqual("a,b");
         });
       });
@@ -1553,9 +1553,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Non RegExp Object this Throws
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           expect(replaceComplexNonRegExpReceiverSymbolReplaceThrows()).assertTrue();
         });
 
@@ -1565,9 +1565,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test undefined this Throws
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           expect(replaceComplexRegexpPrototypeSymbolReplaceUndefinedThisThrows()).assertTrue();
         });
 
@@ -1577,9 +1577,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test null this Throws
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           expect(replaceComplexRegexpPrototypeSymbolReplaceNullThisThrows()).assertTrue();
         });
 
@@ -1589,9 +1589,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test RegExp Like Object
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           expect(replaceComplexRegexpPrototypeSymbolReplaceRegexLikeResult()).assertEqual("X value");
         });
       });
@@ -1623,9 +1623,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Invalid Regex Throws
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           expect(replaceComplexInvalidRegExpCharClassCtorThrows()).assertTrue();
         });
 
@@ -1635,9 +1635,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Invalid Flag Throws
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           expect(replaceComplexInvalidRegExpFlagCtorThrows()).assertTrue();
         });
 
@@ -1647,9 +1647,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Invalid Unicode Code Point Throws
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           expect(replaceComplexInvalidUnicodeCodePointThrows()).assertTrue();
         });
 
@@ -1659,9 +1659,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Lookbehind Syntax Error Throws
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           expect(replaceComplexInvalidLookbehindThrows()).assertTrue();
         });
 
@@ -1671,9 +1671,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test Invalid Unicode Property Throws
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           expect(replaceComplexInvalidUnicodePropertyThrows()).assertTrue();
         });
 
@@ -1683,9 +1683,9 @@ export default function replaceTest(): void {
          * @tc.desc   Test replacement Non Function Non String
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level  LEVEL2
          */
-        it('testReplace0187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        it('testReplace0187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
           expect(replaceComplexReplaceHelloHWithNumber()).assertEqual("123ello");
         });
       });

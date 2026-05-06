@@ -37,9 +37,9 @@ export default function toStringTest002(): void {
      * @tc.desc toString renders default slash-wrapped pattern
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testToString0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testToString0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('abc');
       const out = re.toString();
       expect(out).assertEqual('/abc/');
@@ -51,9 +51,9 @@ export default function toStringTest002(): void {
      * @tc.desc toString keeps provided global and ignoreCase flags
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testToString0301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testToString0301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('abc', 'gi');
       const out = re.toString();
       expect(out).assertEqual('/abc/gi');
@@ -65,9 +65,9 @@ export default function toStringTest002(): void {
      * @tc.desc source and flags expose constructor-normalized values
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testToString0302', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testToString0302', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('\\d+');
       expect(re.source).assertEqual('\\d+');
       expect(re.flags).assertEqual('');
@@ -79,9 +79,9 @@ export default function toStringTest002(): void {
      * @tc.desc toString includes multiline flag in output
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testToString0303', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testToString0303', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('a', 'm');
       expect(re.toString()).assertEqual('/a/m');
     });
@@ -92,9 +92,9 @@ export default function toStringTest002(): void {
      * @tc.desc toString escapes forward slash in pattern representation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testToString0304', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testToString0304', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('a/b');
       expect(re.source).assertEqual('a\\/b');
       expect(re.toString()).assertEqual('/a\\/b/');
@@ -106,9 +106,9 @@ export default function toStringTest002(): void {
      * @tc.desc flags ordering in toString is stable (gimsyu when present)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testToString0305', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testToString0305', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('x', 'mig');
       
       expect(re.flags).assertEqual('gim');
@@ -121,9 +121,9 @@ export default function toStringTest002(): void {
      * @tc.desc source preserves escaping for backslash sequences
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testToString0306', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testToString0306', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('\\n\\t\\r');
       expect(re.source).assertEqual('\\n\\t\\r');
       expect(re.toString()).assertEqual('/\\n\\t\\r/');
@@ -135,9 +135,9 @@ export default function toStringTest002(): void {
      * @tc.desc toString for empty pattern renders // with flags if any
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testToString0307', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testToString0307', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new RegExp('').toString()).assertEqual('/(?:)/');
       expect(new RegExp('', 'g').toString()).assertEqual('/(?:)/g');
     });
@@ -148,9 +148,9 @@ export default function toStringTest002(): void {
      * @tc.desc toString reflects sticky/unicode/dotAll flags when supported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testToString0308', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testToString0308', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       if (supportsRegExp('x', 'y')) {
         expect(new RegExp('x', 'y').toString()).assertEqual('/x/y');
       }
@@ -168,9 +168,9 @@ export default function toStringTest002(): void {
      * @tc.desc constructor from RegExp clones source/flags; toString matches
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testToString0309', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testToString0309', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const base = new RegExp('ab+c', 'gi');
       const cloned = new RegExp(base);
       expect(cloned.source).assertEqual(base.source);
@@ -184,9 +184,9 @@ export default function toStringTest002(): void {
      * @tc.desc toString is consistent with source+flags round trip
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testToString0310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testToString0310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re1 = new RegExp('a\\d+', 'g');
       const re2 = new RegExp(re1.source, re1.flags);
       expect(re2.toString()).assertEqual(re1.toString());
@@ -200,9 +200,9 @@ export default function toStringTest002(): void {
      * @tc.desc toString returns a string in slash-delimited format
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testToString0311', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testToString0311', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('test', 'gi');
       const out = re.toString();
       expect(typeof out).assertEqual('string');
@@ -216,9 +216,9 @@ export default function toStringTest002(): void {
      * @tc.desc toString keeps metacharacters and quantifiers unchanged
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testToString0312', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testToString0312', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('\\d+\\w*\\s?');
       expect(re.source).assertEqual('\\d+\\w*\\s?');
       expect(re.toString()).assertEqual('/\\d+\\w*\\s?/');
@@ -230,9 +230,9 @@ export default function toStringTest002(): void {
      * @tc.desc toString supports non-capturing and named groups if supported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testToString0313', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testToString0313', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const nonCapturing = new RegExp('(?:abc)+');
       expect(nonCapturing.toString()).assertEqual('/(?:abc)+/');
       if (supportsRegExp('(?<name>\\w+)')) {
@@ -247,9 +247,9 @@ export default function toStringTest002(): void {
      * @tc.desc rebuilding with explicit flags updates serialized flag segment
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testToString0314', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testToString0314', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const base = new RegExp('abc', 'g');
       const overridden = new RegExp(base, 'm');
       expect(overridden.source).assertEqual('abc');
@@ -263,9 +263,9 @@ export default function toStringTest002(): void {
      * @tc.desc toString keeps character class and range syntax unchanged
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testToString0315', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testToString0315', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('[a-zA-Z0-9_]+');
       expect(re.source).assertEqual('[a-zA-Z0-9_]+');
       expect(re.toString()).assertEqual('/[a-zA-Z0-9_]+/');
@@ -277,9 +277,9 @@ export default function toStringTest002(): void {
      * @tc.desc toString preserves anchor and boundary assertions
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testToString0316', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testToString0316', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('^\\btest\\b$');
       expect(re.source).assertEqual('^\\btest\\b$');
       expect(re.toString()).assertEqual('/^\\btest\\b$/');
@@ -291,9 +291,9 @@ export default function toStringTest002(): void {
      * @tc.desc toString exposes normalized flags when input order is mixed
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testToString0317', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testToString0317', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('abc', 'mig');
       expect(re.flags).assertEqual('gim');
       expect(re.toString()).assertEqual('/abc/gim');
@@ -305,9 +305,9 @@ export default function toStringTest002(): void {
      * @tc.desc toString remains stable through repeated source/flags rebuilds
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testToString0318', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testToString0318', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const r1 = new RegExp('x\\d+', 'gi');
       const r2 = new RegExp(r1.source, r1.flags);
       const r3 = new RegExp(r2.source, r2.flags);

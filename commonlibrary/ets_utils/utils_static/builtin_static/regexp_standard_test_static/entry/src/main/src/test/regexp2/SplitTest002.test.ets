@@ -37,9 +37,9 @@ export default function splitTest002(): void {
      * @tc.desc Split by regex separators into expected tokens
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testSplit0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testSplit0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('[,;]');
       const out = 'a,b;c'.split(re);
       expect(out.length).assertEqual(3);
@@ -54,9 +54,9 @@ export default function splitTest002(): void {
      * @tc.desc Split keeps capturing separators in result
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testSplit0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testSplit0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('(,)');
       const out = 'a,b'.split(re);
       expect(out.length).assertEqual(3);
@@ -71,9 +71,9 @@ export default function splitTest002(): void {
      * @tc.desc Split returns original string when no delimiter matches
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testSplit0202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testSplit0202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('\\s+');
       const out = 'abc'.split(re);
       expect(out.length).assertEqual(1);
@@ -86,9 +86,9 @@ export default function splitTest002(): void {
      * @tc.desc Split limit truncates output length as expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testSplit0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testSplit0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp(',');
       const out = 'a,b,c'.split(re, 2);
       expect(out.length).assertEqual(2);
@@ -102,9 +102,9 @@ export default function splitTest002(): void {
      * @tc.desc Split: consecutive delimiters produce empty items
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testSplit0204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testSplit0204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const out = 'a,,b,'.split(new RegExp(','));
       expect(out.length).assertEqual(4);
       expect(out[0]).assertEqual('a');
@@ -119,9 +119,9 @@ export default function splitTest002(): void {
      * @tc.desc Split: leading delimiter yields leading empty item
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testSplit0205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testSplit0205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const out = ',a,b'.split(new RegExp(','));
       expect(out.length).assertEqual(3);
       expect(out[0]).assertEqual('');
@@ -135,9 +135,9 @@ export default function splitTest002(): void {
      * @tc.desc Split: whitespace regex trims multiple separators
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testSplit0206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testSplit0206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const out = 'a \t  b\nc'.split(new RegExp('\\s+'));
       expect(out.length).assertEqual(3);
       expect(out[0]).assertEqual('a');
@@ -151,9 +151,9 @@ export default function splitTest002(): void {
      * @tc.desc Split: capturing groups are included between tokens
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testSplit0207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testSplit0207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const out = 'a,b;c'.split(new RegExp('([,;])'));
       expect(out.length).assertEqual(5);
       expect(out[0]).assertEqual('a');
@@ -169,9 +169,9 @@ export default function splitTest002(): void {
      * @tc.desc Split: limit=0 returns empty array per JS spec behavior
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testSplit0208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testSplit0208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const out = 'a,b,c'.split(new RegExp(','), 0);
       expect(out.length).assertEqual(0);
     });
@@ -182,9 +182,9 @@ export default function splitTest002(): void {
      * @tc.desc Split: empty pattern splits between UTF-16 code units
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testSplit0209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testSplit0209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const out = 'abc'.split(new RegExp('(?:)'));
       expect(out.length).assertEqual(3);
       expect(out[0]).assertEqual('a');
@@ -198,9 +198,9 @@ export default function splitTest002(): void {
      * @tc.desc Split: word boundary delimiter separates tokens as expected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testSplit0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testSplit0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const out = 'foo-bar_baz'.split(new RegExp('\\b'));
       
       expect(out.length).assertEqual(3);
@@ -213,9 +213,9 @@ export default function splitTest002(): void {
      * @tc.desc Split: limit greater than result length keeps full output
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testSplit0211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testSplit0211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const out = 'a,b,c'.split(new RegExp(','), 99);
       expect(out.length).assertEqual(3);
       expect(out[0]).assertEqual('a');
@@ -229,9 +229,9 @@ export default function splitTest002(): void {
      * @tc.desc Split: multi-character regex delimiter
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testSplit0212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testSplit0212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const out = 'x--y----z'.split(new RegExp('--+'));
       expect(out.length).assertEqual(3);
       expect(out[0]).assertEqual('x');
@@ -245,9 +245,9 @@ export default function splitTest002(): void {
      * @tc.desc Split: newline delimiters with and without carriage return
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testSplit0213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testSplit0213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const out1 = 'a\nb\nc'.split(new RegExp('\\n'));
       expect(out1.length).assertEqual(3);
       const out2 = 'a\r\nb\r\nc'.split(new RegExp('\\r?\\n'));
@@ -263,9 +263,9 @@ export default function splitTest002(): void {
      * @tc.desc Split: capturing groups include optional undefined group slots
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testSplit0214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testSplit0214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const out = 'a-1-b'.split(new RegExp('(-)(\\d)?'));
       expect(out.length).assertEqual(7);
       expect(out[0]).assertEqual('a');
@@ -283,9 +283,9 @@ export default function splitTest002(): void {
      * @tc.desc Split: unicode separator token and emoji handling
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testSplit0215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testSplit0215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const out = 'a😀b😀c'.split(new RegExp('😀'));
       expect(out.length).assertEqual(3);
       expect(out[0]).assertEqual('a');
@@ -299,9 +299,9 @@ export default function splitTest002(): void {
      * @tc.desc Split: non-RegExp separator string semantics via any coercion
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testSplit0216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testSplit0216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const s = 'path/to/file';
       const out1 = s.split('/');
       expect(out1.length).assertEqual(3);
@@ -316,9 +316,9 @@ export default function splitTest002(): void {
      * @tc.desc Split: dotAll flag does not affect plain separator regex match
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testSplit0217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testSplit0217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const input = 'a\nb\nc';
       const out1 = input.split(new RegExp('.'));
       expect(out1.length).assertEqual(4);
@@ -334,9 +334,9 @@ export default function splitTest002(): void {
      * @tc.desc Split: non-matching delimiter keeps input as a single token
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testSplit0218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testSplit0218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const out = 'abcdef'.split(new RegExp('XYZ'));
       expect(out.length).assertEqual(1);
       expect(out[0]).assertEqual('abcdef');
@@ -348,9 +348,9 @@ export default function splitTest002(): void {
      * @tc.desc Split: leading and trailing separators preserve edge empties
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testSplit0219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testSplit0219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const out = ',a,b,'.split(new RegExp(','));
       expect(out.length).assertEqual(4);
       expect(out[0]).assertEqual('');
@@ -365,9 +365,9 @@ export default function splitTest002(): void {
      * @tc.desc Split: reconstruction from existing RegExp keeps delimiter semantics
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testSplit0220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testSplit0220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const base = new RegExp('\\s+');
       const rebuilt = new RegExp(base);
       const a = 'a  b   c'.split(base);
@@ -385,9 +385,9 @@ export default function splitTest002(): void {
      * @tc.desc Split: alternation delimiters handle mixed separators in one pass
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testSplit0221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testSplit0221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const out = 'a,b;c|d'.split(new RegExp('[,;|]'));
       expect(out.length).assertEqual(4);
       expect(out[0]).assertEqual('a');
