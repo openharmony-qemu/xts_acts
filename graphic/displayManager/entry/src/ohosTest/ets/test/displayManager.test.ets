@@ -3252,6 +3252,12 @@ export default function displayTest() {
       try {
         let windowClass = await windowStage.getMainWindow();
         await windowClass.setWindowBrightness(1);
+        let driver: Driver = Driver.create();
+        let buttonOne = await driver.findComponent(ON.text('next page'));
+        console.info(caseName + `buttonOne is ${JSON.stringify(buttonOne)}`);
+        if(buttonOne){
+          await buttonOne.click();
+        }
         await sleep(100);
         let brightnessChangeCount1 = 0;
         let brightnessChangeCount2 = 0;
@@ -3285,6 +3291,9 @@ export default function displayTest() {
         display.on('brightnessInfoChange', callback2);
         console.info(caseName + ' Brightness change listeners registered successfully');
         await windowClass.setWindowBrightness(0);
+        if(buttonOne){
+          await buttonOne.click();
+        }
         await sleep(100);
         while (!callback1Triggered) {
           await sleep(100);
@@ -3301,12 +3310,20 @@ export default function displayTest() {
         brightnessChangeCount1 = 0;
         brightnessChangeCount2 = 0;
         await windowClass.setWindowBrightness(1);
+        if(buttonOne){
+          await buttonOne.click();
+        }
+        await sleep(100);
         await sleep(3000);
         console.info(`${caseName} after off callback1 brightnessChangeCount1 = ${brightnessChangeCount1}`);
         console.info(`${caseName} after off callback2 brightnessChangeCount2 = ${brightnessChangeCount2}`);
         expect(brightnessChangeCount1).assertEqual(0);
         expect(brightnessChangeCount2).assertLargerOrEqual(1);
         await windowClass.setWindowBrightness(-1);
+        if(buttonOne){
+          await buttonOne.click();
+        }
+        await sleep(100);
         await sleep(100);
         display.off('brightnessInfoChange');
         done();
