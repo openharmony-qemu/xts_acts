@@ -816,6 +816,10 @@ export default function WindowPropertiesTest() {
                 expect(8).assertEqual(window.WindowType.TYPE_FLOAT);
             } else if (properties.type === window.WindowType.TYPE_DIALOG) {
                 expect(16).assertEqual(window.WindowType.TYPE_DIALOG);
+            } else if (properties.type === window.WindowType.TYPE_MAIN) {
+                expect(1).assertEqual(window.WindowType.TYPE_MAIN);
+            } else {
+                expect(false).assertTrue();
             }
             done();
             } catch (err) {
