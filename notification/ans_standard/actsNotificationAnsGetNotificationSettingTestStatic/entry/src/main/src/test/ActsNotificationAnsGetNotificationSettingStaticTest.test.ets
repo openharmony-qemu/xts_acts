@@ -78,7 +78,7 @@ export default function ActsNotificationAnsGetNotificationSettingStaticTest() {
     beforeEach(async() => {
       console.info(`${TAG} afterEach START`)
       await notificationManager.removeAllSlots()
-      await Utils.msSleep(3000)
+      await Utils.msSleep(5000)
       console.info(`${TAG} afterEach END`)
     })
 
