@@ -241,17 +241,21 @@ export default function api16CertNoPermissionTestUnit() {
      * @tc.level  LEVEL2
      */
 	it('SUB_Security_CertManager_openAuthorzeDialog_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      console.log("SUB_Security_CertManager_openAuthorzeDialog_0102: started ");
-      const context: common.Context = GlobalContext.getContext();
-      try {
-        await certManagerDialog.openAuthorizeDialog(context);
-        expect(null).assertFail();
-      } catch (err) {
-        console.error(`SUB_Security_CertManager_openAuthorzeDialog_0102 Failed to authorize certificate. Code: ${err.code}, message: ${err.message}`);
-        expect(err.code).assertEqual(201);
-      }
-      done();
-    });
+	  console.log("SUB_Security_CertManager_openAuthorzeDialog_0102: started ");
+	  const context: common.Context = GlobalContext.getContext();
+	  try {
+		await certManagerDialog.openAuthorizeDialog(context);
+		expect(null).assertFail();
+	  } catch (err) {
+		if (!canIUse('SystemCapability.Security.CertificateDialog')) {
+		  expect(err.code).assertEqual(801);
+		} else {
+		  console.error(`SUB_Security_CertManager_openAuthorzeDialog_0102 Failed to authorize certificate. Code: ${err.code}, message: ${err.message}`);
+		  expect(err.code).assertEqual(201);
+		}
+	  }
+	  done();
+	});
 
     /**
      * @tc.number SUB_Security_CertManager_Ukey_0100
@@ -274,12 +278,8 @@ export default function api16CertNoPermissionTestUnit() {
         await certManagerDialog.openAuthorizeDialog(context, authorizeRequest);
         expect(null).assertFail();
       } catch (error) {
-        if (!canIUse('SystemCapability.Security.CertificateDialog')) {
-          expect(error.code).assertEqual(801);
-        } else {
           console.error(`SUB_Security_CertManager_Ukey_0100 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(201);
-        }
+          expect(error.code).assertEqual(201); 
       }
       done();
     });
