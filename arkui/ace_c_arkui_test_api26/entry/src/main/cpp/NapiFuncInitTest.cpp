@@ -15,6 +15,8 @@
 #include "common/common.h"
 #include "onAreaChange/AreaChangeErrorCodeTest.cpp"
 #include "gestureIntercept/GestureErrorCodeTest.cpp"
+#include "scroll/scrollWithMouseTest.cpp"
+#include "scroll/autoAdjustMarginTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -32,6 +34,22 @@ static napi_value Init(napi_env env, napi_value exports)
         {"GestureInterceptErrorCode002", nullptr, GestureInterceptErrorCode002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GestureInterceptErrorCode003", nullptr, GestureInterceptErrorCode003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GestureInterceptErrorCode004", nullptr, GestureInterceptErrorCode004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ScrollWithMouseTest_001", nullptr, ScrollWithMouseTest_001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ScrollWithMouseTest_002", nullptr, ScrollWithMouseTest_002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ScrollWithMouseTest_003", nullptr, ScrollWithMouseTest_003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"ScrollWithMouseTest_004", nullptr, ScrollWithMouseTest_004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"AutoAdjustMarginTest_001", nullptr, AutoAdjustMarginTest_001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"AutoAdjustMarginTest_002", nullptr, AutoAdjustMarginTest_002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"AutoAdjustMarginTest_003", nullptr, AutoAdjustMarginTest_003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"AutoAdjustMarginTest_004", nullptr, AutoAdjustMarginTest_004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
         };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");
