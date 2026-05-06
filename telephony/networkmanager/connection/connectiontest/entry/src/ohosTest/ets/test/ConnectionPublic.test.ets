@@ -9346,7 +9346,7 @@ export default function ConnectionPublicTest() {
             done();
           }).catch((error: BusinessError)=>{
             console.info(`${caseName} error  fetching ip neigh table errorCode:${error.code}`+ JSON.stringify(error));
-            ExpectTrue(false)
+            ExpectTrue(false);
             console.info(`${caseName}---End`);
             done();
           })
@@ -9442,7 +9442,7 @@ export default function ConnectionPublicTest() {
           done();
         }).catch((error: BusinessError) => {
           console.error(`${caseName} getNetworkAccessPolicy error ${JSON.stringify(error)}`);
-          ExpectTrue(false)
+          ExpectTrue(false);
           done();
           console.info(`${caseName} test end`);
         })
@@ -9795,7 +9795,7 @@ export default function ConnectionPublicTest() {
           console.info(`${caseName} TraceRouteInfo: ${JSON.stringify(TraceRouteInfo)}`);
           console.info(`${caseName} TraceRouteInfo jumpNo: ${JSON.stringify(TraceRouteInfo[0].address)}`);
           let address: string = TraceRouteInfo[0].address;
-          ExpectTrue(address !== null);
+          ExpectTrue(address !== null && address !== undefined);
           console.info(`${caseName}---End`);
           done();
         }).catch((error: BusinessError) => {
@@ -10426,7 +10426,7 @@ export default function ConnectionPublicTest() {
           packetsType: connection.PacketsType.NETCONN_PACKETS_ICMP,
         };
         let promiseArray: Promise<connection.TraceRouteInfo[]>[] = [];
-        for (let i = 0; i< 10; i++) {
+        for (let i = 0; i < 10; i++) {
           promiseArray.push(connection.queryTraceRoute(destination, option));
         }
         Promise.all(promiseArray).then((results: connection.TraceRouteInfo[][]) => {
