@@ -816,7 +816,7 @@ export default function WindowPropertiesTest() {
                 expect(8).assertEqual(window.WindowType.TYPE_FLOAT);
             } else if (properties.type === window.WindowType.TYPE_DIALOG) {
                 expect(16).assertEqual(window.WindowType.TYPE_DIALOG);
-            }
+            } 
             done();
             } catch (err) {
             hilog.error(0x0000, '[ANI]', `${caseName} :Failed . Cause code: ${err.code}, message: ${err.message}`);
