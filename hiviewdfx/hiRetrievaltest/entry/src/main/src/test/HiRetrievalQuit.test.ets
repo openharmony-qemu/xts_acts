@@ -64,14 +64,14 @@ export default function HiRetrievalQuitTest() {
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(0x0000, 'testTag', 'error code: %{public}d', err.code);
-                expect(err.code == 36000001).assertTrue();
+                expect(err.code === 36000001).assertTrue();
             }
             hilog.info(0x0000, 'testTag', '*********** testHiRetrievalQuit_0200 Test end***********');
         });
 
         /**
          * @tc.name   testHiRetrievalQuit_0300
-         * * @tc.number SUB_DFX_DFT_HiRetrieval_Quit_0300
+         * @tc.number SUB_DFX_DFT_HiRetrieval_Quit_0300
          * @tc.desc   验证quit重复调用
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
