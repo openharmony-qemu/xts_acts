@@ -618,7 +618,6 @@ const pngMetadataMap = new Map<image.PngPropertyKey, ReadOnlyMetaDataRule>([
   [image.PngPropertyKey.WARNING, { key: "warning", newExpectValue: "Do not modify this metadata!" }],
   [image.PngPropertyKey.Y_PIXELS_PER_METER, { key: "yPixelsPerMeter", newExpectValue: 3780 }],
   [image.PngPropertyKey.GAMMA, { key: "gamma", newExpectValue: 0.45455 }],
-  [image.PngPropertyKey.CHROMATICITIES, { key: "unclampedDelayTime", newExpectValue: [100, 1, 150] }],
   [image.PngPropertyKey.DESCRIPTION, { key: "description", newExpectValue: "This image contains all possible metadata fields" }],
   [image.PngPropertyKey.TITLE, { key: "title", newExpectValue: "Complete Test Image" }],
   [image.PngPropertyKey.COMMENT, { key: "comment", newExpectValue: "Generated for testing purposes" }],
@@ -654,7 +653,6 @@ const tiffMetadataMap = new Map<image.TiffPropertyKey, ReadOnlyMetaDataRule>([
   [image.TiffPropertyKey.MODEL, { key: "model", newExpectValue: "Canon EOS Rebel T6" }],
   [image.TiffPropertyKey.HOST_COMPUTER, { key: "hostComputer", newExpectValue: undefined }],
   [image.TiffPropertyKey.COMPRESSION, { key: "compression", newExpectValue: 1 }],
-  [image.TiffPropertyKey.SOFTWARE, { key: "chromaticities", newExpectValue: undefined }],
   [image.TiffPropertyKey.PRIMARY_CHROMATICITIES, { key: "primaryChromaticities", newExpectValue: undefined }],
   [image.TiffPropertyKey.ARTIST, { key: "artist", newExpectValue: undefined }]
 ]);
