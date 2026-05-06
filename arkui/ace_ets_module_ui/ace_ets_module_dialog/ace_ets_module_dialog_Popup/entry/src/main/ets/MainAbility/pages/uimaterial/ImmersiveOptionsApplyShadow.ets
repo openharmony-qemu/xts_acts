@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { uiMaterial } from "@kit.ArkUI";
+import { uiMaterial } from '@kit.ArkUI';
 
 @Entry
 @Component
