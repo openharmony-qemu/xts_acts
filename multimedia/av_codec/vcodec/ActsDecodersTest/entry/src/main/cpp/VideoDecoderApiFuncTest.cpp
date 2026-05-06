@@ -931,7 +931,8 @@ int VideoDecCapApi0026()
     return 0;
 }
 
-int VideoDecCapApi0027() {
+int VideoDecCapApi0027()
+{
     OH_AVCapability *cap = OH_AVCodec_GetCapabilityByCategory(
         OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, SOFTWARE);
     if (!cap) {
