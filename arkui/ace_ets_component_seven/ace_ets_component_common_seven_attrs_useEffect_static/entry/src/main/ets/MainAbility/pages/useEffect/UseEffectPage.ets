@@ -1178,7 +1178,7 @@ struct useEffectPage {
   }
 
   build() {
-    GridRow({ columns: this.columns as Int, gutter: this.gutter, /*margin: 0 */}) {
+    GridRow({ columns: this.columns.toInt(), gutter: this.gutter, /*margin: 0 */}) {
       Row() {
         if (this.targetView == 'Button') {
           Button('button1').commonStyle(this.componentKey).attributeModifier(this._useEffectButttonMod)
