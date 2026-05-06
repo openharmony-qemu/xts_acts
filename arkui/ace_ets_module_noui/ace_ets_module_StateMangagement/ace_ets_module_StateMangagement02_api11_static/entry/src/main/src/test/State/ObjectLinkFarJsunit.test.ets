@@ -136,7 +136,7 @@ it('ObjectLinkFarJsunit_static_0200', Level.LEVEL0, async (done: () => void): Pr
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[ObjectLinkFarJsunit_static_0200] component obj1 is: " + JSON.stringify(obj1));
       console.info("[ObjectLinkFarJsunit_static_0200] text: " + JSON.stringify(obj1.getElement('$attrs').getString('content')));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual("ClassAAA的classBBB: 5");
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual("ClassAAA的classBBB: 6");
 
       let strJson2 = inspector.getInspectorByKey('sonClassBBB');
       let obj2 = JSON.parseJsonElement(strJson2);
@@ -177,7 +177,7 @@ it('ObjectLinkFarJsunit_static_0300', Level.LEVEL0, async (done: () => void): Pr
       let obj3 = JSON.parseJsonElement(strJson3);
       console.info("[ObjectLinkFarJsunit_static_0300] component obj3 is: " + JSON.stringify(obj3));
       console.info("[ObjectLinkFarJsunit_static_0300] text: " + JSON.stringify(obj3.getElement('$attrs').getString('content')));
-      expect(obj3.getElement('$attrs').getString('content')).assertEqual("ClassAAA的classBBB: 5");
+      expect(obj3.getElement('$attrs').getString('content')).assertEqual("ClassAAA的classBBB: 6");
 
       console.info('[ObjectLinkFarJsunit_static_0300] END');
       done();
