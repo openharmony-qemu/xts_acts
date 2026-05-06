@@ -1539,7 +1539,7 @@ export default function NewEAWorkerTest() {
         try {
           const priority = worker.getPriority();
           console.info(`${TAG} priority: ${priority}`);
-          expect(priority).assertEqual(WorkerPriority.PRIORITY_DEFAULT);
+          expect(priority).assertEqual(WorkerPriority.PRIORITY_HIGH);
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
@@ -1569,7 +1569,7 @@ export default function NewEAWorkerTest() {
         try {
           const priority = EAWorker.main().getPriority();
           console.info(`${TAG} priority: ${priority}`);
-          expect(priority).assertEqual(WorkerPriority.PRIORITY_DEFAULT)
+          expect(priority).assertEqual(WorkerPriority.PRIORITY_HIGH)
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();

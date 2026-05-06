@@ -693,7 +693,7 @@ export default function NewEAWorkerTes2() {
     it("MainTest005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let getValue = EAWorker.main().getPriority()
-        expect(getValue).assertEqual(WorkerPriority.PRIORITY_DEFAULT)
+        expect(getValue).assertEqual(WorkerPriority.PRIORITY_HIGH)
       } catch (error) {
         expect(false).assertFail();
       } finally {
@@ -736,7 +736,7 @@ export default function NewEAWorkerTes2() {
         await taskpool.execute(() => {
           getValue = EAWorker.main().getPriority()
         })
-        expect(getValue!).assertEqual(WorkerPriority.PRIORITY_DEFAULT)
+        expect(getValue!).assertEqual(WorkerPriority.PRIORITY_HIGH)
       } catch (error) {
         expect(false).assertFail()
       } finally {
@@ -879,7 +879,7 @@ export default function NewEAWorkerTes2() {
           while (Date.now() < end) {
           }
           let currentValue = current!.getPriority()
-          expect(currentValue).assertEqual(WorkerPriority.PRIORITY_DEFAULT)
+          expect(currentValue).assertEqual(WorkerPriority.PRIORITY_HIGH)
           current!.join();
         } catch (error) {
           console.error(`catch error: code =>  message => ${error.message}`);
@@ -1001,7 +1001,7 @@ export default function NewEAWorkerTes2() {
           worker.start();
           await Utils.msSleep(200);
           let getValue = current!.getPriority()
-          expect(getValue).assertEqual(WorkerPriority.PRIORITY_DEFAULT)
+          expect(getValue).assertEqual(WorkerPriority.PRIORITY_HIGH)
           current!.join();
         } catch (error) {
           expect(false).assertFail()
