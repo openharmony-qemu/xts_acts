@@ -1650,12 +1650,8 @@ it('SUB_Security_CertManager_Ukey_1300', TestType.FUNCTION | Size.MEDIUMTEST | L
           await certManagerDialog.openAuthorizeDialog(context, authorizeRequest);
           expect(null).assertFail();
         } catch (error) {
-          if (!canIUse('SystemCapability.Security.CertificateDialog')) {
-            expect(error.code).assertEqual(801);
-          } else {
-            console.error(`SUB_Security_CertManager_Ukey_1300 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
-            expect(error.code).assertEqual(29700007);
-          }
+          console.error(`SUB_Security_CertManager_Ukey_1300 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(29700007);
         }
 
       } else {
