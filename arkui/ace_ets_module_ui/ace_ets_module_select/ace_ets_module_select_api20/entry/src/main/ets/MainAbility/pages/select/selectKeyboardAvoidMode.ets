@@ -8,7 +8,7 @@ struct Index {
   @State ModeArray: MenuKeyboardAvoidMode[] = [
     MenuKeyboardAvoidMode.NONE,
     MenuKeyboardAvoidMode.TRANSLATE_AND_RESIZE];
-  @State KeyboardAvoidMode: string = 'undefined';
+  @State keyboardAvoidMode: string = 'undefined';
   @State private selectOptions: SelectOption[] = [
     {
       value: 'ccc',
@@ -76,7 +76,7 @@ struct Index {
   build() {
     Flex () {
       Column() {
-        Text(this.KeyboardAvoidMode).id('modeType')
+        Text(this.keyboardAvoidMode).id('modeType')
         Button('hide')
           .width('80%')
           .height(60)
@@ -95,7 +95,7 @@ struct Index {
         .margin('20px')
         .minKeyboardAvoidDistance(LengthMetrics.vp(10))
         .onClick(() => {
-          this.KeyboardAvoidMode = 'undefined'
+          this.keyboardAvoidMode = 'undefined'
           setTimeout(() => {
             this.attachAndListener()
           }, 2000)
@@ -112,7 +112,7 @@ struct Index {
           setTimeout(() => {
             this.attachAndListener()
           }, 2000)
-          this.KeyboardAvoidMode = this.ModeArray[0].toString()
+          this.keyboardAvoidMode = this.ModeArray[0].toString()
         })
       Select(this.selectOptions1)
         .value('Click Show Options')
@@ -125,7 +125,7 @@ struct Index {
           setTimeout(() => {
             this.attachAndListener()
           }, 2000)
-          this.KeyboardAvoidMode = this.ModeArray[1].toString()
+          this.keyboardAvoidMode = this.ModeArray[1].toString()
         })
     }
     .position({ bottom: 20 })
