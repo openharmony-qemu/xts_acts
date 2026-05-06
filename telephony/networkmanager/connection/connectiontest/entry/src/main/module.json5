@@ -40,7 +40,7 @@
         "reason" : "$string:location_reason",   //授权原因 (必须配 string 资源)
         "usedScene" : {
           "abilities" : ["EntryAbility"],
-          "when" : "inues"      //使用时授权
+          "when" : "inuse"      //使用时授权
         }
       },
       {
@@ -48,7 +48,7 @@
         "reason" : "$string:location_reason",
         "usedScene" : {
           "abilities" : ["EntryAbility"],
-          "when" : "inues"
+          "when" : "inuse"
         }
       }
     ],
