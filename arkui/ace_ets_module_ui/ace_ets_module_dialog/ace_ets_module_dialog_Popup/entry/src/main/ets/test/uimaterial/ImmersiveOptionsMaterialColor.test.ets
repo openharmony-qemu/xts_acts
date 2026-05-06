@@ -14,7 +14,7 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "@ohos/hypium"
+import { describe, beforeEach, afterEach, it, expect, Level } from "@ohos/hypium"
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common'
 import { uiMaterial } from '@kit.ArkUI';
@@ -26,30 +26,26 @@ export default function ImmersiveOptionsMaterialColorTest() {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/uimaterial/ImmersiveOptionsMaterialColor',
       }
-      try {
-        router.clear();
-        let pages = router.getState();
-        console.info('get ImmersiveOptionsMaterialColor state success ' + JSON.stringify(pages));
-        if (!('ImmersiveOptionsMaterialColor' == pages.name)) {
-          console.info('get ImmersiveOptionsMaterialColor state success ' + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options)
-          await CommonFunc.sleep(2000);
-          console.info('push ImmersiveOptionsMaterialColor page success ' + JSON.stringify(result));
-        }
-      } catch (err) {
-        console.error('push ImmersiveOptionsMaterialColor page error ' + JSON.stringify(err));
+      router.clear();
+      let pages = router.getState();
+      console.info('get ImmersiveOptionsMaterialColor state success ' + JSON.stringify(pages));
+      if (!('ImmersiveOptionsMaterialColor' == pages.name)) {
+        let result = await router.pushUrl(options)
+        await CommonFunc.sleep(2000);
+        console.info('push ImmersiveOptionsMaterialColor page success ' + JSON.stringify(result));
       }
       done()
     });
 
     afterEach(async () => {
+      await CommonFunc.sleep(500);
       console.info("ImmersiveOptionsMaterialColorTest after each called");
     });
 
     /**
      * @tc.name   ImmersiveOptionsMaterialColorTest_0100
-     * @tc.number SUB_ACE_ImmersiveOptionsMaterialColorTest_0100
-     * @tc.desc   Test ImmersiveOptions.materialColor with undefined parameter
+     * @tc.number SUB_ARKUI_API_ImmersiveOptionsMaterialColorTest_0100
+     * @tc.desc   To test ImmersiveOptions.materialColor with undefined parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -59,22 +55,19 @@ export default function ImmersiveOptionsMaterialColorTest() {
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
 
-      let constructorSuccess = false;
-      try {
-        let material = new uiMaterial.ImmersiveMaterial({
-          style: uiMaterial.ImmersiveStyle.THIN,
-          materialColor: undefined
-        });
-        constructorSuccess = true;
-        console.info('ImmersiveOptionsMaterialColorTest_0100 ImmersiveMaterial created successfully');
-      } catch (err) {
-        console.error('ImmersiveOptionsMaterialColorTest_0100 constructor failed: ' + JSON.stringify(err));
-      }
-      expect(constructorSuccess).assertTrue();
+      let material = new uiMaterial.ImmersiveMaterial({
+        style: uiMaterial.ImmersiveStyle.THIN,
+        materialColor: undefined
+      });
+      expect(material instanceof uiMaterial.ImmersiveMaterial).assertTrue();
+      console.info('ImmersiveOptionsMaterialColorTest_0100 ImmersiveMaterial created');
+
+      let component = await driver.findComponent(ON.id('undefined'));
+      expect(component).not().assertUndefined();
 
       let strJson = getInspectorByKey('undefined');
+      console.info('ImmersiveOptionsMaterialColorTest_0100 strJson: ' + strJson);
       let obj: ESObject = JSON.parse(strJson);
-      console.info('ImmersiveOptionsMaterialColorTest_0100 systemMaterial: ' + JSON.stringify(obj.$attrs.systemMaterial));
       expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
 
       console.info('ImmersiveOptionsMaterialColorTest_0100 END');
@@ -83,8 +76,8 @@ export default function ImmersiveOptionsMaterialColorTest() {
 
     /**
      * @tc.name   ImmersiveOptionsMaterialColorTest_0200
-     * @tc.number SUB_ACE_ImmersiveOptionsMaterialColorTest_0200
-     * @tc.desc   Test ImmersiveOptions.materialColor with Color.Transparent parameter
+     * @tc.number SUB_ARKUI_API_ImmersiveOptionsMaterialColorTest_0200
+     * @tc.desc   To test ImmersiveOptions.materialColor with Color.Transparent parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -94,22 +87,19 @@ export default function ImmersiveOptionsMaterialColorTest() {
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
 
-      let constructorSuccess = false;
-      try {
-        let material = new uiMaterial.ImmersiveMaterial({
-          style: uiMaterial.ImmersiveStyle.THIN,
-          materialColor: Color.Transparent
-        });
-        constructorSuccess = true;
-        console.info('ImmersiveOptionsMaterialColorTest_0200 ImmersiveMaterial created successfully');
-      } catch (err) {
-        console.error('ImmersiveOptionsMaterialColorTest_0200 constructor failed: ' + JSON.stringify(err));
-      }
-      expect(constructorSuccess).assertTrue();
+      let material = new uiMaterial.ImmersiveMaterial({
+        style: uiMaterial.ImmersiveStyle.THIN,
+        materialColor: Color.Transparent
+      });
+      expect(material instanceof uiMaterial.ImmersiveMaterial).assertTrue();
+      console.info('ImmersiveOptionsMaterialColorTest_0200 ImmersiveMaterial created');
+
+      let component = await driver.findComponent(ON.id('transparent'));
+      expect(component).not().assertUndefined();
 
       let strJson = getInspectorByKey('transparent');
+      console.info('ImmersiveOptionsMaterialColorTest_0200 strJson: ' + strJson);
       let obj: ESObject = JSON.parse(strJson);
-      console.info('ImmersiveOptionsMaterialColorTest_0200 systemMaterial: ' + JSON.stringify(obj.$attrs.systemMaterial));
       expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
 
       console.info('ImmersiveOptionsMaterialColorTest_0200 END');
@@ -118,8 +108,8 @@ export default function ImmersiveOptionsMaterialColorTest() {
 
     /**
      * @tc.name   ImmersiveOptionsMaterialColorTest_0300
-     * @tc.number SUB_ACE_ImmersiveOptionsMaterialColorTest_0300
-     * @tc.desc   Test ImmersiveOptions.materialColor with string '#80FF0000' parameter
+     * @tc.number SUB_ARKUI_API_ImmersiveOptionsMaterialColorTest_0300
+     * @tc.desc   To test ImmersiveOptions.materialColor with string '#80FF0000' parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -129,22 +119,19 @@ export default function ImmersiveOptionsMaterialColorTest() {
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
 
-      let constructorSuccess = false;
-      try {
-        let material = new uiMaterial.ImmersiveMaterial({
-          style: uiMaterial.ImmersiveStyle.THIN,
-          materialColor: '#80FF0000'
-        });
-        constructorSuccess = true;
-        console.info('ImmersiveOptionsMaterialColorTest_0300 ImmersiveMaterial created successfully');
-      } catch (err) {
-        console.error('ImmersiveOptionsMaterialColorTest_0300 constructor failed: ' + JSON.stringify(err));
-      }
-      expect(constructorSuccess).assertTrue();
+      let material = new uiMaterial.ImmersiveMaterial({
+        style: uiMaterial.ImmersiveStyle.THIN,
+        materialColor: '#80FF0000'
+      });
+      expect(material instanceof uiMaterial.ImmersiveMaterial).assertTrue();
+      console.info('ImmersiveOptionsMaterialColorTest_0300 ImmersiveMaterial created');
+
+      let component = await driver.findComponent(ON.id('string_red'));
+      expect(component).not().assertUndefined();
 
       let strJson = getInspectorByKey('string_red');
+      console.info('ImmersiveOptionsMaterialColorTest_0300 strJson: ' + strJson);
       let obj: ESObject = JSON.parse(strJson);
-      console.info('ImmersiveOptionsMaterialColorTest_0300 systemMaterial: ' + JSON.stringify(obj.$attrs.systemMaterial));
       expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
 
       console.info('ImmersiveOptionsMaterialColorTest_0300 END');
@@ -153,8 +140,8 @@ export default function ImmersiveOptionsMaterialColorTest() {
 
     /**
      * @tc.name   ImmersiveOptionsMaterialColorTest_0400
-     * @tc.number SUB_ACE_ImmersiveOptionsMaterialColorTest_0400
-     * @tc.desc   Test ImmersiveOptions.materialColor with string 'rgba(0,255,0,0.5)' parameter
+     * @tc.number SUB_ARKUI_API_ImmersiveOptionsMaterialColorTest_0400
+     * @tc.desc   To test ImmersiveOptions.materialColor with string 'rgba(0,255,0,0.5)' parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -164,22 +151,19 @@ export default function ImmersiveOptionsMaterialColorTest() {
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
 
-      let constructorSuccess = false;
-      try {
-        let material = new uiMaterial.ImmersiveMaterial({
-          style: uiMaterial.ImmersiveStyle.THIN,
-          materialColor: 'rgba(0,255,0,0.5)'
-        });
-        constructorSuccess = true;
-        console.info('ImmersiveOptionsMaterialColorTest_0400 ImmersiveMaterial created successfully');
-      } catch (err) {
-        console.error('ImmersiveOptionsMaterialColorTest_0400 constructor failed: ' + JSON.stringify(err));
-      }
-      expect(constructorSuccess).assertTrue();
+      let material = new uiMaterial.ImmersiveMaterial({
+        style: uiMaterial.ImmersiveStyle.THIN,
+        materialColor: 'rgba(0,255,0,0.5)'
+      });
+      expect(material instanceof uiMaterial.ImmersiveMaterial).assertTrue();
+      console.info('ImmersiveOptionsMaterialColorTest_0400 ImmersiveMaterial created');
+
+      let component = await driver.findComponent(ON.id('string_rgba'));
+      expect(component).not().assertUndefined();
 
       let strJson = getInspectorByKey('string_rgba');
+      console.info('ImmersiveOptionsMaterialColorTest_0400 strJson: ' + strJson);
       let obj: ESObject = JSON.parse(strJson);
-      console.info('ImmersiveOptionsMaterialColorTest_0400 systemMaterial: ' + JSON.stringify(obj.$attrs.systemMaterial));
       expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
 
       console.info('ImmersiveOptionsMaterialColorTest_0400 END');
@@ -188,8 +172,8 @@ export default function ImmersiveOptionsMaterialColorTest() {
 
     /**
      * @tc.name   ImmersiveOptionsMaterialColorTest_0500
-     * @tc.number SUB_ACE_ImmersiveOptionsMaterialColorTest_0500
-     * @tc.desc   Test ImmersiveOptions.materialColor with number 0x800000FF parameter
+     * @tc.number SUB_ARKUI_API_ImmersiveOptionsMaterialColorTest_0500
+     * @tc.desc   To test ImmersiveOptions.materialColor with number 0x800000FF parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -199,22 +183,19 @@ export default function ImmersiveOptionsMaterialColorTest() {
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
 
-      let constructorSuccess = false;
-      try {
-        let material = new uiMaterial.ImmersiveMaterial({
-          style: uiMaterial.ImmersiveStyle.THIN,
-          materialColor: 0x800000FF
-        });
-        constructorSuccess = true;
-        console.info('ImmersiveOptionsMaterialColorTest_0500 ImmersiveMaterial created successfully');
-      } catch (err) {
-        console.error('ImmersiveOptionsMaterialColorTest_0500 constructor failed: ' + JSON.stringify(err));
-      }
-      expect(constructorSuccess).assertTrue();
+      let material = new uiMaterial.ImmersiveMaterial({
+        style: uiMaterial.ImmersiveStyle.THIN,
+        materialColor: 0x800000FF
+      });
+      expect(material instanceof uiMaterial.ImmersiveMaterial).assertTrue();
+      console.info('ImmersiveOptionsMaterialColorTest_0500 ImmersiveMaterial created');
+
+      let component = await driver.findComponent(ON.id('number_color'));
+      expect(component).not().assertUndefined();
 
       let strJson = getInspectorByKey('number_color');
+      console.info('ImmersiveOptionsMaterialColorTest_0500 strJson: ' + strJson);
       let obj: ESObject = JSON.parse(strJson);
-      console.info('ImmersiveOptionsMaterialColorTest_0500 systemMaterial: ' + JSON.stringify(obj.$attrs.systemMaterial));
       expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
 
       console.info('ImmersiveOptionsMaterialColorTest_0500 END');
@@ -223,8 +204,8 @@ export default function ImmersiveOptionsMaterialColorTest() {
 
     /**
      * @tc.name   ImmersiveOptionsMaterialColorTest_0600
-     * @tc.number SUB_ACE_ImmersiveOptionsMaterialColorTest_0600
-     * @tc.desc   Test ImmersiveOptions.materialColor with Color.Blue parameter
+     * @tc.number SUB_ARKUI_API_ImmersiveOptionsMaterialColorTest_0600
+     * @tc.desc   To test ImmersiveOptions.materialColor with Color.Blue parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -234,22 +215,19 @@ export default function ImmersiveOptionsMaterialColorTest() {
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
 
-      let constructorSuccess = false;
-      try {
-        let material = new uiMaterial.ImmersiveMaterial({
-          style: uiMaterial.ImmersiveStyle.THIN,
-          materialColor: Color.Blue
-        });
-        constructorSuccess = true;
-        console.info('ImmersiveOptionsMaterialColorTest_0600 ImmersiveMaterial created successfully');
-      } catch (err) {
-        console.error('ImmersiveOptionsMaterialColorTest_0600 constructor failed: ' + JSON.stringify(err));
-      }
-      expect(constructorSuccess).assertTrue();
+      let material = new uiMaterial.ImmersiveMaterial({
+        style: uiMaterial.ImmersiveStyle.THIN,
+        materialColor: Color.Blue
+      });
+      expect(material instanceof uiMaterial.ImmersiveMaterial).assertTrue();
+      console.info('ImmersiveOptionsMaterialColorTest_0600 ImmersiveMaterial created');
+
+      let component = await driver.findComponent(ON.id('color_enum'));
+      expect(component).not().assertUndefined();
 
       let strJson = getInspectorByKey('color_enum');
+      console.info('ImmersiveOptionsMaterialColorTest_0600 strJson: ' + strJson);
       let obj: ESObject = JSON.parse(strJson);
-      console.info('ImmersiveOptionsMaterialColorTest_0600 systemMaterial: ' + JSON.stringify(obj.$attrs.systemMaterial));
       expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
 
       console.info('ImmersiveOptionsMaterialColorTest_0600 END');
@@ -258,8 +236,8 @@ export default function ImmersiveOptionsMaterialColorTest() {
 
     /**
      * @tc.name   ImmersiveOptionsMaterialColorTest_0700
-     * @tc.number SUB_ACE_ImmersiveOptionsMaterialColorTest_0700
-     * @tc.desc   Test ImmersiveOptions.materialColor with string '#80FFFFFF' parameter
+     * @tc.number SUB_ARKUI_API_ImmersiveOptionsMaterialColorTest_0700
+     * @tc.desc   To test ImmersiveOptions.materialColor with string '#80FFFFFF' parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -269,22 +247,19 @@ export default function ImmersiveOptionsMaterialColorTest() {
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
 
-      let constructorSuccess = false;
-      try {
-        let material = new uiMaterial.ImmersiveMaterial({
-          style: uiMaterial.ImmersiveStyle.THIN,
-          materialColor: '#80FFFFFF'
-        });
-        constructorSuccess = true;
-        console.info('ImmersiveOptionsMaterialColorTest_0700 ImmersiveMaterial created successfully');
-      } catch (err) {
-        console.error('ImmersiveOptionsMaterialColorTest_0700 constructor failed: ' + JSON.stringify(err));
-      }
-      expect(constructorSuccess).assertTrue();
+      let material = new uiMaterial.ImmersiveMaterial({
+        style: uiMaterial.ImmersiveStyle.THIN,
+        materialColor: '#80FFFFFF'
+      });
+      expect(material instanceof uiMaterial.ImmersiveMaterial).assertTrue();
+      console.info('ImmersiveOptionsMaterialColorTest_0700 ImmersiveMaterial created');
+
+      let component = await driver.findComponent(ON.id('color_white'));
+      expect(component).not().assertUndefined();
 
       let strJson = getInspectorByKey('color_white');
+      console.info('ImmersiveOptionsMaterialColorTest_0700 strJson: ' + strJson);
       let obj: ESObject = JSON.parse(strJson);
-      console.info('ImmersiveOptionsMaterialColorTest_0700 systemMaterial: ' + JSON.stringify(obj.$attrs.systemMaterial));
       expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
 
       console.info('ImmersiveOptionsMaterialColorTest_0700 END');
@@ -293,8 +268,8 @@ export default function ImmersiveOptionsMaterialColorTest() {
 
     /**
      * @tc.name   ImmersiveOptionsMaterialColorTest_0800
-     * @tc.number SUB_ACE_ImmersiveOptionsMaterialColorTest_0800
-     * @tc.desc   Test ImmersiveMaterial without materialColor parameter
+     * @tc.number SUB_ARKUI_API_ImmersiveOptionsMaterialColorTest_0800
+     * @tc.desc   To test ImmersiveMaterial without materialColor parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -304,43 +279,24 @@ export default function ImmersiveOptionsMaterialColorTest() {
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
 
-      let constructorSuccess1 = false;
-      let constructorSuccess2 = false;
-      let constructorSuccess3 = false;
+      let material1 = new uiMaterial.ImmersiveMaterial({ style: uiMaterial.ImmersiveStyle.THIN });
+      expect(material1 instanceof uiMaterial.ImmersiveMaterial).assertTrue();
+      console.info('ImmersiveOptionsMaterialColorTest_0800 ImmersiveMaterial created without materialColor');
 
-      try {
-        let material1 = new uiMaterial.ImmersiveMaterial({
-          style: uiMaterial.ImmersiveStyle.THIN
-        });
-        constructorSuccess1 = true;
-        console.info('ImmersiveOptionsMaterialColorTest_0800 ImmersiveMaterial created without materialColor');
-      } catch (err) {
-        console.error('ImmersiveOptionsMaterialColorTest_0800 constructor1 failed: ' + JSON.stringify(err));
-      }
+      let material2 = new uiMaterial.ImmersiveMaterial();
+      expect(material2 instanceof uiMaterial.ImmersiveMaterial).assertTrue();
+      console.info('ImmersiveOptionsMaterialColorTest_0800 ImmersiveMaterial created without options');
 
-      try {
-        let material2 = new uiMaterial.ImmersiveMaterial();
-        constructorSuccess2 = true;
-        console.info('ImmersiveOptionsMaterialColorTest_0800 ImmersiveMaterial created without options');
-      } catch (err) {
-        console.error('ImmersiveOptionsMaterialColorTest_0800 constructor2 failed: ' + JSON.stringify(err));
-      }
+      let material3 = new uiMaterial.ImmersiveMaterial({});
+      expect(material3 instanceof uiMaterial.ImmersiveMaterial).assertTrue();
+      console.info('ImmersiveOptionsMaterialColorTest_0800 ImmersiveMaterial created with empty options');
 
-      try {
-        let material3 = new uiMaterial.ImmersiveMaterial({});
-        constructorSuccess3 = true;
-        console.info('ImmersiveOptionsMaterialColorTest_0800 ImmersiveMaterial created with empty options');
-      } catch (err) {
-        console.error('ImmersiveOptionsMaterialColorTest_0800 constructor3 failed: ' + JSON.stringify(err));
-      }
-
-      expect(constructorSuccess1).assertTrue();
-      expect(constructorSuccess2).assertTrue();
-      expect(constructorSuccess3).assertTrue();
+      let component = await driver.findComponent(ON.id('default_info'));
+      expect(component).not().assertUndefined();
 
       let strJson = getInspectorByKey('default_info');
+      console.info('ImmersiveOptionsMaterialColorTest_0800 strJson: ' + strJson);
       let obj: ESObject = JSON.parse(strJson);
-      console.info('ImmersiveOptionsMaterialColorTest_0800 systemMaterial: ' + JSON.stringify(obj.$attrs.systemMaterial));
       expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
 
       console.info('ImmersiveOptionsMaterialColorTest_0800 END');

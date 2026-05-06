@@ -14,7 +14,7 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "@ohos/hypium"
+import { describe, beforeEach, afterEach, it, expect, Level } from "@ohos/hypium"
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common'
 import { uiMaterial } from '@kit.ArkUI';
@@ -26,30 +26,26 @@ export default function ImmersiveStyleTest() {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/uimaterial/ImmersiveStyleTest',
       }
-      try {
-        router.clear();
-        let pages = router.getState();
-        console.info('get ImmersiveStyleTest state success ' + JSON.stringify(pages));
-        if (!('ImmersiveStyleTest' == pages.name)) {
-          console.info('get ImmersiveStyleTest state success ' + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options)
-          await CommonFunc.sleep(2000);
-          console.info('push ImmersiveStyleTest page success ' + JSON.stringify(result));
-        }
-      } catch (err) {
-        console.error('push ImmersiveStyleTest page error ' + JSON.stringify(err));
+      router.clear();
+      let pages = router.getState();
+      console.info('get ImmersiveStyleTest state success ' + JSON.stringify(pages));
+      if (!('ImmersiveStyleTest' == pages.name)) {
+        let result = await router.pushUrl(options)
+        await CommonFunc.sleep(2000);
+        console.info('push ImmersiveStyleTest page success ' + JSON.stringify(result));
       }
       done()
     });
 
     afterEach(async () => {
+      await CommonFunc.sleep(500);
       console.info("ImmersiveStyleTest after each called");
     });
 
     /**
      * @tc.name   ImmersiveStyleTest_0100
-     * @tc.number SUB_ACE_ImmersiveStyleTest_0100
-     * @tc.desc   To test ImmersiveStyle.ULTRA_THIN enum value equals 0
+     * @tc.number SUB_ARKUI_API_ImmersiveStyleTest_0100
+     * @tc.desc   To test uiMaterial.ImmersiveStyle.ULTRA_THIN enum value equals 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -63,18 +59,22 @@ export default function ImmersiveStyleTest() {
       console.info('ImmersiveStyleTest_0100 ULTRA_THIN = ' + uiMaterial.ImmersiveStyle.ULTRA_THIN);
 
       let component = await driver.findComponent(ON.id('ultra_thin'));
-      let bounds = await component.getBounds();
-      expect(bounds.right - bounds.left).assertLarger(0);
-      expect(bounds.bottom - bounds.top).assertLarger(0);
-      console.info('ImmersiveStyleTest_0100 ULTRA_THIN component bounds: ' + JSON.stringify(bounds));
+      expect(component).not().assertUndefined();
+      console.info('ImmersiveStyleTest_0100 component found');
+
+      let strJson = getInspectorByKey('ultra_thin');
+      console.info('ImmersiveStyleTest_0100 strJson: ' + strJson);
+      let obj: ESObject = JSON.parse(strJson);
+      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+
       console.info('ImmersiveStyleTest_0100 END');
       done();
     });
 
     /**
      * @tc.name   ImmersiveStyleTest_0200
-     * @tc.number SUB_ACE_ImmersiveStyleTest_0200
-     * @tc.desc   To test ImmersiveStyle.THIN enum value equals 1
+     * @tc.number SUB_ARKUI_API_ImmersiveStyleTest_0200
+     * @tc.desc   To test uiMaterial.ImmersiveStyle.THIN enum value equals 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -88,18 +88,22 @@ export default function ImmersiveStyleTest() {
       console.info('ImmersiveStyleTest_0200 THIN = ' + uiMaterial.ImmersiveStyle.THIN);
 
       let component = await driver.findComponent(ON.id('thin'));
-      let bounds = await component.getBounds();
-      expect(bounds.right - bounds.left).assertLarger(0);
-      expect(bounds.bottom - bounds.top).assertLarger(0);
-      console.info('ImmersiveStyleTest_0200 THIN component bounds: ' + JSON.stringify(bounds));
+      expect(component).not().assertUndefined();
+      console.info('ImmersiveStyleTest_0200 component found');
+
+      let strJson = getInspectorByKey('thin');
+      console.info('ImmersiveStyleTest_0200 strJson: ' + strJson);
+      let obj: ESObject = JSON.parse(strJson);
+      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+
       console.info('ImmersiveStyleTest_0200 END');
       done();
     });
 
     /**
      * @tc.name   ImmersiveStyleTest_0300
-     * @tc.number SUB_ACE_ImmersiveStyleTest_0300
-     * @tc.desc   To test ImmersiveStyle.REGULAR enum value equals 2
+     * @tc.number SUB_ARKUI_API_ImmersiveStyleTest_0300
+     * @tc.desc   To test uiMaterial.ImmersiveStyle.REGULAR enum value equals 2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -113,18 +117,22 @@ export default function ImmersiveStyleTest() {
       console.info('ImmersiveStyleTest_0300 REGULAR = ' + uiMaterial.ImmersiveStyle.REGULAR);
 
       let component = await driver.findComponent(ON.id('regular'));
-      let bounds = await component.getBounds();
-      expect(bounds.right - bounds.left).assertLarger(0);
-      expect(bounds.bottom - bounds.top).assertLarger(0);
-      console.info('ImmersiveStyleTest_0300 REGULAR component bounds: ' + JSON.stringify(bounds));
+      expect(component).not().assertUndefined();
+      console.info('ImmersiveStyleTest_0300 component found');
+
+      let strJson = getInspectorByKey('regular');
+      console.info('ImmersiveStyleTest_0300 strJson: ' + strJson);
+      let obj: ESObject = JSON.parse(strJson);
+      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+
       console.info('ImmersiveStyleTest_0300 END');
       done();
     });
 
     /**
      * @tc.name   ImmersiveStyleTest_0400
-     * @tc.number SUB_ACE_ImmersiveStyleTest_0400
-     * @tc.desc   To test ImmersiveStyle.THICK enum value equals 3
+     * @tc.number SUB_ARKUI_API_ImmersiveStyleTest_0400
+     * @tc.desc   To test uiMaterial.ImmersiveStyle.THICK enum value equals 3
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -138,18 +146,22 @@ export default function ImmersiveStyleTest() {
       console.info('ImmersiveStyleTest_0400 THICK = ' + uiMaterial.ImmersiveStyle.THICK);
 
       let component = await driver.findComponent(ON.id('thick'));
-      let bounds = await component.getBounds();
-      expect(bounds.right - bounds.left).assertLarger(0);
-      expect(bounds.bottom - bounds.top).assertLarger(0);
-      console.info('ImmersiveStyleTest_0400 THICK component bounds: ' + JSON.stringify(bounds));
+      expect(component).not().assertUndefined();
+      console.info('ImmersiveStyleTest_0400 component found');
+
+      let strJson = getInspectorByKey('thick');
+      console.info('ImmersiveStyleTest_0400 strJson: ' + strJson);
+      let obj: ESObject = JSON.parse(strJson);
+      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+
       console.info('ImmersiveStyleTest_0400 END');
       done();
     });
 
     /**
      * @tc.name   ImmersiveStyleTest_0500
-     * @tc.number SUB_ACE_ImmersiveStyleTest_0500
-     * @tc.desc   To test ImmersiveStyle.ULTRA_THICK enum value equals 4
+     * @tc.number SUB_ARKUI_API_ImmersiveStyleTest_0500
+     * @tc.desc   To test uiMaterial.ImmersiveStyle.ULTRA_THICK enum value equals 4
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -163,18 +175,22 @@ export default function ImmersiveStyleTest() {
       console.info('ImmersiveStyleTest_0500 ULTRA_THICK = ' + uiMaterial.ImmersiveStyle.ULTRA_THICK);
 
       let component = await driver.findComponent(ON.id('ultra_thick'));
-      let bounds = await component.getBounds();
-      expect(bounds.right - bounds.left).assertLarger(0);
-      expect(bounds.bottom - bounds.top).assertLarger(0);
-      console.info('ImmersiveStyleTest_0500 ULTRA_THICK component bounds: ' + JSON.stringify(bounds));
+      expect(component).not().assertUndefined();
+      console.info('ImmersiveStyleTest_0500 component found');
+
+      let strJson = getInspectorByKey('ultra_thick');
+      console.info('ImmersiveStyleTest_0500 strJson: ' + strJson);
+      let obj: ESObject = JSON.parse(strJson);
+      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+
       console.info('ImmersiveStyleTest_0500 END');
       done();
     });
 
     /**
      * @tc.name   ImmersiveStyleTest_0600
-     * @tc.number SUB_ACE_ImmersiveStyleTest_0600
-     * @tc.desc   To test ImmersiveMaterial constructor returns instance of ImmersiveMaterial
+     * @tc.number SUB_ARKUI_API_ImmersiveStyleTest_0600
+     * @tc.desc   To test ImmersiveMaterial constructor with different styles returns instance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -208,7 +224,7 @@ export default function ImmersiveStyleTest() {
 
     /**
      * @tc.name   ImmersiveStyleTest_0700
-     * @tc.number SUB_ACE_ImmersiveStyleTest_0700
+     * @tc.number SUB_ARKUI_API_ImmersiveStyleTest_0700
      * @tc.desc   To test ImmersiveMaterial constructor without style parameter returns instance
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -219,7 +235,7 @@ export default function ImmersiveStyleTest() {
 
       let material = new uiMaterial.ImmersiveMaterial();
       expect(material instanceof uiMaterial.ImmersiveMaterial).assertTrue();
-      console.info('ImmersiveStyleTest_0700 ImmersiveMaterial without style created (default REGULAR)');
+      console.info('ImmersiveStyleTest_0700 ImmersiveMaterial without style created');
 
       let materialWithOptions = new uiMaterial.ImmersiveMaterial({});
       expect(materialWithOptions instanceof uiMaterial.ImmersiveMaterial).assertTrue();

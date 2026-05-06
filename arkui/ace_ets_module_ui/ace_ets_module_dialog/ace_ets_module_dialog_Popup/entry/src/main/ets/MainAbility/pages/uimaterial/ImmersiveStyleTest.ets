@@ -27,8 +27,8 @@ struct ImmersiveStyleTest {
       Row({ space: 10 }) {
         Column() {
           Text('ULTRA_THIN')
-            .id('ultra_thin')
         }
+        .id('ultra_thin')
         .width('45%')
         .height('10%')
         .borderRadius(20)
@@ -39,8 +39,8 @@ struct ImmersiveStyleTest {
 
         Column() {
           Text('THIN')
-            .id('thin')
         }
+        .id('thin')
         .width('45%')
         .height('10%')
         .borderRadius(20)
@@ -53,8 +53,8 @@ struct ImmersiveStyleTest {
       Row({ space: 10 }) {
         Column() {
           Text('REGULAR')
-            .id('regular')
         }
+        .id('regular')
         .width('45%')
         .height('10%')
         .borderRadius(20)
@@ -65,8 +65,8 @@ struct ImmersiveStyleTest {
 
         Column() {
           Text('THICK')
-            .id('thick')
         }
+        .id('thick')
         .width('45%')
         .height('10%')
         .borderRadius(20)
@@ -78,8 +78,8 @@ struct ImmersiveStyleTest {
 
       Column() {
         Text('ULTRA_THICK')
-          .id('ultra_thick')
       }
+      .id('ultra_thick')
       .width('45%')
       .height('10%')
       .borderRadius(20)

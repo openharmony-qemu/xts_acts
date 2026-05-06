@@ -30,12 +30,6 @@
     "MainAbility/pages/uimaterial/ImmersiveOptionsMaterialColor",
     "MainAbility/pages/uimaterial/ImmersiveOptionsColorInvert",
     "MainAbility/pages/uimaterial/ImmersiveOptionsApplyShadow",
-    "MainAbility/pages/graphics/Vector4TestPage",
-    "MainAbility/pages/spatialEffect/DepthVector3TestPage",
-    "MainAbility/pages/spatialEffect/DepthVector4TestPage",
-    "MainAbility/pages/spatialEffect/DepthColorRGBTestPage",
-    "MainAbility/pages/spatialEffect/SpatialPositionTestPage",
-    "MainAbility/pages/spatialEffect/SpatialEffectParamsPositionTestPage",
-    "MainAbility/pages/spatialEffect/SpatialEffectParamsOcclusionWeightTestPage"
+    "MainAbility/pages/uimaterial/UIMaterialTestPage"
   ]
 }
