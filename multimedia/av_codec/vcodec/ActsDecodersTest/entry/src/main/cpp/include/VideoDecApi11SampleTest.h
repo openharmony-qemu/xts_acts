@@ -29,6 +29,7 @@
 #include "include/SecurecTest.h"
 #include <multimedia/player_framework/native_avcodec_base.h>
 #include <multimedia/player_framework/native_avcodec_videodecoder.h>
+#include <multimedia/player_framework/native_avcodec_videoencoder.h>
 #include "NocopyableTest.h"
 #include <multimedia/player_framework/native_avmemory.h>
 #include <multimedia/player_framework/native_avformat.h>

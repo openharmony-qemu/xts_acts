@@ -571,5 +571,19 @@ export default function actsApiTest() {
       let result = testNapi.apitest(37);
       expect(result).assertEqual(TEST_FAILED);
     });
+
+    /**
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_ENC_CAP_API_0600
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_ENC_CAP_API_0600
+     * @tc.desc    Check the encoder type
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNC
+     * @tc.level   Level1
+     */
+    it('SUB_MUlTIMEDIA_VIDEO_ENC_CAP_API_1100', Level.LEVEL1, () => {
+      hilog.info(DOMAIN, TAG, 'Test SUB_MUlTIMEDIA_VIDEO_ENC_CAP_API_1100');
+      let result = testNapi.apitest(38);
+      expect(result).assertEqual(TEST_SUCCESS);
+    });
   });
 }
