@@ -3158,13 +3158,13 @@ export default function displayTest() {
     });
 
     /**
-     * @tc.number     SUB_BASIC_DMS_ON_BRIGHTNESS_CHANGE_0100
-     * @tc.name       testOnBrightnessInfoChange_0100
-     * @tc.desc       主屏通过调节窗口亮度触发屏幕亮度信息变化，取消全部监听
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
-     */
+    * @tc.number     SUB_BASIC_DMS_ON_BRIGHTNESS_CHANGE_0100
+    * @tc.name       testOnBrightnessInfoChange_0100
+    * @tc.desc       主屏通过调节窗口亮度触发屏幕亮度信息变化，取消全部监听
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level0
+    */
     it('testOnBrightnessInfoChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testOnBrightnessInfoChange_0100';
       try {
@@ -3176,56 +3176,83 @@ export default function displayTest() {
         let callback1Triggered = false;
         let callback2Triggered = false;
 
-        const callback1 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
-          console.info(caseName + ' Callback1 triggered');
-          console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
-          brightnessChangeCount1 = brightnessChangeCount1 + 1;
-          callback1Triggered = true;
-          expect(displayId).assertEqual(0);
-          expect(brightnessInfo.sdrNits).assertLarger(0);
-          expect(brightnessInfo.currentHeadroom).assertLarger(0);
-          expect(brightnessInfo.maxHeadroom).assertLarger(0);
-          console.info(`${caseName} Callback1: brightnessChangeCount1 = ${brightnessChangeCount1}`);
-        };
+        if (deviceType !== 'tv') {
+          const callback1 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
+            console.info(caseName + ' Callback1 triggered');
+            console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
+            brightnessChangeCount1 = brightnessChangeCount1 + 1;
+            callback1Triggered = true;
+            expect(displayId).assertEqual(0);
+            expect(brightnessInfo.sdrNits).assertLarger(0);
+            expect(brightnessInfo.currentHeadroom).assertLarger(0);
+            expect(brightnessInfo.maxHeadroom).assertLarger(0);
+            console.info(`${caseName} Callback1: brightnessChangeCount1 = ${brightnessChangeCount1}`);
+          };
 
-        const callback2 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
-          console.info(caseName + ' Callback2 triggered');
-          console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
-          brightnessChangeCount2 = brightnessChangeCount2 + 1;
-          callback2Triggered = true;
-          expect(displayId).assertEqual(0);
-          expect(brightnessInfo.sdrNits).assertLarger(0);
-          expect(brightnessInfo.currentHeadroom).assertLarger(0);
-          expect(brightnessInfo.maxHeadroom).assertLarger(0);
-          console.info(`${caseName} Callback2: brightnessChangeCount2 = ${brightnessChangeCount2}`);
-        };
-        display.on('brightnessInfoChange', callback1);
-        display.on('brightnessInfoChange', callback2);
-        console.info(caseName + ' Brightness change listeners registered successfully');
-        await windowClass.setWindowBrightness(0);
-        await sleep(100);
-        while (!callback1Triggered) {
+          const callback2 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
+            console.info(caseName + ' Callback2 triggered');
+            console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
+            brightnessChangeCount2 = brightnessChangeCount2 + 1;
+            callback2Triggered = true;
+            expect(displayId).assertEqual(0);
+            expect(brightnessInfo.sdrNits).assertLarger(0);
+            expect(brightnessInfo.currentHeadroom).assertLarger(0);
+            expect(brightnessInfo.maxHeadroom).assertLarger(0);
+            console.info(`${caseName} Callback2: brightnessChangeCount2 = ${brightnessChangeCount2}`);
+          };
+          display.on('brightnessInfoChange', callback1);
+          display.on('brightnessInfoChange', callback2);
+          console.info(caseName + ' Brightness change listeners registered successfully');
+          await windowClass.setWindowBrightness(0);
+          await sleep(100);
+          while (!callback1Triggered) {
+            await sleep(100);
+          }
+          console.info(`${caseName} brightnessChangeCount1 = ${brightnessChangeCount1}`);
+          while (!callback2Triggered) {
+            await sleep(100);
+          }
+          console.info(`${caseName} brightnessChangeCount2 = ${brightnessChangeCount2}`);
+          expect(brightnessChangeCount1).assertLarger(0);
+          expect(brightnessChangeCount2).assertLarger(0);
+          display.off('brightnessInfoChange');
+          await sleep(100);
+          brightnessChangeCount1 = 0;
+          brightnessChangeCount2 = 0;
+          await windowClass.setWindowBrightness(1);
+          await sleep(3000);
+          console.info(`${caseName} after off brightnessChangeCount1 = ${brightnessChangeCount1}`);
+          console.info(`${caseName} after off brightnessChangeCount2 = ${brightnessChangeCount2}`);
+          expect(brightnessChangeCount1).assertEqual(0);
+          expect(brightnessChangeCount2).assertEqual(0);
+          await windowClass.setWindowBrightness(-1);
+          await sleep(100);
+        } else {
+          //由于setWindowBrightness在tv不生效，因此不会触发监听
+          const callback1 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
+            console.info(caseName + ' Callback1 triggered');
+            console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
+            brightnessChangeCount1 = brightnessChangeCount1 + 1;
+            console.info(`${caseName} Callback1: brightnessChangeCount1 = ${brightnessChangeCount1}`);
+          };
+
+          const callback2 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
+            console.info(caseName + ' Callback2 triggered');
+            console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
+            brightnessChangeCount2 = brightnessChangeCount2 + 1;
+            console.info(`${caseName} Callback2: brightnessChangeCount2 = ${brightnessChangeCount2}`);
+          };
+          display.on('brightnessInfoChange', callback1);
+          display.on('brightnessInfoChange', callback2);
+          console.info(caseName + ' Brightness change listeners registered successfully');
+          await windowClass.setWindowBrightness(0);
+          await sleep(100);
+          console.info(`${caseName} brightnessChangeCount2 = ${brightnessChangeCount2}`);
+          expect(brightnessChangeCount1).assertLarger(0);
+          expect(brightnessChangeCount2).assertLarger(0);
+          display.off('brightnessInfoChange');
           await sleep(100);
         }
-        console.info(`${caseName} brightnessChangeCount1 = ${brightnessChangeCount1}`);
-        while (!callback2Triggered) {
-          await sleep(100);
-        }
-        console.info(`${caseName} brightnessChangeCount2 = ${brightnessChangeCount2}`);
-        expect(brightnessChangeCount1).assertLarger(0);
-        expect(brightnessChangeCount2).assertLarger(0);
-        display.off('brightnessInfoChange');
-        await sleep(100);
-        brightnessChangeCount1 = 0;
-        brightnessChangeCount2 = 0;
-        await windowClass.setWindowBrightness(1);
-        await sleep(3000);
-        console.info(`${caseName} after off brightnessChangeCount1 = ${brightnessChangeCount1}`);
-        console.info(`${caseName} after off brightnessChangeCount2 = ${brightnessChangeCount2}`);
-        expect(brightnessChangeCount1).assertEqual(0);
-        expect(brightnessChangeCount2).assertEqual(0);
-        await windowClass.setWindowBrightness(-1);
-        await sleep(100);
         done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
@@ -3240,13 +3267,13 @@ export default function displayTest() {
     });
 
     /**
-     * @tc.number     SUB_BASIC_DMS_ON_BRIGHTNESS_CHANGE_0200
-     * @tc.name       testOnBrightnessInfoChange_0200
-     * @tc.desc       主屏通过调节窗口亮度触发屏幕亮度信息变化，取消指定监听
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
-     */
+    * @tc.number     SUB_BASIC_DMS_ON_BRIGHTNESS_CHANGE_0200
+    * @tc.name       testOnBrightnessInfoChange_0200
+    * @tc.desc       主屏通过调节窗口亮度触发屏幕亮度信息变化，取消指定监听
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level0
+    */
     it('testOnBrightnessInfoChange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testOnBrightnessInfoChange_0200';
       try {
@@ -3264,68 +3291,95 @@ export default function displayTest() {
         let callback1Triggered = false;
         let callback2Triggered = false;
 
-        const callback1 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
-          console.info(caseName + ' Callback1 triggered');
-          console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
-          brightnessChangeCount1 = brightnessChangeCount1 + 1;
-          callback1Triggered = true;
-          expect(displayId).assertEqual(0);
-          expect(brightnessInfo.sdrNits).assertLarger(0);
-          expect(brightnessInfo.currentHeadroom).assertLarger(0);
-          expect(brightnessInfo.maxHeadroom).assertLarger(0);
-          console.info(`${caseName} Callback1: brightnessChangeCount1 = ${brightnessChangeCount1}`);
-        };
+        if(deviceType !== 'tv') {
+          const callback1 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
+            console.info(caseName + ' Callback1 triggered');
+            console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
+            brightnessChangeCount1 = brightnessChangeCount1 + 1;
+            callback1Triggered = true;
+            expect(displayId).assertEqual(0);
+            expect(brightnessInfo.sdrNits).assertLarger(0);
+            expect(brightnessInfo.currentHeadroom).assertLarger(0);
+            expect(brightnessInfo.maxHeadroom).assertLarger(0);
+            console.info(`${caseName} Callback1: brightnessChangeCount1 = ${brightnessChangeCount1}`);
+          };
 
-        const callback2 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
-          console.info(caseName + ' Callback2 triggered');
-          console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
-          brightnessChangeCount2 = brightnessChangeCount2 + 1;
-          callback2Triggered = true;
-          expect(displayId).assertEqual(0);
-          expect(brightnessInfo.sdrNits).assertLarger(0);
-          expect(brightnessInfo.currentHeadroom).assertLarger(0);
-          expect(brightnessInfo.maxHeadroom).assertLarger(0);
-          console.info(`${caseName} Callback2: brightnessChangeCount2 = ${brightnessChangeCount2}`);
-        };
-        display.on('brightnessInfoChange', callback1);
-        display.on('brightnessInfoChange', callback2);
-        console.info(caseName + ' Brightness change listeners registered successfully');
-        await windowClass.setWindowBrightness(0);
-        if(buttonOne){
-          await buttonOne.click();
-        }
-        await sleep(100);
-        while (!callback1Triggered) {
+          const callback2 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
+            console.info(caseName + ' Callback2 triggered');
+            console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
+            brightnessChangeCount2 = brightnessChangeCount2 + 1;
+            callback2Triggered = true;
+            expect(displayId).assertEqual(0);
+            expect(brightnessInfo.sdrNits).assertLarger(0);
+            expect(brightnessInfo.currentHeadroom).assertLarger(0);
+            expect(brightnessInfo.maxHeadroom).assertLarger(0);
+            console.info(`${caseName} Callback2: brightnessChangeCount2 = ${brightnessChangeCount2}`);
+          };
+          display.on('brightnessInfoChange', callback1);
+          display.on('brightnessInfoChange', callback2);
+          console.info(caseName + ' Brightness change listeners registered successfully');
+          await windowClass.setWindowBrightness(0);
+          if(buttonOne){
+            await buttonOne.click();
+          }
+          await sleep(100);
+          while (!callback1Triggered) {
+            await sleep(100);
+          }
+          console.info(`${caseName} brightnessChangeCount1 = ${brightnessChangeCount1}`);
+          expect(brightnessChangeCount1).assertLargerOrEqual(1);
+          while (!callback2Triggered) {
+            await sleep(100);
+          }
+          console.info(`${caseName} brightnessChangeCount2 = ${brightnessChangeCount2}`);
+          expect(brightnessChangeCount2).assertLarger(0);
+          display.off('brightnessInfoChange', callback1);
+          await sleep(100);
+          brightnessChangeCount1 = 0;
+          brightnessChangeCount2 = 0;
+          await windowClass.setWindowBrightness(1);
+          if(buttonOne){
+            await buttonOne.click();
+          }
+          await sleep(100);
+          await sleep(3000);
+          console.info(`${caseName} after off callback1 brightnessChangeCount1 = ${brightnessChangeCount1}`);
+          console.info(`${caseName} after off callback2 brightnessChangeCount2 = ${brightnessChangeCount2}`);
+          expect(brightnessChangeCount1).assertEqual(0);
+          expect(brightnessChangeCount2).assertLargerOrEqual(1);
+          await windowClass.setWindowBrightness(-1);
+          if(buttonOne){
+            await buttonOne.click();
+          }
+          await sleep(100);
+          await sleep(100);
+          display.off('brightnessInfoChange');
+        } else {
+          //由于setWindowBrightness在tv不生效，因此不会触发监听
+          const callback1 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
+            console.info(caseName + ' Callback1 triggered');
+            console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
+            brightnessChangeCount1 = brightnessChangeCount1 + 1;
+            console.info(`${caseName} Callback1: brightnessChangeCount1 = ${brightnessChangeCount1}`);
+          };
+
+          const callback2 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
+            console.info(caseName + ' Callback2 triggered');
+            console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
+            brightnessChangeCount2 = brightnessChangeCount2 + 1;
+            console.info(`${caseName} Callback2: brightnessChangeCount2 = ${brightnessChangeCount2}`);
+          };
+          display.on('brightnessInfoChange', callback1);
+          display.on('brightnessInfoChange', callback2);
+          console.info(caseName + ' Brightness change listeners registered successfully');
+          await windowClass.setWindowBrightness(0);
+          await sleep(100);
+          console.info(`${caseName} brightnessChangeCount2 = ${brightnessChangeCount2}`);
+          expect(brightnessChangeCount1).assertLarger(0);
+          expect(brightnessChangeCount2).assertLarger(0);
+          display.off('brightnessInfoChange');
           await sleep(100);
         }
-        console.info(`${caseName} brightnessChangeCount1 = ${brightnessChangeCount1}`);
-        expect(brightnessChangeCount1).assertLargerOrEqual(1);
-        while (!callback2Triggered) {
-          await sleep(100);
-        }
-        console.info(`${caseName} brightnessChangeCount2 = ${brightnessChangeCount2}`);
-        expect(brightnessChangeCount2).assertLarger(0);
-        display.off('brightnessInfoChange', callback1);
-        await sleep(100);
-        brightnessChangeCount1 = 0;
-        brightnessChangeCount2 = 0;
-        await windowClass.setWindowBrightness(1);
-        if(buttonOne){
-          await buttonOne.click();
-        }
-        await sleep(100);
-        await sleep(3000);
-        console.info(`${caseName} after off callback1 brightnessChangeCount1 = ${brightnessChangeCount1}`);
-        console.info(`${caseName} after off callback2 brightnessChangeCount2 = ${brightnessChangeCount2}`);
-        expect(brightnessChangeCount1).assertEqual(0);
-        expect(brightnessChangeCount2).assertLargerOrEqual(1);
-        await windowClass.setWindowBrightness(-1);
-        if(buttonOne){
-          await buttonOne.click();
-        }
-        await sleep(100);
-        await sleep(100);
-        display.off('brightnessInfoChange');
         done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
@@ -3340,18 +3394,19 @@ export default function displayTest() {
     });
 
     /**
-     * @tc.number     SUB_BASIC_DMS_ON_BRIGHTNESS_CHANGE_0300
-     * @tc.name       testOnBrightnessInfoChange_0300
-     * @tc.desc       异源虚拟屏上调节窗口亮度触发屏幕亮度信息变化，触发主屏亮度信息改变
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level1
-     */
+    * @tc.number     SUB_BASIC_DMS_ON_BRIGHTNESS_CHANGE_0300
+    * @tc.name       testOnBrightnessInfoChange_0300
+    * @tc.desc       异源虚拟屏上调节窗口亮度触发屏幕亮度信息变化，触发主屏亮度信息改变
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level1
+    */
     it('testOnBrightnessInfoChange_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'testOnBrightnessInfoChange_0300';
       let subWindowClass: window.Window | undefined;
       try {
-        subWindowClass = await windowStage.createSubWindow(caseName);
+        if (deviceType !== 'tv') {
+          subWindowClass = await windowStage.createSubWindow(caseName);
         subWindowClass.setUIContent('testability/pages/getSurfaceId')
         await subWindowClass.resizeAsync(1000, 1200);
         await subWindowClass.moveWindowToAsync(100, 300)
@@ -3419,6 +3474,35 @@ export default function displayTest() {
         await sleep(100);
         display.off('brightnessInfoChange');
         await subWindowClass.destroyWindow();
+        } else {
+          //由于setWindowBrightness在tv不生效，因此不会触发监听
+          let brightnessChangeCount1 = 0;
+          let brightnessChangeCount2 = 0;
+          let windowClass = await windowStage.getMainWindow();
+          const callback1 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
+            console.info(caseName + ' Callback1 triggered');
+            console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
+            brightnessChangeCount1 = brightnessChangeCount1 + 1;
+            console.info(`${caseName} Callback1: brightnessChangeCount1 = ${brightnessChangeCount1}`);
+          };
+
+          const callback2 = (displayId: number, brightnessInfo: display.BrightnessInfo) => {
+            console.info(caseName + ' Callback2 triggered');
+            console.info(`${caseName} DisplayId: ${displayId}, BrightnessInfo: ${JSON.stringify(brightnessInfo)}`);
+            brightnessChangeCount2 = brightnessChangeCount2 + 1;
+            console.info(`${caseName} Callback2: brightnessChangeCount2 = ${brightnessChangeCount2}`);
+          };
+          display.on('brightnessInfoChange', callback1);
+          display.on('brightnessInfoChange', callback2);
+          console.info(caseName + ' Brightness change listeners registered successfully');
+          await windowClass.setWindowBrightness(0);
+          await sleep(100);
+          console.info(`${caseName} brightnessChangeCount2 = ${brightnessChangeCount2}`);
+          expect(brightnessChangeCount1).assertLarger(0);
+          expect(brightnessChangeCount2).assertLarger(0);
+          display.off('brightnessInfoChange');
+          await sleep(100);
+        }
         done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
