@@ -62,15 +62,15 @@ export default function PowerPermissionTest() {
     })
 
     /**
-     * @tc.name   getPowerConfig_Test_0100
-     * @tc.number   SUB_PowerSystem_getPowerConfigTest_0100
+     * @tc.name   getPowerConfig_Test_0200
+     * @tc.number   SUB_PowerSystem_getPowerConfigTest_0200
      * @tc.desc   Test the third-party application call refreshActivity will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('getPowerConfig_Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let TAG = 'getPowerConfig_Test_0100';
+    it('getPowerConfig_Test_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let TAG = 'getPowerConfig_Test_0200';
       try {
         let configVal = power.getPowerConfig('scene_name_test');
         console.info('get power config success, configVal: ' + configVal);
@@ -84,15 +84,15 @@ export default function PowerPermissionTest() {
     })
 
     /**
-     * @tc.name   setPowerConfig_Test_0100
-     * @tc.number   SUB_PowerSystem_setPowerConfigTest_0100
+     * @tc.name   setPowerConfig_Test_0300
+     * @tc.number   SUB_PowerSystem_setPowerConfigTest_0300
      * @tc.desc   Test the third-party application call refreshActivity will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('setPowerConfig_Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let TAG = 'setPowerConfig_Test_0100';
+    it('setPowerConfig_Test_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let TAG = 'setPowerConfig_Test_0300';
       try {
         power.setPowerConfig('scene_name_test', 'value_test');
         console.info('set power config success');
