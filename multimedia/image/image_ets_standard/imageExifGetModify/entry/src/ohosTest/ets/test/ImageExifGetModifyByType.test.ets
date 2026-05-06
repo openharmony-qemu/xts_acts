@@ -5107,6 +5107,10 @@ export default function imageExifGetModifyByTypeTest() {
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HEIFS_METADATA_0100";
       let result: boolean = true;
       let keys: image.HeifsPropertyKey[] = Array.from(heifsMetadataMap.keys());
+      if (!image.createImagePacker().supportedFormats.includes("image/heic")) {
+        console.info(`${testTag} device is not support decode heif!`);
+        done();
+      } 
       const imageSourceApi = await getImageSource("C027.heic", "fd");
       try {
         const exifValue: image.ImageMetadata = await imageSourceApi.readImageMetadata();
@@ -5246,6 +5250,10 @@ export default function imageExifGetModifyByTypeTest() {
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_HEIFS_METADATA_0100";
       let result: boolean = true;
       let keys: image.HeifsPropertyKey[] = Array.from(heifsMetadataMap.keys());
+      if (!image.createImagePacker().supportedFormats.includes("image/heic")) {
+        console.info(`${testTag} device is not support decode heif!`);
+        done();
+      } 
       const imageSourceApi = await getImageSource("C027.heic", "fd");
       try {
         const exifValue: image.ImageMetadata = await imageSourceApi.readImageMetadataByType();

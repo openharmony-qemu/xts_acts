@@ -6093,6 +6093,10 @@ export default function ImageExifGetModifyByTypeNDK() {
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_HEIFS_0100", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_HEIFS_0100";
       let result: boolean = true;
+      if (!image.createImagePacker().supportedFormats.includes("image/heic")) {
+        console.info(`${testTag} device is not support decode heif!`);
+        done();
+      } 
       let propertyKeys: Array<image.HeifsPropertyKey> = ImagePropertyConfig.heifsMetadatas.keys;
       let heifsRules: Map<image.HeifsPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.heifsMetadatas.rules;
       let fd: number = await getFd("C027.heic");
@@ -6130,6 +6134,10 @@ export default function ImageExifGetModifyByTypeNDK() {
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_HEIFS_0200", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_HEIFS_0200";
       let result: boolean = true;
+      if (!image.createImagePacker().supportedFormats.includes("image/heic")) {
+        console.info(`${testTag} device is not support decode heif!`);
+        done();
+      } 
       let propertyKeys: Array<image.HeifsPropertyKey> = ImagePropertyConfig.heifsMetadatas.keys;
       let heifsRules: Map<image.HeifsPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.heifsMetadatas.rules;
       let fd: number = await getFd("C027.heic");
