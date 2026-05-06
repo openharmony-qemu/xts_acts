@@ -598,7 +598,7 @@ ani_int test_Handling_Error_28([[maybe_unused]] ani_env *env, [[maybe_unused]] a
     ASSERT_NE(constructor, nullptr);
 
     ani_ref undefinedRef {};
-    ASSERT_EQ(env->GetUndefined(&undefinedRef),ANI_OK);
+    ASSERT_EQ(env->GetUndefined(&undefinedRef), ANI_OK);
 
     ani_string errorMessage {};
     ASSERT_EQ(env->String_NewUTF8(MESSAGE_FROM_THROW_ERROR.data(), MESSAGE_FROM_THROW_ERROR.size(), &errorMessage),
