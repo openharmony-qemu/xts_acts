@@ -1501,10 +1501,10 @@ export default function WindowLayoutTest() {
                 let windowLimits = windowClass?.getWindowLimitsVP();
                 console.log(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
                 let setWindowLimits: window.WindowLimits = {
-                    minWidth: windowLimits?.minWidth as int + 10,
-                    minHeight: windowLimits?.minHeight as int + 10,
-                    maxWidth: windowLimits?.maxWidth as int - 10,
-                    maxHeight: windowLimits?.maxHeight as int - 10,
+                    minWidth: (windowLimits?.minWidth?.toInt() ?? 0) + 10,
+                    minHeight: (windowLimits?.minHeight?.toInt() ?? 0) + 10,
+                    maxWidth: (windowLimits?.maxWidth?.toInt() ?? 0) - 10,
+                    maxHeight: (windowLimits?.maxHeight?.toInt() ?? 0) - 10,
                     pixelUnit: window.PixelUnit.VP
                 }
                 await windowClass!.setWindowLimits(setWindowLimits);
@@ -1749,11 +1749,11 @@ export default function WindowLayoutTest() {
                             console.info(`${message} Succeeded in setting the function of disabling the resize by drag window.`);
                             let windowPoint:window.Rect = subWindowClass.getWindowProperties().windowRect
                             console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
-                            let X:int = (windowPoint!.left + Math.ceil(windowPoint!.width / 2)) as int;
+                            let X:int = (windowPoint!.left + Math.ceil(windowPoint!.width / 2)).toInt();
                             let Y:int = windowPoint!.top + 5
                             await driver.mouseMoveTo({x:X,y:Y});
                             await Utils.msSleep(1000)
-                            await driver.mouseDrag({ x: (windowPoint!.left + Math.ceil(windowPoint!.width / 2)) as int, y: (windowPoint!.top + 5) as int }, { x: (windowPoint!.left + Math.ceil(windowPoint!.width / 2)) as int, y: (windowPoint!.top + 100) as int }, 2000)
+                            await driver.mouseDrag({ x: (windowPoint!.left + Math.ceil(windowPoint!.width / 2)).toInt(), y: (windowPoint!.top + 5).toInt() }, { x: (windowPoint!.left + Math.ceil(windowPoint!.width / 2)).toInt(), y: (windowPoint!.top + 100).toInt() }, 2000)
                             await Utils.msSleep(1000)
                             let windowPointDragged = subWindowClass.getWindowProperties().windowRect
                             console.info(`${message} windowPointDraged = ${JSON.stringify(windowPointDragged)}`)

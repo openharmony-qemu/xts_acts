@@ -3850,7 +3850,7 @@ export default function WindowPropertiesTest() {
                 let xValue: Long = 2147483648;
                 let yValue: Long = 2147483648;
 
-                window.getWindowsByCoordinate(-1, 2, xValue as int, yValue as int).then((data: Array<window.Window>) => {
+                window.getWindowsByCoordinate(-1, 2, xValue.toInt(), yValue.toInt()).then((data: Array<window.Window>) => {
                     hilog.error(domain, tag, msgStr + 'Succeeded in getting windows. Data: ' + JSON.stringify(data));
                     expect(false).assertTrue();
                     done();
@@ -3907,8 +3907,8 @@ export default function WindowPropertiesTest() {
                 hilog.info(domain, tag, msgStr + 'displayId: ' + displayId);
                 hilog.info(domain, tag, msgStr + 'windowRect: ' + JSON.stringify(windowRect));
 
-                let x: int = Math.floor(windowRect.width / 2) as int;
-                let y: int = Math.floor(windowRect.height / 2) as int;
+                let x: int = Math.floor(windowRect.width / 2).toInt();
+                let y: int = Math.floor(windowRect.height / 2).toInt();
                 let windowNumber: int = 2;
 
                 window.getWindowsByCoordinate(displayId, windowNumber, x, y).then((data: Array<window.Window>) => {
