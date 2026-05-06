@@ -1668,7 +1668,7 @@ export default function api16CertFuncTestTwoUnit() {
      * @tc.level Level3
      * @tc.type Function
      */
-	it('SUB_Security_CertManager_Ukey_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('SUB_Security_CertManager_Ukey_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("SUB_Security_CertManager_Ukey_1300: started ");
       if (canIUse('SystemCapability.Security.Huks.CryptoExtension')){
         const context :common.Context = GlobalContext.getContext();
@@ -1677,19 +1677,17 @@ export default function api16CertFuncTestTwoUnit() {
         ];
         let certPurpose: certManager.CertificatePurpose = certManager.CertificatePurpose.PURPOSE_DEFAULT;
         let authorizeRequest: certManagerDialog.AuthorizeRequest = { certTypes: certTypes, certPurpose: certPurpose };
-
-try {
-        await certManagerDialog.openAuthorizeDialog(null, authorizeRequest);
-        expect(null).assertFail();
-      } catch (error) {
-        if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
-          expect(error.code).assertEqual(801);
-        } else {
-          console.error(`SUB_Security_CertManager_Ukey_0200 Failed1 to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(401);
+        try {
+          await certManagerDialog.openAuthorizeDialog(null, authorizeRequest);
+          expect(null).assertFail();
+        } catch (error) {
+          if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+            expect(error.code).assertEqual(801);
+          } else {
+            console.error(`SUB_Security_CertManager_Ukey_1300 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
+            expect(error.code).assertEqual(401);
+          }
         }
-      }
-
       } else {
         console.info(`SUB_Security_CertManager_Ukey_1300 device not support openUkeyAuthDialog`)
       }
