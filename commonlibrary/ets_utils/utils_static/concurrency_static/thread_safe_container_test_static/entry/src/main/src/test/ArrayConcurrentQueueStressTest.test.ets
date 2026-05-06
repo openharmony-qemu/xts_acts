@@ -76,7 +76,7 @@ export default function ArrayConcurrentQueueStressTest() {
 
         let tasks: taskpool.Task[] = [];
         let workers: EAWorker[] = [];
-        let jobs: Job<Promise<number>>[] = [];
+        let jobs: Promise<Promise<number>>[] = [];
 
         for (let i: number = 0; i < producerCount; i++) {
           let eaw = new EAWorker()
@@ -109,13 +109,14 @@ export default function ArrayConcurrentQueueStressTest() {
         }
 
         let results: number[] = []
-        for (let i: int = 0; i < jobs.length; i++) {
-          results.push(await jobs[i].Await())
+        for (let i = 0; i < jobs.length; i++) {
+          let res = await jobs[i];
+          results.push(res);
         }
         for (let i: int = 0; i < producerCount; i++) {
           totalProduced += results[i] as number;
         }
-        for (let i: int = producerCount as int; i < (producerCount + consumerCount) as int; i++) {
+        for (let i: int = producerCount.toInt(); i < (producerCount + consumerCount).toInt(); i++) {
           totalConsumed += results[i] as number;
         }
         workers.forEach((eaw: EAWorker) => {
@@ -142,13 +143,13 @@ export default function ArrayConcurrentQueueStressTest() {
         let operationsPerThread: number = 100;
         let totalOperations: number = 0;
 
-        let tasks: Job<Promise<number>>[] = [];
+        let tasks: Promise<Promise<number>>[] = [];
         let workers: EAWorker[] = [];
         for (let i: number = 0; i < threadCount; i++) {
           let eaw = new EAWorker()
           eaw.start()
           workers.push(eaw)
-          let task: Job<Promise<number>> = eaw.run<Promise<number>>(async (q: containers.stackless.ArrayConcurrentQueue<number>): Promise<number> => {
+          let task: Promise<Promise<number>> = eaw.run<Promise<number>>(async (q: containers.stackless.ArrayConcurrentQueue<number>): Promise<number> => {
             let ops: number = 0;
             for (let j: number = 0; j < 100; j++) {
               await q.push(j);
@@ -161,11 +162,12 @@ export default function ArrayConcurrentQueueStressTest() {
           tasks.push(task);
         }
         let results: number[] = []
-        for (let i: int = 0; i < tasks.length; i++) {
-          results.push(await tasks[i].Await())
+        for (let i = 0; i < tasks.length; i++) {
+          let res = await tasks[i];
+          results.push(res);
         }
         workers.forEach((eaw) => {
-          eaw.join().Await();
+          eaw.quit();
         })
 
         for (let i: int = 0; i < results.length; i++) {
@@ -192,13 +194,13 @@ export default function ArrayConcurrentQueueStressTest() {
         let totalPushOps: number = 0;
         let totalPollOps: number = 0;
 
-        let tasks: Job<Promise<number>>[] = [];
+        let tasks: Promise<Promise<number>>[] = [];
         let workers: EAWorker[] = [];
         for (let i: number = 0; i < threadCount; i++) {
           let eaw = new EAWorker()
           eaw.start()
           workers.push(eaw)
-          let task: Job<Promise<number>> = eaw.run<Promise<number>>(async (q: containers.stackless.ArrayConcurrentQueue<number>, id: number): Promise<number> => {
+          let task: Promise<Promise<number>> = eaw.run<Promise<number>>(async (q: containers.stackless.ArrayConcurrentQueue<number>, id: number): Promise<number> => {
             let ops: number = 0;
             for (let j: number = 0; j < 50; j++) {
               await q.push(id * 50 + j);
@@ -212,11 +214,12 @@ export default function ArrayConcurrentQueueStressTest() {
           tasks.push(task);
         }
         let results: number[] = []
-        for (let i: int = 0; i < tasks.length; i++) {
-          results.push(await tasks[i].Await())
+        for (let i = 0; i < tasks.length; i++) {
+          let res = await tasks[i];
+          results.push(res);
         }
         workers.forEach((eaw) => {
-          eaw.join().Await();
+          eaw.quit();
         })
 
         for (let i: int = 0; i < results.length; i++) {
@@ -245,7 +248,7 @@ export default function ArrayConcurrentQueueStressTest() {
         let sumConsumed: number = 0;
         let eaw = new EAWorker()
         eaw.start()
-        let producerTask: Job<Promise<number>> =
+        let producerTask: Promise<Promise<number>> =
           eaw.run<Promise<number>>(async (q: containers.stackless.ArrayConcurrentQueue<number>, count: number): Promise<number> => {
             let sum: number = 0;
             for (let i: number = 0; i < count; i++) {
@@ -257,7 +260,7 @@ export default function ArrayConcurrentQueueStressTest() {
 
         let eaw2 = new EAWorker()
         eaw2.start()
-        let consumerTask: Job<Promise<number>> =
+        let consumerTask: Promise<Promise<number>> =
           eaw.run<Promise<number>>(async (q: containers.stackless.ArrayConcurrentQueue<number>, count: number): Promise<number> => {
             let sum: number = 0;
             for (let i: number = 0; i < count; i++) {
@@ -267,10 +270,10 @@ export default function ArrayConcurrentQueueStressTest() {
             return sum;
           }, queue, itemCount);
 
-        sumProduced = await producerTask.Await();
-        sumConsumed = await consumerTask.Await();
-        eaw.join().Await();
-        eaw2.join().Await();
+        sumProduced = await producerTask;
+        sumConsumed = await consumerTask;
+        await eaw.join();
+        await eaw2.join();
 
         expect(sumProduced).assertEqual(sumConsumed);
         expect(queue.size).assertEqual(0);

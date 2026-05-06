@@ -188,5 +188,18 @@ export default function multibyte_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   wcsnrtombs
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSNRTOMBS_0100
+     * @tc.desc   libc-test wcsnrtombs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("wcsnrtombs", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("wcsnrtombs");
+      expect(result).assertEqual(0);
+      done();
+    });
   });
 }

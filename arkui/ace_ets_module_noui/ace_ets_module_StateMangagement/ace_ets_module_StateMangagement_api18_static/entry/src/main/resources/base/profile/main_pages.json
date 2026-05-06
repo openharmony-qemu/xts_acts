@@ -21,6 +21,7 @@
     "MainAbility/pages/AddMonitor/AddMonitorTwoDimensionalArray",
     "MainAbility/pages/Prefetcher/BasicPrefetcherMethods",
     "MainAbility/pages/Prefetcher/IDataSourcePrefetchingMethods",
-    "MainAbility/pages/ReuseObject/ReuseObjectRaw"
+    "MainAbility/pages/ReuseObject/ReuseObjectRaw",
+    "MainAbility/pages/LazyForeach/LazyForEachReleaseStrategy"
   ]
 }

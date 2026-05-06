@@ -1000,34 +1000,56 @@ TEST(Wasm_IsWasmModuleObject)
 // test for Wasm Compile Wasm
 TEST(Wasm_CompileWasmModule)
 {
+    // fail case
     uint8_t* buffer = new uint8_t[2];
     buffer[0] = 0x01;
     buffer[1] = 0x02;
     JSVM_Value wasmModule = nullptr;
     JSVM_Status status = OH_JSVM_CompileWasmModule(jsvm_env, buffer, 2, NULL, 0, NULL, &wasmModule);
     delete[] buffer;
-    CHECK(status == JSVM_JIT_MODE_EXPECTED);
+    CHECK(status == JSVM_PENDING_EXCEPTION);
+    CHECK(wasmModule == nullptr);
     GetLastErrorAndClean(jsvm_env);
+
+    // succ case
+    wasmModule = CompileWasmModule(wasmPath + "add.wasm");
+    CHECK(wasmModule != nullptr && jsvm::IsWasmModuleObject(wasmModule));
 }
 
 // test for Wasm Compile Function
 TEST(Wasm_CompileWasmFunction)
 {
+    // fail case
     JSVM_Value wasmModule = nullptr;
     JSVM_Status status = OH_JSVM_CompileWasmFunction(jsvm_env, wasmModule, 0, JSVM_WASM_OPT_HIGH);
-    CHECK(status == JSVM_JIT_MODE_EXPECTED);
+    CHECK(status == JSVM_INVALID_ARG);
+    CHECK(wasmModule == nullptr);
     GetLastErrorAndClean(jsvm_env);
+
+    // succ case
+    wasmModule = CompileWasmModule(wasmPath + "add.wasm");
+    JSVMTEST_CALL(OH_JSVM_CompileWasmFunction(env, wasmModule, 0, JSVM_WASM_OPT_BASELINE));
+    JSVMTEST_CALL(OH_JSVM_CompileWasmFunction(env, wasmModule, 0, JSVM_WASM_OPT_HIGH));
+    JSVMTEST_CALL(OH_JSVM_CompileWasmFunction(env, wasmModule, 1, JSVM_WASM_OPT_HIGH));
 }
 
 // test for Wasm Create Cache
 TEST(Wasm_CreateWasmCache)
 {
+    // fail case
     const uint8_t *cacheData = nullptr;
     size_t cacheSize = 0;
     JSVM_Value wasmModule = nullptr;
     JSVM_Status status = OH_JSVM_CreateWasmCache(jsvm_env, wasmModule, &cacheData, &cacheSize);
-    CHECK(status == JSVM_JIT_MODE_EXPECTED);
+    CHECK(status == JSVM_INVALID_ARG);
+    CHECK(wasmModule == nullptr);
+    CHECK(cacheData == nullptr);
+    CHECK(cacheSize == 0);
     GetLastErrorAndClean(jsvm_env);
+
+    // succ case
+    wasmModule = CompileWasmModule(wasmPath + "add.wasm");
+    JSVMTEST_CALL(OH_JSVM_CreateWasmCache(jsvm_env, wasmModule, &cacheData, &cacheSize));
 }
 
 // test for Wasm Release Cache

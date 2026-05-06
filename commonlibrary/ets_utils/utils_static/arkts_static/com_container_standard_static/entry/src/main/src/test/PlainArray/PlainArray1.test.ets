@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -403,7 +403,7 @@ export default function PlainArrayTest1() {
       let keys = new Array<number>(1, 2, 5);
       let values = new Array<string>("A", "B", "E");
       for (let i = 0; i < keys.length; i++) {
-        expect(values[i]).assertEqual(plainArray.get(keys[i] as int));
+        expect(values[i]).assertEqual(plainArray.get(keys[i].toInt()));
       }
       try {
         plainArray.removeRangeFrom(15, 5);
@@ -436,7 +436,7 @@ export default function PlainArrayTest1() {
       let keys = new Array<number>(1, 2, 3, 4, 5);
       let values = new Array<string>("A", "B", "V", "D", "E");
       for (let i = 0; i < keys.length; i++) {
-        expect(values[i]).assertEqual(plainArray.get(keys[i] as int));
+        expect(values[i]).assertEqual(plainArray.get(keys[i].toInt()));
       }
       try {
         plainArray.setValueAt(-1, "X");
@@ -512,7 +512,7 @@ export default function PlainArrayTest1() {
       let keys = new Array<number>(1, 2, 3, 4, 5);
       let values = new Array<string>("A", "B", "C", "D", "E");
       for (let i = 0; i < keys.length; i++) {
-        expect(values[i]).assertEqual(plainArray.get(keys[i] as int));
+        expect(values[i]).assertEqual(plainArray.get(keys[i].toInt()));
       }
     });
 

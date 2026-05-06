@@ -119,7 +119,7 @@ export default function MutexLockEnhancedTest(): void {
 
         await sleep(200);
         lock.unlock();
-        await job.Await();
+        await job;
 
         while (workerCompleted.load() < 1) {
           await sleep(50);
@@ -343,7 +343,7 @@ export default function MutexLockEnhancedTest(): void {
         });
 
         try {
-          await job.Await();
+          await job;
         } catch (e) {
           console.info(`${TAG} worker exception: ${e.message}`);
           exceptionHandled.fetchAdd(1);
@@ -490,7 +490,7 @@ export default function MutexLockEnhancedTest(): void {
           lock1.unlock();
         });
 
-        await job.Await();
+        await job;
         worker.join();
 
         console.info(`${TAG} result: ${result.load()}`);
@@ -518,7 +518,7 @@ export default function MutexLockEnhancedTest(): void {
         let count = new AtomicInt(0);
         let workerCount = 5;
 
-        let jobs: Job<Promise<void>>[] = [];
+        let jobs: Promise<Promise<void>>[] = [];
         for (let i = 0; i < workerCount; i++) {
           let worker = new EAWorker();
           worker.start();
@@ -535,7 +535,7 @@ export default function MutexLockEnhancedTest(): void {
         }
 
         for (let i = 0; i < workerCount; i++) {
-          await jobs[i].Await();
+          await jobs[i];
         }
 
         while (count.load() < workerCount) {

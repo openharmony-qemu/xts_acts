@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -117,7 +117,7 @@ struct TimePickerPage {
         .onClick((e:ClickEvent) => {
           this.isLunar = !this.isLunar
         }).id('LunarBtn')
-      TextPicker({ range: this.apfruits, selected: this.select as int})
+      TextPicker({ range: this.apfruits, selected: this.select.toInt()})
       .attributeModifier(this.modifier as TextPickerModifier)
       .attributeModifier(this.modifier1 as TextPickerModifier)
       .margin(50)

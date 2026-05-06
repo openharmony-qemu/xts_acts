@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -51,8 +51,8 @@ async function imageComparisonAssert(left: double, top: double) {
     let windowClass: window.Window | undefined = undefined;
     windowClass = await window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext);
     let properties: window.WindowProperties = windowClass!.getWindowProperties();
-    theWinTop = properties.windowRect.top + top as long
-    theWinLeft = properties.windowRect.left + left + uiContext!.vp2px(10) as long
+    theWinTop = (properties.windowRect.top + top).toLong()
+    theWinLeft = (properties.windowRect.left + left + uiContext!.vp2px(10)).toLong()
     console.log("===================================== theWinTop " + theWinTop + " theWinLeft " + theWinLeft)
   } catch (exception) {
     console.error('Failed to obtain the top window. Cause: ' + JSON.stringify(exception));

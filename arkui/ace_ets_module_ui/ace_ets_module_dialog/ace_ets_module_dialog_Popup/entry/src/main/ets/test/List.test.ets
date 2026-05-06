@@ -39,6 +39,7 @@ import presentCustomDialogNullAndUndefinedTest from './PromptActionNullAndUndefi
 import updatePopupNullAndUndefinedTest from './PromptActionNullAndUndefined/updatePopupNullAndUndefinedTest.test';
 import closePopupNullAndUndefinedTest from './PromptActionNullAndUndefined/closePopupNullAndUndefinedTest.test';
 
+<<<<<<< master
 import ImmersiveStyleTest from './uimaterial/ImmersiveStyleTest.test';
 import ImmersiveOptionsMaterialColorTest from './uimaterial/ImmersiveOptionsMaterialColor.test';
 import ImmersiveOptionsColorInvertTest from './uimaterial/ImmersiveOptionsColorInvert.test';
@@ -46,6 +47,14 @@ import ImmersiveOptionsApplyShadowTest from './uimaterial/ImmersiveOptionsApplyS
 import UIMaterialTest from './uimaterial/UIMaterial.test';
 
 
+=======
+
+import CustomPopupOptionsSystemMaterial from './popupSystemMaterial/CustomPopupOptionsSystemMaterial.test';
+import SheetOptionsSystemMaterial from './popupSystemMaterial/SheetOptionsSystemMaterial.test';
+import PopupCommonOptionsSystemMaterial from './popupSystemMaterial/PopupCommonOptionsSystemMaterial.test';
+import PopupOptionsSystemMaterial from './popupSystemMaterial/PopupOptionsSystemMaterial.test';
+import TipsOptionsSystemMaterial from './popupSystemMaterial/TipsOptionsSystemMaterial.test';
+>>>>>>> master
 
 export default function testsuite() {
   showActionMenuNullAndUndefinedTest();
@@ -71,6 +80,7 @@ export default function testsuite() {
   bindContextResponseNull();
   isShownContextMenuNull();
   bindContentCoverNullUndefined();
+<<<<<<< master
 
   ImmersiveStyleTest();
   ImmersiveOptionsMaterialColorTest();
@@ -78,4 +88,12 @@ export default function testsuite() {
   ImmersiveOptionsApplyShadowTest();
   UIMaterialTest();
 	
+=======
+  
+  SheetOptionsSystemMaterial();
+  PopupCommonOptionsSystemMaterial();
+  PopupOptionsSystemMaterial();
+  CustomPopupOptionsSystemMaterial();
+  // TipsOptionsSystemMaterial();
+>>>>>>> master
 }

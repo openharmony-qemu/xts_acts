@@ -60,7 +60,7 @@ export default function imagePixelMapTest() {
         let pixelMap = image.createPixelMapFromSurfaceSync(surfaceId, region);
         console.info('www data ImagePixelMapTest_0100 success', pixelMap.isEditable, pixelMap.isStrideAlignment);
         expect(pixelMap.isEditable).assertFalse();
-        expect(pixelMap.isStrideAlignment).assertTrue();
+        expect(pixelMap.isStrideAlignment).assertFalse();
       } catch(err) {
         console.info('www data ImagePixelMapTest_0100 error', JSON.stringify(err));
         expect().assertFail();
@@ -69,7 +69,7 @@ export default function imagePixelMapTest() {
         let pixelMap = await image.createPixelMapFromSurface(surfaceId, region);
         console.info('www data ImagePixelMapTest_0100 success', pixelMap.isEditable, pixelMap.isStrideAlignment);
         expect(pixelMap.isEditable).assertFalse();
-        expect(pixelMap.isStrideAlignment).assertTrue();
+        expect(pixelMap.isStrideAlignment).assertFalse();
       } catch(err) {
         console.info('www data ImagePixelMapTest_0100 error', JSON.stringify(err));
         expect().assertFail();

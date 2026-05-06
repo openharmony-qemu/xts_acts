@@ -28,8 +28,20 @@ import getCurrentLocalPositionTest_AxisEvent from './getCurrentLocalPositionTest
 import getCurrentLocalPositionTest_EventLocationInfo from './getCurrentLocalPositionTest/getCurrentLocalPositionTest_EventLocationInfo.test';
 import getCurrentLocalPositionTest_FingerInfo from './getCurrentLocalPositionTest/getCurrentLocalPositionTest_FingerInfo.test';
 import expectedUpdateIntervalTest from './CommonEventOnAreaChangeTest/expectedUpdateInterval.test';
+import gestureInterceptTest from './gestureIntercept/gestureInterceptTest.test';
+import globalListenerTest from './globalListener/globalListenerTest.test';
+import getHistoricalPoints from './getHistoricalPointsTest/getHistoricalPoints.test';
+import getHistoricalPointsY from './getHistoricalPointsTest/getHistoricalPointsY.test';
+import getHistoricalPoints_displayY from './getHistoricalPointsTest/getHistoricalPoints_displayY.test';
+import getHistoricalPoints_displayX from './getHistoricalPointsTest/getHistoricalPoints_displayX.test';
+import getHistoricalPoints_windowY from './getHistoricalPointsTest/getHistoricalPoints_windowY.test';
+import getHistoricalPoints_windowX from './getHistoricalPointsTest/getHistoricalPoints_windowX.test';
+import getHistoricalPoints_globalDisplayX from './getHistoricalPointsTest/getHistoricalPoints_globalDisplayX.test';
+import getHistoricalPoints_globalDisplayY from './getHistoricalPointsTest/getHistoricalPoints_globalDisplayX.test';
+import Marquee from './getHistoricalPointsTest/Marquee.test';
 
 export default function testsuite() {
+  Marquee();
   DragControllerTest();
   CommonEventGlobalDisplayTest();
   CommonDragEventTest();
@@ -45,4 +57,14 @@ export default function testsuite() {
   getCurrentLocalPositionTest_EventLocationInfo();
   getCurrentLocalPositionTest_FingerInfo();
   expectedUpdateIntervalTest();
+  gestureInterceptTest();
+  globalListenerTest();
+  getHistoricalPoints();
+  getHistoricalPointsY();
+  getHistoricalPoints_displayX();
+  getHistoricalPoints_displayY();
+  getHistoricalPoints_windowX();
+  getHistoricalPoints_windowY();
+  getHistoricalPoints_globalDisplayX();
+  getHistoricalPoints_globalDisplayX();
 }

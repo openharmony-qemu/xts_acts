@@ -80,7 +80,7 @@ export default function ResourceDefaultTest() {
       let strJson = inspector.getInspectorByKey('default_size');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ResourceDefaultTest_0030] component obj is: " + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('undefined');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('');
       console.info('[ResourceDefaultTest_0030] END');
       done();
     });
@@ -209,7 +209,7 @@ export default function ResourceDefaultTest() {
       let strJson = inspector.getInspectorByKey('default_size');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ResourceDefaultTest_0080] component obj is: " + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('undefined');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('');
       console.info('[ResourceDefaultTest_0080] END');
       done();
     });

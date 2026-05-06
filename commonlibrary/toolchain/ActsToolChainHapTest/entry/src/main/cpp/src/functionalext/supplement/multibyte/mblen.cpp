@@ -20,7 +20,7 @@
 
 /**
  * @tc.name      : Mblen0100
- * @tc.desc      : Verify mblen process success when wide string is not null.
+ * @tc.desc      : Verify mblen process success when wide string is not nullptr.
  * @tc.level     : Level 0
  */
 void Mblen0100(void)
@@ -42,8 +42,8 @@ void Mblen0100(void)
 
 /**
  * @tc.name      : Mblen0200
- * @tc.desc      : Verify mblen process success when wide string is null.
- * @tc.leve      : Level 0
+ * @tc.desc      : Verify mblen process success when wide string is nullptr.
+ * @tc.level      : Level 0
  */
 void Mblen0200(void)
 {

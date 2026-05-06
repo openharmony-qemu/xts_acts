@@ -42,7 +42,7 @@ export default class Utils {
       } as Record<string, RecordData>
     }
     let event: events_emitter.InnerEvent = {
-      eventId: eventId as long,
+      eventId: eventId.toLong(),
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.emit(event, eventData)

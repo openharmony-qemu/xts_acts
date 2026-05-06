@@ -109,5 +109,19 @@ export default function locale_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   duplocale
+     * @tc.number SUB_THIRDPARTY_MUSL_DUPLOCALE_0100
+     * @tc.desc   libc-test duplocale
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("duplocale", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("duplocale");
+      expect(result).assertEqual(0);
+      done();
+    });
   });
 }

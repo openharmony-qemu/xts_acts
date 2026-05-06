@@ -72,7 +72,7 @@ static void CheckExpm1lUlp(const struct LL* p, long double y, float d, int* err)
         } else {
             (*err)++;
         }
-        printf("%s:%d: %s expm1l(%La) want %La got %La Ulperr %.3f = %a + %a\n",
+        printf("%s:%d: %s expm1l(%La) want %La got %La Ulperr %.3f = %.3f + %.3f\n",
                p->file,
                p->line,
                Rstr(p->r),

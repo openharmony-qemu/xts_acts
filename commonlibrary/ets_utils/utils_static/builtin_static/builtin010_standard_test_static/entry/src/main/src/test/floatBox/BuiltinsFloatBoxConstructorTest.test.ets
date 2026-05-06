@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,7 +47,7 @@ export default function builtinsFloatBoxConstructorWithParamText() {
      * @tc.level   LEVEL0
      */
     it('builtinsFloatBoxConstructorWithParamText0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const v: float = 1.40129846432481707e-45 as float;
+      const v: float = (1.40129846432481707e-45).toFloat();
       expect(new FloatBox(v).get()).assertEqual(v);
     });
 
@@ -60,7 +60,7 @@ export default function builtinsFloatBoxConstructorWithParamText() {
      * @tc.level   LEVEL0
      */
     it('builtinsFloatBoxConstructorWithParamText0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const v: float = 3.40282346638528860e+38 as float;
+      const v: float = (3.40282346638528860e+38);
       expect(new FloatBox(v).get()).assertEqual(v);
     });
 
@@ -73,7 +73,7 @@ export default function builtinsFloatBoxConstructorWithParamText() {
      * @tc.level   LEVEL0
      */
     it('builtinsFloatBoxConstructorWithParamText0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const v: float = -1.40129846432481707e-45 as float;
+      const v: float = (-1.40129846432481707e-45).toFloat();
       expect(new FloatBox(v).get()).assertEqual(v);
     });
 
@@ -86,7 +86,7 @@ export default function builtinsFloatBoxConstructorWithParamText() {
      * @tc.level   LEVEL0
      */
     it('builtinsFloatBoxConstructorWithParamText0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const v: float = -3.40282346638528860e+38 as float;
+      const v: float = (-3.40282346638528860e+38).toFloat();
       expect(new FloatBox(v).get()).assertEqual(v);
     });
 
@@ -99,7 +99,7 @@ export default function builtinsFloatBoxConstructorWithParamText() {
      * @tc.level   LEVEL0
      */
     it('builtinsFloatBoxConstructorWithParamText0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const v: float = 0xcafebabe as float;
+      const v: float = (0xcafebabe).toFloat();
       expect(new FloatBox(v).get()).assertEqual(v);
     });
 
@@ -112,8 +112,8 @@ export default function builtinsFloatBoxConstructorWithParamText() {
      * @tc.level   LEVEL0
      */
     it('builtinsFloatBoxConstructorWithParamText0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const v: float = 1.0e-46 as float;
-      expect(new FloatBox(v).get()).assertEqual(0.0 as float);
+      const v: float = (1.0e-46).toFloat();
+      expect(new FloatBox(v).get()).assertEqual(0.0.toFloat());
     });
 
     /**
@@ -125,8 +125,8 @@ export default function builtinsFloatBoxConstructorWithParamText() {
      * @tc.level   LEVEL0
      */
     it('builtinsFloatBoxConstructorWithParamText0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const v: float = -1.0e-46 as float;
-      expect(new FloatBox(v).get()).assertEqual(-0.0 as float);
+      const v: float = (-1.0e-46).toFloat();
+      expect(new FloatBox(v).get()).assertEqual((-0.0).toFloat());
     });
 
     /**
@@ -141,7 +141,7 @@ export default function builtinsFloatBoxConstructorWithParamText() {
       try {
         const box: FloatBox = new FloatBox();
         const result: float = box.get();
-        expect(result).assertEqual(0.0 as Float);
+        expect(result).assertEqual(0.0.toFloat());
       } catch (error) {
 
       }
@@ -161,9 +161,9 @@ export default function builtinsFloatBoxConstructorWithParamText() {
         const box2: FloatBox = new FloatBox();
         const box3: FloatBox = new FloatBox();
 
-        expect(box1.get()).assertEqual(0.0 as float);
-        expect(box2.get()).assertEqual(0.0 as float);
-        expect(box3.get()).assertEqual(0.0 as float);
+        expect(box1.get()).assertEqual(0.0.toFloat());
+        expect(box2.get()).assertEqual(0.0.toFloat());
+        expect(box3.get()).assertEqual(0.0.toFloat());
       } catch (error) {
         console.error(`Test case builtinsFloatBoxConstructorTest1100 failed: ${error.message}`);
       }

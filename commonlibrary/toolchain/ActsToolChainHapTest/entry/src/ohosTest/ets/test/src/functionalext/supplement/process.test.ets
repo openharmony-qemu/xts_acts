@@ -222,5 +222,19 @@ export default function process_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   posix_spawn_file_actions_addopen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_POSIX_SPAWN_FILE_ACTIONS_ADDOPEN_0100
+     * @tc.desc   libc-test posix_spawn_file_actions_addopen
+     */
+    it("posix_spawn_file_actions_addopen", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("posix_spawn_file_actions_addopen");
+      expect(result).assertEqual(0);
+      done();
+    });
+
   });
 }

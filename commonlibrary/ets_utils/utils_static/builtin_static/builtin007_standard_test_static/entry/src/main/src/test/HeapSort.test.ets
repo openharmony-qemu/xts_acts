@@ -218,7 +218,7 @@ export default function HeapSortTest() {
       try {
         const arr: FixedArray<float> = [1.5f, 2.3f, 3.7f, 4.2f];
         const result = find(arr, (val: float) => val > 3);
-        expect(result).assertEqual(3.7 as float);
+        expect(result).assertEqual(3.7.toFloat());
       } catch (err) {
         console.error(`${TAG} failed: ${err}`);
         expect().assertFail();

@@ -49,4 +49,28 @@ int TeeTest();
 int TimerfdGettimeTest();
 int TimerfdSettimeTest();
 
+int ClockAdjtimeTest();
+int FallocateTest();
+int FanotifyInitTest();
+int FgetxattrTest();
+int FlockTest();
+int GetrandomTest();
+int InotifyTest();
+int InotifyInit1Test();
+int MembarrierTest();
+int MemfdCreateTest();
+int Mlock2Test();
+int PersonalityTest();
+int PpollTest();
+int PrctlTest();
+int PrlimitTest();
+int QuotactlTest();
+int SetfsgidTest();
+int SetfsuidTest();
+int SignalfdTest();
+int SysinfoTest();
+int TimerfdCreateTest();
+int UtimesTest();
+int VmspliceTest();
+int PpollTime64CompatTest();
 #endif // SRC_FUNCTIONALEXT_SUPPLEMENT_LINUX_H_H

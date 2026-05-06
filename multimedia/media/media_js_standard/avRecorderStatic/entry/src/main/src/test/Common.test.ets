@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -195,6 +195,19 @@ export default class Commmon {
     return avRecorder;
   }
 
+  async createAVRecorder(): Promise<media.AVRecorder | undefined> {
+    console.info('case createAVRecorder called');
+    try {
+      let avRecorder: media.AVRecorder | undefined = await media.createAVRecorder();
+      if (avRecorder) {
+        return avRecorder;
+      }
+    } catch (error) {
+      console.info(`createAVRecorder catchCallback, error: ${error}`);
+    };
+    return undefined;
+  }
+
   AV_RECORDER_STATE: StateObject = {
     IDLE: 'idle',
     PREPARED: 'prepared',
@@ -232,6 +245,22 @@ export default class Commmon {
       }).catch((err: Error) => {
         console.info('prepare failed and catch error is ' + err.message);
       });
+    }
+  }
+
+  setMetadata(avRecorder: media.AVRecorder) {
+    if (typeof (avRecorder) == 'undefined') {
+    } else {
+      console.info('setMetadata in current state' + avRecorder.state);
+      let meta: Record<string, string> = {
+        'com.openharmony.userdefine': '10',
+        'com.openharmony.userdefine2': '20'
+      };
+      try {
+        avRecorder.setMetadata(meta);
+      } catch (err) {
+        console.error('Failed to set metadata and catch error is ' + err.message);
+      }
     }
   }
 
@@ -2105,7 +2134,7 @@ export default class Commmon {
         if (err == null) {
           console.info('getInputSurfaceTimeTestCallback success');
           surfaceID = surfaceId;
-          end = Date.now()
+          end = Date.now().toDouble()
           console.info(`getInputSurfaceTimeTestCallback end time is : ${end}`)
           let difference: string = (end - start) + '';
           let execution = parseInt(difference);
@@ -2140,7 +2169,7 @@ export default class Commmon {
       let end: number;
       avRecorder.start((err: BusinessError|null) => {
         if (err == null) {
-          end = Date.now()
+          end = Date.now().toDouble()
           console.info(`startTimeTestCallback end time is : ${end}`)
           console.info('startTimeTestCallback avRecorder success');
           let difference: string = (end - start) + '';
@@ -2182,7 +2211,7 @@ export default class Commmon {
       let end: number;
       avRecorder.pause((err: BusinessError|null) => {
         if (err == null) {
-          end = Date.now()
+          end = Date.now().toDouble()
           console.info(`pauseTimeTestCallback end time is : ${end}`)
           console.info('pause pauseTimeTestCallback success');
           let difference: string = (end - start) + '';
@@ -2232,7 +2261,7 @@ export default class Commmon {
       avRecorder.resume((err: BusinessError|null) => {
         if (err == null) {
           console.info('resume resumeTimeTestCallback success');
-          end = Date.now()
+          end = Date.now().toDouble()
           console.info(`resumeTimeTestCallback end time is : ${end}`)
           let difference: string = (end - start) + '';
           let execution = parseInt(difference);
@@ -2274,7 +2303,7 @@ export default class Commmon {
       avRecorder.stop((err: BusinessError|null) => {
         if (err == null) {
           console.info('resume stopTimeTestCallback success');
-          end = Date.now()
+          end = Date.now().toDouble()
           console.info(`stopTimeTestCallback end time is : ${end}`)
           let difference: string = (end - start) + '';
           let execution = parseInt(difference);
@@ -2316,7 +2345,7 @@ export default class Commmon {
       avRecorder.reset((err: BusinessError|null) => {
         if (err == null) {
           console.info('resume resetTimeTestCallback success');
-          end = Date.now()
+          end = Date.now().toDouble()
           console.info(`resetTimeTestCallback end time is : ${end}`)
           let difference: string = (end - start) + '';
           let execution = parseInt(difference);
@@ -2359,7 +2388,7 @@ export default class Commmon {
         if (err == null) {
           console.info(`releaseTimeTestCallback current state is : ${avRecorder.state}`)
           console.info('release releaseTimeTestCallback success');
-          end = Date.now()
+          end = Date.now().toDouble()
           console.info(`releaseTimeTestCallback end time is : ${end}`)
           let difference: string = (end - start) + '';
           let execution = parseInt(difference);
@@ -2413,7 +2442,7 @@ export default class Commmon {
         console.info('prepare success');
         expect(avRecorder.state).assertEqual(this.AV_RECORDER_STATE.PREPARED);
         console.info('prepareTimeWithoutPromise avPlayer state is prepared')
-        end = Date.now()
+        end = Date.now().toDouble()
         console.info(`prepareTimeWithoutPromise end time is : ${end}`)
         let difference: string = (end - start) + '';
         let execution = parseInt(difference);
@@ -2450,7 +2479,7 @@ export default class Commmon {
       await avRecorder.getInputSurface().then((surfaceId: string|undefined) => {
         console.info('getInputSurfaceTimeTestPromise success');
         surfaceID = surfaceId;
-        end = Date.now()
+        end = Date.now().toDouble()
         console.info(`getInputSurfaceTimeTestPromise end time is : ${end}`)
         let difference: string = (end - start) + '';
         let execution = parseInt(difference);
@@ -2484,7 +2513,7 @@ export default class Commmon {
       console.info(`startTimeTestPromise start time is : ${start}`)
       await avRecorder.start().then(() => {
         console.info('start AVRecorder success');
-        end = Date.now()
+        end = Date.now().toDouble()
         console.info(`startTimeTestPromise end time is : ${end}`)
         let difference: string = (end - start) + '';
         let execution = parseInt(difference);
@@ -2524,7 +2553,7 @@ export default class Commmon {
       let end: number;
       await avRecorder.pause().then(() => {
         console.info('pause AVRecorder success');
-        end = Date.now()
+        end = Date.now().toDouble()
         console.info(`pauseTimeTestPromise end time is : ${end}`)
         let difference: string = (end - start) + '';
         let execution = parseInt(difference);
@@ -2573,7 +2602,7 @@ export default class Commmon {
       await avRecorder.resume().then(() => {
         console.info('resume AVRecorder success');
         console.info('resume resumeTimeTestPromise success');
-        end = Date.now()
+        end = Date.now().toDouble()
         console.info(`resumeTimeTestPromise end time is : ${end}`)
         let difference: string = (end - start) + '';
         let execution = parseInt(difference);
@@ -2614,7 +2643,7 @@ export default class Commmon {
       await avRecorder.stop().then(() => {
         console.info('stop AVRecorder success');
         console.info('resume stopTimeTestPromise success');
-        end = Date.now()
+        end = Date.now().toDouble()
         console.info(`stopTimeTestPromise end time is : ${end}`)
         let difference: string = (end - start) + '';
         let execution = parseInt(difference);
@@ -2655,7 +2684,7 @@ export default class Commmon {
       await avRecorder.reset().then(() => {
         console.info('reset AVRecorder success');
         console.info('resume resetTimeTestPromise success');
-        end = Date.now()
+        end = Date.now().toDouble()
         console.info(`resetTimeTestPromise end time is : ${end}`)
         let difference: string = (end - start) + '';
         let execution = parseInt(difference);
@@ -2697,7 +2726,7 @@ export default class Commmon {
         expect(avRecorder.state).assertEqual(this.AV_RECORDER_STATE.RELEASED);
         console.info('release AVRecorder success');
         console.info('resume releaseTimeTestPromise success');
-        end = Date.now()
+        end = Date.now().toDouble()
         let difference: string = (end - start) + '';
         let execution = parseInt(difference);
         console.info("releaseTimeTestPromise execution time  is :" + execution)
@@ -2710,6 +2739,34 @@ export default class Commmon {
     let avg = totalTime / 10;
     console.info("releaseTimeTestPromise avg time  is :" + avg)
     done();
+  }
+
+  async avRecorderSetMetadataTest(avConfig: media.AVRecorderConfig, recorderTime: number, done: () => void): Promise<boolean> {
+    let avRecorder: media.AVRecorder | undefined = await this.createAVRecorder();
+    if (avRecorder) {
+      try {
+        console.info('case avConfig.url is ' + avConfig.url);
+        await this.preparePromise(avRecorder, avConfig);
+        this.setMetadata(avRecorder);
+        await this.startPromise(avRecorder, recorderTime);
+        await this.stopPromise(avRecorder);
+        await avRecorder.reset().then(() => {
+          console.info('reset avRecorderSetMetadataTest success');
+        }).catch((err: Error) => {
+          console.info('reset avRecorderSetMetadataTest failed and catch error is ' + err.message);
+        });
+        await this.releaseDone(avRecorder, done);
+        return true;
+      } catch (err) {
+        console.error('avRecorderSetMetadataTest failed with error: ' + (err as Error).message);
+        done();
+        return false;
+      }
+    } else {
+      console.error('avRecorder is undefined');
+      done();
+      return false;
+    }
   }
 
   AV_RECORDER_AUDIO_STATE: AudioRecorderState = {

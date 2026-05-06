@@ -20,10 +20,9 @@
 static struct FF t[] = {
 #include "sanity/expm1f.h"
 #include "special/expm1f.h"
-
 };
 
-static void Expm1fTestOne(struct FF* p, int* err)
+static void Expm1fTestOne(struct FF *p, int *err)
 {
 #pragma STDC FENV_ACCESS ON
     float y;
@@ -40,8 +39,13 @@ static void Expm1fTestOne(struct FF* p, int* err)
     if (!Checkexcept(e, p->e, p->r)) {
         const double excX = static_cast<double>(p->x);
         const double excY = static_cast<double>(p->y);
-        printf(
-            "%s:%d: bad fp exception: %s expm1f(%a)=%a, want %s", p->file, p->line, Rstr(p->r), excX, excY, Estr(p->e));
+        printf("%s:%d: bad fp exception: %s expm1f(%a)=%a, want %s",
+               p->file,
+               p->line,
+               Rstr(p->r),
+               excX,
+               excY,
+               Estr(p->e));
         printf(" got %s\n", Estr(e));
         (*err)++;
     }
@@ -52,7 +56,7 @@ static void Expm1fTestOne(struct FF* p, int* err)
         const double ulpAbs = static_cast<double>(d);
         const double ulpMinusDy = static_cast<double>(d - p->dy);
         const double dyVal = static_cast<double>(p->dy);
-        printf("%s:%d: %s expm1f(%a) want %a got %a Ulperr %.3f = %a + %a\n",
+        printf("%s:%d: %s expm1f(%a) want %a got %a Ulperr %.3f = %.3f + %.3f\n",
                p->file,
                p->line,
                Rstr(p->r),

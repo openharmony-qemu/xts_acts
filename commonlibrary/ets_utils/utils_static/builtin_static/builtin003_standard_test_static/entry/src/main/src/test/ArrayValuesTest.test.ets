@@ -948,16 +948,16 @@ export default function Array_Values_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Values_Test_static_3300';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float];
+        const arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat()];
         const iterator = values(arr);
         let result = iterator.next();
-        expect(result.value).assertEqual(1.1 as float);
+        expect(result.value).assertEqual(1.1.toFloat());
         expect(result.done).assertFalse();
         result = iterator.next();
-        expect(result.value).assertEqual(2.2 as float);
+        expect(result.value).assertEqual(2.2.toFloat());
         expect(result.done).assertFalse();
         result = iterator.next();
-        expect(result.value).assertEqual(3.3 as float);
+        expect(result.value).assertEqual(3.3.toFloat());
         expect(result.done).assertFalse();
         result = iterator.next();
         expect(result.value).assertUndefined();
@@ -979,16 +979,16 @@ export default function Array_Values_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Values_Test_static_3400';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [-1.1 as float, -2.2 as float, -3.3 as float];
+        const arr: FixedArray<float> = [-1.1.toFloat(), -2.2.toFloat(), -3.3.toFloat()];
         const iterator = values(arr);
         let result = iterator.next();
-        expect(result.value).assertEqual(-1.1 as float);
+        expect(result.value).assertEqual(-1.1.toFloat());
         expect(result.done).assertFalse();
         result = iterator.next();
-        expect(result.value).assertEqual(-2.2 as float);
+        expect(result.value).assertEqual(-2.2.toFloat());
         expect(result.done).assertFalse();
         result = iterator.next();
-        expect(result.value).assertEqual(-3.3 as float);
+        expect(result.value).assertEqual(-3.3.toFloat());
         expect(result.done).assertFalse();
         result = iterator.next();
         expect(result.value).assertUndefined();
@@ -1032,10 +1032,10 @@ export default function Array_Values_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Values_Test_static_3600';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1.1 as float];
+        const arr: FixedArray<float> = [1.1.toFloat()];
         const iterator = values(arr);
         let result = iterator.next();
-        expect(result.value).assertEqual(1.1 as float);
+        expect(result.value).assertEqual(1.1.toFloat());
         expect(result.done).assertFalse();
         result = iterator.next();
         expect(result.value).assertUndefined();
@@ -1057,10 +1057,10 @@ export default function Array_Values_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Values_Test_static_3700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [-1.1 as float];
+        const arr: FixedArray<float> = [-1.1.toFloat()];
         const iterator = values(arr);
         let result = iterator.next();
-        expect(result.value).assertEqual(-1.1 as float);
+        expect(result.value).assertEqual(-1.1.toFloat());
         expect(result.done).assertFalse();
         result = iterator.next();
         expect(result.value).assertUndefined();
@@ -1082,13 +1082,13 @@ export default function Array_Values_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Values_Test_static_3800';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1.2e-3 as float, 0.00026 as float];
+        const arr: FixedArray<float> = [(1.2e-3).toFloat(), 0.00026.toFloat()];
         const iterator = values(arr);
         let result = iterator.next();
-        expect(result.value).assertEqual(1.2e-3 as float);
+        expect(result.value).assertEqual((1.2e-3).toFloat());
         expect(result.done).assertFalse();
         result = iterator.next();
-        expect(result.value).assertEqual(0.00026 as float);
+        expect(result.value).assertEqual(0.00026.toFloat());
         expect(result.done).assertFalse();
         result = iterator.next();
         expect(result.value).assertUndefined();
@@ -1110,16 +1110,16 @@ export default function Array_Values_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Values_Test_static_3900';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1.1 as float, 0.0 as float, -1.1 as float];
+        const arr: FixedArray<float> = [1.1.toFloat(), 0.0.toFloat(), -1.1.toFloat()];
         const iterator = values(arr);
         let result = iterator.next();
-        expect(result.value).assertEqual(1.1 as float);
+        expect(result.value).assertEqual(1.1.toFloat());
         expect(result.done).assertFalse();
         result = iterator.next();
-        expect(result.value).assertEqual(0.0 as float);
+        expect(result.value).assertEqual(0.0.toFloat());
         expect(result.done).assertFalse();
         result = iterator.next();
-        expect(result.value).assertEqual(-1.1 as float);
+        expect(result.value).assertEqual(-1.1.toFloat());
         expect(result.done).assertFalse();
         result = iterator.next();
         expect(result.value).assertUndefined();
@@ -1141,16 +1141,16 @@ export default function Array_Values_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_Values_Test_static_4000';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [100.1 as float, 110.1 as float, 120.1 as float];
+        const arr: FixedArray<float> = [100.1.toFloat(), 110.1.toFloat(), 120.1.toFloat()];
         const iterator = values(arr);
         let result = iterator.next();
-        expect(result.value).assertEqual(100.1 as float);
+        expect(result.value).assertEqual(100.1.toFloat());
         expect(result.done).assertFalse();
         result = iterator.next();
-        expect(result.value).assertEqual(110.1 as float);
+        expect(result.value).assertEqual(110.1.toFloat());
         expect(result.done).assertFalse();
         result = iterator.next();
-        expect(result.value).assertEqual(120.1 as float);
+        expect(result.value).assertEqual(120.1.toFloat());
         expect(result.done).assertFalse();
         result = iterator.next();
         expect(result.value).assertUndefined();

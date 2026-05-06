@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -94,9 +94,9 @@ it('SwipeGestureExample01Test_static_0010', Level.LEVEL0, async (done: () => voi
       console.log('SwipeGestureExample01Test_0010 areaObj1 clicked end',Math.round(areaObj1.left + areaWidth1 * 0.8),Math.round(areaObj1.top + areaHeight1/2))
 
       let driver = Driver.create();
-      let speed = (Math.floor(areaWidth1 * 0.6 / 0.016 / 1000) * 1000) as Int
+      let speed = (Math.floor(areaWidth1 * 0.6 / 0.016 / 1000) * 1000).toInt()
       await CommonFunc.sleep(1000);
-      await ((driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2) as Int,Math.round(areaObj1.top + areaHeight1/2) as Int,Math.round(areaObj1.left + areaWidth1 * 0.8) as Int,Math.round(areaObj1.top + areaHeight1/2) as Int,speed)) as Promise<void>)
+      await ((driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(),Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(),speed)) as Promise<void>)
       await CommonFunc.sleep(3000);
       // 拖动之后重新获取当前区域的位置信息
       let FatherObj = CommonFunc.getComponentRectOnScreen('SwipeGestureExample01_Father');
@@ -109,8 +109,8 @@ it('SwipeGestureExample01Test_static_0010', Level.LEVEL0, async (done: () => voi
       let areaWidth = areaObj.right - areaObj.left
 
       console.log('SwipeGestureExample01Test_0010 areaObj',areaObj.left,areaObj.top,areaObj.right,areaObj.bottom)
-      console.log('SwipeGestureExample01Test_0010 areaObj clicked start',Math.round(areaObj.left + areaWidth * 0.2) as Int,Math.round(areaObj.top + areaHeight/2) as Int)
-      console.log('SwipeGestureExample01Test_0010 areaObj clicked end',Math.round(areaObj.left + areaWidth * 0.8) as Int,Math.round(areaObj.top + areaHeight/2) as Int)
+      console.log('SwipeGestureExample01Test_0010 areaObj clicked start',Math.round(areaObj.left + areaWidth * 0.2).toInt(),Math.round(areaObj.top + areaHeight/2).toInt())
+      console.log('SwipeGestureExample01Test_0010 areaObj clicked end',Math.round(areaObj.left + areaWidth * 0.8).toInt(),Math.round(areaObj.top + areaHeight/2).toInt())
 
       let text1 = inspector.getInspectorByKey('SwipeGestureExample01_repeat');
       let obj1 = JSON.parseJsonElement(text1);

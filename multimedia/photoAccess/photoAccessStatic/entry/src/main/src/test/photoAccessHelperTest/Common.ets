@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,7 +33,7 @@ export function sleep(ms: int): Promise<string> {
 }
 
 export function rand_sleep(ms: int): Promise<string> {
-  let random: int = Math.floor(Math.random() * ms) as int;
+  let random: int = Math.floor(Math.random() * ms).toInt();
   return new Promise<string>((resolve) => {
     setTimeout(() => {
       resolve('');

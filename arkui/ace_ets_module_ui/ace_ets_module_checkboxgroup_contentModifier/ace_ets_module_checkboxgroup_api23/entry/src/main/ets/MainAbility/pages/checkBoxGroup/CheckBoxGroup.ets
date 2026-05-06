@@ -168,7 +168,7 @@ struct CheckboxGroupIndex {
           .onChange((itemName: CheckboxGroupResult) => {
             console.info('CheckboxGroup onChange: ' + JSON.stringify(itemName));
             AppStorage.setOrCreate<string>('checkboxGroupOnChangeNames', JSON.stringify(itemName.name));
-            AppStorage.setOrCreate<number>('checkboxGroupOnChangeStatus', itemName.status as number);
+            AppStorage.setOrCreate<number>('checkboxGroupOnChangeStatus', itemName.status.valueOf().toDouble());
           })
 
         Row() {

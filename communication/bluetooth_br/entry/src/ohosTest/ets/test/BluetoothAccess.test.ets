@@ -975,5 +975,25 @@ export default function btAccessTest() {
             done();
         })
 
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_ACCESS_ISBLUETOOTHSUPPORTED_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_ACCESS_ISBLUETOOTHSUPPORTED_0100
+         * @tc.desc   20260428API26用例覆盖isBluetoothSupported.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("SUB_COMMUNICATION_BLUETOOTH_ACCESS_ISBLUETOOTHSUPPORTED_0100", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
+            try {
+                let isSupported = bluetooth.isBluetoothSupported();
+                console.info("[bluetooth_js]isBluetoothSupported result:" + isSupported);
+                expect(typeof isSupported === 'boolean').assertTrue();
+            } catch (error) {
+                console.error(`[bt_arkts]isBluetoothSupported is failed, code is ${error.code}, message is ${error.message}`);
+                expect().assertFail();
+            }
+            done();
+        })
+
     })
 }

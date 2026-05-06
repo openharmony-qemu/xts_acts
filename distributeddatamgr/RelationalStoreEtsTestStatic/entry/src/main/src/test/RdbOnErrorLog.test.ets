@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -74,7 +74,7 @@ export default function RdbStoreSqliteErrorOccurredTest() {
       const valueBucket: relationalStore.ValuesBucket = {
         "name": "zhangsan",
         "age": 18 as long,
-        "salary": 100.5 as long,
+        "salary": 100.5.toLong(),
         "blobType": u8,
       }
       await rdbStore!.insert("test", valueBucket);
@@ -152,7 +152,7 @@ export default function RdbStoreSqliteErrorOccurredTest() {
         const valueBucket: relationalStore.ValuesBucket = {
           "name": "zhangsan",
           "age": 18 as long,
-          "salary": 100.5 as long,
+          "salary": 100.5.toLong(),
           "blobType": u8,
           "exsc": 100 as long,
         }
@@ -201,7 +201,7 @@ export default function RdbStoreSqliteErrorOccurredTest() {
           "id": "test",
           "name": "zhangsan",
           "age": 18 as long,
-          "salary": 100.5 as long,
+          "salary": 100.5.toLong(),
           "blobType": u8,
         };
         let row = transaction.insertSync("test", valueBucket);
@@ -243,7 +243,7 @@ export default function RdbStoreSqliteErrorOccurredTest() {
         const valueBucket: relationalStore.ValuesBucket = {
           "name": "zhangsan",
           "age": 18 as long,
-          "salary": 100.5 as long,
+          "salary": 100.5.toLong(),
           "blobType": u8,
           "exsc": 100 as long,
         }

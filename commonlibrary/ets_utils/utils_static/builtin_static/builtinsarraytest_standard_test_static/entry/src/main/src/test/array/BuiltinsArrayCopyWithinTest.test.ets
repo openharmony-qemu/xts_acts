@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -382,7 +382,7 @@ export default function builtinsArrayCopyWithinTest() {
       const caseName = 'builtinsArrayCopyWithinTest1800'
       console.info(`${caseName} test start`)
       let arr: Array<number> = [1, 2, 3, 4, 5]
-      arr.copyWithin(Math.floor(2.5) as int, Math.floor(0.5) as int, Math.floor(3.5) as int)
+      arr.copyWithin(Math.floor(2.5).toInt(), Math.floor(0.5).toInt(), Math.floor(3.5).toInt())
       expect(arr.toString()).assertEqual('1,2,1,2,3')
       console.info(`${caseName} test end`)
       done()
@@ -400,7 +400,7 @@ export default function builtinsArrayCopyWithinTest() {
       const caseName = 'builtinsArrayCopyWithinTest1900'
       console.info(`${caseName} test start`)
       let arr: Array<number> = [Math.floor(1.5), 0, -0]
-      arr.copyWithin(Math.floor(1.5) as int, 0, -0)
+      arr.copyWithin(Math.floor(1.5).toInt(), 0, -0)
       expect(arr.toString()).assertEqual('1,0,0')
       console.info(`${caseName} test end`)
       done()

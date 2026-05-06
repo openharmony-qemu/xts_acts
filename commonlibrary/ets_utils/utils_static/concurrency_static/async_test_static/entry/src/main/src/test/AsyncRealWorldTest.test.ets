@@ -172,7 +172,7 @@ export default function asyncRealWorldTest() {
     it('asyncRealWorldTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const maxRequestsPerSecond: int = 3;
       let requestCount: int = 0;
-      let resetTime: number = Date.now() + 1000;
+      let resetTime: number = (Date.now() + 1000).toDouble();
 
       const rateLimitedRequest = async (id: number): Promise<string> => {
         const now: number = Date.now();

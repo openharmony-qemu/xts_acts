@@ -317,5 +317,148 @@ export default function ctype_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   iswblank
+     * @tc.number SUB_THIRDPARTY_MUSL_ISWBLANK_0100
+     * @tc.desc   libc-test iswblank
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("iswblank", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("iswblank");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   iswcntrl
+     * @tc.number SUB_THIRDPARTY_MUSL_ISWCNTRL_0100
+     * @tc.desc   libc-test iswcntrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("iswcntrl", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("iswcntrl");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   iswdigit
+     * @tc.number SUB_THIRDPARTY_MUSL_ISWDIGIT_0100
+     * @tc.desc   libc-test iswdigit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("iswdigit", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("iswdigit");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   iswlower
+     * @tc.number SUB_THIRDPARTY_MUSL_ISWLOWER_0100
+     * @tc.desc   libc-test iswlower
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("iswlower", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("iswlower");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   iswpunct
+     * @tc.number SUB_THIRDPARTY_MUSL_ISWPUNCT_0100
+     * @tc.desc   libc-test iswpunct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("iswpunct", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("iswpunct");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   iswspace
+     * @tc.number SUB_THIRDPARTY_MUSL_ISWSPACE_0100
+     * @tc.desc   libc-test iswspace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("iswspace", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("iswspace");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   iswupper
+     * @tc.number SUB_THIRDPARTY_MUSL_ISWUPPER_0100
+     * @tc.desc   libc-test iswupper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("iswupper", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("iswupper");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   iswxdigit
+     * @tc.number SUB_THIRDPARTY_MUSL_ISWXDIGIT_0100
+     * @tc.desc   libc-test iswxdigit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("iswxdigit", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("iswxdigit");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   towlower
+     * @tc.number SUB_THIRDPARTY_MUSL_TOWLOWER_0100
+     * @tc.desc   libc-test towlower
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("towlower", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("towlower");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   towupper
+     * @tc.number SUB_THIRDPARTY_MUSL_TOWUPPER_0100
+     * @tc.desc   libc-test towupper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("towupper", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("towupper");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   towupper_l
+     * @tc.number SUB_THIRDPARTY_MUSL_TOWUPPER_L_0100
+     * @tc.desc   libc-test towupper_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("towupper_l", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("towupper_l");
+      expect(result).assertEqual(0);
+      done();
+    });
   });
 }

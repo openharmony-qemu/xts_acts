@@ -196,6 +196,8 @@
     "pages/ArkUI/CapiDragDropTest",
     "pages/ArkUI/CapionDigitalCrown",
     "pages/ArkUI/PassThrough",
-    "pages/ArkUI/MenuColorMode"
+    "pages/ArkUI/MenuColorMode",
+    "pages/ArkUI/SetCustomCursor",
+    "pages/ArkUI/PopupColorMode"
   ]
 }

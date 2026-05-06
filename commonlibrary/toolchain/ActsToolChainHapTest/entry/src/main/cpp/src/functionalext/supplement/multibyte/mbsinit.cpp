@@ -36,7 +36,7 @@ void Mbsinit0100(void)
 
 /**
  * @tc.name      : Mbsinit0200
- * @tc.desc      : Verify mbsinit process success and return nonzero value when st is null.
+ * @tc.desc      : Verify mbsinit process success and return nonzero value when st is nullptr.
  * @tc.leve      : Level 0
  */
 void Mbsinit0200(void)

@@ -44,5 +44,19 @@ export default function fenv_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   feupdateenv
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_FEUPDATEENV_0100
+     * @tc.desc   libc-test feupdateenv
+     */
+    it("feupdateenv", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("feupdateenv");
+      expect(result).assertEqual(0);
+      done();
+    });
+
   });
 }
