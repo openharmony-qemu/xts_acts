@@ -63,7 +63,7 @@ export default function PowerPermissionTest() {
 
     /**
      * @tc.name   getPowerConfig_Test_0100
-     * @tc.number SUB_PowerSystem_getPowerConfigTest_0100
+     * @tc.number   SUB_PowerSystem_getPowerConfigTest_0100
      * @tc.desc   Test the third-party application call refreshActivity will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -85,7 +85,7 @@ export default function PowerPermissionTest() {
 
     /**
      * @tc.name   setPowerConfig_Test_0100
-     * @tc.number SUB_PowerSystem_setPowerConfigTest_0100
+     * @tc.number   SUB_PowerSystem_setPowerConfigTest_0100
      * @tc.desc   Test the third-party application call refreshActivity will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
