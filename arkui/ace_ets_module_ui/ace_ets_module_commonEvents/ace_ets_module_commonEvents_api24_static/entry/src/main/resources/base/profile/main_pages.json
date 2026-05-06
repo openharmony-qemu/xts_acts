@@ -24,6 +24,7 @@
     "MainAbility/pages/getHistoricalPoints/getHistoricalPoints_windowY",
     "MainAbility/pages/getHistoricalPoints/getHistoricalPoints_globalDisplayX",
     "MainAbility/pages/getHistoricalPoints/getHistoricalPoints_globalDisplayY",
-    "MainAbility/pages/getHistoricalPoints/Marquee"
+    "MainAbility/pages/getHistoricalPoints/Marquee",
+    "MainAbility/pages/getSizeLimitation/GetSizeLimitation"
   ]
 }

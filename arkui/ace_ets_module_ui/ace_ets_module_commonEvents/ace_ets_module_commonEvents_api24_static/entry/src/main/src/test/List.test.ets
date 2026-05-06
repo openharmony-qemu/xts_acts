@@ -39,8 +39,10 @@ import getHistoricalPoints_windowX from './getHistoricalPointsTest/getHistorical
 import getHistoricalPoints_globalDisplayX from './getHistoricalPointsTest/getHistoricalPoints_globalDisplayX.test';
 import getHistoricalPoints_globalDisplayY from './getHistoricalPointsTest/getHistoricalPoints_globalDisplayX.test';
 import Marquee from './getHistoricalPointsTest/Marquee.test';
+import getSizeLimitationTest from './getSizeLimitation/GetSizeLimitationTest.test';
 
 export default function testsuite() {
+  getSizeLimitationTest();
   Marquee();
   DragControllerTest();
   CommonEventGlobalDisplayTest();
