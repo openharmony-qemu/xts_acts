@@ -573,8 +573,8 @@ export default function actsApiTest() {
     });
 
     /**
-     * @tc.number  SUB_MUlTIMEDIA_VIDEO_ENC_CAP_API_0600
-     * @tc.name    SUB_MUlTIMEDIA_VIDEO_ENC_CAP_API_0600
+     * @tc.number  SUB_MUlTIMEDIA_VIDEO_ENC_CAP_API_1100
+     * @tc.name    SUB_MUlTIMEDIA_VIDEO_ENC_CAP_API_1100
      * @tc.desc    Check the encoder type
      * @tc.size    MEDIUMTEST
      * @tc.type    FUNC
