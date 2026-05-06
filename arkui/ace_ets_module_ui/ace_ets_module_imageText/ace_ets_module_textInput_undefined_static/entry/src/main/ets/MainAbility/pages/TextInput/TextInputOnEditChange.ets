@@ -8,7 +8,7 @@ import { State, AppStorage, Observed } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
 @Observed
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   public count : Int = 0;
   public isCallback: Boolean = true;
   applyNormalAttribute(instance: TextInputAttribute): void {

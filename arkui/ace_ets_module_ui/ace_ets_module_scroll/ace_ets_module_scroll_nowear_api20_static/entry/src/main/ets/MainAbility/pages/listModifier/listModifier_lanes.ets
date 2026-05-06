@@ -48,32 +48,32 @@ class ListLanesNormalModifier implements AttributeModifier<ListAttribute> {
   }
 }
 @Observed
-class ListLanesNumberModifier implements AttributeModifier<ListAttribute> {
+export class ListLanesNumberModifier implements AttributeModifier<ListAttribute> {
   applyNormalAttribute(instance: ListAttribute): void {
     instance.lanes(2);  // 正常值：2列
   }
 }
 @Observed
-class ListLanesAdaptiveModifier implements AttributeModifier<ListAttribute> {
+export class ListLanesAdaptiveModifier implements AttributeModifier<ListAttribute> {
   applyNormalAttribute(instance: ListAttribute): void {
     instance.lanes({ minLength: 100, maxLength: 200 });  // 自适应列数
   }
 }
 @Observed
-class ListLanesZeroModifier implements AttributeModifier<ListAttribute> {
+export class ListLanesZeroModifier implements AttributeModifier<ListAttribute> {
   applyNormalAttribute(instance: ListAttribute): void {
     instance.lanes(0);  // 异常值：0列
   }
 }
 @Observed
-class ListLanesNegativeModifier implements AttributeModifier<ListAttribute> {
+export class ListLanesNegativeModifier implements AttributeModifier<ListAttribute> {
   applyNormalAttribute(instance: ListAttribute): void {
     instance.lanes(-1);  // 异常值：-1
   }
 }
 // 动态切换的 Modifier
 @Observed
-class ListLanesDynamicModifier implements AttributeModifier<ListAttribute> {
+export class ListLanesDynamicModifier implements AttributeModifier<ListAttribute> {
   private lanesValue: LanesType;
 
   constructor(lanesValue: LanesType) {

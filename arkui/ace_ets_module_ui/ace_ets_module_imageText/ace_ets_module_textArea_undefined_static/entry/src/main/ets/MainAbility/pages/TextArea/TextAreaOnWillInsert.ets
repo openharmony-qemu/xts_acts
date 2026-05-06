@@ -8,7 +8,7 @@ import { State, AppStorage, Observed  } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
 @Observed
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   public insertValue: string = '';
   public isCallback: Boolean = true;
   applyNormalAttribute(instance: TextAreaAttribute): void {

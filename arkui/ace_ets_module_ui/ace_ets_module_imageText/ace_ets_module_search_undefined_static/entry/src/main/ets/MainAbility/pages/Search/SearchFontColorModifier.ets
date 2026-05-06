@@ -1,6 +1,6 @@
 'use static'
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,7 +19,7 @@ import { Entry, Text, Column, Component, Search, ColumnOptions, ClickEvent, Butt
 import { State, Observed  } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyTextModifier1 implements AttributeModifier<SearchAttribute> {
+export class MyTextModifier1 implements AttributeModifier<SearchAttribute> {
   applyNormalAttribute(instance: SearchAttribute): void {
     instance
       .height(30)
@@ -28,7 +28,7 @@ class MyTextModifier1 implements AttributeModifier<SearchAttribute> {
 }
 
 @Observed
-class MyTextModifier implements AttributeModifier<SearchAttribute> {
+export class MyTextModifier implements AttributeModifier<SearchAttribute> {
   public isFontColor: boolean = true;
   applyNormalAttribute(instance: SearchAttribute): void {
     if (this.isFontColor) {

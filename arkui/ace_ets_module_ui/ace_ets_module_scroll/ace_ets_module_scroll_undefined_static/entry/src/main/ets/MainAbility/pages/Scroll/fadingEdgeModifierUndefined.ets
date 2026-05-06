@@ -43,7 +43,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 
 // ===================== Modifier 定义 =====================
 @Observed
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   @State public feEnabled1: boolean | undefined = true;
 
   applyNormalAttribute(instance: ScrollAttribute): void {

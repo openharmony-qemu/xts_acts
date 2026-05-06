@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,7 +47,7 @@ let storage3: LocalStorage = new LocalStorage(para3);
 let para4: Record<string, string> = { 'List_setOnVisibleContentChange': 'start' };
 let storage4: LocalStorage = new LocalStorage(para4);
 
-class MyNodeController extends NodeController {
+export class MyNodeController extends NodeController {
   public rootNode: FrameNode | null = null;
 
   makeNode(uiContext: UIContext): FrameNode | null {

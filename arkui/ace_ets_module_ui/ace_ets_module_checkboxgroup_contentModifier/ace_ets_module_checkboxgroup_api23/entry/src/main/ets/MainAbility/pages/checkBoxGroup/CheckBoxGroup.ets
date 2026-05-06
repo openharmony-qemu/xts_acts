@@ -43,7 +43,7 @@ import {
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 
-class MyCheckboxGroupStyle implements ContentModifier<CheckBoxGroupConfiguration> {
+export class MyCheckboxGroupStyle implements ContentModifier<CheckBoxGroupConfiguration> {
   public selectedColor: Color = Color.Black;
   public checkBoxGroupName: string = 'CheckboxGroup';
 

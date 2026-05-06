@@ -36,7 +36,7 @@ function myBuilder() {
   .id('column')
 }
 
-class MyNodeAdapterController extends NodeController {
+export class MyNodeAdapterController extends NodeController {
   private buttonNode: BuilderNode | null = null;
   private rootNode: FrameNode | null = null;
   private uid: int;

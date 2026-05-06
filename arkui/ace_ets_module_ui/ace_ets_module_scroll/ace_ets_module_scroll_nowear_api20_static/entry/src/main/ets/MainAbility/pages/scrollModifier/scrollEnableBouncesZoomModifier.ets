@@ -148,19 +148,19 @@ import { LengthUnit, typeNode } from '@ohos.arkui.node'
 
 import { BusinessError } from '@kit.BasicServicesKit'
 @Observed
-class ScrollTrueModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollTrueModifier implements AttributeModifier<ScrollAttribute> {
   applyNormalAttribute(instance: ScrollAttribute): void {
     instance.enableBouncesZoom(true);
   }
 }
 @Observed
-class ScrollFalseModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollFalseModifier implements AttributeModifier<ScrollAttribute> {
   applyNormalAttribute(instance: ScrollAttribute): void {
     instance.enableBouncesZoom(false);
   }
 }
 @Observed
-class ScrollUndefinedModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollUndefinedModifier implements AttributeModifier<ScrollAttribute> {
   applyNormalAttribute(instance: ScrollAttribute): void {
     instance.enableBouncesZoom(undefined);
   }
