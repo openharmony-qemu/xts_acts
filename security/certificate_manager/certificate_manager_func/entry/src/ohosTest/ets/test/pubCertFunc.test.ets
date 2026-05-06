@@ -1188,7 +1188,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       const context :common.Context = GlobalContext.getContext();
       let certificateType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CA_CERT;
       let certificateScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.GLOBAL_USER;
-try {
+      try {
         await certManagerDialog.openInstallCertificateDialog(null, certificateType, certificateScope, caCert)
         expect(null).assertFail()
       } catch (err) {
@@ -1198,11 +1198,10 @@ try {
           if (err.code == 29700004) {
             expect(err.code).assertEqual(29700004);
           } else {
-            console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0020: e.code " + err.code);
+            console.log("SUB_Security_CertManager_OpenInstallCertificateDialog_0011: e.code " + err.code);
             expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
           }
         }
-      }
       }
       done();
     });
