@@ -19,6 +19,7 @@ group("officeservice") {
     deps = [
       "ActsObjectEditorDocumentTest:ActsObjectEditorDocumentTest",
       "ActsObjectEditorDocumentTestTwo:ActsObjectEditorDocumentTwoTest",
+      "ActsObjectEditorDocumentTestThree:ActsObjectEditorDocumentThreeTest",
       "ActsObjectEditorEnumTest:ActsObjectEditorEnumTest",
       "ActsObjectEditorExtensionTest:ActsObjectEditorExtensionTest",
       "ActsObjectEditorProxyTest:ActsObjectEditorProxyTest",
