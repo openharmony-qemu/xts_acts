@@ -1162,7 +1162,7 @@ export default function api16CertFuncTestTwoUnit() {
           await certManagerDialog.openAuthorizeDialog(context, authorizeRequest);
           expect(null).assertFail();
         } catch (error) {
-          if (!canIUse('SystemCapability.Security.CertificateDialog')) {
+          if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
             expect((error as BusinessError).code).assertEqual(801);
           } else {
             hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_Static_1300 Failed to open authorize dialog. Code: ${error.code}, message: ${error.message}`);
