@@ -17,6 +17,7 @@ import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import { describe, beforeEach, it, expect, Level } from '@ohos/hypium';
 import { Driver, ON } from '@ohos.UiTest';
+import { inputMethod } from '@kit.IMEKit';
 
 
 export default function TextInputOnNeedSoftkeyboardTest() {
