@@ -13,4 +13,22 @@
  * limitations under the License.
  */
 
+export const TestLoadDocumentFromFile_Normal: () => number;
 export const TestDocumentGetNativeFilePath_OEIDIsEmpty: () => number;
+export const TestStorageSetOEid_OEIDIsEmpty: () => number;
+export const TestProxyGetOEidFromFormat_OEIDIsEmpty: () => number;
+export const TestCreateDocumentByOEid_OEIDIsValid: () => number;
+export const TestStorageCreateStorage_NameIsValid: () => number;
+export const TestStorageCreateStorage_NameExceedMaxLen: () => number;
+export const TestStorageGetStorage_NameIsValid: () => number;
+export const TestStorageGetStorage_NameExceedMaxLen: () => number;
+export const TestStorageCreateStream_StreamFailed: () => number;
+export const TestStorageGetStream_StorageFailed: () => number;
+export const TestStorageGetStream_StreamFailed: () => number;
+export const TestCreateDocumentByFile_EmptyPath: () => number;
+export const TestStorageDeleteEntry_FileFailed: () => number;
+export const TestStreamSeek_ExceedSize: () => number;
+export const TestStreamRead_StreamFailed: () => number;
+export const TestStreamWrite_StreamFailed: () => number;
+export const TestStreamGetPosition_StreamFailed: () => number;
+export const TestStreamGetSize_StreamFailed: () => number;
