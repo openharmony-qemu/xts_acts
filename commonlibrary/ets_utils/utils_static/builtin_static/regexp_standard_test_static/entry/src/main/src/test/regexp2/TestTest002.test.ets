@@ -37,9 +37,9 @@ export default function testTest002(): void {
      * @tc.desc test returns true when input matches numeric pattern
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('\\d+');
       const out = re.test('abc123');
       expect(out).assertTrue();
@@ -51,9 +51,9 @@ export default function testTest002(): void {
      * @tc.desc test returns false when no numeric token exists
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testTest0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('\\d+');
       const out = re.test('abcdef');
       expect(out).assertFalse();
@@ -65,9 +65,9 @@ export default function testTest002(): void {
      * @tc.desc Global test advances and resets lastIndex correctly
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testTest0202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('a', 'g');
       const first = re.test('ba');
       const second = re.test('ba');
@@ -82,9 +82,9 @@ export default function testTest002(): void {
      * @tc.desc Case-insensitive test matches mixed-case input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testTest0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('abc', 'i');
       expect(re.test('xxAbCyy')).assertTrue();
     });
@@ -95,9 +95,9 @@ export default function testTest002(): void {
      * @tc.desc test: ^ and $ anchors with and without multiline flag
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testTest0204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const input = 'first\nsecond';
       expect(new RegExp('^second$').test(input)).assertFalse();
       expect(new RegExp('^second$', 'm').test(input)).assertTrue();
@@ -110,9 +110,9 @@ export default function testTest002(): void {
      * @tc.desc test: boundaries and character classes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testTest0205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const cases: Array<[RegExp, string, boolean]> = [
         [new RegExp('\\btest\\b'), 'test', true],
         [new RegExp('\\btest\\b'), 'testing', false],
@@ -139,9 +139,9 @@ export default function testTest002(): void {
      * @tc.desc test: quantifiers and greedy/lazy matching sanity
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testTest0206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const cases: Array<[RegExp, string, boolean]> = [
         [new RegExp('a*b'), 'b', true],
         [new RegExp('a*b'), 'a'.repeat(3) + 'b', true],
@@ -175,9 +175,9 @@ export default function testTest002(): void {
      * @tc.desc test: dotAll flag (s) matches newline when supported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testTest0207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const input = 'hello\nworld';
       expect(new RegExp('hello.world').test(input)).assertFalse();
       if (supportsRegExp('hello.world', 's')) {
@@ -191,9 +191,9 @@ export default function testTest002(): void {
      * @tc.desc test: unicode code point escape with u flag when supported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testTest0208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const input = 'Hi 😀 there';
       expect(new RegExp('😀').test(input)).assertTrue();
       if (supportsRegExp('\\u{1F600}', 'u')) {
@@ -207,9 +207,9 @@ export default function testTest002(): void {
      * @tc.desc test: lookahead patterns when supported by engine
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testTest0209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const input = 'price=100USD';
       if (supportsRegExp('\\d+(?=USD)')) {
         expect(new RegExp('\\d+(?=USD)').test(input)).assertTrue();
@@ -225,9 +225,9 @@ export default function testTest002(): void {
      * @tc.desc test: sticky (y) uses lastIndex as the match start when supported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testTest0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       if (!supportsRegExp('foo', 'y')) {
         return;
       }
@@ -244,9 +244,9 @@ export default function testTest002(): void {
      * @tc.desc test: non-global regex does not consume or reset lastIndex
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testTest0211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('abc');
       re.lastIndex = 2;
       expect(re.test('xxabcxx')).assertTrue();
@@ -263,9 +263,9 @@ export default function testTest002(): void {
      * @tc.desc test: reconstructed regex from source/flags keeps behavior
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testTest0212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const base = new RegExp('a\\d+', 'i');
       const rebuilt = new RegExp(base.source, base.flags);
       expect(base.test('A12')).assertTrue();
@@ -280,9 +280,9 @@ export default function testTest002(): void {
      * @tc.desc test: alternation and boundaries cover both match and miss
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testTest0213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('cat|dog');
       expect(re.test('xxdogyy')).assertTrue();
       expect(re.test('xxcatyy')).assertTrue();
@@ -297,9 +297,9 @@ export default function testTest002(): void {
      * @tc.desc test: mixed flags i+m combination supports line-local ignoreCase
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testTest0214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testTest0214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const input = 'start\nHeLLo\nend';
       const re = new RegExp('^hello$', 'im');
       expect(re.test(input)).assertTrue();

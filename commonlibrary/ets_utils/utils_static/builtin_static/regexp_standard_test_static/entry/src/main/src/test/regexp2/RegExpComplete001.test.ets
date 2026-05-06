@@ -64,8 +64,6 @@ function supportsRegExp(pattern: string, flags: string = ''): boolean {
 
 // Organized from observable instance methods outward to syntax, statics, then integration to mirror how failures appear in apps.
 export default function regExpCompleteTest(): void {
-  const filterLevel1: Int = TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1;
-
   // Exec and toString: the minimum user-visible RegExp behavior before constructor corner cases.
   describe('Instance_Methods_exec_toString', () => {
     beforeAll(() => {
@@ -93,9 +91,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test RegExp.prototype.exec basic hello match
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = 'hello world';
       const regex = new RegExp("hello");
       const result = regex.exec(str);
@@ -110,9 +108,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test RegExp.prototype.exec ordinary numbered capture groups for date
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = '2023-12-25';
       const regex = new RegExp("(\\d{4})-(\\d{2})-(\\d{2})");
       const result = regex.exec(str);
@@ -128,9 +126,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test RegExp.prototype.exec named capture groups
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       if (!supportsRegExp('(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})')) {
         return;
       }
@@ -143,9 +141,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test exec loop updates lastIndex with global flag
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = 'test test test';
       const regex = new RegExp("test", "g");
       expect(regex.exec(str)?.[0]).assertEqual('test');
@@ -164,9 +162,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test exec returns null when no match
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new RegExp("xyz").exec('hello world')).assertEqual(null);
     });
 
@@ -176,9 +174,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test sticky exec respects lastIndex with y flag
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = 'test test';
       const regex = new RegExp("test", "y");
       regex.lastIndex = 0;
@@ -195,9 +193,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test exec result exposes index and input properties
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const result = new RegExp("world").exec('hello world');
       expect(result?.index).assertEqual(6);
       expect(result?.input).assertEqual('hello world');
@@ -210,9 +208,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test RegExp.prototype.toString returns slash form with flags
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const regex1 = new RegExp("abc", "gim");
       const regex2 = new RegExp('\\d+', 'g');
       expect(regex1.toString()).assertEqual('/abc/gim');
@@ -225,9 +223,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test toString escapes whitespace characters
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const regex = new RegExp("\\n\\r\\t\\f\\v");
       const s = regex.toString();
       expect(s.indexOf('\\n') >= 0).assertTrue();
@@ -262,9 +260,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test regex literal flags and properties
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const regex = new RegExp("test", "i");
       expect(regex.test('TEST')).assertTrue();
       expect(regex.source).assertEqual('test');
@@ -277,9 +275,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test RegExp constructor with string pattern and flags
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const regex = new RegExp('test', 'i');
       expect(regex.test('TEST')).assertTrue();
       expect(regex.source).assertEqual('test');
@@ -291,9 +289,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test RegExp constructor handles escaped \\w and \\d
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const regex1 = new RegExp('\\w+');
       const regex2 = new RegExp('\\d{3}');
       expect(regex1.test('abc123')).assertTrue();
@@ -306,9 +304,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test RegExp constructor overrides flags when input is RegExp
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const regex1 = new RegExp("test", "gi");
       const regex2 = new RegExp(regex1, 'm');
       expect(regex2.source).assertEqual('test');
@@ -321,9 +319,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test RegExp constructor flag override priority
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const regex1 = new RegExp("test", "g");
       const regex2 = new RegExp(regex1, 'i');
       expect(regex2.global).assertFalse();
@@ -336,9 +334,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test RegExp constructor throws on invalid bracket pattern
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let threw = false;
       try {
         new RegExp('[a-z');
@@ -355,9 +353,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test RegExp constructor with dynamic pattern
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const searchWord = 'hello';
       const regex = new RegExp(searchWord, 'i');
       expect(regex.test('HELLO World')).assertTrue();
@@ -391,9 +389,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test RegExp subclass species behavior
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(subclassSpeciesIsConstructor()).assertTrue();
     });
 
@@ -403,9 +401,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test RegExp.lastIndex static property type shape
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp("test", "g");
       re.test('test test');
       expect(regexpStaticLastIndexIsNumberOrUndefined()).assertTrue();
@@ -439,9 +437,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test RegExp[Symbol.match] behavior
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(symbolMatchTwoMatches()).assertTrue();
     });
 
@@ -451,9 +449,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test RegExp[Symbol.matchAll] behavior
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(symbolMatchAllTwoMatches()).assertTrue();
     });
 
@@ -463,9 +461,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test RegExp[Symbol.replace] behavior
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(symbolReplaceAllDemo()).assertTrue();
     });
 
@@ -475,9 +473,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test RegExp[Symbol.search] behavior
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(symbolSearchIndex6()).assertTrue();
     });
 
@@ -487,9 +485,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test RegExp[Symbol.split] behavior
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(symbolSplitThreeParts()).assertTrue();
     });
   });
@@ -521,9 +519,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test empty quantifier with star matches empty string
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = 'abc';
       const regex = new RegExp("\\d*");
       expect(regex.test(str)).assertTrue();
@@ -537,9 +535,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test RegExp.prototype.test returns boolean
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const regex = new RegExp("test");
       expect(typeof regex.test('test')).assertEqual('boolean');
       expect(regex.test('test')).assertTrue();
@@ -552,9 +550,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test sticky y flag affects lastIndex in test()
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = 'test test';
       const regex = new RegExp("test", "y");
       regex.lastIndex = 0;
@@ -571,9 +569,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test exec equivalence without capture groups
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = 'test123';
       const regex = new RegExp("test\\d{3}");
       expect(regex.test(str)).assertTrue();
@@ -608,9 +606,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test Unicode property escape pL when supported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       if (!supportsRegExp('\\p{L}', 'u')) {
         return;
       }
@@ -625,9 +623,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test Unicode Script Han property when supported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       if (!supportsRegExp('\\p{L}', 'u')) {
         return;
       }
@@ -645,9 +643,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test Unicode property escapes pP, pN and \\P when supported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       if (!supportsRegExp('\\p{P}', 'u')) {
         return;
       }
@@ -670,9 +668,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test ASCII \\w does not match Greek letters
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = '\u03B1\u03B2';
       expect(new RegExp("\\w").test(str)).assertFalse();
     });
@@ -683,9 +681,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test \\w with u flag does not match Greek letters when supported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = '\u03B1\u03B2';
       if (!supportsRegExp('\\w', 'u')) {
         return;
@@ -699,9 +697,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test \\p{L} matches Greek letters when supported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = '\u03B1\u03B2';
       if (!supportsRegExp('\\p{L}', 'u')) {
         return;
@@ -715,9 +713,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test combining character matches with dot without u flag
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = 'e\u0301';
       expect(new RegExp(".").test(str)).assertTrue();
     });
@@ -728,9 +726,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test combining character with dot under u when supported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = 'e\u0301';
       if (!supportsRegExp('.', 'u')) {
         return;
@@ -766,9 +764,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test atomic group pattern throws in standard RegExp constructor
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let threw = false;
       try {
         new RegExp('(?>(a|ab))+c');
@@ -791,9 +789,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test possessive quantifier pattern throws in standard RegExp constructor
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let threw = false;
       try {
         new RegExp('\\d++');
@@ -809,9 +807,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test greedy vs non-greedy quantifiers
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = '<div>test</div><div>demo</div>';
       expect(new RegExp("<div>.*<\\/div>").test(str)).assertTrue();
       expect(new RegExp("<div>.*?<\\/div>").test(str)).assertTrue();
@@ -823,9 +821,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test brace quantifiers {m,n}
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = 'aaa';
       expect(new RegExp("a{2,3}").test(str)).assertTrue();
       expect(new RegExp("a{1,3}").test(str)).assertTrue();
@@ -859,9 +857,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test $ matches empty string end position
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new RegExp("^$").test('')).assertTrue();
       expect(new RegExp("^$").test('a')).assertFalse();
     });
@@ -872,9 +870,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test lookahead prefix matching
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = 'test';
       expect(new RegExp("(?=test).*").test(str)).assertTrue();
       const ex = new RegExp("(?=test).*").exec(str);
@@ -887,9 +885,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test empty group matches at any position
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new RegExp("(?:)").test('test')).assertTrue();
     });
 
@@ -899,9 +897,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test word boundary is zero-width assertion
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = 'test';
       expect(new RegExp("\\b").test(str)).assertTrue();
       const ex = new RegExp("\\b").exec(str);
@@ -914,9 +912,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test large quantifier count 1000
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = 'a'.repeat(1000);
       expect(new RegExp("a{1000}").test(str)).assertTrue();
     });
@@ -949,9 +947,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test unknown flag throws syntax error
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(literalUnknownFlagThrows()).assertTrue();
     });
 
@@ -961,9 +959,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test capture group 10 is parsed correctly
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(captureGroup10IsJ()).assertTrue();
     });
 
@@ -973,9 +971,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test invalid Unicode escape throws
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(newRegExpInvalidUnicodeThrows()).assertTrue();
     });
 
@@ -985,9 +983,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test incomplete character class throws
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(newRegExpInvalidBracketThrows()).assertTrue();
     });
   });
@@ -1019,9 +1017,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test assigning global property has no effect
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(assignGlobalHasNoEffect()).assertTrue();
     });
 
@@ -1031,9 +1029,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test manual lastIndex affects global exec
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const regex = new RegExp("test", "g");
       const str = 'test test';
       regex.lastIndex = 5;
@@ -1047,9 +1045,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test flags property enumerability
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(globalPropertyNotEnumerable()).assertTrue();
     });
 
@@ -1059,9 +1057,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test global property descriptor
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(globalDescriptorIsNonWritableData()).assertTrue();
     });
   });
@@ -1093,9 +1091,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test String.prototype.matchAll returns iterator
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = 'test test test';
       const regex = new RegExp("test", "g");
       const iter = regexpSymbolMatchAll(regex, str);
@@ -1109,9 +1107,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test String.prototype.split with RegExp separator
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = 'a,b,c';
       const regex = new RegExp(",");
       const result = str.split(regex);
@@ -1125,9 +1123,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test String.prototype.replace with function replacer
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = 'test123test456';
       const regex = new RegExp("test(\\d+)", "g");
       const result = str.replace(regex, 'demo$1');
@@ -1140,9 +1138,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test String.prototype.search with RegExp
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = 'hello test world';
       expect(str.search(new RegExp("test"))).assertEqual(6);
       expect(str.search(new RegExp("xyz"))).assertEqual(-1);
@@ -1154,9 +1152,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test Array.prototype.filter with match results
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr: string[] = ['test1', 'test2', 'demo'];
       const regex = new RegExp("test");
       const result = arr.filter((item: string) => regex.test(item));
@@ -1169,9 +1167,9 @@ export default function regExpCompleteTest(): void {
      * @tc.desc Test Array.prototype.map over match results
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpComplete0153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpComplete0153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const arr: string[] = ['test1', 'test2'];
       const regex = new RegExp("test(\\d+)");
       const out: string[] = [];

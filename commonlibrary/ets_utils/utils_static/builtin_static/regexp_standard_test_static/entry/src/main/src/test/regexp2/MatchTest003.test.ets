@@ -45,9 +45,9 @@ export default function matchTest003(): void {
      * @tc.desc Test RegExp[Symbol.matchAll] no matches returns empty results array
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testMatch0165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testMatch0165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const regex: RegExp = new RegExp("test", "g");
       const str: string = "hello world";
       const results: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex, str));
@@ -60,9 +60,9 @@ export default function matchTest003(): void {
      * @tc.desc Test RegExp[Symbol.matchAll] no matches iterator done immediately
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testMatch0166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testMatch0166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const regex: RegExp = new RegExp("test", "g");
       const str: string = "hello";
       const iterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(regex, str);
@@ -77,9 +77,9 @@ export default function matchTest003(): void {
      * @tc.desc Test RegExp[Symbol.matchAll] zero-width assertions
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testMatch0167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testMatch0167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const regex: RegExp = new RegExp("\\d(?=\\.)", "g");
       const str: string = "123.456";
       const results: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex, str));
@@ -93,9 +93,9 @@ export default function matchTest003(): void {
      * @tc.desc Test RegExp[Symbol.matchAll] empty match returns empty string
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testMatch0168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testMatch0168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const regex: RegExp = new RegExp("(?:)", "g");
       const str: string = "abc";
       const results: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex, str));
@@ -111,9 +111,9 @@ export default function matchTest003(): void {
      * @tc.desc Test RegExp[Symbol.matchAll] empty string input returns no matches
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testMatch0169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testMatch0169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const regex: RegExp = new RegExp("test", "g");
       const str: string = "";
       const results: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex, str));
@@ -126,9 +126,9 @@ export default function matchTest003(): void {
      * @tc.desc Test RegExp[Symbol.matchAll] empty string with empty match
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testMatch0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testMatch0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const regex: RegExp = new RegExp("(?:)", "g");
       const str: string = "";
       const results: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex, str));
@@ -143,9 +143,9 @@ export default function matchTest003(): void {
      * @tc.desc Test RegExp[Symbol.matchAll] single character string
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testMatch0171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testMatch0171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const regex: RegExp = new RegExp("a", "g");
       const str: string = "a";
       const results: RegExpMatchArray[] = Array.from(regexpSymbolMatchAll(regex, str));
@@ -159,9 +159,9 @@ export default function matchTest003(): void {
      * @tc.desc Test RegExp[Symbol.matchAll] special unicode characters
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testMatch0172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testMatch0172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const emoji = String.fromCodePoint(0x1F600);
       const regex: RegExp = new RegExp(emoji, 'gu');
       const str: string = 'Hello ' + emoji + ' World';

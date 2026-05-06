@@ -76,9 +76,9 @@ export default function execTest003(): void {
      * @tc.desc Test RegExp.prototype.exec positive lookahead (?=)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const result1 = ExecSpecial.matchPositiveLookahead("foobar");
       const result2 = ExecSpecial.matchPositiveLookahead("foobaz");
       expect(result1?.[0]).assertEqual("foo");
@@ -91,9 +91,9 @@ export default function execTest003(): void {
      * @tc.desc Test RegExp.prototype.exec negative lookahead (?!)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const result1 = ExecSpecial.matchNegativeLookahead("foobaz");
       const result2 = ExecSpecial.matchNegativeLookahead("foobar");
       expect(result1?.[0]).assertEqual("foo");
@@ -106,9 +106,9 @@ export default function execTest003(): void {
      * @tc.desc Test RegExp.prototype.exec positive lookbehind (?<=) when supported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       if (!supportsRegExp('(?<=test)123')) {
         return;
       }
@@ -125,9 +125,9 @@ export default function execTest003(): void {
      * @tc.desc Test positive lookbehind yields no match when unsupported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       if (supportsRegExp('(?<=test)123')) {
         return;
       }
@@ -140,9 +140,9 @@ export default function execTest003(): void {
      * @tc.desc Test RegExp.prototype.exec negative lookbehind (?<!) when supported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       if (!supportsRegExp('(?<!test)123')) {
         return;
       }
@@ -159,9 +159,9 @@ export default function execTest003(): void {
      * @tc.desc Test negative lookbehind yields no match when unsupported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       if (supportsRegExp('(?<!test)123')) {
         return;
       }
@@ -196,9 +196,9 @@ export default function execTest003(): void {
      * @tc.desc Test exec and test share lastIndex on same global RegExp
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re: RegExp = new RegExp('foo', 'g');
       const str: string = "foo foo";
       re.test(str);
@@ -214,9 +214,9 @@ export default function execTest003(): void {
      * @tc.desc Test exec results align with String.match for global regex
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re: RegExp = new RegExp('foo', 'g');
       const str: string = "foo foo";
       const execResult1: RegExpExecArray | null = re.exec(str);
@@ -233,9 +233,9 @@ export default function execTest003(): void {
      * @tc.desc Test String.matchAll iterator yields same substrings as multiple exec
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re: RegExp = new RegExp('foo', 'g');
       const str: string = "foo foo";
       const matchAllIterator: IterableIterator<RegExpMatchArray> = regexpSymbolMatchAll(re, str);
@@ -251,9 +251,9 @@ export default function execTest003(): void {
      * @tc.desc Test replace does not leave lastIndex mutated for non-global regex
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re: RegExp = new RegExp('foo');
       const str: string = "foo bar";
       const replaced: string = str.replace(re, "baz");
@@ -267,9 +267,9 @@ export default function execTest003(): void {
      * @tc.desc Test exec match index equals RegExp @@search result
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re: RegExp = new RegExp('hello');
       const str: string = "say hello world";
       const execResult: RegExpExecArray | null = re.exec(str);

@@ -58,9 +58,9 @@ export default function testLastIndexTest(): void {
      * @tc.desc Test global lastIndex update and reset
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testLastIndex0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testLastIndex0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = 'foo bar foo';
       const re = new RegExp("foo", "g");
       expect(re.lastIndex).assertEqual(0);
@@ -78,9 +78,9 @@ export default function testLastIndexTest(): void {
      * @tc.desc Test sticky lastIndex
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testLastIndex0211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testLastIndex0211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       if (!supportsRegExp('foo', 'y')) {
         return;
       }
@@ -100,9 +100,9 @@ export default function testLastIndexTest(): void {
      * @tc.desc Test manual reset lastIndex
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testLastIndex0212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testLastIndex0212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = 'foo foo';
       const re = new RegExp("foo", "g");
       expect(re.test(str)).assertTrue();
@@ -116,9 +116,9 @@ export default function testLastIndexTest(): void {
      * @tc.desc Test independence between instances
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testLastIndex0213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testLastIndex0213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = 'foo bar foo';
       const r1 = new RegExp("foo", "g");
       const r2 = new RegExp("foo", "g");
@@ -135,9 +135,9 @@ export default function testLastIndexTest(): void {
      * @tc.desc Test lastIndex extremes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testLastIndex0214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testLastIndex0214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = 'test';
       const re = new RegExp("test", "g");
       re.lastIndex = -1;
@@ -152,9 +152,9 @@ export default function testLastIndexTest(): void {
      * @tc.desc Test non global ignores lastIndex
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testLastIndex0215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testLastIndex0215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = 'foo foo';
       const re = new RegExp("foo");
       re.lastIndex = 5;
@@ -169,9 +169,9 @@ export default function testLastIndexTest(): void {
      * @tc.desc Test lastIndex affects return value
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testLastIndex0216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testLastIndex0216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const str = 'foo bar';
       const re = new RegExp("foo", "g");
       re.lastIndex = 4;

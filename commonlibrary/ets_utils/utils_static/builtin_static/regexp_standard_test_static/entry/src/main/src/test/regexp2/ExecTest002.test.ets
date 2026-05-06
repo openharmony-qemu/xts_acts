@@ -78,9 +78,9 @@ export default function execTest002(): void {
      * @tc.desc Global exec returns first match and updates lastIndex
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('\\d+', 'g');
       const first = re.exec('a12b34');
       expect(first !== null).assertTrue();
@@ -98,9 +98,9 @@ export default function execTest002(): void {
      * @tc.desc Exec returns capture groups and match index
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('(ab)(cd)');
       const out = re.exec('xxabcdyy');
       expect(out !== null).assertTrue();
@@ -119,9 +119,9 @@ export default function execTest002(): void {
      * @tc.desc Exec returns null when input has no match
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('z+');
       const out = re.exec('abc');
       expect(out === null).assertTrue();
@@ -133,9 +133,9 @@ export default function execTest002(): void {
      * @tc.desc Empty pattern exec matches at position zero
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('(?:)');
       const out = re.exec('');
       expect(out !== null).assertTrue();
@@ -152,9 +152,9 @@ export default function execTest002(): void {
      * @tc.desc Anchors and boundaries (^ $ \\b \\B)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new RegExp('^hello').exec('hello world') !== null).assertTrue();
       expect(new RegExp('^hello').exec('say hello') === null).assertTrue();
       expect(new RegExp('world$').exec('hello world') !== null).assertTrue();
@@ -171,9 +171,9 @@ export default function execTest002(): void {
      * @tc.desc Quantifiers (* + ? {n} {n,m}) and greedy/lazy
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new RegExp('a*b').exec('b') !== null).assertTrue();
       expect(new RegExp('a*b').exec('aaab') !== null).assertTrue();
       expect(new RegExp('a+b').exec('b') === null).assertTrue();
@@ -200,9 +200,9 @@ export default function execTest002(): void {
      * @tc.desc Flags: i/m/s/u/y (feature-gated) and global lastIndex reset
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(new RegExp('hello', 'i').exec('HELLO') !== null).assertTrue();
       const m = new RegExp('^hello', 'm').exec('world\nhello');
       expect(m !== null).assertTrue();
@@ -241,9 +241,9 @@ export default function execTest002(): void {
      * @tc.desc Exec non-global result carries index/input metadata
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const out = new RegExp('(ab)(cd)').exec('xxabcdyy');
       expect(out !== null).assertTrue();
       if (out === null) {
@@ -262,9 +262,9 @@ export default function execTest002(): void {
      * @tc.desc Exec with global regex iterates all matches in sequence
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('\\d+', 'g');
       const input = 'a1b22c333';
       const got: string[] = [];
@@ -289,9 +289,9 @@ export default function execTest002(): void {
      * @tc.desc Exec respects start position from lastIndex for global regex
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('foo', 'g');
       re.lastIndex = 4;
       const out = re.exec('foo foo foo');
@@ -310,9 +310,9 @@ export default function execTest002(): void {
      * @tc.desc Exec zero-length global matches still advance and terminate
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('(?:)', 'g');
       const input = 'abc';
       let count = 0;
@@ -334,9 +334,9 @@ export default function execTest002(): void {
      * @tc.desc Exec with named capture groups exposes groups object
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       if (!supportsRegExp('(?<y>\\d{4})-(?<m>\\d{2})-(?<d>\\d{2})')) {
         return;
       }
@@ -358,9 +358,9 @@ export default function execTest002(): void {
      * @tc.desc Exec supports optional capture groups and undefined entries
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const out = new RegExp('(a)(b)?').exec('a');
       expect(out !== null).assertTrue();
       if (out === null) {
@@ -377,9 +377,9 @@ export default function execTest002(): void {
      * @tc.desc Exec indices (d flag) when supported returns start/end pairs
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       if (!supportsRegExp('foo', 'd')) {
         return;
       }
@@ -401,9 +401,9 @@ export default function execTest002(): void {
      * @tc.desc Exec on multiline input validates index and matched line
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('^line\\d', 'm');
       const out = re.exec('head\nline1\nline2');
       expect(out !== null).assertTrue();
@@ -420,9 +420,9 @@ export default function execTest002(): void {
      * @tc.desc Exec lastIndex larger than input yields null and resets for global
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('a', 'g');
       re.lastIndex = 99;
       const out = re.exec('abc');
@@ -436,9 +436,9 @@ export default function execTest002(): void {
      * @tc.desc Exec with alternation chooses leftmost earliest match
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('cat|dog');
       const out = re.exec('xxdog cat');
       expect(out !== null).assertTrue();
@@ -455,9 +455,9 @@ export default function execTest002(): void {
      * @tc.desc Exec sticky requires exact lastIndex position when supported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       if (!supportsRegExp('foo', 'y')) {
         return;
       }
@@ -477,9 +477,9 @@ export default function execTest002(): void {
      * @tc.desc Exec nested capture groups preserve numbering order
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const out = new RegExp('((\\d{4})-(\\d{2}))-(\\d{2})').exec('2024-03-27');
@@ -500,9 +500,9 @@ export default function execTest002(): void {
      * @tc.desc Exec non-capturing groups omit intermediate array entries
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const out = new RegExp('(?:\\d{4})-(?:\\d{2})-(\\d{2})').exec('2024-03-27');
@@ -522,9 +522,9 @@ export default function execTest002(): void {
      * @tc.desc Exec mixed named and numbered groups remains addressable by index
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       if (!supportsRegExp('(?<name>\\w+)\\s+(\\d+)')) {
@@ -546,9 +546,9 @@ export default function execTest002(): void {
      * @tc.desc Exec result input property preserves original searched string
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const source = 'say hello world';
@@ -567,9 +567,9 @@ export default function execTest002(): void {
      * @tc.desc Exec without d flag exposes no indices property
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const out = new RegExp('hello').exec('hello world');
@@ -589,9 +589,9 @@ export default function execTest002(): void {
      * @tc.desc Exec global iteration over repeated ab-star pattern counts all hits
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0223', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0223', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const re = new RegExp('ab*', 'g');
@@ -615,9 +615,9 @@ export default function execTest002(): void {
      * @tc.desc Exec ignoreCase flag matches any casing variant
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0224', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0224', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const re = new RegExp('hello', 'i');
@@ -640,9 +640,9 @@ export default function execTest002(): void {
      * @tc.desc Exec multiline anchors locate both start and end per line
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0225', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0225', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const input = 'Line1\nLine2\nLine3';
@@ -662,9 +662,9 @@ export default function execTest002(): void {
      * @tc.desc Exec dotAll flag crosses newline only when supported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0226', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0226', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const input = 'Hello\nWorld';
@@ -684,9 +684,9 @@ export default function execTest002(): void {
      * @tc.desc Exec unicode code point escapes match supplementary characters when supported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0227', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0227', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       if (!supportsRegExp('\\u{1F600}', 'u')) {
@@ -707,9 +707,9 @@ export default function execTest002(): void {
      * @tc.desc Exec on empty input with non-empty pattern returns null
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0228', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0228', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       expect(new RegExp('abc').exec('') === null).assertTrue();
@@ -722,9 +722,9 @@ export default function execTest002(): void {
      * @tc.desc Exec long-string search finds target near the tail
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0229', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0229', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const prefix = 'a'.repeat(1200);
@@ -744,9 +744,9 @@ export default function execTest002(): void {
      * @tc.desc Exec lookahead and negative lookahead are feature-gated
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0230', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const input = 'abc123def';
@@ -779,9 +779,9 @@ export default function execTest002(): void {
      * @tc.desc Exec lookbehind and negative lookbehind are feature-gated
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0231', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0231', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       if (!supportsLookbehindSemantics()) {
@@ -816,9 +816,9 @@ export default function execTest002(): void {
      * @tc.desc Exec practical email validator returns full-string match only for valid input
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0232', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0232', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const re = new RegExp('^[\\w.-]+@[\\w.-]+\\.[A-Za-z]{2,}$');
@@ -838,9 +838,9 @@ export default function execTest002(): void {
      * @tc.desc Exec global loop collects all match indices in order
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0233', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0233', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const re = new RegExp('test', 'g');
@@ -864,9 +864,9 @@ export default function execTest002(): void {
      * @tc.desc Exec hasIndices (d) provides indices for whole match
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0234', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0234', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       if (!supportsRegExp('test', 'd')) {
@@ -888,9 +888,9 @@ export default function execTest002(): void {
      * @tc.desc Exec null input follows ToString coercion contract
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0235', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0235', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       expect(execCoercesNullToString()).assertTrue();
     });
@@ -901,9 +901,9 @@ export default function execTest002(): void {
      * @tc.desc Exec undefined input follows ToString coercion contract
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0236', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0236', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       expect(execCoercesUndefinedToString()).assertTrue();
     });
@@ -914,9 +914,9 @@ export default function execTest002(): void {
      * @tc.desc Exec numeric input is coerced to string
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0237', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0237', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       expect(execCoercesNumberToString()).assertTrue();
@@ -928,9 +928,9 @@ export default function execTest002(): void {
      * @tc.desc Exec object input uses toString coercion when available
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0238', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0238', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       expect(execCoercesObjectWithToString()).assertTrue();
@@ -942,9 +942,9 @@ export default function execTest002(): void {
      * @tc.desc Exec object without toString should throw
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0239', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0239', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       expect(execObjectCreateNullThrowsTypeError()).assertTrue();
@@ -956,9 +956,9 @@ export default function execTest002(): void {
      * @tc.desc Exec sticky lastIndex update reflects exact match length
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0240', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       if (!supportsRegExp('foo', 'y')) {
@@ -978,9 +978,9 @@ export default function execTest002(): void {
      * @tc.desc Exec failure resets lastIndex for global regex
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0241', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0241', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const re = new RegExp('abc', 'g');
@@ -996,9 +996,9 @@ export default function execTest002(): void {
      * @tc.desc Exec without global does not update lastIndex on success
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0242', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0242', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const re = new RegExp('foo');
@@ -1014,9 +1014,9 @@ export default function execTest002(): void {
      * @tc.desc Exec character classes match expected single code unit
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0243', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0243', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       expect(new RegExp('[abc]').exec('a') !== null).assertTrue();
@@ -1035,9 +1035,9 @@ export default function execTest002(): void {
      * @tc.desc Exec range class distinguishes lowercase from uppercase
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0244', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0244', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       expect(new RegExp('[a-z]').exec('a') !== null).assertTrue();
@@ -1051,9 +1051,9 @@ export default function execTest002(): void {
      * @tc.desc Exec predefined classes extract digit runs
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0245', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0245', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const out = new RegExp('\\d+').exec('abc123def');
@@ -1070,9 +1070,9 @@ export default function execTest002(): void {
      * @tc.desc Exec escaped metacharacter matches literal dot
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0246', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0246', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const out = new RegExp('\\.').exec('a.b');
@@ -1089,9 +1089,9 @@ export default function execTest002(): void {
      * @tc.desc Exec tab and newline tokens match control characters
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0247', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0247', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       expect(new RegExp('\\t').exec('a\tb') !== null).assertTrue();
@@ -1104,9 +1104,9 @@ export default function execTest002(): void {
      * @tc.desc Exec BMP unicode range matches expected CJK substring
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0248', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0248', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const out = new RegExp('[\\u4e00-\\u9fa5]+').exec('hello世界world');
@@ -1123,9 +1123,9 @@ export default function execTest002(): void {
      * @tc.desc Exec Unicode property escape for Emoji is feature-gated
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0249', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0249', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       if (!supportsRegExp('\\p{Emoji}', 'u')) {
@@ -1144,9 +1144,9 @@ export default function execTest002(): void {
      * @tc.desc Exec zero-length global multiline requires bounded progress
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const re = new RegExp('^', 'gm');
@@ -1174,9 +1174,9 @@ export default function execTest002(): void {
      * @tc.desc Exec switching strings does not implicitly reset lastIndex
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0251', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0251', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const re = new RegExp('ab*', 'g');
@@ -1192,9 +1192,9 @@ export default function execTest002(): void {
      * @tc.desc Exec manual lastIndex reset replays the same first hit
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0252', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0252', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const re = new RegExp('foo', 'g');
@@ -1217,9 +1217,9 @@ export default function execTest002(): void {
      * @tc.desc Exec and test share lastIndex state for global regex
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0253', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0253', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const re = new RegExp('foo', 'g');
@@ -1238,9 +1238,9 @@ export default function execTest002(): void {
      * @tc.desc Exec and String.match(g) align on successive hits
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0254', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0254', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const re = new RegExp('foo', 'g');
@@ -1264,9 +1264,9 @@ export default function execTest002(): void {
      * @tc.desc Exec and String.search return consistent first-hit index
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0255', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0255', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const re = new RegExp('hello');
@@ -1285,9 +1285,9 @@ export default function execTest002(): void {
      * @tc.desc Exec start and end anchors accept only boundary-aligned matches
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0256', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0256', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       expect(new RegExp('^hello').exec('hello world') !== null).assertTrue();
@@ -1302,9 +1302,9 @@ export default function execTest002(): void {
      * @tc.desc Exec word and non-word boundaries distinguish token edges
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0257', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0257', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       expect(new RegExp('\\btest\\b').exec('test') !== null).assertTrue();
@@ -1319,9 +1319,9 @@ export default function execTest002(): void {
      * @tc.desc Exec dynamic RegExp construction respects pattern and flags
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0258', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0258', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const pattern = 'hello';
@@ -1341,9 +1341,9 @@ export default function execTest002(): void {
      * @tc.desc Exec alternation backtracking picks matching branch capture
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0259', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0259', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const re = new RegExp('a(b|c)d');
@@ -1363,9 +1363,9 @@ export default function execTest002(): void {
      * @tc.desc Exec nested structure pattern captures whole complex token
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0260', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const re = new RegExp('((?:[A-Za-z]+)(?:\\d+))');
@@ -1383,9 +1383,9 @@ export default function execTest002(): void {
      * @tc.desc Exec lastIndex starts at zero and stays for non-global regex
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0261', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0261', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const re = new RegExp('test');
@@ -1400,9 +1400,9 @@ export default function execTest002(): void {
      * @tc.desc Exec sticky mode requires exact cursor and supports alternate positions
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0262', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0262', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       if (!supportsRegExp('test', 'y')) {
@@ -1427,9 +1427,9 @@ export default function execTest002(): void {
      * @tc.desc Exec out-of-range lastIndex fails and resets for global regex
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0263', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0263', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const re = new RegExp('test', 'g');
@@ -1445,9 +1445,9 @@ export default function execTest002(): void {
      * @tc.desc Exec negative lastIndex is clamped to zero for global regex
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0264', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0264', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const re = new RegExp('test', 'g');
@@ -1466,9 +1466,9 @@ export default function execTest002(): void {
      * @tc.desc Exec result type exposes array-like payload with metadata fields
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0265', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0265', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const out = new RegExp('test').exec('test');
@@ -1487,9 +1487,9 @@ export default function execTest002(): void {
      * @tc.desc Exec no-match returns null and keeps non-global cursor unchanged
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0266', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0266', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const re = new RegExp('test');
@@ -1505,9 +1505,9 @@ export default function execTest002(): void {
      * @tc.desc Exec invalid pattern construction throws before matching
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0267', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0267', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       let threw = false;
@@ -1525,9 +1525,9 @@ export default function execTest002(): void {
      * @tc.desc Exec invalid flags construction throws for unsupported flag letters
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0268', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0268', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       let threw = false;
@@ -1545,9 +1545,9 @@ export default function execTest002(): void {
      * @tc.desc Exec with d and named groups exposes indices.groups when supported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0269', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0269', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       if (!supportsRegExp('(?<word>hello)', 'd')) {
@@ -1568,9 +1568,9 @@ export default function execTest002(): void {
      * @tc.desc Exec and matchAll align on match count and first payload
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0270', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const re = new RegExp('foo', 'g');
@@ -1602,9 +1602,9 @@ export default function execTest002(): void {
      * @tc.desc Exec preserves regexp source and flags after matching
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0271', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0271', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const re = new RegExp('foo\\d+', 'gi');
@@ -1620,9 +1620,9 @@ export default function execTest002(): void {
      * @tc.desc Exec protocol detection by start-anchor remains deterministic
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0272', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0272', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const https = new RegExp('^https:').exec('https://example.com');
@@ -1639,9 +1639,9 @@ export default function execTest002(): void {
      * @tc.desc Exec IPv4 pattern matches legal values and rejects out-of-range octets
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0273', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0273', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const ip = new RegExp('^((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)\\.){3}(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)$');
@@ -1655,9 +1655,9 @@ export default function execTest002(): void {
      * @tc.desc Exec date prefix pattern validates yyyy-mm-dd at string start
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0274', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0274', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const re = new RegExp('^\\d{4}-\\d{2}-\\d{2}');
@@ -1671,9 +1671,9 @@ export default function execTest002(): void {
      * @tc.desc Exec key-value extraction returns key and value captures
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0275', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0275', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const out = new RegExp('(\\w+):(\\w+)').exec('name:John');
@@ -1690,9 +1690,9 @@ export default function execTest002(): void {
      * @tc.desc Exec multiple alternation branches choose earliest leftmost hit
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0276', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0276', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const out = new RegExp('cat|dog|bird').exec('xxdog bird');
@@ -1709,9 +1709,9 @@ export default function execTest002(): void {
      * @tc.desc Exec optional groups allow missing trailing segments
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0277', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0277', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const a = new RegExp('v(\\d+)(\\.\\d+)?').exec('v1');
@@ -1731,9 +1731,9 @@ export default function execTest002(): void {
      * @tc.desc Exec hexadecimal token extraction with case-insensitive flag
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0278', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0278', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       
@@ -1751,9 +1751,9 @@ export default function execTest002(): void {
      * @tc.desc Exec with gy flags consumes contiguous token run only
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0279', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0279', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       if (!supportsRegExp('a', 'gy')) {
@@ -1776,9 +1776,9 @@ export default function execTest002(): void {
      * @tc.desc Exec comparison with rebuilt regex from source and flags
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const base = new RegExp('x\\d+', 'i');
@@ -1799,9 +1799,9 @@ export default function execTest002(): void {
      * @tc.desc Exec trim-safe key extraction ignores surrounding whitespace
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0281', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0281', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const out = new RegExp('^\\s*(\\w+)\\s*=\\s*(\\w+)\\s*$').exec('  mode = debug  ');
@@ -1818,9 +1818,9 @@ export default function execTest002(): void {
      * @tc.desc Exec timestamp extraction captures date and time parts
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0282', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0282', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const out = new RegExp('^(\\d{4}-\\d{2}-\\d{2})[ T](\\d{2}:\\d{2}:\\d{2})').exec('2026-04-20 13:45:59 INFO');
@@ -1837,9 +1837,9 @@ export default function execTest002(): void {
      * @tc.desc Exec invalid Unicode property escape throws when Unicode properties are supported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0283', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0283', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       if (!supportsRegExp('\\p{L}', 'u')) {
@@ -1860,9 +1860,9 @@ export default function execTest002(): void {
      * @tc.desc Exec empty pattern global on non-empty input is bounded and reset-safe
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testExec0284', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testExec0284', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const re = new RegExp('(?:)', 'g');

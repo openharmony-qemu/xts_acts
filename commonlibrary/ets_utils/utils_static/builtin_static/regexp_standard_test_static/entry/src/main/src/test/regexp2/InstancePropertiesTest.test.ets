@@ -74,9 +74,9 @@ export default function instancePropertiesTest(): void {
      * @tc.desc Test source abc i and dollar plus g
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpInstance0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpInstance0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const regex1 = new RegExp('abc', 'i');
@@ -93,9 +93,9 @@ export default function instancePropertiesTest(): void {
      * @tc.desc Test source readonly strict
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpInstance0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpInstance0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       expect(assignSourceStrictStillOriginal()).assertTrue();
@@ -107,9 +107,9 @@ export default function instancePropertiesTest(): void {
      * @tc.desc Test flags gim and empty pattern
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpInstance0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpInstance0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       const regex1 = new RegExp('abc', 'gim');
@@ -124,9 +124,9 @@ export default function instancePropertiesTest(): void {
      * @tc.desc Test s flag unsupported when dotAll not available
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpInstance0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpInstance0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       if (supportsRegExp('hello', 's')) {
@@ -144,9 +144,9 @@ export default function instancePropertiesTest(): void {
      * @tc.desc Test flags include s when dotAll supported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpInstance0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpInstance0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       if (!supportsRegExp('hello', 's')) {
@@ -162,9 +162,9 @@ export default function instancePropertiesTest(): void {
      * @tc.desc Test global ignoreCase multiline
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpInstance0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpInstance0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       
@@ -182,9 +182,9 @@ export default function instancePropertiesTest(): void {
      * @tc.desc Test dotAll true when s flag supported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpInstance0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpInstance0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       if (!supportsRegExp('test', 's')) {
@@ -199,9 +199,9 @@ export default function instancePropertiesTest(): void {
      * @tc.desc Test dotAll sticky unicode on literals
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpInstance0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpInstance0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       
@@ -222,9 +222,9 @@ export default function instancePropertiesTest(): void {
      * @tc.desc Test hasIndices true when d flag supported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpInstance0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpInstance0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       if (!supportsRegExp('test', 'd')) {
@@ -243,9 +243,9 @@ export default function instancePropertiesTest(): void {
      * @tc.desc Test literal without d flag hasIndices false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpInstance0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpInstance0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       
       
       expect(regexpLiteralWithoutDNotHasIndices()).assertTrue();
@@ -257,9 +257,9 @@ export default function instancePropertiesTest(): void {
      * @tc.desc Test flags normalization and basic flag booleans
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpInstance0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpInstance0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('x', 'mig');
       expect(re.flags).assertEqual('gim');
       expect(re.global).assertTrue();
@@ -273,9 +273,9 @@ export default function instancePropertiesTest(): void {
      * @tc.desc Test sticky and unicode flags when yu is supported
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpInstance0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpInstance0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       if (!supportsRegExp('x', 'yu')) {
         return;
       }
@@ -292,9 +292,9 @@ export default function instancePropertiesTest(): void {
      * @tc.desc Test d flag presence and hasIndices behavior
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpInstance0202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpInstance0202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       if (!supportsRegExp('x', 'd')) {
         return;
       }
@@ -311,9 +311,9 @@ export default function instancePropertiesTest(): void {
      * @tc.desc Test escaped slash source keeps expected fragments
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
-     * @tc.level LEVEL1
+     * @tc.level LEVEL2
      */
-    it('testRegExpInstance0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it('testRegExpInstance0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const re = new RegExp('\\/api\\/v2');
       expect(re.source.indexOf('api') >= 0).assertTrue();
       expect(re.source.indexOf('v2') >= 0).assertTrue();
