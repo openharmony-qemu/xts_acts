@@ -29,6 +29,13 @@ import { UtilsTest } from '../Util.test';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { getMainUIContextForStaticTest, waitForMainRouterForStaticTest } from '../../../ets/MainAbility/common/UIContextStaticTestBridge';
 import { invokeEnableDropDisallowedBadgeTrueThenFalse } from '../../../ets/MainAbility/common/UIContextBadgeBridge';
+import {
+  Component,
+  Driver,
+  MouseButton,
+  UiWindow,
+  ON
+} from '@ohos.UiTest';
 
 export default function UIContextUIObserverApiTest(): void {
   describe('UIContextUIObserverApiTest', () => {
@@ -60,10 +67,9 @@ export default function UIContextUIObserverApiTest(): void {
       let navGesture: router.RouterOptions = { url: 'MainAbility/pages/GestureApiProbe/GestureApiProbe' };
       await r!.replaceUrl(navGesture);
       await Utils.sleep(600);
-      let rect = Utils.getComponentRect('gestureTapHost');
-      let cx = (rect.left + rect.right) / 2;
-      let cy = (rect.top + rect.bottom) / 2;
-      await Utils.drag(cx, cy, cx, cy, 1);
+      let driver = Driver.create();
+      let button = await driver.findComponent(ON.id("gestureTapHost"));
+      await (button?.click() as Promise<void>);
       await Utils.sleep(400);
       expect(Number(AppStorage.get<string>('uio_tap_cb_count'))).assertLarger(0);
       expect(AppStorage.get<string>('uio_tap_phase') !== undefined).assertTrue();
@@ -94,10 +100,9 @@ export default function UIContextUIObserverApiTest(): void {
       let navSpring: router.RouterOptions = { url: 'MainAbility/pages/DragSpringLoading/DragSpringLoadingIndex' };
       await r!.replaceUrl(navSpring);
       await Utils.sleep(600);
-      let rect = Utils.getComponentRect('dragSpringLoadingHost');
-      let cx = (rect.left + rect.right) / 2;
-      let cy = (rect.top + rect.bottom) / 2;
-      await Utils.drag(cx, cy, cx, cy, 1);
+      let driver = Driver.create();
+      let button = await driver.findComponent(ON.id("dragSpringLoadingHost"));
+      await (button?.click() as Promise<void>);
       await Utils.sleep(1200);
       uiContext!.getUIObserver().removeGlobalGestureListener(GestureListenerType.LONG_PRESS, listener);
       expect(Number(AppStorage.get<string>('uio_lp_cb_count') ?? '0')).assertLargerOrEqual(0);
