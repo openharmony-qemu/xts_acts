@@ -42,22 +42,22 @@ export class Foo {
   native test_ConcurrentAttach(): int;
   native test_ConcurrentMainThreadWorker(): int;
   native test_CreateObjectInWorker(): int;
-  native testBoxBooleanNative(): int;
-  native testUnboxBooleanNative(): int;
-  native testBoxByteNative(): int;
-  native testUnboxByteNative(): int;
-  native testBoxCharNative(): int;
-  native testUnboxCharNative(): int;
-  native testBoxDoubleNative(): int;
-  native testUnboxDoubleNative(): int;
-  native testBoxFloatNative(): int;
-  native testUnboxFloatNative(): int;
-  native testBoxIntNative(): int;
-  native testUnboxIntNative(): int;
-  native testBoxLongNative(): int;
-  native testUnboxLongNative(): int;
-  native testBoxShortNative(): int;
-  native testUnboxShortNative(): int;
+  native testBoxBooleanNative(): boolean;
+  native testUnboxBooleanNative(): boolean;
+  native testBoxByteNative(): boolean;
+  native testUnboxByteNative(): boolean;
+  native testBoxCharNative(): boolean;
+  native testUnboxCharNative(): boolean;
+  native testBoxDoubleNative(): boolean;
+  native testUnboxDoubleNative(): boolean;
+  native testBoxFloatNative(): boolean;
+  native testUnboxFloatNative(): boolean;
+  native testBoxIntNative(): boolean;
+  native testUnboxIntNative(): boolean;
+  native testBoxLongNative(): boolean;
+  native testUnboxLongNative(): boolean;
+  native testBoxShortNative(): boolean;
+  native testUnboxShortNative(): boolean;
   
   constructor() {
   }
