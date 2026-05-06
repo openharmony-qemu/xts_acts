@@ -244,11 +244,15 @@ export default function api16CertNoPermissionTestUnit() {
 	  console.log("SUB_Security_CertManager_openAuthorzeDialog_0102: started ");
 	  const context: common.Context = GlobalContext.getContext();
 	  try {
-		await certManagerDialog.openAuthorizeDialog(context);
-		expect(null).assertFail();
+      await certManagerDialog.openAuthorizeDialog(context);
+      expect(null).assertFail();
 	  } catch (err) {
-		console.error(`SUB_Security_CertManager_openAuthorzeDialog_0102 Failed to authorize certificate. Code: ${err.code}, message: ${err.message}`);
-		expect(err.code).assertEqual(201);
+      if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {	 
+ 		    expect(err.code).assertEqual(801);	 
+ 		  } else {
+        console.error(`SUB_Security_CertManager_openAuthorzeDialog_0102 Failed to authorize certificate. Code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(201);
+      }
 	  }
 	  done();
 	});

@@ -206,8 +206,13 @@ export default function api16CertNoPermissionTestUnit() {
         expect(null).assertFail();
       } catch (error) {
         error = error as BusinessError;
-        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_static_0100  Failed to open authorize dialog error.code: ${error.code}, message: ${error.message}`);
-        expect(error.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
+        if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {	 
+           expect(error.code).assertEqual(801);	 
+         } else {
+            hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_static_0100  Failed to open authorize dialog error.code: ${error.code}, message: ${error.message}`); 
+            expect(error.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
+         }
+        
       }
       done();
     });
