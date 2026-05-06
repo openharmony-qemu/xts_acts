@@ -5,7 +5,7 @@ import { LengthMetrics } from '@kit.ArkUI';
 @Component
 struct Index {
   private inputController: inputMethod.InputMethodController = inputMethod.getController();
-  @State ModeArray: MenuKeyboardAvoidMode[] = [
+  @State modeArray: MenuKeyboardAvoidMode[] = [
     MenuKeyboardAvoidMode.NONE,
     MenuKeyboardAvoidMode.TRANSLATE_AND_RESIZE];
   @State keyboardAvoidMode: string = 'undefined';
@@ -106,26 +106,26 @@ struct Index {
         .id('select02')
         .margin('20px')
         // .keyboardAvoidMode(MenuKeyboardAvoidMode.NONE)
-        .keyboardAvoidMode(this.ModeArray[0])
+        .keyboardAvoidMode(this.modeArray[0])
         .minKeyboardAvoidDistance(LengthMetrics.vp(10))
         .onClick(() => {
           setTimeout(() => {
             this.attachAndListener()
           }, 2000)
-          this.keyboardAvoidMode = this.ModeArray[0].toString()
+          this.keyboardAvoidMode = this.modeArray[0].toString()
         })
       Select(this.selectOptions1)
         .value('Click Show Options')
         .selected(17)
         .id('select03')
         // .keyboardAvoidMode(MenuKeyboardAvoidMode.TRANSLATE_AND_RESIZE)
-        .keyboardAvoidMode(this.ModeArray[1])
+        .keyboardAvoidMode(this.modeArray[1])
         .minKeyboardAvoidDistance(LengthMetrics.vp(20))
         .onClick(() => {
           setTimeout(() => {
             this.attachAndListener()
           }, 2000)
-          this.keyboardAvoidMode = this.ModeArray[1].toString()
+          this.keyboardAvoidMode = this.modeArray[1].toString()
         })
     }
     .position({ bottom: 20 })
