@@ -595,7 +595,7 @@ export default function PowerTest() {
 
     /**
      * @tc.name   testPowerTest_static_2400
-     * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0240
+     * @tc.number   SUB_PowerSystem_ErrorCodeTest_ETSTest_2400
      * @tc.desc   Test the third-party application call refreshActivity will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -620,7 +620,7 @@ export default function PowerTest() {
 
     /**
      * @tc.name   testPowerTest_static_2500
-     * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0250
+     * @tc.number   SUB_PowerSystem_ErrorCodeTest_ETSTest_2500
      * @tc.desc   Test the third-party application call refreshActivity will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
