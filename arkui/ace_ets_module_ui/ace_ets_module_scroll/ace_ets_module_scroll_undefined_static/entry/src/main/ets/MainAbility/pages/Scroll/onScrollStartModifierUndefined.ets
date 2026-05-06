@@ -44,7 +44,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 
 // ===================== Modifier 定义 =====================
 @Observed
-class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   @State public change: boolean = true;
   @State public count: Int = 1;
 

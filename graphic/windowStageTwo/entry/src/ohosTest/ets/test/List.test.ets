@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import WindowLifecycle from './WindowLifecycle.test';
 import windowTitleBarTest from './WindowTitleBar.test';
 import windowModalTest from './WindowModal.test';
 import windowMaximizeTest from './WindowMaximize.test';
@@ -36,7 +35,6 @@ export default function testsuite() {
   windowLayoutTest();
   windowZindexTest();
   windowManageTest();
-  WindowLifecycle();
   windowModalTest();
   windowMaximizeTest();
   windowImmersiveTest();

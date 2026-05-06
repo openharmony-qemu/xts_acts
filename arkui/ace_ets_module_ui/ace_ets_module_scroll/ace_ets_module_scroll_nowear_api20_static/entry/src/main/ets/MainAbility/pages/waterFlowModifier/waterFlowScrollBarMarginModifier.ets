@@ -151,7 +151,7 @@ import { BusinessError } from '@kit.BasicServicesKit'
 
 // 定义不同的 ScrollBarMargin Modifier 类
 @Observed
-class WaterFlowScrollBarMarginNormalModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowScrollBarMarginNormalModifier implements AttributeModifier<WaterFlowAttribute> {
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     instance.scrollBarMargin({
       start: new LengthMetrics(45, LengthUnit.VP),
@@ -160,13 +160,13 @@ class WaterFlowScrollBarMarginNormalModifier implements AttributeModifier<WaterF
   }
 }
 @Observed
-class WaterFlowScrollBarMarginEmptyModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowScrollBarMarginEmptyModifier implements AttributeModifier<WaterFlowAttribute> {
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     instance.scrollBarMargin({} as ScrollBarMargin);
   }
 }
 @Observed
-class WaterFlowScrollBarMarginUndefinedModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowScrollBarMarginUndefinedModifier implements AttributeModifier<WaterFlowAttribute> {
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     instance.scrollBarMargin(undefined);
   }

@@ -386,7 +386,7 @@ export default function windowZindexTest() {
             subWindow2.loadContent('testability/pages/First/index3', storage);
             await subWindow2.showWindow();
             console.log(msgStr + 'windowStage.show SubWindow2 success');
-            await sleep(100);
+            await sleep(1000);
             let promise4 = subWindow1.setRaiseByClickEnabled(true);
             promise4.then(async () => {
               console.info(msgStr + 'Succeeded in setRaiseByClickEnabled the window to app top.');
@@ -477,7 +477,7 @@ export default function windowZindexTest() {
             subWindow2.loadContent('testability/pages/First/index3', storage);
             await subWindow2.showWindow();
             console.log(msgStr + 'windowStage.show SubWindow2 success');
-            await sleep(100);
+            await sleep(1000);
             let promise4 = subWindow1.setRaiseByClickEnabled(false);
             promise4.then(async () => {
               console.info(msgStr + 'Succeeded in setRaiseByClickEnabled the window to app top.');

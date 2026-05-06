@@ -36,7 +36,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 
 // ===================== Modifier 定义 =====================
 @Observed
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   @State public change: boolean = true;
   @State public count: Int = 1;
 

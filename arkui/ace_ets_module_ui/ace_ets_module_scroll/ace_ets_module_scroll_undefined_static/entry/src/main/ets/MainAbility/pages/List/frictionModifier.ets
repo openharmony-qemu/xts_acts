@@ -29,7 +29,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement';
 import { MyDataSource } from './MyDataSource';
 
 @Observed
-class MyEnableModifier implements AttributeModifier<ListAttribute> {
+export class MyEnableModifier implements AttributeModifier<ListAttribute> {
   // 外部传入控制值，可以是 boolean | undefined
   @State public friction_:number | Resource | undefined  = 100.00;
   @State public change: boolean | undefined = true;

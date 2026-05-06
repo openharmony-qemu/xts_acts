@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,7 +21,7 @@ import { Entry, Column, Component, Flex, ClickEvent, Scroller, Color,ResourceCol
   Text, Button, List, ListItem, ListItemGroup, BarState, Padding, TextDecorationType, wrapBuilder} from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
-class Params {
+export class Params {
   public text: string = ""
   public fontColor: ResourceColor = Color.Red
   public fontSize: string | number = 16
@@ -153,7 +153,7 @@ struct Index {
     }
   }
 }
-interface TimeTable {
+export interface TimeTable {
   title: string;
   projects: string[];
 }

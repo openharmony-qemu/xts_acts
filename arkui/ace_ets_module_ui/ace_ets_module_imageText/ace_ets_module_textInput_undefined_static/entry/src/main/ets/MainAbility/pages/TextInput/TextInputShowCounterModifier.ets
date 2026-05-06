@@ -6,7 +6,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
 @Observed
-class MyTextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class MyTextInputModifier implements AttributeModifier<TextInputAttribute> {
   public isUndefined: boolean = true;
 
   applyNormalAttribute(instance: TextInputAttribute): void {
@@ -20,7 +20,7 @@ class MyTextInputModifier implements AttributeModifier<TextInputAttribute> {
 
 
 @Observed
-class ThresholdPercentage implements AttributeModifier<TextInputAttribute> {
+export class ThresholdPercentage implements AttributeModifier<TextInputAttribute> {
   public isUndefined: boolean = true;
 
   applyNormalAttribute(instance: TextInputAttribute): void {
@@ -36,7 +36,7 @@ class ThresholdPercentage implements AttributeModifier<TextInputAttribute> {
 
 
 @Observed
-class HighlightBorder implements AttributeModifier<TextInputAttribute> {
+export class HighlightBorder implements AttributeModifier<TextInputAttribute> {
   public isUndefined: boolean = true;
 
   applyNormalAttribute(instance: TextInputAttribute): void {

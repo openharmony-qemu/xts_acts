@@ -60,7 +60,7 @@ function pixelMapBuilder() { //拖拽过程样式
 }
 
 @Observed
-class MyModifier1 implements AttributeModifier<GridAttribute> {
+export class MyModifier1 implements AttributeModifier<GridAttribute> {
   public onItemDragStartValue: boolean = true;
   public onItemDragEnterValue: boolean = true;
   public message: string = 'hello';
@@ -80,7 +80,7 @@ class MyModifier1 implements AttributeModifier<GridAttribute> {
 }
 
 @Observed
-class MyModifier2 implements AttributeModifier<GridAttribute> {
+export class MyModifier2 implements AttributeModifier<GridAttribute> {
   public onItemDragLeaveValue: boolean = true;
   public onItemDragMoveValue: boolean = true;
   public message: string = 'hello';
@@ -100,7 +100,7 @@ class MyModifier2 implements AttributeModifier<GridAttribute> {
 }
 
 @Observed
-class MyModifier3 implements AttributeModifier<GridAttribute> {
+export class MyModifier3 implements AttributeModifier<GridAttribute> {
   public onItemDropValue: boolean = true;
   public message: string = 'hello';
 

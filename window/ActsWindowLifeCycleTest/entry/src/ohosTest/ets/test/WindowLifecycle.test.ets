@@ -3262,6 +3262,7 @@ export default function WindowLifecycle() {
           await driver.click(2340, 977);
           await sleep(3000);
           await mainWindowClass.restore();
+          await sleep(500);
           let isFocused = mainWindowClass.isFocused();
           console.log(caseName + " mainWindowClass isFocused: " + JSON.stringify(isFocused));
           expect(isFocused).assertEqual(true);
@@ -3280,6 +3281,7 @@ export default function WindowLifecycle() {
           await hollWorld.click();
           //主应用获焦
           await mainWindowClass.restore();
+          await sleep(500);
           let isFocused2 = mainWindowClass.isFocused();
           console.log(caseName + " mainWindowClass isFocused2" + JSON.stringify(isFocused2));
           expect(isFocused).assertEqual(true);
@@ -3358,6 +3360,7 @@ export default function WindowLifecycle() {
           await sleep(3000);
           //主应用获焦
           await mainWindowClass.restore();
+          await sleep(500);
           let isFocused2 = mainWindowClass.isFocused();
           console.log(caseName + " mainWindowClass isFocused2" + JSON.stringify(isFocused2));
           expect(isFocused).assertEqual(true);

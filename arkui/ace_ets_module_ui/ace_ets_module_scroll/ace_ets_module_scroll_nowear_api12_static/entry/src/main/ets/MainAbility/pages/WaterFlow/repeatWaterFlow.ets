@@ -19,7 +19,7 @@ import { Entry, Component, Column, ComponentV2, Scroller, ClickEvent, ScrollStat
 import { State, Trace, ObservedV2, Param, Local } from '@ohos.arkui.stateManagement';
 
 @ObservedV2
-class ArrayVehicle {
+export class ArrayVehicle {
   @Trace public arr: Array<number> = [];
 
   constructor(count: number) {

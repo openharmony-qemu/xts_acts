@@ -149,7 +149,7 @@ import { BusinessError } from '@kit.BasicServicesKit'
 
 // 定义 onWillStopDragging 的 Modifier 类
 @Observed
-class OnWillStopDraggingModifier implements AttributeModifier<GridAttribute> {
+export class OnWillStopDraggingModifier implements AttributeModifier<GridAttribute> {
   private callback: () => void;
 
   constructor(callback: () => void) {
