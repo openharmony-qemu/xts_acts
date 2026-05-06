@@ -1636,7 +1636,7 @@ it('SUB_Security_CertManager_Ukey_0200', TestType.FUNCTION | Size.MEDIUMTEST | L
      * @tc.level Level3
      * @tc.type Function
      */
-it('SUB_Security_CertManager_Ukey_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+	it('SUB_Security_CertManager_Ukey_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("SUB_Security_CertManager_Ukey_1300: started ");
       if (canIUse('SystemCapability.Security.Huks.CryptoExtension')){
         const context :common.Context = GlobalContext.getContext();
