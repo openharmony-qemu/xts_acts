@@ -26,6 +26,8 @@
         "MainAbility/pages/Measure/TextCommonTextComputing0570",
         "MainAbility/pages/Measure/TextGetParagraphsTest",
         "MainAbility/pages/Measure/MeasureText",
+        
+        "MainAbility/pages/EditCommon/EditDecorationThicknessScale",
 
         "MainAbility/pages/BindSelectionMenuTest",
         "MainAbility/pages/DisableMenuItems",
