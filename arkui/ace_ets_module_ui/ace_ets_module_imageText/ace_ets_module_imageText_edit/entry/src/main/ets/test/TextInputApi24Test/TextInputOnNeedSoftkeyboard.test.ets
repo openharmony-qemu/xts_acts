@@ -57,7 +57,7 @@ export default function TextInputOnNeedSoftkeyboardTest() {
       let button = await driver.findComponent(ON.id('Button_onNeedSoftkeyboard_true'))
       await button.click();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070);
+      await inputMethod.getController().stopInputSession();
       await CommonFunc.sleep(500);
       expect(AppStorage.get('onNeedSoftkeyboard_true')).assertEqual('true');
       AppStorage.delete('onNeedSoftkeyboard_true')
@@ -120,7 +120,7 @@ export default function TextInputOnNeedSoftkeyboardTest() {
       let button = await driver.findComponent(ON.id('TextInput_onNeedSoftkeyboard_undefined'))
       await button.click();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070);
+      await inputMethod.getController().stopInputSession();
       await CommonFunc.sleep(500);
       let strJson: string = getInspectorByKey('TextInput_onNeedSoftkeyboard_undefined');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
@@ -143,7 +143,7 @@ export default function TextInputOnNeedSoftkeyboardTest() {
       let button = await driver.findComponent(ON.id('TextInput_onNeedSoftkeyboard_default'))
       await button.click();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070);
+      await inputMethod.getController().stopInputSession();
       await CommonFunc.sleep(500);
       let strJson: string = getInspectorByKey('TextInput_onNeedSoftkeyboard_default');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
