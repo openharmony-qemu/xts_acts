@@ -42,7 +42,7 @@ export default function HiRetrievalParticipateTest() {
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(0x0000, 'testTag', 'error code: %{public}d', err.code);
-                expect(err.code == 36000001).assertTrue();
+                expect(err.code === 36000001).assertTrue();
             }
             hilog.info(0x0000, 'testTag', '*********** testHiRetrievalParticipate_0200 Test end***********');
         });
