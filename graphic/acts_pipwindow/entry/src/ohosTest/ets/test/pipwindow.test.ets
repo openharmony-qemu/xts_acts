@@ -162,15 +162,15 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     })
 
     /**
-     * @tc.name   testPipWindowMinSize_0100
-     * @tc.number testPipWindowMinSize_0100
+     * @tc.name   SUB_BASIC_WINDOW_PIPWINDOWMINSIZE_0100
+     * @tc.number SUB_BASIC_WINDOW_PIPWINDOWMINSIZE_0100
      * @tc.desc   验证方形画中画最小尺寸
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testPipWindowMinSize_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      const message = 'testPipWindowMinSize_0100!'
+    it('SUB_BASIC_WINDOW_PIPWINDOWMINSIZE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const message = 'SUB_BASIC_WINDOW_PIPWINDOWMINSIZE_0100'
       try {
         if (!isPipWindowEnabled) {
           done();
