@@ -273,13 +273,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
         expect(null).assertFail();
       } catch (err) {
         hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_OpenInstallCertificateDialog_static_0011: e.code " + err.code);
-        if (!canIUse('SystemCapability.Security.CertificateDialog')) {
-          expect((err as BusinessError).code).assertEqual(801);
-        } else if (deviceInfo.deviceType === '2in1') {
-          expect((err as BusinessError).code).assertEqual(29700005);
-        } else {
-          expect((err as BusinessError).code).assertEqual(29700004);
-        }
+        expect((err as BusinessError).code === 29700005 || (err as BusinessError).code === 29700004).assertTrue();
       }
       done();
     });

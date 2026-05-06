@@ -192,15 +192,11 @@ export default function pubCertJsAPINoPermissionTestUnit() {
         await certManagerDialog.openInstallCertificateDialog(context, certificateType, certificateScope, caCert)
         expect(null).assertFail()
       } catch (err) {
-        if (!canIUse('SystemCapability.Security.CertificateDialog')) {
-          expect(err.code).assertEqual(801);
+        if (err.code == 29700004) {
+          expect(err.code).assertEqual(29700004);
         } else {
-          if (err.code == 29700004) {
-            expect(err.code).assertEqual(29700004);
-          } else {
-            console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0010: e.code " + err.code);
-            expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
-          }
+          console.log("SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_0010: e.code " + err.code);
+          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
         }
       }
       done();
