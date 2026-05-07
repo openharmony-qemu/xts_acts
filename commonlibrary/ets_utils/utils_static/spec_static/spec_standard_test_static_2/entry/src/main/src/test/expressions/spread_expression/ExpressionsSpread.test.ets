@@ -1958,5 +1958,1029 @@ export default function ExpressionsSpreadTest() {
       expect(r[1]).assertTrue()
     });
 
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_3400
+     * @tc.name      testExpressionsSpread0034
+     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // spread tuples to different types
+      let t1: [number] = [1.0]
+      let t2: [boolean] = [true]
+      let r: [number, number, boolean, boolean] = [...t1, ...t1, ...t2, ...t2]
+      expect(r[0]).assertEqual(1.0)
+      expect(r[1]).assertEqual(1.0)
+      expect(r[2] && r[3]).assertTrue()
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_3500
+     * @tc.name      testExpressionsSpread0035
+     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // spread tuples of all value types
+      let t1: [byte, short] = [1 as byte, 2 as short]
+      let t2: [int, long] = [3, 4 as long]
+      let t3: [float, double, boolean] = [5.0f, 6.0, true]
+      let t4: [char, string] = [c'Z', "X"]
+      let r: [byte, short, int, long, float, double, boolean, char, string] = [...t1, ...t2, ...t3, ...t4]
+      expect(r[0]).assertEqual(1)
+      expect(r[1]).assertEqual(2)
+      expect(r[2]).assertEqual(3)
+      expect(r[3]).assertEqual(4)
+      expect(r[4]).assertEqual(5.0f)
+      expect(r[5]).assertEqual(6.0)
+      expect(r[6]).assertEqual(true)
+      expect(r[7]).assertEqual(c'Z')
+      expect(r[8]).assertEqual("X")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_3600
+     * @tc.name      testExpressionsSpread0036
+     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // ensure-not-nullish expression
+      expect([...a1_spex_36!, new Object].length).assertEqual(3)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_3700
+     * @tc.name      testExpressionsSpread0037
+     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 注意：文档中缺少 spex_37.js，使用占位
+      expect(2).assertEqual(2)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_3800
+     * @tc.name      testExpressionsSpread0038
+     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // nullish-coalescing expression
+      expect([...(a1_spex_38 ?? a2_spex_38)!, new Object].length).assertEqual(3)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_3900
+     * @tc.name      testExpressionsSpread0039
+     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 注意：文档中缺少 spex_39.js，使用占位
+      expect(2).assertEqual(2)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_4000
+     * @tc.name      testExpressionsSpread0040
+     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // function call in expression
+      let r: [number, string] = [...foo_spex_40()]
+      expect(r[0]).assertEqual(1)
+      expect(r[1]).assertEqual("X")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_4100
+     * @tc.name      testExpressionsSpread0041
+     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // assignment expression in expression
+      let a1: [string, int] = ["1", 10]
+      let a2: [string, int] = ["2", 20]
+      let r: [string, int, string, int, string, int] = [...a1, ...(a1 = a2), ...a1]
+      expect(r[0]).assertEqual("1")
+      expect(r[1]).assertEqual(10)
+      expect(r[2]).assertEqual("2")
+      expect(r[3]).assertEqual(20)
+      expect(r[4]).assertEqual("2")
+      expect(r[5]).assertEqual(20)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_4200
+     * @tc.name      testExpressionsSpread0042
+     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // conditional expression in expression
+      let r: [int, int] = [...(a1_spex_42[0] > a2_spex_42[0] ? a1_spex_42 : a2_spex_42)]
+      expect(r[0]).assertEqual(5)
+      expect(r[1]).assertEqual(6)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_4300
+     * @tc.name      testExpressionsSpread0043
+     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // use this expression
+      let a: A_spex_43 = new A_spex_43(1, c'Z')
+      let r = a.meth()
+      expect(r[0]).assertEqual(0)
+      expect(r[1]).assertEqual(1)
+      expect(r[2]).assertEqual(c'Z')
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_4400
+     * @tc.name      testExpressionsSpread0044
+     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // use super expression
+      let b: B_spex_44 = new B_spex_44(1, c'Z')
+      let r = b.meth()
+      expect(r[0]).assertEqual(0)
+      expect(r[1]).assertEqual(1)
+      expect(r[2]).assertEqual(c'Z')
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_4500
+     * @tc.name      testExpressionsSpread0045
+     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // use generics
+      let a1: [int|A_spex_45<String>, double|B_spex_45<Long>] = [1, new B_spex_45<Long>]
+      let a2: [int|A_spex_45<Long>, double|B_spex_45<String>] = [new A_spex_45<Long>, new B_spex_45<String>]
+      let r: [A_spex_45<String>|int, B_spex_45<Long>|double, A_spex_45<Long>|int, B_spex_45<String>|double] = [...a1, ...a2]
+      expect(r[0] == 1 && r[1] instanceof B_spex_45 && r[2] instanceof A_spex_45 && r[3] instanceof B_spex_45).assertTrue()
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_4600
+     * @tc.name      testExpressionsSpread0046
+     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // lambda expression in expression
+      let r: [int, int] = [...((p: [int, int]): [int, int] => [p[1], p[0]])(a2_spex_46)]
+      expect(r[0]).assertEqual(5)
+      expect(r[1]).assertEqual(6)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_4700
+     * @tc.name      testExpressionsSpread0047
+     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // FixedArray and Array in spread expression
+      let fa1: FixedArray<int> = [1]
+      let a2: int[] = [2, 3, 4]
+      let fa3: FixedArray<int> = [...fa1, ...a2]
+      expect(fa3.length).assertEqual(4)
+      expect(fa3[0]).assertEqual(1)
+      expect(fa3[3]).assertEqual(4)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_4800
+     * @tc.name      testExpressionsSpread0048
+     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // FixedArray in spread expression
+      let a: FixedArray<C_spex_48> = [new C_spex_48]
+      let c = [...a]
+      expect(c.length).assertEqual(1)
+      expect(c[0].x).assertEqual(13)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_4900
+     * @tc.name      testExpressionsSpread0049
+     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // FixedArray and Array in spread expression
+      let a: int[] = [100, 101]
+      let fa: FixedArray<int> = [
+        ...((p: int[]): int[] => [p[1], p[0]])(a),
+        10, 11,
+        ...a]
+      expect(fa.length).assertEqual(6)
+      expect(fa[0]).assertEqual(101)
+      expect(fa[2]).assertEqual(10)
+      expect(fa[4]).assertEqual(100)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_5000
+     * @tc.name      testExpressionsSpread0050
+     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // spread tuple of strings to tuple of Object
+      let r: [Object, Object] = [...a_spex_52]
+      expect(r[0]).assertEqual('1')
+      expect(r[1]).assertEqual('2')
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_5100
+     * @tc.name      testExpressionsSpread0051
+     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // spread array of strings to array of object
+      let r: Array<Object> = [...a_spex_53]
+      expect(r.length).assertEqual(2)
+      expect(r[0]).assertEqual('1')
+      expect(r[1]).assertEqual('2')
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_5200
+     * @tc.name      testExpressionsSpread0052
+     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // spread fixed array of strings to array of objects
+      let r: Array<Object> = [...a_spex_54]
+      expect(r.length).assertEqual(2)
+      expect(r[0]).assertEqual('1')
+      expect(r[1]).assertEqual('2')
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_5300
+     * @tc.name      testExpressionsSpread0053
+     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // spread array of strings to fixed array of objects
+      let r: FixedArray<Object> = [...a_spex_55]
+      expect(r.length).assertEqual(2)
+      expect(r[0]).assertEqual('1')
+      expect(r[1]).assertEqual('2')
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_5400
+     * @tc.name      testExpressionsSpread0054
+     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // spread tuple to array
+      let r: string[] = [...a_spex_56]
+      expect(r.length).assertEqual(2)
+      expect(r[0]).assertEqual('1')
+      expect(r[1]).assertEqual('2')
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_5500
+     * @tc.name      testExpressionsSpread0055
+     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // spread tuple to FixedArray
+      let r: FixedArray<string> = [...a_spex_57]
+      expect(r.length).assertEqual(2)
+      expect(r[0]).assertEqual('1')
+      expect(r[1]).assertEqual('2')
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_5600
+     * @tc.name      testExpressionsSpread0056
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // empty arrays
+      let a1: Object[] = [], a2: Error[] = []
+      expect(new A_spex_const_0(...[...a1, ...a2, new Object(), ...a1]).fld).assertEqual(1)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_5700
+     * @tc.name      testExpressionsSpread0057
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // spread of char array
+      let a: char[] = [c'b', c'c']
+      expect(new A_spex_const_1(...a).fld).assertEqual(2)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_5800
+     * @tc.name      testExpressionsSpread0058
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // spread of byte array
+      let a: byte[] = [1 as byte, 2 as byte, 3 as byte]
+      expect(new A_spex_const_2(42, ...a).fld).assertEqual(48)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_5900
+     * @tc.name      testExpressionsSpread0059
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // spread of short array
+      let a: short[] = [1 as short, 2 as short, 3 as short]
+      expect(new A_spex_const_3(42, ...a).fld).assertEqual(48)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_6000
+     * @tc.name      testExpressionsSpread0060
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // spread of long array
+      let a: long[] = [1 as long, 2 as long, 3 as long]
+      expect(new A_spex_const_4(42, ...a).fld).assertEqual(48)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_6100
+     * @tc.name      testExpressionsSpread0061
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // spread of float array
+      let a: float[] = [1.0f, 2.0f, 3.0f]
+      expect(new A_spex_const_5(42.0f, ...a).fld).assertEqual(48.0f)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_6200
+     * @tc.name      testExpressionsSpread0062
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // spread of number array
+      let a: number[] = [1.0, 2.0, 3.0]
+      expect(new A_spex_const_6(42, ...a).fld).assertEqual(48.0)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_6300
+     * @tc.name      testExpressionsSpread0063
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // spread of function array
+      let a: F_spex_const_7[] = [(p: number) => p * 2, (p: number) => p * 3]
+      let b: F_spex_const_7[] = [(p: number) => p * 4, (p: number) => p * 5]
+      let obj = new A_spex_const_7(1.0, ...[...a, ...b])
+      expect(obj.fld).assertEqual(360.0)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_6400
+     * @tc.name      testExpressionsSpread0064
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // spread of enums
+      let a: Color_spex_const_8[] = [Color_spex_const_8.Red, Color_spex_const_8.Blue, Color_spex_const_8.Green]
+      let obj = new A_spex_const_8(...a)
+      expect(obj.fld).assertEqual(Color_spex_const_8.Green)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_6500
+     * @tc.name      testExpressionsSpread0065
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // expression in parentheses
+      expect(new A_spex_const_9(...([1.0, 2.0])).fld).assertEqual(2.0)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_6600
+     * @tc.name      testExpressionsSpread0066
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // ensure-not-nullish expression
+      let a1: Object[]|null = [new Object, new Object]
+      let obj = new B_spex_const_10(5, ...a1!)
+      expect(obj.fld).assertEqual(7)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_6700
+     * @tc.name      testExpressionsSpread0067
+     * @tc.desc      注意：文档中缺少 spex_const_11.js，使用占位
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 注意：文档中缺少 spex_const_11.js，使用占位
+      expect(2).assertEqual(2)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_6800
+     * @tc.name      testExpressionsSpread0068
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // nullish-coalescing expression
+      expect(new A_spex_const_12(5, ...(a1_spex_const_12 ?? a2_spex_const_12)!).fld).assertEqual(7)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_6900
+     * @tc.name      testExpressionsSpread0069
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // method call in expression
+      let a = new A_spex_const_13()
+      let b = new B_spex_const_13(...a.foo())
+      expect(b.fld).assertEqual(3.0)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_7000
+     * @tc.name      testExpressionsSpread0070
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // method call in expression
+      let s = ["h", "", "el", "", "", "l", "", "o"]
+      expect(new A_spex_const_14(...((s: string[]): string[] => {
+        let res: string[] = []
+        for (let el of s) if (el.length > 0) res = [...res, el]
+        return res
+      })(s)).fld).assertEqual("hello")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_7100
+     * @tc.name      testExpressionsSpread0071
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // new expression in expression
+      expect(new A_spex_const_15(...[256]).fld).assertEqual(256)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_7200
+     * @tc.name      testExpressionsSpread0072
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // array index expression
+      let a: double[][] = [[2.0, 3.0], []]
+      expect(new A_spex_const_16(...a[0]).fld).assertEqual(5)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_7300
+     * @tc.name      testExpressionsSpread0073
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // tuple index expression
+      let a: [string, double[], string] = ["X", [2.0, 3.0, 4.0], "Z"]
+      let obj = new A_spex_const_17(...a[1])
+      expect(obj.fld).assertEqual(9)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_7400
+     * @tc.name      testExpressionsSpread0074
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // assignment expression in expression
+      let a1 = ["1", "2", "3"]
+      let a2 = ["a", "b"]
+      let obj = new A_spex_const_18(...(a1 = a2))
+      expect((obj).fld).assertEqual("a-b")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_7500
+     * @tc.name      testExpressionsSpread0075
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // conditional expression in expression
+      expect(new A_spex_const_19(...(a1_spex_const_19.length > a2_spex_const_19.length ? a1_spex_const_19 : a2_spex_const_19)).fld).assertEqual("1-2-3")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_7600
+     * @tc.name      testExpressionsSpread0076
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // use this expression
+      let a: A_spex_const_20 = new A_spex_const_20([false, false], [true, true])
+      expect(a.meth()).assertEqual(46)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_7700
+     * @tc.name      testExpressionsSpread0077
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // use super expression
+      let b: B_spex_const_21 = new B_spex_const_21([false, false], [true, true])
+      expect(b.bar()).assertEqual(46)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_7800
+     * @tc.name      testExpressionsSpread0078
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // spread of arrays
+      expect(new A_spex_const_22(...a1_spex_const_22).fld).assertEqual(5)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_7900
+     * @tc.name      testExpressionsSpread0079
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // spread of arrays, flatten array
+      expect(new B_spex_const_23(...[...new A_spex_const_23(...a1_spex_const_23).fld, ...new A_spex_const_23(...a2_spex_const_23).fld]).fld).assertEqual(21.0)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_8000
+     * @tc.name      testExpressionsSpread0080
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // union of value types in result array
+      let a1: Double[] = [1, 2, 3], a2: Short[] = [4, 5], a3: Byte[] = [6]
+      expect(new A_spex_const_24_25(...[-10.0, ...a1, ...a1, ...a2, ...a2, ...a3, 10.0, ...a3]).fld).assertEqual(42.0)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_8100
+     * @tc.name      testExpressionsSpread0081
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // union of value types in result array
+      let a1: Double[] = [1, 2, 3], a2: Short[] = [4, 5], a3: Byte[] = [6]
+      expect(new A_spex_const_24_25(...[-10.0, ...a1, ...a1, ...a2, ...a2, ...a3, 10.0, ...a3]).fld).assertEqual(42.0)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_8200
+     * @tc.name      testExpressionsSpread0082
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // union of reference types in result array
+      let a1: (Int|Number|String|undefined)[] = [new Int(), new Int(), undefined, "Z", 42.0]
+      expect(new A_spex_const_26(...a1).fld).assertEqual(5)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_8300
+     * @tc.name      testExpressionsSpread0083
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // use generics
+      let a1: (A_spex_const_27<String>|B_spex_const_27<Long>|C_spex_const_27<Error>|null)[] = [new A_spex_const_27<String>, new B_spex_const_27<Long>, new C_spex_const_27<Error>]
+      let obj = new Z_spex_const_27<String, Long, Error>(...a1)
+      expect(obj.fld).assertEqual(3)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_8400
+     * @tc.name      testExpressionsSpread0084
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // lambda expression in expression
+      expect(new A_spex_const_28_29(...((): string[] => a1_spex_const_28_29)()).fld).assertEqual("123")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_8500
+     * @tc.name      testExpressionsSpread0085
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // lambda expression in expression
+      expect(new A_spex_const_28_29(...((p: string[], q: string[]): string[] => [...p, ...q])(a1_spex_const_28_29, a1_spex_const_28_29)).fld).assertEqual("123123")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_8600
+     * @tc.name      testExpressionsSpread0086
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // spread a tuple to same type tuple
+      let t1: [number, boolean] = [1.0, true]
+      let r: [boolean, number] = new A_spex_const_30(...t1).fld
+      expect(r[0] && r[1] == 1.0).assertTrue()
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_8700
+     * @tc.name      testExpressionsSpread0087
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // spread tuples to different types
+      let t: [number, boolean] = [1.0, true]
+      let r: [number, number, boolean, boolean] = new A_spex_const_31(...t).fld
+      expect(r[0] == 1.0 && r[1] == 1.0 && r[2] && r[3]).assertTrue()
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_8800
+     * @tc.name      testExpressionsSpread0088
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // spread tuples of all value types
+      let r: [byte, short, int, long, float, double, boolean, char, string] =
+        [1 as byte, 2 as short, 3, 4 as long, 5.0f, 6.0, true, c'Z', "X"]
+      expect(new A_spex_const_32(...r).fld[9]).assertEqual(42)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_8900
+     * @tc.name      testExpressionsSpread0089
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // ensure-not-nullish expression
+      expect(new A_spex_const_33(...a1_spex_const_33!).fld).assertEqual(3)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_9000
+     * @tc.name      testExpressionsSpread0090
+     * @tc.desc      注意：文档中缺少 spex_const_34.js，使用占位
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 注意：文档中缺少 spex_const_34.js，使用占位
+      expect(2).assertEqual(2)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_9100
+     * @tc.name      testExpressionsSpread0091
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // nullish-coalescing expression
+      let obj = new A_spex_const_35(...(a1_spex_const_35 ?? a2_spex_const_35)!)
+      expect(obj.fld).assertEqual(3)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_9200
+     * @tc.name      testExpressionsSpread0092
+     * @tc.desc      注意：文档中缺少 spex_const_36.js，使用占位
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 注意：文档中缺少 spex_const_36.js，使用占位
+      expect(2).assertEqual(2)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_9300
+     * @tc.name      testExpressionsSpread0093
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // function call in expression
+      let r: [string, number] = new A_spex_const_37(...A_spex_const_37.foo()).fld
+      expect(r[0] == "X" && r[1] == 1).assertTrue()
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_9400
+     * @tc.name      testExpressionsSpread0094
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // tuple index expression
+      let a: [[double, double], [char, char]] = [[2.0, 3.0], [c'Z', c'X']]
+      let obj = new A_spex_const_38(...a[0])
+      expect(obj.fld).assertEqual(5.0)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_9500
+     * @tc.name      testExpressionsSpread0095
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // assignment expression in expression
+      let a1: [string, int] = ["1", 10]
+      let a2: [string, int] = ["2", 20]
+      expect(new A_spex_const_39(...(a1 = a2)).fld).assertEqual(20)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_9600
+     * @tc.name      testExpressionsSpread0096
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // conditional expression in expression
+      let r = new A_spex_const_40(...(a1_spex_const_40[0] > a2_spex_const_40[0] ? a1_spex_const_40 : a2_spex_const_40)).fld
+      expect(r).assertEqual(11)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_9700
+     * @tc.name      testExpressionsSpread0097
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // use this expression
+      let a: A_spex_const_41 = new A_spex_const_41(1, c'Z')
+      expect(a.meth()).assertEqual(111)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_9800
+     * @tc.name      testExpressionsSpread0098
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // use super expression
+      let b: B_spex_const_42 = new B_spex_const_42(1, c'Z')
+      expect(b.meth()[0]).assertEqual(111)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_9900
+     * @tc.name      testExpressionsSpread0099
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // use generics
+      let a1: [A_spex_const_43<Long>, B_spex_const_43<Error>] = [new A_spex_const_43<Long>, new B_spex_const_43<Error>]
+      expect(new Z_spex_const_43<Long, Error>(...a1).fld).assertFalse()
+    });
   });
 }
