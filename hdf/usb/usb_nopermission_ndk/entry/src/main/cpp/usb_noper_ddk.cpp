@@ -1104,16 +1104,15 @@ static napi_value UsbControlTransfer(napi_env env, napi_callback_info info)
     NAPI_CALL(env, napi_get_value_int64(env, args[PARAM_0], &deviceId64));
     uint64_t deviceId = JsDeviceIdToNative(static_cast<uint64_t>(deviceId64));
     int32_t usbInitReturnValue = OH_Usb_Init();
-    NAPI_ASSERT(env, usbInitReturnValue == USB_DDK_NO_PERM, "OH_Usb_Init failed");
+    NAPI_ASSERT(env, usbInitReturnValue == PARAM_0, "OH_Usb_Init failed");
     struct UsbControlRequestSetup setup;
     uint8_t data[USB_DDK_TEST_BUF_SIZE] = {PARAM_0};
     setup.bmRequestType = 0x80;
     setup.bRequest = 0x06;
     setup.wValue = (0x01 << PARAM_8) | 0x00;
-    setup.wIndex = 0x0000;
+    setup.wIndex = 0x0000;  
     setup.wLength = 0x0012;
     int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, UINT32_MAX);
-    OH_Usb_Release();
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
     return result;
@@ -1122,7 +1121,7 @@ static napi_value UsbControlTransfer(napi_env env, napi_callback_info info)
 static napi_value UsbGetNonRootHubs(napi_env env, napi_callback_info info)
 {
     int32_t usbInitReturnValue = OH_Usb_Init();
-    NAPI_ASSERT(env, usbInitReturnValue == PARAM_0, "OH_Usb_Init failed");
+    NAPI_ASSERT(env, usbInitReturnValue == USB_DDK_NO_PERM, "OH_Usb_Init failed");
     struct Usb_NonRootHubArray nonRootHubs = {0};
     nonRootHubs.hubs = new uint64_t[MAX_USB_DEVICE_NUM];
     int32_t returnValue = OH_Usb_GetNonRootHubs(&nonRootHubs);
