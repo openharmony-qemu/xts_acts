@@ -38,7 +38,7 @@ export default function WindowOrientationTest() {
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
         //let isPCStatus: string = '';
-        beforeAll(() => {
+        beforeAll(async () => {
             //context = AppStorage.get('context') as common.UIAbilityContext;
             //console.log('windowTest context: ' + JSON.stringify(context))
             try {
