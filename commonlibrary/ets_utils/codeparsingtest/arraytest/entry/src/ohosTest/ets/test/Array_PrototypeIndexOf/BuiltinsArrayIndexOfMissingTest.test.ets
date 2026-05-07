@@ -23,6 +23,7 @@ export default function BuiltinsArrayIndexOfMissingTest(): void {
       // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     })
     beforeEach(async () => {
+      await Utils.msSleep(20);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.

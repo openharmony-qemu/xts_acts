@@ -796,57 +796,56 @@ export default function BuiltinsArrayPrototypeLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.name    builtinsArrayPrototypeLastIndexOfTest5400
+     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest5400
      * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_5400
      * @tc.desc    Verify that LastIndexOf() cannot find element in sparse array holes
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    /* Sparse array [1, , , 4] cannot be created in ArkTS, skipped */
-    it('builtinsArrayPrototypeLastIndexOfTest5400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayPrototypeLastIndexOfTest5400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr: (number | undefined)[] = [1, , , 4];
       const result: number = arr.lastIndexOf(2);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest5400
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_5400
+     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest5500
+     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_5500
      * @tc.desc    Verify that LastIndexOf() finds existing element in sparse array
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsArrayPrototypeLastIndexOfTest5400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayPrototypeLastIndexOfTest5500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr: (number | undefined)[] = [1, undefined, 3, undefined, 5];
       const result: number = arr.lastIndexOf(3);
       expect(result).assertEqual(2);
     });
 
     /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest5500
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_5500
+     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest5600
+     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_5600
      * @tc.desc    Verify that LastIndexOf() cannot find undefined in sparse array holes
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsArrayPrototypeLastIndexOfTest5500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayPrototypeLastIndexOfTest5600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr: (number | undefined)[] = [1, , , 4];
       const result: number = arr.lastIndexOf(undefined);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest5600
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_5600
+     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest5700
+     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_5700
      * @tc.desc    Verify that LastIndexOf() does not modify array during search
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsArrayPrototypeLastIndexOfTest5600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayPrototypeLastIndexOfTest5700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr: number[] = [1, 2, 3, 4, 5];
       const originalLength: number = arr.length;
       arr.lastIndexOf(3);
@@ -854,14 +853,14 @@ export default function BuiltinsArrayPrototypeLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest5700
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_5700
+     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest5800
+     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_5800
      * @tc.desc    Verify that LastIndexOf() does not change array content
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsArrayPrototypeLastIndexOfTest5700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayPrototypeLastIndexOfTest5800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr: number[] = [1, 2, 3];
       const copy: number[] = [1, 2, 3];
       arr.lastIndexOf(2);
@@ -871,26 +870,9 @@ export default function BuiltinsArrayPrototypeLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest5800
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_5800
-     * @tc.desc    Verify that LastIndexOf() finds element in large array
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('BuiltinsArrayPrototypeLastIndexOfTest5800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr: number[] = new Array<number>(10000);
-      for (let i: number = 0; i < 10000; i++) {
-        arr[i] = i;
-      }
-      const result: number = arr.lastIndexOf(9999);
-      expect(result).assertEqual(9999);
-    });
-
-    /**
      * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest5900
      * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_5900
-     * @tc.desc    Verify that LastIndexOf() returns -1 when element not found in large array
+     * @tc.desc    Verify that LastIndexOf() finds element in large array
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
@@ -900,19 +882,36 @@ export default function BuiltinsArrayPrototypeLastIndexOfTest(): void {
       for (let i: number = 0; i < 10000; i++) {
         arr[i] = i;
       }
-      const result: number = arr.lastIndexOf(10000);
-      expect(result).assertEqual(-1);
+      const result: number = arr.lastIndexOf(9999);
+      expect(result).assertEqual(9999);
     });
 
     /**
      * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest6000
      * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_6000
-     * @tc.desc    Verify that LastIndexOf() finds last occurrence of duplicate elements in large array
+     * @tc.desc    Verify that LastIndexOf() returns -1 when element not found in large array
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
     it('BuiltinsArrayPrototypeLastIndexOfTest6000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: number[] = new Array<number>(10000);
+      for (let i: number = 0; i < 10000; i++) {
+        arr[i] = i;
+      }
+      const result: number = arr.lastIndexOf(10000);
+      expect(result).assertEqual(-1);
+    });
+
+    /**
+     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest6100
+     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_6100
+     * @tc.desc    Verify that LastIndexOf() finds last occurrence of duplicate elements in large array
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
+     */
+    it('BuiltinsArrayPrototypeLastIndexOfTest6100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr: number[] = new Array<number>(10000);
       for (let i: number = 0; i < 10000; i++) {
         arr[i] = 42;
@@ -922,14 +921,14 @@ export default function BuiltinsArrayPrototypeLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest6100
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_6100
+     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest6200
+     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_6200
      * @tc.desc    Compare indexOf and lastIndexOf results for same element
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsArrayPrototypeLastIndexOfTest6100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayPrototypeLastIndexOfTest6200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr: number[] = [1, 2, 3, 2, 1];
       const first: number = arr.indexOf(2);
       const last: number = arr.lastIndexOf(2);
@@ -938,14 +937,14 @@ export default function BuiltinsArrayPrototypeLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest6200
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_6200
+     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest6300
+     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_6300
      * @tc.desc    Verify indexOf and lastIndexOf return same value for single occurrence
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsArrayPrototypeLastIndexOfTest6200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayPrototypeLastIndexOfTest6300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr: number[] = [1, 2, 3, 4, 5];
       const first: number = arr.indexOf(3);
       const last: number = arr.lastIndexOf(3);
@@ -953,14 +952,14 @@ export default function BuiltinsArrayPrototypeLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest6300
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_6300
+     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest6400
+     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_6400
      * @tc.desc    Verify both return -1 when element not found
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsArrayPrototypeLastIndexOfTest6300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayPrototypeLastIndexOfTest6400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr: number[] = [1, 2, 3];
       const first: number = arr.indexOf(99);
       const last: number = arr.lastIndexOf(99);
@@ -969,14 +968,14 @@ export default function BuiltinsArrayPrototypeLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest6400
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_6400
+     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest6500
+     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_6500
      * @tc.desc    Use includes to check existence before lastIndexOf
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsArrayPrototypeLastIndexOfTest6400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayPrototypeLastIndexOfTest6500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr: number[] = [1, 2, 3, 4, 5];
       let index: number = -1;
       if (arr.includes(3)) {
@@ -986,14 +985,14 @@ export default function BuiltinsArrayPrototypeLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest6500
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_6500
+     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest6600
+     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_6600
      * @tc.desc    Verify difference in NaN handling between includes and lastIndexOf
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsArrayPrototypeLastIndexOfTest6500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayPrototypeLastIndexOfTest6600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr: (number | null)[] = [1, NaN, 3];
       const includesResult: boolean = arr.includes(NaN);
       const lastIndexOfResult: number = arr.lastIndexOf(NaN);
@@ -1002,14 +1001,14 @@ export default function BuiltinsArrayPrototypeLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest6600
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_6600
+     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest6700
+     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_6700
      * @tc.desc    Find element in sliced array
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsArrayPrototypeLastIndexOfTest6600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayPrototypeLastIndexOfTest6700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr: number[] = [1, 2, 3, 4, 5];
       const slice: number[] = arr.slice(1, 4);
       const result: number = slice.lastIndexOf(3);
@@ -1017,14 +1016,14 @@ export default function BuiltinsArrayPrototypeLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest6700
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_6700
+     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest6800
+     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_6800
      * @tc.desc    Slice array after finding last index
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsArrayPrototypeLastIndexOfTest6700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayPrototypeLastIndexOfTest6800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr: number[] = [1, 2, 3, 2, 1];
       const lastIndex: number = arr.lastIndexOf(2);
       const slice: number[] = arr.slice(0, lastIndex);
@@ -1035,14 +1034,14 @@ export default function BuiltinsArrayPrototypeLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest6800
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_6800
+     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest6900
+     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_6900
      * @tc.desc    Find element in mapped array
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsArrayPrototypeLastIndexOfTest6800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayPrototypeLastIndexOfTest6900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr: number[] = [1, 2, 3, 4, 5];
       const mapped: number[] = [];
       for (let i: number = 0; i < arr.length; i++) {
@@ -1053,14 +1052,14 @@ export default function BuiltinsArrayPrototypeLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest6900
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_6900
+     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest7000
+     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_7000
      * @tc.desc    Find element in filtered array
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsArrayPrototypeLastIndexOfTest6900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayPrototypeLastIndexOfTest7000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr: number[] = [1, 2, 3, 4, 5];
       const filtered: number[] = [];
       for (let i: number = 0; i < arr.length; i++) {
@@ -1073,14 +1072,14 @@ export default function BuiltinsArrayPrototypeLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest7000
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_7000
+     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest7100
+     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_7100
      * @tc.desc    Find element in concatenated arrays
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsArrayPrototypeLastIndexOfTest7000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayPrototypeLastIndexOfTest7100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr1: number[] = [1, 2, 3];
       const arr2: number[] = [3, 4, 5];
       const combined: number[] = arr1.concat(arr2);
@@ -1089,14 +1088,14 @@ export default function BuiltinsArrayPrototypeLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest7100
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_7100
+     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest7200
+     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_7200
      * @tc.desc    Find element in reversed array
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsArrayPrototypeLastIndexOfTest7100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayPrototypeLastIndexOfTest7200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr: number[] = [1, 2, 3, 4, 5];
       const reversed: number[] = [];
       for (let i: number = arr.length - 1; i >= 0; i--) {
@@ -1107,14 +1106,14 @@ export default function BuiltinsArrayPrototypeLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest7200
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_7200
+     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest7300
+     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_7300
      * @tc.desc    Find last error in logs array
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsArrayPrototypeLastIndexOfTest7200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayPrototypeLastIndexOfTest7300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const logs: string[] = [
         "INFO: Start",
         "ERROR: Failed",
@@ -1127,40 +1126,23 @@ export default function BuiltinsArrayPrototypeLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest7300
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_7300
+     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest7400
+     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_7400
      * @tc.desc    Find last occurrence of "user" in path array
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsArrayPrototypeLastIndexOfTest7300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayPrototypeLastIndexOfTest7400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const path: string[] = ["root", "home", "user", "documents", "user"];
       const lastUser: number = path.lastIndexOf("user");
       expect(lastUser).assertEqual(4);
     });
 
     /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest7400
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_7400
-     * @tc.desc    Find first element in large array (from end)
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('BuiltinsArrayPrototypeLastIndexOfTest7400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr: number[] = new Array<number>(100000);
-      for (let i: number = 0; i < 100000; i++) {
-        arr[i] = i;
-      }
-      const result: number = arr.lastIndexOf(0);
-      expect(result).assertEqual(0);
-    });
-
-    /**
      * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest7500
      * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_7500
-     * @tc.desc    Find last element in large array
+     * @tc.desc    Find first element in large array (from end)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
@@ -1170,14 +1152,14 @@ export default function BuiltinsArrayPrototypeLastIndexOfTest(): void {
       for (let i: number = 0; i < 100000; i++) {
         arr[i] = i;
       }
-      const result: number = arr.lastIndexOf(99999);
-      expect(result).assertEqual(99999);
+      const result: number = arr.lastIndexOf(0);
+      expect(result).assertEqual(0);
     });
 
     /**
      * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest7600
      * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_7600
-     * @tc.desc    Find non-existent element in large array
+     * @tc.desc    Find last element in large array
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
@@ -1187,19 +1169,36 @@ export default function BuiltinsArrayPrototypeLastIndexOfTest(): void {
       for (let i: number = 0; i < 100000; i++) {
         arr[i] = i;
       }
-      const result: number = arr.lastIndexOf(-1);
-      expect(result).assertEqual(-1);
+      const result: number = arr.lastIndexOf(99999);
+      expect(result).assertEqual(99999);
     });
 
     /**
      * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest7700
      * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_7700
-     * @tc.desc    Find subarray in nested arrays
+     * @tc.desc    Find non-existent element in large array
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
     it('BuiltinsArrayPrototypeLastIndexOfTest7700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+      const arr: number[] = new Array<number>(100000);
+      for (let i: number = 0; i < 100000; i++) {
+        arr[i] = i;
+      }
+      const result: number = arr.lastIndexOf(-1);
+      expect(result).assertEqual(-1);
+    });
+
+    /**
+     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest7800
+     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_7800
+     * @tc.desc    Find subarray in nested arrays
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL0
+     */
+    it('BuiltinsArrayPrototypeLastIndexOfTest7800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const inner: number[] = [1, 2];
       const arr: number[][] = [[1, 2], [3, 4], inner, [5, 6]];
       const result: number = arr.lastIndexOf(inner);
@@ -1207,14 +1206,14 @@ export default function BuiltinsArrayPrototypeLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest7800
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_7800
+     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest7900
+     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_7900
      * @tc.desc    Find all matching indices using lastIndexOf
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsArrayPrototypeLastIndexOfTest7800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayPrototypeLastIndexOfTest7900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr: number[] = [1, 2, 3, 2, 1, 2];
       const indices: number[] = [];
       let index: number = arr.lastIndexOf(2);
@@ -1229,28 +1228,28 @@ export default function BuiltinsArrayPrototypeLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest7900
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_7900
+     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest8000
+     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_8000
      * @tc.desc    Check if element is unique using indexOf and lastIndexOf
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsArrayPrototypeLastIndexOfTest7900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayPrototypeLastIndexOfTest8000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr: number[] = [1, 2, 3, 2, 1];
       expect(isUnique(arr, 2)).assertFalse();
       expect(isUnique(arr, 3)).assertTrue();
     });
 
     /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest8000
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_8000
+     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest8100
+     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_8100
      * @tc.desc    Find last occurrence of elements from first array in second array
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsArrayPrototypeLastIndexOfTest8000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayPrototypeLastIndexOfTest8100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr1: number[] = [1, 2, 3, 4, 5];
       const arr2: number[] = [5, 4, 3, 2, 1];
       let found: boolean = false;
@@ -1265,14 +1264,14 @@ export default function BuiltinsArrayPrototypeLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest8100
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_8100
+     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest8200
+     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_8200
      * @tc.desc    Remove last occurrence of element using lastIndexOf and splice
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('BuiltinsArrayPrototypeLastIndexOfTest8100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayPrototypeLastIndexOfTest8200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const arr: number[] = [1, 2, 3, 2, 4];
       const lastIndex: number = arr.lastIndexOf(2);
       if (lastIndex !== -1) {

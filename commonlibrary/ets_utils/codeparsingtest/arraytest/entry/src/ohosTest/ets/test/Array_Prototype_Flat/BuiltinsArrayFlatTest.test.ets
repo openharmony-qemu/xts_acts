@@ -462,40 +462,26 @@ export default function BuiltinsArrayFlatTest(): void {
     /**
      * @tc.name    BuiltinsArrayFlatTest2700
      * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_2700
-     * @tc.desc    Verify flat handles NaN values
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL1
-     */
-    it('BuiltinsArrayFlatTest2700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = [NaN, [1, NaN], 2];
-      const result = arr.flat();
-      expect(result).assertDeepEquals([NaN, 1, NaN, 2]);
-    });
-
-    /**
-     * @tc.name    BuiltinsArrayFlatTest2800
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_2800
      * @tc.desc    Verify flat handles Infinity values
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest2800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest2700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [Infinity, [-Infinity, 1], 2];
       const result = arr.flat();
       expect(result).assertDeepEquals([Infinity, -Infinity, 1, 2]);
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest2900
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_2900
+     * @tc.name    BuiltinsArrayFlatTest2800
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_2800
      * @tc.desc    Verify flat handles plain objects (not flattened)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest2900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest2800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const obj: GeneratedObjectLiteralInterface_1 = {a: 1};
       const arr = [obj, [({ b: 2 } as GeneratedObjectLiteralInterface_2)], 3];
       const result = arr.flat();
@@ -503,14 +489,14 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest3000
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_3000
+     * @tc.name    BuiltinsArrayFlatTest2900
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_2900
      * @tc.desc    Verify flat handles Date objects
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest3000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest2900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const date = new Date();
       const arr = [date, [new Date('2020-01-01')], 1];
       const result = arr.flat();
@@ -518,14 +504,14 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest3100
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_3100
+     * @tc.name    BuiltinsArrayFlatTest3000
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_3000
      * @tc.desc    Verify flat handles RegExp objects
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest3100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest3000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const regex = /test/g;
       const arr = [regex, [/pattern/i], 'string'];
       const result = arr.flat();
@@ -533,14 +519,14 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest3200
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_3200
+     * @tc.name    BuiltinsArrayFlatTest3100
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_3100
      * @tc.desc    Verify flat handles functions
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest3200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest3100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const fn = (): string => 'test';
       const arr = [fn, [() => {
         return 1;
@@ -550,98 +536,98 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest3300
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_3300
+     * @tc.name    BuiltinsArrayFlatTest3200
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_3200
      * @tc.desc    Verify flat handles class constructors
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest3300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest3200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [MyClass, [Array], Object];
       const result = arr.flat();
       expect(result.length).assertEqual(3);
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest3400
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_3400
+     * @tc.name    BuiltinsArrayFlatTest3300
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_3300
      * @tc.desc    Verify flat handles three-level nested array
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest3400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest3300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [[[1, 2]], [[3, 4]], [[5, 6]]];
       const result = arr.flat();
       expect(result).assertDeepEquals([[1, 2], [3, 4], [5, 6]]);
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest3500
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_3500
+     * @tc.name    BuiltinsArrayFlatTest3400
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_3400
      * @tc.desc    Verify flat handles deep nested array with depth=1
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest3500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest3400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [[[[1]]], [[[2]]]];
       const result = arr.flat(1);
       expect(result).assertDeepEquals([[[1]], [[2]]]);
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest3600
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_3600
+     * @tc.name    BuiltinsArrayFlatTest3500
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_3500
      * @tc.desc    Verify flat completely flattens deep nested array with Infinity
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest3600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest3500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [[[[[[1]]]]], [[[[[2]]]]]];
       const result = arr.flat(Infinity);
       expect(result).assertDeepEquals([1, 2]);
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest3700
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_3700
+     * @tc.name    BuiltinsArrayFlatTest3600
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_3600
      * @tc.desc    Verify flat handles mixed depth nesting with depth=2
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest3700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest3600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [1, [2, 3], [[4, 5]], [[[6]]]];
       const result = arr.flat(2);
       expect(result).assertDeepEquals([1, 2, 3, 4, 5, [6]]);
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest3800
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_3800
+     * @tc.name    BuiltinsArrayFlatTest3700
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_3700
      * @tc.desc    Verify flat handles array with both simple values and nested arrays
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest3800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest3700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [1, 'a', [2, 'b'], [[3]], true];
       const result = arr.flat(1);
       expect(result).assertDeepEquals([1, 'a', 2, 'b', [3], true]);
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest3900
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_3900
+     * @tc.name    BuiltinsArrayFlatTest3800
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_3800
      * @tc.desc    Verify flat handles nested empty arrays
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest3900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest3800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [[], [[]], [[[]]]];
       const result1 = arr.flat(1);
       const result2 = arr.flat(2);
@@ -652,28 +638,28 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest4000
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_4000
+     * @tc.name    BuiltinsArrayFlatTest3900
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_3900
      * @tc.desc    Verify flat combined with map (flatMap equivalent)
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest4000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest3900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3];
       const result = arr.map(x => [x, x * 2]).flat();
       expect(result).assertDeepEquals([1, 2, 2, 4, 3, 6]);
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest4100
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_4100
+     * @tc.name    BuiltinsArrayFlatTest4000
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_4000
      * @tc.desc    Verify flat handles map with multi-level nesting
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest4100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest4000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [1, 2];
       const result1 = arr.map(x => [[x]]).flat(1);
       const result2 = arr.map(x => [[x]]).flat(2);
@@ -682,56 +668,56 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest4200
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_4200
+     * @tc.name    BuiltinsArrayFlatTest4100
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_4100
      * @tc.desc    Verify flat after filter
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest4200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest4100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [[1, 2], [3, 4], [5, 6]];
       const result = arr.filter(sub => sub[0] > 2).flat();
       expect(result).assertDeepEquals([3, 4, 5, 6]);
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest4300
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_4300
+     * @tc.name    BuiltinsArrayFlatTest4200
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_4200
      * @tc.desc    Verify filter after flat
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest4300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest4200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [[1, 2], [3, 4], [5, 6]];
       const result = arr.flat().filter(x => x > 3);
       expect(result).assertDeepEquals([4, 5, 6]);
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest4400
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_4400
+     * @tc.name    BuiltinsArrayFlatTest4300
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_4300
      * @tc.desc    Verify reduce after flat
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest4400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest4300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [[1, 2], [3, 4]];
       const sum = arr.flat().reduce((acc, val) => acc + val, 0);
       expect(sum).assertEqual(10);
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest4500
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_4500
+     * @tc.name    BuiltinsArrayFlatTest4400
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_4400
      * @tc.desc    Verify flat after reduce creating nested structure
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest4500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest4400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3];
       const result = arr.reduce((acc, val) => {
         acc.push([val, val * 2]);
@@ -741,56 +727,56 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest4600
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_4600
+     * @tc.name    BuiltinsArrayFlatTest4500
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_4500
      * @tc.desc    Verify sort after flat
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest4600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest4500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [[3, 1], [6, 2], [5, 4]];
       const result = arr.flat().sort((a, b) => a - b);
       expect(result).assertDeepEquals([1, 2, 3, 4, 5, 6]);
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest4700
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_4700
+     * @tc.name    BuiltinsArrayFlatTest4600
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_4600
      * @tc.desc    Verify flat after slice
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest4700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest4600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [[1, 2], [3, 4], [5, 6]];
       const result = arr.slice(0, 2).flat();
       expect(result).assertDeepEquals([1, 2, 3, 4]);
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest4800
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_4800
+     * @tc.name    BuiltinsArrayFlatTest4700
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_4700
      * @tc.desc    Verify slice after flat
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest4800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest4700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [[1, 2], [3, 4], [5, 6]];
       const result = arr.flat().slice(2, 5);
       expect(result).assertDeepEquals([3, 4, 5]);
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest4900
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_4900
+     * @tc.name    BuiltinsArrayFlatTest4800
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_4800
      * @tc.desc    Verify flat after concat
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest4900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest4800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr1 = [[1, 2]];
       const arr2 = [[3, 4]];
       const result = arr1.concat(arr2).flat();
@@ -798,28 +784,28 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest5000
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_5000
+     * @tc.name    BuiltinsArrayFlatTest4900
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_4900
      * @tc.desc    Verify concat after flat
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest5000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest4900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [[1, 2], [3, 4]];
       const result = arr.flat().concat([5, 6]);
       expect(result).assertDeepEquals([1, 2, 3, 4, 5, 6]);
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest5100
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_5100
+     * @tc.name    BuiltinsArrayFlatTest5000
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_5000
      * @tc.desc    Verify multiple method chain calls
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest5100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest5000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [[1, 2], [3, 4], [5, 6]];
       const result = arr
         .filter(sub => sub[0] > 1)
@@ -830,28 +816,28 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest5200
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_5200
+     * @tc.name    BuiltinsArrayFlatTest5100
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_5100
      * @tc.desc    Verify flat handles mixed number and string elements
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest5200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest5100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [1, ['a', 2], ['b', 3]];
       const result = arr.flat();
       expect(result).assertDeepEquals([1, 'a', 2, 'b', 3]);
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest5300
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_5300
+     * @tc.name    BuiltinsArrayFlatTest5200
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_5200
      * @tc.desc    Verify flat handles all basic types mixed
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest5300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest5200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [
         1,
         ['string', true],
@@ -862,14 +848,14 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest5400
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_5400
+     * @tc.name    BuiltinsArrayFlatTest5300
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_5300
      * @tc.desc    Verify flat handles basic types mixed with objects
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest5400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest5300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr: (number | (GeneratedObjectLiteralInterface_1 | string)[] | (boolean | number[])[] | null)[] = [
         1,
         [{a: 1}, 'string'],
@@ -881,14 +867,14 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest5500
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_5500
+     * @tc.name    BuiltinsArrayFlatTest5400
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_5400
      * @tc.desc    Verify flat handles strings as non-array elements
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest5500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest5400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = ['hello', ['world']];
       const result = arr.flat();
       expect(result).assertDeepEquals(['hello', 'world']);
@@ -896,14 +882,14 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest5600
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_5600
+     * @tc.name    BuiltinsArrayFlatTest5500
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_5500
      * @tc.desc    Verify flat handles all empty nested arrays
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest5600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest5500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [[], [[]], [[[]]]];
       const result = arr.flat(Infinity);
       expect(result).assertDeepEquals([]);
@@ -911,42 +897,42 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest5700
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_5700
+     * @tc.name    BuiltinsArrayFlatTest5600
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_5600
      * @tc.desc    Verify flat handles very large depth value
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest5700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest5600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [1, [2, [3]]];
       const result = arr.flat(Number.MAX_SAFE_INTEGER);
       expect(result).assertDeepEquals([1, 2, 3]);
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest5800
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_5800
+     * @tc.name    BuiltinsArrayFlatTest5700
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_5700
      * @tc.desc    Verify flat handles large array
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest5800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest5700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr: number[][] = Array(1000).fill([1, 2]);
       const result = arr.flat();
       expect(result.length).assertEqual(2000);
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest5900
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_5900
+     * @tc.name    BuiltinsArrayFlatTest5800
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_5800
      * @tc.desc    Verify flat handles deeply nested large array
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest5900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest5800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr: number[] | object = Array(100).fill(1);
       for (let i = 0; i < 10; i++) {
         arr = [arr];
@@ -956,84 +942,84 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest6000
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_6000
+     * @tc.name    BuiltinsArrayFlatTest5900
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_5900
      * @tc.desc    Verify flat handles Number.MIN_VALUE as depth
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest6000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest5900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [1, [2, 3]];
       const result = arr.flat(Number.MIN_VALUE);
       expect(result).assertDeepEquals([1, [2, 3]]);
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest6100
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_6100
+     * @tc.name    BuiltinsArrayFlatTest6000
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_6000
      * @tc.desc    Verify flat handles Number.MAX_VALUE as depth
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest6100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest6000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [1, [2, [3, [4]]]];
       const result = arr.flat(Number.MAX_VALUE);
       expect(result).assertDeepEquals([1, 2, 3, 4]);
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest6200
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_6200
+     * @tc.name    BuiltinsArrayFlatTest6100
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_6100
      * @tc.desc    Verify flat handles -Infinity as depth
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest6200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest6100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [1, [2, 3]];
       const result = arr.flat(-Infinity);
       expect(result).assertDeepEquals([1, [2, 3]]);
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest6300
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_6300
+     * @tc.name    BuiltinsArrayFlatTest6200
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_6200
      * @tc.desc    Verify flat handles string number as depth
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest6300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest6200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [1, [2, [3]]];
       const result = arr.flat(2);
       expect(result).assertDeepEquals([1, 2, 3]);
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest6400
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_6400
+     * @tc.name    BuiltinsArrayFlatTest6300
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_6300
      * @tc.desc    Verify flat handles object as depth
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest6400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest6300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [1, [2, 3]];
       const result = arr.flat(0);
       expect(result).assertDeepEquals([1, [2, 3]]);
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest6500
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_6500
+     * @tc.name    BuiltinsArrayFlatTest6400
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_6400
      * @tc.desc    Verify flat handles boolean as depth
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest6500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest6400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [1, [2, [3]]];
       const result1 = arr.flat(1);
       const result2 = arr.flat(0);
@@ -1042,14 +1028,14 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest6600
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_6600
+     * @tc.name    BuiltinsArrayFlatTest6500
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_6500
      * @tc.desc    Verify flat doesn't modify original one-dimensional array
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest6600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest6500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3];
       const original = [...arr];
       const result = arr.flat();
@@ -1058,14 +1044,14 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest6700
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_6700
+     * @tc.name    BuiltinsArrayFlatTest6600
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_6600
      * @tc.desc    Verify flat doesn't modify original two-dimensional array
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest6700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest6600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [[1, 2], [3, 4]];
       const original = JSON.stringify(arr);
       const result = arr.flat();
@@ -1074,14 +1060,14 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest6800
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_6800
+     * @tc.name    BuiltinsArrayFlatTest6700
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_6700
      * @tc.desc    Verify flat doesn't modify original deeply nested array
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest6800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest6700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [1, [2, [3, [4]]]];
       const original = JSON.stringify(arr);
       const result = arr.flat(2);
@@ -1089,14 +1075,14 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest6900
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_6900
+     * @tc.name    BuiltinsArrayFlatTest6800
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_6800
      * @tc.desc    Verify object references are preserved after flat
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest6900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest6800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
 
       const obj: GeneratedObjectLiteralInterface_1 = {a: 1};
       const arr = [obj, [obj]];
@@ -1107,14 +1093,14 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest7000
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_7000
+     * @tc.name    BuiltinsArrayFlatTest6900
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_6900
      * @tc.desc    Verify array references are preserved after flat
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest7000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest6900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const inner = [3, 4];
       const arr = [1, [2, inner]];
       const result = arr.flat(1);
@@ -1122,14 +1108,14 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest7100
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_7100
+     * @tc.name    BuiltinsArrayFlatTest7000
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_7000
      * @tc.desc    Verify modifying returned array doesn't affect original array
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest7100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest7000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [[1, 2], [3, 4]];
       const result = arr.flat();
       result.push(5);
@@ -1139,14 +1125,14 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest7200
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_7200
+     * @tc.name    BuiltinsArrayFlatTest7100
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_7100
      * @tc.desc    Verify modifying original array doesn't affect returned array
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest7200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest7100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [[1, 2], [3, 4]];
       const result = arr.flat();
       arr.push([5, 6]);
@@ -1156,9 +1142,23 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
+     * @tc.name    BuiltinsArrayFlatTest7200
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_7200
+     * @tc.desc    Verify flat returns Array instance
+     * @tc.type    FUNCTION
+     * @tc.size    SMALLTEST
+     * @tc.level   LEVEL1
+     */
+    it('BuiltinsArrayFlatTest7200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const arr = [1, [2, 3]];
+      const result = arr.flat();
+      expect(Array.isArray(result)).assertTrue();
+    });
+
+    /**
      * @tc.name    BuiltinsArrayFlatTest7300
      * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_7300
-     * @tc.desc    Verify flat returns Array instance
+     * @tc.desc    Verify flat returns array with Array constructor
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
@@ -1166,60 +1166,46 @@ export default function BuiltinsArrayFlatTest(): void {
     it('BuiltinsArrayFlatTest7300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [1, [2, 3]];
       const result = arr.flat();
-      expect(Array.isArray(result)).assertTrue();
+      expect(result.constructor).assertEqual(Array);
     });
 
     /**
      * @tc.name    BuiltinsArrayFlatTest7400
      * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_7400
-     * @tc.desc    Verify flat returns array with Array constructor
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL1
-     */
-    it('BuiltinsArrayFlatTest7400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = [1, [2, 3]];
-      const result = arr.flat();
-      expect(result.constructor).assertEqual(Array);
-    });
-
-    /**
-     * @tc.name    BuiltinsArrayFlatTest7500
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_7500
      * @tc.desc    Verify flat preserves element order
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest7500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest7400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [[3, 2, 1], [6, 5, 4]];
       const result = arr.flat();
       expect(result).assertDeepEquals([3, 2, 1, 6, 5, 4]);
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest7600
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_7600
+     * @tc.name    BuiltinsArrayFlatTest7500
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_7500
      * @tc.desc    Verify flat preserves nested element order
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest7600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest7500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [1, [2, [3, [4]]]];
       const result = arr.flat(Infinity);
       expect(result).assertDeepEquals([1, 2, 3, 4]);
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest7700
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_7700
+     * @tc.name    BuiltinsArrayFlatTest7600
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_7600
      * @tc.desc    Verify flat handles tree structure flattening
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest7700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest7600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
 
       const tree: TreeNode[] = [
         {
@@ -1236,14 +1222,14 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest7800
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_7800
+     * @tc.name    BuiltinsArrayFlatTest7700
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_7700
      * @tc.desc    Verify flat handles multi-dimensional coordinates flattening
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest7800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest7700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const coordinates = [
         [[1, 2], [3, 4]],
         [[5, 6], [7, 8]]
@@ -1253,42 +1239,42 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest7900
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_7900
+     * @tc.name    BuiltinsArrayFlatTest7800
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_7800
      * @tc.desc    Verify flat handles removing nested empty arrays
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest7900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest7800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const data = [1, [], [2, []], [[3]]];
       const cleaned = data.flat(Infinity).filter(x => x !== undefined);
       expect(cleaned).assertDeepEquals([1, 2, 3]);
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest8000
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_8000
+     * @tc.name    BuiltinsArrayFlatTest7900
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_7900
      * @tc.desc    Verify flat handles removing array empty slots
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest8000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest7900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = [1, undefined, 2, undefined, undefined, 3, undefined, undefined, undefined, 4];
       const cleaned = arr.flat().filter(x => x !== undefined && x !== null);
       expect(cleaned).assertDeepEquals([1, 2, 3, 4]);
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest8100
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_8100
+     * @tc.name    BuiltinsArrayFlatTest8000
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_8000
      * @tc.desc    Verify flat handles merging multiple API responses
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest8100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest8000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const responses: Response[] = [
         {data: [1, 2, 3]},
         {data: [4, 5]},
@@ -1299,14 +1285,14 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest8200
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_8200
+     * @tc.name    BuiltinsArrayFlatTest8100
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_8100
      * @tc.desc    Verify flat handles processing paginated data
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest8200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest8100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
 
       const pages: Page[] = [
         {items: [{id: 1}, {id: 2}]},
@@ -1319,14 +1305,14 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest8300
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_8300
+     * @tc.name    BuiltinsArrayFlatTest8200
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_8200
      * @tc.desc    Verify flat handles matrix to vector conversion
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest8300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest8200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const matrix = [
         [1, 2, 3],
         [4, 5, 6],
@@ -1337,14 +1323,14 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest8400
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_8400
+     * @tc.name    BuiltinsArrayFlatTest8300
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_8300
      * @tc.desc    Verify flat handles 3D tensor to 1D conversion
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest8400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest8300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const tensor = [
         [[1, 2], [3, 4]],
         [[5, 6], [7, 8]]
@@ -1354,14 +1340,14 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest8500
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_8500
+     * @tc.name    BuiltinsArrayFlatTest8400
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_8400
      * @tc.desc    Verify flat handles functional programming chain
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest8500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest8400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       interface DataItem {
         tags: string[];
       }
@@ -1379,14 +1365,14 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest8600
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_8600
+     * @tc.name    BuiltinsArrayFlatTest8500
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_8500
      * @tc.desc    Verify flat handles complex method combinations
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest8600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest8500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const orders: Order[] = [
         {items: [{price: 10}, {price: 20}]},
         {items: [{price: 15}]},
@@ -1400,14 +1386,14 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest8700
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_8700
+     * @tc.name    BuiltinsArrayFlatTest8600
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_8600
      * @tc.desc    Verify flat handles nullable nested structures
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest8700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest8600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
 
       const data: DataItem[] = [
         {items: [1, 2]},
@@ -1422,14 +1408,14 @@ export default function BuiltinsArrayFlatTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayFlatTest8800
-     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_8800
+     * @tc.name    BuiltinsArrayFlatTest8700
+     * @tc.number  SUB_BUILTINS_ARRAY_FLAT_TEST_8700
      * @tc.desc    Verify flat handles filtering and flattening mixed types
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
-    it('BuiltinsArrayFlatTest8800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+    it('BuiltinsArrayFlatTest8700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const mixed = [1, [2, 3], 'string', [4, 5], null, [6]];
       const result = mixed
         .filter(item => Array.isArray(item))

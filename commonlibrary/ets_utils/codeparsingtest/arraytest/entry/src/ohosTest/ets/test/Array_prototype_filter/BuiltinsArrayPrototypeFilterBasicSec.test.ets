@@ -265,5 +265,20 @@ export default function BuiltinsArrayPrototypeFilterBasicSecTest(){
       expect(result[0]).assertEqual('d');
       expect(result[1]).assertEqual('e');
     });
+
+    /**
+     * @tc.name     BuiltinsArrayPrototypeFilterBasicSecTest1000
+     * @tc.number   SUB_BUILTINS_ARRAY_PROTOTYPE_FILTER_BASIC_SEC_TEST_1000
+     * @tc.desc     thisArg is undefined
+     * @tc.type     FUNCTION
+     * @tc.size     SMALLTEST
+     * @tc.level    LEVEL1
+     */
+    it('BuiltinsArrayPrototypeFilterBasicSecTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const arr: number[] = [1, 2, 3, 4, 5];
+      const result = arr.filter((n) => n > 2);
+
+      expect(result.length).assertEqual(3);
+    });
   });
 }

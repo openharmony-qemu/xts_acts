@@ -23,6 +23,7 @@ export default function BuiltinsArrayFindLastIndex(): void {
       // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     })
     beforeEach(async () => {
+      await Utils.msSleep(20);
       // Presets an action, which is performed before each unit test case starts.
     })
     afterEach(async () => {

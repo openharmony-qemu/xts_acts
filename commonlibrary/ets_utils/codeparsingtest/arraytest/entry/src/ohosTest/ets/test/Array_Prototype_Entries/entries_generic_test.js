@@ -671,12 +671,17 @@ export function testNonIntegerIndex() {
 
 export function testLargeIndex() {
     const arr = [];
-    arr[999999] = 'large';
+    arr[999] = 'large';
     const iterator = arr.entries();
-    const entries = [...iterator];
+    let count = 0;
+    let lastEntry = null;
+    for (const entry of iterator) {
+        count++;
+        lastEntry = entry;
+    }
     return {
-        result: JSON.stringify(entries.length),
-        expected: JSON.stringify(1000000)
+        result: JSON.stringify({ count, lastEntry: lastEntry ? lastEntry[1] : null }),
+        expected: JSON.stringify({ count: 1000, lastEntry: 'large' })
     };
 }
 

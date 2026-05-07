@@ -1955,3 +1955,345 @@ export function testReduceDeepFlatten() {
     expected: true
   };
 }
+
+/**
+ * Test reduce mixed number and string array
+ * @returns {Object} test result
+ */
+export function testReduceMixedNumberString() {
+  const arr = [1, '2', 3, '4'];
+  const result = arr.reduce((acc, cur) => acc + Number(cur), 0);
+
+  return {
+    result: result,
+    expected: 10
+  };
+}
+
+/**
+ * Test reduce mixed multiple types array
+ * @returns {Object} test result
+ */
+export function testReduceMixedTypes() {
+  const arr = [1, 'a', true, null, undefined];
+  const result = arr.reduce((acc, cur) => {
+    const type = typeof cur;
+    acc[type] = (acc[type] || 0) + 1;
+    return acc;
+  }, {});
+
+  return {
+    result: result.number === 1 && result.string === 1 && result.boolean === 1 && result.object === 1,
+    expected: true
+  };
+}
+
+/**
+ * Test reduce callback calls non-existent method
+ * @returns {Object} test result
+ */
+export function testReduceNonExistentMethod() {
+  const arr = [1, 2, 3];
+  let error = null;
+  try {
+    arr.reduce((acc, cur) => {
+      return acc.nonExistentMethod(cur);
+    }, 0);
+  } catch (e) {
+    error = e;
+  }
+
+  return {
+    result: error instanceof TypeError,
+    expected: true
+  };
+}
+
+/**
+ * Test reduce callback returns undefined
+ * @returns {Object} test result
+ */
+export function testReduceCallbackReturnsUndefined() {
+  const arr = [1, 2, 3];
+  const result = arr.reduce((acc, cur) => {
+    if (cur === 2) return undefined;
+    return acc + cur;
+  }, 0);
+
+  return {
+    result: Number.isNaN(result),
+    expected: true
+  };
+}
+
+/**
+ * Test reduce this in callback is undefined
+ * @returns {Object} test result
+ */
+export function testReduceThisUndefined() {
+  const arr = [1, 2, 3];
+  let thisValue = 'initial';
+  arr.reduce(function (acc, cur) {
+    thisValue = this;
+    return acc + cur;
+  }, 0);
+
+  return {
+    result: thisValue === undefined,
+    expected: true
+  };
+}
+
+/**
+ * Test reduce callback deletes array elements
+ * @returns {Object} test result
+ */
+export function testReduceCallbackDeletesElement() {
+  const arr = [1, 2, 3, 4, 5];
+  const values = [];
+  arr.reduce((acc, cur, idx, array) => {
+    values.push(cur);
+    if (idx === 1) {
+      delete array[2];
+    }
+    return acc + cur;
+  }, 0);
+
+  return {
+    result: values.length === 4 && values[0] === 1 && values[1] === 2 && values[2] === 4 && values[3] === 5,
+    expected: true
+  };
+}
+
+/**
+ * Test reduce count character frequency with class
+ * @returns {Object} test result
+ */
+export function testReduceCharFrequencyClass() {
+  class CountMap {
+  }
+  const arr = ['a', 'b', 'a', 'c', 'b', 'a'];
+  const count = arr.reduce((acc, cur) => {
+    acc[cur] = (acc[cur] || 0) + 1;
+    return acc;
+  }, new CountMap());
+
+  return {
+    result: count.a === 3 && count.b === 2 && count.c === 1,
+    expected: true
+  };
+}
+
+/**
+ * Test reduce count character frequency
+ * @returns {Object} test result
+ */
+export function testReduceCharFrequency() {
+  const str = 'hello world';
+  const frequency = str.split('').reduce((acc, cur) => {
+    if (cur !== ' ') {
+      acc[cur] = (acc[cur] || 0) + 1;
+    }
+    return acc;
+  }, {});
+
+  return {
+    result: frequency.h === 1 && frequency.e === 1 && frequency.l === 3 && frequency.o === 2 && frequency.w === 1 && frequency.r === 1 && frequency.d === 1,
+    expected: true
+  };
+}
+
+/**
+ * Test reduce group object array by property
+ * @returns {Object} test result
+ */
+export function testReduceGroupByProperty() {
+  class AgeGroup {
+  }
+
+  const people = [
+    { name: 'Alice', age: 25 },
+    { name: 'Bob', age: 30 },
+    { name: 'Charlie', age: 25 }
+  ];
+  const grouped = people.reduce((acc, cur) => {
+    const key = cur.age;
+    if (!acc[key]) {
+      acc[key] = [];
+    }
+    acc[key].push(cur);
+    return acc;
+  }, new AgeGroup());
+
+  return {
+    result: grouped[25].length === 2 && grouped[30].length === 1,
+    expected: true
+  };
+}
+
+/**
+ * Test reduce flatten deeply nested array
+ * @returns {Object} test result
+ */
+export function testReduceFlattenDeeplyNested() {
+  function flatten(acc, cur) {
+    if (Array.isArray(cur)) {
+      return cur.reduce(flatten, acc);
+    }
+    acc.push(cur);
+    return acc;
+  }
+  const arr = [[1], [[2, 3]], [[[4]]]];
+  const flattened = arr.reduce(flatten, []);
+
+  return {
+    result: flattened.length === 4 && flattened[0] === 1 && flattened[1] === 2 && flattened[2] === 3 && flattened[3] === 4,
+    expected: true
+  };
+}
+
+/**
+ * Test reduce mutable SumObj
+ * @returns {Object} test result
+ */
+export function testReduceMutableSumObj() {
+  class SumObj {
+    sum = 0;
+  }
+  const arr = [{ x: 1 }, { x: 2 }, { x: 3 }];
+  const result = arr.reduce((acc, cur) => {
+    acc.sum += cur.x;
+    return acc;
+  }, new SumObj());
+
+  return {
+    result: result.sum,
+    expected: 6
+  };
+}
+
+/**
+ * Test reduce immutable SumResult
+ * @returns {Object} test result
+ */
+export function testReduceImmutableSumResult() {
+  const arr = [{ x: 1 }, { x: 2 }, { x: 3 }];
+  const result = arr.reduce((acc, cur) => {
+    return { sum: acc.sum + cur.x };
+  }, { sum: 0 });
+
+  return {
+    result: result.sum,
+    expected: 6
+  };
+}
+
+/**
+ * Test reduce depth-first search
+ * @returns {Object} test result
+ */
+export function testReduceDepthFirstSearch() {
+  function dfs(node) {
+    return [node.value, ...node.children.reduce((acc, child) => {
+      return acc.concat(dfs(child));
+    }, [])];
+  }
+  const tree = {
+    value: 1,
+    children: [
+      { value: 2, children: [{ value: 4 }, { value: 5 }] },
+      { value: 3, children: [{ value: 6 }] }
+    ]
+  };
+  const result = dfs(tree);
+
+  return {
+    result: result.length === 6 && result[0] === 1 && result[1] === 2 && result[2] === 4 && result[3] === 5 && result[4] === 3 && result[5] === 6,
+    expected: true
+  };
+}
+
+/**
+ * Test reduce implements factorial
+ * @returns {Object} test result
+ */
+export function testReduceFactorial() {
+  function factorial(n) {
+    return Array.from({ length: n }, (_, i) => i + 1).reduce((acc, cur) => acc * cur, 1);
+  }
+
+  return {
+    result: factorial(5),
+    expected: 120
+  };
+}
+
+/**
+ * Test reduce implements fibonacci sequence
+ * @returns {Object} test result
+ */
+export function testReduceFibonacci() {
+  function fibonacci(n) {
+    return Array.from({ length: n - 2 }, () => { }).reduce((acc) => {
+      const next = acc[acc.length - 1] + acc[acc.length - 2];
+      acc.push(next);
+      return acc;
+    }, [0, 1]);
+  }
+  const result = fibonacci(10);
+
+  return {
+    result: result.length === 10 && result[0] === 0 && result[1] === 1 && result[9] === 34,
+    expected: true
+  };
+}
+
+/**
+ * Test reduce with Map
+ * @returns {Object} test result
+ */
+export function testReduceMap() {
+  const arr = [['a', 1], ['b', 2], ['c', 3]];
+  const map = arr.reduce((acc, [key, value]) => {
+    acc.set(key, value);
+    return acc;
+  }, new Map());
+
+  return {
+    result: map.get('a') === 1 && map.get('b') === 2 && map.get('c') === 3,
+    expected: true
+  };
+}
+
+/**
+ * Test reduce with ArrayLike object
+ * @returns {Object} test result
+ */
+export function testReduceArrayLike() {
+  const obj = {
+    length: 3,
+    0: 1,
+    1: 2,
+    2: 3
+  };
+  const result = Array.from(obj).reduce((acc, cur) => acc + cur, 0);
+
+  return {
+    result: result,
+    expected: 6
+  };
+}
+
+/**
+ * Test reduce nested object property sum
+ * @returns {Object} test result
+ */
+export function testReduceNestedObjectSum() {
+  const arr = [{ value: 1, data: { count: 2 } }, { value: 3, data: { count: 4 } }];
+  const total = arr.reduce((acc, cur) => acc + cur.value + cur.data.count, 0);
+
+  return {
+    result: total,
+    expected: 10
+  };
+}

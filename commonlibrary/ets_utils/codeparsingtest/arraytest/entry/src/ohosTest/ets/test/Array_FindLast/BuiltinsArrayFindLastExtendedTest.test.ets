@@ -35,9 +35,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify callback throws error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastErrorTest5100();
       expect(result).assertEqual(true);
     });
@@ -48,9 +48,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify callbackFn is not a function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastErrorTest5200();
       expect(result).assertEqual(true);
     });
@@ -61,9 +61,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify callbackFn is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastErrorTest5300();
       expect(result).assertEqual(true);
     });
@@ -74,9 +74,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify callbackFn is undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastErrorTest5400();
       expect(result).assertEqual(true);
     });
@@ -87,9 +87,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify calling on null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastErrorTest5500();
       expect(result).assertEqual(true);
     });
@@ -100,9 +100,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify calling on undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastErrorTest5600();
       expect(result).assertEqual(true);
     });
@@ -113,9 +113,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify modifying already visited elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastModifyTest5700();
       expect(result).assertEqual(true);
     });
@@ -126,9 +126,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify modifying current element
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastModifyTest5800();
       expect(result).assertEqual(true);
     });
@@ -139,9 +139,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify modifying unvisited elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastModifyTest5900();
       expect(result).assertEqual(true);
     });
@@ -152,9 +152,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify adding elements during iteration
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastModifyTest6000();
       expect(result).assertEqual(true);
     });
@@ -165,9 +165,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify reducing array length during iteration
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastModifyTest6100();
       expect(result).assertEqual(true);
     });
@@ -178,9 +178,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify basic array-like object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastLikeTest6200();
       expect(result).assertEqual(true);
     });
@@ -191,9 +191,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify string as array-like
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastLikeTest6300();
       expect(result).assertEqual(true);
     });
@@ -204,9 +204,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify arguments object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastLikeTest6400();
       expect(result).assertEqual(true);
     });
@@ -217,9 +217,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastLikeTest6500();
       expect(result).assertEqual(true);
     });
@@ -230,9 +230,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify array-like with length greater than actual elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastLikeTest6600();
       expect(result).assertEqual(true);
     });
@@ -243,9 +243,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify findLast vs find difference
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastInteractionTest6700();
       expect(result).assertEqual(true);
     });
@@ -256,9 +256,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify findLast with findLastIndex
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastInteractionTest6800();
       expect(result).assertEqual(true);
     });
@@ -269,9 +269,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify findLast vs filter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastInteractionTest6900();
       expect(result).assertEqual(true);
     });
@@ -282,9 +282,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify findLast vs some
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastInteractionTest7000();
       expect(result).assertEqual(true);
     });
@@ -295,9 +295,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify findLast with map
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastInteractionTest7100();
       expect(result).assertEqual(true);
     });
@@ -308,9 +308,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify findLast with reverse
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastInteractionTest7200();
       expect(result).assertEqual(true);
     });
@@ -321,9 +321,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify chained method calls
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastInteractionTest7300();
       expect(result).assertEqual(true);
     });
@@ -334,9 +334,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify findLast vs lastIndexOf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastInteractionTest7400();
       expect(result).assertEqual(true);
     });
@@ -347,9 +347,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify finding NaN
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastSpecialTest7500();
       expect(result).assertEqual(true);
     });
@@ -360,9 +360,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify NaN not equal to itself
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastSpecialTest7600();
       expect(result).assertEqual(true);
     });
@@ -373,9 +373,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify finding null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastSpecialTest7700();
       expect(result).assertEqual(true);
     });
@@ -386,9 +386,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify finding undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastSpecialTest7800();
       expect(result).assertEqual(true);
     });
@@ -399,9 +399,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify distinguishing null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastSpecialTest7900();
       expect(result).assertEqual(true);
     });
@@ -412,9 +412,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify finding boolean true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastSpecialTest8000();
       expect(result).assertEqual(true);
     });
@@ -425,9 +425,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify finding falsy values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastSpecialTest8100();
       expect(result).assertEqual(true);
     });
@@ -438,9 +438,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify finding Symbol
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastSpecialTest8200();
       expect(result).assertEqual(true);
     });
@@ -451,9 +451,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify finding BigInt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastSpecialTest8300();
       expect(result).assertEqual(true);
     });
@@ -464,9 +464,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify finding object by reference
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastSpecialTest8400();
       expect(result).assertEqual(true);
     });
@@ -477,9 +477,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify finding object by id property
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastSpecialTest8500();
       expect(result).assertEqual(true);
     });
@@ -490,9 +490,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify array containing functions
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastSpecialTest8600();
       expect(result).assertEqual(true);
     });
@@ -503,9 +503,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify array containing RegExp
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastSpecialTest8700();
       expect(result).assertEqual(true);
     });
@@ -516,9 +516,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify array containing Date objects
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastSpecialTest8800();
       expect(result).assertEqual(true);
     });
@@ -529,9 +529,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify nested arrays
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastSpecialTest8900();
       expect(result).assertEqual(true);
     });
@@ -542,9 +542,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify cyclic reference
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastSpecialTest9000();
       expect(result).assertEqual(true);
     });
@@ -555,9 +555,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify array containing WeakMap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastSpecialTest9100();
       expect(result).assertEqual(true);
     });
@@ -568,9 +568,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify array-like with negative length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastLikeTest9200();
       expect(result).assertEqual(true);
     });
@@ -581,9 +581,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify array-like with non-integer length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastLikeTest9300();
       expect(result).assertEqual(true);
     });
@@ -594,9 +594,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify callback returns Error object (truthy)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastErrorTest9400();
       expect(result).assertEqual(true);
     });
@@ -607,9 +607,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify calling on primitive number
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastErrorTest9500();
       expect(result).assertEqual(true);
     });
@@ -620,9 +620,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify sparse array with only first and last elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastSparseTest9600();
       expect(result).assertEqual(true);
     });
@@ -633,9 +633,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify delete operation during iteration
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastModifyTest9700();
       expect(result).assertEqual(true);
     });
@@ -646,9 +646,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify using splice during iteration
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastModifyTest9800();
       expect(result).assertEqual(true);
     });
@@ -659,9 +659,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify clearing array during iteration
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastModifyTest9900();
       expect(result).assertEqual(true);
     });
@@ -672,9 +672,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify arrow function ignores thisArg
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastThisArgTest10000();
       expect(result).assertEqual(true);
     });
@@ -685,9 +685,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify skip undefined to find other values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastSparseTest10100();
       expect(result).assertEqual(true);
     });
@@ -698,9 +698,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify Number.MIN_VALUE handling
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastEdgeTest10200();
       expect(result).assertEqual(true);
     });
@@ -711,9 +711,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify callback is not callable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastErrorTest10300();
       expect(result).assertEqual(true);
     });
@@ -724,9 +724,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify unshift adds elements during iteration
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastModifyTest10400();
       expect(result).assertEqual(true);
     });
@@ -737,9 +737,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify increasing array length during iteration
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastModifyTest10500();
       expect(result).assertEqual(true);
     });
@@ -750,9 +750,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify string find uppercase letters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastLikeTest10600();
       expect(result).assertEqual(true);
     });
@@ -763,9 +763,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify empty arguments object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastLikeTest10700();
       expect(result).assertEqual(true);
     });
@@ -776,9 +776,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify custom array-like object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastLikeTest10800();
       expect(result).assertEqual(true);
     });
@@ -789,9 +789,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify array-like with length 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastLikeTest10900();
       expect(result).assertEqual(true);
     });
@@ -802,9 +802,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify callback using mapping logic
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastInteractionTest11000();
       expect(result).assertEqual(true);
     });
@@ -815,9 +815,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify findLast vs reverse+find
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastInteractionTest11100();
       expect(result).assertEqual(true);
     });
@@ -828,9 +828,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify Symbol.for handling
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastSpecialTest11200();
       expect(result).assertEqual(true);
     });
@@ -841,9 +841,9 @@ export default function BuiltinsArrayFindLastExtendedTest(): void {
      * @tc.desc   Verify BigInt mixed with Number
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('BuiltinsArrayFindLastExtendedTest6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+    it('BuiltinsArrayFindLastExtendedTest6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = Missing.ArrayFindLastSpecialTest11300();
       expect(result).assertEqual(true);
     });

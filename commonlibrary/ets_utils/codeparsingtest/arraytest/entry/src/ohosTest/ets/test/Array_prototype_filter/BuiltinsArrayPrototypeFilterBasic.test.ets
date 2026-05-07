@@ -1798,20 +1798,5 @@ export default function BuiltinsArrayPrototypeFilterBasicTest(){
 
       expect(result.length).assertEqual(3);
     });
-
-    /**
-     * @tc.name     BuiltinsArrayPrototypeFilterBasicTest10000
-     * @tc.number   SUB_BUILTINS_ARRAY_PROTOTYPE_FILTER_BASIC_TEST_10000
-     * @tc.desc     thisArg is undefined
-     * @tc.type     FUNCTION
-     * @tc.size     SMALLTEST
-     * @tc.level    LEVEL1
-     */
-    it('BuiltinsArrayPrototypeFilterBasicTest10000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr: number[] = [1, 2, 3, 4, 5];
-      const result = arr.filter((n) => n > 2);
-
-      expect(result.length).assertEqual(3);
-    });
   });
 }
