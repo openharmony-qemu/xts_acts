@@ -1172,7 +1172,10 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const target1 = { name: 'proxy' } as ProxyObj1;
+      const proxy1 = new Proxy(target1, {});
+      expect(type.isProxy(proxy1)).assertEqual(true);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_8200
@@ -1183,7 +1186,11 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const target2 = { name: 'proxy2' } as ProxyObj2;
+      const handler2 = {};
+      const proxy2 = new Proxy(target2, handler2);
+      expect(type.isProxy(proxy2)).assertEqual(true);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_8300
@@ -1194,7 +1201,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const plainObj = {} as ProxyObj1;
+      expect(type.isProxy(plainObj)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_8400
@@ -1205,7 +1214,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const mapVal = new Map<string, number>();
+      expect(type.isProxy(mapVal)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_8500
@@ -1216,7 +1227,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const strVal = 'proxy';
+      expect(type.isProxy(strVal)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_8600
@@ -1227,7 +1240,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const numVal: int = 42;
+      expect(type.isProxy(numVal)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_8700
@@ -1238,7 +1253,11 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const target3 = { inner: { name: 'nested' } as ProxyObj2 } as ProxyObj3;
+      const proxy3 = new Proxy(target3, {});
+      const arrWithProxy = [proxy3, 'test'];
+      expect(type.isProxy(arrWithProxy[0])).assertEqual(true);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_8800
@@ -1249,7 +1268,8 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      expect(type.isProxy(null as Object)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_8900
@@ -1260,7 +1280,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const setVal = new Set<number>();
+      expect(type.isProxy(setVal)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_9000
@@ -1271,7 +1293,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const dateVal = new Date();
+      expect(type.isProxy(dateVal)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_9100
@@ -1414,7 +1438,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const sab1 = new SharedArrayBuffer(8);
+      expect(type.isSharedArrayBuffer(sab1)).assertEqual(true);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_10200
@@ -1425,7 +1451,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const sab2 = new SharedArrayBuffer(16);
+      expect(type.isSharedArrayBuffer(sab2)).assertEqual(true);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_10300
@@ -1436,7 +1464,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const plainObj: SharedArrayBufferObj1 = { buffer: new ArrayBuffer(8) };
+      expect(type.isSharedArrayBuffer(plainObj)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_10400
@@ -1447,7 +1477,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const strVal = 'sharedarraybuffer';
+      expect(type.isSharedArrayBuffer(strVal)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_10500
@@ -1458,7 +1490,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const numVal: int = 8;
+      expect(type.isSharedArrayBuffer(numVal)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_10600
@@ -1469,7 +1503,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const ab = new ArrayBuffer(8);
+      expect(type.isSharedArrayBuffer(ab)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_10700
@@ -1480,7 +1516,10 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const sab3 = new SharedArrayBuffer(8);
+      const arrWithSab = [sab3, 'test'];
+      expect(type.isSharedArrayBuffer(arrWithSab[0])).assertEqual(true);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_10800
@@ -1491,7 +1530,8 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      expect(type.isSharedArrayBuffer(null as Object)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_10900
@@ -1502,7 +1542,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const dv = new DataView(new ArrayBuffer(8));
+      expect(type.isSharedArrayBuffer(dv)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_11000
@@ -1513,7 +1555,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const setVal = new Set<number>();
+      expect(type.isSharedArrayBuffer(setVal)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_11100
@@ -1657,7 +1701,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const ws1 = new WeakSet<object>();
+      expect(type.isWeakSet(ws1)).assertEqual(true);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_12200
@@ -1668,7 +1714,10 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const ws2 = new WeakSet<object>();
+      ws2.add({} as nullObj1);
+      expect(type.isWeakSet(ws2)).assertEqual(true);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_12300
@@ -1679,7 +1728,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const setVal = new Set<number>();
+      expect(type.isWeakSet(setVal)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_12400
@@ -1690,7 +1741,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const obj = {} as nullObj1;
+      expect(type.isWeakSet(obj)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_12500
@@ -1701,7 +1754,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const str13 = 'hello';
+      expect(type.isWeakSet(str13)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_12600
@@ -1712,7 +1767,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const numVal: int = 100;
+      expect(type.isWeakSet(numVal)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_12700
@@ -1723,7 +1780,10 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const ws3 = new WeakSet<object>();
+      ws3.add({} as ProxyObj1);
+      expect(type.isWeakSet(ws3)).assertEqual(true);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_12800
@@ -1734,7 +1794,10 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const ws4 = new WeakSet<object>();
+      const arr11 = [ws4, 1, 2];
+      expect(type.isWeakSet(arr11[0])).assertEqual(true);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_12900
@@ -1745,7 +1808,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const mapVal = new Map<string, number>();
+      expect(type.isWeakSet(mapVal)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_13000
@@ -1756,7 +1821,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const wm = new WeakMap<object, number>();
+      expect(type.isWeakSet(wm)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_13100
@@ -1767,7 +1834,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const boolObj1 = new Boolean(true);
+      expect(type.isBooleanObject(boolObj1)).assertEqual(true);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_13200
@@ -1778,7 +1847,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const boolObj2 = new Boolean(false);
+      expect(type.isBooleanObject(boolObj2)).assertEqual(true);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_13300
@@ -1789,7 +1860,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const primitiveBool = true;
+      expect(type.isBooleanObject(primitiveBool)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_13400
@@ -1800,7 +1873,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const strVal = 'boolean';
+      expect(type.isBooleanObject(strVal)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_13500
@@ -1811,7 +1886,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const numVal: int = 1;
+      expect(type.isBooleanObject(numVal)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_13600
@@ -1822,7 +1899,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const obj = {} as nullObj1;
+      expect(type.isBooleanObject(obj)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_13700
@@ -1833,7 +1912,10 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const boolObj3 = new Boolean(true);
+      const arrWithBool = [boolObj3, 'test'];
+      expect(type.isBooleanObject(arrWithBool[0])).assertEqual(true);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_13800
@@ -1844,7 +1926,8 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      expect(type.isBooleanObject(null as Object)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_13900
@@ -1855,7 +1938,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const mapVal = new Map<string, number>();
+      expect(type.isBooleanObject(mapVal)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_14000
@@ -1866,7 +1951,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const dateVal = new Date();
+      expect(type.isBooleanObject(dateVal)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_14100
@@ -1877,7 +1964,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const numObj1 = new Number(42);
+      expect(type.isNumberObject(numObj1)).assertEqual(true);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_14200
@@ -1888,7 +1977,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const numObj2 = new Number(0);
+      expect(type.isNumberObject(numObj2)).assertEqual(true);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_14300
@@ -1899,7 +1990,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const primitiveNum: int = 42;
+      expect(type.isNumberObject(primitiveNum)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_14400
@@ -1910,7 +2003,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const strVal = 'number';
+      expect(type.isNumberObject(strVal)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_14500
@@ -1921,7 +2016,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const obj = {} as nullObj1;
+      expect(type.isNumberObject(obj)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_14600
@@ -1932,7 +2029,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const boolVal = true;
+      expect(type.isNumberObject(boolVal)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_14700
@@ -1943,7 +2042,10 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const numObj3 = new Number(100);
+      const arrWithNum = [numObj3, 'test'];
+      expect(type.isNumberObject(arrWithNum[0])).assertEqual(true);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_14800
@@ -1954,7 +2056,8 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      expect(type.isNumberObject(null as Object)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_14900
@@ -1965,7 +2068,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const mapVal = new Map<string, number>();
+      expect(type.isNumberObject(mapVal)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_15000
@@ -1976,7 +2081,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const dateVal = new Date();
+      expect(type.isNumberObject(dateVal)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_15100
@@ -1987,7 +2094,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const strObj1 = new String('hello');
+      expect(type.isStringObject(strObj1)).assertEqual(true);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_15200
@@ -1998,7 +2107,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const strObj2 = new String('');
+      expect(type.isStringObject(strObj2)).assertEqual(true);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_15300
@@ -2009,7 +2120,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const primitiveStr = 'hello';
+      expect(type.isStringObject(primitiveStr)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_15400
@@ -2020,7 +2133,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const numVal: int = 42;
+      expect(type.isStringObject(numVal)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_15500
@@ -2031,7 +2146,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const obj = {} as nullObj1;
+      expect(type.isStringObject(obj)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_15600
@@ -2042,7 +2159,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const boolVal = true;
+      expect(type.isStringObject(boolVal)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_15700
@@ -2053,7 +2172,10 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const strObj3 = new String('world');
+      const arrWithStr = [strObj3, 'test'];
+      expect(type.isStringObject(arrWithStr[0])).assertEqual(true);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_15800
@@ -2064,7 +2186,8 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      expect(type.isStringObject(null as Object)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_15900
@@ -2075,7 +2198,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const mapVal = new Map<string, number>();
+      expect(type.isStringObject(mapVal)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_16000
@@ -2086,7 +2211,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const dateVal = new Date();
+      expect(type.isStringObject(dateVal)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_16100
@@ -2365,7 +2492,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const sym1 = Object(Symbol('test'));
+      expect(type.isSymbolObject(sym1)).assertEqual(true);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_18200
@@ -2376,7 +2505,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const sym2 = Object(Symbol('another'));
+      expect(type.isSymbolObject(sym2)).assertEqual(true);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_18300
@@ -2387,7 +2518,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const primitiveSym = Symbol('test');
+      expect(type.isSymbolObject(primitiveSym)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_18400
@@ -2398,7 +2531,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const strVal = 'symbol';
+      expect(type.isSymbolObject(strVal)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_18500
@@ -2409,7 +2544,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const numVal: int = 42;
+      expect(type.isSymbolObject(numVal)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_18600
@@ -2420,7 +2557,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const obj = {} as nullObj1;
+      expect(type.isSymbolObject(obj)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_18700
@@ -2431,7 +2570,10 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const sym3 = Object(Symbol('arrTest'));
+      const arrWithSym = [sym3, 'test'];
+      expect(type.isSymbolObject(arrWithSym[0])).assertEqual(true);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_18800
@@ -2442,7 +2584,8 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      expect(type.isSymbolObject(null as Object)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_18900
@@ -2453,7 +2596,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const mapVal = new Map<string, number>();
+      expect(type.isSymbolObject(mapVal)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_19000
@@ -2464,7 +2609,9 @@ export default function Util1Test() {
      * @tc.level Level 1
      */
     it('Util1Test190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(true).assertTrue();
+      const type = new util.types();
+      const boolVal = true;
+      expect(type.isSymbolObject(boolVal)).assertEqual(false);
     });
     /**
      * @tc.number SUB_BUILTINS_Util1_TEST_19100
