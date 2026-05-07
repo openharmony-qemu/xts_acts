@@ -1292,5 +1292,80 @@ export default function abilityTest() {
     });
 
 
+    /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_OFF_MEDIA_CENTER_CONTROL_TYPE_CHANGED_ERROR_6600103_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFF_MEDIA_CENTER_CONTROL_TYPE_CHANGED_ERROR_6600103_0100
+     * @tc.desc Test offMediaCenterControlTypeChanged when controller is destroyed - error code 6600103.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFF_MEDIA_CENTER_CONTROL_TYPE_CHANGED_ERROR_6600103_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: offMediaCenterControlTypeChanged ErrorControllerNotExist003 start`);
+      try {
+        await controller?.destroy();
+        await controller?.offMediaCenterControlTypeChanged();
+        expect().assertFail();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        console.info(`${TAG}: error code: ${e.code}`);
+        expect(e.code).assertEqual(6600103);
+      }
+      controller = null;
+      console.info(`${TAG}: offMediaCenterControlTypeChanged ErrorControllerNotExist003 end`);
+      done();
+    });
+
+
+    /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_OFF_SUPPORTED_PLAY_SPEED_CHANGE_ERROR_6600103_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFF_SUPPORTED_PLAY_SPEED_CHANGE_ERROR_6600103_0100
+     * @tc.desc Test offSupportedPlaySpeedsChange when controller is destroyed - error code 6600103.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFF_SUPPORTED_PLAY_SPEED_CHANGE_ERROR_6600103_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: offSupportedPlaySpeedsChange ErrorControllerNotExist003 start`);
+      try {
+        await controller?.destroy();
+        await controller?.offSupportedPlaySpeedsChange();
+        expect().assertFail();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        console.info(`${TAG}: error code: ${e.code}`);
+        expect(e.code).assertEqual(6600103);
+      }
+      controller = null;
+      console.info(`${TAG}: offSupportedPlaySpeedsChange ErrorControllerNotExist003 end`);
+      done();
+    });
+
+
+    /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_OFF_SUPPORTED_LOOP_MODES_CHANGE_ERROR_6600103_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_OFF_SUPPORTED_LOOP_MODES_CHANGE_ERROR_6600103_0100
+     * @tc.desc Test offSupportedLoopModesChange when controller is destroyed - error code 6600103.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_OFF_SUPPORTED_LOOP_MODES_CHANGE_ERROR_6600103_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: offSupportedLoopModesChange ErrorControllerNotExist003 start`);
+      try {
+        await controller?.destroy();
+        await controller?.offSupportedLoopModesChange();
+        expect().assertFail();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        console.info(`${TAG}: error code: ${e.code}`);
+        expect(e.code).assertEqual(6600103);
+      }
+      controller = null;
+      console.info(`${TAG}: offSupportedLoopModesChange ErrorControllerNotExist003 end`);
+      done();
+    });
+
+
   });
 }
