@@ -1104,7 +1104,7 @@ static napi_value UsbControlTransfer(napi_env env, napi_callback_info info)
     NAPI_CALL(env, napi_get_value_int64(env, args[PARAM_0], &deviceId64));
     uint64_t deviceId = JsDeviceIdToNative(static_cast<uint64_t>(deviceId64));
     int32_t usbInitReturnValue = OH_Usb_Init();
-    NAPI_ASSERT(env, usbInitReturnValue == PARAM_0, "OH_Usb_Init failed");
+    NAPI_ASSERT(env, usbInitReturnValue == USB_DDK_NO_PERM, "OH_Usb_Init failed");
     struct UsbControlRequestSetup setup;
     uint8_t data[USB_DDK_TEST_BUF_SIZE] = {PARAM_0};
     setup.bmRequestType = 0x80;
