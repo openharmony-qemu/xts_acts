@@ -83,7 +83,7 @@ export default function LightWeightSetTest04(): void {
     })
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_0100
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_0100
      * @tc.name      testLightWeightSetTest04Chapter0001
      * @tc.desc      Verify LightWeightSet's getValueAt method with index 1.5
      * @tc.size      MediumTest
@@ -108,7 +108,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_0200
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_0200
      * @tc.name      testLightWeightSetTest04Chapter0002
      * @tc.desc      Verify LightWeightSet's getValueAt method with index 2.999
      * @tc.size      MediumTest
@@ -133,7 +133,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_0300
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_0300
      * @tc.name      testLightWeightSetTest04Chapter0003
      * @tc.desc      Verify LightWeightSet's getValueAt method with index 123.456
      * @tc.size      MediumTest
@@ -158,7 +158,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_0400
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_0400
      * @tc.name      testLightWeightSetTest04Chapter0004
      * @tc.desc      Verify LightWeightSet's getValueAt method with index 0xcafebabe
      * @tc.size      MediumTest
@@ -183,7 +183,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_0500
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_0500
      * @tc.name      testLightWeightSetTest04Chapter0005
      * @tc.desc      Verify LightWeightSet's getValueAt method with index 0x0102
      * @tc.size      MediumTest
@@ -204,7 +204,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_0600
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_0600
      * @tc.name      testLightWeightSetTest04Chapter0006
      * @tc.desc      Verify LightWeightSet's getValueAt method with index 0x01020304
      * @tc.size      MediumTest
@@ -225,7 +225,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_0700
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_0700
      * @tc.name      testLightWeightSetTest04Chapter0007
      * @tc.desc      Verify LightWeightSet's getValueAt method with index 0x3
      * @tc.size      MediumTest
@@ -246,7 +246,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_0800
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_0800
      * @tc.name      testLightWeightSetTest04Chapter0008
      * @tc.desc      Verify LightWeightSet's getValueAt method with index 2 ** 3
      * @tc.size      MediumTest
@@ -267,7 +267,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_0900
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_0900
      * @tc.name      testLightWeightSetTest04Chapter0009
      * @tc.desc      Verify LightWeightSet's getValueAt method with index 1e3
      * @tc.size      MediumTest
@@ -288,7 +288,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_1000
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_1000
      * @tc.name      testLightWeightSetTest04Chapter0010
      * @tc.desc      Verify LightWeightSet's getValueAt method with index 2.5e-2
      * @tc.size      MediumTest
@@ -313,7 +313,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_1100
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_1100
      * @tc.name      testLightWeightSetTest04Chapter0011
      * @tc.desc      Verify LightWeightSet's getValueAt method with index BigInt(0xdecafafecacefade)
      * @tc.size      MediumTest
@@ -338,7 +338,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_1200
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_1200
      * @tc.name      testLightWeightSetTest04Chapter0012
      * @tc.desc      Verify LightWeightSet's getValueAt method with index BigInt(9007199254740991)
      * @tc.size      MediumTest
@@ -363,7 +363,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_1300
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_1300
      * @tc.name      testLightWeightSetTest04Chapter0013
      * @tc.desc      Verify LightWeightSet's getValueAt method with index 65535
      * @tc.size      MediumTest
@@ -384,7 +384,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_1400
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_1400
      * @tc.name      testLightWeightSetTest04Chapter0014
      * @tc.desc      Verify LightWeightSet's getValueAt method with index Number.MAX_SAFE_INTEGER throws error
      * @tc.size      MediumTest
@@ -409,7 +409,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_1500
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_1500
      * @tc.name      testLightWeightSetTest04Chapter0015
      * @tc.desc      Verify LightWeightSet's values method returns correct values for number type
      * @tc.size      MediumTest
@@ -432,7 +432,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_1600
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_1600
      * @tc.name      testLightWeightSetTest04Chapter0016
      * @tc.desc      Verify LightWeightSet's values method returns correct values for Int8Array type
      * @tc.size      MediumTest
@@ -457,7 +457,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_1700
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_1700
      * @tc.name      testLightWeightSetTest04Chapter0017
      * @tc.desc      Verify LightWeightSet's values method returns correct values for Uint16Array type
      * @tc.size      MediumTest
@@ -482,7 +482,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_1800
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_1800
      * @tc.name      testLightWeightSetTest04Chapter0018
      * @tc.desc      Verify LightWeightSet's values method returns correct values for Float32Array type with extreme values
      * @tc.size      MediumTest
@@ -507,7 +507,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_1900
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_1900
      * @tc.name      testLightWeightSetTest04Chapter0019
      * @tc.desc      Verify LightWeightSet's values method returns correct values for Float64Array type with special values
      * @tc.size      MediumTest
@@ -532,7 +532,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_2000
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_2000
      * @tc.name      testLightWeightSetTest04Chapter0020
      * @tc.desc      Verify LightWeightSet's values method returns correct values for Uint8ClampedArray type
      * @tc.size      MediumTest
@@ -557,7 +557,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_2100
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_2100
      * @tc.name      testLightWeightSetTest04Chapter0021
      * @tc.desc      Verify LightWeightSet's values method returns correct values for BigInt64Array type
      * @tc.size      MediumTest
@@ -582,7 +582,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_2200
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_2200
      * @tc.name      testLightWeightSetTest04Chapter0022
      * @tc.desc      Verify LightWeightSet's values method returns correct values for string type
      * @tc.size      MediumTest
@@ -604,7 +604,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_2300
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_2300
      * @tc.name      testLightWeightSetTest04Chapter0023
      * @tc.desc      Verify LightWeightSet's values method returns correct values for null and undefined
      * @tc.size      MediumTest
@@ -626,7 +626,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_2400
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_2400
      * @tc.name      testLightWeightSetTest04Chapter0024
      * @tc.desc      Verify LightWeightSet's values method returns correct values for special characters
      * @tc.size      MediumTest
@@ -650,7 +650,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_2500
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_2500
      * @tc.name      testLightWeightSetTest04Chapter0025
      * @tc.desc      Verify LightWeightSet's values method returns correct values for emoji characters
      * @tc.size      MediumTest
@@ -662,19 +662,19 @@ export default function LightWeightSetTest04(): void {
       console.log(TAG + 'start');
       let lightWeightSet = new LightWeightSet<string>();
       const value1 = "ðŸŽ…";
-      const value2 = "ðŸ€?;
+      const value2 = "ï¿½?;
       lightWeightSet.add(value1);
       lightWeightSet.add(value2);
       let valuesArray = Array.from(lightWeightSet.values());
       let result: boolean = false;
-      if(valuesArray[1] === "ðŸŽ…" && valuesArray[0] === "ðŸ€?)
+      if(valuesArray[1] === "ðŸŽ…" && valuesArray[0] === "ï¿½?)
         result = true;
       expect(result).assertTrue();
       console.log(TAG + 'end');
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_2600
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_2600
      * @tc.name      testLightWeightSetTest04Chapter0026
      * @tc.desc      Verify LightWeightSet's values method returns correct values for number type with Math.floor and MIN_VALUE
      * @tc.size      MediumTest
@@ -696,7 +696,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_2700
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_2700
      * @tc.name      testLightWeightSetTest04Chapter0027
      * @tc.desc      Verify LightWeightSet's values method returns correct values for number type with hexadecimal and exponent
      * @tc.size      MediumTest
@@ -718,7 +718,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_2800
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_2800
      * @tc.name      testLightWeightSetTest04Chapter0028
      * @tc.desc      Verify LightWeightSet's values method returns correct values for boolean type
      * @tc.size      MediumTest
@@ -740,7 +740,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_2900
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_2900
      * @tc.name      testLightWeightSetTest04Chapter0029
      * @tc.desc      Verify LightWeightSet's values method returns correct values for null and undefined in boolean set
      * @tc.size      MediumTest
@@ -762,7 +762,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_3000
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_3000
      * @tc.name      testLightWeightSetTest04Chapter0030
      * @tc.desc      Verify LightWeightSet's values method returns correct values for boolean type with logical NOT operations
      * @tc.size      MediumTest
@@ -784,7 +784,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_3100
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_3100
      * @tc.name      testLightWeightSetTest04Chapter0031
      * @tc.desc      Verify LightWeightSet's values method returns correct values for Array<number> type
      * @tc.size      MediumTest
@@ -809,7 +809,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_3200
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_3200
      * @tc.name      testLightWeightSetTest04Chapter0032
      * @tc.desc      Verify LightWeightSet's values method returns correct values for array with string properties
      * @tc.size      MediumTest
@@ -834,7 +834,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_3300
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_3300
      * @tc.name      testLightWeightSetTest04Chapter0033
      * @tc.desc      Verify LightWeightSet's values method returns correct values for object type
      * @tc.size      MediumTest
@@ -858,7 +858,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_3400
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_3400
      * @tc.name      testLightWeightSetTest04Chapter0034
      * @tc.desc      Verify LightWeightSet's values method returns correct values for object type including empty object
      * @tc.size      MediumTest
@@ -882,7 +882,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_3500
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_3500
      * @tc.name      testLightWeightSetTest04Chapter0035
      * @tc.desc      Verify LightWeightSet's values method returns correct values for object type with Infinity and NaN
      * @tc.size      MediumTest
@@ -906,7 +906,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_3600
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_3600
      * @tc.name      testLightWeightSetTest04Chapter0036
      * @tc.desc      Verify LightWeightSet's values method returns correct values for custom class type
      * @tc.size      MediumTest
@@ -930,7 +930,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_3700
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_3700
      * @tc.name      testLightWeightSetTest04Chapter0037
      * @tc.desc      Verify LightWeightSet's forEach method iterates correctly for number type
      * @tc.size      MediumTest
@@ -959,7 +959,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_3800
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_3800
      * @tc.name      testLightWeightSetTest04Chapter0038
      * @tc.desc      Verify LightWeightSet's forEach method iterates correctly for extreme number values
      * @tc.size      MediumTest
@@ -988,7 +988,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_3900
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_3900
      * @tc.name      testLightWeightSetTest04Chapter0039
      * @tc.desc      Verify LightWeightSet's forEach method iterates correctly for hexadecimal and exponential number values
      * @tc.size      MediumTest
@@ -1017,7 +1017,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_4000
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_4000
      * @tc.name      testLightWeightSetTest04Chapter0040
      * @tc.desc      Verify LightWeightSet's forEach method iterates correctly for Int8Array type
      * @tc.size      MediumTest
@@ -1040,7 +1040,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_4100
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_4100
      * @tc.name      testLightWeightSetTest04Chapter0041
      * @tc.desc      Verify LightWeightSet's forEach method iterates correctly for Uint16Array type with overflow values
      * @tc.size      MediumTest
@@ -1063,7 +1063,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_4200
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_4200
      * @tc.name      testLightWeightSetTest04Chapter0042
      * @tc.desc      Verify LightWeightSet's forEach method iterates correctly for Float64Array type with large values
      * @tc.size      MediumTest
@@ -1086,7 +1086,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_4300
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_4300
      * @tc.name      testLightWeightSetTest04Chapter0043
      * @tc.desc      Verify LightWeightSet's forEach method iterates correctly for Float64Array type with Infinity and NaN values
      * @tc.size      MediumTest
@@ -1109,7 +1109,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_4400
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_4400
      * @tc.name      testLightWeightSetTest04Chapter0044
      * @tc.desc      Verify LightWeightSet's forEach method iterates correctly for Int8Array type with zero values
      * @tc.size      MediumTest
@@ -1132,7 +1132,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_4500
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_4500
      * @tc.name      testLightWeightSetTest04Chapter0045
      * @tc.desc      Verify LightWeightSet's forEach method iterates correctly for string type
      * @tc.size      MediumTest
@@ -1163,7 +1163,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_4600
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_4600
      * @tc.name      testLightWeightSetTest04Chapter0046
      * @tc.desc      Verify LightWeightSet's forEach method iterates correctly for string type with special characters
      * @tc.size      MediumTest
@@ -1194,7 +1194,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_4700
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_4700
      * @tc.name      testLightWeightSetTest04Chapter0047
      * @tc.desc      Verify LightWeightSet's forEach method iterates correctly for string type with emoji characters
      * @tc.size      MediumTest
@@ -1225,7 +1225,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_4800
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_4800
      * @tc.name      testLightWeightSetTest04Chapter0048
      * @tc.desc      Verify LightWeightSet's forEach method iterates correctly for boolean type
      * @tc.size      MediumTest
@@ -1256,7 +1256,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_4900
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_4900
      * @tc.name      testLightWeightSetTest04Chapter0049
      * @tc.desc      Verify LightWeightSet's forEach method iterates correctly for undefined and null values
      * @tc.size      MediumTest
@@ -1285,7 +1285,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_5000
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_5000
      * @tc.name      testLightWeightSetTest04Chapter0050
      * @tc.desc      Verify LightWeightSet's forEach method iterates correctly for boolean expressions
      * @tc.size      MediumTest
@@ -1314,7 +1314,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_5100
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_5100
      * @tc.name      testLightWeightSetTest04Chapter0051
      * @tc.desc      Verify LightWeightSet's forEach method iterates correctly for Array<number> type
      * @tc.size      MediumTest
@@ -1337,7 +1337,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_5200
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_5200
      * @tc.name      testLightWeightSetTest04Chapter0052
      * @tc.desc      Verify LightWeightSet's forEach method iterates correctly for Array<number> type with associative array
      * @tc.size      MediumTest
@@ -1360,7 +1360,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_5300
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_5300
      * @tc.name      testLightWeightSetTest04Chapter0053
      * @tc.desc      Verify LightWeightSet's forEach method iterates correctly for object type
      * @tc.size      MediumTest
@@ -1391,7 +1391,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_5400
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_5400
      * @tc.name      testLightWeightSetTest04Chapter0054
      * @tc.desc      Verify LightWeightSet's forEach method iterates correctly for object type with empty object
      * @tc.size      MediumTest
@@ -1422,7 +1422,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_5500
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_5500
      * @tc.name      testLightWeightSetTest04Chapter0055
      * @tc.desc      Verify LightWeightSet's forEach method iterates correctly for object type with Infinity and NaN properties
      * @tc.size      MediumTest
@@ -1453,7 +1453,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_5600
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_5600
      * @tc.name      testLightWeightSetTest04Chapter0056
      * @tc.desc      Verify LightWeightSet's forEach method iterates correctly for custom class type
      * @tc.size      MediumTest
@@ -1484,7 +1484,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_5700
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_5700
      * @tc.name      testLightWeightSetTest04Chapter0057
      * @tc.desc      Verify LightWeightSet's entries method returns correct key-value pairs for number type
      * @tc.size      MediumTest
@@ -1508,7 +1508,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_5800
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_5800
      * @tc.name      testLightWeightSetTest04Chapter0058
      * @tc.desc      Verify LightWeightSet's entries method returns correct key-value pairs for Int8Array type
      * @tc.size      MediumTest
@@ -1535,7 +1535,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_5900
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_5900
      * @tc.name      testLightWeightSetTest04Chapter0059
      * @tc.desc      Verify LightWeightSet's entries method returns correct key-value pairs for Uint16Array type
      * @tc.size      MediumTest
@@ -1562,7 +1562,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_6000
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_6000
      * @tc.name      testLightWeightSetTest04Chapter0060
      * @tc.desc      Verify LightWeightSet's entries method returns correct key-value pairs for Float32Array type with extreme values
      * @tc.size      MediumTest
@@ -1589,7 +1589,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_6100
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_6100
      * @tc.name      testLightWeightSetTest04Chapter0061
      * @tc.desc      Verify LightWeightSet's entries method returns correct key-value pairs for Float64Array type with special values
      * @tc.size      MediumTest
@@ -1616,7 +1616,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_6200
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_6200
      * @tc.name      testLightWeightSetTest04Chapter0062
      * @tc.desc      Verify LightWeightSet's entries method returns correct key-value pairs for Uint8ClampedArray type
      * @tc.size      MediumTest
@@ -1643,7 +1643,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_6300
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_6300
      * @tc.name      testLightWeightSetTest04Chapter0063
      * @tc.desc      Verify LightWeightSet's entries method returns correct key-value pairs for BigInt64Array type
      * @tc.size      MediumTest
@@ -1670,7 +1670,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_6400
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_6400
      * @tc.name      testLightWeightSetTest04Chapter0064
      * @tc.desc      Verify LightWeightSet's entries method returns correct key-value pairs for string type
      * @tc.size      MediumTest
@@ -1696,7 +1696,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_6500
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_6500
      * @tc.name      testLightWeightSetTest04Chapter0065
      * @tc.desc      Verify LightWeightSet's entries method returns correct key-value pairs for null and undefined
      * @tc.size      MediumTest
@@ -1722,7 +1722,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_6600
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_6600
      * @tc.name      testLightWeightSetTest04Chapter0066
      * @tc.desc      Verify LightWeightSet's entries method returns correct key-value pairs for special characters
      * @tc.size      MediumTest
@@ -1750,7 +1750,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_6700
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_6700
      * @tc.name      testLightWeightSetTest04Chapter0067
      * @tc.desc      Verify LightWeightSet's entries method returns correct key-value pairs for emoji characters
      * @tc.size      MediumTest
@@ -1762,7 +1762,7 @@ export default function LightWeightSetTest04(): void {
       console.log(TAG + 'start');
       let lightWeightSet = new LightWeightSet<string>();
       const value1 = "ðŸŽ…";
-      const value2 = "ðŸ€?;
+      const value2 = "ï¿½?;
       lightWeightSet.add(value1);
       lightWeightSet.add(value2);
       let entriesArray = Array.from(lightWeightSet.entries());
@@ -1778,7 +1778,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_6800
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_6800
      * @tc.name      testLightWeightSetTest04Chapter0068
      * @tc.desc      Verify LightWeightSet's entries method returns correct key-value pairs for number type with Math.floor and MIN_VALUE
      * @tc.size      MediumTest
@@ -1804,7 +1804,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_6900
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_6900
      * @tc.name      testLightWeightSetTest04Chapter0069
      * @tc.desc      Verify LightWeightSet's entries method returns correct key-value pairs for number type with hexadecimal and exponent
      * @tc.size      MediumTest
@@ -1830,7 +1830,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_7000
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_7000
      * @tc.name      testLightWeightSetTest04Chapter0070
      * @tc.desc      Verify LightWeightSet's entries method returns correct key-value pairs for boolean type
      * @tc.size      MediumTest
@@ -1856,7 +1856,7 @@ export default function LightWeightSetTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST04_7100
+     * @tc.number    SUB_LIGHTWEIGHTSET_TESTFOUR_7100
      * @tc.name      testLightWeightSetTest04Chapter0071
      * @tc.desc      Verify LightWeightSet's entries method returns correct key-value pairs for null and undefined in boolean set
      * @tc.size      MediumTest
