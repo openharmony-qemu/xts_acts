@@ -2208,6 +2208,9 @@ it('testSetPreferredOrientationWithResult_invalidwindow_0100', TestType.FUNCTION
   let msgStr: string = 'jsUnittest ' + caseName + ' ';
   console.log(msgStr + 'begin');
 
+  let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+  console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+
   let subWindowClass = await windowStage.createSubWindow('SetPreferredOrientationWithResult_InvalidWindow_0200');
   console.log(msgStr + 'subWindowClass created: ' + JSON.stringify(subWindowClass));
 
@@ -2220,8 +2223,14 @@ it('testSetPreferredOrientationWithResult_invalidwindow_0100', TestType.FUNCTION
     done();
   } catch (err) {
     console.error(`${caseName} :Failed . Cause code:${err.code}, message: ${err.message}`);
-    expect(err.code).assertEqual(1300002);
-    done();
+    
+    if (!canIUse) {
+      except(err.code).assertEqual(801);
+      done();
+    } else {
+      expect(err.code).assertEqual(1300002);
+      done();
+    }
   }
 });
 
@@ -2237,6 +2246,9 @@ it('testSetPreferredOrientationWithResult_Dialog_0100', TestType.FUNCTION | Size
   let caseName: string = 'testSetPreferredOrientationWithResult_Dialog_0100';
   let msgStr: string = 'jsUnittest ' + caseName + ' ';
   console.log(msgStr + 'begin');
+
+  let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+  console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
 
   if (isSupportRotate) {
     let config: window.Configuration = {
@@ -2256,15 +2268,24 @@ it('testSetPreferredOrientationWithResult_Dialog_0100', TestType.FUNCTION | Size
 
       await subWindowClass.destroyWindow();
       console.info(`${caseName} Succeeded in destroying the dialog window.`);
+      done();
     } catch (err) {
       console.error(`${caseName} Failed to create or destroy window. Cause code:${err.code}, message: ${err.message}`);
-      expect().assertFail();
+
+      if (!canIUse) {
+        except(err.code).assertEqual(801);
+        done();
+      } else {
+        except(false).assertTrue();
+        done();
+      }
     }
   } else {
     console.info(`${caseName} Device does not support rotation, skip test.`);
+    done();
   }
 
-  done();
+  
 });
 
 
