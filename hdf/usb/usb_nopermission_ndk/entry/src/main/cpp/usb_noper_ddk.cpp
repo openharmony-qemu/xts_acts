@@ -1122,13 +1122,13 @@ static napi_value UsbGetNonRootHubs(napi_env env, napi_callback_info info)
 {
     int32_t usbInitReturnValue = OH_Usb_Init();
     NAPI_ASSERT(env, usbInitReturnValue == USB_DDK_NO_PERM, "OH_Usb_Init failed");
-    struct Usb_NonRootHubArray nonRootHubs = {0};
-    nonRootHubs.hubs = new uint64_t[MAX_USB_DEVICE_NUM];
-    int32_t returnValue = OH_Usb_GetNonRootHubs(&nonRootHubs);
+    struct Usb_NonRootHubArray nonRootHubArray;
+    nonRootHubArray.nonRootHubIds = new uint64_t[MAX_USB_DEVICE_NUM];
+    int32_t returnValue = OH_Usb_GetNonRootHubs(&nonRootHubArray);
     OH_Usb_Release();
-    delete[] nonRootHubs.hubs;
+    delete[] nonRootHubArray.nonRootHubIds;
     napi_value result = nullptr;
-    napi_create_int32(env, returnValue, &result);
+    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
     return result;
 }
 
