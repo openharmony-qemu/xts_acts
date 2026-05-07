@@ -1433,7 +1433,7 @@ export default function uitestApi26ErrorTest() {
         expect().assertFail();
       } catch (error) {
         hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseWithoutPoint error: ' + error.code);
-        expect(error.code == ErrorCode17000005 || error.code == ParameterErrorCode).assertTrue();
+        expect(error.code === ErrorCode17000005 || error.code === ParameterErrorCode).assertTrue();
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseWithoutPoint over');
     });
@@ -1453,7 +1453,7 @@ export default function uitestApi26ErrorTest() {
         expect().assertFail();
       } catch (error) {
         hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseWithNullPoint error: ' + error.code);
-        expect(error.code == ErrorCode17000005 || error.code == ParameterErrorCode).assertTrue();
+        expect(error.code === ErrorCode17000005 || error.code === ParameterErrorCode).assertTrue();
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseWithNullPoint over');
     });
@@ -1599,7 +1599,7 @@ export default function uitestApi26ErrorTest() {
     });
 
     /**
-     * @tc.name   testDriverTriggerPenKeyHandwritingClickOptionsNull
+     * @tc.name   testDriverTriggerPenKeyHandwritingClickOptionsUndefined
      * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0800
      * @tc.desc   Test Driver.triggerPenKey with HANDWRITING mode, HANDWRITING key, CLICK operation
      * @tc.type   FUNCTION
