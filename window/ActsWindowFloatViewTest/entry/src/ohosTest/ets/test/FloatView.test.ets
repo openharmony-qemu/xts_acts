@@ -755,7 +755,7 @@ export default function abilityTest() {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code === 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && (!isDeviceSupportFloatView || !isDeviceSupportFloatBall)) {
           done();
         } else {
           expect(false).assertTrue();
