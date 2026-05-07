@@ -2225,7 +2225,7 @@ export default function windowRotationTest() {
         console.error(`${caseName} :Failed . Cause code:${err.code}, message: ${err.message}`);
         
         if (!canIUse) {
-          except(err.code).assertEqual(801);
+          expect(err.code).assertEqual(801);
           done();
         } else {
           expect(err.code).assertEqual(1300002);
@@ -2273,10 +2273,10 @@ export default function windowRotationTest() {
           console.error(`${caseName} Failed to create or destroy window. Cause code:${err.code}, message: ${err.message}`);
 
           if (!canIUse) {
-            except(err.code).assertEqual(801);
+            expect(err.code).assertEqual(801);
             done();
           } else {
-            except(false).assertTrue();
+            expect(false).assertTrue();
             done();
           }
         }
