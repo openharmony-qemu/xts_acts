@@ -66,17 +66,17 @@ export default function GetAutoStartupStatusForSelfStaticTest() {
         }
       })
     /**
-     * @tc.name   Sub_Ability_AbilityRuntime_IsAutoStartupSupported_Static_0100
-     * @tc.number Sub_Ability_AbilityRuntime_IsAutoStartupSupported_Static_0100
+     * @tc.name   SUB_Ability_AbilityRuntime_IsAutoStartupSupported_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_IsAutoStartupSupported_Static_0100
      * @tc.desc   Test isAutoStartupSupported returns boolean.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Sub_Ability_AbilityRuntime_IsAutoStartupSupported_Static_0100',
+    it('SUB_Ability_AbilityRuntime_IsAutoStartupSupported_Static_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const tcNumber = `Sub_Ability_AbilityRuntime_IsAutoStartupSupported_Static_0100 `;
+        const tcNumber = `SUB_Ability_AbilityRuntime_IsAutoStartupSupported_Static_0100 `;
         hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
         try {
           let result: boolean = autoStartupManager.isAutoStartupSupported();
