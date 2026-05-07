@@ -2027,17 +2027,19 @@ it('testSetPreferredOrientationWithResult_enum_0100', TestType.FUNCTION | Size.M
   let caseName: string = 'testSetPreferredOrientationWithResult_enum_0100';
   let msgStr: string = 'jsUnittest ' + caseName + ' ';
   console.log(msgStr + 'begin');
+  let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+  console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
 
   let mainWin: window.Window = windowStage.getMainWindowSync();
   console.log(msgStr + 'windowStage.getMainWindow :' + JSON.stringify(mainWin));
   expect(!!mainWin).assertTrue();
 
-  let isFreeWindow = mainWin.isInFreeWindowMode();
+  let isFreeWindow = await mainWin.isInFreeWindowMode();
   console.info(msgStr + 'isFreeWindow: ' + isFreeWindow);
 
   let num = 0;
   let orientationItem = [
-    'AUTO_ROTATION_LANDSCAPE_RESTRICTED','UNSPECIFIED','PORTRAIT', 'LANDSCAPE', 'PORTRAIT_INVERTED',
+    'AUTO_ROTATION_LANDSCAPE_RESTRICTED', 'UNSPECIFIED', 'PORTRAIT', 'LANDSCAPE', 'PORTRAIT_INVERTED',
     'LANDSCAPE_INVERTED', 'AUTO_ROTATION', 'AUTO_ROTATION_PORTRAIT', 'AUTO_ROTATION_LANDSCAPE',
     'AUTO_ROTATION_RESTRICTED', 'AUTO_ROTATION_PORTRAIT_RESTRICTED'
   ];
@@ -2047,17 +2049,19 @@ it('testSetPreferredOrientationWithResult_enum_0100', TestType.FUNCTION | Size.M
       let orientation: window.Orientation = window.Orientation[orientationItem[i]];
       console.log(msgStr + 'i : ' + i + ' ,orientation : ' + orientation);
       console.log(msgStr + 'i : ' + i + ' ,window.Orientation : ' + JSON.stringify(orientationItem[i]));
+      
 
       try {
         let result = await mainWin.setPreferredOrientationWithResult(orientation);
         console.info(msgStr + `Succeeded in setting the window orientation. Result: ${JSON.stringify(result)}`);
         await sleep(300);
 
-        if (deviceType === 'phone' || deviceType === 'tablet') {
-          if (isFreeWindow) {
-            expect(result.executionResult).assertEqual(1);
-          } else {
+        if (isSupportRotate) {
+          if (!isFreeWindow) {
             expect(result.executionResult).assertEqual(0);
+          } else {
+            expect(result.executionResult).assertEqual(1);
+
           }
         } else {
           expect(result.executionResult).assertEqual(1);
@@ -2076,17 +2080,20 @@ it('testSetPreferredOrientationWithResult_enum_0100', TestType.FUNCTION | Size.M
     }
   } catch (err) {
     console.error(msgStr + ' failed, err: ' + JSON.stringify(err));
-    if (err.code === 801) {
-      done();
+    if (!canIUseRes) {
+      expect(err.code).assertEqual(801);
+      done()
     } else {
-      expect().assertFail();
+      expect(false).assertTrue();
       done();
     }
   }
 });
 
+
+
 /**
- * @tc.name   testSetPreferredOrientationWithResult_enum
+ * @tc.name   testSetPreferredOrientationWithResult_enum_0200
  * @tc.number SUB_BASIC_WMS_SetPreferredOrientationWithResult_API_0200
  * @tc.desc   Sets the display direction property of the window and checks the result
  * @tc.type   FUNCTION
@@ -2097,12 +2104,14 @@ it('testSetPreferredOrientationWithResult_enum_0200', TestType.FUNCTION | Size.M
   let caseName: string = 'testSetPreferredOrientationWithResult_enum_0200';
   let msgStr: string = 'jsUnittest ' + caseName + ' ';
   console.log(msgStr + 'begin');
+  let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+  console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
 
   let mainWin: window.Window = windowStage.getMainWindowSync();
   console.log(msgStr + 'windowStage.getMainWindow :' + JSON.stringify(mainWin));
   expect(!!mainWin).assertTrue();
 
-  let isFreeWindow = mainWin.isInFreeWindowMode();
+  let isFreeWindow = await mainWin.isInFreeWindowMode();
   console.info(msgStr + 'isFreeWindow: ' + isFreeWindow);
 
   let num = 0;
@@ -2121,14 +2130,15 @@ it('testSetPreferredOrientationWithResult_enum_0200', TestType.FUNCTION | Size.M
 
       try {
         let result = await mainWin.setPreferredOrientationWithResult(orientation);
-        console.info(`Succeeded in setting the window orientation. Result: ${JSON.stringify(result)}`);
+        console.info(msgStr + `Succeeded in setting the window orientation. Result: ${JSON.stringify(result)}`);
         await sleep(300);
 
-        if (deviceType === 'phone' || deviceType === 'tablet') {
-          if (isFreeWindow) {
-            expect(result.executionResult).assertEqual(1);
-          } else {
+        if (isSupportRotate) {
+          if (!isFreeWindow) {
             expect(result.executionResult).assertEqual(0);
+          } else {
+            expect(result.executionResult).assertEqual(1);
+
           }
         } else {
           expect(result.executionResult).assertEqual(1);
@@ -2147,25 +2157,26 @@ it('testSetPreferredOrientationWithResult_enum_0200', TestType.FUNCTION | Size.M
     }
   } catch (err) {
     console.error(msgStr + ' failed, err: ' + JSON.stringify(err));
-    if (err.code === 801) {
-      done();
+    if (!canIUseRes) {
+      expect(err.code).assertEqual(801);
+      done()
     } else {
-      expect().assertFail();
+      expect(false).assertTrue();
       done();
     }
   }
 });
 
 /**
- * @tc.name   testSetPreferredOrientationWithResult_paramerr
- * @tc.number SUB_BASIC_WMS_SetPreferredOrientationWithResult_401
+ * @tc.name   testSetPreferredOrientationWithResult_paramerror_0100
+ * @tc.number SUB_BASIC_WMS_SetPreferredOrientationWithResult_paramerror_0100
  * @tc.desc   testSetPreferredOrientationWithResult with null input, expect error code 401
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-it('testSetPreferredOrientationWithResult_paramerr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-  let caseName: string = 'testSetPreferredOrientationWithResult_paramerr';
+it('testSetPreferredOrientationWithResult_paramerror_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+  let caseName: string = 'testSetPreferredOrientationWithResult_paramerror_0100';
   let msgStr: string = 'jsUnittest ' + caseName + ' ';
   console.log(msgStr + 'begin');
 
@@ -2185,15 +2196,15 @@ it('testSetPreferredOrientationWithResult_paramerr', TestType.FUNCTION | Size.ME
 });
 
 /**
- * @tc.name   testSetPreferredOrientationWithResult_invalidwindow
- * @tc.number SUB_BASIC_WMS_SetPreferredOrientationWithResult_InvalidWindow
+ * @tc.name   testSetPreferredOrientationWithResult_invalidwindow_0100
+ * @tc.number SUB_BASIC_WMS_SetPreferredOrientationWithResult_InvalidWindow_0100
  * @tc.desc   testSetPreferredOrientationWithResult with invalid window, expect error code 1300002
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-it('testSetPreferredOrientationWithResult_invalidwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-  let caseName: string = 'testSetPreferredOrientationWithResult_invalidwindow';
+it('testSetPreferredOrientationWithResult_invalidwindow_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+  let caseName: string = 'testSetPreferredOrientationWithResult_invalidwindow_0100';
   let msgStr: string = 'jsUnittest ' + caseName + ' ';
   console.log(msgStr + 'begin');
 
@@ -2212,6 +2223,48 @@ it('testSetPreferredOrientationWithResult_invalidwindow', TestType.FUNCTION | Si
     expect(err.code).assertEqual(1300002);
     done();
   }
+});
+
+/**
+ * @tc.name   testSetPreferredOrientationWithResult_Dialog_0100
+ * @tc.number SUB_BASIC_WMS_SetPreferredOrientationWithResult_Dialog_0100
+ * @tc.desc   Create a dialog window and call setPreferredOrientationWithResult, expect result == 1
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+it('testSetPreferredOrientationWithResult_Dialog_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+  let caseName: string = 'testSetPreferredOrientationWithResult_Dialog_0100';
+  let msgStr: string = 'jsUnittest ' + caseName + ' ';
+  console.log(msgStr + 'begin');
+
+  if (isSupportRotate) {
+    let config: window.Configuration = {
+      name: "testSetPreferredOrientationWithResult_Dialog_0100",
+      windowType: window.WindowType.TYPE_DIALOG,
+      ctx: context
+    };
+
+    try {
+      const subWindowClass: window.Window = await window.createWindow(config);
+      console.info(`${caseName} Succeeded in creating the dialog window.`);
+
+      let result = await subWindowClass.setPreferredOrientationWithResult(window.Orientation.USER_ROTATION_PORTRAIT_INVERTED);
+      console.info(`${caseName} Succeeded in setting orientation. Result:${JSON.stringify(result)}`);
+
+      expect(result.executionResult).assertEqual(1);
+
+      await subWindowClass.destroyWindow();
+      console.info(`${caseName} Succeeded in destroying the dialog window.`);
+    } catch (err) {
+      console.error(`${caseName} Failed to create or destroy window. Cause code:${err.code}, message: ${err.message}`);
+      expect().assertFail();
+    }
+  } else {
+    console.info(`${caseName} Device does not support rotation, skip test.`);
+  }
+
+  done();
 });
 
 
