@@ -1,4 +1,4 @@
-﻿'use static'
+'use static'
 import { BusinessError } from '@kit.BasicServicesKit';
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
@@ -99,7 +99,7 @@ export default function HashSet08Test(): void {
     })
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_0100
+     * @tc.number     SUB_HASHSET_TESTEIGHT_0100
      * @tc.name      testHashSet08Chapter0001
      * @tc.desc      Verify [Symbol.iterator] returns iterator for HashSet with string containing emoji
      * @tc.size      MediumTest
@@ -121,7 +121,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_0200
+     * @tc.number     SUB_HASHSET_TESTEIGHT_0200
      * @tc.name      testHashSet08Chapter0002
      * @tc.desc      Verify [Symbol.iterator] returns iterator for HashSet with number boundary values
      * @tc.size      MediumTest
@@ -152,7 +152,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_0300
+     * @tc.number     SUB_HASHSET_TESTEIGHT_0300
      * @tc.name      testHashSet08Chapter0003
      * @tc.desc      Verify [Symbol.iterator] returns iterator for HashSet with special number values
      * @tc.size      MediumTest
@@ -176,7 +176,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_0400
+     * @tc.number     SUB_HASHSET_TESTEIGHT_0400
      * @tc.name      testHashSet08Chapter0004
      * @tc.desc      Verify [Symbol.iterator] returns iterator for HashSet with boolean values
      * @tc.size      MediumTest
@@ -198,7 +198,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_0500
+     * @tc.number     SUB_HASHSET_TESTEIGHT_0500
      * @tc.name      testHashSet08Chapter0005
      * @tc.desc      Verify [Symbol.iterator] returns iterator for HashSet with array values
      * @tc.size      MediumTest
@@ -224,7 +224,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_0600
+     * @tc.number     SUB_HASHSET_TESTEIGHT_0600
      * @tc.name      testHashSet08Chapter0006
      * @tc.desc      Verify [Symbol.iterator] returns iterator for HashSet with object values
      * @tc.size      MediumTest
@@ -260,7 +260,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_0700
+     * @tc.number     SUB_HASHSET_TESTEIGHT_0700
      * @tc.name      testHashSet08Chapter0007
      * @tc.desc      Verify [Symbol.iterator] returns iterator for HashSet with Map values
      * @tc.size      MediumTest
@@ -284,7 +284,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_0800
+     * @tc.number     SUB_HASHSET_TESTEIGHT_0800
      * @tc.name      testHashSet08Chapter0008
      * @tc.desc      Verify [Symbol.iterator] returns iterator for HashSet with Set values
      * @tc.size      MediumTest
@@ -306,7 +306,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_0900
+     * @tc.number     SUB_HASHSET_TESTEIGHT_0900
      * @tc.name      testHashSet08Chapter0009
      * @tc.desc      Verify [Symbol.iterator] returns iterator for HashSet with Promise values
      * @tc.size      MediumTest
@@ -332,7 +332,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_1000
+     * @tc.number     SUB_HASHSET_TESTEIGHT_1000
      * @tc.name      testHashSet08Chapter0010
      * @tc.desc      Verify [Symbol.iterator] returns iterator for HashSet with RegExp values
      * @tc.size      MediumTest
@@ -356,7 +356,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_1100
+     * @tc.number     SUB_HASHSET_TESTEIGHT_1100
      * @tc.name      testHashSet08Chapter0011
      * @tc.desc      Verify [Symbol.iterator] returns iterator for large HashSet
      * @tc.size      MediumTest
@@ -379,7 +379,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_1200
+     * @tc.number     SUB_HASHSET_TESTEIGHT_1200
      * @tc.name      testHashSet08Chapter0012
      * @tc.desc      Verify [Symbol.iterator] returns iterator for HashSet with mixed types
      * @tc.size      MediumTest
@@ -406,7 +406,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_1300
+     * @tc.number     SUB_HASHSET_TESTEIGHT_1300
      * @tc.name      testHashSet08Chapter0013
      * @tc.desc      Verify [Symbol.iterator] iterator next method returns correct value and done
      * @tc.size      MediumTest
@@ -436,7 +436,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_1400
+     * @tc.number     SUB_HASHSET_TESTEIGHT_1400
      * @tc.name      testHashSet08Chapter0014
      * @tc.desc      Verify [Symbol.iterator] cannot be bound
      * @tc.size      MediumTest
@@ -459,7 +459,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_1500
+     * @tc.number     SUB_HASHSET_TESTEIGHT_1500
      * @tc.name      testHashSet08Chapter0015
      * @tc.desc      Verify [Symbol.iterator] iteration order matches insertion order
      * @tc.size      MediumTest
@@ -485,7 +485,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_1600
+     * @tc.number     SUB_HASHSET_TESTEIGHT_1600
      * @tc.name      testHashSet08Chapter0016
      * @tc.desc      Verify [Symbol.iterator] works after clearing HashSet
      * @tc.size      MediumTest
@@ -506,7 +506,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_1700
+     * @tc.number     SUB_HASHSET_TESTEIGHT_1700
      * @tc.name      testHashSet08Chapter0017
      * @tc.desc      Verify [Symbol.iterator] returns independent iterators
      * @tc.size      MediumTest
@@ -531,7 +531,7 @@ export default function HashSet08Test(): void {
       expect(item3.value === item4.value).assertFalse();
     });
     /**
-     * @tc.number     SUB_HASHSET_TEST08_1800
+     * @tc.number     SUB_HASHSET_TESTEIGHT_1800
      * @tc.name      testHashSet08Chapter0018
      * @tc.desc      Verify [Symbol.iterator] returns iterator for HashSet with string containing special characters twice
      * @tc.size      MediumTest
@@ -553,7 +553,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_1900
+     * @tc.number     SUB_HASHSET_TESTEIGHT_1900
      * @tc.name      testHashSet08Chapter0019
      * @tc.desc      Verify [Symbol.iterator] returns iterator for HashSet with keyword strings
      * @tc.size      MediumTest
@@ -576,7 +576,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_2000
+     * @tc.number     SUB_HASHSET_TESTEIGHT_2000
      * @tc.name      testHashSet08Chapter0020
      * @tc.desc      Verify [Symbol.iterator] returns iterator for HashSet with scientific notation numbers
      * @tc.size      MediumTest
@@ -599,7 +599,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_2100
+     * @tc.number     SUB_HASHSET_TESTEIGHT_2100
      * @tc.name      testHashSet08Chapter0021
      * @tc.desc      Verify [Symbol.iterator] returns iterator for HashSet with numbers in different bases
      * @tc.size      MediumTest
@@ -622,7 +622,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_2200
+     * @tc.number     SUB_HASHSET_TESTEIGHT_2200
      * @tc.name      testHashSet08Chapter0022
      * @tc.desc      Verify [Symbol.iterator] returns iterator for HashSet with bigint values
      * @tc.size      MediumTest
@@ -644,7 +644,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_2300
+     * @tc.number     SUB_HASHSET_TESTEIGHT_2300
      * @tc.name      testHashSet08Chapter0023
      * @tc.desc      Verify [Symbol.iterator] returns iterator for HashSet with Float32Array containing special values
      * @tc.size      MediumTest
@@ -670,7 +670,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_2400
+     * @tc.number     SUB_HASHSET_TESTEIGHT_2400
      * @tc.name      testHashSet08Chapter0024
      * @tc.desc      Verify [Symbol.iterator] returns iterator for HashSet with Int8Array containing special values
      * @tc.size      MediumTest
@@ -699,7 +699,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_2500
+     * @tc.number     SUB_HASHSET_TESTEIGHT_2500
      * @tc.name      testHashSet08Chapter0025
      * @tc.desc      Verify [Symbol.iterator] returns iterator for HashSet with Uint8ClampedArray containing special values
      * @tc.size      MediumTest
@@ -728,7 +728,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_2600
+     * @tc.number     SUB_HASHSET_TESTEIGHT_2600
      * @tc.name      testHashSet08Chapter0026
      * @tc.desc      Verify [Symbol.iterator] returns iterator for HashSet with array containing NaN/Infinity values
      * @tc.size      MediumTest
@@ -752,7 +752,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_2700
+     * @tc.number     SUB_HASHSET_TESTEIGHT_2700
      * @tc.name      testHashSet08Chapter0027
      * @tc.desc      Verify [Symbol.iterator] returns iterator for HashSet with array containing non-numeric values
      * @tc.size      MediumTest
@@ -777,7 +777,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_2800
+     * @tc.number     SUB_HASHSET_TESTEIGHT_2800
      * @tc.name      testHashSet08Chapter0028
      * @tc.desc      Verify [Symbol.iterator] returns iterator for HashSet with empty array
      * @tc.size      MediumTest
@@ -800,7 +800,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_2900
+     * @tc.number     SUB_HASHSET_TESTEIGHT_2900
      * @tc.name      testHashSet08Chapter0029
      * @tc.desc      Verify [Symbol.iterator] returns iterator for HashSet with object containing undefined properties
      * @tc.size      MediumTest
@@ -825,7 +825,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_3000
+     * @tc.number     SUB_HASHSET_TESTEIGHT_3000
      * @tc.name      testHashSet08Chapter0030
      * @tc.desc      Verify [Symbol.iterator] returns iterator for HashSet with object containing null properties
      * @tc.size      MediumTest
@@ -850,7 +850,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_3100
+     * @tc.number     SUB_HASHSET_TESTEIGHT_3100
      * @tc.name      testHashSet08Chapter0031
      * @tc.desc      Verify [Symbol.iterator] returns iterator for HashSet with object containing NaN properties
      * @tc.size      MediumTest
@@ -875,7 +875,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_3200
+     * @tc.number     SUB_HASHSET_TESTEIGHT_3200
      * @tc.name      testHashSet08Chapter0032
      * @tc.desc      Verify [Symbol.iterator] returns iterator for HashSet with object containing Infinity properties
      * @tc.size      MediumTest
@@ -899,7 +899,7 @@ export default function HashSet08Test(): void {
       expect(found).assertTrue();
     });
     /**
-     * @tc.number     SUB_HASHSET_TEST08_3300
+     * @tc.number     SUB_HASHSET_TESTEIGHT_3300
      * @tc.name      testHashSet08Chapter0033
      * @tc.desc      Verify [Symbol.iterator] works correctly with for-of loop on empty HashSet
      * @tc.size      MediumTest
@@ -919,7 +919,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_3400
+     * @tc.number     SUB_HASHSET_TESTEIGHT_3400
      * @tc.name      testHashSet08Chapter0034
      * @tc.desc      Verify [Symbol.iterator] works correctly with for-of loop on HashSet with data
      * @tc.size      MediumTest
@@ -947,7 +947,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_3500
+     * @tc.number     SUB_HASHSET_TESTEIGHT_3500
      * @tc.name      testHashSet08Chapter0035
      * @tc.desc      Verify multiple iterators work independently on the same HashSet
      * @tc.size      MediumTest
@@ -982,7 +982,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_3600
+     * @tc.number     SUB_HASHSET_TESTEIGHT_3600
      * @tc.name      testHashSet08Chapter0036
      * @tc.desc      Verify iterator returns correct done and value after completion
      * @tc.size      MediumTest
@@ -1014,7 +1014,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_3700
+     * @tc.number     SUB_HASHSET_TESTEIGHT_3700
      * @tc.name      testHashSet08Chapter0037
      * @tc.desc      Verify [Symbol.iterator] works with HashSet containing null and undefined values
      * @tc.size      MediumTest
@@ -1050,7 +1050,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_3800
+     * @tc.number     SUB_HASHSET_TESTEIGHT_3800
      * @tc.name      testHashSet08Chapter0038
      * @tc.desc      Verify [Symbol.iterator] works correctly with custom class objects
      * @tc.size      MediumTest
@@ -1082,7 +1082,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_3900
+     * @tc.number     SUB_HASHSET_TESTEIGHT_3900
      * @tc.name      testHashSet08Chapter0039
      * @tc.desc      Verify [Symbol.iterator] iterator can be used multiple times
      * @tc.size      MediumTest
@@ -1121,7 +1121,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_4000
+     * @tc.number     SUB_HASHSET_TESTEIGHT_4000
      * @tc.name      testHashSet08Chapter0040
      * @tc.desc      Verify [Symbol.iterator] works after removing elements
      * @tc.size      MediumTest
@@ -1154,7 +1154,7 @@ export default function HashSet08Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST08_4100
+     * @tc.number     SUB_HASHSET_TESTEIGHT_4100
      * @tc.name      testHashSet08Chapter0041
      * @tc.desc      Verify [Symbol.iterator] iterator is independent of HashSet modifications after creation
      * @tc.size      MediumTest

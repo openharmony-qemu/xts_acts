@@ -1,4 +1,4 @@
-﻿'use static'
+'use static'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
 import { HashSet } from '@kit.ArkTS';
 
@@ -160,7 +160,7 @@ export default function HashSet04Test(): void {
     })
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_0100
+     * @tc.number     SUB_HASHSET_TESTFOUR_0100
      * @tc.name      testHashSet04Chapter0001
      * @tc.desc      Test add method with number type char range boundary values
      * @tc.size      MediumTest
@@ -190,7 +190,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_0200
+     * @tc.number     SUB_HASHSET_TESTFOUR_0200
      * @tc.name      testHashSet04Chapter0002
      * @tc.desc      Test add method with boolean false equivalent values
      * @tc.size      MediumTest
@@ -229,7 +229,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_0300
+     * @tc.number     SUB_HASHSET_TESTFOUR_0300
      * @tc.name      testHashSet04Chapter0003
      * @tc.desc      Test add method with array containing empty slots using undefined
      * @tc.size      MediumTest
@@ -259,7 +259,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_0400
+     * @tc.number     SUB_HASHSET_TESTFOUR_0400
      * @tc.name      testHashSet04Chapter0004
      * @tc.desc      Test add method with object containing mixed string and number keys
      * @tc.size      MediumTest
@@ -302,7 +302,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_0500
+     * @tc.number     SUB_HASHSET_TESTFOUR_0500
      * @tc.name      testHashSet04Chapter0005
      * @tc.desc      Test add method with object containing TypedArray property
      * @tc.size      MediumTest
@@ -339,7 +339,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_0600
+     * @tc.number     SUB_HASHSET_TESTFOUR_0600
      * @tc.name      testHashSet04Chapter0006
      * @tc.desc      Test add method with ASCII full character string
      * @tc.size      MediumTest
@@ -369,7 +369,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_0700
+     * @tc.number     SUB_HASHSET_TESTFOUR_0700
      * @tc.name      testHashSet04Chapter0007
      * @tc.desc      Test add method with invalid Unicode strings
      * @tc.size      MediumTest
@@ -402,7 +402,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_0800
+     * @tc.number     SUB_HASHSET_TESTFOUR_0800
      * @tc.name      testHashSet04Chapter0008
      * @tc.desc      Test add method with string keywords
      * @tc.size      MediumTest
@@ -438,7 +438,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_0900
+     * @tc.number     SUB_HASHSET_TESTFOUR_0900
      * @tc.name      testHashSet04Chapter0009
      * @tc.desc      Test add method with Float32Array extreme boundary values
      * @tc.size      MediumTest
@@ -475,7 +475,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_1000
+     * @tc.number     SUB_HASHSET_TESTFOUR_1000
      * @tc.name      testHashSet04Chapter0010
      * @tc.desc      Test add method with Float64Array extreme boundary values
      * @tc.size      MediumTest
@@ -512,7 +512,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_1100
+     * @tc.number     SUB_HASHSET_TESTFOUR_1100
      * @tc.name      testHashSet04Chapter0011
      * @tc.desc      Test add method with exponential operator and scientific notation numbers
      * @tc.size      MediumTest
@@ -545,7 +545,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_1200
+     * @tc.number     SUB_HASHSET_TESTFOUR_1200
      * @tc.name      testHashSet04Chapter0012
      * @tc.desc      Test add method with object containing different numeric representations
      * @tc.size      MediumTest
@@ -586,7 +586,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_1300
+     * @tc.number     SUB_HASHSET_TESTFOUR_1300
      * @tc.name      testHashSet04Chapter0013
      * @tc.desc      Test add method with object containing Map and Set properties
      * @tc.size      MediumTest
@@ -639,7 +639,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_1400
+     * @tc.number     SUB_HASHSET_TESTFOUR_1400
      * @tc.name      testHashSet04Chapter0014
      * @tc.desc      Test add method with complex object containing all special value types
      * @tc.size      MediumTest
@@ -686,7 +686,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_1500
+     * @tc.number     SUB_HASHSET_TESTFOUR_1500
      * @tc.name      testHashSet04Chapter0015
      * @tc.desc      Test add method with empty and single element arrays
      * @tc.size      MediumTest
@@ -723,7 +723,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_1600
+     * @tc.number     SUB_HASHSET_TESTFOUR_1600
      * @tc.name      testHashSet04Chapter0016
      * @tc.desc      Test add method with number type extreme boundary values
      * @tc.size      MediumTest
@@ -759,7 +759,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_1700
+     * @tc.number     SUB_HASHSET_TESTFOUR_1700
      * @tc.name      testHashSet04Chapter0017
      * @tc.desc      Test add method with BigInt values
      * @tc.size      MediumTest
@@ -795,7 +795,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_1800
+     * @tc.number     SUB_HASHSET_TESTFOUR_1800
      * @tc.name      testHashSet04Chapter0018
      * @tc.desc      Test add method with reverse test for maximum coverage
      * @tc.size      MediumTest
@@ -847,7 +847,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_1900
+     * @tc.number     SUB_HASHSET_TESTFOUR_1900
      * @tc.name      testHashSet04Chapter0019
      * @tc.desc      Test remove method with Int8Array boundary values
      * @tc.size      MediumTest
@@ -870,7 +870,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_2000
+     * @tc.number     SUB_HASHSET_TESTFOUR_2000
      * @tc.name      testHashSet04Chapter0020
      * @tc.desc      Test remove method with Uint8Array boundary values
      * @tc.size      MediumTest
@@ -893,7 +893,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_2100
+     * @tc.number     SUB_HASHSET_TESTFOUR_2100
      * @tc.name      testHashSet04Chapter0021
      * @tc.desc      Test remove method with Float32Array special values
      * @tc.size      MediumTest
@@ -920,7 +920,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_2200
+     * @tc.number     SUB_HASHSET_TESTFOUR_2200
      * @tc.name      testHashSet04Chapter0022
      * @tc.desc      Test remove method with string special characters
      * @tc.size      MediumTest
@@ -939,7 +939,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_2300
+     * @tc.number     SUB_HASHSET_TESTFOUR_2300
      * @tc.name      testHashSet04Chapter0023
      * @tc.desc      Test remove method with string escape characters
      * @tc.size      MediumTest
@@ -958,7 +958,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_2400
+     * @tc.number     SUB_HASHSET_TESTFOUR_2400
      * @tc.name      testHashSet04Chapter0024
      * @tc.desc      Test remove method with emoji strings
      * @tc.size      MediumTest
@@ -981,7 +981,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_2500
+     * @tc.number     SUB_HASHSET_TESTFOUR_2500
      * @tc.name      testHashSet04Chapter0025
      * @tc.desc      Test remove method with number special values
      * @tc.size      MediumTest
@@ -1014,7 +1014,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_2600
+     * @tc.number     SUB_HASHSET_TESTFOUR_2600
      * @tc.name      testHashSet04Chapter0026
      * @tc.desc      Test remove method with bigint values
      * @tc.size      MediumTest
@@ -1045,7 +1045,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_2700
+     * @tc.number     SUB_HASHSET_TESTFOUR_2700
      * @tc.name      testHashSet04Chapter0027
      * @tc.desc      Test remove method with boolean values
      * @tc.size      MediumTest
@@ -1066,7 +1066,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_2800
+     * @tc.number     SUB_HASHSET_TESTFOUR_2800
      * @tc.name      testHashSet04Chapter0028
      * @tc.desc      Test remove method with array containing special values
      * @tc.size      MediumTest
@@ -1092,7 +1092,7 @@ export default function HashSet04Test(): void {
       expect(hashSet.length).assertEqual(0);
     });
     /**
-     * @tc.number     SUB_HASHSET_TEST04_2900
+     * @tc.number     SUB_HASHSET_TESTFOUR_2900
      * @tc.name      testHashSet04Chapter0029
      * @tc.desc      Test remove method with nested objects
      * @tc.size      MediumTest
@@ -1121,7 +1121,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_3000
+     * @tc.number     SUB_HASHSET_TESTFOUR_3000
      * @tc.name      testHashSet04Chapter0030
      * @tc.desc      Test remove method with objects containing TypedArray
      * @tc.size      MediumTest
@@ -1146,7 +1146,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_3100
+     * @tc.number     SUB_HASHSET_TESTFOUR_3100
      * @tc.name      testHashSet04Chapter0031
      * @tc.desc      Test remove method with Map and Set objects
      * @tc.size      MediumTest
@@ -1177,7 +1177,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_3200
+     * @tc.number     SUB_HASHSET_TESTFOUR_3200
      * @tc.name      testHashSet04Chapter0032
      * @tc.desc      Test remove method with Promise and RegExp objects
      * @tc.size      MediumTest
@@ -1206,7 +1206,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_3300
+     * @tc.number     SUB_HASHSET_TESTFOUR_3300
      * @tc.name      testHashSet04Chapter0033
      * @tc.desc      Test remove method with non-existent elements
      * @tc.size      MediumTest
@@ -1225,7 +1225,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_3400
+     * @tc.number     SUB_HASHSET_TESTFOUR_3400
      * @tc.name      testHashSet04Chapter0034
      * @tc.desc      Test remove method with null value (negative case)
      * @tc.size      MediumTest
@@ -1248,7 +1248,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_3500
+     * @tc.number     SUB_HASHSET_TESTFOUR_3500
      * @tc.name      testHashSet04Chapter0035
      * @tc.desc      Test remove method with undefined value (negative case)
      * @tc.size      MediumTest
@@ -1276,7 +1276,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_3600
+     * @tc.number     SUB_HASHSET_TESTFOUR_3600
      * @tc.name      testHashSet04Chapter0036
      * @tc.desc      Test remove method with empty string
      * @tc.size      MediumTest
@@ -1294,7 +1294,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_3700
+     * @tc.number     SUB_HASHSET_TESTFOUR_3700
      * @tc.name      testHashSet04Chapter0037
      * @tc.desc      Test remove method with number overflow values
      * @tc.size      MediumTest
@@ -1317,7 +1317,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_3800
+     * @tc.number     SUB_HASHSET_TESTFOUR_3800
      * @tc.name      testHashSet04Chapter0038
      * @tc.desc      Test remove method with array containing mixed types
      * @tc.size      MediumTest
@@ -1338,7 +1338,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_3900
+     * @tc.number     SUB_HASHSET_TESTFOUR_3900
      * @tc.name      testHashSet04Chapter0039
      * @tc.desc      Test remove method with object containing undefined and null properties
      * @tc.size      MediumTest
@@ -1364,7 +1364,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_4000
+     * @tc.number     SUB_HASHSET_TESTFOUR_4000
      * @tc.name      testHashSet04Chapter0040
      * @tc.desc      Test remove method with large string
      * @tc.size      MediumTest
@@ -1382,7 +1382,7 @@ export default function HashSet04Test(): void {
       expect(hashSet.length).assertEqual(0);
     });
     /**
-     * @tc.number     SUB_HASHSET_TEST04_4100
+     * @tc.number     SUB_HASHSET_TESTFOUR_4100
      * @tc.name      testHashSet04Chapter0041
      * @tc.desc      Test remove method with Int16Array boundary values
      * @tc.size      MediumTest
@@ -1405,7 +1405,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_4200
+     * @tc.number     SUB_HASHSET_TESTFOUR_4200
      * @tc.name      testHashSet04Chapter0042
      * @tc.desc      Test remove method with Uint16Array boundary values
      * @tc.size      MediumTest
@@ -1428,7 +1428,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_4300
+     * @tc.number     SUB_HASHSET_TESTFOUR_4300
      * @tc.name      testHashSet04Chapter0043
      * @tc.desc      Test remove method with Int32Array boundary values
      * @tc.size      MediumTest
@@ -1451,7 +1451,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_4400
+     * @tc.number     SUB_HASHSET_TESTFOUR_4400
      * @tc.name      testHashSet04Chapter0044
      * @tc.desc      Test remove method with Uint32Array boundary values
      * @tc.size      MediumTest
@@ -1474,7 +1474,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_4500
+     * @tc.number     SUB_HASHSET_TESTFOUR_4500
      * @tc.name      testHashSet04Chapter0045
      * @tc.desc      Test remove method with Float64Array special values
      * @tc.size      MediumTest
@@ -1497,7 +1497,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_4600
+     * @tc.number     SUB_HASHSET_TESTFOUR_4600
      * @tc.name      testHashSet04Chapter0046
      * @tc.desc      Test remove method with BigInt64Array boundary values
      * @tc.size      MediumTest
@@ -1520,7 +1520,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_4700
+     * @tc.number     SUB_HASHSET_TESTFOUR_4700
      * @tc.name      testHashSet04Chapter0047
      * @tc.desc      Test remove method with BigUint64Array boundary values
      * @tc.size      MediumTest
@@ -1543,7 +1543,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_4800
+     * @tc.number     SUB_HASHSET_TESTFOUR_4800
      * @tc.name      testHashSet04Chapter0048
      * @tc.desc      Test remove method with Uint8ClampedArray special handling
      * @tc.size      MediumTest
@@ -1570,7 +1570,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_4900
+     * @tc.number     SUB_HASHSET_TESTFOUR_4900
      * @tc.name      testHashSet04Chapter0049
      * @tc.desc      Test remove method with string containing ASCII characters
      * @tc.size      MediumTest
@@ -1590,7 +1590,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_5000
+     * @tc.number     SUB_HASHSET_TESTFOUR_5000
      * @tc.name      testHashSet04Chapter0050
      * @tc.desc      Test remove method with string containing repeated special characters
      * @tc.size      MediumTest
@@ -1609,7 +1609,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_5100
+     * @tc.number     SUB_HASHSET_TESTFOUR_5100
      * @tc.name      testHashSet04Chapter0051
      * @tc.desc      Test remove method with string containing illegal unicode encoding
      * @tc.size      MediumTest
@@ -1628,7 +1628,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_5200
+     * @tc.number     SUB_HASHSET_TESTFOUR_5200
      * @tc.name      testHashSet04Chapter0052
      * @tc.desc      Test remove method with string keywords
      * @tc.size      MediumTest
@@ -1655,7 +1655,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_5300
+     * @tc.number     SUB_HASHSET_TESTFOUR_5300
      * @tc.name      testHashSet04Chapter0053
      * @tc.desc      Test remove method with number double type values
      * @tc.size      MediumTest
@@ -1678,7 +1678,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_5400
+     * @tc.number     SUB_HASHSET_TESTFOUR_5400
      * @tc.name      testHashSet04Chapter0054
      * @tc.desc      Test remove method with number scientific notation and exponent operator
      * @tc.size      MediumTest
@@ -1705,7 +1705,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_5500
+     * @tc.number     SUB_HASHSET_TESTFOUR_5500
      * @tc.name      testHashSet04Chapter0055
      * @tc.desc      Test remove method with number different radix values
      * @tc.size      MediumTest
@@ -1728,7 +1728,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_5600
+     * @tc.number     SUB_HASHSET_TESTFOUR_5600
      * @tc.name      testHashSet04Chapter0056
      * @tc.desc      Test remove method with array containing multiple zeros
      * @tc.size      MediumTest
@@ -1747,7 +1747,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_5700
+     * @tc.number     SUB_HASHSET_TESTFOUR_5700
      * @tc.name      testHashSet04Chapter0057
      * @tc.desc      Test remove method with array containing negative numbers
      * @tc.size      MediumTest
@@ -1766,7 +1766,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_5800
+     * @tc.number     SUB_HASHSET_TESTFOUR_5800
      * @tc.name      testHashSet04Chapter0058
      * @tc.desc      Test remove method with array containing NaN and Infinity
      * @tc.size      MediumTest
@@ -1785,7 +1785,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_5900
+     * @tc.number     SUB_HASHSET_TESTFOUR_5900
      * @tc.name      testHashSet04Chapter0059
      * @tc.desc      Test remove method with empty array
      * @tc.size      MediumTest
@@ -1804,7 +1804,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_6000
+     * @tc.number     SUB_HASHSET_TESTFOUR_6000
      * @tc.name      testHashSet04Chapter0060
      * @tc.desc      Test remove method with array containing overflow values
      * @tc.size      MediumTest
@@ -1823,7 +1823,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_6100
+     * @tc.number     SUB_HASHSET_TESTFOUR_6100
      * @tc.name      testHashSet04Chapter0061
      * @tc.desc      Test remove method with object containing function property
      * @tc.size      MediumTest
@@ -1849,7 +1849,7 @@ export default function HashSet04Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST04_6200
+     * @tc.number     SUB_HASHSET_TESTFOUR_6200
      * @tc.name      testHashSet04Chapter0062
      * @tc.desc      Test remove method with object containing inherited properties
      * @tc.size      MediumTest
@@ -1874,7 +1874,7 @@ export default function HashSet04Test(): void {
       expect(hashSet.length).assertEqual(0);
     });
     /**
-     * @tc.number     SUB_HASHSET_TEST04_6300
+     * @tc.number     SUB_HASHSET_TESTFOUR_6300
      * @tc.name      testHashSet04Chapter0063
      * @tc.desc      Test remove method with object containing ArrayBuffer
      * @tc.size      MediumTest

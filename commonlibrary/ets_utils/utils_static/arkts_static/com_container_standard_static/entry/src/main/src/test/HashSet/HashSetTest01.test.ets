@@ -268,7 +268,7 @@ export default function HashSet01Test() {
     })
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_0100
+     * @tc.number     SUB_HASHSET_TESTONE_0100
      * @tc.name      testHashSet01Chapter0001
      * @tc.desc      Create HashSet instance with default constructor
      * @tc.size      MediumTest
@@ -285,7 +285,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_0200
+     * @tc.number     SUB_HASHSET_TESTONE_0200
      * @tc.name      testHashSet01Chapter0002
      * @tc.desc      Verify HashSet can be created with number type
      * @tc.size      MediumTest
@@ -308,7 +308,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_0300
+     * @tc.number     SUB_HASHSET_TESTONE_0300
      * @tc.name      testHashSet01Chapter0003
      * @tc.desc      Verify HashSet can be created with string type
      * @tc.size      MediumTest
@@ -329,7 +329,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_0400
+     * @tc.number     SUB_HASHSET_TESTONE_0400
      * @tc.name      testHashSet01Chapter0004
      * @tc.desc      Verify HashSet can be created with boolean type
      * @tc.size      MediumTest
@@ -348,7 +348,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_0500
+     * @tc.number     SUB_HASHSET_TESTONE_0500
      * @tc.name      testHashSet01Chapter0005
      * @tc.desc      Verify HashSet can be created with object type
      * @tc.size      MediumTest
@@ -370,7 +370,7 @@ export default function HashSet01Test() {
       expect(hashSet.has(obj2)).assertTrue();
     });
     /**
-     * @tc.number    SUB_HASHSET_TEST01_0600
+     * @tc.number     SUB_HASHSET_TESTONE_0600
      * @tc.name      testHashSet01Chapter0006
      * @tc.desc      Verify HashSet can be created with array type
      * @tc.size      MediumTest
@@ -391,7 +391,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_0700
+     * @tc.number     SUB_HASHSET_TESTONE_0700
      * @tc.name      testHashSet01Chapter0007
      * @tc.desc      Verify HashSet can handle special number values
      * @tc.size      MediumTest
@@ -412,7 +412,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_0800
+     * @tc.number     SUB_HASHSET_TESTONE_0800
      * @tc.name      testHashSet01Chapter0008
      * @tc.desc      Verify HashSet can handle bigint type
      * @tc.size      MediumTest
@@ -432,7 +432,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_0900
+     * @tc.number     SUB_HASHSET_TESTONE_0900
      * @tc.name      testHashSet01Chapter0009
      * @tc.desc      Verify HashSet can handle nested object structure
      * @tc.size      MediumTest
@@ -461,7 +461,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_1000
+     * @tc.number     SUB_HASHSET_TESTONE_1000
      * @tc.name      testHashSet01Chapter0010
      * @tc.desc      Verify HashSet can handle typed array as value
      * @tc.size      MediumTest
@@ -482,7 +482,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_1100
+     * @tc.number     SUB_HASHSET_TESTONE_1100
      * @tc.name      testHashSet01Chapter0011
      * @tc.desc      Test HashSet with Map as value type
      * @tc.size      MediumTest
@@ -507,7 +507,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_1200
+     * @tc.number     SUB_HASHSET_TESTONE_1200
      * @tc.name      testHashSet01Chapter0012
      * @tc.desc      Test HashSet with Set as value type
      * @tc.size      MediumTest
@@ -528,7 +528,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_1300
+     * @tc.number     SUB_HASHSET_TESTONE_1300
      * @tc.name      testHashSet01Chapter0013
      * @tc.desc      Test HashSet with function as value type
      * @tc.size      MediumTest
@@ -549,7 +549,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_1400
+     * @tc.number     SUB_HASHSET_TESTONE_1400
      * @tc.name      testHashSet01Chapter0014
      * @tc.desc      Test HashSet with RegExp as value type
      * @tc.size      MediumTest
@@ -570,7 +570,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_1500
+     * @tc.number     SUB_HASHSET_TESTONE_1500
      * @tc.name      testHashSet01Chapter0015
      * @tc.desc      Test HashSet with null and undefined values
      * @tc.size      MediumTest
@@ -591,7 +591,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_1600
+     * @tc.number     SUB_HASHSET_TESTONE_1600
      * @tc.name      testHashSet01Chapter0016
      * @tc.desc      Test HashSet with Promise as value type
      * @tc.size      MediumTest
@@ -612,7 +612,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_1700
+     * @tc.number     SUB_HASHSET_TESTONE_1700
      * @tc.name      testHashSet01Chapter0017
      * @tc.desc      Test HashSet with DataView as value type
      * @tc.size      MediumTest
@@ -640,7 +640,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_1800
+     * @tc.number     SUB_HASHSET_TESTONE_1800
      * @tc.name      testHashSet01Chapter0018
      * @tc.desc      Test HashSet with Date as value type
      * @tc.size      MediumTest
@@ -661,7 +661,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_1900
+     * @tc.number     SUB_HASHSET_TESTONE_1900
      * @tc.name      testHashSet01Chapter0019
      * @tc.desc      Test HashSet with ArrayBuffer as value type
      * @tc.size      MediumTest
@@ -682,7 +682,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_2000
+     * @tc.number     SUB_HASHSET_TESTONE_2000
      * @tc.name      testHashSet01Chapter0020
      * @tc.desc      Test isEmpty method on empty HashSet
      * @tc.size      MediumTest
@@ -698,7 +698,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_2100
+     * @tc.number     SUB_HASHSET_TESTONE_2100
      * @tc.name      testHashSet01Chapter0021
      * @tc.desc      Test isEmpty method on HashSet with Int8Array value
      * @tc.size      MediumTest
@@ -716,7 +716,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_2200
+     * @tc.number     SUB_HASHSET_TESTONE_2200
      * @tc.name      testHashSet01Chapter0022
      * @tc.desc      Test isEmpty method on HashSet with Float32Array containing Infinity
      * @tc.size      MediumTest
@@ -734,7 +734,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_2300
+     * @tc.number     SUB_HASHSET_TESTONE_2300
      * @tc.name      testHashSet01Chapter0023
      * @tc.desc      Test isEmpty method on HashSet with special strings
      * @tc.size      MediumTest
@@ -755,7 +755,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_2400
+     * @tc.number     SUB_HASHSET_TESTONE_2400
      * @tc.name      testHashSet01Chapter0024
      * @tc.desc      Test isEmpty method on HashSet with escape characters
      * @tc.size      MediumTest
@@ -775,7 +775,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_2500
+     * @tc.number     SUB_HASHSET_TESTONE_2500
      * @tc.name      testHashSet01Chapter0025
      * @tc.desc      Test isEmpty method on HashSet with emoji strings
      * @tc.size      MediumTest
@@ -793,7 +793,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_2600
+     * @tc.number     SUB_HASHSET_TESTONE_2600
      * @tc.name      testHashSet01Chapter0026
      * @tc.desc      Test isEmpty method on HashSet with boundary numbers
      * @tc.size      MediumTest
@@ -817,7 +817,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_2700
+     * @tc.number     SUB_HASHSET_TESTONE_2700
      * @tc.name      testHashSet01Chapter0027
      * @tc.desc      Test isEmpty method on HashSet with bigint values
      * @tc.size      MediumTest
@@ -837,7 +837,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_2800
+     * @tc.number     SUB_HASHSET_TESTONE_2800
      * @tc.name      testHashSet01Chapter0028
      * @tc.desc      Test isEmpty method on HashSet with boolean values
      * @tc.size      MediumTest
@@ -855,7 +855,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_2900
+     * @tc.number     SUB_HASHSET_TESTONE_2900
      * @tc.name      testHashSet01Chapter0029
      * @tc.desc      Test isEmpty method on HashSet with array values
      * @tc.size      MediumTest
@@ -877,7 +877,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_3000
+     * @tc.number     SUB_HASHSET_TESTONE_3000
      * @tc.name      testHashSet01Chapter0030
      * @tc.desc      Test isEmpty method on HashSet with special array values
      * @tc.size      MediumTest
@@ -907,7 +907,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_3100
+     * @tc.number     SUB_HASHSET_TESTONE_3100
      * @tc.name      testHashSet01Chapter0031
      * @tc.desc      Test isEmpty method on HashSet with object values
      * @tc.size      MediumTest
@@ -952,7 +952,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_3200
+     * @tc.number     SUB_HASHSET_TESTONE_3200
      * @tc.name      testHashSet01Chapter0032
      * @tc.desc      Test isEmpty method on HashSet with Map, Set and other collection values
      * @tc.size      MediumTest
@@ -997,7 +997,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_3300
+     * @tc.number     SUB_HASHSET_TESTONE_3300
      * @tc.name      testHashSet01Chapter0033
      * @tc.desc      Test isEmpty method on HashSet with large string values
      * @tc.size      MediumTest
@@ -1031,7 +1031,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_3400
+     * @tc.number     SUB_HASHSET_TESTONE_3400
      * @tc.name      testHashSet01Chapter0034
      * @tc.desc      Test isEmpty method binding error (reverse test)
      * @tc.size      MediumTest
@@ -1053,7 +1053,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_3500
+     * @tc.number     SUB_HASHSET_TESTONE_3500
      * @tc.name      testHashSet01Chapter0035
      * @tc.desc      Test has method with valid string element in HashSet
      * @tc.size      MediumTest
@@ -1072,7 +1072,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_3600
+     * @tc.number     SUB_HASHSET_TESTONE_3600
      * @tc.name      testHashSet01Chapter0036
      * @tc.desc      Test has method with string special characters
      * @tc.size      MediumTest
@@ -1090,7 +1090,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_3700
+     * @tc.number     SUB_HASHSET_TESTONE_3700
      * @tc.name      testHashSet01Chapter0037
      * @tc.desc      Test has method with string null and undefined
      * @tc.size      MediumTest
@@ -1109,7 +1109,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_3800
+     * @tc.number     SUB_HASHSET_TESTONE_3800
      * @tc.name      testHashSet01Chapter0038
      * @tc.desc      Test has method with string escape characters
      * @tc.size      MediumTest
@@ -1127,7 +1127,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_3900
+     * @tc.number     SUB_HASHSET_TESTONE_3900
      * @tc.name      testHashSet01Chapter0039
      * @tc.desc      Test has method with emoji strings
      * @tc.size      MediumTest
@@ -1147,7 +1147,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_4000
+     * @tc.number     SUB_HASHSET_TESTONE_4000
      * @tc.name      testHashSet01Chapter0040
      * @tc.desc      Test has method with number type values
      * @tc.size      MediumTest
@@ -1180,7 +1180,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_4100
+     * @tc.number     SUB_HASHSET_TESTONE_4100
      * @tc.name      testHashSet01Chapter0041
      * @tc.desc      Test has method with different number representations
      * @tc.size      MediumTest
@@ -1209,7 +1209,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_4200
+     * @tc.number     SUB_HASHSET_TESTONE_4200
      * @tc.name      testHashSet01Chapter0042
      * @tc.desc      Test has method with boolean type values
      * @tc.size      MediumTest
@@ -1231,7 +1231,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_4300
+     * @tc.number     SUB_HASHSET_TESTONE_4300
      * @tc.name      testHashSet01Chapter0043
      * @tc.desc      Test has method with array type values
      * @tc.size      MediumTest
@@ -1255,7 +1255,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_4400
+     * @tc.number     SUB_HASHSET_TESTONE_4400
      * @tc.name      testHashSet01Chapter0044
      * @tc.desc      Test has method with special array values
      * @tc.size      MediumTest
@@ -1290,7 +1290,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_4500
+     * @tc.number     SUB_HASHSET_TESTONE_4500
      * @tc.name      testHashSet01Chapter0045
      * @tc.desc      Test has method with object type values
      * @tc.size      MediumTest
@@ -1327,7 +1327,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_4600
+     * @tc.number     SUB_HASHSET_TESTONE_4600
      * @tc.name      testHashSet01Chapter0046
      * @tc.desc      Test has method with TypedArray values
      * @tc.size      MediumTest
@@ -1360,7 +1360,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_4700
+     * @tc.number     SUB_HASHSET_TESTONE_4700
      * @tc.name      testHashSet01Chapter0047
      * @tc.desc      Test has method with Map and Set values
      * @tc.size      MediumTest
@@ -1397,7 +1397,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_4800
+     * @tc.number     SUB_HASHSET_TESTONE_4800
      * @tc.name      testHashSet01Chapter0048
      * @tc.desc      Test has method with treeString type large string
      * @tc.size      MediumTest
@@ -1427,7 +1427,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_4900
+     * @tc.number     SUB_HASHSET_TESTONE_4900
      * @tc.name      testHashSet01Chapter0049
      * @tc.desc      Test has method with repeated string
      * @tc.size      MediumTest
@@ -1447,7 +1447,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_5000
+     * @tc.number     SUB_HASHSET_TESTONE_5000
      * @tc.name      testHashSet01Chapter0050
      * @tc.desc      Test has method with Int16Array boundary values
      * @tc.size      MediumTest
@@ -1481,7 +1481,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_5100
+     * @tc.number     SUB_HASHSET_TESTONE_5100
      * @tc.name      testHashSet01Chapter0051
      * @tc.desc      Test has method with Uint16Array boundary values
      * @tc.size      MediumTest
@@ -1515,7 +1515,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_5200
+     * @tc.number     SUB_HASHSET_TESTONE_5200
      * @tc.name      testHashSet01Chapter0052
      * @tc.desc      Test has method with Int32Array boundary values
      * @tc.size      MediumTest
@@ -1549,7 +1549,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_5300
+     * @tc.number     SUB_HASHSET_TESTONE_5300
      * @tc.name      testHashSet01Chapter0053
      * @tc.desc      Test has method with Uint32Array boundary values
      * @tc.size      MediumTest
@@ -1583,7 +1583,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_5400
+     * @tc.number     SUB_HASHSET_TESTONE_5400
      * @tc.name      testHashSet01Chapter0054
      * @tc.desc      Test has method with Uint8ClampedArray boundary values
      * @tc.size      MediumTest
@@ -1617,7 +1617,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_5500
+     * @tc.number     SUB_HASHSET_TESTONE_5500
      * @tc.name      testHashSet01Chapter0055
      * @tc.desc      Test has method with BigInt64Array boundary values
      * @tc.size      MediumTest
@@ -1647,7 +1647,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_5600
+     * @tc.number     SUB_HASHSET_TESTONE_5600
      * @tc.name      testHashSet01Chapter0056
      * @tc.desc      Test has method with BigUint64Array boundary values
      * @tc.size      MediumTest
@@ -1677,7 +1677,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_5700
+     * @tc.number     SUB_HASHSET_TESTONE_5700
      * @tc.name      testHashSet01Chapter0057
      * @tc.desc      Test has method with TypedArray special values (Infinity, -Infinity, NaN)
      * @tc.size      MediumTest
@@ -1714,7 +1714,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_5800
+     * @tc.number     SUB_HASHSET_TESTONE_5800
      * @tc.name      testHashSet01Chapter0058
      * @tc.desc      Test has method with full ASCII string characters
      * @tc.size      MediumTest
@@ -1740,7 +1740,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_5900
+     * @tc.number     SUB_HASHSET_TESTONE_5900
      * @tc.name      testHashSet01Chapter0059
      * @tc.desc      Test has method with invalid Unicode strings
      * @tc.size      MediumTest
@@ -1772,7 +1772,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_6000
+     * @tc.number     SUB_HASHSET_TESTONE_6000
      * @tc.name      testHashSet01Chapter0060
      * @tc.desc      Test has method with string keywords
      * @tc.size      MediumTest
@@ -1804,7 +1804,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_6100
+     * @tc.number     SUB_HASHSET_TESTONE_6100
      * @tc.name      testHashSet01Chapter0061
      * @tc.desc      Test has method with slice string
      * @tc.size      MediumTest
@@ -1833,7 +1833,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_6200
+     * @tc.number     SUB_HASHSET_TESTONE_6200
      * @tc.name      testHashSet01Chapter0062
      * @tc.desc      Test has method with number type byte range values
      * @tc.size      MediumTest
@@ -1862,7 +1862,7 @@ export default function HashSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST01_6300
+     * @tc.number     SUB_HASHSET_TESTONE_6300
      * @tc.name      testHashSet01Chapter0063
      * @tc.desc      Test has method with number type short range values
      * @tc.size      MediumTest

@@ -1,4 +1,4 @@
-﻿'use static'
+'use static'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
 import { HashSet } from '@kit.ArkTS';
 
@@ -98,7 +98,7 @@ export default function HashSet05Test(): void {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number     SUB_HASHSET_TEST05_0100
+     * @tc.number     SUB_HASHSET_TESTFIVE_0100
      * @tc.name      testHashSet05Chapter0001
      * @tc.desc      Test remove method with empty object
      * @tc.size      MediumTest
@@ -119,7 +119,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_0200
+     * @tc.number     SUB_HASHSET_TESTFIVE_0200
      * @tc.name      testHashSet05Chapter0002
      * @tc.desc      Test remove method with large object
      * @tc.size      MediumTest
@@ -150,7 +150,7 @@ export default function HashSet05Test(): void {
       expect(hashSet.length).assertEqual(0);
     });
     /**
-     * @tc.number     SUB_HASHSET_TEST05_0300
+     * @tc.number     SUB_HASHSET_TESTFIVE_0300
      * @tc.name      testHashSet05Chapter0003
      * @tc.desc      Test remove method with tree-like string (large JSON string)
      * @tc.size      MediumTest
@@ -181,7 +181,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_0400
+     * @tc.number     SUB_HASHSET_TESTFIVE_0400
      * @tc.name      testHashSet05Chapter0004
      * @tc.desc      Test remove method with sliced string
      * @tc.size      MediumTest
@@ -203,7 +203,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_0500
+     * @tc.number     SUB_HASHSET_TESTFIVE_0500
      * @tc.name      testHashSet05Chapter0005
      * @tc.desc      Test remove method with object containing string-keyed properties
      * @tc.size      MediumTest
@@ -227,7 +227,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_0600
+     * @tc.number     SUB_HASHSET_TESTFIVE_0600
      * @tc.name      testHashSet05Chapter0006
      * @tc.desc      Test remove method with number safe integer boundaries
      * @tc.size      MediumTest
@@ -252,7 +252,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_0700
+     * @tc.number     SUB_HASHSET_TESTFIVE_0700
      * @tc.name      testHashSet05Chapter0007
      * @tc.desc      Test remove method with number EPSILON value
      * @tc.size      MediumTest
@@ -273,7 +273,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_0800
+     * @tc.number     SUB_HASHSET_TESTFIVE_0800
      * @tc.name      testHashSet05Chapter0008
      * @tc.desc      Test remove method with TypedArray containing out-of-range values
      * @tc.size      MediumTest
@@ -299,7 +299,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_0900
+     * @tc.number     SUB_HASHSET_TESTFIVE_0900
      * @tc.name      testHashSet05Chapter0009
      * @tc.desc      Test remove method with string containing specific escape characters
      * @tc.size      MediumTest
@@ -329,7 +329,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_1000
+     * @tc.number     SUB_HASHSET_TESTFIVE_1000
      * @tc.name      testHashSet05Chapter0010
      * @tc.desc      Test remove method with boolean truthy/falsy values
      * @tc.size      MediumTest
@@ -355,7 +355,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_1100
+     * @tc.number     SUB_HASHSET_TESTFIVE_1100
      * @tc.name      testHashSet05Chapter0011
      * @tc.desc      Test remove method with number array converted to TypedArray
      * @tc.size      MediumTest
@@ -378,7 +378,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_1200
+     * @tc.number     SUB_HASHSET_TESTFIVE_1200
      * @tc.name      testHashSet05Chapter0012
      * @tc.desc      Test remove method with object containing non-enumerable property
      * @tc.size      MediumTest
@@ -399,7 +399,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_1300
+     * @tc.number     SUB_HASHSET_TESTFIVE_1300
      * @tc.name      testHashSet05Chapter0013
      * @tc.desc      Test remove method with number byte boundary values
      * @tc.size      MediumTest
@@ -424,7 +424,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_1400
+     * @tc.number     SUB_HASHSET_TESTFIVE_1400
      * @tc.name      testHashSet05Chapter0014
      * @tc.desc      Test remove method with number short boundary values
      * @tc.size      MediumTest
@@ -449,7 +449,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_1500
+     * @tc.number     SUB_HASHSET_TESTFIVE_1500
      * @tc.name      testHashSet05Chapter0015
      * @tc.desc      Test remove method with number int boundary values
      * @tc.size      MediumTest
@@ -474,7 +474,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_1600
+     * @tc.number     SUB_HASHSET_TESTFIVE_1600
      * @tc.name      testHashSet05Chapter0016
      * @tc.desc      Test remove method with number long boundary values (using bigint)
      * @tc.size      MediumTest
@@ -499,7 +499,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_1700
+     * @tc.number     SUB_HASHSET_TESTFIVE_1700
      * @tc.name      testHashSet05Chapter0017
      * @tc.desc      Test remove method with number float boundary values
      * @tc.size      MediumTest
@@ -524,7 +524,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_1800
+     * @tc.number     SUB_HASHSET_TESTFIVE_1800
      * @tc.name      testHashSet05Chapter0018
      * @tc.desc      Test remove method with boolean falsy values
      * @tc.size      MediumTest
@@ -552,7 +552,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_1900
+     * @tc.number     SUB_HASHSET_TESTFIVE_1900
      * @tc.name      testHashSet05Chapter0019
      * @tc.desc      Test remove method with TypedArray containing Infinity/NaN for integer types
      * @tc.size      MediumTest
@@ -584,7 +584,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_2000
+     * @tc.number     SUB_HASHSET_TESTFIVE_2000
      * @tc.name      testHashSet05Chapter0020
      * @tc.desc      Test remove method with number char boundary values
      * @tc.size      MediumTest
@@ -609,7 +609,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_2100
+     * @tc.number     SUB_HASHSET_TESTFIVE_2100
      * @tc.name      testHashSet05Chapter0021
      * @tc.desc      Test remove method with moderately large string
      * @tc.size      MediumTest
@@ -630,7 +630,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_2200
+     * @tc.number     SUB_HASHSET_TESTFIVE_2200
      * @tc.name      testHashSet05Chapter0022
      * @tc.desc      Test clear method on empty HashSet
      * @tc.size      MediumTest
@@ -647,7 +647,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_2300
+     * @tc.number     SUB_HASHSET_TESTFIVE_2300
      * @tc.name      testHashSet05Chapter0023
      * @tc.desc      Test clear method with string elements
      * @tc.size      MediumTest
@@ -668,7 +668,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_2400
+     * @tc.number     SUB_HASHSET_TESTFIVE_2400
      * @tc.name      testHashSet05Chapter0024
      * @tc.desc      Test clear method with number elements including special values
      * @tc.size      MediumTest
@@ -692,7 +692,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_2500
+     * @tc.number     SUB_HASHSET_TESTFIVE_2500
      * @tc.name      testHashSet05Chapter0025
      * @tc.desc      Test clear method with boolean elements
      * @tc.size      MediumTest
@@ -712,7 +712,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_2600
+     * @tc.number     SUB_HASHSET_TESTFIVE_2600
      * @tc.name      testHashSet05Chapter0026
      * @tc.desc      Test clear method with array elements
      * @tc.size      MediumTest
@@ -734,7 +734,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_2700
+     * @tc.number     SUB_HASHSET_TESTFIVE_2700
      * @tc.name      testHashSet05Chapter0027
      * @tc.desc      Test clear method with object elements
      * @tc.size      MediumTest
@@ -757,7 +757,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_2800
+     * @tc.number     SUB_HASHSET_TESTFIVE_2800
      * @tc.name      testHashSet05Chapter0028
      * @tc.desc      Test clear method with TypedArray elements
      * @tc.size      MediumTest
@@ -779,7 +779,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_2900
+     * @tc.number     SUB_HASHSET_TESTFIVE_2900
      * @tc.name      testHashSet05Chapter0029
      * @tc.desc      Test clear method with bigint elements
      * @tc.size      MediumTest
@@ -801,7 +801,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_3000
+     * @tc.number     SUB_HASHSET_TESTFIVE_3000
      * @tc.name      testHashSet05Chapter0030
      * @tc.desc      Test clear method with mixed type elements
      * @tc.size      MediumTest
@@ -825,7 +825,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_3100
+     * @tc.number     SUB_HASHSET_TESTFIVE_3100
      * @tc.name      testHashSet05Chapter0031
      * @tc.desc      Test clear method on large HashSet
      * @tc.size      MediumTest
@@ -846,7 +846,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_3200
+     * @tc.number     SUB_HASHSET_TESTFIVE_3200
      * @tc.name      testHashSet05Chapter0032
      * @tc.desc      Test clear method and verify elements are removed
      * @tc.size      MediumTest
@@ -870,7 +870,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_3300
+     * @tc.number     SUB_HASHSET_TESTFIVE_3300
      * @tc.name      testHashSet05Chapter0033
      * @tc.desc      Test clear method multiple times
      * @tc.size      MediumTest
@@ -893,7 +893,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_3400
+     * @tc.number     SUB_HASHSET_TESTFIVE_3400
      * @tc.name      testHashSet05Chapter0034
      * @tc.desc      Test clear method with nested objects
      * @tc.size      MediumTest
@@ -916,7 +916,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_3500
+     * @tc.number     SUB_HASHSET_TESTFIVE_3500
      * @tc.name      testHashSet05Chapter0035
      * @tc.desc      Test clear method with objects containing special values
      * @tc.size      MediumTest
@@ -942,7 +942,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_3600
+     * @tc.number     SUB_HASHSET_TESTFIVE_3600
      * @tc.name      testHashSet05Chapter0036
      * @tc.desc      Test clear method with complex data structures
      * @tc.size      MediumTest
@@ -971,7 +971,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_3700
+     * @tc.number     SUB_HASHSET_TESTFIVE_3700
      * @tc.name      testHashSet05Chapter0037
      * @tc.desc      Test clear method after adding and removing elements
      * @tc.size      MediumTest
@@ -992,7 +992,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_3800
+     * @tc.number     SUB_HASHSET_TESTFIVE_3800
      * @tc.name      testHashSet05Chapter0038
      * @tc.desc      Test clear method and then add new elements
      * @tc.size      MediumTest
@@ -1015,7 +1015,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_3900
+     * @tc.number     SUB_HASHSET_TESTFIVE_3900
      * @tc.name      testHashSet05Chapter0039
      * @tc.desc      Test clear method with all TypedArray types
      * @tc.size      MediumTest
@@ -1039,7 +1039,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_4000
+     * @tc.number     SUB_HASHSET_TESTFIVE_4000
      * @tc.name      testHashSet05Chapter0040
      * @tc.desc      Test values method on empty HashSet
      * @tc.size      MediumTest
@@ -1059,7 +1059,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_4100
+     * @tc.number     SUB_HASHSET_TESTFIVE_4100
      * @tc.name      testHashSet05Chapter0041
      * @tc.desc      Test values method with string elements
      * @tc.size      MediumTest
@@ -1085,7 +1085,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_4200
+     * @tc.number     SUB_HASHSET_TESTFIVE_4200
      * @tc.name      testHashSet05Chapter0042
      * @tc.desc      Test values method with number elements
      * @tc.size      MediumTest
@@ -1111,7 +1111,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_4300
+     * @tc.number     SUB_HASHSET_TESTFIVE_4300
      * @tc.name      testHashSet05Chapter0043
      * @tc.desc      Test values method with boolean elements
      * @tc.size      MediumTest
@@ -1135,7 +1135,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_4400
+     * @tc.number     SUB_HASHSET_TESTFIVE_4400
      * @tc.name      testHashSet05Chapter0044
      * @tc.desc      Test values method with array elements
      * @tc.size      MediumTest
@@ -1161,7 +1161,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_4500
+     * @tc.number     SUB_HASHSET_TESTFIVE_4500
      * @tc.name      testHashSet05Chapter0045
      * @tc.desc      Test values method with object elements
      * @tc.size      MediumTest
@@ -1188,7 +1188,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_4600
+     * @tc.number     SUB_HASHSET_TESTFIVE_4600
      * @tc.name      testHashSet05Chapter0046
      * @tc.desc      Test values method with TypedArray elements
      * @tc.size      MediumTest
@@ -1214,7 +1214,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_4700
+     * @tc.number     SUB_HASHSET_TESTFIVE_4700
      * @tc.name      testHashSet05Chapter0047
      * @tc.desc      Test values method with bigint elements
      * @tc.size      MediumTest
@@ -1240,7 +1240,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_4800
+     * @tc.number     SUB_HASHSET_TESTFIVE_4800
      * @tc.name      testHashSet05Chapter0048
      * @tc.desc      Test values method with mixed type elements
      * @tc.size      MediumTest
@@ -1267,7 +1267,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_4900
+     * @tc.number     SUB_HASHSET_TESTFIVE_4900
      * @tc.name      testHashSet05Chapter0049
      * @tc.desc      Test values method with large HashSet
      * @tc.size      MediumTest
@@ -1294,7 +1294,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_5000
+     * @tc.number     SUB_HASHSET_TESTFIVE_5000
      * @tc.name      testHashSet05Chapter0050
      * @tc.desc      Test values method returns all elements
      * @tc.size      MediumTest
@@ -1321,7 +1321,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_5100
+     * @tc.number     SUB_HASHSET_TESTFIVE_5100
      * @tc.name      testHashSet05Chapter0051
      * @tc.desc      Test values method after clear
      * @tc.size      MediumTest
@@ -1345,7 +1345,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_5200
+     * @tc.number     SUB_HASHSET_TESTFIVE_5200
      * @tc.name      testHashSet05Chapter0052
      * @tc.desc      Test values method after remove
      * @tc.size      MediumTest
@@ -1372,7 +1372,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_5300
+     * @tc.number     SUB_HASHSET_TESTFIVE_5300
      * @tc.name      testHashSet05Chapter0053
      * @tc.desc      Test values method with duplicate elements
      * @tc.size      MediumTest
@@ -1398,7 +1398,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_5400
+     * @tc.number     SUB_HASHSET_TESTFIVE_5400
      * @tc.name      testHashSet05Chapter0054
      * @tc.desc      Test values method with nested objects
      * @tc.size      MediumTest
@@ -1427,7 +1427,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_5500
+     * @tc.number     SUB_HASHSET_TESTFIVE_5500
      * @tc.name      testHashSet05Chapter0055
      * @tc.desc      Test values method with objects containing special values
      * @tc.size      MediumTest
@@ -1459,7 +1459,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_5600
+     * @tc.number     SUB_HASHSET_TESTFIVE_5600
      * @tc.name      testHashSet05Chapter0056
      * @tc.desc      Test values method with complex data structures
      * @tc.size      MediumTest
@@ -1494,7 +1494,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_5700
+     * @tc.number     SUB_HASHSET_TESTFIVE_5700
      * @tc.name      testHashSet05Chapter0057
      * @tc.desc      Test values method multiple iterations
      * @tc.size      MediumTest
@@ -1524,7 +1524,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_5800
+     * @tc.number     SUB_HASHSET_TESTFIVE_5800
      * @tc.name      testHashSet05Chapter0058
      * @tc.desc      Test values method with all TypedArray types
      * @tc.size      MediumTest
@@ -1553,7 +1553,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_5900
+     * @tc.number     SUB_HASHSET_TESTFIVE_5900
      * @tc.name      testHashSet05Chapter0059
      * @tc.desc      Test values method returns independent iterator
      * @tc.size      MediumTest
@@ -1582,7 +1582,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_6000
+     * @tc.number     SUB_HASHSET_TESTFIVE_6000
      * @tc.name      testHashSet05Chapter0060
      * @tc.desc      Test values method with manual iteration using next()
      * @tc.size      MediumTest
@@ -1610,7 +1610,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_6100
+     * @tc.number     SUB_HASHSET_TESTFIVE_6100
      * @tc.name      testHashSet05Chapter0061
      * @tc.desc      Test forEach method with normal string values
      * @tc.size      MediumTest
@@ -1638,7 +1638,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_6200
+     * @tc.number     SUB_HASHSET_TESTFIVE_6200
      * @tc.name      testHashSet05Chapter0062
      * @tc.desc      Test forEach method with empty HashSet
      * @tc.size      MediumTest
@@ -1659,7 +1659,7 @@ export default function HashSet05Test(): void {
       expect(callCount).assertEqual(0);
     });
     /**
-     * @tc.number     SUB_HASHSET_TEST05_6300
+     * @tc.number     SUB_HASHSET_TESTFIVE_6300
      * @tc.name      testHashSet05Chapter0063
      * @tc.desc      Test forEach method with thisArg parameter
      * @tc.size      MediumTest
@@ -1691,7 +1691,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_6400
+     * @tc.number     SUB_HASHSET_TESTFIVE_6400
      * @tc.name      testHashSet05Chapter0064
      * @tc.desc      Test forEach method with number type HashSet containing boundary values
      * @tc.size      MediumTest
@@ -1719,7 +1719,7 @@ export default function HashSet05Test(): void {
       expect(count).assertEqual(6);
     });
     /**
-     * @tc.number     SUB_HASHSET_TEST05_6500
+     * @tc.number     SUB_HASHSET_TESTFIVE_6500
      * @tc.name      testHashSet05Chapter0065
      * @tc.desc      Test forEach method with Infinity and -Infinity values
      * @tc.size      MediumTest
@@ -1746,7 +1746,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_6600
+     * @tc.number     SUB_HASHSET_TESTFIVE_6600
      * @tc.name      testHashSet05Chapter0066
      * @tc.desc      Test forEach method with boolean type HashSet
      * @tc.size      MediumTest
@@ -1771,7 +1771,7 @@ export default function HashSet05Test(): void {
       expect(visited.includes(false)).assertTrue();
     });
     /**
-     * @tc.number     SUB_HASHSET_TEST05_6700
+     * @tc.number     SUB_HASHSET_TESTFIVE_6700
      * @tc.name      testHashSet05Chapter0067
      * @tc.desc      Test forEach method with string containing special characters
      * @tc.size      MediumTest
@@ -1799,7 +1799,7 @@ export default function HashSet05Test(): void {
     });
 
     /**
-     * @tc.number     SUB_HASHSET_TEST05_6800
+     * @tc.number     SUB_HASHSET_TESTFIVE_6800
      * @tc.name      testHashSet05Chapter0068
      * @tc.desc      Test forEach method with string containing escape characters
      * @tc.size      MediumTest
