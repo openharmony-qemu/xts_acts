@@ -2114,7 +2114,7 @@ export default function CameraPhotoSessionTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0100', Level.LEVEL2, async (doneFunction) => {
+    it('SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0100', Level.LEVEL2, async (done: Function) => {
       //--------------------------------------------预置条件------------------------------------------------------
       console.info("Enter SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0100")
       createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
@@ -2138,7 +2138,7 @@ export default function CameraPhotoSessionTest() {
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0200', Level.LEVEL1, async (doneFunction) => {
+    it('SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0200', Level.LEVEL1, async (done: Function) => {
       try {
       //--------------------------------------------预置条件------------------------------------------------------
         console.info("Enter SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0200")
@@ -2167,7 +2167,7 @@ export default function CameraPhotoSessionTest() {
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0300', Level.LEVEL1, async (doneFunction) => {
+    it('SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0300', Level.LEVEL1, async (done: Function) => {
       try {
       //--------------------------------------------预置条件------------------------------------------------------
         console.info("Enter SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0300")
@@ -2195,9 +2195,9 @@ export default function CameraPhotoSessionTest() {
      * @tc.desc      test sub multimedia camera session get exposureState success
      * @tc.size      MEDIUM
      * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.level     Level 1
      */
-    it('SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0400', Level.LEVEL1, async (doneFunction) => {
+    it('SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0400', Level.LEVEL1, async (done: Function) => {
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info("Enter SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0400")
@@ -2251,7 +2251,7 @@ export default function CameraPhotoSessionTest() {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0100', Level.LEVEL0, async (doneFunction) => {
+    it('SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0100', Level.LEVEL0, async (done: Function) => {
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info("SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0100")
@@ -2281,7 +2281,7 @@ export default function CameraPhotoSessionTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0200', Level.LEVEL2, async (doneFunction) => {
+    it('SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0200', Level.LEVEL2, async (done: Function) => {
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info("SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0200")
@@ -2310,7 +2310,7 @@ export default function CameraPhotoSessionTest() {
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0300', Level.LEVEL1, async (doneFunction) => {
+    it('SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0300', Level.LEVEL1, async (done: Function) => {
       //--------------------------------------------预置条件------------------------------------------------------
       console.info("SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0300")
       createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
@@ -2347,7 +2347,7 @@ export default function CameraPhotoSessionTest() {
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0400', Level.LEVEL1, async (doneFunction) => {
+    it('SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0400', Level.LEVEL1, async (done: Function) => {
       //--------------------------------------------预置条件------------------------------------------------------
       console.info("SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0400")
       createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
@@ -2384,7 +2384,7 @@ export default function CameraPhotoSessionTest() {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0500', Level.LEVEL0, async (doneFunction) => {
+    it('SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0500', Level.LEVEL0, async (done: Function) => {
       //--------------------------------------------预置条件------------------------------------------------------
       console.info("SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0500")
       createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
@@ -2423,7 +2423,7 @@ export default function CameraPhotoSessionTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0600', Level.LEVEL2, async (doneFunction) => {
+    it('SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0600', Level.LEVEL2, async (done: Function) => {
       //--------------------------------------------预置条件------------------------------------------------------
       console.info("SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0600")
       createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
@@ -2459,7 +2459,7 @@ export default function CameraPhotoSessionTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0700', Level.LEVEL2, async (doneFunction) => {
+    it('SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0700', Level.LEVEL2, async (done: Function) => {
       //--------------------------------------------预置条件------------------------------------------------------
       console.info("SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0700")
       createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
@@ -2503,7 +2503,7 @@ export default function CameraPhotoSessionTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0800', Level.LEVEL2, async (doneFunction) => {
+    it('SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0800', Level.LEVEL2, async (done: Function) => {
       //--------------------------------------------预置条件------------------------------------------------------
       console.info("SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0800")
       createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
@@ -2543,7 +2543,7 @@ export default function CameraPhotoSessionTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0900', Level.LEVEL2, async (doneFunction) => {
+    it('SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0900', Level.LEVEL2, async (done: Function) => {
       //--------------------------------------------预置条件------------------------------------------------------
       console.info("SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_0900")
       createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
@@ -2574,7 +2574,7 @@ export default function CameraPhotoSessionTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_1000', Level.LEVEL2, async (doneFunction) => {
+    it('SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_1000', Level.LEVEL2, async (done: Function) => {
       //--------------------------------------------预置条件------------------------------------------------------
       console.info("SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_1000")
       createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
@@ -2604,7 +2604,7 @@ export default function CameraPhotoSessionTest() {
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0100', Level.LEVEL0, async (doneFunction) => {
+    it('SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0100', Level.LEVEL0, async (done: Function) => {
       let caseName = "SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0100"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
@@ -2636,7 +2636,7 @@ export default function CameraPhotoSessionTest() {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0200', Level.LEVEL2, async (doneFunction) => {
+    it('SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0200', Level.LEVEL2, async (done: Function) => {
       let caseName = "SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0200"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
