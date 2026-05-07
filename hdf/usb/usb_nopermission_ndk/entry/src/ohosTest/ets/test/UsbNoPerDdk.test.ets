@@ -1439,7 +1439,7 @@ export default function usbNoPerDdkTest() {
         done();
       } catch (err) {
         console.error(TAG, `testUsbControlTransferNoPer001 failed, message is ${err.message}`);
-        expect(err === null).assertTrue();
+        expect().assertFail();
         done();
       }
     });
@@ -1460,7 +1460,7 @@ export default function usbNoPerDdkTest() {
         done();
       } catch (err) {
         console.error(TAG, `testUsbGetNonRootHubsNoPer001 failed, message is ${err.message}`);
-        expect(err === null).assertTrue();
+        expect().assertFail();
         done();
       }
     });
