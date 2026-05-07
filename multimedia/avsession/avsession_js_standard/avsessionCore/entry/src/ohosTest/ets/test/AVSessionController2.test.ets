@@ -227,7 +227,6 @@ export default function abilityTest() {
       let speeds: Array<avSession.PlaybackSpeed> = [avSession.PlaybackSpeed.SPEED_1_00_X];
       try {
         await session?.destroy();
-        session = null;
         await session?.setSupportedPlaySpeeds(speeds);
         expect().assertFail();
       } catch (error) {
@@ -235,6 +234,7 @@ export default function abilityTest() {
         console.info(`${TAG}: error code: ${e.code}`);
         expect(e.code).assertEqual(6600102);
       }
+      session = null;
       console.info(`${TAG}: setSupportedPlaySpeedsErrorSessionNotExist005 end`);
       done();
     });
@@ -370,7 +370,6 @@ export default function abilityTest() {
       let loopModes: Array<avSession.LoopMode> = [avSession.LoopMode.LOOP_MODE_SINGLE];
       try {
         await session?.destroy();
-        session = null;
         await session?.setSupportedLoopModes(loopModes);
         expect().assertFail();
       } catch (error) {
@@ -378,6 +377,7 @@ export default function abilityTest() {
         console.info(`${TAG}: error code: ${e.code}`);
         expect(e.code).assertEqual(6600102);
       }
+      session = null;
       console.info(`${TAG}: setSupportedLoopModesErrorSessionNotExist005 end`);
       done();
     });
@@ -511,7 +511,6 @@ export default function abilityTest() {
       let controlTypes: Array<avSession.AVMediaCenterControlType> = ['playNext'];
       try {
         await session?.destroy();
-        session = null;
         await session?.setMediaCenterControlType(controlTypes);
         expect().assertFail();
       } catch (error) {
@@ -519,6 +518,7 @@ export default function abilityTest() {
         console.info(`${TAG}: error code: ${e.code}`);
         expect(e.code).assertEqual(6600102);
       }
+      session = null;
       console.info(`${TAG}: setMediaCenterControlTypeErrorSessionNotExist005 end`);
       done();
     });
@@ -598,7 +598,6 @@ export default function abilityTest() {
       console.info(`${TAG}: getSupportedPlaySpeedsErrorControllerNotExist003 start`);
       try {
         await controller?.destroy();
-        controller = null;
         await controller?.getSupportedPlaySpeeds();
         expect().assertFail();
       } catch (error) {
@@ -606,6 +605,7 @@ export default function abilityTest() {
         console.info(`${TAG}: error code: ${e.code}`);
         expect(e.code).assertEqual(6600103);
       }
+      controller = null;
       console.info(`${TAG}: getSupportedPlaySpeedsErrorControllerNotExist003 end`);
       done();
     });
@@ -685,7 +685,6 @@ export default function abilityTest() {
       console.info(`${TAG}: getSupportedLoopModesErrorControllerNotExist003 start`);
       try {
         await controller?.destroy();
-        controller = null;
         await controller?.getSupportedLoopModes();
         expect().assertFail();
       } catch (error) {
@@ -693,6 +692,7 @@ export default function abilityTest() {
         console.info(`${TAG}: error code: ${e.code}`);
         expect(e.code).assertEqual(6600103);
       }
+      controller = null;
       console.info(`${TAG}: getSupportedLoopModesErrorControllerNotExist003 end`);
       done();
     });
@@ -769,7 +769,6 @@ export default function abilityTest() {
       console.info(`${TAG}: getMediaCenterControlTypeErrorControllerNotExist003 start`);
       try {
         await controller?.destroy();
-        controller = null;
         await controller?.getMediaCenterControlType();
         expect().assertFail();
       } catch (error) {
@@ -777,6 +776,7 @@ export default function abilityTest() {
         console.info(`${TAG}: error code: ${e.code}`);
         expect(e.code).assertEqual(6600103);
       }
+      controller = null;
       console.info(`${TAG}: getMediaCenterControlTypeErrorControllerNotExist003 end`);
       done();
     });
@@ -864,7 +864,6 @@ export default function abilityTest() {
       };
       try {
         await controller?.destroy();
-        controller = null;
         controller?.onMediaCenterControlTypeChanged(callback);
         expect().assertFail();
       } catch (error) {
@@ -872,6 +871,7 @@ export default function abilityTest() {
         console.info(`${TAG}: error code: ${e.code}`);
         expect(e.code).assertEqual(6600103);
       }
+      controller = null;
       console.info(`${TAG}: onMediaCenterControlTypeChangedErrorControllerNotExist003 end`);
       done();
     });
@@ -1038,7 +1038,6 @@ export default function abilityTest() {
       };
       try {
         await controller?.destroy();
-        controller = null;
         controller?.onSupportedPlaySpeedsChange(callback);
         expect().assertFail();
       } catch (error) {
@@ -1046,6 +1045,7 @@ export default function abilityTest() {
         console.info(`${TAG}: error code: ${e.code}`);
         expect(e.code).assertEqual(6600103);
       }
+      controller = null;
       console.info(`${TAG}: onSupportedPlaySpeedsChangeErrorControllerNotExist003 end`);
       done();
     });
@@ -1205,7 +1205,6 @@ export default function abilityTest() {
       };
       try {
         await controller?.destroy();
-        controller = null;
         controller?.onSupportedLoopModesChange(callback);
         expect().assertFail();
       } catch (error) {
@@ -1213,6 +1212,7 @@ export default function abilityTest() {
         console.info(`${TAG}: error code: ${e.code}`);
         expect(e.code).assertEqual(6600103);
       }
+      controller = null;
       console.info(`${TAG}: onSupportedLoopModesChangeErrorControllerNotExist003 end`);
       done();
     });
