@@ -78,7 +78,7 @@ export default function scrollPropertiesTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('autoAdjustScrollBarMargin_static_0100', Level.LEVEL0, async () => {
+    it('autoAdjustScrollBarMargin_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[autoAdjustScrollBarMargin_static_0100] START');
 
       let strJson = inspector.getInspectorByKey('scroll_autoAdjust_true');
@@ -99,7 +99,7 @@ export default function scrollPropertiesTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('autoAdjustScrollBarMargin_static_0200', Level.LEVEL0, async () => {
+    it('autoAdjustScrollBarMargin_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[autoAdjustScrollBarMargin_static_0200] START');
 
       let strJson = inspector.getInspectorByKey('scroll_autoAdjust_false');
@@ -120,7 +120,7 @@ export default function scrollPropertiesTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('autoAdjustScrollBarMargin_static_0300', Level.LEVEL0, async () => {
+    it('autoAdjustScrollBarMargin_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[autoAdjustScrollBarMargin_static_0300] START');
 
       let strJson = inspector.getInspectorByKey('scroll_autoAdjust_undefined');
@@ -141,7 +141,7 @@ export default function scrollPropertiesTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('enableScrollWithMouse_static_0100', Level.LEVEL0, async () => {
+    it('enableScrollWithMouse_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[enableScrollWithMouse_static_0100] START');
 
       let strJson = inspector.getInspectorByKey('scroll_enableMouse_true');
@@ -162,7 +162,7 @@ export default function scrollPropertiesTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('enableScrollWithMouse_static_0200', Level.LEVEL0, async () => {
+    it('enableScrollWithMouse_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[enableScrollWithMouse_static_0200] START');
 
       let strJson = inspector.getInspectorByKey('scroll_enableMouse_false');
@@ -183,7 +183,7 @@ export default function scrollPropertiesTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('enableScrollWithMouse_static_0300', Level.LEVEL0, async () => {
+    it('enableScrollWithMouse_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[enableScrollWithMouse_static_0300] START');
 
       let strJson = inspector.getInspectorByKey('scroll_enableMouse_undefined');
