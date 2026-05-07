@@ -1861,7 +1861,162 @@ export default function PlainArray01Test(): void {
       expect(result === 15).assertTrue();
     });
 
+    /**
+     * @tc.number    SUB_PLAINARRAY_TEST01_6200
+     * @tc.name      testPlainArray01Chapter0062
+     * @tc.desc      Get value with hex literal key
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray01Chapter0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray01Chapter0062';
+      console.log(TAG + ' start');
+      const arr: PlainArray<number> = new PlainArray<number>();
+      arr.add(0x0102, 16);
+      const result: Double  = arr.get(0)!;
+      expect(result === 16).assertTrue();
+    });
 
+    /**
+     * @tc.number    SUB_PLAINARRAY_TEST01_6300
+     * @tc.name      testPlainArray01Chapter0063
+     * @tc.desc      Get value with exponent operator result key
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray01Chapter0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray01Chapter0063';
+      console.log(TAG + ' start');
+      const arr: PlainArray<number> = new PlainArray<number>();
+      arr.add(8, 17);
+      const result: Double  = arr.get(8)!;
+      expect(result === 17).assertTrue();
+    });
+
+    /**
+     * @tc.number    SUB_PLAINARRAY_TEST01_6400
+     * @tc.name      testPlainArray01Chapter0064
+     * @tc.desc      Get value with scientific notation key
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray01Chapter0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray01Chapter0064';
+      console.log(TAG + ' start');
+      const arr: PlainArray<number> = new PlainArray<number>();
+      arr.add(1000, 18);
+      const result: number = arr.get(1000)!;
+      expect(result === 18).assertTrue();
+    });
+    /**
+     * @tc.number    SUB_PLAINARRAY_TEST01_6500
+     * @tc.name      testPlainArray01Chapter0065
+     * @tc.desc      Get value with negative scientific notation key
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray01Chapter0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray01Chapter0065';
+      console.log(TAG + ' start');
+      const arr: PlainArray<number> = new PlainArray<number>();
+      let errorCaught: boolean = false;
+      try {
+        arr.add(0, 19);
+      } catch (err) {
+        errorCaught = true;
+        expect(err !== undefined).assertTrue();
+      }
+      expect(errorCaught).assertTrue();
+    });
+
+    /**
+     * @tc.number    SUB_PLAINARRAY_TEST01_6600
+     * @tc.name      testPlainArray01Chapter0066
+     * @tc.desc      Get value with explicit double literal key
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray01Chapter0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray01Chapter0066';
+      console.log(TAG + ' start');
+      const arr: PlainArray<number> = new PlainArray<number>();
+      let errorCaught: boolean = false;
+      try {
+        arr.add(123, 20);
+      } catch (err) {
+        errorCaught = true;
+        expect(err !== undefined).assertTrue();
+      }
+      expect(errorCaught).assertTrue();
+    });
+
+    /**
+     * @tc.number    SUB_PLAINARRAY_TEST01_6700
+     * @tc.name      testPlainArray01Chapter0067
+     * @tc.desc      Get value with int32 boundary overflow positive throws error
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray01Chapter0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray01Chapter0067';
+      console.log(TAG + ' start');
+      const arr: PlainArray<number> = new PlainArray<number>();
+      let thrown: boolean = false;
+      try {
+        arr.get(2147483647);
+      } catch (e) {
+        thrown = true;
+      }
+      expect(thrown).assertTrue();
+    });
+
+    /**
+     * @tc.number    SUB_PLAINARRAY_TEST01_6800
+     * @tc.name      testPlainArray01Chapter0068
+     * @tc.desc      Get value with int32 boundary overflow negative throws error
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray01Chapter0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray01Chapter0068';
+      console.log(TAG + ' start');
+      const arr: PlainArray<number> = new PlainArray<number>();
+      let thrown: boolean = false;
+      try {
+        arr.get(-2147483648);
+      } catch (e) {
+        thrown = true;
+      }
+      expect(thrown).assertTrue();
+    });
+
+    /**
+     * @tc.number    SUB_PLAINARRAY_TEST01_6900
+     * @tc.name      testPlainArray01Chapter0069
+     * @tc.desc      Get value with negative Infinity key throws error
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray01Chapter0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray01Chapter0069';
+      console.log(TAG + ' start');
+      const arr: PlainArray<number> = new PlainArray<number>();
+      let thrown: boolean = false;
+      try {
+        arr.get(0)!;
+      } catch (e) {
+        thrown = true;
+      }
+      expect(thrown).assertTrue();
+    });
   })
 }
 
