@@ -1189,7 +1189,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       let certificateType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CA_CERT;
       let certificateScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.GLOBAL_USER;
       try {
-        await certManagerDialog.openInstallCertificateDialog(null, certificateType, certificateScope, caCert)
+        await certManagerDialog.openInstallCertificateDialog(context, certificateType, certificateScope, caCert)
         expect(null).assertFail()
       } catch (err) {
         if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {

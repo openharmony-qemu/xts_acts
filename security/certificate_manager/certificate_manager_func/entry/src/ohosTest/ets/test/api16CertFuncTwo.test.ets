@@ -1678,7 +1678,7 @@ export default function api16CertFuncTestTwoUnit() {
         let certPurpose: certManager.CertificatePurpose = certManager.CertificatePurpose.PURPOSE_DEFAULT;
         let authorizeRequest: certManagerDialog.AuthorizeRequest = { certTypes: certTypes, certPurpose: certPurpose };
         try {
-          await certManagerDialog.openAuthorizeDialog(null, authorizeRequest);
+          await certManagerDialog.openAuthorizeDialog(context, authorizeRequest);
           expect(null).assertFail();
         } catch (error) {
           if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
