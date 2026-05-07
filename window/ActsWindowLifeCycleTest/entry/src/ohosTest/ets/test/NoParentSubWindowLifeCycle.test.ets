@@ -114,12 +114,12 @@ export default function NoParentSubWindowLifeCycle() {
     });
     
     /**
- * @tc.number    : SUB_WINDOW_windowStage_CreateSubWindowWithOptions_NoParentSubWindow_Undefined_0100
- * @tc.name      : SUB_WINDOW_windowStage_CreateSubWindowWithOptions_NoParentSubWindow_Undefined_0100
- * @tc.desc      : SUB_WINDOW_windowStage_CreateSubWindowWithOptions_NoParentSubWindow_Undefined_0100
- * @tc.size      : MediumTest
- * @tc.type      : Function
- * @tc.level     : LEVEL0
+ * @tc.number  SUB_WINDOW_windowStage_CreateSubWindowWithOptions_NoParentSubWindow_Undefined_0100
+ * @tc.name    SUB_WINDOW_windowStage_CreateSubWindowWithOptions_NoParentSubWindow_Undefined_0100
+ * @tc.desc    SUB_WINDOW_windowStage_CreateSubWindowWithOptions_NoParentSubWindow_Undefined_0100
+ * @tc.size    MediumTest
+ * @tc.type    Function
+ * @tc.level   LEVEL0
  */
 it('SUB_WINDOW_windowStage_CreateSubWindowWithOptions_NoParentSubWindow_Undefined_0100',
   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -153,12 +153,12 @@ it('SUB_WINDOW_windowStage_CreateSubWindowWithOptions_NoParentSubWindow_Undefine
   })
 
 /**
- * @tc.number    : SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_Undefined_0100
- * @tc.name      : SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_Undefined_0100
- * @tc.desc      : SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_Undefined_0100
- * @tc.size      : MediumTest
- * @tc.type      : Function
- * @tc.level     : LEVEL0
+ * @tc.number  SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_Undefined_0100
+ * @tc.name    SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_Undefined_0100
+ * @tc.desc    SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_Undefined_0100
+ * @tc.size    MediumTest
+ * @tc.type    Function
+ * @tc.level   LEVEL0
  */
 it('SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_Undefined_0100',
   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -199,12 +199,12 @@ it('SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_Undefine
   })
 
 /**
- * @tc.number    : SUB_WINDOW_windowStage_CreateSubWindowWithOptions_NoParentSubWindow_false_0100
- * @tc.name      : SUB_WINDOW_windowStage_CreateSubWindowWithOptions_NoParentSubWindow_false_0100
- * @tc.desc      : SUB_WINDOW_windowStage_CreateSubWindowWithOptions_NoParentSubWindow_false_0100
- * @tc.size      : MediumTest
- * @tc.type      : Function
- * @tc.level     : LEVEL0
+ * @tc.number SUB_WINDOW_windowStage_CreateSubWindowWithOptions_NoParentSubWindow_false_0100
+ * @tc.name   SUB_WINDOW_windowStage_CreateSubWindowWithOptions_NoParentSubWindow_false_0100
+ * @tc.desc   SUB_WINDOW_windowStage_CreateSubWindowWithOptions_NoParentSubWindow_false_0100
+ * @tc.size   MediumTest
+ * @tc.type   Function
+ * @tc.level  LEVEL0
  */
 it('SUB_WINDOW_windowStage_CreateSubWindowWithOptions_NoParentSubWindow_false_0100',
   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -238,12 +238,12 @@ it('SUB_WINDOW_windowStage_CreateSubWindowWithOptions_NoParentSubWindow_false_01
   })
 
 /**
- * @tc.number    : SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_false_0100
- * @tc.name      : SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_false_0100
- * @tc.desc      : SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_false_0100
- * @tc.size      : MediumTest
- * @tc.type      : Function
- * @tc.level     : LEVEL0
+ * @tc.number  SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_false_0100
+ * @tc.name    SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_false_0100
+ * @tc.desc    SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_false_0100
+ * @tc.size    MediumTest
+ * @tc.type    Function
+ * @tc.level   LEVEL0
  */
 it('SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_false_0100',
   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -284,12 +284,12 @@ it('SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_false_01
   })
 
 /**
- * @tc.number    : SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_true_0100
- * @tc.name      : SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_true_0100
- * @tc.desc      : SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_true_0100
- * @tc.size      : MediumTest
- * @tc.type      : Function
- * @tc.level     : LEVEL0
+ * @tc.number  SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_true_0100
+ * @tc.name    SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_true_0100
+ * @tc.desc    SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_true_0100
+ * @tc.size    MediumTest
+ * @tc.type    Function
+ * @tc.level   LEVEL0
  */
 it('SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_true_0100',
   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -337,12 +337,12 @@ it('SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_true_010
 
 
 /**
- * @tc.number    : SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_1300004_0100
- * @tc.name      : SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_1300004_0100
- * @tc.desc      : SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_1300004_0100
- * @tc.size      : MediumTest
- * @tc.type      : Function
- * @tc.level     : LEVEL0
+ * @tc.number  SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_1300004_0100
+ * @tc.name    SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_1300004_0100
+ * @tc.desc    SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_1300004_0100
+ * @tc.size    MediumTest
+ * @tc.type    Function
+ * @tc.level   LEVEL0
  */
 it('SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_1300004_0100',
   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
@@ -388,12 +388,12 @@ it('SUB_WINDOW_windowClass_CreateSubWindowWithOptions_NoParentSubWindow_1300004_
   })
 
 /**
- * @tc.number    : SUB_WINDOW_NoParentSubWindow_isWindowShowing_0100
- * @tc.name      : SUB_WINDOW_NoParentSubWindow_isWindowShowing_0100
- * @tc.desc      : SUB_WINDOW_NoParentSubWindow_isWindowShowing_0100
- * @tc.size      : MediumTest
- * @tc.type      : Function
- * @tc.level     : LEVEL1
+ * @tc.number  SUB_WINDOW_NoParentSubWindow_isWindowShowing_0100
+ * @tc.name    SUB_WINDOW_NoParentSubWindow_isWindowShowing_0100
+ * @tc.desc    SUB_WINDOW_NoParentSubWindow_isWindowShowing_0100
+ * @tc.size    MediumTest
+ * @tc.type    Function
+ * @tc.level   LEVEL1
  */
 it('SUB_WINDOW_NoParentSubWindow_isWindowShowing_0100',
   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -435,12 +435,12 @@ it('SUB_WINDOW_NoParentSubWindow_isWindowShowing_0100',
 )
 
 /**
- * @tc.number    : SUB_WINDOW_NoParentSubWindow_OnWindowEvent_0100
- * @tc.name      : SUB_WINDOW_NoParentSubWindow_OnWindowEvent_0100
- * @tc.desc      : SUB_WINDOW_NoParentSubWindow_OnWindowEvent_0100
- * @tc.size      : MediumTest
- * @tc.type      : Function
- * @tc.level     : LEVEL0
+ * @tc.number  SUB_WINDOW_NoParentSubWindow_OnWindowEvent_0100
+ * @tc.name    SUB_WINDOW_NoParentSubWindow_OnWindowEvent_0100
+ * @tc.desc    SUB_WINDOW_NoParentSubWindow_OnWindowEvent_0100
+ * @tc.size    MediumTest
+ * @tc.type    Function
+ * @tc.level   LEVEL0
  */
 it('SUB_WINDOW_NoParentSubWindow_OnWindowEvent_0100',
   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
