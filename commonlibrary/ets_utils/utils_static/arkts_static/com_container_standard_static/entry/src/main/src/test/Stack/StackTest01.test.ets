@@ -134,7 +134,7 @@ export default function Stack01Test(): void {
     })
 
     /**
-     * @tc.number    SUB_STACK_TEST01_0100
+     * @tc.number    SUB_STACK_TESTONE_0100
      * @tc.name      testStack01Chapter0001
      * @tc.desc      Create a new Stack instance without any parameters
      * @tc.size      MediumTest
@@ -150,7 +150,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_0200
+     * @tc.number    SUB_STACK_TESTONE_0200
      * @tc.name      testStack01Chapter0002
      * @tc.desc      Create a new Stack instance with multiple generic types
      * @tc.size      MediumTest
@@ -171,7 +171,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_0300
+     * @tc.number    SUB_STACK_TESTONE_0300
      * @tc.name      testStack01Chapter0003
      * @tc.desc      Create multiple Stack instances and verify they are independent
      * @tc.size      MediumTest
@@ -192,7 +192,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_0400
+     * @tc.number    SUB_STACK_TESTONE_0400
      * @tc.name      testStack01Chapter0004
      * @tc.desc      Verify Stack instance type is correct
      * @tc.size      MediumTest
@@ -211,7 +211,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_0500
+     * @tc.number    SUB_STACK_TESTONE_0500
      * @tc.name      testStack01Chapter0005
      * @tc.desc      Push a number to the Stack
      * @tc.size      MediumTest
@@ -229,7 +229,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_0600
+     * @tc.number    SUB_STACK_TESTONE_0600
      * @tc.name      testStack01Chapter0006
      * @tc.desc      Push a string to the Stack
      * @tc.size      MediumTest
@@ -247,7 +247,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_0700
+     * @tc.number    SUB_STACK_TESTONE_0700
      * @tc.name      testStack01Chapter0007
      * @tc.desc      Push a boolean to the Stack
      * @tc.size      MediumTest
@@ -268,7 +268,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_0800
+     * @tc.number    SUB_STACK_TESTONE_0800
      * @tc.name      testStack01Chapter0008
      * @tc.desc      Push number 0 to the Stack
      * @tc.size      MediumTest
@@ -286,7 +286,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_0900
+     * @tc.number    SUB_STACK_TESTONE_0900
      * @tc.name      testStack01Chapter0009
      * @tc.desc      Push NaN to the Stack
      * @tc.size      MediumTest
@@ -304,7 +304,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_1000
+     * @tc.number    SUB_STACK_TESTONE_1000
      * @tc.name      testStack01Chapter0010
      * @tc.desc      Push -0 to the Stack
      * @tc.size      MediumTest
@@ -322,7 +322,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_1100
+     * @tc.number    SUB_STACK_TESTONE_1100
      * @tc.name      testStack01Chapter0011
      * @tc.desc      Push Infinity to the Stack
      * @tc.size      MediumTest
@@ -340,7 +340,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_1200
+     * @tc.number    SUB_STACK_TESTONE_1200
      * @tc.name      testStack01Chapter0012
      * @tc.desc      Push -Infinity to the Stack
      * @tc.size      MediumTest
@@ -358,7 +358,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_1300
+     * @tc.number    SUB_STACK_TESTONE_1300
      * @tc.name      testStack01Chapter0013
      * @tc.desc      Push Number.MAX_VALUE to the Stack
      * @tc.size      MediumTest
@@ -376,7 +376,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_1400
+     * @tc.number    SUB_STACK_TESTONE_1400
      * @tc.name      testStack01Chapter0014
      * @tc.desc      Push Number.MIN_VALUE to the Stack
      * @tc.size      MediumTest
@@ -394,7 +394,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_1500
+     * @tc.number    SUB_STACK_TESTONE_1500
      * @tc.name      testStack01Chapter0015
      * @tc.desc      Push Number.EPSILON to the Stack
      * @tc.size      MediumTest
@@ -412,7 +412,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_1600
+     * @tc.number    SUB_STACK_TESTONE_1600
      * @tc.name      testStack01Chapter0016
      * @tc.desc      Push Number.MAX_SAFE_INTEGER to the Stack
      * @tc.size      MediumTest
@@ -430,7 +430,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_1700
+     * @tc.number    SUB_STACK_TESTONE_1700
      * @tc.name      testStack01Chapter0017
      * @tc.desc      Push bigint value to the Stack
      * @tc.size      MediumTest
@@ -448,7 +448,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_1800
+     * @tc.number    SUB_STACK_TESTONE_1800
      * @tc.name      testStack01Chapter0018
      * @tc.desc      Push double value to the Stack
      * @tc.size      MediumTest
@@ -466,7 +466,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_1900
+     * @tc.number    SUB_STACK_TESTONE_1900
      * @tc.name      testStack01Chapter0019
      * @tc.desc      Push hex value to the Stack
      * @tc.size      MediumTest
@@ -484,7 +484,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_2000
+     * @tc.number    SUB_STACK_TESTONE_2000
      * @tc.name      testStack01Chapter0020
      * @tc.desc      Push scientific notation value to the Stack
      * @tc.size      MediumTest
@@ -504,7 +504,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_2100
+     * @tc.number    SUB_STACK_TESTONE_2100
      * @tc.name      testStack01Chapter0021
      * @tc.desc      Push empty string to the Stack
      * @tc.size      MediumTest
@@ -522,7 +522,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_2200
+     * @tc.number    SUB_STACK_TESTONE_2200
      * @tc.name      testStack01Chapter0022
      * @tc.desc      Push string with special characters to the Stack
      * @tc.size      MediumTest
@@ -541,7 +541,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_2300
+     * @tc.number    SUB_STACK_TESTONE_2300
      * @tc.name      testStack01Chapter0023
      * @tc.desc      Push string with ASCII characters to the Stack
      * @tc.size      MediumTest
@@ -560,7 +560,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_2400
+     * @tc.number    SUB_STACK_TESTONE_2400
      * @tc.name      testStack01Chapter0024
      * @tc.desc      Push string with repeated special characters to the Stack
      * @tc.size      MediumTest
@@ -579,7 +579,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_2500
+     * @tc.number    SUB_STACK_TESTONE_2500
      * @tc.name      testStack01Chapter0025
      * @tc.desc      Push string with escape characters to the Stack
      * @tc.size      MediumTest
@@ -598,7 +598,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_2600
+     * @tc.number    SUB_STACK_TESTONE_2600
      * @tc.name      testStack01Chapter0026
      * @tc.desc      Push string with emoji to the Stack
      * @tc.size      MediumTest
@@ -617,7 +617,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_2700
+     * @tc.number    SUB_STACK_TESTONE_2700
      * @tc.name      testStack01Chapter0027
      * @tc.desc      Push array to the Stack
      * @tc.size      MediumTest
@@ -636,7 +636,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_2800
+     * @tc.number    SUB_STACK_TESTONE_2800
      * @tc.name      testStack01Chapter0028
      * @tc.desc      Push null to the Stack
      * @tc.size      MediumTest
@@ -654,7 +654,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_2900
+     * @tc.number    SUB_STACK_TESTONE_2900
      * @tc.name      testStack01Chapter0029
      * @tc.desc      Push undefined to the Stack
      * @tc.size      MediumTest
@@ -672,7 +672,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_3000
+     * @tc.number    SUB_STACK_TESTONE_3000
      * @tc.name      testStack01Chapter0030
      * @tc.desc      Push multiple items of different types to the Stack
      * @tc.size      MediumTest
@@ -695,7 +695,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_3100
+     * @tc.number    SUB_STACK_TESTONE_3100
      * @tc.name      testStack01Chapter0031
      * @tc.desc      Push object to the Stack
      * @tc.size      MediumTest
@@ -714,7 +714,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_3200
+     * @tc.number    SUB_STACK_TESTONE_3200
      * @tc.name      testStack01Chapter0032
      * @tc.desc      Push TypedArray to the Stack
      * @tc.size      MediumTest
@@ -733,7 +733,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_3300
+     * @tc.number    SUB_STACK_TESTONE_3300
      * @tc.name      testStack01Chapter0033
      * @tc.desc      Push multiple items and verify LIFO order
      * @tc.size      MediumTest
@@ -756,7 +756,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_3400
+     * @tc.number    SUB_STACK_TESTONE_3400
      * @tc.name      testStack01Chapter0034
      * @tc.desc      Test push method normal functionality
      * @tc.size      MediumTest
@@ -780,7 +780,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_3500
+     * @tc.number    SUB_STACK_TESTONE_3500
      * @tc.name      testStack01Chapter0035
      * @tc.desc      Push large number of items to test performance
      * @tc.size      MediumTest
@@ -800,7 +800,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_3600
+     * @tc.number    SUB_STACK_TESTONE_3600
      * @tc.name      testStack01Chapter0036
      * @tc.desc      Push string with invalid Unicode encoding to the Stack
      * @tc.size      MediumTest
@@ -819,7 +819,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_3700
+     * @tc.number    SUB_STACK_TESTONE_3700
      * @tc.name      testStack01Chapter0037
      * @tc.desc      Push string keywords to the Stack
      * @tc.size      MediumTest
@@ -840,7 +840,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_3800
+     * @tc.number    SUB_STACK_TESTONE_3800
      * @tc.name      testStack01Chapter0038
      * @tc.desc      Push float value to the Stack
      * @tc.size      MediumTest
@@ -858,7 +858,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_3900
+     * @tc.number    SUB_STACK_TESTONE_3900
      * @tc.name      testStack01Chapter0039
      * @tc.desc      Push 32-bit hex value to the Stack
      * @tc.size      MediumTest
@@ -876,7 +876,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_4000
+     * @tc.number    SUB_STACK_TESTONE_4000
      * @tc.name      testStack01Chapter0040
      * @tc.desc      Push octal value to the Stack
      * @tc.size      MediumTest
@@ -894,7 +894,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_4100
+     * @tc.number    SUB_STACK_TESTONE_4100
      * @tc.name      testStack01Chapter0041
      * @tc.desc      Push exponential operator result to the Stack
      * @tc.size      MediumTest
@@ -912,7 +912,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_4200
+     * @tc.number    SUB_STACK_TESTONE_4200
      * @tc.name      testStack01Chapter0042
      * @tc.desc      Push long value to the Stack
      * @tc.size      MediumTest
@@ -932,7 +932,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_4300
+     * @tc.number    SUB_STACK_TESTONE_4300
      * @tc.name      testStack01Chapter0043
      * @tc.desc      Push char value to the Stack
      * @tc.size      MediumTest
@@ -950,7 +950,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_4400
+     * @tc.number    SUB_STACK_TESTONE_4400
      * @tc.name      testStack01Chapter0044
      * @tc.desc      Push array with zero elements to the Stack
      * @tc.size      MediumTest
@@ -970,7 +970,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_4500
+     * @tc.number    SUB_STACK_TESTONE_4500
      * @tc.name      testStack01Chapter0045
       * @tc.desc      Push array with negative numbers to the Stack
       * @tc.size      MediumTest
@@ -989,7 +989,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_4600
+     * @tc.number    SUB_STACK_TESTONE_4600
      * @tc.name      testStack01Chapter0046
      * @tc.desc      Push object with string key properties to the Stack
      * @tc.size      MediumTest
@@ -1014,7 +1014,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_4700
+     * @tc.number    SUB_STACK_TESTONE_4700
      * @tc.name      testStack01Chapter0047
      * @tc.desc      Push array with NaN and Infinity to the Stack
      * @tc.size      MediumTest
@@ -1035,7 +1035,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_4800
+     * @tc.number    SUB_STACK_TESTONE_4800
      * @tc.name      testStack01Chapter0048
      * @tc.desc      Push array with mixed types to the Stack
      * @tc.size      MediumTest
@@ -1055,7 +1055,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_4900
+     * @tc.number    SUB_STACK_TESTONE_4900
      * @tc.name      testStack01Chapter0049
      * @tc.desc      Push empty array to the Stack
      * @tc.size      MediumTest
@@ -1075,7 +1075,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_5000
+     * @tc.number    SUB_STACK_TESTONE_5000
      * @tc.name      testStack01Chapter0050
      * @tc.desc      Push array with overflow values to the Stack
      * @tc.size      MediumTest
@@ -1097,7 +1097,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_5100
+     * @tc.number    SUB_STACK_TESTONE_5100
      * @tc.name      testStack01Chapter0051
      * @tc.desc      Push object with custom key to the Stack
      * @tc.size      MediumTest
@@ -1120,7 +1120,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_5200
+     * @tc.number    SUB_STACK_TESTONE_5200
      * @tc.name      testStack01Chapter0052
       * @tc.desc      Push object with function property to the Stack
       * @tc.size      MediumTest
@@ -1143,7 +1143,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_5300
+     * @tc.number    SUB_STACK_TESTONE_5300
      * @tc.name      testStack01Chapter0053
      * @tc.desc      Push object with ArrayBuffer property to the Stack
      * @tc.size      MediumTest
@@ -1165,7 +1165,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_5400
+     * @tc.number    SUB_STACK_TESTONE_5400
      * @tc.name      testStack01Chapter0054
       * @tc.desc      Push object with Map property to the Stack
       * @tc.size      MediumTest
@@ -1186,7 +1186,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_5500
+     * @tc.number    SUB_STACK_TESTONE_5500
      * @tc.name      testStack01Chapter0055
       * @tc.desc      Push object with Set property to the Stack
       * @tc.size      MediumTest
@@ -1209,7 +1209,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_5600
+     * @tc.number    SUB_STACK_TESTONE_5600
      * @tc.name      testStack01Chapter0056
       * @tc.desc      Push object with Promise property to the Stack
       * @tc.size      MediumTest
@@ -1228,7 +1228,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_5700
+     * @tc.number    SUB_STACK_TESTONE_5700
      * @tc.name      testStack01Chapter0057
       * @tc.desc      Push object with RegExp property to the Stack
       * @tc.size      MediumTest
@@ -1247,7 +1247,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_5800
+     * @tc.number    SUB_STACK_TESTONE_5800
      * @tc.name      testStack01Chapter0058
      * @tc.desc      Push object with undefined property to the Stack
      * @tc.size      MediumTest
@@ -1268,7 +1268,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_5900
+     * @tc.number    SUB_STACK_TESTONE_5900
      * @tc.name      testStack01Chapter0059
      * @tc.desc      Push object with null property to the Stack
      * @tc.size      MediumTest
@@ -1289,7 +1289,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_6000
+     * @tc.number    SUB_STACK_TESTONE_6000
      * @tc.name      testStack01Chapter0060
      * @tc.desc      Push object with NaN property to the Stack
      * @tc.size      MediumTest
@@ -1311,7 +1311,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_6100
+     * @tc.number    SUB_STACK_TESTONE_6100
      * @tc.name      testStack01Chapter0061
      * @tc.desc      Push object with Infinity property to the Stack
      * @tc.size      MediumTest
@@ -1332,7 +1332,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_6200
+     * @tc.number    SUB_STACK_TESTONE_6200
      * @tc.name      testStack01Chapter0062
      * @tc.desc      Pop from empty stack should return undefined
      * @tc.size      MediumTest
@@ -1350,7 +1350,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_6300
+     * @tc.number    SUB_STACK_TESTONE_6300
      * @tc.name      testStack01Chapter0063
      * @tc.desc      Pop number from stack and verify LIFO order
      * @tc.size      MediumTest
@@ -1371,7 +1371,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_6400
+     * @tc.number    SUB_STACK_TESTONE_6400
      * @tc.name      testStack01Chapter0064
      * @tc.desc      Pop string from stack
      * @tc.size      MediumTest
@@ -1390,7 +1390,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_6500
+     * @tc.number    SUB_STACK_TESTONE_6500
      * @tc.name      testStack01Chapter0065
      * @tc.desc      Pop boolean from stack
      * @tc.size      MediumTest
@@ -1411,7 +1411,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_6600
+     * @tc.number    SUB_STACK_TESTONE_6600
      * @tc.name      testStack01Chapter0066
      * @tc.desc      Pop number 0 from stack
      * @tc.size      MediumTest
@@ -1428,7 +1428,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_6700
+     * @tc.number    SUB_STACK_TESTONE_6700
      * @tc.name      testStack01Chapter0067
      * @tc.desc      Pop NaN from stack
      * @tc.size      MediumTest
@@ -1446,7 +1446,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_6800
+     * @tc.number    SUB_STACK_TESTONE_6800
      * @tc.name      testStack01Chapter0068
      * @tc.desc      Pop Infinity from stack
      * @tc.size      MediumTest
@@ -1464,7 +1464,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_6900
+     * @tc.number    SUB_STACK_TESTONE_6900
      * @tc.name      testStack01Chapter0069
      * @tc.desc      Pop Number.MAX_VALUE from stack
      * @tc.size      MediumTest
@@ -1481,7 +1481,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_7000
+     * @tc.number    SUB_STACK_TESTONE_7000
      * @tc.name      testStack01Chapter0070
      * @tc.desc      Pop Number.MIN_VALUE from stack
      * @tc.size      MediumTest
@@ -1497,7 +1497,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_7100
+     * @tc.number    SUB_STACK_TESTONE_7100
      * @tc.name      testStack01Chapter0071
      * @tc.desc      Pop Number.MAX_SAFE_INTEGER from stack
      * @tc.size      MediumTest
@@ -1513,7 +1513,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_7200
+     * @tc.number    SUB_STACK_TESTONE_7200
      * @tc.name      testStack01Chapter0072
      * @tc.desc      Pop bigint from stack
      * @tc.size      MediumTest
@@ -1531,7 +1531,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_7300
+     * @tc.number    SUB_STACK_TESTONE_7300
      * @tc.name      testStack01Chapter0073
      * @tc.desc      Pop double value from stack
      * @tc.size      MediumTest
@@ -1549,7 +1549,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_7400
+     * @tc.number    SUB_STACK_TESTONE_7400
      * @tc.name      testStack01Chapter0074
      * @tc.desc      Pop hex value from stack
      * @tc.size      MediumTest
@@ -1565,7 +1565,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_7500
+     * @tc.number    SUB_STACK_TESTONE_7500
      * @tc.name      testStack01Chapter0075
      * @tc.desc      Pop scientific notation value from stack
      * @tc.size      MediumTest
@@ -1583,7 +1583,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_7600
+     * @tc.number    SUB_STACK_TESTONE_7600
      * @tc.name      testStack01Chapter0076
      * @tc.desc      Pop empty string from stack
      * @tc.size      MediumTest
@@ -1601,7 +1601,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_7700
+     * @tc.number    SUB_STACK_TESTONE_7700
      * @tc.name      testStack01Chapter0077
      * @tc.desc      Pop string with special characters from stack
      * @tc.size      MediumTest
@@ -1618,7 +1618,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_7800
+     * @tc.number    SUB_STACK_TESTONE_7800
      * @tc.name      testStack01Chapter0078
      * @tc.desc      Pop string with emoji from stack
      * @tc.size      MediumTest
@@ -1635,7 +1635,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_7900
+     * @tc.number    SUB_STACK_TESTONE_7900
      * @tc.name      testStack01Chapter0079
      * @tc.desc      Pop array from stack
      * @tc.size      MediumTest
@@ -1654,7 +1654,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_8000
+     * @tc.number    SUB_STACK_TESTONE_8000
      * @tc.name      testStack01Chapter0080
      * @tc.desc      Pop null from stack
      * @tc.size      MediumTest
@@ -1672,7 +1672,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_8100
+     * @tc.number    SUB_STACK_TESTONE_8100
      * @tc.name      testStack01Chapter0081
      * @tc.desc      Pop undefined from stack
      * @tc.size      MediumTest
@@ -1690,7 +1690,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_8200
+     * @tc.number    SUB_STACK_TESTONE_8200
      * @tc.name      testStack01Chapter0082
      * @tc.desc      Pop object from stack
      * @tc.size      MediumTest
@@ -1713,7 +1713,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_8300
+     * @tc.number    SUB_STACK_TESTONE_8300
      * @tc.name      testStack01Chapter0083
      * @tc.desc      Pop TypedArray from stack
      * @tc.size      MediumTest
@@ -1730,7 +1730,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_8400
+     * @tc.number    SUB_STACK_TESTONE_8400
      * @tc.name      testStack01Chapter0084
      * @tc.desc      Pop array with negative numbers from stack
      * @tc.size      MediumTest
@@ -1747,7 +1747,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_8500
+     * @tc.number    SUB_STACK_TESTONE_8500
      * @tc.name      testStack01Chapter0085
      * @tc.desc      Pop array with NaN and Infinity from stack
      * @tc.size      MediumTest
@@ -1767,7 +1767,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_8600
+     * @tc.number    SUB_STACK_TESTONE_8600
      * @tc.name      testStack01Chapter0086
      * @tc.desc      Pop empty array from stack
      * @tc.size      MediumTest
@@ -1786,7 +1786,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_8700
+     * @tc.number    SUB_STACK_TESTONE_8700
      * @tc.name      testStack01Chapter0087
      * @tc.desc      Pop mixed type tuple from stack
      * @tc.size      MediumTest
@@ -1803,7 +1803,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_8800
+     * @tc.number    SUB_STACK_TESTONE_8800
      * @tc.name      testStack01Chapter0088
      * @tc.desc      Pop object with function property from stack
      * @tc.size      MediumTest
@@ -1824,7 +1824,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_8900
+     * @tc.number    SUB_STACK_TESTONE_8900
      * @tc.name      testStack01Chapter0089
      * @tc.desc      Pop object with Map property from stack
      * @tc.size      MediumTest
@@ -1844,7 +1844,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_9000
+     * @tc.number    SUB_STACK_TESTONE_9000
      * @tc.name      testStack01Chapter0090
      * @tc.desc      Pop object with Set property from stack
      * @tc.size      MediumTest
@@ -1866,7 +1866,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_9100
+     * @tc.number    SUB_STACK_TESTONE_9100
      * @tc.name      testStack01Chapter0091
      * @tc.desc      Pop object with Promise property from stack
      * @tc.size      MediumTest
@@ -1884,7 +1884,7 @@ export default function Stack01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST01_9200
+     * @tc.number    SUB_STACK_TESTONE_9200
      * @tc.name      testStack01Chapter0092
      * @tc.desc      Pop object with RegExp property from stack
      * @tc.size      MediumTest

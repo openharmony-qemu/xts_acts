@@ -97,7 +97,7 @@ export default function Stack03Test(): void {
     })
 
     /**
-     * @tc.number    SUB_STACK_TEST03_0100
+     * @tc.number    SUB_STACK_TESTTHREE_0100
      * @tc.name      testStack03Chapter0001
      * @tc.desc      Test forEach method with empty stack
      * @tc.size      MediumTest
@@ -118,7 +118,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_0200
+     * @tc.number    SUB_STACK_TESTTHREE_0200
      * @tc.name      testStack03Chapter0002
      * @tc.desc      Test forEach method with basic number elements (document example)
      * @tc.size      MediumTest
@@ -147,7 +147,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_0300
+     * @tc.number    SUB_STACK_TESTTHREE_0300
      * @tc.name      testStack03Chapter0003
      * @tc.desc      Test forEach method with thisArg parameter
      * @tc.size      MediumTest
@@ -175,7 +175,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_0400
+     * @tc.number    SUB_STACK_TESTTHREE_0400
      * @tc.name      testStack03Chapter0004
      * @tc.desc      Test forEach method without index parameter in callback
      * @tc.size      MediumTest
@@ -202,7 +202,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_0500
+     * @tc.number    SUB_STACK_TESTTHREE_0500
      * @tc.name      testStack03Chapter0005
      * @tc.desc      Test forEach method with stack parameter in callback
      * @tc.size      MediumTest
@@ -229,7 +229,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_0600
+     * @tc.number    SUB_STACK_TESTTHREE_0600
      * @tc.name      testStack03Chapter0006
      * @tc.desc      Test forEach method with NaN values
      * @tc.size      MediumTest
@@ -255,7 +255,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_0700
+     * @tc.number    SUB_STACK_TESTTHREE_0700
      * @tc.name      testStack03Chapter0007
      * @tc.desc      Test forEach method with Infinity values
      * @tc.size      MediumTest
@@ -285,7 +285,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_0800
+     * @tc.number    SUB_STACK_TESTTHREE_0800
      * @tc.name      testStack03Chapter0008
      * @tc.desc      Test forEach method with zero values (0 and -0)
      * @tc.size      MediumTest
@@ -311,7 +311,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_0900
+     * @tc.number    SUB_STACK_TESTTHREE_0900
      * @tc.name      testStack03Chapter0009
      * @tc.desc      Test forEach method with null values
      * @tc.size      MediumTest
@@ -337,7 +337,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_1000
+     * @tc.number    SUB_STACK_TESTTHREE_1000
      * @tc.name      testStack03Chapter0010
      * @tc.desc      Test forEach method with undefined values
      * @tc.size      MediumTest
@@ -363,7 +363,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_1100
+     * @tc.number    SUB_STACK_TESTTHREE_1100
      * @tc.name      testStack03Chapter0011
      * @tc.desc      Test forEach method with boolean values
      * @tc.size      MediumTest
@@ -393,7 +393,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_1200
+     * @tc.number    SUB_STACK_TESTTHREE_1200
      * @tc.name      testStack03Chapter0012
      * @tc.desc      Test forEach method with string values including special characters
      * @tc.size      MediumTest
@@ -419,7 +419,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_1300
+     * @tc.number    SUB_STACK_TESTTHREE_1300
      * @tc.name      testStack03Chapter0013
      * @tc.desc      Test forEach method with ASCII characters
      * @tc.size      MediumTest
@@ -445,7 +445,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_1400
+     * @tc.number    SUB_STACK_TESTTHREE_1400
      * @tc.name      testStack03Chapter0014
      * @tc.desc      Test forEach method with escape sequence characters
      * @tc.size      MediumTest
@@ -470,7 +470,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_1500
+     * @tc.number    SUB_STACK_TESTTHREE_1500
      * @tc.name      testStack03Chapter0015
      * @tc.desc      Test forEach method with emoji characters
      * @tc.size      MediumTest
@@ -496,7 +496,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_1600
+     * @tc.number    SUB_STACK_TESTTHREE_1600
      * @tc.name      testStack03Chapter0016
      * @tc.desc      Test forEach method with Unicode escape sequences
      * @tc.size      MediumTest
@@ -522,7 +522,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_1700
+     * @tc.number    SUB_STACK_TESTTHREE_1700
      * @tc.name      testStack03Chapter0017
      * @tc.desc      Test forEach method with Number.MAX_VALUE and Number.MIN_VALUE
      * @tc.size      MediumTest
@@ -553,7 +553,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_1800
+     * @tc.number    SUB_STACK_TESTTHREE_1800
      * @tc.name      testStack03Chapter0018
      * @tc.desc      Test forEach method with Number.EPSILON
      * @tc.size      MediumTest
@@ -579,7 +579,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_1900
+     * @tc.number    SUB_STACK_TESTTHREE_1900
      * @tc.name      testStack03Chapter0019
      * @tc.desc      Test forEach method with byte range values
      * @tc.size      MediumTest
@@ -606,7 +606,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_2000
+     * @tc.number    SUB_STACK_TESTTHREE_2000
      * @tc.name      testStack03Chapter0020
      * @tc.desc      Test forEach method with short range values
      * @tc.size      MediumTest
@@ -633,7 +633,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_2100
+     * @tc.number    SUB_STACK_TESTTHREE_2100
      * @tc.name      testStack03Chapter0021
      * @tc.desc      Test forEach method with int range values
      * @tc.size      MediumTest
@@ -660,7 +660,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_2200
+     * @tc.number    SUB_STACK_TESTTHREE_2200
      * @tc.name      testStack03Chapter0022
      * @tc.desc      Test forEach method with long range values
      * @tc.size      MediumTest
@@ -687,7 +687,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_2300
+     * @tc.number    SUB_STACK_TESTTHREE_2300
      * @tc.name      testStack03Chapter0023
      * @tc.desc      Test forEach method with float range values
      * @tc.size      MediumTest
@@ -712,7 +712,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_2400
+     * @tc.number    SUB_STACK_TESTTHREE_2400
      * @tc.name      testStack03Chapter0024
      * @tc.desc      Test forEach method with double range values
      * @tc.size      MediumTest
@@ -737,7 +737,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_2500
+     * @tc.number    SUB_STACK_TESTTHREE_2500
      * @tc.name      testStack03Chapter0025
      * @tc.desc      Test forEach method with bigint values
      * @tc.size      MediumTest
@@ -763,7 +763,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_2600
+     * @tc.number    SUB_STACK_TESTTHREE_2600
      * @tc.name      testStack03Chapter0026
      * @tc.desc      Test forEach method with hexadecimal values
      * @tc.size      MediumTest
@@ -790,7 +790,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_2700
+     * @tc.number    SUB_STACK_TESTTHREE_2700
      * @tc.name      testStack03Chapter0027
      * @tc.desc      Test forEach method with exponent values
      * @tc.size      MediumTest
@@ -817,7 +817,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_2800
+     * @tc.number    SUB_STACK_TESTTHREE_2800
      * @tc.name      testStack03Chapter0028
      * @tc.desc      Test forEach method with array elements
      * @tc.size      MediumTest
@@ -844,7 +844,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_2900
+     * @tc.number    SUB_STACK_TESTTHREE_2900
      * @tc.name      testStack03Chapter0029
      * @tc.desc      Test forEach method with TypedArray elements
      * @tc.size      MediumTest
@@ -871,7 +871,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_3000
+     * @tc.number    SUB_STACK_TESTTHREE_3000
      * @tc.name      testStack03Chapter0030
      * @tc.desc      Test forEach method with Map objects
      * @tc.size      MediumTest
@@ -898,7 +898,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_3100
+     * @tc.number    SUB_STACK_TESTTHREE_3100
      * @tc.name      testStack03Chapter0031
      * @tc.desc      Test forEach method with Set objects
      * @tc.size      MediumTest
@@ -925,7 +925,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_3200
+     * @tc.number    SUB_STACK_TESTTHREE_3200
      * @tc.name      testStack03Chapter0032
      * @tc.desc      Test forEach method with object elements
      * @tc.size      MediumTest
@@ -952,7 +952,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_3300
+     * @tc.number    SUB_STACK_TESTTHREE_3300
      * @tc.name      testStack03Chapter0033
      * @tc.desc      Test forEach method with nested object elements
      * @tc.size      MediumTest
@@ -983,7 +983,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_3400
+     * @tc.number    SUB_STACK_TESTTHREE_3400
      * @tc.name      testStack03Chapter0034
      * @tc.desc      Test forEach method with large stack (1000 elements)
      * @tc.size      MediumTest
@@ -1011,7 +1011,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_3500
+     * @tc.number    SUB_STACK_TESTTHREE_3500
      * @tc.name      testStack03Chapter0035
      * @tc.desc      Test forEach method accesses stack size in callback
      * @tc.size      MediumTest
@@ -1039,7 +1039,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_3600
+     * @tc.number    SUB_STACK_TESTTHREE_3600
      * @tc.name      testStack03Chapter0036
      * @tc.desc      Test forEach method accesses stack values in callback
      * @tc.size      MediumTest
@@ -1067,7 +1067,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_3700
+     * @tc.number    SUB_STACK_TESTTHREE_3700
      * @tc.name      testStack03Chapter0037
      * @tc.desc      Test forEach method callback throws error
      * @tc.size      MediumTest
@@ -1100,7 +1100,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_3800
+     * @tc.number    SUB_STACK_TESTTHREE_3800
      * @tc.name      testStack03Chapter0038
      * @tc.desc      Test forEach method with callback returning value (not void)
      * @tc.size      MediumTest
@@ -1124,7 +1124,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_3900
+     * @tc.number    SUB_STACK_TESTTHREE_3900
      * @tc.name      testStack03Chapter0039
      * @tc.desc      Test forEach method callback throws error on first element
      * @tc.size      MediumTest
@@ -1157,7 +1157,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_4000
+     * @tc.number    SUB_STACK_TESTTHREE_4000
      * @tc.name      testStack03Chapter0040
      * @tc.desc      Test forEach method callback throws error on second element
      * @tc.size      MediumTest
@@ -1190,7 +1190,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_4100
+     * @tc.number    SUB_STACK_TESTTHREE_4100
      * @tc.name      testStack03Chapter0041
      * @tc.desc      Test forEach method callback throws error on last element
      * @tc.size      MediumTest
@@ -1223,7 +1223,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_4200
+     * @tc.number    SUB_STACK_TESTTHREE_4200
      * @tc.name      testStack03Chapter0042
      * @tc.desc      Test forEach method with callback that modifies external array
      * @tc.size      MediumTest
@@ -1250,7 +1250,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_4300
+     * @tc.number    SUB_STACK_TESTTHREE_4300
      * @tc.name      testStack03Chapter0043
      * @tc.desc      Test forEach method with callback using all parameters
      * @tc.size      MediumTest
@@ -1288,7 +1288,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_4400
+     * @tc.number    SUB_STACK_TESTTHREE_4400
      * @tc.name      testStack03Chapter0044
      * @tc.desc      Test forEach method with empty callback
      * @tc.size      MediumTest
@@ -1312,7 +1312,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_4500
+     * @tc.number    SUB_STACK_TESTTHREE_4500
      * @tc.name      testStack03Chapter0045
      * @tc.desc      Test forEach method with callback that returns early
      * @tc.size      MediumTest
@@ -1340,7 +1340,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_4600
+     * @tc.number    SUB_STACK_TESTTHREE_4600
      * @tc.name      testStack03Chapter0046
      * @tc.desc      Test forEach method with complex object stack
      * @tc.size      MediumTest
@@ -1375,7 +1375,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_4700
+     * @tc.number    SUB_STACK_TESTTHREE_4700
      * @tc.name      testStack03Chapter0047
      * @tc.desc      Test forEach method with thisArg parameter object
      * @tc.size      MediumTest
@@ -1406,7 +1406,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_4800
+     * @tc.number    SUB_STACK_TESTTHREE_4800
      * @tc.name      testStack03Chapter0048
      * @tc.desc      Test forEach method with stack containing only one element
      * @tc.size      MediumTest
@@ -1429,7 +1429,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_4900
+     * @tc.number    SUB_STACK_TESTTHREE_4900
      * @tc.name      testStack03Chapter0049
      * @tc.desc      Test forEach method order of iteration (should be from top to bottom)
      * @tc.size      MediumTest
@@ -1456,7 +1456,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_5000
+     * @tc.number    SUB_STACK_TESTTHREE_5000
      * @tc.name      testStack03Chapter0050
      * @tc.desc      Test forEach method with extremely large stack (performance test)
      * @tc.size      MediumTest
@@ -1484,7 +1484,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_5100
+     * @tc.number    SUB_STACK_TESTTHREE_5100
      * @tc.name      testStack03Chapter0051
      * @tc.desc      Test nested forEach calls
      * @tc.size      MediumTest
@@ -1516,7 +1516,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_5200
+     * @tc.number    SUB_STACK_TESTTHREE_5200
      * @tc.name      testStack03Chapter0052
      * @tc.desc      Test forEach with callback that modifies external array
      * @tc.size      MediumTest
@@ -1543,7 +1543,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_5300
+     * @tc.number    SUB_STACK_TESTTHREE_5300
      * @tc.name      testStack03Chapter0053
      * @tc.desc      Test forEach with class instance processing
      * @tc.size      MediumTest
@@ -1574,7 +1574,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_5400
+     * @tc.number    SUB_STACK_TESTTHREE_5400
      * @tc.name      testStack03Chapter0054
      * @tc.desc      Test forEach with Float32Array containing special values
      * @tc.size      MediumTest
@@ -1606,7 +1606,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_5500
+     * @tc.number    SUB_STACK_TESTTHREE_5500
      * @tc.name      testStack03Chapter0055
      * @tc.desc      Test forEach with Float64Array containing special values
      * @tc.size      MediumTest
@@ -1646,7 +1646,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_5600
+     * @tc.number    SUB_STACK_TESTTHREE_5600
      * @tc.name      testStack03Chapter0056
      * @tc.desc      Test forEach with treeString type (large nested JSON string)
      * @tc.size      MediumTest
@@ -1686,7 +1686,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_5700
+     * @tc.number    SUB_STACK_TESTTHREE_5700
      * @tc.name      testStack03Chapter0057
      * @tc.desc      Test forEach with sliceString type
      * @tc.size      MediumTest
@@ -1719,7 +1719,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_5800
+     * @tc.number    SUB_STACK_TESTTHREE_5800
      * @tc.name      testStack03Chapter0058
      * @tc.desc      Test forEach with TypedArray boundary values
      * @tc.size      MediumTest
@@ -1747,7 +1747,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_5900
+     * @tc.number    SUB_STACK_TESTTHREE_5900
      * @tc.name      testStack03Chapter0059
      * @tc.desc      Test forEach with Uint8Array boundary values
      * @tc.size      MediumTest
@@ -1775,7 +1775,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_6000
+     * @tc.number    SUB_STACK_TESTTHREE_6000
      * @tc.name      testStack03Chapter0060
      * @tc.desc      Test forEach with Uint8ClampedArray clamping behavior
      * @tc.size      MediumTest
@@ -1804,7 +1804,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_6100
+     * @tc.number    SUB_STACK_TESTTHREE_6100
      * @tc.name      testStack03Chapter0061
      * @tc.desc      Test forEach with all TypedArray types
      * @tc.size      MediumTest
@@ -1842,7 +1842,7 @@ export default function Stack03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST03_6200
+     * @tc.number    SUB_STACK_TESTTHREE_6200
      * @tc.name      testStack03Chapter0062
      * @tc.desc      Test forEach with array containing NaN/Infinity elements
      * @tc.size      MediumTest
