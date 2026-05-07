@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
 import { LightWeightMap } from '@kit.ArkTS';
 
@@ -76,15 +76,15 @@ export default function testLightWeightMapTest04(): void {
     })
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0001
-     * @tc.name      testLightWeightMapTest04Chapter0001
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0100
+     * @tc.name      testLightWeightMapTest04Chapter0100
      * @tc.desc      Verify setAll with String type keys and values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0001';
+    it("testLightWeightMapTest04Chapter0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter0100';
       console.log(TAG + 'start');
 
       const sourceMap = new LightWeightMap<string, string>();
@@ -101,15 +101,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0002
-     * @tc.name      testLightWeightMapTest04Chapter0002
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0200
+     * @tc.name      testLightWeightMapTest04Chapter0200
      * @tc.desc      Verify setAll with String type containing special characters
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0002';
+    it("testLightWeightMapTest04Chapter0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter0200';
       console.log(TAG + 'start');
 
       const sourceMap = new LightWeightMap<string, string>();
@@ -130,15 +130,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0003
-     * @tc.name      testLightWeightMapTest04Chapter0003
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0300
+     * @tc.name      testLightWeightMapTest04Chapter0300
      * @tc.desc      Verify setAll with Number type keys and values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0003';
+    it("testLightWeightMapTest04Chapter0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter0300';
       console.log(TAG + 'start');
 
       const sourceMap = new LightWeightMap<number, number>();
@@ -161,15 +161,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0004
-     * @tc.name      testLightWeightMapTest04Chapter0004
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0400
+     * @tc.name      testLightWeightMapTest04Chapter0400
      * @tc.desc      Verify setAll with Number type special values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0004';
+    it("testLightWeightMapTest04Chapter0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter0400';
       console.log(TAG + 'start');
 
       const sourceMap = new LightWeightMap<number, number>();
@@ -190,15 +190,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0005
-     * @tc.name      testLightWeightMapTest04Chapter0005
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0500
+     * @tc.name      testLightWeightMapTest04Chapter0500
      * @tc.desc      Verify setAll with Boolean type keys and values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0005';
+    it("testLightWeightMapTest04Chapter0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter0500';
       console.log(TAG + 'start');
 
       const sourceMap = new LightWeightMap<boolean, boolean>();
@@ -215,15 +215,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0006
-     * @tc.name      testLightWeightMapTest04Chapter0006
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0600
+     * @tc.name      testLightWeightMapTest04Chapter0600
      * @tc.desc      Verify setAll with Boolean type mixed values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0006';
+    it("testLightWeightMapTest04Chapter0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter0600';
       console.log(TAG + 'start');
 
       const sourceMap = new LightWeightMap<string, boolean>();
@@ -242,15 +242,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0007
-     * @tc.name      testLightWeightMapTest04Chapter0007
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0700
+     * @tc.name      testLightWeightMapTest04Chapter0700
      * @tc.desc      Verify setAll with Array type values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0007';
+    it("testLightWeightMapTest04Chapter0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter0700';
       console.log(TAG + 'start');
 
       const sourceMap = new LightWeightMap<string, Array<number>>();
@@ -269,15 +269,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0008
-     * @tc.name      testLightWeightMapTest04Chapter0008
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0800
+     * @tc.name      testLightWeightMapTest04Chapter0800
      * @tc.desc      Verify setAll with nested Array type values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0008';
+    it("testLightWeightMapTest04Chapter0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter0800';
       console.log(TAG + 'start');
 
       const sourceMap = new LightWeightMap<string, Array<Array<number>>>();
@@ -294,15 +294,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0009
-     * @tc.name      testLightWeightMapTest04Chapter0009
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0900
+     * @tc.name      testLightWeightMapTest04Chapter0900
      * @tc.desc      Verify setAll with Object type keys and values
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0009';
+    it("testLightWeightMapTest04Chapter0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter0900';
       console.log(TAG + 'start');
 
       const key1: keyobject= { id: 1, name: 'key1' };
@@ -328,15 +328,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0010
-     * @tc.name      testLightWeightMapTest04Chapter0010
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_1000
+     * @tc.name      testLightWeightMapTest04Chapter1000
      * @tc.desc      Verify setAll with nested Object type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0010';
+    it("testLightWeightMapTest04Chapter1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter1000';
       console.log(TAG + 'start');
 
       const key1: keyobject= { id: 1, name: 'key1' };
@@ -358,15 +358,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0011
-     * @tc.name      testLightWeightMapTest04Chapter0011
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_1100
+     * @tc.name      testLightWeightMapTest04Chapter1100
      * @tc.desc      Verify setAll with Class type
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0011';
+    it("testLightWeightMapTest04Chapter1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter1100';
       console.log(TAG + 'start');
 
       const instance1 = new TestClass(1, "first");
@@ -393,15 +393,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0012
-     * @tc.name      testLightWeightMapTest04Chapter0012
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_1200
+     * @tc.name      testLightWeightMapTest04Chapter1200
      * @tc.desc      Verify setAll with TypedArray type (Int8Array)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0012';
+    it("testLightWeightMapTest04Chapter1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter1200';
       console.log(TAG + 'start');
 
       const key1 = new Int8Array([1, 2, 3]);
@@ -424,15 +424,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0013
-     * @tc.name      testLightWeightMapTest04Chapter0013
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_1300
+     * @tc.name      testLightWeightMapTest04Chapter1300
      * @tc.desc      Verify setAll with TypedArray special values (Float64Array)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0013';
+    it("testLightWeightMapTest04Chapter1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter1300';
       console.log(TAG + 'start');
 
       const key1 = new Float64Array([NaN, Infinity, -Infinity]);
@@ -455,15 +455,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0014
-     * @tc.name      testLightWeightMapTest04Chapter0014
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_1400
+     * @tc.name      testLightWeightMapTest04Chapter1400
      * @tc.desc      Verify setAll with boolean types
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0014';
+    it("testLightWeightMapTest04Chapter1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter1400';
       console.log(TAG + 'start');
       const sourceMap = new LightWeightMap<boolean, boolean>();
       sourceMap.set(true, false);
@@ -474,15 +474,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0015
-     * @tc.name      testLightWeightMapTest04Chapter0015
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_1500
+     * @tc.name      testLightWeightMapTest04Chapter1500
      * @tc.desc      Verify setAll overwrites existing keys
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0015';
+    it("testLightWeightMapTest04Chapter1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter1500';
       console.log(TAG + 'start');
 
       const sourceMap = new LightWeightMap<string, number>();
@@ -505,15 +505,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0016
-     * @tc.name      testLightWeightMapTest04Chapter0016
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_1600
+     * @tc.name      testLightWeightMapTest04Chapter1600
      * @tc.desc      Verify setAll with empty source map
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0016';
+    it("testLightWeightMapTest04Chapter1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter1600';
       console.log(TAG + 'start');
 
       const sourceMap = new LightWeightMap<string, number>();
@@ -531,15 +531,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0017
-     * @tc.name      testLightWeightMapTest04Chapter0017
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_1700
+     * @tc.name      testLightWeightMapTest04Chapter1700
      * @tc.desc      Test setAll method cannot be bound (error 10200011)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0017';
+    it("testLightWeightMapTest04Chapter1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter1700';
       console.log(TAG + 'start');
       const targetMap = new LightWeightMap<boolean, number>();
       try {
@@ -554,15 +554,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0018
-     * @tc.name      testLightWeightMapTest04Chapter0018
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_1800
+     * @tc.name      testLightWeightMapTest04Chapter1800
      * @tc.desc      Test setAll method with empty source map
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0018';
+    it("testLightWeightMapTest04Chapter1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter1800';
       console.log(TAG + 'start');
       const sourceMap = new LightWeightMap<boolean, number>();
 
@@ -579,15 +579,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0019
-     * @tc.name      testLightWeightMapTest04Chapter0019
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_1900
+     * @tc.name      testLightWeightMapTest04Chapter1900
      * @tc.desc      Verify setAll with large number of elements
      * @tc.size      LargeTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0019", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0019';
+    it("testLightWeightMapTest04Chapter1900", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter1900';
       console.log(TAG + 'start');
 
       const sourceMap = new LightWeightMap<number, string>();
@@ -615,15 +615,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0020
-     * @tc.name      testLightWeightMapTest04Chapter0020
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_2000
+     * @tc.name      testLightWeightMapTest04Chapter2000
      * @tc.desc      Verify setAll with self (same map)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0020';
+    it("testLightWeightMapTest04Chapter2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter2000';
       console.log(TAG + 'start');
 
       const map = new LightWeightMap<string, number>();
@@ -641,15 +641,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0021
-     * @tc.name      testLightWeightMapTest04Chapter0021
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_2100
+     * @tc.name      testLightWeightMapTest04Chapter2100
      * @tc.desc      Check whether the LightWeightMap works normally after adding data
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0021';
+    it("testLightWeightMapTest04Chapter2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter2100';
       console.log(TAG + 'start');
       const lightWeightMap = new LightWeightMap<string, number>();
       lightWeightMap.set('key',100);
@@ -659,15 +659,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0022
-     * @tc.name      testLightWeightMapTest04Chapter0022
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_2200
+     * @tc.name      testLightWeightMapTest04Chapter2200
      * @tc.desc      Check whether the LightWeightMap works normally after adding data
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0022';
+    it("testLightWeightMapTest04Chapter2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter2200';
       console.log(TAG + 'start');
       const lightWeightMap = new LightWeightMap<string, string>();
       lightWeightMap.set('key','kind');
@@ -677,15 +677,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0023
-     * @tc.name      testLightWeightMapTest04Chapter0023
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_2300
+     * @tc.name      testLightWeightMapTest04Chapter2300
      * @tc.desc      Check whether the LightWeightMap works normally after adding data
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0023';
+    it("testLightWeightMapTest04Chapter2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter2300';
       console.log(TAG + 'start');
       const arr:Uint8Array = new Uint8Array([1,2,3,4,5]);
       const lightWeightMap = new LightWeightMap<Uint8Array, number>();
@@ -695,15 +695,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0024
-     * @tc.name      testLightWeightMapTest04Chapter0024
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_2400
+     * @tc.name      testLightWeightMapTest04Chapter2400
      * @tc.desc      Check whether the LightWeightMap works normally after adding data
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0024';
+    it("testLightWeightMapTest04Chapter2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter2400';
       console.log(TAG + 'start');
       const lightWeightMap = new LightWeightMap<number, number>();
       lightWeightMap.set(50,100);
@@ -713,15 +713,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0025
-     * @tc.name      testLightWeightMapTest04Chapter0025
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_2500
+     * @tc.name      testLightWeightMapTest04Chapter2500
      * @tc.desc      Check whether the LightWeightMap works normally after adding data
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0025';
+    it("testLightWeightMapTest04Chapter2500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter2500';
       console.log(TAG + 'start');
       const instance = new TestClass(1, "test");
       const lightWeightMap = new LightWeightMap<TestClass, number>();
@@ -732,15 +732,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0026
-     * @tc.name      testLightWeightMapTest04Chapter0026
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_2600
+     * @tc.name      testLightWeightMapTest04Chapter2600
      * @tc.desc      Check whether the LightWeightMap works normally after adding data
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0026';
+    it("testLightWeightMapTest04Chapter2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter2600';
       console.log(TAG + 'start');
       const lightWeightMap = new LightWeightMap<Int8Array, Int8Array>();
       const key_1 = new Int8Array([-128]);
@@ -751,15 +751,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0027
-     * @tc.name      testLightWeightMapTest04Chapter0027
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_2700
+     * @tc.name      testLightWeightMapTest04Chapter2700
      * @tc.desc      Check whether the LightWeightMap works normally after adding data
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0027';
+    it("testLightWeightMapTest04Chapter2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter2700';
       console.log(TAG + 'start');
       const lightWeightMap = new LightWeightMap<Int8Array, Int8Array>();
       const key_1 = new Int8Array([-129]);
@@ -770,15 +770,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0028
-     * @tc.name      testLightWeightMapTest04Chapter0028
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_2800
+     * @tc.name      testLightWeightMapTest04Chapter2800
      * @tc.desc      Check whether the LightWeightMap works normally after adding data
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0028';
+    it("testLightWeightMapTest04Chapter2800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter2800';
       console.log(TAG + 'start');
       const lightWeightMap = new LightWeightMap<Uint8Array, Uint8Array>();
       const key_1 = new Uint8Array([0]);
@@ -789,15 +789,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0029
-     * @tc.name      testLightWeightMapTest04Chapter0029
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_2900
+     * @tc.name      testLightWeightMapTest04Chapter2900
      * @tc.desc      Check whether the LightWeightMap works normally after adding data
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0029';
+    it("testLightWeightMapTest04Chapter2900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter2900';
       console.log(TAG + 'start');
       const lightWeightMap = new LightWeightMap<Uint8Array, Uint8Array>();
       const key_1 = new Uint8Array([-1]);
@@ -808,15 +808,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0030
-     * @tc.name      testLightWeightMapTest04Chapter0030
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_3000
+     * @tc.name      testLightWeightMapTest04Chapter3000
      * @tc.desc      Check whether the LightWeightMap works normally after adding data
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0030';
+    it("testLightWeightMapTest04Chapter3000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter3000';
       console.log(TAG + 'start');
       const lightWeightMap = new LightWeightMap<Uint8ClampedArray, Uint8ClampedArray>();
       const key_1 = new Uint8ClampedArray([0]);
@@ -827,15 +827,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0031
-     * @tc.name      testLightWeightMapTest04Chapter0031
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_3100
+     * @tc.name      testLightWeightMapTest04Chapter3100
      * @tc.desc      Check whether the LightWeightMap works normally after adding data
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0031';
+    it("testLightWeightMapTest04Chapter3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter3100';
       console.log(TAG + 'start');
       const lightWeightMap = new LightWeightMap<Uint8ClampedArray, Uint8ClampedArray>();
       const key_1 = new Uint8ClampedArray([-1]);
@@ -846,15 +846,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0032
-     * @tc.name      testLightWeightMapTest04Chapter0032
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_3200
+     * @tc.name      testLightWeightMapTest04Chapter3200
      * @tc.desc      Check whether the LightWeightMap works normally after adding data
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0032';
+    it("testLightWeightMapTest04Chapter3200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter3200';
       console.log(TAG + 'start');
       const lightWeightMap = new LightWeightMap<Int16Array, Int16Array>();
       const key_1 = new Int16Array([-32768]);
@@ -865,15 +865,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0033
-     * @tc.name      testLightWeightMapTest04Chapter0033
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_3300
+     * @tc.name      testLightWeightMapTest04Chapter3300
      * @tc.desc      Check whether the LightWeightMap works normally after adding data
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0033';
+    it("testLightWeightMapTest04Chapter3300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter3300';
       console.log(TAG + 'start');
       const lightWeightMap = new LightWeightMap<Int16Array, Int16Array>();
       const key_1 = new Int16Array([-32769]);
@@ -884,15 +884,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0034
-     * @tc.name      testLightWeightMapTest04Chapter0034
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_3400
+     * @tc.name      testLightWeightMapTest04Chapter3400
      * @tc.desc      Check whether the LightWeightMap works normally after adding data
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0034';
+    it("testLightWeightMapTest04Chapter3400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter3400';
       console.log(TAG + 'start');
       const lightWeightMap = new LightWeightMap<Uint16Array, Uint16Array>();
       const key_1 = new Uint16Array([0]);
@@ -903,15 +903,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0035
-     * @tc.name      testLightWeightMapTest04Chapter0035
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_3500
+     * @tc.name      testLightWeightMapTest04Chapter3500
      * @tc.desc      Check whether the LightWeightMap works normally after adding data
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0035';
+    it("testLightWeightMapTest04Chapter3500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter3500';
       console.log(TAG + 'start');
       const lightWeightMap = new LightWeightMap<Uint16Array, Uint16Array>();
       const key_1 = new Uint16Array([-1]);
@@ -922,15 +922,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0036
-     * @tc.name      testLightWeightMapTest04Chapter0036
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_3600
+     * @tc.name      testLightWeightMapTest04Chapter3600
      * @tc.desc      Check whether the LightWeightMap works normally after adding data
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0036';
+    it("testLightWeightMapTest04Chapter3600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter3600';
       console.log(TAG + 'start');
       const lightWeightMap = new LightWeightMap<Int32Array, Int32Array>();
       const key_1 = new Int32Array([-2147483648]);
@@ -941,15 +941,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0037
-     * @tc.name      testLightWeightMapTest04Chapter0037
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_3700
+     * @tc.name      testLightWeightMapTest04Chapter3700
      * @tc.desc      Check whether the LightWeightMap works normally after adding data
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0037';
+    it("testLightWeightMapTest04Chapter3700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter3700';
       console.log(TAG + 'start');
       const lightWeightMap = new LightWeightMap<Int32Array, Int32Array>();
       const key_1 = new Int32Array([-2147483649]);
@@ -960,15 +960,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0038
-     * @tc.name      testLightWeightMapTest04Chapter0038
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_3800
+     * @tc.name      testLightWeightMapTest04Chapter3800
      * @tc.desc      Check whether the LightWeightMap works normally after adding data
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0038';
+    it("testLightWeightMapTest04Chapter3800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter3800';
       console.log(TAG + 'start');
       const lightWeightMap = new LightWeightMap<Uint32Array, Uint32Array>();
       const key_1 = new Uint32Array([0]);
@@ -979,15 +979,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0039
-     * @tc.name      testLightWeightMapTest04Chapter0039
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_3900
+     * @tc.name      testLightWeightMapTest04Chapter3900
      * @tc.desc      Check whether the LightWeightMap works normally after adding data
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0039';
+    it("testLightWeightMapTest04Chapter3900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter3900';
       console.log(TAG + 'start');
       const lightWeightMap = new LightWeightMap<Uint8Array, boolean>();
       const arr:Uint8Array = new Uint8Array([72,101,108]);
@@ -997,15 +997,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0040
-     * @tc.name      testLightWeightMapTest04Chapter0040
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_4000
+     * @tc.name      testLightWeightMapTest04Chapter4000
      * @tc.desc      Check whether the LightWeightMap works normally after adding data
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0040';
+    it("testLightWeightMapTest04Chapter4000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter4000';
       console.log(TAG + 'start');
       const Obj : MyObj040 = {a:1,b:"test",c:[1,2,3]};
       const lightWeightMap = new LightWeightMap<Object, boolean>();
@@ -1015,15 +1015,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0041
-     * @tc.name      testLightWeightMapTest04Chapter0041
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_4100
+     * @tc.name      testLightWeightMapTest04Chapter4100
      * @tc.desc      Check whether the LightWeightMap works normally after adding data
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0041';
+    it("testLightWeightMapTest04Chapter4100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter4100';
       console.log(TAG + 'start');
       const Obj : MyObj041 = {view: new DataView(new ArrayBuffer(16))};
       const lightWeightMap = new LightWeightMap<string,Object>();
@@ -1033,15 +1033,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0042
-     * @tc.name      testLightWeightMapTest04Chapter0042
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_4200
+     * @tc.name      testLightWeightMapTest04Chapter4200
      * @tc.desc      Check whether the LightWeightMap works normally after adding data
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0042';
+    it("testLightWeightMapTest04Chapter4200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter4200';
       console.log(TAG + 'start');
       const lightWeightMap = new LightWeightMap<Float32Array | undefined, string | null>();
       lightWeightMap.set(undefined,null);
@@ -1050,15 +1050,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0043
-     * @tc.name      testLightWeightMapTest04Chapter0043
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_4300
+     * @tc.name      testLightWeightMapTest04Chapter4300
      * @tc.desc      Remove with basic string key
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0043';
+    it("testLightWeightMapTest04Chapter4300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter4300';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<string, number>();
@@ -1070,15 +1070,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0044
-     * @tc.name      testLightWeightMapTest04Chapter0044
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_4400
+     * @tc.name      testLightWeightMapTest04Chapter4400
      * @tc.desc      Remove with empty string key
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0044';
+    it("testLightWeightMapTest04Chapter4400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter4400';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<string, number>();
@@ -1090,15 +1090,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0045
-     * @tc.name      testLightWeightMapTest04Chapter0045
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_4500
+     * @tc.name      testLightWeightMapTest04Chapter4500
      * @tc.desc      Remove with special characters string key
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0045';
+    it("testLightWeightMapTest04Chapter4500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter4500';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<string, number>();
@@ -1110,15 +1110,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0046
-     * @tc.name      testLightWeightMapTest04Chapter0046
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_4600
+     * @tc.name      testLightWeightMapTest04Chapter4600
      * @tc.desc      Remove with number key 0
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0046';
+    it("testLightWeightMapTest04Chapter4600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter4600';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<number, string>();
@@ -1130,15 +1130,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0047
-     * @tc.name      testLightWeightMapTest04Chapter0047
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_4700
+     * @tc.name      testLightWeightMapTest04Chapter4700
      * @tc.desc      Remove with Number.MAX_VALUE key
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0047';
+    it("testLightWeightMapTest04Chapter4700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter4700';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<number, string>();
@@ -1150,15 +1150,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0048
-     * @tc.name      testLightWeightMapTest04Chapter0048
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_4800
+     * @tc.name      testLightWeightMapTest04Chapter4800
      * @tc.desc      Remove with Infinity key
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0048';
+    it("testLightWeightMapTest04Chapter4800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter4800';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<number, string>();
@@ -1170,15 +1170,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0049
-     * @tc.name      testLightWeightMapTest04Chapter0049
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_4900
+     * @tc.name      testLightWeightMapTest04Chapter4900
      * @tc.desc      Remove with NaN key
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0049';
+    it("testLightWeightMapTest04Chapter4900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter4900';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<number, string>();
@@ -1190,15 +1190,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0050
-     * @tc.name      testLightWeightMapTest04Chapter0050
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_5000
+     * @tc.name      testLightWeightMapTest04Chapter5000
      * @tc.desc      Remove with boolean true key
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0050';
+    it("testLightWeightMapTest04Chapter5000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter5000';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<boolean, string>();
@@ -1210,15 +1210,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0051
-     * @tc.name      testLightWeightMapTest04Chapter0051
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_5100
+     * @tc.name      testLightWeightMapTest04Chapter5100
      * @tc.desc      Remove with boolean false key
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0051';
+    it("testLightWeightMapTest04Chapter5100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter5100';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<boolean, string>();
@@ -1230,15 +1230,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0052
-     * @tc.name      testLightWeightMapTest04Chapter0052
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_5200
+     * @tc.name      testLightWeightMapTest04Chapter5200
      * @tc.desc      Remove with number array key
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0052';
+    it("testLightWeightMapTest04Chapter5200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter5200';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<Array<number>, string>();
@@ -1251,15 +1251,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0053
-     * @tc.name      testLightWeightMapTest04Chapter0053
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_5300
+     * @tc.name      testLightWeightMapTest04Chapter5300
      * @tc.desc      Remove with nested array key
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0053';
+    it("testLightWeightMapTest04Chapter5300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter5300';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<Array<Array<number>>, string>();
@@ -1272,15 +1272,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0054
-     * @tc.name      testLightWeightMapTest04Chapter0054
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_5400
+     * @tc.name      testLightWeightMapTest04Chapter5400
      * @tc.desc      Remove with simple object key (Object type)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0054';
+    it("testLightWeightMapTest04Chapter5400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter5400';
       console.log(TAG + 'start');
 
       const obj: MyObj054 = { a: 1, b: 'x' };
@@ -1293,15 +1293,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0055
-     * @tc.name      testLightWeightMapTest04Chapter0055
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_5500
+     * @tc.name      testLightWeightMapTest04Chapter5500
      * @tc.desc      Remove with string key
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0055';
+    it("testLightWeightMapTest04Chapter5500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter5500';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<string,boolean>();
@@ -1313,15 +1313,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0056
-     * @tc.name      testLightWeightMapTest04Chapter0056
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_5600
+     * @tc.name      testLightWeightMapTest04Chapter5600
      * @tc.desc      Remove with Int8Array key
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0056';
+    it("testLightWeightMapTest04Chapter5600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter5600';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<Int8Array, string>();
@@ -1334,15 +1334,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0057
-     * @tc.name      testLightWeightMapTest04Chapter0057
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_5700
+     * @tc.name      testLightWeightMapTest04Chapter5700
      * @tc.desc      Remove with Uint8Array key
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0057';
+    it("testLightWeightMapTest04Chapter5700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter5700';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<Uint8Array, string>();
@@ -1355,15 +1355,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0058
-     * @tc.name      testLightWeightMapTest04Chapter0058
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_5800
+     * @tc.name      testLightWeightMapTest04Chapter5800
      * @tc.desc      Remove with Float32Array key
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0058';
+    it("testLightWeightMapTest04Chapter5800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter5800';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<Float32Array, string>();
@@ -1376,15 +1376,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0059
-     * @tc.name      testLightWeightMapTest04Chapter0059
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_5900
+     * @tc.name      testLightWeightMapTest04Chapter5900
      * @tc.desc      Remove with class instance key
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0059';
+    it("testLightWeightMapTest04Chapter5900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter5900';
       console.log(TAG + 'start');
       const lightWeightMap = new LightWeightMap<TestClass, string>();
       const instance = new TestClass(42, "testInstance");
@@ -1396,15 +1396,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0060
-     * @tc.name      testLightWeightMapTest04Chapter0060
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_6000
+     * @tc.name      testLightWeightMapTest04Chapter6000
      * @tc.desc      Remove with non-existent key should not change size
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0060';
+    it("testLightWeightMapTest04Chapter6000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter6000';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<string, number>();
@@ -1417,15 +1417,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0061
-     * @tc.name      testLightWeightMapTest04Chapter0061
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_6100
+     * @tc.name      testLightWeightMapTest04Chapter6100
      * @tc.desc      Remove after setting same key multiple times
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0061';
+    it("testLightWeightMapTest04Chapter6100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter6100';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<string, number>();
@@ -1438,15 +1438,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0062
-     * @tc.name      testLightWeightMapTest04Chapter0062
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_6200
+     * @tc.name      testLightWeightMapTest04Chapter6200
      * @tc.desc      Remove with float min value key (1.401298e-45)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0062';
+    it("testLightWeightMapTest04Chapter6200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter6200';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<number, string>();
@@ -1459,15 +1459,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0063
-     * @tc.name      testLightWeightMapTest04Chapter0063
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_6300
+     * @tc.name      testLightWeightMapTest04Chapter6300
      * @tc.desc      Remove with float max value key (3.402823e+38)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0063';
+    it("testLightWeightMapTest04Chapter6300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter6300';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<number, string>();
@@ -1480,15 +1480,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0064
-     * @tc.name      testLightWeightMapTest04Chapter0064
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_6400
+     * @tc.name      testLightWeightMapTest04Chapter6400
      * @tc.desc      Remove with double min value key (4.940656e-324)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0064';
+    it("testLightWeightMapTest04Chapter6400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter6400';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<number, string>();
@@ -1501,15 +1501,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0065
-     * @tc.name      testLightWeightMapTest04Chapter0065
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_6500
+     * @tc.name      testLightWeightMapTest04Chapter6500
      * @tc.desc      Remove with double max value key (1.797693e+308)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0065';
+    it("testLightWeightMapTest04Chapter6500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter6500';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<number, string>();
@@ -1522,15 +1522,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0066
-     * @tc.name      testLightWeightMapTest04Chapter0066
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_6600
+     * @tc.name      testLightWeightMapTest04Chapter6600
      * @tc.desc      Remove with char min value key (0)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0066';
+    it("testLightWeightMapTest04Chapter6600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter6600';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<number, string>();
@@ -1543,15 +1543,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0067
-     * @tc.name      testLightWeightMapTest04Chapter0067
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_6700
+     * @tc.name      testLightWeightMapTest04Chapter6700
      * @tc.desc      Remove with char max value key (65535)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0067';
+    it("testLightWeightMapTest04Chapter6700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter6700';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<number, string>();
@@ -1564,15 +1564,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0068
-     * @tc.name      testLightWeightMapTest04Chapter0068
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_6800
+     * @tc.name      testLightWeightMapTest04Chapter6800
      * @tc.desc      Remove with BigInt value converted to number as key
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0068';
+    it("testLightWeightMapTest04Chapter6800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter6800';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<number, string>();
@@ -1585,15 +1585,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0069
-     * @tc.name      testLightWeightMapTest04Chapter0069
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_6900
+     * @tc.name      testLightWeightMapTest04Chapter6900
      * @tc.desc      Remove with hexadecimal key 0x0102
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0069';
+    it("testLightWeightMapTest04Chapter6900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter6900';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<number, string>();
@@ -1606,15 +1606,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0070
-     * @tc.name      testLightWeightMapTest04Chapter0070
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_7000
+     * @tc.name      testLightWeightMapTest04Chapter7000
      * @tc.desc      Remove with hexadecimal key 0x01020304
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0070';
+    it("testLightWeightMapTest04Chapter7000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter7000';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<number, string>();
@@ -1627,15 +1627,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0071
-     * @tc.name      testLightWeightMapTest04Chapter0071
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_7100
+     * @tc.name      testLightWeightMapTest04Chapter7100
      * @tc.desc      Remove with small hex key 0x3 (对应 8 进制行)
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0071';
+    it("testLightWeightMapTest04Chapter7100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter7100';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<number, string>();
@@ -1648,15 +1648,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0072
-     * @tc.name      testLightWeightMapTest04Chapter0072
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_7200
+     * @tc.name      testLightWeightMapTest04Chapter7200
      * @tc.desc      Remove with exponent key 2 ** 3
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0072';
+    it("testLightWeightMapTest04Chapter7200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter7200';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<number, string>();
@@ -1669,15 +1669,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0073
-     * @tc.name      testLightWeightMapTest04Chapter0073
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_7300
+     * @tc.name      testLightWeightMapTest04Chapter7300
      * @tc.desc      Remove with scientific notation key 1e3
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0073';
+    it("testLightWeightMapTest04Chapter7300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter7300';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<number, string>();
@@ -1690,15 +1690,15 @@ export default function testLightWeightMapTest04(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_0074
-     * @tc.name      testLightWeightMapTest04Chapter0074
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST04_7400
+     * @tc.name      testLightWeightMapTest04Chapter7400
      * @tc.desc      Remove with scientific notation key 2.5e-2
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testLightWeightMapTest04Chapter0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testLightWeightMapTest04Chapter0074';
+    it("testLightWeightMapTest04Chapter7400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testLightWeightMapTest04Chapter7400';
       console.log(TAG + 'start');
 
       const lightWeightMap = new LightWeightMap<number, string>();
