@@ -938,13 +938,13 @@ int VideoDecCapApi0027()
     if (!cap) {
         return 0;
     }
-    venc = OH_VideoEncoder_CreateByName(g_codecName);
-    if (!venc) {
+    venc_ = OH_VideoEncoder_CreateByName(g_codecName);
+    if (!venc_) {
         return -1;
     }
-    OH_AVFormat *format = OH_VideoEncoder_GetOutputDescription(venc);
+    OH_AVFormat *format = OH_VideoEncoder_GetOutputDescription(venc_);
     if (!format) {
-        OH_VideoEncoder_Destroy(venc);
+        OH_VideoEncoder_Destroy(venc_);
         return -1;
     }
 
@@ -957,8 +957,9 @@ int VideoDecCapApi0027()
     }
 
     OH_AVFormat_Destroy(format);
-    OH_VideoEncoder_Destroy(venc);
+    OH_VideoEncoder_Destroy(venc_);
     return (ret == 0) ? 0 : -1;
 }
+
 } // namespace Media
 } // namespace OHOS
