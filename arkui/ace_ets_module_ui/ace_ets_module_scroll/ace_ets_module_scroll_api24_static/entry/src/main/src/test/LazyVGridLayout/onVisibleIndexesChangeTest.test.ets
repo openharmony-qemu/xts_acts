@@ -89,6 +89,81 @@ export default function onVisibleIndexesChangeTest() {
       await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("LazyVGridLayout");
       console.info('[onVisibleIndexesChangeTest_static_0100] END');
+      done();
+    })
+
+    /**
+     * @tc.name   onVisibleIndexesChangeTest_static_0200
+     * @tc.number SUB_ARKUI_LAZYVGRIDLAYOUT_ONVISIBLEINDEXESCHANGE_START_0200
+     * @tc.desc   Test LazyVGridLayout onVisibleIndexesChange callback start parameter,
+     *             verify that start index is correctly reported when component renders
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('onVisibleIndexesChangeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[onVisibleIndexesChangeTest_static_0200] START');
+      await CommonFunc.sleep(1000);
+      let strJson = inspector.getInspectorByKey('text_visible_start');
+      console.info("[onVisibleIndexesChangeTest_static_0200] start content: " +
+        JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
+
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
+        .assertEqual('Start: 0');
+      console.info('[onVisibleIndexesChangeTest_static_0200] END');
+      done();
+    })
+
+    /**
+     * @tc.name   onVisibleIndexesChangeTest_static_0300
+     * @tc.number SUB_ARKUI_LAZYVGRIDLAYOUT_ONVISIBLEINDEXESCHANGE_END_0300
+     * @tc.desc   Test LazyVGridLayout onVisibleIndexesChange callback end parameter,
+     *             verify that end index is correctly reported when component renders
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('onVisibleIndexesChangeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[onVisibleIndexesChangeTest_static_0300] START');
+      await CommonFunc.sleep(1000);
+      let strJson = inspector.getInspectorByKey('text_visible_end');
+      console.info("[onVisibleIndexesChangeTest_static_0200] end content: " +
+        JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
+
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
+        .assertEqual('End: 5');
+      console.info('[onVisibleIndexesChangeTest_static_0300] END');
+      done();
+    })
+
+    /**
+     * @tc.name   onVisibleIndexesChangeTest_static_0400
+     * @tc.number SUB_ARKUI_LAZYVGRIDLAYOUT_ONVISIBLEINDEXESCHANGE_0400
+     * @tc.desc   Test LazyVGridLayout onVisibleIndexesChange callback triggered status,
+     *             verify that callback is triggered during component lifecycle
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('onVisibleIndexesChangeTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[onVisibleIndexesChangeTest_static_0400] START');
+      let driver = Driver.create();
+      let scrollColumn: Component = await driver.findComponent(ON.type('Scroll')) as Component;
+      let button = await scrollColumn.scrollSearch(ON.id('item2_10')) as Component;
+
+      let strJson = inspector.getInspectorByKey('text_visible_start');
+      console.info("[onVisibleIndexesChangeTest_static_0200] start content2: " +
+        JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'));
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
+        .assertEqual('Start: -1');
+
+      let strJson2 = inspector.getInspectorByKey('text_visible_end');
+      console.info("[onVisibleIndexesChangeTest_static_0200] end content2: " +
+        JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content'));
+      expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content'))
+        .assertEqual('End: -1');
+      console.info('[onVisibleIndexesChangeTest_static_0400] END');
+      done();
     })
   })
 }

@@ -73,7 +73,6 @@ export default function scrollPropertiesTest() {
      * @tc.name   autoAdjustScrollBarMargin_static_0100
      * @tc.number SUB_ARKUI_SCROLL_AUTOADJUSTSCROLLBARMARGIN_STATIC_0100
      * @tc.desc   Test Scroll autoAdjustScrollBarMargin property with true value
-     *             API version: 26.0.0
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -88,13 +87,13 @@ export default function scrollPropertiesTest() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoAdjustScrollBarMargin'))
         .assertEqual('true');
       console.info('[autoAdjustScrollBarMargin_static_0100] END');
+      done();
     })
 
     /**
      * @tc.name   autoAdjustScrollBarMargin_static_0200
      * @tc.number SUB_ARKUI_SCROLL_AUTOADJUSTSCROLLBARMARGIN_STATIC_0200
      * @tc.desc   Test Scroll autoAdjustScrollBarMargin property with false value
-     *             API version: 26.0.0
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -109,13 +108,13 @@ export default function scrollPropertiesTest() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoAdjustScrollBarMargin'))
         .assertEqual('false');
       console.info('[autoAdjustScrollBarMargin_static_0200] END');
+      done();
     })
 
     /**
      * @tc.name   autoAdjustScrollBarMargin_static_0300
      * @tc.number SUB_ARKUI_SCROLL_AUTOADJUSTSCROLLBARMARGIN_STATIC_0300
      * @tc.desc   Test Scroll autoAdjustScrollBarMargin property with undefined value, should restore to default
-     *             API version: 26.0.0
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -130,13 +129,13 @@ export default function scrollPropertiesTest() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoAdjustScrollBarMargin'))
         .assertEqual('false');
       console.info('[autoAdjustScrollBarMargin_static_0300] END');
+      done();
     })
 
     /**
      * @tc.name   enableScrollWithMouse_static_0100
      * @tc.number SUB_ARKUI_SCROLL_ENABLESCROLLWITHMOUSE_STATIC_0100
      * @tc.desc   Test Scroll enableScrollWithMouse property with true value
-     *             API version: 26.0.0
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -151,13 +150,13 @@ export default function scrollPropertiesTest() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('enableScrollWithMouse'))
         .assertEqual(true);
       console.info('[enableScrollWithMouse_static_0100] END');
+      done();
     })
 
     /**
      * @tc.name   enableScrollWithMouse_static_0200
      * @tc.number SUB_ARKUI_SCROLL_ENABLESCROLLWITHMOUSE_STATIC_0200
      * @tc.desc   Test Scroll enableScrollWithMouse property with false value
-     *             API version: 26.0.0
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -172,13 +171,13 @@ export default function scrollPropertiesTest() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('enableScrollWithMouse'))
         .assertEqual(false);
       console.info('[enableScrollWithMouse_static_0200] END');
+      done();
     })
 
     /**
      * @tc.name   enableScrollWithMouse_static_0300
      * @tc.number SUB_ARKUI_SCROLL_ENABLESCROLLWITHMOUSE_STATIC_0300
      * @tc.desc   Test Scroll enableScrollWithMouse property with undefined value, should restore to default
-     *             API version: 26.0.0
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -193,6 +192,7 @@ export default function scrollPropertiesTest() {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('enableScrollWithMouse'))
         .assertEqual(false);
       console.info('[enableScrollWithMouse_static_0300] END');
+      done();
     })
   })
 }
