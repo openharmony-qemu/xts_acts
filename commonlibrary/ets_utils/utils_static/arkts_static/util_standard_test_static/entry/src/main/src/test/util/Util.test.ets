@@ -1989,7 +1989,6 @@ export default function Util1Test() {
     it('Util1Test151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(true).assertTrue();
     });
-
   })
 }
 
