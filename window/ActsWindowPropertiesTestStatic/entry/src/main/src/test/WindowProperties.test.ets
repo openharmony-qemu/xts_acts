@@ -801,16 +801,22 @@ export default function WindowPropertiesTest() {
             expect(properties.id).assertLarger(0);
             expect(properties.displayId).assertLargerOrEqual(0);
             expect(properties.name !== null).assertTrue();
+            expect(properties.windowType !== null).assertTrue();
+            if (properties.windowType === window.WindowType.TYPE_FLOAT) {
+                expect(8).assertEqual(window.WindowType.TYPE_FLOAT);
+            } else if (properties.windowType === window.WindowType.TYPE_DIALOG) {
+                expect(16).assertEqual(window.WindowType.TYPE_DIALOG);
+            } else if (properties.windowType === window.WindowType.TYPE_MAIN) {
+                expect(32).assertEqual(window.WindowType.TYPE_MAIN);
+            } else {
+                expect(false).assertTrue();
+            }
             expect(properties.type !== null).assertTrue();
             if (properties.type === window.WindowType.TYPE_FLOAT) {
                 expect(8).assertEqual(window.WindowType.TYPE_FLOAT);
             } else if (properties.type === window.WindowType.TYPE_DIALOG) {
                 expect(16).assertEqual(window.WindowType.TYPE_DIALOG);
-            } else if (properties.type === window.WindowType.TYPE_MAIN) {
-                expect(32).assertEqual(window.WindowType.TYPE_MAIN);
-            } else {
-                expect(false).assertTrue();
-            }
+            } 
             done();
             } catch (err) {
             hilog.error(0x0000, '[ANI]', `${caseName} :Failed . Cause code: ${err.code}, message: ${err.message}`);
