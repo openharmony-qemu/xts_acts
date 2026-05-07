@@ -35,6 +35,7 @@
         "MainAbility/pages/SymbolGlyph/SymbolGlyphNode",
         "MainAbility/pages/SymbolGlyph/SymbolEffectNullUndefinedTest",
         "MainAbility/pages/SymbolGlyph/SymbolGlyphPropertiesNullUndefinedTest",
-        "MainAbility/pages/SymbolGlyph/SymbolGlyphFontColor"
+        "MainAbility/pages/SymbolGlyph/SymbolGlyphFontColor",
+        "MainAbility/pages/SymbolGlyph/SymbolGlyphFontWeight"
     ]
 }
