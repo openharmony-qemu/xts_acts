@@ -1,4 +1,4 @@
-﻿'use static'
+'use static'
 /*
 * Copyright (c) 2024 SwanLink (Jiangsu) Technology Development Co., LTD.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -48,7 +48,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_0100
+     * @tc.number     SUB_HASHMAP_TESTTHREE_0100
      * @tc.name      testHashMap0195
      * @tc.desc      String type data is passed into  '\\\\' check item
      * @tc.size      MediumTest
@@ -65,7 +65,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_0200
+     * @tc.number     SUB_HASHMAP_TESTTHREE_0200
      * @tc.name      testHashMap0196
      * @tc.desc      String type data is passed into  ']]' check item
      * @tc.size      MediumTest
@@ -82,7 +82,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_0300
+     * @tc.number     SUB_HASHMAP_TESTTHREE_0300
      * @tc.name      testHashMap0197
      * @tc.desc      String type data is passed into  '^^' check item
      * @tc.size      MediumTest
@@ -99,7 +99,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_0400
+     * @tc.number     SUB_HASHMAP_TESTTHREE_0400
      * @tc.name      testHashMap0198
      * @tc.desc      String type data is passed into  '__' check item
      * @tc.size      MediumTest
@@ -117,7 +117,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_0500
+     * @tc.number     SUB_HASHMAP_TESTTHREE_0500
      * @tc.name      testHashMap0199
      * @tc.desc      String type data is passed into  '``' check item
      * @tc.size      MediumTest
@@ -135,7 +135,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_0600
+     * @tc.number     SUB_HASHMAP_TESTTHREE_0600
      * @tc.name      testHashMap0200
      * @tc.desc      String type data is passed into  '{{' check item
      * @tc.size      MediumTest
@@ -153,7 +153,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_0700
+     * @tc.number     SUB_HASHMAP_TESTTHREE_0700
      * @tc.name      testHashMap0201
      * @tc.desc      String type data is passed into  '||' check item
      * @tc.size      MediumTest
@@ -171,7 +171,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_0800
+     * @tc.number     SUB_HASHMAP_TESTTHREE_0800
      * @tc.name      testHashMap0202
      * @tc.desc      String type data is passed into  '}}' check item
      * @tc.size      MediumTest
@@ -190,7 +190,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_0900
+     * @tc.number     SUB_HASHMAP_TESTTHREE_0900
      * @tc.name      testHashMap0203
      * @tc.desc      String type data is passed into  '~~' check item
      * @tc.size      MediumTest
@@ -207,7 +207,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_1000
+     * @tc.number     SUB_HASHMAP_TESTTHREE_1000
      * @tc.name      testHashMap0204
      * @tc.desc      String type data is passed into  tab check item
      * @tc.size      MediumTest
@@ -232,7 +232,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_1100
+     * @tc.number     SUB_HASHMAP_TESTTHREE_1100
      * @tc.name      testHashMap0205
      * @tc.desc      The special escape character \a is passed in the string data
      * @tc.size      MediumTest
@@ -250,7 +250,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_1200
+     * @tc.number     SUB_HASHMAP_TESTTHREE_1200
      * @tc.name      testHashMap0206
      * @tc.desc      The special escape character \b is passed in the string data
      * @tc.size      MediumTest
@@ -268,7 +268,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_1300
+     * @tc.number     SUB_HASHMAP_TESTTHREE_1300
      * @tc.name      testHashMap0207
      * @tc.desc      The special escape character \f is passed in the string data
      * @tc.size      MediumTest
@@ -286,7 +286,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_1400
+     * @tc.number     SUB_HASHMAP_TESTTHREE_1400
      * @tc.name      testHashMap0208
      * @tc.desc      The special escape character \n is passed in the string data
      * @tc.size      MediumTest
@@ -304,7 +304,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_1500
+     * @tc.number     SUB_HASHMAP_TESTTHREE_1500
      * @tc.name      testHashMap0209
      * @tc.desc      The special escape character \r is passed in the string data
      * @tc.size      MediumTest
@@ -322,7 +322,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_1600
+     * @tc.number     SUB_HASHMAP_TESTTHREE_1600
      * @tc.name      testHashMap0210
      * @tc.desc      The special escape character \t is passed in the string data
      * @tc.size      MediumTest
@@ -341,7 +341,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_1700
+     * @tc.number     SUB_HASHMAP_TESTTHREE_1700
      * @tc.name      testHashMap0211
      * @tc.desc      The special escape character \v is passed in the string data
      * @tc.size      MediumTest
@@ -359,7 +359,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_1800
+     * @tc.number     SUB_HASHMAP_TESTTHREE_1800
      * @tc.name      testHashMap0212
      * @tc.desc      The special escape character \\ is passed in the string data
      * @tc.size      MediumTest
@@ -377,7 +377,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_1900
+     * @tc.number     SUB_HASHMAP_TESTTHREE_1900
      * @tc.name      testHashMap0213
      * @tc.desc      The special escape character \' is passed in the string data
      * @tc.size      MediumTest
@@ -394,7 +394,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_2000
+     * @tc.number     SUB_HASHMAP_TESTTHREE_2000
      * @tc.name      testHashMap0214
      * @tc.desc      The special escape character \" is passed in the string data
      * @tc.size      MediumTest
@@ -412,7 +412,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_2100
+     * @tc.number     SUB_HASHMAP_TESTTHREE_2100
      * @tc.name      testHashMap0215
      * @tc.desc      The special escape character \? is passed in the string data
      * @tc.size      MediumTest
@@ -429,7 +429,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_2200
+     * @tc.number     SUB_HASHMAP_TESTTHREE_2200
      * @tc.name      testHashMap0216
      * @tc.desc      The special escape character \0 is passed in the string data
      * @tc.size      MediumTest
@@ -446,7 +446,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_2300
+     * @tc.number     SUB_HASHMAP_TESTTHREE_2300
      * @tc.name      testHashMap0217
      * @tc.desc      The special escape character \ddd   is passed in the string data
      * @tc.size      MediumTest
@@ -464,7 +464,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_2400
+     * @tc.number     SUB_HASHMAP_TESTTHREE_2400
      * @tc.name      testHashMap0218
      * @tc.desc      The special escape character \xhh   is passed in the string data
      * @tc.size      MediumTest
@@ -483,7 +483,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_2500
+     * @tc.number     SUB_HASHMAP_TESTTHREE_2500
      * @tc.name      testHashMap0219
      * @tc.desc      Emoticon 👆 is passed in string data
      * @tc.size      MediumTest
@@ -502,7 +502,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_2600
+     * @tc.number     SUB_HASHMAP_TESTTHREE_2600
      * @tc.name      testHashMap0220
      * @tc.desc      Emoticon 👿 is passed in string data
      * @tc.size      MediumTest
@@ -523,7 +523,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_2700
+     * @tc.number     SUB_HASHMAP_TESTTHREE_2700
      * @tc.name      testHashMap0221
      * @tc.desc      Emoticon 👀 is passed in string data
      * @tc.size      MediumTest
@@ -543,7 +543,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_2800
+     * @tc.number     SUB_HASHMAP_TESTTHREE_2800
      * @tc.name      testHashMap0222
      * @tc.desc      Emoticon 💯 is passed in string data
      * @tc.size      MediumTest
@@ -563,7 +563,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_2900
+     * @tc.number     SUB_HASHMAP_TESTTHREE_2900
      * @tc.name      testHashMap0223
      * @tc.desc      Emoticon 🎅 is passed in string data
      * @tc.size      MediumTest
@@ -582,7 +582,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_3000
+     * @tc.number     SUB_HASHMAP_TESTTHREE_3000
      * @tc.name      testHashMap0224
      * @tc.desc      Emoticon 😼 is passed in string data
      * @tc.size      MediumTest
@@ -602,7 +602,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_3100
+     * @tc.number     SUB_HASHMAP_TESTTHREE_3100
      * @tc.name      testHashMap0225
      * @tc.desc      Emoticon 🔧 is passed in string data
      * @tc.size      MediumTest
@@ -622,7 +622,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_3200
+     * @tc.number     SUB_HASHMAP_TESTTHREE_3200
      * @tc.name      testHashMap0226
      * @tc.desc      Emoticon 💇 is passed in string data
      * @tc.size      MediumTest
@@ -642,7 +642,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_3300
+     * @tc.number     SUB_HASHMAP_TESTTHREE_3300
      * @tc.name      testHashMap0227
      * @tc.desc      Emoticon 🤼‍♂️ is passed in string data
      * @tc.size      MediumTest
@@ -661,7 +661,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_3400
+     * @tc.number     SUB_HASHMAP_TESTTHREE_3400
      * @tc.name      testHashMap0228
      * @tc.desc      Emoticon 🛢️ is passed in string data
      * @tc.size      MediumTest
@@ -680,7 +680,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_3500
+     * @tc.number     SUB_HASHMAP_TESTTHREE_3500
      * @tc.name      testHashMap0229
      * @tc.desc      Emoticon  🀄️ is passed in string data
      * @tc.size      MediumTest
@@ -700,7 +700,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_3600
+     * @tc.number     SUB_HASHMAP_TESTTHREE_3600
      * @tc.name      testHashMap0230
      * @tc.desc      Emoticon 🏴 is passed in string data
      * @tc.size      MediumTest
@@ -721,7 +721,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_3700
+     * @tc.number     SUB_HASHMAP_TESTTHREE_3700
      * @tc.name      testHashMap0231
      * @tc.desc      Illegal unicode encoding \udc04 in string data
      * @tc.size      MediumTest
@@ -738,7 +738,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_3800
+     * @tc.number     SUB_HASHMAP_TESTTHREE_3800
      * @tc.name      testHashMap0232
      * @tc.desc      Illegal unicode encoding \ud83d in string data
      * @tc.size      MediumTest
@@ -755,7 +755,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_3900
+     * @tc.number     SUB_HASHMAP_TESTTHREE_3900
      * @tc.name      testHashMap0233
      * @tc.desc       Illegal unicode encoding \udff4 in string data
      * @tc.size      MediumTest
@@ -774,7 +774,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_4000
+     * @tc.number     SUB_HASHMAP_TESTTHREE_4000
      * @tc.name      testHashMap0234
      * @tc.desc      Input keyword NaN in string data
      * @tc.size      MediumTest
@@ -791,7 +791,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_4100
+     * @tc.number     SUB_HASHMAP_TESTTHREE_4100
      * @tc.name      testHashMap0235
      * @tc.desc      Pass in the type of treeString in string data
      * @tc.size      MediumTest
@@ -819,7 +819,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_4200
+     * @tc.number     SUB_HASHMAP_TESTTHREE_4200
      * @tc.name      testHashMap0236
      * @tc.desc      Passing in the sliceString type for multiple recursive calls in string data
      * @tc.size      MediumTest
@@ -844,7 +844,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_4300
+     * @tc.number     SUB_HASHMAP_TESTTHREE_4300
      * @tc.name      testHashMap0237
      * @tc.desc      A very large string is passed in the string data
      * @tc.size      MediumTest
@@ -863,7 +863,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_4400
+     * @tc.number     SUB_HASHMAP_TESTTHREE_4400
      * @tc.name      testHashMap0238
      * @tc.desc      Release references after storing extremely large strings in string data
      * @tc.size      MediumTest
@@ -888,7 +888,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_4500
+     * @tc.number     SUB_HASHMAP_TESTTHREE_4500
      * @tc.name      testHashMap0239
      * @tc.desc      Number type data is passed in with a check item of 0
      * @tc.size      MediumTest
@@ -905,7 +905,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_4600
+     * @tc.number     SUB_HASHMAP_TESTTHREE_4600
      * @tc.name      testHashMap0240
      * @tc.desc      Number type data is passed in with a check item of undefined
      * @tc.size      MediumTest
@@ -922,7 +922,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_4700
+     * @tc.number     SUB_HASHMAP_TESTTHREE_4700
      * @tc.name      testHashMap0241
      * @tc.desc      Number type data is passed in with a check item of NaN
      * @tc.size      MediumTest
@@ -941,7 +941,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_4800
+     * @tc.number     SUB_HASHMAP_TESTTHREE_4800
      * @tc.name      testHashMap0242
      * @tc.desc      Number type data is passed in with a check item of -0
      * @tc.size      MediumTest
@@ -959,7 +959,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_4900
+     * @tc.number     SUB_HASHMAP_TESTTHREE_4900
      * @tc.name      testHashMap0243
      * @tc.desc      Number type data is passed in with a check item of Infinity
      * @tc.size      MediumTest
@@ -976,7 +976,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_5000
+     * @tc.number     SUB_HASHMAP_TESTTHREE_5000
      * @tc.name      testHashMap0244
      * @tc.desc      Number type data is passed in with a check item of -Infinity
      * @tc.size      MediumTest
@@ -995,7 +995,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_5100
+     * @tc.number     SUB_HASHMAP_TESTTHREE_5100
      * @tc.name      testHashMap0245
      * @tc.desc      Number type data is passed in with a check item of double type
      * @tc.size      MediumTest
@@ -1013,7 +1013,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_5200
+     * @tc.number     SUB_HASHMAP_TESTTHREE_5200
      * @tc.name      testHashMap0246
      * @tc.desc      Number type data is passed in with Number.MAX_VALUE
      * @tc.size      MediumTest
@@ -1030,7 +1030,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_5300
+     * @tc.number     SUB_HASHMAP_TESTTHREE_5300
      * @tc.name      testHashMap0247
      * @tc.desc      Number type data is passed in with Number.MIN_VALUE
      * @tc.size      MediumTest
@@ -1048,7 +1048,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_5400
+     * @tc.number     SUB_HASHMAP_TESTTHREE_5400
      * @tc.name      testHashMap0248
      * @tc.desc      The difference between the input number type data and the smallest floating-point
                      number greater than 1
@@ -1066,7 +1066,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_5500
+     * @tc.number     SUB_HASHMAP_TESTTHREE_5500
      * @tc.name      testHashMap0249
      * @tc.desc      Data of type number is passed into The difference between the input number type data
      *               and the smallest floating-point number greater than 1
@@ -1085,7 +1085,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_5600
+     * @tc.number     SUB_HASHMAP_TESTTHREE_5600
      * @tc.name      testHashMap0250
      * @tc.desc      Data of type number is passed into Number.MAX_SAFE_INTEGER
      * @tc.size      MediumTest
@@ -1104,7 +1104,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_5700
+     * @tc.number     SUB_HASHMAP_TESTTHREE_5700
      * @tc.name      testHashMap0251
      * @tc.desc      Data of type number is passed into -128
      * @tc.size      MediumTest
@@ -1123,7 +1123,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_5800
+     * @tc.number     SUB_HASHMAP_TESTTHREE_5800
      * @tc.name      testHashMap0252
      * @tc.desc      Data of type number is passed into 127
      * @tc.size      MediumTest
@@ -1141,7 +1141,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_5900
+     * @tc.number     SUB_HASHMAP_TESTTHREE_5900
      * @tc.name      testHashMap0253
      * @tc.desc      Data of type number is passed into -32768
      * @tc.size      MediumTest
@@ -1159,7 +1159,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_6000
+     * @tc.number     SUB_HASHMAP_TESTTHREE_6000
      * @tc.name      testHashMap0254
      * @tc.desc      Data of type number is passed into 32767
      * @tc.size      MediumTest
@@ -1178,7 +1178,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_6100
+     * @tc.number     SUB_HASHMAP_TESTTHREE_6100
      * @tc.name      testHashMap0255
      * @tc.desc      Data of type number is passed into -2147483648
      * @tc.size      MediumTest
@@ -1196,7 +1196,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_6200
+     * @tc.number     SUB_HASHMAP_TESTTHREE_6200
      * @tc.name      testHashMap0256
      * @tc.desc      Data of type number is passed into 2147483647
      * @tc.size      MediumTest
@@ -1214,7 +1214,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_6300
+     * @tc.number     SUB_HASHMAP_TESTTHREE_6300
      * @tc.name      testHashMap0257
      * @tc.desc      Data of type number is passed into -9223372036854775808
      * @tc.size      MediumTest
@@ -1233,7 +1233,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_6400
+     * @tc.number     SUB_HASHMAP_TESTTHREE_6400
      * @tc.name      testHashMap0258
      * @tc.desc      Data of type number is passed into 9223372036854775807
      * @tc.size      MediumTest
@@ -1252,7 +1252,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_6500
+     * @tc.number     SUB_HASHMAP_TESTTHREE_6500
      * @tc.name      testHashMap0259
      * @tc.desc      Data of type number is passed into 1.40129846432481707e-45
      * @tc.size      MediumTest
@@ -1270,7 +1270,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_6600
+     * @tc.number     SUB_HASHMAP_TESTTHREE_6600
      * @tc.name      testHashMap0260
      * @tc.desc      Data of type number is passed into -1.40129846432481707e-45
      * @tc.size      MediumTest
@@ -1288,7 +1288,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_6700
+     * @tc.number     SUB_HASHMAP_TESTTHREE_6700
      * @tc.name      testHashMap0261
      * @tc.desc      Data of type number is passed into 3.40282346638528860e+38
      * @tc.size      MediumTest
@@ -1307,7 +1307,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_6800
+     * @tc.number     SUB_HASHMAP_TESTTHREE_6800
      * @tc.name      testHashMap0262
      * @tc.desc      Data of type number is passed into -3.40282346638528860e+38
      * @tc.size      MediumTest
@@ -1325,7 +1325,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_6900
+     * @tc.number     SUB_HASHMAP_TESTTHREE_6900
      * @tc.name      testHashMap0263
      * @tc.desc      Data of type number is passed into 4.94065645841246544e-324
      * @tc.size      MediumTest
@@ -1344,7 +1344,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_7000
+     * @tc.number     SUB_HASHMAP_TESTTHREE_7000
      * @tc.name      testHashMap0264
      * @tc.desc      Data of type number is passed into -4.94065645841246544e-324
      * @tc.size      MediumTest
@@ -1363,7 +1363,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_7100
+     * @tc.number     SUB_HASHMAP_TESTTHREE_7100
      * @tc.name      testHashMap0265
      * @tc.desc      Data of type number is passed into 1.79769313486231570e+308
      * @tc.size      MediumTest
@@ -1381,7 +1381,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_7200
+     * @tc.number     SUB_HASHMAP_TESTTHREE_7200
      * @tc.name      testHashMap0266
      * @tc.desc      Data of type number is passed into -1.79769313486231570e+308
      * @tc.size      MediumTest
@@ -1399,7 +1399,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_7300
+     * @tc.number     SUB_HASHMAP_TESTTHREE_7300
      * @tc.name      testHashMap0267
      * @tc.desc      Data of type number is passed into 0
      * @tc.size      MediumTest
@@ -1417,7 +1417,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_7400
+     * @tc.number     SUB_HASHMAP_TESTTHREE_7400
      * @tc.name      testHashMap0268
      * @tc.desc      Data of type number is passed into 65535
      * @tc.size      MediumTest
@@ -1435,7 +1435,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_7500
+     * @tc.number     SUB_HASHMAP_TESTTHREE_7500
      * @tc.name      testHashMap0269
      * @tc.desc      Data of type number is passed into BigInt(0xdecafafecacefade)
      * @tc.size      MediumTest
@@ -1453,7 +1453,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_7600
+     * @tc.number     SUB_HASHMAP_TESTTHREE_7600
      * @tc.name      testHashMap0270
      * @tc.desc      Data of type number is passed into 123.456
      * @tc.size      MediumTest
@@ -1472,7 +1472,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_7700
+     * @tc.number     SUB_HASHMAP_TESTTHREE_7700
      * @tc.name      testHashMap0271
      * @tc.desc      Data of type number is passed into float(0xcafebabe)
      * @tc.size      MediumTest
@@ -1491,7 +1491,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_7800
+     * @tc.number     SUB_HASHMAP_TESTTHREE_7800
      * @tc.name      testHashMap0272
      * @tc.desc      Data of type number is passed into hexadecimal (0x0102)
      * @tc.size      MediumTest
@@ -1510,7 +1510,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_7900
+     * @tc.number     SUB_HASHMAP_TESTTHREE_7900
      * @tc.name      testHashMap0273
      * @tc.desc      Data of type number is passed into base 32 (0x01020304)
      * @tc.size      MediumTest
@@ -1529,7 +1529,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_8000
+     * @tc.number     SUB_HASHMAP_TESTTHREE_8000
      * @tc.name      testHashMap0274
      * @tc.desc      Data of type number is passed into  octal(0x3)
      * @tc.size      MediumTest
@@ -1547,7 +1547,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_8100
+     * @tc.number     SUB_HASHMAP_TESTTHREE_8100
      * @tc.name      testHashMap0275
      * @tc.desc      Inputting number type data for exponential operation
      * @tc.size      MediumTest
@@ -1565,7 +1565,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_8200
+     * @tc.number     SUB_HASHMAP_TESTTHREE_8200
      * @tc.name      testHashMap0276
      * @tc.desc      The input parameter for number type data is in Scientific notation(1e3)
      * @tc.size      MediumTest
@@ -1583,7 +1583,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_8300
+     * @tc.number     SUB_HASHMAP_TESTTHREE_8300
      * @tc.name      testHashMap0277
      * @tc.desc      The input parameter for number type data is in Scientific notation(2.5e-2)
      * @tc.size      MediumTest
@@ -1601,7 +1601,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_8400
+     * @tc.number     SUB_HASHMAP_TESTTHREE_8400
      * @tc.name      testHashMap0278
      * @tc.desc      Data of type number is passed into  BigInt(9007199254740991n)
      * @tc.size      MediumTest
@@ -1619,7 +1619,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_8500
+     * @tc.number     SUB_HASHMAP_TESTTHREE_8500
      * @tc.name      testHashMap0279
      * @tc.desc      The boolean type data passed in as a parameter is true
      * @tc.size      MediumTest
@@ -1638,7 +1638,7 @@ export default function HashMapTest03Test() {
 
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_8600
+     * @tc.number     SUB_HASHMAP_TESTTHREE_8600
      * @tc.name      testHashMap0280
      * @tc.desc      The boolean type data passed in as a parameter is false
      * @tc.size      MediumTest
@@ -1656,7 +1656,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_8700
+     * @tc.number     SUB_HASHMAP_TESTTHREE_8700
      * @tc.name      testHashMap0281
      * @tc.desc      0 can be used as a substitute for false in boolean type data
      * @tc.size      MediumTest
@@ -1680,7 +1680,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_8800
+     * @tc.number     SUB_HASHMAP_TESTTHREE_8800
      * @tc.name      testHashMap0282
      * @tc.desc      NaN can be used as a substitute for false in boolean type data
      * @tc.size      MediumTest
@@ -1704,7 +1704,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_8900
+     * @tc.number     SUB_HASHMAP_TESTTHREE_8900
      * @tc.name      testHashMap0283
      * @tc.desc      "" can be used as a substitute for false in boolean type data
      * @tc.size      MediumTest
@@ -1728,7 +1728,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_9000
+     * @tc.number     SUB_HASHMAP_TESTTHREE_9000
      * @tc.name      testHashMap0284
      * @tc.desc      null can be used as a substitute for false in boolean type data
      * @tc.size      MediumTest
@@ -1752,7 +1752,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_9100
+     * @tc.number     SUB_HASHMAP_TESTTHREE_9100
      * @tc.name      testHashMap0285
      * @tc.desc      undefined can be used as a substitute for false in boolean type data
      * @tc.size      MediumTest
@@ -1776,7 +1776,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_9200
+     * @tc.number     SUB_HASHMAP_TESTTHREE_9200
      * @tc.name      testHashMap0286
      * @tc.desc      !+ Other data types can be used as substitutes for boolean data types
      * @tc.size      MediumTest
@@ -1800,7 +1800,7 @@ export default function HashMapTest03Test() {
     });
 
     /**
-     * @tc.number     SUB_HASHMAP_TEST_9300
+     * @tc.number     SUB_HASHMAP_TESTTHREE_9300
      * @tc.name      testHashMap0287
      * @tc.desc      !+ Other data types can be used as substitutes for boolean data types
      * @tc.size      MediumTest
