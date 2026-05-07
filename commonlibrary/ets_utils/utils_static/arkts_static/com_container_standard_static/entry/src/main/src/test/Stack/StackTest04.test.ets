@@ -1,12 +1,40 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
 import { util } from '@kit.ArkTS';
 import Stack from '@ohos.util.Stack';
 
-function sleep(ms: number) {
-  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+function sleep(count: int): Promise<void> {
+  return new Promise<void>((resolve: (value: PromiseLike<void>) => void, reject: (value: Error) => void) => {
+    setTimeout(() => {
+      resolve(Promise.resolve())
+    }, count)
+  })
 }
 
-export default function Stack04Test() {
+interface TestObject1 {
+  a: number;
+  b: string;
+  c: number[];
+}
+
+interface TestObject2 {
+  a: number;
+  b: null;
+}
+
+interface TestObject3 {
+  a: number;
+  b: number;
+}
+
+interface NumberOrNull {
+  value: number | null;
+}
+
+interface StringOrUndefined {
+  value: string | undefined;
+}
+
+export default function Stack04Test(): void {
   describe('Stack04Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -40,7 +68,7 @@ export default function Stack04Test() {
     it("testStack04Chapter0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStack04Chapter0001';
       console.log(TAG + ' start');
-      let stack: Stack<number> = new Stack();
+      let stack: Stack<number> = new Stack<number>();
       let result: boolean = stack.isEmpty();
       expect(result).assertTrue();
     });
@@ -56,7 +84,7 @@ export default function Stack04Test() {
     it("testStack04Chapter0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStack04Chapter0002';
       console.log(TAG + ' start');
-      let stack: Stack<string> = new Stack();
+      let stack: Stack<string> = new Stack<string>();
       stack.push("item");
       let result: boolean = stack.isEmpty();
       expect(result).assertFalse();
@@ -73,7 +101,7 @@ export default function Stack04Test() {
     it("testStack04Chapter0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStack04Chapter0003';
       console.log(TAG + ' start');
-      let stack: Stack<number> = new Stack();
+      let stack: Stack<number> = new Stack<number>();
       stack.push(1);
       stack.push(2);
       stack.pop();
@@ -93,7 +121,7 @@ export default function Stack04Test() {
     it("testStack04Chapter0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStack04Chapter0004';
       console.log(TAG + ' start');
-      let stack: Stack<boolean> = new Stack();
+      let stack: Stack<boolean> = new Stack<boolean>();
       stack.push(true);
       stack.push(false);
       let result: boolean = stack.isEmpty();
@@ -111,12 +139,12 @@ export default function Stack04Test() {
     it("testStack04Chapter0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStack04Chapter0005';
       console.log(TAG + ' start');
-      let stack1: Stack<number | null> = new Stack();
+      let stack1: Stack<number | null> = new Stack<number | null>();
       stack1.push(null);
       let result1: boolean = stack1.isEmpty();
       expect(result1).assertFalse();
 
-      let stack2: Stack<string | undefined> = new Stack();
+      let stack2: Stack<string | undefined> = new Stack<string | undefined>();
       stack2.push(undefined);
       let result2: boolean = stack2.isEmpty();
       expect(result2).assertFalse();
@@ -133,7 +161,7 @@ export default function Stack04Test() {
     it("testStack04Chapter0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStack04Chapter0006';
       console.log(TAG + ' start');
-      let stack: Stack<number> = new Stack();
+      let stack: Stack<number> = new Stack<number>();
       let count: number = 0;
       for (let value of stack) {
         count++;
@@ -152,7 +180,7 @@ export default function Stack04Test() {
     it("testStack04Chapter0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStack04Chapter0007';
       console.log(TAG + ' start');
-      let stack: Stack<number> = new Stack();
+      let stack: Stack<number> = new Stack<number>();
       stack.push(2);
       stack.push(4);
       stack.push(5);
@@ -162,7 +190,7 @@ export default function Stack04Test() {
       for (let value of stack) {
         actual.push(value);
       }
-      for (let i: number = 0; i < expected.length; i++) {
+      for (let i: int = 0; i < expected.length; i++) {
         expect(actual[i]).assertEqual(expected[i]);
       }
       expect(actual.length).assertEqual(expected.length);
@@ -179,7 +207,7 @@ export default function Stack04Test() {
     it("testStack04Chapter0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStack04Chapter0008';
       console.log(TAG + ' start');
-      let stack: Stack<string> = new Stack();
+      let stack: Stack<string> = new Stack<string>();
       stack.push("hello");
       stack.push("world");
       stack.push("test");
@@ -188,7 +216,7 @@ export default function Stack04Test() {
       for (let value of stack) {
         actual.push(value);
       }
-      for (let i: number = 0; i < expected.length; i++) {
+      for (let i: int = 0; i < expected.length; i++) {
         expect(actual[i]).assertEqual(expected[i]);
       }
       expect(actual.length).assertEqual(expected.length);
@@ -205,7 +233,7 @@ export default function Stack04Test() {
     it("testStack04Chapter0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStack04Chapter0009';
       console.log(TAG + ' start');
-      let stack: Stack<boolean> = new Stack();
+      let stack: Stack<boolean> = new Stack<boolean>();
       stack.push(true);
       stack.push(false);
       stack.push(true);
@@ -214,7 +242,7 @@ export default function Stack04Test() {
       for (let value of stack) {
         actual.push(value);
       }
-      for (let i: number = 0; i < expected.length; i++) {
+      for (let i: int = 0; i < expected.length; i++) {
         expect(actual[i]).assertEqual(expected[i]);
       }
       expect(actual.length).assertEqual(expected.length);
@@ -231,11 +259,12 @@ export default function Stack04Test() {
     it("testStack04Chapter0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStack04Chapter0010';
       console.log(TAG + ' start');
-      let stack: Stack<number> = new Stack();
-      let iter: IterableIterator<number> = stack[Symbol.iterator]();
-      let firstItem: IteratorResult<number> = iter.next();
-      expect(firstItem.done).assertTrue();
-      expect(firstItem.value).assertUndefined();
+      let stack: Stack<number> = new Stack<number>();
+      let count: number = 0;
+      for (let value of stack) {
+        count++;
+      }
+      expect(count).assertEqual(0);
     });
 
     /**
@@ -249,23 +278,18 @@ export default function Stack04Test() {
     it("testStack04Chapter0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStack04Chapter0011';
       console.log(TAG + ' start');
-      let stack: Stack<number> = new Stack();
+      let stack: Stack<number> = new Stack<number>();
       stack.push(2);
       stack.push(4);
       stack.push(5);
-      let iter: IterableIterator<number> = stack[Symbol.iterator]();
-      let item1: IteratorResult<number> = iter.next();
-      expect(item1.done).assertFalse();
-      expect(item1.value).assertEqual(2);
-      let item2: IteratorResult<number> = iter.next();
-      expect(item2.done).assertFalse();
-      expect(item2.value).assertEqual(4);
-      let item3: IteratorResult<number> = iter.next();
-      expect(item3.done).assertFalse();
-      expect(item3.value).assertEqual(5);
-      let item4: IteratorResult<number> = iter.next();
-      expect(item4.done).assertTrue();
-      expect(item4.value).assertUndefined();
+      let values: number[] = [];
+      for (let value of stack) {
+        values.push(value);
+      }
+      expect(values.length).assertEqual(3);
+      expect(values[0]).assertEqual(2);
+      expect(values[1]).assertEqual(4);
+      expect(values[2]).assertEqual(5);
     });
 
     /**
@@ -279,7 +303,7 @@ export default function Stack04Test() {
     it("testStack04Chapter0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStack04Chapter0012';
       console.log(TAG + ' start');
-      let stack: Stack<number> = new Stack();
+      let stack: Stack<number> = new Stack<number>();
       stack.push(NaN);
       stack.push(Infinity);
       stack.push(-Infinity);
@@ -308,7 +332,7 @@ export default function Stack04Test() {
     it("testStack04Chapter0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStack04Chapter0013';
       console.log(TAG + ' start');
-      let stack: Stack<number> = new Stack();
+      let stack: Stack<number> = new Stack<number>();
       stack.push(Number.MAX_SAFE_INTEGER);
       stack.push(Number.MIN_SAFE_INTEGER);
       stack.push(Number.MAX_VALUE);
@@ -335,7 +359,7 @@ export default function Stack04Test() {
     it("testStack04Chapter0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStack04Chapter0014';
       console.log(TAG + ' start');
-      let stack: Stack<bigint> = new Stack();
+      let stack: Stack<bigint> = new Stack<bigint>();
       stack.push(9007199254740991n);
       stack.push(1000000000000000n);
       let expected: bigint[] = [9007199254740991n, 1000000000000000n];
@@ -343,7 +367,7 @@ export default function Stack04Test() {
       for (let value of stack) {
         actual.push(value);
       }
-      for (let i: number = 0; i < expected.length; i++) {
+      for (let i: int = 0; i < expected.length; i++) {
         expect(actual[i]).assertEqual(expected[i]);
       }
       expect(actual.length).assertEqual(expected.length);
@@ -360,7 +384,7 @@ export default function Stack04Test() {
     it("testStack04Chapter0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStack04Chapter0015';
       console.log(TAG + ' start');
-      let stack: Stack<string> = new Stack();
+      let stack: Stack<string> = new Stack<string>();
       stack.push("!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~");
       stack.push("");
       stack.push("null");
@@ -389,7 +413,7 @@ export default function Stack04Test() {
     it("testStack04Chapter0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStack04Chapter0016';
       console.log(TAG + ' start');
-      let stack: Stack<number[]> = new Stack();
+      let stack: Stack<number[]> = new Stack<number[]>();
       let arr1: number[] = [72, 101, 108, 108, 111];
       let arr2: number[] = [0, 0, 0, 0, 0];
       let arr3: number[] = [72, 101, -108, 108, -111];
@@ -425,23 +449,7 @@ export default function Stack04Test() {
       const TAG = 'testStack04Chapter0017';
       console.log(TAG + ' start');
 
-      interface TestObject1 {
-        a: number;
-        b: string;
-        c: number[];
-      }
-
-      interface TestObject2 {
-        a: number;
-        b: null;
-      }
-
-      interface TestObject3 {
-        a: number;
-        b: number;
-      }
-
-      let stack: Stack<TestObject1 | TestObject2 | TestObject3> = new Stack();
+      let stack: Stack<TestObject1 | TestObject2 | TestObject3> = new Stack<TestObject1 | TestObject2 | TestObject3>();
       let obj1: TestObject1 = {a: 1, b: "test", c: [1, 2, 3]};
       let obj2: TestObject2 = {a: 0, b: null};
       let obj3: TestObject3 = {a: NaN, b: Infinity};
@@ -470,7 +478,7 @@ export default function Stack04Test() {
     it("testStack04Chapter0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStack04Chapter0018';
       console.log(TAG + ' start');
-      let stack: Stack<Uint8Array> = new Stack();
+      let stack: Stack<Uint8Array> = new Stack<Uint8Array>();
       let arr1: Uint8Array = new Uint8Array([72, 101, 108, 108, 111]);
       let arr2: Uint8Array = new Uint8Array([0, 255]);
       let arr3: Uint8Array = new Uint8Array([-1, 256]);
@@ -499,7 +507,7 @@ export default function Stack04Test() {
     it("testStack04Chapter0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStack04Chapter0019';
       console.log(TAG + ' start');
-      let stack: Stack<ArrayBuffer> = new Stack();
+      let stack: Stack<ArrayBuffer> = new Stack<ArrayBuffer>();
       let buffer1: ArrayBuffer = new ArrayBuffer(16);
       let buffer2: ArrayBuffer = new ArrayBuffer(32);
       stack.push(buffer1);
@@ -524,9 +532,9 @@ export default function Stack04Test() {
     it("testStack04Chapter0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStack04Chapter0020';
       console.log(TAG + ' start');
-      let stack: Stack<number> = new Stack();
+      let stack: Stack<number> = new Stack<number>();
       let expectedCount: number = 100;
-      for (let i: number = 0; i < expectedCount; i++) {
+      for (let i: int = 0; i < expectedCount; i++) {
         stack.push(i);
       }
       let actualCount: number = 0;
@@ -549,15 +557,7 @@ export default function Stack04Test() {
       const TAG = 'testStack04Chapter0021';
       console.log(TAG + ' start');
 
-      interface NumberOrNull {
-        value: number | null;
-      }
-
-      interface StringOrUndefined {
-        value: string | undefined;
-      }
-
-      let stack1: Stack<NumberOrNull> = new Stack();
+      let stack1: Stack<NumberOrNull> = new Stack<NumberOrNull>();
       let item1: NumberOrNull = {value: null};
       let item2: NumberOrNull = {value: 1};
       stack1.push(item1);
@@ -570,7 +570,7 @@ export default function Stack04Test() {
       expect(JSON.stringify(actual1[1])).assertEqual(JSON.stringify(item2));
       expect(actual1.length).assertEqual(2);
 
-      let stack2: Stack<StringOrUndefined> = new Stack();
+      let stack2: Stack<StringOrUndefined> = new Stack<StringOrUndefined>();
       let item3: StringOrUndefined = {value: undefined};
       let item4: StringOrUndefined = {value: "test"};
       stack2.push(item3);
