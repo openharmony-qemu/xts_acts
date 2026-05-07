@@ -6001,6 +6001,90 @@ export default function ImageExifGetModifyByTypeNDK() {
       expect(result).assertTrue();
       done();
     });
+    
+     /**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0100
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0100
+      * @tc.desc        Verify reading WEBP property with wrong type returns READ_FAILED
+      *                 1.Create image source from WEBP file (loop_count_9.webp)
+      *                 2.Read CANVAS_WIDTH using unsupported type double
+      *                 3.Verify API returns READ_FAILED
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0100";
+      let result: boolean = true;
+      result = await TestGetImagePropertyByTypeError(testTag, "loop_count_9.webp", 
+        image.WebPPropertyKey.CANVAS_WIDTH, "double", READ_FAILED);
+      console.info(`${testTag} webp metadata TestGetImageProperty IntArray result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+     /**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0200
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0200
+      * @tc.desc        Verify reading WEBP property with wrong type returns READ_FAILED
+      *                 1.Create image source from WEBP file (loop_count_9.webp)
+      *                 2.Read CANVAS_HEIGHT using unsupported type string
+      *                 3.Verify API returns READ_FAILED
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0200", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0200";
+      let result: boolean = true;
+      result = await TestGetImagePropertyByTypeError(testTag, "loop_count_9.webp", 
+        image.WebPPropertyKey.CANVAS_HEIGHT, "string", READ_FAILED);
+      console.info(`${testTag} webp metadata TestGetImageProperty IntArray result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0300
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0300
+     * @tc.desc        Verify reading WEBP property with wrong type returns READ_FAILED
+     *                 1.Create image source from WEBP file (loop_count_9.webp)
+     *                 2.Read DELAY_TIME using unsupported type doubleArray
+     *                 3.Verify API returns READ_FAILED
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0300", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0300";
+      let result: boolean = true;
+      result = await TestGetImagePropertyByTypeError(testTag, "loop_count_9.webp", 
+        image.WebPPropertyKey.DELAY_TIME, "doubleArray", READ_FAILED);
+      console.info(`${testTag} webp metadata TestGetImageProperty IntArray result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0400
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0400
+     * @tc.desc        Verify reading WEBP property with wrong type returns READ_FAILED
+     *                 1.Create image source from WEBP file (loop_count_9.webp)
+     *                 2.Read DELAY_TIME using unsupported type arrayBuffer
+     *                 3.Verify API returns READ_FAILED
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0400", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0400";
+      let result: boolean = true;
+      result = await TestGetImagePropertyByTypeError(testTag, "loop_count_9.webp", 
+        image.WebPPropertyKey.DELAY_TIME, "arrayBuffer", READ_FAILED);
+      console.info(`${testTag} webp metadata TestGetImageProperty IntArray result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
 
     /**
       * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_GIF_0100
@@ -6093,10 +6177,13 @@ export default function ImageExifGetModifyByTypeNDK() {
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_HEIFS_0100", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_HEIFS_0100";
       let result: boolean = true;
-      if (!image.createImagePacker().supportedFormats.includes("image/heic")) {
+      let isSupportHEIFDecode: boolean = image.createImageSource(uiContext.filesDir + '/' + "test.jpg").supportedFormats.includes("image/heic");
+      if (!isSupportHEIFDecode) {
         console.info(`${testTag} device is not support decode heif!`);
+        expect(result).assertTrue();
         done();
-      } 
+        return;
+      }  
       let propertyKeys: Array<image.HeifsPropertyKey> = ImagePropertyConfig.heifsMetadatas.keys;
       let heifsRules: Map<image.HeifsPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.heifsMetadatas.rules;
       let fd: number = await getFd("C027.heic");
@@ -6134,9 +6221,12 @@ export default function ImageExifGetModifyByTypeNDK() {
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_HEIFS_0200", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_HEIFS_0200";
       let result: boolean = true;
-      if (!image.createImagePacker().supportedFormats.includes("image/heic")) {
+      let isSupportHEIFDecode: boolean = image.createImageSource(uiContext.filesDir + '/' + "test.jpg").supportedFormats.includes("image/heic");
+      if (!isSupportHEIFDecode) {
         console.info(`${testTag} device is not support decode heif!`);
+        expect(result).assertTrue();
         done();
+        return;
       } 
       let propertyKeys: Array<image.HeifsPropertyKey> = ImagePropertyConfig.heifsMetadatas.keys;
       let heifsRules: Map<image.HeifsPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.heifsMetadatas.rules;

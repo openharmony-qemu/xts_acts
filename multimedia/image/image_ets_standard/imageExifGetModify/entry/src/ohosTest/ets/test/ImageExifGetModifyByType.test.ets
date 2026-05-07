@@ -5106,10 +5106,13 @@ export default function imageExifGetModifyByTypeTest() {
     it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HEIFS_METADATA_0100", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HEIFS_METADATA_0100";
       let result: boolean = true;
+      let isSupportHEIFDecode: boolean = image.createImageSource(AppStorage.get('pathDir') + '/' + "test.jpg").supportedFormats.includes("image/heic");
       let keys: image.HeifsPropertyKey[] = Array.from(heifsMetadataMap.keys());
-      if (!image.createImagePacker().supportedFormats.includes("image/heic")) {
+      if (!isSupportHEIFDecode) {
         console.info(`${testTag} device is not support decode heif!`);
+        expect(result).assertTrue();
         done();
+        return;
       } 
       const imageSourceApi = await getImageSource("C027.heic", "fd");
       try {
@@ -5249,10 +5252,13 @@ export default function imageExifGetModifyByTypeTest() {
     it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_HEIFS_METADATA_0100", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_HEIFS_METADATA_0100";
       let result: boolean = true;
+      let isSupportHEIFDecode: boolean = image.createImageSource(AppStorage.get('pathDir') + '/' + "test.jpg").supportedFormats.includes("image/heic");
       let keys: image.HeifsPropertyKey[] = Array.from(heifsMetadataMap.keys());
-      if (!image.createImagePacker().supportedFormats.includes("image/heic")) {
+      if (!isSupportHEIFDecode) {
         console.info(`${testTag} device is not support decode heif!`);
+        expect(result).assertTrue();
         done();
+        return;
       } 
       const imageSourceApi = await getImageSource("C027.heic", "fd");
       try {
