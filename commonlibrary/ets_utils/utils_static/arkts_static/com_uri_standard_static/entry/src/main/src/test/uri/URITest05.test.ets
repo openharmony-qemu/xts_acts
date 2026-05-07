@@ -1,4 +1,5 @@
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+'use static'
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium';
 import { uri } from '@kit.ArkTS';
 
 interface ErrorWithCode {
@@ -14,17 +15,17 @@ interface NestedOuterForCtor0046 {
   e: NestedInnerForCtor0046;
 }
 
-interface ObjTempForCtor0046 extends Record<string, Object | null> {
+interface TestObjectForCtor0046 {
   a: Object;
   b: Object;
   c: Object;
   nested: NestedOuterForCtor0046;
-  nullVal: Object | null;
+  nullVal: null;
   nan: Object;
   inf: Object;
   uint8: Object;
   map: Object;
-  set: Object;
+  setData: Object;
   promise: Object;
   regex: Object;
 }
@@ -99,7 +100,7 @@ export default function URI05Test() {
       const uriObj = new uri.URI(uriStr);
       expect(uriObj !== undefined && uriObj !== null).assertTrue();
       expect(uriObj.query !== undefined && uriObj.query !== null).assertTrue();
-      expect(uriObj.query.includes('escaped=')).assertTrue();
+      expect(uriObj.query!.includes('escaped=')).assertTrue();
     });
 
     /**
@@ -117,7 +118,7 @@ export default function URI05Test() {
       const uriObj = new uri.URI(uriStr);
       expect(uriObj !== undefined && uriObj !== null).assertTrue();
       expect(uriObj.query !== undefined && uriObj.query !== null).assertTrue();
-      expect(uriObj.query.includes('emoji=')).assertTrue();
+      expect(uriObj.query!.includes('emoji=')).assertTrue();
     });
 
     /**
@@ -161,7 +162,7 @@ export default function URI05Test() {
       const uriObj = new uri.URI(uriStr);
       expect(uriObj !== undefined && uriObj !== null).assertTrue();
       expect(uriObj.path !== undefined && uriObj.path !== null).assertTrue();
-      expect(uriObj.path.includes('0')).assertTrue();
+      expect(uriObj.path!.includes('0')).assertTrue();
     });
 
     /**
@@ -177,7 +178,7 @@ export default function URI05Test() {
       const uriObj = new uri.URI(uriStr);
       expect(uriObj !== undefined && uriObj !== null).assertTrue();
       expect(uriObj.path !== undefined && uriObj.path !== null).assertTrue();
-      expect(uriObj.path.includes('NaN')).assertTrue();
+      expect(uriObj.path!.includes('NaN')).assertTrue();
     });
 
     /**
@@ -189,7 +190,7 @@ export default function URI05Test() {
      * @tc.level Level 2
      */
     it('testURI05Chapter0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let size = 10000;
+      let size: int = 10000;
       let ans = '[';
       while (ans.length < size) {
         ans += '{"a":1},';
@@ -200,7 +201,7 @@ export default function URI05Test() {
       const uriObj = new uri.URI(uriStr);
       expect(uriObj !== undefined && uriObj !== null).assertTrue();
       expect(uriObj.query !== undefined && uriObj.query !== null).assertTrue();
-      expect(uriObj.query.includes('tree=')).assertTrue();
+      expect(uriObj.query!.includes('tree=')).assertTrue();
     });
 
     /**
@@ -218,7 +219,7 @@ export default function URI05Test() {
       const uriObj = new uri.URI(uriStr);
       expect(uriObj !== undefined && uriObj !== null).assertTrue();
       expect(uriObj.path !== undefined && uriObj.path !== null).assertTrue();
-      expect(uriObj.path.includes('k1:value1,k2:value')).assertTrue();
+      expect(uriObj.path!.includes('k1:value1,k2:value')).assertTrue();
     });
 
     /**
@@ -236,8 +237,8 @@ export default function URI05Test() {
       const uriObj = new uri.URI(uriStr);
       expect(uriObj !== undefined && uriObj !== null).assertTrue();
       expect(uriObj.query !== undefined && uriObj.query !== null).assertTrue();
-      expect(uriObj.query.includes('big=')).assertTrue();
-      expect(uriObj.query.length > 100000).assertTrue();
+      expect(uriObj.query!.includes('big=')).assertTrue();
+      expect(uriObj.query!.length > 100000).assertTrue();
     });
 
     /**
@@ -295,9 +296,9 @@ export default function URI05Test() {
       const uriObj = new uri.URI(uriStr);
       expect(uriObj !== undefined && uriObj !== null).assertTrue();
       expect(uriObj.query !== undefined && uriObj.query !== null).assertTrue();
-      expect(uriObj.query.includes('zero=0')).assertTrue();
-      expect(uriObj.query.includes('nan=NaN')).assertTrue();
-      expect(uriObj.query.includes('inf=Infinity')).assertTrue();
+      expect(uriObj.query!.includes('zero=0')).assertTrue();
+      expect(uriObj.query!.includes('nan=NaN')).assertTrue();
+      expect(uriObj.query!.includes('inf=Infinity')).assertTrue();
     });
 
     /**
@@ -313,9 +314,9 @@ export default function URI05Test() {
       const uriObj = new uri.URI(uriStr);
       expect(uriObj !== undefined && uriObj !== null).assertTrue();
       expect(uriObj.query !== undefined && uriObj.query !== null).assertTrue();
-      expect(uriObj.query.includes('boolTrue=true')).assertTrue();
-      expect(uriObj.query.includes('boolFalse=false')).assertTrue();
-      expect(uriObj.query.includes('null=null')).assertTrue();
+      expect(uriObj.query!.includes('boolTrue=true')).assertTrue();
+      expect(uriObj.query!.includes('boolFalse=false')).assertTrue();
+      expect(uriObj.query!.includes('null=null')).assertTrue();
     });
 
     /**
@@ -334,10 +335,10 @@ export default function URI05Test() {
       const uriObj = new uri.URI(uriStr);
       expect(uriObj !== undefined && uriObj !== null).assertTrue();
       expect(uriObj.query !== undefined && uriObj.query !== null).assertTrue();
-      expect(uriObj.query.includes('arr=')).assertTrue();
+      expect(uriObj.query!.includes('arr=')).assertTrue();
     });
 
-    /**
+/**
      * @tc.number SUB_COMMONLIBRARY_UTIL_URITestFIVE_1600
      * @tc.name testURI05Chapter0016
      * @tc.desc Positive test: Object JSON string as query value (percent-encoded), including nested object, Symbol key (ignored), function, undefined, null, NaN, Infinity, TypedArray, Map, Set, Promise, RegExp
@@ -346,38 +347,15 @@ export default function URI05Test() {
      * @tc.level Level 2
      */
     it('testURI05Chapter0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      interface NestedInner {
-        f: Object;
-      }
-      interface NestedOuter {
-        d: Object;
-        e: NestedInner;
-      }
-
-      interface TestObject {
-        a: Object;
-        b: Object;
-        c: Object;
-        nested: NestedOuter;
-        nullVal: null;
-        nan: Object;
-        inf: Object;
-        uint8: Object;
-        map: Object;
-        set: Object;
-        promise: Object;
-        regex: Object;
-      }
-
       let mapEntry: [string, Object] = ["key1", "value1" as Object];
       let setData: Object = new Set<number>([1, 2, 3]) as Object;
-      let regexData: Object = /abc/gi as Object;
+      let regexData: Object = new RegExp("abc", "gi") as Object;
       let uint8Data: Object = new Uint8Array([72, 101, 108]) as Object;
 
-      let nestedInner: NestedInner = { f: 3 as Object };
-      let nestedOuter: NestedOuter = { d: 2 as Object, e: nestedInner };
+      let nestedInner: NestedInnerForCtor0046 = { f: 3 as Object };
+      let nestedOuter: NestedOuterForCtor0046 = { d: 2 as Object, e: nestedInner };
 
-      let objTemp: TestObject = {
+      let objTemp: TestObjectForCtor0046 = {
         a: 1 as Object,
         b: "test" as Object,
         c: [1, 2, 3] as Object,
@@ -387,7 +365,7 @@ export default function URI05Test() {
         inf: Infinity as Object,
         uint8: uint8Data,
         map: mapEntry as Object,
-        set: setData,
+        setData: setData,
         promise: new Promise<string>((resolve) => resolve('done')) as Object,
         regex: regexData
       };
@@ -398,7 +376,7 @@ export default function URI05Test() {
       let uriObj: uri.URI = new uri.URI(uriStr);
       expect(uriObj !== undefined && uriObj !== null).assertTrue();
       expect(uriObj.query !== undefined && uriObj.query !== null).assertTrue();
-      expect(uriObj.query.includes('obj=')).assertTrue();
+      expect(uriObj.query!.includes('obj=')).assertTrue();
     });
 
     /**
@@ -413,7 +391,7 @@ export default function URI05Test() {
       const uriObj: uri.URI = new uri.URI('https://example.com/?bad=%gg');
       expect(uriObj !== null).assertTrue();
       expect(uriObj.query !== undefined && uriObj.query !== null).assertTrue();
-      expect(uriObj.query.includes('bad=')).assertTrue();
+      expect(uriObj.query!.includes('bad=')).assertTrue();
     });
 
     /**
@@ -428,7 +406,7 @@ export default function URI05Test() {
       const uriObj: uri.URI = new uri.URI('https://example.com/?q={unencoded}');
       expect(uriObj !== null).assertTrue();
       expect(uriObj.query !== undefined && uriObj.query !== null).assertTrue();
-      expect(uriObj.query.includes('q=')).assertTrue();
+      expect(uriObj.query!.includes('q=')).assertTrue();
     });
   });
 }
