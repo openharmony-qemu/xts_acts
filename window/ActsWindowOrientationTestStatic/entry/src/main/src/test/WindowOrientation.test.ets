@@ -34,6 +34,7 @@ export default function WindowOrientationTest() {
         let windowStage: window.WindowStage | undefined;
         let win: window.Window | undefined;
         let context: common.UIAbilityContext;
+        let isSupportRotate = false;
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
         //let isPCStatus: string = '';
@@ -51,6 +52,19 @@ export default function WindowOrientationTest() {
             hilog.info(domain, tag, '%{public}s', 'getANI windowStage = ' + JSON.stringify(windowStage));
             hilog.info(domain, tag, '%{public}s', 'getANI win = ' + JSON.stringify(win));
 
+            let Orientation1 = display.getDefaultDisplaySync().orientation;
+            let windowClass = windowStage!.getMainWindowSync();
+            await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+            await Utils.msSleep(300);
+            let Orientation2 = display.getDefaultDisplaySync().orientation;
+            if (Orientation1 != Orientation2) {
+              isSupportRotate = true;
+            } else {
+              isSupportRotate = false;
+            }
+            await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+            await Utils.msSleep(300);
+            
             //isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.DEVICE_SHARED);
             //console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
             //isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
