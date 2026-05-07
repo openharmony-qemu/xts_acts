@@ -1016,10 +1016,14 @@ int VideoEncodeApiDual0400()
     cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
     if (cap) {
         OH_AVCodec *primaryVencCodec = nullptr;
-        ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_CreatePrimaryWithPreproc(OH_AVCODEC_MIMETYPE_VIDEO_AVC, &primaryVencCodec));
+        ASSERT_EQ(AV_ERR_OK,
+            OH_VideoEncoder_CreatePrimaryWithPreproc(
+                OH_AVCODEC_MIMETYPE_VIDEO_AVC, &primaryVencCodec));
         ASSERT_NE(nullptr, primaryVencCodec);
         OH_AVCodec *vencCodec = nullptr;
-        ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_CreateSecondaryFromPrimary(primaryVencCodec, &vencCodec));
+        ASSERT_EQ(AV_ERR_OK,
+            OH_VideoEncoder_CreateSecondaryFromPrimary(
+                primaryVencCodec, &vencCodec));
         ASSERT_NE(nullptr, vencCodec);
         OH_VideoEncoder_Destroy(primaryVencCodec);
         OH_VideoEncoder_Destroy(vencCodec);
