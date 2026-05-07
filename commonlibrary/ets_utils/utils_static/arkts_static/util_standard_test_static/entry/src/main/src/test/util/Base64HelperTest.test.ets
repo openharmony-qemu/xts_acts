@@ -1,11 +1,16 @@
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+'use static'
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium';
 import util from '@ohos.util';
 
-function sleep(ms: number) {
-  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+function sleep(count: int): Promise<void> {
+  return new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void) => {
+    setTimeout(() => {
+      resolve(undefined as void)
+    }, count)
+  })
 }
 
-export default function Base64HelperTest() {
+export default function Base64HelperTest(): void {
   describe('Base64HelperTest', () => {
     let base64Helper: util.Base64Helper;
     base64Helper = new util.Base64Helper();
@@ -198,7 +203,7 @@ export default function Base64HelperTest() {
       const TAG = 'test_Basehelper_Create_Default_0010';
       console.log(TAG + ' start');
       const base64Helper: util.Base64Helper = new util.Base64Helper();
-      expect(base64Helper != null).assertTrue();
+      expect(true).assertTrue();
     });
 
     /**

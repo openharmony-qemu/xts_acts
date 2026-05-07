@@ -1,11 +1,22 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+'use static'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
 import { util } from '@kit.ArkTS';
 
-const sleep = (time: number): Promise<void> => {
-  return new Promise<void>((resolve) => {
-    setTimeout(resolve, time);
-  });
-};
+interface KeyObj {
+  id: number;
+}
+
+interface ComplexObj {
+  data: number[];
+}
+
+function sleep(count: int): Promise<void> {
+  return new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void) => {
+    setTimeout(() => {
+      resolve(undefined as void)
+    }, count)
+  })
+}
 
 export default function LRUCache03Test() {
   describe('LRUCache03Test', () => {
@@ -76,7 +87,7 @@ export default function LRUCache03Test() {
 
       const cache = new util.LRUCache<string, string>(5);
       cache.get("key1"); // Miss -> 1
-      const beforeClear = cache.getMissCount();
+      const beforeClear: long = cache.getMissCount();
 
       cache.clear();
       expect(cache.getMissCount()).assertEqual(beforeClear);
@@ -286,9 +297,9 @@ export default function LRUCache03Test() {
       console.log(TAG + " start");
 
       const cache = new util.LRUCache<string, string>(10);
-      const operations = 100;
+      const operations: int = 100;
 
-      for (let i = 0; i < operations; i++) {
+      for (let i: int = 0; i < operations; i++) {
         cache.get(`key${i}`);
       }
 
@@ -428,7 +439,7 @@ export default function LRUCache03Test() {
 
       // Miss
       cache.get("key1");
-      const initialMissCount = cache.getMissCount(); // 1
+      const initialMissCount: long = cache.getMissCount(); // 1
 
       cache.put("key1", "value1");
       cache.put("key2", "value2");
@@ -513,7 +524,7 @@ export default function LRUCache03Test() {
 
       const cache = new util.LRUCache<string, string>(5);
 
-      ["A", "B", "C", "D", "E"].forEach(k => cache.put(k, k));
+      ["A", "B", "C", "D", "E"].forEach((k: string) => { cache.put(k, k) });
       expect(cache.getRemovalCount()).assertEqual(0);
       cache.updateCapacity(2);
       expect(cache.getRemovalCount()).assertEqual(3);
@@ -587,7 +598,7 @@ export default function LRUCache03Test() {
       try {
         const cache0 = new util.LRUCache<string, string>(0);
         cache0.put("X", "X");
-        let count = cache0.getRemovalCount();
+        let count: long = cache0.getRemovalCount();
         console.log(TAG + " Capacity 0 count: " + count);
       } catch (e) {
         console.log(TAG + " Capacity 0 not supported: " + e);
@@ -665,11 +676,11 @@ export default function LRUCache03Test() {
       const TAG = "testLRUCacheRemovalCount03_0023";
       console.log(TAG + " start");
 
-      const capacity = 50;
-      const loopCount = 500;
+      const capacity: int = 50;
+      const loopCount: int = 500;
       const cache = new util.LRUCache<number, number>(capacity);
 
-      for (let i = 0; i < loopCount; i++) {
+      for (let i: int = 0; i < loopCount; i++) {
         cache.put(i, i);
       }
 
@@ -927,7 +938,7 @@ export default function LRUCache03Test() {
       const cache = new util.LRUCache<string, string>(5);
       cache.put("A", "1");
 
-      for (let i = 0; i < 10; i++) {
+      for (let i: int = 0; i < 10; i++) {
         cache.get("NonExistent" + i);
       }
 
@@ -950,10 +961,6 @@ export default function LRUCache03Test() {
     it('testLRUCacheGetMatchCount03_0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = "testLRUCacheGetMatchCount03_0033";
       console.log(TAG + " start");
-
-      interface KeyObj {
-        id: number;
-      }
 
       const cache = new util.LRUCache<KeyObj, string>(5);
 
@@ -987,11 +994,11 @@ export default function LRUCache03Test() {
 
       const cache = new util.LRUCache<number, number>(20);
 
-      for (let i = 0; i < 20; i += 2) {
+      for (let i: int = 0; i < 20; i += 2) {
         cache.put(i, i);
       }
 
-      for (let i = 0; i < 10; i++) {
+      for (let i: int = 0; i < 10; i++) {
         cache.get(i);
       }
 
@@ -1133,8 +1140,8 @@ export default function LRUCache03Test() {
       const cache = new util.LRUCache<string, string>(5);
       cache.put("Target", "HitMe");
 
-      const loops = 50;
-      for(let i = 0; i < loops; i++) {
+      const loops: int = 50;
+      for(let i: int = 0; i < loops; i++) {
         cache.get("Target");
       }
 
@@ -1280,7 +1287,7 @@ export default function LRUCache03Test() {
       cache.put("A", "1");
       cache.put("B", "2");
 
-      const countBeforeClear = cache.getPutCount(); // 2
+      const countBeforeClear: long = cache.getPutCount(); // 2
       expect(countBeforeClear).assertEqual(2);
 
       cache.clear();
@@ -1333,9 +1340,9 @@ export default function LRUCache03Test() {
       console.log(TAG + " start");
 
       const cache = new util.LRUCache<number, number>(10);
-      const iterations = 500;
+      const iterations: int = 500;
 
-      for (let i = 0; i < iterations; i++) {
+      for (let i: int = 0; i < iterations; i++) {
         cache.put(i, i * 10);
       }
 
@@ -1385,7 +1392,6 @@ export default function LRUCache03Test() {
       const TAG = "testLRUCacheGetPutCount03_0048";
       console.log(TAG + " start");
 
-      interface KeyObj { id: number }
       const cache = new util.LRUCache<KeyObj, string>(5);
 
       const k1: KeyObj = { id: 1 };
@@ -1415,7 +1421,6 @@ export default function LRUCache03Test() {
       const TAG = "testLRUCacheGetPutCount03_0049";
       console.log(TAG + " start");
 
-      interface ComplexObj { data: number[] }
       const cache = new util.LRUCache<string, number | boolean | string | ComplexObj>(5);
 
       cache.put("num", 100);
@@ -1761,7 +1766,6 @@ export default function LRUCache03Test() {
       const TAG = "testLRUCacheIsEmpty03_0061";
       console.log(TAG + " start");
 
-      interface KeyObj { id: number }
       const cache = new util.LRUCache<KeyObj | string, number | boolean>(5);
 
       // 1. String key

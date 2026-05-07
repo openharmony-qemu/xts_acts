@@ -1,11 +1,18 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+'use static'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
 import { util } from '@kit.ArkTS';
 
-const sleep = (time: number): Promise<void> => {
-  return new Promise<void>((resolve) => {
-    setTimeout(resolve, time);
-  });
-};
+interface TestObject {
+  key: string;
+}
+
+function sleep(count: int): Promise<void> {
+  return new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void) => {
+    setTimeout(() => {
+      resolve(undefined as void)
+    }, count)
+  })
+}
 
 export default function LRUCache02Test() {
   describe('LRUCache02Test', () => {
@@ -48,12 +55,12 @@ export default function LRUCache02Test() {
         cache.put(1, "one");
         cache.put(2, "two");
 
-        let initialCapacity = cache.getCapacity();
+        let initialCapacity: int = cache.getCapacity();
         expect(initialCapacity).assertEqual(2);
 
 
         cache.updateCapacity(5);
-        let newCapacity = cache.getCapacity();
+        let newCapacity: int = cache.getCapacity();
         expect(newCapacity).assertEqual(5);
 
 
@@ -95,12 +102,12 @@ export default function LRUCache02Test() {
         cache.put(3, "three");
         cache.put(4, "four");
 
-        let initialCapacity = cache.getCapacity();
+        let initialCapacity: int = cache.getCapacity();
         expect(initialCapacity).assertEqual(4);
 
 
         cache.updateCapacity(2);
-        let newCapacity = cache.getCapacity();
+        let newCapacity: int = cache.getCapacity();
         expect(newCapacity).assertEqual(2);
 
 
@@ -135,12 +142,12 @@ export default function LRUCache02Test() {
         cache.put(1, "one");
         cache.put(2, "two");
 
-        let initialCapacity = cache.getCapacity();
+        let initialCapacity: int = cache.getCapacity();
         expect(initialCapacity).assertEqual(3);
 
 
         cache.updateCapacity(3);
-        let newCapacity = cache.getCapacity();
+        let newCapacity: int = cache.getCapacity();
         expect(newCapacity).assertEqual(3);
 
 
@@ -172,12 +179,12 @@ export default function LRUCache02Test() {
         cache.put(1, "one");
         cache.put(2, "two");
 
-        let initialCapacity = cache.getCapacity();
+        let initialCapacity: int = cache.getCapacity();
         expect(initialCapacity).assertEqual(2);
 
 
         cache.updateCapacity(0);
-        let newCapacity = cache.getCapacity();
+        let newCapacity: int = cache.getCapacity();
         expect(newCapacity).assertEqual(0);
 
 
@@ -210,7 +217,7 @@ export default function LRUCache02Test() {
         cache.put(2, "two");
 
 
-        let initialCapacity = cache.getCapacity();
+        let initialCapacity: int = cache.getCapacity();
         expect(initialCapacity).assertEqual(2);
 
         let errorThrown = false;
@@ -222,7 +229,7 @@ export default function LRUCache02Test() {
         }
 
 
-        let finalCapacity = cache.getCapacity();
+        let finalCapacity: int = cache.getCapacity();
 
         expect(typeof finalCapacity).assertEqual("number");
         console.log(TAG + " passed (method didn't crash, final capacity: " + finalCapacity + ")");
@@ -251,20 +258,20 @@ export default function LRUCache02Test() {
         cache.put(2, "two");
 
 
-        let initialCapacity = cache.getCapacity();
+        let initialCapacity: int = cache.getCapacity();
         expect(initialCapacity).assertEqual(2);
 
         let errorThrown = false;
         try {
 
-          cache.updateCapacity("invalid" as Object as number);
+          cache.updateCapacity(("invalid" as Object as number).toInt());
         } catch (e) {
           errorThrown = true;
           console.log(TAG + ` caught expected error: ${e}`);
         }
 
 
-        let finalCapacity = cache.getCapacity();
+        let finalCapacity: int = cache.getCapacity();
         expect(typeof finalCapacity).assertEqual("number");
         console.log(TAG + " passed (method didn't crash, final capacity: " + finalCapacity + ")");
       } catch (e) {
@@ -292,19 +299,19 @@ export default function LRUCache02Test() {
         cache.put(2, "two");
 
 
-        let initialCapacity = cache.getCapacity();
+        let initialCapacity: int = cache.getCapacity();
         expect(initialCapacity).assertEqual(2);
 
         let errorThrown = false;
         try {
-          cache.updateCapacity(NaN);
+          cache.updateCapacity(NaN.toInt());
         } catch (e) {
           errorThrown = true;
           console.log(TAG + ` caught expected error: ${e}`);
         }
 
 
-        let finalCapacity = cache.getCapacity();
+        let finalCapacity: int = cache.getCapacity();
         expect(typeof finalCapacity).assertEqual("number");
         console.log(TAG + " passed (method didn't crash, final capacity: " + finalCapacity + ")");
       } catch (e) {
@@ -332,19 +339,19 @@ export default function LRUCache02Test() {
         cache.put(2, "two");
 
 
-        let initialCapacity = cache.getCapacity();
+        let initialCapacity: int = cache.getCapacity();
         expect(initialCapacity).assertEqual(2);
 
         let errorThrown = false;
         try {
-          cache.updateCapacity(Infinity);
+          cache.updateCapacity(Infinity.toInt());
         } catch (e) {
           errorThrown = true;
           console.log(TAG + ` caught expected error: ${e}`);
         }
 
 
-        let finalCapacity = cache.getCapacity();
+        let finalCapacity: int = cache.getCapacity();
         expect(typeof finalCapacity).assertEqual("number");
         console.log(TAG + " passed (method didn't crash, final capacity: " + finalCapacity + ")");
       } catch (e) {
@@ -372,7 +379,7 @@ export default function LRUCache02Test() {
         cache.put(2, "two");
         cache.put(3, "three");
 
-        let initialCapacity = cache.getCapacity();
+        let initialCapacity: int = cache.getCapacity();
         expect(initialCapacity).assertEqual(3);
 
 
@@ -389,7 +396,7 @@ export default function LRUCache02Test() {
 
 
         cache.updateCapacity(5);
-        let newCapacity = cache.getCapacity();
+        let newCapacity: int = cache.getCapacity();
         expect(newCapacity).assertEqual(5);
 
 
@@ -427,19 +434,19 @@ export default function LRUCache02Test() {
         cache.put(1, "one");
         cache.put(2, "two");
 
-        let initialCapacity = cache.getCapacity();
+        let initialCapacity: int = cache.getCapacity();
         expect(initialCapacity).assertEqual(2);
 
 
         cache.updateCapacity(4);
-        let cap1 = cache.getCapacity();
+        let cap1: int = cache.getCapacity();
         expect(cap1).assertEqual(4);
         expect(cache.get(1)).assertEqual("one");
         expect(cache.get(2)).assertEqual("two");
 
 
         cache.updateCapacity(1);
-        let cap2 = cache.getCapacity();
+        let cap2: int = cache.getCapacity();
         expect(cap2).assertEqual(1);
 
         expect(cache.get(2)).assertEqual("two");
@@ -447,7 +454,7 @@ export default function LRUCache02Test() {
 
 
         cache.updateCapacity(3);
-        let cap3 = cache.getCapacity();
+        let cap3: int = cache.getCapacity();
         expect(cap3).assertEqual(3);
 
         cache.put(3, "three");
@@ -605,7 +612,7 @@ export default function LRUCache02Test() {
       console.log(TAG + " start");
       try {
 
-        let cache = new util.LRUCache<string, string>(2);
+        let cache = new util.LRUCache<string | null, string>(2);
 
 
         try {
@@ -710,7 +717,7 @@ export default function LRUCache02Test() {
         let cache = new util.LRUCache<number, string>(1000);
 
 
-        for (let i = 0; i < 1000; i++) {
+        for (let i: int = 0; i < 1000; i++) {
           cache.put(i, `value${i}`);
         }
 
@@ -744,7 +751,7 @@ export default function LRUCache02Test() {
         cache.put(1, "one");
         cache.put(2, "two");
 
-        let preCapacity = cache.getCapacity();
+        let preCapacity: int = cache.getCapacity();
 
         let preItem1 = cache.get(1);
         let preItem2 = cache.get(2);
@@ -755,7 +762,7 @@ export default function LRUCache02Test() {
         expect(result).assertContain("LRUCache");
 
 
-        let postCapacity = cache.getCapacity();
+        let postCapacity: int = cache.getCapacity();
         let postItem1 = cache.get(1);
         let postItem2 = cache.get(2);
 
@@ -834,7 +841,7 @@ export default function LRUCache02Test() {
       console.log(TAG + " start");
       try {
         let cache = new util.LRUCache<number, string>(5);
-        let capacity = cache.getCapacity();
+        let capacity: int = cache.getCapacity();
         expect(capacity).assertEqual(5);
         console.log(TAG + " passed");
       } catch (e) {
@@ -857,7 +864,7 @@ export default function LRUCache02Test() {
       try {
         let cache = new util.LRUCache<number, string>(3);
         cache.updateCapacity(7);
-        let capacity = cache.getCapacity();
+        let capacity: int = cache.getCapacity();
         expect(capacity).assertEqual(7);
         console.log(TAG + " passed");
       } catch (e) {
@@ -879,7 +886,7 @@ export default function LRUCache02Test() {
       console.log(TAG + " start");
       try {
         let cache = new util.LRUCache<number, string>(10);
-        let capacity = cache.getCapacity();
+        let capacity: int = cache.getCapacity();
         expect(capacity).assertEqual(10);
         console.log(TAG + " passed");
       } catch (e) {
@@ -903,7 +910,7 @@ export default function LRUCache02Test() {
         let cache = new util.LRUCache<number, string>(2);
         cache.put(1, "one");
         cache.put(2, "two");
-        let capacity = cache.getCapacity();
+        let capacity: int = cache.getCapacity();
         expect(capacity).assertEqual(2);
         console.log(TAG + " passed");
       } catch (e) {
@@ -925,7 +932,7 @@ export default function LRUCache02Test() {
       console.log(TAG + " start");
       try {
         let cache = new util.LRUCache<number, string>(0);
-        let capacity = cache.getCapacity();
+        let capacity: int = cache.getCapacity();
         expect(capacity).assertEqual(0);
         console.log(TAG + " passed");
       } catch (e) {
@@ -946,7 +953,7 @@ export default function LRUCache02Test() {
       console.log(TAG + " start");
       try {
         let cache = new util.LRUCache<number, string>(-1);
-        let capacity = cache.getCapacity();
+        let capacity: int = cache.getCapacity();
 
         expect(typeof capacity).assertEqual("number");
         console.log(TAG + " passed");
@@ -967,8 +974,8 @@ export default function LRUCache02Test() {
       const TAG = "testLRUCacheGetCapacity02_0027";
       console.log(TAG + " start");
       try {
-        let cache = new util.LRUCache<number, string>("invalid" as Object as number);
-        let capacity = cache.getCapacity();
+        let cache = new util.LRUCache<number, string>(("invalid" as Object as number).toInt());
+        let capacity: int = cache.getCapacity();
 
         expect(typeof capacity).assertEqual("number");
         console.log(TAG + " passed");
@@ -989,8 +996,8 @@ export default function LRUCache02Test() {
       const TAG = "testLRUCacheGetCapacity02_0028";
       console.log(TAG + " start");
       try {
-        let cache = new util.LRUCache<number, string>(NaN);
-        let capacity = cache.getCapacity();
+        let cache = new util.LRUCache<number, string>(NaN.toInt());
+        let capacity: int = cache.getCapacity();
 
         expect(typeof capacity).assertEqual("number");
         console.log(TAG + " passed");
@@ -1012,9 +1019,9 @@ export default function LRUCache02Test() {
       console.log(TAG + " start");
       try {
         let cache = new util.LRUCache<number, string>(4);
-        let capacity1 = cache.getCapacity();
-        let capacity2 = cache.getCapacity();
-        let capacity3 = cache.getCapacity();
+        let capacity1: int = cache.getCapacity();
+        let capacity2: int = cache.getCapacity();
+        let capacity3: int = cache.getCapacity();
         expect(capacity1).assertEqual(4);
         expect(capacity2).assertEqual(4);
         expect(capacity3).assertEqual(4);
@@ -1041,7 +1048,7 @@ export default function LRUCache02Test() {
         cache.put(1, "one");
         cache.put(2, "two");
         cache.put(3, "three");
-        let capacity = cache.getCapacity();
+        let capacity: int = cache.getCapacity();
         expect(capacity).assertEqual(2);
         console.log(TAG + " passed");
       } catch (e) {
@@ -1063,7 +1070,7 @@ export default function LRUCache02Test() {
       console.log(TAG + " start");
       try {
         let cache = new util.LRUCache<string, number>(3);
-        let capacity = cache.getCapacity();
+        let capacity: int = cache.getCapacity();
         expect(capacity).assertEqual(3);
         console.log(TAG + " passed");
       } catch (e) {
@@ -1088,13 +1095,13 @@ export default function LRUCache02Test() {
         cache.put(1, "one");
         cache.put(2, "two");
 
-        let preCapacity = cache.getCapacity();
+        let preCapacity: int = cache.getCapacity();
         let preItem1 = cache.get(1);
         let preItem2 = cache.get(2);
 
-        let capacity = cache.getCapacity();
+        let capacity: int = cache.getCapacity();
 
-        let postCapacity = cache.getCapacity();
+        let postCapacity: int = cache.getCapacity();
         let postItem1 = cache.get(1);
         let postItem2 = cache.get(2);
 
@@ -1233,9 +1240,6 @@ export default function LRUCache02Test() {
       const TAG = "testLRUCacheClear02_0037";
       console.log(TAG + " start");
 
-      interface TestObject {
-        key: string;
-      }
 
       const cache = new util.LRUCache<string, string | number | boolean | TestObject | number[]>(5);
 
@@ -1359,7 +1363,7 @@ export default function LRUCache02Test() {
 
       const cache = new util.LRUCache<string, string>(100);
 
-      for (let i = 1; i <= 50; i++) {
+      for (let i: int = 1; i <= 50; i++) {
         cache.put(`key${i}`, `value${i}`);
       }
       expect(cache.get("key1")).assertEqual("value1");
@@ -1442,13 +1446,13 @@ export default function LRUCache02Test() {
 
       const cache = new util.LRUCache<string, string>(5);
 
-      for (let i = 1; i <= 3; i++) {
+      for (let i: int = 1; i <= 3; i++) {
         cache.put(`key${i}`, `value${i}`);
       }
 
       cache.clear();
 
-      for (let i = 4; i <= 6; i++) {
+      for (let i: int = 4; i <= 6; i++) {
         cache.put(`key${i}`, `value${i}`);
       }
 
@@ -1558,7 +1562,7 @@ export default function LRUCache02Test() {
       const TAG = "testLRUCacheGetCreateCount02_0049";
       const cache = new util.LRUCache<string, string>(5);
       cache.put("key", "value1");
-      const count1 = cache.getCreateCount();
+      const count1: long = cache.getCreateCount();
 
       cache.put("key", "value2");
       expect(cache.getCreateCount()).assertEqual(count1);
@@ -1576,7 +1580,7 @@ export default function LRUCache02Test() {
       const TAG = "testLRUCacheGetCreateCount02_0050";
       const cache = new util.LRUCache<string, string>(5);
       cache.put("key1", "value1");
-      const initialCount = cache.getCreateCount();
+      const initialCount: long = cache.getCreateCount();
 
       cache.get("key1");
       cache.get("key1");
@@ -1614,7 +1618,7 @@ export default function LRUCache02Test() {
       const cache = new util.LRUCache<string, string>(5);
       cache.put("key1", "value1");
       cache.put("key2", "value2");
-      const beforeClear = cache.getCreateCount();
+      const beforeClear: long = cache.getCreateCount();
 
       cache.clear();
       expect(cache.getCreateCount()).assertEqual(beforeClear);
@@ -1632,7 +1636,7 @@ export default function LRUCache02Test() {
       const TAG = "testLRUCacheGetCreateCount02_0053";
       const cache = new util.LRUCache<string, string>(5);
       cache.put("key1", "value1");
-      const countBefore = cache.getCreateCount();
+      const countBefore: long = cache.getCreateCount();
 
       cache.clear();
       cache.put("key2", "value2");
@@ -1765,9 +1769,9 @@ export default function LRUCache02Test() {
     it('testLRUCacheGetCreateCount02_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = "testLRUCacheGetCreateCount02_0060";
       const cache = new util.LRUCache<string, string>(10);
-      const operations = 100;
+      const operations: int = 100;
 
-      for (let i = 0; i < operations; i++) {
+      for (let i: int = 0; i < operations; i++) {
         cache.put(`key${i}`, `value${i}`);
       }
 
@@ -1888,7 +1892,7 @@ export default function LRUCache02Test() {
 
       // Miss
       cache.get("key1");
-      const initialMissCount = cache.getMissCount(); // 1
+      const initialMissCount: long = cache.getMissCount(); // 1
 
       cache.put("key1", "value1");
       cache.put("key2", "value2");

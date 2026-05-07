@@ -1,4 +1,5 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+'use static'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
 
 interface INumDenObj {
   num: number;
@@ -19,13 +20,13 @@ class RationalNumber {
     if (denominator === 0) {
       throw new Error("Denominator cannot be zero");
     }
-    let adjustedNumerator = numerator;
-    let adjustedDenominator = denominator;
+    let adjustedNumerator: number = numerator;
+    let adjustedDenominator: number = denominator;
     if (adjustedDenominator < 0) {
       adjustedNumerator = -adjustedNumerator;
       adjustedDenominator = -adjustedDenominator;
     }
-    const gcdValue = this.gcd(Math.abs(adjustedNumerator), adjustedDenominator);
+    const gcdValue: number = this.gcd(Math.abs(adjustedNumerator), adjustedDenominator);
     this._numerator = adjustedNumerator / gcdValue;
     this._denominator = adjustedDenominator / gcdValue;
   }
@@ -91,13 +92,15 @@ class RationalNumber {
   }
 }
 
-const sleep = (time: number): Promise<void> => {
-  return new Promise<void>((resolve) => {
-    setTimeout(resolve, time);
-  });
-};
+async function sleep(count: int): Promise<void> {
+  return new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void) => {
+    setTimeout(() => {
+      resolve(undefined as void)
+    }, count)
+  })
+}
 
-export default function RationalNumberTest() {
+export default function RationalNumberTest(): void {
   describe('RationalNumberTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -137,7 +140,7 @@ export default function RationalNumberTest() {
           new RationalNumber(Number("not_a_number"), 2);
           expect(true).assertFalse();
         } catch (err) {
-          expect((err as Error).message).assertEqual("Numerator must be an integer");
+          expect(err.message).assertEqual("Numerator must be an integer");
         }
 
       });
@@ -158,7 +161,7 @@ export default function RationalNumberTest() {
           new RationalNumber(3.14, 2);
           expect(true).assertFalse();
         } catch (err) {
-          expect((err as Error).message).assertEqual("Numerator must be an integer");
+          expect(err.message).assertEqual("Numerator must be an integer");
         }
 
       });
@@ -179,7 +182,7 @@ export default function RationalNumberTest() {
           new RationalNumber(Number(undefined), 2);
           expect(true).assertFalse();
         } catch (err) {
-          expect((err as Error).message).assertEqual("Numerator must be an integer");
+          expect(err.message).assertEqual("Numerator must be an integer");
         }
 
       });
@@ -198,10 +201,10 @@ export default function RationalNumberTest() {
         console.log(TAG + ' start');
         try {
           const obj: INumDenObj = { num: 1, den: 3 };
-          new RationalNumber(3, Number(obj));
+          new RationalNumber(3, NaN);
           expect(true).assertFalse();
         } catch (err) {
-          expect((err as Error).message).assertEqual("Denominator must be an integer");
+          expect(err.message).assertEqual("Denominator must be an integer");
         }
 
       });
@@ -219,10 +222,10 @@ export default function RationalNumberTest() {
         const TAG = 'testRationalConstructorDenominatorArray0008';
         console.log(TAG + ' start');
         try {
-          new RationalNumber(3, Number([1, 2]));
+          new RationalNumber(3, NaN);
           expect(true).assertFalse();
         } catch (err) {
-          expect((err as Error).message).assertEqual("Denominator must be an integer");
+          expect(err.message).assertEqual("Denominator must be an integer");
         }
 
       });
@@ -240,10 +243,10 @@ export default function RationalNumberTest() {
         const TAG = 'testRationalConstructorNumeratorBigInt0009';
         console.log(TAG + ' start');
         try {
-          new RationalNumber(Number(100n) + 0.1, 2);
+          new RationalNumber(100 + 0.1, 2);
           expect(true).assertFalse();
         } catch (err) {
-          expect((err as Error).message).assertEqual("Numerator must be an integer");
+          expect(err.message).assertEqual("Numerator must be an integer");
         }
 
       });
@@ -265,7 +268,7 @@ export default function RationalNumberTest() {
           rationalNumber.add(new RationalNumber(Number("1/3"), 1));
           expect(true).assertFalse();
         } catch (err) {
-          expect((err as Error).message).assertEqual("Numerator must be an integer");
+          expect(err.message).assertEqual("Numerator must be an integer");
         }
 
       });
@@ -287,7 +290,7 @@ export default function RationalNumberTest() {
           rationalNumber.add(new RationalNumber(Number(undefined), 1));
           expect(true).assertFalse();
         } catch (err) {
-          expect((err as Error).message).assertEqual("Numerator must be an integer");
+          expect(err.message).assertEqual("Numerator must be an integer");
         }
 
       });
@@ -306,10 +309,10 @@ export default function RationalNumberTest() {
         console.log(TAG + ' start');
         try {
           const rationalNumber = new RationalNumber(1, 2);
-          rationalNumber.add(new RationalNumber(Number([1, 2]), 1));
+          rationalNumber.add(new RationalNumber(NaN, 1));
           expect(true).assertFalse();
         } catch (err) {
-          expect((err as Error).message).assertEqual("Numerator must be an integer");
+          expect(err.message).assertEqual("Numerator must be an integer");
         }
 
       });
@@ -331,7 +334,7 @@ export default function RationalNumberTest() {
           rationalNumber.subtract(new RationalNumber(Number(undefined), 1));
           expect(true).assertFalse();
         } catch (err) {
-          expect((err as Error).message).assertEqual("Numerator must be an integer");
+          expect(err.message).assertEqual("Numerator must be an integer");
         }
 
       });
@@ -351,10 +354,10 @@ export default function RationalNumberTest() {
         try {
           const rationalNumber = new RationalNumber(1, 2);
           const obj: INumDenObj = { num: 1, den: 3 };
-          rationalNumber.subtract(new RationalNumber(Number(obj), 1));
+          rationalNumber.subtract(new RationalNumber(NaN, 1));
           expect(true).assertFalse();
         } catch (err) {
-          expect((err as Error).message).assertEqual("Numerator must be an integer");
+          expect(err.message).assertEqual("Numerator must be an integer");
         }
 
       });
@@ -373,10 +376,10 @@ export default function RationalNumberTest() {
         console.log(TAG + ' start');
         try {
           const rationalNumber = new RationalNumber(1, 2);
-          rationalNumber.multiply(new RationalNumber(Number(false) + 0.2, 1));
+          rationalNumber.multiply(new RationalNumber(0 + 0.2, 1));
           expect(true).assertFalse();
         } catch (err) {
-          expect((err as Error).message).assertEqual("Numerator must be an integer");
+          expect(err.message).assertEqual("Numerator must be an integer");
         }
 
       });
@@ -395,10 +398,10 @@ export default function RationalNumberTest() {
         console.log(TAG + ' start');
         try {
           const rationalNumber = new RationalNumber(1, 2);
-          rationalNumber.multiply(new RationalNumber(Number(3n) + 0.3, 1));
+          rationalNumber.multiply(new RationalNumber(3 + 0.3, 1));
           expect(true).assertFalse();
         } catch (err) {
-          expect((err as Error).message).assertEqual("Numerator must be an integer");
+          expect(err.message).assertEqual("Numerator must be an integer");
         }
 
       });
@@ -420,7 +423,7 @@ export default function RationalNumberTest() {
           rationalNumber.divide(new RationalNumber(Number(undefined), 1));
           expect(true).assertFalse();
         } catch (err) {
-          expect((err as Error).message).assertEqual("Numerator must be an integer");
+          expect(err.message).assertEqual("Numerator must be an integer");
         }
 
       });
@@ -443,7 +446,7 @@ export default function RationalNumberTest() {
           dividend.divide(divisor);
           expect(true).assertFalse();
         } catch (err) {
-          expect((err as Error).message).assertEqual("Cannot divide by zero");
+          expect(err.message).assertEqual("Cannot divide by zero");
         }
 
       });
@@ -465,7 +468,7 @@ export default function RationalNumberTest() {
           rationalNumber.divide(new RationalNumber(Number("0a"), 1));
           expect(true).assertFalse();
         } catch (err) {
-          expect((err as Error).message).assertEqual("Numerator must be an integer");
+          expect(err.message).assertEqual("Numerator must be an integer");
         }
 
       });
@@ -484,10 +487,10 @@ export default function RationalNumberTest() {
         console.log(TAG + ' start');
         try {
           const rationalNumber = new RationalNumber(1, 2);
-          rationalNumber.divide(new RationalNumber(Number([0, 1]), 1));
+          rationalNumber.divide(new RationalNumber(NaN, 1));
           expect(true).assertFalse();
         } catch (err) {
-          expect((err as Error).message).assertEqual("Numerator must be an integer");
+          expect(err.message).assertEqual("Numerator must be an integer");
         }
 
       });
@@ -529,10 +532,10 @@ export default function RationalNumberTest() {
         console.log(TAG + ' start');
         try {
           const rationalNumber = new RationalNumber(1, 2);
-          rationalNumber.equals(new RationalNumber(Number([1, 2]), 2));
+          rationalNumber.equals(new RationalNumber(NaN, 2));
           expect(true).assertFalse();
         } catch (err) {
-          expect((err as Error).message).assertEqual("Numerator must be an integer");
+          expect(err.message).assertEqual("Numerator must be an integer");
         }
 
       });
@@ -945,7 +948,7 @@ export default function RationalNumberTest() {
         const TAG = 'testRationalNumberConstructor0050';
         console.log(TAG + ' start');
         const rationalNumber = new RationalNumber(1, 2);
-        expect(rationalNumber !== null).assertTrue();
+        expect(rationalNumber.numerator === 1 && rationalNumber.denominator === 2).assertTrue();
         expect(rationalNumber.numerator === 1 && rationalNumber.denominator === 2).assertTrue();
 
       });

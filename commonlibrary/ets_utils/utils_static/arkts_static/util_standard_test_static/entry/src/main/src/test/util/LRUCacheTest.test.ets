@@ -1,4 +1,5 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+'use static'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
 import util from '@ohos.util';
 
 
@@ -11,11 +12,13 @@ interface ConfigWithFunction {
     capacity: number | (() => number);
 }
 
-const sleep = (time: number): Promise<void> => {
-  return new Promise<void>((resolve) => {
-    setTimeout(resolve, time);
-  });
-};
+function sleep(count: int): Promise<void> {
+  return new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void) => {
+    setTimeout(() => {
+      resolve(undefined as void)
+    }, count)
+  })
+}
 
 export default function LRUCacheTest() {
   describe('LRUCacheTest', () => {
@@ -214,7 +217,7 @@ export default function LRUCacheTest() {
 
         const lruCache: util.LRUCache<string, string> = new util.LRUCache<string, string>(2);
 
-        let initialLength = lruCache.length;
+        let initialLength: int = lruCache.length;
         expect(initialLength).assertEqual(0);
 
 
@@ -483,7 +486,7 @@ export default function LRUCacheTest() {
         const TAG = "testLRUCacheConstructorPositive0020";
         console.log(TAG + " start");
 
-        const capacity = 10;
+        const capacity: int = 10;
         const lruCache: util.LRUCache<string, string> = new util.LRUCache<string, string>(capacity);
 
         lruCache.put("key1", "value1");
@@ -696,7 +699,7 @@ export default function LRUCacheTest() {
 
       try {
         const invalidCapacity: number = capacityArray[1];
-        const lruCache: util.LRUCache<string, string> = new util.LRUCache<string, string>(invalidCapacity);
+        const lruCache: util.LRUCache<string, string> = new util.LRUCache<string, string>(invalidCapacity.toInt());
       } catch (error) {
         isExceptionThrown = true;
         expect(error instanceof Error).assertTrue();

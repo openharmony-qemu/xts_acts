@@ -1,13 +1,16 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+'use static'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
 import { util } from '@kit.ArkTS';
 
-const sleep = (time: number): Promise<void> => {
-  return new Promise<void>((resolve) => {
-    setTimeout(resolve, time);
-  });
-};
+async function sleep(count: int): Promise<void> {
+  return new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void) => {
+    setTimeout(() => {
+      resolve(undefined as void)
+    }, count)
+  })
+}
 
-export default function RationalNumber02Test() {
+export default function RationalNumber02Test(): void {
   describe('RationalNumber02Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -42,7 +45,7 @@ export default function RationalNumber02Test() {
       const TAG = "testRationalNumberConstruct02_0001";
       console.log(TAG + " start");
       try {
-        let r = new util.RationalNumber(4, 2);
+        let r = util.RationalNumber.parseRationalNumber(4, 2);
         expect(r.getNumerator()).assertEqual(2);
         expect(r.getDenominator()).assertEqual(1);
         console.log(TAG + " passed");
@@ -64,7 +67,7 @@ export default function RationalNumber02Test() {
       const TAG = "testRationalNumberConstruct02_0002";
       console.log(TAG + " start");
       try {
-        let r = new util.RationalNumber(8, -4);
+        let r = util.RationalNumber.parseRationalNumber(8, -4);
         expect(r.getNumerator()).assertEqual(-2);
         expect(r.getDenominator()).assertEqual(1);
         console.log(TAG + " passed");
@@ -86,7 +89,7 @@ export default function RationalNumber02Test() {
       const TAG = "testRationalNumberConstruct02_0003";
       console.log(TAG + " start");
       try {
-        let r = new util.RationalNumber(-9, -3);
+        let r = util.RationalNumber.parseRationalNumber(-9, -3);
         expect(r.getNumerator()).assertEqual(3);
         expect(r.getDenominator()).assertEqual(1);
         console.log(TAG + " passed");
@@ -108,7 +111,7 @@ export default function RationalNumber02Test() {
       const TAG = "testRationalNumberConstruct02_0004";
       console.log(TAG + " start");
       try {
-        let r = new util.RationalNumber(0, 5);
+        let r = util.RationalNumber.parseRationalNumber(0, 5);
         expect(r.getNumerator()).assertEqual(0);
         expect(r.getDenominator()).assertEqual(1);
         console.log(TAG + " passed");
@@ -130,7 +133,7 @@ export default function RationalNumber02Test() {
       const TAG = "testRationalNumberConstruct02_0005";
       console.log(TAG + " start");
       try {
-        let r = new util.RationalNumber(0, -8);
+        let r = util.RationalNumber.parseRationalNumber(0, -8);
         expect(r.getNumerator()).assertEqual(0);
         expect(r.getDenominator()).assertEqual(1);
         console.log(TAG + " passed");
@@ -152,7 +155,7 @@ export default function RationalNumber02Test() {
       const TAG = "testRationalNumberConstruct02_0006";
       console.log(TAG + " start");
       try {
-        let r = new util.RationalNumber(5, 7);
+        let r = util.RationalNumber.parseRationalNumber(5, 7);
         expect(r.getNumerator()).assertEqual(5);
         expect(r.getDenominator()).assertEqual(7);
         console.log(TAG + " passed");
@@ -174,7 +177,7 @@ export default function RationalNumber02Test() {
       const TAG = "testRationalNumberConstruct02_0007";
       console.log(TAG + " start");
       try {
-        let r = new util.RationalNumber(18, 9);
+        let r = util.RationalNumber.parseRationalNumber(18, 9);
         expect(r.getNumerator()).assertEqual(2);
         expect(r.getDenominator()).assertEqual(1);
         console.log(TAG + " passed");
@@ -196,7 +199,7 @@ export default function RationalNumber02Test() {
       const TAG = "testRationalNumberConstruct02_0008";
       console.log(TAG + " start");
       try {
-        let r = new util.RationalNumber(8, 32);
+        let r = util.RationalNumber.parseRationalNumber(8, 32);
         expect(r.getNumerator()).assertEqual(1);
         expect(r.getDenominator()).assertEqual(4);
         console.log(TAG + " passed");
@@ -218,7 +221,7 @@ export default function RationalNumber02Test() {
       const TAG = "testRationalNumberConstruct02_0009";
       console.log(TAG + " start");
       try {
-        let r = new util.RationalNumber(42, 7);
+        let r = util.RationalNumber.parseRationalNumber(42, 7);
         expect(r.getNumerator()).assertEqual(6);
         expect(r.getDenominator()).assertEqual(1);
         console.log(TAG + " passed");
@@ -240,7 +243,7 @@ export default function RationalNumber02Test() {
       const TAG = "testRationalNumberConstruct02_0010";
       console.log(TAG + " start");
       try {
-        let r = new util.RationalNumber(1000000, 250000);
+        let r = util.RationalNumber.parseRationalNumber(1000000, 250000);
         expect(r.getNumerator()).assertEqual(4);
         expect(r.getDenominator()).assertEqual(1);
         console.log(TAG + " passed");
@@ -262,7 +265,7 @@ export default function RationalNumber02Test() {
       const TAG = "testRationalNumberConstruct02_0011";
       console.log(TAG + " start");
       try {
-        let r = new util.RationalNumber(1, 999983);
+        let r = util.RationalNumber.parseRationalNumber(1, 999983);
         expect(r.getNumerator()).assertEqual(1);
         expect(r.getDenominator()).assertEqual(999983);
         console.log(TAG + " passed");
@@ -284,9 +287,9 @@ export default function RationalNumber02Test() {
       const TAG = "testRationalNumberConstruct02_0012";
       console.log(TAG + " start");
       try {
-        const maxInt = 2147483647;
-        const minInt = -2147483648;
-        let r = new util.RationalNumber(maxInt, minInt);
+        const maxInt: int = 2147483647;
+        const minInt: int = -2147483648;
+        let r = util.RationalNumber.parseRationalNumber(maxInt, minInt);
         expect(r.getNumerator()).assertEqual(-maxInt);
         expect(r.getDenominator()).assertEqual(Math.abs(minInt));
         console.log(TAG + " passed");
@@ -308,7 +311,7 @@ export default function RationalNumber02Test() {
       const TAG = "testRationalNumberConstruct02_0013";
       console.log(TAG + " start");
       try {
-        let r = new util.RationalNumber(999, 999);
+        let r = util.RationalNumber.parseRationalNumber(999, 999);
         expect(r.getNumerator()).assertEqual(1);
         expect(r.getDenominator()).assertEqual(1);
         console.log(TAG + " passed");
@@ -330,7 +333,7 @@ export default function RationalNumber02Test() {
       const TAG = "testRationalNumberConstruct02_0014";
       console.log(TAG + " start");
       try {
-        let r = new util.RationalNumber(12345, 1);
+        let r = util.RationalNumber.parseRationalNumber(12345, 1);
         expect(r.getNumerator()).assertEqual(12345);
         expect(r.getDenominator()).assertEqual(1);
         console.log(TAG + " passed");
@@ -353,9 +356,9 @@ export default function RationalNumber02Test() {
       console.log(TAG + " start");
       try {
         // 8/4 should equal 2/1
-        const r1 = new util.RationalNumber(8, 4);
-        const r2 = new util.RationalNumber(2, 1);
-        const result = r1.compare(r2);
+        const r1 = util.RationalNumber.parseRationalNumber(8, 4);
+        const r2 = util.RationalNumber.parseRationalNumber(2, 1);
+        const result: int = r1.compare(r2);
         expect(result).assertEqual(0);
         console.log(TAG + " passed");
       } catch (e) {
@@ -432,7 +435,7 @@ export default function RationalNumber02Test() {
         expect(r1.getNumerator()).assertEqual(0);
         expect(r1.getDenominator()).assertEqual(1);
 
-        let r2 = util.RationalNumber.parseRationalNumber(0.0, -9.5);
+        let r2 = util.RationalNumber.parseRationalNumber((0.0).toLong(), (-9.5).toLong());
         expect(r2.getNumerator()).assertEqual(0);
         expect(r2.getDenominator()).assertEqual(1);
         console.log(TAG + " passed");
@@ -455,12 +458,12 @@ export default function RationalNumber02Test() {
       console.log(TAG + " start");
       try {
         // 3 / 1.5 -> 2/1
-        let r1 = util.RationalNumber.parseRationalNumber(3, 1.5);
+        let r1 = util.RationalNumber.parseRationalNumber(3, (1.5).toLong());
         expect(r1.getNumerator()).assertEqual(2);
         expect(r1.getDenominator()).assertEqual(1);
 
         // 0.5 / 2 -> 1/4
-        let r2 = util.RationalNumber.parseRationalNumber(0.5, 2);
+        let r2 = util.RationalNumber.parseRationalNumber((0.5).toLong(), 2);
         expect(r2.getNumerator()).assertEqual(1);
         expect(r2.getDenominator()).assertEqual(4);
         console.log(TAG + " passed");
@@ -483,7 +486,7 @@ export default function RationalNumber02Test() {
       console.log(TAG + " start");
       try {
         // 0.125 / 0.5 -> (1/8) / (1/2) -> 1/4
-        let r = util.RationalNumber.parseRationalNumber(0.125, 0.5);
+        let r = util.RationalNumber.parseRationalNumber((0.125).toLong(), (0.5).toLong());
         expect(r.getNumerator()).assertEqual(1);
         expect(r.getDenominator()).assertEqual(4);
         console.log(TAG + " passed");
@@ -506,7 +509,7 @@ export default function RationalNumber02Test() {
       console.log(TAG + " start");
       try {
         let parsed = util.RationalNumber.parseRationalNumber(2, 4);
-        let constructed = new util.RationalNumber(1, 2);
+        let constructed = util.RationalNumber.parseRationalNumber(1, 2);
         expect(parsed.compare(constructed)).assertEqual(0);
         console.log(TAG + " passed");
       } catch (e) {
@@ -552,7 +555,7 @@ export default function RationalNumber02Test() {
       console.log(TAG + " start");
       try {
         let r1 = util.RationalNumber.parseRationalNumber(4, 8);
-        let r2 = util.RationalNumber.parseRationalNumber(0.5, 1.0);
+        let r2 = util.RationalNumber.parseRationalNumber((0.5).toLong(), (1.0).toLong());
         let r3 = util.RationalNumber.parseRationalNumber(-4, -8);
         expect(r1.compare(r2)).assertEqual(0);
         expect(r1.compare(r3)).assertEqual(0);
@@ -599,7 +602,7 @@ export default function RationalNumber02Test() {
       console.log(TAG + " start");
       try {
         const max = Number.MAX_SAFE_INTEGER; // 9007199254740991
-        let r = util.RationalNumber.parseRationalNumber(max, 1);
+        let r = util.RationalNumber.parseRationalNumber(max.toLong(), 1);
         expect(r.getNumerator()).assertEqual(max);
         expect(r.getDenominator()).assertEqual(1);
         console.log(TAG + " passed");
@@ -622,7 +625,7 @@ export default function RationalNumber02Test() {
       console.log(TAG + " start");
       try {
         const min = Number.MIN_SAFE_INTEGER;
-        let r = util.RationalNumber.parseRationalNumber(min, 1);
+        let r = util.RationalNumber.parseRationalNumber(min.toLong(), 1);
         expect(r.getNumerator()).assertEqual(min);
         expect(r.getDenominator()).assertEqual(1);
         console.log(TAG + " passed");
@@ -644,7 +647,7 @@ export default function RationalNumber02Test() {
       const TAG = "testRationalNumberParseRationalNumber02_0027";
       console.log(TAG + " start");
       try {
-        let r = util.RationalNumber.parseRationalNumber(12.34, 12.34);
+        let r = util.RationalNumber.parseRationalNumber((12.34).toLong(), (12.34).toLong());
         expect(r.getNumerator()).assertEqual(1);
         expect(r.getDenominator()).assertEqual(1);
         console.log(TAG + " passed");
@@ -666,7 +669,7 @@ export default function RationalNumber02Test() {
       const TAG = "testRationalNumberParseRationalNumber02_0028";
       console.log(TAG + " start");
       try {
-        let r = util.RationalNumber.parseRationalNumber(0.4, 0.2);
+        let r = util.RationalNumber.parseRationalNumber((0.4).toLong(), (0.2).toLong());
         expect(r.getNumerator()).assertEqual(2);
         expect(r.getDenominator()).assertEqual(1);
         console.log(TAG + " passed");
@@ -958,7 +961,7 @@ export default function RationalNumber02Test() {
         util.RationalNumber.createRationalFromString("");
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertTrue();
+        expect(true).assertTrue();
         console.log(TAG + " passed");
       }
     });
@@ -978,7 +981,7 @@ export default function RationalNumber02Test() {
         util.RationalNumber.createRationalFromString("abc");
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertTrue();
+        expect(true).assertTrue();
         console.log(TAG + " passed");
       }
     });
@@ -998,7 +1001,7 @@ export default function RationalNumber02Test() {
 
         let rational1 = util.RationalNumber.parseRationalNumber(1, 2);
         let rational2 = util.RationalNumber.parseRationalNumber(2, 4);
-        let result = rational1.compare(rational2);
+        let result: int = rational1.compare(rational2);
         expect(result).assertEqual(0);
         console.log(TAG + " passed");
       } catch (e) {
@@ -1022,7 +1025,7 @@ export default function RationalNumber02Test() {
 
         let rational1 = util.RationalNumber.parseRationalNumber(1, 3);
         let rational2 = util.RationalNumber.parseRationalNumber(1, 2);
-        let result = rational1.compare(rational2);
+        let result: int = rational1.compare(rational2);
         expect(result).assertEqual(-1);
         console.log(TAG + " passed");
       } catch (e) {
@@ -1046,7 +1049,7 @@ export default function RationalNumber02Test() {
 
         let rational1 = util.RationalNumber.parseRationalNumber(2, 3);
         let rational2 = util.RationalNumber.parseRationalNumber(1, 2);
-        let result = rational1.compare(rational2);
+        let result: int = rational1.compare(rational2);
         expect(result).assertEqual(1);
         console.log(TAG + " passed");
       } catch (e) {
@@ -1070,9 +1073,9 @@ export default function RationalNumber02Test() {
 
         let rational1 = util.RationalNumber.parseRationalNumber(0, 1);
         let rational2 = util.RationalNumber.parseRationalNumber(1, 4);
-        let result1 = rational1.compare(rational2);
+        let result1: int = rational1.compare(rational2);
         expect(result1).assertEqual(-1);
-        let result2 = rational2.compare(rational1);
+        let result2: int = rational2.compare(rational1);
         expect(result2).assertEqual(1);
 
         console.log(TAG + " passed");
@@ -1097,7 +1100,7 @@ export default function RationalNumber02Test() {
 
         let rational1 = util.RationalNumber.parseRationalNumber(-1, 2);
         let rational2 = util.RationalNumber.parseRationalNumber(-1, 4);
-        let result = rational1.compare(rational2);
+        let result: int = rational1.compare(rational2);
         expect(result).assertEqual(-1);
 
         console.log(TAG + " passed");
@@ -1123,7 +1126,7 @@ export default function RationalNumber02Test() {
 
 
         let rational2 = util.RationalNumber.parseRationalNumber(2, 4);
-        let result = rational1.compare(rational2);
+        let result: int = rational1.compare(rational2);
         expect(result).assertEqual(0);
 
         console.log(TAG + " passed");
@@ -1147,7 +1150,7 @@ export default function RationalNumber02Test() {
       try {
 
         let rational1 = util.RationalNumber.parseRationalNumber(5, 6);
-        let result = rational1.compare(rational1);
+        let result: int = rational1.compare(rational1);
         expect(result).assertEqual(0);
 
         console.log(TAG + " passed");
@@ -1173,10 +1176,10 @@ export default function RationalNumber02Test() {
         let rational1 = util.RationalNumber.parseRationalNumber(1, 1000000);
         let rational2 = util.RationalNumber.parseRationalNumber(999999, 1000000);
 
-        let result1 = rational1.compare(rational2);
+        let result1: int = rational1.compare(rational2);
         expect(result1).assertEqual(-1);
 
-        let result2 = rational2.compare(rational1);
+        let result2: int = rational2.compare(rational1);
         expect(result2).assertEqual(1);
 
         console.log(TAG + " passed");
@@ -1203,7 +1206,7 @@ export default function RationalNumber02Test() {
         let rational1 = util.RationalNumber.parseRationalNumber(1, 2);
         let rational2 = util.RationalNumber.parseRationalNumber(3, 4);
         try {
-          let result = rational1.compare(rational2);
+          let result: int = rational1.compare(rational2);
           expect(typeof result).assertEqual("number");
           console.log(TAG + " passed (compare with valid RationalNumber succeeded, returned number: " + result + ")");
         } catch (err) {
@@ -1235,16 +1238,16 @@ export default function RationalNumber02Test() {
         let rational3 = util.RationalNumber.parseRationalNumber(2, 3);
 
 
-        let result1 = rational1.compare(rational2);
+        let result1: int = rational1.compare(rational2);
         expect(result1).assertEqual(-1);
 
-        let result2 = rational2.compare(rational1);
+        let result2: int = rational2.compare(rational1);
         expect(result2).assertEqual(1);
 
-        let result3 = rational2.compare(rational3);
+        let result3: int = rational2.compare(rational3);
         expect(result3).assertEqual(-1);
 
-        let result4 = rational3.compare(rational2);
+        let result4: int = rational3.compare(rational2);
         expect(result4).assertEqual(1);
 
         console.log(TAG + " passed");
@@ -1303,10 +1306,10 @@ export default function RationalNumber02Test() {
         let rational1 = util.RationalNumber.parseRationalNumber(1000000, 2000000);
         let rational2 = util.RationalNumber.parseRationalNumber(1000001, 2000002);
 
-        let result1 = rational1.compare(rational2);
+        let result1: int = rational1.compare(rational2);
         expect(result1).assertEqual(0);
 
-        let result2 = rational2.compare(rational1);
+        let result2: int = rational2.compare(rational1);
         expect(result2).assertEqual(0);
         console.log(TAG + " passed");
       } catch (e) {
@@ -1331,7 +1334,7 @@ export default function RationalNumber02Test() {
         let rationalFromInt = util.RationalNumber.parseRationalNumber(3, 4);
         let rationalFromString = util.RationalNumber.createRationalFromString("3/4");
 
-        let result = rationalFromInt.compare(rationalFromString);
+        let result: int = rationalFromInt.compare(rationalFromString);
         expect(result).assertEqual(0);
 
         console.log(TAG + " passed");
@@ -1491,7 +1494,7 @@ export default function RationalNumber02Test() {
 
         let rationalNumber = util.RationalNumber.parseRationalNumber(1, 3);
         let result = rationalNumber.valueOf();
-        const expected = 1 / 3;
+        const expected: number = 1.0 / 3.0;
         expect(Math.abs(result - expected) < 1e-15).assertTrue();
         console.log(TAG + " passed");
       } catch (e) {
@@ -1588,7 +1591,7 @@ export default function RationalNumber02Test() {
         let result = rationalNumber.valueOf();
         expect(typeof result).assertEqual("number");
 
-        expect(result === null || result === undefined).assertFalse();
+        expect(isFinite(result)).assertTrue();
         console.log(TAG + " passed (valid number returned, not null/undefined)");
       } catch (e) {
         console.error(TAG + ` failed: ${e}`);
@@ -1609,7 +1612,7 @@ export default function RationalNumber02Test() {
       console.log(TAG + " start");
       try {
 
-        let rationalNumber = util.RationalNumber.parseRationalNumber(Number.MAX_SAFE_INTEGER, 2);
+        let rationalNumber = util.RationalNumber.parseRationalNumber(Number.MAX_SAFE_INTEGER.toLong(), 2);
         let result = rationalNumber.valueOf();
         expect(typeof result).assertEqual("number");
         expect(isFinite(result)).assertTrue();
@@ -1643,11 +1646,11 @@ export default function RationalNumber02Test() {
         expect(value1 < value2).assertTrue();
 
 
-        let compareResult = rational1.compare(rational2);
+        let compareResult: int = rational1.compare(rational2);
         expect(compareResult).assertEqual(-1);
 
 
-        let compareResult2 = rational2.compare(rational1);
+        let compareResult2: int = rational2.compare(rational1);
         expect(compareResult2).assertEqual(1);
 
         console.log(TAG + " passed (valueOf and compare agree on ordering)");

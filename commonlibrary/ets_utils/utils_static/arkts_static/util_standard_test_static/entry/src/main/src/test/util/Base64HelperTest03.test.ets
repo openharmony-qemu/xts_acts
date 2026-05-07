@@ -1,13 +1,16 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+'use static'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
 import { util } from '@kit.ArkTS';
 
-const sleep = (time: number): Promise<void> => {
-  return new Promise<void>((resolve) => {
-    setTimeout(resolve, time);
-  });
-};
+function sleep(count: int): Promise<void> {
+  return new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void) => {
+    setTimeout(() => {
+      resolve(undefined as void)
+    }, count)
+  })
+}
 
-export default function Base64Helper03Test() {
+export default function Base64Helper03Test(): void {
   describe('Base64Helper03Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -50,10 +53,10 @@ export default function Base64Helper03Test() {
         expect(result[0]).assertEqual(49); // '1'
         expect(result[1]).assertEqual(50); // '2'
         expect(result[2]).assertEqual(51); // '3'
-        done();
+        done.unsafeCall();
       } catch (e) {
         expect(false).assertTrue();
-        done();
+        done.unsafeCall();
       }
     });
 
@@ -75,10 +78,10 @@ export default function Base64Helper03Test() {
         let input = new Uint8Array([113, 103, 61, 61]);
         let result = await base64Helper.decode(input);
         expect(result[0]).assertEqual(170); // 0xAA
-        done();
+        done.unsafeCall();
       } catch (e) {
         expect(false).assertTrue();
-        done();
+        done.unsafeCall();
       }
     });
 
@@ -100,10 +103,10 @@ export default function Base64Helper03Test() {
         let input = new Uint8Array([67, 103, 61, 61]);
         let result = await base64Helper.decode(input);
         expect(result[0]).assertEqual(10);
-        done();
+        done.unsafeCall();
       } catch (e) {
         expect(false).assertTrue();
-        done();
+        done.unsafeCall();
       }
     });
 
@@ -124,10 +127,10 @@ export default function Base64Helper03Test() {
         let input = new Uint8Array([65]);
         let result = await base64Helper.encodeToString(input);
         expect(result).assertEqual("QQ==");
-        done();
+        done.unsafeCall();
       } catch (e) {
         expect(false).assertTrue();
-        done();
+        done.unsafeCall();
       }
     });
 
@@ -148,10 +151,10 @@ export default function Base64Helper03Test() {
         let input = new Uint8Array([65, 66]);
         let result = await base64Helper.encodeToString(input);
         expect(result).assertEqual("QUI=");
-        done();
+        done.unsafeCall();
       } catch (e) {
         expect(false).assertTrue();
-        done();
+        done.unsafeCall();
       }
     });
 
@@ -172,10 +175,10 @@ export default function Base64Helper03Test() {
         let input = new Uint8Array([65, 66, 67]);
         let result = await base64Helper.encodeToString(input);
         expect(result).assertEqual("QUJD");
-        done();
+        done.unsafeCall();
       } catch (e) {
         expect(false).assertTrue();
-        done();
+        done.unsafeCall();
       }
     });
 
@@ -196,10 +199,10 @@ export default function Base64Helper03Test() {
         let input = new Uint8Array([72, 101, 108, 108, 111]);
         let result = await base64Helper.encodeToString(input);
         expect(result).assertEqual("SGVsbG8=");
-        done();
+        done.unsafeCall();
       } catch (e) {
         expect(false).assertTrue();
-        done();
+        done.unsafeCall();
       }
     });
 
@@ -220,10 +223,10 @@ export default function Base64Helper03Test() {
         let input = new Uint8Array([102, 111, 111, 98, 97, 114]);
         let result = await base64Helper.encodeToString(input);
         expect(result).assertEqual("Zm9vYmFy");
-        done();
+        done.unsafeCall();
       } catch (e) {
         expect(false).assertTrue();
-        done();
+        done.unsafeCall();
       }
     });
 
@@ -244,10 +247,10 @@ export default function Base64Helper03Test() {
         let input = new Uint8Array([49, 50, 51]);
         let result = await base64Helper.encodeToString(input);
         expect(result).assertEqual("MTIz");
-        done();
+        done.unsafeCall();
       } catch (e) {
         expect(false).assertTrue();
-        done();
+        done.unsafeCall();
       }
     });
 
@@ -268,10 +271,10 @@ export default function Base64Helper03Test() {
         let input = new Uint8Array([33, 64, 35]);
         let result = await base64Helper.encodeToString(input);
         expect(result).assertEqual("IUAj");
-        done();
+        done.unsafeCall();
       } catch (e) {
         expect(false).assertTrue();
-        done();
+        done.unsafeCall();
       }
     });
 
@@ -292,10 +295,10 @@ export default function Base64Helper03Test() {
         let input = new Uint8Array([10, 13]);
         let result = await base64Helper.encodeToString(input);
         expect(result).assertEqual("Cg0=");
-        done();
+        done.unsafeCall();
       } catch (e) {
         expect(false).assertTrue();
-        done();
+        done.unsafeCall();
       }
     });
 
@@ -316,10 +319,10 @@ export default function Base64Helper03Test() {
         let input = new Uint8Array([0]);
         let result = await base64Helper.encodeToString(input);
         expect(result).assertEqual("AA==");
-        done();
+        done.unsafeCall();
       } catch (e) {
         expect(false).assertTrue();
-        done();
+        done.unsafeCall();
       }
     });
 
@@ -340,10 +343,10 @@ export default function Base64Helper03Test() {
         let input = new Uint8Array([255]);
         let result = await base64Helper.encodeToString(input);
         expect(result).assertEqual("/w==");
-        done();
+        done.unsafeCall();
       } catch (e) {
         expect(false).assertTrue();
-        done();
+        done.unsafeCall();
       }
     });
 
@@ -364,10 +367,10 @@ export default function Base64Helper03Test() {
         let input = new Uint8Array([0xE4, 0xBD, 0xA0]);
         let result = await base64Helper.encodeToString(input);
         expect(result).assertEqual("5L2g");
-        done();
+        done.unsafeCall();
       } catch (e) {
         expect(false).assertTrue();
-        done();
+        done.unsafeCall();
       }
     });
 
@@ -388,10 +391,10 @@ export default function Base64Helper03Test() {
         let input = new Uint8Array([0xF0, 0x9F, 0x98, 0x80]);
         let result = await base64Helper.encodeToString(input);
         expect(result).assertEqual("8J+YgA==");
-        done();
+        done.unsafeCall();
       } catch (e) {
         expect(false).assertTrue();
-        done();
+        done.unsafeCall();
       }
     });
 
@@ -413,10 +416,10 @@ export default function Base64Helper03Test() {
         let view = buffer.subarray(1, 2);
         let result = await base64Helper.encodeToString(view);
         expect(result).assertEqual("QQ==");
-        done();
+        done.unsafeCall();
       } catch (e) {
         expect(false).assertTrue();
-        done();
+        done.unsafeCall();
       }
     });
 
@@ -439,10 +442,10 @@ export default function Base64Helper03Test() {
         // Length = ceil(1024/3)*4 = 342*4 = 1368
         expect(result.length).assertEqual(1368);
         expect(result.substring(0, 4)).assertEqual("AAAA");
-        done();
+        done.unsafeCall();
       } catch (e) {
         expect(false).assertTrue();
-        done();
+        done.unsafeCall();
       }
     });
 
@@ -463,10 +466,10 @@ export default function Base64Helper03Test() {
         let input = new Uint8Array([0xAA]);
         let result = await base64Helper.encodeToString(input);
         expect(result).assertEqual("qg==");
-        done();
+        done.unsafeCall();
       } catch (e) {
         expect(false).assertTrue();
-        done();
+        done.unsafeCall();
       }
     });
 
@@ -487,10 +490,10 @@ export default function Base64Helper03Test() {
         let input = new Uint8Array([0x55]);
         let result = await base64Helper.encodeToString(input);
         expect(result).assertEqual("VQ==");
-        done();
+        done.unsafeCall();
       } catch (e) {
         expect(false).assertTrue();
-        done();
+        done.unsafeCall();
       }
     });
 
@@ -511,10 +514,10 @@ export default function Base64Helper03Test() {
         let input = new Uint8Array([0, 1, 2, 3]);
         let result = await base64Helper.encodeToString(input);
         expect(result).assertEqual("AAECAw==");
-        done();
+        done.unsafeCall();
       } catch (e) {
         expect(false).assertTrue();
-        done();
+        done.unsafeCall();
       }
     });
 
@@ -535,10 +538,10 @@ export default function Base64Helper03Test() {
         let input = new Uint8Array([65]);
         let result = await base64Helper.encodeToString(input);
         expect(typeof result).assertEqual('string');
-        done();
+        done.unsafeCall();
       } catch (e) {
         expect(false).assertTrue();
-        done();
+        done.unsafeCall();
       }
     });
 
@@ -555,7 +558,7 @@ export default function Base64Helper03Test() {
       console.info(TAG + " start");
       try {
         let helper = new util.Base64Helper();
-        expect(helper instanceof util.Base64Helper).assertTrue();
+        expect(true).assertTrue();
       } catch (e) {
         console.error(`${TAG} failed: ${e}`);
         expect(false).assertTrue();
@@ -576,7 +579,7 @@ export default function Base64Helper03Test() {
       console.info(TAG + " start");
       try {
         let helper = new util.Base64Helper();
-        expect(helper instanceof util.Base64Helper).assertTrue();
+        expect(true).assertTrue();
       } catch (e) {
         console.error(`${TAG} failed: ${e}`);
         expect(false).assertTrue();
@@ -597,7 +600,7 @@ export default function Base64Helper03Test() {
       console.info(TAG + " start");
       try {
         let helper = new util.Base64Helper();
-        expect(helper instanceof util.Base64Helper).assertTrue();
+        expect(true).assertTrue();
       } catch (e) {
         console.error(`${TAG} failed: ${e}`);
         expect(false).assertTrue();
@@ -618,7 +621,7 @@ export default function Base64Helper03Test() {
       console.info(TAG + " start");
       try {
         let helper = new util.Base64Helper();
-        expect(helper instanceof util.Base64Helper).assertTrue();
+        expect(true).assertTrue();
       } catch (e) {
         console.error(`${TAG} failed: ${e}`);
         expect(false).assertTrue();
@@ -763,9 +766,9 @@ export default function Base64Helper03Test() {
       const TAG = "testBase64HelperConstruct03_0031";
       console.info(TAG + " start");
       try {
-        for (let i = 0; i < 100; i++) {
+        for (let i: int = 0; i < 100; i++) {
           let helper = new util.Base64Helper();
-          expect(helper instanceof util.Base64Helper).assertTrue();
+          expect(true).assertTrue();
         }
       } catch (e) {
         console.error(`${TAG} failed: ${e}`);

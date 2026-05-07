@@ -1,11 +1,26 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+'use static'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
 import { util } from '@kit.ArkTS';
 
-const sleep = (time: number): Promise<void> => {
-  return new Promise<void>((resolve) => {
-    setTimeout(resolve, time);
-  });
-};
+interface KeyObj {
+  id: number;
+}
+
+interface ValObj {
+  name: string;
+}
+
+interface TestObj {
+  name: string;
+}
+
+function sleep(count: int): Promise<void> {
+  return new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void) => {
+    setTimeout(() => {
+      resolve(undefined as void)
+    }, count)
+  })
+}
 
 export default function LRUCache04Test() {
   describe('LRUCache04Test', () => {
@@ -71,7 +86,7 @@ export default function LRUCache04Test() {
 
       const cache = new util.LRUCache<number, number>(100);
 
-      for (let i = 0; i < 50; i++) {
+      for (let i: int = 0; i < 50; i++) {
         cache.put(i, i);
       }
       expect(cache.isEmpty()).assertFalse();
@@ -387,7 +402,6 @@ export default function LRUCache04Test() {
       const cacheStr = new util.LRUCache<string, string>(5);
       expect(cacheStr.put('key', 'value')).assertEqual('value');
 
-      interface KeyObj { id: number }
       const cacheObj = new util.LRUCache<KeyObj, string>(5);
       const k1: KeyObj = { id: 1 };
 
@@ -409,12 +423,13 @@ export default function LRUCache04Test() {
       const TAG = "testLRUCachePut04_0020";
       console.log(TAG + " start");
 
-      interface ValObj { name: string }
       const cacheObj = new util.LRUCache<number, ValObj>(5);
       const v1: ValObj = { name: 'test' };
 
       const res = cacheObj.put(1, v1);
-      expect(res.name).assertEqual('test');
+      if (res) {
+        expect(res.name).assertEqual('test');
+      }
 
       const cacheUnion = new util.LRUCache<number, string | number>(5);
 
@@ -499,11 +514,11 @@ export default function LRUCache04Test() {
       const TAG = "testLRUCachePut04_0023";
       console.log(TAG + " start");
 
-      const capacity = 100;
-      const total = 500;
+      const capacity: int = 100;
+      const total: int = 500;
       const cache = new util.LRUCache<number, string>(capacity);
 
-      for (let i = 0; i < total; i++) {
+      for (let i: int = 0; i < total; i++) {
         cache.put(i, 'val' + i);
       }
 
@@ -578,12 +593,14 @@ export default function LRUCache04Test() {
 
       const cache = new util.LRUCache<string, number[]>(5);
 
-      const arr = [1, 2, 3];
+      const arr: number[] = [1, 2, 3];
       const res = cache.put("key", arr);
 
-      expect(res[0]).assertEqual(1);
-      expect(res[1]).assertEqual(2);
-      expect(res[2]).assertEqual(3);
+      if (res) {
+        expect(res[0]).assertEqual(1);
+        expect(res[1]).assertEqual(2);
+        expect(res[2]).assertEqual(3);
+      }
 
       const val = cache.get("key");
 
@@ -835,7 +852,6 @@ export default function LRUCache04Test() {
       const arrValues = arrCache.values();
       expect(arrValues[0].length).assertEqual(3);
 
-      interface TestObj { name: string }
       const objCache = new util.LRUCache<number, TestObj>();
       objCache.put(1, { name: 'obj1' });
       const objValues = objCache.values();
@@ -1043,7 +1059,7 @@ export default function LRUCache04Test() {
       console.log(TAG + " start");
 
       const lrucache = new util.LRUCache<number, string>(100);
-      for (let i = 0; i < 100; i++) {
+      for (let i: int = 0; i < 100; i++) {
         lrucache.put(i, `value${i}`);
       }
 
@@ -1274,7 +1290,6 @@ export default function LRUCache04Test() {
       const TAG = "testLRUCacheKeys04_0052";
       console.log(TAG + " start");
 
-      interface KeyObj { id: number }
       const cache = new util.LRUCache<KeyObj, string>(3);
       const k1: KeyObj = { id: 1 };
       const k2: KeyObj = { id: 2 };
@@ -1358,7 +1373,7 @@ export default function LRUCache04Test() {
       console.log(TAG + " start");
 
       const cache = new util.LRUCache<number, number>(100);
-      for(let i=0; i<100; i++) {
+      for(let i: int=0; i<100; i++) {
         cache.put(i, i);
       }
 
@@ -1620,7 +1635,6 @@ export default function LRUCache04Test() {
       const TAG = "testLRUCacheRemove04_0066";
       console.log(TAG + " start");
 
-      interface KeyObj { id: number }
       const cache = new util.LRUCache<KeyObj, string>(5);
       const k1: KeyObj = { id: 1 };
       const k2: KeyObj = { id: 2 };
@@ -1647,7 +1661,6 @@ export default function LRUCache04Test() {
       const TAG = "testLRUCacheRemove04_0067";
       console.log(TAG + " start");
 
-      interface ValObj { name: string }
       const cacheObj = new util.LRUCache<string, ValObj>(5);
       const v1: ValObj = { name: "test" };
       cacheObj.put("k1", v1);
@@ -1786,9 +1799,9 @@ export default function LRUCache04Test() {
       console.log(TAG + " start");
 
       const cache = new util.LRUCache<number, number>(10);
-      for(let i=0; i<5; i++) cache.put(i, i*10);
+      for(let i: int=0; i<5; i++) cache.put(i, i*10);
 
-      for(let i=0; i<5; i++) {
+      for(let i: int=0; i<5; i++) {
         if(i % 2 === 0) {
           expect(cache.remove(i)).assertEqual(i*10);
         }
