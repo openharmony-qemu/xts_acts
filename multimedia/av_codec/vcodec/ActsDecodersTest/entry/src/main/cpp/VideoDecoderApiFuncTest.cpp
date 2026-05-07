@@ -939,6 +939,8 @@ int VideoDecCapApi0027()
     if (!cap) {
         return 0;
     }
+    string g_codecName = "";
+    g_codecName = OH_AVCapability_GetName(cap);
     venc_ = OH_VideoEncoder_CreateByName(g_codecName);
     if (!venc_) {
         return -1;
