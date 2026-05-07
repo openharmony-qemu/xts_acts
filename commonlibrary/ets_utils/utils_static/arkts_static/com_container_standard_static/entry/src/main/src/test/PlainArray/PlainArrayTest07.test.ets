@@ -1872,6 +1872,147 @@ export default function PlainArray07Test(): void {
       expect(isNaN(plainArray.getValueAt(0) as number)).assertTrue();
     });
 
+    /**
+     * @tc.number    SUB_PLAINARRAY_TEST07_7700
+     * @tc.name      testPlainArray07Chapter0077
+     * @tc.desc      Set value with value as Infinity for number type PlainArray
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0077';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<number> = new PlainArray<number>();
+      plainArray.add(1, 50);
+      plainArray.setValueAt(0, Infinity);
+      expect(plainArray.getValueAt(0)).assertEqual(Infinity);
+    });
 
+    /**
+     * @tc.number    SUB_PLAINARRAY_TEST07_7800
+     * @tc.name      testPlainArray07Chapter0078
+     * @tc.desc      Set value with value as -Infinity for number type PlainArray
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0078';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<number> = new PlainArray<number>();
+      plainArray.add(1, 75);
+      plainArray.setValueAt(0, -Infinity);
+      expect(plainArray.getValueAt(0)).assertEqual(-Infinity);
+    });
+
+    /**
+     * @tc.number    SUB_PLAINARRAY_TEST07_7900
+     * @tc.name      testPlainArray07Chapter0079
+     * @tc.desc      Set value with value as TypedArray for object type PlainArray
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0079';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<Int8Array> = new PlainArray<Int8Array>();
+      let initialArray: Int8Array = new Int8Array([0, 0, 0]);
+      plainArray.add(1, initialArray);
+      let typedArray: Int8Array = new Int8Array([-128, 0, 127]);
+      plainArray.setValueAt(0, typedArray);
+      expect(plainArray.getValueAt(0)).assertDeepEquals(typedArray);
+    });
+
+    /**
+     * @tc.number    SUB_PLAINARRAY_TEST07_8000
+     * @tc.name      testPlainArray07Chapter0080
+     * @tc.desc      Set value with value as bigint for bigint type PlainArray
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0080';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<bigint> = new PlainArray<bigint>();
+      plainArray.add(1, BigInt(0));
+      let bigIntVal: bigint = BigInt(9007199254740991);
+      plainArray.setValueAt(0, bigIntVal);
+      expect(plainArray.getValueAt(0)).assertEqual(bigIntVal);
+    });
+    /**
+     * @tc.number    SUB_PLAINARRAY_TEST07_8100
+     * @tc.name      testPlainArray07Chapter0081
+     * @tc.desc      Set value with value as string containing all special characters
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0081';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<string> = new PlainArray<string>();
+      plainArray.add(1, "initial");
+      let specialChars: string = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+      plainArray.setValueAt(0, specialChars);
+      expect(plainArray.getValueAt(0)).assertEqual(specialChars);
+    });
+
+    /**
+     * @tc.number    SUB_PLAINARRAY_TEST07_8200
+     * @tc.name      testPlainArray07Chapter0082
+     * @tc.desc      Set value with value as string containing ASCII characters
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0082';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<string> = new PlainArray<string>();
+      plainArray.add(1, "test");
+      let asciiStr: string =
+        "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
+      plainArray.setValueAt(0, asciiStr);
+      expect(plainArray.getValueAt(0)).assertEqual(asciiStr);
+    });
+
+    /**
+     * @tc.number    SUB_PLAINARRAY_TEST07_8300
+     * @tc.name      testPlainArray07Chapter0083
+     * @tc.desc      Set value with value as string containing special escape characters
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0083';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<string> = new PlainArray<string>();
+      plainArray.add(1, "test");
+      let escapeStr: string = "\\a\\b\\f\\n\\r\\t\\v\\\\\\'\\\"\\?\\0\\x41";
+      plainArray.setValueAt(0, escapeStr);
+      expect(plainArray.getValueAt(0)).assertEqual(escapeStr);
+    });
+
+    /**
+     * @tc.number    SUB_PLAINARRAY_TEST07_8400
+     * @tc.name      testPlainArray07Chapter0084
+     * @tc.desc      Set value with value as string containing emoji characters
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0084';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<string> = new PlainArray<string>();
+      plainArray.add(1, "test");
+      let emojiStr: string = "👆👿👀💯🎅😼🔧💇🤼‍♂️🛢🀄🏴";
+      plainArray.setValueAt(0, emojiStr);
+      expect(plainArray.getValueAt(0)).assertEqual(emojiStr);
+    });
   })
 }
