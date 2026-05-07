@@ -162,6 +162,83 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     })
 
     /**
+     * @tc.name   SUB_BASIC_WINDOW_PIPWINDOWMINSIZE_0100
+     * @tc.number SUB_BASIC_WINDOW_PIPWINDOWMINSIZE_0100
+     * @tc.desc   验证方形画中画最小尺寸
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_WINDOW_PIPWINDOWMINSIZE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const message = 'SUB_BASIC_WINDOW_PIPWINDOWMINSIZE_0100'
+      try {
+        if (!isPipWindowEnabled) {
+          done();
+        } else {
+          let pipController: pipWindow.PiPController | undefined = undefined;
+          let mXComponentController: XComponentController = new XComponentController();
+          let navId: string = ""; // 假设当前页面的导航id为""，详见PiPConfiguration定义，具体导航名称由开发者自行定义。
+          let contentWidth: number = 600; // 假设当前内容宽度600px。
+          let contentHeight: number = 600; // 假设当前内容高度600px。
+          let config: pipWindow.PiPConfiguration = {
+            context: context1,
+            componentController: mXComponentController,
+            navigationId: navId,
+            templateType: pipWindow.PiPTemplateType.VIDEO_PLAY,
+            contentWidth: contentWidth,
+            contentHeight: contentHeight,
+            defaultWindowSizeType: 1
+          };
+          pipController = await pipWindow.create(config);
+          console.info(`${message} Succeeded in creating pip controller. Data:${pipController}`);
+          await sleep(1000);
+          await pipController.startPiP();
+          console.info(`${message} Succeeded in start pip`);
+          await sleep(1000);
+          let PiPWindowInfo : pipWindow.PiPWindowInfo = await pipController.getPiPWindowInfo();
+          console.info(`${message} Succeeded in getPiPWindowInfo. Data:${PiPWindowInfo}`);
+
+          // 如果是大窗则切换成小窗
+          if (PiPWindowInfo.size.scale === 1) {
+            let driver = Driver.create();
+            let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
+            console.log(`${message} pipWindowComponent: ${JSON.stringify(pipWindowComponent)}`);
+            pipWindowComponent.doubleClick();
+            await sleep(1000);
+            PiPWindowInfo = await pipController.getPiPWindowInfo();
+            console.info(`${message} Succeeded in getPiPWindowInfo. Data:${PiPWindowInfo}`);
+          }
+
+          await pipController.stopPiP();
+
+          // 画中画宽度小于屏幕宽度的30%
+          let displayInfo = display.getDefaultDisplaySync();
+          console.log(`${message} displayInfo: ${JSON.stringify(displayInfo)}`);
+          if (deviceType === 'phone') {
+            let rate = PiPWindowInfo.size.width * PiPWindowInfo.size.scale / displayInfo.width
+            console.log(`${message} rate: ${rate}`);
+            expect(rate).assertLessOrEqual(0.31)
+          } else if (deviceType === 'tablet') {
+            let pipWidth = PiPWindowInfo.size.width * PiPWindowInfo.size.scale
+            let rate = (displayInfo.width - vp2px(39) * 2) * 0.8 * 0.3 + 1
+            console.log(`${message} pipWidth: ${pipWidth}`);
+            console.log(`${message} rate: ${rate}`);
+            expect(pipWidth).assertLessOrEqual(rate)
+          }
+          done();
+        }
+
+      } catch (err) {
+        console.error(`${message} Failed, Cause code ${err.code}, message ${err.message}`);
+        if (err.code === 801) {
+          expect(err.message != null).assertTrue();
+          done();
+        }
+      }
+    });
+
+
+    /**
      * @tc.name   OH_PictureInPicture_On_ActiveStatusChange_0100
      * @tc.number SUB_BASIC_WMS_PIP_ACTIVESTATUSCHANGE_0100
      * @tc.desc   OH_PictureInPicture_On_ActiveStatusChange_0100
@@ -5470,6 +5547,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
             expect(data != null).assertTrue();
             await pipController.startPiP()
+            await sleep(1000);
             pipController.on('stateChange', callback)
             await pipController.stopPiP();
             await sleep(3000);
@@ -5610,6 +5688,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
             expect(data != null).assertTrue();
             await pipController.startPiP()
+            await sleep(1000);
             pipController.on('stateChange', callback)
             let pipWindowComponent = await driver.findComponent(ON.id('SCBPipSceneOverlay'));
             console.log(`${caseName} pipWindowComponent: ${JSON.stringify(pipWindowComponent)}`);
@@ -5683,6 +5762,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             console.log(`${tag} ${caseName} Succeeded in creating pip controller. Data:${data}`);
             expect(data != null).assertTrue();
             await pipController.startPiP()
+            await sleep(1000);
             pipController.on('stateChange', callback)
             pipController2 = await pipWindow.create(config);
             await pipController2.startPiP()
