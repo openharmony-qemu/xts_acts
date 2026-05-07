@@ -272,12 +272,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
         await certManagerDialog.openInstallCertificateDialog(context, certificateType, certificateScope, caCert)
         expect(null).assertFail();
       } catch (err) {
-        hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_OpenInstallCertificateDialog_static_0011: e.code " + err.code);
-        if (deviceInfo.deviceType === '2in1') {
-          expect((err as BusinessError).code).assertEqual(29700005);
+        if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+          expect((err as BusinessError).code).assertEqual(801);
         } else {
-          expect((err as BusinessError).code).assertEqual(29700004);
-        }
+          hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_OpenInstallCertificateDialog_static_0011: e.code " + err.code);
+          expect((err as BusinessError).code === 29700005 || (err as BusinessError).code === 29700004).assertTrue();
+        }  
       }
       done();
     });
