@@ -15,7 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-export default function BuiltinsArraySpliceTest() {
+export default function BuiltinsArraySpliceTest() : void{
   describe("BuiltinsArraySpliceTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -47,7 +47,7 @@ export default function BuiltinsArraySpliceTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArraySpliceTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
       const result = arr.splice(0);
       
       expect(arr.length).assertEqual(0);

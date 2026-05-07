@@ -47,7 +47,7 @@ export default function BuiltinsArrayFilterTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayFilterTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
       const result = arr.filter((value) => value > 0);
       
       expect(result.length).assertEqual(0);
