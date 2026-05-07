@@ -1100,6 +1100,10 @@ static napi_value UsbControlTransfer(napi_env env, napi_callback_info info)
     size_t argc = PARAM_1;
     napi_value args[PARAM_1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (argc < PARAM_1) {
+    napi_throw_error(env, nullptr, "UsbControlTransfer requires 1 parameter");
+    return nullptr;
+    }
     int64_t deviceId64;
     napi_get_value_int64(env, args[PARAM_0], &deviceId64);
     uint64_t deviceId = JsDeviceIdToNative(static_cast<uint64_t>(deviceId64));
