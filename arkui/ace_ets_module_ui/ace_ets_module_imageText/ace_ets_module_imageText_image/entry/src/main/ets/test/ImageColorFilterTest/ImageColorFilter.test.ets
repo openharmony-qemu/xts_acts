@@ -49,7 +49,7 @@ export default function ImageColorFilterTest() {
     });
 
     /**
-     * @tc.number ImageColorFilterTest_0100
+     * @tc.number SUB_ARKUI_IMAGE_COLORFILTER_PARAM_0100
      * @tc.name ImageColorFilterTest_0100
      * @tc.desc test colorFilter with ColorFilter matrix type
      * @tc.level: Level 2
@@ -74,7 +74,7 @@ export default function ImageColorFilterTest() {
     });
 
     /**
-     * @tc.number ImageColorFilterTest_0200
+     * @tc.number SUB_ARKUI_IMAGE_COLORFILTER_PARAM_0200
      * @tc.name ImageColorFilterTest_0200
      * @tc.desc test colorFilter with DrawingColorFilter type
      * @tc.level: Level 2
@@ -100,7 +100,7 @@ export default function ImageColorFilterTest() {
     });
 
     /**
-     * @tc.number ImageColorFilterTest_0300
+     * @tc.number SUB_ARKUI_IMAGE_COLORFILTER_PARAM_0300
      * @tc.name ImageColorFilterTest_0300
      * @tc.desc test colorFilter with ResourceColor number type
      * @tc.level: Level 2
@@ -127,7 +127,7 @@ export default function ImageColorFilterTest() {
     });
 
     /**
-     * @tc.number ImageColorFilterTest_0400
+     * @tc.number SUB_ARKUI_IMAGE_COLORFILTER_PARAM_0400
      * @tc.name ImageColorFilterTest_0400
      * @tc.desc test colorFilter with ResourceColor string type
      * @tc.level: Level 2
@@ -153,7 +153,7 @@ export default function ImageColorFilterTest() {
     });
 
     /**
-     * @tc.number ImageColorFilterTest_0500
+     * @tc.number SUB_ARKUI_IMAGE_COLORFILTER_PARAM_0500
      * @tc.name ImageColorFilterTest_0500
      * @tc.desc test colorFilter with ResourceColor Resource type
      * @tc.level: Level 2
@@ -178,7 +178,7 @@ export default function ImageColorFilterTest() {
     });
 
     /**
-     * @tc.number ImageColorFilterTest_0600
+     * @tc.number SUB_ARKUI_IMAGE_COLORFILTER_PARAM_0600
      * @tc.name ImageColorFilterTest_0600
      * @tc.desc test colorFilter with empty string
      * @tc.level: Level 2
@@ -202,7 +202,7 @@ export default function ImageColorFilterTest() {
     });
 
     /**
-     * @tc.number ImageColorFilterTest_0700
+     * @tc.number SUB_ARKUI_IMAGE_COLORFILTER_PARAM_0700
      * @tc.name ImageColorFilterTest_0700
      * @tc.desc test colorFilter with undefined
      * @tc.level: Level 2
@@ -226,7 +226,7 @@ export default function ImageColorFilterTest() {
     });
 
     /**
-     * @tc.number ImageColorFilterTest_0800
+     * @tc.number SUB_ARKUI_IMAGE_COLORFILTER_PARAM_0800
      * @tc.name ImageColorFilterTest_0800
      * @tc.desc test colorFilter with null
      * @tc.level: Level 2
