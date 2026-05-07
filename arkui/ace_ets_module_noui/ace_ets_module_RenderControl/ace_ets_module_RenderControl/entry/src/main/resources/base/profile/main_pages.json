@@ -74,7 +74,8 @@
 
     "MainAbility/pages/Repeat/repeatVirtualScrollNullUndefined",
     "MainAbility/pages/LazyForEach/lazyForEachOnDatasetChangeNullUndefined",
-    "MainAbility/pages/LazyForEach/LazyForEachCustomComponentFreezeMode"
-
+    "MainAbility/pages/LazyForEach/LazyForEachCustomComponentFreezeMode",
+    "MainAbility/pages/Repeat/RepeatReusableMemOptStrategy",
+    "MainAbility/pages/LazyForEach/LazyForEachReusableMemOptStrategy"
   ]
 }
