@@ -1663,5 +1663,422 @@ export default function ExpressionsTypePart() {
     })
 
 
+    /**
+     * @tc.number    SUB_EXPRESSIONS_TYPE_19900
+     * @tc.name      testExpressionsType0199
+     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
+     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
+     *               states table of Aliases for predefined types.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsType0199", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v1:tof_vars_14_A|null = new tof_vars_14_A()
+      expect(typeof v1).assertEqual("object")
+      expect(typeof tof_vars_14_g1).assertEqual("object")
+      let v2:tof_vars_14_A|null = null
+      expect(typeof v2).assertEqual("object")
+      expect(typeof tof_vars_14_g2).assertEqual("object")
+      let v3:tof_vars_14_I|null = new tof_vars_14_A()
+      expect(typeof v3).assertEqual("object")
+      expect(typeof tof_vars_14_g3).assertEqual("object")
+      let v4:tof_vars_14_I|null = null
+      expect(typeof v4).assertEqual("object")
+      expect(typeof tof_vars_14_g4).assertEqual("object")
+      let v5:tof_vars_14_A[]|null = [new tof_vars_14_A()]
+      expect(typeof v5).assertEqual("object")
+      expect(typeof tof_vars_14_g5).assertEqual("object")
+      let v6:tof_vars_14_A[]|null = null
+      expect(typeof v6).assertEqual("object")
+      expect(typeof tof_vars_14_g6).assertEqual("object")
+      let v7:tof_vars_14_I[]|null = [new tof_vars_14_A()]
+      expect(typeof v7).assertEqual("object")
+      expect(typeof tof_vars_14_g7).assertEqual("object")
+      let v8:tof_vars_14_I[]|null = null
+      expect(typeof v8).assertEqual("object")
+      expect(typeof tof_vars_14_g8).assertEqual("object")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_TYPE_20000
+     * @tc.name      testExpressionsType0200
+     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
+     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
+     *               states table of Aliases for predefined types.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsType0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v1:tof_vars_15_Color = tof_vars_15_Color.Red
+      expect(typeof v1).assertEqual("int")
+      expect(typeof tof_vars_15_g1).assertEqual("int")
+      let v2:tof_vars_15_Size = tof_vars_15_Size.XL
+      expect(typeof v2).assertEqual("int")
+      expect(typeof tof_vars_15_g2).assertEqual("int")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_TYPE_20100
+     * @tc.name      testExpressionsType0201
+     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
+     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
+     *               states table of Aliases for predefined types.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsType0201", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v1:tof_vars_16_Color = tof_vars_16_Color.Blue
+      expect(typeof v1).assertEqual("string")
+      expect(typeof tof_vars_16_g1).assertEqual("string")
+      let v2:tof_vars_16_Size = tof_vars_16_Size.L
+      expect(typeof v2).assertEqual("string")
+      expect(typeof tof_vars_16_g2).assertEqual("string")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_TYPE_20200
+     * @tc.name      testExpressionsType0202
+     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
+     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
+     *               states table of Aliases for predefined types.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsType0202", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v1:number|string|boolean = false
+      expect(typeof v1).assertEqual("boolean")
+      expect(typeof tof_vars_17_g1).assertEqual("boolean")
+      let v2:number|boolean = true
+      expect(typeof v2).assertEqual("boolean")
+      expect(typeof tof_vars_17_g2).assertEqual("boolean")
+      let v3:boolean|never|long = true
+      expect(typeof v3).assertEqual("boolean")
+      expect(typeof tof_vars_17_g3).assertEqual("boolean")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_TYPE_20300
+     * @tc.name      testExpressionsType0203
+     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
+     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
+     *               states table of Aliases for predefined types.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsType0203", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v1:number|string|boolean = "false"
+      expect(typeof v1).assertEqual("string")
+      expect(typeof tof_vars_18_g1).assertEqual("string")
+      let v2:number|string = "3.14"
+      expect(typeof v2).assertEqual("string")
+      expect(typeof tof_vars_18_g2).assertEqual("string")
+      let v3:boolean|never|long|string = "1234567890"
+      expect(typeof v3).assertEqual("string")
+      expect(typeof tof_vars_18_g3).assertEqual("string")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_TYPE_20400
+     * @tc.name      testExpressionsType0204
+     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
+     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
+     *               states table of Aliases for predefined types.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsType0204", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v1:tof_vars_19_A|tof_vars_19_B|tof_vars_19_C = new tof_vars_19_A()
+      expect(typeof v1).assertEqual("object")
+      expect(typeof tof_vars_19_g1).assertEqual("object")
+      let v2:tof_vars_19_B|never|undefined|tof_vars_19_A = new tof_vars_19_A()
+      expect(typeof v2).assertEqual("object")
+      expect(typeof tof_vars_19_g2).assertEqual("object")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_TYPE_20500
+     * @tc.name      testExpressionsType0205
+     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
+     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
+     *               states table of Aliases for predefined types.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsType0205", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v1:tof_vars_20_C<tof_vars_20_A> = new tof_vars_20_C<tof_vars_20_A>(new tof_vars_20_A())
+      expect(typeof v1).assertEqual("object")
+      expect(typeof tof_vars_20_g1).assertEqual("object")
+      let v2:tof_vars_20_C<tof_vars_20_B> = new tof_vars_20_C<tof_vars_20_B>(new tof_vars_20_B())
+      expect(typeof v2).assertEqual("object")
+      expect(typeof tof_vars_20_g2).assertEqual("object")
+      let v3:tof_vars_20_C<tof_vars_20_I> = new tof_vars_20_C<tof_vars_20_I>(new tof_vars_20_B())
+      expect(typeof v3).assertEqual("object")
+      expect(typeof tof_vars_20_g3).assertEqual("object")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_TYPE_20600
+     * @tc.name      testExpressionsType0206
+     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
+     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
+     *               states table of Aliases for predefined types.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsType0206", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v1:Comparable<Double> = new Double()
+      expect(typeof v1).assertEqual("number")
+      expect(typeof tof_vars_21_g1).assertEqual("number")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_TYPE_20700
+     * @tc.name      testExpressionsType0207
+     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
+     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
+     *               states table of Aliases for predefined types.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsType0207", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v1:byte = Byte.MIN_VALUE
+      expect(typeof v1).assertEqual("byte")
+      expect(typeof tof_vars_22_g1).assertEqual("byte")
+      let v2:byte = Byte.MAX_VALUE
+      expect(typeof v2).assertEqual("byte")
+      expect(typeof tof_vars_22_g2).assertEqual("byte")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_TYPE_20800
+     * @tc.name      testExpressionsType0208
+     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
+     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
+     *               states table of Aliases for predefined types.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsType0208", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v1:short = Short.MIN_VALUE
+      expect(typeof v1).assertEqual("short")
+      expect(typeof tof_vars_23_g1).assertEqual("short")
+      let v2:short = Short.MAX_VALUE
+      expect(typeof v2).assertEqual("short")
+      expect(typeof tof_vars_23_g2).assertEqual("short")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_TYPE_20900
+     * @tc.name      testExpressionsType0209
+     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
+     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
+     *               states table of Aliases for predefined types.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsType0209", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v1:int = Int.MIN_VALUE
+      expect(typeof v1).assertEqual("int")
+      expect(typeof tof_vars_24_g1).assertEqual("int")
+      let v2:int = Int.MAX_VALUE
+      expect(typeof v2).assertEqual("int")
+      expect(typeof tof_vars_24_g2).assertEqual("int")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_TYPE_21000
+     * @tc.name      testExpressionsType0210
+     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
+     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
+     *               states table of Aliases for predefined types.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsType0210", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v1:long = Long.MIN_VALUE
+      expect(typeof v1).assertEqual("long")
+      expect(typeof tof_vars_25_g1).assertEqual("long")
+      let v2:long = Long.MAX_VALUE
+      expect(typeof v2).assertEqual("long")
+      expect(typeof tof_vars_25_g2).assertEqual("long")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_TYPE_21100
+     * @tc.name      testExpressionsType0211
+     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
+     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
+     *               states table of Aliases for predefined types.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsType0211", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v1:float = Float.MIN_VALUE
+      expect(typeof v1).assertEqual("float")
+      expect(typeof tof_vars_26_g1).assertEqual("float")
+      let v2:float = Float.MAX_VALUE
+      expect(typeof v2).assertEqual("float")
+      expect(typeof tof_vars_26_g2).assertEqual("float")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_TYPE_21200
+     * @tc.name      testExpressionsType0212
+     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
+     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
+     *               states table of Aliases for predefined types.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsType0212", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v1:char = Char.MIN_VALUE as char
+      expect(typeof v1).assertEqual("char")
+      expect(typeof tof_vars_27_g1).assertEqual("char")
+      let v2:char = Char.MAX_VALUE as char
+      expect(typeof v2).assertEqual("char")
+      expect(typeof tof_vars_27_g2).assertEqual("char")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_TYPE_21300
+     * @tc.name      testExpressionsType0213
+     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
+     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
+     *               states table of Aliases for predefined types.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsType0213", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v1:Comparable<Float> = new Float()
+      expect(typeof v1).assertEqual("float")
+      expect(typeof tof_vars_28_g1).assertEqual("float")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_TYPE_21400
+     * @tc.name      testExpressionsType0214
+     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
+     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
+     *               states table of Aliases for predefined types.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsType0214", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v1:Comparable<Byte> = new Byte()
+      expect(typeof v1).assertEqual("byte")
+      expect(typeof tof_vars_29_g1).assertEqual("byte")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_TYPE_21500
+     * @tc.name      testExpressionsType0215
+     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
+     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
+     *               states table of Aliases for predefined types.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsType0215", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v1:Comparable<Short> = new Short()
+      expect(typeof v1).assertEqual("short")
+      expect(typeof tof_vars_30_g1).assertEqual("short")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_TYPE_21600
+     * @tc.name      testExpressionsType0216
+     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
+     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
+     *               states table of Aliases for predefined types.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsType0216", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v1:Comparable<Int> = new Int()
+      expect(typeof v1).assertEqual("int")
+      expect(typeof tof_vars_31_g1).assertEqual("int")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_TYPE_21700
+     * @tc.name      testExpressionsType0217
+     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
+     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
+     *               states table of Aliases for predefined types.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsType0217", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v1:Comparable<Long> = new Long()
+      expect(typeof v1).assertEqual("long")
+      expect(typeof tof_vars_32_g1).assertEqual("long")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_TYPE_21800
+     * @tc.name      testExpressionsType0218
+     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
+     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
+     *               states table of Aliases for predefined types.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsType0218", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v1:Comparable<Char> = new Char()
+      expect(typeof v1).assertEqual("char")
+      expect(typeof tof_vars_33_g1).assertEqual("char")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_TYPE_21900
+     * @tc.name      testExpressionsType0219
+     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
+     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
+     *               states table of Aliases for predefined types.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsType0219", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v1:Floating = 3.14f
+      expect(typeof v1).assertEqual("float")
+      expect(typeof tof_vars_34_g1).assertEqual("float")
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_TYPE_22000
+     * @tc.name      testExpressionsType0220
+     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
+     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
+     *               states table of Aliases for predefined types.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsType0220", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v1:Integral = 42
+      expect(typeof v1).assertEqual("int")
+      expect(typeof tof_vars_35_g1).assertEqual("int")
+    });
   });
 }
