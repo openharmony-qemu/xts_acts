@@ -114,12 +114,12 @@ export default function NoParentSubWindowFocusZLevel() {
     });
     
    /**
- * @tc.number    : SUB_WINDOW_NoParentSubWindow_getLastWindow_0100
- * @tc.name      : SUB_WINDOW_NoParentSubWindow_getLastWindow_0100
- * @tc.desc      : SUB_WINDOW_NoParentSubWindow_getLastWindow_0100
- * @tc.size      : MediumTest
- * @tc.type      : Function
- * @tc.level     : LEVEL1
+ * @tc.number   SUB_WINDOW_NoParentSubWindow_getLastWindow_0100
+ * @tc.name     SUB_WINDOW_NoParentSubWindow_getLastWindow_0100
+ * @tc.desc     SUB_WINDOW_NoParentSubWindow_getLastWindow_0100
+ * @tc.size     MediumTest
+ * @tc.type     Function
+ * @tc.level    LEVEL1
  */
 it('SUB_WINDOW_NoParentSubWindow_getLastWindow_0100',
   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
