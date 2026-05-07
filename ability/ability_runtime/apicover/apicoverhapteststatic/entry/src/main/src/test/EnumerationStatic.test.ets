@@ -23,6 +23,9 @@ import contextConstant from '@ohos.app.ability.contextConstant';
 import { FailureCode } from '@ohos.app.ability.CompletionHandlerForAtomicService';
 import { AbilityStartFailureCode } from '@ohos.app.ability.CompletionHandlerForAbilityStartCallback';
 import bundleManager from '@ohos.bundle.bundleManager';
+import agentConstant from '@ohos.app.agent.agentConstant';
+import { LinkParamCategory } from '@ohos.app.ability.InsightIntentDecorator';
+import insightIntent from '@ohos.app.ability.insightIntent';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
@@ -1343,17 +1346,95 @@ export default function EnumerationStaticTest() {
          done();
        })
 
-       /**
-        * @tc.name   SUB_Ability_BundleManager_ExtensionAbilityType_Static_0200
-        * @tc.number SUB_Ability_BundleManager_ExtensionAbilityType_Static_0200
-        * @tc.desc   Test bundleManager ExtensionAbilityType.AGENT_UI.
-        * @tc.type   FUNCTION
-        * @tc.size   MEDIUMTEST
-        * @tc.level  LEVEL3
-        */
-       it('SUB_Ability_BundleManager_ExtensionAbilityType_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-         expect(38).assertEqual(bundleManager.ExtensionAbilityType.AGENT_UI);
-         done();
-       })
+/**
+         * @tc.name   SUB_Ability_BundleManager_ExtensionAbilityType_Static_0200
+         * @tc.number SUB_Ability_BundleManager_ExtensionAbilityType_Static_0200
+         * @tc.desc   Test bundleManager ExtensionAbilityType.AGENT_UI.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('SUB_Ability_BundleManager_ExtensionAbilityType_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+          expect(38).assertEqual(bundleManager.ExtensionAbilityType.AGENT_UI);
+          done();
+        })
+
+        /**
+         * @tc.name   SUB_Ability_AgentCardType_Static_0100
+         * @tc.number SUB_Ability_AgentCardType_Static_0100
+         * @tc.desc   Test agentConstant AgentCardType.APP.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('SUB_Ability_AgentCardType_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+          expect(0).assertEqual(agentConstant.AgentCardType.APP);
+          done();
+        })
+
+        /**
+         * @tc.name   SUB_Ability_AgentCardType_Static_0200
+         * @tc.number SUB_Ability_AgentCardType_Static_0200
+         * @tc.desc   Test agentConstant AgentCardType.ATOMIC_SERVICE.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('SUB_Ability_AgentCardType_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+          expect(1).assertEqual(agentConstant.AgentCardType.ATOMIC_SERVICE);
+          done();
+        })
+
+        /**
+         * @tc.name   SUB_Ability_LinkParamCategory_Static_0100
+         * @tc.number SUB_Ability_LinkParamCategory_Static_0100
+         * @tc.desc   Test LinkParamCategory LINK.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('SUB_Ability_LinkParamCategory_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+          expect('link').assertEqual(LinkParamCategory.LINK);
+          done();
+        })
+
+        /**
+         * @tc.name   SUB_Ability_LinkParamCategory_Static_0200
+         * @tc.number SUB_Ability_LinkParamCategory_Static_0200
+         * @tc.desc   Test LinkParamCategory WANT.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('SUB_Ability_LinkParamCategory_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+          expect('want').assertEqual(LinkParamCategory.WANT);
+          done();
+        })
+
+        /**
+         * @tc.name   SUB_Ability_QueryType_Static_0100
+         * @tc.number SUB_Ability_QueryType_Static_0100
+         * @tc.desc   Test insightIntent QueryType.ALL.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('SUB_Ability_QueryType_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+          expect('all').assertEqual(insightIntent.QueryType.ALL);
+          done();
+        })
+
+        /**
+         * @tc.name   SUB_Ability_QueryType_Static_0200
+         * @tc.number SUB_Ability_QueryType_Static_0200
+         * @tc.desc   Test insightIntent QueryType.BY_PROPERTY.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('SUB_Ability_QueryType_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+          expect('byProperty').assertEqual(insightIntent.QueryType.BY_PROPERTY);
+          done();
+        })
   })
 }
