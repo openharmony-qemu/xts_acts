@@ -58,6 +58,7 @@ export default function SecurityHuksApiTest() {
       expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_PIN_NO_AUTH).assertEqual(12000023);
       expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_BUSY).assertEqual(12000024);
       expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_EXCEED_LIMIT).assertEqual(12000025);
+      expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_NETWORK_UNAVAILABLE).assertEqual(12000027);
     })
 
     /**
