@@ -1,4 +1,5 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+'use static'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
 import { LightWeightMap } from '@kit.ArkTS';
 
 class Person {
@@ -15,12 +16,16 @@ interface SimpleObj05 {
   b: string;
 }
 
-function sleep(ms: number) {
-  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+function sleep(count: int): Promise<void> {
+  return new Promise<void>((resolve: (value: PromiseLike<void>) => void, reject: (value: Error) => void) => {
+    setTimeout(() => {
+      resolve(Promise.resolve())
+    }, count)
+  })
 }
 
-export default function localUnitTest() {
-  describe('localUnitTest', () => {
+export default function localUnitTest(): void {
+       describe('localUnitTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -59,14 +64,14 @@ export default function localUnitTest() {
       lightWeightMap.set("sparrow", 356);
 
       let firstKey = "";
-      let firstValue = 0;
+      let firstValue: number = 0;
       let secondKey = "";
-      let secondValue = 0;
-      let index = 0;
+      let secondValue: number = 0;
+      let index: int = 0;
 
       for (let item of lightWeightMap) {
         let key = item[0];
-        let value = item[1];
+        let value: number = item[1];
         if (index === 0) {
           firstKey = key;
           firstValue = value;
@@ -101,17 +106,17 @@ export default function localUnitTest() {
       lightWeightMap.set("squirrel", 123);
       lightWeightMap.set("sparrow", 356);
 
-      let iter = lightWeightMap[Symbol.iterator]();
+      let iter = lightWeightMap.entries();
       let temp: IteratorResult<[string, number]> = iter.next();
 
       let firstKey = "";
-      let firstValue = 0;
+      let firstValue: number = 0;
       let secondKey = "";
-      let secondValue = 0;
-      let index = 0;
+      let secondValue: number = 0;
+      let index: int = 0;
 
       while (!temp.done) {
-        let pair = temp.value;
+        let pair = temp.value!;
         if (index === 0) {
           firstKey = pair[0];
           firstValue = pair[1];
@@ -144,9 +149,9 @@ export default function localUnitTest() {
 
       let lightWeightMap = new LightWeightMap<string, number>();
 
-      let iter = lightWeightMap[Symbol.iterator]();
+      let iter = lightWeightMap.entries();
       let temp: IteratorResult<[string, number]> = iter.next();
-      let count = 0;
+      let count: int = 0;
 
       while (!temp.done) {
         count++;
@@ -202,7 +207,7 @@ export default function localUnitTest() {
       lightWeightMap.set("x1", 1);
       lightWeightMap.set("x2", 2);
 
-      let visited = 0;
+      let visited: int = 0;
       for (let item of lightWeightMap) {
         visited++;
         if (visited === 1) {
@@ -231,13 +236,13 @@ export default function localUnitTest() {
       let u8 = new Uint8Array([72, 101, 108, 108, 111]); // "Hello"
       lightWeightMap.set("bytes", u8);
 
-      let iter = lightWeightMap[Symbol.iterator]();
+      let iter = lightWeightMap.entries();
       let temp: IteratorResult<[string, Uint8Array]> = iter.next();
       let ok = false;
 
       while (!temp.done) {
-        let key = temp.value[0];
-        let value = temp.value[1];
+        let key = temp.value![0];
+        let value = temp.value![1];
         if (key === "bytes" && value.length === 5 && value[0] === 72 && value[4] === 111) {
           ok = true;
         }
@@ -264,13 +269,13 @@ export default function localUnitTest() {
       let obj: SimpleObj05 = { a: 10, b: "hello" };
       lightWeightMap.set("o", obj);
 
-      let iter = lightWeightMap[Symbol.iterator]();
+      let iter = lightWeightMap.entries();
       let temp: IteratorResult<[string, SimpleObj05]> = iter.next();
       let ok = false;
 
       while (!temp.done) {
-        let key = temp.value[0];
-        let value = temp.value[1];
+        let key = temp.value![0];
+        let value = temp.value![1];
         if (key === "o" && value.a === 10 && value.b === "hello") {
           ok = true;
         }
@@ -298,13 +303,13 @@ export default function localUnitTest() {
       let lightWeightMap = new LightWeightMap<Uint8Array, string>();
       lightWeightMap.set(keyArr, 'arrKey');
 
-      let iter = lightWeightMap[Symbol.iterator]();
+      let iter = lightWeightMap.entries();
       let temp = iter.next();
       let sameRef = false;
 
       while (!temp.done) {
-        let key = temp.value[0];
-        let value = temp.value[1];
+        let key = temp.value![0];
+        let value = temp.value![1];
         if (value === 'arrKey' && key === keyArr) {
           sameRef = true;
         }
@@ -328,14 +333,14 @@ export default function localUnitTest() {
       console.log(TAG + 'start');
 
       let lightWeightMap = new LightWeightMap<number, number>();
-      let expectedSum = 0;
-      for (let i = 0; i < 100; i++) {
+      let expectedSum: int = 0;
+      for (let i: int = 0; i < 100; i++) {
         lightWeightMap.set(i, i);
         expectedSum += i;
       }
 
-      let sum = 0;
-      let count = 0;
+      let sum: number = 0;
+      let count: int = 0;
       for (let item of lightWeightMap) {
         sum += item[1];
         count++;
@@ -364,14 +369,14 @@ export default function localUnitTest() {
       lightWeightMap.set('b', 2);
 
       let iterEntries = lightWeightMap.entries();
-      let iterSymbol = lightWeightMap[Symbol.iterator]();
+      let iterSymbol = lightWeightMap.entries();
 
       let e1 = iterEntries.next();
       let s1 = iterSymbol.next();
 
       let ok = (!e1.done && !s1.done &&
-        e1.value[0] === s1.value[0] &&
-        e1.value[1] === s1.value[1]);
+        e1.value![0] === s1.value![0] &&
+        e1.value![1] === s1.value![1]);
       expect(ok).assertTrue();
       console.log(TAG + 'end');
     });
