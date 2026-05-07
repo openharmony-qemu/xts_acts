@@ -73,6 +73,7 @@ group("ActsAceEtsModulePickerTest") {
       "ace_ets_module_picker_timePickerDialog:ActsAceEtsModulePickerTimePickerDialogTest",
       "ace_ets_module_picker_container_static:ActsAceEtsModulePickerContainerStaticTest",
       "ace_ets_module_picker_datePicker_static:ActsAceEtsModulePickerDatePickerStaticTest",
+      "ace_ets_module_picker_datePickerDialog_static:ActsAceEtsModulePickerDatePickerDialogStaticTest",
       "ace_ets_module_picker_textPicker_static:ActsAceEtsModulePickerTextPickerStaticTest",
       "ace_ets_module_picker_textPickerDialog_static:ActsAceEtsModulePickerTextPickerDialogStaticTest",
     ]
