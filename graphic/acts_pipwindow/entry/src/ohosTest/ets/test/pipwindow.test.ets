@@ -177,8 +177,8 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         } else {
           let pipController: pipWindow.PiPController | undefined = undefined;
           let mXComponentController: XComponentController = new XComponentController();
-          let navId: string = ""; // 假设当前页面的导航id为page_1，详见PiPConfiguration定义，具体导航名称由开发者自行定义。
-          let contentWidth: number = 600; // 假设当前内容宽度800px。
+          let navId: string = ""; // 假设当前页面的导航id为""，详见PiPConfiguration定义，具体导航名称由开发者自行定义。
+          let contentWidth: number = 600; // 假设当前内容宽度600px。
           let contentHeight: number = 600; // 假设当前内容高度600px。
           let config: pipWindow.PiPConfiguration = {
             context: context1,
@@ -214,9 +214,17 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
           // 画中画宽度小于屏幕宽度的30%
           let displayInfo = display.getDefaultDisplaySync();
           console.log(`${message} displayInfo: ${JSON.stringify(displayInfo)}`);
-          let rate = PiPWindowInfo.size.width * PiPWindowInfo.size.scale / displayInfo.width
-          console.log(`${message} rate: ${rate}`);
-          expect(rate).assertLessOrEqual(0.31)
+          if (deviceType === 'phone') {
+            let rate = PiPWindowInfo.size.width * PiPWindowInfo.size.scale / displayInfo.width
+            console.log(`${message} rate: ${rate}`);
+            expect(rate).assertLessOrEqual(0.31)
+          } else if (deviceType === 'tablet') {
+            let pipWidth = PiPWindowInfo.size.width * PiPWindowInfo.size.scale
+            let rate = (displayInfo.width - vp2px(39) * 2) * 0.8 * 0.3 + 1
+            console.log(`${message} pipWidth: ${pipWidth}`);
+            console.log(`${message} rate: ${rate}`);
+            expect(pipWidth).assertLessOrEqual(rate)
+          }
           done();
         }
 
