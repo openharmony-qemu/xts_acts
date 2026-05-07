@@ -34,7 +34,7 @@ export default function Base64Helper03Test(): void {
     })
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_0100
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_0100
      * @tc.name      testBase64HelperDecoder03_0001
      * @tc.desc      [Content] Verify decoding numeric string "MTIz" -> '123'
      * @tc.size      MediumTest
@@ -61,7 +61,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_0200
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_0200
      * @tc.name      testBase64HelperDecoder03_0002
      * @tc.desc      [Content] Verify alternating bits 0xAA -> "qg=="
      * @tc.size      MediumTest
@@ -86,7 +86,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_0300
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_0300
      * @tc.name      testBase64HelperDecoder03_0003
      * @tc.desc      [Content] Verify decoding control chars "Cg==" -> \n (10)
      * @tc.size      MediumTest
@@ -111,7 +111,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_0400
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_0400
      * @tc.name      testBase64HelperEncodeToString03_0004
      * @tc.desc      [Padding] Verify 1 byte input results in 2 padding chars (==)
      * @tc.size      MediumTest
@@ -135,7 +135,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_0500
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_0500
      * @tc.name      testBase64HelperEncodeToString03_0005
      * @tc.desc      [Padding] Verify 2 bytes input results in 1 padding char (=)
      * @tc.size      MediumTest
@@ -159,7 +159,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_0600
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_0600
      * @tc.name      testBase64HelperEncodeToString03_0006
      * @tc.desc      [Padding] Verify 3 bytes input results in 0 padding chars
      * @tc.size      MediumTest
@@ -183,7 +183,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_0700
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_0700
      * @tc.name      testBase64HelperEncodeToString03_0007
      * @tc.desc      [Content] Verify encoding standard word "Hello"
      * @tc.size      MediumTest
@@ -207,7 +207,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_0800
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_0800
      * @tc.name      testBase64HelperEncodeToString03_0008
      * @tc.desc      [Content] Verify RFC 4648 test vector "foobar"
      * @tc.size      MediumTest
@@ -231,7 +231,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_0900
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_0900
      * @tc.name      testBase64HelperEncodeToString03_0009
      * @tc.desc      [Content] Verify encoding ASCII numbers "123"
      * @tc.size      MediumTest
@@ -255,7 +255,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_1000
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_1000
      * @tc.name      testBase64HelperEncodeToString03_0010
      * @tc.desc      [Content] Verify encoding ASCII special chars "!@#"
      * @tc.size      MediumTest
@@ -279,7 +279,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_1100
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_1100
      * @tc.name      testBase64HelperEncodeToString03_0011
      * @tc.desc      [Content] Verify encoding control chars \n\r (10, 13) -> "Cg0="
      * @tc.size      MediumTest
@@ -303,7 +303,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_1200
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_1200
      * @tc.name      testBase64HelperEncodeToString03_0012
      * @tc.desc      [Content] Verify encoding Null byte [0] -> "AA=="
      * @tc.size      MediumTest
@@ -327,7 +327,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_1300
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_1300
      * @tc.name      testBase64HelperEncodeToString03_0013
      * @tc.desc      [Content] Verify encoding Max byte [255] -> "/w=="
      * @tc.size      MediumTest
@@ -351,7 +351,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_1400
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_1400
      * @tc.name      testBase64HelperEncodeToString03_0014
      * @tc.desc      [Content] Verify encoding Chinese bytes (Simulated UTF-8 bytes)
      * @tc.size      MediumTest
@@ -375,7 +375,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_1500
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_1500
      * @tc.name      testBase64HelperEncodeToString03_0015
      * @tc.desc      [Content] Verify encoding Emoji bytes (Simulated UTF-8 bytes)
      * @tc.size      MediumTest
@@ -399,7 +399,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_1600
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_1600
      * @tc.name      testBase64HelperEncodeToString03_0016
      * @tc.desc      [Memory] Verify encoding from a Subarray View
      * @tc.size      MediumTest
@@ -424,7 +424,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_1700
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_1700
      * @tc.name      testBase64HelperEncodeToString03_0017
      * @tc.desc      [Performance] Verify encoding a large buffer (1KB)
      * @tc.size      MediumTest
@@ -450,7 +450,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_1800
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_1800
      * @tc.name      testBase64HelperEncodeToString03_0018
      * @tc.desc      [Content] Verify pattern 0xAA (10101010)
      * @tc.size      MediumTest
@@ -474,7 +474,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_1900
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_1900
      * @tc.name      testBase64HelperEncodeToString03_0019
      * @tc.desc      [Content] Verify pattern 0x55 (01010101)
      * @tc.size      MediumTest
@@ -498,7 +498,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_2000
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_2000
      * @tc.name      testBase64HelperEncodeToString03_0020
      * @tc.desc      [Content] Verify sequential bytes [0, 1, 2, 3] -> "AAECAw=="
      * @tc.size      MediumTest
@@ -522,7 +522,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_2100
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_2100
      * @tc.name      testBase64HelperEncodeToString03_0021
      * @tc.desc      [Type] Verify return type is actually a string
      * @tc.size      MediumTest
@@ -546,7 +546,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_2200
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_2200
      * @tc.name      testBase64HelperConstruct03_0022
      * @tc.desc      Verify default constructor (no args) creates a valid instance.
      * @tc.size      MediumTest
@@ -567,7 +567,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_2300
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_2300
      * @tc.name      testBase64HelperConstruct03_0023
      * @tc.desc      Verify constructor consistency (Repeated check 1).
      * @tc.size      MediumTest
@@ -588,7 +588,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_2400
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_2400
      * @tc.name      testBase64HelperConstruct03_0024
      * @tc.desc      Verify constructor consistency (Repeated check 2).
      * @tc.size      MediumTest
@@ -609,7 +609,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_2500
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_2500
      * @tc.name      testBase64HelperConstruct03_0025
      * @tc.desc      Verify constructor consistency (Repeated check 3).
      * @tc.size      MediumTest
@@ -630,7 +630,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_2600
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_2600
      * @tc.name      testBase64HelperConstruct03_0026
      * @tc.desc      Verify instance behaves as Standard Base64.
      * @tc.size      MediumTest
@@ -653,7 +653,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_2700
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_2700
      * @tc.name      testBase64HelperConstruct03_0027
      * @tc.desc      Verify instance uses Standard slash character.
      * @tc.size      MediumTest
@@ -676,7 +676,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_2800
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_2800
      * @tc.name      testBase64HelperConstruct03_0028
      * @tc.desc      Verify multiple instances work independently and consistently.
      * @tc.size      MediumTest
@@ -706,7 +706,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_2900
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_2900
      * @tc.name      testBase64HelperConstruct03_0029
      * @tc.desc      Verify strictly no arguments are passed.
      * @tc.size      MediumTest
@@ -729,7 +729,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_3000
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_3000
      * @tc.name      testBase64HelperConstruct03_0030
      * @tc.desc      Verify new instance does not reuse previous state.
      * @tc.size      MediumTest
@@ -755,7 +755,7 @@ export default function Base64Helper03Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_BASE64HELPER03_3100
+     * @tc.number    SUB_UTIL_BASE64HELPERTHREE_3100
      * @tc.name      testBase64HelperConstruct03_0031
      * @tc.desc      Verify rapid creation of multiple instances.
      * @tc.size      MediumTest

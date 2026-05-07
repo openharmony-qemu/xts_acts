@@ -42,7 +42,7 @@ export default function LRUCache03Test() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_0100
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_0100
      * @tc.name      testLRUCacheGetMissCount03_0001
      * @tc.desc      Verify fetching an evicted key results in a miss
      * @tc.size      MediumTest
@@ -74,7 +74,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_0200
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_0200
      * @tc.name      testLRUCacheGetMissCount03_0002
      * @tc.desc      Verify clear operation does not reset miss count (assuming stats persist)
      * @tc.size      MediumTest
@@ -96,7 +96,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_0300
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_0300
      * @tc.name      testLRUCacheGetMissCount03_0003
      * @tc.desc      Verify retrieving items after clear results in misses
      * @tc.size      MediumTest
@@ -124,7 +124,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_0400
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_0400
      * @tc.name      testLRUCacheGetMissCount03_0004
      * @tc.desc      Verify all gets on empty cache result in misses
      * @tc.size      MediumTest
@@ -147,7 +147,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_0500
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_0500
      * @tc.name      testLRUCacheGetMissCount03_0005
      * @tc.desc      Verify miss count works with different supported value types
      * @tc.size      MediumTest
@@ -174,7 +174,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_0600
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_0600
      * @tc.name      testLRUCacheGetMissCount03_0006
      * @tc.desc      Verify miss count works with different key types
      * @tc.size      MediumTest
@@ -200,7 +200,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_0700
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_0700
      * @tc.name      testLRUCacheGetMissCount03_0007
      * @tc.desc      Verify update does not cause miss, and subsequent get is hit
      * @tc.size      MediumTest
@@ -229,7 +229,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_0800
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_0800
      * @tc.name      testLRUCacheGetMissCount03_0008
      * @tc.desc      Verify miss count interactions with capacity 1 cache eviction
      * @tc.size      MediumTest
@@ -258,7 +258,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_0900
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_0900
      * @tc.name      testLRUCacheGetMissCount03_0009
      * @tc.desc      Verify miss counts are independent across cache instances
      * @tc.size      MediumTest
@@ -285,7 +285,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_1000
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_1000
      * @tc.name      testLRUCacheGetMissCount03_0010
      * @tc.desc      Verify miss count accuracy under stress operations
      * @tc.size      MediumTest
@@ -309,7 +309,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_1100
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_1100
      * @tc.name      testLRUCacheGetMissCount03_0011
      * @tc.desc      Verify miss count in complex cache workflow
      * @tc.size      MediumTest
@@ -351,7 +351,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_1200
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_1200
      * @tc.name      testLRUCacheGetMissCount03_0012
      * @tc.desc      Verify initial miss count is 0 for new LRUCache
      * @tc.size      MediumTest
@@ -370,7 +370,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_1300
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_1300
      * @tc.name      testLRUCacheGetMissCount03_0013
      * @tc.desc      Verify get operation for non-existent key increments miss count
      * @tc.size      MediumTest
@@ -394,7 +394,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_1400
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_1400
      * @tc.name      testLRUCacheGetMissCount03_0014
      * @tc.desc      Verify get operation for existing key does not increment miss count
      * @tc.size      MediumTest
@@ -424,7 +424,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_1500
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_1500
      * @tc.name      testLRUCacheGetMissCount03_0015
      * @tc.desc      Verify put operations do not affect miss count
      * @tc.size      MediumTest
@@ -451,7 +451,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_1600
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_1600
      * @tc.name      testLRUCacheRemovalCount03_0016
      * @tc.desc      [Consolidated] Verify basic eviction logic
      * @tc.size      MediumTest
@@ -483,7 +483,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_1700
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_1700
      * @tc.name      testLRUCacheRemovalCount03_0017
      * @tc.desc      [Consolidated] Verify get() operations affect eviction order
      * @tc.size      MediumTest
@@ -511,7 +511,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_1800
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_1800
      * @tc.name      testLRUCacheRemovalCount03_0018
      * @tc.desc      [Consolidated] Verify removal count behavior when capacity changes
      * @tc.size      MediumTest
@@ -542,7 +542,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_1900
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_1900
      * @tc.name      testLRUCacheRemovalCount03_0019
      * @tc.desc      [Consolidated] Verify removal count persists through clear() operations
      * @tc.size      MediumTest
@@ -575,7 +575,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_2000
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_2000
      * @tc.name      testLRUCacheRemovalCount03_0020
      * @tc.desc      [Consolidated] Verify removal count logic at edge capacities (0 and 1).
      * @tc.size      MediumTest
@@ -608,7 +608,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_2100
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_2100
      * @tc.name      testLRUCacheRemovalCount03_0021
      * @tc.desc      [Consolidated] Verify manual remove() does NOT increase removal count,
      * @tc.size      MediumTest
@@ -637,7 +637,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_2200
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_2200
      * @tc.name      testLRUCacheRemovalCount03_0022
      * @tc.desc      [Consolidated] Verify re-adding a key that was previously evicted counts as a new entry
      * @tc.size      MediumTest
@@ -665,7 +665,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_2300
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_2300
      * @tc.name      testLRUCacheRemovalCount03_0023
      * @tc.desc      [Consolidated] Stress test with large loop to verify removal count accuracy.
      * @tc.size      MediumTest
@@ -690,7 +690,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_2400
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_2400
      * @tc.name      testLRUCacheRemovalCount03_0024
      * @tc.desc      [Consolidated] Verify removal count in a mixed workflow (Put, Get, Remove, Clear).
      * @tc.size      MediumTest
@@ -726,7 +726,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_2500
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_2500
      * @tc.name      testLRUCacheRemovalCount03_0025
      * @tc.desc      [Consolidated] Verify removal counts are isolated across multiple cache instances.
      * @tc.size      MediumTest
@@ -755,7 +755,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_2600
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_2600
      * @tc.name      testLRUCacheRemovalCount03_0026
      * @tc.desc      [Consolidated] Verify removal count with mixed key types (number/string).
      * @tc.size      MediumTest
@@ -781,7 +781,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_2700
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_2700
      * @tc.name      testLRUCacheGetMatchCount03_0027
      * @tc.desc      Verify ping-pong eviction at capacity 1 (High churn rate leads to low match count)
      * @tc.size      MediumTest
@@ -811,7 +811,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_2800
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_2800
      * @tc.name      testLRUCacheGetMatchCount03_0028
      * @tc.desc      Verify hot item residency: Constantly accessed item should stay and accumulate hits despite other churn
      * @tc.size      MediumTest
@@ -841,7 +841,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_2900
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_2900
      * @tc.name      testLRUCacheGetMatchCount03_0029
      * @tc.desc      Verify updating a key's value preserves its hit count on subsequent access
      * @tc.size      MediumTest
@@ -868,7 +868,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_3000
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_3000
      * @tc.name      testLRUCacheGetMatchCount03_0030
      * @tc.desc      Verify manual removal interrupts match sequence
      * @tc.size      MediumTest
@@ -896,7 +896,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_3100
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_3100
      * @tc.name      testLRUCacheGetMatchCount03_0031
      * @tc.desc      Verify clear() preserves accumulation but resets data state (Rebirth scenario)
      * @tc.size      MediumTest
@@ -924,7 +924,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_3200
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_3200
      * @tc.name      testLRUCacheGetMatchCount03_0032
      * @tc.desc      Verify querying multiple non-existent keys repeatedly does not increase match count
      * @tc.size      MediumTest
@@ -951,7 +951,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_3300
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_3300
      * @tc.name      testLRUCacheGetMatchCount03_0033
      * @tc.desc      Verify object reference consistency leads to hits (Key is Object)
      * @tc.size      MediumTest
@@ -981,7 +981,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_3400
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_3400
      * @tc.name      testLRUCacheGetMatchCount03_0034
      * @tc.desc      Verify sparse access pattern on large cache
      * @tc.size      MediumTest
@@ -1008,7 +1008,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_3500
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_3500
      * @tc.name      testLRUCacheGetMatchCount03_0035
      * @tc.desc      Verify capacity increase preserves existing keys and allows hits
      * @tc.size      MediumTest
@@ -1037,7 +1037,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_3600
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_3600
      * @tc.name      testLRUCacheGetMatchCount03_0036
      * @tc.desc      Verify capacity decrease forces eviction and prevents subsequent matches
      * @tc.size      MediumTest
@@ -1067,7 +1067,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_3700
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_3700
      * @tc.name      testLRUCacheGetMatchCount03_0037
      * @tc.desc      Verify cyclic overwrite scenario (Circular buffer logic)
      * @tc.size      MediumTest
@@ -1101,7 +1101,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_3800
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_3800
      * @tc.name      testLRUCacheGetMatchCount03_0038
      * @tc.desc      Verify changing value type for same key preserves hit capability
      * @tc.size      MediumTest
@@ -1126,7 +1126,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_3900
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_3900
      * @tc.name      testLRUCacheGetMatchCount03_0039
      * @tc.desc      Verify high volume consecutive hits on a single key (Stress Hit)
      * @tc.size      MediumTest
@@ -1151,7 +1151,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_4000
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_4000
      * @tc.name      testLRUCacheGetMatchCount03_0040
      * @tc.desc      Verify complex interleaved operations (Put/Get/Remove mixture)
      * @tc.size      MediumTest
@@ -1186,7 +1186,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_4100
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_4100
      * @tc.name      testLRUCacheGetPutCount03_0041
      * @tc.desc      Verify basic put count increment including updates to existing keys
      * @tc.size      MediumTest
@@ -1215,7 +1215,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_4200
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_4200
      * @tc.name      testLRUCacheGetPutCount03_0042
      * @tc.desc      Verify put count increments correctly when evictions occur
      * @tc.size      MediumTest
@@ -1244,7 +1244,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_4300
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_4300
      * @tc.name      testLRUCacheGetPutCount03_0043
      * @tc.desc      Verify get() and remove() operations do not affect put count
      * @tc.size      MediumTest
@@ -1272,7 +1272,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_4400
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_4400
      * @tc.name      testLRUCacheGetPutCount03_0044
      * @tc.desc      Verify clear() operation does not reset put count (Persistence check)
      * @tc.size      MediumTest
@@ -1303,7 +1303,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_4500
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_4500
      * @tc.name      testLRUCacheGetPutCount03_0045
      * @tc.desc      Verify high churn at Capacity 1
      * @tc.size      MediumTest
@@ -1328,7 +1328,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_4600
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_4600
      * @tc.name      testLRUCacheGetPutCount03_0046
      * @tc.desc      Verify put count correctness in large loop (Stress Test)
      * @tc.size      MediumTest
@@ -1352,7 +1352,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_4700
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_4700
      * @tc.name      testLRUCacheGetPutCount03_0047
      * @tc.desc      Verify updateCapacity does not affect put count
      * @tc.size      MediumTest
@@ -1381,7 +1381,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_4800
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_4800
      * @tc.name      testLRUCacheGetPutCount03_0048
      * @tc.desc      Verify put count with Object keys
      * @tc.size      MediumTest
@@ -1410,7 +1410,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_4900
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_4900
      * @tc.name      testLRUCacheGetPutCount03_0049
      * @tc.desc      Verify put count with diverse Value types
      * @tc.size      MediumTest
@@ -1436,7 +1436,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_5000
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_5000
      * @tc.name      testLRUCacheGetPutCount03_0050
      * @tc.desc      Verify 'Fill and Replace All' scenario
      * @tc.size      MediumTest
@@ -1466,7 +1466,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_5100
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_5100
      * @tc.name      testLRUCacheGetPutCount03_0051
      * @tc.desc      Verify multiple instances have isolated put counts
      * @tc.size      MediumTest
@@ -1492,7 +1492,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_5200
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_5200
      * @tc.name      testLRUCacheGetPutCount03_0052
      * @tc.desc      Verify putting same key and same value strictly increments count (Operation based)
      * @tc.size      MediumTest
@@ -1520,7 +1520,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_5300
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_5300
      * @tc.name      testLRUCacheGetPutCount03_0053
      * @tc.desc      Verify put count behavior with Capacity 0 (If supported, should still count ops)
      * @tc.size      MediumTest
@@ -1547,7 +1547,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_5400
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_5400
      * @tc.name      testLRUCacheGetPutCount03_0054
      * @tc.desc      Verify put count with mixed key types (number vs string)
      * @tc.size      MediumTest
@@ -1572,7 +1572,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_5500
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_5500
      * @tc.name      testLRUCacheGetPutCount03_0055
      * @tc.desc      Verify complex mixed workflow
      * @tc.size      MediumTest
@@ -1602,7 +1602,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_5600
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_5600
      * @tc.name      testLRUCacheIsEmpty03_0056
      * @tc.desc      [Consolidated] Verify basic empty and non-empty states after construction and insertion.
      * @tc.size      MediumTest
@@ -1629,7 +1629,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_5700
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_5700
      * @tc.name      testLRUCacheIsEmpty03_0057
      * @tc.desc      [Consolidated] Verify transition to empty state via removal and clearing.
      * @tc.size      MediumTest
@@ -1659,7 +1659,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_5800
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_5800
      * @tc.name      testLRUCacheIsEmpty03_0058
      * @tc.desc      [Consolidated] Verify isEmpty behavior with capacity updates (Shrink to 1, Expand).
      * @tc.size      MediumTest
@@ -1697,7 +1697,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_5900
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_5900
      * @tc.name      testLRUCacheIsEmpty03_0059
      * @tc.desc      [Consolidated] Verify isEmpty remains false during eviction and capacity shrinking.
      * @tc.size      MediumTest
@@ -1726,7 +1726,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_6000
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_6000
      * @tc.name      testLRUCacheIsEmpty03_0060
      * @tc.desc      [Consolidated] Verify read operations (get, keys, values, toString) do not affect empty state.
      * @tc.size      MediumTest
@@ -1755,7 +1755,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_6100
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_6100
      * @tc.name      testLRUCacheIsEmpty03_0061
      * @tc.desc      Verify isEmpty with various key and value types (Object keys, primitive values).
      * @tc.size      MediumTest
@@ -1786,7 +1786,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_6200
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_6200
      * @tc.name      testLRUCacheIsEmpty03_0062
      * @tc.desc      Verify ping-pong lifecycle: Empty -> Add -> Empty -> Add -> Empty.
      * @tc.size      MediumTest
@@ -1816,7 +1816,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_6300
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_6300
      * @tc.name      testLRUCacheIsEmpty03_0063
      * @tc.desc      Verify correlation between length property and isEmpty method.
      * @tc.size      MediumTest
@@ -1849,7 +1849,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_6400
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_6400
      * @tc.name      testLRUCacheIsEmpty03_0064
      * @tc.desc      Verify updating an existing key's value does not change isEmpty state.
      * @tc.size      MediumTest
@@ -1873,7 +1873,7 @@ export default function LRUCache03Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE03_6500
+     * @tc.number    SUB_UTIL_LRU_CACHETHREE_6500
      * @tc.name      testLRUCacheIsEmpty03_0065
      * @tc.desc      Verify operations on non-existent keys on an empty cache do not affect empty state.
      * @tc.size      MediumTest

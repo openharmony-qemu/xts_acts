@@ -34,7 +34,7 @@ export default function TextDecoder02Test() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_0100
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_0100
      * @tc.name      testTextDecoderCreate02_0001
      * @tc.desc      [Basic] Verify default constructor and basic encoding setting.
      * @tc.size      MediumTest
@@ -61,7 +61,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_0200
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_0200
      * @tc.name      testTextDecoderCreate02_0002
      * @tc.desc      [UTF-16] Verify UTF-16 Little Endian and Big Endian encodings.
      * @tc.size      MediumTest
@@ -79,7 +79,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_0300
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_0300
      * @tc.name      testTextDecoderCreate02_0003
      * @tc.desc      [CJK] Verify Chinese, Japanese, and Korean encoding families.
      * @tc.size      MediumTest
@@ -102,7 +102,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_0400
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_0400
      * @tc.name      testTextDecoderCreate02_0004
      * @tc.desc      [European] Verify Windows-1252, ISO-8859 series and KOI8-R.
      * @tc.size      MediumTest
@@ -122,7 +122,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_0500
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_0500
      * @tc.name      testTextDecoderCreate02_0005
      * @tc.desc      [Options] Verify 'fatal' and 'ignoreBOM' boolean configuration.
      * @tc.size      MediumTest
@@ -143,7 +143,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_0600
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_0600
      * @tc.name      testTextDecoderCreate02_0006
      * @tc.desc      [Robustness] Verify invalid inputs DO NOT crash.
      * @tc.size      MediumTest
@@ -178,7 +178,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_0700
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_0700
      * @tc.name      testTextDecoderCreate02_0007
      * @tc.desc      [Aliases] Verify label behavior (Expect No Normalization).
      * @tc.size      MediumTest
@@ -199,7 +199,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_0800
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_0800
      * @tc.name      testTextDecoderCreate02_0008
      * @tc.desc      [Legacy] Verify Macintosh encoding behavior.
      * @tc.size      MediumTest
@@ -220,7 +220,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_0900
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_0900
      * @tc.name      testTextDecoderCreate02_0009
      * @tc.desc      [Parameters] Verify handling of undefined parameters.
      * @tc.size      MediumTest
@@ -243,7 +243,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_1000
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_1000
      * @tc.name      testTextDecoderCreate02_0010
      * @tc.desc      [Instance] Verify the created object is actually an instance of TextDecoder.
      * @tc.size      MediumTest
@@ -262,7 +262,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_1100
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_1100
      * @tc.name      testTextDecoderCreate02_0011
      * @tc.desc      [Normalization] Verify whitespace is preserved.
      * @tc.size      MediumTest
@@ -281,7 +281,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_1200
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_1200
      * @tc.name      testTextDecoderCreate02_0012
      * @tc.desc      [Behavior] Verify 'utf-16' behavior (No Mapping).
      * @tc.size      MediumTest
@@ -299,7 +299,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_1300
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_1300
      * @tc.name      testTextDecoderCreate02_0013
      * @tc.desc      [Legacy] Verify 'x-user-defined' encoding support.
      * @tc.size      MediumTest
@@ -315,7 +315,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_1400
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_1400
      * @tc.name      testTextDecoderCreate02_0014
      * @tc.desc      [Robustness] Verify creating with empty options object.
      * @tc.size      MediumTest
@@ -336,7 +336,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_1500
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_1500
      * @tc.name      testTextDecoderDecodeWithStream02_0015
      * @tc.desc      [Basic] Verify direct decoding of ASCII characters in non-stream mode (Merged ASCII/Number/Symbol tests)
      * @tc.size      MediumTest
@@ -354,7 +354,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_1600
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_1600
      * @tc.name      testTextDecoderDecodeWithStream02_0016
      * @tc.desc      [Basic] Verify complete decoding of multi-byte characters (Chinese/Emoji)
      * @tc.size      MediumTest
@@ -372,7 +372,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_1700
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_1700
      * @tc.name      testTextDecoderDecodeWithStream02_0017
      * @tc.desc      [Robustness] Verify behavior with undefined/empty input (Fix: Expects undefined based on logs)
      * @tc.size      MediumTest
@@ -392,7 +392,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_1800
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_1800
      * @tc.name      testTextDecoderDecodeWithStream02_0018
      * @tc.desc      [Core Logic] Verify buffering and stitching of split 3-byte Chinese characters (2 bytes + 1 byte)
      * @tc.size      MediumTest
@@ -415,7 +415,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_1900
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_1900
      * @tc.name      testTextDecoderDecodeWithStream02_0019
      * @tc.desc      [Core Logic] Verify buffering and stitching of split 4-byte Emoji characters (2 bytes + 2 bytes)
      * @tc.size      MediumTest
@@ -437,7 +437,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_2000
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_2000
      * @tc.name      testTextDecoderDecodeWithStream02_0020
      * @tc.desc      [State Retention] Verify continuous output with multiple stream:true calls
      * @tc.size      MediumTest
@@ -459,7 +459,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_2100
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_2100
      * @tc.name      testTextDecoderDecodeWithStream02_0021
      * @tc.desc      [Edge Case] Verify split BOM handling (Fix: BOM is NOT stripped in split scenario)
      * @tc.size      MediumTest
@@ -482,7 +482,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_2200
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_2200
      * @tc.name      testTextDecoderDecodeWithStream02_0022
      * @tc.desc      [Error Handling] Verify fatal:true behavior (Fix: System does NOT throw)
      * @tc.size      MediumTest
@@ -505,7 +505,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_2300
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_2300
      * @tc.name      testTextDecoderDecodeWithStream02_0023
      * @tc.desc      [Error Handling] Verify replacement behavior (Fix: Expect Undefined)
      * @tc.size      MediumTest
@@ -526,7 +526,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_2400
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_2400
      * @tc.name      testTextDecoderDecodeWithStream02_0024
      * @tc.desc      [Performance/Capacity] Verify decodeWithStream handling of large buffers
      * @tc.size      MediumTest
@@ -546,7 +546,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_2500
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_2500
      * @tc.name      testTextDecoderDecodeWithStream02_0025
      * @tc.desc      [Edge Case] Verify split point exactly between ASCII and Multi-byte characters
      * @tc.size      MediumTest
@@ -569,7 +569,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_2600
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_2600
      * @tc.name      testTextDecoderDecodeWithStream02_0026
      * @tc.desc      [Configuration] Verify ignoreBOM:true preserves BOM in stream decoding
      * @tc.size      MediumTest
@@ -587,7 +587,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_2700
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_2700
      * @tc.name      testTextDecoderDecodeWithStream02_0027
      * @tc.desc      [Type Support] Verify decodeWithStream support for Uint8Array Subarray views
      * @tc.size      MediumTest
@@ -610,7 +610,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_2800
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_2800
      * @tc.name      testTextDecoderDecodeWithStream02_0028
      * @tc.desc      [Isolation] Verify stream state isolation between two Decoder instances
      * @tc.size      MediumTest
@@ -633,7 +633,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_2900
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_2900
      * @tc.name      testTextDecoderConstruct02_0029
      * @tc.desc      [Consolidated] Verify construction with standard encoding labels
      * @tc.size      MediumTest
@@ -673,7 +673,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_3000
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_3000
      * @tc.name      testTextDecoderConstruct02_0030
      * @tc.desc      [Consolidated] Verify construction with Legacy CJK encodings
      * @tc.size      MediumTest
@@ -694,7 +694,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_3100
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_3100
      * @tc.name      testTextDecoderConstruct02_0031
      * @tc.desc      [Consolidated] Verify case insensitivity and aliases
      * @tc.size      MediumTest
@@ -719,7 +719,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_3200
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_3200
      * @tc.name      testTextDecoderConstruct02_0032
      * @tc.desc      [Consolidated] Verify fatal option configuration
      * @tc.size      MediumTest
@@ -741,7 +741,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_3300
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_3300
      * @tc.name      testTextDecoderConstruct02_0033
      * @tc.desc      [Consolidated] Verify ignoreBOM option configuration
      * @tc.size      MediumTest
@@ -763,7 +763,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_3400
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_3400
      * @tc.name      testTextDecoderConstruct02_0034
      * @tc.desc      [Consolidated] Verify mixed options configuration
      * @tc.size      MediumTest
@@ -781,7 +781,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_3500
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_3500
      * @tc.name      testTextDecoderConstruct02_0035
      * @tc.desc      [Properties] Verify instance properties exist and are correct types
      * @tc.size      MediumTest
@@ -802,7 +802,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_3600
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_3600
      * @tc.name      testTextDecoderConstruct02_0036
      * @tc.desc      [Logic] Verify decoding empty Uint8Array returns undefined (Actual System Behavior)
      * @tc.size      MediumTest
@@ -819,7 +819,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_3700
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_3700
      * @tc.name      testTextDecoderConstruct02_0037
      * @tc.desc      [Consolidated] Verify fatal: true throws on invalid bytes
      * @tc.size      MediumTest
@@ -848,7 +848,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_3800
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_3800
      * @tc.name      testTextDecoderConstruct02_0038
      * @tc.desc      [Consolidated] Verify fatal: false uses replacement char (default)
      * @tc.size      MediumTest
@@ -871,7 +871,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_3900
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_3900
      * @tc.name      testTextDecoderConstruct02_0039
      * @tc.desc      [Logic] Verify BOM is included in output (Actual System Behavior)
      * @tc.size      MediumTest
@@ -892,7 +892,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_4000
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_4000
      * @tc.name      testTextDecoderConstruct02_0040
      * @tc.desc      [Consolidated] Verify basic decoding works across standard instances
      * @tc.size      MediumTest
@@ -916,7 +916,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_4100
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_4100
      * @tc.name      testTextDecoderConstruct02_0041
      * @tc.desc      [Consolidated] Verify decoding large buffer
      * @tc.size      MediumTest
@@ -939,7 +939,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_4200
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_4200
      * @tc.name      testTextDecoderConstructDeprecated02_0042
      * @tc.desc      Verify construction with default properties (utf-8, fatal=false, ignoreBOM=false).
      * @tc.size      MediumTest
@@ -957,7 +957,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_4300
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_4300
      * @tc.name      testTextDecoderConstructDeprecated02_0043
      * @tc.desc      Verify decoding basic ASCII/UTF-8 bytes using legacy decodeToString.
      * @tc.size      MediumTest
@@ -983,7 +983,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_4400
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_4400
      * @tc.name      testTextDecoderConstructDeprecated02_0044
      * @tc.desc      Verify UTF-16LE/BE decoding using legacy decodeToString.
      * @tc.size      MediumTest
@@ -1006,7 +1006,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_4500
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_4500
      * @tc.name      testTextDecoderConstructDeprecated02_0045
      * @tc.desc      Verify GBK decoding using legacy decodeToString.
      * @tc.size      MediumTest
@@ -1022,7 +1022,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_4600
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_4600
      * @tc.name      testTextDecoderConstructDeprecated02_0046
      * @tc.desc      Verify decoding special and multi-byte characters.
      * @tc.size      MediumTest
@@ -1044,7 +1044,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_4700
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_4700
      * @tc.name      testTextDecoderConstructDeprecated02_0047
      * @tc.desc      Verify decoding empty byte array.
      * @tc.size      MediumTest
@@ -1060,7 +1060,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_4800
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_4800
      * @tc.name      testTextDecoderConstructDeprecated02_0048
      * @tc.desc      Verify legacy decoding with stream option.
      * @tc.size      MediumTest
@@ -1078,7 +1078,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_4900
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_4900
      * @tc.name      testTextDecoderConstructDeprecated02_0049
      * @tc.desc      Verify instance uniqueness.
      * @tc.size      MediumTest
@@ -1094,7 +1094,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_5000
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_5000
      * @tc.name      testTextDecoderConstructDeprecated02_0050
      * @tc.desc      [Error] Verify constructor robustness with invalid/unsupported encoding names.
      * @tc.size      MediumTest
@@ -1130,7 +1130,7 @@ export default function TextDecoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER02_5100
+     * @tc.number    SUB_UTIL_TEXTDECODERTWO_5100
      * @tc.name      testTextDecoderConstructDeprecated02_0051
      * @tc.desc      [Error] Verify constructor robustness with invalid types (number, boolean, array).
      * @tc.size      MediumTest

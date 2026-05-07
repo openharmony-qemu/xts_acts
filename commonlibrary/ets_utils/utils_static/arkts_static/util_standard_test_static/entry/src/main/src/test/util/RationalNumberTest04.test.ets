@@ -49,7 +49,7 @@ export default function RationalNumber04Test(): void {
 
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_0100
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_0100
      * @tc.name      testRationalNumberIsNaN04_0001
      * @tc.desc      [Consistency] Verify isZero/isNaN logic consistency on normal objects.
      * @tc.size      MediumTest
@@ -74,7 +74,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_0200
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_0200
      * @tc.name      testRationalNumberIsFinite04_0002
      * @tc.desc      [Finite-Normal] Verify isFinite returns true for standard integers, negatives, and zero.
      * @tc.size      MediumTest
@@ -105,7 +105,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_0300
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_0300
      * @tc.name      testRationalNumberIsFinite04_0003
      * @tc.desc      [Finite-Boundary] Verify isFinite returns true for JS numeric boundaries (Safe Integer, Min Value).
      * @tc.size      MediumTest
@@ -133,7 +133,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_0400
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_0400
      * @tc.name      testRationalNumberIsFinite04_0004
      * @tc.desc      [Finite-Safe] Verify isFinite returns TRUE for Standard and MaxSafeInteger values.
      * @tc.size      MediumTest
@@ -164,7 +164,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_0500
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_0500
      * @tc.name      testRationalNumberIsFinite04_0005
      * @tc.desc      [DivisionByZero] Verify isFinite returns false when denominator is zero (resulting in Infinity).
      * @tc.size      MediumTest
@@ -192,7 +192,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_0600
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_0600
      * @tc.name      testRationalNumberIsFinite04_0006
      * @tc.desc      [Finite-Safe] Verify isFinite returns TRUE for MinSafeInteger (Replaces NaN test).
      * @tc.size      MediumTest
@@ -217,7 +217,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_0700
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_0700
      * @tc.name      testRationalNumberIsFinite04_0007
      * @tc.desc      [String-Safe] Verify isFinite works for strictly formatted strings.
      * @tc.size      MediumTest
@@ -245,7 +245,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_0800
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_0800
      * @tc.name      testRationalNumberIsFinite04_0008
      * @tc.desc      [Consistency-Safe] Verify logic consistency on valid objects only.
      * @tc.size      MediumTest
@@ -270,7 +270,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_0900
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_0900
      * @tc.name      testRationalNumberToString04_0009
      * @tc.desc      Verify toString method basic functionality
      * @tc.size      MediumTest
@@ -285,7 +285,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_1000
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_1000
      * @tc.name      testRationalNumberToString04_0010
      * @tc.desc      Verify toString with positive, negative, zero, and integer rational numbers
      * @tc.size      MediumTest
@@ -310,7 +310,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_1100
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_1100
      * @tc.name      testRationalNumberToString04_0011
      * @tc.desc      Verify toString consistency across multiple calls
      * @tc.size      MediumTest
@@ -327,7 +327,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_1200
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_1200
      * @tc.name      testRationalNumberToString04_0012
      * @tc.desc      Verify toString with negative numerator scenarios
      * @tc.size      MediumTest
@@ -351,7 +351,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_1300
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_1300
      * @tc.name      testRationalNumberToString04_0013
      * @tc.desc      Verify toString with various denominator values
      * @tc.size      MediumTest
@@ -371,7 +371,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_1400
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_1400
      * @tc.name      testRationalNumberToString04_0014
      * @tc.desc      Verify toString integration with compareTo method
      * @tc.size      MediumTest
@@ -392,7 +392,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_1500
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_1500
      * @tc.name      testRationalNumberToString04_0015
      * @tc.desc      Verify toString with edge case rational numbers
      * @tc.size      MediumTest
@@ -417,7 +417,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_1600
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_1600
      * @tc.name      testRationalNumberToString04_0016
      * @tc.desc      Verify multiple consecutive toString calls
      * @tc.size      MediumTest
@@ -442,7 +442,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_1700
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_1700
      * @tc.name      testRationalNumberToString04_0017
      * @tc.desc      Verify toString returns non-empty string for basic cases
      * @tc.size      MediumTest
@@ -465,7 +465,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_1800
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_1800
      * @tc.name      testRationalNumberToString04_0018
      * @tc.desc      Verify toString with large rational numbers
      * @tc.size      MediumTest
@@ -490,7 +490,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_1900
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_1900
      * @tc.name      testRationalNumberToString04_0019
      * @tc.desc      Verify toString with reciprocal values
      * @tc.size      MediumTest
@@ -513,7 +513,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_2000
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_2000
      * @tc.name      testRationalNumberToString04_0020
      * @tc.desc      Verify toString with simplified fractions
      * @tc.size      MediumTest
@@ -538,7 +538,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_2100
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_2100
      * @tc.name      testRationalNumberToString04_0021
      * @tc.desc      Verify toString with very small fractions
      * @tc.size      MediumTest
@@ -563,7 +563,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_2200
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_2200
      * @tc.name      testRationalNumberToString04_0022
      * @tc.desc      Verify toString method preserves rational number state
      * @tc.size      MediumTest
@@ -584,7 +584,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_2300
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_2300
      * @tc.name      testRationalNumberToString04_0023
      * @tc.desc      Comprehensive toString test with mixed scenarios
      * @tc.size      MediumTest
@@ -618,7 +618,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_2400
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_2400
      * @tc.name      testRationalNumberCompareTo04_0024
      * @tc.desc      Verify equivalence: standard equality, unsimplified fractions, and sign normalization
      * @tc.size      MediumTest
@@ -648,7 +648,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_2500
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_2500
      * @tc.name      testRationalNumberCompareTo04_0025
      * @tc.desc      Verify basic positive inequalities (Greater Than logic)
      * @tc.size      MediumTest
@@ -677,7 +677,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_2600
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_2600
      * @tc.name      testRationalNumberCompareTo04_0026
      * @tc.desc      Verify basic positive inequalities (Less Than logic)
      * @tc.size      MediumTest
@@ -706,7 +706,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_2700
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_2700
      * @tc.name      testRationalNumberCompareTo04_0027
      * @tc.desc      Verify Negative Equality (Manual Normalization)
      * @tc.size      MediumTest
@@ -730,7 +730,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_2800
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_2800
      * @tc.name      testRationalNumberCompareTo04_0028
      * @tc.desc      Verify Integer and Whole Number comparisons
      * @tc.size      MediumTest
@@ -758,7 +758,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_2900
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_2900
      * @tc.name      testRationalNumberCompareTo04_0029
      * @tc.desc      Verify fixed component variations (Same Numerator OR Same Denominator)
      * @tc.size      MediumTest
@@ -788,7 +788,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_3000
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_3000
      * @tc.name      testRationalNumberCompareTo04_0030
      * @tc.desc      Verify comparison of Close Proximity / Precision (1/3 vs 0.33)
      * @tc.size      MediumTest
@@ -811,7 +811,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_3100
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_3100
      * @tc.name      testRationalNumberCompareTo04_0031
      * @tc.desc      Verify reciprocals comparisons
      * @tc.size      MediumTest
@@ -836,7 +836,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_3200
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_3200
      * @tc.name      testRationalNumberCompareTo04_0032
      * @tc.desc      Verify comparison symmetry (A > B implies B < A)
      * @tc.size      MediumTest
@@ -864,7 +864,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_3300
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_3300
      * @tc.name      testRationalNumberCompareTo04_0033
      * @tc.desc      Verify Large Number boundaries (Safety check)
      * @tc.size      MediumTest
@@ -887,7 +887,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_3400
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_3400
      * @tc.name      testRationalNumberCompareTo04_0034
      * @tc.desc      Verify comparison to self (Reflexivity)
      * @tc.size      MediumTest
@@ -908,7 +908,7 @@ export default function RationalNumber04Test(): void {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER04_3500
+     * @tc.number    SUB_UTIL_RATIONALNUMBERFOUR_3500
      * @tc.name      testRationalNumberCompareTo04_0035
      * @tc.desc      Verify Transitivity (If A < B and B < C, then A < C)
      * @tc.size      MediumTest
