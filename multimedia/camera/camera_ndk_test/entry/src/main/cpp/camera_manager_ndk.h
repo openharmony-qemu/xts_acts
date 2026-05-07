@@ -474,6 +474,15 @@ public:
     Camera_ErrorCode RegisterExposureStateChangeCallbackWithoutSession();
     Camera_ErrorCode UnregisterExposureStateChangeCallbackWithoutSession();
 
+    Camera_ErrorCode RegisterExposureStateChangeCallback(int useCaseCode);
+    Camera_ErrorCode UnregisterExposureStateChangeCallback(int useCaseCode);
+    bool WaitForExposureFinish();
+    Camera_ErrorCode GetColorTintRange();
+    Camera_ErrorCode SetColorTint(int useCaseCode);
+    Camera_ErrorCode GetColorTint(int useCaseCode);
+    Camera_ErrorCode GetZoomPointInfos(int useCaseCode);
+    Camera_ErrorCode DeleteZoomPointInfo(int useCaseCode);
+
     // test aid
     Camera_ErrorCode SetSceneMode(int useCaseCode);
     Camera_ErrorCode GetCameraFromCameras(Camera_Device* cameras, Camera_Device** camera,
