@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 import { HashSet } from '@kit.ArkTS';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium';
 
@@ -114,7 +114,7 @@ export default function HashSet06Test(): void {
     })
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_0100
+     * @tc.number     SUB_HASHSET_TEST06_0100
      * @tc.name      testHashSet06Chapter0001
      * @tc.desc      Test forEach method with object type HashSet
      * @tc.size      MediumTest
@@ -144,7 +144,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_0200
+     * @tc.number     SUB_HASHSET_TEST06_0200
      * @tc.name      testHashSet06Chapter0002
      * @tc.desc      Test forEach method with array type HashSet
      * @tc.size      MediumTest
@@ -172,7 +172,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_0300
+     * @tc.number     SUB_HASHSET_TEST06_0300
      * @tc.name      testHashSet06Chapter0003
      * @tc.desc      Test forEach method with Unicode emoji strings
      * @tc.size      MediumTest
@@ -200,7 +200,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_0400
+     * @tc.number     SUB_HASHSET_TEST06_0400
      * @tc.name      testHashSet06Chapter0004
      * @tc.desc      Test forEach method with large HashSet
      * @tc.size      MediumTest
@@ -228,7 +228,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_0500
+     * @tc.number     SUB_HASHSET_TEST06_0500
      * @tc.name      testHashSet06Chapter0005
      * @tc.desc      Negative test: forEach with callback that throws error when called
      * @tc.size      MediumTest
@@ -258,7 +258,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_0600
+     * @tc.number     SUB_HASHSET_TEST06_0600
      * @tc.name      testHashSet06Chapter0006
      * @tc.desc      Negative test: forEach with callback that processes values incorrectly
      * @tc.size      MediumTest
@@ -293,7 +293,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_0700
+     * @tc.number     SUB_HASHSET_TEST06_0700
      * @tc.name      testHashSet06Chapter0007
      * @tc.desc      Negative test: forEach with thisArg that causes callback to fail
      * @tc.size      MediumTest
@@ -330,7 +330,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_0800
+     * @tc.number     SUB_HASHSET_TEST06_0800
      * @tc.name      testHashSet06Chapter0008
      * @tc.desc      Negative test: forEach callback accessing invalid set methods
      * @tc.size      MediumTest
@@ -376,7 +376,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_0900
+     * @tc.number     SUB_HASHSET_TEST06_0900
      * @tc.name      testHashSet06Chapter0009
      * @tc.desc      Negative test: forEach with callback that throws TypeError
      * @tc.size      MediumTest
@@ -420,7 +420,7 @@ export default function HashSet06Test(): void {
 
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_1000
+     * @tc.number     SUB_HASHSET_TEST06_1000
      * @tc.name      testHashSet06Chapter0010
      * @tc.desc      Test forEach method with set parameter verification
      * @tc.size      MediumTest
@@ -445,7 +445,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_1100
+     * @tc.number     SUB_HASHSET_TEST06_1100
      * @tc.name      testHashSet06Chapter0011
      * @tc.desc      Test forEach method with TypedArray values
      * @tc.size      MediumTest
@@ -473,7 +473,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_1200
+     * @tc.number     SUB_HASHSET_TEST06_1200
      * @tc.name      testHashSet06Chapter0012
      * @tc.desc      Test forEach method with different numeric types boundary values
      * @tc.size      MediumTest
@@ -505,7 +505,7 @@ export default function HashSet06Test(): void {
       expect(visited.includes(-128)).assertTrue();
     });
     /**
-     * @tc.number    SUB_HASHSET_TEST06_1300
+     * @tc.number     SUB_HASHSET_TEST06_1300
      * @tc.name      testHashSet06Chapter0013
      * @tc.desc      Test forEach with TypedArray containing boundary values (Int8Array)
      * @tc.size      MediumTest
@@ -535,7 +535,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_1400
+     * @tc.number     SUB_HASHSET_TEST06_1400
      * @tc.name      testHashSet06Chapter0014
      * @tc.desc      Test forEach with TypedArray containing boundary values (Uint8Array)
      * @tc.size      MediumTest
@@ -566,7 +566,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_1500
+     * @tc.number     SUB_HASHSET_TEST06_1500
      * @tc.name      testHashSet06Chapter0015
      * @tc.desc      Test forEach with TypedArray containing Float32Array special values
      * @tc.size      MediumTest
@@ -596,7 +596,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_1600
+     * @tc.number     SUB_HASHSET_TEST06_1600
      * @tc.name      testHashSet06Chapter0016
      * @tc.desc      Test forEach with string containing ASCII full range characters
      * @tc.size      MediumTest
@@ -625,7 +625,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_1700
+     * @tc.number     SUB_HASHSET_TEST06_1700
      * @tc.name      testHashSet06Chapter0017
      * @tc.desc      Test forEach with string containing repeated special characters
      * @tc.size      MediumTest
@@ -653,7 +653,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_1800
+     * @tc.number     SUB_HASHSET_TEST06_1800
      * @tc.name      testHashSet06Chapter0018
      * @tc.desc      Test forEach with string containing keywords
      * @tc.size      MediumTest
@@ -683,7 +683,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_1900
+     * @tc.number     SUB_HASHSET_TEST06_1900
      * @tc.name      testHashSet06Chapter0019
      * @tc.desc      Test forEach with array containing multiple zeros
      * @tc.size      MediumTest
@@ -710,7 +710,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_2000
+     * @tc.number     SUB_HASHSET_TEST06_2000
      * @tc.name      testHashSet06Chapter0020
      * @tc.desc      Test forEach with array containing negative numbers
      * @tc.size      MediumTest
@@ -739,7 +739,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_2100
+     * @tc.number     SUB_HASHSET_TEST06_2100
      * @tc.name      testHashSet06Chapter0021
      * @tc.desc      Test forEach with array containing NaN and Infinity
      * @tc.size      MediumTest
@@ -768,7 +768,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_2200
+     * @tc.number     SUB_HASHSET_TEST06_2200
      * @tc.name      testHashSet06Chapter0022
      * @tc.desc      Test forEach with empty array
      * @tc.size      MediumTest
@@ -794,7 +794,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_2300
+     * @tc.number     SUB_HASHSET_TEST06_2300
      * @tc.name      testHashSet06Chapter0023
      * @tc.desc      Test forEach with object containing nested structure
      * @tc.size      MediumTest
@@ -827,7 +827,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_2400
+     * @tc.number     SUB_HASHSET_TEST06_2400
      * @tc.name      testHashSet06Chapter0024
      * @tc.desc      Test forEach with object containing function property
      * @tc.size      MediumTest
@@ -864,7 +864,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_2500
+     * @tc.number     SUB_HASHSET_TEST06_2500
      * @tc.name      testHashSet06Chapter0025
      * @tc.desc      Test forEach with object containing undefined and null properties
      * @tc.size      MediumTest
@@ -891,7 +891,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_2600
+     * @tc.number     SUB_HASHSET_TEST06_2600
      * @tc.name      testHashSet06Chapter0026
      * @tc.desc      Test forEach with object containing Map property
      * @tc.size      MediumTest
@@ -926,7 +926,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_2700
+     * @tc.number     SUB_HASHSET_TEST06_2700
      * @tc.name      testHashSet06Chapter0027
      * @tc.desc      Test forEach with object containing Set property
      * @tc.size      MediumTest
@@ -956,7 +956,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_2800
+     * @tc.number     SUB_HASHSET_TEST06_2800
      * @tc.name      testHashSet06Chapter0028
      * @tc.desc      Test forEach with object containing RegExp property
      * @tc.size      MediumTest
@@ -983,7 +983,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_2900
+     * @tc.number     SUB_HASHSET_TEST06_2900
      * @tc.name      testHashSet06Chapter0029
      * @tc.desc      Test forEach with large object (performance test)
      * @tc.size      MediumTest
@@ -1017,7 +1017,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_3000
+     * @tc.number     SUB_HASHSET_TEST06_3000
      * @tc.name      testHashSet06Chapter0030
      * @tc.desc      Test forEach with various number types (byte, short, int, long ranges)
      * @tc.size      MediumTest
@@ -1061,7 +1061,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_3100
+     * @tc.number     SUB_HASHSET_TEST06_3100
      * @tc.name      testHashSet06Chapter0031
      * @tc.desc      Negative test: forEach callback modifying the set during iteration
      * @tc.size      MediumTest
@@ -1109,7 +1109,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_3200
+     * @tc.number     SUB_HASHSET_TEST06_3200
      * @tc.name      testHashSet06Chapter0032
      * @tc.desc      Test forEach with thisArg that provides utility methods
      * @tc.size      MediumTest
@@ -1144,7 +1144,7 @@ export default function HashSet06Test(): void {
       expect(mathUtils.sum).assertEqual(5500);
     });
     /**
-     * @tc.number    SUB_HASHSET_TEST06_3300
+     * @tc.number     SUB_HASHSET_TEST06_3300
      * @tc.name      testHashSet06Chapter0033
      * @tc.desc      Test forEach with Uint8ClampedArray values
      * @tc.size      MediumTest
@@ -1175,7 +1175,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_3400
+     * @tc.number     SUB_HASHSET_TEST06_3400
      * @tc.name      testHashSet06Chapter0034
      * @tc.desc      Test forEach with Int16Array boundary values
      * @tc.size      MediumTest
@@ -1204,7 +1204,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_3500
+     * @tc.number     SUB_HASHSET_TEST06_3500
      * @tc.name      testHashSet06Chapter0035
      * @tc.desc      Test forEach with BigInt64Array values
      * @tc.size      MediumTest
@@ -1231,7 +1231,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_3600
+     * @tc.number     SUB_HASHSET_TEST06_3600
      * @tc.name      testHashSet06Chapter0036
      * @tc.desc      Test forEach with very long string (treeString type)
      * @tc.size      MediumTest
@@ -1265,7 +1265,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_3700
+     * @tc.number     SUB_HASHSET_TEST06_3700
      * @tc.name      testHashSet06Chapter0037
      * @tc.desc      Test forEach with sliceString type
      * @tc.size      MediumTest
@@ -1294,7 +1294,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_3800
+     * @tc.number     SUB_HASHSET_TEST06_3800
      * @tc.name      testHashSet06Chapter0038
      * @tc.desc      Test forEach with different numeric representations
      * @tc.size      MediumTest
@@ -1332,7 +1332,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_3900
+     * @tc.number     SUB_HASHSET_TEST06_3900
      * @tc.name      testHashSet06Chapter0039
      * @tc.desc      Test forEach with BigInt values
      * @tc.size      MediumTest
@@ -1363,7 +1363,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_4000
+     * @tc.number     SUB_HASHSET_TEST06_4000
      * @tc.name      testHashSet06Chapter0040
      * @tc.desc      Test forEach with array containing mixed types
      * @tc.size      MediumTest
@@ -1415,7 +1415,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_4100
+     * @tc.number     SUB_HASHSET_TEST06_4100
      * @tc.name      testHashSet06Chapter0041
      * @tc.desc      Test forEach with array containing overflow values
      * @tc.size      MediumTest
@@ -1444,7 +1444,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_4200
+     * @tc.number     SUB_HASHSET_TEST06_4200
      * @tc.name      testHashSet06Chapter0042
      * @tc.desc      Test forEach with different callback parameter combinations
      * @tc.size      MediumTest
@@ -1492,7 +1492,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_4300
+     * @tc.number     SUB_HASHSET_TEST06_4300
      * @tc.name      testHashSet06Chapter0043
      * @tc.desc      Test forEach with illegal Unicode encodings
      * @tc.size      MediumTest
@@ -1521,7 +1521,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_4400
+     * @tc.number     SUB_HASHSET_TEST06_4400
      * @tc.name      testHashSet06Chapter0044
      * @tc.desc      Negative test: forEach with callback that throws binding-related error
      * @tc.size      MediumTest
@@ -1560,7 +1560,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_4500
+     * @tc.number     SUB_HASHSET_TEST06_4500
      * @tc.name      testHashSet06Chapter0045
      * @tc.desc      Test forEach with object containing ArrayBuffer property
      * @tc.size      MediumTest
@@ -1591,7 +1591,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_4600
+     * @tc.number     SUB_HASHSET_TEST06_4600
      * @tc.name      testHashSet06Chapter0046
      * @tc.desc      Test forEach with object containing DataView property
      * @tc.size      MediumTest
@@ -1623,7 +1623,7 @@ export default function HashSet06Test(): void {
       expect(idSum).assertEqual(3);
     });
     /**
-     * @tc.number    SUB_HASHSET_TEST06_4700
+     * @tc.number     SUB_HASHSET_TEST06_4700
      * @tc.name      testHashSet06Chapter0047
      * @tc.desc      Test forEach with Uint16Array boundary values
      * @tc.size      MediumTest
@@ -1652,7 +1652,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_4800
+     * @tc.number     SUB_HASHSET_TEST06_4800
      * @tc.name      testHashSet06Chapter0048
      * @tc.desc      Test forEach with Int32Array boundary values
      * @tc.size      MediumTest
@@ -1681,7 +1681,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_4900
+     * @tc.number     SUB_HASHSET_TEST06_4900
      * @tc.name      testHashSet06Chapter0049
      * @tc.desc      Test forEach with Uint32Array boundary values
      * @tc.size      MediumTest
@@ -1710,7 +1710,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_5000
+     * @tc.number     SUB_HASHSET_TEST06_5000
      * @tc.name      testHashSet06Chapter0050
      * @tc.desc      Test forEach with Float64Array boundary values
      * @tc.size      MediumTest
@@ -1739,7 +1739,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_5100
+     * @tc.number     SUB_HASHSET_TEST06_5100
      * @tc.name      testHashSet06Chapter0051
      * @tc.desc      Test forEach with BigUint64Array boundary values
      * @tc.size      MediumTest
@@ -1768,7 +1768,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_5200
+     * @tc.number     SUB_HASHSET_TEST06_5200
      * @tc.name      testHashSet06Chapter0052
      * @tc.desc      Test forEach with TypedArray special value storage rules
      * @tc.size      MediumTest
@@ -1836,7 +1836,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_5300
+     * @tc.number     SUB_HASHSET_TEST06_5300
      * @tc.name      testHashSet06Chapter0053
      * @tc.desc      Test forEach with special array (non-numeric indices)
      * @tc.size      MediumTest
@@ -1870,7 +1870,7 @@ export default function HashSet06Test(): void {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST06_5400
+     * @tc.number     SUB_HASHSET_TEST06_5400
      * @tc.name      testHashSet06Chapter0054
      * @tc.desc      Test forEach with array converted to typed array scenario
      * @tc.size      MediumTest

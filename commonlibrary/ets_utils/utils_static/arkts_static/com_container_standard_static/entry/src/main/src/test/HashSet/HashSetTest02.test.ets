@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
 import { HashSet } from '@kit.ArkTS';
 
@@ -227,7 +227,7 @@ export default function HashSet02Test() {
     })
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_0100
+     * @tc.number     SUB_HASHSET_TEST02_0100
      * @tc.name      testHashSet02Chapter0001
      * @tc.desc      Test has method with number type int range values
      * @tc.size      MediumTest
@@ -256,7 +256,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_0200
+     * @tc.number     SUB_HASHSET_TEST02_0200
      * @tc.name      testHashSet02Chapter0002
      * @tc.desc      Test has method with number type long range values
      * @tc.size      MediumTest
@@ -283,7 +283,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_0300
+     * @tc.number     SUB_HASHSET_TEST02_0300
      * @tc.name      testHashSet02Chapter0003
      * @tc.desc      Test has method with number type float range values
      * @tc.size      MediumTest
@@ -315,7 +315,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_0400
+     * @tc.number     SUB_HASHSET_TEST02_0400
      * @tc.name      testHashSet02Chapter0004
      * @tc.desc      Test has method with number type double range values
      * @tc.size      MediumTest
@@ -347,7 +347,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_0500
+     * @tc.number     SUB_HASHSET_TEST02_0500
      * @tc.name      testHashSet02Chapter0005
      * @tc.desc      Test has method with number type char range values
      * @tc.size      MediumTest
@@ -376,7 +376,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_0600
+     * @tc.number     SUB_HASHSET_TEST02_0600
      * @tc.name      testHashSet02Chapter0006
      * @tc.desc      Test has method with bigint values
      * @tc.size      MediumTest
@@ -406,7 +406,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_0700
+     * @tc.number     SUB_HASHSET_TEST02_0700
      * @tc.name      testHashSet02Chapter0007
      * @tc.desc      Test has method with boolean false equivalent values
      * @tc.size      MediumTest
@@ -439,7 +439,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_0800
+     * @tc.number     SUB_HASHSET_TEST02_0800
      * @tc.name      testHashSet02Chapter0008
      * @tc.desc      Test has method with array containing empty slots
      * @tc.size      MediumTest
@@ -465,7 +465,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_0900
+     * @tc.number     SUB_HASHSET_TEST02_0900
      * @tc.name      testHashSet02Chapter0009
      * @tc.desc      Test has method with object containing various property types
      * @tc.size      MediumTest
@@ -503,7 +503,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_1000
+     * @tc.number     SUB_HASHSET_TEST02_1000
      * @tc.name      testHashSet02Chapter0010
      * @tc.desc      Test has method with object containing function property
      * @tc.size      MediumTest
@@ -537,7 +537,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_1100
+     * @tc.number     SUB_HASHSET_TEST02_1100
      * @tc.name      testHashSet02Chapter0011
      * @tc.desc      Test has method with object containing ArrayBuffer
      * @tc.size      MediumTest
@@ -569,7 +569,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_1200
+     * @tc.number     SUB_HASHSET_TEST02_1200
      * @tc.name      testHashSet02Chapter0012
      * @tc.desc      Test has method with object containing DataView
      * @tc.size      MediumTest
@@ -601,7 +601,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_1300
+     * @tc.number     SUB_HASHSET_TEST02_1300
      * @tc.name      testHashSet02Chapter0013
      * @tc.desc      Test has method with object containing TypedArray property
      * @tc.size      MediumTest
@@ -633,7 +633,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_1400
+     * @tc.number     SUB_HASHSET_TEST02_1400
      * @tc.name      testHashSet02Chapter0014
      * @tc.desc      Test has method with object containing Promise property
      * @tc.size      MediumTest
@@ -669,7 +669,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_1500
+     * @tc.number     SUB_HASHSET_TEST02_1500
      * @tc.name      testHashSet02Chapter0015
      * @tc.desc      Test has method with object containing RegExp property
      * @tc.size      MediumTest
@@ -701,7 +701,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_1600
+     * @tc.number     SUB_HASHSET_TEST02_1600
      * @tc.name      testHashSet02Chapter0016
      * @tc.desc      Test has method with large string for memory test
      * @tc.size      MediumTest
@@ -726,7 +726,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_1700
+     * @tc.number     SUB_HASHSET_TEST02_1700
      * @tc.name      testHashSet02Chapter0017
      * @tc.desc      Test has method with nested object structure
      * @tc.size      MediumTest
@@ -766,7 +766,7 @@ export default function HashSet02Test() {
       expect(result2).assertFalse();
     });
     /**
-     * @tc.number    SUB_HASHSET_TEST02_1800
+     * @tc.number     SUB_HASHSET_TEST02_1800
      * @tc.name      testHashSet02Chapter0018
      * @tc.desc      Test has method with null and undefined as HashSet elements
      * @tc.size      MediumTest
@@ -802,7 +802,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_1900
+     * @tc.number     SUB_HASHSET_TEST02_1900
      * @tc.name      testHashSet02Chapter0019
      * @tc.desc      Test has method on empty HashSet
      * @tc.size      MediumTest
@@ -829,7 +829,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_2000
+     * @tc.number     SUB_HASHSET_TEST02_2000
      * @tc.name      testHashSet02Chapter0020
      * @tc.desc      Test has method after adding duplicate elements
      * @tc.size      MediumTest
@@ -857,7 +857,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_2100
+     * @tc.number     SUB_HASHSET_TEST02_2100
      * @tc.name      testHashSet02Chapter0021
      * @tc.desc      Test has method after removing elements
      * @tc.size      MediumTest
@@ -890,7 +890,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_2200
+     * @tc.number     SUB_HASHSET_TEST02_2200
      * @tc.name      testHashSet02Chapter0022
      * @tc.desc      Test has method with object containing optional properties
      * @tc.size      MediumTest
@@ -938,7 +938,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_2300
+     * @tc.number     SUB_HASHSET_TEST02_2300
      * @tc.name      testHashSet02Chapter0023
      * @tc.desc      Test has method with array containing string properties
      * @tc.size      MediumTest
@@ -971,7 +971,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_2400
+     * @tc.number     SUB_HASHSET_TEST02_2400
      * @tc.name      testHashSet02Chapter0024
      * @tc.desc      Test has method with large number of elements for performance
      * @tc.size      MediumTest
@@ -1007,7 +1007,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_2500
+     * @tc.number     SUB_HASHSET_TEST02_2500
      * @tc.name      testHashSet02Chapter0025
      * @tc.desc      Test has method with mixed types in HashSet
      * @tc.size      MediumTest
@@ -1058,7 +1058,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_2600
+     * @tc.number     SUB_HASHSET_TEST02_2600
      * @tc.name      testHashSet02Chapter0026
      * @tc.desc      Test has method with large object containing many properties
      * @tc.size      MediumTest
@@ -1127,7 +1127,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_2700
+     * @tc.number     SUB_HASHSET_TEST02_2700
      * @tc.name      testHashSet02Chapter0027
      * @tc.desc      Test has method with special string containing repeated characters
      * @tc.size      MediumTest
@@ -1160,7 +1160,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_2800
+     * @tc.number     SUB_HASHSET_TEST02_2800
      * @tc.name      testHashSet02Chapter0028
      * @tc.desc      Test has method with complex nested structures
      * @tc.size      MediumTest
@@ -1223,7 +1223,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_2900
+     * @tc.number     SUB_HASHSET_TEST02_2900
      * @tc.name      testHashSet02Chapter0029
      * @tc.desc      Test has method with all primitive types in one HashSet
      * @tc.size      MediumTest
@@ -1274,7 +1274,7 @@ export default function HashSet02Test() {
       });
     });
     /**
-     * @tc.number    SUB_HASHSET_TEST02_3000
+     * @tc.number     SUB_HASHSET_TEST02_3000
      * @tc.name      testHashSet02Chapter0030
      * @tc.desc      Test has method with very large repeated string
      * @tc.size      MediumTest
@@ -1307,7 +1307,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_3100
+     * @tc.number     SUB_HASHSET_TEST02_3100
      * @tc.name      testHashSet02Chapter0031
      * @tc.desc      Test has method with double special characters string
      * @tc.size      MediumTest
@@ -1336,7 +1336,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_3200
+     * @tc.number     SUB_HASHSET_TEST02_3200
      * @tc.name      testHashSet02Chapter0032
      * @tc.desc      Test has method with float precision boundary values
      * @tc.size      MediumTest
@@ -1380,7 +1380,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_3300
+     * @tc.number     SUB_HASHSET_TEST02_3300
      * @tc.name      testHashSet02Chapter0033
      * @tc.desc      Test has method with array containing additional string properties
      * @tc.size      MediumTest
@@ -1424,7 +1424,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_3400
+     * @tc.number     SUB_HASHSET_TEST02_3400
      * @tc.name      testHashSet02Chapter0034
      * @tc.desc      Test has method with large object containing many numbered properties
      * @tc.size      MediumTest
@@ -1609,7 +1609,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_3500
+     * @tc.number     SUB_HASHSET_TEST02_3500
      * @tc.name      testHashSet02Chapter0035
      * @tc.desc      Test has method with double precision boundary values
      * @tc.size      MediumTest
@@ -1654,7 +1654,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_3600
+     * @tc.number     SUB_HASHSET_TEST02_3600
      * @tc.name      testHashSet02Chapter0036
      * @tc.desc      Test has method with BigInt64Array overflow values
      * @tc.size      MediumTest
@@ -1695,7 +1695,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_3700
+     * @tc.number     SUB_HASHSET_TEST02_3700
      * @tc.name      testHashSet02Chapter0037
      * @tc.desc      Test has method with BigUint64Array overflow values
      * @tc.size      MediumTest
@@ -1731,7 +1731,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_3800
+     * @tc.number     SUB_HASHSET_TEST02_3800
      * @tc.name      testHashSet02Chapter0038
      * @tc.desc      Test has method with performance test for mixed types
      * @tc.size      MediumTest
@@ -1797,7 +1797,7 @@ export default function HashSet02Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHSET_TEST02_3900
+     * @tc.number     SUB_HASHSET_TEST02_3900
      * @tc.name      testHashSet02Chapter0039
      * @tc.desc      Test has method with complex combined data structure
      * @tc.size      MediumTest
