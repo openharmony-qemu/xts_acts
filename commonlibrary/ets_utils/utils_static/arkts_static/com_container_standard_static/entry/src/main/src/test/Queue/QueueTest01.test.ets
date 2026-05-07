@@ -119,7 +119,7 @@ export default function Queue01Test(): void {
     })
 
     /**
-     * @tc.number SUB_QUEUE_TEST01_0100
+     * @tc.number SUB_QUEUE_TESTONE_0100
      * @tc.name testQueue01Chapter0001
      * @tc.desc Test Queue constructor with number type
      * @tc.size MediumTest
@@ -134,7 +134,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number SUB_QUEUE_TEST01_0200
+     * @tc.number SUB_QUEUE_TESTONE_0200
      * @tc.name testQueue01Chapter0002
      * @tc.desc Test Queue constructor with string type
      * @tc.size MediumTest
@@ -149,7 +149,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number SUB_QUEUE_TEST01_0300
+     * @tc.number SUB_QUEUE_TESTONE_0300
      * @tc.name testQueue01Chapter0003
      * @tc.desc Test Queue constructor with object type
      * @tc.size MediumTest
@@ -164,7 +164,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number SUB_QUEUE_TEST01_0400
+     * @tc.number SUB_QUEUE_TESTONE_0400
      * @tc.name testQueue01Chapter0004
      * @tc.desc Test Queue constructor with union type number or string or object
      * @tc.size MediumTest
@@ -180,7 +180,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number SUB_QUEUE_TEST01_0500
+     * @tc.number SUB_QUEUE_TESTONE_0500
      * @tc.name testQueue01Chapter0005
      * @tc.desc Test Queue constructor with boolean type
      * @tc.size MediumTest
@@ -195,7 +195,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number SUB_QUEUE_TEST01_0600
+     * @tc.number SUB_QUEUE_TESTONE_0600
      * @tc.name testQueue01Chapter0006
      * @tc.desc Test Queue constructor with custom interface type
      * @tc.size MediumTest
@@ -211,7 +211,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number SUB_QUEUE_TEST01_0700
+     * @tc.number SUB_QUEUE_TESTONE_0700
      * @tc.name testQueue01Chapter0007
      * @tc.desc Test Queue constructor with array type
      * @tc.size MediumTest
@@ -226,7 +226,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number SUB_QUEUE_TEST01_0800
+     * @tc.number SUB_QUEUE_TESTONE_0800
      * @tc.name testQueue01Chapter0008
      * @tc.desc Test Queue constructor cannot be directly invoked
      * @tc.size MediumTest
@@ -250,7 +250,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_0900
+     * @tc.number    SUB_QUEUE_TESTONE_0900
      * @tc.name      testQueue01Chapter0009
      * @tc.desc      Add NaN to number queue
      * @tc.size      MediumTest
@@ -266,7 +266,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_1000
+     * @tc.number    SUB_QUEUE_TESTONE_1000
      * @tc.name      testQueue01Chapter0010
      * @tc.desc      Add Infinity to number queue
      * @tc.size      MediumTest
@@ -282,7 +282,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_1100
+     * @tc.number    SUB_QUEUE_TESTONE_1100
      * @tc.name      testQueue01Chapter0011
      * @tc.desc      Add negative Infinity to number queue
      * @tc.size      MediumTest
@@ -298,7 +298,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_1200
+     * @tc.number    SUB_QUEUE_TESTONE_1200
      * @tc.name      testQueue01Chapter0012
      * @tc.desc      Add Number.MAX_VALUE to queue
      * @tc.size      MediumTest
@@ -314,7 +314,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_1300
+     * @tc.number    SUB_QUEUE_TESTONE_1300
      * @tc.name      testQueue01Chapter0013
      * @tc.desc      Add Number.MIN_VALUE to queue
      * @tc.size      MediumTest
@@ -330,7 +330,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_1400
+     * @tc.number    SUB_QUEUE_TESTONE_1400
      * @tc.name      testQueue01Chapter0014
      * @tc.desc      Add Number.EPSILON to queue
      * @tc.size      MediumTest
@@ -346,7 +346,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_1500
+     * @tc.number    SUB_QUEUE_TESTONE_1500
      * @tc.name      testQueue01Chapter0015
      * @tc.desc      Add Number.MAX_SAFE_INTEGER to queue
      * @tc.size      MediumTest
@@ -362,7 +362,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_1600
+     * @tc.number    SUB_QUEUE_TESTONE_1600
      * @tc.name      testQueue01Chapter0016
      * @tc.desc      Add normal string element to queue
      * @tc.size      MediumTest
@@ -378,7 +378,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_1700
+     * @tc.number    SUB_QUEUE_TESTONE_1700
      * @tc.name      testQueue01Chapter0017
      * @tc.desc      Add empty string to queue
      * @tc.size      MediumTest
@@ -394,7 +394,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_1800
+     * @tc.number    SUB_QUEUE_TESTONE_1800
      * @tc.name      testQueue01Chapter0018
      * @tc.desc      Add string with special characters to queue
      * @tc.size      MediumTest
@@ -410,7 +410,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_1900
+     * @tc.number    SUB_QUEUE_TESTONE_1900
      * @tc.name      testQueue01Chapter0019
      * @tc.desc      Add ASCII string to queue
      * @tc.size      MediumTest
@@ -428,7 +428,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_2000
+     * @tc.number    SUB_QUEUE_TESTONE_2000
      * @tc.name      testQueue01Chapter0020
      * @tc.desc      Add string with escape characters to queue
      * @tc.size      MediumTest
@@ -444,7 +444,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_2100
+     * @tc.number    SUB_QUEUE_TESTONE_2100
      * @tc.name      testQueue01Chapter0021
      * @tc.desc      Add string with emoji to queue
      * @tc.size      MediumTest
@@ -460,7 +460,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_2200
+     * @tc.number    SUB_QUEUE_TESTONE_2200
      * @tc.name      testQueue01Chapter0022
      * @tc.desc      Add boolean true to queue
      * @tc.size      MediumTest
@@ -476,7 +476,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_2300
+     * @tc.number    SUB_QUEUE_TESTONE_2300
      * @tc.name      testQueue01Chapter0023
      * @tc.desc      Add boolean false to queue
      * @tc.size      MediumTest
@@ -492,7 +492,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_2400
+     * @tc.number    SUB_QUEUE_TESTONE_2400
      * @tc.name      testQueue01Chapter0024
      * @tc.desc      Add normal array to queue
      * @tc.size      MediumTest
@@ -509,7 +509,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_2500
+     * @tc.number    SUB_QUEUE_TESTONE_2500
      * @tc.name      testQueue01Chapter0025
      * @tc.desc      Add array with multiple zeros to queue
      * @tc.size      MediumTest
@@ -526,7 +526,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_2600
+     * @tc.number    SUB_QUEUE_TESTONE_2600
      * @tc.name      testQueue01Chapter0026
      * @tc.desc      Add empty array to queue
      * @tc.size      MediumTest
@@ -543,7 +543,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_2700
+     * @tc.number    SUB_QUEUE_TESTONE_2700
      * @tc.name      testQueue01Chapter0027
      * @tc.desc      Add array with NaN and Infinity to queue
      * @tc.size      MediumTest
@@ -560,7 +560,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_2800
+     * @tc.number    SUB_QUEUE_TESTONE_2800
      * @tc.name      testQueue01Chapter0028
      * @tc.desc      Add array with mixed types to generic queue
      * @tc.size      MediumTest
@@ -578,7 +578,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_2900
+     * @tc.number    SUB_QUEUE_TESTONE_2900
      * @tc.name      testQueue01Chapter0029
      * @tc.desc      Add normal object to queue
      * @tc.size      MediumTest
@@ -596,7 +596,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_3000
+     * @tc.number    SUB_QUEUE_TESTONE_3000
      * @tc.name      testQueue01Chapter0030
      * @tc.desc      Add nested object to queue
      * @tc.size      MediumTest
@@ -614,7 +614,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_3100
+     * @tc.number    SUB_QUEUE_TESTONE_3100
      * @tc.name      testQueue01Chapter0031
      * @tc.desc      Add object with undefined property to queue
      * @tc.size      MediumTest
@@ -632,7 +632,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_3200
+     * @tc.number    SUB_QUEUE_TESTONE_3200
      * @tc.name      testQueue01Chapter0032
      * @tc.desc      Add object with null property to queue
      * @tc.size      MediumTest
@@ -650,7 +650,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_3300
+     * @tc.number    SUB_QUEUE_TESTONE_3300
      * @tc.name      testQueue01Chapter0033
      * @tc.desc      Add object with NaN property to queue
      * @tc.size      MediumTest
@@ -668,7 +668,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_3400
+     * @tc.number    SUB_QUEUE_TESTONE_3400
      * @tc.name      testQueue01Chapter0034
      * @tc.desc      Add object with Infinity property to queue
      * @tc.size      MediumTest
@@ -686,7 +686,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_3500
+     * @tc.number    SUB_QUEUE_TESTONE_3500
      * @tc.name      testQueue01Chapter0035
      * @tc.desc      Add TypedArray (Uint8Array) to queue
      * @tc.size      MediumTest
@@ -703,7 +703,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_3600
+     * @tc.number    SUB_QUEUE_TESTONE_3600
      * @tc.name      testQueue01Chapter0036
      * @tc.desc      Add Int8Array with boundary values to queue
      * @tc.size      MediumTest
@@ -720,7 +720,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_3700
+     * @tc.number    SUB_QUEUE_TESTONE_3700
      * @tc.name      testQueue01Chapter0037
      * @tc.desc      Add Uint8Array with boundary values to queue
      * @tc.size      MediumTest
@@ -737,7 +737,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_3800
+     * @tc.number    SUB_QUEUE_TESTONE_3800
      * @tc.name      testQueue01Chapter0038
      * @tc.desc      Add Float32Array with boundary values to queue
      * @tc.size      MediumTest
@@ -754,7 +754,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_3900
+     * @tc.number    SUB_QUEUE_TESTONE_3900
      * @tc.name      testQueue01Chapter0039
      * @tc.desc      Add Float64Array with boundary values to queue
      * @tc.size      MediumTest
@@ -771,7 +771,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_4000
+     * @tc.number    SUB_QUEUE_TESTONE_4000
      * @tc.name      testQueue01Chapter0040
      * @tc.desc      Add Map object to queue
      * @tc.size      MediumTest
@@ -790,7 +790,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_4100
+     * @tc.number    SUB_QUEUE_TESTONE_4100
      * @tc.name      testQueue01Chapter0041
      * @tc.desc      Add Set object to queue
      * @tc.size      MediumTest
@@ -807,7 +807,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_4200
+     * @tc.number    SUB_QUEUE_TESTONE_4200
      * @tc.name      testQueue01Chapter0042
      * @tc.desc      Add regular expression object to queue
      * @tc.size      MediumTest
@@ -824,7 +824,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_4300
+     * @tc.number    SUB_QUEUE_TESTONE_4300
      * @tc.name      testQueue01Chapter0043
      * @tc.desc      Add multiple elements to queue
      * @tc.size      MediumTest
@@ -842,7 +842,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_4400
+     * @tc.number    SUB_QUEUE_TESTONE_4400
      * @tc.name      testQueue01Chapter0044
      * @tc.desc      Add large string to queue and check memory
      * @tc.size      MediumTest
@@ -859,7 +859,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_4500
+     * @tc.number    SUB_QUEUE_TESTONE_4500
      * @tc.name      testQueue01Chapter0045
      * @tc.desc      Add tree string to queue
      * @tc.size      MediumTest
@@ -884,7 +884,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_4600
+     * @tc.number    SUB_QUEUE_TESTONE_4600
      * @tc.name      testQueue01Chapter0046
      * @tc.desc      Add slice string to queue
      * @tc.size      MediumTest
@@ -902,7 +902,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_4700
+     * @tc.number    SUB_QUEUE_TESTONE_4700
      * @tc.name      testQueue01Chapter0047
      * @tc.desc      Add ArrayBuffer to queue
      * @tc.size      MediumTest
@@ -919,7 +919,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_4800
+     * @tc.number    SUB_QUEUE_TESTONE_4800
      * @tc.name      testQueue01Chapter0048
      * @tc.desc      Add DataView to queue
      * @tc.size      MediumTest
@@ -937,7 +937,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_4900
+     * @tc.number    SUB_QUEUE_TESTONE_4900
      * @tc.name      testQueue01Chapter0049
      * @tc.desc      Add BigInt to queue
      * @tc.size      MediumTest
@@ -954,7 +954,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_5000
+     * @tc.number    SUB_QUEUE_TESTONE_5000
      * @tc.name      testQueue01Chapter0050
      * @tc.desc      Add BigInt64Array to queue
      * @tc.size      MediumTest
@@ -972,7 +972,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_5100
+     * @tc.number    SUB_QUEUE_TESTONE_5100
      * @tc.name      testQueue01Chapter0051
      * @tc.desc      Add BigUint64Array to queue
      * @tc.size      MediumTest
@@ -989,7 +989,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_5200
+     * @tc.number    SUB_QUEUE_TESTONE_5200
      * @tc.name      testQueue01Chapter0052
      * @tc.desc      Add object with function property to queue
      * @tc.size      MediumTest
@@ -1012,7 +1012,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_5300
+     * @tc.number    SUB_QUEUE_TESTONE_5300
      * @tc.name      testQueue01Chapter0053
      * @tc.desc      Add object with Symbol key to queue
      * @tc.size      MediumTest
@@ -1031,7 +1031,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_5400
+     * @tc.number    SUB_QUEUE_TESTONE_5400
      * @tc.name      testQueue01Chapter0054
      * @tc.desc      Add Promise object to queue
      * @tc.size      MediumTest
@@ -1050,7 +1050,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_5500
+     * @tc.number    SUB_QUEUE_TESTONE_5500
      * @tc.name      testQueue01Chapter0055
      * @tc.desc      Add object with TypedArray property to queue
      * @tc.size      MediumTest
@@ -1071,7 +1071,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_5600
+     * @tc.number    SUB_QUEUE_TESTONE_5600
      * @tc.name      testQueue01Chapter0056
      * @tc.desc      Add undefined value to queue
      * @tc.size      MediumTest
@@ -1087,7 +1087,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_5700
+     * @tc.number    SUB_QUEUE_TESTONE_5700
      * @tc.name      testQueue01Chapter0057
      * @tc.desc      Add null value to queue
      * @tc.size      MediumTest
@@ -1103,7 +1103,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_5800
+     * @tc.number    SUB_QUEUE_TESTONE_5800
      * @tc.name      testQueue01Chapter0058
      * @tc.desc      Add array-like object to queue
      * @tc.size      MediumTest
@@ -1124,7 +1124,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_5900
+     * @tc.number    SUB_QUEUE_TESTONE_5900
      * @tc.name      testQueue01Chapter0059
      * @tc.desc      Add self-referencing object to queue
      * @tc.size      MediumTest
@@ -1143,7 +1143,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_6000
+     * @tc.number    SUB_QUEUE_TESTONE_6000
      * @tc.name      testQueue01Chapter0060
      * @tc.desc      pop method returns first element and removes it from queue
      * @tc.size      MediumTest
@@ -1165,7 +1165,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_6100
+     * @tc.number    SUB_QUEUE_TESTONE_6100
      * @tc.name      testQueue01Chapter0061
      * @tc.desc      pop method works correctly with single element queue
      * @tc.size      MediumTest
@@ -1183,7 +1183,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_6200
+     * @tc.number    SUB_QUEUE_TESTONE_6200
      * @tc.name      testQueue01Chapter0062
      * @tc.desc      pop method works with multiple consecutive calls
      * @tc.size      MediumTest
@@ -1207,7 +1207,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_6300
+     * @tc.number    SUB_QUEUE_TESTONE_6300
      * @tc.name      testQueue01Chapter0063
      * @tc.desc      pop method with object type elements
      * @tc.size      MediumTest
@@ -1229,7 +1229,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_6400
+     * @tc.number    SUB_QUEUE_TESTONE_6400
      * @tc.name      testQueue01Chapter0064
      * @tc.desc      pop method with boolean type elements
      * @tc.size      MediumTest
@@ -1249,7 +1249,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_6500
+     * @tc.number    SUB_QUEUE_TESTONE_6500
      * @tc.name      testQueue01Chapter0065
      * @tc.desc      pop method with array type elements
      * @tc.size      MediumTest
@@ -1270,7 +1270,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_6600
+     * @tc.number    SUB_QUEUE_TESTONE_6600
      * @tc.name      testQueue01Chapter0066
      * @tc.desc      pop method with null and undefined elements
      * @tc.size      MediumTest
@@ -1294,7 +1294,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_6700
+     * @tc.number    SUB_QUEUE_TESTONE_6700
      * @tc.name      testQueue01Chapter0067
      * @tc.desc      pop method returns correct element after add and pop operations
      * @tc.size      MediumTest
@@ -1316,7 +1316,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_6800
+     * @tc.number    SUB_QUEUE_TESTONE_6800
      * @tc.name      testQueue01Chapter0068
      * @tc.desc      pop method cannot be bound error scenario
      * @tc.size      MediumTest
@@ -1354,7 +1354,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_6900
+     * @tc.number    SUB_QUEUE_TESTONE_6900
      * @tc.name      testQueue01Chapter0069
      * @tc.desc      pop method error when called on extracted method with wrong context
      * @tc.size      MediumTest
@@ -1379,7 +1379,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_7000
+     * @tc.number    SUB_QUEUE_TESTONE_7000
      * @tc.name      testQueue01Chapter0070
      * @tc.desc      pop method with large number of elements
      * @tc.size      MediumTest
@@ -1401,7 +1401,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_7100
+     * @tc.number    SUB_QUEUE_TESTONE_7100
      * @tc.name      testQueue01Chapter0071
      * @tc.desc      pop method maintains queue order after multiple operations
      * @tc.size      MediumTest
@@ -1428,7 +1428,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_7200
+     * @tc.number    SUB_QUEUE_TESTONE_7200
      * @tc.name      testQueue01Chapter0072
      * @tc.desc      Test getFirst method with normal queue elements
      * @tc.size      MediumTest
@@ -1448,7 +1448,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_7300
+     * @tc.number    SUB_QUEUE_TESTONE_7300
      * @tc.name      testQueue01Chapter0073
      * @tc.desc      Test getFirst method with string type queue
      * @tc.size      MediumTest
@@ -1467,7 +1467,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_7400
+     * @tc.number    SUB_QUEUE_TESTONE_7400
      * @tc.name      testQueue01Chapter0074
      * @tc.desc      Test getFirst method with object type queue
      * @tc.size      MediumTest
@@ -1489,7 +1489,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_7500
+     * @tc.number    SUB_QUEUE_TESTONE_7500
      * @tc.name      testQueue01Chapter0075
      * @tc.desc      Test getFirst method with empty queue to trigger error
      * @tc.size      MediumTest
@@ -1506,7 +1506,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_7600
+     * @tc.number    SUB_QUEUE_TESTONE_7600
      * @tc.name      testQueue01Chapter0076
      * @tc.desc      Test pop method on empty queue
      * @tc.size      MediumTest
@@ -1524,7 +1524,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_7700
+     * @tc.number    SUB_QUEUE_TESTONE_7700
      * @tc.name      testQueue01Chapter0077
      * @tc.desc      Test getFirst method with single element queue
      * @tc.size      MediumTest
@@ -1541,7 +1541,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_7800
+     * @tc.number    SUB_QUEUE_TESTONE_7800
      * @tc.name      testQueue01Chapter0078
      * @tc.desc      Test forEach with queue containing TypedArray elements (Int8Array)
      * @tc.size      MediumTest
@@ -1566,7 +1566,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_7900
+     * @tc.number    SUB_QUEUE_TESTONE_7900
      * @tc.name      testQueue01Chapter0079
      * @tc.desc      Test forEach with queue containing TypedArray elements (Uint8Array)
      * @tc.size      MediumTest
@@ -1591,7 +1591,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_8000
+     * @tc.number    SUB_QUEUE_TESTONE_8000
      * @tc.name      testQueue01Chapter0080
      * @tc.desc      Test forEach with queue containing TypedArray elements (Uint8ClampedArray)
      * @tc.size      MediumTest
@@ -1616,7 +1616,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_8100
+     * @tc.number    SUB_QUEUE_TESTONE_8100
      * @tc.name      testQueue01Chapter0081
      * @tc.desc      Test forEach with queue containing TypedArray elements (Int16Array)
      * @tc.size      MediumTest
@@ -1641,7 +1641,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_8200
+     * @tc.number    SUB_QUEUE_TESTONE_8200
      * @tc.name      testQueue01Chapter0082
      * @tc.desc      Test forEach with queue containing TypedArray elements (Uint16Array)
      * @tc.size      MediumTest
@@ -1666,7 +1666,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_8300
+     * @tc.number    SUB_QUEUE_TESTONE_8300
      * @tc.name      testQueue01Chapter0083
      * @tc.desc      Test forEach with queue containing TypedArray elements (Int32Array)
      * @tc.size      MediumTest
@@ -1691,7 +1691,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_8400
+     * @tc.number    SUB_QUEUE_TESTONE_8400
      * @tc.name      testQueue01Chapter0084
      * @tc.desc      Test forEach with queue containing TypedArray elements (Uint32Array)
      * @tc.size      MediumTest
@@ -1716,7 +1716,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_8500
+     * @tc.number    SUB_QUEUE_TESTONE_8500
      * @tc.name      testQueue01Chapter0085
      * @tc.desc      Test forEach with queue containing TypedArray elements (Float32Array)
      * @tc.size      MediumTest
@@ -1740,7 +1740,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_8600
+     * @tc.number    SUB_QUEUE_TESTONE_8600
      * @tc.name      testQueue01Chapter0086
      * @tc.desc      Test forEach with queue containing TypedArray elements (Float64Array)
      * @tc.size      MediumTest
@@ -1764,7 +1764,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_8700
+     * @tc.number    SUB_QUEUE_TESTONE_8700
      * @tc.name      testQueue01Chapter0087
      * @tc.desc      Test forEach with queue containing TypedArray elements (BigInt64Array)
      * @tc.size      MediumTest
@@ -1789,7 +1789,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_8800
+     * @tc.number    SUB_QUEUE_TESTONE_8800
      * @tc.name      testQueue01Chapter0088
      * @tc.desc      Test forEach with queue containing TypedArray elements (BigUint64Array)
      * @tc.size      MediumTest
@@ -1814,7 +1814,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_8900
+     * @tc.number    SUB_QUEUE_TESTONE_8900
      * @tc.name      testQueue01Chapter0089
      * @tc.desc      Test forEach with queue containing special values (Infinity, -Infinity, NaN) in Float arrays
      * @tc.size      MediumTest
@@ -1852,7 +1852,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_9000
+     * @tc.number    SUB_QUEUE_TESTONE_9000
      * @tc.name      testQueue01Chapter0090
      * @tc.desc      Test forEach with queue containing special string characters
      * @tc.size      MediumTest
@@ -1879,7 +1879,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_9100
+     * @tc.number    SUB_QUEUE_TESTONE_9100
      * @tc.name      testQueue01Chapter0091
      * @tc.desc      Test forEach with queue containing ASCII characters
      * @tc.size      MediumTest
@@ -1907,7 +1907,7 @@ export default function Queue01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST01_9200
+     * @tc.number    SUB_QUEUE_TESTONE_9200
      * @tc.name      testQueue01Chapter0092
      * @tc.desc      Test forEach with queue containing escape sequences
      * @tc.size      MediumTest

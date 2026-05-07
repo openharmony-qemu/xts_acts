@@ -78,7 +78,7 @@ export default function Queue02Test(): void {
     })
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_0100
+     * @tc.number    SUB_QUEUE_TESTTWO_0100
      * @tc.name      testQueue02Chapter0001
      * @tc.desc      Test forEach with queue containing emoji characters
      * @tc.size      MediumTest
@@ -106,7 +106,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_0200
+     * @tc.number    SUB_QUEUE_TESTTWO_0200
      * @tc.name      testQueue02Chapter0002
      * @tc.desc      Test forEach with queue containing illegal unicode sequences
      * @tc.size      MediumTest
@@ -133,7 +133,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_0300
+     * @tc.number    SUB_QUEUE_TESTTWO_0300
      * @tc.name      testQueue02Chapter0003
      * @tc.desc      Test forEach with queue containing keywords as strings
      * @tc.size      MediumTest
@@ -161,7 +161,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_0400
+     * @tc.number    SUB_QUEUE_TESTTWO_0400
      * @tc.name      testQueue02Chapter0004
      * @tc.desc      Test forEach with large string in queue
      * @tc.size      MediumTest
@@ -187,7 +187,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_0500
+     * @tc.number    SUB_QUEUE_TESTTWO_0500
      * @tc.name      testQueue02Chapter0005
      * @tc.desc      Test forEach with various number types in queue
      * @tc.size      MediumTest
@@ -238,7 +238,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_0600
+     * @tc.number    SUB_QUEUE_TESTTWO_0600
      * @tc.name      testQueue02Chapter0006
      * @tc.desc      Test forEach with queue containing boolean values
      * @tc.size      MediumTest
@@ -270,7 +270,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_0700
+     * @tc.number    SUB_QUEUE_TESTTWO_0700
      * @tc.name      testQueue02Chapter0007
      * @tc.desc      Test forEach with queue containing array elements
      * @tc.size      MediumTest
@@ -294,7 +294,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_0800
+     * @tc.number    SUB_QUEUE_TESTTWO_0800
      * @tc.name      testQueue02Chapter0008
      * @tc.desc      Test forEach with queue containing arrays with special values
      * @tc.size      MediumTest
@@ -330,7 +330,7 @@ export default function Queue02Test(): void {
       expect(hasInfinity).assertTrue();
     });
     /**
-     * @tc.number    SUB_QUEUE_TEST02_0900
+     * @tc.number    SUB_QUEUE_TESTTWO_0900
      * @tc.name      testQueue02Chapter0009
      * @tc.desc      Test forEach with queue containing complex objects
      * @tc.size      MediumTest
@@ -385,7 +385,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_1000
+     * @tc.number    SUB_QUEUE_TESTTWO_1000
      * @tc.name      testQueue02Chapter0010
      * @tc.desc      Test forEach callback modifying queue elements (should not affect iteration)
      * @tc.size      MediumTest
@@ -420,7 +420,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_1100
+     * @tc.number    SUB_QUEUE_TESTTWO_1100
      * @tc.name      testQueue02Chapter0011
      * @tc.desc      Test forEach with queue containing mixed types using multiple queues
      * @tc.size      MediumTest
@@ -497,7 +497,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_1200
+     * @tc.number    SUB_QUEUE_TESTTWO_1200
      * @tc.name      testQueue02Chapter0012
      * @tc.desc      Test forEach with extremely large queue
      * @tc.size      MediumTest
@@ -528,7 +528,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_1300
+     * @tc.number    SUB_QUEUE_TESTTWO_1300
      * @tc.name      testQueue02Chapter0013
      * @tc.desc      Test forEach with callback that uses all three parameters
      * @tc.size      MediumTest
@@ -555,7 +555,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_1400
+     * @tc.number    SUB_QUEUE_TESTTWO_1400
      * @tc.name      testQueue02Chapter0014
      * @tc.desc      Test forEach with arrow function that captures outer scope
      * @tc.size      MediumTest
@@ -581,7 +581,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_1500
+     * @tc.number    SUB_QUEUE_TESTTWO_1500
      * @tc.name      testQueue02Chapter0015
      * @tc.desc      Negative test: forEach with callback that throws TypeError
      * @tc.size      MediumTest
@@ -609,7 +609,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_1600
+     * @tc.number    SUB_QUEUE_TESTTWO_1600
      * @tc.name      testQueue02Chapter0016
      * @tc.desc      Test forEach with queue containing special string characters
      * @tc.size      MediumTest
@@ -636,7 +636,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_1700
+     * @tc.number    SUB_QUEUE_TESTTWO_1700
      * @tc.name      testQueue02Chapter0017
      * @tc.desc      Test forEach with queue containing ASCII characters
      * @tc.size      MediumTest
@@ -664,7 +664,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_1800
+     * @tc.number    SUB_QUEUE_TESTTWO_1800
      * @tc.name      testQueue02Chapter0018
      * @tc.desc      Test forEach with queue containing escape sequences
      * @tc.size      MediumTest
@@ -692,7 +692,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_1900
+     * @tc.number    SUB_QUEUE_TESTTWO_1900
      * @tc.name      testQueue02Chapter0019
      * @tc.desc      Test [Symbol.iterator] method on empty queue
      * @tc.size      MediumTest
@@ -711,7 +711,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_2000
+     * @tc.number    SUB_QUEUE_TESTTWO_2000
      * @tc.name      testQueue02Chapter0020
      * @tc.desc      Test [Symbol.iterator] method on queue with single element
      * @tc.size      MediumTest
@@ -732,7 +732,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_2100
+     * @tc.number    SUB_QUEUE_TESTTWO_2100
      * @tc.name      testQueue02Chapter0021
      * @tc.desc      Test [Symbol.iterator] method on queue with multiple elements using for-of loop
      * @tc.size      MediumTest
@@ -757,7 +757,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_2200
+     * @tc.number    SUB_QUEUE_TESTTWO_2200
      * @tc.name      testQueue02Chapter0022
      * @tc.desc      Test [Symbol.iterator] method on queue with multiple elements using manual iteration
      * @tc.size      MediumTest
@@ -784,7 +784,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_2300
+     * @tc.number    SUB_QUEUE_TESTTWO_2300
      * @tc.name      testQueue02Chapter0023
      * @tc.desc      Test [Symbol.iterator] method on queue with different data types
      * @tc.size      MediumTest
@@ -809,7 +809,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_2400
+     * @tc.number    SUB_QUEUE_TESTTWO_2400
      * @tc.name      testQueue02Chapter0024
      * @tc.desc      Test [Symbol.iterator] method on queue with boolean values
      * @tc.size      MediumTest
@@ -834,7 +834,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_2500
+     * @tc.number    SUB_QUEUE_TESTTWO_2500
      * @tc.name      testQueue02Chapter0025
      * @tc.desc      Test [Symbol.iterator] method on queue with object values
      * @tc.size      MediumTest
@@ -859,7 +859,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_2600
+     * @tc.number    SUB_QUEUE_TESTTWO_2600
      * @tc.name      testQueue02Chapter0026
      * @tc.desc      Test [Symbol.iterator] method on queue after adding elements during iteration
      * @tc.size      MediumTest
@@ -887,7 +887,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_2700
+     * @tc.number    SUB_QUEUE_TESTTWO_2700
      * @tc.name      testQueue02Chapter0027
      * @tc.desc      Test [Symbol.iterator] method returns independent iterators
      * @tc.size      MediumTest
@@ -917,7 +917,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_2800
+     * @tc.number    SUB_QUEUE_TESTTWO_2800
      * @tc.name      testQueue02Chapter0028
      * @tc.desc      Test [Symbol.iterator] method on queue with NaN and Infinity values
      * @tc.size      MediumTest
@@ -942,7 +942,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_2900
+     * @tc.number    SUB_QUEUE_TESTTWO_2900
      * @tc.name      testQueue02Chapter0029
      * @tc.desc      Test [Symbol.iterator] method on queue with large number of elements
      * @tc.size      MediumTest
@@ -965,7 +965,7 @@ export default function Queue02Test(): void {
       expect(index).assertEqual(count);
     });
     /**
-     * @tc.number    SUB_QUEUE_TEST02_3000
+     * @tc.number    SUB_QUEUE_TESTTWO_3000
      * @tc.name      testQueue02Chapter0030
      * @tc.desc      Test [Symbol.iterator] method on queue with null and undefined values
      * @tc.size      MediumTest
@@ -990,7 +990,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_3100
+     * @tc.number    SUB_QUEUE_TESTTWO_3100
      * @tc.name      testQueue02Chapter0031
      * @tc.desc      Test [Symbol.iterator] method on queue with duplicate values
      * @tc.size      MediumTest
@@ -1015,7 +1015,7 @@ export default function Queue02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_QUEUE_TEST02_3200
+     * @tc.number    SUB_QUEUE_TESTTWO_3200
      * @tc.name      testQueue02Chapter0032
      * @tc.desc      Test [Symbol.iterator] method iterator can be used in spread operator
      * @tc.size      MediumTest
