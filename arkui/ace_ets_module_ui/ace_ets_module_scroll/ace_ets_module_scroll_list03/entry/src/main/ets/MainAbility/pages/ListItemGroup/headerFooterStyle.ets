@@ -117,7 +117,7 @@ struct ListItemGroupHeaderFooterStyleUx{
               footerStyle: ListItemGroupHeaderFooterStyle.NONE
             }) {
               ListItem({ style: ListItemStyle.CARD }) {
-                Text("footerStyle.NONE")
+                Text('footerStyle.NONE')
                   .fontSize(10)
                   .width('100%')
                   .textAlign(TextAlign.Center)
@@ -135,7 +135,7 @@ struct ListItemGroupHeaderFooterStyleUx{
               footerStyle: ListItemGroupHeaderFooterStyle.FLOATING
             }) {
               ListItem({ style: ListItemStyle.CARD }) {
-                Text("footerStyle.FLOATING")
+                Text('footerStyle.FLOATING')
                   .fontSize(10)
                   .width('100%')
                   .textAlign(TextAlign.Center)
@@ -157,7 +157,7 @@ struct ListItemGroupHeaderFooterStyleUx{
               footerStyle: null
             }) {
               ListItem({ style: ListItemStyle.CARD }) {
-                Text("footerStyle.null")
+                Text('footerStyle.null')
                   .fontSize(10)
                   .width('100%')
                   .textAlign(TextAlign.Center)
@@ -175,7 +175,7 @@ struct ListItemGroupHeaderFooterStyleUx{
               footerStyle: undefined
             }) {
               ListItem({ style: ListItemStyle.CARD }) {
-                Text("footerStyle.undefined")
+                Text('footerStyle.undefined')
                   .fontSize(10)
                   .width('100%')
                   .textAlign(TextAlign.Center)
