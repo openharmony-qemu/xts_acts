@@ -22,6 +22,7 @@
 #include <multimedia/player_framework/native_avdemuxer.h>
 #include <multimedia/player_framework/native_avsource.h>
 #include <multimedia/player_framework/native_avmemory.h>
+#include <multimedia/player_framework/native_avcodec_videoencoder.h>
 #include <fcntl.h>
 #include <string>
 #include <sys/stat.h>
