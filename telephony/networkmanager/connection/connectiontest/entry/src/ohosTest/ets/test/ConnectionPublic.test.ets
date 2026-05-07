@@ -10151,7 +10151,7 @@ export default function ConnectionPublicTest() {
     /**
      * @tc.name   testNetworkMgrConnectionTraceRoute1300
      * @tc.number SUB_NetworkMgr_Connection_TraceRoute_1300
-     * @tc.desc   Test the destination address invaild
+     * @tc.desc   Test the destination address invalid
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -10160,7 +10160,7 @@ export default function ConnectionPublicTest() {
       const caseName: string = "testNetworkMgrConnectionTraceRoute1300";
       console.info(`${caseName} test Start`);
       try {
-        let destination = "123.invaild.com";
+        let destination = "123.invalid.com";
         let option: connection.TraceRouteOptions = {
           maxJumpNumber: 30,
           packetsType: connection.PacketsType.NETCONN_PACKETS_ICMP,
