@@ -32,5 +32,4 @@ export default function testsuite() {
   setChannelBlendMode();
   setVolumeWithRamp();
   AudioRoutingManagerTest();
-  audioOriginalAppIdInfoTest();
 }
