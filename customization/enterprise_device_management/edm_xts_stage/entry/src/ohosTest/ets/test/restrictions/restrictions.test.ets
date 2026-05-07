@@ -2692,6 +2692,216 @@ function testSetDisallowedPolicy() {
     });
 
     /**
+     * @tc.name   test_set_disallowed_policy_sudo_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_0100
+     * @tc.desc   test restrictions setDisallowedPolicy with sudo feature without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_set_disallowed_policy_sudo_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO, true);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200001).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_sudo_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_0300
+     * @tc.desc   test restrictions setDisallowedPolicy with sudo feature null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_set_disallowed_policy_sudo_0300", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(null, restrictions.FeatureForDevice.SUDO, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_sudo_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_0400
+     * @tc.desc   test restrictions setDisallowedPolicy with sudo feature undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_set_disallowed_policy_sudo_0400", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.SUDO, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_sudo_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_0500
+     * @tc.desc   test restrictions setDisallowedPolicy with sudo feature null feature
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_set_disallowed_policy_sudo_0500", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, null, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_sudo_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_0600
+     * @tc.desc   test restrictions setDisallowedPolicy with sudo feature undefined feature
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_set_disallowed_policy_sudo_0600", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, undefined, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_sudo_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_0700
+     * @tc.desc   test restrictions setDisallowedPolicy with sudo feature null disallow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_set_disallowed_policy_sudo_0700", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO, null);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_sudo_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_0800
+     * @tc.desc   test restrictions setDisallowedPolicy with sudo feature undefined disallow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_set_disallowed_policy_sudo_0800", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO, undefined);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_sudo_0900
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_0900
+     * @tc.desc   test restrictions setDisallowedPolicy with sudo feature super admin set disallow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+     it("test_set_disallowed_policy_sudo_0900", Level.LEVEL0, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO, true);
+        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO);
+        expect(ret).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 801).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_set_disallowed_policy_sudo_1000
+     * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSUDO_1000
+     * @tc.desc   test restrictions setDisallowedPolicy with sudo feature super admin cancel disallow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+     it("test_set_disallowed_policy_sudo_1000", Level.LEVEL0, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO, false);
+        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO);
+        expect(ret).assertFalse();
+      } catch (error) {
+        expect(Number(error.code) === 801).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
     * @tc.name   getDisallowedPolicy_test_001
     * @tc.number getDisallowedPolicy_test_001
     * @tc.desc   getDisallowedPolicy with undefined parameter admin
@@ -4360,25 +4570,165 @@ done();
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_get_disallowed_policy_secure_erase_0700", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
-      try {
-        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SECURE_ERASE);
-        expect(ret).assertFalse();
-      } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200002).assertTrue();
-        }
-      } finally {
-        await adminManager.disableAdmin(SELFWANT);
-      }
-      done();
-    });
+     it("test_get_disallowed_policy_secure_erase_0700", Level.LEVEL2, async (done: Function) => {
+       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+       try {
+         let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SECURE_ERASE);
+         expect(ret).assertFalse();
+       } catch (error) {
+         if (Number(error.code) === 801) {
+           expect(Number(error.code) === 801).assertTrue();
+         } else {
+           expect(Number(error.code) === 9200002).assertTrue();
+         }
+       } finally {
+         await adminManager.disableAdmin(SELFWANT);
+       }
+       done();
+     });
 
-   /**
-    * @tc.name   test_get_disallowed_policy_0102
+     /**
+      * @tc.name   test_get_disallowed_policy_sudo_0100
+      * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSUDO_0100
+      * @tc.desc   test restrictions getDisallowedPolicy with sudo feature without admin
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+     it("test_get_disallowed_policy_sudo_0100", Level.LEVEL2, async (done: Function) => {
+       try {
+         restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO);
+         expect(false).assertTrue();
+       } catch (error) {
+         if (Number(error.code) === 801) {
+           expect(Number(error.code) === 801).assertTrue();
+         } else {
+           expect(Number(error.code) === 9200001).assertTrue();
+         }
+       }
+       done();
+     });
+
+     /**
+      * @tc.name   test_get_disallowed_policy_sudo_0300
+      * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSUDO_0300
+      * @tc.desc   test restrictions getDisallowedPolicy with sudo feature undefined admin
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+     it("test_get_disallowed_policy_sudo_0300", Level.LEVEL2, async (done: Function) => {
+       try {
+         let ret = restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.SUDO);
+         expect(ret).assertFalse();
+       } catch (error) {
+         if (Number(error.code) === 801) {
+           expect(Number(error.code) === 801).assertTrue();
+         } else {
+           expect(Number(error.code) === 401).assertTrue();
+         }
+       }
+       done();
+     });
+
+     /**
+      * @tc.name   test_get_disallowed_policy_sudo_0400
+      * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSUDO_0400
+      * @tc.desc   test restrictions getDisallowedPolicy with sudo feature null feature
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+     it("test_get_disallowed_policy_sudo_0400", Level.LEVEL2, async (done: Function) => {
+       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+       try {
+         restrictions.getDisallowedPolicy(SELFWANT, null);
+         expect(false).assertTrue();
+       } catch (error) {
+         if (Number(error.code) === 801) {
+           expect(Number(error.code) === 801).assertTrue();
+         } else {
+           expect(Number(error.code) === 401).assertTrue();
+         }
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     });
+
+     /**
+      * @tc.name   test_get_disallowed_policy_sudo_0500
+      * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSUDO_0500
+      * @tc.desc   test restrictions getDisallowedPolicy with sudo feature undefined feature
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+     it("test_get_disallowed_policy_sudo_0500", Level.LEVEL2, async (done: Function) => {
+       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+       try {
+         restrictions.getDisallowedPolicy(SELFWANT, undefined);
+         expect(false).assertTrue();
+       } catch (error) {
+         if (Number(error.code) === 801) {
+           expect(Number(error.code) === 801).assertTrue();
+         } else {
+           expect(Number(error.code) === 401).assertTrue();
+         }
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     });
+
+     /**
+      * @tc.name   test_get_disallowed_policy_sudo_0600
+      * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSUDO_0600
+      * @tc.desc   test restrictions getDisallowedPolicy with sudo feature super admin
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+     it("test_get_disallowed_policy_sudo_0600", Level.LEVEL0, async (done: Function) => {
+       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+       try {
+         let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO);
+         expect(ret).assertFalse();
+       } catch (error) {
+         expect(Number(error.code) === 801).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     });
+
+     /**
+      * @tc.name   test_get_disallowed_policy_sudo_0700
+      * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSUDO_0700
+      * @tc.desc   test restrictions getDisallowedPolicy with sudo feature byod admin
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+     it("test_get_disallowed_policy_sudo_0700", Level.LEVEL2, async (done: Function) => {
+       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+       try {
+         let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUDO);
+         expect(ret).assertFalse();
+       } catch (error) {
+         if (Number(error.code) === 801) {
+           expect(Number(error.code) === 801).assertTrue();
+         } else {
+           expect(Number(error.code) === 9200002).assertTrue();
+         }
+       } finally {
+         await adminManager.disableAdmin(SELFWANT);
+       }
+       done();
+     });
+
+    /**
+     * @tc.name   test_get_disallowed_policy_0102
     * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0102
     * @tc.desc   test restrictions getDisallowedPolicy with invalid admin
     * @tc.type   FUNCTION

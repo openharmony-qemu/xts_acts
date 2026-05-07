@@ -228,5 +228,27 @@ export default function adminManagerTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   test_enableSelfDeviceAdmin_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_ENABLESELFDEVICEADMIN_001
+     * @tc.desc   test enableSelfDeviceAdmin method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_enableSelfDeviceAdmin_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableSelfDeviceAdmin(SELFWANT, "");
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 201).assertTrue();
+        }
+      }
+      done();
+    })
   })
 }
