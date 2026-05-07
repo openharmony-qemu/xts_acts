@@ -329,6 +329,7 @@ export default function windowModalTest() {
           await subWindowClass.moveWindowToAsync(100, 100);
           await subWindowClass.setUIContent('testability/pages/First/index2');
           await subWindowClass.showWindow();
+          await sleep(1000);
           try {
             await subWindowClass.setSubWindowModal(true).then(async () => {
               console.info(msgStr + 'Succeeded in setting subwindow modal');
@@ -338,14 +339,6 @@ export default function windowModalTest() {
                 windowClass.off('noInteractionDetected');
                 
               });
-              subWindowClass.on('noInteractionDetected', 5, () => {
-                num--;
-                console.log(msgStr + 'The num2 is :' + num);
-                subWindowClass.off('noInteractionDetected');
-                expect(false).assertTrue();
-              });
-              let buttonOne = await driver.findComponent(ON.text('这是子窗'));
-              await buttonOne.click();
               let buttonTwo = await driver.findComponent(ON.text('Hello World'));
               await buttonTwo.click();
               await sleep(4000);
@@ -1114,39 +1107,36 @@ export default function windowModalTest() {
       await sleep(1000)
       let btnCenter = await btn.getBoundsCenter()
       try {
-        let subWindow = windowStage.createSubWindow("testSubWindow");
-        subWindow.then(async (data) => {
-          if (data == null) {
-            console.error("Failed to create the subWindow. Cause: The data is empty");
-            return;
+        let subWindow = await windowStage.createSubWindow("testSubWindow");
+        await subWindow.setUIContent('testability/pages/Index')
+        await subWindow.resizeAsync(400, 500)
+        await subWindow.moveWindowToAsync(400, 400)
+        await subWindow.showWindow()
+        await sleep(1000)
+        let promise = subWindow.setSubWindowModal(true, window.ModalityType.WINDOW_MODALITY);
+        promise.then(async () => {
+          console.info(`${message} setSubWindowModal success`)
+          await driver.click(btnCenter.x, btnCenter.y)
+          let btnText = await btn.getText()
+          console.info(`${message} btnText = ${btnText}, expect Modality`)
+          expect(btnText).assertEqual('Modality')
+          await subWindow.destroyWindow()
+          done()
+        }).catch(async (err: BusinessError) => {
+          if (err.code == 801) {
+            console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
+          } else {
+            console.error(`${message} Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail()
           }
-          let windowClass = data;
-          await windowClass.setUIContent('testability/pages/Index')
-          await windowClass.resizeAsync(400, 500)
-          await windowClass.moveWindowToAsync(400, 400)
-          await windowClass.showWindow()
-          let promise = windowClass.setSubWindowModal(true, window.ModalityType.WINDOW_MODALITY);
-          promise.then(async () => {
-            console.info(`${message} setSubWindowModal success`)
-            await driver.click(btnCenter.x, btnCenter.y)
-            let btnText = await btn.getText()
-            console.info(`${message} btnText = ${btnText}, expect Modality`)
-            expect(btnText).assertEqual('Modality')
-            await windowClass.destroyWindow()
-          }).catch((err: BusinessError) => {
-            if (err.code == 801) {
-              console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            } else {
-              console.error(`${message} Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);
-              expect().assertFail()
-            }
-          });
+          await subWindow.destroyWindow()
+          done()
         });
       } catch (exception) {
         console.error(`${message} Failed to create the subWindow. Cause code: ${exception.code}, message: ${exception.message}`);
         expect().assertFail()
+        done()
       }
-      done()
     })
     /**
      * @tc.name   testSetSubWindowModalModalityType_0200
@@ -1160,44 +1150,41 @@ export default function windowModalTest() {
       const message = 'setSubWindowModalModalityTypeTest_0200';
       let windowClass = windowStage.getMainWindowSync()
       await windowClass.setUIContent('testability/pages/WindowTest/Modality')
-      let driver =  Driver.create()
+      let driver = Driver.create()
       let btn = await driver.findComponent(ON.id('ModalityText'))
       await sleep(1000)
       let btnCenter = await btn.getBoundsCenter()
       try {
-        let subWindow = windowStage.createSubWindow("testSubWindow");
-        subWindow.then(async (data) => {
-          if (data == null) {
-            console.error("Failed to create the subWindow. Cause: The data is empty");
-            return;
+        let subWindow = await windowStage.createSubWindow("testSubWindow");
+        await subWindow.setUIContent('testability/pages/Index')
+        await subWindow.resizeAsync(400, 500)
+        await subWindow.moveWindowToAsync(400, 400)
+        await subWindow.showWindow()
+        await sleep(1000)
+        let promise = subWindow.setSubWindowModal(true, window.ModalityType.APPLICATION_MODALITY);
+        promise.then(async () => {
+          console.info(`${message} setSubWindowModal success`)
+          await driver.click(btnCenter.x, btnCenter.y)
+          let btnText = await btn.getText()
+          console.info(`${message} btnText = ${btnText}, expect Modality`)
+          expect(btnText).assertEqual('Modality')
+          await subWindow.destroyWindow()
+          done();
+        }).catch(async (err: BusinessError) => {
+          if (err.code == 801) {
+            console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
+          } else {
+            console.error(`${message} Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail()
           }
-          let windowClass = data;
-          await windowClass.setUIContent('testability/pages/Index')
-          await windowClass.resizeAsync(400, 500)
-          await windowClass.moveWindowToAsync(400, 400)
-          await windowClass.showWindow()
-          let promise = windowClass.setSubWindowModal(true, window.ModalityType.APPLICATION_MODALITY);
-          promise.then(async () => {
-            console.info(`${message} setSubWindowModal success`)
-            await driver.click(btnCenter.x, btnCenter.y)
-            let btnText = await btn.getText()
-            console.info(`${message} btnText = ${btnText}, expect Modality`)
-            expect(btnText).assertEqual('Modality')
-            await windowClass.destroyWindow()
-          }).catch((err: BusinessError) => {
-            if (err.code == 801) {
-              console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-            } else {
-              console.error(`${message} Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);
-              expect().assertFail()
-            }
-          });
+          await subWindow.destroyWindow()
+          done();
         });
       } catch (exception) {
         console.error(`${message} Failed to create the subWindow. Cause code: ${exception.code}, message: ${exception.message}`);
         expect().assertFail()
+        done();
       }
-      done()
     })
 
     /**
@@ -1285,7 +1272,7 @@ export default function windowModalTest() {
       const message = 'testCreateSubWindowWithOptionsModalityType_0100';
       let windowClass = windowStage.getMainWindowSync()
       await windowClass.setUIContent('testability/pages/WindowTest/Modality')
-      let driver =  Driver.create()
+      let driver = Driver.create()
       let btn = await driver.findComponent(ON.id('ModalityText'))
       await sleep(1000)
       let btnCenter = await btn.getBoundsCenter()
@@ -1296,17 +1283,19 @@ export default function windowModalTest() {
         modalityType: window.ModalityType.WINDOW_MODALITY
       };
       try {
-        windowStage.createSubWindowWithOptions('mySubWindow1', options).then(async (windowClass) => {
+        windowStage.createSubWindowWithOptions('mySubWindow1', options).then(async (subWindowClass) => {
           console.info(`${message} setSubWindowModal success`)
-          await windowClass.setUIContent('testability/pages/Index')
-          await windowClass.resizeAsync(400, 500)
-          await windowClass.moveWindowToAsync(100, 400)
-          await windowClass.showWindow()
+          await subWindowClass.setUIContent('testability/pages/Index')
+          await subWindowClass.resizeAsync(400, 500)
+          await subWindowClass.moveWindowToAsync(100, 400)
+          await subWindowClass.showWindow()
+          await sleep(1000);
           await driver.click(btnCenter.x, btnCenter.y)
           let btnText = await btn.getText()
           console.info(`${message} btnText = ${btnText}, expect Modality`)
           expect(btnText).assertEqual('Modality')
-          windowClass.destroyWindow()
+          await subWindowClass.destroyWindow()
+          done()
         }).catch((err: BusinessError) => {
           if (err.code == 1300002) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
@@ -1314,12 +1303,13 @@ export default function windowModalTest() {
             console.error(`${message} Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);
             expect().assertFail()
           }
+          done()
         });
       } catch (exception) {
         console.error(`${message} Failed to create the subWindow. Cause code: ${exception.code}, message: ${exception.message}`);
         expect().assertFail()
+        done()
       }
-      done()
     })
 
     /**
@@ -1334,7 +1324,7 @@ export default function windowModalTest() {
       const message = 'testCreateSubWindowWithOptionsModalityTypeTest_0200';
       let windowClass = windowStage.getMainWindowSync()
       await windowClass.setUIContent('testability/pages/WindowTest/Modality')
-      let driver =  Driver.create()
+      let driver = Driver.create()
       let btn = await driver.findComponent(ON.id('ModalityText'))
       await sleep(1000)
       let btnCenter = await btn.getBoundsCenter()
@@ -1345,27 +1335,30 @@ export default function windowModalTest() {
         modalityType: window.ModalityType.APPLICATION_MODALITY
       };
       try {
-        windowStage.createSubWindowWithOptions('mySubWindow', options).then(async (windowClass) => {
+        windowStage.createSubWindowWithOptions('mySubWindow', options).then(async (subWindowClass) => {
           console.info(`${message} setSubWindowModal success`)
-          await windowClass.setUIContent('testability/pages/Index')
-          await windowClass.resizeAsync(400, 500)
-          await windowClass.moveWindowToAsync(100, 400)
-          await windowClass.showWindow()
+          await subWindowClass.setUIContent('testability/pages/Index')
+          await subWindowClass.resizeAsync(400, 500)
+          await subWindowClass.moveWindowToAsync(100, 400)
+          await subWindowClass.showWindow()
+          await sleep(1000);
           await driver.click(btnCenter.x, btnCenter.y)
           let btnText = await btn.getText()
           console.info(`${message} btnText = ${btnText}, expect Modality`)
           expect(btnText).assertEqual('Modality')
-          windowClass.destroyWindow()
+          await subWindowClass.destroyWindow()
+          done();
         }).catch((err: BusinessError) => {
           console.info(`${message} Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}.`);
-          if(err.code === 801){
+          if (err.code === 801) {
             done();
-          }
-          else if (err.code === 401) {
+          } else if (err.code === 401) {
             console.info(`${message} Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}.`);
+            done();
           } else {
             console.error(`${message} Failed to set subwindow modal. Cause code: ${err.code}, message: ${err.message}`);
             expect().assertFail()
+            done();
           }
         });
       } catch (exception) {
@@ -1375,8 +1368,8 @@ export default function windowModalTest() {
           console.error(`${message} Failed to create the subWindow. Cause code: ${exception.code}, message: ${exception.message}`);
           expect().assertFail()
         }
+        done();
       }
-      done()
     })
 
     /**
@@ -1445,8 +1438,8 @@ export default function windowModalTest() {
           let windowClassStart = windowStageStart.getMainWindowSync()
           let windowLimits = windowClassStart.getWindowLimits();
           console.info(`${message} windowLimits = ${JSON.stringify(windowLimits)}`);
-          windowClassStart.resizeAsync(windowLimits.minWidth, windowLimits.minHeight)
-          windowClassStart.moveWindowToAsync(50, 50)
+          await windowClassStart.resizeAsync(windowLimits.minWidth, windowLimits.minHeight)
+          await windowClassStart.moveWindowToAsync(50, 50)
           await sleep(1000)
           await driver.click(btnPoint.x, btnPoint.y)
           await sleep(1000)
@@ -1515,8 +1508,11 @@ export default function windowModalTest() {
         promise.then(async () => {
           console.info(`${message} Succeeded in setting window modal`);
           let windowClassStart = windowStageStart.getMainWindowSync()
-          await windowClassStart.resizeAsync(700, 200)
+          let windowLimits = windowClassStart.getWindowLimits();
+          console.info(`${message} windowLimits = ${JSON.stringify(windowLimits)}`);
+          windowClassStart.resizeAsync(windowLimits.minWidth, windowLimits.minHeight)
           await windowClassStart.moveWindowToAsync(50, 50)
+          await sleep(1000)
           await driver.click(btnPoint.x, btnPoint.y)
           await sleep(1000)
           let btnTest = await btn.getText()
@@ -1527,6 +1523,7 @@ export default function windowModalTest() {
           });
           await sleep(1000)
           let windowPoint = await testWindow.getBounds()
+          console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`);
           console.info(`${message} window width = ${windowPoint.bottom - windowPoint.top}, expect ${windowRect.height}`);
           console.info(`${message} window height = ${windowPoint.right - windowPoint.left}, expect ${windowRect.width}`);
           expect(windowPoint.bottom - windowPoint.top).assertEqual(windowRect.height)

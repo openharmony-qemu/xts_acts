@@ -19,6 +19,8 @@ group("window") {
     "windowErrCode:ActsWindowErrCodeTest",
     "windowProperties:ActsWindowPropertiesTest",
     "windowStartAbility:ActsWindowStartAbilityTest",
+    "windowLifeCycleTestDemo:ActsWindowLifeCycleTestDemo",
+    "ActsWindowLifeCycleTest:ActsWindowLifeCycleTest",
     "ActsPipWindowNdk:ActsPipWindowNdkTest",
     "FloatingBallTest:ActsFloatingBallTest",
     "ActsWindowEnterpriseTest:ActsWindowEnterpriseTest",
