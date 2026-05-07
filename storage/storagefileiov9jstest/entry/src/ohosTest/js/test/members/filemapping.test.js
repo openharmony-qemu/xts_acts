@@ -467,6 +467,66 @@ export default function fileIOFileMapping() {
     });
 
     /**
+     * @tc.name   fileIO_test_setPosition_003
+     * @tc.number SUB_DF_FILEIO_SETPOSITION_0300
+     * @tc.desc   Test setPosition() interfaces. Position=null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_setPosition_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+      let fpath = await nextFileName('fileIO_test_setPosition_003');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      let file;
+      let mapping;
+      try {
+        file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+        expect(isIntNum(file.fd)).assertTrue();
+        mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+        expect(mapping != null).assertTrue();
+        mapping.setPosition(null);
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('fileIO_test_setPosition_003 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020).assertTrue();
+        mapping.unmapSync();
+        fileIO.closeSync(file);
+        fileIO.unlinkSync(fpath);
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_setPosition_004
+     * @tc.number SUB_DF_FILEIO_SETPOSITION_0400
+     * @tc.desc   Test setPosition() interfaces. Position=undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_setPosition_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+      let fpath = await nextFileName('fileIO_test_setPosition_004');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      let file;
+      let mapping;
+      try {
+        file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+        expect(isIntNum(file.fd)).assertTrue();
+        mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+        expect(mapping != null).assertTrue();
+        mapping.setPosition(undefined);
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('fileIO_test_setPosition_004 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020).assertTrue();
+        mapping.unmapSync();
+        fileIO.closeSync(file);
+        fileIO.unlinkSync(fpath);
+      }
+    });
+
+    /**
      * @tc.name   fileIO_test_getPosition_000
      * @tc.number SUB_DF_FILEIO_GETPOSITION_0000
      * @tc.desc   Test getPosition() interfaces.
