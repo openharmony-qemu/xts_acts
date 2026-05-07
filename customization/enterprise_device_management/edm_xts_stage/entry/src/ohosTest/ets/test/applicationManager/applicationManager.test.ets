@@ -683,10 +683,11 @@ export default function applicationManagerTest() {
     it("test_getDisallowedRunningBundlesSync_007", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        applicationManager.getDisallowedRunningBundlesSync(null);
-        expect(false).assertTrue();
+        applicationManager.addDisallowedRunningBundlesSync(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
+        let res = applicationManager.getDisallowedRunningBundlesSync(null, DEFAULT_USER_ID);
+        expect(res.length === 3).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -960,10 +961,10 @@ export default function applicationManagerTest() {
     it("test_getAutoStartApps_003", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        applicationManager.getAutoStartApps(null);
-        expect(false).assertTrue();
+        let apps = applicationManager.getAutoStartApps(null);
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1517,11 +1518,14 @@ export default function applicationManagerTest() {
      * @tc.level  LEVEL2
      */
     it("test_getFreezeExemptedApps_004", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.getFreezeExemptedApps(null);
-        expect(false).assertTrue();
+        let apps = applicationManager.getFreezeExemptedApps(null);
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
     })
@@ -2056,13 +2060,13 @@ export default function applicationManagerTest() {
     it("test_getUserNonStopApps_003", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        applicationManager.getUserNonStopApps(null);
-        expect(false).assertTrue();
+        let apps = applicationManager.getUserNonStopApps(null);
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
         if (Number(error.code) === 801) {
           expect(Number(error.code) === 801).assertTrue();
         } else {
-          expect(Number(error.code) === 401).assertTrue();
+          expect(false).assertTrue();
         }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -2488,10 +2492,10 @@ export default function applicationManagerTest() {
     it("test_getAutoStartAppsByUserId_003", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        applicationManager.getAutoStartApps(null, DEFAULT_USER_ID);
-        expect(false).assertTrue();
+        let apps = applicationManager.getAutoStartApps(null, DEFAULT_USER_ID);
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -2998,9 +3002,9 @@ export default function applicationManagerTest() {
         let keepAliveApps: Array<string> = [];
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         keepAliveApps = applicationManager.getKeepAliveApps(null, DEFAULT_USER_ID);
-        expect(false).assertTrue();
+        expect(keepAliveApps.length === 0).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -3183,9 +3187,9 @@ export default function applicationManagerTest() {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let bundleNames: Array<string> = applicationManager.getAllowedKioskApps(null);
-        expect(false).assertTrue();
+        expect(bundleNames.length === 0).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -5601,9 +5605,9 @@ export default function applicationManagerTest() {
         let accountId: number = 100;
         let abilityName: string = "EntryAbility";
         let isDisabled = applicationManager.isAbilityDisabled(null, bundleName, accountId, abilityName);
-        expect(false).assertTrue();
+        expect(isDisabled).assertFalse();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -5919,13 +5923,16 @@ export default function applicationManagerTest() {
      */
     it("getDisallowedRunningBundlesSync_test_001", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getDisallowedRunningBundlesSync_test_001  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.getDisallowedRunningBundlesSync(null);
+        let emptyRes = applicationManager.getDisallowedRunningBundlesSync(null);
+        expect(emptyRes.length === 0).assertTrue();
         console.info(' --- getDisallowedRunningBundlesSync_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getDisallowedRunningBundlesSync_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getDisallowedRunningBundlesSync_test_001  -------- END --------');
@@ -6193,13 +6200,16 @@ export default function applicationManagerTest() {
      */
     it("getAutoStartApps_test_001", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getAutoStartApps_test_001  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.getAutoStartApps(null);
+        let apps = applicationManager.getAutoStartApps(null);
         console.info(' --- getAutoStartApps_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getAutoStartApps_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getAutoStartApps_test_001  -------- END --------');
@@ -6646,13 +6656,16 @@ export default function applicationManagerTest() {
      */
     it("getKeepAliveApps_test_001", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getKeepAliveApps_test_001  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.getKeepAliveApps(null, DEFAULT_USER_ID);
-        console.info(' --- getKeepAliveApps_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
+        let apps = applicationManager.getKeepAliveApps(null, DEFAULT_USER_ID);
+        console.info(' --- getKeepAliveApps_test_001 success is expected, but it done.');
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getKeepAliveApps_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getKeepAliveApps_test_001  -------- END --------');
@@ -6952,13 +6965,16 @@ export default function applicationManagerTest() {
      */
     it("getUserNonStopApps_test_001", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getUserNonStopApps_test_001  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.getUserNonStopApps(null);
-        console.info(' --- getUserNonStopApps_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
+        let apps = applicationManager.getUserNonStopApps(null);
+        console.info(' --- getUserNonStopApps_test_001 success is expected, but it done.');
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getUserNonStopApps_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getUserNonStopApps_test_001  -------- END --------');
@@ -7230,13 +7246,16 @@ export default function applicationManagerTest() {
      */
     it("getFreezeExemptedApps_test_001", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getFreezeExemptedApps_test_001  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.getFreezeExemptedApps(null);
-        console.info(' --- getFreezeExemptedApps_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
+        let apps = applicationManager.getFreezeExemptedApps(null);
+        console.info(' --- getFreezeExemptedApps_test_001 success is expected, but it done.');
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getFreezeExemptedApps_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getFreezeExemptedApps_test_001  -------- END --------');
@@ -7667,13 +7686,16 @@ export default function applicationManagerTest() {
      */
     it("getAllowedKioskApps_test_001", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getAllowedKioskApps_test_001  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.getAllowedKioskApps(null);
-        console.info(' --- getAllowedKioskApps_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
+        let apps = applicationManager.getAllowedKioskApps(null);
+        console.info(' --- getAllowedKioskApps_test_001 success is expected, but it done.');
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getAllowedKioskApps_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getAllowedKioskApps_test_001  -------- END --------');
@@ -8060,13 +8082,16 @@ export default function applicationManagerTest() {
      */
     it("getAllowedRunningBundles_test_001", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getAllowedRunningBundles_test_001  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.getAllowedRunningBundles(null, DEFAULT_USER_ID);
+        let empty = applicationManager.getAllowedRunningBundles(null, DEFAULT_USER_ID);
         console.info(' --- getAllowedRunningBundles_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
+        expect(empty.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getAllowedRunningBundles_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getAllowedRunningBundles_test_001  -------- END --------');
@@ -8393,13 +8418,16 @@ export default function applicationManagerTest() {
      */
     it("isAbilityDisabled_test_001", Level.LEVEL2, async (done: Function) => {
       console.info(' --- isAbilityDisabled_test_001  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.isAbilityDisabled(null, 'com.example.helloworld', DEFAULT_USER_ID, 'EntryAbility');
+        let ret = applicationManager.isAbilityDisabled(null, 'com.example.helloworld', DEFAULT_USER_ID, 'EntryAbility');
         console.info(' --- isAbilityDisabled_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
+        expect(ret).assertFalse();
       } catch (error) {
         console.info(' --- isAbilityDisabled_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false ).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- isAbilityDisabled_test_001  -------- END --------');
@@ -8661,13 +8689,16 @@ export default function applicationManagerTest() {
      */
     it("getAutoStartApps_test_031", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getAutoStartApps_test_031  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.getAutoStartApps(null, DEFAULT_USER_ID);
+        let apps = applicationManager.getAutoStartApps(null, DEFAULT_USER_ID);
         console.info(' --- getAutoStartApps_test_031 error is expected, but it done.');
-        expect(false).assertTrue();
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getAutoStartApps_test_031 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getAutoStartApps_test_031  -------- END --------');
@@ -8728,13 +8759,16 @@ export default function applicationManagerTest() {
      */
     it("getKeepAliveApps_test_029", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getKeepAliveApps_test_029  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.getKeepAliveApps(null, DEFAULT_USER_ID);
-        console.info(' --- getKeepAliveApps_test_029 error is expected, but it done.');
-        expect(false).assertTrue();
+        let apps = applicationManager.getKeepAliveApps(null, DEFAULT_USER_ID);
+        console.info(' --- getKeepAliveApps_test_029 success is expected, but it done.');
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getKeepAliveApps_test_029 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getKeepAliveApps_test_029  -------- END --------');
@@ -8819,13 +8853,16 @@ export default function applicationManagerTest() {
      */
     it("getUserNonStopApps_test_015", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getUserNonStopApps_test_015  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.getUserNonStopApps(null);
-        console.info(' --- getUserNonStopApps_test_015 error is expected, but it done.');
-        expect(false).assertTrue();
+        let apps = applicationManager.getUserNonStopApps(null);
+        console.info(' --- getUserNonStopApps_test_015 success is expected, but it done.');
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getUserNonStopApps_test_015 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getUserNonStopApps_test_015  -------- END --------');
@@ -8864,13 +8901,16 @@ export default function applicationManagerTest() {
      */
     it("getAllowedKioskApps_test_015", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getAllowedKioskApps_test_015  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.getAllowedKioskApps(null);
-        console.info(' --- getAllowedKioskApps_test_015 error is expected, but it done.');
-        expect(false).assertTrue();
+        let apps = applicationManager.getAllowedKioskApps(null);
+        console.info(' --- getAllowedKioskApps_test_015 success is expected, but it done.');
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getAllowedKioskApps_test_015 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getAllowedKioskApps_test_015  -------- END --------');
@@ -8909,13 +8949,16 @@ export default function applicationManagerTest() {
      */
     it("getAllowedRunningBundles_test_029", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getAllowedRunningBundles_test_029  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.getAllowedRunningBundles(null, DEFAULT_USER_ID);
+        let apps = applicationManager.getAllowedRunningBundles(null, DEFAULT_USER_ID);
         console.info(' --- getAllowedRunningBundles_test_029 error is expected, but it done.');
-        expect(false).assertTrue();
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getAllowedRunningBundles_test_029 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getAllowedRunningBundles_test_029  -------- END --------');

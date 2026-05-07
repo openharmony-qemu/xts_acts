@@ -431,13 +431,15 @@ function testAddAllowedUsbDevices() {
      */
     it("getAllowedUsbDevices_test_001", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getAllowedUsbDevices_test_001  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        usbManager.getAllowedUsbDevices(null);
+        let devices = usbManager.getAllowedUsbDevices(null);
         console.info(' --- getAllowedUsbDevices_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
+        expect(devices.length === 0).assertTrue();
       } catch (error) {
-        console.info(' --- getAllowedUsbDevices_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getAllowedUsbDevices_test_001  -------- END --------');
@@ -523,13 +525,16 @@ function testAddAllowedUsbDevices() {
      */
     it("getUsbStorageDeviceAccessPolicy_test_001", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getUsbStorageDeviceAccessPolicy_test_001  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        usbManager.getUsbStorageDeviceAccessPolicy(null);
+        let policy = usbManager.getUsbStorageDeviceAccessPolicy(null);
         console.info(' --- getUsbStorageDeviceAccessPolicy_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
+        expect(policy === usbManager.UsbPolicy.READ_WRITE).assertTrue();
       } catch (error) {
         console.info(' --- getUsbStorageDeviceAccessPolicy_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getUsbStorageDeviceAccessPolicy_test_001  -------- END --------');
@@ -810,13 +815,16 @@ function testAddAllowedUsbDevices() {
      */
     it("getDisallowedUsbDevices_test_001", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getDisallowedUsbDevices_test_001  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        usbManager.getDisallowedUsbDevices(null);
+        let devices = usbManager.getDisallowedUsbDevices(null);
         console.info(' --- getDisallowedUsbDevices_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
+        expect(devices.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getDisallowedUsbDevices_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getDisallowedUsbDevices_test_001  -------- END --------');
@@ -855,13 +863,16 @@ function testAddAllowedUsbDevices() {
      */
     it("getAllowedUsbDevices_test_015", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getAllowedUsbDevices_test_015  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        usbManager.getAllowedUsbDevices(null);
+        let devices = usbManager.getAllowedUsbDevices(null);
         console.info(' --- getAllowedUsbDevices_test_015 error is expected, but it done.');
-        expect(false).assertTrue();
+        expect(devices.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getAllowedUsbDevices_test_015 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getAllowedUsbDevices_test_015  -------- END --------');
@@ -900,13 +911,16 @@ function testAddAllowedUsbDevices() {
      */
     it("getUsbStorageDeviceAccessPolicy_test_015", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getUsbStorageDeviceAccessPolicy_test_015  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        usbManager.getUsbStorageDeviceAccessPolicy(null);
+        let policy = usbManager.getUsbStorageDeviceAccessPolicy(null);
         console.info(' --- getUsbStorageDeviceAccessPolicy_test_015 error is expected, but it done.');
-        expect(false).assertTrue();
+        expect(policy === usbManager.UsbPolicy.READ_WRITE).assertTrue();
       } catch (error) {
         console.info(' --- getUsbStorageDeviceAccessPolicy_test_015 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getUsbStorageDeviceAccessPolicy_test_015  -------- END --------');
@@ -945,13 +959,16 @@ function testAddAllowedUsbDevices() {
      */
     it("getDisallowedUsbDevices_test_015", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getDisallowedUsbDevices_test_015  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        usbManager.getDisallowedUsbDevices(null);
+        let devices = usbManager.getDisallowedUsbDevices(null);
         console.info(' --- getDisallowedUsbDevices_test_015 error is expected, but it done.');
-        expect(false).assertTrue();
+        expect(devices.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getDisallowedUsbDevices_test_015 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getDisallowedUsbDevices_test_015  -------- END --------');
@@ -1209,10 +1226,10 @@ function testGetUsbStorageDeviceAccessPolicy() {
   it("test_get_usb_device_access_policy_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      usbManager.getUsbStorageDeviceAccessPolicy(null);
-      expect(false).assertTrue();
+      let policy = usbManager.getUsbStorageDeviceAccessPolicy(null);
+      expect(policy === usbManager.UsbPolicy.READ_WRITE).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2266,15 +2283,18 @@ function testGetDisallowedUsbDevices() {
    * @tc.level  LEVEL2
    */
   it("test_get_disallowed_usb_devices_0003", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       let devices: Array<usbManager.UsbDeviceType> = [
         {baseClass: 3, subClass: 1, protocol: 2, descriptor: usbManager.Descriptor.INTERFACE},
         {baseClass: 9, subClass: 0, protocol: 0, descriptor: usbManager.Descriptor.DEVICE},
       ]
-      usbManager.getDisallowedUsbDevices(null);
-      expect(false).assertTrue();
+      devices = usbManager.getDisallowedUsbDevices(null);
+      expect(devices.length === 0).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
   });
