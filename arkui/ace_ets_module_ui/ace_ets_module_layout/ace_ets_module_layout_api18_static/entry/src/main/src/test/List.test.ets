@@ -38,6 +38,7 @@ import TypeNodeGetCheckboxAttribute from './TypeNode/TypeNodeGetCheckboxAttribut
 import TypeNodeGetRadioAttribute from './TypeNode/TypeNodeGetRadioAttribute.test';
 import TypeNodeGetSliderAttribute from './TypeNode/TypeNodeGetSliderAttribute.test';
 import TypeNodeGetToggleAttribute from './TypeNode/TypeNodeGetToggleAttribute.test';
+import StackSyncLoadStaticTest from './Stack/StackSyncLoadStaticTest.test';
 
 export default function testsuite() {
   ColumnSpaceResourceTest();
@@ -65,4 +66,5 @@ export default function testsuite() {
   TypeNodeGetRadioAttribute();
   TypeNodeGetSliderAttribute();
   TypeNodeGetToggleAttribute();
+  StackSyncLoadStaticTest();
 }
