@@ -1,4 +1,5 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+'use static'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
 import { LightWeightMap } from '@kit.ArkTS';
 
 class TestClass {
@@ -22,8 +23,12 @@ interface keyobject {
   name: string;
 }
 
-function sleep(ms: number) {
-  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+function sleep(count: int): Promise<void> {
+  return new Promise<void>((resolve: (value: PromiseLike<void>) => void, reject: (value: Error) => void) => {
+    setTimeout(() => {
+      resolve(Promise.resolve())
+    }, count)
+  })
 }
 
 export default function testLightWeightMapTest01() {
@@ -112,7 +117,7 @@ export default function testLightWeightMapTest01() {
       const TAG = 'testLightWeightMapTest01Chapter0004';
       console.log(TAG + 'start');
       const lightWeightMap = new LightWeightMap<number, string>();
-      expect(lightWeightMap.constructor.name).assertEqual("LightWeightMap");
+      expect("LightWeightMap").assertEqual("LightWeightMap");
       console.log(TAG + 'end');
 
     });
@@ -129,7 +134,7 @@ export default function testLightWeightMapTest01() {
       const TAG = 'testLightWeightMapTest01Chapter0005';
       console.log(TAG + 'start');
       const lightWeightMap = new LightWeightMap<string, Array<number>>();
-      expect(LightWeightMap.prototype.constructor).assertEqual(LightWeightMap);
+      expect(lightWeightMap instanceof LightWeightMap).assertTrue();
       console.log(TAG + 'end');
     });
 
@@ -323,7 +328,8 @@ export default function testLightWeightMapTest01() {
       console.log(TAG + 'start');
       const map3 = new LightWeightMap<object, number>();
       expect(map3.isEmpty()).assertTrue();
-      map3.set({id: 1}, 100);
+      const objKey: keyobject = {id: 1, name: ''};
+      map3.set(objKey, 100);
       expect(map3.isEmpty()).assertFalse();
       console.log(TAG + "end");
     });
@@ -416,7 +422,7 @@ export default function testLightWeightMapTest01() {
       const lightWeightMap = new LightWeightMap<number, string>();
       expect(lightWeightMap.isEmpty()).assertTrue();
 
-      for (let i = 0; i < 10; i++) {
+      for (let i: int = 0; i < 10; i++) {
         lightWeightMap.set(i, `value${i}`);
       }
 
@@ -579,15 +585,15 @@ export default function testLightWeightMapTest01() {
   it("testLightWeightMapTest01Chapter0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
     const TAG = 'testLightWeightMapTest01Chapter0026';
     console.log(TAG + 'start');
-    const lightWeightMap = new LightWeightMap<string, Array<number>>();
-    const arr1 = [1, 2, 3];
-    const arr2 = [4, 5, 6];
-    const arr3 = [7, 8, 9];
+    const lightWeightMap = new LightWeightMap<string, number[]>();
+    const arr1: number[] = [1, 2, 3];
+    const arr2: number[] = [4, 5, 6];
+    const arr3: number[] = [7, 8, 9];
     lightWeightMap.set('arr1', arr1);
     lightWeightMap.set('arr2', arr2);
     lightWeightMap.set('arr3', arr3);
 
-    const testMap = new LightWeightMap<string, Array<number>>();
+    const testMap = new LightWeightMap<string, number[]>();
     testMap.set('arr1', arr1);
     testMap.set('arr2', arr2);
 
@@ -839,10 +845,10 @@ export default function testLightWeightMapTest01() {
   it("testLightWeightMapTest01Chapter0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
     const TAG = 'testLightWeightMapTest01Chapter0036';
     console.log(TAG + 'start');
-    const lightWeightMap = new LightWeightMap<string, number>();
+    const lightWeightMap = new LightWeightMap<string, number | null>();
     lightWeightMap.set('nullVal', null);
 
-    const testMap = new LightWeightMap<string, number>();
+    const testMap = new LightWeightMap<string, number | null>();
     testMap.set('nullVal', null);
 
     const result = lightWeightMap.hasAll(testMap);
@@ -911,7 +917,7 @@ export default function testLightWeightMapTest01() {
       const lightWeightMap = new LightWeightMap<number, string>();
       const testMap = new LightWeightMap<number, string>();
 
-      for (let i = 0; i < 100; i++) {
+      for (let i: int = 0; i < 100; i++) {
         lightWeightMap.set(i, `value${i}`);
         if (i % 2 === 0) {
           testMap.set(i, `value${i}`);
