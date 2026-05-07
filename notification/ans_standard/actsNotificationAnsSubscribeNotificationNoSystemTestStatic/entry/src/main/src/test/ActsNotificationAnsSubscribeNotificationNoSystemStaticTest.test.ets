@@ -110,7 +110,8 @@ export default function ActsNotificationAnsSubscribeNotificationNoSystemStaticTe
           num++
           expect(false).assertTrue();
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((error: Error) => {
+          let err = error as BusinessError
           console.error(`${testNum}subscribe fail: ${JSON.stringify(err)}`);
           if (err?.code === 801) {
             expect(err?.code).assertEqual(801);
@@ -159,7 +160,8 @@ export default function ActsNotificationAnsSubscribeNotificationNoSystemStaticTe
           num++
           expect(false).assertTrue();
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((error: Error) => {
+          let err = error as BusinessError
           console.error(`${testNum}subscribe fail: ${JSON.stringify(err)}`);
           if (err?.code === 801) {
             expect(err?.code).assertEqual(801);
