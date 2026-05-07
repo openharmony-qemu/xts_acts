@@ -159,7 +159,7 @@ export default function PlainArray01Test(): void {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_0100
+     * @tc.number SUB_PLAINARRAY_TESTONE_0100
      * @tc.name testPlainArray01Chapter0001
      * @tc.desc Test creating PlainArray with no parameters and basic usage.
      * @tc.size MediumTest
@@ -175,7 +175,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_0200
+     * @tc.number SUB_PLAINARRAY_TESTONE_0200
      * @tc.name testPlainArray01Chapter0002
      * @tc.desc Test normal creation of PlainArray with explicit type parameter.
      * @tc.size MediumTest
@@ -190,7 +190,7 @@ export default function PlainArray01Test(): void {
       expect(plainArray.length).assertEqual(0);
     });
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_0300
+     * @tc.number SUB_PLAINARRAY_TESTONE_0300
      * @tc.name testPlainArray01Chapter0003
      * @tc.desc Test PlainArray with special string values: special chars, escape, emoji, invalid unicode, keywords.
      * @tc.size MediumTest
@@ -229,7 +229,7 @@ export default function PlainArray01Test(): void {
       plainArray.add(6, escapeStr);
       expect(plainArray.get(6)).assertEqual(escapeStr);
 
-      let emojiStr = "👍😈👀💯🎅🐼🔧💇‍♂️";
+      let emojiStr = "👍😈👀💯🎅🐼🔧💇‍♂�?;
       plainArray.add(7, emojiStr);
       expect(plainArray.get(7)).assertEqual(emojiStr);
 
@@ -257,7 +257,7 @@ export default function PlainArray01Test(): void {
 
     /**
 
-     @tc.number SUB_PLAINARRAY_TEST01_0400
+     @tc.number SUB_PLAINARRAY_TESTONE_0400
      @tc.name testPlainArray01Chapter0004
      @tc.desc Test PlainArray  with invalid unicode for string values, expect no crash.
      @tc.size MediumTest
@@ -278,7 +278,7 @@ export default function PlainArray01Test(): void {
 
     /**
 
-     @tc.number SUB_PLAINARRAY_TEST01_0500
+     @tc.number SUB_PLAINARRAY_TESTONE_0500
      @tc.name testPlainArray01Chapter0005
      @tc.desc Test PlainArray  with number values including boundaries and special numbers.
      @tc.size MediumTest
@@ -349,7 +349,7 @@ export default function PlainArray01Test(): void {
 
     /**
 
-     @tc.number SUB_PLAINARRAY_TEST01_0600
+     @tc.number SUB_PLAINARRAY_TESTONE_0600
      @tc.name testPlainArray01Chapter0006
      @tc.desc Test PlainArray  with bigint values.
      @tc.size MediumTest
@@ -370,7 +370,7 @@ export default function PlainArray01Test(): void {
 
     /**
 
-     @tc.number SUB_PLAINARRAY_TEST01_0700
+     @tc.number SUB_PLAINARRAY_TESTONE_0700
      @tc.name testPlainArray01Chapter0007
      @tc.desc Test PlainArray  with boolean values including falsy cases.
      @tc.size MediumTest
@@ -402,7 +402,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_0800
+     * @tc.number SUB_PLAINARRAY_TESTONE_0800
      * @tc.name testPlainArray01Chapter0008
      * @tc.desc Test PlainArray  with array values including boundaries.
      * @tc.size MediumTest
@@ -442,7 +442,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_0900
+     * @tc.number SUB_PLAINARRAY_TESTONE_0900
      * @tc.name testPlainArray01Chapter0009
      * @tc.desc Test PlainArray  with object values including boundaries (simplified for ArkTS strict mode).
      * @tc.size MediumTest
@@ -519,7 +519,7 @@ export default function PlainArray01Test(): void {
     });
     /**
 
-     @tc.number SUB_PLAINARRAY_TEST01_1000
+     @tc.number SUB_PLAINARRAY_TESTONE_1000
      @tc.name testPlainArray01Chapter0010
      @tc.desc Test PlainArray  with TypedArray values including boundaries.
      @tc.size MediumTest
@@ -624,7 +624,7 @@ export default function PlainArray01Test(): void {
 
     /**
 
-     @tc.number SUB_PLAINARRAY_TEST01_1100
+     @tc.number SUB_PLAINARRAY_TESTONE_1100
      @tc.name testPlainArray01Chapter0011
      @tc.desc Test PlainArray  with TypedArray special values.
      @tc.size MediumTest
@@ -719,7 +719,7 @@ export default function PlainArray01Test(): void {
 
     /**
 
-     @tc.number SUB_PLAINARRAY_TEST01_1200
+     @tc.number SUB_PLAINARRAY_TESTONE_1200
      @tc.name testPlainArray01Chapter0012
      @tc.desc Test PlainArray  with TypedArray overflow boundaries, expect clamping or wrapping.
      @tc.size MediumTest
@@ -812,7 +812,7 @@ export default function PlainArray01Test(): void {
 
     /**
 
-     @tc.number SUB_PLAINARRAY_TEST01_1300
+     @tc.number SUB_PLAINARRAY_TESTONE_1300
      @tc.name testPlainArray01Chapter0013
      @tc.desc Test PlainArray  with invalid parameters like null or undefined for string, expect no error.
      @tc.size MediumTest
@@ -830,7 +830,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_1400
+     * @tc.number SUB_PLAINARRAY_TESTONE_1400
      * @tc.name testPlainArray01Chapter0014
      * @tc.desc Test PlainArray  with object values (delete operator not supported in strict mode).
      * @tc.size MediumTest
@@ -866,7 +866,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_1500
+     * @tc.number SUB_PLAINARRAY_TESTONE_1500
      * @tc.name testPlainArray01Chapter0015
      * @tc.desc Test  returns true when PlainArray is newly created and empty
      * @tc.size MediumTest
@@ -883,7 +883,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_1600
+     * @tc.number SUB_PLAINARRAY_TESTONE_1600
      * @tc.name testPlainArray01Chapter0016
      * @tc.desc Test  returns false after adding one element
      * @tc.size MediumTest
@@ -901,7 +901,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_1700
+     * @tc.number SUB_PLAINARRAY_TESTONE_1700
      * @tc.name testPlainArray01Chapter0017
      * @tc.desc Test  returns true after clear operation
      * @tc.size MediumTest
@@ -923,7 +923,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_1800
+     * @tc.number SUB_PLAINARRAY_TESTONE_1800
      * @tc.name testPlainArray01Chapter0018
      * @tc.desc Test  returns false when multiple elements are added
      * @tc.size MediumTest
@@ -945,7 +945,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_1900
+     * @tc.number SUB_PLAINARRAY_TESTONE_1900
      * @tc.name testPlainArray01Chapter0019
      * @tc.desc Test  returns true when all elements are removed one by one
      * @tc.size MediumTest
@@ -971,7 +971,7 @@ export default function PlainArray01Test(): void {
 
     });
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_2000
+     * @tc.number SUB_PLAINARRAY_TESTONE_2000
      * @tc.name testPlainArray01Chapter0020
      * @tc.desc Test  method cannot be bound (negative test)
      * @tc.size MediumTest
@@ -997,7 +997,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_2100
+     * @tc.number SUB_PLAINARRAY_TESTONE_2100
      * @tc.name testPlainArray01Chapter0021
      * @tc.desc Test has with 0 and -0 as key
      * @tc.size MediumTest
@@ -1016,7 +1016,7 @@ export default function PlainArray01Test(): void {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_2200
+     * @tc.number SUB_PLAINARRAY_TESTONE_2200
      * @tc.name testPlainArray01Chapter0022
      * @tc.desc Test has with NaN as key
      * @tc.size MediumTest
@@ -1039,7 +1039,7 @@ export default function PlainArray01Test(): void {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_2300
+     * @tc.number SUB_PLAINARRAY_TESTONE_2300
      * @tc.name testPlainArray01Chapter0023
      * @tc.desc Test has with Infinity and -Infinity as key
      * @tc.size MediumTest
@@ -1070,7 +1070,7 @@ export default function PlainArray01Test(): void {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_2400
+     * @tc.number SUB_PLAINARRAY_TESTONE_2400
      * @tc.name testPlainArray01Chapter0024
      * @tc.desc Test has with double type keys like Math.floor(1.5)
      * @tc.size MediumTest
@@ -1096,7 +1096,7 @@ export default function PlainArray01Test(): void {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_2500
+     * @tc.number SUB_PLAINARRAY_TESTONE_2500
      * @tc.name testPlainArray01Chapter0025
      * @tc.desc Test has with Number.MAX_VALUE as key
      * @tc.size MediumTest
@@ -1119,7 +1119,7 @@ export default function PlainArray01Test(): void {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_2600
+     * @tc.number SUB_PLAINARRAY_TESTONE_2600
      * @tc.name testPlainArray01Chapter0026
      * @tc.desc Test has with Number.MIN_VALUE as key
      * @tc.size MediumTest
@@ -1142,7 +1142,7 @@ export default function PlainArray01Test(): void {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_2700
+     * @tc.number SUB_PLAINARRAY_TESTONE_2700
      * @tc.name testPlainArray01Chapter0027
      * @tc.desc Test has with Number.EPSILON as key
      * @tc.size MediumTest
@@ -1165,7 +1165,7 @@ export default function PlainArray01Test(): void {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_2800
+     * @tc.number SUB_PLAINARRAY_TESTONE_2800
      * @tc.name testPlainArray01Chapter0028
      * @tc.desc Test has with Number.MAX_SAFE_INTEGER as key
      * @tc.size MediumTest
@@ -1188,7 +1188,7 @@ export default function PlainArray01Test(): void {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_2900
+     * @tc.number SUB_PLAINARRAY_TESTONE_2900
      * @tc.name testPlainArray01Chapter0029
      * @tc.desc Test has with byte range keys (-128 to 127)
      * @tc.size MediumTest
@@ -1208,7 +1208,7 @@ export default function PlainArray01Test(): void {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_3000
+     * @tc.number SUB_PLAINARRAY_TESTONE_3000
      * @tc.name testPlainArray01Chapter0030
      * @tc.desc Test has with short range keys (-32768 to 32767)
      * @tc.size MediumTest
@@ -1228,7 +1228,7 @@ export default function PlainArray01Test(): void {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_3100
+     * @tc.number SUB_PLAINARRAY_TESTONE_3100
      * @tc.name testPlainArray01Chapter0031
      * @tc.desc Test has with int range keys (-2147483648 to 2147483647)
      * @tc.size MediumTest
@@ -1248,7 +1248,7 @@ export default function PlainArray01Test(): void {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_3200
+     * @tc.number SUB_PLAINARRAY_TESTONE_3200
      * @tc.name testPlainArray01Chapter0032
      * @tc.desc Test has with long range keys (beyond int, e.g. -9223372036854775808 to 9223372036854775807)
      * @tc.size MediumTest
@@ -1279,7 +1279,7 @@ export default function PlainArray01Test(): void {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_3300
+     * @tc.number SUB_PLAINARRAY_TESTONE_3300
      * @tc.name testPlainArray01Chapter0033
      * @tc.desc Test has with float range keys
      * @tc.size MediumTest
@@ -1310,7 +1310,7 @@ export default function PlainArray01Test(): void {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_3400
+     * @tc.number SUB_PLAINARRAY_TESTONE_3400
      * @tc.name testPlainArray01Chapter0034
      * @tc.desc Test has with double range keys
      * @tc.size MediumTest
@@ -1341,7 +1341,7 @@ export default function PlainArray01Test(): void {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_3500
+     * @tc.number SUB_PLAINARRAY_TESTONE_3500
      * @tc.name testPlainArray01Chapter0035
      * @tc.desc Test has with char range keys (0 to 65535)
      * @tc.size MediumTest
@@ -1361,7 +1361,7 @@ export default function PlainArray01Test(): void {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_3600
+     * @tc.number SUB_PLAINARRAY_TESTONE_3600
      * @tc.name testPlainArray01Chapter0036
      * @tc.desc Test has with bigint value as key
      * @tc.size MediumTest
@@ -1378,7 +1378,7 @@ export default function PlainArray01Test(): void {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_3700
+     * @tc.number SUB_PLAINARRAY_TESTONE_3700
      * @tc.name testPlainArray01Chapter0037
      * @tc.desc Test has with double value like 123.456 as key
      * @tc.size MediumTest
@@ -1401,7 +1401,7 @@ export default function PlainArray01Test(): void {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_3800
+     * @tc.number SUB_PLAINARRAY_TESTONE_3800
      * @tc.name testPlainArray01Chapter0038
      * @tc.desc Test has with float value like 0xcafebabe as key
      * @tc.size MediumTest
@@ -1424,7 +1424,7 @@ export default function PlainArray01Test(): void {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_3900
+     * @tc.number SUB_PLAINARRAY_TESTONE_3900
      * @tc.name testPlainArray01Chapter0039
      * @tc.desc Test has with 16 hexadecimal value as key
      * @tc.size MediumTest
@@ -1442,7 +1442,7 @@ export default function PlainArray01Test(): void {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_4000
+     * @tc.number SUB_PLAINARRAY_TESTONE_4000
      * @tc.name testPlainArray01Chapter0040
      * @tc.desc Test has with 32 hexadecimal value as key
      * @tc.size MediumTest
@@ -1460,7 +1460,7 @@ export default function PlainArray01Test(): void {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_4100
+     * @tc.number SUB_PLAINARRAY_TESTONE_4100
      * @tc.name testPlainArray01Chapter0041
      * @tc.desc Test has with octal value as key
      * @tc.size MediumTest
@@ -1478,7 +1478,7 @@ export default function PlainArray01Test(): void {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_4200
+     * @tc.number SUB_PLAINARRAY_TESTONE_4200
      * @tc.name testPlainArray01Chapter0042
      * @tc.desc Test has with exponent operator like 2 ** 3 as key
      * @tc.size MediumTest
@@ -1496,7 +1496,7 @@ export default function PlainArray01Test(): void {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_4300
+     * @tc.number SUB_PLAINARRAY_TESTONE_4300
      * @tc.name testPlainArray01Chapter0043
      * @tc.desc Test has with scientific notation like 1e3, 2.5e-2 as key
      * @tc.size MediumTest
@@ -1522,7 +1522,7 @@ export default function PlainArray01Test(): void {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_4400
+     * @tc.number SUB_PLAINARRAY_TESTONE_4400
      * @tc.name testPlainArray01Chapter0044
      * @tc.desc Test has with big integer like 9007199254740991n as key
      * @tc.size MediumTest
@@ -1539,7 +1539,7 @@ export default function PlainArray01Test(): void {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST01_4500
+     * @tc.number SUB_PLAINARRAY_TESTONE_4500
      * @tc.name testPlainArray01Chapter0045
      * @tc.desc Test calling has method without binding (error 10200011)
      * @tc.size MediumTest
@@ -1560,7 +1560,7 @@ export default function PlainArray01Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST01_4600
+     * @tc.number    SUB_PLAINARRAY_TESTONE_4600
      * @tc.name      testPlainArray01Chapter0046
      * @tc.desc      Get value with key 0 executes normally
      * @tc.size      MediumTest
@@ -1577,7 +1577,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST01_4700
+     * @tc.number    SUB_PLAINARRAY_TESTONE_4700
      * @tc.name      testPlainArray01Chapter0047
      * @tc.desc      Get value with negative zero key
      * @tc.size      MediumTest
@@ -1594,7 +1594,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST01_4800
+     * @tc.number    SUB_PLAINARRAY_TESTONE_4800
      * @tc.name      testPlainArray01Chapter0048
      * @tc.desc      Get value with Math.floor result key
      * @tc.size      MediumTest
@@ -1611,7 +1611,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST01_4900
+     * @tc.number    SUB_PLAINARRAY_TESTONE_4900
      * @tc.name      testPlainArray01Chapter0049
      * @tc.desc      Get value with int32 minimum key
      * @tc.size      MediumTest
@@ -1628,7 +1628,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST01_5000
+     * @tc.number    SUB_PLAINARRAY_TESTONE_5000
      * @tc.name      testPlainArray01Chapter0050
      * @tc.desc      Get value with int32 maximum key
      * @tc.size      MediumTest
@@ -1645,7 +1645,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST01_5100
+     * @tc.number    SUB_PLAINARRAY_TESTONE_5100
      * @tc.name      testPlainArray01Chapter0051
      * @tc.desc      Get with NaN key throws parameter error
      * @tc.size      MediumTest
@@ -1666,7 +1666,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST01_5200
+     * @tc.number    SUB_PLAINARRAY_TESTONE_5200
      * @tc.name      testPlainArray01Chapter0052
      * @tc.desc      Get with Infinity key throws parameter error
      * @tc.size      MediumTest
@@ -1687,7 +1687,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST01_5300
+     * @tc.number    SUB_PLAINARRAY_TESTONE_5300
      * @tc.name      testPlainArray01Chapter0053
      * @tc.desc      Get with undefined key throws parameter error
      * @tc.size      MediumTest
@@ -1708,7 +1708,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST01_5400
+     * @tc.number    SUB_PLAINARRAY_TESTONE_5400
      * @tc.name      testPlainArray01Chapter0054
      * @tc.desc      Get value with Number.MAX_VALUE key throws parameter error
      * @tc.size      MediumTest
@@ -1729,7 +1729,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST01_5500
+     * @tc.number    SUB_PLAINARRAY_TESTONE_5500
      * @tc.name      testPlainArray01Chapter0055
      * @tc.desc      Get value with Number.MIN_VALUE key executes normally
      * @tc.size      MediumTest
@@ -1751,7 +1751,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST01_5600
+     * @tc.number    SUB_PLAINARRAY_TESTONE_5600
      * @tc.name      testPlainArray01Chapter0056
      * @tc.desc      Get value with Number.EPSILON key executes normally
      * @tc.size      MediumTest
@@ -1773,7 +1773,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST01_5700
+     * @tc.number    SUB_PLAINARRAY_TESTONE_5700
      * @tc.name      testPlainArray01Chapter0057
      * @tc.desc      Get value with Number.MAX_SAFE_INTEGER key throws parameter error
      * @tc.size      MediumTest
@@ -1794,7 +1794,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST01_5800
+     * @tc.number    SUB_PLAINARRAY_TESTONE_5800
      * @tc.name      testPlainArray01Chapter0058
      * @tc.desc      Get value with byte range minimum key
      * @tc.size      MediumTest
@@ -1811,7 +1811,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST01_5900
+     * @tc.number    SUB_PLAINARRAY_TESTONE_5900
      * @tc.name      testPlainArray01Chapter0059
      * @tc.desc      Get value with byte range maximum key
      * @tc.size      MediumTest
@@ -1828,7 +1828,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST01_6000
+     * @tc.number    SUB_PLAINARRAY_TESTONE_6000
      * @tc.name      testPlainArray01Chapter0060
      * @tc.desc      Get value with short range minimum key
      * @tc.size      MediumTest
@@ -1845,7 +1845,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST01_6100
+     * @tc.number    SUB_PLAINARRAY_TESTONE_6100
      * @tc.name      testPlainArray01Chapter0061
      * @tc.desc      Get value with short range maximum key
      * @tc.size      MediumTest
@@ -1862,7 +1862,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST01_6200
+     * @tc.number    SUB_PLAINARRAY_TESTONE_6200
      * @tc.name      testPlainArray01Chapter0062
      * @tc.desc      Get value with hex literal key
      * @tc.size      MediumTest
@@ -1879,7 +1879,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST01_6300
+     * @tc.number    SUB_PLAINARRAY_TESTONE_6300
      * @tc.name      testPlainArray01Chapter0063
      * @tc.desc      Get value with exponent operator result key
      * @tc.size      MediumTest
@@ -1896,7 +1896,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST01_6400
+     * @tc.number    SUB_PLAINARRAY_TESTONE_6400
      * @tc.name      testPlainArray01Chapter0064
      * @tc.desc      Get value with scientific notation key
      * @tc.size      MediumTest
@@ -1912,7 +1912,7 @@ export default function PlainArray01Test(): void {
       expect(result === 18).assertTrue();
     });
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST01_6500
+     * @tc.number    SUB_PLAINARRAY_TESTONE_6500
      * @tc.name      testPlainArray01Chapter0065
      * @tc.desc      Get value with negative scientific notation key
      * @tc.size      MediumTest
@@ -1934,7 +1934,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST01_6600
+     * @tc.number    SUB_PLAINARRAY_TESTONE_6600
      * @tc.name      testPlainArray01Chapter0066
      * @tc.desc      Get value with explicit double literal key
      * @tc.size      MediumTest
@@ -1956,7 +1956,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST01_6700
+     * @tc.number    SUB_PLAINARRAY_TESTONE_6700
      * @tc.name      testPlainArray01Chapter0067
      * @tc.desc      Get value with int32 boundary overflow positive throws error
      * @tc.size      MediumTest
@@ -1977,7 +1977,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST01_6800
+     * @tc.number    SUB_PLAINARRAY_TESTONE_6800
      * @tc.name      testPlainArray01Chapter0068
      * @tc.desc      Get value with int32 boundary overflow negative throws error
      * @tc.size      MediumTest
@@ -1998,7 +1998,7 @@ export default function PlainArray01Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST01_6900
+     * @tc.number    SUB_PLAINARRAY_TESTONE_6900
      * @tc.name      testPlainArray01Chapter0069
      * @tc.desc      Get value with negative Infinity key throws error
      * @tc.size      MediumTest

@@ -261,7 +261,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_0100
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_0100
      * @tc.name      testPlainArray04Chapter0001
      * @tc.desc      clone empty PlainArray
      * @tc.size      MediumTest
@@ -279,7 +279,7 @@ export default function PlainArray04Test(): void {
       expect(plainArray === clonedArray).assertFalse()
     })
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_0200
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_0200
      * @tc.name      testPlainArray04Chapter0002
      * @tc.desc      clone PlainArray with string values
      * @tc.size      MediumTest
@@ -302,7 +302,7 @@ export default function PlainArray04Test(): void {
       expect(plainArray === clonedArray).assertFalse()
     })
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_0300
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_0300
      * @tc.name      testPlainArray04Chapter0003
      * @tc.desc      verify cloned array modification doesn't affect original
      * @tc.size      MediumTest
@@ -328,7 +328,7 @@ export default function PlainArray04Test(): void {
       expect(clonedArray.length).assertEqual(3)
     })
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_0400
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_0400
      * @tc.name      testPlainArray04Chapter0004
      * @tc.desc      clone PlainArray with number values
      * @tc.size      MediumTest
@@ -350,7 +350,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_0500
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_0500
      * @tc.name      testPlainArray04Chapter0005
      * @tc.desc      clone PlainArray with boolean values
      * @tc.size      MediumTest
@@ -373,7 +373,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_0600
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_0600
      * @tc.name      testPlainArray04Chapter0006
      * @tc.desc      clone PlainArray with object values
      * @tc.size      MediumTest
@@ -396,7 +396,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_0700
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_0700
      * @tc.name      testPlainArray04Chapter0007
      * @tc.desc      clone PlainArray with array values
      * @tc.size      MediumTest
@@ -416,7 +416,7 @@ export default function PlainArray04Test(): void {
       expect(clonedArray.length).assertEqual(2)
     })
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_0800
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_0800
      * @tc.name      testPlainArray04Chapter0008
      * @tc.desc      clone PlainArray with special number values
      * @tc.size      MediumTest
@@ -443,7 +443,7 @@ export default function PlainArray04Test(): void {
       expect(clonedArray.length).assertEqual(5)
     })
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_0900
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_0900
      * @tc.name      testPlainArray04Chapter0009
      * @tc.desc      clone PlainArray with string boundary values
      * @tc.size      MediumTest
@@ -469,7 +469,7 @@ export default function PlainArray04Test(): void {
       expect(clonedArray.length).assertEqual(5)
     })
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_1000
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_1000
      * @tc.name      testPlainArray04Chapter0010
      * @tc.desc      clone PlainArray with integer boundary values
      * @tc.size      MediumTest
@@ -497,7 +497,7 @@ export default function PlainArray04Test(): void {
       expect(clonedArray.length).assertEqual(6)
     })
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_1100
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_1100
      * @tc.name      testPlainArray04Chapter0011
      * @tc.desc      verify removing from original doesn't affect clone
      * @tc.size      MediumTest
@@ -522,7 +522,7 @@ export default function PlainArray04Test(): void {
       expect(clonedArray.get(3)).assertEqual("cherry")
     })
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_1200
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_1200
      * @tc.name      testPlainArray04Chapter0012
      * @tc.desc      verify clearing original doesn't affect clone
      * @tc.size      MediumTest
@@ -545,7 +545,7 @@ export default function PlainArray04Test(): void {
       expect(clonedArray.get(3)).assertEqual("cherry")
     })
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_1300
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_1300
      * @tc.name      testPlainArray04Chapter0013
      * @tc.desc      clone PlainArray with large index values
      * @tc.size      MediumTest
@@ -568,7 +568,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_1400
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_1400
      * @tc.name      testPlainArray04Chapter0014
      * @tc.desc      clone PlainArray with negative index values
      * @tc.size      MediumTest
@@ -591,7 +591,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_1500
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_1500
      * @tc.name      testPlainArray04Chapter0015
      * @tc.desc      clone PlainArray multiple times
      * @tc.size      MediumTest
@@ -625,7 +625,7 @@ export default function PlainArray04Test(): void {
       expect(clone3.get(1)).assertEqual("modified")
     })
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_1600
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_1600
      * @tc.name      testPlainArray04Chapter0016
      * @tc.desc      clone PlainArray with string escape characters
      * @tc.size      MediumTest
@@ -658,7 +658,7 @@ export default function PlainArray04Test(): void {
       expect(clonedArray.length).assertEqual(8)
     })
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_1700
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_1700
      * @tc.name      testPlainArray04Chapter0017
      * @tc.desc      clone PlainArray with ASCII all characters
      * @tc.size      MediumTest
@@ -683,7 +683,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_1800
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_1800
      * @tc.name      testPlainArray04Chapter0018
      * @tc.desc      clone PlainArray with duplicate special characters
      * @tc.size      MediumTest
@@ -713,7 +713,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_1900
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_1900
      * @tc.name      testPlainArray04Chapter0019
      * @tc.desc      clone PlainArray with number boundary values
      * @tc.size      MediumTest
@@ -751,7 +751,7 @@ export default function PlainArray04Test(): void {
       expect(clonedArray.length).assertEqual(10)
     })
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_2000
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_2000
      * @tc.name      testPlainArray04Chapter0020
      * @tc.desc      clone PlainArray with float values
      * @tc.size      MediumTest
@@ -786,7 +786,7 @@ export default function PlainArray04Test(): void {
       expect(clonedArray.length).assertEqual(9)
     })
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_2100
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_2100
      * @tc.name      testPlainArray04Chapter0021
      * @tc.desc      clone PlainArray with boolean data types
      * @tc.size      MediumTest
@@ -809,7 +809,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_2200
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_2200
      * @tc.name      testPlainArray04Chapter0022
      * @tc.desc      clone PlainArray with array data types
      * @tc.size      MediumTest
@@ -842,7 +842,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_2300
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_2300
      * @tc.name      testPlainArray04Chapter0023
      * @tc.desc      clone PlainArray with mixed array data types
      * @tc.size      MediumTest
@@ -869,7 +869,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_2400
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_2400
      * @tc.name      testPlainArray04Chapter0024
      * @tc.desc      clone PlainArray with empty array
      * @tc.size      MediumTest
@@ -889,7 +889,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_2500
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_2500
      * @tc.name      testPlainArray04Chapter0025
      * @tc.desc      clone PlainArray with object data types
      * @tc.size      MediumTest
@@ -918,7 +918,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_2600
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_2600
      * @tc.name      testPlainArray04Chapter0026
      * @tc.desc      clone PlainArray with special object properties
      * @tc.size      MediumTest
@@ -947,7 +947,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_2700
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_2700
      * @tc.name      testPlainArray04Chapter0027
      * @tc.desc      clone PlainArray with TypedArray data types
      * @tc.size      MediumTest
@@ -983,7 +983,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_2800
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_2800
      * @tc.name      testPlainArray04Chapter0028
      * @tc.desc      clone PlainArray with TypedArray special values
      * @tc.size      MediumTest
@@ -1017,7 +1017,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_2900
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_2900
      * @tc.name      testPlainArray04Chapter0029
      * @tc.desc      clone PlainArray with large string for memory test
      * @tc.size      MediumTest
@@ -1041,7 +1041,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_3000
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_3000
      * @tc.name      testPlainArray04Chapter0030
      * @tc.desc      clone PlainArray with tree string type
      * @tc.size      MediumTest
@@ -1075,7 +1075,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_3100
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_3100
      * @tc.name      testPlainArray04Chapter0031
      * @tc.desc      clone PlainArray with slice string type
      * @tc.size      MediumTest
@@ -1101,7 +1101,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_3200
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_3200
      * @tc.name      testPlainArray04Chapter0032
      * @tc.desc      clone PlainArray with Unicode emoji characters
      * @tc.size      MediumTest
@@ -1137,7 +1137,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_3300
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_3300
      * @tc.name      testPlainArray04Chapter0033
      * @tc.desc      clone PlainArray with Unicode encoded emoji
      * @tc.size      MediumTest
@@ -1167,7 +1167,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_3400
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_3400
      * @tc.name      testPlainArray04Chapter0034
      * @tc.desc      clone PlainArray with illegal Unicode
      * @tc.size      MediumTest
@@ -1193,7 +1193,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_3500
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_3500
      * @tc.name      testPlainArray04Chapter0035
      * @tc.desc      clone PlainArray with mixed data types
      * @tc.size      MediumTest
@@ -1235,7 +1235,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_3600
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_3600
      * @tc.name      testPlainArray04Chapter0036
      * @tc.desc      test clone performance with many elements
      * @tc.size      MediumTest
@@ -1260,7 +1260,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_3700
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_3700
      * @tc.name      testPlainArray04Chapter0037
      * @tc.desc      clone PlainArray with complex mixed data types
      * @tc.size      MediumTest
@@ -1324,7 +1324,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_3800
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_3800
      * @tc.name      testPlainArray04Chapter0038
      * @tc.desc      clone PlainArray with BigInt64Array type
      * @tc.size      MediumTest
@@ -1354,7 +1354,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_3900
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_3900
      * @tc.name      testPlainArray04Chapter0039
      * @tc.desc      clone PlainArray with BigUint64Array type
      * @tc.size      MediumTest
@@ -1384,7 +1384,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_4000
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_4000
      * @tc.name      testPlainArray04Chapter0040
      * @tc.desc      verify typed array special value storage rules after clone
      * @tc.size      MediumTest
@@ -1445,7 +1445,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_4100
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_4100
      * @tc.name      testPlainArray04Chapter0041
      * @tc.desc      clone PlainArray with objects having multiple key types
      * @tc.size      MediumTest
@@ -1482,7 +1482,7 @@ export default function PlainArray04Test(): void {
 
     })
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_4200
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_4200
      * @tc.name      testPlainArray04Chapter0042
      * @tc.desc      clone PlainArray with Map properties
      * @tc.size      MediumTest
@@ -1524,7 +1524,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_4300
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_4300
      * @tc.name      testPlainArray04Chapter0043
      * @tc.desc      clone PlainArray with Set properties
      * @tc.size      MediumTest
@@ -1558,7 +1558,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_4400
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_4400
      * @tc.name      testPlainArray04Chapter0044
      * @tc.desc      clone PlainArray with Promise properties
      * @tc.size      MediumTest
@@ -1585,7 +1585,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_4500
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_4500
      * @tc.name      testPlainArray04Chapter0045
      * @tc.desc      clone PlainArray with RegExp properties
      * @tc.size      MediumTest
@@ -1629,7 +1629,7 @@ export default function PlainArray04Test(): void {
 
     })
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_4600
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_4600
      * @tc.name      testPlainArray04Chapter0046
      * @tc.desc      clone PlainArray with ArrayBuffer properties
      * @tc.size      MediumTest
@@ -1664,7 +1664,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_4700
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_4700
      * @tc.name      testPlainArray04Chapter0047
      * @tc.desc      clone PlainArray with DataView properties
      * @tc.size      MediumTest
@@ -1709,7 +1709,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_4800
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_4800
      * @tc.name      testPlainArray04Chapter0048
      * @tc.desc      clone PlainArray with BigInt values
      * @tc.size      MediumTest
@@ -1756,7 +1756,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_4900
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_4900
      * @tc.name      testPlainArray04Chapter0049
      * @tc.desc      clone PlainArray with different number representations
      * @tc.size      MediumTest
@@ -1802,7 +1802,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_5000
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_5000
      * @tc.name      testPlainArray04Chapter0050
      * @tc.desc      clone PlainArray with complex object properties
      * @tc.size      MediumTest
@@ -1844,7 +1844,7 @@ export default function PlainArray04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST04_5100
+     * @tc.number    SUB_PLAINARRAY_TESTFOUR_5100
      * @tc.name      testPlainArray04Chapter0051
      * @tc.desc      clone PlainArray with string keywords
      * @tc.size      MediumTest

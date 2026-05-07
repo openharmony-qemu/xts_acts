@@ -107,7 +107,7 @@ export default function PlainArray02Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_0100
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_0100
      * @tc.name      testPlainArray02Chapter0001
      * @tc.desc      Get index with key zero executes normally
      * @tc.size      MediumTest
@@ -124,7 +124,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_0200
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_0200
      * @tc.name      testPlainArray02Chapter0002
      * @tc.desc      Get index with NaN key throws error
      * @tc.size      MediumTest
@@ -145,7 +145,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_0300
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_0300
      * @tc.name      testPlainArray02Chapter0003
      * @tc.desc      Get index with minus zero executes normally
      * @tc.size      MediumTest
@@ -162,7 +162,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_0400
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_0400
      * @tc.name      testPlainArray02Chapter0004
      * @tc.desc      Get index with Infinity key throws error
      * @tc.size      MediumTest
@@ -183,7 +183,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_0500
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_0500
      * @tc.name      testPlainArray02Chapter0005
      * @tc.desc      Get index with negative Infinity key throws error
      * @tc.size      MediumTest
@@ -204,7 +204,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_0600
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_0600
      * @tc.name      testPlainArray02Chapter0006
      * @tc.desc      Get index with double value executes normally
      * @tc.size      MediumTest
@@ -222,7 +222,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_0700
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_0700
      * @tc.name      testPlainArray02Chapter0007
      * @tc.desc      Get index with Number MIN_VALUE executes normally
      * @tc.size      MediumTest
@@ -244,7 +244,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_0800
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_0800
      * @tc.name      testPlainArray02Chapter0008
      * @tc.desc      Get index with Number EPSILON executes normally
      * @tc.size      MediumTest
@@ -266,7 +266,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_0900
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_0900
      * @tc.name      testPlainArray02Chapter0009
      * @tc.desc      Get index with byte boundary executes normally
      * @tc.size      MediumTest
@@ -283,7 +283,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_1000
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_1000
      * @tc.name      testPlainArray02Chapter0010
      * @tc.desc      Get index with int32 max boundary executes normally
      * @tc.size      MediumTest
@@ -301,7 +301,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_1100
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_1100
      * @tc.name      testPlainArray02Chapter0011
      * @tc.desc      Get index with hex number executes normally
      * @tc.size      MediumTest
@@ -318,7 +318,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_1200
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_1200
      * @tc.name      testPlainArray02Chapter0012
      * @tc.desc      Get index with power operator executes normally
      * @tc.size      MediumTest
@@ -335,7 +335,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_1300
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_1300
      * @tc.name      testPlainArray02Chapter0013
      * @tc.desc      Get index with scientific notation executes normally
      * @tc.size      MediumTest
@@ -351,7 +351,7 @@ export default function PlainArray02Test(): void {
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_1400
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_1400
      * @tc.name      testPlainArray02Chapter0014
      * @tc.desc      Get index with Number MAX_VALUE executes normally
      * @tc.size      MediumTest
@@ -373,7 +373,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_1500
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_1500
      * @tc.name      testPlainArray02Chapter0015
      * @tc.desc      Get index with Number MAX_SAFE_INTEGER executes normally
      * @tc.size      MediumTest
@@ -396,7 +396,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_1600
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_1600
      * @tc.name      testPlainArray02Chapter0016
      * @tc.desc      Get index with short minimum boundary executes normally
      * @tc.size      MediumTest
@@ -413,7 +413,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_1700
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_1700
      * @tc.name      testPlainArray02Chapter0017
      * @tc.desc      Get index with int32 minimum boundary executes normally
      * @tc.size      MediumTest
@@ -431,7 +431,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_1800
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_1800
      * @tc.name      testPlainArray02Chapter0018
      * @tc.desc      Get index with key greater than int32 max throws error
      * @tc.size      MediumTest
@@ -452,7 +452,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_1900
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_1900
      * @tc.name      testPlainArray02Chapter0019
      * @tc.desc      Get index with long value executes normally
      * @tc.size      MediumTest
@@ -475,7 +475,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_2000
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_2000
      * @tc.name      testPlainArray02Chapter0020
      * @tc.desc      Get index with negative double boundary executes normally
      * @tc.size      MediumTest
@@ -498,7 +498,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_2100
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_2100
      * @tc.name      testPlainArray02Chapter0021
      * @tc.desc      Get index with char range value executes normally
      * @tc.size      MediumTest
@@ -515,7 +515,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_2200
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_2200
      * @tc.name      testPlainArray02Chapter0022
      * @tc.desc      Get index with normal double value executes normally
      * @tc.size      MediumTest
@@ -537,7 +537,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_2300
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_2300
      * @tc.name      testPlainArray02Chapter0023
      * @tc.desc      Get index with float hex value executes normally
      * @tc.size      MediumTest
@@ -559,7 +559,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_2400
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_2400
      * @tc.name      testPlainArray02Chapter0024
      * @tc.desc      getIndexOfValue with normal array value
      * @tc.size      MediumTest
@@ -577,7 +577,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_2500
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_2500
      * @tc.name      testPlainArray02Chapter0025
      * @tc.desc      getIndexOfValue with empty array value
      * @tc.size      MediumTest
@@ -595,7 +595,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_2600
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_2600
      * @tc.name      testPlainArray02Chapter0026
      * @tc.desc      getIndexOfValue with array not found
      * @tc.size      MediumTest
@@ -612,7 +612,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_2700
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_2700
      * @tc.name      testPlainArray02Chapter0027
      * @tc.desc      getIndexOfValue with Map value
      * @tc.size      MediumTest
@@ -631,7 +631,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_2800
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_2800
      * @tc.name      testPlainArray02Chapter0028
      * @tc.desc      getIndexOfValue with different Map instance
      * @tc.size      MediumTest
@@ -652,7 +652,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_2900
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_2900
      * @tc.name      testPlainArray02Chapter0029
      * @tc.desc      getIndexOfValue with Set value
      * @tc.size      MediumTest
@@ -672,7 +672,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_3000
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_3000
      * @tc.name      testPlainArray02Chapter0030
      * @tc.desc      getIndexOfValue with empty Set
      * @tc.size      MediumTest
@@ -690,7 +690,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_3100
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_3100
      * @tc.name      testPlainArray02Chapter0031
      * @tc.desc      getIndexOfValue with Promise value
      * @tc.size      MediumTest
@@ -710,7 +710,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_3200
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_3200
      * @tc.name      testPlainArray02Chapter0032
      * @tc.desc      getIndexOfValue with different Promise instance
      * @tc.size      MediumTest
@@ -733,7 +733,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_3300
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_3300
      * @tc.name      testPlainArray02Chapter0033
      * @tc.desc      getIndexOfValue with undefined value
      * @tc.size      MediumTest
@@ -750,7 +750,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_3400
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_3400
      * @tc.name      testPlainArray02Chapter0034
      * @tc.desc      getIndexOfValue called unbound
      * @tc.size      MediumTest
@@ -773,7 +773,7 @@ export default function PlainArray02Test(): void {
 
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_3500
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_3500
      * @tc.name      testPlainArray02Chapter0035
      * @tc.desc      getIndexOfValue with normal object
      * @tc.size      MediumTest
@@ -791,7 +791,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_3600
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_3600
      * @tc.name      testPlainArray02Chapter0036
      * @tc.desc      getIndexOfValue with nested object
      * @tc.size      MediumTest
@@ -809,7 +809,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_3700
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_3700
      * @tc.name      testPlainArray02Chapter0037
      * @tc.desc      getIndexOfValue with different object reference
      * @tc.size      MediumTest
@@ -826,7 +826,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_3800
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_3800
      * @tc.name      testPlainArray02Chapter0038
      * @tc.desc      getIndexOfValue with object containing undefined
      * @tc.size      MediumTest
@@ -844,7 +844,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_3900
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_3900
      * @tc.name      testPlainArray02Chapter0039
      * @tc.desc      getIndexOfValue with object containing null
      * @tc.size      MediumTest
@@ -862,7 +862,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_4000
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_4000
      * @tc.name      testPlainArray02Chapter0040
      * @tc.desc      getIndexOfValue with empty object
      * @tc.size      MediumTest
@@ -891,7 +891,7 @@ export default function PlainArray02Test(): void {
 
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_4100
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_4100
      * @tc.name      testPlainArray02Chapter0041
      * @tc.desc      getIndexOfValue with large object
      * @tc.size      MediumTest
@@ -915,7 +915,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_4200
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_4200
      * @tc.name      testPlainArray02Chapter0042
      * @tc.desc      getIndexOfValue with Int8Array
      * @tc.size      MediumTest
@@ -933,7 +933,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_4300
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_4300
      * @tc.name      testPlainArray02Chapter0043
      * @tc.desc      getIndexOfValue with Uint8Array
      * @tc.size      MediumTest
@@ -951,7 +951,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_4400
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_4400
      * @tc.name      testPlainArray02Chapter0044
      * @tc.desc      getIndexOfValue with Uint8ClampedArray
      * @tc.size      MediumTest
@@ -969,7 +969,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_4500
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_4500
      * @tc.name      testPlainArray02Chapter0045
      * @tc.desc      getIndexOfValue with Int16Array
      * @tc.size      MediumTest
@@ -987,7 +987,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_4600
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_4600
      * @tc.name      testPlainArray02Chapter0046
      * @tc.desc      getIndexOfValue with Int32Array
      * @tc.size      MediumTest
@@ -1005,7 +1005,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_4700
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_4700
      * @tc.name      testPlainArray02Chapter0047
      * @tc.desc      getIndexOfValue with Float32Array special values
      * @tc.size      MediumTest
@@ -1023,7 +1023,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_4800
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_4800
      * @tc.name      testPlainArray02Chapter0048
      * @tc.desc      getIndexOfValue with Float64Array boundary values
      * @tc.size      MediumTest
@@ -1041,7 +1041,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_4900
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_4900
      * @tc.name      testPlainArray02Chapter0049
      * @tc.desc      getIndexOfValue with BigInt64Array
      * @tc.size      MediumTest
@@ -1059,7 +1059,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_5000
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_5000
      * @tc.name      testPlainArray02Chapter0050
      * @tc.desc      getIndexOfValue with BigUint64Array
      * @tc.size      MediumTest
@@ -1077,7 +1077,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_5100
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_5100
      * @tc.name      testPlainArray02Chapter0051
      * @tc.desc      getIndexOfValue with different TypedArray instance
      * @tc.size      MediumTest
@@ -1093,7 +1093,7 @@ export default function PlainArray02Test(): void {
       expect(result).assertEqual(-1);
     });
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_5200
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_5200
      * @tc.name      testPlainArray02Chapter0052
      * @tc.desc      getIndexOfValue with normal string
      * @tc.size      MediumTest
@@ -1110,7 +1110,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_5300
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_5300
      * @tc.name      testPlainArray02Chapter0053
      * @tc.desc      getIndexOfValue with empty string
      * @tc.size      MediumTest
@@ -1126,7 +1126,7 @@ export default function PlainArray02Test(): void {
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_5400
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_5400
      * @tc.name      testPlainArray02Chapter0054
      * @tc.desc      getIndexOfValue with special characters
      * @tc.size      MediumTest
@@ -1144,7 +1144,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_5500
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_5500
      * @tc.name      testPlainArray02Chapter0055
      * @tc.desc      getIndexOfValue with ASCII full range
      * @tc.size      MediumTest
@@ -1161,7 +1161,7 @@ export default function PlainArray02Test(): void {
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_5600
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_5600
      * @tc.name      testPlainArray02Chapter0056
      * @tc.desc      getIndexOfValue with escape characters
      * @tc.size      MediumTest
@@ -1178,7 +1178,7 @@ export default function PlainArray02Test(): void {
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_5700
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_5700
      * @tc.name      testPlainArray02Chapter0057
      * @tc.desc      getIndexOfValue with emoji string
      * @tc.size      MediumTest
@@ -1195,7 +1195,7 @@ export default function PlainArray02Test(): void {
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_5800
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_5800
      * @tc.name      testPlainArray02Chapter0058
      * @tc.desc      getIndexOfValue with large string
      * @tc.size      MediumTest
@@ -1212,7 +1212,7 @@ export default function PlainArray02Test(): void {
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_5900
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_5900
      * @tc.name      testPlainArray02Chapter0059
      * @tc.desc      getIndexOfValue with zero
      * @tc.size      MediumTest
@@ -1229,7 +1229,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_6000
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_6000
      * @tc.name      testPlainArray02Chapter0060
      * @tc.desc      getIndexOfValue with NaN
      * @tc.size      MediumTest
@@ -1245,7 +1245,7 @@ export default function PlainArray02Test(): void {
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_6100
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_6100
      * @tc.name      testPlainArray02Chapter0061
      * @tc.desc      getIndexOfValue with Infinity
      * @tc.size      MediumTest
@@ -1262,7 +1262,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_6200
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_6200
      * @tc.name      testPlainArray02Chapter0062
      * @tc.desc      getIndexOfValue with negative Infinity
      * @tc.size      MediumTest
@@ -1278,7 +1278,7 @@ export default function PlainArray02Test(): void {
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_6300
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_6300
      * @tc.name      testPlainArray02Chapter0063
      * @tc.desc      getIndexOfValue with MAX_VALUE
      * @tc.size      MediumTest
@@ -1295,7 +1295,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_6400
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_6400
      * @tc.name      testPlainArray02Chapter0064
      * @tc.desc      getIndexOfValue with MIN_VALUE
      * @tc.size      MediumTest
@@ -1311,7 +1311,7 @@ export default function PlainArray02Test(): void {
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_6500
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_6500
      * @tc.name      testPlainArray02Chapter0065
      * @tc.desc      getIndexOfValue with hex number
      * @tc.size      MediumTest
@@ -1328,7 +1328,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_6600
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_6600
      * @tc.name      testPlainArray02Chapter0066
      * @tc.desc      getIndexOfValue with scientific notation
      * @tc.size      MediumTest
@@ -1344,7 +1344,7 @@ export default function PlainArray02Test(): void {
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_6700
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_6700
      * @tc.name      testPlainArray02Chapter0067
      * @tc.desc      getIndexOfValue with true value
      * @tc.size      MediumTest
@@ -1361,7 +1361,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_6800
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_6800
      * @tc.name      testPlainArray02Chapter0068
      * @tc.desc      getIndexOfValue with false value
      * @tc.size      MediumTest
@@ -1377,7 +1377,7 @@ export default function PlainArray02Test(): void {
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_6900
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_6900
      * @tc.name      testPlainArray02Chapter0069
      * @tc.desc      getIndexOfValue with same array reference
      * @tc.size      MediumTest
@@ -1395,7 +1395,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_7000
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_7000
      * @tc.name      testPlainArray02Chapter0070
      * @tc.desc      getIndexOfValue with different array reference
      * @tc.size      MediumTest
@@ -1411,7 +1411,7 @@ export default function PlainArray02Test(): void {
       expect(result).assertEqual(-1);
     });
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_7100
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_7100
      * @tc.name      testPlainArray02Chapter0071
      * @tc.desc      getIndexOfValue with same object reference
      * @tc.size      MediumTest
@@ -1429,7 +1429,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_7200
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_7200
      * @tc.name      testPlainArray02Chapter0072
      * @tc.desc      getIndexOfValue with different object reference
      * @tc.size      MediumTest
@@ -1445,7 +1445,7 @@ export default function PlainArray02Test(): void {
       expect(result).assertEqual(-1);
     });
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_7300
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_7300
      * @tc.name      testPlainArray02Chapter0073
      * @tc.desc      getIndexOfValue with same TypedArray reference
      * @tc.size      MediumTest
@@ -1463,7 +1463,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_7400
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_7400
      * @tc.name      testPlainArray02Chapter0074
      * @tc.desc      getIndexOfValue with different TypedArray reference
      * @tc.size      MediumTest
@@ -1479,7 +1479,7 @@ export default function PlainArray02Test(): void {
       expect(result).assertEqual(-1);
     });
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_7500
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_7500
      * @tc.name      testPlainArray02Chapter0075
      * @tc.desc      getIndexOfValue with Map reference
      * @tc.size      MediumTest
@@ -1497,7 +1497,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_7600
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_7600
      * @tc.name      testPlainArray02Chapter0076
      * @tc.desc      getIndexOfValue with Set reference
      * @tc.size      MediumTest
@@ -1515,7 +1515,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_7700
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_7700
      * @tc.name      testPlainArray02Chapter0077
      * @tc.desc      getIndexOfValue with Promise reference
      * @tc.size      MediumTest
@@ -1533,7 +1533,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_7800
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_7800
      * @tc.name      testPlainArray02Chapter0078
      * @tc.desc      Get key at index zero executes
      * @tc.size      MediumTest
@@ -1549,7 +1549,7 @@ export default function PlainArray02Test(): void {
       expect(result).assertEqual(0);
     });
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_7900
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_7900
      * @tc.name      testPlainArray02Chapter0079
      * @tc.desc      Get key at index double literal executes
      * @tc.size      MediumTest
@@ -1572,7 +1572,7 @@ export default function PlainArray02Test(): void {
 
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_8000
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_8000
      * @tc.name      testPlainArray02Chapter0080
      * @tc.desc      Get key at index NaN returns -1
      * @tc.size      MediumTest
@@ -1595,7 +1595,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_8100
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_8100
      * @tc.name      testPlainArray02Chapter0081
      * @tc.desc      Get key at index minus zero executes
      * @tc.size      MediumTest
@@ -1612,7 +1612,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_8200
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_8200
      * @tc.name      testPlainArray02Chapter0082
      * @tc.desc      Get key at index Infinity returns -1
      * @tc.size      MediumTest
@@ -1635,7 +1635,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_8300
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_8300
      * @tc.name      testPlainArray02Chapter0083
      * @tc.desc      Get key at index negative Infinity returns -1
      * @tc.size      MediumTest
@@ -1658,7 +1658,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_8400
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_8400
      * @tc.name      testPlainArray02Chapter0084
      * @tc.desc      Get key at index Math.floor double executes
      * @tc.size      MediumTest
@@ -1675,7 +1675,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_8500
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_8500
      * @tc.name      testPlainArray02Chapter0085
      * @tc.desc      Get key at index Number MAX_VALUE returns -1
      * @tc.size      MediumTest
@@ -1698,7 +1698,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_8600
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_8600
      * @tc.name      testPlainArray02Chapter0086
      * @tc.desc      Get key at index Number MIN_VALUE returns -1
      * @tc.size      MediumTest
@@ -1721,7 +1721,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_8700
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_8700
      * @tc.name      testPlainArray02Chapter0087
      * @tc.desc      Get key at index Number EPSILON returns -1
      * @tc.size      MediumTest
@@ -1744,7 +1744,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_8800
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_8800
      * @tc.name      testPlainArray02Chapter0088
      * @tc.desc      Get key at index MAX_SAFE_INTEGER returns -1
      * @tc.size      MediumTest
@@ -1767,7 +1767,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_8900
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_8900
      * @tc.name      testPlainArray02Chapter0089
      * @tc.desc      Get key at index byte max executes
      * @tc.size      MediumTest
@@ -1784,7 +1784,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_9000
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_9000
      * @tc.name      testPlainArray02Chapter0090
      * @tc.desc      Get key at index short min executes
      * @tc.size      MediumTest
@@ -1801,7 +1801,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_9100
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_9100
      * @tc.name      testPlainArray02Chapter0091
      * @tc.desc      Get key at index int32 min executes
      * @tc.size      MediumTest
@@ -1818,7 +1818,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_9200
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_9200
      * @tc.name      testPlainArray02Chapter0092
      * @tc.desc      Get key at index int32 max executes
      * @tc.size      MediumTest
@@ -1835,7 +1835,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_9300
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_9300
      * @tc.name      testPlainArray02Chapter0093
      * @tc.desc      Get key at index hex value executes
      * @tc.size      MediumTest
@@ -1852,7 +1852,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_9400
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_9400
      * @tc.name      testPlainArray02Chapter0094
      * @tc.desc      Get key at index octal executes
      * @tc.size      MediumTest
@@ -1869,7 +1869,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_9500
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_9500
      * @tc.name      testPlainArray02Chapter0095
      * @tc.desc      Get key at index power operator executes
      * @tc.size      MediumTest
@@ -1886,7 +1886,7 @@ export default function PlainArray02Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST02_9600
+     * @tc.number    SUB_PLAINARRAY_TESTTWO_9600
      * @tc.name      testPlainArray02Chapter0096
      * @tc.desc      Get key at index scientific notation executes
      * @tc.size      MediumTest

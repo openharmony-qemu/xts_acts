@@ -66,7 +66,7 @@ export default function PlainArray09Test() {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST09_0100
+     * @tc.number    SUB_PLAINARRAY_TESTNINE_0100
      * @tc.name      testPlainArray09Chapter0001
      * @tc.desc      test basic forEach functionality with string values
      * @tc.size      MediumTest
@@ -101,7 +101,7 @@ export default function PlainArray09Test() {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST09_0200
+     * @tc.number    SUB_PLAINARRAY_TESTNINE_0200
      * @tc.name      testPlainArray09Chapter0002
      * @tc.desc      test forEach with all three callback parameters
      * @tc.size      MediumTest
@@ -130,7 +130,7 @@ export default function PlainArray09Test() {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST09_0300
+     * @tc.number    SUB_PLAINARRAY_TESTNINE_0300
      * @tc.name      testPlainArray09Chapter0003
      * @tc.desc      test forEach with thisArg parameter
      * @tc.size      MediumTest
@@ -161,7 +161,7 @@ export default function PlainArray09Test() {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST09_0400
+     * @tc.number    SUB_PLAINARRAY_TESTNINE_0400
      * @tc.name      testPlainArray09Chapter0004
      * @tc.desc      test forEach on empty PlainArray
      * @tc.size      MediumTest
@@ -184,7 +184,7 @@ export default function PlainArray09Test() {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST09_0500
+     * @tc.number    SUB_PLAINARRAY_TESTNINE_0500
      * @tc.name      testPlainArray09Chapter0005
      * @tc.desc      test forEach with various number type values
      * @tc.size      MediumTest
@@ -220,7 +220,7 @@ export default function PlainArray09Test() {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST09_0600
+     * @tc.number    SUB_PLAINARRAY_TESTNINE_0600
      * @tc.name      testPlainArray09Chapter0006
      * @tc.desc      test forEach with boolean values
      * @tc.size      MediumTest
@@ -252,7 +252,7 @@ export default function PlainArray09Test() {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST09_0700
+     * @tc.number    SUB_PLAINARRAY_TESTNINE_0700
      * @tc.name      testPlainArray09Chapter0007
      * @tc.desc      test forEach with special characters in strings
      * @tc.size      MediumTest
@@ -279,7 +279,7 @@ export default function PlainArray09Test() {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST09_0800
+     * @tc.number    SUB_PLAINARRAY_TESTNINE_0800
      * @tc.name      testPlainArray09Chapter0008
      * @tc.desc      test forEach with unicode emoji characters
      * @tc.size      MediumTest
@@ -309,7 +309,7 @@ export default function PlainArray09Test() {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST09_0900
+     * @tc.number    SUB_PLAINARRAY_TESTNINE_0900
      * @tc.name      testPlainArray09Chapter0009
      * @tc.desc      test forEach with object values
      * @tc.size      MediumTest
@@ -338,7 +338,7 @@ export default function PlainArray09Test() {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST09_1000
+     * @tc.number    SUB_PLAINARRAY_TESTNINE_1000
      * @tc.name      testPlainArray09Chapter0010
      * @tc.desc      test forEach with array values
      * @tc.size      MediumTest
@@ -364,7 +364,7 @@ export default function PlainArray09Test() {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST09_1100
+     * @tc.number    SUB_PLAINARRAY_TESTNINE_1100
      * @tc.name      testPlainArray09Chapter0011
      * @tc.desc      test forEach with large number of elements
      * @tc.size      MediumTest
@@ -396,7 +396,7 @@ export default function PlainArray09Test() {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST09_1200
+     * @tc.number    SUB_PLAINARRAY_TESTNINE_1200
      * @tc.name      testPlainArray09Chapter0012
      * @tc.desc      test forEach maintains insertion order
      * @tc.size      MediumTest
@@ -435,7 +435,7 @@ export default function PlainArray09Test() {
       expect(result[4]).assertEqual("fifth");
     });
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST09_1300
+     * @tc.number    SUB_PLAINARRAY_TESTNINE_1300
      * @tc.name      testPlainArray09Chapter0013
      * @tc.desc      test forEach with non-function callback (should throw error)
      * @tc.size      MediumTest
@@ -454,7 +454,7 @@ export default function PlainArray09Test() {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST09_1400
+     * @tc.number    SUB_PLAINARRAY_TESTNINE_1400
      * @tc.name      testPlainArray09Chapter0014
      * @tc.desc      test forEach with undefined callback (should throw error)
      * @tc.size      MediumTest
@@ -473,7 +473,7 @@ export default function PlainArray09Test() {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST09_1500
+     * @tc.number    SUB_PLAINARRAY_TESTNINE_1500
      * @tc.name      testPlainArray09Chapter0015
      * @tc.desc      test forEach with wrong callback type (should throw error)
      * @tc.size      MediumTest
@@ -493,7 +493,7 @@ export default function PlainArray09Test() {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST09_1600
+     * @tc.number    SUB_PLAINARRAY_TESTNINE_1600
      * @tc.name      testPlainArray09Chapter0016
      * @tc.desc      test forEach while modifying array (potential risk scenario)
      * @tc.size      MediumTest
@@ -526,7 +526,7 @@ export default function PlainArray09Test() {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST09_1700
+     * @tc.number    SUB_PLAINARRAY_TESTNINE_1700
      * @tc.name      testPlainArray09Chapter0017
      * @tc.desc      test forEach when callback function throws error
      * @tc.size      MediumTest
@@ -560,7 +560,7 @@ export default function PlainArray09Test() {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST09_1800
+     * @tc.number    SUB_PLAINARRAY_TESTNINE_1800
      * @tc.name      testPlainArray09Chapter0018
      * @tc.desc      test forEach with non-object thisArg
      * @tc.size      MediumTest
@@ -585,7 +585,7 @@ export default function PlainArray09Test() {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST09_1900
+     * @tc.number    SUB_PLAINARRAY_TESTNINE_1900
      * @tc.name      testPlainArray09Chapter0019
      * @tc.desc      test forEach with null thisArg
      * @tc.size      MediumTest
@@ -612,7 +612,7 @@ export default function PlainArray09Test() {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST09_2000
+     * @tc.number    SUB_PLAINARRAY_TESTNINE_2000
      * @tc.name      testPlainArray09Chapter0020
      * @tc.desc      test forEach with missing callback parameter (compile error test)
      * @tc.size      MediumTest
@@ -632,7 +632,7 @@ export default function PlainArray09Test() {
     });
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST09_2100
+     * @tc.number SUB_PLAINARRAY_TESTNINE_2100
      * @tc.name testPlainArray09Chapter0021
      * @tc.desc Test iterating over an empty PlainArray
      * @tc.size MediumTest
@@ -651,7 +651,7 @@ export default function PlainArray09Test() {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST09_2200
+     * @tc.number SUB_PLAINARRAY_TESTNINE_2200
      * @tc.name testPlainArray09Chapter0022
      * @tc.desc Test iterating over PlainArray with single string element
      * @tc.size MediumTest
@@ -675,7 +675,7 @@ export default function PlainArray09Test() {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST09_2300
+     * @tc.number SUB_PLAINARRAY_TESTNINE_2300
      * @tc.name testPlainArray09Chapter0023
      * @tc.desc Test iterating over PlainArray with multiple string elements in order
      * @tc.size MediumTest
@@ -705,7 +705,7 @@ export default function PlainArray09Test() {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST09_2400
+     * @tc.number SUB_PLAINARRAY_TESTNINE_2400
      * @tc.name testPlainArray09Chapter0024
      * @tc.desc Test iterating over PlainArray with string elements added in out-of-order keys
      * @tc.size MediumTest
@@ -735,7 +735,7 @@ export default function PlainArray09Test() {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST09_2500
+     * @tc.number SUB_PLAINARRAY_TESTNINE_2500
      * @tc.name testPlainArray09Chapter0025
      * @tc.desc Test iterating over PlainArray with empty string value
      * @tc.size MediumTest
@@ -759,7 +759,7 @@ export default function PlainArray09Test() {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST09_2600
+     * @tc.number SUB_PLAINARRAY_TESTNINE_2600
      * @tc.name testPlainArray09Chapter0026
      * @tc.desc Test iterating over PlainArray with unicode string value
      * @tc.size MediumTest
@@ -783,7 +783,7 @@ export default function PlainArray09Test() {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST09_2700
+     * @tc.number SUB_PLAINARRAY_TESTNINE_2700
      * @tc.name testPlainArray09Chapter0027
      * @tc.desc Test iterating over PlainArray with number values including zero and negative
      * @tc.size MediumTest
@@ -813,7 +813,7 @@ export default function PlainArray09Test() {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST09_2800
+     * @tc.number SUB_PLAINARRAY_TESTNINE_2800
      * @tc.name testPlainArray09Chapter0028
      * @tc.desc Test iterating over PlainArray with special number values like NaN and Infinity
      * @tc.size MediumTest
@@ -843,7 +843,7 @@ export default function PlainArray09Test() {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST09_2900
+     * @tc.number SUB_PLAINARRAY_TESTNINE_2900
      * @tc.name testPlainArray09Chapter0029
      * @tc.desc Test iterating over PlainArray with boolean values
      * @tc.size MediumTest
@@ -870,7 +870,7 @@ export default function PlainArray09Test() {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST09_3000
+     * @tc.number SUB_PLAINARRAY_TESTNINE_3000
      * @tc.name testPlainArray09Chapter0030
      * @tc.desc Test iterating over PlainArray with array values including empty array
      * @tc.size MediumTest
@@ -897,7 +897,7 @@ export default function PlainArray09Test() {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST09_3100
+     * @tc.number SUB_PLAINARRAY_TESTNINE_3100
      * @tc.name testPlainArray09Chapter0031
      * @tc.desc Test iterating over PlainArray with sparse array values using delete keyword
      * @tc.size MediumTest
@@ -925,7 +925,7 @@ export default function PlainArray09Test() {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST09_3200
+     * @tc.number SUB_PLAINARRAY_TESTNINE_3200
      * @tc.name testPlainArray09Chapter0032
      * @tc.desc Test iterating over PlainArray with object values including empty object
      * @tc.size MediumTest
@@ -952,7 +952,7 @@ export default function PlainArray09Test() {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST09_3300
+     * @tc.number SUB_PLAINARRAY_TESTNINE_3300
      * @tc.name testPlainArray09Chapter0033
      * @tc.desc Test iterating over PlainArray with TypedArray values
      * @tc.size MediumTest
@@ -980,7 +980,7 @@ export default function PlainArray09Test() {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST09_3400
+     * @tc.number SUB_PLAINARRAY_TESTNINE_3400
      * @tc.name testPlainArray09Chapter0034
      * @tc.desc Test iterating over PlainArray with TypedArray containing special values
      * @tc.size MediumTest
@@ -1007,7 +1007,7 @@ export default function PlainArray09Test() {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST09_3500
+     * @tc.number SUB_PLAINARRAY_TESTNINE_3500
      * @tc.name testPlainArray09Chapter0035
      * @tc.desc Test iterating over PlainArray with float number keys
      * @tc.size MediumTest
@@ -1023,7 +1023,7 @@ export default function PlainArray09Test() {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST09_3600
+     * @tc.number SUB_PLAINARRAY_TESTNINE_3600
      * @tc.name testPlainArray09Chapter0036
      * @tc.desc Test iterating over PlainArray with negative number keys
      * @tc.size MediumTest
@@ -1050,7 +1050,7 @@ export default function PlainArray09Test() {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST09_3700
+     * @tc.number SUB_PLAINARRAY_TESTNINE_3700
      * @tc.name testPlainArray09Chapter0037
      * @tc.desc Test iterating over PlainArray with large number keys
      * @tc.size MediumTest
@@ -1066,7 +1066,7 @@ export default function PlainArray09Test() {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST09_3800
+     * @tc.number SUB_PLAINARRAY_TESTNINE_3800
      * @tc.name testPlainArray09Chapter0038
      * @tc.desc Test error when calling Symbol.iterator on invalid context
      * @tc.size MediumTest
@@ -1082,7 +1082,7 @@ export default function PlainArray09Test() {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST09_3900
+     * @tc.number SUB_PLAINARRAY_TESTNINE_3900
      * @tc.name testPlainArray09Chapter0039
      * @tc.desc Test behavior when modifying PlainArray during iteration
      * @tc.size MediumTest
@@ -1119,7 +1119,7 @@ export default function PlainArray09Test() {
     })
 
     /**
-     * @tc.number SUB_PLAINARRAY_TEST09_4000
+     * @tc.number SUB_PLAINARRAY_TESTNINE_4000
      * @tc.name testPlainArray09Chapter0040
      * @tc.desc Test behavior when removing from PlainArray during iteration
      * @tc.size MediumTest

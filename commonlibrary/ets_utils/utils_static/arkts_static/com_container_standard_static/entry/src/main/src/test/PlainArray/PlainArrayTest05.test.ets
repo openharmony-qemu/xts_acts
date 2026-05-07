@@ -222,7 +222,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_0100
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_0100
      * @tc.name      testPlainArray05Chapter0001
      * @tc.desc      clone PlainArray with inheritance objects
      * @tc.size      MediumTest
@@ -268,7 +268,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_0200
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_0200
      * @tc.name      testPlainArray05Chapter0002
      * @tc.desc      clone PlainArray with function properties
      * @tc.size      MediumTest
@@ -301,7 +301,7 @@ export default function PlainArray05Test(): void {
       expect(clonedArray.get(0) === obj).assertTrue()
     })
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_0300
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_0300
      * @tc.name      testPlainArray05Chapter0003
      * @tc.desc      clone PlainArray with Uint8ClampedArray
      * @tc.size      MediumTest
@@ -334,7 +334,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_0400
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_0400
      * @tc.name      testPlainArray05Chapter0004
      * @tc.desc      clone PlainArray with mixed numeric type values
      * @tc.size      MediumTest
@@ -385,7 +385,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_0500
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_0500
      * @tc.name      testPlainArray05Chapter0005
      * @tc.desc      clone PlainArray with undefined and null properties
      * @tc.size      MediumTest
@@ -418,7 +418,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_0600
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_0600
      * @tc.name      testPlainArray05Chapter0006
      * @tc.desc      add basic string value with normal key
      * @tc.size      MediumTest
@@ -441,7 +441,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_0700
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_0700
      * @tc.name      testPlainArray05Chapter0007
      * @tc.desc      add value with existing key should update value
      * @tc.size      MediumTest
@@ -463,7 +463,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_0800
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_0800
      * @tc.name      testPlainArray05Chapter0008
      * @tc.desc      add value with key zero
      * @tc.size      MediumTest
@@ -486,7 +486,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_0900
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_0900
      * @tc.name      testPlainArray05Chapter0009
      * @tc.desc      add value with negative key
      * @tc.size      MediumTest
@@ -511,7 +511,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_1000
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_1000
      * @tc.name      testPlainArray05Chapter0010
      * @tc.desc      add value with maximum int32 key
      * @tc.size      MediumTest
@@ -532,7 +532,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_1100
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_1100
      * @tc.name      testPlainArray05Chapter0011
      * @tc.desc      add number value to PlainArray
      * @tc.size      MediumTest
@@ -557,7 +557,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_1200
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_1200
      * @tc.name      testPlainArray05Chapter0012
      * @tc.desc      add boolean value to PlainArray
      * @tc.size      MediumTest
@@ -580,7 +580,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_1300
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_1300
      * @tc.name      testPlainArray05Chapter0013
      * @tc.desc      add object value to PlainArray
      * @tc.size      MediumTest
@@ -606,7 +606,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_1400
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_1400
      * @tc.name      testPlainArray05Chapter0014
      * @tc.desc      add array value to PlainArray
      * @tc.size      MediumTest
@@ -629,7 +629,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_1500
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_1500
      * @tc.name      testPlainArray05Chapter0015
      * @tc.desc      add special string values to PlainArray
      * @tc.size      MediumTest
@@ -658,7 +658,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_1600
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_1600
      * @tc.name      testPlainArray05Chapter0016
      * @tc.desc      add ASCII special characters as values
      * @tc.size      MediumTest
@@ -687,7 +687,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_1700
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_1700
      * @tc.name      testPlainArray05Chapter0017
      * @tc.desc      add all ASCII characters as values
      * @tc.size      MediumTest
@@ -716,7 +716,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_1800
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_1800
      * @tc.name      testPlainArray05Chapter0018
      * @tc.desc      add special ASCII characters as values
      * @tc.size      MediumTest
@@ -744,7 +744,7 @@ export default function PlainArray05Test(): void {
 
     })
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_1900
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_1900
      * @tc.name      testPlainArray05Chapter0019
      * @tc.desc      add emoji characters as values
      * @tc.size      MediumTest
@@ -773,7 +773,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_2000
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_2000
      * @tc.name      testPlainArray05Chapter0020
      * @tc.desc      add special number values to PlainArray
      * @tc.size      MediumTest
@@ -802,7 +802,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_2100
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_2100
      * @tc.name      testPlainArray05Chapter0021
      * @tc.desc      add Infinity and NaN values to PlainArray
      * @tc.size      MediumTest
@@ -831,7 +831,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_2200
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_2200
      * @tc.name      testPlainArray05Chapter0022
      * @tc.desc      add typed array boundary values
      * @tc.size      MediumTest
@@ -863,7 +863,7 @@ export default function PlainArray05Test(): void {
         expect(plainArray.length).assertEqual(8)
       })
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_2300
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_2300
      * @tc.name      testPlainArray05Chapter0023
      * @tc.desc      add large number values
      * @tc.size      MediumTest
@@ -888,7 +888,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_2400
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_2400
      * @tc.name      testPlainArray05Chapter0024
      * @tc.desc      add float values
      * @tc.size      MediumTest
@@ -917,7 +917,7 @@ export default function PlainArray05Test(): void {
 
     })
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_2500
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_2500
      * @tc.name      testPlainArray05Chapter0025
      * @tc.desc      add value with large key
      * @tc.size      MediumTest
@@ -942,7 +942,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_2600
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_2600
      * @tc.name      testPlainArray05Chapter0026
      * @tc.desc      reverse test: add value with invalid key type (should fail)
      * @tc.size      MediumTest
@@ -975,7 +975,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_2700
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_2700
      * @tc.name      testPlainArray05Chapter0027
      * @tc.desc      reverse test: test add method with invalid parameter
      * @tc.size      MediumTest
@@ -1008,7 +1008,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_2800
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_2800
      * @tc.name      testPlainArray05Chapter0028
      * @tc.desc      add many elements and verify performance
      * @tc.size      MediumTest
@@ -1035,7 +1035,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_2900
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_2900
      * @tc.name      testPlainArray05Chapter0029
      * @tc.desc      add values with non-sequential keys
      * @tc.size      MediumTest
@@ -1064,7 +1064,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_3000
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_3000
      * @tc.name      testPlainArray05Chapter0030
      * @tc.desc      add duplicate keys with different values (should update)
      * @tc.size      MediumTest
@@ -1086,7 +1086,7 @@ export default function PlainArray05Test(): void {
         expect(plainArray.length).assertEqual(2)
       })
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_3100
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_3100
      * @tc.name      testPlainArray05Chapter0031
      * @tc.desc      add values with full TypedArray range
      * @tc.size      MediumTest
@@ -1121,7 +1121,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_3200
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_3200
      * @tc.name      testPlainArray05Chapter0032
      * @tc.desc      add values with numeric overflow cases
      * @tc.size      MediumTest
@@ -1169,7 +1169,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_3300
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_3300
      * @tc.name      testPlainArray05Chapter0033
      * @tc.desc      add values with string escape sequences
      * @tc.size      MediumTest
@@ -1212,7 +1212,7 @@ export default function PlainArray05Test(): void {
       })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_3400
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_3400
      * @tc.name      testPlainArray05Chapter0034
      * @tc.desc      add values with full emoji set from checklist
      * @tc.size      MediumTest
@@ -1255,7 +1255,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_3500
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_3500
      * @tc.name      testPlainArray05Chapter0035
      * @tc.desc      add values with Unicode encoded emoji
      * @tc.size      MediumTest
@@ -1296,7 +1296,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_3600
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_3600
      * @tc.name      testPlainArray05Chapter0036
      * @tc.desc      add values with illegal Unicode sequences
      * @tc.size      MediumTest
@@ -1319,7 +1319,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_3700
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_3700
      * @tc.name      testPlainArray05Chapter0037
      * @tc.desc      add values with keyword strings
      * @tc.size      MediumTest
@@ -1342,7 +1342,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_3800
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_3800
      * @tc.name      testPlainArray05Chapter0038
      * @tc.desc      add values with tree string type
      * @tc.size      MediumTest
@@ -1375,7 +1375,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_3900
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_3900
      * @tc.name      testPlainArray05Chapter0039
      * @tc.desc      add values with slice string type
      * @tc.size      MediumTest
@@ -1399,7 +1399,7 @@ export default function PlainArray05Test(): void {
 
     })
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_4000
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_4000
      * @tc.name      testPlainArray05Chapter0040
      * @tc.desc      add large string and check memory
      * @tc.size      MediumTest
@@ -1421,7 +1421,7 @@ export default function PlainArray05Test(): void {
       expect(plainArray.length).assertEqual(2)
     })
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_4100
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_4100
      * @tc.name      testPlainArray05Chapter0041
      * @tc.desc      add values with array data types
      * @tc.size      MediumTest
@@ -1475,7 +1475,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_4200
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_4200
      * @tc.name      testPlainArray05Chapter0042
      * @tc.desc      add values with special object properties
      * @tc.size      MediumTest
@@ -1503,7 +1503,7 @@ export default function PlainArray05Test(): void {
       })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_4300
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_4300
      * @tc.name      testPlainArray05Chapter0043
      * @tc.desc      add values with special array type from checklist
      * @tc.size      MediumTest
@@ -1536,7 +1536,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_4400
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_4400
      * @tc.name      testPlainArray05Chapter0044
      * @tc.desc      add values with mixed data type array
      * @tc.size      MediumTest
@@ -1558,7 +1558,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_4500
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_4500
      * @tc.name      testPlainArray05Chapter0045
      * @tc.desc      add many elements for performance testing
      * @tc.size      MediumTest
@@ -1583,7 +1583,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_4600
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_4600
      * @tc.name      testPlainArray05Chapter0046
      * @tc.desc      add values with boolean expressions
      * @tc.size      MediumTest
@@ -1610,7 +1610,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_4700
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_4700
      * @tc.name      testPlainArray05Chapter0047
      * @tc.desc      add Int8Array typed array as value
      * @tc.size      MediumTest
@@ -1635,7 +1635,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_4800
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_4800
      * @tc.name      testPlainArray05Chapter0048
      * @tc.desc      add Uint8Array and Uint8ClampedArray as values
      * @tc.size      MediumTest
@@ -1662,7 +1662,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_4900
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_4900
      * @tc.name      testPlainArray05Chapter0049
      * @tc.desc      add Int16Array and Uint16Array as values
      * @tc.size      MediumTest
@@ -1687,7 +1687,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_5000
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_5000
      * @tc.name      testPlainArray05Chapter0050
      * @tc.desc      add Int32Array and Uint32Array as values
      * @tc.size      MediumTest
@@ -1712,7 +1712,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_5100
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_5100
      * @tc.name      testPlainArray05Chapter0051
      * @tc.desc      add Float32Array and Float64Array as values
      * @tc.size      MediumTest
@@ -1737,7 +1737,7 @@ export default function PlainArray05Test(): void {
       expect(plainArray.length).assertEqual(1)
     })
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_5200
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_5200
      * @tc.name      testPlainArray05Chapter0052
      * @tc.desc      add bigint primitive values to PlainArray
      * @tc.size      MediumTest
@@ -1764,7 +1764,7 @@ export default function PlainArray05Test(): void {
       expect(plainArray.length).assertEqual(5)
     })
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_5300
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_5300
      * @tc.name      testPlainArray05Chapter0053
      * @tc.desc      add BigInt64Array and BigUint64Array as values
      * @tc.size      MediumTest
@@ -1788,7 +1788,7 @@ export default function PlainArray05Test(): void {
       expect(plainArray.length).assertEqual(1)
     })
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_5400
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_5400
      * @tc.name      testPlainArray05Chapter0054
      * @tc.desc      add null and undefined as values
      * @tc.size      MediumTest
@@ -1815,7 +1815,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_5500
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_5500
      * @tc.name      testPlainArray05Chapter0055
      * @tc.desc      add plain null and undefined values
      * @tc.size      MediumTest
@@ -1839,7 +1839,7 @@ export default function PlainArray05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST05_5600
+     * @tc.number    SUB_PLAINARRAY_TESTFIVE_5600
      * @tc.name      testPlainArray05Chapter0056
      * @tc.desc      add object with Symbol keys as value
      * @tc.size      MediumTest

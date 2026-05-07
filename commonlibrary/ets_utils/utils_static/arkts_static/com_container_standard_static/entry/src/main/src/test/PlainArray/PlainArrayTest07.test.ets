@@ -45,7 +45,7 @@ export default function PlainArray07Test(): void {
     })
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_0100
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_0100
      * @tc.name      testPlainArray07Chapter0001
      * @tc.desc      Remove element at Number.MAX_VALUE index
      * @tc.size      MediumTest
@@ -69,7 +69,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_0200
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_0200
      * @tc.name      testPlainArray07Chapter0002
      * @tc.desc      Remove element at Number.MIN_VALUE index
      * @tc.size      MediumTest
@@ -94,7 +94,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_0300
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_0300
      * @tc.name      testPlainArray07Chapter0003
      * @tc.desc      Remove element at Number.EPSILON index
      * @tc.size      MediumTest
@@ -119,7 +119,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_0400
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_0400
      * @tc.name      testPlainArray07Chapter0004
      * @tc.desc      Remove element at Number.MAX_SAFE_INTEGER index
      * @tc.size      MediumTest
@@ -143,7 +143,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_0500
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_0500
      * @tc.name      testPlainArray07Chapter0005
      * @tc.desc      Remove element at Number.MIN_SAFE_INTEGER index
      * @tc.size      MediumTest
@@ -167,7 +167,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_0600
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_0600
      * @tc.name      testPlainArray07Chapter0006
      * @tc.desc      Remove element at byte boundary values (-128, 127)
      * @tc.size      MediumTest
@@ -194,7 +194,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_0700
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_0700
      * @tc.name      testPlainArray07Chapter0007
      * @tc.desc      Remove element at short boundary values (-32768, 32767)
      * @tc.size      MediumTest
@@ -221,7 +221,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_0800
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_0800
      * @tc.name      testPlainArray07Chapter0008
      * @tc.desc      Remove element at long boundary values
      * @tc.size      MediumTest
@@ -255,7 +255,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_0900
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_0900
      * @tc.name      testPlainArray07Chapter0009
      * @tc.desc      Remove element at float boundary values
      * @tc.size      MediumTest
@@ -290,7 +290,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_1000
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_1000
      * @tc.name      testPlainArray07Chapter0010
      * @tc.desc      Remove element at double boundary values
      * @tc.size      MediumTest
@@ -325,7 +325,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_1100
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_1100
      * @tc.name      testPlainArray07Chapter0011
      * @tc.desc      Remove element at char boundary values (0~65535)
      * @tc.size      MediumTest
@@ -345,7 +345,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_1200
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_1200
      * @tc.name      testPlainArray07Chapter0012
      * @tc.desc      Remove element at hex number index
      * @tc.size      MediumTest
@@ -366,7 +366,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_1300
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_1300
      * @tc.name      testPlainArray07Chapter0013
      * @tc.desc      Remove element at 32-bit hex number index
      * @tc.size      MediumTest
@@ -386,7 +386,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_1400
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_1400
      * @tc.name      testPlainArray07Chapter0014
      * @tc.desc      Remove element at octal number index
      * @tc.size      MediumTest
@@ -407,7 +407,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_1500
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_1500
      * @tc.name      testPlainArray07Chapter0015
      * @tc.desc      Remove element at binary number index
      * @tc.size      MediumTest
@@ -428,7 +428,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_1600
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_1600
      * @tc.name      testPlainArray07Chapter0016
      * @tc.desc      Remove element at index using exponentiation operator
      * @tc.size      MediumTest
@@ -449,7 +449,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_1700
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_1700
      * @tc.name      testPlainArray07Chapter0017
      * @tc.desc      Remove element at index using scientific notation
      * @tc.size      MediumTest
@@ -481,7 +481,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_1800
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_1800
      * @tc.name      testPlainArray07Chapter0018
      * @tc.desc      Remove element at index from BigInt conversion
      * @tc.size      MediumTest
@@ -506,7 +506,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_1900
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_1900
      * @tc.name      testPlainArray07Chapter0019
      * @tc.desc      Remove element at double precision value index
      * @tc.size      MediumTest
@@ -532,7 +532,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_2000
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_2000
      * @tc.name      testPlainArray07Chapter0020
      * @tc.desc      Remove element at float hex representation index
      * @tc.size      MediumTest
@@ -556,7 +556,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_2100
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_2100
      * @tc.name      testPlainArray07Chapter0021
      * @tc.desc      Remove element at index from arithmetic operations
      * @tc.size      MediumTest
@@ -583,7 +583,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_2200
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_2200
      * @tc.name      testPlainArray07Chapter0022
      * @tc.desc      Remove element at index from function return value
      * @tc.size      MediumTest
@@ -618,7 +618,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_2300
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_2300
      * @tc.name      testPlainArray07Chapter0023
      * @tc.desc      Remove element at index from type conversions
      * @tc.size      MediumTest
@@ -653,7 +653,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_2400
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_2400
      * @tc.name      testPlainArray07Chapter0024
      * @tc.desc      Normal scenario: remove range from middle of PlainArray
      * @tc.size      MediumTest
@@ -684,7 +684,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_2500
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_2500
      * @tc.name      testPlainArray07Chapter0025
      * @tc.desc      Normal scenario: remove from index 0
      * @tc.size      MediumTest
@@ -709,7 +709,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_2600
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_2600
      * @tc.name      testPlainArray07Chapter0026
      * @tc.desc      Normal scenario: remove to end of array
      * @tc.size      MediumTest
@@ -736,7 +736,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_2700
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_2700
      * @tc.name      testPlainArray07Chapter0027
      * @tc.desc      Boundary: index at last position with size 1
      * @tc.size      MediumTest
@@ -761,7 +761,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_2800
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_2800
      * @tc.name      testPlainArray07Chapter0028
      * @tc.desc      Negative case: size is 0 (must be > 0)
      * @tc.size      MediumTest
@@ -787,7 +787,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_2900
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_2900
      * @tc.name      testPlainArray07Chapter0029
      * @tc.desc      Boundary: index 0 with size equal to array length
      * @tc.size      MediumTest
@@ -812,7 +812,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_3000
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_3000
      * @tc.name      testPlainArray07Chapter0030
      * @tc.desc      Boundary: index at max int32
      * @tc.size      MediumTest
@@ -835,7 +835,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_3100
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_3100
      * @tc.name      testPlainArray07Chapter0031
      * @tc.desc      Boundary: size at max int32
      * @tc.size      MediumTest
@@ -858,7 +858,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_3200
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_3200
      * @tc.name      testPlainArray07Chapter0032
      * @tc.desc      Negative case: index out of range
      * @tc.size      MediumTest
@@ -882,7 +882,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_3300
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_3300
      * @tc.name      testPlainArray07Chapter0033
      * @tc.desc      Negative case: negative index
      * @tc.size      MediumTest
@@ -906,7 +906,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_3400
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_3400
      * @tc.name      testPlainArray07Chapter0034
      * @tc.desc      Negative case: negative size
      * @tc.size      MediumTest
@@ -930,7 +930,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_3500
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_3500
      * @tc.name      testPlainArray07Chapter0035
      * @tc.desc      Negative case: index exceeds int32 max
      * @tc.size      MediumTest
@@ -954,7 +954,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_3600
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_3600
      * @tc.name      testPlainArray07Chapter0036
      * @tc.desc      Negative case: size exceeds int32 max
      * @tc.size      MediumTest
@@ -978,7 +978,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_3700
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_3700
      * @tc.name      testPlainArray07Chapter0037
      * @tc.desc      Special value: index is NaN
      * @tc.size      MediumTest
@@ -1002,7 +1002,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_3800
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_3800
      * @tc.name      testPlainArray07Chapter0038
      * @tc.desc      Special value: size is NaN
      * @tc.size      MediumTest
@@ -1026,7 +1026,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_3900
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_3900
      * @tc.name      testPlainArray07Chapter0039
      * @tc.desc      Special value: index is Infinity
      * @tc.size      MediumTest
@@ -1050,7 +1050,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_4000
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_4000
      * @tc.name      testPlainArray07Chapter0040
      * @tc.desc      Special value: size is Infinity
      * @tc.size      MediumTest
@@ -1074,7 +1074,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_4100
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_4100
      * @tc.name      testPlainArray07Chapter0041
      * @tc.desc      Special value: index is -Infinity
      * @tc.size      MediumTest
@@ -1098,7 +1098,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_4200
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_4200
      * @tc.name      testPlainArray07Chapter0042
      * @tc.desc      Negative case: size is 0 in empty PlainArray
      * @tc.size      MediumTest
@@ -1121,7 +1121,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_4300
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_4300
      * @tc.name      testPlainArray07Chapter0043
      * @tc.desc      Negative case: index is floating point number
      * @tc.size      MediumTest
@@ -1147,7 +1147,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_4400
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_4400
      * @tc.name      testPlainArray07Chapter0044
      * @tc.desc      Negative case: size is floating point number
      * @tc.size      MediumTest
@@ -1174,7 +1174,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_4500
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_4500
      * @tc.name      testPlainArray07Chapter0045
      * @tc.desc      Boundary: index at Number.MAX_SAFE_INTEGER
      * @tc.size      MediumTest
@@ -1198,7 +1198,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_4600
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_4600
      * @tc.name      testPlainArray07Chapter0046
      * @tc.desc      Boundary: size at Number.MAX_VALUE
      * @tc.size      MediumTest
@@ -1222,7 +1222,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_4700
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_4700
      * @tc.name      testPlainArray07Chapter0047
      * @tc.desc      Special value: index is -0
      * @tc.size      MediumTest
@@ -1245,7 +1245,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_4800
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_4800
      * @tc.name      testPlainArray07Chapter0048
      * @tc.desc      Negative case: size is Number.EPSILON (floating point)
      * @tc.size      MediumTest
@@ -1270,7 +1270,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_4900
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_4900
      * @tc.name      testPlainArray07Chapter0049
      * @tc.desc      Special scenario: remove from non-existent key in populated array
      * @tc.size      MediumTest
@@ -1295,7 +1295,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_5000
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_5000
      * @tc.name      testPlainArray07Chapter0050
      * @tc.desc      Simple scenario: remove range from existing keys
      * @tc.size      MediumTest
@@ -1328,7 +1328,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_5100
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_5100
      * @tc.name      testPlainArray07Chapter0051
      * @tc.desc      Remove range from PlainArray with valid index and size
      * @tc.size      MediumTest
@@ -1349,7 +1349,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_5200
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_5200
      * @tc.name      testPlainArray07Chapter0052
      * @tc.desc      Remove range from PlainArray with index 0 and size equals length
      * @tc.size      MediumTest
@@ -1370,7 +1370,7 @@ export default function PlainArray07Test(): void {
 
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_5300
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_5300
      * @tc.name      testPlainArray07Chapter0053
      * @tc.desc      Remove range from PlainArray with size 0 should throw error
      * @tc.size      MediumTest
@@ -1392,7 +1392,7 @@ export default function PlainArray07Test(): void {
         expect(error.code).assertEqual(10200001);
       }
     }); /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_5400
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_5400
      * @tc.name      testPlainArray07Chapter0054
      * @tc.desc      Remove range from PlainArray with size larger than remaining elements
      * @tc.size      MediumTest
@@ -1413,7 +1413,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_5500
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_5500
      * @tc.name      testPlainArray07Chapter0055
      * @tc.desc      Remove range from empty PlainArray
      * @tc.size      MediumTest
@@ -1434,7 +1434,7 @@ export default function PlainArray07Test(): void {
       }
     });
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_5600
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_5600
      * @tc.name      testPlainArray07Chapter0056
      * @tc.desc      Remove range with index at int32 max boundary
      * @tc.size      MediumTest
@@ -1456,7 +1456,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_5700
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_5700
      * @tc.name      testPlainArray07Chapter0057
      * @tc.desc      Remove range with negative index
      * @tc.size      MediumTest
@@ -1479,7 +1479,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_5800
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_5800
      * @tc.name      testPlainArray07Chapter0058
      * @tc.desc      Remove range with negative size
      * @tc.size      MediumTest
@@ -1501,7 +1501,7 @@ export default function PlainArray07Test(): void {
       }
     });
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_5900
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_5900
      * @tc.name      testPlainArray07Chapter0059
      * @tc.desc      Remove range with size exceeding int32 max
      * @tc.size      MediumTest
@@ -1524,7 +1524,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_6000
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_6000
      * @tc.name      testPlainArray07Chapter0060
      * @tc.desc      Remove range with index exceeding int32 max
      * @tc.size      MediumTest
@@ -1547,7 +1547,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_6100
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_6100
      * @tc.name      testPlainArray07Chapter0061
      * @tc.desc      Remove range with NaN index parameter
      * @tc.size      MediumTest
@@ -1570,7 +1570,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_6200
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_6200
      * @tc.name      testPlainArray07Chapter0062
      * @tc.desc      Remove range with Infinity size parameter
      * @tc.size      MediumTest
@@ -1593,7 +1593,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_6300
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_6300
      * @tc.name      testPlainArray07Chapter0063
      * @tc.desc      Remove range with index as undefined parameter
      * @tc.size      MediumTest
@@ -1616,7 +1616,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_6400
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_6400
      * @tc.name      testPlainArray07Chapter0064
      * @tc.desc      Set value at valid index with string type
      * @tc.size      MediumTest
@@ -1633,7 +1633,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_6500
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_6500
      * @tc.name      testPlainArray07Chapter0065
      * @tc.desc      Set value at index 0 with number type
      * @tc.size      MediumTest
@@ -1650,7 +1650,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_6600
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_6600
      * @tc.name      testPlainArray07Chapter0066
      * @tc.desc      Set value at last index with boolean type
      * @tc.size      MediumTest
@@ -1668,7 +1668,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_6700
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_6700
      * @tc.name      testPlainArray07Chapter0067
      * @tc.desc      Set value at valid index with object type
      * @tc.size      MediumTest
@@ -1688,7 +1688,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_6800
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_6800
      * @tc.name      testPlainArray07Chapter0068
      * @tc.desc      Set value at valid index with array type
      * @tc.size      MediumTest
@@ -1707,7 +1707,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_6900
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_6900
      * @tc.name      testPlainArray07Chapter0069
      * @tc.desc      Set value at out of range index
      * @tc.size      MediumTest
@@ -1730,7 +1730,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_7000
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_7000
      * @tc.name      testPlainArray07Chapter0070
      * @tc.desc      Set value at negative index
      * @tc.size      MediumTest
@@ -1753,7 +1753,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_7100
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_7100
      * @tc.name      testPlainArray07Chapter0071
      * @tc.desc      Set value with index as undefined parameter
      * @tc.size      MediumTest
@@ -1776,7 +1776,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_7200
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_7200
      * @tc.name      testPlainArray07Chapter0072
      * @tc.desc      Set value with value as undefined parameter
      * @tc.size      MediumTest
@@ -1793,7 +1793,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_7300
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_7300
      * @tc.name      testPlainArray07Chapter0073
      * @tc.desc      Set value with value as null parameter
      * @tc.size      MediumTest
@@ -1810,7 +1810,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_7400
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_7400
      * @tc.name      testPlainArray07Chapter0074
      * @tc.desc      Set value with index exceeding int32 max
      * @tc.size      MediumTest
@@ -1833,7 +1833,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_7500
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_7500
      * @tc.name      testPlainArray07Chapter0075
      * @tc.desc      Set value with index as NaN
      * @tc.size      MediumTest
@@ -1856,7 +1856,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_7600
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_7600
      * @tc.name      testPlainArray07Chapter0076
      * @tc.desc      Set value with value as NaN for number type PlainArray
      * @tc.size      MediumTest
@@ -1873,7 +1873,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_7700
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_7700
      * @tc.name      testPlainArray07Chapter0077
      * @tc.desc      Set value with value as Infinity for number type PlainArray
      * @tc.size      MediumTest
@@ -1890,7 +1890,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_7800
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_7800
      * @tc.name      testPlainArray07Chapter0078
      * @tc.desc      Set value with value as -Infinity for number type PlainArray
      * @tc.size      MediumTest
@@ -1907,7 +1907,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_7900
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_7900
      * @tc.name      testPlainArray07Chapter0079
      * @tc.desc      Set value with value as TypedArray for object type PlainArray
      * @tc.size      MediumTest
@@ -1926,7 +1926,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_8000
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_8000
      * @tc.name      testPlainArray07Chapter0080
      * @tc.desc      Set value with value as bigint for bigint type PlainArray
      * @tc.size      MediumTest
@@ -1943,7 +1943,7 @@ export default function PlainArray07Test(): void {
       expect(plainArray.getValueAt(0)).assertEqual(bigIntVal);
     });
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_8100
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_8100
      * @tc.name      testPlainArray07Chapter0081
      * @tc.desc      Set value with value as string containing all special characters
      * @tc.size      MediumTest
@@ -1961,7 +1961,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_8200
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_8200
      * @tc.name      testPlainArray07Chapter0082
      * @tc.desc      Set value with value as string containing ASCII characters
      * @tc.size      MediumTest
@@ -1980,7 +1980,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_8300
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_8300
      * @tc.name      testPlainArray07Chapter0083
      * @tc.desc      Set value with value as string containing special escape characters
      * @tc.size      MediumTest
@@ -1998,7 +1998,7 @@ export default function PlainArray07Test(): void {
     });
 
     /**
-     * @tc.number    SUB_PLAINARRAY_TEST07_8400
+     * @tc.number    SUB_PLAINARRAY_TESTSEVEN_8400
      * @tc.name      testPlainArray07Chapter0084
      * @tc.desc      Set value with value as string containing emoji characters
      * @tc.size      MediumTest
