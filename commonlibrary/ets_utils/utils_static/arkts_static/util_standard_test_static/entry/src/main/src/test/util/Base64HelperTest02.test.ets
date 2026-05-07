@@ -1763,7 +1763,281 @@ export default function Base64Helper02Test(): void {
         }
       });
 
+    /**
+     * @tc.number    SUB_UTIL_BASE64HELPER02_7600
+     * @tc.name      testBase64HelperDecoder02_0076
+     * @tc.desc      [Content] Verify decoding result is Null bytes "AA==" -> 0x00
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBase64HelperDecoder02_0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        const TAG = "testBase64HelperDecoder02_0076";
+        console.info(TAG + " start");
+        try {
+          let base64Helper = new util.Base64Helper();
+          // "AA==" -> [65, 65, 61, 61]
+          let input = new Uint8Array([65, 65, 61, 61]);
+          let result = await base64Helper.decode(input);
+          expect(result[0]).assertEqual(0);
+          done.unsafeCall();
+        } catch (e) {
+          expect(false).assertTrue();
+          done.unsafeCall();
+        }
+      });
 
+    /**
+     * @tc.number    SUB_UTIL_BASE64HELPER02_7700
+     * @tc.name      testBase64HelperDecoder02_0077
+     * @tc.desc      [Content] Verify decoding result is Max bytes "////" -> 0xFF, 0xFF, 0xFF
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBase64HelperDecoder02_0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        const TAG = "testBase64HelperDecoder02_0077";
+        console.info(TAG + " start");
+        try {
+          let base64Helper = new util.Base64Helper();
+          // "////" -> [47, 47, 47, 47]
+          let input = new Uint8Array([47, 47, 47, 47]);
+          let result = await base64Helper.decode(input);
+          expect(result[0]).assertEqual(255);
+          expect(result[1]).assertEqual(255);
+          expect(result[2]).assertEqual(255);
+          done.unsafeCall();
+        } catch (e) {
+          expect(false).assertTrue();
+          done.unsafeCall();
+        }
+      });
+
+    /**
+     * @tc.number    SUB_UTIL_BASE64HELPER02_7800
+     * @tc.name      testBase64HelperDecoder02_0078
+     * @tc.desc      [Memory] Verify decoding from a Subarray view (Buffer Offset)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBase64HelperDecoder02_0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        const TAG = "testBase64HelperDecoder02_0078";
+        console.info(TAG + " start");
+        try {
+          let base64Helper = new util.Base64Helper();
+          // Buffer: [0, 81, 81, 61, 61, 0] -> View "QQ==" at offset 1
+          let buffer = new Uint8Array([0, 81, 81, 61, 61, 0]);
+          let view = buffer.subarray(1, 5);
+          let result = await base64Helper.decode(view);
+          expect(result[0]).assertEqual(65); // A
+          done.unsafeCall();
+        } catch (e) {
+          expect(false).assertTrue();
+          done.unsafeCall();
+        }
+      });
+
+    /**
+     * @tc.number    SUB_UTIL_BASE64HELPER02_7900
+     * @tc.name      testBase64HelperDecoder02_0079
+     * @tc.desc      [Performance] Verify decoding a larger buffer (1KB Base64)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBase64HelperDecoder02_0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        const TAG = "testBase64HelperDecoder02_0079";
+        console.info(TAG + " start");
+        try {
+          let base64Helper = new util.Base64Helper();
+
+          let input = new Uint8Array(1024).fill(81);
+          let result = await base64Helper.decode(input);
+          expect(result.length).assertEqual(768);
+          done.unsafeCall();
+        } catch (e) {
+          expect(false).assertTrue();
+          done.unsafeCall();
+        }
+      });
+
+    /**
+     * @tc.number    SUB_UTIL_BASE64HELPER02_8000
+     * @tc.name      testBase64HelperDecoder02_0080
+     * @tc.desc      [Type] Verify return type is Uint8Array instance
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBase64HelperDecoder02_0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        const TAG = "testBase64HelperDecoder02_0080";
+        console.info(TAG + " start");
+        try {
+          let base64Helper = new util.Base64Helper();
+          let input = new Uint8Array([81, 81, 61, 61]);
+          let result = await base64Helper.decode(input);
+          expect(true).assertTrue();
+          done.unsafeCall();
+        } catch (e) {
+          expect(false).assertTrue();
+          done.unsafeCall();
+        }
+      });
+
+    /**
+     * @tc.number    SUB_UTIL_BASE64HELPER02_8100
+     * @tc.name      testBase64HelperDecoder02_0081
+     * @tc.desc      [Logic] Verify reusing same instance for sequential calls
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBase64HelperDecoder02_0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        const TAG = "testBase64HelperDecoder02_0081";
+        console.info(TAG + " start");
+        try {
+          let helper = new util.Base64Helper();
+          let in1 = new Uint8Array([81, 81, 61, 61]); // A
+          let in2 = new Uint8Array([81, 103, 61, 61]); // B
+
+          let res1 = await helper.decode(in1);
+          let res2 = await helper.decode(in2);
+
+          expect(res1[0]).assertEqual(65);
+          expect(res2[0]).assertEqual(66);
+          done.unsafeCall();
+        } catch (e) {
+          expect(false).assertTrue();
+          done.unsafeCall();
+        }
+      });
+
+    /**
+     * @tc.number    SUB_UTIL_BASE64HELPER02_8200
+     * @tc.name      testBase64HelperDecoder02_0082
+     * @tc.desc      [Logic] Verify reusing same instance for sequential calls
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBase64HelperDecoder02_0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let baseHelper = new util.Base64Helper();
+      let arraylist = new ArrayList<string | number | Uint8Array>
+      let array = '\udc04 kilu';
+      await baseHelper.decode(array, util.Type.MIME).then((val) => {
+        arraylist.add(val);
+      })
+      expect(JSON.stringify(arraylist)).assertEqual('{"0":{"0":0,"1":0,"2":0,"3":146,"4":41,"5":110}}');
+    });
+
+
+    /**
+     * @tc.number    SUB_UTIL_BASE64HELPER02_8300
+     * @tc.name      testBase64HelperDecoder02_0083
+     * @tc.desc      [Logic] Verify reusing same instance for sequential calls
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBase64HelperDecoder02_0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let baseHelper = new util.Base64Helper();
+      let arraylist = new ArrayList<string | number | Uint8Array>;
+      let array = '\ud83c\udf85';
+      await baseHelper.decode(array, util.Type.MIME).then((val) => {
+        arraylist.add(val);
+      })
+      expect(JSON.stringify(arraylist)).assertEqual('{"0":{"0":0,"1":0,"2":0}}');
+    });
+
+
+    /**
+     * @tc.number    SUB_UTIL_BASE64HELPER02_8400
+     * @tc.name      testBase64HelperDecoder02_0084
+     * @tc.desc      [Logic] Verify reusing same instance for sequential calls
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBase64HelperDecoder02_0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let baseHelper = new util.Base64Helper();
+      let arraylist = new ArrayList<string | number | Uint8Array>;
+      await baseHelper.decode(init(3), util.Type.MIME).then((val) => {
+        arraylist.add(val);
+      })
+      expect(JSON.stringify(arraylist))
+        .assertEqual('{"0":{"0":0,"1":0,"2":26,"3":0,"4":13,"5":64,"6":0,"7":0,"8":26,"9":0,"10":13,"11":64}}');
+    });
+
+    /**
+     * @tc.number    SUB_UTIL_BASE64HELPER02_8500
+     * @tc.name      testBase64HelperDecoder02_0085
+     * @tc.desc      [Logic] Verify reusing same instance for sequential calls
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBase64HelperDecoder02_0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let baseHelper = new util.Base64Helper();
+      let arraylist = new ArrayList<string | number | Uint8Array>;
+      let str = "{k1:value1,k2:value2}"
+      let result = str.substring(0, str.length - 2);
+      await baseHelper.decode(result, util.Type.MIME).then((val) => {
+        arraylist.add(val);
+      })
+      expect(JSON.stringify(arraylist))
+        .assertEqual('{"0":{"0":2,"1":77,"2":64,"3":189,"4":169,"5":110,"6":123,"7":80,"8":36,"9":216,"10":11,"11":218}}');
+    });
+
+    /**
+     * @tc.number    SUB_UTIL_BASE64HELPER02_8600
+     * @tc.name      testBase64HelperDecoder02_0086
+     * @tc.desc      [Logic] Verify reusing same instance for sequential calls
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBase64HelperDecoder02_0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let baseHelper = new util.Base64Helper();
+      let arraylist = new ArrayList<string | number | Uint8Array>;
+      let str = '\n \\';
+      try {
+        await baseHelper.decode(str, util.Type.MIME).then((val) => {
+          arraylist.add(val);
+        })
+      } catch (e) {
+        expect(e.code).assertEqual(401);
+      }
+    });
+
+
+    /**
+     * @tc.number    SUB_UTIL_BASE64HELPER02_8700
+     * @tc.name      testBase64HelperDecoder02_0087
+     * @tc.desc      [Logic] Verify reusing same instance for sequential calls
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testBase64HelperDecoder02_0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let baseHelper = new util.Base64Helper();
+      let arraylist = new ArrayList<string | number | Uint8Array>;
+      let str = '\\';
+      try {
+        await baseHelper.decode(str, util.Type.MIME).then((val) => {
+          arraylist.add(val);
+        })
+      } catch (e) {
+        expect(e.code).assertEqual(401);
+      }
+      expect(JSON.stringify(arraylist)).assertEqual('{}');
+    });
   });
 }
 
