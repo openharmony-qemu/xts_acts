@@ -1607,15 +1607,15 @@ export default function uitestApi26ErrorTest() {
      * @tc.level  LEVEL3
      */
     it('testDriverTriggerPenKeyHandwritingClickOptionsUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingClickOptionsNull start');
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingClickOptionsUndefined start');
       try {
         await driver.triggerPenKey(PenKey.HANDWRITING, PenMode.HANDWRITING, PenKeyOperation.CLICK, undefined);
         await driver.delayMs(500);
       } catch (error) {
-        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingClickOptionsNull error: ' + error.code);
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingClickOptionsUndefined error: ' + error.code);
         expect(error.code).assertEqual(ErrorCode17000005)
       }
-      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingClickOptionsNull over');
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingClickOptionsUndefined over');
     });
 
     /**
