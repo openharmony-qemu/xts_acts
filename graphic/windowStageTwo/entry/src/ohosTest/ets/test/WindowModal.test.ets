@@ -1122,7 +1122,7 @@ export default function windowModalTest() {
           expect(btnText).assertEqual('Modality')
           await subWindow.destroyWindow()
           done()
-        }).catch((err: BusinessError) => {
+        }).catch(async (err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
           } else {
