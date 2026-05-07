@@ -402,7 +402,7 @@ export default function Fdsan01Test() {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FDSANTESTONE_3000
      * @tc.name testFdsan01Chapter0030
-     * @tc.desc Nested error level FATAL: trigger double close, verify program abort and generate tombstone
+     * @tc.desc Nested error level FATAL: trigger double close, verify program abort and generate crash dump file
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -491,7 +491,7 @@ export default function Fdsan01Test() {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FDSANTESTONE_3700
      * @tc.name testFdsan01Chapter0037
-     * @tc.desc Set level to FATAL, trigger double close, verify process abort and tombstone generated
+     * @tc.desc Set level to FATAL, trigger double close, verify process abort and crash dump generated.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
