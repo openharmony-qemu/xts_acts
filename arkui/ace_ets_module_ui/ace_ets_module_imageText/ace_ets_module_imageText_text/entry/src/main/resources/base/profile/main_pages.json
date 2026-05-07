@@ -38,6 +38,7 @@
         "MainAbility/pages/Span/SpanPropertiesNullUndefinedTest",
         "MainAbility/pages/Span/SpanFontConfigsTest",
         "MainAbility/pages/Span/SpanFontWeightTest",
+        "MainAbility/pages/Span/SpanFontVariations",
 
         "MainAbility/pages/SymbolSpan/SymbolSpanApi1",
         "MainAbility/pages/SymbolSpan/SymbolSpanApi2",
@@ -135,6 +136,7 @@
         "MainAbility/pages/Text/TextLayoutManagerMethods",
         "MainAbility/pages/Text/TextGetCharacter",
         "MainAbility/pages/Text/TextOrphanCharOptimization",
-        "MainAbility/pages/Text/OrphanCharOptimization"
+        "MainAbility/pages/Text/OrphanCharOptimization",
+        "MainAbility/pages/Text/TextFontVariations"
     ]
 }

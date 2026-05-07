@@ -54,6 +54,7 @@ import StyledStringMethodsNullTest from './StyledString/StyledStringMethodsNull.
 import MutableStyledStringMethodsNullTest from './StyledString/MutableStyledStringMethodsNull.test';
 import MutableStyledStringMethodsNull2Test from './StyledString/MutableStyledStringMethodsNull2.test';
 import StyledStringFontWeightConfigsTest from './StyledStringTest/StyledStringFontWeightConfigsTest.test';
+import StyledStringFontVariationsTest from './StyledString/StyledStringFontVariations.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -97,4 +98,5 @@ export default function testsuite() {
   MutableStyledStringMethodsNullTest()
   MutableStyledStringMethodsNull2Test()
   StyledStringFontWeightConfigsTest()
+  StyledStringFontVariationsTest()
 }
