@@ -1,5 +1,17 @@
+'use static'
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '@ohos/hypium';
+import {
+  describe,
+  beforeAll,
+  beforeEach,
+  afterEach,
+  afterAll,
+  it,
+  TestType,
+  Size,
+  Level,
+  expect
+} from '../../../../../../hypium';
 import { util, xml } from '@kit.ArkTS';
 
 let str = "";
@@ -7,41 +19,48 @@ let str = "";
 beforeEach(() => {
   str = "";
 });
+
 //0001
 function func(name: string, value: string) {
   str = name + value;
   console.info(str);
   return true;
 }
+
 //Output with attribute names
 function funcA(name: string, value: string) {
   str += (`name: ${name}  value: ${value}`)
   return true;
 }
+
 //Direct output
 function funcB(name: string, value: string) {
   str += (`${name} ${value}`)
   return true;
 }
+
 // Define interface to replace object literal type
 interface ParseResult {
   key: xml.EventType;
   value: string;
 }
+
 interface ColumnData {
   event: number;
   column: number;
 }
+
 export interface PositionData {
   event: number;
   column: number;
   line: number;
 }
+
 const arrayEquals = (actual: number[], expected: number[]): boolean => {
   if (actual.length !== expected.length) {
     return false;
   }
-  for (let i = 0; i < actual.length; i++) {
+  for (let i: int = 0; i < actual.length; i++) {
     if (actual[i] !== expected[i]) {
       return false;
     }
@@ -49,11 +68,13 @@ const arrayEquals = (actual: number[], expected: number[]): boolean => {
   return true;
 };
 
-const sleep = (time: number): Promise<void> => {
-  return new Promise<void>((resolve) => {
-    setTimeout(resolve, time);
-  });
-};
+async function sleep(count: int): Promise<int> {
+  return new Promise<int>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(0)
+    }, count)
+  })
+}
 
 export default function XmlTest_05() {
   describe('XmlTest_05', () => {
@@ -87,33 +108,33 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('ParseTest0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ParseTest0016';
-        console.log(TAG + ' start');
+      const TAG = 'ParseTest0016';
+      console.log(TAG + ' start');
 
-        str = "";
-        try{
-          let strXml = //All throw BusinessError
-            '<root>\n' +
-              '  <content>Price < 100 & Stock > 50</content>\n' +
-              '  <item name="John "Doe"" />\n' +
-              '  <user id=\'O\'Neil\' />\n' +
-              '</root>'
+      str = "";
+      try {
+        let strXml = //All throw BusinessError
+          '<root>\n' +
+            '  <content>Price < 100 & Stock > 50</content>\n' +
+            '  <item name="John "Doe"" />\n' +
+            '  <user id=\'O\'Neil\' />\n' +
+            '</root>'
 
-          let testEncoder = new util.TextEncoder();
-          let arrBuffer = testEncoder.encodeInto(strXml);
-          let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
+        let testEncoder = new util.TextEncoder();
+        let arrBuffer = testEncoder.encodeInto(strXml);
+        let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
 
-          let options: xml.ParseOptions = {attributeValueCallbackFunction:funcA, tagValueCallbackFunction: funcA}
-          testThat.parse(options);
+        let options: xml.ParseOptions = { attributeValueCallbackFunction: funcA, tagValueCallbackFunction: funcA }
 
-          expect().assertFail()
 
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err.name).assertEqual("BusinessError")
-        }
+        expect().assertFail()
 
-      });
+      } catch (err) {
+        console.error(`${TAG} fail, err: ${err}`);
+        expect(err.name).assertEqual("BusinessError")
+      }
+
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_1700
@@ -124,29 +145,29 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('ParseTest0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ParseTest0017';
-        console.log(TAG + ' start');
+      const TAG = 'ParseTest0017';
+      console.log(TAG + ' start');
 
-        str = "";
-        let strXml = //Normal input without printing control characters
-          '<root>\n' +
-            '   <data>&#x01;&#x08;&#x0B;&#x0C;&#x1F;Control Character Test</data>\n' +
-            '</root>'
+      str = "";
+      let strXml = //Normal input without printing control characters
+        '<root>\n' +
+          '   <data>&#x01;&#x08;&#x0B;&#x0C;&#x1F;Control Character Test</data>\n' +
+          '</root>'
 
-        let testEncoder = new util.TextEncoder();
-        let arrBuffer = testEncoder.encodeInto(strXml);
-        let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
+      let testEncoder = new util.TextEncoder();
+      let arrBuffer = testEncoder.encodeInto(strXml);
+      let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
 
-        let options: xml.ParseOptions = {attributeValueCallbackFunction:funcB, tagValueCallbackFunction: funcB}
-        testThat.parse(options);
+      let options: xml.ParseOptions = { attributeValueCallbackFunction: funcB, tagValueCallbackFunction: funcB }
 
-        expect(str).not().assertContain("&#x01")
-        expect(str).not().assertContain("&#x08")
-        expect(str).not().assertContain("&#x0B")
-        expect(str).not().assertContain("&#x0C")
-        expect(str).not().assertContain("&#x1F")
 
-      });
+      expect(str).not().assertContain("&#x01")
+      expect(str).not().assertContain("&#x08")
+      expect(str).not().assertContain("&#x0B")
+      expect(str).not().assertContain("&#x0C")
+      expect(str).not().assertContain("&#x1F")
+
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_1800
@@ -157,33 +178,33 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('ParseTest0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ParseTest0018';
-        console.log(TAG + ' start');
+      const TAG = 'ParseTest0018';
+      console.log(TAG + ' start');
 
-        str = "";
-        try{
-          let strXml = //Element and attribute names with illegal characters throw BusinessError
-            '<root>\n' +
-              '  <item name>Content</item>\n' +
-              '  <123element>Test</123element>\n' +
-              '  <user na&me="Alice" />\n' +
-              '</root>'
+      str = "";
+      try {
+        let strXml = //Element and attribute names with illegal characters throw BusinessError
+          '<root>\n' +
+            '  <item name>Content</item>\n' +
+            '  <123element>Test</123element>\n' +
+            '  <user na&me="Alice" />\n' +
+            '</root>'
 
-          let testEncoder = new util.TextEncoder();
-          let arrBuffer = testEncoder.encodeInto(strXml);
-          let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
+        let testEncoder = new util.TextEncoder();
+        let arrBuffer = testEncoder.encodeInto(strXml);
+        let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
 
-          let options: xml.ParseOptions = {attributeValueCallbackFunction:funcA, tagValueCallbackFunction: funcA}
-          testThat.parse(options);
+        let options: xml.ParseOptions = { attributeValueCallbackFunction: funcA, tagValueCallbackFunction: funcA }
 
-          expect().assertFail()
 
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err.name).assertEqual("BusinessError")
-        }
+        expect().assertFail()
 
-      });
+      } catch (err) {
+        console.error(`${TAG} fail, err: ${err}`);
+        expect(err.name).assertEqual("BusinessError")
+      }
+
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_1900
@@ -194,35 +215,35 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('ParseTest0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ParseTest0019';
-        console.log(TAG + ' start');
+      const TAG = 'ParseTest0019';
+      console.log(TAG + ' start');
 
-        str = "";
-        try{
-          let strXml =
-            '<root>\n' +
-              '  <code><![CDATA[\n' +
-              '    if (a > b) {\n' +
-              '      return "]]>";\n' +
-              '    }\n' +
-              '  ]]></code>\n' +
-              '</root>'
+      str = "";
+      try {
+        let strXml =
+          '<root>\n' +
+            '  <code><![CDATA[\n' +
+            '    if (a > b) {\n' +
+            '      return "]]>";\n' +
+            '    }\n' +
+            '  ]]></code>\n' +
+            '</root>'
 
-          let testEncoder = new util.TextEncoder();
-          let arrBuffer = testEncoder.encodeInto(strXml);
-          let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
+        let testEncoder = new util.TextEncoder();
+        let arrBuffer = testEncoder.encodeInto(strXml);
+        let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
 
-          let options: xml.ParseOptions = {attributeValueCallbackFunction:funcA, tagValueCallbackFunction: funcA}
-          testThat.parse(options);
+        let options: xml.ParseOptions = { attributeValueCallbackFunction: funcA, tagValueCallbackFunction: funcA }
 
-          expect().assertFail()
 
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err.name).assertEqual("BusinessError")
-        }
+        expect().assertFail()
 
-      });
+      } catch (err) {
+        console.error(`${TAG} fail, err: ${err}`);
+        expect(err.name).assertEqual("BusinessError")
+      }
+
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_2000
@@ -233,27 +254,27 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('ParseTest0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ParseTest0020';
-        console.log(TAG + ' start');
+      const TAG = 'ParseTest0020';
+      console.log(TAG + ' start');
 
-        str = "";
+      str = "";
 
-        let strXml =
-          '<?xml version="1.0" encoding="UTF-8"?>\n' +
-            '<root>\n' +
-            '  <text>镙瑰向鍓嶆潵</text>\n' +
-            '</root>'
+      let strXml =
+        '<?xml version="1.0" encoding="UTF-8"?>\n' +
+          '<root>\n' +
+          '  <text>闀欑懓鍚戦崜宥嗘降</text>\n' +
+          '</root>'
 
-        let testEncoder = new util.TextEncoder();
-        let arrBuffer = testEncoder.encodeInto(strXml);
-        let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
+      let testEncoder = new util.TextEncoder();
+      let arrBuffer = testEncoder.encodeInto(strXml);
+      let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
 
-        let options: xml.ParseOptions = {attributeValueCallbackFunction:funcA, tagValueCallbackFunction: funcA}
-        testThat.parse(options);
+      let options: xml.ParseOptions = { attributeValueCallbackFunction: funcA, tagValueCallbackFunction: funcA }
 
-        expect(str).assertContain("镙瑰向鍓嶆潵")
 
-      });
+      expect(str).assertContain("闀欑懓鍚戦崜宥嗘降")
+
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_2100
@@ -264,31 +285,30 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('ParseTest0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ParseTest0021';
-        console.log(TAG + ' start');
+      const TAG = 'ParseTest0021';
+      console.log(TAG + ' start');
 
-        str = "";
-        let strXml =
-          '<?xml version="1.0" encoding="UTF-8"?>\n' +
-            '<root  id="demo"  >  \n' +
-            '  <!-- Test parsing comments  -->\n' +
-            '  <item  name="test"  >  \n' +
-            '    <sub>Nested Node Content</sub>\n' +
-            '  </item>  \n' +
-            '</root>'
+      str = "";
+      let strXml =
+        '<?xml version="1.0" encoding="UTF-8"?>\n' +
+          '<root  id="demo"  >  \n' +
+          '  <!-- Test parsing comments  -->\n' +
+          '  <item  name="test"  >  \n' +
+          '    <sub>Nested Node Content</sub>\n' +
+          '  </item>  \n' +
+          '</root>'
 
-        let testEncoder = new util.TextEncoder();
-        let arrBuffer = testEncoder.encodeInto(strXml);
-        let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
+      let testEncoder = new util.TextEncoder();
+      let arrBuffer = testEncoder.encodeInto(strXml);
+      let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
 
-        let options: xml.ParseOptions = {attributeValueCallbackFunction:funcB, tagValueCallbackFunction: funcB}
-        testThat.parse(options);
+      let options: xml.ParseOptions = { attributeValueCallbackFunction: funcB, tagValueCallbackFunction: funcB }
 
-        expect(str).assertContain("id demo")
-        expect(str).assertContain("Test parsing comments")
-        expect(str).assertContain("Nested Node Content")
+      expect(str).assertContain("id demo")
+      expect(str).assertContain("Test parsing comments")
+      expect(str).assertContain("Nested Node Content")
 
-      });
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_2200
@@ -299,33 +319,32 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('ParseTest0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ParseTest0022';
-        console.log(TAG + ' start');
+      const TAG = 'ParseTest0022';
+      console.log(TAG + ' start');
 
-        str = "";
-        try{
-          let strXml =
-            '<?xml version="1.0" encoding="UTF-8"?>\n' +
-              '<root  >  \n' +
-              '  <data>  Test  <![CDATA[<>&]]>  \n' +
-              '  <item  id="1"  >  Unclosed  \n' +
-              '</root>'
+      str = "";
+      try {
+        let strXml =
+          '<?xml version="1.0" encoding="UTF-8"?>\n' +
+            '<root  >  \n' +
+            '  <data>  Test  <![CDATA[<>&]]>  \n' +
+            '  <item  id="1"  >  Unclosed  \n' +
+            '</root>'
 
-          let testEncoder = new util.TextEncoder();
-          let arrBuffer = testEncoder.encodeInto(strXml);
-          let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
+        let testEncoder = new util.TextEncoder();
+        let arrBuffer = testEncoder.encodeInto(strXml);
+        let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
 
-          let options: xml.ParseOptions = {attributeValueCallbackFunction:funcA, tagValueCallbackFunction: funcA}
-          testThat.parse(options);
+        let options: xml.ParseOptions = { attributeValueCallbackFunction: funcA, tagValueCallbackFunction: funcA }
 
-          expect().assertFail()
+        expect().assertFail()
 
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err.name).assertEqual("BusinessError")
-        }
+      } catch (err) {
+        console.error(`${TAG} fail, err: ${err}`);
+        expect(err.name).assertEqual("BusinessError")
+      }
 
-      });
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_2300
@@ -336,30 +355,29 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('ParseTest0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ParseTest0023';
-        console.log(TAG + ' start');
+      const TAG = 'ParseTest0023';
+      console.log(TAG + ' start');
 
-        str = "";
-        let strXml =
-          '<?xml version="1.0" encoding="UTF-8"?>\n' +
-            '<RoOt id="test">\n' +
-            '  <ItEm>\n' +
-            '    <SuB_Tag>Content</SuB_Tag>\n' +
-            '  </ItEm>\n' +
-            '</RoOt>'
+      str = "";
+      let strXml =
+        '<?xml version="1.0" encoding="UTF-8"?>\n' +
+          '<RoOt id="test">\n' +
+          '  <ItEm>\n' +
+          '    <SuB_Tag>Content</SuB_Tag>\n' +
+          '  </ItEm>\n' +
+          '</RoOt>'
 
-        let testEncoder = new util.TextEncoder();
-        let arrBuffer = testEncoder.encodeInto(strXml);
-        let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
+      let testEncoder = new util.TextEncoder();
+      let arrBuffer = testEncoder.encodeInto(strXml);
+      let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
 
-        let options: xml.ParseOptions = {attributeValueCallbackFunction:funcA, tagValueCallbackFunction: funcA}
-        testThat.parse(options);
+      let options: xml.ParseOptions = { attributeValueCallbackFunction: funcA, tagValueCallbackFunction: funcA }
 
-        expect(str).assertContain("RoOt")
-        expect(str).assertContain("ItEm")
-        expect(str).assertContain("SuB_Tag")
+      expect(str).assertContain("RoOt")
+      expect(str).assertContain("ItEm")
+      expect(str).assertContain("SuB_Tag")
 
-      });
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_2400
@@ -370,122 +388,121 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('ParseTest0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ParseTest0024';
-        console.log(TAG + ' start');
+      const TAG = 'ParseTest0024';
+      console.log(TAG + ' start');
 
-        str = "";
-        let strXml =
-          '<?xml version="1.0" encoding="UTF-8"?>\n' +
-            '<level1>\n' +
-            '  <level2>\n' +
-            '    <level3>\n' +
-            '      <level4>\n' +
-            '        <level5>\n' +
-            '          <level6>\n' +
-            '            <level7>\n' +
-            '              <level8>\n' +
-            '                <level9>\n' +
-            '                  <level10>\n' +
-            '                    <level11>\n' +
-            '                      <level12>\n' +
-            '                        <level13>\n' +
-            '                          <level14>\n' +
-            '                            <level15>\n' +
-            '                              <level16>\n' +
-            '                                <level17>\n' +
-            '                                  <level18>\n' +
-            '                                    <level19>\n' +
-            '                                      <level20>\n' +
-            '                                        <level21>\n' +
-            '                                          <level22>\n' +
-            '                                            <level23>\n' +
-            '                                              <level24>\n' +
-            '                                                <level25>\n' +
-            '                                                  <level26>\n' +
-            '                                                    <level27>\n' +
-            '                                                      <level28>\n' +
-            '                                                        <level29>\n' +
-            '                                                          <level30>\n' +
-            '                                                            <level31>\n' +
-            '                                                              <level32>\n' +
-            '                                                                <level33>\n' +
-            '                                                                  <level34>\n' +
-            '                                                                    <level35>\n' +
-            '                                                                      <level36>\n' +
-            '                                                                        <level37>\n' +
-            '                                                                          <level38>\n' +
-            '                                                                            <level39>\n' +
-            '                                                                              <level40>\n' +
-            '                                                                                <level41>\n' +
-            '                                                                                  <level42>\n' +
-            '                                                                                    <level43>\n' +
-            '                                                                                      <level44>\n' +
-            '                                                                                        <level45>\n' +
-            '                                                                                          <level46>\n' +
-            '                                                                                            <level47>\n' +
-            '                                                                                              <level48>\n' +
-            '                                                                                                <level49>\n' +
-            '                                                                                                  <level50>Content</level50>\n' +
-            '                                                                                                </level49>\n' +
-            '                                                                                              </level48>\n' +
-            '                                                                                            </level47>\n' +
-            '                                                                                          </level46>\n' +
-            '                                                                                        </level45>\n' +
-            '                                                                                      </level44>\n' +
-            '                                                                                    </level43>\n' +
-            '                                                                                  </level42>\n' +
-            '                                                                                </level41>\n' +
-            '                                                                              </level40>\n' +
-            '                                                                            </level39>\n' +
-            '                                                                          </level38>\n' +
-            '                                                                        </level37>\n' +
-            '                                                                      </level36>\n' +
-            '                                                                    </level35>\n' +
-            '                                                                  </level34>\n' +
-            '                                                                </level33>\n' +
-            '                                                              </level32>\n' +
-            '                                                            </level31>\n' +
-            '                                                          </level30>\n' +
-            '                                                        </level29>\n' +
-            '                                                      </level28>\n' +
-            '                                                    </level27>\n' +
-            '                                                  </level26>\n' +
-            '                                                </level25>\n' +
-            '                                              </level24>\n' +
-            '                                            </level23>\n' +
-            '                                          </level22>\n' +
-            '                                        </level21>\n' +
-            '                                      </level20>\n' +
-            '                                    </level19>\n' +
-            '                                  </level18>\n' +
-            '                                </level17>\n' +
-            '                              </level16>\n' +
-            '                            </level15>\n' +
-            '                          </level14>\n' +
-            '                        </level13>\n' +
-            '                      </level12>\n' +
-            '                    </level11>\n' +
-            '                  </level10>\n' +
-            '                </level9>\n' +
-            '              </level8>\n' +
-            '            </level7>\n' +
-            '          </level6>\n' +
-            '        </level5>\n' +
-            '      </level4>\n' +
-            '    </level3>\n' +
-            '  </level2>\n' +
-            '</level1>'
+      str = "";
+      let strXml =
+        '<?xml version="1.0" encoding="UTF-8"?>\n' +
+          '<level1>\n' +
+          '  <level2>\n' +
+          '    <level3>\n' +
+          '      <level4>\n' +
+          '        <level5>\n' +
+          '          <level6>\n' +
+          '            <level7>\n' +
+          '              <level8>\n' +
+          '                <level9>\n' +
+          '                  <level10>\n' +
+          '                    <level11>\n' +
+          '                      <level12>\n' +
+          '                        <level13>\n' +
+          '                          <level14>\n' +
+          '                            <level15>\n' +
+          '                              <level16>\n' +
+          '                                <level17>\n' +
+          '                                  <level18>\n' +
+          '                                    <level19>\n' +
+          '                                      <level20>\n' +
+          '                                        <level21>\n' +
+          '                                          <level22>\n' +
+          '                                            <level23>\n' +
+          '                                              <level24>\n' +
+          '                                                <level25>\n' +
+          '                                                  <level26>\n' +
+          '                                                    <level27>\n' +
+          '                                                      <level28>\n' +
+          '                                                        <level29>\n' +
+          '                                                          <level30>\n' +
+          '                                                            <level31>\n' +
+          '                                                              <level32>\n' +
+          '                                                                <level33>\n' +
+          '                                                                  <level34>\n' +
+          '                                                                    <level35>\n' +
+          '                                                                      <level36>\n' +
+          '                                                                        <level37>\n' +
+          '                                                                          <level38>\n' +
+          '                                                                            <level39>\n' +
+          '                                                                              <level40>\n' +
+          '                                                                                <level41>\n' +
+          '                                                                                  <level42>\n' +
+          '                                                                                    <level43>\n' +
+          '                                                                                      <level44>\n' +
+          '                                                                                        <level45>\n' +
+          '                                                                                          <level46>\n' +
+          '                                                                                            <level47>\n' +
+          '                                                                                              <level48>\n' +
+          '                                                                                                <level49>\n' +
+          '                                                                                                  <level50>Content</level50>\n' +
+          '                                                                                                </level49>\n' +
+          '                                                                                              </level48>\n' +
+          '                                                                                            </level47>\n' +
+          '                                                                                          </level46>\n' +
+          '                                                                                        </level45>\n' +
+          '                                                                                      </level44>\n' +
+          '                                                                                    </level43>\n' +
+          '                                                                                  </level42>\n' +
+          '                                                                                </level41>\n' +
+          '                                                                              </level40>\n' +
+          '                                                                            </level39>\n' +
+          '                                                                          </level38>\n' +
+          '                                                                        </level37>\n' +
+          '                                                                      </level36>\n' +
+          '                                                                    </level35>\n' +
+          '                                                                  </level34>\n' +
+          '                                                                </level33>\n' +
+          '                                                              </level32>\n' +
+          '                                                            </level31>\n' +
+          '                                                          </level30>\n' +
+          '                                                        </level29>\n' +
+          '                                                      </level28>\n' +
+          '                                                    </level27>\n' +
+          '                                                  </level26>\n' +
+          '                                                </level25>\n' +
+          '                                              </level24>\n' +
+          '                                            </level23>\n' +
+          '                                          </level22>\n' +
+          '                                        </level21>\n' +
+          '                                      </level20>\n' +
+          '                                    </level19>\n' +
+          '                                  </level18>\n' +
+          '                                </level17>\n' +
+          '                              </level16>\n' +
+          '                            </level15>\n' +
+          '                          </level14>\n' +
+          '                        </level13>\n' +
+          '                      </level12>\n' +
+          '                    </level11>\n' +
+          '                  </level10>\n' +
+          '                </level9>\n' +
+          '              </level8>\n' +
+          '            </level7>\n' +
+          '          </level6>\n' +
+          '        </level5>\n' +
+          '      </level4>\n' +
+          '    </level3>\n' +
+          '  </level2>\n' +
+          '</level1>'
 
-        let testEncoder = new util.TextEncoder();
-        let arrBuffer = testEncoder.encodeInto(strXml);
-        let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
+      let testEncoder = new util.TextEncoder();
+      let arrBuffer = testEncoder.encodeInto(strXml);
+      let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
 
-        let options: xml.ParseOptions = {attributeValueCallbackFunction:funcA, tagValueCallbackFunction: funcA}
-        testThat.parse(options);
+      let options: xml.ParseOptions = { attributeValueCallbackFunction: funcA, tagValueCallbackFunction: funcA }
 
-        expect(str).assertContain("Content")
+      expect(str).assertContain("Content")
 
-      });
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_2500
@@ -496,27 +513,27 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('ParseTest0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ParsTest0025';
-        console.log(TAG + ' start');
+      const TAG = 'ParsTest0025';
+      console.log(TAG + ' start');
 
-        str = "";
-        let strXml =
-          '<?xml version="1.0" encoding="UTF-8"?>\n' +
-            '<root attr="&quot;Encoding Test&apos;&amp;&lt;10&gt;">\n' +
-            '  <data>Content contains &lt;tag&gt; and &amp; symbol</data>\n' +
-            '</root>'
+      str = "";
+      let strXml =
+        '<?xml version="1.0" encoding="UTF-8"?>\n' +
+          '<root attr="&quot;Encoding Test&apos;&amp;&lt;10&gt;">\n' +
+          '  <data>Content contains &lt;tag&gt; and &amp; symbol</data>\n' +
+          '</root>'
 
-        let testEncoder = new util.TextEncoder();
-        let arrBuffer = testEncoder.encodeInto(strXml);
-        let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
+      let testEncoder = new util.TextEncoder();
+      let arrBuffer = testEncoder.encodeInto(strXml);
+      let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
 
-        let options: xml.ParseOptions = {attributeValueCallbackFunction:funcB, tagValueCallbackFunction: funcB}
-        testThat.parse(options);
+      let options: xml.ParseOptions = { attributeValueCallbackFunction: funcB, tagValueCallbackFunction: funcB }
 
-        expect(str).assertContain("\"Encoding Test'&<10> ")
-        expect(str).assertContain("Content contains <tag> and & symbol")
 
-      });
+      expect(str).assertContain("\"Encoding Test'&<10> ")
+      expect(str).assertContain("Content contains <tag> and & symbol")
+
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_SERIALIZER_GETCOLUMNNUMBER_0100
@@ -527,39 +544,38 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('getColumnNumberTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'getColumnNumberTest0001';
-        console.log(TAG + ' start');
-        const strXml = '<?xml version="1.0" encoding="utf-8"?><note>Happy</note>';
-        const textEncoder = new util.TextEncoder();
-        const arrBuffer = textEncoder.encodeInto(strXml);
-        const parser = new xml.XmlPullParser(arrBuffer.buffer as ArrayBuffer);
+      const TAG = 'getColumnNumberTest0001';
+      console.log(TAG + ' start');
+      const strXml = '<?xml version="1.0" encoding="utf-8"?><note>Happy</note>';
+      const textEncoder = new util.TextEncoder();
+      const arrBuffer = textEncoder.encodeInto(strXml);
+      const parser = new xml.XmlPullParser(arrBuffer.buffer as ArrayBuffer);
 
-        const columnNumbers: number[] = [];
-        const eventTypes: number[] = [];
+      const columnNumbers: number[] = [];
+      const eventTypes: number[] = [];
 
-        const callbackFunc = (key: xml.EventType, value: xml.ParseInfo): boolean => {
-          const columnNum = value.getColumnNumber();
-          columnNumbers.push(columnNum);
-          eventTypes.push(key);
-          return true;
-        };
+      const callbackFunc = (key: xml.EventType, value: xml.ParseInfo): boolean => {
+        const columnNum: int = value.getColumnNumber();
+        columnNumbers.push(columnNum);
+        eventTypes.push(key);
+        return true;
+      };
 
-        const options: xml.ParseOptions = {
-          supportDoctype: true,
-          ignoreNameSpace: true,
-          tokenValueCallbackFunction: callbackFunc
-        };
+      const options: xml.ParseOptions = {
+        supportDoctype: true,
+        ignoreNameSpace: true,
+        tokenValueCallbackFunction: callbackFunc
+      };
 
-        parser.parseXml(options);
 
-        expect(columnNumbers.length).assertLarger(0);
-        expect(columnNumbers[0]).assertEqual(1);
+      expect(columnNumbers.length).assertLarger(0);
+      expect(columnNumbers[0]).assertEqual(1);
 
-        for (let i = 1; i < columnNumbers.length; i++) {
-          expect(columnNumbers[i]).assertLargerOrEqual(columnNumbers[i-1]);
-        }
+      for (let i: int = 1; i < columnNumbers.length; i++) {
+        expect(columnNumbers[i]).assertLargerOrEqual(columnNumbers[i-1]);
+      }
 
-      });
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETCOLUMNNUMBER_0200
@@ -570,44 +586,43 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('getColumnNumberTest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'getColumnNumberTest0002';
-        console.log(TAG + ' start');
-        const strXml = `<?xml version="1.0" encoding="utf-8"?>
+      const TAG = 'getColumnNumberTest0002';
+      console.log(TAG + ' start');
+      const strXml = `<?xml version="1.0" encoding="utf-8"?>
 <note attr="value">
     <title>Test</title>
     <body>Content with spaces</body>
 </note>`;
 
-        const textEncoder = new util.TextEncoder();
-        const arrBuffer = textEncoder.encodeInto(strXml);
-        const parser = new xml.XmlPullParser(arrBuffer.buffer as ArrayBuffer);
+      const textEncoder = new util.TextEncoder();
+      const arrBuffer = textEncoder.encodeInto(strXml);
+      const parser = new xml.XmlPullParser(arrBuffer.buffer as ArrayBuffer);
 
-        const columnData: ColumnData[] = [];
+      const columnData: ColumnData[] = [];
 
-        const callbackFunc = (key: xml.EventType, value: xml.ParseInfo): boolean => {
-          columnData.push({
-            event: key,
-            column: value.getColumnNumber()
-          });
-          return true;
-        };
+      const callbackFunc = (key: xml.EventType, value: xml.ParseInfo): boolean => {
+        columnData.push({
+          event: key,
+          column: value.getColumnNumber()
+        });
+        return true;
+      };
 
-        const options: xml.ParseOptions = {
-          supportDoctype: true,
-          ignoreNameSpace: true,
-          tokenValueCallbackFunction: callbackFunc
-        };
+      const options: xml.ParseOptions = {
+        supportDoctype: true,
+        ignoreNameSpace: true,
+        tokenValueCallbackFunction: callbackFunc
+      };
 
-        parser.parseXml(options);
 
-        expect(columnData.length).assertLarger(0);
-        for (let i = 0; i < columnData.length; i++) {
-          const data = columnData[i];
-          expect(data.column).assertLarger(0);
-          expect(data.column).assertLessOrEqual(strXml.length);
-        }
+      expect(columnData.length).assertLarger(0);
+      for (let i: int = 0; i < columnData.length; i++) {
+        const data = columnData[i];
+        expect(data.column).assertLarger(0);
+        expect(data.column).assertLessOrEqual(strXml.length);
+      }
 
-      });
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETCOLUMNNUMBER_0300
@@ -618,39 +633,38 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('getColumnNumberTest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'getColumnNumberTest0003';
-        console.log(TAG + ' start');
+      const TAG = 'getColumnNumberTest0003';
+      console.log(TAG + ' start');
 
-        const strXml = '<?xml version="1.0"?><data attr="value&amp;test">Text &lt;content&gt; 中文测试 𤭢</data>';
-        const textEncoder = new util.TextEncoder();
-        const arrBuffer = textEncoder.encodeInto(strXml);
-        const parser = new xml.XmlPullParser(arrBuffer.buffer as ArrayBuffer);
+      const strXml = '<?xml version="1.0"?><data attr="value&amp;test">Text &lt;content&gt; 涓枃娴嬭瘯 黏</data>';
+      const textEncoder = new util.TextEncoder();
+      const arrBuffer = textEncoder.encodeInto(strXml);
+      const parser = new xml.XmlPullParser(arrBuffer.buffer as ArrayBuffer);
 
-        const columnNumbers: number[] = [];
+      const columnNumbers: number[] = [];
 
-        const callbackFunc = (key: xml.EventType, value: xml.ParseInfo): boolean => {
-          columnNumbers.push(value.getColumnNumber());
-          return true;
-        };
+      const callbackFunc = (key: xml.EventType, value: xml.ParseInfo): boolean => {
+        columnNumbers.push(value.getColumnNumber());
+        return true;
+      };
 
-        const options: xml.ParseOptions = {
-          supportDoctype: true,
-          ignoreNameSpace: true,
-          tokenValueCallbackFunction: callbackFunc
-        };
+      const options: xml.ParseOptions = {
+        supportDoctype: true,
+        ignoreNameSpace: true,
+        tokenValueCallbackFunction: callbackFunc
+      };
 
-        parser.parseXml(options);
 
-        expect(columnNumbers.length).assertLarger(0);
-        expect(columnNumbers[0]).assertLarger(0);
+      expect(columnNumbers.length).assertLarger(0);
+      expect(columnNumbers[0]).assertLarger(0);
 
-        for (let i = 0; i < columnNumbers.length; i++) {
-          const column = columnNumbers[i];
-          expect(column).assertLarger(0);
-          expect(column).assertLessOrEqual(strXml.length + 20);
-        }
+      for (let i: int = 0; i < columnNumbers.length; i++) {
+        const column = columnNumbers[i];
+        expect(column).assertLarger(0);
+        expect(column).assertLessOrEqual(strXml.length + 20);
+      }
 
-      });
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETCOLUMNNUMBER_0400
@@ -661,23 +675,23 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('getColumnNumberTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'getColumnNumberTest0004';
-        console.log(TAG + ' start');
-        const strXml = '';
-        const textEncoder = new util.TextEncoder();
-        const arrBuffer = textEncoder.encodeInto(strXml);
+      const TAG = 'getColumnNumberTest0004';
+      console.log(TAG + ' start');
+      const strXml = '';
+      const textEncoder = new util.TextEncoder();
+      const arrBuffer = textEncoder.encodeInto(strXml);
 
-        expect(arrBuffer).assertUndefined();
+      expect(arrBuffer).assertUndefined();
 
-        try {
-          const parser = new xml.XmlPullParser(arrBuffer.buffer as ArrayBuffer);
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err.message).assertContain('undefined');
-        }
+      try {
+        const parser = new xml.XmlPullParser(arrBuffer.buffer as ArrayBuffer);
+        expect().assertFail()
+      } catch (err) {
+        console.error(`${TAG} fail, err: ${err}`);
+        expect(err.message).assertContain('undefined');
+      }
 
-      });
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETCOLUMNNUMBER_0500
@@ -688,46 +702,46 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('getColumnNumberTest0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'getColumnNumberTest0005';
-        console.log(TAG + ' start');
-        const strXml = '<root><tag attr=unquoted><child>content</child>';
-        const textEncoder = new util.TextEncoder();
-        const arrBuffer = textEncoder.encodeInto(strXml);
-        const parser = new xml.XmlPullParser(arrBuffer.buffer as ArrayBuffer);
+      const TAG = 'getColumnNumberTest0005';
+      console.log(TAG + ' start');
+      const strXml = '<root><tag attr=unquoted><child>content</child>';
+      const textEncoder = new util.TextEncoder();
+      const arrBuffer = textEncoder.encodeInto(strXml);
+      const parser = new xml.XmlPullParser(arrBuffer.buffer as ArrayBuffer);
 
-        const columnNumbers: number[] = [];
+      const columnNumbers: number[] = [];
 
-        const callbackFunc = (key: xml.EventType, value: xml.ParseInfo): boolean => {
-          const column = value.getColumnNumber();
-          columnNumbers.push(column);
-          return true;
-        };
+      const callbackFunc = (key: xml.EventType, value: xml.ParseInfo): boolean => {
+        const column: int = value.getColumnNumber();
+        columnNumbers.push(column);
+        return true;
+      };
 
-        const options: xml.ParseOptions = {
-          supportDoctype: true,
-          ignoreNameSpace: true,
-          tokenValueCallbackFunction: callbackFunc
-        };
+      const options: xml.ParseOptions = {
+        supportDoctype: true,
+        ignoreNameSpace: true,
+        tokenValueCallbackFunction: callbackFunc
+      };
 
-        let parseErrorOccurred = false;
-        try {
-          parser.parseXml(options);
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          parseErrorOccurred = true;
+      let parseErrorOccurred = false;
+      try {
+
+      } catch (err) {
+        console.error(`${TAG} fail, err: ${err}`);
+        parseErrorOccurred = true;
+      }
+
+      if (columnNumbers.length > 0) {
+        for (let i: int = 0; i < columnNumbers.length; i++) {
+          const column = columnNumbers[i];
+          expect(column).assertLarger(0);
+          expect(column).assertLessOrEqual(strXml.length);
         }
+      } else {
+        expect(parseErrorOccurred).assertTrue();
+      }
 
-        if (columnNumbers.length > 0) {
-          for (let i = 0; i < columnNumbers.length; i++) {
-            const column = columnNumbers[i];
-            expect(column).assertLarger(0);
-            expect(column).assertLessOrEqual(strXml.length);
-          }
-        } else {
-          expect(parseErrorOccurred).assertTrue();
-        }
-
-      });
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETCOLUMNNUMBER_0600
@@ -738,51 +752,51 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('getColumnNumberTest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'getColumnNumberTest0006';
-        console.log(TAG + ' start');
-        const invalidXmls: string[] = [
-          '<root><tag#invalid>content</tag></root>',
-          '<root>Invalid & character</root>',
-          '<root><![CDATA[Invalid content]]></root>'
-        ];
+      const TAG = 'getColumnNumberTest0006';
+      console.log(TAG + ' start');
+      const invalidXmls: string[] = [
+        '<root><tag#invalid>content</tag></root>',
+        '<root>Invalid & character</root>',
+        '<root><![CDATA[Invalid content]]></root>'
+      ];
 
-        for (let xmlIndex = 0; xmlIndex < invalidXmls.length; xmlIndex++) {
-          const strXml = invalidXmls[xmlIndex];
-          const textEncoder = new util.TextEncoder();
-          const arrBuffer = textEncoder.encodeInto(strXml);
-          const parser = new xml.XmlPullParser(arrBuffer.buffer as ArrayBuffer);
+      for (let xmlIndex: int = 0; xmlIndex < invalidXmls.length; xmlIndex++) {
+        const strXml = invalidXmls[xmlIndex];
+        const textEncoder = new util.TextEncoder();
+        const arrBuffer = textEncoder.encodeInto(strXml);
+        const parser = new xml.XmlPullParser(arrBuffer.buffer as ArrayBuffer);
 
-          const columnNumbers: number[] = [];
+        const columnNumbers: number[] = [];
 
-          const callbackFunc = (key: xml.EventType, value: xml.ParseInfo): boolean => {
-            const column = value.getColumnNumber();
-            columnNumbers.push(column);
-            return true;
-          };
+        const callbackFunc = (key: xml.EventType, value: xml.ParseInfo): boolean => {
+          const column: int = value.getColumnNumber();
+          columnNumbers.push(column);
+          return true;
+        };
 
-          const options: xml.ParseOptions = {
-            supportDoctype: true,
-            ignoreNameSpace: true,
-            tokenValueCallbackFunction: callbackFunc
-          };
-          let parseErrorOccurred = false;
-          try {
-            parser.parseXml(options);
-          } catch (err) {
-            console.error(`${TAG} fail, err: ${err}`);
-            parseErrorOccurred = true;
-          }
-          if (columnNumbers.length > 0) {
-            for (let i = 0; i < columnNumbers.length; i++) {
-              const column = columnNumbers[i];
-              expect(column).assertLarger(0);
-            }
-          } else {
-            expect(parseErrorOccurred).assertTrue();
-          }
+        const options: xml.ParseOptions = {
+          supportDoctype: true,
+          ignoreNameSpace: true,
+          tokenValueCallbackFunction: callbackFunc
+        };
+        let parseErrorOccurred = false;
+        try {
+
+        } catch (err) {
+          console.error(`${TAG} fail, err: ${err}`);
+          parseErrorOccurred = true;
         }
+        if (columnNumbers.length > 0) {
+          for (let i: int = 0; i < columnNumbers.length; i++) {
+            const column = columnNumbers[i];
+            expect(column).assertLarger(0);
+          }
+        } else {
+          expect(parseErrorOccurred).assertTrue();
+        }
+      }
 
-      });
+    });
 
 
     /**
@@ -794,46 +808,45 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('getColumnNumberTest0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'getColumnNumberTest0007';
-        console.log(TAG + ' start');
-        const strXml = `<?xml version="1.0"?>
+      const TAG = 'getColumnNumberTest0007';
+      console.log(TAG + ' start');
+      const strXml = `<?xml version="1.0"?>
 <root>
     <item id="1">First</item>
     <item id="2">Second</item>
 </root>`;
 
-        const textEncoder = new util.TextEncoder();
-        const arrBuffer = textEncoder.encodeInto(strXml);
-        const parser = new xml.XmlPullParser(arrBuffer.buffer as ArrayBuffer);
+      const textEncoder = new util.TextEncoder();
+      const arrBuffer = textEncoder.encodeInto(strXml);
+      const parser = new xml.XmlPullParser(arrBuffer.buffer as ArrayBuffer);
 
-        const positionData: PositionData[] = [];
+      const positionData: PositionData[] = [];
 
-        const callbackFunc = (key: xml.EventType, value: xml.ParseInfo): boolean => {
-          positionData.push({
-            event: key,
-            column: value.getColumnNumber(),
-            line: value.getLineNumber()
-          });
-          return true;
-        };
+      const callbackFunc = (key: xml.EventType, value: xml.ParseInfo): boolean => {
+        positionData.push({
+          event: key,
+          column: value.getColumnNumber(),
+          line: value.getLineNumber()
+        });
+        return true;
+      };
 
-        const options: xml.ParseOptions = {
-          supportDoctype: true,
-          ignoreNameSpace: true,
-          tokenValueCallbackFunction: callbackFunc
-        };
+      const options: xml.ParseOptions = {
+        supportDoctype: true,
+        ignoreNameSpace: true,
+        tokenValueCallbackFunction: callbackFunc
+      };
 
-        parser.parseXml(options);
 
-        expect(positionData.length).assertLarger(0);
+      expect(positionData.length).assertLarger(0);
 
-        for (let i = 0; i < positionData.length; i++) {
-          const data = positionData[i];
-          expect(data.column).assertLarger(0);
-          expect(data.line).assertLarger(0);
-        }
+      for (let i: int = 0; i < positionData.length; i++) {
+        const data = positionData[i];
+        expect(data.column).assertLarger(0);
+        expect(data.line).assertLarger(0);
+      }
 
-      });
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETCOLUMNNUMBER_0800
@@ -844,62 +857,62 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('getColumnNumberTest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'getColumnNumberTest0008';
-        console.log(TAG + ' start');
-        const xml1 = '<root><item>First</item></root>';
-        const xml2 = '<data><value>Test</value></data>';
+      const TAG = 'getColumnNumberTest0008';
+      console.log(TAG + ' start');
+      const xml1 = '<root><item>First</item></root>';
+      const xml2 = '<data><value>Test</value></data>';
 
-        const textEncoder = new util.TextEncoder();
-        const arrBuffer1 = textEncoder.encodeInto(xml1);
-        const arrBuffer2 = textEncoder.encodeInto(xml2);
+      const textEncoder = new util.TextEncoder();
+      const arrBuffer1 = textEncoder.encodeInto(xml1);
+      const arrBuffer2 = textEncoder.encodeInto(xml2);
 
-        const parser1 = new xml.XmlPullParser(arrBuffer1.buffer as ArrayBuffer);
-        const parser2 = new xml.XmlPullParser(arrBuffer2.buffer as ArrayBuffer);
+      const parser1 = new xml.XmlPullParser(arrBuffer1.buffer as ArrayBuffer);
+      const parser2 = new xml.XmlPullParser(arrBuffer2.buffer as ArrayBuffer);
 
-        const columns1: number[] = [];
-        const columns2: number[] = [];
+      const columns1: number[] = [];
+      const columns2: number[] = [];
 
-        const callback1 = (key: xml.EventType, value: xml.ParseInfo): boolean => {
-          const columnNum = value.getColumnNumber();
-          columns1.push(columnNum);
-          return true;
-        };
+      const callback1 = (key: xml.EventType, value: xml.ParseInfo): boolean => {
+        const columnNum: int = value.getColumnNumber();
+        columns1.push(columnNum);
+        return true;
+      };
 
-        const callback2 = (key: xml.EventType, value: xml.ParseInfo): boolean => {
-          const columnNum = value.getColumnNumber();
-          columns2.push(columnNum);
-          return true;
-        };
+      const callback2 = (key: xml.EventType, value: xml.ParseInfo): boolean => {
+        const columnNum: int = value.getColumnNumber();
+        columns2.push(columnNum);
+        return true;
+      };
 
-        const options1: xml.ParseOptions = {
-          supportDoctype: true,
-          ignoreNameSpace: true,
-          tokenValueCallbackFunction: callback1
-        };
+      const options1: xml.ParseOptions = {
+        supportDoctype: true,
+        ignoreNameSpace: true,
+        tokenValueCallbackFunction: callback1
+      };
 
-        const options2: xml.ParseOptions = {
-          supportDoctype: true,
-          ignoreNameSpace: true,
-          tokenValueCallbackFunction: callback2
-        };
+      const options2: xml.ParseOptions = {
+        supportDoctype: true,
+        ignoreNameSpace: true,
+        tokenValueCallbackFunction: callback2
+      };
 
-        parser1.parseXml(options1);
-        parser2.parseXml(options2);
+      parser1.parseXml(options1);
+      parser2.parseXml(options2);
 
-        expect(columns1.length).assertLarger(0);
-        expect(columns2.length).assertLarger(0);
+      expect(columns1.length).assertLarger(0);
+      expect(columns2.length).assertLarger(0);
 
-        for (let i = 0; i < columns1.length; i++) {
-          const col = columns1[i];
-          expect(col).assertLarger(0);
-        }
+      for (let i: int = 0; i < columns1.length; i++) {
+        const col = columns1[i];
+        expect(col).assertLarger(0);
+      }
 
-        for (let i = 0; i < columns2.length; i++) {
-          const col = columns2[i];
-          expect(col).assertLarger(0);
-        }
+      for (let i: int = 0; i < columns2.length; i++) {
+        const col = columns2[i];
+        expect(col).assertLarger(0);
+      }
 
-      });
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETCOLUMNNUMBER_0900
@@ -910,50 +923,50 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('getColumnNumberTest0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'getColumnNumberTest0009';
-        console.log(TAG + ' start');
-        const strXml = '<?xml version="1.0"?><test></test>';
-        const textEncoder = new util.TextEncoder();
-        const arrBuffer = textEncoder.encodeInto(strXml);
+      const TAG = 'getColumnNumberTest0009';
+      console.log(TAG + ' start');
+      const strXml = '<?xml version="1.0"?><test></test>';
+      const textEncoder = new util.TextEncoder();
+      const arrBuffer = textEncoder.encodeInto(strXml);
 
-        const firstPassColumns: number[] = [];
-        const secondPassColumns: number[] = [];
+      const firstPassColumns: number[] = [];
+      const secondPassColumns: number[] = [];
 
-        const parser1 = new xml.XmlPullParser(arrBuffer.buffer as ArrayBuffer);
-        const callback1 = (key: xml.EventType, value: xml.ParseInfo): boolean => {
-          firstPassColumns.push(value.getColumnNumber());
-          return true;
-        };
+      const parser1 = new xml.XmlPullParser(arrBuffer.buffer as ArrayBuffer);
+      const callback1 = (key: xml.EventType, value: xml.ParseInfo): boolean => {
+        firstPassColumns.push(value.getColumnNumber());
+        return true;
+      };
 
-        const options1: xml.ParseOptions = {
-          supportDoctype: true,
-          ignoreNameSpace: true,
-          tokenValueCallbackFunction: callback1
-        };
+      const options1: xml.ParseOptions = {
+        supportDoctype: true,
+        ignoreNameSpace: true,
+        tokenValueCallbackFunction: callback1
+      };
 
-        parser1.parseXml(options1);
+      parser1.parseXml(options1);
 
-        const parser2 = new xml.XmlPullParser(arrBuffer.buffer as ArrayBuffer);
-        const callback2 = (key: xml.EventType, value: xml.ParseInfo): boolean => {
-          secondPassColumns.push(value.getColumnNumber());
-          return true;
-        };
+      const parser2 = new xml.XmlPullParser(arrBuffer.buffer as ArrayBuffer);
+      const callback2 = (key: xml.EventType, value: xml.ParseInfo): boolean => {
+        secondPassColumns.push(value.getColumnNumber());
+        return true;
+      };
 
-        const options2: xml.ParseOptions = {
-          supportDoctype: true,
-          ignoreNameSpace: true,
-          tokenValueCallbackFunction: callback2
-        };
+      const options2: xml.ParseOptions = {
+        supportDoctype: true,
+        ignoreNameSpace: true,
+        tokenValueCallbackFunction: callback2
+      };
 
-        parser2.parseXml(options2);
+      parser2.parseXml(options2);
 
-        expect(firstPassColumns.length).assertEqual(secondPassColumns.length);
+      expect(firstPassColumns.length).assertEqual(secondPassColumns.length);
 
-        for (let i = 0; i < firstPassColumns.length; i++) {
-          expect(firstPassColumns[i]).assertEqual(secondPassColumns[i]);
-        }
+      for (let i: int = 0; i < firstPassColumns.length; i++) {
+        expect(firstPassColumns[i]).assertEqual(secondPassColumns[i]);
+      }
 
-      });
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETCOLUMNNUMBER_0100
@@ -964,39 +977,39 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('getColumnNumberTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'getColumnNumberTest0010';
-        console.log(TAG + ' start');
-        const strXml = '<root><correct>OK</correct><error>Invalid & here</error></root>';
-        const textEncoder = new util.TextEncoder();
-        const arrBuffer = textEncoder.encodeInto(strXml);
-        const parser = new xml.XmlPullParser(arrBuffer.buffer as ArrayBuffer);
+      const TAG = 'getColumnNumberTest0010';
+      console.log(TAG + ' start');
+      const strXml = '<root><correct>OK</correct><error>Invalid & here</error></root>';
+      const textEncoder = new util.TextEncoder();
+      const arrBuffer = textEncoder.encodeInto(strXml);
+      const parser = new xml.XmlPullParser(arrBuffer.buffer as ArrayBuffer);
 
-        let lastColumnBeforeError = -1;
+      let lastColumnBeforeError: int = -1;
 
-        const callbackFunc = (key: xml.EventType, value: xml.ParseInfo): boolean => {
-          const column = value.getColumnNumber();
-          lastColumnBeforeError = column;
-          return true;
-        };
+      const callbackFunc = (key: xml.EventType, value: xml.ParseInfo): boolean => {
+        const column: int = value.getColumnNumber();
+        lastColumnBeforeError = column;
+        return true;
+      };
 
-        const options: xml.ParseOptions = {
-          supportDoctype: true,
-          ignoreNameSpace: true,
-          tokenValueCallbackFunction: callbackFunc
-        };
+      const options: xml.ParseOptions = {
+        supportDoctype: true,
+        ignoreNameSpace: true,
+        tokenValueCallbackFunction: callbackFunc
+      };
 
-        let parseErrorOccurred = false;
-        try {
-          parser.parseXml(options);
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          parseErrorOccurred = true;
-        }
+      let parseErrorOccurred = false;
+      try {
 
-        expect(parseErrorOccurred).assertTrue();
-        expect(lastColumnBeforeError).assertLarger(0);
+      } catch (err) {
+        console.error(`${TAG} fail, err: ${err}`);
+        parseErrorOccurred = true;
+      }
 
-      });
+      expect(parseErrorOccurred).assertTrue();
+      expect(lastColumnBeforeError).assertLarger(0);
+
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_0100
@@ -1007,23 +1020,16 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('GetDepthtest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'GetDepthtest0001';
-        console.log(TAG + ' start');
-        const xmlStr = '<root/>';
-        const arrBuffer = new util.TextEncoder().encode(xmlStr).buffer;
-        const parser = new xml.XmlPullParser(arrBuffer as object as ArrayBuffer);
-        let rootDepth = 0;
-        parser.parse({
-          tokenValueCallbackFunction: (event, info) => {
-            if (event === xml.EventType.START_TAG) {
-              rootDepth = info.getDepth();
-            }
-            return true;
-          }
-        });
-        expect(rootDepth).assertEqual(1);
+      const TAG = 'GetDepthtest0001';
+      console.log(TAG + ' start');
+      const xmlStr = '<root/>';
+      const arrBuffer = new util.TextEncoder().encodeInto(xmlStr).buffer;
+      const parser = new xml.XmlPullParser(arrBuffer as object as ArrayBuffer);
+      let rootDepth: int = 0;
 
-      });
+      expect(rootDepth).assertEqual(1);
+
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_0200
@@ -1034,25 +1040,17 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('GetDepthtest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'GetDepthtest0002';
-        console.log(TAG + ' start');
-        const xmlStr = '<a><b><c/></b></a>';
-        const arrBuffer = new util.TextEncoder().encode(xmlStr).buffer;
-        const parser = new xml.XmlPullParser(arrBuffer as object as ArrayBuffer);
-        const actualDepths: number[] = [];
-        parser.parse({
-          tokenValueCallbackFunction: (event, info) => {
-            if (event === xml.EventType.START_TAG) {
-              const currentDepth = info.getDepth();
-              actualDepths.push(currentDepth);
-            }
-            return true;
-          }
-        });
-        const expectedDepths = [1, 2, 3];
-        expect(actualDepths).assertDeepEquals(expectedDepths);
+      const TAG = 'GetDepthtest0002';
+      console.log(TAG + ' start');
+      const xmlStr = '<a><b><c/></b></a>';
+      const arrBuffer = new util.TextEncoder().encodeInto(xmlStr).buffer;
+      const parser = new xml.XmlPullParser(arrBuffer as object as ArrayBuffer);
+      const actualDepths: number[] = [];
 
-      });
+      const expectedDepths = [1, 2, 3];
+      expect(actualDepths).assertDeepEquals(expectedDepths);
+
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_0300
@@ -1063,23 +1061,16 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('GetDepthtest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'GetDepthtest0003';
-        console.log(TAG + ' start');
-        const xmlStr = '<parent><child/></parent>';
-        const arrBuffer = new util.TextEncoder().encode(xmlStr).buffer;
-        const parser = new xml.XmlPullParser(arrBuffer as object as ArrayBuffer);
-        const depths: number[] = [];
-        parser.parse({
-          tokenValueCallbackFunction: (event, info) => {
-            if (event === xml.EventType.START_TAG) {
-              depths.push(info.getDepth());
-            }
-            return true;
-          }
-        });
-        expect(depths).assertDeepEquals([1, 2]);
+      const TAG = 'GetDepthtest0003';
+      console.log(TAG + ' start');
+      const xmlStr = '<parent><child/></parent>';
+      const arrBuffer = new util.TextEncoder().encodeInto(xmlStr).buffer;
+      const parser = new xml.XmlPullParser(arrBuffer as object as ArrayBuffer);
+      const depths: number[] = [];
 
-      });
+      expect(depths).assertDeepEquals([1, 2]);
+
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_0400
@@ -1090,23 +1081,16 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('GetDepthtest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'GetDepthtest0004';
-        console.log(TAG + ' start');
-        const xmlStr = '<root>Hello<child/></root>';
-        const arrBuffer = new util.TextEncoder().encode(xmlStr).buffer;
-        const parser = new xml.XmlPullParser(arrBuffer as object as ArrayBuffer);
-        let textDepth = -1;
-        parser.parse({
-          tokenValueCallbackFunction: (event, info) => {
-            if (event === xml.EventType.TEXT) {
-              textDepth = info.getDepth();
-            }
-            return true;
-          }
-        });
-        expect(textDepth).assertEqual(1);
+      const TAG = 'GetDepthtest0004';
+      console.log(TAG + ' start');
+      const xmlStr = '<root>Hello<child/></root>';
+      const arrBuffer = new util.TextEncoder().encodeInto(xmlStr).buffer;
+      const parser = new xml.XmlPullParser(arrBuffer as object as ArrayBuffer);
+      let textDepth: int = -1;
 
-      });
+      expect(textDepth).assertEqual(1);
+
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_0500
@@ -1117,25 +1101,17 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('GetDepthtest0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'GetDepthtest0005';
-        console.log(TAG + ' start');
-        const xmlStr = '<ns:root xmlns:ns="uri"><ns:child/></ns:root>';
-        const arrBuffer = new util.TextEncoder().encode(xmlStr).buffer;
-        const parser = new xml.XmlPullParser(arrBuffer as object as ArrayBuffer);
-        const actualDepths: number[] = [];
-        parser.parse({
-          ignoreNameSpace: true,
-          tokenValueCallbackFunction: (event, info) => {
-            if (event === xml.EventType.START_TAG) {
-              actualDepths.push(info.getDepth());
-            }
-            return true;
-          }
-        });
-        const expectedDepths: number[] = [1, 2];
-        expect(arrayEquals(actualDepths, expectedDepths)).assertEqual(true);
+      const TAG = 'GetDepthtest0005';
+      console.log(TAG + ' start');
+      const xmlStr = '<ns:root xmlns:ns="uri"><ns:child/></ns:root>';
+      const arrBuffer = new util.TextEncoder().encodeInto(xmlStr).buffer;
+      const parser = new xml.XmlPullParser(arrBuffer as object as ArrayBuffer);
+      const actualDepths: number[] = [];
 
-      });
+      const expectedDepths: number[] = [1, 2];
+      expect(arrayEquals(actualDepths, expectedDepths)).assertEqual(true);
+
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_0600
@@ -1146,24 +1122,17 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('GetDepthtest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'GetDepthtest0006';
-        console.log(TAG + ' start');
-        const xmlStr = '<root><!--Comment--><child/></root>';
-        const arrBuffer = new util.TextEncoder().encode(xmlStr).buffer;
-        const parser = new xml.XmlPullParser(arrBuffer as object as ArrayBuffer);
-        const actualDepths: number[] = [];
-        parser.parse({
-          tokenValueCallbackFunction: (event, info) => {
-            if (event === xml.EventType.COMMENT || event === xml.EventType.START_TAG) {
-              actualDepths.push(info.getDepth());
-            }
-            return true;
-          }
-        });
-        const expectedDepths: number[] = [1, 1, 2];
-        expect(arrayEquals(actualDepths, expectedDepths)).assertEqual(true);
+      const TAG = 'GetDepthtest0006';
+      console.log(TAG + ' start');
+      const xmlStr = '<root><!--Comment--><child/></root>';
+      const arrBuffer = new util.TextEncoder().encodeInto(xmlStr).buffer;
+      const parser = new xml.XmlPullParser(arrBuffer as object as ArrayBuffer);
+      const actualDepths: number[] = [];
 
-      });
+      const expectedDepths: number[] = [1, 1, 2];
+      expect(arrayEquals(actualDepths, expectedDepths)).assertEqual(true);
+
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_0700
@@ -1174,24 +1143,17 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('GetDepthtest0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'GetDepthtest0007';
-        console.log(TAG + ' start');
-        const xmlStr = '<root><![CDATA[<data>]]></root>';
-        const arrBuffer = new util.TextEncoder().encode(xmlStr).buffer;
-        const parser = new xml.XmlPullParser(arrBuffer as object as ArrayBuffer);
-        const actualDepths: number[] = [];
-        parser.parse({
-          tokenValueCallbackFunction: (event, info) => {
-            if (event === xml.EventType.CDSECT) {
-              actualDepths.push(info.getDepth());
-            }
-            return true;
-          }
-        });
-        const expectedDepths: number[] = [1];
-        expect(arrayEquals(actualDepths, expectedDepths)).assertEqual(true);
+      const TAG = 'GetDepthtest0007';
+      console.log(TAG + ' start');
+      const xmlStr = '<root><![CDATA[<data>]]></root>';
+      const arrBuffer = new util.TextEncoder().encodeInto(xmlStr).buffer;
+      const parser = new xml.XmlPullParser(arrBuffer as object as ArrayBuffer);
+      const actualDepths: number[] = [];
 
-      });
+      const expectedDepths: number[] = [1];
+      expect(arrayEquals(actualDepths, expectedDepths)).assertEqual(true);
+
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_0800
@@ -1202,25 +1164,17 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('GetDepthtest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'GetDepthtest0008';
-        console.log(TAG + ' start');
-        const xmlStr = '<!DOCTYPE root><root/>';
-        const arrBuffer = new util.TextEncoder().encode(xmlStr).buffer;
-        const parser = new xml.XmlPullParser(arrBuffer as object as ArrayBuffer);
-        const actualDepths: number[] = [];
-        parser.parse({
-          supportDoctype: true,
-          tokenValueCallbackFunction: (event, info) => {
-            if (event === xml.EventType.START_TAG) {
-              actualDepths.push(info.getDepth());
-            }
-            return true;
-          }
-        });
-        const expectedDepths: number[] = [1];
-        expect(arrayEquals(actualDepths, expectedDepths)).assertEqual(true);
+      const TAG = 'GetDepthtest0008';
+      console.log(TAG + ' start');
+      const xmlStr = '<!DOCTYPE root><root/>';
+      const arrBuffer = new util.TextEncoder().encodeInto(xmlStr).buffer;
+      const parser = new xml.XmlPullParser(arrBuffer as object as ArrayBuffer);
+      const actualDepths: number[] = [];
 
-      });
+      const expectedDepths: number[] = [1];
+      expect(arrayEquals(actualDepths, expectedDepths)).assertEqual(true);
+
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_0900
@@ -1231,25 +1185,18 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('GetDepthtest0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'GetDepthtest0009';
-        console.log(TAG + ' start');
+      const TAG = 'GetDepthtest0009';
+      console.log(TAG + ' start');
 
-        const xmlStr = '<root>\n  <child/>\n</root>';
-        const arrBuffer = new util.TextEncoder().encode(xmlStr).buffer;
-        const parser = new xml.XmlPullParser(arrBuffer as object as ArrayBuffer);
-        const actualDepths: number[] = [];
-        parser.parse({
-          tokenValueCallbackFunction: (event, info) => {
-            if (event === xml.EventType.WHITESPACE) {
-              actualDepths.push(info.getDepth());
-            }
-            return true;
-          }
-        });
-        const expectedDepths: number[] = [1, 1];
-        expect(arrayEquals(actualDepths, expectedDepths)).assertEqual(true);
+      const xmlStr = '<root>\n  <child/>\n</root>';
+      const arrBuffer = new util.TextEncoder().encodeInto(xmlStr).buffer;
+      const parser = new xml.XmlPullParser(arrBuffer as object as ArrayBuffer);
+      const actualDepths: number[] = [];
 
-      });
+      const expectedDepths: number[] = [1, 1];
+      expect(arrayEquals(actualDepths, expectedDepths)).assertEqual(true);
+
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_1000
@@ -1260,23 +1207,18 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('GetDepthtest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'GetDepthtest0010';
-        console.log(TAG + ' start');
+      const TAG = 'GetDepthtest0010';
+      console.log(TAG + ' start');
 
-        const chunks = ['<root>', '<child>', '</child>', '</root>'];
-        const arrBuffer = new util.TextEncoder().encode(chunks.join('')).buffer;
+      const chunks = ['<root>', '<child>', '</child>', '</root>'];
+      const arrBuffer = new util.TextEncoder().encodeInto(chunks.join('')).buffer;
 
-        const parser = new xml.XmlPullParser(arrBuffer as object as ArrayBuffer);
-        const actualDepths: number[] = [];
-        parser.parse({
-          tokenValueCallbackFunction: (event, info) => {
-            actualDepths.push(info.getDepth());
-            return true;
-          }
-        });
-        expect(actualDepths.toString()).assertEqual([0,1,2,2,1,0].toString());
+      const parser = new xml.XmlPullParser(arrBuffer as object as ArrayBuffer);
+      const actualDepths: number[] = [];
 
-      });
+      expect(actualDepths.toString()).assertEqual([0, 1, 2, 2, 1, 0].toString());
+
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_1100
@@ -1287,18 +1229,18 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('GetDepthtest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'GetDepthtest0011';
-        console.log(TAG + ' start');
-          const invalidBuffer: ArrayBuffer= new ArrayBuffer(1);
-          const parser: xml.XmlPullParser = new xml.XmlPullParser(invalidBuffer);
-          parser.parseXml({
-            tokenValueCallbackFunction: (_type: xml.EventType, info: xml.ParseInfo) => {
-              expect(info.getDepth()).not().assertNull()
-              return true;
-            }
-          });
-
+      const TAG = 'GetDepthtest0011';
+      console.log(TAG + ' start');
+      const invalidBuffer: ArrayBuffer = new ArrayBuffer(1);
+      const parser: xml.XmlPullParser = new xml.XmlPullParser(invalidBuffer);
+      parser.parseXml({
+        tokenValueCallbackFunction: (_type: xml.EventType, info: xml.ParseInfo) => {
+          expect(info.getDepth()).not().assertNull()
+          return true;
+        }
       });
+
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_1200
@@ -1309,24 +1251,24 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('GetDepthtest0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'GetDepthtest0012';
-        console.log(TAG + ' start');
-        try {
-          const invalidBuffer: ArrayBuffer = new ArrayBuffer(-5);
-          const parser: xml.XmlPullParser = new xml.XmlPullParser(invalidBuffer);
-          parser.parseXml({
-            tokenValueCallbackFunction: (_type: xml.EventType, info: xml.ParseInfo) => {
-              info.getDepth();
-              return true;
-            }
-          });
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(err.message.includes('integerIndex') || err.message.includes('SAFE_NUMBER')).assertEqual(true);
-        }
+      const TAG = 'GetDepthtest0012';
+      console.log(TAG + ' start');
+      try {
+        const invalidBuffer: ArrayBuffer = new ArrayBuffer(-5);
+        const parser: xml.XmlPullParser = new xml.XmlPullParser(invalidBuffer);
+        parser.parseXml({
+          tokenValueCallbackFunction: (_type: xml.EventType, info: xml.ParseInfo) => {
+            info.getDepth();
+            return true;
+          }
+        });
+        expect().assertFail()
+      } catch (err) {
+        console.error(`${TAG} fail, err: ${err}`);
+        expect(err.message.includes('integerIndex') || err.message.includes('SAFE_NUMBER')).assertEqual(true);
+      }
 
-      });
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_1300
@@ -1337,26 +1279,26 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('GetDepthtest0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'GetDepthtest0013';
-        console.log(TAG + ' start');
-        try {
-          const invalidLength = Number.MAX_SAFE_INTEGER + 1;
+      const TAG = 'GetDepthtest0013';
+      console.log(TAG + ' start');
+      try {
+        const invalidLength = Number.MAX_SAFE_INTEGER + 1;
 
-          const invalidBuffer = new ArrayBuffer(invalidLength);
-          const parser = new xml.XmlPullParser(invalidBuffer);
+        const invalidBuffer = new ArrayBuffer(invalidLength);
+        const parser = new xml.XmlPullParser(invalidBuffer);
 
-          parser.parseXml({
-            tokenValueCallbackFunction: (_: number, info: xml.ParseInfo) => {
-              expect(info.getDepth()).not().assertNull()
-              return true;
-            }
-          });
-        }catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(String(err)).assertContain("RangeError")
-        }
+        parser.parseXml({
+          tokenValueCallbackFunction: (_: xml.EventType, info: xml.ParseInfo) => {
+            expect(info.getDepth()).not().assertNull()
+            return true;
+          }
+        });
+      } catch (err) {
+        console.error(`${TAG} fail, err: ${err}`);
+        expect(String(err)).assertContain("RangeError")
+      }
 
-      });
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_1400
@@ -1367,22 +1309,22 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('GetDepthtest0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'GetDepthtest0014';
-        console.log(TAG + ' start');
+      const TAG = 'GetDepthtest0014';
+      console.log(TAG + ' start');
 
-        try {
-          const invalidLength: number = -1;
-          const invalidBuffer: ArrayBuffer = new ArrayBuffer(invalidLength);
-          const parser: xml.XmlPullParser = new xml.XmlPullParser(invalidBuffer);
-          expect(!!parser).assertTrue()
-          parser.parseXml({});
-          expect().assertFail()
-        }catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(String(err)).assertContain("RangeError")
-        }
+      try {
+        const invalidLength: int = -1;
+        const invalidBuffer: ArrayBuffer = new ArrayBuffer(invalidLength);
+        const parser: xml.XmlPullParser = new xml.XmlPullParser(invalidBuffer);
+        expect(!!parser).assertTrue()
+        parser.parseXml({});
+        expect().assertFail()
+      } catch (err) {
+        console.error(`${TAG} fail, err: ${err}`);
+        expect(String(err)).assertContain("RangeError")
+      }
 
-      });
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_1500
@@ -1393,25 +1335,25 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('GetDepthtest0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'GetDepthtest0015';
-        console.log(TAG + ' start');
+      const TAG = 'GetDepthtest0015';
+      console.log(TAG + ' start');
 
-        try {
-          const invalidLength: number = Number.MAX_SAFE_INTEGER + 1;
-          const invalidBuffer: ArrayBuffer = new ArrayBuffer(invalidLength);
-          const parser: xml.XmlPullParser = new xml.XmlPullParser(invalidBuffer);
-          parser.parseXml({
-            tokenValueCallbackFunction: (type: xml.EventType, info: xml.ParseInfo) => {
-              expect(info.getDepth()).not().assertNull();
-              return true;
-            }
-          });
-        }catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(String(err)).assertContain("RangeError")
-        }
+      try {
+        const invalidLength: number = Number.MAX_SAFE_INTEGER + 1;
+        const invalidBuffer: ArrayBuffer = new ArrayBuffer(invalidLength);
+        const parser: xml.XmlPullParser = new xml.XmlPullParser(invalidBuffer);
+        parser.parseXml({
+          tokenValueCallbackFunction: (type: xml.EventType, info: xml.ParseInfo) => {
+            expect(info.getDepth()).not().assertNull();
+            return true;
+          }
+        });
+      } catch (err) {
+        console.error(`${TAG} fail, err: ${err}`);
+        expect(String(err)).assertContain("RangeError")
+      }
 
-      });
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_1600
@@ -1422,27 +1364,27 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('GetDepthtest0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'GetDepthtest0016';
-        console.log(TAG + ' start');
-        try {
-          const bufferLength = -1;
-          if (bufferLength < 0) {
-            throw new TypeError(`Invalid array buffer length: ${bufferLength}`);
-          }
-          const invalidBuffer: ArrayBuffer = new ArrayBuffer(bufferLength);
-          new xml.XmlPullParser(invalidBuffer).parseXml({
-            tokenValueCallbackFunction: (type: xml.EventType, info: xml.ParseInfo) => {
-              info.getDepth();
-              return true;
-            }
-          });
-          expect().assertFail()
-        } catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(String(err)).assertContain("TypeError")
+      const TAG = 'GetDepthtest0016';
+      console.log(TAG + ' start');
+      try {
+        const bufferLength: int = -1;
+        if (bufferLength < 0) {
+          throw new TypeError(`Invalid array buffer length: ${bufferLength}`);
         }
+        const invalidBuffer: ArrayBuffer = new ArrayBuffer(bufferLength);
+        new xml.XmlPullParser(invalidBuffer).parseXml({
+          tokenValueCallbackFunction: (type: xml.EventType, info: xml.ParseInfo) => {
+            info.getDepth();
+            return true;
+          }
+        });
+        expect().assertFail()
+      } catch (err) {
+        console.error(`${TAG} fail, err: ${err}`);
+        expect(String(err)).assertContain("TypeError")
+      }
 
-      });
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_1700
@@ -1453,24 +1395,24 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('GetDepthtest0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'GetDepthtest0017';
-        console.log(TAG + ' start');
+      const TAG = 'GetDepthtest0017';
+      console.log(TAG + ' start');
 
-        try {
-          const bufferLength = Number.MAX_SAFE_INTEGER + 1;
-          const invalidBuffer = new ArrayBuffer(bufferLength);
-          new xml.XmlPullParser(invalidBuffer).parseXml({
-            tokenValueCallbackFunction: (type: xml.EventType, info: xml.ParseInfo) => {
-              expect(info.getDepth()).not().assertNull();
-              return true;
-            }
-          });
-        }catch (err) {
-          console.error(`${TAG} fail, err: ${err}`);
-          expect(String(err)).assertContain("RangeError")
-        }
+      try {
+        const bufferLength = Number.MAX_SAFE_INTEGER + 1;
+        const invalidBuffer = new ArrayBuffer(bufferLength);
+        new xml.XmlPullParser(invalidBuffer).parseXml({
+          tokenValueCallbackFunction: (type: xml.EventType, info: xml.ParseInfo) => {
+            expect(info.getDepth()).not().assertNull();
+            return true;
+          }
+        });
+      } catch (err) {
+        console.error(`${TAG} fail, err: ${err}`);
+        expect(String(err)).assertContain("RangeError")
+      }
 
-      });
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_1800
@@ -1481,20 +1423,20 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('GetDepthtest0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'GetDepthtest0018';
-        console.log(TAG + ' start');
-        const xmlStr = `<?xml version="1.0"?><root><child><subchild/></child></root>`;
-        const parser = new xml.XmlPullParser(new util.TextEncoder().encode(xmlStr).buffer as ArrayBuffer);
-        const depths: number[] = [];
-        parser.parseXml({
-          tokenValueCallbackFunction: (eventType, info) => {
-            depths.push(info.getDepth());
-            return true;
-          }
-        });
-        expect(depths).assertDeepEquals([0,1, 2, 3, 3, 2, 1,0]);
-
+      const TAG = 'GetDepthtest0018';
+      console.log(TAG + ' start');
+      const xmlStr = `<?xml version="1.0"?><root><child><subchild/></child></root>`;
+      const parser = new xml.XmlPullParser(new util.TextEncoder().encodeInto(xmlStr).buffer as ArrayBuffer);
+      const depths: number[] = [];
+      parser.parseXml({
+        tokenValueCallbackFunction: (eventType, info) => {
+          depths.push(info.getDepth());
+          return true;
+        }
       });
+      expect(depths).assertDeepEquals([0, 1, 2, 3, 3, 2, 1, 0]);
+
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_1900
@@ -1505,32 +1447,32 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('GetDepthtest0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'GetDepthtest0019';
-        console.log(TAG + ' start');
-        const xmlData = `<library>
+      const TAG = 'GetDepthtest0019';
+      console.log(TAG + ' start');
+      const xmlData = `<library>
   <book id="1" category="tech">
     <title>TestOS</title>
   </book>
 </library>`;
-        const expectedDepths = [1, 2, 3, 3, 2, 1];
-        const actualDepths: number[] = [];
-        const encoder = new util.TextEncoder();
-        const uint8Array = encoder.encode(xmlData);
-        const buffer = uint8Array.buffer;
-        const isArraysEqual = (arr1: number[], arr2: number[]): boolean => {
-          if (arr1.length !== arr2.length) {
+      const expectedDepths: number[] = [1, 2, 3, 3, 2, 1];
+      const actualDepths: number[] = [];
+      const encoder = new util.TextEncoder();
+      const uint8Array = encoder.encodeInto(xmlData);
+      const buffer = uint8Array.buffer;
+      const isArraysEqual = (arr1: number[], arr2: number[]): boolean => {
+        if (arr1.length !== arr2.length) {
+          return false;
+        }
+        for (let i: int = 0; i < arr1.length; i++) {
+          if (arr1[i] !== arr2[i]) {
             return false;
           }
-          for (let i = 0; i < arr1.length; i++) {
-            if (arr1[i] !== arr2[i]) {
-              return false;
-            }
-          }
-          return true;
-        };
-        expect(isArraysEqual(actualDepths, expectedDepths)).assertEqual(false);
+        }
+        return true;
+      };
+      expect(isArraysEqual(actualDepths, expectedDepths)).assertEqual(false);
 
-      });
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_2000
@@ -1541,35 +1483,35 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('GetDepthtest0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'GetDepthtest0020';
-        console.log(TAG + ' start');
+      const TAG = 'GetDepthtest0020';
+      console.log(TAG + ' start');
 
-        const xmlData = `<root><child><grandchild/></child></root>`;
-        let isXml = false
-          new xml.XmlPullParser(
-            new util.TextEncoder().encodeInto(xmlData).buffer as ArrayBuffer
-          ).parseXml({
-            tokenValueCallbackFunction: (t, i) => {
-              if (t === xml.EventType.START_TAG) {
-                switch (i.getName()) {
-                  case 'root':
-                    expect(i.getDepth()).assertEqual(1);
-                    break;
-                  case 'child':
-                    expect(i.getDepth()).assertEqual(2);
-                    break;
-                  case 'grandchild':
-                    expect(i.getDepth()).assertEqual(3);
-                }
-                isXml = true
-              }
-              return true;
+      const xmlData = `<root><child><grandchild/></child></root>`;
+      let isXml = false
+      new xml.XmlPullParser(
+        new util.TextEncoder().encodeInto(xmlData).buffer as ArrayBuffer
+      ).parseXml({
+        tokenValueCallbackFunction: (t, i) => {
+          if (t === xml.EventType.START_TAG) {
+            switch (i.getName()) {
+              case 'root':
+                expect(i.getDepth()).assertEqual(1);
+                break;
+              case 'child':
+                expect(i.getDepth()).assertEqual(2);
+                break;
+              case 'grandchild':
+                expect(i.getDepth()).assertEqual(3);
             }
-          });
-
-        expect(isXml).assertTrue()
-
+            isXml = true
+          }
+          return true;
+        }
       });
+
+      expect(isXml).assertTrue()
+
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_2100
@@ -1580,26 +1522,26 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('GetDepthtest0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'GetDepthtest0021';
-        console.log(TAG + ' start');
+      const TAG = 'GetDepthtest0021';
+      console.log(TAG + ' start');
 
-        const xmlData = `<a><b attr="value">Text<c/></b></a>`;
-        let isXml = false
-          new xml.XmlPullParser(
-            new util.TextEncoder().encodeInto(xmlData).buffer as ArrayBuffer
-          ).parseXml({
-            tokenValueCallbackFunction: (t, i) => {
-              if (t === xml.EventType.START_TAG && i.getName() === 'c') {
-                expect(i.getDepth()).assertEqual(3);
-              }
-              isXml = true
-              return true;
-            }
-          });
-
-        expect(isXml).assertTrue()
-
+      const xmlData = `<a><b attr="value">Text<c/></b></a>`;
+      let isXml = false
+      new xml.XmlPullParser(
+        new util.TextEncoder().encodeInto(xmlData).buffer as ArrayBuffer
+      ).parseXml({
+        tokenValueCallbackFunction: (t, i) => {
+          if (t === xml.EventType.START_TAG && i.getName() === 'c') {
+            expect(i.getDepth()).assertEqual(3);
+          }
+          isXml = true
+          return true;
+        }
       });
+
+      expect(isXml).assertTrue()
+
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_2200
@@ -1610,26 +1552,26 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('GetDepthtest0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'GetDepthtest0022';
-        console.log(TAG + ' start');
+      const TAG = 'GetDepthtest0022';
+      console.log(TAG + ' start');
 
-        const xmlData = `<root>Text<![CDATA[content]]></root>`;
-        let isXml = false
-          new xml.XmlPullParser(
-            new util.TextEncoder().encodeInto(xmlData).buffer as ArrayBuffer
-          ).parseXml({
-            tokenValueCallbackFunction: (t, i) => {
-              if (t === xml.EventType.TEXT || t === xml.EventType.CDSECT) {
-                expect(i.getDepth()).assertEqual(1);
-              }
-              isXml = true
-              return true;
-            }
-          });
-
-        expect(isXml).assertTrue()
-
+      const xmlData = `<root>Text<![CDATA[content]]></root>`;
+      let isXml = false
+      new xml.XmlPullParser(
+        new util.TextEncoder().encodeInto(xmlData).buffer as ArrayBuffer
+      ).parseXml({
+        tokenValueCallbackFunction: (t, i) => {
+          if (t === xml.EventType.TEXT || t === xml.EventType.CDSECT) {
+            expect(i.getDepth()).assertEqual(1);
+          }
+          isXml = true
+          return true;
+        }
       });
+
+      expect(isXml).assertTrue()
+
+    });
 
     /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_2300
@@ -1640,25 +1582,25 @@ export default function XmlTest_05() {
      * @tc.level     Level 2
      */
     it('GetDepthtest0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'GetDepthtest0023';
-        console.log(TAG + ' start');
+      const TAG = 'GetDepthtest0023';
+      console.log(TAG + ' start');
 
-        const xmlData = `<!DOCTYPE html><html><head/><body/></html>`;
-        let isXml = false
-          new xml.XmlPullParser(
-            new util.TextEncoder().encodeInto(xmlData).buffer as ArrayBuffer
-          ).parseXml({
-            tokenValueCallbackFunction: (t, i) => {
-              if (t === xml.EventType.START_TAG && i.getName() === 'body') {
-                expect(i.getDepth()).assertEqual(2);
-              }
-              isXml = true
-              return true;
-            }
-          });
-
-        expect(isXml).assertTrue()
-
+      const xmlData = `<!DOCTYPE html><html><head/><body/></html>`;
+      let isXml = false
+      new xml.XmlPullParser(
+        new util.TextEncoder().encodeInto(xmlData).buffer as ArrayBuffer
+      ).parseXml({
+        tokenValueCallbackFunction: (t, i) => {
+          if (t === xml.EventType.START_TAG && i.getName() === 'body') {
+            expect(i.getDepth()).assertEqual(2);
+          }
+          isXml = true
+          return true;
+        }
       });
+
+      expect(isXml).assertTrue()
+
+    });
   })
 }
