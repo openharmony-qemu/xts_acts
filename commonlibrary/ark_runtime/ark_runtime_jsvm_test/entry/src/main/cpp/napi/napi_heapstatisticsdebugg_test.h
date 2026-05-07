@@ -36,8 +36,7 @@
 using namespace std;
 
 JSVM_Value TestGetHeapStatisticsCase01(JSVM_Env env, JSVM_CallbackInfo info);
-JSVM_Value TestStartCpuProfilerCase01(JSVM_Env env, JSVM_CallbackInfo info);
-JSVM_Value TestStopCpuProfilerCase01(JSVM_Env env, JSVM_CallbackInfo info);
+JSVM_Value TestCpuProfilerCase01(JSVM_Env env, JSVM_CallbackInfo info);
 JSVM_Value TestTakeHeapSnapshotCase01(JSVM_Env env, JSVM_CallbackInfo info);
 JSVM_Value TestOpenInspectorCase01(JSVM_Env env, JSVM_CallbackInfo info);
 JSVM_Value TestOpenInspectorCase02(JSVM_Env env, JSVM_CallbackInfo info);
