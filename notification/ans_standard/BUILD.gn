@@ -79,7 +79,15 @@ group("ans_standard") {
       "actsNotificationAnsPCPADsoftbusTest:ActsNotificationAnsPCPADSoftBusTest",
       "actsNotificationAnsThreePartyWatchNoSystemNoPermissionTest:ActsNotificationAnsThreePartyWatchNoSystemNoPermissionTest",
       "actsNotificationCesMoreInstanceTest:ActsNotificationCesMoreInstanceTest",
-      "actsNotificationCesMoreInstanceTestStatic:ActsNotificationCesMoreInstanceStaticTest"
+      "actsNotificationCesMoreInstanceTestStatic:ActsNotificationCesMoreInstanceStaticTest",
+      "actsNotificationAnsOpenWindowWithResultWithoutAbilityTest:ActsNotificationAnsOpenWindowWithResultWithoutAbilityTest",
+      "actsNotificationAnsOpenWindowWithResultWithinAbilityNoPermissionTest:ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPermissionTest",
+      "actsNotificationAnsOpenWindowWithResultWithoutAbilityTestStatic:ActsNotificationAnsopenWindowWithResultWithoutAbilityStaticTest",
+      "actsNotificationAnsOpenWindowWithResultWithinAbilityTestStatic:ActsNotificationAnsopenWindowWithResultWithinAbilityStaticTest",
+      "actsNotificationAnsOpenWindowWithResultWithinAbilityNoPermissionTestStatic:ActsNotificationAnsopenWindowWithResultWithinAbilityNoPermissionStaticTest",
+      "actsNotificationAnsOpenWindowWithResultWithinAbilityTest:ActsNotificationAnsOpenWindowWithResultWithinAbilityTest",
+      "actsNotificationAnsGetNotificationSettingTest:ActsNotificationAnsGetNotificationSettingTest",
+      "actsNotificationAnsGetNotificationSettingTestStatic:ActsNotificationAnsGetNotificationSettingStaticTest"
     ]
   }
 }
