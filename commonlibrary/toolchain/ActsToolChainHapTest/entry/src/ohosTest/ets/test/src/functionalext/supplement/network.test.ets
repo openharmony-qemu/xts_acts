@@ -359,6 +359,146 @@ export default function network_group_test() {
       done();
     });
     /**
+     * @tc.name   accept4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_ACCEPT_FOUR_BASIC_0100
+     * @tc.desc   libc-test accept4
+     */
+    it("accept4", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("accept4");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   getaddrinfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_GETADDRINFO_0100
+     * @tc.desc   libc-test getaddrinfo
+     */
+    it("getaddrinfo", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("getaddrinfo");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   getpeername
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_GETPEERNAME_0100
+     * @tc.desc   libc-test getpeername
+     */
+    it("getpeername", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("getpeername");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   getsockopt_network
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_GETSOCKOPT_NETWORK_0100
+     * @tc.desc   libc-test getsockopt_network
+     */
+    it("getsockopt_network", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("getsockopt_network");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   listen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_LISTEN_0100
+     * @tc.desc   libc-test listen
+     */
+    it("listen", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("listen");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   recv
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_RECV_0100
+     * @tc.desc   libc-test recv
+     */
+    it("recv", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("recv");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   recvmmsg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_RECVMMSG_0100
+     * @tc.desc   libc-test recvmmsg
+     */
+    it("recvmmsg", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("recvmmsg");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   recvmsg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_RECVMSG_0100
+     * @tc.desc   libc-test recvmsg
+     */
+    it("recvmsg", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("recvmsg");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   send
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_SEND_0100
+     * @tc.desc   libc-test send
+     */
+    it("send", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("send");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   shutdown
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_SHUTDOWN_0100
+     * @tc.desc   libc-test shutdown
+     */
+    it("shutdown", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("shutdown");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
      * @tc.name   inet_addr
      * @tc.number SUB_THIRDPARTY_MUSL_INET_ADDR_0100
      * @tc.desc   libc-test inet_addr

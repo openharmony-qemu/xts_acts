@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,28 +41,28 @@ import { State } from '@ohos.arkui.stateManagement'
   // 通知控制器数据增加
   notifyDataAdd(index: number): void {
     this.listeners.forEach(listener => {
-      listener.onDataAdd(index as Int)
+      listener.onDataAdd(index.toInt())
     })
   }
 
   // 通知控制器数据变化
   notifyDataChange(index: number): void {
     this.listeners.forEach(listener => {
-      listener.onDataChange(index as Int)
+      listener.onDataChange(index.toInt())
     })
   }
 
   // 通知控制器数据删除
   notifyDataDelete(index: number): void {
     this.listeners.forEach(listener => {
-      listener.onDataDelete(index as Int)
+      listener.onDataDelete(index.toInt())
     })
   }
 
   // 通知控制器数据位置变化
   notifyDataMove(from: number, to: number): void {
     this.listeners.forEach(listener => {
-      listener.onDataMove((from as Int), (to as Int))
+      listener.onDataMove((from.toInt()), (to.toInt()))
     })
   }
 

@@ -45,18 +45,18 @@ export default function ArrayToSortedSecondTest() {
         const caseName = 'ArrayToSortedSecondTest0100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          222.2 as float,
-          999.9 as float,
-          111.1 as float
+          222.2.toFloat(),
+          999.9.toFloat(),
+          111.1.toFloat()
         ];
         const comparator = (a: float, b: float): int => {
           return (a - b).toInt();
         };
         const result = toSorted(arr, comparator);
         const expected: FixedArray<float> = [
-          111.1 as float,
-          222.2 as float,
-          999.9 as float
+          111.1.toFloat(),
+          222.2.toFloat(),
+          999.9.toFloat()
         ];
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -79,18 +79,18 @@ export default function ArrayToSortedSecondTest() {
         const caseName = 'ArrayToSortedSecondTest0200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          222.2 as float,
-          999.9 as float,
-          111.1 as float
+          222.2.toFloat(),
+          999.9.toFloat(),
+          111.1.toFloat()
         ];
         const comparator = (a: float, b: float): int => {
           return (b - a).toInt();
         };
         const result = toSorted(arr, comparator);
         const expected: FixedArray<float> = [
-          999.9 as float,
-          222.2 as float,
-          111.1 as float
+          999.9.toFloat(),
+          222.2.toFloat(),
+          111.1.toFloat()
         ];
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -113,18 +113,18 @@ export default function ArrayToSortedSecondTest() {
         const caseName = 'ArrayToSortedSecondTest0300';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          -222.2 as float,
-          -999.9 as float,
-          -111.1 as float
+          -222.2.toFloat(),
+          -999.9.toFloat(),
+          -111.1.toFloat()
         ];
         const comparator = (a: float, b: float): int => {
           return (a - b).toInt();
         };
         const result = toSorted(arr, comparator);
         const expected: FixedArray<float> = [
-          -999.9 as float,
-          -222.2 as float,
-          -111.1 as float
+          -999.9.toFloat(),
+          -222.2.toFloat(),
+          -111.1.toFloat()
         ];
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -147,18 +147,18 @@ export default function ArrayToSortedSecondTest() {
         const caseName = 'ArrayToSortedSecondTest0400';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          -222.2 as float,
-          -999.9 as float,
-          -111.1 as float
+          -222.2.toFloat(),
+          -999.9.toFloat(),
+          -111.1.toFloat()
         ];
         const comparator = (a: float, b: float): int => {
           return (b - a).toInt();
         };
         const result = toSorted(arr, comparator);
         const expected: FixedArray<float> = [
-          -111.1 as float,
-          -222.2 as float,
-          -999.9 as float
+          -111.1.toFloat(),
+          -222.2.toFloat(),
+          -999.9.toFloat()
         ];
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -181,18 +181,18 @@ export default function ArrayToSortedSecondTest() {
         const caseName = 'ArrayToSortedSecondTest0500';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          2222.8 as float,
-          1111.9 as float,
-          -3333.7 as float
+          2222.8.toFloat(),
+          1111.9.toFloat(),
+          -3333.7.toFloat()
         ];
         const comparator = (a: float, b: float): int => {
           return (a - b).toInt();
         };
         const result = toSorted(arr, comparator);
         const expected: FixedArray<float> = [
-          -3333.7 as float,
-          1111.9 as float,
-          2222.8 as float
+          -3333.7.toFloat(),
+          1111.9.toFloat(),
+          2222.8.toFloat()
         ];
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -215,18 +215,18 @@ export default function ArrayToSortedSecondTest() {
         const caseName = 'ArrayToSortedSecondTest0600';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          2222.8 as float,
-          1111.9 as float,
-          -3333.7 as float
+          2222.8.toFloat(),
+          1111.9.toFloat(),
+          -3333.7.toFloat()
         ];
         const comparator = (a: float, b: float): int => {
           return (b - a).toInt();
         };
         const result = toSorted(arr, comparator);
         const expected: FixedArray<float> = [
-          2222.8 as float,
-          1111.9 as float,
-          -3333.7 as float
+          2222.8.toFloat(),
+          1111.9.toFloat(),
+          -3333.7.toFloat()
         ];
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -249,20 +249,20 @@ export default function ArrayToSortedSecondTest() {
         const caseName = 'ArrayToSortedSecondTest0700';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          2.2 as float,
-          0.0 as float,
-          -2.2 as float,
-          0.0 as float
+          2.2.toFloat(),
+          0.0.toFloat(),
+          -2.2.toFloat(),
+          0.0.toFloat()
         ];
         const comparator = (a: float, b: float): int => {
           return (a - b).toInt();
         };
         const result = toSorted(arr, comparator);
         const expected: FixedArray<float> = [
-          -2.2 as float,
-          0.0 as float,
-          0.0 as float,
-          2.2 as float
+          -2.2.toFloat(),
+          0.0.toFloat(),
+          0.0.toFloat(),
+          2.2.toFloat()
         ];
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -286,20 +286,20 @@ export default function ArrayToSortedSecondTest() {
         const caseName = 'ArrayToSortedSecondTest0800';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          2.2 as float,
-          0.0 as float,
-          -2.2 as float,
-          0.0 as float
+          2.2.toFloat(),
+          0.0.toFloat(),
+          -2.2.toFloat(),
+          0.0.toFloat()
         ];
         const comparator = (a: float, b: float): int => {
           return (b - a).toInt();
         };
         const result = toSorted(arr, comparator);
         const expected: FixedArray<float> = [
-          2.2 as float,
-          0.0 as float,
-          0.0 as float,
-          -2.2 as float
+          2.2.toFloat(),
+          0.0.toFloat(),
+          0.0.toFloat(),
+          -2.2.toFloat()
         ];
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);

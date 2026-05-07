@@ -327,7 +327,7 @@ export default function bufferTest2() {
     it('testBufferAlloc0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = 'testBufferAlloc0014';
       try {
-        let buf = buffer.alloc(0, (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0) as double, 'base64');
+        let buf = buffer.alloc(0, (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0).toDouble(), 'base64');
         expect(String(buf.length)).assertEqual('0');
       } catch (err) {
         err = err as BusinessError;
@@ -346,7 +346,7 @@ export default function bufferTest2() {
     it('testBufferAlloc0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = 'testBufferAlloc0015';
       try {
-        let buf = buffer.alloc(0, (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0) as double, 'utf-8');
+        let buf = buffer.alloc(0, (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0).toDouble(), 'utf-8');
         expect(String(buf.length)).assertEqual('0');
       } catch (err) {
         err = err as BusinessError;
@@ -3559,7 +3559,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const subBuf = 103;
-        const includes = buf.includes(subBuf as double);
+        const includes = buf.includes(subBuf.toDouble());
         expect(includes).assertTrue();
       } catch (err) {
         err = err as BusinessError;
@@ -3580,7 +3580,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const subBuf = 103;
-        const includes = buf.includes(subBuf as double, Infinity.toInt(), 'utf-8');
+        const includes = buf.includes(subBuf.toDouble(), Infinity.toInt(), 'utf-8');
         expect(includes).assertFalse();
       } catch (err) {
         err = err as BusinessError;
@@ -3601,7 +3601,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const subBuf = 103;
-        const includes = buf.includes(subBuf as double, Infinity.toInt(), 'base64');
+        const includes = buf.includes(subBuf.toDouble(), Infinity.toInt(), 'base64');
         expect(includes).assertFalse();
       } catch (err) {
         err = err as BusinessError;
@@ -3622,7 +3622,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const subBuf = 103;
-        const includes = buf.includes(subBuf as double, 1, 'utf-8');
+        const includes = buf.includes(subBuf.toDouble(), 1, 'utf-8');
         expect(includes).assertTrue();
       } catch (err) {
         err = err as BusinessError;
@@ -3643,7 +3643,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const subBuf = 103;
-        const includes = buf.includes(subBuf as double, 1);
+        const includes = buf.includes(subBuf.toDouble(), 1);
         expect(includes).assertTrue();
       } catch (err) {
         err = err as BusinessError;
@@ -3963,7 +3963,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.indexOf(value as double, 0);
+        const index = buf.indexOf(value.toDouble(), 0);
         expect(String(index)).assertEqual('0');
       } catch (err) {
         err = err as BusinessError;
@@ -3984,7 +3984,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.indexOf(value as double, 0, 'base64');
+        const index = buf.indexOf(value.toDouble(), 0, 'base64');
         expect(String(index)).assertEqual('0');
       } catch (err) {
         err = err as BusinessError;
@@ -4005,7 +4005,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.indexOf(value as double, 0, 'utf-8');
+        const index = buf.indexOf(value.toDouble(), 0, 'utf-8');
         expect(String(index)).assertEqual('0');
       } catch (err) {
         err = err as BusinessError;
@@ -4026,7 +4026,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.indexOf(value as double, -1);
+        const index = buf.indexOf(value.toDouble(), -1);
         expect(String(index)).assertEqual('-1');
       } catch (err) {
         err = err as BusinessError;
@@ -4047,7 +4047,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.indexOf(value as double, -1, 'base64');
+        const index = buf.indexOf(value.toDouble(), -1, 'base64');
         expect(String(index)).assertEqual('-1');
       } catch (err) {
         err = err as BusinessError;
@@ -4068,7 +4068,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.indexOf(value as double, -1, 'utf-8');
+        const index = buf.indexOf(value.toDouble(), -1, 'utf-8');
         expect(String(index)).assertEqual('-1');
       } catch (err) {
         err = err as BusinessError;
@@ -4089,7 +4089,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.indexOf(value as double, Infinity.toInt(), 'base64');
+        const index = buf.indexOf(value.toDouble(), Infinity.toInt(), 'base64');
         expect(String(index)).assertEqual('-1');
       } catch (err) {
         err = err as BusinessError;
@@ -4110,7 +4110,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.indexOf(value as double, Infinity.toInt(), 'utf-8');
+        const index = buf.indexOf(value.toDouble(), Infinity.toInt(), 'utf-8');
         expect(String(index)).assertEqual('-1');
       } catch (err) {
         err = err as BusinessError;
@@ -4131,7 +4131,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.indexOf(value as double, -Infinity.toInt(), 'base64');
+        const index = buf.indexOf(value.toDouble(), -Infinity.toInt(), 'base64');
         expect(String(index)).assertEqual('0');
       } catch (err) {
         err = err as BusinessError;
@@ -4152,7 +4152,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.indexOf(value as double, -Infinity.toInt(), 'utf-8');
+        const index = buf.indexOf(value.toDouble(), -Infinity.toInt(), 'utf-8');
         expect(String(index)).assertEqual('0');
       } catch (err) {
         err = err as BusinessError;
@@ -4173,7 +4173,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.indexOf(value as double, 1, 'base64');
+        const index = buf.indexOf(value.toDouble(), 1, 'base64');
         expect(String(index)).assertEqual('-1');
       } catch (err) {
         err = err as BusinessError;
@@ -4194,7 +4194,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.indexOf(value as double, 1, 'utf-8');
+        const index = buf.indexOf(value.toDouble(), 1, 'utf-8');
         expect(String(index)).assertEqual('-1');
       } catch (err) {
         err = err as BusinessError;
@@ -4870,7 +4870,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.lastIndexOf(value as double, 0, 'base64');
+        const index = buf.lastIndexOf(value.toDouble(), 0, 'base64');
         expect(String(index)).assertEqual('0');
       } catch (err) {
         err = err as BusinessError;
@@ -4891,7 +4891,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.lastIndexOf(value as double, 0, 'utf8');
+        const index = buf.lastIndexOf(value.toDouble(), 0, 'utf8');
         expect(String(index)).assertEqual('0');
       } catch (err) {
         err = err as BusinessError;
@@ -4912,7 +4912,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.lastIndexOf(value as double, 0, 'utf-8');
+        const index = buf.lastIndexOf(value.toDouble(), 0, 'utf-8');
         expect(String(index)).assertEqual('0');
       } catch (err) {
         err = err as BusinessError;
@@ -4933,7 +4933,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.lastIndexOf(value as double, -1, 'base64');
+        const index = buf.lastIndexOf(value.toDouble(), -1, 'base64');
         expect(String(index)).assertEqual('0');
       } catch (err) {
         err = err as BusinessError;
@@ -4954,7 +4954,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.lastIndexOf(value as double, -1, 'utf8');
+        const index = buf.lastIndexOf(value.toDouble(), -1, 'utf8');
         expect(String(index)).assertEqual('0');
       } catch (err) {
         err = err as BusinessError;
@@ -4975,7 +4975,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.lastIndexOf(value as double, Infinity.toInt(), 'base64');
+        const index = buf.lastIndexOf(value.toDouble(), Infinity.toInt(), 'base64');
         expect(String(index)).assertEqual('0');
       } catch (err) {
         err = err as BusinessError;
@@ -4996,7 +4996,7 @@ export default function bufferTest2() {
       try {
         const buf = buffer.from([101, 102, 103, 104]);
         const value = 101;
-        const index = buf.lastIndexOf(value as double, Infinity.toInt(), 'utf8');
+        const index = buf.lastIndexOf(value.toDouble(), Infinity.toInt(), 'utf8');
         expect(String(index)).assertEqual('0');
       } catch (err) {
         err = err as BusinessError;
@@ -11348,7 +11348,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteInt80006';
       try {
         let buf = buffer.alloc(5);
-        expect(String(buf.writeInt8(123.456 as long, 0))).assertEqual('1');
+        expect(String(buf.writeInt8(123.456.toLong(), 0))).assertEqual('1');
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -11630,7 +11630,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteInt16BE0009';
       try {
         let buf = buffer.alloc(5);
-        expect(String(buf.writeInt16BE(123.456 as long, 0))).assertEqual('2');
+        expect(String(buf.writeInt16BE(123.456.toLong(), 0))).assertEqual('2');
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -11832,7 +11832,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteInt16LE0009';
       try {
         let buf = buffer.alloc(5);
-        expect(String(buf.writeInt16LE(123.456 as long, 0))).assertEqual('2');
+        expect(String(buf.writeInt16LE(123.456.toLong(), 0))).assertEqual('2');
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -12063,7 +12063,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteInt32BE0010';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        let result = buf.writeInt32BE(123.456 as long, 0);
+        let result = buf.writeInt32BE(123.456.toLong(), 0);
         console.info("result = " + result);
         expect(String(result)).assertEqual('4');
       } catch (err) {
@@ -12277,7 +12277,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteInt32LE0009';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        let result = buf.writeInt32LE(123.456 as long, 0);
+        let result = buf.writeInt32LE(123.456.toLong(), 0);
         console.info("result = " + result);
         expect(String(result)).assertEqual('4');
       } catch (err) {
@@ -12503,8 +12503,8 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteUInt80009';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        let result = buf.writeUInt8(123.456 as long, 0);
-        let result1 = buf.writeUInt8(123.456 as long, 1);
+        let result = buf.writeUInt8(123.456.toLong(), 0);
+        let result1 = buf.writeUInt8(123.456.toLong(), 1);
         console.log(`${TAG}reslut:${result}`)
         console.log(`${TAG}reslut1:${result1}`);
         expect(String(result)).assertEqual('1');
@@ -12764,12 +12764,12 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteUInt16BE0010';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        const result = buf.writeUInt16BE(123.456 as long, 0);
+        const result = buf.writeUInt16BE(123.456.toLong(), 0);
         const result1 = buf.readUInt16BE(0)
         console.log(`${TAG} result: ${result}`)
         console.log(`${TAG} result1: ${result1}`);
         expect(String(buf.readUInt16BE(0))).assertEqual('123');
-        expect(buf.writeUInt16BE(123.456 as long, 0)).assertEqual(2);
+        expect(buf.writeUInt16BE(123.456.toLong(), 0)).assertEqual(2);
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -12979,8 +12979,8 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteUInt16LE0009';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeUInt16LE(123.456 as long, 0);
-        expect(buf.writeUInt16LE(123.456 as long, 0)).assertEqual(2);
+        buf.writeUInt16LE(123.456.toLong(), 0);
+        expect(buf.writeUInt16LE(123.456.toLong(), 0)).assertEqual(2);
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -13185,8 +13185,8 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteUInt32BE0009';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeUInt32BE(123.456 as long, 0);
-        expect(buf.writeUInt32BE(123.456 as long, 0)).assertEqual(4);
+        buf.writeUInt32BE(123.456.toLong(), 0);
+        expect(buf.writeUInt32BE(123.456.toLong(), 0)).assertEqual(4);
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -13390,8 +13390,8 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteUInt32LE0009';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeUInt32LE(123.456 as long, 0);
-        expect(buf.writeUInt32LE(123.456 as long, 0)).assertEqual(4);
+        buf.writeUInt32LE(123.456.toLong(), 0);
+        expect(buf.writeUInt32LE(123.456.toLong(), 0)).assertEqual(4);
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);

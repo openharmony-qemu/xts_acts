@@ -101,7 +101,7 @@ export default function TimerSetIntervalTest() {
         await sleep(100);
       }
       expect(lastResult).assertTrue()
-      clearInterval(TimeID as int);
+      clearInterval(TimeID.toInt());
       Done();
     });
 
@@ -130,7 +130,7 @@ export default function TimerSetIntervalTest() {
         await sleep(100);
       }
       expect(lastResult).assertTrue()
-      clearInterval(TimeID as int);
+      clearInterval(TimeID.toInt());
       Done();
     });
 
@@ -159,7 +159,7 @@ export default function TimerSetIntervalTest() {
         await sleep(100);
       }
       expect(lastResult).assertTrue()
-      clearInterval(TimeID as int);
+      clearInterval(TimeID.toInt());
       Done();
     });
 

@@ -21,6 +21,8 @@
 #include <string>
 #include <unistd.h>
 
+#undef LOG_DOMAIN
+#define LOG_DOMAIN 0xD003200
 #undef LOG_TAG
 #define LOG_TAG "StruckTest"
 const int64_t BLOCK_TIME = 3; 
@@ -70,5 +72,17 @@ napi_value TestHiCollieAssociateProcessReport(napi_env env, napi_callback_info i
     OH_HiCollie_AssociateProcessReport(true);
     napi_value result;
     napi_create_int32(env, 0, &result);
+    return result;
+}
+
+napi_value TestHiCollieAssociateProcessReport1(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    HiCollie_ErrorCode code = OH_HiCollie_AssociateProcessReport(true);
+    OH_LOG_INFO(LOG_APP, "testTag  res is %{public}d", code);
+    code = OH_HiCollie_AssociateProcessReport(true);
+    OH_LOG_INFO(LOG_APP, "testTag  res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
     return result;
 }

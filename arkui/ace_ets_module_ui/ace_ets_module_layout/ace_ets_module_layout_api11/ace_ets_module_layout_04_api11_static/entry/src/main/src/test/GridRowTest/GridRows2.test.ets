@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -115,7 +115,7 @@ it('GridRows2_static_002', Level.LEVEL0, async (done: () => void): Promise<void>
 
       let rel = await CommonFunc.getComponentRect('GridRows2');
 
-      await driver.mouseClick({x: Math.round(rel.left + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) as Int, y: Math.round(rel.top + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) as Int}, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver.mouseClick({x: Math.round(rel.left + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))).toInt(), y: Math.round(rel.top + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))).toInt()}, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('GridRows2Text');
       await CommonFunc.sleep(200);

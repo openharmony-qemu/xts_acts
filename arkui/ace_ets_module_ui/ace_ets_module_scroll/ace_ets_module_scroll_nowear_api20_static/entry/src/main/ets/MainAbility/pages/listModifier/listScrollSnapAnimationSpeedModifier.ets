@@ -150,21 +150,21 @@ import { BusinessError } from '@kit.BasicServicesKit'
 
 // 定义不同的 ListModifier 类
 @Observed
-class ListNormalModifier implements AttributeModifier<ListAttribute> {
+export class ListNormalModifier implements AttributeModifier<ListAttribute> {
   applyNormalAttribute(instance: ListAttribute): void {
     instance.scrollSnapAnimationSpeed(ScrollSnapAnimationSpeed.NORMAL);
   }
 }
 
 @Observed
-class ListSlowModifier implements AttributeModifier<ListAttribute> {
+export class ListSlowModifier implements AttributeModifier<ListAttribute> {
   applyNormalAttribute(instance: ListAttribute): void {
     instance.scrollSnapAnimationSpeed(ScrollSnapAnimationSpeed.SLOW);
   }
 }
 
 @Observed
-class ListExplicitUndefinedModifier implements AttributeModifier<ListAttribute> {
+export class ListExplicitUndefinedModifier implements AttributeModifier<ListAttribute> {
   applyNormalAttribute(instance: ListAttribute): void {
     instance.scrollSnapAnimationSpeed(undefined);
   }

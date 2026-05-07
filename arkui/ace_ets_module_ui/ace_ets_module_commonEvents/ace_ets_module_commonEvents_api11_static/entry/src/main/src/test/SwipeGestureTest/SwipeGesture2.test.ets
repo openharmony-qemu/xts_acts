@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -115,8 +115,8 @@ it('SwipeGesture2_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       let top = colum.top
       let right = colum.right
       let left = colum.left
-      await ((driver.swipe(Math.round(left + (right - left) / 6) as Int, Math.round(top + 50) as Int,
-        Math.round(right - (right - left) / 6) as Int, Math.round(top + 450) as Int)) as Promise<void>)
+      await ((driver.swipe(Math.round(left + (right - left) / 6).toInt(), Math.round(top + 50).toInt(),
+        Math.round(right - (right - left) / 6).toInt(), Math.round(top + 450).toInt())) as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('Swipe4');
       await CommonFunc.sleep(1000);

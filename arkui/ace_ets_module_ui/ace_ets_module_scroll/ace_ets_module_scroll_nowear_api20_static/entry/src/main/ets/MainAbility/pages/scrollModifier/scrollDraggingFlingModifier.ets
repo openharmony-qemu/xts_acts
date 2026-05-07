@@ -164,7 +164,7 @@ import { LengthUnit, typeNode } from '@ohos.arkui.node'
 
 import { BusinessError } from '@kit.BasicServicesKit'
 @Observed
-class Modifier1 implements AttributeModifier<ScrollAttribute> {
+export class Modifier1 implements AttributeModifier<ScrollAttribute> {
   public startDragging: string = 'start';
   public stopDragging: string = 'start';
   public willStopDragging: string = 'start';

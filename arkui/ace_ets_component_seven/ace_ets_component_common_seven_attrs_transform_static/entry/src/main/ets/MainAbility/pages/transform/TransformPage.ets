@@ -1043,7 +1043,7 @@ struct transformPage {
   }
 
   build() {
-    GridRow({ columns: this.columns as Int, gutter: this.gutter, /*margin: 0 */}) {
+    GridRow({ columns: this.columns.toInt(), gutter: this.gutter, /*margin: 0 */}) {
       Row() {
         if (this.targetView == 'Button') {
           Button('button1').attributeModifier(this._transformButtonMod).commonStyleButton(this.componentKey, this._transform.transform)
@@ -1087,7 +1087,7 @@ struct transformPage {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity as Int,
+            loop: Infinity.toInt(),
             fromStart: true,
             src: 'Running Marquee starts rolling'
           }).commonStyle(this.componentKey).attributeModifier(this._transformMarqueeMod)

@@ -24,7 +24,7 @@ import {
   IDataSource
 } from '@ohos.arkui.component'
 
-abstract class BasicDataSource<T> implements IDataSource<T> {
+export abstract class BasicDataSource<T> implements IDataSource<T> {
   private listeners: DataChangeListener[] = []
 
   abstract totalCount(): int

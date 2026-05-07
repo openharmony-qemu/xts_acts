@@ -20,6 +20,7 @@
 #include "orphanCharOptimization/orphanCharOptimizationTest.h"
 #include "gestureIntercept/GestureInterceptTest.h"
 #include "passThrough/PassThroughTest.h"
+#include "getSizeLimitation/GetSizeLimitation.h"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -40,6 +41,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"GestureInterceptTest", nullptr, GestureInterceptTest::CreateNativeNode,
                 nullptr, nullptr, nullptr, napi_default, nullptr},
         {"PassThroughTest", nullptr, PassThroughTest::CreateNativeNode,
+                nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetSizeLimitationTest", nullptr, GetSizeLimitationTest::CreateNativeNode,
                 nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {

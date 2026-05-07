@@ -938,6 +938,20 @@ export default function sceneBoidsSimTest() {
         world!.removeBoidsSimRepulsionComponent(undefined);
         expect(world!.getBoidsSimRepulsionComponent(undefined)).assertNull();
 
+        world!.setBoidsSimComponent(null, {});
+        expect(world!.getBoidsSimComponent(null)).assertNull();
+        world!.setBoidsSimGravityComponent(null, {});
+        expect(world!.getBoidsSimGravityComponent(null)).assertNull();
+        world!.setBoidsSimRepulsionComponent(null, {});
+        expect(world!.getBoidsSimRepulsionComponent(null)).assertNull();
+
+        world!.setBoidsSimComponent(undefined, {});
+        expect(world!.getBoidsSimComponent(undefined)).assertNull();
+        world!.setBoidsSimGravityComponent(undefined, {});
+        expect(world!.getBoidsSimGravityComponent(undefined)).assertNull();
+        world!.setBoidsSimRepulsionComponent(undefined, {});
+        expect(world!.getBoidsSimRepulsionComponent(undefined)).assertNull();
+
         scene!.destroy();
         done();
       } catch (err) {
@@ -977,32 +991,46 @@ export default function sceneBoidsSimTest() {
         world!.addBoidsSimComponent(geometry, null);
         expect(world!.getBoidsSimComponent(geometry)).assertNull();
 
+        world!.addBoidsSimComponent(geometry, undefined);
+        expect(world!.getBoidsSimComponent(geometry)).assertNull();
+
         world!.addBoidsSimGravityComponent(geometry, null);
+        expect(world!.getBoidsSimGravityComponent(geometry)).assertNull();
+
+        world!.addBoidsSimGravityComponent(geometry, undefined);
         expect(world!.getBoidsSimGravityComponent(geometry)).assertNull();
 
         world!.addBoidsSimRepulsionComponent(geometry, null);
         expect(world!.getBoidsSimRepulsionComponent(geometry)).assertNull();
 
-        world!.addBoidsSimComponent(geometry, undefined);
-        expect(world!.getBoidsSimComponent(geometry)).assertNull();
-
-        world!.addBoidsSimGravityComponent(geometry, undefined);
-        expect(world!.getBoidsSimGravityComponent(geometry)).assertNull();
-
         world!.addBoidsSimRepulsionComponent(geometry, undefined);
         expect(world!.getBoidsSimRepulsionComponent(geometry)).assertNull();
 
-        world!.addBoidsSimComponent(geometry, {});
+        world!.addBoidsSimComponent(geometry, { maxVelocityMag: 1 });
         world!.setBoidsSimComponent(geometry, null);
+        expect(world!.getBoidsSimComponent(geometry)!.maxVelocityMag).assertEqual(1);
         world!.setBoidsSimComponent(geometry, undefined);
+        expect(world!.getBoidsSimComponent(geometry)!.maxVelocityMag).assertEqual(1);
 
-        world!.addBoidsSimGravityComponent(geometry, {});
+        world!.addBoidsSimGravityComponent(geometry, { radius: 5, accelerationMag: 10 });
         world!.setBoidsSimGravityComponent(geometry, null);
+        let gravity = world!.getBoidsSimGravityComponent(geometry);
+        expect(gravity!.radius).assertEqual(5);
+        expect(gravity!.accelerationMag).assertEqual(10);
         world!.setBoidsSimGravityComponent(geometry, undefined);
+        gravity = world!.getBoidsSimGravityComponent(geometry);
+        expect(gravity!.radius).assertEqual(5);
+        expect(gravity!.accelerationMag).assertEqual(10);
 
-        world!.addBoidsSimRepulsionComponent(geometry, {});
+        world!.addBoidsSimRepulsionComponent(geometry, { radius: 3, accelerationMag: 8 });
         world!.setBoidsSimRepulsionComponent(geometry, null);
+        let repulsion = world!.getBoidsSimRepulsionComponent(geometry);
+        expect(repulsion!.radius).assertEqual(3);
+        expect(repulsion!.accelerationMag).assertEqual(8);
         world!.setBoidsSimRepulsionComponent(geometry, undefined);
+        repulsion = world!.getBoidsSimRepulsionComponent(geometry);
+        expect(repulsion!.radius).assertEqual(3);
+        expect(repulsion!.accelerationMag).assertEqual(8);
 
         scene!.destroy();
         done();

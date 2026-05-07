@@ -199,7 +199,7 @@ export default function BufferTest() {
      * @tc.level  LEVEL1
      */
     it("testAlloc0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let buf = buffer.alloc(5.5 as int);
+      let buf = buffer.alloc(5.5.toInt());
       expect(String(buf.length)).assertEqual('5');
     });
 
@@ -322,7 +322,7 @@ export default function BufferTest() {
      * @tc.level  LEVEL1
      */
     it("testAllocUninitializedFromPool0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let buf = buffer.allocUninitializedFromPool(5.5 as int);
+      let buf = buffer.allocUninitializedFromPool(5.5.toInt());
       expect(String(buf.length)).assertEqual('5');
     });
 

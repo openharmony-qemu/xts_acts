@@ -46,10 +46,9 @@ export default function CommonEventGlobalDisplayTest(): void {
      * @tc.level LEVEL1
      */
     it('SUB_ArkUI_Common_ClickEvent_GlobalDisplayXY_1800', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let rect = Utils.getComponentRect('commonEventClickHost');
-      let cx = (rect.left + rect.right) / 2;
-      let cy = (rect.top + rect.bottom) / 2;
-      await Utils.drag(cx, cy, cx, cy, 1);
+      let driver = Driver.create();
+      let button = await driver.findComponent(ON.id("commonEventClickHost"));
+      await (button?.click() as Promise<void>);
       await Utils.sleep(300);
       let gdx = AppStorage.get<string>('ce_click_gdx');
       let gdy = AppStorage.get<string>('ce_click_gdy');
@@ -69,10 +68,12 @@ export default function CommonEventGlobalDisplayTest(): void {
      * @tc.level LEVEL1
      */
     it('SUB_ArkUI_Common_HoverEvent_GlobalDisplayXY_1900', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let rect = Utils.getComponentRect('commonEventHoverHost');
-      let cx = (rect.left + rect.right) / 2;
-      let cy = (rect.top + rect.bottom) / 2;
-      await Utils.drag(cx - 30, cy, cx + 30, cy, 8);
+      let driver = Driver.create();
+      let button1 = await driver.findComponent(ON.id('commonEventClickHost'));
+      let button2 = await driver.findComponent(ON.id('commonEventHoverHost'));
+      let center1 = await (button1?.getBoundsCenter() as Promise<Point>);
+      let center2 = await (button2?.getBoundsCenter() as Promise<Point>);
+      await driver.mouseMoveWithTrack(center1, center2, 600);
       await Utils.sleep(300);
       let gdx = AppStorage.get<string>('ce_hover_gdx');
       let gdy = AppStorage.get<string>('ce_hover_gdy');
@@ -144,10 +145,9 @@ export default function CommonEventGlobalDisplayTest(): void {
      * @tc.level LEVEL1
      */
     it('SUB_ArkUI_Common_TouchObject_GlobalDisplayXY_2200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let rect = Utils.getComponentRect('commonEventTouchHost');
-      let cx = (rect.left + rect.right) / 2;
-      let cy = (rect.top + rect.bottom) / 2;
-      await Utils.drag(cx, cy, cx, cy, 1);
+      let driver = Driver.create();
+      let button = await driver.findComponent(ON.id("commonEventTouchHost"));
+      await (button?.click() as Promise<void>);
       await Utils.sleep(300);
       let gdx = AppStorage.get<string>('ce_touch_gdx');
       let gdy = AppStorage.get<string>('ce_touch_gdy');

@@ -3694,6 +3694,44 @@ static napi_value GetMinimumFocusDistance(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value OHCaptureSessionRegisterExposureStateChangeCallback(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->RegisterExposureStateChangeCallback();
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+ 
+static napi_value OHCaptureSessionUnregisterExposureStateChangeCallback(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->UnregisterExposureStateChangeCallback();
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+ 
+static napi_value OHCaptureSessionRegisterExposureStateChangeCallbackWithoutSession(napi_env env,
+    napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->RegisterExposureStateChangeCallbackWithoutSession();
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+ 
+static napi_value OHCaptureSessionUnregisterExposureStateChangeCallbackWithoutSession(napi_env env,
+    napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->UnregisterExposureStateChangeCallbackWithoutSession();
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -4020,6 +4058,16 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, napi_default, nullptr },
         { "oHGetMinimumFocusDistance", nullptr, GetMinimumFocusDistance, nullptr, nullptr,
             nullptr, napi_default, nullptr },
+        { "oHCaptureSessionRegisterExposureStateChangeCallback", nullptr,
+            OHCaptureSessionRegisterExposureStateChangeCallback, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "oHCaptureSessionUnregisterExposureStateChangeCallback", nullptr,
+            OHCaptureSessionUnregisterExposureStateChangeCallback, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "oHCaptureSessionRegisterExposureStateChangeCallbackWithoutSession", nullptr,
+            OHCaptureSessionRegisterExposureStateChangeCallbackWithoutSession,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "oHCaptureSessionUnregisterExposureStateChangeCallbackWithoutSession", nullptr,
+            OHCaptureSessionUnregisterExposureStateChangeCallbackWithoutSession,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_property_descriptor desc3[] = {
         {"oHCameraManagerTorchMode", nullptr, OHCameraManagerTorchMode, nullptr, nullptr, nullptr,

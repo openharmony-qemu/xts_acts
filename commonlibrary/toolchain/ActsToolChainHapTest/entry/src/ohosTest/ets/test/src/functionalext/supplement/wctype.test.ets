@@ -44,5 +44,33 @@ export default function FunctionalextSupplementWctypeTestGroupTest() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   iswalnum_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_ISWALNUM_L_0100
+     * @tc.desc   libc-test iswalnum_l
+     */
+    it("iswalnum_l", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("iswalnum_l");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   iswgraph_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_ISWGRAPH_L_0100
+     * @tc.desc   libc-test iswgraph_l
+     */
+    it("iswgraph_l", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("iswgraph_l");
+      expect(result).assertEqual(0);
+      done();
+    });
+
   });
 }

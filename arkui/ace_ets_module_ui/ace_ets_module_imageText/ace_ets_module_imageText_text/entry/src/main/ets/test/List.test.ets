@@ -48,6 +48,7 @@ import SpanUIJsunitTest from './SpanTest/SpanUIJsunitTest.test';
 import SpanPropertiesNullUndefinedTest from './SpanTest/SpanPropertiesNullUndefinedTest.test';
 import SpanFontConfigsTest from './SpanTest/SpanFontConfigsTest.test';
 import SpanFontWeightTest from './SpanTest/SpanFontWeightTest.test';
+import SpanFontVariationsTest from './SpanTest/SpanFontVariations.test';
 
 import SymbolSpanApi1Test from './SymbolSpanTest/SymbolSpanApi1Test.test';
 import SymbolSpanApi2Test from './SymbolSpanTest/SymbolSpanApi2Test.test';
@@ -148,6 +149,7 @@ import TextGetCharacter from './TextTest/TextGetCharacter.test';
 import TextLayoutManagerMethodsTest from './TextTest/TextLayoutManagerMethods.test';
 import TextOrphanCharOptimizationTest from './TextTest/TextOrphanCharOptimization.test';
 import OrphanCharOptimizationTest from './TextTest/OrphanCharOptimizationTest.test';
+import TextFontVariationsTest from './TextTest/TextFontVariations.test';
 
 
 
@@ -187,6 +189,7 @@ export default function testsuite() {
   SpanPropertiesNullUndefinedTest()
   SpanFontConfigsTest()
   SpanFontWeightTest()
+  SpanFontVariationsTest()
   // SymbolSpanTest
   SymbolSpanApi1Test()
   SymbolSpanApi2Test()
@@ -288,4 +291,5 @@ export default function testsuite() {
   TextLayoutManagerMethodsTest();
   TextOrphanCharOptimizationTest();
   OrphanCharOptimizationTest();
+  TextFontVariationsTest();
 }

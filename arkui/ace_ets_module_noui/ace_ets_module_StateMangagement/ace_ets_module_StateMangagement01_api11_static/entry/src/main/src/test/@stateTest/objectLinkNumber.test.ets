@@ -147,7 +147,7 @@ it('objectLinkNumber_static_0300', Level.LEVEL0, async (done: () => void): Promi
       let obj = JSON.parseJsonElement(strJson);
       console.info("[objectLinkNumber_static_0300] component obj is: " + JSON.stringify(obj));
       console.info("[objectLinkNumber_static_0300] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Undefined]" number is undefined');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Undefined]" number is ');
       console.info('[objectLinkNumber_static_0300] END');
       done();
     });

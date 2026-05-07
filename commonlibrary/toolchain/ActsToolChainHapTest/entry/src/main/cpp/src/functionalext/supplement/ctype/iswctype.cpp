@@ -19,7 +19,7 @@
 #include <cwchar>
 #include "test.h"
 
-void iswctype_test(wchar_t ch, wctype_t wt, char* funcName, int want)
+void IswctypeTest(wchar_t ch, wctype_t wt, char* funcName, int want)
 {
     int result = iswctype(ch, wt);
     if (result != want) {
@@ -30,27 +30,27 @@ void iswctype_test(wchar_t ch, wctype_t wt, char* funcName, int want)
 static void IswctypeTestPartOne(wctype_t& wt)
 {
     wt = wctype("alnum");
-    iswctype_test(L'1', wt, "iswctype_0100", 1);
+    IswctypeTest(L'1', wt, "iswctype_0100", 1);
     wt = wctype("alpha");
-    iswctype_test(L'a', wt, "iswctype_0200", 1);
+    IswctypeTest(L'a', wt, "iswctype_0200", 1);
     wt = wctype("blank");
-    iswctype_test(L' ', wt, "iswctype_0300", 1);
+    IswctypeTest(L' ', wt, "iswctype_0300", 1);
     wt = wctype("cntrl");
-    iswctype_test(L'\n', wt, "iswctype_0400", 1);
+    IswctypeTest(L'\n', wt, "iswctype_0400", 1);
     wt = wctype("digit");
-    iswctype_test(L'9', wt, "iswctype_0500", 1);
+    IswctypeTest(L'9', wt, "iswctype_0500", 1);
 }
 
 static void IswctypeTestPartTwo(wctype_t& wt)
 {
     wt = wctype("lower");
-    iswctype_test(L'a', wt, "iswctype_0600", 1);
+    IswctypeTest(L'a', wt, "iswctype_0600", 1);
     wt = wctype("print");
-    iswctype_test(L'u', wt, "iswctype_0700", 1);
+    IswctypeTest(L'u', wt, "iswctype_0700", 1);
     wt = wctype("punct");
-    iswctype_test(L',', wt, "iswctype_0800", 1);
+    IswctypeTest(L',', wt, "iswctype_0800", 1);
     wt = wctype("upper");
-    iswctype_test(L'G', wt, "iswctype_0900", 1);
+    IswctypeTest(L'G', wt, "iswctype_0900", 1);
 }
 
 static int IswctypeTestImpl(int argc, char* argv[])

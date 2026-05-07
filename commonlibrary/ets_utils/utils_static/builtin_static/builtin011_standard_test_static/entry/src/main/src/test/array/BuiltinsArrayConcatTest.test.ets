@@ -36,8 +36,8 @@ export default function BuiltinsArrayConcatTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayConcatTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr1 = new Array<number>();
-      const arr2 = new Array<number>();
+      const arr1: number[] = [];
+      const arr2: number[] = [];
 
       const result = arr1.concat(arr2);
 
@@ -53,8 +53,8 @@ export default function BuiltinsArrayConcatTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayConcatTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr1 = new Array<number>();
-      const arr2 = new Array<number>(1, 2, 3);
+      const arr1: number[] = [];
+      const arr2: number[] = [1, 2, 3];
 
       const result = arr1.concat(arr2);
 
@@ -73,8 +73,8 @@ export default function BuiltinsArrayConcatTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayConcatTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr1 = new Array<number>(1, 2, 3);
-      const arr2 = new Array<number>();
+      const arr1: number[] = [1, 2, 3];
+      const arr2: number[] = [];
 
       const result = arr1.concat(arr2);
 
@@ -93,8 +93,8 @@ export default function BuiltinsArrayConcatTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayConcatTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr1 = new Array<number>(1, 2, 3);
-      const arr2 = new Array<number>(4, 5, 6);
+      const arr1: number[] = [1, 2, 3];
+      const arr2: number[] = [4, 5, 6];
 
       const result = arr1.concat(arr2);
 
@@ -116,9 +116,9 @@ export default function BuiltinsArrayConcatTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayConcatTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr1 = new Array<number>(1, 2);
-      const arr2 = new Array<number>(3, 4);
-      const arr3 = new Array<number>(5, 6);
+      const arr1: number[] = [1, 2];
+      const arr2: number[] = [3, 4];
+      const arr3: number[] = [5, 6];
 
       const result = arr1.concat(arr2, arr3);
 
@@ -140,9 +140,9 @@ export default function BuiltinsArrayConcatTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayConcatTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr1 = new Array<number>(1, 2, 3);
-      const arr2 = new Array<number>(4, 5, 6);
-      const original = new Array<number>(1, 2, 3);
+      const arr1: number[] = [1, 2, 3];
+      const arr2: number[] = [4, 5, 6];
+      const original: number[] = [1, 2, 3];
 
       const result = arr1.concat(arr2);
 
@@ -161,8 +161,8 @@ export default function BuiltinsArrayConcatTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayConcatTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr1 = new Array<number>(1, 2, 3);
-      const arr2 = new Array<number>(4, 5, 6);
+      const arr1: number[] = [1, 2, 3];
+      const arr2: number[] = [4, 5, 6];
 
       const result = arr1.concat(arr2);
 
@@ -179,8 +179,8 @@ export default function BuiltinsArrayConcatTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayConcatTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr1 = new Array<string>('apple', 'banana');
-      const arr2 = new Array<string>('cherry', 'date');
+      const arr1: string[] = ['apple', 'banana'];
+      const arr2: string[] = ['cherry', 'date'];
 
       const result = arr1.concat(arr2);
 

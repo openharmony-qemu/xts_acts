@@ -96,8 +96,8 @@ export default function BuiltinsArrayFindTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFindTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>();
-      
+      const arr: number[] = Array.create<number>(0, 0);
+
       const result = arr.find((value: number, index: int, array: Array<number>) => {
         return value === 1;
       });
@@ -167,10 +167,10 @@ export default function BuiltinsArrayFindTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayFindTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<Person>();
-      arr.push({ name: "Alice", age: 25 } as Person);
-      arr.push({ name: "Bob", age: 30 } as Person);
-      arr.push({ name: "Charlie", age: 35 } as Person);
+      const arr: Person[] = Array.create<Person>(3, { name: "", age: 0 });
+      arr[0] = { name: "Alice", age: 25 };
+      arr[1] = { name: "Bob", age: 30 };
+      arr[2] = { name: "Charlie", age: 35 };
       
       const result = arr.find((value: Person, index: int, array: Array<Person>) => {
         return value.age === 30;

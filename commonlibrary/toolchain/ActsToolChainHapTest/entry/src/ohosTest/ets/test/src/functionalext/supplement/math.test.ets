@@ -164,5 +164,47 @@ export default function math_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   signbit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNBIT_0100
+     * @tc.desc   libc-test __signbit
+     */
+    it("signbit", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("__signbit");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   finite
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_FINITE_0100
+     * @tc.desc   libc-test finite
+     */
+    it("finite", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("finite");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   functionalext_pow10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     * @tc.number SUB_THIRDPARTY_MUSL_FUNCTIONALEXT_POW_TEN_BASIC_0100
+     * @tc.desc   libc-test functionalext_pow10
+     */
+    it("functionalext_pow10", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("functionalext_pow10");
+      expect(result).assertEqual(0);
+      done();
+    });
+
   });
 }

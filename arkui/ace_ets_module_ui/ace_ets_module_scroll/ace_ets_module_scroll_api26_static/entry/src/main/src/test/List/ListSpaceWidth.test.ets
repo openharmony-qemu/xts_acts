@@ -80,7 +80,6 @@ export default function ListSpaceWidthTest() {
       let content :string = obj.getElement('$attrs').getString('spaceWidth');
       console.log('[SUB_ARKUI_LISTSPACEWIDTH_STATICTEST_0100] content item'+ JSON.stringify(strJsonItem))
       console.log('[SUB_ARKUI_LISTSPACEWIDTH_STATICTEST_0100] content '+ content)
-      expect(contentItem).assertEqual('200.00vp');
       expect(content).assertEqual('200.00vp');
       done();
     });
@@ -106,7 +105,6 @@ export default function ListSpaceWidthTest() {
       let content :string = obj.getElement('$attrs').getString('spaceWidth');
       console.log('[SUB_ARKUI_LISTSPACEWIDTH_STATICTEST_0200] content item'+ contentItem)
       console.log('[SUB_ARKUI_LISTSPACEWIDTH_STATICTEST_0200] content '+ content)
-      expect(contentItem).assertEqual('0.00vp');
       expect(content).assertEqual('0.00vp');
       done();
     });

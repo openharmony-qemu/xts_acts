@@ -151,11 +151,11 @@ export default function atomicsXorTest() {
       ia[0] = initialVal;
 
       // First atomic XOR operation (12 ^ 6 = 10 = 0b1010)
-      const oldVal1 = Atomics.xor(ia, 0, xorMask1 as long);
+      const oldVal1 = Atomics.xor(ia, 0, xorMask1.toLong());
       const result1 = Atomics.load(ia, 0);
 
       // Second atomic XOR operation (10 ^ 9 = 3 = 0b0011)
-      const oldVal2 = Atomics.xor(ia, 0, xorMask2 as long);
+      const oldVal2 = Atomics.xor(ia, 0, xorMask2.toLong());
       const finalResult = Atomics.load(ia, 0);
 
       // Key assertions
@@ -170,8 +170,8 @@ export default function atomicsXorTest() {
       expect(ia[0]).assertEqual(finalResult); // Final memory consistency
 
       // Verify idempotency: XOR with same mask twice returns original value
-      Atomics.xor(ia, 0, xorMask2 as long);
-      Atomics.xor(ia, 0, xorMask2 as long);
+      Atomics.xor(ia, 0, xorMask2.toLong());
+      Atomics.xor(ia, 0, xorMask2.toLong());
       expect(Atomics.load(ia, 0)).assertEqual(3); // 3 ^ 9 ^ 9 = 10
     });
 
@@ -318,7 +318,7 @@ export default function atomicsXorTest() {
       const sab = new ArrayBuffer(4);
       const ia = new Int32Array(sab);
       ia[0] = 8; // 0b1000
-      const oldValue = Atomics.xor(ia, 0, 3.9 as long); // Coerced to 3 (0b0011)
+      const oldValue = Atomics.xor(ia, 0, 3.9.toLong()); // Coerced to 3 (0b0011)
       expect(oldValue).assertEqual(8);
       expect(ia[0]).assertEqual(11); // 0b1011
     });
@@ -392,7 +392,7 @@ export default function atomicsXorTest() {
       const sab = new ArrayBuffer(4);
       const ia = new Int32Array(sab);
       ia[0] = 14; // 0b1110
-      const xorWrapper = (arr: Int32Array, idx: int, val: number):long => Atomics.xor(arr, idx as int, val as long);
+      const xorWrapper = (arr: Int32Array, idx: int, val: number):long => Atomics.xor(arr, idx as int, val.toLong());
       const oldValue = xorWrapper(ia, 0, 7); // 0b0111
       expect(oldValue).assertEqual(14);
       expect(ia[0]).assertEqual(9); // 0b1001
@@ -412,7 +412,7 @@ export default function atomicsXorTest() {
       ba[0] = 20n; // 0b10100
 
       const outerFunc = (arr: BigInt64Array): bigint => {
-        const innerXor = (idx: number, val: bigint) => Atomics.xor(arr, idx as int, val as bigint);
+        const innerXor = (idx: number, val: bigint) => Atomics.xor(arr, idx.toInt(), val as bigint);
         return innerXor(0, 12n); // 0b01100
       };
 
@@ -530,7 +530,7 @@ export default function atomicsXorTest() {
       const getDynamicValue = (base: number, offset: number) => base - offset;
       const dynamicXor = (arr: Int32Array, idx: int, base: number, offset: number) => {
         const val = getDynamicValue(base, offset);
-        return Atomics.xor(arr, idx as int, val as long);
+        return Atomics.xor(arr, idx as int, val.toLong());
       };
 
       const oldValue = dynamicXor(ia, 0, 15, 5); // val = 15 - 5 = 10 (0b1010)
@@ -550,7 +550,7 @@ export default function atomicsXorTest() {
       const sab = new ArrayBuffer(4);
       const ia = new Int32Array(sab);
       try {
-        Atomics.xor(ia, 0.5 as int, 3)
+        Atomics.xor(ia, 0.5.toInt(), 3)
       } catch (e) {
         expect(e.message).assertContain('');
       }
@@ -664,7 +664,7 @@ export default function atomicsXorTest() {
       const outerValue: int = 10; // 0b1010 (captured from outer scope)
 
       const outer = (arr: Int32Array): number => {
-        const inner = (idx: number) => Atomics.xor(arr, idx as int, outerValue as long);
+        const inner = (idx: number) => Atomics.xor(arr, idx.toInt(), outerValue.toLong());
         return inner(0);
       };
 
@@ -687,7 +687,7 @@ export default function atomicsXorTest() {
       ia[0] = 14; // 0b1110
 
       const chainXor = (arr: Int32Array, idx: int, ...values: number[]) => {
-        return values.map(val => Atomics.xor(arr, idx as int, val as long));
+        return values.map(val => Atomics.xor(arr, idx as int, val.toLong()));
       };
 
       const oldValues = chainXor(ia, 0, 3, 5); // 3=0b11, 5=0b101
@@ -731,7 +731,7 @@ export default function atomicsXorTest() {
       const sab = new ArrayBuffer(4);
       const ia = new Int32Array(sab);
       ia[0] = 18; // 0b10010
-      const oldValue = Atomics.xor(ia, 0, NaN as long); // Coerced to 0
+      const oldValue = Atomics.xor(ia, 0, NaN.toLong()); // Coerced to 0
       expect(oldValue).assertEqual(18);
       expect(ia[0]).assertEqual(18); // 18 ^ 0 = 18
     });
@@ -773,7 +773,7 @@ export default function atomicsXorTest() {
 
       const conditionalXor = (arr: Int32Array, idx: int, useSmallValue: boolean) => {
         const getValue = () => useSmallValue ? 3 : 12; // 3=0b11, 12=0b1100
-        return Atomics.xor(arr, idx as int, getValue() as long);
+        return Atomics.xor(arr, idx as int, getValue().toLong());
       };
 
       const oldValue = conditionalXor(ia, 0, true); // Use small value (3)
@@ -869,8 +869,8 @@ export default function atomicsXorTest() {
       ia[0] = 28; // 0b11100
 
       const xorAndGetNew = (arr: Int32Array, idx: int, val: int): int => {
-        Atomics.xor(arr, idx as int, val as long);
-        return arr[idx] as int;
+        Atomics.xor(arr, idx as int, val.toLong());
+        return arr[idx].toInt();
       };
 
       const newValue = xorAndGetNew(ia, 0, 15); // 0b01111
@@ -894,7 +894,7 @@ export default function atomicsXorTest() {
       const asyncXor = (arr: Int32Array, idx: int, val: number): Promise<number> => {
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const oldValue = Atomics.xor(arr, idx as int, val as long);
+            const oldValue = Atomics.xor(arr, idx as int, val.toLong());
             resolve(oldValue);
           }, 10);
         });
@@ -923,7 +923,7 @@ export default function atomicsXorTest() {
       const createXorPromise = (arr: Int32Array, idx: int, val: number) => {
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const old = Atomics.xor(arr, idx as int, val as long);
+            const old = Atomics.xor(arr, idx as int, val.toLong());
             resolve(old);
           }, 5);
         });
@@ -959,7 +959,7 @@ export default function atomicsXorTest() {
         return async (val: number) => {
           return new Promise<number>((resolve) => {
             setTimeout(() => {
-              const old = Atomics.xor(arr, targetIdx as int, val as long);
+              const old = Atomics.xor(arr, targetIdx as int, val.toLong());
               resolve(old);
             }, 10);
           });
@@ -993,7 +993,7 @@ export default function atomicsXorTest() {
 
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const old = Atomics.xor(arr, idx as int, validVal as long);
+            const old = Atomics.xor(arr, idx as int, validVal.toLong());
             resolve(old);
           }, 5);
         });
@@ -1099,7 +1099,7 @@ export default function atomicsXorTest() {
         const val = await mockValueApi();
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const old = Atomics.xor(arr, idx as int, val as long);
+            const old = Atomics.xor(arr, idx as int, val.toLong());
             resolve(old);
           }, 5);
         });
@@ -1217,7 +1217,7 @@ export default function atomicsXorTest() {
       const performXor = (arr: Int32Array, idx: int, val: number): Promise<number> => {
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const old = Atomics.xor(arr, idx as int, val as long);
+            const old = Atomics.xor(arr, idx as int, val.toLong());
             resolve(old);
           }, 8);
         });
@@ -1267,7 +1267,7 @@ export default function atomicsXorTest() {
         return async (val: number) => {
           return new Promise<number>((resolve) => {
             setTimeout(() => {
-              const old = Atomics.xor(arr, targetIdx as int, val as long);
+              const old = Atomics.xor(arr, targetIdx as int, val.toLong());
               resolve(old);
             }, 10);
           });
@@ -1328,7 +1328,7 @@ export default function atomicsXorTest() {
       const safeXor = async (arr: Int32Array, idx: int, val: number): Promise<number | null> => {
         try {
           return await new Promise<number>((resolve) => {
-            const old = Atomics.xor(arr, idx as int, val as long);
+            const old = Atomics.xor(arr, idx as int, val.toLong());
             resolve(old);
           });
         } catch (err) {
@@ -1365,7 +1365,7 @@ export default function atomicsXorTest() {
           indexes.map((idx, i: int) => {
             return new Promise<long>((resolve) => {
               setTimeout(() => {
-                const old = Atomics.xor(arr, idx as int, values[i] as long);
+                const old = Atomics.xor(arr, idx as int, values[i].toLong());
                 resolve(old);
               }, 5);
             });
@@ -1468,7 +1468,7 @@ export default function atomicsXorTest() {
       ia[0] = 0b101100; // Initial bitmask: 44
 
       // Step 1: Clear bits 2-3 (0b1100)
-      Atomics.and(ia, 0, ~0b1100 as long); // 0b101100 & 0b11110011 = 0b100000 (32)
+      Atomics.and(ia, 0, ~0b1100.toLong()); // 0b101100 & 0b11110011 = 0b100000 (32)
       // Step 2: Toggle bit 4 (0b10000)
       Atomics.xor(ia, 0, 0b10000 as long); // 0b100000 ^ 0b10000 = 0b110000 (48)
       // Step 3: Set bit 1 (0b10)
@@ -1540,7 +1540,7 @@ export default function atomicsXorTest() {
           valLog.push(val); // Log XOR value before use
           return new Promise<number>((resolve) => {
             setTimeout(() => {
-              const old = Atomics.xor(arr, idx as int, val as long);
+              const old = Atomics.xor(arr, idx as int, val.toLong());
               resolve(old);
             }, 7);
           });
@@ -1586,7 +1586,7 @@ export default function atomicsXorTest() {
         const val = await getConditionalVal(currentValue);
         const innerXor = () => new Promise<number>((resolve) => {
           setTimeout(() => {
-            const old = Atomics.xor(arr, idx as int, val as long);
+            const old = Atomics.xor(arr, idx as int, val.toLong());
             resolve(old);
           }, 5);
         });
@@ -1664,7 +1664,7 @@ export default function atomicsXorTest() {
         const derivedVal = firstOld % 16; // Derive value: 55%16=7 (0b00111)
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const old = Atomics.xor(arr, 0, derivedVal as long); // 0b100100^0b00111=0b100011 (35)
+            const old = Atomics.xor(arr, 0, derivedVal.toLong()); // 0b100100^0b00111=0b100011 (35)
             resolve(old);
           }, 5);
         });
@@ -1727,7 +1727,7 @@ export default function atomicsXorTest() {
         try {
           return await new Promise<number>((resolve) => {
             setTimeout(() => {
-              const old = Atomics.xor(arr, idx as int, val as long);
+              const old = Atomics.xor(arr, idx as int, val.toLong());
               resolve(old);
             }, 8);
           });
@@ -1777,7 +1777,7 @@ export default function atomicsXorTest() {
           indexes.map((idx, i: int): Promise<long> => {
             const innerXor = () => new Promise<long>((resolve) => {
               setTimeout(() => {
-                const old = Atomics.xor(arr, idx as int, values[i] as long);
+                const old = Atomics.xor(arr, idx as int, values[i].toLong());
                 resolve(old);
               }, 5);
             });
@@ -1887,7 +1887,7 @@ export default function atomicsXorTest() {
           usedVals.add(val);
           return new Promise<number>((resolve) => {
             setTimeout(() => {
-              const old = Atomics.xor(arr, idx as int, val as long);
+              const old = Atomics.xor(arr, idx as int, val.toLong());
               resolve(old);
             }, 7);
           });
@@ -2000,7 +2000,7 @@ export default function atomicsXorTest() {
           }
           const validVal = typeof val === 'bigint' ? Number(val) : val;
           return await new Promise<number>((resolve) => {
-            const old = Atomics.xor(arr, idx as int, validVal as long);
+            const old = Atomics.xor(arr, idx as int, validVal.toLong());
             resolve(old);
           });
         } catch (err) {
@@ -2036,7 +2036,7 @@ export default function atomicsXorTest() {
           cumulativeVal ^= val; // Track cumulative XOR value
           return new Promise<number>((resolve) => {
             setTimeout(() => {
-              const old = Atomics.xor(arr, idx as int, val as long);
+              const old = Atomics.xor(arr, idx as int, val.toLong());
               resolve(old);
             }, 7);
           });
@@ -2148,7 +2148,7 @@ export default function atomicsXorTest() {
 
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const old = Atomics.xor(arr, idx as int, validVal as long);
+            const old = Atomics.xor(arr, idx as int, validVal.toLong());
             resolve(old);
           }, 7);
         });
@@ -2253,7 +2253,7 @@ export default function atomicsXorTest() {
           usedVals.add(val);
           return new Promise<number>((resolve) => {
             setTimeout(() => {
-              const old = Atomics.xor(arr, idx as int, val as long);
+              const old = Atomics.xor(arr, idx as int, val.toLong());
               resolve(old);
             }, 7);
           });
@@ -2298,7 +2298,7 @@ export default function atomicsXorTest() {
           .then(getValStep3);
         const innerXor = () => new Promise<int>((resolve) => {
           setTimeout(() => {
-            const old = Atomics.xor(arr, idx as int, val as long) as int;
+            const old = Atomics.xor(arr, idx as int, val.toLong()).toInt();
             resolve(old);
           }, 6);
         });
@@ -2371,7 +2371,7 @@ export default function atomicsXorTest() {
         const val = await getDerivedVal(arr, idx);
         return new Promise<number>((resolve) => {
           setTimeout(() => {
-            const old = Atomics.xor(arr, idx as int, val as long);
+            const old = Atomics.xor(arr, idx as int, val.toLong());
             resolve(old);
           }, 5);
         });
@@ -2425,7 +2425,7 @@ export default function atomicsXorTest() {
           }
           return new Promise<number>((resolve) => {
             setTimeout(() => {
-              const old = Atomics.xor(arr, idx as int, val as long);
+              const old = Atomics.xor(arr, idx as int, val.toLong());
               resolve(old);
             }, 7);
           });
@@ -2469,7 +2469,7 @@ export default function atomicsXorTest() {
                 if (typeof values[i] === 'int') {
                   successIndexes.push(idx);
                 }
-                const old = Atomics.xor(arr, idx as int, validVal as long);
+                const old = Atomics.xor(arr, idx as int, validVal.toLong());
                 resolve(old);
               }, 5);
             });
@@ -2561,8 +2561,8 @@ export default function atomicsXorTest() {
           indexes.map((idx: number, i: int, indexes: number[]): Promise<number> => {
             return new Promise<number>((resolve) => {
               setTimeout(() => {
-                const old = Atomics.xor(arr, idx as int, values[i] as long);
-                log.push(`XOR index ${idx}: old=${old}, new=${arr[idx as int]}`);
+                const old = Atomics.xor(arr, idx.toInt(), values[i].toLong());
+                log.push(`XOR index ${idx}: old=${old}, new=${arr[idx.toInt()]}`);
                 resolve(old);
               }, 5);
             });

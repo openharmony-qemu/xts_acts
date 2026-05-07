@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#include <cstdlib>
 #include <pthread.h>
+#include <cstdlib>
 #include <unistd.h>
 #include "functionalext.h"
 
@@ -26,14 +26,14 @@ void OnceRun(void)
     g_count++;
 }
 
-void* ThreadfuncA(void* arg)
+static void *ThreadfuncA(void *arg)
 {
     int32_t ret = pthread_once(&g_once, OnceRun);
     EXPECT_EQ("PthreadOnce0100", ret, 0);
     return arg;
 }
 
-void* ThreadfuncB(void* arg)
+static void *ThreadfuncB(void *arg)
 {
     int32_t ret = pthread_once(&g_once, OnceRun);
     EXPECT_EQ("PthreadOnce0100", ret, 0);
@@ -41,7 +41,7 @@ void* ThreadfuncB(void* arg)
 }
 
 /**
- * @tc.name:      PthreadOnce0100
+ * @tc.name:      pthread_once_0100
  * @tc.desc:      Verify process pthread_mutex_once success.
  * @tc.level:     level 0.
  */
@@ -55,13 +55,13 @@ void PthreadOnce0100(void)
     pthread_join(tid2, nullptr);
 }
 
-static int PthreadOnceTestTestImpl(void)
+static int PthreadOnceTestImpl(void)
 {
     PthreadOnce0100();
-    return T_STATUS;
+    return g_tStatus;
 }
 
 int PthreadOnceTestTest(void)
 {
-    return PthreadOnceTestTestImpl();
+    return PthreadOnceTestImpl();
 }

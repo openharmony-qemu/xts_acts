@@ -45,7 +45,7 @@ export default class Utils {
           if (data) {
             let result = '';
             for (let i = 0; i < data.length; i++) {
-              result += String.fromCharCode(data[i].toInt());
+              result += String.fromCharCode(data[i]);
             }
             resolve(result);
           } else {

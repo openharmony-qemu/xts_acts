@@ -9,7 +9,7 @@ import { State, AppStorage, Observed, Track } from '@ohos.arkui.stateManagement'
 import inspector from '@ohos.arkui.inspector';
 
 @Observed
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   public index: Int = 0;
   applyNormalAttribute(instance: TextAreaAttribute): void {
     instance.height(56)

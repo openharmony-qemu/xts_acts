@@ -218,7 +218,7 @@ export default function audioRendererTest() {
         await renderPlay();
         let value: number = audioRen!.getUnderflowCountSync();
         console.info(`${TagFrmwkRender}: getUnderflowCount :SUCCESS ${value}`);
-        expect(value as number).assertLargerOrEqual(testConst.OUTPUT_NUMBER_0 as number);
+        expect(value as number).assertLargerOrEqual(testConst.OUTPUT_NUMBER_0.toDouble());
         try {
           await audioRen!.drain();
           try {
@@ -283,7 +283,7 @@ export default function audioRendererTest() {
         try {
           let data = await audioRen!.getUnderflowCount();
           console.info(`${TagFrmwkRender}: getUnderflowCount :SUCCESS ${data}`);
-          expect(data as number).assertLargerOrEqual(testConst.OUTPUT_NUMBER_0 as number);
+          expect(data.toDouble()).assertLargerOrEqual(testConst.OUTPUT_NUMBER_0.toDouble());
           try {
             await audioRen!.drain();
             try {
@@ -412,7 +412,7 @@ export default function audioRendererTest() {
             done();
           } else {
             console.info(`${TagFrmwkRender}: getUnderflowCount :SUCCESS ${data}`);
-            expect(data as long).assertLargerOrEqual(testConst.OUTPUT_NUMBER_0 as long);
+            expect(data as long).assertLargerOrEqual(testConst.OUTPUT_NUMBER_0.toLong());
           }
         });
         try {

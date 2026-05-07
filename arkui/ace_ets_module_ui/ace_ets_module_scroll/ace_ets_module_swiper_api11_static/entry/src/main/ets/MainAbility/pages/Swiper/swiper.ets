@@ -52,7 +52,7 @@ import { MessageManager, Callback, Message, GlobalMessage } from '../../common/M
 import events_emitter from '@ohos.events.emitter'
 import { RecordData } from '@ohos.base';
 
-class MyDataSource implements IDataSource<string> {
+export class MyDataSource implements IDataSource<string> {
   private list: string[] = []
   private listener?: DataChangeListener = undefined
 

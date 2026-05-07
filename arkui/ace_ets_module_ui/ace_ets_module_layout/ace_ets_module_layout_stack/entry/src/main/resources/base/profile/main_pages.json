@@ -19,6 +19,7 @@
         "MainAbility/pages/Stack/StackChildAlignment",
         "MainAbility/pages/Stack/StackBackground",
         "MainAbility/pages/Stack/stackPage",
-        "MainAbility/pages/Stack/StackAlignContentNullUndefined"
+        "MainAbility/pages/Stack/StackAlignContentNullUndefined",
+        "MainAbility/pages/Stack/StackSyncLoad"
     ]
 }

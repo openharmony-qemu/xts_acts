@@ -715,7 +715,7 @@ export default function ArrayToStringTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToStringTest3300';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float];
+        const arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat()];
         const result = toString(arr);
         const expected: string = '1.1,2.2,3.3';
         expect(result).assertEqual(expected);
@@ -736,7 +736,7 @@ export default function ArrayToStringTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToStringTest3400';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [-1.1 as float, -2.2 as float, -3.3 as float];
+        const arr: FixedArray<float> = [-1.1.toFloat(), -2.2.toFloat(), -3.3.toFloat()];
         const result = toString(arr);
         const expected: string = '-1.1,-2.2,-3.3';
         expect(result).assertEqual(expected);
@@ -757,7 +757,7 @@ export default function ArrayToStringTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToStringTest3500';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [-1.1 as float, 2.2 as float, -3.3 as float];
+        const arr: FixedArray<float> = [-1.1.toFloat(), 2.2.toFloat(), -3.3.toFloat()];
         const result = toString(arr);
         const expected: string = '-1.1,2.2,-3.3';
         expect(result).assertEqual(expected);
@@ -799,7 +799,7 @@ export default function ArrayToStringTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToStringTest3700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [99.9 as float];
+        const arr: FixedArray<float> = [99.9.toFloat()];
         const result = toString(arr);
         const expected: string = '99.9';
         expect(result).assertEqual(expected);
@@ -820,7 +820,7 @@ export default function ArrayToStringTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToStringTest3800';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [0.0 as float, 0.0 as float, 0.0 as float];
+        const arr: FixedArray<float> = [0.0.toFloat(), 0.0.toFloat(), 0.0.toFloat()];
         const result = toString(arr);
         const expected: string = '0,0,0';
         expect(result).assertEqual(expected);
@@ -841,7 +841,7 @@ export default function ArrayToStringTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToStringTest3900';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1.2e4 as float, 2.6e-4 as float];
+        const arr: FixedArray<float> = [(1.2e4).toFloat(), (2.6e-4).toFloat()];
         const result = toString(arr);
         const expected: string = '12000,0.00026';
         expect(result).assertEqual(expected);
@@ -862,7 +862,7 @@ export default function ArrayToStringTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToStringTest4000';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1111.1 as float, 2222.2 as float, 3333.3 as float];
+        const arr: FixedArray<float> = [1111.1.toFloat(), 2222.2.toFloat(), 3333.3.toFloat()];
         const result = toString(arr);
         const expected: string = '1111.1,2222.2,3333.3';
         expect(result).assertEqual(expected);

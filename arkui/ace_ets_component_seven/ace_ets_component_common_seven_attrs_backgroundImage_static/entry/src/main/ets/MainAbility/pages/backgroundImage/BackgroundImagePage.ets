@@ -779,8 +779,8 @@ struct BackgroundImagePage {
 		this.componentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey as string;
 		this.parentWidth = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
 		this.parentHeight = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
-		this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
-		this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
+		this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns.toInt())
+		this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter.toInt())
 		this.parentBackGroundColor = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentBackGroundColor
 		this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey
 		this._backgroundImageButtonModifier.mBackgroundImage = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.backgroundImage
@@ -945,7 +945,7 @@ struct BackgroundImagePage {
 				Marquee({ 
 					start: true,
 					step: 50,
-					loop: Infinity as int,
+					loop: Infinity.toInt(),
 					fromStart: true,
 					src: 'Running Marquee starts rolling'
 				})

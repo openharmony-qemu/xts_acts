@@ -4311,3 +4311,60 @@ Camera_ErrorCode NDKCamera::GetMinimumFocusDistance(int useCaseCode)
     }
     return ret_;
 }
+
+void ExposureStateCallback(void* context, OH_Camera_ExposureState exposureState)
+{
+    LOG("ExposureStateCallback is called.");
+}
+ 
+Camera_ErrorCode NDKCamera::RegisterExposureStateChangeCallback()
+{
+    LOG("RegisterExposureStateChangeCallback begin.");
+    Camera_ErrorCode ret = OH_CaptureSession_RegisterExposureStateChangeCallback(captureSession_,
+        nullptr, ExposureStateCallback);
+    if (ret == CAMERA_OK) {
+        LOG("RegisterExposureStateChangeCallback success.");
+    } else {
+        LOG("RegisterExposureStateChangeCallback failed, %d.", ret);
+    }
+    return ret;
+}
+ 
+Camera_ErrorCode NDKCamera::UnregisterExposureStateChangeCallback()
+{
+    LOG("RegisterExposureStateChangeCallback begin.");
+    Camera_ErrorCode ret = OH_CaptureSession_UnregisterExposureStateChangeCallback(captureSession_,
+        nullptr, ExposureStateCallback);
+    if (ret == CAMERA_OK) {
+        LOG("UnregisterExposureStateChangeCallback success.");
+    } else {
+        LOG("UnregisterExposureStateChangeCallback failed, %d.", ret);
+    }
+    return ret;
+}
+ 
+Camera_ErrorCode NDKCamera::RegisterExposureStateChangeCallbackWithoutSession()
+{
+    LOG("RegisterExposureStateChangeCallback begin.");
+    Camera_ErrorCode ret = OH_CaptureSession_RegisterExposureStateChangeCallback(nullptr,
+        nullptr, ExposureStateCallback);
+    if (ret == CAMERA_INVALID_ARGUMENT) {
+        LOG("RegisterExposureStateChangeCallback success.");
+    } else {
+        LOG("RegisterExposureStateChangeCallback failed, %d.", ret);
+    }
+    return ret;
+}
+ 
+Camera_ErrorCode NDKCamera::UnregisterExposureStateChangeCallbackWithoutSession()
+{
+    LOG("RegisterExposureStateChangeCallback begin.");
+    Camera_ErrorCode ret = OH_CaptureSession_UnregisterExposureStateChangeCallback(nullptr,
+        nullptr, ExposureStateCallback);
+    if (ret == CAMERA_INVALID_ARGUMENT) {
+        LOG("UnregisterExposureStateChangeCallback success.");
+    } else {
+        LOG("UnregisterExposureStateChangeCallback failed, %d.", ret);
+    }
+    return ret;
+}

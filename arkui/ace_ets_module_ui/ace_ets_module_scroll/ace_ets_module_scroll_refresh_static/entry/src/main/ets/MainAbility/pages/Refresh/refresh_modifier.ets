@@ -53,7 +53,7 @@ import hilog from '@ohos.hilog'
 
 // ===================== Modifier 定义 =====================
 @Observed
-class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   public changeIndex: int = 0;
   public changeList: (boolean | undefined)[] = [
     true,

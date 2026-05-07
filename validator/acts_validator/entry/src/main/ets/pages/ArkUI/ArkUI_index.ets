@@ -161,7 +161,10 @@ struct IndexPage {
     { title: 'PluginComponentTest', uri: 'pages/ArkUI/PluginComponentTest' },
     { title: 'CapiDragDrop', uri: 'pages/ArkUI/CapiDragDropTest' },
     { title: 'CapionDigitalCrown', uri: 'pages/ArkUI/CapionDigitalCrown' },
-
+    { title: 'PassThrough', uri: 'pages/ArkUI/PassThrough' },
+    { title: 'MenuColorMode', uri: 'pages/ArkUI/MenuColorMode' },
+    { title: 'SetCustomCursor', uri: 'pages/ArkUI/SetCustomCursor' },
+    { title: 'PopupColorMode', uri: 'pages/ArkUI/PopupColorMode' },
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];

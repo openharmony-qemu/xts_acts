@@ -73,7 +73,7 @@ struct KeyboardShortcutTest {
       } as Record<String,RecordData>
     } as events_emitter.EventData
     let event: events_emitter.InnerEvent = {
-      eventId: eventId as Long,
+      eventId: eventId.toLong(),
       priority: events_emitter.EventPriority.LOW
     } as events_emitter.InnerEvent
     events_emitter.emit(event, eventData)

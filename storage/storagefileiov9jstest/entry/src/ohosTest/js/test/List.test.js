@@ -41,6 +41,7 @@ import fileIOReadtext from './members/readtext.test.js'
 import fileIORename from './members/rename.test.js'
 import fileIORmdir from './members/rmdir.test'
 import fileIOStat from './members/stat.test.js'
+import fileIOFileMapping from './members/filemapping.test.js'
 import fileIOFileLock from './class_file/fileLock.test.js'
 import fileIOFileProperties from './class_file/file.test.js'
 import fileIOStreamClose from './class_stream/close.test.js'
@@ -117,4 +118,5 @@ export default function testsuite() {
     fileIOSetxattr()
     cloudSynctest()
     atomicFileTest()
+    fileIOFileMapping()
 }

@@ -58,6 +58,6 @@ static int FsetxattrTestImpl(int argc, char *argv[])
 int FsetxattrTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return FsetxattrTestImpl(1, libcArgv);
 }

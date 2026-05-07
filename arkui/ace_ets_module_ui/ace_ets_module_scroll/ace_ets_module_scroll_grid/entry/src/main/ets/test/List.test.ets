@@ -102,6 +102,7 @@ import GridTestPage from './GridTestPage.test'
 import grid3Jsunit from './Grid3Jsunit.test.ets';
 
 export default function testsuite() {
+  GridScrollBarWidth()
   GridMaxCountJsunit()
   GridItemOnSelectJsunit()
   GridAddJsunit()
@@ -175,7 +176,6 @@ export default function testsuite() {
   ScrollToIndexForGridJsunit01()
   ScrollToIndexForGridJsunit02()
   ScrollToIndexForGridJsunit03()
-  GridScrollBarWidth()
   GridIndexTest()
   GridCaseJsunit()
   GridItem2Jsunit()

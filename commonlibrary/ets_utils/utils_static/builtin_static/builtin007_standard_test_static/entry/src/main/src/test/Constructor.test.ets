@@ -626,7 +626,7 @@ export default function constructorTest() {
     it('testGetDataFloat', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = "testGetDataFloat";
       try {
-        let floatValue = new FloatValue(FloatType.REF, 3.14 as float);
+        let floatValue = new FloatValue(FloatType.REF, 3.14.toFloat());
         let result = floatValue.getData();
         if (!(result instanceof float)) {
           expect().assertFail();
@@ -691,7 +691,7 @@ export default function constructorTest() {
     it('testGetType0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = "testGetType0003";
       try {
-        let value = new FloatValue(FloatType.REF, 3.14 as float);
+        let value = new FloatValue(FloatType.REF, 3.14.toFloat());
         expect(value.getType()).assertEqual(FloatType.REF);
       } catch (err) {
         err = err as BusinessError;
@@ -875,7 +875,7 @@ export default function constructorTest() {
     it('testToPrint0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = "testToPrint0004";
       try {
-        let value = new FloatValue(FloatType.REF, 3.14 as float);
+        let value = new FloatValue(FloatType.REF, 3.14.toFloat());
         expect(value.toPrint(0)).assertEqual("3.14");
       } catch (err) {
         err = err as BusinessError;
@@ -1255,7 +1255,7 @@ export default function constructorTest() {
      */
     it("FloatValueConstructor0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'FloatValueConstructor0001 start');
-      let floatValueObj = reflect.Value.of(3.14 as float);
+      let floatValueObj = reflect.Value.of(3.14.toFloat());
       expect(floatValueObj instanceof FloatValue).assertTrue();
       const floatValue = floatValueObj as FloatValue;
       expect(Math.abs(floatValue.getValueData() - 3.14) < 0.00001).assertTrue();
@@ -1274,7 +1274,7 @@ export default function constructorTest() {
      */
     it("FloatValueConstructor0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'FloatValueConstructor0002 start');
-      let floatValueObj = reflect.Value.of(-2.718 as float);
+      let floatValueObj = reflect.Value.of(-2.718.toFloat());
       expect(floatValueObj instanceof FloatValue).assertTrue();
       const floatValue = floatValueObj as FloatValue;
       expect(Math.abs(floatValue.getValueData() - (-2.718)) < 0.00001).assertTrue();
@@ -1293,7 +1293,7 @@ export default function constructorTest() {
      */
     it("FloatValueConstructor0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'FloatValueConstructor0003 start');
-      let floatValueObj = reflect.Value.of(0.0 as float);
+      let floatValueObj = reflect.Value.of(0.0.toFloat());
       expect(floatValueObj instanceof FloatValue).assertTrue();
       const floatValue = floatValueObj as FloatValue;
       expect(floatValue.getValueData()).assertEqual(0.0);
@@ -1313,9 +1313,9 @@ export default function constructorTest() {
     it("FloatValueConstructor0004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.log(0x0000, 'testTag', '%{public}s', 'FloatValueConstructor0004 start');
       const testValues = [
-        Number.MIN_VALUE as float,
-        Number.MAX_VALUE as float,
-        Number.POSITIVE_INFINITY as float
+        Number.MIN_VALUE.toFloat(),
+        Number.MAX_VALUE.toFloat(),
+        Number.POSITIVE_INFINITY.toFloat()
       ];
       testValues.forEach(value => {
         let floatValueObj = reflect.Value.of(value);

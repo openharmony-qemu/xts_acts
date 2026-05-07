@@ -94,7 +94,7 @@ export class MyNodeController extends NodeController {
       flowItem.initialize().id('flowItem_node')
         .width('100%')
         .height(this.itemHeightArray[i % 100])
-        .backgroundColor(this.colors[i % 5] as Int)
+        .backgroundColor(this.colors[i % 5].toInt())
 
       flowItem.appendChild(text)
       waterFlow.appendChild(flowItem)

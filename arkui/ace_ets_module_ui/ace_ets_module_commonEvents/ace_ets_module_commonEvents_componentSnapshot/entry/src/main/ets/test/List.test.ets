@@ -33,6 +33,7 @@ import uIContextGetPromiseNullAndUndefinedTest from './componentSnapshot/UIConte
 import uIContextGetSyncNullAndUndefinedTest from './componentSnapshot/UIContextGetSync/uIContextGetSyncNullAndUndefinedTest.test';
 import getWithUniqueIdNullAndUndefinedTest from './componentSnapshot/GetWithUniqueId/getWithUniqueIdNullAndUndefinedTest.test';
 import getSyncWithUniqueIdNullAndUndefinedTest from './componentSnapshot/GetSyncWithUniqueId/getSyncWithUniqueIdNullAndUndefinedTest.test';
+import GetSizeLimitationComponentSnapshot from './getSizeLimitation/GetSizeLimitation.test';
 
 export default function testsuite() {
   SnapshotOptions_region();
@@ -55,4 +56,5 @@ export default function testsuite() {
   uIContextGetSyncNullAndUndefinedTest();
   getWithUniqueIdNullAndUndefinedTest();
   getSyncWithUniqueIdNullAndUndefinedTest();
+  GetSizeLimitationComponentSnapshot();
 }

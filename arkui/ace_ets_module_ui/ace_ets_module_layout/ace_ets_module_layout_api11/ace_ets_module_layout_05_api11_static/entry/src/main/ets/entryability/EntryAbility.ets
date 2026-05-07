@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -50,10 +50,10 @@ class EntryAbility extends UIAbility {
           try {
             let properties: window.WindowProperties | undefined = windowClass?.getWindowProperties();
             let wRect: window.Rect | undefined = properties!.windowRect;
-              AppStorage.setOrCreate<number>('winLeft', wRect!.left as number ?? 0);
-              AppStorage.setOrCreate<number>('winTop', wRect!.top as number ?? 0);
-              AppStorage.setOrCreate<number>('winWidth', wRect!.width as number ?? 0);
-              AppStorage.setOrCreate<number>('winHeight', wRect!.height as number ?? 0);
+              AppStorage.setOrCreate<number>('winLeft', wRect!.left.toDouble() ?? 0);
+              AppStorage.setOrCreate<number>('winTop', wRect!.top.toDouble() ?? 0);
+              AppStorage.setOrCreate<number>('winWidth', wRect!.width.toDouble() ?? 0);
+              AppStorage.setOrCreate<number>('winHeight', wRect!.height.toDouble() ?? 0);
               hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + wRect?.left + ',winTop:' + wRect?.top);
           } catch (exception) {
             hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));

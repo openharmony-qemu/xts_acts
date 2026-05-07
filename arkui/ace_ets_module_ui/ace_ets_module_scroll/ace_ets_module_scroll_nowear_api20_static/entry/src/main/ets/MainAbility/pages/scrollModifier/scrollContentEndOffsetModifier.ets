@@ -150,25 +150,25 @@ import { BusinessError } from '@kit.BasicServicesKit'
 
 // 定义不同的 ScrollModifier 类
 @Observed
-class ScrollNormalModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollNormalModifier implements AttributeModifier<ScrollAttribute> {
   applyNormalAttribute(instance: ScrollAttribute): void {
     instance.contentEndOffset(60);
   }
 }
 @Observed
-class ScrollEmptyModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollEmptyModifier implements AttributeModifier<ScrollAttribute> {
   applyNormalAttribute(instance: ScrollAttribute): void {
     instance.contentEndOffset(0);
   }
 }
 @Observed
-class ScrollInvalidModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollInvalidModifier implements AttributeModifier<ScrollAttribute> {
   applyNormalAttribute(instance: ScrollAttribute): void {
     instance.contentEndOffset(-30);
   }
 }
 @Observed
-class ScrollExplicitUndefinedModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollExplicitUndefinedModifier implements AttributeModifier<ScrollAttribute> {
   applyNormalAttribute(instance: ScrollAttribute): void {
     instance.contentEndOffset(undefined);
   }

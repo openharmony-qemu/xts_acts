@@ -40,7 +40,7 @@ const KEY_TEST_STRING_ELEMENT = 'key_test_string';
 const KEY_TEST_SYNC_ELEMENT = 'key_test_sync';
 
 const VALUE_TEST_INT_ELEMENT = 123  as long;
-const VALUE_TEST_FLOAT_ELEMENT = 321.12  as long;
+const VALUE_TEST_FLOAT_ELEMENT = 321.12.toLong();
 const VALUE_TEST_BOOLEAN_ELEMENT = true;
 const VALUE_TEST_STRING_ELEMENT = 'value-string-001';
 const VALUE_TEST_SYNC_ELEMENT = 'value-string-001';
@@ -405,7 +405,7 @@ export default function SingleKvStorePromiseTest() {
     it('SUB_DDM_DKV_SINGLEKVSTORE_PUTINT_PROMISE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_PUTINT_PROMISE_0300');
         try {
-          let intValue = Number.MAX_VALUE  as long;
+          let intValue = Number.MAX_VALUE.toLong();
           console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_PUTINT_PROMISE_0300 intValue ' + intValue);
           await kvStore!.put(KEY_TEST_INT_ELEMENT, intValue).then(async (data: string | boolean | Long | double | Uint8Array | undefined) => {
             console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_PUTINT_PROMISE_0300 put success');
@@ -450,7 +450,7 @@ export default function SingleKvStorePromiseTest() {
     it('SUB_DDM_DKV_SINGLEKVSTORE_PUTINT_PROMISE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_PUTINT_PROMISE_0400');
         try {
-          let intValue = Number.MIN_VALUE  as long;
+          let intValue = Number.MIN_VALUE.toLong();
           console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_PUTINT_PROMISE_0400 intValue ' + intValue);
           await kvStore!.put(KEY_TEST_INT_ELEMENT, intValue).then(async (data: string | boolean | Long | double | Uint8Array | undefined) => {
             console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_PUTINT_PROMISE_0400 put success');
@@ -534,7 +534,7 @@ export default function SingleKvStorePromiseTest() {
     it('SUB_DDM_DKV_SINGLEKVSTORE_PUTINT_PROMISE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_PUTINT_PROMISE_0600');
         try {
-          let intValue = Number.NEGATIVE_INFINITY as long;
+          let intValue = Number.NEGATIVE_INFINITY.toLong();
           console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_PUTINT_PROMISE_0600 intValue ' + intValue);
           await kvStore!.put(KEY_TEST_INT_ELEMENT, intValue).then(async (data: string | boolean | Long | double | Uint8Array | undefined) => {
             console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_PUTINT_PROMISE_0600 put success');
@@ -574,7 +574,7 @@ export default function SingleKvStorePromiseTest() {
     it('SUB_DDM_DKV_SINGLEKVSTORE_PUTINT_PROMISE_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_PUTINT_PROMISE_0700');
         try {
-          let intValue = Number.POSITIVE_INFINITY as long;
+          let intValue = Number.POSITIVE_INFINITY.toLong();
           console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_PUTINT_PROMISE_0700 intValue ' + intValue);
           await kvStore!.put(KEY_TEST_INT_ELEMENT, intValue).then(async (data: string | boolean | Long | double | Uint8Array | undefined) => {
             console.info('test logSUB_DDM_DKV_SINGLEKVSTORE_PUTINT_PROMISE_0700 put success');

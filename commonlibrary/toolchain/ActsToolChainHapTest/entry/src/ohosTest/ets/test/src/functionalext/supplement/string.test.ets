@@ -448,6 +448,123 @@ export default function string_group_test() {
       done();
     });
     /**
+     * @tc.name   memmem
+     * @tc.number SUB_THIRDPARTY_MUSL_MEMMEM_0100
+     * @tc.desc   libc-test memmem
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("memmem", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("memmem");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   memrchr
+     * @tc.number SUB_THIRDPARTY_MUSL_MEMRCHR_0100
+     * @tc.desc   libc-test memrchr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("memrchr", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("memrchr");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   stpcpy
+     * @tc.number SUB_THIRDPARTY_MUSL_STPCPY_0100
+     * @tc.desc   libc-test stpcpy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("stpcpy", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("stpcpy");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   stpncpy
+     * @tc.number SUB_THIRDPARTY_MUSL_STPNCPY_0100
+     * @tc.desc   libc-test stpncpy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("stpncpy", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("stpncpy");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   strrchr
+     * @tc.number SUB_THIRDPARTY_MUSL_STRRCHR_0100
+     * @tc.desc   libc-test strrchr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("strrchr", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("strrchr");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   wcscpy
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSCPY_0100
+     * @tc.desc   libc-test wcscpy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("wcscpy", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("wcscpy");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   wcsdup
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSDUP_0100
+     * @tc.desc   libc-test wcsdup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("wcsdup", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("wcsdup");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   wcsncpy
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSNCPY_0100
+     * @tc.desc   libc-test wcsncpy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("wcsncpy", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("wcsncpy");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
+     * @tc.name   wcspbrk
+     * @tc.number SUB_THIRDPARTY_MUSL_WCSPBRK_0100
+     * @tc.desc   libc-test wcspbrk
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("wcspbrk", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("wcspbrk");
+      expect(result).assertEqual(0);
+      done();
+    });
+    /**
      * @tc.name   wmemchr
      * @tc.number SUB_THIRDPARTY_MUSL_WMEMCHR_0100
      * @tc.desc   libc-test wmemchr

@@ -682,5 +682,276 @@ export default function applicationManagerTest() {
       }
       done();
     });
+
+    /**
+     * @tc.name   test_getApplicationWindowStates_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETAPPLICATIONWINDOWSTATES_JS_0100
+     * @tc.desc   test getApplicationWindowStates without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getApplicationWindowStates_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.getApplicationWindowStates(SELFWANT, TEST_BUNDLENAME, DEFAULT_APP_INDEX);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === 9200001).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_getApplicationWindowStates_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETAPPLICATIONWINDOWSTATES_JS_0200
+     * @tc.desc   test getApplicationWindowStates with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getApplicationWindowStates_0200", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        applicationManager.getApplicationWindowStates(SELFWANT, TEST_BUNDLENAME, DEFAULT_APP_INDEX);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_getApplicationWindowStates_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETAPPLICATIONWINDOWSTATES_JS_0300
+     * @tc.desc   test getApplicationWindowStates with null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getApplicationWindowStates_0300", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.getApplicationWindowStates(null, TEST_BUNDLENAME, DEFAULT_APP_INDEX);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_getApplicationWindowStates_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETAPPLICATIONWINDOWSTATES_JS_0400
+     * @tc.desc   test getApplicationWindowStates with undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getApplicationWindowStates_0400", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.getApplicationWindowStates(undefined, TEST_BUNDLENAME, DEFAULT_APP_INDEX);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_getApplicationWindowStates_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETAPPLICATIONWINDOWSTATES_JS_0500
+     * @tc.desc   test getApplicationWindowStates with invalid admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getApplicationWindowStates_0500", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.getApplicationWindowStates(INVALID_WANT, TEST_BUNDLENAME, DEFAULT_APP_INDEX);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_getApplicationWindowStates_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETAPPLICATIONWINDOWSTATES_JS_0600
+     * @tc.desc   test getApplicationWindowStates with null bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getApplicationWindowStates_0600", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.getApplicationWindowStates(SELFWANT, null, DEFAULT_APP_INDEX);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_getApplicationWindowStates_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETAPPLICATIONWINDOWSTATES_JS_0700
+     * @tc.desc   test getApplicationWindowStates with undefined bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getApplicationWindowStates_0700", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.getApplicationWindowStates(SELFWANT, undefined, DEFAULT_APP_INDEX);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_getApplicationWindowStates_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETAPPLICATIONWINDOWSTATES_JS_0800
+     * @tc.desc   test getApplicationWindowStates with empty bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getApplicationWindowStates_0800", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.getApplicationWindowStates(SELFWANT, '', DEFAULT_APP_INDEX);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === 9200012).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_getApplicationWindowStates_0900
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETAPPLICATIONWINDOWSTATES_JS_0900
+     * @tc.desc   test getApplicationWindowStates with null appIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getApplicationWindowStates_0900", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.getApplicationWindowStates(SELFWANT, TEST_BUNDLENAME, null);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_getApplicationWindowStates_1000
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETAPPLICATIONWINDOWSTATES_JS_1000
+     * @tc.desc   test getApplicationWindowStates with undefined appIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getApplicationWindowStates_1000", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.getApplicationWindowStates(SELFWANT, TEST_BUNDLENAME, undefined);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_getApplicationWindowStates_1100
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETAPPLICATIONWINDOWSTATES_JS_1100
+     * @tc.desc   test getApplicationWindowStates with invalid appIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getApplicationWindowStates_1100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let result: Array<applicationManager.WindowStateInfo> =
+          applicationManager.getApplicationWindowStates(SELFWANT, TEST_BUNDLENAME, INVALID_APP_INDEX);
+        expect(result.length).assertEqual(0);
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_getApplicationWindowStates_1200
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETAPPLICATIONWINDOWSTATES_JS_1200
+     * @tc.desc   test getApplicationWindowStates success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("test_getApplicationWindowStates_1200", Level.LEVEL0, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let result: Array<applicationManager.WindowStateInfo> =
+          applicationManager.getApplicationWindowStates(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX);
+        expect(result.length).assertEqual(1);
+        let windowStateInfo: applicationManager.WindowStateInfo = result[0];
+        let state: applicationManager.WindowState = windowStateInfo.state;
+        expect(windowStateInfo.windowId > 0).assertTrue();
+        expect(windowStateInfo.isOnDock).assertFalse();
+        expect(windowStateInfo.name.length > 0).assertTrue();
+        if (state === applicationManager.WindowState.DISCONNECT) {
+          expect(Number(state)).assertEqual(0);
+        } else if (state === applicationManager.WindowState.CONNECT) {
+          expect(Number(state)).assertEqual(1);
+        } else if (state === applicationManager.WindowState.FOREGROUND) {
+          expect(Number(state)).assertEqual(2);
+        } else if (state === applicationManager.WindowState.ACTIVE) {
+          expect(Number(state)).assertEqual(3);
+        } else if (state === applicationManager.WindowState.INACTIVE) {
+          expect(Number(state)).assertEqual(4);
+        } else if (state === applicationManager.WindowState.BACKGROUND) {
+          expect(Number(state)).assertEqual(5);
+        } else {
+          expect(false).assertTrue();
+        }
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
   });
 }

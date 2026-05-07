@@ -254,5 +254,18 @@ export default function signal_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+    /**
+     * @tc.name   setitimer
+     * @tc.number SUB_THIRDPARTY_MUSL_SETITIMER_0100
+     * @tc.desc   libc-test setitimer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("setitimer", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("setitimer");
+      expect(result).assertEqual(0);
+      done();
+    });
   });
 }

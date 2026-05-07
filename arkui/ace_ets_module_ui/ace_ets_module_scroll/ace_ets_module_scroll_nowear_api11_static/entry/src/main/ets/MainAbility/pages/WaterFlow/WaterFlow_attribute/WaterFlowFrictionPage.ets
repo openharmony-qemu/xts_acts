@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -85,8 +85,8 @@ struct WaterFlowFrictionPage {
           }
           .width('100%')
           .height('5%')
-          .height(this.itemHeightArray[item as int])
-          .backgroundColor(this.colors[(item as int) % 5])
+          .height(this.itemHeightArray[item.toInt()])
+          .backgroundColor(this.colors[(item.toInt()) % 5])
         }, (item: number) => `${item}`)
       }
       .width('90%')
@@ -105,8 +105,8 @@ struct WaterFlowFrictionPage {
             }
           }
           .width('100%')
-          .height(this.itemHeightArray[item as int])
-          .backgroundColor(this.colors[(item as int) % 5])
+          .height(this.itemHeightArray[item.toInt()])
+          .backgroundColor(this.colors[(item.toInt()) % 5])
         }, (item: number) => `${item}`)
       }
       .columnsTemplate("1fr 1fr 1fr 1fr")

@@ -45,7 +45,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 // 定义不同的 ListCachedCount Modifier 类
 @Observed
-class ListCachedCountNormalModifier implements AttributeModifier<ListAttribute> {
+export class ListCachedCountNormalModifier implements AttributeModifier<ListAttribute> {
   private count: Int | undefined | CacheCountInfo;
   private show: boolean;
 
@@ -59,25 +59,25 @@ class ListCachedCountNormalModifier implements AttributeModifier<ListAttribute> 
   }
 }
 @Observed
-class ListCachedCountZeroModifier implements AttributeModifier<ListAttribute> {
+export class ListCachedCountZeroModifier implements AttributeModifier<ListAttribute> {
   applyNormalAttribute(instance: ListAttribute): void {
     instance.cachedCount(0, true); // 零值测试
   }
 }
 @Observed
-class ListCachedCountNegativeModifier implements AttributeModifier<ListAttribute> {
+export class ListCachedCountNegativeModifier implements AttributeModifier<ListAttribute> {
   applyNormalAttribute(instance: ListAttribute): void {
     instance.cachedCount(-30, true); // 负值测试
   }
 }
 @Observed
-class ListCachedCountUndefinedModifier implements AttributeModifier<ListAttribute> {
+export class ListCachedCountUndefinedModifier implements AttributeModifier<ListAttribute> {
   applyNormalAttribute(instance: ListAttribute): void {
     instance.cachedCount(undefined, true); // undefined测试
   }
 }
 @Observed
-class ListCachedCountDynamicModifier implements AttributeModifier<ListAttribute> {
+export class ListCachedCountDynamicModifier implements AttributeModifier<ListAttribute> {
   private count: Int | undefined | CacheCountInfo;
   private show: boolean;
 
@@ -92,7 +92,7 @@ class ListCachedCountDynamicModifier implements AttributeModifier<ListAttribute>
 }
 
 @Observed
-class ListCachedCountInfoModifier implements AttributeModifier<ListAttribute> {
+export class ListCachedCountInfoModifier implements AttributeModifier<ListAttribute> {
   private cacheInfo: CacheCountInfo;
   private show: boolean;
 

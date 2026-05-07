@@ -47,7 +47,7 @@ let width = 1
 
 class MyRenderNode extends RenderNode {
   draw(context: DrawContext) {
-    width = context.size.width as Int
+    width = context.size.width.toInt()
   }
 }
 
@@ -81,7 +81,7 @@ struct DrawContextGetSize {
         .id('DrawContext_get_Size')
         .onClick((e: ClickEvent) => {
           const child = new MyRenderNode()
-          width = child.size.width as Int
+          width = child.size.width.toInt()
         })
         .margin({ top: 100 } as Margin)
         .width('100%')

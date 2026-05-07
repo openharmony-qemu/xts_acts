@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2024 HiHope Open Source Organization.
+* Copyright (C) 2024-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the 'License');
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -26,7 +26,7 @@ export function task(name: string, delay: number): Promise<void> {
     setTimeout(() => {
       console.log(`${name} finish！`);
       resolve(undefined);
-    }, delay as int);
+    }, delay.toInt());
   });
 }
 
@@ -41,7 +41,7 @@ export async function task2(name: string, delay: number): Promise<void> {
     setTimeout(() => {
       logTime(`${name} finish`);
       resolve(undefined);
-    }, delay as int);
+    }, delay.toInt());
   });
 }
 

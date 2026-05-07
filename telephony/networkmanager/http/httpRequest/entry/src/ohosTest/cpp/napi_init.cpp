@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,13 +13,16 @@
  * limitations under the License.
  */
 
+#include "callback.h"
 #include "global_http_interceptor.h"
+#include "http_request.h"
 #include "napi/native_api.h"
 #include "network/netstack/http_interceptor.h"
 #include <hilog/log.h>
 
 const int GLOBAL_NETSTACK = 0xFF00;
 const char *TAG = "[netstack]";
+const int STR_BUFFER_SIZE = 1024;
 
 // Constant definitions
 const size_t PARAM_COUNT_TWO = 2;
@@ -54,8 +57,8 @@ static napi_value NAPI_Global_AddNullPtrReadOnlyRequestInterceptor(napi_env env,
 
 static napi_value NAPI_Global_AddNullPtrWritableResponseInterceptor(napi_env env, napi_callback_info info)
 {
-    napi_value ret;
-    return ret;
+    auto param = OH_Http_AddWritableInterceptor(nullptr);
+    return CreateInt32Result(env, param);
 }
 
 static napi_value NAPI_Global_AddReadOnlyRequestInterceptor(napi_env env, napi_callback_info info)
@@ -90,7 +93,6 @@ static napi_value NAPI_Global_AddWritableRequestInterceptor(napi_env env, napi_c
 
 static napi_value NAPI_Global_AddWritableResponseInterceptor(napi_env env, napi_callback_info info)
 {
-    OH_LOG_Print(LOG_APP, LOG_INFO, GLOBAL_NETSTACK, TAG, "NAPI_Global_AddWritableResponseInterceptor 111111");
     int32_t params[PARAM_COUNT_TWO] = { 0 };
     if (GetInt32Param(env, info, PARAM_COUNT_TWO, params)) {
         int32_t param = AddWritableResponseInterceptor(params[0], params[1]);
@@ -162,242 +164,99 @@ static napi_value CreateStringResult(napi_env env, const char *value)
     return result;
 }
 
-static napi_value NAPI_GetRequestUrl(napi_env env, napi_callback_info info)
+static napi_value NAPI_TestCHttpRequest(napi_env env, napi_callback_info info)
 {
-    auto param = GetRequestUrl();
-    return CreateStringResult(env, param);
+    size_t argc = 1;
+    napi_value args[1] = { nullptr };
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    char url[STR_BUFFER_SIZE] = { 0 };
+    size_t sizeT1;
+    napi_get_value_string_utf8(env, args[0], url, STR_BUFFER_SIZE, &sizeT1);
+    int32_t param = 0;
+    param = SendHttpGetRequest(url);
+    napi_value result;
+    napi_create_int32(env, param, &result);
+    return result;
 }
 
-static napi_value NAPI_GetRequestBody(napi_env env, napi_callback_info info)
+static napi_value NAPI_UnregisterCallback(napi_env env, napi_callback_info info)
 {
-    auto param = GetRequestBody();
-    return CreateStringResult(env, param);
+    size_t argc = 1;
+    napi_value args[1] = { nullptr };
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 2. 检查字符串
+    char callbackId[STR_BUFFER_SIZE] = { 0 };
+    size_t sizeT1;
+    napi_get_value_string_utf8(env, args[0], callbackId, STR_BUFFER_SIZE, &sizeT1);
+    if (sizeT1 <= 0) {
+        return nullptr;
+    }
+    std::string str = callbackId;
+    UnregisterThreadSafeCallback(str);
+    return nullptr;
 }
 
-static napi_value NAPI_GetResponseBody(napi_env env, napi_callback_info info)
+static napi_value NAPI_RegisterInterceptorCallback(napi_env env, napi_callback_info info)
 {
-    auto param = GetResponseBody();
-    return CreateStringResult(env, param);
-}
+    size_t argc = 2;
+    napi_value args[2] = { nullptr };
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
-static napi_value NAPI_GetRequestMethod(napi_env env, napi_callback_info info)
-{
-    auto param = GetRequestMethod();
-    return CreateStringResult(env, param);
-}
+    char callbackId[STR_BUFFER_SIZE] = { 0 };
+    size_t sizeT1;
+    napi_get_value_string_utf8(env, args[0], callbackId, STR_BUFFER_SIZE, &sizeT1);
+    if (sizeT1 <= 0) {
+        return nullptr;
+    }
+    // 检查参数类型是否为函数
+    napi_valuetype value_type;
+    napi_typeof(env, args[1], &value_type);
+    if (value_type != napi_function) {
+        napi_throw_error(env, "EINVAL", "参数必须是函数类型");
+        return nullptr;
+    }
 
-static napi_value NAPI_GetRequestHeader(napi_env env, napi_callback_info info)
-{
-    auto param = GetRequestHeader();
-    return CreateStringResult(env, param);
-}
+    // 注册线程安全回调函数
+    RegisterThreadSafeCallback(callbackId, env, args[1]);
 
-static napi_value NAPI_GetResponseHeader(napi_env env, napi_callback_info info)
-{
-    auto param = GetResponseHeader();
-    return CreateStringResult(env, param);
-}
-
-static napi_value NAPI_GetResponseCode(napi_env env, napi_callback_info info)
-{
-    auto param = GetResponseCode();
-    return CreateInt32Result(env, param);
+    return nullptr;
 }
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {
-            "AddNullPtrReadOnlyRequestInterceptor",
-            nullptr,
-            NAPI_Global_AddNullPtrReadOnlyRequestInterceptor,
-            nullptr,
-            nullptr,
-            nullptr,
-            napi_default,
-            nullptr
-        },
-        {
-            "AddNullPtrWritableResponseInterceptor",
-            nullptr,
-            NAPI_Global_AddNullPtrWritableResponseInterceptor,
-            nullptr,
-            nullptr,
-            nullptr,
-            napi_default,
-            nullptr
-        },
-        {
-            "AddReadOnlyRequestInterceptor",
-            nullptr,
-            NAPI_Global_AddReadOnlyRequestInterceptor,
-            nullptr,
-            nullptr,
-            nullptr,
-            napi_default,
-            nullptr
-        },
-        {
-            "AddReadOnlyResponseInterceptor",
-            nullptr,
-            NAPI_Global_AddReadOnlyResponseInterceptor,
-            nullptr,
-            nullptr,
-            nullptr,
-            napi_default,
-            nullptr
-        },
-        {
-            "AddWritableRequestInterceptor",
-            nullptr,
-            NAPI_Global_AddWritableRequestInterceptor,
-            nullptr,
-            nullptr,
-            nullptr,
-            napi_default,
-            nullptr
-        },
-        {
-            "AddWritableResponseInterceptor",
-            nullptr,
-            NAPI_Global_AddWritableResponseInterceptor,
-            nullptr,
-            nullptr,
-            nullptr,
-            napi_default,
-            nullptr
-        },
-        {
-            "RemoveRequestInterceptor",
-            nullptr,
-            NAPI_Global_RemoveRequestInterceptor,
-            nullptr,
-            nullptr,
-            nullptr,
-            napi_default,
-            nullptr
-        },
-        {
-            "RemoveResponseInterceptor",
-            nullptr,
-            NAPI_Global_RemoveResponseInterceptor,
-            nullptr,
-            nullptr,
-            nullptr,
-            napi_default,
-            nullptr
-        },
-        {
-            "StopAllInterceptor",
-            nullptr,
-            NAPI_Global_StopAllInterceptor,
-            nullptr,
-            nullptr,
-            nullptr,
-            napi_default,
-            nullptr
-        },
-        {
-            "RemoveAllInterceptor",
-            nullptr,
-            NAPI_Global_RemoveAllInterceptor,
-            nullptr,
-            nullptr,
-            nullptr,
-            napi_default,
-            nullptr
-        },
-        {
-            "RemoveNullptrInterceptor",
-            nullptr,
-            NAPI_Global_RemoveNullptrInterceptor,
-            nullptr,
-            nullptr,
-            nullptr,
-            napi_default,
-            nullptr
-        },
-        {
-            "StartAllInterceptor",
-            nullptr,
-            NAPI_Global_StartAllInterceptor,
-            nullptr,
-            nullptr,
-            nullptr,
-            napi_default,
-            nullptr
-        },
-        {
-            "GetRequestUrl",
-            nullptr,
-            NAPI_GetRequestUrl,
-            nullptr,
-            nullptr,
-            nullptr,
-            napi_default,
-            nullptr
-        },
-        {
-            "GetRequestBody",
-            nullptr,
-            NAPI_GetRequestBody,
-            nullptr,
-            nullptr,
-            nullptr,
-            napi_default,
-            nullptr
-        },
-        {
-            "GetResponseBody",
-            nullptr,
-            NAPI_GetResponseBody,
-            nullptr,
-            nullptr,
-            nullptr,
-            napi_default,
-            nullptr
-        },
-        {
-            "GetRequestMethod",
-            nullptr,
-            NAPI_GetRequestMethod,
-            nullptr,
-            nullptr,
-            nullptr,
-            napi_default,
-            nullptr
-        },
-        {
-            "GetRequestHeader",
-            nullptr,
-            NAPI_GetRequestHeader,
-            nullptr,
-            nullptr,
-            nullptr,
-            napi_default,
-            nullptr
-        },
-        {
-            "GetResponseHeader",
-            nullptr,
-            NAPI_GetResponseHeader,
-            nullptr,
-            nullptr,
-            nullptr,
-            napi_default,
-            nullptr
-        },
-        {
-            "GetResponseCode",
-            nullptr,
-            NAPI_GetResponseCode,
-            nullptr,
-            nullptr,
-            nullptr,
-            napi_default,
-            nullptr
-        }
+        { "AddNullPtrReadOnlyRequestInterceptor", nullptr, NAPI_Global_AddNullPtrReadOnlyRequestInterceptor, nullptr,
+          nullptr, nullptr, napi_default, nullptr },
+        { "AddNullPtrWritableResponseInterceptor", nullptr, NAPI_Global_AddNullPtrWritableResponseInterceptor, nullptr,
+          nullptr, nullptr, napi_default, nullptr },
+        { "AddReadOnlyRequestInterceptor", nullptr, NAPI_Global_AddReadOnlyRequestInterceptor, nullptr,
+          nullptr, nullptr, napi_default, nullptr },
+        { "AddReadOnlyResponseInterceptor", nullptr, NAPI_Global_AddReadOnlyResponseInterceptor, nullptr,
+          nullptr, nullptr, napi_default, nullptr },
+        { "AddWritableRequestInterceptor", nullptr, NAPI_Global_AddWritableRequestInterceptor, nullptr,
+          nullptr, nullptr, napi_default, nullptr },
+        { "AddWritableResponseInterceptor", nullptr, NAPI_Global_AddWritableResponseInterceptor, nullptr,
+          nullptr, nullptr, napi_default, nullptr },
+        { "RemoveRequestInterceptor", nullptr, NAPI_Global_RemoveRequestInterceptor, nullptr,
+          nullptr, nullptr, napi_default, nullptr },
+        { "RemoveResponseInterceptor", nullptr, NAPI_Global_RemoveResponseInterceptor, nullptr,
+          nullptr, nullptr, napi_default, nullptr },
+        { "StopAllInterceptor", nullptr, NAPI_Global_StopAllInterceptor, nullptr,
+          nullptr, nullptr, napi_default, nullptr },
+        { "RemoveAllInterceptor", nullptr, NAPI_Global_RemoveAllInterceptor, nullptr,
+          nullptr, nullptr, napi_default, nullptr },
+        { "RemoveNullptrInterceptor", nullptr, NAPI_Global_RemoveNullptrInterceptor, nullptr,
+          nullptr, nullptr, napi_default, nullptr },
+        { "StartAllInterceptor", nullptr, NAPI_Global_StartAllInterceptor, nullptr,
+          nullptr, nullptr, napi_default, nullptr },
+        { "TestCHttpRequest", nullptr, NAPI_TestCHttpRequest, nullptr,
+          nullptr, nullptr, napi_default, nullptr },
+        { "RegisterInterceptorCallback", nullptr, NAPI_RegisterInterceptorCallback, nullptr,
+          nullptr, nullptr, napi_default, nullptr },
+        { "UnregisterCallback", nullptr, NAPI_UnregisterCallback, nullptr,
+          nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

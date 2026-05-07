@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2025 HiHope Open Source Organization.
+* Copyright (C) 2025-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the 'License');
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -582,8 +582,8 @@ export default function builtinsDoubleFourthPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsDoubleFourthPrototypebTest3200';
         console.info(`${caseName}, test start`);
-        expect(typeof Double.bitCastFromLong(Number.MAX_SAFE_INTEGER as long)).assertEqual('number');
-        expect(typeof Double.bitCastFromLong(Number.MIN_SAFE_INTEGER as long)).assertEqual('number');
+        expect(typeof Double.bitCastFromLong(Number.MAX_SAFE_INTEGER.toLong())).assertEqual('number');
+        expect(typeof Double.bitCastFromLong(Number.MIN_SAFE_INTEGER.toLong())).assertEqual('number');
         console.info(`${caseName}, test end`);
         Done();
       })

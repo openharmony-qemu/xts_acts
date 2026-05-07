@@ -463,24 +463,24 @@ export default function ProcessTest() {
         worker2.start()
         let count = 0
         try {
-          worker1.run<void>(() => {
+          await worker1.run<void>(() => {
             for (let i = 0; i < 100; i++) {
               const tid = StdProcess.tid();
               const processManager = new StdProcess.ProcessManager();
               const isApp = processManager.getThreadPriority(tid);
               count++;
             }
-          }).Await();
-          worker2.run<void>(() => {
+          });
+          await worker2.run<void>(() => {
             for (let i = 0; i < 100; i++) {
               const tid1 = StdProcess.tid();
               const processManager = new StdProcess.ProcessManager();
               const isApp1 = processManager.getThreadPriority(tid1);
               count++;
             }
-          }).Await();
-          worker1.join();
-          worker2.join();
+          });
+          worker1.quit();
+          worker2.quit();
           expect(count).assertEqual(200);
         } catch (err) {
           err = err as Error;
@@ -836,28 +836,27 @@ export default function ProcessTest() {
         let worker = new EAWorker();
         worker.start()
         let count: number = 0;
-        let job = worker.run<void>((): void => {
-          const workerTag = 'ProcessTest0103_Worker';
-          try {
-            for (let i = 0; i < 100; i++) {
-              const uid = StdProcess.uid();
-              count++;
-            }
-          } catch (err) {
-            err = err as Error;
-            console.error(`${TAG} catch error: code =>  message => ${err.message}`);
-            expect(false).assertFail();
-          }
-        });
         try {
-          job.Await()
+          await worker.run<void>((): void => {
+            const workerTag = 'ProcessTest0103_Worker';
+            try {
+              for (let i = 0; i < 100; i++) {
+                const uid = StdProcess.uid();
+                count++;
+              }
+            } catch (err) {
+              err = err as Error;
+              console.error(`${TAG} catch error: code =>  message => ${err.message}`);
+              expect(false).assertFail();
+            }
+          });
           expect(count).assertEqual(100);
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          worker.quit();
         }
         console.info(`${TAG} test end`);
         done();
@@ -943,28 +942,27 @@ export default function ProcessTest() {
         let worker = new EAWorker();
         worker.start()
         let count: number = 0;
-        let job = worker.run<void>((): void => {
-          const workerTag = 'ProcessTest0107_Worker';
-          try {
-            for (let i = 0; i < 100; i++) {
-              const pid = StdProcess.pid();
-              count++;
-            }
-          } catch (err) {
-            err = err as Error;
-            console.error(`${TAG} catch error: code =>  message => ${err.message}`);
-            expect(false).assertFail();
-          }
-        });
         try {
-          job.Await();
+          await worker.run<void>((): void => {
+            const workerTag = 'ProcessTest0107_Worker';
+            try {
+              for (let i = 0; i < 100; i++) {
+                const pid = StdProcess.pid();
+                count++;
+              }
+            } catch (err) {
+              err = err as Error;
+              console.error(`${TAG} catch error: code =>  message => ${err.message}`);
+              expect(false).assertFail();
+            }
+          });
           expect(count).assertEqual(100);
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          worker.quit();
         }
         console.info(`${TAG} test end`);
         done();
@@ -1050,28 +1048,27 @@ export default function ProcessTest() {
         let worker = new EAWorker();
         worker.start()
         let count: number = 0;
-        let job = worker.run<void>((): void => {
-          const workerTag = 'ProcessTest0107_Worker';
-          try {
-            for (let i = 0; i < 100; i++) {
-              const tid = StdProcess.tid();
-              count++
-            }
-          } catch (err) {
-            err = err as Error;
-            console.error(`${TAG} catch error: code =>  message => ${err.message}`);
-            expect(false).assertFail();
-          }
-        });
         try {
-          job.Await();
+          await worker.run<void>((): void => {
+            const workerTag = 'ProcessTest0107_Worker';
+            try {
+              for (let i = 0; i < 100; i++) {
+                const tid = StdProcess.tid();
+                count++
+              }
+            } catch (err) {
+              err = err as Error;
+              console.error(`${TAG} catch error: code =>  message => ${err.message}`);
+              expect(false).assertFail();
+            }
+          });
           expect(count).assertEqual(100)
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          worker.quit();
         }
         console.info(`${TAG} test end`);
         done();
@@ -1154,21 +1151,20 @@ export default function ProcessTest() {
         worker.start()
         let count: number = 0;
         try {
-          let job = worker.run<void>((): void => {
+          await worker.run<void>((): void => {
             const workerTag = 'ProcessTest0107_Worker';
             for (let i = 0; i < 100; i++) {
               const isIsolated = StdProcess.isIsolatedProcess();
               count++
             }
           });
-          job.Await();
           expect(count).assertEqual(100);
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          worker.quit();
         }
         console.info(`${TAG} test end`);
         done();
@@ -1255,7 +1251,7 @@ export default function ProcessTest() {
         worker.start()
         let count: number = 0;
         try {
-          let job = worker.run<void>((): void => {
+          await worker.run<void>((): void => {
             const workerTag = 'ProcessTest0107_Worker';
             for (let i = 0; i < 100; i++) {
               const isIsolated = StdProcess.is64Bit();
@@ -1263,9 +1259,8 @@ export default function ProcessTest() {
               count++;
             }
           });
-          job.Await();
           expect(count).assertEqual(100);
-          worker.join();
+          worker.quit();
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
@@ -1361,7 +1356,7 @@ export default function ProcessTest() {
         worker.start()
         let count: number = 0;
         try {
-          let job = worker.run<void>((): void => {
+          await worker.run<void>((): void => {
             const workerTag = 'ProcessTest0119_work';
             const initialTime = StdProcess.getStartRealtime();
             for (let i = 0; i < 100; i++) {
@@ -1371,14 +1366,13 @@ export default function ProcessTest() {
               expect(currentTime).assertEqual(initialTime);
             }
           });
-          job.Await();
           expect(count).assertEqual(100)
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          worker.quit();
         }
         console.info(`${TAG} test end`);
         done();
@@ -1467,7 +1461,7 @@ export default function ProcessTest() {
         let previousCpuTime: long = 0;
         let currentCpuTime: long = 0;
         try {
-          let job = worker.run<void>((): void => {
+          await worker.run<void>((): void => {
             const workerTag = 'ProcessTest0122_work';
             previousCpuTime = StdProcess.getPastCpuTime();
             if (typeof previousCpuTime !== 'long') {
@@ -1481,7 +1475,6 @@ export default function ProcessTest() {
               currentCpuTime = StdProcess.getPastCpuTime();
             }
           });
-          job.Await();
           expect(typeof currentCpuTime).assertEqual('long');
           expect(currentCpuTime >= previousCpuTime).assertEqual(true);
         } catch (err) {
@@ -1489,7 +1482,7 @@ export default function ProcessTest() {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          worker.quit();
         }
         console.info(`${TAG} test end`);
         done();
@@ -1579,7 +1572,7 @@ export default function ProcessTest() {
         let previousCpuTime: long = 0;
         let currentCpuTime: long = 0;
         try {
-          let job = worker.run<void>((): void => {
+          await worker.run<void>((): void => {
             const workerTag = 'ProcessTest0122_work';
             previousCpuTime = StdProcess.uptime();
             if (typeof previousCpuTime !== 'long') {
@@ -1592,9 +1585,7 @@ export default function ProcessTest() {
               }
               currentCpuTime = StdProcess.uptime();
             }
-
           });
-          job.Await();
           expect(typeof currentCpuTime).assertEqual('long');
           expect(currentCpuTime >= previousCpuTime).assertEqual(true);
         } catch (err) {
@@ -1602,7 +1593,7 @@ export default function ProcessTest() {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
-          worker.join();
+          worker.quit();
         }
         console.info(`${TAG} test end`);
         done();
