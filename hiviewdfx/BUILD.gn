@@ -43,6 +43,7 @@ group("hiviewdfxtestacts") {
       "hilogtest/hilogdomainofftest:ActsHilogDomainOffJsTest",
       "hilogtest/hilogdomainontest:ActsHilogDomainOnJsTest",
       "hilogtsteststatic:ActsHilogStaticTest",
+      "hiRetrievaltest:ActsHiRetrievalTest",
       "hisyseventtest/hisyseventboxtest:ActsHiSysEventBoxTest",
       "hisyseventtest/hisyseventjstest:ActsHiSysEventJsTest",
       "hisyseventtest/hisyseventnormaltest:ActsHiSysEventNormalTest",
@@ -54,7 +55,6 @@ group("hiviewdfxtestacts") {
       "hitracemeterteststatic:ActsHitraceMeterStaticTest",
       "hitracetestnewtest:ActsHiTraceNewTest",
       "hiview/faultlogger/faultloggerjs:faultloggerjs_test",
-      "hiRetrievaltest:ActsHiRetrievalTest",
     ]
   }
 }
