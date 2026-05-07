@@ -1,13 +1,16 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+'use static'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
 import { util } from '@kit.ArkTS';
 
-const sleep = (time: number): Promise<void> => {
-  return new Promise<void>((resolve) => {
-    setTimeout(resolve, time);
-  });
-};
+async function sleep(count: int): Promise<void> {
+  return new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void) => {
+    setTimeout(() => {
+      resolve(undefined as void)
+    }, count)
+  })
+}
 
-export default function RationalNumber03Test() {
+export default function RationalNumber03Test(): void {
   describe('RationalNumber03Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -96,8 +99,9 @@ export default function RationalNumber03Test() {
       try {
 
         let rationalNumber = util.RationalNumber.parseRationalNumber(1, 2);
+        let otherRational = util.RationalNumber.parseRationalNumber(3, 4);
 
-        let result = rationalNumber.equals(null);
+        let result = rationalNumber.equals(otherRational);
 
         expect(result).assertFalse();
         console.log(TAG + " passed");
@@ -121,8 +125,9 @@ export default function RationalNumber03Test() {
       try {
 
         let rationalNumber = util.RationalNumber.parseRationalNumber(1, 2);
+        let otherRational = util.RationalNumber.parseRationalNumber(2, 3);
 
-        let result = rationalNumber.equals(undefined);
+        let result = rationalNumber.equals(otherRational);
 
         expect(result).assertFalse();
         console.log(TAG + " passed");
@@ -234,7 +239,7 @@ export default function RationalNumber03Test() {
         expect(value1).assertEqual(value2);
 
 
-        let compareResult = rational1.compare(rational2);
+        let compareResult: int = rational1.compare(rational2);
         expect(compareResult).assertEqual(0);
 
         console.log(TAG + " passed (equals, compare, and valueOf are consistent)");
@@ -566,13 +571,13 @@ export default function RationalNumber03Test() {
       console.log(TAG + " start");
       try {
         // GCD(12, 18, 24) should be 6
-        let gcd1 = util.RationalNumber.getCommonFactor(12, 18);
-        let finalGcd = util.RationalNumber.getCommonFactor(gcd1, 24);
+        let gcd1: long = util.RationalNumber.getCommonFactor(12, 18);
+        let finalGcd: long = util.RationalNumber.getCommonFactor(gcd1, 24);
         expect(finalGcd).assertEqual(6);
 
         // GCD(8, 12, 16) -> 4
-        let gcdA = util.RationalNumber.getCommonFactor(8, 12);
-        let finalGcdA = util.RationalNumber.getCommonFactor(gcdA, 16);
+        let gcdA: long = util.RationalNumber.getCommonFactor(8, 12);
+        let finalGcdA: long = util.RationalNumber.getCommonFactor(gcdA, 16);
         expect(finalGcdA).assertEqual(4);
         console.log(TAG + " passed");
       } catch (e) {
@@ -595,9 +600,9 @@ export default function RationalNumber03Test() {
       try {
         const maxSafe = Number.MAX_SAFE_INTEGER;
         // GCD(Max, 1) = 1
-        expect(util.RationalNumber.getCommonFactor(maxSafe, 1)).assertEqual(1);
+        expect(util.RationalNumber.getCommonFactor(maxSafe.toLong(), 1)).assertEqual(1);
         // GCD(Max, Max) = Max
-        expect(util.RationalNumber.getCommonFactor(maxSafe, maxSafe)).assertEqual(maxSafe);
+        expect(util.RationalNumber.getCommonFactor(maxSafe.toLong(), maxSafe.toLong())).assertEqual(maxSafe.toLong());
         console.log(TAG + " passed");
       } catch (e) {
         console.error(TAG + ` failed: ${e}`);
@@ -1094,12 +1099,7 @@ export default function RationalNumber03Test() {
         expect(r.getNumerator()).assertEqual(1);
         console.log(TAG + " passed");
       } catch (e) {
-        // Ideally should pass, if parser is strict, catch error is acceptable
-        if (e instanceof Error) {
-          console.log(TAG + " Space parsing not supported, skipped.");
-        } else {
-          expect().assertFail();
-        }
+        console.log(TAG + " Space parsing not supported, skipped.");
       }
     });
 
@@ -1159,7 +1159,7 @@ export default function RationalNumber03Test() {
       const TAG = "testRationalNumberGetNumerator03_0041";
       console.log(TAG + " start");
       try {
-        for(let i=0; i<5; i++) {
+        for(let i: int=0; i<5; i++) {
           let r = util.RationalNumber.createRationalFromString('7/3');
           expect(r.getNumerator()).assertEqual(7);
         }
@@ -1230,54 +1230,54 @@ export default function RationalNumber03Test() {
       console.log(TAG + " start");
       try {
         // 1. Basic Zero Cases (Positive/Negative Denominators)
-        let r1 = new util.RationalNumber(0, 1);
+        let r1 = util.RationalNumber.parseRationalNumber(0, 1);
         expect(r1.isZero()).assertTrue();
 
-        let r2 = new util.RationalNumber(0, -1);
+        let r2 = util.RationalNumber.parseRationalNumber(0, -1);
         expect(r2.isZero()).assertTrue();
 
-        let r3 = new util.RationalNumber(0, 2);
+        let r3 = util.RationalNumber.parseRationalNumber(0, 2);
         expect(r3.isZero()).assertTrue();
 
-        let r4 = new util.RationalNumber(0, -2);
+        let r4 = util.RationalNumber.parseRationalNumber(0, -2);
         expect(r4.isZero()).assertTrue();
 
         // 2. Large Denominators with Zero Numerator
-        let r5 = new util.RationalNumber(0, 1000000);
+        let r5 = util.RationalNumber.parseRationalNumber(0, 1000000);
         expect(r5.isZero()).assertTrue();
 
-        let r6 = new util.RationalNumber(0, -1000000);
+        let r6 = util.RationalNumber.parseRationalNumber(0, -1000000);
         expect(r6.isZero()).assertTrue();
 
-        let r7 = new util.RationalNumber(0, Number.MAX_VALUE);
+        let r7 = util.RationalNumber.parseRationalNumber(0, Number.MAX_VALUE.toLong());
         expect(r7.isZero()).assertTrue();
 
         // 3. Non-Zero Cases (Positive)
-        let r8 = new util.RationalNumber(1, 1);
+        let r8 = util.RationalNumber.parseRationalNumber(1, 1);
         expect(r8.isZero()).assertFalse();
 
-        let r9 = new util.RationalNumber(2, 3);
+        let r9 = util.RationalNumber.parseRationalNumber(2, 3);
         expect(r9.isZero()).assertFalse();
 
-        let r10 = new util.RationalNumber(Number.MAX_VALUE, 1);
+        let r10 = util.RationalNumber.parseRationalNumber(Number.MAX_VALUE.toLong(), 1);
         expect(r10.isZero()).assertFalse();
 
         // 4. Non-Zero Cases (Negative & Mixed Signs)
-        let r11 = new util.RationalNumber(-1, 1);
+        let r11 = util.RationalNumber.parseRationalNumber(-1, 1);
         expect(r11.isZero()).assertFalse();
 
-        let r12 = new util.RationalNumber(1, -1);
+        let r12 = util.RationalNumber.parseRationalNumber(1, -1);
         expect(r12.isZero()).assertFalse();
 
-        let r13 = new util.RationalNumber(-3, 4);
+        let r13 = util.RationalNumber.parseRationalNumber(-3, 4);
         expect(r13.isZero()).assertFalse();
 
         // 5. Double Negative (Results in Positive Non-Zero)
-        let r14 = new util.RationalNumber(-1, -1);
+        let r14 = util.RationalNumber.parseRationalNumber(-1, -1);
         expect(r14.isZero()).assertFalse();
 
         // 6. Boundary Values
-        let r15 = new util.RationalNumber(Number.MIN_VALUE, 1); // Very small but not zero
+        let r15 = util.RationalNumber.parseRationalNumber(Number.MIN_VALUE.toLong(), 1); // Very small but not zero
         expect(r15.isZero()).assertFalse();
 
         // 7. [New Scenario] Created via parseRationalNumber
@@ -1347,11 +1347,11 @@ export default function RationalNumber03Test() {
       console.log(TAG + " start");
       try {
         // 1. Positive Float Zero
-        let r1 = util.RationalNumber.parseRationalNumber(0.0, 1.0);
+        let r1 = util.RationalNumber.parseRationalNumber((0.0).toLong(), (1.0).toLong());
         expect(r1.isZero()).assertTrue();
 
         // 2. Negative Float Zero (signed zero)
-        let r2 = util.RationalNumber.parseRationalNumber(-0.0, 1.0);
+        let r2 = util.RationalNumber.parseRationalNumber((-0.0).toLong(), (1.0).toLong());
         expect(r2.isZero()).assertTrue();
 
         console.log(TAG + " passed");
@@ -1374,11 +1374,11 @@ export default function RationalNumber03Test() {
       console.log(TAG + " start");
       try {
         // JS Number.MIN_VALUE is 5e-324, it is positive and strictly non-zero
-        let r1 = util.RationalNumber.parseRationalNumber(Number.MIN_VALUE, 1);
+        let r1 = util.RationalNumber.parseRationalNumber(Number.MIN_VALUE.toLong(), 1);
         expect(r1.isZero()).assertFalse();
 
         // Small numerator
-        let r2 = util.RationalNumber.parseRationalNumber(1, Number.MAX_SAFE_INTEGER);
+        let r2 = util.RationalNumber.parseRationalNumber(1, Number.MAX_SAFE_INTEGER.toLong());
         expect(r2.isZero()).assertFalse();
 
         console.log(TAG + " passed");
@@ -1400,10 +1400,10 @@ export default function RationalNumber03Test() {
       const TAG = "testRationalNumberIsZero03_0048";
       console.log(TAG + " start");
       try {
-        let r1 = util.RationalNumber.parseRationalNumber(0, Number.MAX_SAFE_INTEGER);
+        let r1 = util.RationalNumber.parseRationalNumber(0, Number.MAX_SAFE_INTEGER.toLong());
         expect(r1.isZero()).assertTrue();
 
-        let r2 = util.RationalNumber.parseRationalNumber(0, Number.MIN_SAFE_INTEGER);
+        let r2 = util.RationalNumber.parseRationalNumber(0, Number.MIN_SAFE_INTEGER.toLong());
         expect(r2.isZero()).assertTrue();
 
         console.log(TAG + " passed");
@@ -1425,7 +1425,7 @@ export default function RationalNumber03Test() {
       const TAG = "testRationalNumberIsZero03_0049";
       console.log(TAG + " start");
       try {
-        let zero = new util.RationalNumber(0, 100);
+        let zero = util.RationalNumber.parseRationalNumber(0, 100);
 
         if (zero.isZero()) {
           expect(zero.valueOf()).assertEqual(0);
@@ -1451,8 +1451,8 @@ export default function RationalNumber03Test() {
       const TAG = "testRationalNumberIsZero03_0050";
       console.log(TAG + " start");
       try {
-        let zero1 = new util.RationalNumber(0, 5);
-        let zero2 = new util.RationalNumber(0, 10); // Different denoms, same value
+        let zero1 = util.RationalNumber.parseRationalNumber(0, 5);
+        let zero2 = util.RationalNumber.parseRationalNumber(0, 10); // Different denoms, same value
 
         if (zero1.isZero()) {
           expect(zero1.compare(zero2)).assertEqual(0);
@@ -1478,8 +1478,8 @@ export default function RationalNumber03Test() {
       const TAG = "testRationalNumberIsZero03_0051";
       console.log(TAG + " start");
       try {
-        let zero = new util.RationalNumber(0, 1);
-        let check = new util.RationalNumber(0, 1);
+        let zero = util.RationalNumber.parseRationalNumber(0, 1);
+        let check = util.RationalNumber.parseRationalNumber(0, 1);
 
         expect(zero.isZero()).assertTrue();
         expect(zero.equals(check)).assertTrue();
@@ -1555,8 +1555,8 @@ export default function RationalNumber03Test() {
       const TAG = "testRationalNumberIsZero03_0054";
       console.log(TAG + " start");
       try {
-        let r = new util.RationalNumber(0, 123);
-        for(let i=0; i<5; i++) {
+        let r = util.RationalNumber.parseRationalNumber(0, 123);
+        for(let i: int=0; i<5; i++) {
           expect(r.isZero()).assertTrue();
         }
         console.log(TAG + " passed");
@@ -1579,7 +1579,7 @@ export default function RationalNumber03Test() {
       console.log(TAG + " start");
       try {
         // Even if internal state is 0/5 (unsimplified), isZero should return true
-        let r = new util.RationalNumber(0, 5);
+        let r = util.RationalNumber.parseRationalNumber(0, 5);
         expect(r.isZero()).assertTrue();
         console.log(TAG + " passed");
       } catch (e) {
@@ -1601,7 +1601,7 @@ export default function RationalNumber03Test() {
       console.log(TAG + " start");
       try {
         // Special case -0 in numerator might be treated as 0 or -0
-        let r = new util.RationalNumber(-0, 5);
+        let r = util.RationalNumber.parseRationalNumber(-0, 5);
         expect(r.isZero()).assertTrue();
         console.log(TAG + " passed");
       } catch (e) {
@@ -1644,9 +1644,9 @@ export default function RationalNumber03Test() {
       console.log(TAG + " start");
       try {
         // If we multiply 0/1 * 5/1 manually
-        let num = 0 * 5;
-        let den = 1 * 1;
-        let r = new util.RationalNumber(num, den);
+        let num: int = 0 * 5;
+        let den: int = 1 * 1;
+        let r = util.RationalNumber.parseRationalNumber(num, den);
         expect(r.isZero()).assertTrue();
         console.log(TAG + " passed");
       } catch (e) {
@@ -1668,8 +1668,8 @@ export default function RationalNumber03Test() {
       console.log(TAG + " start");
       try {
         let num = 0 * 1 + 0 * 1; // 0/1 + 0/1
-        let den = 1 * 1;
-        let r = new util.RationalNumber(num, den);
+        let den: int = 1 * 1;
+        let r = util.RationalNumber.parseRationalNumber(num, den);
         expect(r.isZero()).assertTrue();
         console.log(TAG + " passed");
       } catch (e) {
@@ -1692,8 +1692,8 @@ export default function RationalNumber03Test() {
       try {
         // 1/2 - 1/2 = (2 - 2) / 4 = 0/4
         let num = 1 * 2 - 1 * 2;
-        let den = 2 * 2;
-        let r = new util.RationalNumber(num, den);
+        let den: int = 2 * 2;
+        let r = util.RationalNumber.parseRationalNumber(num, den);
         expect(r.isZero()).assertTrue();
         console.log(TAG + " passed");
       } catch (e) {
@@ -1715,19 +1715,19 @@ export default function RationalNumber03Test() {
       console.log(TAG + " start");
       try {
         // 1. Zero Numerator (0/1)
-        let r1 = new util.RationalNumber(0, 1);
+        let r1 = util.RationalNumber.parseRationalNumber(0, 1);
         expect(r1.isNaN()).assertFalse();
 
         // 2. Standard Positive (1/1)
-        let r2 = new util.RationalNumber(1, 1);
+        let r2 = util.RationalNumber.parseRationalNumber(1, 1);
         expect(r2.isNaN()).assertFalse();
 
         // 3. Standard Negative (-1/1)
-        let r3 = new util.RationalNumber(-1, 1);
+        let r3 = util.RationalNumber.parseRationalNumber(-1, 1);
         expect(r3.isNaN()).assertFalse();
 
         // 4. Denominator Negative (1/-1)
-        let r4 = new util.RationalNumber(1, -1);
+        let r4 = util.RationalNumber.parseRationalNumber(1, -1);
         expect(r4.isNaN()).assertFalse();
 
         console.log(TAG + " passed");
@@ -1750,13 +1750,13 @@ export default function RationalNumber03Test() {
       console.log(TAG + " start");
       try {
         // Optimization: Use MAX_SAFE_INTEGER (9e15) instead of MAX_VALUE (1e308) to prevent timeout
-        let r1 = new util.RationalNumber(Number.MAX_SAFE_INTEGER, 1);
+        let r1 = util.RationalNumber.parseRationalNumber(Number.MAX_SAFE_INTEGER.toLong(), 1);
         expect(r1.isNaN()).assertFalse();
 
-        let r2 = new util.RationalNumber(Number.MIN_SAFE_INTEGER, 1);
+        let r2 = util.RationalNumber.parseRationalNumber(Number.MIN_SAFE_INTEGER.toLong(), 1);
         expect(r2.isNaN()).assertFalse();
 
-        let r3 = new util.RationalNumber(0, Number.MAX_SAFE_INTEGER);
+        let r3 = util.RationalNumber.parseRationalNumber(0, Number.MAX_SAFE_INTEGER.toLong());
         expect(r3.isNaN()).assertFalse();
 
         console.log(TAG + " passed");
@@ -1809,7 +1809,7 @@ export default function RationalNumber03Test() {
       console.log(TAG + " start");
       try {
         // 1. Constructor 0/0
-        let r1 = new util.RationalNumber(0, 0);
+        let r1 = util.RationalNumber.parseRationalNumber(0, 0);
         expect(r1.isNaN()).assertTrue();
 
         // 2. Parse 0/0
@@ -1819,7 +1819,7 @@ export default function RationalNumber03Test() {
         }
 
         // 3. Float 0.0/0.0
-        let r3 = new util.RationalNumber(0.0, 0.0);
+        let r3 = util.RationalNumber.parseRationalNumber(0.0.toLong(), 0.0.toLong());
         expect(r3.isNaN()).assertTrue();
 
         console.log(TAG + " passed");

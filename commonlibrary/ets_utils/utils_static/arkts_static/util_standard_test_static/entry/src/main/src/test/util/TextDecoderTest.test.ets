@@ -1,11 +1,21 @@
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
-import util from '@ohos.util';
+'use static'
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium';
+import { util } from '@kit.ArkTS';
 
-const sleep = (time: number): Promise<void> => {
-  return new Promise<void>((resolve) => {
-    setTimeout(resolve, time);
-  });
-};
+function sleep(count: int): Promise<void> {
+  return new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void) => {
+    setTimeout(() => {
+      resolve(undefined as void)
+    }, count)
+  })
+}
+
+function encodeStr(input: string): Uint8Array {
+  let encoder = new util.TextEncoder();
+  let dest = new Uint8Array(input.length * 4);
+  let res = encoder.encodeIntoUint8Array(input, dest);
+  return dest.subarray(0, res.written);
+}
 
 export default function TextDecoderTest() {
   describe('TextDecoderTest', () => {
@@ -140,7 +150,7 @@ export default function TextDecoderTest() {
       const TAG = "Test_decode_ascii_long_str_0006";
       console.log(TAG + " start");
       const expected = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
-      const bytes = new util.TextEncoder().encode(expected);
+      const bytes = encodeStr(expected);
       const actual = textDecoder.decodeToString(bytes);
       expect(actual === expected).assertTrue();
 
@@ -237,7 +247,7 @@ export default function TextDecoderTest() {
       const TAG = "Test_decode_unicode_latin1_0011";
       console.log(TAG + " start");
       const expected = "ÀÁéñÿ";
-      const bytes = new util.TextEncoder().encode(expected);
+      const bytes = encodeStr(expected);
       const actual = textDecoder.decodeToString(bytes);
       expect(actual === expected).assertTrue();
 
@@ -256,7 +266,7 @@ export default function TextDecoderTest() {
       const TAG = "Test_decode_unicode_currency_0012";
       console.log(TAG + " start");
       const expected = "¢£¤¥€";
-      const bytes = new util.TextEncoder().encode(expected); // Automatically generate standard UTF-8 byte array
+      const bytes = encodeStr(expected); // Automatically generate standard UTF-8 byte array
       const actual = textDecoder.decodeToString(bytes);
       expect(actual === expected).assertTrue();
 
@@ -275,7 +285,7 @@ export default function TextDecoderTest() {
       const TAG = "Test_decode_unicode_symbol_0013";
       console.log(TAG + " start");
       const expected = "±²³×÷";
-      const bytes = new util.TextEncoder().encode(expected);
+      const bytes = encodeStr(expected);
       const actual = textDecoder.decodeToString(bytes);
       expect(actual === expected).assertTrue();
 
@@ -332,7 +342,7 @@ export default function TextDecoderTest() {
       const TAG = "Test_decode_unicode_arabic_0016";
       console.log(TAG + " start");
       const expected = "أبج";
-      const bytes = new util.TextEncoder().encode(expected);
+      const bytes = encodeStr(expected);
       const actual = textDecoder.decodeToString(bytes);
       expect(actual === expected).assertTrue();
 
@@ -408,7 +418,7 @@ export default function TextDecoderTest() {
       const TAG = "Test_decode_unicode_tamil_0020";
       console.log(TAG + " start");
       const expected = "கச";
-      const bytes = new util.TextEncoder().encode(expected);
+      const bytes = encodeStr(expected);
       const actual = textDecoder.decodeToString(bytes);
       expect(actual === expected).assertTrue();
 
@@ -447,7 +457,7 @@ export default function TextDecoderTest() {
       const TAG = "Test_decode_unicode_chinese_classical_0022";
       console.log(TAG + " start");
       const expected = "魓龱砳";
-      const bytes = new util.TextEncoder().encode(expected);
+      const bytes = encodeStr(expected);
       const actual = textDecoder.decodeToString(bytes);
       expect(actual === expected).assertTrue();
 
@@ -561,7 +571,7 @@ export default function TextDecoderTest() {
       const TAG = "Test_decode_unicode_math_symbol_0028";
       console.log(TAG + " start");
       const expected = "∞∆Σ";
-      const bytes = new util.TextEncoder().encode(expected);
+      const bytes = encodeStr(expected);
       const actual = textDecoder.decodeToString(bytes);
       expect(actual === expected).assertTrue();
 
@@ -580,7 +590,7 @@ export default function TextDecoderTest() {
       const TAG = "Test_decode_unicode_arrow_0029";
       console.log(TAG + " start");
       const expected = "→↑↊";
-      const bytes = new util.TextEncoder().encode(expected);
+      const bytes = encodeStr(expected);
       const actual = textDecoder.decodeToString(bytes);
       expect(actual === expected).assertTrue();
 
@@ -599,7 +609,7 @@ export default function TextDecoderTest() {
       const TAG = "Test_decode_unicode_symbols_mixed_0030";
       console.log(TAG + " start");
       const expected = "✅❤️⭐";
-      const bytes = new util.TextEncoder().encode(expected);
+      const bytes = encodeStr(expected);
       const actual = textDecoder.decodeToString(bytes);
       expect(actual === expected).assertTrue();
 
@@ -676,7 +686,7 @@ export default function TextDecoderTest() {
       const TAG = "Test_decode_mix_multi_lang_0034";
       console.log(TAG + " start");
       const expected = "中文 English Écran Öste";
-      const bytes = new util.TextEncoder().encode(expected);
+      const bytes = encodeStr(expected);
       const actual = textDecoder.decodeToString(bytes);
       expect(actual === expected).assertTrue();
 
@@ -695,7 +705,7 @@ export default function TextDecoderTest() {
       const TAG = "Test_decode_mix_ascii_symbol_currency_0035";
       console.log(TAG + " start");
       const expected = "Price: €100 £20";
-      const bytes = new util.TextEncoder().encode(expected);
+      const bytes = encodeStr(expected);
       const actual = textDecoder.decodeToString(bytes);
       expect(actual === expected).assertTrue();
 
@@ -715,7 +725,7 @@ export default function TextDecoderTest() {
         const TAG = "Test_decode_mix_chinese_number_punctuation_0036";
         console.log(TAG + " start");
         const expected = "我的学习课X1234!?";
-        const bytes = new util.TextEncoder().encode(expected);
+        const bytes = encodeStr(expected);
         const actual = textDecoder.decodeToString(bytes);
         expect(actual === expected).assertTrue();
 
@@ -734,7 +744,7 @@ export default function TextDecoderTest() {
       const TAG = "Test_decode_mix_emoji_flag_lang_0037";
       console.log(TAG + " start");
       const expected = "😋 🇺🇸 日本語 한국어";
-      const bytes = new util.TextEncoder().encode(expected);
+      const bytes = encodeStr(expected);
       const actual = textDecoder.decodeToString(bytes);
       expect(actual === expected).assertTrue();
 
@@ -795,7 +805,7 @@ export default function TextDecoderTest() {
       const TAG = "Test_decode_mix_url_char_chinese_0040";
       console.log(TAG + " start");
       const expected = "https://网页.com/查询?keyword=中文";
-      const bytes = new util.TextEncoder().encode(expected);
+      const bytes = encodeStr(expected);
       const actual = textDecoder.decodeToString(bytes);
       expect(actual === expected).assertTrue();
 
@@ -836,7 +846,7 @@ export default function TextDecoderTest() {
       const TAG = "Test_decode_mix_long_multi_lang_0042";
       console.log(TAG + " start");
       const expected = "OpenHarmony是一款面向全场景的分布式操作系统，支持多种设备协同工作！🇨🇳 ありがとう 😊 1234567890";
-      const bytes = new util.TextEncoder().encode(expected);
+      const bytes = encodeStr(expected);
       const actual = textDecoder.decodeToString(bytes);
       expect(actual === expected).assertTrue();
 
@@ -878,7 +888,7 @@ export default function TextDecoderTest() {
       const TAG = "Test_decode_mix_emoji_modifier_chinese_0044";
       console.log(TAG + " start");
       const expected = "👦🏻 拍照 ❩🏼";
-      const bytes = new util.TextEncoder().encode(expected);
+      const bytes = encodeStr(expected);
       const actual = textDecoder.decodeToString(bytes);
       expect(actual === expected).assertTrue();
 
@@ -897,7 +907,7 @@ export default function TextDecoderTest() {
       const TAG = "Test_decode_mix_latin1_chinese_number_0045";
       console.log(TAG + " start");
       const expected = "élè语 中文 12345 ÖÜ";
-      const bytes = new util.TextEncoder().encode(expected);
+      const bytes = encodeStr(expected);
       const actual = textDecoder.decodeToString(bytes);
       expect(actual === expected).assertTrue();
 
@@ -917,7 +927,7 @@ export default function TextDecoderTest() {
         const TAG = "Test_decode_mix_arrow_chinese_punctuation_0046";
         console.log(TAG + " start");
         const expected = "→ 可以 迭代 ↑ 的语言 !->";
-        const bytes = new util.TextEncoder().encode(expected);
+        const bytes = encodeStr(expected);
         const actual = textDecoder.decodeToString(bytes);
         expect(actual === expected).assertTrue();
 
@@ -936,7 +946,7 @@ export default function TextDecoderTest() {
       const TAG = "Test_decode_mix_hebrew_thai_chinese_0047";
       console.log(TAG + " start");
       const expected = "שלום สวัสดี 同行";
-      const bytes = new util.TextEncoder().encode(expected);
+      const bytes = encodeStr(expected);
       const actual = textDecoder.decodeToString(bytes);
       expect(actual === expected).assertTrue();
 
@@ -955,7 +965,7 @@ export default function TextDecoderTest() {
       const TAG = "Test_decode_mix_hindi_tamil_chinese_0048";
       console.log(TAG + " start");
       const expected = "नमस्ते திஸ் 可生";
-      const bytes = new util.TextEncoder().encode(expected);
+      const bytes = encodeStr(expected);
       const actual = textDecoder.decodeToString(bytes);
       expect(actual === expected).assertTrue();
 
@@ -974,7 +984,7 @@ export default function TextDecoderTest() {
       const TAG = "Test_decode_mix_symbols_emoji_ascii_0049";
       console.log(TAG + " start");
       const expected = "✏️ ❤️ 🌎 Cool Symbols";
-      const bytes = new util.TextEncoder().encode(expected);
+      const bytes = encodeStr(expected);
       const actual = textDecoder.decodeToString(bytes);
       expect(actual === expected).assertTrue();
 
@@ -992,7 +1002,7 @@ export default function TextDecoderTest() {
       const TAG = "Test_decode_mix_all_scenario_0050";
       console.log(TAG + " start");
       const expected = "最终测试：¥100 €50 1+1=2 ありがとう 😊 中文+English+Français 🌟";
-      const bytes = new util.TextEncoder().encode(expected);
+      const bytes = encodeStr(expected);
       const actual = textDecoder.decodeToString(bytes);
       expect(actual === expected).assertTrue();
     });

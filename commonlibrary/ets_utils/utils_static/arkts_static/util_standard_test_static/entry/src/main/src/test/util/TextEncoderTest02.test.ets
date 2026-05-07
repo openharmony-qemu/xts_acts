@@ -1,4 +1,7 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+'use static'
+import { BusinessError } from '@kit.BasicServicesKit';
+
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
 import { util } from '@kit.ArkTS';
 
 
@@ -41,11 +44,19 @@ class TestCase {
   }
 }
 
-const sleep = (time: number): Promise<void> => {
-  return new Promise<void>((resolve) => {
-    setTimeout(resolve, time);
-  });
-};
+function sleep(count: int): Promise<void> {
+  return new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void) => {
+    setTimeout(() => {
+      resolve(undefined as void)
+    }, count)
+  })
+}
+
+function encodeStr(encoder: util.TextEncoder, input: string): Uint8Array {
+  let dest = new Uint8Array(input.length * 4);
+  let res = encoder.encodeIntoUint8Array(input, dest);
+  return dest.subarray(0, res.written);
+}
 
 export default function TextEncoder02Test() {
   describe('TextEncoder02Test', () => {
@@ -86,7 +97,7 @@ export default function TextEncoder02Test() {
         try {
           const encoder = util.TextEncoder.create(enc);
           expect(encoder !== null).assertTrue();
-          const ret = encoder.encode('A');
+          const ret = encodeStr(encoder, 'A');
           expect(ret.length > 0).assertTrue();
           console.info(`${TAG} success for: ${enc}`);
         } catch (e) {
@@ -111,7 +122,7 @@ export default function TextEncoder02Test() {
       const input = "中";
       ENC_CHINESE.forEach(enc => {
         const encoder = util.TextEncoder.create(enc);
-        const ret = encoder.encode(input);
+        const ret = encodeStr(encoder, input);
         expect(ret.length > 0).assertTrue();
         console.info(`${TAG} ${enc} encoded length: ${ret.length}`);
       });
@@ -158,7 +169,7 @@ export default function TextEncoder02Test() {
       console.info(`${TAG} start`);
       ENC_CYRILLIC.forEach(enc => {
         const encoder = util.TextEncoder.create(enc);
-        const ret = encoder.encode('Test');
+        const ret = encodeStr(encoder, 'Test');
         expect(ret.length).assertEqual(4);
       });
       console.info(`${TAG} end`);
@@ -177,7 +188,7 @@ export default function TextEncoder02Test() {
       console.info(`${TAG} start`);
       ENC_ISO_PART1.forEach(enc => {
         const encoder = util.TextEncoder.create(enc);
-        const ret = encoder.encode('ABC');
+        const ret = encodeStr(encoder, 'ABC');
         expect(ret.byteLength).assertEqual(3);
       });
       console.info(`${TAG} end`);
@@ -198,7 +209,7 @@ export default function TextEncoder02Test() {
       console.info(`${TAG} start`);
       ENC_ISO_PART3.forEach(enc => {
         const encoder = util.TextEncoder.create(enc);
-        const ret = encoder.encode('123');
+        const ret = encodeStr(encoder, '123');
         expect(ret[0]).assertEqual(0x31); // ASCII '1'
       });
       console.info(`${TAG} end`);
@@ -235,7 +246,7 @@ export default function TextEncoder02Test() {
       console.info(`${TAG} start`);
       ENC_WIN_PART2.forEach(enc => {
         const encoder = util.TextEncoder.create(enc);
-        const ret = encoder.encode('Test');
+        const ret = encodeStr(encoder, 'Test');
         expect(ret.length).assertEqual(4);
       });
       console.info(`${TAG} end`);
@@ -253,7 +264,7 @@ export default function TextEncoder02Test() {
       const TAG = "testEncodercreate02_0009";
       console.info(`${TAG} start`);
       const encoder = util.TextEncoder.create('macintosh');
-      const ret = encoder.encode('Mac');
+      const ret = encodeStr(encoder, 'Mac');
       expect(ret.length).assertEqual(3);
       expect(ret instanceof Uint8Array).assertTrue();
       console.info(`${TAG} end`);
@@ -274,7 +285,7 @@ export default function TextEncoder02Test() {
       ALL_ENCODINGS.forEach(enc => {
         try {
           const encoder = util.TextEncoder.create(enc);
-          const ret = encoder.encode('');
+          const ret = encodeStr(encoder, '');
 
           if (enc.toLowerCase().includes('utf-16')) {
             expect(ret.length === 0 || ret.length === 2).assertTrue();
@@ -307,7 +318,7 @@ export default function TextEncoder02Test() {
 
       asciiCompatibleEncodings.forEach(enc => {
         const encoder = util.TextEncoder.create(enc);
-        const ret = encoder.encode(input);
+        const ret = encodeStr(encoder, input);
         expect(ret.length).assertEqual(input.length);
         expect(ret[0]).assertEqual(0x41);
       });
@@ -360,10 +371,10 @@ export default function TextEncoder02Test() {
 
       let isFinished = false;
 
-      for (let i = 0; i < 5; i++) {
+      for (let i: int = 0; i < 5; i++) {
         ALL_ENCODINGS.forEach(enc => {
           const encoder = util.TextEncoder.create(enc);
-          encoder.encode('S');
+          encodeStr(encoder, 'S');
         });
       }
       isFinished = true;
@@ -387,7 +398,7 @@ export default function TextEncoder02Test() {
         try {
           let encoder = new util.TextEncoder(enc);
           expect(encoder.encoding.toLowerCase()).assertEqual(enc.toLowerCase());
-          let buffer = encoder.encode("Uni");
+          let buffer = encodeStr(encoder, "Uni");
           expect(buffer.length > 0).assertTrue();
         } catch (e) {
           console.error(`${TAG} Failed for ${enc}: ${e}`);
@@ -413,7 +424,7 @@ export default function TextEncoder02Test() {
           let encoder = new util.TextEncoder(enc);
           expect(encoder.encoding !== undefined && encoder.encoding !== null).assertTrue();
 
-          let buffer = encoder.encode("汉字");
+          let buffer = encodeStr(encoder, "汉字");
           expect(buffer.length > 0).assertTrue();
         } catch (e) {
           console.warn(`${TAG} Encoding ${enc} not supported in this env`);
@@ -437,7 +448,7 @@ export default function TextEncoder02Test() {
         try {
           let encoder = new util.TextEncoder(enc);
           // 验证功能：多字节字符
-          let buffer = encoder.encode("テスト");
+          let buffer = encodeStr(encoder, "テスト");
           expect(buffer.length > 0).assertTrue();
         } catch (e) {
           console.warn(`${TAG} Encoding ${enc} not supported`);
@@ -461,7 +472,7 @@ export default function TextEncoder02Test() {
       targetEncs.forEach(enc => {
         try {
           let encoder = new util.TextEncoder(enc);
-          let buffer = encoder.encode("Mac");
+          let buffer = encodeStr(encoder, "Mac");
           expect(buffer.length).assertEqual(3);
         } catch (e) {
           console.warn(`${TAG} Skipped ${enc}: ${e}`);
@@ -486,7 +497,7 @@ export default function TextEncoder02Test() {
           let encoder = new util.TextEncoder(enc);
           expect(encoder.encoding.toLowerCase()).assertEqual(enc.toLowerCase());
 
-          let buffer = encoder.encode("A");
+          let buffer = encodeStr(encoder, "A");
           expect(buffer.length).assertEqual(1);
           expect(buffer[0]).assertEqual(0x41);
         } catch (e) {
@@ -510,7 +521,7 @@ export default function TextEncoder02Test() {
       ENC_ISO_PART2.forEach(enc => {
         try {
           let encoder = new util.TextEncoder(enc);
-          let buffer = encoder.encode("123");
+          let buffer = encodeStr(encoder, "123");
           expect(buffer.length).assertEqual(3);
         } catch (e) {
           console.error(`${TAG} Error ${enc}: ${e}`);
@@ -534,7 +545,7 @@ export default function TextEncoder02Test() {
       ENC_ISO_PART3.forEach(enc => {
         try {
           let encoder = new util.TextEncoder(enc);
-          let buffer = encoder.encode("Test");
+          let buffer = encodeStr(encoder, "Test");
           expect(buffer.length).assertEqual(4);
         } catch (e) {
           expect().assertFail();
@@ -558,7 +569,7 @@ export default function TextEncoder02Test() {
         try {
           let encoder = new util.TextEncoder(enc);
           expect(encoder instanceof util.TextEncoder).assertTrue();
-          let buffer = encoder.encode("Win");
+          let buffer = encodeStr(encoder, "Win");
           expect(buffer.length).assertEqual(3);
         } catch (e) {
           expect().assertFail();
@@ -581,7 +592,7 @@ export default function TextEncoder02Test() {
       ENC_WIN_PART2.forEach(enc => {
         try {
           let encoder = new util.TextEncoder(enc);
-          let buffer = encoder.encode("Win");
+          let buffer = encodeStr(encoder, "Win");
           expect(buffer.length).assertEqual(3);
         } catch (e) {
           expect().assertFail();
@@ -604,7 +615,7 @@ export default function TextEncoder02Test() {
       ENC_WIN_PART3.forEach(enc => {
         try {
           let encoder = new util.TextEncoder(enc);
-          let buffer = encoder.encode("Win");
+          let buffer = encodeStr(encoder, "Win");
           expect(buffer.length).assertEqual(3);
         } catch (e) {
           expect().assertFail();
@@ -630,7 +641,7 @@ export default function TextEncoder02Test() {
       expect(enc1.encoding !== enc2.encoding).assertTrue();
 
       let dest = new Uint8Array(10);
-      let res = enc1.encodeInto("ABC", dest);
+      let res = enc1.encodeIntoUint8Array("ABC", dest);
       expect(res.read).assertEqual(3);
       expect(res.written).assertEqual(3);
       expect(dest[0]).assertEqual(0x41);
@@ -649,11 +660,11 @@ export default function TextEncoder02Test() {
       const TAG = "testTextEncoderConstructor02_0025";
       console.info(`${TAG} start`);
       try {
-        let invalidParam: number = 12345;
+        let invalidParam: int = 12345;
         let encoder = new util.TextEncoder(invalidParam as Object as string);
         expect().assertFail();
       } catch (e) {
-        let error = e as BusinessError<void>;
+        let error = e as BusinessError;
         console.info(`${TAG} Caught: ${error.code}`);
         expect(error.code).assertEqual(401);
       }
@@ -674,11 +685,11 @@ export default function TextEncoder02Test() {
 
       let isExecutionFinished = false;
 
-      for(let i = 0; i < ALL_ENCODINGS.length; i++) {
+      for(let i: int = 0; i < ALL_ENCODINGS.length; i++) {
         let encName = ALL_ENCODINGS[i];
         try {
           let encoder = new util.TextEncoder(encName);
-          let buf = encoder.encode("S");
+          let buf = encodeStr(encoder, "S");
           expect(encoder !== null).assertTrue();
         } catch(e) {
           console.warn(`${TAG} ${encName} not supported`);
@@ -703,7 +714,7 @@ export default function TextEncoder02Test() {
       console.info(`${TAG} start`);
       const encoder = new util.TextEncoder();
       let dest = new Uint8Array(3);
-      let res = encoder.encodeInto("abc", dest);
+      let res = encoder.encodeIntoUint8Array("abc", dest);
       expect(res.read).assertEqual(3);
       expect(res.written).assertEqual(3);
       expect(dest[0]).assertEqual(97); // 'a'
@@ -711,14 +722,14 @@ export default function TextEncoder02Test() {
       expect(dest[2]).assertEqual(99); // 'c'
 
       dest = new Uint8Array(10);
-      res = encoder.encodeInto("abc", dest);
+      res = encoder.encodeIntoUint8Array("abc", dest);
       expect(res.read).assertEqual(3);
       expect(res.written).assertEqual(3);
 
-      res = encoder.encodeInto("", new Uint8Array(0));
+      res = encoder.encodeIntoUint8Array("", new Uint8Array(0));
       expect(res.written).assertEqual(0);
 
-      res = encoder.encodeInto("", new Uint8Array(5));
+      res = encoder.encodeIntoUint8Array("", new Uint8Array(5));
       expect(res.written).assertEqual(0);
       console.info(`${TAG} end`);
     });
@@ -736,26 +747,26 @@ export default function TextEncoder02Test() {
       const TAG = "testTextEncoderEncodeInto02_0028";
       console.info(`${TAG} start`);
       const encoder = new util.TextEncoder();
-      let res = encoder.encodeInto("abc", new Uint8Array(2));
+      let res = encoder.encodeIntoUint8Array("abc", new Uint8Array(2));
       expect(res.written).assertEqual(2);
       expect(res.read).assertEqual(2);
 
-      res = encoder.encodeInto("€", new Uint8Array(2));
+      res = encoder.encodeIntoUint8Array("€", new Uint8Array(2));
       expect(res.written).assertEqual(0);
       expect(res.read).assertEqual(0);
 
-      res = encoder.encodeInto("𐍈", new Uint8Array(3));
+      res = encoder.encodeIntoUint8Array("𐍈", new Uint8Array(3));
       expect(res.written).assertEqual(0);
       expect(res.read).assertEqual(0);
 
       let dest = new Uint8Array(3);
-      res = encoder.encodeInto("a€b", dest);
+      res = encoder.encodeIntoUint8Array("a€b", dest);
       expect(res.read).assertEqual(1);
       expect(res.written).assertEqual(1);
       expect(dest[0]).assertEqual(97);
       expect(dest[1]).assertEqual(0);
 
-      res = encoder.encodeInto("你好", new Uint8Array(4));
+      res = encoder.encodeIntoUint8Array("你好", new Uint8Array(4));
       expect(res.read).assertEqual(1);
       expect(res.written).assertEqual(3);
     });
@@ -774,16 +785,16 @@ export default function TextEncoder02Test() {
       const encoder = new util.TextEncoder();
 
       let dest = new Uint8Array(3);
-      let res = encoder.encodeInto("\n\t\r", dest);
+      let res = encoder.encodeIntoUint8Array("\n\t\r", dest);
       expect(res.written).assertEqual(3);
       expect(dest[0]).assertEqual(10);
 
-      res = encoder.encodeInto("!@#", dest);
+      res = encoder.encodeIntoUint8Array("!@#", dest);
       expect(res.written).assertEqual(3);
       expect(dest[0]).assertEqual(33);
 
       let destLarge = new Uint8Array(10);
-      res = encoder.encodeInto("\uD800\uFFFD", destLarge);
+      res = encoder.encodeIntoUint8Array("\uD800\uFFFD", destLarge);
       expect(res.written).assertEqual(6);
       expect(destLarge[0]).assertEqual(0xEF);
       expect(destLarge[1]).assertEqual(0xBF);
@@ -791,7 +802,7 @@ export default function TextEncoder02Test() {
 
       try {
         const encGbk = new util.TextEncoder("gbk");
-        res = encGbk.encodeInto("abc", dest);
+        res = encGbk.encodeIntoUint8Array("abc", dest);
         expect(res.written).assertEqual(3);
       } catch (e) {
       }
@@ -809,17 +820,17 @@ export default function TextEncoder02Test() {
       const TAG = "testTextEncoderEncodeInto02_0030";
       console.info(`${TAG} start`);
       const encoder = new util.TextEncoder();
-      const len = 1000;
+      const len: int = 1000;
       const input = "a".repeat(len);
 
       let dest = new Uint8Array(len);
-      let res = encoder.encodeInto(input, dest);
+      let res = encoder.encodeIntoUint8Array(input, dest);
       expect(res.read).assertEqual(len);
       expect(res.written).assertEqual(len);
 
       // 1000 chars -> Buffer(500)
       let destSmall = new Uint8Array(500);
-      res = encoder.encodeInto(input, destSmall);
+      res = encoder.encodeIntoUint8Array(input, destSmall);
       expect(res.read).assertEqual(500);
       expect(res.written).assertEqual(500);
     });
@@ -841,7 +852,7 @@ export default function TextEncoder02Test() {
 
       const subView = buffer.subarray(2, 5); // indices 2, 3, 4
 
-      const res = encoder.encodeInto("abc", subView);
+      const res = encoder.encodeIntoUint8Array("abc", subView);
 
       expect(res.written).assertEqual(3);
 
@@ -869,7 +880,7 @@ export default function TextEncoder02Test() {
       const encoder = new util.TextEncoder();
       const dest = new Uint8Array([1, 2, 3, 4, 5]);
 
-      const res = encoder.encodeInto("A", dest);
+      const res = encoder.encodeIntoUint8Array("A", dest);
       expect(res.written).assertEqual(1);
       expect(dest[0]).assertEqual(65); // 'A'
 
@@ -894,7 +905,7 @@ export default function TextEncoder02Test() {
       const input = "¢©";
       const dest = new Uint8Array(10);
 
-      const res = encoder.encodeInto(input, dest);
+      const res = encoder.encodeIntoUint8Array(input, dest);
 
       expect(res.read).assertEqual(2);
       expect(res.written).assertEqual(4); // 2 * 2 bytes
@@ -917,11 +928,11 @@ export default function TextEncoder02Test() {
       const TAG = "testTextEncoderEncodeInto02_0034";
       console.info(`${TAG} start`);
       const encoder = new util.TextEncoder();
-      const numInput = 12345;
+      const numInput: int = 12345;
       const dest = new Uint8Array(10);
 
       try {
-        const res = encoder.encodeInto(numInput as Object as string, dest);
+        const res = encoder.encodeIntoUint8Array(numInput as Object as string, dest);
 
         console.info("[testInputTypeCoercion] System performed implicit coercion.");
         expect(res.read).assertEqual(5);
@@ -947,7 +958,7 @@ export default function TextEncoder02Test() {
       const input = "\uD800";
       const dest = new Uint8Array(2);
 
-      const res = encoder.encodeInto(input, dest);
+      const res = encoder.encodeIntoUint8Array(input, dest);
 
       expect(res.read).assertEqual(0);
       expect(res.written).assertEqual(0);
@@ -969,7 +980,7 @@ export default function TextEncoder02Test() {
       const input = "A\uD800B";
       const dest = new Uint8Array(10);
 
-      const res = encoder.encodeInto(input, dest);
+      const res = encoder.encodeIntoUint8Array(input, dest);
 
       expect(res.read).assertEqual(3); // 3 chars processed
       expect(res.written).assertEqual(5);
@@ -991,7 +1002,7 @@ export default function TextEncoder02Test() {
       const TAG = "testTextEncoderEncodeInto02_0037";
       console.info(`${TAG} start`);
       const encoder = new util.TextEncoder();
-      const res = encoder.encodeInto("a", new Uint8Array(1));
+      const res = encoder.encodeIntoUint8Array("a", new Uint8Array(1));
 
       expect(JSON.stringify(res)).assertContain("read");
       expect(JSON.stringify(res)).assertContain("written");
@@ -1013,10 +1024,10 @@ export default function TextEncoder02Test() {
 
 
       const destSmall = new Uint8Array(1);
-      encoder.encodeInto("€", destSmall);
+      encoder.encodeIntoUint8Array("€", destSmall);
 
       const destNormal = new Uint8Array(3);
-      const res = encoder.encodeInto("abc", destNormal);
+      const res = encoder.encodeIntoUint8Array("abc", destNormal);
 
       expect(res.read).assertEqual(3);
       expect(res.written).assertEqual(3);
@@ -1038,7 +1049,7 @@ export default function TextEncoder02Test() {
 
       try {
         const dest = new Uint8Array(1024 * 1024);
-        const res = encoder.encodeInto("A", dest);
+        const res = encoder.encodeIntoUint8Array("A", dest);
         expect(res.written).assertEqual(1);
         expect(dest[0]).assertEqual(65);
       } catch (e) {
@@ -1062,7 +1073,7 @@ export default function TextEncoder02Test() {
       const encoder = new util.TextEncoder();
       const input = "中中中中中";
       const dest = new Uint8Array(15);
-      const res = encoder.encodeInto(input, dest);
+      const res = encoder.encodeIntoUint8Array(input, dest);
 
       expect(res.read).assertEqual(5);
       expect(res.written).assertEqual(15);
@@ -1338,7 +1349,7 @@ export default function TextEncoder02Test() {
       const encoder = new util.TextEncoder();
       const input = "中";
 
-      for (let size = 1; size <= 2; size++) {
+      for (let size: int = 1; size <= 2; size++) {
         console.info(`${TAG} Testing with buffer size: ${size}`);
         const dest = new Uint8Array(size);
         const res = encoder.encodeIntoUint8Array(input, dest);
@@ -1366,7 +1377,7 @@ export default function TextEncoder02Test() {
       const encoder = new util.TextEncoder();
       const input = "😊";
 
-      for (let size = 1; size <= 3; size++) {
+      for (let size: int = 1; size <= 3; size++) {
         console.info(`${TAG} Testing with buffer size: ${size}`);
         const dest = new Uint8Array(size);
         const res = encoder.encodeIntoUint8Array(input, dest);

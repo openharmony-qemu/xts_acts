@@ -1,11 +1,14 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+'use static'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
 import util from '@ohos.util';
 
-const sleep = (time: number): Promise<void> => {
-  return new Promise<void>((resolve) => {
-    setTimeout(resolve, time);
-  });
-};
+async function sleep(count: int): Promise<int> {
+  return new Promise<int>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(0)
+    }, count)
+  })
+}
 
 export default function StringDecoder02Test(): void {
   describe('StringDecoder02Test', (): void => {
@@ -37,7 +40,20 @@ export default function StringDecoder02Test(): void {
 
     const strToUint8Array = (str: string, encoding: string = UTF8): Uint8Array => {
       const encoder: util.TextEncoder = new util.TextEncoder(encoding);
-      return encoder.encode(str);
+      const dest: Uint8Array = new Uint8Array(str.length * 4);
+      const ret = encoder.encodeIntoUint8Array(str, dest);
+      return dest.subarray(0, ret.written);
+    };
+
+    const concatUint8Arrays = (a: Uint8Array, b: Uint8Array): Uint8Array => {
+      const result: Uint8Array = new Uint8Array(a.length + b.length);
+      for (let i: int = 0; i < a.length; i++) {
+        result[i] = a[i];
+      }
+      for (let i: int = 0; i < b.length; i++) {
+        result[a.length + i] = b[i];
+      }
+      return result;
     };
 
     /**
@@ -317,7 +333,7 @@ export default function StringDecoder02Test(): void {
         const decoder: util.StringDecoder = new util.StringDecoder(UTF8);
         const bom: Uint8Array = new Uint8Array([0xEF, 0xBB, 0xBF]);
         const content: Uint8Array = strToUint8Array('test');
-        const input: Uint8Array = new Uint8Array([...bom, ...content]);
+        const input: Uint8Array = concatUint8Arrays(bom, content);
 
         const result: string = decoder.write(input);
         expect(result).assertEqual('\uFEFFtest');
@@ -339,7 +355,7 @@ export default function StringDecoder02Test(): void {
         const decoder: util.StringDecoder = new util.StringDecoder(UTF16LE);
         const bom: Uint8Array = new Uint8Array([0xFF, 0xFE]);
         const content: Uint8Array = strToUint8Array('test', UTF16LE);
-        const input: Uint8Array = new Uint8Array([...bom, ...content]);
+        const input: Uint8Array = concatUint8Arrays(bom, content);
 
         const result: string = decoder.write(input);
         expect(result).assertEqual('\uFEFFtest');
@@ -361,7 +377,7 @@ export default function StringDecoder02Test(): void {
         const decoder: util.StringDecoder = new util.StringDecoder(UTF16BE);
         const bom: Uint8Array = new Uint8Array([0xFE, 0xFF]);
         const content: Uint8Array = strToUint8Array('test', UTF16BE);
-        const input: Uint8Array = new Uint8Array([...bom, ...content]);
+        const input: Uint8Array = concatUint8Arrays(bom, content);
 
         const result: string = decoder.write(input);
         expect(result).assertEqual('\uFEFFtest');

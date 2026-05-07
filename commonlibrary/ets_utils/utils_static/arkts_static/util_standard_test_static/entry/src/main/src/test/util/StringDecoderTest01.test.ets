@@ -1,13 +1,16 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+'use static'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
 import util from '@ohos.util';
 
-const sleep = (time: number): Promise<void> => {
-  return new Promise<void>((resolve) => {
-    setTimeout(resolve, time);
-  });
-};
+async function sleep(count: int): Promise<int> {
+  return new Promise<int>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(0)
+    }, count)
+  })
+}
 
-export default function StringDecoder01Test() {
+export default function StringDecoder01Test(): void {
   describe('StringDecoder01Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -456,7 +459,7 @@ export default function StringDecoder01Test() {
         console.log(TAG + ' start');
         const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
         let result = '';
-        for (let i = 0; i < 100; i++) {
+        for (let i: int = 0; i < 100; i++) {
           const buffer = new Uint8Array([65 + (i % 26)]);
           result += stringDecoder.write(buffer);
         }
@@ -479,7 +482,7 @@ export default function StringDecoder01Test() {
         console.log(TAG + ' start');
         const stringDecoder: util.StringDecoder = new util.StringDecoder('utf-8');
         const largeData = new Uint8Array(500);
-        for (let i = 0; i < largeData.length; i++) {
+        for (let i: int = 0; i < largeData.length; i++) {
           largeData[i] = 65 + (i % 26);
         }
         const result: string = stringDecoder.write(largeData);

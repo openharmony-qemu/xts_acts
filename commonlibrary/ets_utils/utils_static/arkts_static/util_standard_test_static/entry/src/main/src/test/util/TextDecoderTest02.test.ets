@@ -1,11 +1,14 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+'use static'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
 import { util } from '@kit.ArkTS';
 
-const sleep = (time: number): Promise<void> => {
-  return new Promise<void>((resolve) => {
-    setTimeout(resolve, time);
-  });
-};
+function sleep(count: int): Promise<void> {
+  return new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void) => {
+    setTimeout(() => {
+      resolve(undefined as void)
+    }, count)
+  })
+}
 
 export default function TextDecoder02Test() {
   describe('TextDecoder02Test', () => {
@@ -252,9 +255,9 @@ export default function TextDecoder02Test() {
       console.info(`${TAG} start`);
       const decoder = util.TextDecoder.create();
 
-      expect(decoder.constructor.name).assertEqual('TextDecoder');
+      expect(decoder instanceof util.TextDecoder).assertTrue();
 
-      expect(typeof decoder.decode).assertEqual('function');
+      expect(typeof decoder.decodeToString).assertEqual('function');
       console.info(`${TAG} end`);
     });
 
@@ -343,10 +346,10 @@ export default function TextDecoder02Test() {
     it("testTextDecoderDecodeWithStream02_0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = "testTextDecoderDecodeWithStream02_0015";
       console.log(TAG + " start");
-      const decoder = new util.TextDecoder('utf-8');
+      const decoder = util.TextDecoder.create('utf-8');
       const input = new Uint8Array([72, 101, 108, 108, 111, 10, 49, 50, 51]); // Hello\n123
 
-      const result = decoder.decodeWithStream(input, { stream: false });
+      const result = decoder.decodeToString(input);
       expect(result).assertEqual('Hello\n123');
     });
 
@@ -361,10 +364,10 @@ export default function TextDecoder02Test() {
     it("testTextDecoderDecodeWithStream02_0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = "testTextDecoderDecodeWithStream02_0016";
       console.log(TAG + " start");
-      const decoder = new util.TextDecoder('utf-8');
+      const decoder = util.TextDecoder.create('utf-8');
       const input = new Uint8Array([228, 189, 160, 229, 165, 189, 240, 159, 154, 128]);
 
-      const result = decoder.decodeWithStream(input, { stream: false });
+      const result = decoder.decodeToString(input);
       expect(result).assertEqual('你好🚀');
     });
 
@@ -379,12 +382,12 @@ export default function TextDecoder02Test() {
     it("testTextDecoderDecodeWithStream02_0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = "testTextDecoderDecodeWithStream02_0017";
       console.log(TAG + " start");
-      const decoder = new util.TextDecoder('utf-8');
+      const decoder = util.TextDecoder.create('utf-8');
 
-      const res1 = decoder.decodeWithStream(undefined, { stream: false });
+      const res1 = decoder.decodeToString(new Uint8Array(0));
       expect(res1).assertUndefined();
 
-      const res2 = decoder.decodeWithStream(new Uint8Array(0), { stream: true });
+      const res2 = decoder.decodeToString(new Uint8Array(0));
       expect(res2 === '' || res2 === undefined).assertTrue();
     });
 
@@ -399,15 +402,15 @@ export default function TextDecoder02Test() {
     it("testTextDecoderDecodeWithStream02_0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = "testTextDecoderDecodeWithStream02_0018";
       console.log(TAG + " start");
-      const decoder = new util.TextDecoder('utf-8');
+      const decoder = util.TextDecoder.create('utf-8');
 
       const part1 = new Uint8Array([228, 184]);
       const part2 = new Uint8Array([173]);
 
-      const res1 = decoder.decodeWithStream(part1, { stream: true });
+      const res1 = decoder.decodeToString(part1);
       expect(res1).assertEqual('');
 
-      const res2 = decoder.decodeWithStream(part2, { stream: false });
+      const res2 = decoder.decodeToString(part2);
       expect(res2).assertEqual('中');
     });
 
@@ -422,13 +425,13 @@ export default function TextDecoder02Test() {
     it("testTextDecoderDecodeWithStream02_0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = "testTextDecoderDecodeWithStream02_0019";
       console.log(TAG + " start");
-      const decoder = new util.TextDecoder('utf-8');
+      const decoder = util.TextDecoder.create('utf-8');
 
       const part1 = new Uint8Array([240, 159]);
       const part2 = new Uint8Array([154, 128]);
 
-      decoder.decodeWithStream(part1, { stream: true });
-      const result = decoder.decodeWithStream(part2, { stream: false });
+      decoder.decodeToString(part1);
+      const result = decoder.decodeToString(part2);
 
       expect(result).assertEqual('🚀');
     });
@@ -444,11 +447,11 @@ export default function TextDecoder02Test() {
     it("testTextDecoderDecodeWithStream02_0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = "testTextDecoderDecodeWithStream02_0020";
       console.log(TAG + " start");
-      const decoder = new util.TextDecoder('utf-8');
+      const decoder = util.TextDecoder.create('utf-8');
 
-      const r1 = decoder.decodeWithStream(new Uint8Array([65]), { stream: true }); // 'A'
-      const r2 = decoder.decodeWithStream(new Uint8Array([66]), { stream: true }); // 'B'
-      const r3 = decoder.decodeWithStream(new Uint8Array([67]), { stream: true }); // 'C'
+      const r1 = decoder.decodeToString(new Uint8Array([65])); // 'A'
+      const r2 = decoder.decodeToString(new Uint8Array([66])); // 'B'
+      const r3 = decoder.decodeToString(new Uint8Array([67])); // 'C'
 
       expect(r1).assertEqual('A');
       expect(r2).assertEqual('B');
@@ -466,15 +469,15 @@ export default function TextDecoder02Test() {
     it("testTextDecoderDecodeWithStream02_0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = "testTextDecoderDecodeWithStream02_0021";
       console.log(TAG + " start");
-      const decoder = new util.TextDecoder('utf-8', { ignoreBOM: false });
+      const decoder = util.TextDecoder.create('utf-8', { ignoreBOM: false });
       // BOM: EF BB BF
       const part1 = new Uint8Array([0xEF, 0xBB]);
       const part2 = new Uint8Array([0xBF, 65]);
 
-      const r1 = decoder.decodeWithStream(part1, { stream: true });
+      const r1 = decoder.decodeToString(part1);
       expect(r1 === '' || r1 === undefined).assertTrue();
 
-      const r2 = decoder.decodeWithStream(part2, { stream: false });
+      const r2 = decoder.decodeToString(part2);
       expect(r2).assertEqual('\uFEFFA');
     });
 
@@ -489,12 +492,12 @@ export default function TextDecoder02Test() {
     it("testTextDecoderDecodeWithStream02_0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = "testTextDecoderDecodeWithStream02_0022";
       console.log(TAG + " start");
-      const decoder = new util.TextDecoder('utf-8', { fatal: true });
+      const decoder = util.TextDecoder.create('utf-8', { fatal: true });
       const incomplete = new Uint8Array([0xE4]);
 
       try {
-        decoder.decodeWithStream(incomplete, { stream: true });
-        const res = decoder.decodeWithStream(undefined, { stream: false });
+        decoder.decodeToString(incomplete);
+        const res = decoder.decodeToString(new Uint8Array(0));
         expect(res).assertUndefined();
       } catch (e) {
         expect().assertFalse();
@@ -512,13 +515,13 @@ export default function TextDecoder02Test() {
     it("testTextDecoderDecodeWithStream02_0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = "testTextDecoderDecodeWithStream02_0023";
       console.log(TAG + " start");
-      const decoder = new util.TextDecoder('utf-8', { fatal: false });
+      const decoder = util.TextDecoder.create('utf-8', { fatal: false });
       const incomplete = new Uint8Array([0xE4]);
 
-      decoder.decodeWithStream(incomplete, { stream: true });
+      decoder.decodeToString(incomplete);
 
       // Fix: System returns undefined instead of \uFFFD
-      const res = decoder.decodeWithStream(undefined, { stream: false });
+      const res = decoder.decodeToString(new Uint8Array(0));
       expect(res).assertUndefined();
     });
 
@@ -533,11 +536,11 @@ export default function TextDecoder02Test() {
     it("testTextDecoderDecodeWithStream02_0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = "testTextDecoderDecodeWithStream02_0024";
       console.log(TAG + " start");
-      const decoder = new util.TextDecoder('utf-8');
+      const decoder = util.TextDecoder.create('utf-8');
 
       const largeBuf = new Uint8Array(1000).fill(65);
 
-      const res = decoder.decodeWithStream(largeBuf, { stream: true });
+      const res = decoder.decodeToString(largeBuf);
       expect(res.length).assertEqual(1000);
       expect(res.startsWith('AAAA')).assertTrue();
     });
@@ -553,15 +556,15 @@ export default function TextDecoder02Test() {
     it("testTextDecoderDecodeWithStream02_0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = "testTextDecoderDecodeWithStream02_0025";
       console.log(TAG + " start");
-      const decoder = new util.TextDecoder('utf-8');
+      const decoder = util.TextDecoder.create('utf-8');
 
       const part1 = new Uint8Array([65, 228]);
       const part2 = new Uint8Array([184, 173]);
 
-      const res1 = decoder.decodeWithStream(part1, { stream: true });
+      const res1 = decoder.decodeToString(part1);
       expect(res1).assertEqual('A');
 
-      const res2 = decoder.decodeWithStream(part2, { stream: false });
+      const res2 = decoder.decodeToString(part2);
       expect(res2).assertEqual('中');
     });
 
@@ -576,10 +579,10 @@ export default function TextDecoder02Test() {
     it("testTextDecoderDecodeWithStream02_0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = "testTextDecoderDecodeWithStream02_0026";
       console.log(TAG + " start");
-      const decoder = new util.TextDecoder('utf-8', { ignoreBOM: true });
+      const decoder = util.TextDecoder.create('utf-8', { ignoreBOM: true });
       const input = new Uint8Array([0xEF, 0xBB, 0xBF, 65]);
 
-      const res = decoder.decodeWithStream(input, { stream: false });
+      const res = decoder.decodeToString(input);
       expect(res.length > 1 && res.charCodeAt(0) === 0xFEFF).assertTrue();
     });
 
@@ -594,14 +597,14 @@ export default function TextDecoder02Test() {
     it("testTextDecoderDecodeWithStream02_0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = "testTextDecoderDecodeWithStream02_0027";
       console.log(TAG + " start");
-      const decoder = new util.TextDecoder('utf-8');
+      const decoder = util.TextDecoder.create('utf-8');
       const buffer = new Uint8Array([0, 65, 66, 0]);
 
       const sub1 = buffer.subarray(1, 2); // 'A'
       const sub2 = buffer.subarray(2, 3); // 'B'
 
-      const r1 = decoder.decodeWithStream(sub1, { stream: true });
-      const r2 = decoder.decodeWithStream(sub2, { stream: false });
+      const r1 = decoder.decodeToString(sub1);
+      const r2 = decoder.decodeToString(sub2);
 
       expect(r1 + r2).assertEqual('AB');
     });
@@ -617,15 +620,15 @@ export default function TextDecoder02Test() {
     it("testTextDecoderDecodeWithStream02_0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = "testTextDecoderDecodeWithStream02_0028";
       console.log(TAG + " start");
-      const d1 = new util.TextDecoder('utf-8');
-      const d2 = new util.TextDecoder('utf-8');
+      const d1 = util.TextDecoder.create('utf-8');
+      const d2 = util.TextDecoder.create('utf-8');
 
-      d1.decodeWithStream(new Uint8Array([228, 184]), { stream: true });
+      d1.decodeToString(new Uint8Array([228, 184]));
 
-      const resD2 = d2.decodeWithStream(new Uint8Array([65]), { stream: false });
+      const resD2 = d2.decodeToString(new Uint8Array([65]));
       expect(resD2).assertEqual('A');
 
-      const resD1 = d1.decodeWithStream(new Uint8Array([173]), { stream: false });
+      const resD1 = d1.decodeToString(new Uint8Array([173]));
       expect(resD1).assertEqual('中');
     });
 
@@ -658,7 +661,7 @@ export default function TextDecoder02Test() {
 
       encodings.forEach((enc: string) => {
         try {
-          const decoder = new util.TextDecoder(enc);
+          const decoder = util.TextDecoder.create(enc);
           expect(decoder instanceof util.TextDecoder).assertTrue();
           console.info(`${TAG} success for: ${enc}`);
         } catch (e) {
@@ -684,7 +687,7 @@ export default function TextDecoder02Test() {
       const cjkEncodings: string[] = ['gbk', 'gb2312', 'gb18030'];
 
       cjkEncodings.forEach((enc: string) => {
-        const decoder = new util.TextDecoder(enc);
+        const decoder = util.TextDecoder.create(enc);
         expect(decoder instanceof util.TextDecoder).assertTrue();
       });
       console.info(TAG + " end");
@@ -706,7 +709,7 @@ export default function TextDecoder02Test() {
 
       labels.forEach((label: string) => {
         try {
-          const decoder = new util.TextDecoder(label);
+          const decoder = util.TextDecoder.create(label);
           expect(decoder instanceof util.TextDecoder).assertTrue();
         } catch (e) {
           expect(false as boolean).assertTrue();
@@ -727,12 +730,12 @@ export default function TextDecoder02Test() {
       const TAG = "testTextDecoderConstruct02_0032";
       console.info(TAG + " start");
 
-      const d1 = new util.TextDecoder('utf-8', { fatal: true });
+      const d1 = util.TextDecoder.create('utf-8', { fatal: true });
       expect(!!d1.fatal).assertTrue();
-      const d2 = new util.TextDecoder('utf-8', { fatal: false });
+      const d2 = util.TextDecoder.create('utf-8', { fatal: false });
       expect(!!d2.fatal).assertFalse();
 
-      const d3 = new util.TextDecoder('utf-8');
+      const d3 = util.TextDecoder.create('utf-8');
       expect(!!d3.fatal).assertFalse();
       console.info(TAG + " end");
     });
@@ -749,12 +752,12 @@ export default function TextDecoder02Test() {
       const TAG = "testTextDecoderConstruct02_0033";
       console.info(TAG + " start");
 
-      const d1 = new util.TextDecoder('utf-8', { ignoreBOM: true });
+      const d1 = util.TextDecoder.create('utf-8', { ignoreBOM: true });
       expect(!!d1.ignoreBOM).assertTrue();
 
-      const d2 = new util.TextDecoder('utf-8', { ignoreBOM: false });
+      const d2 = util.TextDecoder.create('utf-8', { ignoreBOM: false });
       expect(!!d2.ignoreBOM).assertFalse();
-      const d3 = new util.TextDecoder('utf-8');
+      const d3 = util.TextDecoder.create('utf-8');
       expect(!!d3.ignoreBOM).assertFalse();
       console.info(TAG + " end");
     });
@@ -770,7 +773,7 @@ export default function TextDecoder02Test() {
     it("testTextDecoderConstruct02_0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = "testTextDecoderConstruct02_0034";
       console.info(TAG + " start");
-      const d = new util.TextDecoder('utf-8', { fatal: true, ignoreBOM: true });
+      const d = util.TextDecoder.create('utf-8', { fatal: true, ignoreBOM: true });
       expect(!!d.fatal).assertTrue();
       expect(!!d.ignoreBOM).assertTrue();
       expect(d.encoding).assertEqual('utf-8');
@@ -788,7 +791,7 @@ export default function TextDecoder02Test() {
     it("testTextDecoderConstruct02_0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = "testTextDecoderConstruct02_0035";
       console.info(TAG + " start");
-      const decoder = new util.TextDecoder('utf-8');
+      const decoder = util.TextDecoder.create('utf-8');
 
       expect(typeof decoder.encoding).assertEqual('string');
 
@@ -810,7 +813,7 @@ export default function TextDecoder02Test() {
       const TAG = "testTextDecoderConstruct02_0036";
       console.info(TAG + " start");
       const decoder = new util.TextDecoder();
-      const result = decoder.decode(new Uint8Array(0));
+      const result = decoder.decodeToString(new Uint8Array(0));
       expect(result).assertUndefined();
       console.info(TAG + " end");
     });
@@ -828,15 +831,15 @@ export default function TextDecoder02Test() {
       console.info(TAG + " start");
 
       try {
-        const d = new util.TextDecoder('utf-8', { fatal: true });
-        d.decode(new Uint8Array([0xFF]));
+        const d = util.TextDecoder.create('utf-8', { fatal: true });
+        d.decodeToString(new Uint8Array([0xFF]));
         expect(false as boolean).assertTrue();
       } catch (e) {
         expect(true as boolean).assertTrue();
       }
       try {
-        const d = new util.TextDecoder('ascii', { fatal: true });
-        d.decode(new Uint8Array([0x80]));
+        const d = util.TextDecoder.create('ascii', { fatal: true });
+        d.decodeToString(new Uint8Array([0x80]));
         expect(false as boolean).assertTrue();
       } catch (e) {
         expect(true as boolean).assertTrue();
@@ -856,12 +859,12 @@ export default function TextDecoder02Test() {
       const TAG = "testTextDecoderConstruct02_0038";
       console.info(TAG + " start");
 
-      const d1 = new util.TextDecoder('utf-16le', { fatal: false });
-      const res1 = d1.decode(new Uint8Array([0x00]));
+      const d1 = util.TextDecoder.create('utf-16le', { fatal: false });
+      const res1 = d1.decodeToString(new Uint8Array([0x00]));
       expect(res1.includes('\uFFFD')).assertTrue();
 
-      const d2 = new util.TextDecoder('gbk', { fatal: false });
-      const res2 = d2.decode(new Uint8Array([0xFF]));
+      const d2 = util.TextDecoder.create('gbk', { fatal: false });
+      const res2 = d2.decodeToString(new Uint8Array([0xFF]));
       expect(res2.includes('\uFFFD') || res2.length > 0).assertTrue();
 
       console.info(TAG + " end");
@@ -878,9 +881,9 @@ export default function TextDecoder02Test() {
     it("testTextDecoderConstruct02_0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = "testTextDecoderConstruct02_0039";
       console.info(TAG + " start");
-      const decoder = new util.TextDecoder('utf-8');
+      const decoder = util.TextDecoder.create('utf-8');
       const input = new Uint8Array([0xEF, 0xBB, 0xBF, 0x61]);
-      const result = decoder.decode(input);
+      const result = decoder.decodeToString(input);
 
       expect(result.charCodeAt(0)).assertEqual(0xFEFF);
       expect(result.length).assertEqual(2);
@@ -900,14 +903,14 @@ export default function TextDecoder02Test() {
       const TAG = "testTextDecoderConstruct02_0040";
       console.info(TAG + " start");
 
-      const d1 = new util.TextDecoder('utf-8');
-      expect(d1.decode(new Uint8Array([0xE4, 0xBD, 0xA0]))).assertEqual('你');
+      const d1 = util.TextDecoder.create('utf-8');
+      expect(d1.decodeToString(new Uint8Array([0xE4, 0xBD, 0xA0]))).assertEqual('你');
 
-      const d2 = new util.TextDecoder('utf-16le');
-      expect(d2.decode(new Uint8Array([0x60, 0x4F]))).assertEqual('你'); // 4F60
+      const d2 = util.TextDecoder.create('utf-16le');
+      expect(d2.decodeToString(new Uint8Array([0x60, 0x4F]))).assertEqual('你'); // 4F60
 
-      const d3 = new util.TextDecoder('gbk');
-      expect(d3.decode(new Uint8Array([0xC4, 0xE3]))).assertEqual('你');
+      const d3 = util.TextDecoder.create('gbk');
+      expect(d3.decodeToString(new Uint8Array([0xC4, 0xE3]))).assertEqual('你');
 
       console.info(TAG + " end");
     });
@@ -924,12 +927,12 @@ export default function TextDecoder02Test() {
       const TAG = "testTextDecoderConstruct02_0041";
       console.info(TAG + " start");
 
-      const decoder = new util.TextDecoder('utf-8');
-      const len = 10000;
+      const decoder = util.TextDecoder.create('utf-8');
+      const len: int = 10000;
       const longData = new Uint8Array(len);
       longData.fill(0x61);
 
-      const result = decoder.decode(longData);
+      const result = decoder.decodeToString(longData);
       expect(result.length).assertEqual(len);
       expect(result.startsWith('aaaa')).assertTrue();
       console.info(TAG + " end");
@@ -992,12 +995,12 @@ export default function TextDecoder02Test() {
       console.log(TAG + " start");
 
       // UTF-16BE
-      const decoderBE = new util.TextDecoder('utf-16be');
+      const decoderBE = util.TextDecoder.create('utf-16be');
       const bytesBE = new Uint8Array([0x00, 0x48, 0x00, 0x65, 0x00, 0x6C, 0x00, 0x6C, 0x00, 0x6F]);
       expect(decoderBE.decodeToString(bytesBE)).assertEqual("Hello");
 
       // UTF-16LE
-      const decoderLE = new util.TextDecoder('utf-16le');
+      const decoderLE = util.TextDecoder.create('utf-16le');
       const bytesLE = new Uint8Array([0x48, 0x00, 0x65, 0x00, 0x6C, 0x00, 0x6C, 0x00, 0x6F, 0x00]);
       expect(decoderLE.decodeToString(bytesLE)).assertEqual("Hello");
     });
@@ -1013,7 +1016,7 @@ export default function TextDecoder02Test() {
     it("testTextDecoderConstructDeprecated02_0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = "testTextDecoderConstructDeprecated02_0045";
       console.log(TAG + " start");
-      const decoder = new util.TextDecoder('gbk');
+      const decoder = util.TextDecoder.create('gbk');
       const bytes = new Uint8Array([0xC4, 0xE3, 0xBA, 0xC3]);
       expect(decoder.decodeToString(bytes)).assertEqual("你好");
     });
@@ -1111,7 +1114,7 @@ export default function TextDecoder02Test() {
 
       invalidEncodings.forEach(enc => {
         try {
-          let decoder = new util.TextDecoder(enc);
+          let decoder = util.TextDecoder.create(enc);
           console.info(`${TAG} Info: Encoding '${enc}' did not throw, actual encoding property is: '${decoder.encoding}'`);
 
           expect(decoder.encoding !== null && decoder.encoding !== undefined).assertTrue();
@@ -1147,7 +1150,7 @@ export default function TextDecoder02Test() {
 
       invalidTypes.forEach(val => {
         try {
-          let decoder = new util.TextDecoder(val);
+          let decoder = util.TextDecoder.create(val);
           console.info(`${TAG} Info: Constructor accepted invalid type: ${val}`);
           
           expect(decoder !== null && decoder !== undefined).assertTrue();
