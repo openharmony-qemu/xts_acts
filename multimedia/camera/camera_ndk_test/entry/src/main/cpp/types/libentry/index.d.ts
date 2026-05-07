@@ -660,3 +660,19 @@ export const oHCaptureSessionUnregisterExposureStateChangeCallback: () => number
 export const oHCaptureSessionRegisterExposureStateChangeCallbackWithoutSession: () => number;
  
 export const oHCaptureSessionUnregisterExposureStateChangeCallbackWithoutSession: () => number;
+
+export const sessionRegisterExposureStateChangeCallback: (index:number) => number;
+
+export const sessionUnregisterExposureStateChangeCallback: (index:number) => number;
+
+export const waitForExposureFinish: () => boolean;
+
+export const getColorTintRange: () => number;
+
+export const setColorTint: (index: number) => number;
+
+export const getColorTint: (index: number) => number;
+
+export const getZoomPointInfos: (index: number) => number;
+
+export const deleteZoomPointInfo: (index: number) => number;
