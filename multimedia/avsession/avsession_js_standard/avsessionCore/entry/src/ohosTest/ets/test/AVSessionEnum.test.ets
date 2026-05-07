@@ -1155,6 +1155,75 @@ export default function abilityTest() {
       done();
     })
 
+
+    /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_PLAYBACK_SPEED_ENUM_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_PLAYBACK_SPEED_ENUM_0100
+     * @tc.desc Test all PlaybackSpeed enum values are correct.
+     *         测试点：验证 PlaybackSpeed 枚举值正确性
+     *         测试输入：检查每个枚举值
+     *         测试输出：枚举值与预期一致
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_PLAYBACK_SPEED_ENUM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
+      console.info(`${TAG}: playbackSpeedEnumValues001 start`);
+      expect(avSession.PlaybackSpeed.SPEED_0_125_X).assertEqual(0.125);
+      expect(avSession.PlaybackSpeed.SPEED_0_25_X).assertEqual(0.25);
+      expect(avSession.PlaybackSpeed.SPEED_0_50_X).assertEqual(0.5);
+      expect(avSession.PlaybackSpeed.SPEED_0_75_X).assertEqual(0.75);
+      expect(avSession.PlaybackSpeed.SPEED_1_00_X).assertEqual(1.0);
+      expect(avSession.PlaybackSpeed.SPEED_1_25_X).assertEqual(1.25);
+      expect(avSession.PlaybackSpeed.SPEED_1_50_X).assertEqual(1.5);
+      expect(avSession.PlaybackSpeed.SPEED_1_75_X).assertEqual(1.75);
+      expect(avSession.PlaybackSpeed.SPEED_2_00_X).assertEqual(2.0);
+      expect(avSession.PlaybackSpeed.SPEED_3_00_X).assertEqual(3.0);
+      expect(avSession.PlaybackSpeed.SPEED_4_00_X).assertEqual(4.0);
+      console.info(`${TAG}: playbackSpeedEnumValues001 end`);
+      done();
+    });
+
+    /**
+     * @tc.name SUB_MULTIMEDIA_AVSESSION_PLAYBACK_SPEED_ENUM_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_PLAYBACK_SPEED_ENUM_0200
+     * @tc.desc Test setSupportedPlaySpeeds with each PlaybackSpeed enum value.
+     *         测试点：验证每个枚举值都能正确设置
+     *         测试输入：逐个使用枚举值设置
+     *         测试输出：每个设置都成功
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_PLAYBACK_SPEED_ENUM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: setSupportedPlaySpeedsWithAllEnumValues002 start`);
+      let allSpeeds: Array<avSession.PlaybackSpeed> = [
+        avSession.PlaybackSpeed.SPEED_0_125_X,
+        avSession.PlaybackSpeed.SPEED_0_25_X,
+        avSession.PlaybackSpeed.SPEED_0_50_X,
+        avSession.PlaybackSpeed.SPEED_0_75_X,
+        avSession.PlaybackSpeed.SPEED_1_00_X,
+        avSession.PlaybackSpeed.SPEED_1_25_X,
+        avSession.PlaybackSpeed.SPEED_1_50_X,
+        avSession.PlaybackSpeed.SPEED_1_75_X,
+        avSession.PlaybackSpeed.SPEED_2_00_X,
+        avSession.PlaybackSpeed.SPEED_3_00_X,
+        avSession.PlaybackSpeed.SPEED_4_00_X
+      ];
+      try {
+        await session?.setSupportedPlaySpeeds(allSpeeds);
+        let result: Array<avSession.PlaybackSpeed> = await controller?.getSupportedPlaySpeeds();
+        expect(result?.length).assertEqual(11);
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        console.info(`${TAG}: error: ${e.code}`);
+        expect().assertFail();
+      }
+      console.info(`${TAG}: setSupportedPlaySpeedsWithAllEnumValues002 end`);
+      done();
+    });
+
+
   })
 }
 

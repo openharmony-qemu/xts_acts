@@ -37,7 +37,7 @@ export default function abilityTest() {
     let TAG: string = "[AVSessionController]";
     let session: avSession.AVSession | ESObject;
     let controller: avSession.AVSessionController | ESObject;
-    let tag: string = 'VoiceCallXTS';
+    let tag: string = 'AVSessionControllerXTS';
     let keyItem: Key = {code:0x49, pressedTime:2, deviceId:0};
     let event:KeyEvent = {id:1, deviceId:0, actionTime:1, screenId:1, windowId:1, action:2, key:keyItem, unicodeChar:0, keys:[keyItem], ctrlKey:false, altKey:false, shiftKey:false, logoKey:false, fnKey:false, capsLock:false, numLock:false, scrollLock:false};
     let event1: string = 'aaa'
