@@ -66,7 +66,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0101
+     * @tc.number    SUB_HASHMAP_TEST_0200
      * @tc.name      testHashMap0002
      * @tc.desc      Verify the boundary values of Int8Array
      * @tc.size      MediumTest
