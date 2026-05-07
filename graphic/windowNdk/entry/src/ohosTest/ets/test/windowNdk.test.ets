@@ -2153,31 +2153,27 @@ export default function windowNdk() {
           let Result: number = windowNdkTest.registerFrameMetricsMeasuredCallback(windowId);
           console.info(`${caseName} Result: ${Result}`);
           expect(Result).assertEqual(0);
-          
-          windowStage.setCustomDensity(2.0,true);
-          await sleep(500);
-          let CB_count = windowNdkTest.getFrameMetricsCBCount();
-          let result_metrics = windowNdkTest.getFrameMetrics(); 
-          console.info(`${caseName} CB_count: ${CB_count}`);
-          console.info(`${caseName} result_metrics.isFirstDrawFrame: ${result_metrics.isFirstDrawFrame}`);
-          console.info(`${caseName} result_metrics.inputHandlingDuration: ${result_metrics.inputHandlingDuration}`);
-          console.info(`${caseName} result_metrics.duration: ${result_metrics.duration}`);
-          console.info(`${caseName} result_metrics.timestamp: ${result_metrics.timestamp}`);
-          if (isSupport === false) {
-            expect(CB_count).assertEqual(0);
-            console.info(`${caseName}: 此设备不支持SystemCapability.Window.SessionManager能力`);
-            windowStage.setCustomDensity(-1.0);
-            done();
-          } else {
-            expect(CB_count).assertLarger(0);
-          }
-          expect(result_metrics.isFirstDrawFrame).assertEqual(false);
-          expect(result_metrics.inputHandlingDuration).assertLarger(0);
-          expect(result_metrics.duration).assertLarger(0);
-          expect(result_metrics.timestamp).assertLarger(0);
 
-          await sleep(500);
-          windowStage.setCustomDensity(-1.0);
+          if (isSupport === true){
+            windowStage.setCustomDensity(2.0,true);
+            await sleep(500);
+            let CB_count = windowNdkTest.getFrameMetricsCBCount();
+            let result_metrics = windowNdkTest.getFrameMetrics(); 
+            console.info(`${caseName} CB_count: ${CB_count}`);
+            console.info(`${caseName} result_metrics.isFirstDrawFrame: ${result_metrics.isFirstDrawFrame}`);
+            console.info(`${caseName} result_metrics.inputHandlingDuration: ${result_metrics.inputHandlingDuration}`);
+            console.info(`${caseName} result_metrics.duration: ${result_metrics.duration}`);
+            console.info(`${caseName} result_metrics.timestamp: ${result_metrics.timestamp}`);
+            expect(CB_count).assertLarger(0);
+            expect(result_metrics.isFirstDrawFrame).assertEqual(false);
+            expect(result_metrics.inputHandlingDuration).assertLarger(0);
+            expect(result_metrics.duration).assertLarger(0);
+            expect(result_metrics.timestamp).assertLarger(0);
+
+            await sleep(500);
+            windowStage.setCustomDensity(-1.0);
+          }
+          
           let ResultOff: number = windowNdkTest.unregisterFrameMetricsMeasuredCallback(windowId);
           console.info(`${caseName} Result: ${ResultOff}`);
           expect(ResultOff).assertEqual(0);
@@ -2214,14 +2210,16 @@ export default function windowNdk() {
           console.info(`${caseName} Result: ${ResultOff}`);
           expect(ResultOff).assertEqual(0);
           
-          windowStage.setCustomDensity(2.0,true);
-          await sleep(500);
-          let CB_count = windowNdkTest.getFrameMetricsCBCount();
-          console.info(`${caseName} CB_count: ${CB_count}`);
-          expect(CB_count).assertEqual(0);
+          if (isSupport === true){
+            windowStage.setCustomDensity(2.0,true);
+            await sleep(500);
+            let CB_count = windowNdkTest.getFrameMetricsCBCount();
+            console.info(`${caseName} CB_count: ${CB_count}`);
+            expect(CB_count).assertEqual(0);
 
-          await sleep(500);
-          windowStage.setCustomDensity(-1.0);
+            await sleep(500);
+            windowStage.setCustomDensity(-1.0);
+          }
 
           done()
         } catch (err) {

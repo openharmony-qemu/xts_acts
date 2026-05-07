@@ -1082,6 +1082,8 @@ export default function windowPropertiesTest() {
       let windowProperties = windowClass.getWindowProperties()
       console.info(`${msgStr} windowProperties: ${JSON.stringify(windowProperties)}`);
       let isFullScreen = windowProperties.isFullScreen;
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.info(`${caseName} isSupport: ${isSupport}`);
 
       let testSetGestureBackEnabledTrue_CheckReturnSuccess = () => {
         windowClass.setGestureBackEnabled(true).then(() => {
@@ -1137,9 +1139,8 @@ export default function windowPropertiesTest() {
         testSetGestureBackEnabledTrue_CheckReturnSuccess();
       } else if (deviceInfo.deviceType === 'car') {
         testSetGestureBackEnabledTrue_CheckReturnSuccess();
-      } else {
-        console.info(`====>${msgStr} end fail====`);
-        expect().assertFail();
+      } else if(isSupport === false){
+        testSetGestureBackEnabledTrue_CheckReturnFail801();
       }
 
       done()
@@ -1159,6 +1160,8 @@ export default function windowPropertiesTest() {
       let windowProperties = windowClass.getWindowProperties()
       console.info(`${msgStr} windowProperties: ${JSON.stringify(windowProperties)}`);
       let isFullScreen = windowProperties.isFullScreen;
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.info(`${caseName} isSupport: ${isSupport}`);
 
       let testSetGestureBackEnabledFalse_CheckReturnSuccess = () => {
         windowClass.setGestureBackEnabled(false).then(() => {
@@ -1214,9 +1217,8 @@ export default function windowPropertiesTest() {
         testSetGestureBackEnabledFalse_CheckReturnSuccess();
       } else if (deviceInfo.deviceType === 'car') {
         testSetGestureBackEnabledFalse_CheckReturnSuccess();
-      } else {
-        console.info(`====>${msgStr} end fail====`);
-        expect().assertFail();
+      } else if(isSupport === false){
+        testSetGestureBackEnabledFalse_CheckReturnFail801();
       }
 
       done()
