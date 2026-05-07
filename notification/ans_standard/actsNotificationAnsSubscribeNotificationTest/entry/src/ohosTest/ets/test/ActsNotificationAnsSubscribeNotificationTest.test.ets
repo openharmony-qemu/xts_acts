@@ -23,15 +23,15 @@ export default function ActsNotificationAnsSubscribeNotificationTest() {
   describe('ActsNotificationAnsSubscribeNotificationTest', () => {
 
     /**
-     * @tc.name   SUB_Notification_Ans_subscribeNotification_0007
-     * @tc.number SUB_Notification_Ans_subscribeNotification_0007
+     * @tc.name   SUB_Notification_Ans_subscribeNotification_0100
+     * @tc.number SUB_Notification_Ans_subscribeNotification_0100
      * @tc.desc   The third-party application calls the subscribeNotification interface and reports error 202.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Notification_Ans_subscribeNotification_0007', Level.LEVEL2, async (done: Function) => {
-      let testNum: string = 'SUB_Notification_Ans_subscribeNotification_0007'
+    it('SUB_Notification_Ans_subscribeNotification_0100', Level.LEVEL2, async (done: Function) => {
+      let testNum: string = 'SUB_Notification_Ans_subscribeNotification_0100'
       let onConnect = (data: notificationSubscribe.SubscribeCallbackData) => {
         console.info(testNum + `Consume callback: ${JSON.stringify(data)}`);
       }
@@ -61,15 +61,15 @@ export default function ActsNotificationAnsSubscribeNotificationTest() {
     })
 
     /**
-     * @tc.name   SUB_Notification_Ans_subscribeNotification_0061
-     * @tc.number SUB_Notification_Ans_subscribeNotification_0061
+     * @tc.name   SUB_Notification_Ans_subscribeNotification_0200
+     * @tc.number SUB_Notification_Ans_subscribeNotification_0200
      * @tc.desc   The third-party application calls the subscribeNotification interface with the info parameter, and an error code 202 is reported.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Notification_Ans_subscribeNotification_0061', Level.LEVEL2, async (done: Function) => {
-      let testNum: string = 'SUB_Notification_Ans_subscribeNotification_0061'
+    it('SUB_Notification_Ans_subscribeNotification_0200', Level.LEVEL2, async (done: Function) => {
+      let testNum: string = 'SUB_Notification_Ans_subscribeNotification_0200'
       let onConnect = (data: notificationSubscribe.SubscribeCallbackData) => {
         console.info(testNum + `Consume callback: ${JSON.stringify(data)}`);
       }
