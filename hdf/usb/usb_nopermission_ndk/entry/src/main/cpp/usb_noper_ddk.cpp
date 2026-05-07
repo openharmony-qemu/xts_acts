@@ -1095,6 +1095,42 @@ static napi_value UsbSerialFlushOutput(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value UsbControlTransfer(napi_env env, napi_callback_info info)
+{
+    size_t argc = PARAM_1;
+    napi_value args[PARAM_1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int64_t deviceId64;
+    napi_get_value_int64(env, args[PARAM_0], &deviceId64);
+    uint64_t deviceId = JsDeviceIdToNative(static_cast<uint64_t>(deviceId64));
+    int32_t usbInitReturnValue = OH_Usb_Init();
+    NAPI_ASSERT(env, usbInitReturnValue == USB_DDK_NO_PERM, "OH_Usb_Init failed, no permission");
+    struct UsbControlRequestSetup setup = {0};
+    uint8_t data[18] = {0};
+    setup.bmRequestType = 0x80;
+    setup.bRequest = 0x06;
+    setup.wValue = 0x0100;
+    setup.wIndex = 0x0000;
+    setup.wLength = 18;
+    int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, UINT32_MAX);
+    napi_value result = nullptr;
+    napi_create_int32(env, returnValue, &result);
+    return result;
+}
+static napi_value UsbGetNonRootHubs(napi_env env, napi_callback_info info)
+{
+    int32_t usbInitReturnValue = OH_Usb_Init();
+    NAPI_ASSERT(env, usbInitReturnValue == USB_DDK_NO_PERM, "OH_Usb_Init failed, no permission");
+    struct Usb_NonRootHubArray nonRootHubs = {0};
+    nonRootHubs.hubs = new uint64_t[MAX_USB_DEVICE_NUM];
+    int32_t returnValue = OH_Usb_GetNonRootHubs(&nonRootHubs);
+    OH_Usb_Release();
+    delete[] nonRootHubs.hubs;
+    napi_value result = nullptr;
+    napi_create_int32(env, returnValue, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -1166,6 +1202,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"usbSerialFlush", nullptr, UsbSerialFlush, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"usbSerialFlushInput", nullptr, UsbSerialFlushInput, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"usbSerialFlushOutput", nullptr, UsbSerialFlushOutput, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbControlTransfer", nullptr, UsbControlTransfer, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"usbGetNonRootHubs", nullptr, UsbGetNonRootHubs, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
 
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
