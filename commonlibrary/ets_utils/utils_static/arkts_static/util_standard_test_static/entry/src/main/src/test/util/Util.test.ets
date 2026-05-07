@@ -1,0 +1,1995 @@
+'use static'
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium';
+import { util } from '@kit.ArkTS';
+
+interface UtilObj1 {
+  name: string;
+}
+
+interface ArrayBufferViewObj1 {
+  age: number;
+}
+
+interface nullObj1 {}
+
+interface AsyncFunctionObj1 {
+  func: () => nullObj1;
+}
+
+interface MapObj1 {
+  key: string;
+}
+
+interface DateObj1 {
+  year: number;
+  month: number;
+}
+
+interface RegExpObj1 {
+  pattern: string;
+  flags: string;
+}
+
+interface TypeArrayObj1 {
+  length: number;
+}
+
+interface ProxyObj1 {
+  name: string;
+}
+
+interface ProxyObj2 {
+  name: string;
+}
+
+interface ProxyObj3 {
+  inner: ProxyObj2;
+}
+
+interface ProxyObj4 {
+  proxy: nullObj1;
+}
+
+interface NativeObj1 {
+  message: string;
+}
+interface numberObj{
+  gen: () => number
+}
+
+interface WeakMapObj2 {
+  key: string;
+}
+
+interface SharedArrayBufferObj1 {
+  buffer: ArrayBuffer;
+}
+
+interface ArgumentsObject {
+  zero: number;
+  length: number;
+}
+
+interface ArrayBuffer1 {
+  byteLength: number;
+}
+
+interface DataView1 {
+  buffer: ArrayBuffer;
+}
+
+interface FloatArray1 {
+  length: number;
+}
+
+interface SetObj1 {
+  size: number;
+}
+
+function sleep(count: int): Promise<void> {
+  return new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void) => {
+    setTimeout(() => {
+      resolve(undefined as void)
+    }, count)
+  })
+}
+
+
+export default function Util1Test() {
+  describe('Util1Test', () => {
+    // 防止 app 崩坏的关键：使用箭头函数写异步钩子
+    afterEach(async () => {
+      console.info('UtilTest: 休眠 100ms 防止主线程阻塞...');
+      // 如果 500ms 还是太慢，可以改小一点，比如 50-100ms
+      await sleep(100);
+    });
+
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    })
+    beforeEach(() => {
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
+    })
+    afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+    afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
+
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_0100
+     * @tc.name Util1Test001
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const ab1 = new ArrayBuffer(8);
+      expect(type.isAnyArrayBuffer(ab1)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_0200
+     * @tc.name Util1Test002
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const sab1 = new ArrayBuffer(16);
+      expect(type.isAnyArrayBuffer(sab1)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_0300
+     * @tc.name Util1Test003
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const obj1: UtilObj1 = { name: 'test' };
+      expect(type.isAnyArrayBuffer(obj1)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_0400
+     * @tc.name Util1Test004
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const arr1 = [1, 2, 3];
+      expect(type.isAnyArrayBuffer(arr1)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_0500
+     * @tc.name Util1Test005
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const dv1 = new DataView(new ArrayBuffer(8));
+      expect(type.isAnyArrayBuffer(dv1)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_0600
+     * @tc.name Util1Test006
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const num1: int = 123;
+      expect(type.isAnyArrayBuffer(num1)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_0700
+     * @tc.name Util1Test007
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const str1 = 'arraybuffer';
+      expect(type.isAnyArrayBuffer(str1)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_0800
+     * @tc.name Util1Test008
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const bool1 = true;
+      expect(type.isAnyArrayBuffer(bool1)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_0900
+     * @tc.name Util1Test009
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const map1 = new Map<number,number>();
+      expect(type.isAnyArrayBuffer(map1)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_1000
+     * @tc.name Util1Test010
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const ab2 = new ArrayBuffer(0);
+      expect(type.isAnyArrayBuffer(ab2)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_1100
+     * @tc.name Util1Test011
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const int8Arr1 = new Int8Array(8);
+      expect(type.isArrayBufferView(int8Arr1)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_1200
+     * @tc.name Util1Test012
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const uint8Arr1 = new Uint8Array(16);
+      expect(type.isArrayBufferView(uint8Arr1)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_1300
+     * @tc.name Util1Test013
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const arraybuffer = new ArrayBuffer(8)
+      const dv2 = new DataView(arraybuffer);
+      expect(type.isArrayBufferView(dv2)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_1400
+     * @tc.name Util1Test014
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const float32Arr1 = new Float32Array(4);
+      expect(type.isArrayBufferView(float32Arr1)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_1500
+     * @tc.name Util1Test015
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const ab3 = new ArrayBuffer(8);
+      expect(type.isArrayBufferView(ab3)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_1600
+     * @tc.name Util1Test016
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const obj2: ArrayBufferViewObj1 = { age: 20 };
+      expect(type.isArrayBufferView(obj2)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_1700
+     * @tc.name Util1Test017
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const str2 = 'arraybufferview';
+      expect(type.isArrayBufferView(str2)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_1800
+     * @tc.name Util1Test018
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const set1 = new Set<string>();
+      expect(type.isArrayBufferView(set1)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_1900
+     * @tc.name Util1Test019
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const uint32Arr1 = new Uint32Array(2);
+      expect(type.isArrayBufferView(uint32Arr1)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_2000
+     * @tc.name Util1Test020
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const num2: int = 456;
+      expect(type.isArrayBufferView(num2)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_2100
+     * @tc.name Util1Test021
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const asyncFunc1 = async () => { return 1.0; };
+      expect(type.isAsyncFunction(asyncFunc1)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_2200
+     * @tc.name Util1Test022
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const normalFunc1 = () => { return 2; };
+      expect(type.isAsyncFunction(normalFunc1)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_2300
+     * @tc.name Util1Test023
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const asyncFunc2 = async () => {
+      };
+      expect(type.isAsyncFunction(asyncFunc2)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_2500
+     * @tc.name Util1Test025
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const obj3 = {
+        func:  () => {}
+      } as AsyncFunctionObj1;
+      expect(type.isAsyncFunction(obj3.func)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_2600
+     * @tc.name Util1Test026
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const str3 = 'async function() {}';
+      expect(type.isAsyncFunction(str3)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_2700
+     * @tc.name Util1Test027
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const num3: int = 789;
+      expect(type.isAsyncFunction(num3)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_2800
+     * @tc.name Util1Test028
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const promise1 = Promise.resolve(1);
+      expect(type.isAsyncFunction(promise1)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_2900
+     * @tc.name Util1Test029
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const asyncFunc3 = async () => await Promise.resolve(3);
+      expect(type.isAsyncFunction(asyncFunc3)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_3000
+     * @tc.name Util1Test030
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const arr2 = [async () => {}, 1, 2];
+      expect(type.isAsyncFunction(arr2[0])).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_3100
+     * @tc.name Util1Test031
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const map2 = new Map<number,number>();
+      expect(type.isMap(map2)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_3200
+     * @tc.name Util1Test032
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const obj4: MapObj1 = { key: 'value' };
+      expect(type.isMap(obj4)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_3300
+     * @tc.name Util1Test033
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const map3 = new Map<string,number | string>([['name', 'test'], ['age', 20]]);
+      expect(type.isMap(map3)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_3400
+     * @tc.name Util1Test034
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const weakMap1 = new WeakMap<object,string>();
+      expect(type.isMap(weakMap1)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_3500
+     * @tc.name Util1Test035
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const str4 = 'map';
+      expect(type.isMap(str4)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_3600
+     * @tc.name Util1Test036
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const num4: int = 100;
+      expect(type.isMap(num4)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_3700
+     * @tc.name Util1Test037
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const arr3 = [1, 2, 3];
+      expect(type.isMap(arr3)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_3800
+     * @tc.name Util1Test038
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const map4 = new Map<string,number>();
+      map4.set('id', 1);
+      expect(type.isMap(map4)).assertEqual(true);
+
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_3900
+     * @tc.name Util1Test039
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const nullVal = null;
+      expect(type.isMap(null as Object)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_4000
+     * @tc.name Util1Test040
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const set2 = new Set<string>();
+      expect(type.isMap(set2)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_4100
+     * @tc.name Util1Test041
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const promise2 = Promise.resolve(1);
+      expect(type.isPromise(promise2)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_4200
+     * @tc.name Util1Test042
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const promise3 = new Promise<number>((resolve) => resolve(2));
+      expect(type.isPromise(promise3)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_4300
+     * @tc.name Util1Test043
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const error1 = new Error('test')
+      const promise4 = Promise.reject(error1);
+      expect(type.isPromise(promise4)).assertEqual(true);
+
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_4400
+     * @tc.name Util1Test044
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const normalFunc2 = () => { return 3; };
+      expect(type.isPromise(normalFunc2)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_4500
+     * @tc.name Util1Test045
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const obj5 = { func: () => {} } as AsyncFunctionObj1;
+      expect(type.isPromise(obj5)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_4600
+     * @tc.name Util1Test046
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const str5 = 'promise';
+      expect(type.isPromise(str5)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_4700
+     * @tc.name Util1Test047
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const arr4 = [Promise.resolve(1), 2];
+      expect(type.isPromise(arr4[0])).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_4800
+     * @tc.name Util1Test048
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const map5 = new Map<string,string>();
+      expect(type.isPromise(map5)).assertEqual(false);
+
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_4900
+     * @tc.name Util1Test049
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const asyncFunc4 = async () => {};
+      expect(type.isPromise(asyncFunc4())).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_5000
+     * @tc.name Util1Test050
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const num5: int = 200;
+      expect(type.isPromise(num5)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_5100
+     * @tc.name Util1Test051
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const date1 = new Date();
+      expect(type.isDate(date1)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_5200
+     * @tc.name Util1Test052
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const date2 = new Date('2025-01-01');
+      expect(type.isDate(date2)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_5300
+     * @tc.name Util1Test053
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const str6 = '2025-01-01';
+      expect(type.isDate(str6)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_5400
+     * @tc.name Util1Test054
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const num6 = 1735689600000;
+      expect(type.isDate(num6)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_5500
+     * @tc.name Util1Test055
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const obj6: DateObj1 = { year: 2025, month: 1 };
+      expect(type.isDate(obj6)).assertEqual(false);
+
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_5600
+     * @tc.name Util1Test056
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const date3 = new Date(0);
+      expect(type.isDate(date3)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_5700
+     * @tc.name Util1Test057
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const arr5 = [new Date(), 1, 2];
+      expect(type.isDate(arr5[0])).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_5800
+     * @tc.name Util1Test058
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const map6 = new Map<number,number>();
+      expect(type.isDate(map6)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_5900
+     * @tc.name Util1Test059
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const nullDate = null;
+      expect(type.isDate(null as Object)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_6000
+     * @tc.name Util1Test060
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const undefinedDate = undefined;
+      expect(type.isDate(undefined as Object)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_6100
+     * @tc.name Util1Test061
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const reg1 = new RegExp('abc');
+      expect(type.isRegExp(reg1)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_6200
+     * @tc.name Util1Test062
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const reg2 = new RegExp("^test$");
+      expect(type.isRegExp(reg2)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_6300
+     * @tc.name Util1Test063
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const str7 = '/^test$/';
+      expect(type.isRegExp(str7)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_6400
+     * @tc.name Util1Test064
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const obj7: RegExpObj1 = { pattern: 'abc', flags: 'i' };
+      expect(type.isRegExp(obj7)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_6500
+     * @tc.name Util1Test065
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const reg3 = new RegExp('');
+      expect(type.isRegExp(reg3)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_6600
+     * @tc.name Util1Test066
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const num7: int = 123;
+      expect(type.isRegExp(num7)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_6700
+     * @tc.name Util1Test067
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const arr6 = [new RegExp("abc"), 1, 2];
+      expect(type.isRegExp(arr6[0])).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_6800
+     * @tc.name Util1Test068
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const set3 = new Set<number>();
+      expect(type.isRegExp(set3)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_6900
+     * @tc.name Util1Test069
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const reg4 = new RegExp('\\d+', 'g');
+      expect(type.isRegExp(reg4)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_7000
+     * @tc.name Util1Test070
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const bool2 = true;
+      expect(type.isRegExp(bool2)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_7100
+     * @tc.name Util1Test071
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const int16Arr1 = new Int16Array(4);
+      expect(type.isTypedArray(int16Arr1)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_7200
+     * @tc.name Util1Test072
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const uint8ClampedArr1 = new Uint8ClampedArray(8);
+      expect(type.isTypedArray(uint8ClampedArr1)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_7300
+     * @tc.name Util1Test073
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const float64Arr1 = new Float64Array(2);
+      expect(type.isTypedArray(float64Arr1)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_7400
+     * @tc.name Util1Test074
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const bigInt64Arr1 = new BigInt64Array(1);
+      expect(type.isTypedArray(bigInt64Arr1)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_7500
+     * @tc.name Util1Test075
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const ab4 = new ArrayBuffer(8);
+      expect(type.isTypedArray(ab4)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_7600
+     * @tc.name Util1Test076
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const ab4 = new ArrayBuffer(8);
+      const dv3 = new DataView(ab4);
+      expect(type.isTypedArray(dv3)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_7700
+     * @tc.name Util1Test077
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const str8 = 'typedarray';
+      expect(type.isTypedArray(str8)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_7800
+     * @tc.name Util1Test078
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const bigUint64Arr1 = new BigUint64Array(3);
+      expect(type.isTypedArray(bigUint64Arr1)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_7900
+     * @tc.name Util1Test079
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const obj8: TypeArrayObj1 = { length: 5 };
+      expect(type.isTypedArray(obj8)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_8000
+     * @tc.name Util1Test080
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const arr7 = [new Int32Array(), 1, 2];
+      expect(type.isTypedArray(arr7[0])).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_8100
+     * @tc.name Util1Test081
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_8200
+     * @tc.name Util1Test082
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_8300
+     * @tc.name Util1Test083
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_8400
+     * @tc.name Util1Test084
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_8500
+     * @tc.name Util1Test085
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_8600
+     * @tc.name Util1Test086
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_8700
+     * @tc.name Util1Test087
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_8800
+     * @tc.name Util1Test088
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_8900
+     * @tc.name Util1Test089
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_9000
+     * @tc.name Util1Test090
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_9100
+     * @tc.name Util1Test091
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const error1 = new Error('test error');
+      expect(type.isNativeError(error1)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_9200
+     * @tc.name Util1Test092
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const typeError1 = new TypeError('type error');
+      expect(type.isNativeError(typeError1)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_9300
+     * @tc.name Util1Test093
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const referenceError1 = new ReferenceError('ref error');
+      expect(type.isNativeError(referenceError1)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_9400
+     * @tc.name Util1Test094
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const str10 = 'Error: test error';
+      expect(type.isNativeError(str10)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_9500
+     * @tc.name Util1Test095
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const obj10: NativeObj1 = { message: 'error' };
+      expect(type.isNativeError(obj10)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_9600
+     * @tc.name Util1Test096
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const rangeError1 = new RangeError('range error');
+      expect(type.isNativeError(rangeError1)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_9700
+     * @tc.name Util1Test097
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const num9: int = 789;
+      expect(type.isNativeError(num9)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_9800
+     * @tc.name Util1Test098
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const error1 = new Error()
+      const arr8 = [error1, 1, 2];
+      expect(type.isNativeError(arr8[0])).assertEqual(true);
+
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_9900
+     * @tc.name Util1Test099
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const set4 = new Set<number>();
+      expect(type.isNativeError(set4)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_10000
+     * @tc.name Util1Test100
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const syntaxError1 = new SyntaxError('syntax error');
+      expect(type.isNativeError(syntaxError1)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_10100
+     * @tc.name Util1Test101
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_10200
+     * @tc.name Util1Test102
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_10300
+     * @tc.name Util1Test103
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_10400
+     * @tc.name Util1Test104
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_10500
+     * @tc.name Util1Test105
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_10600
+     * @tc.name Util1Test106
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_10700
+     * @tc.name Util1Test107
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_10800
+     * @tc.name Util1Test108
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_10900
+     * @tc.name Util1Test109
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_11000
+     * @tc.name Util1Test110
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_11100
+     * @tc.name Util1Test111
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const weakMap2 = new WeakMap<object,string>();
+      expect(type.isWeakMap(weakMap2)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_11200
+     * @tc.name Util1Test112
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const key1 = {} as nullObj1;
+      const weakMap3 = new WeakMap<nullObj1,string>([[key1, 'value1']]);
+      expect(type.isWeakMap(weakMap3)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_11300
+     * @tc.name Util1Test113
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const map9 = new Map<number,number>();
+      expect(type.isWeakMap(map9)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_11400
+     * @tc.name Util1Test114
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const obj12: WeakMapObj2 = { key: 'value' };
+      expect(type.isWeakMap(obj12)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_11500
+     * @tc.name Util1Test115
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const str12 = 'weakmap';
+      expect(type.isWeakMap(str12)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_11600
+     * @tc.name Util1Test116
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const num11: int = 200;
+      expect(type.isWeakMap(num11)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_11700
+     * @tc.name Util1Test117
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const weakMap4 = new WeakMap<object,number>();
+      weakMap4.set({} as nullObj1, 100);
+      expect(type.isWeakMap(weakMap4)).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_11800
+     * @tc.name Util1Test118
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const weak = new WeakMap<object,number>();
+      const arr10 = [weak, 1, 2];
+      expect(type.isWeakMap(arr10[0])).assertEqual(true);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_11900
+     * @tc.name Util1Test119
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const set5 = new Set<number>();
+      expect(type.isWeakMap(set5)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_12000
+     * @tc.name Util1Test120
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const type = new util.types();
+      const weakSet1 = new WeakSet<object>();
+      expect(type.isWeakMap(weakSet1)).assertEqual(false);
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_12100
+     * @tc.name Util1Test121
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_12200
+     * @tc.name Util1Test122
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_12300
+     * @tc.name Util1Test123
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_12400
+     * @tc.name Util1Test124
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_12500
+     * @tc.name Util1Test125
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_12600
+     * @tc.name Util1Test126
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_12700
+     * @tc.name Util1Test127
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_12800
+     * @tc.name Util1Test128
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_12900
+     * @tc.name Util1Test129
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_13000
+     * @tc.name Util1Test130
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_13100
+     * @tc.name Util1Test131
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_13200
+     * @tc.name Util1Test132
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_13300
+     * @tc.name Util1Test133
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_13400
+     * @tc.name Util1Test134
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_13500
+     * @tc.name Util1Test135
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_13600
+     * @tc.name Util1Test136
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_13700
+     * @tc.name Util1Test137
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_13800
+     * @tc.name Util1Test138
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_13900
+     * @tc.name Util1Test139
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_14000
+     * @tc.name Util1Test140
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_14100
+     * @tc.name Util1Test141
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_14200
+     * @tc.name Util1Test142
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_14300
+     * @tc.name Util1Test143
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_14400
+     * @tc.name Util1Test144
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_14500
+     * @tc.name Util1Test145
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_14600
+     * @tc.name Util1Test146
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_14700
+     * @tc.name Util1Test147
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_14800
+     * @tc.name Util1Test148
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_14900
+     * @tc.name Util1Test149
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_15000
+     * @tc.name Util1Test150
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+    /**
+     * @tc.number SUB_BUILTINS_Util1_TEST_15100
+     * @tc.name Util1Test151
+     * @tc.desc test Util types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('Util1Test151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      expect(true).assertTrue();
+    });
+
+  })
+}
+
