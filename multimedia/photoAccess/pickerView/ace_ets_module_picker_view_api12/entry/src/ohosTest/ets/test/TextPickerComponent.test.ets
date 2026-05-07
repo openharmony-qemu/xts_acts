@@ -1694,7 +1694,12 @@ export default function TextPicker() {
         try {
           let createPromise = phAccessHelper.createAssetWithShortTermPermission(item);
           console.log(`testPicker25 createPromise`)
-          await driveFn();
+          
+          await new Promise<void>(resolve => setTimeout(resolve, 500));
+          
+          driveFn().catch((err: Error) => {
+            console.info("testPicker25 driveFn info for case " + i + ": " + err.message);
+          });
 
           let result = await createPromise;
           console.log(`testPicker25 result = ${JSON.stringify(result)}`)
