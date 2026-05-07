@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
 import { LightWeightMap } from '@kit.ArkTS';
 
@@ -48,15 +48,15 @@ export default function localUnitTest(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0001
-     * @tc.name      testLightWeightMapTest08Chapter0001
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0100
+     * @tc.name      testLightWeightMapTest08Chapter0100
      * @tc.desc      Use for..of (Symbol.iterator) to iterate and verify order and key/value pairs
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLightWeightMapTest08Chapter0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testLightWeightMapTest08Chapter0001';
+    it('testLightWeightMapTest08Chapter0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const TAG = 'testLightWeightMapTest08Chapter0100';
       console.log(TAG + 'start');
 
       let lightWeightMap = new LightWeightMap<string, number>();
@@ -91,15 +91,15 @@ export default function localUnitTest(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0002
-     * @tc.name      testLightWeightMapTest08Chapter0002
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0200
+     * @tc.name      testLightWeightMapTest08Chapter0200
      * @tc.desc      Use explicit iterator = map[Symbol.iterator]() to iterate entries and verify order
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLightWeightMapTest08Chapter0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testLightWeightMapTest08Chapter0002';
+    it('testLightWeightMapTest08Chapter0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const TAG = 'testLightWeightMapTest08Chapter0200';
       console.log(TAG + 'start');
 
       let lightWeightMap = new LightWeightMap<string, number>();
@@ -136,15 +136,15 @@ export default function localUnitTest(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0003
-     * @tc.name      testLightWeightMapTest08Chapter0003
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0300
+     * @tc.name      testLightWeightMapTest08Chapter0300
      * @tc.desc      Call Symbol.iterator on empty map, iterator should yield no elements
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLightWeightMapTest08Chapter0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testLightWeightMapTest08Chapter0003';
+    it('testLightWeightMapTest08Chapter0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const TAG = 'testLightWeightMapTest08Chapter0300';
       console.log(TAG + 'start');
 
       let lightWeightMap = new LightWeightMap<string, number>();
@@ -163,15 +163,15 @@ export default function localUnitTest(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0004
-     * @tc.name      testLightWeightMapTest08Chapter0004
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0400
+     * @tc.name      testLightWeightMapTest08Chapter0400
      * @tc.desc      Iterate class instances and modify their fields inside loop, verify changes take effect
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLightWeightMapTest08Chapter0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testLightWeightMapTest08Chapter0004';
+    it('testLightWeightMapTest08Chapter0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const TAG = 'testLightWeightMapTest08Chapter0400';
       console.log(TAG + 'start');
 
       let lightWeightMap = new LightWeightMap<number, Person>();
@@ -192,15 +192,15 @@ export default function localUnitTest(): void {
 
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0005
-     * @tc.name      testLightWeightMapTest08Chapter0005
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0500
+     * @tc.name      testLightWeightMapTest08Chapter0500
      * @tc.desc      Insert new key during for..of iteration, iterator should not crash and visits initial items
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLightWeightMapTest08Chapter0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testLightWeightMapTest08Chapter0005';
+    it('testLightWeightMapTest08Chapter0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const TAG = 'testLightWeightMapTest08Chapter0500';
       console.log(TAG + 'start');
 
       let lightWeightMap = new LightWeightMap<string, number>();
@@ -221,15 +221,15 @@ export default function localUnitTest(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0006
-     * @tc.name      testLightWeightMapTest08Chapter0006
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0600
+     * @tc.name      testLightWeightMapTest08Chapter0600
      * @tc.desc      Iterate with Symbol.iterator when value is Uint8Array and verify contents
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLightWeightMapTest08Chapter0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testLightWeightMapTest08Chapter0006';
+    it('testLightWeightMapTest08Chapter0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const TAG = 'testLightWeightMapTest08Chapter0600';
       console.log(TAG + 'start');
 
       let lightWeightMap = new LightWeightMap<string, Uint8Array>();
@@ -254,15 +254,15 @@ export default function localUnitTest(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0007
-     * @tc.name      testLightWeightMapTest08Chapter0007
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0700
+     * @tc.name      testLightWeightMapTest08Chapter0700
      * @tc.desc      Iterate with Symbol.iterator when value is simple object and verify fields
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLightWeightMapTest08Chapter0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testLightWeightMapTest08Chapter0007';
+    it('testLightWeightMapTest08Chapter0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const TAG = 'testLightWeightMapTest08Chapter0700';
       console.log(TAG + 'start');
 
       let lightWeightMap = new LightWeightMap<string, SimpleObj05>();
@@ -288,15 +288,15 @@ export default function localUnitTest(): void {
 
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0008
-     * @tc.name      testLightWeightMapTest08Chapter0008
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0800
+     * @tc.name      testLightWeightMapTest08Chapter0800
      * @tc.desc      Use Uint8Array as key and verify iterated key reference equals original key
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLightWeightMapTest08Chapter0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testLightWeightMapTest08Chapter0008';
+    it('testLightWeightMapTest08Chapter0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const TAG = 'testLightWeightMapTest08Chapter0800';
       console.log(TAG + 'start');
 
       let keyArr = new Uint8Array([1, 2, 3]);
@@ -321,15 +321,15 @@ export default function localUnitTest(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0009
-     * @tc.name      testLightWeightMapTest08Chapter0009
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0900
+     * @tc.name      testLightWeightMapTest08Chapter0900
      * @tc.desc      Iterate many elements with Symbol.iterator and check that sum of values is correct
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLightWeightMapTest08Chapter0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testLightWeightMapTest08Chapter0009';
+    it('testLightWeightMapTest08Chapter0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const TAG = 'testLightWeightMapTest08Chapter0900';
       console.log(TAG + 'start');
 
       let lightWeightMap = new LightWeightMap<number, number>();
@@ -353,15 +353,15 @@ export default function localUnitTest(): void {
 
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0010
-     * @tc.name      testLightWeightMapTest08Chapter0010
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_1000
+     * @tc.name      testLightWeightMapTest08Chapter1000
      * @tc.desc      Compare first element from entries() and Symbol.iterator() and ensure they match
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('testLightWeightMapTest08Chapter0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const TAG = 'testLightWeightMapTest08Chapter0010';
+    it('testLightWeightMapTest08Chapter1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const TAG = 'testLightWeightMapTest08Chapter1000';
       console.log(TAG + 'start');
 
       let lightWeightMap = new LightWeightMap<string, number>();
