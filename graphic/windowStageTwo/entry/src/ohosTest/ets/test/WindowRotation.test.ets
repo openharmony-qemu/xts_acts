@@ -2016,7 +2016,7 @@ export default function windowRotationTest() {
     })
 
     /**
- * @tc.name   testSetPreferredOrientationWithResult_enum
+ * @tc.name   testSetPreferredOrientationWithResult_enum_0100
  * @tc.number SUB_BASIC_WMS_SetPreferredOrientationWithResult_API_0100
  * @tc.desc   Sets the display direction property of the window and checks the result
  * @tc.type   FUNCTION
@@ -2157,15 +2157,15 @@ it('testSetPreferredOrientationWithResult_enum_0200', TestType.FUNCTION | Size.M
 });
 
 /**
- * @tc.name   testSetPreferredOrientationWithResult_401
+ * @tc.name   testSetPreferredOrientationWithResult_paramerr
  * @tc.number SUB_BASIC_WMS_SetPreferredOrientationWithResult_401
  * @tc.desc   testSetPreferredOrientationWithResult with null input, expect error code 401
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-it('testSetPreferredOrientationWithResult_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-  let caseName: string = 'testSetPreferredOrientationWithResult_401';
+it('testSetPreferredOrientationWithResult_paramerr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+  let caseName: string = 'testSetPreferredOrientationWithResult_paramerr';
   let msgStr: string = 'jsUnittest ' + caseName + ' ';
   console.log(msgStr + 'begin');
 
@@ -2185,15 +2185,15 @@ it('testSetPreferredOrientationWithResult_401', TestType.FUNCTION | Size.MEDIUMT
 });
 
 /**
- * @tc.name   testSetPreferredOrientationWithResult_1300002
- * @tc.number SUB_BASIC_WMS_SetPreferredOrientationWithResult_InvalidWindow_1300002
+ * @tc.name   testSetPreferredOrientationWithResult_invalidwindow
+ * @tc.number SUB_BASIC_WMS_SetPreferredOrientationWithResult_InvalidWindow
  * @tc.desc   testSetPreferredOrientationWithResult with invalid window, expect error code 1300002
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL3
  */
-it('testSetPreferredOrientationWithResult_InvalidWindow_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-  let caseName: string = 'testSetPreferredOrientationWithResult_InvalidWindow_1300002';
+it('testSetPreferredOrientationWithResult_invalidwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+  let caseName: string = 'testSetPreferredOrientationWithResult_invalidwindow';
   let msgStr: string = 'jsUnittest ' + caseName + ' ';
   console.log(msgStr + 'begin');
 
