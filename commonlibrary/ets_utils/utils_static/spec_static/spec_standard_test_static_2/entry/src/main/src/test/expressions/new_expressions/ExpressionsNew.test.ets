@@ -1825,5 +1825,558 @@ export default function ExpressionsNewTestSuite() {
       expect(arr.at(0)?.i).assertEqual(8.9)
     })
 
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_6100
+     * @tc.name      testExpressionsNew0061
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<C_default_8>(5)
+      arr[0] = new C_default_8(false)
+      expect(arr.length).assertEqual(5)
+      expect(arr.at(0)?.i).assertEqual(false)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_6200
+     * @tc.name      testExpressionsNew0062
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.  Otherwise, a compile-time error occurs.
+     *               Parameterless constructor
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new C_gen_custom<A_gen_custom>().foo()
+      expect(arr.length).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_6300
+     * @tc.name      testExpressionsNew0063
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new C_gen_container<A_number_gen_default>().foo()
+      expect(arr.length).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_6400
+     * @tc.name      testExpressionsNew0064
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new C_gen_container<A_byte_gen_default>().foo()
+      expect(arr.length).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_6500
+     * @tc.name      testExpressionsNew0065
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new C_gen_container<A_short_gen_default>().foo()
+      expect(arr.length).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_6600
+     * @tc.name      testExpressionsNew0066
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new C_gen_container<A_int_gen_default>().foo()
+      expect(arr.length).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_6700
+     * @tc.name      testExpressionsNew0067
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new C_gen_container<A_long_gen_default>().foo()
+      expect(arr.length).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_6800
+     * @tc.name      testExpressionsNew0068
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new C_gen_container<A_float_gen_default>().foo()
+      expect(arr.length).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_6900
+     * @tc.name      testExpressionsNew0069
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new C_gen_container<A_double_gen_default>().foo()
+      expect(arr.length).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_7000
+     * @tc.name      testExpressionsNew0070
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new C_gen_container<A_char_gen_default>().foo()
+      expect(arr.length).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_7100
+     * @tc.name      testExpressionsNew0071
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new C_gen_container<A_boolean_gen_default>().foo()
+      expect(arr.length).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_7200
+     * @tc.name      testExpressionsNew0072
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.
+     *               Otherwise, a compile-time error occurs.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new C_gen_container<A_number_gen_optional>().foo()
+      expect(arr.length).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_7300
+     * @tc.name      testExpressionsNew0073
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.
+     *               Otherwise, a compile-time error occurs.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new C_gen_container<A_byte_gen_optional>().foo()
+      expect(arr.length).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_7400
+     * @tc.name      testExpressionsNew0074
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.
+     *               Otherwise, a compile-time error occurs.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new C_gen_container<A_short_gen_optional>().foo()
+      expect(arr.length).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_7500
+     * @tc.name      testExpressionsNew0075
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.
+     *               Otherwise, a compile-time error occurs.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new C_gen_container<A_int_gen_optional>().foo()
+      expect(arr.length).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_7600
+     * @tc.name      testExpressionsNew0076
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.
+     *               Otherwise, a compile-time error occurs.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new C_gen_container<A_long_gen_optional>().foo()
+      expect(arr.length).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_7700
+     * @tc.name      testExpressionsNew0077
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.
+     *               Otherwise, a compile-time error occurs.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new C_gen_container<A_float_gen_optional>().foo()
+      expect(arr.length).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_7800
+     * @tc.name      testExpressionsNew0078
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.
+     *               Otherwise, a compile-time error occurs.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new C_gen_container<A_double_gen_optional>().foo()
+      expect(arr.length).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_7900
+     * @tc.name      testExpressionsNew0079
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.
+     *               Otherwise, a compile-time error occurs.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new C_gen_container<A_char_gen_optional>().foo()
+      expect(arr.length).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_8000
+     * @tc.name      testExpressionsNew0080
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.
+     *               Otherwise, a compile-time error occurs.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new C_gen_container<A_boolean_gen_optional>().foo()
+      expect(arr.length).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_8100
+     * @tc.name      testExpressionsNew0081
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.
+     *               Otherwise, a compile-time error occurs.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new C_gen_container<A_string_gen_optional>().foo()
+      expect(arr.length).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_8200
+     * @tc.name      testExpressionsNew0082
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.
+     *               Otherwise, a compile-time error occurs.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new C_gen_container<A_null_gen_optional>().foo()
+      expect(arr.length).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_8300
+     * @tc.name      testExpressionsNew0083
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.
+     *               Otherwise, a compile-time error occurs.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new C_gen_container<A_undefined_gen_optional>().foo()
+      expect(arr.length).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_8400
+     * @tc.name      testExpressionsNew0084
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.
+     *               Otherwise, a compile-time error occurs.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new C_gen_container<A_enum_gen_optional>().foo()
+      expect(arr.length).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_8500
+     * @tc.name      testExpressionsNew0085
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.
+     *               Otherwise, a compile-time error occurs.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new C_gen_container<A_tuple_gen_optional>().foo()
+      expect(arr.length).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_8600
+     * @tc.name      testExpressionsNew0086
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.
+     *               Otherwise, a compile-time error occurs.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new C_gen_container<A_number_array_gen_optional>().foo()
+      expect(arr.length).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_8700
+     * @tc.name      testExpressionsNew0087
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<C_lambda_gen_optional>(5)
+      let t: foo_lambda_gen = (i: Object|undefined) => { return i }
+      arr[0] = new C_lambda_gen_optional(t)
+      expect(arr.length).assertEqual(5)
+      expect(arr.at(0)?.i).assertEqual(undefined)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_8800
+     * @tc.name      testExpressionsNew0088
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.  Otherwise, a compile-time error occurs.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<C_number_optional1>(5)
+      arr[0] = new C_number_optional1()
+      expect(arr.length).assertEqual(5)
+      expect(arr.at(0)?.i).assertEqual(undefined)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_8900
+     * @tc.name      testExpressionsNew0089
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.  Otherwise, a compile-time error occurs.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<C_byte_optional1>(5)
+      arr[0] = new C_byte_optional1()
+      expect(arr.length).assertEqual(5)
+      expect(arr.at(0)?.i).assertEqual(undefined)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_9000
+     * @tc.name      testExpressionsNew0090
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.  Otherwise, a compile-time error occurs.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<C_short_optional1>(5)
+      arr[0] = new C_short_optional1()
+      expect(arr.length).assertEqual(5)
+      expect(arr.at(0)?.i).assertEqual(undefined)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_9100
+     * @tc.name      testExpressionsNew0091
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.  Otherwise, a compile-time error occurs.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<C_int_optional1>(5)
+      arr[0] = new C_int_optional1()
+      expect(arr.length).assertEqual(5)
+      expect(arr.at(0)?.i).assertEqual(undefined)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_9200
+     * @tc.name      testExpressionsNew0092
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.  Otherwise, a compile-time error occurs.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<C_long_optional1>(5)
+      arr[0] = new C_long_optional1()
+      expect(arr.length).assertEqual(5)
+      expect(arr.at(0)?.i).assertEqual(undefined)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_9300
+     * @tc.name      testExpressionsNew0093
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.  Otherwise, a compile-time error occurs.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<C_float_optional1>(5)
+      arr[0] = new C_float_optional1()
+      expect(arr.length).assertEqual(5)
+      expect(arr.at(0)?.i).assertEqual(undefined)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_9400
+     * @tc.name      testExpressionsNew0094
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.  Otherwise, a compile-time error occurs.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<C_double_optional1>(5)
+      arr[0] = new C_double_optional1()
+      expect(arr.length).assertEqual(5)
+      expect(arr.at(0)?.i).assertEqual(undefined)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_9500
+     * @tc.name      testExpressionsNew0095
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.  Otherwise, a compile-time error occurs.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<C_char_optional1>(5)
+      arr[0] = new C_char_optional1()
+      expect(arr.length).assertEqual(5)
+      expect(arr.at(0)?.i).assertEqual(undefined)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_9600
+     * @tc.name      testExpressionsNew0096
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.  Otherwise, a compile-time error occurs.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<C_boolean_optional1>(5)
+      arr[0] = new C_boolean_optional1()
+      expect(arr.length).assertEqual(5)
+      expect(arr.at(0)?.i).assertEqual(undefined)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_9700
+     * @tc.name      testExpressionsNew0097
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.  Otherwise, a compile-time error occurs.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<C_string_optional1>(5)
+      arr[0] = new C_string_optional1()
+      expect(arr.length).assertEqual(5)
+      expect(arr.at(0)?.i).assertEqual(undefined)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_9800
+     * @tc.name      testExpressionsNew0098
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.  Otherwise, a compile-time error occurs.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<C_null_optional1>(5)
+      arr[0] = new C_null_optional1()
+      expect(arr.length).assertEqual(5)
+      expect(arr.at(0)?.i).assertEqual(undefined)
+    })
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_NEW_9900
+     * @tc.name      testExpressionsNew0099
+     * @tc.desc      A class instance creation expression that refers to classes FixedArray.  Otherwise, a compile-time error occurs.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsNew0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Array<C_undefined_optional1>(5)
+      arr[0] = new C_undefined_optional1()
+      expect(arr.length).assertEqual(5)
+      expect(arr.at(0)?.i).assertEqual(undefined)
+    })
+
   })
 }
