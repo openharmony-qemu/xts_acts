@@ -40,7 +40,7 @@ export default class TestAbility extends UIAbility {
         hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility onDestroy');
     }
 
-    onWindowStageCreate(windowStage: window.WindowStage) {
+    async onWindowStageCreate(windowStage: window.WindowStage) {
         hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility onWindowStageCreate');
         windowStage.loadContent('testability/pages/Index', (err, data) => {
             if (err.code) {
