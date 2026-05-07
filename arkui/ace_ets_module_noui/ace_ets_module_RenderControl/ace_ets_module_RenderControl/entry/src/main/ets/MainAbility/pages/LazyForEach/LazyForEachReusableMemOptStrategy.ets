@@ -207,7 +207,7 @@ export class BasicDataSource implements IDataSource {
 }
 
 export class MyDataSource extends BasicDataSource {
-  dataArray: string[] = [];
+  public dataArray: string[] = [];
 
   public totalCount(): number {
     return this.dataArray.length;
