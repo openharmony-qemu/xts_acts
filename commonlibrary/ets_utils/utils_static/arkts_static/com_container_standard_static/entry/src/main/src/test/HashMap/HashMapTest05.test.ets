@@ -1,3 +1,4 @@
+'use static'
 /*
 * Copyright (c) 2024 SwanLink (Jiangsu) Technology Development Co., LTD.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,35 +13,48 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../../../../hypium'
 import { buffer, HashMap,util } from '@kit.ArkTS';
-import { systemManager } from '@kit.MDMKit';
 
-function sleep(ms: number) {
-  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+interface MapPropertyTestObject {
+  map: Map<string, string>;
+}
+
+class ParsedType {
+  a: number = 0;
+}
+
+interface SetPropertyTestObject {
+  setData: Set<number>;
+}
+
+interface PromisePropertyTestObject {
+  promise: Promise<string>;
+}
+
+interface RegExpPropertyTestObject {
+  regex: RegExp;
+  flags: RegExp;
+}
+
+function sleep(count: int): Promise<void> {
+  return new Promise<void>((resolve: (value: PromiseLike<void>) => void, reject: (value: Error) => void) => {
+    setTimeout(() => {
+      resolve(Promise.resolve())
+    }, count)
+  })
 }
 
 export default function HashMapTest05Test() {
   describe('hashMapTest05Test', () => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
       await sleep(30);
     })
     afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
     })
     afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     })
 
 
@@ -56,11 +70,8 @@ export default function HashMapTest05Test() {
     it("testHashMap0356", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashMap0356';
       console.log(TAG + ' start');
-      interface MapPropertyTestObject {
-        map: Map<string, string>;
-      };
       const testObj: MapPropertyTestObject = {
-        map: new Map([
+        map: new Map<string, string>([
           ['key1', 'value1'],
           ['key2', '{"a":1}']
         ])
@@ -85,11 +96,8 @@ export default function HashMapTest05Test() {
     it("testHashMap0357", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashMap0357';
       console.log(TAG + ' start');
-      interface MapPropertyTestObject {
-        map: Map<string, string>;
-      };
       const testObj: MapPropertyTestObject = {
-        map: new Map([
+        map: new Map<string, string>([
           ['key1', 'value1'],
           ['key2', '{"a":1}']
         ])
@@ -105,8 +113,7 @@ export default function HashMapTest05Test() {
           key2Value = tempValue;
         }
       }
-      interface ParsedType { a: number };
-      const parsedValue: ParsedType = JSON.parse(key2Value) as ParsedType;
+      const parsedValue = JSON.parse<ParsedType>(key2Value, Type.from<ParsedType>())!;
       expect(getTestObj?.map.get('key1')).assertEqual('value1');
       expect(parsedValue.a).assertEqual(1);
       console.log(TAG + ' end');
@@ -116,7 +123,7 @@ export default function HashMapTest05Test() {
      * @tc.number    SUB_HASHMAP_TEST_0457
      * @tc.name      testHashMap0358
      * @tc.desc      Check the synchronization of nested data modifications in the key-value pairs of the
-     *               Map collection (nested structure/iteration order) stored in the HashMap
+     * Map collection (nested structure/iteration order) stored in the HashMap
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -125,11 +132,8 @@ export default function HashMapTest05Test() {
       const TAG = 'testHashMap0358';
       console.log(TAG + ' start');
 
-      interface MapPropertyTestObject {
-        map: Map<string, string>;
-      };
       const testObj: MapPropertyTestObject = {
-        map: new Map([
+        map: new Map<string, string>([
           ['key1', 'value1'],
           ['key2', '{"a":1}']
         ])
@@ -145,8 +149,7 @@ export default function HashMapTest05Test() {
           key2Value = tempValue;
         }
       }
-      interface ParsedType { a: number };
-      const parsedValue: ParsedType = JSON.parse(key2Value) as ParsedType;
+      const parsedValue = JSON.parse<ParsedType>(key2Value, Type.from<ParsedType>())!;
       parsedValue.a = 999;
       const updatedJsonStr = JSON.stringify(parsedValue);
       testObj.map.set('key2', updatedJsonStr);
@@ -157,7 +160,7 @@ export default function HashMapTest05Test() {
           updatedKey2Value = temp;
         }
       }
-      const updatedParsedValue: ParsedType = JSON.parse(updatedKey2Value) as ParsedType;
+      const updatedParsedValue = JSON.parse<ParsedType>(updatedKey2Value, Type.from<ParsedType>())!;
       expect(updatedParsedValue.a).assertEqual(999);
       console.log(TAG + ' end');
     });
@@ -175,11 +178,8 @@ export default function HashMapTest05Test() {
       const TAG = 'testHashMap0359';
       console.log(TAG + ' start');
 
-      interface MapPropertyTestObject {
-        map: Map<string, string>;
-      };
       const testObj: MapPropertyTestObject = {
-        map: new Map([
+        map: new Map<string, string>([
           ['key1', 'value1'],
           ['key2', '{"a":1}']
         ])
@@ -189,7 +189,7 @@ export default function HashMapTest05Test() {
       const getTestObj = hashMap.get("mapPropObjKey");
 
       const entryList: string[] = [];
-      if (getTestObj?.map) {
+      if (getTestObj && getTestObj.map) {
         for (const key of getTestObj.map.keys()) {
           entryList.push(key);
         }
@@ -211,11 +211,8 @@ export default function HashMapTest05Test() {
       const TAG = 'testHashMap0360';
       console.log(TAG + ' start');
 
-      interface MapPropertyTestObject {
-        map: Map<string, string>;
-      };
       const testObj: MapPropertyTestObject = {
-        map: new Map([
+        map: new Map<string, string>([
           ['key1', 'value1'],
           ['key2', '{"a":1}']
         ])
@@ -245,19 +242,16 @@ export default function HashMapTest05Test() {
     it("testHashMap0361", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashMap0361';
       console.log(TAG + ' start');
-      interface SetPropertyTestObject {
-        set: Set<number>;
-      };
 
       const testObj: SetPropertyTestObject = {
-        set: new Set([1, 2, 3, 2, 1])
+        setData: new Set<number>([1, 2, 3, 2, 1])
       };
       const hashMap = new HashMap<string, SetPropertyTestObject>();
       hashMap.set("setPropObjKey", testObj);
       const getTestObj = hashMap.get("setPropObjKey");
 
       expect(getTestObj!=null).assertTrue();
-      expect(getTestObj?.set instanceof Set).assertTrue();
+      expect(getTestObj?.setData instanceof Set).assertTrue();
       console.log(TAG + ' end');
     });
 
@@ -272,20 +266,17 @@ export default function HashMapTest05Test() {
     it("testHashMap0362", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashMap0362';
       console.log(TAG + ' start');
-      interface SetPropertyTestObject {
-        set: Set<number>;
-      };
 
       const testObj: SetPropertyTestObject = {
-        set: new Set([1, 2, 3, 2, 1])
+        setData: new Set<number>([1, 2, 3, 2, 1])
       };
       const hashMap = new HashMap<string, SetPropertyTestObject>();
       hashMap.set("setPropObjKey", testObj);
       const getTestObj = hashMap.get("setPropObjKey");
-      expect(getTestObj?.set.size).assertEqual(3);
-      expect(getTestObj?.set.has(1)).assertTrue();
-      expect(getTestObj?.set.has(2)).assertTrue();
-      expect(getTestObj?.set.has(3)).assertTrue();
+      expect(getTestObj?.setData.size).assertEqual(3);
+      expect(getTestObj?.setData.has(1)).assertTrue();
+      expect(getTestObj?.setData.has(2)).assertTrue();
+      expect(getTestObj?.setData.has(3)).assertTrue();
       console.log(TAG + ' end');
     });
 
@@ -300,19 +291,16 @@ export default function HashMapTest05Test() {
     it("testHashMap0363", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashMap0363';
       console.log(TAG + ' start');
-      interface SetPropertyTestObject {
-        set: Set<number>;
-      };
 
       const testObj: SetPropertyTestObject = {
-        set: new Set([1, 2, 3, 2, 1])
+        setData: new Set<number>([1, 2, 3, 2, 1])
       };
       const hashMap = new HashMap<string, SetPropertyTestObject>();
       hashMap.set("setPropObjKey", testObj);
       const getTestObj = hashMap.get("setPropObjKey");
       const iteratedValues: number[] = [];
-      if (getTestObj?.set) {
-        for (const value of getTestObj.set) {
+      if (getTestObj && getTestObj.setData) {
+        for (const value of getTestObj.setData) {
           iteratedValues.push(value);
         }
       }
@@ -334,24 +322,21 @@ export default function HashMapTest05Test() {
     it("testHashMap0364", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashMap0364';
       console.log(TAG + ' start');
-      interface SetPropertyTestObject {
-        set: Set<number>;
-      };
 
       const testObj: SetPropertyTestObject = {
-        set: new Set([1, 2, 3, 2, 1])
+        setData: new Set<number>([1, 2, 3, 2, 1])
       };
       const hashMap = new HashMap<string, SetPropertyTestObject>();
       hashMap.set("setPropObjKey", testObj);
       const getTestObj = hashMap.get("setPropObjKey");
-      testObj.set.add(4);
-      expect(getTestObj?.set.has(4)).assertTrue();
-      expect(getTestObj?.set.size).assertEqual(4);
-      testObj.set.add(2);
-      expect(getTestObj?.set.size).assertEqual(4);
-      testObj.set.delete(1);
-      expect(getTestObj?.set.has(1)).assertFalse();
-      expect(getTestObj?.set.size).assertEqual(3);
+      testObj.setData.add(4);
+      expect(getTestObj?.setData.has(4)).assertTrue();
+      expect(getTestObj?.setData.size).assertEqual(4);
+      testObj.setData.add(2);
+      expect(getTestObj?.setData.size).assertEqual(4);
+      testObj.setData.delete(1);
+      expect(getTestObj?.setData.has(1)).assertFalse();
+      expect(getTestObj?.setData.size).assertEqual(3);
       console.log(TAG + ' end');
     });
 
@@ -366,19 +351,16 @@ export default function HashMapTest05Test() {
     it("testHashMap0365", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashMap0365';
       console.log(TAG + ' start');
-      interface SetPropertyTestObject {
-        set: Set<number>;
-      };
 
       const testObj: SetPropertyTestObject = {
-        set: new Set([1, 2, 3, 2, 1])
+        setData: new Set<number>([1, 2, 3, 2, 1])
       };
       const hashMap = new HashMap<string, SetPropertyTestObject>();
       hashMap.set("setPropObjKey", testObj);
       const getTestObj = hashMap.get("setPropObjKey");
-      testObj.set.clear();
-      expect(getTestObj?.set.size).assertEqual(0);
-      expect(getTestObj?.set.has(2)).assertFalse();
+      testObj.setData.clear();
+      expect(getTestObj?.setData.size).assertEqual(0);
+      expect(getTestObj?.setData.has(2)).assertFalse();
       console.log(TAG + ' end');
     });
 
@@ -393,19 +375,19 @@ export default function HashMapTest05Test() {
     it("testHashMap0366", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashMap0366';
       console.log(TAG + ' start');
-      interface PromisePropertyTestObject {
-        promise: Promise<string>;
-      };
 
       const testObj: PromisePropertyTestObject = {
-        promise: new Promise((resolve) => setTimeout(() => resolve('done'), 100))
+        promise: new Promise<string>((resolve: (value: string) => void) => {
+          setTimeout(() => {
+            resolve('done');
+          }, 100);
+        })
       };
 
       const hashMap = new HashMap<string, PromisePropertyTestObject>();
       hashMap.set("promisePropObjKey", testObj);
       const getTestObj = hashMap.get("promisePropObjKey");
       expect(getTestObj!=null).assertTrue();
-      expect(typeof getTestObj?.promise.then === 'function').assertTrue();
       console.log(TAG + ' end');
     });
 
@@ -420,17 +402,18 @@ export default function HashMapTest05Test() {
     it("testHashMap0367", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashMap0367';
       console.log(TAG + ' start');
-      interface PromisePropertyTestObject {
-        promise: Promise<string>;
-      };
       const testObj: PromisePropertyTestObject = {
-        promise: new Promise((resolve) => setTimeout(() => resolve('done'), 100))
+        promise: new Promise<string>((resolve: (value: string) => void) => {
+          setTimeout(() => {
+            resolve('done');
+          }, 100);
+        })
       };
 
       const hashMap = new HashMap<string, PromisePropertyTestObject>();
       hashMap.set("promisePropObjKey", testObj);
       const getTestObj = hashMap.get("promisePropObjKey");
-      getTestObj?.promise.then((value) => {
+      getTestObj?.promise.then((value: string) => {
         expect(value).assertEqual('done');
       });
       console.log(TAG + ' end');
@@ -447,11 +430,12 @@ export default function HashMapTest05Test() {
     it("testHashMap0368", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashMap0368';
       console.log(TAG + ' start');
-      interface PromisePropertyTestObject {
-        promise: Promise<string>;
-      };
       const testObj: PromisePropertyTestObject = {
-        promise: new Promise((resolve) => setTimeout(() => resolve('done'), 100))
+        promise: new Promise<string>((resolve: (value: string) => void) => {
+          setTimeout(() => {
+            resolve('done');
+          }, 100);
+        })
       };
       const hashMap = new HashMap<string, PromisePropertyTestObject>();
       hashMap.set("promisePropObjKey", testObj);
@@ -472,22 +456,27 @@ export default function HashMapTest05Test() {
     it("testHashMap0369", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashMap0369';
       console.log(TAG + ' start');
-      interface PromisePropertyTestObject {
-        promise: Promise<string>;
-      };
       const testObj: PromisePropertyTestObject = {
-        promise: new Promise((resolve) => setTimeout(() => resolve('done'), 100))
+        promise: new Promise<string>((resolve: (value: string) => void) => {
+          setTimeout(() => {
+            resolve('done');
+          }, 100);
+        })
       };
       const hashMap = new HashMap<string, PromisePropertyTestObject>();
       hashMap.set("promisePropObjKey", testObj);
       const getTestObj = hashMap.get("promisePropObjKey");
-      getTestObj?.promise.then((value) => {
-        const newPromise = new Promise<string>((resolve) => setTimeout(() => resolve('new done'), 50));
+      getTestObj?.promise.then((value: string) => {
+        const newPromise = new Promise<string>((resolve: (value: string) => void) => {
+          setTimeout(() => {
+            resolve('new done');
+          }, 50);
+        });
         testObj.promise = newPromise;
         expect(getTestObj?.promise === newPromise).assertTrue();
-        newPromise.then((newValue) => {
+        newPromise.then((newValue: string) => {
           expect(newValue).assertEqual('new done');
-        })
+        });
       });
       console.log(TAG + ' end');
     });
@@ -503,14 +492,10 @@ export default function HashMapTest05Test() {
     it("testHashMap0370", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashMap0370';
       console.log(TAG + ' start');
-      interface RegExpPropertyTestObject {
-        regex: RegExp;
-        flags: RegExp;
-      };
 
       const testObj: RegExpPropertyTestObject = {
-        regex: /abc/gi,
-        flags: /def/m
+        regex: new RegExp("abc", "gi"),
+        flags: new RegExp("def", "m")
       };
 
       const hashMap = new HashMap<string, RegExpPropertyTestObject>();
@@ -534,14 +519,10 @@ export default function HashMapTest05Test() {
     it("testHashMap0371", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashMap0371';
       console.log(TAG + ' start');
-      interface RegExpPropertyTestObject {
-        regex: RegExp;
-        flags: RegExp;
-      };
 
       const testObj: RegExpPropertyTestObject = {
-        regex: /abc/gi,
-        flags: /def/m
+        regex: new RegExp("abc", "gi"),
+        flags: new RegExp("def", "m")
       };
       const hashMap = new HashMap<string, RegExpPropertyTestObject>();
       hashMap.set("regexPropObjKey", testObj);
@@ -562,21 +543,17 @@ export default function HashMapTest05Test() {
     it("testHashMap0373", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashMap0373';
       console.log(TAG + ' start');
-      interface RegExpPropertyTestObject {
-        regex: RegExp;
-        flags: RegExp;
-      };
 
       const testObj: RegExpPropertyTestObject = {
-        regex: /abc/gi,
-        flags: /def/m
+        regex: new RegExp("abc", "gi"),
+        flags: new RegExp("def", "m")
       };
 
       const hashMap = new HashMap<string, RegExpPropertyTestObject>();
       hashMap.set("regexPropObjKey", testObj);
       const getTestObj = hashMap.get("regexPropObjKey");
       const testStr1 = 'ABCabc123AbC';
-      const matchResult1 = testStr1.match(getTestObj?.regex!);
+      const matchResult1 = testStr1.match(getTestObj!.regex);
       expect(matchResult1?.length).assertEqual(3);
       expect(matchResult1?.[0]).assertEqual('ABC');
       expect(matchResult1?.[1]).assertEqual('abc');
@@ -595,14 +572,10 @@ export default function HashMapTest05Test() {
     it("testHashMap0374", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashMap0374';
       console.log(TAG + ' start');
-      interface RegExpPropertyTestObject {
-        regex: RegExp;
-        flags: RegExp;
-      };
 
       const testObj: RegExpPropertyTestObject = {
-        regex: /abc/gi,
-        flags: /def/m
+        regex: new RegExp("abc", "gi"),
+        flags: new RegExp("def", "m")
       };
 
       const hashMap = new HashMap<string, RegExpPropertyTestObject>();
@@ -624,14 +597,10 @@ export default function HashMapTest05Test() {
     it("testHashMap0375", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashMap0375';
       console.log(TAG + ' start');
-      interface RegExpPropertyTestObject {
-        regex: RegExp;
-        flags: RegExp;
-      };
 
       const testObj: RegExpPropertyTestObject = {
-        regex: /abc/gi,
-        flags: /def/m
+        regex: new RegExp("abc", "gi"),
+        flags: new RegExp("def", "m")
       };
 
       const hashMap = new HashMap<string, RegExpPropertyTestObject>();
