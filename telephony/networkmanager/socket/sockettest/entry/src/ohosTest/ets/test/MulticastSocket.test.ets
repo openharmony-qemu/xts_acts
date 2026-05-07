@@ -2438,6 +2438,7 @@ export default function MulticastSocket() {
         socketA = constructReuseAddressMulticastSocket();
         socketB = constructReuseAddressMulticastSocket();
         socketA.setReuseAddress(true);
+        socketB.setReuseAddress(false);
         const portA: number = await bindAndGetLocalPort(caseName, 'socketA', socketA);
         const portB: number = await bindAndGetLocalPort(caseName, 'socketB', socketB);
         expectEqual(portA, REUSE_ADDRESS_TEST_PORT);
