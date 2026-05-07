@@ -294,7 +294,7 @@ export default function TextEnumTest() {
     /**
      * @tc.name   SUB_ARKUI_OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines_2000
      * @tc.number SUB_ARKUI_OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines_2000
-     * @tc.desc   Test OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines: ARKUI_ERROR_CODE_PARAM_INVALID
+     * @tc.desc   Test OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines: ARKUI_ERROR_CODE_NO_ERROR
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
@@ -303,6 +303,62 @@ export default function TextEnumTest() {
       console.info('SUB_ARKUI_OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines_2000 START');
       expect(nativeFunc.TextEnumTest_020()).assertEqual(0)
       console.info('SUB_ARKUI_OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines_2000 END');
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines_2100
+     * @tc.number SUB_ARKUI_OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines_2100
+     * @tc.desc   Test OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines: ARKUI_ERROR_CODE_PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines_2100', Level.LEVEL1, async () => {
+      console.info('SUB_ARKUI_OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines_2100 START');
+      expect(nativeFunc.TextEnumTest_021()).assertEqual(0)
+      console.info('SUB_ARKUI_OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines_2100 END');
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines_2200
+     * @tc.number SUB_ARKUI_OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines_2200
+     * @tc.desc   Test OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines: ARKUI_ERROR_CODE_PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines_2200', Level.LEVEL1, async () => {
+      console.info('SUB_ARKUI_OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines_2200 START');
+      expect(nativeFunc.TextEnumTest_022()).assertEqual(0)
+      console.info('SUB_ARKUI_OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines_2200 END');
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_OH_ArkUI_LineSpacingStyle_GetLineSpacing_2300
+     * @tc.number SUB_ARKUI_OH_ArkUI_LineSpacingStyle_GetLineSpacing_2300
+     * @tc.desc   Test OH_ArkUI_LineSpacingStyle_GetLineSpacing: ARKUI_ERROR_CODE_PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_OH_ArkUI_LineSpacingStyle_GetLineSpacing_2300', Level.LEVEL1, async () => {
+      console.info('SUB_ARKUI_OH_ArkUI_LineSpacingStyle_GetLineSpacing_2300 START');
+      expect(nativeFunc.TextEnumTest_023()).assertEqual(0)
+      console.info('SUB_ARKUI_OH_ArkUI_LineSpacingStyle_GetLineSpacing_2300 END');
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_OH_ArkUI_LineSpacingStyle_GetOnlyBetweenLines_2400
+     * @tc.number SUB_ARKUI_OH_ArkUI_LineSpacingStyle_GetOnlyBetweenLines_2400
+     * @tc.desc   Test OH_ArkUI_LineSpacingStyle_GetOnlyBetweenLines: ARKUI_ERROR_CODE_PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_OH_ArkUI_LineSpacingStyle_GetOnlyBetweenLines_2400', Level.LEVEL1, async () => {
+      console.info('SUB_ARKUI_OH_ArkUI_LineSpacingStyle_GetOnlyBetweenLines_2400 START');
+      expect(nativeFunc.TextEnumTest_024()).assertEqual(0)
+      console.info('SUB_ARKUI_OH_ArkUI_LineSpacingStyle_GetOnlyBetweenLines_2400 END');
     });
   });
 }

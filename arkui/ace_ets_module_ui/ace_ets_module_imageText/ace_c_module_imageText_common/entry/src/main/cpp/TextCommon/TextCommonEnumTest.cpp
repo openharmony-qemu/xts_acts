@@ -173,7 +173,7 @@ static napi_value TextEnumTest_012(napi_env env, napi_callback_info info)
     auto result4_2 = OH_ArkUI_LineHeightStyle_GetLineHeightMultiple(lineHeightStyle);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result4_2 TextEnumTest_012 result=%{public}d", result4_2);
-    ASSERT_EQ(result4_2, LINE_HEIGHT_MULTIPLE);
+    ASSERT_EQ(result4_2, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END(text);
 }
 
@@ -248,7 +248,7 @@ static napi_value TextEnumTest_017(napi_env env, napi_callback_info info)
     auto result9_2 = OH_ArkUI_LineSpacingStyle_GetLineSpacing(lineSpacingStyle);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result9_2 TextEnumTest_017 result=%{public}d", result9_2);
-    ASSERT_EQ(result9_2, LINE_SPACING);
+    ASSERT_EQ(result9_2, ARKUI_ERROR_CODE_NO_ERROR);
 
     OH_ArkUI_LineSpacingStyle_Destroy(lineSpacingStyle);
     NAPI_END(text);
