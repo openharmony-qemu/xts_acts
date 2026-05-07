@@ -53,7 +53,7 @@ export default class TestAbility extends UIAbility {
         let atManager = abilityAccessCtrl.createAtManager();
         try {
             console.info('requestPermissionsFromUser start');
-            let data = await atManager.requestPermissionsFromUser(this.context, ['ohos.permission.LOCATION', "ohos.permission.APPROXIMATELY_LOCATION"]);
+            let data = await atManager.requestPermissionsFromUser(this.context, ['ohos.permission.LOCATION', 'ohos.permission.APPROXIMATELY_LOCATION']);
             console.info('requestPermissionsFromUser data' + JSON.stringify(data));
             console.info('requestPermissionsFromUser data permissions:' + data.permissions);
             console.info('requestPermissionsFromUser data authResults:' + data.authResults);
