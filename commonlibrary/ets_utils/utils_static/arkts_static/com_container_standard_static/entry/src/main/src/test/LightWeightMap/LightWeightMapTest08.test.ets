@@ -1,4 +1,4 @@
-﻿'use static'
+'use static'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
 import { LightWeightMap } from '@kit.ArkTS';
 
@@ -48,7 +48,7 @@ export default function localUnitTest(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0100
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TESTEIGHT_0100
      * @tc.name      testLightWeightMapTest08Chapter0100
      * @tc.desc      Use for..of (Symbol.iterator) to iterate and verify order and key/value pairs
      * @tc.size      MediumTest
@@ -91,7 +91,7 @@ export default function localUnitTest(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0200
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TESTEIGHT_0200
      * @tc.name      testLightWeightMapTest08Chapter0200
      * @tc.desc      Use explicit iterator = map[Symbol.iterator]() to iterate entries and verify order
      * @tc.size      MediumTest
@@ -136,7 +136,7 @@ export default function localUnitTest(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0300
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TESTEIGHT_0300
      * @tc.name      testLightWeightMapTest08Chapter0300
      * @tc.desc      Call Symbol.iterator on empty map, iterator should yield no elements
      * @tc.size      MediumTest
@@ -163,7 +163,7 @@ export default function localUnitTest(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0400
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TESTEIGHT_0400
      * @tc.name      testLightWeightMapTest08Chapter0400
      * @tc.desc      Iterate class instances and modify their fields inside loop, verify changes take effect
      * @tc.size      MediumTest
@@ -192,7 +192,7 @@ export default function localUnitTest(): void {
 
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0500
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TESTEIGHT_0500
      * @tc.name      testLightWeightMapTest08Chapter0500
      * @tc.desc      Insert new key during for..of iteration, iterator should not crash and visits initial items
      * @tc.size      MediumTest
@@ -221,7 +221,7 @@ export default function localUnitTest(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0600
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TESTEIGHT_0600
      * @tc.name      testLightWeightMapTest08Chapter0600
      * @tc.desc      Iterate with Symbol.iterator when value is Uint8Array and verify contents
      * @tc.size      MediumTest
@@ -254,7 +254,7 @@ export default function localUnitTest(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0700
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TESTEIGHT_0700
      * @tc.name      testLightWeightMapTest08Chapter0700
      * @tc.desc      Iterate with Symbol.iterator when value is simple object and verify fields
      * @tc.size      MediumTest
@@ -288,7 +288,7 @@ export default function localUnitTest(): void {
 
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0800
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TESTEIGHT_0800
      * @tc.name      testLightWeightMapTest08Chapter0800
      * @tc.desc      Use Uint8Array as key and verify iterated key reference equals original key
      * @tc.size      MediumTest
@@ -321,7 +321,7 @@ export default function localUnitTest(): void {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0900
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TESTEIGHT_0900
      * @tc.name      testLightWeightMapTest08Chapter0900
      * @tc.desc      Iterate many elements with Symbol.iterator and check that sum of values is correct
      * @tc.size      MediumTest
@@ -353,7 +353,7 @@ export default function localUnitTest(): void {
 
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_1000
+     * @tc.number    SUB_LIGHTWEIGHTMAP_TESTEIGHT_1000
      * @tc.name      testLightWeightMapTest08Chapter1000
      * @tc.desc      Compare first element from entries() and Symbol.iterator() and ensure they match
      * @tc.size      MediumTest
