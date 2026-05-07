@@ -84,7 +84,7 @@ const triple: [number, string, boolean] = [1, 'Test', true]
 
 const pair: Record<string, number> = {'key1': 1, 'key2': 2}
 
-export default function StringInterpolationExpressions() {
+export default function StringInterpolationExpressions(): void {
   describe("StringInterpolationExpressions", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

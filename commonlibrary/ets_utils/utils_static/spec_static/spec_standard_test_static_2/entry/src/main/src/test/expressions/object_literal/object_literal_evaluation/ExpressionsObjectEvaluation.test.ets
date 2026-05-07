@@ -73,7 +73,7 @@ interface I_iface_with_readonly {
     readonly b: number
 }
 
-export default function ExpressionsObjectEvaluationTestSuite() {
+export default function ExpressionsObjectEvaluationTestSuite(): void {
   describe("ExpressionsObjectEvaluationTestSuite", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

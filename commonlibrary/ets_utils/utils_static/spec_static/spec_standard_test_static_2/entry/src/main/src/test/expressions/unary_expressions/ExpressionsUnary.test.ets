@@ -25,7 +25,6 @@ import {
   Size,
   Level
 } from "../../../../../hypium";
- - 测试框架所需
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {
     setTimeout(() => {
@@ -34,7 +33,7 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
-export default function ExpressionsUnaryGrouping() {
+export default function ExpressionsUnaryGrouping(): void {
   describe("ExpressionsUnaryGrouping", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

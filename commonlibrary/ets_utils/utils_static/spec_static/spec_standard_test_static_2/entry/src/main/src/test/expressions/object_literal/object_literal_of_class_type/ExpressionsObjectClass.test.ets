@@ -201,7 +201,7 @@ class OK_cl_26 {
     set attr (attr: number) {}
 }
 
-export default function ExpressionsObjectClassTestSuite() {
+export default function ExpressionsObjectClassTestSuite(): void {
   describe("ExpressionsObjectClassTestSuite", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

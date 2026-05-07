@@ -103,7 +103,7 @@ async function sleep(time: int): Promise<int> {
     }, time);
   });
 }
-export default function TernaryConditionalExpressions() {
+export default function TernaryConditionalExpressions(): void {
   describe("TernaryConditionalExpressions", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

@@ -26,8 +26,6 @@ import {
   Level
 } from "../../../../../../hypium";
 
-// 从源文件提取的全局定义
-// 从 abrupt_completion.js 提取
 class abrupt_completion_A {
     private _i: int = 42;
     get i(): int {
@@ -42,12 +40,10 @@ class abrupt_completion_A {
     }
 }
 
-// 从 bigint.js 提取
 class bigint_A {
     bi: bigint = 13n
 }
 
-// 从 class_fields.js 提取
 class class_fields_A {
     n: number
     d: double
@@ -86,7 +82,6 @@ class class_fields_B {
     get b(): byte { return this._b }
     set b(v: byte) { this._b = v }
 }
- - 测试框架所需
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {
     setTimeout(() => {
@@ -95,7 +90,7 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
-export default function ExpressionsUnaryPostfix() {
+export default function ExpressionsUnaryPostfix(): void {
   describe("ExpressionsUnaryPostfix", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

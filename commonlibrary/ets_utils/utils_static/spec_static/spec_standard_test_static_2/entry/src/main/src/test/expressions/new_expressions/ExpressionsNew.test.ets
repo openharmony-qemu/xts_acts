@@ -936,7 +936,7 @@ class IAmBad_NewExpressionExceptional {
 }
 
 
-export default function ExpressionsNewTestSuite() {
+export default function ExpressionsNewTestSuite(): void {
   describe("ExpressionsNewTestSuite", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

@@ -38,7 +38,7 @@ type F_spex_8 = (p: number) => number
 
 enum Color_spex_9 { Red, Green, Blue }
 
-const enum Color_spex_10 { Red, Green, Blue }
+enum Color_spex_10 { Red, Green, Blue }
 
 let a1_spex_14: Object[]|null = null
 let a2_spex_14: Object[]|null = [new Object, new Object]
@@ -1385,7 +1385,7 @@ class A_27800 {
     return [p[0], p[0], p[1], p[1]]
   }
 }
-export default function ExpressionsSpreadTest() {
+export default function ExpressionsSpreadTest(): void {
   describe("ExpressionsSpreadTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

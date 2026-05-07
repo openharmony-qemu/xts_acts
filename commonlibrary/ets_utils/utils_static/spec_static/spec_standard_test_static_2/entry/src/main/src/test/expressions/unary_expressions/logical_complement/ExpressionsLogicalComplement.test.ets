@@ -27,9 +27,7 @@ import {
 } from "../../../../../../hypium";
 
 
-// 从 logical_complement_enum.js 提取
 enum logical_complement_enum_Color { Red, Green, Blue }
- - 测试框架所需
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {
     setTimeout(() => {
@@ -38,7 +36,7 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
-export default function ExpressionsLogicalComplement() {
+export default function ExpressionsLogicalComplement(): void {
   describe("ExpressionsLogicalComplement", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

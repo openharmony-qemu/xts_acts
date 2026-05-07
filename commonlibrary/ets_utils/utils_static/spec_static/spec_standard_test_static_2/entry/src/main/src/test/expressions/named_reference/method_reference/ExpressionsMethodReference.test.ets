@@ -71,7 +71,7 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
-export default function ExpressionsMethodReferenceTest() {
+export default function ExpressionsMethodReferenceTest(): void {
   describe("ExpressionsMethodReferenceTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

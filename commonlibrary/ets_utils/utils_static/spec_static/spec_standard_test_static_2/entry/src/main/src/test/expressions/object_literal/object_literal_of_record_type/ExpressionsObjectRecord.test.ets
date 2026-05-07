@@ -86,7 +86,7 @@ enum DoubleEnum_re_25: double {a = 1.0, b = 2.0, c = 3.141592653589}
 
 
 
-export default function ExpressionsObjectRecordTestSuite() {
+export default function ExpressionsObjectRecordTestSuite(): void {
   describe("ExpressionsObjectRecordTestSuite", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

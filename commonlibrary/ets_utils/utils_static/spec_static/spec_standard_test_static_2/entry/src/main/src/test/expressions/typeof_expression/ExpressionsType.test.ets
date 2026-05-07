@@ -30,7 +30,6 @@ enum EN1 { a, b, c }
 enum ES1 { a = "a", b = "b", c = "c" }
 interface I1 {}
 class C1 implements I1 {}
- - 测试框架所需
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {
     setTimeout(() => {
@@ -92,41 +91,32 @@ class BB3 extends A4 {}
 class CC2 {}
 type FF1 = (p: int) => int
 
-// 从 tof_func_0.js 提取的函数
 function tof_func_0_foo1(p: number): string { return typeof p }
 function tof_func_0_foo2(p: number): string { return typeof p }
 
-// 从 tof_func_1.js 提取的函数
 function tof_func_1_foo1(p: double): string { return typeof p }
 function tof_func_1_foo2(p: double): string { return typeof p }
 
-// 从 tof_func_2.js 提取的函数
 function tof_func_2_foo1(p: string): string { return typeof p }
 function tof_func_2_foo2(p: string): string { return typeof p }
 function tof_func_2_foo3(p: string): string { return typeof p }
 function tof_func_2_foo4(p: Comparable<String>): string { return typeof p }
 
-// 从 tof_func_3.js 提取的函数
 function tof_func_3_foo1(p: boolean): string { return typeof p }
 function tof_func_3_foo2(p: boolean): string { return typeof p }
 function tof_func_3_foo3(p: Comparable<Boolean>): string { return typeof p }
 
-// 从 tof_func_4.js 提取的函数
 function tof_func_4_foo1(p: bigint): string { return typeof p }
 function tof_func_4_foo2(p: bigint): string { return typeof p }
 
-// 从 tof_func_5.js 提取的函数
 function tof_func_5_foo1(p: AA1): string { return typeof p }
 function tof_func_5_foo2(p: I1): string { return typeof p }
 
-// 从 tof_func_6.js 提取的函数
 function tof_func_6_foo1(p: Numeric): string { return typeof p }
 
-// 从 tof_func_7.js 提取的函数
 function tof_func_7_foo1(p: number[]): string { return typeof p }
 function tof_func_7_foo2(p: number[]): string { return typeof p }
 
-// 从 tof_func_8.js 提取的函数
 function tof_func_8_foo1(p: byte[]): string { return typeof p }
 function tof_func_8_foo2(p: short[]): string { return typeof p }
 function tof_func_8_foo3(p: int[]): string { return typeof p }
@@ -135,30 +125,24 @@ function tof_func_8_foo5(p: float[]): string { return typeof p }
 function tof_func_8_foo6(p: double[]): string { return typeof p }
 function tof_func_8_foo7(p: char[]): string { return typeof p }
 
-// 从 tof_func_9.js 提取的函数
 function tof_func_9_foo1(p: AA1[]): string { return typeof p }
 function tof_func_9_foo2(p: I1[]): string { return typeof p }
 function tof_func_9_foo3(p: Comparable<Float>[]): string { return typeof p }
 
-// 从 tof_func_10.js 提取的函数
 function tof_func_10_foo1(p: Floating[]): string { return typeof p }
 function tof_func_10_foo2(p: Integral[]): string { return typeof p }
 function tof_func_10_foo3(p: Numeric[]): string { return typeof p }
 
-// 从 tof_func_11.js 提取的函数
 function tof_func_11_foo1(p: FF1): string { return typeof p }
 function tof_func_11_foo2(p: ((p: int) => int)): string { return typeof p }
 function tof_func_11_foo3(p: FF1): string { return typeof p }
 function tof_func_11_foo4(p: ((p: int) => int)): string { return typeof p }
 function tof_func_11_foo5(p: (() => void)): string { return typeof p }
 
-// 从 tof_func_12.js 提取的函数
 function tof_func_12_foo1(p: undefined): string { return typeof p }
 
-// 从 tof_func_13.js 提取的函数
 function tof_func_13_foo1(p: null): string { return typeof p }
 
-// 从 tof_func_14.js 提取的函数
 function tof_func_14_foo1(p: A2|null): string { return typeof p }
 function tof_func_14_foo2(p: A2|null): string { return typeof p }
 function tof_func_14_foo3(p: I3|null): string { return typeof p }
@@ -168,85 +152,63 @@ function tof_func_14_foo6(p: A2[]|null): string { return typeof p }
 function tof_func_14_foo7(p: I3[]|null): string { return typeof p }
 function tof_func_14_foo8(p: I3[]|null): string { return typeof p }
 
-// 从 tof_func_15.js 提取的函数
 function tof_func_15_foo1(p: Color1): string { return typeof p }
 function tof_func_15_foo2(p: Size1): string { return typeof p }
 
-// 从 tof_func_16.js 提取的函数
 function tof_func_16_foo1(p: Color2): string { return typeof p }
 function tof_func_16_foo2(p: Size2): string { return typeof p }
 
-// 从 tof_func_17.js 提取的函数
 function tof_func_17_foo1(p: number|string|boolean): string { return typeof p }
 function tof_func_17_foo2(p: number|boolean): string { return typeof p }
 function tof_func_17_foo3(p: boolean|never|long): string { return typeof p }
 
-// 从 tof_func_18.js 提取的函数
 function tof_func_18_foo1(p: number|string|boolean): string { return typeof p }
 function tof_func_18_foo2(p: number|string): string { return typeof p }
 function tof_func_18_foo3(p: boolean|never|long|string): string { return typeof p }
 
-// 从 tof_func_19.js 提取的函数
 function tof_func_19_foo1(p: A3|B2|CC2): string { return typeof p }
 function tof_func_19_foo2(p: B2|never|undefined|A3): string { return typeof p }
 
-// 从 tof_func_20.js 提取的函数
 function tof_func_20_foo1(p: CC1<A2>): string { return typeof p }
 function tof_func_20_foo2(p: CC1<B1>): string { return typeof p }
 function tof_func_20_foo3(p: CC1<I3>): string { return typeof p }
 
-// 从 tof_func_21.js 提取的函数
 function tof_func_21_foo1(p: Comparable<Double>): string { return typeof p }
 
-// 从 tof_func_22.js 提取的函数
 function tof_func_22_foo1(p: byte): string { return typeof p }
 function tof_func_22_foo2(p: byte): string { return typeof p }
 
-// 从 tof_func_23.js 提取的函数
 function tof_func_23_foo1(p: short): string { return typeof p }
 function tof_func_23_foo2(p: short): string { return typeof p }
 
-// 从 tof_func_24.js 提取的函数
 function tof_func_24_foo1(p: int): string { return typeof p }
 function tof_func_24_foo2(p: int): string { return typeof p }
 
-// 从 tof_func_25.js 提取的函数
 function tof_func_25_foo1(p: long): string { return typeof p }
 function tof_func_25_foo2(p: long): string { return typeof p }
 
-// 从 tof_func_26.js 提取的函数
 function tof_func_26_foo1(p: float): string { return typeof p }
 function tof_func_26_foo2(p: float): string { return typeof p }
 
-// 从 tof_func_27.js 提取的函数
 function tof_func_27_foo1(p: char): string { return typeof p }
 function tof_func_27_foo2(p: char): string { return typeof p }
 
-// 从 tof_func_28.js 提取的函数
 function tof_func_28_foo1(p: Comparable<Float>): string { return typeof p }
 
-// 从 tof_func_29.js 提取的函数
 function tof_func_29_foo1(p: Comparable<Byte>): string { return typeof p }
 
-// 从 tof_func_30.js 提取的函数
 function tof_func_30_foo1(p: Comparable<Short>): string { return typeof p }
 
-// 从 tof_func_31.js 提取的函数
 function tof_func_31_foo1(p: Comparable<Int>): string { return typeof p }
 
-// 从 tof_func_32.js 提取的函数
 function tof_func_32_foo1(p: Comparable<Long>): string { return typeof p }
 
-// 从 tof_func_33.js 提取的函数
 function tof_func_33_foo1(p: Comparable<Char>): string { return typeof p }
 
-// 从 tof_func_34.js 提取的函数
 function tof_func_34_foo1(p: Floating): string { return typeof p }
 
-// 从 tof_func_35.js 提取的函数
 function tof_func_35_foo1(p: Integral): string { return typeof p }
 
-// 从 tof_func_11.js 提取的额外函数（重命名避免冲突）
 function tof_func_11_original_foo(p: int): int { return p + p }
 
 class tof_meth_0_Z1 {
@@ -268,7 +230,6 @@ class tof_meth_0_Z2 {
   }
 }
 
-// 从 tof_meth_1.js 提取
 class tof_meth_1_Z1 {
   fld: string = ""
   constructor(p: double) {
@@ -288,7 +249,6 @@ class tof_meth_1_Z2 {
   }
 }
 
-// 从 tof_meth_2.js 提取
 let tof_meth_2_a = 42
 class tof_meth_2_Z1 {
   fld: string = ""
@@ -354,7 +314,6 @@ class tof_meth_2_Z7 {
   }
 }
 
-// 从 tof_meth_3.js 提取
 class tof_meth_3_Z1 {
   fld: string = ""
   constructor(p: boolean) {
@@ -383,7 +342,6 @@ class tof_meth_3_Z3 {
   }
 }
 
-// 从 tof_meth_4.js 提取
 class tof_meth_4_Z1 {
   fld: string = ""
   constructor(p: bigint) {
@@ -403,7 +361,6 @@ class tof_meth_4_Z2 {
   }
 }
 
-// 从 tof_meth_5.js 提取
 interface tof_meth_5_I {}
 class tof_meth_5_A implements tof_meth_5_I {}
 class tof_meth_5_Z1 {
@@ -425,7 +382,6 @@ class tof_meth_5_Z2 {
   }
 }
 
-// 从 tof_meth_6.js 提取
 class tof_meth_6_Z1 {
   fld: string = ""
   constructor(p: Numeric) {
@@ -436,7 +392,6 @@ class tof_meth_6_Z1 {
   }
 }
 
-// 从 tof_meth_7.js 提取
 class tof_meth_7_Z1 {
   fld: string = ""
   constructor(p: number[]) {
@@ -456,7 +411,6 @@ class tof_meth_7_Z2 {
   }
 }
 
-// 从 tof_meth_8.js 提取
 class tof_meth_8_Z1 {
   fld: string = ""
   constructor(p: byte[]) {
@@ -521,7 +475,6 @@ class tof_meth_8_Z7 {
   }
 }
 
-// 从 tof_meth_9.js 提取
 interface tof_meth_9_I {}
 class tof_meth_9_A implements tof_meth_9_I {}
 class tof_meth_9_Z1 {
@@ -552,7 +505,6 @@ class tof_meth_9_Z3 {
   }
 }
 
-// 从 tof_meth_10.js 提取
 class tof_meth_10_Z1 {
   fld: string = ""
   constructor(p: Floating[]) {
@@ -581,7 +533,6 @@ class tof_meth_10_Z3 {
   }
 }
 
-// 从 tof_meth_11.js 提取
 type tof_meth_11_F = (p: int) => int
 function tof_meth_11_foo(p: int): int {
   return p + p
@@ -633,7 +584,6 @@ class tof_meth_11_Z5 {
   }
 }
 
-// 从 tof_meth_12.js 提取
 class tof_meth_12_Z1 {
   fld: string = ""
   constructor(p: undefined) {
@@ -644,7 +594,6 @@ class tof_meth_12_Z1 {
   }
 }
 
-// 从 tof_meth_13.js 提取
 class tof_meth_13_Z1 {
   fld: string = ""
   constructor(p: null) {
@@ -655,7 +604,6 @@ class tof_meth_13_Z1 {
   }
 }
 
-// 从 tof_meth_14.js 提取
 interface tof_meth_14_I {}
 class tof_meth_14_A implements tof_meth_14_I {}
 class tof_meth_14_Z1 {
@@ -731,7 +679,6 @@ class tof_meth_14_Z8 {
   }
 }
 
-// 从 tof_meth_15.js 提取
 enum tof_meth_15_Color { Red, Green, Blue }
 enum tof_meth_15_Size { S, M, L, XL }
 class tof_meth_15_Z1 {
@@ -753,7 +700,6 @@ class tof_meth_15_Z2 {
   }
 }
 
-// 从 tof_meth_16.js 提取
 enum tof_meth_16_Color { Red = "red", Green = "green", Blue = "blue" }
 enum tof_meth_16_Size { S = "small", M = "mid", L = "large", XL = "extra-large" }
 class tof_meth_16_Z1 {
@@ -775,7 +721,6 @@ class tof_meth_16_Z2 {
   }
 }
 
-// 从 tof_meth_17.js 提取
 class tof_meth_17_Z1 {
   fld: string = ""
   constructor(p: number|string|boolean) {
@@ -804,7 +749,6 @@ class tof_meth_17_Z3 {
   }
 }
 
-// 从 tof_meth_18.js 提取
 class tof_meth_18_Z1 {
   fld: string = ""
   constructor(p: number|string|boolean) {
@@ -833,7 +777,6 @@ class tof_meth_18_Z3 {
   }
 }
 
-// 从 tof_meth_19.js 提取
 class tof_meth_19_A {}
 class tof_meth_19_B {}
 class tof_meth_19_C {}
@@ -856,7 +799,6 @@ class tof_meth_19_Z2 {
   }
 }
 
-// 从 tof_meth_20.js 提取
 interface tof_meth_20_I {}
 class tof_meth_20_A implements tof_meth_20_I {}
 class tof_meth_20_B extends tof_meth_20_A {}
@@ -894,7 +836,6 @@ class tof_meth_20_Z3 {
   }
 }
 
-// 从 tof_meth_21.js 提取
 class tof_meth_21_Z1 {
   fld: string = ""
   constructor(p: Comparable<Double>) {
@@ -905,7 +846,6 @@ class tof_meth_21_Z1 {
   }
 }
 
-// 从 tof_meth_22.js 提取
 class tof_meth_22_Z1 {
   fld: string = ""
   constructor(p: byte) {
@@ -925,7 +865,6 @@ class tof_meth_22_Z2 {
   }
 }
 
-// 从 tof_meth_23.js 提取
 class tof_meth_23_Z1 {
   fld: string = ""
   constructor(p: short) {
@@ -945,7 +884,6 @@ class tof_meth_23_Z2 {
   }
 }
 
-// 从 tof_meth_24.js 提取
 class tof_meth_24_Z1 {
   fld: string = ""
   constructor(p: int) {
@@ -965,7 +903,6 @@ class tof_meth_24_Z2 {
   }
 }
 
-// 从 tof_meth_25.js 提取
 class tof_meth_25_Z1 {
   fld: string = ""
   constructor(p: long) {
@@ -985,7 +922,6 @@ class tof_meth_25_Z2 {
   }
 }
 
-// 从 tof_meth_26.js 提取
 class tof_meth_26_Z1 {
   fld: string = ""
   constructor(p: float) {
@@ -1005,7 +941,6 @@ class tof_meth_26_Z2 {
   }
 }
 
-// 从 tof_meth_27.js 提取
 class tof_meth_27_Z1 {
   fld: string = ""
   constructor(p: char) {
@@ -1025,7 +960,6 @@ class tof_meth_27_Z2 {
   }
 }
 
-// 从 tof_meth_28.js 提取
 class tof_meth_28_Z1 {
   fld: string = ""
   constructor(p: Comparable<Float>) {
@@ -1036,7 +970,6 @@ class tof_meth_28_Z1 {
   }
 }
 
-// 从 tof_meth_29.js 提取
 class tof_meth_29_Z1 {
   fld: string = ""
   constructor(p: Comparable<Byte>) {
@@ -1047,7 +980,6 @@ class tof_meth_29_Z1 {
   }
 }
 
-// 从 tof_meth_30.js 提取
 class tof_meth_30_Z1 {
   fld: string = ""
   constructor(p: Comparable<Short>) {
@@ -1058,7 +990,6 @@ class tof_meth_30_Z1 {
   }
 }
 
-// 从 tof_meth_31.js 提取
 class tof_meth_31_Z1 {
   fld: string = ""
   constructor(p: Comparable<Int>) {
@@ -1069,7 +1000,6 @@ class tof_meth_31_Z1 {
   }
 }
 
-// 从 tof_meth_32.js 提取
 class tof_meth_32_Z1 {
   fld: string = ""
   constructor(p: Comparable<Long>) {
@@ -1080,7 +1010,6 @@ class tof_meth_32_Z1 {
   }
 }
 
-// 从 tof_meth_33.js 提取
 class tof_meth_33_Z1 {
   fld: string = ""
   constructor(p: Comparable<Char>) {
@@ -1091,7 +1020,6 @@ class tof_meth_33_Z1 {
   }
 }
 
-// 从 tof_meth_34.js 提取
 class tof_meth_34_Z1 {
   fld: string = ""
   constructor(p: Floating) {
@@ -1102,7 +1030,6 @@ class tof_meth_34_Z1 {
   }
 }
 
-// 从 tof_meth_35.js 提取
 class tof_meth_35_Z1 {
   fld: string = ""
   constructor(p: Integral) {
@@ -1120,7 +1047,6 @@ class tof_obj_0_Z2 {
   fld: number
 }
 
-// 从 tof_obj_1.js 提取
 class tof_obj_1_Z1 {
   fld: double
 }
@@ -1128,7 +1054,6 @@ class tof_obj_1_Z2 {
   fld: double
 }
 
-// 从 tof_obj_2.js 提取
 let tof_obj_2_a = 42
 class tof_obj_2_Z1 {
   fld: string = ""
@@ -1143,7 +1068,6 @@ class tof_obj_2_Z4 {
   fld: Comparable<String> = ""
 }
 
-// 从 tof_obj_3.js 提取
 class tof_obj_3_Z1 {
   fld: boolean
 }
@@ -1154,7 +1078,6 @@ class tof_obj_3_Z3 {
   fld: Comparable<Boolean> = false
 }
 
-// 从 tof_obj_4.js 提取
 class tof_obj_4_Z1 {
   fld: bigint = 0n
 }
@@ -1162,7 +1085,6 @@ class tof_obj_4_Z2 {
   fld: bigint = 0n
 }
 
-// 从 tof_obj_5.js 提取
 interface tof_obj_5_I {}
 class tof_obj_5_A implements tof_obj_5_I {}
 class tof_obj_5_Z1 {
@@ -1172,12 +1094,10 @@ class tof_obj_5_Z2 {
   fld: tof_obj_5_I = new tof_obj_5_A()
 }
 
-// 从 tof_obj_6.js 提取
 class tof_obj_6_Z1 {
   fld: Numeric = 0
 }
 
-// 从 tof_obj_7.js 提取
 class tof_obj_7_Z1 {
   fld: number[] = []
 }
@@ -1185,7 +1105,6 @@ class tof_obj_7_Z2 {
   fld: number[] = []
 }
 
-// 从 tof_obj_8.js 提取
 class tof_obj_8_Z1 {
   fld: byte[] = []
 }
@@ -1208,7 +1127,6 @@ class tof_obj_8_Z7 {
   fld: char[] = []
 }
 
-// 从 tof_obj_9.js 提取
 interface tof_obj_9_I {}
 class tof_obj_9_A implements tof_obj_9_I {}
 class tof_obj_9_Z1 {
@@ -1221,7 +1139,6 @@ class tof_obj_9_Z3 {
   fld: Comparable<Float>[] = []
 }
 
-// 从 tof_obj_10.js 提取
 class tof_obj_10_Z1 {
   fld: Floating[] = []
 }
@@ -1232,7 +1149,6 @@ class tof_obj_10_Z3 {
   fld: Numeric[] = []
 }
 
-// 从 tof_obj_11.js 提取
 type tof_obj_11_F = (p: int) => int
 function tof_obj_11_foo(p: int): int {
   return p + p
@@ -1254,17 +1170,14 @@ class tof_obj_11_Z5 {
   fld: (() => void) = () => {}
 }
 
-// 从 tof_obj_12.js 提取
 class tof_obj_12_Z1 {
   fld: undefined
 }
 
-// 从 tof_obj_13.js 提取
 class tof_obj_13_Z1 {
   fld: null = null
 }
 
-// 从 tof_obj_14.js 提取
 interface tof_obj_14_I {}
 class tof_obj_14_A implements tof_obj_14_I {}
 class tof_obj_14_Z1 {
@@ -1292,7 +1205,6 @@ class tof_obj_14_Z8 {
   fld: tof_obj_14_I[]|null = null
 }
 
-// 从 tof_obj_15.js 提取
 enum tof_obj_15_Color { Red, Green, Blue }
 enum tof_obj_15_Size { S, M, L, XL }
 class tof_obj_15_Z1 {
@@ -1302,7 +1214,6 @@ class tof_obj_15_Z2 {
   fld: tof_obj_15_Size = tof_obj_15_Size.S
 }
 
-// 从 tof_obj_16.js 提取
 enum tof_obj_16_Color { Red = "red", Green = "green", Blue = "blue" }
 enum tof_obj_16_Size { S = "small", M = "mid", L = "large", XL = "extra-large" }
 class tof_obj_16_Z1 {
@@ -1312,7 +1223,6 @@ class tof_obj_16_Z2 {
   fld: tof_obj_16_Size = tof_obj_16_Size.S
 }
 
-// 从 tof_obj_17.js 提取
 class tof_obj_17_Z1 {
   fld: number|string|boolean = 0
 }
@@ -1323,7 +1233,6 @@ class tof_obj_17_Z3 {
   fld: boolean|never|long = false
 }
 
-// 从 tof_obj_18.js 提取
 class tof_obj_18_Z1 {
   fld: number|string|boolean = 0
 }
@@ -1334,7 +1243,6 @@ class tof_obj_18_Z3 {
   fld: boolean|never|long|string = false
 }
 
-// 从 tof_obj_19.js 提取
 class tof_obj_19_A {}
 class tof_obj_19_B {}
 class tof_obj_19_C {}
@@ -1345,7 +1253,6 @@ class tof_obj_19_Z2 {
   fld: tof_obj_19_B|never|undefined|tof_obj_19_A
 }
 
-// 从 tof_obj_20.js 提取
 interface tof_obj_20_I {}
 class tof_obj_20_A implements tof_obj_20_I {}
 class tof_obj_20_B extends tof_obj_20_A {}
@@ -1365,12 +1272,10 @@ class tof_obj_20_Z3 {
   fld: tof_obj_20_C<tof_obj_20_I> = new tof_obj_20_C<tof_obj_20_I>(new tof_obj_20_A())
 }
 
-// 从 tof_obj_21.js 提取
 class tof_obj_21_Z1 {
   fld: Comparable<Double> = new Double()
 }
 
-// 从 tof_obj_22.js 提取
 class tof_obj_22_Z1 {
   fld: byte
 }
@@ -1378,7 +1283,6 @@ class tof_obj_22_Z2 {
   fld: byte
 }
 
-// 从 tof_obj_23.js 提取
 class tof_obj_23_Z1 {
   fld: short
 }
@@ -1386,7 +1290,6 @@ class tof_obj_23_Z2 {
   fld: short
 }
 
-// 从 tof_obj_24.js 提取
 class tof_obj_24_Z1 {
   fld: int
 }
@@ -1394,7 +1297,6 @@ class tof_obj_24_Z2 {
   fld: int
 }
 
-// 从 tof_obj_25.js 提取
 class tof_obj_25_Z1 {
   fld: long
 }
@@ -1402,7 +1304,6 @@ class tof_obj_25_Z2 {
   fld: long
 }
 
-// 从 tof_obj_26.js 提取
 class tof_obj_26_Z1 {
   fld: float
 }
@@ -1410,7 +1311,6 @@ class tof_obj_26_Z2 {
   fld: float
 }
 
-// 从 tof_obj_27.js 提取
 class tof_obj_27_Z1 {
   fld: char
 }
@@ -1418,42 +1318,34 @@ class tof_obj_27_Z2 {
   fld: char
 }
 
-// 从 tof_obj_28.js 提取
 class tof_obj_28_Z1 {
   fld: Comparable<Float> = new Float()
 }
 
-// 从 tof_obj_29.js 提取
 class tof_obj_29_Z1 {
   fld: Comparable<Byte> = new Byte()
 }
 
-// 从 tof_obj_30.js 提取
 class tof_obj_30_Z1 {
   fld: Comparable<Short> = new Short()
 }
 
-// 从 tof_obj_31.js 提取
 class tof_obj_31_Z1 {
   fld: Comparable<Int> = new Int()
 }
 
-// 从 tof_obj_32.js 提取
 class tof_obj_32_Z1 {
   fld: Comparable<Long> = new Long()
 }
 
-// 从 tof_obj_33.js 提取
 class tof_obj_33_Z1 {
   fld: Comparable<Char> = new Char()
 }
 
-// 从 tof_obj_34.js 提取
 class tof_obj_34_Z1 {
   fld: Floating = 3.14f
 }
 
-// 从 tof_obj_35.js 提取
 class tof_obj_35_Z1 {
   fld: Integral = 42
 }
@@ -1461,40 +1353,32 @@ class tof_obj_35_Z1 {
 let tof_vars_0_g1:number = Number.MIN_VALUE
 let tof_vars_0_g2:number = Number.MAX_VALUE
 
-// 从 tof_vars_1.js 提取
 let tof_vars_1_g1:double = Double.MIN_VALUE
 let tof_vars_1_g2:double = Double.MAX_VALUE
 
-// 从 tof_vars_2.js 提取
 let tof_vars_2_a = 42
 let tof_vars_2_g1:string = "ABC"
 let tof_vars_2_g2:string = '' + '' + 'CDE'
 let tof_vars_2_g3:string = `a = ${tof_vars_2_a}` + '' + "CDE"
 let tof_vars_2_g4:Comparable<String> = "X"
 
-// 从 tof_vars_3.js 提取
 let tof_vars_3_g1:boolean = true
 let tof_vars_3_g2:boolean = false
 let tof_vars_3_g3:Comparable<Boolean> = new Boolean()
 
-// 从 tof_vars_4.js 提取
 let tof_vars_4_g1:bigint = 123456789012345678901234567890n
 let tof_vars_4_g2:bigint = 999999999999999999999999999999n
 
-// 从 tof_vars_5.js 提取
 interface tof_vars_5_I {}
 class tof_vars_5_A implements tof_vars_5_I {}
 let tof_vars_5_g1:tof_vars_5_A = {}
 let tof_vars_5_g2:tof_vars_5_I = new tof_vars_5_A()
 
-// 从 tof_vars_6.js 提取
 let tof_vars_6_g1:Numeric = 3.14
 
-// 从 tof_vars_7.js 提取
 let tof_vars_7_g1:number[] = [Number.MIN_VALUE]
 let tof_vars_7_g2:number[] = [Number.MAX_VALUE]
 
-// 从 tof_vars_8.js 提取
 let tof_vars_8_g1:byte[] = [Byte.MIN_VALUE]
 let tof_vars_8_g2:short[] = [Short.MIN_VALUE]
 let tof_vars_8_g3:int[] = [Int.MAX_VALUE]
@@ -1503,19 +1387,16 @@ let tof_vars_8_g5:float[] = [Float.MIN_VALUE]
 let tof_vars_8_g6:double[] = [Double.MIN_VALUE]
 let tof_vars_8_g7:char[] = [Char.MIN_VALUE as char]
 
-// 从 tof_vars_9.js 提取
 interface tof_vars_9_I {}
 class tof_vars_9_A implements tof_vars_9_I {}
 let tof_vars_9_g1:tof_vars_9_A[] = [new tof_vars_9_A]
 let tof_vars_9_g2:tof_vars_9_I[] = [new tof_vars_9_A]
 let tof_vars_9_g3:Comparable<Float>[] = [3.14f]
 
-// 从 tof_vars_10.js 提取
 let tof_vars_10_g1:Floating[] = [3.14f]
 let tof_vars_10_g2:Integral[] = [42]
 let tof_vars_10_g3:Numeric[] = [3.14]
 
-// 从 tof_vars_11.js 提取
 type tof_vars_11_F = (p: int) => int
 function tof_vars_11_foo(p: int): int {
   return p + p
@@ -1527,13 +1408,10 @@ let tof_vars_11_g3:tof_vars_11_F = tof_vars_11_f
 let tof_vars_11_g4:((p: int) => int) = tof_vars_11_f
 let tof_vars_11_g5:(() => void) = () => { console.log(1) }
 
-// 从 tof_vars_12.js 提取
 let tof_vars_12_g1:undefined = undefined
 
-// 从 tof_vars_13.js 提取
 let tof_vars_13_g1:null = null
 
-// 从 tof_vars_14.js 提取
 interface tof_vars_14_I {}
 class tof_vars_14_A implements tof_vars_14_I {}
 let tof_vars_14_g1:tof_vars_14_A|null = new tof_vars_14_A()
@@ -1545,36 +1423,30 @@ let tof_vars_14_g6:tof_vars_14_A[]|null = null
 let tof_vars_14_g7:tof_vars_14_I[]|null = [new tof_vars_14_A()]
 let tof_vars_14_g8:tof_vars_14_I[]|null = null
 
-// 从 tof_vars_15.js 提取
 enum tof_vars_15_Color { Red, Green, Blue }
 enum tof_vars_15_Size { S, M, L, XL }
 let tof_vars_15_g1:tof_vars_15_Color = tof_vars_15_Color.Red
 let tof_vars_15_g2:tof_vars_15_Size = tof_vars_15_Size.XL
 
-// 从 tof_vars_16.js 提取
 enum tof_vars_16_Color { Red = "red", Green = "green", Blue = "blue" }
 enum tof_vars_16_Size { S = "small", M = "mid", L = "large", XL = "extra-large" }
 let tof_vars_16_g1:tof_vars_16_Color = tof_vars_16_Color.Blue
 let tof_vars_16_g2:tof_vars_16_Size = tof_vars_16_Size.L
 
-// 从 tof_vars_17.js 提取
 let tof_vars_17_g1:number|string|boolean = false
 let tof_vars_17_g2:number|boolean = true
 let tof_vars_17_g3:boolean|never|long = true
 
-// 从 tof_vars_18.js 提取
 let tof_vars_18_g1:number|string|boolean = "false"
 let tof_vars_18_g2:number|string = "3.14"
 let tof_vars_18_g3:boolean|never|long|string = "1234567890"
 
-// 从 tof_vars_19.js 提取
 class tof_vars_19_A {}
 class tof_vars_19_B {}
 class tof_vars_19_C {}
 let tof_vars_19_g1:tof_vars_19_A|tof_vars_19_B|tof_vars_19_C = new tof_vars_19_A()
 let tof_vars_19_g2:tof_vars_19_B|never|undefined|tof_vars_19_A = new tof_vars_19_A()
 
-// 从 tof_vars_20.js 提取
 interface tof_vars_20_I {}
 class tof_vars_20_A implements tof_vars_20_I {}
 class tof_vars_20_B extends tof_vars_20_A {}
@@ -1588,58 +1460,43 @@ let tof_vars_20_g1:tof_vars_20_C<tof_vars_20_A> = new tof_vars_20_C<tof_vars_20_
 let tof_vars_20_g2:tof_vars_20_C<tof_vars_20_B> = new tof_vars_20_C<tof_vars_20_B>(new tof_vars_20_B())
 let tof_vars_20_g3:tof_vars_20_C<tof_vars_20_I> = new tof_vars_20_C<tof_vars_20_I>(new tof_vars_20_B())
 
-// 从 tof_vars_21.js 提取
 let tof_vars_21_g1:Comparable<Double> = new Double()
 
-// 从 tof_vars_22.js 提取
 let tof_vars_22_g1:byte = Byte.MIN_VALUE
 let tof_vars_22_g2:byte = Byte.MAX_VALUE
 
-// 从 tof_vars_23.js 提取
 let tof_vars_23_g1:short = Short.MIN_VALUE
 let tof_vars_23_g2:short = Short.MAX_VALUE
 
-// 从 tof_vars_24.js 提取
 let tof_vars_24_g1:int = Int.MIN_VALUE
 let tof_vars_24_g2:int = Int.MAX_VALUE
 
-// 从 tof_vars_25.js 提取
 let tof_vars_25_g1:long = Long.MIN_VALUE
 let tof_vars_25_g2:long = Long.MAX_VALUE
 
-// 从 tof_vars_26.js 提取
 let tof_vars_26_g1:float = Float.MIN_VALUE
 let tof_vars_26_g2:float = Float.MAX_VALUE
 
-// 从 tof_vars_27.js 提取
 let tof_vars_27_g1:char = Char.MIN_VALUE as char
 let tof_vars_27_g2:char = Char.MAX_VALUE as char
 
-// 从 tof_vars_28.js 提取
 let tof_vars_28_g1:Comparable<Float> = new Float()
 
-// 从 tof_vars_29.js 提取
 let tof_vars_29_g1:Comparable<Byte> = new Byte()
 
-// 从 tof_vars_30.js 提取
 let tof_vars_30_g1:Comparable<Short> = new Short()
 
-// 从 tof_vars_31.js 提取
 let tof_vars_31_g1:Comparable<Int> = new Int()
 
-// 从 tof_vars_32.js 提取
 let tof_vars_32_g1:Comparable<Long> = new Long()
 
-// 从 tof_vars_33.js 提取
 let tof_vars_33_g1:Comparable<Char> = new Char()
 
-// 从 tof_vars_34.js 提取
 let tof_vars_34_g1:Floating = 3.14f
 
-// 从 tof_vars_35.js 提取
 let tof_vars_35_g1:Integral = 42
 
-export default function ExpressionsTypePart() {
+export default function ExpressionsTypePart(): void {
   describe("ExpressionsTypePart", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

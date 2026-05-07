@@ -41,7 +41,7 @@ function getOperand5(): number { return 2.0; }
 function getOperand6(): number { return 2.5; }
 function getOperand7(): number { return 2.0; }
 
-export default function NumericBigintRelationalTest() {
+export default function NumericBigintRelationalTest(): void {
   describe("NumericBigintRelationalTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

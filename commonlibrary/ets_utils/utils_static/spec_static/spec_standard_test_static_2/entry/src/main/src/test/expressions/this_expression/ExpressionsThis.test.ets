@@ -332,7 +332,7 @@ class A_this_with_nullable_type {
   }
 }
 
-export default function ExpressionsThisTestSuite() {
+export default function ExpressionsThisTestSuite(): void {
   describe("ExpressionsThisTestSuite", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

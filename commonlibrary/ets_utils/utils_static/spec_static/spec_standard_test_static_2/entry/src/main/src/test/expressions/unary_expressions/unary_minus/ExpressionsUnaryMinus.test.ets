@@ -26,8 +26,6 @@ import {
   Level
 } from "../../../../../../hypium";
 
-// 从源文件提取的全局定义
-// 从 unary_minus_int_enum.js 提取
 enum unary_minus_int_enum_IntEnum {
     Neg = -1,
     Pos = 1,
@@ -35,14 +33,12 @@ enum unary_minus_int_enum_IntEnum {
     Max = 2147483647
 }
 
-// 从 unary_minus_long_enum.js 提取
 enum unary_minus_long_enum_LongEnum {
     Neg = -0x1_1111_1111,
     Pos = 0x1_1111_1111,
     Min = -9223372036854775808,
     Max = 9223372036854775807
 }
- - 测试框架所需
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {
     setTimeout(() => {
@@ -51,7 +47,7 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
-export default function ExpressionsUnaryMinus() {
+export default function ExpressionsUnaryMinus(): void {
   describe("ExpressionsUnaryMinus", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

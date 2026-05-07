@@ -26,8 +26,6 @@ import {
   Level
 } from "../../../../../hypium";
 
-// 从源文件提取的全局定义
-// 从 lazy_operator_0.js 到 lazy_operator_5.js 提取
 let lazy_operator_a: Any
 function lazy_operator_non_eval(): int {
   expect(true).assertFalse() // 用于触发失败的函数
@@ -35,7 +33,6 @@ function lazy_operator_non_eval(): int {
 }
 class lazy_operator_C {}
 
-// 从 least_upper_bound.js 提取
 abstract class least_upper_bound_ACA {}
 abstract class least_upper_bound_ACB {}
 class least_upper_bound_CAA extends least_upper_bound_ACA {}
@@ -47,9 +44,7 @@ class least_upper_bound_CBB extends least_upper_bound_ACB {}
 class least_upper_bound_CBBA extends least_upper_bound_CBB {}
 class least_upper_bound_CBBB extends least_upper_bound_CBB {}
 
-// 从 mix_with_conditional_0.js 到 mix_with_conditional_15.js 提取
 type mix_with_conditional_boolean_nullish = boolean | null | undefined
- - 测试框架所需
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {
     setTimeout(() => {
@@ -68,7 +63,6 @@ class nullish_coalescing_expression_array_C {
   public fld: string = "test"
 }
 
-// 从 nullish_coalescing_expression_class_0.js 到 nullish_coalescing_expression_class_6.js 提取
 type nullish_coalescing_expression_class_int_nullish = int | null | undefined
 class nullish_coalescing_expression_class_C {
   public fld1: nullish_coalescing_expression_class_int_nullish
@@ -85,28 +79,24 @@ class nullish_coalescing_expression_class_C {
   }
 }
 
-// 从 nullish_coalescing_expression_record_0.js 到 nullish_coalescing_expression_record_3.js 提取
 type nullish_coalescing_expression_record_int_nullish = int | null | undefined
 function nullish_coalescing_expression_record_foo(): nullish_coalescing_expression_record_int_nullish { return 1; }
 class nullish_coalescing_expression_array_7_C {}
 
-// 从 type_of_null_coalescing_0.js 提取
 class type_of_null_coalescing_0_A {}
 function type_of_null_coalescing_0_foo(p: type_of_null_coalescing_0_A): int {
   return 2;
 }
 
-// 从 type_of_null_coalescing_1.js 提取
 class type_of_null_coalescing_1_A {}
 function type_of_null_coalescing_1_foo(p: Object): int {
   return 1;
 }
 
-// 从 type_of_null_coalescing_2.js 提取
 class type_of_null_coalescing_2_A {}
 class type_of_null_coalescing_2_BA extends type_of_null_coalescing_2_A {}
 
-export default function ExpressionsNullishCoalescing() {
+export default function ExpressionsNullishCoalescing(): void {
   describe("ExpressionsNullishCoalescing", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

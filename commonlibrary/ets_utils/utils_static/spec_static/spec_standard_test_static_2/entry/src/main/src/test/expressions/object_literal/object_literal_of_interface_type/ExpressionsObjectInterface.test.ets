@@ -255,7 +255,7 @@ interface I_spec_ex6 {
     method(): number { return 1 }
 }
 
-export default function ExpressionsObjectInterfaceTestSuite() {
+export default function ExpressionsObjectInterfaceTestSuite(): void {
   describe("ExpressionsObjectInterfaceTestSuite", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

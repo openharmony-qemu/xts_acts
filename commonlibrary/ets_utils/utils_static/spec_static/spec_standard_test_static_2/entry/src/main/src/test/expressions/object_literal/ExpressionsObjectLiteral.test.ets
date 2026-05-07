@@ -154,7 +154,7 @@ class Z_union_inferred {
 }
 class X_union_inferred {}
 
-export default function ExpressionsObjectLiteralTestSuite() {
+export default function ExpressionsObjectLiteralTestSuite(): void {
   describe("ExpressionsObjectLiteralTestSuite", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

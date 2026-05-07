@@ -93,7 +93,7 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
-export default function OperatorPrecedenceTest() {
+export default function OperatorPrecedenceTest(): void {
   describe("OperatorPrecedenceTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
