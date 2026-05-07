@@ -1415,7 +1415,7 @@ export default function usbNoPerDdkTest() {
         done();
       }
     });
-  
+
     /** @tc.name   testUsbControlTransferNoPer001
      * @tc.number SUB_Driver_Ext_DDKNoPer_1700
      * @tc.desc   OH_Usb_ControlTransfer Interface testing - no permission
