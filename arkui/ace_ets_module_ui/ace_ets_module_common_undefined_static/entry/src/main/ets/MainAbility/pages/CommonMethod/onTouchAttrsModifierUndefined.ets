@@ -18,7 +18,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyModifier implements AttributeModifier<ButtonAttribute> {
+export class MyModifier implements AttributeModifier<ButtonAttribute> {
   @State public cnt : int = 0;
   @State public isOnTouchUndefined: boolean = true;
 

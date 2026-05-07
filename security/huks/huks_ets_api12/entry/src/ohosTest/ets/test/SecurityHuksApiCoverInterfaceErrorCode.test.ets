@@ -369,7 +369,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
      * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API16_Interface_1700', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
-      if(!useSoftware){
+      if (!useSoftware) {
         await CheckWifiInfo();
       }
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API16_Interface_1700";
@@ -858,7 +858,7 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
      * @tc.level  LEVEL3
      */
     it('SUB_Security_HUKS_ErrorCode_API20_Interface_1300', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
-      if(!useSoftware){
+      if (!useSoftware) {
         await CheckWifiInfo();
       }
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API20_Interface_1300";
@@ -1234,6 +1234,60 @@ export default function SecurityHuksApiCoverInterfaceErrorCode() {
         }
       }
     })
-  }
-  )
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ErrorCode_AnonAttestKeyItemOffline_Interface_0100
+     * @tc.number SUB_Security_HUKS_ErrorCode_AnonAttestKeyItemOffline_Interface_0100
+     * @tc.desc   test abnormal getProperty, error code 12000012
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_ErrorCode_AnonAttestKeyItemOffline_Interface_0100', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ErrorCode_AnonAttestKeyItemOffline_Interface_0100";
+      let keyAlias: string = testNumber;
+
+      let genOptions = GetEccGenerateOptions(256);
+      let attestOptions: huks.HuksOptions = GetAttestKeyOptions();
+
+      await huks.generateKeyItem(keyAlias, genOptions);
+
+      await huks.deleteKeyItem(keyAlias, genOptions);
+      try {
+        await huks.anonAttestKeyItemOffline(keyAlias, attestOptions.properties);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000011);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ErrorCode_AnonAttestKeyItemOffline_Interface_0200
+     * @tc.number SUB_Security_HUKS_ErrorCode_AnonAttestKeyItemOffline_Interface_0200
+     * @tc.desc   test abnormal getProperty, error code 12000012
+     * @tc.type   SAFETY
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_HUKS_ErrorCode_AnonAttestKeyItemOffline_Interface_0200', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ErrorCode_AnonAttestKeyItemOffline_Interface_0200";
+      let keyAlias: string = testNumber;
+
+      let genOptions = GetEccGenerateOptions(256);
+      let attestOptions: huks.HuksOptions = GetAttestKeyOptions();
+      SetParam(attestOptions, huks.HuksTag.HUKS_TAG_ATTESTATION_CHALLENGE, StringToUint8Array(""))
+
+      await huks.generateKeyItem(keyAlias, genOptions);
+
+      try {
+        await huks.anonAttestKeyItemOffline(keyAlias, attestOptions.properties);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000018);
+      }
+    })
+
+  })
 }

@@ -61,70 +61,70 @@ struct showToastOptions {
           .height('8%')
           .id('shadowOption')
           .onClick((event: ClickEvent) => {
-          let promptAction: PromptAction = this.getUIContext().getPromptAction();
-          try {
-            promptAction.showToast({
-              message: 'Message Info',
-              duration: 4000,
-              backgroundColor: Color.Green,
-              textColor: Color.White,
-              backgroundBlurStyle: BlurStyle.Thick,
-              shadow: {
-                radius: 10,
-                type: ShadowType.BLUR,
-                color: '#FF94A0F0',
-                offsetX: 2,
-                offsetY: 3,
-                fill: true
-              },
-            });
-          } catch (error) {
-            let message = (error as BusinessError).message;
-            let code = (error as BusinessError).code;
-            console.error(`showToast args error code is ${code}, message is ${message}`);
-          }
-        })
+            let promptAction: PromptAction = this.getUIContext().getPromptAction();
+            try {
+              promptAction.showToast({
+                message: 'Message Info',
+                duration: 4000,
+                backgroundColor: Color.Green,
+                textColor: Color.White,
+                backgroundBlurStyle: BlurStyle.Thick,
+                shadow: {
+                  radius: 10,
+                  type: ShadowType.BLUR,
+                  color: '#FF94A0F0',
+                  offsetX: 2,
+                  offsetY: 3,
+                  fill: true
+                },
+              });
+            } catch (error) {
+              let message = (error as BusinessError).message;
+              let code = (error as BusinessError).code;
+              console.error(`showToast args error code is ${code}, message is ${message}`);
+            }
+          })
 
         Button('show3')
           .height('8%')
           .id('xs')
           .onClick((event: ClickEvent) => {
-          let promptAction: PromptAction = this.getUIContext().getPromptAction();
-          try {
-            promptAction.showToast({
-              message: 'Message Info',
-              duration: 4000,
-              backgroundColor: Color.Green,
-              textColor: Color.White,
-              backgroundBlurStyle: BlurStyle.Thick,
-              shadow: ShadowStyle.OUTER_DEFAULT_XS,
-            });
-          } catch (error) {
-            let message = (error as BusinessError).message;
-            let code = (error as BusinessError).code;
-            console.error(`showToast args error code is ${code}, message is ${message}`);
-          }
-        })
+            let promptAction: PromptAction = this.getUIContext().getPromptAction();
+            try {
+              promptAction.showToast({
+                message: 'Message Info',
+                duration: 4000,
+                backgroundColor: Color.Green,
+                textColor: Color.White,
+                backgroundBlurStyle: BlurStyle.Thick,
+                shadow: ShadowStyle.OUTER_DEFAULT_XS,
+              });
+            } catch (error) {
+              let message = (error as BusinessError).message;
+              let code = (error as BusinessError).code;
+              console.error(`showToast args error code is ${code}, message is ${message}`);
+            }
+          })
         Button('show4')
           .height('8%')
           .id('sm')
           .onClick((event: ClickEvent) => {
-          let promptAction: PromptAction = this.getUIContext().getPromptAction();
-          try {
-            promptAction.showToast({
-              message: 'Message Info',
-              duration: 4000,
-              backgroundColor: Color.Green,
-              textColor: Color.White,
-              backgroundBlurStyle: BlurStyle.Thick,
-              shadow: ShadowStyle.OUTER_DEFAULT_SM,
-            });
-          } catch (error) {
-            let message = (error as BusinessError).message;
-            let code = (error as BusinessError).code;
-            console.error(`showToast args error code is ${code}, message is ${message}`);
-          }
-        })
+            let promptAction: PromptAction = this.getUIContext().getPromptAction();
+            try {
+              promptAction.showToast({
+                message: 'Message Info',
+                duration: 4000,
+                backgroundColor: Color.Green,
+                textColor: Color.White,
+                backgroundBlurStyle: BlurStyle.Thick,
+                shadow: ShadowStyle.OUTER_DEFAULT_SM,
+              });
+            } catch (error) {
+              let message = (error as BusinessError).message;
+              let code = (error as BusinessError).code;
+              console.error(`showToast args error code is ${code}, message is ${message}`);
+            }
+          })
       }
 
       Row() {
@@ -132,63 +132,63 @@ struct showToastOptions {
           .height('8%')
           .id('lg')
           .onClick((event: ClickEvent) => {
-          let promptAction: PromptAction = this.getUIContext().getPromptAction();
-          try {
-            promptAction.showToast({
-              message: 'Message Info',
-              duration: 4000,
-              backgroundColor: Color.Green,
-              textColor: Color.White,
-              backgroundBlurStyle: BlurStyle.Thick,
-              shadow: ShadowStyle.OUTER_DEFAULT_LG,
-            });
-          } catch (error) {
-            let message = (error as BusinessError).message;
-            let code = (error as BusinessError).code;
-            console.error(`showToast args error code is ${code}, message is ${message}`);
-          }
-        })
+            let promptAction: PromptAction = this.getUIContext().getPromptAction();
+            try {
+              promptAction.showToast({
+                message: 'Message Info',
+                duration: 4000,
+                backgroundColor: Color.Green,
+                textColor: Color.White,
+                backgroundBlurStyle: BlurStyle.Thick,
+                shadow: ShadowStyle.OUTER_DEFAULT_LG,
+              });
+            } catch (error) {
+              let message = (error as BusinessError).message;
+              let code = (error as BusinessError).code;
+              console.error(`showToast args error code is ${code}, message is ${message}`);
+            }
+          })
 
         Button('show6')
           .height('8%')
           .id('fsm')
           .onClick((event: ClickEvent) => {
-          let promptAction: PromptAction = this.getUIContext().getPromptAction();
-          try {
-            promptAction.showToast({
-              message: 'Message Info',
-              duration: 4000,
-              backgroundColor: Color.Green,
-              textColor: Color.White,
-              backgroundBlurStyle: BlurStyle.Thick,
-              shadow: ShadowStyle.OUTER_FLOATING_SM,
-            });
-          } catch (error) {
-            let message = (error as BusinessError).message;
-            let code = (error as BusinessError).code;
-            console.error(`showToast args error code is ${code}, message is ${message}`);
-          }
-        })
+            let promptAction: PromptAction = this.getUIContext().getPromptAction();
+            try {
+              promptAction.showToast({
+                message: 'Message Info',
+                duration: 4000,
+                backgroundColor: Color.Green,
+                textColor: Color.White,
+                backgroundBlurStyle: BlurStyle.Thick,
+                shadow: ShadowStyle.OUTER_FLOATING_SM,
+              });
+            } catch (error) {
+              let message = (error as BusinessError).message;
+              let code = (error as BusinessError).code;
+              console.error(`showToast args error code is ${code}, message is ${message}`);
+            }
+          })
         Button('show7')
           .height('8%')
           .id('fmd')
           .onClick((event: ClickEvent) => {
-          let promptAction: PromptAction = this.getUIContext().getPromptAction();
-          try {
-            promptAction.showToast({
-              message: 'Message Info',
-              duration: 4000,
-              backgroundColor: Color.Green,
-              textColor: Color.White,
-              backgroundBlurStyle: BlurStyle.Thick,
-              shadow: ShadowStyle.OUTER_FLOATING_MD,
-            });
-          } catch (error) {
-            let message = (error as BusinessError).message;
-            let code = (error as BusinessError).code;
-            console.error(`showToast args error code is ${code}, message is ${message}`);
-          }
-        })
+            let promptAction: PromptAction = this.getUIContext().getPromptAction();
+            try {
+              promptAction.showToast({
+                message: 'Message Info',
+                duration: 4000,
+                backgroundColor: Color.Green,
+                textColor: Color.White,
+                backgroundBlurStyle: BlurStyle.Thick,
+                shadow: ShadowStyle.OUTER_FLOATING_MD,
+              });
+            } catch (error) {
+              let message = (error as BusinessError).message;
+              let code = (error as BusinessError).code;
+              console.error(`showToast args error code is ${code}, message is ${message}`);
+            }
+          })
       }
 
       Row() {
@@ -196,44 +196,44 @@ struct showToastOptions {
           .height('8%')
           .id('nul')
           .onClick((event: ClickEvent) => {
-          let promptAction: PromptAction = this.getUIContext().getPromptAction();
-          try {
-            promptAction.showToast({
-              message: 'Message Info',
-              duration: 4000,
-              backgroundColor: Color.Green,
-              textColor: Color.White,
-              backgroundBlurStyle: BlurStyle.Thick,
-              shadow: null,
-            });
-          } catch (error) {
-            let message = (error as BusinessError).message;
-            let code = (error as BusinessError).code;
-            console.error(`showToast args error code is ${code}, message is ${message}`);
-          }
-        })
+            let promptAction: PromptAction = this.getUIContext().getPromptAction();
+            try {
+              promptAction.showToast({
+                message: 'Message Info',
+                duration: 4000,
+                backgroundColor: Color.Green,
+                textColor: Color.White,
+                backgroundBlurStyle: BlurStyle.Thick,
+                shadow: null,
+              });
+            } catch (error) {
+              let message = (error as BusinessError).message;
+              let code = (error as BusinessError).code;
+              console.error(`showToast args error code is ${code}, message is ${message}`);
+            }
+          })
 
         Button('show9')
           .height('8%')
           .id('unf')
           .onClick((event: ClickEvent) => {
-          let promptAction: PromptAction = this.getUIContext().getPromptAction();
-          try {
-            promptAction.showToast({
-              message: 'Message Info',
-              duration: 4000,
-              backgroundColor: Color.Green,
-              textColor: Color.White,
-              backgroundBlurStyle: BlurStyle.Thick,
-              shadow: undefined,
-            });
-          } catch (error) {
-            let message = (error as BusinessError).message;
-            let code = (error as BusinessError).code;
-            console.error(`showToast args error code is ${code}, message is ${message}`);
-          }
-        })
+            let promptAction: PromptAction = this.getUIContext().getPromptAction();
+            try {
+              promptAction.showToast({
+                message: 'Message Info',
+                duration: 4000,
+                backgroundColor: Color.Green,
+                textColor: Color.White,
+                backgroundBlurStyle: BlurStyle.Thick,
+                shadow: undefined,
+              });
+            } catch (error) {
+              let message = (error as BusinessError).message;
+              let code = (error as BusinessError).code;
+              console.error(`showToast args error code is ${code}, message is ${message}`);
+            }
+          })
       }
-    }.height('100%').width('100%').justifyContent(FlexAlign.Center)
+    }.margin(10)
   }
 }

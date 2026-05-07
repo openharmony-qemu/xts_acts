@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -94,8 +94,8 @@ it('PanGestureEventJsunit_static_0100', Level.LEVEL0, async (done: () => void): 
       let bottom = colum.bottom
       let left = colum.left
       let right = colum.right
-      await ((driver.swipe(Math.round(left + 100) as Int, Math.round((top + bottom) / 2) as Int,
-        Math.round(right - 100) as Int, Math.round((top + bottom) / 2) as Int)) as Promise<void>);
+      await ((driver.swipe(Math.round(left + 100).toInt(), Math.round((top + bottom) / 2).toInt(),
+        Math.round(right - 100).toInt(), Math.round((top + bottom) / 2).toInt())) as Promise<void>);
       await CommonFunc.sleep(2000);
       let textComponent = await driver.findComponent(ON.id('velocityX'));
       let text = await (textComponent?.getText() as Promise<string>)
@@ -123,8 +123,8 @@ it('PanGestureEventJsunit_static_0200', Level.LEVEL0, async (done: () => void): 
       let bottom = colum.bottom
       let left = colum.left
       let right = colum.right
-      await ((driver.swipe(Math.round(left + 100) as Int, Math.round((top + bottom) / 2) as Int,
-        Math.round(right - 100) as Int, Math.round((top + bottom) / 2) as Int)) as Promise<void>);
+      await ((driver.swipe(Math.round(left + 100).toInt(), Math.round((top + bottom) / 2).toInt(),
+        Math.round(right - 100).toInt(), Math.round((top + bottom) / 2).toInt())) as Promise<void>);
       await CommonFunc.sleep(2000);
       let textComponent = await driver.findComponent(ON.id('velocityY'));
       let text = await (textComponent?.getText() as Promise<string>)
@@ -152,8 +152,8 @@ it('PanGestureEventJsunit_static_0300', Level.LEVEL0, async (done: () => void): 
       let bottom = colum.bottom
       let left = colum.left
       let right = colum.right
-      await ((driver.swipe(Math.round(left + 100) as Int, Math.round((top + bottom) / 2) as Int,
-        Math.round(right - 100) as Int, Math.round((top + bottom) / 2) as Int)) as Promise<void>);
+      await ((driver.swipe(Math.round(left + 100).toInt(), Math.round((top + bottom) / 2).toInt(),
+        Math.round(right - 100).toInt(), Math.round((top + bottom) / 2).toInt())) as Promise<void>);
       await CommonFunc.sleep(2000);
       let textComponent = await driver.findComponent(ON.id('velocity'));
       let text = await (textComponent?.getText() as Promise<string>)

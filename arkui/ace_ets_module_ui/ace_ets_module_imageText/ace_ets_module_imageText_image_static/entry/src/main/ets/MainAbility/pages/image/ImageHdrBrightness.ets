@@ -15,7 +15,7 @@ import promptAction from '@ohos.promptAction'
 import { LevelOrder, LevelMode } from '@ohos.promptAction'
 import { UIContext } from '@ohos.arkui.UIContext'
 @Observed
-class MyModifier1 implements AttributeModifier<ImageAttribute> {
+export class MyModifier1 implements AttributeModifier<ImageAttribute> {
   private value: number | undefined = undefined;
 
   constructor(v: number | undefined) {

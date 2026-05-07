@@ -32,7 +32,7 @@ OH_AVCodec* g_venc = nullptr;
 OH_AVCapability* g_capEnc = nullptr;
 const char* CODEC_NAME = "";
 OH_AVFormat* gFormat = nullptr;
-constexpr int32_t SQR = 2; // CQ mode
+constexpr int32_t SQR = 3; // CQ mode
 constexpr uint32_t DEFAULT_WIDTH_1280 = 1280;
 constexpr uint32_t DEFAULT_HEIGHT_720 = 720;
 constexpr uint32_t DEFAULT_WIDTH_1080 = 1080;
@@ -181,7 +181,6 @@ int VIDEO_HW_ENCODE_B_FUNC_004()
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->outDir = "/data/storage/el2/base/files/1080_1920_nv12_03.h265";
-    vEncSample->surfInput = true;
     vEncSample->bEnable = true;
     vEncSample->modeEnable = true;
     vEncSample->defaultBitrateMode = SQR;
@@ -214,7 +213,6 @@ int VIDEO_HW_ENCODE_B_FUNC_005()
     vEncSample->outDir = "/data/storage/el2/base/files/1080_1920_nv12_03.h265";
     vEncSample->modeEnable = true;
     vEncSample->bEnable = true;
-    vEncSample->surfInput = true;
     vEncSample->defaultBitrateMode = SQR;
     vEncSample->defaultBframe = DEFAULT_BFRAME_AUTO; //-1
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
@@ -245,7 +243,6 @@ int VIDEO_HW_ENCODE_B_FUNC_006()
     vEncSample->outDir = "/data/storage/el2/base/files/1080_1920_nv12_04.h265";
     vEncSample->modeEnable = true;
     vEncSample->bEnable = true;
-    vEncSample->surfInput = true;
     vEncSample->defaultBitrateMode = SQR;
     vEncSample->defaultBframe = DEFAULT_BFRAME_UNLIMITED; //100
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;

@@ -53,6 +53,7 @@ import replaceNamedRoute10 from './router/replaceNamedRoute/replaceNamedRoute10.
 import replaceNamedRoute12 from './router/replaceNamedRoute/replaceNamedRoute12.test'
 import replaceNamedRoute13 from './router/replaceNamedRoute/replaceNamedRoute13.test'
 import replaceNamedRoute14 from './router/replaceNamedRoute/replaceNamedRoute14.test'
+import replaceNamedRoute15 from './router/replaceNamedRoute/replaceNamedRoute15.test'
 
 import back1 from './router/back/back1.test'
 import back2 from './router/back/back2.test'
@@ -186,6 +187,7 @@ export default function testsuite() {
   replaceNamedRoute12();
   replaceNamedRoute13();
   replaceNamedRoute14();
+  replaceNamedRoute15();
 
   back1();
   back2();

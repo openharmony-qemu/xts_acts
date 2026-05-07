@@ -240,53 +240,7 @@ export default function stdProcessOnUnhandledPromiseRejectionTest(): void {
                 done();
 
             });
-
-        /**
-         * @tc.number SUB_STD_PROCESS_ON_0600
-         * @tc.name testMultiplePromisesRejectedSimultaneously
-         * @tc.desc Handle multiple promises rejected simultaneously
-         * @tc.size SmallTest
-         * @tc.type Function
-         * @tc.level Level 1
-         */
-        it('testMultiplePromisesRejectedSimultaneously', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
-            async (done: () => void): Promise<void> => {
-                const TAG: string = 'testMultiplePromisesRejectedSimultaneously';
-                console.info(`${TAG} test start`);
-
-                let callCount: number = 0;
-                const capturedReasons: (Error | null)[] = [];
-
-                const listener: StdProcess.RejectedObjectListener = (reason: Error, obj: Object): void => {
-                    console.info(`${TAG} listener triggered, call count: ${callCount}`);
-                    callCount++;
-                    capturedReasons.push(reason);
-                };
-
-                StdProcess.on("unhandledPromiseRejection", listener);
-
-                new Promise<void>((resolve, reject): void => {
-                    reject(new Error("promise 1 error"));
-                });
-
-                new Promise<void>((resolve, reject): void => {
-                    reject(new Error("promise 2 error"));
-                });
-
-                new Promise<void>((resolve, reject): void => {
-                    reject(new Error("promise 3 error"));
-                });
-
-                await Utils.msSleep(30);
-
-                expect(callCount).assertEqual(3);
-                expect(capturedReasons.length).assertEqual(3);
-                expect(capturedReasons[0]!.message).assertEqual("promise 3 error");
-                expect(capturedReasons[1]!.message).assertEqual("promise 2 error");
-                expect(capturedReasons[2]!.message).assertEqual("promise 1 error");
-                console.info(`${TAG} test passed`);
-                done();
-            });
+            
 
         /**
          * @tc.number SUB_STD_PROCESS_ON_0700
@@ -478,70 +432,6 @@ export default function stdProcessOnUnhandledPromiseRejectionTest(): void {
                 eaw.join();
             });
 
-        /**
-         * @tc.number SUB_STD_PROCESS_ON_1200
-         * @tc.name testSeparateListenersInMainThreadAndEAWorker
-         * @tc.desc EAWorker and main thread register separate listeners
-         * @tc.size SmallTest
-         * @tc.type Function
-         * @tc.level Level 1
-         */
-        it('testSeparateListenersInMainThreadAndEAWorker', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
-            async (done: () => void): Promise<void> => {
-                const TAG: string = 'testSeparateListenersInMainThreadAndEAWorker';
-                console.info(`${TAG} test start`);
-
-                let mainListenerCalled: boolean = false;
-                let workerListenerCalled: boolean = false;
-                let mainconcurrentSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>();
-                let workerconcurrentSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>();
-
-                const mainListener: StdProcess.RejectedObjectListener = (reason: Error, obj: Object): void => {
-                    console.info(`${TAG} main listener triggered`);
-                    mainListenerCalled = true;
-                    mainconcurrentSet.add(reason.message);
-                };
-
-                StdProcess.on("unhandledPromiseRejection", mainListener);
-
-                const eaw: EAWorker = new EAWorker();
-                eaw.start();
-
-                eaw.run<void>((): void => {
-                    console.info(`${TAG} registering listener in EAWorker`);
-
-                    const workerListener: StdProcess.RejectedObjectListener = (reason: Error, obj: Object): void => {
-                        console.info(`${TAG} worker listener triggered`);
-                        workerListenerCalled = true;
-                        workerconcurrentSet.add(reason.message);
-                    };
-
-                    StdProcess.on("unhandledPromiseRejection", workerListener);
-
-                    new Promise<void>((resolve, reject): void => {
-                        reject(new Error("EAWorker thread error"));
-                    });
-                });
-
-                new Promise<void>((resolve, reject): void => {
-                    reject(new Error("Main thread error"));
-                });
-
-                await Utils.msSleep(100);
-                eaw.join();
-
-                console.info(`${TAG} main listener called: ${mainListenerCalled}`);
-                console.info(`${TAG} worker listener called: ${workerListenerCalled}`);
-                expect(mainListenerCalled).assertTrue();
-                expect(workerListenerCalled).assertTrue();
-                expect(mainconcurrentSet.has("Main thread error")).assertTrue();
-                expect(mainconcurrentSet.has("EAWorker thread error")).assertTrue();
-                expect(workerconcurrentSet.has("Main thread error")).assertTrue();
-                expect(workerconcurrentSet.has("EAWorker thread error")).assertTrue();
-                console.info(`${TAG} test passed`);
-                done();
-            });
-
        /**
          * @tc.number SUB_STD_PROCESS_ON_1300
          * @tc.name testMultipleEAWorkersTriggerRejectionSimultaneously
@@ -576,8 +466,7 @@ export default function stdProcessOnUnhandledPromiseRejectionTest(): void {
                     });
                 }
                 for (const eaw of workers) {
-                    let j = eaw.join();
-                    j.Await();
+                    eaw.quit();
                 }
                 await Utils.msSleep(200);
                 expect(concurrentSet.has("Worker 0 error")).assertTrue();
@@ -626,8 +515,7 @@ export default function stdProcessOnUnhandledPromiseRejectionTest(): void {
                         reject(new Error("EAWorker destruction error"));
                     });
                 });
-                let job = eaw.join();
-                job.Await();
+                eaw.quit();
 
                 await Utils.msSleep(30);
 

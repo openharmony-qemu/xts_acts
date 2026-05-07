@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,265 +37,258 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, EffectComponentAttribute, FormComponentAttribute,
   ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, Length, AlignRuleOption } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 
 
-  class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+  export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+  export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: BadgeAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class BlankModifier implements AttributeModifier<BlankAttribute> {
+  export class BlankModifier implements AttributeModifier<BlankAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: BlankAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+  export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: ButtonAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+  export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: CalendarPickerAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+  export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: CheckboxAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+  export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: CheckboxGroupAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+  export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: ColumnAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+  export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: ColumnSplitAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class CounterModifier implements AttributeModifier<CounterAttribute> {
+  export class CounterModifier implements AttributeModifier<CounterAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: CounterAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+  export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: DataPanelAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+  export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: DatePickerAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class DividerModifier implements AttributeModifier<DividerAttribute> {
+  export class DividerModifier implements AttributeModifier<DividerAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: DividerAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
+  export class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: EffectComponentAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class FlexModifier implements AttributeModifier<FlexAttribute> {
+  export class FlexModifier implements AttributeModifier<FlexAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: FlexAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+  export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: FlowItemAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
+  export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: FormComponentAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-    mBorderRadius: Length = 30
-    applyNormalAttribute(instance: FormLinkAttribute): void {
-      console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
-     instance.borderRadius(this.mBorderRadius)
-    }
-  }
-  class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+  export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: GaugeAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class GridModifier implements AttributeModifier<GridAttribute> {
+  export class GridModifier implements AttributeModifier<GridAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: GridAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class GridColModifier implements AttributeModifier<GridColAttribute> {
+  export class GridColModifier implements AttributeModifier<GridColAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: GridColAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+  export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: GridItemAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+  export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: GridRowAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+  export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: HyperlinkAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+  export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: ImageAnimatorAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
+  export class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: ImageSpanAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class ImageModifier implements AttributeModifier<ImageAttribute> {
+  export class ImageModifier implements AttributeModifier<ImageAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: ImageAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class ListModifier implements AttributeModifier<ListAttribute> {
+  export class ListModifier implements AttributeModifier<ListAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: ListAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+  export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: ListItemAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+  export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: ListItemGroupAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+  export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: LoadingProgressAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+  export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: MarqueeAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class MenuModifier implements AttributeModifier<MenuAttribute> {
+  export class MenuModifier implements AttributeModifier<MenuAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: MenuAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+  export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: MenuItemAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+  export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: MenuItemGroupAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+  export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: NavDestinationAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+  export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: NavigationAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
@@ -316,238 +309,238 @@ import { SetValue, RouterParams } from '../../common/Utils';
 
 
 
-  class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
+  export class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: PatternLockAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
+  export class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: PluginComponentAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+  export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: QRCodeAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class RadioModifier implements AttributeModifier<RadioAttribute> {
+  export class RadioModifier implements AttributeModifier<RadioAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: RadioAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class RatingModifier implements AttributeModifier<RatingAttribute> {
+  export class RatingModifier implements AttributeModifier<RatingAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: RatingAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+  export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: RefreshAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+  export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: RelativeContainerAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+  export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: RemoteWindowAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+  export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: RichEditorAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+  export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: RichTextAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class RowModifier implements AttributeModifier<RowAttribute> {
+  export class RowModifier implements AttributeModifier<RowAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: RowAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+  export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: RowSplitAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+  export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: ScrollAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+  export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: ScrollBarAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class SearchModifier implements AttributeModifier<SearchAttribute> {
+  export class SearchModifier implements AttributeModifier<SearchAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: SearchAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class SelectModifier implements AttributeModifier<SelectAttribute> {
+  export class SelectModifier implements AttributeModifier<SelectAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: SelectAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+  export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: SideBarContainerAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class SliderModifier implements AttributeModifier<SliderAttribute> {
+  export class SliderModifier implements AttributeModifier<SliderAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: SliderAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class StackModifier implements AttributeModifier<StackAttribute> {
+  export class StackModifier implements AttributeModifier<StackAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: StackAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+  export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: SwiperAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+  export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: TabContentAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class TabsModifier implements AttributeModifier<TabsAttribute> {
+  export class TabsModifier implements AttributeModifier<TabsAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: TabsAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class TextModifier implements AttributeModifier<TextAttribute> {
+  export class TextModifier implements AttributeModifier<TextAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: TextAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+  export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: TextAreaAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+  export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: TextClockAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+  export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: TextInputAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+  export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: TextPickerAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+  export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: TextTimerAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+  export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: TimePickerAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+  export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: ToggleAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
+  export class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: UIExtensionComponentAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+  export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: WaterFlowAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class WebModifier implements AttributeModifier<WebAttribute> {
+  export class WebModifier implements AttributeModifier<WebAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: WebAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
      instance.borderRadius(this.mBorderRadius)
     }
   }
-  class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+  export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
     mBorderRadius: Length = 30
     applyNormalAttribute(instance: XComponentAttribute): void {
       console.info(`borderRadius page show ${JSON.stringify(this.mBorderRadius)}`)
@@ -576,7 +569,6 @@ struct borderRadiusPage {
   @State _borderRadiusFlexMod: FlexModifier = new FlexModifier()
   @State _borderRadiusFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _borderRadiusFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _borderRadiusFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _borderRadiusGaugeMod: GaugeModifier = new GaugeModifier()
   @State _borderRadiusGridMod: GridModifier = new GridModifier()
   @State _borderRadiusGridColMod: GridColModifier = new GridColModifier()
@@ -646,8 +638,8 @@ struct borderRadiusPage {
     this.componentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey as string;
     this.parentWidth = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
     this.parentHeight = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
-    this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
-    this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
+    this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns.toInt())
+    this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter.toInt())
     this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey;
     this._borderRadiusBlankMod.mBorderRadius = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.borderRadius
     attrsManager.registerDataChange((value: SetValue) => {
@@ -669,7 +661,6 @@ struct borderRadiusPage {
       this._borderRadiusFlexMod.mBorderRadius = value.borderRadius
       this._borderRadiusFlowItemMod.mBorderRadius = value.borderRadius
       this._borderRadiusFormComponentMod.mBorderRadius = value.borderRadius
-      this._borderRadiusFormLinkMod.mBorderRadius = value.borderRadius
       this._borderRadiusGaugeMod.mBorderRadius = value.borderRadius
       this._borderRadiusGridMod.mBorderRadius = value.borderRadius
       this._borderRadiusGridColMod.mBorderRadius = value.borderRadius
@@ -780,7 +771,7 @@ struct borderRadiusPage {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity as int,
+            loop: Infinity.toInt(),
             fromStart: true,
             src: 'Running Marquee starts rolling'
           }).attributeModifier(this._borderRadiusMarqueeMod)

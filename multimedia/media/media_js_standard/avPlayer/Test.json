@@ -34,6 +34,7 @@
                 "./resource/media/codec/demuxer/srt_2800.srt -> /data/app/el2/100/base/ohos.acts.multimedia.avplayer/haps/entry_test/files/",
                 "./resource/media/metadata/mjpeg_mp3.mp3 -> /data/app/el2/100/base/ohos.acts.multimedia.avplayer/haps/entry_test/files/",
                 "./resource/media/H264_AAC_AAC_multiAudio.mp4 -> /data/app/el2/100/base/ohos.acts.multimedia.avplayer/haps/entry_test/files/",
+                "./resource/media/codec/avmuxer/greatwall.jpg -> /data/app/el2/100/base/ohos.acts.multimedia.avplayer/haps/entry_test/files/",
                 "./resource/media/metadata/H264_AAC_Matedata.mp4 -> /data/app/el2/100/base/ohos.acts.multimedia.avplayer/haps/entry_test/files/",
                 "./resource/media/metadata/No_Support_Format.mov -> /data/app/el2/100/base/ohos.acts.multimedia.avplayer/haps/entry_test/files/",
                 "./resource/media/videoplayer/mp4/h264_mp3_128x96_30r.mp4 -> /data/app/el2/100/base/ohos.acts.multimedia.avplayer/haps/entry_test/files/",

@@ -26,6 +26,13 @@
     "MainAbility/pages/promptaction/PromptActionCloseToastTest",
     "MainAbility/pages/promptaction/PromptActionShowDialogTest",
     "MainAbility/pages/promptaction/LevelOrderClampNullUndefined",
-    "MainAbility/pages/promptaction/PromptActionMethodNullUndefined"
+    "MainAbility/pages/promptaction/PromptActionMethodNullUndefined",
+    "MainAbility/pages/dialogSystemMaterial/AlertDialogSystemMaterial",
+    "MainAbility/pages/dialogSystemMaterial/ShowDialogOptionsSystemMaterial",
+    "MainAbility/pages/dialogSystemMaterial/BaseDialogOptionsSystemMaterial",
+    "MainAbility/pages/dialogSystemMaterial/ActionMenuOptionsSystemMaterial",
+    "MainAbility/pages/dialogSystemMaterial/CustomDialogControllerOptionsSystemMaterial",
+    "MainAbility/pages/dialogSystemMaterial/ActionSheetOptionsSystemMaterial"
+
   ]
 }

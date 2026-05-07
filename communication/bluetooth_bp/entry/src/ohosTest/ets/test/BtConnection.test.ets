@@ -318,7 +318,14 @@ describe('btConnectionTest', () => {
         try {
             let ret = bluetooth.getPairedDevices();
             console.info('[bluetooth_js] getPairedDevices ret2:' + JSON.stringify(ret));
-            expect(ret.length == 0).assertTrue();
+            expect(Array.isArray(ret)).assertTrue();
+            if (ret.length > 0) {
+                console.info('[bluetooth_js] getPairedDevices info: '+ ret[0]);
+                expect(ret[0] != null).assertTrue();
+                expect(typeof ret[0] === 'string').assertTrue();
+            } else {
+                expect(ret.length === 0).assertTrue();
+            }
         } catch (err) {
             console.info("errCode:" + err.code + ",errMessage:" + err.message);
             if (err.code == 801) {
@@ -1095,6 +1102,30 @@ describe('btConnectionTest', () => {
         } catch (err) {
             console.info("setDevicePinCode promise errCode:" + err.code + ",errMessage:" + err.message);
             expect(Number(err.code)).assertEqual(2900099);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6600
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6600
+     * @tc.desc   Test setDevicePinCode promise with empty string deviceId api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            bluetooth.setDevicePinCode(null, '12345').then(() => {
+                console.info('setDevicePinCode success');
+                expect().assertFail();
+            }, (error :BusinessError) => {
+                console.info('setDevicePinCode promise: errCode:' + error.code + ',errMessage' + error.message);
+                expect(Number(error.code)).assertEqual(401);
+            })
+        } catch (err) {
+            console.info("setDevicePinCode promise errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
         }
         done();
     })
@@ -2401,6 +2432,38 @@ describe('btConnectionTest', () => {
         done();
     })
 
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILE_0400
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILE_0400
+     * @tc.desc   Test getProfileConnectionState with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            let result = bluetooth.getProfileConnectionState(undefined);
+            console.info("getProfileConnectionState with null result:" + result);
+            expect(true).assertEqual(result === 0 || result === 1 || result === 2 || result === 3);
+        } catch (err) {
+            console.info("getProfileConnectionState null errCode:" + err.code + ",errMessage:" + err.message);
+            console.info("getProfileConnectionState null errCode type:" + typeof err.code + ", value:" + JSON.stringify(err.code));
+            let errorCode = Number(err.code);
+            console.info("getProfileConnectionState null converted errorCode:" + errorCode);
+            if (errorCode === 401) {
+                console.info('[bluetooth_js]getProfileConnectionState null parameter error as expected (401)');
+                expect(errorCode).assertEqual(401);
+            } else if (errorCode === 801 || errorCode === 2900004) {
+                console.info('[bluetooth_js]getProfileConnectionState is not support or profile not support');
+                expect(true).assertTrue();
+            } else {
+                console.error('[bluetooth_js]getProfileConnectionState unexpected error code: ' + err.code + ' (converted: ' + errorCode + ')');
+                expect().assertFail();
+            }
+        }
+        done();
+    })
+
      /**
       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONSTANT_0100
       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONSTANT_0100
@@ -2772,6 +2835,46 @@ describe('btConnectionTest', () => {
      it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
             await bluetooth.getRemoteDeviceBatteryInfo(null).then((data) => {
+                console.info('getRemoteDeviceBatteryInfo success, BatteryInfo:' + JSON.stringify(data));
+            });
+            expect().assertFail();
+        } catch (err) {
+            console.info("getRemoteDeviceBatteryInfo errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_ADD_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_ADD_0100
+     * @tc.desc   Test getRemoteDeviceBatteryInfo api12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            let data = await bluetooth.getRemoteDeviceBatteryInfo(undefined);
+            console.info('getRemoteDeviceBatteryInfo success, BatteryInfo:' + JSON.stringify(data));
+            expect().assertFail();
+        } catch (err) {
+            console.info("getRemoteDeviceBatteryInfo errCode:" + err.code + ",errMessage:" + err.message);
+            expect(Number(err.code)).assertEqual(401);
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_ADD_0200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_ADD_0200
+     * @tc.desc   Test getRemoteDeviceBatteryInfo api12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_ADD_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        try {
+            await bluetooth.getRemoteDeviceBatteryInfo('').then((data) => {
                 console.info('getRemoteDeviceBatteryInfo success, BatteryInfo:' + JSON.stringify(data));
             });
             expect().assertFail();
@@ -3597,6 +3700,54 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_DISCONNECTALLOWEDPROFILES_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_DISCONNECTALLOWEDPROFILES_0100
+     * @tc.desc   Test disconnectAllowedProfiles callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_DISCONNECTALLOWEDPROFILES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
+        try {
+            let connectAP = () => {
+                return new Promise<void>((resolve,reject) => {
+                    bluetooth.disconnectAllowedProfiles('00:11:22:33:44:55', (err, data: void)=> {
+                        if (err) {
+                            console.info('disconnectAllowedProfiles failed' + JSON.stringify(err));
+                            reject(err.code);
+                        } else
+                        {
+                            console.info('[bluetooth_js]disconnectAllowedProfiles success');
+                        }
+                        resolve();
+                    });
+                });
+            }
+            await connectAP().then(() => {
+                console.info("[bluetooth_js]disconnectAllowedProfiles success");
+            },
+            (e: BusinessError) => {
+                console.info("[bluetooth_js]disconnectAllowedProfiles failed info:" + JSON.stringify(e));
+                if (Number(e) == 801) {
+                    console.info("disconnectAllowedProfiles is not support");
+                    expect(true).assertTrue();
+                }else {
+                    expect(Number(e)).assertEqual(2900099);
+                }
+            })
+        } catch (err) {
+            console.info("disconnectAllowedProfiles errCode:" + err.code + ",errMessage:" + err.message);
+                if (Number(err.code) == 801) {
+                    console.info("disconnectAllowedProfiles is not support");
+                    expect(true).assertTrue();
+                }else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+        }
+        done();
+    })
+
+    /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_3700
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_3700
      * @tc.desc   Test pairDevice callback with null parameter api10
@@ -4134,6 +4285,174 @@ describe('btConnectionTest', () => {
         } catch (err) {
             console.error("[bluetooth_js]connection on/offScanModeChange is fail , errCode:" + err.code + ",errMessage:" + err.message);
             expect().assertFail();
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_ENUMVALUE_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_ENUMVALUE_0100
+     * @tc.desc   Test HashAlgorithmType EnumValue api23.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_ENUMVALUE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+        try {
+            let value1 = bluetooth.HashAlgorithmType.HASH_ALGORITHM_SHA256;
+            console.info("[bluetooth_js]connection HashAlgorithmType HASH_ALGORITHM_SHA256 value is: " + JSON.stringify(value1));
+            expect(value1).assertEqual(0);
+        } catch (err) {
+            console.error("[bluetooth_js]connection HashAlgorithmType EnumValue:" + err.code + ",errMessage:" + err.message);
+            expect().assertFail();
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_HASH_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_HASH_0100
+     * @tc.desc   Test getVirtualAddressByHash 设备未配对 api24.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_HASH_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+        let hashValue: string = "c10b57deb2e1aafd255596e0d4fd6789";
+        try {
+            let addr: string = bluetooth.getVirtualAddressByHash(bluetooth.HashAlgorithmType.HASH_ALGORITHM_SHA256, hashValue)
+            expect().assertFail();
+        } catch (err) {
+            console.error(`getVirtualAddressByHash errCode: ${err.code}, errMessage: ${err.message}`);
+            if (err.code === 801) {
+                console.info('[bluetooth_js] RK板 is not support');
+                expect(err.code === 801).assertTrue();
+            } else {
+                console.info('[bluetooth_js] getVirtualAddressByHash fail 2900015 参数格式与规范不一致');
+                expect(Number(err.code)).assertEqual(2900016);
+            }
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_HASH_0200
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_HASH_0200
+     * @tc.desc   Test getVirtualAddressByHash 参数格式与规范不一致 api24.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_HASH_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) =>  {
+        let hashValue: string = "c10b57deb2e1aafd255596e0d4fd678";
+        try {
+            let addr: string = bluetooth.getVirtualAddressByHash(bluetooth.HashAlgorithmType.HASH_ALGORITHM_SHA256, hashValue);
+            expect().assertFail();
+        } catch (err) {
+            console.error(`getVirtualAddressByHash errCode: ${err.code}, errMessage: ${err.message}`);
+            if (err.code === 801) {
+                console.info('[bluetooth_js] RK板 is not support');
+                expect(err.code === 801).assertTrue();
+            } else {
+                console.info('[bluetooth_js] getVirtualAddressByHash fail 2900015 参数格式与规范不一致');
+                expect(Number(err.code)).assertEqual(2900015);
+            }
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_HASH_0300
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_HASH_0300
+     * @tc.desc   Test getVirtualAddressByHash input null api24.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_HASH_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+        try {
+            let addr: string = bluetooth.getVirtualAddressByHash(bluetooth.HashAlgorithmType.HASH_ALGORITHM_SHA256, null)
+            expect().assertFail();
+        } catch (err) {
+            console.error(`getVirtualAddressByHash errCode: ${err.code}, errMessage: ${err.message}`);
+            if (err.code === 801) {
+                console.info('[bluetooth_js] RK板 is not support');
+                expect(err.code === 801).assertTrue();
+            } else {
+                console.info('[bluetooth_js] getVirtualAddressByHash fail 401 参数null');
+                expect(Number(err.code)).assertEqual(401);
+            }
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_HASH_0400
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_HASH_0400
+     * @tc.desc   Test getVirtualAddressByHash input undefined api24.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+     it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_HASH_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+        try {
+            let addr: string = bluetooth.getVirtualAddressByHash(bluetooth.HashAlgorithmType.HASH_ALGORITHM_SHA256, undefined)
+            expect().assertFail();
+        } catch (err) {
+            console.error(`getVirtualAddressByHash errCode: ${err.code}, errMessage: ${err.message}`);
+            if (err.code === 801) {
+                console.info('[bluetooth_js] RK板 is not support');
+                expect(err.code === 801).assertTrue();
+            } else {
+                console.info('[bluetooth_js] getVirtualAddressByHash fail 401 参数null');
+                expect(Number(err.code)).assertEqual(401);
+            }
+        }
+        done();
+    })
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_HASH_0500
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_HASH_0500
+     * @tc.desc   Test getVirtualAddressByHash 参数格式与规范不一致 api24.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_HASH_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+        let hashValue: string = "c10b57deb2e1aafd255596e0d4fd67891";
+        try {
+            let addr: string = bluetooth.getVirtualAddressByHash(bluetooth.HashAlgorithmType.HASH_ALGORITHM_SHA256, hashValue)
+            expect().assertFail();
+        } catch (err) {
+            console.error(`getVirtualAddressByHash errCode: ${err.code}, errMessage: ${err.message}`);
+            if (err.code === 801) {
+                console.info('[bluetooth_js] RK板 is not support');
+                expect(err.code === 801).assertTrue();
+            } else {
+                console.info('[bluetooth_js] getVirtualAddressByHash fail 2900015 参数格式与规范不一致');
+                expect(Number(err.code)).assertEqual(2900015);
+            }
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_HASH_0600
+     * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_HASH_0600
+     * @tc.desc   Test getVirtualAddressByHash 参数格式与规范不一致 api24.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_HASH_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+        let hashValue: string = "";
+        try {
+            let addr: string = bluetooth.getVirtualAddressByHash(bluetooth.HashAlgorithmType.HASH_ALGORITHM_SHA256, hashValue);
+            expect().assertFail();
+        } catch (err) {
+            console.error(`getVirtualAddressByHash errCode: ${err.code}, errMessage: ${err.message}`);
+            if (err.code === 801) {
+                console.info('[bluetooth_js] RK板 is not support');
+                expect(err.code === 801).assertTrue();
+            } else {
+                console.info('[bluetooth_js] getVirtualAddressByHash fail 2900015 参数格式与规范不一致');
+                expect(Number(err.code)).assertEqual(2900015);
+            }
         }
         done();
     })

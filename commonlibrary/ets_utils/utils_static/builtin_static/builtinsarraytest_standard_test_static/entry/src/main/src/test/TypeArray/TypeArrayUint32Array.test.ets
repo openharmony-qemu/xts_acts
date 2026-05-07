@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -503,7 +503,7 @@ export default function typeArrayUint32ArrayTest() {
     it('TypeArrayUint32Array026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
         const arr = new Uint32Array([10, 20, 30, 40]);
-        const sum = arr.reduce((acc, val) => acc + val, 0);
+        const sum = arr.reduce((acc, val) => acc + val, 0.);
         expect(sum).assertEqual(100);
       })
 
@@ -518,7 +518,7 @@ export default function typeArrayUint32ArrayTest() {
     it('TypeArrayUint32Array027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
         const arr = new Uint32Array([4294967290, 10]);
-        const sum = arr.reduce((acc, val) => acc + val, 0);
+        const sum = arr.reduce((acc, val) => acc + val, 0.);
         expect(sum).assertEqual(4294967300);
         expect(sum > 4294967295).assertEqual(true);
       })
@@ -1050,7 +1050,7 @@ export default function typeArrayUint32ArrayTest() {
     it('TypeArrayUint32Array055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
         const arr = new Uint32Array([1000, 2000, 3000, 4000]);
-        const sum = arr.reduce((acc, val) => acc + (val / 1000), 0);
+        const sum = arr.reduce((acc, val) => acc + (val / 1000), 0.);
         expect(sum).assertEqual(10);
       })
 
@@ -1435,7 +1435,7 @@ export default function typeArrayUint32ArrayTest() {
     it('TypeArrayUint32Array081', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       () => {
         const arr = new Uint32Array([10, 20, 30, 40]);
-        const sum = arr.reduceRight((acc, val) => acc + val, 0);
+        const sum = arr.reduceRight((acc, val) => acc + val, 0.);
         expect(sum).assertEqual(100);
       })
 
@@ -1630,7 +1630,7 @@ export default function typeArrayUint32ArrayTest() {
       () => {
         const arr1 = new Uint32Array([10, 20, 30]);
         const arr2 = new Uint32Array([40, 50, 60]);
-        const combined = [...Array.from(arr1), ...Array.from(arr2)].sort((a: double, b: double) => (b - a) as int);
+        const combined = [...Array.from(arr1), ...Array.from(arr2)].sort((a: double, b: double) => (b - a).toInt());
         expect(combined.toString()).assertEqual('60,50,40,30,20,10');
       })
 

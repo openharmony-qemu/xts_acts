@@ -20,7 +20,6 @@ struct showActionMenuExample {
   build() {
     Column({ space: 5 }) {
       Button('showActionMenu')
-        .margin(100)
         .id("showActionMenu")
         .onClick(() => {
           promptAction.showActionMenu({

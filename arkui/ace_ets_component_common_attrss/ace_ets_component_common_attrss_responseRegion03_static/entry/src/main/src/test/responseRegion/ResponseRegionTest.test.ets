@@ -68,7 +68,7 @@ async function eventResult(data: BasePageConfig, expectationValue: string) {
   } else {
     await Utils.sleep(1000)
   }
-  let referenceComponent = Utils.getComponentByKey(data.pageConfig.referenceComponentKey);
+  let referenceComponent = await Utils.getComponentByKey(data.pageConfig.referenceComponentKey);
   await Utils.sleep(1000);
   console.info('[' + data.caseTag + ']' + 'content is:' + referenceComponent.getElement('$attrs').getString('content'));
   if ('' == expectationValue) {
@@ -80,7 +80,7 @@ async function eventResult(data: BasePageConfig, expectationValue: string) {
 
 
 
-export default function responseRegionTest() {
+export default async function responseRegionTest() {
   let supportView:Array<string> = new Array<string>(
     'Text',
     'Refresh',
@@ -246,7 +246,7 @@ export default function responseRegionTest() {
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Get the initial region information of the target component
       console.info('[' + data.caseTag + '] get Component rect before position changed.');
-      let rect: RectValue = Utils.getComponentRect(data.pageConfig.componentKey);
+      let rect: RectValue = await Utils.getComponentRect(data.pageConfig.componentKey);
       let rectHeight = rect.bottom - rect.top;
       let rectWidth = rect.right - rect.left;
       let uiContext = AppStorage.get<UIContext>('uiContext')
@@ -256,7 +256,7 @@ export default function responseRegionTest() {
       AppStorage.setOrCreate<string>('eventCallBackStr', 'notOnClick')
       AppStorage.setOrCreate<string>('eventCallBackStr', '')
       await Utils.sleep(1000);
-      let viewObj = Utils.getComponentByKey(data.pageConfig.componentKey);
+      let viewObj = await Utils.getComponentByKey(data.pageConfig.componentKey);
       console.info('[wll]'+viewObj)
       if ('SetMultiArea' == data.testValue.describe) {
         expect(JSON.stringifyJsonElement(viewObj.getElement('$attrs').getElement('responseRegion')[0]).replaceAll('\\', ''))

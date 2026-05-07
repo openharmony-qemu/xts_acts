@@ -3,6 +3,11 @@
     "MainAbility/pages/XTSIndex",
     "MainAbility/pages/testgesture",
     "MainAbility/pages/matrix4/Matrix4Test",
-    "MainAbility/pages/enableClickSoundEffect/EnableClickSoundEffectTest"
+    "MainAbility/pages/enableClickSoundEffect/EnableClickSoundEffectTest",
+    "MainAbility/pages/ellipsisModeTest/ellipsisModeCenter",
+    "MainAbility/pages/ellipsisModeTest/ellipsisModeStart",
+    "MainAbility/pages/pointerEventGetCurrentLocal/PointerEventGetCurrentLocalTest",
+    "MainAbility/pages/TextGetCharacter/TextGetCharacterTest",
+    "MainAbility/pages/FrameNode/CrossLanguageOptionsSupportFiveMethods"
   ]
 }

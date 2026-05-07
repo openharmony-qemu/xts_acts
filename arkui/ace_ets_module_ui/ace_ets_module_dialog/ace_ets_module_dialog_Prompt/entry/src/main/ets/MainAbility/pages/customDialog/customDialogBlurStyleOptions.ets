@@ -18,15 +18,15 @@ struct CustomDialogExampleTwo1 {
   build() {
     Column() {
       Text('我是第二个弹窗')
-        .fontSize(30)
-        .height(100)
+        .fontSize(10)
+        .height(50)
       Button('点我关闭第二个弹窗')
         .onClick(() => {
           if (this.controllerTwo != undefined) {
             this.controllerTwo.close()
           }
         })
-        .margin(20)
+
     }
   }
 }
@@ -67,14 +67,15 @@ struct CustomDialogExample12 {
   }
   build() {
     Column() {
-      Text('Change text').fontSize(20).margin({ top: 10, bottom: 10 })
-      TextInput({ placeholder: '', text: this.textValue1 }).height(60).width('90%')
+      Text('Change text').fontSize(10).margin({ top: 10, bottom: 10 })
+      TextInput({ placeholder: '', text: this.textValue1 }).height(40).width('90%')
         .onChange((value: string) => {
           this.textValue1 = value
         })
-      Text('Whether to change a text?').fontSize(16).margin({ bottom: 10 })
+      Text('Whether to change a text?').fontSize(12)
       Flex({ justifyContent: FlexAlign.SpaceAround }) {
         Button('cancel')
+          .height('5%')
           .onClick(() => {
             if (this.controller != undefined) {
               this.controller.close()
@@ -82,6 +83,7 @@ struct CustomDialogExample12 {
             }
           }).backgroundColor(0xffffff).fontColor(Color.Black)
         Button('confirm')
+          .height('5%')
           .onClick(() => {
             if (this.controller != undefined) {
               this.inputValue1 = this.textValue1
@@ -89,15 +91,15 @@ struct CustomDialogExample12 {
               this.confirm()
             }
           }).backgroundColor(0xffffff).fontColor(Color.Red)
-      }.margin({ bottom: 10 })
+      }
 
       Button('点我打开第二个弹窗')
+        .height('5%')
         .onClick(() => {
           if (this.dialogControllerTwo1 != null) {
             this.dialogControllerTwo1.open()
           }
         })
-        .margin(20)
     }.borderRadius(10)
     // 如果需要使用border属性或cornerRadius属性，请和borderRadius属性一起使用。
   }
@@ -117,7 +119,7 @@ struct CustomDialogUser12 {
     cancel: this.exitApp,
     autoCancel: true,
     alignment: DialogAlignment.Bottom,
-    offset: { dx: 0, dy: -20 },
+    offset: { dx: 0, dy: -30 },
     gridCount: 4,
     customStyle: false,
     cornerRadius: 10,
@@ -144,7 +146,7 @@ struct CustomDialogUser12 {
     cancel: this.exitApp,
     autoCancel: true,
     alignment: DialogAlignment.Bottom,
-    offset: { dx: 0, dy: -20 },
+    offset: { dx: 0, dy: -30 },
     gridCount: 4,
     customStyle: false,
     cornerRadius: 10,
@@ -176,9 +178,10 @@ struct CustomDialogUser12 {
     console.info('Click the callback in the blank area')
   }
   build() {
-    Column() {
+    Row() {
       Button(this.inputValue1)
         .id('CustomDialog_Options001')
+        .height('5%')
         .onClick(() => {
           if (this.dialogController1 != null) {
             this.dialogController1.open()
@@ -187,6 +190,7 @@ struct CustomDialogUser12 {
 
       Button(this.inputValue2)
         .id('CustomDialog_Options002')
+        .height('5%')
         .onClick(() => {
           if (this.dialogController2 != null) {
             this.dialogController2.open()
@@ -197,5 +201,8 @@ struct CustomDialogUser12 {
     .width('100%')
     .backgroundImage($r('app.media.icon'))
     .backgroundImageSize({ width: '100%', height: '100%' })
+    .margin({top:30,left:20})
+    .alignItems(VerticalAlign.Top)
+    .justifyContent(FlexAlign.Start)
   }
 }

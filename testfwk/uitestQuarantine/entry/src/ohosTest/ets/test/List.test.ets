@@ -14,7 +14,9 @@
  */
 import UiTest from './UitestQuan.test';
 import uiTestApi22Test from './UitestApi22.test';
+import uitestApi26TestQuan from './UitestApi26Quan.test'
 export default function testsuite() {
+  uitestApi26TestQuan();
   uiTestApi22Test();
   UiTest();
 }

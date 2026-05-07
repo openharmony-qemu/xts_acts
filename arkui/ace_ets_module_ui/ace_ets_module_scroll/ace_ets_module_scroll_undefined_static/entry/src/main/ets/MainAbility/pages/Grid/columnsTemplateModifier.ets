@@ -23,7 +23,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement';
 import { GridDataSource } from './GridDataSource';
 
 @Observed
-class MyEnableModifier implements AttributeModifier<GridAttribute> {
+export class MyEnableModifier implements AttributeModifier<GridAttribute> {
   // 外部传入控制值，可以是 boolean | undefined
   @State public columnsTemplate_: string | undefined = '1fr 1fr';
   @State public change: boolean | undefined = true;

@@ -4,8 +4,7 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.Communication.NetManager.Core",
-         
+                    "SystemCapability.Communication.NetManager.Core"
                 ]
             }
         ]

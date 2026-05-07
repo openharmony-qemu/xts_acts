@@ -43,10 +43,10 @@ export default function Array_With_Second_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_With_Second_Test_static_0100';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float];
+        const arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat()];
         const index = 1;
         const result = with(arr, index, -2);
-        const expected: FixedArray<float> = [1.1 as float, -2.0 as float, 3.3 as float];
+        const expected: FixedArray<float> = [1.1.toFloat(), -2.0.toFloat(), 3.3.toFloat()];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -68,10 +68,10 @@ export default function Array_With_Second_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_With_Second_Test_static_0200';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float];
+        const arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat()];
         const index = -3;
         const result = with(arr, index, 1);
-        const expected: FixedArray<float> = [1.0 as float, 2.2 as float, 3.3 as float];
+        const expected: FixedArray<float> = [1.0.toFloat(), 2.2.toFloat(), 3.3.toFloat()];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -93,10 +93,10 @@ export default function Array_With_Second_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_With_Second_Test_static_0300';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float];
+        const arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat()];
         const index = -1;
         const result = with(arr, index, 5);
-        const expected: FixedArray<float> = [1.1 as float, 2.2 as float, 5.0 as float];
+        const expected: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 5.0.toFloat()];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -118,10 +118,10 @@ export default function Array_With_Second_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_With_Second_Test_static_0400';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [-1.1 as float, -2.2 as float, -3.3 as float];
+        const arr: FixedArray<float> = [-1.1.toFloat(), -2.2.toFloat(), -3.3.toFloat()];
         const index = -1;
         const result = with(arr, index, 33);
-        const expected: FixedArray<float> = [-1.1 as float, -2.2 as float, 33.0 as float];
+        const expected: FixedArray<float> = [-1.1.toFloat(), -2.2.toFloat(), 33.0.toFloat()];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -143,10 +143,10 @@ export default function Array_With_Second_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_With_Second_Test_static_0500';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [-1.1 as float, -2.2 as float, -3.3 as float];
+        const arr: FixedArray<float> = [-1.1.toFloat(), -2.2.toFloat(), -3.3.toFloat()];
         const index = 0;
         const result = with(arr, index, 11);
-        const expected: FixedArray<float> = [11.0 as float, -2.2 as float, -3.3 as float];
+        const expected: FixedArray<float> = [11.0.toFloat(), -2.2.toFloat(), -3.3.toFloat()];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -168,10 +168,10 @@ export default function Array_With_Second_Test_static() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'Array_With_Second_Test_static_0600';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [100.0 as float, 90.0 as float, 80.0 as float, 70.0 as float];
+        const arr: FixedArray<float> = [100.0.toFloat(), 90.0.toFloat(), 80.0.toFloat(), 70.0.toFloat()];
         const index = 0;
         const result = with(arr, index, 60);
-        const expected: FixedArray<float> = [60.0 as float, 90.0 as float, 80.0 as float, 70.0 as float];
+        const expected: FixedArray<float> = [60.0.toFloat(), 90.0.toFloat(), 80.0.toFloat(), 70.0.toFloat()];
         expect(result.length).assertEqual(4);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -197,7 +197,7 @@ export default function Array_With_Second_Test_static() {
         let errorOccurred: boolean = false;
         let errorContainsKeyword: boolean = false;
         try {
-          const arr: FixedArray<float> = [1.1 as float, 11.1 as float, 111.1 as float];
+          const arr: FixedArray<float> = [1.1.toFloat(), 11.1.toFloat(), 111.1.toFloat()];
           const index = 3;
           with(arr, index, 1);
         } catch (e) {
@@ -226,7 +226,7 @@ export default function Array_With_Second_Test_static() {
         let errorOccurred: boolean = false;
         let errorContainsKeyword: boolean = false;
         try {
-          const arr: FixedArray<float> = [1.1 as float, 11.1 as float, 111.1 as float];
+          const arr: FixedArray<float> = [1.1.toFloat(), 11.1.toFloat(), 111.1.toFloat()];
           const index = 6;
           with(arr, index, 0);
         } catch (e) {

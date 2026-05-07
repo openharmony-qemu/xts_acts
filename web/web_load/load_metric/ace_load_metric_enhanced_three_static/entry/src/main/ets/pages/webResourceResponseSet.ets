@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -36,7 +36,7 @@ import { BusinessError,Callback, RecordData } from '@ohos.base'
 import { Callback } from '@ohos.base'
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
@@ -141,7 +141,7 @@ struct webResourceResponseSet {
             case "testSetResponseMimeType001": {
               try {
                 this.onHttpErrorReceive = true
-                this.controller.loadUrl('http://1.1.1.123/index.html');
+                this.controller.loadUrl('https://www.example.com');
                 setTimeout(() => {
                   Utils.emitEvent(this.getResponseMimeTypeValue, 36012);
                 }, 3000)
@@ -261,6 +261,7 @@ struct webResourceResponseSet {
           }
           return this.responseWeb
         })
+        .webFantasyFont('fantasy')
         .onHttpErrorReceive((event) => {
           if (event) {
             if (this.onHttpErrorReceive) {

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -46,12 +46,12 @@ let para: Record<string,string> = {
 };
 let storage: LocalStorage = new LocalStorage(para);
   
-class MyNodeAdapter extends NodeAdapter {
+export class MyNodeAdapter extends NodeAdapter {
   uiContext: UIContext = new UIContext();
   cachePool: Array<FrameNode> = new Array<FrameNode>();
   changed: boolean = false
   reloadTimes: int = 0;
-  data: Array<string> = new Array<string>(100);
+  data: Array<string> = Array.create<string>(100, '');
   hostNode: FrameNode | null = null;
 
   constructor(uiContext: UIContext, count: int) {
@@ -180,7 +180,7 @@ class MyNodeAdapter extends NodeAdapter {
   }
 }
 
-class MyNodeAdapterController extends NodeController {
+export class MyNodeAdapterController extends NodeController {
   rootNode: FrameNode | null = null;
   nodeAdapter: MyNodeAdapter | null = null;
 

@@ -68,7 +68,7 @@ struct RichEditorDoubleClick009 {
     fontSize: LengthMetrics.vp(50),
     fontStyle: FontStyle.Normal
   })
-  fontStyle1: TextStyle = { fontColor: Color.Blue } as TextStyle;
+  fontStyle1: TextStyle = new TextStyle({ fontColor: Color.Blue });
   // 创建属性字符串对象
   mutableStyledString: MutableStyledString = new MutableStyledString('abc',
     [{ start: 0, length: 3, styledKey: StyledStringKey.FONT, styledValue: this.fontStyle1 }]);
@@ -78,9 +78,9 @@ struct RichEditorDoubleClick009 {
 
   onPageShow() {
     console.info('aboutToAppear initial imagePixelMap');
-    waitForCompletion(async ()=>{
+    (async ()=>{
       this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.icon'));
-    })
+    })().awaitSync()
   }
 
   private async getPixmapFromMedia(resource: Resource): Promise<image.PixelMap> {

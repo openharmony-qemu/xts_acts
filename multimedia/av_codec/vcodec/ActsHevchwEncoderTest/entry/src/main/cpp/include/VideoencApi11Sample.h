@@ -124,7 +124,7 @@ public:
     void ReleaseInFile();
     void StopInloop();
     void StopOutloop();
-    void ReadMultiFilesFunc();
+    int32_t ReadMultiFilesFunc();
     int32_t GetBframes(OH_AVFormat *format);
     int32_t InitBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer, OH_NativeBuffer *&nativeBuffer, uint8_t *&dst);
     struct EncoderConfig {
@@ -167,4 +167,5 @@ private:
 };
 } // namespace Media
 } // namespace OHOS
+extern bool g_flagValue;
 #endif // VIDEOENC_API11_SAMPLE_H

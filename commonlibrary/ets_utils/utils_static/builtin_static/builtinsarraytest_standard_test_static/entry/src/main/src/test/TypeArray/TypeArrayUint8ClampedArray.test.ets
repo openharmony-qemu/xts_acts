@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -817,7 +817,7 @@ export default function typeArrayUint8ClampedArrayTest() {
      */
     it('TypeArrayUint8ClampedArray0041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([10, 20, 30, 40]);
-      const sum = arr.reduce((acc, val) => acc + val, 0);
+      const sum = arr.reduce((acc, val) => acc + val, 0.);
       expect(sum).assertEqual(100);
     })
 
@@ -1415,7 +1415,7 @@ export default function typeArrayUint8ClampedArrayTest() {
      */
     it('TypeArrayUint8ClampedArray0079', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const calculateChecksum = (data: Uint8ClampedArray) => {
-        return data.reduce((sum, val) => (sum + val) % 256, 0);
+        return data.reduce((sum, val) => (sum + val) % 256, 0.);
       };
 
       const data = new Uint8ClampedArray([0x10, 0x20, 0x30, 0x40]);
@@ -1434,7 +1434,7 @@ export default function typeArrayUint8ClampedArrayTest() {
     it('TypeArrayUint8ClampedArray0080', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const readFileHeader = (data: Uint8ClampedArray) => {
         return ({
-          magic: String.fromCharCode(data[0] as int, data[1] as int),
+          magic: String.fromCharCode(data[0].toInt(), data[1].toInt()),
           version: data[2]
         } as GeneratedObjectLiteralInterface_1);
       };
@@ -1542,7 +1542,7 @@ export default function typeArrayUint8ClampedArrayTest() {
      */
     it('TypeArrayUint8ClampedArray0087', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([2, 3, 4]);
-      const product = arr.reduceRight((acc, val) => acc * val, 1);
+      const product = arr.reduceRight((acc, val) => acc * val, 1.);
       expect(product).assertEqual(24);
     })
 
@@ -1570,7 +1570,7 @@ export default function typeArrayUint8ClampedArrayTest() {
      */
     it('TypeArrayUint8ClampedArray0089', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([3, 1, 4, 2]);
-      arr.sort((a: double, b: double) => (b - a) as int);
+      arr.sort((a: double, b: double) => (b - a).toInt());
       expect(arr.toString()).assertEqual('4,3,2,1');
     })
 
@@ -1653,7 +1653,7 @@ export default function typeArrayUint8ClampedArrayTest() {
         return data
           .map(v => v * 2)
           .filter(v => v > 100)
-          .reduce((a, b) => a + b, 0);
+          .reduce((a, b) => a + b, 0.);
       };
 
       const data = new Uint8ClampedArray([100, 150, 50]);
@@ -2219,7 +2219,7 @@ export default function typeArrayUint8ClampedArrayTest() {
      */
     it('TypeArrayUint8ClampedArray0138', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       const calculateXorChecksum = (data: Uint8ClampedArray): number => {
-        return data.reduce((checksum, value) => checksum ^ value, 0);
+        return data.reduce((checksum, value) => checksum ^ value, 0.);
       };
 
       const data = new Uint8ClampedArray([0x10, 0x20, 0x30, 0x40]);
@@ -2249,7 +2249,7 @@ export default function typeArrayUint8ClampedArrayTest() {
       };
 
       const header = createFileHeader('IMAGE', 0x0102);
-      expect(String.fromCharCode(header[0] as int, header[1] as int, header[2] as int, header[3] as int)).assertEqual('IMAG');
+      expect(String.fromCharCode(header[0].toInt(), header[1].toInt(), header[2].toInt(), header[3].toInt())).assertEqual('IMAG');
       expect(header[5]).assertEqual(0x02);
       expect(header.length).assertEqual(6);
       expect(header[0]).assertEqual(73);
@@ -2301,7 +2301,7 @@ export default function typeArrayUint8ClampedArrayTest() {
      */
     it('TypeArrayUint8ClampedArray0142', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint8ClampedArray([300, -50, 150, 200]);
-      arr.sort((a: double, b: double) => (a - b) as int);
+      arr.sort((a: double, b: double) => (a - b).toInt());
       expect(arr.toString()).assertEqual('0,150,200,255');
       expect(arr.length).assertEqual(4);
       expect(arr[0]).assertEqual(0);

@@ -54,8 +54,9 @@ struct webViewController {
   @State forceDarkAccess: boolean = false
   @State userAgentPC: string = '';
   no_error: string = 'no error happened'
-  @State X: number = 0;
-  @State Y: number = 0;
+  @State XTag: number = 0;
+  @State YTag: number = 0;
+
 
   aboutToAppear() {
     console.info('Entry aboutToAppear');
@@ -92,7 +93,7 @@ struct webViewController {
               try {
                 this.controller.loadUrl('https://www.example.com/');
                 Utils.emitEvent(this.onOverScrollCallBack, 31038)
-				this.onOverScrollCallBack = false
+			        	this.onOverScrollCallBack = false
               } catch (error) {
                 error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -105,7 +106,7 @@ struct webViewController {
               try {
                 this.controller.loadUrl('https://www.example.com/');
                 Utils.emitEvent(this.onOverScrollCallBack, 100034)
-				this.onOverScrollCallBack = false
+				        this.onOverScrollCallBack = false
               } catch (error) {
                 error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -118,7 +119,7 @@ struct webViewController {
               try {
                 this.controller.loadUrl('https://www.example.com/');
                 Utils.emitEvent(this.onOverScrollCallBack, 100035)
-				this.onOverScrollCallBack = false
+				        this.onOverScrollCallBack = false
               } catch (error) {
                 error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -131,11 +132,46 @@ struct webViewController {
               try {
                 this.controller.loadUrl('https://www.example.com/');
                 Utils.emitEvent(this.onOverScrollCallBack, 100036)
-				this.onOverScrollCallBack = false
+                this.onOverScrollCallBack = false
               } catch (error) {
                 error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(error.code, 100036)
+              }
+              break;
+            }
+
+            case 'testOnOverScroll005': {
+              try {
+                this.controller.loadUrl('https://www.example.com/');
+                  if(this.XTag < 0){
+                    Utils.emitEvent(true, 310383191)
+                  }
+                  else{
+                    Utils.emitEvent(false, 310383191)
+                  }
+                  this.onOverScrollCallBack = false
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 310383191)
+              }
+              break;
+            }
+
+            case 'testOnOverScroll006': {
+              try {
+                this.controller.loadUrl('https://www.example.com/');
+                if(this.YTag > 0){
+                  Utils.emitEvent(true, 310383192)
+                }
+                else{
+                  Utils.emitEvent(false, 310383192)
+                }
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 310383192)
               }
               break;
             }
@@ -145,6 +181,8 @@ struct webViewController {
       Web({ src: 'resource://rawfile/index.html', controller: this.controller })
         .onOverScroll((event: OnOverScrollEvent): void => {
           if (event) {
+            this.XTag = event.xOffset;
+            this.YTag = event.yOffset;
             console.info('onOverScroll x = ' + event.xOffset)
             console.info('onOverScroll y = ' + event.yOffset)
             this.onOverScrollCallBack = true

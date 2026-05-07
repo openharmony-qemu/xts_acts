@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 export const oHAVMuxerCreate: () => number;
+export const oHAVMuxerCreateFlv: () => number;
 export const oHAVMuxerSetRotation: () => number;
 export const oHAVMuxerStart: () => number;
 export const oHAVMuxerStop: () => number;

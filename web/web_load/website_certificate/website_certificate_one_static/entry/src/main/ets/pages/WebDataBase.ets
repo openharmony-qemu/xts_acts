@@ -22,7 +22,7 @@ import { State } from '@ohos.arkui.stateManagement'
 import { Callback, BusinessError, RecordData } from '@ohos.base'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
@@ -71,6 +71,55 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
               break;
             }
 
+            case 'testSaveHttpAuthCredentials002': {
+              try {
+                web_webview.WebDataBase.saveHttpAuthCredentials("", this.realm, 'StrOmgGol', 'LaRoChe');
+                Utils.emitEvent(true, 30040312)
+              } catch (e) {
+                e = e as BusinessError;
+                console.error('==>' + JSON.stringify(e))
+                Utils.emitEvent(e.code, 3004512)
+              }
+              break;
+            }
+
+            case 'testSaveHttpAuthCredentials003': {
+              try {
+                web_webview.WebDataBase.saveHttpAuthCredentials(this.host, "", 'StrOmgGol', 'LaRoChe');
+                Utils.emitEvent(true, 30040313)
+              } catch (e) {
+                e = e as BusinessError;
+                console.error('==>' + JSON.stringify(e))
+                Utils.emitEvent(e.code, 30040313)
+              }
+              break;
+            }
+
+            case 'testSaveHttpAuthCredentials004': {
+              try {
+                web_webview.WebDataBase.saveHttpAuthCredentials(this.host, this.realm, '', 'LaRoChe');
+                Utils.emitEvent(true, 30040314)
+              } catch (e) {
+                e = e as BusinessError;
+                console.error('==>' + JSON.stringify(e))
+                Utils.emitEvent(e.code, 30040314)
+              }
+              break;
+            }
+
+            case 'testSaveHttpAuthCredentials005': {
+              try {
+                web_webview.WebDataBase.saveHttpAuthCredentials(this.host, this.realm, 'StrOmgGol', '');
+                Utils.emitEvent(true, 30040315)
+              } catch (e) {
+                e = e as BusinessError;
+                console.error('==>' + JSON.stringify(e))
+                Utils.emitEvent(e.code, 30040315)
+              }
+              break;
+            }
+
+
             case 'testGetHttpAuthCredentials001': {
               try {
                 web_webview.WebDataBase.saveHttpAuthCredentials(this.host, this.realm, 'StrOmgGol', 'LaRoChe');
@@ -91,6 +140,46 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
               break;
             }
 
+            case 'testGetHttpAuthCredentials002': {
+              try {
+                web_webview.WebDataBase.saveHttpAuthCredentials(this.host, this.realm, '', '');
+                let arr: string[] = web_webview.WebDataBase.getHttpAuthCredentials(this.host, this.realm)
+                setTimeout(() => {
+                  if (arr) {
+                    this.username_password = arr[0]
+                    Utils.emitEvent(this.username_password, 3004511)
+                  } else {
+                    Utils.emitEvent(false, 3004511)
+                  }
+                }, 2000)
+              } catch (e) {
+                e = e as BusinessError;
+                console.error('==>' + JSON.stringify(e))
+                Utils.emitEvent(e.code, 3004511)
+              }
+              break;
+            }
+
+            case 'testGetHttpAuthCredentials003': {
+              try {
+                web_webview.WebDataBase.saveHttpAuthCredentials(this.host, this.realm, 'StrOmgGol', 'LaRoChe');
+                let arr: string[] = web_webview.WebDataBase.getHttpAuthCredentials("", this.realm)
+                setTimeout(() => {
+                  if (arr) {
+                    this.username_password = arr[0]
+                    Utils.emitEvent(this.username_password, 3004512)
+                  } else {
+                    Utils.emitEvent(false, 3004512)
+                  }
+                }, 2000)
+              } catch (e) {
+                e = e as BusinessError;
+                console.error('==>' + JSON.stringify(e))
+                Utils.emitEvent(e.code, 3004512)
+              }
+              break;
+            }
+
             case 'testExistHttpAuthCredentials001': {
               try {
                 let result = web_webview.WebDataBase.existHttpAuthCredentials();
@@ -104,6 +193,24 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
               }
               break;
             }
+
+            case 'testExistHttpAuthCredentials002': {
+              try {
+                web_webview.WebDataBase.deleteHttpAuthCredentials();
+                setTimeout(() => {
+                  let result = web_webview.WebDataBase.existHttpAuthCredentials();
+                  setTimeout(() => {
+                    Utils.emitEvent(result, 300463116)
+                  }, 2000)
+                }, 1000)
+              } catch (e) {
+                e = e as BusinessError;
+                console.info('==>' + JSON.stringify(e))
+                Utils.emitEvent(e.code, 300463116)
+              }
+              break;
+            }
+
             case 'testDeleteHttpAuthCredentials001': {
               try {
                 web_webview.WebDataBase.deleteHttpAuthCredentials();
@@ -117,6 +224,37 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                 e = e as BusinessError;
                 console.info('==>' + JSON.stringify(e))
                 Utils.emitEvent(e.code, 30050)
+              }
+              break;
+            }
+
+            case 'testSaveHttpAuthCredentialsEmpty001': {
+              try {
+                web_webview.WebDataBase.saveHttpAuthCredentials("", "", "", "");
+              } catch (e) {
+                e = e as BusinessError;
+                console.error('==>' + JSON.stringify(e))
+                Utils.emitEvent(e.code, 300401)
+              }
+              break;
+            }
+
+            case 'testGetHttpAuthCredentialsEmpty001': {
+              try {
+                web_webview.WebDataBase.saveHttpAuthCredentials(this.host, this.realm, 'StrOmgGol', 'LaRoChe');
+                let arr: string[] = web_webview.WebDataBase.getHttpAuthCredentials("", "")
+                setTimeout(() => {
+                  if (arr) {
+                    this.username_password = arr[0]
+                    Utils.emitEvent(this.username_password, 300451)
+                  } else {
+                    Utils.emitEvent(false, 300451)
+                  }
+                }, 2000)
+              } catch (e) {
+                e = e as BusinessError;
+                console.error('==>' + JSON.stringify(e))
+                Utils.emitEvent(e.code, 300451)
               }
               break;
             }

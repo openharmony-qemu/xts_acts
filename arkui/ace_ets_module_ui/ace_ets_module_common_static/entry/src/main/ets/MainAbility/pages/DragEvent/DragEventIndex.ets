@@ -33,23 +33,12 @@ struct DragEventIndex {
 
   build() {
     Column() {
-      Text('drag_source')
-        .id('dragEventSource')
-        .width('100%')
-        .height(150)
-        .backgroundColor('#33FF0000')
-        .draggable(true)
-        .onDragStart((event: DragEvent): DragItemInfo => {
-          let _evt = event;
-          return { extraInfo: 'dragEventTest' };
-        });
-
       Text('drag_target')
         .id('dragEventTarget')
         .width('100%')
-        .height(300)
+        .height('40%')
         .backgroundColor('#3300FF00')
-        .margin({ top: 20 })
+        .margin({ top: '3%' })
         .allowDrop(['text/plain'])
         .onDrop((event: DragEvent) => {
           try {
@@ -59,8 +48,18 @@ struct DragEventIndex {
             this.getDisplayIdStatus = 'getDisplayId_fail';
           }
         });
+      Text('drag_source')
+        .id('dragEventSource')
+        .width('100%')
+        .height('20%')
+        .backgroundColor('#33FF0000')
+        .draggable(true)
+        .onDragStart((event: DragEvent): DragItemInfo => {
+          let _evt = event;
+          return { extraInfo: 'dragEventTest' };
+        });
 
-      Text(this.getDisplayIdStatus).key('dragEventGetDisplayIdStatus');
+      Text(this.getDisplayIdStatus).key('dragEventGetDisplayIdStatus').height('5%');
     }
     .width('100%')
     .height('100%');

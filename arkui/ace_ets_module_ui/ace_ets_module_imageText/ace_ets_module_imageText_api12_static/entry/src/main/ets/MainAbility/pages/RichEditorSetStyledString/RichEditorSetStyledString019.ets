@@ -62,7 +62,7 @@ struct RichEditorSetStyledString019 {
   titleParagraphStyleAttr: ParagraphStyle = new ParagraphStyle({ textAlign: TextAlign.Center });
   //第一段落首行缩进15vp
   paragraphStyleAttr1: ParagraphStyle = new ParagraphStyle({ textIndent: LengthMetrics.vp(15) });
-  fontStyleAttr1: TextStyle = { fontColor: Color.Blue } as TextStyle;
+  fontStyleAttr1: TextStyle = new TextStyle({ fontColor: Color.Blue });
   // 创建有多种样式组合对象mutableStyledString2
   styledString: StyledString = new StyledString('abcd\n12345678', [{
     start: 0,
@@ -94,10 +94,10 @@ struct RichEditorSetStyledString019 {
 
   onPageShow() {
     console.info('aboutToAppear initial imagePixelMap');
-    this.controller!.setStyledString(this.styledString)
-    waitForCompletion(async ()=>{
+    this.controller!.setStyledString(this.styledString);
+    (async ()=>{
       this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.icon'));
-    })
+    })().awaitSync()
   }
 
   private async getPixmapFromMedia(resource: Resource): Promise<image.PixelMap> {

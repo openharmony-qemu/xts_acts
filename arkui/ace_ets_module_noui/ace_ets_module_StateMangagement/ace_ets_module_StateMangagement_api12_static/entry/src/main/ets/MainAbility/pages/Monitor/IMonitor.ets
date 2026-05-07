@@ -46,10 +46,10 @@ struct IMonitor1 {
   @Monitor(["message", "name"])
   onStrChange(monitor: IMonitor) {
     monitor.dirty.forEach((path: string) => {
-      this.IMonitorValue = monitor.value(path) as IMonitorValue<String>
+      this.IMonitorValue = monitor.value<String>(path) as IMonitorValue<String>
       this.before = this.IMonitorValue?.before;
       this.now = this.IMonitorValue?.now;
-      console.log(`${path} changed from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`)
+      console.log(`${path} changed from ${monitor.value<String>(path)?.before} to ${monitor.value<String>(path)?.now}`)
     })
   }
   build() {
@@ -60,7 +60,6 @@ struct IMonitor1 {
         .onClick(():void => {
           console.log('onclick==================')
           this.message += "!";
-          this.name = "IMonitor succ";
         })
     }
   }

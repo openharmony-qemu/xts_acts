@@ -328,14 +328,14 @@ export default function JsvmJsunit() {
       done();
     });
     /**
-     * @tc.name   JSvmTest020
+     * @tc.name   JsvmTest020
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0020
      * @tc.desc   JsvmTest
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('JSvmTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+    it('JsvmTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('JsvmTest020 START');
       value = napitest.testProperty()
       console.info('JsvmTest020 testString result is:'+ value + "--" + JSON.stringify(value) );
@@ -14176,24 +14176,9 @@ export default function JsvmJsunit() {
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
     /**
-     * @tc.name   JsvmTest0948
-     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0948
-     * @tc.desc   Call the interface to be tested,return ok,result not nullptr
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('JsvmTest0948', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      let script: string = `
-      let obj = { code: "code init" };
-      testStartCpuProfilerCase01()
-   `;
-      expect(napitest.runJsVm(script)).assertEqual(true);
-    });
-    /**
      * @tc.name   JsvmTest0949
      * @tc.number SUB_ACE_BASIC_ETS_JSVM_0949
-     * @tc.desc   call OH_JSVM_StartCpuProfiler,Call the interface to be tested,return ok
+     * @tc.desc   Call OH_JSVM_StartCpuProfiler and OH_JSVM_StopCpuProfiler, return ok
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -14201,7 +14186,7 @@ export default function JsvmJsunit() {
     it('JsvmTest0949', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let script: string = `
       let obj = { code: "code init" };
-      testStopCpuProfilerCase01()
+      testCpuProfilerCase01()
    `;
       expect(napitest.runJsVm(script)).assertEqual(true);
     });
@@ -14351,6 +14336,19 @@ export default function JsvmJsunit() {
     it('JsvmTest0959', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let rst: number = napitest.testSetDebugOption();
       console.info('JsvmTest0959 testString result is:' + JSON.stringify(rst));
+      expect(rst).assertEqual(0);
+    });
+    /**
+     * @tc.name   JsvmTest0960
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0960
+     * @tc.desc   test the function of threshold interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('JsvmTest0960', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let rst: number = napitest.testThreshold();
+      console.info('JsvmTest0960 testString result is:' + JSON.stringify(rst));
       expect(rst).assertEqual(0);
     });
   });

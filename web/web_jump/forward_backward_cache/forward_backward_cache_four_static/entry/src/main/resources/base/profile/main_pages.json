@@ -1,5 +1,7 @@
 {
   "src": [
-    "pages/webViewController"
+    "pages/webViewController",
+    "pages/webViewController1",
+    "pages/webViewController2"
   ]
 }

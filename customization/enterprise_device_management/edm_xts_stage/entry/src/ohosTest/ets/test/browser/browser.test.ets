@@ -159,7 +159,117 @@ function testSetPolicySync() {
     }
     done();
   })
+
+  /**
+   * @tc.name   test_setpolicysync_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETPOLICYSYNC_0700
+   * @tc.desc   test setPolicySync method with empty policyName
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setpolicysync_0700", Level.LEVEL2, async (done: Function) => {
+    try {
+      browser.setPolicySync(null, TEST_APP_ID_1, "", TEST_POLICY_VALUE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  })
+
+  /**
+   * @tc.name   test_setpolicysync_0800
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETPOLICYSYNC_0800
+   * @tc.desc   test setPolicySync method with empty policyName
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setpolicysync_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      browser.setPolicySync(undefined, TEST_APP_ID_1, "", TEST_POLICY_VALUE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  })
+
+  /**
+   * @tc.name   test_setpolicysync_0900
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETPOLICYSYNC_0900
+   * @tc.desc   test setPolicySync method with empty policyName
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setpolicysync_0900", Level.LEVEL2, async (done: Function) => {
+    try {
+      browser.setPolicySync(SELFWANT, null, "", TEST_POLICY_VALUE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  })
+
+  /**
+   * @tc.name   test_setpolicysync_1000
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETPOLICYSYNC_1000
+   * @tc.desc   test setPolicySync method with empty policyName
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setpolicysync_1000", Level.LEVEL2, async (done: Function) => {
+    try {
+      browser.setPolicySync(SELFWANT, undefined, "", TEST_POLICY_VALUE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  })
+
+  /**
+   * @tc.name   test_setpolicysync_1100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETPOLICYSYNC_1100
+   * @tc.desc   test setPolicySync method with empty policyName
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setpolicysync_1100", Level.LEVEL2, async (done: Function) => {
+    try {
+      browser.setPolicySync(SELFWANT, TEST_APP_ID_1, null, TEST_POLICY_VALUE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  })
+
+  /**
+   * @tc.name   test_setpolicysync_1200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETPOLICYSYNC_1200
+   * @tc.desc   test setPolicySync method with empty policyName
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setpolicysync_1200", Level.LEVEL2, async (done: Function) => {
+    try {
+      browser.setPolicySync(SELFWANT, TEST_APP_ID_1, undefined, TEST_POLICY_VALUE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  })
 }
+
+
 
 function testGetpolicySync() {
   /**
@@ -209,11 +319,13 @@ function testGetpolicySync() {
    * @tc.level  LEVEL2
    */
   it("test_getpolicysync_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       browser.getPoliciesSync(null, TEST_APP_ID_1);
-      expect(false).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
   })
@@ -235,6 +347,60 @@ function testGetpolicySync() {
       expect(Number(error.code) === 401).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  })
+
+  /**
+   * @tc.name   test_getpolicysync_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETPOLICIESSYNC_0500
+   * @tc.desc   test getPoliciesSync method with admin is empty
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getpolicysync_0500", Level.LEVEL2, async (done: Function) => {
+    try {
+      browser.getPoliciesSync(undefined, TEST_APP_ID_1);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  })
+
+  /**
+   * @tc.name   test_getpolicysync_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETPOLICIESSYNC_0600
+   * @tc.desc   test getPoliciesSync method with admin is empty
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getpolicysync_0600", Level.LEVEL2, async (done: Function) => {
+    try {
+      browser.getPoliciesSync(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  })
+
+  /**
+   * @tc.name   test_getpolicysync_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETPOLICIESSYNC_0700
+   * @tc.desc   test getPoliciesSync method with admin is empty
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getpolicysync_0700", Level.LEVEL2, async (done: Function) => {
+    try {
+      browser.getPoliciesSync(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
     }
     done();
   })
@@ -362,6 +528,150 @@ function testSetManagedBrowserPolicy() {
     }
     done();
   })
+
+  /**
+   * @tc.name   test_setManagedBrowserPolicy_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETMANAGEDBROWSERPOLICY_0700
+   * @tc.desc   test setManagedBrowserPolicy method with invalid want
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setManagedBrowserPolicy_0700", Level.LEVEL2, async (done: Function) => {
+    try {
+      browser.setManagedBrowserPolicy(null, SELFHAPNAME, TEST_POLICY_NAME, TEST_POLICY_VALUE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  })
+
+  /**
+   * @tc.name   test_setManagedBrowserPolicy_0800
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETMANAGEDBROWSERPOLICY_0800
+   * @tc.desc   test setManagedBrowserPolicy method with invalid want
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setManagedBrowserPolicy_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      browser.setManagedBrowserPolicy(undefined, SELFHAPNAME, TEST_POLICY_NAME, TEST_POLICY_VALUE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  })
+
+  /**
+   * @tc.name   test_setManagedBrowserPolicy_0900
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETMANAGEDBROWSERPOLICY_0900
+   * @tc.desc   test setManagedBrowserPolicy method with invalid want
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setManagedBrowserPolicy_0900", Level.LEVEL2, async (done: Function) => {
+    try {
+      browser.setManagedBrowserPolicy(SELFWANT, null, TEST_POLICY_NAME, TEST_POLICY_VALUE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  })
+
+  /**
+   * @tc.name   test_setManagedBrowserPolicy_1000
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETMANAGEDBROWSERPOLICY_1000
+   * @tc.desc   test setManagedBrowserPolicy method with invalid want
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setManagedBrowserPolicy_1000", Level.LEVEL2, async (done: Function) => {
+    try {
+      browser.setManagedBrowserPolicy(SELFWANT, undefined, TEST_POLICY_NAME, TEST_POLICY_VALUE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  })
+
+  /**
+   * @tc.name   test_setManagedBrowserPolicy_1100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETMANAGEDBROWSERPOLICY_1100
+   * @tc.desc   test setManagedBrowserPolicy method with invalid want
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setManagedBrowserPolicy_1100", Level.LEVEL2, async (done: Function) => {
+    try {
+      browser.setManagedBrowserPolicy(SELFWANT, SELFHAPNAME, null, TEST_POLICY_VALUE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  })
+
+  /**
+   * @tc.name   test_setManagedBrowserPolicy_1200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETMANAGEDBROWSERPOLICY_1200
+   * @tc.desc   test setManagedBrowserPolicy method with invalid want
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setManagedBrowserPolicy_1200", Level.LEVEL2, async (done: Function) => {
+    try {
+      browser.setManagedBrowserPolicy(SELFWANT, SELFHAPNAME, undefined, TEST_POLICY_VALUE);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  })
+
+  /**
+   * @tc.name   test_setManagedBrowserPolicy_1300
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETMANAGEDBROWSERPOLICY_1300
+   * @tc.desc   test setManagedBrowserPolicy method with invalid want
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setManagedBrowserPolicy_1300", Level.LEVEL2, async (done: Function) => {
+    try {
+      browser.setManagedBrowserPolicy(SELFWANT, SELFHAPNAME, TEST_POLICY_NAME, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  })
+
+  /**
+   * @tc.name   test_setManagedBrowserPolicy_1400
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETMANAGEDBROWSERPOLICY_1400
+   * @tc.desc   test setManagedBrowserPolicy method with invalid want
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setManagedBrowserPolicy_1400", Level.LEVEL2, async (done: Function) => {
+    try {
+      browser.setManagedBrowserPolicy(SELFWANT, SELFHAPNAME, TEST_POLICY_NAME, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  })
 }
 
 function testGetManagedBrowserPolicy() {
@@ -415,6 +725,78 @@ function testGetManagedBrowserPolicy() {
   it("test_getManagedBrowserPolicy_0300", Level.LEVEL2, async (done: Function) => {
     try {
       browser.getManagedBrowserPolicy(INVALID_WANT, SELFHAPNAME);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  })
+
+  /**
+   * @tc.name   test_getManagedBrowserPolicy_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETMANAGEDBROWSERPOLICY_0400
+   * @tc.desc   test getManagedBrowserPolicy method with invalid want
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getManagedBrowserPolicy_0400", Level.LEVEL2, async (done: Function) => {
+    try {
+      browser.getManagedBrowserPolicy(null, SELFHAPNAME);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  })
+
+  /**
+   * @tc.name   test_getManagedBrowserPolicy_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETMANAGEDBROWSERPOLICY_0500
+   * @tc.desc   test getManagedBrowserPolicy method with invalid want
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getManagedBrowserPolicy_0500", Level.LEVEL2, async (done: Function) => {
+    try {
+      browser.getManagedBrowserPolicy(undefined, SELFHAPNAME);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  })
+
+  /**
+   * @tc.name   test_getManagedBrowserPolicy_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETMANAGEDBROWSERPOLICY_0600
+   * @tc.desc   test getManagedBrowserPolicy method with invalid want
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getManagedBrowserPolicy_0600", Level.LEVEL2, async (done: Function) => {
+    try {
+      browser.getManagedBrowserPolicy(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(Number(error.code) === 401).assertTrue();
+    }
+    done();
+  })
+
+  /**
+   * @tc.name   test_getManagedBrowserPolicy_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETMANAGEDBROWSERPOLICY_0700
+   * @tc.desc   test getManagedBrowserPolicy method with invalid want
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getManagedBrowserPolicy_0700", Level.LEVEL2, async (done: Function) => {
+    try {
+      browser.getManagedBrowserPolicy(SELFWANT, undefined);
       expect(false).assertTrue();
     } catch (error) {
       expect(Number(error.code) === 401).assertTrue();

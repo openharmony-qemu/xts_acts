@@ -206,12 +206,12 @@ it('SearchJsunit_static_0300', Level.LEVEL0, async (done: () => void) => {
       let searchRect = CommonFunc.getComponentRectOnScreen('search')
       let clickX = Math.round((searchRect.right + searchRect.left)/2)
       let clickY = Math.round((searchRect.bottom + searchRect.top)/2)
-      await driverX.mouseClick({ x: clickX as int, y: clickY as int }, MouseButton.MOUSE_BUTTON_RIGHT)
+      await driverX.mouseClick({ x: clickX.toInt(), y: clickY.toInt() }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
       console.info("[SearchJsunit_0300] first mouseClick succ ");
       let textComponent3 = await (driver.findComponent(ON.text('全选')) as Promise<Component>);
   await textComponent3!.click()
-  await driverX.mouseClick({ x: clickX as int, y: clickY as int }, MouseButton.MOUSE_BUTTON_RIGHT)
+  await driverX.mouseClick({ x: clickX.toInt(), y: clickY.toInt() }, MouseButton.MOUSE_BUTTON_RIGHT)
   await CommonFunc.sleep(1000);
       let textComponent4 = await (driver.findComponent(ON.text('复制')) as Promise<Component>);
   await textComponent4!.click()
@@ -222,12 +222,12 @@ it('SearchJsunit_static_0300', Level.LEVEL0, async (done: () => void) => {
   expect(obj3.getElement('$attrs').getString('content')).assertEqual('onCopy:hello');
 
       // Verify the onCut function of the Search component
-      await driverX.mouseClick({ x: clickX as int, y: clickY as int}, MouseButton.MOUSE_BUTTON_RIGHT)
+      await driverX.mouseClick({ x: clickX.toInt(), y: clickY.toInt()}, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
       console.info("[SearchJsunit_0300] secand mouseClick succ ");
       let textComponent5 = await (driver.findComponent(ON.text('全选')) as Promise<Component>);
   await textComponent5!.click()
-  await driverX.mouseClick({ x: clickX as int, y: clickY as int}, MouseButton.MOUSE_BUTTON_RIGHT)
+  await driverX.mouseClick({ x: clickX.toInt(), y: clickY.toInt()}, MouseButton.MOUSE_BUTTON_RIGHT)
   await CommonFunc.sleep(1000);
       let textComponent6 = await (driver.findComponent(ON.text('剪切')) as Promise<Component>);
 
@@ -240,7 +240,7 @@ it('SearchJsunit_static_0300', Level.LEVEL0, async (done: () => void) => {
   expect(obj4.getElement('$attrs').getString('content')).assertEqual('onCut:hello');
 
       // Verify the onPaste function of the Search component
-      await driverX.mouseClick({ x: clickX as int, y: clickY as int }, MouseButton.MOUSE_BUTTON_RIGHT)
+      await driverX.mouseClick({ x: clickX.toInt(), y: clickY.toInt() }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
       let textComponent8 = await (driver.findComponent(ON.text('粘贴')) as Promise<Component>);
   await textComponent8!.click()

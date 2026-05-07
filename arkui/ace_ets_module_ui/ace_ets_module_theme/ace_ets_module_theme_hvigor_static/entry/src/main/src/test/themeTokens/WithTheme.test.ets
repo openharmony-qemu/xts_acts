@@ -85,7 +85,7 @@ export default function withThemeTest() {
       }
 
       if (changeTheme) {
-        if ((AppStorage.get(withThemeProperty) as CustomTheme | undefined)?.colors?.fontEmphasize
+        if ((AppStorage.get<CustomTheme>(withThemeProperty) as CustomTheme | undefined)?.colors?.fontEmphasize
           == redCustomTheme?.colors?.fontEmphasize) {
           AppStorage.setOrCreate(withThemeProperty, greenCustomTheme);
         } else {

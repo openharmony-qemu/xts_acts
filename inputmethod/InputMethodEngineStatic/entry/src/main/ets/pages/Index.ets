@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, TextArea } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, TextArea, KeyboardAppearance } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import hilog from '@ohos.hilog'
 
@@ -35,7 +35,8 @@ struct MyStateSample {
     Column(undefined) {
       TextArea({ text: this.inputValue })
         .height('90%')
-        .enablePreviewText(false)
+        .enablePreviewText(true)
+        .keyboardAppearance(KeyboardAppearance.LIGHT_IMMERSIVE)
         .onChange((value: string) => {
           this.inputValue = value;
         })

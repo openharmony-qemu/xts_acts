@@ -16,6 +16,7 @@
 import { BusinessError } from '@ohos.base';
 import bluetoothBle from '@ohos.bluetooth.ble';
 import btAccess from '@ohos.bluetooth.access';
+import connection from '@ohos.bluetooth.connection';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
 let gattS: bluetoothBle.GattServer;
@@ -24,6 +25,7 @@ let gattC: bluetoothBle.GattClientDevice;
 
 let PERMISSION_TEXT:string = "允许";
 let OPEN_BT_TEXT:string = "开启";
+let nLength:number=0;
 
 function sleep(delay : number) :Promise<void> {
   return new Promise(resolve => setTimeout(resolve, delay))
@@ -382,6 +384,13 @@ export default function btBleManagerTest() {
       console.info('bluetooth ble create gattserver result:' + gattS);
       gattC = bluetoothBle.createGattClientDevice('04:30:02:01:00:07');
       console.info('bluetooth ble create gattclientdevice result:' + gattC);
+      try{
+        let deviceName = connection.getLocalName()
+        nLength = deviceName.length
+        console.info(`deviceName.length = ${nLength}`)
+      }catch (err){
+        expect(Number(err.code)).assertEqual(801)
+      }
       console.info('beforeAll called')
       done();
     })
@@ -917,6 +926,25 @@ export default function btBleManagerTest() {
       }
       done();
     })
+    /**
+           * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_MTUSIZE_ADD_0100
+           * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_MTUSIZE_ADD_0100
+           * @tc.desc   Test SetBLEMtuSize api10.
+           * @tc.type   FUNCTION
+           * @tc.size   MEDIUMTEST
+           * @tc.level  LEVEL2
+           */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_MTUSIZE_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done : Function) =>  {
+      try {
+        gattC.setBLEMtuSize(undefined);
+        console.info("[bluetooth_js]setBLEMtuSize success");
+      } catch (error) {
+        console.error(`[bluetooth_js]MtuSize 6 failed, code is ${error.code},message is ${error.message}`);
+        expect(Number(error.code)).assertEqual(401);
+      }
+      done();
+    })
+    
     /**
      * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_1900
      * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_READCHARACTERISTIC_1900
@@ -3111,16 +3139,7 @@ export default function btBleManagerTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTADVERT_ADD_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      let manufactureValueBuffer = new Uint8Array(4);
-      manufactureValueBuffer[0] = 1;
-      manufactureValueBuffer[1] = 2;
-      manufactureValueBuffer[2] = 3;
-      manufactureValueBuffer[3] = 4;
-      let serviceValueBuffer = new Uint8Array(4);
-      serviceValueBuffer[0] = 4;
-      serviceValueBuffer[1] = 6;
-      serviceValueBuffer[2] = 7;
-      serviceValueBuffer[3] = 8;
+      let caseName = 'SUB_COMMUNICATION_BLUETOOTHBLE_GATTADVERT_ADD_0100'
       interface Setting{
         interval : number;
         txPower : number;
@@ -3148,6 +3167,8 @@ export default function btBleManagerTest() {
         includeTxPower:true
       }
       try {
+        console.info(`${caseName} test start`)
+        console.info(`${caseName} deviceName.length = ${nLength}`)
         bluetoothBle.startAdvertising(setting,advData,advResponse);
         console.info('[bluetooth_js]startAdvertising1 success');
         bluetoothBle.stopAdvertising();
@@ -3157,7 +3178,11 @@ export default function btBleManagerTest() {
           console.info('[bluetooth_js]startAdvertising1 is not support');
           expect(true).assertTrue();
         } else {
-          expect(Number(error.code)).assertEqual(2900099);
+          if (nLength > 24) {
+            expect(Number(error.code) === 2902054).assertTrue();
+          }else{
+            expect(Number(error.code)).assertEqual(2900099);
+          }
         }
       }
       done();

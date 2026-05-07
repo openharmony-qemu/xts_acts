@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,7 +38,7 @@ import {
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 
-class MyNodeController extends NodeController {
+export class MyNodeController extends NodeController {
   private rootNode: FrameNode | null = null;
   public getPreviousAfterRemove1 = '0';
   public getNextAfterRemove1 = '0';
@@ -61,7 +61,7 @@ class MyNodeController extends NodeController {
   }
 
   removeChild(idx:number){
-    let child = this.rootNode?.getChild(idx as int)
+    let child = this.rootNode?.getChild(idx.toInt())
     if (child){
       this.rootNode?.removeChild(child)
       console.log(`sally-----removechild(${idx})`)
@@ -79,7 +79,7 @@ class MyNodeController extends NodeController {
   }
 
   getPreviousSibling(idx:number){
-    let child = this.rootNode?.getChild(idx as int)
+    let child = this.rootNode?.getChild(idx.toInt())
     if (child){
       let previousSibling = child.getPreviousSibling()
       console.log(`sally-----getPreviousSibling(${idx}) is ${previousSibling}}`)
@@ -87,7 +87,7 @@ class MyNodeController extends NodeController {
   }
 
   getNextSibling(idx:number){
-    let child = this.rootNode?.getChild(idx as int)
+    let child = this.rootNode?.getChild(idx.toInt())
     if (child){
       let nextSibling = child.getNextSibling()
       console.log(`sally-----getNextSibling(${idx}) is ${nextSibling}}`)

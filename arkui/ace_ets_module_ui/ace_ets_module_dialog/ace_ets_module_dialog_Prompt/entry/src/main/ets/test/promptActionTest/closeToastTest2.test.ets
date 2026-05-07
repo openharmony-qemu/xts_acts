@@ -71,7 +71,7 @@ export default function closeToastTest() {
       console.info('closeToastTest_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('open'));
+      let button = await driver.findComponent(ON.id('openT'));
       await button.click();
       await CommonFunc.sleep(2000);
       let toast = await driver.findComponent(ON.text('Toast Massage'));

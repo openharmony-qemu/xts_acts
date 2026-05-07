@@ -45,7 +45,7 @@ export default function PopupOptionsTest() {
         let pages = routerInstance.getState();
         console.info("PopupOptionsTest state pages: " + JSON.stringify(pages));
         console.info("PopupOptionsTest state pages.name: " + pages.name);
-        if (pages.name !== "PopupOptionsIndex") {
+        if (!('TextLineSpacing' == pages.name)) {
           routerInstance.replaceUrl(options);
         }
       } catch (err) {

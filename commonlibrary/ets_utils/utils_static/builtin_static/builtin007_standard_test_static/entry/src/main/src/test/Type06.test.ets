@@ -1059,7 +1059,7 @@ export default function type_06Test() {
         expect(field.isStatic()).assertTrue();
 
         const newValue = 20;
-        field.setStaticValue(newValue as number);
+        field.setStaticValue(newValue.toDouble());
 
         const actual = field.getStaticValue() as number;
         expect(actual).assertEqual(newValue);

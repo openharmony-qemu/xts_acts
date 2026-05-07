@@ -313,5 +313,50 @@ napi_value OHDrawingGetTypographyStyleAttributeBool004(napi_env env, napi_callba
 napi_value OHDrawingGetTypographyStyleAttributeBool005(napi_env env, napi_callback_info info);
 napi_value OHDrawingDestroyPositionAndAffinity001(napi_env env, napi_callback_info info);
 napi_value OHDrawingDestroyPositionAndAffinity002(napi_env env, napi_callback_info info);
+// cpp6
+napi_value OHDrawingTextStyleAddFontVariation001(napi_env env, napi_callback_info info);
+napi_value OHDrawingTextStyleAddFontVariation002(napi_env env, napi_callback_info info);
+napi_value OHDrawingTextStyleAddFontVariationWithNormalization001(napi_env env, napi_callback_info info);
+napi_value OHDrawingTypographyLayoutWithConstraintsWithBuffer0100(napi_env env, napi_callback_info info);
+napi_value OHDrawingTypographyLayoutWithConstraintsWithBuffer0200(napi_env env, napi_callback_info info);
+napi_value OHDrawingTypographyLayoutWithConstraintsWithBuffer0300(napi_env env, napi_callback_info info);
+napi_value OHDrawingTypographyLayoutWithConstraintsWithBuffer0400(napi_env env, napi_callback_info info);
+napi_value OHDrawingTypographyLayoutWithConstraintsWithBuffer0500(napi_env env, napi_callback_info info);
+napi_value OHDrawingTypographyLayoutWithConstraintsWithBuffer0600(napi_env env, napi_callback_info info);
+napi_value OHDrawingTypographyLayoutWithConstraintsWithBuffer0700(napi_env env, napi_callback_info info);
+napi_value OHDrawingTypographyLayoutWithConstraintsWithBuffer0800(napi_env env, napi_callback_info info);
+napi_value OHDrawingReleaseArrayBuffer0100(napi_env env, napi_callback_info info);
+napi_value OHDrawingReleaseArrayBuffer0200(napi_env env, napi_callback_info info);
+napi_value OHDrawingReleaseArrayBuffer0300(napi_env env, napi_callback_info info);
+napi_value OHDrawingReleaseArrayBuffer0400(napi_env env, napi_callback_info info);
+napi_value OHDrawingReleaseArrayBuffer0500(napi_env env, napi_callback_info info);
+napi_value OHDrawingReleaseArrayBuffer0600(napi_env env, napi_callback_info info);
+napi_value OHDrawingReleaseArrayBuffer0700(napi_env env, napi_callback_info info);
+// cpp7
+napi_value OHDrawingGetFontFullDescriptorAttributeArray0100(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetFontFullDescriptorAttributeArray0200(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetFontVariationAxisAttributeStr0100(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetFontVariationAxisAttributeStr0200(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetFontVariationInstanceByIndex0100(napi_env env, napi_callback_info info);
+napi_value OHDrawingDestroyFontVariationInstance0100(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetFontVariationInstanceAttributeStr0100(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetFontVariationInstanceCoordinate0100(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetFontFullDescriptorByFullName0100(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetFontVariationAxisAttributeDouble0100(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetFontVariationAxisAttributeInt0100(napi_env env, napi_callback_info info);
+napi_value OHDrawingTypographyLayoutWithConstraintsWithBuffer0900(napi_env env, napi_callback_info info);
+napi_value OHDrawingTypographyLayoutWithConstraintsWithBuffer1000(napi_env env, napi_callback_info info);
+napi_value OHDrawingTextStyleAddFontVariationWithNormalization0100(napi_env env, napi_callback_info info);
+napi_value OHDrawingTextStyleAddFontVariationWithNormalization0200(napi_env env, napi_callback_info info);
+napi_value OHDrawingTextStyleAddFontVariationWithNormalization0300(napi_env env, napi_callback_info info);
+napi_value OHDrawingTextStyleAddFontVariationWithNormalization0400(napi_env env, napi_callback_info info);
+napi_value OHDrawingTypographyGetCharacterRangeForGlyphRangeWithBuffer0100(napi_env env, napi_callback_info info);
+napi_value OHDrawingTypographyGetGlyphRangeForCharacterRangeWithBuffer0100(napi_env env, napi_callback_info info);
+napi_value OHDrawingTypographyGetCharacterPositionAtCoordinateWithBuffer0100(napi_env env, napi_callback_info info);
+napi_value OHEllipsisModalMultilineHead0100(napi_env env, napi_callback_info info);
+napi_value OHTextStyleAttriFontEdging0100(napi_env env, napi_callback_info info);
+napi_value OHDrawingReleaseRangeBuffer0100(napi_env env, napi_callback_info info);
+napi_value OHDrawingFontFullDescriptorAttributeId0100(napi_env env, napi_callback_info info);
+napi_value OHDrawingFontFullDescriptorAttributeId0200(napi_env env, napi_callback_info info);
 
 #endif // NATIVEFONTNDK_USELESS_H

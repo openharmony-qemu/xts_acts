@@ -30,6 +30,10 @@ export default function ActsApi9LongTimeTaskManagerTest() {
     let wantAgentInfo: wantAgent.WantAgentInfo;
     let wantAgentInfos: wantAgent.WantAgentInfo;
 
+    const sleep = (ms: number): Promise<void> => {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
     beforeAll(() => {
       hilog.info(DOMAIN, TAG, '%{public}s', 'beforeAll called');
       wantAgentInfo = {
@@ -394,6 +398,8 @@ export default function ActsApi9LongTimeTaskManagerTest() {
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_API9_XTS_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_API9_XTS_005 begin---');
+
+        await sleep(1500);
 
         try {
           wantAgent.getWantAgent(wantAgentInfo).then((want: WantAgent) => {
@@ -894,6 +900,8 @@ export default function ActsApi9LongTimeTaskManagerTest() {
     it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_API9_XTS_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_API9_XTS_017 begin---');
+
+        await sleep(1500);
 
         try {
           wantAgent.getWantAgent(wantAgentInfo).then((want: WantAgent) => {

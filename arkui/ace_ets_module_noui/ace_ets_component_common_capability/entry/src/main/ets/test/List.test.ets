@@ -35,6 +35,7 @@ import inspectorCreateComponentObserverNullUndefinedTest from './nullandundefine
 import embeddedComponentTerminationInfoTest from './EmbeddedComponentTest/EmbeddedComponentTerminationInfo.test';
 import pluginComponentManagerParamTest from './nullandundefinedcoverage/pluginComponentManager/PluginComponentManagerParam.test';
 import XComponentAttributeTest from './nullandundefinedcoverage/xcomponent/XComponentAttributeTest.test';
+import getFilteredInspectorTreeByIdDepthBoundaryTest from './UIContext/GetFilteredInspectorTreeByIdDepthBoundaryTest.test';
 
 
 export default function testsuite() {
@@ -42,7 +43,6 @@ export default function testsuite() {
   LayoutInspectorTest();
   assemblyCallbackTest();
   enumTest();
-  LayoutChildrenTest();
   drawChildrenTest();
   xComponentNodeChangeRenderTypeNullUndefinedTest();
   xComponentNodeOnCreateNullUndefinedTest();
@@ -60,4 +60,6 @@ export default function testsuite() {
   embeddedComponentTerminationInfoTest();
   pluginComponentManagerParamTest();
   XComponentAttributeTest();
+  LayoutChildrenTest();
+  getFilteredInspectorTreeByIdDepthBoundaryTest();
 }

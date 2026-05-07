@@ -83,6 +83,8 @@ group("ActsAceEtsModuleScrollTest") {
       "ace_ets_module_scroll_api15_static:ActsAceEtsModuleScrollApi15StaticTest",
       "ace_ets_module_scroll_api16_static:ActsAceEtsModuleScrollApi16StaticTest",
       "ace_ets_module_scroll_api18_static:ActsAceEtsModuleScrollApi18StaticTest",
+      "ace_ets_module_scroll_api23_static:ActsAceEtsModuleScrollApi23StaticTest",
+      "ace_ets_module_scroll_api24_static:ActsAceEtsModuleScrollApi24StaticTest",
       "ace_ets_module_scroll_nowear_api11_static:ActsAceEtsModuleScrollNowearApi11StaticTest",
       "ace_ets_module_scroll_nowear_api12_static:ActsAceEtsModuleScrollNowearApi12StaticTest",
       "ace_ets_module_scroll_nowear_api13_static:ActsAceEtsModuleScrollNowearApi13StaticTest",

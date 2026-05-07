@@ -1638,12 +1638,14 @@ function testGetAllowedWifiList() {
    * @tc.level  LEVEL2
    */
   it("test_get_allowed_wifi_list_0003", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      let wifiAccessInfos: Array<wifiManager.WifiAccessInfo> = [{ssid: "wifi1", bssid: "68:77:24:77:A6:D6"}]
-      wifiManager.getAllowedWifiList(null);
-      expect(false).assertTrue();
+      let wifiAccessInfos = wifiManager.getAllowedWifiList(null);
+      expect(wifiAccessInfos.length === 0).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
   });
@@ -2362,12 +2364,14 @@ function testGetDisallowedWifiList() {
    * @tc.level  LEVEL2
    */
   it("test_get_disallowed_wifi_list_0003", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      let wifiAccessInfos: Array<wifiManager.WifiAccessInfo> = [{ssid: "wifi1", bssid: "68:77:24:77:A6:D6"}]
-      wifiManager.getDisallowedWifiList(null);
-      expect(false).assertTrue();
+      let wifiAccessInfos = wifiManager.getDisallowedWifiList(null);
+      expect(wifiAccessInfos.length === 0).assertTrue();
     } catch (error) {
-      expect(Number(error.code) === 401).assertTrue();
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
   });
@@ -2784,4 +2788,242 @@ function testTurnOffWifiList() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_set_wifi_profile_sync_0121_1
+   * @tc.number test_set_wifi_profile_sync_0121_1
+   * @tc.desc   test wifiManager setWifiProfileSync with param isHiddenSsid
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_wifi_profile_sync_0121_1", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_set_wifi_profile_sync_0121_1  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let wifiProfile: wifiManager.WifiProfile = {
+        ssid: 'name',
+        preSharedKey: 'password',
+        securityType: wifiManager.WifiSecurityType.WIFI_SEC_TYPE_WEP,
+        ipType: wifiManager.IpType.DHCP,
+        isHiddenSsid: true
+      }
+      wifiManager.setWifiProfileSync(SELFWANT, wifiProfile);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_set_wifi_profile_sync_0121_1 error is expected, but it done, actually catch: ' +
+      error.code);
+      expect(Number(error.code) === 9200007).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done()
+    console.info(' --- test_set_wifi_profile_sync_0121_1  -------- END --------');
+  })
+
+  /**
+   * @tc.name   test_set_wifi_profile_sync_0121_2
+   * @tc.number test_set_wifi_profile_sync_0121_2
+   * @tc.desc   test wifiManager setWifiProfileSync with [] param dnsServers
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_wifi_profile_sync_0121_2", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_set_wifi_profile_sync_0121_2  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let ipConfig: wifiManager.IpProfile = {
+        ipAddress: 1284752956,
+        gateway: 1284752936,
+        prefixLength: 2,
+        dnsServers: [],
+        domains: ['0', '1']
+      }
+      let wifiProfile: wifiManager.WifiProfile = {
+        ssid: 'name',
+        preSharedKey: 'password',
+        securityType: wifiManager.WifiSecurityType.WIFI_SEC_TYPE_WEP,
+        ipType: wifiManager.IpType.STATIC,
+        staticIp: ipConfig
+      }
+      wifiManager.setWifiProfileSync(SELFWANT, wifiProfile);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_set_wifi_profile_sync_0121_2 error is expected,  actually catch: ' +
+      error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done()
+    console.info(' --- test_set_wifi_profile_sync_0121_2  -------- END --------');
+  })
+
+  /**
+   * @tc.name   test_set_wifi_profile_sync_0121_3
+   * @tc.number test_set_wifi_profile_sync_0121_3
+   * @tc.desc   test wifiManager setWifiProfileSync with [] param domains
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_wifi_profile_sync_0121_3", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_set_wifi_profile_sync_0121_3  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let ipConfig: wifiManager.IpProfile = {
+        ipAddress: 1284752956,
+        gateway: 1284752936,
+        prefixLength: 2,
+        dnsServers: [1, 2],
+        domains: []
+      }
+      let wifiProfile: wifiManager.WifiProfile = {
+        ssid: 'name',
+        preSharedKey: 'password',
+        securityType: wifiManager.WifiSecurityType.WIFI_SEC_TYPE_WEP,
+        ipType: wifiManager.IpType.STATIC,
+        staticIp: ipConfig
+      }
+      wifiManager.setWifiProfileSync(SELFWANT, wifiProfile);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_set_wifi_profile_sync_0121_3 error is expected, actually catch: ' +
+      error.code);
+      expect(Number(error.code) === 9200007).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done()
+    console.info(' --- test_set_wifi_profile_sync_0121_3  -------- END --------');
+  })
+
+  /**
+   * @tc.name   test_set_wifi_profile_sync_0121_5
+   * @tc.number test_set_wifi_profile_sync_0121_5
+   * @tc.desc   test wifiManager setWifiProfileSync with [] param dnsServers
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_wifi_profile_sync_0121_5", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_set_wifi_profile_sync_0121_5  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      wifiManager.setWifiProfileSync(SELFWANT, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_set_wifi_profile_sync_0121_5 error is expected,  actually catch: ' +
+      error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done()
+    console.info(' --- test_set_wifi_profile_sync_0121_5  -------- END --------');
+  })
+
+  /**
+   * @tc.name   test_set_wifi_profile_sync_0121_6
+   * @tc.number test_set_wifi_profile_sync_0121_6
+   * @tc.desc   test wifiManager setWifiProfileSync with [] param dnsServers
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_wifi_profile_sync_0121_6", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_set_wifi_profile_sync_0121_6  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      wifiManager.setWifiProfileSync(SELFWANT, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_set_wifi_profile_sync_0121_6 error is expected,  actually catch: ' +
+      error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done()
+    console.info(' --- test_set_wifi_profile_sync_0121_6  -------- END --------');
+  })
+
+  /**
+   * @tc.name   test_set_wifi_profile_sync_0121_7
+   * @tc.number test_set_wifi_profile_sync_0121_7
+   * @tc.desc   test wifiManager setWifiProfileSync with [] param dnsServers
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_wifi_profile_sync_0121_7", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_set_wifi_profile_sync_0121_7  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let ipConfig: wifiManager.IpProfile = {
+        ipAddress: 1284752956,
+        gateway: 1284752936,
+        prefixLength: 2,
+        dnsServers: [],
+        domains: ['0', '1']
+      }
+      let wifiProfile: wifiManager.WifiProfile = {
+        ssid: 'name',
+        preSharedKey: 'password',
+        securityType: wifiManager.WifiSecurityType.WIFI_SEC_TYPE_WEP,
+        ipType: wifiManager.IpType.STATIC,
+        staticIp: ipConfig
+      }
+      wifiManager.setWifiProfileSync(null, wifiProfile);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_set_wifi_profile_sync_0121_7 error is expected,  actually catch: ' +
+      error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done()
+    console.info(' --- test_set_wifi_profile_sync_0121_7  -------- END --------');
+  })
+
+  /**
+   * @tc.name   test_set_wifi_profile_sync_0121_8
+   * @tc.number test_set_wifi_profile_sync_0121_8
+   * @tc.desc   test wifiManager setWifiProfileSync with [] param dnsServers
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_wifi_profile_sync_0121_8", Level.LEVEL2, async (done: Function) => {
+    console.info(' --- test_set_wifi_profile_sync_0121_8  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let ipConfig: wifiManager.IpProfile = {
+        ipAddress: 1284752956,
+        gateway: 1284752936,
+        prefixLength: 2,
+        dnsServers: [],
+        domains: ['0', '1']
+      }
+      let wifiProfile: wifiManager.WifiProfile = {
+        ssid: 'name',
+        preSharedKey: 'password',
+        securityType: wifiManager.WifiSecurityType.WIFI_SEC_TYPE_WEP,
+        ipType: wifiManager.IpType.STATIC,
+        staticIp: ipConfig
+      }
+      wifiManager.setWifiProfileSync(undefined, wifiProfile);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_set_wifi_profile_sync_0121_8 error is expected,  actually catch: ' +
+      error.code);
+      expect(Number(error.code) === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done()
+    console.info(' --- test_set_wifi_profile_sync_0121_8  -------- END --------');
+  })
 }

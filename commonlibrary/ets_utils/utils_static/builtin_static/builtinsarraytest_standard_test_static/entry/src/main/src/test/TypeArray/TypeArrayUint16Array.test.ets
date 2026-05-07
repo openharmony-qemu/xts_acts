@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -379,7 +379,7 @@ export default function typeArrayUint16ArrayTest() {
      */
     it('TypeArrayUint16Array0019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([100, 200, 300, 400]);
-      const sum = arr.reduce((acc, val) => acc + val, 0);
+      const sum = arr.reduce((acc, val) => acc + val, 0.);
       expect(sum).assertEqual(1000);
       expect(arr.length).assertEqual(4);
       expect(arr[0]).assertEqual(100);
@@ -1001,7 +1001,7 @@ export default function typeArrayUint16ArrayTest() {
      */
     it('TypeArrayUint16Array0055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([30000, 10000, 50000, 20000]);
-      const sorted = Array.from(arr).sort((a: double, b: double) => (a - b) as int);
+      const sorted = Array.from(arr).sort((a: double, b: double) => (a - b).toInt());
       expect(sorted.toString()).assertEqual('10000,20000,30000,50000');
       expect(sorted.length).assertEqual(4)
     })
@@ -1178,7 +1178,7 @@ export default function typeArrayUint16ArrayTest() {
      */
     it('TypeArrayUint16Array0065', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([65530, 10, 5]);
-      const sum = arr.reduce((acc, val) => acc + val, 0);
+      const sum = arr.reduce((acc, val) => acc + val, 0.);
       expect(sum).assertEqual(65545);
     })
 
@@ -1622,7 +1622,7 @@ export default function typeArrayUint16ArrayTest() {
      */
     it('TypeArrayUint16Array0089', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Uint16Array([10, 20, 30, 40]);
-      const sumOfDoubles = arr.reduce((acc, val) => acc + (val * 2), 0);
+      const sumOfDoubles = arr.reduce((acc, val) => acc + (val * 2), 0.);
       expect(sumOfDoubles).assertEqual(200);
     })
 
@@ -1915,7 +1915,7 @@ export default function typeArrayUint16ArrayTest() {
      */
     it('TypeArrayUint16Array0111', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyArr = new Uint16Array(0);
-      const sum = emptyArr.reduce((acc, val) => acc + val, 100);
+      const sum = emptyArr.reduce((acc, val) => acc + val, 100.);
       expect(sum).assertEqual(100);
     })
 

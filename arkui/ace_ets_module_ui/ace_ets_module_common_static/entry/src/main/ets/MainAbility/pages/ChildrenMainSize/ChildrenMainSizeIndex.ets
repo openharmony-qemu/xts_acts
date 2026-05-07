@@ -60,10 +60,12 @@ struct ChildrenMainSizeIndex {
     Column() {
       Text(this.get)
         .id('get')
-        .key('get');
+        .key('get')
+        .height('5%');
       Text(this.set)
         .id('set')
-        .key('set');
+        .key('set')
+        .height('5%');
 
       List({ space: this.listSpace, initialIndex: 4, scroller: this.scroller }) {
         ForEach(this.arr, (item: number) => {

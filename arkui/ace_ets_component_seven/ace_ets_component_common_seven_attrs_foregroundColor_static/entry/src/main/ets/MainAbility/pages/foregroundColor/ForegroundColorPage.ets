@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,12 +37,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, ResourceColor, ColoringStrategy, AlignRuleOption } from '@ohos.arkui.component'
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, ResourceColor, ColoringStrategy, AlignRuleOption } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
 
-class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
@@ -50,7 +50,7 @@ class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttrib
 	}
 }
 
-class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: BadgeAttribute): void {
@@ -58,7 +58,7 @@ class BadgeModifier implements AttributeModifier<BadgeAttribute> {
 	}
 }
 
-class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: ButtonAttribute): void {
@@ -66,7 +66,7 @@ class ButtonModifier implements AttributeModifier<ButtonAttribute> {
 	}
 }
 
-class BlankModifier implements AttributeModifier<BlankAttribute> {
+export class BlankModifier implements AttributeModifier<BlankAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: BlankAttribute): void {
@@ -74,7 +74,7 @@ class BlankModifier implements AttributeModifier<BlankAttribute> {
 	}
 }
 
-class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: CalendarPickerAttribute): void {
@@ -82,7 +82,7 @@ class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribut
 	}
 }
 
-class CanvasModifier implements AttributeModifier<CanvasAttribute> {
+export class CanvasModifier implements AttributeModifier<CanvasAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: CanvasAttribute): void {
@@ -90,7 +90,7 @@ class CanvasModifier implements AttributeModifier<CanvasAttribute> {
 	}
 }
 
-class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: CheckboxAttribute): void {
@@ -98,7 +98,7 @@ class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
 	}
 }
 
-class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: CheckboxGroupAttribute): void {
@@ -106,7 +106,7 @@ class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute>
 	}
 }
 
-class CircleModifier implements AttributeModifier<CircleAttribute> {
+export class CircleModifier implements AttributeModifier<CircleAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: CircleAttribute): void {
@@ -114,7 +114,7 @@ class CircleModifier implements AttributeModifier<CircleAttribute> {
 	}
 }
 
-class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: ColumnAttribute): void {
@@ -122,7 +122,7 @@ class ColumnModifier implements AttributeModifier<ColumnAttribute> {
 	}
 }
 
-class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: ColumnSplitAttribute): void {
@@ -130,7 +130,7 @@ class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
 	}
 }
 
-class CounterModifier implements AttributeModifier<CounterAttribute> {
+export class CounterModifier implements AttributeModifier<CounterAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: CounterAttribute): void {
@@ -138,7 +138,7 @@ class CounterModifier implements AttributeModifier<CounterAttribute> {
 	}
 }
 
-class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: DataPanelAttribute): void {
@@ -146,7 +146,7 @@ class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
 	}
 }
 
-class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: DatePickerAttribute): void {
@@ -154,7 +154,7 @@ class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
 	}
 }
 
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: DividerAttribute): void {
@@ -162,7 +162,7 @@ class DividerModifier implements AttributeModifier<DividerAttribute> {
 	}
 }
 
-class EllipseModifier implements AttributeModifier<EllipseAttribute> {
+export class EllipseModifier implements AttributeModifier<EllipseAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: EllipseAttribute): void {
@@ -170,7 +170,7 @@ class EllipseModifier implements AttributeModifier<EllipseAttribute> {
 	}
 }
 
-class FlexModifier implements AttributeModifier<FlexAttribute> {
+export class FlexModifier implements AttributeModifier<FlexAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: FlexAttribute): void {
@@ -178,7 +178,7 @@ class FlexModifier implements AttributeModifier<FlexAttribute> {
 	}
 }
 
-class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: FlowItemAttribute): void {
@@ -186,15 +186,7 @@ class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
 	}
 }
 
-class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
-
-	applyNormalAttribute(instance: FormLinkAttribute): void {
-		instance.foregroundColor(this.mForegroundColor)
-	}
-}
-
-class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: GaugeAttribute): void {
@@ -202,7 +194,7 @@ class GaugeModifier implements AttributeModifier<GaugeAttribute> {
 	}
 }
 
-class GridModifier implements AttributeModifier<GridAttribute> {
+export class GridModifier implements AttributeModifier<GridAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: GridAttribute): void {
@@ -210,7 +202,7 @@ class GridModifier implements AttributeModifier<GridAttribute> {
 	}
 }
 
-class GridColModifier implements AttributeModifier<GridColAttribute> {
+export class GridColModifier implements AttributeModifier<GridColAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: GridColAttribute): void {
@@ -218,7 +210,7 @@ class GridColModifier implements AttributeModifier<GridColAttribute> {
 	}
 }
 
-class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: GridItemAttribute): void {
@@ -226,7 +218,7 @@ class GridItemModifier implements AttributeModifier<GridItemAttribute> {
 	}
 }
 
-class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: GridRowAttribute): void {
@@ -234,7 +226,7 @@ class GridRowModifier implements AttributeModifier<GridRowAttribute> {
 	}
 }
 
-class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: HyperlinkAttribute): void {
@@ -242,7 +234,7 @@ class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
 	}
 }
 
-class ImageModifier implements AttributeModifier<ImageAttribute> {
+export class ImageModifier implements AttributeModifier<ImageAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: ImageAttribute): void {
@@ -250,7 +242,7 @@ class ImageModifier implements AttributeModifier<ImageAttribute> {
 	}
 }
 
-class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: ImageAnimatorAttribute): void {
@@ -258,7 +250,7 @@ class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute>
 	}
 }
 
-class LineModifier implements AttributeModifier<LineAttribute> {
+export class LineModifier implements AttributeModifier<LineAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: LineAttribute): void {
@@ -266,7 +258,7 @@ class LineModifier implements AttributeModifier<LineAttribute> {
 	}
 }
 
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: ListAttribute): void {
@@ -274,7 +266,7 @@ class ListModifier implements AttributeModifier<ListAttribute> {
 	}
 }
 
-class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: ListItemAttribute): void {
@@ -282,7 +274,7 @@ class ListItemModifier implements AttributeModifier<ListItemAttribute> {
 	}
 }
 
-class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: ListItemGroupAttribute): void {
@@ -290,7 +282,7 @@ class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute>
 	}
 }
 
-class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: LoadingProgressAttribute): void {
@@ -298,7 +290,7 @@ class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttrib
 	}
 }
 
-class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: MarqueeAttribute): void {
@@ -306,7 +298,7 @@ class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
 	}
 }
 
-class MenuModifier implements AttributeModifier<MenuAttribute> {
+export class MenuModifier implements AttributeModifier<MenuAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: MenuAttribute): void {
@@ -314,7 +306,7 @@ class MenuModifier implements AttributeModifier<MenuAttribute> {
 	}
 }
 
-class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: MenuItemAttribute): void {
@@ -322,7 +314,7 @@ class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
 	}
 }
 
-class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: MenuItemGroupAttribute): void {
@@ -330,7 +322,7 @@ class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute>
 	}
 }
 
-class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: NavDestinationAttribute): void {
@@ -338,7 +330,7 @@ class NavDestinationModifier implements AttributeModifier<NavDestinationAttribut
 	}
 }
 
-class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: NavigationAttribute): void {
@@ -370,7 +362,7 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 
 
 
-class PathModifier implements AttributeModifier<PathAttribute> {
+export class PathModifier implements AttributeModifier<PathAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: PathAttribute): void {
@@ -378,7 +370,7 @@ class PathModifier implements AttributeModifier<PathAttribute> {
 	}
 }
 
-class PolygonModifier implements AttributeModifier<PolygonAttribute> {
+export class PolygonModifier implements AttributeModifier<PolygonAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: PolygonAttribute): void {
@@ -386,7 +378,7 @@ class PolygonModifier implements AttributeModifier<PolygonAttribute> {
 	}
 }
 
-class PolylineModifier implements AttributeModifier<PolylineAttribute> {
+export class PolylineModifier implements AttributeModifier<PolylineAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: PolylineAttribute): void {
@@ -394,7 +386,7 @@ class PolylineModifier implements AttributeModifier<PolylineAttribute> {
 	}
 }
 
-class ProgressModifier implements AttributeModifier<ProgressAttribute> {
+export class ProgressModifier implements AttributeModifier<ProgressAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: ProgressAttribute): void {
@@ -402,7 +394,7 @@ class ProgressModifier implements AttributeModifier<ProgressAttribute> {
 	}
 }
 
-class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: QRCodeAttribute): void {
@@ -410,7 +402,7 @@ class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
 	}
 }
 
-class RadioModifier implements AttributeModifier<RadioAttribute> {
+export class RadioModifier implements AttributeModifier<RadioAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: RadioAttribute): void {
@@ -418,7 +410,7 @@ class RadioModifier implements AttributeModifier<RadioAttribute> {
 	}
 }
 
-class RatingModifier implements AttributeModifier<RatingAttribute> {
+export class RatingModifier implements AttributeModifier<RatingAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: RatingAttribute): void {
@@ -426,7 +418,7 @@ class RatingModifier implements AttributeModifier<RatingAttribute> {
 	}
 }
 
-class RectModifier implements AttributeModifier<RectAttribute> {
+export class RectModifier implements AttributeModifier<RectAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: RectAttribute): void {
@@ -434,7 +426,7 @@ class RectModifier implements AttributeModifier<RectAttribute> {
 	}
 }
 
-class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: RefreshAttribute): void {
@@ -442,7 +434,7 @@ class RefreshModifier implements AttributeModifier<RefreshAttribute> {
 	}
 }
 
-class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: RelativeContainerAttribute): void {
@@ -450,7 +442,7 @@ class RelativeContainerModifier implements AttributeModifier<RelativeContainerAt
 	}
 }
 
-class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: RemoteWindowAttribute): void {
@@ -458,7 +450,7 @@ class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
 	}
 }
 
-class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: RichEditorAttribute): void {
@@ -466,7 +458,7 @@ class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
 	}
 }
 
-class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: RichTextAttribute): void {
@@ -474,7 +466,7 @@ class RichTextModifier implements AttributeModifier<RichTextAttribute> {
 	}
 }
 
-class RowModifier implements AttributeModifier<RowAttribute> {
+export class RowModifier implements AttributeModifier<RowAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: RowAttribute): void {
@@ -482,7 +474,7 @@ class RowModifier implements AttributeModifier<RowAttribute> {
 	}
 }
 
-class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: RowSplitAttribute): void {
@@ -490,7 +482,7 @@ class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
 	}
 }
 
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: ScrollAttribute): void {
@@ -498,7 +490,7 @@ class ScrollModifier implements AttributeModifier<ScrollAttribute> {
 	}
 }
 
-class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: ScrollBarAttribute): void {
@@ -506,7 +498,7 @@ class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
 	}
 }
 
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: SearchAttribute): void {
@@ -514,7 +506,7 @@ class SearchModifier implements AttributeModifier<SearchAttribute> {
 	}
 }
 
-class SelectModifier implements AttributeModifier<SelectAttribute> {
+export class SelectModifier implements AttributeModifier<SelectAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: SelectAttribute): void {
@@ -522,7 +514,7 @@ class SelectModifier implements AttributeModifier<SelectAttribute> {
 	}
 }
 
-class ShapeModifier implements AttributeModifier<ShapeAttribute> {
+export class ShapeModifier implements AttributeModifier<ShapeAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: ShapeAttribute): void {
@@ -530,7 +522,7 @@ class ShapeModifier implements AttributeModifier<ShapeAttribute> {
 	}
 }
 
-class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: SideBarContainerAttribute): void {
@@ -538,7 +530,7 @@ class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttr
 	}
 }
 
-class SliderModifier implements AttributeModifier<SliderAttribute> {
+export class SliderModifier implements AttributeModifier<SliderAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: SliderAttribute): void {
@@ -546,7 +538,7 @@ class SliderModifier implements AttributeModifier<SliderAttribute> {
 	}
 }
 
-class SpanModifier implements AttributeModifier<SpanAttribute> {
+export class SpanModifier implements AttributeModifier<SpanAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: SpanAttribute): void {
@@ -554,7 +546,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
 	}
 }
 
-class StackModifier implements AttributeModifier<StackAttribute> {
+export class StackModifier implements AttributeModifier<StackAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: StackAttribute): void {
@@ -562,7 +554,7 @@ class StackModifier implements AttributeModifier<StackAttribute> {
 	}
 }
 
-class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: SwiperAttribute): void {
@@ -570,7 +562,7 @@ class SwiperModifier implements AttributeModifier<SwiperAttribute> {
 	}
 }
 
-class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: TabContentAttribute): void {
@@ -578,7 +570,7 @@ class TabContentModifier implements AttributeModifier<TabContentAttribute> {
 	}
 }
 
-class TabsModifier implements AttributeModifier<TabsAttribute> {
+export class TabsModifier implements AttributeModifier<TabsAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: TabsAttribute): void {
@@ -586,7 +578,7 @@ class TabsModifier implements AttributeModifier<TabsAttribute> {
 	}
 }
 
-class TextModifier implements AttributeModifier<TextAttribute> {
+export class TextModifier implements AttributeModifier<TextAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: TextAttribute): void {
@@ -594,7 +586,7 @@ class TextModifier implements AttributeModifier<TextAttribute> {
 	}
 }
 
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: TextAreaAttribute): void {
@@ -602,7 +594,7 @@ class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
 	}
 }
 
-class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: TextClockAttribute): void {
@@ -610,7 +602,7 @@ class TextClockModifier implements AttributeModifier<TextClockAttribute> {
 	}
 }
 
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: TextInputAttribute): void {
@@ -618,7 +610,7 @@ class TextInputModifier implements AttributeModifier<TextInputAttribute> {
 	}
 }
 
-class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: TextPickerAttribute): void {
@@ -626,7 +618,7 @@ class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
 	}
 }
 
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: TextTimerAttribute): void {
@@ -634,7 +626,7 @@ class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
 	}
 }
 
-class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: TimePickerAttribute): void {
@@ -642,7 +634,7 @@ class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
 	}
 }
 
-class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: ToggleAttribute): void {
@@ -650,7 +642,7 @@ class ToggleModifier implements AttributeModifier<ToggleAttribute> {
 	}
 }
 
-class VideoModifier implements AttributeModifier<VideoAttribute> {
+export class VideoModifier implements AttributeModifier<VideoAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: VideoAttribute): void {
@@ -658,7 +650,7 @@ class VideoModifier implements AttributeModifier<VideoAttribute> {
 	}
 }
 
-class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: WaterFlowAttribute): void {
@@ -666,7 +658,7 @@ class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
 	}
 }
 
-class WebModifier implements AttributeModifier<WebAttribute> {
+export class WebModifier implements AttributeModifier<WebAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: WebAttribute): void {
@@ -674,7 +666,7 @@ class WebModifier implements AttributeModifier<WebAttribute> {
 	}
 }
 
-class WindowSceneModifier implements AttributeModifier<WindowSceneAttribute> {
+export class WindowSceneModifier implements AttributeModifier<WindowSceneAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: WindowSceneAttribute): void {
@@ -682,7 +674,7 @@ class WindowSceneModifier implements AttributeModifier<WindowSceneAttribute> {
 	}
 }
 
-class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: XComponentAttribute): void {
@@ -711,7 +703,6 @@ struct ForegroundColorPage {
 	@State _foregroundColorEllipseModifier: EllipseModifier = new EllipseModifier()
 	@State _foregroundColorFlexModifier: FlexModifier = new FlexModifier()
 	@State _foregroundColorFlowItemModifier: FlowItemModifier = new FlowItemModifier()
-	@State _foregroundColorFormLinkModifier: FormLinkModifier = new FormLinkModifier()
 	@State _foregroundColorGaugeModifier: GaugeModifier = new GaugeModifier()
 	@State _foregroundColorGridModifier: GridModifier = new GridModifier()
 	@State _foregroundColorGridColModifier: GridColModifier = new GridColModifier()
@@ -789,8 +780,8 @@ struct ForegroundColorPage {
 		this.componentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey as string;
 		this.parentWidth = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
 		this.parentHeight = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
-		this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
-		this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
+		this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns.toInt())
+		this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter.toInt())
 		this.parentBackGroundColor = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentBackGroundColor
 		this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey;
 		this._foregroundColorButtonModifier.mForegroundColor = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.foregroundColor
@@ -814,7 +805,6 @@ struct ForegroundColorPage {
 			this._foregroundColorEllipseModifier.mForegroundColor = value.foregroundColor
 			this._foregroundColorFlexModifier.mForegroundColor = value.foregroundColor
 			this._foregroundColorFlowItemModifier.mForegroundColor = value.foregroundColor
-			this._foregroundColorFormLinkModifier.mForegroundColor = value.foregroundColor
 			this._foregroundColorGaugeModifier.mForegroundColor = value.foregroundColor
 			this._foregroundColorGridModifier.mForegroundColor = value.foregroundColor
 			this._foregroundColorGridColModifier.mForegroundColor = value.foregroundColor
@@ -954,7 +944,7 @@ struct ForegroundColorPage {
 				Marquee({
 					start: true,
 					step: 50,
-					loop: Infinity as int,
+					loop: Infinity.toInt(),
 					fromStart: true,
 					src: 'Running Marquee starts rolling'
 				})
@@ -1509,17 +1499,6 @@ struct ForegroundColorPage {
 					.backgroundColor('#FFFF00')
 					
 					.attributeModifier(this._foregroundColorCanvasModifier)
-			}
-			if (this.targetView == 'FormLink') {
-				FormLink({
-					action: "router",
-					abilityName: "EntryAbility",
-          params: { message: 'testForRouter' } as ObjElement
-        } as FormLinkOptions) {
-					Button("router event").width(120)
-				}
-					
-					.attributeModifier(this._foregroundColorFormLinkModifier)
 			}
 			if (this.targetView == 'Hyperlink') {
 				Hyperlink('https://example.com/', 'Go to the developer website') {

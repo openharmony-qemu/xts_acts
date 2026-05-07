@@ -1260,16 +1260,30 @@ export default function geolocationTest_geo5() {
             try {
                 geolocationm.getAddressesFromLocation(reverseGeocodeRequest, (err, data) => {
                     if (err) {
-                        console.info('[lbs_js] SUB_HSS_locm_getAddressesFromLocation_0100 callback err is:' + JSON.stringify(err));
-                        expect(err.code).assertEqual(401);
+                        console.info('[lbs_js] null SUB_HSS_locm_getAddressesFromLocation_0100 callback err is:' + JSON.stringify(err));
+                        expect(Number(err.code)).assertEqual(401);
                     } else {
-                        console.info("[lbs_js] SUB_HSS_locm_getAddressesFromLocation_0100 callback data is:" + JSON.stringify(data));
+                        console.info("[lbs_js] null SUB_HSS_locm_getAddressesFromLocation_0100 callback data is:" + JSON.stringify(data));
                         expect(true).assertEqual((JSON.stringify(data)) != null);
                     }
                  });
             } catch (error) {
-                console.info("[lbs_js] SUB_HSS_locm_getAddressesFromLocation_0100 callback try error:"+ error);
-                expect(true).assertEqual((JSON.stringify(error)) != null);
+                console.info("[lbs_js] null SUB_HSS_locm_getAddressesFromLocation_0100 callback try error:"+ error);
+                expect(Number(error.code)).assertEqual(401);
+            }
+            try {
+                geolocationm.getAddressesFromLocation(undefined, (err, data) => {
+                    if (err) {
+                        console.info('[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocation_0100 callback err is:' + JSON.stringify(err));
+                        expect(Number(err.code)).assertEqual(401);
+                    } else {
+                        console.info("[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocation_0100 callback data is:" + JSON.stringify(data));
+                        expect(true).assertEqual((JSON.stringify(data)) != null);
+                    }
+                 });
+            } catch (error) {
+                console.info("[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocation_0100 callback try error:"+ error);
+                expect(Number(error.code)).assertEqual(401);
             }
             await sleep(2000);
         } else {
@@ -1293,19 +1307,35 @@ export default function geolocationTest_geo5() {
             try {
                 let reverseGeocodeRequest = null;
                 await geolocationm.getAddressesFromLocation(reverseGeocodeRequest).then((data) => {
-                    console.info('[lbs_js] SUB_HSS_locm_getAddressesFromLocation_0200 promise: ' + JSON.stringify(data));
+                    console.info('[lbs_js] null SUB_HSS_locm_getAddressesFromLocation_0200 promise: ' + JSON.stringify(data));
                 }).catch(error => {
-                    console.info("[lbs_js] SUB_HSS_locm_getAddressesFromLocation_0200 promise then error." + JSON.stringify(error));
-                    console.info('[lbs_js] not support now');
+                    console.info("[lbs_js] null SUB_HSS_locm_getAddressesFromLocation_0200 promise then error." + JSON.stringify(error));
+                    console.info('[lbs_js] null not support now');
                     if (error.code == "801") {
-                        expect(error.code).assertEqual("801")
+                        expect(Number(error.code)).assertEqual(801);
                     } else {
-                        expect(error.code).assertEqual("401");
+                        expect(Number(error.code)).assertEqual(401);
                     }
                 });
             } catch (error) {
-                console.info("[lbs_js] SUB_HSS_locm_getAddressesFromLocation_0200 try err." + JSON.stringify(error));
-                expect(error.code).assertEqual("401");
+                console.info("[lbs_js] null SUB_HSS_locm_getAddressesFromLocation_0200 try err." + JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+            }
+            try {
+                await geolocationm.getAddressesFromLocation(undefined).then((data) => {
+                    console.info('[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocation_0200 promise: ' + JSON.stringify(data));
+                }).catch(error => {
+                    console.info("[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocation_0200 promise then error." + JSON.stringify(error));
+                    console.info('[lbs_js] undefined not support now');
+                    if (error.code == "801") {
+                        expect(Number(error.code)).assertEqual(801);
+                    } else {
+                        expect(Number(error.code)).assertEqual(401);
+                    }
+                });
+            } catch (error) {
+                console.info("[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocation_0200 try err." + JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
             }
             await sleep(1000);
         } else {
@@ -1329,18 +1359,34 @@ export default function geolocationTest_geo5() {
                 let geocodeRequest =null;
                 geolocationm.getAddressesFromLocationName(geocodeRequest, (err, data) => {
                     if (err) {
-                        console.info('[lbs_js] SUB_HSS_locm_getAddressesFromLocationName_0100 callback err is:' + JSON.stringify(err));
-                        expect(err.code).assertEqual(401);
+                        console.info('[lbs_js] null SUB_HSS_locm_getAddressesFromLocationName_0100 callback err is:' + JSON.stringify(err));
+                        expect(Number(error.code)).assertEqual(401);
                     }
                     else {
-                        console.info("[lbs_js] SUB_HSS_locm_getAddressesFromLocationName_0100 callback data is: " + JSON.stringify(data));
+                        console.info("[lbs_js] null SUB_HSS_locm_getAddressesFromLocationName_0100 callback data is: " + JSON.stringify(data));
                         expect(true).assertEqual((JSON.stringify(data)) != null);
                     }
                     done();
                 });
             } catch (error) {
-                console.info("[lbs_js] SUB_HSS_locm_getAddressesFromLocationName_0100 message." + JSON.stringify(error.message));
-                expect(true).assertEqual((JSON.stringify(error)) != null);
+                console.info("[lbs_js] null SUB_HSS_locm_getAddressesFromLocationName_0100 message." + JSON.stringify(error.message));
+                expect(Number(error.code)).assertEqual(401);
+            }
+            try {
+                geolocationm.getAddressesFromLocationName(undefined, (err, data) => {
+                    if (err) {
+                        console.info('[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocationName_0100 callback err is:' + JSON.stringify(err));
+                        expect(Number(error.code)).assertEqual(401);
+                    }
+                    else {
+                        console.info("[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocationName_0100 callback data is: " + JSON.stringify(data));
+                        expect(true).assertEqual((JSON.stringify(data)) != null);
+                    }
+                    done();
+                });
+            } catch (error) {
+                console.info("[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocationName_0100 message." + JSON.stringify(error.message));
+                expect(Number(error.code)).assertEqual(401);
             }
             await sleep(1000);
         } else {
@@ -1363,16 +1409,27 @@ export default function geolocationTest_geo5() {
             let geocodeRequest = null;
             try {
                 await geolocationm.getAddressesFromLocationName(geocodeRequest).then((result) => {
-                    console.info("[lbs_js] SUB_HSS_locm_getAddressesFromLocationName_0200 callback data is:" + JSON.stringify(result));
+                    console.info("[lbs_js] null SUB_HSS_locm_getAddressesFromLocationName_0200 callback data is:" + JSON.stringify(result));
                     expect(true).assertEqual((JSON.stringify(result)) != null);
                 }).catch((error) => {
-                    console.info("[lbs_js] SUB_HSS_locm_getAddressesFromLocationName_0200 promise then error." + JSON.stringify(error));
-                    console.info('[lbs_js] SUB_HSS_locm_getAddressesFromLocationName_0200 not support now');
+                    console.info("[lbs_js] null SUB_HSS_locm_getAddressesFromLocationName_0200 promise then error." + JSON.stringify(error));
                     expect(error.code).assertEqual(401);
                 });
             } catch (error) {
-                console.info("[lbs_js] SUB_HSS_locm_getAddressesFromLocationName_0200 try err." + JSON.stringify(error));
-                expect(true).assertEqual((JSON.stringify(error)) != null);
+                console.info("[lbs_js] null SUB_HSS_locm_getAddressesFromLocationName_0200 try err." + JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
+            }
+            try {
+                await geolocationm.getAddressesFromLocationName(undefined).then((result) => {
+                    console.info("[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocationName_0200 callback data is:" + JSON.stringify(result));
+                    expect(true).assertEqual((JSON.stringify(result)) != null);
+                }).catch((error) => {
+                    console.info("[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocationName_0200 promise then error." + JSON.stringify(error));
+                    expect(error.code).assertEqual(401);
+                });
+            } catch (error) {
+                console.info("[lbs_js] undefined SUB_HSS_locm_getAddressesFromLocationName_0200 try err." + JSON.stringify(error));
+                expect(Number(error.code)).assertEqual(401);
             }
             await sleep(1000);
         } else {
@@ -1492,6 +1549,63 @@ export default function geolocationTest_geo5() {
         }
         done();
     })
+
+    /**
+     * @tc.name   SUB_HSS_LocationSystem_isGnssServiceSupported_0100
+     * @tc.number SUB_HSS_LocationSystem_isGnssServiceSupported_0100
+     * @tc.desc   Check whether the GNSS service is supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_LocationSystem_isGnssServiceSupported_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+        try {
+            let isSupported = geolocationm.isGnssServiceSupported();
+            console.info('[lbs_js] isGnssServiceSupported result: ' + JSON.stringify(isSupported));
+            expect(typeof isSupported).assertEqual('boolean');
+        } catch (error) {
+            console.info('[lbs_js] isGnssServiceSupported err: ' + JSON.stringify(error));
+            expect(error.code).assertEqual(3301000);
+        }
+    });
+
+    /**
+     * @tc.name   SUB_HSS_LocationSystem_isGnssFenceServiceSupported_0100
+     * @tc.number SUB_HSS_LocationSystem_isGnssFenceServiceSupported_0100
+     * @tc.desc   Check whether the GNSS fence service is supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_LocationSystem_isGnssFenceServiceSupported_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+        try {
+            let isSupported = geolocationm.isGnssFenceServiceSupported();
+            console.info('[lbs_js] isGnssFenceServiceSupported result: ' + JSON.stringify(isSupported));
+            expect(typeof isSupported).assertEqual('boolean');
+        } catch (error) {
+            console.info('[lbs_js] isGnssFenceServiceSupported err: ' + JSON.stringify(error));
+            expect(error.code).assertEqual(3301000);
+        }
+    });
+
+    /**
+     * @tc.name   SUB_HSS_LocationSystem_isCachedGnssServiceSupported_0100
+     * @tc.number SUB_HSS_LocationSystem_isCachedGnssServiceSupported_0100
+     * @tc.desc   Check whether the cached GNSS service is supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_HSS_LocationSystem_isCachedGnssServiceSupported_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+        try {
+            let isSupported = geolocationm.isCachedGnssServiceSupported();
+            console.info('[lbs_js] isCachedGnssServiceSupported result: ' + JSON.stringify(isSupported));
+            expect(typeof isSupported).assertEqual('boolean');
+        } catch (error) {
+            console.info('[lbs_js] isCachedGnssServiceSupported err: ' + JSON.stringify(error));
+            expect(error.code).assertEqual(3301000);
+        }
+    });
 
     })
 }

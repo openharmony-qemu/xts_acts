@@ -28,7 +28,7 @@ import { AttributeModifier, CommonAttribute, VisibleAreaChangeCallback } from '@
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class VisibleAreaChangeModifier implements AttributeModifier<CommonAttribute> {
+export class VisibleAreaChangeModifier implements AttributeModifier<CommonAttribute> {
   @State public change: boolean = true;
   @State public change2: boolean = true;
   @State public visibleText: string = 'test';

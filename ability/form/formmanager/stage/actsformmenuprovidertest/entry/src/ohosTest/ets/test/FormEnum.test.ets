@@ -89,6 +89,7 @@ export default function formEnumTest() {
       expect("ohos.extra.param.key.module_name").assertEqual(formInfo.FormParam.MODULE_NAME_KEY);
       expect("ohos.extra.param.key.form_name").assertEqual(formInfo.FormParam.NAME_KEY);
       expect("ohos.extra.param.key.form_dimension").assertEqual(formInfo.FormParam.DIMENSION_KEY);
+      expect("ohos.extra.param.key.update_form_reason").assertEqual(formInfo.FormParam.UPDATE_FORM_REASON_KEY);
       hilog.info(domain, tag, `${itName} end`);
     })
 
@@ -190,6 +191,22 @@ export default function formEnumTest() {
       hilog.info(domain, tag, `${itName} start`);
       expect(2).assertEqual(formInfo.FormType.eTS);
       expect(1).assertEqual(formInfo.FormType.JS);
+      hilog.info(domain, tag, `${itName} end`);
+    })
+
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_FORM_TYPE_0200
+     * @tc.number SUB_ABILITY_FORM_FWK_FORM_TYPE_0200
+     * @tc.desc   Form update reason enum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ABILITY_FORM_FWK_FORM_TYPE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const itName: string = 'SUB_ABILITY_FORM_FWK_FORM_TYPE_0200';
+      hilog.info(domain, tag, `${itName} start`);
+      expect(-1).assertEqual(formInfo.FormUpdateReason.UNKNOWN);
+      expect(0).assertEqual(formInfo.FormUpdateReason.FORM_NODE_REUSE);
       hilog.info(domain, tag, `${itName} end`);
     })
   })

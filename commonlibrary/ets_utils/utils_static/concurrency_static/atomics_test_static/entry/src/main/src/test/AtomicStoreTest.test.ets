@@ -178,7 +178,7 @@ export default function atomicsStoreTest() {
     it('atomicsStoreTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new ArrayBuffer(4);
       const ta = new Uint32Array(sab);
-      const outer = (arr: Uint32Array, idx: int, val: number) => Atomics.store(arr, idx as int, val as long);
+      const outer = (arr: Uint32Array, idx: int, val: number) => Atomics.store(arr, idx as int, val.toLong());
       const storedVal = outer(ta, 0, 1500000000);
       expect(storedVal).assertEqual(1500000000);
       expect(ta[0]).assertEqual(1500000000);
@@ -316,7 +316,7 @@ export default function atomicsStoreTest() {
         if (idx < 0 || idx >= arr.length) {
           throw new Error('Invalid index');
         }
-        return Atomics.store(arr, idx as int, val as long);
+        return Atomics.store(arr, idx as int, val.toLong());
       }
       const storedVal = validateAndStore(ta, 0, 75);
       expect(storedVal).assertEqual(75);
@@ -376,7 +376,7 @@ export default function atomicsStoreTest() {
     it('atomicsStoreTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new ArrayBuffer(8);
       const ta = new BigUint64Array(sab);
-      const outerWrapper = (arr: BigUint64Array) => (idx: number, val: bigint) => Atomics.store(arr, idx as int, val as bigint);
+      const outerWrapper = (arr: BigUint64Array) => (idx: number, val: bigint) => Atomics.store(arr, idx.toInt(), val as bigint);
       const storedVal = outerWrapper(ta)(0, 1234567890123456789n);
       expect(storedVal).assertEqual(1234567890123456789n);
       expect(ta[0]).assertEqual(1234567890123456789n);
@@ -432,7 +432,7 @@ export default function atomicsStoreTest() {
       const ta = new Int32Array(sab);
       const safeStore = (arr: Int32Array, idx: int, val: number) => {
         try {
-          return Atomics.store(arr, idx as int, val as long);
+          return Atomics.store(arr, idx as int, val.toLong());
         } catch (err) {
           return (err as Error).name;
         }
@@ -487,7 +487,7 @@ export default function atomicsStoreTest() {
     it('atomicsStoreTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new ArrayBuffer(8); // 2 Int32 elements
       const ta = new Int32Array(sab);
-      const indexMapper = (name: 'first' | 'second', val: number) => Atomics.store(ta, name === 'first' ? 0 : 1 as int, val as long)
+      const indexMapper = (name: 'first' | 'second', val: number) => Atomics.store(ta, name === 'first' ? 0 : 1 as int, val.toLong())
 
       indexMapper('first', 1000);
       indexMapper('second', 2000);
@@ -507,7 +507,7 @@ export default function atomicsStoreTest() {
       const sab = new ArrayBuffer(8);
       const ta = new BigInt64Array(sab);
       try {
-        Atomics.store(ta, 0.5 as int, 123n);
+        Atomics.store(ta, 0.5.toInt(), 123n);
       } catch (e) {
         expect(e.message).assertContain('');
       }
@@ -524,7 +524,7 @@ export default function atomicsStoreTest() {
     it('atomicsStoreTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const sab = new ArrayBuffer(1);
       const ta = new Uint8Array(sab);
-      const asyncStore = async (arr: Uint8Array, idx: int, val: number) => Atomics.store(arr, idx as int, val as long);
+      const asyncStore = async (arr: Uint8Array, idx: int, val: number) => Atomics.store(arr, idx as int, val.toLong());
 
       const storedVal = await asyncStore(ta, 0, 123);
       expect(storedVal).assertEqual(123);
@@ -560,7 +560,7 @@ export default function atomicsStoreTest() {
       const sab = new ArrayBuffer(4);
       const ta = new Int32Array(sab);
       const safeStore = (arr: Int32Array, idx: int, val: number) =>
-      idx >= 0 && idx < arr.length ? Atomics.store(arr, idx as int, val as long) : 'Invalid index'
+      idx >= 0 && idx < arr.length ? Atomics.store(arr, idx as int, val.toLong()) : 'Invalid index'
 
       expect(safeStore(ta, 0, 456)).assertEqual(456);
       expect(safeStore(ta, 1, 789)).assertEqual('Invalid index');
@@ -622,7 +622,7 @@ export default function atomicsStoreTest() {
       const ta = new Int8Array(sab);
       const storeAndValidate = (arr: Int8Array, idx: int, val: number) => {
         const isValid = val >= -128 && val <= 127;
-        return isValid ? Atomics.store(arr, idx as int, val as long) : 'Out of range';
+        return isValid ? Atomics.store(arr, idx as int, val.toLong()) : 'Out of range';
       }
 
       expect(storeAndValidate(ta, 0, -45)).assertEqual(-45);
@@ -645,9 +645,9 @@ export default function atomicsStoreTest() {
       const asyncStoreWithRetry =
         async (arr: Int32Array, idx: int, val: int, maxRetries: int): Promise<long> => {
           try {
-            return Atomics.store(arr, idx as int, val as long);
+            return Atomics.store(arr, idx as int, val.toLong());
           } catch (err) {
-            return Atomics.store(arr, 0, val as long);
+            return Atomics.store(arr, 0, val.toLong());
           }
         };
 
@@ -668,7 +668,7 @@ export default function atomicsStoreTest() {
       const sab = new ArrayBuffer(4);
       const ta = new Uint32Array(sab);
       const transformStore = (arr: Uint32Array, idx: int, val: number, factor: number) =>
-      Atomics.store(arr, idx as int, val * factor as long)
+      Atomics.store(arr, idx as int, (val * factor).toLong())
 
       transformStore(ta, 0, 100, 2);
       expect(ta[0]).assertEqual(200);
@@ -815,7 +815,7 @@ export default function atomicsStoreTest() {
             resolve(undefined)
           }, 5)
         });
-        const storedVal: number = Atomics.store(arr, idx as int, val as long);
+        const storedVal: number = Atomics.store(arr, idx as int, val.toLong());
         log.push(`Stored value: ${storedVal}`);
         return storedVal;
       };
@@ -841,7 +841,7 @@ export default function atomicsStoreTest() {
 
       const batchStore = (arr: Uint16Array, indices: int[], vals: int[]) =>
       indices.forEach((idx: int, i: int, indices: int[]) => {
-        Atomics.store(arr, idx as int, vals[i] as long)
+        Atomics.store(arr, idx as int, vals[i].toLong())
       })
 
       batchStore(ta, [0, 1, 2], values);
@@ -926,7 +926,7 @@ export default function atomicsStoreTest() {
       const sab = new ArrayBuffer(1);
       const ta = new Int8Array(sab);
       const safeStore = (arr: Int8Array | null, idx: int, val: number) =>
-      arr ? Atomics.store(arr, idx as int, val as long) : 'Array is null'
+      arr ? Atomics.store(arr, idx as int, val.toLong()) : 'Array is null'
 
       expect(safeStore(ta, 0, -89)).assertEqual(-89);
       expect(safeStore(null, 0, 10)).assertEqual('Array is null');
@@ -955,7 +955,7 @@ export default function atomicsStoreTest() {
           });
           delayCount++;
         }
-        return Atomics.store(arr, idx as int, val as long);
+        return Atomics.store(arr, idx as int, val.toLong());
       };
 
       const result = await delayedStore(ta, 0, 4294967295, [2, 3]);
@@ -976,7 +976,7 @@ export default function atomicsStoreTest() {
       const sab = new ArrayBuffer(2);
       const ta = new Int16Array(sab);
       const formattedStore = (arr: Int16Array, idx: int, val: number, prefix: string) => {
-        Atomics.store(arr, idx as int, val as long);
+        Atomics.store(arr, idx as int, val.toLong());
         return `${prefix}${val}`;
       }
 
@@ -1120,7 +1120,7 @@ export default function atomicsStoreTest() {
 
       const createLoader = (delay: int, val: number) =>
       new Promise<number>((resolve) => {
-        setTimeout(() => resolve(Atomics.store(ta, 0, val as long)), delay)
+        setTimeout(() => resolve(Atomics.store(ta, 0, val.toLong())), delay)
       }
       );
 
@@ -1175,7 +1175,7 @@ export default function atomicsStoreTest() {
             resolve(undefined)
           }, 1)
         });
-        return Atomics.store(arr, idx as int, vals[i] as long);
+        return Atomics.store(arr, idx as int, vals[i].toLong());
       }));
 
       const storedVals = await batchStore(ta, indices, values);
@@ -1251,7 +1251,7 @@ export default function atomicsStoreTest() {
       let validationCalled = false;
 
       const storeWithValidation = async (arr: Int16Array, idx: int, val: number, callback: (v: number) => void) => {
-        const storedVal: number = Atomics.store(arr, idx as int, val as long);
+        const storedVal: number = Atomics.store(arr, idx as int, val.toLong());
         await new Promise<void>((resolve) => {
           setTimeout(() => {
             resolve(undefined)
@@ -1293,7 +1293,7 @@ export default function atomicsStoreTest() {
           }, 2)
         });
         const idx: int = useIndex1 ? 1 : 0;
-        return Atomics.store(arr, idx as int, val as long);
+        return Atomics.store(arr, idx as int, val.toLong());
       };
 
       const storedVal1 = await dynamicStore(ta, false, val1);
@@ -1382,7 +1382,7 @@ export default function atomicsStoreTest() {
 
       const raceResult = await Promise.race([
         new Promise<number>((resolve) => {
-          setTimeout(() => resolve(Atomics.store(ta, 0, targetVal as long)), 3)
+          setTimeout(() => resolve(Atomics.store(ta, 0, targetVal.toLong())), 3)
         }
         ),
         new Promise<number>((resolve) => {
@@ -1409,7 +1409,7 @@ export default function atomicsStoreTest() {
       const targetVal: int = 1234;
 
       const transformStore = async (arr: Int32Array, idx: int, val: number) => {
-        const storedVal = Atomics.store(arr, idx as int, val as long);
+        const storedVal = Atomics.store(arr, idx as int, val.toLong());
         await new Promise<void>((resolve) => {
           setTimeout(() => {
             resolve(undefined)
@@ -1447,7 +1447,7 @@ export default function atomicsStoreTest() {
               resolve(undefined)
             }, 1)
           });
-          return Atomics.store(arr, idx as int, vals[i] as long);
+          return Atomics.store(arr, idx as int, vals[i].toLong());
         }));
       };
 
@@ -1473,7 +1473,7 @@ export default function atomicsStoreTest() {
       const ta = new Int32Array(sab);
       const maxSafeInt = Number.MAX_SAFE_INTEGER;
       try {
-        Atomics.store(ta, maxSafeInt as int, 123);
+        Atomics.store(ta, maxSafeInt.toInt(), 123);
       } catch (e) {
         expect(e.message).assertContain('');
       }
@@ -1523,7 +1523,7 @@ export default function atomicsStoreTest() {
                 resolve(undefined)
               }, 1)
             });
-            const storedVal = Atomics.store(arr, idx as int, vals[i] as long);
+            const storedVal = Atomics.store(arr, idx as int, vals[i].toLong());
             return storedVal;
           })
         );
@@ -1557,7 +1557,7 @@ export default function atomicsStoreTest() {
       const targetVal: int = 123456789;
 
       const mixedTasks = [
-        Promise.resolve().then((): number => Atomics.store(ta, 0, targetVal as long)),
+        Promise.resolve().then((): number => Atomics.store(ta, 0, targetVal.toLong())),
         new Promise<number>((resolve) => {
           setTimeout(() => resolve(100 + 200), 2)
         })
@@ -1615,7 +1615,7 @@ export default function atomicsStoreTest() {
 
       const storeWithErrorLog = async (arr: Int32Array, idx: int, val: number) => {
         try {
-          return Atomics.store(arr, idx as int, val as long);
+          return Atomics.store(arr, idx as int, val.toLong());
         } catch (err) {
           await new Promise<void>((resolve) => {
             setTimeout(() => {
@@ -1685,10 +1685,10 @@ export default function atomicsStoreTest() {
                 resolve(undefined)
               }, 1)
             });
-            return Atomics.store(arr, idx as int, vals[i] as long);
+            return Atomics.store(arr, idx as int, vals[i].toLong());
           })
         );
-        return storedVals.reduce((acc, val) => acc + val, 0);
+        return storedVals.reduce((acc, val) => acc + val, 0.);
       };
 
       const sum = await batchStoreAndSum(ta, indices, values);
@@ -1742,7 +1742,7 @@ export default function atomicsStoreTest() {
             resolve(undefined)
           }, delay)
         });
-        return Atomics.store(arr, idx as int, val as long);
+        return Atomics.store(arr, idx as int, val.toLong());
       };
 
       const storedVal = await dynamicDelayStore(ta, 0, targetVal);
@@ -1811,7 +1811,7 @@ export default function atomicsStoreTest() {
       const targetVal: int = 45;
 
       const formattedStore = async (arr: Int8Array, idx: int, val: number, currency: string) => {
-        const storedVal = Atomics.store(arr, idx as int, val as long);
+        const storedVal = Atomics.store(arr, idx as int, val.toLong());
         await new Promise<void>((resolve) => {
           setTimeout(() => {
             resolve(undefined)
@@ -1847,7 +1847,7 @@ export default function atomicsStoreTest() {
                 resolve(undefined)
               }, 1)
             });
-            return Atomics.store(arr, idx as int, vals[i] as long);
+            return Atomics.store(arr, idx as int, vals[i].toLong());
           })
         );
         const uniqueVals = new Set<long>(storedVals);
@@ -1878,8 +1878,8 @@ export default function atomicsStoreTest() {
       expect(Atomics.isLockFree(4)).assertEqual(true);
 
       // 先通过 store 暂存目标值，再通过 compareExchange 验证条件后确认
-      Atomics.store(ia, 0, targetVal as long);
-      const validated = Atomics.compareExchange(ia, 0, targetVal as long, targetVal);
+      Atomics.store(ia, 0, targetVal.toLong());
+      const validated = Atomics.compareExchange(ia, 0, targetVal.toLong(), targetVal);
 
       expect(validated).assertEqual(targetVal);
       expect(Atomics.load(ia, 0)).assertEqual(targetVal);
@@ -1909,7 +1909,7 @@ export default function atomicsStoreTest() {
             resolve(undefined)
           }, ms2)
         });
-        return Atomics.store(arr, idx as int, val as long);
+        return Atomics.store(arr, idx as int, val.toLong());
       }
 
       const storedVal = await delayChainStore(2, 3, ta, 0, targetVal);
@@ -1950,7 +1950,7 @@ export default function atomicsStoreTest() {
       const targetVal: int = 300;
 
       const validateEvenStore = async (arr: Int32Array, idx: int, val: number) => {
-        const storedVal = Atomics.store(arr, idx as int, val as long);
+        const storedVal = Atomics.store(arr, idx as int, val.toLong());
         await new Promise<void>((resolve) => {
           setTimeout(() => {
             resolve(undefined)
@@ -1985,9 +1985,9 @@ export default function atomicsStoreTest() {
             resolve(undefined)
           }, 3)
         });
-        const storedVal: long = Atomics.store(arr, idx as int, val as long);
+        const storedVal: long = Atomics.store(arr, idx as int, val.toLong());
         if (storedVal < targetMin && retryCount < 2) {
-          return Atomics.store(arr, idx as int, val as long)
+          return Atomics.store(arr, idx as int, val.toLong())
         }
         return storedVal;
       };
@@ -2013,7 +2013,7 @@ export default function atomicsStoreTest() {
       const validVal: int = 5678;
 
       const promises = [
-        Promise.resolve().then((): number => Atomics.store(ta, 0, validVal as long)), // Valid store
+        Promise.resolve().then((): number => Atomics.store(ta, 0, validVal.toLong())), // Valid store
         Promise.resolve().then((): number => Atomics.store(ta, 1, 1234)), // Invalid store
         new Promise<number>((resolve) => {
           setTimeout(() => resolve(999.0), 2)

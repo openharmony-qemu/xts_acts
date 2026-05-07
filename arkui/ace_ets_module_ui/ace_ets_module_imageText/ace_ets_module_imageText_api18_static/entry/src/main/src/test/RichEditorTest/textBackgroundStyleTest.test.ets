@@ -84,8 +84,8 @@ it('textBackgroundStyleTest_static_0001', Level.LEVEL1, async (done: () => void)
       await CommonFunc.sleep(500);
       await get.click();
       await CommonFunc.sleep(500);
-      expect(AppStorage.get('RichEditorTextBackgroundStyleColor')).assertEqual(undefined);
-      expect(AppStorage.get<string>('RichEditorTextBackgroundStyleRadius')).assertEqual("undefined");
+      expect(AppStorage.get<string>('RichEditorTextBackgroundStyleColor')).assertEqual(undefined);
+      expect(AppStorage.get<string>('RichEditorTextBackgroundStyleRadius')).assertEqual('');
       AppStorage.delete('RichEditorTextBackgroundStyleColor')
       AppStorage.delete('RichEditorTextBackgroundStyleRadius')
       console.info("[textBackgroundStyleTest0001] end");
@@ -114,7 +114,7 @@ it('textBackgroundStyleTest_static_0002', Level.LEVEL1, async (done: () => void)
       await CommonFunc.sleep(500);
       expect(AppStorage.get<string>('RichEditorTextBackgroundStyleColor')).assertEqual(undefined);
       expect(AppStorage.get<string>('RichEditorTextBackgroundStyleRadius'))
-        .assertEqual("undefined");
+        .assertEqual('');
       AppStorage.delete('RichEditorTextBackgroundStyleColor')
       AppStorage.delete('RichEditorTextBackgroundStyleRadius')
       console.info("[textBackgroundStyleTest0002] end");

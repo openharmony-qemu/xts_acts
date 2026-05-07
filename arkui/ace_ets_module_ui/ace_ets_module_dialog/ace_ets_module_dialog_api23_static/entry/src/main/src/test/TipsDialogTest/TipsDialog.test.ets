@@ -52,7 +52,7 @@ export default function TipsDialogTest() {
 
     beforeEach(async (): Promise<void> => {
       console.info("[ARKUI_NEW] TipsDialogTest beforeEach start");
-      
+
       // Ensure any open dialogs are closed before starting new test
       try {
         const driver = Driver.create();
@@ -64,7 +64,7 @@ export default function TipsDialogTest() {
       } catch (err) {
         // Dialog may not be open, ignore error
       }
-      
+
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/tipsDialog/tipsDialog',
       };
@@ -136,7 +136,7 @@ export default function TipsDialogTest() {
       if (AppStorage.get<boolean>('tipsDialogSecondaryButtonActionCalled') != undefined) {
         AppStorage.delete('tipsDialogSecondaryButtonActionCalled');
       }
-      
+
       // Ensure any open dialogs are closed after test
       try {
         const driver = Driver.create();
@@ -154,7 +154,7 @@ export default function TipsDialogTest() {
       } catch (err) {
         // Dialog may not be open, ignore error
       }
-      
+
       await Utils.sleep(SLEEP_TIME);
       console.info("[ARKUI_NEW] TipsDialogTest after each called");
     });
@@ -290,7 +290,7 @@ export default function TipsDialogTest() {
         expect(AppStorage.get<string>('tipsDialogImageRes')).assertEqual('sys.media.ohos_ic_public_voice');
         expect(AppStorage.get<number>('tipsDialogImageSizeWidth')).assertEqual(100);
         expect(AppStorage.get<number>('tipsDialogImageSizeHeight')).assertEqual(100);
-        expect(AppStorage.get<string>('tipsDialogTitle')).assertEqual('测试标题');
+        expect(AppStorage.get<string>('tipsDialogTitle')).assertEqual('Test Title');
         expect(AppStorage.get<string>('tipsDialogContent')).assertEqual('Test Content');
 
         console.info('[ARKUI_NEW] TipsDialogTest execute: tipsDialogImageResImageSizeTitleContent END');
@@ -362,8 +362,11 @@ export default function TipsDialogTest() {
         await (openDialogButton?.click() as Promise<void>);
         await Utils.sleep(1000);
 
-        // Test primaryButton
-        const primaryButton = await driver.findComponent(ON.text('Primary Button', MatchPattern.EQUALS));
+        // 与页面 primaryButton.value 「主按钮」一致（系统可能展示为自定义文案）
+        let primaryButton = await driver.findComponent(ON.text('主按钮', MatchPattern.EQUALS));
+        if (!primaryButton) {
+          primaryButton = await driver.findComponent(ON.text('Primary Button', MatchPattern.EQUALS));
+        }
         expect(!!primaryButton).assertTrue();
         await (primaryButton?.click() as Promise<void>);
         await Utils.sleep(500);
@@ -375,12 +378,15 @@ export default function TipsDialogTest() {
         await (openDialogButton?.click() as Promise<void>);
         await Utils.sleep(1000);
 
-        const secondaryButton = await driver.findComponent(ON.text('Secondary Button', MatchPattern.EQUALS));
+        let secondaryButton = await driver.findComponent(ON.text('Secondary Button', MatchPattern.EQUALS));
+        if (!secondaryButton) {
+          secondaryButton = await driver.findComponent(ON.text('次按钮', MatchPattern.EQUALS));
+        }
         expect(!!secondaryButton).assertTrue();
         await (secondaryButton?.click() as Promise<void>);
         await Utils.sleep(500);
 
-        expect(AppStorage.get<string>('tipsDialogSecondaryButtonValue')).assertEqual('次按钮');
+        expect(AppStorage.get<string>('tipsDialogSecondaryButtonValue')).assertEqual('Secondary Button');
         expect(AppStorage.get<boolean>('tipsDialogSecondaryButtonActionCalled')).assertTrue();
 
         console.info('[ARKUI_NEW] TipsDialogTest execute: tipsDialogPrimaryButtonSecondaryButton END');
@@ -407,66 +413,77 @@ export default function TipsDialogTest() {
         const openDialogButton = await driver.findComponent(ON.id('btnTipsDialog2'));
         expect(!!openDialogButton).assertEqual(true);
         await (openDialogButton?.click() as Promise<void>);
-        await Utils.sleep(1000);
+        await Utils.sleep(1500);
 
         // Step 1: Verify checkTips text exists and store initial state
-        const checkTipsText = await driver.findComponent(ON.text('Do not show again', MatchPattern.EQUALS));
+        let checkTipsText = await driver.findComponent(ON.text('禁止后不再提示', MatchPattern.EQUALS));
+        if (!checkTipsText) {
+          checkTipsText = await driver.findComponent(ON.text('不再提示', MatchPattern.CONTAINS));
+        }
         expect(!!checkTipsText).assertTrue();
         console.info('[ARKUI_NEW] TipsDialogTest: Found checkTips text component');
-        
-        // Click confirm button to store initial state
-        const dialogButton = await driver.findComponent(ON.text('Confirm', MatchPattern.EQUALS));
+
+        // Click confirm button to store initial state（系统语言下可能为「确定」）
+        let dialogButton = await driver.findComponent(ON.text('Confirm', MatchPattern.EQUALS));
+        if (!dialogButton) {
+          dialogButton = await driver.findComponent(ON.text('确定', MatchPattern.EQUALS));
+        }
         expect(!!dialogButton).assertTrue();
         await (dialogButton?.click() as Promise<void>);
         await Utils.sleep(500);
 
         // Verify checkTips and initial isChecked state
-        expect(AppStorage.get<string>('tipsDialogCheckTips')).assertEqual('Do not show again');
+        expect(AppStorage.get<string>('tipsDialogCheckTips')).assertEqual('禁止后不再提示');
         expect(AppStorage.get<boolean>('tipsDialogInitialIsChecked')).assertTrue();
-        
+
         // Step 2: Reopen dialog to test checkbox interaction
         await (openDialogButton?.click() as Promise<void>);
-        await Utils.sleep(1000);
-        
+        await Utils.sleep(1500);
+
         // Step 3: Try to find and click checkbox to trigger checkAction and onCheckedChange
-        // Method 1: Try clicking on checkTips text area (checkbox is usually clickable near the text)
-        const checkTipsComponent = await driver.findComponent(ON.text('Do not show again', MatchPattern.EQUALS));
+        let checkTipsComponent = await driver.findComponent(ON.text('禁止后不再提示', MatchPattern.EQUALS));
+        if (!checkTipsComponent) {
+          checkTipsComponent = await driver.findComponent(ON.text('不再提示', MatchPattern.CONTAINS));
+        }
         expect(!!checkTipsComponent).assertTrue();
-        
-        // Click on checkTips text area to trigger checkbox click
-        // In TipsDialog, clicking on checkTips text usually triggers the checkbox
+
         await (checkTipsComponent?.click() as Promise<void>);
-        await Utils.sleep(500);
-        console.info('[ARKUI_NEW] TipsDialogTest: Clicked on checkTips text area to trigger checkbox');
-        
-        // Verify checkAction was called
-        const checkActionCalled = AppStorage.get<boolean>('tipsDialogCheckActionCalled');
+        await Utils.sleep(600);
+        let checkActionCalled = AppStorage.get<boolean>('tipsDialogCheckActionCalled');
+        if (checkActionCalled !== true) {
+          await (checkTipsComponent?.click() as Promise<void>);
+          await Utils.sleep(600);
+          checkActionCalled = AppStorage.get<boolean>('tipsDialogCheckActionCalled');
+        }
         console.info('[ARKUI_NEW] TipsDialogTest: checkActionCalled = ' + checkActionCalled);
         expect(checkActionCalled).assertTrue();
-        
+
         // Verify onCheckedChange was called
         const onCheckedChangeCalled = AppStorage.get<boolean>('tipsDialogOnCheckedChangeCalled');
         console.info('[ARKUI_NEW] TipsDialogTest: onCheckedChangeCalled = ' + onCheckedChangeCalled);
         expect(onCheckedChangeCalled).assertTrue();
-        
+
         // Verify isChecked value changed (from true to false after click)
         const isCheckedAfterClick = AppStorage.get<boolean>('tipsDialogIsChecked');
         console.info('[ARKUI_NEW] TipsDialogTest: isChecked after click = ' + isCheckedAfterClick);
         expect(isCheckedAfterClick).assertFalse();
-        
+
         // Verify onCheckedChange value
         const onCheckedChangeValue = AppStorage.get<boolean>('tipsDialogOnCheckedChangeValue');
         console.info('[ARKUI_NEW] TipsDialogTest: onCheckedChangeValue = ' + onCheckedChangeValue);
         expect(onCheckedChangeValue).assertFalse();
-        
+
         // Ensure dialog is closed before test ends
-        const confirmButton = await driver.findComponent(ON.text('Confirm', MatchPattern.EQUALS));
-        if (confirmButton) {
-          await (confirmButton?.click() as Promise<void>);
+        let confirmButtonClose = await driver.findComponent(ON.text('Confirm', MatchPattern.EQUALS));
+        if (!confirmButtonClose) {
+          confirmButtonClose = await driver.findComponent(ON.text('确定', MatchPattern.EQUALS));
+        }
+        if (confirmButtonClose) {
+          await (confirmButtonClose?.click() as Promise<void>);
           await Utils.sleep(500);
           console.info('[ARKUI_NEW] TipsDialogTest: Dialog closed');
         }
-        
+
         console.info('[ARKUI_NEW] TipsDialogTest execute: tipsDialogCheckTipsIsCheckedTrueCheckActionOnCheckedChange END');
         done();
       } catch (error) {
@@ -500,20 +517,20 @@ export default function TipsDialogTest() {
         await Utils.sleep(500);
 
         expect(AppStorage.get<boolean>('tipsDialogInitialIsChecked')).assertFalse();
-        
+
         // Step 2: Reopen dialog and click checkbox to change state from false to true
         await (openDialogButton?.click() as Promise<void>);
         await Utils.sleep(1000);
-        
+
         // Try to find and click checkbox by clicking on checkTips text area
         const checkTipsText = await driver.findComponent(ON.text('Test Checkbox', MatchPattern.EQUALS));
         expect(!!checkTipsText).assertTrue();
         await (checkTipsText?.click() as Promise<void>);
         await Utils.sleep(500);
-        
+
         // Verify checkAction was called and isChecked changed from false to true
         expect(AppStorage.get<boolean>('tipsDialogIsChecked')).assertTrue();
-        
+
         // Ensure dialog is closed before test ends
         const confirmButton = await driver.findComponent(ON.text('Confirm', MatchPattern.EQUALS));
         if (confirmButton) {
@@ -521,7 +538,7 @@ export default function TipsDialogTest() {
           await Utils.sleep(500);
           console.info('[ARKUI_NEW] TipsDialogTest: Dialog closed');
         }
-        
+
         console.info('[ARKUI_NEW] TipsDialogTest execute: tipsDialogIsCheckedFalse END');
         done();
       } catch (error) {

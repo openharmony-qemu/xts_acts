@@ -312,7 +312,7 @@ export function testLinkedListSet012() {
     linkList.add([0, 1, 2, undefined]);
 
     linkList.forEach((value, index: int, linkList) => {
-      if (linkList.set(Math.floor(index ?? 0) as int, 'li si') === undefined) {
+      if (linkList.set(Math.floor(index ?? 0).toInt(), 'li si') === undefined) {
         throw new Error(`set failed at index ${index}`);
       }
     });
@@ -379,7 +379,7 @@ export function testLinkedListConvertToArray015() {
     linkList.add([0, 1, 2, undefined]);
 
     linkList.forEach((value, index: int) => {
-      linkList.set(Math.floor(index ?? 0) as int, new Temp1(index, 'zhang ' + index));
+      linkList.set(Math.floor(index ?? 0).toInt(), new Temp1(index, 'zhang ' + index));
     });
     let array = linkList.convertToArray();
     array.forEach((value) => {

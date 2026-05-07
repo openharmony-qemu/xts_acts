@@ -37,7 +37,8 @@ import DeviceKvStoreNull from './DeviceKvStoreNull.test';
 import QueryNull from './QueryNull.test';
 import DeviceKvStoreGetCoverageAdd from './DeviceKvStoreGetCoverageAdd.test';
 import KVManagerCoverageAdd from './KVManagerCoverageAdd.test';
-
+import KVManagerRootDir      from './KVManagerRootDir.test';
+import KVManagerRootDirEntry from './KVManagerRootDirEntry.test';
 export default function testsuite() {
   deviceKvStoreCallbackTest();
   deviceKvStorePromiseTest();
@@ -63,4 +64,6 @@ export default function testsuite() {
   QueryNull();
   DeviceKvStoreGetCoverageAdd();
   KVManagerCoverageAdd();
+  KVManagerRootDir();
+  KVManagerRootDirEntry();
 }

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,7 +41,7 @@ import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 const TEST_TAG : string = "FrameNode"
 
-class MyNodeControllerGet extends NodeController {
+export class MyNodeControllerGet extends NodeController {
   public frameNode: FrameNode | null = null;
   public childList:Array<FrameNode> = new Array<FrameNode>();
   private rootNode: FrameNode | null = null;
@@ -71,13 +71,13 @@ class MyNodeControllerGet extends NodeController {
 
   insertChildAfter(index : number){
     let insertNode = new FrameNode(this.uiContext!);
-    let childNode = this.rootNode!.getChild(index as int);
+    let childNode = this.rootNode!.getChild(index.toInt());
     this.rootNode!.insertChildAfter(insertNode,childNode);
     this.childrenCount = this.childrenCount + 1;
   }
 
   removeChild(index : number){
-    let childNode = this.rootNode!.getChild(index as int);
+    let childNode = this.rootNode!.getChild(index.toInt());
     if(childNode == null)
     {
       console.log(`${TEST_TAG} getchild at index {${index}} : fail`);

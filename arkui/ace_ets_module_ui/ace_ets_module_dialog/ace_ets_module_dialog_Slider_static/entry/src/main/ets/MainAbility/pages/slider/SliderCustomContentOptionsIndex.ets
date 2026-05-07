@@ -30,8 +30,7 @@ import {
   FlexAlign,
   $r,
   wrapBuilder,
-  SliderOptions,
-  Scroll
+  SliderOptions
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
@@ -55,7 +54,8 @@ struct SliderCustomContentOptionsIndex {
   @State value2: number = 60;
 
   private uiContext: UIContext = this.getUIContext();
-  private preNode1: ComponentContent = new ComponentContent(this.uiContext, wrapBuilder(preTextBuilder));
+  private preNode1: ComponentContent<Object> =
+    new ComponentContent<Object>(this.uiContext, wrapBuilder(preTextBuilder));
 
   aboutToAppear() {
     try {
@@ -67,8 +67,7 @@ struct SliderCustomContentOptionsIndex {
   }
 
   build() {
-    Scroll() {
-      Column({ space: 10 } as ColumnOptions) {
+    Column({ space: 4 } as ColumnOptions) {
         // SliderCustomContentOptions - accessibilityDescription
         Slider({
           value: this.value1,
@@ -78,7 +77,9 @@ struct SliderCustomContentOptionsIndex {
           style: SliderStyle.InSet
         } as SliderOptions)
           .id('sliderDescription')
-          .width('90%')
+          .width('100%')
+          .layoutWeight(1)
+          .constraintSize({ minHeight: 0, maxHeight: '44%' })
           .prefix(this.preNode1, {
             accessibilityDescription: 'accessibilityDescription'
           })
@@ -95,19 +96,19 @@ struct SliderCustomContentOptionsIndex {
           style: SliderStyle.InSet
         } as SliderOptions)
           .id('sliderLevel')
-          .width('90%')
+          .width('100%')
+          .layoutWeight(1)
+          .constraintSize({ minHeight: 0, maxHeight: '44%' })
           .prefix(this.preNode1, {
             accessibilityLevel: 'auto'
           })
           .onChange((value: number) => {
             this.value2 = value;
           })
-      }
-      .justifyContent(FlexAlign.Start)
-      .width('100%')
-      .padding({ top: 10, bottom: 10, left: 10, right: 10 })
     }
+    .justifyContent(FlexAlign.SpaceEvenly)
     .width('100%')
     .height('100%')
+    .padding({ left: '2%', right: '2%', top: '1%', bottom: '1%' })
   }
 }

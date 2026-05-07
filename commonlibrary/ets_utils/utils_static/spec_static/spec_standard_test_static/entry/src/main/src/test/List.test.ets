@@ -13,9 +13,10 @@ import builtinsWhileTest from './BuiltinStatment/BuiltinsWhileTest.test.ets'
 import expressionTest1 from './expression/ExpressionTest1.test';
 import expressionTest2 from './expression/ExpressionTest2.test';
 import expressionTest3 from './expression/ExpressionTest3.test';
-import expressionTest4 from './expression/ExpressionTest4.test';
+import expressionTest4 from './expression/ExpressionTest4.test';  
 import expressionTest5 from './expression/ExpressionTest5.test';
 import expressionTest6 from './expression/ExpressionTest6.test';
+import objectLiteralThisCaptureTest from './expression/ObjectLiteralThisCapture.test.ets';
 import DoubleEnumTest from './enumerations/DoubleEnum.test';
 
 import SpecTypeTest from "./Types/Types.test";
@@ -39,6 +40,9 @@ import AssignmentLikeContextsTest from "./contextsandconversions/AssignmentLikeC
 import AttemptInvalidTypeConversionTest from "./contextsandconversions/AttemptInvalidTypeConversionTest.test";
 import NumericOperatorContextsTest from "./contextsandconversions/NumericOperatorContextsTest.test";
 import StringOperatorContextsTest from "./contextsandconversions/StringOperatorContextsTest.test";
+import optionalChainingTest from "./ChainingOperator/NotEmptyOptional.test";
+import forLoopHeaderSmartCastTest from "./statements/ForLoopHeaderSmartCastTest.test.ets";
+import test2ForLoopCasesTest from "./statements/Test2ForLoopCases.test.ets";
 
 export default function testsuite() {
   builtinsBlockTest();
@@ -59,6 +63,7 @@ export default function testsuite() {
   expressionTest4();
   expressionTest5();
   expressionTest6();
+  objectLiteralThisCaptureTest();
   DoubleEnumTest();
 
   SpecTypeTest();
@@ -82,4 +87,8 @@ export default function testsuite() {
   AttemptInvalidTypeConversionTest();
   NumericOperatorContextsTest();
   StringOperatorContextsTest();
+  
+  optionalChainingTest();
+  forLoopHeaderSmartCastTest();
+  test2ForLoopCasesTest();
 }

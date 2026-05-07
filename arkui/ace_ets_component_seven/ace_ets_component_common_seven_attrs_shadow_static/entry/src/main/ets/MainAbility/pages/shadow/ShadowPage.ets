@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -64,9 +64,6 @@ import {
   FlowItem,
   FlowItemAttribute,
   ForEach,
-  FormLink,
-  FormLinkAttribute,
-  FormLinkOptions,
   Gauge,
   GaugeAttribute,
   Grid,
@@ -198,7 +195,7 @@ import {
 import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { RouterParams, SetValue } from '../../common/Utils';
 
-class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -213,7 +210,7 @@ class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttrib
   }
 }
 
-class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -228,7 +225,7 @@ class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   }
 }
 
-class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -243,7 +240,7 @@ class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   }
 }
 
-class BlankModifier implements AttributeModifier<BlankAttribute> {
+export class BlankModifier implements AttributeModifier<BlankAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -258,7 +255,7 @@ class BlankModifier implements AttributeModifier<BlankAttribute> {
   }
 }
 
-class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -273,7 +270,7 @@ class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribut
   }
 }
 
-class CanvasModifier implements AttributeModifier<CanvasAttribute> {
+export class CanvasModifier implements AttributeModifier<CanvasAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -288,7 +285,7 @@ class CanvasModifier implements AttributeModifier<CanvasAttribute> {
   }
 }
 
-class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -303,7 +300,7 @@ class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   }
 }
 
-class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -318,7 +315,7 @@ class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute>
   }
 }
 
-class CircleModifier implements AttributeModifier<CircleAttribute> {
+export class CircleModifier implements AttributeModifier<CircleAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -333,7 +330,7 @@ class CircleModifier implements AttributeModifier<CircleAttribute> {
   }
 }
 
-class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -348,7 +345,7 @@ class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   }
 }
 
-class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -363,7 +360,7 @@ class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   }
 }
 
-class CounterModifier implements AttributeModifier<CounterAttribute> {
+export class CounterModifier implements AttributeModifier<CounterAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -378,7 +375,7 @@ class CounterModifier implements AttributeModifier<CounterAttribute> {
   }
 }
 
-class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -393,7 +390,7 @@ class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   }
 }
 
-class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -408,7 +405,7 @@ class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   }
 }
 
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -423,7 +420,7 @@ class DividerModifier implements AttributeModifier<DividerAttribute> {
   }
 }
 
-class EllipseModifier implements AttributeModifier<EllipseAttribute> {
+export class EllipseModifier implements AttributeModifier<EllipseAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -438,7 +435,7 @@ class EllipseModifier implements AttributeModifier<EllipseAttribute> {
   }
 }
 
-class FlexModifier implements AttributeModifier<FlexAttribute> {
+export class FlexModifier implements AttributeModifier<FlexAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -453,7 +450,7 @@ class FlexModifier implements AttributeModifier<FlexAttribute> {
   }
 }
 
-class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -468,22 +465,7 @@ class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   }
 }
 
-class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mShadow: ShadowOptions = {
-    radius: 35,
-    type: ShadowType.COLOR,
-    color: '#FF0011FF',
-    offsetX: 37,
-    offsetY: 41,
-    fill: false
-  }
-
-  applyNormalAttribute(instance: FormLinkAttribute): void {
-    instance.shadow(this.mShadow)
-  }
-}
-
-class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -498,7 +480,7 @@ class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   }
 }
 
-class GridModifier implements AttributeModifier<GridAttribute> {
+export class GridModifier implements AttributeModifier<GridAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -513,7 +495,7 @@ class GridModifier implements AttributeModifier<GridAttribute> {
   }
 }
 
-class GridColModifier implements AttributeModifier<GridColAttribute> {
+export class GridColModifier implements AttributeModifier<GridColAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -528,7 +510,7 @@ class GridColModifier implements AttributeModifier<GridColAttribute> {
   }
 }
 
-class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -543,7 +525,7 @@ class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   }
 }
 
-class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -558,7 +540,7 @@ class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   }
 }
 
-class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -573,7 +555,7 @@ class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   }
 }
 
-class ImageModifier implements AttributeModifier<ImageAttribute> {
+export class ImageModifier implements AttributeModifier<ImageAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -588,7 +570,7 @@ class ImageModifier implements AttributeModifier<ImageAttribute> {
   }
 }
 
-class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -603,7 +585,7 @@ class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute>
   }
 }
 
-class LineModifier implements AttributeModifier<LineAttribute> {
+export class LineModifier implements AttributeModifier<LineAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -618,7 +600,7 @@ class LineModifier implements AttributeModifier<LineAttribute> {
   }
 }
 
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -633,7 +615,7 @@ class ListModifier implements AttributeModifier<ListAttribute> {
   }
 }
 
-class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -648,7 +630,7 @@ class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   }
 }
 
-class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -663,7 +645,7 @@ class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute>
   }
 }
 
-class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -678,7 +660,7 @@ class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttrib
   }
 }
 
-class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -693,7 +675,7 @@ class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   }
 }
 
-class MenuModifier implements AttributeModifier<MenuAttribute> {
+export class MenuModifier implements AttributeModifier<MenuAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -708,7 +690,7 @@ class MenuModifier implements AttributeModifier<MenuAttribute> {
   }
 }
 
-class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -723,7 +705,7 @@ class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   }
 }
 
-class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -738,7 +720,7 @@ class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute>
   }
 }
 
-class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -753,7 +735,7 @@ class NavDestinationModifier implements AttributeModifier<NavDestinationAttribut
   }
 }
 
-class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -768,7 +750,7 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   }
 }
 
-class PathModifier implements AttributeModifier<PathAttribute> {
+export class PathModifier implements AttributeModifier<PathAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -783,7 +765,7 @@ class PathModifier implements AttributeModifier<PathAttribute> {
   }
 }
 
-class PolygonModifier implements AttributeModifier<PolygonAttribute> {
+export class PolygonModifier implements AttributeModifier<PolygonAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -798,7 +780,7 @@ class PolygonModifier implements AttributeModifier<PolygonAttribute> {
   }
 }
 
-class PolylineModifier implements AttributeModifier<PolylineAttribute> {
+export class PolylineModifier implements AttributeModifier<PolylineAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -813,7 +795,7 @@ class PolylineModifier implements AttributeModifier<PolylineAttribute> {
   }
 }
 
-class ProgressModifier implements AttributeModifier<ProgressAttribute> {
+export class ProgressModifier implements AttributeModifier<ProgressAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -828,7 +810,7 @@ class ProgressModifier implements AttributeModifier<ProgressAttribute> {
   }
 }
 
-class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -843,7 +825,7 @@ class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   }
 }
 
-class RadioModifier implements AttributeModifier<RadioAttribute> {
+export class RadioModifier implements AttributeModifier<RadioAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -858,7 +840,7 @@ class RadioModifier implements AttributeModifier<RadioAttribute> {
   }
 }
 
-class RatingModifier implements AttributeModifier<RatingAttribute> {
+export class RatingModifier implements AttributeModifier<RatingAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -873,7 +855,7 @@ class RatingModifier implements AttributeModifier<RatingAttribute> {
   }
 }
 
-class RectModifier implements AttributeModifier<RectAttribute> {
+export class RectModifier implements AttributeModifier<RectAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -888,7 +870,7 @@ class RectModifier implements AttributeModifier<RectAttribute> {
   }
 }
 
-class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -903,7 +885,7 @@ class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   }
 }
 
-class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -918,7 +900,7 @@ class RelativeContainerModifier implements AttributeModifier<RelativeContainerAt
   }
 }
 
-class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -933,7 +915,7 @@ class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   }
 }
 
-class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -948,7 +930,7 @@ class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   }
 }
 
-class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -963,7 +945,7 @@ class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   }
 }
 
-class RowModifier implements AttributeModifier<RowAttribute> {
+export class RowModifier implements AttributeModifier<RowAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -978,7 +960,7 @@ class RowModifier implements AttributeModifier<RowAttribute> {
   }
 }
 
-class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -993,7 +975,7 @@ class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   }
 }
 
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -1008,7 +990,7 @@ class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   }
 }
 
-class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -1023,7 +1005,7 @@ class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   }
 }
 
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -1038,7 +1020,7 @@ class SearchModifier implements AttributeModifier<SearchAttribute> {
   }
 }
 
-class SelectModifier implements AttributeModifier<SelectAttribute> {
+export class SelectModifier implements AttributeModifier<SelectAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -1053,7 +1035,7 @@ class SelectModifier implements AttributeModifier<SelectAttribute> {
   }
 }
 
-class ShapeModifier implements AttributeModifier<ShapeAttribute> {
+export class ShapeModifier implements AttributeModifier<ShapeAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -1068,7 +1050,7 @@ class ShapeModifier implements AttributeModifier<ShapeAttribute> {
   }
 }
 
-class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -1083,7 +1065,7 @@ class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttr
   }
 }
 
-class SliderModifier implements AttributeModifier<SliderAttribute> {
+export class SliderModifier implements AttributeModifier<SliderAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -1098,7 +1080,7 @@ class SliderModifier implements AttributeModifier<SliderAttribute> {
   }
 }
 
-class SpanModifier implements AttributeModifier<SpanAttribute> {
+export class SpanModifier implements AttributeModifier<SpanAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -1113,7 +1095,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
   }
 }
 
-class StackModifier implements AttributeModifier<StackAttribute> {
+export class StackModifier implements AttributeModifier<StackAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -1128,7 +1110,7 @@ class StackModifier implements AttributeModifier<StackAttribute> {
   }
 }
 
-class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -1143,7 +1125,7 @@ class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   }
 }
 
-class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -1158,7 +1140,7 @@ class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   }
 }
 
-class TabsModifier implements AttributeModifier<TabsAttribute> {
+export class TabsModifier implements AttributeModifier<TabsAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -1173,7 +1155,7 @@ class TabsModifier implements AttributeModifier<TabsAttribute> {
   }
 }
 
-class TextModifier implements AttributeModifier<TextAttribute> {
+export class TextModifier implements AttributeModifier<TextAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -1188,7 +1170,7 @@ class TextModifier implements AttributeModifier<TextAttribute> {
   }
 }
 
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -1203,7 +1185,7 @@ class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   }
 }
 
-class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -1218,7 +1200,7 @@ class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   }
 }
 
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -1233,7 +1215,7 @@ class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   }
 }
 
-class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -1248,7 +1230,7 @@ class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   }
 }
 
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -1263,7 +1245,7 @@ class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   }
 }
 
-class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -1278,7 +1260,7 @@ class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   }
 }
 
-class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -1293,7 +1275,7 @@ class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   }
 }
 
-class VideoModifier implements AttributeModifier<VideoAttribute> {
+export class VideoModifier implements AttributeModifier<VideoAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -1308,7 +1290,7 @@ class VideoModifier implements AttributeModifier<VideoAttribute> {
   }
 }
 
-class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -1323,7 +1305,7 @@ class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   }
 }
 
-class WebModifier implements AttributeModifier<WebAttribute> {
+export class WebModifier implements AttributeModifier<WebAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -1338,7 +1320,7 @@ class WebModifier implements AttributeModifier<WebAttribute> {
   }
 }
 
-class WindowSceneModifier implements AttributeModifier<WindowSceneAttribute> {
+export class WindowSceneModifier implements AttributeModifier<WindowSceneAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -1353,7 +1335,7 @@ class WindowSceneModifier implements AttributeModifier<WindowSceneAttribute> {
   }
 }
 
-class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   mShadow: ShadowOptions = {
     radius: 35,
     type: ShadowType.COLOR,
@@ -1436,11 +1418,6 @@ function commonStyle(this: FlexAttribute, componentKey: string) {
 }
 
 function commonStyle(this: FlowItemAttribute, componentKey: string) {
-  this.key(componentKey)
-  return this
-}
-
-function commonStyle(this: FormLinkAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
@@ -1782,7 +1759,6 @@ struct ShadowPage {
   @State _shadowEllipseModifier: EllipseModifier = new EllipseModifier()
   @State _shadowFlexModifier: FlexModifier = new FlexModifier()
   @State _shadowFlowItemModifier: FlowItemModifier = new FlowItemModifier()
-  @State _shadowFormLinkModifier: FormLinkModifier = new FormLinkModifier()
   @State _shadowGaugeModifier: GaugeModifier = new GaugeModifier()
   @State _shadowGridModifier: GridModifier = new GridModifier()
   @State _shadowGridColModifier: GridColModifier = new GridColModifier()
@@ -1944,7 +1920,7 @@ struct ShadowPage {
         Marquee({
           start: true,
           step: 50,
-          loop: Infinity as Int,
+          loop: Infinity.toInt(),
           fromStart: true,
           src: 'Running Marquee starts rolling'
         })
@@ -2493,17 +2469,6 @@ struct ShadowPage {
           .backgroundColor('#FFFF00')
           .commonStyle(this.componentKey)
           .attributeModifier(this._shadowCanvasModifier)
-      }
-      if (this.targetView == 'FormLink') {
-        FormLink({
-          action: "router",
-          abilityName: "EntryAbility",
-          params: { message: 'testForRouter' } as ObjElement
-        } as FormLinkOptions) {
-          Button("router event").width(120)
-        }
-        .commonStyle(this.componentKey)
-        .attributeModifier(this._shadowFormLinkModifier)
       }
       if (this.targetView == 'Hyperlink') {
         Hyperlink('https://example.com/', 'Go to the developer website') {

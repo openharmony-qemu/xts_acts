@@ -13,6 +13,13 @@
  * limitations under the License.
  */
 import ErrormangerTest from './errormanger.test';
+import ErrormangerLeakUpTest from './ErrorMangerLeakUp.test';
+import ResourceTypeTest from './AiResourceType.test';
+import SetDefaultResourceUsageObserverTest from './AiSetDefaultResourceUsageObserver.test';
+
 export default function testsuite() {
   ErrormangerTest();
+  ErrormangerLeakUpTest();
+  ResourceTypeTest();
+  SetDefaultResourceUsageObserverTest();
 }

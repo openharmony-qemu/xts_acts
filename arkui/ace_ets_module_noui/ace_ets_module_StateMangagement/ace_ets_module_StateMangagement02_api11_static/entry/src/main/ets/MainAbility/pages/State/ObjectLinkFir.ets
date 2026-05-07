@@ -56,7 +56,7 @@ import common from '@ohos.app.ability.common';
 
 // 引入FirClassA,第一层
 @Observed
-class FirClassA {
+export class FirClassA {
   public b:number = 1
 
   constructor(b:number) {

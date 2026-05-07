@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,12 +21,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -36,229 +36,223 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, EffectComponentAttribute, FormComponentAttribute,
   ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, Alignment, AlignRuleOption } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 
-class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
     console.info(`align page show ${JSON.stringify(this.mAlign)}`)
    instance.align(this.mAlign)
   }
 }
-class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: BadgeAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class BlankModifier implements AttributeModifier<BlankAttribute> {
+export class BlankModifier implements AttributeModifier<BlankAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: BlankAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: ButtonAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: CalendarPickerAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: CheckboxAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: CheckboxGroupAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: ColumnAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: ColumnSplitAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class CounterModifier implements AttributeModifier<CounterAttribute> {
+export class CounterModifier implements AttributeModifier<CounterAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: CounterAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: DataPanelAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: DatePickerAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: DividerAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
+export class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: EffectComponentAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class FlexModifier implements AttributeModifier<FlexAttribute> {
+export class FlexModifier implements AttributeModifier<FlexAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: FlexAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: FlowItemAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
+export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: FormComponentAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mAlign: Alignment = Alignment.Top
-  applyNormalAttribute(instance: FormLinkAttribute): void {
-   instance.align(this.mAlign)
-  }
-}
-class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: GaugeAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class GridModifier implements AttributeModifier<GridAttribute> {
+export class GridModifier implements AttributeModifier<GridAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: GridAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class GridColModifier implements AttributeModifier<GridColAttribute> {
+export class GridColModifier implements AttributeModifier<GridColAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: GridColAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: GridItemAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: GridRowAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: HyperlinkAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: ImageAnimatorAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
+export class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: ImageSpanAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class ImageModifier implements AttributeModifier<ImageAttribute> {
+export class ImageModifier implements AttributeModifier<ImageAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: ImageAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: ListAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: ListItemAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: ListItemGroupAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: LoadingProgressAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: MarqueeAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class MenuModifier implements AttributeModifier<MenuAttribute> {
+export class MenuModifier implements AttributeModifier<MenuAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: MenuAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: MenuItemAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: MenuItemGroupAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: NavDestinationAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: NavigationAttribute): void {
    instance.align(this.mAlign)
@@ -276,205 +270,205 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 
 
 
-class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
+export class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: PatternLockAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
+export class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: PluginComponentAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: QRCodeAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class RadioModifier implements AttributeModifier<RadioAttribute> {
+export class RadioModifier implements AttributeModifier<RadioAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: RadioAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class RatingModifier implements AttributeModifier<RatingAttribute> {
+export class RatingModifier implements AttributeModifier<RatingAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: RatingAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: RefreshAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: RelativeContainerAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: RemoteWindowAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: RichEditorAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: RichTextAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class RowModifier implements AttributeModifier<RowAttribute> {
+export class RowModifier implements AttributeModifier<RowAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: RowAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: RowSplitAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: ScrollAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: ScrollBarAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: SearchAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class SelectModifier implements AttributeModifier<SelectAttribute> {
+export class SelectModifier implements AttributeModifier<SelectAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: SelectAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: SideBarContainerAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class SliderModifier implements AttributeModifier<SliderAttribute> {
+export class SliderModifier implements AttributeModifier<SliderAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: SliderAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class StackModifier implements AttributeModifier<StackAttribute> {
+export class StackModifier implements AttributeModifier<StackAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: StackAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: SwiperAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: TabContentAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class TabsModifier implements AttributeModifier<TabsAttribute> {
+export class TabsModifier implements AttributeModifier<TabsAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: TabsAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class TextModifier implements AttributeModifier<TextAttribute> {
+export class TextModifier implements AttributeModifier<TextAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: TextAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: TextAreaAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: TextClockAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: TextInputAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: TextPickerAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: TextTimerAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: TimePickerAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: ToggleAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
+export class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: UIExtensionComponentAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: WaterFlowAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class WebModifier implements AttributeModifier<WebAttribute> {
+export class WebModifier implements AttributeModifier<WebAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: WebAttribute): void {
    instance.align(this.mAlign)
   }
 }
-class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   mAlign: Alignment = Alignment.Top
   applyNormalAttribute(instance: XComponentAttribute): void {
    instance.align(this.mAlign)
@@ -502,7 +496,6 @@ struct alignPage {
   @State _alignFlexMod: FlexModifier = new FlexModifier()
   @State _alignFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _alignFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _alignFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _alignGaugeMod: GaugeModifier = new GaugeModifier()
   @State _alignGridMod: GridModifier = new GridModifier()
   @State _alignGridColMod: GridColModifier = new GridColModifier()
@@ -597,7 +590,6 @@ struct alignPage {
       this._alignFlexMod.mAlign = value.align
       this._alignFlowItemMod.mAlign = value.align
       this._alignFormComponentMod.mAlign = value.align
-      this._alignFormLinkMod.mAlign = value.align
       this._alignGaugeMod.mAlign = value.align
       this._alignGridMod.mAlign = value.align
       this._alignGridColMod.mAlign = value.align
@@ -709,7 +701,7 @@ struct alignPage {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity as int,
+            loop: Infinity.toInt(),
             fromStart: true,
             src: 'Running Marquee starts rolling'
           }).attributeModifier(this._alignMarqueeMod)

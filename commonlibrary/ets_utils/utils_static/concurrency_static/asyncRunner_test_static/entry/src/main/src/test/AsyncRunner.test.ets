@@ -83,7 +83,7 @@ import { A, B, cancelById, fun, getLongString, printArgs, printStrArgs, StrCat }
 import { SendableClass, SendableClassTest, SimpleSendable } from '../utils/Sendable';
 import HashMap from '@ohos.util.HashMap';
 
-export default function asyncRunnerTest() {
+export default function asyncRunnerTest(): void {
   describe('asyncRunnerTest', () => {
     /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TASKPOOL_0207
@@ -166,7 +166,7 @@ export default function asyncRunnerTest() {
         try {
           // asyncRunner.execute(task, 4);
           const fourInt: int = 4;
-          const badPriority: taskpool.Priority = fourInt as taskpool.Priority;
+          const badPriority: taskpool.Priority = taskpool.Priority.fromValue(fourInt);
 
           asyncRunner.execute(task, badPriority);
 

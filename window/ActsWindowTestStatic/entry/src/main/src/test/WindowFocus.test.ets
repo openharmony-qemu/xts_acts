@@ -86,7 +86,7 @@ export default function WindowFocusTest() {
                     let subWindowId = subWindowClass.getWindowProperties().id;
                     let mainWindowId = mainWindow.getWindowProperties().id;
                     hilog.info(domain, tag,caseName+ ' subWindowId: ' + JSON.stringify(subWindowId) +','+' mainWindowId: ' + JSON.stringify(mainWindowId) );
-                    waitForCompletion(async () => {await subWindowClass.destroyWindow();})
+                    subWindowClass.destroyWindow().awaitSync()
                     let promise2 = window.shiftAppWindowPointerEvent(mainWindowId,subWindowId);
                     promise2.then(() => {
                         hilog.info(domain, tag,caseName+ ' Succeeded in shifting app window pointer event');
@@ -142,7 +142,7 @@ export default function WindowFocusTest() {
                 };
                 let promise1 = window.createWindow(config);
                 promise1.then((data:window.Window) => {
-                    waitForCompletion(async () => {
+                    (async () => {
                     let dialogWindowClass:window.Window = data;
                     hilog.info(domain, tag,caseName+ ' Succeeded in creating the subwindow. Data: ' + data);
                     await dialogWindowClass.setUIContent('pages/index2');
@@ -157,7 +157,7 @@ export default function WindowFocusTest() {
                         expect(false).assertTrue();
                         done();
                     }).catch((err: Error):PromiseLike<void>|undefined => {
-                        waitForCompletion(async () => {
+                        (async () => {
                         hilog.error(domain, tag,`${caseName} :Failed to shift app window pointer event. Cause code: ${err.code}, message: ${err.message}`);
                         await dialogWindowClass.destroyWindow();
                         if(err.code == 801){
@@ -168,9 +168,9 @@ export default function WindowFocusTest() {
                             expect(false).assertTrue();
                             done();
                         }
-                        })
+                        })().awaitSync()
                     });
-                    })
+                    })().awaitSync()
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(domain, tag,`${caseName} :Failed to create the dialogwindow. Cause code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue();

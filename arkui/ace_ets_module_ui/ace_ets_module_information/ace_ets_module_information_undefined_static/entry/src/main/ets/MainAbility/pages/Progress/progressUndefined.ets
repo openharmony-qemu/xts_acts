@@ -29,7 +29,7 @@ import inspector from '@ohos.arkui.inspector'
 
 type ProgressBuilder = @Builder(config:ProgressConfiguration) => void;
 
-class MyProgressModifier implements ContentModifier<ProgressConfiguration> {
+export class MyProgressModifier implements ContentModifier<ProgressConfiguration> {
   public color: Color = Color.White
 
   constructor(color: Color) {

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -70,7 +70,7 @@ export default function ChipAction2() {
 it('ChipAction2_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       console.info('ChipAction2_static_001 START');
-      let ChipActionCol = CommonFunc.getComponentRect('ChipAction2Col');
+      let ChipActionCol = await CommonFunc.getComponentRect('ChipAction2Col');
       await CommonFunc.sleep(200);
       let right = ChipActionCol.right - uiContext.vp2px(22);
       let top = ChipActionCol.top + uiContext.vp2px(18);
@@ -78,7 +78,7 @@ it('ChipAction2_static_001', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('ChipAction2_static_001 right：' + right + 'top:' + top);
       let driver = Driver.create();
       await driver.mouseClick({
-        x: Math.round(right) as int, y: Math.round(top) as int
+        x: Math.round(right).toInt(), y: Math.round(top).toInt()
       }, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
       console.info('ChipAction2_static_001 click success');

@@ -25,7 +25,7 @@ struct ICustomDialog {
       Button('close dialog')
         .id('getDialogController001')
         .onClick(() => {
-            this.getDialogController().close();
+          this.getDialogController().close();
         })
       Button('点我获取状态：通过外部传递的DialogController')
         .onClick(() => {
@@ -54,9 +54,10 @@ struct Index {
 
   build() {
     Row() {
-      Column() {
+      Flex() {
         Button('click me')
           .id('dialogController001')
+          .height('5%')
           .onClick(() => {
             let uiContext = this.getUIContext();
             let promptAction = uiContext.getPromptAction();
@@ -79,12 +80,13 @@ struct Index {
                 this.alertDialogFlag3 = this.dialogController.getState();
               }
             })
-          }).margin({top: '2%'})
+          })
         Text(this.alertDialogFlag1+'').id('alertDialogFlag1')
         Text(this.alertDialogFlag2+'').id('alertDialogFlag2')
         Text(this.alertDialogFlag3+'').id('alertDialogFlag3')
         Text(this.alertDialogFlag4+'').id('alertDialogFlag4')
       }
+      .margin({top: '10%',left:'20%'})
       .width('100%')
       .height('100%')
     }

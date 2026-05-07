@@ -145,7 +145,7 @@ struct PaddingBasePage_Length {
         Marquee({
           start: true,
           step: 50,
-          loop: Infinity as int,
+          loop: Infinity.toInt(),
           fromStart: true,
           src: this.src
         }).applyStyles(this.commonStyle)

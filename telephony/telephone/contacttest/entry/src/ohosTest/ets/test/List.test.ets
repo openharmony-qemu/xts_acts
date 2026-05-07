@@ -30,6 +30,7 @@ import SaveToExistingContactViaUITest from './SaveToExistingContactViaUI.test';
 import SelectContactsTest from './SelectContacts.test';
 import EmptyParamTest from './EmptyParamTest.test';
 import EmptyParamCardTest from './EmptyParamCardTest.test';
+import HasMatchedCallLogTest from './HasMatchedCallLog.test';
 import { deviceInfo } from '@kit.BasicServicesKit'
 import sim from '@ohos.telephony.sim';
 
@@ -39,6 +40,7 @@ export default function testsuite() {
     SelectContactsTest();
     AddContactViaUITest();
     SaveToExistingContactViaUITest();
+    IsMyCardTest();
   } 
   QueryKeyTest();
   QueryByEmailTest();
@@ -46,10 +48,10 @@ export default function testsuite() {
   QueryContactTest();
   UpdateContactTest();
   QueryGroupsTest();
-  IsMyCardTest();
   ContactTest();
   ContactsTest()
   AddContactsTest();
   EmptyParamTest();
   EmptyParamCardTest();
+  HasMatchedCallLogTest();
 }

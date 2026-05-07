@@ -38,6 +38,8 @@ import DeviceKvStoreNullEtsTestStatic from "./DeviceKvStoreNullEtsTest.test";
 import SingleKvStoreNullEtsTestStatic from "./SingleKvStoreNullEtsTest.test";
 import QueryNull from './QueryNull.test';
 import SingleKvStoreNull from './SingleKvStoreNull.test';
+import KVManagerRootDir      from './KVManagerRootDir.test';
+import KVManagerRootDirEntry from './KVManagerRootDirEntry.test';
 
 export default function testsuite() {
   DeviceKvStoreReturnValueStatic();
@@ -60,9 +62,12 @@ export default function testsuite() {
   SingleKvStoreErrCodeEtsTestStatic();
   KvStoreEtsTestStatic();
   KVManagerPromiseTest();
-  SingleKvStoreKVConcurrencyEtsTestStatic();
+  
   DeviceKvStoreNullEtsTestStatic();
   SingleKvStoreNullEtsTestStatic();
   QueryNull();
   SingleKvStoreNull();
+  KVManagerRootDir();
+  KVManagerRootDirEntry();
+  SingleKvStoreKVConcurrencyEtsTestStatic();
 }

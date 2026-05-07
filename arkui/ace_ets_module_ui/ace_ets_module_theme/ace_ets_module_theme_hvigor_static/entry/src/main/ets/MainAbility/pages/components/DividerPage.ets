@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -49,8 +49,8 @@ export class DividerKeys {
 @Entry
 @Component
 struct DividerPage {
-  @StorageLink(dividerThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
-  @StorageLink(dividerThemeProperty) redTheme: CustomTheme | undefined = redCustomTheme;
+  @StorageLink('DividerThemeProperty') localTheme: CustomTheme | undefined = redCustomTheme;
+  @StorageLink('DividerThemeProperty') redTheme: CustomTheme | undefined = redCustomTheme;
   buttonWidth: number = 200;
 
   build() {

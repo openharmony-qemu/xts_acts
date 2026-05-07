@@ -181,7 +181,7 @@ it('searchTest_static_008', Level.LEVEL0, async (done: () => void): Promise<void
       let strJsonNew = inspector.getInspectorByKey('search');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("searchTest_static_008 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').tryGetElement('enableKeyboardOnFocus')).assertEqual(undefined);
+      expect(objNew.getElement('$attrs').getString('enableKeyboardOnFocus')).assertEqual('true');
       console.info('searchTest_static_008 END');
       done();
     });
@@ -199,7 +199,7 @@ it('searchTest_static_009', Level.LEVEL0, async (done: () => void): Promise<void
       let strJsonNew = inspector.getInspectorByKey('search');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("searchTest_static_009 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').tryGetElement('selectionMenuHidden')).assertEqual(undefined);
+      expect(objNew.getElement('$attrs').getString('selectionMenuHidden')).assertEqual('true');
       console.info('searchTest_static_009 END');
       done();
     });

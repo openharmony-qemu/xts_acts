@@ -104,96 +104,108 @@ struct promptActionPage {
   }
 
   build() {
-    Row() {
-      Column() {
-        Button('click me')
-          .id('btnOpenDialog')
-          .margin({ bottom: 36, top: 20 })
-          .onClick(() => {
-            let uiContext = this.getUIContext();
-            let promptActionInstance = uiContext.getPromptAction();
-            let contentNode = new ComponentContent(uiContext, wrapBuilder(buildText),
-            );
+    Column() {
+      Button('click me')
+        .id('btnOpenDialog')
+        .width('60%')
+        .height('5%')
+        .onClick(() => {
+          let uiContext = this.getUIContext();
+          let promptActionInstance = uiContext.getPromptAction();
+          let contentNode = new ComponentContent<Object>(uiContext, wrapBuilder(buildText),
+          );
 
-            promptActionInstance.openCustomDialogWithController(contentNode, this.dialogController, {
+          promptActionInstance.openCustomDialogWithController(contentNode, this.dialogController, {
 
-              transition: TransitionEffect.OPACITY.animation({
-                duration: 3000
-              })
-            }).then(() => {
-              console.info('promptAction openCustomDialogWithController succeeded')
+            transition: TransitionEffect.OPACITY.animation({
+              duration: 3000
             })
+          }).then(() => {
+            console.info('promptAction openCustomDialogWithController succeeded')
           })
+        })
 
-        Text(this.stateInfo)
-          .key('stateInfo')
-          .fontSize(36)
-          .margin({ bottom: 36 })
+      Text(this.stateInfo)
+        .width('60%')
+        .height('5%')
+        .key('stateInfo')
+        .fontSize(36)
+        .margin({ bottom: 4 })
 
-        Button('点我获取状态')
-          .id('btnGetState')
-          .onClick(() => {
-            this.stateInfo = '' + this.dialogController.getState();
+      Button('点我获取状态')
+        .width('60%')
+        .height('5%')
+        .id('btnGetState')
+        .onClick(() => {
+          this.stateInfo = '' + this.dialogController.getState();
+        })
+
+      Button('Show ActionMenu')
+        .width('60%')
+        .height('5%')
+        .id('btnShowActionMenu')
+        .margin({ top: 5, bottom: 5 })
+        .onClick(() => {
+          let uiContext = this.getUIContext();
+          let promptActionInstance = uiContext.getPromptAction();
+          let button1: promptAction.Button = {
+            text: 'item1',
+            color: '#666666'
+          };
+          let button2: promptAction.Button = {
+            text: 'item2',
+            color: '#000000'
+          };
+          let actionMenuOptions: promptAction.ActionMenuOptions = {
+            title: 'ActionMenu Title',
+            buttons: [button1, button2],
+            onWillAppear: () => {
+              this.onWillAppearResult = 'onWillAppear_called';
+            },
+            onDidAppear: () => {
+              this.onDidAppearResult = 'onDidAppear_called';
+            },
+            onWillDisappear: () => {
+              this.onWillDisappearResult = 'onWillDisappear_called';
+            },
+            onDidDisappear: () => {
+              this.onDidDisappearResult = 'onDidDisappear_called';
+            }
+          };
+          promptActionInstance.showActionMenu(actionMenuOptions).then(() => {
+            console.info('showActionMenu succeeded')
           })
+        })
 
-        Button('Show ActionMenu')
-          .id('btnShowActionMenu')
-          .margin({ top: 20, bottom: 20 })
-          .onClick(() => {
-            let uiContext = this.getUIContext();
-            let promptActionInstance = uiContext.getPromptAction();
-            let button1: promptAction.Button = {
-              text: 'item1',
-              color: '#666666'
-            };
-            let button2: promptAction.Button = {
-              text: 'item2',
-              color: '#000000'
-            };
-            let actionMenuOptions: promptAction.ActionMenuOptions = {
-              title: 'ActionMenu Title',
-              buttons: [button1, button2],
-              onWillAppear: () => {
-                this.onWillAppearResult = 'onWillAppear_called';
-              },
-              onDidAppear: () => {
-                this.onDidAppearResult = 'onDidAppear_called';
-              },
-              onWillDisappear: () => {
-                this.onWillDisappearResult = 'onWillDisappear_called';
-              },
-              onDidDisappear: () => {
-                this.onDidDisappearResult = 'onDidDisappear_called';
-              }
-            };
-            promptActionInstance.showActionMenu(actionMenuOptions).then(() => {
-              console.info('showActionMenu succeeded')
-            })
-          })
+      Text(this.onWillAppearResult)
+        .width('60%')
+        .height('5%')
+        .key('onWillAppearResult')
+        .fontSize(20)
+        .margin({ bottom: 4 })
 
-        Text(this.onWillAppearResult)
-          .key('onWillAppearResult')
-          .fontSize(20)
-          .margin({ bottom: 10 })
+      Text(this.onDidAppearResult)
+        .width('60%')
+        .height('5%')
+        .key('onDidAppearResult')
+        .fontSize(20)
+        .margin({ bottom: 4 })
 
-        Text(this.onDidAppearResult)
-          .key('onDidAppearResult')
-          .fontSize(20)
-          .margin({ bottom: 10 })
+      Text(this.onWillDisappearResult)
+        .width('60%')
+        .height('5%')
+        .key('onWillDisappearResult')
+        .fontSize(20)
+        .margin({ bottom: 4 })
 
-        Text(this.onWillDisappearResult)
-          .key('onWillDisappearResult')
-          .fontSize(20)
-          .margin({ bottom: 10 })
-
-        Text(this.onDidDisappearResult)
-          .key('onDidDisappearResult')
-          .fontSize(20)
-          .margin({ bottom: 10 })
-      }
-      .width('100%')
-      .height('100%')
+      Text(this.onDidDisappearResult)
+        .width('60%')
+        .height('5%')
+        .key('onDidDisappearResult')
+        .fontSize(20)
+        .margin({ bottom: 4 })
     }
+    .width('100%')
     .height('100%')
   }
 }

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,7 +47,7 @@ const uiContext = new UIContext();
 export default function RotationGestureBasic01Test() {
   describe('RotationGestureBasic01Test', () => {
     
-    waitForCompletion(async ()=>{await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")})
+    UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility").awaitSync()
     
 
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!
@@ -112,10 +112,10 @@ it('RotationGestureBasic01Test_static_0010', Level.LEVEL0, async (done: () => vo
       await CommonFunc.sleep(1000);
       let pointers: PointerMatrix = PointerMatrix.create(2, 2) as PointerMatrix;
       await CommonFunc.sleep(2000);
-      pointers.setPoint(0, 0, { x: Math.round(areaObj1.left) as Int, y: Math.round(areaObj1.top) as Int } as Point);
-      pointers.setPoint(0, 1, { x: Math.round(areaObj1.right) as Int, y: Math.round(areaObj1.top) as Int } as Point);
-      pointers.setPoint(1, 0, { x: Math.round(areaObj1.right) as Int, y: Math.round(areaObj1.bottom) as Int } as Point);
-      pointers.setPoint(1, 1, { x: Math.round(areaObj1.left) as Int, y: Math.round(areaObj1.bottom) as Int } as Point);
+      pointers.setPoint(0, 0, { x: Math.round(areaObj1.left).toInt(), y: Math.round(areaObj1.top).toInt() } as Point);
+      pointers.setPoint(0, 1, { x: Math.round(areaObj1.right).toInt(), y: Math.round(areaObj1.top).toInt() } as Point);
+      pointers.setPoint(1, 0, { x: Math.round(areaObj1.right).toInt(), y: Math.round(areaObj1.bottom).toInt() } as Point);
+      pointers.setPoint(1, 1, { x: Math.round(areaObj1.left).toInt(), y: Math.round(areaObj1.bottom).toInt() } as Point);
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);
       // 拖动之后重新获取当前区域的位置信息

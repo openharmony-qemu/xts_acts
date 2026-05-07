@@ -33,7 +33,7 @@ struct DismissReasonIndex {
 
   build() {
     Column() {
-      Text(this.slideValue).key('dismissReasonSlideValue');
+      Text(this.slideValue).key('dismissReasonSlideValue').height('5%');
     }
     .width('100%')
     .height('100%');

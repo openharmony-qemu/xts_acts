@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,7 +16,7 @@
 // BasicDataSource实现了IDataSource接口，用于管理listener监听，以及通知LazyForEach数据更新
 import {IDataSource, DataChangeListener, DataOperation} from '@ohos.arkui.component';
 
-abstract class BasicDataSource implements IDataSource<string> {
+export abstract class BasicDataSource implements IDataSource<string> {
   private listeners: DataChangeListener[] = [];
   private originDataArray: string[] = [];
 

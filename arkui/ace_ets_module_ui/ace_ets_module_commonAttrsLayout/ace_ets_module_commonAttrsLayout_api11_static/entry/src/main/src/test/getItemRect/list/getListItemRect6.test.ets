@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -85,7 +85,7 @@ it('getListItemRect6_static_0100', Level.LEVEL0, async (done: () => void): Promi
       await CommonFunc.sleep(1000);
 
       console.log('get Initial value')
-      let listItem_4: RectValue = CommonFunc.getComponentRect('getListItemRect6_listItem_4') as RectValue;
+      let listItem_4: RectValue = await CommonFunc.getComponentRect('getListItemRect6_listItem_4') as RectValue;
 
 
       let driver = Driver.create();
@@ -94,13 +94,13 @@ it('getListItemRect6_static_0100', Level.LEVEL0, async (done: () => void): Promi
       console.log('delete')
       await driver.swipe(
         Math.round((listItem_4.right - listItem_4.left) * 0.9 + listItem_4.left +
-        Number(AppStorage.get<number>("winLeft"))) as int,
+        Number(AppStorage.get<number>("winLeft"))).toInt(),
         Math.round((listItem_4.bottom - listItem_4.top) * 0.5 + listItem_4.top +
-        Number(AppStorage.get<number>("winTop"))) as int,
+        Number(AppStorage.get<number>("winTop"))).toInt(),
         Math.round((listItem_4.right - listItem_4.left) * 0.1 + listItem_4.left +
-        Number(AppStorage.get<number>("winLeft"))) as int,
+        Number(AppStorage.get<number>("winLeft"))).toInt(),
         Math.round((listItem_4.bottom - listItem_4.top) * 0.5 + listItem_4.top +
-        Number(AppStorage.get<number>("winTop"))) as int
+        Number(AppStorage.get<number>("winTop"))).toInt()
       )
       await CommonFunc.sleep(1000);
 

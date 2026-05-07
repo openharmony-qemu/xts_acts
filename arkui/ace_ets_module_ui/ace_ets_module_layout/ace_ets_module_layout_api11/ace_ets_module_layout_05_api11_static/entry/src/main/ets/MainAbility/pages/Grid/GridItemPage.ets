@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -32,7 +32,7 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct GridItemPage {
-  @State numbers: string[] = Array.from(Array(16).keys() as Iterable<number>).map((item: number) => String(item));
+  @State numbers: string[] = Array.from(Array.create<int>(16, 0).keys()).map((item: int) => item.toString());
   @State rowStart: int = 1
   @State rowEnd: int = 4
   @State columnStart: int = 1
@@ -48,16 +48,16 @@ struct GridItemPage {
     let callback: Callback<string> = (message: Message<string>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'rowStart') {
-        this.rowStart = Number.parseInt(message.value) as int
+        this.rowStart = Int.parseInt(message.value, 10)
       }
       if (message.name == 'rowEnd') {
-        this.rowEnd = Number.parseInt(message.value) as int
+        this.rowEnd = Int.parseInt(message.value, 10)
       }
       if (message.name == 'columnStart') {
-        this.columnStart = Number.parseInt(message.value) as int
+        this.columnStart = Int.parseInt(message.value, 10)
       }
       if (message.name == 'columnEnd') {
-        this.columnEnd = Number.parseInt(message.value) as int
+        this.columnEnd = Int.parseInt(message.value, 10)
       }
       if (message.name == 'forceRebuild') {
         this.forceRebuild = Boolean(message.value)

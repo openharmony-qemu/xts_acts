@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -57,9 +57,9 @@ const router = AppStorage.get<Router>("router") as Router
 AppStorage.clear()
 AppStorage.setOrCreate<Router>('router', router);
 
-enum He2 {Q = 1, W, E}
+export enum He2 {Q = 1, W, E}
 
-class Model2 {
+export class Model2 {
   value: number
 
   constructor(value: number) {
@@ -95,7 +95,18 @@ struct LocalStoagePropTwo {
 
   build() {
     Column() {
-      Text(`Prop1:${JSON.stringify(storage220.get<Model2>('Prop1'))}, Prop2:${storage220.get<number>('Prop2')}, Prop3:${storage220.get<boolean>('Prop3')}, Prop4:${storage220.get<string>('Prop4')}, Prop5:${storage220.get<He2>('Prop5')}, Prop6:${JSON.stringify(UIUtils.getTarget(storage220.get<ValuePropTwoType>('Prop6')))}, Prop7:${JSON.stringify(storage220.get<Array<Model2>>('Prop7'))}, Prop8:${JSON.stringify(storage220.get<Array<number>>('Prop8'))}, Prop9:${JSON.stringify(storage220.get<Array<boolean>>('Prop9'))}, Prop10:${JSON.stringify(storage220.get<Array<string>>('Prop10'))}, Prop11:${JSON.stringify(storage220.get<Array<He2>>('Prop11'))}, Prop12:${JSON.stringify(UIUtils.getTarget(storage220.get<Array<object>>('Prop12')))}`)
+      Text(`Prop1:${JSON.stringify(storage220.get<Model2>('Prop1'))},
+            Prop2:${storage220.get<number>('Prop2')},
+            Prop3:${storage220.get<boolean>('Prop3')},
+            Prop4:${storage220.get<string>('Prop4')},
+            Prop5:${storage220.get<He2>('Prop5')},
+            Prop6:${JSON.stringify(UIUtils.getTarget(storage220.get<ValuePropTwoType>('Prop6')!))},
+            Prop7:${JSON.stringify(storage220.get<Array<Model2>>('Prop7'))},
+            Prop8:${JSON.stringify(storage220.get<Array<number>>('Prop8'))},
+            Prop9:${JSON.stringify(storage220.get<Array<boolean>>('Prop9'))},
+            Prop10:${JSON.stringify(storage220.get<Array<string>>('Prop10'))},
+            Prop11:${JSON.stringify(storage220.get<Array<He2>>('Prop11'))},
+            Prop12:${JSON.stringify(UIUtils.getTarget(storage220.get<Array<object>>('Prop12')!))}`)
         .key('text_getValue4').height('5%')
     }
   }

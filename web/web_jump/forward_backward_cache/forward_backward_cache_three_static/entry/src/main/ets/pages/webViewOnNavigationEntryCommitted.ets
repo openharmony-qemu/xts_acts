@@ -22,7 +22,7 @@ import events_emitter from '@ohos.events.emitter';
 import image from '@ohos.multimedia.image';
 import emitter from '@ohos.events.emitter';
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 

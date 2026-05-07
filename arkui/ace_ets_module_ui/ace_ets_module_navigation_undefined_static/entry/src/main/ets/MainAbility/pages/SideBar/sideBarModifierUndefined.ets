@@ -23,7 +23,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
 @Observed
-class MyModifier1 implements AttributeModifier<SideBarContainerAttribute> {
+export class MyModifier1 implements AttributeModifier<SideBarContainerAttribute> {
   public isUndefined1: boolean = true;
   public isUndefined3: boolean = true;
   public isUndefined4: boolean = true;
@@ -43,7 +43,7 @@ class MyModifier1 implements AttributeModifier<SideBarContainerAttribute> {
 }
 
 @Observed
-class MyModifier2 implements AttributeModifier<SideBarContainerAttribute> {
+export class MyModifier2 implements AttributeModifier<SideBarContainerAttribute> {
   public isUndefined2: boolean = true;
 
   applyNormalAttribute(instance: SideBarContainerAttribute): void {
@@ -59,7 +59,7 @@ class MyModifier2 implements AttributeModifier<SideBarContainerAttribute> {
 }
 
 @Observed
-class MyModifier3 implements AttributeModifier<SideBarContainerAttribute> {
+export class MyModifier3 implements AttributeModifier<SideBarContainerAttribute> {
   public isUndefined8: boolean = true;
 
   applyNormalAttribute(instance: SideBarContainerAttribute): void {
@@ -69,7 +69,7 @@ class MyModifier3 implements AttributeModifier<SideBarContainerAttribute> {
 }
 
 @Observed
-class MyModifier4 implements AttributeModifier<SideBarContainerAttribute> {
+export class MyModifier4 implements AttributeModifier<SideBarContainerAttribute> {
   public isUndefined9: boolean = true;
   public isUndefined10: boolean = true;
   public isUndefined11: boolean = true;

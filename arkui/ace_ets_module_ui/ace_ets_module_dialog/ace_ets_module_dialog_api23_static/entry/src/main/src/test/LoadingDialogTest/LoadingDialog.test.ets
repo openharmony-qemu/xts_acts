@@ -52,7 +52,7 @@ export default function LoadingDialogTest() {
 
     beforeEach(async (): Promise<void> => {
       console.info("[ARKUI_NEW] LoadingDialogTest beforeEach start");
-      
+
       // Ensure any open dialogs are closed before starting new test
       try {
         const dialogController1 = AppStorage.get<CustomDialogController>('loadingDialogController1');
@@ -60,7 +60,7 @@ export default function LoadingDialogTest() {
         const dialogController3 = AppStorage.get<CustomDialogController>('loadingDialogController3');
         const dialogController4 = AppStorage.get<CustomDialogController>('loadingDialogController4');
         const dialogController5 = AppStorage.get<CustomDialogController>('loadingDialogController5');
-        
+
         if (dialogController1) {
           dialogController1.close();
         }
@@ -80,7 +80,7 @@ export default function LoadingDialogTest() {
       } catch (err) {
         // Dialog may not be open, ignore error
       }
-      
+
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/loadingDialog/loadingDialog',
       };
@@ -110,7 +110,7 @@ export default function LoadingDialogTest() {
       if (AppStorage.get<number>('loadingDialogThemeColorMode') != undefined) {
         AppStorage.delete('loadingDialogThemeColorMode');
       }
-      
+
       // Ensure any open dialogs are closed after test
       try {
         const dialogController1 = AppStorage.get<CustomDialogController>('loadingDialogController1');
@@ -118,7 +118,7 @@ export default function LoadingDialogTest() {
         const dialogController3 = AppStorage.get<CustomDialogController>('loadingDialogController3');
         const dialogController4 = AppStorage.get<CustomDialogController>('loadingDialogController4');
         const dialogController5 = AppStorage.get<CustomDialogController>('loadingDialogController5');
-        
+
         if (dialogController1) {
           dialogController1.close();
         }
@@ -138,7 +138,7 @@ export default function LoadingDialogTest() {
       } catch (err) {
         // Dialog may not be open, ignore error
       }
-      
+
       await Utils.sleep(SLEEP_TIME);
       console.info("[ARKUI_NEW] LoadingDialogTest after each called");
     });

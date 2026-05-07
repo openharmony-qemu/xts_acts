@@ -29,7 +29,9 @@ import {
   FlexAlign,
   SheetType,
   SheetKeyboardAvoidMode,
-  ModalTransition
+  ModalTransition,
+  ContentTransitionEffect,
+  MenuKeyboardAvoidMode
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { Router } from '@ohos.arkui.UIContext';
@@ -79,8 +81,12 @@ struct SheetIndex {
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
-      Button('Open Sheet')
+      Button('Sheet')
         .id('bindSheet')
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '88%' })
+        .fontSize(10)
         .onClick((e: ClickEvent) => {
           this.isShow = true
         })
@@ -92,7 +98,7 @@ struct SheetIndex {
           modalTransition: ModalTransition.DEFAULT,
           keyboardAvoidMode: SheetKeyboardAvoidMode.POPUP_SHEET,
           onDetentsDidChange: (value: Int) => {
-            this.value = value as number
+            this.value = value.toDouble()
             console.log('BindSheet onDetentsDidChange.' + value)
           }
         })
@@ -100,5 +106,6 @@ struct SheetIndex {
     .justifyContent(FlexAlign.Center)
     .width('100%')
     .height('100%')
+    .padding({ left: '3%', right: '3%', top: '2%', bottom: '2%' })
   }
 }

@@ -27,6 +27,17 @@ import TapGestureBasicDoubleClickMouseTest from './TapGesture/TapGestureBasicDou
 import TapGestureTemplateTest from './TapGesture/TapGestureTemplateTest.test';
 import tapLocationTest from './TapGestureTest/tapLocation.test';
 import tapLocationTest2 from './TapGestureTest/tapLocation2.test';
+import getCurrentLocalPositionTest_ClickEvent from './getCurrentLocalPositionTest/getCurrentLocalPositionTest_ClickEvent.test';
+import getCurrentLocalPositionTest_TouchEvent from './getCurrentLocalPositionTest/getCurrentLocalPositionTest_TouchEvent.test';
+import getCurrentLocalPositionTest_MouseEvent from './getCurrentLocalPositionTest/getCurrentLocalPositionTest_MouseEvent.test';
+import getCurrentLocalPositionTest_AxisEvent from './getCurrentLocalPositionTest/getCurrentLocalPositionTest_AxisEvent.test';
+import getCurrentLocalPositionTest_EventLocationInfo from './getCurrentLocalPositionTest/getCurrentLocalPositionTest_EventLocationInfo.test';
+import getCurrentLocalPositionTest_FingerInfo from './getCurrentLocalPositionTest/getCurrentLocalPositionTest_FingerInfo.test';
+import getHistoricalPoints from './getHistoricalPointsTest/getHistoricalPoints.test';
+import getHistoricalPoints_displayX from './getHistoricalPointsTest/getHistoricalPoints_displayX.test';
+import getHistoricalPoints_globalDisplayX from './getHistoricalPointsTest/getHistoricalPoints_globalDisplayX.test';
+import getHistoricalPoints_windowX from './getHistoricalPointsTest/getHistoricalPoints_windowX.test';
+
 
 export default function testsuite() {
   TapGesture1();
@@ -43,4 +54,14 @@ export default function testsuite() {
   TapGestureTemplateTest();
   tapLocationTest();
   tapLocationTest2();
+  getCurrentLocalPositionTest_ClickEvent();
+  getCurrentLocalPositionTest_TouchEvent();
+  getCurrentLocalPositionTest_MouseEvent();
+  getCurrentLocalPositionTest_AxisEvent();
+  getCurrentLocalPositionTest_EventLocationInfo();
+  getHistoricalPoints();
+  getCurrentLocalPositionTest_FingerInfo();
+  getHistoricalPoints_displayX();
+  getHistoricalPoints_globalDisplayX();
+  getHistoricalPoints_windowX();
 }

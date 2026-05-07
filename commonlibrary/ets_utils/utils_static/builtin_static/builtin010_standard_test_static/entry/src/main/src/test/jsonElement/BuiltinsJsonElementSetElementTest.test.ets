@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -163,7 +163,7 @@ export default function builtinsJsonElementSetElementTest() {
     it('builtinsJsonElementSetElementTest0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       try {
         const testObject = jsonx.JsonElement.createObject(new Map<string, jsonx.JsonElement>());
-        const octalChar = String.fromCharCode((parseInt("101", 8) as number) as int);
+        const octalChar = String.fromCharCode((parseInt("101", 8) as number).toInt());
         testObject.setElement(octalChar, jsonx.JsonElement.createString("octal101"));
         expect(testObject.tryGetElement(octalChar)!.asString()).assertEqual("octal101");
         const hexChar = "\x42";

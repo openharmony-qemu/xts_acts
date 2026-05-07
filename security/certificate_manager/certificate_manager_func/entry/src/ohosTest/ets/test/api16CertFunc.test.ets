@@ -18,6 +18,7 @@ import { BusinessError } from '@ohos.base';
 import buffer from '@ohos.buffer';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import * as signVerifyPromise from './utils/signAndVerify/signVerifyPromise';
+import * as signVerifyCallback from './utils/signAndVerify/signVerifyCallback';
 
 let caCert = new Uint8Array([0x30, 0x82, 0x04, 0x31, 0x30, 0x82, 0x03, 0x19, 0xa0, 0x03, 0x02, 0x01, 0x02, 0x02, 0x01, 0x00,
   0x30, 0x0d, 0x06, 0x09, 0x2a, 0x86, 0x48, 0x86, 0xf7, 0x0d, 0x01, 0x01, 0x05, 0x05, 0x00, 0x30,
@@ -268,25 +269,21 @@ export default function api16CertFuncTestUnit() {
       let pwd = '123456';
       let alias = 'appCertAliasDemoEcc';
       let level = certManager.AuthStorageLevel.EL1;
-
+      let signSpec: certManager.CMSignatureSpec = {
+        purpose: certManager.CmKeyPurpose.CM_KEY_PURPOSE_SIGN,
+        padding: certManager.CmKeyPadding.CM_PADDING_PSS,
+        digest: certManager.CmKeyDigest.CM_DIGEST_SHA256,
+      }
       try {
         let result: certManager.CMResult = await certManager.installPrivateCertificate(new Uint8Array(priEccCredData), pwd, alias, level);
         console.info('Security_CertManager_InstallPrivateCertificate_Func_0010 installPrivateCertificate promise success! uri:' + JSON.stringify(result.uri))
         keyUri = result.uri;
-        let signSpec: certManager.CMSignatureSpec = {
-          purpose: certManager.CmKeyPurpose.CM_KEY_PURPOSE_SIGN,
-          padding: certManager.CmKeyPadding.CM_PADDING_PSS,
-          digest: certManager.CmKeyDigest.CM_DIGEST_SHA256,
-        }
-        certManager.init(keyUri,signSpec,(err:Error,CMHandle:certManager.CMHandle)=>{
-          console.info("Security_CertManager_InstallPrivateCertificate_Func_0010 init success");
-          expect(CMHandle.handle != null).assertTrue();
-        })
       } catch (e) {
-        console.log("Security_CertManager_InstallPrivateCertificate_Func_0010: e.code " + e.code);
+        console.log("Security_CertManager_InstallPrivateCertificate_Func_0010: failed. e.code " + e.code);
       }
-
       if (keyUri != undefined) {
+        let signHandle:certManager.CMHandle = await signVerifyCallback.initProcess(keyUri,signSpec);
+        expect(signHandle != null).assertTrue();
         await certManager.uninstallPrivateCertificate(keyUri);
       } else {
         console.error("Security_CertManager_InstallPrivateCertificate_Func_0010 keyUri is undefined!");
@@ -1066,8 +1063,8 @@ export default function api16CertFuncTestUnit() {
     });
 
     /**
-     * @tc.name   SUB_Security_CertManager_getCertificateStorePath_0020
-     * @tc.number SUB_Security_CertManager_getCertificateStorePath_0020
+     * @tc.name   SUB_Security_CertManager_installUserTrustedCertificate_0020
+     * @tc.number SUB_Security_CertManager_installUserTrustedCertificate_0020
      * @tc.desc   abnormal test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1088,7 +1085,42 @@ export default function api16CertFuncTestUnit() {
         expect(error.code).assertEqual(401);
       }
       done();
+    });    
+    /**
+     * @tc.name   SUB_Security_CertManager_installUserTrustedCertificate_0021
+     * @tc.number SUB_Security_CertManager_installUserTrustedCertificate_0021
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_installUserTrustedCertificate_0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('SUB_Security_CertManager_installUserTrustedCertificate_0021 start');
+      try {
+        await certManager.installUserTrustedCertificate(null);
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_installUserTrustedCertificate_0021 failed. code:${error.code}`);
+        expect(error.code).assertEqual(401);
+      }
+      done();
     });
-
+    /**
+     * @tc.name   SUB_Security_CertManager_installUserTrustedCertificate_0022
+     * @tc.number SUB_Security_CertManager_installUserTrustedCertificate_0022
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_installUserTrustedCertificate_0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('SUB_Security_CertManager_installUserTrustedCertificate_0022 start');
+      try {
+        await certManager.installUserTrustedCertificate(undefined);
+      } catch (error) {
+        console.error(`SUB_Security_CertManager_installUserTrustedCertificate_0022 failed. code:${error.code}`);
+        expect(error.code).assertEqual(401);
+      }
+      done();
+    });
   })
 }

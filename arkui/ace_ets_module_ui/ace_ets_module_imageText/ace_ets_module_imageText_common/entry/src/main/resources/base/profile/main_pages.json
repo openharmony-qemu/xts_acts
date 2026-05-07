@@ -57,6 +57,12 @@
         "MainAbility/pages/MeasureUtilsTestPage",
         "MainAbility/pages/TextMenuControllerTestPage",
         "MainAbility/pages/UIContext/UIContextFontRegisterFont",
-        "MainAbility/pages/Text/TextMethodsNull2"
+        "MainAbility/pages/UIContext/SetTextSelectionClearPolicy",
+        "MainAbility/pages/Text/TextMethodsNull2",
+        "MainAbility/pages/EllipsisModeTest/TextAreaEllipsisModeTest",
+        "MainAbility/pages/EllipsisModeTest/TextEllipsisModeTest",
+        "MainAbility/pages/Scroll/Marquee",
+        "MainAbility/pages/EllipsisModeTest/TextInputEllipsisModeTest"
+
     ]
 }

@@ -16,6 +16,8 @@ group("ActsAceEtsModuleImageTextTest") {
   testonly = true
   if (ace_engine_feature_wearable) {
     deps = [
+      "ace_c_module_imageText_common:ActsAceCArkUIImageTextCommonTest",
+      "ace_ets_module_badge_static:ActsAceEtsModuleBadgeStaticTest",
       "ace_ets_module_imageText_api11_other:ActsAceEtsModuleImageTextApi11OtherTest",
       "ace_ets_module_imageText_api20:ActsAceEtsModuleImageTextApi20Test",
       "ace_ets_module_imageText_api21:ActsAceEtsModuleImageTextApi21Test",
@@ -38,9 +40,24 @@ group("ActsAceEtsModuleImageTextTest") {
       "ace_ets_module_imageText_api16_static:ActsAceEtsModuleImageTextApi16StaticTest",
       "ace_ets_module_imageText_api18_static:ActsAceEtsModuleImageTextApi18StaticTest",
       "ace_ets_module_imageText_api19_static:ActsAceEtsModuleImageTextApi19StaticTest",
+      "ace_ets_module_richeditor_undefined_static:ActsAceEtsModuleRichEditorUndefinedStaticTest",
+      "ace_ets_module_search_undefined_static:ActsAceEtsModuleSearchUndefinedStaticTest",
+      "ace_ets_module_textArea_undefined_static:ActsAceEtsModuleTextAreaUndefinedStaticTest",
+      "ace_ets_module_textInput_undefined_static:ActsAceEtsModuleTextInputUndefinedStaticTest",
+      "ace_ets_module_measure_static:ActsAceEtsModuleMeasureStaticTest",
+      "ace_ets_module_textInput_static:ActsAceEtsModuleTextInputStaticTest",
+      "ace_ets_module_span_static:ActsAceEtsModuleSpanStaticTest",
+      "ace_ets_module_styledString_static:ActsAceEtsModuleStyledStringStaticTest",
+      "ace_ets_module_symbolGlyph_static:ActsAceEtsModuleSymbolGlyphStaticTest",
+      "ace_ets_module_tabContent_static:ActsAceEtsModuleTabContentStaticTest",
+      "ace_ets_module_text_static:ActsAceEtsModuleTextStaticTest",
+      "ace_ets_module_textArea_static:ActsAceEtsModuleTextAreaStaticTest",
+      "ace_ets_module_textCommon_static:ActsAceEtsModuleTextCommonStaticTest",      
     ]
   } else {
     deps = [
+      "ace_c_module_imageText_common:ActsAceCArkUIImageTextCommonTest",
+      "ace_ets_module_badge_static:ActsAceEtsModuleBadgeStaticTest",
       "ace_ets_module_imageText_api11_other:ActsAceEtsModuleImageTextApi11OtherTest",
       "ace_ets_module_imageText_api20:ActsAceEtsModuleImageTextApi20Test",
       "ace_ets_module_imageText_api21:ActsAceEtsModuleImageTextApi21Test",
@@ -74,7 +91,21 @@ group("ActsAceEtsModuleImageTextTest") {
       "ace_ets_module_imageText_api18_static:ActsAceEtsModuleImageTextApi18StaticTest",
       "ace_ets_module_imageText_api19_static:ActsAceEtsModuleImageTextApi19StaticTest",
       "ace_ets_module_imageText_image_static:ActsAceEtsModuleImageTextImageStaticTest",
-      "ace_ets_module_imageText_undefined_static:ActsAceEtsModuleImageTextUndefinedStaticTest"
+      "ace_ets_module_imageText_undefined_static:ActsAceEtsModuleImageTextUndefinedStaticTest",
+      "ace_ets_module_richeditor_static:ActsAceEtsModuleRichEditorStaticTest",
+      "ace_ets_module_richeditor_undefined_static:ActsAceEtsModuleRichEditorUndefinedStaticTest",
+      "ace_ets_module_search_static:ActsAceEtsModuleSearchStaticTest",
+      "ace_ets_module_search_undefined_static:ActsAceEtsModuleSearchUndefinedStaticTest",
+      "ace_ets_module_textArea_undefined_static:ActsAceEtsModuleTextAreaUndefinedStaticTest",
+      "ace_ets_module_textInput_undefined_static:ActsAceEtsModuleTextInputUndefinedStaticTest",
+      "ace_ets_module_measure_static:ActsAceEtsModuleMeasureStaticTest",
+      "ace_ets_module_textInput_static:ActsAceEtsModuleTextInputStaticTest",
+      "ace_ets_module_span_static:ActsAceEtsModuleSpanStaticTest",
+      "ace_ets_module_styledString_static:ActsAceEtsModuleStyledStringStaticTest",
+      "ace_ets_module_symbolGlyph_static:ActsAceEtsModuleSymbolGlyphStaticTest",
+      "ace_ets_module_text_static:ActsAceEtsModuleTextStaticTest",
+      "ace_ets_module_textArea_static:ActsAceEtsModuleTextAreaStaticTest",
+      "ace_ets_module_textCommon_static:ActsAceEtsModuleTextCommonStaticTest",
     ]
   }
 }

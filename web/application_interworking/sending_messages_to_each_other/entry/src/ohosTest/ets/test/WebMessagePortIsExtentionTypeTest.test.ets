@@ -19,8 +19,10 @@ import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest';
+import { Driver, ON } from '@kit.TestKit';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 
 export default function webMessagePortIsExtentionTypeTest() {
 
@@ -43,7 +45,7 @@ export default function webMessagePortIsExtentionTypeTest() {
       } catch (err) {
         console.error(`push ${pageName} page error: ` + err);
       }
-      await waitForComponent("IsExtentionTypeButton");
+      await Utils.waitForComponent(driver,'IsExtentionTypeButton');
       done()
     });
 

@@ -63,6 +63,16 @@
         ],
         "startWindowIcon": "$media:layered_image",
         "startWindowBackground": "$color:start_window_background"
+      },      
+      {
+        "name": "EntryAbility2",
+        "srcEntry": "./test/entryability/EntryAbility2.ets",
+        "description": "$string:EntryAbility_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:EntryAbility_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": false
       }
     ],
     "extensionAbilities": [
@@ -108,7 +118,13 @@
         "srcEntry": "./est/myuiability/MyUIAbility2.ets",
         "type": "embeddedUI",
         "exported": true
-      }
+      },
+      {
+        "name": "AgentExtAbility",
+        "srcEntry": "./ets/AgentExtAbility/AgentExtAbility.ets",
+       "type": "agent",
+       "exported": true
+     }
     ]
   }
 }

@@ -22,8 +22,8 @@ struct ImageExample {
         .width(80).height(80).margin(10)
         .id('image001')
         .alt({
-          placeholder: $r('app.media.icon'),
-          error: $r('app.media.image1')
+          placeholder: 'resource/base/media/icon.png',
+          error: 'resource/base/media/icon.png'
         })
       Image('common/pages/apple')
         .width(80).height(80).margin(10)

@@ -31,7 +31,7 @@ import {
 @Entry
 @Component
 struct RichEditorStyledStringTest {
-  fontStyleAttr1: TextStyle = { fontColor: Color.Blue } as TextStyle;
+  fontStyleAttr1: TextStyle = new TextStyle({ fontColor: Color.Blue });
   clickGestureAttr: GestureStyle = new GestureStyle({
     onClick: () => {
       const promptAction = new PromptAction()

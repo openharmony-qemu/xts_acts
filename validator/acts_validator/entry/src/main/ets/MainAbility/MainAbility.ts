@@ -46,7 +46,7 @@ export default class MainAbility extends Ability {
 
         console.log("[Demo] MainAbility onWindowStageCreate")
         let AtManager = abilityAccessCtrl.createAtManager();
-        AtManager.requestPermissionsFromUser(this.context,["ohos.permission.READ_MEDIA", "ohos.permission.WRITE_MEDIA",
+        AtManager.requestPermissionsFromUser(this.context,["ohos.permission.READ_HEALTH_DATA", "ohos.permission.READ_MEDIA", "ohos.permission.WRITE_MEDIA",
           "ohos.permission.CAPTURE_SCREEN", "ohos.permission.INTERNET", "ohos.permission.CAMERA",
           "ohos.permission.MICROPHONE", "ohos.permission.START_INVISIBLE_ABILITY",
           "ohos.permission.SYSTEM_FLOAT_WINDOW", "ohos.permission.GET_BUNDLE_INFO_PRIVILEGED",

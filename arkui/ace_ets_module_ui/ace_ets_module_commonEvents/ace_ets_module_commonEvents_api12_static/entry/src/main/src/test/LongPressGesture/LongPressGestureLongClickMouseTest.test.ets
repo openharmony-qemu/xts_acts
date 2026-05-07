@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,7 +47,7 @@ const uiContext = new UIContext();
 export default function LongPressGestureLongClickMouseTest() {
   describe('LongPressGestureLongClickMouseTest', () => {
 
-    waitForCompletion(async ()=>{await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")})
+    UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility").awaitSync()
 
 
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!
@@ -111,8 +111,8 @@ it('LongPressGestureLongClickMouseTest_static_0010', Level.LEVEL0, async (done: 
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
       await driver.mouseLongClick({
-        x: Math.round(areaObj.left + areaWidth / 2) as Int,
-        y: Math.round(areaObj.top + areaHeight / 2) as Int
+        x: Math.round(areaObj.left + areaWidth / 2).toInt(),
+        y: Math.round(areaObj.top + areaHeight / 2).toInt()
       }, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(3000);
       let text1 = inspector.getInspectorByKey('LongPressGestureLongClickMouse_repeat');

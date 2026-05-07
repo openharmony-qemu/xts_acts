@@ -187,9 +187,9 @@ static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
     return rect_value;
   }
 
-  static getComponentByKey(componentKey: string): jsonx.JsonElement {
+  static async getComponentByKey(componentKey: string): Promise<jsonx.JsonElement> {
     let strJson = inspector.getInspectorByKey(componentKey);
-    waitForCompletion(async ()=>{await Utils.sleep(2000);})
+    await Utils.sleep(2000);
     console.info('[' + componentKey + '] obj is: ' + strJson);
     return JSON.parseJsonElement(strJson);
   }
@@ -293,7 +293,7 @@ static getComponentRectByObj(obj: jsonx.JsonElement): RectValue {
 
     let result = sendKeyEvent({
       type: type,
-      keyCode: keyCode as int,
+      keyCode: keyCode.toInt(),
       keyText: keyText,
       intentionCode: IntentionCode.INTENTION_UNKNOWN,
       keySource: KeySource.Keyboard,

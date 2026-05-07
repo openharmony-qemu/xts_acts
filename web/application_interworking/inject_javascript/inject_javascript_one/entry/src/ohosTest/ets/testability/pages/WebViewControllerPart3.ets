@@ -89,22 +89,22 @@ struct WebViewControllerPart3 {
     Column() {
       Row() {
         Button("WebViewController click").key('WebViewControllerTestButton').onClick(async () => {
-          await waitForExist(() => this.isPageEnd, this.str, 0);
-          await waitForExist(() => this.isReceive, this.str, 0);
+          await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+          await waitForExist(() => this.isReceive, this.str, 0, 1000);
           this.isReceive = -1;
           console.info('key==>' + this.str)
           switch (this.str) {
             case "javaScriptProxy": {
               this.isPageEnd = -1;
               this.controller.loadUrl("resource://rawfile/proxy.html")
-              await waitForExist(() => this.isPageEnd, this.str, 0);
+              await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
               this.controller.runJavaScript("htmlTest()", async (error, result) => {
                 console.log('error' + error)
                 if (result == '"ArkUI Web Component"') {
                   Utils.emitEvent(true, 172320);
                   this.isPageEnd = -1;
                   this.controller.loadUrl("resource://rawfile/fullScreenEnter.html")
-                  await waitForExist(() => this.isPageEnd, this.str, 0);
+                  await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
                 }
               })
               break;
@@ -114,11 +114,11 @@ struct WebViewControllerPart3 {
               this.registerJavaScriptProxyFlag = true
               this.isPageEnd = -1;
               this.controller.loadUrl($rawfile('index.html'))
-              await waitForExist(() => this.isPageEnd, this.str, 0);
+              await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
               this.controller.registerJavaScriptProxy(this.jsObj, "objName", ["test", "toString", "register"]);
               this.isPageEnd = -1;
               this.controller.refresh()
-              await waitForExist(() => this.isPageEnd, this.str, 0);
+              await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
               this.controller.runJavaScript("proxy()", (error) => {
                 if (error) {
                   console.info('requestPosition() return error: ' + error)
@@ -132,11 +132,11 @@ struct WebViewControllerPart3 {
               this.controller.registerJavaScriptProxy(this.jsObj, "objName", ["test", "toString", "register"]);
               this.isPageEnd = -1;
               this.controller.refresh()
-              await waitForExist(() => this.isPageEnd, this.str, 0);
+              await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
               this.controller.deleteJavaScriptRegister("objName")
               this.isPageEnd = -1;
               this.controller.refresh()
-              await waitForExist(() => this.isPageEnd, this.str, 0);
+              await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
               this.controller.runJavaScript("registerTest()", (error) => {
                 if (error) {
                   console.info('requestPosition() return error: ' + error)

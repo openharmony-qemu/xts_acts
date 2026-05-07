@@ -22,6 +22,7 @@
     "deviceTypes": [],
     "deliveryWithInstall": true,
     "installationFree": false,
+    "srcEntry": "./ets/Application/MyAbilityStage.ets",
     "pages": "$profile:main_pages",
     "abilities": [
       {
@@ -73,6 +74,14 @@
         "label": "$string:EntryEmbeddedUIExtAbility_label",
         "type": "embeddedUI"
       },
+    ],
+    "requestPermissions":[
+      {
+        "name": "ohos.permission.SET_WIFI_INFO"
+      },
+      {
+        "name": "ohos.permission.MANAGE_WIFI_CONNECTION"
+      }
     ]
   }
 }

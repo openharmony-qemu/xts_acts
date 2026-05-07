@@ -38,9 +38,10 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log("effectKitTest" + msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
-      imageSource.getImageInfo((err, value) => {
-        console.error(msgStr + "Napi size=" + value.size.width + " X " + value.size.height);
-      })
+      let info = imageSource.getImageInfoSync();
+      console.info(msgStr + "Napi size=" + info.size.width + " X " + info.size.height);
+      expect(info.size.width).assertEqual(472);
+      expect(info.size.height).assertEqual(226);
       imageSource.createPixelMap().then(pixelMap => {
         console.info(msgStr + "Napi create createEffect.start");
         let filter = effectKit.createEffect(pixelMap);
@@ -51,8 +52,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         expect(true).assertFail();
         done();
       })
-      console.info(msgStr + "Napi create pixmap.end");
-      done();
     })
 
     /**
@@ -86,9 +85,10 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log("effectKitTest" + msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
-      imageSource.getImageInfo((err, value) => {
-        console.error(msgStr + "image size=" + value.size.width + " X " + value.size.height);
-      })
+      let info = imageSource.getImageInfoSync();
+      console.info(msgStr + "Napi size=" + info.size.width + " X " + info.size.height);
+      expect(info.size.width).assertEqual(472);
+      expect(info.size.height).assertEqual(226);
       imageSource.createPixelMap().then(pixelMap => {
         console.info(msgStr + "Napi create createEffect.start");
         let headFilter = effectKit.createEffect(pixelMap);
@@ -105,8 +105,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         expect(true).assertFail();
         done();
       })
-      console.info(msgStr + "Napi create pixmap.end");
-      done();
     })
 
     /**
@@ -122,9 +120,10 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log("effectKitTest" + msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
-      imageSource.getImageInfo((err, value) => {
-        console.error(msgStr + "image size=" + value.size.width + " X " + value.size.height);
-      })
+      let info = imageSource.getImageInfoSync();
+      console.info(msgStr + "Napi size=" + info.size.width + " X " + info.size.height);
+      expect(info.size.width).assertEqual(472);
+      expect(info.size.height).assertEqual(226);
       imageSource.createPixelMap().then(pixelMap => {
         console.info(msgStr + "Napi create createEffect.start");
         let headFilter = effectKit.createEffect(pixelMap);
@@ -141,8 +140,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         expect(true).assertFail();
         done();
       })
-      console.info(msgStr + "Napi create pixmap.end");
-      done();
     })
 
     /**
@@ -158,18 +155,20 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log("effectKitTest" + msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
-      imageSource.getImageInfo((err, value) => {
-        console.error(msgStr + "image size=" + value.size.width + " X " + value.size.height);
-      })
+      let info = imageSource.getImageInfoSync();
+      console.info(msgStr + "Napi size=" + info.size.width + " X " + info.size.height);
+      expect(info.size.width).assertEqual(472);
+      expect(info.size.height).assertEqual(226);
       imageSource.createPixelMap().then(pixelMap => {
         console.info(msgStr + "Napi create createEffect.start");
         let headFilter = effectKit.createEffect(pixelMap);
         if (headFilter == null) {
-          console.log("effectKitTest blur3 createEffect faild");
+          console.log(msgStr + "effectKitTest blur3 createEffect failed");
           expect(true).assertFail();
           done();
         }
         let blurFilter = headFilter.blur(0);
+        console.log(msgStr + "effectKitTest blur3 blurFilter ", blurFilter);
         expect(blurFilter != null).assertTrue();
         done();
       }).catch((ex: BusinessError) => {
@@ -177,8 +176,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         expect(true).assertFail();
         done();
       })
-      console.info(msgStr + "Napi create pixmap.end");
-      done();
     })
 
     /**
@@ -194,18 +191,20 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log("effectKitTest" + msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
-      imageSource.getImageInfo((err, value) => {
-        console.error(msgStr + "image size=" + value.size.width + " X " + value.size.height);
-      })
-      await imageSource.createPixelMap().then(pixelMap => {
+      let info = imageSource.getImageInfoSync();
+      console.info(msgStr + "Napi size=" + info.size.width + " X " + info.size.height);
+      expect(info.size.width).assertEqual(472);
+      expect(info.size.height).assertEqual(226);
+      imageSource.createPixelMap().then(pixelMap => {
         console.info(msgStr + "Napi create createEffect.start");
         let headFilter = effectKit.createEffect(pixelMap);
         if (headFilter == null) {
-          console.log("effectKitTest blur4 createEffect faild");
+          console.log(msgStr + "effectKitTest blur4 createEffect failed");
           expect(true).assertFail();
           done();
         }
         let blurFilter = headFilter.blur(15, effectKit.TileMode.CLAMP);
+        console.log(msgStr + "effectKitTest blurFilter ", blurFilter);
         expect(blurFilter != null).assertTrue();
         done();
       }).catch((ex: BusinessError) => {
@@ -228,18 +227,20 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log("effectKitTest" + msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
-      imageSource.getImageInfo((err, value) => {
-        console.error(msgStr + "image size=" + value.size.width + " X " + value.size.height);
-      })
-      await imageSource.createPixelMap().then(pixelMap => {
+      let info = imageSource.getImageInfoSync();
+      console.info(msgStr + "Napi size=" + info.size.width + " X " + info.size.height);
+      expect(info.size.width).assertEqual(472);
+      expect(info.size.height).assertEqual(226);
+      imageSource.createPixelMap().then(pixelMap => {
         console.info(msgStr + "Napi create createEffect.start");
         let headFilter = effectKit.createEffect(pixelMap);
         if (headFilter == null) {
-          console.log("effectKitTest blur5 createEffect faild");
+          console.log(msgStr + "effectKitTest blur5 createEffect failed");
           expect(true).assertFail();
           done();
         }
         let blurFilter = headFilter.blur(20, effectKit.TileMode.REPEAT);
+        console.log(msgStr + "effectKitTest blurFilter ", blurFilter);
         expect(blurFilter != null).assertTrue();
         done();
       }).catch((ex: BusinessError) => {
@@ -262,18 +263,20 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log("effectKitTest" + msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
-      imageSource.getImageInfo((err, value) => {
-        console.error(msgStr + "image size=" + value.size.width + " X " + value.size.height);
-      })
-      await imageSource.createPixelMap().then(pixelMap => {
+      let info = imageSource.getImageInfoSync();
+      console.info(msgStr + "Napi size=" + info.size.width + " X " + info.size.height);
+      expect(info.size.width).assertEqual(472);
+      expect(info.size.height).assertEqual(226);
+      imageSource.createPixelMap().then(pixelMap => {
         console.info(msgStr + "Napi create createEffect.start");
         let headFilter = effectKit.createEffect(pixelMap);
         if (headFilter == null) {
-          console.log("effectKitTest blur6 createEffect faild");
+          console.log(msgStr + "effectKitTest blur6 createEffect failed");
           expect(true).assertFail();
           done();
         }
         let blurFilter = headFilter.blur(25, effectKit.TileMode.MIRROR);
+        console.log(msgStr + "effectKitTest blurFilter ", blurFilter);
         expect(blurFilter != null).assertTrue();
         done();
       }).catch((ex: BusinessError) => {
@@ -296,18 +299,20 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log("effectKitTest" + msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
-      imageSource.getImageInfo((err, value) => {
-        console.error(msgStr + "image size=" + value.size.width + " X " + value.size.height);
-      })
-      await imageSource.createPixelMap().then(pixelMap => {
+      let info = imageSource.getImageInfoSync();
+      console.info(msgStr + "Napi size=" + info.size.width + " X " + info.size.height);
+      expect(info.size.width).assertEqual(472);
+      expect(info.size.height).assertEqual(226);
+      imageSource.createPixelMap().then(pixelMap => {
         console.info(msgStr + "Napi create createEffect.start");
         let headFilter = effectKit.createEffect(pixelMap);
         if (headFilter == null) {
-          console.log("effectKitTest blur7 createEffect faild");
+          console.log(msgStr + "effectKitTest blur7 createEffect failed");
           expect(true).assertFail();
           done();
         }
         let blurFilter = headFilter.blur(30, effectKit.TileMode.DECAL);
+        console.log(msgStr + "effectKitTest blurFilter ", blurFilter);
         expect(blurFilter != null).assertTrue();
         done();
       }).catch((ex: BusinessError) => {
@@ -330,18 +335,20 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log("effectKitTest" + msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
-      imageSource.getImageInfo((err, value) => {
-        console.error(msgStr + "image size=" + value.size.width + " X " + value.size.height);
-      })
-      await imageSource.createPixelMap().then(pixelMap => {
+      let info = imageSource.getImageInfoSync();
+      console.info(msgStr + "Napi size=" + info.size.width + " X " + info.size.height);
+      expect(info.size.width).assertEqual(472);
+      expect(info.size.height).assertEqual(226);
+      imageSource.createPixelMap().then(pixelMap => {
         console.info(msgStr + "Napi create createEffect.start");
         let headFilter = effectKit.createEffect(pixelMap);
         if (headFilter == null) {
-          console.log("effectKitTest blur8 createEffect faild");
+          console.log(msgStr + "effectKitTest blur8 createEffect failed");
           expect(true).assertFail();
           done();
         }
         let blurFilter = headFilter.blur(50);
+        console.log(msgStr + "effectKitTest blurFilter ", blurFilter);
         expect(blurFilter != null).assertTrue();
         done();
       }).catch((ex: BusinessError) => {
@@ -364,18 +371,20 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log("effectKitTest" + msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
-      imageSource.getImageInfo((err, value) => {
-        console.error(msgStr + "image size=" + value.size.width + " X " + value.size.height);
-      })
-      await imageSource.createPixelMap().then(pixelMap => {
+      let info = imageSource.getImageInfoSync();
+      console.info(msgStr + "Napi size=" + info.size.width + " X " + info.size.height);
+      expect(info.size.width).assertEqual(472);
+      expect(info.size.height).assertEqual(226);
+      imageSource.createPixelMap().then(pixelMap => {
         console.info(msgStr + "Napi create createEffect.start");
         let headFilter = effectKit.createEffect(pixelMap);
         if (headFilter == null) {
-          console.log("effectKitTest blur9 createEffect faild");
+          console.log(msgStr + "effectKitTest blur9 createEffect failed");
           expect(true).assertFail();
           done();
         }
         let blurFilter = headFilter.blur(1);
+        console.log(msgStr + "effectKitTest blurFilter ", blurFilter);
         expect(blurFilter != null).assertTrue();
         done();
       }).catch((ex: BusinessError) => {
@@ -398,18 +407,20 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log("effectKitTest" + msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
-      imageSource.getImageInfo((err, value) => {
-        console.error(msgStr + "image size=" + value.size.width + " X " + value.size.height);
-      })
-      await imageSource.createPixelMap().then(pixelMap => {
+      let info = imageSource.getImageInfoSync();
+      console.info(msgStr + "Napi size=" + info.size.width + " X " + info.size.height);
+      expect(info.size.width).assertEqual(472);
+      expect(info.size.height).assertEqual(226);
+      imageSource.createPixelMap().then(pixelMap => {
         console.info(msgStr + "Napi create createEffect.start");
         let headFilter = effectKit.createEffect(pixelMap);
         if (headFilter == null) {
-          console.log("effectKitTest blur10 createEffect faild");
+          console.log(msgStr + "effectKitTest blur10 createEffect failed");
           expect(true).assertFail();
           done();
         }
         let resultPixel = headFilter.blur(10).getPixelMap();
+        console.log(msgStr + "effectKitTest blurFilter ", resultPixel);
         expect(resultPixel != null).assertTrue();
         done();
       }).catch((ex: BusinessError) => {
@@ -432,14 +443,15 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log("effectKitTest" + msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
-      imageSource.getImageInfo((err, value) => {
-        console.error(msgStr + "image size=" + value.size.width + " X " + value.size.height);
-      })
-      await imageSource.createPixelMap().then(pixelMap => {
+      let info = imageSource.getImageInfoSync();
+      console.info(msgStr + "Napi size=" + info.size.width + " X " + info.size.height);
+      expect(info.size.width).assertEqual(472);
+      expect(info.size.height).assertEqual(226);
+      imageSource.createPixelMap().then(pixelMap => {
         console.info(msgStr + "Napi create createEffect.start");
         let headFilter = effectKit.createEffect(pixelMap);
         if (headFilter == null) {
-          console.log("effectKitTest blur11 createEffect faild");
+          console.log(msgStr + "effectKitTest blur11 createEffect failed");
           expect(true).assertFail();
           done();
         }
@@ -472,18 +484,20 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log("effectKitTest" + msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
-      imageSource.getImageInfo((err, value) => {
-        console.error(msgStr + "image size=" + value.size.width + " X " + value.size.height);
-      })
-      await imageSource.createPixelMap().then(pixelMap => {
+      let info = imageSource.getImageInfoSync();
+      console.info(msgStr + "Napi size=" + info.size.width + " X " + info.size.height);
+      expect(info.size.width).assertEqual(472);
+      expect(info.size.height).assertEqual(226);
+      imageSource.createPixelMap().then(pixelMap => {
         console.info(msgStr + "Napi create createEffect.start");
         let headFilter = effectKit.createEffect(pixelMap);
         if (headFilter == null) {
-          console.log("effectKitTest blur12 createEffect faild");
+          console.log(msgStr + "effectKitTest blur12 createEffect failed");
           expect(true).assertFail();
           done();
         }
         let resultPixel = headFilter.blur(5).blur(10).getPixelMap();
+        console.log(msgStr + "effectKitTest blurFilter ", resultPixel);
         expect(resultPixel != null).assertTrue();
         done();
       }).catch((ex: BusinessError) => {
@@ -506,18 +520,20 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log("effectKitTest" + msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
-      imageSource.getImageInfo((err, value) => {
-        console.error(msgStr + "image size=" + value.size.width + " X " + value.size.height);
-      })
+      let info = imageSource.getImageInfoSync();
+      console.info(msgStr + "Napi size=" + info.size.width + " X " + info.size.height);
+      expect(info.size.width).assertEqual(472);
+      expect(info.size.height).assertEqual(226);
       imageSource.createPixelMap().then(pixelMap => {
         console.info(msgStr + "Napi create createEffect.start");
         let headFilter = effectKit.createEffect(pixelMap);
         if (headFilter == null) {;
-          console.log("effectKitTest brightness1 createEffect faild");
+          console.log(msgStr + "effectKitTest brightness1 createEffect failed");
           expect(true).assertFail();
           done();
         }
         let brightFilter = headFilter.brightness(0);
+        console.log(msgStr + "effectKitTest blurFilter ", brightFilter);
         expect(brightFilter != null).assertTrue();
         done();
       }).catch((ex: BusinessError) => {
@@ -525,8 +541,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         expect(true).assertFail();
         done();
       })
-      console.info(msgStr + "Napi create pixmap.end");
-      done();
     })
 
     /**
@@ -542,18 +556,20 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log("effectKitTest" + msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
-      imageSource.getImageInfo((err, value) => {
-        console.error(msgStr + "image size=" + value.size.width + " X " + value.size.height);
-      })
+      let info = imageSource.getImageInfoSync();
+      console.info(msgStr + "Napi size=" + info.size.width + " X " + info.size.height);
+      expect(info.size.width).assertEqual(472);
+      expect(info.size.height).assertEqual(226);
       imageSource.createPixelMap().then(pixelMap => {
         console.info(msgStr + "Napi create createEffect.start");
         let headFilter = effectKit.createEffect(pixelMap);
         if (headFilter == null) {
-          console.log("effectKitTest brightness2 createEffect faild");
+          console.log(msgStr + "effectKitTest brightness2 createEffect failed");
           expect(true).assertFail();
           done();
         }
         let brightFilter = headFilter.brightness(0.5);
+        console.log(msgStr + "effectKitTest blurFilter ", brightFilter);
         expect(brightFilter != null).assertTrue();
         done();
       }).catch((ex: BusinessError) => {
@@ -561,8 +577,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         expect(true).assertFail();
         done();
       })
-      console.info(msgStr + "Napi create pixmap.end");
-      done();
     })
 
     /**
@@ -578,18 +592,20 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log("effectKitTest" + msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
-      imageSource.getImageInfo((err, value) => {
-        console.error(msgStr + "image size=" + value.size.width + " X " + value.size.height);
-      })
+      let info = imageSource.getImageInfoSync();
+      console.info(msgStr + "Napi size=" + info.size.width + " X " + info.size.height);
+      expect(info.size.width).assertEqual(472);
+      expect(info.size.height).assertEqual(226);
       imageSource.createPixelMap().then(pixelMap => {
         console.info(msgStr + "Napi create createEffect.start");
         let headFilter = effectKit.createEffect(pixelMap);
         if (headFilter == null) {
-          console.log("effectKitTest brightness3 createEffect faild");
+          console.log(msgStr + "effectKitTest brightness3 createEffect failed");
           expect(true).assertFail();
           done();
         }
         let brightFilter = headFilter.brightness(-0.5);
+        console.log(msgStr + "effectKitTest blurFilter ", brightFilter);
         expect(brightFilter != null).assertTrue();
         done();
       }).catch((ex: BusinessError) => {
@@ -597,8 +613,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         expect(true).assertFail();
         done();
       })
-      console.info(msgStr + "Napi create pixmap.end");
-      done();
     })
 
     /**
@@ -614,18 +628,20 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log("effectKitTest" + msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
-      imageSource.getImageInfo((err, value) => {
-        console.error(msgStr + "image size=" + value.size.width + " X " + value.size.height);
-      })
+      let info = imageSource.getImageInfoSync();
+      console.info(msgStr + "Napi size=" + info.size.width + " X " + info.size.height);
+      expect(info.size.width).assertEqual(472);
+      expect(info.size.height).assertEqual(226);
       imageSource.createPixelMap().then(pixelMap => {
         console.info(msgStr + "Napi create createEffect.start");
         let headFilter = effectKit.createEffect(pixelMap);
         if (headFilter == null) {
-          console.log("effectKitTest grayscale1 createEffect faild");
+          console.log("effectKitTest grayscale1 createEffect failed");
           expect(true).assertFail();
           done();
         }
         let grayFilter = headFilter.grayscale();
+        console.log(msgStr + "effectKitTest blurFilter ", grayFilter);
         expect(grayFilter != null).assertTrue();
         done();
       }).catch((ex: BusinessError) => {
@@ -633,8 +649,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         expect(true).assertFail();
         done();
       })
-      console.info(msgStr + "Napi create pixmap.end");
-      done();
     })
 
     /**
@@ -650,18 +664,20 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log("effectKitTest" + msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
-      imageSource.getImageInfo((err, value) => {
-        console.error(msgStr + "image size=" + value.size.width + " X " + value.size.height);
-      })
+      let info = imageSource.getImageInfoSync();
+      console.info(msgStr + "Napi size=" + info.size.width + " X " + info.size.height);
+      expect(info.size.width).assertEqual(472);
+      expect(info.size.height).assertEqual(226);
       imageSource.createPixelMap().then(pixelMap => {
         console.info(msgStr + "Napi create createEffect.start");
         let headFilter = effectKit.createEffect(pixelMap);
         if (headFilter == null) {
-          console.log("effectKitTest getPixelMap1 createEffect faild");
+          console.log("effectKitTest getPixelMap1 createEffect failed");
           expect(true).assertFail();
           done();
         }
         let resultPixel = headFilter.getPixelMap();
+        console.log(msgStr + "effectKitTest blurFilter ", resultPixel);
         expect(resultPixel != null).assertTrue();
         done();
       }).catch((ex: BusinessError) => {
@@ -669,8 +685,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         expect(true).assertFail();
         done();
       })
-      console.info(msgStr + "Napi create pixmap.end");
-      done();
     })
 
     /**
@@ -686,18 +700,20 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log("effectKitTest" + msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
-      imageSource.getImageInfo((err, value) => {
-        console.error(msgStr + "image size=" + value.size.width + " X " + value.size.height);
-      })
+      let info = imageSource.getImageInfoSync();
+      console.info(msgStr + "Napi size=" + info.size.width + " X " + info.size.height);
+      expect(info.size.width).assertEqual(472);
+      expect(info.size.height).assertEqual(226);
       imageSource.createPixelMap().then(pixelMap => {
         console.info(msgStr + "Napi create createEffect.start");
         let headFilter = effectKit.createEffect(pixelMap);
         if (headFilter == null) {
-          console.log("effectKitTest getPixelMap2 createEffect faild");
+          console.log("effectKitTest getPixelMap2 createEffect failed");
           expect(true).assertFail();
           done();
         }
         let resultPixel = headFilter.grayscale().getPixelMap();
+        console.log(msgStr + "effectKitTest blurFilter ", resultPixel);
         expect(resultPixel != null).assertTrue();
         done();
       }).catch((ex: BusinessError) => {
@@ -705,8 +721,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         expect(true).assertFail();
         done();
       })
-      console.info(msgStr + "Napi create pixmap.end");
-      done();
     })
 
     /**
@@ -722,18 +736,20 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log("effectKitTest" + msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
-      imageSource.getImageInfo((err, value) => {
-        console.error(msgStr + "image size=" + value.size.width + " X " + value.size.height);
-      })
+      let info = imageSource.getImageInfoSync();
+      console.info(msgStr + "Napi size=" + info.size.width + " X " + info.size.height);
+      expect(info.size.width).assertEqual(472);
+      expect(info.size.height).assertEqual(226);
       imageSource.createPixelMap().then(pixelMap => {
         console.info(msgStr + "Napi create createEffect.start");
         let headFilter = effectKit.createEffect(pixelMap);
         if (headFilter == null) {
-          console.log("effectKitTest getPixelMap3 createEffect faild");
+          console.log("effectKitTest getPixelMap3 createEffect failed");
           expect(true).assertFail();
           done();
         }
         let resultPixel = headFilter.blur(5).brightness(0.5).grayscale().getPixelMap();
+        console.log(msgStr + "effectKitTest blurFilter ", resultPixel);
         expect(resultPixel != null).assertTrue();
         done();
       }).catch((ex: BusinessError) => {
@@ -741,8 +757,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         expect(true).assertFail();
         done();
       })
-      console.info(msgStr + "Napi create pixmap.end");
-      done();
     })
 
     /**
@@ -774,8 +788,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         expect(true).assertFail();
         done();
       })
-      console.info(msgStr + "Napi create pixmap.end");
-      done();
     })
 
     /**
@@ -808,8 +820,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         expect(true).assertFail();
         done();
       })
-      console.info(msgStr + "Napi create pixmap.end");
-      done();
     })
 
     /**
@@ -842,8 +852,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         expect(true).assertFail();
         done();
       })
-      console.info(msgStr + "Napi create pixmap.end");
-      done();
     })
 
     /**
@@ -876,8 +884,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         expect(true).assertFail();
         done();
       })
-      console.info(msgStr + "Napi create pixmap.end");
-      done();
     })
 
     /**
@@ -896,14 +902,14 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       console.info(msgStr + "callback create pixmap.start");
       imageSource.createPixelMap((error, pixelMap) => {
         if (error) {
-          console.info("Napi error,create pixmap");
+          console.info(msgStr + "Napi error,create pixmap");
           expect(true).assertFail();
           done();
         }
-        console.info("Napi create ColorPicker.start");
+        console.info(msgStr + "Napi create ColorPicker.start");
         effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
           if (error) {
-            console.error("Napi error, create color picker");
+            console.error(msgStr + "Napi error, create color picker");
             expect(true).assertFail();
             done();
           }
@@ -911,8 +917,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
           done();
         })
       })
-      console.info(msgStr + "Napi create pixmap.end");
-      done();
     })
 
     /**
@@ -932,14 +936,14 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       console.info(msgStr + "callback create pixmap.start");
       imageSource.createPixelMap((error, pixelMap) => {
         if (error) {
-          console.info("Napi error,create pixmap");
+          console.info(msgStr + "Napi error,create pixmap");
           expect(true).assertFail();
           done();
         }
-        console.info("Napi create ColorPicker.start");
+        console.info(msgStr + "Napi create ColorPicker.start");
         effectKit.createColorPicker(pixelMap, (error, colorPicker) => {
           if (error) {
-            console.error("Napi error, create color picker");
+            console.error(msgStr + "Napi error, create color picker");
             expect(true).assertFail();
             done();
           }
@@ -947,8 +951,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
           done();
         })
       })
-      console.info(msgStr + "Napi create pixmap.end");
-      done();
     })
 
     /**
@@ -980,8 +982,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         expect(true).assertFail();
         done();
       })
-      console.info(msgStr + "Napi create pixmap.end");
-      done();
     })
 
     /**
@@ -1020,8 +1020,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         expect(true).assertFail();
         done();
       })
-      console.info(msgStr + "Napi create pixmap.end");
-      done();
     })
 
     /**
@@ -1060,8 +1058,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         expect(true).assertFail();
         done();
       })
-      console.info(msgStr + "Napi create pixmap.end");
-      done();
     })
     /**
      * @tc.name   getMainColor3
@@ -1077,7 +1073,7 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       console.log(msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
       console.info(msgStr + "promise create pixmap.start");
-      await imageSource.createPixelMap().then(async (pixelMap) => {
+      imageSource.createPixelMap().then(async (pixelMap) => {
         console.info(msgStr + "Napi create ColorPicker.start");
         effectKit.createColorPicker(pixelMap).then(colorPicker => {
           console.info(msgStr + "Napi get main color start");
@@ -1089,6 +1085,7 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
             expect(color.red).assertEqual(255);
             expect(color.green).assertEqual(201);
             expect(color.blue).assertEqual(13);
+            console.info(msgStr + "Napi get main color end");
             done();
           }).catch((ex: BusinessError) => {
             console.error(msgStr + "Napi color.error=" + ex.toString());
@@ -1121,7 +1118,7 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       console.log(msgStr + 'begin');
       let imageSource = image.createImageSource(testPng.buffer);
       console.info(msgStr + "promise create pixmap.start");
-      await imageSource.createPixelMap().then(async (pixelMap) => {
+      imageSource.createPixelMap().then(async (pixelMap) => {
         console.info(msgStr + "Napi create ColorPicker.start");
         effectKit.createColorPicker(pixelMap).then(colorPicker => {
           console.info(msgStr + "Napi get main color start");
@@ -1137,6 +1134,7 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
             expect(color.red).assertEqual(177);
             expect(color.green).assertEqual(175);
             expect(color.blue).assertEqual(160);
+            console.info(msgStr + "Napi get main color end");
             done();
           }).catch((ex: BusinessError) => {
             console.error(msgStr + "Napi color.error=" + ex.toString());
@@ -1192,9 +1190,10 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
               console.info(msgStr + "Napi color[ARGB]=" + color.alpha + "," + color.red + "," + color.green + "," + color.blue);
               expect(color != null).assertTrue();
               expect(color.alpha).assertEqual(255);
-              expect(color.red).assertEqual(177);
-              expect(color.green).assertEqual(175);
-              expect(color.blue).assertEqual(160);
+              expect(color.red).assertEqual(245);
+              expect(color.green).assertEqual(245);
+              expect(color.blue).assertEqual(243);
+              console.info(msgStr + "Napi get main color end");
               done();
             }).catch((ex: BusinessError) => {
               console.error(msgStr + "Napi color.error=" + ex.toString());
@@ -1228,12 +1227,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       console.log(msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
       console.info(msgStr + "promise create pixmap.start");
-      await imageSource.createPixelMap().then(async (pixelMap) => {
+      imageSource.createPixelMap().then(async (pixelMap) => {
         console.info(msgStr + "Napi create ColorPicker.start");
-        await effectKit.createColorPicker(pixelMap).then(async (colorPicker) => {
+        effectKit.createColorPicker(pixelMap).then(async (colorPicker) => {
           console.info(msgStr + "Napi get main color start");
           // First call
-          await colorPicker.getMainColor().then(color1 => {
+          colorPicker.getMainColor().then(color1 => {
             console.info(msgStr + "Napi color1[ARGB]=" + color1.alpha + "," + color1.red + "," + color1.green + "," + color1.blue);
             // Second call
             colorPicker.getMainColor().then(color2 => {
@@ -1243,6 +1242,7 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
               expect(color1.red === color2.red).assertTrue();
               expect(color1.green === color2.green).assertTrue();
               expect(color1.blue === color2.blue).assertTrue();
+              console.info(msgStr + "Napi get main color end");
               done();
             }).catch((ex: BusinessError) => {
               console.error(msgStr + "Napi second color.error=" + ex.toString());
@@ -1280,17 +1280,18 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       console.log(msgStr + 'begin');
       let imageSource = image.createImageSource(testPng.buffer);
       console.info(msgStr + "promise create pixmap.start");
-      await imageSource.createPixelMap().then(async (pixelMap) => {
+      imageSource.createPixelMap().then(async (pixelMap) => {
         console.info(msgStr + "Napi create ColorPicker.start");
-        await effectKit.createColorPicker(pixelMap, [0, 0, 1, 1]).then(async (colorPicker) => {
+        effectKit.createColorPicker(pixelMap, [0, 0, 1, 1]).then(async (colorPicker) => {
           console.info(msgStr + "Napi get main color start with full region");
-          await colorPicker.getMainColor().then(color => {
+          colorPicker.getMainColor().then(color => {
             console.info(msgStr + "Napi color[ARGB]=" + color.alpha + "," + color.red + "," + color.green + "," + color.blue);
             expect(color != null).assertTrue();
             expect(typeof color.alpha === 'number').assertTrue();
             expect(typeof color.red === 'number').assertTrue();
             expect(typeof color.green === 'number').assertTrue();
             expect(typeof color.blue === 'number').assertTrue();
+            console.info(msgStr + "Napi get main color end");
             done();
           }).catch((ex: BusinessError) => {
             console.error(msgStr + "Napi color.error=" + ex.toString());
@@ -1323,12 +1324,12 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       console.log(msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
       console.info(msgStr + "promise create pixmap.start");
-      await imageSource.createPixelMap().then(async (pixelMap) => {
+      imageSource.createPixelMap().then(async (pixelMap) => {
         console.info(msgStr + "Napi create ColorPicker.start");
-        await effectKit.createColorPicker(pixelMap).then(async (colorPicker) => {
+        effectKit.createColorPicker(pixelMap).then(async (colorPicker) => {
           console.info(msgStr + "Napi get main color start (async)");
           // Get color using async method
-          await colorPicker.getMainColor().then(colorAsync => {
+          colorPicker.getMainColor().then(colorAsync => {
             console.info(msgStr + "Napi async color[ARGB]=" + colorAsync.alpha + "," + colorAsync.red + "," + colorAsync.green + "," + colorAsync.blue);
             // Get color using sync method
             let colorSync = colorPicker.getMainColorSync();
@@ -1338,6 +1339,7 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
             expect(colorAsync.red === colorSync.red).assertTrue();
             expect(colorAsync.green === colorSync.green).assertTrue();
             expect(colorAsync.blue === colorSync.blue).assertTrue();
+            console.info(msgStr + "Napi get main color end");
             done();
           }).catch((ex: BusinessError) => {
             console.error(msgStr + "Napi color.error=" + ex.toString());
@@ -1387,8 +1389,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         expect(true).assertFail();
         done();
       })
-      console.info(msgStr + "Napi create pixmap.end");
-      done();
     })
 
     /**
@@ -1422,8 +1422,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         expect(true).assertFail();
         done();
       })
-      console.info(msgStr + "Napi create pixmap.end");
-      done();
     })
 
     /**
@@ -1440,9 +1438,9 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       console.log(msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
       console.info(msgStr + "promise create pixmap.start");
-      await imageSource.createPixelMap().then(async (pixelMap) => {
+      imageSource.createPixelMap().then(async (pixelMap) => {
         console.info(msgStr + "Napi create ColorPicker.start");
-        await effectKit.createColorPicker(pixelMap).then(async (colorPicker) => {
+        effectKit.createColorPicker(pixelMap).then(async (colorPicker) => {
           console.info(msgStr + "Napi get main color start");
           let color = colorPicker.getMainColorSync();
           console.info(msgStr + "Napi color[ARGB]=" + color.alpha + "," + color.red + "," + color.green + "," + color.blue);
@@ -1454,6 +1452,7 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
           expect(color.red >= 0 && color.red <= 255).assertTrue();
           expect(color.green >= 0 && color.green <= 255).assertTrue();
           expect(color.blue >= 0 && color.blue <= 255).assertTrue();
+          console.info(msgStr + "Napi get main sync color end");
           done();
         }).catch((ex: BusinessError) => {
           console.error(msgStr + "Napi colorPicker.error=" + ex.toString());
@@ -1481,9 +1480,9 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       console.log(msgStr + 'begin');
       let imageSource = image.createImageSource(testPng.buffer);
       console.info(msgStr + "promise create pixmap.start");
-      await imageSource.createPixelMap().then(async (pixelMap) => {
+      imageSource.createPixelMap().then(async (pixelMap) => {
         console.info(msgStr + "Napi create ColorPicker.start");
-        await effectKit.createColorPicker(pixelMap).then(async (colorPicker) => {
+        effectKit.createColorPicker(pixelMap).then(async (colorPicker) => {
           console.info(msgStr + "Napi get main color start");
           let color = colorPicker.getMainColorSync();
           console.info(msgStr + "Napi color[ARGB]=" + color.alpha + "," + color.red + "," + color.green + "," + color.blue);
@@ -1496,6 +1495,7 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
           expect(color.red).assertEqual(177);
           expect(color.green).assertEqual(175);
           expect(color.blue).assertEqual(160);
+          console.info(msgStr + "Napi get main sync color end");
           done();
         }).catch((ex: BusinessError) => {
           console.error(msgStr + "Napi colorPicker.error=" + ex.toString());
@@ -1538,15 +1538,16 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         console.info(msgStr + "promise create pixmap.start");
         imageSource.createPixelMap({ desiredSize: size }).then(async (pixelMap) => {
           console.info(msgStr + "Napi create ColorPicker.start");
-          await effectKit.createColorPicker(pixelMap, [0, 0, 0.5, 0.5]).then(async (colorPicker) => {
+          effectKit.createColorPicker(pixelMap, [0, 0, 0.5, 0.5]).then(async (colorPicker) => {
             console.info(msgStr + "Napi get main color start with region");
             let color = colorPicker.getMainColorSync();
             console.info(msgStr + "Napi color[ARGB]=" + color.alpha + "," + color.red + "," + color.green + "," + color.blue);
             expect(color != null).assertTrue();
             expect(color.alpha).assertEqual(255);
-            expect(color.red).assertEqual(177);
-            expect(color.green).assertEqual(175);
-            expect(color.blue).assertEqual(160);
+            expect(color.red).assertEqual(245);
+            expect(color.green).assertEqual(245);
+            expect(color.blue).assertEqual(243);
+            console.info(msgStr + "Napi get main sync color end");
             done();
           }).catch((ex: BusinessError) => {
             console.error(msgStr + "Napi colorPicker.error=" + ex.toString());
@@ -1575,9 +1576,9 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
       console.log(msgStr + 'begin');
       let imageSource = image.createImageSource(testJpg.buffer);
       console.info(msgStr + "promise create pixmap.start");
-      await imageSource.createPixelMap().then(async (pixelMap) => {
+      imageSource.createPixelMap().then(async (pixelMap) => {
         console.info(msgStr + "Napi create ColorPicker.start");
-        await effectKit.createColorPicker(pixelMap).then(async (colorPicker) => {
+        effectKit.createColorPicker(pixelMap).then(async (colorPicker) => {
           console.info(msgStr + "Napi get main color start");
           let color1 = colorPicker.getMainColorSync();
           let color2 = colorPicker.getMainColorSync();
@@ -1587,6 +1588,7 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
           expect(color1.red === color2.red).assertTrue();
           expect(color1.green === color2.green).assertTrue();
           expect(color1.blue === color2.blue).assertTrue();
+          console.info(msgStr + "Napi get main sync color end");
           done();
         }).catch((ex: BusinessError) => {
           console.error(msgStr + "Napi colorPicker.error=" + ex.toString());
@@ -1621,7 +1623,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
             console.log(msgStr + 'expect assert fail');
           }
           done();
-          return;
         }
         console.info(msgStr + "Napi size=" + value.size.width + " X " + value.size.height);
         let size: image.Size = {
@@ -1640,6 +1641,7 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
             expect(color.red !== null).assertTrue();
             expect(color.green !== null).assertTrue();
             expect(color.blue !== null).assertTrue();
+            console.info(msgStr + "Napi getLargestProportionColor end");
             done();
           }).catch((ex: BusinessError) => {
             console.error(msgStr + "Napi colorPicker.error=" + ex.toString());
@@ -1674,7 +1676,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
             console.log(msgStr + 'expect assert fail');
           }
           done();
-          return;
         }
         console.info(msgStr + "Napi size=" + value.size.width + " X " + value.size.height);
         let size: image.Size = {
@@ -1693,6 +1694,7 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
             expect(color.red !== null).assertTrue();
             expect(color.green !== null).assertTrue();
             expect(color.blue !== null).assertTrue();
+            console.info(msgStr + "Napi getHighestSaturationColor end");
             done();
           }).catch((ex: BusinessError) => {
             console.error(msgStr + "Napi colorPicker.error=" + ex.toString());
@@ -1727,7 +1729,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
             console.log(msgStr + 'expect assert fail');
           }
           done()
-          return;
         }
         console.info(msgStr + "Napi size=" + value.size.width + " X " + value.size.height);
         let size: image.Size = {
@@ -1746,6 +1747,7 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
             expect(color.red !== null).assertTrue();
             expect(color.green !== null).assertTrue();
             expect(color.blue !== null).assertTrue();
+            console.info(msgStr + "Napi getAverageColor end");
             done();
           }).catch((ex: BusinessError) => {
             console.error(msgStr + "Napi colorPicker.error=" + ex.toString());
@@ -1780,7 +1782,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
             console.log(msgStr + 'expect assert fail');
           }
           done();
-          return;
         }
         console.info(msgStr + "Napi size=" + value.size.width + " X " + value.size.height);
         let size: image.Size = {
@@ -1803,6 +1804,7 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
             expect(!color_red).assertTrue();
             let color_zero = colorPicker.isBlackOrWhiteOrGrayColor(0);
             expect(color_zero).assertTrue();
+            console.info(msgStr + "Napi isBlackOrWhiteOrGrayColor end");
             done();
           }).catch((ex: BusinessError) => {
             console.error(msgStr + "Napi colorPicker.error=" + ex.toString());
@@ -1837,7 +1839,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
             console.log(msgStr + 'expect assert fail');
           }
           done()
-          return;
         }
         console.info(msgStr + "Napi size=" + value.size.width + " X " + value.size.height);
         let size: image.Size = {
@@ -1856,6 +1857,7 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
             expect(color.red !== null).assertTrue();
             expect(color.green !== null).assertTrue();
             expect(color.blue !== null).assertTrue();
+            console.info(msgStr + "Napi getAverageColor end");
             done()
           }).catch((ex: BusinessError) => {
             console.error(msgStr + "Napi colorPicker.error=" + ex.toString());
@@ -1890,7 +1892,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
             console.log(msgStr + 'expect assert fail');
           }
           done();
-          return;
         }
         console.info(msgStr + "Napi size=" + value.size.width + " X " + value.size.height);
         let size: image.Size = {
@@ -1909,6 +1910,7 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
             expect(color.red !== null).assertTrue();
             expect(color.green !== null).assertTrue();
             expect(color.blue !== null).assertTrue();
+            console.info(msgStr + "Napi getAverageColor end");
             done();
           }).catch((ex: BusinessError) => {
             console.error(msgStr + "Napi colorPicker.error=" + ex.toString());
@@ -1943,7 +1945,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
             console.log(msgStr + 'expect assert fail');
           }
           done();
-          return;
         }
         console.info(msgStr + "Napi size=" + value.size.width + " X " + value.size.height);
         let size: image.Size = {
@@ -1962,6 +1963,7 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
             expect(color.red !== null).assertTrue();
             expect(color.green !== null).assertTrue();
             expect(color.blue !== null).assertTrue();
+            console.info(msgStr + "Napi getAverageColor end");
             done();
           }).catch((ex: BusinessError) => {
             console.error(msgStr + "Napi colorPicker.error=" + ex.toString());
@@ -2041,7 +2043,6 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
             console.log(msgStr + 'expect assert fail');
           }
           done();
-          return;
         }
         console.info(msgStr + "Napi size=" + value.size.width + " X " + value.size.height);
         let size: image.Size = {
@@ -2075,7 +2076,7 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
      */
     it('testGetEffectPixelMap_Functin_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let msgStr = 'testGetEffectPixelMap';
+        let msgStr = 'jsunittest testGetEffectPixelMap_Functin_Promise';
         console.log(msgStr + 'begin');
         const color = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
@@ -2120,7 +2121,7 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         console.log(msgStr + 'begin');
         let imageSource = image.createImageSource(testJpg.buffer);
         console.info(msgStr + "promise create pixmap.start");
-        await imageSource.createPixelMap().then(pixelMap => {
+        imageSource.createPixelMap().then(pixelMap => {
           console.info(msgStr + "Napi create Effect.start");
           let filter = effectKit.createEffect(pixelMap);
           console.info(msgStr + "Filter object: " + JSON.stringify(filter));
@@ -2165,7 +2166,7 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         console.log(msgStr + 'begin');
         let imageSource = image.createImageSource(testJpg.buffer);
         console.info(msgStr + "promise create pixmap.start");
-        await imageSource.createPixelMap().then(pixelMap => {
+        imageSource.createPixelMap().then(pixelMap => {
           console.info(msgStr + "Napi create Effect.start");
           let headFilter = effectKit.createEffect(pixelMap);
 
@@ -2217,7 +2218,7 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         console.log(msgStr + 'begin');
         let imageSource = image.createImageSource(testJpg.buffer);
         console.info(msgStr + "promise create pixmap.start");
-        await imageSource.createPixelMap().then(pixelMap => {
+        imageSource.createPixelMap().then(pixelMap => {
           console.info(msgStr + "Napi create Effect.start");
           let headFilter = effectKit.createEffect(pixelMap);
 
@@ -2265,7 +2266,7 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         console.log(msgStr + 'begin');
         let imageSource = image.createImageSource(testJpg.buffer);
         console.info(msgStr + "promise create pixmap.start");
-        await imageSource.createPixelMap().then(pixelMap => {
+        imageSource.createPixelMap().then(pixelMap => {
           console.info(msgStr + "Napi create Effect.start");
           let headFilter = effectKit.createEffect(pixelMap);
 
@@ -2310,7 +2311,7 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         console.log(msgStr + 'begin');
         let imageSource = image.createImageSource(testJpg.buffer);
         console.info(msgStr + "promise create pixmap.start");
-        await imageSource.createPixelMap().then(pixelMap => {
+        imageSource.createPixelMap().then(pixelMap => {
           console.info(msgStr + "Napi create Effect.start");
           let headFilter = effectKit.createEffect(pixelMap);
 
@@ -2395,7 +2396,7 @@ export default function effectKitTest(context: common.UIAbilityContext, windowSt
         console.log(msgStr + 'begin');
         let imageSource = image.createImageSource(testJpg.buffer);
         console.info(msgStr + "promise create pixmap.start");
-        await imageSource.createPixelMap().then(pixelMap => {
+        imageSource.createPixelMap().then(pixelMap => {
           console.info(msgStr + "Napi create Effect.start");
           let headFilter = effectKit.createEffect(pixelMap);
 

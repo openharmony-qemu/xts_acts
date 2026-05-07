@@ -20,7 +20,7 @@ import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import { MyCallback } from '../models/MyCallback';
-import { AppStorage } from 'arkui.stateManagement.storage.appStorage'
+import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
 
 class EntryAbility extends UIAbility {
@@ -30,13 +30,13 @@ class EntryAbility extends UIAbility {
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onWindowStageCreate');
-    windowStage.loadContent('pages/webAdsBlockManager', (err: BusinessError<void>|null, data: undefined): void => {
+    windowStage.loadContent('pages/webAdsBlockManager', (err: BusinessError<void> | null): void => {
       hilog.info(0x0000, 'testTag EntryAbility', 'loadContent entering');
       if (err?.code) {
         hilog.info(0x0000, 'testTag EntryAbility', 'loadContent error');
         return;
       }
-      hilog.info(0x0000, 'testTag EntryAbility', 'loadContent ok'+JSON.stringify(this.context));
+      hilog.info(0x0000, 'testTag EntryAbility', 'loadContent ok' + JSON.stringify(this.context));
       hilog.info(0x0000, 'testTag EntryAbility', 'onWindowStageCreate ok');
     });
   }
@@ -52,12 +52,6 @@ class EntryAbility extends UIAbility {
 
   onForeground() {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onForeground');
-    if (this.context) {
-      hilog.info(0x0000, 'testTag EntryAbility', 'context ok'+JSON.stringify(this.context));
-    }else{
-      hilog.info(0x0000, 'testTag EntryAbility', 'context is undefined');
-    }
-    AppStorage.setOrCreate<common.UIAbilityContext>("UIAbilityContext", this.context)
   }
 
   onBackground() {

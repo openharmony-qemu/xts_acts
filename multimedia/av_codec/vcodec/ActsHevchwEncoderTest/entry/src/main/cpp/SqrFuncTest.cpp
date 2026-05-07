@@ -32,9 +32,9 @@ namespace {
 OH_AVCodec *g_venc = nullptr;
 OH_AVCapability* g_cap = nullptr;
 OH_AVCapability* g_capEnc = nullptr;
+constexpr int32_t SQR = 3;  // SQR mode
 const char* CODEC_NAME = "";
 const char* OUT_DIR = "/data/storage/el2/base/files/videoEncodeFileRoi.h265";
-constexpr int32_t SQR = 2; // CQ mode
 constexpr int32_t DEFAULT_WIDTH_1080 = 1080;
 constexpr int32_t DEFAULT_HEIGHT_1920 = 1920;
 constexpr int64_t DEFAULT_BITRATE_10000000 = 10000000;

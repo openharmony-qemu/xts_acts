@@ -20,6 +20,7 @@ import getSecondModuleTest from './GetSecondModule.test.ets';
 import isDefaultApplicationTest from './IsDefaultApplication.test.ets';
 import PublicApiEightTest from './PublicApiEightTest.test.ets';
 import PublicApiNineTest from './PublicApiNineTest.test.ets';
+import getApplicationLabel from './GetApplicationLabel.test.ets';
 
 export default function testsuite() {
   getProfileByAbility();
@@ -29,4 +30,5 @@ export default function testsuite() {
   isDefaultApplicationTest();
   PublicApiEightTest();
   PublicApiNineTest();
+  getApplicationLabel();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -948,7 +948,7 @@ export default function IndexedCollections05Test() {
       async (done: () => void): Promise<void> => {
         console.log('test_Array_ReduceEmptyWithInitial_0006 start');
         const arr6: number[] = [];
-        const result6 = arr6.reduce((acc, cur) => acc + cur, 0);
+        const result6 = arr6.reduce((acc, cur) => acc + cur, 0.);
         let result: boolean = result6 === 0;
         expect(result).assertTrue();
 
@@ -1271,7 +1271,7 @@ export default function IndexedCollections05Test() {
         for (let i = 0; i < 10000; i++) {
           arr21.push(i);
         }
-        const sum21 = arr21.reduce((acc, cur) => acc + cur, 0);
+        const sum21 = arr21.reduce((acc, cur) => acc + cur, 0.);
         let result: boolean = sum21 === 49995000;
         expect(result).assertTrue();
 
@@ -1669,7 +1669,7 @@ export default function IndexedCollections05Test() {
         let date39 = new Date(2023, 0, 1);
         let arr39: Date[] = [date39, new Date(2024, 0, 1)];
 
-        let result39 = arr39.sort((a: Date, b: Date) => (a.getTime() - b.getTime()) as int);
+        let result39 = arr39.sort((a: Date, b: Date) => (a.getTime() - b.getTime()).toInt());
 
         let result: boolean = result39[0].getFullYear() === 2023;
         expect(result).assertTrue();

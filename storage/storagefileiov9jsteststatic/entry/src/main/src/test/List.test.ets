@@ -42,6 +42,7 @@ import fileIOSetxattr from './Setxattr.test';
 import fileIOFileProperties from './class_file/File.test';
 import fileIOFileGetParent from './class_file/FileGetParent.test';
 import fileIOFileLock from './class_file/FileLock.test';
+import fileIOFileMappingStatic from './class_file/filemapping_static.test';
 import fileIOOpen from './Open.test';
 import fileIOSymlink from './Symlink.test';
 import fileIOWrite from './Write.test';
@@ -60,6 +61,7 @@ import fileIORandomAccessFileSetFilePointer from './class_randomAccessFile/SetFi
 import fileIORandomAccessFileWrite from './class_randomAccessFile/Write.test';
 import atomicFileTest from './class_atomicFile/AtomicFile.test';
 import fileIODfsConnect from './DfsConnect.test';
+import fileIOListFileExtStatic from "./ListFileExt.test";
 export default function testsuite() {
     fileIOAccess();
     fileIOClose();
@@ -108,4 +110,6 @@ export default function testsuite() {
     fileIORandomAccessFileWrite();
     atomicFileTest();
     fileIODfsConnect();
+    fileIOListFileExtStatic();
+    fileIOFileMappingStatic();
 }

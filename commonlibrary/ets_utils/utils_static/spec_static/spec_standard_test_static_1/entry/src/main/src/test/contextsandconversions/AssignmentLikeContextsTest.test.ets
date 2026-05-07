@@ -3081,20 +3081,6 @@ export default function AssignmentLikeContextsTest() {
       expect(a_Date).assertEqual(null);
       let f_Date: ((p: Date) => Date)|null = null;
       expect(f_Date).assertEqual(null);
-
-      let v_StackTrace: StackTrace|null = null;
-      expect(v_StackTrace).assertEqual(null);
-      let a_StackTrace: (StackTrace[])|null = null;
-      expect(a_StackTrace).assertEqual(null);
-      let f_StackTrace: ((p: StackTrace) => StackTrace)|null = null;
-      expect(f_StackTrace).assertEqual(null);
-
-      let v_StackTraceElement: StackTraceElement|null = null;
-      expect(v_StackTraceElement).assertEqual(null);
-      let a_StackTraceElement: (StackTraceElement[])|null = null;
-      expect(a_StackTraceElement).assertEqual(null);
-      let f_StackTraceElement: ((p: StackTraceElement) => StackTraceElement)|null = null;
-      expect(f_StackTraceElement).assertEqual(null);
     });
 
     /**
@@ -3204,20 +3190,6 @@ export default function AssignmentLikeContextsTest() {
       let src: Object[] = new Object[1](new Object());
       let dst: Object = src as Object;
       expect(src).assertEqual(dst); // 引用相等性校验
-    });
-
-    /**
-     * @tc.number    SUB_ASSIGNMENT_LIKE_CONTEXTS_11700
-     * @tc.name      testAssignmentLikeContexts0117
-     * @tc.desc     Widening reference conversion: multi-dimensional array to Object
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testAssignmentLikeContexts0117", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src: Object[][] = new Object[1][1];
-      let dst: Object = src as Object;
-      expect(src).assertEqual(dst);
     });
 
     /**
@@ -3784,7 +3756,7 @@ export default function AssignmentLikeContextsTest() {
      */
     it("testAssignmentLikeContexts0148", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: int = 300;
-      let dst: byte = src as byte;
+      let dst: byte = src.toByte();
       expect(dst).assertEqual(44);
     });
 

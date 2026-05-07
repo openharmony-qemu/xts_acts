@@ -17,7 +17,10 @@ import { describe, expect, it, Level } from '@ohos/hypium';
 import { ENTINFO1, INVALID_WANT, SELFHAPNAME, SELFWANT, DEFAULT_USER_ID, getErrorCode } from '../commom';
 
 import adminManager from '@ohos.enterprise.adminManager';
+import bluetoothManager from '@ohos.enterprise.bluetoothManager';
 import deviceSettings from '@ohos.enterprise.deviceSettings';
+import wifiManager from '@ohos.enterprise.wifiManager';
+import restrictions from '@ohos.enterprise.restrictions';
 import fs from '@ohos.file.fs';
 import { BusinessError } from '@ohos.base';
 import { inputMethod } from '@kit.IMEKit';
@@ -27,6 +30,12 @@ const ITEM_POWER_POLICY: string = 'powerPolicy';
 const ITEM_DATE_TIME: string = 'dateTime';
 const ITEM_EYE_COMFORT: string = 'eyeComfort';
 const ITEM_DEFAULT_INPUT_METHOD: string = 'defaultInputMethod';
+
+const KEY_INVALID: number = 999;
+const STATUS_INVALID: number = 999;
+const LABEL_WIFI = "wifi";
+const LABEL_BLUETOOTH = "bluetooth";
+const LABEL_NFC = "nfc";
 
 const VALID_MENUS_TO_HIDE: Array<deviceSettings.SettingsMenu> = [
   deviceSettings.SettingsMenu.ACCOUNT_ID,
@@ -1088,9 +1097,9 @@ export default function deviceSettingsTest() {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let result: string = deviceSettings.getValueForAccount(SELFWANT, deviceSettings.SettingsItem.DEVICE_NAME, 0);
-        expect(result.length == 0).assertTrue();
+        expect(false).assertTrue();
       } catch (error) {
-        expect().assertFail();
+        expect(Number(error.code) === 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1209,19 +1218,12 @@ export default function deviceSettingsTest() {
      */
     it("test_device_settings_set_value_for_account_0500", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      let nameBefore: string = deviceSettings.getValueForAccount(SELFWANT,
-        deviceSettings.SettingsItem.DEVICE_NAME, 0);
       try {
         deviceSettings.setValueForAccount(SELFWANT, deviceSettings.SettingsItem.DEVICE_NAME, 0, 'deviceName');
-        let result: string = deviceSettings.getValueForAccount(SELFWANT,
-          deviceSettings.SettingsItem.DEVICE_NAME, 0);
-        expect(result).not().assertUndefined();
+        expect(false).assertTrue();
       } catch (error) {
-        expect().assertFail();
+        expect(Number(error.code) === 9200012).assertTrue();
       } finally {
-        if (nameBefore != "") {
-          deviceSettings.setValueForAccount(SELFWANT, deviceSettings.SettingsItem.DEVICE_NAME, 0, nameBefore);
-        }
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
@@ -1344,6 +1346,93 @@ export default function deviceSettingsTest() {
       console.info(' --- setValue_test_002  -------- END --------');
     })
 
+    /**
+     * @tc.name   setValue_test_003
+     * @tc.number setValue_test_003
+     * @tc.desc   setValue with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setValue_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setValue_test_003  -------- START --------');
+      try {
+        deviceSettings.setValue(SELFWANT, null, 'bundleName');
+        console.info(' --- setValue_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setValue_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setValue_test_003  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setValue_test_004
+     * @tc.number setValue_test_004
+     * @tc.desc   setValue with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setValue_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setValue_test_004  -------- START --------');
+      try {
+        deviceSettings.setValue(SELFWANT, undefined, 'bundleName');
+        console.info(' --- setValue_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setValue_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setValue_test_004  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setValue_test_005
+     * @tc.number setValue_test_005
+     * @tc.desc   setValue with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setValue_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setValue_test_005  -------- START --------');
+      try {
+        deviceSettings.setValue(SELFWANT, ITEM_DEFAULT_INPUT_METHOD, null);
+        console.info(' --- setValue_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setValue_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setValue_test_005  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setValue_test_006
+     * @tc.number setValue_test_006
+     * @tc.desc   setValue with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setValue_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setValue_test_006  -------- START --------');
+      try {
+        deviceSettings.setValue(SELFWANT, ITEM_DEFAULT_INPUT_METHOD, undefined);
+        console.info(' --- setValue_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setValue_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setValue_test_006  -------- END --------');
+    })
 
     /**
      * @tc.name   getValue_test_001
@@ -1390,6 +1479,49 @@ export default function deviceSettingsTest() {
       console.info(' --- getValue_test_002  -------- END --------');
     })
 
+    /**
+     * @tc.name   getValue_test_003
+     * @tc.number getValue_test_003
+     * @tc.desc   getValue with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getValue_test_003", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getValue_test_003  -------- START --------');
+      try {
+        deviceSettings.getValue(SELFWANT, null);
+        console.info(' --- getValue_test_003 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getValue_test_003 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getValue_test_003  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getValue_test_004
+     * @tc.number getValue_test_004
+     * @tc.desc   getValue with undefined parameter admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("getValue_test_004", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getValue_test_004  -------- START --------');
+      try {
+        deviceSettings.getValue(SELFWANT, undefined);
+        console.info(' --- getValue_test_004 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- getValue_test_004 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- getValue_test_004  -------- END --------');
+    })
 
     /**
      * @tc.name   setHomeWallpaper_test_001
@@ -1643,7 +1775,6 @@ export default function deviceSettingsTest() {
       console.info(' --- setValueForAccount_test_003  -------- END --------');
     })
 
-
     /**
      * @tc.name   setValueForAccount_test_004
      * @tc.number setValueForAccount_test_004
@@ -1666,6 +1797,71 @@ export default function deviceSettingsTest() {
       console.info(' --- setValueForAccount_test_004  -------- END --------');
     })
 
+    /**
+     * @tc.name   setValueForAccount_test_005
+     * @tc.number setValueForAccount_test_005
+     * @tc.desc   setValueForAccount with null parameter value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setValueForAccount_test_005", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setValueForAccount_test_005  -------- START --------');
+      try {
+        deviceSettings.setValueForAccount(SELFWANT, deviceSettings.SettingsItem.DEVICE_NAME, DEFAULT_USER_ID, null);
+        console.info(' --- setValueForAccount_test_005 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setValueForAccount_test_005 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setValueForAccount_test_005  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setValueForAccount_test_006
+     * @tc.number setValueForAccount_test_006
+     * @tc.desc   setValueForAccount with undefined parameter value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setValueForAccount_test_006", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setValueForAccount_test_006  -------- START --------');
+      try {
+        deviceSettings.setValueForAccount(SELFWANT, deviceSettings.SettingsItem.DEVICE_NAME, DEFAULT_USER_ID, undefined);
+        console.info(' --- setValueForAccount_test_006 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setValueForAccount_test_006 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- setValueForAccount_test_006  -------- END --------');
+    })
+
+    /**
+     * @tc.name   setValueForAccount_test_007
+     * @tc.number setValueForAccount_test_007
+     * @tc.desc   setValueForAccount with undefined parameter value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("setValueForAccount_test_007", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- setValueForAccount_test_007  -------- START --------');
+      try {
+        deviceSettings.setValueForAccount(SELFWANT, deviceSettings.SettingsItem.DEVICE_NAME, DEFAULT_USER_ID, '');
+        console.info(' --- setValueForAccount_test_007 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- setValueForAccount_test_007 error 9200001 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+      done();
+      console.info(' --- setValueForAccount_test_007  -------- END --------');
+    })
 
     /**
      * @tc.name   getValueForAccount_test_001
@@ -2563,6 +2759,31 @@ export default function deviceSettingsTest() {
     });
 
     /**
+     * @tc.name   test_device_settings_remove_hidden_settings_menu_0108
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_REMOVE_HIDDEN_SETTINGS_MENU_JS_0108
+     * @tc.desc   test remove hidden settings menu with empty data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_remove_hidden_settings_menu_0108", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.removeHiddenSettingsMenu(SELFWANT, []);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
      * @tc.name   test_device_settings_get_hidden_settings_menu_0100
      * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_GET_HIDDEN_SETTINGS_MENU_JS_0100
      * @tc.desc   test get hidden settings menu without admin
@@ -2677,6 +2898,414 @@ export default function deviceSettingsTest() {
         } else {
           expect(Number(error.code) === 401).assertTrue();
         }
+      }
+      done();
+    });
+
+    let sleep = (timeout: number): Promise<ESObject> => {
+      return new Promise(resolve => {
+        const st =setTimeout(() => {
+          resolve(null);
+          clearTimeout(st);
+        }, timeout);
+      });
+    };
+
+    /**
+     * @tc.name   test_device_settings_set_switch_status_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_SWITCH_STATUS_JS_0100
+     * @tc.desc   test deviceSettings setSwitchStatus without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_switch_status_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.BLUETOOTH, deviceSettings.SwitchStatus.OFF);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_switch_status_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_SWITCH_STATUS_JS_0200
+     * @tc.desc   test deviceSettings setSwitchStatus with null admin parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_switch_status_0200", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.setSwitchStatus(null, deviceSettings.SwitchKey.NEARLINK, deviceSettings.SwitchStatus.OFF);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_switch_status_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_SWITCH_STATUS_JS_0300
+     * @tc.desc   test deviceSettings setSwitchStatus with null key parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_switch_status_0300", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.setSwitchStatus(SELFWANT, null, deviceSettings.SwitchStatus.OFF);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_switch_status_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_SWITCH_STATUS_JS_0400
+     * @tc.desc   test deviceSettings setSwitchStatus with null status parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_switch_status_0400", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.NEARLINK, null);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_switch_status_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_SWITCH_STATUS_JS_0500
+     * @tc.desc   test deviceSettings setSwitchStatus with undefined admin parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_switch_status_0500", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.setSwitchStatus(undefined, deviceSettings.SwitchKey.WIFI, deviceSettings.SwitchStatus.ON);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_switch_status_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_SWITCH_STATUS_JS_0600
+     * @tc.desc   test deviceSettings setSwitchStatus with undefined key parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_switch_status_0600", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.setSwitchStatus(SELFWANT, undefined, deviceSettings.SwitchStatus.ON);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_switch_status_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_SWITCH_STATUS_JS_0700
+     * @tc.desc   test deviceSettings setSwitchStatus with undefined status parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_switch_status_0700", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.WIFI, undefined);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_switch_status_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_SWITCH_STATUS_JS_0800
+     * @tc.desc   test deviceSettings setSwitchStatus with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_switch_status_0800", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      try {
+        deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.WIFI, deviceSettings.SwitchStatus.ON);
+        await sleep(3000);
+        await adminManager.disableAdmin(SELFWANT);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let result: boolean = wifiManager.isWifiActiveSync(SELFWANT);
+        expect(result === true).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_switch_status_0900
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_SWITCH_STATUS_JS_0900
+     * @tc.desc   test deviceSettings setSwitchStatus with invalid key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_switch_status_0900", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.setSwitchStatus(SELFWANT, KEY_INVALID, deviceSettings.SwitchStatus.OFF);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 801).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_switch_status_1000
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_SWITCH_STATUS_JS_1000
+     * @tc.desc   test deviceSettings setSwitchStatus with invalid status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_switch_status_1000", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.WIFI, STATUS_INVALID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 9200012).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_switch_status_1100
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_SWITCH_STATUS_JS_1100
+     * @tc.desc   test deviceSettings setSwitchStatus with already disallowed policy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_switch_status_1100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, LABEL_WIFI, true);
+        deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.WIFI, deviceSettings.SwitchStatus.ON);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 203).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_switch_status_1200
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_SWITCH_STATUS_JS_1200
+     * @tc.desc   test deviceSettings setSwitchStatus with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_switch_status_1200", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.WIFI, deviceSettings.SwitchStatus.OFF);
+        await sleep(3000);
+        let result: boolean = wifiManager.isWifiActiveSync(SELFWANT);
+        expect(result === false).assertTrue();
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_switch_status_1300
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_SWITCH_STATUS_JS_1300
+     * @tc.desc   test deviceSettings setSwitchStatus with byod admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_switch_status_1300", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.WIFI, deviceSettings.SwitchStatus.ON);
+        await adminManager.disableAdmin(SELFWANT);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        await sleep(3000);
+        let result: boolean = wifiManager.isWifiActiveSync(SELFWANT);
+        expect(result === true).assertTrue();
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_switch_status_1400
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_SWITCH_STATUS_JS_1400
+     * @tc.desc   test deviceSettings setSwitchStatus with byod admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_switch_status_1400", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.BLUETOOTH, deviceSettings.SwitchStatus.FORCE_ON);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_switch_status_1500
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_SWITCH_STATUS_JS_1500
+     * @tc.desc   test deviceSettings setSwitchStatus with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_switch_status_1500", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.BLUETOOTH, deviceSettings.SwitchStatus.FORCE_ON);
+        restrictions.setDisallowedPolicy(SELFWANT, LABEL_BLUETOOTH, true);
+        deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.BLUETOOTH, deviceSettings.SwitchStatus.FORCE_ON);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 203).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_switch_status_1600
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_SWITCH_STATUS_JS_1600
+     * @tc.desc   test deviceSettings setSwitchStatus with force on bluetooth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_switch_status_1600", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.BLUETOOTH, deviceSettings.SwitchStatus.FORCE_ON);
+        await sleep(3000);
+        let result: bluetoothManager.BluetoothInfo = bluetoothManager.getBluetoothInfo(SELFWANT);
+        expect(Number(result.state) === 2).assertTrue();
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_switch_status_nfc_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_SWITCH_STATUS_NFC_0700
+     * @tc.desc   test deviceSettings setSwitchStatus with NFC using super admin with disallowed policy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_switch_status_nfc_0700", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, LABEL_NFC, true);
+        deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.NFC, deviceSettings.SwitchStatus.ON);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 203).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_switch_status_nfc_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_SWITCH_STATUS_NFC_0800
+     * @tc.desc   test deviceSettings setSwitchStatus with NFC using invalid status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_switch_status_nfc_0800", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.NFC, STATUS_INVALID);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
     });

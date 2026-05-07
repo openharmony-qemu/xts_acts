@@ -46,13 +46,13 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
 import { RecordData } from '@ohos.base';
 
-class ButtonModifier1 implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier1 implements AttributeModifier<ButtonAttribute> {
   applyNormalAttribute(instance: ButtonAttribute): void {
     instance.keyboardShortcut(FunctionKey.TAB, [ModifierKey.CTRL]);
   }
 }
 
-class ButtonModifier2 implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier2 implements AttributeModifier<ButtonAttribute> {
   applyNormalAttribute(instance: ButtonAttribute): void {
     instance.keyboardShortcut(FunctionKey.DPAD_LEFT, [ModifierKey.SHIFT]);
   }
@@ -73,7 +73,7 @@ struct KeyboardShortcutTest {
       } as Record<String,RecordData>
     } as events_emitter.EventData
     let event: events_emitter.InnerEvent = {
-      eventId: eventId as Long,
+      eventId: eventId.toLong(),
       priority: events_emitter.EventPriority.LOW
     } as events_emitter.InnerEvent
     events_emitter.emit(event, eventData)

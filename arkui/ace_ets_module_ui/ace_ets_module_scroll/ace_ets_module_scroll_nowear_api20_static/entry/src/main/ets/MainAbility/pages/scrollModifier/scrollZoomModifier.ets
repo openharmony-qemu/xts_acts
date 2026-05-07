@@ -149,7 +149,7 @@ import { LengthUnit, typeNode } from '@ohos.arkui.node'
 import { BusinessError } from '@kit.BasicServicesKit'
 
 @Observed
-class ModifierZoomScale5 implements AttributeModifier<ScrollAttribute> {
+export class ModifierZoomScale5 implements AttributeModifier<ScrollAttribute> {
   public didZoom: string = 'zoom';
   public zoomStart: string = 'start';
   public zoomStop: string = 'stop';

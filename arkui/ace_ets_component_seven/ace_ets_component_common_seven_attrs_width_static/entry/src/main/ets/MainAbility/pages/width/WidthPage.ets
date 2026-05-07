@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -85,7 +85,6 @@ import {
   Tabs,
   WaterFlow,
   CalendarPicker,
-  FormLink,
   Hyperlink,
   Progress,
   BarState,
@@ -127,7 +126,6 @@ import {
   EllipseAttribute,
   FlexAttribute,
   FlowItemAttribute,
-  FormLinkAttribute,
   GaugeAttribute,
   GridAttribute,
   GridColAttribute,
@@ -193,7 +191,6 @@ import {
   ColumnOptions,
   ImageFit,
   NavPathStack,
-  FormLinkOptions,
   EffectComponentAttribute,
   FormComponentAttribute,
   ImageSpanAttribute,
@@ -206,7 +203,7 @@ import {
 import { State, StoragePropRef, AppStorage } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 
-class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
@@ -214,7 +211,7 @@ class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttrib
   }
 }
 
-class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: BadgeAttribute): void {
@@ -222,7 +219,7 @@ class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   }
 }
 
-class BlankModifier implements AttributeModifier<BlankAttribute> {
+export class BlankModifier implements AttributeModifier<BlankAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: BlankAttribute): void {
@@ -230,7 +227,7 @@ class BlankModifier implements AttributeModifier<BlankAttribute> {
   }
 }
 
-class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: ButtonAttribute): void {
@@ -238,7 +235,7 @@ class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   }
 }
 
-class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: CalendarPickerAttribute): void {
@@ -246,7 +243,7 @@ class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribut
   }
 }
 
-class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: CheckboxAttribute): void {
@@ -254,7 +251,7 @@ class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   }
 }
 
-class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: CheckboxGroupAttribute): void {
@@ -262,7 +259,7 @@ class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute>
   }
 }
 
-class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: ColumnAttribute): void {
@@ -270,7 +267,7 @@ class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   }
 }
 
-class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: ColumnSplitAttribute): void {
@@ -278,7 +275,7 @@ class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   }
 }
 
-class CounterModifier implements AttributeModifier<CounterAttribute> {
+export class CounterModifier implements AttributeModifier<CounterAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: CounterAttribute): void {
@@ -286,7 +283,7 @@ class CounterModifier implements AttributeModifier<CounterAttribute> {
   }
 }
 
-class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: DataPanelAttribute): void {
@@ -294,7 +291,7 @@ class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   }
 }
 
-class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: DatePickerAttribute): void {
@@ -302,7 +299,7 @@ class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   }
 }
 
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: DividerAttribute): void {
@@ -310,7 +307,7 @@ class DividerModifier implements AttributeModifier<DividerAttribute> {
   }
 }
 
-class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
+export class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: EffectComponentAttribute): void {
@@ -318,7 +315,7 @@ class EffectComponentModifier implements AttributeModifier<EffectComponentAttrib
   }
 }
 
-class FlexModifier implements AttributeModifier<FlexAttribute> {
+export class FlexModifier implements AttributeModifier<FlexAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: FlexAttribute): void {
@@ -326,7 +323,7 @@ class FlexModifier implements AttributeModifier<FlexAttribute> {
   }
 }
 
-class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: FlowItemAttribute): void {
@@ -334,7 +331,7 @@ class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   }
 }
 
-class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
+export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: FormComponentAttribute): void {
@@ -342,15 +339,7 @@ class FormComponentModifier implements AttributeModifier<FormComponentAttribute>
   }
 }
 
-class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mWidth: number | string = 10
-
-  applyNormalAttribute(instance: FormLinkAttribute): void {
-    instance.width(this.mWidth)
-  }
-}
-
-class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: GaugeAttribute): void {
@@ -358,7 +347,7 @@ class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   }
 }
 
-class GridModifier implements AttributeModifier<GridAttribute> {
+export class GridModifier implements AttributeModifier<GridAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: GridAttribute): void {
@@ -366,7 +355,7 @@ class GridModifier implements AttributeModifier<GridAttribute> {
   }
 }
 
-class GridColModifier implements AttributeModifier<GridColAttribute> {
+export class GridColModifier implements AttributeModifier<GridColAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: GridColAttribute): void {
@@ -374,7 +363,7 @@ class GridColModifier implements AttributeModifier<GridColAttribute> {
   }
 }
 
-class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: GridItemAttribute): void {
@@ -382,7 +371,7 @@ class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   }
 }
 
-class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: GridRowAttribute): void {
@@ -390,7 +379,7 @@ class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   }
 }
 
-class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: HyperlinkAttribute): void {
@@ -398,7 +387,7 @@ class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   }
 }
 
-class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: ImageAnimatorAttribute): void {
@@ -406,7 +395,7 @@ class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute>
   }
 }
 
-class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
+export class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: ImageSpanAttribute): void {
@@ -414,7 +403,7 @@ class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
   }
 }
 
-class ImageModifier implements AttributeModifier<ImageAttribute> {
+export class ImageModifier implements AttributeModifier<ImageAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: ImageAttribute): void {
@@ -422,7 +411,7 @@ class ImageModifier implements AttributeModifier<ImageAttribute> {
   }
 }
 
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: ListAttribute): void {
@@ -430,7 +419,7 @@ class ListModifier implements AttributeModifier<ListAttribute> {
   }
 }
 
-class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: ListItemAttribute): void {
@@ -438,7 +427,7 @@ class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   }
 }
 
-class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: ListItemGroupAttribute): void {
@@ -446,7 +435,7 @@ class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute>
   }
 }
 
-class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: LoadingProgressAttribute): void {
@@ -454,7 +443,7 @@ class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttrib
   }
 }
 
-class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: MarqueeAttribute): void {
@@ -462,7 +451,7 @@ class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   }
 }
 
-class MenuModifier implements AttributeModifier<MenuAttribute> {
+export class MenuModifier implements AttributeModifier<MenuAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: MenuAttribute): void {
@@ -470,7 +459,7 @@ class MenuModifier implements AttributeModifier<MenuAttribute> {
   }
 }
 
-class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: MenuItemAttribute): void {
@@ -478,7 +467,7 @@ class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   }
 }
 
-class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: MenuItemGroupAttribute): void {
@@ -486,7 +475,7 @@ class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute>
   }
 }
 
-class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: NavDestinationAttribute): void {
@@ -494,14 +483,14 @@ class NavDestinationModifier implements AttributeModifier<NavDestinationAttribut
   }
 }
 
-class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: NavigationAttribute): void {
     instance.width(this.mWidth)
   }
 }
-class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
+export class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: PatternLockAttribute): void {
@@ -509,7 +498,7 @@ class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   }
 }
 
-class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
+export class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: PluginComponentAttribute): void {
@@ -517,7 +506,7 @@ class PluginComponentModifier implements AttributeModifier<PluginComponentAttrib
   }
 }
 
-class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: QRCodeAttribute): void {
@@ -525,7 +514,7 @@ class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   }
 }
 
-class RadioModifier implements AttributeModifier<RadioAttribute> {
+export class RadioModifier implements AttributeModifier<RadioAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: RadioAttribute): void {
@@ -533,7 +522,7 @@ class RadioModifier implements AttributeModifier<RadioAttribute> {
   }
 }
 
-class RatingModifier implements AttributeModifier<RatingAttribute> {
+export class RatingModifier implements AttributeModifier<RatingAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: RatingAttribute): void {
@@ -541,7 +530,7 @@ class RatingModifier implements AttributeModifier<RatingAttribute> {
   }
 }
 
-class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: RefreshAttribute): void {
@@ -549,7 +538,7 @@ class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   }
 }
 
-class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: RelativeContainerAttribute): void {
@@ -557,7 +546,7 @@ class RelativeContainerModifier implements AttributeModifier<RelativeContainerAt
   }
 }
 
-class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: RemoteWindowAttribute): void {
@@ -565,7 +554,7 @@ class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   }
 }
 
-class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: RichEditorAttribute): void {
@@ -573,7 +562,7 @@ class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   }
 }
 
-class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: RichTextAttribute): void {
@@ -581,7 +570,7 @@ class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   }
 }
 
-class RowModifier implements AttributeModifier<RowAttribute> {
+export class RowModifier implements AttributeModifier<RowAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: RowAttribute): void {
@@ -589,7 +578,7 @@ class RowModifier implements AttributeModifier<RowAttribute> {
   }
 }
 
-class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: RowSplitAttribute): void {
@@ -597,7 +586,7 @@ class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   }
 }
 
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: ScrollAttribute): void {
@@ -605,7 +594,7 @@ class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   }
 }
 
-class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: ScrollBarAttribute): void {
@@ -613,7 +602,7 @@ class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   }
 }
 
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: SearchAttribute): void {
@@ -621,7 +610,7 @@ class SearchModifier implements AttributeModifier<SearchAttribute> {
   }
 }
 
-class SelectModifier implements AttributeModifier<SelectAttribute> {
+export class SelectModifier implements AttributeModifier<SelectAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: SelectAttribute): void {
@@ -629,7 +618,7 @@ class SelectModifier implements AttributeModifier<SelectAttribute> {
   }
 }
 
-class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: SideBarContainerAttribute): void {
@@ -637,7 +626,7 @@ class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttr
   }
 }
 
-class SliderModifier implements AttributeModifier<SliderAttribute> {
+export class SliderModifier implements AttributeModifier<SliderAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: SliderAttribute): void {
@@ -645,7 +634,7 @@ class SliderModifier implements AttributeModifier<SliderAttribute> {
   }
 }
 
-class StackModifier implements AttributeModifier<StackAttribute> {
+export class StackModifier implements AttributeModifier<StackAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: StackAttribute): void {
@@ -653,7 +642,7 @@ class StackModifier implements AttributeModifier<StackAttribute> {
   }
 }
 
-class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: SwiperAttribute): void {
@@ -661,7 +650,7 @@ class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   }
 }
 
-class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: TabContentAttribute): void {
@@ -669,7 +658,7 @@ class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   }
 }
 
-class TabsModifier implements AttributeModifier<TabsAttribute> {
+export class TabsModifier implements AttributeModifier<TabsAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: TabsAttribute): void {
@@ -677,7 +666,7 @@ class TabsModifier implements AttributeModifier<TabsAttribute> {
   }
 }
 
-class TextModifier implements AttributeModifier<TextAttribute> {
+export class TextModifier implements AttributeModifier<TextAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: TextAttribute): void {
@@ -685,7 +674,7 @@ class TextModifier implements AttributeModifier<TextAttribute> {
   }
 }
 
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: TextAreaAttribute): void {
@@ -693,7 +682,7 @@ class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   }
 }
 
-class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: TextClockAttribute): void {
@@ -701,7 +690,7 @@ class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   }
 }
 
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: TextInputAttribute): void {
@@ -709,7 +698,7 @@ class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   }
 }
 
-class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: TextPickerAttribute): void {
@@ -717,7 +706,7 @@ class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   }
 }
 
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: TextTimerAttribute): void {
@@ -725,7 +714,7 @@ class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   }
 }
 
-class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: TimePickerAttribute): void {
@@ -733,7 +722,7 @@ class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   }
 }
 
-class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: ToggleAttribute): void {
@@ -741,7 +730,7 @@ class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   }
 }
 
-class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
+export class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: UIExtensionComponentAttribute): void {
@@ -749,7 +738,7 @@ class UIExtensionComponentModifier implements AttributeModifier<UIExtensionCompo
   }
 }
 
-class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: WaterFlowAttribute): void {
@@ -757,7 +746,7 @@ class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   }
 }
 
-class WebModifier implements AttributeModifier<WebAttribute> {
+export class WebModifier implements AttributeModifier<WebAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: WebAttribute): void {
@@ -765,7 +754,7 @@ class WebModifier implements AttributeModifier<WebAttribute> {
   }
 }
 
-class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: XComponentAttribute): void {
@@ -773,7 +762,7 @@ class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   }
 }
 
-class ProgressModifier implements AttributeModifier<ProgressAttribute> {
+export class ProgressModifier implements AttributeModifier<ProgressAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: ProgressAttribute): void {
@@ -781,7 +770,7 @@ class ProgressModifier implements AttributeModifier<ProgressAttribute> {
   }
 }
 
-class CircleModifier implements AttributeModifier<CircleAttribute> {
+export class CircleModifier implements AttributeModifier<CircleAttribute> {
   mWidth: number | string = 10
 
   applyNormalAttribute(instance: CircleAttribute): void {
@@ -895,13 +884,6 @@ function commonStyle(this: FlexAttribute, componentKey: string) {
 }
 
 function commonStyle(this: FlowItemAttribute, componentKey: string) {
-  this.width(50)
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
-function commonStyle(this: FormLinkAttribute, componentKey: string) {
   this.width(50)
   this.height('100%')
   this.key(componentKey)
@@ -1386,8 +1368,6 @@ struct WidthPage {
   @State _widthFlowItemMod: FlowItemModifier = new FlowItemModifier()
   //FormComponent Component is not found on build
   @State _widthFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  //FormLink Component is not found on build
-  @State _widthFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _widthGaugeMod: GaugeModifier = new GaugeModifier()
   @State _widthGridMod: GridModifier = new GridModifier()
   @State _widthGridColMod: GridColModifier = new GridColModifier()
@@ -1556,7 +1536,7 @@ struct WidthPage {
         Marquee({
           start: true,
           step: 50,
-          loop: Infinity as Int,
+          loop: Infinity.toInt(),
           fromStart: true,
           src: this.src
         }).commonStyle(this.componentKey).attributeModifier(this._widthMarqueeMod)

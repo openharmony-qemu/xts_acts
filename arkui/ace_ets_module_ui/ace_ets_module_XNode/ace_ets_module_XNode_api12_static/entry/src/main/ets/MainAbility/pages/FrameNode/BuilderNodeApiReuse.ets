@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -44,7 +44,7 @@ import {
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 
-class MyDataSource implements IDataSource<string>{
+export class MyDataSource implements IDataSource<string>{
   private dataArray: Array<string> = new Array<string>();
   private listener: DataChangeListener | null = null
 
@@ -75,7 +75,7 @@ class MyDataSource implements IDataSource<string>{
   }
 }
 
-class Params {
+export class Params {
   item: string = '';
 
   constructor(item: string) {
@@ -88,7 +88,7 @@ function buildNode(param: Params = new Params("hello")) {
   ReusableChildComponent2({ item: param.item });
 }
 
-class MyNodeController extends NodeController {
+export class MyNodeController extends NodeController {
   public builderNode: BuilderNode<Params> | null = null;
   public item: string = "";
 

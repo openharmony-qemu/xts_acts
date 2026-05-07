@@ -22,7 +22,9 @@ import { Callback } from '@ohos.base'
 import image from '@ohos.multimedia.image';
 import web_webview from '@ohos.web.webview';
 import { BusinessError, RecordData } from '@ohos.base';
-class StringFields {
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+
+export class StringFields {
   str: string = '';
 }
 @Entry
@@ -80,6 +82,13 @@ struct webViewOnMetaViewportFalse {
                   console.error('ErrorCode: ${error.code}, Message: ${error.message}');
                 }
                 break;
+              }
+
+              case 'SwitchNextPageStatic' : {
+                let uiContext: UIContext = this.getUIContext();
+                let router: Router = uiContext.getRouter();
+                router.pushUrl({ url: 'pages/webJavaScriptOnDoucmentEndTest' })
+                console.log('push URL success')
               }
 
             }

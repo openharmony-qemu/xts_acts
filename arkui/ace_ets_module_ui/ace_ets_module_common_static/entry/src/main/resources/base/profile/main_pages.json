@@ -11,10 +11,12 @@
     "MainAbility/pages/AxisEvent/AxisEventIndex",
     "MainAbility/pages/DragEvent/DragEventIndex",
     "MainAbility/pages/DismissReason/DismissReasonIndex",
+    "MainAbility/pages/Common/CommonIndex",
     "MainAbility/pages/CommonMethod/CommonMethodIndex",
     "MainAbility/pages/TextContentControllerBase/TextContentControllerBaseIndex",
     "MainAbility/pages/ScrollableCommonMethod/ScrollableCommonMethodIndex",
     "MainAbility/pages/ScrollResult/ScrollResultIndex",
-    "MainAbility/pages/ChildrenMainSize/ChildrenMainSizeIndex"
+    "MainAbility/pages/ChildrenMainSize/ChildrenMainSizeIndex",
+    "MainAbility/pages/LayoutPolicy/LayoutPolicyIndex"
   ]
 }

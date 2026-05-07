@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,11 +47,11 @@ let width = 1
 
 class MyRenderNode extends RenderNode {
   draw(context: DrawContext) {
-    width = context.size.width as Int
+    width = context.size.width.toInt()
   }
 }
 
-class MyNodeController extends NodeController {
+export class MyNodeController extends NodeController {
   private rootNode: FrameNode | null = null;
 
   makeNode(uiContext: UIContext): FrameNode | null {
@@ -81,7 +81,7 @@ struct DrawContextGetSize {
         .id('DrawContext_get_Size')
         .onClick((e: ClickEvent) => {
           const child = new MyRenderNode()
-          width = child.size.width as Int
+          width = child.size.width.toInt()
         })
         .margin({ top: 100 } as Margin)
         .width('100%')

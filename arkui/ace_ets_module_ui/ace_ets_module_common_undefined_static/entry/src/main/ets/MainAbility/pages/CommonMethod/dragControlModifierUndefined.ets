@@ -34,7 +34,7 @@ import inspector from '@ohos.arkui.inspector'
 
 
 @Observed
-class MyModifier1 implements AttributeModifier<RowAttribute> {
+export class MyModifier1 implements AttributeModifier<RowAttribute> {
   public isAllowDrop1: boolean = true;
 
   applyNormalAttribute(instance: RowAttribute): void {
@@ -44,7 +44,7 @@ class MyModifier1 implements AttributeModifier<RowAttribute> {
 }
 
 @Observed
-class MyModifier2 implements AttributeModifier<RowAttribute> {
+export class MyModifier2 implements AttributeModifier<RowAttribute> {
   public isAllowDrop2: boolean = true;
 
   applyNormalAttribute(instance: RowAttribute): void {
@@ -54,7 +54,7 @@ class MyModifier2 implements AttributeModifier<RowAttribute> {
 }
 
 @Observed
-class MyModifier3 implements AttributeModifier<ImageAttribute> {
+export class MyModifier3 implements AttributeModifier<ImageAttribute> {
   public isDragPreviewOptions: boolean = true;
 
   applyNormalAttribute(instance: ImageAttribute): void {

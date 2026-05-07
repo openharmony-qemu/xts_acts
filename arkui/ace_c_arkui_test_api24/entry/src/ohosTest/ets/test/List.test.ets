@@ -15,9 +15,33 @@
 import matrix4Test from './matrix4/Matrix4Test.test'
 import errorCodeTest from './matrix4/ErrorCodeTest.test'
 import EnableClickSoundEffectTest from './enableClickSoundEffect/EnableClickSoundEffectTest.test'
+import EllipsisModeCenterTest from './ellipsisModeTest/ellipsisModeCenter.test'
+import EllipsisModeStartTest from './ellipsisModeTest/ellipsisModeStart.test'
+import arkuiNativeCapiDragAndDrop from './arkui_native/ArkUICapiGenerated_drag_and_drop.test'
+import arkuiNativeCapiDrawableDescriptor from './arkui_native/ArkUICapiGenerated_drawable_descriptor.test'
+import arkuiNativeCapiNativeInterfaceA11y from './arkui_native/ArkUICapiGenerated_native_interface_a11y.test'
+import arkuiNativeCapiNativeNode from './arkui_native/ArkUICapiGenerated_native_node.test'
+import arkuiNativeCapiNativeType from './arkui_native/ArkUICapiGenerated_native_type.test'
+import arkuiNativeCapiStyledString from './arkui_native/ArkUICapiGenerated_styled_string.test'
+import arkuiNativeCapiUiInputEvent from './arkui_native/ArkUICapiGenerated_ui_input_event.test'
+import PointerEventGetCurrentLocalTest from './pointerEventGetCurrentLocal/PointerEventGetCurrentLocalTest.test'
+import TextGetCharacterTest from './TextGetCharacter/TextGetCharacterTest.test'
+import CrossLanguageOptionsSupportFiveMethodsTest from './FrameNode/CrossLanguageOptionsSupportFiveMethodsTest.test'
 
 export default function testsuite() {
   matrix4Test();
   errorCodeTest();
   EnableClickSoundEffectTest();
+  EllipsisModeCenterTest();
+  EllipsisModeStartTest()
+  arkuiNativeCapiDragAndDrop();
+  arkuiNativeCapiDrawableDescriptor();
+  arkuiNativeCapiNativeInterfaceA11y();
+  arkuiNativeCapiNativeNode();
+  arkuiNativeCapiNativeType();
+  arkuiNativeCapiStyledString();
+  arkuiNativeCapiUiInputEvent();
+  PointerEventGetCurrentLocalTest();
+  TextGetCharacterTest();
+  CrossLanguageOptionsSupportFiveMethodsTest();
 }

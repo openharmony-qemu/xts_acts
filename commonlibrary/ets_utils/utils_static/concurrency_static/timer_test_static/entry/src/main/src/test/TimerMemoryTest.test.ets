@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2024 HiHope Open Source Organization.
+* Copyright (C) 2024-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the 'License');
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -67,13 +67,13 @@ export default function TimerMemoryTest(): void {
             totalCount++;
             counter++;
             if (counter === INTERVAL_EXECUTION_TIMES) {
-              clearInterval(intervalId as int);
+              clearInterval(intervalId.toInt());
               let temp: number | null = null;
               temp = intervalId;
               temp = null;
               resolve(undefined);
             }
-          }, 10 * SHORT_DELAY_FACTOR as int);
+          }, 10 * SHORT_DELAY_FACTOR.toInt()).toDouble();
         });
       }
       console.info(`totalCount: ${totalCount}`);
@@ -106,7 +106,7 @@ export default function TimerMemoryTest(): void {
               console.log(`Round ${round}, Delay: ${delay} seconds, Timestamp: ${Date.now()}`);
               executionCount++;
               resolve(undefined);
-            }, delay * 1000 * SHORT_DELAY_FACTOR as int);
+            }, delay * 1000 * SHORT_DELAY_FACTOR.toInt());
           });
           roundPromises.push(promise);
         }
@@ -147,10 +147,10 @@ export default function TimerMemoryTest(): void {
             if (shouldContinue) {
               logExecution('Nested setInterval executed');
             } else {
-              clearInterval(intervalId as int);
+              clearInterval(intervalId.toInt());
               logExecution('Nested setInterval stopped due to condition');
             }
-          }, 1000);
+          }, 1000).toDouble();
           setTimeout(() => {
             shouldContinue = false;
           }, 3000);
@@ -161,10 +161,10 @@ export default function TimerMemoryTest(): void {
         if (shouldContinue) {
           logExecution('Outer setInterval executed');
         } else {
-          clearInterval(outerIntervalId as int);
+          clearInterval(outerIntervalId.toInt());
           logExecution('Outer setInterval stopped due to condition');
         }
-      }, 1500);
+      }, 1500).toDouble();
       setTimeout(() => {
         shouldContinue = false;
       }, 6000);
@@ -275,8 +275,8 @@ export default function TimerMemoryTest(): void {
       expect(innerSetTimeoutExecuted).assertFalse()
       expect(innerSetTimeoutCleared).assertFalse()
       timerIds.forEach((id) => {
-        clearTimeout(id as int);
-        clearInterval(id as int);
+        clearTimeout(id.toInt());
+        clearInterval(id.toInt());
       });
       Done();
     });

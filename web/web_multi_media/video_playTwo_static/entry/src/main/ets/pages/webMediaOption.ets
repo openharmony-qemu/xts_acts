@@ -24,7 +24,7 @@ import emitter from '@ohos.events.emitter';
 import Utils from '../../src/test/Util.test.ets';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
@@ -124,6 +124,10 @@ struct WebMediaOption{
               console.log(` this.checkResult ` + this.checkResult + ' this.checkResultTwo ' + this.checkResultTwo);
                 Utils.emitEvent((this.checkResult == this.checkResultTwo), 415)
               }, 2000)
+              break;
+            }
+            case 'emitOnAudioStateChangedEvent001': {
+              Utils.emitEvent(this.playing, 416);
               break;
             }
 

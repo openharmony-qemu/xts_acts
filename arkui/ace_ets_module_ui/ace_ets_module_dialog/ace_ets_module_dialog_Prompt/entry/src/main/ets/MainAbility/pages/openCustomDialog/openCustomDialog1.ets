@@ -27,7 +27,7 @@ function customDialogBuilder1() {
         promptAction.closeCustomDialog(customDialogId)
       })
     }
-  }.height(200).padding(5)
+  }.height(100).padding(5)
 }
 
 @Entry
@@ -37,7 +37,7 @@ struct openCustomDialog1 {
 
   build() {
     Row() {
-      Column() {
+      Row() {
         Button("Reset")
           .id("openCustomDialog1Text")
           .backgroundColor("#ff0000")
@@ -70,6 +70,6 @@ struct openCustomDialog1 {
       }
       .width('100%')
     }
-    .height('100%')
+
   }
 }

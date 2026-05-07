@@ -102,10 +102,10 @@ export default function bindGridControllerSetOnTest() {
       let bottom = rect.bottom;
       let height = bottom -top;
       let width = right - left;
-      await driver.swipe(Math.round(left + width * 0.9) as Int,        // 起点 X：左侧 10% 处（避免贴边）
-        Math.round(top + height / 2) as Int,          // 起点 Y：垂直中线
-        Math.round(left + width * 0.5) as Int,        // 终点 X：右侧 90% 处（避免贴边）
-        Math.round(top + height / 2) as Int );
+      await driver.swipe(Math.round(left + width * 0.9).toInt(),        // 起点 X：左侧 10% 处（避免贴边）
+        Math.round(top + height / 2).toInt(),          // 起点 Y：垂直中线
+        Math.round(left + width * 0.5).toInt(),        // 终点 X：右侧 90% 处（避免贴边）
+        Math.round(top + height / 2).toInt() );
       await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(inspector.getInspectorByKey('str3'))
         .getElement('$attrs')
@@ -119,10 +119,10 @@ export default function bindGridControllerSetOnTest() {
         .getElement('$attrs')
         .getString('content'))
         .assertEqual('OnScrollStop start');
-      await driver.swipe(Math.round(left + width * 0.1) as Int,        // 起点 X：左侧 10% 处（避免贴边）
-        Math.round(top + height / 2) as Int,          // 起点 Y：垂直中线
-        Math.round(left + width * 0.9) as Int,        // 终点 X：右侧 90% 处（避免贴边）
-        Math.round(top + height / 2) as Int );
+      await driver.swipe(Math.round(left + width * 0.1).toInt(),        // 起点 X：左侧 10% 处（避免贴边）
+        Math.round(top + height / 2).toInt(),          // 起点 Y：垂直中线
+        Math.round(left + width * 0.9).toInt(),        // 终点 X：右侧 90% 处（避免贴边）
+        Math.round(top + height / 2).toInt() );
       await CommonFunc.sleep(200);
       expect(JSON.parseJsonElement(inspector.getInspectorByKey('str7'))
         .getElement('$attrs')

@@ -33,7 +33,7 @@ import Utils from '../../src/test/Utils.test';
 import { BusinessError, Callback, RecordData } from '@ohos.base'
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import { UIContext, Router } from '@ohos.arkui.UIContext'
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
@@ -42,6 +42,8 @@ class StringFields {
 struct WebViewControllerPart3 {
   stringObj: StringFields  = new StringFields ();
   controller: webview.WebviewController = new webview.WebviewController(undefined);
+  controllerOne: webview.WebviewController = new webview.WebviewController(undefined);
+  controllerNull: webview.WebviewController = new webview.WebviewController(undefined);
   controllerTwo: webview.WebviewController = new webview.WebviewController(undefined);
   nativePort: webview.WebMessagePort | null = null;
   message: webview.WebMessageExt = new webview.WebMessageExt();
@@ -57,12 +59,20 @@ struct WebViewControllerPart3 {
   @State console: string = ""
   @State time: number = 0
   @State onScrollCallBack: boolean = false;
-  @State onMessageEventCallBack: boolean = false
-
+  @State onMessageEventCallBack: boolean = false;
+  @State avoidHeight: int = 0;
+  @State SiteIsolationModeArr: webview.SiteIsolationMode[] = [webview.SiteIsolationMode.PARTIAL,webview.SiteIsolationMode.STRICT]
+  @State isEnableWholeWebPageDrawing: boolean = false;
   aboutToAppear() {
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 10,
       priority: events_emitter.EventPriority.LOW
+    }
+    try {
+      webview.WebviewController.enableWholeWebPageDrawing();
+      this.isEnableWholeWebPageDrawing = true;
+    } catch (error) {
+      console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
@@ -105,6 +115,195 @@ struct WebViewControllerPart3 {
               }
               break;
             }
+
+            case "testRestoreWebState002": {
+              try {
+                this.controller.clearHistory()
+                this.controller.loadUrl("resource://rawfile/index.html")
+                let state = this.controller.serializeWebState()
+                this.controller.clearHistory()
+                this.controllerOne.restoreWebState(state)
+                let list = this.controller.getBackForwardEntries();
+                let historyItem = list.getItemAtIndex(list.currentIndex);
+                console.log('testRestoreWebState001 result is :' + historyItem.title);
+                Utils.emitEvent(historyItem.title, 1000831)
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(`${error.code}`, 1000831);
+              }
+            }
+            
+            case "testSerializeWebStateErrorCode001": {
+              try {
+                console.log("testSerializeWebStateErrorCode001");
+                this.controller.clearHistory()
+                this.controller.loadUrl("resource://rawfile/index.html")
+                let state = this.controllerNull.serializeWebState()
+                this.controller.clearHistory()
+                Utils.emitEvent(state, 110083)
+              } catch (error) {
+                console.error(`serializeWebState ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 110083)
+              }
+              break;
+            }
+
+            case "testResumeMicrophoneErrorCode001": {
+              try {
+                this.controllerNull.resumeMicrophone();
+              } catch (error) {
+                console.error(`resumeMicrophone ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 120083)
+              }
+              break;
+            }
+
+            case "testPauseMicrophoneErrorCode001": {
+              try {
+                this.controllerNull.pauseMicrophone();
+              } catch (error) {
+                console.error(`PauseMicrophone ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 130083)
+              }
+              break;
+            }
+
+            case "testStopMicrophoneErrorCode001": {
+              try {
+                this.controllerNull.stopMicrophone();
+              } catch (error) {
+                console.error(`StopMicrophone ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 140083)
+              }
+              break;
+            }
+
+            case "testRequestFocusErrorCode001": {
+              try {
+                this.controllerNull.requestFocus();
+              } catch (error) {
+                console.error(`requestFocus ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 150083)
+              }
+              break;
+            }
+
+            case "testGetCustomUserAgentErrorCode001": {
+              try {
+                this.controllerNull.getCustomUserAgent();
+              } catch (error) {
+                console.error(`getCustomUserAgent ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 160083)
+              }
+              break;
+            }
+
+            case "testGetPageHeightErrorCode001": {
+              try {
+                this.controllerNull.getPageHeight();
+              } catch (error) {
+                console.error(`getPageHeight ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 101083)
+              }
+              break;
+            }
+
+            case 'testWebViewGetRenderProcessMode001': {
+              try {
+                webview.WebviewController.setRenderProcessMode(webview.RenderProcessMode.MULTIPLE);
+                this.controller.refresh();
+                let mode = webview.WebviewController.getRenderProcessMode();
+                console.log('get Mode===>'+mode)
+                Utils.emitEvent(mode, 108006);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case 'testWebViewGetRenderProcessMode002': {
+              try {
+                webview.WebviewController.setRenderProcessMode(webview.RenderProcessMode.SINGLE);
+                this.controller.refresh();
+                let mode = webview.WebviewController.getRenderProcessMode();
+                console.log('get Mode===>'+mode)
+                Utils.emitEvent(mode, 108003);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case 'emitWebSiteIsolationMode001': {
+              try {
+                webview.WebviewController.setSiteIsolationMode(webview.SiteIsolationMode.PARTIAL);
+                let mode = webview.WebviewController.getSiteIsolationMode();
+                Utils.emitEvent(mode, 20250920);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 20250920);
+              }
+              break;
+            }
+
+            case 'emitWebSiteIsolationMode002': {
+              try {
+                webview.WebviewController.setSiteIsolationMode(webview.SiteIsolationMode.STRICT);
+                let mode = webview.WebviewController.getSiteIsolationMode();
+                console.log("get mode STRICT = ", mode)
+                Utils.emitEvent(mode, 20250921);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(1, 20250921);
+              }
+              break;
+            }
+
+            case "emitAvoidVisibleViewportBottom001": {
+              this.avoidHeight += 50;
+              this.controller.avoidVisibleViewportBottom(this.avoidHeight);
+              setTimeout(() => {
+                console.log("get controller.getScrollOffset().y = ", this.controller.getScrollOffset().y);
+                Utils.emitEvent(this.controller.getScrollOffset().y, 153920)
+              }, 2000);
+              break;
+            }
+
+            case "emitAvoidVisibleViewportBottomErrCode001": {
+              try {
+                this.controllerNull.avoidVisibleViewportBottom(111);
+                Utils.emitEvent(true, 20250827)
+              } catch (error) {
+                console.error(`emitAvoidVisibleViewportBottomErr ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 20250827)
+              }
+              break;
+            }
+
+            case "emitAvoidVisibleViewportBottomErrCode002": {
+              let errorCode:int  = 0;
+              try {
+                this.controllerNull.avoidVisibleViewportBottom(111);;
+              } catch (error) {
+                console.error(`emitStopInitErr ErrorCode: ${error.code},  Message: ${error.message}`);
+                errorCode = error.code;
+              }
+              if(webview.WebviewController.getActiveWebEngineVersion() == webview.ArkWebEngineVersion.M114) {
+                Utils.emitEvent(errorCode, 20250910)
+                console.log('emitAvoidVisibleViewportBottomErrorCode' + 'web_webview.ArkWebEngineVersion.M114')
+              } else {
+                Utils.emitEvent(801, 20250910)
+                console.log('emitAvoidVisibleViewportBottomErrorCode' + 'web_webview.ArkWebEngineVersion.M132')
+              }
+              break;
+            }
+
+            case "emitEnableWholeWebPageDrawing001": {
+              Utils.emitEvent(this.isEnableWholeWebPageDrawing, 20250830)
+              break;
+            }
+
             case 'emitonSwitchNextPage': {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();

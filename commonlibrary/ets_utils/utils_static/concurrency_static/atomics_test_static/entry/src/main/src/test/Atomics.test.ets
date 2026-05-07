@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -59,7 +59,7 @@ export default function AtomicsTest() {
         try {
           const workerPromise = new Promise<string>((resolve, reject) => {
             worker.start()
-            worker.run(() => {
+            worker.run<void>(() => {
               try {
                 for (let i = 0; i < 100; i++) {
                   if (i % 2 === 0) {
@@ -130,12 +130,12 @@ export default function AtomicsTest() {
         try {
           const worker1Promise = new Promise<string>((resolve, reject) => {
             worker1.start()
-            worker1.run(() => {
+            worker1.run<void>(() => {
               try {
                 const localArray: BigInt64Array = new BigInt64Array(buffer);
                 for (let i = 0; i < OPERATION_COUNT; i++) {
                   const index = i % ARRAY_SIZE;
-                  Atomics.xor(localArray, index as int, 15n);
+                  Atomics.xor(localArray, index.toInt(), 15n);
                 }
                 resolve('Worker1 (XOR) completed');
               } catch (err) {
@@ -148,12 +148,12 @@ export default function AtomicsTest() {
 
           const worker2Promise = new Promise<string>((resolve, reject) => {
             worker2.start()
-            worker2.run(() => {
+            worker2.run<void>(() => {
               try {
                 const localArray = new BigInt64Array(buffer);
                 for (let i = 0; i < OPERATION_COUNT; i++) {
                   const index = i % ARRAY_SIZE;
-                  Atomics.store(localArray, index as int, BigInt(index * 3));
+                  Atomics.store(localArray, index.toInt(), BigInt(index * 3));
                 }
                 resolve('Worker2 (STORE) completed');
               } catch (err) {
@@ -169,7 +169,7 @@ export default function AtomicsTest() {
               const localArray = new BigInt64Array(buffer);
               for (let i = 0; i < OPERATION_COUNT; i++) {
                 const index = i % ARRAY_SIZE;
-                Atomics.and(localArray, index as int, 255n);
+                Atomics.and(localArray, index.toInt(), 255n);
               }
               return 'Task1 (AND) completed';
             } catch (err) {
@@ -184,7 +184,7 @@ export default function AtomicsTest() {
               const localArray = new BigInt64Array(buffer);
               for (let i = 0; i < OPERATION_COUNT; i++) {
                 const index = i % ARRAY_SIZE;
-                Atomics.exchange(localArray, index as int, BigInt(index + 100));
+                Atomics.exchange(localArray, index.toInt(), BigInt(index + 100));
               }
               return 'Task2 (EXCHANGE) completed';
             } catch (err) {
@@ -199,7 +199,7 @@ export default function AtomicsTest() {
               const localArray = new BigInt64Array(buffer);
               for (let i = 0; i < OPERATION_COUNT; i++) {
                 const index = i % ARRAY_SIZE;
-                Atomics.or(localArray, index as int, 1n);
+                Atomics.or(localArray, index.toInt(), 1n);
               }
               return 'Task3 (OR) completed';
             } catch (err) {
@@ -214,7 +214,7 @@ export default function AtomicsTest() {
               const localArray = new BigInt64Array(buffer);
               for (let i = 0; i < OPERATION_COUNT; i++) {
                 const index = i % ARRAY_SIZE;
-                Atomics.sub(localArray, index as int, 10n);
+                Atomics.sub(localArray, index.toInt(), 10n);
               }
               return 'Task4 (SUB) completed';
             } catch (err) {
@@ -308,7 +308,7 @@ export default function AtomicsTest() {
         try {
           const workerPromise = new Promise<Int32Array>((resolve, reject) => {
             worker.start()
-            worker.run(async (inputArray: Int32Array) => {
+            worker.run<Promise<void>>(async (inputArray: Int32Array) => {
               try {
                 Atomics.store(inputArray, 0, 2);
                 resolve(inputArray);
@@ -365,7 +365,7 @@ export default function AtomicsTest() {
           Atomics.store(array, 0, 0n);
           const workerPromise = new Promise<string>((resolve, reject) => {
             worker.start()
-            worker.run(async (inputArray: BigInt64Array) => {
+            worker.run<Promise<void>>(async (inputArray: BigInt64Array) => {
               try {
                 Atomics.exchange(inputArray, 0, 1n);
                 Atomics.notify(inputArray, 0);
@@ -458,7 +458,7 @@ export default function AtomicsTest() {
         try {
           const workerPromise = new Promise<void>((resolve, reject) => {
             worker.start()
-            worker.run(() => {
+            worker.run<void>(() => {
               try {
                 for (let i = 0; i < 100; i++) {
                   Atomics.and(array, i, i);
@@ -539,7 +539,7 @@ export default function AtomicsTest() {
         try {
           const workerPromise = new Promise<string>((resolve, reject) => {
             worker.start()
-            worker.run(() => {
+            worker.run<void>(() => {
               try {
                 for (let i = 0; i < 100; i++) {
                   Atomics.exchange(array, i, 1);
@@ -623,7 +623,7 @@ export default function AtomicsTest() {
         try {
           const workerPromise = new Promise<string>((resolve, reject) => {
             worker.start()
-            worker.run(() => {
+            worker.run<void>(() => {
               try {
                 for (let i = 0; i < 100; i++) {
                   Atomics.store(array, i, 1);
@@ -710,7 +710,7 @@ export default function AtomicsTest() {
         try {
           const workerPromise = new Promise<string>((resolve, reject) => {
             worker.start()
-            worker.run(() => {
+            worker.run<void>(() => {
               try {
                 for (let i = 0; i < 100; i++) {
                   Atomics.sub(array, i, 1n);
@@ -801,7 +801,7 @@ export default function AtomicsTest() {
           Atomics.store(array, 0, 0);
           const workerPromise = new Promise<string>((resolve, reject) => {
             worker.start()
-            worker.run(async (inputArray: Int32Array) => {
+            worker.run<Promise<void>>(async (inputArray: Int32Array) => {
               try {
                 Atomics.exchange(inputArray, 0, 1);
                 Atomics.notify(inputArray, 0);
@@ -954,7 +954,7 @@ export default function AtomicsTest() {
           Atomics.store(array, 0, 0n);
           const workerPromise = await new Promise<string>((resolve, reject) => {
             worker.start()
-            worker.run(async (inputArray: BigInt64Array) => {
+            worker.run<Promise<void>>(async (inputArray: BigInt64Array) => {
               try {
                 Atomics.notify(inputArray, 0);
                 setTimeout(() => {
@@ -1011,49 +1011,27 @@ export default function AtomicsTest() {
         Atomics.store(readyCounter, 0, 0);
 
         try {
-          const waitTasks: Promise<void>[] = [];
-          const notifyTasks: Promise<void>[] = [];
           const taskCount = 10;
+          const waitTasks: Promise<string>[] = [];
 
           for (let i = 0; i < taskCount; i++) {
-            waitTasks.push(new Promise<void>((resolve, reject) => {
-              taskpool.execute(async () => {
-                Atomics.add(readyCounter, 0, 1);
-                const waitResult = Atomics.wait(sharedArray, 0, 0n);
-                if (waitResult === 'ok') {
-                  hilog.info(1, TAG, '%{public}s', `AtomicsTest022: wait${i}success`);
-                } else if (waitResult === 'not-equal') {
-                  hilog.info(1, TAG, '%{public}s', `AtomicsTest022: wait${i}`);
-                } else {
-                  hilog.info(1, TAG, '%{public}s', `AtomicsTest022: wait${i}: ${waitResult}`);
-                }
-                resolve(undefined);
-              });
-            }));
+            Atomics.add(readyCounter, 0, 1);
+            waitTasks.push(Atomics.waitAsync(sharedArray, 0, 0n));
           }
-          for (let i = 0; i < taskCount; i++) {
-            notifyTasks.push(new Promise<void>((resolve, reject) => {
-              waitForCompletion(async () => {
-                await taskpool.execute(() => {
-                  Atomics.add(readyCounter, 0, 1);
-                  setTimeout(() => {
-                    Atomics.store(sharedArray, 0, 1n);
-                    const notifiedCount = Atomics.notify(sharedArray, 0);
-                    Atomics.store(sharedArray, 0, 0n);
-                    resolve(undefined);
-                  }, 500);
-                });
-              })
-            }));
+          // Give the waiters a scheduling point before notifying them.
+          await sleep(50);
+          Atomics.store(sharedArray, 0, 1n);
+          const notifiedCount = Atomics.notify(sharedArray, 0, taskCount);
+          Atomics.add(readyCounter, 0, notifiedCount);
+
+          const waitResults = await Promise.all(waitTasks);
+          for (let i = 0; i < waitResults.length; i++) {
+            hilog.info(1, TAG, '%{public}s', `AtomicsTest022: wait${i}: ${waitResults[i]}`);
+            expect(waitResults[i]).assertEqual('ok');
           }
-          while (Atomics.load(readyCounter, 0) < taskCount * 2) {
-            const current = Atomics.load(readyCounter, 0);
-            setTimeout(() => {
-              console.info('delay 50ms');
-            }, 50);
-          }
-          await Promise.all([...waitTasks, ...notifyTasks]);
-          expect(Atomics.load(sharedArray, 0)).assertEqual(0n);
+          expect(notifiedCount).assertEqual(taskCount);
+          expect(Atomics.load(readyCounter, 0)).assertEqual(taskCount * 2);
+          expect(Atomics.load(sharedArray, 0)).assertEqual(1n);
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
@@ -1104,8 +1082,7 @@ export default function AtomicsTest() {
           }
           for (let i = 0; i < taskCount; i++) {
             notifyTasks.push(new Promise<void>((resolve, reject) => {
-              waitForCompletion(async () => {
-                await taskpool.execute(() => {
+              taskpool.execute(() => {
                   Atomics.add(readyCounter, 0, 1);
                   setTimeout(() => {
                     const newValue = BigInt(i + 1);
@@ -1114,8 +1091,7 @@ export default function AtomicsTest() {
                     Atomics.store(sharedArray, 0, 1n);
                     resolve(undefined);
                   }, 500);
-                });
-              })
+                }).awaitSync()
             }));
           }
           while (Atomics.load(readyCounter, 0) < taskCount * 2) {
@@ -1159,37 +1135,27 @@ export default function AtomicsTest() {
         Atomics.store(readyCounter, 0, 0);
 
         try {
-          const waitTasks: Promise<void>[] = [];
-          const notifyTasks: Promise<void>[] = [];
           const taskCount = 10;
 
           for (let i = 0; i < taskCount; i++) {
             const waitPosition = i;
             const waitValue = 0n;
 
-            waitTasks.push(new Promise<void>((resolve, reject) => {
-              taskpool.execute(async () => {
-                Atomics.add(readyCounter, 0, 1);
-                Atomics.wait(sharedArray, waitPosition, waitValue);
-                resolve(undefined);
-              });
-            }));
+            const waitTask: Promise<Any> = taskpool.execute(() => {
+              Atomics.add(readyCounter, 0, 1);
+              return Atomics.wait(sharedArray, waitPosition, waitValue, 2000);
+            });
+            while (Atomics.load(readyCounter, 0) < i + 1) {
+              await sleep(10);
+            }
+            const newValue = BigInt(i + 1);
+            Atomics.store(sharedArray, i, newValue);
+            Atomics.notify(sharedArray, i);
+            const waitResult = await waitTask as string;
+            expect(waitResult === 'ok' || waitResult === 'not-equal').assertTrue();
           }
+          expect(Atomics.load(readyCounter, 0)).assertEqual(taskCount);
           for (let i = 0; i < taskCount; i++) {
-            notifyTasks.push(new Promise<void>((resolve, reject) => {
-              waitForCompletion(async () => {
-                await taskpool.execute(() => {
-                  Atomics.add(readyCounter, 0, 1);
-                  const newValue = BigInt(i + 1);
-                  Atomics.store(sharedArray, i, newValue);
-                  const notifiedCount = Atomics.notify(sharedArray, i);
-                  resolve(undefined);
-                });
-              })
-            }));
-          }
-          await Promise.all([...waitTasks, ...notifyTasks]);
-          for (let i = 1; i < taskCount; i++) {
             const finalValue = Atomics.load(sharedArray, i);
             expect(finalValue).assertEqual(BigInt(i + 1));
           }

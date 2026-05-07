@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -2543,8 +2543,8 @@ export default function DataView6Test() {
         return view;
       });
       const results = views.map((view): number => view.getInt8(0));
-      const avg = results.reduce((acc, curr) => acc + curr, 0) / results.length;
-      const formatted = `运算结果：总和=${results.reduce((a,b)=>a+b,0)}，平均值=${avg}，最大值=${Math.max(...results)}`;
+      const avg = results.reduce((acc, curr) => acc + curr, 0.) / results.length;
+      const formatted = `运算结果：总和=${results.reduce((a,b)=>a+b,0.)}，平均值=${avg}，最大值=${Math.max(...results)}`;
       expect(formatted).assertEqual("运算结果：总和=38，平均值=9.5，最大值=76");
     });
 
@@ -2865,7 +2865,7 @@ export default function DataView6Test() {
       const testVal = 63;
       view.setInt8(0, testVal);
       const result = view.getInt8(0);
-      expect(`${((result as number / 127 * 100) as number).toFixed(0)}%`).assertEqual("50%");
+      expect(`${((result.toDouble() / 127 * 100).toDouble()).toFixed(0)}%`).assertEqual("50%");
     });
 
     /**
@@ -3060,7 +3060,7 @@ export default function DataView6Test() {
         return view;
       });
       const results = views.map((view): number => view.getInt8(0));
-      const formatted = `边界运算：最小值=${Math.min(...results)}，最大值=${Math.max(...results)}，总和=${results.reduce((a,b)=>a+b,0)}`;
+      const formatted = `边界运算：最小值=${Math.min(...results)}，最大值=${Math.max(...results)}，总和=${results.reduce((a,b)=>a+b,0.)}`;
       expect(formatted).assertEqual("边界运算：最小值=-128，最大值=127，总和=-1");
     });
 

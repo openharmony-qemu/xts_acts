@@ -1977,6 +1977,9 @@ export default function audioManagerApi9() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioSessionManager = audioManager.getSessionManager();
+      
       let audioStreamInfo:audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -2023,6 +2026,7 @@ export default function audioManagerApi9() {
           done();
           return
         }
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.DEFAULT);
         await AudioRoutingManager.setCommunicationDevice(audio.CommunicationDeviceType.SPEAKER, false).then(() => {
           console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0300
                     Promise returned to indicate that the device is set to the active status.`);
@@ -2069,6 +2073,9 @@ export default function audioManagerApi9() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioSessionManager = audioManager.getSessionManager();
+
       let audioStreamInfo:audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -2115,6 +2122,7 @@ export default function audioManagerApi9() {
           done();
           return
         }
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.DEFAULT);
         await AudioRoutingManager.setCommunicationDevice(audio.CommunicationDeviceType.SPEAKER, false).then(() => {
           console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_0400
                     Promise returned to indicate that the device is set to the active status.`);

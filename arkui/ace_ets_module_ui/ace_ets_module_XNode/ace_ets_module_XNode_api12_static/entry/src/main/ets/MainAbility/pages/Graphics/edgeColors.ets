@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,7 +35,7 @@ renderNode.borderColor = edgeColors(0xFF0000FF.toInt());
 
 
 
-class MyNodeController extends NodeController {
+export class MyNodeController extends NodeController {
   private rootNode: FrameNode | null = null;
 
   makeNode(uiContext: UIContext): FrameNode | null {
@@ -65,8 +65,8 @@ struct edgeColorsExample {
         .onClick((e:ClickEvent) => {
           renderNode.borderColor = edgeColors(0xFF0000FF.toInt())
           renderNode.invalidate()
-          this.edgeColorsValue = renderNode!.borderColor!.left as long
-          console.log('+++++++++',renderNode!.borderColor!.left  as long)//-16776961 转16进制 0xFF0000FF
+          this.edgeColorsValue = renderNode!.borderColor!.left.toLong()
+          console.log('+++++++++',renderNode!.borderColor!.left.toLong())//-16776961 转16进制 0xFF0000FF
         })
     }
   }

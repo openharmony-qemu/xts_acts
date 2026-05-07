@@ -23,6 +23,7 @@ import { BusinessError } from '@ohos.base';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
+import uiEffect from "@ohos.graphics.uiEffect";
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -55,7 +56,7 @@ export default function GraphicHdrInterface() {
           expect('5').assertEqual(hdrCapability.HDRFormat.IMAGE_HDR_VIVID_SINGLE + '');
           expect('6').assertEqual(hdrCapability.HDRFormat.IMAGE_HDR_ISO_DUAL + '');
           expect('7').assertEqual(hdrCapability.HDRFormat.IMAGE_HDR_ISO_SINGLE + '');
-          expect(true).assertTrue()
+          expect('8').assertEqual(hdrCapability.HDRFormat.VIDEO_AIHDR + '');
           done()
         } catch (err) {
           console.log(msg + " Faild in hdrCapability.HDRFormat " + JSON.stringify(err))
@@ -64,6 +65,38 @@ export default function GraphicHdrInterface() {
           done()
         }
       })
-  })
 
+    /**
+     * @tc.name   testHdrBrightnessRatio_static_noPermissions
+     * @tc.number SUB_GRAPHIC_UIEFFECT_FILTER_0100
+     * @tc.desc   Filter testHdrBrightnessRatio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testHdrBrightnessRatio_static_noPermissions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr = " =====www data testHdrBrightnessRatio_static_noPermissions==== "
+        try {
+          let filter : uiEffect.Filter = uiEffect.createFilter()
+          console.log(msgStr + " Succeed in uiEffect.createFilter ")
+          expect(filter !== undefined).assertTrue();
+          try {
+            let ratio = filter.hdrBrightnessRatio(2.0)
+            console.info(msgStr + 'success ratio 111', JSON.stringify(ratio));
+            expect().assertFail();
+          } catch (err) {
+            console.info(msgStr + 'failed to ratio 222', JSON.stringify(err.code));
+            expect(Number(err.code)).assertEqual(201)
+          }
+          done()
+        } catch (err) {
+          console.log(msgStr + " Failed in uiEffect.createFilter 444 " + JSON.stringify(err))
+          console.log(msgStr + " Failed in uiEffect.createFilter 444 " + err)
+          expect().assertFail()
+          done()
+        }
+      })
+
+  })
 }

@@ -23,7 +23,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
 @Observed
-class MyPointModifier implements AttributeModifier<GridItemAttribute> {
+export class MyPointModifier implements AttributeModifier<GridItemAttribute> {
   public message: string = 'Hello World';
   public isColumnEnd: boolean = true
   public isRowEnd: boolean = true;

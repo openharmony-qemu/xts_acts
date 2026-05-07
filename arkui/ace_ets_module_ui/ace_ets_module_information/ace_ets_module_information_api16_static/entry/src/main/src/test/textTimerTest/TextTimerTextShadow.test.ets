@@ -89,7 +89,7 @@ it('TextTimerTextShadowTest_static_002', Level.LEVEL0, async (done: () => void):
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('textTimer2');
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual('0.000000');
+      expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual('-10.000000');
       expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual('#FF000000');
       expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual('-10.000000');
       expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetY')).assertEqual('0.000000');

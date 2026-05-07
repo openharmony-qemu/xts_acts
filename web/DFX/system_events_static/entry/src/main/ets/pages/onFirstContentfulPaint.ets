@@ -25,6 +25,7 @@ import web_webview from '@ohos.web.webview';
 import  { BusinessError } from '@ohos.base';
 import webView from '@ohos.web.webview';
 import hilog from '@ohos.hilog';
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 class StringFields {
   str: string = '';
@@ -98,6 +99,12 @@ struct WebOnFirstContentfulPaint {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
+            }
+            case 'SwitchNextPageStatic' : {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/WebOnDataResubmitted' })
+              console.log('push URL success')
             }
           }
         })

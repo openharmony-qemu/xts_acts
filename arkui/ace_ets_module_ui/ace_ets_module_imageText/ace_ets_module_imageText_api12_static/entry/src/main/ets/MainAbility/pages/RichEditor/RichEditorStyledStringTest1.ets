@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -67,7 +67,7 @@ struct RichEditorStyledStringTest1 {
     fontSize: LengthMetrics.vp(10),
     fontStyle: FontStyle.Normal
   })
-  fontStyle1: TextStyle = { fontColor: Color.Blue } as TextStyle;
+  fontStyle1: TextStyle = new TextStyle({ fontColor: Color.Blue });
   fontStyle2: TextStyle = new TextStyle({
     fontWeight: FontWeight.Bolder,
     fontFamily: 'Arial',
@@ -170,7 +170,7 @@ build() {
             let end = richEditorSelection.end ?? 0;
             // 获取组件展示的属性字符串
             this.richEditorStyledString = this.controller!.getStyledString()!;
-            this.richEditorStyledString.removeString(Number(start) as int, Number(end - start) as int);
+            this.richEditorStyledString.removeString(Number(start).toInt(), Number(end - start).toInt());
             // 使删除内容后的属性字符串展示在组件上
             this.controller!.setStyledString(this.richEditorStyledString);
           }).height('5%')
@@ -185,7 +185,7 @@ build() {
             // 获取组件展示的属性字符串
             this.richEditorStyledString = this.controller!.getStyledString()!;
             this.selection = '[ ' + start + ' , ' + end + ' ]';
-            this.content = this.richEditorStyledString!.subStyledString(Number(start) as int, Number(end - start) as int)!.getString();
+            this.content = this.richEditorStyledString!.subStyledString(Number(start).toInt(), Number(end - start).toInt())!.getString();
           }).height('5%')
           Button('更新选中样式').onClick((e: ClickEvent) => {
             // 获取选中范围

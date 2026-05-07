@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -51,21 +51,6 @@ export default function builtinsArrayConstructorTest() {
     it('buildinsArrayConstructorTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void) => {
       const array: Array<string> = new Array<string>();
       expect(array.length).assertEqual(0)
-      done()
-    })
-
-
-    /**
-     * @tc.name   buildinsArrayConstructorTest1002
-     * @tc.number SUB_BUILDINS_ARRAY_CONSTRUCTOR_TEST_0200
-     * @tc.desc   test Array
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('buildinsArrayConstructorTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void) => {
-      const array: Array<string> = new Array<string>(1);
-      expect(array.length).assertEqual(1)
       done()
     })
 

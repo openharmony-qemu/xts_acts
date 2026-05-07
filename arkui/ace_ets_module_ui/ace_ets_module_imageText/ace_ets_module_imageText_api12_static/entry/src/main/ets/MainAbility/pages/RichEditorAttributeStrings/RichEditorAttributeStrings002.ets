@@ -52,7 +52,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 struct RichEditorAttributeStrings002 {
 
   @State styledString: string = '';
-  fontStyle1: TextStyle = { fontColor: Color.Blue } as TextStyle
+  fontStyle1: TextStyle = new TextStyle({ fontColor: Color.Blue });
   mutableStyledString: MutableStyledString = new MutableStyledString('abcd',
     [{
       start: 0,
@@ -60,7 +60,7 @@ struct RichEditorAttributeStrings002 {
       styledKey: StyledStringKey.FONT,
       styledValue: this.fontStyle1
     }]);
-  fontStyle2: TextStyle = { fontColor: Color.Red } as TextStyle;
+  fontStyle2: TextStyle = new TextStyle({ fontColor: Color.Red });
   mutableStyledString1: MutableStyledString = new MutableStyledString('hello',
     [{
       start: 0,

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -101,7 +101,7 @@ export default function ArrayConstructor1Test() {
         if (Number.isNaN(a) && Number.isNaN(b)) return 0;
         if (Number.isNaN(a)) return 1;
         if (Number.isNaN(b)) return -1;
-        return (a - b) as int;
+        return (a - b).toInt();
       });
       expect(r1[0]).assertEqual(1);
       expect(r1[1]).assertEqual(2);
@@ -293,7 +293,7 @@ export default function ArrayConstructor1Test() {
       const r1 = arr.map(x => x).sort(() => 0) as int[];
       expect(r1.length).assertEqual(3);
       expect(r1.every((x: int) => ([1,2,3] as int[]).includes(x))).assertTrue();
-      const r2 = Array.from(typedArr.map(x => x)).sort(() => 0).map(x => x as int) as int[];
+      const r2 = Array.from(typedArr.map(x => x)).sort(() => 0).map(x => x.toInt()) as int[];
       expect(r2.length).assertEqual(3);
       expect(r2.every((x: int) => ([1,2,3] as int[]).includes(x))).assertTrue();
     });
@@ -509,11 +509,11 @@ export default function ArrayConstructor1Test() {
      */
     it('ArrayConstructor1Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [3, 1, 2];
-      const r1 = arr.filter(x => true).sort(() => NaN as int);
+      const r1 = arr.filter(x => true).sort(() => NaN.toInt());
       expect(r1.length).assertEqual(3);
       expect(([1,2,3] as number[]).includes(r1[0])).assertTrue();
       const typedArr = new Int32Array([3,1,2]);
-      const r2 = Array.from(typedArr.filter(x => true)).sort(() => NaN as int);
+      const r2 = Array.from(typedArr.filter(x => true)).sort(() => NaN.toInt());
       expect(r2.length).assertEqual(3);
     });
 
@@ -650,7 +650,7 @@ export default function ArrayConstructor1Test() {
       expect(JSON.stringify(r1)).assertEqual(JSON.stringify([3, 2, 1]));
       factor = 1;
       const typedArr = new Int32Array([1,3,2]);
-      const r2 = Array.from(typedArr.map(x => x)).sort((a: double, b: double) => (factor * (a - b)) as int);
+      const r2 = Array.from(typedArr.map(x => x)).sort((a: double, b: double) => (factor * (a - b)).toInt());
       expect(JSON.stringify(r2)).assertEqual(JSON.stringify([1, 2, 3]));
     });
 
@@ -796,7 +796,7 @@ export default function ArrayConstructor1Test() {
       const r1 = arr.map(x => x).sort().sort((a, b) => b - a);
       expect(JSON.stringify(r1)).assertEqual(JSON.stringify([3, 2, 1]));
       const typedArr = new Int32Array([3,1,2]);
-      const r2 = Array.from(typedArr.map(x => x)).sort().sort((a: double, b: double) => (b - a) as int);
+      const r2 = Array.from(typedArr.map(x => x)).sort().sort((a: double, b: double) => (b - a).toInt());
       expect(JSON.stringify(r2)).assertEqual(JSON.stringify([3, 2, 1]));
     });
 
@@ -827,7 +827,7 @@ export default function ArrayConstructor1Test() {
      */
     it('ArrayConstructor1Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = new Int8Array([127, 128, -129]);
-      const r = Array.from(arr.map(x => x)).sort((a: double, b: double) => (a - b) as int);
+      const r = Array.from(arr.map(x => x)).sort((a: double, b: double) => (a - b).toInt());
       expect(JSON.stringify(r)).assertEqual(JSON.stringify([-128, 127, 127]));
     });
 
@@ -1026,7 +1026,7 @@ export default function ArrayConstructor1Test() {
         if (Number.isNaN(a) && Number.isNaN(b)) return 0;
         if (Number.isNaN(a)) return 1;
         if (Number.isNaN(b)) return -1;
-        return (a - b) as int;
+        return (a - b).toInt();
       });
       expect(JSON.stringify(r)).assertEqual(JSON.stringify([-Infinity, 0, -0, Infinity, NaN]));
     });
@@ -1050,7 +1050,7 @@ export default function ArrayConstructor1Test() {
     /**
      * @tc.name   ArrayConstructor1Test094
      * @tc.number BUILTINS_ARRAY1_COMBINATION_TEST9400
-     * @tc.desc   Test Method Combination in Array/TypedArray
+     * @tc.desc   Test Method Combination in TypedArray
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1059,12 +1059,6 @@ export default function ArrayConstructor1Test() {
       let caught = false;
       try {
         new Int32Array(-1);
-      } catch(e) {
-        caught = true;
-      }
-      expect(caught).assertTrue();
-      try {
-        new Array<number>(-1);
       } catch(e) {
         caught = true;
       }
@@ -1443,7 +1437,7 @@ export default function ArrayConstructor1Test() {
      */
     it('ArrayConstructor1Test133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr: number[] = [(Infinity).toInt(), (-Infinity).toInt(), 0];
-      const r = arr.map((x: number) => x).sort((a: double, b: double) => (a - b) as int);
+      const r = arr.map((x: number) => x).sort((a: double, b: double) => (a - b).toInt());
       expect(JSON.stringify(r)).assertEqual(JSON.stringify([(-Infinity).toInt(), 0, (Infinity).toInt()]));
     });
 

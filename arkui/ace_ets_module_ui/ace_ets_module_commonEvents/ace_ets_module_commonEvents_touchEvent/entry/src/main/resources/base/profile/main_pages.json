@@ -11,6 +11,9 @@
         "MainAbility/pages/HitTestBehavior/BlockHierarchy",
         "MainAbility/pages/BuilderNode/postInputEvent",
         "MainAbility/pages/sourceType",
-        "MainAbility/pages/touchAble"
+        "MainAbility/pages/touchAble",
+        "MainAbility/pages/migratedActs/BuilderNodePostInputEventWithStrategyPage",
+        "MainAbility/pages/gestureIntercept/GestureIntercept",
+        "MainAbility/pages/globalListener/GlobalListenerTest"
     ]
 }

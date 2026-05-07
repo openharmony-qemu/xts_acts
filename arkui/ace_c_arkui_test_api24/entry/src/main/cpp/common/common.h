@@ -1,5 +1,5 @@
-/*
- * Copyright (c) 2026 Huawei Device Co., Ltd.
+/**
+ * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,6 +19,9 @@
 #include <napi/native_api.h>
 #include <hilog/log.h>
 #include <cstdio>
+#include <cstdint>
+#include <algorithm>
+#include <initializer_list>
 #include <arkui/native_interface.h>
 #include <arkui/native_node.h>
 #include <string>
@@ -117,6 +120,11 @@ namespace ArkUICapiTest {
 #define COLOR_WHITE 0xFFFFFFFF
 #define COLOR_ILLEGAL 0x00000000
 #define COLOR_GREY 0x337F7F7F
+#define COLOR_LIGHT_GRAY 0xFFE0E0E0
+#define PERCENT_100 100.0f
+#define PERCENT_80 80.0f
+#define PERCENT_50 50.0f
+#define FONT_SIZE_24 24.0f
 #define ON_CLICK_EVENT_ID 6001
 #define ON_FOCUS_EVENT_ID 6002
 #define ON_TOUCH_EVENT_ID 6003
@@ -145,103 +153,103 @@ namespace ArkUICapiTest {
 #define PARAM_960000 960000
 #define PARAM_255 255
 #define PARAM_4242 4242
+#define PRECISION_DECIMAL_2 2
 
 /**
  * Log print domain.
  */
 const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
 
-#define ASSERT_NOTNULL(result)                                                                                         \
-    do {                                                                                                               \
-        if ((result) == nullptr) {                                                                                     \
-            napi_value errorResult = nullptr;                                                                          \
-            return errorResult;                                                                                        \
-        }                                                                                                              \
-    } while (0)
+template<typename T, typename U>
+[[nodiscard]] inline napi_value EqFailed(napi_env env, T &&result, U &&expect)
+{
+    if ((result) == (expect)) {
+        return nullptr;
+    }
+    std::string assertStr = std::string("assert equal failed, expect is ") + std::to_string(expect) +
+        " and result is " + std::to_string(result);
+    (void)napi_throw_error(env, nullptr, assertStr.c_str());
+    napi_value errorResult = nullptr;
+    napi_create_int32(env, PARAM_NEGATIVE_1, &errorResult);
+    return errorResult;
+}
 
-#define ASSERT_EQ(result, expect)                                                                                      \
-    do {                                                                                                               \
-        if ((result) != (expect)) {                                                                                    \
-            std::string assertStr = "assert equal failed, expect is " + std::to_string(expect) + " and result is " +   \
-                                    std::to_string(result);                                                            \
-            char assertChars[assertStr.size() + PARAM_1];                                                              \
-            strcpy(assertChars, assertStr.c_str());                                                                    \
-            napi_throw_error((env), nullptr, assertChars);                                                             \
-            napi_value errorResult = nullptr;                                                                          \
-            napi_create_int32(env, PARAM_NEGATIVE_1, &errorResult);                                                    \
-            return errorResult;                                                                                        \
-        }                                                                                                              \
-    } while (0)
+/** Assert result is one of expectedOneOf (e.g. documented alternate error codes). */
+[[nodiscard]] inline napi_value ErrCodeAnyOfFailed(
+    napi_env env, int32_t result, std::initializer_list<int32_t> expectedOneOf)
+{
+    if (std::find(expectedOneOf.begin(), expectedOneOf.end(), result) != expectedOneOf.end()) {
+        return nullptr;
+    }
+    std::string s = std::string("assert error code in set failed, result is ") + std::to_string(result);
+    (void)napi_throw_error(env, nullptr, s.c_str());
+    napi_value out = nullptr;
+    (void)napi_create_int32(env, PARAM_NEGATIVE_1, &out);
+    return out;
+}
 
-#define ASSERT_NE(result, expect)                                                                                      \
-    do {                                                                                                               \
-        if ((result) == (expect)) {                                                                                    \
-            std::string assertStr = "assert not equal failed, expect is " + std::to_string(expect) +                   \
-                                    " and result is " + std::to_string(result);                                        \
-            char assertChars[assertStr.size() + PARAM_1];                                                              \
-            strcpy(assertChars, assertStr.c_str());                                                                    \
-            napi_throw_error((env), nullptr, assertChars);                                                             \
-            napi_value errorResult = nullptr;                                                                          \
-            napi_create_int32(env, PARAM_NEGATIVE_1, &errorResult);                                                    \
-            return errorResult;                                                                                        \
-        }                                                                                                              \
-    } while (0)
+template<typename T, typename U>
+[[nodiscard]] inline napi_value NeFailed(napi_env env, T &&result, U &&expect)
+{
+    if ((result) != (expect)) {
+        return nullptr;
+    }
+    std::string assertStr = std::string("assert not equal failed, expect is ") + std::to_string(expect) +
+        " and result is " + std::to_string(result);
+    (void)napi_throw_error(env, nullptr, assertStr.c_str());
+    napi_value errorResult = nullptr;
+    napi_create_int32(env, PARAM_NEGATIVE_1, &errorResult);
+    return errorResult;
+}
 
-#define ASSERT_STREQ(result, expect)                                                                                   \
-    do {                                                                                                               \
-        auto *res1 = (result);                                                                                         \
-        decltype(res1) res2 = (expect);                                                                                \
-        std::string str1 = res1;                                                                                       \
-        std::string str2 = res2;                                                                                       \
-        if (::strcmp(res1, res2) != 0) {                                                                               \
-            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ASSERT_STREQ",                                         \
-                         "assert equal failed, expect is %{public}s and result is %{public}s", res2, res1);            \
-            napi_value errorResult = nullptr;                                                                          \
-            napi_create_int32(env, PARAM_NEGATIVE_1, &errorResult);                                                    \
-            return errorResult;                                                                                        \
-        }                                                                                                              \
-    } while (0)
+template<typename T>
+[[nodiscard]] inline napi_value TrueFailed(napi_env env, T &&condResult)
+{
+    if (static_cast<bool>(condResult)) {
+        return nullptr;
+    }
+    (void)napi_throw_error(env, nullptr, "assert true failed");
+    napi_value errorResult = nullptr;
+    napi_create_int32(env, PARAM_NEGATIVE_1, &errorResult);
+    return errorResult;
+}
 
-#define ASSERT_STRNE(result, expect)                                                                                   \
-    do {                                                                                                               \
-        auto *res1 = (result);                                                                                         \
-        decltype(res1) res2 = (expect);                                                                                \
-        std::string str1 = res1;                                                                                       \
-        std::string str2 = res2;                                                                                       \
-        if (::strcmp(res1, res2) == 0) {                                                                               \
-            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ASSERT_STRNE",                                         \
-                         "assert not equal failed, expect is %{public}s and result is %{public}s", res2, res1);        \
-            napi_value errorResult = nullptr;                                                                          \
-            napi_create_int32(env, PARAM_NEGATIVE_1, &errorResult);                                                    \
-            return errorResult;                                                                                        \
-        }                                                                                                              \
-    } while (0)
+template<typename T, typename U>
+[[nodiscard]] inline napi_value StrEqFailed(napi_env env, T &&result, U &&expect)
+{
+    std::string str1 = result;
+    std::string str2 = expect;
+    if (str1 == str2) {
+        return nullptr;
+    }
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ASSERT_STREQ",
+        "assert equal failed, expect is %{public}s and result is %{public}s", str2.c_str(), str1.c_str());
+    napi_value errorResult = nullptr;
+    napi_create_int32(env, PARAM_NEGATIVE_1, &errorResult);
+    return errorResult;
+}
 
-#define ASSERT_OBJ(result, expect)                                                                                     \
-    do {                                                                                                               \
-        if ((result) != (expect)) {                                                                                    \
-            napi_value errorResult = nullptr;                                                                          \
-            return errorResult;                                                                                        \
-        }                                                                                                              \
-    } while (0)
+template<typename T, typename U>
+[[nodiscard]] inline napi_value StrNeFailed(napi_env env, T &&result, U &&expect)
+{
+    std::string str1 = result;
+    std::string str2 = expect;
+    if (str1 != str2) {
+        return nullptr;
+    }
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "ASSERT_STRNE",
+        "assert not equal failed, expect is %{public}s and result is %{public}s", str2.c_str(), str1.c_str());
+    napi_value errorResult = nullptr;
+    napi_create_int32(env, PARAM_NEGATIVE_1, &errorResult);
+    return errorResult;
+}
 
-#define NAPI_END                                                                                                       \
-    do {                                                                                                               \
-        napi_value result = nullptr;                                                                                   \
-        napi_create_int32(env, SUCCESS, &result);                                                                      \
-        return result;                                                                                                 \
-    } while (0)
-
-#define NAPI_START(componentName, componentType)                                                                       \
-    auto nodeAPI = reinterpret_cast<ArkUI_NativeNodeAPI_1 *>(                                                          \
-        OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_NODE, "ArkUI_NativeNodeAPI_1"));                              \
-    auto(componentName) = nodeAPI->createNode(componentType);                                                          \
-    do {                                                                                                               \
-        if ((env == nullptr) || (info == nullptr)) {                                                                   \
-            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "NAPI_CHECK_PARAMS", "GetContext env or info is null"); \
-            return nullptr;                                                                                            \
-        }                                                                                                              \
-    } while (0)
+[[nodiscard]] inline napi_value NapiReturnSuccessInt32(napi_env env)
+{
+    napi_value result = nullptr;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
 
 } // namespace ArkUICapiTest
 #endif // ARKUI_CAPI_XTS_COMMON_TEST_H

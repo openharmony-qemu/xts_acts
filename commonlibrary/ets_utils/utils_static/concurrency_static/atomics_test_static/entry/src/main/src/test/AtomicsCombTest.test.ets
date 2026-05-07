@@ -726,11 +726,11 @@ export default function atomicsCombTest() {
 
       // 测试函数调用中的原子操作
       let updateValue = (view: Int32Array, index: number, value: number) => {
-        Atomics.store(view, index as int, value as long);
+        Atomics.store(view, index.toInt(), value.toLong());
       }
 
       let addValue = (view: Int32Array, index: number, value: number) => {
-        return Atomics.add(view, index as int, value as long);
+        return Atomics.add(view, index.toInt(), value.toLong());
       }
 
       // 调用函数执行原子操作
@@ -761,10 +761,10 @@ export default function atomicsCombTest() {
       };
 
       // 通过对象属性执行原子操作
-      Atomics.store(data.view, data.index as int, 100);
-      Atomics.sub(data.view, data.index as int, 58); // 100 - 58 = 42
+      Atomics.store(data.view, data.index.toInt(), 100);
+      Atomics.sub(data.view, data.index.toInt(), 58); // 100 - 58 = 42
 
-      const result = Atomics.load(data.view, data.index as int);
+      const result = Atomics.load(data.view, data.index.toInt());
       expect(result).assertEqual(42);
     });
 
@@ -813,20 +813,20 @@ export default function atomicsCombTest() {
 
 
       // 初始化状态和数据
-      Atomics.store(view, 0, State.INIT as long); // 状态
+      Atomics.store(view, 0, Int.toLong(State.INIT)); // 状态
       Atomics.store(view, 1, 0); // 计数器
       Atomics.store(view, 2, 100); // 数据
       Atomics.store(view, 3, 0); // 结果
 
       // 状态转换和原子操作
-      Atomics.compareExchange(view, 0, State.INIT as long, State.LOADING);
+      Atomics.compareExchange(view, 0, Int.toLong(State.INIT), State.LOADING);
 
       // 处理数据
       const oldValue: number = Atomics.sub(view, 2, 58); // 100 - 58 = 42
-      Atomics.store(view, 3, oldValue - 58 as long); // 100 - 58 = 42
+      Atomics.store(view, 3, (oldValue - 58).toLong()); // 100 - 58 = 42
 
       // 完成处理
-      Atomics.compareExchange(view, 0, State.LOADING as long, State.COMPLETED);
+      Atomics.compareExchange(view, 0, Int.toLong(State.LOADING), State.COMPLETED);
 
       const result = Atomics.load(view, 3);
       expect(result).assertEqual(42);
@@ -931,7 +931,7 @@ export default function atomicsCombTest() {
       // 测试复杂偏移和重叠视图的原子操作
       // 初始化值
       for (let i: int = 0; i < int32View.length; i++) {
-        Atomics.store(int32View, i as int, i * 10 as long);
+        Atomics.store(int32View, i as int, (i * 10).toLong());
       }
 
       // 通过不同偏移的视图执行原子操作
@@ -999,7 +999,7 @@ export default function atomicsCombTest() {
 
       // 初始化值
       for (let i: int = 0; i < view.length; i++) {
-        Atomics.store(view, i as int, i * 10 as long);
+        Atomics.store(view, i as int, (i * 10).toLong());
       }
 
       // 在不同层级的子数组上执行原子操作
@@ -1140,7 +1140,7 @@ export default function atomicsCombTest() {
       const testValue: int = 42;
       const networkTestValue = htonl(testValue);
 
-      Atomics.store(view, 3, networkTestValue as long);
+      Atomics.store(view, 3, networkTestValue.toLong());
       const result = ntohl(Atomics.load(view, 3));
 
       expect(result).assertEqual(testValue);
@@ -1166,10 +1166,10 @@ export default function atomicsCombTest() {
       };
 
       // 通过对象属性执行原子操作
-      Atomics.store(data.view, data.index as int, 100);
-      Atomics.sub(data.view, data.index as int, 58); // 100 - 58 = 42
+      Atomics.store(data.view, data.index.toInt(), 100);
+      Atomics.sub(data.view, data.index.toInt(), 58); // 100 - 58 = 42
 
-      const result = Atomics.load(data.view, data.index as int);
+      const result = Atomics.load(data.view, data.index.toInt());
       expect(result).assertEqual(42);
     });
 
@@ -1219,20 +1219,20 @@ export default function atomicsCombTest() {
 
 
       // 初始化状态和数据
-      Atomics.store(view, 0, State40.INIT as long); // 状态
+      Atomics.store(view, 0, Int.toLong(State40.INIT)); // 状态
       Atomics.store(view, 1, 0); // 计数器
       Atomics.store(view, 2, 100); // 数据
       Atomics.store(view, 3, 0); // 结果
 
       // 状态转换和原子操作
-      Atomics.compareExchange(view, 0, State40.INIT as long, State40.LOADING);
+      Atomics.compareExchange(view, 0, Int.toLong(State40.INIT), State40.LOADING);
 
       // 处理数据
       const oldValue: number = Atomics.sub(view, 2, 58); // 100 - 58 = 42
-      Atomics.store(view, 3, oldValue - 58 as long); // 100 - 58 = 42
+      Atomics.store(view, 3, (oldValue - 58).toLong()); // 100 - 58 = 42
 
       // 完成处理
-      Atomics.compareExchange(view, 0, State40.LOADING as long, State40.COMPLETED);
+      Atomics.compareExchange(view, 0, Int.toLong(State40.LOADING), State40.COMPLETED);
 
       const result = Atomics.load(view, 3);
       expect(result).assertEqual(42);
@@ -1489,34 +1489,34 @@ export default function atomicsCombTest() {
       };
 
       // 初始化状态
-      Atomics.store(view, OFFSETS.counter as int as int, 0);
-      Atomics.store(view, OFFSETS.flags as int as int, 0b0000 as long);
-      Atomics.store(view, OFFSETS.value1 as int as int, 100);
-      Atomics.store(view, OFFSETS.value2 as int as int, 58);
-      Atomics.store(view, OFFSETS.result as int as int, 0);
+      Atomics.store(view, OFFSETS.counter.toInt() as int, 0);
+      Atomics.store(view, OFFSETS.flags.toInt() as int, 0b0000 as long);
+      Atomics.store(view, OFFSETS.value1.toInt() as int, 100);
+      Atomics.store(view, OFFSETS.value2.toInt() as int, 58);
+      Atomics.store(view, OFFSETS.result.toInt() as int, 0);
 
       // 状态管理函数
       let updateState = () => {
         // 增加计数器
-        Atomics.add(view, OFFSETS.counter as int as int, 1);
+        Atomics.add(view, OFFSETS.counter.toInt() as int, 1);
 
         // 设置标志位
-        Atomics.or(view, OFFSETS.flags as int as int, 0b0001 as long);
+        Atomics.or(view, OFFSETS.flags.toInt() as int, 0b0001 as long);
 
         // 执行计算
-        const value1 = Atomics.load(view, OFFSETS.value1 as int as int);
-        const value2 = Atomics.load(view, OFFSETS.value2 as int as int);
-        Atomics.store(view, OFFSETS.result as int as int, value1 - value2 as long);
+        const value1 = Atomics.load(view, OFFSETS.value1.toInt() as int);
+        const value2 = Atomics.load(view, OFFSETS.value2.toInt() as int);
+        Atomics.store(view, OFFSETS.result.toInt() as int, value1 - value2 as long);
 
         // 更新标志位
-        Atomics.and(view, OFFSETS.flags as int as int, 0b1110 as long);
-        Atomics.or(view, OFFSETS.flags as int as int, 0b0010 as long);
+        Atomics.and(view, OFFSETS.flags.toInt() as int, 0b1110 as long);
+        Atomics.or(view, OFFSETS.flags.toInt() as int, 0b0010 as long);
       }
 
       // 执行状态更新
       updateState();
 
-      const result = Atomics.load(view, OFFSETS.result as int as int);
+      const result = Atomics.load(view, OFFSETS.result.toInt() as int);
       expect(result).assertEqual(42);
     });
   })

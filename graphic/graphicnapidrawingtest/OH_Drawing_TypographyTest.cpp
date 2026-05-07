@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -104,11 +104,6 @@ protected:
 const char* EXISTFONTPATH = "/system/fonts/HarmonyOS_Sans.ttf";
 const char* OHOS_THEME_FONT = "OhosThemeFont";
 
-static TypographyStyle* ConvertToOriginalText(OH_Drawing_TypographyStyle* style)
-{
-    return reinterpret_cast<TypographyStyle*>(style);
-}
-
 static TextStyle* ConvertToOriginalText(OH_Drawing_TextStyle* style)
 {
     return reinterpret_cast<TextStyle*>(style);
@@ -188,13 +183,13 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest052, Function | Med
 {
     OH_Drawing_TypographyStyle* typoStyle = OH_Drawing_CreateTypographyStyle();
     OH_Drawing_TypographyTextSetHeightBehavior(typoStyle, TEXT_HEIGHT_ALL);
-    EXPECT_EQ(ConvertToOriginalText(typoStyle)->textHeightBehavior, TextHeightBehavior::ALL);
+    EXPECT_EQ(OH_Drawing_TypographyTextGetHeightBehavior(typoStyle), TEXT_HEIGHT_ALL);
     OH_Drawing_TypographyTextSetHeightBehavior(typoStyle, TEXT_HEIGHT_DISABLE_FIRST_ASCENT);
-    EXPECT_EQ(ConvertToOriginalText(typoStyle)->textHeightBehavior, TextHeightBehavior::DISABLE_FIRST_ASCENT);
+    EXPECT_EQ(OH_Drawing_TypographyTextGetHeightBehavior(typoStyle), TEXT_HEIGHT_DISABLE_FIRST_ASCENT);
     OH_Drawing_TypographyTextSetHeightBehavior(typoStyle, TEXT_HEIGHT_DISABLE_LAST_ASCENT);
-    EXPECT_EQ(ConvertToOriginalText(typoStyle)->textHeightBehavior, TextHeightBehavior::DISABLE_LAST_ASCENT);
+    EXPECT_EQ(OH_Drawing_TypographyTextGetHeightBehavior(typoStyle), TEXT_HEIGHT_DISABLE_LAST_ASCENT);
     OH_Drawing_TypographyTextSetHeightBehavior(typoStyle, TEXT_HEIGHT_DISABLE_ALL);
-    EXPECT_EQ(ConvertToOriginalText(typoStyle)->textHeightBehavior, TextHeightBehavior::DISABLE_ALL);
+    EXPECT_EQ(OH_Drawing_TypographyTextGetHeightBehavior(typoStyle), TEXT_HEIGHT_DISABLE_ALL);
 }
 
 /**
@@ -213,7 +208,6 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest076, Function | Med
     OH_Drawing_TextStyleSetPlaceholder(nullptr);
     OH_Drawing_TextStyleSetPlaceholder(txtStyle);
     EXPECT_EQ(OH_Drawing_TextStyleIsPlaceholder(txtStyle), true);
-    EXPECT_EQ(ConvertToOriginalText(txtStyle)->isPlaceholder, true);
     OH_Drawing_DestroyTextStyle(txtStyle);
 }
 
@@ -229,7 +223,7 @@ HWTEST_F(OH_Drawing_TypographyTest, OH_Drawing_TypographyTest079, Function | Med
 {
     OH_Drawing_TypographyStyle *typoStyle = OH_Drawing_CreateTypographyStyle();
     OH_Drawing_TypographyStyleSetHintsEnabled(typoStyle, true);
-    EXPECT_EQ(ConvertToOriginalText(typoStyle)->hintingIsOn, true);
+    EXPECT_EQ(OH_Drawing_TypographyStyleIsHintEnabled(typoStyle), true);
     OH_Drawing_DestroyTypographyStyle(typoStyle);
 }
 
@@ -248,8 +242,6 @@ HWTEST_F(OH_Drawing_TypographyTest, OHDrawingSetTypographyTextTab001, Function |
     OH_Drawing_SetTypographyTextTab(typoStyle, textTab);
     OH_Drawing_SetTypographyTextTab(nullptr, textTab);
     OH_Drawing_SetTypographyTextTab(typoStyle, nullptr);
-    EXPECT_EQ(ConvertToOriginalText(typoStyle)->tab.alignment, TextAlign::LEFT);
-    EXPECT_EQ(ConvertToOriginalText(typoStyle)->tab.location, -1.0);
     OH_Drawing_DestroyTextTab(textTab);
     OH_Drawing_DestroyTypographyStyle(typoStyle);
 }

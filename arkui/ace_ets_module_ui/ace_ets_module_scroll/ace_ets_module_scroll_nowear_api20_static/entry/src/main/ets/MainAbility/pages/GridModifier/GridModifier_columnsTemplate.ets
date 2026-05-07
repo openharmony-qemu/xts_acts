@@ -163,56 +163,56 @@ class GridColumnsTemplateNormalModifier implements AttributeModifier<GridAttribu
   }
 }
 @Observed
-class GridColumnsTemplateFixedModifier implements AttributeModifier<GridAttribute> {
+export class GridColumnsTemplateFixedModifier implements AttributeModifier<GridAttribute> {
   applyNormalAttribute(instance: GridAttribute): void {
     instance.columnsTemplate('1fr 2fr 1fr');
   }
 }
 @Observed
-class GridColumnsTemplateUndefinedModifier implements AttributeModifier<GridAttribute> {
+export class GridColumnsTemplateUndefinedModifier implements AttributeModifier<GridAttribute> {
   applyNormalAttribute(instance: GridAttribute): void {
     instance.columnsTemplate(undefined);
   }
 }
 @Observed
-class GridColumnsTemplateEmptyModifier implements AttributeModifier<GridAttribute> {
+export class GridColumnsTemplateEmptyModifier implements AttributeModifier<GridAttribute> {
   applyNormalAttribute(instance: GridAttribute): void {
     instance.columnsTemplate('');
   }
 }
 @Observed
-class GridColumnsTemplateInvalidModifier implements AttributeModifier<GridAttribute> {
+export class GridColumnsTemplateInvalidModifier implements AttributeModifier<GridAttribute> {
   applyNormalAttribute(instance: GridAttribute): void {
     instance.columnsTemplate('abc xyz');
   }
 }
 @Observed
-class GridColumnsTemplateExplicitUndefinedModifier implements AttributeModifier<GridAttribute> {
+export class GridColumnsTemplateExplicitUndefinedModifier implements AttributeModifier<GridAttribute> {
   applyNormalAttribute(instance: GridAttribute): void {
     instance.columnsTemplate(undefined);
   }
 }
 @Observed
-class GridColumnsTemplateLG5Modifier implements AttributeModifier<GridAttribute> {
+export class GridColumnsTemplateLG5Modifier implements AttributeModifier<GridAttribute> {
   applyNormalAttribute(instance: GridAttribute): void {
     instance.columnsTemplate({fillType:PresetFillType.BREAKPOINT_SM2MD3LG5});
   }
 }
 @Observed
-class GridColumnsTemplateLG3Modifier implements AttributeModifier<GridAttribute> {
+export class GridColumnsTemplateLG3Modifier implements AttributeModifier<GridAttribute> {
   applyNormalAttribute(instance: GridAttribute): void {
     instance.columnsTemplate({fillType:PresetFillType.BREAKPOINT_SM1MD2LG3});
   }
 }
 @Observed
-class GridColumnsTemplateDEFModifier implements AttributeModifier<GridAttribute> {
+export class GridColumnsTemplateDEFModifier implements AttributeModifier<GridAttribute> {
   applyNormalAttribute(instance: GridAttribute): void {
     instance.columnsTemplate({fillType:PresetFillType.BREAKPOINT_DEFAULT});
   }
 }
 // 动态切换的 Modifier
 @Observed
-class GridColumnsTemplateDynamicModifier implements AttributeModifier<GridAttribute> {
+export class GridColumnsTemplateDynamicModifier implements AttributeModifier<GridAttribute> {
   private template: string | undefined | ItemFillPolicy;
 
   constructor(template: string | undefined | ItemFillPolicy) {

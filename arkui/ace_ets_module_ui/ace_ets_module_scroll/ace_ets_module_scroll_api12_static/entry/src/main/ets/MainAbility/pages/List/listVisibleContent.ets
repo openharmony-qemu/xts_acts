@@ -38,7 +38,7 @@ import {
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import promptAction from '@ohos.promptAction'
-class BasicDataSource <T> implements IDataSource<string> {
+export class BasicDataSource <T> implements IDataSource<string> {
   private listeners: DataChangeListener[] = [];
   private originDataArray: string[] = [];
 
@@ -96,7 +96,7 @@ class BasicDataSource <T> implements IDataSource<string> {
   }
 }
 
-class MyDataSource <T> extends BasicDataSource<T> {
+export class MyDataSource <T> extends BasicDataSource<T> {
   private dataArray: string[] = [];
 
   public totalCount(): int {

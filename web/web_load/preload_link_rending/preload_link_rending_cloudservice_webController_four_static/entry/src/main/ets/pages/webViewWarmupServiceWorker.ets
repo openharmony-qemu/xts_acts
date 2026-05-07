@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -36,7 +36,7 @@ import events_emitter from '@ohos.events.emitter';
 import { Callback, RecordData } from '@ohos.base'
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog';
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 @Entry
@@ -90,6 +90,32 @@ struct WebOnDataResubmitted {
                   Utils.emitEvent(true,1342)
                 }  catch (error) {
                   Utils.emitEvent(false,1342)
+                }
+                break;
+              }
+
+              case 'emitWebViewWarmupServiceWorker02': {
+                this.controller.loadUrl('https://www.baidu.com')
+                try{
+                  webview.WebviewController.warmupServiceWorker('')
+                  Utils.emitEvent(true,13423161)
+                }  catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                  Utils.emitEvent(`${error.code}`, 13423161);
+                }
+                break;
+              }
+
+              case 'emitWebViewWarmupServiceWorker03': {
+                this.controller.loadUrl('https://www.baidu.com')
+                try{
+                  webview.WebviewController.warmupServiceWorker('1fsagsadg343%%#,')
+                  Utils.emitEvent(true,13423162)
+                }  catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                  Utils.emitEvent(`${error.code}`, 13423162);
                 }
                 break;
               }

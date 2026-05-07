@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,7 +17,7 @@ import {RenderingContextSettings,OffscreenCanvas,OffscreenCanvasRenderingContext
 import image from "@ohos.multimedia.image";
 const canvasWidth = 1000
 const canvasHeight = 100
-enum FontSizeScaleThreshold {
+enum FontSizeScaleThreshold:double {
   SMALL = 0.9,
   NORMAL = 1.1,
   LEVEL_1_LARGE = 1.2,
@@ -107,7 +107,7 @@ export default class LeadingMarginCreator {
     const newOffContext: OffscreenCanvasRenderingContext2D = new OffscreenCanvasRenderingContext2D(canvasWidth, canvasHeight, this.settings);
     const centerCoordinate = 50
     const radius = 10
-    newOffContext.ellipse(100 * (indentLevel + 1) - centerCoordinate * marginLevel, offsetLevel[fontSizeLevel as int],
+    newOffContext.ellipse(100 * (indentLevel + 1) - centerCoordinate * marginLevel, offsetLevel[fontSizeLevel.toInt()],
       radius * marginLevel, radius, 0, 0, 2 * Math.PI)
     newOffContext.fillStyle = '66FF0000'
     newOffContext.fill()

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -714,7 +714,7 @@ export default function typeArrayInt8ArrayTest() {
      */
     it('TypeArrayInt8ArrayTest0031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const int8Arr: Int8Array = new Int8Array([10, 20]);
-      const accessResult: number | undefined = int8Arr[NaN as int];
+      const accessResult: number | undefined = int8Arr[NaN.toInt()];
       let errorMsg: string = '';
 
       if (accessResult !== undefined) {
@@ -930,7 +930,7 @@ export default function typeArrayInt8ArrayTest() {
      */
     it('TypeArrayInt8ArrayTest0049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const int8Arr: Int8Array = new Int8Array([1, 2, 3, 4]);
-      const total: number = int8Arr.reduce((acc, val) => acc + val, 0);
+      const total: number = int8Arr.reduce((acc, val) => acc + val, 0.);
       let errorMsg: string = '';
 
       if (total !== 10) {

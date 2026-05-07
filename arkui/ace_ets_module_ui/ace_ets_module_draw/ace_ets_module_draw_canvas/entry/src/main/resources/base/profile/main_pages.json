@@ -78,6 +78,10 @@
         "MainAbility/pages/CanvasNullUndefined/canvasPatternSetTransformNullUndefined",
         "MainAbility/pages/CanvasNullUndefined/offCanvasToDataURLNullUndefined",
         "MainAbility/pages/CanvasNullUndefined/canvasOnReadyNullUndefined",
-        "MainAbility/pages/CanvasNullUndefined/canvasMatrixRotateNullUndefined"
+        "MainAbility/pages/CanvasNullUndefined/canvasMatrixRotateNullUndefined",
+        "MainAbility/pages/CanvasRenderingContext2D/Antialias",
+        "MainAbility/pages/migratedActs/CanvasRendererAntialiasPage",
+        "MainAbility/pages/Canvas/CanvasImageBitmapSupportResource",
+        "MainAbility/pages/Canvas/CanvasGradientCreateHDRColor"
     ]
 }

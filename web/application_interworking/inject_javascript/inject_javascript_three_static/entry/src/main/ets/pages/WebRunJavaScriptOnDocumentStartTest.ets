@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,9 +33,14 @@ import events_emitter from '@ohos.events.emitter';
 import { Callback, RecordData } from '@ohos.base'
 import image from '@ohos.multimedia.image';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
+
+function checkResult(result: Array<string>): Boolean{
+  return result.includes('push new js on run start called');
+}
+
 @Entry
 @Component
 struct WebRunJavaScriptOnDocumentStartTest {
@@ -44,6 +49,9 @@ struct WebRunJavaScriptOnDocumentStartTest {
   @State emitKey: string = '';
   @State result: string = '';
   @State str: string = ''
+  private jsStart: string =
+    'console.log("push new js on run start called")';
+  @State message: Array<string> = [] as Array<string>;
   @State scripts: Array<ScriptItem> = [
     { script: "if (typeof(Storage) !== 'undefined') {" +
       "   localStorage.setItem('color', 'Red');" +
@@ -81,6 +89,12 @@ struct WebRunJavaScriptOnDocumentStartTest {
               break;
             }
 
+            case "emitWebRunJavaScriptOnDocumentStart002": {
+              console.log("emitWebRunJavaScriptOnDocumentStart002 result = ", this.message)
+              Utils.emitEvent(checkResult(this.message), 202502211)
+              break;
+            }
+
             case 'SwitchNextPageStatic' : {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();
@@ -96,6 +110,10 @@ struct WebRunJavaScriptOnDocumentStartTest {
         .javaScriptAccess(true)
         .domStorageAccess(true)
         .runJavaScriptOnDocumentStart(this.scripts)
+        .onControllerAttached(() => {
+          this.scripts.push({ script: this.jsStart, scriptRules: ['*'] });
+          console.log('runJavaScriptOnDocumentStart scripts==>' + JSON.stringify(this.scripts));
+        })
         .onPageBegin((event: OnPageBeginEvent): void => {
           if (event) {
             console.log('runJavaScriptOnDocumentStart onPageBegin url:' + event.url);
@@ -119,6 +137,14 @@ struct WebRunJavaScriptOnDocumentStartTest {
               console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
             }
           }
+        })
+        .onConsole((event) => {
+          if (event) {
+            let msg = event.message.getMessage();
+            this.message.push(msg);
+            console.log('runJavaScriptOnDocumentStart message===>' + this.message);
+          }
+          return false
         })
         .width('100%')
         .height('100%')

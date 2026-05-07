@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -212,6 +212,27 @@ export default function usbDdkTest() {
     });
 
     /**
+     * @tc.name   testUsbGetConfigDescriptor004
+     * @tc.number SUB_Driver_Ext_DDKETS_4000
+     * @tc.desc   OH_Usb_GetConfigDescriptor Interface testing with configIndex 255 boundary value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testUsbGetConfigDescriptor004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      if (dev < 0) {
+        console.info("Test USB device not connected");
+        expect(dev).assertEqual(USB_DDK_FAILED);
+        done()
+      } else {
+        let data = usbDdk.usbGetConfigDescriptorFour(dev);
+        console.info("Test USB data Result = " + data);
+        expect(data).assertEqual(USB_DDK_INVALID_OPERATION);
+        done()
+      }
+    });
+
+    /**
      * @tc.name   testUsbFreeConfigDescriptor001
      * @tc.number SUB_Driver_Ext_DDKETS_0800
      * @tc.desc   OH_Usb_FreeConfigDescriptor Interface testing
@@ -291,6 +312,48 @@ export default function usbDdkTest() {
         let data = usbDdk.usbClaimInterfaceThree(dev);
         console.info("Test USB data Result = " + data);
         expect(data).assertEqual(USB_DDK_INVALID_PARAMETER);
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   testUsbClaimInterface004
+     * @tc.number SUB_Driver_Ext_DDKETS_4100
+     * @tc.desc   OH_Usb_ClaimInterface Interface testing with interfaceIndex 255 boundary value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testUsbClaimInterface004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      if (dev < 0) {
+        console.info("Test USB device not connected");
+        expect(dev).assertEqual(USB_DDK_FAILED);
+        done()
+      } else {
+        let data = usbDdk.usbClaimInterfaceFour(dev);
+        console.info("Test USB data Result = " + data);
+        expect(data).assertEqual(USB_DDK_INVALID_OPERATION);
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   testUsbClaimInterface005
+     * @tc.number SUB_Driver_Ext_DDKETS_4200
+     * @tc.desc   OH_Usb_ClaimInterface Interface testing with interfaceIndex 0 boundary value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testUsbClaimInterface005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      if (dev < 0) {
+        console.info("Test USB device not connected");
+        expect(dev).assertEqual(USB_DDK_FAILED);
+        done()
+      } else {
+        let data = usbDdk.usbClaimInterfaceFive(dev);
+        console.info("Test USB data Result = " + data);
+        expect(data).assertEqual(USB_DDK_SUCCESS);
         done()
       }
     });

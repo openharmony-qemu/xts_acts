@@ -56,7 +56,7 @@ interface ParamsInterface {
   text: string;
   func: () => void;
 }
-class MyDataSource implements IDataSource<string> {
+export class MyDataSource implements IDataSource<string> {
   private dataArray: string[] = []
   private listeners: DataChangeListener[] = []
 

@@ -18,11 +18,11 @@ import {
   ENTINFO1,
   SELFWANT,
   SELFHAPNAME,
-  APP_IDS_1,
   APP_IDS_200,
   APP_IDS_201,
   APP_IDS_AND_IDENTIFIER_1,
   DEFAULT_APP_INDEX,
+  INVALID_APP_INDEX,
   DEFAULT_USER_ID,
   INVALID_USER_ID,
   AUTOSTARTAPP1,
@@ -38,6 +38,15 @@ import applicationManager from '@ohos.enterprise.applicationManager';
 import Want from '@ohos.app.ability.Want';
 import sysDeviceInfo from '@ohos.deviceInfo';
 import common from '@ohos.enterprise.common';
+import { connection, statistics } from '@kit.NetworkKit';
+import restrictions from '@ohos.enterprise.restrictions';
+
+const APP_IDS_1: Array<string> = [
+  "test_appid_1",
+  "test_appid_2",
+  "test_appid_3",
+];
+const LABEL_NOTIFICATION = "notification";
 
 export default function applicationManagerTest() {
   describe('applicationManager_test', () => {
@@ -674,10 +683,11 @@ export default function applicationManagerTest() {
     it("test_getDisallowedRunningBundlesSync_007", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        applicationManager.getDisallowedRunningBundlesSync(null);
-        expect(false).assertTrue();
+        applicationManager.addDisallowedRunningBundlesSync(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
+        let res = applicationManager.getDisallowedRunningBundlesSync(null, DEFAULT_USER_ID);
+        expect(res.length === 3).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -951,10 +961,10 @@ export default function applicationManagerTest() {
     it("test_getAutoStartApps_003", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        applicationManager.getAutoStartApps(null);
-        expect(false).assertTrue();
+        let apps = applicationManager.getAutoStartApps(null);
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1002,11 +1012,7 @@ export default function applicationManagerTest() {
         applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200001).assertTrue();
-        }
+        expect(Number(error.code) === 9200001).assertTrue();
       }
       done();
     })
@@ -1014,16 +1020,12 @@ export default function applicationManagerTest() {
     /**
      * @tc.name   test_addFreezeExemptedApps_002
      * @tc.number SUB_CUSTOMIZATION_EDM_ADDFREEZEEXEMPTEDAPPS_002
-     * @tc.desc   test addFreezeExemptedApps method with byod admin for !2in1
+     * @tc.desc   test addFreezeExemptedApps method with byod admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it("test_addFreezeExemptedApps_002", Level.LEVEL2, async (done: Function) => {
-      if (sysDeviceInfo.deviceType == '2in1') {
-        done();
-        return;
-      }
       try {
         let freezeExemptedApps: Array<common.ApplicationInstance> = [
           {
@@ -1046,29 +1048,29 @@ export default function applicationManagerTest() {
     /**
      * @tc.name   test_addFreezeExemptedApps_003
      * @tc.number SUB_CUSTOMIZATION_EDM_ADDFREEZEEXEMPTEDAPPS_003
-     * @tc.desc   test addFreezeExemptedApps method with byod admin for 2in1
+     * @tc.desc   test addFreezeExemptedApps method with normal admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it("test_addFreezeExemptedApps_003", Level.LEVEL2, async (done: Function) => {
-      if (sysDeviceInfo.deviceType != '2in1') {
-        done();
-        return;
-      }
       try {
         let freezeExemptedApps: Array<common.ApplicationInstance> = [
           {
-            appIdentifier:"1230215522310701824",
+            appIdentifier:"1230215522310701825",
             accountId:DEFAULT_USER_ID,
             appIndex:0
           }
         ];
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
         applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 801).assertTrue();
+        if (Number(error.code) === 9200002) {
+          expect(Number(error.code) === 9200002).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -1089,11 +1091,7 @@ export default function applicationManagerTest() {
         applicationManager.addFreezeExemptedApps(SELFWANT, null);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1121,11 +1119,7 @@ export default function applicationManagerTest() {
         applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1153,11 +1147,7 @@ export default function applicationManagerTest() {
         applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200012).assertTrue();
-        }
+        expect(Number(error.code) === 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1191,11 +1181,7 @@ export default function applicationManagerTest() {
         applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200012).assertTrue();
-        }
+        expect(Number(error.code) === 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1218,11 +1204,7 @@ export default function applicationManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         console.info(' --- test_addFreezeExemptedApps_008 error 401 is expected, actually catch: ' + error.code);
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200012).assertTrue();
-        }
+        expect(Number(error.code) === 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1249,11 +1231,7 @@ export default function applicationManagerTest() {
         applicationManager.removeFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200001).assertTrue();
-        }
+        expect(Number(error.code) === 9200001).assertTrue();
       }
       done();
     })
@@ -1261,16 +1239,12 @@ export default function applicationManagerTest() {
     /**
      * @tc.name   test_removeFreezeExemptedApps_002
      * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEFREEZEEXEMPTEDAPPS_002
-     * @tc.desc   test removeFreezeExemptedApps method with byod admin for !2in1
+     * @tc.desc   test removeFreezeExemptedApps method with byod admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it("test_removeFreezeExemptedApps_002", Level.LEVEL2, async (done: Function) => {
-      if (sysDeviceInfo.deviceType == '2in1') {
-        done();
-        return;
-      }
       try {
         let freezeExemptedApps: Array<common.ApplicationInstance> = [
           {
@@ -1293,29 +1267,29 @@ export default function applicationManagerTest() {
     /**
      * @tc.name   test_removeFreezeExemptedApps_003
      * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEFREEZEEXEMPTEDAPPS_003
-     * @tc.desc   test removeFreezeExemptedApps method with byod admin for 2in1
+     * @tc.desc   test removeFreezeExemptedApps method with normal admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it("test_removeFreezeExemptedApps_003", Level.LEVEL2, async (done: Function) => {
-      if (sysDeviceInfo.deviceType != '2in1') {
-        done();
-        return;
-      }
       try {
         let freezeExemptedApps: Array<common.ApplicationInstance> = [
           {
-            appIdentifier:"1230215522310701824",
+            appIdentifier:"1230215522310701825",
             accountId:DEFAULT_USER_ID,
             appIndex:0
           }
         ];
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
         applicationManager.removeFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 801).assertTrue();
+        if (Number(error.code) === 9200002) {
+          expect(Number(error.code) === 9200002).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -1336,11 +1310,7 @@ export default function applicationManagerTest() {
         applicationManager.removeFreezeExemptedApps(SELFWANT, null);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1368,11 +1338,7 @@ export default function applicationManagerTest() {
         applicationManager.removeFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
+        expect(Number(error.code) === 401).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1408,11 +1374,7 @@ export default function applicationManagerTest() {
         applicationManager.removeFreezeExemptedApps(SELFWANT, removeApps);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200012).assertTrue();
-        }
+        expect(Number(error.code) === 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1458,11 +1420,7 @@ export default function applicationManagerTest() {
         applicationManager.removeFreezeExemptedApps(SELFWANT, removeApps);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200012).assertTrue();
-        }
+        expect(Number(error.code) === 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1484,12 +1442,7 @@ export default function applicationManagerTest() {
         applicationManager.removeFreezeExemptedApps(SELFWANT, applicationInstances);
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- test_removeFreezeExemptedApps_008 error 401 is expected, actually catch: ' + error.code);
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200012).assertTrue();
-        }
+        expect(Number(error.code) === 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1509,11 +1462,7 @@ export default function applicationManagerTest() {
         applicationManager.getFreezeExemptedApps(SELFWANT);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200001).assertTrue();
-        }
+        expect(Number(error.code) === 9200001).assertTrue();
       }
       done();
     })
@@ -1521,16 +1470,12 @@ export default function applicationManagerTest() {
     /**
      * @tc.name   test_getFreezeExemptedApps_002
      * @tc.number SUB_CUSTOMIZATION_EDM_GETFREEZEEXEMPTEDAPPS_002
-     * @tc.desc   test getFreezeExemptedApps method with byod admin for !2in1
+     * @tc.desc   test getFreezeExemptedApps method with byod admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it("test_getFreezeExemptedApps_002", Level.LEVEL2, async (done: Function) => {
-      if (sysDeviceInfo.deviceType == '2in1') {
-        done();
-        return;
-      }
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         applicationManager.getFreezeExemptedApps(SELFWANT);
@@ -1546,22 +1491,18 @@ export default function applicationManagerTest() {
     /**
      * @tc.name   test_getFreezeExemptedApps_003
      * @tc.number SUB_CUSTOMIZATION_EDM_GETFREEZEEXEMPTEDAPPS_003
-     * @tc.desc   test getFreezeExemptedApps method with byod admin for 2in1
+     * @tc.desc   test getFreezeExemptedApps method with normal admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
     it("test_getFreezeExemptedApps_003", Level.LEVEL2, async (done: Function) => {
-      if (sysDeviceInfo.deviceType != '2in1') {
-        done();
-        return;
-      }
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
         let res = applicationManager.getFreezeExemptedApps(SELFWANT);
-        expect(false).assertTrue();
+        expect(res.length === 0).assertTrue();
       } catch (error) {
-        expect(error.code == 801).assertTrue();
+        expect(Number(error.code) === 9200002).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -1577,16 +1518,12 @@ export default function applicationManagerTest() {
      * @tc.level  LEVEL2
      */
     it("test_getFreezeExemptedApps_004", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        applicationManager.getFreezeExemptedApps(null);
-        expect(false).assertTrue();
+        let apps = applicationManager.getFreezeExemptedApps(null);
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 401).assertTrue();
-        }
+        expect(false).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1607,7 +1544,7 @@ export default function applicationManagerTest() {
         let res = applicationManager.getFreezeExemptedApps(SELFWANT);
         expect(res.length == 0).assertTrue();
       } catch (error) {
-        expect(error.code == 801).assertTrue();
+        expect(false).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -2123,13 +2060,13 @@ export default function applicationManagerTest() {
     it("test_getUserNonStopApps_003", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        applicationManager.getUserNonStopApps(null);
-        expect(false).assertTrue();
+        let apps = applicationManager.getUserNonStopApps(null);
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
         if (Number(error.code) === 801) {
           expect(Number(error.code) === 801).assertTrue();
         } else {
-          expect(Number(error.code) === 401).assertTrue();
+          expect(false).assertTrue();
         }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -2555,10 +2492,10 @@ export default function applicationManagerTest() {
     it("test_getAutoStartAppsByUserId_003", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        applicationManager.getAutoStartApps(null, DEFAULT_USER_ID);
-        expect(false).assertTrue();
+        let apps = applicationManager.getAutoStartApps(null, DEFAULT_USER_ID);
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -2833,6 +2770,96 @@ export default function applicationManagerTest() {
     })
 
     /**
+     * @tc.name   test_addKeepAliveApps_007
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDKEEPALIVEAPPS_007
+     * @tc.desc   test addKeepAliveApps method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addKeepAliveApps_007", Level.LEVEL2, async (done: Function) => {
+      try {
+        let keepAliveApps: Array<string> = [];
+        applicationManager.addKeepAliveApps(null, keepAliveApps, DEFAULT_USER_ID);
+      } catch (error) {
+        console.info(' --- test_addKeepAliveApps_007 error 401 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 401) {
+          expect(Number(error.code) === 401).assertTrue();
+        } else {
+          expect(false).assertTrue();
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addKeepAliveApps_008
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDKEEPALIVEAPPS_008
+     * @tc.desc   test addKeepAliveApps method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addKeepAliveApps_008", Level.LEVEL2, async (done: Function) => {
+      try {
+        let keepAliveApps: Array<string> = [];
+        applicationManager.addKeepAliveApps(undefined, keepAliveApps, DEFAULT_USER_ID);
+      } catch (error) {
+        console.info(' --- test_addKeepAliveApps_008 error 401 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 401) {
+          expect(Number(error.code) === 401).assertTrue();
+        } else {
+          expect(false).assertTrue();
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addKeepAliveApps_009
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDKEEPALIVEAPPS_009
+     * @tc.desc   test addKeepAliveApps method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addKeepAliveApps_009", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.addKeepAliveApps(SELFWANT, null, DEFAULT_USER_ID);
+      } catch (error) {
+        console.info(' --- test_addKeepAliveApps_009 error 401 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 401) {
+          expect(Number(error.code) === 401).assertTrue();
+        } else {
+          expect(false).assertTrue();
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addKeepAliveApps_010
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDKEEPALIVEAPPS_010
+     * @tc.desc   test addKeepAliveApps method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addKeepAliveApps_010", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.addKeepAliveApps(SELFWANT, undefined, DEFAULT_USER_ID);
+      } catch (error) {
+        console.info(' --- test_addKeepAliveApps_010 error 401 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 401) {
+          expect(Number(error.code) === 401).assertTrue();
+        } else {
+          expect(false).assertTrue();
+        }
+      }
+      done();
+    })
+
+    /**
      * @tc.name   test_removeKeepAliveApps_001
      * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEKEEPALIVEAPPS_001
      * @tc.desc   test removeKeepAliveApps method with unActive admin
@@ -2975,9 +3002,9 @@ export default function applicationManagerTest() {
         let keepAliveApps: Array<string> = [];
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         keepAliveApps = applicationManager.getKeepAliveApps(null, DEFAULT_USER_ID);
-        expect(false).assertTrue();
+        expect(keepAliveApps.length === 0).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -3160,9 +3187,9 @@ export default function applicationManagerTest() {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let bundleNames: Array<string> = applicationManager.getAllowedKioskApps(null);
-        expect(false).assertTrue();
+        expect(bundleNames.length === 0).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -4018,25 +4045,25 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.name   addDockApp_test_001
-     * @tc.number addDockApp_test_001
+     * @tc.name   addDockApp_test_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDOCKAPP_0100
      * @tc.desc   addDockApp without null admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("addDockApp_test_001", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- addDockApp_test_001  -------- START --------');
+    it("addDockApp_test_0100", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDockApp_test_0100  -------- START --------');
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let bundleName: string = SELFHAPNAME;
         let index: number = 5;
         let abilityName: string = "EntryAbility";
         applicationManager.addDockApp(null, bundleName, abilityName, index);	  
-        console.info(' --- addDockApp_test_001 error is expected, but it done.');
+        console.info(' --- addDockApp_test_0100 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- addDockApp_test_001 error 401 is expected, actually catch: ' + error.code);
+        console.info(' --- addDockApp_test_0100 error 401 is expected, actually catch: ' + error.code);
         if (Number(error.code) === 801) {
           expect(Number(error.code) === 801).assertTrue();
         } else {
@@ -4046,29 +4073,29 @@ export default function applicationManagerTest() {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
-      console.info(' --- addDockApp_test_001  -------- END --------');
+      console.info(' --- addDockApp_test_0100  -------- END --------');
     })
 
     /**
-     * @tc.name   addDockApp_test_002
-     * @tc.number addDockApp_test_002
+     * @tc.name   addDockApp_test_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDOCKAPP_0200
      * @tc.desc   addDockApp without undefined admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("addDockApp_test_002", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- addDockApp_test_002  -------- START --------');
+    it("addDockApp_test_0200", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDockApp_test_0200  -------- START --------');
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let bundleName: string = SELFHAPNAME;
         let index: number = 5;
         let abilityName: string = "EntryAbility";
         applicationManager.addDockApp(undefined, bundleName, abilityName, index);	  
-        console.info(' --- addDockApp_test_002 error is expected, but it done.');
+        console.info(' --- addDockApp_test_0200 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- addDockApp_test_002 error 401 is expected, actually catch: ' + error.code);
+        console.info(' --- addDockApp_test_0200 error 401 is expected, actually catch: ' + error.code);
         if (Number(error.code) === 801) {
           expect(Number(error.code) === 801).assertTrue();
         } else {
@@ -4078,29 +4105,29 @@ export default function applicationManagerTest() {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
-      console.info(' --- addDockApp_test_002  -------- END --------');
+      console.info(' --- addDockApp_test_0200  -------- END --------');
     })
 
     /**
-     * @tc.name   addDockApp_test_003
-     * @tc.number addDockApp_test_003
+     * @tc.name   addDockApp_test_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDOCKAPP_0300
      * @tc.desc   addDockApp without null param
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("addDockApp_test_003", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- addDockApp_test_003  -------- START --------');
+    it("addDockApp_test_0300", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDockApp_test_0300  -------- START --------');
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let bundleName: string = SELFHAPNAME;
         let index: number = 5;
         let abilityName: string = "EntryAbility";
         applicationManager.addDockApp(SELFWANT, null, abilityName, index);	  
-        console.info(' --- addDockApp_test_003 error is expected, but it done.');
+        console.info(' --- addDockApp_test_0300 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- addDockApp_test_003 error 401 is expected, actually catch: ' + error.code);
+        console.info(' --- addDockApp_test_0300 error 401 is expected, actually catch: ' + error.code);
         if (Number(error.code) === 801) {
           expect(Number(error.code) === 801).assertTrue();
         } else {
@@ -4110,29 +4137,29 @@ export default function applicationManagerTest() {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
-      console.info(' --- addDockApp_test_003  -------- END --------');
+      console.info(' --- addDockApp_test_0300  -------- END --------');
     })
 
     /**
-     * @tc.name   addDockApp_test_004
-     * @tc.number addDockApp_test_004
+     * @tc.name   addDockApp_test_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDOCKAPP_0400
      * @tc.desc   addDockApp without null param
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("addDockApp_test_004", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- addDockApp_test_004  -------- START --------');
+    it("addDockApp_test_0400", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDockApp_test_0400  -------- START --------');
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let bundleName: string = SELFHAPNAME;
         let index: number = 5;
         let abilityName: string = "EntryAbility";
         applicationManager.addDockApp(SELFWANT, bundleName, null, index);	  
-        console.info(' --- addDockApp_test_004 error is expected, but it done.');
+        console.info(' --- addDockApp_test_0400 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- addDockApp_test_004 error 401 is expected, actually catch: ' + error.code);
+        console.info(' --- addDockApp_test_0400 error 401 is expected, actually catch: ' + error.code);
         if (Number(error.code) === 801) {
           expect(Number(error.code) === 801).assertTrue();
         } else {
@@ -4142,28 +4169,28 @@ export default function applicationManagerTest() {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
-      console.info(' --- addDockApp_test_004  -------- END --------');
+      console.info(' --- addDockApp_test_0400  -------- END --------');
     })
 
     /**
-     * @tc.name   addDockApp_test_005
-     * @tc.number addDockApp_test_005
+     * @tc.name   addDockApp_test_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDOCKAPP_0500
      * @tc.desc   addDockApp without undefined param
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("addDockApp_test_005", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- addDockApp_test_005  -------- START --------');
+    it("addDockApp_test_0500", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDockApp_test_0500  -------- START --------');
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let index: number = 5;
         let abilityName: string = "EntryAbility";
         applicationManager.addDockApp(SELFWANT, undefined, abilityName, index);	  
-        console.info(' --- addDockApp_test_005 error is expected, but it done.');
+        console.info(' --- addDockApp_test_0500 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- addDockApp_test_005 error 401 is expected, actually catch: ' + error.code);
+        console.info(' --- addDockApp_test_0500 error 401 is expected, actually catch: ' + error.code);
         if (Number(error.code) === 801) {
           expect(Number(error.code) === 801).assertTrue();
         } else {
@@ -4173,28 +4200,28 @@ export default function applicationManagerTest() {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
-      console.info(' --- addDockApp_test_005  -------- END --------');
+      console.info(' --- addDockApp_test_0500  -------- END --------');
     })
 
     /**
-     * @tc.name   addDockApp_test_006
-     * @tc.number addDockApp_test_006
+     * @tc.name   addDockApp_test_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDOCKAPP_0600
      * @tc.desc   addDockApp without undefined param
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("addDockApp_test_006", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- addDockApp_test_006  -------- START --------');
+    it("addDockApp_test_0600", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDockApp_test_0600  -------- START --------');
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let bundleName: string = SELFHAPNAME;
         let index: number = 5;
         applicationManager.addDockApp(SELFWANT, bundleName, undefined, index);	  
-        console.info(' --- addDockApp_test_006 error is expected, but it done.');
+        console.info(' --- addDockApp_test_0600 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- addDockApp_test_006 error 401 is expected, actually catch: ' + error.code);
+        console.info(' --- addDockApp_test_0600 error 401 is expected, actually catch: ' + error.code);
         if (Number(error.code) === 801) {
           expect(Number(error.code) === 801).assertTrue();
         } else {
@@ -4204,29 +4231,29 @@ export default function applicationManagerTest() {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
-      console.info(' --- addDockApp_test_006  -------- END --------');
+      console.info(' --- addDockApp_test_0600  -------- END --------');
     })
 
     /**
-     * @tc.name   addDockApp_test_007
-     * @tc.number addDockApp_test_007
+     * @tc.name   addDockApp_test_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDOCKAPP_0700
      * @tc.desc   addDockApp without undefined param
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("addDockApp_test_007", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- addDockApp_test_007  -------- START --------');
+    it("addDockApp_test_0700", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDockApp_test_0700  -------- START --------');
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let bundleName: string = SELFHAPNAME;
         let index: number = 5;
         let abilityName: string = "EntryAbility";
         applicationManager.addDockApp(SELFWANT, bundleName, abilityName, undefined);	  
-        console.info(' --- addDockApp_test_007 error is expected, but it done.');
+        console.info(' --- addDockApp_test_0700 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- addDockApp_test_007 error 401 is expected, actually catch: ' + error.code);
+        console.info(' --- addDockApp_test_0700 error 401 is expected, actually catch: ' + error.code);
         if (Number(error.code) === 801) {
           expect(Number(error.code) === 801).assertTrue();
         } else {
@@ -4236,29 +4263,29 @@ export default function applicationManagerTest() {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
-      console.info(' --- addDockApp_test_007  -------- END --------');
+      console.info(' --- addDockApp_test_0700  -------- END --------');
     })
 
     /**
-     * @tc.name   addDockApp_test_008
-     * @tc.number addDockApp_test_008
+     * @tc.name   addDockApp_test_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDOCKAPP_0800
      * @tc.desc   addDockApp without null param
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("addDockApp_test_008", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- addDockApp_test_008  -------- START --------');
+    it("addDockApp_test_0800", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDockApp_test_0800  -------- START --------');
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let bundleName: string = SELFHAPNAME;
         let index: number = 5;
         let abilityName: string = "EntryAbility";
         applicationManager.addDockApp(SELFWANT, bundleName, abilityName, null);	  
-        console.info(' --- addDockApp_test_008 error is expected, but it done.');
+        console.info(' --- addDockApp_test_0800 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- addDockApp_test_008 error 401 is expected, actually catch: ' + error.code);
+        console.info(' --- addDockApp_test_0800 error 401 is expected, actually catch: ' + error.code);
         if (Number(error.code) === 801) {
           expect(Number(error.code) === 801).assertTrue();
         } else {
@@ -4268,28 +4295,336 @@ export default function applicationManagerTest() {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
-      console.info(' --- addDockApp_test_008  -------- END --------');
+      console.info(' --- addDockApp_test_0800  -------- END --------');
     })
 
     /**
-     * @tc.name   removeDockApp_test_001
-     * @tc.number removeDockApp_test_001
+     * @tc.name   addDockApp_test_0900
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDOCKAPP_0900
+     * @tc.desc   addDockApp with null admin without index param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDockApp_test_0900", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDockApp_test_0900  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleName: string = SELFHAPNAME;
+        let abilityName: string = "EntryAbility";
+        applicationManager.addDockApp(null, bundleName, abilityName);
+        console.info(' --- addDockApp_test_0900 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDockApp_test_0900 error 401 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- addDockApp_test_0900  -------- END --------');
+    })
+
+    /**
+     * @tc.name   addDockApp_test_1000
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDOCKAPP_1000
+     * @tc.desc   addDockApp with undefined admin without index param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDockApp_test_1000", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDockApp_test_1000  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleName: string = SELFHAPNAME;
+        let abilityName: string = "EntryAbility";
+        applicationManager.addDockApp(undefined, bundleName, abilityName);
+        console.info(' --- addDockApp_test_1000 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDockApp_test_1000 error 401 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- addDockApp_test_1000  -------- END --------');
+    })
+
+    /**
+     * @tc.name   addDockApp_test_1100
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDOCKAPP_1100
+     * @tc.desc   addDockApp with null bundleName without index param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDockApp_test_1100", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDockApp_test_1100  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let abilityName: string = "EntryAbility";
+        applicationManager.addDockApp(SELFWANT, null, abilityName);
+        console.info(' --- addDockApp_test_1100 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDockApp_test_1100 error 401 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- addDockApp_test_1100  -------- END --------');
+    })
+
+    /**
+     * @tc.name   addDockApp_test_1200
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDOCKAPP_1200
+     * @tc.desc   addDockApp with undefined bundleName without index param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDockApp_test_1200", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDockApp_test_1200  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let abilityName: string = "EntryAbility";
+        applicationManager.addDockApp(SELFWANT, undefined, abilityName);
+        console.info(' --- addDockApp_test_1200 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDockApp_test_1200 error 401 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- addDockApp_test_1200  -------- END --------');
+    })
+
+    /**
+     * @tc.name   addDockApp_test_1300
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDOCKAPP_1300
+     * @tc.desc   addDockApp with null abilityName without index param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDockApp_test_1300", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDockApp_test_1300  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleName: string = SELFHAPNAME;
+        applicationManager.addDockApp(SELFWANT, bundleName, null);
+        console.info(' --- addDockApp_test_1300 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDockApp_test_1300 error 401 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- addDockApp_test_1300  -------- END --------');
+    })
+
+    /**
+     * @tc.name   addDockApp_test_1400
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDOCKAPP_1400
+     * @tc.desc   addDockApp with undefined abilityName without index param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDockApp_test_1400", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDockApp_test_1400  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleName: string = SELFHAPNAME;
+        applicationManager.addDockApp(SELFWANT, bundleName, undefined);
+        console.info(' --- addDockApp_test_1400 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDockApp_test_1400 error 401 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 401).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- addDockApp_test_1400  -------- END --------');
+    })
+
+    /**
+     * @tc.name   addDockApp_test_1500
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDOCKAPP_1500
+     * @tc.desc   addDockApp with empty bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDockApp_test_1500", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDockApp_test_1500  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleName: string = "";
+        let index: number = 5;
+        let abilityName: string = "EntryAbility";
+        applicationManager.addDockApp(SELFWANT, bundleName, abilityName, index);
+        console.info(' --- addDockApp_test_1500 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDockApp_test_1500 error 9201015 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9201015).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- addDockApp_test_1500  -------- END --------');
+    })
+
+    /**
+     * @tc.name   addDockApp_test_1600
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDOCKAPP_1600
+     * @tc.desc   addDockApp with empty abilityName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDockApp_test_1600", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDockApp_test_1600  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleName: string = SELFHAPNAME;
+        let index: number = 5;
+        let abilityName: string = "";
+        applicationManager.addDockApp(SELFWANT, bundleName, abilityName, index);
+        console.info(' --- addDockApp_test_1600 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDockApp_test_1600 error 9200015 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200015).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- addDockApp_test_1600  -------- END --------');
+    })
+
+    /**
+     * @tc.name   addDockApp_test_1700
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDOCKAPP_1700
+     * @tc.desc   addDockApp with empty abilityName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDockApp_test_1700", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDockApp_test_1700  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleName: string = SELFHAPNAME;
+        let abilityName: string = "";
+        applicationManager.addDockApp(SELFWANT, bundleName, abilityName);
+        console.info(' --- addDockApp_test_1700 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDockApp_test_1700 error 9200015 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200015).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- addDockApp_test_1700  -------- END --------');
+    })
+
+    /**
+     * @tc.name   addDockApp_test_1800
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDOCKAPP_1800
+     * @tc.desc   addDockApp with empty bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDockApp_test_1800", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDockApp_test_1800  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleName: string = "";
+        let abilityName: string = "EntryAbility";
+        applicationManager.addDockApp(SELFWANT, bundleName, abilityName);
+        console.info(' --- addDockApp_test_1800 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDockApp_test_1800 error 9201015 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9201015).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- addDockApp_test_1800  -------- END --------');
+    })
+
+    /**
+     * @tc.name   removeDockApp_test_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDOCKAPP_0100
      * @tc.desc   removeDockApp without null admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("removeDockApp_test_001", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- removeDockApp_test_001  -------- START --------');
+    it("removeDockApp_test_0100", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDockApp_test_0100  -------- START --------');
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let bundleName: string = SELFHAPNAME;
         let abilityName: string = "EntryAbility";
         applicationManager.removeDockApp(null, bundleName, abilityName);	  
-        console.info(' --- removeDockApp_test_001 error is expected, but it done.');
+        console.info(' --- removeDockApp_test_0100 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- removeDockApp_test_001 error 401 is expected, actually catch: ' + error.code);
+        console.info(' --- removeDockApp_test_0100 error 401 is expected, actually catch: ' + error.code);
         if (Number(error.code) === 801) {
           expect(Number(error.code) === 801).assertTrue();
         } else {
@@ -4299,28 +4634,28 @@ export default function applicationManagerTest() {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
-      console.info(' --- removeDockApp_test_001  -------- END --------');
+      console.info(' --- removeDockApp_test_0100  -------- END --------');
     })
 
     /**
-     * @tc.name   removeDockApp_test_002
-     * @tc.number removeDockApp_test_002
+     * @tc.name   removeDockApp_test_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDOCKAPP_0200
      * @tc.desc   removeDockApp without undefined admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("removeDockApp_test_002", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- removeDockApp_test_002  -------- START --------');
+    it("removeDockApp_test_0200", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDockApp_test_0200  -------- START --------');
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let bundleName: string = SELFHAPNAME;
         let abilityName: string = "EntryAbility";
         applicationManager.removeDockApp(undefined, bundleName, abilityName);	  
-        console.info(' --- removeDockApp_test_002 error is expected, but it done.');
+        console.info(' --- removeDockApp_test_0200 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- removeDockApp_test_002 error 401 is expected, actually catch: ' + error.code);
+        console.info(' --- removeDockApp_test_0200 error 401 is expected, actually catch: ' + error.code);
         if (Number(error.code) === 801) {
           expect(Number(error.code) === 801).assertTrue();
         } else {
@@ -4330,28 +4665,28 @@ export default function applicationManagerTest() {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
-      console.info(' --- removeDockApp_test_002  -------- END --------');
+      console.info(' --- removeDockApp_test_0200  -------- END --------');
     })
 
     /**
-     * @tc.name   removeDockApp_test_003
-     * @tc.number removeDockApp_test_003
+     * @tc.name   removeDockApp_test_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDOCKAPP_0300
      * @tc.desc   removeDockApp without null param
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("removeDockApp_test_003", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- removeDockApp_test_003  -------- START --------');
+    it("removeDockApp_test_0300", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDockApp_test_0300  -------- START --------');
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let bundleName: string = SELFHAPNAME;
         let abilityName: string = "EntryAbility";
         applicationManager.removeDockApp(SELFWANT, null, abilityName);	  
-        console.info(' --- removeDockApp_test_003 error is expected, but it done.');
+        console.info(' --- removeDockApp_test_0300 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- removeDockApp_test_003 error 401 is expected, actually catch: ' + error.code);
+        console.info(' --- removeDockApp_test_0300 error 401 is expected, actually catch: ' + error.code);
         if (Number(error.code) === 801) {
           expect(Number(error.code) === 801).assertTrue();
         } else {
@@ -4361,28 +4696,28 @@ export default function applicationManagerTest() {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
-      console.info(' --- removeDockApp_test_003  -------- END --------');
+      console.info(' --- removeDockApp_test_0300  -------- END --------');
     })
 
     /**
-     * @tc.name   removeDockApp_test_004
-     * @tc.number removeDockApp_test_004
+     * @tc.name   removeDockApp_test_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDOCKAPP_0400
      * @tc.desc   removeDockApp without null param
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("removeDockApp_test_004", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- removeDockApp_test_004  -------- START --------');
+    it("removeDockApp_test_0400", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDockApp_test_0400  -------- START --------');
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let bundleName: string = SELFHAPNAME;
         let abilityName: string = "EntryAbility";
         applicationManager.removeDockApp(SELFWANT, bundleName, null);	  
-        console.info(' --- removeDockApp_test_004 error is expected, but it done.');
+        console.info(' --- removeDockApp_test_0400 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- removeDockApp_test_004 error 401 is expected, actually catch: ' + error.code);
+        console.info(' --- removeDockApp_test_0400 error 401 is expected, actually catch: ' + error.code);
         if (Number(error.code) === 801) {
           expect(Number(error.code) === 801).assertTrue();
         } else {
@@ -4392,27 +4727,27 @@ export default function applicationManagerTest() {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
-      console.info(' --- removeDockApp_test_004  -------- END --------');
+      console.info(' --- removeDockApp_test_0400  -------- END --------');
     })
 
     /**
-     * @tc.name   removeDockApp_test_005
-     * @tc.number removeDockApp_test_005
+     * @tc.name   removeDockApp_test_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDOCKAPP_0500
      * @tc.desc   removeDockApp without undefined param
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("removeDockApp_test_005", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- removeDockApp_test_005  -------- START --------');
+    it("removeDockApp_test_0500", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDockApp_test_0500  -------- START --------');
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let abilityName: string = "EntryAbility";
         applicationManager.removeDockApp(SELFWANT, undefined, abilityName);	  
-        console.info(' --- removeDockApp_test_005 error is expected, but it done.');
+        console.info(' --- removeDockApp_test_0500 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- removeDockApp_test_005 error 401 is expected, actually catch: ' + error.code);
+        console.info(' --- removeDockApp_test_0500 error 401 is expected, actually catch: ' + error.code);
         if (Number(error.code) === 801) {
           expect(Number(error.code) === 801).assertTrue();
         } else {
@@ -4422,27 +4757,27 @@ export default function applicationManagerTest() {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
-      console.info(' --- removeDockApp_test_005  -------- END --------');
+      console.info(' --- removeDockApp_test_0500  -------- END --------');
     })
 
     /**
-     * @tc.name   removeDockApp_test_006
-     * @tc.number removeDockApp_test_006
+     * @tc.name   removeDockApp_test_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDOCKAPP_0600
      * @tc.desc   removeDockApp without undefined param
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("removeDockApp_test_006", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- removeDockApp_test_006  -------- START --------');
+    it("removeDockApp_test_0600", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDockApp_test_0600  -------- START --------');
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         let bundleName: string = SELFHAPNAME;
         applicationManager.removeDockApp(SELFWANT, bundleName, undefined);	  
-        console.info(' --- removeDockApp_test_006 error is expected, but it done.');
+        console.info(' --- removeDockApp_test_0600 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- removeDockApp_test_006 error 401 is expected, actually catch: ' + error.code);
+        console.info(' --- removeDockApp_test_0600 error 401 is expected, actually catch: ' + error.code);
         if (Number(error.code) === 801) {
           expect(Number(error.code) === 801).assertTrue();
         } else {
@@ -4452,26 +4787,88 @@ export default function applicationManagerTest() {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
-      console.info(' --- removeDockApp_test_006  -------- END --------');
+      console.info(' --- removeDockApp_test_0600  -------- END --------');
     })
 
     /**
-     * @tc.name   getDockApps_test_001
-     * @tc.number getDockApps_test_001
+     * @tc.name   removeDockApp_test_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDOCKAPP_0700
+     * @tc.desc   removeDockApp with empty bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDockApp_test_0700", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDockApp_test_0700  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleName: string = "";
+        let abilityName: string = "EntryAbility";
+        applicationManager.removeDockApp(SELFWANT, bundleName, abilityName);
+        console.info(' --- removeDockApp_test_0700 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDockApp_test_0700 error 9201016 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9201016).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- removeDockApp_test_0700  -------- END --------');
+    })
+
+    /**
+     * @tc.name   removeDockApp_test_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDOCKAPP_0800
+     * @tc.desc   removeDockApp with empty abilityName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeDockApp_test_0800", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeDockApp_test_0800  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleName: string = SELFHAPNAME;
+        let abilityName: string = "";
+        applicationManager.removeDockApp(SELFWANT, bundleName, abilityName);
+        console.info(' --- removeDockApp_test_0800 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- removeDockApp_test_0800 error 9201016 is expected, actually catch: ' + error.code);
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9201016).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- removeDockApp_test_0800  -------- END --------');
+    })
+
+    /**
+     * @tc.name   getDockApps_test_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDOCKAPPS_0100
      * @tc.desc   getDockApps without null admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("getDockApps_test_001", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- getDockApps_test_001  -------- START --------');
+    it("getDockApps_test_0100", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDockApps_test_0100  -------- START --------');
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         applicationManager.getDockApps(null);	  
-        console.info(' --- getDockApps_test_001 error is expected, but it done.');
+        console.info(' --- getDockApps_test_0100 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- getDockApps_test_001 error 401 is expected, actually catch: ' + error.code);
+        console.info(' --- getDockApps_test_0100 error 401 is expected, actually catch: ' + error.code);
         if (Number(error.code) === 801) {
           expect(Number(error.code) === 801).assertTrue();
         } else {
@@ -4481,26 +4878,26 @@ export default function applicationManagerTest() {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
-      console.info(' --- getDockApps_test_001  -------- END --------');
+      console.info(' --- getDockApps_test_0100  -------- END --------');
     })
 
     /**
-     * @tc.name   getDockApps_test_002
-     * @tc.number getDockApps_test_002
+     * @tc.name   getDockApps_test_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDOCKAPPS_0200
      * @tc.desc   getDockApps without undefined admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("getDockApps_test_002", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- getDockApps_test_002  -------- START --------');
+    it("getDockApps_test_0200", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- getDockApps_test_0200  -------- START --------');
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         applicationManager.getDockApps(undefined);	  
-        console.info(' --- getDockApps_test_002 error is expected, but it done.');
+        console.info(' --- getDockApps_test_0200 error is expected, but it done.');
         expect(false).assertTrue();
       } catch (error) {
-        console.info(' --- getDockApps_test_002 error 401 is expected, actually catch: ' + error.code);
+        console.info(' --- getDockApps_test_0200 error 401 is expected, actually catch: ' + error.code);
         if (Number(error.code) === 801) {
           expect(Number(error.code) === 801).assertTrue();
         } else {
@@ -4510,18 +4907,18 @@ export default function applicationManagerTest() {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
-      console.info(' --- getDockApps_test_002  -------- END --------');
+      console.info(' --- getDockApps_test_0200  -------- END --------');
     })
 
     /**
-     * @tc.name   test_addDockApp_001
-     * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DOCK_APP_001
+     * @tc.name   test_addDockApp_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_TEST_ADDDOCKAPP_0100
      * @tc.desc   test addDockApp method with unActive admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_addDockApp_001", Level.LEVEL2, async (done: Function) => {
+    it("test_addDockApp_0100", Level.LEVEL2, async (done: Function) => {
       try {
         let bundleName: string = SELFHAPNAME;
         let index: number = 5;
@@ -4539,14 +4936,14 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.name   test_addDockApp_002
-     * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DOCK_APP_002
+     * @tc.name   test_addDockApp_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_TEST_ADDDOCKAPP_0200
      * @tc.desc   test addDockApp method with normal admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_addDockApp_002", Level.LEVEL2, async (done: Function) => {
+    it("test_addDockApp_0200", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         let bundleName: string = SELFHAPNAME;
@@ -4567,14 +4964,14 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.name   test_addDockApp_003
-     * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DOCK_APP_003
+     * @tc.name   test_addDockApp_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_TEST_ADDDOCKAPP_0300
      * @tc.desc   test addDockApp method with super admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_addDockApp_003", Level.LEVEL2, async (done: Function) => {
+    it("test_addDockApp_0300", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let bundleName: string = SELFHAPNAME;
@@ -4595,14 +4992,14 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.name   test_addDockApp_004
-     * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DOCK_APP_004
+     * @tc.name   test_addDockApp_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_TEST_ADDDOCKAPP_0400
      * @tc.desc   test addDockApp method with super admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_addDockApp_004", Level.LEVEL2, async (done: Function) => {
+    it("test_addDockApp_0400", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let bundleName: string = SELFHAPNAME;
@@ -4623,14 +5020,14 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.name   test_addDockApp_005
-     * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DOCK_APP_005
+     * @tc.name   test_addDockApp_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_TEST_ADDDOCKAPP_0500
      * @tc.desc   test addDockApp method with super admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_addDockApp_005", Level.LEVEL2, async (done: Function) => {
+    it("test_addDockApp_0500", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let bundleName: string = SELFHAPNAME;
@@ -4652,14 +5049,14 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.name   test_addDockApp_006
-     * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DOCK_APP_006
+     * @tc.name   test_addDockApp_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_TEST_ADDDOCKAPP_0600
      * @tc.desc   test addDockApp method with super admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_addDockApp_006", Level.LEVEL2, async (done: Function) => {
+    it("test_addDockApp_0600", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let bundleName: string = 'testBundleName';
@@ -4680,14 +5077,14 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.name   test_addDockApp_007
-     * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DOCK_APP_007
+     * @tc.name   test_addDockApp_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_TEST_ADDDOCKAPP_0700
      * @tc.desc   test addDockApp method with super admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_addDockApp_007", Level.LEVEL2, async (done: Function) => {
+    it("test_addDockApp_0700", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let bundleName: string = 'com.ohos.sceneboard';
@@ -4710,14 +5107,14 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.name   test_addDockApp_008
-     * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DOCK_APP_008
+     * @tc.name   test_addDockApp_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_TEST_ADDDOCKAPP_0800
      * @tc.desc   test addDockApp method with super admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_addDockApp_008", Level.LEVEL2, async (done: Function) => {
+    it("test_addDockApp_0800", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let bundleName: string = SELFHAPNAME;
@@ -4738,14 +5135,14 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.name   test_addDockApp_009
-     * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DOCK_APP_009
+     * @tc.name   test_addDockApp_0900
+     * @tc.number SUB_CUSTOMIZATION_EDM_TEST_ADDDOCKAPP_0900
      * @tc.desc   test addDockApp method with super admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_addDockApp_009", Level.LEVEL2, async (done: Function) => {
+    it("test_addDockApp_0900", Level.LEVEL2, async (done: Function) => {
       try {
         let bundleName: string = SELFHAPNAME;
         let abilityName: string = "EntryAbility";
@@ -4762,14 +5159,14 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.name   test_removeDockApp_001
-     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DOCK_APP_001
+     * @tc.name   test_removeDockApp_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_TEST_REMOVEDOCKAPP_0100
      * @tc.desc   test removeDockApp method with unActive admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_removeDockApp_001", Level.LEVEL2, async (done: Function) => {
+    it("test_removeDockApp_0100", Level.LEVEL2, async (done: Function) => {
       try {
         let bundleName: string = SELFHAPNAME;
         let abilityName: string = "EntryAbility";
@@ -4786,14 +5183,14 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.name   test_removeDockApp_002
-     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DOCK_APP_002
+     * @tc.name   test_removeDockApp_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_TEST_REMOVEDOCKAPP_0200
      * @tc.desc   test removeDockApp method with normal admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_removeDockApp_002", Level.LEVEL2, async (done: Function) => {
+    it("test_removeDockApp_0200", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         let bundleName: string = SELFHAPNAME;
@@ -4813,14 +5210,14 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.name   test_removeDockApp_006
-     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DOCK_APP_006
+     * @tc.name   test_removeDockApp_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_TEST_REMOVEDOCKAPP_0600
      * @tc.desc   test removeDockApp method with super admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_removeDockApp_006", Level.LEVEL2, async (done: Function) => {
+    it("test_removeDockApp_0600", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let bundleName: string = 'testBundleName';
@@ -4840,14 +5237,14 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.name   test_removeDockApp_007
-     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DOCK_APP_007
+     * @tc.name   test_removeDockApp_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_TEST_REMOVEDOCKAPP_0700
      * @tc.desc   test removeDockApp method with super admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_removeDockApp_007", Level.LEVEL2, async (done: Function) => {
+    it("test_removeDockApp_0700", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let bundleName: string = 'com.ohos.sceneboard';
@@ -4868,14 +5265,14 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.name   test_getDockApps_001
-     * @tc.number SUB_CUSTOMIZATION_EDM_GET_DOCK_APPS_001
+     * @tc.name   test_getDockApps_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_TEST_GETDOCKAPPS_0100
      * @tc.desc   test getDockApps method with unActive admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_getDockApps_001", Level.LEVEL2, async (done: Function) => {
+    it("test_getDockApps_0100", Level.LEVEL2, async (done: Function) => {
       try {
         applicationManager.getDockApps(SELFWANT);
         expect(false).assertTrue();
@@ -4890,14 +5287,14 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.name   test_getDockApps_002
-     * @tc.number SUB_CUSTOMIZATION_EDM_GET_DOCK_APPS_002
+     * @tc.name   test_getDockApps_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_TEST_GETDOCKAPPS_0200
      * @tc.desc   test getDockApps method with normal admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_getDockApps_002", Level.LEVEL2, async (done: Function) => {
+    it("test_getDockApps_0200", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         applicationManager.getDockApps(SELFWANT);
@@ -4915,14 +5312,14 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.name   test_getDockApps_006
-     * @tc.number SUB_CUSTOMIZATION_EDM_GET_DOCK_APPS_006
+     * @tc.name   test_getDockApps_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_TEST_GETDOCKAPPS_0600
      * @tc.desc   test getDockApps method with super admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_getDockApps_006", Level.LEVEL2, async (done: Function) => {
+    it("test_getDockApps_0600", Level.LEVEL2, async (done: Function) => {
       if (sysDeviceInfo.deviceType !== '2in1') {
         done();
         return;
@@ -4930,7 +5327,7 @@ export default function applicationManagerTest() {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let ret: applicationManager.DockInfo[] = applicationManager.getDockApps(SELFWANT);
-        expect(ret == null).assertTrue();
+        expect(ret != null).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
@@ -4940,14 +5337,14 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.name   test_getDockApps_007
-     * @tc.number SUB_CUSTOMIZATION_EDM_GET_DOCK_APPS_007
+     * @tc.name   test_getDockApps_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_TEST_GETDOCKAPPS_0700
      * @tc.desc   test getDockApps method with super admin
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("test_getDockApps_007", Level.LEVEL2, async (done: Function) => {
+    it("test_getDockApps_0700", Level.LEVEL2, async (done: Function) => {
       if (sysDeviceInfo.deviceType !== '2in1') {
         done();
         return;
@@ -5208,9 +5605,9 @@ export default function applicationManagerTest() {
         let accountId: number = 100;
         let abilityName: string = "EntryAbility";
         let isDisabled = applicationManager.isAbilityDisabled(null, bundleName, accountId, abilityName);
-        expect(false).assertTrue();
+        expect(isDisabled).assertFalse();
       } catch (error) {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -5526,13 +5923,16 @@ export default function applicationManagerTest() {
      */
     it("getDisallowedRunningBundlesSync_test_001", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getDisallowedRunningBundlesSync_test_001  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.getDisallowedRunningBundlesSync(null);
+        let emptyRes = applicationManager.getDisallowedRunningBundlesSync(null);
+        expect(emptyRes.length === 0).assertTrue();
         console.info(' --- getDisallowedRunningBundlesSync_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
       } catch (error) {
         console.info(' --- getDisallowedRunningBundlesSync_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getDisallowedRunningBundlesSync_test_001  -------- END --------');
@@ -5800,13 +6200,16 @@ export default function applicationManagerTest() {
      */
     it("getAutoStartApps_test_001", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getAutoStartApps_test_001  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.getAutoStartApps(null);
+        let apps = applicationManager.getAutoStartApps(null);
         console.info(' --- getAutoStartApps_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getAutoStartApps_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getAutoStartApps_test_001  -------- END --------');
@@ -6253,13 +6656,16 @@ export default function applicationManagerTest() {
      */
     it("getKeepAliveApps_test_001", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getKeepAliveApps_test_001  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.getKeepAliveApps(null, DEFAULT_USER_ID);
-        console.info(' --- getKeepAliveApps_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
+        let apps = applicationManager.getKeepAliveApps(null, DEFAULT_USER_ID);
+        console.info(' --- getKeepAliveApps_test_001 success is expected, but it done.');
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getKeepAliveApps_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getKeepAliveApps_test_001  -------- END --------');
@@ -6559,13 +6965,16 @@ export default function applicationManagerTest() {
      */
     it("getUserNonStopApps_test_001", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getUserNonStopApps_test_001  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.getUserNonStopApps(null);
-        console.info(' --- getUserNonStopApps_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
+        let apps = applicationManager.getUserNonStopApps(null);
+        console.info(' --- getUserNonStopApps_test_001 success is expected, but it done.');
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getUserNonStopApps_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getUserNonStopApps_test_001  -------- END --------');
@@ -6837,13 +7246,16 @@ export default function applicationManagerTest() {
      */
     it("getFreezeExemptedApps_test_001", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getFreezeExemptedApps_test_001  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.getFreezeExemptedApps(null);
-        console.info(' --- getFreezeExemptedApps_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
+        let apps = applicationManager.getFreezeExemptedApps(null);
+        console.info(' --- getFreezeExemptedApps_test_001 success is expected, but it done.');
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getFreezeExemptedApps_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getFreezeExemptedApps_test_001  -------- END --------');
@@ -7274,13 +7686,16 @@ export default function applicationManagerTest() {
      */
     it("getAllowedKioskApps_test_001", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getAllowedKioskApps_test_001  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.getAllowedKioskApps(null);
-        console.info(' --- getAllowedKioskApps_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
+        let apps = applicationManager.getAllowedKioskApps(null);
+        console.info(' --- getAllowedKioskApps_test_001 success is expected, but it done.');
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getAllowedKioskApps_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getAllowedKioskApps_test_001  -------- END --------');
@@ -7667,13 +8082,16 @@ export default function applicationManagerTest() {
      */
     it("getAllowedRunningBundles_test_001", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getAllowedRunningBundles_test_001  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.getAllowedRunningBundles(null, DEFAULT_USER_ID);
+        let empty = applicationManager.getAllowedRunningBundles(null, DEFAULT_USER_ID);
         console.info(' --- getAllowedRunningBundles_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
+        expect(empty.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getAllowedRunningBundles_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getAllowedRunningBundles_test_001  -------- END --------');
@@ -8000,13 +8418,16 @@ export default function applicationManagerTest() {
      */
     it("isAbilityDisabled_test_001", Level.LEVEL2, async (done: Function) => {
       console.info(' --- isAbilityDisabled_test_001  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.isAbilityDisabled(null, 'com.example.helloworld', DEFAULT_USER_ID, 'EntryAbility');
+        let ret = applicationManager.isAbilityDisabled(null, 'com.example.helloworld', DEFAULT_USER_ID, 'EntryAbility');
         console.info(' --- isAbilityDisabled_test_001 error is expected, but it done.');
-        expect(false).assertTrue();
+        expect(ret).assertFalse();
       } catch (error) {
         console.info(' --- isAbilityDisabled_test_001 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false ).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- isAbilityDisabled_test_001  -------- END --------');
@@ -8268,13 +8689,16 @@ export default function applicationManagerTest() {
      */
     it("getAutoStartApps_test_031", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getAutoStartApps_test_031  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.getAutoStartApps(null, DEFAULT_USER_ID);
+        let apps = applicationManager.getAutoStartApps(null, DEFAULT_USER_ID);
         console.info(' --- getAutoStartApps_test_031 error is expected, but it done.');
-        expect(false).assertTrue();
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getAutoStartApps_test_031 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getAutoStartApps_test_031  -------- END --------');
@@ -8335,13 +8759,16 @@ export default function applicationManagerTest() {
      */
     it("getKeepAliveApps_test_029", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getKeepAliveApps_test_029  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.getKeepAliveApps(null, DEFAULT_USER_ID);
-        console.info(' --- getKeepAliveApps_test_029 error is expected, but it done.');
-        expect(false).assertTrue();
+        let apps = applicationManager.getKeepAliveApps(null, DEFAULT_USER_ID);
+        console.info(' --- getKeepAliveApps_test_029 success is expected, but it done.');
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getKeepAliveApps_test_029 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getKeepAliveApps_test_029  -------- END --------');
@@ -8426,13 +8853,16 @@ export default function applicationManagerTest() {
      */
     it("getUserNonStopApps_test_015", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getUserNonStopApps_test_015  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.getUserNonStopApps(null);
-        console.info(' --- getUserNonStopApps_test_015 error is expected, but it done.');
-        expect(false).assertTrue();
+        let apps = applicationManager.getUserNonStopApps(null);
+        console.info(' --- getUserNonStopApps_test_015 success is expected, but it done.');
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getUserNonStopApps_test_015 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getUserNonStopApps_test_015  -------- END --------');
@@ -8471,13 +8901,16 @@ export default function applicationManagerTest() {
      */
     it("getAllowedKioskApps_test_015", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getAllowedKioskApps_test_015  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.getAllowedKioskApps(null);
-        console.info(' --- getAllowedKioskApps_test_015 error is expected, but it done.');
-        expect(false).assertTrue();
+        let apps = applicationManager.getAllowedKioskApps(null);
+        console.info(' --- getAllowedKioskApps_test_015 success is expected, but it done.');
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getAllowedKioskApps_test_015 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getAllowedKioskApps_test_015  -------- END --------');
@@ -8516,13 +8949,16 @@ export default function applicationManagerTest() {
      */
     it("getAllowedRunningBundles_test_029", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getAllowedRunningBundles_test_029  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.getAllowedRunningBundles(null, DEFAULT_USER_ID);
+        let apps = applicationManager.getAllowedRunningBundles(null, DEFAULT_USER_ID);
         console.info(' --- getAllowedRunningBundles_test_029 error is expected, but it done.');
-        expect(false).assertTrue();
+        expect(apps.length === 0).assertTrue();
       } catch (error) {
         console.info(' --- getAllowedRunningBundles_test_029 error 401 is expected, actually catch: ' + error.code);
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
       console.info(' --- getAllowedRunningBundles_test_029  -------- END --------');
@@ -8970,5 +9406,1556 @@ export default function applicationManagerTest() {
       }
       done();
     })
+    /**
+     * @tc.name   addAllowedRunningBundles_test_006_1
+     * @tc.number addAllowedRunningBundles_test_006_1
+     * @tc.desc   addAllowedRunningBundles with [] parameter AppId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addAllowedRunningBundles_test_006_1", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addAllowedRunningBundles_test_006_1  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let ret = applicationManager.addAllowedRunningBundles(SELFWANT, [], DEFAULT_USER_ID);
+        expect(ret === undefined).assertTrue();
+      } catch (error) {
+        console.info(' --- addAllowedRunningBundles_test_006_1 done is expected, but error, actually catch: ' + error.code);
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- addAllowedRunningBundles_test_006_1  -------- END --------');
+    })
+
+    /**
+     * @tc.name   removeAllowedRunningBundles_test_006_1
+     * @tc.number removeAllowedRunningBundles_test_006_1
+     * @tc.desc   removeAllowedRunningBundles with [] parameter AppId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("removeAllowedRunningBundles_test_006_1", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- removeAllowedRunningBundles_test_006_1  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.addAllowedRunningBundles(SELFWANT, APP_IDS_1, DEFAULT_USER_ID)
+        let ret = applicationManager.removeAllowedRunningBundles(SELFWANT, [], DEFAULT_USER_ID);
+        expect(ret === undefined).assertTrue();
+      } catch (error) {
+        console.info(' --- removeAllowedRunningBundles_test_006_1 done is expected,but error, actually catch: ' +
+        error.code);
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- removeAllowedRunningBundles_test_006_1  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_addAllowedNotificationBundles_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDNOTIFICATIONBUNDLES_0100
+     * @tc.desc   test addAllowedNotificationBundles method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addAllowedNotificationBundles_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.addAllowedNotificationBundles(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200001).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addAllowedNotificationBundles_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDNOTIFICATIONBUNDLES_0200
+     * @tc.desc   test addAllowedNotificationBundles method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addAllowedNotificationBundles_0200", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+        applicationManager.addAllowedNotificationBundles(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addAllowedNotificationBundles_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDNOTIFICATIONBUNDLES_0300
+     * @tc.desc   test addAllowedNotificationBundles method with super admin and invalid userId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addAllowedNotificationBundles_0300", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addAllowedNotificationBundles(SELFWANT, APP_IDS_1, INVALID_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 9200012).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addAllowedNotificationBundles_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDNOTIFICATIONBUNDLES_0400
+     * @tc.desc   test addAllowedNotificationBundles method with super admin and null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addAllowedNotificationBundles_0400", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addAllowedNotificationBundles(null, APP_IDS_1, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addAllowedNotificationBundles_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDNOTIFICATIONBUNDLES_0500
+     * @tc.desc   test addAllowedNotificationBundles method with super admin and undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addAllowedNotificationBundles_0500", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addAllowedNotificationBundles(undefined, APP_IDS_1, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addAllowedNotificationBundles_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDNOTIFICATIONBUNDLES_0600
+     * @tc.desc   test addAllowedNotificationBundles method with super admin and null bundleNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addAllowedNotificationBundles_0600", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addAllowedNotificationBundles(SELFWANT, null, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addAllowedNotificationBundles_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDNOTIFICATIONBUNDLES_0700
+     * @tc.desc   test addAllowedNotificationBundles method with super admin and undefined bundleNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addAllowedNotificationBundles_0700", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addAllowedNotificationBundles(SELFWANT, undefined, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addAllowedNotificationBundles_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDNOTIFICATIONBUNDLES_0800
+     * @tc.desc   test addAllowedNotificationBundles method with super admin and null accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addAllowedNotificationBundles_0800", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addAllowedNotificationBundles(SELFWANT, APP_IDS_1, null);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addAllowedNotificationBundles_0900
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDNOTIFICATIONBUNDLES_0900
+     * @tc.desc   test addAllowedNotificationBundles method with super admin and undefined accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addAllowedNotificationBundles_0900", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addAllowedNotificationBundles(SELFWANT, APP_IDS_1, undefined);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addAllowedNotificationBundles_1000
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDNOTIFICATIONBUNDLES_1000
+     * @tc.desc   test addAllowedNotificationBundles method with super admin success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("test_addAllowedNotificationBundles_1000", Level.LEVEL0, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let emptyRes = applicationManager.getAllowedNotificationBundles(SELFWANT, DEFAULT_USER_ID);
+        expect(emptyRes.length == 0).assertTrue();
+        applicationManager.addAllowedNotificationBundles(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
+        let res = applicationManager.getAllowedNotificationBundles(SELFWANT, DEFAULT_USER_ID);
+        expect(res.length == 3).assertTrue();
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        applicationManager.removeAllowedNotificationBundles(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addAllowedNotificationBundles_1100
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDNOTIFICATIONBUNDLES_1100
+     * @tc.desc   test addAllowedNotificationBundles method with super admin and undefined accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addAllowedNotificationBundles_1100", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addAllowedNotificationBundles(SELFWANT, [], DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 9200012).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addAllowedNotificationBundles_1200
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDNOTIFICATIONBUNDLES_1200
+     * @tc.desc   test addAllowedNotificationBundles method with super admin and undefined accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addAllowedNotificationBundles_1200", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        restrictions.setDisallowedPolicy(SELFWANT, LABEL_NOTIFICATION, true);
+        applicationManager.addAllowedNotificationBundles(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 9200010).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeAllowedNotificationBundles_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDNOTIFICATIONBUNDLES_0100
+     * @tc.desc   test removeAllowedNotificationBundles method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeAllowedNotificationBundles_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.removeAllowedNotificationBundles(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200001).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeAllowedNotificationBundles_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDNOTIFICATIONBUNDLES_0200
+     * @tc.desc   test removeAllowedNotificationBundles method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeAllowedNotificationBundles_0200", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+        applicationManager.removeAllowedNotificationBundles(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeAllowedNotificationBundles_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDNOTIFICATIONBUNDLES_0300
+     * @tc.desc   test removeAllowedNotificationBundles method with super admin and invalid userId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeAllowedNotificationBundles_0300", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.removeAllowedNotificationBundles(SELFWANT, APP_IDS_1, INVALID_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 9200012).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeAllowedNotificationBundles_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDNOTIFICATIONBUNDLES_0400
+     * @tc.desc   test removeAllowedNotificationBundles method with super admin and null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeAllowedNotificationBundles_0400", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.removeAllowedNotificationBundles(null, APP_IDS_1, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeAllowedNotificationBundles_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDNOTIFICATIONBUNDLES_0500
+     * @tc.desc   test removeAllowedNotificationBundles method with super admin and undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeAllowedNotificationBundles_0500", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.removeAllowedNotificationBundles(undefined, APP_IDS_1, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeAllowedNotificationBundles_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDNOTIFICATIONBUNDLES_0600
+     * @tc.desc   test removeAllowedNotificationBundles method with super admin and null bundleNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeAllowedNotificationBundles_0600", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.removeAllowedNotificationBundles(SELFWANT, null, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeAllowedNotificationBundles_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDNOTIFICATIONBUNDLES_0700
+     * @tc.desc   test removeAllowedNotificationBundles method with super admin and undefined bundleNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeAllowedNotificationBundles_0700", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.removeAllowedNotificationBundles(SELFWANT, undefined, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeAllowedNotificationBundles_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDNOTIFICATIONBUNDLES_0800
+     * @tc.desc   test removeAllowedNotificationBundles method with super admin and null accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeAllowedNotificationBundles_0800", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.removeAllowedNotificationBundles(SELFWANT, APP_IDS_1, null);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeAllowedNotificationBundles_0900
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDNOTIFICATIONBUNDLES_0900
+     * @tc.desc   test removeAllowedNotificationBundles method with super admin and undefined accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeAllowedNotificationBundles_0900", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.removeAllowedNotificationBundles(SELFWANT, APP_IDS_1, undefined);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeAllowedNotificationBundles_1000
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDNOTIFICATIONBUNDLES_1000
+     * @tc.desc   test removeAllowedNotificationBundles method with super admin success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("test_removeAllowedNotificationBundles_1000", Level.LEVEL0, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.addAllowedNotificationBundles(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
+        let res = applicationManager.getAllowedNotificationBundles(SELFWANT, DEFAULT_USER_ID);
+        expect(res.length == 3).assertTrue();
+        applicationManager.removeAllowedNotificationBundles(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
+        let emptyRes = applicationManager.getAllowedNotificationBundles(SELFWANT, DEFAULT_USER_ID);
+        expect(emptyRes.length == 0).assertTrue();
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeAllowedNotificationBundles_1100
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDNOTIFICATIONBUNDLES_1100
+     * @tc.desc   test removeAllowedNotificationBundles method with super admin and undefined accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeAllowedNotificationBundles_1100", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.removeAllowedNotificationBundles(SELFWANT, [], DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 9200012).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_getAllowedNotificationBundles_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETALLOWEDNOTIFICATIONBUNDLES_0100
+     * @tc.desc   test getAllowedNotificationBundles method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getAllowedNotificationBundles_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.getAllowedNotificationBundles(SELFWANT, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200001).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_getAllowedNotificationBundles_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETALLOWEDNOTIFICATIONBUNDLES_0200
+     * @tc.desc   test getAllowedNotificationBundles method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getAllowedNotificationBundles_0200", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+        applicationManager.getAllowedNotificationBundles(SELFWANT, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_getAllowedNotificationBundles_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETALLOWEDNOTIFICATIONBUNDLES_0400
+     * @tc.desc   test getAllowedNotificationBundles method with super admin and null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getAllowedNotificationBundles_0400", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let ret = applicationManager.getAllowedNotificationBundles(null, DEFAULT_USER_ID);
+        expect(ret.length === 0).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 201).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_getAllowedNotificationBundles_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETALLOWEDNOTIFICATIONBUNDLES_0500
+     * @tc.desc   test getAllowedNotificationBundles method with super admin and undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getAllowedNotificationBundles_0500", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.getAllowedNotificationBundles(undefined, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_getAllowedNotificationBundles_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETALLOWEDNOTIFICATIONBUNDLES_0600
+     * @tc.desc   test getAllowedNotificationBundles method with super admin and null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getAllowedNotificationBundles_0600", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.getAllowedNotificationBundles(SELFWANT, null);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_getAllowedNotificationBundles_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETALLOWEDNOTIFICATIONBUNDLES_0700
+     * @tc.desc   test getAllowedNotificationBundles method with super admin and undefined accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getAllowedNotificationBundles_0700", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.getAllowedNotificationBundles(SELFWANT, undefined);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_getAllowedNotificationBundles_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETALLOWEDNOTIFICATIONBUNDLES_0800
+     * @tc.desc   test getAllowedNotificationBundles method with super admin and undefined accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getAllowedNotificationBundles_0800", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.getAllowedNotificationBundles(SELFWANT, -1);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 9200012).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_0100
+     * @tc.desc   test queryTrafficStats method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_0100", Level.LEVEL2, async (done: Function) => {
+      let networkInfo: statistics.NetworkInfo = {
+        type: connection.NetBearType.BEARER_CELLULAR,
+        startTime: 100,
+        endTime: 200,
+        simId: 1
+      };
+      await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then(()=>{
+        expect(false).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        expect(Number(error.code) === 9200001).assertTrue();
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_0200
+     * @tc.desc   test queryTrafficStats method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_0200", Level.LEVEL2, async (done: Function) => {
+      let networkInfo: statistics.NetworkInfo = {
+        type: connection.NetBearType.BEARER_CELLULAR,
+        startTime: 100,
+        endTime: 200,
+        simId: 1
+      };
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then(()=>{
+        expect(false).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        expect(Number(error.code) === 9200002).assertTrue();
+      }).finally(async () => {
+        await adminManager.disableAdmin(SELFWANT);
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_0300
+     * @tc.desc   test queryTrafficStats method with null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_0300", Level.LEVEL2, async (done: Function) => {
+      try {
+        let networkInfo: statistics.NetworkInfo = {
+          type: connection.NetBearType.BEARER_CELLULAR,
+          startTime: 100,
+          endTime: 200,
+          simId: 1
+        };
+        applicationManager.queryTrafficStats(null, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_0400
+     * @tc.desc   test queryTrafficStats method with undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_0400", Level.LEVEL2, async (done: Function) => {
+      try {
+        let networkInfo: statistics.NetworkInfo = {
+          type: connection.NetBearType.BEARER_CELLULAR,
+          startTime: 100,
+          endTime: 200,
+          simId: 1
+        };
+        applicationManager.queryTrafficStats(undefined, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_0500
+     * @tc.desc   test queryTrafficStats method with null bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_0500", Level.LEVEL2, async (done: Function) => {
+      try {
+        let networkInfo: statistics.NetworkInfo = {
+          type: connection.NetBearType.BEARER_CELLULAR,
+          startTime: 100,
+          endTime: 200,
+          simId: 1
+        };
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.queryTrafficStats(SELFWANT, null, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_0600
+     * @tc.desc   test queryTrafficStats method with undefined bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_0600", Level.LEVEL2, async (done: Function) => {
+      try {
+        let networkInfo: statistics.NetworkInfo = {
+          type: connection.NetBearType.BEARER_CELLULAR,
+          startTime: 100,
+          endTime: 200,
+          simId: 1
+        };
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.queryTrafficStats(SELFWANT, undefined, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_0700
+     * @tc.desc   test queryTrafficStats method with null appIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_0700", Level.LEVEL2, async (done: Function) => {
+      try {
+        let networkInfo: statistics.NetworkInfo = {
+          type: connection.NetBearType.BEARER_CELLULAR,
+          startTime: 100,
+          endTime: 200,
+          simId: 1
+        };
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, null, DEFAULT_USER_ID, networkInfo);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_0800
+     * @tc.desc   test queryTrafficStats method with undefined appIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_0800", Level.LEVEL2, async (done: Function) => {
+      try {
+        let networkInfo: statistics.NetworkInfo = {
+          type: connection.NetBearType.BEARER_CELLULAR,
+          startTime: 100,
+          endTime: 200,
+          simId: 1
+        };
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, undefined, DEFAULT_USER_ID, networkInfo);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_0900
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_0900
+     * @tc.desc   test queryTrafficStats method with null accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_0900", Level.LEVEL2, async (done: Function) => {
+      try {
+        let networkInfo: statistics.NetworkInfo = {
+          type: connection.NetBearType.BEARER_CELLULAR,
+          startTime: 100,
+          endTime: 200,
+          simId: 1
+        };
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, null, networkInfo);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_1000
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_1000
+     * @tc.desc   test queryTrafficStats method with undefined accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_1000", Level.LEVEL2, async (done: Function) => {
+      try {
+        let networkInfo: statistics.NetworkInfo = {
+          type: connection.NetBearType.BEARER_CELLULAR,
+          startTime: 100,
+          endTime: 200,
+          simId: 1
+        };
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, undefined, networkInfo);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_1100
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_1100
+     * @tc.desc   test queryTrafficStats method with null networkInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_1100", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, null);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_1200
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_1200
+     * @tc.desc   test queryTrafficStats method with undefined networkInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_1200", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, undefined);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_1300
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_1300
+     * @tc.desc   test queryTrafficStats method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_1300", Level.LEVEL2, async (done: Function) => {
+      let networkInfo: statistics.NetworkInfo = {
+        type: connection.NetBearType.BEARER_CELLULAR,
+        startTime: 100,
+        endTime: 200,
+        simId: 1
+      };
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then((result)=>{
+        expect(result !== undefined).assertTrue();
+        expect(result.rxBytes === 0).assertTrue();
+        expect(result.txBytes === 0).assertTrue();
+        expect(result.rxPackets === 0).assertTrue();
+        expect(result.txPackets === 0).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        expect(false).assertTrue();
+      }).finally(async () => {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_1400
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_1400
+     * @tc.desc   test queryTrafficStats method with error accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_1400", Level.LEVEL2, async (done: Function) => {
+      let networkInfo: statistics.NetworkInfo = {
+        type: connection.NetBearType.BEARER_CELLULAR,
+        startTime: 100,
+        endTime: 200,
+        simId: 1
+      };
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, INVALID_USER_ID, networkInfo).then(()=>{
+        expect(false).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }).finally(async () => {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_1500
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_1500
+     * @tc.desc   test queryTrafficStats method with lower limit accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_1500", Level.LEVEL2, async (done: Function) => {
+      let networkInfo: statistics.NetworkInfo = {
+        type: connection.NetBearType.BEARER_CELLULAR,
+        startTime: 100,
+        endTime: 200,
+        simId: 1
+      };
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      let userIdZero: number = 0;
+      await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, userIdZero, networkInfo).then(()=>{
+        expect(false).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }).finally(async () => {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_1600
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_1600
+     * @tc.desc   test queryTrafficStats method with empty bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_1600", Level.LEVEL2, async (done: Function) => {
+      let networkInfo: statistics.NetworkInfo = {
+        type: connection.NetBearType.BEARER_CELLULAR,
+        startTime: 100,
+        endTime: 200,
+        simId: 1
+      };
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      await applicationManager.queryTrafficStats(SELFWANT, "", DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then(()=>{
+        expect(false).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }).finally(async () => {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_1700
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_1700
+     * @tc.desc   test queryTrafficStats method with invalid startTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_1700", Level.LEVEL2, async (done: Function) => {
+      let networkInfo: statistics.NetworkInfo = {
+        type: connection.NetBearType.BEARER_CELLULAR,
+        startTime: -1,
+        endTime: 200,
+        simId: 1
+      };
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then(()=>{
+        expect(false).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }).finally(async () => {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_1800
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_1800
+     * @tc.desc   test queryTrafficStats method with invalid endTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_1800", Level.LEVEL2, async (done: Function) => {
+      let networkInfo: statistics.NetworkInfo = {
+        type: connection.NetBearType.BEARER_CELLULAR,
+        startTime: 100,
+        endTime: -1,
+        simId: 1
+      };
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then(()=>{
+        expect(false).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }).finally(async () => {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_1900
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_1900
+     * @tc.desc   test queryTrafficStats method with startTime is greater than endTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_1900", Level.LEVEL2, async (done: Function) => {
+      let networkInfo: statistics.NetworkInfo = {
+        type: connection.NetBearType.BEARER_CELLULAR,
+        startTime: 201,
+        endTime: 200,
+        simId: 1
+      };
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then(()=>{
+        expect(false).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }).finally(async () => {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_2000
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_2000
+     * @tc.desc   test queryTrafficStats method with invalid network type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_2000", Level.LEVEL2, async (done: Function) => {
+      let networkInfo: statistics.NetworkInfo = {
+        type: connection.NetBearType.BEARER_BLUETOOTH,
+        startTime: 100,
+        endTime: 200,
+        simId: 1
+      };
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then(()=>{
+        expect(false).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }).finally(async () => {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_2100
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_2100
+     * @tc.desc   test queryTrafficStats method with invalid appIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_2100", Level.LEVEL2, async (done: Function) => {
+      let networkInfo: statistics.NetworkInfo = {
+        type: connection.NetBearType.BEARER_CELLULAR,
+        startTime: 100,
+        endTime: 200,
+        simId: 1
+      };
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, INVALID_APP_INDEX, DEFAULT_USER_ID, networkInfo).then(()=>{
+        expect(false).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        expect(Number(error.code) === 9200012).assertTrue();
+      }).finally(async () => {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryBundleStatsInfos_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_0100
+     * @tc.desc   test queryBundleStatsInfos method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryBundleStatsInfos_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        let startTime: number = 0;
+        let endTime: number = Date.now();
+        applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+      done();
+    })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_0200
+     * @tc.desc   test queryBundleStatsInfos method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryBundleStatsInfos_0200", Level.LEVEL2, async (done: Function) => {
+      try {
+        let startTime: number = 0;
+        let endTime: number = Date.now();
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+        applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_0300
+     * @tc.desc   test queryBundleStatsInfos method with super admin and invalid accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_queryBundleStatsInfos_0300", Level.LEVEL2, async (done: Function) => {
+       try {
+         let startTime: number = 0;
+         let endTime: number = Date.now();
+         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+         applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, INVALID_USER_ID);
+         expect(false).assertTrue();
+       } catch (error) {
+         expect(Number(error.code) === 9200012).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_0400
+     * @tc.desc   test queryBundleStatsInfos method with super admin and null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_queryBundleStatsInfos_0400", Level.LEVEL2, async (done: Function) => {
+       try {
+         let startTime: number = 0;
+         let endTime: number = Date.now();
+         applicationManager.queryBundleStatsInfos(null, startTime, endTime, DEFAULT_USER_ID);
+         expect(false).assertTrue();
+       } catch (error) {
+         expect(Number(error.code) === 401).assertTrue();
+       }
+       done();
+     })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_0500
+     * @tc.desc   test queryBundleStatsInfos method with super admin and undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_queryBundleStatsInfos_0500", Level.LEVEL2, async (done: Function) => {
+       try {
+         let startTime: number = 0;
+         let endTime: number = Date.now();
+         applicationManager.queryBundleStatsInfos(undefined, startTime, endTime, DEFAULT_USER_ID);
+         expect(false).assertTrue();
+       } catch (error) {
+         expect(Number(error.code) === 401).assertTrue();
+       }
+       done();
+     })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_0600
+     * @tc.desc   test queryBundleStatsInfos method with super admin and null startTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_queryBundleStatsInfos_0600", Level.LEVEL2, async (done: Function) => {
+       try {
+         let endTime: number = Date.now();
+         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+         applicationManager.queryBundleStatsInfos(SELFWANT, null, endTime, DEFAULT_USER_ID);
+         expect(false).assertTrue();
+       } catch (error) {
+         expect(Number(error.code) === 401).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_0700
+     * @tc.desc   test queryBundleStatsInfos method with super admin and undefined startTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_queryBundleStatsInfos_0700", Level.LEVEL2, async (done: Function) => {
+       try {
+         let endTime: number = Date.now();
+         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+         applicationManager.queryBundleStatsInfos(SELFWANT, undefined, endTime, DEFAULT_USER_ID);
+         expect(false).assertTrue();
+       } catch (error) {
+         expect(Number(error.code) === 401).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_0800
+     * @tc.desc   test queryBundleStatsInfos method with super admin and null endTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_queryBundleStatsInfos_0800", Level.LEVEL2, async (done: Function) => {
+       try {
+         let startTime: number = 0;
+         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+         applicationManager.queryBundleStatsInfos(SELFWANT, startTime, null, DEFAULT_USER_ID);
+         expect(false).assertTrue();
+       } catch (error) {
+         expect(Number(error.code) === 401).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_0900
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_0900
+     * @tc.desc   test queryBundleStatsInfos method with super admin and undefined endTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_queryBundleStatsInfos_0900", Level.LEVEL2, async (done: Function) => {
+       try {
+         let startTime: number = 0;
+         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+         applicationManager.queryBundleStatsInfos(SELFWANT, startTime, undefined, DEFAULT_USER_ID);
+         expect(false).assertTrue();
+       } catch (error) {
+         expect(Number(error.code) === 401).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_1000
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_1000
+     * @tc.desc   test queryBundleStatsInfos method with super admin and null accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_queryBundleStatsInfos_1000", Level.LEVEL2, async (done: Function) => {
+       try {
+         let startTime: number = 0;
+         let endTime: number = Date.now();
+         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+         applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, null);
+         expect(false).assertTrue();
+       } catch (error) {
+         expect(Number(error.code) === 401).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_1100
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_1100
+     * @tc.desc   test queryBundleStatsInfos method with super admin and undefined accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_queryBundleStatsInfos_1100", Level.LEVEL2, async (done: Function) => {
+       try {
+         let startTime: number = 0;
+         let endTime: number = Date.now();
+         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+         applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, undefined);
+         expect(false).assertTrue();
+       } catch (error) {
+         expect(Number(error.code) === 401).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_1200
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_1200
+     * @tc.desc   test queryBundleStatsInfos method with super admin and negative startTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_queryBundleStatsInfos_1200", Level.LEVEL2, async (done: Function) => {
+       try {
+         let startTime: number = -1;
+         let endTime: number = Date.now();
+         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+         applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, DEFAULT_USER_ID);
+         expect(false).assertTrue();
+       } catch (error) {
+         expect(Number(error.code) === 9200012).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_1300
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_1300
+     * @tc.desc   test queryBundleStatsInfos method with super admin and negative endTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_queryBundleStatsInfos_1300", Level.LEVEL2, async (done: Function) => {
+       try {
+         let startTime: number = 0;
+         let endTime: number = -1;
+         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+         applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, DEFAULT_USER_ID);
+         expect(false).assertTrue();
+       } catch (error) {
+         expect(Number(error.code) === 9200012).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_1400
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_1400
+     * @tc.desc   test queryBundleStatsInfos method with super admin and startTime is greater than endTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_queryBundleStatsInfos_1400", Level.LEVEL2, async (done: Function) => {
+       try {
+         let startTime: number = Date.now() + 888888;
+         let endTime: number = Date.now();
+         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+         applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, DEFAULT_USER_ID);
+         expect(false).assertTrue();
+       } catch (error) {
+         expect(Number(error.code) === 9200012).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     })
+  
+    /**
+     * @tc.name   test_queryBundleStatsInfos_1500
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_1500
+     * @tc.desc   test queryBundleStatsInfos method with super admin success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it("test_queryBundleStatsInfos_1500", Level.LEVEL2, async (done: Function) => {
+       try {
+         let startTime: number = 0;
+         let endTime: number = Date.now();
+         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+         let res = applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, DEFAULT_USER_ID);
+         expect(res.length >= 0).assertTrue();
+       } catch (error) {
+         expect(false).assertTrue();
+       } finally {
+         await adminManager.disableSuperAdmin(SELFHAPNAME);
+       }
+       done();
+     })
   })
 }

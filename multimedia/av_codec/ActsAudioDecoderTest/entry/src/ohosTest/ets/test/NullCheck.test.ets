@@ -407,5 +407,101 @@ export default function NullCheckTest() {
     it('NULL_CHECK_031', Level.LEVEL0, () => {
       expect(libAudioDecoder.NULL_CHECK(30)).assertEqual(0);
     })
+
+     /**
+     * @tc.name   SUB_MULTIMEDIA_AVCODEC_AVSCREENCAPTURERECORDER_3200
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AVSCREENCAPTURERECORDER_3200
+     * @tc.desc   SetIntBuffer - format null check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVCODEC_AVSCREENCAPTURERECORDER_3200', Level.LEVEL0, () => {
+      expect(libAudioDecoder.NULL_CHECK(31)).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVCODEC_AVSCREENCAPTURERECORDER_3300
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AVSCREENCAPTURERECORDER_3300
+     * @tc.desc   SetIntBuffer - key null check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVCODEC_AVSCREENCAPTURERECORDER_3300', Level.LEVEL0, () => {
+      expect(libAudioDecoder.NULL_CHECK(32)).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVCODEC_AVSCREENCAPTURERECORDER_3400
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AVSCREENCAPTURERECORDER_3400
+     * @tc.desc   SetIntBuffer - addr null check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVCODEC_AVSCREENCAPTURERECORDER_3400', Level.LEVEL0, () => {
+      expect(libAudioDecoder.NULL_CHECK(33)).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVCODEC_AVSCREENCAPTURERECORDER_3500
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AVSCREENCAPTURERECORDER_3500
+     * @tc.desc   SetIntBuffer - size is zero
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVCODEC_AVSCREENCAPTURERECORDER_3500', Level.LEVEL0, () => {
+      expect(libAudioDecoder.NULL_CHECK(34)).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVCODEC_AVSCREENCAPTURERECORDER_3600
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AVSCREENCAPTURERECORDER_3600
+     * @tc.desc   GetIntBuffer - format null check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVCODEC_AVSCREENCAPTURERECORDER_3600', Level.LEVEL0, () => {
+      expect(libAudioDecoder.NULL_CHECK(35)).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVCODEC_AVSCREENCAPTURERECORDER_3700
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AVSCREENCAPTURERECORDER_3700
+     * @tc.desc   GetIntBuffer - key null check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVCODEC_AVSCREENCAPTURERECORDER_3700', Level.LEVEL0, () => {
+      expect(libAudioDecoder.NULL_CHECK(36)).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVCODEC_AVSCREENCAPTURERECORDER_3800
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AVSCREENCAPTURERECORDER_3800
+     * @tc.desc   GetIntBuffer - addr null check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVCODEC_AVSCREENCAPTURERECORDER_3800', Level.LEVEL0, () => {
+      expect(libAudioDecoder.NULL_CHECK(37)).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVCODEC_AVSCREENCAPTURERECORDER_3900
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AVSCREENCAPTURERECORDER_3900
+     * @tc.desc   GetIntBuffer - size null check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVCODEC_AVSCREENCAPTURERECORDER_3900', Level.LEVEL0, () => {
+      expect(libAudioDecoder.NULL_CHECK(38)).assertEqual(0);
+    })
   })
 }

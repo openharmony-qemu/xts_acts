@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -84,9 +84,9 @@ it('GridRows2_static_001', Level.LEVEL0, async (done: () => void): Promise<void>
       await button_Bottom.click();
       await CommonFunc.sleep(1000);
 
-      let grid = CommonFunc.getComponentRect('GridRows2');
-      let row1 = CommonFunc.getComponentRect('GridRows2_1');
-      let row2 = CommonFunc.getComponentRect('GridRows2_2');
+      let grid = await CommonFunc.getComponentRect('GridRows2');
+      let row1 = await CommonFunc.getComponentRect('GridRows2_1');
+      let row2 = await CommonFunc.getComponentRect('GridRows2_2');
 
       console.info("[GridRows2_static_001] GridRows2_1 is: " + JSON.stringify(row1) + 'GridRows2_5:' + JSON.stringify(row2) );
       console.info("[GridRows2_static_001] GridRows2_1 grid is: " + JSON.stringify(grid) );
@@ -113,9 +113,9 @@ it('GridRows2_static_002', Level.LEVEL0, async (done: () => void): Promise<void>
       await (button_Bottom?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      let rel = CommonFunc.getComponentRect('GridRows2');
+      let rel = await CommonFunc.getComponentRect('GridRows2');
 
-      await driver.mouseClick({x: Math.round(rel.left + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) as Int, y: Math.round(rel.top + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) as Int}, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver.mouseClick({x: Math.round(rel.left + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))).toInt(), y: Math.round(rel.top + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))).toInt()}, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('GridRows2Text');
       await CommonFunc.sleep(200);

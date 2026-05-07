@@ -166,9 +166,9 @@ export default function InputMethodEditBoxAbility() {
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('Sub_InputMethod_extraConfig_0900', Level.LEVEL2, async (done: Function) => {
+    it('Sub_InputMethod_extraConfig_0900', Level.LEVEL0, async (done: Function) => {
       await textArea2.click();
       await driver.delayMs(1000);
 
@@ -382,9 +382,9 @@ export default function InputMethodEditBoxAbility() {
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('Sub_InputMethod_extraConfig_0500', Level.LEVEL2, async (done: Function) => {
+    it('Sub_InputMethod_extraConfig_0500', Level.LEVEL0, async (done: Function) => {
       await textArea5.click();
       await driver.delayMs(1000);
 

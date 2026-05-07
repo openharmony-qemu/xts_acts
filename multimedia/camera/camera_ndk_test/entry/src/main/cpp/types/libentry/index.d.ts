@@ -214,6 +214,8 @@ export const getSupportedFullOutputCapability: () => cameraOutputCapability;
 
 export const createPreviewOutput: () => number;
 
+export const createDeferredPreviewOutput: () => number;
+
 export const adjustHeifIdx: (idx: number) => number;
 
 export const createPhotoOutput: (surfaceId: string) => number;
@@ -438,6 +440,8 @@ export const oHPreviewOutputGetActiveProfile: (index:number) => number;
 
 export const oHPreviewOutputDeleteProfile: (index:number) => number;
 
+export const oHPreviewOutputAddDeferredSurface: (index:number, surfaceId: string) => number;
+
 export const oHPhotoOutputGetActiveProfile: (index:number) => number;
 
 export const oHPhotoOutputDeleteProfile: (index:number) => number;
@@ -477,6 +481,10 @@ export const oHCameraManagerIsTorchSupported: (index:number) => isTorchSupported
 export const oHCameraManagerIsTorchSupportedByTorchMode: (index:number) => isTorchSupportedByTorchMode;
 
 export const oHCameraManagerSetTorchMode: (index:number) => number;
+
+export const oHCameraManagerIsTorchLevelControlSupported: () => number;
+ 
+export const oHCameraManagerSetTorchModeOnWithLevel: (level:number) => number;
 
 export const oHCaptureSessionGetExposureValue: (index:number) => number;
 
@@ -585,3 +593,70 @@ export const getVideoProfiles: () => Array<videoProfile>;
 export const createVideoOutputByIndex: (surfaceId: string, index: number) => number;
 
 export const createPreviewOutputByIndex: (index: number) => number;
+
+export const oHTestRegisterFlashStateChangeCallback: (index:number) => number;
+
+export const oHTestUnregisterFlashStateChangeCallback: (index:number) => number;
+
+export const oHIsExposureMeteringModeSupported: (index:number) => number;
+
+export const oHGetExposureMeteringMode: (index:number) => number;
+
+export const oHSetExposureMeteringMode: (index:number) => number;
+
+export const oHGetSupportedISORange: (index:number) => number;
+
+export const oHgetIso: (index:number) => number;
+
+export const oHsetIso: (index:number) => number;
+
+export const getCameraDevices: () => cameraInfo;
+
+export const oHCaptureSessionTestPhyAptNullSession: () => number;
+export const oHCaptureSessionTestPhyAptNullApts: () => number;
+export const oHCaptureSessionTestPhyAptNoInput: () => number;
+export const oHCaptureSessionTestPhyAptNoOutput: () => number;
+
+export const oHCaptureSessionTestDelPhyApts: () => number;
+export const oHCaptureSessionTestDelPhyAptsNullSession: () => number;
+export const oHCaptureSessionTestDelPhyAptsNullApts: () => number;
+
+export const oHCameraTestLensDistNullCam: () => number;
+export const oHCameraTestLensDistNullLens: () => number;
+export const oHCameraTestLensDistNullSize: () => number;
+
+export const oHCameraTestIntrinsicNullCam: () => number;
+export const oHCameraTestIntrinsicNullData: () => number;
+export const oHCameraTestIntrinsicNullSize: () => number;
+
+export const oHCameraTestSensorSizeNullCam: () => number;
+export const oHCameraTestSensorSizeNullW: () => number;
+export const oHCameraTestSensorSizeNullH: () => number;
+
+export const oHCameraTestEqFocalNullCam: () => number;
+export const oHCameraTestEqFocalNullData: () => number;
+export const oHCameraTestEqFocalNullSize: () => number;
+export const oHCameraTestEqFocal: () => number;
+
+export const oHCameraTestIsLogicNullCam: () => number;
+export const oHCameraTestIsLogicNullFlag: () => number;
+export const oHCameraTestIsLogic: () => number;
+
+export const oHCameraTestLogicCamDevsNullCam: () => number;
+export const oHCameraTestLogicCamDevsNullData: () => number;
+export const oHCameraTestLogicCamDevsNullSize: () => number;
+export const oHCameraTestLogicCamDevs: () => number;
+
+export const oHDeleteConstituentCameraDevices: (index:number) => number;
+
+export const oHGetLensFocalLength: (index:number) => number;
+
+export const oHGetMinimumFocusDistance: (index:number) => number;
+
+export const oHCaptureSessionRegisterExposureStateChangeCallback: () => number;
+ 
+export const oHCaptureSessionUnregisterExposureStateChangeCallback: () => number;
+ 
+export const oHCaptureSessionRegisterExposureStateChangeCallbackWithoutSession: () => number;
+ 
+export const oHCaptureSessionUnregisterExposureStateChangeCallbackWithoutSession: () => number;

@@ -34,7 +34,7 @@ import Utils from '../../src/test/Util.test';
 import { Callback } from '@ohos.base'
 import events_emitter from '@ohos.events.emitter';
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 

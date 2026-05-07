@@ -47,8 +47,8 @@ const ERROR_CODE_401: int = 401;
 const ERROR_CODE_1600050: int = 16000050;
 const TEST_RESULT_KEY: string = 'result';
 
-function msSleep(count: int) {
-  waitForCompletion(async ()=> { await Utils.msSleep(count); });
+async function msSleep(count: int) {
+  await Utils.msSleep(count);
 }
 
 let sub: commonEventManager.CommonEventSubscriber;
@@ -57,12 +57,12 @@ let mpEnable: string = PARAM_FAIL;
 
 export default function ActsUIExtensionContentSessionTest() {
   describe('ActsUIExtensionContentSessionTest', () => {
-    beforeAll(() => {
+    beforeAll(async () => {
       hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#beforeAll start`);
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      msSleep(WAIT_TIME2000);
+      await msSleep(WAIT_TIME2000);
       abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
-      msSleep(WAIT_TIME2000);
+      await msSleep(WAIT_TIME2000);
       
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
       try {
@@ -312,11 +312,25 @@ export default function ActsUIExtensionContentSessionTest() {
             eventData: commonEventManager.CommonEventData|undefined ) => {
             hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} subscribeCB` + JSON.stringify(eventData));
             let result: int = 0;
-            if (eventData?.parameters?.[TEST_RESULT_KEY]) {
+            let left: int = 0;
+            let top: int = 0;
+            let width: int = 0;
+            let height: int = 0;
+            if (eventData?.parameters?.[TEST_RESULT_KEY] === PARAM_0) {
               result = eventData?.parameters?.[TEST_RESULT_KEY] as int;
+              left = eventData?.parameters?.['left'] as int;
+              top = eventData?.parameters?.['top'] as int;
+              width = eventData?.parameters?.['width'] as int;
+              height = eventData?.parameters?.['height'] as int;
             }
             hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} subscribeCB result:` + result);
             expect(result).assertEqual(SUCCESS);
+            hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} Rect values - 
+              left: ${left}, top: ${top}, width: ${width}, height: ${height}`);
+            expect(left).assertLarger(0);
+            expect(top).assertLarger(0);
+            expect(width).assertLarger(0);
+            expect(height).assertLarger(0);
             commonEventManager.publish(EVENT_TERMINATE,() => {});
             commonEventManager.unsubscribe(subscriber, (err, data) => {
               done();

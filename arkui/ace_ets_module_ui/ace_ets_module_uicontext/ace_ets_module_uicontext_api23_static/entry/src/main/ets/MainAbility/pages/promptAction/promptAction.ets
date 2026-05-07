@@ -27,7 +27,8 @@ import {
   DialogAlignment,
   PopupCommonOptions,
   MenuOptions,
-  ClickEvent
+  ClickEvent,
+  FlexAlign
 } from '@ohos.arkui.component';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, TargetInfo } from '@ohos.arkui.UIContext';
@@ -43,7 +44,8 @@ struct CustomDialogContent {
         .fontSize(20)
         .id('customDialogText')
     }
-    .width(300)
+    .width('92%')
+    .constraintSize({ maxWidth: 300 })
     .height(200)
     .padding(20)
   }
@@ -125,11 +127,13 @@ struct promptActionTest {
   }
 
   build() {
-    Column({ space: 15 } as ColumnOptions) {
-      Button('Test PromptAction - openToast')
+    Column({ space: 1 } as ColumnOptions) {
+      Button('Toast开')
         .id('btnOpenToast')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '7.2%' })
+        .fontSize(8)
         .onClick(() => {
           let uiContext = this.getUIContext();
           let promptActionInstance = uiContext.getPromptAction();
@@ -143,10 +147,12 @@ struct promptActionTest {
           });
         })
 
-      Button('Test PromptAction - closeToast')
+      Button('Toast关')
         .id('btnCloseToast')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '7.2%' })
+        .fontSize(8)
         .onClick(() => {
           let uiContext = this.getUIContext();
           let promptActionInstance = uiContext.getPromptAction();
@@ -163,10 +169,12 @@ struct promptActionTest {
           });
         })
 
-      Button('Test PromptAction - getBottomOrder')
+      Button('序')
         .id('btnGetBottomOrder')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '7.2%' })
+        .fontSize(8)
         .onClick(() => {
           try {
             let uiContext = this.getUIContext();
@@ -184,14 +192,16 @@ struct promptActionTest {
           }
         })
 
-      Button('Test PromptAction - openCustomDialog')
+      Button('框开')
         .id('btnOpenCustomDialog')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '7.2%' })
+        .fontSize(8)
         .onClick(() => {
           let uiContext = this.getUIContext();
           let promptActionInstance = uiContext.getPromptAction();
-          let contentNode = new ComponentContent(uiContext, wrapBuilder(buildCustomDialogContent));
+          let contentNode = new ComponentContent<Object>(uiContext, wrapBuilder(buildCustomDialogContent));
           promptActionInstance.openCustomDialog(contentNode, {
             onDidAppear: () => {
               AppStorage.setOrCreate<boolean>('promptActionOpenCustomDialog', true);
@@ -201,15 +211,17 @@ struct promptActionTest {
           });
         })
 
-      Button('Test PromptAction - updateCustomDialog')
+      Button('框更')
         .id('btnUpdateCustomDialog')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '7.2%' })
+        .fontSize(8)
         .onClick(() => {
           let uiContext = this.getUIContext();
           let promptActionInstance = uiContext.getPromptAction();
           // Open a dialog first
-          let contentNode = new ComponentContent(uiContext, wrapBuilder(buildCustomDialogContent));
+          let contentNode = new ComponentContent<Object>(uiContext, wrapBuilder(buildCustomDialogContent));
           promptActionInstance.openCustomDialog(contentNode, {}).then(() => {
             // Then update it (same contentNode)
             // Set flag after updateCustomDialog succeeds
@@ -228,15 +240,17 @@ struct promptActionTest {
           });
         })
 
-      Button('Test PromptAction - openPopup')
+      Button('泡开')
         .id('btnOpenPopup')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '7.2%' })
+        .fontSize(8)
         .onClick(() => {
           AppStorage.setOrCreate<boolean>('promptActionOpenPopup', false);
           let uiContext = this.getUIContext();
           let promptActionInstance = uiContext.getPromptAction();
-          let contentNode = new ComponentContent(uiContext, wrapBuilder(buildPopupContent));
+          let contentNode = new ComponentContent<Object>(uiContext, wrapBuilder(buildPopupContent));
           let popupOptions: PopupCommonOptions = {
             avoidTarget: AvoidanceMode.AVOID_AROUND_TARGET,
             autoCancel: true,
@@ -246,8 +260,7 @@ struct promptActionTest {
           };
           let targetId = AppStorage.get<number>('targetButtonId');
           let target: TargetInfo = { id: 'targetButton' };
-          console.info(
-            '[ARKUI_NEW] openPopup: targetButtonId=' + (targetId !== undefined ? targetId : 'undefined'));
+          console.info('[ARKUI_NEW] openPopup: targetButtonId=' + (targetId !== undefined ? targetId : 'undefined'));
           promptActionInstance.openPopup(contentNode, target, popupOptions).then(() => {
             console.info('[ARKUI_NEW] openPopup: then resolved');
             AppStorage.setOrCreate<boolean>('promptActionOpenPopup', true);
@@ -257,23 +270,24 @@ struct promptActionTest {
           });
         })
 
-      Button('Test PromptAction - updatePopup')
+      Button('泡更')
         .id('btnUpdatePopup')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '7.2%' })
+        .fontSize(8)
         .onClick(() => {
           AppStorage.setOrCreate<boolean>('promptActionUpdatePopup', false);
           let uiContext = this.getUIContext();
           let promptActionInstance = uiContext.getPromptAction();
-          let contentNode = new ComponentContent(uiContext, wrapBuilder(buildPopupContent));
+          let contentNode = new ComponentContent<Object>(uiContext, wrapBuilder(buildPopupContent));
           let popupOptions1: PopupCommonOptions = {
             avoidTarget: AvoidanceMode.AVOID_AROUND_TARGET,
             autoCancel: true
           };
           let targetId1 = AppStorage.get<number>('targetButtonId');
           let target1: TargetInfo = { id: 'targetButton' };
-          console.info(
-            '[ARKUI_NEW] updatePopup: targetButtonId=' + (targetId1 !== undefined ? targetId1 : 'undefined'));
+          console.info('[ARKUI_NEW] updatePopup: targetButtonId=' + (targetId1 !== undefined ? targetId1 : 'undefined'));
           promptActionInstance.openPopup(contentNode, target1, popupOptions1).then(() => {
             console.info('[ARKUI_NEW] updatePopup: openPopup resolved, calling updatePopup');
             let popupOptions2: PopupCommonOptions = {
@@ -292,22 +306,26 @@ struct promptActionTest {
           });
         })
 
-      Button('Test PromptAction - closePopup')
+      Button('泡关')
         .id('btnClosePopup')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '7.2%' })
+        .fontSize(8)
         .onClick(() => {
           AppStorage.setOrCreate<boolean>('promptActionClosePopup', true);
         })
 
-      Button('Test PromptAction - openMenu')
+      Button('菜开')
         .id('btnOpenMenu')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '7.2%' })
+        .fontSize(8)
         .onClick(() => {
           let uiContext = this.getUIContext();
           let promptActionInstance = uiContext.getPromptAction();
-          let contentNode = new ComponentContent(uiContext, wrapBuilder(buildMenuContent));
+          let contentNode = new ComponentContent<Object>(uiContext, wrapBuilder(buildMenuContent));
           let menuOptions: MenuOptions = {
             onDidAppear: () => {
               AppStorage.setOrCreate<boolean>('promptActionOpenMenu', true);
@@ -322,14 +340,16 @@ struct promptActionTest {
           });
         })
 
-      Button('Test PromptAction - updateMenu')
+      Button('菜更')
         .id('btnUpdateMenu')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '7.2%' })
+        .fontSize(8)
         .onClick(() => {
           let uiContext = this.getUIContext();
           let promptActionInstance = uiContext.getPromptAction();
-          let contentNode = new ComponentContent(uiContext, wrapBuilder(buildMenuContent));
+          let contentNode = new ComponentContent<Object>(uiContext, wrapBuilder(buildMenuContent));
           let menuOptions1: MenuOptions = {
             enableArrow: true
           };
@@ -350,13 +370,16 @@ struct promptActionTest {
         })
 
       // Target element for Popup and Menu
-      Button('Target button')
+      Button('目标')
         .id('targetButton')
-        .width(200)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '7.2%' })
+        .fontSize(9)
     }
     .width('100%')
     .height('100%')
-    .padding(20)
+    .padding({ left: '2%', right: '2%', top: '1%', bottom: '1%' })
+    .justifyContent(FlexAlign.SpaceEvenly)
   }
 }

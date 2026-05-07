@@ -18,7 +18,7 @@ import { State,AppStorage } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 import { RecordData } from '@ohos.base';
 
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
   color: ResourceColor = "#FF000000";
   lineCap: LineCapStyle = LineCapStyle.Butt
   strokeWidth: number = 1
@@ -71,7 +71,7 @@ struct DividerExample  {
         this.lineCap = LineCapStyle.Round
       } else if(data['typeValue'] === 7){
         console.info(`Divider.lineCap=>LineCapStyle.Square`)
-        this.lineCap = 100 as LineCapStyle
+        this.lineCap = LineCapStyle.Square
       } else if(data['typeValue'] === 8){
         console.info(`Divider.strokeWidth=>2`)
         this.strokeWidth = 2

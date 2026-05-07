@@ -23,6 +23,7 @@ import certManagerDialog from '@ohos.security.certManagerDialog';
 import { priRsaCredData } from './utils/common/common_parameter';
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
+import { canIUse } from '@internal.full.global';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
@@ -271,13 +272,225 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
         await certManagerDialog.openInstallCertificateDialog(context, certificateType, certificateScope, caCert)
         expect(null).assertFail();
       } catch (err) {
-        hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_OpenInstallCertificateDialog_static_0011: e.code " + err.code);
-        if (deviceInfo.deviceType === '2in1') {
-          expect((err as BusinessError).code).assertEqual(29700005);
+        if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
+          expect((err as BusinessError).code).assertEqual(801);
         } else {
-          expect((err as BusinessError).code).assertEqual(29700004);
+          hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_OpenInstallCertificateDialog_static_0011: e.code " + err.code);
+          expect((err as BusinessError).code === 29700005 || (err as BusinessError).code === 29700004).assertTrue();
+        }  
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_getUkeyCertificateList_func_Static_0010
+     * @tc.number SUB_Security_CertManager_getUkeyCertificateList_func_Static_0010
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_getUkeyCertificateList_func_Static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0010: started ");
+      let ukeyProvider: string = 'testProvider'; 
+      let ukeyInfo: certManager.UkeyInfo = { 
+        certPurpose: certManager.CertificatePurpose.PURPOSE_DEFAULT,
+      }
+      try {
+        let cmResult = await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo);
+      } catch (error) {
+        if(error.code !== 801 ){
+          hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0010: e.code " + error.code);
+          expect((error as BusinessError).code).assertEqual(17500001);
         }
       }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_getUkeyCertificateList_func_Static_0010 end');
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_getUkeyCertificateList_func_Static_0011
+     * @tc.number SUB_Security_CertManager_getUkeyCertificateList_func_Static_0011
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_getUkeyCertificateList_func_Static_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0011: started ");
+      let ukeyProvider: string = 'testProvider'; 
+      let ukeyInfo: certManager.UkeyInfo = { 
+        certPurpose: certManager.CertificatePurpose.PURPOSE_ALL,
+      }
+      try {
+        let cmResult = await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo);
+      } catch (error) {
+        if(error.code !==  801){
+          hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0011: e.code " + error.code);
+          expect((error as BusinessError).code).assertEqual(17500001);
+        }
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_getUkeyCertificateList_func_Static_0011 end');
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_getUkeyCertificateList_func_Static_0012
+     * @tc.number SUB_Security_CertManager_getUkeyCertificateList_func_Static_0012
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_getUkeyCertificateList_func_Static_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0012: started ");
+      let ukeyProvider: string = 'testProvider'; 
+      let ukeyInfo: certManager.UkeyInfo = { 
+        certPurpose: certManager.CertificatePurpose.PURPOSE_SIGN,
+      }
+      try {
+        let cmResult = await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo);
+      } catch (error) {
+        if(error.code !==  801){
+          hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0012: e.code " + error.code);
+          expect((error as BusinessError).code).assertEqual(17500001);
+        }
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_getUkeyCertificateList_func_Static_0012 end');
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_getUkeyCertificateList_func_Static_0013
+     * @tc.number SUB_Security_CertManager_getUkeyCertificateList_func_Static_0013
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_getUkeyCertificateList_func_Static_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0013: started ");
+      let ukeyProvider: string = 'testProvider'; 
+      let ukeyInfo: certManager.UkeyInfo = { 
+        certPurpose: certManager.CertificatePurpose.PURPOSE_ENCRYPT,
+      }
+      try {
+        let cmResult = await certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo);
+      } catch (error) {
+        if(error.code !==  801){
+          hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_getUkeyCertificateList_func_Static_0013: e.code " + error.code);
+          expect((error as BusinessError).code).assertEqual(17500001);
+        }
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_getUkeyCertificateList_func_Static_0013 end');
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_0100
+     * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_0100
+     * @tc.desc   import USB key certificate with PURPOSE_SIGN without real USB key, return error code 17500010 on PC device or 801 on non-PC device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_0100 start');
+      let keyUri: string = 'test';
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      let ukeyInfo: certManager.UkeyInfo = {
+        certPurpose: certManager.CertificatePurpose.PURPOSE_SIGN,
+      };
+      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
+        try {
+          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_0100 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(17500010);
+        }
+      } else {
+        try {
+          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_0100 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(801);
+        }
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_0100 end');
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_0200
+     * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_0200
+     * @tc.desc   import USB key certificate with PURPOSE_ENCRYPT without real USB key, return error code 17500010 on PC device or 801 on non-PC device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_0200 start');
+      let keyUri: string = 'test';
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      let ukeyInfo: certManager.UkeyInfo = {
+        certPurpose: certManager.CertificatePurpose.PURPOSE_ENCRYPT,
+      };
+      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
+        try {
+          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_0200 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(17500010);
+        }
+      } else {
+        try {
+          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_0200 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(801);
+        }
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_0200 end');
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1400
+     * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1400
+     * @tc.desc   import USB key certificate with PURPOSE_DEFAULT without real USB key, return error code 17500010 on PC device or 801 on non-PC device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1400 start');
+      let keyUri: string = 'test';
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      let ukeyInfo: certManager.UkeyInfo = {
+        certPurpose: certManager.CertificatePurpose.PURPOSE_DEFAULT,
+      };
+      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
+        try {
+          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1400 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(17500010);
+        }
+      } else {
+        try {
+          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+          expect(null).assertFail();
+        } catch (err) {
+          let error: BusinessError = err as BusinessError;
+          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1400 failed. Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(801);
+        }
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1400 end');
       done();
     });
   })

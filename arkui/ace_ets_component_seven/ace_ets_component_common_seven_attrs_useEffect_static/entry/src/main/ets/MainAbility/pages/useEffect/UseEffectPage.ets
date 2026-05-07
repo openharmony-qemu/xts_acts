@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,12 +22,12 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   Slider, TextArea, TextClock, TextInput, TextPicker, TimePicker, Toggle, Web, Circle, Ellipse, Line, WebviewController,
   Polyline, Polygon, Path, Rect, Shape, Badge, ColumnSplit, Counter, Flex, GridRow, Grid, List, Refresh, ProgressType, FlowItem,
   RelativeContainer, RowSplit, Scroll, SideBarContainer, Stack, Swiper, Tabs, WaterFlow, CalendarPicker,
-  FormLink, Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
+  Hyperlink, Progress, BarState, Search, SliderStyle, TextTimer, ToggleType, TextAlign,
   GridRowDirection, ForEach, ListItem, ListItemGroup, VerticalAlign, HorizontalAlign, SideBarContainerType, FlexAlign,
   TabContent, GridCol, GridItem, MenuItemGroup, Canvas, Span, AttributeModifier, AlphabetIndexerAttribute, BadgeAttribute, ButtonAttribute,
   BlankAttribute, CalendarPickerAttribute, CanvasAttribute, CheckboxAttribute, CheckboxGroupAttribute, CircleAttribute,
   ColumnAttribute, ColumnSplitAttribute, CounterAttribute, DataPanelAttribute, DatePickerAttribute, DividerAttribute,
-  EllipseAttribute, FlexAttribute, FlowItemAttribute, FormLinkAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
+  EllipseAttribute, FlexAttribute, FlowItemAttribute, GaugeAttribute, GridAttribute, GridColAttribute,
   GridItemAttribute, GridRowAttribute, HyperlinkAttribute, ImageAttribute, ImageAnimatorAttribute, LineAttribute, ListAttribute,
   ListItemAttribute, ListItemGroupAttribute, LoadingProgressAttribute, MarqueeAttribute, MenuAttribute, MenuItemAttribute,
   MenuItemGroupAttribute, NavDestinationAttribute, NavigationAttribute, PathAttribute, PolygonAttribute, PolylineAttribute,
@@ -37,503 +37,496 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, EffectComponentAttribute, FormComponentAttribute,
   ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
 
-class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: BadgeAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class BlankModifier implements AttributeModifier<BlankAttribute> {
+export class BlankModifier implements AttributeModifier<BlankAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: BlankAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: ButtonAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: CalendarPickerAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: CheckboxAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: CheckboxGroupAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: ColumnAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: ColumnSplitAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class CounterModifier implements AttributeModifier<CounterAttribute> {
+export class CounterModifier implements AttributeModifier<CounterAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: CounterAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: DataPanelAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: DatePickerAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: DividerAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
+export class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: EffectComponentAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class FlexModifier implements AttributeModifier<FlexAttribute> {
+export class FlexModifier implements AttributeModifier<FlexAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: FlexAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: FlowItemAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
+export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: FormComponentAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mUseEffect: boolean = true
-  applyNormalAttribute(instance: FormLinkAttribute): void {
-    console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
-   instance.useEffect(this.mUseEffect)
-  }
-}
-class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: GaugeAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class GridModifier implements AttributeModifier<GridAttribute> {
+export class GridModifier implements AttributeModifier<GridAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: GridAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class GridColModifier implements AttributeModifier<GridColAttribute> {
+export class GridColModifier implements AttributeModifier<GridColAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: GridColAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: GridItemAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: GridRowAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: HyperlinkAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: ImageAnimatorAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
+export class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: ImageSpanAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class ImageModifier implements AttributeModifier<ImageAttribute> {
+export class ImageModifier implements AttributeModifier<ImageAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: ImageAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: ListAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: ListItemAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: ListItemGroupAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: LoadingProgressAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: MarqueeAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class MenuModifier implements AttributeModifier<MenuAttribute> {
+export class MenuModifier implements AttributeModifier<MenuAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: MenuAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: MenuItemAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: MenuItemGroupAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: NavDestinationAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: NavigationAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
+export class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: PatternLockAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
+export class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: PluginComponentAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: QRCodeAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class RadioModifier implements AttributeModifier<RadioAttribute> {
+export class RadioModifier implements AttributeModifier<RadioAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: RadioAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class RatingModifier implements AttributeModifier<RatingAttribute> {
+export class RatingModifier implements AttributeModifier<RatingAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: RatingAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: RefreshAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: RelativeContainerAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: RemoteWindowAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: RichEditorAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: RichTextAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class RowModifier implements AttributeModifier<RowAttribute> {
+export class RowModifier implements AttributeModifier<RowAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: RowAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: RowSplitAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: ScrollAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: ScrollBarAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: SearchAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class SelectModifier implements AttributeModifier<SelectAttribute> {
+export class SelectModifier implements AttributeModifier<SelectAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: SelectAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: SideBarContainerAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class SliderModifier implements AttributeModifier<SliderAttribute> {
+export class SliderModifier implements AttributeModifier<SliderAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: SliderAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class StackModifier implements AttributeModifier<StackAttribute> {
+export class StackModifier implements AttributeModifier<StackAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: StackAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: SwiperAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: TabContentAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class TabsModifier implements AttributeModifier<TabsAttribute> {
+export class TabsModifier implements AttributeModifier<TabsAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: TabsAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class TextModifier implements AttributeModifier<TextAttribute> {
+export class TextModifier implements AttributeModifier<TextAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: TextAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: TextAreaAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: TextClockAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: TextInputAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: TextPickerAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: TextTimerAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: TimePickerAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: ToggleAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
+export class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: UIExtensionComponentAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: WaterFlowAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class WebModifier implements AttributeModifier<WebAttribute> {
+export class WebModifier implements AttributeModifier<WebAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: WebAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
    instance.useEffect(this.mUseEffect)
   }
 }
-class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: XComponentAttribute): void {
     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
@@ -632,12 +625,6 @@ function commonStyle(this: FlexAttribute, componentKey: string) {
 }
 
 function commonStyle(this: FlowItemAttribute, componentKey: string) {
-  this.height('100%')
-  this.key(componentKey)
-  return this
-}
-
-function commonStyle(this: FormLinkAttribute, componentKey: string) {
   this.height('100%')
   this.key(componentKey)
   return this
@@ -1042,7 +1029,6 @@ struct useEffectPage {
   @State _useEffectFlexMod: FlexModifier = new FlexModifier()
   @State _useEffectFlowItemMod: FlowItemModifier = new FlowItemModifier()
   @State _useEffectFormComponentMod: FormComponentModifier = new FormComponentModifier()
-  @State _useEffectFormLinkMod: FormLinkModifier = new FormLinkModifier()
   @State _useEffectGaugeMod: GaugeModifier = new GaugeModifier()
   @State _useEffectGridMod: GridModifier = new GridModifier()
   @State _useEffectGridColMod: GridColModifier = new GridColModifier()
@@ -1134,7 +1120,6 @@ struct useEffectPage {
       this._useEffectFlexMod.mUseEffect = value.useEffect
       this._useEffectFlowItemMod.mUseEffect = value.useEffect
       this._useEffectFormComponentMod.mUseEffect = value.useEffect
-      this._useEffectFormLinkMod.mUseEffect = value.useEffect
       this._useEffectGaugeMod.mUseEffect = value.useEffect
       this._useEffectGridMod.mUseEffect = value.useEffect
       this._useEffectGridColMod.mUseEffect = value.useEffect
@@ -1193,7 +1178,7 @@ struct useEffectPage {
   }
 
   build() {
-    GridRow({ columns: this.columns as Int, gutter: this.gutter, /*margin: 0 */}) {
+    GridRow({ columns: this.columns.toInt(), gutter: this.gutter, /*margin: 0 */}) {
       Row() {
         if (this.targetView == 'Button') {
           Button('button1').commonStyle(this.componentKey).attributeModifier(this._useEffectButttonMod)

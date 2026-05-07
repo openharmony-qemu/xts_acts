@@ -20,6 +20,13 @@
 #include <thread>
 #include "include/OhosCommonTest.h"
 
+#define DRAWING_NUMBER_2 2
+#define DRAWING_NUMBER_5 5
+#define DRAWING_NUMBER_10 10
+#define DRAWING_NUMBER_200 200
+#define DRAWING_NUMBER_0XFF 0xFF
+
+
 namespace OHOS {
 namespace Rosen {
 namespace Drawing {
@@ -31,14 +38,6 @@ constexpr int CIRCLE_RADIUS = 200;
 constexpr int32_t TEST_RECORD_WIDTH = 2;
 constexpr int32_t TEST_RECORD_HEIGHT = 5;
 constexpr float PEN_WIDTH = 1.0f;
-constexpr uint8_t COLOR_RED_A = 0xFF;
-constexpr uint8_t COLOR_RED_R = 0xFF;
-constexpr uint8_t COLOR_RED_G = 0x00;
-constexpr uint8_t COLOR_RED_B = 0x00;
-constexpr uint8_t COLOR_GREEN_A = 0xFF;
-constexpr uint8_t COLOR_GREEN_R = 0x00;
-constexpr uint8_t COLOR_GREEN_G = 0xFF;
-constexpr uint8_t COLOR_GREEN_B = 0x00;
 } // namespace
 
 // Common SetUp and TearDown functions implementation
@@ -75,15 +74,14 @@ OH_Drawing_RecordCmd* threadFunctionTest1()
     // 创建一个画笔Pen对象，Pen对象用于形状的边框线绘制
     OH_Drawing_Pen* cPen = OH_Drawing_PenCreate();
     OH_Drawing_PenSetAntiAlias(cPen, true);
-    OH_Drawing_PenSetColor(cPen, OH_Drawing_ColorSetArgb(COLOR_RED_A, COLOR_RED_R, COLOR_RED_G, COLOR_RED_B));
+    OH_Drawing_PenSetColor(cPen, OH_Drawing_ColorSetArgb(DRAWING_NUMBER_0XFF, DRAWING_NUMBER_0XFF, 0, 0));
     OH_Drawing_PenSetWidth(cPen, penWidth);
     OH_Drawing_PenSetJoin(cPen, LINE_ROUND_JOIN);
     // 将Pen画笔设置到canvas中
     OH_Drawing_CanvasAttachPen(canvas, cPen);
     // 创建一个画刷Brush对象，Brush对象用于形状的填充
     OH_Drawing_Brush* cBrush = OH_Drawing_BrushCreate();
-    OH_Drawing_BrushSetColor(cBrush, OH_Drawing_ColorSetArgb(COLOR_GREEN_A, COLOR_GREEN_R, COLOR_GREEN_G,
-                                                             COLOR_GREEN_B));
+    OH_Drawing_BrushSetColor(cBrush, OH_Drawing_ColorSetArgb(DRAWING_NUMBER_0XFF, 0, DRAWING_NUMBER_0XFF, 0));
     // 将Brush画刷设置到canvas中
     OH_Drawing_CanvasAttachBrush(canvas, cBrush);
     drawCircle(canvas, width);
@@ -96,14 +94,6 @@ OH_Drawing_RecordCmd* threadFunctionTest1()
     return recordCmd;
 }
 
-/**
- * @tc.name   testRecordCmdDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RECORDER_03000
- * @tc.desc   test for testRecordCmdDestroyNormal.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRecordCmdDestroyNormal()
 {
     DrawingRecordCmdDestroyTestSetUp();
@@ -121,14 +111,6 @@ int TestRecordCmdDestroyNormal()
     return OH_DRAWING_SUCCESS;
 }
 
-/**
- * @tc.name   testRecordCmdDestroyNULL
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_RECORDER_03100
- * @tc.desc   test for testRecordCmdDestroyNULL.
- * @tc.type   FUNCTION
- * @tc.size   SMALLTEST
- * @tc.level  LEVEL0
- */
 int TestRecordCmdDestroyNULL()
 {
     DrawingRecordCmdDestroyTestSetUp();

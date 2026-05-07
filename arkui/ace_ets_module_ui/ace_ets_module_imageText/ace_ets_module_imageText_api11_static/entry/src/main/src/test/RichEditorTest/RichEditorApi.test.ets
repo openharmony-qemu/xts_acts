@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -176,8 +176,8 @@ export default function RichEditorApi() {
       await CommonFunc.sleep(1000);
       let RichEditor3 = CommonFunc.getComponentRectOnScreen('RichEditorApi_RichEditor3')
       await driver.mouseClick({
-        x: Math.round((RichEditor3.right - RichEditor3.left) * 0.5 + RichEditor3.left) as Int,
-        y: Math.round((RichEditor3.bottom - RichEditor3.top) * 0.5 + RichEditor3.top) as Int
+        x: Math.round((RichEditor3.right - RichEditor3.left) * 0.5 + RichEditor3.left).toInt(),
+        y: Math.round((RichEditor3.bottom - RichEditor3.top) * 0.5 + RichEditor3.top).toInt()
       }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
 
@@ -204,8 +204,8 @@ export default function RichEditorApi() {
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let RichEditor4 = CommonFunc.getComponentRectOnScreen('RichEditorApi_RichEditor4')
-      await driver.longClick(Math.round((RichEditor4.right - RichEditor4.left) * 0.5 + RichEditor4.left)  as Int,
-        Math.round((RichEditor4.bottom - RichEditor4.top) * 0.5 + RichEditor4.top)as Int)
+      await driver.longClick(Math.round((RichEditor4.right - RichEditor4.left) * 0.5 + RichEditor4.left) .toInt(),
+        Math.round((RichEditor4.bottom - RichEditor4.top) * 0.5 + RichEditor4.top).toInt())
       await CommonFunc.sleep(2000);
 
       let strJson = inspector.getInspectorByKey('RichEditorApi_text2');

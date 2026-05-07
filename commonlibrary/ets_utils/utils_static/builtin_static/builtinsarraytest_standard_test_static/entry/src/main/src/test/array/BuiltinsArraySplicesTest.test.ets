@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -407,7 +407,7 @@ export default function builtinsArraySpliceTest() {
      */
     it('builtinsArraySplice2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done:() => void) => {
       const num6: Array<number | string | boolean> = [1, 2, 3];
-      const c = num6.splice(Math.floor(1.5) as int, NaN as int, true, !'s' as boolean);
+      const c = num6.splice(Math.floor(1.5).toInt(), NaN.toInt(), true, !'s' as boolean);
       console.log(num6.toString());
       let a = JSON.stringify(num6);
       let b = JSON.stringify([1, true, !'s', 2, 3]);

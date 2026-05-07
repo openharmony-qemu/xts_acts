@@ -20,7 +20,7 @@ import {State, Observed} from '@ohos.arkui.stateManagement'
 import { RecordData } from '@ohos.base';
 
 @Observed
-class MyStackAlignContentModifier implements AttributeModifier<StackAttribute> {
+export class MyStackAlignContentModifier implements AttributeModifier<StackAttribute> {
   alignContentValue: Alignment = Alignment.TopStart
   applyNormalAttribute(instance: StackAttribute): void {
     instance.alignContent(this.alignContentValue)

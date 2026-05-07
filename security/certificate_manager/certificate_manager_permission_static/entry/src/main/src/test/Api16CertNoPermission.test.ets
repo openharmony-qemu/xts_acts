@@ -21,6 +21,7 @@ import deviceInfo from '@ohos.deviceInfo';
 import type common from '@ohos.app.ability.common';
 import { GlobalContext } from '../testrunner/OpenHarmonyTestRunner';
 import hilog from '@ohos.hilog';
+import { canIUse } from '@internal.full.global';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
@@ -205,8 +206,12 @@ export default function api16CertNoPermissionTestUnit() {
         expect(null).assertFail();
       } catch (error) {
         error = error as BusinessError;
-        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_static_0100  Failed to open authorize dialog error.code: ${error.code}, message: ${error.message}`);
-        expect(error.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
+        if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {	 
+           expect(error.code).assertEqual(801);	 
+         } else {
+            hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_static_0100  Failed to open authorize dialog error.code: ${error.code}, message: ${error.message}`); 
+            expect(error.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
+         }
       }
       done();
     });
@@ -263,6 +268,32 @@ export default function api16CertNoPermissionTestUnit() {
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_Ukey_static_0900 Failed  Code: ${err.code}, message: ${err.message}`);
         expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
       }
+      done();
+    });
+	
+	 /**
+     * @tc.name   SUB_Security_CertManager_installUserTrustedCertificate_Static_0030
+     * @tc.number SUB_Security_CertManager_installUserTrustedCertificate_Static_0030
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_installUserTrustedCertificate_Static_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_installUserTrustedCertificate_Static_0030 start');
+      let certBlob: certManager.CertBlob = {
+        certData: caCert,
+        certFormat: certManager.CertFileFormat.PEM_DER,
+        certScope: certManager.CertScope.CURRENT_USER
+      };
+      try{
+        certManager.installUserTrustedCertificate(certBlob);
+      }catch(err){
+        err = err as BusinessError;
+        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_installUserTrustedCertificate_Static_0030 Failed  Code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
+      }
+	    hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_installUserTrustedCertificate_Static_0030 end');
       done();
     });
   })

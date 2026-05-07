@@ -37,6 +37,7 @@ async function getSessionManager() {
 
 export default function audioSessionManagerTest() {
   describe('audioSessionManagerTest', () => {
+    const TAG = 'AudioSessionManagerSetMediaOutputDeviceTest';
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -1617,6 +1618,516 @@ export default function audioSessionManagerTest() {
         expect(false).assertTrue();
       }
       done();
+    })
+
+    /**
+     * @tc.name   AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_0100 
+     * @tc.number AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_0100  
+     * @tc.desc   setAudioSessionBehavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.MUTE_WHEN_INTERRUPTED;
+      try {
+        await sessionManager.setAudioSessionBehavior(behavior);
+        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_0100: setAudioSessionBehavior with MUTE_WHEN_INTERRUPTED: PASS`);
+        expect(true).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_0100: setAudioSessionBehavior with MUTE_WHEN_INTERRUPTED: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_0200 
+    * @tc.number AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_0200  
+    * @tc.desc   setAudioSessionBehavior
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.DEFAULT_BEHAVIOR;
+      try {
+        await sessionManager.setAudioSessionBehavior(behavior);
+        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_0200: setAudioSessionBehavior with DEFALUT: PASS`);
+        done();
+      } catch (err) {
+        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_0200: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.name   AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_0300 
+    * @tc.number AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_0300  
+    * @tc.desc   setAudioSessionBehavior
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let behavior: ESObject = -1;
+      try {
+        await sessionManager.setAudioSessionBehavior(behavior);
+        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_0300 : FAIL`);
+        done();
+      } catch (err) {
+        console.info(`AUDIO_AUDIOSESSIONMANAGER_SETAUDIOSESSIONBEHAVIOR_0300: PASS :${err.message}:${err.code}`);
+        expect(Number(err.code)).assertEqual(6800101);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERSETAUDIOSESSIONBEHAVIORVOICE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERSETAUDIOSESSIONBEHAVIORVOICE_0100
+     * @tc.desc   setAudioSessionBehavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGERSETAUDIOSESSIONBEHAVIORVOICE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.VOIP_PRIVACY_TYPE_PUBLIC;
+      try {
+        await sessionManager.setAudioSessionBehavior(behavior);
+        console.info(`AUDIOSESSIONMANAGERSETAUDIOSESSIONBEHAVIORVOICE_0100: setAudioSessionBehavior with DEFALUT: PASS`);
+        done();
+      } catch (err) {
+        console.info(`AUDIOSESSIONMANAGERSETAUDIOSESSIONBEHAVIORVOICE_0100: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETAUDIOSESSIONBEHAVIORVOICEREPEATED_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SETAUDIOSESSIONBEHAVIORVOICEREPEATED_0100
+     * @tc.desc   setAudioSessionBehavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_SETAUDIOSESSIONBEHAVIORVOICEREPEATED_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let behavior: audio.AudioSessionBehaviorFlags = audio.AudioSessionBehaviorFlags.VOIP_PRIVACY_TYPE_PUBLIC;
+      try {
+        for(let i=0;i < 100; i++){
+          await sessionManager.setAudioSessionBehavior(behavior);
+      }
+        console.info(`SETAUDIOSESSIONBEHAVIORVOICEREPEATED_0100: setAudioSessionBehavior with DEFALUT: PASS`);
+        done();
+      } catch (err) {
+        console.info(`SETAUDIOSESSIONBEHAVIORVOICEREPEATED_0100: FAIL :${(err as BusinessError).message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_SPEAKER_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_SPEAKER_0100
+     * @tc.desc    AudioSessionManager setMediaOutputDevice SPEAKER test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_SPEAKER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_SPEAKER_0100 start`);
+      if (audioSessionManager === null) {
+        console.error(`${TAG}: audioSessionManager is null`);
+        expect(false).assertTrue();
+        done();
+        return;
+      }
+      try {
+        await audioSessionManager.setMediaOutputDevice(audio.DeviceType.SPEAKER);
+        console.info(`${TAG}: setMediaOutputDevice SPEAKER success`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`${TAG}: setMediaOutputDevice SPEAKER failed: ${error.code}, ${error.message}`);
+        expect(Number(error.code)).assertEqual(6800301);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_DEFAULT_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_DEFAULT_0100
+     * @tc.desc    AudioSessionManager setMediaOutputDevice DEFAULT test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_DEFAULT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_DEFAULT_0100 start`);
+      if (audioSessionManager === null) {
+        console.error(`${TAG}: audioSessionManager is null`);
+        expect(false).assertTrue();
+        done();
+        return;
+      }
+      try {
+        await audioSessionManager.setMediaOutputDevice(audio.DeviceType.DEFAULT);
+        console.info(`${TAG}: setMediaOutputDevice DEFAULT success`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`${TAG}: setMediaOutputDevice DEFAULT failed: ${error.code}, ${error.message}`);
+        expect(Number(error.code)).assertEqual(6800301);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_INVALID_PARAM_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_INVALID_PARAM_0100
+     * @tc.desc    AudioSessionManager setMediaOutputDevice invalid param test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_INVALID_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_INVALID_PARAM_0100 start`);
+      if (audioSessionManager === null) {
+        console.error(`${TAG}: audioSessionManager is null`);
+        expect(false).assertTrue();
+        done();
+        return;
+      }
+      try {
+        await audioSessionManager.setMediaOutputDevice(audio.DeviceType.BLUETOOTH_SCO);
+        console.error(`${TAG}: setMediaOutputDevice BLUETOOTH_SCO should throw error`);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info(`${TAG}: setMediaOutputDevice BLUETOOTH_SCO caught error: ${error.code}, ${error.message}`);
+        expect(Number(error.code)).assertEqual(6800101);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_UNDEFINED_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_UNDEFINED_0100
+     * @tc.desc    AudioSessionManager setMediaOutputDevice undefined test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_UNDEFINED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_UNDEFINED_0100 start`);
+      if (audioSessionManager === null) {
+        console.error(`${TAG}: audioSessionManager is null`);
+        expect(false).assertTrue();
+        done();
+        return;
+      }
+      try {
+        await audioSessionManager.setMediaOutputDevice(undefined);
+        console.error(`${TAG}: setMediaOutputDevice undefined should throw error`);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info(`${TAG}: setMediaOutputDevice undefined caught error: ${error.code}, ${error.message}`);
+        expect(Number(error.code)).assertEqual(6800101);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_NULL_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_NULL_0100
+     * @tc.desc    AudioSessionManager setMediaOutputDevice null test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_NULL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_NULL_0100 start`);
+      if (audioSessionManager === null) {
+        console.error(`${TAG}: audioSessionManager is null`);
+        expect(false).assertTrue();
+        done();
+        return;
+      }
+      try {
+        await audioSessionManager.setMediaOutputDevice(null);
+        console.error(`${TAG}: setMediaOutputDevice null should throw error`);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info(`${TAG}: setMediaOutputDevice null caught error: ${error.code}, ${error.message}`);
+        expect(Number(error.code)).assertEqual(6800101);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_RETURN_VOID_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_RETURN_VOID_0100
+     * @tc.desc    AudioSessionManager setMediaOutputDevice return void test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_RETURN_VOID_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_RETURN_VOID_0100 start`);
+      if (audioSessionManager === null) {
+        console.error(`${TAG}: audioSessionManager is null`);
+        expect(false).assertTrue();
+        done();
+        return;
+      }
+      try {
+        let result: void = await audioSessionManager.setMediaOutputDevice(audio.DeviceType.SPEAKER);
+        console.info(`${TAG}: setMediaOutputDevice return void success`);
+        expect(result).assertUndefined();
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`${TAG}: setMediaOutputDevice failed: ${error.code}, ${error.message}`);
+        expect(Number(error.code)).assertEqual(6800301);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_WIRED_HEADSET_0200
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_WIRED_HEADSET_0200
+     * @tc.desc    AudioSessionManager setMediaOutputDevice error 6800101 WIRED_HEADSET test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_WIRED_HEADSET_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_WIRED_HEADSET_0200 start`);
+      if (audioSessionManager === null) {
+        console.error(`${TAG}: audioSessionManager is null`);
+        expect(false).assertTrue();
+        done();
+        return;
+      }
+      try {
+        await audioSessionManager.setMediaOutputDevice(audio.DeviceType.WIRED_HEADSET);
+        console.error(`${TAG}: setMediaOutputDevice WIRED_HEADSET should throw 6800101 error`);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info(`${TAG}: setMediaOutputDevice WIRED_HEADSET caught error: ${error.code}, ${error.message}`);
+        expect(Number(error.code)).assertEqual(6800101);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_BLUETOOTH_0300
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_BLUETOOTH_0300
+     * @tc.desc    AudioSessionManager setMediaOutputDevice error 6800101 BLUETOOTH_A2DP test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_BLUETOOTH_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_BLUETOOTH_0300 start`);
+      if (audioSessionManager === null) {
+        console.error(`${TAG}: audioSessionManager is null`);
+        expect(false).assertTrue();
+        done();
+        return;
+      }
+      try {
+        await audioSessionManager.setMediaOutputDevice(audio.DeviceType.BLUETOOTH_A2DP);
+        console.error(`${TAG}: setMediaOutputDevice BLUETOOTH_A2DP should throw 6800101 error`);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info(`${TAG}: setMediaOutputDevice BLUETOOTH_A2DP caught error: ${error.code}, ${error.message}`);
+        expect(Number(error.code)).assertEqual(6800101);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_USB_HEADSET_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_USB_HEADSET_0100
+     * @tc.desc    AudioSessionManager setMediaOutputDevice error 6800101 USB_HEADSET test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_USB_HEADSET_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_USB_HEADSET_0100 start`);
+      if (audioSessionManager === null) {
+        console.error(`${TAG}: audioSessionManager is null`);
+        expect(false).assertTrue();
+        done();
+        return;
+      }
+      try {
+        await audioSessionManager.setMediaOutputDevice(audio.DeviceType.USB_HEADSET);
+        console.error(`${TAG}: setMediaOutputDevice USB_HEADSET should throw 6800101 error`);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info(`${TAG}: setMediaOutputDevice USB_HEADSET caught error: ${error.code}, ${error.message}`);
+        expect(Number(error.code)).assertEqual(6800101);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_EARPIECE_0400
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_EARPIECE_0400
+     * @tc.desc    AudioSessionManager setMediaOutputDevice error 6800101 EARPIECE test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_EARPIECE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_EARPIECE_0400 start`);
+      if (audioSessionManager === null) {
+        console.error(`${TAG}: audioSessionManager is null`);
+        expect(false).assertTrue();
+        done();
+        return;
+      }
+      try {
+        await audioSessionManager.setMediaOutputDevice(audio.DeviceType.EARPIECE);
+        console.error(`${TAG}: setMediaOutputDevice EARPIECE should throw 6800101 error`);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info(`${TAG}: setMediaOutputDevice EARPIECE caught error: ${error.code}, ${error.message}`);
+        expect(Number(error.code)).assertEqual(6800101);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_BLUETOOTH_SCO_0500
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_BLUETOOTH_SCO_0500
+     * @tc.desc    AudioSessionManager setMediaOutputDevice error 6800101 BLUETOOTH_SCO test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_BLUETOOTH_SCO_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_BLUETOOTH_SCO_0500 start`);
+      if (audioSessionManager === null) {
+        console.error(`${TAG}: audioSessionManager is null`);
+        expect(false).assertTrue();
+        done();
+        return;
+      }
+      try {
+        await audioSessionManager.setMediaOutputDevice(audio.DeviceType.BLUETOOTH_SCO);
+        console.error(`${TAG}: setMediaOutputDevice BLUETOOTH_SCO should throw 6800101 error`);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info(`${TAG}: setMediaOutputDevice BLUETOOTH_SCO caught error: ${error.code}, ${error.message}`);
+        expect(Number(error.code)).assertEqual(6800101);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_MIC_0600
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_MIC_0600
+     * @tc.desc    AudioSessionManager setMediaOutputDevice error 6800101 MIC test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_MIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ERROR_MIC_0600 start`);
+      if (audioSessionManager === null) {
+        console.error(`${TAG}: audioSessionManager is null`);
+        expect(false).assertTrue();
+        done();
+        return;
+      }
+      try {
+        await audioSessionManager.setMediaOutputDevice(audio.DeviceType.MIC);
+        console.error(`${TAG}: setMediaOutputDevice MIC should throw 6800101 error`);
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info(`${TAG}: setMediaOutputDevice MIC caught error: ${error.code}, ${error.message}`);
+        expect(Number(error.code)).assertEqual(6800101);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ASYNC_PROMISE_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ASYNC_PROMISE_0100
+     * @tc.desc    AudioSessionManager setMediaOutputDevice async promise test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ASYNC_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_ASYNC_PROMISE_0100 start`);
+      if (audioSessionManager === null) {
+        console.error(`${TAG}: audioSessionManager is null`);
+        expect(false).assertTrue();
+        done();
+        return;
+      }
+      audioSessionManager.setMediaOutputDevice(audio.DeviceType.SPEAKER).then(() => {
+        console.info(`${TAG}: setMediaOutputDevice SPEAKER async success`);
+        done();
+      }).catch((error: BusinessError) => {
+        console.error(`${TAG}: setMediaOutputDevice SPEAKER async failed: ${error.code}, ${error.message}`);
+        expect(Number(error.code)).assertEqual(6800301);
+        done();
+      })
+    })
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_MULTIPLE_CALL_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_MULTIPLE_CALL_0100
+     * @tc.desc    AudioSessionManager setMediaOutputDevice multiple call test.
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     * @tc.level   Level0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_MULTIPLE_CALL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_MEDIA_OUTPUT_DEVICE_MULTIPLE_CALL_0100 start`);
+      if (audioSessionManager === null) {
+        console.error(`${TAG}: audioSessionManager is null`);
+        expect(false).assertTrue();
+        done();
+        return;
+      }
+      try {
+        await audioSessionManager.setMediaOutputDevice(audio.DeviceType.SPEAKER);
+        console.info(`${TAG}: first call SPEAKER success`);
+        await audioSessionManager.setMediaOutputDevice(audio.DeviceType.DEFAULT);
+        console.info(`${TAG}: second call DEFAULT success`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(`${TAG}: multiple call failed: ${error.code}, ${error.message}`);
+        expect(Number(error.code)).assertEqual(6800301);
+        done();
+      }
     })
   })
 }

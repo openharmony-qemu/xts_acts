@@ -1363,8 +1363,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest6500';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float, 4.4 as float, 5.5 as float];
-        const result = upperBoundSearch(arr, 3.3 as float);
+        const arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat(), 4.4.toFloat(), 5.5.toFloat()];
+        const result = upperBoundSearch(arr, 3.3.toFloat());
         expect(result).assertEqual(3);
         console.info(`${caseName}, test end`);
         Done();
@@ -1383,8 +1383,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest6600';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float, 4.4 as float, 5.5 as float];
-        const result = upperBoundSearch(arr, 1.0 as float);
+        const arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat(), 4.4.toFloat(), 5.5.toFloat()];
+        const result = upperBoundSearch(arr, 1.0.toFloat());
         expect(result).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
@@ -1403,8 +1403,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest6700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float, 4.4 as float, 5.5 as float];
-        const result = upperBoundSearch(arr, 10.0 as float);
+        const arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat(), 4.4.toFloat(), 5.5.toFloat()];
+        const result = upperBoundSearch(arr, 10.0.toFloat());
         expect(result).assertEqual(5);
         console.info(`${caseName}, test end`);
         Done();
@@ -1423,8 +1423,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest6800';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float, 4.4 as float, 5.5 as float];
-        const result = upperBoundSearch(arr, 5.5 as float);
+        const arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat(), 4.4.toFloat(), 5.5.toFloat()];
+        const result = upperBoundSearch(arr, 5.5.toFloat());
         expect(result).assertEqual(5);
         console.info(`${caseName}, test end`);
         Done();
@@ -1443,8 +1443,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest6900';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [-0.9 as float, -0.8 as float, -0.5 as float, -0.3 as float, -0.2 as float, -0.1 as float];
-        const result = upperBoundSearch(arr, -9.0 as float);
+        const arr: FixedArray<float> = [-0.9.toFloat(), -0.8.toFloat(), -0.5.toFloat(), -0.3.toFloat(), -0.2.toFloat(), -0.1.toFloat()];
+        const result = upperBoundSearch(arr, -9.0.toFloat());
         expect(result).assertEqual(0);
         console.info(`${caseName}, test end`);
         Done();
@@ -1463,8 +1463,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest7000';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [-0.9 as float, -0.8 as float, -0.5 as float, -0.3 as float, -0.2 as float, -0.1 as float];
-        const result = upperBoundSearch(arr, -0.6 as float);
+        const arr: FixedArray<float> = [-0.9.toFloat(), -0.8.toFloat(), -0.5.toFloat(), -0.3.toFloat(), -0.2.toFloat(), -0.1.toFloat()];
+        const result = upperBoundSearch(arr, -0.6.toFloat());
         expect(result).assertEqual(2);
         console.info(`${caseName}, test end`);
         Done();
@@ -1483,8 +1483,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest7100';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [-0.9 as float, -0.8 as float, -0.5 as float, -0.3 as float, -0.2 as float, -0.1 as float];
-        const result = upperBoundSearch(arr, 10.0 as float);
+        const arr: FixedArray<float> = [-0.9.toFloat(), -0.8.toFloat(), -0.5.toFloat(), -0.3.toFloat(), -0.2.toFloat(), -0.1.toFloat()];
+        const result = upperBoundSearch(arr, 10.0.toFloat());
         expect(result).assertEqual(6);
         console.info(`${caseName}, test end`);
         Done();
@@ -1503,8 +1503,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest7200';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [-0.9 as float, -0.8 as float, -0.5 as float, -0.3 as float, -0.2 as float, -0.1 as float];
-        const result = upperBoundSearch(arr, -0.1 as float);
+        const arr: FixedArray<float> = [-0.9.toFloat(), -0.8.toFloat(), -0.5.toFloat(), -0.3.toFloat(), -0.2.toFloat(), -0.1.toFloat()];
+        const result = upperBoundSearch(arr, -0.1.toFloat());
         expect(result).assertEqual(6);
         console.info(`${caseName}, test end`);
         Done();
@@ -1523,8 +1523,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest7300';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float, 4.4 as float, 5.5 as float];
-        const result = upperBoundSearch(arr, 4.4 as float, 1, 5);
+        const arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat(), 4.4.toFloat(), 5.5.toFloat()];
+        const result = upperBoundSearch(arr, 4.4.toFloat(), 1, 5);
         expect(result).assertEqual(4);
         console.info(`${caseName}, test end`);
         Done();
@@ -1543,8 +1543,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest7400';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float, 4.4 as float, 5.5 as float];
-        const result = upperBoundSearch(arr, 1.5 as float, 2, 5);
+        const arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat(), 4.4.toFloat(), 5.5.toFloat()];
+        const result = upperBoundSearch(arr, 1.5.toFloat(), 2, 5);
         expect(result).assertEqual(2);
         console.info(`${caseName}, test end`);
         Done();
@@ -1563,8 +1563,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest7500';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float, 4.4 as float, 5.5 as float];
-        const result = upperBoundSearch(arr, 5.0 as float, 0, 4);
+        const arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat(), 4.4.toFloat(), 5.5.toFloat()];
+        const result = upperBoundSearch(arr, 5.0.toFloat(), 0, 4);
         expect(result).assertEqual(4);
         console.info(`${caseName}, test end`);
         Done();
@@ -1583,8 +1583,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest7600';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float, 4.4 as float, 5.5 as float];
-        const result = upperBoundSearch(arr, 5.0 as float, 0, 4);
+        const arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat(), 4.4.toFloat(), 5.5.toFloat()];
+        const result = upperBoundSearch(arr, 5.0.toFloat(), 0, 4);
         expect(result).assertEqual(4);
         console.info(`${caseName}, test end`);
         Done();
@@ -1603,8 +1603,8 @@ export default function ArrayUpperBoundSearchTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayUpperBoundSearchTest7700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [-9.9 as float, -7.7 as float, -5.5 as float, -3.3 as float];
-        const result = upperBoundSearch(arr, 3.0 as float, 1, 3);
+        const arr: FixedArray<float> = [-9.9.toFloat(), -7.7.toFloat(), -5.5.toFloat(), -3.3.toFloat()];
+        const result = upperBoundSearch(arr, 3.0.toFloat(), 1, 3);
         expect(result).assertEqual(3);
         console.info(`${caseName}, test end`);
         Done();
@@ -1626,8 +1626,8 @@ export default function ArrayUpperBoundSearchTest() {
         let errorOccurred: boolean = false;
         let errorContainsKeyword: boolean = false;
         try {
-          const arr: FixedArray<float> = [10.0 as float, 15.0 as float, 20.0 as float, 25.0 as float];
-          upperBoundSearch(arr, 17.5 as float, 1, 10);
+          const arr: FixedArray<float> = [10.0.toFloat(), 15.0.toFloat(), 20.0.toFloat(), 25.0.toFloat()];
+          upperBoundSearch(arr, 17.5.toFloat(), 1, 10);
         } catch (e) {
           errorOccurred = true;
           errorContainsKeyword = e.toString().includes('upperBoundSearch: bounds verification failed');
@@ -1654,8 +1654,8 @@ export default function ArrayUpperBoundSearchTest() {
         let errorOccurred: boolean = false;
         let errorContainsKeyword: boolean = false;
         try {
-          const arr: FixedArray<float> = [10.0 as float, 15.0 as float, 20.0 as float, 25.0 as float];
-          upperBoundSearch(arr, 17.5 as float, 4, 3);
+          const arr: FixedArray<float> = [10.0.toFloat(), 15.0.toFloat(), 20.0.toFloat(), 25.0.toFloat()];
+          upperBoundSearch(arr, 17.5.toFloat(), 4, 3);
         } catch (e) {
           errorOccurred = true;
           errorContainsKeyword = e.toString().includes('upperBoundSearch: bounds verification failed');
@@ -1682,8 +1682,8 @@ export default function ArrayUpperBoundSearchTest() {
         let errorOccurred: boolean = false;
         let errorContainsKeyword: boolean = false;
         try {
-          const arr: FixedArray<float> = [10.0 as float, 15.0 as float, 20.0 as float, 25.0 as float];
-          upperBoundSearch(arr, 17.5 as float, -1, 3);
+          const arr: FixedArray<float> = [10.0.toFloat(), 15.0.toFloat(), 20.0.toFloat(), 25.0.toFloat()];
+          upperBoundSearch(arr, 17.5.toFloat(), -1, 3);
         } catch (e) {
           errorOccurred = true;
           errorContainsKeyword = e.toString().includes('upperBoundSearch: bounds verification failed');

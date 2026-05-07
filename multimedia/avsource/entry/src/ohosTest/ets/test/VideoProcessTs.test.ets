@@ -75,12 +75,12 @@ describe('VideoProcessTsTest', () => {
         try {
             let sourceImage = await imageSource.createPixelMap() as image.PixelMap;
             const imageInfo: image.ImageInfo = await sourceImage.getImageInfo();
-            let targetWidth = imageInfo.size.width * 2;
-            let targetHeight = imageInfo.size.height * 2;
+            let targetWidth = imageInfo.size.width / 2;
+            let targetHeight = imageInfo.size.height / 2;
             let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
             expect(imageProcessor != null).assertTrue();
             expect(sourceImage.isEditable).assertFalse();
-            expect(sourceImage.isStrideAlignment).assertFalse();
+            expect(sourceImage.isStrideAlignment).assertTrue();
             expect(sourceImage != null).assertTrue();
             expect(sourceImage != undefined).assertTrue();
             expect(targetWidth != undefined).assertTrue();
@@ -91,7 +91,7 @@ describe('VideoProcessTsTest', () => {
                 sourceImage, targetWidth, targetHeight);
             expect(enhancedPixelmap != null).assertTrue();
             expect(enhancedPixelmap.isEditable).assertFalse();
-            expect(enhancedPixelmap.isStrideAlignment).assertFalse();
+            expect(enhancedPixelmap.isStrideAlignment).assertTrue();
             done();
         } catch (err) {
             console.info('testVideoProcessTs002 failed, error is' + err.message);
@@ -120,8 +120,8 @@ describe('VideoProcessTsTest', () => {
         try {
             let sourceImage = await imageSource.createPixelMap() as image.PixelMap;
             const imageInfo: image.ImageInfo = await sourceImage.getImageInfo();
-            let targetWidth = imageInfo.size.width * 2;
-            let targetHeight = imageInfo.size.height * 2;
+            let targetWidth = imageInfo.size.width / 2;
+            let targetHeight = imageInfo.size.height / 2;
             let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
             expect(imageProcessor != null).assertTrue();
             let enhancedPixelmap: image.PixelMap = imageProcessor.enhanceDetailSync(
@@ -265,7 +265,7 @@ describe('VideoProcessTsTest', () => {
                 sourceImage, 2, videoProcessingEngine.QualityLevel.NONE);
             expect(enhancedPixelmap != null).assertTrue();
             expect(enhancedPixelmap.isEditable).assertFalse();
-            expect(enhancedPixelmap.isStrideAlignment).assertFalse();
+            expect(enhancedPixelmap.isStrideAlignment).assertTrue();
             done();
         } catch (err) {
             console.info('testVideoProcessTs007 failed, error is' + err.message);
@@ -299,7 +299,7 @@ describe('VideoProcessTsTest', () => {
             let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
             expect(imageProcessor != null).assertTrue();
             expect(sourceImage.isEditable).assertFalse();
-            expect(sourceImage.isStrideAlignment).assertFalse();
+            expect(sourceImage.isStrideAlignment).assertTrue();
             expect(sourceImage != null).assertTrue();
             expect(sourceImage != undefined).assertTrue();
             expect(targetWidth != undefined).assertTrue();
@@ -310,7 +310,7 @@ describe('VideoProcessTsTest', () => {
                 sourceImage, targetWidth, targetHeight, videoProcessingEngine.QualityLevel.NONE);
             expect(enhancedPixelmap != null).assertTrue();
             expect(enhancedPixelmap.isEditable).assertFalse();
-            expect(enhancedPixelmap.isStrideAlignment).assertFalse();
+            expect(enhancedPixelmap.isStrideAlignment).assertTrue();
             done();
         } catch (err) {
             console.info('testVideoProcessTs008 failed, error is' + err.message);
@@ -344,7 +344,7 @@ describe('VideoProcessTsTest', () => {
                 sourceImage, 2, videoProcessingEngine.QualityLevel.NONE);
             expect(enhancedPixelmap != null).assertTrue();
             expect(enhancedPixelmap.isEditable).assertFalse();
-            expect(enhancedPixelmap.isStrideAlignment).assertFalse();
+            expect(enhancedPixelmap.isStrideAlignment).assertTrue();
             done();
         } catch (err) {
             console.info('testVideoProcessTs009 failed, error is' + err.message);

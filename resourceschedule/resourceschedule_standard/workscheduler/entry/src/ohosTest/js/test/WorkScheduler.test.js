@@ -1157,14 +1157,14 @@ describe("WorkSchedulerJsTest", function () {
     })
 	
     /**
-     * @tc.name     WorkSchedulerJsTest051
+     * @tc.name   WorkSchedulerJsTest051Adapt001
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_XTS_0051
      * @tc.desc   test workScheduler bundleName
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("  WorkSchedulerJsTest051", Level.LEVEL0, async function (done) {
+    it("WorkSchedulerJsTest051Adapt001", Level.LEVEL0, async function (done) {
         console.info('----------------------  WorkSchedulerJsTest051---------------------------');
         let workInfo = {
             workId: 4,

@@ -31,7 +31,7 @@ export default function ComponentObserverTest() {
   describe('ComponentObserverTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("[ARKUI_NEW] ComponentObserverTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.select.static", "EntryAbility");
+      await UtilsTest.startAbility("com.arkui.ace.common.componentSnapshot.static", "EntryAbility");
     });
 
     beforeEach(async (): Promise<void> => {

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -64,9 +64,6 @@ import {
   FlowItem,
   FlowItemAttribute,
   ForEach,
-  FormLink,
-  FormLinkAttribute,
-  FormLinkOptions,
   Gauge,
   GaugeAttribute,
   Grid,
@@ -197,7 +194,7 @@ import {
 import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { RouterParams, SetValue } from '../../common/Utils';
 
-class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -213,7 +210,7 @@ class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttrib
   }
 }
 
-class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -229,7 +226,7 @@ class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   }
 }
 
-class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -245,7 +242,7 @@ class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   }
 }
 
-class BlankModifier implements AttributeModifier<BlankAttribute> {
+export class BlankModifier implements AttributeModifier<BlankAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -261,7 +258,7 @@ class BlankModifier implements AttributeModifier<BlankAttribute> {
   }
 }
 
-class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -277,7 +274,7 @@ class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribut
   }
 }
 
-class CanvasModifier implements AttributeModifier<CanvasAttribute> {
+export class CanvasModifier implements AttributeModifier<CanvasAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -293,7 +290,7 @@ class CanvasModifier implements AttributeModifier<CanvasAttribute> {
   }
 }
 
-class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -309,7 +306,7 @@ class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   }
 }
 
-class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -325,7 +322,7 @@ class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute>
   }
 }
 
-class CircleModifier implements AttributeModifier<CircleAttribute> {
+export class CircleModifier implements AttributeModifier<CircleAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -341,7 +338,7 @@ class CircleModifier implements AttributeModifier<CircleAttribute> {
   }
 }
 
-class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -357,7 +354,7 @@ class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   }
 }
 
-class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -373,7 +370,7 @@ class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   }
 }
 
-class CounterModifier implements AttributeModifier<CounterAttribute> {
+export class CounterModifier implements AttributeModifier<CounterAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -389,7 +386,7 @@ class CounterModifier implements AttributeModifier<CounterAttribute> {
   }
 }
 
-class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -405,7 +402,7 @@ class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   }
 }
 
-class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -421,7 +418,7 @@ class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   }
 }
 
-class DividerModifier implements AttributeModifier<DividerAttribute> {
+export class DividerModifier implements AttributeModifier<DividerAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -437,7 +434,7 @@ class DividerModifier implements AttributeModifier<DividerAttribute> {
   }
 }
 
-class EllipseModifier implements AttributeModifier<EllipseAttribute> {
+export class EllipseModifier implements AttributeModifier<EllipseAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -453,7 +450,7 @@ class EllipseModifier implements AttributeModifier<EllipseAttribute> {
   }
 }
 
-class FlexModifier implements AttributeModifier<FlexAttribute> {
+export class FlexModifier implements AttributeModifier<FlexAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -469,7 +466,7 @@ class FlexModifier implements AttributeModifier<FlexAttribute> {
   }
 }
 
-class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -485,23 +482,7 @@ class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   }
 }
 
-class FormLinkModifier implements AttributeModifier<FormLinkAttribute> {
-  mRotate: RotateOptions = {
-    x: 13,
-    y: 17,
-    z: 31,
-    centerX: 37,
-    centerY: 41,
-    angle: 3,
-    perspective: 11
-  }
-
-  applyNormalAttribute(instance: FormLinkAttribute): void {
-    instance.rotate(this.mRotate)
-  }
-}
-
-class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -517,7 +498,7 @@ class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   }
 }
 
-class GridModifier implements AttributeModifier<GridAttribute> {
+export class GridModifier implements AttributeModifier<GridAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -533,7 +514,7 @@ class GridModifier implements AttributeModifier<GridAttribute> {
   }
 }
 
-class GridColModifier implements AttributeModifier<GridColAttribute> {
+export class GridColModifier implements AttributeModifier<GridColAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -549,7 +530,7 @@ class GridColModifier implements AttributeModifier<GridColAttribute> {
   }
 }
 
-class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -565,7 +546,7 @@ class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   }
 }
 
-class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -581,7 +562,7 @@ class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   }
 }
 
-class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -597,7 +578,7 @@ class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   }
 }
 
-class ImageModifier implements AttributeModifier<ImageAttribute> {
+export class ImageModifier implements AttributeModifier<ImageAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -613,7 +594,7 @@ class ImageModifier implements AttributeModifier<ImageAttribute> {
   }
 }
 
-class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -629,7 +610,7 @@ class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute>
   }
 }
 
-class LineModifier implements AttributeModifier<LineAttribute> {
+export class LineModifier implements AttributeModifier<LineAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -645,7 +626,7 @@ class LineModifier implements AttributeModifier<LineAttribute> {
   }
 }
 
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -661,7 +642,7 @@ class ListModifier implements AttributeModifier<ListAttribute> {
   }
 }
 
-class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -677,7 +658,7 @@ class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   }
 }
 
-class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -693,7 +674,7 @@ class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute>
   }
 }
 
-class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -709,7 +690,7 @@ class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttrib
   }
 }
 
-class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -725,7 +706,7 @@ class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   }
 }
 
-class MenuModifier implements AttributeModifier<MenuAttribute> {
+export class MenuModifier implements AttributeModifier<MenuAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -741,7 +722,7 @@ class MenuModifier implements AttributeModifier<MenuAttribute> {
   }
 }
 
-class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -757,7 +738,7 @@ class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   }
 }
 
-class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -773,7 +754,7 @@ class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute>
   }
 }
 
-class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -789,7 +770,7 @@ class NavDestinationModifier implements AttributeModifier<NavDestinationAttribut
   }
 }
 
-class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -805,7 +786,7 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   }
 }
 
-class PathModifier implements AttributeModifier<PathAttribute> {
+export class PathModifier implements AttributeModifier<PathAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -821,7 +802,7 @@ class PathModifier implements AttributeModifier<PathAttribute> {
   }
 }
 
-class PolygonModifier implements AttributeModifier<PolygonAttribute> {
+export class PolygonModifier implements AttributeModifier<PolygonAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -837,7 +818,7 @@ class PolygonModifier implements AttributeModifier<PolygonAttribute> {
   }
 }
 
-class PolylineModifier implements AttributeModifier<PolylineAttribute> {
+export class PolylineModifier implements AttributeModifier<PolylineAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -853,7 +834,7 @@ class PolylineModifier implements AttributeModifier<PolylineAttribute> {
   }
 }
 
-class ProgressModifier implements AttributeModifier<ProgressAttribute> {
+export class ProgressModifier implements AttributeModifier<ProgressAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -869,7 +850,7 @@ class ProgressModifier implements AttributeModifier<ProgressAttribute> {
   }
 }
 
-class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -885,7 +866,7 @@ class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   }
 }
 
-class RadioModifier implements AttributeModifier<RadioAttribute> {
+export class RadioModifier implements AttributeModifier<RadioAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -901,7 +882,7 @@ class RadioModifier implements AttributeModifier<RadioAttribute> {
   }
 }
 
-class RatingModifier implements AttributeModifier<RatingAttribute> {
+export class RatingModifier implements AttributeModifier<RatingAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -917,7 +898,7 @@ class RatingModifier implements AttributeModifier<RatingAttribute> {
   }
 }
 
-class RectModifier implements AttributeModifier<RectAttribute> {
+export class RectModifier implements AttributeModifier<RectAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -933,7 +914,7 @@ class RectModifier implements AttributeModifier<RectAttribute> {
   }
 }
 
-class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -949,7 +930,7 @@ class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   }
 }
 
-class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -965,7 +946,7 @@ class RelativeContainerModifier implements AttributeModifier<RelativeContainerAt
   }
 }
 
-class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -981,7 +962,7 @@ class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   }
 }
 
-class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -997,7 +978,7 @@ class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   }
 }
 
-class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1013,7 +994,7 @@ class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   }
 }
 
-class RowModifier implements AttributeModifier<RowAttribute> {
+export class RowModifier implements AttributeModifier<RowAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1029,7 +1010,7 @@ class RowModifier implements AttributeModifier<RowAttribute> {
   }
 }
 
-class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1045,7 +1026,7 @@ class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   }
 }
 
-class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1061,7 +1042,7 @@ class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   }
 }
 
-class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1077,7 +1058,7 @@ class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   }
 }
 
-class SearchModifier implements AttributeModifier<SearchAttribute> {
+export class SearchModifier implements AttributeModifier<SearchAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1093,7 +1074,7 @@ class SearchModifier implements AttributeModifier<SearchAttribute> {
   }
 }
 
-class SelectModifier implements AttributeModifier<SelectAttribute> {
+export class SelectModifier implements AttributeModifier<SelectAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1109,7 +1090,7 @@ class SelectModifier implements AttributeModifier<SelectAttribute> {
   }
 }
 
-class ShapeModifier implements AttributeModifier<ShapeAttribute> {
+export class ShapeModifier implements AttributeModifier<ShapeAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1125,7 +1106,7 @@ class ShapeModifier implements AttributeModifier<ShapeAttribute> {
   }
 }
 
-class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1141,7 +1122,7 @@ class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttr
   }
 }
 
-class SliderModifier implements AttributeModifier<SliderAttribute> {
+export class SliderModifier implements AttributeModifier<SliderAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1157,7 +1138,7 @@ class SliderModifier implements AttributeModifier<SliderAttribute> {
   }
 }
 
-class SpanModifier implements AttributeModifier<SpanAttribute> {
+export class SpanModifier implements AttributeModifier<SpanAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1173,7 +1154,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
   }
 }
 
-class StackModifier implements AttributeModifier<StackAttribute> {
+export class StackModifier implements AttributeModifier<StackAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1189,7 +1170,7 @@ class StackModifier implements AttributeModifier<StackAttribute> {
   }
 }
 
-class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1205,7 +1186,7 @@ class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   }
 }
 
-class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1221,7 +1202,7 @@ class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   }
 }
 
-class TabsModifier implements AttributeModifier<TabsAttribute> {
+export class TabsModifier implements AttributeModifier<TabsAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1237,7 +1218,7 @@ class TabsModifier implements AttributeModifier<TabsAttribute> {
   }
 }
 
-class TextModifier implements AttributeModifier<TextAttribute> {
+export class TextModifier implements AttributeModifier<TextAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1253,7 +1234,7 @@ class TextModifier implements AttributeModifier<TextAttribute> {
   }
 }
 
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1269,7 +1250,7 @@ class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   }
 }
 
-class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1285,7 +1266,7 @@ class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   }
 }
 
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1301,7 +1282,7 @@ class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   }
 }
 
-class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1317,7 +1298,7 @@ class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   }
 }
 
-class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1333,7 +1314,7 @@ class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   }
 }
 
-class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1349,7 +1330,7 @@ class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   }
 }
 
-class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1365,7 +1346,7 @@ class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   }
 }
 
-class VideoModifier implements AttributeModifier<VideoAttribute> {
+export class VideoModifier implements AttributeModifier<VideoAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1381,7 +1362,7 @@ class VideoModifier implements AttributeModifier<VideoAttribute> {
   }
 }
 
-class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1397,7 +1378,7 @@ class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   }
 }
 
-class WebModifier implements AttributeModifier<WebAttribute> {
+export class WebModifier implements AttributeModifier<WebAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1413,7 +1394,7 @@ class WebModifier implements AttributeModifier<WebAttribute> {
   }
 }
 
-class WindowSceneModifier implements AttributeModifier<WindowSceneAttribute> {
+export class WindowSceneModifier implements AttributeModifier<WindowSceneAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1429,7 +1410,7 @@ class WindowSceneModifier implements AttributeModifier<WindowSceneAttribute> {
   }
 }
 
-class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   mRotate: RotateOptions = {
     x: 13,
     y: 17,
@@ -1513,11 +1494,6 @@ function commonStyle(this: FlexAttribute, componentKey: string) {
 }
 
 function commonStyle(this: FlowItemAttribute, componentKey: string) {
-  this.key(componentKey)
-  return this
-}
-
-function commonStyle(this: FormLinkAttribute, componentKey: string) {
   this.key(componentKey)
   return this
 }
@@ -1859,7 +1835,6 @@ struct RotatePage {
   @State _rotateEllipseModifier: EllipseModifier = new EllipseModifier()
   @State _rotateFlexModifier: FlexModifier = new FlexModifier()
   @State _rotateFlowItemModifier: FlowItemModifier = new FlowItemModifier()
-  @State _rotateFormLinkModifier: FormLinkModifier = new FormLinkModifier()
   @State _rotateGaugeModifier: GaugeModifier = new GaugeModifier()
   @State _rotateGridModifier: GridModifier = new GridModifier()
   @State _rotateGridColModifier: GridColModifier = new GridColModifier()
@@ -2022,7 +1997,7 @@ struct RotatePage {
         Marquee({
           start: true,
           step: 50,
-          loop: Infinity as Int,
+          loop: Infinity.toInt(),
           fromStart: true,
           src: 'Running Marquee starts rolling'
         })
@@ -2574,17 +2549,6 @@ struct RotatePage {
           .backgroundColor('#FFFF00')
           .commonStyle(this.componentKey)
           .attributeModifier(this._rotateCanvasModifier)
-      }
-      if (this.targetView == 'FormLink') {
-        FormLink({
-          action: "router",
-          abilityName: "EntryAbility",
-          params: { message: 'testForRouter' } as ObjElement
-        } as FormLinkOptions) {
-          Button("router event").width(120)
-        }
-        .commonStyle(this.componentKey)
-        .attributeModifier(this._rotateFormLinkModifier)
       }
       if (this.targetView == 'Hyperlink') {
         Hyperlink('https://example.com/', 'Go to the developer website') {

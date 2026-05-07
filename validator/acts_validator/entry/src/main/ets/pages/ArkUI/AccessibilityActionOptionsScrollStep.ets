@@ -17,7 +17,7 @@ import promptAction from '@ohos.promptAction';
 import FirstDialog from '../model/FirstDialog';
 import { AttributeUpdater } from '@kit.ArkUI';
 
-const TAG = '[AccessibilityActionOptions({scrollStep})]';
+const TAG = 'AccessibilityActionOptionsScrollStep';
 
 class SliderModifier implements AttributeModifier<SliderAttribute> {
   applyNormalAttribute(instance: SliderAttribute): void {
@@ -31,8 +31,8 @@ class SliderModifier implements AttributeModifier<SliderAttribute> {
 let uiContent:UIContext | undefined = undefined;
 @Entry
 @Component
-struct OnAccessibilityActionIntercept {
-  @State name: string = 'OnAccessibilityActionIntercept';
+struct AccessibilityActionOptionsScrollStep {
+  @State name: string = 'AccessibilityActionOptionsScrollStep';
   @State stepTips: string = '不支持屏幕朗读直接按照失败处理走豁免\n'+'设备支持屏幕朗读时\n' + '操作步骤:\n' +
     '1、单击accessibilityActionOptions({scrollStep:5})文字下的Slider组件使其获焦\n' +
     '2、单指下滑或者单指上滑屏幕空白区域\n' +
@@ -357,7 +357,7 @@ struct OnAccessibilityActionIntercept {
             }
             .width('80%')
           }
-        }.height('70%')
+        }.height('60%')
 
         Row() {
           this.PassBtn($r('app.string.btn_fullscreen'), true);
@@ -388,7 +388,7 @@ struct OnAccessibilityActionIntercept {
         .width('100%')
         .justifyContent(FlexAlign.SpaceEvenly)
         .backgroundColor(Color.Black)
-        .height('10%')
+        .height('30%')
       }.width('100%').height('100%')
     }
   }

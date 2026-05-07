@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -46,7 +46,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function btnDragStart() {
   describe('btnDragStart', () => {
 
-    waitForCompletion(async ()=>{await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")})
+    UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility").awaitSync()
     
 
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!
@@ -101,8 +101,8 @@ it('btnDragStart_static_001', Level.LEVEL0, async (done: () => void): Promise<vo
 
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
-      await driver.drag(Math.round(CommonFunc.rect_left + uiContext.vp2px(33.33)) as Int,
-        Math.round(CommonFunc.rect_top + uiContext.vp2px(26.66)) as Int, 200, 200, 600);
+      await driver.drag(Math.round(CommonFunc.rect_left + uiContext.vp2px(33.33)).toInt(),
+        Math.round(CommonFunc.rect_top + uiContext.vp2px(26.66)).toInt(), 200, 200, 600);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey("buttonDrag_2");
       await CommonFunc.sleep(200);

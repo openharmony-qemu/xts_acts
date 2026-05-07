@@ -49,6 +49,7 @@ ohos_xts_shared_library("jsvmtest") {
     "./jsvmtest/unittests/test_private.cpp",
     "./jsvmtest/unittests/test_promise.cpp",
     "./jsvmtest/unittests/test_proxy.cpp",
+    "./jsvmtest/unittests/test_threshold.cpp",
     "./jsvmtest/unittests/test_trace.cpp",
     "./jsvmtest/unittests/test_trigger_exceptions.cpp",
     "./jsvmtest/unittests/test_trigger_gc.cpp",

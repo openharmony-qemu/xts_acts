@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2025 HiHope Open Source Organization.
+* Copyright (C) 2025-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the 'License');
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -350,7 +350,7 @@ export default function builtinsDoubleThirdPrototypebTest() {
         const caseName = 'builtinsDoubleThirdPrototypebTest1700';
         console.info(`${caseName}, test start`);
         const a = new Double(123.456);
-        expect(a.toFloat()).assertEqual(123.456 as float);
+        expect(a.toFloat()).assertEqual(123.456.toFloat());
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -368,7 +368,7 @@ export default function builtinsDoubleThirdPrototypebTest() {
         const caseName = 'builtinsDoubleThirdPrototypebTest1800';
         console.info(`${caseName}, test start`);
         const a = new Double(-789.123);
-        expect(a.toFloat()).assertEqual(-789.123 as float);
+        expect(a.toFloat()).assertEqual(-789.123.toFloat());
         console.info(`${caseName}, test end`);
         Done();
       })

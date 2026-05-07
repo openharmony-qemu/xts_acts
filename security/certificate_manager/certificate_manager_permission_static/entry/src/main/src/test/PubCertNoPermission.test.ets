@@ -20,9 +20,10 @@ import type common from '@ohos.app.ability.common';
 import certManagerDialog from '@ohos.security.certManagerDialog';
 import deviceInfo from '@ohos.deviceInfo';
 import { GlobalContext } from '../testrunner/OpenHarmonyTestRunner';
+import { canIUse } from '@internal.full.global';
 import hilog from '@ohos.hilog';
-let domain: int = 0x0000;
-let tag: string = 'testTag';
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 let caCert = new Uint8Array([0x30, 0x82, 0x04, 0x31, 0x30, 0x82, 0x03, 0x19, 0xa0, 0x03, 0x02, 0x01, 0x02, 0x02, 0x01, 0x00,
   0x30, 0x0d, 0x06, 0x09, 0x2a, 0x86, 0x48, 0x86, 0xf7, 0x0d, 0x01, 0x01, 0x05, 0x05, 0x00, 0x30,
@@ -157,5 +158,68 @@ export default function pubCertJsAPINoPermissionTestUnit() {
       }
       done();
     });
+	
+	 /**
+     * @tc.name   SUB_Security_CertManager_getUkeyCertificateList_func_Static_0030
+     * @tc.number SUB_Security_CertManager_getUkeyCertificateList_func_Static_0030
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_CertManager_getUkeyCertificateList_func_Static_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_getUkeyCertificateList_func_Static_0030 start');
+      let ukeyProvider: string = 'testProvider'; 
+      let ukeyInfo: certManager.UkeyInfo = { 
+        certPurpose: certManager.CertificatePurpose.PURPOSE_ENCRYPT,
+      }
+      try {
+        certManager.getUkeyCertificateList(ukeyProvider, ukeyInfo);
+      } catch (error) {
+        if(error.code !== 801){
+          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_getUkeyCertificateList_func_Static_0030 Failed  Code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
+        }
+      }
+	    hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_getUkeyCertificateList_func_Static_0030 end');
+      done();
+    });
+	/**
+	 * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_4000
+	 * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_4000
+	 * @tc.desc   import USB key certificate without required permission, return error code 201 on PC device or 801 on non-PC device
+	 * @tc.type   FUNCTION
+	 * @tc.size   MEDIUMTEST
+	 * @tc.level  LEVEL2
+	 */
+	it('SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+	  hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_4000 start');
+	  let keyUri: string = 'oh:t=uk;o=UkeyAlias;u=100;a=20010045';
+	  let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+	  let ukeyInfo: certManager.UkeyInfo = {
+		certPurpose: certManager.CertificatePurpose.PURPOSE_SIGN,
+	  };
+	  if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
+		try {
+		  await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+		  expect(null).assertFail();
+		} catch (err) {
+		  let error: BusinessError = err as BusinessError;
+		  hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_4000 failed. Code: ${error.code}, message: ${error.message}`);
+		  expect(error.code).assertEqual(201);
+		}
+	  } else {
+		try {
+		  await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+		  expect(null).assertFail();
+		} catch (err) {
+		  let error: BusinessError = err as BusinessError;
+		  hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_4000 failed. Code: ${error.code}, message: ${error.message}`);
+		  expect(error.code).assertEqual(801);
+		}
+	  }
+	  hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_4000 end');
+	  done();
+	});
   })
 }

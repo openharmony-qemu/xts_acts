@@ -29,7 +29,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyColorBlendModifier implements AttributeModifier<CommonAttribute> {
+export class MyColorBlendModifier implements AttributeModifier<CommonAttribute> {
   public isChange: boolean = true;
 
   applyNormalAttribute(instance: CommonAttribute): void {

@@ -85,7 +85,7 @@ struct Index {
           .onClick(() => {
             let uiContext = this.getUIContext();
             let promptAction = uiContext.getPromptAction();
-            let contentNode = new ComponentContent(uiContext, wrapBuilder(buildText),
+            let contentNode = new ComponentContent<Object>(uiContext, wrapBuilder(buildText),
             );
             promptAction.openCustomDialogWithController(contentNode, this.dialogController, {
               transition: TransitionEffect.OPACITY.animation({

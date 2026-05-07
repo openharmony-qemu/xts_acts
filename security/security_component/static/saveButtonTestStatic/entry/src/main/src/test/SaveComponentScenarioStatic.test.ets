@@ -88,9 +88,9 @@ export default function saveComponentScenarioStaticTest() {
             if (data && data.length > 0) {
               console.info(`====>${testname} the window data[0].width: ` + data[0].width);
               console.info(`====>${testname} the window data[0].height: ` + data[0].height);
-              startX = endX = Math.floor(data[0].width * (1/2)) as Int;
-              startY = Math.floor(data[0].height * (4/5)) as Int;
-              endY = Math.floor(data[0].height * (1/5)) as Int;
+              startX = endX = Math.floor(data[0].width * (1/2)).toInt();
+              startY = Math.floor(data[0].height * (4/5)).toInt();
+              endY = Math.floor(data[0].height * (1/5)).toInt();
             } else {
               console.info(`====>${testname} failed to obtain all the display objects data is Null`);
               expect(false).assertTrue();
@@ -835,13 +835,52 @@ export default function saveComponentScenarioStaticTest() {
     /**
      * @tc.name   Test_Security_SaveButton_ScenariosStatic_1000
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveControls_ScenariosStatic_1000
-     * @tc.desc   Test SecurityComponent fontWeight set 400 and Authorization is successful
+     * @tc.desc   Test SecurityComponent fontWeight set '' and Authorization is successful
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
      it('Test_Security_SaveButton_ScenariosStatic_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_1000';
+      console.info(`====>${TCNAME} START====`);
+      try {
+        let data: Record<string, RecordData> = {
+          'fontWeight_S': '',
+        }
+        let eventData:events_emitter.EventData = {};
+        eventData.data = data;
+        let innerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit`);
+        events_emitter.emit(innerEvent, eventData);
+      } catch (err) {
+        err = err as BusinessError;
+        console.info(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await UtilsTest.msSleep(1000);
+      let strJson: string = inspector.getInspectorByKey('keySave2');
+      console.info(`====>${TCNAME} get strJson is: ` + JSON.stringify(strJson));
+      let obj = JSON.parseJsonElement(strJson);
+      console.info(`====>${TCNAME} get fontWeight is: ` + JSON.stringify(obj.getElement('$attrs').getString('fontWeight')));
+      expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Medium');
+      await UtilsTest.msSleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, driver);
+    });
+
+    /**
+     * @tc.name   Test_Security_SaveButton_ScenariosStatic_1100
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveControls_ScenariosStatic_1100
+     * @tc.desc   Test SecurityComponent fontWeight set 400 and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+     it('Test_Security_SaveButton_ScenariosStatic_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_1100';
       console.info(`====>${TCNAME} START====`);
       try {
         let data: Record<string, RecordData> = {
@@ -871,15 +910,15 @@ export default function saveComponentScenarioStaticTest() {
     });
 
     /**
-     * @tc.name   Test_Security_SaveButton_ScenariosStatic_1100
-     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveControls_ScenariosStatic_1100
+     * @tc.name   Test_Security_SaveButton_ScenariosStatic_1200
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_SaveControls_ScenariosStatic_1200
      * @tc.desc   Test SecurityComponent fontWeight set 'lighter' and Authorization is successful
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-     it('Test_Security_SaveButton_ScenariosStatic_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_1100';
+     it('Test_Security_SaveButton_ScenariosStatic_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_1200';
       console.info(`====>${TCNAME} START====`);
       try {
         let data: Record<string, RecordData> = {

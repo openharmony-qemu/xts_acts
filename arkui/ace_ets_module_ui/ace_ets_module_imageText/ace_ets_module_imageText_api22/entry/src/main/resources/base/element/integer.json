@@ -6,6 +6,10 @@
     },{
       "name": "minFontScale",
       "value": 1
+    },
+    {
+      "name": "my_color_int",
+      "value": 2130771712
     }
   ]
 }

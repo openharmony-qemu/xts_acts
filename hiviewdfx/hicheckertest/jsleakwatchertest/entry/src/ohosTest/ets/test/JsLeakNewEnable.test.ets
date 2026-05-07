@@ -64,7 +64,7 @@ export default function JsLeakWatcherNewTest() {
         jsLeakWatcher.watch(obj, 'test_watch');
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0700 test_' + obj.toString());
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0700 wait start')
-        await asyncSleep(40000);
+        await asyncSleep(115000);
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0700 wait end')
         let checkstr:string = jsLeakWatcher.check();
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0700 checkstr' + checkstr)
@@ -327,7 +327,7 @@ export default function JsLeakWatcherNewTest() {
         jsLeakWatcher.watch(obj,'test_watch');
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_1600 test_' + obj.toString());
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_1600 wait start')
-        await asyncSleep(35000);
+        await asyncSleep(95000);
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_1600 wait end')
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_1600 leakListFileName check: ' + leakFilePath[0]);
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_1600 heapDumpFileName check: ' + leakFilePath[1]);
@@ -365,7 +365,7 @@ export default function JsLeakWatcherNewTest() {
         jsLeakWatcher.watch(obj,'test_watch');
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_1700 test_' + obj.toString());
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_1700 wait start')
-        await asyncSleep(35000);
+        await asyncSleep(95000);
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_1700 wait end')
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_1700 leakListFileName check: ' + leakFilePath[0]);
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_1700 heapDumpFileName check: ' + leakFilePath[1]);
@@ -403,7 +403,7 @@ export default function JsLeakWatcherNewTest() {
         jsLeakWatcher.watch(obj,'test_watch');
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_1800 test_' + obj.toString());
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_1800 wait start')
-        await asyncSleep(35000);
+        await asyncSleep(95000);
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_1800 wait end')
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_1800 leakListFileName check: ' + leakFilePath[0]);
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_1800 heapDumpFileName check: ' + leakFilePath[1]);
@@ -441,7 +441,7 @@ export default function JsLeakWatcherNewTest() {
         jsLeakWatcher.watch(obj,'test_watch');
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_1900 test_' + obj.toString());
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_1900 wait start')
-        await asyncSleep(35000);
+        await asyncSleep(95000);
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_1900 wait end')
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_1900 leakListFileName check: ' + leakFilePath[0]);
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_1900 heapDumpFileName check: ' + leakFilePath[1]);
@@ -479,7 +479,7 @@ export default function JsLeakWatcherNewTest() {
         jsLeakWatcher.watch(obj,'test_watch');
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_2000 test_' + obj.toString());
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_2000 wait start')
-        await asyncSleep(35000);
+        await asyncSleep(95000);
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_2000 wait end')
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_2000 leakListFileName check: ' + leakFilePath[0]);
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_2000 heapDumpFileName check: ' + leakFilePath[1]);
@@ -517,7 +517,7 @@ export default function JsLeakWatcherNewTest() {
         jsLeakWatcher.watch(obj,'test_watch');
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_2100 test_' + obj.toString());
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_2100 wait start')
-        await asyncSleep(35000);
+        await asyncSleep(95000);
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_2100 wait end')
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_2100 leakListFileName check: ' + leakFilePath[0]);
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_2100 heapDumpFileName check: ' + leakFilePath[1]);

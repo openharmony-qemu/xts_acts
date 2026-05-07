@@ -21,6 +21,7 @@
     "mainElement": "TestAbility",
     "deviceTypes": [],
     "deliveryWithInstall": true,
+    "srcEntry": "./ets/Application/MyAbilityStage.ts",
     "installationFree": false,
     "pages": "$profile:test_pages",
     "abilities": [
@@ -81,6 +82,14 @@
         "label": "$string:EntryEmbeddedUIExtAbility_label",
         "type": "embeddedUI"
       },
+    ],
+    "requestPermissions":[
+      {
+        "name": "ohos.permission.SET_WIFI_INFO"
+      },
+      {
+        "name": "ohos.permission.MANAGE_WIFI_CONNECTION"
+      }
     ]
   }
 }

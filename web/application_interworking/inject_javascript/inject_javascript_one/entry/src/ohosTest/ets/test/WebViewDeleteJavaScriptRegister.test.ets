@@ -47,7 +47,7 @@ export default function ActsAceDeleteJavaScriptRegister() {
       } catch (err) {
         console.error('push index page error:' + err);
       }
-      await driver.waitForComponent(ON.id("deleteJavaScriptRegister_withOutRefresh"), 10000);
+      await Utils.waitForComponent(driver, 'deleteJavaScriptRegister_withOutRefresh');
       done()
     });
     beforeEach(async (done: Function) => {

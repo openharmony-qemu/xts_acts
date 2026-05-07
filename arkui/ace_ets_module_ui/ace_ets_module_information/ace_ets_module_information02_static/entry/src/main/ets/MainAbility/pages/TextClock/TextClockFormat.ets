@@ -29,28 +29,28 @@ import { LevelOrder, LevelMode } from '@ohos.promptAction'
 import { UIContext } from '@ohos.arkui.UIContext'
 
 @Observed
-class TextClockModifier1 implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier1 implements AttributeModifier<TextClockAttribute> {
   applyNormalAttribute(instance: TextClockAttribute): void {
     instance.format('aa hh:mm:ss')
   }
 }
 
 @Observed
-class TextClockModifier2 implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier2 implements AttributeModifier<TextClockAttribute> {
   applyNormalAttribute(instance: TextClockAttribute): void {
     instance.format($r('app.string.format'))
   }
 }
 
 @Observed
-class TextClockModifier4 implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier4 implements AttributeModifier<TextClockAttribute> {
   applyNormalAttribute(instance: TextClockAttribute): void {
     instance.format(undefined)
   }
 }
 
 @Observed
-class TextClockModifier5 implements AttributeModifier<TextClockAttribute> {
+export class TextClockModifier5 implements AttributeModifier<TextClockAttribute> {
   applyNormalAttribute(instance: TextClockAttribute): void {
     instance.format('yyyy-M-d')
   }

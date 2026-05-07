@@ -20,6 +20,7 @@ import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { Driver, ON } from '@ohos.UiTest';
 import webview from '@ohos.web.webview';
+const driver: Driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 export default function webOnPermissionRequest() {
@@ -36,13 +37,12 @@ export default function webOnPermissionRequest() {
         if (!("WebDoubleInnerNucleus" == pages.name)) {
           console.info("get WebDoubleInnerNucleus state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
+          await driver.waitForComponent(ON.id("WebviewDoubleInnerNucleus"),10000);
           console.info("push WebDoubleInnerNucleus page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebDoubleInnerNucleus page error: " + err);
       }
-      let driver: Driver = Driver.create();
-      await driver.waitForComponent(ON.id("WebviewDoubleInnerNucleus"),10000);
       done()
     });
     beforeEach(async (done: Function) => {
@@ -55,29 +55,6 @@ export default function webOnPermissionRequest() {
       done();
     })
 
-
-    // /*
-    //   * @tc.number      : SUB_ACE_WEB_EMITWEBDOUBLEINNERNUCLEUS_API_0001
-    //   * @tc.name        : emitWebDoubleInnerNucleus002
-    //   * @tc.desc        : emitWebDoubleInnerNucleus002
-    //   * @tc.size        : MediumTest
-    //   * @tc.type        : Function
-    //   * @tc.level       : Level 0
-    //   */
-    /**
-     * @tc.name   emitWebDoubleInnerNucleus002
-     * @tc.number emitWebDoubleInnerNucleus002
-     * @tc.desc   emitWebDoubleInnerNucleus002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    // it('emitWebDoubleInnerNucleus002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-    //   Utils.emitEvent("emitWebDoubleInnerNucleus002", 10)
-    //   Utils.registerEvent("emitWebDoubleInnerNucleus002", true, 20250901, done);
-    //   sendEventByKey('WebviewDoubleInnerNucleus', 10, '');
-    // })
-
     /**
      * @tc.name   emitWebDoubleInnerNucleus001
      * @tc.number SUB_ACE_WEB_EMITWEBDOUBLEINNERNUCLEUS_API_0001
@@ -88,7 +65,7 @@ export default function webOnPermissionRequest() {
      */
     it('emitWebDoubleInnerNucleus001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebDoubleInnerNucleus001", 162000)
-      Utils.registerEvent("emitWebDoubleInnerNucleus001", webview.ArkWebEngineVersion.M132, 162010, done);
+      Utils.registerEvent("emitWebDoubleInnerNucleus001", webview.ArkWebEngineVersion.M144, 162010, done);
       sendEventByKey('WebviewDoubleInnerNucleus', 10, '');
     })
 

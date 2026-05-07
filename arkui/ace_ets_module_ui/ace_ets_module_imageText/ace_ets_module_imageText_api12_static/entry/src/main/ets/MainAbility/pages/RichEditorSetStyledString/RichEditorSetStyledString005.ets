@@ -72,7 +72,7 @@ struct RichEditorSetStyledString005 {
     fontSize: LengthMetrics.vp(30),
     fontStyle: FontStyle.Normal
   }) as TextStyle
-  fontStyle1: TextStyle = { fontColor: Color.Blue } as TextStyle;
+  fontStyle1: TextStyle = new TextStyle({ fontColor: Color.Blue });
   fontStyle2: TextStyle = new TextStyle({
     fontWeight: FontWeight.Bolder,
     fontFamily: 'Arial',
@@ -92,9 +92,9 @@ struct RichEditorSetStyledString005 {
 
   onPageShow() {
     console.info('aboutToAppear initial imagePixelMap');
-    waitForCompletion(async ()=>{
+    (async ()=>{
       this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.icon'));
-    })
+    })().awaitSync()
   }
 
   private async getPixmapFromMedia(resource: Resource): Promise<image.PixelMap> {

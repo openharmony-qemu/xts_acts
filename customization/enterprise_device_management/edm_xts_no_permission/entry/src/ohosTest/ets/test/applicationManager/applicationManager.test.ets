@@ -32,6 +32,7 @@ import applicationManager from '@ohos.enterprise.applicationManager';
 import Want from '@ohos.app.ability.Want';
 import sysDeviceInfo from '@ohos.deviceInfo';
 import common from '@ohos.enterprise.common';
+import { connection, statistics } from '@kit.NetworkKit';
 
 export default function applicationManagerTest() {
   describe('applicationManager_test', () => {
@@ -442,11 +443,7 @@ export default function applicationManagerTest() {
         applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 201).assertTrue();
-        }
+        expect(Number(error.code) === 201).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -474,11 +471,7 @@ export default function applicationManagerTest() {
         applicationManager.removeFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 201).assertTrue();
-        }
+        expect(Number(error.code) === 201).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -499,11 +492,7 @@ export default function applicationManagerTest() {
         applicationManager.getFreezeExemptedApps(SELFWANT);
         expect(false).assertTrue();
       } catch (error) {
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 201).assertTrue();
-        }
+        expect(Number(error.code) === 201).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
@@ -895,6 +884,216 @@ export default function applicationManagerTest() {
         expect(error.code == 201).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addAllowedNotificationBundles_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDNOTIFICATIONBUNDLES_0100
+     * @tc.desc   test addAllowedNotificationBundles method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addAllowedNotificationBundles_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        applicationManager.addAllowedNotificationBundles(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 201).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeAllowedNotificationBundles_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDNOTIFICATIONBUNDLES_0100
+     * @tc.desc   test removeAllowedNotificationBundles method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeAllowedNotificationBundles_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        applicationManager.removeAllowedNotificationBundles(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 201).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_getAllowedNotificationBundles_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETALLOWEDNOTIFICATIONBUNDLES_0100
+     * @tc.desc   test getAllowedNotificationBundles method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getAllowedNotificationBundles_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        applicationManager.getAllowedNotificationBundles(SELFWANT, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 201).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryTrafficStats_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYTRAFFICSTATS_0100
+     * @tc.desc   test queryTrafficStats method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryTrafficStats_0100", Level.LEVEL2, async (done: Function) => {
+      let networkInfo: statistics.NetworkInfo = {
+        type: connection.NetBearType.BEARER_CELLULAR,
+        startTime: 100,
+        endTime: 200,
+        simId: 1
+      };
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await applicationManager.queryTrafficStats(SELFWANT, SELFHAPNAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID, networkInfo).then(()=>{
+        expect(false).assertTrue();
+      }).catch ((error: BusinessError)=> {
+        expect(Number(error.code) === 201).assertTrue();
+      }).finally(async () => {
+        await adminManager.disableAdmin(SELFWANT);
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   test_queryBundleStatsInfos_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_QUERYBUNDLESTATSINFOS_0100
+     * @tc.desc   test queryBundleStatsInfos method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_queryBundleStatsInfos_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        let startTime: number = 0;
+        let endTime: number = Date.now();
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        applicationManager.queryBundleStatsInfos(SELFWANT, startTime, endTime, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 201).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_addHideLauncherIcon_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDHIDELAUNCHERICON_NO_PERMISSION_JS_0100
+     * @tc.desc   test addHideLauncherIcon with permission denied 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_addHideLauncherIcon_0100", Level.LEVEL2, async (done: Function) => {
+      const TEST_BUNDLE_NAMES: Array<string> = ['com.test.bundle1', 'com.test.bundle2'];
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.addHideLauncherIcon(SELFWANT, TEST_BUNDLE_NAMES);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code === 801).assertTrue();
+        } else {
+          expect(error.code === 201).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_removeHideLauncherIcon_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEHIDELAUNCHERICON_NO_PERMISSION_JS_0100
+     * @tc.desc   test removeHideLauncherIcon with permission denied 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_removeHideLauncherIcon_0100", Level.LEVEL2, async (done: Function) => {
+      const TEST_BUNDLE_NAMES: Array<string> = ['com.test.bundle1', 'com.test.bundle2'];
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.removeHideLauncherIcon(SELFWANT, TEST_BUNDLE_NAMES);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code === 801).assertTrue();
+        } else {
+          expect(error.code === 201).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_getHideLauncherIcon_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETHIDELAUNCHERICON_NO_PERMISSION_JS_0100
+     * @tc.desc   test getHideLauncherIcon with permission denied 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getHideLauncherIcon_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.getHideLauncherIcon(SELFWANT);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code === 801).assertTrue();
+        } else {
+          expect(error.code === 201).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_getApplicationWindowStates_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETAPPLICATIONWINDOWSTATES_NO_PERMISSION_JS_0100
+     * @tc.desc   test getApplicationWindowStates with permission denied 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getApplicationWindowStates_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.getApplicationWindowStates(SELFWANT, TEST_BUNDLENAME, DEFAULT_APP_INDEX);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === 201).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
     })

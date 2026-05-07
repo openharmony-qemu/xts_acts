@@ -52,7 +52,7 @@ export default function getType02Test() {
       const TAG = 'testValueGetType80001';
       try {
         const floatType: FloatType = FloatType.REF;
-        const floatValue = new FloatValue(floatType, 3.14159 as float);
+        const floatValue = new FloatValue(floatType, 3.14159.toFloat());
         const result = floatValue.getType();
         expect(typeof result).assertEqual(typeof floatType);
       } catch (err) {
@@ -73,7 +73,7 @@ export default function getType02Test() {
       const TAG = 'testValueGetType80002';
       try {
         const floatType: FloatType = FloatType.REF;
-        const floatValue = new FloatValue(floatType, -2.71828 as float);
+        const floatValue = new FloatValue(floatType, -2.71828.toFloat());
         const result = floatValue.getType();
         expect(typeof result).assertEqual(typeof floatType);
       } catch (err) {
@@ -94,7 +94,7 @@ export default function getType02Test() {
       const TAG = 'testValueGetType80003';
       try {
         const floatType: FloatType = FloatType.REF;
-        const floatValue = new FloatValue(floatType, 0.0 as float);
+        const floatValue = new FloatValue(floatType, 0.0.toFloat());
         const result = floatValue.getType();
         expect(typeof result).assertEqual(typeof floatType);
       } catch (err) {
@@ -115,7 +115,7 @@ export default function getType02Test() {
       const TAG = 'testValueGetType80004';
       try {
         const floatType: FloatType = FloatType.REF;
-        const floatValue = new FloatValue(floatType, Number.MAX_VALUE as float);
+        const floatValue = new FloatValue(floatType, Number.MAX_VALUE.toFloat());
         const result = floatValue.getType();
         expect(typeof result).assertEqual(typeof floatType);
       } catch (err) {
@@ -136,7 +136,7 @@ export default function getType02Test() {
       const TAG = 'testValueGetType80005';
       try {
         const floatType: FloatType = FloatType.REF;
-        const floatValue = new FloatValue(floatType, Number.MIN_VALUE as float);
+        const floatValue = new FloatValue(floatType, Number.MIN_VALUE.toFloat());
         const result = floatValue.getType();
         expect(typeof result).assertEqual(typeof floatType);
       } catch (err) {
@@ -157,7 +157,7 @@ export default function getType02Test() {
       const TAG = 'testValueGetType80006';
       try {
         const floatType: FloatType = FloatType.REF;
-        const floatValue = new FloatValue(floatType, Number.NaN as float);
+        const floatValue = new FloatValue(floatType, Number.NaN.toFloat());
         const result = floatValue.getType();
         expect(typeof result).assertEqual(typeof floatType);
       } catch (err) {
@@ -178,7 +178,7 @@ export default function getType02Test() {
       const TAG = 'testValueGetType80007';
       try {
         const floatType: FloatType = FloatType.REF;
-        const floatValue = new FloatValue(floatType, Number.POSITIVE_INFINITY as float);
+        const floatValue = new FloatValue(floatType, Number.POSITIVE_INFINITY.toFloat());
         const result = floatValue.getType();
         expect(typeof result).assertEqual(typeof floatType);
       } catch (err) {
@@ -199,7 +199,7 @@ export default function getType02Test() {
       const TAG = 'testValueGetType80008';
       try {
         const floatType: FloatType = FloatType.REF;
-        const floatValue = new FloatValue(floatType, Number.NEGATIVE_INFINITY as float);
+        const floatValue = new FloatValue(floatType, Number.NEGATIVE_INFINITY.toFloat());
         const result = floatValue.getType();
         expect(typeof result).assertEqual(typeof floatType);
       } catch (err) {
@@ -220,7 +220,7 @@ export default function getType02Test() {
       const TAG = 'testValueGetType80009';
       try {
         const floatType: FloatType = FloatType.REF;
-        const floatValue = new FloatValue(floatType, 1.618 as float);
+        const floatValue = new FloatValue(floatType, 1.618.toFloat());
         const firstCall = floatValue.getType();
         const secondCall = floatValue.getType();
         expect(typeof firstCall).assertEqual(typeof secondCall);
@@ -2555,7 +2555,7 @@ export default function getType02Test() {
       const TAG = 'testValueGetType80011';
       try {
         const floatType: FloatType = FloatType.REF;
-        const floatValue = new FloatValue(floatType, 0.0 as float);
+        const floatValue = new FloatValue(floatType, 0.0.toFloat());
         const result = floatValue.getType();
         expect(result != null).assertTrue();
       } catch (err) {

@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2025 Huawei Device Co., Ltd.
+* Copyright (c) 2025-2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -18,7 +18,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 let g_handle: dataShare.DataProxyHandle | undefined = undefined;
 let g_config: dataShare.DataProxyConfig = {
-  type: 0 as dataShare.DataProxyType.SHARED_CONFIG
+  type: dataShare.DataProxyType.SHARED_CONFIG
 }
 let testUriStr1 = "datashareproxy://com.example.myapplication/staticConfiguration1";
 let testUriStr2 = "datashareproxy://com.example.myapplication/staticConfiguration2";
@@ -622,7 +622,8 @@ export default function dataShareStaticConfigGetTest() {
           results.forEach((result) => {
             console.info(TAG + `[DataShareProvider] URI:${result.uri},Value:${result.value},Result:${result.result},AllowList:${result.allowList}`);
             console.log(TAG + "[DataShareProvider] get value length is:" + result.value?.toString().length);
-            expect(result.result).assertEqual(1);
+            // static proxyData value allows 100K, but config.maxValueLength limits to 4K -> return OVER_LIMIT
+            expect(result.result).assertEqual(3);
           });
         }).catch((err: BusinessError) => {
           console.error(TAG + "[DataShareProvider] get failed.err =" + JSON.stringify(err));

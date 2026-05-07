@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,7 +35,7 @@ import {
 } from '@ohos.arkui.stateManagement'
 
 @ObservedV2
-class Monitor0300Person {
+export class Monitor0300Person {
   @Trace name: string
   @Trace age: int
 
@@ -46,7 +46,7 @@ class Monitor0300Person {
 }
 
 @ObservedV2
-class Monitor0300Class {
+export class Monitor0300Class {
   @Trace person: Monitor0300Person
   @Trace nameChange: string = 'Tom'
   @Trace ageChange: int = 23

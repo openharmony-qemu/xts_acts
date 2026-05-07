@@ -683,5 +683,30 @@ describe("VibratorJsTest_misc_4", function () {
             console.info(TAG + " TransientParam error: " + JSON.stringify(error));
         }
     })
+
+    /**
+     * @tc.name   SUB_SensorSystem_Vibrator_Enumeration_0200
+     * @tc.number SUB_SensorSystem_Vibrator_Enumeration_0200
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_SensorSystem_Vibrator_Enumeration_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+        function vibrateCallback(error) {
+            if (error) {
+                console.info('SUB_SensorSystem_Vibrator_Enumeration_0200  stop error');
+                expect(sensortempcode).assertTrue();
+            } else {
+                console.info('SUB_SensorSystem_Vibrator_Enumeration_0200  stop success');
+                expect(false).assertTrue();
+            }
+            setTimeout(() => {
+                done();
+            }, 500);
+        }
+        vibrator.stopVibration(vibrator.VibratorStopMode.VIBRATOR_STOP_MODE_PRESET, vibrateCallback);
+    })
+
 })
 }

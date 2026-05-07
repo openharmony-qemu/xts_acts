@@ -95,7 +95,7 @@ function getMdLen(algName: string, modeName: string): mdData {
   if (ret) {
     for (let mdName of mdLen) {
       if(mdName[0] == algName) {
-        let size: int = Number(mdName[1]) as int;
+        let size: int = Number(mdName[1]).toInt();
         return {isExtract: true, mdSize: size} as mdData;
       }
     }
@@ -110,11 +110,14 @@ let mdLen = [
   ["SHA256", "32"],
   ["SHA384", "48"],
   ["SHA512", "64"],
+  ["SHA3-256", "32"],
+ 	["SHA3-384", "48"],
+ 	["SHA3-512", "64"],
   ["SM3", "32"],
 ]
 
 let HKDF_DIGEST_SPEC =[
-  "SHA1", "SHA224", "SHA256", "SHA384", "SHA512", "SM3"
+  "SHA1", "SHA224", "SHA256", "SHA384", "SHA512", "SHA3-256", "SHA3-384", "SHA3-512", "SM3"
 ]
 
 let HKDF_MODE_SPEC = [

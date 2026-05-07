@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -105,8 +105,8 @@ it('search_gesture_static_001', Level.LEVEL0, async (done: () => void): Promise<
         console.info(`[search_gesture_001] caretOffsetX is:${obj.getElement('$attrs').getString('content')}`);
         let caretRelativeX = parseInt(obj.getElement('$attrs').getString('content'));
         let searchRect = CommonFunc.getComponentRectOnScreen('SearchGesture');
-        let clickX = Math.round(searchRect.left + caretRelativeX + Number.parseInt(Number(AppStorage.get<UIContext>('uiContext')!.vp2px(searchIconLeftSpace + searchIconRightSpace + defaultSearchIconWidth)).toFixed(2))) as int;
-        let clickY = Math.round((searchRect.bottom + searchRect.top) / 2) as int;
+        let clickX = Math.round(searchRect.left + caretRelativeX + Number.parseInt(Number(AppStorage.get<UIContext>('uiContext')!.vp2px(searchIconLeftSpace + searchIconRightSpace + defaultSearchIconWidth)).toFixed(2))).toInt();
+        let clickY = Math.round((searchRect.bottom + searchRect.top) / 2).toInt();
         await (driver.click(clickX, clickY) as Promise<void>);
         await CommonFunc.sleep(1000);
 
@@ -154,8 +154,8 @@ it('SUB_ACE_UI_SEARCH_GESTURE_static_0200', Level.LEVEL0, async (done: () => voi
         console.info(`[search_gesture_002] caretOffsetX is:${obj.getElement('$attrs').getString('content')}`);
         let caretRelativeX = parseInt(obj.getElement('$attrs').getString('content'));
         let searchRect = CommonFunc.getComponentRectOnScreen('SearchGesture');
-        let clickX = Math.round(searchRect.left + caretRelativeX + (Number.parseInt(Number(AppStorage.get<UIContext>('uiContext')!.vp2px(searchIconLeftSpace + searchIconRightSpace + defaultSearchIconWidth)).toFixed(2))) - AppStorage.get<UIContext>('uiContext')!.vp2px(10)) as int;
-        let clickY = Math.round((searchRect.bottom + searchRect.top) / 2) as int;
+        let clickX = Math.round(searchRect.left + caretRelativeX + (Number.parseInt(Number(AppStorage.get<UIContext>('uiContext')!.vp2px(searchIconLeftSpace + searchIconRightSpace + defaultSearchIconWidth)).toFixed(2))) - AppStorage.get<UIContext>('uiContext')!.vp2px(10)).toInt();
+        let clickY = Math.round((searchRect.bottom + searchRect.top) / 2).toInt();
         await (driver.longClick(clickX, clickY) as Promise<void>);
         await CommonFunc.sleep(1000);
         let selectAllButton1 = await driver.findComponent(ON.text('全选'));
@@ -169,7 +169,7 @@ it('SUB_ACE_UI_SEARCH_GESTURE_static_0200', Level.LEVEL0, async (done: () => voi
         console.info(`[search_gesture_002] first step Search selectOverlay obj2 is:${strJson2}`);
 
         //second step: longClick on an empty space and check
-        let clickX2 = Math.round(searchRect.left + caretRelativeX + (Number.parseInt(Number(AppStorage.get<UIContext>('uiContext')!.vp2px(searchIconLeftSpace + searchIconRightSpace + defaultSearchIconWidth)).toFixed(2))) + AppStorage.get<UIContext>('uiContext')!.vp2px(2)) as int;
+        let clickX2 = Math.round(searchRect.left + caretRelativeX + (Number.parseInt(Number(AppStorage.get<UIContext>('uiContext')!.vp2px(searchIconLeftSpace + searchIconRightSpace + defaultSearchIconWidth)).toFixed(2))) + AppStorage.get<UIContext>('uiContext')!.vp2px(2)).toInt();
         await (driver.longClick(clickX2, clickY) as Promise<void>);
         await CommonFunc.sleep(1000);
         let strJson3 = inspector.getInspectorByKey('SearchGesture');
@@ -272,7 +272,7 @@ it('SUB_ACE_UI_SEARCH_GESTURE_static_0400', Level.LEVEL2, async (done: () => voi
         //third step: move mouse out searchComponent and check mouse state
         let searchRect = await searchComponent.getBounds();
         await driver.mouseMoveTo({
-          x: (point.x as int), y: Math.round(searchRect.bottom + AppStorage.get<UIContext>('uiContext')!.vp2px(2)) as int
+          x: (point.x as int), y: Math.round(searchRect.bottom + AppStorage.get<UIContext>('uiContext')!.vp2px(2)).toInt()
         });
         await CommonFunc.sleep(300);
         let focusState2 = await (searchComponent.isFocused() as Promise<boolean>);
@@ -308,8 +308,8 @@ it('SUB_ACE_UI_SEARCH_GESTURE_static_0500', Level.LEVEL2, async (done: () => voi
       await driver.triggerKey(2047)
       await CommonFunc.sleep(500);
       let searchRect = await (searchComponent?.getBounds() as Promise<Rect>);
-      let clickX = Math.round(searchRect.left + (Number.parseInt(Number(AppStorage.get<UIContext>('uiContext')!.vp2px(searchIconLeftSpace + searchIconRightSpace + defaultSearchIconWidth)).toFixed(2)))) as int;
-      let clickY = Math.round((searchRect.top + searchRect.bottom) / 2) as int;
+      let clickX = Math.round(searchRect.left + (Number.parseInt(Number(AppStorage.get<UIContext>('uiContext')!.vp2px(searchIconLeftSpace + searchIconRightSpace + defaultSearchIconWidth)).toFixed(2)))).toInt();
+      let clickY = Math.round((searchRect.top + searchRect.bottom) / 2).toInt();
       await driver.click(clickX, clickY)
       let button = await driver.findComponent(ON.id('GetCaret'));
       await (button?.click() as Promise<void>);

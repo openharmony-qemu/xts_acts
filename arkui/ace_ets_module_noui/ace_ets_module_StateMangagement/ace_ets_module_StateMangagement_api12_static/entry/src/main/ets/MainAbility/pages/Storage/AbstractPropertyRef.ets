@@ -42,7 +42,7 @@ import common from '@ohos.app.ability.common';
 @Entry
 @Component
 struct AbstractPropertyRef {
-  @State refA1Value?: AbstractProperty<number> = AppStorage.ref('AbstractPropertyRefTest') as AbstractProperty<number>
+  @State refA1Value?: AbstractProperty<number> = AppStorage.ref<number>('AbstractPropertyRefTest') as AbstractProperty<number>
   static { AppStorage.setOrCreate('AbstractPropertyRefTest', 52.0) }
   aboutToAppear() {
     let uiContext = this.getUIContext();
@@ -70,6 +70,13 @@ struct AbstractPropertyRef {
         .height('5%')
         .onClick((e: ClickEvent) => {
           let isClear = AppStorage.clear()
+          let uiContext = this.getUIContext();
+          try {
+            let router = uiContext.getRouter();
+            AppStorage.setOrCreate<Router>('router', router);
+          } catch (error) {
+            console.log('error ' + error);
+          }
           console.info('AbstractPropertyRef clear is ' + String(isClear))
         })
     }

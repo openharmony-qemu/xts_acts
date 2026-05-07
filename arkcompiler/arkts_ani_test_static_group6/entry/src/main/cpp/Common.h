@@ -81,6 +81,7 @@ ani_boolean GetClsData(ani_env *env, ani_object *objectResult, ani_class *outCls
         OH_LOG_INFO(LOG_APP, " Class_CallStaticMethod_Ref Failed");
         return ANI_FALSE;
     }
+    OH_LOG_INFO(LOG_APP, " FindClass success!!!!!!!!!!!!!!!!");
 
     *objectResult = static_cast<ani_object>(ref);
     *outCls = cls;

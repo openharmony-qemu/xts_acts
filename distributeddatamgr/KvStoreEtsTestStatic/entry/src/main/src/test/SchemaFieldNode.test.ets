@@ -130,7 +130,7 @@ export default function SchemaFieldNode(){
         options.kvStoreType = factory.KVStoreType.SINGLE_VERSION;
         options.schema = schema;
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
+        await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
           kvStore = store;
           console.info(TAG + 'SUB_SchemaFieldNode_STRING_0100 getKVStore success');
           expect(store != null).assertTrue();
@@ -193,7 +193,7 @@ export default function SchemaFieldNode(){
         options.kvStoreType = factory.KVStoreType.SINGLE_VERSION;
         options.schema = schema;
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
+        await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
           kvStore = store;
           console.info(TAG + 'SUB_SchemaFieldNode_STRING_0200 getKVStore success');
           expect(store != null).assertTrue();
@@ -256,7 +256,7 @@ export default function SchemaFieldNode(){
         options.kvStoreType = factory.KVStoreType.SINGLE_VERSION;
         options.schema = schema;
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
+        await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
           kvStore = store;
           console.info(TAG + 'SUB_SchemaFieldNode_STRING_0300 getKVStore success');
           expect(store != null).assertTrue();
@@ -320,7 +320,7 @@ export default function SchemaFieldNode(){
         options.kvStoreType = factory.KVStoreType.SINGLE_VERSION;
         options.schema = schema;
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
+        await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
           kvStore = store;
           console.info(TAG + 'SUB_SchemaFieldNode_STRING_0400 getKVStore success');
           expect(store != null).assertTrue();
@@ -383,7 +383,7 @@ export default function SchemaFieldNode(){
         options.kvStoreType = factory.KVStoreType.SINGLE_VERSION;
         options.schema = schema;
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
+        await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
           kvStore = store;
           console.info(TAG + 'SUB_SchemaFieldNode_STRING_0500 getKVStore success');
           expect(store != null).assertTrue();
@@ -446,7 +446,7 @@ export default function SchemaFieldNode(){
         options.kvStoreType = factory.KVStoreType.SINGLE_VERSION;
         options.schema = schema;
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
+        await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
           kvStore = store;
           console.info(TAG + 'SUB_SchemaFieldNode_STRING_0600 getKVStore success');
           expect(store != null).assertTrue();
@@ -509,7 +509,7 @@ export default function SchemaFieldNode(){
         options.kvStoreType = factory.KVStoreType.SINGLE_VERSION;
         options.schema = schema;
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
+        await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
           kvStore = store;
           console.info(TAG + 'SUB_SchemaFieldNode_STRING_0700 getKVStore success');
           expect(store != null).assertTrue();
@@ -568,7 +568,7 @@ export default function SchemaFieldNode(){
         options.kvStoreType = factory.KVStoreType.SINGLE_VERSION;
         options.schema = schema;
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
+        await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
           kvStore = store;
           console.info(TAG + 'SUB_SchemaFieldNode_STRING_0800 getKVStore success');
           expect(store != null).assertTrue();
@@ -627,7 +627,7 @@ export default function SchemaFieldNode(){
         options.kvStoreType = factory.KVStoreType.SINGLE_VERSION;
         options.schema = schema;
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
+        await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
           kvStore = store;
           console.info(TAG + 'SUB_SchemaFieldNode_STRING_0900 getKVStore success');
           expect(null).assertFail();
@@ -672,7 +672,7 @@ export default function SchemaFieldNode(){
         options.kvStoreType = factory.KVStoreType.SINGLE_VERSION;
         options.schema = schema;
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
+        await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
           kvStore = store;
           console.info(TAG + 'SUB_SchemaFieldNode_DOUBLE_0100 getKVStore success');
           expect(store != null).assertTrue();
@@ -736,7 +736,7 @@ export default function SchemaFieldNode(){
         options.kvStoreType = factory.KVStoreType.SINGLE_VERSION;
         options.schema = schema;
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
+        await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
           kvStore = store;
           console.info(TAG + 'SUB_SchemaFieldNode_DOUBLE_0200 getKVStore success');
           expect(null).assertFail();
@@ -783,7 +783,7 @@ export default function SchemaFieldNode(){
         options.kvStoreType = factory.KVStoreType.SINGLE_VERSION;
         options.schema = schema;
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
+        await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
           kvStore = store;
           console.info(TAG + 'SUB_SchemaFieldNode_DOUBLE_0300 getKVStore success');
           expect(null).assertFail();
@@ -829,7 +829,7 @@ export default function SchemaFieldNode(){
         options.kvStoreType = factory.KVStoreType.SINGLE_VERSION;
         options.schema = schema;
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
+        await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
           kvStore = store;
           console.info(TAG + 'SUB_SchemaFieldNode_DOUBLE_0400 getKVStore success');
           expect(null).assertFail();
@@ -873,7 +873,7 @@ export default function SchemaFieldNode(){
         options.kvStoreType = factory.KVStoreType.SINGLE_VERSION;
         options.schema = schema;
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
+        await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
           kvStore = store;
           console.info(TAG + 'SUB_SchemaFieldNode_DOUBLE_0500 getKVStore success');
           expect(null).assertFail();
@@ -920,7 +920,7 @@ export default function SchemaFieldNode(){
         options.kvStoreType = factory.KVStoreType.SINGLE_VERSION;
         options.schema = schema;
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
+        await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
           kvStore = store;
           console.info(TAG + 'SUB_SchemaFieldNode_BOOLEAN_0100 getKVStore success');
           expect(store != null).assertTrue();
@@ -983,7 +983,7 @@ export default function SchemaFieldNode(){
         options.kvStoreType = factory.KVStoreType.SINGLE_VERSION;
         options.schema = schema;
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
+        await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
           kvStore = store;
           console.info(TAG + 'SUB_SchemaFieldNode_BOOLEAN_0101 getKVStore success');
           expect(store != null).assertTrue();
@@ -1045,7 +1045,7 @@ export default function SchemaFieldNode(){
         options.kvStoreType = factory.KVStoreType.SINGLE_VERSION;
         options.schema = schema;
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
+        await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
           kvStore = store;
           console.info(TAG + 'SUB_SchemaFieldNode_BOOLEAN_0102 getKVStore success');
           expect(null).assertFail();
@@ -1088,7 +1088,7 @@ export default function SchemaFieldNode(){
         options.kvStoreType = factory.KVStoreType.SINGLE_VERSION;
         options.schema = schema;
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
+        await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
           kvStore = store;
           console.info(TAG + 'SUB_SchemaFieldNode_BOOLEAN_0103 getKVStore success');
           expect(null).assertFail();
@@ -1131,7 +1131,7 @@ export default function SchemaFieldNode(){
         options.kvStoreType = factory.KVStoreType.SINGLE_VERSION;
         options.schema = schema;
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
+        await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
           kvStore = store;
           console.info(TAG + 'SUB_SchemaFieldNode_BOOLEAN_0200 getKVStore success');
           expect(null).assertFail();
@@ -1174,7 +1174,7 @@ export default function SchemaFieldNode(){
         options.kvStoreType = factory.KVStoreType.SINGLE_VERSION;
         options.schema = schema;
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
+        await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
           kvStore = store;
           console.info(TAG + 'SUB_SchemaFieldNode_BOOLEAN_0300 getKVStore success');
           expect(null).assertFail();
@@ -1217,7 +1217,7 @@ export default function SchemaFieldNode(){
         options.kvStoreType = factory.KVStoreType.SINGLE_VERSION;
         options.schema = schema;
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
+        await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
           kvStore = store;
           console.info(TAG + 'SUB_SchemaFieldNode_BOOLEAN_0400 getKVStore success');
           expect(null).assertFail();
@@ -1260,7 +1260,7 @@ export default function SchemaFieldNode(){
         options.kvStoreType = factory.KVStoreType.SINGLE_VERSION;
         options.schema = schema;
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
+        await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
           kvStore = store;
           console.info(TAG + 'SUB_SchemaFieldNode_BOOLEAN_0500 getKVStore success');
           expect(null).assertFail();
@@ -1303,7 +1303,7 @@ export default function SchemaFieldNode(){
         options.kvStoreType = factory.KVStoreType.SINGLE_VERSION;
         options.schema = schema;
 
-        await kvManager!.getKVStore(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
+        await kvManager!.getKVStore<factory.SingleKVStore>(TEST_STORE_ID, options).then(async (store: factory.SingleKVStore) => {
           kvStore = store;
           console.info(TAG + 'SUB_SchemaFieldNode_Long_0100 getKVStore success');
           expect(store != null).assertTrue();

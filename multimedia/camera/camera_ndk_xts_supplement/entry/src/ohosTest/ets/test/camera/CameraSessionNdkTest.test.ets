@@ -51,8 +51,6 @@ export default function CameraFunctionTest() {
     });
     afterAll(() => {
       console.info('afterAll case');
-      let result = cameraObj.captureSessionRelease();
-      console.info(TAG, result);
     });
 
     /**
@@ -457,5 +455,342 @@ export default function CameraFunctionTest() {
       expect(res).assertEqual(CAMERA_INVALID_ARGUMENT);
       console.info(TAG, testName, res);
     });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_INPUT_OPEN_CONCURRENT_CAMERAS_ERR_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_INPUT_OPEN_CONCURRENT_CAMERAS_ERR_0100
+     * @tc.desc     OH_CameraInput_OpenConcurrentCameras - CAMERA_CONFLICT_CAMERA
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_INPUT_OPEN_CONCURRENT_CAMERAS_ERR_0100', Level.LEVEL0, async () => {
+      let result = cameraObj.OHCameraInputOpenConcurrentCamerasErr(1);
+      console.info(TAG, result);
+      expect(result).assertEqual(7400107);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_CREATE_DEFERRED_PREVIEW_OUTPUT_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_CREATE_DEFERRED_PREVIEW_OUTPUT_0100
+     * @tc.desc     OH_CameraManager_CreateDeferredPreviewOutput - CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_CREATE_DEFERRED_PREVIEW_OUTPUT_0100', Level.LEVEL0, async () => {
+      let result = cameraObj.TestCreateDeferredPreviewOutputSucc();
+      console.info(TAG, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_CREATE_DEFERRED_PREVIEW_OUTPUT_0200
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_CREATE_DEFERRED_PREVIEW_OUTPUT_0200
+     * @tc.desc     OH_CameraManager_CreateDeferredPreviewOutput - CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_CREATE_DEFERRED_PREVIEW_OUTPUT_0200', Level.LEVEL0, async () => {
+      let result = cameraObj.TestCreateDeferredPreviewOutputWithNullArgs();
+      console.info(TAG, result);
+      expect(result).assertEqual(7400101);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_CREATE_DEFERRED_PREVIEW_OUTPUT_0300
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_CREATE_DEFERRED_PREVIEW_OUTPUT_0300
+     * @tc.desc     OH_CameraManager_CreateDeferredPreviewOutput - CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_CREATE_DEFERRED_PREVIEW_OUTPUT_0300', Level.LEVEL0, async () => {
+      let result = cameraObj.TestCreateDeferredPreviewOutputWithInvalidProfile();
+      console.info(TAG, result);
+      expect(result).assertEqual(7400201);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_IS_TORCG_LEVEL_CONTROL_SUPPORTED_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_IS_TORCG_LEVEL_CONTROL_SUPPORTED_0100
+     * @tc.desc     OH_CameraManager_IsTorchLevelControlSupported - CAMERA_INVALID_ARGUMENT
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_IS_TORCG_LEVEL_CONTROL_SUPPORTED_0100', Level.LEVEL0, async () => {
+      let result = cameraObj.TestIsTorchLevelControlSupportedErr();
+      console.info(TAG, result);
+      expect(result).assertEqual(7400101);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_IS_TORCG_LEVEL_CONTROL_SUPPORTED_0200
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_IS_TORCG_LEVEL_CONTROL_SUPPORTED_0200
+     * @tc.desc     OH_CameraManager_IsTorchLevelControlSupported - CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_IS_TORCG_LEVEL_CONTROL_SUPPORTED_0200', Level.LEVEL0, async () => {
+      let result = cameraObj.TestIsTorchLevelControlSupportedSucc();
+      console.info(TAG, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_SET_TORCH_MODE_ON_WITH_LEVEL_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_SET_TORCH_MODE_ON_WITH_LEVEL_0100
+     * @tc.desc     OH_CameraManager_SetTorchModeOnWithLevel - CAMERA_INVALID_ARGUMENT
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_SET_TORCH_MODE_ON_WITH_LEVEL_0100', Level.LEVEL0, async () => {
+      let result = cameraObj.TestSetTorchModeOnWithLevelErr();
+      console.info(TAG, result);
+      expect(result).assertEqual(7400101);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_GET_PHYSICAL_APERTRUE_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_GET_PHYSICAL_APERTRUE_0100
+     * @tc.desc     OH_CaptureSession_GetPhysicalAperture - CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_GET_PHYSICAL_APERTRUE_0100', Level.LEVEL0, async () => {
+      let result = cameraObj.TestGetPhysicalApertureSucc();
+      console.info(TAG, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_GET_PHYSICAL_APERTRUE_0200
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_GET_PHYSICAL_APERTRUE_0200
+     * @tc.desc     OH_CaptureSession_GetPhysicalAperture - CAMERA_INVALID_ARGUMENT
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_GET_PHYSICAL_APERTRUE_0200', Level.LEVEL0, async () => {
+      let result = cameraObj.TestGetPhysicalApertureWithNullSession();
+      console.info(TAG, result);
+      expect(result).assertEqual(7400101);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_GET_PHYSICAL_APERTRUE_0300
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_GET_PHYSICAL_APERTRUE_0300
+     * @tc.desc     OH_CaptureSession_GetPhysicalAperture - CAMERA_SESSION_NOT_CONFIG
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_GET_PHYSICAL_APERTRUE_0300', Level.LEVEL0, async () => {
+      let result = cameraObj.TestGetPhysicalApertureWithUnconfiguredSession();
+      console.info(TAG, result);
+      expect(result).assertEqual(7400103);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_SET_PHYSICAL_APERTURE_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_SET_PHYSICAL_APERTURE_0100
+     * @tc.desc     OH_CaptureSession_SetPhysicalAperture - CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_SET_PHYSICAL_APERTURE_0100', Level.LEVEL0, async () => {
+      let result = cameraObj.TestSetPhysicalApertureSucc();
+      console.info(TAG, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_SET_PHYSICAL_APERTURE_0200
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_SET_PHYSICAL_APERTURE_0200
+     * @tc.desc     OH_CaptureSession_SetPhysicalAperture - CAMERA_INVALID_ARGUMENT
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_SET_PHYSICAL_APERTURE_0200', Level.LEVEL0, async () => {
+      let result = cameraObj.TestSetPhysicalApertureWithNullSession();
+      console.info(TAG, result);
+      expect(result).assertEqual(7400101);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_SET_PHYSICAL_APERTURE_0300
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_SET_PHYSICAL_APERTURE_0300
+     * @tc.desc     OH_CaptureSession_SetPhysicalAperture - CAMERA_SESSION_NOT_CONFIG
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_SET_PHYSICAL_APERTURE_0300', Level.LEVEL0, async () => {
+      let result = cameraObj.TestSetPhysicalApertureWithUnconfiguredStream();
+      console.info(TAG, result);
+      expect(result).assertEqual(7400103);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0100
+     * @tc.desc     OH_CaptureSession_GetSupportedExposureDurationRange - CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0100', Level.LEVEL0, async () => {
+      let result = cameraObj.TestGetSupportedExposureDurationRangeSucc();
+      console.info(TAG, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0200
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0200
+     * @tc.desc     OH_CaptureSession_GetSupportedExposureDurationRange - CAMERA_INVALID_ARGUMENT
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0200', Level.LEVEL0, async () => {
+      let result = cameraObj.TestGetSupportedExposureDurationRangeWithNullSession();
+      console.info(TAG, result);
+      expect(result).assertEqual(7400101);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0300
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0300
+     * @tc.desc     OH_CaptureSession_GetSupportedExposureDurationRange - CAMERA_SESSION_NOT_CONFIG
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0300', Level.LEVEL0, async () => {
+      let result = cameraObj.TestGetSupportedExposureDurationRangeWithUnconfiguredStream();
+      console.info(TAG, result);
+      expect(result).assertEqual(7400103);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_SET_EXPOSURE_DURATION_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_SET_EXPOSURE_DURATION_0100
+     * @tc.desc     OH_CaptureSession_SetExposureDuration - CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_SET_EXPOSURE_DURATION_0100', Level.LEVEL0, async () => {
+      let result = cameraObj.TestSetExposureDurationSucc();
+      console.info(TAG, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_SET_EXPOSURE_DURATION_0200
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_SET_EXPOSURE_DURATION_0200
+     * @tc.desc     OH_CaptureSession_SetExposureDuration - CAMERA_INVALID_ARGUMENT
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_SET_EXPOSURE_DURATION_0200', Level.LEVEL0, async () => {
+      let result = cameraObj.TestSetExposureDurationWithInvalidValue();
+      console.info(TAG, result);
+      expect(result).assertEqual(7400101);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_SET_EXPOSURE_DURATION_0300
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_SET_EXPOSURE_DURATION_0300
+     * @tc.desc     OH_CaptureSession_SetExposureDuration - CAMERA_SESSION_NOT_CONFIG
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_SET_EXPOSURE_DURATION_0300', Level.LEVEL0, async () => {
+      let result = cameraObj.TestSetExposureDurationWithUnconfiguredStream();
+      console.info(TAG, result);
+      expect(result).assertEqual(7400103);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_GET_EXPOSURE_DURATION_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_GET_EXPOSURE_DURATION_0100
+     * @tc.desc     OH_CaptureSession_GetExposureDuration - CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_GET_EXPOSURE_DURATION_0100', Level.LEVEL0, async () => {
+      let result = cameraObj.TestGetExposureDurationSucc();
+      console.info(TAG, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_GET_EXPOSURE_DURATION_0200
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_GET_EXPOSURE_DURATION_0200
+     * @tc.desc     OH_CaptureSession_GetExposureDuration - CAMERA_SESSION_NOT_CONFIG
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_GET_EXPOSURE_DURATION_0200', Level.LEVEL0, async () => {
+      let result = cameraObj.TestGetExposureDurationWithUnconfiguredStream();
+      console.info(TAG, result);
+      expect(result).assertEqual(7400103);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0300
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0300
+     * @tc.desc     OH_PreviewOutput_AddDeferredSurface - CAMERA_INVALID_ARGUMENT
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0300', Level.LEVEL0, async () => {
+      let result = cameraObj.TestAddDeferredSurfaceWithEmptyStr("");
+      console.info(TAG, result);
+      expect(result).assertEqual(7400101);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0100
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0100
+     * @tc.desc     OH_PreviewOutput_AddDeferredSurface - CAMERA_OK
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0100', Level.LEVEL0, async () => {
+      let result = cameraObj.TestAddDeferredSurfaceSucc(indexSurfaceId);
+      console.info(TAG, result);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number   SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0200
+     * @tc.name     SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0200
+     * @tc.desc     OH_PreviewOutput_AddDeferredSurface - CAMERA_INVALID_ARGUMENT
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 0
+     */
+    it('SUB_MULTIMEDIA_OH_CAMERA_ADD_DEFERRED_SURFACE_0200', Level.LEVEL0, async () => {
+      let result = cameraObj.TestAddDeferredSurfaceErr(indexSurfaceId);
+      console.info(TAG, result);
+      expect(result).assertEqual(7400101);
+    });
+    
   })
 }

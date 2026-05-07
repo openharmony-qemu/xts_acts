@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,7 +47,7 @@ const uiContext = new UIContext();
 export default function PinchGestureBasic02Test() {
   describe('PinchGestureBasic02Test', () => {
     
-    waitForCompletion(async ()=>{await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")})
+    UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility").awaitSync()
     
 
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!
@@ -105,10 +105,10 @@ it('PinchGestureBasic02Test_static_0010', Level.LEVEL0, async (done: () => void)
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
       let pointers: PointerMatrix = PointerMatrix.create(2,2);
-      pointers.setPoint(0,0,{x: Math.round(areaObj1.left + areaWidth1 * 0.5) as Int,y: Math.round(areaObj1.top + areaHeight1 * 0.1) as Int } as Point);
-      pointers.setPoint(0,1,{x: Math.round(areaObj1.left + areaWidth1 * 0.5) as Int,y: Math.round(areaObj1.top + areaHeight1 * 0.3) as Int } as Point);
-      pointers.setPoint(1,0,{x: Math.round(areaObj1.left + areaWidth1 * 0.5) as Int,y: Math.round(areaObj1.bottom - areaHeight1 * 0.1) as Int } as Point);
-      pointers.setPoint(1,1,{x: Math.round(areaObj1.left + areaWidth1 * 0.5) as Int,y: Math.round(areaObj1.bottom - areaHeight1 * 0.3) as Int } as Point);
+      pointers.setPoint(0,0,{x: Math.round(areaObj1.left + areaWidth1 * 0.5).toInt(),y: Math.round(areaObj1.top + areaHeight1 * 0.1).toInt() } as Point);
+      pointers.setPoint(0,1,{x: Math.round(areaObj1.left + areaWidth1 * 0.5).toInt(),y: Math.round(areaObj1.top + areaHeight1 * 0.3).toInt() } as Point);
+      pointers.setPoint(1,0,{x: Math.round(areaObj1.left + areaWidth1 * 0.5).toInt(),y: Math.round(areaObj1.bottom - areaHeight1 * 0.1).toInt() } as Point);
+      pointers.setPoint(1,1,{x: Math.round(areaObj1.left + areaWidth1 * 0.5).toInt(),y: Math.round(areaObj1.bottom - areaHeight1 * 0.3).toInt() } as Point);
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);
       // 拖动之后重新获取当前区域的位置信息

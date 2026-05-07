@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -115,10 +115,10 @@ async function testPostProcessor(fd: media.AVFileDescriptor, initializedOp: Asyn
   }).catch(mediaTestBase.catchCallback);
 
   avPlayer!!.onStateChange((state: media.AVPlayerState, reason: media.StateChangeReason) => {
-    waitForCompletion(async () => {
+    (async () => {
       console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
       await handleState(state.toString(), initializedOp, preparedOp, playedOp, stoppedOp, done);
-    })
+    })().awaitSync()
   });
   avPlayer!!.onError((err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
@@ -150,7 +150,7 @@ export default function AVPlayerPostProcessorTest() {
       console.info('beforeAll case');
       await mediaTestBase.getFdRead(VIDEO_SOURCE, openFileFailed).then((testNumber: number) => {
         fileDescriptor = {
-          fd: testNumber as int
+          fd: testNumber.toInt()
         }
       });
     });

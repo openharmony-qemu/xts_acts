@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -1160,8 +1160,8 @@ export default function math05Test() {
     it("testmathmax5012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         console.log(domain, tag, '%{public}s', 'testmathmax5012 started');
-        const a: long = 10.5 as long;
-        const b: long = 11.2 as long;
+        const a: long = 10.5.toLong();
+        const b: long = 11.2.toLong();
         expect(max(a, b)).assertEqual(11);
         done();
       });
@@ -1284,7 +1284,7 @@ export default function math05Test() {
     it("testmathmax5017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         console.log(domain, tag, '%{public}s', 'testmathmax5017 started');
-        const nanValue: long = Number.NaN as long;
+        const nanValue: long = Number.NaN.toLong();
         expect(max(nanValue, 5)).assertEqual(5);
         expect(max(10, nanValue)).assertEqual(10);
         done();
@@ -1318,7 +1318,7 @@ export default function math05Test() {
     it("testmathmax5021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         console.log(domain, tag, '%{public}s', 'testmathmax5021 started');
-        const infValue: long = Number.POSITIVE_INFINITY as long;
+        const infValue: long = Number.POSITIVE_INFINITY.toLong();
         const normal: long = 100;
         expect(max(infValue, normal)).assertEqual(infValue);
         done();

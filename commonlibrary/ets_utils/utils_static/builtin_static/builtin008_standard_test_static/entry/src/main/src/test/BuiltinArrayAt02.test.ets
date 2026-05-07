@@ -1226,9 +1226,9 @@ export default function BuiltinArrayAt02Test() {
       const TAG = "testBuiltinArraycopyOf6028";
       try {
         const src: FixedArray<float> = [
-          Number.NaN as float,
-          Number.POSITIVE_INFINITY as float,
-          Number.NEGATIVE_INFINITY as float
+          Number.NaN.toFloat(),
+          Number.POSITIVE_INFINITY.toFloat(),
+          Number.NEGATIVE_INFINITY.toFloat()
         ];
         const result = copyOf(src);
         expect(Number.isNaN(result[0])).assertTrue();
@@ -1406,7 +1406,7 @@ export default function BuiltinArrayAt02Test() {
     it('testBuiltinArraycopyOf7006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testBuiltinArraycopyOf7006";
       try {
-        const src: FixedArray<long> = [Number.MIN_SAFE_INTEGER as long, 0 as long, Number.MAX_SAFE_INTEGER as long];
+        const src: FixedArray<long> = [Number.MIN_SAFE_INTEGER.toLong(), 0, Number.MAX_SAFE_INTEGER.toLong()];
         const copy = copyOf(src);
         expect(copy[0]).assertEqual(Number.MIN_SAFE_INTEGER);
         expect(copy[1]).assertEqual(0);

@@ -27,8 +27,8 @@ class Params {
 @Builder
 function buildPopup(param?: Params) {
   Column() {
-    Text('popup').fontSize(24)
-  }.width(100).height(50).padding(5)
+    Text('popup').fontSize(12)
+  }.width(100).height(40).padding(5)
 }
 
 @Entry
@@ -41,35 +41,31 @@ struct PromptActionOpenPopupNullTest {
     Row() {
       Column() {
         Text('openPopup Null/Undefined Test Page')
-          .fontSize(20)
+          .fontSize(10)
           .fontWeight(FontWeight.Bold)
-          .margin({ bottom: 20 })
+
 
         Text('Test Result: ' + this.testResult)
-          .fontSize(16)
-          .margin({ bottom: 10 })
+          .fontSize(10)
           .id('openpopup_test_result')
 
         Text('Last Error: ' + this.lastError)
-          .fontSize(14)
+          .fontSize(10)
           .fontColor(Color.Red)
-          .margin({ bottom: 20 })
           .id('openpopup_last_error')
 
-        Divider().margin({ bottom: 20 })
+        Divider()
 
         // ========== openPopup with null/undefined parameters ==========
         Text('=== Null/Undefined Parameter Tests ===')
           .fontSize(16)
           .fontWeight(FontWeight.Medium)
-          .margin({ bottom: 10 })
 
         // Test openPopup with null contentNode (param 1)
         Button('openPopup with null contentNode')
           .id('btn_openpopup_null_content')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
           .onClick(() => {
             try {
               let context = this.getUIContext();
@@ -92,7 +88,6 @@ struct PromptActionOpenPopupNullTest {
           .id('btn_openpopup_undefined_content')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
           .onClick(() => {
             try {
               let context = this.getUIContext();
@@ -115,7 +110,6 @@ struct PromptActionOpenPopupNullTest {
           .id('btn_openpopup_null_target')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
           .onClick(() => {
             try {
               let context = this.getUIContext();
@@ -136,7 +130,6 @@ struct PromptActionOpenPopupNullTest {
           .id('btn_openpopup_undefined_target')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
           .onClick(() => {
             try {
               let context = this.getUIContext();
@@ -157,7 +150,6 @@ struct PromptActionOpenPopupNullTest {
           .id('btn_openpopup_null_options')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
           .onClick(() => {
             try {
               let context = this.getUIContext();
@@ -181,7 +173,6 @@ struct PromptActionOpenPopupNullTest {
           .id('btn_openpopup_undefined_options')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
           .onClick(() => {
             try {
               let context = this.getUIContext();
@@ -203,6 +194,7 @@ struct PromptActionOpenPopupNullTest {
       .width('100%')
       .height('100%')
       .padding(20)
+      .margin({top:30})
     }
     .height('100%')
   }

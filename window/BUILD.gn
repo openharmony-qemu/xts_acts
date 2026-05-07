@@ -19,6 +19,8 @@ group("window") {
     "windowErrCode:ActsWindowErrCodeTest",
     "windowProperties:ActsWindowPropertiesTest",
     "windowStartAbility:ActsWindowStartAbilityTest",
+    "windowLifeCycleTestDemo:ActsWindowLifeCycleTestDemo",
+    "ActsWindowLifeCycleTest:ActsWindowLifeCycleTest",
     "ActsPipWindowNdk:ActsPipWindowNdkTest",
     "FloatingBallTest:ActsFloatingBallTest",
     "ActsWindowEnterpriseTest:ActsWindowEnterpriseTest",
@@ -32,6 +34,11 @@ group("window") {
     "ActsWindowOrientationTestStatic:ActsWindowOrientationStaticTest",
     "ActsWindowPropertiesTestStatic:ActsWindowPropertiesStaticTest",
     "ActsWindowLifeCycleTestStatic:ActsWindowLifeCycleStaticTest",
-    "ActsWindowPCAndEventTestStatic:ActsWindowPCAndEventTestStaticTest"
+    "ActsWindowPCAndEventTestStatic:ActsWindowPCAndEventTestStaticTest",
+    "ActsWindowUiExtensionTestStatic:ActsWindowUiExtensionTestStaticTest",
+    "ActsWindowPiPWindowTestStatic:ActsWindowPiPWindowTestStaticTest",
+    "ActsWindowFloatViewTest:ActsWindowFloatViewTest",
+    "ActsWindowImmersiveTestStatic:ActsWindowImmersiveTestStaticTest",
+    "ActsWindowLayoutTestStatic:ActsWindowLayoutTestStaticTest"
   ]
 }

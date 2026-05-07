@@ -142,5 +142,112 @@ export default function AVPlayerMediaSource() {
       expect(mediaSource != undefined).assertFalse();
       done();
     });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0600
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0600
+     * @tc.desc   flv live stream with createMediaSourceWithStreamData return empty for empty MediaStream
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
+      let header: Record<string, string> = {
+        "User-Agent": "User-Agent-Value"
+       };
+       let mediaSource = media.createMediaSourceWithUrl(" ", header);
+       expect(mediaSource != undefined).assertTrue();
+       done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0700
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0700
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
+      console.info('AVPlayerMediaSource success');
+      let mediaSource = media.createMediaSourceWithUrl("http://xxx", header);
+      if(!mediaSource) {
+        console.error("Failed to create media source");
+        expect().assertFail();
+        done();
+      }
+      let playStrategy: media.PlaybackStrategy = {
+        preferredWidth: 1,
+        preferredHeight: 2,
+        mutedMediaType: media.MediaType.MEDIA_TYPE_VID,
+        preferredBufferDuration: 3,
+        preferredHdr: true as boolean,
+        preferredBufferDurationForPlaying: 1 as double,
+        showFirstFrameOnPrepare: true as boolean,
+        preferredAudioLanguage: " ",
+        preferredSubtitleLanguage: " ",
+        enableSuperResolution: false as boolean
+      };
+      if(!player) {
+        console.error("Failed to create AVPlayer");
+        expect().assertFail();
+        done();
+      }
+      player!!.setMediaSource(mediaSource!, playStrategy);
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0800
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0800
+     * @tc.desc   Local Video create Media Source With Fd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
+      let fdObject: media.AVFileDescriptor = {
+        fd: 0,
+        offset: 0,
+        length: 0
+      };
+      let mediaSource = media.createMediaSourceWithFd(fdObject);
+      expect(mediaSource != undefined).assertTrue();
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0900
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0900
+     * @tc.desc   Local Video create Media Source With DataSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
+      let dataSource: media.AVDataSrcDescriptor = {
+        fileSize: 0,
+        callback: (buffer: ArrayBuffer, length: long, pos?: long) => 0
+      };
+      let mediaSource = media.createMediaSourceWithDataSource(dataSource);
+      expect(mediaSource != undefined).assertTrue();
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_1000
+     * @tc.number SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_1000
+     * @tc.desc   Local Video get MediaSource ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
+      let mediaSource = media.createMediaSourceWithUrl("http://xxx", header);
+      if(!mediaSource) {
+        console.error("Failed to create media source");
+        expect().assertFail();
+        done();
+      }
+      let id = mediaSource!!.getID();
+      expect(id).not().assertUndefined()
+      expect(id.length).assertLarger(0)
+      done();
+    });
   })
 }

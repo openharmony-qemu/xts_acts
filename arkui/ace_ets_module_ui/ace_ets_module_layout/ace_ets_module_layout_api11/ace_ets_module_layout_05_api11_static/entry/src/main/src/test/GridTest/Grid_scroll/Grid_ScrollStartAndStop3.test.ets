@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -90,10 +90,10 @@ it('Grid_ScrollStartandStop3_static_0400', Level.LEVEL0, async (done: () => void
       let scrollBarRect: RectValue = CommonFunc.getComponentRectOnScreen('Grid_ScrollStartandStop_scrollBar')
       let driver = Driver.create()
       await driver.swipe(
-        Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`) as Int,
-        Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.1 + scrollBarRect.top}`) as Int,
-        Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`) as Int,
-        Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.9 + scrollBarRect.top}`) as Int,
+        Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`).toInt(),
+        Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.1 + scrollBarRect.top}`).toInt(),
+        Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`).toInt(),
+        Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.9 + scrollBarRect.top}`).toInt(),
         1000);
       await CommonFunc.sleep(2000);
 

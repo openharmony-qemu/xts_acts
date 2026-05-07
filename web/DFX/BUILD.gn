@@ -19,6 +19,7 @@ group("DFXTest") {
       "crash_information_static:ActsWebCrashInformationStaticTest",
       "log_dotting:ActsWebLogDottingTest",
       "log_dotting_eleven:ActsWebLogDottingElevenTest",
+      "log_dotting_eleven_static:ActsWebLogDottingElevenStaticTest",
       "log_dotting_five:ActsWebLogDottingFiveTest",
       "log_dotting_five_static:ActsWebLogDottingFiveStaticTest",
       "log_dotting_four:ActsWebLogDottingFourTest",

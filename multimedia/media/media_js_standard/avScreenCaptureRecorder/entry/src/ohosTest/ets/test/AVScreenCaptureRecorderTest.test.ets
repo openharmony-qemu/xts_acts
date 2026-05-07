@@ -1086,6 +1086,156 @@ export default function AVScreenCaptureRecorderTest() {
       avScreenCaptureRecorder.release();
       done();
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0100
+     * @tc.desc   AvScreenCaptureRecorder pause and resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0100', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0100 start')
+
+      let mySteps = new Array(
+        mediaTestBase.CREATE_EVENT,
+        mediaTestBase.INIT_EVENT,
+        mediaTestBase.SETONCALLBACK_EVENT,
+        mediaTestBase.SET_MIC_ENABLE_EVENT,
+        mediaTestBase.STARTRECORDER_EVENT,
+        mediaTestBase.SKIPPRIVACYMODE_EVENT,
+        mediaTestBase.PAUSERECORDER_EVENT,
+        mediaTestBase.RESUMERECORDER_EVENT,
+        mediaTestBase.STOPRECORDER_EVENT,
+        mediaTestBase.END_EVENT);
+
+      let avConfig: media.AVScreenCaptureRecordConfig = {
+        fd: -1,
+        frameWidth: 640,
+        frameHeight: 480,
+        videoBitrate: 10000000,
+        audioSampleRate: 48000,
+        audioChannelCount: 1,
+        audioBitrate: 96000,
+        preset: media.AVScreenCaptureRecordPreset.SCREEN_RECORD_PRESET_H264_AAC_MP4,
+        strategy: {
+          keepCaptureDuringCall: false,
+          enableBFrame: false,
+          enablePause: true,
+        },
+      };
+
+      mediaTestBase.toNextStep(mediaTestBase.avScreenCaptureRecorder, avConfig, 3000, mySteps, done);
+      expect(mediaTestBase.isTestSucceeded()).assertTrue();
+
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0100 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0200
+     * @tc.desc   AvScreenCaptureRecorder pause and resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0200', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0200 start')
+      let avConfig: media.AVScreenCaptureRecordConfig = {
+        fd: -1,
+        frameWidth: 640,
+        frameHeight: 480,
+        videoBitrate: 10000000,
+        audioSampleRate: 48000,
+        audioChannelCount: 1,
+        audioBitrate: 96000,
+        preset: media.AVScreenCaptureRecordPreset.SCREEN_RECORD_PRESET_H264_AAC_MP4,
+        strategy: {
+          keepCaptureDuringCall: false,
+          enableBFrame: false,
+          enablePause: false,
+        },
+      };
+
+      let avScreenCaptureRecorder: media.AVScreenCaptureRecorder | undefined;
+      media.createAVScreenCaptureRecorder().then((captureRecorder: media.AVScreenCaptureRecorder) => {
+        if (captureRecorder != null) {
+          avScreenCaptureRecorder = captureRecorder;
+          console.info('Succeeded in creating avScreenCaptureRecorder');
+          avScreenCaptureRecorder.pauseRecording().then(() => {
+            console.info('avScreenCaptureRecorder pause success');
+          }).catch((err: BusinessError) => {
+            console.error('avScreenCaptureRecorder pause failed, error: ' + err.message + err.code);
+            expect(err.code).assertEqual(5400102);
+          });
+          avScreenCaptureRecorder.release();
+        } else {
+          console.error('Failed to create avScreenCaptureRecorder');
+          expect().assertFail();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
+        expect().assertFail();
+      });
+
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0200 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0300
+     * @tc.desc   AvScreenCaptureRecorder pause and resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0300', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0300 start')
+
+      let avScreenCaptureRecorder: media.AVScreenCaptureRecorder | undefined;
+      media.createAVScreenCaptureRecorder().then((captureRecorder: media.AVScreenCaptureRecorder) => {
+        if (captureRecorder != null) {
+          avScreenCaptureRecorder = captureRecorder;
+          console.info('Succeeded in creating avScreenCaptureRecorder');
+          avScreenCaptureRecorder.resumeRecording().then(() => {
+            console.info('avScreenCaptureRecorder resume success');
+          }).catch((err: BusinessError) => {
+            console.error('avScreenCaptureRecorder resume failed, error: ' + err.message + err.code);
+            expect(err.code).assertEqual(5400102);
+          });
+          avScreenCaptureRecorder.release();
+        } else {
+          console.error('Failed to create avScreenCaptureRecorder');
+          expect().assertFail();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
+        expect().assertFail();
+      });
+
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0200 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0400
+     * @tc.desc   AvScreenCaptureRecorder pause and resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0400', Level.LEVEL0, async (done: Function) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0400 start')
+      expect(media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_PAUSED_BY_USER).assertEqual(11);
+      expect(media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_RESUMED_BY_USER).assertEqual(12);
+      expect(media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_PAUSED_BY_APP).assertEqual(13);
+      expect(media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_RESUMED_BY_APP).assertEqual(14);
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_PAUSE_RESUME_0400 end');
+      done();
+    });
   })
 }
-

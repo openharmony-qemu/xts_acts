@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -49,7 +49,7 @@ const uiContext = new UIContext();
 export default function dragIsSystem() {
   describe('dragIsSystem', () => {
 
-    waitForCompletion(async ()=>{await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")})
+    UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility").awaitSync()
     
 
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!
@@ -106,7 +106,7 @@ it('dragIsSystem_001', Level.LEVEL0, async (done: () => void): Promise<void> => 
       console.info("rect_left = " + CommonFunc.rect_left + "CommonFunc.rect_top = " + CommonFunc.rect_top);
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
-      await driver.drag(Math.round(CommonFunc.rect_left + uiContext.vp2px(66.66)) as Int, Math.round(CommonFunc.rect_top + uiContext.vp2px(53.33)) as Int, 200, 200, 600);
+      await driver.drag(Math.round(CommonFunc.rect_left + uiContext.vp2px(66.66)).toInt(), Math.round(CommonFunc.rect_top + uiContext.vp2px(53.33)).toInt(), 200, 200, 600);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey("dragIsSystemBtn2");
       await CommonFunc.sleep(200);

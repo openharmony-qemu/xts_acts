@@ -30,17 +30,6 @@
         ]
       }
     ],
-    "extensionAbilities": [
-      {
-        "name": "NotificationSubscriberExtAbility",
-        "srcEntry": "./ets/notificationsubscriberextability/NotificationSubscriberExtAbility.ets",
-        "type": "notificationSubscriber",
-        "description": "$string:NotificationSubscriberExtAbility_desc",
-        "icon": "$media:layered_image",
-        "label": "$string:NotificationSubscriberExtAbility_label",
-        "exported": true
-      }
-    ],
     "requestPermissions": [
       {
         "name": 'ohos.permission.NOTIFICATION_CONTROLLER',

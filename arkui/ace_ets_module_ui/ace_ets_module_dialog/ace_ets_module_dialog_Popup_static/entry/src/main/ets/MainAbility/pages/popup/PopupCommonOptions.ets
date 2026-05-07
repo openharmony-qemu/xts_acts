@@ -24,7 +24,10 @@ import {
   Button,
   Text,
   FlexAlign,
-  PopupCommonOptions
+  PopupCommonOptions,
+  HorizontalAlign,
+  ColumnOptions,
+  TextOverflow
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
@@ -63,14 +66,16 @@ struct popupCommonOptions {
   }
 
   build() {
-    Column() {
-      Button('Open Popup')
+    Column({ space: 4 } as ColumnOptions) {
+      Button('Popup')
         .id('btnOpenPopup')
-        .fontSize(20)
-        .margin({ top: 20, bottom: 20 })
+        .fontSize(10)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '14%' })
         .onClick(() => {
           let context = this.getUIContext();
-          const contentNode = new ComponentContent(context, wrapBuilder(buildPopupContent));
+          const contentNode = new ComponentContent<Object>(context, wrapBuilder(buildPopupContent));
           const promptActionInstance = context.getPromptAction();
           let uniqueId = this.getUniqueId();
           let frameNode: FrameNode | null = context.getFrameNodeByUniqueId(uniqueId);
@@ -107,31 +112,53 @@ struct popupCommonOptions {
 
       Text(this.openPopupResult)
         .key('openPopupResult')
-        .fontSize(16)
-        .margin({ bottom: 10 })
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '7%' })
+        .fontSize(8)
+        .maxLines(1)
+        .textOverflow({ overflow: TextOverflow.Ellipsis })
 
       Text(this.onWillAppearResult)
         .key('onWillAppearResult')
-        .fontSize(16)
-        .margin({ bottom: 10 })
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '7%' })
+        .fontSize(8)
+        .maxLines(1)
+        .textOverflow({ overflow: TextOverflow.Ellipsis })
 
       Text(this.onDidAppearResult)
         .key('onDidAppearResult')
-        .fontSize(16)
-        .margin({ bottom: 10 })
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '7%' })
+        .fontSize(8)
+        .maxLines(1)
+        .textOverflow({ overflow: TextOverflow.Ellipsis })
 
       Text(this.onWillDisappearResult)
         .key('onWillDisappearResult')
-        .fontSize(16)
-        .margin({ bottom: 10 })
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '7%' })
+        .fontSize(8)
+        .maxLines(1)
+        .textOverflow({ overflow: TextOverflow.Ellipsis })
 
       Text(this.onDidDisappearResult)
         .key('onDidDisappearResult')
-        .fontSize(16)
-        .margin({ bottom: 10 })
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '7%' })
+        .fontSize(8)
+        .maxLines(1)
+        .textOverflow({ overflow: TextOverflow.Ellipsis })
     }
     .width('100%')
     .height('100%')
-    .justifyContent(FlexAlign.Center)
+    .padding({ left: '3%', right: '3%', top: '2%', bottom: '2%' })
+    .alignItems(HorizontalAlign.Center)
+    .justifyContent(FlexAlign.SpaceEvenly)
   }
 }

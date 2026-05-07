@@ -43,7 +43,7 @@ export default function webJavaScriptOnDocumentStartTest() {
       } catch (err) {
         console.error('push WebJavaScriptOnDocumentStartTest page error: ' + err);
       }
-      await driver.waitForComponent(ON.id("WebJavaScriptOnDocumentStartTestButton"), 10000);
+      await Utils.waitForComponent(driver, 'WebJavaScriptOnDocumentStartTestButton');
       done()
     });
 

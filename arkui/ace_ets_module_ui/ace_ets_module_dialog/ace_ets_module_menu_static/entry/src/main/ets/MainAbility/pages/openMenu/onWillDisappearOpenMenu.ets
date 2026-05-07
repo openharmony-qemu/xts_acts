@@ -95,7 +95,7 @@ struct onWillDisappearOpenMenuIndex {
         .fontColor(0xffffff)
         .padding(5)
         .onClick(() => {
-          let contentNode = new ComponentContent(this.uiContext, wrapBuilder(myMenu));
+          let contentNode = new ComponentContent<Object>(this.uiContext, wrapBuilder(myMenu));
           try {
             this.promptAction.openMenu(contentNode, this.targetInfo1, {
               onWillDisappear: () => {

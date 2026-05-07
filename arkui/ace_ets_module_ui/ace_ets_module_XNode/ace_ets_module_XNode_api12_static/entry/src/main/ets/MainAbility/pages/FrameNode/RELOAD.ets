@@ -1,6 +1,7 @@
 'use static';
+
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,6 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import {
   Entry,
   Column,
@@ -40,7 +42,7 @@ import {
   DataChangeOperation
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
-class BasicDataSource implements IDataSource<string> {
+export class BasicDataSource implements IDataSource<string> {
   private listeners: DataChangeListener[] = [];
   private originDataArray: Array<string> = new Array<string>();
 
@@ -75,25 +77,25 @@ class BasicDataSource implements IDataSource<string> {
 
   notifyDataAdd(index: number): void {
     this.listeners.forEach(listener => {
-      listener.onDataAdd(index as int);
+      listener.onDataAdd(index.toInt());
     })
   }
 
   notifyDataChange(index: number): void {
     this.listeners.forEach(listener => {
-      listener.onDataChange(index as int);
+      listener.onDataChange(index.toInt());
     })
   }
 
   notifyDataDelete(index: number): void {
     this.listeners.forEach(listener => {
-      listener.onDataDelete(index as int);
+      listener.onDataDelete(index.toInt());
     })
   }
 
   notifyDataMove(from: number, to: number): void {
     this.listeners.forEach(listener => {
-      listener.onDataMove(from as int, to as int);
+      listener.onDataMove(from.toInt(), to.toInt());
     })
   }
 
@@ -104,7 +106,7 @@ class BasicDataSource implements IDataSource<string> {
   }
 }
 
-class MyDataSource extends BasicDataSource {
+export class MyDataSource extends BasicDataSource {
   private dataArray: Array<string> = new Array<string>();
 
   public totalCount(): int {
@@ -116,7 +118,7 @@ class MyDataSource extends BasicDataSource {
   }
 
   public addData(index: number, data: string): void {
-    this.dataArray.splice(index as int, 0, data);
+    this.dataArray.splice(index.toInt(), 0, data);
     this.notifyDataAdd(index);
   }
 
@@ -126,18 +128,18 @@ class MyDataSource extends BasicDataSource {
   }
 
   public deleteData(index: number): void {
-    this.dataArray.splice(index as int, 1);
+    this.dataArray.splice(index.toInt(), 1);
     this.notifyDataDelete(index);
   }
 
   public changeData(index: number, data: string): void {
-    this.dataArray.splice(index as int, 1, data);
-    this.notifyDatasetChange([{index: index as int, type: DataOperationType.CHANGE} as DataChangeOperation]);
+    this.dataArray.splice(index.toInt(), 1, data);
+    this.notifyDatasetChange([{index: index.toInt(), type: DataOperationType.CHANGE} as DataChangeOperation]);
   }
 
   public modifyAllData(): void {
     this.dataArray = this.dataArray.map((item: string) => {
-      return item + "0";
+      return item + '0';
     })
   }
 
@@ -152,7 +154,7 @@ class MyDataSource extends BasicDataSource {
 struct MyComponent {
   private moved: Array<number> = new Array<number>() as Array<number>;
   private data: MyDataSource = new MyDataSource();
-  @State value: string = ""
+  @State value: string = 'hello'
 
   aboutToAppear() {
     for (let i = 0; i <= 10; i++) {
@@ -162,25 +164,25 @@ struct MyComponent {
 
   build() {
     Column(){
-      Text(this.value).id("RELOADText")
-      List({ space: 3 }) {
+      Text(this.value).id('RELOADText')
+      List({ space: 1 }) {
         LazyForEach(this.data, (item: string, index: int) => {
           ListItem() {
             Row() {
-              Text(item).fontSize(50)
+              Text(item).fontSize(20)
                 .onAppear(() => {
-                  this.value = "appear:" + item
-                  console.info("appear:" + item)
+                  this.value = 'appear:' + item
+                  console.info('appear:' + item)
                 })
-            }.margin({ left: 10, right: 10 } as Margin)
+            }
           }
-          .id("DataOperationType")
+          .id('DataOperationType')
           .onClick((e:ClickEvent) => {
             this.data.modifyAllData();
             this.data.reloadData();
           })
         }, (item: string, index:int) => item)
-      }.cachedCount(5)
-    }
+      }.cachedCount(5).height(120).width(180)
+    }.width('100%').height('100%')
   }
 }

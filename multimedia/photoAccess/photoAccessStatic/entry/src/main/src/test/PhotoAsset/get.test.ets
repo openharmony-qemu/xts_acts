@@ -18,6 +18,7 @@ import { describe, it, expect, TestType, Size, Level, Hypium, beforeAll } from '
 import Context from "application.Context"
 import hilog from '@ohos.hilog'
 import {
+  createMovingPhoto,
   photoFetchOption,
   getFileAsset,
   getAssetId,
@@ -1146,5 +1147,95 @@ export default function getTest() {
         await getNotExistKeysValue(done, testNum, fetchOps, key, value);
         done();
       });
+
+    /**
+     * @tc.name   SUB_MultiMedia_MediaLibrary_get_local_asset_size_Static_Test_0100
+     * @tc.number SUB_MultiMedia_MediaLibrary_get_local_asset_size_Static_Test_0100
+     * @tc.desc   image get LOCAL_ASSET_SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MultiMedia_MediaLibrary_get_local_asset_size_Static_Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const testNum = 'SUB_MultiMedia_MediaLibrary_get_local_asset_size_Static_Test_0100';
+        try {
+          const displayName = 'getTest.jpg';
+          const fetchOps = photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
+          await checkProvisionAsset(done, testNum, displayName);
+          let asset = await getFileAsset(testNum, fetchOps);
+          let size = asset.get(photoAccessHelper.PhotoKeys.SIZE);
+          hilog.info(domain, tag, `${testNum} :: get PhotoAsset ${asset.displayName} size = ${size}`);
+          let localAssetSize = asset.get(photoAccessHelper.PhotoKeys.LOCAL_ASSET_SIZE);
+          hilog.info(domain, tag, `${testNum} :: get PhotoAsset ${asset.displayName} localAssetSize = ${localAssetSize}`);
+          expect(size).assertEqual(localAssetSize);
+          done();
+        } catch (error) {
+          hilog.info(domain, tag, `${testNum} :: LOCAL_ASSET_SIZE error , err is ${error} !`);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_MultiMedia_MediaLibrary_get_local_asset_size_Static_Test_0200
+     * @tc.number SUB_MultiMedia_MediaLibrary_get_local_asset_size_Static_Test_0200
+     * @tc.desc   video get LOCAL_ASSET_SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MultiMedia_MediaLibrary_get_local_asset_size_Static_Test_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const testNum = 'SUB_MultiMedia_MediaLibrary_get_local_asset_size_Static_Test_0200';
+        try {
+          const displayName = 'getTest.mp4';
+          const fetchOps = photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
+          await checkProvisionAsset(done, testNum, displayName);
+          let asset = await getFileAsset(testNum, fetchOps);
+          let size = asset.get(photoAccessHelper.PhotoKeys.SIZE);
+          hilog.info(domain, tag, `${testNum} :: get PhotoAsset ${asset.displayName} size = ${size}`);
+          let localAssetSize = asset.get(photoAccessHelper.PhotoKeys.LOCAL_ASSET_SIZE);
+          hilog.info(domain, tag, `${testNum} :: get PhotoAsset ${asset.displayName} localAssetSize = ${localAssetSize}`);
+          expect(size).assertEqual(localAssetSize);
+          done();
+        } catch (error) {
+          hilog.info(domain, tag, `${testNum} :: LOCAL_ASSET_SIZE error , err is ${error} !`);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_MultiMedia_MediaLibrary_get_local_asset_size_Static_Test_0300
+     * @tc.number SUB_MultiMedia_MediaLibrary_get_local_asset_size_Static_Test_0300
+     * @tc.desc   movingphoto get LOCAL_ASSET_SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MultiMedia_MediaLibrary_get_local_asset_size_Static_Test_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const testNum = 'SUB_MultiMedia_MediaLibrary_get_local_asset_size_Static_Test_0300';
+        try {
+          const displayName = 'getMovingPhotoTest.jpg';
+          const title = 'getMovingPhotoTest';
+          await createMovingPhoto(testNum, testContext, title);
+          const fetchOps = photoFetchOption(testNum, photoAccessHelper.PhotoKeys.DISPLAY_NAME, displayName);
+          await checkProvisionAsset(done, testNum, displayName);
+          let asset = await getFileAsset(testNum, fetchOps);
+          let size = asset.get(photoAccessHelper.PhotoKeys.SIZE);
+          hilog.info(domain, tag, `${testNum} :: get PhotoAsset ${asset.displayName} size = ${size}`);
+          let localAssetSize = asset.get(photoAccessHelper.PhotoKeys.LOCAL_ASSET_SIZE);
+          hilog.info(domain, tag, `${testNum} :: get PhotoAsset ${asset.displayName} localAssetSize = ${localAssetSize}`);
+          expect(size).assertEqual(localAssetSize);
+          done();
+        } catch (error) {
+          hilog.info(domain, tag, `${testNum} :: LOCAL_ASSET_SIZE error , err is ${error} !`);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+
   })
 }

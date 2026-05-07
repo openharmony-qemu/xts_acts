@@ -34,8 +34,7 @@ import {
   ResourceStr,
   $r,
   wrapBuilder,
-  SliderOptions,
-  Scroll
+  SliderOptions
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
@@ -55,7 +54,7 @@ function preTextBuilder() {
 @Builder
 function sufTextBuilder() {
   Text('高')
-    .fontSize($r('sys.float.Caption_L'))
+    .fontSize(9)
     .clip(true)
     .textAlign(TextAlign.Center)
     .fontColor(Color.Black)
@@ -95,8 +94,10 @@ struct SliderIndex {
   ]);
 
   private uiContext: UIContext = this.getUIContext();
-  private preNode1: ComponentContent = new ComponentContent(this.uiContext, wrapBuilder(preTextBuilder));
-  private sufNode1: ComponentContent = new ComponentContent(this.uiContext, wrapBuilder(sufTextBuilder));
+  private preNode1: ComponentContent<Object> =
+    new ComponentContent<Object>(this.uiContext, wrapBuilder(preTextBuilder));
+  private sufNode1: ComponentContent<Object> =
+    new ComponentContent<Object>(this.uiContext, wrapBuilder(sufTextBuilder));
 
   aboutToAppear() {
     try {
@@ -108,8 +109,7 @@ struct SliderIndex {
   }
 
   build() {
-    Scroll() {
-      Column({ space: 10 } as ColumnOptions) {
+    Column({ space: 2 } as ColumnOptions) {
         // SliderAttribute - prefix
         Slider({
           value: this.value8,
@@ -119,7 +119,9 @@ struct SliderIndex {
           style: SliderStyle.InSet
         } as SliderOptions)
           .id('sliderAttributePrefix')
-          .width('90%')
+          .width('100%')
+          .layoutWeight(1)
+          .constraintSize({ minHeight: 0, maxHeight: '12%' })
           .prefix(this.preNode1)
           .onChange((value: number) => {
             this.value8 = value;
@@ -134,7 +136,9 @@ struct SliderIndex {
           style: SliderStyle.InSet
         } as SliderOptions)
           .id('sliderAttributeSuffix')
-          .width('90%')
+          .width('100%')
+          .layoutWeight(1)
+          .constraintSize({ minHeight: 0, maxHeight: '12%' })
           .suffix(this.sufNode1)
           .onChange((value: number) => {
             this.value9 = value;
@@ -149,7 +153,9 @@ struct SliderIndex {
           style: SliderStyle.InSet
         } as SliderOptions)
           .id('sliderAttributeTrackColorMetrics')
-          .width('90%')
+          .width('100%')
+          .layoutWeight(1)
+          .constraintSize({ minHeight: 0, maxHeight: '12%' })
           .trackColorMetrics(this.color2)
           .onChange((value: number) => {
             this.value10 = value;
@@ -164,7 +170,8 @@ struct SliderIndex {
           style: SliderStyle.InSet
         } as SliderOptions)
           .id('sliderColorMetricsStop')
-          .width('90%')
+          .width('100%')
+          .layoutWeight(1)
           .trackColorMetrics(this.color1)
           .onChange((value: number) => {
             this.value1 = value;
@@ -179,7 +186,9 @@ struct SliderIndex {
           style: SliderStyle.InSet
         } as SliderOptions)
           .id('sliderStepItemAccessibility')
-          .width('90%')
+          .width('100%')
+          .layoutWeight(1)
+          .constraintSize({ minHeight: 0, maxHeight: '12%' })
           .showSteps(true, {
             stepsAccessibility: new Map<number, SliderStepItemAccessibility>()
               .set(1, {text : '123123'} as SliderStepItemAccessibility)
@@ -200,7 +209,9 @@ struct SliderIndex {
           style: SliderStyle.InSet
         } as SliderOptions)
           .id('sliderShowStepOptions')
-          .width('90%')
+          .width('100%')
+          .layoutWeight(1)
+          .constraintSize({ minHeight: 0, maxHeight: '12%' })
           .showSteps(false, {
             stepsAccessibility: new Map<number, SliderStepItemAccessibility>()
               .set(1, {text : '123123'} as SliderStepItemAccessibility)
@@ -221,19 +232,19 @@ struct SliderIndex {
           style: SliderStyle.InSet
         } as SliderOptions)
           .id('sliderCustomContentAccessibilityText')
-          .width('90%')
+          .width('100%')
+          .layoutWeight(1)
+          .constraintSize({ minHeight: 0, maxHeight: '12%' })
           .prefix(this.preNode1, {
             accessibilityText: 'accessibilityText'
           })
           .onChange((value: number) => {
             this.value4 = value;
           })
-      }
-      .justifyContent(FlexAlign.Start)
-      .width('100%')
-      .padding({ top: 10, bottom: 10, left: 10, right: 10 })
     }
+    .justifyContent(FlexAlign.SpaceEvenly)
     .width('100%')
     .height('100%')
+    .padding({ left: '2%', right: '2%', top: '1%', bottom: '1%' })
   }
 }

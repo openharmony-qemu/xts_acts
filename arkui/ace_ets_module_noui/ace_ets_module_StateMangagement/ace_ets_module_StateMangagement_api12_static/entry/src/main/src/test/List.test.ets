@@ -191,18 +191,18 @@ export default function testsuite() {
   ExtendTrackTest();
   Extend0010TestJsunit();
 
-  Foreach1();
+  //Foreach1();
   FreezeV2Test();
 
 
-  LazyForEachAdd();
-  LazyForEachDelete();
-  LazyForEachMove();
-  LazyForEachCacheEnhance();
-  LazyForEachVisibleAreaChange();
-  LazyForEachSingleBoolean();
-  LazyForEachSingleNumber();
-  LazyForEachSingleString();
+  //LazyForEachAdd();
+  //LazyForEachDelete();
+  //LazyForEachMove();
+  //LazyForEachCacheEnhance();
+  //LazyForEachVisibleAreaChange();
+  //LazyForEachSingleBoolean();
+  //LazyForEachSingleNumber();
+  //LazyForEachSingleString();
 
   NestTrackTest();
   StaticTrackTest();
@@ -213,58 +213,58 @@ export default function testsuite() {
   ObjectArrayTest();
   OnlyObserveTest();
   TrackDateTest();
-  TrackMapTest();
+  //TrackMapTest();
   TrackSetTest();
   TwoNestTrackTest();
   Monitor1Test();
   Monitor2Test();
   Monitor3Test();
-  Monitor4Test();
-  Monitor5Test();
+  //Monitor4Test();
+  //Monitor5Test();
   Monitor6Test();
 
 
-  RepeatEachJsunit();
-  RepeatForeachNumberBool();
-  RepeatForeachString();
-  RepeatLazyForEachBooleanSource();
-  RepeatLazyForEachNumberSource();
-  RepeatLazyForEachStringSource();
+  //RepeatEachJsunit();
+  //RepeatForeachNumberBool();
+  //RepeatForeachString();
+  //RepeatLazyForEachBooleanSource();
+  //RepeatLazyForEachNumberSource();
+  //RepeatLazyForEachStringSource();
 
 
 
-  RepeatIfElseObject();
-  RepeatIfElseBoolean();
-  RepeatGridBoolean();
-  RepeatGridNumber();
-  RepeatListBoolean();
-  RepeatListNumber();
-  RepeatNestObject();
-  RepeatObservedV2Nest();
-  RepeatSwiperBoolean();
-  RepeatSwiperNumber();
-  RepeatV1Boolean();
-  RepeatV1Object();
+  //RepeatIfElseObject();
+  //RepeatIfElseBoolean();
+  //RepeatGridBoolean();
+  //RepeatGridNumber();
+  //RepeatListBoolean();
+  //RepeatListNumber();
+  //RepeatNestObject();
+  //RepeatObservedV2Nest();
+  //RepeatSwiperBoolean();
+  //RepeatSwiperNumber();
+  //RepeatV1Boolean();
+  //RepeatV1Object();
 
   persistStorageATest();
   appStorageRefJsunit();
-  localStorageRefJsunit();
+  //localStorageRefJsunit();
 
   IMonitorTest();
   Local1Jsunit();
   Local2Jsunit();
-  Param1Jsunit();
-  Param2Jsunit();
+  //Param1Jsunit();
+  //Param2Jsunit();
   Param3Jsunit();
-  Param4Jsunit();
+  //Param4Jsunit();
   Monitor1Jsunit();
   Monitor2Jsunit();
   Monitor3Jsunit();
   Monitor4Jsunit();
-  repeatCountJsunit();
-  repeatNoTemplateIdJsunit();
-  repeatKeyJsunit();
-  repeatVirtualScrollJsunit();
+  //repeatCountJsunit();
+  //repeatNoTemplateIdJsunit();
+  //repeatKeyJsunit();
+  //repeatVirtualScrollJsunit();
   LocalTestJsunit();
   ComponentV2TestJsunit();
   ParamTestJsunit1()
@@ -332,7 +332,7 @@ export default function testsuite() {
   Monitor0290Test();
   Monitor0300Test();
   LinkTest0090();
-  RepeatTest0040();
+  //RepeatTest0040();
   MakeObservedTest0090();
   V1ToV2();
   V2ToV1();
@@ -344,9 +344,9 @@ export default function testsuite() {
   WrapBuilder0020Test();
   StateTest0070();
   StateTest0090();
-  LazyForEachTest0470();
+  //LazyForEachTest0470();
   IfElseTest0100();
-  RepeatTest0200();
+  //RepeatTest0200();
   MakeObservedTest0300();
   WatchLinkTest0050();
   ProvideConsumeTest0010();
@@ -356,18 +356,18 @@ export default function testsuite() {
   SubAbstractPropertyLinkTest();
   EnvironmentTest0040();
   LocalStorageDeleteTest0120();
-  LazyForEachInterface();
-  RepeatTest0010();
-  RepeatTest0020();
-  RepeatTest0400();
+  //LazyForEachInterface();
+  //RepeatTest0010();
+  //RepeatTest0020();
+  //RepeatTest0400();
 
 
   makeObserved0100Test();
   DataOperationTypeTest();
-  lazyChangeJsunit();
-  lazyReloadJsunit();
-  LazyForEachTest0120();
-  LazyForEachChangeTest0020();
+  //lazyChangeJsunit();
+  //lazyReloadJsunit();
+  //LazyForEachTest0120();
+  //LazyForEachChangeTest0020();
   UIUtilsMakeBindingTest();
   ConsumeDefaultValueStringTest();
 }

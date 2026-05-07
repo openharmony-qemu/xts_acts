@@ -582,12 +582,23 @@ export default function PopupNodeTest() {
     it('popupBindPopupByButton', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('PopupTest: popupBindPopupByButton START');
       try {
+        let options: router.RouterOptions = {
+          url: 'MainAbility/pages/popup/PopupIndex',
+        };
+        const routerInstance = AppStorage.get<Router>("router") as Router;
+        routerInstance.pushUrl(options);
+        await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
         const showPopupButton = await driver.findComponent(ON.id('btnShowPopupByBindPopup'));
+        console.info('PopupTest: popupBindPopupByButton get showPopupButton success');
         expect(!!showPopupButton).assertEqual(true);
         await (showPopupButton?.click() as Promise<void>);
         await Utils.sleep(SLEEP_TIME * 2);
-        const popupBuilder = await driver.findComponent(ON.text('popupBuilder', MatchPattern.EQUALS));
+        let popupBuilder = await driver.findComponent(ON.text('PopB', MatchPattern.EQUALS));
+        if (!popupBuilder) {
+          popupBuilder = await driver.findComponent(ON.text('popupBuilder', MatchPattern.EQUALS));
+          console.info('PopupTest: popupBindPopupByButton get popupBuilder by popupBuilder text');
+        }
         expect(!!popupBuilder).assertEqual(true);
         console.info('PopupTest: popupBindPopupByButton popupMessage exist');
         console.info('PopupTest: popupBindPopupByButton - Popup displayed successfully after button click');

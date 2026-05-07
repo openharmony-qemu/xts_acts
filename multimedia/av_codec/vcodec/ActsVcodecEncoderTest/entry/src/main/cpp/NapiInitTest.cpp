@@ -64,18 +64,15 @@ static void CompleteTestAsync(napi_env env, napi_status status, void* data)
         napi_create_string_utf8(env, "Async test execution failed", NAPI_AUTO_LENGTH, &error);
         napi_reject_deferred(env, context->deferred, error);
     } else {
-        // 清理资源
         if (context->tearDown) {
             context->tearDown();
         }
 
-        // 返回结果
         napi_value result;
         napi_create_int32(env, context->result, &result);
         napi_resolve_deferred(env, context->deferred, result);
     }
 
-    // 清理异步工作
     napi_delete_async_work(env, context->work);
     delete context;
 }
@@ -102,8 +99,9 @@ static napi_value RunTestAsync(napi_env env,
 
     napi_value resourceName;
     napi_create_string_utf8(env, "VideoEncoderTest", NAPI_AUTO_LENGTH, &resourceName);
-
-    napi_create_async_work(env, nullptr, resourceName,
+    napi_create_async_work(env,
+        nullptr,
+        resourceName,
         ExecuteTestAsync,
         CompleteTestAsync,
         context,
@@ -128,9 +126,9 @@ static std::vector<TestFunction> GetApiTestFunctionsPart1()
         VideoEncodeIllegalPara1800Test, VideoEncodeIllegalPara1900Test,
         VideoEncodeIllegalPara2000Test, VideoEncodeIllegalPara2100Test,
         VideoEncodeIllegalPara2200Test, VideoEncodeIllegalPara2300Test,
-        VideoEncodeIllegalPara2500Test, VideoEncodeIllegalPara2600Test,
-        VideoEncodeIllegalPara2700Test, VideoEncodeIllegalPara2800Test,
-        VideoEncodeIllegalPara2900Test
+        VideoEncodeIllegalPara2400Test, VideoEncodeIllegalPara2500Test,
+        VideoEncodeIllegalPara2600Test, VideoEncodeIllegalPara2700Test,
+        VideoEncodeIllegalPara2800Test, VideoEncodeIllegalPara2900Test
     };
 }
 
@@ -142,9 +140,11 @@ static std::vector<TestFunction> GetApiTestFunctionsPart2()
         VideoEncodeApi0600Test, VideoEncodeApi0700Test, VideoEncodeApi0800Test,
         VideoEncodeApi0900Test, VideoEncodeApi1000Test, VideoEncodeApi1100Test,
         VideoEncodeApi1200Test, VideoEncodeApi1300Test, VideoEncodeApi1400Test,
-        VideoEncodeApi1410Test, VideoEncodeSyncApi0010Test, VideoEncodeSyncApi0040Test,
-        VideoEncodeSyncApi0050Test, VideoEncodeSyncApi0060Test, VideoEncodeSyncApi0070Test,
-        VideoEncodeSyncApi0080Test
+        VideoEncodeApi1410Test, VideoEncodeSyncApi0010Test, VideoEncodeSyncApi0020Test,
+        VideoEncodeSyncApi0030Test, VideoEncodeSyncApi0040Test, VideoEncodeSyncApi0050Test,
+        VideoEncodeSyncApi0060Test, VideoEncodeSyncApi0070Test, VideoEncodeSyncApi0080Test,
+        VideoEncodeApiAdd0010, VideoEncodeApiAdd0020, VideoEncodeApiAdd0030,
+        VideoEncodeApiAdd0040, VideoEncodeApiAdd0050
     };
 }
 
@@ -177,24 +177,22 @@ static std::vector<TestFunction> GetFuncTestPart1()
 {
     return {
     VideoEncodeFunction0100Test,
-    // VideoEncodeFunction0200Test,  // DISABLED: Uses SURF_INPUT
+    VideoEncodeFunction0200Test,
     VideoEncodeFunction0300Test,
-    // VideoEncodeFunction0400Test,  // DISABLED: Uses GetVideoSupportedPixelFormats
-    // VideoEncodeFunction0500Test,  // DISABLED: Uses SURF_INPUT - causes hang
-    // VideoEncodeFunction0600Test,  // DISABLED: Uses SURF_INPUT
+    VideoEncodeFunction0400Test,
+    VideoEncodeFunction0500Test,
+    VideoEncodeFunction0600Test,
     VideoEncodeFunction0700Test,
     VideoEncodeFunction0800Test,
     VideoEncodeFunction0810Test,
     VideoEncodeFunction0900Test,
     VideoEncodeFunction1000Test,
-    // VideoEncodeFunction1100Test,  // DISABLED: Uses GetVideoSupportedPixelFormats
-    // VideoEncodeFunction1200Test,  // Function does not exist in header
-    // VideoEncodeFunction1300Test,  // DISABLED: Uses GetVideoSupportedPixelFormats
-    // VideoEncodeFunction1400Test,  // DISABLED: Uses GetVideoSupportedPixelFormats
-    // VideoEncodeFunction1500Test,  // DISABLED: Uses GetVideoSupportedPixelFormats
+    VideoEncodeFunction1100Test,
+    VideoEncodeFunction1400Test,
     VideoEncodeFunction1600Test,
     VideoEncodeFunction1700Test,
     VideoEncodeFunction1800Test,
+    VideoEncodeFunction1900Test,
     VideoEncodeFunction2000Test
     };
 }
@@ -418,10 +416,12 @@ static napi_value RunConfigureTest(napi_env env, napi_callback_info info)
 // ==================== GetparamTest Module ====================
 static const std::vector<TestFunction>& GetGetparamTestFunctions()
 {
-    // 只保留不使用 SURF_INPUT 的测试函数（HAP 模式下 Surface API 不完整）
     static const std::vector<TestFunction> functions = {
     VideoEncodeMseQp0100Test,
+    VideoEncodeMseQp0200Test,
     VideoEncodeMseQp0300Test,
+    VideoEncodeMseQp0400Test,
+    VideoEncodeRepeat0100Test
     };
     return functions;
 }
@@ -575,22 +575,47 @@ static napi_value RunStateTest(napi_env env, napi_callback_info info)
 }
 
 // ==================== TemporalTest Module ====================
+static std::vector<TestFunction> GetTemporalTestPart1()
+{
+    return {
+        VideoTemporalEncodeApi0020Test, VideoTemporalEncodeApi0030Test,
+        VideoTemporalEncodeFunction0010Test, VideoTemporalEncodeFunction0020Test,
+        VideoTemporalEncodeFunction0030Test, VideoTemporalEncodeFunction0040Test,
+        VideoTemporalEncodeFunction0440Test, VideoTemporalEncodeFunction0050Test,
+        VideoTemporalEncodeFunction0060Test, VideoTemporalEncodeFunction0070Test,
+        VideoTemporalEncodeFunction0080Test, VideoTemporalEncodeFunction0090Test,
+        VideoTemporalEncodeFunction0100Test, VideoTemporalEncodeFunction0110Test,
+        VideoTemporalEncodeFunction0120Test, VideoTemporalEncodeFunction0130Test,
+        VideoTemporalEncodeFunction0140Test, VideoTemporalEncodeFunction0150Test,
+        VideoTemporalEncodeFunction0160Test, VideoTemporalEncodeFunction0170Test,
+        VideoTemporalEncodeFunction0180Test, LTR_FUNC_001Test, LTR_FUNC_002Test,
+        LTR_FUNC_004Test, LTR_FUNC_005Test
+    };
+}
+
+static std::vector<TestFunction> GetTemporalTestPart2()
+{
+    return {
+        LTR_FUNC_006Test, LTR_FUNC_007Test, LTR_FUNC_008Test, LTR_FUNC_009Test,
+        LTR_FUNC_010Test, LTR_FUNC_011Test, LTR_FUNC_012Test, LTR_FUNC_013Test,
+        LTR_FUNC_014Test, LTR_FUNC_015Test, LTR_FUNC_016Test,
+        VideoUniformlyEncodeFunction0100Test, VideoUniformlyEncodeFunction0200Test,
+        VideoUniformlyEncodeFunction0300Test, VideoUniformlyEncodeFunction0400Test,
+        VideoUniformlyEncodeFunction0500Test, VideoUniformlyEncodeFunction0600Test,
+        VideoUniformlyEncodeFunction0700Test, VideoUniformlyEncodeFunction0800Test,
+        VideoUniformlyEncodeFunction0900Test, VideoUniformlyEncodeFunction1000Test
+    };
+}
+
 static const std::vector<TestFunction>& GetTemporalTestFunctions()
 {
-    // 只保留不使用 SURF_INPUT 的测试函数（HAP 模式下 Surface API 不完整）
-    static const std::vector<TestFunction> functions = {
-    VideoTemporalEncodeApi0020Test,
-    VideoTemporalEncodeApi0030Test,
-    VideoTemporalEncodeFunction0010Test,
-    VideoTemporalEncodeFunction0020Test,
-    VideoTemporalEncodeFunction0100Test,
-    VideoTemporalEncodeFunction0140Test,
-    VideoUniformlyEncodeFunction0100Test,
-    VideoUniformlyEncodeFunction0200Test,
-    VideoUniformlyEncodeFunction0300Test,
-    VideoUniformlyEncodeFunction0400Test,
-    VideoUniformlyEncodeFunction0500Test,
-    };
+    static std::vector<TestFunction> functions;
+    if (functions.empty()) {
+        auto part1 = GetTemporalTestPart1();
+        auto part2 = GetTemporalTestPart2();
+        functions.insert(functions.end(), part1.begin(), part1.end());
+        functions.insert(functions.end(), part2.begin(), part2.end());
+    }
     return functions;
 }
 
@@ -681,7 +706,10 @@ static std::vector<TestFunction> GetFunc2TestPart2()
     VideoEncodeRgba10101020170Test,
     VideoEncodeRgba10101020180Test,
     VideoEncodeRgba10101020190Test,
-    VideoEncodeSyncFormat0010Test
+    VideoEncodeSyncFormat0010Test,
+    VideoEncodeAnother0010Test,
+    VideoCapabilityConfig0010Test,
+    VideoCapabilityConfig0020Test
     };
 }
 

@@ -36,7 +36,7 @@ import events_emitter from '@ohos.events.emitter';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { Callback,RecordData } from '@ohos.base'
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
@@ -45,6 +45,7 @@ class StringFields {
 struct Index {
   stringObj: StringFields  = new StringFields ();
   controller: web_webview.WebviewController = new web_webview.WebviewController(undefined);
+  controllerOne: web_webview.WebviewController = new web_webview.WebviewController(undefined);
   @State text: boolean = false;
   @State num: number = 0;
   @State mode: WebDarkMode = WebDarkMode.OFF;
@@ -98,6 +99,31 @@ struct Index {
               }
               break;
             }
+
+            case "emitDeleteJavaScriptRegister02": {
+              try {
+                this.controller.deleteJavaScriptRegister("");
+                this.controller.deleteJavaScriptRegister("");
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`Errorcode: ${error.code}, `);
+                Utils.emitEvent(`${error.code}`, 143171);
+              }
+              break;
+            }
+
+            case "emitDeleteJavaScriptRegister03": {
+              try {
+                this.controllerOne.deleteJavaScriptRegister("objName");
+                this.controllerOne.deleteJavaScriptRegister("objName");
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`Errorcode: ${error.code}, `);
+                Utils.emitEvent(`${error.code}`, 143172);
+              }
+              break;
+            }
+
 
             case "emitJsMessExtGetString": {
               try {
@@ -159,20 +185,20 @@ struct Index {
                 this.controller.loadUrl("resource://rawfile/webMessageExt.html");
                 console.log("In eTS side send true start");
                 setTimeout(() => {
-                if (this.nativePort) {
+                  if (this.nativePort) {
                     this.message.setType(web_webview.WebMessageType.STRING);
                     this.message.setString("helloFromEts");
                     this.nativePort?.postMessageEventExt(this.message);
-                };
+                  };
                 }, 4000);
                 setTimeout(() => {
                   this.controller.runJavaScript("postStringToHtml()", (error, result) => {
                     console.log(`The emitWebMessExtSetString() return value is: ${result}`);
                     setTimeout(() => {
-                   this.webMessResult = result;
-                   if (this.webMessResult) {
-                     Utils.emitEvent(this.webMessResult as String, 506);
-                   }
+                      this.webMessResult = result;
+                      if (this.webMessResult) {
+                        Utils.emitEvent(this.webMessResult as String, 506);
+                      }
                     }, 2000);
                   });
                 }, 7000);
@@ -227,9 +253,9 @@ struct Index {
               try {
                 this.controller.loadUrl("resource://rawfile/webMessageExt.html");
                 setTimeout(() => {
-                this.controller.runJavaScript("postNumberToApp()", (error, result) => {
-                  console.log(`The emitWebMessExtGetNumber() return value is: ${result}`);
-                })
+                  this.controller.runJavaScript("postNumberToApp()", (error, result) => {
+                    console.log(`The emitWebMessExtGetNumber() return value is: ${result}`);
+                  })
                 }, 2000);
               } catch (error) {
                 error = error as BusinessError;
@@ -301,7 +327,7 @@ struct Index {
               }
               break;
             }
-//
+            //
             case "emitWebMessExtSetArrayBuffer": {
               try {
                 this.controller.loadUrl("resource://rawfile/webMessageExt.html");

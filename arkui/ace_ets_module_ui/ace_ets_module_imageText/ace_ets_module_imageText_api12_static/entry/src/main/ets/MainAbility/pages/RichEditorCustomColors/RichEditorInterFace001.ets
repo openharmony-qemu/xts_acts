@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -106,7 +106,7 @@ struct RichEditorInterFace001 {
   options: RichEditorOptions = { controller: this.controller } as RichEditorOptions
   private iconArr: Array<Resource> =new Array<Resource>($r('app.media.icon'), $r('app.media.icon'), $r('app.media.icon'),
     $r('app.media.icon'), $r('app.media.icon'))
-  @State iconBgColor: ResourceColor[] = new Array<ResourceColor>(this.iconArr.length).fill(this.colorTransparent)
+  @State iconBgColor: ResourceColor[] = Array.create<ResourceColor>(this.iconArr.length, this.colorTransparent)
   @State pasteEnable: boolean = false
   @State visibilityValue: Visibility = Visibility.Visible
   @State textStyle: RichEditorTextStyle = {} as RichEditorTextStyle

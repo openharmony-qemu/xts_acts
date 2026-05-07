@@ -20,6 +20,7 @@ import common from '@ohos.app.ability.common';
 import fs from  '@ohos.file.fs';
 import statistics from '@ohos.net.statistics';
 import wantAgent from '@ohos.app.ability.wantAgent';
+import commonEventManager from '@ohos.commonEventManager';
 import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -3451,6 +3452,8 @@ export default function requestConfigSavesStaticTest() {
         expect(tasksData10.length !== 0).assertTrue();
         let tasksData11:Array<string>  = await request.agent.search(filter11);
         expect(tasksData11.length !== 0).assertTrue();
+        let tasksData12:Array<string>  = await request.agent.search();
+        expect(tasksData12.length > 1).assertTrue();
 
         request.agent.search((err, data) => {
           if (err) {
@@ -3533,6 +3536,21 @@ export default function requestConfigSavesStaticTest() {
           console.info(`====>Succeeded in searching a upload task. `);
           expect(data!.length !== 0).assertTrue();
         });
+
+        let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+          events: ['ohos.request.event.COMPLETE']
+        };
+        try {
+          commonEventManager.createSubscriber(subscribeInfo, (err, commonEventSubscriber) => {
+            if(err) {
+              console.info(`====>Succeeded in creating subscriber.`);
+            }
+            console.error(`====>Failed to create subscriber. Code is ${err!.code}, message is ${err!.message}`);
+          });
+        } catch (error) {
+          let err: BusinessError = error as BusinessError;
+          console.error(`====>Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
+        }
         done();
         console.info("====>SUB_Request_downloadConfigSaves_Supplemental_0500 create end");
       } catch (err) {
@@ -3541,6 +3559,458 @@ export default function requestConfigSavesStaticTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_0600
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_0600
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_0600', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_0600 is starting-----------------------");
+      try{
+        await request.agent.getTask(baseContext!, '', '');
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_0600 getTask success");
+        expect().assertFail();
+        done();
+      } catch (err){
+        console.info(`====>SUB_Request_downloadConfigSaves_Supplemental_0600 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_0700
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_0700
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_0700', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_0700 is starting-----------------------");
+      try{
+        await request.agent.remove('');
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_0700 remove success");
+        expect().assertFail();
+        done();
+      } catch (err){
+        console.info(`====>SUB_Request_downloadConfigSaves_Supplemental_0700 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_0800
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_0800
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_0800', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_0800 is starting-----------------------");
+      try{
+        request.agent.remove('', (err)=>{
+          try{
+            console.info("====>SUB_Request_downloadConfigSaves_Supplemental_0800 into callback");
+            expect().assertFail();
+            done();
+          } catch (err){
+            console.info(`====>SUB_Request_downloadConfigSaves_Supplemental_0800 err: ${JSON.stringify(err)}`);
+            done();
+          }
+        })
+      } catch (err){
+        console.info(`====>SUB_Request_downloadConfigSaves_Supplemental_0800 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_0900
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_0900
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_0900', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_0900 is starting-----------------------");
+      try{
+        await request.agent.show('');
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_0900 show success");
+        expect().assertFail();
+        done();
+      } catch (err){
+        console.info(`====>SUB_Request_downloadConfigSaves_Supplemental_0900 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_1000
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_1000
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_1000', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_1000 is starting-----------------------");
+      try{
+        request.agent.show('', (err, taskInfo)=>{
+          try{
+            console.info("====>SUB_Request_downloadConfigSaves_Supplemental_1000 into callback");
+            expect().assertFail();
+            done();
+          } catch (err){
+            console.info(`====>SUB_Request_downloadConfigSaves_Supplemental_1000 err: ${JSON.stringify(err)}`);
+            done();
+          }
+        })
+      } catch (err){
+        console.info(`====>SUB_Request_downloadConfigSaves_Supplemental_1000 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_1100
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_1100
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_1100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_1100 is starting-----------------------");
+      try{
+        await request.agent.touch('', '');
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_1100 touch success");
+        expect().assertFail();
+        done();
+      } catch (err){
+        console.info(`====>SUB_Request_downloadConfigSaves_Supplemental_1100 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_1200
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_1200
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_1200', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_1200 is starting-----------------------");
+      try{
+        request.agent.touch('', '', (err, taskInfo)=>{
+          try{
+            console.info("====>SUB_Request_downloadConfigSaves_Supplemental_1200 into callback");
+            expect().assertFail();
+            done();
+          } catch (err){
+            console.info(`====>SUB_Request_downloadConfigSaves_Supplemental_1200 err: ${JSON.stringify(err)}`);
+            done();
+          }
+        })
+      } catch (err){
+        console.info(`====>SUB_Request_downloadConfigSaves_Supplemental_1200 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_1300
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_1300
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_1300', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_1300 is starting-----------------------");
+      try{
+        await request.agent.attachGroup('', []);
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_1300 attachGroup success");
+        expect().assertFail();
+        done();
+      } catch (err){
+        console.info(`====>SUB_Request_downloadConfigSaves_Supplemental_1300 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_1400
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_1400
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_1400', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_1400 is starting-----------------------");
+      try{
+        await request.agent.deleteGroup('');
+        console.info("====>SUB_Request_download_Supplemental_3800 deleteGroup success");
+        expect().assertFail();
+        done();
+      } catch (err){
+        console.info(`====>SUB_Request_download_Supplemental_3800 catch err: ${JSON.stringify(err.code)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_1500
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_1500
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_1500', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_1500 is starting-----------------------");
+      try {
+        await request.agent.getTask(baseContext!, 'task');
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_1500 getTask success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_1500 catch: " + JSON.stringify(err.code));
+        expect(err.code === 21900006);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_1600
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_1600
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_1600', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_1600 is starting-----------------------");
+      try {
+        await request.agent.show("12315");
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_1600 show success");
+        expect().assertFail();
+      }catch (err) {
+        console.info('====>SUB_Request_downloadConfigSaves_Supplemental_1600 catch err:' + JSON.stringify(err.code));
+        expect(err.code).assertEqual(21900006);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_1700
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_1700
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_1700', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_1700 is starting-----------------------");
+      request.agent.show("12315", (err, taskInfo)=>{
+        try{
+          if(err){
+            console.info('====>SUB_Request_downloadConfigSaves_Supplemental_1700 err:' + JSON.stringify(err.code));
+            expect(err.code).assertEqual(21900006);
+            done();
+          }else{
+            console.info('====>SUB_Request_downloadConfigSaves_Supplemental_1700 failed');
+            expect().assertFail();
+          }
+        }catch(err){
+          console.info('====>SUB_Request_downloadConfigSaves_Supplemental_1700 show throw_err:' + JSON.stringify(err.code));
+          done();
+        };
+      });
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_1800
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_1800
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_1800', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_1800 is starting-----------------------");
+      try {
+        await request.agent.touch('12315', 'downloadTest');
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_1800 touch success");
+        expect().assertFail();
+      }catch (err) {
+        console.info('====>SUB_Request_downloadConfigSaves_Supplemental_1800 catch err:' + JSON.stringify(err.code));
+        expect(err.code).assertEqual(21900006);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_1900
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_1900
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_1900', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_1900 is starting-----------------------");
+      request.agent.touch('123', 'downloadTest', (err, taskInfo)=>{
+        try{
+          if(err){
+            console.info('====>SUB_Request_downloadConfigSaves_Supplemental_1900 err:' + JSON.stringify(err.code));
+            expect(err.code).assertEqual(21900006);
+            done();
+          }else{
+            console.info('====>SUB_Request_downloadConfigSaves_Supplemental_1900 failed');
+            expect().assertFail();
+          }
+        }catch(err){
+          console.info('====>SUB_Request_downloadConfigSaves_Supplemental_1900 touch throw_err:' + JSON.stringify(err.code));
+          done();
+        };
+      });
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_2000
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_2000
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_2000', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_2000 is starting-----------------------");
+      try {
+        await request.agent.attachGroup('123', []);
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_2000 deleteGroup success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_2000 err: " + JSON.stringify(err.code));
+        expect(err.code).assertEqual(21900008);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_2100
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_2100
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_2100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_2100 is starting-----------------------");
+      try {
+        await request.agent.deleteGroup('groupConfig');
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_2100 deleteGroup success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_2100 err: " + JSON.stringify(err.code));
+        expect(err.code).assertEqual(21900008);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_2200
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_2200
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_2200', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_2200 is starting-----------------------");
+      try {
+        let notification: request.agent.Notification = {
+        }
+        let groupConfig: request.agent.GroupConfig = {
+          notification: notification
+        }
+        let gid: string = await request.agent.createGroup(groupConfig)
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_2200 createGroup success");
+        await request.agent.attachGroup(gid, ['123456']);
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_2200 attachGroup success");
+        expect().assertFail();
+      } catch (err) {
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_2200 err: " + JSON.stringify(err.code));
+        expect(err.code).assertEqual(21900006);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_downloadConfigSaves_Supplemental_2300
+     * @tc.number SUB_Request_downloadConfigSaves_Supplemental_2300
+     * @tc.desc   wantAgent is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_downloadConfigSaves_Supplemental_2300', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      console.info("====>-----------------------SUB_Request_downloadConfigSaves_Supplemental_2300 is starting-----------------------");
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitcode.com/weixin_43862wr7/download/releases/download/v1.0.1/test.hap',
+        title: 'reeateTest',
+        description: 'XTS download test!',
+        saveas: './SUB_Request_downloadConfigSaves_Supplemental_2300.txt',
+        network: request.agent.Network.ANY,
+      };
+      let groupConfig: request.agent.GroupConfig = {
+        gauge: true,
+        notification: {}
+      }
+
+      let task: request.agent.Task | null = null;
+      try {
+        task = await request.agent.create(baseContext!, config);
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_2300 create task success");
+        let gid: string = await request.agent.createGroup(groupConfig)
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_2300 createGroup success");
+        await task.start();
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_2300 task start success");
+        await request.agent.attachGroup(gid, [task.tid]);
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_2300 attachGroup success tid: " + task.tid);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_downloadConfigSaves_Supplemental_2300 err: " + JSON.stringify(err.code));
+        expect(err.code).assertEqual(21900007);
+        if (task !== null){
+          await request.agent.remove(task.tid);
+        }
+        done();
+      }
+    });
 
   });
 };

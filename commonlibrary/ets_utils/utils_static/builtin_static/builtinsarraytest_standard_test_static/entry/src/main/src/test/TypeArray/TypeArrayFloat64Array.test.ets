@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -244,7 +244,7 @@ export default function typeArrayFloat64ArrayTest() {
       const filtered = arr.filter((val) => val > 2.0);
       expect(filtered.toString()).assertEqual('3,4');
       expect(filtered.length).assertEqual(2);
-      const sum = arr.reduce((acc, val) => acc + val, 0);
+      const sum = arr.reduce((acc, val) => acc + val, 0.);
       expect(sum).assertEqual(10.0);
     })
 
@@ -294,7 +294,7 @@ export default function typeArrayFloat64ArrayTest() {
       expect(arr2.toString()).assertEqual('4,5,3,4,5');
       expect(arr2.length).assertEqual(5);
       const arr3 = new Float64Array([3.0, 1.0, 4.0, 2.0]);
-      arr3.sort((a: double, b: double) => (a - b) as int);
+      arr3.sort((a: double, b: double) => (a - b).toInt());
       expect(arr3.toString()).assertEqual('1,2,3,4');
       expect(arr3.length).assertEqual(4);
     })
@@ -482,7 +482,7 @@ export default function typeArrayFloat64ArrayTest() {
 
       const sumRight = arr.reduceRight((acc, val) => {
         return acc + val;
-      }, 0);
+      }, 0.);
       expect(sumRight).assertEqual(10.0);
 
       const str = arr.reduceRight((acc, val) => {
@@ -606,7 +606,7 @@ export default function typeArrayFloat64ArrayTest() {
       }
       expect(errorThrown).assertEqual(true);
 
-      const result = emptyArr.reduce((acc, val) => acc + val, 0);
+      const result = emptyArr.reduce((acc, val) => acc + val, 0.);
       expect(result).assertEqual(0);
     })
 
@@ -673,7 +673,7 @@ export default function typeArrayFloat64ArrayTest() {
         if (isNaN(b)) {
           return -1;
         }
-        return (a - b) as int;
+        return (a - b).toInt();
       });
 
       expect(arr[0]).assertEqual(-Infinity);
@@ -1284,7 +1284,7 @@ export default function typeArrayFloat64ArrayTest() {
           originalIndices.push(index);
         }
       });
-      arr.sort((a: double, b: double) => (a - b) as int);
+      arr.sort((a: double, b: double) => (a - b).toInt());
       const sortedIndices: number[] = [];
       arr.forEach((val, index) => {
         if (val === 2.0) {
@@ -1927,7 +1927,7 @@ export default function typeArrayFloat64ArrayTest() {
       expect(approxEqual(largeArr[0], 0.0)).assertEqual(true);
       expect(approxEqual(largeArr[largeSize - 1], 999.999)).assertEqual(true);
       expect(approxEqual(largeArr[500000], 500.0)).assertEqual(true);
-      const sum = largeArr.reduce((acc, val) => acc + val, 0);
+      const sum = largeArr.reduce((acc, val) => acc + val, 0.);
       const expectedSum = (largeSize * (largeSize - 1) / 2) * 0.001;
       const largeSub = largeArr.subarray(1000, 2000);
       expect(largeSub.length).assertEqual(1000);
@@ -2104,7 +2104,7 @@ export default function typeArrayFloat64ArrayTest() {
             throw new Error('Final value reached');
           }
           return acc + val;
-        }, 0);
+        }, 0.);
       } catch (e) {
         errorThrown = true;
         expect((e as Error).message).assertEqual('Final value reached');

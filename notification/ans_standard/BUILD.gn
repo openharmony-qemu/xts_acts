@@ -66,7 +66,28 @@ group("ans_standard") {
       "actsNotificationAnsCoveredTestStatic:ActsNotificationAnsCoverStaticTest",
       "actsNotificationAnsThreePartyWatchWithOutAbilityNoPermissionTestStatic:ActsNotificationAnsThreePartyWatchStaticWithOutAbilityNoPermissionTest",
       "actsNotificationAnsThreePartyWatchWithInAbilityTestStatic:ActsNotificationAnsThreePartyWatchWithInAbilityStaticTest",
-      "actsNotificationAnsThreePartyWatchWithOutAbilityTestStatic:ActsNotificationAnsThreePartyWatchWithOutAbilityStaticTest"
+      "actsNotificationAnsThreePartyWatchWithOutAbilityTestStatic:ActsNotificationAnsThreePartyWatchWithOutAbilityStaticTest",
+      "actsNotificationAnsDisableNotificationNoSystemTestStatic:ActsNotificationAnsDisableNotificationNoSystemStaticTest",
+      "actsNotificationAnsEnableBatchNoSystemTestStatic:ActsNotificationAnsEnableBatchNoSystemStaticTest",
+      "actsNotificationAnsGetNotificationParametersTest:ActsNotificationAnsGetNotificationParametersTest",
+      "actsNotificationAnsGetNotificationParametersTestStatic:ActsNotificationAnsGetNotificationParametersStaticTest",
+      "actsNotificationAnsPriorityNotificationNoSystemTestStatic:ActsNotificationAnsPriorityNotificationNoSystemStaticTest",
+      "actsNotificationAnsPriorityNotificationTest:ActsNotificationAnsPriorityNotificationTest",
+      "actsNotificationEmitterLittleTestStatic:ActsNotificationEmitterLittleStaticTest",
+      "actsNotificationAnsEnableBatchNoSystemTest:ActsNotificationAnsEnableBatchNoSystemTest",
+      "actsNotificationAnsPCPADsoftbusNoSystemTestStatic:ActsNotificationAnsPCPADsoftbusNoSystemStaticTest",
+      "actsNotificationAnsPCPADsoftbusTest:ActsNotificationAnsPCPADSoftBusTest",
+      "actsNotificationAnsThreePartyWatchNoSystemNoPermissionTest:ActsNotificationAnsThreePartyWatchNoSystemNoPermissionTest",
+      "actsNotificationCesMoreInstanceTest:ActsNotificationCesMoreInstanceTest",
+      "actsNotificationCesMoreInstanceTestStatic:ActsNotificationCesMoreInstanceStaticTest",
+      "actsNotificationAnsOpenWindowWithResultWithoutAbilityTest:ActsNotificationAnsOpenWindowWithResultWithoutAbilityTest",
+      "actsNotificationAnsOpenWindowWithResultWithinAbilityNoPermissionTest:ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPermissionTest",
+      "actsNotificationAnsOpenWindowWithResultWithoutAbilityTestStatic:ActsNotificationAnsopenWindowWithResultWithoutAbilityStaticTest",
+      "actsNotificationAnsOpenWindowWithResultWithinAbilityTestStatic:ActsNotificationAnsopenWindowWithResultWithinAbilityStaticTest",
+      "actsNotificationAnsOpenWindowWithResultWithinAbilityNoPermissionTestStatic:ActsNotificationAnsopenWindowWithResultWithinAbilityNoPermissionStaticTest",
+      "actsNotificationAnsOpenWindowWithResultWithinAbilityTest:ActsNotificationAnsOpenWindowWithResultWithinAbilityTest",
+      "actsNotificationAnsGetNotificationSettingTest:ActsNotificationAnsGetNotificationSettingTest",
+      "actsNotificationAnsGetNotificationSettingTestStatic:ActsNotificationAnsGetNotificationSettingStaticTest"
     ]
   }
 }
