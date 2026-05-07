@@ -87,15 +87,15 @@ export default function ActsNotificationAnsSubscribeNotificationNoSystemStaticTe
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_subscribeNotification_Static_0007
-     * @tc.number Sub_Notification_Ans_subscribeNotification_Static_0007
+     * @tc.name   SUB_Notification_Ans_subscribeNotification_Static_0100
+     * @tc.number SUB_Notification_Ans_subscribeNotification_Static_0100
      * @tc.desc   The third-party application calls the subscribeNotification interface and reports error 202
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_subscribeNotification_Static_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
-      const testNum = 'Sub_Notification_Ans_subscribeNotification_Static_0007';
+    it('SUB_Notification_Ans_subscribeNotification_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
+      const testNum = 'SUB_Notification_Ans_subscribeNotification_Static_0100';
       let num:int=0
       let onConsumeCallback = (data: notificationSubscribe.SubscribeCallbackData) => {
         console.info(`${testNum}testTag onConsume isGroupIcon: ${data?.request?.groupInfo?.isGroupIcon}, key: ${data?.request?.hashCode}`);
@@ -133,15 +133,15 @@ export default function ActsNotificationAnsSubscribeNotificationNoSystemStaticTe
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_subscribeNotification_Static_0061
-     * @tc.number Sub_Notification_Ans_subscribeNotification_Static_0061
+     * @tc.name   SUB_Notification_Ans_subscribeNotification_Static_0200
+     * @tc.number SUB_Notification_Ans_subscribeNotification_Static_0200
      * @tc.desc   The third-party application calls the subscribeNotification interface with the info parameter, and an error code 202 is reported
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_subscribeNotification_Static_0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
-      const testNum = 'Sub_Notification_Ans_subscribeNotification_Static_0061';
+    it('SUB_Notification_Ans_subscribeNotification_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: () => void): Promise<void> => {
+      const testNum = 'SUB_Notification_Ans_subscribeNotification_Static_0200';
       let num:int=0
       let onConsumeCallback = (data: notificationSubscribe.SubscribeCallbackData) => {
         console.info(`${testNum}testTag onConsume isGroupIcon: ${data?.request?.groupInfo?.isGroupIcon}, key: ${data?.request?.hashCode}`);
