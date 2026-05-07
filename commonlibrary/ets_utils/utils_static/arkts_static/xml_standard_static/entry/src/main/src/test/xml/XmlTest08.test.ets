@@ -1,5 +1,6 @@
+﻿'use static'
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '../../../../../../hypium';
 import { util, xml } from '@kit.ArkTS';
 
 
@@ -30,11 +31,13 @@ function funcB(name: string, value: string) {
   return true;
 }
 
-const sleep = (time: number): Promise<void> => {
-  return new Promise<void>((resolve) => {
-    setTimeout(resolve, time);
-  });
-};
+async function sleep(count: int): Promise<int> {
+  return new Promise<int>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(0)
+    }, count)
+  })
+}
 
 export default function XmlTest_08() {
   describe('XmlTest_08', () => {
@@ -214,7 +217,7 @@ export default function XmlTest_08() {
         const TAG = 'IsWhitespaceTest0011';
         console.log(TAG + ' start');
         const xmlData = `<?xml-stylesheet href="style.css"?>`;
-        const encodedBuffer = new util.TextEncoder().encode(xmlData).buffer as ArrayBuffer;
+        const encodedBuffer = new util.TextEncoder().encodeInto(xmlData).buffer as ArrayBuffer;
         const parser = new xml.XmlPullParser(encodedBuffer);
         parser.parseXml({
           tokenValueCallbackFunction: (tokenType, tokenInfo) => {
@@ -246,7 +249,7 @@ Core business data: 10001
 <sub>Sub element</sub>
 </mix>`;
           const encoder = new util.TextEncoder();
-          const xmlBuffer = encoder.encode(xmlData).buffer as ArrayBuffer;
+          const xmlBuffer = encoder.encodeInto(xmlData).buffer as ArrayBuffer;
           new xml.XmlPullParser(xmlBuffer, 'UTF-8').parseXml({
             tokenValueCallbackFunction: (t, i) => {
               if (t === xml.EventType.TEXT) {
@@ -279,7 +282,7 @@ Core business data: 10001
   non-empty-text
 </container>`;
           const encoder = new util.TextEncoder();
-          const xmlBuffer = encoder.encode(xmlData).buffer as ArrayBuffer;
+          const xmlBuffer = encoder.encodeInto(xmlData).buffer as ArrayBuffer;
 
           new xml.XmlPullParser(xmlBuffer, 'UTF-8').parseXml({
             tokenValueCallbackFunction: (t, i) => {
@@ -423,7 +426,7 @@ Core business data: 10001
         console.log(TAG + ' start');
           const xmlData = `<root attr=" value "/>`;
           const encoder = new util.TextEncoder();
-          const xmlBuffer = encoder.encode(xmlData).buffer as ArrayBuffer;
+          const xmlBuffer = encoder.encodeInto(xmlData).buffer as ArrayBuffer;
           new xml.XmlPullParser(xmlBuffer, 'UTF-8').parseXml({
             attributeValueCallbackFunction: (name, value) => {
               const trimLength = value.trim().length;

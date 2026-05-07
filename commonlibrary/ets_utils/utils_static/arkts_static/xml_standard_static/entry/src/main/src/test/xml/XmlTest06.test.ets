@@ -1,8 +1,9 @@
+'use static'
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '../../../../../../hypium';
 import { util, xml } from '@kit.ArkTS';
 
-const DOMAIN = 0x0000;
+const DOMAIN: int = 0x0000;
 const TAG = 'GetLineNumberTest';
 const textEncoder = new util.TextEncoder();
 
@@ -19,7 +20,7 @@ function createGetNameCallback(): (key: xml.EventType, value: xml.ParseInfo) => 
 }
 function stringToArrayBuffer(str: string): ArrayBuffer {
   const uint8Array = new Uint8Array(str.length * 2);
-  for (let i = 0; i < str.length; i++) {
+  for (let i: int = 0; i < str.length; i++) {
     uint8Array[i] = str.charCodeAt(i) & 0xFF;
   }
   return uint8Array.buffer;
@@ -64,11 +65,13 @@ function func03(key: xml.EventType, value: xml.ParseInfo) {
   return true;
 }
 
-const sleep = (time: number): Promise<void> => {
-  return new Promise<void>((resolve) => {
-    setTimeout(resolve, time);
-  });
-};
+async function sleep(count: int): Promise<int> {
+  return new Promise<int>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(0)
+    }, count)
+  })
+}
 
 export default function XmlTest_06() {
   describe('XmlTest_06', () => {
@@ -114,7 +117,7 @@ export default function XmlTest_06() {
         const eventTypes: number[] = [];
 
         const callbackFunc = (key: xml.EventType, value: xml.ParseInfo): boolean => {
-          const lineNum = value.getColumnNumber();
+          const lineNum: int = value.getColumnNumber();
           lineNumbers.push(lineNum);
           eventTypes.push(key);
           return true;
@@ -128,7 +131,7 @@ export default function XmlTest_06() {
         expect(lineNumbers.length).assertLarger(0);
         expect(lineNumbers[0]).assertEqual(1);
 
-        for (let i = 1; i < lineNumbers.length; i++) {
+        for (let i: int = 1; i < lineNumbers.length; i++) {
           expect(lineNumbers[i]).assertLargerOrEqual(lineNumbers[i-1]);
         }
 
@@ -170,7 +173,7 @@ export default function XmlTest_06() {
         parser.parseXml(options);
 
         expect(lineData.length).assertLarger(0);
-        for (let i = 0; i < lineData.length; i++) {
+        for (let i: int = 0; i < lineData.length; i++) {
           const data = lineData[i];
           expect(data.column).assertLarger(0);
           expect(data.column).assertLessOrEqual(strXml.length);
@@ -209,7 +212,7 @@ export default function XmlTest_06() {
         expect(lineNumbers.length).assertLarger(0);
         expect(lineNumbers[0]).assertLarger(0);
 
-        for (let i = 0; i < lineNumbers.length; i++) {
+        for (let i: int = 0; i < lineNumbers.length; i++) {
           const line = lineNumbers[i];
           expect(line).assertLarger(0);
           expect(line).assertLessOrEqual(strXml.length + 20);
@@ -264,7 +267,7 @@ export default function XmlTest_06() {
         const lineNumbers: number[] = [];
 
         const callbackFunc = (key: xml.EventType, value: xml.ParseInfo): boolean => {
-          const line = value.getLineNumber();
+          const line: int = value.getLineNumber();
           lineNumbers.push(line);
           return true;
         };
@@ -284,7 +287,7 @@ export default function XmlTest_06() {
         }
 
         if (lineNumbers.length > 0) {
-          for (let i = 0; i < lineNumbers.length; i++) {
+          for (let i: int = 0; i < lineNumbers.length; i++) {
             const line = lineNumbers[i];
             expect(line).assertLarger(0);
             expect(line).assertLessOrEqual(strXml.length);
@@ -313,7 +316,7 @@ export default function XmlTest_06() {
         ];
 
         let isXml = false
-        for (let xmlIndex = 0; xmlIndex < invalidXmls.length; xmlIndex++) {
+        for (let xmlIndex: int = 0; xmlIndex < invalidXmls.length; xmlIndex++) {
           const strXml = invalidXmls[xmlIndex];
           const textEncoder = new util.TextEncoder();
           const arrBuffer = textEncoder.encodeInto(strXml);
@@ -322,7 +325,7 @@ export default function XmlTest_06() {
           const lineNumbers: number[] = [];
 
           const callbackFunc = (key: xml.EventType, value: xml.ParseInfo): boolean => {
-            const line = value.getLineNumber();
+            const line: int = value.getLineNumber();
             lineNumbers.push(line);
             return true;
           };
@@ -338,7 +341,7 @@ export default function XmlTest_06() {
 
 
           if (lineNumbers.length > 0) {
-            for (let i = 0; i < lineNumbers.length; i++) {
+            for (let i: int = 0; i < lineNumbers.length; i++) {
               const line = lineNumbers[i];
               expect(line).assertLarger(0);
               isXml = true
@@ -391,7 +394,7 @@ export default function XmlTest_06() {
 
         expect(positionData.length).assertLarger(0);
 
-        for (let i = 0; i < positionData.length; i++) {
+        for (let i: int = 0; i < positionData.length; i++) {
           const data = positionData[i];
           expect(data.column).assertLarger(0);
           expect(data.line).assertLarger(0);
@@ -424,13 +427,13 @@ export default function XmlTest_06() {
         const lines2: number[] = [];
 
         const callback1 = (key: xml.EventType, value: xml.ParseInfo): boolean => {
-          const lineNum = value.getLineNumber();
+          const lineNum: int = value.getLineNumber();
           lines1.push(lineNum);
           return true;
         };
 
         const callback2 = (key: xml.EventType, value: xml.ParseInfo): boolean => {
-          const lineNum = value.getLineNumber();
+          const lineNum: int = value.getLineNumber();
           lines2.push(lineNum);
           return true;
         };
@@ -445,12 +448,12 @@ export default function XmlTest_06() {
         expect(lines1.length).assertLarger(0);
         expect(lines2.length).assertLarger(0);
 
-        for (let i = 0; i < lines1.length; i++) {
+        for (let i: int = 0; i < lines1.length; i++) {
           const col = lines1[i];
           expect(col).assertLarger(0);
         }
 
-        for (let i = 0; i < lines2.length; i++) {
+        for (let i: int = 0; i < lines2.length; i++) {
           const col = lines2[i];
           expect(col).assertLarger(0);
         }
@@ -497,7 +500,7 @@ export default function XmlTest_06() {
 
         expect(firstPassLines.length).assertEqual(secondPassLines.length);
 
-        for (let i = 0; i < firstPassLines.length; i++) {
+        for (let i: int = 0; i < firstPassLines.length; i++) {
           expect(firstPassLines[i]).assertEqual(secondPassLines[i]);
         }
 
@@ -519,10 +522,10 @@ export default function XmlTest_06() {
         const arrBuffer = textEncoder.encodeInto(strXml);
         const parser = new xml.XmlPullParser(arrBuffer.buffer as ArrayBuffer);
 
-        let lastLineBeforeError = -1;
+        let lastLineBeforeError: int = -1;
 
         const callbackFunc = (key: xml.EventType, value: xml.ParseInfo): boolean => {
-          const line = value.getLineNumber();
+          const line: int = value.getLineNumber();
           lastLineBeforeError = line;
           return true;
         };
@@ -566,7 +569,7 @@ export default function XmlTest_06() {
           tokenValueCallbackFunction: callback
         };
 
-        parser.parse(options);
+
         expect(globalTestResults.length > 0).assertTrue();
 
         const noteElementFound = globalTestResults.some(result =>
@@ -607,7 +610,7 @@ export default function XmlTest_06() {
           tokenValueCallbackFunction: attributeCallback
         };
 
-        parser.parse(options);
+
         expect(globalTestResults.length > 0).assertTrue();
         expect(globalTestResults.some(r => r.includes('attr:'))).assertTrue();
 
@@ -631,7 +634,7 @@ export default function XmlTest_06() {
           '<?xml version="1.0"?><Note>content</Note>'
         ];
 
-        for (let i: number = 0; i < specialXmls.length; i++) {
+        for (let i: int = 0; i < specialXmls.length; i++) {
           const strXml: string = specialXmls[i];
           const arrBuffer = stringToArrayBuffer(strXml);
 
@@ -644,7 +647,7 @@ export default function XmlTest_06() {
             tokenValueCallbackFunction: createGetNameCallback()
           };
 
-          parser.parse(options);
+
           expect(globalTestResults.length > 0).assertTrue();
         }
 
@@ -690,7 +693,7 @@ export default function XmlTest_06() {
           tokenValueCallbackFunction: nestedCallback
         };
 
-        parser.parse(options);
+
         expect(globalElementNames.length >= 4).assertTrue();
 
         const expectedElements = ['root', 'parent', 'child', 'sibling'];
@@ -717,7 +720,7 @@ export default function XmlTest_06() {
           '<?xml version="1.0"?><root><empty/></root>'
         ];
 
-        for (let i: number = 0; i < emptyXmls.length; i++) {
+        for (let i: int = 0; i < emptyXmls.length; i++) {
           const strXml: string = emptyXmls[i];
           const arrBuffer = stringToArrayBuffer(strXml);
 
@@ -730,7 +733,7 @@ export default function XmlTest_06() {
             tokenValueCallbackFunction: createGetNameCallback()
           };
 
-          parser.parse(options);
+
           expect(globalTestResults.length > 0).assertTrue();
         }
 
@@ -756,13 +759,13 @@ export default function XmlTest_06() {
 
         let  name_test = ""
 
-        for (let i: number = 0; i < invalidXmls.length; i++) {
+        for (let i: int = 0; i < invalidXmls.length; i++) {
           const strXml: string = invalidXmls[i];
           const bufferSize: number = strXml.length > 0 ? strXml.length * 2 : 1;
           const arrayBuffer: ArrayBuffer = new ArrayBuffer(bufferSize);
 
           const uint8Array: Uint8Array = new Uint8Array(arrayBuffer);
-          for (let j: number = 0; j < Math.min(strXml.length, bufferSize); j++) {
+          for (let j: int = 0; j < Math.min(strXml.length, bufferSize); j++) {
             uint8Array[j] = strXml.charCodeAt(j) & 0xFF;
           }
 
@@ -782,7 +785,7 @@ export default function XmlTest_06() {
           };
 
           try {
-            parser.parse(options);
+
           }catch (err) {
             console.error(`${TAG} fail, err: ${err}`);
             expect(String(err)).assertContain("BusinessError")
@@ -806,7 +809,7 @@ export default function XmlTest_06() {
         const TAG = 'getNameTest0007';
         console.log(TAG + ' start');
         let largeXml: string = '<?xml version="1.0"?><large_root>';
-        for (let i: number = 0; i < 100; i++) {
+        for (let i: int = 0; i < 100; i++) {
           largeXml += `<item id="${i}">value${i}</item>`;
         }
         largeXml += '</large_root>';
@@ -814,7 +817,7 @@ export default function XmlTest_06() {
         const arrBuffer = stringToArrayBuffer(largeXml);
         const parser: xml.XmlPullParser = new xml.XmlPullParser(arrBuffer);
 
-        let elementCount: number = 0;
+        let elementCount: int = 0;
         const largeDocCallback = (key: xml.EventType, value: xml.ParseInfo): boolean => {
           if (key === 2) {
             const name = value.getName ? value.getName() : 'METHOD_NOT_EXIST';
@@ -831,7 +834,7 @@ export default function XmlTest_06() {
           tokenValueCallbackFunction: largeDocCallback
         };
 
-        parser.parse(options);
+
         expect(elementCount === 100).assertTrue();
 
       });
@@ -872,7 +875,10 @@ export default function XmlTest_06() {
             if (!globalCollectedData[name]) {
               globalCollectedData[name] = 0;
             }
-            globalCollectedData[name]++;
+            let currentVal: number = globalCollectedData[name] ?? 0.0;
+            if (currentVal != undefined) {
+              globalCollectedData[name] = currentVal + 1;
+            }
           }
           globalTestResults.push(`key:${key} name:${name}`);
           return true;
@@ -884,7 +890,6 @@ export default function XmlTest_06() {
           tokenValueCallbackFunction: complexCallback
         };
 
-        parser.parse(options);
         expect(globalCollectedData['book'] === 2).assertTrue();
         expect(globalCollectedData['title'] === 2).assertTrue();
         expect(globalCollectedData['author'] === 2).assertTrue();

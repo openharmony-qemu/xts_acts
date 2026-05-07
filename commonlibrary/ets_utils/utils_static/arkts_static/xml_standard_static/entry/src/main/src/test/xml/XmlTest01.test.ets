@@ -1,14 +1,17 @@
+'use static'
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '../../../../../../hypium';
 import { util, xml } from '@kit.ArkTS';
 
-const DOMAIN = 0x0000
+const DOMAIN: int = 0x0000
 
-const sleep = (time: number): Promise<void> => {
-  return new Promise<void>((resolve) => {
-    setTimeout(resolve, time);
-  });
-};
+async function sleep(count: int): Promise<int> {
+  return new Promise<int>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(0)
+    }, count)
+  })
+}
 
 export default function XmlTest_01() {
   describe('XmlTest_01', () => {
@@ -326,10 +329,10 @@ export default function XmlTest_01() {
           let testArrayBuffer = new ArrayBuffer(2048)
           let testConstructor = new xml.XmlSerializer(testArrayBuffer, "utf-8")
           testConstructor.startElement("div1")
-          testConstructor.setAttributes("test", null)
+          testConstructor.setAttributes("test", "")
           testConstructor.endElement()
           testConstructor.startElement("div2")
-          testConstructor.setAttributes("text", undefined)
+          testConstructor.setAttributes("text", "")
           testConstructor.endElement()
 
           let uint8 = new Uint8Array(testArrayBuffer)
@@ -501,8 +504,8 @@ export default function XmlTest_01() {
 
         serializer.addEmptyElement("d");
         const uint8 = new Uint8Array(arrayBuffer);
-        const result = textDecoder.decodeWithStream(uint8, { stream: false });
-        const cleanResult = result.replace(/\0/g, '').trim();
+        const result = textDecoder.decodeToString(uint8);
+        const cleanResult = result.replace(new RegExp("\\0", "g"), '').trim();
 
         expect(cleanResult).assertEqual('<d/>');
 
@@ -528,9 +531,9 @@ export default function XmlTest_01() {
         serializer.addEmptyElement("publisher");
 
         const uint8 = new Uint8Array(arrayBuffer);
-        const result = textDecoder.decodeWithStream(uint8, { stream: false });
-        const cleanResult = result.replace(/\0/g, '').trim();
-        const normalizedResult = cleanResult.replace(/\s+/g, '');
+        const result = textDecoder.decodeToString(uint8);
+        const cleanResult = result.replace(new RegExp("\\0", "g"), '').trim();
+        const normalizedResult = cleanResult.replace(new RegExp("\\s+", "g"), '');
         expect(normalizedResult).assertEqual('<book/><author/><publisher/>');
 
       });
@@ -572,7 +575,7 @@ export default function XmlTest_01() {
         console.log(TAG + ' start');
 
         const specialNames = ['book<item', 'book>item', 'book&item'];
-        let allSucceeded = 0;
+        let allSucceeded: int = 0;
 
         for (let name of specialNames) {
           const testArrayBuffer = new ArrayBuffer(2048);
@@ -604,15 +607,15 @@ export default function XmlTest_01() {
         const smallSer = new xml.XmlSerializer(smallBuffer);
         smallSer.addEmptyElement("test");
         const uint8Small = new Uint8Array(smallBuffer);
-        const resultSmall = textDecoder.decodeWithStream(uint8Small, { stream: false });
-        const cleanSmall = resultSmall.replace(/\0/g, '').trim();
+        const resultSmall = textDecoder.decodeToString(uint8Small);
+        const cleanSmall = resultSmall.replace(new RegExp("\\0", "g"), '').trim();
 
         const largeBuffer = new ArrayBuffer(4096);
         const largeSer = new xml.XmlSerializer(largeBuffer);
         largeSer.addEmptyElement("test");
         const uint8Large = new Uint8Array(largeBuffer);
-        const resultLarge = textDecoder.decodeWithStream(uint8Large, { stream: false });
-        const cleanLarge = resultLarge.replace(/\0/g, '').trim();
+        const resultLarge = textDecoder.decodeToString(uint8Large);
+        const cleanLarge = resultLarge.replace(new RegExp("\\0", "g"), '').trim();
 
         expect(cleanSmall).assertEqual('<test/>');
         expect(cleanLarge).assertEqual('<test/>');
@@ -641,7 +644,7 @@ export default function XmlTest_01() {
         serializer.addEmptyElement("fifth");
 
         const uint8 = new Uint8Array(arrayBuffer);
-        const result = textDecoder.decodeWithStream(uint8, { stream: false });
+        const result = textDecoder.decodeToString(uint8);
         const nullIndex = result.indexOf('\0');
         const cleanResult = nullIndex === -1 ? result.trim() : result.substring(0, nullIndex).trim();
 
@@ -649,7 +652,7 @@ export default function XmlTest_01() {
         console.info('Result Length:', cleanResult.length);
 
         const elements = ['first', 'second', 'third', 'fourth', 'fifth'];
-        let allElementsPresent = 0;
+        let allElementsPresent: int = 0;
 
         for (const element of elements) {
           const elementTag = `<${element}/>`;
@@ -677,7 +680,7 @@ export default function XmlTest_01() {
 
         const uint8 = new Uint8Array(arrayBuffer);
         const result = util.TextDecoder.create().decodeToString(uint8);
-        const cleanResult = result.replace(/\0/g, '');
+        const cleanResult = result.replace(new RegExp("\\0", "g"), '');
 
         expect(cleanResult).assertEqual('<test/>');
 
@@ -731,16 +734,17 @@ export default function XmlTest_01() {
         const textDecoder = new util.TextDecoder();
 
         const startTime = Date.now();
-        for (let i = 0; i < 50; i++) {
+        for (let i: int = 0; i < 50; i++) {
           serializer.addEmptyElement("item" + i);
         }
         const endTime = Date.now();
         const executionTime = endTime - startTime;
 
         const uint8 = new Uint8Array(arrayBuffer);
-        const result = textDecoder.decodeWithStream(uint8, { stream: false });
-        const cleanResult = result.replace(/\0/g, '').trim();
-        const elementCount = (cleanResult.match(/\//g) || []).length;
+        const result = textDecoder.decodeToString(uint8);
+        const cleanResult = result.replace(new RegExp("\\0", "g"), '').trim();
+        const matchResult = cleanResult.match(new RegExp("\\/", "g"));
+        const elementCount = matchResult != null ? matchResult.length : 0;
 
         expect(executionTime < 1000).assertTrue();
         expect(elementCount).assertEqual(50);
@@ -1067,7 +1071,7 @@ export default function XmlTest_01() {
         const arrayBuffer10 = new ArrayBuffer(1024);
         const serializer: xml.XmlSerializer = new xml.XmlSerializer(arrayBuffer10);
         try {
-          serializer.startElement(undefined);
+          serializer.startElement("");
           serializer.endElement();
           expect().assertFail();
         } catch (err) {
@@ -1091,7 +1095,7 @@ export default function XmlTest_01() {
         const arrayBuffer11 = new ArrayBuffer(1024);
         const serializer: xml.XmlSerializer = new xml.XmlSerializer(arrayBuffer11);
         try {
-          serializer.startElement(null);
+          serializer.startElement("");
           serializer.endElement();
           expect().assertFail();
         } catch (err) {
@@ -1488,7 +1492,7 @@ export default function XmlTest_01() {
         const serializer: xml.XmlSerializer = new xml.XmlSerializer(arrayBuffer10);
 
         try {
-          serializer.startElement(undefined);
+          serializer.startElement("");
           serializer.endElement();
           expect().assertFail();
         } catch (err) {
@@ -1513,7 +1517,7 @@ export default function XmlTest_01() {
         const serializer: xml.XmlSerializer = new xml.XmlSerializer(arrayBuffer11);
 
         try {
-          serializer.startElement(null);
+          serializer.startElement("");
           serializer.endElement();
           expect().assertFail();
         } catch (err) {

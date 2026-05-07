@@ -1,15 +1,18 @@
+'use static'
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '../../../../../../hypium';
 import { xml } from '@kit.ArkTS';
 import stream from '@ohos.util.stream';
 
-const DOMAIN = 0x0000
+const DOMAIN: int = 0x0000
 
-const sleep = (time: number): Promise<void> => {
-  return new Promise<void>((resolve) => {
-    setTimeout(resolve, time);
-  });
-};
+async function sleep(count: int): Promise<int> {
+  return new Promise<int>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(0)
+    }, count)
+  })
+}
 
 class TestReadable extends stream.Readable {
   constructor() {
@@ -154,8 +157,8 @@ export default function XmlSAXParserTest() {
         },
         startElement(elementName: string, namespaceURI?: string, qName?: string, attributes?: Map<string, string>) {
           receivedElementName = elementName;
-          receivedNamespaceURI = namespaceURI || '';
-          receivedQName = qName || '';
+          receivedNamespaceURI = namespaceURI != undefined ? namespaceURI : '';
+          receivedQName = qName != undefined ? qName : '';
           receivedAttributes = attributes;
         },
         endElement(elementName: string, namespaceURI?: string, qName?: string) {
@@ -188,7 +191,7 @@ export default function XmlSAXParserTest() {
      * @tc.level     Level 2
      */
     it('XmlSAXParserParseTest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      let elementCount = 0;
+      let elementCount: int = 0;
       const elementNames: string[] = [];
 
       const saxHandler: xml.XmlSAXHandler = {
@@ -243,8 +246,10 @@ export default function XmlSAXParserTest() {
         startElement(elementName: string, namespaceURI?: string, qName?: string, attributes?: Map<string, string>) {
           if (attributes && attributes.size > 0) {
             attributesReceived = true;
-            attrValue1 = attributes.get('id') || '';
-            attrValue2 = attributes.get('name') || '';
+            let getId = attributes.get('id');
+            attrValue1 = getId != undefined ? getId : '';
+            let getName = attributes.get('name');
+            attrValue2 = getName != undefined ? getName : '';
           }
         },
         endElement(elementName: string, namespaceURI?: string, qName?: string) {
@@ -313,8 +318,8 @@ export default function XmlSAXParserTest() {
      * @tc.level     Level 2
      */
     it('XmlSAXParserParseTest0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      let maxDepth = 0;
-      let currentDepth = 0;
+      let maxDepth: int = 0;
+      let currentDepth: int = 0;
 
       const saxHandler: xml.XmlSAXHandler = {
         startDocument() {

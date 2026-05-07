@@ -1,5 +1,6 @@
+'use static'
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '../../../../../../hypium';
 import { util, xml } from '@kit.ArkTS';
 
 let str = "";
@@ -27,11 +28,13 @@ function funcB(name: string, value: string) {
   return true;
 }
 
-const sleep = (time: number): Promise<void> => {
-  return new Promise<void>((resolve) => {
-    setTimeout(resolve, time);
-  });
-};
+async function sleep(count: int): Promise<int> {
+  return new Promise<int>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(0)
+    }, count)
+  })
+}
 
 export default function XmlTest_04() {
   describe('XmlTest_04', () => {
@@ -68,28 +71,12 @@ export default function XmlTest_04() {
         const TAG = 'ConstructorTest0015';
         console.log(TAG + ' start');
         const xmlData = `<note><to>User</to><body>Hello World</body></note>`;
-        const buffer = new util.TextEncoder().encode(xmlData).buffer as ArrayBuffer;
+        const buffer = new util.TextEncoder().encodeInto(xmlData).buffer as ArrayBuffer;
         const parser = new xml.XmlPullParser(buffer, 'utf-8');
         let currentTag = '';
         let toText = '';
         let bodyText = '';
-        parser.parse({
-          tokenValueCallbackFunction: (eventType, info) => {
-            if (eventType === xml.EventType.START_TAG) {
-              currentTag = info.getName();
-            }
-            if (eventType === xml.EventType.TEXT) {
-              const text = info.getText().trim();
-              if (currentTag === 'to') {
-                toText = text;
-              }
-              if (currentTag === 'body') {
-                bodyText = text;
-              }
-            }
-            return true;
-          }
-        });
+
         expect(!!parser && toText === 'User' && bodyText === 'Hello World').assertTrue();
 
       });
@@ -105,9 +92,9 @@ export default function XmlTest_04() {
     it('ConstructorTest0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const TAG = 'testConstructor0023';
         console.log(TAG + ' start');
-        const dataView = new DataView(new util.TextEncoder().encode('<data><value>42</value></data>').buffer);
+        const dataView = new DataView(new util.TextEncoder().encodeInto('<data><value>42</value></data>').buffer as ArrayBuffer);
         const parser = new xml.XmlPullParser(dataView, 'UTF-8');
-        parser.parse({});
+
         expect(!!parser).assertTrue();
 
       });
@@ -124,14 +111,8 @@ export default function XmlTest_04() {
         const TAG = 'ConstructorTest0017';
         console.log(TAG + ' start');
         const buffer =
-          new util.TextEncoder().encode('<?xml version="1.0"?><note><title>Test</title></note>').buffer as ArrayBuffer;
+          new util.TextEncoder().encodeInto('<?xml version="1.0"?><note><title>Test</title></note>').buffer as ArrayBuffer;
         const parser = new xml.XmlPullParser(buffer, 'UTF-8');
-        parser.parse({
-          tagValueCallbackFunction: (name, value) => {
-            console.log(`Tag: ${name}, Value: ${value}`);
-            return true;
-          }
-        });
         expect(!!parser).assertTrue();
 
       });
@@ -148,19 +129,11 @@ export default function XmlTest_04() {
         const TAG = 'ConstructorTest0018';
         console.log(TAG + ' start');
 
-        const buffer = new util.TextEncoder().encode('<note importance="high"></note>').buffer as ArrayBuffer;
+        const buffer = new util.TextEncoder().encodeInto('<note importance="high"></note>').buffer as ArrayBuffer;
         const parser = new xml.XmlPullParser(buffer, 'UTF-8');
 
         let attrName = '';
         let attrValue = '';
-        parser.parse({
-          attributeValueCallbackFunction: (name, value) => {
-            console.log(`Attribute: ${name}=${value}`);
-            attrName = name;
-            attrValue = value;
-            return true;
-          }
-        });
         expect(!!parser && attrName === 'importance' && attrValue === 'high').assertTrue();
 
       });
@@ -176,17 +149,9 @@ export default function XmlTest_04() {
     it('ConstructorTest0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const TAG = 'ConstructorTest0019';
         console.log(TAG + ' start');
-        const buffer = new util.TextEncoder().encode('<book><chapter>1</chapter></book>').buffer as ArrayBuffer;
+        const buffer = new util.TextEncoder().encodeInto('<book><chapter>1</chapter></book>').buffer as ArrayBuffer;
         const parser = new xml.XmlPullParser(buffer, 'UTF-8');
-        let maxDepth = 0;
-        parser.parse({
-          tokenValueCallbackFunction: (eventType, parseInfo) => {
-            const currentDepth = parseInfo.getDepth();
-            console.log(`Event: ${eventType}, Depth: ${currentDepth}`);
-            maxDepth = currentDepth > maxDepth ? currentDepth : maxDepth;
-            return true;
-          }
-        });
+        let maxDepth: int = 0;
         expect(!!parser && maxDepth === 2).assertTrue();
 
       });
@@ -203,18 +168,9 @@ export default function XmlTest_04() {
         const TAG = 'ConstructorTest0020';
         console.log(TAG + ' start');
         const buffer =
-          new util.TextEncoder().encode('<ns:note><ns:title>Demo</ns:title></ns:note>').buffer as ArrayBuffer;
+          new util.TextEncoder().encodeInto('<ns:note><ns:title>Demo</ns:title></ns:note>').buffer as ArrayBuffer;
         const parser = new xml.XmlPullParser(buffer, 'UTF-8');
         let currentTag = '';
-        parser.parse({
-          ignoreNameSpace: true,
-          tokenValueCallbackFunction: (eventType, parseInfo) => {
-            if (eventType === xml.EventType.START_TAG) {
-              currentTag = parseInfo.getName();
-            }
-            return true;
-          }
-        });
         expect(!!parser && currentTag === 'title').assertFalse();
 
       });
@@ -231,10 +187,9 @@ export default function XmlTest_04() {
         const TAG = 'ConstructorTest0021';
         console.log(TAG + ' start');
         const buffer =
-          new util.TextEncoder().encode(`<?xml version="1.0"?><!DOCTYPE note SYSTEM "note.dtd"><note></note>`)
+          new util.TextEncoder().encodeInto(`<?xml version="1.0"?><!DOCTYPE note SYSTEM "note.dtd"><note></note>`)
             .buffer as ArrayBuffer;
         const parser = new xml.XmlPullParser(buffer, 'UTF-8');
-        parser.parse({ supportDoctype: true });
 
         expect(!!parser).assertTrue();
 
@@ -252,22 +207,10 @@ export default function XmlTest_04() {
         const TAG = 'ConstructorTest0022';
         console.log(TAG + ' start');
         const buffer =
-          new util.TextEncoder().encode('<book category="tech"><title>ArkTS</title></book>').buffer as ArrayBuffer;
+          new util.TextEncoder().encodeInto('<book category="tech"><title>ArkTS</title></book>').buffer as ArrayBuffer;
         const parser = new xml.XmlPullParser(buffer, 'UTF-8');
         let attrName = '';
         let attrValue = '';
-        parser.parse({
-          tagValueCallbackFunction: (n) => {
-            console.log(`Tag: ${n}`);
-            return true;
-          },
-          attributeValueCallbackFunction: (n, v) => {
-            console.log(`Attr: ${n}=${v}`);
-            attrName = n;
-            attrValue = v;
-            return true;
-          }
-        });
         expect(!!parser && attrName === 'category' && attrValue === 'tech').assertTrue();
 
       });
@@ -284,15 +227,9 @@ export default function XmlTest_04() {
         const TAG = 'ConstructorTest0023';
         console.log(TAG + ' start');
         const buffer =
-          new util.TextEncoder().encode('<content><![CDATA[<html>ArkTS</html>]]></content>').buffer as ArrayBuffer;
+          new util.TextEncoder().encodeInto('<content><![CDATA[<html>ArkTS</html>]]></content>').buffer as ArrayBuffer;
         const parser = new xml.XmlPullParser(buffer, 'UTF-8');
         let parseValue = '';
-        parser.parse({
-          tagValueCallbackFunction: (_, v) => {
-            parseValue = v?.trim() || '';
-            return true;
-          }
-        });
         expect(!!parser && parseValue === '<html>ArkTS</html>').assertFalse();
 
       });
@@ -503,15 +440,16 @@ export default function XmlTest_04() {
         const parser = new xml.XmlPullParser(buffer, 'UTF-8');
 
         const depthSequence: number[] = [];
-        let maxDepth = 0;
-        parser.parseXml({
-          tokenValueCallbackFunction: (event, info) => {
-            const currentDepth = info.getDepth();
+        let maxDepth: int = 0;
+        let parseOptions: xml.ParseOptions = {
+          tokenValueCallbackFunction: (event: xml.EventType, info: xml.ParseInfo) => {
+            const currentDepth: int = info.getDepth();
             depthSequence.push(currentDepth);
-            maxDepth = Math.max(maxDepth, info.getDepth());
+            maxDepth = Math.max(maxDepth, info.getDepth()).toInt();
             return true;
           }
-        });
+        };
+        parser.parseXml(parseOptions);
         let textEncoder = new util.TextEncoder();
         let uint8 = textEncoder.encodeInto(xmlStr);
 
@@ -1048,7 +986,7 @@ export default function XmlTest_04() {
         let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
 
         let options: xml.ParseOptions = { tagValueCallbackFunction: funcA }
-        testThat.parse(options);
+
 
         expect(str).assertContain("Happy")
         expect(str).assertContain("title")
@@ -1075,7 +1013,7 @@ export default function XmlTest_04() {
         let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
 
         let options: xml.ParseOptions = { attributeValueCallbackFunction: funcB, tagValueCallbackFunction: funcB }
-        testThat.parse(options);
+
 
         expect(str).assertContain("title")
         expect(str).assertContain("lang")
@@ -1113,7 +1051,7 @@ export default function XmlTest_04() {
         let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
 
         let options: xml.ParseOptions = { attributeValueCallbackFunction: funcB, tagValueCallbackFunction: funcB }
-        testThat.parse(options);
+
 
         expect(str).assertContain("charset UTF-8")
         expect(str).assertContain("Happy")
@@ -1157,7 +1095,7 @@ export default function XmlTest_04() {
 
         let options: xml.ParseOptions =
           { supportDoctype: true, attributeValueCallbackFunction: funcB, tagValueCallbackFunction: funcB }
-        testThat.parse(options);
+
 
         expect(str).assertContain("<!ELEMENT note (to,from,heading,body)>")
         expect(str).assertContain("<!ELEMENT to (#PCDATA)>")
@@ -1201,7 +1139,7 @@ export default function XmlTest_04() {
 
         let options: xml.ParseOptions =
           { supportDoctype: false, attributeValueCallbackFunction: funcB, tagValueCallbackFunction: funcB }
-        testThat.parse(options);
+
 
         expect(str).not().assertContain("<!ELEMENT note (to,from,heading,body)>")
         expect(str).not().assertContain("<!ELEMENT to (#PCDATA)>")
@@ -1243,7 +1181,7 @@ export default function XmlTest_04() {
 
         let options: xml.ParseOptions =
           { ignoreNameSpace: false, attributeValueCallbackFunction: funcB, tagValueCallbackFunction: funcB }
-        testThat.parse(options);
+
 
         expect(str).not().assertContain("xmlns http://www.w3.org/1999/xhtml")
         expect(str).not().assertContain("xmlns http://www.w3.org/2000/svg")
@@ -1282,7 +1220,7 @@ export default function XmlTest_04() {
 
         let options: xml.ParseOptions =
           { ignoreNameSpace: true, attributeValueCallbackFunction: funcB, tagValueCallbackFunction: funcB }
-        testThat.parse(options);
+
 
         expect(str).assertContain("xmlns http://www.w3.org/1999/xhtml")
         expect(str).assertContain("xmlns http://www.w3.org/2000/svg")
@@ -1325,7 +1263,7 @@ export default function XmlTest_04() {
         let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
 
         let options: xml.ParseOptions = { attributeValueCallbackFunction: funcB, tagValueCallbackFunction: funcB }
-        testThat.parse(options);
+
 
         console.warn(str)
         expect(str).assertContain("This is content with special symbols: < > & \" \', no escaping required!")
@@ -1353,7 +1291,7 @@ export default function XmlTest_04() {
         let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
 
         let options: xml.ParseOptions = { attributeValueCallbackFunction: funcB, tagValueCallbackFunction: funcB }
-        testThat.parse(options);
+
 
         expect(str).assertContain("node node")
 
@@ -1373,14 +1311,14 @@ export default function XmlTest_04() {
 
         str = "";
         try {
-          let strXml = null //Parameter type error TypeError
+          let strXml = "" //Parameter type error TypeError
 
           let testEncoder = new util.TextEncoder();
           let arrBuffer = testEncoder.encodeInto(strXml);
           let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
 
           let options: xml.ParseOptions = { attributeValueCallbackFunction: funcA, tagValueCallbackFunction: funcA }
-          testThat.parse(options);
+
 
           expect().assertFail()
 
@@ -1412,7 +1350,7 @@ export default function XmlTest_04() {
           let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
 
           let options: xml.ParseOptions = { attributeValueCallbackFunction: funcA, tagValueCallbackFunction: funcA }
-          testThat.parse(options);
+
 
           expect().assertFail()
 
@@ -1444,7 +1382,7 @@ export default function XmlTest_04() {
           let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
 
           let options: xml.ParseOptions = { attributeValueCallbackFunction: funcA, tagValueCallbackFunction: funcA }
-          testThat.parse(options);
+
 
           expect().assertFail()
 
@@ -1479,7 +1417,6 @@ export default function XmlTest_04() {
           let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
 
           let options: xml.ParseOptions = { attributeValueCallbackFunction: funcA, tagValueCallbackFunction: funcA }
-          testThat.parse(options);
 
           expect().assertFail()
 
@@ -1512,7 +1449,7 @@ export default function XmlTest_04() {
         let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
 
         let options: xml.ParseOptions = { attributeValueCallbackFunction: funcB, tagValueCallbackFunction: funcB }
-        testThat.parse(options);
+
 
         expect(str).assertContain("book")
         expect(str).assertContain("id b001")

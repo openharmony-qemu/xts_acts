@@ -1,8 +1,9 @@
+﻿'use static'
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '../../../../../../hypium';
 import { util, xml } from '@kit.ArkTS';
 
-const DOMAIN = 0x0000
+const DOMAIN: int = 0x0000
 let str = "";
 
 // Reset the global str variable to avoid contamination between test cases
@@ -28,11 +29,13 @@ function func03(key: xml.EventType, value: xml.ParseInfo) {
   return true;
 }
 
-const sleep = (time: number): Promise<void> => {
-  return new Promise<void>((resolve) => {
-    setTimeout(resolve, time);
-  });
-};
+async function sleep(count: int): Promise<int> {
+  return new Promise<int>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(0)
+    }, count)
+  })
+}
 
 export default function XmlTest_07() {
   describe('XmlTest_07', () => {
@@ -544,7 +547,7 @@ export default function XmlTest_07() {
         const TAG = 'testgetText0004';
         console.log(TAG + ' start');
 
-        let strXml = '<?xml version="1.0" encoding="utf-8"?><book name="JS 教程">入门到精通</book>';
+        let strXml = '<?xml version="1.0" encoding="utf-8"?><book name="JS 鏁欑▼">鍏ラ棬鍒扮簿閫?/book>';
         let textEncoder = new util.TextEncoder();
         let arrBuffer = textEncoder.encodeInto(strXml);
         let that = new xml.XmlPullParser(arrBuffer.buffer as ArrayBuffer);
@@ -562,7 +565,7 @@ export default function XmlTest_07() {
         that.parseXml(options);
 
 
-        expect(str).assertContain("入门到精通");
+        expect(str).assertContain("鍏ラ棬鍒扮簿閫?");
 
       });
 
@@ -580,7 +583,7 @@ export default function XmlTest_07() {
         const invalidXml: string = '<note>OpenHarmony&';
         const textEncoder: util.TextEncoder = new util.TextEncoder();
 
-        const encodedData: Uint8Array = textEncoder.encode(invalidXml);
+        const encodedData: Uint8Array = textEncoder.encodeInto(invalidXml);
         const buffer: ArrayBuffer = encodedData.buffer as ArrayBuffer;
 
         const parser: xml.XmlPullParser = new xml.XmlPullParser(buffer);
@@ -702,7 +705,7 @@ export default function XmlTest_07() {
           <root>
             <name>OpenHarmony</name>
             <version>4.0</version>
-            <desc>ArkTS XML解析</desc>
+            <desc>ArkTS XML瑙ｆ瀽</desc>
           </root>
         `;
         const encoder = new util.TextEncoder();
@@ -747,7 +750,7 @@ export default function XmlTest_07() {
         // Judge according to parsing order
         expect(nodeTexts[0]).assertContain('OpenHarmony');
         expect(nodeTexts[1]).assertContain('4.0');
-        expect(nodeTexts[2]).assertContain('ArkTS XML解析');
+        expect(nodeTexts[2]).assertContain('ArkTS XML瑙ｆ瀽');
 
       });
 
@@ -767,9 +770,9 @@ export default function XmlTest_07() {
           // 1. Prepare XML containing special characters (spaces, Chinese, symbols, URL)
           const specialCharXml = `
           <config>
-            <title>OpenHarmony 开发手册 🚀</title>
-            <url>https://example.com?name=测试&age=20</url>
-            <note>版本：4.0 | 状态：正式版</note>
+            <title>OpenHarmony 寮€鍙戞墜鍐?馃殌</title>
+            <url>https://example.com?name=娴嬭瘯&age=20</url>
+            <note>鐗堟湰锛?.0 | 鐘舵€侊細姝ｅ紡鐗?/note>
           </config>
         `;
           const encoder = new util.TextEncoder();
@@ -804,9 +807,9 @@ export default function XmlTest_07() {
           };
           parser.parseXml(parseOptions);
           // 4. Assert: Special character text is completely obtained without loss/escaping
-          expect(actualTitle).assertEqual('OpenHarmony 开发手册 🚀');
-          expect(actualUrl).assertEqual('https://example.com?name=测试&age=20');
-          expect(actualNote).assertEqual('版本：4.0 | 状态：正式版');
+          expect(actualTitle).assertEqual('OpenHarmony 寮€鍙戞墜鍐?馃殌');
+          expect(actualUrl).assertEqual('https://example.com?name=娴嬭瘯&age=20');
+          expect(actualNote).assertEqual('鐗堟湰锛?.0 | 鐘舵€侊細姝ｅ紡鐗?');
           expect().assertFail()
         } catch (err) {
           console.error(`${TAG} fail, err: ${err}`);
@@ -1259,7 +1262,7 @@ export default function XmlTest_07() {
         let strXml =
           '<?xml version="1.0" encoding="UTF-8"?>\n' +
             '<root>\n' +
-            '  <!-- 自闭合空标签 -->\n' +
+            '  <!-- 鑷棴鍚堢┖鏍囩 -->\n' +
             '  <empty1/>\n' +
             '  <empty2/>\n' +
             '  <empty3/>\n' +
@@ -1492,7 +1495,7 @@ export default function XmlTest_07() {
         let isXml = false
           const xmlData = `<a><!-- --><b> </b></a>`;
           const encoder = new util.TextEncoder();
-          const xmlBuffer = encoder.encode(xmlData).buffer as ArrayBuffer;
+          const xmlBuffer = encoder.encodeInto(xmlData).buffer as ArrayBuffer;
           new xml.XmlPullParser(xmlBuffer, 'UTF-8').parseXml({
             tokenValueCallbackFunction: (eventType, parser) => {
               if (eventType === xml.EventType.COMMENT) {
@@ -1555,7 +1558,7 @@ export default function XmlTest_07() {
         let isXml = false
           const xmlData = `<?xml-stylesheet type="text/xsl" href="style.xsl"?>`;
           const encoder = new util.TextEncoder();
-          const xmlBuffer = encoder.encode(xmlData).buffer as ArrayBuffer;
+          const xmlBuffer = encoder.encodeInto(xmlData).buffer as ArrayBuffer;
 
           new xml.XmlPullParser(xmlBuffer, 'UTF-8').parseXml({
             tokenValueCallbackFunction: (eventType, parser) => {

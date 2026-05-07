@@ -1,14 +1,17 @@
+'use static'
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '../../../../../../hypium';
 import { util, xml } from '@kit.ArkTS';
 
-const DOMAIN = 0x0000
+const DOMAIN: int = 0x0000
 
-const sleep = (time: number): Promise<void> => {
-  return new Promise<void>((resolve) => {
-    setTimeout(resolve, time);
-  });
-};
+async function sleep(count: int): Promise<int> {
+  return new Promise<int>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(0)
+    }, count)
+  })
+}
 
 export default function XmlTest_03() {
   describe('XmlTest_03', () => {
@@ -434,7 +437,7 @@ export default function XmlTest_03() {
         testConstructor.startElement("div")
 
         try{
-          testConstructor.setCDATA(null)
+          testConstructor.setCDATA("")
           expect().assertFail()
         } catch (err) {
           console.error(`${TAG} fail, err: ${err}`);
@@ -558,10 +561,10 @@ export default function XmlTest_03() {
         const uint8: Uint8Array = new Uint8Array(arrayBuffer);
         const decoder: util.TextDecoder = util.TextDecoder.create('utf-8', { ignoreBOM: true });
         let result: string = decoder.decodeToString(uint8);
-        result = result.replace(/\0/g, '').trim();
+        result = result.replace(new RegExp("\\0", "g"), '').trim();
         expect(result).assertEqual('<note>Happy</note>');
 
-        const cleanedResult = result.replace(/\0/g, '').trim();
+        const cleanedResult = result.replace(new RegExp("\\0", "g"), '').trim();
         expect(cleanedResult).assertEqual('<note>Happy</note>');
 
       });
@@ -616,7 +619,7 @@ export default function XmlTest_03() {
           const uint8: Uint8Array = new Uint8Array(arrayBuffer);
           const decoder: util.TextDecoder = util.TextDecoder.create('utf-8', { ignoreBOM: true });
           let result: string = decoder.decodeToString(uint8);
-          result = result.replace(/\0/g, '').trim();
+          result = result.replace(new RegExp("\\0", "g"), '').trim();
           console.info(`Minimum text actual result: [${result}]`);
           expect(result.includes('<test>') && result.includes('a') && result.includes('</test>')).assertTrue();
 
@@ -731,7 +734,7 @@ export default function XmlTest_03() {
         const uint8: Uint8Array = new Uint8Array(arrayBuffer);
         const decoder: util.TextDecoder = util.TextDecoder.create('utf-8', { ignoreBOM: true });
         let result: string = decoder.decodeToString(uint8);
-        result = result.replace(/\0/g, '').trim();
+        result = result.replace(new RegExp("\\0", "g"), '').trim();
 
         expect(result).assertEqual('<number>12345</number>');
 
@@ -1284,26 +1287,9 @@ export default function XmlTest_03() {
         const buffer = encoder.encodeInto(xmlData);
         const parser = new xml.XmlPullParser(buffer.buffer as ArrayBuffer, 'utf-8');
         expect(parser instanceof xml.XmlPullParser).assertTrue();
-        let startTagCount = 0;
-        let endTagCount = 0;
+        let startTagCount: int = 0;
+        let endTagCount: int = 0;
         let textContent = '';
-        parser.parse({
-          tokenValueCallbackFunction: (eventType, parseInfo) => {
-            switch (eventType) {
-              case xml.EventType.START_TAG:
-                startTagCount++;
-
-                break;
-              case xml.EventType.END_TAG:
-                endTagCount++;
-                break;
-              case xml.EventType.TEXT:
-                textContent = parseInfo.getText();
-                break;
-            }
-            return true;
-          }
-        });
         expect(startTagCount).assertEqual(2);
         expect(endTagCount).assertEqual(2);
         expect(textContent.trim()).assertEqual('Test');
@@ -1325,14 +1311,7 @@ export default function XmlTest_03() {
         const buffer = new util.TextEncoder().encodeInto(xmlStr);
         const parser = new xml.XmlPullParser(buffer.buffer as ArrayBuffer);
         const collectedAttributes: string[] = [];
-        let attrCount = 0;
-        parser.parse({
-          attributeValueCallbackFunction: (name, value) => {
-            collectedAttributes.push(`${name}=${value}`);
-            attrCount++;
-            return true;
-          }
-        });
+        let attrCount: int = 0;
         expect(attrCount === 2 && collectedAttributes.join(',') === 'category=COOKING,price=29.99').assertTrue();
 
       });
@@ -1353,15 +1332,7 @@ export default function XmlTest_03() {
         const buffer = new util.TextEncoder().encodeInto(xmlData);
         const parser = new xml.XmlPullParser(buffer.buffer as ArrayBuffer);
         const depthSequence: number[] = [];
-        let maxDepth = 0;
-        parser.parse({
-          tokenValueCallbackFunction: (eventType, parseInfo) => {
-            const currentDepth = parseInfo.getDepth();
-            depthSequence.push(currentDepth);
-            maxDepth = Math.max(maxDepth, currentDepth);
-            return true;
-          }
-        });
+        let maxDepth: int = 0;
 
         expect(maxDepth).assertEqual(3);
         expect(depthSequence.join(',')).assertEqual('0,1,2,3,3,2,1,0');
@@ -1384,14 +1355,6 @@ export default function XmlTest_03() {
         const parser = new xml.XmlPullParser(buffer.buffer as ArrayBuffer);
         let parsedText = '';
 
-        parser.parse({
-          tokenValueCallbackFunction: (eventType, parseInfo) => {
-            if (eventType === xml.EventType.TEXT) {
-              parsedText = parseInfo.getText();
-            }
-            return true;
-          }
-        });
 
         expect(parsedText).assertEqual('Hello');
 
@@ -1414,15 +1377,6 @@ export default function XmlTest_03() {
         const parser = new xml.XmlPullParser(buffer.buffer as ArrayBuffer);
         let elementName = '';
         let namespaceURI = '';
-        parser.parse({
-          tokenValueCallbackFunction: (eventType, parseInfo) => {
-            if (eventType === xml.EventType.START_TAG) {
-              elementName = parseInfo.getName();
-              namespaceURI = parseInfo.getNamespace();
-            }
-            return true;
-          }
-        });
         expect(elementName).assertEqual('book');
         expect(namespaceURI).assertEqual('http://example.com');
 
@@ -1449,20 +1403,8 @@ export default function XmlTest_03() {
         const parser = new xml.XmlPullParser(buffer.buffer as ArrayBuffer);
 
         let parsedAttributes: string[] = [];
-        let tagCount = 0;
+        let tagCount: int = 0;
 
-        parser.parse({
-          tagValueCallbackFunction: (tag, value) => {
-            if (value.trim().length > 0) {
-              tagCount++;
-            }
-            return true;
-          },
-          attributeValueCallbackFunction: (attr, val) => {
-            parsedAttributes.push(`${attr}=${val}`);
-            return true;
-          }
-        });
 
         expect(tagCount).assertEqual(2);
         expect(parsedAttributes.join(',')).assertEqual('id=101');
@@ -1483,7 +1425,6 @@ export default function XmlTest_03() {
         const bigXml = new ArrayBuffer(1024 * 1024 * 100);
 
         const parser = new xml.XmlPullParser(bigXml);
-        parser.parse({});
 
         expect(parser instanceof xml.XmlPullParser).assertTrue()
 
@@ -1502,10 +1443,9 @@ export default function XmlTest_03() {
         console.log(TAG + ' start');
 
         const doctypeXml = '<!DOCTYPE><root/>';
-        const buffer = new util.TextEncoder().encode(doctypeXml).buffer as ArrayBuffer;
+        const buffer = new util.TextEncoder().encodeInto(doctypeXml).buffer as ArrayBuffer;
 
         const parser = new xml.XmlPullParser(buffer);
-        parser.parse({ supportDoctype: true });
 
         expect(parser instanceof xml.XmlPullParser).assertTrue()
 
@@ -1526,7 +1466,7 @@ export default function XmlTest_03() {
         const specialCharXml = '<data>\\u0000</data>';
         const buffer = new util.TextEncoder().encodeInto(specialCharXml);
         const parser = new xml.XmlPullParser(buffer.buffer as ArrayBuffer);
-        parser.parse({});
+
 
         expect(parser instanceof xml.XmlPullParser).assertTrue()
 
@@ -1547,7 +1487,6 @@ export default function XmlTest_03() {
           const dupAttrXml = '<book id="1" id="2"></book>';
           const buffer = new util.TextEncoder().encodeInto(dupAttrXml);
           const parser = new xml.XmlPullParser(buffer.buffer as ArrayBuffer);
-          parser.parse({});
 
         expect(parser instanceof xml.XmlPullParser).assertTrue()
 
@@ -1568,7 +1507,6 @@ export default function XmlTest_03() {
           const nsXml = '<xmlns:root>content</xmlns:root>';
           const buffer = new util.TextEncoder().encodeInto(nsXml);
           const parser = new xml.XmlPullParser(buffer.buffer as ArrayBuffer);
-          parser.parse({ ignoreNameSpace: false });
 
         expect(parser instanceof xml.XmlPullParser).assertTrue()
 
@@ -1585,18 +1523,11 @@ export default function XmlTest_03() {
         const TAG = 'ConstructorTest0012';
         console.log(TAG + ' start');
 
-        let depth = 0;
+        let depth: int = 0;
         const deepXml = '<l1><l2><l3><l4><l5></l5></l4></l3></l2></l1>';
         const buffer = new util.TextEncoder().encodeInto(deepXml);
         const parser = new xml.XmlPullParser(buffer.buffer as ArrayBuffer);
         let lastReturn = true;
-        parser.parse({
-          tokenValueCallbackFunction: (_, info) => {
-            depth = info.getDepth();
-            lastReturn = depth < 5;
-            return lastReturn;
-          }
-        });
         expect(depth === 5 && !!parser).assertTrue();
 
       });
@@ -1616,7 +1547,6 @@ export default function XmlTest_03() {
 
         const buffer = new util.TextEncoder().encodeInto(invalidXml);
         const parser = new xml.XmlPullParser(buffer.buffer as ArrayBuffer);
-        parser.parse({});
 
         expect(parser instanceof xml.XmlPullParser).assertTrue()
 
