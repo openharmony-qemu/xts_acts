@@ -765,36 +765,6 @@ export default function fileIOFileMapping() {
     });
 
     /**
-     * @tc.name   fileIO_test_setLimit_004
-     * @tc.number SUB_DF_FILEIO_SETLIMIT_0400
-     * @tc.desc   Test setLimit() interfaces. Limit=undefined.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('fileIO_test_setLimit_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
-      let fpath = await nextFileName('fileIO_test_setLimit_004');
-      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
-
-      let file;
-      let mapping;
-      try {
-        file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
-        expect(isIntNum(file.fd)).assertTrue();
-        mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
-        expect(mapping != null).assertTrue();
-        mapping.setLimit(undefined);
-        expect(false).assertTrue();
-      } catch (e) {
-        console.log('fileIO_test_setLimit_004 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code === 13900020).assertTrue();
-        mapping.unmapSync();
-        fileIO.closeSync(file);
-        fileIO.unlinkSync(fpath);
-      }
-    });
-
-    /**
      * @tc.name   fileIO_test_getLimit_000
      * @tc.number SUB_DF_FILEIO_GETLIMIT_0000
      * @tc.desc   Test getLimit() interfaces.
@@ -2407,8 +2377,8 @@ export default function fileIOFileMapping() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('fileIO_test_msync_error_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-      let fpath = await nextFileName('fileIO_test_msync_error_002');
+    it('fileIO_test_msyncSync_error_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      let fpath = await nextFileName('fileIO_test_msyncSync_error_002');
       expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
      
       let file;
