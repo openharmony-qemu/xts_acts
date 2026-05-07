@@ -736,16 +736,16 @@ export default function ActsUIExtensionContextMethodStaticTest() {
     });
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_ContextType_0800
-     * @tc.number SUB_Ability_AbilityRuntime_ContextType_0800
+     * @tc.name   SUB_Ability_AbilityRuntime_ContextType_Static_0800
+     * @tc.number SUB_Ability_AbilityRuntime_ContextType_Static_0800
      * @tc.desc   Test UIAbilityContext isContextOf FORM_EXTENSION_CONTEXT returns false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_ContextType_0800', TestType.FUNCTION | Size.MEDIUMTEST
+    it('SUB_Ability_AbilityRuntime_ContextType_Static_0800', TestType.FUNCTION | Size.MEDIUMTEST
       | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ContextType_0800';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ContextType_Static_0800';
       hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case start`);
       let testAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
       let result = testAbilityContext.isContextOf(contextConstant.ContextType.FORM_EXTENSION_CONTEXT);
@@ -755,16 +755,16 @@ export default function ActsUIExtensionContextMethodStaticTest() {
     });
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_ContextType_0900
-     * @tc.number SUB_Ability_AbilityRuntime_ContextType_0900
+     * @tc.name   SUB_Ability_AbilityRuntime_ContextType_Static_0900
+     * @tc.number SUB_Ability_AbilityRuntime_ContextType_Static_0900
      * @tc.desc   Test UIAbilityContext isContextOf APP_SERVICE_EXTENSION_CONTEXT returns false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_ContextType_0900', TestType.FUNCTION | Size.MEDIUMTEST
+    it('SUB_Ability_AbilityRuntime_ContextType_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST
       | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ContextType_0900';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ContextType_Static_0900';
       hilog.info(DOMAIN, TAG, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case start`);
       let testAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
       let result = testAbilityContext.isContextOf(contextConstant.ContextType.APP_SERVICE_EXTENSION_CONTEXT);

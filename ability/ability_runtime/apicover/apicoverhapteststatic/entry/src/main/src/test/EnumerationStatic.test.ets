@@ -1183,7 +1183,7 @@ export default function EnumerationStaticTest() {
      * @tc.desc   Test contextConstant contextConstant.Scenarios.SCENARIO_MOVE_MISSION_TO_FRONT
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityBase_contextConstant_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       expect(1).assertEqual(contextConstant.Scenarios.SCENARIO_MOVE_MISSION_TO_FRONT);
@@ -1196,7 +1196,7 @@ export default function EnumerationStaticTest() {
      * @tc.desc   Test contextConstant contextConstant.Scenarios.SCENARIO_SHOW_ABILITY
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityBase_contextConstant_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       expect(2).assertEqual(contextConstant.Scenarios.SCENARIO_SHOW_ABILITY);
@@ -1209,7 +1209,7 @@ export default function EnumerationStaticTest() {
      * @tc.desc   Test contextConstant contextConstant.Scenarios.SCENARIO_BACK_TO_CALLER_ABILITY_WITH_RESULT
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityBase_contextConstant_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       expect(4).assertEqual(contextConstant.Scenarios.SCENARIO_BACK_TO_CALLER_ABILITY_WITH_RESULT);
@@ -1222,7 +1222,7 @@ export default function EnumerationStaticTest() {
      * @tc.desc   Test FailureCode FailureCode.FAILURE_CODE_SYSTEM_MALFUNCTION
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityBase_FailureCode_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       expect(0).assertEqual(FailureCode.FAILURE_CODE_SYSTEM_MALFUNCTION);
@@ -1235,7 +1235,7 @@ export default function EnumerationStaticTest() {
      * @tc.desc   Test FailureCode FailureCode.FAILURE_CODE_USER_CANCEL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityBase_FailureCode_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       expect(1).assertEqual(FailureCode.FAILURE_CODE_USER_CANCEL);
@@ -1248,7 +1248,7 @@ export default function EnumerationStaticTest() {
      * @tc.desc   Test FailureCode FailureCode.FAILURE_CODE_USER_REFUSE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityBase_FailureCode_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       expect(2).assertEqual(FailureCode.FAILURE_CODE_USER_REFUSE);
@@ -1261,7 +1261,7 @@ export default function EnumerationStaticTest() {
      * @tc.desc   Test AbilityStartFailureCode AbilityStartFailureCode.FAILURE_CODE_SYSTEM_MALFUNCTION
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityBase_AbilityStartFailureCode_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       expect(0).assertEqual(AbilityStartFailureCode.FAILURE_CODE_SYSTEM_MALFUNCTION);
@@ -1274,7 +1274,7 @@ export default function EnumerationStaticTest() {
      * @tc.desc   Test AbilityStartFailureCode AbilityStartFailureCode.FAILURE_CODE_USER_CANCEL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityBase_AbilityStartFailureCode_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       expect(1).assertEqual(AbilityStartFailureCode.FAILURE_CODE_USER_CANCEL);

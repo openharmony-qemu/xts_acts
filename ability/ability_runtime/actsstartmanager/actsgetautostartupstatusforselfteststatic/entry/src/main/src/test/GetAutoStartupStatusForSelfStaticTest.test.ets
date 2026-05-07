@@ -65,5 +65,29 @@ export default function GetAutoStartupStatusForSelfStaticTest() {
           done();
         }
       })
+    /**
+     * @tc.name   Sub_Ability_AbilityRuntime_IsAutoStartupSupported_Static_0100
+     * @tc.number Sub_Ability_AbilityRuntime_IsAutoStartupSupported_Static_0100
+     * @tc.desc   Test isAutoStartupSupported returns boolean.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('Sub_Ability_AbilityRuntime_IsAutoStartupSupported_Static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const tcNumber = `Sub_Ability_AbilityRuntime_IsAutoStartupSupported_Static_0100 `;
+        hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
+        try {
+          let result: boolean = autoStartupManager.isAutoStartupSupported();
+          hilog.info(0x0000, 'testTag', `${tcNumber} isAutoStartupSupported result: ${result}`);
+          expect(typeof result === 'boolean').assertTrue();
+          done();
+        } catch (err) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} isAutoStartupSupported failed: ${err}`);
+          expect().assertFail();
+          done();
+        }
+      })
   })
 }
