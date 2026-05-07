@@ -72,3 +72,5 @@ export const usbSerialSetFlowControl: () => number;
 export const usbSerialFlush: () => number;
 export const usbSerialFlushInput: () => number;
 export const usbSerialFlushOutput: () => number;
+export const usbControlTransfer: () => number;
+export const usbGetNonRootHubs: () => number;
