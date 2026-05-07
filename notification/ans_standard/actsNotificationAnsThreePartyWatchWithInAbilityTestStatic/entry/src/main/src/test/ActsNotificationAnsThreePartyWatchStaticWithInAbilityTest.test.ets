@@ -158,16 +158,16 @@ export default function actsNotificationAnsThreePartyWatchStaticWithInAbilityTes
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_ThreePartyWatch_Static_1011
-     * @tc.number Sub_Notification_Ans_ThreePartyWatch_Static_1011
+     * @tc.name   SUB_Notification_Ans_ThreePartyWatch_Static_0100
+     * @tc.number SUB_Notification_Ans_ThreePartyWatch_Static_0100
      * @tc.desc   The [subscribe] parameter is passed correctly, and the API call is successful
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Sub_Notification_Ans_ThreePartyWatch_Static_1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_Notification_Ans_ThreePartyWatch_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const testNum = 'Sub_Notification_Ans_ThreePartyWatch_Static_1011';
+        const testNum = 'SUB_Notification_Ans_ThreePartyWatch_Static_0100';
         let testContext: common.UIAbilityContext =
           AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
         let infos: notificationExtensionSubscription.NotificationExtensionSubscriptionInfo[] = [
@@ -246,16 +246,16 @@ export default function actsNotificationAnsThreePartyWatchStaticWithInAbilityTes
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_ThreePartyWatch_Static_1012
-     * @tc.number Sub_Notification_Ans_ThreePartyWatch_Static_1012
+     * @tc.name   SUB_Notification_Ans_ThreePartyWatch_Static_0200
+     * @tc.number SUB_Notification_Ans_ThreePartyWatch_Static_0200
      * @tc.desc   [subscribe] The `info` parameter passes multiple sets of elements, and the subscription is successful
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('Sub_Notification_Ans_ThreePartyWatch_Static_1012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('SUB_Notification_Ans_ThreePartyWatch_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        const testNum = 'Sub_Notification_Ans_ThreePartyWatch_Static_1012';
+        const testNum = 'SUB_Notification_Ans_ThreePartyWatch_Static_0200';
         let testContext: common.UIAbilityContext =
           AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
         let infosOne: notificationExtensionSubscription.NotificationExtensionSubscriptionInfo[] = [
@@ -422,16 +422,16 @@ export default function actsNotificationAnsThreePartyWatchStaticWithInAbilityTes
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_ThreePartyWatch_Static_1014
-     * @tc.number Sub_Notification_Ans_ThreePartyWatch_Static_1014
+     * @tc.name   SUB_Notification_Ans_ThreePartyWatch_Static_0300
+     * @tc.number SUB_Notification_Ans_ThreePartyWatch_Static_0300
      * @tc.desc   [unsubscribe] Multiple calls to the unsubscribe interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('Sub_Notification_Ans_ThreePartyWatch_Static_1014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('SUB_Notification_Ans_ThreePartyWatch_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        const testNum = 'Sub_Notification_Ans_ThreePartyWatch_Static_1014';
+        const testNum = 'SUB_Notification_Ans_ThreePartyWatch_Static_0300';
         let testContext: common.UIAbilityContext =
           AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
         let infos: notificationExtensionSubscription.NotificationExtensionSubscriptionInfo[] = [
@@ -512,16 +512,16 @@ export default function actsNotificationAnsThreePartyWatchStaticWithInAbilityTes
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_ThreePartyWatch_Static_1015
-     * @tc.number Sub_Notification_Ans_ThreePartyWatch_Static_1015
+     * @tc.name   SUB_Notification_Ans_ThreePartyWatch_Static_0400
+     * @tc.number SUB_Notification_Ans_ThreePartyWatch_Static_0400
      * @tc.desc   [unsubscribe] The parameter is correct, and the third-party application successfully cancels the subscription
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Sub_Notification_Ans_ThreePartyWatch_Static_1015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_Notification_Ans_ThreePartyWatch_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const testNum = 'Sub_Notification_Ans_ThreePartyWatch_Static_1015';
+        const testNum = 'SUB_Notification_Ans_ThreePartyWatch_Static_0400';
         let testContext: common.UIAbilityContext =
           AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
         let infos: notificationExtensionSubscription.NotificationExtensionSubscriptionInfo[] = [
