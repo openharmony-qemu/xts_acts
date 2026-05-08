@@ -30,6 +30,7 @@ int FdopenTest();
 int FcntlTest();
 int FopencookieTest();
 int InetPtonTest();
+int IconvJointIcuTestTest();
 int PthreadCondTest();
 int PthreadMutexTest();
 int PthreadMutexPiTest();

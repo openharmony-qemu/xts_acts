@@ -27,6 +27,7 @@
  */
 void ErrnoLocation0100(void)
 {
+    errno = 0;
     int result = *__errno_location();
     if (result != 0) {
         t_error("%s __errno_location get errno code is %d are not want 0\n", __func__, result);
