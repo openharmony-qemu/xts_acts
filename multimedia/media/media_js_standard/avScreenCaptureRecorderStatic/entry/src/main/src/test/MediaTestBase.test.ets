@@ -298,7 +298,7 @@ export default class MediaTestBase {
           this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
         }).catch((err) => {
           console.error('avScreenCaptureRecorder presentPicker failed, error: ' + err.code);
-          if (err.code == 5400102) {
+          if (err.code == 5400103) {
             this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
           } else {
             console.error('avScreenCaptureRecorder init failed, error: ' + err.message);
