@@ -341,11 +341,10 @@ export default function setAssetCompatibleCapabilityTest () {
             supportedMimeType : abnormalResolution
           };
           await helper.setAssetCompatibleCapability(cfg);
-          expect(false).assertTrue();
           done();
         } catch (error) {
           console.error(`${testNum} fail, error is ${error}, ${error.code}`);
-          expect(Number(error.code)).assertEqual(23800151);
+          expect(false).assertTrue();
           done();
         }
       })
@@ -436,11 +435,10 @@ export default function setAssetCompatibleCapabilityTest () {
             supportedMimeType : []
           };
           await helper.setAssetCompatibleCapability(cfg);
-          expect(false).assertTrue();
           done();
         } catch (error) {
           console.error(`${testNum} fail, error is ${error}, ${error.code}`);
-          expect(Number(error.code)).assertEqual(23800151);
+          expect(false).assertTrue();
           done();
         }
       })
