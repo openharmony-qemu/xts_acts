@@ -343,7 +343,7 @@ describe('HiCheckerTest', function () {
       * @tc.size   MEDIUMTEST
       * @tc.level  LEVEL2
       */
-    it('SUB_DFX_DFR_Hichecker_addCheckRule_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+    it('DFX_DFR_Hichecker_Interface_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('DFX_DFR_Hichecker_Interface_3000 start');
         try {
             hichecker.addCheckRule(hichecker.RULE_THREAD_CHECK_NETWORK_USAGE);
@@ -364,7 +364,7 @@ describe('HiCheckerTest', function () {
       * @tc.size   MEDIUMTEST
       * @tc.level  LEVEL2
       */
-    it('SUB_DFX_DFR_Hichecker_addCheckRule_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+    it('DFX_DFR_Hichecker_Interface_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('DFX_DFR_Hichecker_Interface_3100 start');
         try {
             hichecker.addCheckRule(hichecker.RULE_THREAD_CHECK_NETWORK_USAGE | hichecker.RULE_CAUTION_PRINT_LOG);
@@ -388,7 +388,7 @@ describe('HiCheckerTest', function () {
       * @tc.size   MEDIUMTEST
       * @tc.level  LEVEL2
       */
-    it('SUB_DFX_DFR_Hichecker_addCheckRule_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+    it('DFX_DFR_Hichecker_Interface_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('DFX_DFR_Hichecker_Interface_3200 start');
         try {
             hichecker.addCheckRule(hichecker.RULE_THREAD_CHECK_NETWORK_USAGE | hichecker.RULE_CAUTION_PRINT_LOG);
@@ -412,7 +412,7 @@ describe('HiCheckerTest', function () {
       * @tc.size   MEDIUMTEST
       * @tc.level  LEVEL2
       */
-    it('SUB_DFX_DFR_Hichecker_addCheckRule_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+    it('DFX_DFR_Hichecker_Interface_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('DFX_DFR_Hichecker_Interface_3300 start');
         try {
             hichecker.removeCheckRule(hichecker.RULE_THREAD_CHECK_NETWORK_USAGE);
@@ -434,7 +434,7 @@ describe('HiCheckerTest', function () {
       * @tc.size   MEDIUMTEST
       * @tc.level  LEVEL2
       */
-    it('SUB_DFX_DFR_Hichecker_addCheckRule_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+    it('DFX_DFR_Hichecker_Interface_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('DFX_DFR_Hichecker_Interface_3400 start');
         try {
             hichecker.addCheckRule(hichecker.RULE_THREAD_CHECK_NETWORK_USAGE);
