@@ -80,6 +80,7 @@ function callDoneOnStopped(floatViewController: floatView.FloatViewController, c
   let onStateChange = (info: floatView.FloatViewStateChangeInfo) => {
     console.info(caseName + ' callDoneOnStopped Float view stateChange: ' + info.state);
     if (info.state === floatView.FloatViewState.STOPPED) {
+      expect(info.stopReason).assertEqual('APP_STOP')
       floatViewController.offStateChange();
       console.info(caseName + ' callDoneOnStopped Succeeded in unregistering stateChange callback.');
       done();
@@ -598,7 +599,7 @@ export default function abilityTest():void {
       } catch (e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if (e.code === 801 && !isDeviceSupportFloatView) {
+        if (e.code === 801 && (!isDeviceSupportFloatView || !isDeviceSupportFloatBall)) {
           done();
         } else {
           expect(false).assertTrue();

@@ -93,8 +93,9 @@ async function stopFloatViewOnStarted(floatViewController: floatView.FloatViewCo
 // 监听到stop调用done停止用例
 function callDoneOnStopped(floatViewController: floatView.FloatViewController, caseName: string, done: Function): void {
   let onStateChange = (info: floatView.FloatViewStateChangeInfo) => {
-    console.info(caseName + ' callDoneOnStopped Float view stateChange: ' + info.state);
+    console.info(caseName + ' callDoneOnStopped Float view stateChange: ' + info.state + ' ' + info.stopReason);
     if (info.state === floatView.FloatViewState.STOPPED) {
+      expect(info.stopReason).assertEqual('APP_STOP')
       floatViewController.offStateChange(onStateChange);
       console.info(caseName + ' callDoneOnStopped Succeeded in unregistering stateChange callback.');
       done();
