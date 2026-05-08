@@ -1,5 +1,5 @@
 'use static'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { Queue, util } from '@kit.ArkTS';
 
 interface GeneratedTypeLiteralInterface_1 {
@@ -89,7 +89,7 @@ export default function Queue02Test(): void {
       const TAG = 'testQueue02Chapter0001';
       console.log(TAG + ' start');
       let queue = new Queue<string>();
-      let emojis = ["👆", "👿", "👀", "💯", "🎅", "😼", "🔧", "💇", "🤼‍♂️", "🛢", "🀄", "🏴"];
+      let emojis = ["👆", "👿", "👀", "💯", "🎅", "😼", "🔧", "💇", "🤼‍♂️", "🛢", "🇬🇧", "🏴"];
 
       emojis.forEach((emoji: string): void => {
         queue.add(emoji);
