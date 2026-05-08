@@ -283,5 +283,207 @@ export default function observerManagerSimStateTest1() {
       }
       console.info(`${caseName} test end`);
     });
+
+    /**
+     * @tc.name   testTelephonyObserverOnGetSimActiveState0200
+     * @tc.number SUB_Telephony_Observer_OnGetSimActiveState_0200
+     * @tc.desc   Invalid parameter value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverOnGetSimActiveState0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyObserverOnGetSimActiveState0200';
+      console.info(`${caseName} test start`);
+      try {
+        let slotId: int = -1;
+        observer.onGetSimActiveState(slotId, (data: boolean | undefined) => {
+          console.info(`${caseName} data: ${data}}`);
+          ExpectFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectTrue(error.code === 8300001);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverOnGetSimActiveState0300
+     * @tc.number SUB_Telephony_Observer_OnGetSimActiveState_0300
+     * @tc.desc   Invalid parameter value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverOnGetSimActiveState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyObserverOnGetSimActiveState0300';
+      console.info(`${caseName} test start`);
+      try {
+        let slotId: int = 0;
+        await sim.activateSim(slotId);
+        observer.onGetSimActiveState(slotId, (data: boolean | undefined) => {
+          console.info(`${caseName} data: ${data}}`);
+          ExpectTrue(data === true);
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverOnGetSimActiveState0400
+     * @tc.number SUB_Telephony_Observer_OnGetSimActiveState_0400
+     * @tc.desc   Subscribe to sim active state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverOnGetSimActiveState0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyObserverOnGetSimActiveState0400';
+      console.info(`${caseName} test start`);
+      if (sim.getMaxSimCount() > 1) {
+        try {
+          let slotId: int = 1;
+          await sim.activateSim(slotId);
+          observer.onGetSimActiveState(slotId, (data: boolean | undefined) => {
+            console.info(`${caseName} data: ${data}`);
+            ExpectTrue(data === true);
+            done();
+          });
+        } catch (error) {
+          console.info(`${caseName} catchError ${JSON.stringify(error)}`);
+          ExpectFail();
+          done();
+        }
+      } else {
+        console.info(`${caseName} This device is a single-card device`);
+        ExpectFail();
+        done();
+      }  
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverOnGetSimActiveState0500
+     * @tc.number SUB_Telephony_Observer_OnGetSimActiveState_0500
+     * @tc.desc   Subscribe to sim active state change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverOnGetSimActiveState0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyObserverOnGetSimActiveState0500';
+      console.info(`${caseName} test start`);
+      try {
+        let slotId: int = 3;
+        observer.onGetSimActiveState(slotId, (data: boolean | undefined) => {
+          console.info(`${caseName} data: ${data}`);
+          ExpectFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
+        ExpectTrue(error?.code === 8300001);
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverOffGetSimActiveState0300
+     * @tc.number SUB_Telephony_Observer_OffGetSimActiveState_0300
+     * @tc.desc   Cancel callback when the sim active state is updated.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverOffGetSimActiveState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyObserverOffGetSimActiveState0300';
+      console.info(`${caseName} test start`);
+      try {
+        observer.offGetSimActiveState();
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverOffGetSimActiveState0100
+     * @tc.number SUB_Telephony_Observer_OffGetSimActiveState_0100
+     * @tc.desc   Cancel callback when the sim active state is updated.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverOffGetSimActiveState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyObserverOffGetSimActiveState0100';
+      console.info(`${caseName} test start`);
+      try {
+        let slotId: int = 0;
+        let callback: ((data: boolean | undefined) => void) | undefined = undefined;
+        callback = (data: boolean | undefined) => {
+          console.info(`${caseName} data: ${data}`);
+          ExpectTrue(data === true);
+          observer.offGetSimActiveState(callback);
+          done();
+        }
+        await sim.activateSim(slotId);
+        observer.onGetSimActiveState(slotId, callback);
+        console.info(`${caseName} slotId: ${slotId}`);
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyObserverOffGetSimActiveState0200
+     * @tc.number SUB_Telephony_Observer_OffGetSimActiveState_0200
+     * @tc.desc   Cancel callback when the sim active state is updated.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTelephonyObserverOffGetSimActiveState0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonyObserverOffGetSimActiveState0200';
+      console.info(`${caseName} test start`);
+      if (sim.getMaxSimCount() > 1) {
+        try {
+          let slotId: int = 1;
+          let callback: ((data: boolean | undefined) => void) | undefined = undefined;
+          callback = (data: boolean | undefined) => {
+            console.info(`${caseName} data: ${data}`);
+            ExpectTrue(data === true);
+            observer.offGetSimActiveState(callback);
+            done();
+          }
+          await sim.activateSim(slotId);
+          observer.onGetSimActiveState(slotId, callback);
+          console.info(`${caseName} slotId: ${slotId}`);
+        } catch (error) {
+          console.info(`${caseName} CatchError ${JSON.stringify(error)}`);
+          ExpectFail();
+          done();
+        }
+      } else {
+        console.info(`${caseName} This device is a single-card device`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
   });
 }
