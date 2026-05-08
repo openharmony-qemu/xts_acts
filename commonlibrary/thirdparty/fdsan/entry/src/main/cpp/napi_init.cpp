@@ -18,7 +18,8 @@ static constexpr useconds_t K_POLL_INTERVAL_US = 10000;
 static constexpr int K_INVALID_ERROR_LEVEL = -1;
 static constexpr int K_MAX_ERROR_LEVEL = 100;
 
-static napi_value FdsanSetErrorLevelWarnAlways(napi_env env, napi_callback_info info) {
+static napi_value FdsanSetErrorLevelWarnAlways(napi_env env, napi_callback_info info)
+{
     enum fdsan_error_level originalLevel = fdsan_get_error_level();
     enum fdsan_error_level oldLevel = fdsan_set_error_level(FDSAN_ERROR_LEVEL_WARN_ALWAYS);
     enum fdsan_error_level newLevel = fdsan_get_error_level();
@@ -28,7 +29,8 @@ static napi_value FdsanSetErrorLevelWarnAlways(napi_env env, napi_callback_info 
     return result;
 }
 
-static napi_value FdsanSetErrorLevelWarnOnce(napi_env env, napi_callback_info info) {
+static napi_value FdsanSetErrorLevelWarnOnce(napi_env env, napi_callback_info info)
+{
     fdsan_set_error_level(FDSAN_ERROR_LEVEL_WARN_ALWAYS);
     enum fdsan_error_level oldLevel = fdsan_set_error_level(FDSAN_ERROR_LEVEL_WARN_ONCE);
     enum fdsan_error_level newLevel = fdsan_get_error_level();
@@ -38,7 +40,8 @@ static napi_value FdsanSetErrorLevelWarnOnce(napi_env env, napi_callback_info in
     return result;
 }
 
-static napi_value FdsanSetErrorLevelFatal(napi_env env, napi_callback_info info) {
+static napi_value FdsanSetErrorLevelFatal(napi_env env, napi_callback_info info)
+{
     fdsan_set_error_level(FDSAN_ERROR_LEVEL_WARN_ONCE);
     enum fdsan_error_level oldLevel = fdsan_set_error_level(FDSAN_ERROR_LEVEL_FATAL);
     enum fdsan_error_level newLevel = fdsan_get_error_level();
@@ -48,7 +51,8 @@ static napi_value FdsanSetErrorLevelFatal(napi_env env, napi_callback_info info)
     return result;
 }
 
-static napi_value FdsanSetErrorLevelDisabled(napi_env env, napi_callback_info info) {
+static napi_value FdsanSetErrorLevelDisabled(napi_env env, napi_callback_info info)
+{
     fdsan_set_error_level(FDSAN_ERROR_LEVEL_FATAL);
     enum fdsan_error_level oldLevel = fdsan_set_error_level(FDSAN_ERROR_LEVEL_DISABLED);
     enum fdsan_error_level newLevel = fdsan_get_error_level();
@@ -58,7 +62,8 @@ static napi_value FdsanSetErrorLevelDisabled(napi_env env, napi_callback_info in
     return result;
 }
 
-static napi_value FdsanSetErrorLevelInvalidEnum(napi_env env, napi_callback_info info) {
+static napi_value FdsanSetErrorLevelInvalidEnum(napi_env env, napi_callback_info info)
+{
     enum fdsan_error_level invalidLevel = static_cast<enum fdsan_error_level>(100);
     enum fdsan_error_level oldLevel = fdsan_set_error_level(invalidLevel);
     bool success = (oldLevel != static_cast<enum fdsan_error_level>(-1));
@@ -67,7 +72,8 @@ static napi_value FdsanSetErrorLevelInvalidEnum(napi_env env, napi_callback_info
     return napiResult;
 }
 
-static napi_value FdsanCreateOwnerTagNormal(napi_env env, napi_callback_info info) {
+static napi_value FdsanCreateOwnerTagNormal(napi_env env, napi_callback_info info)
+{
     uint64_t tag = fdsan_create_owner_tag(FDSAN_OWNER_TYPE_FILE, 0x12345678);
     uint64_t expected = (0x01ULL << 56) | 0x12345678;
     bool success = (tag == expected);
@@ -76,7 +82,8 @@ static napi_value FdsanCreateOwnerTagNormal(napi_env env, napi_callback_info inf
     return result;
 }
 
-static napi_value FdsanCreateOwnerTagZero(napi_env env, napi_callback_info info) {
+static napi_value FdsanCreateOwnerTagZero(napi_env env, napi_callback_info info)
+{
     uint64_t tag = fdsan_create_owner_tag(FDSAN_OWNER_TYPE_DIRECTORY, 0);
     bool success = (tag == 0);
     napi_value result;
@@ -84,7 +91,8 @@ static napi_value FdsanCreateOwnerTagZero(napi_env env, napi_callback_info info)
     return result;
 }
 
-static napi_value FdsanCreateOwnerTagInvalidType(napi_env env, napi_callback_info info) {
+static napi_value FdsanCreateOwnerTagInvalidType(napi_env env, napi_callback_info info)
+{
     uint64_t tag = fdsan_create_owner_tag(static_cast<enum fdsan_owner_type>(99), 0x1234);
     const char *typeName = fdsan_get_tag_type(tag);
     uint64_t value = fdsan_get_tag_value(tag);
@@ -94,7 +102,8 @@ static napi_value FdsanCreateOwnerTagInvalidType(napi_env env, napi_callback_inf
     return result;
 }
 
-static napi_value FdsanGetOwnerTagWithTagSet(napi_env env, napi_callback_info info) {
+static napi_value FdsanGetOwnerTagWithTagSet(napi_env env, napi_callback_info info)
+{
     int fd = open("/dev/null", O_RDONLY);
     if (fd < 0) {
         napi_value result;
@@ -111,7 +120,8 @@ static napi_value FdsanGetOwnerTagWithTagSet(napi_env env, napi_callback_info in
     return result;
 }
 
-static napi_value FdsanGetOwnerTagNoTagSet(napi_env env, napi_callback_info info) {
+static napi_value FdsanGetOwnerTagNoTagSet(napi_env env, napi_callback_info info)
+{
     int fd = open("/dev/null", O_RDONLY);
     if (fd < 0) {
         napi_value result;
@@ -127,7 +137,8 @@ static napi_value FdsanGetOwnerTagNoTagSet(napi_env env, napi_callback_info info
     return result;
 }
 
-static napi_value FdsanGetOwnerTagInvalidFd(napi_env env, napi_callback_info info) {
+static napi_value FdsanGetOwnerTagInvalidFd(napi_env env, napi_callback_info info)
+{
     uint64_t tag = fdsan_get_owner_tag(-1);
     bool success = (tag == 0);
     napi_value result;
@@ -135,7 +146,8 @@ static napi_value FdsanGetOwnerTagInvalidFd(napi_env env, napi_callback_info inf
     return result;
 }
 
-static napi_value FdsanGetTagTypeAndValue(napi_env env, napi_callback_info info) {
+static napi_value FdsanGetTagTypeAndValue(napi_env env, napi_callback_info info)
+{
     uint64_t tag = fdsan_create_owner_tag(FDSAN_OWNER_TYPE_FILE, 0xabcdef);
     const char *typeStr = fdsan_get_tag_type(tag);
     uint64_t value = fdsan_get_tag_value(tag);
@@ -145,7 +157,8 @@ static napi_value FdsanGetTagTypeAndValue(napi_env env, napi_callback_info info)
     return result;
 }
 
-static napi_value FdsanExchangeOwnerTagZeroToNew(napi_env env, napi_callback_info info) {
+static napi_value FdsanExchangeOwnerTagZeroToNew(napi_env env, napi_callback_info info)
+{
     int fd = open("/dev/null", O_RDONLY);
     if (fd < 0) {
         napi_value result;
@@ -168,7 +181,8 @@ static napi_value FdsanExchangeOwnerTagZeroToNew(napi_env env, napi_callback_inf
     return result;
 }
 
-static napi_value FdsanExchangeOwnerTagOldToNew(napi_env env, napi_callback_info info) {
+static napi_value FdsanExchangeOwnerTagOldToNew(napi_env env, napi_callback_info info)
+{
     int fd = open("/dev/null", O_RDONLY);
     if (fd < 0) {
         napi_value result;
@@ -193,7 +207,8 @@ static napi_value FdsanExchangeOwnerTagOldToNew(napi_env env, napi_callback_info
     return result;
 }
 
-static napi_value FdsanExchangeOwnerTagMismatch(napi_env env, napi_callback_info info) {
+static napi_value FdsanExchangeOwnerTagMismatch(napi_env env, napi_callback_info info)
+{
     int fd = open("/dev/null", O_RDONLY);
     if (fd < 0) {
         napi_value result;
@@ -218,7 +233,8 @@ static napi_value FdsanExchangeOwnerTagMismatch(napi_env env, napi_callback_info
     return result;
 }
 
-static napi_value FdsanExchangeOwnerTagInvalidFd(napi_env env, napi_callback_info info) {
+static napi_value FdsanExchangeOwnerTagInvalidFd(napi_env env, napi_callback_info info)
+{
     uint64_t newTag = fdsan_create_owner_tag(FDSAN_OWNER_TYPE_FILE, 0xA);
     bool success = (newTag != 0);
     fdsan_exchange_owner_tag(-1, 0, newTag);
@@ -228,7 +244,8 @@ static napi_value FdsanExchangeOwnerTagInvalidFd(napi_env env, napi_callback_inf
 }
 
 
-static napi_value FdsanCloseWithTagMatch(napi_env env, napi_callback_info info) {
+static napi_value FdsanCloseWithTagMatch(napi_env env, napi_callback_info info)
+{
     enum fdsan_error_level originalLevel = fdsan_set_error_level(FDSAN_ERROR_LEVEL_WARN_ALWAYS);
     int fd = open("/dev/null", O_RDONLY);
     if (fd < 0) {
@@ -247,7 +264,8 @@ static napi_value FdsanCloseWithTagMatch(napi_env env, napi_callback_info info) 
     return result;
 }
 
-static napi_value FdsanCloseWithTagMismatch(napi_env env, napi_callback_info info) {
+static napi_value FdsanCloseWithTagMismatch(napi_env env, napi_callback_info info)
+{
     enum fdsan_error_level originalLevel = fdsan_get_error_level();
     fdsan_set_error_level(FDSAN_ERROR_LEVEL_WARN_ALWAYS);
     int fd = open("/dev/null", O_RDONLY);
@@ -273,7 +291,8 @@ static napi_value FdsanCloseWithTagMismatch(napi_env env, napi_callback_info inf
     return result;
 }
 
-static napi_value FdsanCloseWithTagFdAlreadyClosed(napi_env env, napi_callback_info info) {
+static napi_value FdsanCloseWithTagFdAlreadyClosed(napi_env env, napi_callback_info info)
+{
     int fd = open("/dev/null", O_RDONLY);
     if (fd < 0) {
         napi_value result;
@@ -291,7 +310,8 @@ static napi_value FdsanCloseWithTagFdAlreadyClosed(napi_env env, napi_callback_i
     return result;
 }
 
-static napi_value FdsanCloseWithTagFdMinusOne(napi_env env, napi_callback_info info) {
+static napi_value FdsanCloseWithTagFdMinusOne(napi_env env, napi_callback_info info)
+{
     int ret = fdsan_close_with_tag(-1, 0);
     bool success = (ret == -1);
     napi_value result;
@@ -299,7 +319,8 @@ static napi_value FdsanCloseWithTagFdMinusOne(napi_env env, napi_callback_info i
     return result;
 }
 
-static napi_value FdsanCloseWithTagInvalidFd(napi_env env, napi_callback_info info) {
+static napi_value FdsanCloseWithTagInvalidFd(napi_env env, napi_callback_info info)
+{
     int ret = fdsan_close_with_tag(-1, 0);
     bool success = (ret == -1);
     napi_value result;
@@ -307,7 +328,8 @@ static napi_value FdsanCloseWithTagInvalidFd(napi_env env, napi_callback_info in
     return result;
 }
 
-static napi_value FdsanSetErrorLevelNegativeOrOverRange(napi_env env, napi_callback_info info) {
+static napi_value FdsanSetErrorLevelNegativeOrOverRange(napi_env env, napi_callback_info info)
+{
     enum fdsan_error_level originalLevel = fdsan_get_error_level();
     fdsan_set_error_level(static_cast<enum fdsan_error_level>(K_INVALID_ERROR_LEVEL));
     fdsan_set_error_level(static_cast<enum fdsan_error_level>(K_MAX_ERROR_LEVEL));
@@ -319,7 +341,8 @@ static napi_value FdsanSetErrorLevelNegativeOrOverRange(napi_env env, napi_callb
     return result;
 }
 
-static napi_value FdsanCreateOwnerTagTypeOutOfRange(napi_env env, napi_callback_info info) {
+static napi_value FdsanCreateOwnerTagTypeOutOfRange(napi_env env, napi_callback_info info)
+{
     enum fdsan_owner_type invalidType = static_cast<enum fdsan_owner_type>(99);
     uint64_t tag = fdsan_create_owner_tag(invalidType, 0x1234);
     bool success = (tag != 0);
@@ -330,7 +353,8 @@ static napi_value FdsanCreateOwnerTagTypeOutOfRange(napi_env env, napi_callback_
     return result;
 }
 
-static napi_value FdsanExchangeOwnerTagFdMinusOne(napi_env env, napi_callback_info info) {
+static napi_value FdsanExchangeOwnerTagFdMinusOne(napi_env env, napi_callback_info info)
+{
     uint64_t tag = fdsan_create_owner_tag(FDSAN_OWNER_TYPE_FILE, 0xA);
     bool success = (tag != 0);
     fdsan_exchange_owner_tag(-1, 0, tag);
@@ -341,7 +365,8 @@ static napi_value FdsanExchangeOwnerTagFdMinusOne(napi_env env, napi_callback_in
     return result;
 }
 
-static napi_value FdsanGetOwnerTagFdMinusOne(napi_env env, napi_callback_info info) {
+static napi_value FdsanGetOwnerTagFdMinusOne(napi_env env, napi_callback_info info)
+{
     uint64_t tag = fdsan_get_owner_tag(-1);
     bool success = (tag == 0);
     napi_value result;
@@ -349,7 +374,8 @@ static napi_value FdsanGetOwnerTagFdMinusOne(napi_env env, napi_callback_info in
     return result;
 }
 
-static napi_value FdsanGetTagTypeTagZero(napi_env env, napi_callback_info info) {
+static napi_value FdsanGetTagTypeTagZero(napi_env env, napi_callback_info info)
+{
     const char *typeStr = fdsan_get_tag_type(0);
     bool success = (typeStr != nullptr);
     napi_value result;
@@ -357,7 +383,8 @@ static napi_value FdsanGetTagTypeTagZero(napi_env env, napi_callback_info info) 
     return result;
 }
 
-static napi_value FdsanGetTagValueTagAllOne(napi_env env, napi_callback_info info) {
+static napi_value FdsanGetTagValueTagAllOne(napi_env env, napi_callback_info info)
+{
     uint64_t tag = 0xFFFFFFFFFFFFFFFFULL;
     uint64_t value = fdsan_get_tag_value(tag);
     uint64_t expected = tag & 0x00FFFFFFFFFFFFFFULL;
@@ -367,7 +394,8 @@ static napi_value FdsanGetTagValueTagAllOne(napi_env env, napi_callback_info inf
     return result;
 }
 
-static napi_value FdsanComTransferFdOwnership(napi_env env, napi_callback_info info) {
+static napi_value FdsanComTransferFdOwnership(napi_env env, napi_callback_info info)
+{
     enum fdsan_error_level originalLevel = fdsan_set_error_level(FDSAN_ERROR_LEVEL_WARN_ALWAYS);
     int fd = open("/dev/null", O_RDONLY);
     if (fd < 0) {
@@ -388,7 +416,8 @@ static napi_value FdsanComTransferFdOwnership(napi_env env, napi_callback_info i
     return result;
 }
 
-static napi_value FdsanComMoveSemanticsRaii(napi_env env, napi_callback_info info) {
+static napi_value FdsanComMoveSemanticsRaii(napi_env env, napi_callback_info info)
+{
     int fd = open("/dev/null", O_RDONLY);
     if (fd < 0) {
         napi_value result;
@@ -412,7 +441,8 @@ static napi_value FdsanComMoveSemanticsRaii(napi_env env, napi_callback_info inf
     return result;
 }
 
-static napi_value FdsanComNestedErrorLevelFatal(napi_env env, napi_callback_info info) {
+static napi_value FdsanComNestedErrorLevelFatal(napi_env env, napi_callback_info info)
+{
     enum fdsan_error_level originalLevel = fdsan_get_error_level();
     fdsan_set_error_level(FDSAN_ERROR_LEVEL_WARN_ALWAYS);
     bool success = false;
@@ -436,7 +466,8 @@ struct ThreadData {
     std::atomic<bool> *shouldStop;
 };
 
-static void *ThreadFunc1(void *arg) {
+static void *ThreadFunc1(void *arg)
+{
     std::unique_ptr<ThreadData> data(static_cast<ThreadData *>(arg));
     {
         std::lock_guard<std::mutex> lock(*data->fdMutex);
@@ -459,7 +490,8 @@ static void *ThreadFunc1(void *arg) {
     return nullptr;
 }
 
-static void *ThreadFunc2(void *arg) {
+static void *ThreadFunc2(void *arg)
+{
     ThreadData *data = static_cast<ThreadData *>(arg);
     std::this_thread::sleep_for(std::chrono::milliseconds(K_THREAD_SLEEP_MS));
     {
@@ -474,7 +506,8 @@ static void *ThreadFunc2(void *arg) {
     return nullptr;
 }
 
-static napi_value FdsanComMultiThreadMixedOperation(napi_env env, napi_callback_info info) {
+static napi_value FdsanComMultiThreadMixedOperation(napi_env env, napi_callback_info info)
+{
     enum fdsan_error_level originalLevel = fdsan_set_error_level(FDSAN_ERROR_LEVEL_WARN_ALWAYS);
     int fd = open("/dev/null", O_RDWR);
     if (fd < 0) {
@@ -533,7 +566,8 @@ struct DoubleCloseData {
     bool closeFirst;
 };
 
-static void *ThreadCloseFunc(void *arg) {
+static void *ThreadCloseFunc(void *arg)
+{
     DoubleCloseData *data = static_cast<DoubleCloseData *>(arg);
     {
         std::lock_guard<std::mutex> lock(data->mtx);
@@ -546,7 +580,8 @@ static void *ThreadCloseFunc(void *arg) {
     return nullptr;
 }
 
-static void *ThreadUseFunc(void *arg) {
+static void *ThreadUseFunc(void *arg)
+{
     DoubleCloseData *data = static_cast<DoubleCloseData *>(arg);
     {
         std::unique_lock<std::mutex> lock(data->mtx);
@@ -558,7 +593,8 @@ static void *ThreadUseFunc(void *arg) {
     return nullptr;
 }
 
-static napi_value FdsanDoubleCloseCrossThread(napi_env env, napi_callback_info info) {
+static napi_value FdsanDoubleCloseCrossThread(napi_env env, napi_callback_info info)
+{
     enum fdsan_error_level originalLevel = fdsan_set_error_level(FDSAN_ERROR_LEVEL_WARN_ALWAYS);
     int fd = open("/dev/null", O_RDWR);
     if (fd < 0) {
@@ -585,7 +621,8 @@ static napi_value FdsanDoubleCloseCrossThread(napi_env env, napi_callback_info i
     return result;
 }
 
-static napi_value FdsanDoubleCloseSameThread(napi_env env, napi_callback_info info) {
+static napi_value FdsanDoubleCloseSameThread(napi_env env, napi_callback_info info)
+{
     fdsan_set_error_level(FDSAN_ERROR_LEVEL_WARN_ALWAYS);
     int fd = open("/dev/null", O_RDONLY);
     if (fd < 0) {
@@ -602,7 +639,8 @@ static napi_value FdsanDoubleCloseSameThread(napi_env env, napi_callback_info in
     return result;
 }
 
-static napi_value FdsanUseAfterClose(napi_env env, napi_callback_info info) {
+static napi_value FdsanUseAfterClose(napi_env env, napi_callback_info info)
+{
     int fd = open("/dev/null", O_RDONLY);
     close(fd);
     fd = -1;
@@ -614,7 +652,8 @@ static napi_value FdsanUseAfterClose(napi_env env, napi_callback_info info) {
     return result;
 }
 
-static napi_value FdsanLevelWarnOnce(napi_env env, napi_callback_info info) {
+static napi_value FdsanLevelWarnOnce(napi_env env, napi_callback_info info)
+{
     fdsan_set_error_level(FDSAN_ERROR_LEVEL_WARN_ALWAYS);
     int fd = open("/dev/null", O_RDONLY);
     if (fd < 0) {
@@ -632,7 +671,8 @@ static napi_value FdsanLevelWarnOnce(napi_env env, napi_callback_info info) {
     return result;
 }
 
-static napi_value FdsanLevelWarnAlways(napi_env env, napi_callback_info info) {
+static napi_value FdsanLevelWarnAlways(napi_env env, napi_callback_info info)
+{
     fdsan_set_error_level(FDSAN_ERROR_LEVEL_WARN_ALWAYS);
     int fd = open("/dev/null", O_RDONLY);
     if (fd < 0) {
@@ -649,7 +689,8 @@ static napi_value FdsanLevelWarnAlways(napi_env env, napi_callback_info info) {
     return result;
 }
 
-static napi_value FdsanLevelFatal(napi_env env, napi_callback_info info) {
+static napi_value FdsanLevelFatal(napi_env env, napi_callback_info info)
+{
     enum fdsan_error_level originalLevel = fdsan_set_error_level(FDSAN_ERROR_LEVEL_WARN_ALWAYS);
     int fd = open("/dev/null", O_RDONLY);
     if (fd < 0) {
@@ -668,7 +709,8 @@ static napi_value FdsanLevelFatal(napi_env env, napi_callback_info info) {
     return result;
 }
 
-static napi_value FdsanLevelDisabled(napi_env env, napi_callback_info info) {
+static napi_value FdsanLevelDisabled(napi_env env, napi_callback_info info)
+{
     enum fdsan_error_level originalLevel = fdsan_get_error_level();
     fdsan_set_error_level(FDSAN_ERROR_LEVEL_DISABLED);
     int fd = open("/dev/null", O_RDONLY);
@@ -688,7 +730,8 @@ static napi_value FdsanLevelDisabled(napi_env env, napi_callback_info info) {
     return result;
 }
 
-static napi_value FdsanStdlibFopenFclose(napi_env env, napi_callback_info info) {
+static napi_value FdsanStdlibFopenFclose(napi_env env, napi_callback_info info)
+{
     enum fdsan_error_level originalLevel = fdsan_get_error_level();
     fdsan_set_error_level(FDSAN_ERROR_LEVEL_WARN_ALWAYS);
     FILE *file = fopen("/dev/null", "w");
@@ -708,7 +751,8 @@ static napi_value FdsanStdlibFopenFclose(napi_env env, napi_callback_info info) 
     return result;
 }
 
-static napi_value FdsanStdlibFdopen(napi_env env, napi_callback_info info) {
+static napi_value FdsanStdlibFdopen(napi_env env, napi_callback_info info)
+{
     int fd = open("/dev/null", O_WRONLY);
     if (fd == -1) {
         napi_value result;
@@ -736,7 +780,8 @@ static int g_signalTestFd = -1;
 
 static void SafeSignalHandler(int sig) { g_signalReceived.store(true); }
 
-static napi_value FdsanSignalSafety(napi_env env, napi_callback_info info) {
+static napi_value FdsanSignalSafety(napi_env env, napi_callback_info info)
+{
     enum fdsan_error_level originalLevel = fdsan_set_error_level(FDSAN_ERROR_LEVEL_WARN_ALWAYS);
     g_signalReceived.store(false);
     struct sigaction sa;
@@ -774,7 +819,8 @@ static napi_value FdsanSignalSafety(napi_env env, napi_callback_info info) {
 }
 
 EXTERN_C_START
-static napi_value RegisterEntryModule(napi_env env, napi_value exports) {
+static napi_value RegisterEntryModule(napi_env env, napi_value exports)
+{
     napi_property_descriptor desc[] = {
         {"testFdsanSetErrorLevelWarnAlways", nullptr, FdsanSetErrorLevelWarnAlways, nullptr, nullptr, nullptr,
          napi_default, nullptr},
