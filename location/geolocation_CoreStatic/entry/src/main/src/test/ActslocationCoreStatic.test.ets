@@ -1510,7 +1510,7 @@ export default function actslocationTest() {
               hilog.info(domain, tag, 'result[0].ssid: %{public}s', result[0].ssid);
               hilog.info(domain, tag, 'typeof result[0].index: %{public}s', typeof result[0].index);
               hilog.info(domain, tag, 'typeof result[0].ssid: %{public}s', typeof result[0].ssid);
-              expect(typeof result[0].index).assertEqual('number');
+              expect(typeof result[0].index).assertEqual('int');
               expect(typeof result[0].ssid).assertEqual('string');
               expect(result[0].index >= 0).assertTrue();
               expect(result[0].index < wlanBssidArray.length).assertTrue();
