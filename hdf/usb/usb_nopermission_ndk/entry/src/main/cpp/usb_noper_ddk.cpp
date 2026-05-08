@@ -1110,7 +1110,7 @@ static napi_value UsbControlTransfer(napi_env env, napi_callback_info info)
     setup.bmRequestType = 0x80;
     setup.bRequest = 0x06;
     setup.wValue = (0x01 << PARAM_8) | 0x00;
-    setup.wIndex = 0x0000;  
+    setup.wIndex = 0x0000;
     setup.wLength = 0x0012;
     int32_t returnValue = OH_Usb_ControlTransfer(deviceId, &setup, data, UINT32_MAX);
     napi_value result = nullptr;
