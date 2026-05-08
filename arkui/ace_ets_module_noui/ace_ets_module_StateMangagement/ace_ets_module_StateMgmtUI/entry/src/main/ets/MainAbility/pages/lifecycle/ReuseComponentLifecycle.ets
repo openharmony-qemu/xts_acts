@@ -69,7 +69,7 @@ struct ReuseChild {
 
   build() {
     Column() {
-      Text("Child Component")
+      Text('Child Component')
         .id('childText')
         .height('5%')
     }

@@ -53,14 +53,14 @@ export default function componentLifecycleDecoratorsTest() {
 
 
     /**
-     * @tc.name   componentInactive_0100
+     * @tc.name   SUB_ARKUI_COMPONENTLIFECYCLE_COMPONENTINACTIVE_0100
      * @tc.number SUB_ARKUI_COMPONENTLIFECYCLE_COMPONENTINACTIVE_0100
      * @tc.desc   Test @ComponentInactive decorator triggers when component becomes inactive
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('componentInactive_0100', Level.LEVEL0, async () => {
+    it('SUB_ARKUI_COMPONENTLIFECYCLE_COMPONENTINACTIVE_0100', Level.LEVEL0, async () => {
       hilog.info(0x0000, 'ComponentLifecycleDecorators', 'componentInactive_0100 START');
       let driver = Driver.create();
       let scrollBtn = await driver.findComponent(ON.id('scrollToIndexBtn'));

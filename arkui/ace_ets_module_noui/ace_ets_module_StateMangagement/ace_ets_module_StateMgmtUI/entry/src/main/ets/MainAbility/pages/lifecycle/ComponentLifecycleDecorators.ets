@@ -91,4 +91,3 @@ struct LifecycleChild {
     }
   }
 }
-}

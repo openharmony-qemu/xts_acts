@@ -54,14 +54,14 @@ export default function reuseComponentLifecycleTest() {
 
 
     /**
-     * @tc.name   reuseComponentInactive_0100
+     * @tc.name   SUB_ARKUI_REUSE_COMPONENTINACTIVE_0100
      * @tc.number SUB_ARKUI_REUSE_COMPONENTINACTIVE_0100
      * @tc.desc   Test @ComponentInactive triggers when @Reusable component becomes inactive
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('reuseComponentInactive_0100', Level.LEVEL0, async () => {
+    it('SUB_ARKUI_REUSE_COMPONENTINACTIVE_0100', Level.LEVEL0, async () => {
       hilog.info(0x0000, 'ReuseComponentLifecycle', 'reuseComponentInactive_0100 START');
       let driver = Driver.create();
       let changeBtn = await driver.findComponent(ON.id('changeBtn'));
@@ -75,14 +75,14 @@ export default function reuseComponentLifecycleTest() {
     });
 
     /**
-     * @tc.name   reuseComponentActive_0100
+     * @tc.name   SUB_ARKUI_REUSE_COMPONENTACTIVE_0100
      * @tc.number SUB_ARKUI_REUSE_COMPONENTACTIVE_0100
      * @tc.desc   Test @ComponentActive triggers when @Reusable component becomes active
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('reuseComponentActive_0100', Level.LEVEL0, async () => {
+    it('SUB_ARKUI_REUSE_COMPONENTACTIVE_0100', Level.LEVEL0, async () => {
       hilog.info(0x0000, 'ReuseComponentLifecycle', 'reuseComponentActive_0100 START');
       let driver = Driver.create();
       let changeBtn = await driver.findComponent(ON.id('changeBtn'));
