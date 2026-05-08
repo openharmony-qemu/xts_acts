@@ -217,44 +217,29 @@ int64_t VEncAPI11Sample::GetSystemTimeUs()
 void VEncAPI11Sample::SetPreProcessConfigure(OH_AVFormat *format)
 {
     if (preProcessParameter.enableCrop) {
-        if (preProcessParameter.cropNum > 0) {
-            (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_PREPROC_CROP_LEFT, preProcessParameter.cropLeft);
-        }
-        if (preProcessParameter.cropNum > 1) {
-            (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_PREPROC_CROP_TOP, preProcessParameter.cropTop);
-        }
-        if (preProcessParameter.cropNum > 2) {
-            (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_PREPROC_CROP_RIGHT, preProcessParameter.cropRight);
-        }
-        if (preProcessParameter.cropNum > 3) {
-            (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_PREPROC_CROP_BOTTOM, preProcessParameter.cropBottom);
-        }
+        (void)OH_AVFormat_SetIntValue(
+            format, OH_MD_KEY_VIDEO_ENCODER_PREPROC_CROP_LEFT, preProcessParameter.cropLeft);
+        (void)OH_AVFormat_SetIntValue(
+            format, OH_MD_KEY_VIDEO_ENCODER_PREPROC_CROP_TOP, preProcessParameter.cropTop);
+        (void)OH_AVFormat_SetIntValue(
+            format, OH_MD_KEY_VIDEO_ENCODER_PREPROC_CROP_RIGHT, preProcessParameter.cropRight);
+        (void)OH_AVFormat_SetIntValue(
+            format, OH_MD_KEY_VIDEO_ENCODER_PREPROC_CROP_BOTTOM, preProcessParameter.cropBottom);
     }
     if (preProcessParameter.enableDFrame) {
-        (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_VIDEO_ENCODER_PREPROC_DROP_TO_FRAME_RATE, preProcessParameter.dropFrameRate);
+        (void)OH_AVFormat_SetDoubleValue(
+            format, OH_MD_KEY_VIDEO_ENCODER_PREPROC_DROP_TO_FRAME_RATE, preProcessParameter.dropFrameRate);
     }
     if (preProcessParameter.enableDownsampling) {
-        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_PREPROC_DOWNSAMPLING_WIDTH, preProcessParameter.downsamplingWidth);
-        if (preProcessParameter.downsamplingNum > 1) {
-            (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_PREPROC_DOWNSAMPLING_HEIGHT, preProcessParameter.downsamplingHeight);
-        }
+        (void)OH_AVFormat_SetIntValue(
+            format, OH_MD_KEY_VIDEO_ENCODER_PREPROC_DOWNSAMPLING_WIDTH, preProcessParameter.downsamplingWidth);
+        (void)OH_AVFormat_SetIntValue(
+            format, OH_MD_KEY_VIDEO_ENCODER_PREPROC_DOWNSAMPLING_HEIGHT, preProcessParameter.downsamplingHeight);
     }
 }
 
-int32_t VEncAPI11Sample::ConfigureVideoEncoder()
+void VEncAPI11Sample::EncoderSetIntValue(OH_AVFormat *format)
 {
-    OH_AVFormat *format = OH_AVFormat_Create();
-    if (format == nullptr) {
-        return AV_ERR_UNKNOWN;
-    }
-    if (preProcessParameter.configEnable) {
-        SetPreProcessConfigure(format);
-    }
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, DEFAULT_PIX_FMT);
-    (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
-    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, DEFAULT_KEY_FRAME_INTERVAL);
     if (isAVCEncoder) {
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PROFILE, avcProfile);
     } else {
@@ -290,6 +275,23 @@ int32_t VEncAPI11Sample::ConfigureVideoEncoder()
             (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_REPEAT_PREVIOUS_MAX_COUNT, DEFAULT_MAX_COUNT);
         }
     }
+}
+
+int32_t VEncAPI11Sample::ConfigureVideoEncoder()
+{
+    OH_AVFormat *format = OH_AVFormat_Create();
+    if (format == nullptr) {
+        return AV_ERR_UNKNOWN;
+    }
+    if (preProcessParameter.configEnable) {
+        SetPreProcessConfigure(format);
+    }
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, DEFAULT_PIX_FMT);
+    (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_I_FRAME_INTERVAL, DEFAULT_KEY_FRAME_INTERVAL);
+    EncoderSetIntValue(format);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_ENABLE_SYNC_MODE, enbleSyncMode);
     int ret = OH_VideoEncoder_Configure(venc_, format);
     OH_AVFormat_Destroy(format);
@@ -1484,6 +1486,50 @@ void VEncAPI11Sample::OutputFuncFail()
     Release();
 }
 
+void VAPI11Sample::RunDuaLOrNot(bool isPrimary,
+    FILE *outFile, int size, OH_AVBuffer *buffer, uint32_t index, FILE *outFileSec)
+{
+    if (runDualEncoder) {
+        if (isPrimary) {
+            if (outFile == nullptr) {
+                cout << "dump outFile data fail" << endl;
+            } else {
+                fwrite(OH_AVBuffer_GetAddr(buffer), 1, size, outFile);
+            }
+            if (OH_VideoEncoder_FreeOutputBuffer(vencPrimary, index) != AV_ERR_OK) {
+                cout << "Fatal: vencPrimary ReleaseOutputBuffer fail" << endl;
+                errCount = errCount + 1;
+            }
+        } else {
+            if (outFileSec == nullptr) {
+                cout << "dump outFileSec data fail" << endl;
+            } else {
+                fwrite(OH_AVBuffer_GetAddr(buffer), 1, size, outFileSec);
+            }
+            if (OH_VideoEncoder_FreeOutputBuffer(vencSecondary, index) != AV_ERR_OK) {
+                cout << "Fatal: vencSecondary ReleaseOutputBuffer fail" << endl;
+                errCount = errCount + 1;
+            }
+        }
+    } else {
+        if (outFile == nullptr) {
+            cout << "dump data fail" << endl;
+        } else {
+            fwrite(OH_AVBuffer_GetAddr(buffer), 1, size, outFile);
+        }
+        if (OH_VideoEncoder_FreeOutputBuffer(venc_, index) != AV_ERR_OK) {
+            cout << "Fatal: ReleaseOutputBuffer fail" << endl;
+            errCount = errCount + 1;
+        }
+    }
+}
+void VEncAPI11Sample::OutBufferQueuePop()
+{
+    signal_->outBufferQueue_.pop();
+    signal_->outIdxQueue_.pop();
+    signal_->isPrimaryQueue_.pop();
+    lock.unlock();
+}
 void VEncAPI11Sample::OutputFunc()
 {
     FILE *outFile = fopen(OUT_DIR, "wb");
@@ -1492,7 +1538,7 @@ void VEncAPI11Sample::OutputFunc()
         outFileSec = fopen(OUT_DIR_SEC, "wb");
     }
     bool isPrimary = true;
-    while (true) {
+    while (!false) {
         if (!isRunning_.load()) {
             break;
         }
@@ -1512,10 +1558,7 @@ void VEncAPI11Sample::OutputFunc()
         uint32_t index = signal_->outIdxQueue_.front();
         OH_AVBuffer *buffer = signal_->outBufferQueue_.front();
         isPrimary = signal_->isPrimaryQueue_.front();
-        signal_->outBufferQueue_.pop();
-        signal_->outIdxQueue_.pop();
-        signal_->isPrimaryQueue_.pop();
-        lock.unlock();
+        OutBufferQueuePop();
         DumpInfo(attr, buffer);
         if (OH_AVBuffer_GetBufferAttr(buffer, &attr) != AV_ERR_OK) {
             errCount = errCount + 1;
@@ -1524,39 +1567,7 @@ void VEncAPI11Sample::OutputFunc()
             break;
         }
         int size = attr.size;
-        if (runDualEncoder) {
-            if (isPrimary) {
-                if (outFile == nullptr) {
-                    cout << "dump outFile data fail" << endl;
-                } else {
-                    fwrite(OH_AVBuffer_GetAddr(buffer), 1, size, outFile);
-                }
-                if (OH_VideoEncoder_FreeOutputBuffer(vencPrimary, index) != AV_ERR_OK) {
-                    cout << "Fatal: vencPrimary ReleaseOutputBuffer fail" << endl;
-                    errCount = errCount + 1;
-                }
-            } else {
-                if (outFileSec == nullptr) {
-                    cout << "dump outFileSec data fail" << endl;
-                } else {
-                    fwrite(OH_AVBuffer_GetAddr(buffer), 1, size, outFileSec);
-                }
-                if (OH_VideoEncoder_FreeOutputBuffer(vencSecondary, index) != AV_ERR_OK) {
-                    cout << "Fatal: vencSecondary ReleaseOutputBuffer fail" << endl;
-                    errCount = errCount + 1;
-                }
-            }
-        } else {
-            if (outFile == nullptr) {
-                cout << "dump data fail" << endl;
-            } else {
-                fwrite(OH_AVBuffer_GetAddr(buffer), 1, size, outFile);
-            }
-            if (OH_VideoEncoder_FreeOutputBuffer(venc_, index) != AV_ERR_OK) {
-                cout << "Fatal: ReleaseOutputBuffer fail" << endl;
-                errCount = errCount + 1;
-            }
-        }
+        RunDuaLOrNot(isPrimary, outFile, size, buffer, index, outFileSec);
         if (errCount > 0) {
             OutputFuncFail();
             break;
