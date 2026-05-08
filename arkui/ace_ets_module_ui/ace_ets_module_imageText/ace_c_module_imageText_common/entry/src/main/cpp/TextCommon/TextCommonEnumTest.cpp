@@ -236,7 +236,7 @@ static napi_value TextEnumTest_016(napi_env env, napi_callback_info info)
 
     const OH_ArkUI_SpanStyle *spanStyles[] = {spanStyle};
     ArkUI_StyledString_Descriptor *styledString =
-        OH_ArkUI_StyledString_Descriptor_CreateWithString("行间距样式示例\n段落内容", spanStyles, SIZE_1);
+        OH_ArkUI_StyledString_Descriptor_CreateWithString("行间距样式示例\n段落内容", spanStyles, SIZE_10);
 
     OH_ArkUI_SpanStyle_Destroy(spanStyle);
     OH_ArkUI_LineSpacingStyle_Destroy(lineSpacingStyle);
