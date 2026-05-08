@@ -1,4 +1,4 @@
-﻿'use static'
+'use static'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
 import { HashSet } from '@kit.ArkTS';
 
@@ -91,6 +91,14 @@ export default function HashSet07Test(): void {
     afterAll(() => {
     })
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_0100
+     * @tc.name      testHashSet07Chapter0001
+     * @tc.desc      Test forEach method with number type HashSet
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0001';
       console.log(TAG + ' start');
@@ -122,6 +130,14 @@ export default function HashSet07Test(): void {
 
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_0200
+     * @tc.name      testHashSet07Chapter0002
+     * @tc.desc      Test forEach exception propagation during iteration
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0002';
       console.log(TAG + ' start');
@@ -154,6 +170,14 @@ export default function HashSet07Test(): void {
 
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_0300
+     * @tc.name      testHashSet07Chapter0003
+     * @tc.desc      Test forEach with extended object containing nested base properties
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0003';
       console.log(TAG + ' start');
@@ -185,6 +209,14 @@ export default function HashSet07Test(): void {
       expect(basePropValue).assertEqual(100);
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_0400
+     * @tc.name      testHashSet07Chapter0004
+     * @tc.desc      Test forEach with objects containing Promise properties
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0004';
       console.log(TAG + ' start');
@@ -214,6 +246,14 @@ export default function HashSet07Test(): void {
       expect(idSum).assertEqual(3);
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_0500
+     * @tc.name      testHashSet07Chapter0005
+     * @tc.desc      Test forEach with boundary numeric values (0, 65535, etc.)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0005';
       console.log(TAG + ' start');
@@ -237,6 +277,14 @@ export default function HashSet07Test(): void {
       expect(count).assertEqual(6);
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_0600
+     * @tc.name      testHashSet07Chapter0006
+     * @tc.desc      Test forEach performance with 10000 elements
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0006';
       console.log(TAG + ' start');
@@ -264,6 +312,14 @@ export default function HashSet07Test(): void {
       console.log(TAG + ` end, duration: ${duration}ms`);
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_0700
+     * @tc.name      testHashSet07Chapter0007
+     * @tc.desc      Test forEach with large strings of 10000 characters each
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0007';
       console.log(TAG + ' start');
@@ -287,6 +343,14 @@ export default function HashSet07Test(): void {
       expect(totalLength).assertEqual(30000);
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_0800
+     * @tc.name      testHashSet07Chapter0008
+     * @tc.desc      Test forEach concurrent modification by adding elements during iteration
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0008';
       console.log(TAG + ' start');
@@ -328,6 +392,14 @@ export default function HashSet07Test(): void {
       }
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_0900
+     * @tc.name      testHashSet07Chapter0009
+     * @tc.desc      Test forEach concurrent modification by removing elements during iteration
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0009';
       console.log(TAG + ' start');
@@ -370,6 +442,14 @@ export default function HashSet07Test(): void {
       }
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_1000
+     * @tc.name      testHashSet07Chapter0010
+     * @tc.desc      Test forEach concurrent modification by clearing set during iteration
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0010';
       console.log(TAG + ' start');
@@ -409,6 +489,14 @@ export default function HashSet07Test(): void {
       }
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_1100
+     * @tc.name      testHashSet07Chapter0011
+     * @tc.desc      Test forEach with complex concurrent modifications (add, remove, clear combined)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0011';
       console.log(TAG + ' start');
@@ -462,6 +550,14 @@ export default function HashSet07Test(): void {
       }
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_1200
+     * @tc.name      testHashSet07Chapter0012
+     * @tc.desc      Test forEach with external modifier context modifying the set via callback
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0012';
       console.log(TAG + ' start');
@@ -509,6 +605,14 @@ export default function HashSet07Test(): void {
       }
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_1300
+     * @tc.name      testHashSet07Chapter0013
+     * @tc.desc      Test forEach infinite loop prevention when adding elements during iteration
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0013';
       console.log(TAG + ' start');
@@ -547,6 +651,14 @@ export default function HashSet07Test(): void {
       }
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_1400
+     * @tc.name      testHashSet07Chapter0014
+     * @tc.desc      Test forEach third parameter hashSetRef identity and modification
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0014';
       console.log(TAG + ' start');
@@ -578,6 +690,14 @@ export default function HashSet07Test(): void {
 
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_1500
+     * @tc.name      testHashSet07Chapter0015
+     * @tc.desc      Test entries() with string type returning key-value pairs
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0015';
       console.log(TAG + ' start');
@@ -604,6 +724,14 @@ export default function HashSet07Test(): void {
 
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_1600
+     * @tc.name      testHashSet07Chapter0016
+     * @tc.desc      Test entries() on empty HashSet returns done iterator
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0016';
       console.log(TAG + ' start');
@@ -617,6 +745,14 @@ export default function HashSet07Test(): void {
 
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_1700
+     * @tc.name      testHashSet07Chapter0017
+     * @tc.desc      Test entries() with number type and destructured key-value pairs
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0017';
       console.log(TAG + ' start');
@@ -646,6 +782,14 @@ export default function HashSet07Test(): void {
 
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_1800
+     * @tc.name      testHashSet07Chapter0018
+     * @tc.desc      Test entries() with special numeric values (NaN, Infinity, -Infinity, MAX_VALUE, MIN_VALUE)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0018';
       console.log(TAG + ' start');
@@ -691,6 +835,14 @@ export default function HashSet07Test(): void {
 
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_1900
+     * @tc.name      testHashSet07Chapter0019
+     * @tc.desc      Test entries() with Uint8Array typed values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0019';
       console.log(TAG + ' start');
@@ -724,6 +876,14 @@ export default function HashSet07Test(): void {
 
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_2000
+     * @tc.name      testHashSet07Chapter0020
+     * @tc.desc      Test entries() with special characters as individual string elements
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0020';
       console.log(TAG + ' start');
@@ -753,6 +913,14 @@ export default function HashSet07Test(): void {
 
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_2100
+     * @tc.name      testHashSet07Chapter0021
+     * @tc.desc      Test entries() with boolean type values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0021';
       console.log(TAG + ' start');
@@ -780,6 +948,14 @@ export default function HashSet07Test(): void {
 
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_2200
+     * @tc.name      testHashSet07Chapter0022
+     * @tc.desc      Test entries() with array of numbers as values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0022';
       console.log(TAG + ' start');
@@ -811,6 +987,14 @@ export default function HashSet07Test(): void {
 
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_2300
+     * @tc.name      testHashSet07Chapter0023
+     * @tc.desc      Test entries() with custom object type (TestObject07)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0023';
       console.log(TAG + ' start');
@@ -841,6 +1025,14 @@ export default function HashSet07Test(): void {
 
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_2400
+     * @tc.name      testHashSet07Chapter0024
+     * @tc.desc      Test entries() with various number literal formats (hex, octal, exponential)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0024';
       console.log(TAG + ' start');
@@ -871,6 +1063,14 @@ export default function HashSet07Test(): void {
 
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_2500
+     * @tc.name      testHashSet07Chapter0025
+     * @tc.desc      Test entries() with bigint values including large numbers
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0025';
       console.log(TAG + ' start');
@@ -898,6 +1098,14 @@ export default function HashSet07Test(): void {
 
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_2600
+     * @tc.name      testHashSet07Chapter0026
+     * @tc.desc      Test entries() with emoji strings
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0026';
       console.log(TAG + ' start');
@@ -929,6 +1137,14 @@ export default function HashSet07Test(): void {
 
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_2700
+     * @tc.name      testHashSet07Chapter0027
+     * @tc.desc      Test entries() with deeply nested objects
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0027';
       console.log(TAG + ' start');
@@ -958,6 +1174,14 @@ export default function HashSet07Test(): void {
 
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_2800
+     * @tc.name      testHashSet07Chapter0028
+     * @tc.desc      Test entries() with objects containing Map properties
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0028';
       console.log(TAG + ' start');
@@ -988,6 +1212,14 @@ export default function HashSet07Test(): void {
 
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_2900
+     * @tc.name      testHashSet07Chapter0029
+     * @tc.desc      Test entries() with objects containing Set container properties
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0029';
       console.log(TAG + ' start');
@@ -1015,6 +1247,14 @@ export default function HashSet07Test(): void {
 
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_3000
+     * @tc.name      testHashSet07Chapter0030
+     * @tc.desc      Test entries() with objects containing RegExp properties
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0030';
       console.log(TAG + ' start');
@@ -1041,6 +1281,14 @@ export default function HashSet07Test(): void {
 
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_3100
+     * @tc.name      testHashSet07Chapter0031
+     * @tc.desc      Test entries() with objects containing ArrayBuffer properties
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0031';
       console.log(TAG + ' start');
@@ -1068,6 +1316,14 @@ export default function HashSet07Test(): void {
 
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_3200
+     * @tc.name      testHashSet07Chapter0032
+     * @tc.desc      Test entries() performance with 100 even-numbered elements
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0032';
       console.log(TAG + ' start');
@@ -1099,6 +1355,14 @@ export default function HashSet07Test(): void {
 
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_3300
+     * @tc.name      testHashSet07Chapter0033
+     * @tc.desc      Test entries() method reference extraction and direct invocation
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0033';
       console.log(TAG + ' start');
@@ -1136,6 +1400,14 @@ export default function HashSet07Test(): void {
       }
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_3400
+     * @tc.name      testHashSet07Chapter0034
+     * @tc.desc      Test entries() with mixed value type arrays (number, string, boolean, null, undefined)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0034';
       console.log(TAG + ' start');
@@ -1162,6 +1434,14 @@ export default function HashSet07Test(): void {
 
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_3500
+     * @tc.name      testHashSet07Chapter0035
+     * @tc.desc      Test entries() with Int8Array values including boundary values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0035';
       console.log(TAG + ' start');
@@ -1192,6 +1472,14 @@ export default function HashSet07Test(): void {
 
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_3600
+     * @tc.name      testHashSet07Chapter0036
+     * @tc.desc      Test entries() with Float64Array values including extreme boundary values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0036';
       console.log(TAG + ' start');
@@ -1222,6 +1510,14 @@ export default function HashSet07Test(): void {
 
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_3700
+     * @tc.name      testHashSet07Chapter0037
+     * @tc.desc      Test entries() with BigUint64Array values including max boundary values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0037';
       console.log(TAG + ' start');
@@ -1252,6 +1548,14 @@ export default function HashSet07Test(): void {
 
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_3800
+     * @tc.name      testHashSet07Chapter0038
+     * @tc.desc      Test entries() with objects containing Promise properties
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0038';
       console.log(TAG + ' start');
@@ -1282,6 +1586,14 @@ export default function HashSet07Test(): void {
 
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_3900
+     * @tc.name      testHashSet07Chapter0039
+     * @tc.desc      Test entries() with boundary numeric values (0, 65535, etc.)
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0039';
       console.log(TAG + ' start');
@@ -1313,6 +1625,14 @@ export default function HashSet07Test(): void {
 
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_4000
+     * @tc.name      testHashSet07Chapter0040
+     * @tc.desc      Test for...of iteration on empty HashSet
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0040';
       console.log(TAG + ' start');
@@ -1324,6 +1644,14 @@ export default function HashSet07Test(): void {
       expect(count).assertEqual(0);
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_4100
+     * @tc.name      testHashSet07Chapter0041
+     * @tc.desc      Test for...of iteration with Int8Array boundary values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0041';
       console.log(TAG + ' start');
@@ -1340,6 +1668,14 @@ export default function HashSet07Test(): void {
       expect(count).assertEqual(2);
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_4200
+     * @tc.name      testHashSet07Chapter0042
+     * @tc.desc      Test for...of iteration with Uint8Array boundary values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0042';
       console.log(TAG + ' start');
@@ -1356,6 +1692,14 @@ export default function HashSet07Test(): void {
       expect(count).assertEqual(2);
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_4300
+     * @tc.name      testHashSet07Chapter0043
+     * @tc.desc      Test for...of iteration with Uint8ClampedArray boundary values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0043';
       console.log(TAG + ' start');
@@ -1372,6 +1716,14 @@ export default function HashSet07Test(): void {
       expect(count).assertEqual(2);
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_4400
+     * @tc.name      testHashSet07Chapter0044
+     * @tc.desc      Test for...of iteration with Int16Array boundary values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0044';
       console.log(TAG + ' start');
@@ -1388,6 +1740,14 @@ export default function HashSet07Test(): void {
       expect(count).assertEqual(2);
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_4500
+     * @tc.name      testHashSet07Chapter0045
+     * @tc.desc      Test for...of iteration with Uint16Array boundary values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0045';
       console.log(TAG + ' start');
@@ -1404,6 +1764,14 @@ export default function HashSet07Test(): void {
       expect(count).assertEqual(2);
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_4600
+     * @tc.name      testHashSet07Chapter0046
+     * @tc.desc      Test for...of iteration with Int32Array boundary values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0046';
       console.log(TAG + ' start');
@@ -1420,6 +1788,14 @@ export default function HashSet07Test(): void {
       expect(count).assertEqual(2);
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_4700
+     * @tc.name      testHashSet07Chapter0047
+     * @tc.desc      Test for...of iteration with Uint32Array boundary values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0047';
       console.log(TAG + ' start');
@@ -1436,6 +1812,14 @@ export default function HashSet07Test(): void {
       expect(count).assertEqual(2);
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_4800
+     * @tc.name      testHashSet07Chapter0048
+     * @tc.desc      Test for...of iteration with Float32Array boundary values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0048';
       console.log(TAG + ' start');
@@ -1452,6 +1836,14 @@ export default function HashSet07Test(): void {
       expect(count).assertEqual(2);
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_4900
+     * @tc.name      testHashSet07Chapter0049
+     * @tc.desc      Test for...of iteration with Float64Array boundary values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0049';
       console.log(TAG + ' start');
@@ -1468,6 +1860,14 @@ export default function HashSet07Test(): void {
       expect(count).assertEqual(2);
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_5000
+     * @tc.name      testHashSet07Chapter0050
+     * @tc.desc      Test for...of iteration with special characters string
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0050';
       console.log(TAG + ' start');
@@ -1482,6 +1882,14 @@ export default function HashSet07Test(): void {
       expect(found).assertTrue();
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_5100
+     * @tc.name      testHashSet07Chapter0051
+     * @tc.desc      Test for...of iteration with full ASCII character set string
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0051';
       console.log(TAG + ' start');
@@ -1497,6 +1905,14 @@ export default function HashSet07Test(): void {
       expect(found).assertTrue();
     });
 
+    /**
+     * @tc.number     SUB_HASHSET_TESTSEVEN_5200
+     * @tc.name      testHashSet07Chapter0052
+     * @tc.desc      Test for...of iteration with escape sequence characters string
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
     it("testHashSet07Chapter0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashSet07Chapter0052';
       console.log(TAG + ' start');
