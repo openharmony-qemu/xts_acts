@@ -48,84 +48,6 @@ export default function PhotoAccessHelperGetAlbumsSupp() {
     });
 
     /**
-     * @tc.name   SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0100
-     * @tc.number SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0100
-     * @tc.desc   phAccessHelper.setAssetCompatibleCapability-supportedHighResolution-true-jpg
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0100';
-      console.info(TAG, testName + ' begin.');
-      try {
-        let capability : photoAccessHelper.AssetCompatibleCapability = {
-          supportedHighResolution : true,
-          supportedMimeType:["JPG"]
-        };
-        await phAccessHelper.setAssetCompatibleCapability(capability);
-        expect(capability != undefined).assertTrue();
-        console.info(TAG, testName + '  test  success.');
-        done();
-      } catch (error) {
-        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.name   SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0200
-     * @tc.number SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0200
-     * @tc.desc   phAccessHelper.setAssetCompatibleCapability-supportedHighResolution-false
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0200';
-      console.info(TAG, testName + ' begin.');
-      try {
-        let capability : photoAccessHelper.AssetCompatibleCapability = {
-          supportedHighResolution : false,
-          supportedMimeType:["JPG"]
-        };
-        await phAccessHelper.setAssetCompatibleCapability(capability);
-        expect(capability != undefined).assertTrue();
-        console.info(TAG, testName + '  test  success.');
-        done();
-      } catch (error) {
-        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
-     * @tc.name   SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0300
-     * @tc.number SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0300
-     * @tc.desc   phAccessHelper.setAssetCompatibleCapability-supportedMimeType-mp4
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0300';
-      console.info(TAG, testName + ' begin.');
-      try {
-        let capability : photoAccessHelper.AssetCompatibleCapability = {
-          supportedHighResolution : false,
-          supportedMimeType:["MP4"]
-        };
-        await phAccessHelper.setAssetCompatibleCapability(capability);
-        expect(capability != undefined).assertTrue();
-        console.info(TAG, testName + '  test  success.');
-        done();
-      } catch (error) {
-        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect().assertFail();
-        done();
-      }
-    });
-    /**
      * @tc.name   SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0400
      * @tc.number SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_0400
      * @tc.desc   phAccessHelper.setAssetCompatibleCapability-第一个参数为null
@@ -167,6 +89,107 @@ export default function PhotoAccessHelperGetAlbumsSupp() {
         done();
       }
     });
-
+    /**
+     * @tc.name   SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_SUPPLEMENT_0100
+     * @tc.number SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_SUPPLEMENT_0100
+     * @tc.desc   phAccessHelper.setAssetCompatibleCapability-属性supportedMimeType空数组
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_SUPPLEMENT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_SUPPLEMENT_0100';
+      console.info(TAG, testName + ' begin.');
+      try {
+        let capability : photoAccessHelper.AssetCompatibleCapability = {
+          supportedHighResolution : true,
+          supportedMimeType:[]
+        };
+        await phAccessHelper.setAssetCompatibleCapability(capability);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect(Number(error.code)).assertEqual(23800151);
+        done();
+      }
+    });
+    /**
+     * @tc.name   SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_SUPPLEMENT_0200
+     * @tc.number SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_SUPPLEMENT_0200
+     * @tc.desc   phAccessHelper.setAssetCompatibleCapability-属性supportedMimeType空值''覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_SUPPLEMENT_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_SUPPLEMENT_0200';
+      console.info(TAG, testName + ' begin.');
+      try {
+        let capability : photoAccessHelper.AssetCompatibleCapability = {
+          supportedHighResolution : true,
+          supportedMimeType:['']
+        };
+        await phAccessHelper.setAssetCompatibleCapability(capability);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect(Number(error.code)).assertEqual(23800151);
+        done();
+      }
+    });
+    /**
+     * @tc.name   SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_SUPPLEMENT_0300
+     * @tc.number SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_SUPPLEMENT_0300
+     * @tc.desc   phAccessHelper.setAssetCompatibleCapability-属性supportedMimeType-非空覆盖-'image/jpeg'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_SUPPLEMENT_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_SUPPLEMENT_0300';
+      console.info(TAG, testName + ' begin.');
+      try {
+        let capability : photoAccessHelper.AssetCompatibleCapability = {
+          supportedHighResolution : true,
+          supportedMimeType:['image/jpeg']
+        };
+        await phAccessHelper.setAssetCompatibleCapability(capability);
+        expect(capability != undefined).assertTrue();
+        console.info(TAG,testName,'success', capability)
+        done();
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        done();
+      }
+    });
+    /**
+     * @tc.name   SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_SUPPLEMENT_0400
+     * @tc.number SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_SUPPLEMENT_0400
+     * @tc.desc   phAccessHelper.setAssetCompatibleCapability-属性supportedMimeType-非空覆盖-'image/heic'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_SUPPLEMENT_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_PHOTO_ACCESS_HELPER_SET_ASSET_COMPATIBLE_CAPABILITY_SUPPLEMENT_0400';
+      console.info(TAG, testName + ' begin.');
+      try {
+        let capability : photoAccessHelper.AssetCompatibleCapability = {
+          supportedHighResolution : true,
+          supportedMimeType:['image/heic']
+        };
+        await phAccessHelper.setAssetCompatibleCapability(capability);
+        expect(capability != undefined).assertTrue();
+        console.info(TAG,testName,'success', capability)
+        done();
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        done();
+      }
+    });
   })
 }
