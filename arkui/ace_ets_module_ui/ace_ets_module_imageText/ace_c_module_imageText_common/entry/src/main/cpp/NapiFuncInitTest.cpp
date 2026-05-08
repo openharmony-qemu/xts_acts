@@ -49,8 +49,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"TextEnumTest_020", nullptr, TextEnumTest_020, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextEnumTest_021", nullptr, TextEnumTest_021, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextEnumTest_022", nullptr, TextEnumTest_022, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TextEnumTest_023", nullptr, TextEnumTest_021, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TextEnumTest_024", nullptr, TextEnumTest_022, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextEnumTest_023", nullptr, TextEnumTest_023, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextEnumTest_024", nullptr, TextEnumTest_024, nullptr, nullptr, nullptr, napi_default, nullptr},
 
         {"TextAreaEnumTest_001", nullptr, TextAreaEnumTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TextAreaEnumTest_002", nullptr, TextAreaEnumTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},

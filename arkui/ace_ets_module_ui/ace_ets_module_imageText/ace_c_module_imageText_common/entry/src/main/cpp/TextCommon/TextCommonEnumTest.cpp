@@ -186,7 +186,7 @@ static napi_value TextEnumTest_013(napi_env env, napi_callback_info info)
     const OH_ArkUI_LineHeightStyle *lineHeightStyle2 = OH_ArkUI_LineHeightStyle_Create();
     auto result5_1 = OH_ArkUI_LineHeightStyle_GetLineHeightMultiple(lineHeightStyle2, PARAM_10);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "result5_1 TextEnumTest_012 result=%{public}d", result5_1);
+        "result5_1 TextEnumTest_013 result=%{public}d", result5_1);
     ASSERT_EQ(result5_1, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END(text);
 }
@@ -262,10 +262,10 @@ static napi_value TextEnumTest_018(napi_env env, napi_callback_info info)
 static napi_value TextEnumTest_019(napi_env env, napi_callback_info info)
 {
     NAPI_START(text, ARKUI_NODE_TEXT);
-    const OH_ArkUI_LineHeightStyle *lineHeightStyle = OH_ArkUI_LineHeightStyle_Create();
+    const OH_ArkUI_LineSpacingStyle *lineSpacingStyle = OH_ArkUI_LineSpacingStyle_Create();
     auto result11_1 = OH_ArkUI_LineSpacingStyle_GetLineSpacing(lineSpacingStyle, PARAM_30);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "result11_1 TextEnumTest_017 result=%{public}d", result11_1);
+        "result11_1 TextEnumTest_019 result=%{public}d", result11_1);
     ASSERT_EQ(result11_1, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END(text);
 }
@@ -289,7 +289,7 @@ static napi_value TextEnumTest_021(napi_env env, napi_callback_info info)
     const OH_ArkUI_LineSpacingStyle *lineSpacingStyle = OH_ArkUI_LineSpacingStyle_Create();
     auto result13_1 = OH_ArkUI_LineSpacingStyle_GetOnlyBetweenLines(lineSpacingStyle, ONLY_BETWEEN_LINES);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "result13_1 TextEnumTest_020 result=%{public}d", result13_1);
+        "result13_1 TextEnumTest_021 result=%{public}d", result13_1);
     ASSERT_EQ(result13_1, ARKUI_ERROR_CODE_NO_ERROR);
     NAPI_END(text);
 }
