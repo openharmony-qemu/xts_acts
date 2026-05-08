@@ -4402,7 +4402,7 @@ Camera_ErrorCode NDKCamera::RegisterExposureStateChangeCallback(int useCaseCode)
 Camera_ErrorCode NDKCamera::UnregisterExposureStateChangeCallback(int useCaseCode)
 {
     if (useCaseCode == PARAMETER_OK) {
-        ret_ = OH_CaptureSession_UnregisterExposureStateChangeCallback(captureSession_, nullptr, 
+        ret_ = OH_CaptureSession_UnregisterExposureStateChangeCallback(captureSession_, nullptr,
             OnExposureStateCallback);
     } else if (useCaseCode == PARAMETER1_ERROR) {
         ret_ = OH_CaptureSession_UnregisterExposureStateChangeCallback(nullptr, nullptr, OnExposureStateCallback);
@@ -4480,8 +4480,7 @@ Camera_ErrorCode NDKCamera::GetColorTint(int useCaseCode)
         ret_ = OH_CaptureSession_SetColorTint(captureSession_, colorTint);
         ret_ = OH_CaptureSession_GetColorTint(captureSession_, &g_currentTint);
         if (colorTint != g_currentTint) {
-            OH_LOG_ERROR(LOG_APP, "SetColorTint not equal GetColorTint, set: %{public}d, get: %{public}d", 
-                colorTint, g_currentTint);
+            OH_LOG_ERROR(LOG_APP, "set: %{public}d, get: %{public}d", colorTint, g_currentTint);
             ret_ = static_cast<Camera_ErrorCode>(-1);
         };
     }
