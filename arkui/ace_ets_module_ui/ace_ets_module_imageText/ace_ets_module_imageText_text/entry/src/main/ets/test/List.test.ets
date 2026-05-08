@@ -54,6 +54,7 @@ import SymbolSpanApi1Test from './SymbolSpanTest/SymbolSpanApi1Test.test';
 import SymbolSpanApi2Test from './SymbolSpanTest/SymbolSpanApi2Test.test';
 import SymbolSpanModifierTest from './SymbolSpanTest/SymbolSpanModifierTest.test';
 import SymbolSpanPropertiesNullUndefinedTest from './SymbolSpanTest/SymbolSpanPropertiesNullUndefinedTest.test';
+import SymbolSpanFontWeightTest from './SymbolSpanTest/SymbolSpanFontWeight.test';
 
 import EnablePreviewMenuTest from './TextTest/EnablePreviewMenu.test';
 import FontSettingOptions from './TextTest/FontSettingOptions.test';
@@ -195,6 +196,7 @@ export default function testsuite() {
   SymbolSpanApi2Test()
   SymbolSpanModifierTest()
   SymbolSpanPropertiesNullUndefinedTest()
+  SymbolSpanFontWeightTest()
   //TextTest
   EnablePreviewMenuTest()
   FontSettingOptions()

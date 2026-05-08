@@ -44,6 +44,7 @@
         "MainAbility/pages/SymbolSpan/SymbolSpanApi2",
         "MainAbility/pages/SymbolSpan/SymbolSpanModifier",
         "MainAbility/pages/SymbolSpan/SymbolSpanPropertiesNullUndefinedTest",
+        "MainAbility/pages/SymbolSpan/SymbolSpanFontWeight",
 
         "MainAbility/pages/Text/EnablePreviewMenu",
         "MainAbility/pages/Text/FontSettingOptions",
