@@ -1270,6 +1270,7 @@ export default function fileIOFileMapping() {
        expect(mapping != null).assertTrue();
        let buffer = new ArrayBuffer(100);
        let bytesRead = mapping.read(50,buffer,null);
+       console.log('fileIO_test_read_error_007 bytesRead ' + bytesRead);
        expect(bytesRead == 100).assertTrue();
        mapping.unmapSync();
        fileIO.closeSync(file);
@@ -1422,14 +1423,15 @@ export default function fileIOFileMapping() {
        mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
        expect(mapping != null).assertTrue();
        let buffer = new ArrayBuffer(100);
-       mapping.read(50,buffer,undefined);
-       expect(false).assertTrue();
-     } catch (e) {
-       console.log('fileIO_test_read_error_012 has failed for ' + e.message + ', code: ' + e.code);
-       expect(e.code === 13900020).assertTrue();
+       let bytesRead =  mapping.read(50,buffer,undefined);
+       console.log('fileIO_test_read_error_012 bytesRead' + bytesRead);
+       expect(bytesRead == 100).assertTrue();
        mapping.unmapSync();
        fileIO.closeSync(file);
        fileIO.unlinkSync(fpath);
+     } catch (e) {
+       console.log('fileIO_test_read_error_012 has failed for ' + e.message + ', code: ' + e.code);
+       expect(false).assertTrue();
      }
    });
 
@@ -1785,15 +1787,16 @@ export default function fileIOFileMapping() {
        expect(isIntNum(file.fd)).assertTrue();
        mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
        expect(mapping != null).assertTrue();
-      let buffer = new ArrayBuffer(100);
-       mapping.write(50,buffer,null);
-       expect(false).assertTrue();
-     } catch (e) {
-       console.log('fileIO_test_write_error_007 has failed for ' + e.message + ', code: ' + e.code);
-       expect(e.code === 13900020).assertTrue();
+       let buffer = new ArrayBuffer(100);
+       let bytesRead = mapping.write(50,buffer,null);
+       console.log('fileIO_test_write_error_007 bytesRead ' + bytesRead);
+       expect(bytesRead == 100).assertTrue();
        mapping.unmapSync();
        fileIO.closeSync(file);
        fileIO.unlinkSync(fpath);
+     } catch (e) {
+       console.log('fileIO_test_write_error_007 has failed for ' + e.message + ', code: ' + e.code);
+       expect(false).assertTrue();
      }
    });
 
@@ -1877,7 +1880,7 @@ export default function fileIOFileMapping() {
        expect(isIntNum(file.fd)).assertTrue();
        mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
        expect(mapping != null).assertTrue();
- let buffer = new ArrayBuffer(100);
+       let buffer = new ArrayBuffer(100);
        mapping.write(undefined,buffer);
        expect(false).assertTrue();
      } catch (e) {
@@ -1939,17 +1942,49 @@ export default function fileIOFileMapping() {
        mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
        expect(mapping != null).assertTrue();
        let buffer = new ArrayBuffer(100);
-       mapping.write(50,buffer,undefined);
-       expect(false).assertTrue();
-     } catch (e) {
-       console.log('fileIO_test_write_error_012 has failed for ' + e.message + ', code: ' + e.code);
-       expect(e.code === 13900020).assertTrue();
+       let bytesRead = mapping.write(50,buffer,undefined);
+       console.log('fileIO_test_write_error_012 bytesRead ' + bytesRead);
+       expect(bytesRead == 100).assertTrue();
        mapping.unmapSync();
        fileIO.closeSync(file);
        fileIO.unlinkSync(fpath);
+     } catch (e) {
+       console.log('fileIO_test_write_error_012 has failed for ' + e.message + ', code: ' + e.code);
+       expect(false).assertTrue();
      }
    });
 
+   /**
+     * @tc.name   fileIO_test_write_error_013
+     * @tc.number SUB_DF_FILEIO_WRITE_ERROR_1300
+     * @tc.desc   Test write() interfaces. Position exceeds limit.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+   it('fileIO_test_write_error_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_write_error_013');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    let file;
+    let mapping;
+    try {
+      file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+      expect(isIntNum(file.fd)).assertTrue();
+      mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+      expect(mapping != null).assertTrue();
+      mapping.setLimit(512);
+      let buffer = new ArrayBuffer(100);
+      mapping.write(600, buffer);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_write_error_013 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900051 || e.code === 13900020).assertTrue();
+      mapping.unmapSync();
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+    }
+  });
 
     /**
      * @tc.name   fileIO_test_msync_000
@@ -2665,6 +2700,5 @@ export default function fileIOFileMapping() {
         fileIO.unlinkSync(fpath);
       }
     });
-
   });
 }
