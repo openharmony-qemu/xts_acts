@@ -1,8 +1,8 @@
 'use static'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { url } from '@kit.ArkTS';
 
-export default function URL01Test() {
+export default function URL01Test(): void {
   describe('URL01Test', () => {
     beforeAll(() => {
     })

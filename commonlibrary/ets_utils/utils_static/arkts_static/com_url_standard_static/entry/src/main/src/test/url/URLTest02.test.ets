@@ -1,5 +1,5 @@
 'use static'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { uri, url } from '@kit.ArkTS';
 
 interface TestObject {
@@ -8,7 +8,7 @@ interface TestObject {
   c: number[];
 }
 
-export default function URL02Test() {
+export default function URL02Test(): void {
   describe('URL02Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -43,7 +43,7 @@ export default function URL02Test() {
       const ascii: string =
         "!\"#$%'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
       const escapes: string = "\\a\\b\\f\\n\\r\\t\\v\\\\\\'\\\"\\?\\0\\x41\\123";
-      const emojis: string = "👆👿👀💯🎅😼🔧💇🤼‍♂️🛢🀄🏴";
+      const emojis: string = "👆👿👀💯🎅😼🔧💇🤼‍♂️🛢🀄🎵";
       const urlObj =
         url.URL.parseURL(`https://example.com/?ascii=${encodeURIComponent(ascii)}&escapes=${encodeURIComponent(escapes)}&emojis=${encodeURIComponent(emojis)}`);
       const params: url.URLParams = urlObj.params;
@@ -263,7 +263,7 @@ export default function URL02Test() {
      * @tc.level Level 2
      */
     it("testURL02Chapter0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const emojis: string = "👆👿👀💯🎅😼🔧💇🤼‍♂️🛢🀄🏴";
+      const emojis: string = "👆👿👀💯🎅😼🔧💇🤼‍♂️🛢🀄🎵";
       const encoded: string = encodeURIComponent(emojis);
       const urlObj = url.URL.parseURL(`https://example.com/?emojis=${encoded}`);
       const params: url.URLParams = urlObj.params;
@@ -744,7 +744,7 @@ export default function URL02Test() {
       const ascii: string =
         "!\"#$%'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
       const escapes: string = "\\a\\b\\f\\n\\r\\t\\v\\\\\\'\\\"\\?\\0\\x41\\123";
-      const emojis: string = "👆👿👀💯🎅😼🔧💇🤼‍♂️🛢🀄🏴";
+      const emojis: string = "👆👿👀💯🎅😼🔧💇🤼‍♂️🛢🀄🎵";
       const pairs: [string, string][] = [
         ["ascii", ascii],
         ["escapes", escapes],
