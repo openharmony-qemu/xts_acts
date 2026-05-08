@@ -39,6 +39,9 @@
     "MainAbility/pages/lifecycle/LifeCycle0310",
     "MainAbility/pages/lifecycle/LifeCycleUndefinedNull",
     "MainAbility/pages/customProperty/CustomProperty",
-    "MainAbility/pages/circularReference/CircularReference"
+    "MainAbility/pages/circularReference/CircularReference",
+    "MainAbility/pages/lifecycle/ComponentLifecycleDecorators",
+    "MainAbility/pages/lifecycle/ReuseComponentLifecycle",
+    "MainAbility/pages/lifecycle/ReuseV2ComponentLifecycle"
   ]
 }
