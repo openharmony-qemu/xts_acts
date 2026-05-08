@@ -65,12 +65,14 @@ import currentScroll from './scrollCallback/currentScroll.test';
 import scrollBarNullUndefined from './ScrollBar/scrollBarNullUndefined.test';
 import scrollEventNullUndefined from './scrollDefault/scrollEventNullUndefined.test';
 import scrollerNullUndefined from './scrollDefault/scrollerNullUndefined.test';
+import ScrollScrollBarWidthTest from './ScrollScrollBarWidth.test.ets';
 import scrollDefaultTest1 from './scrollDefault/scrollDefault1.test';
 import scrollDefaultTest2 from './scrollDefault/scrollDefault2.test';
 import scrollDefaultTest3 from './scrollDefault/scrollDefault3.test';
 import scrollPropertiesTest from './scrollDefault/scrollPropertiesTest.test';
 
 export default function testsuite() {
+  ScrollScrollBarWidthTest()
   OnScrollBeginJsunit()
   ScrollAddJsunit()
   APIScrollflingSpeedLimitJsunit()
