@@ -1896,3 +1896,369 @@ static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005949,
         "fer.subgroupquadbroadcast_2_bool_geometry");
 
 static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005950,
+        "KHR-Single-GLES32.subgroups.quad.framebu",
+        "ffer.subgroupquadbroadcast_2_bvec2_vertex");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005951,
+        "KHR-Single-GLES32.subgroups.quad.framebuff",
+        "er.subgroupquadbroadcast_2_bvec2_tess_eval");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005952,
+        "KHR-Single-GLES32.subgroups.quad.framebuffe",
+        "r.subgroupquadbroadcast_2_bvec2_tess_control");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005953,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_2_bvec2_geometry");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005954,
+        "KHR-Single-GLES32.subgroups.quad.framebu",
+        "ffer.subgroupquadbroadcast_2_bvec3_vertex");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005955,
+        "KHR-Single-GLES32.subgroups.quad.framebuff",
+        "er.subgroupquadbroadcast_2_bvec3_tess_eval");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005956,
+        "KHR-Single-GLES32.subgroups.quad.framebuffe",
+        "r.subgroupquadbroadcast_2_bvec3_tess_control");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005957,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_2_bvec3_geometry");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005958,
+        "KHR-Single-GLES32.subgroups.quad.framebu",
+        "ffer.subgroupquadbroadcast_2_bvec4_vertex");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005959,
+        "KHR-Single-GLES32.subgroups.quad.framebuff",
+        "er.subgroupquadbroadcast_2_bvec4_tess_eval");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005960,
+        "KHR-Single-GLES32.subgroups.quad.framebuffe",
+        "r.subgroupquadbroadcast_2_bvec4_tess_control");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005961,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_2_bvec4_geometry");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005962,
+        "KHR-Single-GLES32.subgroups.quad.frameb",
+        "uffer.subgroupquadbroadcast_3_int_vertex");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005963,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_3_int_tess_eval");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005964,
+        "KHR-Single-GLES32.subgroups.quad.framebuff",
+        "er.subgroupquadbroadcast_3_int_tess_control");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005965,
+        "KHR-Single-GLES32.subgroups.quad.framebu",
+        "ffer.subgroupquadbroadcast_3_int_geometry");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005966,
+        "KHR-Single-GLES32.subgroups.quad.framebu",
+        "ffer.subgroupquadbroadcast_3_ivec2_vertex");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005967,
+        "KHR-Single-GLES32.subgroups.quad.framebuff",
+        "er.subgroupquadbroadcast_3_ivec2_tess_eval");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005968,
+        "KHR-Single-GLES32.subgroups.quad.framebuffe",
+        "r.subgroupquadbroadcast_3_ivec2_tess_control");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005969,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_3_ivec2_geometry");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005970,
+        "KHR-Single-GLES32.subgroups.quad.framebu",
+        "ffer.subgroupquadbroadcast_3_ivec3_vertex");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005971,
+        "KHR-Single-GLES32.subgroups.quad.framebuff",
+        "er.subgroupquadbroadcast_3_ivec3_tess_eval");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005972,
+        "KHR-Single-GLES32.subgroups.quad.framebuffe",
+        "r.subgroupquadbroadcast_3_ivec3_tess_control");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005973,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_3_ivec3_geometry");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005974,
+        "KHR-Single-GLES32.subgroups.quad.framebu",
+        "ffer.subgroupquadbroadcast_3_ivec4_vertex");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005975,
+        "KHR-Single-GLES32.subgroups.quad.framebuff",
+        "er.subgroupquadbroadcast_3_ivec4_tess_eval");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005976,
+        "KHR-Single-GLES32.subgroups.quad.framebuffe",
+        "r.subgroupquadbroadcast_3_ivec4_tess_control");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005977,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_3_ivec4_geometry");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005978,
+        "KHR-Single-GLES32.subgroups.quad.framebu",
+        "ffer.subgroupquadbroadcast_3_uint_vertex");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005979,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_3_uint_tess_eval");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005980,
+        "KHR-Single-GLES32.subgroups.quad.framebuffe",
+        "r.subgroupquadbroadcast_3_uint_tess_control");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005981,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_3_uint_geometry");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005982,
+        "KHR-Single-GLES32.subgroups.quad.framebu",
+        "ffer.subgroupquadbroadcast_3_uvec2_vertex");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005983,
+        "KHR-Single-GLES32.subgroups.quad.framebuff",
+        "er.subgroupquadbroadcast_3_uvec2_tess_eval");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005984,
+        "KHR-Single-GLES32.subgroups.quad.framebuffe",
+        "r.subgroupquadbroadcast_3_uvec2_tess_control");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005985,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_3_uvec2_geometry");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005986,
+        "KHR-Single-GLES32.subgroups.quad.framebu",
+        "ffer.subgroupquadbroadcast_3_uvec3_vertex");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005987,
+        "KHR-Single-GLES32.subgroups.quad.framebuff",
+        "er.subgroupquadbroadcast_3_uvec3_tess_eval");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005988,
+        "KHR-Single-GLES32.subgroups.quad.framebuffe",
+        "r.subgroupquadbroadcast_3_uvec3_tess_control");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005989,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_3_uvec3_geometry");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005990,
+        "KHR-Single-GLES32.subgroups.quad.framebu",
+        "ffer.subgroupquadbroadcast_3_uvec4_vertex");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005991,
+        "KHR-Single-GLES32.subgroups.quad.framebuff",
+        "er.subgroupquadbroadcast_3_uvec4_tess_eval");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005992,
+        "KHR-Single-GLES32.subgroups.quad.framebuffe",
+        "r.subgroupquadbroadcast_3_uvec4_tess_control");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005993,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_3_uvec4_geometry");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005994,
+        "KHR-Single-GLES32.subgroups.quad.framebu",
+        "ffer.subgroupquadbroadcast_3_float_vertex");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005995,
+        "KHR-Single-GLES32.subgroups.quad.framebuff",
+        "er.subgroupquadbroadcast_3_float_tess_eval");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005996,
+        "KHR-Single-GLES32.subgroups.quad.framebuffe",
+        "r.subgroupquadbroadcast_3_float_tess_control");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005997,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_3_float_geometry");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005998,
+        "KHR-Single-GLES32.subgroups.quad.framebu",
+        "ffer.subgroupquadbroadcast_3_vec2_vertex");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_005999,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_3_vec2_tess_eval");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006000,
+        "KHR-Single-GLES32.subgroups.quad.framebuffe",
+        "r.subgroupquadbroadcast_3_vec2_tess_control");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006001,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_3_vec2_geometry");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006002,
+        "KHR-Single-GLES32.subgroups.quad.framebu",
+        "ffer.subgroupquadbroadcast_3_vec3_vertex");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006003,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_3_vec3_tess_eval");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006004,
+        "KHR-Single-GLES32.subgroups.quad.framebuffe",
+        "r.subgroupquadbroadcast_3_vec3_tess_control");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006005,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_3_vec3_geometry");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006006,
+        "KHR-Single-GLES32.subgroups.quad.framebu",
+        "ffer.subgroupquadbroadcast_3_vec4_vertex");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006007,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_3_vec4_tess_eval");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006008,
+        "KHR-Single-GLES32.subgroups.quad.framebuffe",
+        "r.subgroupquadbroadcast_3_vec4_tess_control");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006009,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_3_vec4_geometry");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006010,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_3_double_vertex");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006011,
+        "KHR-Single-GLES32.subgroups.quad.framebuff",
+        "er.subgroupquadbroadcast_3_double_tess_eval");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006012,
+        "KHR-Single-GLES32.subgroups.quad.framebuffer",
+        ".subgroupquadbroadcast_3_double_tess_control");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006013,
+        "KHR-Single-GLES32.subgroups.quad.framebuff",
+        "er.subgroupquadbroadcast_3_double_geometry");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006014,
+        "KHR-Single-GLES32.subgroups.quad.framebu",
+        "ffer.subgroupquadbroadcast_3_dvec2_vertex");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006015,
+        "KHR-Single-GLES32.subgroups.quad.framebuff",
+        "er.subgroupquadbroadcast_3_dvec2_tess_eval");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006016,
+        "KHR-Single-GLES32.subgroups.quad.framebuffe",
+        "r.subgroupquadbroadcast_3_dvec2_tess_control");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006017,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_3_dvec2_geometry");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006018,
+        "KHR-Single-GLES32.subgroups.quad.framebu",
+        "ffer.subgroupquadbroadcast_3_dvec3_vertex");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006019,
+        "KHR-Single-GLES32.subgroups.quad.framebuff",
+        "er.subgroupquadbroadcast_3_dvec3_tess_eval");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006020,
+        "KHR-Single-GLES32.subgroups.quad.framebuffe",
+        "r.subgroupquadbroadcast_3_dvec3_tess_control");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006021,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_3_dvec3_geometry");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006022,
+        "KHR-Single-GLES32.subgroups.quad.framebu",
+        "ffer.subgroupquadbroadcast_3_dvec4_vertex");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006023,
+        "KHR-Single-GLES32.subgroups.quad.framebuff",
+        "er.subgroupquadbroadcast_3_dvec4_tess_eval");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006024,
+        "KHR-Single-GLES32.subgroups.quad.framebuffe",
+        "r.subgroupquadbroadcast_3_dvec4_tess_control");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006025,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_3_dvec4_geometry");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006026,
+        "KHR-Single-GLES32.subgroups.quad.framebu",
+        "ffer.subgroupquadbroadcast_3_bool_vertex");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006027,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_3_bool_tess_eval");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006028,
+        "KHR-Single-GLES32.subgroups.quad.framebuffe",
+        "r.subgroupquadbroadcast_3_bool_tess_control");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006029,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_3_bool_geometry");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006030,
+        "KHR-Single-GLES32.subgroups.quad.framebu",
+        "ffer.subgroupquadbroadcast_3_bvec2_vertex");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006031,
+        "KHR-Single-GLES32.subgroups.quad.framebuff",
+        "er.subgroupquadbroadcast_3_bvec2_tess_eval");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006032,
+        "KHR-Single-GLES32.subgroups.quad.framebuffe",
+        "r.subgroupquadbroadcast_3_bvec2_tess_control");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006033,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_3_bvec2_geometry");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006034,
+        "KHR-Single-GLES32.subgroups.quad.framebu",
+        "ffer.subgroupquadbroadcast_3_bvec3_vertex");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006035,
+        "KHR-Single-GLES32.subgroups.quad.framebuff",
+        "er.subgroupquadbroadcast_3_bvec3_tess_eval");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006036,
+        "KHR-Single-GLES32.subgroups.quad.framebuffe",
+        "r.subgroupquadbroadcast_3_bvec3_tess_control");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006037,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_3_bvec3_geometry");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006038,
+        "KHR-Single-GLES32.subgroups.quad.framebu",
+        "ffer.subgroupquadbroadcast_3_bvec4_vertex");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006039,
+        "KHR-Single-GLES32.subgroups.quad.framebuff",
+        "er.subgroupquadbroadcast_3_bvec4_tess_eval");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006040,
+        "KHR-Single-GLES32.subgroups.quad.framebuffe",
+        "r.subgroupquadbroadcast_3_bvec4_tess_control");
+
+static SHRINK_HWTEST_F(ActsKhrgles320006TestSuite, TestCase_006041,
+        "KHR-Single-GLES32.subgroups.quad.framebuf",
+        "fer.subgroupquadbroadcast_3_bvec4_geometry");
