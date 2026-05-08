@@ -1,6 +1,6 @@
-﻿'use static'
+'use static'
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '../../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '../../../../hypium/index';
 import { util, xml } from '@kit.ArkTS';
 
 
@@ -39,7 +39,7 @@ async function sleep(count: int): Promise<int> {
   })
 }
 
-export default function XmlTest_08() {
+export default function XmlTest_08(): void {
   describe('XmlTest_08', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

@@ -1,6 +1,6 @@
 'use static'
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '../../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '../../../../hypium/index';
 import { xml } from '@kit.ArkTS';
 import stream from '@ohos.util.stream';
 
@@ -23,7 +23,7 @@ class TestReadable extends stream.Readable {
   }
 }
 
-export default function XmlSAXParserTest() {
+export default function XmlSAXParserTest(): void {
   describe('XmlSAXParserTest', () => {
     beforeAll(() => {
     })

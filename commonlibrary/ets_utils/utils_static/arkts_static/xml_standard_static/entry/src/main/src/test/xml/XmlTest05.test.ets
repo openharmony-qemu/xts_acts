@@ -11,7 +11,7 @@ import {
   Size,
   Level,
   expect
-} from '../../../../../../hypium';
+} from '../../../../hypium/index';
 import { util, xml } from '@kit.ArkTS';
 
 let str = "";
@@ -76,7 +76,7 @@ async function sleep(count: int): Promise<int> {
   })
 }
 
-export default function XmlTest_05() {
+export default function XmlTest_05(): void {
   describe('XmlTest_05', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

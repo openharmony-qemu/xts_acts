@@ -1,6 +1,6 @@
 'use static'
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '../../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '../../../../hypium/index';
 import { util, xml } from '@kit.ArkTS';
 
 const DOMAIN: int = 0x0000
@@ -13,7 +13,7 @@ async function sleep(count: int): Promise<int> {
   })
 }
 
-export default function XmlTest_03() {
+export default function XmlTest_03(): void {
   describe('XmlTest_03', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -135,13 +135,13 @@ export default function XmlTest_03() {
         let testConstructor = new xml.XmlSerializer(testArrayBuffer, "utf-8")
 
         testConstructor.startElement("root")
-        testConstructor.setCDATA("中文😊English한국어 日本語")
+        testConstructor.setCDATA("中文😊English한국어日本語")
         testConstructor.endElement()
 
         let uint8 = new Uint8Array(testArrayBuffer)
         let result = util.TextDecoder.create().decodeToString(uint8)
 
-        expect(result).assertContain("<![CDATA[中文😊English한국어 日本語]]>")
+        expect(result).assertContain("<![CDATA[中文😊English한국�?日本語]]>")
 
       });
 

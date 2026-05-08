@@ -1,6 +1,6 @@
-﻿'use static'
+'use static'
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '../../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '../../../../hypium/index';
 import { util, xml } from '@kit.ArkTS';
 
 const DOMAIN: int = 0x0000
@@ -37,7 +37,7 @@ async function sleep(count: int): Promise<int> {
   })
 }
 
-export default function XmlTest_07() {
+export default function XmlTest_07(): void {
   describe('XmlTest_07', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -547,7 +547,7 @@ export default function XmlTest_07() {
         const TAG = 'testgetText0004';
         console.log(TAG + ' start');
 
-        let strXml = '<?xml version="1.0" encoding="utf-8"?><book name="JS 鏁欑▼">鍏ラ棬鍒扮簿閫?/book>';
+        let strXml = '<?xml version="1.0" encoding="utf-8"?><book name="JS 教程">入门到精�?/book>';
         let textEncoder = new util.TextEncoder();
         let arrBuffer = textEncoder.encodeInto(strXml);
         let that = new xml.XmlPullParser(arrBuffer.buffer as ArrayBuffer);
@@ -565,7 +565,7 @@ export default function XmlTest_07() {
         that.parseXml(options);
 
 
-        expect(str).assertContain("鍏ラ棬鍒扮簿閫?");
+        expect(str).assertContain("入门到精�?");
 
       });
 
@@ -705,7 +705,7 @@ export default function XmlTest_07() {
           <root>
             <name>OpenHarmony</name>
             <version>4.0</version>
-            <desc>ArkTS XML瑙ｆ瀽</desc>
+            <desc>ArkTS XML解析</desc>
           </root>
         `;
         const encoder = new util.TextEncoder();
@@ -750,7 +750,7 @@ export default function XmlTest_07() {
         // Judge according to parsing order
         expect(nodeTexts[0]).assertContain('OpenHarmony');
         expect(nodeTexts[1]).assertContain('4.0');
-        expect(nodeTexts[2]).assertContain('ArkTS XML瑙ｆ瀽');
+        expect(nodeTexts[2]).assertContain('ArkTS XML解析');
 
       });
 
@@ -770,9 +770,9 @@ export default function XmlTest_07() {
           // 1. Prepare XML containing special characters (spaces, Chinese, symbols, URL)
           const specialCharXml = `
           <config>
-            <title>OpenHarmony 寮€鍙戞墜鍐?馃殌</title>
-            <url>https://example.com?name=娴嬭瘯&age=20</url>
-            <note>鐗堟湰锛?.0 | 鐘舵€侊細姝ｅ紡鐗?/note>
+            <title>OpenHarmony 开发手�?🚀</title>
+            <url>https://example.com?name=测试&age=20</url>
+            <note>版本�?.0 | 状态：正式�?/note>
           </config>
         `;
           const encoder = new util.TextEncoder();
@@ -807,9 +807,9 @@ export default function XmlTest_07() {
           };
           parser.parseXml(parseOptions);
           // 4. Assert: Special character text is completely obtained without loss/escaping
-          expect(actualTitle).assertEqual('OpenHarmony 寮€鍙戞墜鍐?馃殌');
-          expect(actualUrl).assertEqual('https://example.com?name=娴嬭瘯&age=20');
-          expect(actualNote).assertEqual('鐗堟湰锛?.0 | 鐘舵€侊細姝ｅ紡鐗?');
+          expect(actualTitle).assertEqual('OpenHarmony 开发手�?🚀');
+          expect(actualUrl).assertEqual('https://example.com?name=测试&age=20');
+          expect(actualNote).assertEqual('版本�?.0 | 状态：正式�?');
           expect().assertFail()
         } catch (err) {
           console.error(`${TAG} fail, err: ${err}`);
@@ -1262,7 +1262,7 @@ export default function XmlTest_07() {
         let strXml =
           '<?xml version="1.0" encoding="UTF-8"?>\n' +
             '<root>\n' +
-            '  <!-- 鑷棴鍚堢┖鏍囩 -->\n' +
+            '  <!-- 自闭合空标签 -->\n' +
             '  <empty1/>\n' +
             '  <empty2/>\n' +
             '  <empty3/>\n' +
