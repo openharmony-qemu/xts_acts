@@ -1,6 +1,6 @@
 'use static'
 import { HashSet } from '@kit.ArkTS';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 
 interface TestObject06 {
   id: number;

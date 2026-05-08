@@ -1,5 +1,5 @@
 'use static'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { HashSet } from '@kit.ArkTS';
 
 interface EmptyObject {}

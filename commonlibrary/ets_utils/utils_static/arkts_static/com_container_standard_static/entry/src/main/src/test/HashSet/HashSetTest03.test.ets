@@ -1,5 +1,5 @@
 'use static'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { HashSet } from '@kit.ArkTS';
 
 type NumberArray = Array<number>;
@@ -297,7 +297,7 @@ export default function HashSet03Test(): void {
       const TAG = 'testHashSet03Chapter0005';
       console.log(TAG + ' start');
       const hashSet: HashSet<string> = new HashSet<string>();
-      const emojis: string[] = ["👆", "👿", "👀", "💯", "🎅", "😼", "🔧", "💇", "🤼‍♂️", "🛢", "🀄", "🏴"];
+      const emojis: string[] = ["👆", "👿", "👀", "💯", "🎅", "😼", "🔧", "💇", "🤼‍♂️", "🛢", "🇬🇧", "🏴"];
       emojis.forEach(emoji => {
         const result: boolean = hashSet.add(emoji);
         expect(result).assertTrue();

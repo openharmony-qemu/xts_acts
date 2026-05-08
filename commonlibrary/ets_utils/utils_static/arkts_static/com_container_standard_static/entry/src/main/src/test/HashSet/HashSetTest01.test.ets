@@ -1,5 +1,5 @@
 'use static'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index'
 import { HashSet } from '@kit.ArkTS';
 
 function sleep(count: int): Promise<void> {
@@ -244,7 +244,7 @@ type MapValue = string | MapValueObject;
 type TypedArrayUnion = Float32Array | Float64Array | Int8Array | Uint8Array | Int16Array | Uint16Array
   | Int32Array | Uint32Array | Uint8ClampedArray;
 
-export default function HashSet01Test() {
+export default function HashSet01Test(): void {
   describe('HashSet01Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -786,7 +786,7 @@ export default function HashSet01Test() {
       const TAG = 'testHashSet01Chapter0025';
       console.log(TAG + ' start');
       const hashSet = new HashSet<string>();
-      const emojis = ["👆", "👿", "👀", "💯", "🎅", "😼", "🔧", "💇", "🤼‍♂️", "🛢", "🀄", "🏴"];
+      const emojis = ["👆", "👿", "👀", "💯", "🎅", "😼", "🔧", "💇", "🤼‍♂️", "🛢", "🇬🇧", "🏴"];
       emojis.forEach((emoji: string) => { hashSet.add(emoji) });
       const result = hashSet.isEmpty();
       expect(result).assertEqual(false);
@@ -1138,7 +1138,7 @@ export default function HashSet01Test() {
       const TAG = 'testHashSet01Chapter0039';
       console.log(TAG + ' start');
       const hashSet: HashSet<string> = new HashSet<string>();
-      const emojis: string[] = ["👆", "👿", "👀", "💯", "🎅", "😼", "🔧", "💇", "🤼‍♂️", "🛢", "🀄", "🏴"];
+      const emojis: string[] = ["👆", "👿", "👀", "💯", "🎅", "😼", "🔧", "💇", "🤼‍♂️", "🛢", "🇬🇧", "🏴"];
       emojis.forEach((emoji: string) => { hashSet.add(emoji) });
       emojis.forEach(emoji => {
         const result: boolean = hashSet.has(emoji);

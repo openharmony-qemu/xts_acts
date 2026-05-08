@@ -1,7 +1,7 @@
 'use static'
 import { BusinessError } from '@kit.BasicServicesKit';
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { HashSet } from '@kit.ArkTS';
 
 interface TestObject1 {
@@ -110,7 +110,7 @@ export default function HashSet08Test(): void {
       const TAG = 'testHashSet08Chapter0001';
       console.log(TAG + ' start');
       const hashSet = new HashSet<string>();
-      const emoji = "👆👿👀💯🎅😼🔧💇🤼‍♂️🛢🀄🏴";
+      const emoji = "👆👿👀💯🎅😼🔧💇🤼‍♂️🛢🀄�?";
       hashSet.add(emoji);
       let found = false;
       for (const item of hashSet) {
