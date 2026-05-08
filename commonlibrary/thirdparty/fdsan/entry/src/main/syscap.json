@@ -1,11 +1,12 @@
 {
-  "devices": {
-    "general": []
-  },
-  "production": {
-    "removedSysCaps": [
-      "SystemCapability.Multimedia.MediaLibrary.Core",
-      "SystemCapability.Multimedia.MediaLibrary.DistributedCore"
-    ]
-  }
+    "devices": {
+        "general": [],
+        "custom": [
+            {
+                "xts": [
+                    "SystemCapability.Startup.SystemInfo"
+                ]
+            }
+        ]
+    }
 }
