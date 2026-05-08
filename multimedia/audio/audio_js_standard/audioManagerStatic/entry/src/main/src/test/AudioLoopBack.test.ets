@@ -173,7 +173,7 @@ export default function audioLoopBack() {
           if (201 == err.code) {
             expect(Number(err.code)).assertEqual(201);
           } else {
-            expect(Number(err.code)).assertEqual(6800011);
+            expect(Number(err.code)).assertEqual(6800101);
             done();
           }
         }
@@ -201,7 +201,7 @@ export default function audioLoopBack() {
           if (201 == err.code) {
             expect(Number(err.code)).assertEqual(201);
           } else {
-            expect(Number(err.code)).assertEqual(6800011);
+            expect(Number(err.code)).assertEqual(6800101);
             done();
           }
         }
@@ -638,14 +638,14 @@ export default function audioLoopBack() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0004
-     * @tc.number SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0004
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0400
      * @tc.desc   setReverbPreset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
         try {
           let audioLoopback: audio.AudioLoopback | null = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
@@ -670,37 +670,37 @@ export default function audioLoopBack() {
           audioLoopback?.enable(true).then((isSuccess) => {
             if (isSuccess) {
               expect(isSuccess).assertEqual(true);
-              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0004 audio loopback enable true success`);
+              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0400 audio loopback enable true success`);
             } else {
               expect(isSuccess).assertEqual(false);
-              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0004 audio loopback enable true fail`);
+              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0400 audio loopback enable true fail`);
             }
           }).catch((err: Error) => {
-            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0004 ERROR: ${err}`);
+            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0400 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
 
           let res: boolean = audioLoopback!.setReverbPreset(audio.AudioLoopbackReverbPreset.CONCERT);
           expect(res).assertTrue();
           let reverb: audio.AudioLoopbackReverbPreset = audioLoopback!.getReverbPreset();
-          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0004 reverb: ${reverb}`);
+          console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0400 reverb: ${reverb}`);
           expect(reverb).assertEqual(audio.AudioLoopbackReverbPreset.CONCERT);
 
           audioLoopback?.enable(false).then((isSuccess) => {
             if (isSuccess) {
               expect(isSuccess).assertEqual(true);
-              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0004 audio loopback enable false success`);
+              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0400 audio loopback enable false success`);
             } else {
               expect(isSuccess).assertEqual(false);
-              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0004 audio loopback enable false fail`);
+              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0400 audio loopback enable false fail`);
             }
           }).catch((err: Error) => {
-            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0004 ERROR: ${err}`);
+            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0400 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
         } catch (err) {
           err = err as BusinessError;
-          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0004 ERROR: ${err}`);
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0400 ERROR: ${err}`);
           expect(Number(err.code)).assertEqual(201);
         }
       }
@@ -708,14 +708,14 @@ export default function audioLoopBack() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0001
-     * @tc.number SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0001
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0010
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0010
      * @tc.desc   setReverbPreset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
         try {
           let audioLoopback: audio.AudioLoopback | null = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
@@ -740,13 +740,13 @@ export default function audioLoopBack() {
           audioLoopback?.enable(true).then((isSuccess) => {
             if (isSuccess) {
               expect(isSuccess).assertEqual(true);
-              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0001 audio loopback enable true success`);
+              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0010 audio loopback enable true success`);
             } else {
               expect(isSuccess).assertEqual(false);
-              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0001 audio loopback enable true fail`);
+              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0010 audio loopback enable true fail`);
             }
           }).catch((err: Error) => {
-            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0001 ERROR: ${err}`);
+            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0010 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
 
@@ -754,25 +754,25 @@ export default function audioLoopBack() {
             let res: boolean = audioLoopback!.setReverbPreset(audio.AudioLoopbackReverbPreset.ORIGINAL);
             expect(res).assertTrue();
             let reverb: audio.AudioLoopbackReverbPreset = audioLoopback!.getReverbPreset();
-            console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0001 reverb: ${reverb}`);
+            console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0010 reverb: ${reverb}`);
             expect(reverb).assertEqual(audio.AudioLoopbackReverbPreset.ORIGINAL);
           }
 
           audioLoopback?.enable(false).then((isSuccess) => {
             if (isSuccess) {
               expect(isSuccess).assertEqual(true);
-              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0001 audio loopback enable false success`);
+              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0010 audio loopback enable false success`);
             } else {
               expect(isSuccess).assertEqual(false);
-              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0001 audio loopback enable false fail`);
+              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0010 audio loopback enable false fail`);
             }
           }).catch((err: Error) => {
-            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0001 ERROR: ${err}`);
+            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0010 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
         } catch (err) {
           err = err as BusinessError;
-          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0001 ERROR: ${err}`);
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0010 ERROR: ${err}`);
           expect(Number(err.code)).assertEqual(201);
         }
       }
@@ -780,14 +780,14 @@ export default function audioLoopBack() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0111
-     * @tc.number SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0111
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0011
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0011
      * @tc.desc   setReverbPreset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
         try {
           let audioLoopback: audio.AudioLoopback | null = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
@@ -812,13 +812,13 @@ export default function audioLoopBack() {
           audioLoopback?.enable(true).then((isSuccess) => {
             if (isSuccess) {
               expect(isSuccess).assertEqual(true);
-              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0001 audio loopback enable true success`);
+              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0011 audio loopback enable true success`);
             } else {
               expect(isSuccess).assertEqual(false);
-              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0001 audio loopback enable true fail`);
+              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0011 audio loopback enable true fail`);
             }
           }).catch((err: Error) => {
-            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0001 ERROR: ${err}`);
+            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0011 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
 
@@ -826,25 +826,25 @@ export default function audioLoopBack() {
             let res: boolean = audioLoopback!.setReverbPreset(audio.AudioLoopbackReverbPreset.KTV);
             expect(res).assertTrue();
             let reverb: audio.AudioLoopbackReverbPreset = audioLoopback!.getReverbPreset();
-            console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0001 reverb: ${reverb}`);
+            console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0011 reverb: ${reverb}`);
             expect(reverb).assertEqual(audio.AudioLoopbackReverbPreset.KTV);
           }
 
           audioLoopback?.enable(false).then((isSuccess) => {
             if (isSuccess) {
               expect(isSuccess).assertEqual(true);
-              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0001 audio loopback enable false success`);
+              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0011 audio loopback enable false success`);
             } else {
               expect(isSuccess).assertEqual(false);
-              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0001 audio loopback enable false fail`);
+              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0011 audio loopback enable false fail`);
             }
           }).catch((err: Error) => {
-            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0001 ERROR: ${err}`);
+            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0011 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
         } catch (err) {
           err = err as BusinessError;
-          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0001 ERROR: ${err}`);
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETREVERBPRESET_STATIC_0011 ERROR: ${err}`);
           expect(Number(err.code)).assertEqual(201);
         }
       }
@@ -1296,14 +1296,14 @@ export default function audioLoopBack() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0001
-     * @tc.number SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0001
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0010
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0010
      * @tc.desc   setEqualizerPreset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
         try {
           let audioLoopback: audio.AudioLoopback | null = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
@@ -1328,13 +1328,13 @@ export default function audioLoopBack() {
           audioLoopback?.enable(true).then((isSuccess) => {
             if (isSuccess) {
               expect(isSuccess).assertEqual(true);
-              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0001 audio loopback enable true success`);
+              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0010 audio loopback enable true success`);
             } else {
               expect(isSuccess).assertEqual(false);
-              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0001 audio loopback enable true fail`);
+              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0010 audio loopback enable true fail`);
             }
           }).catch((err: Error) => {
-            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0001 ERROR: ${err}`);
+            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0010 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
 
@@ -1342,25 +1342,25 @@ export default function audioLoopBack() {
             let res: boolean = audioLoopback!.setEqualizerPreset(audio.AudioLoopbackEqualizerPreset.FLAT);
             expect(res).assertTrue();
             let eaualizer: audio.AudioLoopbackEqualizerPreset = audioLoopback!.getEqualizerPreset();
-            console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0001 eaualizer: ${eaualizer}`);
+            console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0010 eaualizer: ${eaualizer}`);
             expect(eaualizer).assertEqual(audio.AudioLoopbackEqualizerPreset.FLAT);
           }
 
           audioLoopback?.enable(false).then((isSuccess) => {
             if (isSuccess) {
               expect(isSuccess).assertEqual(true);
-              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0001 audio loopback enable false success`);
+              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0010 audio loopback enable false success`);
             } else {
               expect(isSuccess).assertEqual(false);
-              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0001 audio loopback enable false fail`);
+              console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0010 audio loopback enable false fail`);
             }
           }).catch((err: Error) => {
-            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0001 ERROR: ${err}`);
+            console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0010 ERROR: ${err}`);
             expect(Number(err.code)).assertEqual(201);
           });
         } catch (err) {
           err = err as BusinessError;
-          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0001 ERROR: ${err}`);
+          console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_SETEQUALIZERPRESET_STATIC_0010 ERROR: ${err}`);
           expect(Number(err.code)).assertEqual(201);
         }
       }
@@ -1550,7 +1550,7 @@ export default function audioLoopBack() {
           } catch (err) {
             let error = err as BusinessError;
             console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_INPUTDEVICE_STATIC_0100 error: ${error.code}, ${error.message}`);
-            expect(error.code).assertEqual(6800014);
+            expect(error.code).assertEqual(6800104);
             done();
           }
         }
@@ -1585,7 +1585,7 @@ export default function audioLoopBack() {
           } catch (err) {
             let error = err as BusinessError;
             console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_OUTPUTDEVICE_STATIC_0100 error: ${error.code}, ${error.message}`);
-            expect(error.code).assertEqual(6800014);
+            expect(error.code).assertEqual(6800104);
             done();
           }
         }
@@ -1624,7 +1624,7 @@ export default function audioLoopBack() {
           } catch (err) {
             let error = err as BusinessError;
             console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_DEVICEPAIR_BOTHDEVICES_STATIC_0100 error: ${error.code}, ${error.message}`);
-            expect(error.code).assertEqual(6800014);
+            expect(error.code).assertEqual(6800104);
             done();
           }
         }
@@ -1657,7 +1657,7 @@ export default function audioLoopBack() {
           } catch (err) {
             let error = err as BusinessError;
             console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_STATIC_0100 error: ${error.code}, ${error.message}`);
-            expect(error.code).assertEqual(6800014);
+            expect(error.code).assertEqual(6800104);
             done();
           }
         }
@@ -1687,7 +1687,7 @@ export default function audioLoopBack() {
           } catch (err) {
             let error = err as BusinessError;
             console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_STATIC_0200 error: ${error.code}, ${error.message}`);
-            expect(error.code).assertEqual(6800014);
+            expect(error.code).assertEqual(6800104);
             done();
           }
         }
@@ -1719,11 +1719,11 @@ export default function audioLoopBack() {
           } catch (err) {
             let error = err as BusinessError;
             console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_BOUNDARY_STATIC_0100 error: ${error.code}, ${error.message}`);
-            if (6800011 == Number(err.code)) {
-              expect(Number(err.code)).assertEqual(6800011);
+            if (6800101 == Number(err.code)) {
+              expect(Number(err.code)).assertEqual(6800101);
               done();
             } else {
-              expect(Number(err.code)).assertEqual(6800014);
+              expect(Number(err.code)).assertEqual(6800104);
               done();
             }
           }
@@ -1755,7 +1755,7 @@ export default function audioLoopBack() {
           } catch (err) {
             let error = err as BusinessError;
             console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETVOLUME_BEFORE_ENABLE_STATIC_0100 error: ${error.code}, ${error.message}`);
-            expect(error.code).assertEqual(6800014);
+            expect(error.code).assertEqual(6800104);
             done();
           }
         }
@@ -1792,7 +1792,7 @@ export default function audioLoopBack() {
           } catch (err) {
             let error = err as BusinessError;
             console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_STATIC_0100 error: ${error.code}, ${error.message}`);
-            expect(error.code).assertEqual(6800014);
+            expect(error.code).assertEqual(6800104);
             done();
           }
         }
@@ -1829,7 +1829,7 @@ export default function audioLoopBack() {
           } catch (err) {
             let error = err as BusinessError;
             console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_STATIC_0200 error: ${error.code}, ${error.message}`);
-            expect(error.code).assertEqual(6800014);
+            expect(error.code).assertEqual(6800104);
             done();
           }
         }
@@ -1863,7 +1863,7 @@ export default function audioLoopBack() {
           } catch (err) {
             let error = err as BusinessError;
             console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_EMPTY_STATIC_0100 error: ${error.code}, ${error.message}`);
-            expect(error.code).assertEqual(6800014);
+            expect(error.code).assertEqual(6800104);
             done();
           }
         }
@@ -1901,7 +1901,7 @@ export default function audioLoopBack() {
           } catch (err) {
             let error = err as BusinessError;
             console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETSUPPORTEDDEVICEPAIRS_MULTIPLE_STATIC_0100 error: ${error.code}, ${error.message}`);
-            expect(error.code).assertEqual(6800014);
+            expect(error.code).assertEqual(6800104);
             done();
           }
         }
@@ -1936,7 +1936,7 @@ export default function audioLoopBack() {
           } catch (err) {
             let error = err as BusinessError;
             console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_STATIC_0100 error: ${error.code}, ${error.message}`);
-            expect(error.code).assertEqual(6800014);
+            expect(error.code).assertEqual(6800104);
             done();
           }
         }
@@ -1971,7 +1971,7 @@ export default function audioLoopBack() {
           } catch (err) {
             let error = err as BusinessError;
             console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_STATIC_0200 error: ${error.code}, ${error.message}`);
-            expect(error.code).assertEqual(6800014);
+            expect(error.code).assertEqual(6800104);
             done();
           }
         }
@@ -2012,7 +2012,7 @@ export default function audioLoopBack() {
           } catch (err) {
             let error = err as BusinessError;
             console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_NULL_STATIC_0100 error: ${error.code}, ${error.message}`);
-            expect(error.code).assertEqual(6800014);
+            expect(error.code).assertEqual(6800104);
             done();
           }
         }
@@ -2055,7 +2055,7 @@ export default function audioLoopBack() {
           } catch (err) {
             let error = err as BusinessError;
             console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_CONSISTENCY_STATIC_0100 error: ${error.code}, ${error.message}`);
-            expect(error.code).assertEqual(6800014);
+            expect(error.code).assertEqual(6800104);
             done();
           }
         }
@@ -2093,7 +2093,7 @@ export default function audioLoopBack() {
           } catch (err) {
             let error = err as BusinessError;
             console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_GETPREFERREDDEVICEPAIR_AFTER_ENABLE_STATIC_0100 error: ${error.code}, ${error.message}`);
-            expect(error.code).assertEqual(6800014);
+            expect(error.code).assertEqual(6800104);
             done();
           }
         }
@@ -2141,7 +2141,7 @@ export default function audioLoopBack() {
           } catch (err) {
             let error = err as BusinessError;
             console.error(`${TAG}: SUB_MULTIMEDIA_AUDIO_LOOPBACK_MULTIPLE_CALLS_STATIC_0100 error: ${error.code}, ${error.message}`);
-            expect(error.code).assertEqual(6800014);
+            expect(error.code).assertEqual(6800104);
             done();
           }
         }
