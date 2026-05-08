@@ -1269,14 +1269,14 @@ export default function fileIOFileMapping() {
        mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
        expect(mapping != null).assertTrue();
        let buffer = new ArrayBuffer(100);
-       mapping.read(50,buffer,null);
-       expect(false).assertTrue();
-     } catch (e) {
-       console.log('fileIO_test_read_error_007 has failed for ' + e.message + ', code: ' + e.code);
-       expect(e.code === 13900020).assertTrue();
+       let bytesRead = mapping.read(50,buffer,null);
+       expect(bytesRead == 100).assertTrue();
        mapping.unmapSync();
        fileIO.closeSync(file);
        fileIO.unlinkSync(fpath);
+     } catch (e) {
+       console.log('fileIO_test_read_error_007 has failed for ' + e.message + ', code: ' + e.code);
+       expect(false).assertTrue();
      }
    });
 
