@@ -18,9 +18,10 @@
 #include <arkui/native_node_napi.h>
 #include <arkui/native_node.h>
 #include <hilog/log.h>
+#include <arkui/styled_string.h>
 
 constexpr float FLOAT_10 = 10.0f;
-constexpr int32_t SIZE_10 = 10;
+constexpr int32_t SIZE_1 = 1;
 constexpr int32_t LINE_SPACING = 30;
 constexpr int32_t SPAN_LENGTH_12 = 12;
 constexpr bool ONLY_BETWEEN_LINES = true;
@@ -114,16 +115,19 @@ static napi_value TextEnumTest_009(napi_env env, napi_callback_info info)
     ASSERT_OBJ(controller, nullptr);
 
     ArkUI_AttributeItem controllerItem = {.object = controller};
-    Manager::nodeAPI_->setAttribute(text, NODE_TEXT_CONTROLLER, &controllerItem);
+    nodeAPI->setAttribute(text, NODE_TEXT_CONTROLLER, &controllerItem);
 
+    OH_ArkUI_SpanStyle *spanStyle = OH_ArkUI_SpanStyle_Create();
+    const OH_ArkUI_SpanStyle *spanStyles[] = {spanStyle};
     ArkUI_StyledString_Descriptor *styledString =
-        OH_ArkUI_StyledString_Descriptor_CreateWithString("行高样式示例", spanStyles, SIZE_10);
+        OH_ArkUI_StyledString_Descriptor_CreateWithString("行高样式示例", spanStyles, SIZE_1);
     auto result1_1 = OH_ArkUI_TextController_SetStyledString(controller, styledString);
 
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result1_1 TextEnumTest_009 result=%{public}d", result1_1);
     ASSERT_EQ(result1_1, ARKUI_ERROR_CODE_NO_ERROR);
 
+    OH_ArkUI_SpanStyle_Destroy(spanStyle);
     OH_ArkUI_TextController_Destroy(controller);
     OH_ArkUI_StyledString_Descriptor_Destroy(styledString);
     NAPI_END(text);
@@ -133,14 +137,17 @@ static napi_value TextEnumTest_009(napi_env env, napi_callback_info info)
 static napi_value TextEnumTest_010(napi_env env, napi_callback_info info)
 {
     NAPI_START(text, ARKUI_NODE_TEXT);
+    OH_ArkUI_SpanStyle *spanStyle = OH_ArkUI_SpanStyle_Create();
+    const OH_ArkUI_SpanStyle *spanStyles[] = {spanStyle};
     ArkUI_StyledString_Descriptor *styledString =
-        OH_ArkUI_StyledString_Descriptor_CreateWithString("行高样式示例", spanStyles, SIZE_10);
+        OH_ArkUI_StyledString_Descriptor_CreateWithString("行高样式示例", spanStyles, SIZE_1);
     auto result2_1 = OH_ArkUI_TextController_SetStyledString(nullptr, styledString);
 
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result2_1 TextEnumTest_010 result=%{public}d", result2_1);
     ASSERT_EQ(result2_1, ARKUI_ERROR_CODE_PARAM_INVALID);
 
+    OH_ArkUI_SpanStyle_Destroy(spanStyle);
     OH_ArkUI_StyledString_Descriptor_Destroy(styledString);
     NAPI_END(text);
 }
@@ -151,7 +158,7 @@ static napi_value TextEnumTest_011(napi_env env, napi_callback_info info)
     auto controller = OH_ArkUI_TextController_Create();
 
     ArkUI_AttributeItem controllerItem = {.object = controller};
-    Manager::nodeAPI_->setAttribute(text, NODE_TEXT_CONTROLLER, &controllerItem);
+    nodeAPI->setAttribute(text, NODE_TEXT_CONTROLLER, &controllerItem);
 
     auto result3_1 = OH_ArkUI_TextController_SetStyledString(controller, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
@@ -227,7 +234,7 @@ static napi_value TextEnumTest_016(napi_env env, napi_callback_info info)
     OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines(lineSpacingStyle, ONLY_BETWEEN_LINES);
 
     OH_ArkUI_SpanStyle *spanStyle = OH_ArkUI_SpanStyle_Create();
-    OH_ArkUI_SpanStyle_SetStart(spanStyle, 0);
+    OH_ArkUI_SpanStyle_SetStart(spanStyle, PARAM_0);
     OH_ArkUI_SpanStyle_SetLength(spanStyle, SPAN_LENGTH_12);
     auto result8_1 = OH_ArkUI_SpanStyle_SetLineSpacingStyle(spanStyle, lineSpacingStyle);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
@@ -236,7 +243,7 @@ static napi_value TextEnumTest_016(napi_env env, napi_callback_info info)
 
     const OH_ArkUI_SpanStyle *spanStyles[] = {spanStyle};
     ArkUI_StyledString_Descriptor *styledString =
-        OH_ArkUI_StyledString_Descriptor_CreateWithString("行间距样式示例\n段落内容", spanStyles, SIZE_10);
+        OH_ArkUI_StyledString_Descriptor_CreateWithString("行间距样式示例\n段落内容", spanStyles, SIZE_1);
 
     OH_ArkUI_SpanStyle_Destroy(spanStyle);
     OH_ArkUI_LineSpacingStyle_Destroy(lineSpacingStyle);
