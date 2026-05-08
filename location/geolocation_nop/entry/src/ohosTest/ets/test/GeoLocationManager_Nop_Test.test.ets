@@ -1920,6 +1920,44 @@ export default function geoLocationManager_nop_test() {
       }
     });
 
+    /**
+     * @tc.name   SUB_Location_nop_findMatchingWlan_0100
+     * @tc.number SUB_Location_nop_findMatchingWlan_0100
+     * @tc.desc   Test findMatchingWlan with needStartScan false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Location_nop_findMatchingWlan_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+      try {
+        var wlanBssidArray = ['AA:BB:CC:DD:EE:FF'];
+        var rssiThreshold = -70;
+        var needStartScan = true;
+        
+        geoLocationManager.findMatchingWlan(wlanBssidArray, rssiThreshold, needStartScan).then((result) => {
+          console.info('[lbs_js] SUB_Location_nop_findMatchingWlan_0100 result: ' + JSON.stringify(result));
+          expect(result instanceof Array).assertTrue();
+          done();
+        }).catch((err) => {
+            console.info('[lbs_js] SUB_Location_nop_findMatchingWlan_0100 error: ' + JSON.stringify(err));
+            if (err.code === 801){
+              expect(err.code).assertEqual(801);
+            } else {
+              expect(err.code).assertEqual(201);
+            }
+            done();
+        });
+      } catch (error) {
+        console.info('[lbs_js] SUB_Location_findMatchingWlan_0600 try err: ' + JSON.stringify(error));
+        if (error.code === 801){
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(201);
+        }
+        done();
+      }
+  })
+
 
   })
 }
