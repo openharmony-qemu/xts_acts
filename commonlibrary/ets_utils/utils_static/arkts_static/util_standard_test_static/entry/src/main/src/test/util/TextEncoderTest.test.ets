@@ -1,5 +1,5 @@
 'use static'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { util } from '@kit.ArkTS';
 
 function sleep(count: int): Promise<void> {
@@ -17,7 +17,7 @@ function encodeStr(input: string): Uint8Array {
   return dest.subarray(0, res.written);
 }
 
-export default function TextEncoderTest() {
+export default function TextEncoderTest(): void {
   describe('TextEncoderTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -128,7 +128,7 @@ export default function TextEncoderTest() {
         const TAG = "testTextEncoder0005";
         console.log(TAG + " start");
         const encoder = new util.TextEncoder();
-        const input = "A©中😊";
+        const input = "A©中😀";
         const result = encodeStr(input);
         const expectedLen: int = 1 + 2 + 3 + 4;
         expect(result.length === expectedLen).assertTrue();
@@ -616,7 +616,7 @@ export default function TextEncoderTest() {
         const TAG = "testTextEncoder0032";
         console.log(TAG + " start");
         const encoder = new util.TextEncoder();
-        const input = "aµऄ𐍈";
+        const input = "aµऄ😀";
         const result = encodeStr(input);
         expect(result.length === 1 + 2 + 3 + 4).assertTrue();
         expect(result[0] === 0x61).assertTrue();

@@ -1,5 +1,5 @@
 'use static'
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import util from '@ohos.util';
 
 function sleep(count: int): Promise<void> {

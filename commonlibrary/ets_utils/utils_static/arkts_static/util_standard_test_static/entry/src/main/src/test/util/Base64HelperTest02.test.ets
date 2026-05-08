@@ -1,5 +1,5 @@
 'use static'
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import { ArrayList, util } from '@kit.ArkTS';
 
 function sleep(count: int): Promise<void> {
@@ -838,8 +838,8 @@ export default function Base64Helper02Test(): void {
       let result = base64Helper.decodeSync(array);
       console.info("result = " + result);
       expect(result[0]).assertEqual(65); // A
-      expect(result[1]).assertEqual(228); // ä¸­(start)
-      expect(result[4]).assertEqual(229); // å›½(start)
+      expect(result[1]).assertEqual(228); // ä¸?start)
+      expect(result[4]).assertEqual(229); // å›?start)
       console.info(TAG + " end");
     });
 

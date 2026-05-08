@@ -1,5 +1,5 @@
 'use static'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import util from '@ohos.util';
 
 async function sleep(count: int): Promise<int> {
@@ -249,9 +249,9 @@ export default function StringDecoder02Test(): void {
         const TAG = "testWriteUtf8MixedLanguage0010";
         console.log(TAG + " start");
         const decoder: util.StringDecoder = new util.StringDecoder(UTF8);
-        const input: Uint8Array = strToUint8Array('Hello 鸿蒙 こんにちは 안녕하세요');
+        const input: Uint8Array = strToUint8Array('Hello 鸿蒙 こんにちは안녕하세요');
         const result: string = decoder.write(input);
-        expect(result).assertEqual('Hello 鸿蒙 こんにちは 안녕하세요');
+        expect(result).assertEqual('Hello 鸿蒙 こんにちは안녕하세요');
 
       });
 

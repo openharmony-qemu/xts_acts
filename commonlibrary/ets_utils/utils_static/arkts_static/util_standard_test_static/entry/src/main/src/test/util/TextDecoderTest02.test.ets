@@ -1,5 +1,5 @@
 'use static'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { util } from '@kit.ArkTS';
 
 function sleep(count: int): Promise<void> {
@@ -10,7 +10,7 @@ function sleep(count: int): Promise<void> {
   })
 }
 
-export default function TextDecoder02Test() {
+export default function TextDecoder02Test(): void {
   describe('TextDecoder02Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

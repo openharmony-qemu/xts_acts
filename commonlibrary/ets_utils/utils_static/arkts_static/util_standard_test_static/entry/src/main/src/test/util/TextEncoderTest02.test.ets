@@ -1,7 +1,7 @@
 'use static'
 import { BusinessError } from '@kit.BasicServicesKit';
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { util } from '@kit.ArkTS';
 
 
@@ -58,7 +58,7 @@ function encodeStr(encoder: util.TextEncoder, input: string): Uint8Array {
   return dest.subarray(0, res.written);
 }
 
-export default function TextEncoder02Test() {
+export default function TextEncoder02Test(): void {
   describe('TextEncoder02Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -751,7 +751,7 @@ export default function TextEncoder02Test() {
       expect(res.written).assertEqual(2);
       expect(res.read).assertEqual(2);
 
-      res = encoder.encodeIntoUint8Array("€", new Uint8Array(2));
+      res = encoder.encodeIntoUint8Array("中", new Uint8Array(2));
       expect(res.written).assertEqual(0);
       expect(res.read).assertEqual(0);
 
@@ -1024,7 +1024,7 @@ export default function TextEncoder02Test() {
 
 
       const destSmall = new Uint8Array(1);
-      encoder.encodeIntoUint8Array("€", destSmall);
+      encoder.encodeIntoUint8Array("中", destSmall);
 
       const destNormal = new Uint8Array(3);
       const res = encoder.encodeIntoUint8Array("abc", destNormal);
@@ -1179,7 +1179,7 @@ export default function TextEncoder02Test() {
       console.info(`${TAG} start`);
       const encoder = new util.TextEncoder();
       const dest = new Uint8Array(20);
-      const res = encoder.encodeIntoUint8Array("A中😊", dest);
+      const res = encoder.encodeIntoUint8Array("A中😀", dest);
       expect(res.written).assertEqual(8);
       expect(dest[0]).assertEqual(65);
       expect(dest[1]).assertEqual(228);

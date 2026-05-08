@@ -1,5 +1,5 @@
 'use static'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import util from '@ohos.util';
 
 
@@ -20,7 +20,7 @@ function sleep(count: int): Promise<void> {
   })
 }
 
-export default function LRUCacheTest() {
+export default function LRUCacheTest(): void {
   describe('LRUCacheTest', () => {
     // Dewm25 fines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
