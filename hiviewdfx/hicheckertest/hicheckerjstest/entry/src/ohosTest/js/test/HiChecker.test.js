@@ -337,13 +337,13 @@ describe('HiCheckerTest', function () {
 
     /**
       * @tc.name   DFX_DFR_Hichecker_Interface_3000
-      * @tc.number DFX_DFR_Hichecker_Interface_3000
+      * @tc.number SUB_DFX_DFR_Hichecker_addCheckRule_3000
       * @tc.desc   验证addCheckRule新增RULE_THREAD_CHECK_NETWORK_USAGE规则
       * @tc.type   FUNCTION
       * @tc.size   MEDIUMTEST
       * @tc.level  LEVEL2
       */
-    it('DFX_DFR_Hichecker_Interface_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+    it('SUB_DFX_DFR_Hichecker_addCheckRule_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('DFX_DFR_Hichecker_Interface_3000 start');
         try {
             hichecker.addCheckRule(hichecker.RULE_THREAD_CHECK_NETWORK_USAGE);
@@ -358,13 +358,13 @@ describe('HiCheckerTest', function () {
 
     /**
       * @tc.name   DFX_DFR_Hichecker_Interface_3100
-      * @tc.number DFX_DFR_Hichecker_Interface_3100
+      * @tc.number SUB_DFX_DFR_Hichecker_addCheckRule_3100
       * @tc.desc   验证RULE_THREAD_CHECK_NETWORK_USAGE与其他规则组合添加
       * @tc.type   FUNCTION
       * @tc.size   MEDIUMTEST
       * @tc.level  LEVEL2
       */
-    it('DFX_DFR_Hichecker_Interface_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+    it('SUB_DFX_DFR_Hichecker_addCheckRule_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('DFX_DFR_Hichecker_Interface_3100 start');
         try {
             hichecker.addCheckRule(hichecker.RULE_THREAD_CHECK_NETWORK_USAGE | hichecker.RULE_CAUTION_PRINT_LOG);
@@ -382,13 +382,13 @@ describe('HiCheckerTest', function () {
 
     /**
       * @tc.name   DFX_DFR_Hichecker_Interface_3200
-      * @tc.number DFX_DFR_Hichecker_Interface_3200
+      * @tc.number SUB_DFX_DFR_Hichecker_addCheckRule_3200
       * @tc.desc   验证removeCheckRule移除RULE_THREAD_CHECK_NETWORK_USAGE规则
       * @tc.type   FUNCTION
       * @tc.size   MEDIUMTEST
       * @tc.level  LEVEL2
       */
-    it('DFX_DFR_Hichecker_Interface_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+    it('SUB_DFX_DFR_Hichecker_addCheckRule_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('DFX_DFR_Hichecker_Interface_3200 start');
         try {
             hichecker.addCheckRule(hichecker.RULE_THREAD_CHECK_NETWORK_USAGE | hichecker.RULE_CAUTION_PRINT_LOG);
@@ -406,13 +406,13 @@ describe('HiCheckerTest', function () {
 
     /**
       * @tc.name   DFX_DFR_Hichecker_Interface_3300
-      * @tc.number DFX_DFR_Hichecker_Interface_3300
+      * @tc.number SUB_DFX_DFR_Hichecker_addCheckRule_3300
       * @tc.desc   验证containsCheckRule对于RULE_THREAD_CHECK_NETWORK_USAGE返回false
       * @tc.type   FUNCTION
       * @tc.size   MEDIUMTEST
       * @tc.level  LEVEL2
       */
-    it('DFX_DFR_Hichecker_Interface_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+    it('SUB_DFX_DFR_Hichecker_addCheckRule_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('DFX_DFR_Hichecker_Interface_3300 start');
         try {
             hichecker.removeCheckRule(hichecker.RULE_THREAD_CHECK_NETWORK_USAGE);
@@ -428,13 +428,13 @@ describe('HiCheckerTest', function () {
 
     /**
       * @tc.name   DFX_DFR_Hichecker_Interface_3400
-      * @tc.number DFX_DFR_Hichecker_Interface_3400
+      * @tc.number SUB_DFX_DFR_Hichecker_addCheckRule_3400
       * @tc.desc   验证RULE_THREAD_CHECK_NETWORK_USAGE单规则多次添加
       * @tc.type   FUNCTION
       * @tc.size   MEDIUMTEST
       * @tc.level  LEVEL2
       */
-    it('DFX_DFR_Hichecker_Interface_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+    it('SUB_DFX_DFR_Hichecker_addCheckRule_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         console.info('DFX_DFR_Hichecker_Interface_3400 start');
         try {
             hichecker.addCheckRule(hichecker.RULE_THREAD_CHECK_NETWORK_USAGE);
