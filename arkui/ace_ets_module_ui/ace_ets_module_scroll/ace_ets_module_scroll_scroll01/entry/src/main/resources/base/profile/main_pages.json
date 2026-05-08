@@ -55,6 +55,7 @@
         "MainAbility/pages/scrollDefault/scrollerNullUndefined",
         "MainAbility/pages/scrollDefault/scrollDefault1",
         "MainAbility/pages/scrollDefault/scrollDefault2",
-        "MainAbility/pages/scrollDefault/scrollDefault3"
+        "MainAbility/pages/scrollDefault/scrollDefault3",
+        "MainAbility/pages/FrameNode/getFrameNodeScroller"
     ]
 }

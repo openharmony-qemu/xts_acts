@@ -68,6 +68,7 @@ import scrollerNullUndefined from './scrollDefault/scrollerNullUndefined.test';
 import scrollDefaultTest1 from './scrollDefault/scrollDefault1.test';
 import scrollDefaultTest2 from './scrollDefault/scrollDefault2.test';
 import scrollDefaultTest3 from './scrollDefault/scrollDefault3.test';
+import getFrameNodeScroller from './FrameNode/getFrameNodeScroller.test';
 
 export default function testsuite() {
   OnScrollBeginJsunit()
@@ -125,4 +126,5 @@ export default function testsuite() {
   scrollDefaultTest1()
   scrollDefaultTest2()
   scrollDefaultTest3()
+  getFrameNodeScroller()
 }
