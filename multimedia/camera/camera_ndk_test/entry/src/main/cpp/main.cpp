@@ -3742,7 +3742,7 @@ static napi_value GetEnumExposureState(napi_env env, napi_callback_info info)
 
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
-    OH_LOG_ERROR(LOG_APP, "hjy 11111111111111, index: %{public}d", index);
+    OH_LOG_ERROR(LOG_APP, "index: %{public}d", index);
     if (index == 0) {
         napi_create_int32(env, OH_CAMERA_EXPOSURE_STATE_SCAN, &result);
     } else if (index == 1) {
@@ -3786,7 +3786,7 @@ static napi_value SessionUnregisterExposureStateChangeCallback(napi_env env, nap
     return result;
 }
 
-static napi_value WaitForExposureFinish(napi_env env, napi_callback_info info) 
+static napi_value WaitForExposureFinish(napi_env env, napi_callback_info info)
 {
     napi_value result;
     bool ret = ndkCamera_->WaitForExposureFinish();
@@ -3794,7 +3794,7 @@ static napi_value WaitForExposureFinish(napi_env env, napi_callback_info info)
     return result;
 }
 
-static napi_value GetColorTintRange(napi_env env, napi_callback_info info) 
+static napi_value GetColorTintRange(napi_env env, napi_callback_info info)
 {
     napi_value result;
     Camera_ErrorCode ret = ndkCamera_->GetColorTintRange();
@@ -3802,7 +3802,7 @@ static napi_value GetColorTintRange(napi_env env, napi_callback_info info)
     return result;
 }
 
-static napi_value SetColorTint(napi_env env, napi_callback_info info) 
+static napi_value SetColorTint(napi_env env, napi_callback_info info)
 {
     // 获取ArkTs传过来的参数
     size_t argc = 1;
@@ -3818,7 +3818,7 @@ static napi_value SetColorTint(napi_env env, napi_callback_info info)
     return result;
 }
 
-static napi_value GetColorTint(napi_env env, napi_callback_info info) 
+static napi_value GetColorTint(napi_env env, napi_callback_info info)
 {
     // 获取ArkTs传过来的参数
     size_t argc = 1;
@@ -3834,7 +3834,7 @@ static napi_value GetColorTint(napi_env env, napi_callback_info info)
     return result;
 }
 
-static napi_value GetZoomPointInfos(napi_env env, napi_callback_info info) 
+static napi_value GetZoomPointInfos(napi_env env, napi_callback_info info)
 {
     // 获取ArkTs传过来的参数
     size_t argc = 1;
@@ -3850,7 +3850,7 @@ static napi_value GetZoomPointInfos(napi_env env, napi_callback_info info)
     return result;
 }
 
-static napi_value DeleteZoomPointInfo(napi_env env, napi_callback_info info) 
+static napi_value DeleteZoomPointInfo(napi_env env, napi_callback_info info)
 {
     // 获取ArkTs传过来的参数
     size_t argc = 1;
