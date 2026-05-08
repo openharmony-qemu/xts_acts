@@ -1478,6 +1478,168 @@ export default function actslocationTest() {
             }
         })
 
+        /**
+         * @tc.number  SUB_Location_findMatchingWlan_0100
+         * @tc.name    SUB_Location_findMatchingWlan_0100
+         * @tc.desc    Test findMatchingWlan with real BSSID from getCurrentWifiBssidForLocating
+         * @tc.level   Level 1
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it('SUB_Location_findMatchingWlan_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+          try {
+            let bssid: string = geoLocationManager.getCurrentWifiBssidForLocating();
+            hilog.info(domain, tag, 'getCurrentWifiBssidForLocating: %{public}s', bssid);
+            
+            if (bssid === '' || bssid === undefined || bssid === null) {
+                hilog.info(domain, tag, 'No BSSID available, skip test');
+                done();
+                return;
+            }
+            
+            let wlanBssidArray: Array<string> = [bssid];
+            let rssiThreshold: int = -100;
+            let needStartScan: boolean = true;
+            
+            let result: Array<geoLocationManager.MatchingWlanInfo> = await geoLocationManager.findMatchingWlan(
+                wlanBssidArray, rssiThreshold, needStartScan);
+            hilog.info(domain, tag, 'SUB_Location_findMatchingWlan_0100 result: %{public}s', JSON.stringify(result));
+            expect(result instanceof Array).assertTrue();
+            if (result.length > 0) {
+              hilog.info(domain, tag, 'result[0].index: %{public}d', result[0].index);
+              hilog.info(domain, tag, 'result[0].ssid: %{public}s', result[0].ssid);
+              hilog.info(domain, tag, 'typeof result[0].index: %{public}s', typeof result[0].index);
+              hilog.info(domain, tag, 'typeof result[0].ssid: %{public}s', typeof result[0].ssid);
+              expect(typeof result[0].index).assertEqual('number');
+              expect(typeof result[0].ssid).assertEqual('string');
+              expect(result[0].index >= 0).assertTrue();
+              expect(result[0].index < wlanBssidArray.length).assertTrue();
+            }
+            done();
+          } catch (err) {
+            hilog.error(domain, tag, 'SUB_Location_findMatchingWlan_0100 error: %{public}s', JSON.stringify(err));
+            expect(err.code === 801).assertTrue();
+            done();
+          }
+        });
+
+        /**
+         * @tc.number  SUB_Location_findMatchingWlan_0200
+         * @tc.name    SUB_Location_findMatchingWlan_0200
+         * @tc.desc    Test findMatchingWlan with empty BSSID array
+         * @tc.level   Level 1
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it('SUB_Location_findMatchingWlan_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+          try {
+            let wlanBssidArray: Array<string> = [];
+            let rssiThreshold: int = -70;
+            let needStartScan: boolean = true;
+            
+            let result: Array<geoLocationManager.MatchingWlanInfo> = await geoLocationManager.findMatchingWlan(
+                wlanBssidArray, rssiThreshold, needStartScan);
+            hilog.info(domain, tag, 'SUB_Location_findMatchingWlan_0200 result: %{public}s', JSON.stringify(result));
+            expect(result instanceof Array).assertTrue();
+            expect(result.length === 0).assertTrue();
+            done();
+          } catch (err) {
+            hilog.error(domain, tag, 'SUB_Location_findMatchingWlan_0200 error: %{public}s', JSON.stringify(err));
+            expect(err.code === 801).assertTrue();
+            done();
+          }
+        });
+
+        /**
+         * @tc.number  SUB_Location_findMatchingWlan_0300
+         * @tc.name    SUB_Location_findMatchingWlan_0300
+         * @tc.desc    Test findMatchingWlan with multiple BSSIDs
+         * @tc.level   Level 1
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it('SUB_Location_findMatchingWlan_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+          try {
+            let wlanBssidArray: Array<string> = ['AA:BB:CC:DD:EE:FF', '11:22:33:44:55:66', 'FE:DC:BA:98:76:54'];
+            let rssiThreshold: int = -80;
+            let needStartScan: boolean = true;
+            
+            let result: Array<geoLocationManager.MatchingWlanInfo> = await geoLocationManager.findMatchingWlan(
+                wlanBssidArray, rssiThreshold, needStartScan);
+            hilog.info(domain, tag, 'SUB_Location_findMatchingWlan_0300 result: %{public}s', JSON.stringify(result));
+            expect(result instanceof Array).assertTrue();
+            done();
+          } catch (err) {
+            hilog.error(domain, tag, 'SUB_Location_findMatchingWlan_0300 error: %{public}s', JSON.stringify(err));
+            expect(err.code === 801).assertTrue();
+            done();
+          }
+        });
+
+        /**
+         * @tc.number  SUB_Location_findMatchingWlan_0400
+         * @tc.name    SUB_Location_findMatchingWlan_0400
+         * @tc.desc    Test findMatchingWlan with different rssiThreshold values
+         * @tc.level   Level 1
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it('SUB_Location_findMatchingWlan_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+          try {
+            let wlanBssidArray: Array<string> = ['AA:BB:CC:DD:EE:FF'];
+            let rssiThreshold: int = -1000;
+            let needStartScan: boolean = false;
+            
+            let result: Array<geoLocationManager.MatchingWlanInfo> = await geoLocationManager.findMatchingWlan(
+                wlanBssidArray, rssiThreshold, needStartScan);
+            hilog.info(domain, tag, 'SUB_Location_findMatchingWlan_0400 result: %{public}s', JSON.stringify(result));
+            expect(result instanceof Array).assertTrue();
+            done();
+          } catch (err) {
+            hilog.error(domain, tag, 'SUB_Location_findMatchingWlan_0400 error: %{public}s', JSON.stringify(err));
+            expect(err.code === 801).assertTrue();
+            done();
+          }
+        });
+
+        /**
+         * @tc.number  SUB_Location_findMatchingWlan_0500
+         * @tc.name    SUB_Location_findMatchingWlan_0500
+         * @tc.desc    Test findMatchingWlan error code 3301100 (location switch off)
+         * @tc.level   Level 2
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it('SUB_Location_findMatchingWlan_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+          try {
+            geoLocationManager.disableLocation()
+            await Utils.msSleep(1000)
+            let locationEnabled: boolean = geoLocationManager.isLocationEnabled();
+            if (locationEnabled) {
+                hilog.info(domain, tag, 'Location is enabled, skip error code test');
+                done();
+                return;
+            }
+            
+            let wlanBssidArray: Array<string> = ['AA:BB:CC:DD:EE:FF'];
+            let rssiThreshold: int = -70;
+            let needStartScan: boolean = true;
+            
+            let result: Array<geoLocationManager.MatchingWlanInfo> = await geoLocationManager.findMatchingWlan(
+                wlanBssidArray, rssiThreshold, needStartScan);
+            hilog.info(domain, tag, 'SUB_Location_findMatchingWlan_0500 result: %{public}s', JSON.stringify(result));
+            done();
+          } catch (err) {
+            hilog.error(domain, tag, 'SUB_Location_findMatchingWlan_0500 error: %{public}s', JSON.stringify(err));
+            if (err.code === 801) {
+                expect(err.code === 801).assertTrue();
+            } else {
+                expect(err.code === 3301100).assertTrue();
+            }
+            done();
+          }
+        });
+
       /**
        * @tc.name   SUB_geoLocationManager_core_isWlanBssidMatched_0200
        * @tc.number SUB_geoLocationManager_core_isWlanBssidMatched_0200
