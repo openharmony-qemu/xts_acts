@@ -49,6 +49,16 @@ const APP_IDS_1: Array<string> = [
 ];
 const LABEL_NOTIFICATION = "notification";
 
+let BUNDLE_NAME_500: Array<string> = new Array<string>(500);
+let BUNDLE_NAME_501: Array<string> = new Array<string>(501);
+
+for (let i = 0; i < BUNDLE_NAME_501.length; i++) {
+  BUNDLE_NAME_501[i] = String(i);
+  if (i < BUNDLE_NAME_500.length) {
+    BUNDLE_NAME_500[i] = String(i);
+  }
+}
+
 export default function applicationManagerTest() {
   describe('applicationManager_test', () => {
     beforeAll((done: Function) => {
@@ -253,7 +263,7 @@ export default function applicationManagerTest() {
     /**
      * @tc.name   test_addHideLauncherIcon_0900
      * @tc.number SUB_CUSTOMIZATION_EDM_ADDHIDELAUNCHERICON_JS_0900
-     * @tc.desc   test addHideLauncherIcon with bundleNames exceed limit(201 elements)
+     * @tc.desc   test addHideLauncherIcon with bundleNames exceed limit(501 elements)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -261,7 +271,7 @@ export default function applicationManagerTest() {
     it("test_addHideLauncherIcon_0900", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.addHideLauncherIcon(SELFWANT, BUNDLE_NAME_201);
+        applicationManager.addHideLauncherIcon(SELFWANT, BUNDLE_NAME_501);
         expect(false).assertTrue();
       } catch (error) {
         if (error.code === 801) {
@@ -303,7 +313,7 @@ export default function applicationManagerTest() {
     /**
      * @tc.name   test_addHideLauncherIcon_1100
      * @tc.number SUB_CUSTOMIZATION_EDM_ADDHIDELAUNCHERICON_JS_1100
-     * @tc.desc   test addHideLauncherIcon with bundleNames within limit(200 elements)
+     * @tc.desc   test addHideLauncherIcon with bundleNames within limit(500 elements)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -311,10 +321,10 @@ export default function applicationManagerTest() {
     it("test_addHideLauncherIcon_1100", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.addHideLauncherIcon(SELFWANT, BUNDLE_NAME_200);
+        applicationManager.addHideLauncherIcon(SELFWANT, BUNDLE_NAME_500);
         let bundleNames = applicationManager.getHideLauncherIcon(SELFWANT);
-        expect(bundleNames.length == 200).assertTrue();
-        applicationManager.removeHideLauncherIcon(SELFWANT, BUNDLE_NAME_200);
+        expect(bundleNames.length == 500).assertTrue();
+        applicationManager.removeHideLauncherIcon(SELFWANT, BUNDLE_NAME_500);
         bundleNames = applicationManager.getHideLauncherIcon(SELFWANT);
         expect(bundleNames.length == 0).assertTrue();
       } catch (error) {
@@ -522,7 +532,7 @@ export default function applicationManagerTest() {
     /**
      * @tc.name   test_removeHideLauncherIcon_0900
      * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEHIDELAUNCHERICON_JS_0900
-     * @tc.desc   test removeHideLauncherIcon with bundleNames exceed limit(201 elements)
+     * @tc.desc   test removeHideLauncherIcon with bundleNames exceed limit(501 elements)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -530,7 +540,7 @@ export default function applicationManagerTest() {
     it("test_removeHideLauncherIcon_0900", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
-        applicationManager.removeHideLauncherIcon(SELFWANT, BUNDLE_NAME_201);
+        applicationManager.removeHideLauncherIcon(SELFWANT, BUNDLE_NAME_501);
         expect(false).assertTrue();
       } catch (error) {
         if (error.code === 801) {
