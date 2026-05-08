@@ -57,7 +57,7 @@ export default function ExpressionsUnaryGrouping(): void {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_UNARY_0100
+     * @tc.number    SUB_EXPRESSIONS_UNARY_TEST_0100
      * @tc.name      testExpressionsUnary0001
      * @tc.desc      Unary operators except postfix increment and postfix decrement group right-to-left. ~+2 = -3
      * @tc.size      MediumTest

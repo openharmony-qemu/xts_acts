@@ -117,7 +117,7 @@ export default function OperatorPrecedenceTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OPERATOR_PRECEDENCE_0100
+     * @tc.number    SUB_OPERATOR_PRECEDENCE_TEST_0100
      * @tc.name      testOperatorPrecedence0001
      * @tc.desc      additive operator with other lower precedence operators
      * @tc.size      MediumTest
@@ -138,7 +138,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(res).assertEqual(-8)
       res = - t255 >>> t2 + t3
       expect(res).assertEqual(134217720)
-      // relational
       expect(t8 < t4 + t4).assertFalse()
       expect(t255 <= t8 + t4).assertFalse()
       expect(t2 > t2 + t4).assertFalse()
@@ -152,12 +151,10 @@ export default function OperatorPrecedenceTest(): void {
       expect(res).assertEqual(7)
       res = t255 ^ t8 + t2
       expect(res).assertEqual(245)
-      // ternary
       res = t3 <= t4 ? t4 : t3 + t4
       expect(res).assertEqual(4)
       res = t4 + t2 > t4 ? t4 : t3
       expect(res).assertEqual(4)
-      // assignments
       res = t2 += t4 + t3
       expect(res).assertEqual(9)
       t2 = 2
@@ -194,7 +191,7 @@ export default function OperatorPrecedenceTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OPERATOR_PRECEDENCE_0200
+     * @tc.number    SUB_OPERATOR_PRECEDENCE_TEST_0200
      * @tc.name      testOperatorPrecedence0002
      * @tc.desc      bitwise operators with other operators
      * @tc.size      MediumTest
@@ -210,14 +207,12 @@ export default function OperatorPrecedenceTest(): void {
       expect(res).assertEqual(3)
       res = t3 | t4 ^ t2
       expect(res).assertEqual(7)
-      // ternary
       res = t3 <= t4 ? t7 : t2 & t3
       expect(res).assertEqual(7)
       res = t3 <= t4 ? t7 : t2 ^ t3
       expect(res).assertEqual(7)
       res = t3 <= t4 ? t7 : t2 | t255
       expect(res).assertEqual(7)
-      // assignments
       res = t2 += t7 & t3
       expect(res).assertEqual(5)
       t2 = 2
@@ -320,7 +315,7 @@ export default function OperatorPrecedenceTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OPERATOR_PRECEDENCE_0300
+     * @tc.number    SUB_OPERATOR_PRECEDENCE_TEST_0300
      * @tc.name      testOperatorPrecedence0003
      * @tc.desc      operators on boolean values
      * @tc.size      MediumTest
@@ -367,7 +362,7 @@ export default function OperatorPrecedenceTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OPERATOR_PRECEDENCE_0400
+     * @tc.number    SUB_OPERATOR_PRECEDENCE_TEST_0400
      * @tc.name      testOperatorPrecedence0004
      * @tc.desc      conditional && and || operators on boolean values
      * @tc.size      MediumTest
@@ -414,7 +409,7 @@ export default function OperatorPrecedenceTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OPERATOR_PRECEDENCE_0500
+     * @tc.number    SUB_OPERATOR_PRECEDENCE_TEST_0500
      * @tc.name      testOperatorPrecedence0005
      * @tc.desc      ternary operator on boolean values
      * @tc.size      MediumTest
@@ -429,7 +424,7 @@ export default function OperatorPrecedenceTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OPERATOR_PRECEDENCE_0600
+     * @tc.number    SUB_OPERATOR_PRECEDENCE_TEST_0600
      * @tc.name      testOperatorPrecedence0006
      * @tc.desc      cast operator with other lower precedence operators
      * @tc.size      MediumTest
@@ -445,7 +440,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(res).assertEqual(128)
       res = - t255 >>> t257.toByte()
       expect(res).assertEqual(2147483520)
-      // relational
       expect(t2 < t258.toByte()).assertFalse()
       expect(t3 <= t258.toByte()).assertFalse()
       expect(t2 > t258.toByte()).assertFalse()
@@ -459,10 +453,8 @@ export default function OperatorPrecedenceTest(): void {
       expect(res).assertEqual(3)
       res = t255 ^ t258.toByte()
       expect(res).assertEqual(253)
-      // ternary
       res = t3 <= t4 ? t257 : t258.toByte()
       expect(res).assertEqual(257)
-      // assignments
       res = t258 += t257.toByte()
       expect(res).assertEqual(259)
       t258 = 258
@@ -499,7 +491,7 @@ export default function OperatorPrecedenceTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OPERATOR_PRECEDENCE_0700
+     * @tc.number    SUB_OPERATOR_PRECEDENCE_TEST_0700
      * @tc.name      testOperatorPrecedence0007
      * @tc.desc      chaining operator with other operators
      * @tc.size      MediumTest
@@ -530,7 +522,6 @@ export default function OperatorPrecedenceTest(): void {
       // null coalescing
       expect((x?.bar??null)).assertEqual(null)
       expect((x?.bar??x?.foo(1))).assertEqual(1)
-      // equality
       expect((new Bar_7()?.foo(1)==x?.foo(1))).assertTrue()
       expect((x?.foo(1)!=new Bar_7()?.foo(1))).assertFalse()
       expect((x ?. intVal == new Bar_7() ?. intVal)).assertTrue()
@@ -553,7 +544,7 @@ export default function OperatorPrecedenceTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OPERATOR_PRECEDENCE_0800
+     * @tc.number    SUB_OPERATOR_PRECEDENCE_TEST_0800
      * @tc.name      testOperatorPrecedence0008
      * @tc.desc      combined multiple operations
      * @tc.size      MediumTest
@@ -567,7 +558,7 @@ export default function OperatorPrecedenceTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OPERATOR_PRECEDENCE_0900
+     * @tc.number    SUB_OPERATOR_PRECEDENCE_TEST_0900
      * @tc.name      testOperatorPrecedence0009
      * @tc.desc      division operator with other operators
      * @tc.size      MediumTest
@@ -579,13 +570,10 @@ export default function OperatorPrecedenceTest(): void {
       // multiplication
       res = t8 * t3 / t2
       expect(res).assertEqual(12)
-      // modulo
       res = t8 % t3 / t2
       expect(res).assertEqual(1)
-      // addition
       res = t2 + t4 / t2
       expect(res).assertEqual(4)
-      // subtraction
       res = t2 - t8 / t4
       expect(res).assertEqual(0)
       // cast
@@ -600,7 +588,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(res).assertEqual(63)
       res = - t255 >>> t8 / t2
       expect(res).assertEqual(268435440)
-      // relational
       expect(t255 < t510 / t2).assertFalse()
       expect(t255 <= t510 / t255).assertFalse()
       expect(t2 > t8 / t4).assertFalse()
@@ -614,12 +601,10 @@ export default function OperatorPrecedenceTest(): void {
       expect(res).assertEqual(255)
       res = t255 ^ t8 / t2
       expect(res).assertEqual(251)
-      // ternary
       res = t8 > t2 ? t4 : t8 / t4
       expect(res).assertEqual(4)
       res = t8 / t4 > t2 ? t4 : t8
       expect(res).assertEqual(8)
-      // assignments
       res = t2 += t8 / t2
       expect(res).assertEqual(6)
       t2 = 2
@@ -653,7 +638,7 @@ export default function OperatorPrecedenceTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OPERATOR_PRECEDENCE_1000
+     * @tc.number    SUB_OPERATOR_PRECEDENCE_TEST_1000
      * @tc.name      testOperatorPrecedence0010
      * @tc.desc      exponentiation operator with other operators
      * @tc.size      MediumTest
@@ -695,7 +680,7 @@ export default function OperatorPrecedenceTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OPERATOR_PRECEDENCE_1100
+     * @tc.number    SUB_OPERATOR_PRECEDENCE_TEST_1100
      * @tc.name      testOperatorPrecedence0011
      * @tc.desc      instanceof operator with other lower precedence operators
      * @tc.size      MediumTest
@@ -707,12 +692,10 @@ export default function OperatorPrecedenceTest(): void {
       let b: B_12 = new B_12();
       let i: I_12 = a;
       let an: A_12|null = null;
-      // equality
       let res: boolean = a instanceof A_12 == i instanceof A_12
       expect(res).assertTrue()
       res = a instanceof A_12 != b instanceof A_12
       expect(res).assertTrue()
-      // ternary
       res = i instanceof A_12 ? b instanceof A_12 : b instanceof B_12
       expect(res).assertFalse()
       res = i instanceof B_12 ? b instanceof A_12 : b instanceof B_12
@@ -720,7 +703,7 @@ export default function OperatorPrecedenceTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OPERATOR_PRECEDENCE_1200
+     * @tc.number    SUB_OPERATOR_PRECEDENCE_TEST_1200
      * @tc.name      testOperatorPrecedence0012
      * @tc.desc      remainder operator with other operators
      * @tc.size      MediumTest
@@ -732,16 +715,12 @@ export default function OperatorPrecedenceTest(): void {
       // multiplication
       res = t3 * t7 % t3
       expect(res).assertEqual(0)
-      // division
       res = t8 / t3 % t2
       expect(res).assertEqual(0)
-      // addition
       res = t2 + t7 % t2
       expect(res).assertEqual(3)
-      // subtraction
       res = t8 - t7 % t4
       expect(res).assertEqual(5)
-      // modulo
       res = (t518 % t255).toByte()
       expect(res).assertEqual(8)
       // cast
@@ -754,7 +733,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(res).assertEqual(127)
       res = - t255 >>> t7 % t4
       expect(res).assertEqual(536870880)
-      // relational
       expect(t8 < t518 % t255).assertFalse()
       expect(t255 <= t518 % t255).assertFalse()
       expect(t3 > t7 % t4).assertFalse()
@@ -768,12 +746,10 @@ export default function OperatorPrecedenceTest(): void {
       expect(res).assertEqual(9)
       res = t255 ^ t7 % t2
       expect(res).assertEqual(254)
-      // ternary
       res = t8 > t2 ? t4 : t8 % t4
       expect(res).assertEqual(4)
       res = t7 % t4 > t2 ? t2 : t8
       expect(res).assertEqual(2)
-      // assignments
       res = t2 += t7 % t3
       expect(res).assertEqual(3)
       t2 = 2
@@ -807,7 +783,7 @@ export default function OperatorPrecedenceTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OPERATOR_PRECEDENCE_1300
+     * @tc.number    SUB_OPERATOR_PRECEDENCE_TEST_1300
      * @tc.name      testOperatorPrecedence0013
      * @tc.desc      multiplicative operator with other operators
      * @tc.size      MediumTest
@@ -816,16 +792,12 @@ export default function OperatorPrecedenceTest(): void {
      */
     it("testOperatorPrecedence0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let res: int, t2 = 2, t3 = 3, t4 = 4, t8 = 8, t255 = 255
-      // division
       res = t8 / t3 * t2
       expect(res).assertEqual(4)
-      // modulo
       res = t8 % t3 * t2
       expect(res).assertEqual(4)
-      // addition
       res = t2 + t4 * t3
       expect(res).assertEqual(14)
-      // subtraction
       res = t2 - t3 * t4
       expect(res).assertEqual(-10)
       // cast
@@ -840,7 +812,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(res).assertEqual(-4)
       res = - t255 >>> t2 * t3
       expect(res).assertEqual(67108860)
-      // relational
       expect(t255 < t8 * t8).assertFalse()
       expect(t255 <= t2 * t8).assertFalse()
       expect(t2 > t8 * t4).assertFalse()
@@ -854,12 +825,10 @@ export default function OperatorPrecedenceTest(): void {
       expect(res).assertEqual(11)
       res = t255 ^ t8 * t2
       expect(res).assertEqual(239)
-      // ternary
       res = t3 <= t4 ? t4 : t3 * t4
       expect(res).assertEqual(4)
       res = t4 * t2 > t4 ? t4 : t3
       expect(res).assertEqual(4)
-      // assignments
       res = t2 += t4 * t3
       expect(res).assertEqual(14)
       t2 = 2
@@ -893,7 +862,7 @@ export default function OperatorPrecedenceTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OPERATOR_PRECEDENCE_1400
+     * @tc.number    SUB_OPERATOR_PRECEDENCE_TEST_1400
      * @tc.name      testOperatorPrecedence0014
      * @tc.desc      null-coalescing operator with other lower precedence operators
      * @tc.size      MediumTest
@@ -906,12 +875,10 @@ export default function OperatorPrecedenceTest(): void {
       let i: I_15 = a;
       let an: A_15|null = null;
       let bn: B_15|null = null;
-      // ternary
       let res: boolean = ((an ?? a) instanceof I_15 ? bn ?? b : an ?? a) === b
       expect(res).assertTrue()
       res = ((a ?? an) instanceof B_15 ? an ?? a : bn ?? b) === b
       expect(res).assertTrue()
-      // assignment
       let x: Object = bn ?? a
       expect(x).assertEqual(a)
       let y: Object = an ?? b
@@ -919,7 +886,7 @@ export default function OperatorPrecedenceTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OPERATOR_PRECEDENCE_1500
+     * @tc.number    SUB_OPERATOR_PRECEDENCE_TEST_1500
      * @tc.name      testOperatorPrecedence0015
      * @tc.desc      postfix operators with other lower precedence operators
      * @tc.size      MediumTest
@@ -928,7 +895,6 @@ export default function OperatorPrecedenceTest(): void {
      */
     it("testOperatorPrecedence0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let res: int, t2 = 2, t3 = 3, t4 = 4, t8 = 8, t255 = 255
-      // unary plus
       res = + t2++
       expect(res).assertEqual(2)
       expect(t2).assertEqual(3)
@@ -937,7 +903,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(res).assertEqual(2)
       expect(t2).assertEqual(1)
       t2 = 2
-      // unary minus
       res = - t2++
       expect(res).assertEqual(-2)
       expect(t2).assertEqual(3)
@@ -946,7 +911,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(res).assertEqual(-2)
       expect(t2).assertEqual(1)
       t2 = 2
-      // bitwise complement
       res = ~ t2++
       expect(res).assertEqual(-3)
       expect(t2).assertEqual(3)
@@ -955,7 +919,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(res).assertEqual(-3)
       expect(t2).assertEqual(1)
       t2 = 2
-      // multiplicative
       res = t4-- * t2++
       expect(res).assertEqual(8)
       expect(t2).assertEqual(3)
@@ -968,7 +931,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(t4).assertEqual(5)
       t2 = 2
       t4 = 4
-      // division
       res = t4-- / t2++
       expect(res).assertEqual(2)
       expect(t2).assertEqual(3)
@@ -981,7 +943,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(t4).assertEqual(5)
       t2 = 2
       t4 = 4
-      // modulo
       res = t255-- % t4++
       expect(res).assertEqual(3)
       expect(t255).assertEqual(254)
@@ -994,7 +955,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(t4).assertEqual(3)
       t255 = 255
       t4 = 4
-      // addition
       res = t255-- + t4++
       expect(res).assertEqual(259)
       expect(t255).assertEqual(254)
@@ -1007,7 +967,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(t4).assertEqual(3)
       t255 = 255
       t4 = 4
-      // subtraction
       res = t255-- - t4++
       expect(res).assertEqual(251)
       expect(t255).assertEqual(254)
@@ -1020,7 +979,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(t4).assertEqual(3)
       t255 = 255
       t4 = 4
-      // casting
       res = (t255--).toByte() - (t4++).toByte()
       expect(res).assertEqual(-5)
       expect(t255).assertEqual(254)
@@ -1033,7 +991,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(t4).assertEqual(3)
       t255 = 255
       t4 = 4
-      // left shift
       res = t255-- << t4++
       expect(res).assertEqual(4080)
       expect(t255).assertEqual(254)
@@ -1046,7 +1003,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(t4).assertEqual(3)
       t255 = 255
       t4 = 4
-      // right shift
       res = t255-- >> t4++
       expect(res).assertEqual(15)
       expect(t255).assertEqual(254)
@@ -1059,7 +1015,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(t4).assertEqual(3)
       t255 = 255
       t4 = 4
-      // right no-sign shift
       res = - t255-- >>> t4++
       expect(res).assertEqual(268435440)
       expect(t255).assertEqual(254)
@@ -1072,7 +1027,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(t4).assertEqual(3)
       t255 = 255
       t4 = 4
-      // relational
       expect(t3-- < t2++).assertFalse()
       t3 = 3
       t2 = 2
@@ -1085,7 +1039,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(t4++ >= t8--).assertFalse()
       t8 = 8
       t4 = 4
-      // equality
       expect(t3-- == t2).assertFalse()
       t3 = 3
       expect(t3++ == t4).assertFalse()
@@ -1094,7 +1047,6 @@ export default function OperatorPrecedenceTest(): void {
       t3 = 3
       expect(t3++ != 3).assertFalse()
       t3 = 3
-      // bitwise AND
       res = t255-- & t4++
       expect(res).assertEqual(4)
       expect(t255).assertEqual(254)
@@ -1107,7 +1059,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(t4).assertEqual(3)
       t255 = 255
       t4 = 4
-      // bitwise OR
       res = t255-- | t4++
       expect(res).assertEqual(255)
       expect(t255).assertEqual(254)
@@ -1120,7 +1071,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(t4).assertEqual(3)
       t255 = 255
       t4 = 4
-      // bitwise XOR
       res = t255-- ^ t4++
       expect(res).assertEqual(251)
       expect(t255).assertEqual(254)
@@ -1133,7 +1083,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(t4).assertEqual(3)
       t255 = 255
       t4 = 4
-      // ternary
       res = t8 > t4 ? t255-- : t4++
       expect(res).assertEqual(255)
       expect(t255).assertEqual(254)
@@ -1144,7 +1093,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(t255).assertEqual(255)
       expect(t4).assertEqual(3)
       t4 = 4
-      // assignment
       res = t255 = t3--
       expect(res).assertEqual(3)
       expect(t255).assertEqual(3)
@@ -1292,7 +1240,7 @@ export default function OperatorPrecedenceTest(): void {
     })
 
     /**
-     * @tc.number    SUB_OPERATOR_PRECEDENCE_1600
+     * @tc.number    SUB_OPERATOR_PRECEDENCE_TEST_1600
      * @tc.name      testOperatorPrecedence0016
      * @tc.desc      prefix operators with other lower precedence operators
      * @tc.size      MediumTest
@@ -1301,7 +1249,6 @@ export default function OperatorPrecedenceTest(): void {
      */
     it("testOperatorPrecedence0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let res: int, t2 = 2, t3 = 3, t4 = 4, t8 = 8, t255 = 255
-      // unary plus
       res = + ++t2
       expect(res).assertEqual(3)
       expect(t2).assertEqual(3)
@@ -1310,7 +1257,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(res).assertEqual(1)
       expect(t2).assertEqual(1)
       t2 = 2
-      // unary minus
       res = - ++t2
       expect(res).assertEqual(-3)
       expect(t2).assertEqual(3)
@@ -1319,7 +1265,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(res).assertEqual(-1)
       expect(t2).assertEqual(1)
       t2 = 2
-      // bitwise complement
       res = ~ ++t2
       expect(res).assertEqual(-4)
       expect(t2).assertEqual(3)
@@ -1328,7 +1273,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(res).assertEqual(-2)
       expect(t2).assertEqual(1)
       t2 = 2
-      // multiplicative
       res = --t4 * ++t2
       expect(res).assertEqual(9)
       expect(t2).assertEqual(3)
@@ -1341,7 +1285,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(t4).assertEqual(5)
       t2 = 2
       t4 = 4
-      // division
       res = --t4 / ++t2
       expect(res).assertEqual(1)
       expect(t2).assertEqual(3)
@@ -1354,7 +1297,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(t4).assertEqual(5)
       t2 = 2
       t4 = 4
-      // modulo
       res = --t255 % ++t4
       expect(res).assertEqual(4)
       expect(t255).assertEqual(254)
@@ -1367,7 +1309,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(t4).assertEqual(3)
       t255 = 255
       t4 = 4
-      // addition
       res = --t255 + ++t4
       expect(res).assertEqual(259)
       expect(t255).assertEqual(254)
@@ -1380,7 +1321,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(t4).assertEqual(3)
       t255 = 255
       t4 = 4
-      // subtraction
       res = --t255 - ++t4
       expect(res).assertEqual(249)
       expect(t255).assertEqual(254)
@@ -1393,7 +1333,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(t4).assertEqual(3)
       t255 = 255
       t4 = 4
-      // casting
       res = (--t255).toByte() - (++t4).toByte()
       expect(res).assertEqual(-7)
       expect(t255).assertEqual(254)
@@ -1406,7 +1345,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(t4).assertEqual(3)
       t255 = 255
       t4 = 4
-      // left shift
       res = --t255 << ++t4
       expect(res).assertEqual(8128)
       expect(t255).assertEqual(254)
@@ -1419,7 +1357,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(t4).assertEqual(3)
       t255 = 255
       t4 = 4
-      // right shift
       res = --t255 >> ++t4
       expect(res).assertEqual(7)
       expect(t255).assertEqual(254)
@@ -1432,7 +1369,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(t4).assertEqual(3)
       t255 = 255
       t4 = 4
-      // right no-sign shift
       res = - --t255 >>> ++t4
       expect(res).assertEqual(134217720)
       expect(t255).assertEqual(254)
@@ -1445,7 +1381,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(t4).assertEqual(3)
       t255 = 255
       t4 = 4
-      // relational
       expect(--t4 < ++t2).assertFalse()
       t4 = 4
       t2 = 2
@@ -1458,7 +1393,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(++t4 >= --t8).assertFalse()
       t8 = 8
       t4 = 4
-      // equality
       expect(--t3 == 3).assertFalse()
       t3 = 3
       expect(++t3 == 3).assertFalse()
@@ -1467,7 +1401,6 @@ export default function OperatorPrecedenceTest(): void {
       t3 = 3
       expect(++t3 == 4).assertTrue()
       t3 = 3
-      // bitwise AND
       res = --t255 & ++t4
       expect(res).assertEqual(4)
       expect(t255).assertEqual(254)
@@ -1480,7 +1413,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(t8).assertEqual(7)
       t255 = 255
       t8 = 8
-      // bitwise OR
       res = --t255 | ++t4
       expect(res).assertEqual(255)
       expect(t255).assertEqual(254)
@@ -1493,7 +1425,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(t4).assertEqual(3)
       t255 = 255
       t4 = 4
-      // bitwise XOR
       res = --t255 ^ ++t4
       expect(res).assertEqual(251)
       expect(t255).assertEqual(254)
@@ -1506,7 +1437,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(t4).assertEqual(3)
       t255 = 255
       t4 = 4
-      // ternary
       res = t8 > t4 ? --t255 : ++t4
       expect(res).assertEqual(254)
       expect(t255).assertEqual(254)
@@ -1517,7 +1447,6 @@ export default function OperatorPrecedenceTest(): void {
       expect(t255).assertEqual(255)
       expect(t4).assertEqual(3)
       t4 = 4
-      // assignment
       res = t255 = --t3
       expect(res).assertEqual(2)
       expect(t255).assertEqual(2)

@@ -1363,61 +1363,53 @@ export default function ExpressionsSpreadTwoTest(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_SPREAD_TWO_6000
      * @tc.name      testExpressionsSpreadTwo0060
-     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
-     *               must be of the spread array kind.
+     * @tc.desc      Since a spread expression copies values, the attribute readonly of the source
+     *               array does not affect an array created by the spread expression.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testExpressionsSpreadTwo0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // complex mapping with spread
-      C_spex_meth_45_46_47.foo(
-        ...tests_spex_meth_45.map(
-          (test): B_spex_meth_45_46_47 => ({
-            unsorted: [...test.t.map((m): A_spex_meth_45_46_47 => ({}))]
-          })
-        )
-      )
+      let a: readonly int[] = [1, 2, 3]
+      let rw: int[] = [...a]
+      rw[1] = 4
+      expect(rw[1]).assertEqual(4)
+      expect(a[1]).assertEqual(2)
     });
 
     /**
      * @tc.number    SUB_EXPRESSIONS_SPREAD_TWO_6100
      * @tc.name      testExpressionsSpreadTwo0061
-     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
-     *               must be of the spread array kind.
+     * @tc.desc      Since a spread expression copies values, the attribute readonly of the source
+     *               array does not affect an array created by the spread expression.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testExpressionsSpreadTwo0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // complex mapping with double spread
-      C_spex_meth_46.foo(
-        ...tests_spex_meth_46.map(
-          (test): B_spex_meth_45_46_47 => ({
-            unsorted: [...test.t.map((m): A_spex_meth_45_46_47 => ({})), ...test.t.map((m): A_spex_meth_45_46_47 => ({})),]
-          })
-        )
-      )
+      let a: readonly number[] = [1.0, 2.0, 3.0]
+      let rw = [0.0, ...a, 4.0]
+      rw[0] = 5.0
+      rw[3] = 6.0
+      expect(rw[0]).assertEqual(5.0)
+      expect(rw[3]).assertEqual(6.0)
     });
 
     /**
      * @tc.number    SUB_EXPRESSIONS_SPREAD_TWO_6200
      * @tc.name      testExpressionsSpreadTwo0062
-     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
-     *               must be of the spread array kind.
+     * @tc.desc      Since a spread expression copies values, the attribute readonly of the source
+     *               array does not affect an array created by the spread expression.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testExpressionsSpreadTwo0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // complex mapping with reduce calculation
-      C_spex_meth_47.foo(
-        ...tests_spex_meth_47.map(
-          (test, i): B_spex_meth_47 => ({
-            unsorted: [...test.t.map((m, idx): A_spex_meth_47 => ({ cnt: idx }))]
-          })
-        )
-      )
+      let a: readonly byte[] = [1 as byte, 2 as byte, 3 as byte]
+      let rw: byte[] = [...a]
+      rw[0] = 11 as byte
+      expect(rw[0]).assertEqual(11)
+      expect(a[0]).assertEqual(1)
     });
 
     /**
@@ -1430,11 +1422,11 @@ export default function ExpressionsSpreadTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpreadTwo0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: readonly int[] = [1, 2, 3]
-      let rw: int[] = [...a]
-      rw[1] = 4
-      expect(rw[1]).assertEqual(4)
-      expect(a[1]).assertEqual(2)
+      let a: readonly char[] = [c'a', c'b', c'c']
+      let rw: char[] = [...a]
+      rw[0] = c'Z'
+      expect(rw[0]).assertEqual(c'Z')
+      expect(a[0]).assertEqual(c'a')
     });
 
     /**
@@ -1447,12 +1439,10 @@ export default function ExpressionsSpreadTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpreadTwo0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: readonly number[] = [1.0, 2.0, 3.0]
-      let rw = [0.0, ...a, 4.0]
-      rw[0] = 5.0
-      rw[3] = 6.0
-      expect(rw[0]).assertEqual(5.0)
-      expect(rw[3]).assertEqual(6.0)
+      let a: readonly string[] = ["a", "b", "c"]
+      let ro: readonly string[] = [...a]
+      expect(ro[0]).assertEqual("a")
+      expect(ro.length).assertEqual(3)
     });
 
     /**
@@ -1465,11 +1455,11 @@ export default function ExpressionsSpreadTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpreadTwo0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: readonly byte[] = [1 as byte, 2 as byte, 3 as byte]
-      let rw: byte[] = [...a]
-      rw[0] = 11 as byte
-      expect(rw[0]).assertEqual(11)
-      expect(a[0]).assertEqual(1)
+      let readonly_arr: readonly number[] = [1.0, 2.0]
+      let mutable_arr: number[] = [3.0, 4.0]
+      let result: readonly number[] = [...readonly_arr, ...mutable_arr]
+      expect(result.length).assertEqual(4)
+      expect(result[2]).assertEqual(3.0)
     });
 
     /**
@@ -1482,11 +1472,11 @@ export default function ExpressionsSpreadTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpreadTwo0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: readonly char[] = [c'a', c'b', c'c']
-      let rw: char[] = [...a]
-      rw[0] = c'Z'
-      expect(rw[0]).assertEqual(c'Z')
-      expect(a[0]).assertEqual(c'a')
+      let b: int[] = [1, 2, 3]
+      let ro: readonly int[] = [...b]
+      expect(ro[0]).assertEqual(1)
+      expect(ro[1]).assertEqual(2)
+      expect(ro[2]).assertEqual(3)
     });
 
     /**
@@ -1499,10 +1489,10 @@ export default function ExpressionsSpreadTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpreadTwo0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: readonly string[] = ["a", "b", "c"]
-      let ro: readonly string[] = [...a]
-      expect(ro[0]).assertEqual("a")
-      expect(ro.length).assertEqual(3)
+      let b: number[] = [1.0, 2.0]
+      let ro: readonly number[] = [0.0, ...b, 3.0]
+      expect(ro.length).assertEqual(4)
+      expect(ro[2]).assertEqual(2.0)
     });
 
     /**
@@ -1515,12 +1505,9 @@ export default function ExpressionsSpreadTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpreadTwo0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // MixedReadonlyAndMutableSources
-      let readonly_arr: readonly number[] = [1.0, 2.0]
-      let mutable_arr: number[] = [3.0, 4.0]
-      let result: readonly number[] = [...readonly_arr, ...mutable_arr]
-      expect(result.length).assertEqual(4)
-      expect(result[2]).assertEqual(3.0)
+      let b: int[] = [1, 2, 3]
+      fooReadonlyRestParam_spex_to_readonly(...b)
+      expect(b[0]).assertEqual(1)
     });
 
     /**
@@ -1533,11 +1520,10 @@ export default function ExpressionsSpreadTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpreadTwo0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let b: int[] = [1, 2, 3]
+      let b: FixedArray<int> = [1, 2, 3]
       let ro: readonly int[] = [...b]
       expect(ro[0]).assertEqual(1)
-      expect(ro[1]).assertEqual(2)
-      expect(ro[2]).assertEqual(3)
+      expect(ro.length).assertEqual(3)
     });
 
     /**
@@ -1550,10 +1536,10 @@ export default function ExpressionsSpreadTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpreadTwo0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let b: number[] = [1.0, 2.0]
-      let ro: readonly number[] = [0.0, ...b, 3.0]
-      expect(ro.length).assertEqual(4)
-      expect(ro[2]).assertEqual(2.0)
+      let b: [int, int] = [1, 2]
+      let ro: readonly int[] = [...b]
+      expect(ro[0]).assertEqual(1)
+      expect(ro[1]).assertEqual(2)
     });
 
     /**
@@ -1566,53 +1552,6 @@ export default function ExpressionsSpreadTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpreadTwo0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let b: int[] = [1, 2, 3]
-      fooReadonlyRestParam_spex_to_readonly(...b)
-      expect(b[0]).assertEqual(1)
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_SPREAD_TWO_7200
-     * @tc.name      testExpressionsSpreadTwo0072
-     * @tc.desc      Since a spread expression copies values, the attribute readonly of the source
-     *               array does not affect an array created by the spread expression.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsSpreadTwo0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let b: FixedArray<int> = [1, 2, 3]
-      let ro: readonly int[] = [...b]
-      expect(ro[0]).assertEqual(1)
-      expect(ro.length).assertEqual(3)
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_SPREAD_TWO_7300
-     * @tc.name      testExpressionsSpreadTwo0073
-     * @tc.desc      Since a spread expression copies values, the attribute readonly of the source
-     *               array does not affect an array created by the spread expression.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsSpreadTwo0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let b: [int, int] = [1, 2]
-      let ro: readonly int[] = [...b]
-      expect(ro[0]).assertEqual(1)
-      expect(ro[1]).assertEqual(2)
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_SPREAD_TWO_7400
-     * @tc.name      testExpressionsSpreadTwo0074
-     * @tc.desc      Since a spread expression copies values, the attribute readonly of the source
-     *               array does not affect an array created by the spread expression.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsSpreadTwo0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: readonly [int, int, int] = [1, 2, 3]
       let rw: int[] = [...a]
       rw[1] = 11

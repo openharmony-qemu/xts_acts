@@ -65,11 +65,11 @@ export default function StringRelationalOperatorsOneTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperatorsOne0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: string = "\xff\xfe\xac 1\x003\x00,\x005\x007\x00"
-      let y: string = "\xff\xfe\xac 1\x003\x00,\x005\x006\x00"
-      let z: String = new String("\xff\xfe\xac 1\x003\x00,\x005\x006\x00")
-      expect((x >= y)).assertTrue()
-      expect((x >= z)).assertTrue()
+      let data1: string = "\xff\xfe\xac 1\x003\x00,\x005\x007\x00"
+      let data2: string = "\xff\xfe\xac 1\x003\x00,\x005\x006\x00"
+      let data3: string = new String("\xff\xfe\xac 1\x003\x00,\x005\x006\x00")
+      expect((data1 >= data2)).assertTrue()
+      expect((data1 >= data3)).assertTrue()
     })
     /**
      * @tc.number    SUB_STRING_RELATIONAL_OPERATORS_ONE_0200
@@ -80,11 +80,11 @@ export default function StringRelationalOperatorsOneTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperatorsOne0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: string = "\u{D800}"
-      let y: string = "\u{D800}"
-      let z: String = new String("\u{D800}")
-      expect((x >= y)).assertTrue()
-      expect((x >= z)).assertTrue()
+      let data1: string = "\u{D800}"
+      let data2: string = "\u{D800}"
+      let data3: string = new String("\u{D800}")
+      expect((data1 >= data2)).assertTrue()
+      expect((data1 >= data3)).assertTrue()
     })
     /**
      * @tc.number    SUB_STRING_RELATIONAL_OPERATORS_ONE_0300
@@ -95,11 +95,11 @@ export default function StringRelationalOperatorsOneTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperatorsOne0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: string = "\u{D801}"
-      let y: string = "\u{D800}"
-      let z: String = new String("\u{D800}")
-      expect((x >= y)).assertTrue()
-      expect((x >= z)).assertTrue()
+      let data1: string = "\u{D801}"
+      let data2: string = "\u{D800}"
+      let data3: string = new String("\u{D800}")
+      expect((data1 >= data2)).assertTrue()
+      expect((data1 >= data3)).assertTrue()
     })
     /**
      * @tc.number    SUB_STRING_RELATIONAL_OPERATORS_ONE_0400
@@ -110,11 +110,11 @@ export default function StringRelationalOperatorsOneTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperatorsOne0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: string = "\u{D800}"
-      let y: string = "\u{D801}"
-      let z: String = new String("\u{D801}")
-      expect((x >= y)).assertFalse()
-      expect((x >= z)).assertFalse()
+      let data1: string = "\u{D800}"
+      let data2: string = "\u{D801}"
+      let data3: string = new String("\u{D801}")
+      expect((data1 >= data2)).assertFalse()
+      expect((data1 >= data3)).assertFalse()
     })
     /**
      * @tc.number    SUB_STRING_RELATIONAL_OPERATORS_ONE_0500
@@ -125,11 +125,11 @@ export default function StringRelationalOperatorsOneTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperatorsOne0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: string = "\u{DC00}"
-      let y: string = "\u{DC00}"
-      let z: String = new String("\u{DC00}")
-      expect((x >= y)).assertTrue()
-      expect((x >= z)).assertTrue()
+      let data1: string = "\u{DC00}"
+      let data2: string = "\u{DC00}"
+      let data3: string = new String("\u{DC00}")
+      expect((data1 >= data2)).assertTrue()
+      expect((data1 >= data3)).assertTrue()
     })
     /**
      * @tc.number    SUB_STRING_RELATIONAL_OPERATORS_ONE_0600
@@ -140,11 +140,11 @@ export default function StringRelationalOperatorsOneTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperatorsOne0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: string = "\u{DC01}"
-      let y: string = "\u{DC00}"
-      let z: String = new String("\u{DC00}")
-      expect((x >= y)).assertTrue()
-      expect((x >= z)).assertTrue()
+      let data1: string = "\u{DC01}"
+      let data2: string = "\u{DC00}"
+      let data3: string = new String("\u{DC00}")
+      expect((data1 >= data2)).assertTrue()
+      expect((data1 >= data3)).assertTrue()
     })
     /**
      * @tc.number    SUB_STRING_RELATIONAL_OPERATORS_ONE_0700
@@ -155,11 +155,11 @@ export default function StringRelationalOperatorsOneTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperatorsOne0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: string = "\u{DC00}"
-      let y: string = "\u{DC01}"
-      let z: String = new String("\u{DC01}")
-      expect((x >= y)).assertFalse()
-      expect((x >= z)).assertFalse()
+      let data1: string = "\u{DC00}"
+      let data2: string = "\u{DC01}"
+      let data3: string = new String("\u{DC01}")
+      expect((data1 >= data2)).assertFalse()
+      expect((data1 >= data3)).assertFalse()
     })
     /**
      * @tc.number    SUB_STRING_RELATIONAL_OPERATORS_ONE_0800
@@ -170,11 +170,11 @@ export default function StringRelationalOperatorsOneTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperatorsOne0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: string = "\u{DBFF}\u{DFFF}"
-      let y: string = "\u{DBFF}\u{DFFF}"
-      let z: String = new String("\u{DBFF}\u{DFFF}")
-      expect((x >= y)).assertTrue()
-      expect((x >= z)).assertTrue()
+      let data1: string = "\u{DBFF}\u{DFFF}"
+      let data2: string = "\u{DBFF}\u{DFFF}"
+      let data3: string = new String("\u{DBFF}\u{DFFF}")
+      expect((data1 >= data2)).assertTrue()
+      expect((data1 >= data3)).assertTrue()
     })
     /**
      * @tc.number    SUB_STRING_RELATIONAL_OPERATORS_ONE_0900
@@ -185,11 +185,11 @@ export default function StringRelationalOperatorsOneTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperatorsOne0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: string = "\u{DBFF}\u{DFFF}"
-      let y: string = "\u{DBFF}\u{DFFA}"
-      let z: String = new String("\u{DBFF}\u{DFFA}")
-      expect((x >= y)).assertTrue()
-      expect((x >= z)).assertTrue()
+      let data1: string = "\u{DBFF}\u{DFFF}"
+      let data2: string = "\u{DBFF}\u{DFFA}"
+      let data3: string = new String("\u{DBFF}\u{DFFA}")
+      expect((data1 >= data2)).assertTrue()
+      expect((data1 >= data3)).assertTrue()
     })
     /**
      * @tc.number    SUB_STRING_RELATIONAL_OPERATORS_ONE_1000
@@ -200,11 +200,11 @@ export default function StringRelationalOperatorsOneTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperatorsOne0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: string = "\u{DBFA}\u{DFFF}"
-      let y: string = "\u{DBFF}\u{DFFF}"
-      let z: String = new String("\u{DBFF}\u{DFFF}")
-      expect((x >= y)).assertFalse()
-      expect((x >= z)).assertFalse()
+      let data1: string = "\u{DBFA}\u{DFFF}"
+      let data2: string = "\u{DBFF}\u{DFFF}"
+      let data3: string = new String("\u{DBFF}\u{DFFF}")
+      expect((data1 >= data2)).assertFalse()
+      expect((data1 >= data3)).assertFalse()
     })
     /**
      * @tc.number    SUB_STRING_RELATIONAL_OPERATORS_ONE_1100
@@ -215,11 +215,11 @@ export default function StringRelationalOperatorsOneTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperatorsOne0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: string = "\u{A123}"
-      let y: string = "\u{A122}"
-      let z: String = new String("\u{A122}")
-      expect((x >= y)).assertTrue()
-      expect((x >= z)).assertTrue()
+      let data1: string = "\u{A123}"
+      let data2: string = "\u{A122}"
+      let data3: string = new String("\u{A122}")
+      expect((data1 >= data2)).assertTrue()
+      expect((data1 >= data3)).assertTrue()
     })
     /**
      * @tc.number    SUB_STRING_RELATIONAL_OPERATORS_ONE_1200
@@ -230,11 +230,11 @@ export default function StringRelationalOperatorsOneTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperatorsOne0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: string = "\u{A123}"
-      let y: string = "\u{A123}"
-      let z: String = new String("\u{A123}")
-      expect((x >= y)).assertTrue()
-      expect((x >= z)).assertTrue()
+      let data1: string = "\u{A123}"
+      let data2: string = "\u{A123}"
+      let data3: string = new String("\u{A123}")
+      expect((data1 >= data2)).assertTrue()
+      expect((data1 >= data3)).assertTrue()
     })
     /**
      * @tc.number    SUB_STRING_RELATIONAL_OPERATORS_ONE_1300
@@ -245,11 +245,11 @@ export default function StringRelationalOperatorsOneTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperatorsOne0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: string = "\u{A122}"
-      let y: string = "\u{A123}"
-      let z: String = new String("\u{A123}")
-      expect((x >= y)).assertFalse()
-      expect((x >= z)).assertFalse()
+      let data1: string = "\u{A122}"
+      let data2: string = "\u{A123}"
+      let data3: string = new String("\u{A123}")
+      expect((data1 >= data2)).assertFalse()
+      expect((data1 >= data3)).assertFalse()
     })
     /**
      * @tc.number    SUB_STRING_RELATIONAL_OPERATORS_ONE_1400
@@ -260,11 +260,11 @@ export default function StringRelationalOperatorsOneTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperatorsOne0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: string = "\u{00000068}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}"
-      let y: string = "\u{00000068}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}"
-      let z: String = new String("\u{00000068}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}")
-      expect((x >= y)).assertTrue()
-      expect((x >= z)).assertTrue()
+      let data1: string = "\u{00000068}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}"
+      let data2: string = "\u{00000068}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}"
+      let data3: string = new String("\u{00000068}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}")
+      expect((data1 >= data2)).assertTrue()
+      expect((data1 >= data3)).assertTrue()
     })
     /**
      * @tc.number    SUB_STRING_RELATIONAL_OPERATORS_ONE_1500
@@ -275,11 +275,11 @@ export default function StringRelationalOperatorsOneTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperatorsOne0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: string = "\u{00000068}\u{00000065}\u{0000006c}\u{0000006d}\u{0000006f}"
-      let y: string = "\u{00000068}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}"
-      let z: String = new String("\u{00000068}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}")
-      expect((x >= y)).assertTrue()
-      expect((x >= z)).assertTrue()
+      let data1: string = "\u{00000068}\u{00000065}\u{0000006c}\u{0000006d}\u{0000006f}"
+      let data2: string = "\u{00000068}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}"
+      let data3: string = new String("\u{00000068}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}")
+      expect((data1 >= data2)).assertTrue()
+      expect((data1 >= data3)).assertTrue()
     })
     /**
      * @tc.number    SUB_STRING_RELATIONAL_OPERATORS_ONE_1600
@@ -290,11 +290,11 @@ export default function StringRelationalOperatorsOneTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperatorsOne0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: string = "\u{00000067}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}"
-      let y: string = "\u{00000068}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}"
-      let z: String = new String("\u{00000068}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}")
-      expect((x >= y)).assertFalse()
-      expect((x >= z)).assertFalse()
+      let data1: string = "\u{00000067}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}"
+      let data2: string = "\u{00000068}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}"
+      let data3: string = new String("\u{00000068}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}")
+      expect((data1 >= data2)).assertFalse()
+      expect((data1 >= data3)).assertFalse()
     })
   })
 }

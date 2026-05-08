@@ -134,8 +134,8 @@ export default function ExpressionsNamedReferenceTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNamedReference0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let y: string = x_0;
-      expect(y).assertEqual('abc');
+      let data2: string = x_0;
+      expect(data2).assertEqual('abc');
     })
 
     /**
@@ -147,9 +147,9 @@ export default function ExpressionsNamedReferenceTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNamedReference0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: string = 'abc';
-      let y: string = x;
-      expect(y).assertEqual('abc');
+      let data1: string = 'abc';
+      let data2: string = data1;
+      expect(data2).assertEqual('abc');
     })
 
     /**
@@ -339,8 +339,8 @@ export default function ExpressionsNamedReferenceTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNamedReference0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: string = MyModule_11.moduleVar;
-      expect(x).assertEqual("Module Variable");
+      let data1: string = MyModule_11.moduleVar;
+      expect(data1).assertEqual("Module Variable");
     })
 
     /**
