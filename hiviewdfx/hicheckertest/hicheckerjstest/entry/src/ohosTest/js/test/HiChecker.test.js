@@ -335,5 +335,117 @@ describe('HiCheckerTest', function () {
         }
     })
 
+    /**
+      * @tc.name   DFX_DFR_Hichecker_Interface_3000
+      * @tc.number DFX_DFR_Hichecker_Interface_3000
+      * @tc.desc   验证addCheckRule新增RULE_THREAD_CHECK_NETWORK_USAGE规则
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+    it('DFX_DFR_Hichecker_Interface_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+        console.info('DFX_DFR_Hichecker_Interface_3000 start');
+        try {
+            hichecker.addCheckRule(hichecker.RULE_THREAD_CHECK_NETWORK_USAGE);
+            console.log('add rule success!');
+            expect(hichecker.containsCheckRule(hichecker.RULE_THREAD_CHECK_NETWORK_USAGE)).assertTrue();
+        } catch (error) {
+            console.info(error.code)
+            console.info(error.message)
+            expect(error.code == 401).assertTrue();
+        }
+    })
+
+    /**
+      * @tc.name   DFX_DFR_Hichecker_Interface_3100
+      * @tc.number DFX_DFR_Hichecker_Interface_3100
+      * @tc.desc   验证RULE_THREAD_CHECK_NETWORK_USAGE与其他规则组合添加
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+    it('DFX_DFR_Hichecker_Interface_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+        console.info('DFX_DFR_Hichecker_Interface_3100 start');
+        try {
+            hichecker.addCheckRule(hichecker.RULE_THREAD_CHECK_NETWORK_USAGE | hichecker.RULE_CAUTION_PRINT_LOG);
+            hichecker.addCheckRule(hichecker.RULE_CHECK_ABILITY_CONNECTION_LEAK);
+            console.log('add rule success!');
+            expect(hichecker.containsCheckRule(hichecker.RULE_THREAD_CHECK_NETWORK_USAGE)).assertTrue();
+            expect(hichecker.containsCheckRule(hichecker.RULE_CAUTION_PRINT_LOG)).assertTrue();
+            expect(hichecker.containsCheckRule(hichecker.RULE_CHECK_ABILITY_CONNECTION_LEAK)).assertTrue();
+        } catch (error) {
+            console.info(error.code)
+            console.info(error.message)
+            expect(error.code == 401).assertTrue();
+        }
+    })
+
+    /**
+      * @tc.name   DFX_DFR_Hichecker_Interface_3200
+      * @tc.number DFX_DFR_Hichecker_Interface_3200
+      * @tc.desc   验证removeCheckRule移除RULE_THREAD_CHECK_NETWORK_USAGE规则
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+    it('DFX_DFR_Hichecker_Interface_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+        console.info('DFX_DFR_Hichecker_Interface_3200 start');
+        try {
+            hichecker.addCheckRule(hichecker.RULE_THREAD_CHECK_NETWORK_USAGE | hichecker.RULE_CAUTION_PRINT_LOG);
+            console.log('add rule success!');
+            let tmp = hichecker.RULE_CAUTION_PRINT_LOG;
+            hichecker.removeCheckRule(hichecker.RULE_THREAD_CHECK_NETWORK_USAGE);
+            expect(hichecker.containsCheckRule(hichecker.RULE_THREAD_CHECK_NETWORK_USAGE)).assertEqual(false);
+            expect(hichecker.containsCheckRule(hichecker.RULE_CAUTION_PRINT_LOG)).assertTrue();
+        } catch (error) {
+            console.info(error.code)
+            console.info(error.message)
+            expect(error.code == 401).assertTrue();
+        }
+    })
+
+    /**
+      * @tc.name   DFX_DFR_Hichecker_Interface_3300
+      * @tc.number DFX_DFR_Hichecker_Interface_3300
+      * @tc.desc   验证containsCheckRule对于RULE_THREAD_CHECK_NETWORK_USAGE返回false
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+    it('DFX_DFR_Hichecker_Interface_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+        console.info('DFX_DFR_Hichecker_Interface_3300 start');
+        try {
+            hichecker.removeCheckRule(hichecker.RULE_THREAD_CHECK_NETWORK_USAGE);
+            let ret = hichecker.containsCheckRule(hichecker.RULE_THREAD_CHECK_NETWORK_USAGE);
+            console.info('DFX_DFR_Hichecker_Interface_Rule_0400 contain result' + ret);
+            expect(ret == false).assertTrue();
+        } catch (error) {
+            console.info(error.code);
+            console.info(error.message);
+            expect(false).assertTrue();
+        }
+    })
+
+    /**
+      * @tc.name   DFX_DFR_Hichecker_Interface_3400
+      * @tc.number DFX_DFR_Hichecker_Interface_3400
+      * @tc.desc   验证RULE_THREAD_CHECK_NETWORK_USAGE单规则多次添加
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+    it('DFX_DFR_Hichecker_Interface_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+        console.info('DFX_DFR_Hichecker_Interface_3400 start');
+        try {
+            hichecker.addCheckRule(hichecker.RULE_THREAD_CHECK_NETWORK_USAGE);
+            hichecker.addCheckRule(hichecker.RULE_THREAD_CHECK_NETWORK_USAGE);
+            console.log('add rule success!');
+            expect(hichecker.containsCheckRule(hichecker.RULE_THREAD_CHECK_NETWORK_USAGE)).assertTrue();
+        } catch (error) {
+            console.info(error.code)
+            console.info(error.message)
+            expect(error.code == 401).assertTrue();
+        }
+    })
 })
 }
