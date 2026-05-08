@@ -110,11 +110,6 @@ class Child_protected_field_access_from_derived_class extends Person_protected_f
   }
 }
 
-abstract class Person_spec_ex1 {
-  name: string = ""
-  abstract set_name(name: string): void
-}
-
 class Base_spec_ex3 {}
 class Derived_spec_ex3 extends Base_spec_ex3 {}
 class aClass_spec_ex3 {
@@ -259,7 +254,6 @@ export default function ExpressionsObjectLiteralTestSuite(): void {
     it("testExpressionsObjectLiteral0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       res_execution_of_the_class_left_to_right = 0
       let person: Person_execution_of_the_class_left_to_right = { name: getName_execution_of_the_class_left_to_right(), age: getAge_execution_of_the_class_left_to_right() }
-      // 验证 getName 函数是否被调用
       expect(res_execution_of_the_class_left_to_right).assertEqual(2)
     });
 
@@ -299,19 +293,15 @@ export default function ExpressionsObjectLiteralTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsObjectLiteral0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 使用 aClass_spec_ex3 的正确实例化方法
       const x = new aClass_spec_ex3();
-      expect(x instanceof aClass_spec_ex3).assertTrue(); // 检查实例化是否正确
-
-      // 确保实现接口并完成方法签名
+      expect(x instanceof aClass_spec_ex3).assertTrue();
       const o: I_spec_ex3 = {
         method(p: Derived_spec_ex3): Base_spec_ex3 {
-          return new Base_spec_ex3(); // 返回符合 Base_spec_ex3 类型的对象
+          return new Base_spec_ex3();
         },
       };
-      // 调用接口方法并检查是否符合要求
       const result = o.method(new Derived_spec_ex3());
-      expect(result instanceof Base_spec_ex3).assertTrue(); // 检查返回值是否符合 Base_spec_ex3 类型
+      expect(result instanceof Base_spec_ex3).assertTrue();
     });
 
     /**
