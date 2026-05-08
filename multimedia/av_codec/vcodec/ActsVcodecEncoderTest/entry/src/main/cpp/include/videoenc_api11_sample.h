@@ -117,6 +117,7 @@ public:
     int32_t StartSecondaryEncoder();
     int32_t SetDualCallback();
     void SetPreProcessConfigure(OH_AVFormat *format);
+    void EncoderSetIntValue(OH_AVFormat *format);
     int32_t CreateVideoEncoder(const char *codecName);
     int32_t ConfigureVideoEncoder();
     int32_t ConfigureVideoEncoder_Temporal(int32_t temporal_gop_size);
@@ -162,6 +163,9 @@ public:
     int32_t OpenFileFail();
     int32_t CheckAttrFlag(OH_AVCodecBufferAttr attr);
     void OutputFuncFail();
+    void RunDuaLOrNot(bool isPrimary,
+    FILE *outFile, int size, OH_AVBuffer *buffer, uint32_t index, FILE *outFileSec);
+    void OutBufferQueuePop();
     void OutputFunc();
     void SyncOutputFunc();
     uint32_t FlushSurf(OHNativeWindowBuffer *ohNativeWindowBuffer, OH_NativeBuffer *nativeBuffer);

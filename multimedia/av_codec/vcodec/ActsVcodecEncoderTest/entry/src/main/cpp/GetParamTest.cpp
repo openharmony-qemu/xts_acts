@@ -302,7 +302,7 @@ int VideoEncodePreProcess0300Test()
         vEncSample->SURF_INPUT = false;
         int encVideoDefaultWidth = 1280;
         int encVideoDefaultHeight = 720;
-        int encDropFrameRate = 25.57;
+        double encDropFrameRate = 25.57;
         vEncSample->DEFAULT_WIDTH = encVideoDefaultWidth;
         vEncSample->DEFAULT_HEIGHT = encVideoDefaultHeight;
         ASSERT_EQ(AV_ERR_OK, vEncSample->SwitchSecondaryEncoder());
@@ -313,7 +313,7 @@ int VideoEncodePreProcess0300Test()
         ASSERT_EQ(AV_ERR_OK, vEncSample->SetDualCallback());
         vEncSample->SURF_INPUT = true;
         vEncSample->preProcessParameter.enableDFrame = true;
-        int encDropFrameNum = 15.89;
+        double encDropFrameNum = 15.89;
         vEncSample->preProcessParameter.dropFrameRate = encDropFrameNum;
         ASSERT_EQ(AV_ERR_OK, vEncSample->SwitchPrimaryEncoder());
         ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());

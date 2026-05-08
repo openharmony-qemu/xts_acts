@@ -727,9 +727,6 @@ uint32_t VEncAPI11Sample::ReadOneFrameYUV420SP(uint8_t *dst)
         }
         dst += DEFAULT_WIDTH;
     }
-    
-    OH_LOG_INFO(LOG_APP, "ReadOneFrameYUV420SP: Frame #%{public}d read successfully, wrote %{public}ld bytes",
-                frameReadCount, dst - start);
     return dst - start;
 }
 
@@ -1486,7 +1483,7 @@ void VEncAPI11Sample::OutputFuncFail()
     Release();
 }
 
-void VAPI11Sample::RunDuaLOrNot(bool isPrimary,
+void VEncAPI11Sample::RunDuaLOrNot(bool isPrimary,
     FILE *outFile, int size, OH_AVBuffer *buffer, uint32_t index, FILE *outFileSec)
 {
     if (runDualEncoder) {
@@ -1528,7 +1525,6 @@ void VEncAPI11Sample::OutBufferQueuePop()
     signal_->outBufferQueue_.pop();
     signal_->outIdxQueue_.pop();
     signal_->isPrimaryQueue_.pop();
-    lock.unlock();
 }
 void VEncAPI11Sample::OutputFunc()
 {
@@ -1559,6 +1555,7 @@ void VEncAPI11Sample::OutputFunc()
         OH_AVBuffer *buffer = signal_->outBufferQueue_.front();
         isPrimary = signal_->isPrimaryQueue_.front();
         OutBufferQueuePop();
+        lock.unlock();
         DumpInfo(attr, buffer);
         if (OH_AVBuffer_GetBufferAttr(buffer, &attr) != AV_ERR_OK) {
             errCount = errCount + 1;
