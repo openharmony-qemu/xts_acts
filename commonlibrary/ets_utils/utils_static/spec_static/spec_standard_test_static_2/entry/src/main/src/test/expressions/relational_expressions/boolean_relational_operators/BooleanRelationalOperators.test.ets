@@ -64,7 +64,7 @@ export default function BooleanRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testBooleanRelationalOperators0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testBooleanRelationalOperators0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: boolean = false
       let bx: Boolean = new Boolean(false)
       let y: boolean = false
@@ -83,7 +83,7 @@ export default function BooleanRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testBooleanRelationalOperators0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testBooleanRelationalOperators0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: boolean = false
       let bx: Boolean = new Boolean(false)
       let y: boolean = true
@@ -102,7 +102,7 @@ export default function BooleanRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testBooleanRelationalOperators0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testBooleanRelationalOperators0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: boolean = true
       let bx: Boolean = new Boolean(true)
       let y: boolean = false
@@ -121,7 +121,7 @@ export default function BooleanRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testBooleanRelationalOperators0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testBooleanRelationalOperators0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: boolean = true
       let bx: Boolean = new Boolean(true)
       let y: boolean = true
@@ -140,7 +140,7 @@ export default function BooleanRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testBooleanRelationalOperators0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testBooleanRelationalOperators0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: boolean = false
       let bx: Boolean = new Boolean(false)
       let y: boolean = false
@@ -159,7 +159,7 @@ export default function BooleanRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testBooleanRelationalOperators0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testBooleanRelationalOperators0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: boolean = false
       let bx: Boolean = new Boolean(false)
       let y: boolean = true
@@ -178,7 +178,7 @@ export default function BooleanRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testBooleanRelationalOperators0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testBooleanRelationalOperators0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: boolean = true
       let bx: Boolean = new Boolean(true)
       let y: boolean = false
@@ -197,7 +197,7 @@ export default function BooleanRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testBooleanRelationalOperators0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testBooleanRelationalOperators0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: boolean = true
       let bx: Boolean = new Boolean(true)
       let y: boolean = true
@@ -216,7 +216,7 @@ export default function BooleanRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testBooleanRelationalOperators0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testBooleanRelationalOperators0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: boolean = false
       let bx: Boolean = new Boolean(false)
       let y: boolean = false
@@ -235,7 +235,7 @@ export default function BooleanRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testBooleanRelationalOperators0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testBooleanRelationalOperators0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: boolean = false
       let bx: Boolean = new Boolean(false)
       let y: boolean = true
@@ -254,7 +254,7 @@ export default function BooleanRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testBooleanRelationalOperators0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testBooleanRelationalOperators0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: boolean = true
       let bx: Boolean = new Boolean(true)
       let y: boolean = false
@@ -273,7 +273,7 @@ export default function BooleanRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testBooleanRelationalOperators0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testBooleanRelationalOperators0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: boolean = true
       let bx: Boolean = new Boolean(true)
       let y: boolean = true
@@ -292,7 +292,7 @@ export default function BooleanRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testBooleanRelationalOperators0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testBooleanRelationalOperators0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: boolean = false
       let bx: Boolean = new Boolean(false)
       let y: boolean = false
@@ -311,7 +311,7 @@ export default function BooleanRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testBooleanRelationalOperators0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testBooleanRelationalOperators0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: boolean = false
       let bx: Boolean = new Boolean(false)
       let y: boolean = true
@@ -330,7 +330,7 @@ export default function BooleanRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testBooleanRelationalOperators0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testBooleanRelationalOperators0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: boolean = true
       let bx: Boolean = new Boolean(true)
       let y: boolean = false
@@ -349,7 +349,7 @@ export default function BooleanRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testBooleanRelationalOperators0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testBooleanRelationalOperators0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: boolean = true
       let bx: Boolean = new Boolean(true)
       let y: boolean = true

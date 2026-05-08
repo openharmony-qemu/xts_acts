@@ -66,53 +66,9 @@ export default function ExpressionsUnaryGrouping(): void {
      */
     it("testExpressionsUnary0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(~+2).assertEqual(-3);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_UNARY_0200
-     * @tc.name      testExpressionsUnary0002
-     * @tc.desc      Unary operators except postfix increment and postfix decrement group right-to-left. -+11 = -11
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsUnary0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(-+11).assertEqual(-11);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_UNARY_0300
-     * @tc.name      testExpressionsUnary0003
-     * @tc.desc      Unary operators except postfix increment and postfix decrement group right-to-left. -~14 + -+7 = 8
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsUnary0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(-~14 + -+7).assertEqual(8);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_UNARY_0400
-     * @tc.name      testExpressionsUnary0004
-     * @tc.desc      Unary operators except postfix increment and postfix decrement group right-to-left. ~-11 = 10
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsUnary0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(~-11).assertEqual(10);
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_UNARY_0500
-     * @tc.name      testExpressionsUnary0005
-     * @tc.desc      Unary operators except postfix increment and postfix decrement group right-to-left. ~+0 = -1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsUnary0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(~+0).assertEqual(-1);
     });
   });

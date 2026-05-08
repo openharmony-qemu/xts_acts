@@ -33,8 +33,8 @@ async function sleep(time: int): Promise<int> {
   });
 }
 enum bitwise_complement_enum_Color { Red, Green, Blue }
-export default function ExpressionsBitwiseComplement(): void {
-  describe("ExpressionsBitwiseComplement", () => {
+export default function ExpressionsBitwiseComplementTest(): void {
+  describe("ExpressionsBitwiseComplementTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -59,10 +59,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_0100
      * @tc.name      testExpressionsBitwiseComplement0001
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -76,10 +73,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_0200
      * @tc.name      testExpressionsBitwiseComplement0002
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -93,10 +87,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_0300
      * @tc.name      testExpressionsBitwiseComplement0003
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -110,10 +101,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_0400
      * @tc.name      testExpressionsBitwiseComplement0004
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -127,10 +115,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_0500
      * @tc.name      testExpressionsBitwiseComplement0005
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -144,10 +129,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_0600
      * @tc.name      testExpressionsBitwiseComplement0006
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -161,10 +143,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_0700
      * @tc.name      testExpressionsBitwiseComplement0007
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -178,10 +157,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_0800
      * @tc.name      testExpressionsBitwiseComplement0008
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -195,10 +171,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_0900
      * @tc.name      testExpressionsBitwiseComplement0009
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -212,10 +185,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_1000
      * @tc.name      testExpressionsBitwiseComplement0010
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -229,10 +199,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_1100
      * @tc.name      testExpressionsBitwiseComplement0011
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -246,10 +213,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_1200
      * @tc.name      testExpressionsBitwiseComplement0012
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -263,10 +227,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_1300
      * @tc.name      testExpressionsBitwiseComplement0013
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -280,10 +241,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_1400
      * @tc.name      testExpressionsBitwiseComplement0014
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -297,10 +255,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_1500
      * @tc.name      testExpressionsBitwiseComplement0015
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -314,10 +269,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_1600
      * @tc.name      testExpressionsBitwiseComplement0016
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -331,10 +283,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_1700
      * @tc.name      testExpressionsBitwiseComplement0017
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -348,10 +297,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_1800
      * @tc.name      testExpressionsBitwiseComplement0018
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -365,10 +311,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_1900
      * @tc.name      testExpressionsBitwiseComplement0019
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -382,10 +325,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_2000
      * @tc.name      testExpressionsBitwiseComplement0020
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -399,10 +339,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_2100
      * @tc.name      testExpressionsBitwiseComplement0021
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -416,10 +353,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_2200
      * @tc.name      testExpressionsBitwiseComplement0022
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -433,10 +367,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_2300
      * @tc.name      testExpressionsBitwiseComplement0023
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -450,10 +381,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_2400
      * @tc.name      testExpressionsBitwiseComplement0024
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -467,10 +395,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_2500
      * @tc.name      testExpressionsBitwiseComplement0025
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -484,10 +409,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_2600
      * @tc.name      testExpressionsBitwiseComplement0026
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -501,10 +423,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_2700
      * @tc.name      testExpressionsBitwiseComplement0027
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -518,10 +437,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_2800
      * @tc.name      testExpressionsBitwiseComplement0028
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -535,10 +451,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_2900
      * @tc.name      testExpressionsBitwiseComplement0029
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -552,10 +465,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_3000
      * @tc.name      testExpressionsBitwiseComplement0030
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -569,10 +479,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_3100
      * @tc.name      testExpressionsBitwiseComplement0031
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -586,10 +493,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_3200
      * @tc.name      testExpressionsBitwiseComplement0032
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -603,10 +507,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_3300
      * @tc.name      testExpressionsBitwiseComplement0033
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -620,10 +521,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_3400
      * @tc.name      testExpressionsBitwiseComplement0034
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -637,10 +535,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_3500
      * @tc.name      testExpressionsBitwiseComplement0035
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -654,10 +549,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_3600
      * @tc.name      testExpressionsBitwiseComplement0036
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -671,10 +563,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_3700
      * @tc.name      testExpressionsBitwiseComplement0037
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -688,10 +577,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_3800
      * @tc.name      testExpressionsBitwiseComplement0038
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -705,10 +591,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_3900
      * @tc.name      testExpressionsBitwiseComplement0039
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -722,10 +605,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_4000
      * @tc.name      testExpressionsBitwiseComplement0040
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -739,10 +619,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_4100
      * @tc.name      testExpressionsBitwiseComplement0041
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -756,10 +633,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_4200
      * @tc.name      testExpressionsBitwiseComplement0042
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -773,10 +647,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_4300
      * @tc.name      testExpressionsBitwiseComplement0043
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -790,10 +661,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_4400
      * @tc.name      testExpressionsBitwiseComplement0044
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -807,10 +675,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_4500
      * @tc.name      testExpressionsBitwiseComplement0045
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -824,10 +689,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_4600
      * @tc.name      testExpressionsBitwiseComplement0046
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -841,10 +703,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_4700
      * @tc.name      testExpressionsBitwiseComplement0047
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -858,10 +717,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_4800
      * @tc.name      testExpressionsBitwiseComplement0048
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -875,10 +731,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_4900
      * @tc.name      testExpressionsBitwiseComplement0049
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -892,10 +745,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_5000
      * @tc.name      testExpressionsBitwiseComplement0050
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -909,10 +759,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_5100
      * @tc.name      testExpressionsBitwiseComplement0051
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -926,10 +773,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_5200
      * @tc.name      testExpressionsBitwiseComplement0052
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -943,10 +787,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_5300
      * @tc.name      testExpressionsBitwiseComplement0053
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -960,10 +801,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_5400
      * @tc.name      testExpressionsBitwiseComplement0054
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -977,10 +815,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_5500
      * @tc.name      testExpressionsBitwiseComplement0055
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -994,10 +829,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_5600
      * @tc.name      testExpressionsBitwiseComplement0056
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1011,10 +843,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_5700
      * @tc.name      testExpressionsBitwiseComplement0057
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1028,10 +857,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_5800
      * @tc.name      testExpressionsBitwiseComplement0058
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1045,10 +871,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_5900
      * @tc.name      testExpressionsBitwiseComplement0059
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1062,10 +885,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_6000
      * @tc.name      testExpressionsBitwiseComplement0060
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1079,10 +899,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_6100
      * @tc.name      testExpressionsBitwiseComplement0061
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -1096,10 +913,7 @@ export default function ExpressionsBitwiseComplement(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_BITWISE_COMPLEMENT_6200
      * @tc.name      testExpressionsBitwiseComplement0062
-     * @tc.desc      Bitwise complement operator. If the type of the operand is double or float, then it is truncated first
-     *               to long or int, respectively. If the type of the operand is byte or short, then
-     *               the operand is widened to int. If the type of the operand is bigint, then no conversion
-     *               is required.
+     * @tc.desc      Bitwise complement operator.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2

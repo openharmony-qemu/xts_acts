@@ -67,7 +67,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect((str1000 >= str1000)).assertTrue()
       expect((str1000 >= str1001)).assertFalse()
       expect((str1000 <= str1001)).assertTrue()
@@ -82,7 +82,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = ""
       let y: string = ""
       let z: String = new String("")
@@ -97,7 +97,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = " "
       let y: string = ""
       let z: String = new String("")
@@ -112,7 +112,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = ""
       let y: string = "\n"
       let z: String = new String("\n")
@@ -127,7 +127,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\r"
       let y: string = ""
       let z: String = new String("")
@@ -142,7 +142,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "'aa"
       let y: string = "'aa"
       let z: String = new String("'aa")
@@ -157,7 +157,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "aa"
       let y: string = "aaa"
       let z: String = new String("aaa")
@@ -172,7 +172,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "ac"
       let y: string = "dc"
       let z: String = new String("dc")
@@ -187,7 +187,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "AAAAAB"
       let y: string = "AAAAAAA"
       let z: String = new String("AAAAAAA")
@@ -202,7 +202,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "AAAAAA"
       let y: string = "aaaaaa"
       let z: String = new String("aaaaaa")
@@ -217,7 +217,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "~"
       let y: string = "~A"
       let z: String = new String("~A")
@@ -232,7 +232,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "alea iacta est"
       let y: string = "alea iacta est"
       let z: String = new String("alea iacta est")
@@ -247,7 +247,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "987654321"
       let y: string = "987654321"
       let z: String = new String("987654321")
@@ -262,7 +262,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "0987654321"
       let y: string = "987654321"
       let z: String = new String("987654321")
@@ -277,7 +277,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "!@#$%^&*()_+-=`~\"\\|[]{}/?.><\\,"
       let y: string = "!@#$%^&*()_+-=`~\"\\|[]{}/?.><\\, "
       let z: String = new String("!@#$%^&*()_+-=`~\"\\|[]{}/?.><\\, ")
@@ -292,7 +292,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\xff\xfe\xac 1\x003\x00,\x005\x006\x00"
       let y: string = "\xff\xfe\xac 1\x003\x00,\x005\x006\x00"
       let z: String = new String("\xff\xfe\xac 1\x003\x00,\x005\x006\x00")
@@ -307,7 +307,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\xff\xfe\xac 1\x003\x00,\x005\x006\x00"
       let y: string = "\xff\xfe\xac 1\x003\x00,\x005\x007\x00"
       let z: String = new String("\xff\xfe\xac 1\x003\x00,\x005\x007\x00")
@@ -322,7 +322,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{D800}"
       let y: string = "\u{D800}"
       let z: String = new String("\u{D800}")
@@ -337,7 +337,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{D800}"
       let y: string = "\u{D801}"
       let z: String = new String("\u{D801}")
@@ -352,7 +352,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{DC00}"
       let y: string = "\u{DC00}"
       let z: String = new String("\u{DC00}")
@@ -367,7 +367,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{DC00}"
       let y: string = "\u{DC01}"
       let z: String = new String("\u{DC01}")
@@ -382,7 +382,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{DBFF}\u{DFFF}"
       let y: string = "\u{DBFF}\u{DFFF}"
       let z: String = new String("\u{DBFF}\u{DFFF}")
@@ -397,7 +397,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{DBFF}\u{DFFA}"
       let y: string = "\u{DBFF}\u{DFFF}"
       let z: String = new String("\u{DBFF}\u{DFFF}")
@@ -412,7 +412,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{A123}"
       let y: string = "\u{A122}"
       let z: String = new String("\u{A122}")
@@ -427,7 +427,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{A123}"
       let y: string = "\u{A124}"
       let z: String = new String("\u{A124}")
@@ -442,7 +442,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{00000069}"
       let y: string = "\u{00000068}"
       let z: String = new String("\u{00000068}")
@@ -457,7 +457,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{00000068}"
       let y: string = "\u{00000069}"
       let z: String = new String("\u{00000069}")
@@ -472,7 +472,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = ""
       let y: string = ""
       let z: String = new String("")
@@ -487,7 +487,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = " "
       let y: string = ""
       let z: String = new String("")
@@ -502,7 +502,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = ""
       let y: string = "\n"
       let z: String = new String("\n")
@@ -517,7 +517,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\r"
       let y: string = ""
       let z: String = new String("")
@@ -532,7 +532,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "'aa"
       let y: string = "'aa"
       let z: String = new String("'aa")
@@ -547,7 +547,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "aa"
       let y: string = "aaa"
       let z: String = new String("aaa")
@@ -562,7 +562,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "ac"
       let y: string = "dc"
       let z: String = new String("dc")
@@ -577,7 +577,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "AAAAAB"
       let y: string = "AAAAAAA"
       let z: String = new String("AAAAAAA")
@@ -592,7 +592,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "AAAAAA"
       let y: string = "aaaaaa"
       let z: String = new String("aaaaaa")
@@ -607,7 +607,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "~"
       let y: string = "~"
       let z: String = new String("~")
@@ -622,7 +622,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "alea iacta est"
       let y: string = "alea iacta est"
       let z: String = new String("alea iacta est")
@@ -637,7 +637,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "987654321"
       let y: string = "987654321"
       let z: String = new String("987654321")
@@ -652,7 +652,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "0987654321"
       let y: string = "987654321"
       let z: String = new String("987654321")
@@ -667,7 +667,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "!@#$%^&*()_+-=`~\"\\|[]{}/?.>,<\\"
       let y: string = "!@#$%^&*()_+-=`~\"\\|[]{}/?.>,<\\"
       let z: String = new String("!@#$%^&*()_+-=`~\"\\|[]{}/?.>,<\\")
@@ -682,7 +682,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\xff\xfe\xac 1\x003\x00,\x005\x006\x00"
       let y: string = "\xff\xfe\xac 1\x003\x00,\x005\x006\x00"
       let z: String = new String("\xff\xfe\xac 1\x003\x00,\x005\x006\x00")
@@ -697,7 +697,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\xff\xfe\xac 1\x003\x00,\x005\x007\x00"
       let y: string = "\xff\xfe\xac 1\x003\x00,\x005\x006\x00"
       let z: String = new String("\xff\xfe\xac 1\x003\x00,\x005\x006\x00")
@@ -712,7 +712,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{D800}"
       let y: string = "\u{D800}"
       let z: String = new String("\u{D800}")
@@ -727,7 +727,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{D801}"
       let y: string = "\u{D800}"
       let z: String = new String("\u{D800}")
@@ -742,7 +742,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{D800}"
       let y: string = "\u{D801}"
       let z: String = new String("\u{D801}")
@@ -757,7 +757,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{DC00}"
       let y: string = "\u{DC00}"
       let z: String = new String("\u{DC00}")
@@ -772,7 +772,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{DC01}"
       let y: string = "\u{DC00}"
       let z: String = new String("\u{DC00}")
@@ -787,7 +787,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{DC00}"
       let y: string = "\u{DC01}"
       let z: String = new String("\u{DC01}")
@@ -802,7 +802,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{DBFF}\u{DFFF}"
       let y: string = "\u{DBFF}\u{DFFF}"
       let z: String = new String("\u{DBFF}\u{DFFF}")
@@ -817,7 +817,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{DBFF}\u{DFFF}"
       let y: string = "\u{DBFF}\u{DFFA}"
       let z: String = new String("\u{DBFF}\u{DFFA}")
@@ -832,7 +832,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{DBFA}\u{DFFF}"
       let y: string = "\u{DBFF}\u{DFFF}"
       let z: String = new String("\u{DBFF}\u{DFFF}")
@@ -847,7 +847,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{A123}"
       let y: string = "\u{A123}"
       let z: String = new String("\u{A123}")
@@ -862,7 +862,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{A123}"
       let y: string = "\u{A122}"
       let z: String = new String("\u{A122}")
@@ -877,7 +877,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{A122}"
       let y: string = "\u{A123}"
       let z: String = new String("\u{A123}")
@@ -892,7 +892,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{00000068}"
       let y: string = "\u{00000068}"
       let z: String = new String("\u{00000068}")
@@ -907,7 +907,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{00000069}"
       let y: string = "\u{00000068}"
       let z: String = new String("\u{00000068}")
@@ -922,7 +922,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{00000068}"
       let y: string = "\u{00000069}"
       let z: String = new String("\u{00000069}")
@@ -937,7 +937,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = ""
       let y: string = ""
       let z: String = new String("")
@@ -952,7 +952,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = " "
       let y: string = ""
       let z: String = new String("")
@@ -967,7 +967,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = ""
       let y: string = "\n"
       let z: String = new String("\n")
@@ -982,7 +982,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\r"
       let y: string = ""
       let z: String = new String("")
@@ -997,7 +997,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "'aa"
       let y: string = "'aa"
       let z: String = new String("'aa")
@@ -1012,7 +1012,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "aa"
       let y: string = "aaa"
       let z: String = new String("aaa")
@@ -1027,7 +1027,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "ac"
       let y: string = "dc"
       let z: String = new String("dc")
@@ -1042,7 +1042,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "AAAAAB"
       let y: string = "AAAAAAA"
       let z: String = new String("AAAAAAA")
@@ -1057,7 +1057,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "AAAAAA"
       let y: string = "aaaaaa"
       let z: String = new String("aaaaaa")
@@ -1072,7 +1072,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "~"
       let y: string = "~"
       let z: String = new String("~")
@@ -1087,7 +1087,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "alea iacta est"
       let y: string = "alea iacta est"
       let z: String = new String("alea iacta est")
@@ -1102,7 +1102,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "987654321"
       let y: string = "987654321"
       let z: String = new String("987654321")
@@ -1117,7 +1117,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "0987654321"
       let y: string = "987654321"
       let z: String = new String("987654321")
@@ -1132,7 +1132,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "!@#$%^&*()_+-=`~\"\\|[]{}/?.>,<\\"
       let y: string = "!@#$%^&*()_+-=`~\"\\|[]{}/?.>,<\\"
       let z: String = new String("!@#$%^&*()_+-=`~\"\\|[]{}/?.>,<\\")
@@ -1147,7 +1147,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\xff\xfe\xac 1\x003\x00,\x005\x006\x00"
       let y: string = "\xff\xfe\xac 1\x003\x00,\x005\x006\x00"
       let z: String = new String("\xff\xfe\xac 1\x003\x00,\x005\x006\x00")
@@ -1162,7 +1162,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\xff\xfe\xac 1\x003\x00,\x005\x007\x00"
       let y: string = "\xff\xfe\xac 1\x003\x00,\x005\x006\x00"
       let z: String = new String("\xff\xfe\xac 1\x003\x00,\x005\x006\x00")
@@ -1177,7 +1177,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{D800}"
       let y: string = "\u{D800}"
       let z: String = new String("\u{D800}")
@@ -1192,7 +1192,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{D801}"
       let y: string = "\u{D800}"
       let z: String = new String("\u{D800}")
@@ -1207,7 +1207,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{DC00}"
       let y: string = "\u{DC00}"
       let z: String = new String("\u{DC00}")
@@ -1222,7 +1222,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{DC01}"
       let y: string = "\u{DC00}"
       let z: String = new String("\u{DC00}")
@@ -1237,7 +1237,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{DBFF}\u{DFFF}"
       let y: string = "\u{DBFF}\u{DFFF}"
       let z: String = new String("\u{DBFF}\u{DFFF}")
@@ -1252,7 +1252,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{DBFF}\u{DFFF}"
       let y: string = "\u{DBFF}\u{DFFA}"
       let z: String = new String("\u{DBFF}\u{DFFA}")
@@ -1267,7 +1267,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{A123}"
       let y: string = "\u{A122}"
       let z: String = new String("\u{A122}")
@@ -1282,7 +1282,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{A123}"
       let y: string = "\u{A123}"
       let z: String = new String("\u{A123}")
@@ -1297,7 +1297,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{00000068}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}"
       let y: string = "\u{00000068}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}"
       let z: String = new String("\u{00000068}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}")
@@ -1312,7 +1312,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{00000068}\u{00000065}\u{0000006c}\u{0000006d}\u{0000006f}"
       let y: string = "\u{00000068}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}"
       let z: String = new String("\u{00000068}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}")
@@ -1327,7 +1327,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = ""
       let y: string = ""
       let z: String = new String("")
@@ -1342,7 +1342,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = " "
       let y: string = ""
       let z: String = new String("")
@@ -1357,7 +1357,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = ""
       let y: string = "\n"
       let z: String = new String("\n")
@@ -1372,7 +1372,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\r"
       let y: string = ""
       let z: String = new String("")
@@ -1387,7 +1387,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "'aa"
       let y: string = "'aa"
       let z: String = new String("'aa")
@@ -1402,7 +1402,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "aa"
       let y: string = "aaa"
       let z: String = new String("aaa")
@@ -1417,7 +1417,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "ac"
       let y: string = "dc"
       let z: String = new String("dc")
@@ -1432,7 +1432,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "AAAAAB"
       let y: string = "AAAAAAA"
       let z: String = new String("AAAAAAA")
@@ -1447,7 +1447,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "AAAAAA"
       let y: string = "aaaaaa"
       let z: String = new String("aaaaaa")
@@ -1462,7 +1462,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "~"
       let y: string = "~"
       let z: String = new String("~")
@@ -1477,7 +1477,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "alea iacta est"
       let y: string = "alea iacta est"
       let z: String = new String("alea iacta est")
@@ -1492,7 +1492,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "987654321"
       let y: string = "987654321"
       let z: String = new String("987654321")
@@ -1507,7 +1507,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "9876543210"
       let y: string = "987654321"
       let z: String = new String("987654321")
@@ -1522,7 +1522,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "!@#$%^&*()_+-=`~\"\\|[]{}/?.>,<\\"
       let y: string = "!@#$%^&*()_+-=`~\"\\|[]{}/?.>,<\\"
       let z: String = new String("!@#$%^&*()_+-=`~\"\\|[]{}/?.>,<\\")
@@ -1537,7 +1537,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\xff\xfe\xac 1\x003\x00,\x005\x006\x00"
       let y: string = "\xff\xfe\xac 1\x003\x00,\x005\x006\x00"
       let z: String = new String("\xff\xfe\xac 1\x003\x00,\x005\x006\x00")
@@ -1552,7 +1552,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\xff\xfe\xac 1\x003\x00,\x005\x007\x00"
       let y: string = "\xff\xfe\xac 1\x003\x00,\x005\x006\x00"
       let z: String = new String("\xff\xfe\xac 1\x003\x00,\x005\x006\x00")
@@ -1567,7 +1567,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{D800}"
       let y: string = "\u{D800}"
       let z: String = new String("\u{D800}")
@@ -1582,7 +1582,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{D801}"
       let y: string = "\u{D800}"
       let z: String = new String("\u{D800}")
@@ -1597,7 +1597,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{D800}"
       let y: string = "\u{D801}"
       let z: String = new String("\u{D801}")
@@ -1612,7 +1612,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0104", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0104", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{DC00}"
       let y: string = "\u{DC00}"
       let z: String = new String("\u{DC00}")
@@ -1627,7 +1627,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0105", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0105", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{DC01}"
       let y: string = "\u{DC00}"
       let z: String = new String("\u{DC00}")
@@ -1642,7 +1642,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0106", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0106", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{DC00}"
       let y: string = "\u{DC01}"
       let z: String = new String("\u{DC01}")
@@ -1657,7 +1657,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0107", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0107", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{DBFF}\u{DFFF}"
       let y: string = "\u{DBFF}\u{DFFF}"
       let z: String = new String("\u{DBFF}\u{DFFF}")
@@ -1672,7 +1672,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0108", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0108", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{DBFF}\u{DFFF}"
       let y: string = "\u{DBFF}\u{DFFA}"
       let z: String = new String("\u{DBFF}\u{DFFA}")
@@ -1687,7 +1687,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0109", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0109", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{DBFA}\u{DFFF}"
       let y: string = "\u{DBFF}\u{DFFF}"
       let z: String = new String("\u{DBFF}\u{DFFF}")
@@ -1702,7 +1702,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0110", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0110", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{A123}"
       let y: string = "\u{A122}"
       let z: String = new String("\u{A122}")
@@ -1717,7 +1717,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0111", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0111", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{A123}"
       let y: string = "\u{A123}"
       let z: String = new String("\u{A123}")
@@ -1732,7 +1732,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0112", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0112", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{A122}"
       let y: string = "\u{A123}"
       let z: String = new String("\u{A123}")
@@ -1747,7 +1747,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0113", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0113", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{00000068}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}"
       let y: string = "\u{00000068}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}"
       let z: String = new String("\u{00000068}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}")
@@ -1762,7 +1762,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0114", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0114", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{00000068}\u{00000065}\u{0000006c}\u{0000006d}\u{0000006f}"
       let y: string = "\u{00000068}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}"
       let z: String = new String("\u{00000068}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}")
@@ -1777,7 +1777,7 @@ export default function StringRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testStringRelationalOperators0115", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testStringRelationalOperators0115", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: string = "\u{00000067}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}"
       let y: string = "\u{00000068}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}"
       let z: String = new String("\u{00000068}\u{00000065}\u{0000006c}\u{0000006c}\u{0000006f}")

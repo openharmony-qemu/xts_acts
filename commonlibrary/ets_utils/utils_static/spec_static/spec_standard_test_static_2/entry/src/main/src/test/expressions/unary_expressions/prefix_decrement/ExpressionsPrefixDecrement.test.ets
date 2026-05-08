@@ -260,7 +260,6 @@ export default function ExpressionsPrefixDecrement(): void {
       expect(+--l).assertEqual(-16)
       expect(--l+l).assertEqual(-17-17)
 
-      // array
       let an: number[] = [-1.5, 3.14]
       expect(--an[0]).assertEqual(-2.5)
       expect(an[0]).assertEqual(-2.5)

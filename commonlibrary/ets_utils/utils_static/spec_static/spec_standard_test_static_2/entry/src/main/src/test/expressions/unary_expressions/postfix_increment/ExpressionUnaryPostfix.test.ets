@@ -259,7 +259,6 @@ export default function ExpressionsUnaryPostfix(): void {
       expect(+l++).assertEqual(-11)
       expect(l+++l).assertEqual(-10-9)
 
-      // array
       let an: number[] = [-1.5, 3.14]
       expect(an[0]++).assertEqual(-1.5)
       expect(an[0]).assertEqual(-0.5)

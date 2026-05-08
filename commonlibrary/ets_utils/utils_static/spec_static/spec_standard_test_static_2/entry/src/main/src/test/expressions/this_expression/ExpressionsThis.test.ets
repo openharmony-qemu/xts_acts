@@ -332,8 +332,8 @@ class A_this_with_nullable_type {
   }
 }
 
-export default function ExpressionsThisTestSuite(): void {
-  describe("ExpressionsThisTestSuite", () => {
+export default function ExpressionsThisTest(): void {
+  describe("ExpressionsThisTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -356,7 +356,7 @@ export default function ExpressionsThisTestSuite(): void {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_THIS_0100
+     * @tc.number    SUB_EXPRESSIONS_THIS_TEST_0100
      * @tc.name      testExpressionsThis0001
      * @tc.desc      The keyword this can be used to access private fields from within instance
      *               methods.
@@ -374,7 +374,7 @@ export default function ExpressionsThisTestSuite(): void {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_THIS_0200
+     * @tc.number    SUB_EXPRESSIONS_THIS_TEST_0200
      * @tc.name      testExpressionsThis0002
      * @tc.desc      The keyword this can be used to access instance fields from within instance
      *               methods.
@@ -390,7 +390,7 @@ export default function ExpressionsThisTestSuite(): void {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_THIS_0300
+     * @tc.number    SUB_EXPRESSIONS_THIS_TEST_0300
      * @tc.name      testExpressionsThis0003
      * @tc.desc      The keyword this works correctly in generic class methods.
      * @tc.size      MediumTest
@@ -414,7 +414,7 @@ export default function ExpressionsThisTestSuite(): void {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_THIS_0400
+     * @tc.number    SUB_EXPRESSIONS_THIS_TEST_0400
      * @tc.name      testExpressionsThis0004
      * @tc.desc      The keyword this works correctly in generic interface methods.
      * @tc.size      MediumTest
@@ -436,7 +436,7 @@ export default function ExpressionsThisTestSuite(): void {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_THIS_0500
+     * @tc.number    SUB_EXPRESSIONS_THIS_TEST_0500
      * @tc.name      testExpressionsThis0005
      * @tc.desc      The keyword this enables fluent API pattern in generic classes.
      * @tc.size      MediumTest
@@ -467,7 +467,7 @@ export default function ExpressionsThisTestSuite(): void {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_THIS_0600
+     * @tc.number    SUB_EXPRESSIONS_THIS_TEST_0600
      * @tc.name      testExpressionsThis0006
      * @tc.desc      The keyword this can only be used as an expression in the body of an instance
      *               method of a class, enum or interface.
@@ -482,7 +482,7 @@ export default function ExpressionsThisTestSuite(): void {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_THIS_0700
+     * @tc.number    SUB_EXPRESSIONS_THIS_TEST_0700
      * @tc.name      testExpressionsThis0007
      * @tc.desc      The keyword this in a direct call expression this(arguments) can only be used
      *               in an explicit constructor call statement.
@@ -505,7 +505,7 @@ export default function ExpressionsThisTestSuite(): void {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_THIS_0800
+     * @tc.number    SUB_EXPRESSIONS_THIS_TEST_0800
      * @tc.name      testExpressionsThis0008
      * @tc.desc      The keyword this can only be used as an expression in the body of an instance
      *               method of a class, enum or interface.
@@ -520,7 +520,7 @@ export default function ExpressionsThisTestSuite(): void {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_THIS_0900
+     * @tc.number    SUB_EXPRESSIONS_THIS_TEST_0900
      * @tc.name      testExpressionsThis0009
      * @tc.desc      It may be used in a lambda expression only if it is allowed in the context
      *               in which the lambda expression appears.
@@ -534,7 +534,7 @@ export default function ExpressionsThisTestSuite(): void {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_THIS_1000
+     * @tc.number    SUB_EXPRESSIONS_THIS_TEST_1000
      * @tc.name      testExpressionsThis0010
      * @tc.desc      The keyword this can access interface fields from within interface methods.
      * @tc.size      MediumTest
@@ -554,7 +554,7 @@ export default function ExpressionsThisTestSuite(): void {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_THIS_1100
+     * @tc.number    SUB_EXPRESSIONS_THIS_TEST_1100
      * @tc.name      testExpressionsThis0011
      * @tc.desc      The keyword this can call interface methods from within another interface
      *               method.
@@ -569,7 +569,7 @@ export default function ExpressionsThisTestSuite(): void {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_THIS_1200
+     * @tc.number    SUB_EXPRESSIONS_THIS_TEST_1200
      * @tc.name      testExpressionsThis0012
      * @tc.desc      The parameter this in a lambda body and in the surrounding context denote
      *               the same value.
@@ -586,7 +586,7 @@ export default function ExpressionsThisTestSuite(): void {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_THIS_1300
+     * @tc.number    SUB_EXPRESSIONS_THIS_TEST_1300
      * @tc.name      testExpressionsThis0013
      * @tc.desc      The keyword this can be used to access instance methods from within another
      *               instance method.
@@ -605,7 +605,7 @@ export default function ExpressionsThisTestSuite(): void {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_THIS_1400
+     * @tc.number    SUB_EXPRESSIONS_THIS_TEST_1400
      * @tc.name      testExpressionsThis0014
      * @tc.desc      The keyword this can be used in nested method calls.
      * @tc.size      MediumTest
@@ -623,7 +623,7 @@ export default function ExpressionsThisTestSuite(): void {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_THIS_1500
+     * @tc.number    SUB_EXPRESSIONS_THIS_TEST_1500
      * @tc.name      testExpressionsThis0015
      * @tc.desc      The keyword this used as a primary expression denotes a value that is a reference
      *               to the object for which the instance method was called or to the object being constructed.
@@ -640,7 +640,7 @@ export default function ExpressionsThisTestSuite(): void {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_THIS_1600
+     * @tc.number    SUB_EXPRESSIONS_THIS_TEST_1600
      * @tc.name      testExpressionsThis0016
      * @tc.desc      The value denoted by this in a lambda body and in the surrounding context
      *               is the same.
@@ -654,7 +654,7 @@ export default function ExpressionsThisTestSuite(): void {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_THIS_1700
+     * @tc.number    SUB_EXPRESSIONS_THIS_TEST_1700
      * @tc.name      testExpressionsThis0017
      * @tc.desc      The keyword this should return the class type when used in a class method.
      * @tc.size      MediumTest
@@ -677,7 +677,7 @@ export default function ExpressionsThisTestSuite(): void {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_THIS_1800
+     * @tc.number    SUB_EXPRESSIONS_THIS_TEST_1800
      * @tc.name      testExpressionsThis0018
      * @tc.desc      The keyword this should return the interface type when used in an interface
      *               method.
@@ -701,7 +701,7 @@ export default function ExpressionsThisTestSuite(): void {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_THIS_1900
+     * @tc.number    SUB_EXPRESSIONS_THIS_TEST_1900
      * @tc.name      testExpressionsThis0019
      * @tc.desc      The class of the actual object referred to at runtime can be T if T is a class
      *               type, or a subclass of T.
@@ -729,7 +729,7 @@ export default function ExpressionsThisTestSuite(): void {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_THIS_2000
+     * @tc.number    SUB_EXPRESSIONS_THIS_TEST_2000
      * @tc.name      testExpressionsThis0020
      * @tc.desc      A corresponding class type is the type of this expression when used in class
      *               method.
@@ -745,7 +745,7 @@ export default function ExpressionsThisTestSuite(): void {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_THIS_2100
+     * @tc.number    SUB_EXPRESSIONS_THIS_TEST_2100
      * @tc.name      testExpressionsThis0021
      * @tc.desc      A corresponding interface type is the type of this expression when used in
      *               interface method.
@@ -761,7 +761,7 @@ export default function ExpressionsThisTestSuite(): void {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_THIS_2200
+     * @tc.number    SUB_EXPRESSIONS_THIS_TEST_2200
      * @tc.name      testExpressionsThis0022
      * @tc.desc      "Any lexically enclosing instance (§??and §??) can be referred to by\
      *               \ explicitly qualifying the keyword this."

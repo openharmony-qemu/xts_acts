@@ -33,8 +33,8 @@ async function sleep(time: int): Promise<int> {
     }, time);
   });
 }
-export default function NumericRelationalTest(): void {
-  describe("NumericRelationalTest", () => {
+export default function NumericRelationalOperatorsTest(): void {
+  describe("NumericRelationalOperatorsTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -64,7 +64,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const one: int = 1
       
       expect(one < 2).assertTrue()
@@ -80,7 +80,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const one: int = 1
       
       expect(one < 765234).assertTrue()
@@ -96,7 +96,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const one: int = 1
       
       expect(one < 0o777).assertTrue()
@@ -112,7 +112,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const one: int = 1
       
       expect(one < 5).assertTrue()
@@ -128,7 +128,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const one: int = 1
       
       expect(one > NaN).assertFalse()
@@ -144,7 +144,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let one: NonNullable<int> = 1
       let two: Readonly<int> = 2
       let three: Required<Readonly<number>> = 3.1
@@ -166,7 +166,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = 1.0.toDouble();
@@ -183,7 +183,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 1.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = 0.0.toDouble();
@@ -200,7 +200,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = -1.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = 0.0.toDouble();
@@ -217,7 +217,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = -1.0.toDouble();
@@ -234,7 +234,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = 0.0f.toFloat();
       let bx: Float = new Float(x);
       let y: float = 1.0f.toFloat();
@@ -251,7 +251,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = 1.0f.toFloat();
       let bx: Float = new Float(x);
       let y: float = 0.0f.toFloat();
@@ -268,7 +268,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = -1.0f.toFloat();
       let bx: Float = new Float(x);
       let y: float = 0.0f.toFloat();
@@ -285,7 +285,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = 0.0f.toFloat();
       let bx: Float = new Float(x);
       let y: float = -1.0f.toFloat();
@@ -302,7 +302,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = 1.0.toDouble();
@@ -319,7 +319,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 1.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = 0.0.toDouble();
@@ -336,7 +336,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = -1.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = 0.0.toDouble();
@@ -353,7 +353,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = -1.0.toDouble();
@@ -370,7 +370,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = 0.0f.toFloat();
       let bx: Float = new Float(x);
       let y: float = 1.0f.toFloat();
@@ -387,7 +387,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = 1.0f.toFloat();
       let bx: Float = new Float(x);
       let y: float = 0.0f.toFloat();
@@ -404,7 +404,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = -1.0f.toFloat();
       let bx: Float = new Float(x);
       let y: float = 0.0f.toFloat();
@@ -421,7 +421,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = 0.0f.toFloat();
       let bx: Float = new Float(x);
       let y: float = -1.0f.toFloat();
@@ -438,7 +438,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = 1.0.toDouble();
@@ -455,7 +455,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 1.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = 0.0.toDouble();
@@ -472,7 +472,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = -1.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = 0.0.toDouble();
@@ -489,7 +489,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = -1.0.toDouble();
@@ -506,7 +506,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.0.toDouble();
       let bx: Double = new Double(x);
       let y: float = 1.0f.toFloat();
@@ -523,7 +523,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 1.0.toDouble();
       let bx: Double = new Double(x);
       let y: float = 0.0f.toFloat();
@@ -540,7 +540,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = -1.0.toDouble();
       let bx: Double = new Double(x);
       let y: float = 0.0f.toFloat();
@@ -557,7 +557,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.0.toDouble();
       let bx: Double = new Double(x);
       let y: float = -1.0f.toFloat();
@@ -574,7 +574,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = 1.0.toDouble();
@@ -591,7 +591,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 1.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = 0.0.toDouble();
@@ -608,7 +608,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = -1.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = 0.0.toDouble();
@@ -625,7 +625,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = -1.0.toDouble();
@@ -642,7 +642,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = 0.0f.toFloat();
       let bx: Float = new Float(x);
       let y: float = 1.0f.toFloat();
@@ -659,7 +659,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = 1.0f.toFloat();
       let bx: Float = new Float(x);
       let y: float = 0.0f.toFloat();
@@ -676,7 +676,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = -1.0f.toFloat();
       let bx: Float = new Float(x);
       let y: float = 0.0f.toFloat();
@@ -693,7 +693,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = 0.0f.toFloat();
       let bx: Float = new Float(x);
       let y: float = -1.0f.toFloat();
@@ -710,7 +710,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: Double = (0.0).toDouble();
       let bx: Double = new Double(x);
       let y: Float = (-0.0).toFloat();
@@ -727,7 +727,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: Double = (0.0).toDouble();
       let bx: Double = new Double(x);
       let y: Float = (-0.0).toFloat();
@@ -744,7 +744,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: Double = (1.0).toDouble();
       let bx: Double = new Double(x);
       let y: Float = (1.0).toFloat();
@@ -761,7 +761,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: Double = (1.0).toDouble();
       let bx: Double = new Double(x);
       let y: Float = (1.0).toFloat();
@@ -778,7 +778,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: Double = (-1.0).toDouble();
       let bx: Double = new Double(x);
       let y: Float = (-1.0).toFloat();
@@ -795,7 +795,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: Double = (-1.0).toDouble();
       let bx: Double = new Double(x);
       let y: Float = (-1.0).toFloat();
@@ -812,7 +812,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = -0.0.toDouble();
@@ -829,7 +829,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = -0.0.toDouble();
@@ -846,7 +846,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 1.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = 1.0.toDouble();
@@ -863,7 +863,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 1.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = 1.0.toDouble();
@@ -880,7 +880,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = -1.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = -1.0.toDouble();
@@ -897,7 +897,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = -1.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = -1.0.toDouble();
@@ -914,7 +914,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = sqrt(-1.0f).toFloat();
       let bx: Float = new Float(x);
       let y: float = 0.0f.toFloat();
@@ -931,7 +931,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = 0.0f.toFloat();
       let bx: Float = new Float(x);
       let y: float = sqrt(-1.0f).toFloat();
@@ -948,7 +948,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = sqrt(-1.0f).toFloat();
       let bx: Float = new Float(x);
       let y: float = 0.0f.toFloat();
@@ -965,7 +965,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = 0.0f.toFloat();
       let bx: Float = new Float(x);
       let y: float = sqrt(-1.0f).toFloat();
@@ -982,7 +982,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = sqrt(-1.0f).toFloat();
       let bx: Float = new Float(x);
       let y: float = 0.0f.toFloat();
@@ -999,7 +999,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = 0.0f.toFloat();
       let bx: Float = new Float(x);
       let y: float = sqrt(-1.0f).toFloat();
@@ -1016,7 +1016,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = sqrt(-1).toFloat();
       let bx: Float = new Float(x);
       let y: float = 0.0f.toFloat();
@@ -1033,7 +1033,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = 0.0f.toFloat();
       let bx: Float = new Float(x);
       let y: float = sqrt(-1.0f).toFloat();
@@ -1050,7 +1050,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = sqrt(-1).toDouble();
       let bx: Double = new Double(x);
       let y: double = 0.0.toDouble();
@@ -1067,7 +1067,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = sqrt(-1).toDouble();
@@ -1084,7 +1084,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = sqrt(-1).toDouble();
       let bx: Double = new Double(x);
       let y: double = 0.0.toDouble();
@@ -1101,7 +1101,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = sqrt(-1).toDouble();
@@ -1118,7 +1118,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = sqrt(-1).toDouble();
       let bx: Double = new Double(x);
       let y: double = 0.0.toDouble();
@@ -1135,7 +1135,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = sqrt(-1).toDouble();
@@ -1152,7 +1152,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = sqrt(-1).toDouble();
       let bx: Double = new Double(x);
       let y: double = 0.0.toDouble();
@@ -1169,7 +1169,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = sqrt(-1).toDouble();
@@ -1186,7 +1186,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = log(0.0f).toFloat();
       let bx: Float = new Float(x);
       let y: float = 0.0f.toFloat();
@@ -1203,7 +1203,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = log(0.0f).toFloat();
       let bx: Float = new Float(x);
       let y: float = 0.0f.toFloat();
@@ -1220,7 +1220,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = log(0.0f).toFloat();
       let bx: Float = new Float(x);
       let y: float = 0.0f.toFloat();
@@ -1237,7 +1237,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = log(0.0f).toFloat();
       let bx: Float = new Float(x);
       let y: float = 0.0f.toFloat();
@@ -1254,7 +1254,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = 0.0f.toFloat();
       let bx: Float = new Float(x);
       let y: float = 1.0f/0.0f.toFloat();
@@ -1271,7 +1271,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = 0.0f.toFloat();
       let bx: Float = new Float(x);
       let y: float = 1.0f/0.0f.toFloat();
@@ -1288,7 +1288,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = 0.0f.toFloat();
       let bx: Float = new Float(x);
       let y: float = 1.0f/0.0f.toFloat();
@@ -1305,7 +1305,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = 0.0f.toFloat();
       let bx: Float = new Float(x);
       let y: float = 1.0f/0.0f.toFloat();
@@ -1322,7 +1322,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = log(0.0f).toFloat();
       let bx: Float = new Float(x);
       let y: float = 1.0f/0.0f.toFloat();
@@ -1339,7 +1339,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = log(0.0f).toFloat();
       let bx: Float = new Float(x);
       let y: float = 1.0f/0.0f.toFloat();
@@ -1356,7 +1356,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = log(0.0f).toFloat();
       let bx: Float = new Float(x);
       let y: float = 1.0f/0.0f.toFloat();
@@ -1373,7 +1373,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = log(0.0f).toFloat();
       let bx: Float = new Float(x);
       let y: float = 1.0f/0.0f.toFloat();
@@ -1390,7 +1390,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = log(0).toDouble();
       let bx: Double = new Double(x);
       let y: double = 0.0.toDouble();
@@ -1407,7 +1407,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = log(0).toDouble();
       let bx: Double = new Double(x);
       let y: double = 0.0.toDouble();
@@ -1424,7 +1424,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = log(0).toDouble();
       let bx: Double = new Double(x);
       let y: double = 0.0.toDouble();
@@ -1441,7 +1441,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = log(0).toDouble();
       let bx: Double = new Double(x);
       let y: double = 0.0.toDouble();
@@ -1458,7 +1458,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = 1.0/0.0.toDouble();
@@ -1475,7 +1475,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = 1.0/0.0.toDouble();
@@ -1492,7 +1492,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = 1.0/0.0.toDouble();
@@ -1509,7 +1509,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = 1.0/0.0.toDouble();
@@ -1526,7 +1526,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = log(0).toDouble();
       let bx: Double = new Double(x);
       let y: double = 1.0/0.0.toDouble();
@@ -1543,7 +1543,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = log(0).toDouble();
       let bx: Double = new Double(x);
       let y: double = 1.0/0.0.toDouble();
@@ -1560,7 +1560,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = log(0).toDouble();
       let bx: Double = new Double(x);
       let y: double = 1.0/0.0.toDouble();
@@ -1577,7 +1577,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = log(0).toDouble();
       let bx: Double = new Double(x);
       let y: double = 1.0/0.0.toDouble();
@@ -1594,7 +1594,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 0.0.toDouble();
       let bx: Double = new Double(x);
       let y: double = -0.0.toDouble();
@@ -1611,7 +1611,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: float = 0.0f.toFloat();
       let bx: Float = new Float(x);
       let y: float = -0.0f.toFloat();
@@ -1628,7 +1628,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = 0;
       let bx: Int = new Int(0);
       let y: int = 1;
@@ -1645,7 +1645,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = 1;
       let bx: Int = new Int(1);
       let y: int = 0;
@@ -1662,7 +1662,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = -1;
       let bx: Int = new Int(-1);
       let y: int = 0;
@@ -1679,7 +1679,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = 0;
       let bx: Int = new Int(0);
       let y: int = -1;
@@ -1696,7 +1696,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: byte = 0;
       let bx: Byte = new Byte(0);
       let y: byte = 1;
@@ -1713,7 +1713,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: byte = 1;
       let bx: Byte = new Byte(1);
       let y: byte = 0;
@@ -1730,7 +1730,7 @@ export default function NumericRelationalTest(): void {
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it("testNumericRelationalOperators0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: byte = -1;
       let bx: Byte = new Byte(-1);
       let y: byte = 0;

@@ -260,7 +260,6 @@ export default function ExpressionsUnaryDecrement(): void {
       expect(+l--).assertEqual(-15)
       expect(l--+l).assertEqual(-16-17)
 
-      // array
       let an: number[] = [-1.5, 3.14]
       expect(an[0]--).assertEqual(-1.5)
       expect(an[0]).assertEqual(-2.5)

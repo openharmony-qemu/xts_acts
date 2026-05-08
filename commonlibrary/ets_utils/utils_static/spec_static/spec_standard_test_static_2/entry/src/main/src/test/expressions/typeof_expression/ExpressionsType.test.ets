@@ -1496,8 +1496,8 @@ let tof_vars_34_g1:Floating = 3.14f
 
 let tof_vars_35_g1:Integral = 42
 
-export default function ExpressionsTypePart(): void {
-  describe("ExpressionsTypePart", () => {
+export default function ExpressionsTypeTest(): void {
+  describe("ExpressionsTypeTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -1520,7 +1520,7 @@ export default function ExpressionsTypePart(): void {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_0100
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_0100
      * @tc.name      testExpressionsType0001
      * @tc.desc      Types defined at compile time enum - "int"
      * @tc.size      MediumTest
@@ -1534,7 +1534,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_0200
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_0200
      * @tc.name      testExpressionsType0002
      * @tc.desc      Types defined at compile time enum - "string"
      * @tc.size      MediumTest
@@ -1548,7 +1548,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_0300
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_0300
      * @tc.name      testExpressionsType0003
      * @tc.desc      Types defined at compile time bigint - "bigint"
      * @tc.size      MediumTest
@@ -1562,7 +1562,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_0400
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_0400
      * @tc.name      testExpressionsType0004
      * @tc.desc      Types defined at compile time boolean - "boolean"
      * @tc.size      MediumTest
@@ -1576,7 +1576,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_0500
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_0500
      * @tc.name      testExpressionsType0005
      * @tc.desc      Types defined at compile time numeric type - "number"
      * @tc.size      MediumTest
@@ -1590,7 +1590,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_0600
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_0600
      * @tc.name      testExpressionsType0006
      * @tc.desc      Types defined at compile time byte type - "byte"
      * @tc.size      MediumTest
@@ -1604,7 +1604,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_0700
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_0700
      * @tc.name      testExpressionsType0007
      * @tc.desc      Types defined at compile time short type - "short"
      * @tc.size      MediumTest
@@ -1618,7 +1618,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_0800
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_0800
      * @tc.name      testExpressionsType0008
      * @tc.desc      Types defined at compile time int type - "int"
      * @tc.size      MediumTest
@@ -1632,7 +1632,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_0900
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_0900
      * @tc.name      testExpressionsType0009
      * @tc.desc      Types defined at compile time long type - "long"
      * @tc.size      MediumTest
@@ -1646,7 +1646,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_1000
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_1000
      * @tc.name      testExpressionsType0010
      * @tc.desc      Types defined at compile time float type - "float"
      * @tc.size      MediumTest
@@ -1660,7 +1660,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_1100
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_1100
      * @tc.name      testExpressionsType0011
      * @tc.desc      Types defined at compile time numeric type - "number"
      * @tc.size      MediumTest
@@ -1674,7 +1674,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_1200
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_1200
      * @tc.name      testExpressionsType0012
      * @tc.desc      Types defined at compile time any class or interface - "object"
      * @tc.size      MediumTest
@@ -1689,7 +1689,7 @@ export default function ExpressionsTypePart(): void {
 	
 	
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_1300
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_1300
      * @tc.name      testExpressionsType0013
      * @tc.desc      Types defined at compile time any class or interface - "object"
      * @tc.size      MediumTest
@@ -1703,7 +1703,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_1400
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_1400
      * @tc.name      testExpressionsType0014
      * @tc.desc      Types defined at compile time T|null - T is a class (but not Object), interface or array - "object"
      * @tc.size      MediumTest
@@ -1717,7 +1717,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_1500
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_1500
      * @tc.name      testExpressionsType0015
      * @tc.desc      Types defined at compile time T|null - T is a class (but not Object), interface or array - "object"
      * @tc.size      MediumTest
@@ -1731,7 +1731,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_1600
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_1600
      * @tc.name      testExpressionsType0016
      * @tc.desc      Types defined at compile time T|null - T is a class (but not Object), interface or array - "object"
      * @tc.size      MediumTest
@@ -1745,7 +1745,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_1700
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_1700
      * @tc.name      testExpressionsType0017
      * @tc.desc      Types defined at compile time T|null - T is a class (but not Object), interface or array - "object"
      * @tc.size      MediumTest
@@ -1759,7 +1759,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_1800
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_1800
      * @tc.name      testExpressionsType0018
      * @tc.desc      Types defined at compile time T|null - T is a class (but not Object), interface or array - "object"
      * @tc.size      MediumTest
@@ -1773,7 +1773,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_1900
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_1900
      * @tc.name      testExpressionsType0019
      * @tc.desc      Types defined at compile time T|null - T is a class (but not Object), interface or array - "object"
      * @tc.size      MediumTest
@@ -1787,7 +1787,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_2000
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_2000
      * @tc.name      testExpressionsType0020
      * @tc.desc      Types defined at compile time T|null - T is a class (but not Object), interface or array - "object"
      * @tc.size      MediumTest
@@ -1801,7 +1801,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_2100
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_2100
      * @tc.name      testExpressionsType0021
      * @tc.desc      Types defined at compile time T|null - T is a class (but not Object), interface or array - "object"
      * @tc.size      MediumTest
@@ -1815,7 +1815,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_2200
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_2200
      * @tc.name      testExpressionsType0022
      * @tc.desc      Types defined at compile time T|null - T is a class (but not Object), interface or array - "object"
      * @tc.size      MediumTest
@@ -1829,7 +1829,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_2300
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_2300
      * @tc.name      testExpressionsType0023
      * @tc.desc      Types defined at compile time T|null - T is a class (but not Object), interface or array - "object"
      * @tc.size      MediumTest
@@ -1843,7 +1843,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_2400
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_2400
      * @tc.name      testExpressionsType0024
      * @tc.desc      Types defined at compile time T|null - T is a class (but not Object), interface or array - "object"
      * @tc.size      MediumTest
@@ -1857,7 +1857,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_2500
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_2500
      * @tc.name      testExpressionsType0025
      * @tc.desc      Types defined at compile time T|null - T is a class (but not Object), interface or array - "object"
      * @tc.size      MediumTest
@@ -1871,7 +1871,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_2600
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_2600
      * @tc.name      testExpressionsType0026
      * @tc.desc      Types defined at compile time string - "string"
      * @tc.size      MediumTest
@@ -1885,7 +1885,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_2700
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_2700
      * @tc.name      testExpressionsType0027
      * @tc.desc      Types defined at compile time undefined - "undefined"
      * @tc.size      MediumTest
@@ -1899,7 +1899,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_2800
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_2800
      * @tc.name      testExpressionsType0028
      * @tc.desc      Types defined at compile time null - "object"
      * @tc.size      MediumTest
@@ -1913,7 +1913,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_2900
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_2900
      * @tc.name      testExpressionsType0029
      * @tc.desc      Types defined at compile time any function type - "function"
      * @tc.size      MediumTest
@@ -1926,7 +1926,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_3000
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_3000
      * @tc.name      testExpressionsType0030
      * @tc.desc      If evaluation causes an error, then the result of a typeof expression cannot
      *               be determined.
@@ -1945,7 +1945,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_3100
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_3100
      * @tc.name      testExpressionsType0031
      * @tc.desc      If evaluation causes an error, then the result of a typeof expression cannot
      *               be determined.
@@ -1964,7 +1964,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_3200
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_3200
      * @tc.name      testExpressionsType0032
      * @tc.desc      If evaluation causes an error, then the result of a typeof expression cannot
      *               be determined.
@@ -1983,7 +1983,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_3300
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_3300
      * @tc.name      testExpressionsType0033
      * @tc.desc      If evaluation causes an error, then the result of a typeof expression cannot
      *               be determined.
@@ -2002,7 +2002,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_3400
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_3400
      * @tc.name      testExpressionsType0034
      * @tc.desc      Types evaluated at runtime
      *               numeric type - "int"
@@ -2017,7 +2017,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_3500
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_3500
      * @tc.name      testExpressionsType0035
      * @tc.desc      Types evaluated at runtime
      *               Object - "object"
@@ -2031,7 +2031,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_3600
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_3600
      * @tc.name      testExpressionsType0036
      * @tc.desc      Types evaluated at runtime
      *               union type - "object"
@@ -2045,7 +2045,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_3700
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_3700
      * @tc.name      testExpressionsType0037
      * @tc.desc      Types evaluated at runtime
      *               union type - "object"
@@ -2059,7 +2059,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_3800
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_3800
      * @tc.name      testExpressionsType0038
      * @tc.desc      Types evaluated at runtime
      *               type parameter - "object"
@@ -2074,7 +2074,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_3900
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_3900
      * @tc.name      testExpressionsType0039
      * @tc.desc      Types evaluated at runtime
      *               type parameter - "object"
@@ -2089,7 +2089,7 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_4000
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_4000
      * @tc.name      testExpressionsType0040
      * @tc.desc      Types evaluated at runtime
      *               type parameter - "undefined"
@@ -2104,11 +2104,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_4100
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_4100
      * @tc.name      testExpressionsType0041
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2125,11 +2123,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_4200
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_4200
      * @tc.name      testExpressionsType0042
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2146,11 +2142,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_4300
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_4300
      * @tc.name      testExpressionsType0043
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2175,11 +2169,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_4400
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_4400
      * @tc.name      testExpressionsType0044
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2200,11 +2192,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_4500
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_4500
      * @tc.name      testExpressionsType0045
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2221,11 +2211,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_4600
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_4600
      * @tc.name      testExpressionsType0046
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2250,11 +2238,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_4700
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_4700
      * @tc.name      testExpressionsType0047
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2267,11 +2253,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_4800
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_4800
      * @tc.name      testExpressionsType0048
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2288,11 +2272,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_4900
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_4900
      * @tc.name      testExpressionsType0049
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2329,11 +2311,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_5000
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_5000
      * @tc.name      testExpressionsType0050
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2362,11 +2342,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_5100
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_5100
      * @tc.name      testExpressionsType0051
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2387,11 +2365,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_5200
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_5200
      * @tc.name      testExpressionsType0052
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2416,11 +2392,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_5300
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_5300
      * @tc.name      testExpressionsType0053
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2433,11 +2407,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_5400
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_5400
      * @tc.name      testExpressionsType0054
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2450,11 +2422,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_5500
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_5500
      * @tc.name      testExpressionsType0055
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2495,11 +2465,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_5600
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_5600
      * @tc.name      testExpressionsType0056
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2516,11 +2484,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_5700
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_5700
      * @tc.name      testExpressionsType0057
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2537,11 +2503,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_5800
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_5800
      * @tc.name      testExpressionsType0058
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2562,11 +2526,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_5900
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_5900
      * @tc.name      testExpressionsType0059
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2587,11 +2549,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_6000
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_6000
      * @tc.name      testExpressionsType0060
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2608,11 +2568,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_6100
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_6100
      * @tc.name      testExpressionsType0061
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2633,11 +2591,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_6200
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_6200
      * @tc.name      testExpressionsType0062
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2650,11 +2606,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_6300
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_6300
      * @tc.name      testExpressionsType0063
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2671,11 +2625,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_6400
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_6400
      * @tc.name      testExpressionsType0064
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2692,11 +2644,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_6500
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_6500
      * @tc.name      testExpressionsType0065
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2713,11 +2663,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_6600
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_6600
      * @tc.name      testExpressionsType0066
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2734,11 +2682,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_6700
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_6700
      * @tc.name      testExpressionsType0067
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2755,11 +2701,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_6800
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_6800
      * @tc.name      testExpressionsType0068
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2776,11 +2720,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_6900
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_6900
      * @tc.name      testExpressionsType0069
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2793,11 +2735,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_7000
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_7000
      * @tc.name      testExpressionsType0070
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2810,11 +2750,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_7100
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_7100
      * @tc.name      testExpressionsType0071
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2826,11 +2764,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_7200
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_7200
      * @tc.name      testExpressionsType0072
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2842,11 +2778,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_7300
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_7300
      * @tc.name      testExpressionsType0073
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2858,11 +2792,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_7400
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_7400
      * @tc.name      testExpressionsType0074
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2874,11 +2806,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_7500
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_7500
      * @tc.name      testExpressionsType0075
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2890,11 +2820,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_7600
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_7600
      * @tc.name      testExpressionsType0076
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2906,11 +2834,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_7700
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_7700
      * @tc.name      testExpressionsType0077
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2921,11 +2847,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_7800
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_7800
      * @tc.name      testExpressionsType0078
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2936,11 +2860,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_7900
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_7900
      * @tc.name      testExpressionsType0079
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2953,11 +2875,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_8000
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_8000
      * @tc.name      testExpressionsType0080
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2969,11 +2889,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_8100
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_8100
      * @tc.name      testExpressionsType0081
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2984,11 +2902,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_8200
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_8200
      * @tc.name      testExpressionsType0082
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2999,11 +2915,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_8300
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_8300
      * @tc.name      testExpressionsType0083
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3013,11 +2927,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_8400
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_8400
      * @tc.name      testExpressionsType0084
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3028,11 +2940,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_8500
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_8500
      * @tc.name      testExpressionsType0085
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3048,11 +2958,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_8600
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_8600
      * @tc.name      testExpressionsType0086
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3064,11 +2972,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_8700
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_8700
      * @tc.name      testExpressionsType0087
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3080,11 +2986,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_8800
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_8800
      * @tc.name      testExpressionsType0088
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3098,11 +3002,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_8900
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_8900
      * @tc.name      testExpressionsType0089
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3112,11 +3014,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_9000
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_9000
      * @tc.name      testExpressionsType0090
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3126,11 +3026,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_9100
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_9100
      * @tc.name      testExpressionsType0091
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3147,11 +3045,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_9200
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_9200
      * @tc.name      testExpressionsType0092
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3162,11 +3058,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_9300
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_9300
      * @tc.name      testExpressionsType0093
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3177,11 +3071,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_9400
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_9400
      * @tc.name      testExpressionsType0094
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3193,11 +3085,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_9500
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_9500
      * @tc.name      testExpressionsType0095
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3209,11 +3099,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_9600
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_9600
      * @tc.name      testExpressionsType0096
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3224,11 +3112,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_9700
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_9700
      * @tc.name      testExpressionsType0097
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3240,11 +3126,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_9800
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_9800
      * @tc.name      testExpressionsType0098
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3254,11 +3138,9 @@ export default function ExpressionsTypePart(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_TYPE_9900
+     * @tc.number    SUB_EXPRESSIONS_TYPE_TEST_9900
      * @tc.name      testExpressionsType0099
-     * @tc.desc      Any typeof expression is of type string. The typeof expression values of the
-     *               types below are predefined, and the expressions require no evaluation. Chapter 3.0
-     *               states table of Aliases for predefined types.
+     * @tc.desc      Chapter 3.0 states table of Aliases for predefined types.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
