@@ -4403,7 +4403,7 @@ Camera_ErrorCode NDKCamera::UnregisterExposureStateChangeCallback(int useCaseCod
 {
     if (useCaseCode == PARAMETER_OK) {
         ret_ = OH_CaptureSession_UnregisterExposureStateChangeCallback(captureSession_, nullptr, 
-        OnExposureStateCallback);
+            OnExposureStateCallback);
     } else if (useCaseCode == PARAMETER1_ERROR) {
         ret_ = OH_CaptureSession_UnregisterExposureStateChangeCallback(nullptr, nullptr, OnExposureStateCallback);
     } else if (useCaseCode == PARAMETER2_ERROR) {
