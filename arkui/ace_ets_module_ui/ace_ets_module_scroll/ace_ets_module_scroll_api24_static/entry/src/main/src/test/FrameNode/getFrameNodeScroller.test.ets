@@ -81,25 +81,51 @@ export default function getFrameNodeScroller() {
       console.info('[getFrameNodeScroller_static_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('bind_grid_offy'));
+      let btn = await driver.findComponent(ON.id('bind_grid_getFrameNode'));
       await (btn?.click() as Promise<void>);
-      console.info("[getFrameNodeScroller_static_0100] Click 120 offset.");
+      console.info("[getFrameNodeScroller_static_0100] Click getFrameNode.");
       await CommonFunc.sleep(1500);
-      let btn2 = await driver.findComponent(ON.id('bind_grid_offTop'));
-      await (btn2?.click() as Promise<void>);
-      console.info("[getFrameNodeScroller_static_0100] Click top offset.");
-      await CommonFunc.sleep(1500);
-      let btn3 = await driver.findComponent(ON.id('bind_grid_readOff'));
-      await (btn3?.click() as Promise<void>);
-      console.info("[getFrameNodeScroller_static_0100] Click read offset.");
-      await CommonFunc.sleep(1500);
-      
-      let strJson = inspector.getInspectorByKey('bind_grid_offset_text');
+
+      let strJson = inspector.getInspectorByKey('bind_gridNode_result');
       let obj = JSON.parseJsonElement(strJson);
       await CommonFunc.sleep(1000);
       console.info('[getFrameNodeScroller_static_0100] content: ' + obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual("Grid default yOffset: 0");
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("Bind success：Grid");
       console.info('[getFrameNodeScroller_static_0100] END');
+      done();
+    });
+
+    /**
+     * @tc.name   getFrameNodeScroller_static_0200
+     * @tc.number SUB_ARKUI_SCROLLER_GETFRAMENODE_STATIC_TEST_0200
+     * @tc.desc   Set getFrameNode for the scroller.getFrameNode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('getFrameNodeScroller_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[getFrameNodeScroller_static_0200] START');
+      await CommonFunc.sleep(1000);
+      let driver = Driver.create();
+      let btn = await driver.findComponent(ON.id('bind_grid_offy'));
+      await (btn?.click() as Promise<void>);
+      console.info("[getFrameNodeScroller_static_0200] Click 120 offset.");
+      await CommonFunc.sleep(1500);
+      let btn2 = await driver.findComponent(ON.id('bind_grid_offTop'));
+      await (btn2?.click() as Promise<void>);
+      console.info("[getFrameNodeScroller_static_0200] Click top offset.");
+      await CommonFunc.sleep(1500);
+      let btn3 = await driver.findComponent(ON.id('bind_grid_readOff'));
+      await (btn3?.click() as Promise<void>);
+      console.info("[getFrameNodeScroller_static_0200] Click read offset.");
+      await CommonFunc.sleep(1500);
+
+      let strJson = inspector.getInspectorByKey('bind_grid_offset_text');
+      let obj = JSON.parseJsonElement(strJson);
+      await CommonFunc.sleep(1000);
+      console.info('[getFrameNodeScroller_static_0200] content: ' + obj.getElement('$attrs').getString('content'));
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("Grid default yOffset: 0");
+      console.info('[getFrameNodeScroller_static_0200] END');
       done();
     });
   });

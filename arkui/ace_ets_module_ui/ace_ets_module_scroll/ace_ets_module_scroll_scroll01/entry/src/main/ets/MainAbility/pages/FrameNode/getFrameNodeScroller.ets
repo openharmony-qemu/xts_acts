@@ -49,7 +49,6 @@ struct GridNodeDeclare {
       typeNode.bindController(frameNode, this.defaultGridScroller, 'Grid');
       this.bindResult = 'Bind success：'+ this.defaultGridScroller.getFrameNode()?.getNodeType();
       this.refreshOffset();
-      AppStorage.setOrCreate('grid_getFrameNode', this.bindResult);
     } catch (e) {
       this.bindResult = `Bind failed: code=${e.code}, msg=${e.message}`;
     }
@@ -87,6 +86,7 @@ struct GridNodeDeclare {
         .fontWeight(FontWeight.Bold)
 
       Text(this.bindResult).fontSize(14)
+        .id('bind_gridNode_result')
       Text(this.gridOffsetText).fontSize(14)
         .id('bind_grid_offset_text')
 

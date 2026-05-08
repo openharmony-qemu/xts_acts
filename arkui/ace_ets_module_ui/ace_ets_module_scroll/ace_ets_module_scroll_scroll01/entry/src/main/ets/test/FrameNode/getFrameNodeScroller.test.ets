@@ -53,22 +53,47 @@ export default function getFrameNodeScroller() {
       console.info('[getFrameNodeScroller_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
+      let btn: Component = await driver.findComponent(ON.id('bind_grid_getFrameNode'));
+      await btn.click();
+      console.info("[getFrameNodeScroller_0100] Click getFrameNode.");
+      await CommonFunc.sleep(1500);
+
+      let strJson = getInspectorByKey('bind_gridNode_result');
+      console.info('[getFrameNodeScroller_0100] content is: ' + JSON.parse(strJson).$attrs.content);
+      expect(JSON.parse(strJson).$attrs.content).assertEqual('Bind success：Grid');
+      console.info('[getFrameNodeScroller_0100] END');
+      done();
+    });
+
+    /**
+     * @tc.name   getFrameNodeScroller_0200
+     * @tc.number SUB_ARKUI_SCROLLER_GETFRAMENODE_TEST_0200
+     * @tc.desc   Set getFrameNode for the scroller.getFrameNode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('getFrameNodeScroller_0200', Level.LEVEL1, async (done: Function) => {
+      console.info('[getFrameNodeScroller_0200] START');
+      await CommonFunc.sleep(1000);
+      let driver = Driver.create();
       let btn: Component = await driver.findComponent(ON.id('bind_grid_offy'));
       await btn.click();
-      console.info("[getFrameNodeScroller_0100] Click 120 offset.");
+      console.info("[getFrameNodeScroller_0200] Click 120 offset.");
       await CommonFunc.sleep(1500);
       let btn2: Component = await driver.findComponent(ON.id('bind_grid_offTop'));
       await btn2.click();
-      console.info("[getFrameNodeScroller_0100] Click top offset.");
+      console.info("[getFrameNodeScroller_0200] Click top offset.");
       await CommonFunc.sleep(1500);
       let btn3: Component = await driver.findComponent(ON.id('bind_grid_readOff'));
       await btn3.click();
-      console.info("[getFrameNodeScroller_0100] Click read offset.");
+      console.info("[getFrameNodeScroller_0200] Click read offset.");
       await CommonFunc.sleep(1500);
+
       let strJson = getInspectorByKey('bind_grid_offset_text');
-      console.info('[getFrameNodeScroller_0100] content is: ' + JSON.parse(strJson).$attrs.content);
+      console.info('[getFrameNodeScroller_0200] content is: ' + JSON.parse(strJson).$attrs.content);
       expect(JSON.parse(strJson).$attrs.content).assertEqual('Grid default yOffset: 0');
-      console.info('[getFrameNodeScroller_0100] END');
+      console.info('[getFrameNodeScroller_0200] END');
       done();
     });
   })

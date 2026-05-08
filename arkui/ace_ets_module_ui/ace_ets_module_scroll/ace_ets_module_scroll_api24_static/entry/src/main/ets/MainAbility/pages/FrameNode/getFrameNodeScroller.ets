@@ -97,6 +97,7 @@ struct GridNodeDeclare {
         .fontWeight(FontWeight.Bold)
 
       Text(this.bindResult).fontSize(14)
+        .id('bind_gridNode_result')
       Text(this.gridOffsetText).fontSize(14)
         .id('bind_grid_offset_text')
 
