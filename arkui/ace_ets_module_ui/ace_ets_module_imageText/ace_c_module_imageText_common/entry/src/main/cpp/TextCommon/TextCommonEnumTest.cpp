@@ -176,13 +176,13 @@ static napi_value TextEnumTest_012(napi_env env, napi_callback_info info)
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result4_1 TextEnumTest_012 result=%{public}d", result4_1);
     ASSERT_EQ(result4_1, ARKUI_ERROR_CODE_NO_ERROR);
-    OH_ArkUI_LineHeightStyle_Destroy(lineHeightStyle);    
+    OH_ArkUI_LineHeightStyle_Destroy(lineHeightStyle);
     NAPI_END(text);
 }
 
 static napi_value TextEnumTest_013(napi_env env, napi_callback_info info)
 {
-    NAPI_START(text, ARKUI_NODE_TEXT);    
+    NAPI_START(text, ARKUI_NODE_TEXT);
     const OH_ArkUI_LineHeightStyle *lineHeightStyle2 = OH_ArkUI_LineHeightStyle_Create();
     auto result5_1 = OH_ArkUI_LineHeightStyle_GetLineHeightMultiple(lineHeightStyle2, PARAM_10);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
@@ -243,7 +243,7 @@ static napi_value TextEnumTest_017(napi_env env, napi_callback_info info)
     auto result9_1 = OH_ArkUI_LineSpacingStyle_SetLineSpacing(lineSpacingStyle, PARAM_30);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result9_1 TextEnumTest_017 result=%{public}d", result9_1);
-    ASSERT_EQ(result9_1, ARKUI_ERROR_CODE_NO_ERROR);    
+    ASSERT_EQ(result9_1, ARKUI_ERROR_CODE_NO_ERROR);
 
     OH_ArkUI_LineSpacingStyle_Destroy(lineSpacingStyle);
     NAPI_END(text);
@@ -279,7 +279,7 @@ static napi_value TextEnumTest_020(napi_env env, napi_callback_info info)
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result12_1 TextEnumTest_020 result=%{public}d", result12_1);
     ASSERT_EQ(result12_1, ARKUI_ERROR_CODE_NO_ERROR);
-    OH_ArkUI_LineSpacingStyle_Destroy(lineSpacingStyle);    
+    OH_ArkUI_LineSpacingStyle_Destroy(lineSpacingStyle);
     NAPI_END(text);
 }
 
