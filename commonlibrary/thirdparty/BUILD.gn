@@ -31,7 +31,7 @@ group("thirdparty") {
         "tsan/tsanmutexcheck3:ActsThirdPartyTsanMutexCheck3Test",
         "tsan/tsanmutexcheck4:ActsThirdPartyTsanMutexCheck4Test",
         "ubsan:ActsThirdPartyUBSanTest",
-		"fdsan:ActsThirdPartyFdsanTest",
+        "fdsan:ActsThirdPartyFdsanTest",
       ]
     }
   }
