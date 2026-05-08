@@ -555,9 +555,9 @@ export default function actslocationTest() {
             console.info("addGnssGeofence_0100 success, fence id: " + id);
             expect(true).assertEqual(id != null);
             done();
-          }).catch((err: Object | null | undefined) => {
+          }).catch((err) => {
             console.error("addGnssGeofence_0100 failed, promise errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
-            expect((err as BusinessError).code).assertEqual(201);
+            expect(err.code).assertEqual(201);
             done();
           });
           done();
