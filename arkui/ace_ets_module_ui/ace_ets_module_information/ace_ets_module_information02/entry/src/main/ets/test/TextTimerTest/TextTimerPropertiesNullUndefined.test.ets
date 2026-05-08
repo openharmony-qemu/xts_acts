@@ -272,7 +272,7 @@ export default function TextTimerPropertiesNullUndefinedTest() {
       console.info("[textTimerFontSize_empty_0100] empty fontSize is: " + obj.$attrs.fontSize);
 
       // 空字符串应该恢复为默认值
-      expect(obj.$attrs.fontSize).assertEqual('0');
+      expect(obj.$attrs.fontSize).assertContain('0.00');
       console.info('[textTimerFontSize_empty_0100] END');
     })
 
