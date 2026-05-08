@@ -34,8 +34,8 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
-export default function ExpressionsParenthesizedTestSuite(): void {
-  describe("ExpressionsParenthesizedTestSuite", () => {
+export default function ExpressionsParenthesizedTest(): void {
+  describe("ExpressionsParenthesizedTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -58,7 +58,7 @@ export default function ExpressionsParenthesizedTestSuite(): void {
     })
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_PARENTHESIZED_0100
+     * @tc.number    SUB_EXPRESSIONS_PARENTHESIZED_TEST_0100
      * @tc.name      testExpressionsParenthesized0001
      * @tc.desc      Parenthesized expression
      * @tc.size      MediumTest
@@ -72,7 +72,7 @@ export default function ExpressionsParenthesizedTestSuite(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_PARENTHESIZED_0200
+     * @tc.number    SUB_EXPRESSIONS_PARENTHESIZED_TEST_0200
      * @tc.name      testExpressionsParenthesized0002
      * @tc.desc      Parenthesized expression
      * @tc.size      MediumTest
@@ -86,7 +86,7 @@ export default function ExpressionsParenthesizedTestSuite(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_PARENTHESIZED_0300
+     * @tc.number    SUB_EXPRESSIONS_PARENTHESIZED_TEST_0300
      * @tc.name      testExpressionsParenthesized0003
      * @tc.desc      Parenthesized expression
      * @tc.size      MediumTest
@@ -100,7 +100,7 @@ export default function ExpressionsParenthesizedTestSuite(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPRESSIONS_PARENTHESIZED_0400
+     * @tc.number    SUB_EXPRESSIONS_PARENTHESIZED_TEST_0400
      * @tc.name      testExpressionsParenthesized0004
      * @tc.desc      Parenthesized expression
      * @tc.size      MediumTest

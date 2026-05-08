@@ -1125,7 +1125,7 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(2).assertEqual(2)
+      expect([...(a1_spex_38 ?? a2_spex_38)!, new Object].length).assertEqual(3)
     });
 
     /**
@@ -1137,7 +1137,9 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect([...(a1_spex_38 ?? a2_spex_38)!, new Object].length).assertEqual(3)
+      let r: [number, string] = [...foo_spex_40()]
+      expect(r[0]).assertEqual(1)
+      expect(r[1]).assertEqual("X")
     });
 
     /**
@@ -1149,32 +1151,6 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(2).assertEqual(2)
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_SPREAD_TEST_4000
-     * @tc.name      testExpressionsSpread0040
-     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsSpread0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: [number, string] = [...foo_spex_40()]
-      expect(r[0]).assertEqual(1)
-      expect(r[1]).assertEqual("X")
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_SPREAD_TEST_4100
-     * @tc.name      testExpressionsSpread0041
-     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsSpread0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a1: [string, int] = ["1", 10]
       let a2: [string, int] = ["2", 20]
       let r: [string, int, string, int, string, int] = [...a1, ...(a1 = a2), ...a1]
@@ -1187,6 +1163,36 @@ export default function ExpressionsSpreadTest(): void {
     });
 
     /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_TEST_4000
+     * @tc.name      testExpressionsSpread0040
+     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let r: [int, int] = [...(a1_spex_42[0] > a2_spex_42[0] ? a1_spex_42 : a2_spex_42)]
+      expect(r[0]).assertEqual(5)
+      expect(r[1]).assertEqual(6)
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_TEST_4100
+     * @tc.name      testExpressionsSpread0041
+     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_spex_43 = new A_spex_43(1, c'Z')
+      let r = a.meth()
+      expect(r[0]).assertEqual(0)
+      expect(r[1]).assertEqual(1)
+      expect(r[2]).assertEqual(c'Z')
+    });
+
+    /**
      * @tc.number    SUB_EXPRESSIONS_SPREAD_TEST_4200
      * @tc.name      testExpressionsSpread0042
      * @tc.desc      A spread expression can be used only within the array literal or argument passing.
@@ -1195,9 +1201,11 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: [int, int] = [...(a1_spex_42[0] > a2_spex_42[0] ? a1_spex_42 : a2_spex_42)]
-      expect(r[0]).assertEqual(5)
-      expect(r[1]).assertEqual(6)
+      let b: B_spex_44 = new B_spex_44(1, c'Z')
+      let r = b.meth()
+      expect(r[0]).assertEqual(0)
+      expect(r[1]).assertEqual(1)
+      expect(r[2]).assertEqual(c'Z')
     });
 
     /**
@@ -1209,11 +1217,10 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_spex_43 = new A_spex_43(1, c'Z')
-      let r = a.meth()
-      expect(r[0]).assertEqual(0)
-      expect(r[1]).assertEqual(1)
-      expect(r[2]).assertEqual(c'Z')
+      let a1: [int|A_spex_45<String>, double|B_spex_45<Long>] = [1, new B_spex_45<Long>]
+      let a2: [int|A_spex_45<Long>, double|B_spex_45<String>] = [new A_spex_45<Long>, new B_spex_45<String>]
+      let r: [A_spex_45<String>|int, B_spex_45<Long>|double, A_spex_45<Long>|int, B_spex_45<String>|double] = [...a1, ...a2]
+      expect(r[0] == 1 && r[1] instanceof B_spex_45 && r[2] instanceof A_spex_45 && r[3] instanceof B_spex_45).assertTrue()
     });
 
     /**
@@ -1225,11 +1232,9 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let b: B_spex_44 = new B_spex_44(1, c'Z')
-      let r = b.meth()
-      expect(r[0]).assertEqual(0)
-      expect(r[1]).assertEqual(1)
-      expect(r[2]).assertEqual(c'Z')
+      let r: [int, int] = [...((p: [int, int]): [int, int] => [p[1], p[0]])(a2_spex_46)]
+      expect(r[0]).assertEqual(5)
+      expect(r[1]).assertEqual(6)
     });
 
     /**
@@ -1241,10 +1246,12 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a1: [int|A_spex_45<String>, double|B_spex_45<Long>] = [1, new B_spex_45<Long>]
-      let a2: [int|A_spex_45<Long>, double|B_spex_45<String>] = [new A_spex_45<Long>, new B_spex_45<String>]
-      let r: [A_spex_45<String>|int, B_spex_45<Long>|double, A_spex_45<Long>|int, B_spex_45<String>|double] = [...a1, ...a2]
-      expect(r[0] == 1 && r[1] instanceof B_spex_45 && r[2] instanceof A_spex_45 && r[3] instanceof B_spex_45).assertTrue()
+      let fa1: FixedArray<int> = [1]
+      let a2: int[] = [2, 3, 4]
+      let fa3: FixedArray<int> = [...fa1, ...a2]
+      expect(fa3.length).assertEqual(4)
+      expect(fa3[0]).assertEqual(1)
+      expect(fa3[3]).assertEqual(4)
     });
 
     /**
@@ -1256,9 +1263,10 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: [int, int] = [...((p: [int, int]): [int, int] => [p[1], p[0]])(a2_spex_46)]
-      expect(r[0]).assertEqual(5)
-      expect(r[1]).assertEqual(6)
+      let a: FixedArray<C_spex_48> = [new C_spex_48]
+      let c = [...a]
+      expect(c.length).assertEqual(1)
+      expect(c[0].x).assertEqual(13)
     });
 
     /**
@@ -1270,38 +1278,6 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fa1: FixedArray<int> = [1]
-      let a2: int[] = [2, 3, 4]
-      let fa3: FixedArray<int> = [...fa1, ...a2]
-      expect(fa3.length).assertEqual(4)
-      expect(fa3[0]).assertEqual(1)
-      expect(fa3[3]).assertEqual(4)
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_SPREAD_TEST_4800
-     * @tc.name      testExpressionsSpread0048
-     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsSpread0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: FixedArray<C_spex_48> = [new C_spex_48]
-      let c = [...a]
-      expect(c.length).assertEqual(1)
-      expect(c[0].x).assertEqual(13)
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_SPREAD_TEST_4900
-     * @tc.name      testExpressionsSpread0049
-     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsSpread0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: int[] = [100, 101]
       let fa: FixedArray<int> = [
         ...((p: int[]): int[] => [p[1], p[0]])(a),
@@ -1314,6 +1290,35 @@ export default function ExpressionsSpreadTest(): void {
     });
 
     /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_TEST_4800
+     * @tc.name      testExpressionsSpread0048
+     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let r: [Object, Object] = [...a_spex_52]
+      expect(r[0]).assertEqual('1')
+      expect(r[1]).assertEqual('2')
+    });
+
+    /**
+     * @tc.number    SUB_EXPRESSIONS_SPREAD_TEST_4900
+     * @tc.name      testExpressionsSpread0049
+     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testExpressionsSpread0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let r: Array<Object> = [...a_spex_53]
+      expect(r.length).assertEqual(2)
+      expect(r[0]).assertEqual('1')
+      expect(r[1]).assertEqual('2')
+    });
+
+    /**
      * @tc.number    SUB_EXPRESSIONS_SPREAD_TEST_5000
      * @tc.name      testExpressionsSpread0050
      * @tc.desc      A spread expression can be used only within the array literal or argument passing.
@@ -1322,7 +1327,8 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: [Object, Object] = [...a_spex_52]
+      let r: Array<Object> = [...a_spex_54]
+      expect(r.length).assertEqual(2)
       expect(r[0]).assertEqual('1')
       expect(r[1]).assertEqual('2')
     });
@@ -1336,7 +1342,7 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: Array<Object> = [...a_spex_53]
+      let r: FixedArray<Object> = [...a_spex_55]
       expect(r.length).assertEqual(2)
       expect(r[0]).assertEqual('1')
       expect(r[1]).assertEqual('2')
@@ -1351,7 +1357,7 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: Array<Object> = [...a_spex_54]
+      let r: string[] = [...a_spex_56]
       expect(r.length).assertEqual(2)
       expect(r[0]).assertEqual('1')
       expect(r[1]).assertEqual('2')
@@ -1366,7 +1372,7 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: FixedArray<Object> = [...a_spex_55]
+      let r: FixedArray<string> = [...a_spex_57]
       expect(r.length).assertEqual(2)
       expect(r[0]).assertEqual('1')
       expect(r[1]).assertEqual('2')
@@ -1375,31 +1381,29 @@ export default function ExpressionsSpreadTest(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_SPREAD_TEST_5400
      * @tc.name      testExpressionsSpread0054
-     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: string[] = [...a_spex_56]
-      expect(r.length).assertEqual(2)
-      expect(r[0]).assertEqual('1')
-      expect(r[1]).assertEqual('2')
+      let a1: Object[] = [], a2: Error[] = []
+      expect(new A_spex_const_0(...[...a1, ...a2, new Object(), ...a1]).fld).assertEqual(1)
     });
 
     /**
      * @tc.number    SUB_EXPRESSIONS_SPREAD_TEST_5500
      * @tc.name      testExpressionsSpread0055
-     * @tc.desc      A spread expression can be used only within the array literal or argument passing.
+     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
+     *               must be of the spread array kind.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: FixedArray<string> = [...a_spex_57]
-      expect(r.length).assertEqual(2)
-      expect(r[0]).assertEqual('1')
-      expect(r[1]).assertEqual('2')
+      let a: char[] = [c'b', c'c']
+      expect(new A_spex_const_1(...a).fld).assertEqual(2)
     });
 
     /**
@@ -1412,8 +1416,8 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a1: Object[] = [], a2: Error[] = []
-      expect(new A_spex_const_0(...[...a1, ...a2, new Object(), ...a1]).fld).assertEqual(1)
+      let a: byte[] = [1 as byte, 2 as byte, 3 as byte]
+      expect(new A_spex_const_2(42, ...a).fld).assertEqual(48)
     });
 
     /**
@@ -1426,8 +1430,8 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: char[] = [c'b', c'c']
-      expect(new A_spex_const_1(...a).fld).assertEqual(2)
+      let a: short[] = [1 as short, 2 as short, 3 as short]
+      expect(new A_spex_const_3(42, ...a).fld).assertEqual(48)
     });
 
     /**
@@ -1440,8 +1444,8 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: byte[] = [1 as byte, 2 as byte, 3 as byte]
-      expect(new A_spex_const_2(42, ...a).fld).assertEqual(48)
+      let a: long[] = [1 as long, 2 as long, 3 as long]
+      expect(new A_spex_const_4(42, ...a).fld).assertEqual(48)
     });
 
     /**
@@ -1454,8 +1458,8 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: short[] = [1 as short, 2 as short, 3 as short]
-      expect(new A_spex_const_3(42, ...a).fld).assertEqual(48)
+      let a: float[] = [1.0f, 2.0f, 3.0f]
+      expect(new A_spex_const_5(42.0f, ...a).fld).assertEqual(48.0f)
     });
 
     /**
@@ -1468,8 +1472,8 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: long[] = [1 as long, 2 as long, 3 as long]
-      expect(new A_spex_const_4(42, ...a).fld).assertEqual(48)
+      let a: number[] = [1.0, 2.0, 3.0]
+      expect(new A_spex_const_6(42, ...a).fld).assertEqual(48.0)
     });
 
     /**
@@ -1482,8 +1486,10 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: float[] = [1.0f, 2.0f, 3.0f]
-      expect(new A_spex_const_5(42.0f, ...a).fld).assertEqual(48.0f)
+      let a: F_spex_const_7[] = [(p: number) => p * 2, (p: number) => p * 3]
+      let b: F_spex_const_7[] = [(p: number) => p * 4, (p: number) => p * 5]
+      let obj = new A_spex_const_7(1.0, ...[...a, ...b])
+      expect(obj.fld).assertEqual(360.0)
     });
 
     /**
@@ -1496,8 +1502,9 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: number[] = [1.0, 2.0, 3.0]
-      expect(new A_spex_const_6(42, ...a).fld).assertEqual(48.0)
+      let a: Color_spex_const_8[] = [Color_spex_const_8.Red, Color_spex_const_8.Blue, Color_spex_const_8.Green]
+      let obj = new A_spex_const_8(...a)
+      expect(obj.fld).assertEqual(Color_spex_const_8.Green)
     });
 
     /**
@@ -1510,10 +1517,7 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: F_spex_const_7[] = [(p: number) => p * 2, (p: number) => p * 3]
-      let b: F_spex_const_7[] = [(p: number) => p * 4, (p: number) => p * 5]
-      let obj = new A_spex_const_7(1.0, ...[...a, ...b])
-      expect(obj.fld).assertEqual(360.0)
+      expect(new A_spex_const_9(...([1.0, 2.0])).fld).assertEqual(2.0)
     });
 
     /**
@@ -1526,9 +1530,9 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Color_spex_const_8[] = [Color_spex_const_8.Red, Color_spex_const_8.Blue, Color_spex_const_8.Green]
-      let obj = new A_spex_const_8(...a)
-      expect(obj.fld).assertEqual(Color_spex_const_8.Green)
+      let a1: Object[]|null = [new Object, new Object]
+      let obj = new B_spex_const_10(5, ...a1!)
+      expect(obj.fld).assertEqual(7)
     });
 
     /**
@@ -1541,7 +1545,7 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(new A_spex_const_9(...([1.0, 2.0])).fld).assertEqual(2.0)
+      expect(new A_spex_const_12(5, ...(a1_spex_const_12 ?? a2_spex_const_12)!).fld).assertEqual(7)
     });
 
     /**
@@ -1554,9 +1558,9 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a1: Object[]|null = [new Object, new Object]
-      let obj = new B_spex_const_10(5, ...a1!)
-      expect(obj.fld).assertEqual(7)
+      let a = new A_spex_const_13()
+      let b = new B_spex_const_13(...a.foo())
+      expect(b.fld).assertEqual(3.0)
     });
 
     /**
@@ -1569,7 +1573,12 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(new A_spex_const_12(5, ...(a1_spex_const_12 ?? a2_spex_const_12)!).fld).assertEqual(7)
+      let s = ["h", "", "el", "", "", "l", "", "o"]
+      expect(new A_spex_const_14(...((s: string[]): string[] => {
+        let res: string[] = []
+        for (let el of s) if (el.length > 0) res = [...res, el]
+        return res
+      })(s)).fld).assertEqual("hello")
     });
 
     /**
@@ -1582,10 +1591,7 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // method call in expression
-      let a = new A_spex_const_13()
-      let b = new B_spex_const_13(...a.foo())
-      expect(b.fld).assertEqual(3.0)
+      expect(new A_spex_const_15(...[256]).fld).assertEqual(256)
     });
 
     /**
@@ -1598,13 +1604,8 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // method call in expression
-      let s = ["h", "", "el", "", "", "l", "", "o"]
-      expect(new A_spex_const_14(...((s: string[]): string[] => {
-        let res: string[] = []
-        for (let el of s) if (el.length > 0) res = [...res, el]
-        return res
-      })(s)).fld).assertEqual("hello")
+      let a: double[][] = [[2.0, 3.0], []]
+      expect(new A_spex_const_16(...a[0]).fld).assertEqual(5)
     });
 
     /**
@@ -1617,7 +1618,9 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(new A_spex_const_15(...[256]).fld).assertEqual(256)
+      let a: [string, double[], string] = ["X", [2.0, 3.0, 4.0], "Z"]
+      let obj = new A_spex_const_17(...a[1])
+      expect(obj.fld).assertEqual(9)
     });
 
     /**
@@ -1630,8 +1633,10 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: double[][] = [[2.0, 3.0], []]
-      expect(new A_spex_const_16(...a[0]).fld).assertEqual(5)
+      let a1 = ["1", "2", "3"]
+      let a2 = ["a", "b"]
+      let obj = new A_spex_const_18(...(a1 = a2))
+      expect((obj).fld).assertEqual("a-b")
     });
 
     /**
@@ -1644,9 +1649,7 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: [string, double[], string] = ["X", [2.0, 3.0, 4.0], "Z"]
-      let obj = new A_spex_const_17(...a[1])
-      expect(obj.fld).assertEqual(9)
+      expect(new A_spex_const_19(...(a1_spex_const_19.length > a2_spex_const_19.length ? a1_spex_const_19 : a2_spex_const_19)).fld).assertEqual("1-2-3")
     });
 
     /**
@@ -1659,10 +1662,8 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a1 = ["1", "2", "3"]
-      let a2 = ["a", "b"]
-      let obj = new A_spex_const_18(...(a1 = a2))
-      expect((obj).fld).assertEqual("a-b")
+      let a: A_spex_const_20 = new A_spex_const_20([false, false], [true, true])
+      expect(a.meth()).assertEqual(46)
     });
 
     /**
@@ -1675,7 +1676,8 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(new A_spex_const_19(...(a1_spex_const_19.length > a2_spex_const_19.length ? a1_spex_const_19 : a2_spex_const_19)).fld).assertEqual("1-2-3")
+      let b: B_spex_const_21 = new B_spex_const_21([false, false], [true, true])
+      expect(b.bar()).assertEqual(46)
     });
 
     /**
@@ -1688,8 +1690,7 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_spex_const_20 = new A_spex_const_20([false, false], [true, true])
-      expect(a.meth()).assertEqual(46)
+      expect(new A_spex_const_22(...a1_spex_const_22).fld).assertEqual(5)
     });
 
     /**
@@ -1702,8 +1703,7 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let b: B_spex_const_21 = new B_spex_const_21([false, false], [true, true])
-      expect(b.bar()).assertEqual(46)
+      expect(new B_spex_const_23(...[...new A_spex_const_23(...a1_spex_const_23).fld, ...new A_spex_const_23(...a2_spex_const_23).fld]).fld).assertEqual(21.0)
     });
 
     /**
@@ -1716,7 +1716,8 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(new A_spex_const_22(...a1_spex_const_22).fld).assertEqual(5)
+      let a1: Double[] = [1, 2, 3], a2: Short[] = [4, 5], a3: Byte[] = [6]
+      expect(new A_spex_const_24_25(...[-10.0, ...a1, ...a1, ...a2, ...a2, ...a3, 10.0, ...a3]).fld).assertEqual(42.0)
     });
 
     /**
@@ -1729,7 +1730,8 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(new B_spex_const_23(...[...new A_spex_const_23(...a1_spex_const_23).fld, ...new A_spex_const_23(...a2_spex_const_23).fld]).fld).assertEqual(21.0)
+      let a1: Double[] = [1, 2, 3], a2: Short[] = [4, 5], a3: Byte[] = [6]
+      expect(new A_spex_const_24_25(...[-10.0, ...a1, ...a1, ...a2, ...a2, ...a3, 10.0, ...a3]).fld).assertEqual(42.0)
     });
 
     /**
@@ -1742,8 +1744,8 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a1: Double[] = [1, 2, 3], a2: Short[] = [4, 5], a3: Byte[] = [6]
-      expect(new A_spex_const_24_25(...[-10.0, ...a1, ...a1, ...a2, ...a2, ...a3, 10.0, ...a3]).fld).assertEqual(42.0)
+      let a1: (Int|Number|String|undefined)[] = [new Int(), new Int(), undefined, "Z", 42.0]
+      expect(new A_spex_const_26(...a1).fld).assertEqual(5)
     });
 
     /**
@@ -1756,8 +1758,9 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a1: Double[] = [1, 2, 3], a2: Short[] = [4, 5], a3: Byte[] = [6]
-      expect(new A_spex_const_24_25(...[-10.0, ...a1, ...a1, ...a2, ...a2, ...a3, 10.0, ...a3]).fld).assertEqual(42.0)
+      let a1: (A_spex_const_27<String>|B_spex_const_27<Long>|C_spex_const_27<Error>|null)[] = [new A_spex_const_27<String>, new B_spex_const_27<Long>, new C_spex_const_27<Error>]
+      let obj = new Z_spex_const_27<String, Long, Error>(...a1)
+      expect(obj.fld).assertEqual(3)
     });
 
     /**
@@ -1770,8 +1773,7 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a1: (Int|Number|String|undefined)[] = [new Int(), new Int(), undefined, "Z", 42.0]
-      expect(new A_spex_const_26(...a1).fld).assertEqual(5)
+      expect(new A_spex_const_28_29(...((): string[] => a1_spex_const_28_29)()).fld).assertEqual("123")
     });
 
     /**
@@ -1784,9 +1786,7 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a1: (A_spex_const_27<String>|B_spex_const_27<Long>|C_spex_const_27<Error>|null)[] = [new A_spex_const_27<String>, new B_spex_const_27<Long>, new C_spex_const_27<Error>]
-      let obj = new Z_spex_const_27<String, Long, Error>(...a1)
-      expect(obj.fld).assertEqual(3)
+      expect(new A_spex_const_28_29(...((p: string[], q: string[]): string[] => [...p, ...q])(a1_spex_const_28_29, a1_spex_const_28_29)).fld).assertEqual("123123")
     });
 
     /**
@@ -1799,7 +1799,9 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(new A_spex_const_28_29(...((): string[] => a1_spex_const_28_29)()).fld).assertEqual("123")
+      let t1: [number, boolean] = [1.0, true]
+      let r: [boolean, number] = new A_spex_const_30(...t1).fld
+      expect(r[0] && r[1] == 1.0).assertTrue()
     });
 
     /**
@@ -1812,7 +1814,9 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(new A_spex_const_28_29(...((p: string[], q: string[]): string[] => [...p, ...q])(a1_spex_const_28_29, a1_spex_const_28_29)).fld).assertEqual("123123")
+      let t: [number, boolean] = [1.0, true]
+      let r: [number, number, boolean, boolean] = new A_spex_const_31(...t).fld
+      expect(r[0] == 1.0 && r[1] == 1.0 && r[2] && r[3]).assertTrue()
     });
 
     /**
@@ -1825,9 +1829,9 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t1: [number, boolean] = [1.0, true]
-      let r: [boolean, number] = new A_spex_const_30(...t1).fld
-      expect(r[0] && r[1] == 1.0).assertTrue()
+      let r: [byte, short, int, long, float, double, boolean, char, string] =
+        [1 as byte, 2 as short, 3, 4 as long, 5.0f, 6.0, true, c'Z', "X"]
+      expect(new A_spex_const_32(...r).fld[9]).assertEqual(42)
     });
 
     /**
@@ -1840,9 +1844,9 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let t: [number, boolean] = [1.0, true]
-      let r: [number, number, boolean, boolean] = new A_spex_const_31(...t).fld
-      expect(r[0] == 1.0 && r[1] == 1.0 && r[2] && r[3]).assertTrue()
+      expect(new A_spex_const_33(...a1_spex_const_33!).fld).assertEqual(3)
+      let obj = new A_spex_const_35(...(a1_spex_const_35 ?? a2_spex_const_35)!)
+      expect(obj.fld).assertEqual(3)
     });
 
     /**
@@ -1855,9 +1859,8 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: [byte, short, int, long, float, double, boolean, char, string] =
-        [1 as byte, 2 as short, 3, 4 as long, 5.0f, 6.0, true, c'Z', "X"]
-      expect(new A_spex_const_32(...r).fld[9]).assertEqual(42)
+      let r: [string, number] = new A_spex_const_37(...A_spex_const_37.foo()).fld
+      expect(r[0] == "X" && r[1] == 1).assertTrue()
     });
 
     /**
@@ -1870,7 +1873,9 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(new A_spex_const_33(...a1_spex_const_33!).fld).assertEqual(3)
+      let a: [[double, double], [char, char]] = [[2.0, 3.0], [c'Z', c'X']]
+      let obj = new A_spex_const_38(...a[0])
+      expect(obj.fld).assertEqual(5.0)
     });
 
     /**
@@ -1883,8 +1888,9 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let obj = new A_spex_const_35(...(a1_spex_const_35 ?? a2_spex_const_35)!)
-      expect(obj.fld).assertEqual(3)
+      let a1: [string, int] = ["1", 10]
+      let a2: [string, int] = ["2", 20]
+      expect(new A_spex_const_39(...(a1 = a2)).fld).assertEqual(20)
     });
 
     /**
@@ -1897,8 +1903,8 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: [string, number] = new A_spex_const_37(...A_spex_const_37.foo()).fld
-      expect(r[0] == "X" && r[1] == 1).assertTrue()
+      let r = new A_spex_const_40(...(a1_spex_const_40[0] > a2_spex_const_40[0] ? a1_spex_const_40 : a2_spex_const_40)).fld
+      expect(r).assertEqual(11)
     });
 
     /**
@@ -1911,9 +1917,8 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: [[double, double], [char, char]] = [[2.0, 3.0], [c'Z', c'X']]
-      let obj = new A_spex_const_38(...a[0])
-      expect(obj.fld).assertEqual(5.0)
+      let a: A_spex_const_41 = new A_spex_const_41(1, c'Z')
+      expect(a.meth()).assertEqual(111)
     });
 
     /**
@@ -1926,9 +1931,8 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a1: [string, int] = ["1", 10]
-      let a2: [string, int] = ["2", 20]
-      expect(new A_spex_const_39(...(a1 = a2)).fld).assertEqual(20)
+      let b: B_spex_const_42 = new B_spex_const_42(1, c'Z')
+      expect(b.meth()[0]).assertEqual(111)
     });
 
     /**
@@ -1941,48 +1945,6 @@ export default function ExpressionsSpreadTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpread0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r = new A_spex_const_40(...(a1_spex_const_40[0] > a2_spex_const_40[0] ? a1_spex_const_40 : a2_spex_const_40)).fld
-      expect(r).assertEqual(11)
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_SPREAD_TEST_9400
-     * @tc.name      testExpressionsSpread0094
-     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
-     *               must be of the spread array kind.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsSpread0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: A_spex_const_41 = new A_spex_const_41(1, c'Z')
-      expect(a.meth()).assertEqual(111)
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_SPREAD_TEST_9500
-     * @tc.name      testExpressionsSpread0095
-     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
-     *               must be of the spread array kind.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsSpread0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let b: B_spex_const_42 = new B_spex_const_42(1, c'Z')
-      expect(b.meth()[0]).assertEqual(111)
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_SPREAD_TEST_9600
-     * @tc.name      testExpressionsSpread0096
-     * @tc.desc      If an array is spread while calling a function, then an appropriate parameter
-     *               must be of the spread array kind.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsSpread0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a1: [A_spex_const_43<Long>, B_spex_const_43<Error>] = [new A_spex_const_43<Long>, new B_spex_const_43<Error>]
       expect(new Z_spex_const_43<Long, Error>(...a1).fld).assertFalse()
     });

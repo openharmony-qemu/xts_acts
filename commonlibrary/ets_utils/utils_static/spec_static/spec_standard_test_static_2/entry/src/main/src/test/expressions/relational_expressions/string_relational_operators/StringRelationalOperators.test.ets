@@ -56,7 +56,7 @@ export default function StringRelationalOperatorsTest(): void {
     })
     afterAll(() => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
+      // This API supports only one parameter: preset action function.
     })
 
     /**
@@ -323,9 +323,9 @@ export default function StringRelationalOperatorsTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperators0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let data1: string = "\u{D800}"
-      let data2: string = "\u{D800}"
-      let data3: string = new String("\u{D800}")
+      let data1: string = String.fromCharCode(0xD800)
+      let data2: string = String.fromCharCode(0xD800)
+      let data3: string = new String(String.fromCharCode(0xD800))
       expect((data1 < data2)).assertFalse()
       expect((data1 < data3)).assertFalse()
     })
@@ -338,9 +338,9 @@ export default function StringRelationalOperatorsTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperators0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let data1: string = "\u{D800}"
-      let data2: string = "\u{D801}"
-      let data3: string = new String("\u{D801}")
+      let data1: string = String.fromCharCode(0xD800)
+      let data2: string = String.fromCharCode(0xD801)
+      let data3: string = new String(String.fromCharCode(0xD801))
       expect((data1 < data2)).assertTrue()
       expect((data1 < data3)).assertTrue()
     })
@@ -353,9 +353,9 @@ export default function StringRelationalOperatorsTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperators0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let data1: string = "\u{DC00}"
-      let data2: string = "\u{DC00}"
-      let data3: string = new String("\u{DC00}")
+      let data1: string = String.fromCharCode(0xDC00)
+      let data2: string = String.fromCharCode(0xDC00)
+      let data3: string = new String(String.fromCharCode(0xDC00))
       expect((data1 < data2)).assertFalse()
       expect((data1 < data3)).assertFalse()
     })
@@ -368,9 +368,9 @@ export default function StringRelationalOperatorsTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperators0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let data1: string = "\u{DC00}"
-      let data2: string = "\u{DC01}"
-      let data3: string = new String("\u{DC01}")
+      let data1: string = String.fromCharCode(0xDC00)
+      let data2: string = String.fromCharCode(0xDC01)
+      let data3: string = new String(String.fromCharCode(0xDC01))
       expect((data1 < data2)).assertTrue()
       expect((data1 < data3)).assertTrue()
     })
@@ -383,9 +383,9 @@ export default function StringRelationalOperatorsTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperators0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let data1: string = "\u{DBFF}\u{DFFF}"
-      let data2: string = "\u{DBFF}\u{DFFF}"
-      let data3: string = new String("\u{DBFF}\u{DFFF}")
+      let data1: string = String.fromCharCode(0xDBFF) + String.fromCharCode(0xDFFF)
+      let data2: string = String.fromCharCode(0xDBFF) + String.fromCharCode(0xDFFF)
+      let data3: string = new String(String.fromCharCode(0xDBFF) + String.fromCharCode(0xDFFF))
       expect((data1 < data2)).assertFalse()
       expect((data1 < data3)).assertFalse()
     })
@@ -398,9 +398,9 @@ export default function StringRelationalOperatorsTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperators0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let data1: string = "\u{DBFF}\u{DFFA}"
-      let data2: string = "\u{DBFF}\u{DFFF}"
-      let data3: string = new String("\u{DBFF}\u{DFFF}")
+      let data1: string = String.fromCharCode(0xDBFF) + String.fromCharCode(0xDFFA)
+      let data2: string = String.fromCharCode(0xDBFF) + String.fromCharCode(0xDFFF)
+      let data3: string = new String(String.fromCharCode(0xDBFF) + String.fromCharCode(0xDFFF))
       expect((data1 < data2)).assertTrue()
       expect((data1 < data3)).assertTrue()
     })
@@ -713,9 +713,9 @@ export default function StringRelationalOperatorsTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperators0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let data1: string = "\u{D800}"
-      let data2: string = "\u{D800}"
-      let data3: string = new String("\u{D800}")
+      let data1: string = String.fromCharCode(0xD800)
+      let data2: string = String.fromCharCode(0xD800)
+      let data3: string = new String(String.fromCharCode(0xD800))
       expect((data1 <= data2)).assertTrue()
       expect((data1 <= data3)).assertTrue()
     })
@@ -728,9 +728,9 @@ export default function StringRelationalOperatorsTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperators0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let data1: string = "\u{D801}"
-      let data2: string = "\u{D800}"
-      let data3: string = new String("\u{D800}")
+      let data1: string = String.fromCharCode(0xD801)
+      let data2: string = String.fromCharCode(0xD800)
+      let data3: string = new String(String.fromCharCode(0xD800))
       expect((data1 <= data2)).assertFalse()
       expect((data1 <= data3)).assertFalse()
     })
@@ -743,9 +743,9 @@ export default function StringRelationalOperatorsTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperators0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let data1: string = "\u{D800}"
-      let data2: string = "\u{D801}"
-      let data3: string = new String("\u{D801}")
+      let data1: string = String.fromCharCode(0xD800)
+      let data2: string = String.fromCharCode(0xD801)
+      let data3: string = new String(String.fromCharCode(0xD801))
       expect((data1 <= data2)).assertTrue()
       expect((data1 <= data3)).assertTrue()
     })
@@ -758,9 +758,9 @@ export default function StringRelationalOperatorsTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperators0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let data1: string = "\u{DC00}"
-      let data2: string = "\u{DC00}"
-      let data3: string = new String("\u{DC00}")
+      let data1: string = String.fromCharCode(0xDC00)
+      let data2: string = String.fromCharCode(0xDC00)
+      let data3: string = new String(String.fromCharCode(0xDC00))
       expect((data1 <= data2)).assertTrue()
       expect((data1 <= data3)).assertTrue()
     })
@@ -773,9 +773,9 @@ export default function StringRelationalOperatorsTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperators0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let data1: string = "\u{DC01}"
-      let data2: string = "\u{DC00}"
-      let data3: string = new String("\u{DC00}")
+      let data1: string = String.fromCharCode(0xDC01)
+      let data2: string = String.fromCharCode(0xDC00)
+      let data3: string = new String(String.fromCharCode(0xDC00))
       expect((data1 <= data2)).assertFalse()
       expect((data1 <= data3)).assertFalse()
     })
@@ -788,9 +788,9 @@ export default function StringRelationalOperatorsTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperators0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let data1: string = "\u{DC00}"
-      let data2: string = "\u{DC01}"
-      let data3: string = new String("\u{DC01}")
+      let data1: string = String.fromCharCode(0xDC00)
+      let data2: string = String.fromCharCode(0xDC01)
+      let data3: string = new String(String.fromCharCode(0xDC01))
       expect((data1 <= data2)).assertTrue()
       expect((data1 <= data3)).assertTrue()
     })
@@ -803,9 +803,9 @@ export default function StringRelationalOperatorsTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperators0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let data1: string = "\u{DBFF}\u{DFFF}"
-      let data2: string = "\u{DBFF}\u{DFFF}"
-      let data3: string = new String("\u{DBFF}\u{DFFF}")
+      let data1: string = String.fromCharCode(0xDBFF) + String.fromCharCode(0xDFFF)
+      let data2: string = String.fromCharCode(0xDBFF) + String.fromCharCode(0xDFFF)
+      let data3: string = new String(String.fromCharCode(0xDBFF) + String.fromCharCode(0xDFFF))
       expect((data1 <= data2)).assertTrue()
       expect((data1 <= data3)).assertTrue()
     })
@@ -818,9 +818,9 @@ export default function StringRelationalOperatorsTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperators0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let data1: string = "\u{DBFF}\u{DFFF}"
-      let data2: string = "\u{DBFF}\u{DFFA}"
-      let data3: string = new String("\u{DBFF}\u{DFFA}")
+      let data1: string = String.fromCharCode(0xDBFF) + String.fromCharCode(0xDFFF)
+      let data2: string = String.fromCharCode(0xDBFF) + String.fromCharCode(0xDFFA)
+      let data3: string = new String(String.fromCharCode(0xDBFF) + String.fromCharCode(0xDFFA))
       expect((data1 <= data2)).assertFalse()
       expect((data1 <= data3)).assertFalse()
     })
@@ -833,9 +833,9 @@ export default function StringRelationalOperatorsTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperators0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let data1: string = "\u{DBFA}\u{DFFF}"
-      let data2: string = "\u{DBFF}\u{DFFF}"
-      let data3: string = new String("\u{DBFF}\u{DFFF}")
+      let data1: string = String.fromCharCode(0xDBFA) + String.fromCharCode(0xDFFF)
+      let data2: string = String.fromCharCode(0xDBFF) + String.fromCharCode(0xDFFF)
+      let data3: string = new String(String.fromCharCode(0xDBFF) + String.fromCharCode(0xDFFF))
       expect((data1 <= data2)).assertTrue()
       expect((data1 <= data3)).assertTrue()
     })
@@ -1178,9 +1178,9 @@ export default function StringRelationalOperatorsTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperators0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let data1: string = "\u{D800}"
-      let data2: string = "\u{D800}"
-      let data3: string = new String("\u{D800}")
+      let data1: string = String.fromCharCode(0xD800)
+      let data2: string = String.fromCharCode(0xD800)
+      let data3: string = new String(String.fromCharCode(0xD800))
       expect((data1 > data2)).assertFalse()
       expect((data1 > data3)).assertFalse()
     })
@@ -1193,9 +1193,9 @@ export default function StringRelationalOperatorsTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperators0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let data1: string = "\u{D801}"
-      let data2: string = "\u{D800}"
-      let data3: string = new String("\u{D800}")
+      let data1: string = String.fromCharCode(0xD801)
+      let data2: string = String.fromCharCode(0xD800)
+      let data3: string = new String(String.fromCharCode(0xD800))
       expect((data1 > data2)).assertTrue()
       expect((data1 > data3)).assertTrue()
     })
@@ -1208,11 +1208,11 @@ export default function StringRelationalOperatorsTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperators0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let data1: string = "\u{DC00}"
-      let data2: string = "\u{DC00}"
-      let data3: string = new String("\u{DC00}")
-      expect((data1 > data2)).assertFalse()
-      expect((data1 > data3)).assertFalse()
+      let data1: string = String.fromCharCode(0xDC00);
+      let data2: string = String.fromCharCode(0xDC00);
+      let data3: string = new String(String.fromCharCode(0xDC00));
+      expect((data1 > data2)).assertFalse();
+      expect((data1 > data3)).assertFalse();
     })
     /**
      * @tc.number    SUB_STRING_RELATIONAL_OPERATORS_7800
@@ -1223,9 +1223,9 @@ export default function StringRelationalOperatorsTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperators0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let data1: string = "\u{DC01}"
-      let data2: string = "\u{DC00}"
-      let data3: string = new String("\u{DC00}")
+      let data1: string = String.fromCharCode(0xDC01)
+      let data2: string = String.fromCharCode(0xDC00)
+      let data3: string = new String(String.fromCharCode(0xDC00))
       expect((data1 > data2)).assertTrue()
       expect((data1 > data3)).assertTrue()
     })
@@ -1238,9 +1238,9 @@ export default function StringRelationalOperatorsTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperators0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let data1: string = "\u{DBFF}\u{DFFF}"
-      let data2: string = "\u{DBFF}\u{DFFF}"
-      let data3: string = new String("\u{DBFF}\u{DFFF}")
+      let data1: string = String.fromCharCode(0xDBFF) + String.fromCharCode(0xDFFF)
+      let data2: string = String.fromCharCode(0xDBFF) + String.fromCharCode(0xDFFF)
+      let data3: string = new String(String.fromCharCode(0xDBFF) + String.fromCharCode(0xDFFF))
       expect((data1 > data2)).assertFalse()
       expect((data1 > data3)).assertFalse()
     })
@@ -1253,9 +1253,9 @@ export default function StringRelationalOperatorsTest(): void {
      * @tc.level     Level 2
      */
     it("testStringRelationalOperators0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let data1: string = "\u{DBFF}\u{DFFF}"
-      let data2: string = "\u{DBFF}\u{DFFA}"
-      let data3: string = new String("\u{DBFF}\u{DFFA}")
+      let data1: string = String.fromCharCode(0xDBFF) + String.fromCharCode(0xDFFF)
+      let data2: string = String.fromCharCode(0xDBFF) + String.fromCharCode(0xDFFA)
+      let data3: string = new String(String.fromCharCode(0xDBFF) + String.fromCharCode(0xDFFA))
       expect((data1 > data2)).assertTrue()
       expect((data1 > data3)).assertTrue()
     })

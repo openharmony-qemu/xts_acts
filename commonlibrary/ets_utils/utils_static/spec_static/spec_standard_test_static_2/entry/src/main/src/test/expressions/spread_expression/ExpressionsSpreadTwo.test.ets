@@ -923,7 +923,6 @@ export default function ExpressionsSpreadTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpreadTwo0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // method call in expression
       let obj = new A_26000()
       expect(obj.bar(...obj.foo())).assertEqual(3.0)
     });
@@ -938,7 +937,6 @@ export default function ExpressionsSpreadTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsSpreadTwo0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // method call in expression
       let obj = new A_26100()
       let s = ["h", "", "el", "", "", "l", "", "o"]
       expect(obj.foo(...((s: string[]): string[] => {

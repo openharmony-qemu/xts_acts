@@ -1529,29 +1529,29 @@ export default function ExpressionsTypeTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsTypeTwo0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1:tof_vars_14_A|null = new tof_vars_14_A()
-      expect(typeof v1).assertEqual("object")
+      let data1:tof_vars_14_A|null = new tof_vars_14_A()
+      expect(typeof data1).assertEqual("object")
       expect(typeof tof_vars_14_g1).assertEqual("object")
-      let v2:tof_vars_14_A|null = null
-      expect(typeof v2).assertEqual("object")
+      let data2:tof_vars_14_A|null = null
+      expect(typeof data2).assertEqual("object")
       expect(typeof tof_vars_14_g2).assertEqual("object")
-      let v3:tof_vars_14_I|null = new tof_vars_14_A()
-      expect(typeof v3).assertEqual("object")
+      let data3:tof_vars_14_I|null = new tof_vars_14_A()
+      expect(typeof data3).assertEqual("object")
       expect(typeof tof_vars_14_g3).assertEqual("object")
-      let v4:tof_vars_14_I|null = null
-      expect(typeof v4).assertEqual("object")
+      let data4:tof_vars_14_I|null = null
+      expect(typeof data4).assertEqual("object")
       expect(typeof tof_vars_14_g4).assertEqual("object")
-      let v5:tof_vars_14_A[]|null = [new tof_vars_14_A()]
-      expect(typeof v5).assertEqual("object")
+      let data5:tof_vars_14_A[]|null = [new tof_vars_14_A()]
+      expect(typeof data5).assertEqual("object")
       expect(typeof tof_vars_14_g5).assertEqual("object")
-      let v6:tof_vars_14_A[]|null = null
-      expect(typeof v6).assertEqual("object")
+      let data6:tof_vars_14_A[]|null = null
+      expect(typeof data6).assertEqual("object")
       expect(typeof tof_vars_14_g6).assertEqual("object")
-      let v7:tof_vars_14_I[]|null = [new tof_vars_14_A()]
-      expect(typeof v7).assertEqual("object")
+      let data7:tof_vars_14_I[]|null = [new tof_vars_14_A()]
+      expect(typeof data7).assertEqual("object")
       expect(typeof tof_vars_14_g7).assertEqual("object")
-      let v8:tof_vars_14_I[]|null = null
-      expect(typeof v8).assertEqual("object")
+      let data8:tof_vars_14_I[]|null = null
+      expect(typeof data8).assertEqual("object")
       expect(typeof tof_vars_14_g8).assertEqual("object")
     });
 
@@ -1564,11 +1564,11 @@ export default function ExpressionsTypeTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsTypeTwo0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1:tof_vars_15_Color = tof_vars_15_Color.Red
-      expect(typeof v1).assertEqual("int")
+      let data1:tof_vars_15_Color = tof_vars_15_Color.Red
+      expect(typeof data1).assertEqual("int")
       expect(typeof tof_vars_15_g1).assertEqual("int")
-      let v2:tof_vars_15_Size = tof_vars_15_Size.XL
-      expect(typeof v2).assertEqual("int")
+      let data2:tof_vars_15_Size = tof_vars_15_Size.XL
+      expect(typeof data2).assertEqual("int")
       expect(typeof tof_vars_15_g2).assertEqual("int")
     });
 
@@ -1581,11 +1581,11 @@ export default function ExpressionsTypeTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsTypeTwo0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1:tof_vars_16_Color = tof_vars_16_Color.Blue
-      expect(typeof v1).assertEqual("string")
+      let data1:tof_vars_16_Color = tof_vars_16_Color.Blue
+      expect(typeof data1).assertEqual("string")
       expect(typeof tof_vars_16_g1).assertEqual("string")
-      let v2:tof_vars_16_Size = tof_vars_16_Size.L
-      expect(typeof v2).assertEqual("string")
+      let data2:tof_vars_16_Size = tof_vars_16_Size.L
+      expect(typeof data2).assertEqual("string")
       expect(typeof tof_vars_16_g2).assertEqual("string")
     });
 
@@ -1598,14 +1598,14 @@ export default function ExpressionsTypeTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsTypeTwo0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1:number|string|boolean = false
-      expect(typeof v1).assertEqual("boolean")
+      let data1:number|string|boolean = false
+      expect(typeof data1).assertEqual("boolean")
       expect(typeof tof_vars_17_g1).assertEqual("boolean")
-      let v2:number|boolean = true
-      expect(typeof v2).assertEqual("boolean")
+      let data2:number|boolean = true
+      expect(typeof data2).assertEqual("boolean")
       expect(typeof tof_vars_17_g2).assertEqual("boolean")
-      let v3:boolean|never|long = true
-      expect(typeof v3).assertEqual("boolean")
+      let data3:boolean|never|long = true
+      expect(typeof data3).assertEqual("boolean")
       expect(typeof tof_vars_17_g3).assertEqual("boolean")
     });
 
@@ -1618,14 +1618,14 @@ export default function ExpressionsTypeTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsTypeTwo0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1:number|string|boolean = "false"
-      expect(typeof v1).assertEqual("string")
+      let data1:number|string|boolean = "false"
+      expect(typeof data1).assertEqual("string")
       expect(typeof tof_vars_18_g1).assertEqual("string")
-      let v2:number|string = "3.14"
-      expect(typeof v2).assertEqual("string")
+      let data2:number|string = "3.14"
+      expect(typeof data2).assertEqual("string")
       expect(typeof tof_vars_18_g2).assertEqual("string")
-      let v3:boolean|never|long|string = "1234567890"
-      expect(typeof v3).assertEqual("string")
+      let data3:boolean|never|long|string = "1234567890"
+      expect(typeof data3).assertEqual("string")
       expect(typeof tof_vars_18_g3).assertEqual("string")
     });
 
@@ -1638,11 +1638,11 @@ export default function ExpressionsTypeTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsTypeTwo0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1:tof_vars_19_A|tof_vars_19_B|tof_vars_19_C = new tof_vars_19_A()
-      expect(typeof v1).assertEqual("object")
+      let data1:tof_vars_19_A|tof_vars_19_B|tof_vars_19_C = new tof_vars_19_A()
+      expect(typeof data1).assertEqual("object")
       expect(typeof tof_vars_19_g1).assertEqual("object")
-      let v2:tof_vars_19_B|never|undefined|tof_vars_19_A = new tof_vars_19_A()
-      expect(typeof v2).assertEqual("object")
+      let data2:tof_vars_19_B|never|undefined|tof_vars_19_A = new tof_vars_19_A()
+      expect(typeof data2).assertEqual("object")
       expect(typeof tof_vars_19_g2).assertEqual("object")
     });
 
@@ -1655,14 +1655,14 @@ export default function ExpressionsTypeTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsTypeTwo0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1:tof_vars_20_C<tof_vars_20_A> = new tof_vars_20_C<tof_vars_20_A>(new tof_vars_20_A())
-      expect(typeof v1).assertEqual("object")
+      let data1:tof_vars_20_C<tof_vars_20_A> = new tof_vars_20_C<tof_vars_20_A>(new tof_vars_20_A())
+      expect(typeof data1).assertEqual("object")
       expect(typeof tof_vars_20_g1).assertEqual("object")
-      let v2:tof_vars_20_C<tof_vars_20_B> = new tof_vars_20_C<tof_vars_20_B>(new tof_vars_20_B())
-      expect(typeof v2).assertEqual("object")
+      let data2:tof_vars_20_C<tof_vars_20_B> = new tof_vars_20_C<tof_vars_20_B>(new tof_vars_20_B())
+      expect(typeof data2).assertEqual("object")
       expect(typeof tof_vars_20_g2).assertEqual("object")
-      let v3:tof_vars_20_C<tof_vars_20_I> = new tof_vars_20_C<tof_vars_20_I>(new tof_vars_20_B())
-      expect(typeof v3).assertEqual("object")
+      let data3:tof_vars_20_C<tof_vars_20_I> = new tof_vars_20_C<tof_vars_20_I>(new tof_vars_20_B())
+      expect(typeof data3).assertEqual("object")
       expect(typeof tof_vars_20_g3).assertEqual("object")
     });
 
@@ -1675,8 +1675,8 @@ export default function ExpressionsTypeTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsTypeTwo0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1:Comparable<Double> = new Double()
-      expect(typeof v1).assertEqual("number")
+      let data1:Comparable<Double> = new Double()
+      expect(typeof data1).assertEqual("number")
       expect(typeof tof_vars_21_g1).assertEqual("number")
     });
 
@@ -1689,11 +1689,11 @@ export default function ExpressionsTypeTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsTypeTwo0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1:byte = Byte.MIN_VALUE
-      expect(typeof v1).assertEqual("byte")
+      let data1:byte = Byte.MIN_VALUE
+      expect(typeof data1).assertEqual("byte")
       expect(typeof tof_vars_22_g1).assertEqual("byte")
-      let v2:byte = Byte.MAX_VALUE
-      expect(typeof v2).assertEqual("byte")
+      let data2:byte = Byte.MAX_VALUE
+      expect(typeof data2).assertEqual("byte")
       expect(typeof tof_vars_22_g2).assertEqual("byte")
     });
 
@@ -1706,11 +1706,11 @@ export default function ExpressionsTypeTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsTypeTwo0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1:short = Short.MIN_VALUE
-      expect(typeof v1).assertEqual("short")
+      let data1:short = Short.MIN_VALUE
+      expect(typeof data1).assertEqual("short")
       expect(typeof tof_vars_23_g1).assertEqual("short")
-      let v2:short = Short.MAX_VALUE
-      expect(typeof v2).assertEqual("short")
+      let data2:short = Short.MAX_VALUE
+      expect(typeof data2).assertEqual("short")
       expect(typeof tof_vars_23_g2).assertEqual("short")
     });
 
@@ -1723,11 +1723,11 @@ export default function ExpressionsTypeTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsTypeTwo0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1:int = Int.MIN_VALUE
-      expect(typeof v1).assertEqual("int")
+      let data1:int = Int.MIN_VALUE
+      expect(typeof data1).assertEqual("int")
       expect(typeof tof_vars_24_g1).assertEqual("int")
-      let v2:int = Int.MAX_VALUE
-      expect(typeof v2).assertEqual("int")
+      let data2:int = Int.MAX_VALUE
+      expect(typeof data2).assertEqual("int")
       expect(typeof tof_vars_24_g2).assertEqual("int")
     });
 
@@ -1740,11 +1740,11 @@ export default function ExpressionsTypeTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsTypeTwo0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1:long = Long.MIN_VALUE
-      expect(typeof v1).assertEqual("long")
+      let data1:long = Long.MIN_VALUE
+      expect(typeof data1).assertEqual("long")
       expect(typeof tof_vars_25_g1).assertEqual("long")
-      let v2:long = Long.MAX_VALUE
-      expect(typeof v2).assertEqual("long")
+      let data2:long = Long.MAX_VALUE
+      expect(typeof data2).assertEqual("long")
       expect(typeof tof_vars_25_g2).assertEqual("long")
     });
 
@@ -1757,11 +1757,11 @@ export default function ExpressionsTypeTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsTypeTwo0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1:float = Float.MIN_VALUE
-      expect(typeof v1).assertEqual("float")
+      let data1:float = Float.MIN_VALUE
+      expect(typeof data1).assertEqual("float")
       expect(typeof tof_vars_26_g1).assertEqual("float")
-      let v2:float = Float.MAX_VALUE
-      expect(typeof v2).assertEqual("float")
+      let data2:float = Float.MAX_VALUE
+      expect(typeof data2).assertEqual("float")
       expect(typeof tof_vars_26_g2).assertEqual("float")
     });
 
@@ -1774,11 +1774,11 @@ export default function ExpressionsTypeTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsTypeTwo0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1:char = Char.MIN_VALUE as char
-      expect(typeof v1).assertEqual("char")
+      let data1:char = Char.MIN_VALUE as char
+      expect(typeof data1).assertEqual("char")
       expect(typeof tof_vars_27_g1).assertEqual("char")
-      let v2:char = Char.MAX_VALUE as char
-      expect(typeof v2).assertEqual("char")
+      let data2:char = Char.MAX_VALUE as char
+      expect(typeof data2).assertEqual("char")
       expect(typeof tof_vars_27_g2).assertEqual("char")
     });
 
@@ -1791,8 +1791,8 @@ export default function ExpressionsTypeTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsTypeTwo0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1:Comparable<Float> = new Float()
-      expect(typeof v1).assertEqual("float")
+      let data1:Comparable<Float> = new Float()
+      expect(typeof data1).assertEqual("float")
       expect(typeof tof_vars_28_g1).assertEqual("float")
     });
 
@@ -1805,8 +1805,8 @@ export default function ExpressionsTypeTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsTypeTwo0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1:Comparable<Byte> = new Byte()
-      expect(typeof v1).assertEqual("byte")
+      let data1:Comparable<Byte> = new Byte()
+      expect(typeof data1).assertEqual("byte")
       expect(typeof tof_vars_29_g1).assertEqual("byte")
     });
 
@@ -1819,8 +1819,8 @@ export default function ExpressionsTypeTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsTypeTwo0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1:Comparable<Short> = new Short()
-      expect(typeof v1).assertEqual("short")
+      let data1:Comparable<Short> = new Short()
+      expect(typeof data1).assertEqual("short")
       expect(typeof tof_vars_30_g1).assertEqual("short")
     });
 
@@ -1833,8 +1833,8 @@ export default function ExpressionsTypeTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsTypeTwo0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1:Comparable<Int> = new Int()
-      expect(typeof v1).assertEqual("int")
+      let data1:Comparable<Int> = new Int()
+      expect(typeof data1).assertEqual("int")
       expect(typeof tof_vars_31_g1).assertEqual("int")
     });
 
@@ -1847,8 +1847,8 @@ export default function ExpressionsTypeTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsTypeTwo0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1:Comparable<Long> = new Long()
-      expect(typeof v1).assertEqual("long")
+      let data1:Comparable<Long> = new Long()
+      expect(typeof data1).assertEqual("long")
       expect(typeof tof_vars_32_g1).assertEqual("long")
     });
 
@@ -1861,8 +1861,8 @@ export default function ExpressionsTypeTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsTypeTwo0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1:Comparable<Char> = new Char()
-      expect(typeof v1).assertEqual("char")
+      let data1:Comparable<Char> = new Char()
+      expect(typeof data1).assertEqual("char")
       expect(typeof tof_vars_33_g1).assertEqual("char")
     });
 
@@ -1875,8 +1875,8 @@ export default function ExpressionsTypeTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsTypeTwo0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1:Floating = 3.14f
-      expect(typeof v1).assertEqual("float")
+      let data1:Floating = 3.14f
+      expect(typeof data1).assertEqual("float")
       expect(typeof tof_vars_34_g1).assertEqual("float")
     });
 
@@ -1889,8 +1889,8 @@ export default function ExpressionsTypeTwoTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsTypeTwo0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1:Integral = 42
-      expect(typeof v1).assertEqual("int")
+      let data1:Integral = 42
+      expect(typeof data1).assertEqual("int")
       expect(typeof tof_vars_35_g1).assertEqual("int")
     });
   });

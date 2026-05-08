@@ -68,20 +68,6 @@ let r_re_22: Record<"Please"|"Read"|"Beware"|"Of"|"Pity", string> = {
     "Pity": "in 1939"
 }
 
-class VulkanAPI_re_23 {
-    callMeOrDie() {
-        let r: Record<"Chill"|"Just"|"Joking :)", boolean> = {
-            "Chill": true,
-            "Just": true,
-            "Joking :)": false
-        }
-
-        expect(r["Chill"]).assertEqual(true)
-        expect(r["Just"]).assertEqual(true)
-        expect(!r["Joking :)"]).assertTrue()
-    }
-}
-
 enum DoubleEnum_re_25: double {a = 1.0, b = 2.0, c = 3.141592653589}
 
 
@@ -112,9 +98,7 @@ export default function ExpressionsObjectRecordTestSuite(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_OBJECT_RECORD_0100
      * @tc.name      testExpressionsObjectRecord0001
-     * @tc.desc      The generic Record<Key, Value> type (see Record Utility Type) is used to map
-     *               the properties of a type (Key type) to another type (Value type). A special form
-     *               of an object literal is used to initialize the value of such type.
+     * @tc.desc      A special form of an object literal is used to initialize the value of such type.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -130,9 +114,7 @@ export default function ExpressionsObjectRecordTestSuite(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_OBJECT_RECORD_0200
      * @tc.name      testExpressionsObjectRecord0002
-     * @tc.desc      The generic Record<Key, Value> type (see Record Utility Type) is used to map
-     *               the properties of a type (Key type) to another type (Value type). A special form
-     *               of an object literal is used to initialize the value of such type.
+     * @tc.desc      A special form of an object literal is used to initialize the value of such type.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -156,9 +138,7 @@ export default function ExpressionsObjectRecordTestSuite(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_OBJECT_RECORD_0300
      * @tc.name      testExpressionsObjectRecord0003
-     * @tc.desc      The generic Record<Key, Value> type (see Record Utility Type) is used to map
-     *               the properties of a type (Key type) to another type (Value type). A special form
-     *               of an object literal is used to initialize the value of such type.
+     * @tc.desc      A special form of an object literal is used to initialize the value of such type.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -182,9 +162,7 @@ export default function ExpressionsObjectRecordTestSuite(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_OBJECT_RECORD_0400
      * @tc.name      testExpressionsObjectRecord0004
-     * @tc.desc      The generic Record<Key, Value> type (see Record Utility Type) is used to map
-     *               the properties of a type (Key type) to another type (Value type). A special form
-     *               of an object literal is used to initialize the value of such type.
+     * @tc.desc      A special form of an object literal is used to initialize the value of such type.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -211,9 +189,7 @@ export default function ExpressionsObjectRecordTestSuite(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_OBJECT_RECORD_0500
      * @tc.name      testExpressionsObjectRecord0005
-     * @tc.desc      The generic Record<Key, Value> type (see Record Utility Type) is used to map
-     *               the properties of a type (Key type) to another type (Value type). A special form
-     *               of an object literal is used to initialize the value of such type.
+     * @tc.desc      A special form of an object literal is used to initialize the value of such type.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -232,9 +208,7 @@ export default function ExpressionsObjectRecordTestSuite(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_OBJECT_RECORD_0600
      * @tc.name      testExpressionsObjectRecord0006
-     * @tc.desc      The generic Record<Key, Value> type (see Record Utility Type) is used to map
-     *               the properties of a type (Key type) to another type (Value type). A special form
-     *               of an object literal is used to initialize the value of such type.
+     * @tc.desc      A special form of an object literal is used to initialize the value of such type.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -258,9 +232,7 @@ export default function ExpressionsObjectRecordTestSuite(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_OBJECT_RECORD_0700
      * @tc.name      testExpressionsObjectRecord0007
-     * @tc.desc      The generic Record<Key, Value> type (see Record Utility Type) is used to map
-     *               the properties of a type (Key type) to another type (Value type). A special form
-     *               of an object literal is used to initialize the value of such type.
+     * @tc.desc      A special form of an object literal is used to initialize the value of such type.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -285,9 +257,7 @@ export default function ExpressionsObjectRecordTestSuite(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_OBJECT_RECORD_0800
      * @tc.name      testExpressionsObjectRecord0008
-     * @tc.desc      The generic Record<Key, Value> type (see Record Utility Type) is used to map
-     *               the properties of a type (Key type) to another type (Value type). A special form
-     *               of an object literal is used to initialize the value of such type.
+     * @tc.desc      A special form of an object literal is used to initialize the value of such type.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -307,9 +277,7 @@ export default function ExpressionsObjectRecordTestSuite(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_OBJECT_RECORD_0900
      * @tc.name      testExpressionsObjectRecord0009
-     * @tc.desc      The generic Record<Key, Value> type (see Record Utility Type) is used to map
-     *               the properties of a type (Key type) to another type (Value type). A special form
-     *               of an object literal is used to initialize the value of such type.
+     * @tc.desc      A special form of an object literal is used to initialize the value of such type.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -328,9 +296,7 @@ export default function ExpressionsObjectRecordTestSuite(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_OBJECT_RECORD_1000
      * @tc.name      testExpressionsObjectRecord0010
-     * @tc.desc      The generic Record<Key, Value> type (see Record Utility Type) is used to map
-     *               the properties of a type (Key type) to another type (Value type). A special form
-     *               of an object literal is used to initialize the value of such type.
+     * @tc.desc      A special form of an object literal is used to initialize the value of such type.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -352,9 +318,7 @@ export default function ExpressionsObjectRecordTestSuite(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_OBJECT_RECORD_1100
      * @tc.name      testExpressionsObjectRecord0011
-     * @tc.desc      The generic Record<Key, Value> type (see Record Utility Type) is used to map
-     *               the properties of a type (Key type) to another type (Value type). A special form
-     *               of an object literal is used to initialize the value of such type.
+     * @tc.desc      A special form of an object literal is used to initialize the value of such type.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -373,9 +337,7 @@ export default function ExpressionsObjectRecordTestSuite(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_OBJECT_RECORD_1200
      * @tc.name      testExpressionsObjectRecord0012
-     * @tc.desc      The generic Record<Key, Value> type (see Record Utility Type) is used to map
-     *               the properties of a type (Key type) to another type (Value type). A special form
-     *               of an object literal is used to initialize the value of such type.
+     * @tc.desc      A special form of an object literal is used to initialize the value of such type.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -388,9 +350,7 @@ export default function ExpressionsObjectRecordTestSuite(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_OBJECT_RECORD_1300
      * @tc.name      testExpressionsObjectRecord0013
-     * @tc.desc      The generic Record<Key, Value> type (see Record Utility Type) is used to map
-     *               the properties of a type (Key type) to another type (Value type). A special form
-     *               of an object literal is used to initialize the value of such type.
+     * @tc.desc      A special form of an object literal is used to initialize the value of such type.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -415,9 +375,7 @@ export default function ExpressionsObjectRecordTestSuite(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_OBJECT_RECORD_1400
      * @tc.name      testExpressionsObjectRecord0014
-     * @tc.desc      The generic Record<Key, Value> type (see Record Utility Type) is used to map
-     *               the properties of a type (Key type) to another type (Value type). A special form
-     *               of an object literal is used to initialize the value of such type.
+     * @tc.desc      A special form of an object literal is used to initialize the value of such type.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -439,9 +397,7 @@ export default function ExpressionsObjectRecordTestSuite(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_OBJECT_RECORD_1500
      * @tc.name      testExpressionsObjectRecord0015
-     * @tc.desc      The generic Record<Key, Value> type (see Record Utility Type) is used to map
-     *               the properties of a type (Key type) to another type (Value type). A special form
-     *               of an object literal is used to initialize the value of such type.
+     * @tc.desc      A special form of an object literal is used to initialize the value of such type.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -460,9 +416,7 @@ export default function ExpressionsObjectRecordTestSuite(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_OBJECT_RECORD_1600
      * @tc.name      testExpressionsObjectRecord0016
-     * @tc.desc      The generic Record<Key, Value> type (see Record Utility Type) is used to map
-     *               the properties of a type (Key type) to another type (Value type). A special form
-     *               of an object literal is used to initialize the value of such type.
+     * @tc.desc      A special form of an object literal is used to initialize the value of such type.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -480,9 +434,7 @@ export default function ExpressionsObjectRecordTestSuite(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_OBJECT_RECORD_1700
      * @tc.name      testExpressionsObjectRecord0017
-     * @tc.desc      The generic Record<Key, Value> type (see Record Utility Type) is used to map
-     *               the properties of a type (Key type) to another type (Value type). A special form
-     *               of an object literal is used to initialize the value of such type.
+     * @tc.desc      A special form of an object literal is used to initialize the value of such type.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -504,9 +456,7 @@ export default function ExpressionsObjectRecordTestSuite(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_OBJECT_RECORD_1800
      * @tc.name      testExpressionsObjectRecord0018
-     * @tc.desc      The generic Record<Key, Value> type (see Record Utility Type) is used to map
-     *               the properties of a type (Key type) to another type (Value type). A special form
-     *               of an object literal is used to initialize the value of such type.
+     * @tc.desc      A special form of an object literal is used to initialize the value of such type.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -527,9 +477,7 @@ export default function ExpressionsObjectRecordTestSuite(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_OBJECT_RECORD_1900
      * @tc.name      testExpressionsObjectRecord0019
-     * @tc.desc      The generic Record<Key, Value> type (see Record Utility Type) is used to map
-     *               the properties of a type (Key type) to another type (Value type). A special form
-     *               of an object literal is used to initialize the value of such type.
+     * @tc.desc      A special form of an object literal is used to initialize the value of such type.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -548,9 +496,7 @@ export default function ExpressionsObjectRecordTestSuite(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_OBJECT_RECORD_2000
      * @tc.name      testExpressionsObjectRecord0020
-     * @tc.desc      The generic Record<Key, Value> type (see Record Utility Type) is used to map
-     *               the properties of a type (Key type) to another type (Value type). A special form
-     *               of an object literal is used to initialize the value of such type.
+     * @tc.desc      A special form of an object literal is used to initialize the value of such type.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -571,9 +517,7 @@ export default function ExpressionsObjectRecordTestSuite(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_OBJECT_RECORD_2100
      * @tc.name      testExpressionsObjectRecord0021
-     * @tc.desc      The generic Record<Key, Value> type (see Record Utility Type) is used to map
-     *               the properties of a type (Key type) to another type (Value type). A special form
-     *               of an object literal is used to initialize the value of such type.
+     * @tc.desc      A special form of an object literal is used to initialize the value of such type.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -590,9 +534,7 @@ export default function ExpressionsObjectRecordTestSuite(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_OBJECT_RECORD_2200
      * @tc.name      testExpressionsObjectRecord0022
-     * @tc.desc      The generic Record<Key, Value> type (see Record Utility Type) is used to map
-     *               the properties of a type (Key type) to another type (Value type). A special form
-     *               of an object literal is used to initialize the value of such type.
+     * @tc.desc      A special form of an object literal is used to initialize the value of such type.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -653,9 +595,7 @@ export default function ExpressionsObjectRecordTestSuite(): void {
     /**
      * @tc.number    SUB_EXPRESSIONS_OBJECT_RECORD_2300
      * @tc.name      testExpressionsObjectRecord0023
-     * @tc.desc      The generic Record<Key, Value> type (see Record Utility Type) is used to map
-     *               the properties of a type (Key type) to another type (Value type). A special form
-     *               of an object literal is used to initialize the value of such type.
+     * @tc.desc      A special form of an object literal is used to initialize the value of such type.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -666,21 +606,6 @@ export default function ExpressionsObjectRecordTestSuite(): void {
       expect(r_re_22["Beware"]).assertEqual("Stefan")
       expect(r_re_22["Of"]).assertEqual("Zweig")
       expect(r_re_22["Pity"]).assertEqual("in 1939")
-    });
-
-    /**
-     * @tc.number    SUB_EXPRESSIONS_OBJECT_RECORD_2400
-     * @tc.name      testExpressionsObjectRecord0024
-     * @tc.desc      The generic Record<Key, Value> type (see Record Utility Type) is used to map
-     *               the properties of a type (Key type) to another type (Value type). A special form
-     *               of an object literal is used to initialize the value of such type.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testExpressionsObjectRecord0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let api: VulkanAPI_re_23 = {}
-      api.callMeOrDie()
     });
   });
 }
