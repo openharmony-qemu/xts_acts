@@ -1,5 +1,5 @@
 'use static'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { LightWeightMap } from '@kit.ArkTS';
 
 class TestClass {
@@ -70,7 +70,7 @@ function sleep(count: int): Promise<void> {
   })
 }
 
-export default function testLightWeightMapTest05() {
+export default function testLightWeightMapTest05(): void {
   describe('testLightWeightMapTest05', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -216,7 +216,7 @@ export default function testLightWeightMapTest05() {
       lightWeightMap.set('a', 1);
       lightWeightMap.set('b', 2);
       lightWeightMap.set('c', 3);
-      const result = lightWeightMap.removeAt(Math.floor(1.5).toInt()); // 截断为 1
+      const result = lightWeightMap.removeAt(Math.floor(1.5).toInt()); // 截断�?1
       expect(result).assertTrue();
 
       console.log(TAG + 'end');

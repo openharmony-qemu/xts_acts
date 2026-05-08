@@ -1,5 +1,5 @@
 'use static'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { LightWeightMap } from '@kit.ArkTS';
 
 class TestClass {
@@ -33,7 +33,7 @@ function sleep(count: int): Promise<void> {
   })
 }
 
-export default function testLightWeightMapTest06() {
+export default function testLightWeightMapTest06(): void {
   describe('testLightWeightMapTest06', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -487,12 +487,12 @@ export default function testLightWeightMapTest06() {
 
       const lightWeightMap = new LightWeightMap<string, number>();
 
-      // 添加127个元素
+      // 添加127个元�?
       for (let i: int = 0; i < 127; i++) {
         lightWeightMap.set(`item${i}`, i * 10);
       }
 
-      const result = lightWeightMap.getValueAt(126); // 索引从0开始，所以127个元素的最后一个索引是126
+      const result = lightWeightMap.getValueAt(126); // 索引�?开始，所�?27个元素的最后一个索引是126
       expect(result).assertEqual(1260);
       console.log(TAG + "end");
     });
@@ -511,7 +511,7 @@ export default function testLightWeightMapTest06() {
 
       const lightWeightMap = new LightWeightMap<string, number>();
 
-      // 添加一些元素，但不到128个
+      // 添加一些元素，但不�?28�?
       for (let i: int = 0; i < 50; i++) {
         lightWeightMap.set(`item${i}`, i * 10);
       }
@@ -587,7 +587,7 @@ export default function testLightWeightMapTest06() {
 
       const lightWeightMap = new LightWeightMap<string, number>();
 
-      // 添加101个元素（索引0-100）
+      // 添加101个元素（索引0-100�?
       for (let i: int = 0; i <= 100; i++) {
         lightWeightMap.set(`item${i}`, i * 10);
       }
@@ -661,7 +661,7 @@ export default function testLightWeightMapTest06() {
       for (let i: int = 0; i < 100; i++) {
         lightWeightMap.set(`item${i}`, i);
       }
-      const result = lightWeightMap.getValueAt(99); // 测试最后一个元素
+      const result = lightWeightMap.getValueAt(99); // 测试最后一个元�?
       expect(result).assertEqual(99);
       console.log(TAG + "end");
     });
@@ -1218,7 +1218,7 @@ export default function testLightWeightMapTest06() {
 
       // 添加足够多的元素
       for (let i: int = 0; i <= 0xcafebabe; i++) {
-        if (i > 1000) break; // 只添加前1000个用于测试
+        if (i > 1000) break; // 只添加前1000个用于测�?
         lightWeightMap.set(`item${i}`, i);
       }
       let result: boolean = false;
@@ -1293,7 +1293,7 @@ export default function testLightWeightMapTest06() {
 
       const lightWeightMap = new LightWeightMap<string, number>();
 
-      // 添加4个元素（0x3 = 3）
+      // 添加4个元素（0x3 = 3�?
       for (let i: int = 0; i <= 0x3; i++) {
         lightWeightMap.set(`item${i}`, i * 100);
       }
@@ -1317,7 +1317,7 @@ export default function testLightWeightMapTest06() {
 
       const lightWeightMap = new LightWeightMap<string, number>();
 
-      // 添加9个元素（2**3 = 8，需要索引0-8）
+      // 添加9个元素（2**3 = 8，需要索�?-8�?
       let expVal: int = (2 ** 3).toInt();
       for (let i: int = 0; i <= expVal; i++) {
         lightWeightMap.set(`item${i}`, i * 50);

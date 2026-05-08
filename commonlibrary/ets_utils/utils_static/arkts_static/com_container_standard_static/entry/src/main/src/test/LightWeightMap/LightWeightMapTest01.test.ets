@@ -1,5 +1,5 @@
 'use static'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { LightWeightMap } from '@kit.ArkTS';
 
 class TestClass {
@@ -31,7 +31,7 @@ function sleep(count: int): Promise<void> {
   })
 }
 
-export default function testLightWeightMapTest01() {
+export default function testLightWeightMapTest01(): void {
   describe('testLightWeightMapTest01', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

@@ -1,5 +1,5 @@
 'use static'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { LightWeightMap } from '@kit.ArkTS';
 
 class Person {
@@ -46,7 +46,7 @@ function sleep(count: int): Promise<void> {
   })
 }
 
-export default function testLightWeightMapTest07() {
+export default function testLightWeightMapTest07(): void {
   describe('testLightWeightMapTest07', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -1280,11 +1280,11 @@ export default function testLightWeightMapTest07() {
 
       let lightWeightMap = new LightWeightMap<string, string>();
       lightWeightMap.set("hello world", "foo/bar");
-      lightWeightMap.set("特殊键", "值123");
+      lightWeightMap.set("特殊字", "🎵23");
 
       let result = lightWeightMap.toString();
       let ok = (result.indexOf("hello world:foo/bar") !== -1) &&
-        (result.indexOf("特殊键:值123") !== -1);
+        (result.indexOf("特殊字🎵23") !== -1);
       expect(ok).assertTrue();
 
       console.log(TAG + 'end');

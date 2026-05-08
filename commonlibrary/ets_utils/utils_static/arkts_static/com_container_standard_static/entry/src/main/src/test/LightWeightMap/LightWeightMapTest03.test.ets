@@ -1,5 +1,5 @@
 'use static'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { LightWeightMap } from '@kit.ArkTS';
 
 class TestClass {
@@ -682,7 +682,7 @@ export default function testLightWeightMapTest03(): void {
       const TAG = 'testLightWeightMapTest03Chapter3000';
       console.log(TAG + 'start');
       const lightWeightMap = new LightWeightMap<string, number>();
-      // LightWeightMap不允许重复key，所以测试相同value不同key的情况
+      // LightWeightMap不允许重复key，所以测试相同value不同key的情�?
       lightWeightMap.set("key1", 100);
       lightWeightMap.set("key2", 200);
       lightWeightMap.set("key3", 100); // 相同value不同key

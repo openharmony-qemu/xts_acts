@@ -1,5 +1,5 @@
 'use static'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { LightWeightMap } from '@kit.ArkTS';
 
 class TestClass {
@@ -1629,7 +1629,7 @@ export default function testLightWeightMapTest04(): void {
     /**
      * @tc.number    SUB_LIGHTWEIGHTMAP_TESTFOUR_7100
      * @tc.name      testLightWeightMapTest04Chapter7100
-     * @tc.desc      Remove with small hex key 0x3 (对应 8 进制行)
+     * @tc.desc      Remove with small hex key 0x3 (对应 8 进制�?
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
