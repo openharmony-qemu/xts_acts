@@ -223,10 +223,10 @@ int VideoEncodePreProcess0100Test()
         ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
         ASSERT_EQ(AV_ERR_OK, vEncSample->SetDualCallback());
         vEncSample->SURF_INPUT = true;
-        encDownsamplingWidth = 380;
-        encDownsamplingHeight = 200;
-        vEncSample->preProcessParameter.downsamplingWidth = encDownsamplingWidth;
-        vEncSample->preProcessParameter.downsamplingHeight = encDownsamplingHeight;
+        int encDownWidth = 380;
+        int encDownHeight = 200;
+        vEncSample->preProcessParameter.downsamplingWidth = encDownWidth;
+        vEncSample->preProcessParameter.downsamplingHeight = encDownHeight;
         ASSERT_EQ(AV_ERR_OK, vEncSample->SwitchPrimaryEncoder());
         ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
         ASSERT_EQ(AV_ERR_OK, vEncSample->SetDualCallback());
@@ -313,8 +313,8 @@ int VideoEncodePreProcess0300Test()
         ASSERT_EQ(AV_ERR_OK, vEncSample->SetDualCallback());
         vEncSample->SURF_INPUT = true;
         vEncSample->preProcessParameter.enableDFrame = true;
-        encDropFrameRate = 15.89;
-        vEncSample->preProcessParameter.dropFrameRate = encDropFrameRate;
+        int encDropFrameNum = 15.89;
+        vEncSample->preProcessParameter.dropFrameRate = encDropFrameNum;
         ASSERT_EQ(AV_ERR_OK, vEncSample->SwitchPrimaryEncoder());
         ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
         ASSERT_EQ(AV_ERR_OK, vEncSample->SetDualCallback());
