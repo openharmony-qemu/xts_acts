@@ -60,6 +60,7 @@ import NumericBigintRelationalOneTest from "./expressions/relational_expressions
 import NumericRelationalOperatorsTest from "./expressions/relational_expressions/numeric_relational_operators/NumericRelationalOperators.test";
 import NumericRelationalOperatorsOneTest from "./expressions/relational_expressions/numeric_relational_operators/NumericRelationalOperatorsOne.test";
 import StringRelationalOperatorsTest from "./expressions/relational_expressions/string_relational_operators/StringRelationalOperators.test";
+import StringRelationalOperatorsOneTest from "./expressions/relational_expressions/string_relational_operators/StringRelationalOperatorsOne.test";
 import ExpressionsSpreadTest from "./expressions/spread_expression/ExpressionsSpread.test";
 import ExpressionsSpreadOneTest from "./expressions/spread_expression/ExpressionsSpreadOne.test";
 import ExpressionsSpreadTwoTest from "./expressions/spread_expression/ExpressionsSpreadTwo.test";
@@ -128,6 +129,7 @@ export default function testsuite(): void {
   NumericRelationalOperatorsTest();
   NumericRelationalOperatorsOneTest();
   StringRelationalOperatorsTest();
+  StringRelationalOperatorsOneTest();
   ExpressionsSpreadTest();
   ExpressionsSpreadOneTest();
   ExpressionsSpreadTwoTest();

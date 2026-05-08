@@ -41,8 +41,8 @@ function getOperand5(): number { return 2.0; }
 function getOperand6(): number { return 2.5; }
 function getOperand7(): number { return 2.0; }
 
-export default function NumericBigintRelationalTest(): void {
-  describe("NumericBigintRelationalTest", () => {
+export default function NumericBigintRelationalOneTest(): void {
+  describe("NumericBigintRelationalOneTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -64,346 +64,346 @@ export default function NumericBigintRelationalTest(): void {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_10000
-     * @tc.name      testNumericBigintRelational0100
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_0100
+     * @tc.name      testNumericBigintRelationalOne0001
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
       expect(b < 2.5).assertTrue();
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_10100
-     * @tc.name      testNumericBigintRelational0101
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_0200
+     * @tc.name      testNumericBigintRelationalOne0002
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 5n;
       expect(b < 5.9).assertTrue();
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_10200
-     * @tc.name      testNumericBigintRelational0102
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_0300
+     * @tc.name      testNumericBigintRelationalOne0003
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 10n;
       expect(b < 10.5).assertTrue();
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_10300
-     * @tc.name      testNumericBigintRelational0103
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_0400
+     * @tc.name      testNumericBigintRelationalOne0004
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 100n;
       expect(b < 100.9).assertTrue();
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_10400
-     * @tc.name      testNumericBigintRelational0104
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_0500
+     * @tc.name      testNumericBigintRelationalOne0005
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0104", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       expect(b >= 0).assertTrue();
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_10500
-     * @tc.name      testNumericBigintRelational0105
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_0600
+     * @tc.name      testNumericBigintRelationalOne0006
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0105", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
       expect(b >= 1).assertTrue();
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_10600
-     * @tc.name      testNumericBigintRelational0106
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_0700
+     * @tc.name      testNumericBigintRelationalOne0007
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0106", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 5n;
       expect(b >= 5).assertTrue();
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_10700
-     * @tc.name      testNumericBigintRelational0107
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_0800
+     * @tc.name      testNumericBigintRelationalOne0008
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0107", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 10n;
       expect(b >= 5).assertTrue();
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_10800
-     * @tc.name      testNumericBigintRelational0108
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_0900
+     * @tc.name      testNumericBigintRelationalOne0009
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0108", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 100n;
       expect(b >= 100).assertTrue();
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_10900
-     * @tc.name      testNumericBigintRelational0109
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_1000
+     * @tc.name      testNumericBigintRelationalOne0010
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0109", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 0n;
       expect(b <= 1).assertTrue();
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_11000
-     * @tc.name      testNumericBigintRelational0110
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_1100
+     * @tc.name      testNumericBigintRelationalOne0011
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0110", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       expect(b <= 2).assertTrue();
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_11100
-     * @tc.name      testNumericBigintRelational0111
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_1200
+     * @tc.name      testNumericBigintRelationalOne0012
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0111", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 3n;
       expect(b <= 5).assertTrue();
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_11200
-     * @tc.name      testNumericBigintRelational0112
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_1300
+     * @tc.name      testNumericBigintRelationalOne0013
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0112", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 5n;
       expect(b <= 5).assertTrue();
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_11300
-     * @tc.name      testNumericBigintRelational0113
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_1400
+     * @tc.name      testNumericBigintRelationalOne0014
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0113", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 50n;
       expect(b <= 100).assertTrue();
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_11400
-     * @tc.name      testNumericBigintRelational0114
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_1500
+     * @tc.name      testNumericBigintRelationalOne0015
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0114", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       expect(b >= 0.5).assertTrue();
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_11500
-     * @tc.name      testNumericBigintRelational0115
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_1600
+     * @tc.name      testNumericBigintRelationalOne0016
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0115", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
       expect(b >= 1.9).assertTrue();
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_11600
-     * @tc.name      testNumericBigintRelational0116
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_1700
+     * @tc.name      testNumericBigintRelationalOne0017
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0116", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 5n;
       expect(b >= 5.0).assertTrue();
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_11700
-     * @tc.name      testNumericBigintRelational0117
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_1800
+     * @tc.name      testNumericBigintRelationalOne0018
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0117", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 10n;
       expect(b >= 5.2).assertTrue();
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_11800
-     * @tc.name      testNumericBigintRelational0118
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_1900
+     * @tc.name      testNumericBigintRelationalOne0019
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0118", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const actual_outcome: boolean = (b < getOperand1());
       expect(actual_outcome).assertEqual(true);
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_11900
-     * @tc.name      testNumericBigintRelational0119
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_2000
+     * @tc.name      testNumericBigintRelationalOne0020
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0119", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
       const actual_outcome: boolean = (b < getOperand2());
       expect(actual_outcome).assertEqual(false);
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_12000
-     * @tc.name      testNumericBigintRelational0120
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_2100
+     * @tc.name      testNumericBigintRelationalOne0021
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0120", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const actual_outcome: boolean = (b < getOperand3());
       expect(actual_outcome).assertEqual(false);
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_12100
-     * @tc.name      testNumericBigintRelational0121
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_2200
+     * @tc.name      testNumericBigintRelationalOne0022
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0121", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = -2n;
       const actual_outcome: boolean = (b < getOperand4());
       expect(actual_outcome).assertEqual(true);
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_12200
-     * @tc.name      testNumericBigintRelational0122
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_2300
+     * @tc.name      testNumericBigintRelationalOne0023
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0122", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const actual_outcome: boolean = (b < getOperand5());
       expect(actual_outcome).assertEqual(true);
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_12300
-     * @tc.name      testNumericBigintRelational0123
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_2400
+     * @tc.name      testNumericBigintRelationalOne0024
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0123", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
       const actual_outcome: boolean = (b < getOperand6());
       expect(actual_outcome).assertEqual(true);
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_12400
-     * @tc.name      testNumericBigintRelational0124
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_2500
+     * @tc.name      testNumericBigintRelationalOne0025
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0124", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
       const actual_outcome: boolean = (b < getOperand7());
       expect(actual_outcome).assertEqual(false);
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_15000
-     * @tc.name      testNumericBigintRelational0150
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_2600
+     * @tc.name      testNumericBigintRelationalOne0026
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0150", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const x_var: number = 2;
       const actual_outcome: boolean = (b < x_var);
@@ -411,14 +411,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_15100
-     * @tc.name      testNumericBigintRelational0151
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_2700
+     * @tc.name      testNumericBigintRelationalOne0027
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0151", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
       const x_var: number = 1;
       const actual_outcome: boolean = (b < x_var);
@@ -426,14 +426,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_15200
-     * @tc.name      testNumericBigintRelational0152
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_2800
+     * @tc.name      testNumericBigintRelationalOne0028
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0152", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const x_var: number = 1;
       const actual_outcome: boolean = (b < x_var);
@@ -441,14 +441,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_15300
-     * @tc.name      testNumericBigintRelational0153
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_2900
+     * @tc.name      testNumericBigintRelationalOne0029
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0153", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = -2n;
       const x_var: number = -1;
       const actual_outcome: boolean = (b < x_var);
@@ -456,14 +456,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_15400
-     * @tc.name      testNumericBigintRelational0154
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_3000
+     * @tc.name      testNumericBigintRelationalOne0030
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0154", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const x_var: number = 2.0;
       const actual_outcome: boolean = (b < x_var);
@@ -471,14 +471,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_15500
-     * @tc.name      testNumericBigintRelational0155
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_3100
+     * @tc.name      testNumericBigintRelationalOne0031
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0155", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
       const x_var: number = 2.5;
       const actual_outcome: boolean = (b < x_var);
@@ -486,14 +486,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_15600
-     * @tc.name      testNumericBigintRelational0156
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_3200
+     * @tc.name      testNumericBigintRelationalOne0032
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0156", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
       const x_var: number = 2.0;
       const actual_outcome: boolean = (b < x_var);
@@ -501,14 +501,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_15700
-     * @tc.name      testNumericBigintRelational0157
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_3300
+     * @tc.name      testNumericBigintRelationalOne0033
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0157", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const x_var: number = 0;
       const actual_outcome: boolean = (b > x_var);
@@ -516,14 +516,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_15800
-     * @tc.name      testNumericBigintRelational0158
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_3400
+     * @tc.name      testNumericBigintRelationalOne0034
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0158", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 0n;
       const x_var: number = 1;
       const actual_outcome: boolean = (b > x_var);
@@ -531,14 +531,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_15900
-     * @tc.name      testNumericBigintRelational0159
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_3500
+     * @tc.name      testNumericBigintRelationalOne0035
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0159", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const x_var: number = 1;
       const actual_outcome: boolean = (b > x_var);
@@ -546,14 +546,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_16000
-     * @tc.name      testNumericBigintRelational0160
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_3600
+     * @tc.name      testNumericBigintRelationalOne0036
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0160", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = -1n;
       const x_var: number = -2;
       const actual_outcome: boolean = (b > x_var);
@@ -561,14 +561,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_16100
-     * @tc.name      testNumericBigintRelational0161
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_3700
+     * @tc.name      testNumericBigintRelationalOne0037
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0161", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const x_var: number = 0.5;
       const actual_outcome: boolean = (b > x_var);
@@ -576,14 +576,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_16200
-     * @tc.name      testNumericBigintRelational0162
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_3800
+     * @tc.name      testNumericBigintRelationalOne0038
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0162", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
       const x_var: number = 1.9;
       const actual_outcome: boolean = (b > x_var);
@@ -591,14 +591,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_16300
-     * @tc.name      testNumericBigintRelational0163
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_3900
+     * @tc.name      testNumericBigintRelationalOne0039
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0163", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 5n;
       const x_var: number = 5.0;
       const actual_outcome: boolean = (b > x_var);
@@ -606,14 +606,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_16400
-     * @tc.name      testNumericBigintRelational0164
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_4000
+     * @tc.name      testNumericBigintRelationalOne0040
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0164", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const x_var: number = 0;
       const actual_outcome: boolean = (b >= x_var);
@@ -621,14 +621,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_16500
-     * @tc.name      testNumericBigintRelational0165
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_4100
+     * @tc.name      testNumericBigintRelationalOne0041
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0165", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 0n;
       const x_var: number = 1;
       const actual_outcome: boolean = (b >= x_var);
@@ -636,14 +636,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_16600
-     * @tc.name      testNumericBigintRelational0166
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_4200
+     * @tc.name      testNumericBigintRelationalOne0042
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0166", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const x_var: number = 1;
       const actual_outcome: boolean = (b >= x_var);
@@ -651,14 +651,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_16700
-     * @tc.name      testNumericBigintRelational0167
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_4300
+     * @tc.name      testNumericBigintRelationalOne0043
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0167", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = -1n;
       const x_var: number = -2;
       const actual_outcome: boolean = (b >= x_var);
@@ -666,14 +666,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_16800
-     * @tc.name      testNumericBigintRelational0168
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_4400
+     * @tc.name      testNumericBigintRelationalOne0044
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0168", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const x_var: number = 0.5;
       const actual_outcome: boolean = (b >= x_var);
@@ -681,14 +681,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_16900
-     * @tc.name      testNumericBigintRelational0169
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_4500
+     * @tc.name      testNumericBigintRelationalOne0045
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0169", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
       const x_var: number = 1.9;
       const actual_outcome: boolean = (b >= x_var);
@@ -696,14 +696,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_17000
-     * @tc.name      testNumericBigintRelational0170
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_4600
+     * @tc.name      testNumericBigintRelationalOne0046
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0170", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 5n;
       const x_var: number = 5.0;
       const actual_outcome: boolean = (b >= x_var);
@@ -711,14 +711,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_17100
-     * @tc.name      testNumericBigintRelational0171
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_4700
+     * @tc.name      testNumericBigintRelationalOne0047
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0171", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const x_var: number = 2;
       const actual_outcome: boolean = (b <= x_var);
@@ -726,14 +726,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_17200
-     * @tc.name      testNumericBigintRelational0172
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_4800
+     * @tc.name      testNumericBigintRelationalOne0048
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0172", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
       const x_var: number = 1;
       const actual_outcome: boolean = (b <= x_var);
@@ -741,14 +741,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_17300
-     * @tc.name      testNumericBigintRelational0173
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_4900
+     * @tc.name      testNumericBigintRelationalOne0049
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0173", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const x_var: number = 1;
       const actual_outcome: boolean = (b <= x_var);
@@ -756,14 +756,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_17400
-     * @tc.name      testNumericBigintRelational0174
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_5000
+     * @tc.name      testNumericBigintRelationalOne0050
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0174", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = -2n;
       const x_var: number = -1;
       const actual_outcome: boolean = (b <= x_var);
@@ -771,14 +771,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_17500
-     * @tc.name      testNumericBigintRelational0175
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_5100
+     * @tc.name      testNumericBigintRelationalOne0051
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0175", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const x_var: number = 1.1;
       const actual_outcome: boolean = (b <= x_var);
@@ -786,14 +786,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_17600
-     * @tc.name      testNumericBigintRelational0176
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_5200
+     * @tc.name      testNumericBigintRelationalOne0052
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0176", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
       const x_var: number = 2.5;
       const actual_outcome: boolean = (b <= x_var);
@@ -801,14 +801,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_17700
-     * @tc.name      testNumericBigintRelational0177
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_5300
+     * @tc.name      testNumericBigintRelationalOne0053
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0177", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
       const x_var: number = 2.0;
       const actual_outcome: boolean = (b <= x_var);
@@ -816,14 +816,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_17800
-     * @tc.name      testNumericBigintRelational0178
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_5400
+     * @tc.name      testNumericBigintRelationalOne0054
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0178", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const x_var: number = 0;
       const actual_outcome: boolean = (b != x_var);
@@ -831,14 +831,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_17900
-     * @tc.name      testNumericBigintRelational0179
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_5500
+     * @tc.name      testNumericBigintRelationalOne0055
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0179", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const x_var: number = 1;
       const actual_outcome: boolean = (b != x_var);
@@ -846,14 +846,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_18000
-     * @tc.name      testNumericBigintRelational0180
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_5600
+     * @tc.name      testNumericBigintRelationalOne0056
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0180", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 1n;
       const x_var: number = 2.0;
       const actual_outcome: boolean = (b != x_var);
@@ -861,14 +861,14 @@ export default function NumericBigintRelationalTest(): void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_18100
-     * @tc.name      testNumericBigintRelational0181
+     * @tc.number    SUB_NUMERIC_BIGINT_RELATIONAL_ONE_5700
+     * @tc.name      testNumericBigintRelationalOne0057
      * @tc.desc      Bigint comparison, if type of both operands is bigint.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testNumericBigintRelational0181", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericBigintRelationalOne0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b: bigint = 2n;
       const x_var: number = 2.0;
       const actual_outcome: boolean = (b != x_var);

@@ -33,14 +33,6 @@ async function sleep(time: int): Promise<int> {
   });
 }
 
-function getOperand1(): number { return 2; }
-function getOperand2(): number { return 1; }
-function getOperand3(): number { return 1; }
-function getOperand4(): number { return -1; }
-function getOperand5(): number { return 2.0; }
-function getOperand6(): number { return 2.5; }
-function getOperand7(): number { return 2.0; }
-
 export default function NumericBigintRelationalTest(): void {
   describe("NumericBigintRelationalTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.

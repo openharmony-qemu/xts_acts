@@ -56,14 +56,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       // This API supports only one parameter: clear action function.
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_0100
-    * @tc.name      testNumericRelationalOperators0001
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_0100
+    * @tc.name      testNumericRelationalOperatorsOne0001
     * @tc.desc      Integer comparison 0 > -1
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: byte = 0;
       let bx: Byte = new Byte(0);
       let y: byte = -1;
@@ -73,14 +73,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x > by)).assertTrue()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_0200
-    * @tc.name      testNumericRelationalOperators0002
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_0200
+    * @tc.name      testNumericRelationalOperatorsOne0002
     * @tc.desc      Integer comparison 0 < 1
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = 0;
       let bx: Int = new Int(0);
       let y: int = 1;
@@ -90,14 +90,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x < by)).assertTrue()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_0300
-    * @tc.name      testNumericRelationalOperators0003
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_0300
+    * @tc.name      testNumericRelationalOperatorsOne0003
     * @tc.desc      Integer comparison 1 < 0
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = 1;
       let bx: Int = new Int(1);
       let y: int = 0;
@@ -107,14 +107,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x < by)).assertFalse()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_0400
-    * @tc.name      testNumericRelationalOperators0004
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_0400
+    * @tc.name      testNumericRelationalOperatorsOne0004
     * @tc.desc      Integer comparison -1 < 0
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = -1;
       let bx: Int = new Int(-1);
       let y: int = 0;
@@ -124,14 +124,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x < by)).assertTrue()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_0500
-    * @tc.name      testNumericRelationalOperators0005
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_0500
+    * @tc.name      testNumericRelationalOperatorsOne0005
     * @tc.desc      Integer comparison 0 < -1
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = 0;
       let bx: Int = new Int(0);
       let y: int = -1;
@@ -141,14 +141,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x < by)).assertFalse()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_0600
-    * @tc.name      testNumericRelationalOperators0006
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_0600
+    * @tc.name      testNumericRelationalOperatorsOne0006
     * @tc.desc      Integer comparison 0 < 1
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: byte = 0;
       let bx: Byte = new Byte(0);
       let y: byte = 1;
@@ -158,14 +158,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x < by)).assertTrue()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_0700
-    * @tc.name      testNumericRelationalOperators0007
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_0700
+    * @tc.name      testNumericRelationalOperatorsOne0007
     * @tc.desc      Integer comparison 1 < 0
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: byte = 1;
       let bx: Byte = new Byte(1);
       let y: byte = 0;
@@ -175,14 +175,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x < by)).assertFalse()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_0800
-    * @tc.name      testNumericRelationalOperators0008
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_0800
+    * @tc.name      testNumericRelationalOperatorsOne0008
     * @tc.desc      Integer comparison -1 < 0
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: byte = -1;
       let bx: Byte = new Byte(-1);
       let y: byte = 0;
@@ -192,14 +192,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x < by)).assertTrue()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_0900
-    * @tc.name      testNumericRelationalOperators0009
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_0900
+    * @tc.name      testNumericRelationalOperatorsOne0009
     * @tc.desc      Integer comparison 0 < -1
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: byte = 0;
       let bx: Byte = new Byte(0);
       let y: byte = -1;
@@ -209,14 +209,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x < by)).assertFalse()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_1000
-    * @tc.name      testNumericRelationalOperators0010
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_1000
+    * @tc.name      testNumericRelationalOperatorsOne0010
     * @tc.desc      Integer comparison 0 >= 1
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = 0;
       let bx: Int = new Int(0);
       let y: int = 1;
@@ -226,14 +226,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x >= by)).assertFalse()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_1100
-    * @tc.name      testNumericRelationalOperators0011
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_1100
+    * @tc.name      testNumericRelationalOperatorsOne0011
     * @tc.desc      Integer comparison 1 >= 0
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = 1;
       let bx: Int = new Int(1);
       let y: int = 0;
@@ -243,14 +243,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x >= by)).assertTrue()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_1200
-    * @tc.name      testNumericRelationalOperators0012
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_1200
+    * @tc.name      testNumericRelationalOperatorsOne0012
     * @tc.desc      Integer comparison -1 >= 0
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = -1;
       let bx: Int = new Int(-1);
       let y: int = 0;
@@ -260,14 +260,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x >= by)).assertFalse()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_1300
-    * @tc.name      testNumericRelationalOperators0013
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_1300
+    * @tc.name      testNumericRelationalOperatorsOne0013
     * @tc.desc      Integer comparison 0 >= -1
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = 0;
       let bx: Int = new Int(0);
       let y: int = -1;
@@ -277,14 +277,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x >= by)).assertTrue()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_1400
-    * @tc.name      testNumericRelationalOperators0014
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_1400
+    * @tc.name      testNumericRelationalOperatorsOne0014
     * @tc.desc      Integer comparison 0 >= 1
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = 0;
       let bx: Int = new Int(0);
       let y: byte = 1;
@@ -294,14 +294,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x >= by)).assertFalse()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_1500
-    * @tc.name      testNumericRelationalOperators0015
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_1500
+    * @tc.name      testNumericRelationalOperatorsOne0015
     * @tc.desc      Integer comparison 1 >= 0
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = 1;
       let bx: Int = new Int(1);
       let y: byte = 0;
@@ -311,14 +311,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x >= by)).assertTrue()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_1600
-    * @tc.name      testNumericRelationalOperators0016
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_1600
+    * @tc.name      testNumericRelationalOperatorsOne0016
     * @tc.desc      Integer comparison -1 >= 0
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = -1;
       let bx: Int = new Int(-1);
       let y: byte = 0;
@@ -328,14 +328,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x >= by)).assertFalse()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_1700
-    * @tc.name      testNumericRelationalOperators0017
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_1700
+    * @tc.name      testNumericRelationalOperatorsOne0017
     * @tc.desc      Integer comparison 0 >= -1
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = 0;
       let bx: Int = new Int(0);
       let y: byte = -1;
@@ -345,14 +345,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x >= by)).assertTrue()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_1800
-    * @tc.name      testNumericRelationalOperators0018
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_1800
+    * @tc.name      testNumericRelationalOperatorsOne0018
     * @tc.desc      Integer comparison 0 <= 1
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = 0;
       let bx: Int = new Int(0);
       let y: int = 1;
@@ -362,14 +362,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x <= by)).assertTrue()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_1900
-    * @tc.name      testNumericRelationalOperators0019
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_1900
+    * @tc.name      testNumericRelationalOperatorsOne0019
     * @tc.desc      Integer comparison 1 <= 0
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = 1;
       let bx: Int = new Int(1);
       let y: int = 0;
@@ -379,14 +379,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x <= by)).assertFalse()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_2000
-    * @tc.name      testNumericRelationalOperators0020
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_2000
+    * @tc.name      testNumericRelationalOperatorsOne0020
     * @tc.desc      Integer comparison -1 <= 0
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = -1;
       let bx: Int = new Int(-1);
       let y: int = 0;
@@ -396,14 +396,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x <= by)).assertTrue()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_2100
-    * @tc.name      testNumericRelationalOperators0021
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_2100
+    * @tc.name      testNumericRelationalOperatorsOne0021
     * @tc.desc      Integer comparison 0 <= -1
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = 0;
       let bx: Int = new Int(0);
       let y: int = -1;
@@ -413,14 +413,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x <= by)).assertFalse()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_2200
-    * @tc.name      testNumericRelationalOperators0022
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_2200
+    * @tc.name      testNumericRelationalOperatorsOne0022
     * @tc.desc      Integer comparison 0 <= 1
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: byte = 0;
       let bx: Byte = new Byte(0);
       let y: byte = 1;
@@ -430,14 +430,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x <= by)).assertTrue()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_2300
-    * @tc.name      testNumericRelationalOperators0023
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_2300
+    * @tc.name      testNumericRelationalOperatorsOne0023
     * @tc.desc      Integer comparison 1 <= 0
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: byte = 1;
       let bx: Byte = new Byte(1);
       let y: byte = 0;
@@ -447,14 +447,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x <= by)).assertFalse()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_2400
-    * @tc.name      testNumericRelationalOperators0024
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_2400
+    * @tc.name      testNumericRelationalOperatorsOne0024
     * @tc.desc      Integer comparison -1 <= 0
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: byte = -1;
       let bx: Byte = new Byte(-1);
       let y: byte = 0;
@@ -464,14 +464,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x <= by)).assertTrue()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_2500
-    * @tc.name      testNumericRelationalOperators0025
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_2500
+    * @tc.name      testNumericRelationalOperatorsOne0025
     * @tc.desc      Integer comparison 0 <= -1
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: byte = 0;
       let bx: Byte = new Byte(0);
       let y: byte = -1;
@@ -481,14 +481,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x <= by)).assertFalse()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_2600
-    * @tc.name      testNumericRelationalOperators0026
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_2600
+    * @tc.name      testNumericRelationalOperatorsOne0026
     * @tc.desc      Integer comparison 0 >= 0
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = 0;
       let bx: Int = new Int(0);
       let y: int = 0;
@@ -498,14 +498,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x >= by)).assertTrue()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_2700
-    * @tc.name      testNumericRelationalOperators0027
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_2700
+    * @tc.name      testNumericRelationalOperatorsOne0027
     * @tc.desc      Integer comparison 0 <= 0
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = 0;
       let bx: Int = new Int(0);
       let y: int = 0;
@@ -515,14 +515,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x <= by)).assertTrue()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_2800
-    * @tc.name      testNumericRelationalOperators0028
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_2800
+    * @tc.name      testNumericRelationalOperatorsOne0028
     * @tc.desc      Integer comparison 1 >= 1
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = 1;
       let bx: Int = new Int(1);
       let y: int = 1;
@@ -532,14 +532,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x >= by)).assertTrue()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_2900
-    * @tc.name      testNumericRelationalOperators0029
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_2900
+    * @tc.name      testNumericRelationalOperatorsOne0029
     * @tc.desc      Integer comparison 1 <= 1
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = 1;
       let bx: Int = new Int(1);
       let y: int = 1;
@@ -549,14 +549,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x <= by)).assertTrue()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_3000
-    * @tc.name      testNumericRelationalOperators0030
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_3000
+    * @tc.name      testNumericRelationalOperatorsOne0030
     * @tc.desc      Integer comparison -1 >= -1
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = -1;
       let bx: Int = new Int(-1);
       let y: int = -1;
@@ -566,14 +566,14 @@ export default function NumericRelationalOperatorsOneTest(): void {
       expect((x >= by)).assertTrue()
     })
     /**
-    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_3100
-    * @tc.name      testNumericRelationalOperators0031
+    * @tc.number    SUB_NUMERIC_RELATIONAL_OPERATORS_ONE_3100
+    * @tc.name      testNumericRelationalOperatorsOne0031
     * @tc.desc      Integer comparison -1 <= -1
     * @tc.size      MediumTest
     * @tc.type      Function
     * @tc.level     Level 2
     */
-    it("testNumericRelationalOperators0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testNumericRelationalOperatorsOne0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: int = -1;
       let bx: Int = new Int(-1);
       let y: int = -1;
