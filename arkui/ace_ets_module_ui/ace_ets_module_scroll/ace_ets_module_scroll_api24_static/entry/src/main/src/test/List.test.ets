@@ -18,10 +18,12 @@ import ListScrollApiTest from './ListScrollApiTest/ListScrollApi.test';
 import ListItemSwipeManagerTest from './ListItemSwipeManagerTest/ListItemSwipeManager.test';
 import ScrollBarAttributeTest from './ScrollBarAttributeTest/ScrollBarAttribute.test';
 import ScrollScrollableChainTest from './ScrollScrollableChainTest/ScrollScrollableChain.test';
+import getFrameNodeScroller from './FrameNode/getFrameNodeScroller.test';
 
 export default function testsuite() {
   ListScrollApiTest();
   ListItemSwipeManagerTest();
   ScrollBarAttributeTest();
   ScrollScrollableChainTest();
+  getFrameNodeScroller()
 }

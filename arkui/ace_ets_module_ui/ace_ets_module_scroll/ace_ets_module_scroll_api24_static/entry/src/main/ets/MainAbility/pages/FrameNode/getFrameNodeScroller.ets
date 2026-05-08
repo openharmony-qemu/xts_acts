@@ -44,10 +44,9 @@ struct GridNodeDeclare {
 
   @State bindResult: string = 'Dynamic scroller not bound';
   @State gridOffsetText: string = 'Grid default yOffset: 0';
-  @State items: Array<number> = new Array<number>()
+  @State items: number[] = [] as number[];
 
   aboutToAppear(): void {
-    this.items = [];
     for (let i = 0; i < 40; i++) {
       this.items.push(i);
     }
