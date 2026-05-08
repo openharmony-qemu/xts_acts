@@ -12,7 +12,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../../../../hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../../hypium/index'
 import { HashMap } from '@kit.ArkTS';
 
 function sleep(count: int): Promise<void> {
@@ -23,7 +23,7 @@ function sleep(count: int): Promise<void> {
   })
 }
 
-export default function HashMapTest01Test() {
+export default function HashMapTest01Test(): void {
   describe('hashMapTest01Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

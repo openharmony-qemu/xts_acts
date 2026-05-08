@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../../../../hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../../hypium/index'
 import { buffer, HashMap,util } from '@kit.ArkTS';
 
 interface MapPropertyTestObject {
@@ -45,7 +45,7 @@ function sleep(count: int): Promise<void> {
   })
 }
 
-export default function HashMapTest05Test() {
+export default function HashMapTest05Test(): void {
   describe('hashMapTest05Test', () => {
     beforeAll(() => {
     })

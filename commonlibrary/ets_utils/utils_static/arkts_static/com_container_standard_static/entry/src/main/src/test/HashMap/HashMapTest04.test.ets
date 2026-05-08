@@ -13,8 +13,20 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../../../../hypium'
-import { buffer, HashMap,util } from '@kit.ArkTS';
+import {
+  describe,
+  beforeAll,
+  beforeEach,
+  afterEach,
+  afterAll,
+  it,
+  expect,
+  TestType,
+  Level,
+  Size
+} from '../../../../hypium/index'
+import { buffer, HashMap, util } from '@kit.ArkTS';
+
 interface SimpleTestObject {
   a?: number;
   b?: number;
@@ -79,7 +91,7 @@ function sleep(count: int): Promise<void> {
   })
 }
 
-export default function HashMapTest04Test() {
+export default function HashMapTest04Test(): void {
   describe('hashMapTest04Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -118,7 +130,7 @@ export default function HashMapTest04Test() {
 
       const testValues = [72, 101, 108, 108, 111, 87, 111, 114, 108, 100, 49, 50, 51, 63];
       const uint8Array = new Uint8Array(testValues);
-      hashMap.set("uint8ArrayKey",uint8Array);
+      hashMap.set("uint8ArrayKey", uint8Array);
 
       const getUint8Array = hashMap.get("uint8ArrayKey");
       expect(getUint8Array!.length).assertEqual(uint8Array.length);
@@ -148,7 +160,7 @@ export default function HashMapTest04Test() {
       const TAG = 'testHashMap0289';
       console.log(TAG + ' start');
       let hashMap = new HashMap<string, number[]>();
-      const testArray: number[] = [72, 101, 108, 108, 111, 87, 111, 114, 108,0,0,0,0,0, 100, 49, 50, 51, 63];
+      const testArray: number[] = [72, 101, 108, 108, 111, 87, 111, 114, 108, 0, 0, 0, 0, 0, 100, 49, 50, 51, 63];
       hashMap.set('arrayWithZerosKey', testArray);
       expect(hashMap.get("arrayWithZerosKey")!.length).assertEqual(19)
       console.log(TAG + ' end');
@@ -176,11 +188,11 @@ export default function HashMapTest04Test() {
 
       const uint8Expected = [
         72, 101, 108, 108, 111, 87,
-        145, // -111 → 256 - 111 = 145
+        145, // -111 �?256 - 111 = 145
         114, 108, 100,
-        207, // -49 → 256 - 49 = 207
+        207, // -49 �?256 - 49 = 207
         50, 51,
-        193  // -63 → 256 - 63 = 193
+        193// -63 �?256 - 63 = 193
       ];
 
       for (let i: int = 0; i < uint8Expected.length; i++) {
@@ -190,7 +202,6 @@ export default function HashMapTest04Test() {
       expect(getUint8Array).assertEqual(uint8Array);
       console.log(TAG + ' end');
     });
-
 
 
     /**
@@ -214,11 +225,11 @@ export default function HashMapTest04Test() {
 
       const uint16Expected = [
         72, 101, 108, 108, 111, 87,
-        65425, // -111 → 65536 - 111 = 65425
+        65425, // -111 �?65536 - 111 = 65425
         114, 108, 100,
-        65487, // -49 → 65536 - 49 = 65487
+        65487, // -49 �?65536 - 49 = 65487
         50, 51,
-        65473  // -63 → 65536 - 63 = 65473
+        65473// -63 �?65536 - 63 = 65473
       ];
 
       for (let i: int = 0; i < uint16Expected.length; i++) {
@@ -250,11 +261,11 @@ export default function HashMapTest04Test() {
 
       const uint32Expected = [
         72, 101, 108, 108, 111, 87,
-        4294967185, // -111 → 4294967296 - 111 = 4294967185
+        4294967185, // -111 �?4294967296 - 111 = 4294967185
         114, 108, 100,
-        4294967247, // -49 → 4294967296 - 49 = 4294967247
+        4294967247, // -49 �?4294967296 - 49 = 4294967247
         50, 51,
-        4294967233  // -63 → 4294967296 - 63 = 4294967233
+        4294967233// -63 �?4294967296 - 63 = 4294967233
       ];
 
       for (let i: int = 0; i < uint32Expected.length; i++) {
@@ -263,7 +274,6 @@ export default function HashMapTest04Test() {
       expect(getUint32Array).assertEqual(uint32Array)
       console.log(TAG + ' end');
     });
-
 
 
     /**
@@ -305,8 +315,8 @@ export default function HashMapTest04Test() {
       const numberArray = [10, -20, 30.5, 40, 128, -129, 3.14159];
       const int8Array = new Int8Array(numberArray);
       hashMap.set('int8ArrayKey', int8Array);
-      const getInt8Array=hashMap.get('int8ArrayKey') as Int8Array;
-      const int8Expected=[10, -20, 30, 40, -128, 127, 3]
+      const getInt8Array = hashMap.get('int8ArrayKey') as Int8Array;
+      const int8Expected = [10, -20, 30, 40, -128, 127, 3]
       for (let i: int = 0; i < int8Expected.length; i++) {
         expect(getInt8Array[i]).assertEqual(int8Expected[i]);
       }
@@ -329,7 +339,7 @@ export default function HashMapTest04Test() {
       const numberArray = [10, -20, 30.5, 40, 128, -129, 3.14159];
       const uint8Array = new Uint8Array(numberArray);
       hashMap.set('uint8ArrayKey', uint8Array);
-      const getUint8Array=hashMap.get('uint8ArrayKey') as Uint8Array;
+      const getUint8Array = hashMap.get('uint8ArrayKey') as Uint8Array;
       const uint8Expected = [10, 236, 30, 40, 128, 127, 3];
       for (let i: int = 0; i < uint8Expected.length; i++) {
         expect(getUint8Array[i]).assertEqual(uint8Expected[i]);
@@ -354,8 +364,8 @@ export default function HashMapTest04Test() {
       const numberArray = [10, -20, 30.5, 40, 128, -129, 3.14159];
       const int16Array = new Int16Array(numberArray);
       hashMap.set('int16ArrayKey', int16Array);
-      const getInt16Array=hashMap.get('int16ArrayKey') as Int16Array;
-      const int16Expected = [10,-20,30,40,128,-129,3];
+      const getInt16Array = hashMap.get('int16ArrayKey') as Int16Array;
+      const int16Expected = [10, -20, 30, 40, 128, -129, 3];
       for (let i: int = 0; i < int16Expected.length; i++) {
         expect(getInt16Array[i]).assertEqual(int16Expected[i]);
       }
@@ -379,8 +389,8 @@ export default function HashMapTest04Test() {
       const numberArray = [10, -20, 30.5, 40, 128, -129, 3.14159];
       const uint16Array = new Uint16Array(numberArray);
       hashMap.set('uint16ArrayKey', uint16Array);
-      const getUint16Array=hashMap.get('uint16ArrayKey') as Uint16Array;
-      const uint16Expected = [10,65516,30,40,128,65407,3];
+      const getUint16Array = hashMap.get('uint16ArrayKey') as Uint16Array;
+      const uint16Expected = [10, 65516, 30, 40, 128, 65407, 3];
       for (let i: int = 0; i < uint16Expected.length; i++) {
         expect(getUint16Array[i]).assertEqual(uint16Expected[i]);
       }
@@ -404,8 +414,8 @@ export default function HashMapTest04Test() {
       const numberArray = [10, -20, 30.5, 40, 128, -129, 3.14159];
       const int32Array = new Int32Array(numberArray);
       hashMap.set('int32ArrayKey', int32Array);
-      const getInt32Array=hashMap.get('int32ArrayKey') as Int32Array;
-      const int32Expected = [10,-20,30,40,128,-129,3];
+      const getInt32Array = hashMap.get('int32ArrayKey') as Int32Array;
+      const int32Expected = [10, -20, 30, 40, 128, -129, 3];
       for (let i: int = 0; i < int32Expected.length; i++) {
         expect(getInt32Array[i]).assertEqual(int32Expected[i]);
       }
@@ -429,8 +439,8 @@ export default function HashMapTest04Test() {
       const numberArray = [10, -20, 30.5, 40, 128, -129, 3.14159];
       const uint32Array = new Uint32Array(numberArray);
       hashMap.set('uint32ArrayKey', uint32Array);
-      const getUint32Array=hashMap.get('uint32ArrayKey') as Uint32Array;
-      const uint32Expected = [10,4294967276,30,40,128,4294967167,3];
+      const getUint32Array = hashMap.get('uint32ArrayKey') as Uint32Array;
+      const uint32Expected = [10, 4294967276, 30, 40, 128, 4294967167, 3];
       for (let i: int = 0; i < uint32Expected.length; i++) {
         expect(getUint32Array[i]).assertEqual(uint32Expected[i]);
       }
@@ -454,8 +464,8 @@ export default function HashMapTest04Test() {
       const numberArray = [10, -20, 30.5, 40, 128, -129, 3.14159];
       const float32Array = new Float32Array(numberArray);
       hashMap.set('float32ArrayKey', float32Array);
-      const getFloat32Array=hashMap.get('float32ArrayKey') as Float32Array;
-      const float32Expected = [10,-20,30.5,40,128,-129,3.141590118408203];
+      const getFloat32Array = hashMap.get('float32ArrayKey') as Float32Array;
+      const float32Expected = [10, -20, 30.5, 40, 128, -129, 3.141590118408203];
       for (let i: int = 0; i < float32Expected.length; i++) {
         expect(getFloat32Array[i]).assertEqual(float32Expected[i]);
       }
@@ -554,7 +564,7 @@ export default function HashMapTest04Test() {
       let hashMap = new HashMap<string, object>();
       const originalArray = [72, "abc", true, null, undefined, 108];
 
-      hashMap.set("arraykey",originalArray)
+      hashMap.set("arraykey", originalArray)
       expect(hashMap.get("arraykey")).assertEqual(originalArray);
       console.log(TAG + ' end');
     });
@@ -573,7 +583,7 @@ export default function HashMapTest04Test() {
       console.log(TAG + ' start');
       let hashMap = new HashMap<string, number[]>();
       const originalArray: number[] = [];
-      hashMap.set("originalkey",originalArray)
+      hashMap.set("originalkey", originalArray)
       expect(hashMap.get("originalkey")).assertEqual(originalArray);
       console.log(TAG + ' end');
     });
@@ -593,8 +603,8 @@ export default function HashMapTest04Test() {
       console.log(TAG + ' start');
       let hashMap = new HashMap<string, Uint8Array>();
       const originalArray: number[] = [];
-      const uint8Array=new Uint8Array(originalArray);
-      hashMap.set("uint8key",uint8Array)
+      const uint8Array = new Uint8Array(originalArray);
+      hashMap.set("uint8key", uint8Array)
       expect(hashMap.get("uint8key")!.length).assertEqual(0);
       console.log(TAG + ' end');
     });
@@ -614,8 +624,8 @@ export default function HashMapTest04Test() {
       console.log(TAG + ' start');
       let hashMap = new HashMap<string, Int16Array>();
       const originalArray: number[] = [];
-      const int16Array=new Int16Array(originalArray);
-      hashMap.set("int16key",int16Array)
+      const int16Array = new Int16Array(originalArray);
+      hashMap.set("int16key", int16Array)
       expect(hashMap.get("int16key")!.length).assertEqual(0);
       console.log(TAG + ' end');
     });
@@ -709,10 +719,10 @@ export default function HashMapTest04Test() {
       console.log(TAG + ' start');
       let hashMap = new HashMap<string, number[]>();
 
-      const arr: number[] = [1,2,3]
+      const arr: number[] = [1, 2, 3]
       hashMap.set('testArrayKey', arr);
-      arr.splice(1,1);
-      const gettestArray=hashMap.get('testArrayKey') as number[];
+      arr.splice(1, 1);
+      const gettestArray = hashMap.get('testArrayKey') as number[];
       expect(gettestArray.length).assertEqual(2);
       expect(gettestArray[0]).assertEqual(1);
       expect(gettestArray[1]).assertEqual(3);
@@ -733,13 +743,13 @@ export default function HashMapTest04Test() {
     it("testHashMap0312", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashMap0312';
       console.log(TAG + ' start');
-      let obj:SimpleTestObject= {a: 1, b: 2 };
+      let obj: SimpleTestObject = { a: 1, b: 2 };
 
       let hashMap = new HashMap<string, SimpleTestObject>();
-      hashMap.set("testArrayKey",obj);
-      obj.a=undefined;
+      hashMap.set("testArrayKey", obj);
+      obj.a = undefined;
 
-      const gettestArray=hashMap.get('testArrayKey')
+      const gettestArray = hashMap.get('testArrayKey')
       expect(gettestArray!.a).assertEqual(undefined);
       expect(gettestArray!.b).assertEqual(2);
       console.log(TAG + ' end');
@@ -758,13 +768,13 @@ export default function HashMapTest04Test() {
     it("testHashMap0313", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testHashMap0313';
       console.log(TAG + ' start');
-      let obj:SimpleTestObject= {a: 1};
+      let obj: SimpleTestObject = { a: 1 };
 
       let hashMap = new HashMap<string, SimpleTestObject>();
-      hashMap.set("testArrayKey",obj);
-      obj.b=undefined;
+      hashMap.set("testArrayKey", obj);
+      obj.b = undefined;
 
-      const gettestArray=hashMap.get('testArrayKey')
+      const gettestArray = hashMap.get('testArrayKey')
       expect(gettestArray!.a).assertEqual(1);
       expect(gettestArray!.b).assertEqual(undefined);
       console.log(TAG + ' end');
@@ -1337,7 +1347,7 @@ export default function HashMapTest04Test() {
       const hashMap = new HashMap<string, NullPropertyTestObject>();
       hashMap.set("nullPropObjKey", testObj);
       const getTestObj = hashMap.get("nullPropObjKey");
-      expect(getTestObj?.a==null).assertTrue();
+      expect(getTestObj?.a == null).assertTrue();
       expect(getTestObj?.b).assertEqual(1);
       console.log(TAG + ' end');
     });
@@ -1364,7 +1374,7 @@ export default function HashMapTest04Test() {
       testObj.a = 999;
       expect(getTestObj?.a).assertEqual(999);
       testObj.a = null;
-      expect(getTestObj?.a==null).assertTrue();
+      expect(getTestObj?.a == null).assertTrue();
       console.log(TAG + ' end');
     });
 
@@ -1386,7 +1396,7 @@ export default function HashMapTest04Test() {
       const hashMap = new HashMap<string, NullPropertyTestObject>();
       hashMap.set("nullPropObjKey", testObj);
       const getTestObj = hashMap.get("nullPropObjKey");
-      expect(getTestObj?.a==null).assertTrue();
+      expect(getTestObj?.a == null).assertTrue();
       expect(getTestObj?.c).assertEqual(undefined);
       expect(getTestObj?.a !== getTestObj?.c).assertTrue();
       console.log(TAG + ' end');
@@ -1614,10 +1624,10 @@ export default function HashMapTest04Test() {
       const hashMap = new HashMap<string, InfinityPropertyTestObject>();
       hashMap.set("infinityPropObjKey", testObj);
       const getTestObj = hashMap.get("infinityPropObjKey");
-      expect(isNaN(getTestObj!.a)).assertFalse();       // 区分Infinity与NaN
-      expect(getTestObj?.a !== null).assertTrue();      // 区分Infinity与null
+      expect(isNaN(getTestObj!.a)).assertFalse(); // 区分Infinity与NaN
+      expect(getTestObj?.a !== null).assertTrue(); // 区分Infinity与null
       expect(getTestObj?.a !== undefined).assertTrue(); // 区分Infinity与undefined
-      expect(getTestObj?.a !== -Infinity).assertTrue(); // 区分正/负无穷大
+      expect(getTestObj?.a !== -Infinity).assertTrue(); // 区分�?负无穷大
       console.log(TAG + ' end');
     });
 
@@ -1665,8 +1675,8 @@ export default function HashMapTest04Test() {
       const hashMap = new HashMap<string, TypedArrayTestObject>();
       hashMap.set("typedArrayObjKey", testObj);
       const getTestObj = hashMap.get("typedArrayObjKey");
-      expect(getTestObj!=null).assertTrue();
-      expect(getTestObj?.buffer!=null).assertTrue();
+      expect(getTestObj != null).assertTrue();
+      expect(getTestObj?.buffer != null).assertTrue();
       console.log(TAG + ' end');
     });
 

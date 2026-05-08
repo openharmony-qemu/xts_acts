@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../../../../hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '../../../../hypium/index'
 import { HashMap } from '@kit.ArkTS';
 function sleep(count: int): Promise<void> {
   return new Promise<void>((resolve: (value: PromiseLike<void>) => void, reject: (value: Error) => void) => {
@@ -23,7 +23,7 @@ function sleep(count: int): Promise<void> {
   })
 }
 
-export default function HashMapTest03Test() {
+export default function HashMapTest03Test(): void {
   describe('hashMapTest03Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -644,7 +644,7 @@ export default function HashMapTest03Test() {
     /**
      * @tc.number     SUB_HASHMAP_TESTTHREE_3300
      * @tc.name      testHashMap0227
-     * @tc.desc      Emoticon 🤼‍♂️ is passed in string data
+     * @tc.desc      Emoticon 🤼‍♂�?is passed in string data
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -653,7 +653,7 @@ export default function HashMapTest03Test() {
       const TAG = 'testHashMap0227';
       console.log(TAG + ' start');
       let hashMap = new HashMap<string, string>();
-      const emojiChar = '🤼‍♂️';
+      const emojiChar = '🤼‍♂�?';
       const unicodeEscapeChar = '\ud83e\udd3c\u200d\u2642\ufe0f';
       hashMap.set('key', emojiChar);
       expect(hashMap.get('key')).assertEqual(unicodeEscapeChar);
@@ -663,7 +663,7 @@ export default function HashMapTest03Test() {
     /**
      * @tc.number     SUB_HASHMAP_TESTTHREE_3400
      * @tc.name      testHashMap0228
-     * @tc.desc      Emoticon 🛢️ is passed in string data
+     * @tc.desc      Emoticon 🛢�?is passed in string data
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -691,7 +691,7 @@ export default function HashMapTest03Test() {
       const TAG = 'testHashMap0229';
       console.log(TAG + ' start');
       let hashMap = new HashMap<string, string>();
-      const emojiChar = '🀄';
+      const emojiChar = '�?';
       const unicodeEscapeChar = '\ud83c\udc04';
       hashMap.set('key', emojiChar);
       expect(hashMap.get('key')).assertEqual(unicodeEscapeChar);
