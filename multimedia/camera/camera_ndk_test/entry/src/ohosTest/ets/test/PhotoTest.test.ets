@@ -2848,7 +2848,7 @@ export default function PhotoTest() {
     /**
      * @tc.number    SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0100
      * @tc.name      SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0100
-     * @tc.desc      test sub multimedia camera ndk enum ExposureState
+     * @tc.desc      test sub multimedia camera enum ExposureState
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2881,7 +2881,7 @@ export default function PhotoTest() {
     /**
      * @tc.number    SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0200
      * @tc.name      SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0200
-     * @tc.desc      test sub multimedia camera ndk session on exposureStateChange
+     * @tc.desc      test sub multimedia camera session on exposureStateChange
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 0
@@ -2913,7 +2913,7 @@ export default function PhotoTest() {
     /**
      * @tc.number    SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0300
      * @tc.name      SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0300
-     * @tc.desc      test sub multimedia camera ndk session on exposureStateChange with first param null
+     * @tc.desc      test sub multimedia camera session on exposureStateChange with first param null
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2945,7 +2945,7 @@ export default function PhotoTest() {
     /**
      * @tc.number    SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0400
      * @tc.name      SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0400
-     * @tc.desc      test sub multimedia camera ndk session on exposureStateChange with second param null
+     * @tc.desc      test sub multimedia camera session on exposureStateChange with second param null
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
@@ -2977,7 +2977,7 @@ export default function PhotoTest() {
     /**
      * @tc.number    SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0500
      * @tc.name      SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0500
-     * @tc.desc      test sub multimedia camera ndk session off exposureStateChange
+     * @tc.desc      test sub multimedia camera session off exposureStateChange
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 0
@@ -3009,7 +3009,7 @@ export default function PhotoTest() {
     /**
      * @tc.number    SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0600
      * @tc.name      SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0600
-     * @tc.desc      test sub multimedia camera ndk session off exposureStateChange with first param null
+     * @tc.desc      test sub multimedia camera session off exposureStateChange with first param null
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3041,7 +3041,7 @@ export default function PhotoTest() {
     /**
      * @tc.number    SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0700
      * @tc.name      SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0700
-     * @tc.desc      test sub multimedia camera ndk session off exposureStateChange with second param null
+     * @tc.desc      test sub multimedia camera session off exposureStateChange with second param null
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
@@ -3073,7 +3073,7 @@ export default function PhotoTest() {
     /**
      * @tc.number    SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0800
      * @tc.name      SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0800
-     * @tc.desc      test sub multimedia camera ndk session wait for EXPOSURE_STATE_CONVERGED
+     * @tc.desc      test sub multimedia camera session wait for EXPOSURE_STATE_CONVERGED
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 1
