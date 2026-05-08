@@ -859,10 +859,12 @@ export default function windowPropertiesTest3() {
         if (windowLimits.minHeight !== undefined){
           tmpWindowHeight = windowLimits?.minHeight + 100;
         }
-        await testWindow.resize(tmpWindowWidth, tmpWindowHeight + 100);
+        await testWindow.resize(tmpWindowWidth, tmpWindowHeight);
         console.info(`${message} resize success.`);
         await testWindow.moveWindowTo(100, 100);
         console.info(`${message} moveWindowTo success.`);
+
+        await sleep(500);
 
         try {
           let data = await window.getAllWindowLayoutInfo(displayId, option);
