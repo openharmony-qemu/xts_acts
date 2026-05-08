@@ -1,4 +1,4 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { util } from '@kit.ArkTS';
 import Stack from '@ohos.util.Stack';
 
