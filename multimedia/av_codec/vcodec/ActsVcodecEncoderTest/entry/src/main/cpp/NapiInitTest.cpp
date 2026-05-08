@@ -422,7 +422,10 @@ static const std::vector<TestFunction>& GetGetparamTestFunctions()
     VideoEncodeMseQp0200Test,
     VideoEncodeMseQp0300Test,
     VideoEncodeMseQp0400Test,
-    VideoEncodeRepeat0100Test
+    VideoEncodeRepeat0100Test,
+    VideoEncodePreProcess0100Test,
+    VideoEncodePreProcess0200Test,
+    VideoEncodePreProcess0300Test
     };
     return functions;
 }

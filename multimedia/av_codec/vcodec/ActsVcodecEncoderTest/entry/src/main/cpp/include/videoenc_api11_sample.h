@@ -46,6 +46,7 @@ public:
     std::queue<uint32_t> outIdxQueue_;
     std::queue<OH_AVBuffer *> inBufferQueue_;
     std::queue<OH_AVBuffer *> outBufferQueue_;
+    std::queue<bool> isPrimaryQueue_;
 };
 struct fileInfo {
     std::string fileDir;
@@ -64,12 +65,31 @@ typedef struct LtrTestParameter {
     int32_t ltrCount = 0;
 }LtrTestParameter;
 
+typedef struct PreProcessParameter {
+    bool configEnable = false;
+    bool setParameterEnable = false;
+    bool enableCrop = false;
+    bool enableDFrame = false;
+    bool enableDownsampling = false;
+    int32_t cropLeft = 0;
+    int32_t cropRight = 0;
+    int32_t cropTop = 0;
+    int32_t cropBottom = 0;
+    int32_t downsamplingWidth = 0;
+    int32_t downsamplingHeight = 0;
+    double dropFrameRate = 0.00;
+    int32_t cropNum = 4;
+    int32_t downsamplingNum = 2;
+    bool dropFramePtsSame = false;
+}PreProcessParameter;
+
 class VEncAPI11Sample : public NoCopyable {
 public:
     VEncAPI11Sample() = default;
     ~VEncAPI11Sample();
     const char *INP_DIR = "/data/test/media/1280_720_nv.yuv";
     const char *OUT_DIR = "/data/test/media/VEncTest.h264";
+    const char *OUT_DIR_SEC = "/data/test/media/VEncTest2.h264";
     uint32_t DEFAULT_WIDTH = 1280;
     uint32_t DEFAULT_HEIGHT = 720;
     uint32_t DEFAULT_BITRATE = 5000000;
@@ -88,6 +108,15 @@ public:
     uint32_t DEFAULT_TRANSFER_CHARACTERISTICS = TRANSFER_CHARACTERISTIC_BT709;
     uint32_t DEFAULT_MATRIX_COEFFICIENTS = MATRIX_COEFFICIENT_BT709;
     uint32_t repeat_time = 0;
+    bool runDualEncoder = false;
+    PreProcessParameter preProcessParameter;
+    int32_t CreatePrimaryEncoder(const char *codecMime);
+    int32_t CreateSecondaryEncoder();
+    int32_t SwitchPrimaryEncoder();
+    int32_t SwitchSecondaryEncoder();
+    int32_t StartSecondaryEncoder();
+    int32_t SetDualCallback();
+    void SetPreProcessConfigure(OH_AVFormat *format);
     int32_t CreateVideoEncoder(const char *codecName);
     int32_t ConfigureVideoEncoder();
     int32_t ConfigureVideoEncoder_Temporal(int32_t temporal_gop_size);
@@ -222,6 +251,9 @@ public:
     bool getOutputBufferIndexRepeated = false;
     bool noDestroy = false;
     std::atomic<bool> isRunning_ { false };
+    OH_AVCodec *vencPrimary;
+    OH_AVCodec *vencSecondary;
+    bool dualEos = false;
 private:
     std::unique_ptr<std::ifstream> inFile_;
     std::unique_ptr<std::thread> inputLoop_;

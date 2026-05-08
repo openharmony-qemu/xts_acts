@@ -198,6 +198,115 @@ int VideoEncodeRepeat0100Test()
     return 0;
 }
 
+int VideoEncodePreProcess0100Test()
+{
+    if (cap != nullptr && !access("/system/lib64/ndk/libfast_image.so", 0)) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->runDualEncoder = true;
+        vEncSample->INP_DIR = INP_DIR_720;
+        vEncSample->OUT_DIR = "/data/storage/el2/base/files/media/VIDEO_ENCODE_PRE_PROCESS_0010_1.h264";
+        vEncSample->OUT_DIR_SEC = "/data/storage/el2/base/files/media/VIDEO_ENCODE_PRE_PROCESS_0010_2.h264";
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreatePrimaryEncoder(OH_AVCODEC_MIMETYPE_VIDEO_AVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateSecondaryEncoder());
+        vEncSample->SURF_INPUT = false;
+        vEncSample->DEFAULT_WIDTH = 1280;
+        vEncSample->DEFAULT_HEIGHT = 720;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SwitchSecondaryEncoder());
+        vEncSample->preProcessParameter.configEnable = true;
+        vEncSample->preProcessParameter.enableDownsampling = true;
+        vEncSample->preProcessParameter.downsamplingWidth = 640;
+        vEncSample->preProcessParameter.downsamplingHeight = 360;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SetDualCallback());
+        vEncSample->SURF_INPUT = true;
+        vEncSample->preProcessParameter.downsamplingWidth = 380;
+        vEncSample->preProcessParameter.downsamplingHeight = 200;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SwitchPrimaryEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SetDualCallback());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartSecondaryEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+        return 0;
+    }
+    return 0;
+}
+
+int VideoEncodePreProcess0200Test()
+{
+    if (cap_hevc != nullptr && !access("/system/lib64/ndk/libfast_image.so", 0)) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->runDualEncoder = true;
+        vEncSample->INP_DIR = INP_DIR_720;
+        vEncSample->OUT_DIR = "/data/storage/el2/base/files/media/VIDEO_ENCODE_PRE_PROCESS_0020_1.h265";
+        vEncSample->OUT_DIR_SEC = "/data/storage/el2/base/files/media/VIDEO_ENCODE_PRE_PROCESS_0020_2.h265";
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreatePrimaryEncoder(OH_AVCODEC_MIMETYPE_VIDEO_HEVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateSecondaryEncoder());
+        vEncSample->SURF_INPUT = false;
+        vEncSample->DEFAULT_WIDTH = 1280;
+        vEncSample->DEFAULT_HEIGHT = 720;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SwitchSecondaryEncoder());
+        vEncSample->preProcessParameter.configEnable = true;
+        vEncSample->preProcessParameter.enableCrop = true;
+        vEncSample->preProcessParameter.cropLeft = 100;
+        vEncSample->preProcessParameter.cropRight = 1199;
+        vEncSample->preProcessParameter.cropTop = 100;
+        vEncSample->preProcessParameter.cropBottom = 699;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SetDualCallback());
+        vEncSample->SURF_INPUT = true;
+        vEncSample->preProcessParameter.enableCrop = true;
+        vEncSample->preProcessParameter.cropLeft = 50;
+        vEncSample->preProcessParameter.cropRight = 999;
+        vEncSample->preProcessParameter.cropTop = 0;
+        vEncSample->preProcessParameter.cropBottom = 499;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SwitchPrimaryEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SetDualCallback());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartSecondaryEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+        return 0;
+    }
+    return 0;
+}
+
+int VideoEncodePreProcess0300Test()
+{
+    if (cap != nullptr && !access("/system/lib64/ndk/libfast_image.so", 0)) {
+        auto vEncSample = make_unique<VEncAPI11Sample>();
+        vEncSample->runDualEncoder = true;
+        vEncSample->INP_DIR = INP_DIR_720;
+        vEncSample->OUT_DIR = "/data/storage/el2/base/files/media/VIDEO_ENCODE_PRE_PROCESS_0030_1.h264";
+        vEncSample->OUT_DIR_SEC = "/data/storage/el2/base/files/media/VIDEO_ENCODE_PRE_PROCESS_0030_2.h264";
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreatePrimaryEncoder(OH_AVCODEC_MIMETYPE_VIDEO_AVC));
+        ASSERT_EQ(AV_ERR_OK, vEncSample->CreateSecondaryEncoder());
+        vEncSample->SURF_INPUT = false;
+        vEncSample->DEFAULT_WIDTH = 1280;
+        vEncSample->DEFAULT_HEIGHT = 720;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SwitchSecondaryEncoder());
+        vEncSample->preProcessParameter.configEnable = true;
+        vEncSample->preProcessParameter.enableDFrame = true;
+        vEncSample->preProcessParameter.dropFrameRate = 25.57;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SetDualCallback());
+        vEncSample->SURF_INPUT = true;
+        vEncSample->preProcessParameter.enableDFrame = true;
+        vEncSample->preProcessParameter.dropFrameRate = 15.89;
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SwitchPrimaryEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->ConfigureVideoEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->SetDualCallback());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartSecondaryEncoder());
+        ASSERT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
+        vEncSample->WaitForEOS();
+        ASSERT_EQ(AV_ERR_OK, vEncSample->errCount);
+        return 0;
+    }
+    return 0;
+}
+
 void InitGetparamTest()
 {
     SetUpTestCase();
