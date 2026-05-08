@@ -19,7 +19,7 @@ import http from '@ohos.net.http';
 
 const Url1: string = "http://httpbin.moyufangge.com/cookies/set/test_cookie/test_value";
 const Url2: string = "http://httpbin.moyufangge.com/cookies";
-const Url3: string = "http://httpbun.com/cookies";
+const Url3: string = "http://httpbin.org/cookies";
 
 let ExpectFail = () => {
   try {
@@ -61,29 +61,61 @@ export default function HttpRequestEnableAutoCookieTest() {
       try {
         httpRequest = http.createHttp();
         httpRequest.enableAutoCookie(true);
-        console.info(`${caseName} request1 set Cookies `+ Url1);
+        console.info(`${caseName} request1 set Cookies ` + Url1);
         let data: http.HttpResponse = await httpRequest.request(Url1);
-              console.info(`${caseName} Request 1 success: ${JSON.stringify(data)}`);
-              expect(data.responseCode).assertEqual(200);
-                console.info(`${caseName} request2 get Cookies `+ Url2);
-                let data2: http.HttpResponse = await httpRequest.request(Url2);
-                    console.info(`${caseName} Request 2 success: ${JSON.stringify(data2)}`);
-                    expect(data2.responseCode).assertEqual(200);
-                    let result: CookiesResponse = JSON.parse(data2.result as string);
-                    console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
-                    if (result.cookies !=null && result.cookies !=undefined) {
-                      ExpectTrue(result.cookies.test_cookie === 'test_value');
-                      console.info(`${caseName} Cookies are included`);
-                    } else {
-                      ExpectFail();
-                      console.info(`${caseName} Cookies are missing`);
-                    }
+        console.info(`${caseName} Request 1 success: ${JSON.stringify(data)}`);
+        expect(data.responseCode).assertEqual(200);
+        console.info(`${caseName} request2 get Cookies ` + Url2);
+        let data2: http.HttpResponse = await httpRequest.request(Url2);
+        console.info(`${caseName} Request 2 success: ${JSON.stringify(data2)}`);
+        expect(data2.responseCode).assertEqual(200);
+        let result: CookiesResponse | null = null;
+        let parseSuccess: boolean = false;
+        let contentType = '';
+        if (data2.header && typeof data2.header === 'object') {
+          contentType = (data2.header['content-type'] as string) || '';
+        }
+        console.info(`${caseName} content-type: ${contentType}`);
+        try {
+          result = JSON.parse(data2.result as string);
+          console.info(`${caseName} JSON parse success`);
+          parseSuccess = true;
+        } catch (parseErr) {
+          console.info(`${caseName} JSON parse failed: ${JSON.stringify(parseErr)}`);
+          parseSuccess = false;
+        }
+        if (contentType && !contentType.includes('application/json')) {
+          console.info(`${caseName} content-type is not application/json`);
+          ExpectFail();
+          console.info(`${caseName} Unexpected content-type: ${contentType}`);
+        } else if (!parseSuccess) {
+          console.info(`${caseName} Failed to parse response as JSON`);
+          ExpectFail();
+        } else {
+          if (result !== null) {
+            console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
+            if (result.cookies !== null && result.cookies !== undefined) {
+              ExpectTrue(result.cookies.test_cookie === 'test_value');
+              console.info(`${caseName} Cookies are included`);
+            } else {
+              ExpectFail();
+              console.info(`${caseName} Cookies are missing`);
+            }
+          } else {
+            ExpectFail();
+            console.info(`${caseName} Parsed result is null`);
+          }
+        }
         console.info(`${caseName} All requests completed.`);
       } catch (err) {
         console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
         ExpectFail();
+      } finally {
+        if (httpRequest) {
+          httpRequest.destroy();
+        }
       }
-        done();
+      done();
       console.info(`${caseName}---End`);
     });
     /**
@@ -105,27 +137,60 @@ export default function HttpRequestEnableAutoCookieTest() {
         let data: http.HttpResponse = await httpRequest.request(Url1);
         console.info(`${caseName} Request 1 success: ${JSON.stringify(data)}`);
         expect(data.responseCode).assertEqual(200);
-        console.info(`${caseName} request2 get Cookies `+ Url2);
+        console.info(`${caseName} request2 get Cookies ` + Url2);
         let data2: http.HttpResponse = await httpRequest.request(Url2);
         console.info(`${caseName} Request 2 success: ${JSON.stringify(data2)}`);
         expect(data2.responseCode).assertEqual(200);
-        let result: CookiesResponse = JSON.parse(data2.result as string);
-        console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
-        if (result.cookies !=null && result.cookies !=undefined) {
-          ExpectTrue(result.cookies.test_cookie != 'test_value');
-          console.info(`${caseName} Cookies are missing`);
-        } else {
+        let result: CookiesResponse | null = null;
+        let parseSuccess: boolean = false;
+        let contentType = '';
+        if (data2.header && typeof data2.header === 'object') {
+          contentType = (data2.header['content-type'] as string) || '';
+        }
+        console.info(`${caseName} content-type: ${contentType}`);
+        try {
+          result = JSON.parse(data2.result as string);
+          console.info(`${caseName} JSON parse success`);
+          parseSuccess = true;
+        } catch (parseErr) {
+          console.info(`${caseName} JSON parse failed: ${JSON.stringify(parseErr)}`);
+          parseSuccess = false;
+        }
+        if (contentType && !contentType.includes('application/json')) {
+          console.info(`${caseName} content-type is not application/json`);
           ExpectFail();
-          console.info(`${caseName} Cookies are included`);
+          console.info(`${caseName} Unexpected content-type: ${contentType}`);
+        } else if (!parseSuccess) {
+          console.info(`${caseName} Failed to parse response as JSON`);
+          ExpectFail();
+        } else {
+          if (result !== null) {
+            console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
+            if (result.cookies !== null && result.cookies !== undefined) {
+              ExpectTrue(result.cookies.test_cookie !== 'test_value');
+              console.info(`${caseName} Cookies are missing`);
+            } else {
+              ExpectFail();
+              console.info(`${caseName} Cookies are included`);
+            }
+          } else {
+            ExpectFail();
+            console.info(`${caseName} Parsed result is null`);
+          }
         }
         console.info(`${caseName} All requests completed.`);
       } catch (err) {
         console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
         ExpectFail();
+      } finally {
+        if (httpRequest) {
+          httpRequest.destroy();
+        }
       }
       done();
       console.info(`${caseName}---End`);
     });
+
     /**
      * @tc.name   testHttpRequestEnableAutoCookieTest0300
      * @tc.number SUB_NetworkMgr_Http_HttpRequestEnableAutoCookieTest_0300
@@ -145,27 +210,60 @@ export default function HttpRequestEnableAutoCookieTest() {
         let data: http.HttpResponse = await httpRequest.request(Url1);
         console.info(`${caseName} Request 1 success: ${JSON.stringify(data)}`);
         expect(data.responseCode).assertEqual(200);
-        console.info(`${caseName} request2 get Cookies `+ Url3);
+        console.info(`${caseName} request2 get Cookies ` + Url3);
         let data2: http.HttpResponse = await httpRequest.request(Url3);
         console.info(`${caseName} Request 2 success: ${JSON.stringify(data2)}`);
         expect(data2.responseCode).assertEqual(200);
-        let result: CookiesResponse = JSON.parse(data2.result as string);
-        console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
-        if (result.cookies !=null && result.cookies !=undefined) {
-          ExpectTrue(result.cookies.test_cookie != 'test_value');
-          console.info(`${caseName} Cookies are missing and Domain-Related`);
-        } else {
+        let result: CookiesResponse | null = null;
+        let parseSuccess: boolean = false;
+        let contentType = '';
+        if (data2.header && typeof data2.header === 'object') {
+          contentType = (data2.header['content-type'] as string) || '';
+        }
+        console.info(`${caseName} content-type: ${contentType}`);
+        try {
+          result = JSON.parse(data2.result as string);
+          console.info(`${caseName} JSON parse success`);
+          parseSuccess = true;
+        } catch (parseErr) {
+          console.info(`${caseName} JSON parse failed: ${JSON.stringify(parseErr)}`);
+          parseSuccess = false;
+        }
+        if (contentType && !contentType.includes('application/json')) {
+          console.info(`${caseName} content-type is not application/json`);
           ExpectFail();
-          console.info(`${caseName} Cookies are included`);
+          console.info(`${caseName} Unexpected content-type: ${contentType}`);
+        } else if (!parseSuccess) {
+          console.info(`${caseName} Failed to parse response as JSON`);
+          ExpectFail();
+        } else {
+          if (result !== null) {
+            console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
+            if (result.cookies !== null && result.cookies !== undefined) {
+              ExpectTrue(result.cookies.test_cookie !== 'test_value');
+              console.info(`${caseName} Cookies are missing and Domain-Related`);
+            } else {
+              ExpectFail();
+              console.info(`${caseName} Cookies are included`);
+            }
+          } else {
+            ExpectFail();
+            console.info(`${caseName} Parsed result is null`);
+          }
         }
         console.info(`${caseName} All requests completed.`);
       } catch (err) {
         console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
         ExpectFail();
+      } finally {
+        if (httpRequest) {
+          httpRequest.destroy();
+        }
       }
       done();
       console.info(`${caseName}---End`);
     });
+
 
     /**
      * @tc.name   testHttpRequestEnableAutoCookieTest0400
@@ -186,23 +284,55 @@ export default function HttpRequestEnableAutoCookieTest() {
         let data: http.HttpResponse = await httpRequest.request(Url1);
         console.info(`${caseName} Request 1 success: ${JSON.stringify(data)}`);
         expect(data.responseCode).assertEqual(200);
-        console.info(`${caseName} request2 get Cookies `+ Url3);
+        console.info(`${caseName} request2 get Cookies ` + Url3);
         let data2: http.HttpResponse = await httpRequest.request(Url3);
         console.info(`${caseName} Request 2 success: ${JSON.stringify(data2)}`);
         expect(data2.responseCode).assertEqual(200);
-        let result: CookiesResponse = JSON.parse(data2.result as string);
-        console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
-        if (result.cookies !=null && result.cookies !=undefined) {
-          ExpectTrue(result.cookies.test_cookie != 'test_value');
-          console.info(`${caseName} Cookies are missing and Domain-Related`);
-        } else {
+        let result: CookiesResponse | null = null;
+        let parseSuccess: boolean = false;
+        let contentType = '';
+        if (data2.header && typeof data2.header === 'object') {
+          contentType = (data2.header['content-type'] as string) || '';
+        }
+        console.info(`${caseName} content-type: ${contentType}`);
+        try {
+          result = JSON.parse(data2.result as string);
+          console.info(`${caseName} JSON parse success`);
+          parseSuccess = true;
+        } catch (parseErr) {
+          console.info(`${caseName} JSON parse failed: ${JSON.stringify(parseErr)}`);
+          parseSuccess = false;
+        }
+        if (contentType && !contentType.includes('application/json')) {
+          console.info(`${caseName} content-type is not application/json`);
           ExpectFail();
-          console.info(`${caseName} Cookies are included`);
+          console.info(`${caseName} Unexpected content-type: ${contentType}`);
+        } else if (!parseSuccess) {
+          console.info(`${caseName} Failed to parse response as JSON`);
+          ExpectFail();
+        } else {
+          if (result !== null) {
+            console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
+            if (result.cookies !== null && result.cookies !== undefined) {
+              ExpectTrue(result.cookies.test_cookie !== 'test_value');
+              console.info(`${caseName} Cookies are missing and Domain-Related`);
+            } else {
+              ExpectFail();
+              console.info(`${caseName} Cookies are included`);
+            }
+          } else {
+            ExpectFail();
+            console.info(`${caseName} Parsed result is null`);
+          }
         }
         console.info(`${caseName} All requests completed.`);
       } catch (err) {
         console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
         ExpectFail();
+      } finally {
+        if (httpRequest) {
+          httpRequest.destroy();
+        }
       }
       done();
       console.info(`${caseName}---End`);
@@ -219,32 +349,67 @@ export default function HttpRequestEnableAutoCookieTest() {
     it('testHttpRequestEnableAutoCookieTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testHttpRequestEnableAutoCookieTest0500';
       console.info(`${caseName}---Start`);
+      let httpRequest1 = http.createHttp();
+      let httpRequest2 = http.createHttp();
       try {
-        let httpRequest1 = http.createHttp();
         httpRequest1.enableAutoCookie(true);
-        let httpRequest2 = http.createHttp();
         httpRequest2.enableAutoCookie(true);
-        console.info(`${caseName} request1 set Cookies `+ Url1);
+        console.info(`${caseName} request1 set Cookies ` + Url1);
         let data: http.HttpResponse = await httpRequest1.request(Url1);
         console.info(`${caseName} Request 1 success: ${JSON.stringify(data)}`);
         expect(data.responseCode).assertEqual(200);
-        console.info(`${caseName} request2 get Cookies `+ Url2);
+        console.info(`${caseName} request2 get Cookies ` + Url2);
         let data2: http.HttpResponse = await httpRequest2.request(Url2);
         console.info(`${caseName} Request 2 success: ${JSON.stringify(data2)}`);
         expect(data2.responseCode).assertEqual(200);
-        let result: CookiesResponse = JSON.parse(data2.result as string);
-        console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
-        if (result.cookies !=null && result.cookies !=undefined) {
-          ExpectTrue(result.cookies.test_cookie != 'test_value');
-          console.info(`${caseName} Cookies are missing and Each instance is independent`);
-        } else {
+        let result: CookiesResponse | null = null;
+        let parseSuccess: boolean = false;
+        let contentType = '';
+        if (data2.header && typeof data2.header === 'object') {
+          contentType = (data2.header['content-type'] as string) || '';
+        }
+        console.info(`${caseName} content-type: ${contentType}`);
+        try {
+          result = JSON.parse(data2.result as string);
+          console.info(`${caseName} JSON parse success`);
+          parseSuccess = true;
+        } catch (parseErr) {
+          console.info(`${caseName} JSON parse failed: ${JSON.stringify(parseErr)}`);
+          parseSuccess = false;
+        }
+        if (contentType && !contentType.includes('application/json')) {
+          console.info(`${caseName} content-type is not application/json`);
           ExpectFail();
-          console.info(`${caseName} Cookies are included`);
+          console.info(`${caseName} Unexpected content-type: ${contentType}`);
+        } else if (!parseSuccess) {
+          console.info(`${caseName} Failed to parse response as JSON`);
+          ExpectFail();
+        } else {
+          if (result !== null) {
+            console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
+            if (result.cookies !== null && result.cookies !== undefined) {
+              ExpectTrue(result.cookies.test_cookie !== 'test_value');
+              console.info(`${caseName} Cookies are missing and Each instance is independent`);
+            } else {
+              ExpectFail();
+              console.info(`${caseName} Cookies are included`);
+            }
+          } else {
+            ExpectFail();
+            console.info(`${caseName} Parsed result is null`);
+          }
         }
         console.info(`${caseName} All requests completed.`);
       } catch (err) {
         console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
         ExpectFail();
+      } finally {
+        if (httpRequest1) {
+          httpRequest1.destroy();
+        }
+        if (httpRequest2) {
+          httpRequest2.destroy();
+        }
       }
       done();
       console.info(`${caseName}---End`);
@@ -260,32 +425,67 @@ export default function HttpRequestEnableAutoCookieTest() {
     it('testHttpRequestEnableAutoCookieTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testHttpRequestEnableAutoCookieTest0600';
       console.info(`${caseName}---Start`);
+      let httpRequest1 = http.createHttp();
+      let httpRequest2 = http.createHttp();
       try {
-        let httpRequest1 = http.createHttp();
         httpRequest1.enableAutoCookie(true);
-        let httpRequest2 = http.createHttp();
         httpRequest2.enableAutoCookie(false);
-        console.info(`${caseName} request1 set Cookies `+ Url1);
+        console.info(`${caseName} request1 set Cookies ` + Url1);
         let data: http.HttpResponse = await httpRequest1.request(Url1);
         console.info(`${caseName} Request 1 success: ${JSON.stringify(data)}`);
         expect(data.responseCode).assertEqual(200);
-        console.info(`${caseName} request2 get Cookies `+ Url2);
+        console.info(`${caseName} request2 get Cookies ` + Url2);
         let data2: http.HttpResponse = await httpRequest2.request(Url2);
         console.info(`${caseName} Request 2 success: ${JSON.stringify(data2)}`);
         expect(data2.responseCode).assertEqual(200);
-        let result: CookiesResponse = JSON.parse(data2.result as string);
-        console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
-        if (result.cookies !=null && result.cookies !=undefined) {
-          ExpectTrue(result.cookies.test_cookie != 'test_value');
-          console.info(`${caseName} The disabled instance did not send cookies`);
-        } else {
+        let result: CookiesResponse | null = null;
+        let parseSuccess: boolean = false;
+        let contentType = '';
+        if (data2.header && typeof data2.header === 'object') {
+          contentType = (data2.header['content-type'] as string) || '';
+        }
+        console.info(`${caseName} content-type: ${contentType}`);
+        try {
+          result = JSON.parse(data2.result as string);
+          console.info(`${caseName} JSON parse success`);
+          parseSuccess = true;
+        } catch (parseErr) {
+          console.info(`${caseName} JSON parse failed: ${JSON.stringify(parseErr)}`);
+          parseSuccess = false;
+        }
+        if (contentType && !contentType.includes('application/json')) {
+          console.info(`${caseName} content-type is not application/json`);
           ExpectFail();
-          console.info(`${caseName} Cookies are included`);
+          console.info(`${caseName} Unexpected content-type: ${contentType}`);
+        } else if (!parseSuccess) {
+          console.info(`${caseName} Failed to parse response as JSON`);
+          ExpectFail();
+        } else {
+          if (result !== null) {
+            console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
+            if (result.cookies !== null && result.cookies !== undefined) {
+              ExpectTrue(result.cookies.test_cookie !== 'test_value');
+              console.info(`${caseName} The disabled instance did not send cookies`);
+            } else {
+              ExpectFail();
+              console.info(`${caseName} Cookies are included`);
+            }
+          } else {
+            ExpectFail();
+            console.info(`${caseName} Parsed result is null`);
+          }
         }
         console.info(`${caseName} All requests completed.`);
       } catch (err) {
         console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
         ExpectFail();
+      } finally {
+        if (httpRequest1) {
+          httpRequest1.destroy();
+        }
+        if (httpRequest2) {
+          httpRequest2.destroy();
+        }
       }
       done();
       console.info(`${caseName}---End`);
@@ -301,32 +501,67 @@ export default function HttpRequestEnableAutoCookieTest() {
     it('testHttpRequestEnableAutoCookieTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testHttpRequestEnableAutoCookieTest0700';
       console.info(`${caseName}---Start`);
+      let httpRequest1 = http.createHttp();
+      let httpRequest2 = http.createHttp();
       try {
-        let httpRequest1 = http.createHttp();
         httpRequest1.enableAutoCookie(false);
-        let httpRequest2 = http.createHttp();
         httpRequest2.enableAutoCookie(true);
-        console.info(`${caseName} request1 set Cookies `+ Url1);
+        console.info(`${caseName} request1 set Cookies ` + Url1);
         let data: http.HttpResponse = await httpRequest1.request(Url1);
         console.info(`${caseName} Request 1 success: ${JSON.stringify(data)}`);
         expect(data.responseCode).assertEqual(200);
-        console.info(`${caseName} request2 get Cookies `+ Url2);
+        console.info(`${caseName} request2 get Cookies ` + Url2);
         let data2: http.HttpResponse = await httpRequest2.request(Url2);
         console.info(`${caseName} Request 2 success: ${JSON.stringify(data2)}`);
         expect(data2.responseCode).assertEqual(200);
-        let result: CookiesResponse = JSON.parse(data2.result as string);
-        console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
-        if (result.cookies !=null && result.cookies !=undefined) {
-          ExpectTrue(result.cookies.test_cookie != 'test_value');
-          console.info(`${caseName} The disabled instance did not send cookies`);
-        } else {
+        let result: CookiesResponse | null = null;
+        let parseSuccess: boolean = false;
+        let contentType = '';
+        if (data2.header && typeof data2.header === 'object') {
+          contentType = (data2.header['content-type'] as string) || '';
+        }
+        console.info(`${caseName} content-type: ${contentType}`);
+        try {
+          result = JSON.parse(data2.result as string);
+          console.info(`${caseName} JSON parse success`);
+          parseSuccess = true;
+        } catch (parseErr) {
+          console.info(`${caseName} JSON parse failed: ${JSON.stringify(parseErr)}`);
+          parseSuccess = false;
+        }
+        if (contentType && !contentType.includes('application/json')) {
+          console.info(`${caseName} content-type is not application/json`);
           ExpectFail();
-          console.info(`${caseName} Cookies are included`);
+          console.info(`${caseName} Unexpected content-type: ${contentType}`);
+        } else if (!parseSuccess) {
+          console.info(`${caseName} Failed to parse response as JSON`);
+          ExpectFail();
+        } else {
+          if (result !== null) {
+            console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
+            if (result.cookies !== null && result.cookies !== undefined) {
+              ExpectTrue(result.cookies.test_cookie !== 'test_value');
+              console.info(`${caseName} The disabled instance did not send cookies`);
+            } else {
+              ExpectFail();
+              console.info(`${caseName} Cookies are included`);
+            }
+          } else {
+            ExpectFail();
+            console.info(`${caseName} Parsed result is null`);
+          }
         }
         console.info(`${caseName} All requests completed.`);
       } catch (err) {
         console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
         ExpectFail();
+      } finally {
+        if (httpRequest1) {
+          httpRequest1.destroy();
+        }
+        if (httpRequest2) {
+          httpRequest2.destroy();
+        }
       }
       done();
       console.info(`${caseName}---End`);
@@ -342,32 +577,67 @@ export default function HttpRequestEnableAutoCookieTest() {
     it('testHttpRequestEnableAutoCookieTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testHttpRequestEnableAutoCookieTest0800';
       console.info(`${caseName}---Start`);
+      let httpRequest1 = http.createHttp();
+      let httpRequest2 = http.createHttp();
       try {
-        let httpRequest1 = http.createHttp();
         httpRequest1.enableAutoCookie(false);
-        let httpRequest2 = http.createHttp();
         httpRequest2.enableAutoCookie(false);
-        console.info(`${caseName} request1 set Cookies `+ Url1);
+        console.info(`${caseName} request1 set Cookies ` + Url1);
         let data: http.HttpResponse = await httpRequest1.request(Url1);
         console.info(`${caseName} Request 1 success: ${JSON.stringify(data)}`);
         expect(data.responseCode).assertEqual(200);
-        console.info(`${caseName} request2 get Cookies `+ Url2);
+        console.info(`${caseName} request2 get Cookies ` + Url2);
         let data2: http.HttpResponse = await httpRequest2.request(Url2);
         console.info(`${caseName} Request 2 success: ${JSON.stringify(data2)}`);
         expect(data2.responseCode).assertEqual(200);
-        let result: CookiesResponse = JSON.parse(data2.result as string);
-        console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
-        if (result.cookies !=null && result.cookies !=undefined) {
-          ExpectTrue(result.cookies.test_cookie != 'test_value');
-          console.info(`${caseName} The disabled instance did not send cookies`);
-        } else {
+        let result: CookiesResponse | null = null;
+        let parseSuccess: boolean = false;
+        let contentType = '';
+        if (data2.header && typeof data2.header === 'object') {
+          contentType = (data2.header['content-type'] as string) || '';
+        }
+        console.info(`${caseName} content-type: ${contentType}`);
+        try {
+          result = JSON.parse(data2.result as string);
+          console.info(`${caseName} JSON parse success`);
+          parseSuccess = true;
+        } catch (parseErr) {
+          console.info(`${caseName} JSON parse failed: ${JSON.stringify(parseErr)}`);
+          parseSuccess = false;
+        }
+        if (contentType && !contentType.includes('application/json')) {
+          console.info(`${caseName} content-type is not application/json`);
           ExpectFail();
-          console.info(`${caseName} Cookies are included`);
+          console.info(`${caseName} Unexpected content-type: ${contentType}`);
+        } else if (!parseSuccess) {
+          console.info(`${caseName} Failed to parse response as JSON`);
+          ExpectFail();
+        } else {
+          if (result !== null) {
+            console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
+            if (result.cookies !== null && result.cookies !== undefined) {
+              ExpectTrue(result.cookies.test_cookie !== 'test_value');
+              console.info(`${caseName} The disabled instance did not send cookies`);
+            } else {
+              ExpectFail();
+              console.info(`${caseName} Cookies are included`);
+            }
+          } else {
+            ExpectFail();
+            console.info(`${caseName} Parsed result is null`);
+          }
         }
         console.info(`${caseName} All requests completed.`);
       } catch (err) {
         console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
         ExpectFail();
+      } finally {
+        if (httpRequest1) {
+          httpRequest1.destroy();
+        }
+        if (httpRequest2) {
+          httpRequest2.destroy();
+        }
       }
       done();
       console.info(`${caseName}---End`);
@@ -383,32 +653,67 @@ export default function HttpRequestEnableAutoCookieTest() {
     it('testHttpRequestEnableAutoCookieTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testHttpRequestEnableAutoCookieTest0900';
       console.info(`${caseName}---Start`);
+      let httpRequest1 = http.createHttp();
+      let httpRequest2 = http.createHttp();
       try {
-        let httpRequest1 = http.createHttp();
         httpRequest1.enableAutoCookie(true);
-        let httpRequest2 = http.createHttp();
         httpRequest2.enableAutoCookie(true);
         console.info(`${caseName} request1 set Cookies ${Url1}`);
         let data: http.HttpResponse = await httpRequest1.request(Url1);
         console.info(`${caseName} Request 1 success: ${JSON.stringify(data)}`);
         expect(data.responseCode).assertEqual(200);
-        console.info(`${caseName} request2 get Cookies `+ Url3);
+        console.info(`${caseName} request2 get Cookies ` + Url3);
         let data2: http.HttpResponse = await httpRequest2.request(Url3);
         console.info(`${caseName} Request 2 success: ${JSON.stringify(data2)}`);
         expect(data2.responseCode).assertEqual(200);
-        let result: CookiesResponse = JSON.parse(data2.result as string);
-        console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
-        if (result.cookies !=null && result.cookies !=undefined) {
-          ExpectTrue(result.cookies.test_cookie != 'test_value');
-          console.info(`${caseName} Cookies are missing and Domain-Related`);
-        } else {
+        let result: CookiesResponse | null = null;
+        let parseSuccess: boolean = false;
+        let contentType = '';
+        if (data2.header && typeof data2.header === 'object') {
+          contentType = (data2.header['content-type'] as string) || '';
+        }
+        console.info(`${caseName} content-type: ${contentType}`);
+        try {
+          result = JSON.parse(data2.result as string);
+          console.info(`${caseName} JSON parse success`);
+          parseSuccess = true;
+        } catch (parseErr) {
+          console.info(`${caseName} JSON parse failed: ${JSON.stringify(parseErr)}`);
+          parseSuccess = false;
+        }
+        if (contentType && !contentType.includes('application/json')) {
+          console.info(`${caseName} content-type is not application/json`);
           ExpectFail();
-          console.info(`${caseName} Cookies are included`);
+          console.info(`${caseName} Unexpected content-type: ${contentType}`);
+        } else if (!parseSuccess) {
+          console.info(`${caseName} Failed to parse response as JSON`);
+          ExpectFail();
+        } else {
+          if (result !== null) {
+            console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
+            if (result.cookies !== null && result.cookies !== undefined) {
+              ExpectTrue(result.cookies.test_cookie !== 'test_value');
+              console.info(`${caseName} Cookies are missing and Domain-Related`);
+            } else {
+              ExpectFail();
+              console.info(`${caseName} Cookies are included`);
+            }
+          } else {
+            ExpectFail();
+            console.info(`${caseName} Parsed result is null`);
+          }
         }
         console.info(`${caseName} All requests completed.`);
       } catch (err) {
         console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
         ExpectFail();
+      } finally {
+        if (httpRequest1) {
+          httpRequest1.destroy();
+        }
+        if (httpRequest2) {
+          httpRequest2.destroy();
+        }
       }
       done();
       console.info(`${caseName}---End`);
@@ -425,32 +730,67 @@ export default function HttpRequestEnableAutoCookieTest() {
     it('testHttpRequestEnableAutoCookieTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testHttpRequestEnableAutoCookieTest1000';
       console.info(`${caseName}---Start`);
+      let httpRequest1 = http.createHttp();
+      let httpRequest2 = http.createHttp();
       try {
-        let httpRequest1 = http.createHttp();
         httpRequest1.enableAutoCookie(true);
-        let httpRequest2 = http.createHttp();
         httpRequest2.enableAutoCookie(false);
         console.info(`${caseName} request1 set Cookies ${Url1}`);
         let data: http.HttpResponse = await httpRequest1.request(Url1);
         console.info(`${caseName} Request 1 success: ${JSON.stringify(data)}`);
         expect(data.responseCode).assertEqual(200);
-        console.info(`${caseName} request2 get Cookies `+ Url3);
+        console.info(`${caseName} request2 get Cookies ` + Url3);
         let data2: http.HttpResponse = await httpRequest2.request(Url3);
         console.info(`${caseName} Request 2 success: ${JSON.stringify(data2)}`);
         expect(data2.responseCode).assertEqual(200);
-        let result: CookiesResponse = JSON.parse(data2.result as string);
-        console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
-        if (result.cookies !=null && result.cookies !=undefined) {
-          ExpectTrue(result.cookies.test_cookie != 'test_value');
-          console.info(`${caseName} Cookies are missing and Domain-Related`);
-        } else {
+        let result: CookiesResponse | null = null;
+        let parseSuccess: boolean = false;
+        let contentType = '';
+        if (data2.header && typeof data2.header === 'object') {
+          contentType = (data2.header['content-type'] as string) || '';
+        }
+        console.info(`${caseName} content-type: ${contentType}`);
+        try {
+          result = JSON.parse(data2.result as string);
+          console.info(`${caseName} JSON parse success`);
+          parseSuccess = true;
+        } catch (parseErr) {
+          console.info(`${caseName} JSON parse failed: ${JSON.stringify(parseErr)}`);
+          parseSuccess = false;
+        }
+        if (contentType && !contentType.includes('application/json')) {
+          console.info(`${caseName} content-type is not application/json`);
           ExpectFail();
-          console.info(`${caseName} Cookies are included`);
+          console.info(`${caseName} Unexpected content-type: ${contentType}`);
+        } else if (!parseSuccess) {
+          console.info(`${caseName} Failed to parse response as JSON`);
+          ExpectFail();
+        } else {
+          if (result !== null) {
+            console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
+            if (result.cookies !== null && result.cookies !== undefined) {
+              ExpectTrue(result.cookies.test_cookie !== 'test_value');
+              console.info(`${caseName} Cookies are missing and Domain-Related`);
+            } else {
+              ExpectFail();
+              console.info(`${caseName} Cookies are included`);
+            }
+          } else {
+            ExpectFail();
+            console.info(`${caseName} Parsed result is null`);
+          }
         }
         console.info(`${caseName} All requests completed.`);
       } catch (err) {
         console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
         ExpectFail();
+      } finally {
+        if (httpRequest1) {
+          httpRequest1.destroy();
+        }
+        if (httpRequest2) {
+          httpRequest2.destroy();
+        }
       }
       done();
       console.info(`${caseName}---End`);
@@ -467,32 +807,67 @@ export default function HttpRequestEnableAutoCookieTest() {
     it('testHttpRequestEnableAutoCookieTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testHttpRequestEnableAutoCookieTest1100';
       console.info(`${caseName}---Start`);
+      let httpRequest1 = http.createHttp();
+      let httpRequest2 = http.createHttp();
       try {
-        let httpRequest1 = http.createHttp();
         httpRequest1.enableAutoCookie(false);
-        let httpRequest2 = http.createHttp();
         httpRequest2.enableAutoCookie(true);
         console.info(`${caseName} request1 set Cookies ${Url1}`);
         let data: http.HttpResponse = await httpRequest1.request(Url1);
         console.info(`${caseName} Request 1 success: ${JSON.stringify(data)}`);
         expect(data.responseCode).assertEqual(200);
-        console.info(`${caseName} request2 get Cookies `+ Url3);
+        console.info(`${caseName} request2 get Cookies ` + Url3);
         let data2: http.HttpResponse = await httpRequest2.request(Url3);
         console.info(`${caseName} Request 2 success: ${JSON.stringify(data2)}`);
         expect(data2.responseCode).assertEqual(200);
-        let result: CookiesResponse = JSON.parse(data2.result as string);
-        console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
-        if (result.cookies !=null && result.cookies !=undefined) {
-          ExpectTrue(result.cookies.test_cookie != 'test_value');
-          console.info(`${caseName} Cookies are missing and Domain-Related`);
-        } else {
+        let result: CookiesResponse | null = null;
+        let parseSuccess: boolean = false;
+        let contentType = '';
+        if (data2.header && typeof data2.header === 'object') {
+          contentType = (data2.header['content-type'] as string) || '';
+        }
+        console.info(`${caseName} content-type: ${contentType}`);
+        try {
+          result = JSON.parse(data2.result as string);
+          console.info(`${caseName} JSON parse success`);
+          parseSuccess = true;
+        } catch (parseErr) {
+          console.info(`${caseName} JSON parse failed: ${JSON.stringify(parseErr)}`);
+          parseSuccess = false;
+        }
+        if (contentType && !contentType.includes('application/json')) {
+          console.info(`${caseName} content-type is not application/json`);
           ExpectFail();
-          console.info(`${caseName} Cookies are included`);
+          console.info(`${caseName} Unexpected content-type: ${contentType}`);
+        } else if (!parseSuccess) {
+          console.info(`${caseName} Failed to parse response as JSON`);
+          ExpectFail();
+        } else {
+          if (result !== null) {
+            console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
+            if (result.cookies !== null && result.cookies !== undefined) {
+              ExpectTrue(result.cookies.test_cookie !== 'test_value');
+              console.info(`${caseName} Cookies are missing and Domain-Related`);
+            } else {
+              ExpectFail();
+              console.info(`${caseName} Cookies are included`);
+            }
+          } else {
+            ExpectFail();
+            console.info(`${caseName} Parsed result is null`);
+          }
         }
         console.info(`${caseName} All requests completed.`);
       } catch (err) {
         console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
         ExpectFail();
+      } finally {
+        if (httpRequest1) {
+          httpRequest1.destroy();
+        }
+        if (httpRequest2) {
+          httpRequest2.destroy();
+        }
       }
       done();
       console.info(`${caseName}---End`);
@@ -509,32 +884,67 @@ export default function HttpRequestEnableAutoCookieTest() {
     it('testHttpRequestEnableAutoCookieTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testHttpRequestEnableAutoCookieTest1200';
       console.info(`${caseName}---Start`);
+      let httpRequest1 = http.createHttp();
+      let httpRequest2 = http.createHttp();
       try {
-        let httpRequest1 = http.createHttp();
         httpRequest1.enableAutoCookie(false);
-        let httpRequest2 = http.createHttp();
         httpRequest2.enableAutoCookie(false);
         console.info(`${caseName} request1 set Cookies ${Url1}`);
         let data: http.HttpResponse = await httpRequest1.request(Url1);
         console.info(`${caseName} Request 1 success: ${JSON.stringify(data)}`);
         expect(data.responseCode).assertEqual(200);
-        console.info(`${caseName} request2 get Cookies `+ Url3);
+        console.info(`${caseName} request2 get Cookies ` + Url3);
         let data2: http.HttpResponse = await httpRequest2.request(Url3);
         console.info(`${caseName} Request 2 success: ${JSON.stringify(data2)}`);
         expect(data2.responseCode).assertEqual(200);
-        let result: CookiesResponse = JSON.parse(data2.result as string);
-        console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
-        if (result.cookies !=null && result.cookies !=undefined) {
-          ExpectTrue(result.cookies.test_cookie != 'test_value');
-          console.info(`${caseName} Cookies are missing and Domain-Related`);
-        } else {
+        let result: CookiesResponse | null = null;
+        let parseSuccess: boolean = false;
+        let contentType = '';
+        if (data2.header && typeof data2.header === 'object') {
+          contentType = (data2.header['content-type'] as string) || '';
+        }
+        console.info(`${caseName} content-type: ${contentType}`);
+        try {
+          result = JSON.parse(data2.result as string);
+          console.info(`${caseName} JSON parse success`);
+          parseSuccess = true;
+        } catch (parseErr) {
+          console.info(`${caseName} JSON parse failed: ${JSON.stringify(parseErr)}`);
+          parseSuccess = false;
+        }
+        if (contentType && !contentType.includes('application/json')) {
+          console.info(`${caseName} content-type is not application/json`);
           ExpectFail();
-          console.info(`${caseName} Cookies are included`);
+          console.info(`${caseName} Unexpected content-type: ${contentType}`);
+        } else if (!parseSuccess) {
+          console.info(`${caseName} Failed to parse response as JSON`);
+          ExpectFail();
+        } else {
+          if (result !== null) {
+            console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
+            if (result.cookies !== null && result.cookies !== undefined) {
+              ExpectTrue(result.cookies.test_cookie != 'test_value');
+              console.info(`${caseName} Cookies are missing and Domain-Related`);
+            } else {
+              ExpectFail();
+              console.info(`${caseName} Cookies are included`);
+            }
+          } else {
+            ExpectFail();
+            console.info(`${caseName} Parsed result is null`);
+          }
         }
         console.info(`${caseName} All requests completed.`);
       } catch (err) {
         console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
         ExpectFail();
+      } finally {
+        if (httpRequest1) {
+          httpRequest1.destroy();
+        }
+        if (httpRequest2) {
+          httpRequest2.destroy();
+        }
       }
       done();
       console.info(`${caseName}---End`);
@@ -559,23 +969,55 @@ export default function HttpRequestEnableAutoCookieTest() {
         let data: http.HttpResponse = await httpRequest.request(Url1);
         console.info(`${caseName} Request 1 success: ${JSON.stringify(data)}`);
         expect(data.responseCode).assertEqual(200);
-        console.info(`${caseName} request2 get Cookies `+ Url2);
+        console.info(`${caseName} request2 get Cookies ` + Url2);
         let data2: http.HttpResponse = await httpRequest.request(Url2);
         console.info(`${caseName} Request 2 success: ${JSON.stringify(data2)}`);
         expect(data2.responseCode).assertEqual(200);
-        let result: CookiesResponse = JSON.parse(data2.result as string);
-        console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
-        if (result.cookies !=null && result.cookies !=undefined) {
-          ExpectTrue(result.cookies.test_cookie != 'test_value');
-          console.info(`${caseName} Cookies are missing`);
-        } else {
+        let result: CookiesResponse | null = null;
+        let parseSuccess: boolean = false;
+        let contentType = '';
+        if (data2.header && typeof data2.header === 'object') {
+          contentType = (data2.header['content-type'] as string) || '';
+        }
+        console.info(`${caseName} content-type: ${contentType}`);
+        try {
+          result = JSON.parse(data2.result as string);
+          console.info(`${caseName} JSON parse success`);
+          parseSuccess = true;
+        } catch (parseErr) {
+          console.info(`${caseName} JSON parse failed: ${JSON.stringify(parseErr)}`);
+          parseSuccess = false;
+        }
+        if (contentType && !contentType.includes('application/json')) {
+          console.info(`${caseName} content-type is not application/json`);
           ExpectFail();
-          console.info(`${caseName} Cookies are included`);
+          console.info(`${caseName} Unexpected content-type: ${contentType}`);
+        } else if (!parseSuccess) {
+          console.info(`${caseName} Failed to parse response as JSON`);
+          ExpectFail();
+        } else {
+          if (result !== null) {
+            console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
+            if (result.cookies !== null && result.cookies !== undefined) {
+              ExpectTrue(result.cookies.test_cookie !== 'test_value');
+              console.info(`${caseName} Cookies are missing`);
+            } else {
+              ExpectFail();
+              console.info(`${caseName} Cookies are included`);
+            }
+          } else {
+            ExpectFail();
+            console.info(`${caseName} Parsed result is null`);
+          }
         }
         console.info(`${caseName} All requests completed.`);
       } catch (err) {
         console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
         ExpectFail();
+      } finally {
+        if (httpRequest) {
+          httpRequest.destroy();
+        }
       }
       done();
       console.info(`${caseName}---End`);
@@ -599,23 +1041,55 @@ export default function HttpRequestEnableAutoCookieTest() {
         let data: http.HttpResponse = await httpRequest.request(Url1);
         console.info(`${caseName} Request 1 success: ${JSON.stringify(data)}`);
         expect(data.responseCode).assertEqual(200);
-        console.info(`${caseName} request2 get Cookies `+ Url3);
+        console.info(`${caseName} request2 get Cookies ` + Url3);
         let data2: http.HttpResponse = await httpRequest.request(Url3);
         console.info(`${caseName} Request 2 success: ${JSON.stringify(data2)}`);
         expect(data2.responseCode).assertEqual(200);
-        let result: CookiesResponse = JSON.parse(data2.result as string);
-        console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
-        if (result.cookies !=null && result.cookies !=undefined) {
-          ExpectTrue(result.cookies.test_cookie != 'test_value');
-          console.info(`${caseName} Cookies are missing`);
-        } else {
+        let result: CookiesResponse | null = null;
+        let parseSuccess: boolean = false;
+        let contentType = '';
+        if (data2.header && typeof data2.header === 'object') {
+          contentType = (data2.header['content-type'] as string) || '';
+        }
+        console.info(`${caseName} content-type: ${contentType}`);
+        try {
+          result = JSON.parse(data2.result as string);
+          console.info(`${caseName} JSON parse success`);
+          parseSuccess = true;
+        } catch (parseErr) {
+          console.info(`${caseName} JSON parse failed: ${JSON.stringify(parseErr)}`);
+          parseSuccess = false;
+        }
+        if (contentType && !contentType.includes('application/json')) {
+          console.info(`${caseName} content-type is not application/json`);
           ExpectFail();
-          console.info(`${caseName} Cookies are included`);
+          console.info(`${caseName} Unexpected content-type: ${contentType}`);
+        } else if (!parseSuccess) {
+          console.info(`${caseName} Failed to parse response as JSON`);
+          ExpectFail();
+        } else {
+          if (result !== null) {
+            console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
+            if (result.cookies !== null && result.cookies !== undefined) {
+              ExpectTrue(result.cookies.test_cookie !== 'test_value');
+              console.info(`${caseName} Cookies are missing`);
+            } else {
+              ExpectFail();
+              console.info(`${caseName} Cookies are included`);
+            }
+          } else {
+            ExpectFail();
+            console.info(`${caseName} Parsed result is null`);
+          }
         }
         console.info(`${caseName} All requests completed.`);
       } catch (err) {
         console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
         ExpectFail();
+      } finally {
+        if (httpRequest) {
+          httpRequest.destroy();
+        }
       }
       done();
       console.info(`${caseName}---End`);
