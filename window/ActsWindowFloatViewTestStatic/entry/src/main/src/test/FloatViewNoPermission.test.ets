@@ -69,7 +69,7 @@ export default function abilityTest(): void {
           await floatViewController.stop();
           expect(false).assertTrue();
           done();
-        }).catch(async (err: BusinessError) => {
+        }).catch(async (err: Error) => {
           console.error(CaseName + ' Failed to start float view. Cause: ' + err.code + ', message: ' + err.message);
           expect(err.code).assertEqual(201);
           expect(err.message != null).assertTrue();
