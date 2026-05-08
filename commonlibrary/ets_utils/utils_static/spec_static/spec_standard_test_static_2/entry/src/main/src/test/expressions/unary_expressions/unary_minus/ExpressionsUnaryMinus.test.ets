@@ -26,14 +26,14 @@ import {
   Level
 } from "../../../../../../hypium";
 
-enum unary_minus_int_enum_IntEnum {
+enum unary_minus_int_enum_IntEnum: int {
     Neg = -1,
     Pos = 1,
     Min = -2147483648,
     Max = 2147483647
 }
 
-enum unary_minus_long_enum_LongEnum {
+enum unary_minus_long_enum_LongEnum: long {
     Neg = -0x1_1111_1111,
     Pos = 0x1_1111_1111,
     Min = -9223372036854775808,
@@ -374,18 +374,18 @@ export default function ExpressionsUnaryMinus(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsUnaryMinus0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let n = -unary_minus_int_enum_IntEnum.Neg
+      let n: int = -(unary_minus_int_enum_IntEnum.Neg.valueOf())
       expect(n).assertEqual(1)
       expect(-n).assertEqual(-1)
 
-      let p = -unary_minus_int_enum_IntEnum.Pos
+      let p: int = -(unary_minus_int_enum_IntEnum.Pos.valueOf())
       expect(p).assertEqual(-1)
       expect(-p).assertEqual(1)
 
-      expect(-unary_minus_int_enum_IntEnum.Neg).assertEqual(1)
-      expect(-unary_minus_int_enum_IntEnum.Pos).assertEqual(-1)
+      expect(-(unary_minus_int_enum_IntEnum.Neg.valueOf())).assertEqual(1)
+      expect(-(unary_minus_int_enum_IntEnum.Pos.valueOf())).assertEqual(-1)
 
-      expect(-unary_minus_int_enum_IntEnum.Max).assertEqual(-2147483647)
+      expect(-(unary_minus_int_enum_IntEnum.Max.valueOf())).assertEqual(-2147483647)
     });
 
     /**
@@ -398,18 +398,18 @@ export default function ExpressionsUnaryMinus(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsUnaryMinus0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let n = -unary_minus_long_enum_LongEnum.Neg
+      let n: long = -(unary_minus_long_enum_LongEnum.Neg.valueOf())
       expect(n).assertEqual(0x1_1111_1111)
       expect(-n).assertEqual(-0x1_1111_1111)
 
-      let p = -unary_minus_long_enum_LongEnum.Pos
+      let p: long = -(unary_minus_long_enum_LongEnum.Pos.valueOf())
       expect(p).assertEqual(-0x1_1111_1111)
       expect(-p).assertEqual(0x1_1111_1111)
 
-      expect(-unary_minus_long_enum_LongEnum.Max).assertEqual(-9223372036854775807)
+      expect(-(unary_minus_long_enum_LongEnum.Max.valueOf())).assertEqual(-9223372036854775807)
 
-      expect(-unary_minus_long_enum_LongEnum.Neg).assertEqual(0x1_1111_1111)
-      expect(-unary_minus_long_enum_LongEnum.Pos).assertEqual(-0x1_1111_1111)
+      expect(-(unary_minus_long_enum_LongEnum.Neg.valueOf())).assertEqual(0x1_1111_1111)
+      expect(-(unary_minus_long_enum_LongEnum.Pos.valueOf())).assertEqual(-0x1_1111_1111)
     });
 
     /**

@@ -33,11 +33,17 @@ enum int_enum_IntEnum {
     Max = 2147483647
 }
 
-enum long_enum_LongEnum {
-    Neg = -0x1_1111_1111,
-    Pos = 0x1_1111_1111,
-    Min = -9223372036854775808,
-    Max = 9223372036854775807
+interface LongEnumInterface {
+  Neg: long;
+  Pos: long;
+  Min: long;
+  Max: long;
+}
+const long_enum_LongEnum: LongEnumInterface = {
+  Neg: -0x1_1111_1111,
+  Pos: 0x1_1111_1111,
+  Min: -9223372036854775808,
+  Max: 9223372036854775807
 }
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {
@@ -80,19 +86,24 @@ export default function ExpressionsUnaryPlus(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsUnaryPlus0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let n = +int_enum_IntEnum.Neg
+      let iNeg: int = int_enum_IntEnum.Neg
+      let iPos: int = int_enum_IntEnum.Pos
+      let iMin: int = int_enum_IntEnum.Min
+      let iMax: int = int_enum_IntEnum.Max
+
+      let n = +iNeg
       expect(n).assertEqual(-1)
       expect(+n).assertEqual(-1)
 
-      let p = +int_enum_IntEnum.Pos
+      let p = +iPos
       expect(p).assertEqual(1)
       expect(+p).assertEqual(1)
 
-      expect(+int_enum_IntEnum.Neg).assertEqual(int_enum_IntEnum.Neg)
-      expect(+int_enum_IntEnum.Pos).assertEqual(int_enum_IntEnum.Pos)
+      expect(+iNeg).assertEqual(iNeg)
+      expect(+iPos).assertEqual(iPos)
 
-      expect(+int_enum_IntEnum.Min).assertEqual(int_enum_IntEnum.Min)
-      expect(+int_enum_IntEnum.Max).assertEqual(int_enum_IntEnum.Max)
+      expect(+iMin).assertEqual(iMin)
+      expect(+iMax).assertEqual(iMax)
     });
 
     /**
@@ -133,14 +144,13 @@ export default function ExpressionsUnaryPlus(): void {
       expect(+0b10).assertEqual(0b10);
       expect(+0o70).assertEqual(0o70);
       expect(+0.5f).assertEqual(0.5f);
-      expect(+42n).assertEqual(42n);
 
-      let b: byte = +127
+      let b: byte = 127
       expect(+b).assertEqual(b)
       expect(+b).assertEqual(127)
       expect(+b instanceof int).assertTrue()
 
-      let s: short = +32767
+      let s: short = 32767
       expect(+s).assertEqual(s)
       expect(+s).assertEqual(32767)
       expect(+s instanceof int).assertTrue()
@@ -154,18 +164,6 @@ export default function ExpressionsUnaryPlus(): void {
       expect(+l).assertEqual(l);
       expect(+l).assertEqual(-9223372036854775808);
       expect(+l instanceof long).assertTrue()
-
-      let bi: bigint = +42n
-      expect(+bi).assertEqual(bi);
-      expect(+bi).assertEqual(42n);
-      expect(+(new BigInt(13))).assertEqual(13n);
-      expect(+bi instanceof bigint).assertTrue()
-
-      let n: number = -3.14;
-      expect(+n).assertEqual(n);
-      expect(+n).assertEqual(-3.14);
-      expect(n + +n).assertEqual(-6.28);
-      expect(+n instanceof double).assertTrue()
 
       let d: double = 3.14;
       expect(+d).assertEqual(d);

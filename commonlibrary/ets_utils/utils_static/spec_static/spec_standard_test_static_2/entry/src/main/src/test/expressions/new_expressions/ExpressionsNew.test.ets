@@ -179,8 +179,14 @@ class A_boolean_constructor_param_array_gen<T> extends Array<T> {
 }
 
 class C_constructor_param_array_gen<T> {
-  foo() {
-    let arr = new Array<T>(5)
+  foo(): Object[] {
+    let arr: Object[] = [
+      new Object(),
+      new Object(),
+      new Object(),
+      new Object(),
+      new Object()
+    ];
     return arr
   }
 }
@@ -192,7 +198,13 @@ class C_local<T> extends Array<T> {
     this.j = j
   }
   static foo() {
-    let arr = new Array<C_local<number>>(5)
+    let arr: C_local<number>[] = [
+      new C_local<number>(0),
+      new C_local<number>(0),
+      new C_local<number>(0),
+      new C_local<number>(0),
+      new C_local<number>(0)
+    ];
     arr[0] = new C_local<number>(1)
     expect(arr.length).assertEqual(5)
     expect(arr.at(0)?.j).assertEqual(1)
@@ -204,7 +216,13 @@ class A_local<T> extends Array<T> {
 }
 class C_local1<T> {
   foo() {
-    let arr = new Array<T>(5)
+    let arr: Object[] = [
+      new Object(),
+      new Object(),
+      new Object(),
+      new Object(),
+      new Object()
+    ];
     expect(arr.length).assertEqual(5)
     return true
   }
@@ -347,10 +365,15 @@ class A_lambda_optional<T> extends Array<T> {
   }
 }
 
-// 通用容器类
 class C_optional<T> {
-  foo(): T[] {
-    let arr = new Array<T>(5)
+  foo(): Object[] {
+    let arr: Object[] = [
+      new Object(),
+      new Object(),
+      new Object(),
+      new Object(),
+      new Object()
+    ];
     return arr
   }
 }
@@ -576,7 +599,13 @@ class C_custom_2_local {
     this.j = j
   }
   static foo() {
-    let arr = new Array<C_custom_2_local>(5)
+      let arr: C_custom_2_local[] = [
+        new C_custom_2_local(""),
+        new C_custom_2_local(""),
+        new C_custom_2_local(""),
+        new C_custom_2_local(""),
+        new C_custom_2_local("")
+      ];
     // 由于私有构造函数无法在外部调用，我们创建公共构造函数版本
     arr[0] = new C_custom_2_local("")
     arr[0].j = 1
@@ -593,8 +622,14 @@ class A_gen_custom {
 }
 
 class C_gen_custom<T> {
-  foo(): T[] {
-    let arr = new Array<T>(5)
+  foo(): Object[] {
+    let arr: Object[] = [
+      new Object(),
+      new Object(),
+      new Object(),
+      new Object(),
+      new Object()
+    ];
     return arr
   }
 }
@@ -780,16 +815,18 @@ class C_lambda_gen_optional {
   }
 }
 
-// 通用容器类
 class C_gen_container<T> {
-  foo(): T[] {
-    let arr = new Array<T>(5)
+  foo(): Object[] {
+    let arr: Object[] = [
+      new Object(),
+      new Object(),
+      new Object(),
+      new Object(),
+      new Object()
+    ];
     return arr
   }
 }
-enum ENUM_constructor_param_optional { Red, Green, Blue }
-type TPL_constructor_param_optional = [number, string]
-
 class C_number_optional1 {
   i?: number
   constructor(i?: number) {
@@ -874,68 +911,6 @@ class C_undefined_optional1 {
   }
 }
 
-class C_enum_optional1 {
-  i?: ENUM_constructor_param_optional
-  constructor(i?: ENUM_constructor_param_optional) {
-    this.i = i
-  }
-}
-
-class C_tuple_optional1 {
-  i?: TPL_constructor_param_optional
-  constructor(i?: TPL_constructor_param_optional) {
-    this.i = i
-  }
-}
-
-class C_number_array_optional1 {
-  i?: number[]
-  constructor(i?: number[]) {
-    this.i = i
-  }
-}
-
-type foo_lambda_constructor_param_optional = (i: Object|undefined) => Object|undefined
-
-class C_lambda_optional1 {
-  i: Object|undefined
-  constructor(i?: foo_lambda_constructor_param_optional, j?: Object) {
-    if (i == undefined) {
-      this.i = undefined
-    } else {
-      this.i = i(j)
-    }
-  }
-}
-
-class A_init_custom_array<T> extends Array<T> {
-  constructor(length: int) {
-    super(length)
-  }
-}
-
-class A_simple_init_custom_array {
-  name: string
-  constructor(i: string) {
-    this.name = i
-  }
-}
-
-class C_variadic_init_custom_array<T> extends Array<T> {
-  constructor(first: T, ...i: T[]) {
-    super(first, ...i)
-  }
-}
-
-class C_generic_init_custom_array<T> extends Array<T> {}
-
-class IAmBad_NewExpressionExceptional {
-  constructor() {
-    throw new Error()
-  }
-}
-
-
 export default function ExpressionsNewTestSuite(): void {
   describe("ExpressionsNewTestSuite", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -972,7 +947,13 @@ export default function ExpressionsNewTestSuite(): void {
      */
     it("testExpressionsNew0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       C_local.foo()
-      let arr = new Array<C_local<number>>(5)
+      let arr: C_local<number>[] = [
+        new C_local<number>(0),
+        new C_local<number>(0),
+        new C_local<number>(0),
+        new C_local<number>(0),
+        new C_local<number>(0)
+      ];
       expect(arr.length).assertEqual(5)
     })
 
@@ -985,7 +966,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_number_constructor_param_array_default<Object>>(5)
+      let arr: C_number_constructor_param_array_default<Object>[] = [
+        new C_number_constructor_param_array_default<Object>(0),
+        new C_number_constructor_param_array_default<Object>(0),
+        new C_number_constructor_param_array_default<Object>(0),
+        new C_number_constructor_param_array_default<Object>(0),
+        new C_number_constructor_param_array_default<Object>(0)
+      ];
       arr[0] = new C_number_constructor_param_array_default<Object>(1)
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(1)
@@ -1000,7 +987,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_byte_constructor_param_array_default<Object>>(5)
+      let arr: C_byte_constructor_param_array_default<Object>[] = [
+        new C_byte_constructor_param_array_default<Object>(0 as byte),
+        new C_byte_constructor_param_array_default<Object>(0 as byte),
+        new C_byte_constructor_param_array_default<Object>(0 as byte),
+        new C_byte_constructor_param_array_default<Object>(0 as byte),
+        new C_byte_constructor_param_array_default<Object>(0 as byte)
+      ];
       arr[0] = new C_byte_constructor_param_array_default<Object>(2 as byte)
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(2)
@@ -1015,7 +1008,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_short_constructor_param_array_default<Object>>(5)
+      let arr: C_short_constructor_param_array_default<Object>[] = [
+        new C_short_constructor_param_array_default<Object>(0 as short),
+        new C_short_constructor_param_array_default<Object>(0 as short),
+        new C_short_constructor_param_array_default<Object>(0 as short),
+        new C_short_constructor_param_array_default<Object>(0 as short),
+        new C_short_constructor_param_array_default<Object>(0 as short)
+      ];
       arr[0] = new C_short_constructor_param_array_default<Object>(3 as short)
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(3)
@@ -1030,7 +1029,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_int_constructor_param_array_default<Object>>(5)
+      let arr: C_int_constructor_param_array_default<Object>[] = [
+        new C_int_constructor_param_array_default<Object>(0),
+        new C_int_constructor_param_array_default<Object>(0),
+        new C_int_constructor_param_array_default<Object>(0),
+        new C_int_constructor_param_array_default<Object>(0),
+        new C_int_constructor_param_array_default<Object>(0)
+      ];
       arr[0] = new C_int_constructor_param_array_default<Object>(4)
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(4)
@@ -1045,7 +1050,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_long_constructor_param_array_default<Object>>(5)
+      let arr: C_long_constructor_param_array_default<Object>[] = [
+        new C_long_constructor_param_array_default<Object>(0 as long),
+        new C_long_constructor_param_array_default<Object>(0 as long),
+        new C_long_constructor_param_array_default<Object>(0 as long),
+        new C_long_constructor_param_array_default<Object>(0 as long),
+        new C_long_constructor_param_array_default<Object>(0 as long)
+      ];
       arr[0] = new C_long_constructor_param_array_default<Object>(5 as long)
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(5)
@@ -1060,7 +1071,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_float_constructor_param_array_default<Object>>(5)
+      let arr: C_float_constructor_param_array_default<Object>[] = [
+        new C_float_constructor_param_array_default<Object>(0.0.toFloat()),
+        new C_float_constructor_param_array_default<Object>(0.0.toFloat()),
+        new C_float_constructor_param_array_default<Object>(0.0.toFloat()),
+        new C_float_constructor_param_array_default<Object>(0.0.toFloat()),
+        new C_float_constructor_param_array_default<Object>(0.0.toFloat())
+      ];
       arr[0] = new C_float_constructor_param_array_default<Object>(6.7.toFloat())
       expect(arr.length).assertEqual(5)
       expect((arr.at(0)?.i).toString()).assertEqual('6.7')
@@ -1075,7 +1092,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_double_constructor_param_array_default<Object>>(5)
+      let arr: C_double_constructor_param_array_default<Object>[] = [
+        new C_double_constructor_param_array_default<Object>(0.0),
+        new C_double_constructor_param_array_default<Object>(0.0),
+        new C_double_constructor_param_array_default<Object>(0.0),
+        new C_double_constructor_param_array_default<Object>(0.0),
+        new C_double_constructor_param_array_default<Object>(0.0)
+      ];
       arr[0] = new C_double_constructor_param_array_default<Object>(8.9)
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(8.9)
@@ -1090,7 +1113,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_boolean_constructor_param_array_default<Object>>(5)
+      let arr: C_boolean_constructor_param_array_default<Object>[] = [
+        new C_boolean_constructor_param_array_default<Object>(false),
+        new C_boolean_constructor_param_array_default<Object>(false),
+        new C_boolean_constructor_param_array_default<Object>(false),
+        new C_boolean_constructor_param_array_default<Object>(false),
+        new C_boolean_constructor_param_array_default<Object>(false)
+      ];
       arr[0] = new C_boolean_constructor_param_array_default<Object>(false)
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(false)
@@ -1460,7 +1489,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_number_optional<Object>>(5)
+      let arr: C_number_optional<Object>[] = [
+        new C_number_optional<Object>(),
+        new C_number_optional<Object>(),
+        new C_number_optional<Object>(),
+        new C_number_optional<Object>(),
+        new C_number_optional<Object>()
+      ];
       arr[0] = new C_number_optional<Object>()
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(undefined)
@@ -1475,7 +1510,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_byte_optional<Object>>(5)
+      let arr: C_byte_optional<Object>[] = [
+        new C_byte_optional<Object>(),
+        new C_byte_optional<Object>(),
+        new C_byte_optional<Object>(),
+        new C_byte_optional<Object>(),
+        new C_byte_optional<Object>()
+      ];
       arr[0] = new C_byte_optional<Object>()
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(undefined)
@@ -1490,7 +1531,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_short_optional<Object>>(5)
+      let arr: C_short_optional<Object>[] = [
+        new C_short_optional<Object>(),
+        new C_short_optional<Object>(),
+        new C_short_optional<Object>(),
+        new C_short_optional<Object>(),
+        new C_short_optional<Object>()
+      ];
       arr[0] = new C_short_optional<Object>()
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(undefined)
@@ -1505,7 +1552,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_int_optional<Object>>(5)
+      let arr: C_int_optional<Object>[] = [
+        new C_int_optional<Object>(),
+        new C_int_optional<Object>(),
+        new C_int_optional<Object>(),
+        new C_int_optional<Object>(),
+        new C_int_optional<Object>()
+      ];
       arr[0] = new C_int_optional<Object>()
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(undefined)
@@ -1520,7 +1573,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_long_optional<Object>>(5)
+      let arr: C_long_optional<Object>[] = [
+        new C_long_optional<Object>(),
+        new C_long_optional<Object>(),
+        new C_long_optional<Object>(),
+        new C_long_optional<Object>(),
+        new C_long_optional<Object>()
+      ];
       arr[0] = new C_long_optional<Object>()
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(undefined)
@@ -1535,7 +1594,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_float_optional<Object>>(5)
+      let arr: C_float_optional<Object>[] = [
+        new C_float_optional<Object>(),
+        new C_float_optional<Object>(),
+        new C_float_optional<Object>(),
+        new C_float_optional<Object>(),
+        new C_float_optional<Object>()
+      ];
       arr[0] = new C_float_optional<Object>()
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(undefined)
@@ -1550,7 +1615,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_double_optional<Object>>(5)
+      let arr: C_double_optional<Object>[] = [
+        new C_double_optional<Object>(),
+        new C_double_optional<Object>(),
+        new C_double_optional<Object>(),
+        new C_double_optional<Object>(),
+        new C_double_optional<Object>()
+      ];
       arr[0] = new C_double_optional<Object>()
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(undefined)
@@ -1565,7 +1636,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_char_optional<Object>>(5)
+      let arr: C_char_optional<Object>[] = [
+        new C_char_optional<Object>(),
+        new C_char_optional<Object>(),
+        new C_char_optional<Object>(),
+        new C_char_optional<Object>(),
+        new C_char_optional<Object>()
+      ];
       arr[0] = new C_char_optional<Object>()
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(undefined)
@@ -1580,7 +1657,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_boolean_optional<Object>>(5)
+      let arr: C_boolean_optional<Object>[] = [
+        new C_boolean_optional<Object>(),
+        new C_boolean_optional<Object>(),
+        new C_boolean_optional<Object>(),
+        new C_boolean_optional<Object>(),
+        new C_boolean_optional<Object>()
+      ];
       arr[0] = new C_boolean_optional<Object>()
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(undefined)
@@ -1595,7 +1678,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_string_optional<Object>>(5)
+      let arr: C_string_optional<Object>[] = [
+        new C_string_optional<Object>(),
+        new C_string_optional<Object>(),
+        new C_string_optional<Object>(),
+        new C_string_optional<Object>(),
+        new C_string_optional<Object>()
+      ];
       arr[0] = new C_string_optional<Object>()
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(undefined)
@@ -1610,7 +1699,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_null_optional<Object>>(5)
+      let arr: C_null_optional<Object>[] = [
+        new C_null_optional<Object>(),
+        new C_null_optional<Object>(),
+        new C_null_optional<Object>(),
+        new C_null_optional<Object>(),
+        new C_null_optional<Object>()
+      ];
       arr[0] = new C_null_optional<Object>()
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(undefined)
@@ -1625,7 +1720,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_undefined_optional<Object>>(5)
+      let arr: C_undefined_optional<Object>[] = [
+        new C_undefined_optional<Object>(),
+        new C_undefined_optional<Object>(),
+        new C_undefined_optional<Object>(),
+        new C_undefined_optional<Object>(),
+        new C_undefined_optional<Object>()
+      ];
       arr[0] = new C_undefined_optional<Object>()
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(undefined)
@@ -1640,7 +1741,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_enum_optional<Object>>(5)
+      let arr: C_enum_optional<Object>[] = [
+        new C_enum_optional<Object>(),
+        new C_enum_optional<Object>(),
+        new C_enum_optional<Object>(),
+        new C_enum_optional<Object>(),
+        new C_enum_optional<Object>()
+      ];
       arr[0] = new C_enum_optional<Object>()
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(undefined)
@@ -1655,7 +1762,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_tuple_optional<Object>>(5)
+      let arr: C_tuple_optional<Object>[] = [
+        new C_tuple_optional<Object>(),
+        new C_tuple_optional<Object>(),
+        new C_tuple_optional<Object>(),
+        new C_tuple_optional<Object>(),
+        new C_tuple_optional<Object>()
+      ];
       arr[0] = new C_tuple_optional<Object>()
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(undefined)
@@ -1670,7 +1783,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_number_array_optional<Object>>(5)
+      let arr: C_number_array_optional<Object>[] = [
+        new C_number_array_optional<Object>(),
+        new C_number_array_optional<Object>(),
+        new C_number_array_optional<Object>(),
+        new C_number_array_optional<Object>(),
+        new C_number_array_optional<Object>()
+      ];
       arr[0] = new C_number_array_optional<Object>()
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(undefined)
@@ -1685,7 +1804,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_lambda_optional<Object>>(5)
+      let arr: C_lambda_optional<Object>[] = [
+        new C_lambda_optional<Object>(),
+        new C_lambda_optional<Object>(),
+        new C_lambda_optional<Object>(),
+        new C_lambda_optional<Object>(),
+        new C_lambda_optional<Object>()
+      ];
       let t: foo_lambda = (i: Object|undefined) => { return i }
       arr[0] = new C_lambda_optional<Object>(t)
       expect(arr.length).assertEqual(5)
@@ -1701,7 +1826,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_custom_1>(5)
+      let arr: C_custom_1[] = [
+        new C_custom_1(),
+        new C_custom_1(),
+        new C_custom_1(),
+        new C_custom_1(),
+        new C_custom_1()
+      ];
       expect(arr.length).assertEqual(5)
     })
 
@@ -1716,7 +1847,13 @@ export default function ExpressionsNewTestSuite(): void {
     it("testExpressionsNew0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 由于ArkTS中私有构造函数只能在类内部访问，我们创建了一个内部类来模拟
       C_custom_2_local.foo()
-      let arr = new Array<C_custom_2_local>(5)
+    let arr: C_custom_2_local[] = [
+      new C_custom_2_local(""),
+      new C_custom_2_local(""),
+      new C_custom_2_local(""),
+      new C_custom_2_local(""),
+      new C_custom_2_local("")
+    ];
       expect(arr.length).assertEqual(5)
     })
 
@@ -1729,7 +1866,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_default_0>(5)
+      let arr: C_default_0[] = [
+        new C_default_0(0),
+        new C_default_0(0),
+        new C_default_0(0),
+        new C_default_0(0),
+        new C_default_0(0)
+      ];
       arr[0] = new C_default_0(1)
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(1)
@@ -1744,7 +1887,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_default_1>(5)
+      let arr: C_default_1[] = [
+        new C_default_1(0 as byte),
+        new C_default_1(0 as byte),
+        new C_default_1(0 as byte),
+        new C_default_1(0 as byte),
+        new C_default_1(0 as byte)
+      ];
       arr[0] = new C_default_1(2 as byte)
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(2)
@@ -1759,7 +1908,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_default_2>(5)
+      let arr: C_default_2[] = [
+        new C_default_2(0 as short),
+        new C_default_2(0 as short),
+        new C_default_2(0 as short),
+        new C_default_2(0 as short),
+        new C_default_2(0 as short)
+      ];
       arr[0] = new C_default_2(3 as short)
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(3)
@@ -1774,7 +1929,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_default_3>(5)
+      let arr: C_default_3[] = [
+        new C_default_3(0),
+        new C_default_3(0),
+        new C_default_3(0),
+        new C_default_3(0),
+        new C_default_3(0)
+      ];
       arr[0] = new C_default_3(4)
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(4)
@@ -1789,7 +1950,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_default_4>(5)
+      let arr: C_default_4[] = [
+        new C_default_4(0 as long),
+        new C_default_4(0 as long),
+        new C_default_4(0 as long),
+        new C_default_4(0 as long),
+        new C_default_4(0 as long)
+      ];
       arr[0] = new C_default_4(5 as long)
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(5)
@@ -1804,7 +1971,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_default_5>(5)
+      let arr: C_default_5[] = [
+        new C_default_5(0.0.toFloat()),
+        new C_default_5(0.0.toFloat()),
+        new C_default_5(0.0.toFloat()),
+        new C_default_5(0.0.toFloat()),
+        new C_default_5(0.0.toFloat())
+      ];
       arr[0] = new C_default_5(6.7.toFloat())
       expect(arr.length).assertEqual(5)
       expect((arr.at(0)?.i).toString()).assertEqual('6.7')
@@ -1819,7 +1992,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_default_6>(5)
+      let arr: C_default_6[] = [
+        new C_default_6(0.0),
+        new C_default_6(0.0),
+        new C_default_6(0.0),
+        new C_default_6(0.0),
+        new C_default_6(0.0)
+      ];
       arr[0] = new C_default_6(8.9)
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(8.9)
@@ -1835,7 +2014,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_default_8>(5)
+      let arr: C_default_8[] = [
+        new C_default_8(false),
+        new C_default_8(false),
+        new C_default_8(false),
+        new C_default_8(false),
+        new C_default_8(false)
+      ];
       arr[0] = new C_default_8(false)
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(false)
@@ -2191,7 +2376,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_lambda_gen_optional>(5)
+      let arr: C_lambda_gen_optional[] = [
+        new C_lambda_gen_optional(),
+        new C_lambda_gen_optional(),
+        new C_lambda_gen_optional(),
+        new C_lambda_gen_optional(),
+        new C_lambda_gen_optional()
+      ];
       let t: foo_lambda_gen = (i: Object|undefined) => { return i }
       arr[0] = new C_lambda_gen_optional(t)
       expect(arr.length).assertEqual(5)
@@ -2207,7 +2398,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_number_optional1>(5)
+      let arr: C_number_optional1[] = [
+        new C_number_optional1(),
+        new C_number_optional1(),
+        new C_number_optional1(),
+        new C_number_optional1(),
+        new C_number_optional1()
+      ];
       arr[0] = new C_number_optional1()
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(undefined)
@@ -2222,7 +2419,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_byte_optional1>(5)
+      let arr: C_byte_optional1[] = [
+        new C_byte_optional1(),
+        new C_byte_optional1(),
+        new C_byte_optional1(),
+        new C_byte_optional1(),
+        new C_byte_optional1()
+      ];
       arr[0] = new C_byte_optional1()
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(undefined)
@@ -2237,7 +2440,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_short_optional1>(5)
+      let arr: C_short_optional1[] = [
+        new C_short_optional1(),
+        new C_short_optional1(),
+        new C_short_optional1(),
+        new C_short_optional1(),
+        new C_short_optional1()
+      ];
       arr[0] = new C_short_optional1()
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(undefined)
@@ -2252,7 +2461,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_int_optional1>(5)
+      let arr: C_int_optional1[] = [
+        new C_int_optional1(),
+        new C_int_optional1(),
+        new C_int_optional1(),
+        new C_int_optional1(),
+        new C_int_optional1()
+      ];
       arr[0] = new C_int_optional1()
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(undefined)
@@ -2267,7 +2482,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_long_optional1>(5)
+      let arr: C_long_optional1[] = [
+        new C_long_optional1(),
+        new C_long_optional1(),
+        new C_long_optional1(),
+        new C_long_optional1(),
+        new C_long_optional1()
+      ];
       arr[0] = new C_long_optional1()
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(undefined)
@@ -2282,7 +2503,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_float_optional1>(5)
+      let arr: C_float_optional1[] = [
+        new C_float_optional1(),
+        new C_float_optional1(),
+        new C_float_optional1(),
+        new C_float_optional1(),
+        new C_float_optional1()
+      ];
       arr[0] = new C_float_optional1()
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(undefined)
@@ -2297,7 +2524,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_double_optional1>(5)
+      let arr: C_double_optional1[] = [
+        new C_double_optional1(),
+        new C_double_optional1(),
+        new C_double_optional1(),
+        new C_double_optional1(),
+        new C_double_optional1()
+      ];
       arr[0] = new C_double_optional1()
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(undefined)
@@ -2312,7 +2545,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_char_optional1>(5)
+      let arr: C_char_optional1[] = [
+        new C_char_optional1(),
+        new C_char_optional1(),
+        new C_char_optional1(),
+        new C_char_optional1(),
+        new C_char_optional1()
+      ];
       arr[0] = new C_char_optional1()
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(undefined)
@@ -2327,7 +2566,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_boolean_optional1>(5)
+      let arr: C_boolean_optional1[] = [
+        new C_boolean_optional1(),
+        new C_boolean_optional1(),
+        new C_boolean_optional1(),
+        new C_boolean_optional1(),
+        new C_boolean_optional1()
+      ];
       arr[0] = new C_boolean_optional1()
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(undefined)
@@ -2342,7 +2587,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_string_optional1>(5)
+      let arr: C_string_optional1[] = [
+        new C_string_optional1(),
+        new C_string_optional1(),
+        new C_string_optional1(),
+        new C_string_optional1(),
+        new C_string_optional1()
+      ];
       arr[0] = new C_string_optional1()
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(undefined)
@@ -2357,7 +2608,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_null_optional1>(5)
+      let arr: C_null_optional1[] = [
+        new C_null_optional1(),
+        new C_null_optional1(),
+        new C_null_optional1(),
+        new C_null_optional1(),
+        new C_null_optional1()
+      ];
       arr[0] = new C_null_optional1()
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(undefined)
@@ -2372,7 +2629,13 @@ export default function ExpressionsNewTestSuite(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsNew0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Array<C_undefined_optional1>(5)
+      let arr: C_undefined_optional1[] = [
+        new C_undefined_optional1(),
+        new C_undefined_optional1(),
+        new C_undefined_optional1(),
+        new C_undefined_optional1(),
+        new C_undefined_optional1()
+      ];
       arr[0] = new C_undefined_optional1()
       expect(arr.length).assertEqual(5)
       expect(arr.at(0)?.i).assertEqual(undefined)

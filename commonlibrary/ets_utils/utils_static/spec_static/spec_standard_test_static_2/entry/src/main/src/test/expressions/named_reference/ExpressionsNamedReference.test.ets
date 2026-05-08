@@ -49,17 +49,11 @@ function callbackHandler_9(callback: (msg: string) => void): void { callback('He
 
 let callback_10: string = "I am a string";
 
-namespace MyModule_11 { export const moduleVar = "Module Variable"; }
+namespace MyModule_11 { export const moduleVar:string = "Module Variable"; }
 
 let param_12: string = "global";
 
-// 模拟导入的 MathUtils
 namespace MathUtils_13 { export function sum(a: number, b: number): number { return a + b; } }
-
-// 模拟导入的 ShapeInterfaces 和 Circle
-namespace ShapeInterfaces_14 {
-  export interface Calculable { calculateArea(): number; }
-}
 
 class Myclass_15<T> {
   value: T;
@@ -72,16 +66,12 @@ let count_16: number = 10;
 interface Lengthwise_17 { length: number; }
 function logLength_17<T extends Lengthwise_17>(obj: T): void { obj.length; }
 
-// 模拟导入的 PI 和 CONFIG
 const PI_18: number = 3.1415;
 
-// 模拟导入的 identity
 function identity_19<T>(arg: T): T { return arg; }
 
-// 模拟导入的 UserID
 type UserID_20 = string | number;
 
-// 模拟导入的 ColorSet
 enum ColorSet_21 { Red = 0, Green = 1, Blue = 2 }
 
 enum ColorSet_23 { Red = 0, Green = 1, Blue = 2 }
