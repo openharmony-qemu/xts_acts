@@ -2846,15 +2846,15 @@ export default function PhotoTest() {
     // ===========================================================【相机框架】支持Touch锁定曝光========================================================
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0100
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0100
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0100
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0100
      * @tc.desc      test sub multimedia camera ndk enum ExposureState
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0100', Level.LEVEL2, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0100"
+    it('SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0100', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0100"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -2879,15 +2879,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0200
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0200
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0200
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0200
      * @tc.desc      test sub multimedia camera ndk session on exposureStateChange
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0200', Level.LEVEL0, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0200"
+    it('SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0200', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0200"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -2911,15 +2911,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0300
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0300
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0300
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0300
      * @tc.desc      test sub multimedia camera ndk session on exposureStateChange with first param null
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0300', Level.LEVEL2, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0300"
+    it('SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0300', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0300"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -2943,15 +2943,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0400
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0400
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0400
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0400
      * @tc.desc      test sub multimedia camera ndk session on exposureStateChange with second param null
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0400', Level.LEVEL2, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0400"
+    it('SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0400', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0400"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -2975,15 +2975,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0500
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0500
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0500
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0500
      * @tc.desc      test sub multimedia camera ndk session off exposureStateChange
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0500', Level.LEVEL0, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0500"
+    it('SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0500', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0500"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3007,15 +3007,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0600
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0600
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0600
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0600
      * @tc.desc      test sub multimedia camera ndk session off exposureStateChange with first param null
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0600', Level.LEVEL2, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0600"
+    it('SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0600', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0600"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3039,15 +3039,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0700
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0700
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0700
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0700
      * @tc.desc      test sub multimedia camera ndk session off exposureStateChange with second param null
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0700', Level.LEVEL2, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0700"
+    it('SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0700', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0700"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3071,15 +3071,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0800
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0800
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0800
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0800
      * @tc.desc      test sub multimedia camera ndk session wait for EXPOSURE_STATE_CONVERGED
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0800', Level.LEVEL2, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NDK_EXPOSURE_STATE_0800"
+    it('SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0800', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0800"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3110,15 +3110,15 @@ export default function PhotoTest() {
 
     // ===========================================================【相机框架】支持色调调节========================================================
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0100
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0100
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0100
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0100
      * @tc.desc      test sub multimedia camera OH_CaptureSession_GetColorTintRange
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0100', Level.LEVEL0, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0100"
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0100', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0100"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3144,15 +3144,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0200
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0200
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0200
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0200
      * @tc.desc      test sub multimedia camera OH_CaptureSession_GetColorTintRange with errorCode 7400103
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0200', Level.LEVEL2, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0200"
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0200', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0200"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3176,15 +3176,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0300
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0300
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0300
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0300
      * @tc.desc      test sub multimedia camera OH_CaptureSession_SetColorTint with minValue
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0300', Level.LEVEL1, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0300"
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0300', Level.LEVEL1, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0300"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3210,15 +3210,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0400
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0400
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0400
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0400
      * @tc.desc      test sub multimedia camera OH_CaptureSession_SetColorTint with maxValue
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0400', Level.LEVEL1, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0400"
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0400', Level.LEVEL1, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0400"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3244,15 +3244,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0500
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0500
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0500
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0500
      * @tc.desc      test sub multimedia camera OH_CaptureSession_SetColorTint with value in range
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 1
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0500', Level.LEVEL1, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0500"
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0500', Level.LEVEL1, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0500"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3278,15 +3278,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0600
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0600
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0600
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0600
      * @tc.desc      test sub multimedia camera OH_CaptureSession_SetColorTint with value out range
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0600', Level.LEVEL2, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0600"
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0600', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0600"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3312,15 +3312,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0700
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0700
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0700
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0700
      * @tc.desc      test sub multimedia camera OH_CaptureSession_SetColorTint with first param null
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0700', Level.LEVEL2, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0700"
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0700', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0700"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3346,15 +3346,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0800
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0800
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0800
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0800
      * @tc.desc      test sub multimedia camera OH_CaptureSession_SetColorTint with second param null
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0800', Level.LEVEL2, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0800"
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0800', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0800"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3380,15 +3380,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0900
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0900
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0900
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0900
      * @tc.desc      test sub multimedia camera OH_CaptureSession_SetColorTint with errorCode 7400103
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0900', Level.LEVEL2, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_0900"
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0900', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0900"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3412,15 +3412,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_1000
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_1000
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1000
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1000
      * @tc.desc      test sub multimedia camera OH_CaptureSession_GetColorTint
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_1000', Level.LEVEL2, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_1000"
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1000', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1000"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3446,15 +3446,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_1100
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_1100
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1100
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1100
      * @tc.desc      test sub multimedia camera OH_CaptureSession_GetColorTint with errorCode 7400103
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_1100', Level.LEVEL2, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COLOR_TINT_1100"
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1100', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_1100"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3479,15 +3479,15 @@ export default function PhotoTest() {
 
     // ===========================================【相机框架】快捷变焦点上报生态开放 ========================================
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0100
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0100
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0100
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0100
      * @tc.desc      test sub multimedia camera session OH_CaptureSession_GetZoomPointInfos and OH_CaptureSession_DeleteZoomPointInfo
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0100', Level.LEVEL0, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0100"
+    it('SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0100', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0100"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3516,15 +3516,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0200
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0200
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0200
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0200
      * @tc.desc      test sub multimedia camera session OH_CaptureSession_GetZoomPointInfos with first param null
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0200', Level.LEVEL2, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0200"
+    it('SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0200', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0200"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3551,15 +3551,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0300
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0300
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0300
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0300
      * @tc.desc      test sub multimedia camera session OH_CaptureSession_GetZoomPointInfos with second param null
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0300', Level.LEVEL2, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0300"
+    it('SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0300', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0300"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3585,15 +3585,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0400
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0400
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0400
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0400
      * @tc.desc      test sub multimedia camera session OH_CaptureSession_GetZoomPointInfos with third param null
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0400', Level.LEVEL2, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0400"
+    it('SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0400', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0400"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3619,15 +3619,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0500
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0500
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0500
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0500
      * @tc.desc      test sub multimedia camera session OH_CaptureSession_GetZoomPointInfos with errorCode 7400103
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0500', Level.LEVEL2, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0500"
+    it('SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0500', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0500"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3651,15 +3651,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0600
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0600
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0600
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0600
      * @tc.desc      test sub multimedia camera session OH_CaptureSession_DeleteZoomPointInfo with first param null
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0600', Level.LEVEL0, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0600"
+    it('SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0600', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0600"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
@@ -3688,15 +3688,15 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0700
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0700
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0700
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0700
      * @tc.desc      test sub multimedia camera session OH_CaptureSession_DeleteZoomPointInfo with second param null
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it('SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0700', Level.LEVEL0, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_NDK_QUICK_ZOOM_POINT_0700"
+    it('SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0700', Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_QUICK_ZOOM_POINT_0700"
       try {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info(`Enter ${caseName}`)
