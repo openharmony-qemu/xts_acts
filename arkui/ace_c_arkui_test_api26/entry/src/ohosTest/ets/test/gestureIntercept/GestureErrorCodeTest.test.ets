@@ -76,5 +76,18 @@ export default function gestureErrorCodeTest() {
       expect(nativeFunc.GestureInterceptErrorCode004()).assertEqual(0)
       done()
     })
+
+    /**
+     * @tc.name   SUB_ACE_ARKUI_GESTURNULLPTR_0100
+     * @tc.number SUB_ACE_ARKUI_GESTURNULLPTR_0100
+     * @tc.desc   SUB_ACE_ARKUI_GESTURNULLPTR_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ACE_ARKUI_GESTURNULLPTR_0100', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.GestureInterceptNullTest001()).assertEqual(0)
+      done()
+    })
   })
 }

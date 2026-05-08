@@ -34,6 +34,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"GestureInterceptErrorCode002", nullptr, GestureInterceptErrorCode002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GestureInterceptErrorCode003", nullptr, GestureInterceptErrorCode003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GestureInterceptErrorCode004", nullptr, GestureInterceptErrorCode004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GestureInterceptNullTest001", nullptr, GestureInterceptNullTest001, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
         {"ScrollWithMouseTest_001", nullptr, ScrollWithMouseTest_001, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"ScrollWithMouseTest_002", nullptr, ScrollWithMouseTest_002, nullptr, nullptr, nullptr,

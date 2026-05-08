@@ -69,4 +69,20 @@ static napi_value GestureInterceptErrorCode004(napi_env env, napi_callback_info 
     }
     return NapiReturnSuccessInt32(env);
 }
+
+static napi_value GestureInterceptNullTest001(napi_env env, napi_callback_info info)
+{
+    auto resultTest = 0;
+    auto result = OH_ArkUI_NodeEvent_GetGestureCollectInterceptInfo(nullptr);
+    if (result == nullptr) {
+        resultTest = 1;
+    }
+    {
+        napi_value assertEqErr = EqFailed(env, (resultTest), (1));
+        if (assertEqErr != nullptr) {
+            return assertEqErr;
+        }
+    }
+    return NapiReturnSuccessInt32(env);
+}
 }
