@@ -467,6 +467,67 @@ export default function fileIOFileMapping() {
     });
 
     /**
+     * @tc.name   fileIO_test_setPosition_003
+     * @tc.number SUB_DF_FILEIO_SETPOSITION_0300
+     * @tc.desc   Test setPosition() interfaces. Position= null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_setPosition_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+      let fpath = await nextFileName('fileIO_test_setPosition_003');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      let file;
+      let mapping;
+      try {
+        file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+        expect(isIntNum(file.fd)).assertTrue();
+        mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+        expect(mapping != null).assertTrue();
+        mapping.setPosition(null);
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('fileIO_test_setPosition_003 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020).assertTrue();
+        mapping.unmapSync();
+        fileIO.closeSync(file);
+        fileIO.unlinkSync(fpath);
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_setPosition_004
+     * @tc.number SUB_DF_FILEIO_SETPOSITION_0400
+     * @tc.desc   Test setPosition() interfaces. Position= undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_setPosition_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+      let fpath = await nextFileName('fileIO_test_setPosition_004');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      let file;
+      let mapping;
+      try {
+        file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+        expect(isIntNum(file.fd)).assertTrue();
+        mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+        expect(mapping != null).assertTrue();
+        mapping.setPosition(undefined);
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('fileIO_test_setPosition_004 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020).assertTrue();
+        mapping.unmapSync();
+        fileIO.closeSync(file);
+        fileIO.unlinkSync(fpath);
+      }
+    });
+
+
+    /**
      * @tc.name   fileIO_test_getPosition_000
      * @tc.number SUB_DF_FILEIO_GETPOSITION_0000
      * @tc.desc   Test getPosition() interfaces.
@@ -636,6 +697,66 @@ export default function fileIOFileMapping() {
         expect(false).assertTrue();
       } catch (e) {
         console.log('fileIO_test_setLimit_002 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020).assertTrue();
+        mapping.unmapSync();
+        fileIO.closeSync(file);
+        fileIO.unlinkSync(fpath);
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_setLimit_003
+     * @tc.number SUB_DF_FILEIO_SETLIMIT_0300
+     * @tc.desc   Test setLimit() interfaces. Limit=null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_setLimit_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+      let fpath = await nextFileName('fileIO_test_setLimit_003');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      let file;
+      let mapping;
+      try {
+        file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+        expect(isIntNum(file.fd)).assertTrue();
+        mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+        expect(mapping != null).assertTrue();
+        mapping.setLimit(null);
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('fileIO_test_setLimit_003 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020).assertTrue();
+        mapping.unmapSync();
+        fileIO.closeSync(file);
+        fileIO.unlinkSync(fpath);
+      }
+    });
+    
+    /**
+     * @tc.name   fileIO_test_setLimit_004
+     * @tc.number SUB_DF_FILEIO_SETLIMIT_0400
+     * @tc.desc   Test setLimit() interfaces. Limit=undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_setLimit_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+      let fpath = await nextFileName('fileIO_test_setLimit_004');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      let file;
+      let mapping;
+      try {
+        file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+        expect(isIntNum(file.fd)).assertTrue();
+        mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+        expect(mapping != null).assertTrue();
+        mapping.setLimit(undefined);
+        expect(false).assertTrue();
+      } catch (e) {
+        console.log('fileIO_test_setLimit_003 has failed for ' + e.message + ', code: ' + e.code);
         expect(e.code === 13900020).assertTrue();
         mapping.unmapSync();
         fileIO.closeSync(file);
@@ -1007,6 +1128,312 @@ export default function fileIOFileMapping() {
     });
 
     /**
+    * @tc.name   fileIO_test_read_error_003
+    * @tc.number SUB_DF_FILEIO_READ_ERROR_0300
+    * @tc.desc   Test read() interfaces. buffer=null.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+   it('fileIO_test_read_error_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_read_error_003');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    let file;
+    let mapping;
+    try {
+      file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+      expect(isIntNum(file.fd)).assertTrue();
+      mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+      expect(mapping != null).assertTrue();
+      mapping.read(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_read_error_003 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      mapping.unmapSync();
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+    }
+  });
+
+  /**
+    * @tc.name   fileIO_test_read_error_004
+    * @tc.number SUB_DF_FILEIO_READ_ERROR_0400
+    * @tc.desc   Test read() interfaces.length=null.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+   it('fileIO_test_read_error_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+     let fpath = await nextFileName('fileIO_test_read_error_004');
+     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+     let file;
+     let mapping;
+     try {
+       file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+       expect(isIntNum(file.fd)).assertTrue();
+       mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+       expect(mapping != null).assertTrue();
+       let buffer = new ArrayBuffer(100);
+       mapping.read(100,null);
+       expect(false).assertTrue();
+     } catch (e) {
+       console.log('fileIO_test_read_error_004 has failed for ' + e.message + ', code: ' + e.code);
+       expect(e.code === 13900020).assertTrue();
+       mapping.unmapSync();
+       fileIO.closeSync(file);
+       fileIO.unlinkSync(fpath);
+     }
+   });
+
+   /**
+    * @tc.name   fileIO_test_read_error_005
+    * @tc.number SUB_DF_FILEIO_READ_ERROR_0500
+    * @tc.desc   Test read() interfaces. position =null.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+   it('fileIO_test_read_error_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+     let fpath = await nextFileName('fileIO_test_read_error_005');
+     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+     let file;
+     let mapping;
+     try {
+       file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+       expect(isIntNum(file.fd)).assertTrue();
+       mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+       expect(mapping != null).assertTrue();
+       let buffer = new ArrayBuffer(100);
+       mapping.read(null,buffer);
+       expect(false).assertTrue();
+     } catch (e) {
+       console.log('fileIO_test_read_error_005 has failed for ' + e.message + ', code: ' + e.code);
+       expect(e.code === 13900020).assertTrue();
+       mapping.unmapSync();
+       fileIO.closeSync(file);
+       fileIO.unlinkSync(fpath);
+     }
+   });
+
+   /**
+    * @tc.name   fileIO_test_read_error_006
+    * @tc.number SUB_DF_FILEIO_READ_ERROR_0600
+    * @tc.desc   Test read() interfaces. buffer=null.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+   it('fileIO_test_read_error_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+     let fpath = await nextFileName('fileIO_test_read_error_006');
+     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+     let file;
+     let mapping;
+     try {
+       file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+       expect(isIntNum(file.fd)).assertTrue();
+       mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+       expect(mapping != null).assertTrue();
+       mapping.read(50,null);
+       expect(false).assertTrue();
+     } catch (e) {
+       console.log('fileIO_test_read_error_006 has failed for ' + e.message + ', code: ' + e.code);
+       expect(e.code === 13900020).assertTrue();
+       mapping.unmapSync();
+       fileIO.closeSync(file);
+       fileIO.unlinkSync(fpath);
+     }
+   });
+
+   /**
+    * @tc.name   fileIO_test_read_error_007
+    * @tc.number SUB_DF_FILEIO_READ_ERROR_0700
+    * @tc.desc   Test read() interfaces.length=null.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+   it('fileIO_test_read_error_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+     let fpath = await nextFileName('fileIO_test_read_error_007');
+     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+     let file;
+     let mapping;
+     try {
+       file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+       expect(isIntNum(file.fd)).assertTrue();
+       mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+       expect(mapping != null).assertTrue();
+       let buffer = new ArrayBuffer(100);
+       mapping.read(50,buffer,null);
+       expect(false).assertTrue();
+     } catch (e) {
+       console.log('fileIO_test_read_error_007 has failed for ' + e.message + ', code: ' + e.code);
+       expect(e.code === 13900020).assertTrue();
+       mapping.unmapSync();
+       fileIO.closeSync(file);
+       fileIO.unlinkSync(fpath);
+     }
+   });
+
+   /**
+    * @tc.name   fileIO_test_read_error_008
+    * @tc.number SUB_DF_FILEIO_READ_ERROR_0800
+    * @tc.desc   Test read() interfaces. buffer=undefined.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+   it('fileIO_test_read_error_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_read_error_008');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    let file;
+    let mapping;
+    try {
+      file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+      expect(isIntNum(file.fd)).assertTrue();
+      mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+      expect(mapping != null).assertTrue();
+      mapping.read(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_read_error_008 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      mapping.unmapSync();
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+    }
+  });
+
+  /**
+    * @tc.name   fileIO_test_read_error_009
+    * @tc.number SUB_DF_FILEIO_READ_ERROR_0900
+    * @tc.desc   Test read() interfaces.length=undefined.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+   it('fileIO_test_read_error_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+     let fpath = await nextFileName('fileIO_test_read_error_009');
+     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+     let file;
+     let mapping;
+     try {
+       file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+       expect(isIntNum(file.fd)).assertTrue();
+       mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+       expect(mapping != null).assertTrue();
+       let buffer = new ArrayBuffer(100);
+       mapping.read(100,undefined);
+       expect(false).assertTrue();
+     } catch (e) {
+       console.log('fileIO_test_read_error_009 has failed for ' + e.message + ', code: ' + e.code);
+       expect(e.code === 13900020).assertTrue();
+       mapping.unmapSync();
+       fileIO.closeSync(file);
+       fileIO.unlinkSync(fpath);
+     }
+   });
+
+   /**
+    * @tc.name   fileIO_test_read_error_010
+    * @tc.number SUB_DF_FILEIO_READ_ERROR_1000
+    * @tc.desc   Test read() interfaces. position =undefined.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+   it('fileIO_test_read_error_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+     let fpath = await nextFileName('fileIO_test_read_error_010');
+     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+     let file;
+     let mapping;
+     try {
+       file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+       expect(isIntNum(file.fd)).assertTrue();
+       mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+       expect(mapping != null).assertTrue();
+ let buffer = new ArrayBuffer(100);
+       mapping.read(undefined,buffer);
+       expect(false).assertTrue();
+     } catch (e) {
+       console.log('fileIO_test_read_error_010 has failed for ' + e.message + ', code: ' + e.code);
+       expect(e.code === 13900020).assertTrue();
+       mapping.unmapSync();
+       fileIO.closeSync(file);
+       fileIO.unlinkSync(fpath);
+     }
+   });
+
+   /**
+    * @tc.name   fileIO_test_read_error_011
+    * @tc.number SUB_DF_FILEIO_READ_ERROR_1100
+    * @tc.desc   Test read() interfaces. buffer=undefined.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+   it('fileIO_test_read_error_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+     let fpath = await nextFileName('fileIO_test_read_error_011');
+     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+     let file;
+     let mapping;
+     try {
+       file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+       expect(isIntNum(file.fd)).assertTrue();
+       mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+       expect(mapping != null).assertTrue();
+       mapping.read(50,undefined);
+       expect(false).assertTrue();
+     } catch (e) {
+       console.log('fileIO_test_read_error_011 has failed for ' + e.message + ', code: ' + e.code);
+       expect(e.code === 13900020).assertTrue();
+       mapping.unmapSync();
+       fileIO.closeSync(file);
+       fileIO.unlinkSync(fpath);
+     }
+   });
+
+   /**
+    * @tc.name   fileIO_test_read_error_012
+    * @tc.number SUB_DF_FILEIO_READ_ERROR_1200
+    * @tc.desc   Test read() interfaces.length=undefined.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+   it('fileIO_test_read_error_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+     let fpath = await nextFileName('fileIO_test_read_error_012');
+     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+     let file;
+     let mapping;
+     try {
+       file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+       expect(isIntNum(file.fd)).assertTrue();
+       mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+       expect(mapping != null).assertTrue();
+       let buffer = new ArrayBuffer(100);
+       mapping.read(50,buffer,undefined);
+       expect(false).assertTrue();
+     } catch (e) {
+       console.log('fileIO_test_read_error_012 has failed for ' + e.message + ', code: ' + e.code);
+       expect(e.code === 13900020).assertTrue();
+       mapping.unmapSync();
+       fileIO.closeSync(file);
+       fileIO.unlinkSync(fpath);
+     }
+   });
+
+    /**
      * @tc.name   fileIO_test_write_buffer_000
      * @tc.number SUB_DF_FILEIO_WRITE_BUFFER_0000
      * @tc.desc   Test write(buffer) interfaces.
@@ -1186,36 +1613,343 @@ export default function fileIOFileMapping() {
       }
     });
 
-    /**
-     * @tc.name   fileIO_test_write_error_002
-     * @tc.number SUB_DF_FILEIO_WRITE_ERROR_0200
-     * @tc.desc   Test write() after unmap,Error code 13900052
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('fileIO_test_write_error_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
-      let fpath = await nextFileName('fileIO_test_write_error_002');
-      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+  /**
+   * @tc.name   fileIO_test_write_error_002
+   * @tc.number SUB_DF_FILEIO_WRITE_ERROR_0200
+   * @tc.desc   Test write() after unmap,Error code 13900052
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('fileIO_test_write_error_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_write_error_002');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
 
-      let file;
-      let mapping;
-      try {
-        file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
-        expect(isIntNum(file.fd)).assertTrue();
-        mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
-        expect(mapping != null).assertTrue();
-        mapping.unmapSync();
-        let buffer = new ArrayBuffer(100);
-        mapping.write(buffer);
-        expect(false).assertTrue();
-      } catch (e) {
-        console.log('fileIO_test_write_error_002 has failed for ' + e.message + ', code: ' + e.code);
-        expect(e.code === 13900052).assertTrue();
-        fileIO.closeSync(file);
-        fileIO.unlinkSync(fpath);
-      }
-    });
+    let file;
+    let mapping;
+    try {
+      file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+      expect(isIntNum(file.fd)).assertTrue();
+      mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+      expect(mapping != null).assertTrue();
+      mapping.unmapSync();
+      let buffer = new ArrayBuffer(100);
+      mapping.write(buffer);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_write_error_002 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900052).assertTrue();
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+    }
+  });  
+
+  /**
+    * @tc.name   fileIO_test_write_error_003
+    * @tc.number SUB_DF_FILEIO_WRITE_ERROR_0300
+    * @tc.desc   Test write() interfaces. data =null.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('fileIO_test_write_error_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_write_error_003');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    let file;
+    let mapping;
+    try {
+      file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+      expect(isIntNum(file.fd)).assertTrue();
+      mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+      expect(mapping != null).assertTrue();
+      mapping.write(null);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_write_error_003 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      mapping.unmapSync();
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+    }
+  });
+
+  /**
+    * @tc.name   fileIO_test_write_error_004
+    * @tc.number SUB_DF_FILEIO_WRITE_ERROR_0400
+    * @tc.desc   Test write() interfaces.length=null.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+   it('fileIO_test_write_error_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+     let fpath = await nextFileName('fileIO_test_write_error_004');
+     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+     let file;
+     let mapping;
+     try {
+       file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+       expect(isIntNum(file.fd)).assertTrue();
+       mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+       expect(mapping != null).assertTrue();
+       let buffer = new ArrayBuffer(100);
+       mapping.write(100,null);
+       expect(false).assertTrue();
+     } catch (e) {
+       console.log('fileIO_test_write_error_004 has failed for ' + e.message + ', code: ' + e.code);
+       expect(e.code === 13900020).assertTrue();
+       mapping.unmapSync();
+       fileIO.closeSync(file);
+       fileIO.unlinkSync(fpath);
+     }
+   });
+
+   /**
+    * @tc.name   fileIO_test_write_error_005
+    * @tc.number SUB_DF_FILEIO_WRITE_ERROR_0500
+    * @tc.desc   Test write() interfaces. position =null.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+   it('fileIO_test_write_error_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+     let fpath = await nextFileName('fileIO_test_write_error_005');
+     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+     let file;
+     let mapping;
+     try {
+       file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+       expect(isIntNum(file.fd)).assertTrue();
+       mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+       expect(mapping != null).assertTrue();
+       let buffer = new ArrayBuffer(100);
+       mapping.write(null,buffer);
+       expect(false).assertTrue();
+     } catch (e) {
+       console.log('fileIO_test_write_error_005 has failed for ' + e.message + ', code: ' + e.code);
+       expect(e.code === 13900020).assertTrue();
+       mapping.unmapSync();
+       fileIO.closeSync(file);
+       fileIO.unlinkSync(fpath);
+     }
+   });
+
+   /**
+    * @tc.name   fileIO_test_write_error_006
+    * @tc.number SUB_DF_FILEIO_WRITE_ERROR_0600
+    * @tc.desc   Test write() interfaces. data =null.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+   it('fileIO_test_write_error_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+     let fpath = await nextFileName('fileIO_test_write_error_006');
+     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+     let file;
+     let mapping;
+     try {
+       file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+       expect(isIntNum(file.fd)).assertTrue();
+       mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+       expect(mapping != null).assertTrue();
+       mapping.write(50,null);
+       expect(false).assertTrue();
+     } catch (e) {
+       console.log('fileIO_test_write_error_006 has failed for ' + e.message + ', code: ' + e.code);
+       expect(e.code === 13900020).assertTrue();
+       mapping.unmapSync();
+       fileIO.closeSync(file);
+       fileIO.unlinkSync(fpath);
+     }
+   });
+
+   /**
+    * @tc.name   fileIO_test_write_error_007
+    * @tc.number SUB_DF_FILEIO_WRITE_ERROR_0700
+    * @tc.desc   Test write() interfaces.length=null.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+   it('fileIO_test_write_error_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+     let fpath = await nextFileName('fileIO_test_write_error_007');
+     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+     let file;
+     let mapping;
+     try {
+       file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+       expect(isIntNum(file.fd)).assertTrue();
+       mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+       expect(mapping != null).assertTrue();
+      let buffer = new ArrayBuffer(100);
+       mapping.write(50,buffer,null);
+       expect(false).assertTrue();
+     } catch (e) {
+       console.log('fileIO_test_write_error_007 has failed for ' + e.message + ', code: ' + e.code);
+       expect(e.code === 13900020).assertTrue();
+       mapping.unmapSync();
+       fileIO.closeSync(file);
+       fileIO.unlinkSync(fpath);
+     }
+   });
+
+   /**
+    * @tc.name   fileIO_test_write_error_008
+    * @tc.number SUB_DF_FILEIO_WRITE_ERROR_0800
+    * @tc.desc   Test write() interfaces. data =undefined.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+   it('fileIO_test_write_error_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let fpath = await nextFileName('fileIO_test_write_error_008');
+    expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+    let file;
+    let mapping;
+    try {
+      file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+      expect(isIntNum(file.fd)).assertTrue();
+      mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+      expect(mapping != null).assertTrue();
+      mapping.write(undefined);
+      expect(false).assertTrue();
+    } catch (e) {
+      console.log('fileIO_test_write_error_008 has failed for ' + e.message + ', code: ' + e.code);
+      expect(e.code === 13900020).assertTrue();
+      mapping.unmapSync();
+      fileIO.closeSync(file);
+      fileIO.unlinkSync(fpath);
+    }
+  });
+
+  /**
+    * @tc.name   fileIO_test_write_error_009
+    * @tc.number SUB_DF_FILEIO_WRITE_ERROR_0900
+    * @tc.desc   Test write() interfaces.length=undefined.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+   it('fileIO_test_write_error_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+     let fpath = await nextFileName('fileIO_test_write_error_009');
+     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+     let file;
+     let mapping;
+     try {
+       file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+       expect(isIntNum(file.fd)).assertTrue();
+       mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+       expect(mapping != null).assertTrue();
+       let buffer = new ArrayBuffer(100);
+       mapping.write(100,undefined);
+       expect(false).assertTrue();
+     } catch (e) {
+       console.log('fileIO_test_write_error_009 has failed for ' + e.message + ', code: ' + e.code);
+       expect(e.code === 13900020).assertTrue();
+       mapping.unmapSync();
+       fileIO.closeSync(file);
+       fileIO.unlinkSync(fpath);
+     }
+   });
+
+   /**
+    * @tc.name   fileIO_test_write_error_010
+    * @tc.number SUB_DF_FILEIO_WRITE_ERROR_1000
+    * @tc.desc   Test write() interfaces. position =undefined.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+   it('fileIO_test_write_error_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+     let fpath = await nextFileName('fileIO_test_write_error_010');
+     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+     let file;
+     let mapping;
+     try {
+       file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+       expect(isIntNum(file.fd)).assertTrue();
+       mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+       expect(mapping != null).assertTrue();
+ let buffer = new ArrayBuffer(100);
+       mapping.write(undefined,buffer);
+       expect(false).assertTrue();
+     } catch (e) {
+       console.log('fileIO_test_write_error_010 has failed for ' + e.message + ', code: ' + e.code);
+       expect(e.code === 13900020).assertTrue();
+       mapping.unmapSync();
+       fileIO.closeSync(file);
+       fileIO.unlinkSync(fpath);
+     }
+   });
+
+   /**
+    * @tc.name   fileIO_test_write_error_011
+    * @tc.number SUB_DF_FILEIO_WRITE_ERROR_1100
+    * @tc.desc   Test write() interfaces. data =undefined.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+   it('fileIO_test_write_error_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+     let fpath = await nextFileName('fileIO_test_write_error_011');
+     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+     let file;
+     let mapping;
+     try {
+       file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+       expect(isIntNum(file.fd)).assertTrue();
+       mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+       expect(mapping != null).assertTrue();
+       mapping.write(50,undefined);
+       expect(false).assertTrue();
+     } catch (e) {
+       console.log('fileIO_test_write_error_011 has failed for ' + e.message + ', code: ' + e.code);
+       expect(e.code === 13900020).assertTrue();
+       mapping.unmapSync();
+       fileIO.closeSync(file);
+       fileIO.unlinkSync(fpath);
+     }
+   });
+
+   /**
+    * @tc.name   fileIO_test_write_error_012
+    * @tc.number SUB_DF_FILEIO_WRITE_ERROR_1200
+    * @tc.desc   Test write() interfaces.length=undefined.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+   it('fileIO_test_write_error_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+     let fpath = await nextFileName('fileIO_test_write_error_012');
+     expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+     let file;
+     let mapping;
+     try {
+       file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+       expect(isIntNum(file.fd)).assertTrue();
+       mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+       expect(mapping != null).assertTrue();
+       let buffer = new ArrayBuffer(100);
+       mapping.write(50,buffer,undefined);
+       expect(false).assertTrue();
+     } catch (e) {
+       console.log('fileIO_test_write_error_012 has failed for ' + e.message + ', code: ' + e.code);
+       expect(e.code === 13900020).assertTrue();
+       mapping.unmapSync();
+       fileIO.closeSync(file);
+       fileIO.unlinkSync(fpath);
+     }
+   });
+
 
     /**
      * @tc.name   fileIO_test_msync_000
@@ -1370,6 +2104,154 @@ export default function fileIOFileMapping() {
     });
 
     /**
+     * @tc.name   fileIO_test_msync_error_002
+     * @tc.number SUB_DF_FILEIO_MSYNC_ERROR_0200
+     * @tc.desc   Test msync() interfaces. position = null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_msync_error_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      let fpath = await nextFileName('fileIO_test_msync_error_002');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+     
+      let file;
+      let mapping;
+      try {
+        file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+        expect(isIntNum(file.fd)).assertTrue();
+        mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+        expect(mapping != null).assertTrue();
+        try{
+          await mapping.msync(null, 100);
+          expect(false).assertTrue();
+        }catch(Err){
+          console.log('fileIO_test_msync_error_002 error: ' + Err.message + ', code: ' + Err.code);
+          expect(Err.code === 13900020).assertTrue();
+          mapping.unmapSync();
+          fileIO.closeSync(file);
+          fileIO.unlinkSync(fpath);
+          done();
+        }
+      } catch (e) {
+        console.log('fileIO_test_msync_error_002 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_msync_error_003
+     * @tc.number SUB_DF_FILEIO_MSYNC_ERROR_0300
+     * @tc.desc   Test msync() interfaces. position = undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_msync_error_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      let fpath = await nextFileName('fileIO_test_msync_error_003');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+     
+      let file;
+      let mapping;
+      try {
+        file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+        expect(isIntNum(file.fd)).assertTrue();
+        mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+        expect(mapping != null).assertTrue();
+        try{
+          await mapping.msync(undefined, 100);
+          expect(false).assertTrue();
+        }catch(Err){
+          console.log('fileIO_test_msync_error_003 error: ' + Err.message + ', code: ' + Err.code);
+          expect(Err.code === 13900020).assertTrue();
+          mapping.unmapSync();
+          fileIO.closeSync(file);
+          fileIO.unlinkSync(fpath);
+          done();
+        }
+      } catch (e) {
+        console.log('fileIO_test_msync_error_003 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_msync_error_004
+     * @tc.number SUB_DF_FILEIO_MSYNC_ERROR_0400
+     * @tc.desc   Test msync() interfaces. length = null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_msync_error_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      let fpath = await nextFileName('fileIO_test_msync_error_004');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+     
+      let file;
+      let mapping;
+      try {
+        file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+        expect(isIntNum(file.fd)).assertTrue();
+        mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+        expect(mapping != null).assertTrue();
+        try{
+          await mapping.msync(100, null);
+          expect(false).assertTrue();
+        }catch(Err){
+          console.log('fileIO_test_msync_error_004 error: ' + Err.message + ', code: ' + Err.code);
+          expect(Err.code === 13900020).assertTrue();
+          mapping.unmapSync();
+          fileIO.closeSync(file);
+          fileIO.unlinkSync(fpath);
+          done();
+        }
+      } catch (e) {
+        console.log('fileIO_test_msync_error_004 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_msync_error_005
+     * @tc.number SUB_DF_FILEIO_MSYNC_ERROR_0500
+     * @tc.desc   Test msync() interfaces. length = undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_msync_error_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      let fpath = await nextFileName('fileIO_test_msync_error_005');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+     
+      let file;
+      let mapping;
+      try {
+        file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+        expect(isIntNum(file.fd)).assertTrue();
+        mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+        expect(mapping != null).assertTrue();
+        try{
+          await mapping.msync(undefined, 100);
+          expect(false).assertTrue();
+        }catch(Err){
+          console.log('fileIO_test_msync_error_005 error: ' + Err.message + ', code: ' + Err.code);
+          expect(Err.code === 13900020).assertTrue();
+          mapping.unmapSync();
+          fileIO.closeSync(file);
+          fileIO.unlinkSync(fpath);
+          done();
+        }
+      } catch (e) {
+        console.log('fileIO_test_msync_error_005 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
      * @tc.name   fileIO_test_msyncSync_000
      * @tc.number SUB_DF_FILEIO_MSYNCSYNC_0000
      * @tc.desc   Test msyncSync() interfaces.
@@ -1484,6 +2366,154 @@ export default function fileIOFileMapping() {
         mapping.unmapSync();
         fileIO.closeSync(file);
         fileIO.unlinkSync(fpath);
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_msyncSync_error_002
+     * @tc.number SUB_DF_FILEIO_MSYNCSYNC_ERROR_0200
+     * @tc.desc   Test msyncSync() interfaces. position = null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_msyncSync_error_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      let fpath = await nextFileName('fileIO_test_msyncSync_error_002');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+     
+      let file;
+      let mapping;
+      try {
+        file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+        expect(isIntNum(file.fd)).assertTrue();
+        mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+        expect(mapping != null).assertTrue();
+        try{
+          await mapping.msyncSync(null, 100);
+          expect(false).assertTrue();
+        }catch(Err){
+          console.log('fileIO_test_msyncSync_error_002 error: ' + Err.message + ', code: ' + Err.code);
+          expect(Err.code === 13900020).assertTrue();
+          mapping.unmapSync();
+          fileIO.closeSync(file);
+          fileIO.unlinkSync(fpath);
+          done();
+        }
+      } catch (e) {
+        console.log('fileIO_test_msyncSync_error_002 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_msyncSync_error_003
+     * @tc.number SUB_DF_FILEIO_MSYNCSYNC_ERROR_0300
+     * @tc.desc   Test msyncSync() interfaces. position = undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_msyncSync_error_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      let fpath = await nextFileName('fileIO_test_msyncSync_error_003');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+     
+      let file;
+      let mapping;
+      try {
+        file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+        expect(isIntNum(file.fd)).assertTrue();
+        mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+        expect(mapping != null).assertTrue();
+        try{
+          await mapping.msyncSync(undefined, 100);
+          expect(false).assertTrue();
+        }catch(Err){
+          console.log('fileIO_test_msyncSync_error_003 error: ' + Err.message + ', code: ' + Err.code);
+          expect(Err.code === 13900020).assertTrue();
+          mapping.unmapSync();
+          fileIO.closeSync(file);
+          fileIO.unlinkSync(fpath);
+          done();
+        }
+      } catch (e) {
+        console.log('fileIO_test_msyncSync_error_003 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_msyncSync_error_004
+     * @tc.number SUB_DF_FILEIO_MSYNCSYNC_ERROR_0400
+     * @tc.desc   Test msyncSync() interfaces. length = null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_msyncSync_error_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      let fpath = await nextFileName('fileIO_test_msyncSync_error_004');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+     
+      let file;
+      let mapping;
+      try {
+        file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+        expect(isIntNum(file.fd)).assertTrue();
+        mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+        expect(mapping != null).assertTrue();
+        try{
+          await mapping.msyncSync(100, null);
+          expect(false).assertTrue();
+        }catch(Err){
+          console.log('fileIO_test_msyncSync_error_004 error: ' + Err.message + ', code: ' + Err.code);
+          expect(Err.code === 13900020).assertTrue();
+          mapping.unmapSync();
+          fileIO.closeSync(file);
+          fileIO.unlinkSync(fpath);
+          done();
+        }
+      } catch (e) {
+        console.log('fileIO_test_msyncSync_error_004 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_msyncSync_error_005
+     * @tc.number SUB_DF_FILEIO_MSYNCSYNC_ERROR_0500
+     * @tc.desc   Test msyncSync() interfaces. length = undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fileIO_test_msyncSync_error_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      let fpath = await nextFileName('fileIO_test_msyncSync_error_005');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+     
+      let file;
+      let mapping;
+      try {
+        file = fileIO.openSync(fpath, fileIO.OpenMode.READ_WRITE);
+        expect(isIntNum(file.fd)).assertTrue();
+        mapping = fileIO.mmapSync(file, fileIO.MappingMode.READ_WRITE, 0, 1024);
+        expect(mapping != null).assertTrue();
+        try{
+          await mapping.msyncSync(undefined, 100);
+          expect(false).assertTrue();
+        }catch(Err){
+          console.log('fileIO_test_msyncSync_error_005 error: ' + Err.message + ', code: ' + Err.code);
+          expect(Err.code === 13900020).assertTrue();
+          mapping.unmapSync();
+          fileIO.closeSync(file);
+          fileIO.unlinkSync(fpath);
+          done();
+        }
+      } catch (e) {
+        console.log('fileIO_test_msyncSync_error_005 has failed for ' + e.message + ', code: ' + e.code);
+        expect(false).assertTrue();
+        done();
       }
     });
 
@@ -1635,7 +2665,6 @@ export default function fileIOFileMapping() {
         fileIO.unlinkSync(fpath);
       }
     });
-
 
   });
 }
