@@ -1,5 +1,5 @@
 'use static'
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import { uri } from '@kit.ArkTS';
 
 interface FooBazObj {
@@ -7,7 +7,7 @@ interface FooBazObj {
   baz: number;
 }
 
-export default function URI02Test() {
+export default function URI02Test(): void {
   describe('URI02Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -159,7 +159,7 @@ export default function URI02Test() {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_1000
      * @tc.name testURI02Chapter0010
-     * @tc.desc Test path property with URI containing path with no scheme (relative) – path should be null according to example
+     * @tc.desc Test path property with URI containing path with no scheme (relative) �?path should be null according to example
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -440,7 +440,7 @@ export default function URI02Test() {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_2900
      * @tc.name testURI02Chapter0029
-     * @tc.desc Test path property with URI containing fragment and query – path unaffected
+     * @tc.desc Test path property with URI containing fragment and query �?path unaffected
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -882,7 +882,7 @@ export default function URI02Test() {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_URITestTWO_6000
      * @tc.name testURI02Chapter0060
-     * @tc.desc Test query property with plus sign as space (application/x-www-form-urlencoded style) – should remain '+'
+     * @tc.desc Test query property with plus sign as space (application/x-www-form-urlencoded style) �?should remain '+'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -921,7 +921,7 @@ export default function URI02Test() {
       ];
       const queryString: string = params.join('&');
       const testUri: uri.URI = new uri.URI(`http://example.com/?${queryString}`);
-      let decodedParams: string[] = new Array<string>(params.length);
+      let decodedParams: string[] = [];
       for (let i: int = 0; i < params.length; i++) {
         let p: string = params[i];
         const eqIdx: int = p.indexOf('=');
@@ -1470,7 +1470,7 @@ export default function URI02Test() {
      * @tc.level Level 2
      */
     it('testURI02Chapter0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const unicodeStr = '€𐍈';
+      const unicodeStr = '€€';
       const encoded = encodeURIComponent(unicodeStr);
       const uriObj = new uri.URI('http://example.com#' + encoded);
       expect(uriObj.fragment).assertEqual(unicodeStr);

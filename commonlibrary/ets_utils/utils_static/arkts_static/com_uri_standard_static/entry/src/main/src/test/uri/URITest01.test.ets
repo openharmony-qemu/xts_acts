@@ -1,5 +1,5 @@
 'use static'
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import { uri } from '@kit.ArkTS';
 
 interface UserInfoObjA {
@@ -9,7 +9,7 @@ interface UserInfoObjB {
   b: number;
 }
 
-export default function URI01Test() {
+export default function URI01Test(): void {
   describe('URI01Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -781,8 +781,8 @@ export default function URI01Test() {
      * @tc.level Level 2
      */
     it('testURI01Chapter0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const uriObj = new uri.URI("https://用户名:密码@host/");
-      expect(uriObj.userInfo).assertEqual("用户名:密码");
+      const uriObj = new uri.URI("https://用户�?密码@host/");
+      expect(uriObj.userInfo).assertEqual("用户�?密码");
     });
 
     /**

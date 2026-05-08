@@ -1,5 +1,5 @@
 'use static'
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import { uri } from '@kit.ArkTS';
 
 interface ErrorWithCode {
@@ -30,7 +30,7 @@ interface TestObjectForCtor0046 {
   regex: Object;
 }
 
-export default function URI05Test() {
+export default function URI05Test(): void {
   describe('URI05Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
