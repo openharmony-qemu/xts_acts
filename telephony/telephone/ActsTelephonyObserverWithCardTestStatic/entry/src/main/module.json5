@@ -53,9 +53,6 @@
         "name" :  "ohos.permission.GET_NETWORK_INFO"
       },
       {
-        "name" :  "ohos.permission.LOCATION"
-      },
-      {
         "name" :  "ohos.permission.GET_TELEPHONY_STATE"
       }  
     ]
