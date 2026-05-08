@@ -661,6 +661,8 @@ export const oHCaptureSessionRegisterExposureStateChangeCallbackWithoutSession: 
  
 export const oHCaptureSessionUnregisterExposureStateChangeCallbackWithoutSession: () => number;
 
+export const getEnumExposureState: (index: number) => number;
+
 export const sessionRegisterExposureStateChangeCallback: (index:number) => number;
 
 export const sessionUnregisterExposureStateChangeCallback: (index:number) => number;
