@@ -864,6 +864,9 @@ export default function actslocationTest() {
                       
                       expect(typeof poi.address).assertEqual("string");
                       expect(poi.address.length).assertLarger(0);
+
+                      expect(typeof poi.additionalInfo).assertEqual("string");
+                      expect(poi.additionalInfo?.length).assertLarger(0);
                   }
                 }
               } catch (err) {
