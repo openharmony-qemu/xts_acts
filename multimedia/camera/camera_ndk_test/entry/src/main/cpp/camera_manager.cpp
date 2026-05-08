@@ -4417,14 +4417,14 @@ Camera_ErrorCode NDKCamera::UnregisterExposureStateChangeCallback(int useCaseCod
 
 bool NDKCamera::WaitForExposureFinish()
 {
-    const int WAIT_EXPOSURE_TIMEOUT = 5;
-    const int SLEEP_INTERVAL_20MS = 20;
+    const int waitExposureTimeout = 5;
+    const int sleepInterval = 20;
     auto startTime = std::chrono::system_clock::now();
     while (!isExposureFinish) {
-        std::this_thread::sleep_for(std::chrono::milliseconds(SLEEP_INTERVAL_20MS));
+        std::this_thread::sleep_for(std::chrono::milliseconds(sleepInterval));
         auto endTime = std::chrono::system_clock::now();
         auto duration_seconds = std::chrono::duration_cast<std::chrono::seconds>(endTime - startTime).count();
-        if (duration_seconds > WAIT_EXPOSURE_TIMEOUT) {
+        if (duration_seconds > waitExposureTimeout) {
             OH_LOG_ERROR(LOG_APP, "WaitForExposureFinish timeout");
             break;
         }
@@ -4452,8 +4452,8 @@ Camera_ErrorCode NDKCamera::SetColorTint(int useCaseCode)
     } else if (useCaseCode == PARAMETER1_ERROR) {
         ret_ = OH_CaptureSession_SetColorTint(captureSession_, g_maxTint);
     } else if (useCaseCode == PARAMETER2_ERROR) {
-        const int AVERAGE = 2;
-        colorTint = (g_minTint + g_maxTint) / AVERAGE;
+        const int average = 2;
+        colorTint = (g_minTint + g_maxTint) / average;
         ret_ = OH_CaptureSession_SetColorTint(captureSession_, colorTint);
     } else if (useCaseCode == PARAMETER3_ERROR) {
         colorTint = g_maxTint + 1;
@@ -4481,7 +4481,7 @@ Camera_ErrorCode NDKCamera::GetColorTint(int useCaseCode)
         ret_ = OH_CaptureSession_GetColorTint(captureSession_, &g_currentTint);
         if (colorTint != g_currentTint) {
             OH_LOG_ERROR(LOG_APP, "SetColorTint not equal GetColorTint, set: %{public}d, get: %{public}d", 
-            colorTint, g_currentTint);
+                colorTint, g_currentTint);
             ret_ = static_cast<Camera_ErrorCode>(-1);
         };
     }
@@ -4493,18 +4493,18 @@ Camera_ErrorCode NDKCamera::GetColorTint(int useCaseCode)
 }
 
 OH_Camera_ZoomPointInfo* cameraZoomPointInfo;
-uint32_t zoomSize;
+uint32_t g_zoomSize;
 Camera_ErrorCode NDKCamera::GetZoomPointInfos(int useCaseCode)
 {
     OH_LOG_INFO(LOG_APP, "OH_CaptureSession_GetZoomPointInfos useCaseCode: %{public}d", useCaseCode);
     if (useCaseCode == PARAMETER_OK) {
-        ret_ = OH_CaptureSession_GetZoomPointInfos(captureSession_, &zoomSize, &cameraZoomPointInfo);
+        ret_ = OH_CaptureSession_GetZoomPointInfos(captureSession_, &g_zoomSize, &cameraZoomPointInfo);
     } else if (useCaseCode == PARAMETER1_ERROR) {
-        ret_ = OH_CaptureSession_GetZoomPointInfos(nullptr, &zoomSize, &cameraZoomPointInfo);
+        ret_ = OH_CaptureSession_GetZoomPointInfos(nullptr, &g_zoomSize, &cameraZoomPointInfo);
     } else if (useCaseCode == PARAMETER2_ERROR) {
         ret_ = OH_CaptureSession_GetZoomPointInfos(captureSession_, nullptr, &cameraZoomPointInfo);
     } else if (useCaseCode == PARAMETER3_ERROR) {
-        ret_ = OH_CaptureSession_GetZoomPointInfos(captureSession_, &zoomSize, nullptr);
+        ret_ = OH_CaptureSession_GetZoomPointInfos(captureSession_, &g_zoomSize, nullptr);
     }
 
     if (ret_ != CAMERA_OK) {
