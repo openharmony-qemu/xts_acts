@@ -21,23 +21,22 @@
 #define SUCCESS_CODE 0
 #define EXPECTED_HANDLER_COUNT 1
 #define INVALID_SIGNAL 99999
-
 static int g_handlerCount = 0;
 const int SIGNAL = SIGALRM;
 
-static void Handler(int sig)
+static void handler(int sig)
 {
     g_handlerCount++;
 }
 
-int Prepare(sigset_t *set)
+int prepare(sigset_t *set)
 {
-    g_handlerCount = 0;
+    g_handlerCount = SUCCESS_CODE;
 
-    struct sigaction act = {.sa_flags = 0, .sa_handler = Handler};
-    struct sigaction oldAct = {};
-    int result = sigaction(SIGNAL, &act, &oldAct);
-    if (result != 0) {
+    struct sigaction act = {.sa_flags = SUCCESS_CODE, .sa_handler = handler};
+    struct sigaction old_act = {SUCCESS_CODE};
+    int result = sigaction(SIGNAL, &act, &old_act);
+    if (result != SUCCESS_CODE) {
         return result;
     }
 
@@ -46,26 +45,26 @@ int Prepare(sigset_t *set)
     }
 
     result = raise(SIGNAL);
-    if (result != 0) {
+    if (result != SUCCESS_CODE) {
         return result;
     }
 
-    if (g_handlerCount != EXPECTED_HANDLER_COUNT) {
+    if (g_handlerCount != 1) {
         return -1;
     }
 
     result = sigemptyset(set);
-    if (result != 0) {
+    if (result != SUCCESS_CODE) {
         return result;
     }
 
     result = sigaddset(set, SIGNAL);
-    if (result != 0) {
+    if (result != SUCCESS_CODE) {
         return result;
     }
 
-    result = sigprocmask(SIG_BLOCK, nullptr, set);
-    if (result != 0) {
+    result = sigprocmask(SIG_BLOCK, NULL, set);
+    if (result != SUCCESS_CODE) {
         return result;
     }
 
@@ -77,32 +76,32 @@ int Prepare(sigset_t *set)
  * @tc.desc      : modifies the disposition of the signal sig with a handler
  * @tc.level     : Level 0
  */
-void Sigset0100(void)
+void sigset_0100(void)
 {
     sigset_t set;
-    int result = Prepare(&set);
-    if (result != 0) {
+    int result = prepare(&set);
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
     result = sigemptyset(&set);
-    if (result != 0) {
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
-    errno = 0;
-    sigset(SIGNAL, Handler);
-    if (errno != 0) {
+    errno = SUCCESS_CODE;
+    sigset(SIGNAL, handler);
+    if (errno != SUCCESS_CODE) {
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
 
-    result = sigprocmask(SIG_BLOCK, nullptr, &set);
-    if (result != 0) {
+    result = sigprocmask(SIG_BLOCK, NULL, &set);
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
     result = sigismember(&set, SIGNAL);
-    if (result != 0) {
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 }
@@ -112,32 +111,32 @@ void Sigset0100(void)
  * @tc.desc      : modifies the disposition of the signal sig with SIG_IGN
  * @tc.level     : Level 1
  */
-void Sigset0200(void)
+void sigset_0200(void)
 {
     sigset_t set;
-    int result = Prepare(&set);
-    if (result != 0) {
+    int result = prepare(&set);
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
     result = sigemptyset(&set);
-    if (result != 0) {
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
-    errno = 0;
+    errno = SUCCESS_CODE;
     sigset(SIGNAL, SIG_IGN);
-    if (errno != 0) {
+    if (errno != SUCCESS_CODE) {
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
 
-    result = sigprocmask(SIG_BLOCK, nullptr, &set);
-    if (result != 0) {
+    result = sigprocmask(SIG_BLOCK, NULL, &set);
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
     result = sigismember(&set, SIGNAL);
-    if (result != 0) {
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 }
@@ -147,32 +146,32 @@ void Sigset0200(void)
  * @tc.desc      : modifies the disposition of the signal sig with SIG_DFL
  * @tc.level     : Level 1
  */
-void Sigset0300(void)
+void sigset_0300(void)
 {
     sigset_t set;
-    int result = Prepare(&set);
-    if (result != 0) {
+    int result = prepare(&set);
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
     result = sigemptyset(&set);
-    if (result != 0) {
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
-    errno = 0;
+    errno = SUCCESS_CODE;
     sigset(SIGNAL, SIG_DFL);
-    if (errno != 0) {
+    if (errno != SUCCESS_CODE) {
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
 
-    result = sigprocmask(SIG_BLOCK, nullptr, &set);
-    if (result != 0) {
+    result = sigprocmask(SIG_BLOCK, NULL, &set);
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
     result = sigismember(&set, SIGNAL);
-    if (result != 0) {
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 }
@@ -182,32 +181,32 @@ void Sigset0300(void)
  * @tc.desc      : modifies the disposition of the signal sig with SIG_HOLD
  * @tc.level     : Level 1
  */
-void Sigset0400(void)
+void sigset_0400(void)
 {
     sigset_t set;
-    int result = Prepare(&set);
-    if (result != 0) {
+    int result = prepare(&set);
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
     result = sigemptyset(&set);
-    if (result != 0) {
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
-    errno = 0;
+    errno = SUCCESS_CODE;
     sigset(SIGNAL, SIG_HOLD);
-    if (errno != 0) {
+    if (errno != SUCCESS_CODE) {
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
 
-    result = sigprocmask(SIG_BLOCK, nullptr, &set);
-    if (result != 0) {
+    result = sigprocmask(SIG_BLOCK, NULL, &set);
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
     result = sigismember(&set, SIGNAL);
-    if (result == 0) {
+    if (result == SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 }
@@ -217,31 +216,30 @@ void Sigset0400(void)
  * @tc.desc      : modifies the disposition of the invalid signal sig
  * @tc.level     : Level 2
  */
-void Sigset0500(void)
+void sigset_0500(void)
 {
-    errno = 0;
-    int sig = INVALID_SIGNAL;
+    errno = SUCCESS_CODE;
+    int SIGNAL = INVALID_SIGNAL;
 
     sigset(SIGNAL, SIG_DFL);
-    if (errno == 0) {
+    if (errno == SUCCESS_CODE) {
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
 }
 
-static int SigsetTestImpl(int argc, char *argv[])
-{
-    Sigset0100();
-    Sigset0200();
-    Sigset0300();
-    Sigset0400();
-    Sigset0500();
+static int SigsetTest_impl(int argc, char *argv[]){
+    sigset_0100();
+    sigset_0200();
+    sigset_0300();
+    sigset_0400();
+    sigset_0500();
 
-    return T_STATUS;
+    return g_tStatus;
 }
 
 int SigsetTest(void)
 {
-    static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, nullptr };
-    return SigsetTestImpl(1, libcArgv);
+    static char __libc_prog[] = "libc_test";
+    char *__libc_argv[] = { __libc_prog, NULL };
+    return SigsetTest_impl(1, __libc_argv);
 }

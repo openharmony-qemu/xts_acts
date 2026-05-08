@@ -13,8 +13,9 @@
  * limitations under the License.
  */
 
-#include <cstdlib>
+#include <stdlib.h>
 #include <unistd.h>
+#include <sys/stat.h>
 #include "functionalext.h"
 
 typedef void (*TEST_FUN)();
@@ -141,7 +142,7 @@ void Access0700(void)
     const char *ptr = "/data/storage/el2/base/cache/accesstest.txt";
     FILE *fptr = fopen(ptr, "w");
     EXPECT_PTRNE("access_0700", fptr, NULL);
-    system("chmod 777 /data/storage/el2/base/cache/accesstest.txt");
+    chmod(ptr, 0777);
     int isExecute = access(ptr, X_OK);
     EXPECT_EQ("access_0700", isExecute, SUCCESS);
     (void)fclose(fptr);
@@ -173,6 +174,7 @@ TEST_FUN g_funArray[] = {
     Access0100,
     Access0200,
     Access0300,
+    Access0400,
     Access0500,
     Access0600,
     Access0700,
