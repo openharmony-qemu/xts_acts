@@ -15,13 +15,14 @@
  * limitations under the License.
  */
 
-import { Entry, Component, ForEach, TextAlign, Column, LazyForEachCustomComponentFreezeMode, List, ListItem, Text, ColumnOptions, Button, FontWeight,
+import { Entry, Component, ForEach, TextAlign, Column, LazyForEachCustomComponentFreezeMode,
+  List, ListItem, Text, ColumnOptions, Button, FontWeight,
   Row, Color, LazyForEach, IDataSource, DataChangeListener } from '@ohos.arkui.component';
 import { State, Link, Watch } from '@kit.ArkUI';
 
 class BasicDataSource<string> implements IDataSource<string> {
-  private listeners: Array<DataChangeListener> = Array<DataChangeListener>();
-  private originDataArray: Array<string> = new Array<string>();
+  private listeners: Array<DataChangeListener> = [];
+  private originDataArray: Array<string> = [];
 
   public totalCount(): int {
     return this.originDataArray.length;
