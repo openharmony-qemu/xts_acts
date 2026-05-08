@@ -1,5 +1,5 @@
 import { PlainArray } from '@kit.ArkTS';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 
 interface GeneratedTypeLiteralInterface_1 {
   a: number;
@@ -229,7 +229,7 @@ export default function PlainArray01Test(): void {
       plainArray.add(6, escapeStr);
       expect(plainArray.get(6)).assertEqual(escapeStr);
 
-      let emojiStr = "👍😈👀💯🎅🐼🔧💇‍♂�?;
+      let emojiStr = "👍😈👀💯🎅🐼🔧💇‍♂️";
       plainArray.add(7, emojiStr);
       expect(plainArray.get(7)).assertEqual(emojiStr);
 

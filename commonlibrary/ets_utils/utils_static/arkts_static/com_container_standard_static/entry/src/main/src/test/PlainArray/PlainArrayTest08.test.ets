@@ -1,4 +1,4 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { PlainArray } from '@kit.ArkTS';
 
 interface GeneratedTypeLiteralInterface_2 {
@@ -70,7 +70,7 @@ function sleep(count: int): Promise<void> {
   })
 }
 
-export default function PlainArray08Test() {
+export default function PlainArray08Test(): void {
   describe('PlainArray08Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

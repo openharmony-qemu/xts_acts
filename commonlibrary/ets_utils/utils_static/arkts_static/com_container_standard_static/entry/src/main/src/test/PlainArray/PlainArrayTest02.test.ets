@@ -1,5 +1,5 @@
 import { PlainArray } from '@kit.ArkTS';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 
 interface GeneratedObjectLiteralInterface_1 {
   a: number;
@@ -329,7 +329,7 @@ export default function PlainArray02Test(): void {
       const TAG = 'testPlainArray02Chapter0012';
       console.log(TAG + ' start');
       const arr: PlainArray<string> = new PlainArray<string>();
-      arr.add(2 ** 3 as int, "power");
+      arr.add(8, "power");
       const result: number = arr.getIndexOfKey(8);
       expect(result).assertEqual(0);
     });
@@ -1880,7 +1880,7 @@ export default function PlainArray02Test(): void {
       const TAG = 'testPlainArray02Chapter0095';
       console.log(TAG + ' start');
       const arr: PlainArray<string> = new PlainArray<string>();
-      arr.add(2 ** 3 as int, "v");
+      arr.add(8, "v");
       const result = arr.getKeyAt(0);
       expect(result).assertEqual(8);
     });

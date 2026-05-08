@@ -9,7 +9,7 @@ import {
   TestType,
   Size,
   Level
-} from '../../../../../../hypium';
+} from '../../../../hypium/index';
 import { PlainArray } from '@kit.ArkTS';
 
 interface GeneratedObjectLiteralInterface_4 {

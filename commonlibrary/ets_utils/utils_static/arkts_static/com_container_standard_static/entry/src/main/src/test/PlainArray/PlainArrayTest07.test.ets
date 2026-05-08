@@ -1,5 +1,5 @@
 import { PlainArray } from '@kit.ArkTS';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 
 function sleep(count: int): Promise<void> {
   return new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void) => {

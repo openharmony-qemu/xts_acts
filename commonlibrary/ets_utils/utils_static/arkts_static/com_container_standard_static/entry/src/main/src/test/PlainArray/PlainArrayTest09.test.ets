@@ -1,5 +1,5 @@
 import { PlainArray } from '@kit.ArkTS';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 
 function sleep(count: int): Promise<void> {
   return new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void) => {
@@ -42,7 +42,7 @@ class ContextType {
   prefix: string = "FRUIT_";
 }
 
-export default function PlainArray09Test() {
+export default function PlainArray09Test(): void {
   describe('PlainArray09Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
