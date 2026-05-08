@@ -19,6 +19,12 @@
 #include <arkui/native_node.h>
 #include <hilog/log.h>
 
+constexpr float FLOAT_10 = 10.0f;
+constexpr int32_t SIZE_10 = 10;
+constexpr int32_t LINE_SPACING = 30;
+constexpr int32_t SPAN_LENGTH_12 = 12;
+constexpr bool ONLY_BETWEEN_LINES = true;
+
 namespace ArkUICapiTest {
 
 static napi_value TextEnumTest_001(napi_env env, napi_callback_info info)
@@ -104,7 +110,6 @@ static napi_value TextEnumTest_008(napi_env env, napi_callback_info info)
 static napi_value TextEnumTest_009(napi_env env, napi_callback_info info)
 {
     NAPI_START(text, ARKUI_NODE_TEXT);
-    // auto controller = OH_ArkUI_TextController_Create();    
     OH_ArkUI_TextController *controller = OH_ArkUI_TextController_Create();
     ASSERT_OBJ(controller, nullptr);
 
@@ -112,14 +117,14 @@ static napi_value TextEnumTest_009(napi_env env, napi_callback_info info)
     Manager::nodeAPI_->setAttribute(text, NODE_TEXT_CONTROLLER, &controllerItem);
 
     ArkUI_StyledString_Descriptor *styledString =
-        OH_ArkUI_StyledString_Descriptor_CreateWithString("行高样式示例", spanStyles, SIZE_1);
+        OH_ArkUI_StyledString_Descriptor_CreateWithString("行高样式示例", spanStyles, SIZE_10);
     auto result1_1 = OH_ArkUI_TextController_SetStyledString(controller, styledString);
-    
+
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result1_1 TextEnumTest_009 result=%{public}d", result1_1);
     ASSERT_EQ(result1_1, ARKUI_ERROR_CODE_NO_ERROR);
 
-    OH_ArkUI_TextController_Destroy(controller)
+    OH_ArkUI_TextController_Destroy(controller);
     OH_ArkUI_StyledString_Descriptor_Destroy(styledString);
     NAPI_END(text);
 }
@@ -129,9 +134,9 @@ static napi_value TextEnumTest_010(napi_env env, napi_callback_info info)
 {
     NAPI_START(text, ARKUI_NODE_TEXT);
     ArkUI_StyledString_Descriptor *styledString =
-        OH_ArkUI_StyledString_Descriptor_CreateWithString("行高样式示例", spanStyles, SIZE_1);
+        OH_ArkUI_StyledString_Descriptor_CreateWithString("行高样式示例", spanStyles, SIZE_10);
     auto result2_1 = OH_ArkUI_TextController_SetStyledString(nullptr, styledString);
-    
+
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result2_1 TextEnumTest_010 result=%{public}d", result2_1);
     ASSERT_EQ(result2_1, ARKUI_ERROR_CODE_PARAM_INVALID);
@@ -143,18 +148,17 @@ static napi_value TextEnumTest_010(napi_env env, napi_callback_info info)
 static napi_value TextEnumTest_011(napi_env env, napi_callback_info info)
 {
     NAPI_START(text, ARKUI_NODE_TEXT);
-    auto controller = OH_ArkUI_TextController_Create();    
+    auto controller = OH_ArkUI_TextController_Create();
 
     ArkUI_AttributeItem controllerItem = {.object = controller};
     Manager::nodeAPI_->setAttribute(text, NODE_TEXT_CONTROLLER, &controllerItem);
 
     auto result3_1 = OH_ArkUI_TextController_SetStyledString(controller, nullptr);
-    
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result3_1 TextEnumTest_011 result=%{public}d", result3_1);
     ASSERT_EQ(result3_1, ARKUI_ERROR_CODE_PARAM_INVALID);
 
-    OH_ArkUI_TextController_Destroy(controller)
+    OH_ArkUI_TextController_Destroy(controller);
     NAPI_END(text);
 }
 
@@ -165,15 +169,18 @@ static napi_value TextEnumTest_012(napi_env env, napi_callback_info info)
     ASSERT_OBJ(lineHeightStyle, nullptr);
 
     OH_ArkUI_LineHeightStyle_SetLineHeight(lineHeightStyle, LINE_HEIGHT);
-    auto result4_1 = OH_ArkUI_LineHeightStyle_SetLineHeightMultiple(lineHeightStyle, LINE_HEIGHT_MULTIPLE);
+    auto result4_1 = OH_ArkUI_LineHeightStyle_SetLineHeightMultiple(lineHeightStyle, FLOAT_10);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result4_1 TextEnumTest_012 result=%{public}d", result4_1);
     ASSERT_EQ(result4_1, ARKUI_ERROR_CODE_NO_ERROR);
+    OH_ArkUI_LineHeightStyle_Destroy(lineHeightStyle);
 
-    auto result4_2 = OH_ArkUI_LineHeightStyle_GetLineHeightMultiple(lineHeightStyle);
+    const OH_ArkUI_LineHeightStyle *lineHeightStyle2 = OH_ArkUI_LineHeightStyle_Create();
+    auto result4_2 = OH_ArkUI_LineHeightStyle_GetLineHeightMultiple(lineHeightStyle2, FLOAT_10);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result4_2 TextEnumTest_012 result=%{public}d", result4_2);
     ASSERT_EQ(result4_2, ARKUI_ERROR_CODE_NO_ERROR);
+    OH_ArkUI_LineHeightStyle_Destroy(lineHeightStyle2);
     NAPI_END(text);
 }
 
@@ -188,13 +195,14 @@ static napi_value TextEnumTest_013(napi_env env, napi_callback_info info)
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result5_1 TextEnumTest_012 result=%{public}d", result5_1);
     ASSERT_EQ(result5_1, ARKUI_ERROR_CODE_PARAM_INVALID);
+    OH_ArkUI_LineHeightStyle_Destroy(lineHeightStyle);
     NAPI_END(text);
 }
 
 static napi_value TextEnumTest_014(napi_env env, napi_callback_info info)
 {
     NAPI_START(text, ARKUI_NODE_TEXT);
-    auto result6_1 = OH_ArkUI_LineHeightStyle_SetLineHeightMultiple(nullptr, LINE_HEIGHT_MULTIPLE);
+    auto result6_1 = OH_ArkUI_LineHeightStyle_SetLineHeightMultiple(nullptr, FLOAT_10);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result6_1 TextEnumTest_014 result=%{public}d", result6_1);
     ASSERT_EQ(result6_1, ARKUI_ERROR_CODE_PARAM_INVALID);
@@ -204,7 +212,7 @@ static napi_value TextEnumTest_014(napi_env env, napi_callback_info info)
 static napi_value TextEnumTest_015(napi_env env, napi_callback_info info)
 {
     NAPI_START(text, ARKUI_NODE_TEXT);
-    auto result7_1 = OH_ArkUI_LineHeightStyle_GetLineHeightMultiple(nullptr);
+    auto result7_1 = OH_ArkUI_LineHeightStyle_GetLineHeightMultiple(nullptr, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result7_1 TextEnumTest_015 result=%{public}d", result7_1);
     ASSERT_EQ(result7_1, ARKUI_ERROR_CODE_PARAM_INVALID);
@@ -245,7 +253,7 @@ static napi_value TextEnumTest_017(napi_env env, napi_callback_info info)
         "result9_1 TextEnumTest_017 result=%{public}d", result9_1);
     ASSERT_EQ(result9_1, ARKUI_ERROR_CODE_NO_ERROR);
 
-    auto result9_2 = OH_ArkUI_LineSpacingStyle_GetLineSpacing(lineSpacingStyle);
+    auto result9_2 = OH_ArkUI_LineSpacingStyle_GetLineSpacing(lineSpacingStyle, LINE_SPACING);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result9_2 TextEnumTest_017 result=%{public}d", result9_2);
     ASSERT_EQ(result9_2, ARKUI_ERROR_CODE_NO_ERROR);
@@ -289,13 +297,15 @@ static napi_value TextEnumTest_020(napi_env env, napi_callback_info info)
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result12_1 TextEnumTest_020 result=%{public}d", result12_1);
     ASSERT_EQ(result12_1, ARKUI_ERROR_CODE_NO_ERROR);
+    OH_ArkUI_LineSpacingStyle_Destroy(lineSpacingStyle);
 
-    auto result12_2 = OH_ArkUI_LineSpacingStyle_GetOnlyBetweenLines(lineSpacingStyle);
+    const OH_ArkUI_LineSpacingStyle *lineSpacingStyle2 = OH_ArkUI_LineSpacingStyle_Create();
+    auto result12_2 = OH_ArkUI_LineSpacingStyle_GetOnlyBetweenLines(lineSpacingStyle2, ONLY_BETWEEN_LINES);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result12_2 TextEnumTest_020 result=%{public}d", result12_2);
     ASSERT_EQ(result12_2, ARKUI_ERROR_CODE_NO_ERROR);
-    
-    OH_ArkUI_LineSpacingStyle_Destroy(lineSpacingStyle);
+
+    OH_ArkUI_LineSpacingStyle_Destroy(lineSpacingStyle2);
     NAPI_END(text);
 }
 
@@ -308,7 +318,7 @@ static napi_value TextEnumTest_021(napi_env env, napi_callback_info info)
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result13_1 TextEnumTest_021 result=%{public}d", result13_1);
     ASSERT_EQ(result13_1, ARKUI_ERROR_CODE_PARAM_INVALID);
-    
+
     OH_ArkUI_LineSpacingStyle_Destroy(lineSpacingStyle);
     NAPI_END(text);
 }
@@ -326,7 +336,7 @@ static napi_value TextEnumTest_022(napi_env env, napi_callback_info info)
 static napi_value TextEnumTest_023(napi_env env, napi_callback_info info)
 {
     NAPI_START(text, ARKUI_NODE_TEXT);
-    auto result15_1 = OH_ArkUI_LineSpacingStyle_GetLineSpacing(nullptr);
+    auto result15_1 = OH_ArkUI_LineSpacingStyle_GetLineSpacing(nullptr, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result15_1 TextEnumTest_023 result=%{public}d", result15_1);
     ASSERT_EQ(result15_1, ARKUI_ERROR_CODE_PARAM_INVALID);
@@ -336,7 +346,7 @@ static napi_value TextEnumTest_023(napi_env env, napi_callback_info info)
 static napi_value TextEnumTest_024(napi_env env, napi_callback_info info)
 {
     NAPI_START(text, ARKUI_NODE_TEXT);
-    auto result16_1 = OH_ArkUI_LineSpacingStyle_GetOnlyBetweenLines(nullptr);
+    auto result16_1 = OH_ArkUI_LineSpacingStyle_GetOnlyBetweenLines(nullptr, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result16_1 TextEnumTest_024 result=%{public}d", result16_1);
     ASSERT_EQ(result16_1, ARKUI_ERROR_CODE_PARAM_INVALID);
