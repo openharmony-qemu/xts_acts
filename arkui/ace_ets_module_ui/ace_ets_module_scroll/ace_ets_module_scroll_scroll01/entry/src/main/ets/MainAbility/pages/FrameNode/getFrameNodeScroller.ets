@@ -16,7 +16,7 @@ import { NodeController, FrameNode, typeNode } from '@ohos.arkui.node';
 
 @Entry
 @Component
-struct getFrameNodeGridDeclare {
+struct GridNodeDeclare {
   private static readonly GRID_ID: string = 'GRID_ID';
   private defaultGridScroller: Scroller = new Scroller();
 
@@ -40,7 +40,7 @@ struct getFrameNodeGridDeclare {
   }
 
   private bindGridController(): void {
-    const frameNode = this.getUIContext().getFrameNodeById(GridDeclare.GRID_ID);
+    const frameNode = this.getUIContext().getFrameNodeById(GridNodeDeclare.GRID_ID);
     if (!frameNode) {
       this.bindResult = 'Bind failed: FrameNode is null';
       return;
@@ -128,7 +128,7 @@ struct getFrameNodeGridDeclare {
               }
             })
           }
-          .id(GridDeclare.GRID_ID)
+          .id(GridNodeDeclare.GRID_ID)
           .columnsTemplate('1fr 1fr')
           .columnsGap(8)
           .rowsGap(8)
