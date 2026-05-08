@@ -1511,5 +1511,326 @@ export default function ActsReminderAgentManagerStaticTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_3200 end---');
       })
 
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0100
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0100
+     * @tc.desc   test publishReminder timer with repeatInterval and repeatCount normal parameters (callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+
+      let timer: reminderAgentManager.ReminderRequestTimer = {
+        reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
+        triggerTimeInSeconds: 10 as long,
+        repeatInterval: 86400 as long,
+        repeatCount: 5
+      }
+
+      try {
+        reminderAgentManager.publishReminder(timer, (err: BusinessError<void>|null, reminderId: int|undefined) => {
+          if (err) {
+            console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0100 callback err.code is :' + err.code);
+            expect(false).assertTrue();
+            done();
+          } else {
+            console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0100 callback reminderId = ' + reminderId);
+            expect(reminderId).assertLarger(0);
+            done();
+          }
+        })
+      } catch (error) {
+        console.info("SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0100 publishReminder error.code:" + error.code);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0200
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0200
+     * @tc.desc   test publishReminder timer with repeatInterval and repeatCount normal parameters (promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+
+      let timer: reminderAgentManager.ReminderRequestTimer = {
+        reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
+        triggerTimeInSeconds: 10 as long,
+        repeatInterval: 86400 as long,
+        repeatCount: 3
+      }
+
+      try {
+        reminderAgentManager.publishReminder(timer).then((reminderId: int) => {
+          console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0200 promise reminderId = ' + reminderId);
+          expect(reminderId).assertLarger(0);
+          done();
+        }).catch((err: Error) => {
+          console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0200 promise err.code is :' + err.code);
+          expect(false).assertTrue();
+          done();
+        });
+      } catch (error) {
+        console.info("SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0200 publishReminder error.code:" + error.code);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0300
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0300
+     * @tc.desc   test publishReminder timer with repeatInterval boundary value 86400 (minimum valid value)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+
+      let timer: reminderAgentManager.ReminderRequestTimer = {
+        reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
+        triggerTimeInSeconds: 10 as long,
+        repeatInterval: 86400 as long,
+        repeatCount: 1
+      }
+
+      try {
+        reminderAgentManager.publishReminder(timer, (err: BusinessError<void>|null, reminderId: int|undefined) => {
+          if (err) {
+            console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0300 callback err.code is :' + err.code);
+            expect(false).assertTrue();
+            done();
+          } else {
+            console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0300 callback reminderId = ' + reminderId);
+            expect(reminderId).assertLarger(0);
+            done();
+          }
+        })
+      } catch (error) {
+        console.info("SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0300 publishReminder error.code:" + error.code);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0400
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0400
+     * @tc.desc   test publishReminder timer with repeatCount boundary value 0 (infinite repeat)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+
+      let timer: reminderAgentManager.ReminderRequestTimer = {
+        reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
+        triggerTimeInSeconds: 10 as long,
+        repeatInterval: 86400 as long,
+        repeatCount: 0
+      }
+
+      try {
+        reminderAgentManager.publishReminder(timer, (err: BusinessError<void>|null, reminderId: int|undefined) => {
+          if (err) {
+            console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0400 callback err.code is :' + err.code);
+            expect(false).assertTrue();
+            done();
+          } else {
+            console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0400 callback reminderId = ' + reminderId);
+            expect(reminderId).assertLarger(0);
+            done();
+          }
+        })
+      } catch (error) {
+        console.info("SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0400 publishReminder error.code:" + error.code);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0500
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0500
+     * @tc.desc   test publishReminder timer with repeatInterval invalid value (less than 86400) returns error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0500',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+
+      let timer: reminderAgentManager.ReminderRequestTimer = {
+        reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
+        triggerTimeInSeconds: 10 as long,
+        repeatInterval: 86399 as long,
+        repeatCount: 5
+      }
+
+      try {
+        reminderAgentManager.publishReminder(timer, (err: BusinessError<void>|null, reminderId: int|undefined) => {
+          if (err) {
+            console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0500 callback err.code is :' + err.code);
+            expect(err.code).assertEqual(401);
+            done();
+          } else {
+            console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0500 callback reminderId = ' + reminderId);
+            expect(false).assertTrue();
+            done();
+          }
+        })
+      } catch (error) {
+        console.info("SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0500 publishReminder error.code:" + error.code);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0600
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0600
+     * @tc.desc   test publishReminder timer with repeatCount invalid value (less than 0) returns error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0600',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+
+      let timer: reminderAgentManager.ReminderRequestTimer = {
+        reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
+        triggerTimeInSeconds: 10 as long,
+        repeatInterval: 86400 as long,
+        repeatCount: -1
+      }
+
+      try {
+        reminderAgentManager.publishReminder(timer, (err: BusinessError<void>|null, reminderId: int|undefined) => {
+          if (err) {
+            console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0600 callback err.code is :' + err.code);
+            expect(err.code).assertEqual(401);
+            done();
+          } else {
+            console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0600 callback reminderId = ' + reminderId);
+            expect(false).assertTrue();
+            done();
+          }
+        })
+      } catch (error) {
+        console.info("SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0600 publishReminder error.code:" + error.code);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0700
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0700
+     * @tc.desc   test publishReminder timer with repeatInterval large value and repeatCount large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0700',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+
+      let timer: reminderAgentManager.ReminderRequestTimer = {
+        reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
+        triggerTimeInSeconds: 10 as long,
+        repeatInterval: 172800 as long,
+        repeatCount: 100
+      }
+
+      try {
+        reminderAgentManager.publishReminder(timer, (err: BusinessError<void>|null, reminderId: int|undefined) => {
+          if (err) {
+            console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0700 callback err.code is :' + err.code);
+            expect(false).assertTrue();
+            done();
+          } else {
+            console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0700 callback reminderId = ' + reminderId);
+            expect(reminderId).assertLarger(0);
+            done();
+          }
+        })
+      } catch (error) {
+        console.info("SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0700 publishReminder error.code:" + error.code);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0800
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0800
+     * @tc.desc   test updateReminder with repeatInterval and repeatCount normal parameters (promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0800 begin---');
+      reminderAgentManager.cancelAllReminders().then(() => {
+        console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0800 cancelAllReminders success');
+      });
+      const currentYear = new Date().getFullYear();
+      const nextYear = currentYear + 1
+      let calendar: reminderAgentManager.ReminderRequestCalendar = {
+        reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_CALENDAR,
+        dateTime: {
+          year: nextYear,
+          month: 1,
+          day: 11,
+          hour: 11,
+          minute: 11,
+          second: 11
+        },
+        actionButton: [
+          {
+            title: "close",
+            titleResource: 'English',
+            type: reminderAgentManager.ActionButtonType.ACTION_BUTTON_TYPE_CLOSE
+          }
+        ],
+        ringChannel: reminderAgentManager.RingChannel.RING_CHANNEL_ALARM
+      }
+      let timer: reminderAgentManager.ReminderRequestTimer = {
+        reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
+        triggerTimeInSeconds: 20 as long,
+        repeatInterval: 86400 as long,
+        repeatCount: 5
+      }
+      let flag = 1;
+      try {
+        reminderAgentManager.publishReminder(calendar).then((reminderId: int) => {
+          console.info("SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0800 publishReminder promise reminderId:" + reminderId);
+          reminderAgentManager.updateReminder(reminderId, timer).then(() => {
+            console.info("SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0800 updateReminder promise");
+            expect(flag).assertEqual(1);
+            done();
+          })
+        })
+      } catch (error) {
+        console.log("SUB_RESOURCESCHEDULE_REMINDERAGENT_API26_STATIC_TASK_XTS_0800 publishReminder error.code:" + error.code);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+    
   })
 }
