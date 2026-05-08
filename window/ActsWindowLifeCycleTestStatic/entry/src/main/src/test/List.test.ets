@@ -13,6 +13,11 @@
  * limitations under the License.
  */
 import WindowLifeCycleTest from "./WindowLifeCycle.test";
-export default function testsuite() {
+import NoParentSubWindowLifeCycleStatic from './NoParentSubWindowLifeCycleStatic.test';
+import NoParentSubWindowFocusZLevelStatic from './NoParentSubWindowFocusZLevelStatic.test';
+
+export default function testsuite(): void {
   WindowLifeCycleTest();
+  NoParentSubWindowLifeCycleStatic();
+  NoParentSubWindowFocusZLevelStatic();
 }
