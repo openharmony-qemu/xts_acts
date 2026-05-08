@@ -277,7 +277,7 @@ export default function observerManagerSimStateTest1() {
         observer.onSimStateChange(callback);
         done();
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectTrue(false);
         done();
       }
@@ -298,13 +298,13 @@ export default function observerManagerSimStateTest1() {
       try {
         let slotId: int = -1;
         observer.onGetSimActiveState(slotId, (data: boolean | undefined) => {
-          console.info(`${caseName} data: ${data}}`);
+          console.info(`${caseName} data: ${data}`);
           ExpectFail();
           done();
         });
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
-        ExpectTrue(error.code === 8300001);
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
+        ExpectTrue(error?.code === 8300001);
         done();
       }
       console.info(`${caseName} test end`);
@@ -325,12 +325,12 @@ export default function observerManagerSimStateTest1() {
         let slotId: int = 0;
         await sim.activateSim(slotId);
         observer.onGetSimActiveState(slotId, (data: boolean | undefined) => {
-          console.info(`${caseName} data: ${data}}`);
+          console.info(`${caseName} data: ${data}`);
           ExpectTrue(data === true);
           done();
         });
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectFail();
         done();
       }
@@ -411,7 +411,7 @@ export default function observerManagerSimStateTest1() {
         observer.offGetSimActiveState();
         done();
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}}`);
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectFail();
         done();
       }
@@ -474,7 +474,7 @@ export default function observerManagerSimStateTest1() {
           observer.onGetSimActiveState(slotId, callback);
           console.info(`${caseName} slotId: ${slotId}`);
         } catch (error) {
-          console.info(`${caseName} CatchError ${JSON.stringify(error)}`);
+          console.info(`${caseName} catchError ${JSON.stringify(error)}`);
           ExpectFail();
           done();
         }
