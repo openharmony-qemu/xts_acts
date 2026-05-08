@@ -15,7 +15,7 @@
 
 @Entry
 @Component
-struct SymbolGlyphFontWeight {
+struct SymbolGlyphFontWeight26 {
   build() {
     Scroll() {
       Column() {
