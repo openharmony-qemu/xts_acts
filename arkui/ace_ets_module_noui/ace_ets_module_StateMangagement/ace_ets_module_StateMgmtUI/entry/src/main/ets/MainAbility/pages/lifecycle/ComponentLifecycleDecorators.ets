@@ -49,7 +49,12 @@ struct ComponentLifecycleDecorators {
           .each((repeatItem: RepeatItem<string>) => {
             ListItem() {
               Column() {
-                LifecycleChild({ index: repeatItem.item, item: repeatItem.item, activeText: $activeText, inactiveText: $inactiveText })
+                LifecycleChild({
+                  index: repeatItem.item,
+                  item: repeatItem.item,
+                  activeText: $activeText,
+                  inactiveText: $inactiveText
+                })
                   .height('100%')
               }
             }
