@@ -1,4 +1,4 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { LightWeightSet } from '@kit.ArkTS';
 
 class testLightWeightSet{
@@ -575,7 +575,7 @@ export default function LightWeightSetTest05(): void {
       console.log(TAG + 'start');
       let lightWeightSet = new LightWeightSet<string>();
       const value1 = "🎅";
-      const value2 = "�?;
+      const value2 = "🎵";
       lightWeightSet.add(value1);
       lightWeightSet.add(value2);
       let valuesArray: string[] = [];
@@ -583,7 +583,7 @@ export default function LightWeightSetTest05(): void {
         valuesArray.push(val);
       }
       let result: boolean = false;
-      if (valuesArray[1] === "🎅" && valuesArray[0] === "�?) {
+      if (valuesArray[1] === "🎅" && valuesArray[0] === "🎵") {
         result = true;
       }
       expect(result).assertTrue();
@@ -1096,7 +1096,7 @@ export default function LightWeightSetTest05(): void {
       console.log(TAG + 'start');
       let lightWeightSet = new LightWeightSet<string>();
       const value1 = "🎅";
-      const value2 = "�?;
+      const value2 = "🎵";
       lightWeightSet.add(value1);
       lightWeightSet.add(value2);
       let obj = [value1, value2];
