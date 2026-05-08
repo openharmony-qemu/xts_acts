@@ -606,6 +606,10 @@ const heifsMetadataMap = new Map<image.HeifsPropertyKey, ReadOnlyMetaDataRule>([
   [image.HeifsPropertyKey.HEIFS_CANVAS_WIDTH, { key: "heifsCanvasWidth", newExpectValue: 1280 }]
 ]);
 
+const avisMetadataMap = new Map<image.AvisPropertyKey, ReadOnlyMetaDataRule>([
+  [image.AvisPropertyKey.DELAY_TIME, { key: "delayTime", newExpectValue: 100 }]
+]);
+
 const pngMetadataMap = new Map<image.PngPropertyKey, ReadOnlyMetaDataRule>([
   [image.PngPropertyKey.X_PIXELS_PER_METER, { key: "xPixelsPerMeter", newExpectValue: 3780 }],
   [image.PngPropertyKey.MODIFICATION_TIME, { key: "modificationTime", newExpectValue: "2026-03-19 10:05:00" }],
@@ -1053,5 +1057,6 @@ export {
   heifsMetadataMap,
   pngMetadataMap,
   jfifMetadataMap,
-  tiffMetadataMap
+  tiffMetadataMap,
+  avisMetadataMap
 };

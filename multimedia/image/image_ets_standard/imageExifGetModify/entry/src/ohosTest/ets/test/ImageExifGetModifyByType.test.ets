@@ -40,7 +40,8 @@ import {
   heifsMetadataMap,
   pngMetadataMap,
   jfifMetadataMap,
-  tiffMetadataMap
+  tiffMetadataMap,
+  avisMetadataMap
 } from './ImagePropertyByType.test'
 
 interface ModifyRule1 {
@@ -5098,7 +5099,7 @@ export default function imageExifGetModifyByTypeTest() {
       * @tc.desc        Verify HEIFS metadata reading with default parameters
       *                 1.Create image source from HEIFS file (C027.heic) using fd
       *                 2.Read metadata using readImageMetadata()
-      *                 3.Verify HEIFS metadata values against webpMetadataMap at frame index 0
+      *                 3.Verify HEIFS metadata values against heifspMetadataMap at frame index 0
      * @tc.size        MEDIUM
      * @tc.type        Functional
      * @tc.level       Level 0
@@ -5113,7 +5114,7 @@ export default function imageExifGetModifyByTypeTest() {
         expect(result).assertTrue();
         done();
         return;
-      } 
+      }
       const imageSourceApi = await getImageSource("C027.heic", "fd");
       try {
         const exifValue: image.ImageMetadata = await imageSourceApi.readImageMetadata();
@@ -5127,6 +5128,38 @@ export default function imageExifGetModifyByTypeTest() {
         await imageSourceApi?.release();
       }
       console.info(`${testTag} heifs metadata readImageMetadataByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+  
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_AVIS_METADATA_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_AVIS_METADATA_0100
+      * @tc.desc        Verify HEIFS metadata reading with default parameters
+      *                 1.Create image source from AVIS file (bird_8bit_I420_599x359_fps10.avif) using fd
+      *                 2.Read metadata using readImageMetadata()
+      *                 3.Verify AVIS metadata values against avisMetadataMap at frame index 0
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_AVIS_METADATA_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_AVIS_METADATA_0100";
+      let result: boolean = true;
+      let keys: image.AvisPropertyKey[] = Array.from(avisMetadataMap.keys());
+      const imageSourceApi = await getImageSource("bird_8bit_I420_599x359_fps10.avif", "fd");
+      try {
+        const exifValue: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        if (!verifyMultipleFramesMetadata(testTag, exifValue, keys, 0, avisMetadataMap, "avisMetadata")) {
+          result = false;
+        }
+      } catch (err) {
+        console.error(`${testTag} Error processing err: ${err}`);
+        result = false;
+      } finally {
+        await imageSourceApi?.release();
+      }
+      console.info(`${testTag} avis metadata readImageMetadataByType result is: ${result}`);
       expect(result).assertTrue();
       done();
     });
@@ -5264,6 +5297,41 @@ export default function imageExifGetModifyByTypeTest() {
       try {
         const exifValue: image.ImageMetadata = await imageSourceApi.readImageMetadataByType();
         if (!verifyMultipleFramesMetadata(testTag, exifValue, keys, 0, heifsMetadataMap, "heifsMetadata")) {
+          result = false;
+        }
+      } catch (err) {
+        console.error(`${testTag} Error processing err: ${err}`);
+        result = false;
+      } finally {
+        await imageSourceApi?.release();
+      }
+      console.info(`${testTag} heifs metadata readImageMetadataByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_AVIS_METADATA_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_AVIS_METADATA_0100
+      * @tc.desc        Verify AVIS metadata reading by type with default parameters
+     *                 1.Create image source from AVIS file (bird_8bit_I420_599x359_fps10.avif) using fd
+      *                 2.Read metadata using readImageMetadataByType()
+      *                 3.Verify AVIS metadata values against avisMetadataMap at frame index 0
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_AVIS_METADATA_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_AVIS_METADATA_0100";
+      let result: boolean = true;
+      console.info(`${testTag} result is: ${result}`);
+      let keys: image.AvisPropertyKey[] = Array.from(avisMetadataMap.keys());
+      console.info(`${testTag} keys is: ${keys}`);
+      const imageSourceApi = await getImageSource("bird_8bit_I420_599x359_fps10.avif", "fd");
+      console.info(`${testTag} imageSourceApi is: ${imageSourceApi}`);
+      try {
+        const exifValue: image.ImageMetadata = await imageSourceApi.readImageMetadataByType();
+        if (!verifyMultipleFramesMetadata(testTag, exifValue, keys, 0, avisMetadataMap, "avisMetadata")) {
           result = false;
         }
       } catch (err) {
