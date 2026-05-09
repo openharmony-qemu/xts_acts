@@ -16,7 +16,7 @@ import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import window from '@ohos.window'
-import AppStorage from '@ohos.arkui.stateManagement';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';
 import deviceInfo from '@ohos.deviceInfo';
