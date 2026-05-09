@@ -2758,7 +2758,7 @@ export default function ConnectionPublicTest() {
 
     /**
      * @tc.name   testNetworkMgrConnectionSetAppNet1900
-     * @tc.number SUB_NetworkMgr_ConnectionSetAppNet_1900
+     * @tc.number SUB_NetworkMgr_Connection_SetAppNet_1900
      * @tc.desc   Bind the app normal network
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
