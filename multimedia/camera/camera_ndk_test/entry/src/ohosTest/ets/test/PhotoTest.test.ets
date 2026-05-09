@@ -3698,6 +3698,5 @@ export default function PhotoTest() {
         done()
       }
     })
-
   })
 }
