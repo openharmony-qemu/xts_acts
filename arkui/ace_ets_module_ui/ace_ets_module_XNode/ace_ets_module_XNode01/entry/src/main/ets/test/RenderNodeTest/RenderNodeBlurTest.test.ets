@@ -90,7 +90,7 @@ export default function RenderNodeBlurTest() {
       AppStorage.delete('backgroundBlurGrayscaleUndefined')
       expect(AppStorage.get('contentBlurRadiusUndefined')).assertDeepEquals(0);
       AppStorage.delete('contentBlurRadiusUndefined')
-      expect(AppStorage.get('contentBlurGrayscaleUndefined')).assertDeepEquals(0);
+      expect(AppStorage.get('contentBlurGrayscaleUndefined')).assertDeepEquals([0,0]);
       AppStorage.delete('contentBlurGrayscaleUndefined')
       expect(AppStorage.get('foregroundBlurRadiusUndefined')).assertDeepEquals(0);
       AppStorage.delete('foregroundBlurRadiusUndefined')
