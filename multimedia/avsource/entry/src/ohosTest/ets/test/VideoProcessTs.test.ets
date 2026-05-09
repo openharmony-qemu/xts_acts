@@ -347,11 +347,7 @@
             done();
         } catch (err) {
             console.info('testVideoProcessTs010 failed, error is' + err.message);
-            if (err.code != undefined) {
-                expect(false).assertTrue();
-                done();
-            }
-            expect(true).assertTrue();
+            expect(err.code == undefined).assertTrue();
             done();
         }
     });
@@ -371,11 +367,7 @@
             done();
         } catch (err) {
             console.info('testVideoProcessTs011 failed, error is' + err.message);
-            if (err.code != undefined) {
-                expect(false).assertTrue();
-                done();
-            }
-            expect(true).assertTrue();
+            expect(err.code == undefined).assertTrue();
             done();
         }
     });

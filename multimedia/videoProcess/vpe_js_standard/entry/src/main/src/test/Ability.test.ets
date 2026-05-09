@@ -359,9 +359,7 @@ export default function abilityTest() {
                 done();
             } catch (err) {
                 console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0010 failed, error is' + err.message);
-                if (err.code != undefined) {
-                    expect(false).assertTrue();
-                }
+                expect(err.code == undefined).assertTrue();
                 done();
             }
         })
@@ -382,10 +380,7 @@ export default function abilityTest() {
                 done();
             } catch (err) {
                 console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0011 failed, error is' + err.message);
-                if (err.code != undefined) {
-                    expect(false).assertTrue();
-                }
-                done();
+                expect(err.code == undefined).assertTrue();
             }
         })
 
