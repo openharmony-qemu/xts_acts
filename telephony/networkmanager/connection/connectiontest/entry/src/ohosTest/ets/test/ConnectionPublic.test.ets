@@ -9473,8 +9473,9 @@ export default function ConnectionPublicTest() {
       try {
         policy.getNetAccessPolicy().then((data: policy.NetAccessPolicy) => {
           console.info(`${caseName} getNetworkAccessPolicy data: ${JSON.stringify(data)}`);
-          if (data.allowWiFi == true && data.allowCellular == true) {
-            ExpectTrue(true);
+          if (data !== null && data !== undefined) {
+            ExpectTrue(data.allowWiFi === true);
+            ExpectTrue(data.allowCellular === true);
           } else {
             ExpectTrue(false);
           }
