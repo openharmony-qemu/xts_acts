@@ -951,7 +951,7 @@ export default function NetworkManagerVpnTest() {
         let vpnObserver = vpnExtension.createVpnObserver();
         vpnObserver.onAuthorizationResult((result: boolean) => {
           console.log(`${caseName} onAuthorizationResult callback ${result}`);
-            expect(result == true).assertTrue();
+            expect(result === true).assertTrue();
         });
         console.log(`${caseName} onAuthorizationResult success`);
         expect(vpnObserver !== undefined).assertTrue();
@@ -1008,7 +1008,7 @@ export default function NetworkManagerVpnTest() {
         let vpnObserver = vpnExtension.createVpnObserver();
         vpnObserver.onAuthorizationResult((result: boolean) => {
           console.log(`${caseName} onAuthorizationResult callback ${result}`);
-            expect(result == false).assertTrue();
+            expect(result === false).assertTrue();
         });
         console.log(`${caseName} onAuthorizationResult success`);
         expect(vpnObserver !== undefined).assertTrue();
