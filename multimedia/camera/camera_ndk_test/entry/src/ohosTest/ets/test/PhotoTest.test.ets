@@ -2906,7 +2906,6 @@ export default function PhotoTest() {
         //--------------------------------------------后置处理------------------------------------------------------
         console.info(`Exit ${caseName}`)
         done()
-        cameraObj.releaseCamera()
       }
     })
 
@@ -2938,7 +2937,6 @@ export default function PhotoTest() {
         //--------------------------------------------后置处理------------------------------------------------------
         console.info(`Exit ${caseName}`)
         done()
-        cameraObj.releaseCamera()
       }
     })
 
@@ -2970,7 +2968,6 @@ export default function PhotoTest() {
         //--------------------------------------------后置处理------------------------------------------------------
         console.info(`Exit ${caseName}`)
         done()
-        cameraObj.releaseCamera()
       }
     })
 
@@ -3002,7 +2999,6 @@ export default function PhotoTest() {
         //--------------------------------------------后置处理------------------------------------------------------
         console.info(`Exit ${caseName}`)
         done()
-        cameraObj.releaseCamera()
       }
     })
 
@@ -3034,7 +3030,6 @@ export default function PhotoTest() {
         //--------------------------------------------后置处理------------------------------------------------------
         console.info(`Exit ${caseName}`)
         done()
-        cameraObj.releaseCamera()
       }
     })
 
@@ -3066,7 +3061,6 @@ export default function PhotoTest() {
         //--------------------------------------------后置处理------------------------------------------------------
         console.info(`Exit ${caseName}`)
         done()
-        cameraObj.releaseCamera()
       }
     })
 
@@ -3086,7 +3080,7 @@ export default function PhotoTest() {
         captureSessionstart();
         createPhotoOutput();
         addPhotoOutput();
-        sessionCommitConfig();
+        sessionStart();
 
         //--------------------------------------------测试过程------------------------------------------------------
         let ret = cameraObj.sessionRegisterExposureStateChangeCallback(Parameter_Setting.ALL_PARAMETER_OK);
@@ -3104,7 +3098,6 @@ export default function PhotoTest() {
         console.info(`Exit ${caseName}`)
         done()
         cameraObj.sessionUnregisterExposureStateChangeCallback(Parameter_Setting.ALL_PARAMETER_OK);
-        cameraObj.releaseCamera()
       }
     })
 
@@ -3139,7 +3132,6 @@ export default function PhotoTest() {
         //--------------------------------------------后置处理------------------------------------------------------
         console.info(`Exit ${caseName}`)
         done()
-        cameraObj.releaseCamera()
       }
     })
 
@@ -3171,7 +3163,6 @@ export default function PhotoTest() {
         //--------------------------------------------后置处理------------------------------------------------------
         console.info(`Exit ${caseName}`)
         done()
-        cameraObj.releaseCamera()
       }
     })
 
@@ -3205,7 +3196,6 @@ export default function PhotoTest() {
         //--------------------------------------------后置处理------------------------------------------------------
         console.info(`Exit ${caseName}`)
         done()
-        cameraObj.releaseCamera()
       }
     })
 
@@ -3239,7 +3229,6 @@ export default function PhotoTest() {
         //--------------------------------------------后置处理------------------------------------------------------
         console.info(`Exit ${caseName}`)
         done()
-        cameraObj.releaseCamera()
       }
     })
 
@@ -3273,7 +3262,6 @@ export default function PhotoTest() {
         //--------------------------------------------后置处理------------------------------------------------------
         console.info(`Exit ${caseName}`)
         done()
-        cameraObj.releaseCamera()
       }
     })
 
@@ -3307,7 +3295,6 @@ export default function PhotoTest() {
         //--------------------------------------------后置处理------------------------------------------------------
         console.info(`Exit ${caseName}`)
         done()
-        cameraObj.releaseCamera()
       }
     })
 
@@ -3341,7 +3328,6 @@ export default function PhotoTest() {
         //--------------------------------------------后置处理------------------------------------------------------
         console.info(`Exit ${caseName}`)
         done()
-        cameraObj.releaseCamera()
       }
     })
 
@@ -3375,7 +3361,6 @@ export default function PhotoTest() {
         //--------------------------------------------后置处理------------------------------------------------------
         console.info(`Exit ${caseName}`)
         done()
-        cameraObj.releaseCamera()
       }
     })
 
@@ -3407,7 +3392,6 @@ export default function PhotoTest() {
         //--------------------------------------------后置处理------------------------------------------------------
         console.info(`Exit ${caseName}`)
         done()
-        cameraObj.releaseCamera()
       }
     })
 
@@ -3441,7 +3425,6 @@ export default function PhotoTest() {
         //--------------------------------------------后置处理------------------------------------------------------
         console.info(`Exit ${caseName}`)
         done()
-        cameraObj.releaseCamera()
       }
     })
 
@@ -3473,7 +3456,6 @@ export default function PhotoTest() {
         //--------------------------------------------后置处理------------------------------------------------------
         console.info(`Exit ${caseName}`)
         done()
-        cameraObj.releaseCamera()
       }
     })
 
@@ -3511,7 +3493,6 @@ export default function PhotoTest() {
         //--------------------------------------------后置处理------------------------------------------------------
         console.info(`Exit ${caseName}`)
         done()
-        cameraObj.releaseCamera()
       }
     })
 
@@ -3545,7 +3526,6 @@ export default function PhotoTest() {
         //--------------------------------------------后置处理------------------------------------------------------
         console.info(`Exit ${caseName}`)
         done()
-        cameraObj.releaseCamera()
       }
 
     })
@@ -3580,7 +3560,6 @@ export default function PhotoTest() {
         //--------------------------------------------后置处理------------------------------------------------------
         console.info(`Exit ${caseName}`)
         done()
-        cameraObj.releaseCamera()
       }
     })
 
@@ -3614,7 +3593,6 @@ export default function PhotoTest() {
         //--------------------------------------------后置处理------------------------------------------------------
         console.info(`Exit ${caseName}`)
         done()
-        cameraObj.releaseCamera()
       }
     })
 
@@ -3646,7 +3624,6 @@ export default function PhotoTest() {
         //--------------------------------------------后置处理------------------------------------------------------
         console.info(`Exit ${caseName}`)
         done()
-        cameraObj.releaseCamera()
       }
     })
 
@@ -3683,7 +3660,6 @@ export default function PhotoTest() {
         //--------------------------------------------后置处理------------------------------------------------------
         console.info(`Exit ${caseName}`)
         done()
-        cameraObj.releaseCamera()
       }
     })
 
@@ -3720,7 +3696,6 @@ export default function PhotoTest() {
         //--------------------------------------------后置处理------------------------------------------------------
         console.info(`Exit ${caseName}`)
         done()
-        cameraObj.releaseCamera()
       }
     })
 
