@@ -853,11 +853,11 @@ export default function windowPropertiesTest3() {
         console.info(`${message} getWindowLimits.{windowLimits}`);
         let tmpWindowWidth:number = 0;
         let tmpWindowHeight:number = 0;
-        if (windowLimits.minWidth !== undefined){
-          tmpWindowWidth = windowLimits?.minWidth + 100;
+        if (windowLimits.minWidth !== undefined && windowLimits.maxWidth != undefined){
+          tmpWindowWidth = windowLimits?.minWidth + 100 < windowLimits?.maxWidth ? windowLimits?.minWidth + 100 : windowLimits?.minWidth;
         }
-        if (windowLimits.minHeight !== undefined){
-          tmpWindowHeight = windowLimits?.minHeight + 100;
+        if (windowLimits.minHeight !== undefined && windowLimits.maxHeight != undefined){
+          tmpWindowHeight = windowLimits?.minHeight + 100 < windowLimits?.maxHeight ? windowLimits?.minHeight + 100 : windowLimits?.minHeight;
         }
         await testWindow.resize(tmpWindowWidth, tmpWindowHeight);
         console.info(`${message} resize success.`);
