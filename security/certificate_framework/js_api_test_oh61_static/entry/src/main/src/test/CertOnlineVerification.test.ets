@@ -882,7 +882,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRL_SIGNATURE_FAILURE);
+          expect(error.code).assertEqual(cert.CertResult.ERR_CRL_ISSUER_NOT_FOUND);
         }
         done();
       });
