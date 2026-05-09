@@ -387,7 +387,7 @@ export default function ExpressionsMultiplicativeExpressionTest(): void {
      * @tc.level     Level 2
      */
     it("testExpressionsMultiplicativeExpression0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let x: float = 10.5;
+      let x: float = 10.5f;
       let y: double = 2.5;
       let z = x * y;
       expect(z instanceof double).assertTrue();
@@ -403,7 +403,7 @@ export default function ExpressionsMultiplicativeExpressionTest(): void {
      */
     it("testExpressionsMultiplicativeExpression0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let x: double = 10.5;
-      let y: float = 2.5;
+      let y: float = 2.5f;
       let z = x * y;
       expect(z instanceof double).assertTrue();
     })
