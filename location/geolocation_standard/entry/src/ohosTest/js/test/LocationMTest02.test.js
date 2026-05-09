@@ -506,8 +506,8 @@ export default function geolocationTest_geo8() {
          */
         it('SUB_Location_findMatchingWlan_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             try {
-                var bssid = geolocationm.getCurrentWifiBssidForLocating();
-                console.info('[lbs_js] getCurrentWifiBssidForLocating: ' + bssid);
+                let bssid = geolocationm.getCurrentWifiBssidForLocating();
+                console.info('[lbs_js] SUB_Location_findMatchingWlan_0100: ' + bssid);
                 
                 if (bssid === '' || bssid === undefined || bssid === null) {
                     console.info('[lbs_js] No BSSID available, skip test');
@@ -515,9 +515,9 @@ export default function geolocationTest_geo8() {
                     return;
                 }
                 
-                var wlanBssidArray = [bssid];
-                var rssiThreshold = -100;
-                var needStartScan = true;
+                let wlanBssidArray = [bssid];
+                let rssiThreshold = -100;
+                let needStartScan = true;
                 
                 geolocationm.findMatchingWlan(wlanBssidArray, rssiThreshold, needStartScan).then((result) => {
                     console.info('[lbs_js] SUB_Location_findMatchingWlan_0100 result: ' + JSON.stringify(result));
@@ -555,9 +555,9 @@ export default function geolocationTest_geo8() {
          */
         it('SUB_Location_findMatchingWlan_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             try {
-                var wlanBssidArray = [];
-                var rssiThreshold = -70;
-                var needStartScan = true;
+                let wlanBssidArray = [];
+                let rssiThreshold = -70;
+                let needStartScan = true;
                 
                 geolocationm.findMatchingWlan(wlanBssidArray, rssiThreshold, needStartScan).then((result) => {
                     console.info('[lbs_js] SUB_Location_findMatchingWlan_0200 result: ' + JSON.stringify(result));
@@ -586,9 +586,9 @@ export default function geolocationTest_geo8() {
          */
         it('SUB_Location_findMatchingWlan_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             try {
-                var wlanBssidArray = ['AA:BB:CC:DD:EE:FF', '11:22:33:44:55:66', 'FE:DC:BA:98:76:54'];
-                var rssiThreshold = -80;
-                var needStartScan = true;
+                let wlanBssidArray = ['AA:BB:CC:DD:EE:FF', '11:22:33:44:55:66', 'FE:DC:BA:98:76:54'];
+                let rssiThreshold = -80;
+                let needStartScan = true;
                 
                 geolocationm.findMatchingWlan(wlanBssidArray, rssiThreshold, needStartScan).then((result) => {
                     console.info('[lbs_js] SUB_Location_findMatchingWlan_0300 result: ' + JSON.stringify(result));
@@ -616,9 +616,9 @@ export default function geolocationTest_geo8() {
          */
         it('SUB_Location_findMatchingWlan_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             try {
-                var wlanBssidArray = ['AA:BB:CC:DD:EE:FF'];
-                var rssiThreshold = -1000;
-                var needStartScan = false;
+                let wlanBssidArray = ['AA:BB:CC:DD:EE:FF'];
+                let rssiThreshold = -1000;
+                let needStartScan = false;
                 
                 geolocationm.findMatchingWlan(wlanBssidArray, rssiThreshold, needStartScan).then((result) => {
                     console.info('[lbs_js] SUB_Location_findMatchingWlan_0400 result: ' + JSON.stringify(result));
@@ -648,16 +648,16 @@ export default function geolocationTest_geo8() {
         try {
             await geolocationm.disableLocation();
             await sleep(1000);
-            var locationEnabled = geolocationm.isLocationEnabled();
+            let locationEnabled = geolocationm.isLocationEnabled();
             if (locationEnabled) {
                 console.info('[lbs_js] Location is enabled, skip error code test');
                 done();
                 return;
             }
             
-            var wlanBssidArray = ['AA:BB:CC:DD:EE:FF'];
-            var rssiThreshold = -70;
-            var needStartScan = true;
+            let wlanBssidArray = ['AA:BB:CC:DD:EE:FF'];
+            let rssiThreshold = -70;
+            let needStartScan = true;
             
             geolocationm.findMatchingWlan(wlanBssidArray, rssiThreshold, needStartScan).then((result) => {
                 console.info('[lbs_js] SUB_Location_findMatchingWlan_0500 result: ' + JSON.stringify(result));
