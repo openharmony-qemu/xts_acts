@@ -138,6 +138,7 @@ it('SUB_WINDOW_NoParentSubWindow_getLastWindow_0100',
         console.info('Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
         expect(!!subWindow).assertTrue();
         await subWindow.showWindow();
+        await sleep(500)
         let topWindow: window.Window = await window.getLastWindow(context);
         let mainWindowId = mainWindow.getWindowProperties().id;
         let subWindowId = subWindow.getWindowProperties().id;
