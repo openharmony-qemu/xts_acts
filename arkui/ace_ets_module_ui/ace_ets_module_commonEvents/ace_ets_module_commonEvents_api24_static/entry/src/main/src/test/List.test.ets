@@ -40,6 +40,8 @@ import getHistoricalPoints_globalDisplayX from './getHistoricalPointsTest/getHis
 import getHistoricalPoints_globalDisplayY from './getHistoricalPointsTest/getHistoricalPoints_globalDisplayX.test';
 import Marquee from './getHistoricalPointsTest/Marquee.test';
 import getSizeLimitationTest from './getSizeLimitation/GetSizeLimitationTest.test';
+import setCustomCursorundefined from './setCustomCursor/setCustomCursor_unedfined.test';
+import setCustomCursor from './setCustomCursor/setCustomCursor.test';
 
 export default function testsuite() {
   getSizeLimitationTest();
@@ -69,4 +71,6 @@ export default function testsuite() {
   getHistoricalPoints_windowY();
   getHistoricalPoints_globalDisplayX();
   getHistoricalPoints_globalDisplayX();
+  setCustomCursorundefined();
+  setCustomCursor();
 }

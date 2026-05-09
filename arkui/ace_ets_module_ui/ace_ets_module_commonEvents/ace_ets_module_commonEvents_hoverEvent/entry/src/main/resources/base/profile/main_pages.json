@@ -13,6 +13,8 @@
         "MainAbility/pages/UICommonEvent/SetOnBlur/SetOnBlurNullAndUndefined",
         "MainAbility/pages/UICommonEvent/SetOnHover/SetOnHoverNullAndUndefined",
         "MainAbility/pages/UICommonEvent/SetOnMouse/SetOnMouseNullAndUndefined",
-        "MainAbility/pages/UICommonEvent/SetOnSizeChange/SetOnSizeChangeNullAndUndefined"
+        "MainAbility/pages/UICommonEvent/SetOnSizeChange/SetOnSizeChangeNullAndUndefined",
+        "MainAbility/pages/setCustomCursor/setCustomCursor_null",
+         "MainAbility/pages/setCustomCursor/setCustomCursor_undefined"
     ]
 }
