@@ -3742,7 +3742,7 @@ static napi_value GetEnumExposureState(napi_env env, napi_callback_info info)
 
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
-    OH_LOG_ERROR(LOG_APP, "index: %{public}d", index);
+
     if (index == 0) {
         napi_create_int32(env, OH_CAMERA_EXPOSURE_STATE_SCAN, &result);
     } else if (index == 1) {
