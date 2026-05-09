@@ -381,6 +381,7 @@ export default function abilityTest() {
             } catch (err) {
                 console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0011 failed, error is' + err.message);
                 expect(err.code == undefined).assertTrue();
+                done();
             }
         })
 
