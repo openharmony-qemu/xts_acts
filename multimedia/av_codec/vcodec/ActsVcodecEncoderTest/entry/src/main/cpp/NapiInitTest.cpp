@@ -398,6 +398,8 @@ static const std::vector<TestFunction>& GetConfigureTestFunctions()
     VideoEncodeCapability4710Test,
     VideoEncodeCapability5000Test,
     VideoEncodeCapability5010Test,
+    VideoEncodeCapability5020Test,
+	VideoEncodeCapability5030Test,
     };
     return functions;
 }
