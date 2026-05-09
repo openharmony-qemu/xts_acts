@@ -923,7 +923,7 @@ export default function HttpRequestEnableAutoCookieTest() {
           if (result !== null) {
             console.info(`${caseName} Cookies: ${JSON.stringify(result.cookies)}`);
             if (result.cookies !== null && result.cookies !== undefined) {
-              ExpectTrue(result.cookies.test_cookie != 'test_value');
+              ExpectTrue(result.cookies.test_cookie !== 'test_value');
               console.info(`${caseName} Cookies are missing and Domain-Related`);
             } else {
               ExpectFail();
