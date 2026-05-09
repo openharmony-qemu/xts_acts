@@ -24,7 +24,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement';
 import { GridDataSource } from './GridDataSource';
 
 @Observed
-class MyEnableModifier implements AttributeModifier<GridAttribute> {
+export class MyEnableModifier implements AttributeModifier<GridAttribute> {
   // 外部传入控制值，可以是 boolean | undefined
   @State public editMode_: boolean | undefined = true;
   @State public change: boolean | undefined = true;

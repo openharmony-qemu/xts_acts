@@ -30,8 +30,22 @@ import getCurrentLocalPositionTest_FingerInfo from './getCurrentLocalPositionTes
 import expectedUpdateIntervalTest from './CommonEventOnAreaChangeTest/expectedUpdateInterval.test';
 import gestureInterceptTest from './gestureIntercept/gestureInterceptTest.test';
 import globalListenerTest from './globalListener/globalListenerTest.test';
+import getHistoricalPoints from './getHistoricalPointsTest/getHistoricalPoints.test';
+import getHistoricalPointsY from './getHistoricalPointsTest/getHistoricalPointsY.test';
+import getHistoricalPoints_displayY from './getHistoricalPointsTest/getHistoricalPoints_displayY.test';
+import getHistoricalPoints_displayX from './getHistoricalPointsTest/getHistoricalPoints_displayX.test';
+import getHistoricalPoints_windowY from './getHistoricalPointsTest/getHistoricalPoints_windowY.test';
+import getHistoricalPoints_windowX from './getHistoricalPointsTest/getHistoricalPoints_windowX.test';
+import getHistoricalPoints_globalDisplayX from './getHistoricalPointsTest/getHistoricalPoints_globalDisplayX.test';
+import getHistoricalPoints_globalDisplayY from './getHistoricalPointsTest/getHistoricalPoints_globalDisplayX.test';
+import Marquee from './getHistoricalPointsTest/Marquee.test';
+import getSizeLimitationTest from './getSizeLimitation/GetSizeLimitationTest.test';
+import setCustomCursorundefined from './setCustomCursor/setCustomCursor_unedfined.test';
+import setCustomCursor from './setCustomCursor/setCustomCursor.test';
 
 export default function testsuite() {
+  getSizeLimitationTest();
+  Marquee();
   DragControllerTest();
   CommonEventGlobalDisplayTest();
   CommonDragEventTest();
@@ -49,4 +63,14 @@ export default function testsuite() {
   expectedUpdateIntervalTest();
   gestureInterceptTest();
   globalListenerTest();
+  getHistoricalPoints();
+  getHistoricalPointsY();
+  getHistoricalPoints_displayX();
+  getHistoricalPoints_displayY();
+  getHistoricalPoints_windowX();
+  getHistoricalPoints_windowY();
+  getHistoricalPoints_globalDisplayX();
+  getHistoricalPoints_globalDisplayX();
+  setCustomCursorundefined();
+  setCustomCursor();
 }

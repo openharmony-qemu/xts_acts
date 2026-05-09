@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -73,10 +73,10 @@ export class Test {
     return value1 > value2 ? value1 : value2;
   }
   public byteByNameMethod(a0: byte, a1: byte): byte {
-    return a0 + a1 as byte;
+    return (a0 + a1).toByte();
   }
   public shortByNameMethod(a0: short, a1: short): short {
-    return a0 + a1 as short;
+    return (a0 + a1).toShort();
   }
   public intByNameMethod(a0: int, a1: int): int {
     return a0 + a1 as int;
@@ -117,10 +117,10 @@ function charModuleFunction(value1: char, value2: char): char {
   return value1 > value2 ? value1 : value2;
 }
 function byteModuleFunction(value1: byte, value2: byte): byte {
-  return value1 + value2 as byte;
+  return (value1 + value2).toByte();
 }
 function shortModuleFunction(value1: short, value2: short): short {
-  return value1 + value2 as short;
+  return (value1 + value2).toShort();
 }
 function intModuleFunction(value1: int, value2: int): int {
   return value1 + value2 as int;

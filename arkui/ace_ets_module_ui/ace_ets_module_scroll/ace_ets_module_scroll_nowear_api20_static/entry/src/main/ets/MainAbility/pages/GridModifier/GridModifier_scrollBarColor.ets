@@ -149,7 +149,7 @@ import { BusinessError } from '@kit.BasicServicesKit'
 
 // 定义 scrollBarColor 的 Modifier 类
 @Observed
-class ScrollBarColorModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollBarColorModifier implements AttributeModifier<ScrollAttribute> {
   private colorValue: ResourceColor | undefined;
   constructor(color: ResourceColor | undefined) {
     this.colorValue = color;

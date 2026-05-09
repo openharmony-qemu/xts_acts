@@ -737,8 +737,8 @@ export default function ArrayIncludesTest() {
     it("test_array_indexof_082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = "test_array_indexof_082";
       try {
-        let arr: FixedArray<float> = [1.5 as float, 2.5 as float, 3.5 as float] as FixedArray<float>;
-        let result = indexOf(arr, 2.5 as float);
+        let arr: FixedArray<float> = [1.5.toFloat(), 2.5.toFloat(), 3.5.toFloat()] as FixedArray<float>;
+        let result = indexOf(arr, 2.5.toFloat());
         expect(result).assertEqual(1);
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -757,8 +757,8 @@ export default function ArrayIncludesTest() {
     it("test_array_indexof_083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = "test_array_indexof_083";
       try {
-        let arr: FixedArray<float> = [1.1 as float, 2.2 as float] as FixedArray<float>;
-        let result = indexOf(arr, 3.3 as float);
+        let arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat()] as FixedArray<float>;
+        let result = indexOf(arr, 3.3.toFloat());
         expect(result).assertEqual(-1);
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -777,8 +777,8 @@ export default function ArrayIncludesTest() {
     it("test_array_includes_084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = "test_array_includes_084";
       try {
-        let arr: FixedArray<float> = [1.5 as float, 2.5 as float, 3.5 as float] as FixedArray<float>;
-        let result = includes(arr, 2.5 as float);
+        let arr: FixedArray<float> = [1.5.toFloat(), 2.5.toFloat(), 3.5.toFloat()] as FixedArray<float>;
+        let result = includes(arr, 2.5.toFloat());
         expect(result).assertEqual(true);
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -817,8 +817,8 @@ export default function ArrayIncludesTest() {
     it("test_array_includes_086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = "test_array_includes_086";
       try {
-        let arr: FixedArray<float> = [1.1 as float, 2.2 as float, 1.1 as float] as FixedArray<float>;
-        let result = includes(arr, 1.1 as float, 1);
+        let arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 1.1.toFloat()] as FixedArray<float>;
+        let result = includes(arr, 1.1.toFloat(), 1);
         expect(result).assertEqual(true);
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -1217,8 +1217,8 @@ export default function ArrayIncludesTest() {
     it("test_array_includes_112", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = "test_array_includes_112";
       try {
-        let arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float] as FixedArray<float>;
-        let result = includes(arr, 2.2 as float);
+        let arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat()] as FixedArray<float>;
+        let result = includes(arr, 2.2.toFloat());
         expect(result).assertEqual(true);
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -1237,8 +1237,8 @@ export default function ArrayIncludesTest() {
     it("test_array_includes_113", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = "test_array_includes_113";
       try {
-        let arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float] as FixedArray<float>;
-        let result = includes(arr, 4.4 as float);
+        let arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat()] as FixedArray<float>;
+        let result = includes(arr, 4.4.toFloat());
         expect(result).assertEqual(false);
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -1258,7 +1258,7 @@ export default function ArrayIncludesTest() {
       let TAG = "test_array_includes_114";
       try {
         let arr: FixedArray<float> = [1.0, 2.0, 3.0, 2.0] as FixedArray<float>;
-        let result = includes(arr, 2.0 as float, 2);
+        let result = includes(arr, 2.0.toFloat(), 2);
         expect(result).assertEqual(true);
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -1278,7 +1278,7 @@ export default function ArrayIncludesTest() {
       let TAG = "test_array_includes_115";
       try {
         let arr: FixedArray<float> = [] as FixedArray<float>;
-        let result = includes(arr, 1.1 as float);
+        let result = includes(arr, 1.1.toFloat());
         expect(result).assertEqual(false);
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -1297,8 +1297,8 @@ export default function ArrayIncludesTest() {
     it("test_array_includes_116", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = "test_array_includes_116";
       try {
-        let arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float] as FixedArray<float>;
-        let result = includes(arr, 2.2 as float, -2);
+        let arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat()] as FixedArray<float>;
+        let result = includes(arr, 2.2.toFloat(), -2);
         expect(result).assertEqual(true);
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -1317,8 +1317,8 @@ export default function ArrayIncludesTest() {
     it("test_array_includes_117", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = "test_array_includes_117";
       try {
-        let arr: FixedArray<float> = [1.1 as float, 2.2 as float] as FixedArray<float>;
-        let result = includes(arr, 1.1 as float, 5);
+        let arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat()] as FixedArray<float>;
+        let result = includes(arr, 1.1.toFloat(), 5);
         expect(result).assertEqual(false);
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -1337,8 +1337,8 @@ export default function ArrayIncludesTest() {
     it("test_array_includes_118", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = "test_array_includes_118";
       try {
-        let arr: FixedArray<float> = [9.9 as float, 8.8 as float, 7.7 as float] as FixedArray<float>;
-        let result = includes(arr, 9.9 as float);
+        let arr: FixedArray<float> = [9.9.toFloat(), 8.8.toFloat(), 7.7.toFloat()] as FixedArray<float>;
+        let result = includes(arr, 9.9.toFloat());
         expect(result).assertEqual(true);
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -1357,8 +1357,8 @@ export default function ArrayIncludesTest() {
     it("test_array_includes_119", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = "test_array_includes_119";
       try {
-        let arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float] as FixedArray<float>;
-        let result = includes(arr, 3.3 as float);
+        let arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat()] as FixedArray<float>;
+        let result = includes(arr, 3.3.toFloat());
         expect(result).assertEqual(true);
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -1377,8 +1377,8 @@ export default function ArrayIncludesTest() {
     it("test_array_includes_120", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = "test_array_includes_120";
       try {
-        let arr: FixedArray<float> = [1.1 as float, 2.2 as float] as FixedArray<float>;
-        let result = includes(arr, 1.1 as float, -10);
+        let arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat()] as FixedArray<float>;
+        let result = includes(arr, 1.1.toFloat(), -10);
         expect(result).assertEqual(true);
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -1577,8 +1577,8 @@ export default function ArrayIncludesTest() {
     it("test_array_indexof_146", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = "test_array_indexof_146";
       try {
-        let arr: FixedArray<double> = [1.1 as float, 2.2 as float, 3.3 as float] as FixedArray<double>;
-        let result = indexOf(arr, 2.2 as float, 0);
+        let arr: FixedArray<double> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat()] as FixedArray<double>;
+        let result = indexOf(arr, 2.2.toFloat(), 0);
         expect(result).assertEqual(1);
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -1597,8 +1597,8 @@ export default function ArrayIncludesTest() {
     it("test_array_indexof_147", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = "test_array_indexof_147";
       try {
-        let arr: FixedArray<double> = [1.1 as float, 2.2 as float, 3.3 as float] as FixedArray<double>;
-        let result = indexOf(arr, 4.4 as float, 0);
+        let arr: FixedArray<double> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat()] as FixedArray<double>;
+        let result = indexOf(arr, 4.4.toFloat(), 0);
         expect(result).assertEqual(-1);
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -1617,8 +1617,8 @@ export default function ArrayIncludesTest() {
     it("test_array_indexof_148", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = "test_array_indexof_148";
       try {
-        let arr: FixedArray<double> = [1.1 as float, 2.2 as float, 3.3 as float, 2.2 as float] as FixedArray<double>;
-        let result = indexOf(arr, 2.2 as float, 2);
+        let arr: FixedArray<double> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat(), 2.2.toFloat()] as FixedArray<double>;
+        let result = indexOf(arr, 2.2.toFloat(), 2);
         expect(result).assertEqual(3);
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -1637,8 +1637,8 @@ export default function ArrayIncludesTest() {
     it("test_array_indexof_149", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = "test_array_indexof_149";
       try {
-        let arr: FixedArray<double> = [1.1 as float, 2.2 as float, 3.3 as float] as FixedArray<double>;
-        let result = indexOf(arr, 1.1 as float, -3);
+        let arr: FixedArray<double> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat()] as FixedArray<double>;
+        let result = indexOf(arr, 1.1.toFloat(), -3);
         expect(result).assertEqual(0);
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -1658,7 +1658,7 @@ export default function ArrayIncludesTest() {
       let TAG = "test_array_indexof_150";
       try {
         let arr: FixedArray<double> = [] as FixedArray<double>;
-        let result = indexOf(arr, 1.1 as float, 0);
+        let result = indexOf(arr, 1.1.toFloat(), 0);
         expect(result).assertEqual(-1);
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -1677,8 +1677,8 @@ export default function ArrayIncludesTest() {
     it("test_array_indexof_151", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = "test_array_indexof_151";
       try {
-        let arr: FixedArray<double> = [1.1 as float, 2.2 as float, 3.3 as float] as FixedArray<double>;
-        let result = indexOf(arr, 2.2 as float);
+        let arr: FixedArray<double> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat()] as FixedArray<double>;
+        let result = indexOf(arr, 2.2.toFloat());
         expect(result).assertEqual(1);
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -1697,8 +1697,8 @@ export default function ArrayIncludesTest() {
     it("test_array_indexof_152", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = "test_array_indexof_152";
       try {
-        let arr: FixedArray<double> = [1.1 as float, 2.2 as float, 3.3 as float] as FixedArray<double>;
-        let result = indexOf(arr, 4.4 as float);
+        let arr: FixedArray<double> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat()] as FixedArray<double>;
+        let result = indexOf(arr, 4.4.toFloat());
         expect(result).assertEqual(-1);
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -1717,8 +1717,8 @@ export default function ArrayIncludesTest() {
     it("test_array_indexof_153", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = "test_array_indexof_153";
       try {
-        let arr: FixedArray<double> = [1.1 as float, 2.2 as float, 3.3 as float, 2.2 as float] as FixedArray<double>;
-        let result = indexOf(arr, 2.2 as float, 2);
+        let arr: FixedArray<double> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat(), 2.2.toFloat()] as FixedArray<double>;
+        let result = indexOf(arr, 2.2.toFloat(), 2);
         expect(result).assertEqual(3);
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -1737,8 +1737,8 @@ export default function ArrayIncludesTest() {
     it("test_array_indexof_154", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = "test_array_indexof_154";
       try {
-        let arr: FixedArray<double> = [1.1 as float, 2.2 as float, 3.3 as float] as FixedArray<double>;
-        let result = indexOf(arr, 1.1 as float, 10);
+        let arr: FixedArray<double> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat()] as FixedArray<double>;
+        let result = indexOf(arr, 1.1.toFloat(), 10);
         expect(result).assertEqual(-1);
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -1757,8 +1757,8 @@ export default function ArrayIncludesTest() {
     it("test_array_indexof_155", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = "test_array_indexof_155";
       try {
-        let arr: FixedArray<double> = [1.1 as float, 2.2 as float, 3.3 as float, 4.4 as float] as FixedArray<double>;
-        let result = indexOf(arr, 3.3 as float, -2);
+        let arr: FixedArray<double> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat(), 4.4.toFloat()] as FixedArray<double>;
+        let result = indexOf(arr, 3.3.toFloat(), -2);
         expect(result).assertEqual(2);
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);
@@ -1777,8 +1777,8 @@ export default function ArrayIncludesTest() {
     it("test_array_indexof_156", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let TAG = "test_array_indexof_156";
       try {
-        let arr: FixedArray<double> = [1.1 as float, 2.2 as float, 3.3 as float] as FixedArray<double>;
-        let result = indexOf(arr, 1.1 as float, -10);
+        let arr: FixedArray<double> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat()] as FixedArray<double>;
+        let result = indexOf(arr, 1.1.toFloat(), -10);
         expect(result).assertEqual(0);
       } catch (err) {
         console.error(`${TAG} is fail,err is ${err}`);

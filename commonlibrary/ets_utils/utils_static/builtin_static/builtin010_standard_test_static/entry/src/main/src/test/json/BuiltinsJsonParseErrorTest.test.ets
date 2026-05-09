@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -176,8 +176,8 @@ export default function builtinsJsonParseErrorTest() {
      */
     it('builtinsJsonParseErrorTest0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const max = Number.MAX_SAFE_INTEGER;
-      const error = new JsonParseError("Max Int", max as int, max as int);
-      expect(error.message).assertEqual(`Max Int at ${max as int}..${max as int}`);
+      const error = new JsonParseError("Max Int", max.toInt(), max.toInt());
+      expect(error.message).assertEqual(`Max Int at ${max.toInt()}..${max.toInt()}`);
     });
 
     /**
@@ -192,8 +192,8 @@ export default function builtinsJsonParseErrorTest() {
       const start = 1.5;
       const end = 10.99;
 
-      const startInt = start as int;
-      const endInt = end as int;
+      const startInt = start.toInt();
+      const endInt = end.toInt();
 
       const error = new JsonParseError("Float", startInt, endInt);
       expect(error.message).assertEqual(`Float at ${startInt}..${endInt}`);
@@ -208,9 +208,9 @@ export default function builtinsJsonParseErrorTest() {
      * @tc.level LEVEL0
      */
     it('builtinsJsonParseErrorTest0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const nanVal = NaN as int;
-      const infVal = Infinity as int;
-      const negInfVal = -Infinity as int;
+      const nanVal = NaN.toInt();
+      const infVal = Infinity.toInt();
+      const negInfVal = -Infinity.toInt();
 
       const error1 = new JsonParseError("Special", nanVal, infVal);
       expect(error1.message).assertEqual(`Special at ${nanVal}..${infVal}`);

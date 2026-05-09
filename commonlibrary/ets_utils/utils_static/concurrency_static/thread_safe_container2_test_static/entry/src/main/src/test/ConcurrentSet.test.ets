@@ -471,246 +471,246 @@ export default function ConcurrentSetTest() {
     /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__023
      * @tc.name concurrent_Set_Constructor_Test_static_023
-     * @tc.desc Initialize a ConcurrentSet by iterating over the values of an array with 10 null elements.
+    * @tc.desc Initialize a ConcurrentSet by iterating over the values of an array with 10 identical string elements.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("concurrent_Set_Constructor_Test_static_023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const array: Array<null> = new Array<null>();
+      const array: Array<string> = new Array<string>();
       const totalCount: number = 10;
       for (let i: int = 0; i < totalCount; i++) {
-        array.push(null);
+        array.push('sentinel');
       }
       const iter = array.values();
-      const concurrentSet: containers.ConcurrentSet<null> = new containers.ConcurrentSet<null>(iter);
+      const concurrentSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>(iter);
       expect(JSON.stringify(concurrentSet.size)).assertEqual('1');
     })
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__024
      * @tc.name concurrent_Set_Constructor_Test_static_024
-     * @tc.desc Initialize a ConcurrentSet by iterating over the keys of a Set that contains 10 elements all being null.
+    * @tc.desc Initialize a ConcurrentSet by iterating over the keys of a Set that contains 10 identical string elements.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("concurrent_Set_Constructor_Test_static_024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const set: Set<null> = new Set<null>();
+      const set: Set<string> = new Set<string>();
       const totalCount: number = 10;
       for (let i: int = 0; i < totalCount; i++) {
-        set.add(null);
+        set.add('sentinel');
       }
       const iter = set.keys();
-      const concurrentSet: containers.ConcurrentSet<null> = new containers.ConcurrentSet<null>(iter);
+      const concurrentSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>(iter);
       expect(JSON.stringify(concurrentSet.size)).assertEqual('1');
     })
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__025
      * @tc.name concurrent_Set_Constructor_Test_static_025
-     * @tc.desc Initialize a ConcurrentSet by iterating over the values of a Set that contains 10 elements all being null.
+    * @tc.desc Initialize a ConcurrentSet by iterating over the values of a Set that contains 10 identical string elements.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("concurrent_Set_Constructor_Test_static_025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const set: Set<null> = new Set<null>();
+      const set: Set<string> = new Set<string>();
       const totalCount: number = 10;
       for (let i: int = 0; i < totalCount; i++) {
-        set.add(null);
+        set.add('sentinel');
       }
       const iter = set.values();
-      const concurrentSet: containers.ConcurrentSet<null> = new containers.ConcurrentSet<null>(iter);
+      const concurrentSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>(iter);
       expect(JSON.stringify(concurrentSet.size)).assertEqual('1');
     })
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__026
      * @tc.name concurrent_Set_Constructor_Test_static_026
-     * @tc.desc Initialize a ConcurrentSet by iterating over the values of a Set that contains 11 elements with values of either null or numbers.
+    * @tc.desc Initialize a ConcurrentSet by iterating over the values of a Set that contains a repeated sentinel number and numbers.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("concurrent_Set_Constructor_Test_static_026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const set: Set<null | number> = new Set<null | number>();
+      const set: Set<number> = new Set<number>();
       const totalCount: number = 10;
       for (let i: int = 0; i < totalCount; i++) {
-        set.add(null);
+        set.add(-1);
       }
       for (let i: int = 0; i < totalCount; i++) {
         set.add(i);
       }
       const iter = set.values();
-      const concurrentSet: containers.ConcurrentSet<null | number> = new containers.ConcurrentSet<null | number>(iter);
+      const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>(iter);
       expect(concurrentSet.size).assertEqual(totalCount + 1);
     })
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__027
      * @tc.name concurrent_Set_Constructor_Test_static_027
-     * @tc.desc Initialize a ConcurrentSet by iterating over the keys of a Set that contains 11 elements with values of either null or numbers.
+    * @tc.desc Initialize a ConcurrentSet by iterating over the keys of a Set that contains a repeated sentinel number and numbers.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("concurrent_Set_Constructor_Test_static_027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const set: Set<null | number> = new Set<null | number>();
+      const set: Set<number> = new Set<number>();
       const totalCount: number = 10;
       for (let i: int = 0; i < totalCount; i++) {
-        set.add(null);
+        set.add(-1);
       }
       for (let i: int = 0; i < totalCount; i++) {
         set.add(i);
       }
       const iter = set.keys();
-      const concurrentSet: containers.ConcurrentSet<null | number> = new containers.ConcurrentSet<null | number>(iter);
+      const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>(iter);
       expect(concurrentSet.size).assertEqual(totalCount + 1);
     })
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__028
      * @tc.name concurrent_Set_Constructor_Test_static_028
-     * @tc.desc Initialize a ConcurrentSet by iterating over the values of a Array that contains 11 elements with values of either null or numbers.
+    * @tc.desc Initialize a ConcurrentSet by iterating over the values of an Array that contains a repeated sentinel number and numbers.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("concurrent_Set_Constructor_Test_static_028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const array: Array<null | number> = new Array<null | number>();
+      const array: Array<number> = new Array<number>();
       const totalCount: number = 10;
       for (let i: int = 0; i < totalCount; i++) {
-        array.push(null);
+        array.push(-1);
       }
       for (let i: int = 0; i < totalCount; i++) {
         array.push(i);
       }
       const iter = array.values();
-      const concurrentSet: containers.ConcurrentSet<null | number> = new containers.ConcurrentSet<null | number>(iter);
+      const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>(iter);
       expect(concurrentSet.size).assertEqual(totalCount + 1);
     })
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__029
      * @tc.name concurrentSetTest_constructor_static_029
-     * @tc.desc Initialize a concurrentSet by iterating over the values of an array that has 10 elements all with the value of undefined.
+    * @tc.desc Initialize a concurrentSet by iterating over the values of an array that has 10 identical string elements.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("concurrentSetTest_constructor_static_029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const array: Array<undefined> = new Array<undefined>();
+      const array: Array<string> = new Array<string>();
       const totalCount: number = 10;
       for (let i: int = 0; i < totalCount; i++) {
-        array.push(undefined);
+        array.push('undefinedSentinel');
       }
       const iter = array.values();
-      const concurrentSet: containers.ConcurrentSet<undefined> = new containers.ConcurrentSet<undefined>(iter);
+      const concurrentSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>(iter);
       expect(JSON.stringify(concurrentSet.size)).assertEqual('1');
     })
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__030
      * @tc.name  concurrent_Set_Constructor_Test_static_030
-     * @tc.desc Initialize a concurrentSet by iterating over the keys of an set that has 10 elements all with the value of undefined.
+    * @tc.desc Initialize a concurrentSet by iterating over the keys of a set that has 10 identical string elements.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("concurrent_Set_Constructor_Test_static_030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const set: Set<undefined> = new Set<undefined>();
+      const set: Set<string> = new Set<string>();
       const totalCount: number = 10;
       for (let i: int = 0; i < totalCount; i++) {
-        set.add(undefined);
+        set.add('undefinedSentinel');
       }
       const iter = set.keys();
-      const concurrentSet: containers.ConcurrentSet<undefined> = new containers.ConcurrentSet<undefined>(iter);
+      const concurrentSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>(iter);
       expect(JSON.stringify(concurrentSet.size)).assertEqual('1');
     })
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__031
      * @tc.name concurrent_Set_Constructor_Test_static_031
-     * @tc.desc Initialize a concurrentSet by iterating over the values of an set that has one elements with the value of undefined.
+    * @tc.desc Initialize a concurrentSet by iterating over the values of a set that has identical string elements.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("concurrent_Set_Constructor_Test_static_031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const set: Set<undefined> = new Set<undefined>();
+      const set: Set<string> = new Set<string>();
       const totalCount: number = 10;
       for (let i: int = 0; i < totalCount; i++) {
-        set.add(undefined);
+        set.add('undefinedSentinel');
       }
       const iter = set.values();
-      const concurrentSet: containers.ConcurrentSet<undefined> = new containers.ConcurrentSet<undefined>(iter);
+      const concurrentSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>(iter);
       expect(JSON.stringify(concurrentSet.size)).assertEqual('1');
     })
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__032
      * @tc.name concurrent_Set_Constructor_Test_static_032
-     * @tc.desc Initialize a concurrentSet using the values iterator of a Set that contains 11 elements, where the element values are either undefined or numbers.
+    * @tc.desc Initialize a concurrentSet using the values iterator of a Set that contains a repeated sentinel number and numbers.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("concurrent_Set_Constructor_Test_static_032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const set: Set<undefined | number> = new Set<undefined | number>();
+      const set: Set<number> = new Set<number>();
       const totalCount: number = 10;
       for (let i: int = 0; i < totalCount; i++) {
-        set.add(undefined);
+        set.add(-2);
       }
       for (let i: int = 0; i < totalCount; i++) {
         set.add(i);
       }
       const iter = set.values();
-      const concurrentSet: containers.ConcurrentSet<undefined | number> = new containers.ConcurrentSet<undefined | number>(iter);
+      const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>(iter);
       expect(concurrentSet.size).assertEqual(totalCount + 1);
     })
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__033
      * @tc.name concurrent_Set_Constructor_Test_static_033
-     * @tc.desc Initialize a concurrentSet using the values iterator of a Set that contains 11 elements, where the element values are either undefined or numbers.
+    * @tc.desc Initialize a concurrentSet using the keys iterator of a Set that contains a repeated sentinel number and numbers.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("concurrent_Set_Constructor_Test_static_033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const set: Set<undefined | number> = new Set<undefined | number>();
+      const set: Set<number> = new Set<number>();
       const totalCount: number = 10;
       for (let i: int = 0; i < totalCount; i++) {
-        set.add(undefined);
+        set.add(-2);
       }
       for (let i: int = 0; i < totalCount; i++) {
         set.add(i);
       }
       const iter = set.keys();
-      const concurrentSet: containers.ConcurrentSet<undefined | number> = new containers.ConcurrentSet<undefined | number>(iter);
+      const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>(iter);
       expect(concurrentSet.size).assertEqual(totalCount + 1);
     })
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Constructor_Test_static__034
      * @tc.name concurrent_Set_Constructor_Test_static_034
-     * @tc.desc Initialize a concurrentSet using the values iterator of a Array that contains 20 elements, where the element values are either undefined or numbers.
+    * @tc.desc Initialize a concurrentSet using the values iterator of an Array that contains a repeated sentinel number and numbers.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("concurrent_Set_Constructor_Test_static_034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const array: Array<undefined | number> = new Array<undefined | number>();
+      const array: Array<number> = new Array<number>();
       const totalCount: number = 10;
       for (let i: int = 0; i < totalCount; i++) {
-        array.push(undefined);
+        array.push(-2);
       }
       for (let i: int = 0; i < totalCount; i++) {
         array.push(i);
       }
       const iter = array.values();
-      const concurrentSet: containers.ConcurrentSet<undefined | number> = new containers.ConcurrentSet<undefined | number>(iter);
+      const concurrentSet: containers.ConcurrentSet<number> = new containers.ConcurrentSet<number>(iter);
       expect(concurrentSet.size).assertEqual(totalCount + 1);
     })
 
@@ -815,30 +815,30 @@ export default function ConcurrentSetTest() {
     /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__049
      * @tc.name concurrent_Set_Add_Test_static_001
-     * @tc.desc Add a null element to the concurrentSet.
+    * @tc.desc Add a duplicate string element to the concurrentSet.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("concurrent_Set_Add_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const concurrentSet: containers.ConcurrentSet<null> = new containers.ConcurrentSet<null>();
-      concurrentSet.add(null);
-      concurrentSet.add(null);
+      const concurrentSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>();
+      concurrentSet.add('sentinel');
+      concurrentSet.add('sentinel');
       expect(JSON.stringify(concurrentSet.size)).assertEqual('1');
     })
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__050
      * @tc.name concurrent_Set_Add_Test_static_002
-     * @tc.desc Add a undefined element to the concurrentSet.
+    * @tc.desc Add a duplicate string element to the concurrentSet.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("concurrent_Set_Add_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const concurrentSet: containers.ConcurrentSet<undefined> = new containers.ConcurrentSet<undefined>();
-      concurrentSet.add(undefined);
-      concurrentSet.add(undefined);
+      const concurrentSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>();
+      concurrentSet.add('undefinedSentinel');
+      concurrentSet.add('undefinedSentinel');
       expect(JSON.stringify(concurrentSet.size)).assertEqual('1');
     })
 
@@ -861,20 +861,20 @@ export default function ConcurrentSetTest() {
     /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Add_Test_static__052
      * @tc.name concurrent_Set_Add_Test_static_004
-     * @tc.desc Add elements of mixed types to the concurrentSet.
+    * @tc.desc Add elements of mixed defined types to the concurrentSet.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("concurrent_Set_Add_Test_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const concurrentSet: containers.ConcurrentSet<number | undefined | object | null> = new containers.ConcurrentSet<number | undefined | object | null>();
+      const concurrentSet: containers.ConcurrentSet<number | boolean | object | string> = new containers.ConcurrentSet<number | boolean | object | string>();
       const obj = new Object();
       concurrentSet.add(obj);
       concurrentSet.add(obj);
-      concurrentSet.add(undefined);
-      concurrentSet.add(undefined);
-      concurrentSet.add(null);
-      concurrentSet.add(null);
+      concurrentSet.add(true);
+      concurrentSet.add(true);
+      concurrentSet.add('sentinel');
+      concurrentSet.add('sentinel');
       concurrentSet.add(0);
       concurrentSet.add(1);
       expect(JSON.stringify(concurrentSet.size)).assertEqual('5');
@@ -1016,16 +1016,16 @@ export default function ConcurrentSetTest() {
      * @tc.level Level 0
      */
     it("concurrent_Set_Add_Test_static_013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const concurrentSet: containers.ConcurrentSet<number | null | undefined | Person> = new containers.ConcurrentSet<number | null | undefined | Person>();
+      const concurrentSet: containers.ConcurrentSet<number | string | boolean | Person> = new containers.ConcurrentSet<number | string | boolean | Person>();
       concurrentSet.add(1);
       concurrentSet.add(2);
       concurrentSet.add(1);
       expect(JSON.stringify(concurrentSet.size)).assertEqual('2');
-      concurrentSet.add(null);
-      concurrentSet.add(null);
+      concurrentSet.add('sentinel');
+      concurrentSet.add('sentinel');
       expect(JSON.stringify(concurrentSet.size)).assertEqual('3');
-      concurrentSet.add(undefined);
-      concurrentSet.add(undefined);
+      concurrentSet.add(true);
+      concurrentSet.add(true);
       expect(JSON.stringify(concurrentSet.size)).assertEqual('4');
       const person1: Person = new Person('aimi', 15);
       const person2: Person = new Person('aimi', 15);
@@ -1111,45 +1111,45 @@ export default function ConcurrentSetTest() {
           const expectedSize: Number = 100 * 100;
           expect(JSON.stringify(concurrentSet.size)).assertEqual(JSON.stringify(expectedSize));
         }
-      }, 10);
+      }, 10).toDouble();
     })
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__065
      * @tc.name concurrent_Set_Delete_Test_static_001
-     * @tc.desc Remove null from the concurrentSet.
+    * @tc.desc Remove a duplicate string element from the concurrentSet.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("concurrent_Set_Delete_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const concurrentSet: containers.ConcurrentSet<null> = new containers.ConcurrentSet<null>();
-      concurrentSet.add(null);
-      concurrentSet.add(null);
+      const concurrentSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>();
+      concurrentSet.add('sentinel');
+      concurrentSet.add('sentinel');
       expect(JSON.stringify(concurrentSet.size)).assertEqual('1');
-      expect(concurrentSet.has(null)).assertTrue();
-      concurrentSet.delete(null);
+      expect(concurrentSet.has('sentinel')).assertTrue();
+      concurrentSet.delete('sentinel');
       expect(JSON.stringify(concurrentSet.size)).assertEqual('0');
-      expect(concurrentSet.has(null)).assertFalse();
+      expect(concurrentSet.has('sentinel')).assertFalse();
     })
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__066
      * @tc.name concurrent_Set_Delete_Test_static_002
-     * @tc.desc Remove undefined from the concurrentSet.
+    * @tc.desc Remove a duplicate string element from the concurrentSet.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("concurrent_Set_Delete_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const concurrentSet: containers.ConcurrentSet<undefined> = new containers.ConcurrentSet<undefined>();
-      concurrentSet.add(undefined);
-      concurrentSet.add(undefined);
+      const concurrentSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>();
+      concurrentSet.add('undefinedSentinel');
+      concurrentSet.add('undefinedSentinel');
       expect(JSON.stringify(concurrentSet.size)).assertEqual('1');
-      expect(concurrentSet.has(undefined)).assertTrue();
-      concurrentSet.delete(undefined);
+      expect(concurrentSet.has('undefinedSentinel')).assertTrue();
+      concurrentSet.delete('undefinedSentinel');
       expect(JSON.stringify(concurrentSet.size)).assertEqual('0');
-      expect(concurrentSet.has(undefined)).assertFalse();
+      expect(concurrentSet.has('undefinedSentinel')).assertFalse();
     })
 
     /**
@@ -1323,37 +1323,37 @@ export default function ConcurrentSetTest() {
     /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__075
      * @tc.name concurrent_Set_Delete_Test_static_011
-     * @tc.desc Remove the set that has only one element which is null from the concurrentSet.
+    * @tc.desc Remove the set that has only one element which is a duplicate string from the concurrentSet.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("concurrent_Set_Delete_Test_static_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const concurrentSet: containers.ConcurrentSet<null> = new containers.ConcurrentSet<null>();
-      concurrentSet.add(null);
+      const concurrentSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>();
+      concurrentSet.add('sentinel');
       expect(JSON.stringify(concurrentSet.size)).assertEqual('1');
-      expect(concurrentSet.has(null)).assertTrue();
-      concurrentSet.delete(null);
+      expect(concurrentSet.has('sentinel')).assertTrue();
+      concurrentSet.delete('sentinel');
       expect(JSON.stringify(concurrentSet.size)).assertEqual('0');
-      expect(concurrentSet.has(null)).assertFalse();
+      expect(concurrentSet.has('sentinel')).assertFalse();
     })
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Delete_Test_static__076
      * @tc.name concurrent_Set_Delete_Test_static_012
-     * @tc.desc Remove the set that has only one element which is undefined from the concurrentSet.
+    * @tc.desc Remove the set that has only one element which is a string sentinel from the concurrentSet.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("concurrent_Set_Delete_Test_static_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const concurrentSet: containers.ConcurrentSet<undefined> = new containers.ConcurrentSet<undefined>();
-      concurrentSet.add(undefined);
+      const concurrentSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>();
+      concurrentSet.add('undefinedSentinel');
       expect(JSON.stringify(concurrentSet.size)).assertEqual('1');
-      expect(concurrentSet.has(undefined)).assertTrue();
-      concurrentSet.delete(undefined);
+      expect(concurrentSet.has('undefinedSentinel')).assertTrue();
+      concurrentSet.delete('undefinedSentinel');
       expect(JSON.stringify(concurrentSet.size)).assertEqual('0');
-      expect(concurrentSet.has(undefined)).assertFalse();
+      expect(concurrentSet.has('undefinedSentinel')).assertFalse();
     })
 
     /**
@@ -1493,33 +1493,33 @@ export default function ConcurrentSetTest() {
     /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static__084
      * @tc.name concurrent_Set_Has_Test_static_001
-     * @tc.desc Determine whether there is a null value in the ConcurrentSet.
+    * @tc.desc Determine whether there is a duplicate string value in the ConcurrentSet.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("concurrent_Set_Has_Test_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const concurrentSet: containers.ConcurrentSet<null> = new containers.ConcurrentSet<null>();
-      concurrentSet.add(null);
-      concurrentSet.add(null);
+      const concurrentSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>();
+      concurrentSet.add('sentinel');
+      concurrentSet.add('sentinel');
       expect(JSON.stringify(concurrentSet.size)).assertEqual('1');
-      expect(concurrentSet.has(null)).assertTrue();
+      expect(concurrentSet.has('sentinel')).assertTrue();
     })
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_concurrent_Set_Has_Test_static__085
      * @tc.name concurrent_Set_Has_Test_static_002
-     * @tc.desc Determine whether there is a undefined value in the ConcurrentSet.
+    * @tc.desc Determine whether there is a string sentinel value in the ConcurrentSet.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 0
      */
     it("concurrent_Set_Has_Test_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
-      const concurrentSet: containers.ConcurrentSet<undefined> = new containers.ConcurrentSet<undefined>();
-      concurrentSet.add(undefined);
-      concurrentSet.add(undefined);
+      const concurrentSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>();
+      concurrentSet.add('undefinedSentinel');
+      concurrentSet.add('undefinedSentinel');
       expect(JSON.stringify(concurrentSet.size)).assertEqual('1');
-      expect(concurrentSet.has(undefined)).assertTrue();
+      expect(concurrentSet.has('undefinedSentinel')).assertTrue();
     })
 
     /**
@@ -2281,7 +2281,7 @@ export default function ConcurrentSetTest() {
         flag++;
         arrayKeys.push(key);
         arrayValues.push(value);
-        setSize = set.size;
+        setSize = set.size.toDouble();
       });
       expect(JSON.stringify(arrayKeys.length)).assertEqual(JSON.stringify(totalCount));
       expect(JSON.stringify(arrayValues.length)).assertEqual(JSON.stringify(totalCount));

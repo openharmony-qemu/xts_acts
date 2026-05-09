@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -91,7 +91,7 @@ it('idScrollEvent_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       let height = bottom -top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await (driver.swipe(Math.round(left + width/2) as int,Math.round(top + height*0.8) as int ,Math.round(left + width/2)as int ,Math.round(top + height*0.2) as int) as Promise<void>);
+      await (driver.swipe(Math.round(left + width/2).toInt(),Math.round(top + height*0.8).toInt() ,Math.round(left + width/2).toInt() ,Math.round(top + height*0.2).toInt()) as Promise<void>);
       await CommonFunc.sleep(2000);
 
       let strJson1 = inspector.getInspectorByKey('scroll_observer_id'); //[scrollSourceDrag_0100] content1: "id: testScroll"

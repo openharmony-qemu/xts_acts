@@ -63,7 +63,7 @@ export class BasicDataSource implements IDataSource<string> { // IDataSourceå¼ºå
   }
 }
 
-class TestDataSource extends BasicDataSource {
+export class TestDataSource extends BasicDataSource {
   private dataArray: Array<string> = [];
 
   public totalCount(): int {

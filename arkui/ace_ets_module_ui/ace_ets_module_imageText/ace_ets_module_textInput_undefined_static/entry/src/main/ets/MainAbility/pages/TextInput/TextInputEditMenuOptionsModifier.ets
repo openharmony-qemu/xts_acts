@@ -32,7 +32,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
 @Observed
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   public state: boolean = false;
   public content: ResourceStr = '';
   onCreateMenu(menuItems: Array<TextMenuItem>) {

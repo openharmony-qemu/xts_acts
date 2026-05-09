@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -89,10 +89,10 @@ it('GridScrollTest1_static_0100', Level.LEVEL1, async () => {
       await sleep(1500);
 
       await driverGrid.swipe(
-        Math.round(left + width * 0.2) as int,
-        Math.round(bottom - height / 4) as int,
-        Math.round(left + width * 0.2) as int,
-        Math.round(bottom - height / 2) as int
+        Math.round(left + width * 0.2).toInt(),
+        Math.round(bottom - height / 4).toInt(),
+        Math.round(left + width * 0.2).toInt(),
+        Math.round(bottom - height / 2).toInt()
       );
       await sleep(2000);
       await topButton.click();
@@ -109,10 +109,10 @@ it('GridScrollTest1_static_0100', Level.LEVEL1, async () => {
       await sleep(1500)
 
       await driverGrid.swipe(
-        Math.round(left + width * 0.2) as int,
-        Math.round(bottom - height / 4) as int,
-        Math.round(left + width * 0.2) as int,
-        Math.round(bottom - height / 2) as int
+        Math.round(left + width * 0.2).toInt(),
+        Math.round(bottom - height / 4).toInt(),
+        Math.round(left + width * 0.2).toInt(),
+        Math.round(bottom - height / 2).toInt()
       );
       await sleep(2000);
       await switchButton.click();
@@ -121,10 +121,10 @@ it('GridScrollTest1_static_0100', Level.LEVEL1, async () => {
       await sleep(1500)
 
       await driverGrid.swipe(
-        Math.round(left + width * 0.2) as int,
-        Math.round(bottom - height / 4) as int,
-        Math.round(left + width * 0.2) as int,
-        Math.round(bottom - height / 2) as int
+        Math.round(left + width * 0.2).toInt(),
+        Math.round(bottom - height / 4).toInt(),
+        Math.round(left + width * 0.2).toInt(),
+        Math.round(bottom - height / 2).toInt()
       );
       await sleep(2000);
       await switchButton.click();

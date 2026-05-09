@@ -401,7 +401,7 @@ export async function builtinsStatementForOfTest2000() {
       }
       ;
       if (childItem === mixedArray[1]) {
-        a = childItem[0] as number;
+        a = childItem[0].toDouble();
       }
       ;
     } else {
@@ -736,7 +736,7 @@ export async function builtinsStatementForOfTest3800() {
         console.log(`Sub-item: ${subItem}`);
       }
       if (item === mixedArray[1]) {
-        a = childItem[0] as number;
+        a = childItem[0].toDouble();
       }
       ;
     } else {

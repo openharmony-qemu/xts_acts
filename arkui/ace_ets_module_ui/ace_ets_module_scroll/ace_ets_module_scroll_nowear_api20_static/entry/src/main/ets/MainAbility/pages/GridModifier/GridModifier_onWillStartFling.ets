@@ -149,7 +149,7 @@ import { BusinessError } from '@kit.BasicServicesKit'
 
 // 定义 onWillStartFling 的 Modifier 类
 @Observed
-class OnWillStartFlingModifier implements AttributeModifier<GridAttribute> {
+export class OnWillStartFlingModifier implements AttributeModifier<GridAttribute> {
   private callback: () => void;
 
   constructor(callback: () => void) {

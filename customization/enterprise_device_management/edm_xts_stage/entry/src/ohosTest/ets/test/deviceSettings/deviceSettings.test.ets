@@ -35,6 +35,7 @@ const KEY_INVALID: number = 999;
 const STATUS_INVALID: number = 999;
 const LABEL_WIFI = "wifi";
 const LABEL_BLUETOOTH = "bluetooth";
+const LABEL_NFC = "nfc";
 
 const VALID_MENUS_TO_HIDE: Array<deviceSettings.SettingsMenu> = [
   deviceSettings.SettingsMenu.ACCOUNT_ID,
@@ -3252,6 +3253,57 @@ export default function deviceSettingsTest() {
         expect(Number(result.state) === 2).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_switch_status_nfc_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_SWITCH_STATUS_NFC_0700
+     * @tc.desc   test deviceSettings setSwitchStatus with NFC using super admin with disallowed policy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_switch_status_nfc_0700", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, LABEL_NFC, true);
+        deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.NFC, deviceSettings.SwitchStatus.ON);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 203).assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_device_settings_set_switch_status_nfc_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_SET_SWITCH_STATUS_NFC_0800
+     * @tc.desc   test deviceSettings setSwitchStatus with NFC using invalid status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_device_settings_set_switch_status_nfc_0800", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        deviceSettings.setSwitchStatus(SELFWANT, deviceSettings.SwitchKey.NFC, STATUS_INVALID);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(Number(error.code) === 9200012).assertTrue();
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }

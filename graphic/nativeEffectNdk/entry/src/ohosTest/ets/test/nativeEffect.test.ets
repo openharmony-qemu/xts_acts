@@ -159,6 +159,62 @@ export default function nativeEffectTest() {
     });
 
     /**
+     * @tc.name   testOHFilterBrighten0300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Effect_OHFilterBrighten_0300
+     * @tc.desc   test OH_Filter_Brighten with boundary value 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHFilterBrighten0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = nativeEffectNdk.oHFilterBrighten0300();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHFilterBrighten0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Effect_OHFilterBrighten_0400
+     * @tc.desc   test OH_Filter_Brighten with boundary value 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHFilterBrighten0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result: number = nativeEffectNdk.oHFilterBrighten0400();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHFilterBrighten0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Effect_OHFilterBrighten_0500
+     * @tc.desc   test OH_Filter_Brighten with out of range value -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOHFilterBrighten0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result: number = nativeEffectNdk.oHFilterBrighten0500();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHFilterBrighten0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Effect_OHFilterBrighten_0600
+     * @tc.desc   test OH_Filter_Brighten with out of range value 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOHFilterBrighten0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result: number = nativeEffectNdk.oHFilterBrighten0600();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
      * @tc.name   testOHFilterSetColorMatrix
      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_EFFECT_KIT_OH_FilterSetColorMatrix
      * @tc.desc   test OH_Filter_Set_Color_Matrix

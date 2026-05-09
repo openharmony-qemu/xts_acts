@@ -68,9 +68,9 @@ export default function Array_06Test() {
     it('testReduceRightWithFloatSum0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testReduceRightWithFloatSum0016";
       try {
-        const array: FixedArray<float> = [1.5 as float, 2.5 as float, 3.5 as float, 4.5 as float];
+        const array: FixedArray<float> = [1.5 .toFloat(), 2.5 .toFloat(), 3.5 .toFloat(), 4.5 .toFloat()];
         const callbackfn = (prev: number, curr: float): number => prev + curr;
-        const initialValue: number = 0.0 as float;
+        const initialValue: number = 0.0.toFloat();
         const result = reduceRight<number>(array, callbackfn, initialValue);
         expect(result).assertEqual(12.0);
       } catch (err) {
@@ -90,9 +90,9 @@ export default function Array_06Test() {
     it('testReduceRightWithFloatSubtract0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testReduceRightWithFloatSubtract0017";
       try {
-        const array: FixedArray<float> = [1.0 as float, 2.0 as float, 3.0 as float, 4.0 as float];
+        const array: FixedArray<float> = [1.0 .toFloat(), 2.0 .toFloat(), 3.0 .toFloat(), 4.0 .toFloat()];
         const callbackfn = (prev: number, curr: float): number => prev - curr;
-        const initialValue: number = 0.0 as float;
+        const initialValue: number = 0.0.toFloat();
         const result = reduceRight<number>(array, callbackfn, initialValue);
         expect(result).assertEqual(-10.0);
       } catch (err) {
@@ -112,9 +112,9 @@ export default function Array_06Test() {
     it('testReduceRightWithFloatMultiply0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testReduceRightWithFloatMultiply0018";
       try {
-        const array: FixedArray<float> = [2.0 as float, 3.0 as float, 4.0 as float];
+        const array: FixedArray<float> = [2.0 .toFloat(), 3.0 .toFloat(), 4.0 .toFloat()];
         const callbackfn = (prev: number, curr: float): number => prev * curr;
-        const initialValue: number = 1.0 as float;
+        const initialValue: number = 1.0.toFloat();
         const result = reduceRight<number>(array, callbackfn, initialValue);
         expect(result).assertEqual(24.0);
       } catch (err) {
@@ -156,7 +156,7 @@ export default function Array_06Test() {
     it('testReduceRightWithSingleFloatArray0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testReduceRightWithSingleFloatArray0020";
       try {
-        const array: FixedArray<float> = [9.9 as float];
+        const array: FixedArray<float> = [9.9.toFloat()];
         const callbackfn = (prev: string, curr: float): string => `(${prev}+${curr})`;
         const initialValue: string = "init";
         const result = reduceRight<string>(array, callbackfn, initialValue);

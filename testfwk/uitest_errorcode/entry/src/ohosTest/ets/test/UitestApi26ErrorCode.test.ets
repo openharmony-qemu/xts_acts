@@ -14,12 +14,14 @@
  */
 
 import { describe, it, expect, TestType, Level, Size, beforeAll } from '@ohos/hypium'
-import {Driver, Point, TouchOptions,} from '@ohos.UiTest'
+import {Driver, PenKey, PenKeyOperation, PenMode, Point, TouchOptions,} from '@ohos.UiTest'
+import hilog from '@ohos.hilog';
 
 const waitUiReadyMs: number = 1000;
 const TestTag = 'UiTest_TAG';
 const AsyncErrorCode = 17000002;
 const ParameterErrorCode = 17000007;
+const ErrorCode17000005 = 17000005;
 
 function sleep(nm: number) {
   return new Promise<void>((resolve: Function, reject: Function) => {
@@ -49,6 +51,7 @@ export default function uitestApi26ErrorTest() {
       const options: TouchOptions = { pressure: 0.5 };
       try {
         driver.delayMs(waitUiReadyMs * 3);
+        await sleep(100);
         await driver.clickAt(point, options);
         expect().assertFail();
       } catch (err) {
@@ -506,7 +509,7 @@ export default function uitestApi26ErrorTest() {
       const options: TouchOptions = { speed: 2000 };
       try {
         driver.delayMs(waitUiReadyMs * 3);
-        await driver.delayMs(100);
+        await sleep(100);
         await driver.swipeBetween(from, to, options);
         expect().assertFail();
       } catch (err) {
@@ -621,7 +624,7 @@ export default function uitestApi26ErrorTest() {
         console.info(`${TestTag}, testDriverDragBetweenConcurrentCalls error is: ${JSON.stringify(err)}`);
         expect((err as BusinessError).code).assertEqual(AsyncErrorCode);
       }
-      await sleep(waitUiReadyMs * 5);
+      await sleep(waitUiReadyMs * 8);
       console.info(`${TestTag}, testDriverDragBetweenConcurrentCalls end`);
     });
 
@@ -1014,6 +1017,630 @@ export default function uitestApi26ErrorTest() {
       }
       console.info(`${TestTag}, testDriverDragBetweenApi26FromUndefinedToNull end`);
     });
+
+    /**
+     * @tc.name   testDriverDumpLayoutErrorConcurrentCall
+     * @tc.number SUB_testfwk_UITEST_DUMPLAYOUT_ERROR_0100
+     * @tc.desc   Test dumpLayout with concurrent call, expecting error 17000002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverDumpLayoutErrorConcurrentCall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverDumpLayoutErrorConcurrentCall start`);
+      let savePath = '/data/storage/el2/base/cache/dump_layout_error_009.json'
+      try {
+        driver.delayMs(waitUiReadyMs * 3);
+        await sleep(100);
+        await driver.dumpLayout(savePath, 0);
+        expect().assertFail();
+      } catch (err) {
+        console.log(`${TestTag}, testDriverDumpLayoutErrorConcurrentCall error is: ${JSON.stringify(err)}`);
+        expect((err as BusinessError).code).assertEqual(AsyncErrorCode);
+      }
+      await sleep(waitUiReadyMs * 8);
+      console.log(`${TestTag}, testDriverDumpLayoutErrorConcurrentCall end`);
+    });
+
+    /**
+     * @tc.name   testDriverDumpLayoutErrorEmptyPath
+     * @tc.number SUB_testfwk_UITEST_DUMPLAYOUT_ERROR_0200
+     * @tc.desc   Test dumpLayout with empty savePath parameter, expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverDumpLayoutErrorEmptyPath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverDumpLayoutErrorEmptyPath start`);
+      const savePath: string = '';
+      try {
+        await driver.dumpLayout(savePath, 0);
+        expect().assertFalse();
+      } catch (err) {
+        console.log(`${TestTag}, testDriverDumpLayoutErrorEmptyPath error is: ${JSON.stringify(err)}`);
+        expect((err as BusinessError).code).assertEqual(17000007);
+      }
+      console.log(`${TestTag}, testDriverDumpLayoutErrorEmptyPath end`);
+    });
+
+    /**
+     * @tc.name   testDriverDumpLayoutErrorInvalidPath
+     * @tc.number SUB_testfwk_UITEST_DUMPLAYOUT_ERROR_0300
+     * @tc.desc   Test dumpLayout with path outside sandbox, expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverDumpLayoutErrorInvalidPath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverDumpLayoutErrorInvalidPath start`);
+      const savePath: string = '/invalid/path/outside/sandbox.json';
+      try {
+        await driver.dumpLayout(savePath, 0);
+        expect().assertFalse();
+      } catch (err) {
+        console.log(`${TestTag}, testDriverDumpLayoutErrorInvalidPath error is: ${JSON.stringify(err)}`);
+        expect((err as BusinessError).code).assertEqual(17000007);
+      }
+      console.log(`${TestTag}, testDriverDumpLayoutErrorInvalidPath end`);
+    });
+
+    /**
+     * @tc.name   testDriverDumpLayoutErrorNegativeDisplayId
+     * @tc.number SUB_testfwk_UITEST_DUMPLAYOUT_ERROR_0400
+     * @tc.desc   Test dumpLayout with negative displayId parameter, expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverDumpLayoutErrorNegativeDisplayId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverDumpLayoutErrorNegativeDisplayId start`);
+      let savePath = '/data/storage/el2/base/cache/dump_layout_error_003.json'
+      const displayId: number = -1;
+      try {
+        await driver.dumpLayout(savePath, displayId);
+        expect().assertFalse();
+      } catch (err) {
+        console.log(`${TestTag}, testDriverDumpLayoutErrorNegativeDisplayId error is: ${JSON.stringify(err)}`);
+        expect((err as BusinessError).code).assertEqual(17000007);
+      }
+      console.log(`${TestTag}, testDriverDumpLayoutErrorNegativeDisplayId end`);
+    });
+
+    /**
+     * @tc.name   testDriverDumpLayoutErrorNullSavePath
+     * @tc.number SUB_testfwk_UITEST_DUMPLAYOUT_ERROR_0500
+     * @tc.desc   Test dumpLayout with null savePath parameter, expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverDumpLayoutErrorNullSavePath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverDumpLayoutErrorNullSavePath start`);
+      const savePath: ESObject = null;
+      try {
+        await driver.dumpLayout(savePath, 0);
+        expect().assertFalse();
+      } catch (err) {
+        console.log(`${TestTag}, testDriverDumpLayoutErrorNullSavePath error is: ${JSON.stringify(err)}`);
+        expect((err as BusinessError).code).assertEqual(17000007);
+      }
+      console.log(`${TestTag}, testDriverDumpLayoutErrorNullSavePath end`);
+    });
+
+    /**
+     * @tc.name   testDriverDumpLayoutErrorUndefinedSavePath
+     * @tc.number SUB_testfwk_UITEST_DUMPLAYOUT_ERROR_0600
+     * @tc.desc   Test dumpLayout with undefined savePath parameter, expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverDumpLayoutErrorUndefinedSavePath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverDumpLayoutErrorUndefinedSavePath start`);
+      const savePath: ESObject = undefined;
+      try {
+        await driver.dumpLayout(savePath, 0);
+        expect().assertFalse();
+      } catch (err) {
+        console.log(`${TestTag}, testDriverDumpLayoutErrorUndefinedSavePath error is: ${JSON.stringify(err)}`);
+        expect((err as BusinessError).code).assertEqual(17000007);
+      }
+      console.log(`${TestTag}, testDriverDumpLayoutErrorUndefinedSavePath end`);
+    });
+
+    /**
+     * @tc.name   testDriverMouseDragPressureMinimum
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_BOUNDARY_0500
+     * @tc.desc   Test mouseDrag with minimum pressure value (0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverMouseDragPressureMinimum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverMouseDragPressureMinimum start`);
+      try {
+        const touchOptions: TouchOptions = { pressure: 0 };
+        await driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, touchOptions);
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testDriverMouseDragPressureMinimum error is: ${JSON.stringify(error)}`);
+        expect((error as BusinessError).code).assertEqual(17000007);
+      }
+      console.log(`${TestTag}, testDriverMouseDragPressureMinimum end`);
+    });
+
+    /**
+     * @tc.name   testDriverMouseDragPressureMaximum
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_BOUNDARY_0400
+     * @tc.desc   Test mouseDrag with maximum pressure value (1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverMouseDragPressureMaximum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverMouseDragPressureMaximum start`);
+      const touchOptions: TouchOptions = { pressure: 1 };
+      try {
+        await driver.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, touchOptions);
+        expect().assertFail();
+      } catch (error) {
+        console.log(`${TestTag}, testDriverMouseDragPressureMinimum error is: ${JSON.stringify(error)}`);
+        expect((error as BusinessError).code).assertEqual(17000007);
+      }
+      console.log(`${TestTag}, testDriverMouseDragPressureMaximum end`);
+    });
+
+    /**
+     * @tc.name   testDriverMouseDragErrorConcurrentCall
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_ERROR_0100
+     * @tc.desc   Test mouseDrag with concurrent call, expecting error 17000002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverMouseDragErrorConcurrentCall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverMouseDragErrorConcurrentCall start`);
+      const from: Point = { x: 500, y: 1000 };
+      const to: Point = { x: 500, y: 800 };
+      try {
+        driver.delayMs(waitUiReadyMs * 3);
+        await sleep(100);
+        await driver.mouseDrag(from, to, {speed: 600}, {key1: 0});
+        expect().assertFail();
+      } catch (err) {
+        console.log(`${TestTag}, testDriverMouseDragErrorConcurrentCall error is: ${JSON.stringify(err)}`);
+        expect((err as BusinessError).code).assertEqual(AsyncErrorCode);
+      }
+      await sleep(waitUiReadyMs * 8);
+      console.log(`${TestTag}, testDriverMouseDragErrorConcurrentCall end`);
+    });
+
+    /**
+     * @tc.name   testDriverMouseDragErrorSpeedNegative
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_ERROR_0200
+       @tc.desc   Test mouseDrag with negative speed, expecting error 17000002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverMouseDragErrorSpeedNegative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverMouseDragErrorSpeedNegative start`);
+      const from: Point = { x: 500, y: 1000 };
+      const to: Point = { x: 500, y: 800 };
+      const touchOptions: TouchOptions = { speed: -100 };
+      try {
+        await driver.mouseDrag(from, to, touchOptions);
+        expect().assertFail();
+      } catch (err) {
+        console.log(`${TestTag}, testDriverMouseDragErrorSpeedNegative error is: ${JSON.stringify(err)}`);
+        expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
+      }
+      console.log(`${TestTag}, testDriverMouseDragErrorSpeedNegative end`);
+    });
+
+    /**
+     * @tc.name   testDriverMouseDragErrorDurationTooSmall
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_ERROR_0500
+     @tc.desc   Test mouseDrag with duration less than 1500, expecting error 17000007
+     @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     @tc.level  LEVEL3
+     */
+    it('testDriverMouseDragErrorDurationTooSmall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverMouseDragErrorDurationTooSmall start`);
+      const from: Point = { x: 500, y: 1000 };
+      const to: Point = { x: 500, y: 800 };
+      const touchOptions: TouchOptions = { duration: 1499 };
+      try {
+        await driver.mouseDrag(from, to, touchOptions);
+        expect().assertFail();
+      } catch (err) {
+        console.log(`${TestTag}, testDriverMouseDragErrorDurationTooSmall error is: ${JSON.stringify(err)}`);
+        expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
+      }
+      console.log(`${TestTag}, testDriverMouseDragErrorDurationTooSmall end`);
+    });
+
+    /**
+     * @tc.name   testDriverMouseDragErrorPressureTooSmall
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_ERROR_0600
+     @tc.desc   Test mouseDrag with pressure greater than1, expecting error 17000007
+     @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverMouseDragErrorPressureTooSmall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverMouseDragErrorPressureTooSmall start`);
+      const from: Point = { x: 500, y: 1000 };
+      const to: Point = { x: 500, y: 800 };
+      const touchOptions: TouchOptions = { pressure: -0.1 };
+      try {
+        await driver.mouseDrag(from, to, touchOptions);
+        expect().assertFail();
+      } catch (err) {
+        console.log(`${TestTag}, testDriverMouseDragErrorPressureTooSmall error is: ${JSON.stringify(err)}`);
+        expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
+      }
+      console.log(`${TestTag}, testDriverMouseDragErrorPressureTooSmall end`);
+    });
+
+    /**
+     * @tc.name   testDriverMouseDragErrorPressureTooLarge
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_ERROR_0700
+     * @tc.desc   Test mouseDrag with pressure greater than1, expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverMouseDragErrorPressureTooLarge', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverMouseDragErrorPressureTooLarge start`);
+      const from: Point = { x: 500, y: 1000 };
+      const to: Point = { x: 500, y: 800 };
+      const touchOptions: TouchOptions = { pressure: 1.1 };
+      try {
+        await driver.mouseDrag(from, to, touchOptions);
+        expect().assertFail();
+      } catch (err) {
+        console.log(`${TestTag}, testDriverMouseDragErrorPressureTooLarge error is: ${JSON.stringify(err)}`);
+        expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
+      }
+      console.log(`${TestTag}, testDriverMouseDragErrorPressureTooLarge end`);
+    });
+
+    /**
+     * @tc.name   testDriverMouseDragErrorDisplayIdDiff
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_ERROR_0800
+     * @tc.desc   Test mouseDrag with displayId diff
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     @tc.level  LEVEL3
+     */
+    it('testDriverMouseDragErrorDisplayIdDiff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverMouseDragErrorDisplayIdDiff start`);
+      const from: Point = { x: 500, y: 1000, displayId: 0 };
+      const to: Point = { x: 500, y: 800, displayId: 1 };
+      const touchOptions: TouchOptions = { pressure: 1.0 };
+      try {
+        await driver.mouseDrag(from, to, touchOptions);
+        expect().assertFail();
+      } catch (err) {
+        console.log(`${TestTag}, testDriverMouseDragErrorDisplayIdDiff error is: ${JSON.stringify(err)}`);
+        expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
+      }
+      console.log(`${TestTag}, testDriverMouseDragErrorDisplayIdDiff end`);
+    });
+
+    /**
+     * @tc.name   testDriverMouseDragErrorNullFromPoint
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_ERROR_0900
+     @tc.desc   Test mouseDrag with undefined from point
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverMouseDragErrorNullFromPoint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverMouseDragErrorNullFromPoint start`);
+      const from: ESObject = null;
+      const to: Point = { x: 500, y: 800 };
+      try {
+        await driver.mouseDrag(from as Point, to, {speed: 600}, {key1: 0});
+        expect().assertFail();
+      } catch (err) {
+        console.log(`${TestTag}, testDriverMouseDragErrorNullFromPoint error is: ${JSON.stringify(err)}`);
+        expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
+      }
+      console.log(`${TestTag}, testDriverMouseDragErrorNullFromPoint end`);
+    });
+
+    /**
+     * @tc.name   testDriverMouseDragErrorUndefinedFromPoint
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_ERROR_1000
+     * @tc.desc   Test mouseDrag with undefined from point, expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverMouseDragErrorUndefinedFromPoint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverMouseDragErrorUndefinedFromPoint start`);
+      const from: ESObject = undefined;
+      const to: Point = { x: 500, y: 800 };
+      try {
+        await driver.mouseDrag(from as Point, to, {speed: 600}, {key1: 0});
+        expect().assertFail();
+      } catch (err) {
+        console.log(`${TestTag}, testDriverMouseDragErrorUndefinedFromPoint error is: ${JSON.stringify(err)}`);
+        expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
+      }
+      console.log(`${TestTag}, testDriverMouseDragErrorUndefinedFromPoint end`);
+    });
+
+    /**
+     * @tc.name   testDriverMouseDragErrorNullToPoint
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_ERROR_1100
+     @tc.desc   Test mouseDrag with null to point
+     @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     @tc.level  LEVEL3
+     */
+    it('testDriverMouseDragErrorNullToPoint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverMouseDragErrorNullToPoint start`);
+      const from: Point = { x: 500, y: 1000 };
+      const to: ESObject = null;
+      try {
+        await driver.mouseDrag(from, to as Point, {speed: 600}, {key1: 0});
+        expect().assertFail();
+      } catch (err) {
+        console.log(`${TestTag}, testDriverMouseDragErrorNullToPoint error is: ${JSON.stringify(err)}`);
+        expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
+      }
+      console.log(`${TestTag}, testDriverMouseDragErrorNullToPoint end`);
+    });
+
+    /**
+     * @tc.name   testDriverMouseDragErrorUndefinedToPoint
+     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_ERROR_1200
+     * @tc.desc   Test mouseDrag with undefined to point, expecting error 17000007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverMouseDragErrorUndefinedToPoint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, testDriverMouseDragErrorUndefinedToPoint start`);
+      const from: Point = { x: 500, y: 1000 };
+      const to: ESObject = undefined;
+      try {
+        await driver.mouseDrag(from, to as Point, {speed: 600}, {key1: 0});
+        expect().assertFail();
+      } catch (err) {
+        console.log(`${TestTag}, testDriverMouseDragErrorUndefinedToPoint error is: ${JSON.stringify(err)}`);
+        expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
+      }
+      console.log(`${TestTag}, testDriverMouseDragErrorUndefinedToPoint end`);
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeyAirMouseWithoutPoint
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_ERROR_0100
+     * @tc.desc   Test Driver.triggerPenKey with AIR_MOUSE mode without point in options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyAirMouseWithoutPoint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseWithoutPoint start');
+      try {
+        await driver.triggerPenKey(PenKey.AIR_MOUSE, PenMode.AIR_MOUSE, PenKeyOperation.CLICK, {});
+        expect().assertFail();
+      } catch (error) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseWithoutPoint error: ' + error.code);
+        expect(error.code === ErrorCode17000005 || error.code === ParameterErrorCode).assertTrue();
+      }
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseWithoutPoint over');
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeyAirMouseWithNullPoint
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_ERROR_0200
+     * @tc.desc   Test Driver.triggerPenKey with AIR_MOUSE mode and null point in options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyAirMouseWithNullPoint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseWithNullPoint start');
+      try {
+        await driver.triggerPenKey(PenKey.AIR_MOUSE, PenMode.AIR_MOUSE, PenKeyOperation.CLICK, { point: null });
+        expect().assertFail();
+      } catch (error) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseWithNullPoint error: ' + error.code);
+        expect(error.code === ErrorCode17000005 || error.code === ParameterErrorCode).assertTrue();
+      }
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseWithNullPoint over');
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeyKeyNull
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_ERROR_0300
+     * @tc.desc   Test Driver.triggerPenKey with null key parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyKeyNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyKeyNull start');
+      try {
+        await driver.triggerPenKey(null, PenMode.HANDWRITING, PenKeyOperation.CLICK);
+        expect().assertFail();
+      } catch (error) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyKeyNull error: ' + error.code);
+        expect(error.code).assertEqual(ParameterErrorCode);
+      }
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyKeyNull over');
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeyModeNull
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_ERROR_0400
+     * @tc.desc   Test Driver.triggerPenKey with null mode parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyModeNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyModeNull start');
+      try {
+        await driver.triggerPenKey(PenKey.HANDWRITING, null, PenKeyOperation.CLICK);
+        expect().assertFail();
+      } catch (error) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyModeNull error: ' + error.code);
+        expect(error.code).assertEqual(ParameterErrorCode);
+      }
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyModeNull over');
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeyOperationNull
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_ERROR_0500
+     * @tc.desc   Test Driver.triggerPenKey with null operation parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyOperationNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyOperationNull start');
+      try {
+        await driver.triggerPenKey(PenKey.HANDWRITING, PenMode.HANDWRITING, null);
+        expect().assertFail();
+      } catch (error) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyOperationNull error: ' + error.code);
+        expect(error.code).assertEqual(ParameterErrorCode);
+      }
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyOperationNull over');
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeyKeyUndefined
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_ERROR_0600
+     * @tc.desc   Test Driver.triggerPenKey with undefined key parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyKeyUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyKeyUndefined start');
+      try {
+        await driver.triggerPenKey(undefined, PenMode.HANDWRITING, PenKeyOperation.CLICK);
+        expect().assertFail();
+      } catch (error) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyKeyUndefined error: ' + error.code);
+        expect(error.code).assertEqual(ParameterErrorCode);
+      }
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyKeyUndefined over');
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeyModeUndefined
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_ERROR_0700
+     * @tc.desc   Test Driver.triggerPenKey with undefined mode parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyModeUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyModeUndefined start');
+      try {
+        await driver.triggerPenKey(PenKey.HANDWRITING, undefined, PenKeyOperation.CLICK);
+        expect().assertFail();
+      } catch (error) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyModeUndefined error: ' + error.code);
+        expect(error.code).assertEqual(ParameterErrorCode);
+      }
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyModeUndefined over');
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeyOperationUndefined
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_ERROR_0800
+     * @tc.desc   Test Driver.triggerPenKey with undefined operation parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyOperationUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyOperationUndefined start');
+      try {
+        await driver.triggerPenKey(PenKey.HANDWRITING, PenMode.HANDWRITING, undefined);
+        expect().assertFail();
+      } catch (error) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyOperationUndefined error: ' + error.code);
+        expect(error.code).assertEqual(ParameterErrorCode);
+      }
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyOperationUndefined over');
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeyHandwritingClickOptionsNull
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0700
+     * @tc.desc   Test Driver.triggerPenKey with HANDWRITING mode, HANDWRITING key, CLICK operation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyHandwritingClickOptionsNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingClickOptionsNull start');
+      try {
+        await driver.triggerPenKey(PenKey.HANDWRITING, PenMode.HANDWRITING, PenKeyOperation.CLICK, null);
+        await driver.delayMs(500);
+      } catch (error) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingClickOptionsNull error: ' + error.code);
+        expect(error.code).assertEqual(ErrorCode17000005)
+      }
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingClickOptionsNull over');
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeyHandwritingClickOptionsUndefined
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0800
+     * @tc.desc   Test Driver.triggerPenKey with HANDWRITING mode, HANDWRITING key, CLICK operation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyHandwritingClickOptionsUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingClickOptionsUndefined start');
+      try {
+        await driver.triggerPenKey(PenKey.HANDWRITING, PenMode.HANDWRITING, PenKeyOperation.CLICK, undefined);
+        await driver.delayMs(500);
+      } catch (error) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingClickOptionsUndefined error: ' + error.code);
+        expect(error.code).assertEqual(ErrorCode17000005)
+      }
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingClickOptionsUndefined over');
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeyConcurrentCalls
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_ERROR_0900
+     * @tc.desc   Test Driver.triggerPenKey with concurrent calls (should fail with 17000002)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyConcurrentCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyConcurrentCalls start');
+      try {
+        driver.delayMs(waitUiReadyMs * 3);
+        await sleep(300);
+        await driver.triggerPenKey(PenKey.HANDWRITING, PenMode.HANDWRITING, PenKeyOperation.CLICK, {point: {x: 100, y: 100}});
+        expect().assertFalse();
+      } catch (err) {
+        console.log(`${TestTag}, testDriverClickAtErrorConcurrentCallWithPressure error: ${JSON.stringify(err)}`);
+        expect((err as BusinessError).code).assertEqual(AsyncErrorCode);
+      }
+      await sleep(waitUiReadyMs * 8);
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyConcurrentCalls over');
+    });
+
 
   })
 }

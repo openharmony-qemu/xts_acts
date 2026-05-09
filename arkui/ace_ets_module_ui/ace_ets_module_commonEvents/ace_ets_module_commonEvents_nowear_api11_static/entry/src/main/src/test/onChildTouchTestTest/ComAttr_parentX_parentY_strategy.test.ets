@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -84,7 +84,7 @@ it('parentX_parentY_strategy_Test_static_0100', Level.LEVEL0, async (done: () =>
       if (row != null && row != undefined) {
         let point: Point = await (row.getBoundsCenter() as Promise<Point>);
         await CommonFunc.sleep(1000);
-        await (driver?.click(Math.round(point.x as number) as Int, Math.round(point.y as number) as Int) as Promise<void>)
+        await (driver?.click(Math.round(point.x.toDouble()).toInt(), Math.round(point.y.toDouble()).toInt()) as Promise<void>)
         await CommonFunc.sleep(3000);
         let strJson = inspector.getInspectorByKey('parentX');
         let obj = JSON.parseJsonElement(strJson);
@@ -113,7 +113,7 @@ it('parentX_parentY_strategy_Test_static_0200', Level.LEVEL0, async (done: () =>
       if (row != null && row != undefined) {
         let point: Point = await (row.getBoundsCenter() as Promise<Point>);
         await CommonFunc.sleep(1000);
-        await (driver?.click(Math.round(point.x) as Int, Math.round(point.y) as Int) as Promise<void>)
+        await (driver?.click(Math.round(point.x).toInt(), Math.round(point.y).toInt()) as Promise<void>)
         await CommonFunc.sleep(3000);
         let strJson = inspector.getInspectorByKey('parentY');
         let obj = JSON.parseJsonElement(strJson);
@@ -141,7 +141,7 @@ it('parentX_parentY_strategy_Test_static_0300', Level.LEVEL0, async (done: () =>
       if (row != null && row != undefined) {
         let point: Point = await (row.getBoundsCenter() as Promise<Point>);
         await CommonFunc.sleep(1000);
-        await (driver?.click(Math.round(point.x) as Int, Math.round(point.y) as Int) as Promise<void>)
+        await (driver?.click(Math.round(point.x).toInt(), Math.round(point.y).toInt()) as Promise<void>)
         await CommonFunc.sleep(3000);
         let strJson = inspector.getInspectorByKey('strategy_DEFAULT');
         let obj = JSON.parseJsonElement(strJson);
@@ -170,7 +170,7 @@ it('parentX_parentY_strategy_Test_static_0400', Level.LEVEL0, async (done: () =>
       if (row != null && row != undefined) {
         let point: Point = await (row.getBoundsCenter() as Promise<Point>);
         await CommonFunc.sleep(1000);
-        await (driver?.click(Math.round(point.x) as Int, Math.round(point.y) as Int) as Promise<void>)
+        await (driver?.click(Math.round(point.x).toInt(), Math.round(point.y).toInt()) as Promise<void>)
         await CommonFunc.sleep(3000);
         let strJson = inspector.getInspectorByKey('strategy_FORWARD_COMPETITION');
         let obj = JSON.parseJsonElement(strJson);
@@ -199,7 +199,7 @@ it('parentX_parentY_strategy_Test_static_0500', Level.LEVEL0, async (done: () =>
       if (row != null && row != undefined) {
         let point: Point = await (row.getBoundsCenter() as Promise<Point>);
         await CommonFunc.sleep(1000);
-        await (driver?.click(Math.round(point.x) as Int, Math.round(point.y) as Int) as Promise<void>)
+        await (driver?.click(Math.round(point.x).toInt(), Math.round(point.y).toInt()) as Promise<void>)
         await CommonFunc.sleep(3000);
         let strJson = inspector.getInspectorByKey('strategy_FORWARD');
         let obj = JSON.parseJsonElement(strJson);

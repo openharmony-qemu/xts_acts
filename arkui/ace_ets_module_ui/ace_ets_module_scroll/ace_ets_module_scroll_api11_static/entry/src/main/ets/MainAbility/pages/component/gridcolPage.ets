@@ -35,7 +35,7 @@ import {
 import { State } from '@ohos.arkui.stateManagement';
 import { RecordData } from '@ohos.base';
 
-class MyGridColOffsetModifier1 implements AttributeModifier<GridColAttribute> {
+export class MyGridColOffsetModifier1 implements AttributeModifier<GridColAttribute> {
   isNum: number = 0
 
   applyNormalAttribute(instance: GridColAttribute): void {
@@ -56,7 +56,7 @@ class MyGridColOffsetModifier1 implements AttributeModifier<GridColAttribute> {
   }
 }
 
-class MyGridColSpanModifier1 implements AttributeModifier<GridColAttribute> {
+export class MyGridColSpanModifier1 implements AttributeModifier<GridColAttribute> {
   isNum: number = 0
 
   applyNormalAttribute(instance: GridColAttribute): void {
@@ -75,7 +75,7 @@ class MyGridColSpanModifier1 implements AttributeModifier<GridColAttribute> {
   }
 }
 
-class MyGridColOrderModifier1 implements AttributeModifier<GridColAttribute> {
+export class MyGridColOrderModifier1 implements AttributeModifier<GridColAttribute> {
   isNum: number = 0
 
   applyNormalAttribute(instance: GridColAttribute): void {
@@ -87,7 +87,7 @@ class MyGridColOrderModifier1 implements AttributeModifier<GridColAttribute> {
   }
 }
 
-class MyGridColOrderModifier2 implements AttributeModifier<GridColAttribute> {
+export class MyGridColOrderModifier2 implements AttributeModifier<GridColAttribute> {
   isNum: number = 0
 
   applyNormalAttribute(instance: GridColAttribute): void {

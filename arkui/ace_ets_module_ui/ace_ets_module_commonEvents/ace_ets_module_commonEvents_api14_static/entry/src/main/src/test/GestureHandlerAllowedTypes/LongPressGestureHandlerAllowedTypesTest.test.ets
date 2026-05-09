@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -88,7 +88,7 @@ it('LongPressGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (d
       // trigger gesture with finger
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.longClick(Math.round(areaObj.left + areaWidth/2) as Int,Math.round(areaObj.top + areaHeight/2) as Int);
+      await driver.longClick(Math.round(areaObj.left + areaWidth/2).toInt(),Math.round(areaObj.top + areaHeight/2).toInt());
       await CommonFunc.sleep(3000);
       let text1 = inspector.getInspectorByKey('LongPressGestureHandlerAllowedTypes_result');
       let obj1 = JSON.parseJsonElement(text1);
@@ -97,7 +97,7 @@ it('LongPressGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (d
 
       // trigger gesture with mouse
       await CommonFunc.sleep(1000);
-      await driver.mouseClick({x: Math.round(areaObj.left + areaWidth/2) as Int, y: Math.round(areaObj.top + areaHeight/2) as Int}, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver.mouseClick({x: Math.round(areaObj.left + areaWidth/2).toInt(), y: Math.round(areaObj.top + areaHeight/2).toInt()}, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(3000);
       let text2 = inspector.getInspectorByKey('LongPressGestureHandlerAllowedTypes_result');
       let obj2 = JSON.parseJsonElement(text2);
@@ -115,7 +115,7 @@ it('LongPressGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (d
 
       // trigger gesture again with finger
       await CommonFunc.sleep(1000);
-      await driver.longClick(Math.round(areaObj.left + areaWidth/2) as Int,Math.round(areaObj.top + areaHeight/2) as Int);
+      await driver.longClick(Math.round(areaObj.left + areaWidth/2).toInt(),Math.round(areaObj.top + areaHeight/2).toInt());
       await CommonFunc.sleep(3000);
       let text4 = inspector.getInspectorByKey('LongPressGestureHandlerAllowedTypes_result');
       let obj4 = JSON.parseJsonElement(text4);
@@ -124,7 +124,7 @@ it('LongPressGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (d
 
       // trigger gesture again with mouse
       await CommonFunc.sleep(1000);
-      await driver.mouseLongClick({x: Math.round(areaObj.left + areaWidth/2) as Int, y: Math.round(areaObj.top + areaHeight/2) as Int}, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver.mouseLongClick({x: Math.round(areaObj.left + areaWidth/2).toInt(), y: Math.round(areaObj.top + areaHeight/2).toInt()}, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(3000);
       let text5 = inspector.getInspectorByKey('LongPressGestureHandlerAllowedTypes_result');
       let obj5 = JSON.parseJsonElement(text5);
@@ -142,7 +142,7 @@ it('LongPressGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (d
 
       // trigger gesture again with mouse
       await CommonFunc.sleep(1000);
-      await driver.mouseLongClick({x: Math.round(areaObj.left + areaWidth/2) as Int, y: Math.round(areaObj.top + areaHeight/2) as Int}, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver.mouseLongClick({x: Math.round(areaObj.left + areaWidth/2).toInt(), y: Math.round(areaObj.top + areaHeight/2).toInt()}, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(3000);
       let text7 = inspector.getInspectorByKey('LongPressGestureHandlerAllowedTypes_result');
       let obj7 = JSON.parseJsonElement(text7);
@@ -151,7 +151,7 @@ it('LongPressGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (d
 
       // trigger gesture again with finger
       await CommonFunc.sleep(1000);
-      await driver.longClick(Math.round(areaObj.left + areaWidth/2) as Int,Math.round(areaObj.top + areaHeight/2) as Int);
+      await driver.longClick(Math.round(areaObj.left + areaWidth/2).toInt(),Math.round(areaObj.top + areaHeight/2).toInt());
       await CommonFunc.sleep(3000);
       let text8 = inspector.getInspectorByKey('LongPressGestureHandlerAllowedTypes_result');
       let obj8 = JSON.parseJsonElement(text8);
@@ -170,7 +170,7 @@ it('LongPressGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (d
 
       // trigger gesture again with finger // undefined/null
       // await CommonFunc.sleep(1000);
-      // await driver.longClick(Math.round(areaObj.left + areaWidth/2) as Int,Math.round(areaObj.top + areaHeight/2) as Int);
+      // await driver.longClick(Math.round(areaObj.left + areaWidth/2).toInt(),Math.round(areaObj.top + areaHeight/2).toInt());
       // await CommonFunc.sleep(3000);
       // let text10 = inspector.getInspectorByKey('LongPressGestureHandlerAllowedTypes_result');
       // let obj10 = JSON.parseJsonElement(text10);

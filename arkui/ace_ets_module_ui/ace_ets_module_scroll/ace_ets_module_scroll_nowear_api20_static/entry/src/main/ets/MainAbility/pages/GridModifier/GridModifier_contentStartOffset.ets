@@ -150,35 +150,35 @@ import { BusinessError } from '@kit.BasicServicesKit'
 
 // 定义不同的 GridModifier 类
 @Observed
-class GridNormalModifier implements AttributeModifier<GridAttribute> {
+export class GridNormalModifier implements AttributeModifier<GridAttribute> {
   applyNormalAttribute(instance: GridAttribute): void {
     instance.contentStartOffset(60);
   }
 }
 
 @Observed
-class GridEmptyModifier implements AttributeModifier<GridAttribute> {
+export class GridEmptyModifier implements AttributeModifier<GridAttribute> {
   applyNormalAttribute(instance: GridAttribute): void {
     instance.contentStartOffset(0);
   }
 }
 
 @Observed
-class GridInvalidModifier implements AttributeModifier<GridAttribute> {
+export class GridInvalidModifier implements AttributeModifier<GridAttribute> {
   applyNormalAttribute(instance: GridAttribute): void {
     instance.contentStartOffset(-30);
   }
 }
 
 @Observed
-class GridUndefinedModifier implements AttributeModifier<GridAttribute> {
+export class GridUndefinedModifier implements AttributeModifier<GridAttribute> {
   applyNormalAttribute(instance: GridAttribute): void {
     instance.contentStartOffset(undefined);
   }
 }
 
 @Observed
-class GridExplicitUndefinedModifier implements AttributeModifier<GridAttribute> {
+export class GridExplicitUndefinedModifier implements AttributeModifier<GridAttribute> {
   applyNormalAttribute(instance: GridAttribute): void {
     instance.contentStartOffset(undefined);
   }
@@ -186,7 +186,7 @@ class GridExplicitUndefinedModifier implements AttributeModifier<GridAttribute> 
 
 // 动态切换的 Modifier
 @Observed
-class GridDynamicModifier implements AttributeModifier<GridAttribute> {
+export class GridDynamicModifier implements AttributeModifier<GridAttribute> {
   private offset: number | undefined;
 
   constructor(offset: number | undefined) {

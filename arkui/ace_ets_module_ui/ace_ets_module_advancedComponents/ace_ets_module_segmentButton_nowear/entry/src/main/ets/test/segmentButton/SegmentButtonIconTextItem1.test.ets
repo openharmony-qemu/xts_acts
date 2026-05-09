@@ -69,6 +69,7 @@ export default function SegmentButtonIconTextItem1() {
         .$children[0]
         .$children[0]
         .$children[0]
+        .$children[0]
         .$children[2]
         .$children[3]
         .$children[0]
@@ -78,6 +79,7 @@ export default function SegmentButtonIconTextItem1() {
       expect(obj.$attrs.src).assertEqual('resource:///125830170.svg');
       await CommonFunc.sleep(1000);
       let selecticon: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
+        .$children[0]
         .$children[0]
         .$children[0]
         .$children[0]
@@ -115,6 +117,7 @@ export default function SegmentButtonIconTextItem1() {
         .$children[0]
         .$children[0]
         .$children[1]
+        .$children[0]
         .$children[2]
         .$children[0]//button位置
         .$children[0]
@@ -128,6 +131,7 @@ export default function SegmentButtonIconTextItem1() {
         .$children[0]
         .$children[0]
         .$children[1]
+        .$children[0]
         .$children[2]
         .$children[4]
         .$children[0]
@@ -141,6 +145,7 @@ export default function SegmentButtonIconTextItem1() {
         .$children[0]
         .$children[0]
         .$children[1]
+        .$children[0]
         .$children[2]
         .$children[0]
         .$children[0]

@@ -21,6 +21,15 @@ import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { waitForMainRouterForStaticTest } from '../../../ets/MainAbility/common/UIContextStaticTestBridge';
 import { UtilsTest } from '../Util.test';
+import {
+  Component,
+  Driver,
+  MouseButton,
+  UiWindow,
+  ON,
+  Rect,
+  Point
+} from '@ohos.UiTest';
 
 function gesturePanOptionsDistanceMap(): Map<SourceTool, number> {
   let m: Map<SourceTool, number> = new Map<SourceTool, number>();
@@ -52,10 +61,9 @@ export default function GestureStaticSuiteTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ArkUI_Gesture_EventLocationInfo_GlobalDisplayX_4600', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let rect = Utils.getComponentRect('gestureTapHost');
-      let cx = (rect.left + rect.right) / 2;
-      let cy = (rect.top + rect.bottom) / 2;
-      await Utils.drag(cx, cy, cx, cy, 1);
+      let driver = Driver.create();
+      let button = await driver.findComponent(ON.id("gestureTapHost"));
+      await (button?.click() as Promise<void>);
       await Utils.sleep(400);
       let gdx = AppStorage.get<string>('gesture_probe_tap_loc_gdx');
       let hasGdx: boolean = gdx != null && gdx.length > 0;
@@ -73,10 +81,9 @@ export default function GestureStaticSuiteTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ArkUI_Gesture_EventLocationInfo_GlobalDisplayY_4700', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let rect = Utils.getComponentRect('gestureTapHost');
-      let cx = (rect.left + rect.right) / 2;
-      let cy = (rect.top + rect.bottom) / 2;
-      await Utils.drag(cx, cy, cx, cy, 1);
+      let driver = Driver.create();
+      let button = await driver.findComponent(ON.id("gestureTapHost"));
+      await (button?.click() as Promise<void>);
       await Utils.sleep(400);
       let gdy = AppStorage.get<string>('gesture_probe_tap_loc_gdy');
       let hasGdy: boolean = gdy != null && gdy.length > 0;
@@ -93,10 +100,12 @@ export default function GestureStaticSuiteTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ArkUI_Gesture_FingerInfo_GlobalDisplayX_4800', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let rect = Utils.getComponentRect('gesturePanHost');
-      let x0 = (rect.left + rect.right) / 2;
-      let y0 = (rect.top + rect.bottom) / 2;
-      await Utils.drag(x0, y0, x0 + 80, y0, 10);
+      let driver = Driver.create();
+      let button = await driver.findComponent(ON.id('gesturePanHost'));
+      let center = await (button?.getBoundsCenter() as Promise<Point>);
+      let rect = await (button?.getBounds() as Promise<Rect>)
+      await ((driver.swipe(Math.round(rect.right) as Int, Math.round(center.y) as Int,
+        Math.round(rect.left) as Int, Math.round(center.y) as Int)) as Promise<void>);
       await Utils.sleep(400);
       let gdx =
         AppStorage.get<string>('gesture_probe_pan_fi_gdx') ??
@@ -116,10 +125,12 @@ export default function GestureStaticSuiteTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ArkUI_Gesture_FingerInfo_GlobalDisplayY_4900', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let rect = Utils.getComponentRect('gesturePanHost');
-      let x0 = (rect.left + rect.right) / 2;
-      let y0 = (rect.top + rect.bottom) / 2;
-      await Utils.drag(x0, y0, x0 + 80, y0, 10);
+      let driver = Driver.create();
+      let button = await driver.findComponent(ON.id('gesturePanHost'));
+      let center = await (button?.getBoundsCenter() as Promise<Point>);
+      let rect = await (button?.getBounds() as Promise<Rect>)
+      await ((driver.swipe(Math.round(rect.right) as Int, Math.round(center.y) as Int,
+        Math.round(rect.left) as Int, Math.round(center.y) as Int)) as Promise<void>);
       await Utils.sleep(650);
       let gdy = AppStorage.get<string>('gesture_probe_pan_fi_gdy');
       let hasGdyPan: boolean = gdy != null && gdy.length > 0;
@@ -164,19 +175,19 @@ export default function GestureStaticSuiteTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ArkUI_Gesture_TouchRecognizer_GetEventTargetInfo_5100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let rectTap = Utils.getComponentRect('gestureTapHost');
-      let tcx = (rectTap.left + rectTap.right) / 2;
-      let tcy = (rectTap.top + rectTap.bottom) / 2;
-      await Utils.drag(tcx, tcy, tcx, tcy, 1);
+      let driver = Driver.create();
+      let button = await driver.findComponent(ON.id("gestureTapHost"));
+      await (button?.click() as Promise<void>);
       await Utils.sleep(300);
       let tid = AppStorage.get<string>('gesture_probe_touch_target_id');
       let tidOk: boolean = tid != null && tid.length > 0;
       expect(tidOk).assertTrue();
 
-      let rectPan = Utils.getComponentRect('gesturePanHost');
-      let x0 = (rectPan.left + rectPan.right) / 2;
-      let y0 = (rectPan.top + rectPan.bottom) / 2;
-      await Utils.drag(x0, y0, x0 + 80, y0, 10);
+      let button2 = await driver.findComponent(ON.id('gesturePanHost'));
+      let center = await (button2?.getBoundsCenter() as Promise<Point>);
+      let rect = await (button2?.getBounds() as Promise<Rect>)
+      await ((driver.swipe(Math.round(rect.right) as Int, Math.round(center.y) as Int,
+        Math.round(rect.left) as Int, Math.round(center.y) as Int)) as Promise<void>);
       await Utils.sleep(400);
       let pid = AppStorage.get<string>('gesture_probe_pan_target_id');
       let pidOk: boolean = pid != null && pid.length > 0;
@@ -193,10 +204,9 @@ export default function GestureStaticSuiteTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ArkUI_Gesture_TouchRecognizer_CancelTouch_5200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let rect = Utils.getComponentRect('gestureTapHost');
-      let cx = (rect.left + rect.right) / 2;
-      let cy = (rect.top + rect.bottom) / 2;
-      await Utils.drag(cx, cy, cx, cy, 1);
+      let driver = Driver.create();
+      let button = await driver.findComponent(ON.id("gestureTapHost"));
+      await (button?.click() as Promise<void>);
       await Utils.sleep(400);
       expect(AppStorage.get<string>('gesture_probe_tap_fire')).assertEqual('1');
       expect(AppStorage.get<string>('gesture_probe_touch_target_id')).assertEqual('gestureTapHost');
@@ -212,10 +222,12 @@ export default function GestureStaticSuiteTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ArkUI_Gesture_PanRecognizer_GetDirection_5300', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let rect = Utils.getComponentRect('gesturePanHost');
-      let x0 = (rect.left + rect.right) / 2;
-      let y0 = (rect.top + rect.bottom) / 2;
-      await Utils.drag(x0, y0, x0 + 80, y0, 10);
+      let driver = Driver.create();
+      let button = await driver.findComponent(ON.id('gesturePanHost'));
+      let center = await (button?.getBoundsCenter() as Promise<Point>);
+      let rect = await (button?.getBounds() as Promise<Rect>)
+      await ((driver.swipe(Math.round(rect.right) as Int, Math.round(center.y) as Int,
+        Math.round(rect.left) as Int, Math.round(center.y) as Int)) as Promise<void>);
       await Utils.sleep(650);
       let endOff = AppStorage.get<string>('gesture_probe_pan_end_off_x');
       expect(Math.abs(Number(endOff ?? '0'))).assertLarger(0);
@@ -231,10 +243,12 @@ export default function GestureStaticSuiteTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ArkUI_Gesture_PanRecognizer_GetDistance_5400', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let rect = Utils.getComponentRect('gesturePanHost');
-      let x0 = (rect.left + rect.right) / 2;
-      let y0 = (rect.top + rect.bottom) / 2;
-      await Utils.drag(x0, y0, x0 + 80, y0, 10);
+      let driver = Driver.create();
+      let button = await driver.findComponent(ON.id('gesturePanHost'));
+      let center = await (button?.getBoundsCenter() as Promise<Point>);
+      let rect = await (button?.getBounds() as Promise<Rect>)
+      await ((driver.swipe(Math.round(rect.right) as Int, Math.round(center.y) as Int,
+        Math.round(rect.left) as Int, Math.round(center.y) as Int)) as Promise<void>);
       await Utils.sleep(400);
       expect(Number(AppStorage.get<string>('gesture_probe_pan_rec_dist'))).assertLarger(0);
       done();
@@ -249,10 +263,12 @@ export default function GestureStaticSuiteTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ArkUI_Gesture_PanRecognizer_GetDistanceMap_5500', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let rect = Utils.getComponentRect('gesturePanHost');
-      let x0 = (rect.left + rect.right) / 2;
-      let y0 = (rect.top + rect.bottom) / 2;
-      await Utils.drag(x0, y0, x0 + 80, y0, 10);
+      let driver = Driver.create();
+      let button = await driver.findComponent(ON.id('gesturePanHost'));
+      let center = await (button?.getBoundsCenter() as Promise<Point>);
+      let rect = await (button?.getBounds() as Promise<Rect>)
+      await ((driver.swipe(Math.round(rect.right) as Int, Math.round(center.y) as Int,
+        Math.round(rect.left) as Int, Math.round(center.y) as Int)) as Promise<void>);
       await Utils.sleep(650);
       expect(Number(AppStorage.get<string>('gesture_probe_pan_cfg_dm_size'))).assertLarger(0);
       expect(AppStorage.get<string>('gesture_probe_pan_start')).assertEqual('1');

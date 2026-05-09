@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2025 HiHope Open Source Organization.
+* Copyright (C) 2025-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -807,19 +807,19 @@ export default function ArrayToReversedTest() {
         const caseName = 'ArrayToReversedTest3300';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          11.2 as float,
-          12.3 as float,
-          13.4 as float,
-          14.5 as float,
-          15.6 as float
+          11.2.toFloat(),
+          12.3.toFloat(),
+          13.4.toFloat(),
+          14.5.toFloat(),
+          15.6.toFloat()
         ];
         const result = toReversed(arr);
         const expected: FixedArray<float> = [
-          15.6 as float,
-          14.5 as float,
-          13.4 as float,
-          12.3 as float,
-          11.2 as float,
+          15.6.toFloat(),
+          14.5.toFloat(),
+          13.4.toFloat(),
+          12.3.toFloat(),
+          11.2.toFloat(),
         ];
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -844,19 +844,19 @@ export default function ArrayToReversedTest() {
         const caseName = 'ArrayToReversedTest3400';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          -11.2 as float,
-          -12.3 as float,
-          -13.4 as float,
-          -14.5 as float,
-          -15.6 as float
+          -11.2.toFloat(),
+          -12.3.toFloat(),
+          -13.4.toFloat(),
+          -14.5.toFloat(),
+          -15.6.toFloat()
         ];
         const result = toReversed(arr);
         const expected: FixedArray<float> = [
-          -15.6 as float,
-          -14.5 as float,
-          -13.4 as float,
-          -12.3 as float,
-          -11.2 as float,
+          -15.6.toFloat(),
+          -14.5.toFloat(),
+          -13.4.toFloat(),
+          -12.3.toFloat(),
+          -11.2.toFloat(),
         ];
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -881,19 +881,19 @@ export default function ArrayToReversedTest() {
         const caseName = 'ArrayToReversedTest3500';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          11.2 as float,
-          -12.3 as float,
-          13.4 as float,
-          -14.5 as float,
-          15.6 as float
+          11.2.toFloat(),
+          -12.3.toFloat(),
+          13.4.toFloat(),
+          -14.5.toFloat(),
+          15.6.toFloat()
         ];
         const result = toReversed(arr);
         const expected: FixedArray<float> = [
-          15.6 as float,
-          -14.5 as float,
-          13.4 as float,
-          -12.3 as float,
-          11.2 as float,
+          15.6.toFloat(),
+          -14.5.toFloat(),
+          13.4.toFloat(),
+          -12.3.toFloat(),
+          11.2.toFloat(),
         ];
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -918,15 +918,15 @@ export default function ArrayToReversedTest() {
         const caseName = 'ArrayToReversedTest3600';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          1111.11 as float,
-          1111.11 as float,
-          1111.11 as float,
+          1111.11.toFloat(),
+          1111.11.toFloat(),
+          1111.11.toFloat(),
         ];
         const result = toReversed(arr);
         const expected: FixedArray<float> = [
-          1111.11 as float,
-          1111.11 as float,
-          1111.11 as float,
+          1111.11.toFloat(),
+          1111.11.toFloat(),
+          1111.11.toFloat(),
         ];
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -968,9 +968,9 @@ export default function ArrayToReversedTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToReversedTest3800';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [0.0 as float];
+        const arr: FixedArray<float> = [0.0.toFloat()];
         const result = toReversed(arr);
-        const expected: FixedArray<float> = [0.0 as float];
+        const expected: FixedArray<float> = [0.0.toFloat()];
         expect(result[0]).assertEqual(expected[0]);
         console.info(`${caseName}, test end`);
         Done();
@@ -990,15 +990,15 @@ export default function ArrayToReversedTest() {
         const caseName = 'ArrayToReversedTest3900';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          1000000.0 as float,
-          2000000.0 as float,
-          3000000.0 as float
+          1000000.0.toFloat(),
+          2000000.0.toFloat(),
+          3000000.0.toFloat()
         ];
         const result = toReversed(arr);
         const expected: FixedArray<float> = [
-          3000000.0 as float,
-          2000000.0 as float,
-          1000000.0 as float
+          3000000.0.toFloat(),
+          2000000.0.toFloat(),
+          1000000.0.toFloat()
         ];
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1021,13 +1021,13 @@ export default function ArrayToReversedTest() {
         const caseName = 'ArrayToReversedTest4000';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          3.26e-6 as float,
-          8.76e+5 as float
+          (3.26e-6).toFloat(),
+          (8.76e+5).toFloat()
         ];
         const result = toReversed(arr);
         const expected: FixedArray<float> = [
-          8.76e+5 as float,
-          3.26e-6 as float
+          (8.76e+5).toFloat(),
+          (3.26e-6).toFloat()
         ];
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);

@@ -18,7 +18,7 @@
 #include "Common.h"
 #include <cfloat>
 
-ani_int AssertIsBoolean(ani_env *env, ani_object boxed)
+ani_boolean AssertIsBoolean(ani_env *env, ani_object boxed)
 {
     ani_class typeClass = nullptr;
     ASSERT_EQ(env->FindClass("std.core.Boolean", &typeClass), ANI_OK);
@@ -29,7 +29,7 @@ ani_int AssertIsBoolean(ani_env *env, ani_object boxed)
     return ANI_TRUE;
 }
 
-ani_int testBoxBooleanNative([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+ani_boolean testBoxBooleanNative([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
 {
     ani_object boxedBool = nullptr;
     ASSERT_EQ(env->Primitive_Box_Boolean(ANI_TRUE, &boxedBool), ANI_OK);
@@ -40,7 +40,7 @@ ani_int testBoxBooleanNative([[maybe_unused]] ani_env *env, [[maybe_unused]] ani
     return ANI_TRUE;
 }
 
-ani_int testUnboxBooleanNative(ani_env *env)
+ani_boolean testUnboxBooleanNative(ani_env *env)
 {
     ani_class cls;
     ASSERT_EQ(env->FindClass("entry.src.main.src.ets.BoxUnBoxPrimitive.Message", &cls), ANI_OK);
@@ -61,7 +61,7 @@ ani_int testUnboxBooleanNative(ani_env *env)
     return ANI_TRUE;
 }
 
-ani_int AssertIsByte(ani_env *env, ani_object boxed)
+ani_boolean AssertIsByte(ani_env *env, ani_object boxed)
 {
     ani_class typeClass = nullptr;
     ASSERT_EQ(env->FindClass("std.core.Byte", &typeClass), ANI_OK);
@@ -72,7 +72,7 @@ ani_int AssertIsByte(ani_env *env, ani_object boxed)
     return ANI_TRUE;
 }
 
-ani_int testBoxByteNative(ani_env *env)
+ani_boolean testBoxByteNative(ani_env *env)
 {
     ani_object boxedMin = nullptr;
     ASSERT_EQ(env->Primitive_Box_Byte(INT8_MIN, &boxedMin), ANI_OK);
@@ -105,7 +105,7 @@ ani_int testBoxByteNative(ani_env *env)
     return ANI_TRUE;
 }
 
-ani_int testUnboxByteNative(ani_env *env)
+ani_boolean testUnboxByteNative(ani_env *env)
 {
     ani_class cls;
     ASSERT_EQ(env->FindClass("entry.src.main.src.ets.BoxUnBoxPrimitive.Message", &cls), ANI_OK);
@@ -127,7 +127,7 @@ ani_int testUnboxByteNative(ani_env *env)
     return ANI_TRUE;
 }
 
-ani_int AssertIsChar(ani_env *env, ani_object boxed)
+ani_boolean AssertIsChar(ani_env *env, ani_object boxed)
 {
     ani_class typeClass = nullptr;
     ASSERT_EQ(env->FindClass("std.core.Char", &typeClass), ANI_OK);
@@ -138,7 +138,7 @@ ani_int AssertIsChar(ani_env *env, ani_object boxed)
     return ANI_TRUE;
 }
 
-ani_int testBoxCharNative(ani_env *env)
+ani_boolean testBoxCharNative(ani_env *env)
 {
     ani_object boxedMin = nullptr;
     ASSERT_EQ(env->Primitive_Box_Char(0, &boxedMin), ANI_OK);
@@ -170,7 +170,7 @@ ani_int testBoxCharNative(ani_env *env)
     return ANI_TRUE;
 }
 
-ani_int testUnboxCharNative(ani_env *env)
+ani_boolean testUnboxCharNative(ani_env *env)
 {
     ani_class cls;
     ASSERT_EQ(env->FindClass("entry.src.main.src.ets.BoxUnBoxPrimitive.Message", &cls), ANI_OK);
@@ -191,7 +191,7 @@ ani_int testUnboxCharNative(ani_env *env)
     return ANI_TRUE;
 }
 
-ani_int AssertIsDouble(ani_env *env, ani_object boxed)
+ani_boolean AssertIsDouble(ani_env *env, ani_object boxed)
 {
     ani_class typeClass = nullptr;
     ASSERT_EQ(env->FindClass("std.core.Double", &typeClass), ANI_OK);
@@ -202,7 +202,7 @@ ani_int AssertIsDouble(ani_env *env, ani_object boxed)
     return ANI_TRUE;
 }
 
-ani_int testBoxDoubleNative(ani_env *env)
+ani_boolean testBoxDoubleNative(ani_env *env)
 {
     ani_object boxedMin = nullptr;
     ASSERT_EQ(env->Primitive_Box_Double(-DBL_MAX, &boxedMin), ANI_OK);
@@ -235,7 +235,7 @@ ani_int testBoxDoubleNative(ani_env *env)
     return ANI_TRUE;
 }
 
-ani_int testUnboxDoubleNative(ani_env *env)
+ani_boolean testUnboxDoubleNative(ani_env *env)
 {
     ani_class cls;
     ASSERT_EQ(env->FindClass("entry.src.main.src.ets.BoxUnBoxPrimitive.Message", &cls), ANI_OK);
@@ -257,7 +257,7 @@ ani_int testUnboxDoubleNative(ani_env *env)
     return ANI_TRUE;
 }
 
-ani_int AssertIsFloat(ani_env *env, ani_object boxed)
+ani_boolean AssertIsFloat(ani_env *env, ani_object boxed)
 {
     ani_class typeClass = nullptr;
     ASSERT_EQ(env->FindClass("std.core.Float", &typeClass), ANI_OK);
@@ -268,7 +268,7 @@ ani_int AssertIsFloat(ani_env *env, ani_object boxed)
     return ANI_TRUE;
 }
 
-ani_int testBoxFloatNative(ani_env *env)
+ani_boolean testBoxFloatNative(ani_env *env)
 {
     ani_object boxedMin = nullptr;
     ASSERT_EQ(env->Primitive_Box_Float(-FLT_MAX, &boxedMin), ANI_OK);
@@ -300,7 +300,7 @@ ani_int testBoxFloatNative(ani_env *env)
     return ANI_TRUE;
 }
 
-ani_int testUnboxFloatNative(ani_env *env)
+ani_boolean testUnboxFloatNative(ani_env *env)
 {
     ani_class cls;
     ASSERT_EQ(env->FindClass("entry.src.main.src.ets.BoxUnBoxPrimitive.Message", &cls), ANI_OK);
@@ -321,7 +321,7 @@ ani_int testUnboxFloatNative(ani_env *env)
     return ANI_TRUE;
 }
 
-ani_int AssertIsInt(ani_env *env, ani_object boxed)
+ani_boolean AssertIsInt(ani_env *env, ani_object boxed)
 {
     ani_class typeClass = nullptr;
     ASSERT_EQ(env->FindClass("std.core.Int", &typeClass), ANI_OK);
@@ -332,7 +332,7 @@ ani_int AssertIsInt(ani_env *env, ani_object boxed)
     return ANI_TRUE;
 }
 
-ani_int testBoxIntNative(ani_env *env)
+ani_boolean testBoxIntNative(ani_env *env)
 {
     ani_object boxedMin = nullptr;
     ASSERT_EQ(env->Primitive_Box_Int(INT32_MIN, &boxedMin), ANI_OK);
@@ -365,7 +365,7 @@ ani_int testBoxIntNative(ani_env *env)
     return ANI_TRUE;
 }
 
-ani_int testUnboxIntNative(ani_env *env)
+ani_boolean testUnboxIntNative(ani_env *env)
 {
     ani_class cls;
     ASSERT_EQ(env->FindClass("entry.src.main.src.ets.BoxUnBoxPrimitive.Message", &cls), ANI_OK);
@@ -387,7 +387,7 @@ ani_int testUnboxIntNative(ani_env *env)
     return ANI_TRUE;
 }
 
-ani_int AssertIsLong(ani_env *env, ani_object boxed)
+ani_boolean AssertIsLong(ani_env *env, ani_object boxed)
 {
     ani_class typeClass = nullptr;
     ASSERT_EQ(env->FindClass("std.core.Long", &typeClass), ANI_OK);
@@ -398,7 +398,7 @@ ani_int AssertIsLong(ani_env *env, ani_object boxed)
     return ANI_TRUE;
 }
 
-ani_int testBoxLongNative(ani_env *env)
+ani_boolean testBoxLongNative(ani_env *env)
 {
     ani_object boxedMin = nullptr;
     ASSERT_EQ(env->Primitive_Box_Long(INT64_MIN, &boxedMin), ANI_OK);
@@ -431,7 +431,7 @@ ani_int testBoxLongNative(ani_env *env)
     return ANI_TRUE;
 }
 
-ani_int testUnboxLongNative(ani_env *env)
+ani_boolean testUnboxLongNative(ani_env *env)
 {
     ani_class cls;
     ASSERT_EQ(env->FindClass("entry.src.main.src.ets.BoxUnBoxPrimitive.Message", &cls), ANI_OK);
@@ -453,7 +453,7 @@ ani_int testUnboxLongNative(ani_env *env)
     return ANI_TRUE;
 }
 
-ani_int AssertIsShort(ani_env *env, ani_object boxed)
+ani_boolean AssertIsShort(ani_env *env, ani_object boxed)
 {
     ani_class typeClass = nullptr;
     ASSERT_EQ(env->FindClass("std.core.Short", &typeClass), ANI_OK);
@@ -464,7 +464,7 @@ ani_int AssertIsShort(ani_env *env, ani_object boxed)
     return ANI_TRUE;
 }
 
-ani_int testBoxShortNative(ani_env *env)
+ani_boolean testBoxShortNative(ani_env *env)
 {
     ani_object boxedMin = nullptr;
     ASSERT_EQ(env->Primitive_Box_Short(INT16_MIN, &boxedMin), ANI_OK);
@@ -497,7 +497,7 @@ ani_int testBoxShortNative(ani_env *env)
     return ANI_TRUE;
 }
 
-ani_int testUnboxShortNative(ani_env *env)
+ani_boolean testUnboxShortNative(ani_env *env)
 {
     ani_class cls;
     ASSERT_EQ(env->FindClass("entry.src.main.src.ets.BoxUnBoxPrimitive.Message", &cls), ANI_OK);

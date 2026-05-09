@@ -15,14 +15,12 @@
 import WindowModalTest from "./WindowModal.test";
 import WindowZindexTest from "./WindowZindex.test";
 import WindowOrientationTest from "./WindowOrientation.test";
-import WindowPropertiesTest from "./WindowProperties.test";
 import WindowKeyBoardTest from "./WindowKeyBoard.test";
 import WindowFocusTest from "./WindowFocus.test";
 export default function testsuite() {
   WindowModalTest();
   WindowZindexTest();
   WindowOrientationTest();
-  WindowPropertiesTest();
   WindowKeyBoardTest();
   WindowFocusTest();
 }

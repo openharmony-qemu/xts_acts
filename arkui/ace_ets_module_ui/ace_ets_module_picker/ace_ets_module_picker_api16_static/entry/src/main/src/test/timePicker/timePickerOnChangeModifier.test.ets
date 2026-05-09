@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -91,7 +91,7 @@ it('TimePicker_OnChange_Modifier_static_001', Level.LEVEL1, async (done: () => v
         let right = timePicker.right
         let middle = (bottom-top) / 2 + top
         let left = timePicker.left
-        await driver.swipe(Math.round((right-left)/2+left) as Int, Math.round(middle) as Int, Math.round((right-left)/2+left) as Int, Math.round(0) as Int);
+        await driver.swipe(Math.round((right-left)/2+left).toInt(), Math.round(middle).toInt(), Math.round((right-left)/2+left).toInt(), Math.round(0).toInt());
         await Utils.sleep(5000);
         let strJsonNew:string = inspector.getInspectorByKey('onChangeOff');
         console.info("TimePicker_OnChange_Modifier_static_001 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)
@@ -124,8 +124,8 @@ it('TimePicker_OnChange_Modifier_static_002', Level.LEVEL1, async (done: () => v
         let right = timePicker.right
         let middle = (bottom-top) / 2 + top
         let left =timePicker.left
-        await driver.swipe(Math.round((right-left)/2+left) as Int, Math.round(middle) as Int, Math.round((right-left)/2+left) as Int,
-          Math.round(0) as Int);
+        await driver.swipe(Math.round((right-left)/2+left).toInt(), Math.round(middle).toInt(), Math.round((right-left)/2+left).toInt(),
+          Math.round(0).toInt());
         await Utils.sleep(5000);
         let strJsonNew:string = inspector.getInspectorByKey('onChangeOff');
         console.info("TimePicker_OnChange_Modifier_static_002 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)

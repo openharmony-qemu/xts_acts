@@ -845,21 +845,33 @@ export default function windowPropertiesTest3() {
       try {
         let testWindow = await window.createWindow(config);
         console.info(`${message} createWindow success.`);
-        await testWindow.resize(500, 500);
-        console.info(`${message} resize success.`);
         await testWindow.setUIContent("testability/pages/Index1");
         console.info(`${message} setUIContent success.`);
         await testWindow.showWindow();
         console.info(`${message} showWindow success.`);
+        let windowLimits = testWindow.getWindowLimits();
+        console.info(`${message} getWindowLimits.{windowLimits}`);
+        let tmpWindowWidth:number = 0;
+        let tmpWindowHeight:number = 0;
+        if (windowLimits.minWidth !== undefined && windowLimits.maxWidth != undefined){
+          tmpWindowWidth = windowLimits?.minWidth + 100 < windowLimits?.maxWidth ? windowLimits?.minWidth + 100 : windowLimits?.minWidth;
+        }
+        if (windowLimits.minHeight !== undefined && windowLimits.maxHeight != undefined){
+          tmpWindowHeight = windowLimits?.minHeight + 100 < windowLimits?.maxHeight ? windowLimits?.minHeight + 100 : windowLimits?.minHeight;
+        }
+        await testWindow.resize(tmpWindowWidth, tmpWindowHeight);
+        console.info(`${message} resize success.`);
         await testWindow.moveWindowTo(100, 100);
         console.info(`${message} moveWindowTo success.`);
+
+        await sleep(500);
 
         try {
           let data = await window.getAllWindowLayoutInfo(displayId, option);
           console.info(`${message} Succeeded in getting window layout info. Data: ${JSON.stringify(data)}`);
           let flag = false
           for (let i = 0; i < data.length; i++) {
-            if (data[i].windowRect.width === 500 && data[i].windowRect.height === 500) {
+            if (data[i].windowRect.width === tmpWindowWidth && data[i].windowRect.height === tmpWindowHeight) {
               flag = true
             }
           }

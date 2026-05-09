@@ -6,7 +6,7 @@ import {
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class MyTextModifier implements AttributeModifier<TextInputAttribute> {
+export class MyTextModifier implements AttributeModifier<TextInputAttribute> {
   public isChange: boolean = true;
 
   applyNormalAttribute(instance: TextInputAttribute): void {

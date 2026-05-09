@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -72,7 +72,7 @@ it('onScrollIndexFlow2_static_0100', Level.LEVEL1, async (done: () => void): Pro
       let height = bottom -top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width/2) as int,Math.round(top + height*0.7) as int,Math.round(left + width/2) as int,Math.round(top + height*0.2) as int);
+      await driver.swipe(Math.round(left + width/2).toInt(),Math.round(top + height*0.7).toInt(),Math.round(left + width/2).toInt(),Math.round(top + height*0.2).toInt());
       await CommonFunc.sleep(2000);
 
       let strJson = inspector.getInspectorByKey('onScrollIndex_flow');

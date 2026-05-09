@@ -348,7 +348,7 @@ export default function actsXml4Test() {
         tokenValueCallbackFunction: (event: xml.EventType, info: xml.ParseInfo): boolean => {
           const currentDepth = info.getDepth();
           depthSequence.push(currentDepth);
-          maxDepth = Math.max(maxDepth, info.getDepth()) as int;
+          maxDepth = Math.max(maxDepth, info.getDepth()).toInt();
           return true;
         }
       });

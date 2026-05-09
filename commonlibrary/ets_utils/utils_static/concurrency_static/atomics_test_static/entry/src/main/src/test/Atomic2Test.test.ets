@@ -168,7 +168,7 @@ export default function atomics2Test() {
       const invalidIdx2: int = -2;
 
       const promises = [
-        Promise.resolve().then((): number => Atomics.store(ta, 1, validVal as long)),
+        Promise.resolve().then((): number => Atomics.store(ta, 1, validVal.toLong())),
         Promise.resolve().then((): number => Atomics.store(ta, invalidIdx1 as int, 100)),
         Promise.resolve().then((): number => Atomics.store(ta, invalidIdx2 as int, 50))
       ];
@@ -200,7 +200,7 @@ export default function atomics2Test() {
       const validVal: int = 255;
 
       const promises = [
-        Promise.resolve().then((): number => Atomics.store(ta, 0, validVal as long)), // Valid
+        Promise.resolve().then((): number => Atomics.store(ta, 0, validVal.toLong())), // Valid
         Promise.resolve().then((): number => Atomics.store(ta, -5, 100)), // Invalid
         Promise.resolve().then((): number => Atomics.store(ta, -1, 50))// Invalid
       ];
@@ -237,7 +237,7 @@ export default function atomics2Test() {
       const sab = new ArrayBuffer(1);
       const ta = new Uint8Array(sab);
       const rangeCheckStore = (arr: Uint8Array, idx: int, val: number, min: number, max: number) => {
-        const storedVal = Atomics.store(arr, idx as int, val as long);
+        const storedVal = Atomics.store(arr, idx as int, val.toLong());
         return storedVal >= min && storedVal <= max ? storedVal : 'Out of range';
       }
 
@@ -259,7 +259,7 @@ export default function atomics2Test() {
       const sab = new ArrayBuffer(3); // 3 Uint8 elements
       const ta = new Uint8Array(sab);
       const evenIndexStore = (arr: Uint8Array, idx: int, val: number) =>
-      idx % 2 === 0 ? Atomics.store(arr, idx as int, val as long) : 'Odd index'
+      idx % 2 === 0 ? Atomics.store(arr, idx as int, val.toLong()) : 'Odd index'
 
       expect(evenIndexStore(ta, 2, 255)).assertEqual(255);
       expect(evenIndexStore(ta, 1, 100)).assertEqual('Odd index');
@@ -383,7 +383,7 @@ export default function atomics2Test() {
       const ua = new Uint16Array(sab);
       const maxUint16: int = 65535;
       ua[0] = maxUint16;
-      const oldValue = Atomics.compareExchange(ua, 0, maxUint16 as long, 100);
+      const oldValue = Atomics.compareExchange(ua, 0, maxUint16.toLong(), 100);
       expect(oldValue).assertEqual(maxUint16);
       expect(ua[0]).assertEqual(100);
     });
@@ -466,7 +466,7 @@ export default function atomics2Test() {
               errorLogs.push(errMsg);
               reject(new Error(errMsg));
             }
-            const old = Atomics.exchange(ia, index as int, newValue as long);
+            const old = Atomics.exchange(ia, index as int, newValue.toLong());
             resolve(old);
           }, 3);
         });
@@ -509,7 +509,7 @@ export default function atomics2Test() {
             if (newValue < 0) {
               reject(new Error('Negative value not allowed'));
             }
-            const old = Atomics.exchange(ia, index as int, newValue as long);
+            const old = Atomics.exchange(ia, index as int, newValue.toLong());
             resolve(old);
           }, 3);
         });
@@ -556,7 +556,7 @@ export default function atomics2Test() {
             if (index === 1) {
               reject(new Error('Index 1 blocked'));
             }
-            const old = Atomics.exchange(ia, index as int, newValue as long);
+            const old = Atomics.exchange(ia, index as int, newValue.toLong());
             resolve(old);
           }, 4);
         });

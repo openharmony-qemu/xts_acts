@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -793,7 +793,7 @@ export default function Json1Test() {
       const jsonStr: string = '{"success": 123}';
       let typ: Type = Type.of(new BoolToNum039());
       const result: BoolToNum039 =
-        JSON.parse<BoolToNum039>(jsonStr, (k: string, v: Any) => k === "success" ? (v ? 1 : 0) as number : v,
+        JSON.parse<BoolToNum039>(jsonStr, (k: string, v: Any) => k === "success" ? (v ? 1 : 0).toDouble() : v,
           typ) as BoolToNum039;
       expect(result.success).assertEqual(1);
     });

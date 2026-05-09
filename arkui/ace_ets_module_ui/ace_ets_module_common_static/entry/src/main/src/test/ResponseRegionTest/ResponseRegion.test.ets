@@ -89,8 +89,8 @@ export default function ResponseRegionTest() {
           throw new Error('button2 is null');
         }
         const rect = await (button?.getBounds() as Promise<Rect>)
-        const clickX: int = Math.round(rect.right + (rect.right - rect.left) / 2) as int;
-        const clickY: int = Math.round(rect.top + (rect.bottom - rect.top) / 2) as int;
+        const clickX: int = Math.round(rect.right + (rect.right - rect.left) / 2).toInt();
+        const clickY: int = Math.round(rect.top + (rect.bottom - rect.top) / 2).toInt();
         await driver.click(clickX, clickY);
         await CommonFunc.sleep(1000);
         expect(AppStorage.get<string>('click2') as string).assertEqual('button2 clicked');

@@ -15,10 +15,12 @@
 
 import usbDdkTest from './UsbDdk.test';
 import usbCanIUseTest from './UsbCanIUse.test';
+import usbControlTransferTest from './UsbControlTransfer.test';
 
 export default function testsuite() {
     if (canIUse("SystemCapability.Driver.USB.Extension") && canIUse("SystemCapability.Driver.SCSI.Extension") && canIUse("SystemCapability.Driver.UsbSerial.Extension")){
         usbDdkTest();
+        usbControlTransferTest();
     } else {
         usbCanIUseTest()
     }

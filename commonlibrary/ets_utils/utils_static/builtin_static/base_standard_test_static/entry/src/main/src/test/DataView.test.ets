@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -88,7 +88,7 @@ export default function DataViewTest() {
       try {
         const buffer = new ArrayBuffer(16);
         const dView = new DataView(buffer);
-        dView.setUint32(5.5 as int, 3);
+        dView.setUint32((5.5).toInt(), 3);
         let value: Number = dView.getUint32(1);
         expect(value.toString()).assertEqual('0');
       } catch (err) {
@@ -206,7 +206,7 @@ export default function DataViewTest() {
       try {
         const buffer = new ArrayBuffer(8);
         const dView = new DataView(buffer);
-        dView.setUint16(5.5 as int, 3);
+        dView.setUint16((5.5).toInt(), 3);
         let value: Number = dView.getUint16(1);
         expect(value).assertEqual(0);
       } catch (err) {
@@ -323,7 +323,7 @@ export default function DataViewTest() {
       try {
         const buffer = new ArrayBuffer(64);
         const dView = new DataView(buffer);
-        dView.setUint8(5.5 as int, 3);
+        dView.setUint8((5.5).toInt(), 3);
         let value = dView.getUint8(1);
         expect(value).assertEqual(0);
       } catch (err) {
@@ -441,7 +441,7 @@ export default function DataViewTest() {
       try {
         const buffer = new ArrayBuffer(64);
         const dView = new DataView(buffer);
-        dView.setInt32(5.5 as int, 3);
+        dView.setInt32((5.5).toInt(), 3);
         let value = dView.getInt32(1);
         expect(value).assertEqual(0);
       } catch (err) {
@@ -559,7 +559,7 @@ export default function DataViewTest() {
       try {
         const buffer = new ArrayBuffer(10);
         const dView = new DataView(buffer);
-        dView.setUint16(5.5 as int, 3);
+        dView.setUint16((5.5).toInt(), 3);
         let value: Number = dView.getUint16(1);
         expect(value).assertEqual(0);
       } catch (err) {
@@ -677,7 +677,7 @@ export default function DataViewTest() {
       try {
         let buffer = new ArrayBuffer(8);
         let dView = new DataView(buffer);
-        dView.setInt8(5.5 as int, 3);
+        dView.setInt8((5.5).toInt(), 3);
         let value = dView.getUint8(1);
         expect(value).assertEqual(0);
       } catch (err) {
@@ -798,7 +798,7 @@ export default function DataViewTest() {
       try {
         let value = new ArrayBuffer(8);
         let dView = new DataView(value);
-        dView.setFloat64(5.5 as int, 3);
+        dView.setFloat64((5.5).toInt(), 3);
         let result: Number = dView.getFloat64(1);
         expect(false).assertFail();
       } catch (err) {
@@ -920,7 +920,7 @@ export default function DataViewTest() {
       try {
         const buffer = new ArrayBuffer(10);
         let dView = new DataView(buffer);
-        dView.setFloat32(5.5 as int, 3);
+        dView.setFloat32((5.5).toInt(), 3);
         let value = dView.getFloat32(1);
         expect(value).assertEqual(0);
       } catch (err) {
@@ -1042,7 +1042,7 @@ export default function DataViewTest() {
       try {
         const buffer = new ArrayBuffer(10);
         let dView = new DataView(buffer);
-        dView.setBigUint64(5.5 as int, 4n);
+        dView.setBigUint64((5.5).toInt(), 4n);
         let value = dView.getBigUint64(1);
         expect(false).assertFail();
       } catch (err) {
@@ -1401,7 +1401,7 @@ export default function DataViewTest() {
       const TAG = 'testDataViewGetBigInt640004';
       try {
         const dataView = new DataView(new ArrayBuffer(8));
-        const value = dataView.getBigInt64(5.5 as int);
+        const value = dataView.getBigInt64((5.5).toInt());
         expect(false).assertFail();
       } catch (err) {
         if (err instanceof RangeError) {
@@ -1493,7 +1493,7 @@ export default function DataViewTest() {
       const TAG = 'testDataViewGetBigUint640003';
       try {
         const dataView = new DataView(new ArrayBuffer(8));
-        const value = dataView.getBigUint64(5.5 as int);
+        const value = dataView.getBigUint64((5.5).toInt());
         expect(false).assertFail();
       } catch (err) {
         if (err instanceof RangeError) {
@@ -1685,7 +1685,7 @@ export default function DataViewTest() {
       try {
         const buffer = new ArrayBuffer(8);
         const dataview = new DataView(buffer);
-        dataview.getFloat32(5.5 as int);
+        dataview.getFloat32((5.5).toInt());
         expect(false).assertFail();
       } catch (err) {
         if (err instanceof RangeError) {
@@ -1830,7 +1830,7 @@ export default function DataViewTest() {
       try {
         const buffer = new ArrayBuffer(8);
         const dataview = new DataView(buffer);
-        dataview.getFloat64(5.5 as int);
+        dataview.getFloat64((5.5).toInt());
         expect(false).assertFail();
       } catch (err) {
         if (err instanceof RangeError) {
@@ -2193,7 +2193,7 @@ export default function DataViewTest() {
       try {
         const buffer = new ArrayBuffer(8);
         const dataView = new DataView(buffer);
-        dataView.getInt32(5.5 as int);
+        dataView.getInt32((5.5).toInt());
         expect(false).assertFail();
       } catch (err) {
         if (err instanceof RangeError) {
@@ -2394,7 +2394,7 @@ export default function DataViewTest() {
       try {
         const buffer = new ArrayBuffer(8);
         const dataView = new DataView(buffer);
-        const result = dataView.getUint16(5.5 as int);
+        const result = dataView.getUint16((5.5).toInt());
         // 断言结果应为0
         expect(result).assertEqual(0);
       } catch (err) {
@@ -2535,7 +2535,7 @@ export default function DataViewTest() {
       try {
         const buffer = new ArrayBuffer(8);
         const dataView = new DataView(buffer);
-        const result = dataView.getUint32(5.5 as int);
+        const result = dataView.getUint32((5.5).toInt());
         expect(false).assertFail();
       } catch (err) {
         if (err instanceof RangeError) {

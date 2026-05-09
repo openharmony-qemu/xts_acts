@@ -816,7 +816,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRL_SIGNATURE_FAILURE); // ERR_CRL_ISSUER_NOT_FOUND
+          expect(error.code).assertEqual(cert.CertResult.ERR_CRL_ISSUER_NOT_FOUND); // ERR_CRL_ISSUER_NOT_FOUND
         }
         done();
       });
@@ -932,7 +932,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRL_SIGNATURE_FAILURE); // openssl 行为 期望：ERR_CRL_ISSUER_NOT_FOUND
+          expect(error.code).assertEqual(cert.CertResult.ERR_CRL_ISSUER_NOT_FOUND); // openssl 行为 期望：ERR_CRL_ISSUER_NOT_FOUND
         }
         done();
       });

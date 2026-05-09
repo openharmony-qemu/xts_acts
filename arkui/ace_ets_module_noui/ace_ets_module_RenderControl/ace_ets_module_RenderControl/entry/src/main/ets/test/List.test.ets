@@ -87,6 +87,8 @@ import RELOAD from './LazyForEach/RELOAD.test';
 import repeatVirtualScrollNullUndefinedTest from './Repeat/repeatVirtualScrollNullUndefinedTest.test';
 import lazyForEachOnDatasetChangeNullUndefinedTest from './LazyForEach/lazyForEachOnDatasetChangeNullUndefinedTest.test';
 import LazyForEachCustomComponentFreezeModeTest from './LazyForEach/LazyForEachCustomComponentFreezeModeTest.test';
+import RepeatReusableMemOptStrategyTest from './Repeat/RepeatReusableMemOptStrategyTest.test';
+import LazyForEachReusableMemOptStrategyTest from './LazyForEach/LazyForEachReusableMemOptStrategyTest.test';
 
 export default function testsuite() {
     Foreach1();
@@ -163,4 +165,6 @@ export default function testsuite() {
     repeatVirtualScrollNullUndefinedTest();
     lazyForEachOnDatasetChangeNullUndefinedTest();
     LazyForEachCustomComponentFreezeModeTest();
+    RepeatReusableMemOptStrategyTest();
+    LazyForEachReusableMemOptStrategyTest();
 }

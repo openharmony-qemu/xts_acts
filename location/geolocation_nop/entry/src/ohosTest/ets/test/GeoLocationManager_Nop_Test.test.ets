@@ -588,7 +588,9 @@ export default function geoLocationManager_nop_test() {
      */
     it("geolocation_getCurrentLocation_nop_test_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       try {
+        console.info('geolocation_getCurrentLocation_nop_test_008  start getCurrentLocation');
         geolocation.getCurrentLocation((err: BusinessError, location: geolocation.Location) => {
+          console.info('geolocation_getCurrentLocation_nop_test_008 getCurrentLocation');
           if (err) {
             console.info('geolocation_getCurrentLocation_nop_test_008  err=' + JSON.stringify(err) + ', type err:' + typeof err.code);
             expect(err.code).assertEqual(3301200);
@@ -600,8 +602,8 @@ export default function geoLocationManager_nop_test() {
             console.info('geolocation_getCurrentLocation_nop_test_008 locationChanger: no location, no err ');
             expect().assertFail();
           }
+          done();
         });
-        done();
       } catch (err) {
         console.info('---geolocation_getCurrentLocation_nop_test_008 catch end type---' + typeof err.code + ',err:' + err.code);
         if (err.code === 106) {

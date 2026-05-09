@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -86,7 +86,7 @@ it('SafeAreaPadding_static_0100', Level.LEVEL0, async (done: () => void): Promis
       console.info('navRect.top is' + navRect.top)
       let navContentRect = CommonFunc.getComponentRect('NavigationBarStyle_content2');
       console.info('navContentRect.top is' + navContentRect.top)
-      expect(Number(Math.abs(Math.round(navRect.top - navContentRect.top) as int)- uiContext!.vp2px(112)) <= 1).assertTrue();
+      expect(Number(Math.abs(Math.round(navRect.top - navContentRect.top).toInt())- uiContext!.vp2px(112)) <= 1).assertTrue();
       console.info('SafeAreaPadding_0100 END');
       done();
     });

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -848,15 +848,15 @@ export default function TimerTest1() {
           let intervalId: number;
           intervalId = setInterval(() => {
             executionCount++;
-            clearInterval(intervalId as int);
-          }, 50);
+            clearInterval(intervalId.toInt());
+          }, 50).toDouble();
 
           return intervalId;
         };
         const intervalId = setupTimer();
         setTimeout(() => {
           try {
-            clearInterval(intervalId as int);
+            clearInterval(intervalId.toInt());
             expect(executionCount).assertEqual(1);
           } catch (err) {
             err = err as Error;
@@ -1184,9 +1184,9 @@ export default function TimerTest1() {
         intervalId = setInterval(() => {
           intervalCount++;
           if (intervalCount === 3) {
-            clearInterval(intervalId as int);
+            clearInterval(intervalId.toInt());
           }
-        }, 50);
+        }, 50).toDouble();
         let clearedIntervalExecuted = false;
         const clearedIntervalId = setInterval(() => {
           clearedIntervalExecuted = true;
@@ -1282,7 +1282,7 @@ export default function TimerTest1() {
           const startTime: number = Date.now();
           await Utils.msSleep(500);
           if (timeoutId !== null) {
-            clearTimeout(timeoutId as int);
+            clearTimeout(timeoutId.toInt());
             console.log(`${TAG}: Timer cleared in taskpool`);
           }
           return timerExecuted;
@@ -1474,7 +1474,7 @@ export default function TimerTest1() {
             setTimeout(() => {
               executionSequence.push('Timeout-20ms');
               if (intervalCounter >= 3) {
-                clearInterval(intervalId as int);
+                clearInterval(intervalId.toInt());
                 expect(executionSequence).assertDeepEquals([
                   'Timeout-100ms',
                   'Interval-50ms-1',
@@ -1487,19 +1487,19 @@ export default function TimerTest1() {
                 done();
               }
             }, 20);
-          }, 50);
+          }, 50).toDouble();
         }, 100);
 
         setTimeout(() => {
           if (intervalId !== 0) {
-            clearInterval(intervalId as int);
+            clearInterval(intervalId.toInt());
           }
         }, 500);
       } catch (err) {
         err = err as Error;
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         if (intervalId !== 0) {
-          clearInterval(intervalId as int);
+          clearInterval(intervalId.toInt());
         }
         expect(false).assertFail();
       }
@@ -1531,11 +1531,11 @@ export default function TimerTest1() {
             setTimeout(() => {
               clearSequence.push('InnerTimeout-50ms');
               if (clearSequence.filter(x => x.includes('InnerInterval')).length >= 3) {
-                clearInterval(innerIntervalId as int);
+                clearInterval(innerIntervalId.toInt());
                 clearSequence.push('ClearedInnerInterval');
 
                 setTimeout(() => {
-                  clearTimeout(outerTimerId as int);
+                  clearTimeout(outerTimerId.toInt());
                   clearSequence.push('ClearedOuterTimer');
 
                   expect(clearSequence).assertDeepEquals([
@@ -1553,23 +1553,23 @@ export default function TimerTest1() {
                 }, 30);
               }
             }, 50);
-          }, 100);
-        }, 200);
+          }, 100).toDouble();
+        }, 200).toDouble();
         setTimeout(() => {
           if (outerTimerId !== 0) {
-            clearTimeout(outerTimerId as int);
+            clearTimeout(outerTimerId.toInt());
           }
           if (innerIntervalId !== 0) {
-            clearInterval(innerIntervalId as int);
+            clearInterval(innerIntervalId.toInt());
           }
         }, 1000);
       } catch (err) {
         err = err as Error;
         if (outerTimerId !== 0) {
-          clearTimeout(outerTimerId as int);
+          clearTimeout(outerTimerId.toInt());
         }
         if (innerIntervalId !== 0) {
-          clearInterval(innerIntervalId as int);
+          clearInterval(innerIntervalId.toInt());
         }
         console.error(`${TAG} catch error: code =>  message => ${err.message}`);
         expect(false).assertFail();

@@ -331,7 +331,7 @@ export default function atomicsWaitTest() {
           ta,
           index: 0,
           value: 1,
-          timeout: 200.4 as int
+          timeout: 200.4.toInt()
         } as typeWait03
         let p = eaw.run<string>(() => {
           let res = Atomics.wait(data.ta, data.index as int, data.value as long, data.timeout);
@@ -371,7 +371,7 @@ export default function atomicsWaitTest() {
           ta,
           index: 0,
           value: 1,
-          timeout: Number.MAX_VALUE as int
+          timeout: Number.MAX_VALUE.toInt()
         } as typeWait03
         let p = eaw.run<string>(() => {
           let res = Atomics.wait(data.ta, data.index as int, data.value as long, data.timeout);
@@ -465,7 +465,7 @@ export default function atomicsWaitTest() {
         });
       });
       setTimeout(() => {
-        Atomics.notify(ta, 0, Number.MAX_VALUE + 1 as int);
+        Atomics.notify(ta, 0, (Number.MAX_VALUE + 1).toInt());
       }, 100)
       expect(errorResult).assertEqual('not-equal');
     });

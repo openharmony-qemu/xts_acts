@@ -14,8 +14,10 @@
  */
 import initNdkTest from './initNdk.test';
 import SuppressWarningsTypeTest from './SuppressWarningsType.test';
+import DeviceInfoApiAvailableTest from './DeviceInfoApiAvailable.test';
 
 export default function testsuite() {
   initNdkTest();
   SuppressWarningsTypeTest();
+  DeviceInfoApiAvailableTest();
 }

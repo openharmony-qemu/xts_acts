@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -89,10 +89,10 @@ it('PinchGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () => 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let pointers: PointerMatrix = PointerMatrix.create(2,2);
-      pointers.setPoint(0,0,{x: Math.round(areaObj1.left + areaWidth1 * 0.1) as Int,y: Math.round(areaObj1.top + areaHeight1 * 0.5) as Int } as Point);
-      pointers.setPoint(0,1,{x: Math.round(areaObj1.left + areaWidth1 * 0.3) as Int,y: Math.round(areaObj1.top + areaHeight1 * 0.5) as Int } as Point);
-      pointers.setPoint(1,0,{x: Math.round(areaObj1.right - areaWidth1 * 0.1) as Int,y: Math.round(areaObj1.top + areaHeight1 * 0.5) as Int } as Point);
-      pointers.setPoint(1,1,{x: Math.round(areaObj1.right - areaWidth1 * 0.3) as Int,y: Math.round(areaObj1.top + areaHeight1 * 0.5) as Int } as Point);
+      pointers.setPoint(0,0,{x: Math.round(areaObj1.left + areaWidth1 * 0.1).toInt(),y: Math.round(areaObj1.top + areaHeight1 * 0.5).toInt() } as Point);
+      pointers.setPoint(0,1,{x: Math.round(areaObj1.left + areaWidth1 * 0.3).toInt(),y: Math.round(areaObj1.top + areaHeight1 * 0.5).toInt() } as Point);
+      pointers.setPoint(1,0,{x: Math.round(areaObj1.right - areaWidth1 * 0.1).toInt(),y: Math.round(areaObj1.top + areaHeight1 * 0.5).toInt() } as Point);
+      pointers.setPoint(1,1,{x: Math.round(areaObj1.right - areaWidth1 * 0.3).toInt(),y: Math.round(areaObj1.top + areaHeight1 * 0.5).toInt() } as Point);
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);
       let text1 = inspector.getInspectorByKey('PinchGestureAllowedTypes_result');

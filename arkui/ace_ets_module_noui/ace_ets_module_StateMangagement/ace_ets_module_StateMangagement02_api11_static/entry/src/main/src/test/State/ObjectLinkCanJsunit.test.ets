@@ -109,7 +109,7 @@ it('ObjectLinkCanJsunit_static_0100', Level.LEVEL0, async (done: () => void): Pr
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[ObjectLinkCanJsunit_static_0100] component obj1 is: " + JSON.stringify(obj1));
       console.info("[ObjectLinkCanJsunit_static_0100] text: " + JSON.stringify(obj1.getElement('$attrs').getString('content')));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual("ClassBN + 1: 5");
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual("ClassBN + 1: 6");
 
       let strJson2 = inspector.getInspectorByKey('sonClassBN');
       let obj2 = JSON.parseJsonElement(strJson2);
@@ -138,7 +138,7 @@ it('ObjectLinkCanJsunit_static_0200', Level.LEVEL0, async (done: () => void): Pr
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[ObjectLinkCanJsunit_static_0200] component obj1 is: " + JSON.stringify(obj1));
       console.info("[ObjectLinkCanJsunit_static_0200] text: " + JSON.stringify(obj1.getElement('$attrs').getString('content')));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual("ClassBN 赋值3: 5");
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual("ClassBN 赋值3: 3");
 
       let strJson2 = inspector.getInspectorByKey('sonClassBN');
       let obj2 = JSON.parseJsonElement(strJson2);
@@ -173,13 +173,13 @@ it('ObjectLinkCanJsunit_static_0300', Level.LEVEL0, async (done: () => void): Pr
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[ObjectLinkCanJsunit_static_0300] component obj1 is: " + JSON.stringify(obj1));
       console.info("[ObjectLinkCanJsunit_static_0300] text: " + JSON.stringify(obj1.getElement('$attrs').getString('content')));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual("ClassBN + 1: 5");
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual("ClassBN + 1: 6");
 
       let strJson2 = inspector.getInspectorByKey('farClassBN3');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[ObjectLinkCanJsunit_static_0300] component obj2 is: " + JSON.stringify(obj2));
       console.info("[ObjectLinkCanJsunit_static_0300] text: " + JSON.stringify(obj2.getElement('$attrs').getString('content')));
-      expect(obj2.getElement('$attrs').getString('content')).assertEqual("ClassBN 赋值3: 5");
+      expect(obj2.getElement('$attrs').getString('content')).assertEqual("ClassBN 赋值3: 6");
 
       console.info('[ObjectLinkCanJsunit_static_0300] END');
       done();

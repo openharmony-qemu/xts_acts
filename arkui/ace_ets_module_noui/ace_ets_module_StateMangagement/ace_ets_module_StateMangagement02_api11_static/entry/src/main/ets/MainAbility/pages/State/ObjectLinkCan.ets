@@ -53,7 +53,8 @@ import {
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
-@Observed export class ClassAN {
+@Observed 
+export class ClassAN {
   public numA: number = 1
   public classB: ClassBN = new ClassBN(1)
 
@@ -123,7 +124,7 @@ struct ObjectLinkFar2 {
 
 @Component
 struct ObjectLinkSon2 {
-  @ObjectLink  classB: ClassBN = new ClassBN(1)
+  @ObjectLink classB: ClassBN;
 
   build() {
     Column() {

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -83,7 +83,7 @@ it('commonEventTest1_static_0100', Level.LEVEL0, async (done: () => void): Promi
       await CommonFunc.sleep(1000);
       let node: Component | null = await driver.findComponent(ON.id('commonEventTest1_node'));
       let point = await (node?.getBoundsCenter() as Promise<Point>);
-      await driver.mouseClick({x:Math.round(point.x) as Int, y:Math.round(point.y) as Int}, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver.mouseClick({x:Math.round(point.x).toInt(), y:Math.round(point.y).toInt()}, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(2000);
       let btn1 = await driver.findComponent(ON.id('commonEventTest1_getOnMouse'));
       await (btn1?.click() as Promise<void>)

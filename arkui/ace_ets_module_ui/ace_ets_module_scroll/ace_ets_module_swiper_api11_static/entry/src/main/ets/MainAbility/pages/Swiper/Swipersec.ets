@@ -61,7 +61,7 @@ import { State } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 import { RecordData } from '@ohos.base';
 
-class MyDataSourceSwiper implements IDataSource<number> {
+export class MyDataSourceSwiper implements IDataSource<number> {
   private list: number[] = []
 
   constructor(list: number[]) {
@@ -83,7 +83,7 @@ class MyDataSourceSwiper implements IDataSource<number> {
   }
 }
 
-interface ColorObject {
+export interface ColorObject {
   cardId: number,
   color: Color
 }

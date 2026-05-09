@@ -673,8 +673,8 @@ struct BackroundColorPage {
     this.parentBackGroundColor = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentBackGroundColor
     this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey;
     // this.BackGroundColor = (this.getUIContext().getRouter().getParams() as RouterParams).view.BackGroundColor
-    this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
-    this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
+    this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns.toInt())
+    this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter.toInt())
     this._backgroundColorButtonMod.mBackgroundColor = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.backgroundColor
     attrsManager.registerDataChange((value: SetValue) => {
 
@@ -805,7 +805,7 @@ struct BackroundColorPage {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity as int,
+            loop: Infinity.toInt(),
             fromStart: true,
             src: 'Running Marquee starts rolling'
           }).attributeModifier(this._backgroundColorMarqueeMod)

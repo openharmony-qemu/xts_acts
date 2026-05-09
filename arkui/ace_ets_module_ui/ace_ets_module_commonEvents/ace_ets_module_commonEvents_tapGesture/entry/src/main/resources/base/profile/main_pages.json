@@ -25,6 +25,7 @@
         "MainAbility/pages/getCurrentLocalPosition/getCurrentLocalPosition_FingerInfo",
         "MainAbility/pages/getHistoricalPoints/getHistoricalPoints_displayX",
         "MainAbility/pages/getHistoricalPoints/getHistoricalPoints_windowX",
-        "MainAbility/pages/getHistoricalPoints/getHistoricalPoints_globalDisplayX"
+        "MainAbility/pages/getHistoricalPoints/getHistoricalPoints_globalDisplayX",
+        "MainAbility/pages/getHistoricalPoints/getHistoricalPoints_undefined"
     ]
 }

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -89,7 +89,7 @@ it('ArkUI_Stage_scrollNestedScroll_static_01', Level.LEVEL0, async (done: () => 
       let y = Math.floor(Utils.getRectVerticalCenterY(webRect))
       let driver = Driver.create();
       const uiContext = AppStorage.get<UIContext>('uiContext');
-      await driver.swipe(Math.round(x) as int, Math.round(y + uiContext!.vp2px(60)) as int, Math.round(x) as int, Math.round(y - uiContext!.vp2px(60)) as int);
+      await driver.swipe(Math.round(x).toInt(), Math.round(y + uiContext!.vp2px(60)).toInt(), Math.round(x).toInt(), Math.round(y - uiContext!.vp2px(60)).toInt());
       console.info('[ArkUI_Stage_scrollNestedScroll_static_01] driver.swipe end');
       try {
         let callBack = (backData: events_emitter.EventData) => {

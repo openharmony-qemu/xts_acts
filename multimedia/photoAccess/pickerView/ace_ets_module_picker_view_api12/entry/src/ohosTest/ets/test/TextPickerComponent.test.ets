@@ -4838,7 +4838,7 @@ export default function TextPicker() {
       console.info("SUB_PHOTO_PICKER_TEST_0100 finish");
       done();
     });
-
+ 
     /**
      * @tc.name   SUB_PHOTO_PICKER_TEST_0200
      * @tc.number SUB_PHOTO_PICKER_TEST_0200
@@ -4857,7 +4857,7 @@ export default function TextPicker() {
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
       pickerOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
       pickerOptions.isMovingPhotoBadgeShown = true;
-
+    
       let callback = (event: events_emitter.EventData) => {
         let result: PhotoPickerResult = event?.data?.msg;
         console.info('SUB_PHOTO_PICKER_TEST_0200 CompletedResult =:' + JSON.stringify(result));
@@ -4871,7 +4871,7 @@ export default function TextPicker() {
         priority: events_emitter.EventPriority.LOW
       }
       events_emitter.on(event, callback);
-
+    
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/PickerComponent',
         params: {
@@ -4884,7 +4884,7 @@ export default function TextPicker() {
       console.info("SUB_PHOTO_PICKER_TEST_0200 JSON.parse(strJson) is" + strJson);
       expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
       await CommonFunc.sleep(2000);
-
+    
       let checkBoxs: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
       if (checkBoxs === null || checkBoxs.length <= 0) {
         console.info("SUB_PHOTO_PICKER_TEST_0200 findComponent checkbox fail");
@@ -4893,15 +4893,15 @@ export default function TextPicker() {
         await checkBoxs[0].click();
         await CommonFunc.sleep(1500);
       }
-
+    
       await clickCompletedButton(driver);
-
+    
       router.back();
       console.info("SUB_PHOTO_PICKER_TEST_0200 finish");
       events_emitter.off(event.eventId);
       done();
-    });
-
+    });    
+    
     /**
      * @tc.name   SUB_PHOTO_PICKER_TEST_0300
      * @tc.number SUB_PHOTO_PICKER_TEST_0300
@@ -4930,7 +4930,7 @@ export default function TextPicker() {
         fileSize: 0
       };
       pickerOptions.contextRecoveryInfo = contextRecoveryInfo;
-
+    
       let callback = (event: events_emitter.EventData) => {
         let result: PhotoPickerResult = event?.data?.msg;
         console.info('SUB_PHOTO_PICKER_TEST_0300 result =:' + JSON.stringify(result));
@@ -4951,7 +4951,7 @@ export default function TextPicker() {
         priority: events_emitter.EventPriority.LOW
       }
       events_emitter.on(event, callback);
-
+    
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/PickerComponent',
         params: {
@@ -4963,11 +4963,165 @@ export default function TextPicker() {
       let strJson: string = getInspectorByKey('PhotoPickerComponent');
       console.info("SUB_PHOTO_PICKER_TEST_0300 JSON.parse(strJson) is" + strJson);
       expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
-
+    
       await clickResultButton(driver);
       router.back();
       console.info("SUB_PHOTO_PICKER_TEST_0300 finish");
       events_emitter.off(event.eventId);
+      done();
+    });   
+
+    /**
+     * @tc.name   SUB_PHOTO_PICKER_TEST_0400
+     * @tc.number SUB_PHOTO_PICKER_TEST_0400
+     * @tc.desc   Testing PhotoViewPicker with isSelectionNumberVisible & isSelectionOrderAdjustable.
+     *            Round 1: select 2 photos and confirm. Round 2: select same 2 photos, enter browser mode,
+     *            reorder via drag-drop, confirm. Verify final URI order is reversed compared to round 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0400', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      console.info("SUB_PHOTO_PICKER_TEST_0400 start");
+      // Make sure at least two photos
+      await savePhoto();
+      const buildPickerOptions = (): photoAccessHelper.PhotoSelectOptions => {
+        const opts: photoAccessHelper.PhotoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
+        opts.isSelectionNumberVisible = true;
+        opts.isSelectionOrderAdjustable = true;
+        return opts;
+      };
+      // ── Helper: open picker, return promise that resolves with photoUris ──
+      const openPickerAndCollect = (label: string): Promise<string[]> => {
+        return new Promise((resolve) => {
+          const photoPicker = new photoAccessHelper.PhotoViewPicker();
+          photoPicker.select(buildPickerOptions()).then((result: photoAccessHelper.PhotoSelectResult) => {
+            console.info(`SUB_PHOTO_PICKER_TEST_0400 [${label}] select returned, photoUris=` +
+            JSON.stringify(result.photoUris));
+            resolve(result.photoUris ?? []);
+          }).catch((err: BusinessError) => {
+            console.error(`SUB_PHOTO_PICKER_TEST_0400 [${label}] select failed: ${err.code}, ${err.message}`);
+            resolve([]);
+          });
+        });
+      };
+      // ── Helper: select 2 photos via Selector_0 and Selector_1 ──
+      const selectTwoPhotos = async (label: string): Promise<void> => {
+        await CommonFunc.sleep(500);
+        const firstCheckbox: Component | null = await driver.findComponent(ON.id('Selector_0'));
+        if (firstCheckbox) {
+          await firstCheckbox.click();
+          console.info(`SUB_PHOTO_PICKER_TEST_0400 [${label}] first photo selected (Selector_0)`);
+          await CommonFunc.sleep(500);
+        } else {
+          console.error(`SUB_PHOTO_PICKER_TEST_0400 [${label}] Selector_0 not found`);
+        }
+        const secondCheckbox: Component | null = await driver.findComponent(ON.id('Selector_1'));
+        if (secondCheckbox) {
+          await secondCheckbox.click();
+          console.info(`SUB_PHOTO_PICKER_TEST_0400 [${label}] second photo selected (Selector_1)`);
+          await CommonFunc.sleep(500);
+        } else {
+          console.error(`SUB_PHOTO_PICKER_TEST_0400 [${label}] Selector_1 not found`);
+        }
+      };
+      // ── Helper: click Complete (Done) button ──
+      const clickComplete = async (label: string): Promise<void> => {
+        const completeBtn: Component | null = await driver.findComponent(ON.id('Complete'));
+        if (completeBtn) {
+          await completeBtn.click();
+          console.info(`SUB_PHOTO_PICKER_TEST_0400 [${label}] Complete button clicked`);
+        } else {
+          console.error(`SUB_PHOTO_PICKER_TEST_0400 [${label}] Complete button not found`);
+        }
+        await CommonFunc.sleep(500);
+      };
+      // ── Helper: enter browser mode by clicking selected count area ──
+      const openBrowserMode = async (label: string): Promise<void> => {
+        const selectedText: Component | null = await driver.findComponent(ON.id('currentSelectCount'));
+        if (selectedText) {
+          await selectedText.click();
+          console.info(`SUB_PHOTO_PICKER_TEST_0400 [${label}] browser mode opened (currentSelectCount clicked)`);
+          await CommonFunc.sleep(500);
+        } else {
+          console.error(`SUB_PHOTO_PICKER_TEST_0400 [${label}] currentSelectCount not found, browser mode NOT opened`);
+        }
+      };
+      // ── Helper: drag first thumbnail onto second thumbnail in dock ──
+      const reorderFirstTwoThumbnails = async (label: string): Promise<boolean> => {
+        const allListItems: Component[] = await driver.findComponents(ON.type('ListItem'));
+        console.info(`SUB_PHOTO_PICKER_TEST_0400 [${label}] ListItem count in browser: ${allListItems.length}`);
+        if (allListItems.length < 2) {
+          console.error(`SUB_PHOTO_PICKER_TEST_0400 [${label}] not enough ListItems for drag-drop`);
+          return false;
+        }
+        const firstBounds = await allListItems[0].getBounds();
+        const secondBounds = await allListItems[1].getBounds();
+        console.info(`SUB_PHOTO_PICKER_TEST_0400 [${label}] thumb1 bounds: l=${firstBounds.left}, t=${firstBounds.top}, r=${firstBounds.right}, b=${firstBounds.bottom}`);
+        console.info(`SUB_PHOTO_PICKER_TEST_0400 [${label}] thumb2 bounds: l=${secondBounds.left}, t=${secondBounds.top}, r=${secondBounds.right}, b=${secondBounds.bottom}`);
+        const startX: number = (firstBounds.left + firstBounds.right) / 2;
+        const startY: number = (firstBounds.top + firstBounds.bottom) / 2;
+        const endX: number = (secondBounds.left + secondBounds.right) / 2;
+        const endY: number = (secondBounds.top + secondBounds.bottom) / 2;
+        console.info(`SUB_PHOTO_PICKER_TEST_0400 [${label}] dragging (${startX},${startY}) → (${endX},${endY})`);
+        await driver.drag(startX, startY, endX, endY, 1000);
+        await CommonFunc.sleep(500);
+        console.info(`SUB_PHOTO_PICKER_TEST_0400 [${label}] drag completed`);
+        return true;
+      };
+      // ── Helper: print URIs for diff ──
+      const printUris = (label: string, uris: string[]): void => {
+        console.info(`SUB_PHOTO_PICKER_TEST_0400 [${label}] count=${uris.length}`);
+        uris.forEach((uri, i) => {
+          console.info(`SUB_PHOTO_PICKER_TEST_0400 [${label}]   [${i}] ${uri}`);
+        });
+      };
+      let originalUris: string[] = [];
+      let reorderedUris: string[] = [];
+      try {
+        console.info('SUB_PHOTO_PICKER_TEST_0400 ═══ ROUND 1: select 2 photos and confirm ═══');
+        const round1Promise = openPickerAndCollect('R1');
+        await selectTwoPhotos('R1');
+        await clickComplete('R1');
+        originalUris = await round1Promise;
+        printUris('R1 ORIGINAL', originalUris);
+        await CommonFunc.sleep(500);
+        console.info('SUB_PHOTO_PICKER_TEST_0400 ═══ ROUND 2: select 2 photos, reorder, confirm ═══');
+        const round2Promise = openPickerAndCollect('R2');
+        await selectTwoPhotos('R2');
+        await openBrowserMode('R2');
+        const reordered: boolean = await reorderFirstTwoThumbnails('R2');
+        await clickComplete('R2');
+        reorderedUris = await round2Promise;
+        printUris('R2 REORDERED', reorderedUris);
+        // VERIFY: order should be reversed
+        console.info('SUB_PHOTO_PICKER_TEST_0400 ═══ COMPARISON ═══');
+        console.info(`SUB_PHOTO_PICKER_TEST_0400 R1[0]=${originalUris[0]}`);
+        console.info(`SUB_PHOTO_PICKER_TEST_0400 R2[0]=${reorderedUris[0]}`);
+        console.info(`SUB_PHOTO_PICKER_TEST_0400 R1[1]=${originalUris[1]}`);
+        console.info(`SUB_PHOTO_PICKER_TEST_0400 R2[1]=${reorderedUris[1]}`);
+        expect(originalUris.length).assertEqual(2);
+        expect(reorderedUris.length).assertEqual(2);
+        if (reordered) {
+          // After drag-drop, R2[0] should equal R1[1] and R2[1] should equal R1[0]
+          expect(reorderedUris[0]).assertEqual(originalUris[1]);
+          expect(reorderedUris[1]).assertEqual(originalUris[0]);
+          console.info('SUB_PHOTO_PICKER_TEST_0400 order successfully reversed by drag-drop');
+        } else {
+          console.error('SUB_PHOTO_PICKER_TEST_0400 reorder did not happen, skipping order assertion');
+          expect(false).assertTrue();
+        }
+      } catch (err) {
+        console.error(`SUB_PHOTO_PICKER_TEST_0400 error: ${err.code}, ${err.message}`);
+        expect(false).assertTrue();
+      }
+      const closeBtn: Component | null = await driver.findComponent(ON.id('Third_Select_PickerClose'));
+      await closeBtn?.click();
+      console.info("SUB_PHOTO_PICKER_TEST_0400 finish");
       done();
     });
   })

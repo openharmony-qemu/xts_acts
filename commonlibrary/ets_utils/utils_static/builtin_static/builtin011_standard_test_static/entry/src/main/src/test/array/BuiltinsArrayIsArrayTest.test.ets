@@ -36,7 +36,7 @@ export default function BuiltinsArrayIsArrayTest(): void {
      * @tc.level   LEVEL0
      */
     it("builtinsArrayIsArrayTest0100", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
       const result = Array.isArray(arr);
       expect(result).assertEqual(true);
     });
@@ -50,7 +50,10 @@ export default function BuiltinsArrayIsArrayTest(): void {
      * @tc.level   LEVEL0
      */
     it("builtinsArrayIsArrayTest0200", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr: number[] = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
       const result = Array.isArray(arr);
       expect(result).assertEqual(true);
     });
@@ -64,7 +67,10 @@ export default function BuiltinsArrayIsArrayTest(): void {
      * @tc.level   LEVEL0
      */
     it("builtinsArrayIsArrayTest0300", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<string>("apple", "banana", "cherry");
+      const arr: string[] = Array.create<string>(3, '');
+      arr[0] = "apple";
+      arr[1] = "banana";
+      arr[2] = "cherry";
       const result = Array.isArray(arr);
       expect(result).assertEqual(true);
     });
@@ -78,9 +84,9 @@ export default function BuiltinsArrayIsArrayTest(): void {
      * @tc.level   LEVEL0
      */
     it("builtinsArrayIsArrayTest0400", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>();
-      arr.push(1);
-      arr.push(2);
+      const arr: number[] = Array.create<number>(2, 0);
+      arr[0] = 1;
+      arr[1] = 2;
       const result = Array.isArray(arr);
       expect(result).assertEqual(true);
     });

@@ -35,7 +35,7 @@ import webview from '@ohos.web.webview'
 import Utils from '../../src/test/Util.test';
 import { BusinessError, Callback, RecordData } from '@ohos.base'
 import buffer from '@ohos.buffer'
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 @Entry

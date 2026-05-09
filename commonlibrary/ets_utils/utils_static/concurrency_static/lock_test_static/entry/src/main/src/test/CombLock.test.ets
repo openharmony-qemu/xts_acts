@@ -466,7 +466,7 @@ export default function CombLockTest(): void {
         await Promise.all(results).then((data: int[]): void => {
           console.log(`${tag} end: ` + data.length)
           console.log(`${tag} result: ` + data)
-          result = data.length
+          result = data.length.toDouble()
           let check: int[] = data.filter((value: int) => value == 123)
           console.log(`${tag} result: ` + (check.length == concurrentNum) ? 'success' : 'failed')
         }).catch((e) => {

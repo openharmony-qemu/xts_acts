@@ -40,7 +40,7 @@ export default function swiperOnContentDidScrollTest() {
         await Utils.pushPage(`swiper/${PAGE_TAG}`);
         let driver = Driver.create();
         let component = await driver.findComponent(ON.id("SwiperOnContentDidScroll"));
-        await Utils.sleep(2000);
+        await Utils.sleep(3000);
         expect(Utils.getComponentInfoByKey('SwiperOnContentDidScroll').$attrs.backgroundColor).assertEqual('#FF00FF00');
         done();
     });

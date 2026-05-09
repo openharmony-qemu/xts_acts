@@ -1,6 +1,5 @@
 {
     "src": [
-        "MainAbility/pages/index/index",
-        "MainAbility/pages/select/selectNode"
+        "MainAbility/pages/index/index"
     ]
 }

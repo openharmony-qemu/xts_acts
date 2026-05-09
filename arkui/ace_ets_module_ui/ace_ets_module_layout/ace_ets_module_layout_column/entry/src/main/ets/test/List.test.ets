@@ -65,6 +65,7 @@ import ColumnWrapContentTest from './Column/ColumnWrapContentTest.ets'
 import columnNullUndefinedTest from './Column/ColumnNullUndefined.test';
 import ColumnMatchParentNewFirstTest from './Column/ColumnMatchParentNewFirstTest.test';
 import ColumnMatchParentNewSecondTest from './Column/ColumnMatchParentNewSecondTest.test';
+import ContainerReaderComponentTest from './Column/ContainerReaderComponentTest.test';
 
 
 export default function testsuite() {
@@ -121,4 +122,5 @@ export default function testsuite() {
   columnNullUndefinedTest()
   ColumnMatchParentNewFirstTest()
   ColumnMatchParentNewSecondTest()
+  ContainerReaderComponentTest()
 }

@@ -92,6 +92,7 @@
         "MainAbility/pages/ImageAnimatorUndefinedAndNull/ImageAnimatorIterationsUndefinedAndNull",
         "MainAbility/pages/ImageAnimatorUndefinedAndNull/ImageAnimatorPreDecodeUndefinedAndNull",
         "MainAbility/pages/ImageAnimatorUndefinedAndNull/ImageAnimatorStateUndefinedAndNull",
-        "MainAbility/pages/ImageAnimatorUndefinedAndNull/ImageAnimatorImagesUndefinedAndNull"
+        "MainAbility/pages/ImageAnimatorUndefinedAndNull/ImageAnimatorImagesUndefinedAndNull",
+        "MainAbility/pages/ImageColorFilter/ImageColorFilterTestPage"
     ]
 }

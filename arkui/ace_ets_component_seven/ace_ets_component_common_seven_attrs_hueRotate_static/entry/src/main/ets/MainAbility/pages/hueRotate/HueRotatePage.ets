@@ -638,8 +638,8 @@ struct hueRotatePage {
     this.componentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey as string;
     this.parentWidth = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
     this.parentHeight = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
-    this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
-    this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
+    this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns.toInt())
+    this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter.toInt())
     this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey;
     this._hueRotateAlphabetIndexerMod.mHueRotate = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.hueRotate
     attrsManager.registerDataChange((value: SetValue) => {
@@ -773,7 +773,7 @@ struct hueRotatePage {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity as int,
+            loop: Infinity.toInt(),
             fromStart: true,
             src: 'Running Marquee starts rolling'
           }).attributeModifier(this._hueRotateMarqueeMod)

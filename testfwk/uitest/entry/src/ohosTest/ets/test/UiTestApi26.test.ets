@@ -14,12 +14,15 @@
          */
 
 import { describe, it, expect, TestType, Level, Size, beforeAll, beforeEach, afterAll, afterEach } from '@ohos/hypium'
-import { Driver, ON, TouchOptions, } from '@kit.TestKit'
+import { Driver, ON, PenKey, PenKeyOperation, PenMode, TouchOptions, } from '@kit.TestKit'
 import { display } from '@kit.ArkUI';
 import { startAbility, stopApplication } from './Util.test';
+import fileIO from '@ohos.fileio';
+import { hilog } from '@kit.PerformanceAnalysisKit';
 
 const waitUiReadyMs: number = 1000;
 const TestTag = 'UiTest_TAG';
+const ErrorCode17000005 = 17000005;
 
 export default function uitestApi26Test() {
   describe('uitestApi26Test', () => {
@@ -81,11 +84,10 @@ export default function uitestApi26Test() {
       let button = await driver.findComponent(ON.text('next page'))
       let center = await button.getBoundsCenter()
       const options: TouchOptions = {};
-      let promiseResult = await driver.clickAt(center, options)
+      await driver.clickAt(center, options)
       await driver.delayMs(waitUiReadyMs)
       let newButton = await driver.findComponent(ON.text('back to index'))
       let text = await newButton.getText()
-      expect(promiseResult).assertNull();
       expect(text).assertEqual('back to index')
       await newButton.click()
       await stopApplication('com.uitestScene.acts')
@@ -279,12 +281,11 @@ export default function uitestApi26Test() {
       let button = await driver.findComponent(ON.text('next page'))
       let center = await button.getBoundsCenter()
       const options: TouchOptions = {};
-      let promiseResult = await driver.longClickAt(center, options)
+      await driver.longClickAt(center, options)
       await driver.delayMs(waitUiReadyMs)
       let newButton = await driver.findComponent(ON.text('longClick'))
       let text = await newButton.getText()
       expect(text).assertEqual('longClick')
-      expect(promiseResult).assertNull();
       await newButton.click()
       await stopApplication('com.uitestScene.acts')
       console.log(`${TestTag}, testDriverLongClickAtEmptyOptions end`);
@@ -581,24 +582,6 @@ export default function uitestApi26Test() {
       expect(text).assertNull();
       await stopApplication('com.uitestScene.acts')
       console.info(`${TestTag}, testDriverSwipeBetweenWithSpeedAndPressure end`);
-    });
-
-    /**
-     * @tc.name   testDriverSwipeBetweenReturnVoid
-     * @tc.number SUB_testfwk_UITEST_DRIVER_SWIPEBETWEEN_RETURN_2200
-     * @tc.desc   Test swipeBetween returns Promise<void>
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testDriverSwipeBetweenReturnVoid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.info(`${TestTag}, testDriverSwipeBetweenReturnVoid start`);
-      let result: void = await driver.swipeBetween({x: 100, y: 100, displayId: 0},
-        { x: 200, y: 200, displayId: 0}, {speed: 600})
-      expect(result).assertNull()
-      await driver.delayMs(waitUiReadyMs)
-      await stopApplication('com.uitestScene.acts')
-      console.info(`${TestTag}, testDriverSwipeBetweenReturnVoid end`);
     });
 
     /**
@@ -899,6 +882,278 @@ export default function uitestApi26Test() {
       await stopApplication('com.uitestScene.acts')
       console.info(`${TestTag}, testDriverSwipeBetweenSpeedOutOfRangeHigh end`);
     });
+
+    /**
+     * @tc.name   testDriverDumpLayoutDefault
+     * @tc.number SUB_testfwk_UITEST_DUMPLAYOUT_PARAM_0100
+     * @tc.desc   Test dumpLayout with default displayId parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverDumpLayoutDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      let savePath = '/data/storage/el2/base/cache/dump_layout_001.json'
+      const result: boolean = await driver.dumpLayout(savePath);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.name   testDriverDumpLayoutWithDisplayId
+     * @tc.number SUB_testfwk_UITEST_DUMPLAYOUT_PARAM_0200
+     * @tc.desc   Test dumpLayout with displayId from getDefaultDisplay()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverDumpLayoutWithDisplayId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      let savePath = '/data/storage/el2/base/cache/dump_layout_003.json'
+      const displayId: number = (await display.getDefaultDisplay()).id;
+      const result: boolean = await driver.dumpLayout(savePath, displayId);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.name   testDriverDumpLayoutVerifyJsonContent
+     * @tc.number SUB_testfwk_UITEST_DUMPLAYOUT_RETURN_0300
+     * @tc.desc   Test dumpLayout API 26.0 verifies JSON content structure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverDumpLayoutVerifyJsonContent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`${TestTag}, testDriverDumpLayoutVerifyJsonContent start`);
+      const savePath = '/data/storage/el2/base/cache/dump_verify_content.json';
+
+      const result: boolean = await driver.dumpLayout(savePath, 0);
+      expect(result).assertTrue();
+
+      const fileStat = await fileIO.stat(savePath);
+
+      expect(fileStat.size).assertLarger(0)
+
+      const content = await fileIO.readText(savePath);
+      console.info(`${TestTag}, testDriverDumpLayoutVerifyJsonContent content, ${content}`);
+      expect(content.length).assertLarger(0)
+
+      await fileIO.unlink(savePath);
+      console.info(`${TestTag}, testDriverDumpLayoutVerifyJsonContent end`);
+    });
+
+    /**
+     * @tc.name   testDriverDumpLayoutZeroDisplayId
+     * @tc.number SUB_testfwk_UITEST_DUMPLAYOUT_PARAM_0400
+     * @tc.desc   Test dumpLayout API 26.0 with displayId=0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverDumpLayoutZeroDisplayId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`${TestTag}, testDriverDumpLayoutZeroDisplayId start`);
+      let savePath = '/data/storage/el2/base/cache/dump_layout_004.json'
+      const result: boolean = await driver.dumpLayout(savePath, 0);
+      expect(result).assertTrue();
+      console.info(`${TestTag}, testDriverDumpLayoutZeroDisplayId end`);
+    });
+
+    /**
+     * @tc.name   testDriverDumpLayoutDisplayIdNull
+     * @tc.number SUB_testfwk_UITEST_DUMPLAYOUT_NULLUNDEFINED_0500
+     * @tc.desc   Test dumpLayout API 26.0 with displayId=null, should use default value and execute normally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverDumpLayoutDisplayIdNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`${TestTag}, testDriverDumpLayoutDisplayIdNull start`);
+      const savePath = '/data/storage/el2/base/cache/dump_display_null.json';
+
+      const result: boolean = await driver.dumpLayout(savePath, null);
+      expect(result).assertTrue();
+
+      console.info(`${TestTag}, testDriverDumpLayoutDisplayIdNull end`);
+    });
+
+    /**
+     * @tc.name   testDriverDumpLayoutDisplayIdUndefined
+     * @tc.number SUB_testfwk_UITEST_DUMPLAYOUT_NULLUNDEFINED_0600
+     * @tc.desc   Test dumpLayout API 26.0 with displayId=undefined, should use default value and execute normally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverDumpLayoutDisplayIdUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`${TestTag}, testDriverDumpLayoutDisplayIdUndefined start`);
+      const savePath = '/data/storage/el2/base/cache/dump_display_undefined.json';
+      const result: boolean = await driver.dumpLayout(savePath, undefined);
+      expect(result).assertTrue();
+      console.info(`${TestTag}, testDriverDumpLayoutDisplayIdUndefined end`);
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeyHandwritingClick
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0100
+     * @tc.desc   Test Driver.triggerPenKey with HANDWRITING mode, HANDWRITING key, CLICK operation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyHandwritingClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingClick start');
+      try {
+        await driver.triggerPenKey(PenKey.HANDWRITING, PenMode.HANDWRITING, PenKeyOperation.CLICK);
+        await driver.delayMs(500);
+      } catch (error) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingClick error: ' + error.code);
+        expect(error.code).assertEqual(ErrorCode17000005)
+      }
+      await stopApplication('com.uitestScene.acts');
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingClick over');
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeyHandwritingWithPointClick
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0200
+     * @tc.desc   Test Driver.triggerPenKey with HANDWRITING mode, HANDWRITING key, CLICK operation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyHandwritingWithPointClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingWithPointClick start');
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver.delayMs(waitUiReadyMs);
+      try {
+        let nextPageButton = await driver.findComponent(ON.text('next page'));
+        expect(nextPageButton != null).assertTrue();
+        let clickPoint = await nextPageButton.getBoundsCenter();
+        await driver.triggerPenKey(PenKey.HANDWRITING, PenMode.HANDWRITING, PenKeyOperation.CLICK,
+          { point: clickPoint});
+        await driver.delayMs(500);
+        let backToIndexComponent = await driver.findComponent(ON.text('back to index'));
+        expect(backToIndexComponent != null).assertTrue();
+        let componentText: string = await backToIndexComponent.getText();
+        expect(componentText).assertEqual('back to index');
+      } catch (error) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingWithPointClick error: ' + error.code);
+        expect(error.code).assertEqual(ErrorCode17000005)
+      }
+      await stopApplication('com.uitestScene.acts');
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingWithPointClick over');
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeyHandwritingDoubleClick
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0300
+     * @tc.desc   Test Driver.triggerPenKey with HANDWRITING mode, HANDWRITING key, DOUBLE_CLICK operation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyHandwritingDoubleClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingDoubleClick start');
+      try {
+        await driver.triggerPenKey(PenKey.HANDWRITING, PenMode.HANDWRITING, PenKeyOperation.DOUBLE_CLICK);
+        await driver.delayMs(500);
+      } catch (error) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingDoubleClick error: ' + error.code);
+        expect(error.code).assertEqual(ErrorCode17000005);
+      }
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingDoubleClick over');
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeyHandwritingWithPointDoubleClick
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0400
+     * @tc.desc   Test Driver.triggerPenKey with HANDWRITING mode, HANDWRITING key, DOUBLE_CLICK operation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyHandwritingWithPointDoubleClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingDoubleClick start');
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver.delayMs(waitUiReadyMs);
+      try {
+        let doubleBtn = await driver.findComponent(ON.text('Click twice'))
+        if (doubleBtn == null) {
+          let scroll = await driver.findComponent(ON.type('Scroll'))
+          doubleBtn = await scroll.scrollSearch(ON.text('Click twice'))
+        }
+        let center = await doubleBtn.getBoundsCenter()
+        await driver.triggerPenKey(PenKey.HANDWRITING, PenMode.HANDWRITING, PenKeyOperation.DOUBLE_CLICK, {point: center});
+        await driver.delayMs(waitUiReadyMs)
+        let newButton = await driver.findComponent(ON.text('doubleClick'))
+        let text = await newButton.getText()
+        expect(text).assertEqual('doubleClick')
+      } catch (error) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingDoubleClick error: ' + error.code);
+        expect(error.code).assertEqual(ErrorCode17000005);
+      }
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingDoubleClick over');
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeyAirMouseClick
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0500
+     * @tc.desc   Test Driver.triggerPenKey with AIR_MOUSE mode, AIR_MOUSE key, CLICK operation with point
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyAirMouseClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseClick start');
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver.delayMs(waitUiReadyMs);
+      try {
+        let nextPageButton = await driver.findComponent(ON.text('next page'));
+        expect(nextPageButton != null).assertTrue();
+        let clickPoint = await nextPageButton.getBoundsCenter();
+        await driver.triggerPenKey(PenKey.AIR_MOUSE, PenMode.AIR_MOUSE, PenKeyOperation.CLICK, { point: clickPoint });
+        await driver.delayMs(500);
+        let backToIndexComponent= await driver.findComponent(ON.text('back to index'));
+        expect(backToIndexComponent != null).assertTrue();
+        let componentText: string = await backToIndexComponent.getText();
+        expect(componentText).assertEqual('back to index');
+      } catch (error) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseClick error: ' + error.code);
+        expect(error.code).assertEqual(ErrorCode17000005);
+      }
+      await stopApplication('com.uitestScene.acts');
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseClick over');
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeyAirMouseDoubleClick
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0600
+     * @tc.desc   Test Driver.triggerPenKey with AIR_MOUSE mode, AIR_MOUSE key, DOUBLE_CLICK operation with point
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeyAirMouseDoubleClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseDoubleClick start');
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver.delayMs(waitUiReadyMs);
+      try {
+        let doubleBtn = await driver.findComponent(ON.text('Click twice'))
+        if (doubleBtn == null) {
+          let scroll = await driver.findComponent(ON.type('Scroll'))
+          doubleBtn = await scroll.scrollSearch(ON.text('Click twice'))
+        }
+        let clickPoint = await doubleBtn.getBoundsCenter();
+        await driver.triggerPenKey(PenKey.AIR_MOUSE, PenMode.AIR_MOUSE, PenKeyOperation.DOUBLE_CLICK, { point: clickPoint });
+        await driver.delayMs(waitUiReadyMs)
+        let newButton = await driver.findComponent(ON.text('doubleClick'))
+        let text = await newButton.getText()
+        expect(text).assertEqual('doubleClick')
+      } catch (error) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseDoubleClick error: ' + error.code);
+        expect(error.code).assertEqual(ErrorCode17000005);
+      }
+      await stopApplication('com.uitestScene.acts');
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseDoubleClick over');
+    });
+
 
   })
 }

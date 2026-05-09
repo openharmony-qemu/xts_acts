@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -952,7 +952,7 @@ export default function avRecorderTest() {
         if (err == null) {
           console.info(`releaseTimeTestCallback current state is : ${avRecorder.state}`)
           console.info('release releaseTimeTestCallback success');
-          end = Date.now()
+          end = Date.now().toDouble()
           console.info(`releaseTimeTestCallback end time is : ${end}`)
           let numStr: string = (end - start) +'';
           let execution = parseInt(numStr)

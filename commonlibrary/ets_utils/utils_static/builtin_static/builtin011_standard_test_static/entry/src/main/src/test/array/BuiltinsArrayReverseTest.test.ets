@@ -15,7 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-export default function BuiltinsArrayReverseTest() {
+export default function BuiltinsArrayReverseTest() : void{
   describe("BuiltinsArrayReverseTest", ()=> {
     beforeAll(() => {
     })
@@ -36,10 +36,20 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayReverseTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       const result = arr.reverse();
-      const expected = new Array<number>(5, 4, 3, 2, 1);
+      const expected: number[] = Array.create<number>(5, 0);
+      expected[0] = 5;
+      expected[1] = 4;
+      expected[2] = 3;
+      expected[3] = 2;
+      expected[4] = 1;
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -56,7 +66,10 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayReverseTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr: number[] = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
 
       const result = arr.reverse();
 
@@ -72,7 +85,7 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReverseTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
 
       const result = arr.reverse();
 
@@ -105,10 +118,14 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReverseTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2);
+      const arr: number[] = Array.create<number>(2, 0);
+      arr[0] = 1;
+      arr[1] = 2;
 
       const result = arr.reverse();
-      const expected = new Array<number>(2, 1);
+      const expected: number[] = Array.create<number>(2, 0);
+      expected[0] = 2;
+      expected[1] = 1;
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -125,10 +142,22 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReverseTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 2, 3, 3, 3);
+      const arr: number[] = Array.create<number>(6, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 2;
+      arr[3] = 3;
+      arr[4] = 3;
+      arr[5] = 3;
 
       const result = arr.reverse();
-      const expected = new Array<number>(3, 3, 3, 2, 2, 1);
+      const expected: number[] = Array.create<number>(6, 0);
+      expected[0] = 3;
+      expected[1] = 3;
+      expected[2] = 3;
+      expected[3] = 2;
+      expected[4] = 2;
+      expected[5] = 1;
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -145,10 +174,16 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReverseTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<string>("apple", "banana", "cherry");
+      const arr: string[] = Array.create<string>(3, "");
+      arr[0] = "apple";
+      arr[1] = "banana";
+      arr[2] = "cherry";
 
       const result = arr.reverse();
-      const expected = new Array<string>("cherry", "banana", "apple");
+      const expected: string[] = Array.create<string>(3, "");
+      expected[0] = "cherry";
+      expected[1] = "banana";
+      expected[2] = "apple";
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -165,8 +200,18 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReverseTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
-      const original = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
+      const original: number[] = Array.create<number>(5, 0);
+      original[0] = 1;
+      original[1] = 2;
+      original[2] = 3;
+      original[3] = 4;
+      original[4] = 5;
 
       arr.reverse();
       arr.reverse();
@@ -186,10 +231,20 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayReverseTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       const result = arr.toReversed();
-      const expected = new Array<number>(5, 4, 3, 2, 1);
+      const expected: number[] = Array.create<number>(5, 0);
+      expected[0] = 5;
+      expected[1] = 4;
+      expected[2] = 3;
+      expected[3] = 2;
+      expected[4] = 1;
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -206,8 +261,18 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayReverseTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
-      const original = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
+      const original: number[] = Array.create<number>(5, 0);
+      original[0] = 1;
+      original[1] = 2;
+      original[2] = 3;
+      original[3] = 4;
+      original[4] = 5;
 
       const result = arr.toReversed();
 
@@ -226,7 +291,10 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayReverseTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr: number[] = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
 
       const result = arr.toReversed();
 
@@ -242,7 +310,7 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReverseTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
 
       const result = arr.toReversed();
 
@@ -275,10 +343,14 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReverseTest1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2);
+      const arr: number[] = Array.create<number>(2, 0);
+      arr[0] = 1;
+      arr[1] = 2;
 
       const result = arr.toReversed();
-      const expected = new Array<number>(2, 1);
+      const expected: number[] = Array.create<number>(2, 0);
+      expected[0] = 2;
+      expected[1] = 1;
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -295,10 +367,16 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReverseTest1500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<string>("apple", "banana", "cherry");
+      const arr: string[] = Array.create<string>(3, "");
+      arr[0] = "apple";
+      arr[1] = "banana";
+      arr[2] = "cherry";
 
       const result = arr.toReversed();
-      const expected = new Array<string>("cherry", "banana", "apple");
+      const expected: string[] = Array.create<string>(3, "");
+      expected[0] = "cherry";
+      expected[1] = "banana";
+      expected[2] = "apple";
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -315,10 +393,18 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReverseTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 2, 3);
+      const arr: number[] = Array.create<number>(4, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 2;
+      arr[3] = 3;
 
       const result = arr.toReversed();
-      const expected = new Array<number>(3, 2, 2, 1);
+      const expected: number[] = Array.create<number>(4, 0);
+      expected[0] = 3;
+      expected[1] = 2;
+      expected[2] = 2;
+      expected[3] = 1;
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -335,8 +421,18 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReverseTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
-      const original = new Array<number>(1, 2, 3, 4, 5);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
+      const original = Array.create<number>(5, 0);
+      original[0] = 1;
+      original[1] = 2;
+      original[2] = 3;
+      original[3] = 4;
+      original[4] = 5;
 
       const result = arr.toReversed().toReversed();
 
@@ -355,12 +451,21 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReverseTest1800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3);
-      const original = new Array<number>(1, 2, 3);
+      const arr = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      const original = Array.create<number>(3, 0);
+      original[0] = 1;
+      original[1] = 2;
+      original[2] = 3;
 
       arr.reverse();
       const result = arr.toReversed();
-      const expected = new Array<number>(1, 2, 3);
+      const expected = Array.create<number>(3, 0);
+      expected[0] = 1;
+      expected[1] = 2;
+      expected[2] = 3;
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -378,11 +483,17 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReverseTest1900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
 
       const reversed = arr.toReversed();
       reversed.reverse();
-      const expected = new Array<number>(1, 2, 3);
+      const expected = Array.create<number>(3, 0);
+      expected[0] = 1;
+      expected[1] = 2;
+      expected[2] = 3;
 
       expect(reversed.length).assertEqual(expected.length);
       for (let i = 0; i < reversed.length; i++) {
@@ -400,10 +511,18 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReverseTest2000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<boolean>(true, false, true, false);
+      const arr = Array.create<boolean>(4, false);
+      arr[0] = true;
+      arr[1] = false;
+      arr[2] = true;
+      arr[3] = false;
 
       const result = arr.reverse();
-      const expected = new Array<boolean>(false, true, false, true);
+      const expected = Array.create<boolean>(4, false);
+      expected[0] = false;
+      expected[1] = true;
+      expected[2] = false;
+      expected[3] = true;
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -420,7 +539,10 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReverseTest2100' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr: Array<number> = [1, 2, 3];
+      const arr: Array<number> = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
 
       const result = arr.reverse();
 
@@ -439,10 +561,18 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReverseTest2200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number | string | boolean>(1, "two", true, 4);
+      const arr: (number | string | boolean)[] = Array.create<(number | string | boolean)>(4, 0);
+      arr[0] = 1;
+      arr[1] = "two";
+      arr[2] = true;
+      arr[3] = 4;
 
       const result = arr.reverse();
-      const expected = new Array<number | string | boolean>(4, true, "two", 1);
+      const expected: (number | string | boolean)[] = Array.create<(number | string | boolean)>(4, 0);
+      expected[0] = 4;
+      expected[1] = true;
+      expected[2] = "two";
+      expected[3] = 1;
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -459,10 +589,18 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReverseTest2300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number | undefined | null>(1, undefined, 3, null);
+      const arr: (number | undefined | null)[] = Array.create<(number | undefined | null)>(4, 0);
+      arr[0] = 1;
+      arr[1] = undefined;
+      arr[2] = 3;
+      arr[3] = null;
 
       const result = arr.reverse();
-      const expected = new Array<number | undefined | null>(null, 3, undefined, 1);
+      const expected: (number | undefined | null)[] = Array.create<(number | undefined | null)>(4, 0);
+      expected[0] = null;
+      expected[1] = 3;
+      expected[2] = undefined;
+      expected[3] = 1;
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -479,7 +617,10 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReverseTest2400' ,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1, 0, 3);
+      const arr = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 0;
+      arr[2] = 3;
 
       const result = arr.reverse();
 
@@ -498,7 +639,7 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.level   LEVEL2
      */
     it('builtinsArrayReverseTest2500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
-      const largeArray = new Array<number>();
+      const largeArray: number[] = [];
       for (let i = 0; i < 10000; i++) {
         largeArray.push(i);
       }
@@ -523,10 +664,20 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReverseTest2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       const result = arr.reverse().map((num) => num * 2).reverse();
-      const expected = new Array<number>(2, 4, 6, 8, 10);
+      const expected = Array.create<number>(5, 0);
+      expected[0] = 2;
+      expected[1] = 4;
+      expected[2] = 6;
+      expected[3] = 8;
+      expected[4] = 10;
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -543,10 +694,10 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReverseTest2700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<boolean>(true, false, true, false);
+      const arr: boolean[] = [true, false, true, false];
 
       const result = arr.toReversed();
-      const expected = new Array<boolean>(false, true, false, true);
+      const expected: boolean[] = [false, true, false, true];
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
@@ -584,10 +735,10 @@ export default function BuiltinsArrayReverseTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReverseTest2900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number | string | boolean>(1, "two", true, 4);
+      const arr: (number | string | boolean)[] = [1, "two", true, 4];
 
       const result = arr.toReversed();
-      const expected = new Array<number | string | boolean>(4, true, "two", 1);
+      const expected: (number | string | boolean)[] = [4, true, "two", 1];
 
       expect(result.length).assertEqual(expected.length);
       for (let i = 0; i < result.length; i++) {
