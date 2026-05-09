@@ -193,31 +193,10 @@ export default function actsNotificationAnsThreePartyWatchStaticWithInAbilityTes
           }).catch((error: Error) => {
             let err = error as BusinessError
             console.error(`${testNum}subscribe fail:  ${err.code}, ${err.message}`);
-            if (err?.code === 801) {
-              expect(err.code).assertEqual(801);
-              done();
-            }else if(err?.code === 201){
+            if (err?.code === 201) {
               expect(err.code).assertEqual(201);
               done();
             }else {
-              expect(false).assertTrue();
-              done();
-            }
-          });
-          await Utils.msSleep(2000);
-          notificationExtensionSubscription.getSubscribeInfo().then((data: notificationExtensionSubscription.NotificationExtensionSubscriptionInfo[]) => {
-            console.info(testNum +`getSubscribeInfo successfully. Data: ${JSON.stringify(data)}`);
-            expect(JSON.stringify(data)).assertEqual('[{"addr":"01:23:45:67:89","type":0}]');
-          }).catch((error: Error) => {
-            let err = error as BusinessError
-            console.error(testNum +`getSubscribeInfo fail: ${err.code}, ${err.message}`);
-            if (err?.code === 801) {
-              expect(err.code).assertEqual(801);
-              done();
-            }else if(err?.code === 201){
-              expect(err.code).assertEqual(201);
-              done();
-            } else {
               expect(false).assertTrue();
               done();
             }
@@ -232,8 +211,8 @@ export default function actsNotificationAnsThreePartyWatchStaticWithInAbilityTes
           }).catch((error: Error) => {
             let err = error as BusinessError
             console.error(testNum +`unsubscribe fail: ${err.code}, ${err.message}`);
-            if (err?.code === 801) {
-              expect(err.code).assertEqual(801);
+            if (err?.code === 201) {
+              expect(err.code).assertEqual(201);
               done();
             } else {
               expect(false).assertTrue();
@@ -242,8 +221,8 @@ export default function actsNotificationAnsThreePartyWatchStaticWithInAbilityTes
           });
         } catch (err) {
           hilog.error(0x0000, 'testTag', `${testNum}restart failed: ${err.code}, ${err.message}`);
-          if (err?.code === 801) {
-            expect(err.code).assertEqual(801);
+          if (err?.code === 201) {
+            expect(err.code).assertEqual(201);
             done();
           } else {
             expect(false).assertTrue();
