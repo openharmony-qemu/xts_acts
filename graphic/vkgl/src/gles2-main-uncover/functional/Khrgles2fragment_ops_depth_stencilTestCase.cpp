@@ -1896,3 +1896,177 @@ static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000508,
         "stencil.stencil_ops.decr_wrap_replace_incr");
 
 static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000509,
+        "dEQP-GLES2.functional.fragment_ops.depth_",
+        "stencil.stencil_ops.decr_wrap_replace_decr");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000510,
+        "dEQP-GLES2.functional.fragment_ops.depth_s",
+        "tencil.stencil_ops.decr_wrap_replace_invert");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000511,
+        "dEQP-GLES2.functional.fragment_ops.depth_ste",
+        "ncil.stencil_ops.decr_wrap_replace_incr_wrap");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000512,
+        "dEQP-GLES2.functional.fragment_ops.depth_ste",
+        "ncil.stencil_ops.decr_wrap_replace_decr_wrap");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000513,
+        "dEQP-GLES2.functional.fragment_ops.depth",
+        "_stencil.stencil_ops.decr_wrap_incr_keep");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000514,
+        "dEQP-GLES2.functional.fragment_ops.depth",
+        "_stencil.stencil_ops.decr_wrap_incr_zero");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000515,
+        "dEQP-GLES2.functional.fragment_ops.depth_",
+        "stencil.stencil_ops.decr_wrap_incr_replace");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000516,
+        "dEQP-GLES2.functional.fragment_ops.depth",
+        "_stencil.stencil_ops.decr_wrap_incr_incr");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000517,
+        "dEQP-GLES2.functional.fragment_ops.depth",
+        "_stencil.stencil_ops.decr_wrap_incr_decr");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000518,
+        "dEQP-GLES2.functional.fragment_ops.depth_",
+        "stencil.stencil_ops.decr_wrap_incr_invert");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000519,
+        "dEQP-GLES2.functional.fragment_ops.depth_s",
+        "tencil.stencil_ops.decr_wrap_incr_incr_wrap");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000520,
+        "dEQP-GLES2.functional.fragment_ops.depth_s",
+        "tencil.stencil_ops.decr_wrap_incr_decr_wrap");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000521,
+        "dEQP-GLES2.functional.fragment_ops.depth",
+        "_stencil.stencil_ops.decr_wrap_decr_keep");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000522,
+        "dEQP-GLES2.functional.fragment_ops.depth",
+        "_stencil.stencil_ops.decr_wrap_decr_zero");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000523,
+        "dEQP-GLES2.functional.fragment_ops.depth_",
+        "stencil.stencil_ops.decr_wrap_decr_replace");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000524,
+        "dEQP-GLES2.functional.fragment_ops.depth",
+        "_stencil.stencil_ops.decr_wrap_decr_incr");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000525,
+        "dEQP-GLES2.functional.fragment_ops.depth",
+        "_stencil.stencil_ops.decr_wrap_decr_decr");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000526,
+        "dEQP-GLES2.functional.fragment_ops.depth_",
+        "stencil.stencil_ops.decr_wrap_decr_invert");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000527,
+        "dEQP-GLES2.functional.fragment_ops.depth_s",
+        "tencil.stencil_ops.decr_wrap_decr_incr_wrap");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000528,
+        "dEQP-GLES2.functional.fragment_ops.depth_s",
+        "tencil.stencil_ops.decr_wrap_decr_decr_wrap");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000529,
+        "dEQP-GLES2.functional.fragment_ops.depth_",
+        "stencil.stencil_ops.decr_wrap_invert_keep");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000530,
+        "dEQP-GLES2.functional.fragment_ops.depth_",
+        "stencil.stencil_ops.decr_wrap_invert_zero");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000531,
+        "dEQP-GLES2.functional.fragment_ops.depth_s",
+        "tencil.stencil_ops.decr_wrap_invert_replace");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000532,
+        "dEQP-GLES2.functional.fragment_ops.depth_",
+        "stencil.stencil_ops.decr_wrap_invert_incr");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000533,
+        "dEQP-GLES2.functional.fragment_ops.depth_",
+        "stencil.stencil_ops.decr_wrap_invert_decr");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000534,
+        "dEQP-GLES2.functional.fragment_ops.depth_s",
+        "tencil.stencil_ops.decr_wrap_invert_invert");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000535,
+        "dEQP-GLES2.functional.fragment_ops.depth_st",
+        "encil.stencil_ops.decr_wrap_invert_incr_wrap");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000536,
+        "dEQP-GLES2.functional.fragment_ops.depth_st",
+        "encil.stencil_ops.decr_wrap_invert_decr_wrap");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000537,
+        "dEQP-GLES2.functional.fragment_ops.depth_s",
+        "tencil.stencil_ops.decr_wrap_incr_wrap_keep");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000538,
+        "dEQP-GLES2.functional.fragment_ops.depth_s",
+        "tencil.stencil_ops.decr_wrap_incr_wrap_zero");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000539,
+        "dEQP-GLES2.functional.fragment_ops.depth_ste",
+        "ncil.stencil_ops.decr_wrap_incr_wrap_replace");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000540,
+        "dEQP-GLES2.functional.fragment_ops.depth_s",
+        "tencil.stencil_ops.decr_wrap_incr_wrap_incr");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000541,
+        "dEQP-GLES2.functional.fragment_ops.depth_s",
+        "tencil.stencil_ops.decr_wrap_incr_wrap_decr");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000542,
+        "dEQP-GLES2.functional.fragment_ops.depth_st",
+        "encil.stencil_ops.decr_wrap_incr_wrap_invert");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000543,
+        "dEQP-GLES2.functional.fragment_ops.depth_sten",
+        "cil.stencil_ops.decr_wrap_incr_wrap_incr_wrap");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000544,
+        "dEQP-GLES2.functional.fragment_ops.depth_sten",
+        "cil.stencil_ops.decr_wrap_incr_wrap_decr_wrap");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000545,
+        "dEQP-GLES2.functional.fragment_ops.depth_s",
+        "tencil.stencil_ops.decr_wrap_decr_wrap_keep");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000546,
+        "dEQP-GLES2.functional.fragment_ops.depth_s",
+        "tencil.stencil_ops.decr_wrap_decr_wrap_zero");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000547,
+        "dEQP-GLES2.functional.fragment_ops.depth_ste",
+        "ncil.stencil_ops.decr_wrap_decr_wrap_replace");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000548,
+        "dEQP-GLES2.functional.fragment_ops.depth_s",
+        "tencil.stencil_ops.decr_wrap_decr_wrap_incr");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000549,
+        "dEQP-GLES2.functional.fragment_ops.depth_s",
+        "tencil.stencil_ops.decr_wrap_decr_wrap_decr");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000550,
+        "dEQP-GLES2.functional.fragment_ops.depth_st",
+        "encil.stencil_ops.decr_wrap_decr_wrap_invert");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000551,
+        "dEQP-GLES2.functional.fragment_ops.depth_sten",
+        "cil.stencil_ops.decr_wrap_decr_wrap_incr_wrap");
+
+static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000552,
+        "dEQP-GLES2.functional.fragment_ops.depth_sten",
+        "cil.stencil_ops.decr_wrap_decr_wrap_decr_wrap");
