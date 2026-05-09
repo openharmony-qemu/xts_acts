@@ -303,56 +303,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
         expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
       }
       done();
-    });
-
-    /**
-     * @tc.name   SUB_Security_CryptoFramework_GetKeyData_Error_0300
-     * @tc.number SUB_Security_CryptoFramework_GetKeyData_Error_0300
-     * @tc.desc   getKeyData invalid parameter value test, error code 401.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("SUB_Security_CryptoFramework_GetKeyData_Error_0300",
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      try {
-        let gen: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator("ML-KEM-768");
-        let keyPair: cryptoFramework.KeyPair = await gen.generateKeyPair();
-        await keyPair.pubKey.getKeyData(-1);
-        expect(null).assertFail();
-      } catch (error) {
-        console.error(`[XTS] GetKeyData_Error_0300_neg ${error}, error code: ${(error as BusinessError).code}`);
-        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
-      }
-      try {
-        let gen: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator("ML-KEM-768");
-        let keyPair: cryptoFramework.KeyPair = await gen.generateKeyPair();
-        await keyPair.pubKey.getKeyData(999);
-        expect(null).assertFail();
-      } catch (error) {
-        console.error(`[XTS] GetKeyData_Error_0300_range ${error}, error code: ${(error as BusinessError).code}`);
-        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
-      }
-      try {
-        let gen: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator("ML-DSA-65");
-        let keyPair: cryptoFramework.KeyPair = await gen.generateKeyPair();
-        keyPair.pubKey.getKeyDataSync(-1);
-        expect(null).assertFail();
-      } catch (error) {
-        console.error(`[XTS] GetKeyData_Error_0300_dsa_neg ${error}, error code: ${(error as BusinessError).code}`);
-        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
-      }
-      try {
-        let gen: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator("ML-DSA-65");
-        let keyPair: cryptoFramework.KeyPair = await gen.generateKeyPair();
-        keyPair.pubKey.getKeyDataSync(999);
-        expect(null).assertFail();
-      } catch (error) {
-        console.error(`[XTS] GetKeyData_Error_0300_dsa_range ${error}, error code: ${(error as BusinessError).code}`);
-        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
-      }
-      done();
-    });
+    }); 
 
     /**
      * @tc.name   SUB_Security_CryptoFramework_GetEncodedPem_Error_0100

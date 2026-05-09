@@ -746,7 +746,10 @@ async function aeadEncOrDecPromise(algName: string, isEnc: boolean, symKey: cryp
     for(let dataSize = 0; dataSize < business; dataSize++) {
       let tmp = data.data.subarray(blockSize * dataSize, blockSize * (dataSize + 1));
       let doFinalText: cryptoFramework.DataBlob = { data:tmp };
-      let encryptCipher: cryptoFramework.DataBlob = await cipher.update(doFinalText);
+      let encryptCipher: cryptoFramework.DataBlob|null = await cipher.update(doFinalText);
+      if (encryptCipher === null) {
+        throw new Error("[TEST] Update Failed.");
+      }
       let mergeText = new Uint8Array(cipherText1.length + encryptCipher.data.length);
       mergeText.set(cipherText1);
       mergeText.set(encryptCipher.data, cipherText1.length);
@@ -754,7 +757,10 @@ async function aeadEncOrDecPromise(algName: string, isEnc: boolean, symKey: cryp
     }
     let tmp = data.data.subarray(blockSize * business, blockSize * (business + 1));
     let doFinalText: cryptoFramework.DataBlob = { data:tmp };
-    let encryptCipher: cryptoFramework.DataBlob = await cipher.doFinal(doFinalText);
+    let encryptCipher: cryptoFramework.DataBlob|null = await cipher.doFinal(doFinalText);
+    if (encryptCipher === null) {
+      return {data: cipherText1};
+    }
     let mergeText = new Uint8Array(cipherText1.length + encryptCipher.data.length);
     mergeText.set(cipherText1);
     mergeText.set(encryptCipher.data, cipherText1.length);

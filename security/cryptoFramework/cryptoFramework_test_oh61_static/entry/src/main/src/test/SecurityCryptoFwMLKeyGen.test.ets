@@ -375,11 +375,11 @@ export default function SecurityCryptoFwMLKeyGenTestUnit() {
           let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator("ML-KEM-512");
           expect(generator.algName).assertEqual("ML-KEM-512");
           let keyPair: cryptoFramework.KeyPair = await new Promise<cryptoFramework.KeyPair>((resolve, reject) => {
-            generator.generateKeyPair((error, keyPair) => {
-              if (error) {
-                reject(error);
+            generator.generateKeyPair((error: BusinessError<void>|null, keyPair: cryptoFramework.KeyPair|undefined) => {
+              if (error || keyPair === undefined) {
+                reject(error as Error);
               } else {
-                resolve(keyPair);
+                resolve(keyPair as cryptoFramework.KeyPair);
               }
             });
           });
@@ -411,11 +411,11 @@ export default function SecurityCryptoFwMLKeyGenTestUnit() {
           let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator("ML-KEM-768");
           expect(generator.algName).assertEqual("ML-KEM-768");
           let keyPair: cryptoFramework.KeyPair = await new Promise<cryptoFramework.KeyPair>((resolve, reject) => {
-            generator.generateKeyPair((error, keyPair) => {
-              if (error) {
-                reject(error);
+            generator.generateKeyPair((error: BusinessError<void>|null, keyPair: cryptoFramework.KeyPair|undefined) => {
+              if (error || keyPair === undefined) {
+                reject(error as Error);
               } else {
-                resolve(keyPair);
+                resolve(keyPair as cryptoFramework.KeyPair);
               }
             });
           });
@@ -453,11 +453,11 @@ export default function SecurityCryptoFwMLKeyGenTestUnit() {
           let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator("ML-KEM-1024");
           expect(generator.algName).assertEqual("ML-KEM-1024");
           let keyPair: cryptoFramework.KeyPair = await new Promise<cryptoFramework.KeyPair>((resolve, reject) => {
-            generator.generateKeyPair((error, keyPair) => {
-              if (error) {
-                reject(error);
+            generator.generateKeyPair((error: BusinessError<void>|null, keyPair: cryptoFramework.KeyPair|undefined) => {
+              if (error || keyPair === undefined) {
+                reject(error as Error);
               } else {
-                resolve(keyPair);
+                resolve(keyPair as cryptoFramework.KeyPair);
               }
             });
           });
@@ -492,11 +492,11 @@ export default function SecurityCryptoFwMLKeyGenTestUnit() {
           let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator("ML-DSA-44");
           expect(generator.algName).assertEqual("ML-DSA-44");
           let keyPair: cryptoFramework.KeyPair = await new Promise<cryptoFramework.KeyPair>((resolve, reject) => {
-            generator.generateKeyPair((error, keyPair) => {
-              if (error) {
-                reject(error);
+            generator.generateKeyPair((error: BusinessError<void>|null, keyPair: cryptoFramework.KeyPair|undefined) => {
+              if (error || keyPair === undefined) {
+                reject(error as Error);
               } else {
-                resolve(keyPair);
+                resolve(keyPair as cryptoFramework.KeyPair);
               }
             });
           });
@@ -532,11 +532,11 @@ export default function SecurityCryptoFwMLKeyGenTestUnit() {
           let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator("ML-DSA-65");
           expect(generator.algName).assertEqual("ML-DSA-65");
           let keyPair: cryptoFramework.KeyPair = await new Promise<cryptoFramework.KeyPair>((resolve, reject) => {
-            generator.generateKeyPair((error, keyPair) => {
-              if (error) {
-                reject(error);
+            generator.generateKeyPair((error: BusinessError<void>|null, keyPair: cryptoFramework.KeyPair|undefined) => {
+              if (error || keyPair === undefined) {
+                reject(error as Error);
               } else {
-                resolve(keyPair);
+                resolve(keyPair as cryptoFramework.KeyPair);
               }
             });
           });
@@ -567,11 +567,11 @@ export default function SecurityCryptoFwMLKeyGenTestUnit() {
           let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator("ML-DSA-87");
           expect(generator.algName).assertEqual("ML-DSA-87");
           let keyPair: cryptoFramework.KeyPair = await new Promise<cryptoFramework.KeyPair>((resolve, reject) => {
-            generator.generateKeyPair((error, keyPair) => {
-              if (error) {
-                reject(error);
+            generator.generateKeyPair((error: BusinessError<void>|null, keyPair: cryptoFramework.KeyPair|undefined) => {
+              if (error || keyPair === undefined) {
+                reject(error as Error);
               } else {
-                resolve(keyPair);
+                resolve(keyPair as cryptoFramework.KeyPair);
               }
             });
           });

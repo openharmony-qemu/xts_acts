@@ -15,6 +15,7 @@
 import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 import { compareUint8Array } from './utils/common/commonUtils';
+import { BusinessError } from '@ohos.base';
 
 
 export default function SecurityCryptoFwMLKeyConvertTestUnit() {
@@ -461,11 +462,11 @@ export default function SecurityCryptoFwMLKeyConvertTestUnit() {
           expect(pubKeyData.length).assertEqual(1184);
           let gen2: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator("ML-KEM-768");
           let convertedKeyPair: cryptoFramework.KeyPair = await new Promise<cryptoFramework.KeyPair>((resolve, reject) => {
-            gen2.convertKey({data: pubKeyData}, null, (error, keyPair) => {
-              if (error) {
-                reject(error);
+            gen2.convertKey({data: pubKeyData}, null, (error: BusinessError<void>|null, keyPair: cryptoFramework.KeyPair|undefined) => {
+              if (error || keyPair === undefined) {
+                reject(error as Error);
               } else {
-                resolve(keyPair);
+                resolve(keyPair as cryptoFramework.KeyPair);
               }
             });
           });
@@ -499,11 +500,11 @@ export default function SecurityCryptoFwMLKeyConvertTestUnit() {
           let seedData: Uint8Array = await keyPair1.priKey.getKeyData(cryptoFramework.AsyKeyDataItem.ML_KEM_PRIVATE_SEED);
           let gen2: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator("ML-KEM-768");
           let converted1: cryptoFramework.KeyPair = await new Promise<cryptoFramework.KeyPair>((resolve, reject) => {
-            gen2.convertKey({data: pubKeyData}, {data: priKeyData}, (error, keyPair) => {
-              if (error) {
-                reject(error);
+            gen2.convertKey({data: pubKeyData}, {data: priKeyData}, (error: BusinessError<void>|null, keyPair: cryptoFramework.KeyPair|undefined) => {
+              if (error || keyPair === undefined) {
+                reject(error as Error);
               } else {
-                resolve(keyPair);
+                resolve(keyPair as cryptoFramework.KeyPair);
               }
             });
           });
@@ -544,32 +545,32 @@ export default function SecurityCryptoFwMLKeyConvertTestUnit() {
           let seedData: Uint8Array = await keyPair1.priKey.getKeyData(cryptoFramework.AsyKeyDataItem.ML_DSA_PRIVATE_SEED);
           let gen2: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator("ML-DSA-65");
           let convertedPub: cryptoFramework.KeyPair = await new Promise<cryptoFramework.KeyPair>((resolve, reject) => {
-            gen2.convertKey({data: pubKeyData}, null, (error, keyPair) => {
-              if (error) {
-                reject(error);
+            gen2.convertKey({data: pubKeyData}, null, (error: BusinessError<void>|null, keyPair: cryptoFramework.KeyPair|undefined) => {
+              if (error || keyPair === undefined) {
+                reject(error as Error);
               } else {
-                resolve(keyPair);
+                resolve(keyPair as cryptoFramework.KeyPair);
               }
             });
           });
           expect(convertedPub.pubKey !== null).assertTrue();
           expect(convertedPub.priKey === undefined).assertTrue();
           let converted1: cryptoFramework.KeyPair = await new Promise<cryptoFramework.KeyPair>((resolve, reject) => {
-            gen2.convertKey({data: pubKeyData}, {data: priKeyData}, (error, keyPair) => {
-              if (error) {
-                reject(error);
+            gen2.convertKey({data: pubKeyData}, {data: priKeyData}, (error: BusinessError<void>|null, keyPair: cryptoFramework.KeyPair|undefined) => {
+              if (error || keyPair === undefined) {
+                reject(error as Error);
               } else {
-                resolve(keyPair);
+                resolve(keyPair as cryptoFramework.KeyPair);
               }
             });
           });
           expect(converted1.priKey !== null).assertTrue();
           let converted2: cryptoFramework.KeyPair = await new Promise<cryptoFramework.KeyPair>((resolve, reject) => {
-            gen2.convertKey({data: pubKeyData}, {data: seedData}, (error, keyPair) => {
-              if (error) {
-                reject(error);
+            gen2.convertKey({data: pubKeyData}, {data: seedData}, (error: BusinessError<void>|null, keyPair: cryptoFramework.KeyPair|undefined) => {
+              if (error || keyPair === undefined) {
+                reject(error as Error);
               } else {
-                resolve(keyPair);
+                resolve(keyPair as cryptoFramework.KeyPair);
               }
             });
           });
