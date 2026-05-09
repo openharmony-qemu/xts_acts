@@ -31,25 +31,25 @@ struct ImageColorFilterTestPage {
   build() {
     Scroll() {
       Column(undefined) {
-        // color
+        // Image colorFilter Test - 枚举值
         Image($r('app.media.startIcon'))
           .id('imageColorFilterEnumColor')
           .colorFilter(Color.Red)
           .width(100)
 
-        // num
+        // Image colorFilter Test - ResourceColor Numbernum
         Image($r('app.media.startIcon'))
           .id('imageColorFilterNumColor')
           .colorFilter(0xccaabb)
           .width(100)
 
-        // string
+        // Image colorFilter Test - ResourceColor String
         Image($r('app.media.startIcon'))
           .id('imageColorFilterStringColor')
           .colorFilter('#559988')
           .width(100)
 
-        // arrayObject
+        // Image colorFilter Test - ColorFilter Matrix
         Image($r('app.media.startIcon'))
           .id('imageColorFilterMatrixColor')
           .colorFilter(new ColorFilter(
@@ -59,13 +59,13 @@ struct ImageColorFilterTestPage {
               0, 0, 0, 1, 0]))
           .width(100)
 
-        // drawing.ColorFilter
+        // Image colorFilter Test - DrawingColorFilter
         Image($r('app.media.startIcon'))
           .id('imageColorFilterDrawingColor') 
           .colorFilter(drawingColorFilter)
           .width(100)
 
-        // resourceColor
+        // Image colorFilter Test - ResourceColor Resource
         Image($r('app.media.startIcon'))
           .id('imageColorFilterResourceColor') 
           .colorFilter($r('sys.color.ohos_id_color_primary'))
