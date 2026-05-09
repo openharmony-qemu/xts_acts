@@ -4417,7 +4417,7 @@ Camera_ErrorCode NDKCamera::UnregisterExposureStateChangeCallback(int useCaseCod
 
 bool NDKCamera::WaitForExposureFinish()
 {
-    const int waitExposureTimeout = 60;
+    const int waitExposureTimeout = 5;
     const int sleepInterval = 20;
     auto startTime = std::chrono::system_clock::now();
     while (!g_isExposureStart) {
