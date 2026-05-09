@@ -1921,42 +1921,40 @@ export default function geoLocationManager_nop_test() {
     });
 
     /**
-     * @tc.name   SUB_Location_nop_findMatchingWlan_0100
-     * @tc.number SUB_Location_nop_findMatchingWlan_0100
-     * @tc.desc   Test findMatchingWlan with needStartScan false
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.number  SUB_Location_nop_findMatchingWlan_0100
+     * @tc.name    SUB_Location_nop_findMatchingWlan_0100
+     * @tc.desc    Test findMatchingWlan error code 201
+     * @tc.level   Level 2
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
      */
-    it('SUB_Location_nop_findMatchingWlan_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+    it('SUB_Location_nop_findMatchingWlan_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        var wlanBssidArray = ['AA:BB:CC:DD:EE:FF'];
-        var rssiThreshold = -70;
-        var needStartScan = true;
-        
-        geoLocationManager.findMatchingWlan(wlanBssidArray, rssiThreshold, needStartScan).then((result) => {
-          console.info('[lbs_js] SUB_Location_nop_findMatchingWlan_0100 result: ' + JSON.stringify(result));
-          expect(result instanceof Array).assertTrue();
+        let locationEnabled: boolean = geoLocationManager.isLocationEnabled();
+        if (locationEnabled) {
+          console.info("SUB_Location_nop_findMatchingWlan_0100 Location is enabled, skip error code test ");
           done();
-        }).catch((err) => {
-            console.info('[lbs_js] SUB_Location_nop_findMatchingWlan_0100 error: ' + JSON.stringify(err));
-            if (err.code === 801){
-              expect(err.code).assertEqual(801);
-            } else {
-              expect(err.code).assertEqual(201);
-            }
-            done();
-        });
-      } catch (error) {
-        console.info('[lbs_js] SUB_Location_findMatchingWlan_0600 try err: ' + JSON.stringify(error));
-        if (error.code === 801){
-          expect(error.code).assertEqual(801);
+        }
+        
+        let wlanBssidArray: Array<string> = ['AA:BB:CC:DD:EE:FF'];
+        let rssiThreshold: number = -70;
+        let needStartScan: boolean = true;
+        
+        let result: Array<geoLocationManager.MatchingWlanInfo> = await geoLocationManager.findMatchingWlan(
+            wlanBssidArray, rssiThreshold, needStartScan);
+        console.info("SUB_Location_nop_findMatchingWlan_0100 result :" + JSON.stringify(result));
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("SUB_Location_nop_findMatchingWlan_0100 error :" + JSON.stringify(err));
+        if (err.code === 801) {
+            expect(err.code === 801).assertTrue();
         } else {
-          expect(error.code).assertEqual(201);
+            expect(err.code === 201).assertTrue();
         }
         done();
       }
-  })
+      });
 
 
   })
