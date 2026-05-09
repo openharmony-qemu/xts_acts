@@ -88,7 +88,7 @@ void DlsymNoSymver0200(void)
 
 /**
  * @tc.name      : dlsym_easy_symver_0100
- * @tc.desc      : invoke a symbol directly after specifying a non-default 
+ * @tc.desc      : invoke a symbol directly after specifying a non-default
  *                 version
  * @tc.level     : Level 0
  */

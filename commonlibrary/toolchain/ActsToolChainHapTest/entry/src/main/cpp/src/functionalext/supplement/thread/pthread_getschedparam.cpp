@@ -31,11 +31,11 @@ static void *ThreadfuncA(void *arg)
 void PthreadGetschedparam0100(void)
 {
     pthread_t ph;
-    pthread_create(&ph, NULL, ThreadfuncA, NULL);
+    pthread_create(&ph, nullptr, ThreadfuncA, nullptr);
     int policy = 0;
     struct sched_param sp;
     int32_t ret = pthread_getschedparam(ph, &policy, &sp);
-    void *threadResult = NULL;
+    void *threadResult = nullptr;
     pthread_join(ph, &threadResult);
     EXPECT_EQ("PthreadGetschedparam0100", ret, 0);
 }

@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+#ifndef DSO_HARD_SYMVER_H
+#define DSO_HARD_SYMVER_H
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -22,4 +25,6 @@ char *DsoHardSymverLd(void);
 
 #ifdef __cplusplus
 }
+#endif
+
 #endif

@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-#ifndef _LDSO_DEBUG_TEST_LIB_8_H
-#define _LDSO_DEBUG_TEST_LIB_8_H
+#ifndef LDSO_DEBUG_TEST_LIB_8_H
+#define LDSO_DEBUG_TEST_LIB_8_H
 
 extern int debug_test_8(void);
 

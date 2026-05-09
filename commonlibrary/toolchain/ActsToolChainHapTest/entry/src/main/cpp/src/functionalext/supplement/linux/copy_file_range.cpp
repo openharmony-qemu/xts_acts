@@ -19,7 +19,7 @@
 #include <cstring>
 #include "filepath_util.h"
 
-const char *str = "Hello";
+const char *STR = "Hello";
 /**
  * @tc.name      : copy_file_range_0100
  * @tc.desc      : Copy a range of data from one file to another
@@ -44,8 +44,8 @@ void CopyFileRange0100(void)
         return;
     }
 
-    wlen = write(fdIn, str, strlen(str));
-    if (wlen != strlen(str)) {
+    wlen = write(fdIn, STR, strlen(STR));
+    if (wlen != strlen(STR)) {
         t_error("%s write failed\n", __func__);
         return;
     }
@@ -75,8 +75,8 @@ void CopyFileRange0100(void)
     if (result == -1) {
         t_error("%s read failed\n", __func__);
     }
-    if (strcmp(str, buffer)) {
-        t_error("%s buffer is %s, not %s", __func__, buffer, str);
+    if (strcmp(STR, buffer)) {
+        t_error("%s buffer is %s, not %s", __func__, buffer, STR);
     }
 
     close(fdIn);
@@ -126,8 +126,8 @@ void CopyFileRange0300(void)
         return;
     }
 
-    wlen = write(fdIn, str, strlen(str));
-    if (wlen != strlen(str)) {
+    wlen = write(fdIn, STR, strlen(STR));
+    if (wlen != strlen(STR)) {
         t_error("%s write failed\n", __func__);
         return;
     }

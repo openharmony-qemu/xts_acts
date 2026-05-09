@@ -12,8 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#ifndef _LDSO_DEBUG_TEST_LIB_5_H
-#define _LDSO_DEBUG_TEST_LIB_5_H
+#ifndef LDSO_DEBUG_TEST_LIB_5_H
+#define LDSO_DEBUG_TEST_LIB_5_H
 
 extern int DebugTest5(void);
 
