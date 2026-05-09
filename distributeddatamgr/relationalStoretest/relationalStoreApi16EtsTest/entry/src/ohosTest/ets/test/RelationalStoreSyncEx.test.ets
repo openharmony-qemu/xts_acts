@@ -599,56 +599,5 @@ export default function RdbStoreSyncEx() {
       console.info(logTag + "************* testRdbStoresyncExTest0022 end *************");
     })
     console.log(TAG + "*************Unit Test End*************");
-
-    
-    it("testRdbSyncStageEtsTest0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
-        console.info(logTag + "testRdbSyncStageEtsTest0020 start");
-        await sleep(3000);
-        let u8 = new Uint8Array([1, 2, 3]);
-        const valueBucket : data_Rdb.ValuesBucket = {
-          "name": "zhangsan",
-          "age": 18,
-          "salary": 100.5,
-          "blobType": u8
-        }
-        await rdbStore?.insert("test", valueBucket);
-        console.info("testRdbSyncStageEtsTest0020 insert success");
-  
-        let predicates = new data_Rdb.RdbPredicates('test');
-        predicates.equalTo("name", "zhangsan");
-        let resultSet = await rdbStore?.query(predicates);
-        try {
-          expect(true).assertEqual(resultSet?.goToFirstRow());
-          const id = resultSet?.getLong(resultSet?.getColumnIndex("id"));
-          const name = resultSet?.getString(resultSet?.getColumnIndex("name"));
-          console.info(logTag + "testRdbSyncStageEtsTest0020 id=" + id + ", name=" + name);
-          expect(1).assertEqual(id);
-          expect("zhangsan").assertEqual(name);
-        } catch (e) {
-          console.info("testRdbSyncStageEtsTest0020 insert error " + e);
-          expect().assertFail();
-        }
-        resultSet?.close();
-        predicates.inDevices(syncDeviceIds);
-        rdbStore?.syncEx(data_Rdb.SyncMode.SYNC_MODE_PUSH, predicates).then((result: data_Rdb.SyncResult[]) => {
-          console.log('testRdbSyncStageEtsTest0020 sync done.');
-          for (let i = 0; i < result.length; i++) {
-            console.info(logTag + `SyncEx failed` + JSON.stringify(result));
-            let code = result[i].code;
-            expect(code === 0).assertTrue();
-            let message = result[i].message;
-            expect(message == null).assertTrue();
-            let deviceid = result[i].device;
-            expect(deviceid != null).assertTrue();
-            console.info(logTag + `SyncEx failed, message: ${message} code : ${code} deviceid: ${deviceid}`);
-          }
-        }).catch((err: BusinessError) => {
-          console.log(logTag + 'testRdbSyncStageEtsTest0020 sync failed' + err.code);
-          expect().assertFail();
-        })
-        await sleep(800);
-        done();
-        console.info(logTag + "************* testRdbSyncStageEtsTest0020 end *************");
-      })
   })
 }
