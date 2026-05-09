@@ -30,6 +30,8 @@ export default function extensionWindowPropertiesTest() {
     let isAutoWindow: string = '';
     let driver: Driver;
     let isFreeWindowMode = false;
+    let deviceType:string = deviceInfo.deviceType;
+    console.info(`deviceType: ${deviceType}`);
 
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -689,6 +691,70 @@ export default function extensionWindowPropertiesTest() {
       }
       done()
     })
+
+    /**
+     * @tc.name   testUIExtensionHostOnAvoidAreaChange_ErrorCode1300002
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_AVOIDAREA_ERRORCODE_JS_API_0400
+     * @tc.desc   testUIExtensionHostOnAvoidAreaChange_ErrorCode401 when got callback with null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUIExtensionHostOnAvoidAreaChange_ErrorCode1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testUIExtensionHostOnAvoidAreaChange_ErrorCode1300002 ';
+      console.log(caseName + 'start run');
+      try {
+        let options: window.SubWindowOptions = {
+          title: 'subWindow',
+          decorEnabled: true
+        }
+        console.log(caseName + 'start run')
+        await windowStage.createSubWindowWithOptions('subWindowOccupyEvents', options).then(async (subWindowClass) => {
+          await subWindowClass.setUIContent('testability/pages/WindowTest/EmbeddedComponentErrorCodePage')
+          subWindowClass.resizeAsync(1000, 1200)
+          subWindowClass.moveWindowToAsync(300, 200)
+          await subWindowClass.showWindow()
+
+          console.log(caseName + 'after createSubWindow')
+
+          await sleep(1000)
+          // 设置独占事件
+          let btn = await driver.findComponent(ON.id('onAvoidAreaChange1300002'))
+          console.log(caseName + ' btn : ' + btn);
+          // 只针对pc设备
+          if (btn == undefined) {
+            console.log(caseName + 'device not support')
+          } else {
+            // 点击执行extensionWindow?.on('avoidAreaChange', null)
+            await btn.click()
+            await sleep(1000)
+
+            // 获取接口返回信息
+            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessageText = await errorMessage.getText()
+            console.log(caseName + 'errorMessageText : ' + errorMessageText)
+            expect(errorMessageText == '1300002').assertTrue()
+            await subWindowClass.destroyWindow()
+          }
+        }).catch((error: BusinessError) => {
+          console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
+          if (error.code == 1300002) {
+            console.log(caseName + 'device not support')
+
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (exception) {
+        console.log(caseName + 'Failed ' + JSON.stringify(exception))
+        expect().assertFail()
+      }
+      done()
+    })
+
+
     /**
      * @tc.name   testUIExtensionHostOffAvoidAreaChange_ErrorCode401
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_AVOIDAREA_ERRORCODE_JS_API_0300
@@ -731,6 +797,68 @@ export default function extensionWindowPropertiesTest() {
             let errorMessageText = await errorMessage.getText()
             console.log(caseName + 'errorMessageText : ' + errorMessageText)
             expect(errorMessageText == 'success').assertTrue()
+            await subWindowClass.destroyWindow()
+          }
+        }).catch((error: BusinessError) => {
+          console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
+          if (error.code == 1300002) {
+            console.log(caseName + 'device not support')
+
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (exception) {
+        console.log(caseName + 'Failed ' + JSON.stringify(exception))
+        expect().assertFail()
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testUIExtensionHostOffAvoidAreaChange_ErrorCode1300002
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_AVOIDAREA_ERRORCODE_JS_API_0500
+     * @tc.desc   testUIExtensionHostOnAvoidAreaChange_ErrorCode401 when got callback repeat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUIExtensionHostOffAvoidAreaChange_ErrorCode1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testUIExtensionHostOffAvoidAreaChange_ErrorCode1300002 ';
+      console.log(caseName + 'start run');
+      try {
+        let options: window.SubWindowOptions = {
+          title: 'subWindow',
+          decorEnabled: true
+        }
+        console.log(caseName + 'start run')
+        await windowStage.createSubWindowWithOptions('subWindowOccupyEvents', options).then(async (subWindowClass) => {
+          await subWindowClass.setUIContent('testability/pages/WindowTest/EmbeddedComponentErrorCodePage')
+          subWindowClass.resizeAsync(1000, 1200)
+          subWindowClass.moveWindowToAsync(300, 200)
+          await subWindowClass.showWindow()
+
+          console.log(caseName + 'after createSubWindow')
+
+          await sleep(1000)
+          // 设置独占事件
+          let btn = await driver.findComponent(ON.id('offAvoidAreaChange1300002'))
+          console.log(caseName + ' btn : ' + btn);
+          // 只针对pc设备
+          if (btn == undefined) {
+            console.log(caseName + 'device not support')
+          } else {
+            // 点击执行extensionWindow?.on('avoidAreaChange', null)
+            await btn.click()
+            await sleep(1000)
+
+            // 获取接口返回信息
+            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessageText = await errorMessage.getText()
+            console.log(caseName + 'errorMessageText : ' + errorMessageText)
+            expect(errorMessageText == '1300002').assertTrue()
             await subWindowClass.destroyWindow()
           }
         }).catch((error: BusinessError) => {
@@ -812,6 +940,132 @@ export default function extensionWindowPropertiesTest() {
       }
       done()
     })
+    
+    /**
+     * @tc.name   testUIExtensionHostOnWindowSizeChange_ErrorCode1300002
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_WINDOWSIZECHANGE_ERRORCODE_JS_API_0100
+     * @tc.desc   testUIExtensionHostOnWindowSizeChange_ErrorCode1300002 when register callback repeat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUIExtensionHostOnWindowSizeChange_ErrorCode1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testUIExtensionHostOnWindowSizeChange_ErrorCode1300002 ';
+      console.log(caseName + 'start run');
+      try {
+        let options: window.SubWindowOptions = {
+          title: 'subWindow',
+          decorEnabled: true
+        }
+        console.log(caseName + 'start run')
+        await windowStage.createSubWindowWithOptions('OnWindowSizeChange_ErrorCode1300002', options).then(async (subWindowClass) => {
+          await subWindowClass.setUIContent('testability/pages/WindowTest/EmbeddedComponentErrorCodePage')
+          subWindowClass.resizeAsync(1000, 1200)
+          subWindowClass.moveWindowToAsync(300, 200)
+          subWindowClass.showWindow()
+
+          console.log(caseName + 'after createSubWindow')
+
+          await sleep(1000)
+          // 设置独占事件
+          let btn = await driver.findComponent(ON.id('onWindowSizeChange1300002'))
+          console.log(caseName + ' btn : ' + btn);
+          // 只针对pc设备
+          if (btn == undefined) {
+            console.log(caseName + 'device not support')
+          } else {
+            // 点击执行extensionWindow?.on('onWindowSizeChange401', null)
+            await btn.click()
+            await sleep(1000)
+
+            // 获取接口返回信息
+            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessageText = await errorMessage.getText()
+            console.log(caseName + 'errorMessageText : ' + errorMessageText)
+            expect(errorMessageText == '1300002').assertTrue()
+            await subWindowClass.destroyWindow()
+          }
+        }).catch((error: BusinessError) => {
+          console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
+          if (error.code == 1300002) {
+            console.log(caseName + 'device not support')
+
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (exception) {
+        console.log(caseName + 'Failed ' + JSON.stringify(exception))
+        expect().assertFail()
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testUIExtensionHostOffWindowSizeChange_ErrorCode1300002
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_WINDOWSIZECHANGE_ERRORCODE_JS_API_0200
+     * @tc.desc   testUIExtensionHostOffWindowSizeChange_ErrorCode1300002 when register callback repeat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUIExtensionHostOffWindowSizeChange_ErrorCode1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testUIExtensionHostOffWindowSizeChange_ErrorCode1300002 ';
+      console.log(caseName + 'start run');
+      try {
+        let options: window.SubWindowOptions = {
+          title: 'subWindow',
+          decorEnabled: true
+        }
+        console.log(caseName + 'start run')
+        await windowStage.createSubWindowWithOptions('subWindowOccupyEvents', options).then(async (subWindowClass) => {
+          await subWindowClass.setUIContent('testability/pages/WindowTest/EmbeddedComponentErrorCodePage')
+          subWindowClass.resizeAsync(1000, 1200)
+          subWindowClass.moveWindowToAsync(300, 200)
+          subWindowClass.showWindow()
+
+          console.log(caseName + 'after createSubWindow')
+
+          await sleep(1000)
+          // 设置独占事件
+          let btn = await driver.findComponent(ON.id('offWindowSizeChange1300002'))
+          console.log(caseName + ' btn : ' + btn);
+          // 只针对pc设备
+          if (btn == undefined) {
+            console.log(caseName + 'device not support')
+          } else {
+            // 点击执行extensionWindow?.on('onWindowSizeChange401', null)
+            await btn.click()
+            await sleep(1000)
+
+            // 获取接口返回信息
+            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessageText = await errorMessage.getText()
+            console.log(caseName + 'errorMessageText : ' + errorMessageText)
+            expect(errorMessageText == '1300002').assertTrue()
+            await subWindowClass.destroyWindow()
+          }
+        }).catch((error: BusinessError) => {
+          console.log(caseName + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
+          if (error.code == 1300002) {
+            console.log(caseName + 'device not support')
+
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (exception) {
+        console.log(caseName + 'Failed ' + JSON.stringify(exception))
+        expect().assertFail()
+      }
+      done()
+    })
+
+
     /**
      * @tc.name   testUIExtensionHostCreateSubWindowWithOptions1
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_CREATESUBWINDOWWITHOPTIONS_0100
@@ -1594,7 +1848,7 @@ export default function extensionWindowPropertiesTest() {
         // extensionWindow?.createSubWindowWithOptions
         let btn = await driver.findComponent(ON.id('getWindowAvoidAreaCUTOUT'))
         console.log(caseName + ' btn : ' + btn);
-        if (btn != null) {
+        if (deviceType === '2in1' && btn != null) {
           await btn.click()
           await sleep(1000)
           // 获取接口返回信息
@@ -1888,6 +2142,130 @@ export default function extensionWindowPropertiesTest() {
           await sleep(1000)
           // 获取接口返回信息
           let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+          let errorMessageText = await errorMessage.getText()
+          console.log(caseName + 'errorMessageText : ' + errorMessageText);
+
+          if (errorMessageText == 'success') {
+            let RectChangeHeight = await driver.findComponent(ON.id('RectChangeHeight'))
+            console.log(caseName + 'RectChangeHeight : ' + RectChangeHeight);
+            await RectChangeHeight.click();
+            await sleep(1000);
+            let flag = await driver.findComponent(ON.id('flag'))
+            console.log(caseName + 'flag : ' + flag);
+            let flagtext = await flag.getText();
+            console.log(caseName + 'flagtext : ' + flagtext);
+            expect(flagtext).assertEqual('true');
+            await subWindowClass.destroyWindow()
+            done();
+          } else if (errorMessageText == '801') {
+            await subWindowClass.destroyWindow()
+            done();
+          } else {
+            expect().assertFail()
+            await subWindowClass.destroyWindow()
+            done();
+          }
+        } else {
+          await subWindowClass.destroyWindow()
+          done();
+        }
+      } catch (exception) {
+        console.error(caseName + 'Failed, cause:  ' + JSON.stringify(exception))
+        await subWindowClass?.destroyWindow()
+        expect().assertFail()
+        done()
+      }
+
+
+    })
+
+    /**
+     * @tc.name   testOnRectChange1300002
+     * @tc.number SUB_WMS_UEC_OnRectChange_ErroCode_0100
+     * @tc.desc   testOnRectChange1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testOnRectChange1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testOnRectChange1300002';
+      console.log(caseName + 'start run');
+      let subWindowClass: window.Window | undefined;
+      try {
+        subWindowClass = await windowStage.createSubWindow('testOnRectChange1300002');
+        await subWindowClass.setUIContent('testability/pages/WindowTest/EmbeddedComponentGetWindowAvoidAreaPage');
+        await subWindowClass.showWindow();
+        await sleep(2000);
+        // extensionWindow?.createSubWindowWithOptions
+        let btn = await driver.findComponent(ON.id('rectChange'))
+        console.log(caseName + ' btn : ' + btn);
+        if (btn != null) {
+          await btn.click()
+          await sleep(1000)
+          // 获取接口返回信息
+          let errorMessage = await driver.findComponent(ON.id('onRectChange1300002'))
+          let errorMessageText = await errorMessage.getText()
+          console.log(caseName + 'errorMessageText : ' + errorMessageText);
+
+          if (errorMessageText == 'success') {
+            let RectChangeHeight = await driver.findComponent(ON.id('RectChangeHeight'))
+            console.log(caseName + 'RectChangeHeight : ' + RectChangeHeight);
+            await RectChangeHeight.click();
+            await sleep(1000);
+            let flag = await driver.findComponent(ON.id('flag'))
+            console.log(caseName + 'flag : ' + flag);
+            let flagtext = await flag.getText();
+            console.log(caseName + 'flagtext : ' + flagtext);
+            expect(flagtext).assertEqual('true');
+            await subWindowClass.destroyWindow()
+            done();
+          } else if (errorMessageText == '801') {
+            await subWindowClass.destroyWindow()
+            done();
+          } else {
+            expect().assertFail()
+            await subWindowClass.destroyWindow()
+            done();
+          }
+        } else {
+          await subWindowClass.destroyWindow()
+          done();
+        }
+      } catch (exception) {
+        console.error(caseName + 'Failed, cause:  ' + JSON.stringify(exception))
+        await subWindowClass?.destroyWindow()
+        expect().assertFail()
+        done()
+      }
+
+
+    })
+
+    /**
+     * @tc.name   testOffRectChange1300002
+     * @tc.number SUB_WMS_UEC_OnRectChange_ErroCode_0200
+     * @tc.desc   testOffRectChange1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testOffRectChange1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testOffRectChange1300002';
+      console.log(caseName + 'start run');
+      let subWindowClass: window.Window | undefined;
+      try {
+        subWindowClass = await windowStage.createSubWindow('testOffRectChange1300002');
+        await subWindowClass.setUIContent('testability/pages/WindowTest/EmbeddedComponentGetWindowAvoidAreaPage');
+        await subWindowClass.showWindow();
+        await sleep(2000);
+        // extensionWindow?.createSubWindowWithOptions
+        let btn = await driver.findComponent(ON.id('rectChange'))
+        console.log(caseName + ' btn : ' + btn);
+        if (btn != null) {
+          await btn.click()
+          await sleep(1000)
+          // 获取接口返回信息
+          let errorMessage = await driver.findComponent(ON.id('offRectChange1300002'))
           let errorMessageText = await errorMessage.getText()
           console.log(caseName + 'errorMessageText : ' + errorMessageText);
 

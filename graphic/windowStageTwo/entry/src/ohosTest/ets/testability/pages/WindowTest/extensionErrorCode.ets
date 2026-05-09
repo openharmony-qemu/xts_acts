@@ -39,7 +39,7 @@ struct ExtensionErrorCode {
 
       Button('getWindowAvoidArea401')
         .id('getWindowAvoidArea401')
-        .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+        .fontSize(8).onClick(() => {
           let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
@@ -52,9 +52,10 @@ struct ExtensionErrorCode {
           }
         })
 
-      Button('onAvoidAreaChange401')
+      Row(){
+        Button('onAvoidAreaChange401')
         .id('onAvoidAreaChange401')
-        .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+        .fontSize(8).onClick(() => {
           let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
@@ -66,9 +67,29 @@ struct ExtensionErrorCode {
             this.message = err.code + ''
           }
         })
-      Button('offAvoidAreaChange')
+
+        Button('onAvoidAreaChange1300002')
+        .id('onAvoidAreaChange1300002')
+        .fontSize(8).onClick(() => {
+          let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
+          let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
+          let cb = (info: uiExtension.AvoidAreaInfo) => {}
+          try {
+            extensionWindow?.on('avoidAreaChange', cb)
+            extensionWindow?.on('avoidAreaChange', cb)
+            console.log('success in page')
+            this.message = 'success'
+          } catch (err) {
+            console.log('testUIExtensionHostOccupyEvents err in page, err : ' + JSON.stringify(err))
+            this.message = err.code + ''
+          }
+        })
+
+      }
+      Row(){
+        Button('offAvoidAreaChange')
         .id('offAvoidAreaChange')
-        .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+        .fontSize(8).onClick(() => {
           let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
@@ -84,9 +105,26 @@ struct ExtensionErrorCode {
           }
         })
 
-      Button('onWindowSizeChange401')
+        Button('offAvoidAreaChange1300002')
+        .id('offAvoidAreaChange1300002')
+        .fontSize(8).onClick(() => {
+          let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
+          let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
+          try {
+            extensionWindow?.off('avoidAreaChange');
+            console.log('success in page')
+            this.message = 'success'
+          } catch (err) {
+            console.log('testUIExtensionHostOccupyEvents err in page, err : ' + JSON.stringify(err))
+            this.message = err.code + ''
+          }
+        })
+      }
+
+      Row(){
+        Button('onWindowSizeChange401')
         .id('onWindowSizeChange401')
-        .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+        .fontSize(8).onClick(() => {
           let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
@@ -98,9 +136,43 @@ struct ExtensionErrorCode {
             this.message = err.code + ''
           }
         })
+
+        Button('onWindowSizeChange1300002')
+        .id('onWindowSizeChange1300002')
+        .fontSize(8).onClick(() => {
+          let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
+          let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
+          try {
+            let cb = (size: window.Size) => {}
+            extensionWindow!.on('windowSizeChange', cb);
+            extensionWindow?.on('windowSizeChange', cb)
+            console.log('success in page')
+            this.message = 'success'
+          } catch (err) {
+            console.log('testUIExtensionHostOccupyEvents err in page, err : ' + JSON.stringify(err))
+            this.message = err.code + ''
+          }
+        })
+      }
+      Button('offWindowSizeChange1300002')
+        .id('offWindowSizeChange1300002')
+        .fontSize(8).onClick(() => {
+          let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
+          let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
+          try {
+            let cb = (size: window.Size) => {}
+            extensionWindow?.off('windowSizeChange', cb);
+            extensionWindow?.off('windowSizeChange')
+            console.log('success in page')
+            this.message = 'success'
+          } catch (err) {
+            console.log('testUIExtensionHostOccupyEvents err in page, err : ' + JSON.stringify(err))
+            this.message = err.code + ''
+          }
+        })
       Button('createSubWindowWithOptions1')
         .id('createSubWindowWithOptions1')
-        .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+        .fontSize(8).onClick(() => {
           let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
@@ -122,7 +194,7 @@ struct ExtensionErrorCode {
         })
       Button('createSubWindowWithOptions2')
         .id('createSubWindowWithOptions2')
-        .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+        .fontSize(8).onClick(() => {
           let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
@@ -145,7 +217,7 @@ struct ExtensionErrorCode {
 
       Button('createSubWindowWithOptions401')
         .id('createSubWindowWithOptions401')
-        .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+        .fontSize(8).onClick(() => {
           let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
@@ -159,7 +231,7 @@ struct ExtensionErrorCode {
         })
       Button('createSubWindowWithOptionsnull')
         .id('createSubWindowWithOptionsnull')
-        .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+        .fontSize(8).onClick(() => {
           let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
@@ -173,7 +245,7 @@ struct ExtensionErrorCode {
         })
       Button('createSubWindowWithOptionsundefined')
         .id('createSubWindowWithOptionsundefined')
-        .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+        .fontSize(8).onClick(() => {
           let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
@@ -187,7 +259,7 @@ struct ExtensionErrorCode {
         })
       Button('createSubWindowWithOptions2Null')
         .id('createSubWindowWithOptions2Null')
-        .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+        .fontSize(8).onClick(() => {
           let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
@@ -201,7 +273,7 @@ struct ExtensionErrorCode {
         })
       Button('createSubWindowWithOptions2undefined')
         .id('createSubWindowWithOptions2undefined')
-        .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+        .fontSize(8).onClick(() => {
           let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
@@ -215,7 +287,7 @@ struct ExtensionErrorCode {
         })
       Button('createSubWindowWithOptions2_')
         .id('createSubWindowWithOptions2_')
-        .width('90%').margin({ top: 5, bottom: 5 }).fontSize(16).onClick(() => {
+        .fontSize(8).onClick(() => {
           let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
