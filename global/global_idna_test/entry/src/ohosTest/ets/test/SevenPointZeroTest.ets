@@ -27,7 +27,7 @@ export default function SevenPointZeroTest() {
 
     /**
      * @tc.name   testUCNV_FROM_U_CALLBACK_SUBSTITUTE_0100
-     * @tc.number testUCNV_FROM_U_CALLBACK_SUBSTITUTE_0100
+     * @tc.number SUB_GLOBAL_UCNV_ConversionErrorCode_0100
      * @tc.desc   UCNV with UCNV_FROM_U_CALLBACK_SUBSTITUTE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -39,7 +39,7 @@ export default function SevenPointZeroTest() {
 
     /**
      * @tc.name   testUCNV_FROM_U_CALLBACK_STOP_0100
-     * @tc.number testUCNV_FROM_U_CALLBACK_STOP_0200
+     * @tc.number SUB_GLOBAL_UCNV_ConversionErrorCode_0200
      * @tc.desc   UCNV with UCNV_FROM_U_CALLBACK_SUBSTITUTE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -51,7 +51,7 @@ export default function SevenPointZeroTest() {
 
     /**
      * @tc.name   testUCNV_TO_U_CALLBACK_STOP_0100
-     * @tc.number testUCNV_TO_U_CALLBACK_STOP_0300
+     * @tc.number SUB_GLOBAL_UCNV_ConversionErrorCode_0300
      * @tc.desc   UCNV with UCNV_TO_U_CALLBACK_STOP
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -63,7 +63,7 @@ export default function SevenPointZeroTest() {
 
     /**
      * @tc.name   testUCNV_FROM_U_CALLBACK_SKIP_0100
-     * @tc.number testUCNV_FROM_U_CALLBACK_SKIP_0400
+     * @tc.number SUB_GLOBAL_UCNV_ConversionErrorCode_0400
      * @tc.desc   UCNV with UCNV_FROM_U_CALLBACK_SKIP
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -75,7 +75,7 @@ export default function SevenPointZeroTest() {
 
     /**
      * @tc.name   testUCNV_TO_U_CALLBACK_SKIP_0100
-     * @tc.number testUCNV_TO_U_CALLBACK_SKIP_0500
+     * @tc.number SUB_GLOBAL_UCNV_ConversionErrorCode_0500
      * @tc.desc   UCNV with UCNV_TO_U_CALLBACK_SKIP
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -87,7 +87,7 @@ export default function SevenPointZeroTest() {
 
     /**
      * @tc.name   testUCNV_TO_U_CALLBACK_SUBSTITUTE_0100
-     * @tc.number testUCNV_TO_U_CALLBACK_SUBSTITUTE_0600
+     * @tc.number SUB_GLOBAL_UCNV_ConversionErrorCode_0600
      * @tc.desc   UCNV with UCNV_TO_U_CALLBACK_SUBSTITUTE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -99,7 +99,7 @@ export default function SevenPointZeroTest() {
 
     /**
      * @tc.name   testUCNV_FROM_U_CALLBACK_ESCAPE_0100
-     * @tc.number testUCNV_FROM_U_CALLBACK_ESCAPE_0700
+     * @tc.number SUB_GLOBAL_UCNV_ConversionErrorCode_0700
      * @tc.desc   UCNV with UCNV_FROM_U_CALLBACK_ESCAPE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
