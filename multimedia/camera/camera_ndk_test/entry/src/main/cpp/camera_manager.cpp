@@ -4420,7 +4420,7 @@ bool NDKCamera::WaitForExposureFinish()
     const int waitExposureTimeout = 60;
     const int sleepInterval = 20;
     auto startTime = std::chrono::system_clock::now();
-    while (!g_isExposureFinish) {
+    while (!g_isExposureStart) {
         std::this_thread::sleep_for(std::chrono::milliseconds(sleepInterval));
         auto endTime = std::chrono::system_clock::now();
         auto duration_seconds = std::chrono::duration_cast<std::chrono::seconds>(endTime - startTime).count();
@@ -4429,7 +4429,7 @@ bool NDKCamera::WaitForExposureFinish()
             break;
         }
     }
-    return g_isExposureFinish;
+    return g_isExposureStart;
 }
 
 int32_t g_minTint;
