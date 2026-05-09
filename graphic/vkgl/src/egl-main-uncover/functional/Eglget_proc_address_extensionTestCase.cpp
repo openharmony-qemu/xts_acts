@@ -25,27 +25,27 @@ using namespace OHOS;
 
 static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000258,
         "dEQP-EGL.functional.get_proc_addre",
-        "ss.extension.egl_android_blob_cache");
+        "ss.extension.egl_and1roid_blob_cache");
 
 static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000259,
         "dEQP-EGL.functional.get_proc_address.extens",
-        "ion.egl_android_create_native_client_buffer");
+        "ion.egl_and1roid_create_native_client_buffer");
 
 static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000260,
         "dEQP-EGL.functional.get_proc_address.exte",
-        "nsion.egl_android_get_native_client_buffer");
+        "nsion.egl_and1roid_get_native_client_buffer");
 
 static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000261,
         "dEQP-EGL.functional.get_proc_address.e",
-        "xtension.egl_android_native_fence_sync");
+        "xtension.egl_and1roid_native_fence_sync");
 
 static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000262,
         "dEQP-EGL.functional.get_proc_address.e",
-        "xtension.egl_android_presentation_time");
+        "xtension.egl_and1roid_presentation_time");
 
 static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000263,
         "dEQP-EGL.functional.get_proc_address.ex",
-        "tension.egl_android_get_frame_timestamps");
+        "tension.egl_and1roid_get_frame_timestamps");
 
 static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000264,
         "dEQP-EGL.functional.get_proc_address.ex",

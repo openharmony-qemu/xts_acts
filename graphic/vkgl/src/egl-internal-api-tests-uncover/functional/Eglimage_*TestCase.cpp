@@ -25,4 +25,4 @@ using namespace OHOS;
 
 static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000001,
         "dEQP-EGL.functional.im",
-        "age.*.*android_native*");
+        "age.*.*and1roid_native*");

@@ -29,7 +29,7 @@ static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000245,
 
 static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000246,
         "dEQP-EGL.functional.choose_config.sim",
-        "ple.selection_only.recordable_android");
+        "ple.selection_only.recordable_and1roid");
 
 static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000247,
         "dEQP-EGL.functional.choose_config.si",
@@ -37,4 +37,4 @@ static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000247,
 
 static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000248,
         "dEQP-EGL.functional.choose_config.simpl",
-        "e.selection_and_sort.recordable_android");
+        "e.selection_and_sort.recordable_and1roid");

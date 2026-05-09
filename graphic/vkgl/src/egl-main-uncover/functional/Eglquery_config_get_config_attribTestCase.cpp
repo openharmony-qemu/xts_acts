@@ -29,4 +29,4 @@ static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000243,
 
 static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000244,
         "dEQP-EGL.functional.query_config.g",
-        "et_config_attrib.recordable_android");
+        "et_config_attrib.recordable_and1roid");
