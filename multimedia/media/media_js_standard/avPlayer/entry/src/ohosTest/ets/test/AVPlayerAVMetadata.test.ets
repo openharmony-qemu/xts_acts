@@ -1415,7 +1415,7 @@ export default function AVMetadata() {
       // 批量获取缩略图
       avMetadataExtractor.fetchFramesByTimes(timesUs, queryOption, param, onFrameFetched);
       avMetadataExtractor.cancelAllFetchFrames();
-      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      await mediaTestBase.msleepAsync(SLEEP_TIME * 10);
       avMetadataExtractor.release();
       done();
     });
@@ -1467,7 +1467,7 @@ export default function AVMetadata() {
       // 批量获取缩略图
       avMetadataExtractor.fetchFramesByTimes(null, queryOption, null, null);
       avMetadataExtractor.cancelAllFetchFrames();
-      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      await mediaTestBase.msleepAsync(SLEEP_TIME * 10);
       avMetadataExtractor.release();
       done();
     });
@@ -1523,7 +1523,7 @@ export default function AVMetadata() {
         expect(Number(e.code)).assertEqual(5400108);
         console.error(TAG, 'fetchFrameByTime sync fail');
       }
-      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      await mediaTestBase.msleepAsync(SLEEP_TIME * 10);
       avMetadataExtractor.release();
       done();
     });
