@@ -73,10 +73,12 @@ export default function SegmentBtnMaterialTest0070() {
       let obj1: ESObject = JSON.parse(JSON.stringify(obj))
         .$children[1]
         .$children[0]
+        .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj1 is: " + JSON.stringify(obj));
       expect(obj1.$attrs.systemMaterial == null).assertTrue()
       let obj2: ESObject = JSON.parse(JSON.stringify(obj))
         .$children[2]
+        .$children[0]
         .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj2 is: " + JSON.stringify(obj2));
       expect(obj2.$attrs.systemMaterial == null).assertTrue()
@@ -101,11 +103,13 @@ export default function SegmentBtnMaterialTest0070() {
       let obj6: ESObject = JSON.parse(JSON.stringify(obj5))
         .$children[1]
         .$children[0]
+        .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj6 is: " + JSON.stringify(obj6));
       expect(JSON.stringify(obj6.$attrs.systemMaterial))
         .assertEqual('{"material":{"type":"MaterialType.SEMI_TRANSPARENT"}}');
       let obj7: ESObject = JSON.parse(JSON.stringify(obj5))
         .$children[2]
+        .$children[0]
         .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj7 is: " + JSON.stringify(obj7));
       expect(JSON.stringify(obj7.$attrs.systemMaterial))
@@ -131,10 +135,12 @@ export default function SegmentBtnMaterialTest0070() {
       let obj11: ESObject = JSON.parse(JSON.stringify(obj10))
         .$children[1]
         .$children[0]
+        .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj11 is: " + JSON.stringify(obj11));
       expect(obj11.$attrs.systemMaterial == null).assertTrue()
       let obj12: ESObject = JSON.parse(JSON.stringify(obj10))
         .$children[2]
+        .$children[0]
         .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj12 is: " + JSON.stringify(obj12));
       expect(obj12.$attrs.systemMaterial == null).assertTrue()
