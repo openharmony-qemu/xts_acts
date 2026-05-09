@@ -20,7 +20,7 @@
 #include <hilog/log.h>
 #include <arkui/styled_string.h>
 
-bool ONLY_BETWEEN_LINES = true;
+bool g_onlyBetweenLines = true;
 float FLOAT_10 = 10;
 float FLOAT_30 = 30;
 
@@ -109,8 +109,8 @@ static napi_value TextEnumTest_008(napi_env env, napi_callback_info info)
 static napi_value TextEnumTest_009(napi_env env, napi_callback_info info)
 {
     NAPI_START(text, ARKUI_NODE_TEXT);
-    OH_ArkUI_TextController *controller = OH_ArkUI_TextController_Create();
-    ASSERT_OBJ(controller, nullptr);
+    auto controller = OH_ArkUI_TextController_Create();
+    ASSERT_EQ((controller != nullptr), true);
 
     ArkUI_AttributeItem controllerItem = {.object = controller};
     nodeAPI->setAttribute(text, NODE_TEXT_CONTROLLER, &controllerItem);
@@ -130,7 +130,6 @@ static napi_value TextEnumTest_009(napi_env env, napi_callback_info info)
     OH_ArkUI_StyledString_Descriptor_Destroy(styledString);
     NAPI_END(text);
 }
-
 
 static napi_value TextEnumTest_010(napi_env env, napi_callback_info info)
 {
@@ -170,8 +169,8 @@ static napi_value TextEnumTest_011(napi_env env, napi_callback_info info)
 static napi_value TextEnumTest_012(napi_env env, napi_callback_info info)
 {
     NAPI_START(text, ARKUI_NODE_TEXT);
-    OH_ArkUI_LineHeightStyle *lineHeightStyle = OH_ArkUI_LineHeightStyle_Create();
-    ASSERT_OBJ(lineHeightStyle, nullptr);
+    auto lineHeightStyle = OH_ArkUI_LineHeightStyle_Create();
+    ASSERT_EQ((lineHeightStyle != nullptr), true);
 
     OH_ArkUI_LineHeightStyle_SetLineHeight(lineHeightStyle, FLOAT_10);
     auto result4_1 = OH_ArkUI_LineHeightStyle_SetLineHeightMultiple(lineHeightStyle, FLOAT_10);
@@ -218,7 +217,7 @@ static napi_value TextEnumTest_016(napi_env env, napi_callback_info info)
     NAPI_START(text, ARKUI_NODE_TEXT);
     OH_ArkUI_LineSpacingStyle *lineSpacingStyle = OH_ArkUI_LineSpacingStyle_Create();
     OH_ArkUI_LineSpacingStyle_SetLineSpacing(lineSpacingStyle, FLOAT_30);
-    OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines(lineSpacingStyle, ONLY_BETWEEN_LINES);
+    OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines(lineSpacingStyle, g_onlyBetweenLines);
 
     OH_ArkUI_SpanStyle *spanStyle = OH_ArkUI_SpanStyle_Create();
     OH_ArkUI_SpanStyle_SetStart(spanStyle, PARAM_0);
@@ -277,7 +276,7 @@ static napi_value TextEnumTest_020(napi_env env, napi_callback_info info)
     NAPI_START(text, ARKUI_NODE_TEXT);
     OH_ArkUI_LineSpacingStyle *lineSpacingStyle = OH_ArkUI_LineSpacingStyle_Create();
 
-    auto result12_1 = OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines(lineSpacingStyle, ONLY_BETWEEN_LINES);
+    auto result12_1 = OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines(lineSpacingStyle, g_onlyBetweenLines);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result12_1 TextEnumTest_020 result=%{public}d", result12_1);
     ASSERT_EQ(result12_1, ARKUI_ERROR_CODE_NO_ERROR);
@@ -289,7 +288,7 @@ static napi_value TextEnumTest_021(napi_env env, napi_callback_info info)
 {
     NAPI_START(text, ARKUI_NODE_TEXT);
     const OH_ArkUI_LineSpacingStyle *lineSpacingStyle = OH_ArkUI_LineSpacingStyle_Create();
-    auto result13_1 = OH_ArkUI_LineSpacingStyle_GetOnlyBetweenLines(lineSpacingStyle, &ONLY_BETWEEN_LINES);
+    auto result13_1 = OH_ArkUI_LineSpacingStyle_GetOnlyBetweenLines(lineSpacingStyle, &g_onlyBetweenLines);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result13_1 TextEnumTest_021 result=%{public}d", result13_1);
     ASSERT_EQ(result13_1, ARKUI_ERROR_CODE_NO_ERROR);
@@ -299,7 +298,7 @@ static napi_value TextEnumTest_021(napi_env env, napi_callback_info info)
 static napi_value TextEnumTest_022(napi_env env, napi_callback_info info)
 {
     NAPI_START(text, ARKUI_NODE_TEXT);
-    auto result14_1 = OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines(nullptr, ONLY_BETWEEN_LINES);
+    auto result14_1 = OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines(nullptr, g_onlyBetweenLines);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result14_1 TextEnumTest_022 result=%{public}d", result14_1);
     ASSERT_EQ(result14_1, ARKUI_ERROR_CODE_PARAM_INVALID);
