@@ -321,19 +321,19 @@ export default function observerManagerSimStateTest1() {
     it('testTelephonyObserverOnGetSimActiveState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonyObserverOnGetSimActiveState0300';
       console.info(`${caseName} test start`);
-      // try {
+      try {
         let slotId: int = 0;
-        // await sim.activateSim(slotId);
+        await sim.activateSim(slotId);
         observer.onGetSimActiveState(slotId, (data: boolean | undefined) => {
           console.info(`${caseName} data: ${data}`);
           ExpectTrue(data === true);
           done();
         });
-      // } catch (error) {
-      //   console.info(`${caseName} catchError ${JSON.stringify(error)}`);
-      //   ExpectFail();
-      //   done();
-      // }
+      } catch (error) {
+        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
+        ExpectFail();
+        done();
+      }
       console.info(`${caseName} test end`);
     });
 
@@ -351,7 +351,7 @@ export default function observerManagerSimStateTest1() {
       if (sim.getMaxSimCount() > 1) {
         try {
           let slotId: int = 1;
-          // await sim.activateSim(slotId);
+          await sim.activateSim(slotId);
           observer.onGetSimActiveState(slotId, (data: boolean | undefined) => {
             console.info(`${caseName} data: ${data}`);
             ExpectTrue(data === true);
@@ -364,7 +364,6 @@ export default function observerManagerSimStateTest1() {
         }
       } else {
         console.info(`${caseName} This device is a single-card device`);
-        ExpectFail();
         done();
       }  
       console.info(`${caseName} test end`);
@@ -438,7 +437,7 @@ export default function observerManagerSimStateTest1() {
           observer.offGetSimActiveState(callback);
           done();
         }
-        // await sim.activateSim(slotId);
+        await sim.activateSim(slotId);
         observer.onGetSimActiveState(slotId, callback);
         console.info(`${caseName} slotId: ${slotId}`);
       } catch (error) {
@@ -470,7 +469,7 @@ export default function observerManagerSimStateTest1() {
             observer.offGetSimActiveState(callback);
             done();
           }
-          // await sim.activateSim(slotId);
+          await sim.activateSim(slotId);
           observer.onGetSimActiveState(slotId, callback);
           console.info(`${caseName} slotId: ${slotId}`);
         } catch (error) {
@@ -480,7 +479,6 @@ export default function observerManagerSimStateTest1() {
         }
       } else {
         console.info(`${caseName} This device is a single-card device`);
-        ExpectFail();
         done();
       }
       console.info(`${caseName} test end`);
