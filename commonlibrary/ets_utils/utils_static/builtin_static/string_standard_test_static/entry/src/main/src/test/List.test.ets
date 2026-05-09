@@ -7,6 +7,13 @@ import StringNormalizeExceptionTest from "./StringNormalizeException.test";
 import StringPadEndBasicTest from "./StringPadEndBasic.test";
 import StringPadStartBasicTest from "./StringPadStartBasic.test";
 import StringToWellFormedBasicTest from "./StringToWellFormedBasic.test";
+import StringLengthTest from "./StringLengthTest.test";
+import StringToLocaleLowerCaseTest from "./StringToLocaleLowerCaseTest";
+import StringRepeatTest from "./StringRepeatTest.test";
+import StringReplaceTest from "./StringReplaceTest.test";
+import StringReplaceAllTest from "./StringReplaceAllTest.test";
+import StringSearchTest from "./StringSearchTest.test";
+import StringStartsWithTest from "./StringStartsWithTest.test";
 
 import stringAtTest from './String_At/StringAtTest';
 import StringBasicTest from './String_Basic/StringBasicTest';
@@ -41,6 +48,13 @@ export default function testsuite() {
   StringPadEndBasicTest();
   StringPadStartBasicTest();
   StringToWellFormedBasicTest();
+  StringLengthTest();
+  StringToLocaleLowerCaseTest();
+  StringRepeatTest();
+  StringReplaceTest();
+  StringReplaceAllTest();
+  StringSearchTest();
+  StringStartsWithTest();
 
   stringAtTest();
   StringBasicTest();
