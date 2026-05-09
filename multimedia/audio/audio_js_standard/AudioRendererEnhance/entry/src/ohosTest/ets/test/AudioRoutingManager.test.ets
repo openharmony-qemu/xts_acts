@@ -40,6 +40,11 @@ export default function AudioRoutingManagerTest() {
   describe('AudioRoutingManagerTest', () => {
     let audioRoutingManager: audio.AudioRoutingManager | ESObject = audio.getAudioManager().getRoutingManager();
     let Tag = "AudioRoutingManagerTest";
+    let audioManager = audio.getAudioManager();
+    let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
+    let audioRenderer: audio.AudioRenderer | null = null;
+    let currentOutputDeviceChangedCallback: ((event: audio.CurrentOutputDeviceChangedEvent) => void) | null = null;
+    let outputDeviceChangeWithInfoCallback: ((info: audio.AudioStreamDeviceChangeInfo) => void) | null = null; 
 
     let driveFn = async () => {
       let dr = Driver.create();
