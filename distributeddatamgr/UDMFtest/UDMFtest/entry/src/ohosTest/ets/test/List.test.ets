@@ -24,6 +24,7 @@ import UDMFSupportClipboardApiTest from './UDMFSupportClipboardApi.test'
 import EmptyTest from './Empty.test';
 import UDMFEntryTest from './UDMFEntry.test';
 import UDMFAddAPITest from './UDMFAdd.test';
+import UriPermissionTest from './UDMFUriPermission.test';
 
 export default function testsuite() {
   if (canIUse("SystemCapability.DistributedDataManager.UDMF.Core")){
@@ -38,6 +39,7 @@ export default function testsuite() {
     UDMFSupportClipboardApiTest()
     UDMFEntryTest()
     UDMFAddAPITest()
+	UriPermissionTest()
   } else {
     EmptyTest()
   } 
