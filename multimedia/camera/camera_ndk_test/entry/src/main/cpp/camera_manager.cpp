@@ -4373,7 +4373,7 @@ bool g_isExposureStart;
 bool g_isExposureFinish;
 void OnExposureStateCallback(void* context, OH_Camera_ExposureState state)
 {
-    OH_LOG_INFO(LOG_APP, "Camera_ExposureState is called, state: %{public}d", state);
+    LOG("Camera_ExposureState is called, state: %d", state);
     if (state == OH_CAMERA_EXPOSURE_STATE_SCAN) {
         g_isExposureStart = true;
     }
@@ -4394,7 +4394,7 @@ Camera_ErrorCode NDKCamera::RegisterExposureStateChangeCallback(int useCaseCode)
         ret_ = OH_CaptureSession_RegisterExposureStateChangeCallback(captureSession_, nullptr, nullptr);
     }
     if (ret_ != CAMERA_OK) {
-        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_RegisterExposureStateChangeCallback failed.");
+        LOG("OH_CaptureSession_RegisterExposureStateChangeCallback failed.");
     }
     return ret_;
 }
@@ -4410,7 +4410,7 @@ Camera_ErrorCode NDKCamera::UnregisterExposureStateChangeCallback(int useCaseCod
         ret_ = OH_CaptureSession_UnregisterExposureStateChangeCallback(captureSession_, nullptr, nullptr);
     }
     if (ret_ != CAMERA_OK) {
-        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_UnregisterExposureStateChangeCallback failed.");
+        LOG("OH_CaptureSession_UnregisterExposureStateChangeCallback failed.");
     }
     return ret_;
 }
@@ -4425,7 +4425,7 @@ bool NDKCamera::WaitForExposureFinish()
         auto endTime = std::chrono::system_clock::now();
         auto duration_seconds = std::chrono::duration_cast<std::chrono::seconds>(endTime - startTime).count();
         if (duration_seconds > waitExposureTimeout) {
-            OH_LOG_ERROR(LOG_APP, "WaitForExposureFinish timeout");
+            LOG("WaitForExposureFinish timeout.");
             break;
         }
     }
@@ -4439,7 +4439,7 @@ Camera_ErrorCode NDKCamera::GetColorTintRange()
 {
     ret_ = OH_CaptureSession_GetColorTintRange(captureSession_, &g_minTint, &g_maxTint);
     if (ret_ != CAMERA_OK) {
-        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetColorTintRange failed.");
+        LOG("OH_CaptureSession_GetColorTintRange failed.");
     }
     return ret_;
 }
@@ -4465,7 +4465,8 @@ Camera_ErrorCode NDKCamera::SetColorTint(int useCaseCode)
     }
 
     if (ret_ != CAMERA_OK) {
-        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_SetColorTint failed.");
+        LOG("OH_CaptureSession_SetColorTint failed.");
+
     }
     return ret_;
 }
@@ -4480,13 +4481,13 @@ Camera_ErrorCode NDKCamera::GetColorTint(int useCaseCode)
         ret_ = OH_CaptureSession_SetColorTint(captureSession_, colorTint);
         ret_ = OH_CaptureSession_GetColorTint(captureSession_, &g_currentTint);
         if (colorTint != g_currentTint) {
-            OH_LOG_ERROR(LOG_APP, "set: %{public}d, get: %{public}d", colorTint, g_currentTint);
+            LOG("set: %d, get: %d", colorTint, g_currentTint);
             ret_ = static_cast<Camera_ErrorCode>(-1);
         };
     }
 
     if (ret_ != CAMERA_OK) {
-        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetColorTint failed.");
+        LOG("OH_CaptureSession_GetColorTint failed.");
     }
     return ret_;
 }
@@ -4495,7 +4496,7 @@ OH_Camera_ZoomPointInfo* cameraZoomPointInfo;
 uint32_t g_zoomSize;
 Camera_ErrorCode NDKCamera::GetZoomPointInfos(int useCaseCode)
 {
-    OH_LOG_INFO(LOG_APP, "OH_CaptureSession_GetZoomPointInfos useCaseCode: %{public}d", useCaseCode);
+    LOG("OH_CaptureSession_GetZoomPointInfos useCaseCode: %d", useCaseCode);
     if (useCaseCode == PARAMETER_OK) {
         ret_ = OH_CaptureSession_GetZoomPointInfos(captureSession_, &g_zoomSize, &cameraZoomPointInfo);
     } else if (useCaseCode == PARAMETER1_ERROR) {
@@ -4507,16 +4508,16 @@ Camera_ErrorCode NDKCamera::GetZoomPointInfos(int useCaseCode)
     }
 
     if (ret_ != CAMERA_OK) {
-        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_GetZoomPointInfos failed.ret: %{public}d", ret_);
+        LOG("OH_CaptureSession_GetZoomPointInfos failed.ret: %d", ret_);
     } else {
-        OH_LOG_INFO(LOG_APP, "OH_CaptureSession_GetZoomPointInfos success. ret: %{public}d", ret_);
+        LOG("OH_CaptureSession_GetZoomPointInfos success. ret: %d", ret_);
     }
     return ret_;
 }
 
 Camera_ErrorCode NDKCamera::DeleteZoomPointInfo(int useCaseCode)
 {
-    OH_LOG_INFO(LOG_APP, "OH_CaptureSession_DeleteZoomPointInfos useCaseCode: %{public}d", useCaseCode);
+    LOG("OH_CaptureSession_DeleteZoomPointInfos useCaseCode: %d", useCaseCode);
     if (useCaseCode == PARAMETER_OK) {
         ret_ = OH_CaptureSession_DeleteZoomPointInfos(captureSession_, cameraZoomPointInfo);
     } else if (useCaseCode == PARAMETER1_ERROR) {
@@ -4532,9 +4533,9 @@ Camera_ErrorCode NDKCamera::DeleteZoomPointInfo(int useCaseCode)
     }
     
     if (ret_ != CAMERA_OK) {
-        OH_LOG_ERROR(LOG_APP, "OH_CaptureSession_DeleteZoomPointInfos failed.ret: %{public}d", ret_);
+        LOG("OH_CaptureSession_DeleteZoomPointInfos failed.ret: %d", ret_);
     } else {
-        OH_LOG_INFO(LOG_APP, "OH_CaptureSession_DeleteZoomPointInfos success. ret: %{public}d", ret_);
+        LOG("OH_CaptureSession_DeleteZoomPointInfos success. ret: %d", ret_);
     }
     return ret_;
 }
