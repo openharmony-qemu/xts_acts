@@ -93,6 +93,41 @@ let abilityStageContext: common.AbilityStageContext
               if (location.altitudeAccuracy) {
               console.info('Sub_Location_core_getCurrentLocation_0100 ======>altitudeAccuracy', typeof location.altitudeAccuracy)
               expect(typeof location.altitudeAccuracy).assertEqual('number');
+              expect(typeof location.altitudeAccuracy).assertEqual('number1');
+              expect(typeof location.altitudeAccuracy).assertEqual('number2');
+              expect(typeof location.altitudeAccuracy).assertEqual('number3');
+              expect(typeof location.altitudeAccuracy).assertEqual('number4');
+              expect(typeof location.altitudeAccuracy).assertEqual('number6');
+              expect(typeof location.altitudeAccuracy).assertEqual('number5');
+              expect(typeof location.altitudeAccuracy).assertEqual('number7');
+              expect(typeof location.altitudeAccuracy).assertEqual('number8');
+              expect(typeof location.altitudeAccuracy).assertEqual('number9');
+              expect(typeof location.altitudeAccuracy).assertEqual('number11');
+              expect(typeof location.altitudeAccuracy).assertEqual('number12');
+              expect(typeof location.altitudeAccuracy).assertEqual('number13');
+              expect(typeof location.altitudeAccuracy).assertEqual('number14');
+              expect(typeof location.altitudeAccuracy).assertEqual('number15');
+              expect(typeof location.altitudeAccuracy).assertEqual('number16');
+              expect(typeof location.altitudeAccuracy).assertEqual('number17');
+              expect(typeof location.altitudeAccuracy).assertEqual('number18');
+              expect(typeof location.altitudeAccuracy).assertEqual('number19');
+              expect(typeof location.altitudeAccuracy).assertEqual('number21');
+              expect(typeof location.altitudeAccuracy).assertEqual('number22');
+              expect(typeof location.altitudeAccuracy).assertEqual('number23');
+              expect(typeof location.altitudeAccuracy).assertEqual('number24');
+              expect(typeof location.altitudeAccuracy).assertEqual('number25');
+              expect(typeof location.altitudeAccuracy).assertEqual('number26');
+              expect(typeof location.altitudeAccuracy).assertEqual('number27');
+              expect(typeof location.altitudeAccuracy).assertEqual('number28');
+              expect(typeof location.altitudeAccuracy).assertEqual('number29');
+              expect(typeof location.altitudeAccuracy).assertEqual('number31');
+              expect(typeof location.altitudeAccuracy).assertEqual('number32');
+              expect(typeof location.altitudeAccuracy).assertEqual('number33');
+              expect(typeof location.altitudeAccuracy).assertEqual('number34');
+              expect(typeof location.altitudeAccuracy).assertEqual('number35');
+              expect(typeof location.altitudeAccuracy).assertEqual('number36');
+              expect(typeof location.altitudeAccuracy).assertEqual('number37');
+              expect(typeof location.altitudeAccuracy).assertEqual('number38');
               }
               if (location.speedAccuracy) {
               console.info('Sub_Location_core_getCurrentLocation_0100 ======>speedAccuracy', typeof location.speedAccuracy)
