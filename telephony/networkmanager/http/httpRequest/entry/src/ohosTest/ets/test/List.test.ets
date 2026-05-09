@@ -32,6 +32,7 @@ import HttpRequestPatchTest from './HttpRequestPatch.test';
 import HttpRequestSyncTest from './HttpRequestSync.test';
 import HttpRequestReuseConnectionsTest from './HttpRequestReuseConnections.test';
 import HttpInterceptorForSafeCheckTest from './HttpInterceptorForSafeCheck.test';
+import HttpRequestEnableAutoCookieTest from './HttpRequestEnableAutoCookie.test';
 
 export default function testsuite() {
   HttpInterceptorForSafeCheckTest();
@@ -53,6 +54,7 @@ export default function testsuite() {
     HttpRequestPatchTest();
     HttpRequestSyncTest();
     HttpRequestReuseConnectionsTest();
+    HttpRequestEnableAutoCookieTest();
   } else {
     EmptyTest()
   }
