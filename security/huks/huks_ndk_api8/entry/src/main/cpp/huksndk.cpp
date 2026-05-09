@@ -77,17 +77,11 @@ static napi_value OHHuksGetSdkVersion(napi_env env, napi_callback_info info)
         if (gkeyAlias->data == nullptr) {
             free(gkeyAlias);
             gkeyAlias = nullptr;
-        } else {
-            gkeyAlias->size = sdkSize;
         }
     }
-    
     if (gkeyAlias != nullptr) {
-        resultSt = OH_Huks_GetSdkVersion(gkeyAlias);
-        free(gkeyAlias->data);
-        free(gkeyAlias);
+        struct OH_Huks_Result resultSt = OH_Huks_GetSdkVersion(gkeyAlias);
     }
-    
     if (resultSt.errorCode == (int32_t)OH_HUKS_SUCCESS) {
         returnValue = SUCCESS;
     }
