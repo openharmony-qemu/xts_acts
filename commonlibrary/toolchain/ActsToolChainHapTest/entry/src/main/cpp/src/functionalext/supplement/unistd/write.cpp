@@ -14,8 +14,8 @@
  */
 
 #include <fcntl.h>
-#include <stdio.h>
-#include <string.h>
+#include <cstdio>
+#include <cstring>
 #include <unistd.h>
 #include "filepath_util.h"
 
@@ -129,7 +129,7 @@ void Write0400(void)
  */
 void Write0500(void)
 {
-    const char *msg = NULL;
+    const char *msg = nullptr;
     char path[PATH_MAX] = {0};
     FILE_ABSOLUTE_PATH(STR_WRITE_TEST_TXT, path);
     int len = 1;
@@ -146,7 +146,7 @@ void Write0500(void)
     remove(path);
 }
 
-static int WriteTest_impl(int argc, char *argv[])
+static int WriteTestImpl(int argc, char *argv[])
 {
     Write0100();
     Write0200();
@@ -158,7 +158,7 @@ static int WriteTest_impl(int argc, char *argv[])
 
 int WriteTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return WriteTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *__libc_argv[] = { libcProg, nullptr };
+    return WriteTestImpl(1, __libc_argv);
 }

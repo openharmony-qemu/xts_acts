@@ -17,7 +17,7 @@
 extern "C" {
 #endif
 
-char *dso_easy_symver(void);
+char *DsoEasySymver(void);
 
 #ifdef __cplusplus
 }

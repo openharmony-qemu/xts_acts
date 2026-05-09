@@ -34,7 +34,7 @@ export default function network_group_test() {
 
     /**
      * @tc.name   recvmmsg_time64
-     * @tc.number SUB_THIRDPARTY_MUSL_RECVMMSG_TIME64_0100
+     * @tc.number SUB_THIRDPARTY_MUSL_RECVMMSG_TIME_0100
      * @tc.desc   libc-test __recvmmsg_time64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -37,7 +37,7 @@ static void RelocSymver0100(void)
     symver_log("end");
 }
 
-static int RelocSymverTest_impl(int argc, char *argv[])
+static int RelocSymverTestImpl(int argc, char *argv[])
 {
     symver_log("start");
 
@@ -51,7 +51,7 @@ static int RelocSymverTest_impl(int argc, char *argv[])
 
 int RelocSymverTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return RelocSymverTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return RelocSymverTestImpl(1, libcArgv);
 }

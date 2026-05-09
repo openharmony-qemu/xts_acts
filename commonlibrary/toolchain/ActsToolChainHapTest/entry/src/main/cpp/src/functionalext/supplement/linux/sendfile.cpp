@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
-#include <errno.h>
+#include <cerrno>
 #include <fcntl.h>
-#include <stdio.h>
-#include <string.h>
+#include <cstdio>
+#include <cstring>
 #include <sys/sendfile.h>
 
 #include "filepath_util.h"
@@ -95,7 +95,7 @@ void Sendfile0200(void)
     }
 }
 
-static int SendfileTest_impl(int argc, char *argv[])
+static int SendfileTestImpl(int argc, char *argv[])
 {
     Sendfile0100();
     Sendfile0200();
@@ -105,7 +105,7 @@ static int SendfileTest_impl(int argc, char *argv[])
 
 int SendfileTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return SendfileTest_impl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return SendfileTestImpl(1, libcArgv);
 }

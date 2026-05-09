@@ -15,12 +15,12 @@
 
 #include "functionalext.h"
 
-extern void bar();
-extern void foo();
+extern void Bar(void);
+extern void Foo(void);
 
-int DlDifferentHashExeTest()
+int DlDifferentHashExeTest(void)
 {
-    bar();
-    foo();
+    Bar();
+    Foo();
     return 0;
 }

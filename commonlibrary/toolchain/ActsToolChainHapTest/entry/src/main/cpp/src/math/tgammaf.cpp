@@ -1,8 +1,23 @@
-#include <stdint.h>
-#include <stdio.h>
+/*
+ * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <cstdint>
+#include <cstdio>
 #include "mtest.h"
 
-static f_f t[] = {
+static fF t[] = {
 #include "sanity/tgammaf.h"
 #include "special/tgammaf.h"
 
@@ -16,7 +31,7 @@ static int TgammafTest_impl(void)
     int e;
     int i;
     int err = 0;
-    f_f *p;
+    fF *p;
 
     for (i = 0; i < sizeof t/sizeof *t; i++) {
         p = t + i;
@@ -30,7 +45,7 @@ static int TgammafTest_impl(void)
 #ifndef __aarch64__
         if (!checkexcept(e, p->e, p->r)) {
             printf("%s:%d: bad fp exception: %s tgammaf(%a)=%a, want %s",
-               p->file, p->line, rstr(p->r), p->x, p->y, estr(p->e));
+                p->file, p->line, rstr(p->r), p->x, p->y, estr(p->e));
             printf(" got %s\n", estr(e));
             err++;
         }
@@ -38,7 +53,7 @@ static int TgammafTest_impl(void)
         d = ulperrf(y, p->y, p->dy);
         if (!checkulp(d, p->r)) {
             printf("%s:%d: %s tgammaf(%a) want %a got %a ulperr %.3f = %a + %a\n",
-               p->file, p->line, rstr(p->r), p->x, p->y, y, d, d-p->dy, p->dy);
+                p->file, p->line, rstr(p->r), p->x, p->y, y, d, d-p->dy, p->dy);
             err++;
         }
     }

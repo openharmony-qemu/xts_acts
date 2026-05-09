@@ -14,7 +14,7 @@
  */
 
 #include <stdio.h>
-void relro(void)
+void Relro(void)
 {
     printf ("hello world!\n");
 }

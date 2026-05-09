@@ -305,9 +305,9 @@ struct LllL {
 #undef POS
 
 // Typedefs for lowercase struct names used in test files
-typedef struct DD d_d;
-typedef struct FF f_f;
-typedef struct FfF ff_f;
+typedef struct DD dD;
+typedef struct FF fF;
+typedef struct FfF ffF;
 
 #ifdef __cplusplus
 extern "C" {

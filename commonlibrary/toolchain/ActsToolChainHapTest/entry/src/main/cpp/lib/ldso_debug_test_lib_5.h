@@ -15,6 +15,6 @@
 #ifndef _LDSO_DEBUG_TEST_LIB_5_H
 #define _LDSO_DEBUG_TEST_LIB_5_H
 
-extern int debug_test_5(void);
+extern int DebugTest5(void);
 
 #endif

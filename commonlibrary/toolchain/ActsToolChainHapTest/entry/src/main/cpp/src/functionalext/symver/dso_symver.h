@@ -13,38 +13,41 @@
  * limitations under the License.
  */
 
-#include <stdio.h>
-#include <string.h>
+#ifndef DSO_SYMVER_H
+#define DSO_SYMVER_H
+
+#include <cstdio>
+#include <cstring>
 
 #include "test.h"
 
-extern const char *dso_symbol_invalid;
-extern const char *dso_version_invalid;
+extern const char *DSO_SYMBOL_INVALID;
+extern const char *DSO_VERSION_INVALID;
 
-extern const char *dso_no_symver_name;
-extern const char *dso_no_symver_symbol;
+extern const char *DSO_NO_SYMVER_NAME;
+extern const char *DSO_NO_SYMVER_SYMBOL;
 
-extern const char *dso_easy_symver_name;
-extern const char *dso_easy_symver_symbol;
-extern const char *dso_easy_symver_symbol_old;
-extern const char *dso_easy_symver_symbol_stable;
-extern const char *dso_easy_symver_symbol_dev;
-extern const char *dso_easy_symver_version_old;
-extern const char *dso_easy_symver_version_stable;
-extern const char *dso_easy_symver_version_dev;
+extern const char *DSO_EASY_SYMVER_NAME;
+extern const char *DSO_EASY_SYMVER_SYMBOL;
+extern const char *DSO_EASY_SYMVER_SYMBOL_OLD;
+extern const char *DSO_EASY_SYMVER_SYMBOL_STABLE;
+extern const char *DSO_EASY_SYMVER_SYMBOL_DEV;
+extern const char *DSO_EASY_SYMVER_VERSION_OLD;
+extern const char *DSO_EASY_SYMVER_VERSION_STABLE;
+extern const char *DSO_EASY_SYMVER_VERSION_DEV;
 
-extern const char *dso_hard_symver_name;
-extern const char *dso_hard_symver_if_symbol;
-extern const char *dso_hard_symver_if_symbol_old;
-extern const char *dso_hard_symver_if_symbol_stable;
-extern const char *dso_hard_symver_if_symbol_dev;
-extern const char *dso_hard_symver_ld_symbol;
-extern const char *dso_hard_symver_ld_symbol_old;
-extern const char *dso_hard_symver_ld_symbol_stable;
-extern const char *dso_hard_symver_ld_symbol_dev;
-extern const char *dso_hard_symver_version_old;
-extern const char *dso_hard_symver_version_stable;
-extern const char *dso_hard_symver_version_dev;
+extern const char *DSO_HARD_SYMVER_NAME;
+extern const char *DSO_HARD_SYMVER_IF_SYMBOL;
+extern const char *DSO_HARD_SYMVER_IF_SYMBOL_OLD;
+extern const char *DSO_HARD_SYMVER_IF_SYMBOL_STABLE;
+extern const char *DSO_HARD_SYMVER_IF_SYMBOL_DEV;
+extern const char *DSO_HARD_SYMVER_LD_SYMBOL;
+extern const char *DSO_HARD_SYMVER_LD_SYMBOL_OLD;
+extern const char *DSO_HARD_SYMVER_LD_SYMBOL_STABLE;
+extern const char *DSO_HARD_SYMVER_LD_SYMBOL_DEV;
+extern const char *DSO_HARD_SYMVER_VERSION_OLD;
+extern const char *DSO_HARD_SYMVER_VERSION_STABLE;
+extern const char *DSO_HARD_SYMVER_VERSION_DEV;
 
 typedef char *(*functype)(void);
 
@@ -74,3 +77,5 @@ typedef char *(*functype)(void);
             t_error("%s failed: s1 = %s, s2 = %s\n", __FUNCTION__, s1, s2); \
         }                                                                   \
     } while (0)
+
+#endif

@@ -1,75 +1,90 @@
+/*
+ * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 #include <dlfcn.h>
-#include <stdio.h>
+#include <cstdio>
 #include "test.h"
 
 
-typedef int (* TEST_S_VAR)();
-typedef int (* TEST_G_VAR)();
-typedef int (* INSP_S_VAR)();
-typedef int (* INSP_G_VAR)();
+typedef int (* TestSVar)();
+typedef int (* TestGVar)();
+typedef int (* InspSVar)();
+typedef int (* InspGVar)();
 
 #define EXPECTED_VAR_VALUE 84
 
 
 static int DlcloseResetTestWithArgs(int argc, char *argv[])
 {
-    const char *lib_path = "/data/storage/el1/bundle/libs/arm/libdlclose_reset_dso.so";
-    void *h = NULL;
-    void *g = NULL;
-    TEST_S_VAR test_s_var = NULL;
-    TEST_G_VAR test_g_var = NULL;
-    INSP_S_VAR insp_s_var = NULL;
-    INSP_G_VAR insp_g_var = NULL;
+    const char *libPath = "/data/storage/el1/bundle/libs/arm/libdlclose_reset_dso.so";
+    void *h = nullptr;
+    void *g = nullptr;
+    TestSVar testSVar = nullptr;
+    TestGVar testGVar = nullptr;
+    InspSVar inspSVar = nullptr;
+    InspGVar inspGVar = nullptr;
 
-    int s_var = 0;
-    int g_var = 0;
+    int sVar = 0;
+    int gVar = 0;
 
-    h = dlopen(lib_path, RTLD_LAZY|RTLD_LOCAL);
+    h = dlopen(libPath, RTLD_LAZY | RTLD_LOCAL);
     if (!h) {
-        t_error("dlopen %s failed: %s\n", lib_path, dlerror());
+        t_error("dlopen %s failed: %s\n", libPath, dlerror());
     }
 
-    test_s_var = (TEST_S_VAR)dlsym(h, "test_static_var");
-    if (!test_s_var) {
-        t_error("dlsym test_static_var failed: %s\n", dlerror());
+    testSVar = (TestSVar)dlsym(h, "TestStaticVar");
+    if (!testSVar) {
+        t_error("dlsym TestStaticVar failed: %s\n", dlerror());
     }
 
-    test_g_var = (TEST_G_VAR)dlsym(h, "test_global_var");
-    if (!test_g_var) {
-        t_error("dlsyn test_global_var failed: %s\n", dlerror());
+    testGVar = (TestGVar)dlsym(h, "TestGlobalVar");
+    if (!testGVar) {
+        t_error("dlsyn TestGlobalVar failed: %s\n", dlerror());
     }
 
-    test_s_var();
-    test_g_var();
+    testSVar();
+    testGVar();
 
     if (dlclose(h)) {
         t_error("dlclose failed: %s\n", dlerror());
     }
 
-    g = dlopen(lib_path, RTLD_LAZY | RTLD_LOCAL);
+    g = dlopen(libPath, RTLD_LAZY | RTLD_LOCAL);
     if (!g) {
-        t_error("dlopen %s failed: %s\n", lib_path, dlerror());
+        t_error("dlopen %s failed: %s\n", libPath, dlerror());
     }
 
-    insp_s_var = (INSP_S_VAR)dlsym(g, "ret_static");
-    if (!insp_s_var) {
-        t_error("dlsym ret_static failed: %s\n", dlerror());
+    inspSVar = (InspSVar)dlsym(g, "RetStatic");
+    if (!inspSVar) {
+        t_error("dlsym RetStatic failed: %s\n", dlerror());
     }
 
-    insp_g_var = (INSP_G_VAR)dlsym(g, "ret_global");
-    if (!insp_g_var) {
-        t_error("dlsyn global_var failed: %s\n", dlerror());
+    inspGVar = (InspGVar)dlsym(g, "RetGlobal");
+    if (!inspGVar) {
+        t_error("dlsyn RetGlobal failed: %s\n", dlerror());
     }
 
-    s_var = insp_s_var();
-    g_var = insp_g_var();
+    sVar = inspSVar();
+    gVar = inspGVar();
 
-    if (s_var != EXPECTED_VAR_VALUE) {
-        t_error("Static variable reset failed: want s_var=%d got s_var=%d\n", EXPECTED_VAR_VALUE, s_var);
+    if (sVar != EXPECTED_VAR_VALUE) {
+        t_error("Static variable reset failed: want s_var=%d got s_var=%d\n", EXPECTED_VAR_VALUE, sVar);
     }
 
-    if (g_var != EXPECTED_VAR_VALUE) {
-        t_error("Global variable reset failed: want g_var=%d got g_var=%d\n", EXPECTED_VAR_VALUE, g_var);
+    if (gVar != EXPECTED_VAR_VALUE) {
+        t_error("Global variable reset failed: want g_var=%d got g_var=%d\n", EXPECTED_VAR_VALUE, gVar);
     }
 
     if (dlclose(g)) {
@@ -81,7 +96,7 @@ static int DlcloseResetTestWithArgs(int argc, char *argv[])
 
 int DlcloseResetTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return DlcloseResetTestWithArgs(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return DlcloseResetTestWithArgs(1, libcArgv);
 }

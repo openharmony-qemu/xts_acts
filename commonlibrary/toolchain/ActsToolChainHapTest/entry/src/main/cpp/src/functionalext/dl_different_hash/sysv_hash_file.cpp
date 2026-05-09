@@ -13,6 +13,6 @@
  * limitations under the License.
  */
 
-void bar()
+void Bar(void)
 {
 }

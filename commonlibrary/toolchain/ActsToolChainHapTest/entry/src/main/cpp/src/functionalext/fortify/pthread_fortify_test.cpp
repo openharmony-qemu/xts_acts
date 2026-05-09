@@ -15,11 +15,11 @@
 
 #include <pthread.h>
 #include <semaphore.h>
-#include <stdio.h>
-#include <errno.h>
-#include <string.h>
+#include <cstdio>
+#include <cerrno>
+#include <cstring>
 #include "test.h"
-#include <signal.h>
+#include <csignal>
 #include <sys/wait.h>
 #include <sigchain.h>
 #include "fortify_test.h"

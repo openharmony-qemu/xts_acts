@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 #include "functionalext.h"
-#include <errno.h>
+#include <cerrno>
 #include <fcntl.h>
-#include <stdio.h>
-#include <string.h>
+#include <cstdio>
+#include <cstring>
 #include "filepath_util.h"
 
 const char *str = "Hello";
@@ -27,8 +27,8 @@ const char *str = "Hello";
  */
 void CopyFileRange0100(void)
 {
-    int fd_in;
-    int fd_out;
+    int fdIn;
+    int fdOut;
     int wlen;
     int result;
     char buffer[BUFSIZ];
@@ -38,29 +38,29 @@ void CopyFileRange0100(void)
     FILE_ABSOLUTE_PATH(STR_FILE_IN_TXT, path_in);
     FILE_ABSOLUTE_PATH(STR_FILE_OUT_TXT, path_out);
 
-    fd_in = open(path_in, O_RDWR | O_CREAT, TEST_MODE);
-    if (fd_in == -1) {
+    fdIn = open(path_in, O_RDWR | O_CREAT, TEST_MODE);
+    if (fdIn == -1) {
         t_error("%s open path_in failed\n", __func__);
         return;
     }
 
-    wlen = write(fd_in, str, strlen(str));
+    wlen = write(fdIn, str, strlen(str));
     if (wlen != strlen(str)) {
         t_error("%s write failed\n", __func__);
         return;
     }
 
-    close(fd_in);
-    fd_in = open(path_in, O_RDONLY);
+    close(fdIn);
+    fdIn = open(path_in, O_RDONLY);
 
-    fd_out = open(path_out, O_RDWR | O_CREAT, TEST_MODE);
-    if (fd_out == -1) {
+    fdOut = open(path_out, O_RDWR | O_CREAT, TEST_MODE);
+    if (fdOut == -1) {
         t_error("%s open path_out failed\n", __func__);
         return;
     }
 
     do {
-        result = copy_file_range(fd_in, NULL, fd_out, NULL, wlen, 0);
+        result = copy_file_range(fdIn, NULL, fdOut, NULL, wlen, 0);
         if (result == -1) {
             t_error("%s copy_file_range failed\n", __func__);
             return;
@@ -68,10 +68,10 @@ void CopyFileRange0100(void)
         wlen -= result;
     } while (wlen > 0 && result > 0);
 
-    close(fd_out);
-    fd_out = open(path_out, O_RDONLY);
+    close(fdOut);
+    fdOut = open(path_out, O_RDONLY);
     memset(buffer, 0, sizeof(buffer));
-    result = read(fd_out, buffer, sizeof(buffer));
+    result = read(fdOut, buffer, sizeof(buffer));
     if (result == -1) {
         t_error("%s read failed\n", __func__);
     }
@@ -79,8 +79,8 @@ void CopyFileRange0100(void)
         t_error("%s buffer is %s, not %s", __func__, buffer, str);
     }
 
-    close(fd_in);
-    close(fd_out);
+    close(fdIn);
+    close(fdOut);
     remove(path_in);
     remove(path_out);
 }
@@ -109,8 +109,8 @@ void CopyFileRange0200(void)
  */
 void CopyFileRange0300(void)
 {
-    int fd_in;
-    int fd_out;
+    int fdIn;
+    int fdOut;
     int wlen;
     int result;
     char buffer[BUFSIZ];
@@ -120,29 +120,29 @@ void CopyFileRange0300(void)
     FILE_ABSOLUTE_PATH(STR_FILE_IN_TXT, path_in);
     FILE_ABSOLUTE_PATH(STR_FILE_OUT_TXT, path_out);
 
-    fd_in = open(path_in, O_WRONLY | O_CREAT, TEST_MODE);
-    if (fd_in == -1) {
+    fdIn = open(path_in, O_WRONLY | O_CREAT, TEST_MODE);
+    if (fdIn == -1) {
         t_error("%s open path_in failed\n", __func__);
         return;
     }
 
-    wlen = write(fd_in, str, strlen(str));
+    wlen = write(fdIn, str, strlen(str));
     if (wlen != strlen(str)) {
         t_error("%s write failed\n", __func__);
         return;
     }
 
-    close(fd_in);
-    fd_in = open(path_in, O_WRONLY);
+    close(fdIn);
+    fdIn = open(path_in, O_WRONLY);
 
-    fd_out = open(path_out, O_RDONLY | O_CREAT, TEST_MODE);
-    if (fd_out == -1) {
+    fdOut = open(path_out, O_RDONLY | O_CREAT, TEST_MODE);
+    if (fdOut == -1) {
         t_error("%s open path_out failed\n", __func__);
         return;
     }
 
     errno = 0;
-    result = copy_file_range(fd_in, NULL, fd_out, NULL, wlen, 0);
+    result = copy_file_range(fdIn, NULL, fdOut, NULL, wlen, 0);
     if (result != -1) {
         t_error("%s copy_file_range should failded\n", __func__);
     }
@@ -150,8 +150,8 @@ void CopyFileRange0300(void)
         t_error("%s errno is %d, not EBADF\n", __func__, errno);
     }
 
-    close(fd_in);
-    close(fd_out);
+    close(fdIn);
+    close(fdOut);
     remove(path_in);
     remove(path_out);
 }
@@ -166,7 +166,7 @@ static int CopyFileRangeTestWithArgs(int argc, char *argv[])
 
 int CopyFileRangeTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return CopyFileRangeTestWithArgs(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return CopyFileRangeTestWithArgs(1, libcArgv);
 }

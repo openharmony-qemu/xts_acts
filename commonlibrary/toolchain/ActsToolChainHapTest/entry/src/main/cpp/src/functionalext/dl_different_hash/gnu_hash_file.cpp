@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-void foo()
+void Foo(void)
 {
 }
 

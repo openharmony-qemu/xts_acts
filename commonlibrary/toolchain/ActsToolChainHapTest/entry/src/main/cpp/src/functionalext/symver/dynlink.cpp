@@ -28,7 +28,7 @@ void Dynlink0100(void)
     symver_log("start");
 
     const char *result = dso_no_symver();
-    symver_streq(result, dso_no_symver_symbol);
+    symver_streq(result, DSO_NO_SYMVER_SYMBOL);
 
     symver_log("end");
 }
@@ -43,7 +43,7 @@ void Dynlink0200(void)
     symver_log("start");
 
     const char *result = dso_easy_symver();
-    symver_streq(result, dso_easy_symver_symbol_stable);
+    symver_streq(result, DSO_EASY_SYMVER_SYMBOL_STABLE);
 
     symver_log("end");
 }
@@ -58,12 +58,12 @@ void Dynlink0300(void)
     symver_log("start");
 
     const char *result = dso_hard_symver_ld();
-    symver_streq(result, dso_hard_symver_ld_symbol_stable);
+    symver_streq(result, DSO_HARD_SYMVER_LD_SYMBOL_STABLE);
 
     symver_log("end");
 }
 
-static int DynlinkTestWithArgs(int argc, char *argv[])
+static int DynlinkTestImpl(int argc, char *argv[])
 {
     symver_log("start");
 
@@ -79,7 +79,7 @@ static int DynlinkTestWithArgs(int argc, char *argv[])
 
 int DynlinkTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return DynlinkTestWithArgs(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return DynlinkTestImpl(1, libcArgv);
 }

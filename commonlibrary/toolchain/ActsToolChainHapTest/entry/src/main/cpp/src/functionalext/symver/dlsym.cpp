@@ -15,10 +15,6 @@
 
 #include <dlfcn.h>
 
-#define LOG_DOMAIN 0x0000
-#define LOG_TAG "DlsymSymverTest"
-
-#include "hilog/log.h"
 #include "dso_easy_symver.h"
 #include "dso_hard_symver.h"
 #include "dso_no_symver.h"
@@ -32,39 +28,30 @@ extern "C" void  *__dlsym_time64(void *__restrict, const char *__restrict);
  */
 void DlsymNoSymver0100(void)
 {
-    OH_LOG_INFO(LOG_APP, "[DlsymNoSymver0100] START");
     symver_log("start");
 
-    OH_LOG_INFO(LOG_APP, "[DlsymNoSymver0100] Attempting to dlopen: %{public}s", dso_no_symver_name);
-    void *handle = dlopen(dso_no_symver_name, RTLD_LAZY);
+    void *handle = dlopen(DSO_NO_SYMVER_NAME, RTLD_LAZY);
     if (!handle) {
-        OH_LOG_ERROR(LOG_APP, "[DlsymNoSymver0100] dlopen failed: %{public}s", dlerror());
         symver_error("%s", dlerror());
         return;
     }
-    OH_LOG_INFO(LOG_APP, "[DlsymNoSymver0100] dlopen success, handle: %{public}p", handle);
 
     // Clear any existing error
     dlerror();
 
-    OH_LOG_INFO(LOG_APP, "[DlsymNoSymver0100] Attempting to dlsym: %{public}s", dso_no_symver_symbol);
-    functype func = (functype)dlsym(handle, dso_no_symver_symbol);
+    functype func = (functype)dlsym(handle, DSO_NO_SYMVER_SYMBOL);
     const char *error = dlerror();
-    if (error != NULL) {
-        OH_LOG_ERROR(LOG_APP, "[DlsymNoSymver0100] dlsym failed: %{public}s", error);
+    if (error != nullptr) {
         symver_error("%s", error);
         return;
     }
-    OH_LOG_INFO(LOG_APP, "[DlsymNoSymver0100] dlsym success, func: %{public}p", func);
 
     const char *result = func();
-    OH_LOG_INFO(LOG_APP, "[DlsymNoSymver0100] func() returned: %{public}s", result);
-    symver_streq(result, dso_no_symver_symbol);
+    symver_streq(result, DSO_NO_SYMVER_SYMBOL);
 
     dlclose(handle);
 
     symver_log("end");
-    OH_LOG_INFO(LOG_APP, "[DlsymNoSymver0100] END");
 }
 
 /**
@@ -74,54 +61,45 @@ void DlsymNoSymver0100(void)
  */
 void DlsymNoSymver0200(void)
 {
-    OH_LOG_INFO(LOG_APP, "[DlsymNoSymver0200] START");
     symver_log("start");
 
-    OH_LOG_INFO(LOG_APP, "[DlsymNoSymver0200] Attempting to dlopen: %{public}s", dso_no_symver_name);
-    void *handle = dlopen(dso_no_symver_name, RTLD_LAZY);
+    void *handle = dlopen(DSO_NO_SYMVER_NAME, RTLD_LAZY);
     if (!handle) {
-        OH_LOG_ERROR(LOG_APP, "[DlsymNoSymver0200] dlopen failed: %{public}s", dlerror());
         symver_error("%s", dlerror());
         return;
     }
-    OH_LOG_INFO(LOG_APP, "[DlsymNoSymver0200] dlopen success, handle: %{public}p", handle);
 
     // Clear any existing error
     dlerror();
 
-    OH_LOG_INFO(LOG_APP, "[DlsymNoSymver0200] Attempting to dlsym invalid symbol: %{public}s", dso_symbol_invalid);
-    functype func = (functype)dlsym(handle, dso_symbol_invalid);
+    functype func = (functype)dlsym(handle, DSO_SYMBOL_INVALID);
     const char *error = dlerror();
-    if (error == NULL) {
-        OH_LOG_ERROR(LOG_APP, "[DlsymNoSymver0200] dlsym should have failed but didn't");
+    if (error == nullptr) {
         symver_error();
         return;
     }
 
-    OH_LOG_INFO(LOG_APP, "[DlsymNoSymver0200] dlsym failed as expected: %{public}s", error);
     symver_log("error = %s", error);
 
     dlclose(handle);
 
     symver_log("end");
-    OH_LOG_INFO(LOG_APP, "[DlsymNoSymver0200] END");
 }
 
 /**
  * @tc.name      : dlsym_easy_symver_0100
- * @tc.desc      : invoke a symbol directly after specifying a non-default version
+ * @tc.desc      : invoke a symbol directly after specifying a non-default 
+ *                 version
  * @tc.level     : Level 0
  */
 void DlsymEasySymver0100(void)
 {
-    OH_LOG_INFO(LOG_APP, "[DlsymEasySymver0100] START");
     symver_log("start");
     __asm__(".symver dso_easy_symver, dso_easy_symver@OLD");
     const char *result = dso_easy_symver();
-    symver_streq(result, dso_easy_symver_symbol_old);
+    symver_streq(result, DSO_EASY_SYMVER_SYMBOL_OLD);
 
     symver_log("end");
-    OH_LOG_INFO(LOG_APP, "[DlsymEasySymver0100] END");
 }
 
 /**
@@ -131,39 +109,30 @@ void DlsymEasySymver0100(void)
  */
 void DlsymEasySymver0200(void)
 {
-    OH_LOG_INFO(LOG_APP, "[DlsymEasySymver0200] START");
     symver_log("start");
 
-    OH_LOG_INFO(LOG_APP, "[DlsymEasySymver0200] Attempting to dlopen: %{public}s", dso_easy_symver_name);
-    void *handle = dlopen(dso_easy_symver_name, RTLD_LAZY);
+    void *handle = dlopen(DSO_EASY_SYMVER_NAME, RTLD_LAZY);
     if (!handle) {
-        OH_LOG_ERROR(LOG_APP, "[DlsymEasySymver0200] dlopen failed: %{public}s", dlerror());
         symver_error("%s", dlerror());
         return;
     }
-    OH_LOG_INFO(LOG_APP, "[DlsymEasySymver0200] dlopen success, handle: %{public}p", handle);
 
     // Clear any existing error
     dlerror();
 
-    OH_LOG_INFO(LOG_APP, "[DlsymEasySymver0200] Attempting to dlsym: %{public}s", dso_easy_symver_symbol);
-    functype func = (functype)dlsym(handle, dso_easy_symver_symbol);
+    functype func = (functype)dlsym(handle, DSO_EASY_SYMVER_SYMBOL);
     const char *error = dlerror();
-    if (error != NULL) {
-        OH_LOG_ERROR(LOG_APP, "[DlsymEasySymver0200] dlsym failed: %{public}s", error);
+    if (error != nullptr) {
         symver_error("%s", error);
         return;
     }
-    OH_LOG_INFO(LOG_APP, "[DlsymEasySymver0200] dlsym success, func: %{public}p", func);
 
     const char *result = func();
-    OH_LOG_INFO(LOG_APP, "[DlsymEasySymver0200] func() returned: %{public}s, expected: %{public}s", result, dso_easy_symver_symbol_stable);
-    symver_streq(result, dso_easy_symver_symbol_stable);
+    symver_streq(result, DSO_EASY_SYMVER_SYMBOL_STABLE);
 
     dlclose(handle);
 
     symver_log("end");
-    OH_LOG_INFO(LOG_APP, "[DlsymEasySymver0200] END");
 }
 
 /**
@@ -175,7 +144,7 @@ void DlsymEasySymver0300(void)
 {
     symver_log("start");
 
-    void *handle = dlopen(dso_easy_symver_name, RTLD_LAZY);
+    void *handle = dlopen(DSO_EASY_SYMVER_NAME, RTLD_LAZY);
     if (!handle) {
         symver_error("%s", dlerror());
         return;
@@ -184,9 +153,9 @@ void DlsymEasySymver0300(void)
     // Clear any existing error
     dlerror();
 
-    functype func = (functype)dlsym(handle, dso_symbol_invalid);
+    functype func = (functype)dlsym(handle, DSO_SYMBOL_INVALID);
     const char *error = dlerror();
-    if (error == NULL) {
+    if (error == nullptr) {
         symver_error();
         return;
     }
@@ -205,14 +174,12 @@ void DlsymEasySymver0300(void)
  */
 void DlsymHardSymver0100(void)
 {
-    OH_LOG_INFO(LOG_APP, "[DlsymHardSymver0100] START");
     symver_log("start");
 
     __asm__(".symver dso_hard_symver_ld, dso_hard_symver_ld@OLD");
     const char *result = dso_hard_symver_ld();
-    symver_streq(result, dso_hard_symver_ld_symbol_old);
+    symver_streq(result, DSO_HARD_SYMVER_LD_SYMBOL_OLD);
     symver_log("end");
-    OH_LOG_INFO(LOG_APP, "[DlsymHardSymver0100] END");
 }
 
 /**
@@ -222,40 +189,30 @@ void DlsymHardSymver0100(void)
  */
 void DlsymHardSymver0200(void)
 {
-    OH_LOG_INFO(LOG_APP, "[DlsymHardSymver0200] START");
     symver_log("start");
 
-    OH_LOG_INFO(LOG_APP, "[DlsymHardSymver0200] Attempting to dlopen: %{public}s", dso_hard_symver_name);
-    void *handle = dlopen(dso_hard_symver_name, RTLD_LAZY);
+    void *handle = dlopen(DSO_HARD_SYMVER_NAME, RTLD_LAZY);
     if (!handle) {
-        OH_LOG_ERROR(LOG_APP, "[DlsymHardSymver0200] dlopen failed: %{public}s", dlerror());
         symver_error("%s", dlerror());
         return;
     }
-    OH_LOG_INFO(LOG_APP, "[DlsymHardSymver0200] dlopen success, handle: %{public}p", handle);
 
     // Clear any existing error
     dlerror();
 
-    OH_LOG_INFO(LOG_APP, "[DlsymHardSymver0200] Attempting to dlsym: %{public}s", dso_hard_symver_if_symbol);
-    functype func = (functype)dlsym(handle, dso_hard_symver_if_symbol);
+    functype func = (functype)dlsym(handle, DSO_HARD_SYMVER_IF_SYMBOL);
     const char *error = dlerror();
-    if (error != NULL) {
-        OH_LOG_ERROR(LOG_APP, "[DlsymHardSymver0200] dlsym failed: %{public}s", error);
+    if (error != nullptr) {
         symver_error("%s", error);
         return;
     }
-    OH_LOG_INFO(LOG_APP, "[DlsymHardSymver0200] dlsym success, func: %{public}p", func);
 
     const char *result = func();
-    OH_LOG_INFO(LOG_APP, "[DlsymHardSymver0200] func() returned: %{public}s, expected: %{public}s",
-                result, dso_hard_symver_if_symbol_stable);
-    symver_streq(result, dso_hard_symver_if_symbol_stable);
+    symver_streq(result, DSO_HARD_SYMVER_IF_SYMBOL_STABLE);
 
     dlclose(handle);
 
     symver_log("end");
-    OH_LOG_INFO(LOG_APP, "[DlsymHardSymver0200] END");
 }
 
 /**
@@ -267,7 +224,7 @@ void DlsymHardSymver0300(void)
 {
     symver_log("start");
 
-    void *handle = dlopen(dso_hard_symver_name, RTLD_LAZY);
+    void *handle = dlopen(DSO_HARD_SYMVER_NAME, RTLD_LAZY);
     if (!handle) {
         symver_error("%s", dlerror());
         return;
@@ -276,9 +233,9 @@ void DlsymHardSymver0300(void)
     // Clear any existing error
     dlerror();
 
-    functype func = (functype)dlsym(handle, dso_symbol_invalid);
+    functype func = (functype)dlsym(handle, DSO_SYMBOL_INVALID);
     const char *error = dlerror();
-    if (error == NULL) {
+    if (error == nullptr) {
         symver_error();
         return;
     }
@@ -299,7 +256,7 @@ void DlsymTime64NoSymver0100(void)
 {
     symver_log("start");
 
-    void *handle = dlopen(dso_no_symver_name, RTLD_LAZY);
+    void *handle = dlopen(DSO_NO_SYMVER_NAME, RTLD_LAZY);
     if (!handle) {
         symver_error("%s", dlerror());
         return;
@@ -308,28 +265,27 @@ void DlsymTime64NoSymver0100(void)
     // Clear any existing error
     dlerror();
 
-    functype func = (functype)__dlsym_time64(handle, dso_no_symver_symbol);
+    functype func = (functype)__dlsym_time64(handle, DSO_NO_SYMVER_SYMBOL);
     const char *error = dlerror();
-    if (error != NULL) {
+    if (error != nullptr) {
         symver_error("%s", error);
         return;
     }
 
     const char *result = func();
-    symver_streq(result, dso_no_symver_symbol);
+    symver_streq(result, DSO_NO_SYMVER_SYMBOL);
 
     dlclose(handle);
 
     symver_log("end");
 }
 
-static int DlsymTestWithArgs(int argc, char *argv[])
+static int DlsymTestImpl(int argc, char *argv[])
 {
     symver_log("start");
 
     DlsymNoSymver0100();
     DlsymNoSymver0200();
-    //DlsymTime64NoSymver0100();
 
     DlsymEasySymver0100();
     DlsymEasySymver0200();
@@ -347,7 +303,7 @@ static int DlsymTestWithArgs(int argc, char *argv[])
 
 int DlsymTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return DlsymTestWithArgs(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, nullptr };
+    return DlsymTestImpl(1, libcArgv);
 }

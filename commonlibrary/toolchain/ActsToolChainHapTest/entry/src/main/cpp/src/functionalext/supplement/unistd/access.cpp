@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include <stdlib.h>
+#include <cstdlib>
 #include <unistd.h>
 #include <sys/stat.h>
 #include "functionalext.h"

@@ -36,27 +36,27 @@ __attribute__((aligned(4096))) void __cfi_check(uint64_t call_site_type_id,
     g_diag = diag;
 }
 
-size_t get_count()
+size_t GetCount(void)
 {
     return g_count;
 }
 
-uint64_t get_type_id()
+uint64_t GetTypeId(void)
 {
     return g_type_id;
 }
 
-void *get_address()
+void *GetAddress(void)
 {
     return g_address;
 }
 
-void *get_diag()
+void *GetDiag(void)
 {
     return g_diag;
 }
 
-void *get_global_address()
+void *GetGlobalAddress(void)
 {
     return &g_count;
 }

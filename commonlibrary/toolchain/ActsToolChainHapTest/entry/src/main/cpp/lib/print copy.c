@@ -1,3 +1,18 @@
+/*
+ * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
@@ -5,26 +20,25 @@
 
 #define ELLIPSIS_OFFSET 4
 
-volatile int t_status = 0;
+volatile int g_tStatus = 0;
 
-int t_printf(const char *s, ...)
+int TPrintf(const char *s, ...)
 {
     va_list ap;
     char buf[512];
     int n;
 
-    t_status = 1;
+    g_tStatus = 1;
     va_start(ap, s);
     n = vsnprintf(buf, sizeof buf, s, ap);
     va_end(ap);
     if (n < 0) {
         n = 0;
-    }
-    else if (n >= sizeof buf) {
+    } else if (n >= sizeof buf) {
         n = sizeof buf;
         buf[n - 1] = '\n';
         buf[n - 2] = '.';
-        buf[n - 3] = '.';
+        buf[n - ELLIPSIS_OFFSET + 1] = '.';
         buf[n - ELLIPSIS_OFFSET] = '.';
     }
     return write(1, buf, n);

@@ -483,7 +483,7 @@ export default function ctype_group_test() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('iswalpha', 0, async (done: Function) => {
+    it('iswalpha', Level.LEVEL1, async (done: Function) => {
       const result = await testNapi.runTest('iswalpha');
       expect(result).assertEqual(0);
       done();

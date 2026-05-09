@@ -14,12 +14,12 @@
  */
 
 #include <dlfcn.h>
-#include <stdio.h>
+#include <cstdio>
 #include <unistd.h>
-#include <stdlib.h>
+#include <cstdlib>
 #include <sys/wait.h>
-#include <string.h>
-#include <errno.h>
+#include <cstring>
+#include <cerrno>
 #include "test.h"
 
 typedef void (* ATEXIT_CB)();
@@ -40,9 +40,9 @@ typedef void (* ATEXIT_CB)();
 int ForkMain(char *exe)
 {
     char buf[512];
-    void *handler = NULL;
-    ATEXIT_CB cb = NULL;
-    unsigned int *wp_ptr = NULL;
+    void *handler = nullptr;
+    ATEXIT_CB cb = nullptr;
+    unsigned int *wp_ptr = nullptr;
     unsigned int wp = 0;
 
     int err = 0;
@@ -87,7 +87,7 @@ int ForkMain(char *exe)
     return 0;
 }
 
-static int AtexitDlcloseTestWithArgs(int argc, char *argv[])
+static int AtexitDlcloseTestImpl(int argc, char *argv[])
 {
     pid_t pid;
     pid_t w;
@@ -126,7 +126,7 @@ static int AtexitDlcloseTestWithArgs(int argc, char *argv[])
 
 int AtexitDlcloseTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return AtexitDlcloseTestWithArgs(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *__libc_argv[] = { libcProg, nullptr };
+    return AtexitDlcloseTestImpl(1, __libc_argv);
 }
