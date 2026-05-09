@@ -1595,6 +1595,14 @@ async function timedMetaDataON(avPlayer: media.AVPlayer | undefined, done: () =>
       if (metaData.contents) {
         console.info('onTimedMetaData contents: ' + JSON.stringify(metaData.contents));
       }
+       if (typeof (metaData.id) !== 'undefined') {
+        console.info('onTimedMetaData id: ' + metaData.id);
+        expect(typeof metaData.id === 'string').assertTrue();
+      }
+      if (typeof (metaData.classify) !== 'undefined') {
+        console.info('onTimedMetaData classify: ' + metaData.classify);
+        expect(typeof metaData.classify === 'string').assertTrue();
+      }
       avPlayer!.offTimedMetaData();
     } else {
       console.info('onTimedMetaData info is null');
