@@ -3804,7 +3804,6 @@ static napi_value GetColorTintRange(napi_env env, napi_callback_info info)
 
 static napi_value SetColorTint(napi_env env, napi_callback_info info)
 {
-    // 获取ArkTs传过来的参数
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
