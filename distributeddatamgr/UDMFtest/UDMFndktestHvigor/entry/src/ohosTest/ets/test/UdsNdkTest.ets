@@ -729,5 +729,290 @@ export default function UdsNdkTest() {
       expect(data).assertEqual(1);
     });
 
+    /**
+     * @tc.name   UDMF_PERM_NONE_001
+     * @tc.number SUB_DistributedData_UDS_SDK_PERM_NONE_001
+     * @tc.desc   Udmf_AuthPermission Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMF_PERM_NONE_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'UDMF_PERM_NONE_001');
+      let result = testNapi.UDMF_PERM_NONE_001();
+      console.info(TAG + 'UDMF_PERM_NONE_001 result= ' + JSON.stringify(result));
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   UDMF_PERM_READ_001
+     * @tc.number SUB_DistributedData_UDS_SDK_PERM_READ_001
+     * @tc.desc   Udmf_AuthPermission Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMF_PERM_READ_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'UDMF_PERM_READ_001');
+      let result = testNapi.UDMF_PERM_READ_001();
+      console.info(TAG + 'UDMF_PERM_READ_001 result= ' + JSON.stringify(result));
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   UDMF_PERM_WRITE_001
+     * @tc.number SUB_DistributedData_UDS_SDK_PERM_WRITE_001
+     * @tc.desc   Udmf_AuthPermission Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMF_PERM_WRITE_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'UDMF_PERM_WRITE_001');
+      let result = testNapi.UDMF_PERM_WRITE_001();
+      console.info(TAG + 'UDMF_PERM_WRITE_001 result= ' + JSON.stringify(result));
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   UDMF_PERM_PERSIST_001
+     * @tc.number SUB_DistributedData_UDS_SDK_PERM_PERSIST_001
+     * @tc.desc   Udmf_AuthPermission Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMF_PERM_PERSIST_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'UDMF_PERM_PERSIST_001');
+      let result = testNapi.UDMF_PERM_PERSIST_001();
+      console.info(TAG + 'UDMF_PERM_PERSIST_001 result= ' + JSON.stringify(result));
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   UDMF_PERM_Combination_001
+     * @tc.number SUB_DistributedData_UDS_SDK_PERM_Combination_001
+     * @tc.desc   Udmf_AuthPermission Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('UDMF_PERM_Combination_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'UDMF_PERM_Combination_001');
+      let result = testNapi.UDMF_PERM_Combination_001();
+      console.info(TAG + 'UDMF_PERM_Combination_001 result= ' + JSON.stringify(result));
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   OH_UdsHtml_SetAuthPolicy_001
+     * @tc.number SUB_DistributedData_UDS_SDK_OH_UdsHtml_SetAuthPolicy_001
+     * @tc.desc   Udmf_AuthPermission Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdsHtml_SetAuthPolicy_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdsHtml_SetAuthPolicy_001');
+      let result = testNapi.OH_UdsHtml_SetAuthPolicy_001();
+      console.info(TAG + 'OH_UdsHtml_SetAuthPolicy_001 result= ' + JSON.stringify(result));
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   OH_UdsHtml_SetAuthPolicy_002
+     * @tc.number SUB_DistributedData_UDS_SDK_OH_UdsHtml_SetAuthPolicy_002
+     * @tc.desc   Udmf_AuthPermission Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdsHtml_SetAuthPolicy_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdsHtml_SetAuthPolicy_002');
+      let result = testNapi.OH_UdsHtml_SetAuthPolicy_002();
+      console.info(TAG + 'OH_UdsHtml_SetAuthPolicy_002 result= ' + JSON.stringify(result));
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   OH_UdsHtml_SetAuthPolicy_003
+     * @tc.number SUB_DistributedData_UDS_SDK_OH_UdsHtml_SetAuthPolicy_003
+     * @tc.desc   Udmf_AuthPermission Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdsHtml_SetAuthPolicy_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdsHtml_SetAuthPolicy_003');
+      let result = testNapi.OH_UdsHtml_SetAuthPolicy_003();
+      console.info(TAG + 'OH_UdsHtml_SetAuthPolicy_003 result= ' + JSON.stringify(result));
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   OH_UdsHtml_SetAuthPolicy_004
+     * @tc.number SUB_DistributedData_UDS_SDK_OH_UdsHtml_SetAuthPolicy_004
+     * @tc.desc   Udmf_AuthPermission Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdsHtml_SetAuthPolicy_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdsHtml_SetAuthPolicy_004');
+      let result = testNapi.OH_UdsHtml_SetAuthPolicy_004();
+      console.info(TAG + 'OH_UdsHtml_SetAuthPolicy_004 result= ' + JSON.stringify(result));
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   OH_UdsHtml_SetAuthPolicy_005
+     * @tc.number SUB_DistributedData_UDS_SDK_OH_UdsHtml_SetAuthPolicy_005
+     * @tc.desc   Udmf_AuthPermission Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdsHtml_SetAuthPolicy_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdsHtml_SetAuthPolicy_005');
+      let result = testNapi.OH_UdsHtml_SetAuthPolicy_005();
+      console.info(TAG + 'OH_UdsHtml_SetAuthPolicy_005 result= ' + JSON.stringify(result));
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   OH_UdsHtml_SetAuthPolicy_006
+     * @tc.number SUB_DistributedData_UDS_SDK_OH_UdsHtml_SetAuthPolicy_006
+     * @tc.desc   Udmf_AuthPermission Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdsHtml_SetAuthPolicy_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdsHtml_SetAuthPolicy_006');
+      let result = testNapi.OH_UdsHtml_SetAuthPolicy_006();
+      console.info(TAG + 'OH_UdsHtml_SetAuthPolicy_006 result= ' + JSON.stringify(result));
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   OH_UdsHtml_SetAuthPolicy_007
+     * @tc.number SUB_DistributedData_UDS_SDK_OH_UdsHtml_SetAuthPolicy_007
+     * @tc.desc   Udmf_AuthPermission Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdsHtml_SetAuthPolicy_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdsHtml_SetAuthPolicy_007');
+      let result = testNapi.OH_UdsHtml_SetAuthPolicy_007();
+      console.info(TAG + 'OH_UdsHtml_SetAuthPolicy_007 result= ' + JSON.stringify(result));
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   OH_UdsFileUri_SetAuthPolicy_001
+     * @tc.number SUB_DistributedData_UDS_SDK_OH_UdsFileUri_SetAuthPolicy_001
+     * @tc.desc   Udmf_AuthPermission Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdsFileUri_SetAuthPolicy_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdsFileUri_SetAuthPolicy_001');
+      let result = testNapi.OH_UdsFileUri_SetAuthPolicy_001();
+      console.info(TAG + 'OH_UdsFileUri_SetAuthPolicy_001 result= ' + JSON.stringify(result));
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   OH_UdsFileUri_SetAuthPolicy_002
+     * @tc.number SUB_DistributedData_UDS_SDK_OH_UdsFileUri_SetAuthPolicy_002
+     * @tc.desc   Udmf_AuthPermission Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdsFileUri_SetAuthPolicy_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdsFileUri_SetAuthPolicy_002');
+      let result = testNapi.OH_UdsFileUri_SetAuthPolicy_002();
+      console.info(TAG + 'OH_UdsFileUri_SetAuthPolicy_002 result= ' + JSON.stringify(result));
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   OH_UdsFileUri_SetAuthPolicy_003
+     * @tc.number SUB_DistributedData_UDS_SDK_OH_UdsFileUri_SetAuthPolicy_003
+     * @tc.desc   Udmf_AuthPermission Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdsFileUri_SetAuthPolicy_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdsFileUri_SetAuthPolicy_003');
+      let result = testNapi.OH_UdsFileUri_SetAuthPolicy_003();
+      console.info(TAG + 'OH_UdsFileUri_SetAuthPolicy_003 result= ' + JSON.stringify(result));
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   OH_UdsFileUri_SetAuthPolicy_004
+     * @tc.number SUB_DistributedData_UDS_SDK_OH_UdsFileUri_SetAuthPolicy_004
+     * @tc.desc   Udmf_AuthPermission Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdsFileUri_SetAuthPolicy_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdsFileUri_SetAuthPolicy_004');
+      let result = testNapi.OH_UdsFileUri_SetAuthPolicy_004();
+      console.info(TAG + 'OH_UdsFileUri_SetAuthPolicy_004 result= ' + JSON.stringify(result));
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   OH_UdsFileUri_SetAuthPolicy_005
+     * @tc.number SUB_DistributedData_UDS_SDK_OH_UdsFileUri_SetAuthPolicy_005
+     * @tc.desc   Udmf_AuthPermission Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdsFileUri_SetAuthPolicy_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdsFileUri_SetAuthPolicy_005');
+      let result = testNapi.OH_UdsFileUri_SetAuthPolicy_005();
+      console.info(TAG + 'OH_UdsFileUri_SetAuthPolicy_005 result= ' + JSON.stringify(result));
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   OH_UdsFileUri_SetAuthPolicy_006
+     * @tc.number SUB_DistributedData_UDS_SDK_OH_UdsFileUri_SetAuthPolicy_006
+     * @tc.desc   Udmf_AuthPermission Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdsFileUri_SetAuthPolicy_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdsFileUri_SetAuthPolicy_006');
+      let result = testNapi.OH_UdsFileUri_SetAuthPolicy_006();
+      console.info(TAG + 'OH_UdsFileUri_SetAuthPolicy_006 result= ' + JSON.stringify(result));
+      expect(result).assertEqual(1);
+    });
+
+    /**
+     * @tc.name   OH_UdsFileUri_SetAuthPolicy_007
+     * @tc.number SUB_DistributedData_UDS_SDK_OH_UdsFileUri_SetAuthPolicy_007
+     * @tc.desc   Udmf_AuthPermission Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_UdsFileUri_SetAuthPolicy_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + 'OH_UdsFileUri_SetAuthPolicy_007');
+      let result = testNapi.OH_UdsFileUri_SetAuthPolicy_007();
+      console.info(TAG + 'OH_UdsFileUri_SetAuthPolicy_007 result= ' + JSON.stringify(result));
+      expect(result).assertEqual(1);
+    });
+
   })
 }
