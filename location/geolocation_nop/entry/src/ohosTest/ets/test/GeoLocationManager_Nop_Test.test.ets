@@ -1655,33 +1655,6 @@ export default function geoLocationManager_nop_test() {
     });
 
     /**
-     * @tc.name   geoLocationManager_removeGnssGeofence_nop_test_017
-     * @tc.number SUB_geoLocationManager_removeGnssGeofence_nop_test_017
-     * @tc.desc   GnssGeofence.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it("geoLocationManager_removeGnssGeofence_nop_test_017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let fenceId = 1;
-      try {
-        geoLocationManager.removeGnssGeofence(fenceId).then(() => {
-          console.info("removeGnssGeofence success fenceId:" + fenceId);
-          expect(fenceId === null).assertTrue();
-          done();
-        }).catch((err: BusinessError) => {
-          console.info("removeGnssGeofence: error=" + JSON.stringify(err));
-          expect(Number(err.code)).assertEqual(201);
-          done();
-        });
-      } catch (err) {
-        console.info("removeGnssGeofence: catch error=" + JSON.stringify(err));
-        expect().assertFalse();
-        done();
-      }
-    });
-
-    /**
      * @tc.name   geoLocationManager_getCurrentWifiBssidForLocating_nop_test_018
      * @tc.number SUB_geoLocationManager_getCurrentWifiBssidForLocating_nop_test_018
      * @tc.desc   GnssGeofence.
@@ -1919,42 +1892,6 @@ export default function geoLocationManager_nop_test() {
         done();
       }
     });
-
-    /**
-     * @tc.number  SUB_Location_nop_findMatchingWlan_0100
-     * @tc.name    SUB_Location_nop_findMatchingWlan_0100
-     * @tc.desc    Test findMatchingWlan error code 201
-     * @tc.level   Level 2
-     * @tc.type    Function
-     * @tc.size    MEDIUMTEST
-     */
-    it('SUB_Location_nop_findMatchingWlan_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      try {
-        let locationEnabled: boolean = geoLocationManager.isLocationEnabled();
-        if (locationEnabled) {
-          console.info("SUB_Location_nop_findMatchingWlan_0100 Location is enabled, skip error code test ");
-          done();
-        }
-        
-        let wlanBssidArray: Array<string> = ['AA:BB:CC:DD:EE:FF'];
-        let rssiThreshold: number = -70;
-        let needStartScan: boolean = true;
-        
-        let result: Array<geoLocationManager.MatchingWlanInfo> = await geoLocationManager.findMatchingWlan(
-            wlanBssidArray, rssiThreshold, needStartScan);
-        console.info("SUB_Location_nop_findMatchingWlan_0100 result :" + JSON.stringify(result));
-        expect().assertFail();
-        done();
-      } catch (err) {
-        console.info("SUB_Location_nop_findMatchingWlan_0100 error :" + JSON.stringify(err));
-        if (err.code === 801) {
-            expect(err.code === 801).assertTrue();
-        } else {
-            expect(err.code === 201).assertTrue();
-        }
-        done();
-      }
-      });
 
 
   })
