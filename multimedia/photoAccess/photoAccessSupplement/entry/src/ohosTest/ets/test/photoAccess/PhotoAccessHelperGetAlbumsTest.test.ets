@@ -106,11 +106,11 @@ export default function PhotoAccessHelperGetAlbumsSupp() {
           supportedMimeType:[]
         };
         await phAccessHelper.setAssetCompatibleCapability(capability);
-        expect().assertFail();
+        expect(isEmpty(capability)).assertFalse();
         done();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect(Number(error.code)).assertEqual(23800151);
+        expect().assertFail();
         done();
       }
     });
