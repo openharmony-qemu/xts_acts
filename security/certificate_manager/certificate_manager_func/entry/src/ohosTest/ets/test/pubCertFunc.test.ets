@@ -1186,6 +1186,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     it('SUB_Security_CertManager_OpenInstallCertificateDialog_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_OpenInstallCertificateDialog_0011: started ");
       const context :common.Context = GlobalContext.getContext();
+      let isSupport = certManagerDialog.supportsCACertDialog();
       let certificateType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CA_CERT;
       let certificateScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.GLOBAL_USER;
       try {
@@ -1195,11 +1196,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
         if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
           expect(err.code).assertEqual(801);
         } else {
-          if (err.code == 29700004) {
-            expect(err.code).assertEqual(29700004);
+          if (isSupport) {
+            console.log("SUB_Security_CertManager_OpenInstallCertificateDialog_0011: the device supports CACertDialog. e.code" + err.code);
+            expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_NOT_COMPLY_SECURITY_POLICY);
           } else {
-            console.log("SUB_Security_CertManager_OpenInstallCertificateDialog_0011: e.code " + err.code);
-            expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+            console.log("SUB_Security_CertManager_OpenInstallCertificateDialog_0011: the device don't supports CACertDialog. e.code " + err.code);
+            expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_DEVICE_NOT_SUPPORTED);
           }
         }
       }
