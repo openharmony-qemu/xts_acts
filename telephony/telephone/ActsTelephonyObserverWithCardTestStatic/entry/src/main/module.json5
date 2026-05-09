@@ -54,7 +54,10 @@
       },
       {
         "name" :  "ohos.permission.GET_TELEPHONY_STATE"
-      }  
+      },
+      {
+        "name" :  "ohos.permission.SET_TELEPHONY_STATE"
+      }
     ]
   }
 }
