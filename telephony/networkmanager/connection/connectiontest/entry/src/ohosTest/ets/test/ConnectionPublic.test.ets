@@ -2757,6 +2757,45 @@ export default function ConnectionPublicTest() {
     });
 
     /**
+     * @tc.name   testNetworkMgrConnectionSetAppNet1900
+     * @tc.number SUB_NetworkMgr_ConnectionSetAppNet_1900
+     * @tc.desc   Bind the app normal network
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkMgrConnectionSetAppNet1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = "testNetworkMgrConnectionSetAppNet1900";
+      console.info(`${caseName} test start `);
+      try {
+        await connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+          netHandle.netId = 0;
+          connection.setAppNet(netHandle).then(() => {
+            console.info(`${caseName} SetAppNet: success data->${JSON.stringify(netHandle)}`);
+            ExpectTrue(true);
+            console.info(`${caseName}---End`);
+            done();
+          }).catch((error: BusinessError) => {
+            console.info(`${caseName} SetAppNet: err->${JSON.stringify(error)}`);
+            ExpectFail();
+            console.info(`${caseName}---End`);
+            done();
+          });
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} getDefaultNet: err->${JSON.stringify(error)}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testNetworkMgrConnectionGetAllNets0100
      * @tc.number SUB_NetworkMgr_ConnectionGetAllNets_0100
      * @tc.desc   Obtain a list of all connected networks and use the callback method as an asynchronous method.
