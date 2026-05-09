@@ -181,7 +181,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       }
       catch (err) {
         console.log("SUB_Security_CertManager_PubCertJsApi_Func_0600：e.code = " + err.code);
-        expect(err.code).assertEqual(17500002);
+        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_GENERIC);
       }
       console.info("SUB_Security_CertManager_PubCertJsApi_Func_0600: end.");
       done();
@@ -1468,6 +1468,42 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
         }
       }
       console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1400 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_1500
+     * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_1500
+     * @tc.desc   import USB key certificate with PURPOSE_ALL without real USB key, return error code 17500010 on PC device or 801 on non-PC device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_ImportUkeyCertificate_Func_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1500 start');
+      let keyUri: string = 'test';
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      let ukeyInfo: certManager.UkeyInfo = {
+        certPurpose: certManager.CertificatePurpose.PURPOSE_ALL,
+      };
+      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
+        try {
+          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+          expect(null).assertFail();
+        } catch (err) {
+          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1500 failed. Code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_PARAMETER_VALIDATION_FAILED);
+        }
+      } else {
+        try {
+          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+          expect(null).assertFail();
+        } catch (err) {
+          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1500 failed. Code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(801);
+        }
+      }
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1500 end');
       done();
     });
   })
