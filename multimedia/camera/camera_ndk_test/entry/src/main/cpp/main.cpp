@@ -165,6 +165,55 @@ static napi_value GetCameraHostTypeInspection(napi_env env, napi_callback_info i
     return jsValue;
 }
 
+static napi_value GetAutomotiveCameraPosition(napi_env env, napi_callback_info info)
+{
+    ndkCamera_->GetAutomotiveCameraPosition();
+
+    napi_value jsValue = nullptr;
+
+    napi_create_int32(env, ndkCamera_->GetAutomotiveCameraPosition(), &jsValue);
+
+    return jsValue;
+}
+
+static napi_value GetAutomotiveCameraPositionErrorParameter(napi_env env, napi_callback_info info)
+{
+    ndkCamera_->GetAutomotiveCameraPositionErrorParameter();
+
+    napi_value jsValue = nullptr;
+
+    napi_create_int32(env, ndkCamera_->GetAutomotiveCameraPositionErrorParameter(), &jsValue);
+
+    return jsValue;
+}
+
+static napi_value EnumTestAutomotiveCameraPosition(napi_env env, napi_callback_info info)
+{
+    int32_t backCode = -1;
+    if (OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_EXTERIOR_OTHER == 0
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_EXTERIOR_FRONT == 1
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_EXTERIOR_REAR == 2
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_EXTERIOR_LEFT == 3
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_EXTERIOR_RIGHT == 4
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_OTHER == 5
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_1_LEFT == 6
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_1_CENTER == 7
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_1_RIGHT == 8
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_2_LEFT == 9
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_2_CENTER == 10
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_2_RIGHT == 11
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_3_LEFT == 12
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_3_CENTER == 13
+        || OH_Camera_AutomotiveCameraPosition::OH_CAMERA_AUTOMOTIVE_CAMERA_POSITION_INTERIOR_ROW_3_RIGHT == 14
+    ) {
+        backCode = 0;
+    }
+
+    napi_value jsValue = nullptr;
+    napi_create_int32(env, backCode, &jsValue);
+    return jsValue;
+}
+
 
 static napi_value CreateCameraInput(napi_env env, napi_callback_info info)
 {
@@ -4040,6 +4089,12 @@ static napi_value Init(napi_env env, napi_value exports)
         { "createPreviewOutputByIndex", nullptr, createPreviewOutputByIndex, nullptr, nullptr, nullptr,
             napi_default, nullptr },
         { "createDeferredPreviewOutput", nullptr, CreateDeferredPreviewOutput, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "getAutomotiveCameraPosition", nullptr, GetAutomotiveCameraPosition, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "getAutomotiveCameraPositionErrorParameter", nullptr, GetAutomotiveCameraPositionErrorParameter, nullptr,
+            nullptr, nullptr, napi_default, nullptr },
+        { "enumTestAutomotiveCameraPosition", nullptr, EnumTestAutomotiveCameraPosition, nullptr, nullptr, nullptr,
             napi_default, nullptr },
     };
     napi_property_descriptor desc1[] = {

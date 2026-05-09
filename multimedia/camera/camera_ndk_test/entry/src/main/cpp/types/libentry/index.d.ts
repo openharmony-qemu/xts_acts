@@ -678,3 +678,7 @@ export const getColorTint: (index: number) => number;
 export const getZoomPointInfos: (index: number) => number;
 
 export const deleteZoomPointInfo: (index: number) => number;
+
+export const getAutomotiveCameraPosition: () => number;
+export const getAutomotiveCameraPositionErrorParameter: () => number;
+export const enumTestAutomotiveCameraPosition: () => number;

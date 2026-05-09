@@ -257,6 +257,13 @@ static napi_value OHCameraDeviceGetHostDeviceTypeTest(napi_env env, napi_callbac
     });
 }
 
+static napi_value OHCameraDeviceGetAutomotiveCameraPositionTest(napi_env env, napi_callback_info info, int32_t caseCode)
+{
+    return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
+        return g_ndkCamera->OHCameraDeviceGetAutomotiveCameraPositionTest(code);
+    });
+}
+
 static napi_value OHCameraInputRegisterCallbackTest(napi_env env, napi_callback_info info, int32_t caseCode)
 {
     return ExecuteCameraIntArgFunction(env, info, caseCode, [](int32_t code) {
@@ -804,6 +811,7 @@ const std::map<std::string, ArkCameraTestFuncEx> CameraFunctionMap = {
     {"OH_CameraDevice_GetCameraOrientation", OHCameraDeviceGetCameraOrientationTest},
     {"OH_CameraDevice_GetHostDeviceName", OHCameraDeviceGetHostDeviceNameTest},
     {"OH_CameraDevice_GetHostDeviceType", OHCameraDeviceGetHostDeviceTypeTest},
+    {"OH_CameraDevice_GetAutomotiveCameraPosition", OHCameraDeviceGetAutomotiveCameraPositionTest},
     {"OH_CameraInput_RegisterCallback", OHCameraInputRegisterCallbackTest},
     {"OH_CameraInput_UnregisterCallback", OHCameraInputUnregisterCallbackTest},
     {"OH_CameraInput_Open", OHCameraInputOpenTest},

@@ -764,5 +764,43 @@ export default function CameraDevicePropertyTest() {
       }
     })
 
+    /**
+     * @tc.name   testOHAutomotiveCameraPosition_0100
+     * @tc.number SUB_Multimedia_Camera_AutomotiveCameraPosition_Func_0100
+     * @tc.desc   Test OH_CameraDevice_GetAutomotiveCameraPosition in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHAutomotiveCameraPosition_0100', Level.LEVEL0, () => {
+      let ret: number = cameraObj.getAutomotiveCameraPosition();
+      expect(ret).assertEqual(CAMERA_OK);
+    })
+
+    /**
+     * @tc.name   testOHAutomotiveCameraPosition_0200
+     * @tc.number SUB_Multimedia_Camera_AutomotiveCameraPosition_Func_0200
+     * @tc.desc   Test OH_CameraDevice_GetAutomotiveCameraPosition with null parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHAutomotiveCameraPosition_0200', Level.LEVEL0, () => {
+      let ret: number = cameraObj.getAutomotiveCameraPositionErrorParameter();
+      expect(ret).not().assertEqual(CAMERA_OK);
+    })
+
+    /**
+     * @tc.name   testOHAutomotiveCameraPosition_0300
+     * @tc.number SUB_Multimedia_Camera_AutomotiveCameraPosition_Enum_0300
+     * @tc.desc   Test OH_Camera_AutomotiveCameraPosition in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHAutomotiveCameraPosition_0300', Level.LEVEL0, () => {
+      let ret: number = cameraObj.enumTestAutomotiveCameraPosition();
+      expect(ret).assertEqual(CAMERA_OK);
+    })
   })
 }
