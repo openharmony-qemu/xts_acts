@@ -72,9 +72,15 @@ static napi_value OHHuksGetSdkVersion(napi_env env, napi_callback_info info)
     struct OH_Huks_Blob *gkeyAlias = (struct OH_Huks_Blob *)malloc(sizeof(struct OH_Huks_Blob));
     if (gkeyAlias != nullptr) {
         gkeyAlias->data = static_cast<uint8_t *>(malloc(sdkSize));
+        if (gkeyAlias->data == nullptr) {
+            free(gkeyAlias);
+            gkeyAlias = nullptr;
+        }
         gkeyAlias->size = sdkSize;
     }
-    struct OH_Huks_Result resultSt = OH_Huks_GetSdkVersion(gkeyAlias);
+    if (gkeyAlias != nullptr) {
+        struct OH_Huks_Result resultSt = OH_Huks_GetSdkVersion(gkeyAlias);
+    }
     if (resultSt.errorCode == (int32_t)OH_HUKS_SUCCESS) {
         returnValue = SUCCESS;
     }
