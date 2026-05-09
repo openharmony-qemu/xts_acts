@@ -54,7 +54,7 @@ export default function RdbStoreSyncEx() {
     console.log(TAG + "*************Unit Test Begin*************");
     /**
      * @tc.name   testRdbStoresyncExTest0001
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest_0100
      * @tc.desc   No sync permission and syncEx returns 201
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -78,7 +78,7 @@ export default function RdbStoreSyncEx() {
     })
     /**
      * @tc.name   testRdbStoresyncExTest0002
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest0200
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest_0200
      * @tc.desc   Sync mode is SYNC_MODE_CLOUD_FIRST and syncEx returns 14800001
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -102,7 +102,7 @@ export default function RdbStoreSyncEx() {
     })
     /**
      * @tc.name   testRdbStoresyncExTest0003
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest0300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest_0300
      * @tc.desc   store is closed and syncEx returns 14800014
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -127,7 +127,7 @@ export default function RdbStoreSyncEx() {
     })
     /**
      * @tc.name   testRdbStoresyncExTest0004
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest0400
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest_0400
      * @tc.desc   mode is null and syncEx returns 14800001
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -151,7 +151,7 @@ export default function RdbStoreSyncEx() {
     })
     /**
      * @tc.name   testRdbStoresyncExTest0005
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest0500
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest_0500
      * @tc.desc   mode is null and syncEx returns 14800001
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -176,7 +176,7 @@ export default function RdbStoreSyncEx() {
     })
     /**
      * @tc.name   testRdbStoresyncExTest0006
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest0600
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest_0600
      * @tc.desc   mode is invalid number (999) and syncEx returns 14800001
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -201,7 +201,7 @@ export default function RdbStoreSyncEx() {
     })
     /**
      * @tc.name   testRdbStoresyncExTest0007
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest0700
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest_0700
      * @tc.desc   sync with SYNC_MODE_PUSH, expect 201 due to no permission
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -226,7 +226,7 @@ export default function RdbStoreSyncEx() {
     })
     /**
      * @tc.name   testRdbStoresyncExTest0008
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest0800
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest_0800
      * @tc.desc   sync with SYNC_MODE_PULL, expect 201 due to no permission
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -250,7 +250,7 @@ export default function RdbStoreSyncEx() {
     })
     /**
      * @tc.name   testRdbStoresyncExTest0009
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest0900
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest_0900
      * @tc.desc   sync with SYNC_MODE_TIME_FIRST, expect 14800001
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -275,7 +275,7 @@ export default function RdbStoreSyncEx() {
     })
     /**
      * @tc.name   testRdbStoresyncExTest0010
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest1000
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest_1000
      * @tc.desc   sync with SYNC_MODE_TIME_FIRST, expect 14800001
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -299,7 +299,7 @@ export default function RdbStoreSyncEx() {
     })
     /**
      * @tc.name   testRdbStoresyncExTest0011
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest1100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest_1100
      * @tc.desc   SYNC_MODE_CLOUD_FIRST and syncEx returns 14800001
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -324,7 +324,7 @@ export default function RdbStoreSyncEx() {
     })
     /**
      * @tc.name   testRdbStoresyncExTest0012
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest1200
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest_1200
      * @tc.desc   predicates with non-existent table, expect 201 due to no permission
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -349,7 +349,7 @@ export default function RdbStoreSyncEx() {
     })
     /**
      * @tc.name   testRdbStoresyncExTest0013
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest1300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest_1300
      * @tc.desc   sync with predicates containing where condition, expect 201 due to no permission
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -379,7 +379,7 @@ export default function RdbStoreSyncEx() {
     })
     /**
      * @tc.name   testRdbStoresyncExTest0014
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest1400
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest_1400
      * @tc.desc   sync with predicates containing where condition, expect 201 due to no permission
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -404,7 +404,7 @@ export default function RdbStoreSyncEx() {
     })
     /**
      * @tc.name   testRdbStoresyncExTest0015
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest1500
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest_1500
      * @tc.desc   sync with predicates containing orderBy, expect 201 due to no permission
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -429,7 +429,7 @@ export default function RdbStoreSyncEx() {
     })
     /**
      * @tc.name   testRdbStoresyncExTest0016
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest1600
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest_1600
      * @tc.desc   sync with predicates containing orderBy, expect 201 due to no permission
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -457,7 +457,7 @@ export default function RdbStoreSyncEx() {
 
     /**
      * @tc.name   testRdbStoresyncExTest0017
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest1700
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest_1700
      * @tc.desc   the first mode is SYNC_MODE_PUSH
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -479,7 +479,7 @@ export default function RdbStoreSyncEx() {
     })
     /**
      * @tc.name   testRdbStoresyncExTest0018
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest1800
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest_1800
      * @tc.desc   the first mode is SYNC_MODE_PULL
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -501,7 +501,7 @@ export default function RdbStoreSyncEx() {
     })
     /**
      * @tc.name   testRdbStoresyncExTest0019
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest1900
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest_1900
      * @tc.desc   the first mode is SYNC_MODE_TIME_FIRST
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -523,7 +523,7 @@ export default function RdbStoreSyncEx() {
     })
     /**
      * @tc.name   testRdbStoresyncExTest0020
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest2000
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest_2000
      * @tc.desc   the first mode is SYNC_MODE_NATIVE_FIRST
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -545,7 +545,7 @@ export default function RdbStoreSyncEx() {
     })
     /**
      * @tc.name   testRdbStoresyncExTest0021
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest2100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest_2100
      * @tc.desc   the first mode is SYNC_MODE_CLOUD_FIRST
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -567,7 +567,7 @@ export default function RdbStoreSyncEx() {
     })
     /**
      * @tc.name   testRdbStoresyncExTest0022
-     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest2200
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_testRdbStoresyncExTest_2200
      * @tc.desc   the test of SyncResultCode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
