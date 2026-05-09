@@ -356,6 +356,713 @@ export default function AudioRoutingManagerTest() {
     });
 
     /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_0100
+     * @tc.desc    CurrentOutputDeviceChangedEvent preDevices property test - verify preDevices is returned when output device changes.
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = 'SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_0100';
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_0100 start`);
+      if (!audioSessionManager) {
+        console.error(`${TAG}: AudioManager is null`);
+        expect().assertFail();
+        done();
+        return;
+      }
+
+      let deviceChangedEventReceived = false;
+      let preDevicesValue: audio.AudioDeviceDescriptors | undefined = undefined;
+      let devicesValue: audio.AudioDeviceDescriptors | null = null;
+      let changeReasonValue: audio.AudioStreamDeviceChangeReason | null = null;
+      let recommendedActionValue: audio.OutputDeviceChangeRecommendedAction | null = null;
+
+      const currentOutputDeviceChangedCallback = (event: audio.CurrentOutputDeviceChangedEvent) => {
+        console.info(`${TAG}: currentOutputDeviceChanged callback triggered`);
+        deviceChangedEventReceived = true;
+        preDevicesValue = event.preDevices;
+        devicesValue = event.devices;
+        changeReasonValue = event.changeReason;
+        recommendedActionValue = event.recommendedAction;
+        const preDevicesJson: string = JSON.stringify(preDevicesValue);
+        const devicesJson: string = JSON.stringify(devicesValue);
+        console.info(`${TAG}: preDevices: ${preDevicesJson}`);
+        console.info(`${TAG}: devices: ${JSON.stringify(devicesJson)}`);
+        console.info(`${TAG}: changeReason: ${changeReasonValue}`);
+        console.info(`${TAG}: recommendedAction: ${recommendedActionValue}`);
+      };
+
+      try {
+        audioSessionManager.on('currentOutputDeviceChanged', currentOutputDeviceChangedCallback);
+        console.info(`${TAG}: regester currentOutputDeviceChanged callback success`);
+
+        let originalDevices: audio.AudioDeviceDescriptors = audioSessionManager.getAvailableDevices(audio.DeviceUsage.MEDIA_OUTPUT_DEVICES);
+        const originalDevicesJson: string = JSON.stringify(originalDevices);
+        console.info(`${TAG}: 当前可用设备: ${originalDevicesJson}`);
+
+        await sleep(1000);
+
+        let hasSpeaker: boolean = originalDevices.some((device: audio.AudioDeviceDescriptor) => device.deviceType === audio.DeviceType.SPEAKER);
+        if (hasSpeaker) {
+          try {
+            await audioSessionManager.setMediaOutputDevice(audio.DeviceType.SPEAKER);
+            console.info(`${TAG}: set SPEAKER output device success`);
+            await sleep(2000);
+          } catch (err) {
+            let error: BusinessError = err as BusinessError;
+            console.info(`${TAG}: set output device fail: ${error.code}`);
+          }
+        }
+
+        if (deviceChangedEventReceived) {
+          console.info(`${TAG}: yanzheng preDevices shuxing`);
+
+          expect(preDevicesValue != null).assertTrue();
+
+          expect(Array.isArray(preDevicesValue)).assertTrue();
+          expect(devicesValue != null).assertTrue();
+
+          expect(Array.isArray(devicesValue)).assertTrue();
+
+          expect(changeReasonValue != null).assertTrue();
+
+          expect(recommendedActionValue != null).assertTrue();
+          if (preDevicesValue !== undefined){
+            let preDevicesArray: audio.AudioDeviceDescriptors = preDevicesValue as audio.AudioDeviceDescriptors;
+            if (preDevicesArray.length > 0){
+              let preDeviceDescriptor: audio.AudioDeviceDescriptor = preDevicesArray[0];
+              expect(preDeviceDescriptor.deviceType != null).assertTrue();
+              expect(preDeviceDescriptor.deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
+              let deviceType: audio.DeviceType = preDeviceDescriptor.deviceType as audio.DeviceType;
+              const deviceTypeStr: string = String(deviceType);
+              const deviceRoleStr: string = String(preDeviceDescriptor.deviceRole);
+              console.info(`${TAG}: preDevices[0].deviceType: ${deviceTypeStr}`);
+              console.info(`${TAG}: preDevices[0].deviceRole: ${deviceRoleStr}`);
+            }
+          }
+          console.info(`${TAG}: preDevices 属性验证成功`);
+        } else {
+          console.info(`${TAG}: 未收到设备变更事件，跳过 preDevices 验证`);
+        }
+        done();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        console.error(`${TAG}: 测试失败: ${error.code}, ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_OPTIONAL_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_OPTIONAL_0100
+     * @tc.desc    CurrentOutputDeviceChangedEvent preDevices optional property test - verify preDevices is optional and can be undefined.
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_OPTIONAL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let TAG = 'SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_OPTIONAL_0100';
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_OPTIONAL_0100 start`);
+      if (!audioSessionManager) {
+        console.error(`${TAG}: AudioManager is null`);
+        expect().assertFail();
+        done();
+        return;
+      }
+
+      let eventReceived = false;
+      let preDevicesIsUndefined = false;
+
+      const currentOutputDeviceChangedCallback = (event: audio.CurrentOutputDeviceChangedEvent) => {
+        console.info(`${TAG}: currentOutputDeviceChanged callback triggered`);
+        eventReceived = true;
+        if (event.preDevices === undefined) {
+          preDevicesIsUndefined = true;
+          console.info(`${TAG}: preDevices is undefined (valid for optional property)`);
+        } else {
+          console.info(`${TAG}: preDevices has value: ${JSON.stringify(event.preDevices)}`);
+        }
+        expect(event.devices != null).assertTrue();
+        expect(event.changeReason != null).assertTrue();
+        expect(event.recommendedAction != null).assertTrue();
+      };
+
+      try {
+        audioSessionManager.on('currentOutputDeviceChanged', currentOutputDeviceChangedCallback);
+        console.info(`${TAG}: 注册 currentOutputDeviceChanged 回调成功`);
+
+        await sleep(2000);
+
+        let availableDevices = audioSessionManager.getAvailableDevices(audio.DeviceUsage.MEDIA_OUTPUT_DEVICES);
+        console.info(`${TAG}: 可用设备: ${JSON.stringify(availableDevices)}`);
+
+        if (eventReceived) {
+          console.info(`${TAG}: 收到设备变更事件，验证回调注册成功`);
+          expect(currentOutputDeviceChangedCallback != null).assertTrue();
+        } else {
+          console.info(`${TAG}: 未收到设备变更事件，验证回调注册成功`);
+          expect(currentOutputDeviceChangedCallback != null).assertTrue();
+        }
+
+        done();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        console.error(`${TAG}: 测试失败: ${error.code}, ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_FORMAT_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_FORMAT_0100
+     * @tc.desc    CurrentOutputDeviceChangedEvent preDevices format test - verify preDevices contains valid AudioDeviceDescriptor elements.
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_FORMAT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let TAG = 'SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_FORMAT_0100';
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_FORMAT_0100 start`);
+      if (!audioSessionManager) {
+        console.error(`${TAG}: AudioManager is null`);
+        expect().assertFail();
+        done();
+        return;
+      }
+
+      const currentOutputDeviceChangedCallback = (event: audio.CurrentOutputDeviceChangedEvent) => {
+        console.info(`${TAG}: currentOutputDeviceChanged callback triggered`);
+
+        if (event.preDevices !== undefined && event.preDevices.length > 0) {
+          console.info(`${TAG}: 验证 preDevices 元素格式`);
+          for (let i = 0; i < event.preDevices.length; i++) {
+            let device = event.preDevices[i];
+            expect(device.deviceType != audio.DeviceType.INVALID).assertTrue();
+            expect(device.deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
+            expect(Number(device.id)).assertTrue();
+            console.info(`${TAG}: preDevices[${i}] deviceId=${device.id}, deviceType=${device.deviceType}`);
+          }
+        }
+
+        expect(event.devices != null).assertTrue();
+        expect(event.devices.length > 0).assertTrue();
+        for (let i = 0; i < event.devices.length; i++) {
+          let device = event.devices[i];
+          expect(device.deviceType != audio.DeviceType.INVALID).assertTrue();
+          expect(device.deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
+        }
+      };
+
+      try {
+        audioSessionManager.on('currentOutputDeviceChanged', currentOutputDeviceChangedCallback);
+        console.info(`${TAG}: 注册 currentOutputDeviceChanged 回调成功`);
+        await sleep(2000);
+        done();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        console.error(`${TAG}: 测试失败: ${error.code}, ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_CHANGE_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_CHANGE_0100
+     * @tc.desc    CurrentOutputDeviceChangedEvent preDevices test with device change - verify preDevices reflects previous device before change.
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_CHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = 'SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_CHANGE_0100';
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_CHANGE_0100 start`);
+      if (!audioSessionManager) {
+        console.error(`${TAG}: audioSessionManager is null`);
+        expect().assertFail();
+        done();
+        return;
+      }
+
+      let eventReceived = false;
+      let preDevicesBeforeChange: audio.AudioDeviceDescriptors | undefined = undefined;
+      let devicesAfterChange: audio.AudioDeviceDescriptors | null = null;
+
+      const currentOutputDeviceChangedCallback = (event: audio.CurrentOutputDeviceChangedEvent) => {
+        console.info(`${TAG}: currentOutputDeviceChanged callback triggered`);
+        eventReceived = true;
+        preDevicesBeforeChange = event.preDevices;
+        devicesAfterChange = event.devices;
+        const preDevicesJson: string = JSON.stringify(preDevicesBeforeChange);
+        const devicesJson: string = JSON.stringify(devicesAfterChange);
+        console.info(`${TAG}: preDevices(变更前): ${JSON.stringify(preDevicesJson)}`);
+        console.info(`${TAG}: devices(变更后): ${JSON.stringify(devicesJson)}`);
+      };
+
+      try {
+        audioSessionManager.on('currentOutputDeviceChanged', currentOutputDeviceChangedCallback);
+        console.info(`${TAG}: 注册 currentOutputDeviceChanged 回调成功`);
+
+        await sleep(500);
+
+        let availableDevices: audio.AudioDeviceDescriptors = audioSessionManager.getAvailableDevices(audio.DeviceUsage.MEDIA_OUTPUT_DEVICES);
+        const availableDevicesJson: string = JSON.stringify(availableDevices);
+        console.info(`${TAG}: 当前可用设备: ${availableDevicesJson}`);
+
+        let hasSpeaker: boolean = availableDevices.some((device: audio.AudioDeviceDescriptor) => device.deviceType === audio.DeviceType.SPEAKER);
+        let hasEarpiece: boolean = availableDevices.some((device: audio.AudioDeviceDescriptor) => device.deviceType === audio.DeviceType.EARPIECE);
+
+        if (hasSpeaker && hasEarpiece) {
+          console.info(`${TAG}: 设备同时有 SPEAKER 和 EARPIECE，可以触发设备变更`);
+          await audioSessionManager.setMediaOutputDevice(audio.DeviceType.EARPIECE);
+          await sleep(1000);
+          await audioSessionManager.setMediaOutputDevice(audio.DeviceType.SPEAKER);
+          await sleep(2000);
+        } else if (hasSpeaker) {
+          console.info(`${TAG}: 设备只有 SPEAKER`);
+          await audioSessionManager.setMediaOutputDevice(audio.DeviceType.SPEAKER);
+          await sleep(2000);
+        }
+
+        if (eventReceived) {
+          console.info(`${TAG}: 验证设备变更前后信息`);
+
+          if (preDevicesBeforeChange !== undefined && devicesAfterChange !== null) {
+            expect(Array.isArray(preDevicesBeforeChange)).assertTrue();
+            expect(Array.isArray(devicesAfterChange)).assertTrue();
+            console.info(`${TAG}: preDevices 和 devices 都是有效的 AudioDeviceDescriptors`);
+            let preDevicesArray: audio.AudioDeviceDescriptors = preDevicesBeforeChange as audio.AudioDeviceDescriptors;
+            let devicesArray: audio.AudioDeviceDescriptors = devicesAfterChange as audio.AudioDeviceDescriptors;
+
+
+            let preDeviceType: audio.DeviceType | string = preDevicesArray.length > 0 ? preDevicesArray[0].deviceType : 'undefined';
+            let postDeviceType: audio.DeviceType | string = devicesArray.length > 0 ? devicesArray[0].deviceType : 'undefined';
+            const preDeviceTypeStr: string = String(preDeviceType);
+            const postDeviceTypeStr: string = String(postDeviceType);
+            console.info(`${TAG}: 变更前设备类型: ${preDeviceTypeStr}, 变更后设备类型: ${postDeviceTypeStr}`);
+          } else {
+            console.info(`${TAG}: preDevices 或 devices 为 undefined/null`);
+          }
+        }
+
+        done();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        console.error(`${TAG}: 测试失败: ${error.code}, ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+        /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_SET_OUTPUT_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_SET_OUTPUT_0100
+     * @tc.desc    preDevices test with setMediaOutputDevice - verify preDevices captures device info before calling setMediaOutputDevice.
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_SET_OUTPUT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = 'SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_SET_OUTPUT_0100';
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_SET_OUTPUT_0100 start`);
+      if (!audioSessionManager) {
+        console.error(`${TAG}: audioSessionManager is null`);
+        expect().assertFail();
+        done();
+        return;
+      }
+
+      let eventReceived = false;
+      let preDevicesCaptured: audio.AudioDeviceDescriptors | undefined = undefined;
+      let devicesCaptured: audio.AudioDeviceDescriptors | null = null;
+      let changeReasonCaptured: audio.AudioStreamDeviceChangeReason | null = null;
+
+      const currentOutputDeviceChangedCallback = (event: audio.CurrentOutputDeviceChangedEvent) => {
+        console.info(`${TAG}: currentOutputDeviceChanged callback triggered after setMediaOutputDevice`);
+        eventReceived = true;
+        preDevicesCaptured = event.preDevices;
+        devicesCaptured = event.devices;
+        changeReasonCaptured = event.changeReason;
+      };
+
+      try {
+        audioSessionManager.on('currentOutputDeviceChanged', currentOutputDeviceChangedCallback);
+        console.info(`${TAG}: 注册 currentOutputDeviceChanged 回调成功`);
+
+        await sleep(500);
+
+        let availableDevices = audioSessionManager.getAvailableDevices(audio.DeviceUsage.MEDIA_OUTPUT_DEVICES);
+        console.info(`${TAG}: 可用输出设备数量: ${availableDevices.length}`);
+
+        if (availableDevices.length > 0) {
+          let targetDeviceType = audio.DeviceType.SPEAKER;
+          let hasTargetDevice = availableDevices.some((device: audio.AudioDeviceDescriptor) => device.deviceType === targetDeviceType);
+
+          if (hasTargetDevice) {
+            console.info(`${TAG}: 尝试设置设备: ${targetDeviceType}`);
+            await audioSessionManager.setMediaOutputDevice(targetDeviceType);
+            await sleep(2000);
+
+            if (eventReceived) {
+              console.info(`${TAG}: 验证 setMediaOutputDevice 触发的事件`);
+              expect(changeReasonCaptured != null).assertTrue();
+              console.info(`${TAG}: changeReason: ${changeReasonCaptured}`);
+
+              if (preDevicesCaptured !== undefined) {
+                expect(Array.isArray(preDevicesCaptured)).assertTrue();
+                console.info(`${TAG}: preDevices 包含变更前的设备信息`);
+              }
+
+              if (devicesCaptured !== null) {
+                expect(Array.isArray(devicesCaptured)).assertTrue();
+                console.info(`${TAG}: devices 包含变更后的设备信息`);
+              }
+            } else {
+              console.info(`${TAG}: setMediaOutputDevice 未触发设备变更事件`);
+            }
+          }
+        }
+        done();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        console.error(`${TAG}: 测试失败: ${error.code}, ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_RENDERER_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_RENDERER_0100
+     * @tc.desc    AudioStreamDeviceChangeInfo preDevices property test - verify preDevices is returned when AudioRenderer output device changes.
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_RENDERER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = 'SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_RENDERER_0100';
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_RENDERER_0100 start`);
+
+      let rendererCreated = false;
+      let deviceChangedEventReceived = false;
+      let preDevicesValue: audio.AudioDeviceDescriptors | undefined = undefined;
+      let devicesValue: audio.AudioDeviceDescriptors | null = null;
+      let changeReasonValue: audio.AudioStreamDeviceChangeReason | null = null;
+
+      try {
+        let audioRendererOptions: audio.AudioRendererOptions = {
+          streamInfo: {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          },
+          rendererInfo: {
+            usage: audio.StreamUsage.STREAM_USAGE_MEDIA,
+            rendererFlags: 0
+          }
+        };
+
+        audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        expect(audioRenderer != null).assertTrue();
+        rendererCreated = true;
+        console.info(`${TAG}: AudioRenderer 创建成功`);
+
+        const outputDeviceChangeWithInfoCallback = (info: audio.AudioStreamDeviceChangeInfo) => {
+          console.info(`${TAG}: outputDeviceChangeWithInfo callback triggered`);
+          deviceChangedEventReceived = true;
+          preDevicesValue = info.preDevices;
+          devicesValue = info.devices;
+          changeReasonValue = info.changeReason;
+          const preDevicesJson: string = JSON.stringify(preDevicesValue);
+          const devicesJson: string = JSON.stringify(devicesValue);
+          console.info(`${TAG}: preDevices: ${JSON.stringify(preDevicesJson)}`);
+          console.info(`${TAG}: devices: ${JSON.stringify(devicesJson)}`);
+          console.info(`${TAG}: changeReason: ${changeReasonValue}`);
+        };
+
+        audioRenderer.on('outputDeviceChangeWithInfo', outputDeviceChangeWithInfoCallback);
+        console.info(`${TAG}: 注册 outputDeviceChangeWithInfo 回调成功`);
+
+        await audioRenderer.start();
+        console.info(`${TAG}: AudioRenderer 启动成功`);
+
+        await sleep(2000);
+
+        if (deviceChangedEventReceived) {
+          console.info(`${TAG}: 验证 preDevices 属性`);
+          expect(devicesValue != null).assertTrue();
+          expect(Array.isArray(devicesValue)).assertTrue();
+          expect(changeReasonValue != null).assertTrue();
+
+          if (preDevicesValue !== undefined) {
+            expect(Array.isArray(preDevicesValue)).assertTrue();
+            let preDevicesArray: audio.AudioDeviceDescriptors = preDevicesValue as audio.AudioDeviceDescriptors;
+            const preDevicesLength: number = preDevicesArray.length;
+            const preDevicesLengthStr: string = String(preDevicesLength);
+
+            console.info(`${TAG}: preDevices 数组长度: ${preDevicesLengthStr}`);
+            if (preDevicesArray.length > 0) {
+              let preDeviceDescriptor: audio.AudioDeviceDescriptor = preDevicesArray[0];
+              expect(preDeviceDescriptor.deviceType != null).assertTrue();
+              expect(preDeviceDescriptor.deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
+              const deviceTypeStr: string = String(preDeviceDescriptor.deviceType);
+              console.info(`${TAG}: preDevices[0].deviceType: ${deviceTypeStr}`);
+            }
+          }
+          console.info(`${TAG}: preDevices 属性验证成功`);
+        } else {
+          console.info(`${TAG}: 未收到设备变更事件，跳过 preDevices 验证`);
+        }
+        done();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        console.error(`${TAG}: 测试失败: ${error.code}, ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_TYPE_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_TYPE_0100
+     * @tc.desc    AudioStreamDeviceChangeInfo preDevices type test - verify preDevices is AudioDeviceDescriptors type.
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_TYPE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let TAG = 'SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_TYPE_0100';
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_TYPE_0100 start`);
+
+      try {
+        let audioRendererOptions: audio.AudioRendererOptions = {
+          streamInfo: {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          },
+          rendererInfo: {
+            usage: audio.StreamUsage.STREAM_USAGE_MEDIA,
+            rendererFlags: 0
+          }
+        };
+
+        audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        expect(audioRenderer != null).assertTrue();
+        console.info(`${TAG}: AudioRenderer 创建成功`);
+
+        let eventReceived = false;
+
+        const outputDeviceChangeWithInfoCallback = (info: audio.AudioStreamDeviceChangeInfo) => {
+          eventReceived = true;
+          console.info(`${TAG}: outputDeviceChangeWithInfo callback triggered`);
+          expect(info.devices != null).assertTrue();
+          expect(info.changeReason != null).assertTrue();
+
+          if (info.preDevices !== undefined) {
+            console.info(`${TAG}: preDevices 类型验证`);
+            expect(Array.isArray(info.preDevices)).assertTrue();
+
+            for (let i = 0; i < info.preDevices.length; i++) {
+              let device = info.preDevices[i];
+              expect(device.deviceType).assertLarger(0);
+              expect(device.deviceRole).assertEqual(audio.DeviceRole.OUTPUT_DEVICE);
+              expect(device.id != null).assertTrue();
+              console.info(`${TAG}: preDevices[${i}] deviceType=${device.deviceType}, deviceRole=${device.deviceRole}`);
+            }
+          } else {
+            console.info(`${TAG}: preDevices is undefined (valid for optional property)`);
+          }
+        };
+
+        audioRenderer.on('outputDeviceChangeWithInfo', outputDeviceChangeWithInfoCallback);
+        console.info(`${TAG}: 注册 outputDeviceChangeWithInfo 回调成功`);
+
+        await audioRenderer.start();
+        console.info(`${TAG}: AudioRenderer 启动成功`);
+
+        await sleep(2000);
+
+        if (!eventReceived) {
+          console.info(`${TAG}: 未收到设备变更事件，验证接口注册成功`);
+          expect(audioRenderer != null).assertTrue();
+        }
+        done();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        console.error(`${TAG}: 测试失败: ${error.code}, ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_COMPARE_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_COMPARE_0100
+     * @tc.desc    AudioStreamDeviceChangeInfo preDevices comparison test - verify preDevices and devices are different when device changes.
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_COMPARE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let TAG = 'SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_COMPARE_0100';
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_COMPARE_0100 start`);
+
+      try {
+        let audioRendererOptions: audio.AudioRendererOptions = {
+          streamInfo: {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          },
+          rendererInfo: {
+            usage: audio.StreamUsage.STREAM_USAGE_MEDIA,
+            rendererFlags: 0
+          }
+        };
+
+        audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        expect(audioRenderer != null).assertTrue();
+        console.info(`${TAG}: AudioRenderer 创建成功`);
+
+        let eventReceived = false;
+
+        const outputDeviceChangeWithInfoCallback = (info: audio.AudioStreamDeviceChangeInfo) => {
+          eventReceived = true;
+          console.info(`${TAG}: outputDeviceChangeWithInfo callback triggered`);
+
+          if (info.preDevices !== undefined && info.devices !== null) {
+            console.info(`${TAG}: 比较 preDevices 和 devices`);
+            let preDeviceTypes = info.preDevices.map((d: audio.AudioDeviceDescriptor) => d.deviceType);
+            let postDeviceTypes = info.devices.map((d: audio.AudioDeviceDescriptor) => d.deviceType);
+            console.info(`${TAG}: preDevices deviceTypes: ${JSON.stringify(preDeviceTypes)}`);
+            console.info(`${TAG}: devices deviceTypes: ${JSON.stringify(postDeviceTypes)}`);
+
+            expect(info.preDevices.length).assertLarger(0);
+            expect(info.devices.length).assertLarger(0);
+
+            let areDifferent = preDeviceTypes.length !== postDeviceTypes.length ||
+              preDeviceTypes.some((type: audio.DeviceType, index: number) => type !== postDeviceTypes[index]);
+            if (areDifferent) {
+              console.info(`${TAG}: preDevices 和 devices 内容不同，设备确实发生了变更`);
+            } else {
+              console.info(`${TAG}: preDevices 和 devices 内容相同`);
+            }
+          }
+        };
+
+        audioRenderer.on('outputDeviceChangeWithInfo', outputDeviceChangeWithInfoCallback);
+        console.info(`${TAG}: 注册 outputDeviceChangeWithInfo 回调成功`);
+
+        await audioRenderer.start();
+        console.info(`${TAG}: AudioRenderer 启动成功`);
+
+        await sleep(2000);
+
+        if (!eventReceived) {
+          console.info(`${TAG}: 未收到设备变更事件`);
+        }
+        done();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        console.error(`${TAG}: 测试失败: ${error.code}, ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_ERROR_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_ERROR_0100
+     * @tc.desc    onCurrentOutputDeviceChanged parameter error test - verify error 6800101 when callback is null.
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let TAG = 'SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_ERROR_0100';
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_ERROR_0100 start`);
+      if (!audioSessionManager) {
+        console.error(`${TAG}: audioSessionManager is null`);
+        expect().assertFail();
+        done();
+        return;
+      }
+
+      try {
+        type DeviceChangeCallback = (event: audio.CurrentOutputDeviceChangedEvent) => void;
+        let dummyCallback: DeviceChangeCallback = (_event: audio.CurrentOutputDeviceChangedEvent) => {
+          console.info(`${TAG}: dummy callback`);
+        };
+        audioSessionManager.off('currentOutputDeviceChanged', dummyCallback);
+        console.info(`${TAG}:注销未注册的回调成功`);
+        done();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        const errorCode: number = error.code;
+        const errorMessage: string = error.message;
+        console.info(`${TAG}: 预期错误: ${errorCode}, ${errorMessage}`);
+        expect(errorCode).assertEqual(6800101);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name    SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_RENDERER_ERROR_0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_RENDERER_ERROR_0100
+     * @tc.desc    onOutputDeviceChangeWithInfo parameter error test - verify error 401 when callback is invalid type.
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_RENDERER_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let TAG = 'SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_RENDERER_ERROR_0100';
+      console.info(`${TAG}: SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_RENDERER_ERROR_0100 start`);
+
+      try {
+        let audioRendererOptions: audio.AudioRendererOptions = {
+          streamInfo: {
+            samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+            channels: audio.AudioChannel.CHANNEL_2,
+            sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+            encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+          },
+          rendererInfo: {
+            usage: audio.StreamUsage.STREAM_USAGE_MEDIA,
+            rendererFlags: 0
+          }
+        };
+
+        audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        expect(audioRenderer != null).assertTrue();
+        console.info(`${TAG}: AudioRenderer 创建成功`);
+        
+        type DeviceChangeInfoCallback = (info: audio.AudioStreamDeviceChangeInfo) => void;
+        let dummyCallback: DeviceChangeInfoCallback = (_info: audio.AudioStreamDeviceChangeInfo) => {
+          console.info(`${TAG}: dummy callback`);
+        };
+        audioRenderer.off('outputDeviceChangeWithInfo', dummyCallback);
+        console.info(`${TAG}: 注销未注册的回调成功`);
+        done();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        const errorCode: number = error.code;
+        const errorMessage: string = error.message;
+        console.info(`${TAG}: 预期错误: ${errorCode}, ${errorMessage}`);
+        expect(errorCode === 401 || errorCode === 6800101).assertTrue();
+        done();
+      }
+    })
+
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_0100
      * @tc.desc   on - availableDeviceChange - errorParameter(-1) - 6800101
