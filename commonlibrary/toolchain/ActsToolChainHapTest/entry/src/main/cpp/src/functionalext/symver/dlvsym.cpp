@@ -43,7 +43,7 @@ void DlvsymNoSymver0100(void)
     // Clear any existing error
     dlerror();
 
-    OH_LOG_INFO(LOG_APP, "[DlvsymNoSymver0100] Attempting to dlvsym: %{public}s@%{public}s", 
+    OH_LOG_INFO(LOG_APP, "[DlvsymNoSymver0100] Attempting to dlvsym: %{public}s@%{public}s",
                 dso_no_symver_symbol, dso_version_invalid);
     functype func = (functype)dlvsym(handle, dso_no_symver_symbol, dso_version_invalid);
     const char *error = dlerror();
@@ -84,7 +84,7 @@ void DlvsymNoSymver0200(void)
     // Clear any existing error
     dlerror();
 
-    OH_LOG_INFO(LOG_APP, "[DlvsymNoSymver0200] Attempting to dlvsym invalid symbol: %{public}s@%{public}s", 
+    OH_LOG_INFO(LOG_APP, "[DlvsymNoSymver0200] Attempting to dlvsym invalid symbol: %{public}s@%{public}s",
                 dso_symbol_invalid, dso_version_invalid);
     functype func = (functype)dlvsym(handle, dso_symbol_invalid, dso_version_invalid);
     const char *error = dlerror();
@@ -125,7 +125,7 @@ void DlvsymEasySymver0100(void)
     // Clear any existing error
     dlerror();
 
-    OH_LOG_INFO(LOG_APP, "[DlvsymEasySymver0100] Attempting to dlvsym: %{public}s@%{public}s", 
+    OH_LOG_INFO(LOG_APP, "[DlvsymEasySymver0100] Attempting to dlvsym: %{public}s@%{public}s",
                 dso_easy_symver_symbol, dso_easy_symver_version_stable);
     functype func = (functype)dlvsym(handle, dso_easy_symver_symbol, dso_easy_symver_version_stable);
     const char *error = dlerror();
@@ -137,7 +137,7 @@ void DlvsymEasySymver0100(void)
     OH_LOG_INFO(LOG_APP, "[DlvsymEasySymver0100] dlvsym success, func: %{public}p", func);
 
     const char *result = func();
-    OH_LOG_INFO(LOG_APP, "[DlvsymEasySymver0100] func() returned: %{public}s, expected: %{public}s", 
+    OH_LOG_INFO(LOG_APP, "[DlvsymEasySymver0100] func() returned: %{public}s, expected: %{public}s",
                 result, dso_easy_symver_symbol_stable);
     symver_streq(result, dso_easy_symver_symbol_stable);
 
@@ -181,7 +181,7 @@ void DlvsymEasySymver0200(void)
     OH_LOG_INFO(LOG_APP, "[DlvsymEasySymver0200] dlvsym success, func: %{public}p", func);
 
     const char *result = func();
-    OH_LOG_INFO(LOG_APP, "[DlvsymEasySymver0200] func() returned: %{public}s, expected: %{public}s", 
+    OH_LOG_INFO(LOG_APP, "[DlvsymEasySymver0200] func() returned: %{public}s, expected: %{public}s",
                 result, dso_easy_symver_symbol_old);
     symver_streq(result, dso_easy_symver_symbol_old);
 
@@ -213,7 +213,7 @@ void DlvsymEasySymver0300(void)
     // Clear any existing error
     dlerror();
 
-    OH_LOG_INFO(LOG_APP, "[DlvsymEasySymver0300] Attempting to dlvsym invalid symbol: %{public}s@%{public}s", 
+    OH_LOG_INFO(LOG_APP, "[DlvsymEasySymver0300] Attempting to dlvsym invalid symbol: %{public}s@%{public}s",
                 dso_symbol_invalid, dso_version_invalid);
     functype func = (functype)dlvsym(handle, dso_symbol_invalid, dso_version_invalid);
     const char *error = dlerror();
@@ -254,7 +254,7 @@ void DlvsymEasySymver0400(void)
     // Clear any existing error
     dlerror();
 
-    OH_LOG_INFO(LOG_APP, "[DlvsymEasySymver0400] Attempting to dlvsym: %{public}s@%{public}s", 
+    OH_LOG_INFO(LOG_APP, "[DlvsymEasySymver0400] Attempting to dlvsym: %{public}s@%{public}s",
                 dso_easy_symver_symbol, dso_version_invalid);
     functype func = (functype)dlvsym(handle, dso_easy_symver_symbol, dso_version_invalid);
     const char *error = dlerror();
@@ -295,7 +295,7 @@ void DlvsymHardSymver0100(void)
     // Clear any existing error
     dlerror();
 
-    OH_LOG_INFO(LOG_APP, "[DlvsymHardSymver0100] Attempting to dlvsym: %{public}s@%{public}s", 
+    OH_LOG_INFO(LOG_APP, "[DlvsymHardSymver0100] Attempting to dlvsym: %{public}s@%{public}s",
                 dso_hard_symver_if_symbol, dso_hard_symver_version_stable);
     functype func = (functype)dlvsym(handle, dso_hard_symver_if_symbol, dso_hard_symver_version_stable);
     const char *error = dlerror();
@@ -307,7 +307,7 @@ void DlvsymHardSymver0100(void)
     OH_LOG_INFO(LOG_APP, "[DlvsymHardSymver0100] dlvsym success, func: %{public}p", func);
 
     const char *result = func();
-    OH_LOG_INFO(LOG_APP, "[DlvsymHardSymver0100] func() returned: %{public}s, expected: %{public}s", 
+    OH_LOG_INFO(LOG_APP, "[DlvsymHardSymver0100] func() returned: %{public}s, expected: %{public}s",
                 result, dso_hard_symver_if_symbol_stable);
     symver_streq(result, dso_hard_symver_if_symbol_stable);
 
@@ -339,7 +339,7 @@ void DlvsymHardSymver0200(void)
     // Clear any existing error
     dlerror();
 
-    OH_LOG_INFO(LOG_APP, "[DlvsymHardSymver0200] Attempting to dlvsym: %{public}s@%{public}s", 
+    OH_LOG_INFO(LOG_APP, "[DlvsymHardSymver0200] Attempting to dlvsym: %{public}s@%{public}s",
                 dso_hard_symver_if_symbol, dso_hard_symver_version_old);
     functype func = (functype)dlvsym(handle, dso_hard_symver_if_symbol, dso_hard_symver_version_old);
     const char *error = dlerror();
@@ -351,7 +351,7 @@ void DlvsymHardSymver0200(void)
     OH_LOG_INFO(LOG_APP, "[DlvsymHardSymver0200] dlvsym success, func: %{public}p", func);
 
     const char *result = func();
-    OH_LOG_INFO(LOG_APP, "[DlvsymHardSymver0200] func() returned: %{public}s, expected: %{public}s", 
+    OH_LOG_INFO(LOG_APP, "[DlvsymHardSymver0200] func() returned: %{public}s, expected: %{public}s",
                 result, dso_hard_symver_if_symbol_old);
     symver_streq(result, dso_hard_symver_if_symbol_old);
 
@@ -383,7 +383,7 @@ void DlvsymHardSymver0300(void)
     // Clear any existing error
     dlerror();
 
-    OH_LOG_INFO(LOG_APP, "[DlvsymHardSymver0300] Attempting to dlvsym invalid symbol: %{public}s@%{public}s", 
+    OH_LOG_INFO(LOG_APP, "[DlvsymHardSymver0300] Attempting to dlvsym invalid symbol: %{public}s@%{public}s",
                 dso_symbol_invalid, dso_version_invalid);
     functype func = (functype)dlvsym(handle, dso_symbol_invalid, dso_version_invalid);
     const char *error = dlerror();
@@ -424,7 +424,7 @@ void DlvsymHardSymver0400(void)
     // Clear any existing error
     dlerror();
 
-    OH_LOG_INFO(LOG_APP, "[DlvsymHardSymver0400] Attempting to dlvsym: %{public}s@%{public}s", 
+    OH_LOG_INFO(LOG_APP, "[DlvsymHardSymver0400] Attempting to dlvsym: %{public}s@%{public}s",
                 dso_hard_symver_if_symbol, dso_version_invalid);
     functype func = (functype)dlvsym(handle, dso_hard_symver_if_symbol, dso_version_invalid);
     const char *error = dlerror();

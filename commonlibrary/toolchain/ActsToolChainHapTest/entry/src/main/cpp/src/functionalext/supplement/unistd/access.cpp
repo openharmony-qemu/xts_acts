@@ -22,6 +22,7 @@ typedef void (*TEST_FUN)();
 
 const int SUCCESS = 0;
 const int FAILED = -1;
+#define FILE_PERMISSIONS_ALL 0777
 
 /**
  * @tc.name      : access_0100
@@ -142,7 +143,7 @@ void Access0700(void)
     const char *ptr = "/data/storage/el2/base/cache/accesstest.txt";
     FILE *fptr = fopen(ptr, "w");
     EXPECT_PTRNE("access_0700", fptr, NULL);
-    chmod(ptr, 0777);
+    chmod(ptr, FILE_PERMISSIONS_ALL);
     int isExecute = access(ptr, X_OK);
     EXPECT_EQ("access_0700", isExecute, SUCCESS);
     (void)fclose(fptr);

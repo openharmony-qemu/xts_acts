@@ -26,10 +26,10 @@ void atexit_cb()
 
 __attribute__((constructor)) void atexit_dso_ctor()
 {
-	   printf("before main\n");
+    printf("before main\n");
 }
 
 __attribute__((destructor)) void atexit_dso_dtor()
 {
-	   printf("after main\n");
+    printf("after main\n");
 }

@@ -248,7 +248,8 @@ void DlsymHardSymver0200(void)
     OH_LOG_INFO(LOG_APP, "[DlsymHardSymver0200] dlsym success, func: %{public}p", func);
 
     const char *result = func();
-    OH_LOG_INFO(LOG_APP, "[DlsymHardSymver0200] func() returned: %{public}s, expected: %{public}s", result, dso_hard_symver_if_symbol_stable);
+    OH_LOG_INFO(LOG_APP, "[DlsymHardSymver0200] func() returned: %{public}s, expected: %{public}s",
+                result, dso_hard_symver_if_symbol_stable);
     symver_streq(result, dso_hard_symver_if_symbol_stable);
 
     dlclose(handle);

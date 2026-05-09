@@ -95,7 +95,8 @@ void Sendfile0200(void)
     }
 }
 
-static int SendfileTest_impl(int argc, char *argv[]){
+static int SendfileTest_impl(int argc, char *argv[])
+{
     Sendfile0100();
     Sendfile0200();
 

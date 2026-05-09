@@ -28,91 +28,100 @@ typedef void (* ATEXIT_CB)();
 #define ATEXIT_CB_NAME "atexit_cb"
 #define ATEXIT_WATCHPOINT_NAME "g_watchpoint"
 #define LIBATEXIT_DLCLOSE_DSO_ABSOLUTE_PATH "/data/storage/el1/bundle/libs/arm/libatexit_dlclose_dso.so"
+#define ERROR_PATH_REL_FAILED 1
+#define ERROR_DLOPEN_FAILED 2
+#define ERROR_DLSYM_CB_FAILED 3
+#define ERROR_DLSYM_WP_FAILED 3
+#define ERROR_DLCLOSE_FAILED 4
+#define ERROR_ATEXIT_CALLBACK_CALLED 5
+#define ERROR_WAIT_FAILED 1
+#define ERROR_CHILD_SIGNALED 9
 
 int ForkMain(char *exe)
 {
-	char buf[512];
-	void *handler = NULL;
-	ATEXIT_CB cb = NULL;
-	unsigned int *wp_ptr = NULL;
-	unsigned int wp = 0;
+    char buf[512];
+    void *handler = NULL;
+    ATEXIT_CB cb = NULL;
+    unsigned int *wp_ptr = NULL;
+    unsigned int wp = 0;
 
-	int err = 0;
+    int err = 0;
 
-	if(!t_pathrel(buf, sizeof(buf), exe, TEST_DSO)) {
-		t_error("failed to obtain relative path to " TEST_DSO "\n");
-		return 1;
-	}
+    if (!t_pathrel(buf, sizeof(buf), exe, TEST_DSO)) {
+        t_error("failed to obtain relative path to " TEST_DSO "\n");
+        return ERROR_PATH_REL_FAILED;
+    }
 
-	handler = dlopen(LIBATEXIT_DLCLOSE_DSO_ABSOLUTE_PATH, RTLD_LAZY|RTLD_LOCAL);
-	if(!handler) {
-		t_error("dlopen %s failed: %s\n", buf, dlerror());
-		return 2;
-	}
+    handler = dlopen(LIBATEXIT_DLCLOSE_DSO_ABSOLUTE_PATH, RTLD_LAZY | RTLD_LOCAL);
+    if (!handler) {
+        t_error("dlopen %s failed: %s\n", buf, dlerror());
+        return ERROR_DLOPEN_FAILED;
+    }
 
-	cb = (ATEXIT_CB)dlsym(handler, ATEXIT_CB_NAME);
-	if (!cb) {
-		t_error("dlsym %s failed: %s\n", ATEXIT_CB_NAME, dlerror());
-		return 3;
-	}
+    cb = (ATEXIT_CB)dlsym(handler, ATEXIT_CB_NAME);
+    if (!cb) {
+        t_error("dlsym %s failed: %s\n", ATEXIT_CB_NAME, dlerror());
+        return ERROR_DLSYM_CB_FAILED;
+    }
 
-	wp_ptr = (unsigned int *)dlsym(handler, ATEXIT_WATCHPOINT_NAME);
-	if (!wp_ptr) {
-		t_error("dlsym %s failed: %s\n", ATEXIT_WATCHPOINT_NAME, dlerror());
-		return 3;
-	}
+    wp_ptr = (unsigned int *)dlsym(handler, ATEXIT_WATCHPOINT_NAME);
+    if (!wp_ptr) {
+        t_error("dlsym %s failed: %s\n", ATEXIT_WATCHPOINT_NAME, dlerror());
+        return ERROR_DLSYM_WP_FAILED;
+    }
 
-	wp_ptr = &wp;
+    wp_ptr = &wp;
 
-	err = atexit(cb);
+    err = atexit(cb);
 
-	if(dlclose( handler)) {
-		t_error("dlclose failed: %s\n", dlerror());
-		return 4;
-	}
+    if (dlclose(handler)) {
+        t_error("dlclose failed: %s\n", dlerror());
+        return ERROR_DLCLOSE_FAILED;
+    }
 
-	if (wp == 0xFFFF) {
-		t_error("error, atexit callback called");
-		return 5;
-	}
+    if (wp == 0xFFFF) {
+        t_error("error, atexit callback called");
+        return ERROR_ATEXIT_CALLBACK_CALLED;
+    }
 
-	return 0;
+    return 0;
 }
 
 static int AtexitDlcloseTestWithArgs(int argc, char *argv[])
 {
-	pid_t pid, w;
-	int err;
-	int wstatus;
+    pid_t pid;
+    pid_t w;
+    int err;
+    int wstatus;
 
-	pid = fork();
-	if (pid == 0) { // child process
-		return ForkMain(argv[0]);
-	} else if (pid > 0) { // parent process
-		w = waitpid(pid, &wstatus, 0);
-		if (w == -1) {
-			t_error("wait for child process failed");
-			return 1;
-		}
+    pid = fork();
+    if (pid == 0) { // child process
+        return ForkMain(argv[0]);
+    } else if (pid > 0) { // parent process
+        w = waitpid(pid, &wstatus, 0);
+        if (w == -1) {
+            t_error("wait for child process failed");
+            return 1;
+        }
 
-		if (WIFEXITED(wstatus)) {
-			err = WEXITSTATUS(wstatus);
-			t_error("exited with status=%d\n", err);
-			return err;
-		} else if (WIFSIGNALED(wstatus)) {
-			t_error("killed by signal %d\n", WTERMSIG(wstatus));
-			return 9;
-		} else if (WIFSTOPPED(wstatus)) {
-			t_error("stopped by signal %d\n", WSTOPSIG(wstatus));
-			return 9;
-		} else {
-			t_error("stopped by signal %d\n", WSTOPSIG(wstatus));
-			return 9;
-		}
-	} else {
-		t_error("fork failed: %s\n", strerror(errno));
-		return 1;
-	}
+        if (WIFEXITED(wstatus)) {
+            err = WEXITSTATUS(wstatus);
+            t_error("exited with status=%d\n", err);
+            return err;
+        } else if (WIFSIGNALED(wstatus)) {
+            t_error("killed by signal %d\n", WTERMSIG(wstatus));
+            return ERROR_CHILD_SIGNALED;
+        } else if (WIFSTOPPED(wstatus)) {
+            t_error("stopped by signal %d\n", WSTOPSIG(wstatus));
+            return ERROR_CHILD_SIGNALED;
+        } else {
+            t_error("stopped by signal %d\n", WSTOPSIG(wstatus));
+            return ERROR_CHILD_SIGNALED;
+        }
+    } else {
+        t_error("fork failed: %s\n", strerror(errno));
+        return ERROR_PATH_REL_FAILED;
+    }
 }
 
 int AtexitDlcloseTest(void)

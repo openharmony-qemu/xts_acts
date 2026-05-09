@@ -28,29 +28,35 @@ char buf[1024 * 1024];
 
 // Mock a CFI-enabled library without relying on the compiler.
 __attribute__((aligned(4096))) void __cfi_check(uint64_t call_site_type_id,
-                                                void *target_addr, void *diag) {
+                                                void *target_addr, void *diag)
+{
     ++g_count;
     g_type_id = call_site_type_id;
     g_address = target_addr;
     g_diag = diag;
 }
 
-size_t get_count() {
+size_t get_count()
+{
     return g_count;
 }
 
-uint64_t get_type_id() {
+uint64_t get_type_id()
+{
     return g_type_id;
 }
 
-void *get_address() {
+void *get_address()
+{
     return g_address;
 }
 
-void *get_diag() {
+void *get_diag()
+{
     return g_diag;
 }
 
-void *get_global_address() {
+void *get_global_address()
+{
     return &g_count;
 }

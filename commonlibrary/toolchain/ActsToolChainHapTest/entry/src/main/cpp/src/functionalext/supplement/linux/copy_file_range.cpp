@@ -27,7 +27,10 @@ const char *str = "Hello";
  */
 void CopyFileRange0100(void)
 {
-    int fd_in, fd_out, wlen, result;
+    int fd_in;
+    int fd_out;
+    int wlen;
+    int result;
     char buffer[BUFSIZ];
 
     char path_in[PATH_MAX] = {0};
@@ -106,7 +109,10 @@ void CopyFileRange0200(void)
  */
 void CopyFileRange0300(void)
 {
-    int fd_in, fd_out, wlen, result;
+    int fd_in;
+    int fd_out;
+    int wlen;
+    int result;
     char buffer[BUFSIZ];
 
     char path_in[PATH_MAX] = {0};

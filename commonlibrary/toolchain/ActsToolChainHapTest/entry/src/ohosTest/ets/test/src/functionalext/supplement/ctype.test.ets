@@ -474,5 +474,19 @@ export default function ctype_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   iswalpha
+     * @tc.number SUB_THIRDPARTY_MUSL_ISWALPHA_0100
+     * @tc.desc   libc-test iswalpha
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('iswalpha', 0, async (done: Function) => {
+      const result = await testNapi.runTest('iswalpha');
+      expect(result).assertEqual(0);
+      done();
+    })
   });
 }

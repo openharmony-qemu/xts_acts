@@ -1103,8 +1103,6 @@ target_link_libraries(
 target_link_options(entry PRIVATE -Wl,--export-dynamic)
 
 # lib_7: 静态库（不会被打包为 .so），使用 lib_5.c 源代码（提供 debug_test_5）
-# 但为了测试依赖缺失，我们仍然需要生成 .so 但不打包
-# 这里保持 SHARED 但稍后通过其他方式排除
 add_library(LdsoDebugTestLib7 SHARED lib/ldso_debug_test_lib_5.c)
 set_target_properties(LdsoDebugTestLib7 PROPERTIES OUTPUT_NAME "ldso_debug_test_lib_7")
 
@@ -1114,7 +1112,7 @@ add_library(LdsoDebugTestLib6 SHARED lib/ldso_debug_test_lib_4.c)
 set_target_properties(LdsoDebugTestLib6 PROPERTIES OUTPUT_NAME "ldso_debug_test_lib_6")
 target_link_libraries(LdsoDebugTestLib6 PRIVATE LdsoDebugTestLib7)
 
-# lib_10: 静态库（不会被打包为 .so），使用 lib_8.c 源代码
+# lib_10: 静态库，使用 lib_8.c 源代码
 add_library(LdsoDebugTestLib10 SHARED lib/ldso_debug_test_lib_8.c)
 set_target_properties(LdsoDebugTestLib10 PROPERTIES OUTPUT_NAME "ldso_debug_test_lib_10")
 

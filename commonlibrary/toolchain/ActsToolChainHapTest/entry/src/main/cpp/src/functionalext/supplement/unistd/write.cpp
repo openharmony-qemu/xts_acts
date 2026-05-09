@@ -146,7 +146,8 @@ void Write0500(void)
     remove(path);
 }
 
-static int WriteTest_impl(int argc, char *argv[]){
+static int WriteTest_impl(int argc, char *argv[])
+{
     Write0100();
     Write0200();
     Write0300();

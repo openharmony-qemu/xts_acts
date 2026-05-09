@@ -227,7 +227,8 @@ void sigset_0500(void)
     }
 }
 
-static int SigsetTest_impl(int argc, char *argv[]){
+static int SigsetTest_impl(int argc, char *argv[])
+{
     sigset_0100();
     sigset_0200();
     sigset_0300();

@@ -19,7 +19,7 @@
 
 /**
  * @tc.name      : reloc_symver_0100
- * @tc.desc      : find versioning symbol while relocating. 
+ * @tc.desc      : find versioning symbol while relocating.
  *                 load libreloc_symver_dso.so that deps on libdso_no_symver.so and libdso_easy_symver.so.
  * @tc.level     : Level 1
  */
@@ -37,7 +37,8 @@ static void RelocSymver0100(void)
     symver_log("end");
 }
 
-static int RelocSymverTest_impl(int argc, char *argv[]){
+static int RelocSymverTest_impl(int argc, char *argv[])
+{
     symver_log("start");
 
     RelocSymver0100();

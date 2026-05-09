@@ -27,18 +27,18 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define EXTRA_LARGE_SIZE (30*1024*1024)
+#define EXTRA_LARGE_SIZE (30 * 1024 * 1024)
 #define BUFFER_SIZE 1024
 #define IGNORE_SIZE 9
 
 // 声明为外部函数，由系统 musl libc 提供实现
 // 实现位置：third_party_musl/src/locale/iconv.c
-// set_iconv_icu_enable 在 libc 中存在但未导出到 NDK，需要使用 dlsym 动态加载
 #include <dlfcn.h>
 
 typedef int (*set_iconv_icu_enable_func)(void);
 
-static int SetIconvIcuEnable(void) {
+static int SetIconvIcuEnable(void)
+{
     static set_iconv_icu_enable_func func = nullptr;
     static bool initialized = false;
     
@@ -311,7 +311,8 @@ void IconvExchangeWithCharcmp(char* from, char* to, char* ins, size_t ins_len)
 void TestToIgnoreSkip(void)
 {
     const char* expect = "Big5 示例";
-    IconvExchange(const_cast<char*>("utf8"), const_cast<char*>("big5//IGNORE"), const_cast<char*>(g_ins_zh), g_ins_zh_len);
+    IconvExchange(const_cast<char*>("utf8"), const_cast<char*>("big5//IGNORE"),
+                  const_cast<char*>(g_ins_zh), g_ins_zh_len);
     if (strcmp(expect, g_outs) != 0) {
         t_error("iconv with ignore error: [ins] %s  [outs] %s  [expect] %s\n",
             g_ins_zh, g_outs, expect);
@@ -321,7 +322,8 @@ void TestToIgnoreSkip(void)
 void TestToTranslitSkip(void)
 {
     const char* expect = "Big5 ??示例";
-    IconvExchange(const_cast<char*>("utf8"), const_cast<char*>("big5//TRANSLIT"), const_cast<char*>(g_ins_zh), g_ins_zh_len);
+    IconvExchange(const_cast<char*>("utf8"), const_cast<char*>("big5//TRANSLIT"),
+                  const_cast<char*>(g_ins_zh), g_ins_zh_len);
     if (strcmp(expect, g_outs) != 0) {
         t_error("iconv with translit error: [ins] %s  [outs] %s  [expect] %s\n",
             g_ins_zh, g_outs, expect);
@@ -334,7 +336,8 @@ void TestErrnoIlseq(void)
     size_t ins_bytes = g_ins_zh_len;
     char* outs_ptr = g_outs;
     size_t outs_bytes = BUFFER_SIZE;
-    size_t res = IconvTest(const_cast<char*>("utf8"), const_cast<char*>("big5"), &ins_ptr, &ins_bytes, &outs_ptr, &outs_bytes);
+    size_t res = IconvTest(const_cast<char*>("utf8"), const_cast<char*>("big5"),
+                           &ins_ptr, &ins_bytes, &outs_ptr, &outs_bytes);
     if (res != static_cast<size_t>(-1) || errno != EILSEQ) {
         t_error("Failed: [ins] %s  [outs] %s  [res] %d [errno] %s\n",
             g_ins_zh, g_outs, res, strerror(errno));
@@ -347,7 +350,8 @@ void TestErrnoE2big(void)
     size_t ins_bytes = g_ins_zh_len;
     char* outs_ptr = g_outs;
     size_t outs_bytes = 10;
-    size_t res = IconvTest(const_cast<char*>("utf8"), const_cast<char*>("utf16"), &ins_ptr, &ins_bytes, &outs_ptr, &outs_bytes);
+    size_t res = IconvTest(const_cast<char*>("utf8"), const_cast<char*>("utf16"),
+                           &ins_ptr, &ins_bytes, &outs_ptr, &outs_bytes);
     if (res != static_cast<size_t>(-1) || errno != E2BIG) {
         t_error("Failed: [ins] %s  [outs] %s  [res] %d [errno] %s\n",
             g_ins_zh, g_outs, res, strerror(errno));
@@ -391,7 +395,8 @@ void TestLargeString(void)
     IconvCloseWithStrerror(cd);
 }
 
-static int IconvJointIcuTestTest_impl(void){
+static int IconvJointIcuTestTest_impl(void)
+{
     int icu_res = SetIconvIcuEnable();
     if (icu_res != 0) {
         t_error("set_iconv_icu_enable failed, error: %d \n", icu_res);
