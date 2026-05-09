@@ -943,7 +943,7 @@ export default function extensionWindowPropertiesTest() {
     
     /**
      * @tc.name   testUIExtensionHostOnWindowSizeChange_ErrorCode1300002
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_WINDOWSIZECHANGE_ERRORCODE_JS_API_0100
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_UIEXTENSION_WINDOWSIZECHANGE_ERRORCODE_JS_API_0300
      * @tc.desc   testUIExtensionHostOnWindowSizeChange_ErrorCode1300002 when register callback repeat
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
