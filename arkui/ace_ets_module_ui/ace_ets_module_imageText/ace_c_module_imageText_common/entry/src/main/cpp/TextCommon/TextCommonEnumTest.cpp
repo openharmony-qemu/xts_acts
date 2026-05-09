@@ -20,7 +20,9 @@
 #include <hilog/log.h>
 #include <arkui/styled_string.h>
 
-#include ONLY_BETWEEN_LINES true
+bool ONLY_BETWEEN_LINES = true;
+float FLOAT_10 = 10;
+float FLOAT_30 = 30;
 
 namespace ArkUICapiTest {
 
@@ -171,8 +173,8 @@ static napi_value TextEnumTest_012(napi_env env, napi_callback_info info)
     OH_ArkUI_LineHeightStyle *lineHeightStyle = OH_ArkUI_LineHeightStyle_Create();
     ASSERT_OBJ(lineHeightStyle, nullptr);
 
-    OH_ArkUI_LineHeightStyle_SetLineHeight(lineHeightStyle, PARAM_10);
-    auto result4_1 = OH_ArkUI_LineHeightStyle_SetLineHeightMultiple(lineHeightStyle, PARAM_10);
+    OH_ArkUI_LineHeightStyle_SetLineHeight(lineHeightStyle, FLOAT_10);
+    auto result4_1 = OH_ArkUI_LineHeightStyle_SetLineHeightMultiple(lineHeightStyle, FLOAT_10);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result4_1 TextEnumTest_012 result=%{public}d", result4_1);
     ASSERT_EQ(result4_1, ARKUI_ERROR_CODE_NO_ERROR);
@@ -184,7 +186,7 @@ static napi_value TextEnumTest_013(napi_env env, napi_callback_info info)
 {
     NAPI_START(text, ARKUI_NODE_TEXT);
     const OH_ArkUI_LineHeightStyle *lineHeightStyle2 = OH_ArkUI_LineHeightStyle_Create();
-    auto result5_1 = OH_ArkUI_LineHeightStyle_GetLineHeightMultiple(lineHeightStyle2, PARAM_10);
+    auto result5_1 = OH_ArkUI_LineHeightStyle_GetLineHeightMultiple(lineHeightStyle2, FLOAT_10);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result5_1 TextEnumTest_013 result=%{public}d", result5_1);
     ASSERT_EQ(result5_1, ARKUI_ERROR_CODE_NO_ERROR);
@@ -194,7 +196,7 @@ static napi_value TextEnumTest_013(napi_env env, napi_callback_info info)
 static napi_value TextEnumTest_014(napi_env env, napi_callback_info info)
 {
     NAPI_START(text, ARKUI_NODE_TEXT);
-    auto result6_1 = OH_ArkUI_LineHeightStyle_SetLineHeightMultiple(nullptr, PARAM_10);
+    auto result6_1 = OH_ArkUI_LineHeightStyle_SetLineHeightMultiple(nullptr, FLOAT_10);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result6_1 TextEnumTest_014 result=%{public}d", result6_1);
     ASSERT_EQ(result6_1, ARKUI_ERROR_CODE_PARAM_INVALID);
@@ -215,7 +217,7 @@ static napi_value TextEnumTest_016(napi_env env, napi_callback_info info)
 {
     NAPI_START(text, ARKUI_NODE_TEXT);
     OH_ArkUI_LineSpacingStyle *lineSpacingStyle = OH_ArkUI_LineSpacingStyle_Create();
-    OH_ArkUI_LineSpacingStyle_SetLineSpacing(lineSpacingStyle, PARAM_30);
+    OH_ArkUI_LineSpacingStyle_SetLineSpacing(lineSpacingStyle, FLOAT_30);
     OH_ArkUI_LineSpacingStyle_SetOnlyBetweenLines(lineSpacingStyle, ONLY_BETWEEN_LINES);
 
     OH_ArkUI_SpanStyle *spanStyle = OH_ArkUI_SpanStyle_Create();
@@ -240,7 +242,7 @@ static napi_value TextEnumTest_017(napi_env env, napi_callback_info info)
 {
     NAPI_START(text, ARKUI_NODE_TEXT);
     OH_ArkUI_LineSpacingStyle *lineSpacingStyle = OH_ArkUI_LineSpacingStyle_Create();
-    auto result9_1 = OH_ArkUI_LineSpacingStyle_SetLineSpacing(lineSpacingStyle, PARAM_30);
+    auto result9_1 = OH_ArkUI_LineSpacingStyle_SetLineSpacing(lineSpacingStyle, FLOAT_30);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result9_1 TextEnumTest_017 result=%{public}d", result9_1);
     ASSERT_EQ(result9_1, ARKUI_ERROR_CODE_NO_ERROR);
@@ -252,7 +254,7 @@ static napi_value TextEnumTest_017(napi_env env, napi_callback_info info)
 static napi_value TextEnumTest_018(napi_env env, napi_callback_info info)
 {
     NAPI_START(text, ARKUI_NODE_TEXT);
-    auto result10_1 = OH_ArkUI_LineSpacingStyle_SetLineSpacing(nullptr, PARAM_30);
+    auto result10_1 = OH_ArkUI_LineSpacingStyle_SetLineSpacing(nullptr, FLOAT_30);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result10_1 TextEnumTest_018 result=%{public}d", result10_1);
     ASSERT_EQ(result10_1, ARKUI_ERROR_CODE_PARAM_INVALID);
@@ -263,7 +265,7 @@ static napi_value TextEnumTest_019(napi_env env, napi_callback_info info)
 {
     NAPI_START(text, ARKUI_NODE_TEXT);
     const OH_ArkUI_LineSpacingStyle *lineSpacingStyle = OH_ArkUI_LineSpacingStyle_Create();
-    auto result11_1 = OH_ArkUI_LineSpacingStyle_GetLineSpacing(lineSpacingStyle, PARAM_30);
+    auto result11_1 = OH_ArkUI_LineSpacingStyle_GetLineSpacing(lineSpacingStyle, FLOAT_30);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "result11_1 TextEnumTest_019 result=%{public}d", result11_1);
     ASSERT_EQ(result11_1, ARKUI_ERROR_CODE_NO_ERROR);
