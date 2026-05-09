@@ -2,7 +2,7 @@ import { RenderNode, FrameNode, NodeController, DrawContext } from '@kit.ArkUI';
 import { drawing } from '@kit.ArkGraphics2D';
 
 class MyRenderNode extends RenderNode {
-  uiContext: UIContext;
+  public uiContext: UIContext;
 
   constructor(uiContext: UIContext) {
     super();
