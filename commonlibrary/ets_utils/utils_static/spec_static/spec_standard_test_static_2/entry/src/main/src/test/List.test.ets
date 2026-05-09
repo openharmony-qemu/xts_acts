@@ -29,6 +29,7 @@ import ExpressionsMethodStepOneTest from "./expressions/method_call_expression/s
 import ExpressionsMethodStepTest from "./expressions/method_call_expression/step_selection_of_type_to_use/ExpressionsMethodStep.test";
 import ExpressionsMethodTypeTest from "./expressions/method_call_expression/type_of_method_call_expression/ExpressionsMethodType.test";
 import ExpressionsMultiplicativeDivisionTest from "./expressions/multiplicative_expressions/division/ExpressionsMultiplicativeDivision.test";
+import ExpressionsMultiplicativeExpressionTest from "./expressions/multiplicative_expressions/ExpressionsMultiplicativeExpression.test";
 import ExpressionsMultiplicationTest from "./expressions/multiplicative_expressions/multiplication/ExpressionsMultiplication.test";
 import MultiplicationIntResultTest from "./expressions/multiplicative_expressions/multiplication/int_result/MultiplicationIntResult.test";
 import MultiplicationIntResultFiveTest from "./expressions/multiplicative_expressions/multiplication/int_result/MultiplicationIntResultFive.test";
@@ -97,6 +98,7 @@ export default function testsuite(): void {
   ExpressionsMethodStepTest();
   ExpressionsMethodTypeTest();
   ExpressionsMultiplicativeDivisionTest();
+  ExpressionsMultiplicativeExpressionTest();
   ExpressionsMultiplicationTest();
   MultiplicationIntResultTest();
   MultiplicationIntResultFiveTest();
