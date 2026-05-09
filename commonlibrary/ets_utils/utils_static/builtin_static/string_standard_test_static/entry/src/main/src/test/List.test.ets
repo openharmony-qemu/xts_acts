@@ -8,7 +8,7 @@ import StringPadEndBasicTest from "./StringPadEndBasic.test";
 import StringPadStartBasicTest from "./StringPadStartBasic.test";
 import StringToWellFormedBasicTest from "./StringToWellFormedBasic.test";
 import StringLengthTest from "./StringLengthTest.test";
-import StringToLocaleLowerCaseTest from "./StringToLocaleLowerCaseTest";
+import StringToLocaleLowerCaseTest from "./StringToLocaleLowerCaseTest.test";
 import StringRepeatTest from "./StringRepeatTest.test";
 import StringReplaceTest from "./StringReplaceTest.test";
 import StringReplaceAllTest from "./StringReplaceAllTest.test";

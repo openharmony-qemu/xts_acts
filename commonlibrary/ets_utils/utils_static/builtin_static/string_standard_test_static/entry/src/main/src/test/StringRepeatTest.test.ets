@@ -539,7 +539,7 @@ export default function StringRepeatTest(): void {
 
     /**
      * @tc.name   StringRepeat_CountFloat3Point5_001
-     * @tc.number SUB_BUILTINS_STRING_REPEAT_COUNTFLOAT3P5_0100
+     * @tc.number SUB_BUILTINS_STRING_REPEAT_COUNTFLOATTHREEPFIVE_0100
      * @tc.desc   Test that 3.5 is floored to 3
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -596,7 +596,7 @@ export default function StringRepeatTest(): void {
 
     /**
      * @tc.name   StringRepeat_CountTrueTo1_001
-     * @tc.number SUB_BUILTINS_STRING_REPEAT_COUNTTRUETO1_0100
+     * @tc.number SUB_BUILTINS_STRING_REPEAT_COUNTTRUETONE_0100
      * @tc.desc   Test that true count is converted to 1
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -610,7 +610,7 @@ export default function StringRepeatTest(): void {
 
     /**
      * @tc.name   StringRepeat_CountFalseTo0_001
-     * @tc.number SUB_BUILTINS_STRING_REPEAT_COUNTFALSETO0_0100
+     * @tc.number SUB_BUILTINS_STRING_REPEAT_COUNTFALSETOZERO_0100
      * @tc.desc   Test that false count is converted to 0
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1626,7 +1626,7 @@ export default function StringRepeatTest(): void {
     /**
      * @tc.name   StringRepeat_RepeatAsciiArt_001
      * @tc.number SUB_BUILTINS_STRING_REPEAT_REPEATASCIART_0100
-     * @tc.desc   Test generating ASCII art using repeat
+     * @tc.desc   Test generating ASCII pattern using repeat
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1

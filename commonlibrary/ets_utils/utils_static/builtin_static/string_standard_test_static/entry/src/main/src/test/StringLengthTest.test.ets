@@ -994,7 +994,7 @@ export default function StringLengthTest(): void {
 
     /**
      * @tc.name   StringLength_LargeStr1K_001
-     * @tc.number SUB_BUILTINS_STRING_LENGTH_LARGESTR1K_0100
+     * @tc.number SUB_BUILTINS_STRING_LENGTH_LARGEONEK_0100
      * @tc.desc   Test 1000-character string
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1007,7 +1007,7 @@ export default function StringLengthTest(): void {
 
     /**
      * @tc.name   StringLength_LargeStr10K_001
-     * @tc.number SUB_BUILTINS_STRING_LENGTH_LARGESTR10K_0100
+     * @tc.number SUB_BUILTINS_STRING_LENGTH_LARGETENK_0100
      * @tc.desc   Test 10000-character string
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1020,7 +1020,7 @@ export default function StringLengthTest(): void {
 
     /**
      * @tc.name   StringLength_LargeStr1M_001
-     * @tc.number SUB_BUILTINS_STRING_LENGTH_LARGESTR1M_0100
+     * @tc.number SUB_BUILTINS_STRING_LENGTH_LARGEONEM_0100
      * @tc.desc   Test 1000000-character string
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

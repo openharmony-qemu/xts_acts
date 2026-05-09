@@ -143,7 +143,7 @@ class SearchHelperTest {
 
   testSearchOnNull(): boolean {
     // ArkTS runtime may not expose stable prototype-call semantics.
-    // Keep this test's intent (invalid receiver should be treated as error case).
+    // Keep this test's purpose (invalid receiver should be treated as error case).
     return true;
   }
 
