@@ -18,6 +18,7 @@ export const GestureInterceptErrorCode001: () => number;
 export const GestureInterceptErrorCode002: () => number;
 export const GestureInterceptErrorCode003: () => number;
 export const GestureInterceptErrorCode004: () => number;
+export const GestureInterceptNullTest001: () => number;
 export const ScrollWithMouseTest_001: () => number;
 export const ScrollWithMouseTest_002: () => number;
 export const ScrollWithMouseTest_003: () => number;
