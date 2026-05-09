@@ -626,7 +626,7 @@ export default function NoParentSubWindowLifeCycleStatic(): void {
             await subWindowClass.destroyWindow();
             await windowClass.destroyWindow();
             done()
-          }).catch(async (e: BusinessError) => {
+          }).catch(async (e: Error) => {
             console.error(msgStr + `Failed to setParentWindow. Cause code: ${e.code}, message: ${e.message}`);
             if (isFreeWindowMode) {
               expect(e.code).assertEqual(1300009);
