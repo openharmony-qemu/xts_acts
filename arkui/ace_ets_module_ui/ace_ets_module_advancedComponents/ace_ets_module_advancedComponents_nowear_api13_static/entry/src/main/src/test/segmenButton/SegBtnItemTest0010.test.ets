@@ -70,6 +70,7 @@ it('SegBtnItemTest0010_static_001', Level.LEVEL1, async (done: () => void): Prom
       let btn0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray('$children')[0]
         .getArray('$children')[0]
+        .getArray('$children')[0]
         .getArray('$children')[2]
         .getArray('$children')[0]
       console.info("[SegBtnItemTest0010_static_001] btn0.$attrs.accessibilityLevel is: " +
@@ -82,6 +83,7 @@ it('SegBtnItemTest0010_static_001', Level.LEVEL1, async (done: () => void): Prom
       let btn1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray('$children')[0]
         .getArray('$children')[0]
+        .getArray('$children')[0]
         .getArray('$children')[2]
         .getArray('$children')[1]
       console.info("[SegBtnItemTest0010_static_001] btn1.$attrs.accessibilityLevel is: " +
@@ -91,6 +93,7 @@ it('SegBtnItemTest0010_static_001', Level.LEVEL1, async (done: () => void): Prom
       let btn2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray('$children')[0]
         .getArray('$children')[0]
+        .getArray('$children')[0]
         .getArray('$children')[2]
         .getArray('$children')[2]
       console.info("[SegBtnItemTest0010_static_001] btn2.$attrs.accessibilityLevel is: " +
@@ -98,6 +101,7 @@ it('SegBtnItemTest0010_static_001', Level.LEVEL1, async (done: () => void): Prom
       expect(btn2.getElement('$attrs').getString('accessibilityLevel')).assertEqual('yes');
       await CommonFunc.sleep(500);
       let btn3 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray('$children')[0]
         .getArray('$children')[0]
         .getArray('$children')[0]
         .getArray('$children')[2]
@@ -123,6 +127,7 @@ it('SegBtnItemTest0010_static_002', Level.LEVEL1, async (done: () => void): Prom
       let btn0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray('$children')[0]
         .getArray('$children')[1]
+        .getArray('$children')[0]
         .getArray('$children')[2]
         .getArray('$children')[0]
       console.info("[SegBtnItemTest0010_static_001] btn0.$attrs.accessibilityLevel is: " +
@@ -135,6 +140,7 @@ it('SegBtnItemTest0010_static_002', Level.LEVEL1, async (done: () => void): Prom
       let btn1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray('$children')[0]
         .getArray('$children')[1]
+        .getArray('$children')[0]
         .getArray('$children')[2]
         .getArray('$children')[1]
       console.info("[SegBtnItemTest0010_static_001] btn1.$attrs.accessibilityLevel is: " +
@@ -144,6 +150,7 @@ it('SegBtnItemTest0010_static_002', Level.LEVEL1, async (done: () => void): Prom
       let btn2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray('$children')[0]
         .getArray('$children')[1]
+        .getArray('$children')[0]
         .getArray('$children')[2]
         .getArray('$children')[2]
       console.info("[SegBtnItemTest0010_static_001] btn2.$attrs.accessibilityLevel is: " +
@@ -153,6 +160,7 @@ it('SegBtnItemTest0010_static_002', Level.LEVEL1, async (done: () => void): Prom
       let btn3 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray('$children')[0]
         .getArray('$children')[1]
+        .getArray('$children')[0]
         .getArray('$children')[2]
         .getArray('$children')[3]
       console.info("[SegBtnItemTest0010_static_001] btn3.$attrs.accessibilityLevel is: " +
@@ -162,6 +170,7 @@ it('SegBtnItemTest0010_static_002', Level.LEVEL1, async (done: () => void): Prom
       let icon0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray('$children')[0]
         .getArray('$children')[1]
+        .getArray('$children')[0]
         .getArray('$children')[2]
         .getArray('$children')[0]
         .getArray('$children')[0]
@@ -177,6 +186,7 @@ it('SegBtnItemTest0010_static_002', Level.LEVEL1, async (done: () => void): Prom
       let icon1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray('$children')[0]
         .getArray('$children')[1]
+        .getArray('$children')[0]
         .getArray('$children')[2]
         .getArray('$children')[1]
         .getArray('$children')[0]
