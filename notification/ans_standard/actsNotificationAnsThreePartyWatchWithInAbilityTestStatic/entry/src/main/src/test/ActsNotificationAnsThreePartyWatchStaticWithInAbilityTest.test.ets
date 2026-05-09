@@ -76,7 +76,7 @@ export default function actsNotificationAnsThreePartyWatchStaticWithInAbilityTes
 
     beforeEach(async() => {
       console.info(`${TAG} afterEach START`)
-      await notificationManager.removeAllSlots((e: Error | null) => {
+      await notificationManager.removeAllSlots((e: BusinessError<void> | null) => {
         if (e) {
           let err:BusinessError=e as BusinessError
           console.info(`${TAG} removeAllSlots AsyncCallback err: ${err}, errMes: ${err.message}`)
