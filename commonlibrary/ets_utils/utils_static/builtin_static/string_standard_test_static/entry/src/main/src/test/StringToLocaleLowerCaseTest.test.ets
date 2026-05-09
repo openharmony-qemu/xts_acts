@@ -411,7 +411,7 @@ export default function StringToLocaleLowerCaseTest(): void {
 
     /**
      * @tc.name   StringToLocaleLowerCase_BCP47Tags_001
-     * @tc.number SUB_BUILTINS_STRING_TOLOCALELOWERCASE_BCP47TAGS_0100
+     * @tc.number SUB_BUILTINS_STRING_TOLOCALELOWERCASE_BCPFORTYSEVENTAGS_0100
      * @tc.desc   Test BCP 47 language tags in different formats
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
