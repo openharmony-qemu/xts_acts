@@ -2197,13 +2197,13 @@ export default function extensionWindowPropertiesTest() {
         await subWindowClass.showWindow();
         await sleep(2000);
         // extensionWindow?.createSubWindowWithOptions
-        let btn = await driver.findComponent(ON.id('rectChange'))
+        let btn = await driver.findComponent(ON.id('onRectChange1300002'))
         console.log(caseName + ' btn : ' + btn);
         if (btn != null) {
           await btn.click()
           await sleep(1000)
           // 获取接口返回信息
-          let errorMessage = await driver.findComponent(ON.id('onRectChange1300002'))
+          let errorMessage = await driver.findComponent(ON.id('errorMessage'))
           let errorMessageText = await errorMessage.getText()
           console.log(caseName + 'errorMessageText : ' + errorMessageText);
 
@@ -2259,13 +2259,13 @@ export default function extensionWindowPropertiesTest() {
         await subWindowClass.showWindow();
         await sleep(2000);
         // extensionWindow?.createSubWindowWithOptions
-        let btn = await driver.findComponent(ON.id('rectChange'))
+        let btn = await driver.findComponent(ON.id('offRectChange1300002'))
         console.log(caseName + ' btn : ' + btn);
         if (btn != null) {
           await btn.click()
           await sleep(1000)
           // 获取接口返回信息
-          let errorMessage = await driver.findComponent(ON.id('offRectChange1300002'))
+          let errorMessage = await driver.findComponent(ON.id('errorMessage'))
           let errorMessageText = await errorMessage.getText()
           console.log(caseName + 'errorMessageText : ' + errorMessageText);
 
