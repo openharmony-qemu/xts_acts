@@ -4842,7 +4842,7 @@ export default function TextPicker() {
         return;
       }
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
-      pickerOptions.PreferredCompatibleMode = photoAccessHelper.PreferredCompatibleMode.DEFAULT;
+      pickerOptions.preferredCompatibleMode = photoAccessHelper.PreferredCompatibleMode.DEFAULT;
       const photoPicker = new photoAccessHelper.PhotoViewPicker();
       try{
         photoPicker.select(pickerOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
