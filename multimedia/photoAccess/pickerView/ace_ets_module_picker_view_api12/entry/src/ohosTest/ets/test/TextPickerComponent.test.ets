@@ -4829,14 +4829,14 @@ export default function TextPicker() {
     });
 
     /**
-     * @tc.name   SUB_PHOTO_PICKER_TEST_0101
-     * @tc.number SUB_PHOTO_PICKER_TEST_0101
+     * @tc.name   SUB_PHOTO_PICKER_TEST_0300
+     * @tc.number SUB_PHOTO_PICKER_TEST_0300
      * @tc.desc   Testing PreferredCompatibleMode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_PHOTO_PICKER_TEST_0101', Level.LEVEL0, async (done: Function) => {
+    it('SUB_PHOTO_PICKER_TEST_0300', Level.LEVEL0, async (done: Function) => {
       if (!isExecutePicker) {
         done();
         return;
@@ -4846,15 +4846,15 @@ export default function TextPicker() {
       const photoPicker = new photoAccessHelper.PhotoViewPicker();
       try{
         photoPicker.select(pickerOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
-          console.info('SUB_PHOTO_PICKER_TEST_0101, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
+          console.info('SUB_PHOTO_PICKER_TEST_0300, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
           JSON.stringify(PhotoSelectResult));
         })
         await closePickerModel(driver);
       } catch(err) {
         expect(false).assertTrue();
-        console.error(`SUB_PHOTO_PICKER_TEST_0101, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
+        console.error(`SUB_PHOTO_PICKER_TEST_0300, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
       }
-      console.info("SUB_PHOTO_PICKER_TEST_0101 finish");
+      console.info("SUB_PHOTO_PICKER_TEST_0300 finish");
       done();
     });
 
