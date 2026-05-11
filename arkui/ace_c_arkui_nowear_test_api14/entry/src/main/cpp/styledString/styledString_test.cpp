@@ -95,7 +95,7 @@ napi_value StyledStringTest::testStyledString001(napi_env env, napi_callback_inf
           "OH_ArkUI_MarshallStyledStringDescriptor status2Err is :[%{public}d]", status2Err);
     ASSERT_EQ(status2Err, ARKUI_ERROR_CODE_PARAM_INVALID);
     auto *styledStringDescriber2 = OH_ArkUI_StyledString_Descriptor_Create();
-    auto status2Err2 = OH_ArkUI_MarshallStyledStringDescriptor(buffer, size, nullptr, &resultSize);
+    auto status2Err2 = OH_ArkUI_MarshallStyledStringDescriptor(buffer, size, styledStringDescriber2, &resultSize);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "testStyledString001", 
           "OH_ArkUI_MarshallStyledStringDescriptor status2Err2 is :[%{public}d]", status2Err2);
     ASSERT_EQ(status2Err2, ARKUI_ERROR_CODE_INVALID_STYLED_STRING);
