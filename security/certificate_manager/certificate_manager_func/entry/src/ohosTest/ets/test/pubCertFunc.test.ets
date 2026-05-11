@@ -1476,7 +1476,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_1500
      * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_1500
-     * @tc.desc   import USB key certificate with PURPOSE_ALL without real USB key, return error code 17500010 on PC device or 801 on non-PC device
+     * @tc.desc   import USB key certificate with PURPOSE_ALL, return error code 17500011.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
