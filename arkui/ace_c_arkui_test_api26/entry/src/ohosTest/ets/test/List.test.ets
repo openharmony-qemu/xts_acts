@@ -15,7 +15,6 @@
 import AreaChangeErrorCodeTest from './onAreaChange/AreaChangeErrorCodeTest.test'
 import ScrollWithMouseTest from "./scroll/scrollWithMouseTest.test";
 import AutoAdjustMarginTest from "./scroll/autoAdjustMarginTest.test";
-import ListBackBehaviorTest from "./list/listBackBehaviorTest.test";
 import RegisterCommonAreaApproximateChangeEventTest from './onAreaChange/RegisterCommonAreaApproximateChangeEventTest.test'
 import UnregisterCommonAreaApproximateChangeEventTest from './onAreaChange/UnregisterCommonAreaApproximateChangeEventTest.test'
 import OrphanCharOptimizationTest from './orphanCharOptimization/orphanCharOptimizationTest.test'
@@ -23,6 +22,7 @@ import GestureInterceptTest from './gestureIntercept/GestureInterceptTest.test'
 import gestureErrorCodeTest from './gestureIntercept/GestureErrorCodeTest.test'
 import passThroughTest from './passThrough/PassThroughTest.test'
 import GetSizeLimitationTest from './getSizeLimitation/GetSizeLimitationTest.test'
+import InspectorLabelTest from './inspectorLabel/InspectorLabelTest.test'
 
 export default function testsuite() {
   RegisterCommonAreaApproximateChangeEventTest();
@@ -30,10 +30,10 @@ export default function testsuite() {
   AreaChangeErrorCodeTest();
   ScrollWithMouseTest();
   AutoAdjustMarginTest();
-  ListBackBehaviorTest();
   OrphanCharOptimizationTest();
   passThroughTest();
   gestureErrorCodeTest();
   GestureInterceptTest();
   GetSizeLimitationTest();
+  InspectorLabelTest();
 }
