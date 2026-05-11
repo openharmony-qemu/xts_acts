@@ -482,6 +482,7 @@ export default function dataShareConfigUnSubscribeTest() {
         expect().assertFail();
       }
     });
+
     /**
      * @tc.name   dataShareConfigaUnSubscribeTest018
      * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_2900
@@ -588,7 +589,6 @@ export default function dataShareConfigUnSubscribeTest() {
         expect().assertFail();
       }
     });
-
 
     /**
      * @tc.name   dataShareConfigaUnSubscribeTest021
