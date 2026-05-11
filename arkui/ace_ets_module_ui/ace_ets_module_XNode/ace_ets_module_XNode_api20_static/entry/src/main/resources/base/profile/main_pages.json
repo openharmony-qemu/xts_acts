@@ -45,6 +45,7 @@
     "MainAbility/pages/FrameNode/FrameNodeCreateWaterFlowNode",
     "MainAbility/pages/FrameNode/FrameNodeCreateFlowItemNode",
     "MainAbility/pages/FrameNode/FrameNodeConstructor",
-    "MainAbility/pages/FrameNode/CrossLanguageOptionsSupportFiveMethodsStatic"
+    "MainAbility/pages/FrameNode/CrossLanguageOptionsSupportFiveMethodsStatic",
+    "MainAbility/pages/RenderNode/RenderNodeBlurStatic"
   ]
 }
