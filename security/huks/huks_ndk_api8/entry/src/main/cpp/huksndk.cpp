@@ -74,6 +74,9 @@ static napi_value OHHuksGetSdkVersion(napi_env env, napi_callback_info info)
 
     gkeyAlias = (struct OH_Huks_Blob *)malloc(sizeof(struct OH_Huks_Blob));
     if (gkeyAlias != nullptr) {
+        gkeyAlias->data = nullptr;
+        gkeyAlias->size = 0;
+        
         data = static_cast<uint8_t *>(malloc(sdkSize));
         if (data != nullptr) {
             gkeyAlias->data = data;
@@ -84,7 +87,7 @@ static napi_value OHHuksGetSdkVersion(napi_env env, napi_callback_info info)
             }
         }
     }
-    free(data);
+    if (data != nullptr) free(data);
     free(gkeyAlias);
     napi_create_int32(env, returnValue, &result);
     return result;
