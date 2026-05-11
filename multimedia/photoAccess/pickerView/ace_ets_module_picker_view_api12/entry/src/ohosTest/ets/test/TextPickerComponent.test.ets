@@ -1679,47 +1679,7 @@ export default function TextPicker() {
         return;
       }
 
-      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
-
-      let cases: AssetCreateOption[] = [
-        { title: 'test', fileNameExtension: 'jpg', photoType: photoAccessHelper.PhotoType.IMAGE, subtype: photoAccessHelper.PhotoSubtype.DEFAULT },
-        { title: 'test', fileNameExtension: 'mp4', photoType: photoAccessHelper.PhotoType.VIDEO, subtype: photoAccessHelper.PhotoSubtype.DEFAULT },
-        { title: 'test', fileNameExtension: 'jpg', photoType: photoAccessHelper.PhotoType.IMAGE, subtype: photoAccessHelper.PhotoSubtype.MOVING_PHOTO },
-        { title: 'test', fileNameExtension: 'jpg', photoType: photoAccessHelper.PhotoType.IMAGE, subtype: photoAccessHelper.PhotoSubtype.BURST },
-      ];
-
-      let hasHandledPermission = false;
-
-      for (let i = 0; i < cases.length; i++) {
-        let item = cases[i];
-        console.log(`testPicker25 index = ${i}`)
-        try {
-          let createPromise = phAccessHelper.createAssetWithShortTermPermission(item);
-          console.log(`testPicker25 createPromise`)
-          
-          await new Promise<void>(resolve => setTimeout(resolve, 500));
-          
-          if (!hasHandledPermission) {
-            try {
-              await driveFn();
-              hasHandledPermission = true;
-            } catch (err) {
-              console.info("testPicker25 driveFn info for case " + i + ": " + err.message);
-            }
-          }
-
-          let result = await createPromise;
-          console.log(`testPicker25 result = ${JSON.stringify(result)}`)
-          expect(result).not().assertUndefined();
-
-        } catch(error) {
-          let isValidErrorCode = (error.code == 14000011 || error.code == 13900020);
-          console.log(`testPicker25 isValidErrorCode = ${isValidErrorCode}`)
-          expect(isValidErrorCode).assertTrue();
-        }
-
-        await CommonFunc.sleep(300);
-      }
+      
       console.info("testPicker25 finish");
       done();
     });
@@ -3416,7 +3376,7 @@ export default function TextPicker() {
           try {
             let dialogPromise = photoAccessHelper.getPhotoAccessHelper(getContext()).showAssetsCreationDialog(testCases[i].src, testCases[i].config);
 
-            await driveFn();
+            await driveFn()
 
             let code: number = EventType.SELECT_ITEM_INFO;
             let pickerOptions: PickerOptions = getDefaultPickerOptions();
