@@ -67,6 +67,7 @@ static void resultAsyncWork(napi_env env, napi_status status, void *data)
 static napi_value OHHuksGetSdkVersion(napi_env env, napi_callback_info info)
 {
     int returnValue = FAIL;
+    struct OH_Huks_Result resultSt;
     napi_value result = nullptr;
     const uint32_t sdkSize = 32;
     struct OH_Huks_Blob *gkeyAlias = (struct OH_Huks_Blob *)malloc(sizeof(struct OH_Huks_Blob));
@@ -77,8 +78,6 @@ static napi_value OHHuksGetSdkVersion(napi_env env, napi_callback_info info)
             gkeyAlias = nullptr;
         }
     }
-    struct OH_Huks_Result resultSt;
-    resultSt.errorCode = OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT;
     if (gkeyAlias != nullptr) {
         resultSt = OH_Huks_GetSdkVersion(gkeyAlias);
     }
