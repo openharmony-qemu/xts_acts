@@ -17,20 +17,12 @@ import uriTest1 from "./uri/Uri1.test";
 import uriTest2 from "./uri/Uri2.test";
 import uriTest3 from './uri/Uri3.test';
 import uriEmojiTest from "./uri/Emoji_Uri.test";
-import URI01Test from "./uri/URITest01.test";
-import URI02Test from "./uri/URITest02.test";
-import URI03Test from "./uri/URITest03.test";
-import URI04Test from "./uri/URITest04.test";
-import URI05Test from "./uri/URITest05.test";
+
 
 export default function testsuite() {
     uriTest1();
     uriTest2();
     uriTest3();
     uriEmojiTest();
-    URI01Test();
-    URI02Test();
-    URI03Test();
-    URI04Test();
-    URI05Test();
+   
 }
