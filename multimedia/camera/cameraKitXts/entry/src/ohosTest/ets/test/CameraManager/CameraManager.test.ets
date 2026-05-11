@@ -984,7 +984,12 @@ export default function CameraManagerTest() {
         let types: Array<camera.PreconfigType> = [camera.PreconfigType.PRECONFIG_720P, camera.PreconfigType.PRECONFIG_1080P, camera.PreconfigType.PRECONFIG_4K, camera.PreconfigType.PRECONFIG_HIGH_QUALITY];
         let selected: camera.PreconfigType | null = null;
         for (let i = 0; i < types.length; i++) { if (session.canPreconfig(types[i])) { selected = types[i]; break; } }
-        expect(selected == null).assertFalse();
+        console.info(TAG + caseName + ' selected is ' + JSON.stringify(selected));
+        if (selected == null) {
+          console.info(TAG + caseName + ' does not support Preconfig');
+          done();
+          return
+        }
         session.preconfig(selected as camera.PreconfigType);
         cameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[0]);
         await cameraInput.open();
@@ -1025,7 +1030,11 @@ export default function CameraManagerTest() {
         let types: Array<camera.PreconfigType> = [camera.PreconfigType.PRECONFIG_720P, camera.PreconfigType.PRECONFIG_1080P, camera.PreconfigType.PRECONFIG_4K, camera.PreconfigType.PRECONFIG_HIGH_QUALITY];
         let selected: camera.PreconfigType | null = null;
         for (let i = 0; i < types.length; i++) { if (session.canPreconfig(types[i])) { selected = types[i]; break; } }
-        expect(selected == null).assertFalse();
+        if (selected == null) {
+          console.info(TAG + caseName + ' does not support Preconfig');
+          done();
+          return
+        }
         session.preconfig(selected as camera.PreconfigType);
         try { mCameraManager.createPreviewOutput(null as ESObject); expect(true).assertFail(); }
         catch (err) { expect(Number((err as BusinessError).code)).assertEqual(INVALID_PARAMETER_CODE); }
@@ -1103,7 +1112,11 @@ export default function CameraManagerTest() {
         let types: Array<camera.PreconfigType> = [camera.PreconfigType.PRECONFIG_720P, camera.PreconfigType.PRECONFIG_1080P, camera.PreconfigType.PRECONFIG_4K, camera.PreconfigType.PRECONFIG_HIGH_QUALITY];
         let selected: camera.PreconfigType | null = null;
         for (let i = 0; i < types.length; i++) { if (session.canPreconfig(types[i])) { selected = types[i]; break; } }
-        expect(selected == null).assertFalse();
+        if (selected == null) {
+          console.info(TAG + caseName + ' does not support Preconfig');
+          done();
+          return
+        }
         session.preconfig(selected as camera.PreconfigType);
         cameraInput = mCameraManager.createCameraInput(mCameraDevicesArray[0]);
         await cameraInput.open();
