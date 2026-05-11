@@ -17,6 +17,7 @@
 from devicetest.core.test_case import TestCase, Step
 from cameraAiTestComFun import logger, find_files, heif_to_jpg_pillow, check_image
 import os
+import time
 
 class ActsCameraPhotoAiTest(TestCase):
 
@@ -41,6 +42,7 @@ class ActsCameraPhotoAiTest(TestCase):
             if image_path.lower().endswith((".jpg", ".jpeg", ".png")):
                 CheckRes = check_image(image_path)
                 checkARray.append(CheckRes)
+                time.sleep(2)
         for checkItem in checkARray:
             assert checkItem["code"] == 0, checkItem["msg"]
 
