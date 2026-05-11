@@ -191,7 +191,7 @@ void Signbitl1400(void)
     EXPECT_EQ("Signbitl1400", result, 1);
 }
 
-static int SignbitlTestWithArgs(int argc, char* argv[])
+static int SignbitlTestImpl(int argc, char* argv[])
 {
     Signbitl0100();
     Signbitl0200();
@@ -212,7 +212,7 @@ static int SignbitlTestWithArgs(int argc, char* argv[])
 
 int SignbitlTest(void)
 {
-    static char libcProgStub[] = "libc_test";
-    char* libcArgvStub[] = { libcProgStub, nullptr };
-    return SignbitlTestWithArgs(1, libcArgvStub);
+    static char libcProg[] = "libc_test";
+    char* libcArgv[] = { libcProg, nullptr };
+    return SignbitlTestImpl(1, libcArgv);
 }

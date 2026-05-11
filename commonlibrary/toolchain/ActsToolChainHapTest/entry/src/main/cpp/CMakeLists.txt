@@ -19,6 +19,7 @@ add_library(
     memfill.cpp
     src/common/mtest.c
     src/common/fdfill.c
+    src/common/path.c
     napi_init.cpp
     setrlim.cpp
     src/api/main.cpp
@@ -74,6 +75,8 @@ add_library(
     src/functional/strtod_simple.cpp
     src/functional/tgkill.cpp
     src/functional/tls_init.cpp
+    src/functional/atexit_dlclose.cpp
+    src/functional/dlclose_reset.cpp
     src/functionalext/fortify/poll.cpp
     src/functionalext/info/application_target_sdk_version_test.cpp
     src/functionalext/info/device_api_version.cpp
@@ -97,6 +100,8 @@ add_library(
     src/functionalext/supplement/linux/brk.cpp
     src/functionalext/supplement/linux/capget.cpp
     src/functionalext/supplement/linux/clone.cpp
+    src/functionalext/supplement/linux/copy_file_range.cpp
+    src/functionalext/supplement/linux/sendfile.cpp
     src/functionalext/supplement/linux/epoll_create.cpp
     src/functionalext/supplement/linux/epoll_create1.cpp
     src/functionalext/supplement/linux/epoll_ctl.cpp
@@ -224,7 +229,10 @@ add_library(
      src/math/exp10f.cpp
      src/math/exp10l.cpp
      src/math/fdim.cpp
-     src/math/fmin.cpp
+    src/math/fdimf.cpp
+    src/math/log1p.cpp
+    src/math/log1pf.cpp
+    src/math/fmin.cpp
      src/math/fminf.cpp
      src/math/fminl.cpp
      src/math/fmod.cpp
@@ -307,6 +315,7 @@ add_library(
      src/math/sinhl.cpp
      src/math/sinl.cpp
      src/math/tan.cpp
+     src/math/tanf.cpp
      src/math/tanh.cpp
      src/math/tanhf.cpp
      src/math/tanhl.cpp
@@ -314,8 +323,11 @@ add_library(
      src/math/trunc.cpp
      src/math/truncf.cpp
      src/math/truncl.cpp
-     src/math/y0.cpp
-     src/math/y1.cpp
+    src/math/tgamma.cpp
+    src/math/tgammaf.cpp
+    src/math/y0.cpp
+    src/math/y0f.cpp
+    src/math/y1.cpp
      src/math/y1f.cpp
      src/math/yn.cpp
      src/math/ynf.cpp
@@ -368,6 +380,7 @@ add_library(
     time64_functions.cpp
     src/functional/iconv_open.cpp
     src/functional/iconv_test.cpp
+    src/functional/iconv_joint_icu_test.cpp
     src/functional/mbc.cpp
     src/functional/pthread_getname_np.cpp
     src/functional/search_hsearch.cpp
@@ -385,6 +398,9 @@ add_library(
     src/functional/string_strchr.cpp
     src/functional/tgmath.cpp
     src/functionalext/backtrace/unittest_backtrace.cpp
+    src/functionalext/dl_different_hash/dl_different_hash_exe.cpp
+    src/functionalext/dl_different_hash/gnu_hash_file.cpp
+    src/functionalext/dl_different_hash/sysv_hash_file.cpp
     src/functionalext/fortify/invalid_param_b.cpp
     src/functionalext/fortify/invalid_param.cpp
     src/functionalext/fortify/pthread_fortify_test.cpp
@@ -419,6 +435,11 @@ add_library(
     src/functionalext/sched/sched_getparam.cpp
     src/functionalext/sched/sched_scheduler.cpp
     src/functionalext/string/strlen_test.cpp
+    src/functionalext/symver/reloc_symver.cpp
+    src/functionalext/symver/dlsym.cpp
+    src/functionalext/symver/dlvsym.cpp
+    src/functionalext/symver/dynlink.cpp
+    src/functionalext/symver/dso_symver.c
     src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_1.cpp
     src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_2.cpp
     src/functionalext/ldso_dlopen_config_abs_path/ldso_dlopen_config_abs_path_3.cpp
@@ -690,6 +711,7 @@ add_library(
     src/functionalext/supplement/stdio/fwide.cpp
     src/functionalext/supplement/stdio/fwprintf.cpp
     src/functionalext/supplement/stdio/fwrite.cpp
+    src/functionalext/supplement/unistd/write.cpp
     src/functionalext/supplement/stdio/getc.cpp
     src/functionalext/supplement/stdio/getc_unlocked.cpp
     src/functionalext/supplement/stdio/getchar.cpp
@@ -1071,8 +1093,38 @@ target_link_libraries(
     PUBLIC
     libace_napi.z.so
     libhilog_ndk.z.so
+    c
+    pthread
+    DsoNoSymver
+    DsoEasySymver
+    DsoHardSymver
 )
 
+target_link_options(entry PRIVATE -Wl,--export-dynamic)
+
+# lib_7: 静态库（不会被打包为 .so），使用 lib_5.c 源代码（提供 debug_test_5）
+add_library(LdsoDebugTestLib7 SHARED lib/ldso_debug_test_lib_5.c)
+set_target_properties(LdsoDebugTestLib7 PROPERTIES OUTPUT_NAME "ldso_debug_test_lib_7")
+
+# lib_6: 依赖 lib_7，使用 lib_4.c 源代码（调用 debug_test_5）
+# 注意：不链接 lib_7，让运行时动态链接器去找（会失败）
+add_library(LdsoDebugTestLib6 SHARED lib/ldso_debug_test_lib_4.c)
+set_target_properties(LdsoDebugTestLib6 PROPERTIES OUTPUT_NAME "ldso_debug_test_lib_6")
+target_link_libraries(LdsoDebugTestLib6 PRIVATE LdsoDebugTestLib7)
+
+# lib_10: 静态库，使用 lib_8.c 源代码
+add_library(LdsoDebugTestLib10 SHARED lib/ldso_debug_test_lib_8.c)
+set_target_properties(LdsoDebugTestLib10 PROPERTIES OUTPUT_NAME "ldso_debug_test_lib_10")
+
+# lib_9: 依赖 lib_10，使用 lib_7.c 源代码（调用 debug_test_8，需要链接 lib_10）
+add_library(LdsoDebugTestLib9 SHARED lib/ldso_debug_test_lib_7.c)
+set_target_properties(LdsoDebugTestLib9 PROPERTIES OUTPUT_NAME "ldso_debug_test_lib_9")
+target_link_libraries(LdsoDebugTestLib9 PRIVATE LdsoDebugTestLib10)
+
+# lib_8: 依赖 lib_9，使用 lib_6.c 源代码（调用 debug_test_7）
+add_library(LdsoDebugTestLib8 SHARED lib/ldso_debug_test_lib_6.c)
+set_target_properties(LdsoDebugTestLib8 PROPERTIES OUTPUT_NAME "ldso_debug_test_lib_8")
+target_link_libraries(LdsoDebugTestLib8 PRIVATE LdsoDebugTestLib9)
 
 add_library(DlcloseRecursive SHARED lib/dlclose_recursive.cpp)
 set_target_properties(DlcloseRecursive PROPERTIES OUTPUT_NAME "dlclose_recursive")
@@ -1080,11 +1132,92 @@ set_target_properties(DlcloseRecursive PROPERTIES OUTPUT_NAME "dlclose_recursive
 add_library(DlMultithreadDso SHARED lib/dl_multithread_test_dso.c lib/print.c)
 set_target_properties(DlMultithreadDso PROPERTIES OUTPUT_NAME "dl_multithread_test_dso")
 
-add_library(TlsInitDlopen SHARED lib/tls_init_dso.c)
-set_target_properties(TlsInitDlopen PROPERTIES OUTPUT_NAME "tls_init_dso")
-
 add_library(DlOpenDso SHARED lib/dlopen_dso.c)
 set_target_properties(DlOpenDso PROPERTIES OUTPUT_NAME "dlopen_dso")
 
 add_library(DlOpenInit SHARED lib/dlopen_init.c)
 set_target_properties(DlOpenInit PROPERTIES OUTPUT_NAME "dlopen_init")
+
+add_library(TlsTimer SHARED lib/tls_timer.c)
+set_target_properties(TlsTimer PROPERTIES OUTPUT_NAME "tls_timer")
+
+# dlopen_weaklink test libraries
+add_library(Foo SHARED lib/foo.c)
+set_target_properties(Foo PROPERTIES OUTPUT_NAME "foo")
+target_compile_options(Foo PRIVATE -fPIC -DSHARED -Wall)
+
+add_library(DlopenWeaklinkA SHARED lib/dlopen_weaklink_a.c)
+set_target_properties(DlopenWeaklinkA PROPERTIES OUTPUT_NAME "dlopen_weaklink_a")
+target_compile_options(DlopenWeaklinkA PRIVATE -fPIC -DSHARED -Wall)
+target_link_libraries(DlopenWeaklinkA PRIVATE Foo)
+target_link_options(DlopenWeaklinkA PRIVATE 
+    -Wl,-rpath=/data/local/tmp/libc-test-lib/
+)
+
+add_library(DlopenWeaklinkB SHARED lib/dlopen_weaklink_b.c)
+set_target_properties(DlopenWeaklinkB PROPERTIES OUTPUT_NAME "dlopen_weaklink_b")
+target_compile_options(DlopenWeaklinkB PRIVATE -fPIC -DSHARED -Wall)
+target_link_libraries(DlopenWeaklinkB PRIVATE Foo)
+target_link_options(DlopenWeaklinkB PRIVATE 
+    -Wl,-rpath=/data/local/tmp/libc-test-lib/
+)
+
+add_library(DlopenWeaklinkC SHARED lib/dlopen_weaklink_c.c)
+set_target_properties(DlopenWeaklinkC PROPERTIES OUTPUT_NAME "dlopen_weaklink_c")
+target_compile_options(DlopenWeaklinkC PRIVATE -fPIC -DSHARED -Wall)
+target_link_libraries(DlopenWeaklinkC PRIVATE DlopenWeaklinkA DlopenWeaklinkB)
+target_link_options(DlopenWeaklinkC PRIVATE 
+    -Wl,-rpath=/data/local/tmp/libc-test-lib/
+)
+
+add_library(DlopenWeaklinkD SHARED lib/dlopen_weaklink_d.c)
+set_target_properties(DlopenWeaklinkD PROPERTIES OUTPUT_NAME "dlopen_weaklink_d")
+target_compile_options(DlopenWeaklinkD PRIVATE -fPIC -DSHARED -Wall)
+target_link_libraries(DlopenWeaklinkD PRIVATE DlopenWeaklinkB)
+target_link_options(DlopenWeaklinkD PRIVATE 
+    -Wl,-rpath=/data/local/tmp/libc-test-lib/
+)
+
+add_library(TlsInitDlopen SHARED lib/tls_init_dso.c)
+set_target_properties(TlsInitDlopen PROPERTIES OUTPUT_NAME "tls_init_dso")
+
+add_library(AtexitDlcloseDso SHARED lib/atexit_dlclose_dso.c)
+set_target_properties(AtexitDlcloseDso PROPERTIES OUTPUT_NAME "atexit_dlclose_dso")
+
+add_library(DlcloseResetDso SHARED lib/dlclose_reset_dso.c)
+set_target_properties(DlcloseResetDso PROPERTIES OUTPUT_NAME "dlclose_reset_dso")
+
+add_library(LdsoCfiTestLib SHARED lib/ldso_cfi_test_lib.c)
+set_target_properties(LdsoCfiTestLib PROPERTIES OUTPUT_NAME "ldso_cfi_test_lib")
+
+add_library(DlopenExtRelroDso SHARED lib/dlopen_ext_relro_dso.c)
+set_target_properties(DlopenExtRelroDso PROPERTIES OUTPUT_NAME "dlopen_ext_relro_dso")
+
+# symver test libraries
+add_library(DsoNoSymver SHARED lib/dso_no_symver.c)
+set_target_properties(DsoNoSymver PROPERTIES OUTPUT_NAME "dso_no_symver")
+
+add_library(DsoEasySymver SHARED lib/dso_easy_symver.c lib/dso_easy_symver.map)
+set_target_properties(DsoEasySymver PROPERTIES OUTPUT_NAME "dso_easy_symver")
+target_link_options(DsoEasySymver PRIVATE "-Wl,--version-script=${CMAKE_CURRENT_SOURCE_DIR}/lib/dso_easy_symver.map")
+
+add_library(DsoHardSymver SHARED lib/dso_hard_symver.c lib/dso_hard_symver.map)
+set_target_properties(DsoHardSymver PROPERTIES OUTPUT_NAME "dso_hard_symver")
+target_link_options(DsoHardSymver PRIVATE "-Wl,--version-script=${CMAKE_CURRENT_SOURCE_DIR}/lib/dso_hard_symver.map")
+
+add_library(RelocSymverDso SHARED lib/reloc_symver_dso.c lib/dso_no_symver.c lib/dso_easy_symver.c lib/dso_easy_symver.map)
+set_target_properties(RelocSymverDso PROPERTIES OUTPUT_NAME "reloc_symver_dso")
+target_link_options(RelocSymverDso PRIVATE "-Wl,--version-script=${CMAKE_CURRENT_SOURCE_DIR}/lib/dso_easy_symver.map")
+
+# 添加自定义命令：构建完成后删除 lib_7 和 lib_10，防止它们被打包
+add_custom_command(TARGET LdsoDebugTestLib6 POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E remove -f 
+        ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/libldso_debug_test_lib_7.so
+    COMMENT "Removing libldso_debug_test_lib_7.so to simulate missing dependency"
+)
+
+add_custom_command(TARGET LdsoDebugTestLib8 POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E remove -f 
+        ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/libldso_debug_test_lib_10.so
+    COMMENT "Removing libldso_debug_test_lib_10.so to simulate missing dependency"
+)

@@ -547,6 +547,21 @@ export default function functional_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   iconv_joint_icu_test
+     * @tc.number SUB_THIRDPARTY_MUSL_ICONV_JOINT_ICU_TEST_0100
+     * @tc.desc   libc-test iconv_joint_icu_test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("iconv_joint_icu_test", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("iconv_joint_icu_test");
+      expect(result).assertEqual(0);
+      done();
+    });
+
     /**
      * @tc.name   mbc
      * @tc.number SUB_THIRDPARTY_MUSL_MBC_0100
@@ -612,6 +627,63 @@ export default function functional_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   reloc_symver
+     * @tc.number SUB_THIRDPARTY_MUSL_RELOC_SYMVER_0100
+     * @tc.desc   libc-test reloc_symver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("reloc_symver", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("reloc_symver");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   dlsym
+     * @tc.number SUB_THIRDPARTY_MUSL_DLSYM_0100
+     * @tc.desc   libc-test dlsym
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("dlsym", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("dlsym");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   dlvsym
+     * @tc.number SUB_THIRDPARTY_MUSL_DLVSYM_0100
+     * @tc.desc   libc-test dlvsym
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("dlvsym", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("dlvsym");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   dynlink
+     * @tc.number SUB_THIRDPARTY_MUSL_DYNLINK_0100
+     * @tc.desc   libc-test dynlink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("dynlink", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("dynlink");
+      expect(result).assertEqual(0);
+      done();
+    });
+
     /**
      * @tc.name   strptime
      * @tc.number SUB_THIRDPARTY_MUSL_STRPTIME_0100
@@ -1075,6 +1147,90 @@ export default function functional_group_test() {
      */
     it("tgmath", Level.LEVEL1, async (done: Function) => {
       const result = await testNapi.runTest("tgmath");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   pthread_cond
+     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_COND_0100
+     * @tc.desc   libc-test pthread_cond
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("pthread_cond", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("pthread_cond");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   socket
+     * @tc.number SUB_THIRDPARTY_MUSL_SOCKET_0100
+     * @tc.desc   libc-test socket
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("socket", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("socket");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   string_memset
+     * @tc.number SUB_THIRDPARTY_MUSL_STRING_MEMSET_0100
+     * @tc.desc   libc-test string_memset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("string_memset", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("string_memset");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   atexit_dlclose
+     * @tc.number SUB_THIRDPARTY_MUSL_ATEXIT_DLCLOSE_0100
+     * @tc.desc   libc-test atexit_dlclose
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("atexit_dlclose", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("atexit_dlclose");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   dl_different_hash_exe
+     * @tc.number SUB_THIRDPARTY_MUSL_DL_DIFFERENT_HASH_EXE_0100
+     * @tc.desc   libc-test dl_different_hash_exe
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("dl_different_hash_exe", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("dl_different_hash_exe");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   dlclose_reset
+     * @tc.number SUB_THIRDPARTY_MUSL_DLCLOSE_RESET_0100
+     * @tc.desc   libc-test dlclose_reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("dlclose_reset", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("dlclose_reset");
       expect(result).assertEqual(0);
       done();
     });

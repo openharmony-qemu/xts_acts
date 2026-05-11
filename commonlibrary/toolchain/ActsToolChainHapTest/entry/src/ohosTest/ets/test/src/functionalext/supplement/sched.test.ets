@@ -83,6 +83,5 @@ export default function sched_group_test() {
       expect(result).assertEqual(0);
       done();
     });
-
   });
 }
