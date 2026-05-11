@@ -23,11 +23,13 @@
 #include <arkui/native_node.h>
 
 namespace ArkUICapiTest {
-
-static napi_value InspectorLabelTest_001(napi_env env, napi_callback_info info);
-static napi_value InspectorLabelTest_002(napi_env env, napi_callback_info info);
-static napi_value InspectorLabelTest_003(napi_env env, napi_callback_info info);
-
+class InspectorLabelTest {
+public:
+    ~InspectorLabelTest();
+    static napi_value InspectorLabelTest_001(napi_env env, napi_callback_info info);
+    static napi_value InspectorLabelTest_002(napi_env env, napi_callback_info info);
+    static napi_value InspectorLabelTest_003(napi_env env, napi_callback_info info);
+};
 } // namespace ArkUICapiTest
 
 #endif // ARKUI_CAPI_XTS_INSPECTORLABEL_TEST_H

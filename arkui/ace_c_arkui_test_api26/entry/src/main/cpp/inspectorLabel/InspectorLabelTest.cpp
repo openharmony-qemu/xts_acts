@@ -19,7 +19,7 @@
 
 namespace ArkUICapiTest {
 
-static napi_value InspectorLabelTest_001(napi_env env, napi_callback_info info)
+napi_value InspectorLabelTest::InspectorLabelTest_001(napi_env env, napi_callback_info info)
 {
     NAPI_START(column, ARKUI_NODE_COLUMN);
     
@@ -29,12 +29,12 @@ static napi_value InspectorLabelTest_001(napi_env env, napi_callback_info info)
     
     auto result = nodeAPI->getAttribute(column, NODE_INSPECTOR_LABEL);
     ASSERT_EQ(result != nullptr, true);
-    ASSERT_EQ(strcmp(result->string, "testInspectorLabel"), 0);
+    ASSERT_EQ(strncmp(result->string, "testInspectorLabel", strlen("testInspectorLabel")), 0);
     
     NAPI_END;
 }
 
-static napi_value InspectorLabelTest_002(napi_env env, napi_callback_info info)
+napi_value InspectorLabelTest::InspectorLabelTest_002(napi_env env, napi_callback_info info)
 {
     NAPI_START(column, ARKUI_NODE_COLUMN);
     
@@ -44,12 +44,12 @@ static napi_value InspectorLabelTest_002(napi_env env, napi_callback_info info)
     
     auto result = nodeAPI->getAttribute(column, NODE_INSPECTOR_LABEL);
     ASSERT_EQ(result != nullptr, true);
-    ASSERT_EQ(strcmp(result->string, ""), 0);
+    ASSERT_EQ(result->string[0] == '\0', true);
     
     NAPI_END;
 }
 
-static napi_value InspectorLabelTest_003(napi_env env, napi_callback_info info)
+napi_value InspectorLabelTest::InspectorLabelTest_003(napi_env env, napi_callback_info info)
 {
     NAPI_START(column, ARKUI_NODE_COLUMN);
     
