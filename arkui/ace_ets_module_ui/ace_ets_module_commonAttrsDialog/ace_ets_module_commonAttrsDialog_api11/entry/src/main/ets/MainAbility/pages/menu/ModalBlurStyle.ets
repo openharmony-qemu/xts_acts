@@ -115,7 +115,25 @@ struct SheetTransitionExample {
               })
             })
         }
+        Button("BlurStyle 5")
+          .key("blurStyle_5")
+          .onClick(() => {
+            this.isShow5 = true
+          })
+          .fontSize(10).height('5%')
+          .bindSheet($$this.isShow5, this.myBuilder(), {
+            height: 150,
+            backgroundColor: Color.Gray,
+            blurStyle: BlurStyle.COMPONENT_ULTRA_THICK,
+            showClose: true,
+            title: { title: "title", subtitle: "subtitle" },
+            shouldDismiss: ((sheetDismiss: SheetDismiss) => {
+              console.log("bind sheet shouldDismiss")
+              sheetDismiss.dismiss()
+            })
+          })
       }
+
 
     }
     .margin({top:30,left:30})
