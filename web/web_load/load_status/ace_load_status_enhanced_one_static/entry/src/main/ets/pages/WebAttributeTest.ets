@@ -21,7 +21,7 @@ import { State } from "@ohos.arkui.stateManagement"
 import { Callback } from '@ohos.base'
 import { OnRefreshAccessedHistoryEvent,OnPageVisibleEvent,OnLoadStartedEvent,OnLoadFinishedEvent,OnPageBeginEvent,OnPageEndEvent,OnProgressChangeEvent,Entry, Component, Column, Row, Button, ClickEvent, Web } from "@ohos.arkui.component"
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 

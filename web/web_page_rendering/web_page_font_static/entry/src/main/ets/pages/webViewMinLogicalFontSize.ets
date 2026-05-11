@@ -26,14 +26,14 @@ import image from '@ohos.multimedia.image';
 import web_webview from '@ohos.web.webview';
 import  { BusinessError } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector';
-class StringFields {
+export class StringFields {
   str: string = '';
 }
 @Entry
 @Component
 struct WebComponent {
   controller: web_webview.WebviewController = new web_webview.WebviewController(undefined);
-  stringObj: StringFields  = new StringFields ();
+  stringObj: StringFields  = new StringFields();
   @State minFontSize: int | undefined = 8
   @State defaultFontSize: int | undefined = 16
   @State minLogicalFontSize: int | undefined = 8

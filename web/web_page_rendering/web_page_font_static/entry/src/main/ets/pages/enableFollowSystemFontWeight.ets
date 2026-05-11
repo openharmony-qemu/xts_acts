@@ -26,7 +26,7 @@ import image from '@ohos.multimedia.image';
 import web_webview from '@ohos.web.webview';
 import  { BusinessError } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector';
-class StringFields {
+export class StringFields {
   str: string = '';
 }
 @Entry
@@ -34,7 +34,7 @@ class StringFields {
 struct WebComponent {
   controller: web_webview.WebviewController = new web_webview.WebviewController(undefined);
   @State str: string = 'enableFollowSystemFontWeight01';
-  stringObj: StringFields  = new StringFields ();
+  stringObj: StringFields  = new StringFields();
 
   aboutToAppear() {
     console.info('Entry aboutToAppear');

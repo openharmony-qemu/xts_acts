@@ -478,5 +478,7 @@ export {
   ASY_ECC_KEY_SPEC_1,
   ASY_ECC_KEY_SPEC_2,
   ASY_ECC_KEY_SPEC_3,
+  keyPairKAT,
+  KeyKAT,
   keys
 }

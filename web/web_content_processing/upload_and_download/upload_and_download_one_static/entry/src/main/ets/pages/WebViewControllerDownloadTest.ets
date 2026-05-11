@@ -31,7 +31,7 @@ import Utils from '../../src/test/Utils.test';
 import { BusinessError, Callback, RecordData } from '@ohos.base'
 import { State } from '@ohos.arkui.stateManagement'
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
