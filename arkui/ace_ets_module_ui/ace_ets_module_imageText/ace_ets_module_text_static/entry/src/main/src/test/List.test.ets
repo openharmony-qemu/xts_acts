@@ -16,9 +16,11 @@
 import TextAttributeTest from './TextTest/TextAttribute.test';
 import TextDirectionTest from './TextTest/TextDirection.test';
 import TextOnWillCopyTest from './TextApi26Test/TextOnWillCopy.test';
+import TextFontVariationsTest from './TextApi26Test/TextFontVariations.test';
 
 export default function testsuite() {
   TextAttributeTest();
   TextDirectionTest();
   TextOnWillCopyTest();
+  TextFontVariationsTest();
 }
