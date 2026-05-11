@@ -1488,24 +1488,13 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       let ukeyInfo: certManager.UkeyInfo = {
         certPurpose: certManager.CertificatePurpose.PURPOSE_ALL,
       };
-      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
-        try {
-          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
-          expect(null).assertFail();
-        } catch (err) {
-          let error: BusinessError = err as BusinessError;
-          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1500 failed. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(17500010);
-        }
-      } else {
-        try {
-          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
-          expect(null).assertFail();
-        } catch (err) {
-          let error: BusinessError = err as BusinessError;
-          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1500 failed. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(801);
-        }
+      try {
+        await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+        expect(null).assertFail();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1500 failed. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(17500011);
       }
       console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1500 end');
       done();
