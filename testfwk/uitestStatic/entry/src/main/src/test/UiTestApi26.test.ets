@@ -1031,7 +1031,7 @@ export default function uitestApi26Test(): void {
         await driver!.delayMs(500);
       } catch (error) {
         hilog.info(domain, tag, `testDriverTriggerPenKeyHandwritingClick_static error: ${(error as Error).message}`);
-        expect((error as Error).message).assertEqual('' + ErrorCode17000005)
+        expect((error as Error).message).assertEqual(ErrorCode17000005)
       }
       await stopApplication('com.uitestScene.acts');
       hilog.info(domain, tag, 'testDriverTriggerPenKeyHandwritingClick_static over');
@@ -1066,7 +1066,7 @@ export default function uitestApi26Test(): void {
         }
       } catch (error) {
         hilog.info(domain, tag, `testDriverTriggerPenKeyHandwritingWithPointClick_static error: ${(error as Error).message}`);
-        expect((error as Error).message).assertEqual('' + ErrorCode17000005)
+        expect((error as Error).message).assertEqual(ErrorCode17000005)
       }
       await stopApplication('com.uitestScene.acts');
       hilog.info(domain, tag, 'testDriverTriggerPenKeyHandwritingWithPointClick_static over');
@@ -1088,7 +1088,7 @@ export default function uitestApi26Test(): void {
         await driver!.delayMs(500);
       } catch (error) {
         hilog.info(domain, tag, `testDriverTriggerPenKeyHandwritingDoubleClick_static error: ${(error as Error).message}`);
-        expect((error as Error).message).assertEqual('' + ErrorCode17000005);
+        expect((error as Error).message).assertEqual(ErrorCode17000005);
       }
       hilog.info(domain, tag, 'testDriverTriggerPenKeyHandwritingDoubleClick_static over');
     });
@@ -1125,7 +1125,7 @@ export default function uitestApi26Test(): void {
         }
       } catch (error) {
         hilog.info(domain, tag, `testDriverTriggerPenKeyHandwritingWithPointDoubleClick_static error: ${(error as Error).message}`);
-        expect((error as Error).message).assertEqual('' + ErrorCode17000005);
+        expect((error as Error).message).assertEqual(ErrorCode17000005);
       }
       hilog.info(domain, tag, 'testDriverTriggerPenKeyHandwritingWithPointDoubleClick_static over');
     });
@@ -1158,7 +1158,7 @@ export default function uitestApi26Test(): void {
         }
       } catch (error) {
         hilog.info(domain, tag, `testDriverTriggerPenKeyAirMouseClick_static error: ${(error as Error).message}`);
-        expect((error as Error).message).assertEqual('' + ErrorCode17000005);
+        expect((error as Error).message).assertEqual(ErrorCode17000005);
       }
       await stopApplication('com.uitestScene.acts');
       hilog.info(domain, tag, 'testDriverTriggerPenKeyAirMouseClick_static over');
@@ -1196,12 +1196,10 @@ export default function uitestApi26Test(): void {
         }
       } catch (error) {
         hilog.info(domain, tag, `testDriverTriggerPenKeyAirMouseDoubleClick_static error: ${(error as Error).message}`);
-        expect((error as Error).message).assertEqual('' + ErrorCode17000005);
+        expect((error as Error).message).assertEqual(ErrorCode17000005);
       }
       await stopApplication('com.uitestScene.acts');
       hilog.info(domain, tag, 'testDriverTriggerPenKeyAirMouseDoubleClick_static over');
     });
-
-
   })
 }
