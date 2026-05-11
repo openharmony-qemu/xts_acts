@@ -5,6 +5,8 @@
         "MainAbility/pages/frameNode/nodeContainer",
         "MainAbility/pages/frameNode/frameNodeTestGetInterface",
         "MainAbility/pages/frameNode/GetFrameNodeById",
-        "MainAbility/pages/frameNode/GetFrameNodeByUniqueId"
+        "MainAbility/pages/frameNode/GetFrameNodeByUniqueId",
+ 	    "MainAbility/pages/frameNode/ComponentContentIsTransferred",
+ 	    "MainAbility/pages/frameNode/ComponentContentIsDisposed"
     ]
 }
