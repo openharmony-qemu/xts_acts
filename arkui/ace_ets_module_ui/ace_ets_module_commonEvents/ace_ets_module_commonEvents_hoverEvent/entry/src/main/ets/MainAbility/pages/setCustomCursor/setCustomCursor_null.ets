@@ -16,12 +16,15 @@
 import { image } from '@kit.ImageKit';
 import { CursorController } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { expect } from '@ohos/hypium';
+import effectKit from '@ohos.effectKit';
 
 @Entry
 @Component
 struct CustomCursorExample {
   cursorController: CursorController = this.getUIContext().getCursorController();
   @State pixelMap: image.PixelMap | undefined = undefined;
+  @State pixel: image.PixelMap | undefined = undefined;
   @State historyX: number = 0;
   @State historyY: number = 0;
 
@@ -49,19 +52,29 @@ struct CustomCursorExample {
       const imageSource = image.createImageSource(buffer);
 
       const pixelMap = await imageSource.createPixelMap({
-        desiredSize: { width: 32, height: 32 }
-      });
+        desiredSize: { width: 32, height: 32},
+      })
+      expect(pixelMap.isEditable).assertFalse();
+      expect(pixelMap.isStrideAlignment).assertFalse();
+      console.info('www data pixelMap isEditable ', pixelMap.isEditable)
+      console.info('www data pixelMap isStrideAlignment ', pixelMap.isStrideAlignment)
+      let pixel = effectKit.createEffect(pixelMap).getPixelMap();
+      console.info('www data pixelMap isEditable ', pixel.isEditable)
+      console.info('www data pixelMap isStrideAlignment ', pixel.isStrideAlignment)
+      expect(pixel.isEditable).assertTrue();
+      expect(pixel.isStrideAlignment).assertTrue()
       this.pixelMap = pixelMap;
+      this.pixel = pixel;
       console.info('Custom cursor loaded successfully');
 
       this.cursorController.setCustomCursor(this.pixelMap, null, null);
+      this.cursorController.setCustomCursor(this.pixel, null, null);
 
     } catch (error) {
       let err = error as BusinessError;
       console.error(`Failed to load cursor: ${err.code}, ${err.message}`);
     }
   }
-
   build() {
     Column() {
       Button('1')
