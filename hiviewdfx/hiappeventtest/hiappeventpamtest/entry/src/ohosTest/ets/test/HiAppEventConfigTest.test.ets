@@ -703,11 +703,9 @@ export default function HiAppEventConfigTest() {
         const policy = policies_true[i];
         await hiAppEvent.configEventPolicy(policy).then(() => {
           console.info("configEventPolicy1.1_success_test policies_true Successfully set event policy222, index:", i);
-          // done();
         }).catch((err: BusinessError) => {
           hilog.error(0x0000, 'configEventPolicy1.1', `Failed to set event policy. Code: ${err?.code}, message: ${err?.message}`);
           expect(false).assertEqual(true);
-          // done();
         });
       }
       done();
@@ -727,10 +725,8 @@ export default function HiAppEventConfigTest() {
         const policy = policies_hilog[i];
         await hiAppEvent.configEventPolicy(policy).then(() => {
           expect(false).assertEqual(true);
-          // done();
         }).catch((err: BusinessError) => {
           hilog.error(0x0000, 'configEventPolicy1.1', `Failed to set event policy. Code: ${err?.code}, message: ${err?.message}, index: ${i}`);
-          // done();
         });
       }
       done();
@@ -750,12 +746,10 @@ export default function HiAppEventConfigTest() {
         const policy = policies_401[i];
         await hiAppEvent.configEventPolicy(policy).then(() => {
           console.info("configEventPolicy1.1_401_test policies_401 Successfully set event policy, index:", i);
-          // done();
         }).catch((err: BusinessError) => {
           hilog.error(0x0000, 'configEventPolicy1.1', `Failed to set event policy. Code: ${err?.code}, message: ${err?.message}`);
           console.info("configEventPolicy1.1_401_test policies_401 Failed to set event policy, index:", i);
           expect(Number(err.code) === 401).assertEqual(true);
-          // done();
         });
       }
       done();
