@@ -160,8 +160,8 @@ export default function audioCapturer() {
            console.info(`${Tag} AudioFrameworkRecLog: AudioCapturer Created : Success : Stream Type: success`);
         } catch (err) {
           console.info(`${Tag} AudioFrameworkRecLog: AudioCapturer Created : ERROR :  ${JSON.stringify(err.message)}`);
-          LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
-          LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
+          LE24 = (audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE).valueOf().toDouble();
+          LE32 = (audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE).valueOf().toDouble();
           let sampleFormat = AudioRendererOptions.streamInfo.sampleFormat;
           if ((sampleFormat === LE24 || sampleFormat === LE32) && err.code === 202) {
             done();
@@ -429,7 +429,7 @@ export default function audioCapturer() {
           console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
           let OverflowCOuntSync = audioCapPromise!.getOverflowCountSync();
           console.info(`${Tag}: overflowCOuntSync : Converted: ${OverflowCOuntSync}`);
-          expect(OverflowCOuntSync as number).assertLargerOrEqual(0.0);
+          expect(OverflowCOuntSync.toDouble()).assertLargerOrEqual(0.0);
         }).catch((err: Error) => {
           console.error(`AudioCapturer Created : ERROR : ${err}`);
           expect(false).assertTrue();
@@ -2477,7 +2477,7 @@ export default function audioCapturer() {
         console.log(`${Tag} start ok`);
         let audioTime = await audioCapPromise!.getAudioTime();
         console.log(`${Tag} audioTime: ${JSON.stringify(audioTime)}`);
-        expect(audioTime as number).assertLarger(0.0);
+        expect(audioTime.toDouble()).assertLarger(0.0);
 
         let bufferSize = await audioCapPromise!.getBufferSize();
         console.log(`${Tag} AudioFrameworkRecLog: buffer size:  ${JSON.stringify(bufferSize)}`);
@@ -2507,7 +2507,7 @@ export default function audioCapturer() {
         }
         let audioTime2 = await audioCapPromise!.getAudioTime();
         console.log(`${Tag} audioTime2: ${JSON.stringify(audioTime2)}`);
-        expect(audioTime2 as number).assertLarger(0.0);
+        expect(audioTime2.toDouble()).assertLarger(0.0);
       } catch (err) {
         console.log(`${Tag} start-getAudioTime-getBufferSize-read-getAudioTimein- err: ${JSON.stringify(err)}`);
         expect(false).assertTrue();
@@ -2562,7 +2562,7 @@ export default function audioCapturer() {
         console.log(`${Tag} start ok`);
         let audioTime = await audioCapPromise!.getAudioTime();
         console.log(`${Tag} audioTime: ${JSON.stringify(audioTime)}`);
-        expect(audioTime as number).assertLarger(0.0);
+        expect(audioTime.toDouble()).assertLarger(0.0);
 
         let bufferSize = await audioCapPromise!.getBufferSize();
         console.log(`${Tag} AudioFrameworkRecLog: buffer size:  ${JSON.stringify(bufferSize)}`);
@@ -2599,7 +2599,7 @@ export default function audioCapturer() {
         await audioCapPromise!.stop();
         let audioTime2 = await audioCapPromise!.getAudioTime();
         console.log(`${Tag} audioTime2: ${JSON.stringify(audioTime2)}`);
-        expect(audioTime2 as number).assertLarger(0.0);
+        expect(audioTime2.toDouble()).assertLarger(0.0);
       } catch (err) {
         console.log(`${Tag} stop-getAudioTimein- err: ${JSON.stringify(err)}`);
         flag = true;
@@ -2650,7 +2650,7 @@ export default function audioCapturer() {
         await audioCapPromise!.start();
         let audioTime = await audioCapPromise!.getAudioTime();
         console.log(`${Tag} audioTime: ${JSON.stringify(audioTime)}`)
-        expect(audioTime as number).assertLarger(0.0);
+        expect(audioTime.toDouble()).assertLarger(0.0);
       } catch (err) {
         console.log(`${Tag} start-getAudioTime err: ${JSON.stringify(err)}`);
         expect(false).assertTrue();
@@ -2700,7 +2700,7 @@ export default function audioCapturer() {
         await audioCapPromise!.start();
         let audioTime = audioCapPromise!.getAudioTimeSync();
         console.log(`${Tag} audioTime: ${JSON.stringify(audioTime)}`)
-        expect(audioTime as number).assertLarger(0.0);
+        expect(audioTime.toDouble()).assertLarger(0.0);
       } catch (err) {
         console.log(`${Tag} start-getAudioTimeSync err: ${JSON.stringify(err)}`);
         expect(false).assertTrue();
@@ -3370,7 +3370,7 @@ export default function audioCapturer() {
       try {	 
         let audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);	 
         await audioCapPromise!.getOverflowCount().then((data: long) => {	 
-          expect(data as number).assertLargerOrEqual(0.0);	 
+          expect(data.toDouble()).assertLargerOrEqual(0.0);	 
           console.info(`${Tag}: getOverflowCount : Converted: ${data}`);	 
         }).catch((err: Error) => {	  
           console.error(`${Tag}: getOverflowCount : ERROR : ${err}`);	 

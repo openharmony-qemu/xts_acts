@@ -44,7 +44,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 
 // ===================== Modifier 定义 =====================
 @Observed
-class ListModifier implements AttributeModifier<ListAttribute> {
+export class ListModifier implements AttributeModifier<ListAttribute> {
   @State public friction: number | Resource | undefined = 100;
 
   applyNormalAttribute(instance: ListAttribute): void {

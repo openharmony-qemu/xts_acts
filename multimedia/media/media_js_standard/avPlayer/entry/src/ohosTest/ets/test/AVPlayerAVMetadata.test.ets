@@ -22,6 +22,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 const AUDIO_SOURCE = 'mjpeg_mp3.mp3';
 const VIDEO_SOURCE = 'H264_AAC_Matedata.mp4';
+const IMAGE_SOURCE = 'greatwall.jpg';
 const VIDEO_NOSUPPORT = 'No_Support_Format.mov'
 const HTTP_SOURCE = 'http://XXX';
 const TAG = "MetadataDemo"
@@ -29,6 +30,7 @@ const SLEEP_TIME = 200
 let AVFileDescriptor: media.AVFileDescriptor;
 let AVFileDescriptor2: media.AVFileDescriptor;
 let AVFileDescriptor3: media.AVFileDescriptor;
+let AVFileDescriptor4: media.AVFileDescriptor;
 let mediaTestBase = new MediaTestBase()
 
 function openFileFailed() {
@@ -125,6 +127,9 @@ export default function AVMetadata() {
       });
       await mediaTestBase.getFileDescriptorFromFileDir(VIDEO_NOSUPPORT, openFileFailed).then((res) => {
         AVFileDescriptor3 = res;
+      });
+      await mediaTestBase.getFileDescriptorFromFileDir(IMAGE_SOURCE, openFileFailed).then((res) => {
+        AVFileDescriptor4 = res;
       });
     });
     beforeEach(async () => {
@@ -1016,6 +1021,30 @@ export default function AVMetadata() {
       done();
     });
     /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_ENCODER_PROMISE_FUNCTION_3700
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_ENCODER_PROMISE_FUNCTION_3700
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_ENCODER_PROMISE_FUNCTION_3700', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 获取元信息
+      await avMetadataExtractor.fetchMetadata().then((metadata) => {
+        console.info(TAG, `fetchMetadata callback success video encoder :${metadata.encoder}}`);
+        expect(metadata.encoder).assertEqual("Lavf59.21.100");
+        avMetadataExtractor.release();
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_PLAYER_AVMETADATA_ALBUM_CB_FUNCTION_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_PLAYER_AVMETADATA_ALBUM_CB_FUNCTION_0100
      * @tc.desc   Local Video playback control test
@@ -1386,7 +1415,7 @@ export default function AVMetadata() {
       // 批量获取缩略图
       avMetadataExtractor.fetchFramesByTimes(timesUs, queryOption, param, onFrameFetched);
       avMetadataExtractor.cancelAllFetchFrames();
-      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      await mediaTestBase.msleepAsync(SLEEP_TIME * 10);
       avMetadataExtractor.release();
       done();
     });
@@ -1438,7 +1467,7 @@ export default function AVMetadata() {
       // 批量获取缩略图
       avMetadataExtractor.fetchFramesByTimes(null, queryOption, null, null);
       avMetadataExtractor.cancelAllFetchFrames();
-      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      await mediaTestBase.msleepAsync(SLEEP_TIME * 10);
       avMetadataExtractor.release();
       done();
     });
@@ -1494,7 +1523,7 @@ export default function AVMetadata() {
         expect(Number(e.code)).assertEqual(5400108);
         console.error(TAG, 'fetchFrameByTime sync fail');
       }
-      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      await mediaTestBase.msleepAsync(SLEEP_TIME * 10);
       avMetadataExtractor.release();
       done();
     });
@@ -1637,5 +1666,1453 @@ export default function AVMetadata() {
         });
         done();
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_0100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_0100
+     * @tc.desc   Online http Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_0100', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 初始化入参
+      let timeoutMs = 3000;
+      const onFrameFetched = (frameInfo: media.FrameInfo, err: BusinessError): void => {
+        if (err) {
+          expect(err.code).assertEqual(5400106);
+          done();
+        }
+        if (frameInfo !== undefined && frameInfo.image !== undefined) {
+          let requestedTimeUs: number = frameInfo.requestedTimeUs;
+          expect(requestedTimeUs).assertEqual(1000000);
+          if (frameInfo.actualTimeUs != undefined) {
+            let actualTime: number = frameInfo.actualTimeUs;
+            expect(actualTime).assertEqual(115000);
+          }
+          let result: number = frameInfo.result;
+          expect(result).assertEqual(1);
+          
+          let pixelMap: image.PixelMap = frameInfo.image;
+          expect(pixelMap).not().assertUndefined();
+          console.info(TAG, 'fetchFramesByTimes success');
+        }
+      };
+      let timesUs: number[] = [];
+      timesUs.push(1000000);
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 批量获取缩略图
+      avMetadataExtractor.fetchFramesByTimesWithTimeout(timesUs, queryOption, param, timeoutMs, onFrameFetched);
+      avMetadataExtractor.cancelAllFetchFrames();
+      avMetadataExtractor.release();
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_0100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_0100
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_0100', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+          console.info(TAG, `fetchMetadata callback success, album: ${metadata.album}`);
+          expect(metadata.album).assertEqual("media");
+          avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0100
+     * @tc.desc   Online http Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0100', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 初始化入参
+      let timeUs = 10000;
+      let timeoutMs = 3000;
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 获取缩略图
+      await avMetadataExtractor.fetchFrameByTimeWithTimeout(timeUs, queryOption, param, timeoutMs).then((pixelMap: image.PixelMap | undefined) => {
+        expect(pixelMap).not().assertUndefined();
+        console.info(TAG, `fetchFrameByTime success`);
+      }).catch((error: BusinessError) => {
+        console.error(`fetchFrameByTime catchCallback ${error.name} code: ${error.code} message: ${error.message}`);
+        expect().assertFail();
+      });
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      await avMetadataExtractor.release();
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_0200
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_0200
+     * @tc.desc   error code 5400102, no dataSrc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_0200', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      // 初始化入参
+      let timeoutMs = 3000;
+      const onFrameFetched = (frameInfo: media.FrameInfo, err: BusinessError): void => {
+        if (err) {
+          expect(err.code).assertEqual(5400106);
+          done();
+        }
+        if (frameInfo !== undefined && frameInfo.image !== undefined) {
+        let requestedTimeUs: number = frameInfo.requestedTimeUs;
+        expect(requestedTimeUs).assertEqual(1000000);
+        if (frameInfo.actualTimeUs != undefined) {
+            let actualTime: number = frameInfo.actualTimeUs;
+            expect(actualTime).assertEqual(115000);
+        }
+        let result: number = frameInfo.result;
+        expect(result).assertEqual(1);
+        
+        let pixelMap: image.PixelMap = frameInfo.image;
+        expect(pixelMap).not().assertUndefined();
+        console.info(TAG, 'fetchFramesByTimes success');
+        }
+      };
+      let timesUs: number[] = [];
+      timesUs.push(1000000);
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 批量获取缩略图
+      try {
+        avMetadataExtractor.fetchFramesByTimesWithTimeout(timesUs, queryOption, param, timeoutMs, onFrameFetched);
+      } catch(err) {
+        console.error(`FramesByTimes Failed, code is ${err.code}, message is ${err.message}`);
+        expect(err.code == 5400102).assertTrue();
+      }
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      avMetadataExtractor.cancelAllFetchFrames();
+      avMetadataExtractor.release();
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_0300
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_0300
+     * @tc.desc   error code 5400106, unsupport file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_0300', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 初始化入参
+      let timeoutMs = 3000;
+      const onFrameFetched = (frameInfo: media.FrameInfo, err: BusinessError): void => {
+        if (err) {
+          expect(err.code).assertEqual(5400106);
+          done();
+        }
+        if (frameInfo !== undefined && frameInfo.image !== undefined) {
+          let requestedTimeUs: number = frameInfo.requestedTimeUs;
+          expect(requestedTimeUs).assertEqual(1000000);
+          if (frameInfo.actualTimeUs != undefined) {
+            let actualTime: number = frameInfo.actualTimeUs;
+            expect(actualTime).assertEqual(115000);
+          }
+          let result: number = frameInfo.result;
+          expect(result).assertEqual(1);
+          let pixelMap: image.PixelMap = frameInfo.image;
+          expect(pixelMap).not().assertUndefined();
+          console.info(TAG, 'fetchFramesByTimes success');
+        }
+      };
+      let timesUs: number[] = [];
+      timesUs.push(1000000);
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 批量获取缩略图
+      avMetadataExtractor.fetchFramesByTimesWithTimeout(timesUs, queryOption, param, timeoutMs, onFrameFetched);
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      avMetadataExtractor.cancelAllFetchFrames();
+      avMetadataExtractor.release();
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_0400
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_0400
+     * @tc.desc   error code 5400104, fetch frame timeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_0400', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 初始化入参
+      let timeoutMs = 1;
+      const onFrameFetched = (frameInfo: media.FrameInfo, err: BusinessError): void => {
+        if (err) {
+          expect(err.code).assertEqual(5400104);
+          done();
+        }
+        if (frameInfo !== undefined && frameInfo.image !== undefined) {
+          let requestedTimeUs: number = frameInfo.requestedTimeUs;
+          expect(requestedTimeUs).assertEqual(1000000);
+          if (frameInfo.actualTimeUs != undefined) {
+            let actualTime: number = frameInfo.actualTimeUs;
+            expect(actualTime).assertEqual(115000);
+          }
+          let result: number = frameInfo.result;
+          expect(result).assertEqual(1);
+          let pixelMap: image.PixelMap = frameInfo.image;
+          expect(pixelMap).not().assertUndefined();
+          console.info(TAG, 'fetchFramesByTimes success');
+        }
+      };
+      let timesUs: number[] = [];
+      timesUs.push(1000000);
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 批量获取缩略图
+      avMetadataExtractor.fetchFramesByTimesWithTimeout(timesUs, queryOption, param, timeoutMs, onFrameFetched);
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      avMetadataExtractor.cancelAllFetchFrames();
+      avMetadataExtractor.release();
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_0500
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_0500
+     * @tc.desc   error code 5400108, parameter check failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_0500', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 初始化入参
+      let timeoutMs = 0;
+      const onFrameFetched = (frameInfo: media.FrameInfo, err: BusinessError): void => {
+        if (err) {
+          return;
+        }
+        if (frameInfo !== undefined && frameInfo.image !== undefined) {
+          let requestedTimeUs: number = frameInfo.requestedTimeUs;
+          expect(requestedTimeUs).assertEqual(1000000);
+          if (frameInfo.actualTimeUs != undefined) {
+            let actualTime: number = frameInfo.actualTimeUs;
+            expect(actualTime).assertEqual(115000);
+          }
+          let result: number = frameInfo.result;
+          expect(result).assertEqual(1);
+          let pixelMap: image.PixelMap = frameInfo.image;
+          expect(pixelMap).not().assertUndefined();
+          console.info(TAG, 'fetchFramesByTimes success');
+        }
+      };
+      let timesUs: number[] = [];
+      timesUs.push(1000000);
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 批量获取缩略图
+      try {
+        avMetadataExtractor.fetchFramesByTimesWithTimeout(timesUs, queryOption, param, timeoutMs, onFrameFetched);
+      } catch(err) {
+        console.error(`FramesByTimes Failed, code is ${err.code}, message is ${err.message}`);
+        expect(err.code == 5400108).assertTrue();
+      }
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      avMetadataExtractor.cancelAllFetchFrames();
+      avMetadataExtractor.release();
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_0600
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_0600
+     * @tc.desc   timesUs null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_0600', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 初始化入参
+      let timeoutMs = 0;
+      const onFrameFetched = (frameInfo: media.FrameInfo, err: BusinessError): void => {
+        if (err) {
+          return;
+        }
+        if (frameInfo !== undefined && frameInfo.image !== undefined) {
+          let requestedTimeUs: number = frameInfo.requestedTimeUs;
+          expect(requestedTimeUs).assertEqual(1000000);
+          if (frameInfo.actualTimeUs != undefined) {
+            let actualTime: number = frameInfo.actualTimeUs;
+            expect(actualTime).assertEqual(115000);
+          }
+          let result: number = frameInfo.result;
+          expect(result).assertEqual(1);
+          let pixelMap: image.PixelMap = frameInfo.image;
+          expect(pixelMap).not().assertUndefined();
+          console.info(TAG, 'fetchFramesByTimes success');
+        }
+      };
+      let timesUs: number[] = [];
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_PREVIOUS_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 批量获取缩略图
+      try {
+        avMetadataExtractor.fetchFramesByTimesWithTimeout(timesUs, queryOption, param, timeoutMs, onFrameFetched);
+      } catch(err) {
+        console.error(`FramesByTimes Failed, code is ${err.code}, message is ${err.message}`);
+        expect(err.code == 5400108).assertTrue();
+      }
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      avMetadataExtractor.cancelAllFetchFrames();
+      avMetadataExtractor.release();
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_0700
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_0700
+     * @tc.desc   callback null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_0700', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 初始化入参
+      let timeoutMs = 0;
+      let timesUs: number[] = [];
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_CLOSEST_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 批量获取缩略图
+      try {
+        avMetadataExtractor.fetchFramesByTimesWithTimeout(timesUs, queryOption, param, timeoutMs, undefined);
+      } catch(err) {
+        console.error(`FramesByTimes Failed, code is ${err.code}, message is ${err.message}`);
+        expect(err.code == 5400102).assertTrue();
+      }
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      avMetadataExtractor.cancelAllFetchFrames();
+      avMetadataExtractor.release();
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_0800
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_0800
+     * @tc.desc   timeus, param undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_0800', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 初始化入参
+      let timeoutMs = 0;
+      const onFrameFetched = (frameInfo: media.FrameInfo, err: BusinessError): void => {
+        if (err) {
+          return;
+        }
+        if (frameInfo !== undefined && frameInfo.image !== undefined) {
+          let requestedTimeUs: number = frameInfo.requestedTimeUs;
+          expect(requestedTimeUs).assertEqual(1000000);
+          if (frameInfo.actualTimeUs != undefined) {
+            let actualTime: number = frameInfo.actualTimeUs;
+            expect(actualTime).assertEqual(115000);
+          }
+          let result: number = frameInfo.result;
+          expect(result).assertEqual(1);
+          let pixelMap: image.PixelMap = frameInfo.image;
+          expect(pixelMap).not().assertUndefined();
+          console.info(TAG, 'fetchFramesByTimes success');
+        }
+      };
+      let timesUs: number[] = [];
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_CLOSEST;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 批量获取缩略图
+      try {
+        avMetadataExtractor.fetchFramesByTimesWithTimeout(undefined, queryOption, undefined, timeoutMs, onFrameFetched);
+      } catch(err) {
+        console.error(`FramesByTimes Failed, code is ${err.code}, message is ${err.message}`);
+      }
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      avMetadataExtractor.cancelAllFetchFrames();
+      avMetadataExtractor.release();
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_0900
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_0900
+     * @tc.desc   error code 5400108, parameter check failed, timeoutMs == -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_0900', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 初始化入参
+      let timeoutMs = -1;
+      const onFrameFetched = (frameInfo: media.FrameInfo, err: BusinessError): void => {
+        if (err) {
+          return;
+        }
+        if (frameInfo !== undefined && frameInfo.image !== undefined) {
+          let requestedTimeUs: number = frameInfo.requestedTimeUs;
+          expect(requestedTimeUs).assertEqual(1000000);
+          if (frameInfo.actualTimeUs != undefined) {
+            let actualTime: number = frameInfo.actualTimeUs;
+            expect(actualTime).assertEqual(115000);
+          }
+          let result: number = frameInfo.result;
+          expect(result).assertEqual(1);
+          let pixelMap: image.PixelMap = frameInfo.image;
+          expect(pixelMap).not().assertUndefined();
+          console.info(TAG, 'fetchFramesByTimes success');
+        }
+      };
+      let timesUs: number[] = [];
+      timesUs.push(1000000);
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 批量获取缩略图
+      try {
+        avMetadataExtractor.fetchFramesByTimesWithTimeout(timesUs, queryOption, param, timeoutMs, onFrameFetched);
+      } catch(err) {
+        console.error(`FramesByTimes Failed, code is ${err.code}, message is ${err.message}`);
+        expect(err.code == 5400108).assertTrue();
+      }
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      avMetadataExtractor.cancelAllFetchFrames();
+      avMetadataExtractor.release();
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_1000
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_1000
+     * @tc.desc   error code 5400106, timeoutMs == 20000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_1000', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 初始化入参
+      let timeoutMs = 20000;
+      const onFrameFetched = (frameInfo: media.FrameInfo, err: BusinessError): void => {
+        if (err) {
+          return;
+        }
+        if (frameInfo !== undefined && frameInfo.image !== undefined) {
+          let requestedTimeUs: number = frameInfo.requestedTimeUs;
+          expect(requestedTimeUs).assertEqual(1000000);
+          if (frameInfo.actualTimeUs != undefined) {
+            let actualTime: number = frameInfo.actualTimeUs;
+            expect(actualTime).assertEqual(115000);
+          }
+          let result: number = frameInfo.result;
+          expect(result).assertEqual(1);
+          let pixelMap: image.PixelMap = frameInfo.image;
+          expect(pixelMap).not().assertUndefined();
+          console.info(TAG, 'fetchFramesByTimes success');
+        }
+      };
+      let timesUs: number[] = [];
+      timesUs.push(1000000);
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 批量获取缩略图
+      try {
+        avMetadataExtractor.fetchFramesByTimesWithTimeout(timesUs, queryOption, param, timeoutMs, onFrameFetched);
+      } catch(err) {
+        console.error(`FramesByTimes Failed, code is ${err.code}, message is ${err.message}`);
+        expect(err.code == 5400108).assertTrue();
+      }
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      avMetadataExtractor.cancelAllFetchFrames();
+      avMetadataExtractor.release();
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_1100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_1100
+     * @tc.desc   error code 5400108, timeoutMs == 20001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_1100', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 初始化入参
+      let timeoutMs = 20001;
+      const onFrameFetched = (frameInfo: media.FrameInfo, err: BusinessError): void => {
+        if (err) {
+          return;
+        }
+        if (frameInfo !== undefined && frameInfo.image !== undefined) {
+          let requestedTimeUs: number = frameInfo.requestedTimeUs;
+          expect(requestedTimeUs).assertEqual(1000000);
+          if (frameInfo.actualTimeUs != undefined) {
+            let actualTime: number = frameInfo.actualTimeUs;
+            expect(actualTime).assertEqual(115000);
+          }
+          let result: number = frameInfo.result;
+          expect(result).assertEqual(1);
+          let pixelMap: image.PixelMap = frameInfo.image;
+          expect(pixelMap).not().assertUndefined();
+          console.info(TAG, 'fetchFramesByTimes success');
+        }
+      };
+      let timesUs: number[] = [];
+      timesUs.push(1000000);
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_CLOSEST;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 批量获取缩略图
+      try {
+        avMetadataExtractor.fetchFramesByTimesWithTimeout(timesUs, queryOption, param, timeoutMs, onFrameFetched);
+      } catch(err) {
+        console.error(`FramesByTimes Failed, code is ${err.code}, message is ${err.message}`);
+        expect(err.code == 5400108).assertTrue();
+      }
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      avMetadataExtractor.cancelAllFetchFrames();
+      avMetadataExtractor.release();
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_1200
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_1200
+     * @tc.desc   error code 5400108, parameter check failed, array size 4097
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_1200', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 初始化入参
+      let timeoutMs = 0;
+      const onFrameFetched = (frameInfo: media.FrameInfo, err: BusinessError): void => {
+        if (err) {
+          return;
+        }
+        if (frameInfo !== undefined && frameInfo.image !== undefined) {
+          let requestedTimeUs: number = frameInfo.requestedTimeUs;
+          expect(requestedTimeUs).assertEqual(1000000);
+          if (frameInfo.actualTimeUs != undefined) {
+            let actualTime: number = frameInfo.actualTimeUs;
+            expect(actualTime).assertEqual(115000);
+          }
+          let result: number = frameInfo.result;
+          expect(result).assertEqual(1);
+          let pixelMap: image.PixelMap = frameInfo.image;
+          expect(pixelMap).not().assertUndefined();
+          console.info(TAG, 'fetchFramesByTimes success');
+        }
+      };
+      let timesUs: number[] = [];
+      for (let i = 0; i < 4097; i++) {
+        timesUs.push(1000000 + i*10000);
+      }
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_CLOSEST;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 批量获取缩略图
+      try {
+        avMetadataExtractor.fetchFramesByTimesWithTimeout(timesUs, queryOption, param, timeoutMs, onFrameFetched);
+      } catch(err) {
+        console.error(`FramesByTimes Failed, code is ${err.code}, message is ${err.message}`);
+        expect(err.code == 5400108).assertTrue();
+      }
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      avMetadataExtractor.cancelAllFetchFrames();
+      avMetadataExtractor.release();
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_1300
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_1300
+     * @tc.desc   timeoutMs null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_TIMEOUT_CALLBACK_FUNCTION_1300', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 初始化入参
+      const onFrameFetched = (frameInfo: media.FrameInfo, err: BusinessError): void => {
+        if (err) {
+          return;
+        }
+        if (frameInfo !== undefined && frameInfo.image !== undefined) {
+          let requestedTimeUs: number = frameInfo.requestedTimeUs;
+          expect(requestedTimeUs).assertEqual(1000000);
+          if (frameInfo.actualTimeUs != undefined) {
+            let actualTime: number = frameInfo.actualTimeUs;
+            expect(actualTime).assertEqual(115000);
+          }
+          let result: number = frameInfo.result;
+          expect(result).assertEqual(1);
+          let pixelMap: image.PixelMap = frameInfo.image;
+          expect(pixelMap).not().assertUndefined();
+          console.info(TAG, 'fetchFramesByTimes success');
+        }
+      };
+      let timesUs: number[] = [];
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_PREVIOUS_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 批量获取缩略图
+      try {
+        avMetadataExtractor.fetchFramesByTimesWithTimeout(timesUs, queryOption, param, undefined, onFrameFetched);
+      } catch(err) {
+        console.error(`FramesByTimes Failed, code is ${err.code}, message is ${err.message}`);
+        expect(err.code == 5400108).assertTrue();
+      }
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      avMetadataExtractor.cancelAllFetchFrames();
+      avMetadataExtractor.release();
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_0200
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_0200
+     * @tc.desc   error code 5400102, no fdSrc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_0200', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success   22222222222');
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+          console.info(TAG, `fetchMetadata callback success, album: ${metadata.album}`);
+          expect(metadata.album).assertEqual("media");
+          avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error code:${error.code}, error message:${error.message}`);
+        expect(error.code == 5400102).assertTrue();
+      });
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_0300
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_0300
+     * @tc.desc   error code 5400104, fetch metadata timeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_0300', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      let timeoutMs = 1;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+          console.info(TAG, `fetchMetadata callback success, album: ${metadata.album}`);
+          expect(metadata.album).assertEqual("media");
+          avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+        expect(error.code == 5400104).assertTrue();
+      });
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_0400
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_0400
+     * @tc.desc   error code 5400106, image source
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_0400', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor4;
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+          console.info(TAG, `fetchMetadata callback success, album: ${metadata.album}`);
+          expect(metadata.album).assertEqual("media");
+          avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+        expect(error.code == 5400106).assertTrue();
+      });
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_0500
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_0500
+     * @tc.desc   error code 5400108, parameter check failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_0500', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      let timeoutMs = 0;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+          console.info(TAG, `fetchMetadata callback success, album: ${metadata.album}`);
+          expect(metadata.album).assertEqual("media");
+          avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+        expect(error.code == 5400108).assertTrue();
+      });
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_0600
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_0600
+     * @tc.desc   timeoutMs undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_0600', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      try {
+        let metadata = avMetadataExtractor.fetchMetadataWithTimeout(undefined);
+        expect(metadata).not().assertUndefined();
+      } catch(error) {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+        done();
+      }
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_0700
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_0700
+     * @tc.desc   error code 5400108, parameter check failed, timeoutMs == -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_0700', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      let timeoutMs = -1;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+          console.info(TAG, `fetchMetadata callback success, album: ${metadata.album}`);
+          expect(metadata.album).assertEqual("media");
+          avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+        expect(error.code == 5400108).assertTrue();
+      });
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_0800
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_0800
+     * @tc.desc   timeoutMs == 20000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_0800', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      let timeoutMs = 20000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+          console.info(TAG, `fetchMetadata callback success, album: ${metadata.album}`);
+          expect(metadata.album).assertEqual("media");
+          avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+        expect(error.code == 5400108).assertTrue();
+      });
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_0900
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_0900
+     * @tc.desc   error code:5400108, parameter check failed, timeoutMs == 20001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_0900', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      let timeoutMs = 20001;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+          console.info(TAG, `fetchMetadata callback success, album: ${metadata.album}`);
+          expect(metadata.album).assertEqual("media");
+          avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+        expect(error.code == 5400108).assertTrue();
+      });
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1000
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1000
+     * @tc.desc   metadata tracks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1000', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      let metadata = await avMetadataExtractor.fetchMetadataWithTimeout(3000);
+      if (metadata != undefined && metadata.tracks != undefined) {
+        for (let i = 0; i < metadata.tracks.length; i++) {
+          const element = metadata.tracks[i];
+          if (element[media.MediaDescriptionKey.MD_KEY_TRACK_TYPE] == media.MediaType.MEDIA_TYPE_VID) {
+            const value = element[media.MediaDescriptionKey.MD_KEY_MIME_TYPE] as string;
+            expect(value).not().assertUndefined();
+          }
+          if (element[media.MediaDescriptionKey.MD_KEY_TRACK_TYPE] == media.MediaType.MEDIA_TYPE_AUD) {
+            const value = element[media.MediaDescriptionKey.MD_KEY_MIME_TYPE] as string;
+            expect(value).not().assertUndefined();
+          }
+          validateMediaDescriptionKey(element)
+        }
+      } else {
+        console.error('get avmetadata tracks failed');
+        expect().assertFail();
+      }
+      expect(media.MediaType.MEDIA_TYPE_UNSUPPORTED).assertEqual(-1);
+      expect(media.MediaType.MEDIA_TYPE_AUD).assertEqual(0);
+      expect(media.MediaType.MEDIA_TYPE_VID).assertEqual(1);
+      expect(media.MediaType.MEDIA_TYPE_SUBTITLE).assertEqual(2);
+      expect(media.MediaType.MEDIA_TYPE_ATTACHMENT).assertEqual(3);
+      expect(media.MediaType.MEDIA_TYPE_DATA).assertEqual(4);
+      expect(media.MediaType.MEDIA_TYPE_TIMED_METADATA).assertEqual(5);
+      expect(media.MediaType.MEDIA_TYPE_AUXILIARY).assertEqual(6);
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      avMetadataExtractor.release();
+      done();
+    });    
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1100
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1100', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 获取元信息
+      await avMetadataExtractor.fetchMetadataWithTimeout(3000).then((metadata) => {
+        if (metadata) {
+          expect(metadata.album).assertEqual("media");  
+          expect(metadata.albumArtist).assertEqual("media_test");
+          expect(metadata.artist).assertEqual("元数据测试");
+          expect(metadata.author).assertEqual("media");
+          expect(metadata.dateTime).assertEqual("2015-11-23");
+          expect(metadata.dateTimeFormat).assertEqual("2015-11-23 00:00:00");
+          expect(metadata.composer).assertEqual("测试");
+          expect(metadata.duration).assertEqual("219600");
+          expect(metadata.genre).assertEqual("Lyrical");
+          expect(metadata.hasAudio).assertEqual("yes");
+          expect(metadata.hasVideo).assertEqual("");
+          expect(metadata.mimeType).assertEqual("audio/mpeg");
+          expect(metadata.trackCount).assertEqual("2");
+          expect(metadata.sampleRate).assertEqual('48000');
+          expect(metadata.title).assertEqual("test");
+          expect(metadata.videoHeight).assertEqual("1276");
+          expect(metadata.videoWidth).assertEqual("1702");
+          expect(metadata.videoOrientation).assertEqual("");
+          expect(metadata.description).assertEqual("");
+        }
+        avMetadataExtractor.release();
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1200
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1200
+     * @tc.desc   return undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1200', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      let timeoutMs = 20001;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        expect(metadata).assertUndefined();
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+        expect(error.code == 5400108).assertTrue();
+      });
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0200
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0200
+     * @tc.desc   error code 5400102, no fdSrc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0200', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      // 初始化入参
+      let timeUs = 10000;
+      let timeoutMs = 3000;
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 获取缩略图
+      await avMetadataExtractor.fetchFrameByTimeWithTimeout(timeUs, queryOption, param, timeoutMs).then((pixelMap: image.PixelMap | undefined) => {
+        expect(pixelMap).not().assertUndefined();
+        console.info(TAG, `fetchFrameByTime success`);
+      }).catch((error: BusinessError) => {
+        console.error(`fetchFrameByTime catchCallback ${error.name} code: ${error.code} message: ${error.message}`);
+        expect(error.code == 5400102).assertTrue();
+      });
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      await avMetadataExtractor.release();
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0300
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0300
+     * @tc.desc   error code 5400104, timeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0300', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 初始化入参
+      let timeUs = 10000;
+      let timeoutMs = 1;
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 获取缩略图
+      await avMetadataExtractor.fetchFrameByTimeWithTimeout(timeUs, queryOption, param, timeoutMs).then((pixelMap: image.PixelMap | undefined) => {
+        expect(pixelMap).not().assertUndefined();
+        console.info(TAG, `fetchFrameByTime success`);
+      }).catch((error: BusinessError) => {
+        console.error(`fetchFrameByTime catchCallback ${error.name} code: ${error.code} message: ${error.message}`);
+        expect(error.code == 5400104).assertTrue();
+      });
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      await avMetadataExtractor.release();
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0400
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0400
+     * @tc.desc   error code 5400102, no fdSrc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0400', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor4;
+      // 初始化入参
+      let timeUs = 10000;
+      let timeoutMs = 3000;
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 获取缩略图
+      await avMetadataExtractor.fetchFrameByTimeWithTimeout(timeUs, queryOption, param, timeoutMs).then((pixelMap: image.PixelMap | undefined) => {
+        expect(pixelMap).not().assertUndefined();
+        console.info(TAG, `fetchFrameByTime success`);
+      }).catch((error: BusinessError) => {
+        console.error(`fetchFrameByTime catchCallback ${error.name} code: ${error.code} message: ${error.message}`);
+        expect(error.code == 5400106).assertTrue();
+      });
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      await avMetadataExtractor.release();
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0500
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0500
+     * @tc.desc   error code 5400108, parameter check failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0500', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 初始化入参
+      let timeUs = 10000;
+      let timeoutMs = 0;
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 获取缩略图
+      await avMetadataExtractor.fetchFrameByTimeWithTimeout(timeUs, queryOption, param, timeoutMs).then((pixelMap: image.PixelMap | undefined) => {
+        expect(pixelMap).not().assertUndefined();
+        console.info(TAG, `fetchFrameByTime success`);
+      }).catch((error: BusinessError) => {
+        console.error(`fetchFrameByTime catchCallback ${error.name} code: ${error.code} message: ${error.message}`);
+        expect(error.code == 5400108).assertTrue();
+      });
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      await avMetadataExtractor.release();
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0600
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0600
+     * @tc.desc   timeoutMs undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0600', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 初始化入参
+      let timeUs = 10000;
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_PREVIOUS_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 获取缩略图
+      try {
+        let pixelMap = avMetadataExtractor.fetchFrameByTimeWithTimeout(timeUs, queryOption, param, undefined);
+        expect(pixelMap).not().assertUndefined();
+      } catch (error) {
+        console.error(`fetchFrameByTime catchCallback ${error.name} code: ${error.code} message: ${error.message}`);
+      }
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      await avMetadataExtractor.release();
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0700
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0700
+     * @tc.desc   param undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0700', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 初始化入参
+      let timeUs = 10000;
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_CLOSEST_SYNC;
+      // 获取缩略图
+      await avMetadataExtractor.fetchFrameByTimeWithTimeout(timeUs, queryOption, undefined, 3000).then((pixelMap: image.PixelMap | undefined) => {
+        expect(pixelMap).not().assertUndefined();
+        console.info(TAG, `fetchFrameByTime success`);
+      }).catch((error: BusinessError) => {
+        console.error(`fetchFrameByTime catchCallback ${error.name} code: ${error.code} message: ${error.message}`);
+        expect(error.code == 5400108).assertTrue();
+      });
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      await avMetadataExtractor.release();
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0800
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0800
+     * @tc.desc   param undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0800', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 初始化入参
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_CLOSEST;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 获取缩略图
+      await avMetadataExtractor.fetchFrameByTimeWithTimeout(undefined, queryOption, param, 3000).then((pixelMap: image.PixelMap | undefined) => {
+        expect(pixelMap).not().assertUndefined();
+        console.info(TAG, `fetchFrameByTime success`);
+      }).catch((error: BusinessError) => {
+        console.error(`fetchFrameByTime catchCallback ${error.name} code: ${error.code} message: ${error.message}`);
+        expect(error.code == 5400108).assertTrue();
+      });
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      await avMetadataExtractor.release();
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0900
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0900
+     * @tc.desc   error code 5400108, parameter check failed, -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0900', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 初始化入参
+      let timeUs = 10000;
+      let timeoutMs = -1;
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 获取缩略图
+      await avMetadataExtractor.fetchFrameByTimeWithTimeout(timeUs, queryOption, param, timeoutMs).then((pixelMap: image.PixelMap | undefined) => {
+        expect(pixelMap).not().assertUndefined();
+        console.info(TAG, `fetchFrameByTime success`);
+      }).catch((error: BusinessError) => {
+        console.error(`fetchFrameByTime catchCallback ${error.name} code: ${error.code} message: ${error.message}`);
+        expect(error.code == 5400108).assertTrue();
+      });
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      await avMetadataExtractor.release();
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_1000
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_1000
+     * @tc.desc   error code 5400108, parameter check failed, 20001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_1000', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 初始化入参
+      let timeUs = 10000;
+      let timeoutMs = 20001;
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 获取缩略图
+      await avMetadataExtractor.fetchFrameByTimeWithTimeout(timeUs, queryOption, param, timeoutMs).then((pixelMap: image.PixelMap | undefined) => {
+        expect(pixelMap).not().assertUndefined();
+        console.info(TAG, `fetchFrameByTime success`);
+      }).catch((error: BusinessError) => {
+        console.error(`fetchFrameByTime catchCallback ${error.name} code: ${error.code} message: ${error.message}`);
+        expect(error.code == 5400108).assertTrue();
+      });
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      await avMetadataExtractor.release();
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_1100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_1100
+     * @tc.desc   timeoutms 20000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_1100', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 初始化入参
+      let timeUs = 10000;
+      let timeoutMs = 20000;
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 获取缩略图
+      await avMetadataExtractor.fetchFrameByTimeWithTimeout(timeUs, queryOption, param, timeoutMs).then((pixelMap: image.PixelMap | undefined) => {
+        expect(pixelMap).not().assertUndefined();
+        console.info(TAG, `fetchFrameByTime success`);
+      }).catch((error: BusinessError) => {
+        console.error(`fetchFrameByTime catchCallback ${error.name} code: ${error.code} message: ${error.message}`);
+        expect().assertFail();
+      });
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      await avMetadataExtractor.release();
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_1200
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_1200
+     * @tc.desc   return value false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_1200', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 初始化入参
+      let timeUs = 10000;
+      let timeoutMs = 20000;
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 获取缩略图
+      await avMetadataExtractor.fetchFrameByTimeWithTimeout(timeUs, queryOption, param, timeoutMs).then((pixelMap: image.PixelMap | undefined) => {
+        expect(pixelMap).not().assertUndefined();
+        if (pixelMap) {
+          expect(pixelMap.isEditable).assertTrue();
+          expect(pixelMap.isStrideAlignment).assertTrue();
+        }
+        console.info(TAG, `fetchFrameByTime success`);
+      }).catch((error: BusinessError) => {
+        console.error(`fetchFrameByTime catchCallback ${error.name} code: ${error.code} message: ${error.message}`);
+      });
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      await avMetadataExtractor.release();
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_1300
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_1300
+     * @tc.desc   return value true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_1300', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor4;
+      // 初始化入参
+      let timeUs = 10000;
+      let timeoutMs = 20000;
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 获取缩略图
+      await avMetadataExtractor.fetchFrameByTimeWithTimeout(timeUs, queryOption, param, timeoutMs).then((pixelMap: image.PixelMap | undefined) => {
+        expect(pixelMap).not().assertUndefined();
+        if (pixelMap) {
+          expect(pixelMap.isEditable).assertFalse();
+          expect(pixelMap.isStrideAlignment).assertFalse();
+        }
+        console.info(TAG, `fetchFrameByTime success`);
+      }).catch((error: BusinessError) => {
+        console.error(`fetchFrameByTime catchCallback ${error.name} code: ${error.code} message: ${error.message}`);
+      });
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      await avMetadataExtractor.release();
+      done();
+    });
+ 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_1400
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_1400
+     * @tc.desc   return pixelmap undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_1400', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      // 初始化入参
+      let timeUs = 10000;
+      let timeoutMs = 20000;
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 获取缩略图
+      await avMetadataExtractor.fetchFrameByTimeWithTimeout(timeUs, queryOption, param, timeoutMs).then((pixelMap: image.PixelMap | undefined) => {
+        expect(pixelMap).assertUndefined();
+        console.info(TAG, `fetchFrameByTime success`);
+      }).catch((error: BusinessError) => {
+        console.error(`fetchFrameByTime catchCallback ${error.name} code: ${error.code} message: ${error.message}`);
+      });
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      await avMetadataExtractor.release();
+      done();
+    });
   })
 }

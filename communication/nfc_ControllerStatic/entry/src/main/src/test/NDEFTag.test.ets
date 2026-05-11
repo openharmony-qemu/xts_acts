@@ -58,6 +58,9 @@ let ndefTagInfo: tag.TagInfo = {
   "extrasData": [
     {
       "NdefMsg": "D4010354787473", "NdefForumType": 1, "NdefTagLength":255, "NdefTagMode": 1,
+    },
+    {
+      "NdefForumType": 1,
     }
   ],
   "tagRfDiscId": 1,

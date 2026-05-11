@@ -9,7 +9,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
 @Observed
-class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
 
   public option1: TextDecorationOptions = 
   {type: undefined, color: Color.Blue, style: TextDecorationStyle.DOUBLE} as TextDecorationOptions

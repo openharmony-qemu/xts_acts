@@ -31,7 +31,7 @@ import {
   Link,
   StorageLink,AppStorage,LocalStorage,AbstractProperty
 } from '@ohos.arkui.stateManagement'
-AppStorage.clear();
+
 let paraRef: Record<string, number> = { 'PropBBK': 47 };
 let storageBK: LocalStorage = new LocalStorage(paraRef);
 storageBK.setAndRef<number>("PropBKK", 30)

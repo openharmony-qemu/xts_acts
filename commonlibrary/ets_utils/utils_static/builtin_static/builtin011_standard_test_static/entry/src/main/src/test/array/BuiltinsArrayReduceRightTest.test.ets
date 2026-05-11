@@ -36,7 +36,12 @@ export default function BuiltinsArrayReduceRightTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayReduceRightTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
       const result = arr.reduceRight((acc, value) => acc + value);
       const expected = 15;
 
@@ -52,7 +57,7 @@ export default function BuiltinsArrayReduceRightTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayReduceRightTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
 
       expect(() => {
         arr.reduceRight((acc, value) => acc + value);
@@ -84,7 +89,10 @@ export default function BuiltinsArrayReduceRightTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReduceRightTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3);
+      const arr: number[] = Array.create<number>(3, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
       let indices: number[] = [];
       const result = arr.reduceRight((acc, value, index, array) => {
         indices.push(index);
@@ -109,7 +117,7 @@ export default function BuiltinsArrayReduceRightTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReduceRightTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<string>("a", "b", "c", "d");
+      const arr: string[] = ["a", "b", "c", "d"];
       const result = arr.reduceRight((acc, value) => acc + value);
       const expected = "dcba";
 
@@ -125,7 +133,7 @@ export default function BuiltinsArrayReduceRightTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReduceRightTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<boolean>(true, false, true, true);
+      const arr: boolean[] = [true, false, true, true];
       const result = arr.reduceRight((acc, value) => acc && value);
       const expected = false;
 
@@ -141,8 +149,18 @@ export default function BuiltinsArrayReduceRightTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReduceRightTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
-      const original = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
+      const original: number[] = Array.create<number>(5, 0);
+      original[0] = 1;
+      original[1] = 2;
+      original[2] = 3;
+      original[3] = 4;
+      original[4] = 5;
 
       arr.reduceRight((acc, value) => acc + value);
 
@@ -161,7 +179,12 @@ export default function BuiltinsArrayReduceRightTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReduceRightTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5, 3, 8, 1, 7);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 5;
+      arr[1] = 3;
+      arr[2] = 8;
+      arr[3] = 1;
+      arr[4] = 7;
       const result = arr.reduceRight((acc, value) => {
         return value > acc ? value : acc;
       });
@@ -179,7 +202,10 @@ export default function BuiltinsArrayReduceRightTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReduceRightTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(2, 3, 4);
+      const arr: number[] = Array.create<number>(3, 0);
+      arr[0] = 2;
+      arr[1] = 3;
+      arr[2] = 4;
       const result = arr.reduceRight((acc, value) => acc * value);
       const expected = 24;
 
@@ -195,7 +221,10 @@ export default function BuiltinsArrayReduceRightTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReduceRightTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(10, 5, 3);
+      const arr: number[] = Array.create<number>(3, 0);
+      arr[0] = 10;
+      arr[1] = 5;
+      arr[2] = 3;
       const result = arr.reduceRight((acc, value) => acc - value);
       const expected = -12; // 3 - 5 - 10 = -12
 

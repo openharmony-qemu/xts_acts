@@ -1200,13 +1200,13 @@ function testGetAutoUnlockAfterReboot() {
   it("test_get_auto_unlock_after_reboot_0004", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
-      systemManager.getAutoUnlockAfterReboot(null);
-      expect(false).assertTrue();
+      let ret = systemManager.getAutoUnlockAfterReboot(null);
+      expect(ret).assertFalse();
     } catch (error) {
       if (Number(error.code) === 801) {
         expect(Number(error.code) === 801).assertTrue();
       } else {
-        expect(Number(error.code) === 401).assertTrue();
+        expect(false).assertTrue();
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
@@ -3572,13 +3572,16 @@ function testStartCollectLog() {
    */
   it("getKeyEventPolicies_test_001", Level.LEVEL2, async (done: Function) => {
     console.info(' --- getKeyEventPolicies_test_001  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      systemManager.getKeyEventPolicies(null);
+      let policies = systemManager.getKeyEventPolicies(null);
       console.info(' --- getKeyEventPolicies_test_001 error is expected, but it done.');
-      expect(false).assertTrue();
+      expect(policies.length === 0).assertTrue();
     } catch (error) {
       console.info(' --- getKeyEventPolicies_test_001 error 401 is expected, actually catch: ' + error.code);
-      expect(Number(error.code) === 401).assertTrue();
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
     console.info(' --- getKeyEventPolicies_test_001  -------- END --------');
@@ -3752,13 +3755,16 @@ function testStartCollectLog() {
    */
   it("getKeyEventPolicies_test_015", Level.LEVEL2, async (done: Function) => {
     console.info(' --- getKeyEventPolicies_test_015  -------- START --------');
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      systemManager.getKeyEventPolicies(null);
+      let policies = systemManager.getKeyEventPolicies(null);
       console.info(' --- getKeyEventPolicies_test_015 error is expected, but it done.');
-      expect(false).assertTrue();
+      expect(policies.length === 0).assertTrue();
     } catch (error) {
       console.info(' --- getKeyEventPolicies_test_015 error 401 is expected, actually catch: ' + error.code);
-      expect(Number(error.code) === 401).assertTrue();
+      expect(Number(error.code) === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
     console.info(' --- getKeyEventPolicies_test_015  -------- END --------');

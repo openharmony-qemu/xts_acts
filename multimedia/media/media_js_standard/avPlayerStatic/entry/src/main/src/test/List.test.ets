@@ -27,6 +27,7 @@ import AVPlayerSetPlaybackRateTest from './AVPlayerSetPlaybackRateTest.test'
 import AVPlayerGetLoadedTimeRangesTest from './AVPlayerGetLoadedTimeRangesTest.test';
 import AVPlayerGeTSeekableTimeRangesTest from './AVPlayerGeTSeekableTimeRangesTest.test';
 import AVPlayerTrackFilterTest from './AVPlayerTrackFilterTest.test';
+import AVPlayerPlayListTest from './AVPlayerPlayListTest.test'
 
 export default function testsuite() {
   AvPlayerEnumTest();
@@ -43,4 +44,5 @@ export default function testsuite() {
   AVPlayerGetLoadedTimeRangesTest();
   AVPlayerGeTSeekableTimeRangesTest();
   AVPlayerTrackFilterTest();
+  AVPlayerPlayListTest();
 }

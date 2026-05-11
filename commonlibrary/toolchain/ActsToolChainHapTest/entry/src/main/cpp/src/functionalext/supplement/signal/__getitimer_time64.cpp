@@ -27,7 +27,7 @@ static void ExpireTimer(int signo)
         GetitimerTime64(signo, &val);
         val.it_value.tv_sec = 0;
         val.it_value.tv_usec = 0;
-        setitimer(signo, &val, NULL);
+        setitimer(signo, &val, nullptr);
         g_count = 0;
     }
 }

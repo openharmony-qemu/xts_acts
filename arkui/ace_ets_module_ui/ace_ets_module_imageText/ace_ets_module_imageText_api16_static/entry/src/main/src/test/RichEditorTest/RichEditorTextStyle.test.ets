@@ -155,7 +155,7 @@ it('RichEditorTextStyle_static_0003', Level.LEVEL1, async (done: () => void): Pr
       let obj = JSON.parseJsonElement(strJson);
       console.log('addOrDelText0001---obj.$attrs.content---' +
       JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect('' + obj.getElement('$attrs').getString('content')).assertEqual("undefined");
+      expect('' + obj.getElement('$attrs').getString('content')).assertEqual('');
       console.info("[RichEditorTextStyle0003] end");
       done();
     });

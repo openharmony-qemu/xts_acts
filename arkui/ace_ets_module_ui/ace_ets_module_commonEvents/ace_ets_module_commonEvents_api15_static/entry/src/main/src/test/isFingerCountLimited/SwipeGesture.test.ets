@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -84,9 +84,9 @@ it('SwipeGesture1_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       let driver = Driver.create();
       let speed = Math.floor(areaWidth1 * 0.6 / 0.016 / 1000) * 1000
       await CommonFunc.sleep(1000);
-      await (driver.swipe(Math.round(areaObj1.left + areaWidth1 / 4) as int,
-        Math.round(areaObj1.top + areaHeight1 / 4) as int, Math.round(areaObj1.left + areaWidth1 / 2) as int,
-        Math.round(areaObj1.top + areaHeight1 / 2) as int, 800) as Promise<void>)
+      await (driver.swipe(Math.round(areaObj1.left + areaWidth1 / 4).toInt(),
+        Math.round(areaObj1.top + areaHeight1 / 4).toInt(), Math.round(areaObj1.left + areaWidth1 / 2).toInt(),
+        Math.round(areaObj1.top + areaHeight1 / 2).toInt(), 800) as Promise<void>)
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('SwipeGesture');
       let obj = JSON.parseJsonElement(strJson);
@@ -123,12 +123,12 @@ it('SwipeGesture1_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       console.log('SwipeGesture1_static_0200 areaObj2 clicked end', Math.round(areaObj2.left + areaWidth2 * 0.8),
         Math.round(areaObj2.top + areaObj2.top + areaHeight2 / 2))
       let driver = Driver.create();
-      let speed = (Math.floor(areaWidth2 * 0.6 / 0.016 / 1000) * 1000) as int
+      let speed = (Math.floor(areaWidth2 * 0.6 / 0.016 / 1000) * 1000).toInt()
       await CommonFunc.sleep(1000);
-      await ((driver.swipe(Math.round(areaObj2.left + areaWidth2 * 0.2) as int,
-        Math.round(areaObj2.top + areaObj2.top + areaHeight2 / 2) as int,
-        Math.round(areaObj2.left + areaWidth2 * 0.8) as int,
-        Math.round(areaObj2.top + areaObj2.top + areaHeight2 / 2) as int, speed)) as Promise<void>)
+      await ((driver.swipe(Math.round(areaObj2.left + areaWidth2 * 0.2).toInt(),
+        Math.round(areaObj2.top + areaObj2.top + areaHeight2 / 2).toInt(),
+        Math.round(areaObj2.left + areaWidth2 * 0.8).toInt(),
+        Math.round(areaObj2.top + areaObj2.top + areaHeight2 / 2).toInt(), speed)) as Promise<void>)
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('SwipeGesture2');
       let obj = JSON.parseJsonElement(strJson);

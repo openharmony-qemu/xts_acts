@@ -59,6 +59,7 @@ import gridEventNullUndefined from './gridDefault/gridEventNullUndefined.test';
 import gridItemNullUndefinedTest from './gridItemDefault/gridItemNullUndefined.test';
 import columnsTemplateNullUndefined from './LazyVGridLayout/columnsTemplateNullUndefined.test';
 import columnsRowsGapNullUndefined from './LazyVGridLayout/columnsRowsGapNullUndefined.test';
+import onVisibleIndexesChangeTest from './LazyVGridLayout/onVisibleIndexesChangeTest.test';
 
 export default function testsuite() {
   GridReboundTest()
@@ -107,4 +108,5 @@ export default function testsuite() {
   gridItemNullUndefinedTest()
   columnsTemplateNullUndefined()
   columnsRowsGapNullUndefined()
+  onVisibleIndexesChangeTest()
 }

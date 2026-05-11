@@ -117,7 +117,6 @@ export default function VideoEncoderConfigureTest() {
       let result: number = await testNapi.runConfigureTest(6);
       expect(result).assertEqual(0);
     });
-
     /**
      * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_PART_TWO_5000
      * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_PART_TWO_5000
@@ -129,6 +128,32 @@ export default function VideoEncoderConfigureTest() {
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CAPABILITY_PART_TWO_5000', Level.LEVEL2, async () => {
       console.info('VideoEncodeCapability5010Test start');
       let result: number = await testNapi.runConfigureTest(7);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CBRHQ_CAPABILITY_5100
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CBRHQ_CAPABILITY_5100
+     * @tc.desc   test cbrhq with normal parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CBRHQ_CAPABILITY_5100', Level.LEVEL2, async () => {
+      console.info('VideoEncodeCapability5100Test start');
+      let result: number = await testNapi.runConfigureTest(8);
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CBRHQ_CAPABILITY_5200
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CBRHQ_CAPABILITY_5200
+     * @tc.desc   test cbrhq with incorrect parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CBRHQ_CAPABILITY_5200', Level.LEVEL2, async () => {
+      console.info('VideoEncodeCapability5200Test start');
+      let result: number = await testNapi.runConfigureTest(9);
       expect(result).assertEqual(0);
     });
   });

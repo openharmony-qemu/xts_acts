@@ -93,4 +93,5 @@ static const struct TimeTestStringStruct TEST_GMTIME_DATA[] = {
     { "HST", "2022-6-30 10:40:14 wday=6,yday=210,isdst=0,gmtoff=0,zone=GMT" },
 };
 
+#define test_gmtime_data TEST_GMTIME_DATA
 #endif

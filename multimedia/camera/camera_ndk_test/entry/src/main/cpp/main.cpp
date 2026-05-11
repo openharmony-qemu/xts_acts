@@ -3694,6 +3694,177 @@ static napi_value GetMinimumFocusDistance(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value OHCaptureSessionRegisterExposureStateChangeCallback(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->RegisterExposureStateChangeCallback();
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+ 
+static napi_value OHCaptureSessionUnregisterExposureStateChangeCallback(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->UnregisterExposureStateChangeCallback();
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+ 
+static napi_value OHCaptureSessionRegisterExposureStateChangeCallbackWithoutSession(napi_env env,
+    napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->RegisterExposureStateChangeCallbackWithoutSession();
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+ 
+static napi_value OHCaptureSessionUnregisterExposureStateChangeCallbackWithoutSession(napi_env env,
+    napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->UnregisterExposureStateChangeCallbackWithoutSession();
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value GetEnumExposureState(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+
+    if (index == 0) {
+        napi_create_int32(env, OH_CAMERA_EXPOSURE_STATE_SCAN, &result);
+    } else if (index == 1) {
+        napi_create_int32(env, OH_CAMERA_EXPOSURE_STATE_CONVERGED, &result);
+    }
+
+    return result;
+}
+
+static napi_value SessionRegisterExposureStateChangeCallback(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+
+    Camera_ErrorCode code = ndkCamera_->RegisterExposureStateChangeCallback(index);
+
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value SessionUnregisterExposureStateChangeCallback(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+
+    Camera_ErrorCode code = ndkCamera_->UnregisterExposureStateChangeCallback(index);
+
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value WaitForExposureFinish(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    bool ret = ndkCamera_->WaitForExposureFinish();
+    napi_get_boolean(env, ret, &result);
+    return result;
+}
+
+static napi_value GetColorTintRange(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode ret = ndkCamera_->GetColorTintRange();
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value SetColorTint(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 将参数转为C++对象
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+    // 调用C++函数
+    napi_value result;
+    Camera_ErrorCode ret = ndkCamera_->SetColorTint(useCaseCode);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value GetColorTint(napi_env env, napi_callback_info info)
+{
+    // 获取ArkTs传过来的参数
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 将参数转为C++对象
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+    // 调用C++函数
+    napi_value result;
+    Camera_ErrorCode ret = ndkCamera_->GetColorTint(useCaseCode);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value GetZoomPointInfos(napi_env env, napi_callback_info info)
+{
+    // 获取ArkTs传过来的参数
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 将参数转为C++对象
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+    // 调用C++函数
+    napi_value result;
+    Camera_ErrorCode ret = ndkCamera_->GetZoomPointInfos(useCaseCode);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value DeleteZoomPointInfo(napi_env env, napi_callback_info info)
+{
+    // 获取ArkTs传过来的参数
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    // 将参数转为C++对象
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+    // 调用C++函数
+    napi_value result;
+    Camera_ErrorCode ret = ndkCamera_->DeleteZoomPointInfo(useCaseCode);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -4020,6 +4191,27 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, napi_default, nullptr },
         { "oHGetMinimumFocusDistance", nullptr, GetMinimumFocusDistance, nullptr, nullptr,
             nullptr, napi_default, nullptr },
+        { "oHCaptureSessionRegisterExposureStateChangeCallback", nullptr,
+            OHCaptureSessionRegisterExposureStateChangeCallback, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "oHCaptureSessionUnregisterExposureStateChangeCallback", nullptr,
+            OHCaptureSessionUnregisterExposureStateChangeCallback, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "oHCaptureSessionRegisterExposureStateChangeCallbackWithoutSession", nullptr,
+            OHCaptureSessionRegisterExposureStateChangeCallbackWithoutSession,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "oHCaptureSessionUnregisterExposureStateChangeCallbackWithoutSession", nullptr,
+            OHCaptureSessionUnregisterExposureStateChangeCallbackWithoutSession,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "getEnumExposureState", nullptr, GetEnumExposureState, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "sessionRegisterExposureStateChangeCallback", nullptr, SessionRegisterExposureStateChangeCallback,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "sessionUnregisterExposureStateChangeCallback", nullptr, SessionUnregisterExposureStateChangeCallback,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        {"waitForExposureFinish", nullptr, WaitForExposureFinish, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getColorTintRange", nullptr, GetColorTintRange, nullptr, nullptr, nullptr, napi_default, nullptr },
+        {"setColorTint", nullptr, SetColorTint, nullptr, nullptr, nullptr, napi_default, nullptr },
+        {"getColorTint", nullptr, GetColorTint, nullptr, nullptr, nullptr, napi_default, nullptr },
+        {"getZoomPointInfos", nullptr, GetZoomPointInfos, nullptr, nullptr, nullptr, napi_default, nullptr },
+        {"deleteZoomPointInfo", nullptr, DeleteZoomPointInfo, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_property_descriptor desc3[] = {
         {"oHCameraManagerTorchMode", nullptr, OHCameraManagerTorchMode, nullptr, nullptr, nullptr,

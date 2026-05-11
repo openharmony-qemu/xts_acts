@@ -26,6 +26,9 @@ import setOnBlurNullAndUndefinedTest from './UICommonEvent/SetOnBlur/setOnBlurNu
 import setOnHoverNullAndUndefinedTest from './UICommonEvent/SetOnHover/setOnHoverNullAndUndefinedTest.test';
 import setOnMouseNullAndUndefinedTest from './UICommonEvent/SetOnMouse/setOnMouseNullAndUndefinedTest.test';
 import setOnSizeChangeNullAndUndefinedTest from './UICommonEvent/SetOnSizeChange/setOnSizeChangeNullAndUndefinedTest.test';
+import setCustomCursornull from './setCustomCursor/setCustomCursor_null.test';
+import setCustomCursorundefined from './setCustomCursor/setCustomCursor_undefined.test';
+
 
 export default function testsuite() {
   onHoverStatusChange();
@@ -41,4 +44,6 @@ export default function testsuite() {
   setOnHoverNullAndUndefinedTest();
   setOnMouseNullAndUndefinedTest();
   setOnSizeChangeNullAndUndefinedTest();
+  setCustomCursornull();
+  setCustomCursorundefined();
 }

@@ -67,6 +67,7 @@ export default function SegmentButtonBorderTest() {
         .$children[0]
         .$children[1]
         .$children[0]
+        .$children[0]
       console.info("[SegmentButtonBorderTest_001_1] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.borderRadius).assertEqual('14.00vp');
       await CommonFunc.sleep(1000);
@@ -77,6 +78,7 @@ export default function SegmentButtonBorderTest() {
         .$children[0]
         .$children[0]
         .$children[1]
+        .$children[0]
         .$children[0]
         .$children[0]
         .$children[0]
@@ -114,6 +116,7 @@ export default function SegmentButtonBorderTest() {
         .$children[0]
         .$children[3]
         .$children[0]
+        .$children[0]
       console.info("[SegmentButtonBorderTest_002_1] component obj is: " + JSON.stringify(obj3));
       expect(obj3.$attrs.borderRadius).assertEqual('20.00vp');
       await CommonFunc.sleep(1000);
@@ -124,6 +127,7 @@ export default function SegmentButtonBorderTest() {
         .$children[0]
         .$children[0]
         .$children[3]
+        .$children[0]
         .$children[0]
         .$children[0]
         .$children[0]

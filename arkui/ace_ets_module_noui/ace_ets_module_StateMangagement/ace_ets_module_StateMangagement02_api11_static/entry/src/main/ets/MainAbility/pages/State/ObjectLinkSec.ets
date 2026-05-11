@@ -74,7 +74,7 @@ export class SecClassA {
 // 构建子组件ViewSec用于承载@ObjectLink修饰的变量
 @Component
 struct ViewSec {
-  @ObjectLink class_C: SecClassB = new SecClassB(1);
+  @ObjectLink class_C: SecClassB;
   build() {
     Row() {
       Text(`${this.class_C.b}`).height('5%')

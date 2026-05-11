@@ -150,31 +150,31 @@ import { BusinessError } from '@kit.BasicServicesKit'
 
 // 定义不同的 ScrollModifier 类
 @Observed
-class ScrollVerticalModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollVerticalModifier implements AttributeModifier<ScrollAttribute> {
   applyNormalAttribute(instance: ScrollAttribute): void {
     instance.scrollable(ScrollDirection.Vertical);
   }
 }
 @Observed
-class ScrollHorizontalModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollHorizontalModifier implements AttributeModifier<ScrollAttribute> {
   applyNormalAttribute(instance: ScrollAttribute): void {
     instance.scrollable(ScrollDirection.Horizontal);
   }
 }
 @Observed
-class ScrollNoneModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollNoneModifier implements AttributeModifier<ScrollAttribute> {
   applyNormalAttribute(instance: ScrollAttribute): void {
     instance.scrollable(ScrollDirection.None);
   }
 }
 @Observed
-class ScrollFreeModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollFreeModifier implements AttributeModifier<ScrollAttribute> {
   applyNormalAttribute(instance: ScrollAttribute): void {
     instance.scrollable(ScrollDirection.FREE);
   }
 }
 @Observed
-class ScrollUndefinedModifier implements AttributeModifier<ScrollAttribute> {
+export class ScrollUndefinedModifier implements AttributeModifier<ScrollAttribute> {
   applyNormalAttribute(instance: ScrollAttribute): void {
     instance.scrollable(undefined);
   }

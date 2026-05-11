@@ -82,6 +82,7 @@ const int TWO_SIX_TWO_ZEROS_EIGHT = 26200008;
 const int TWO_SIX_TWO_ZEROS_NIGHT = 26200009;
 const int TWO_SIX_TWO_ZEROS_TEN = 26200010;
 const int TWO_SIX_TWO_ZEROS_ELEVEN = 26200011;
+const int INVALID_ATTRIBUTE_ID = 9999;
 } // namespace
 
 std::string g_systemPushPath = "/system/fonts/NotoSans[wdth,wght].ttf";
@@ -1660,6 +1661,434 @@ napi_value OHDrawingFontFullDescriptorAttributeId0200(napi_env env, napi_callbac
     NAPI_ASSERT_NO_MES(id19 == ONE_NINE);
     NAPI_ASSERT_NO_MES(id20 == TWO_ZERO);
     NAPI_ASSERT_NO_MES(id21 == TWO_ONE);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+/**
+ * @tc.name   testOHDrawingSetTypographyStyleAttributeDoubleArray0100
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyStyleAttributeDoubleArray_0100
+ * @tc.desc   test OH_Drawing_SetTypographyStyleAttributeDoubleArray with valid parameters
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+napi_value OHDrawingSetTypographyStyleAttributeDoubleArray0100(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_TypographyStyle* typoStyle = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT(env, typoStyle != nullptr, "typoStyle is nullptr, create error");
+    const size_t arrayLen = THREE;
+    double indentValues[THREE] = {10.0, 20.0, 30.0};
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyStyleAttributeDoubleArray(typoStyle,
+        TYPOGRAPHY_STYLE_ATTR_DA_LINE_HEAD_INDENT, indentValues, arrayLen);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SetTypographyStyleAttributeDoubleArray0100",
+        "set LINE_HEAD_INDENT with %{public}zu values", arrayLen);
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+    typoStyle = nullptr;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+/**
+ * @tc.name   testOHDrawingGetTypographyStyleAttributeDoubleArray0100
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetTypographyStyleAttributeDoubleArray_0100
+ * @tc.desc   test OH_Drawing_GetTypographyStyleAttributeDoubleArray with valid parameters
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0100(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_TypographyStyle* typoStyle = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT(env, typoStyle != nullptr, "typoStyle is nullptr, create error");
+    const size_t arrayLen = THREE;
+    double indentValues[THREE] = {10.0, 20.0, 30.0};
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyStyleAttributeDoubleArray(typoStyle,
+        TYPOGRAPHY_STYLE_ATTR_DA_LINE_HEAD_INDENT, indentValues, arrayLen);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+    double* getArray = nullptr;
+    size_t getLen = 0;
+    errorCode = OH_Drawing_GetTypographyStyleAttributeDoubleArray(typoStyle,
+        TYPOGRAPHY_STYLE_ATTR_DA_LINE_HEAD_INDENT, &getArray, &getLen);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+    NAPI_ASSERT_NO_MES(getArray != nullptr);
+    NAPI_ASSERT_NO_MES(getLen == arrayLen);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetTypographyStyleAttributeDoubleArray0100",
+        "getLen: %{public}zu, values: %{public}f %{public}f %{public}f", getLen,
+        getArray[0], getArray[1], getArray[2]);
+    NAPI_ASSERT_NO_MES(getArray[0] == indentValues[0]);
+    NAPI_ASSERT_NO_MES(getArray[1] == indentValues[1]);
+    NAPI_ASSERT_NO_MES(getArray[2] == indentValues[2]);
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+    typoStyle = nullptr;
+    getArray = nullptr;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+/**
+ * @tc.name   testOHDrawingSetTypographyStyleAttributeDoubleArray0200
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyStyleAttributeDoubleArray_0200
+ * @tc.desc   test OH_Drawing_SetTypographyStyleAttributeDoubleArray with nullptr style
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+napi_value OHDrawingSetTypographyStyleAttributeDoubleArray0200(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    const size_t arrayLen = THREE;
+    double indentValues[THREE] = {10.0, 20.0, 30.0};
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyStyleAttributeDoubleArray(nullptr,
+        TYPOGRAPHY_STYLE_ATTR_DA_LINE_HEAD_INDENT, indentValues, arrayLen);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_INVALID_PARAMETER);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SetTypographyStyleAttributeDoubleArray0200",
+        "nullptr style returns errorCode: %{public}d", errorCode);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+/**
+ * @tc.name   testOHDrawingGetTypographyStyleAttributeDoubleArray0200
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetTypographyStyleAttributeDoubleArray_0200
+ * @tc.desc   test OH_Drawing_GetTypographyStyleAttributeDoubleArray with nullptr style
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0200(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    double* getArray = nullptr;
+    size_t getLen = 0;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_GetTypographyStyleAttributeDoubleArray(nullptr,
+        TYPOGRAPHY_STYLE_ATTR_DA_LINE_HEAD_INDENT, &getArray, &getLen);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_INVALID_PARAMETER);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetTypographyStyleAttributeDoubleArray0200",
+        "nullptr style returns errorCode: %{public}d", errorCode);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+/**
+ * @tc.name   testOHDrawingSetTypographyStyleAttributeDoubleArray0300
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyStyleAttributeDoubleArray_0300
+ * @tc.desc   test OH_Drawing_SetTypographyStyleAttributeDoubleArray with invalid attribute id
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+napi_value OHDrawingSetTypographyStyleAttributeDoubleArray0300(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_TypographyStyle* typoStyle = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT(env, typoStyle != nullptr, "typoStyle is nullptr, create error");
+    const size_t arrayLen = ONE;
+    double value = 10.0;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyStyleAttributeDoubleArray(typoStyle,
+        static_cast<OH_Drawing_TypographyStyleAttributeId>(INVALID_ATTRIBUTE_ID), &value, arrayLen);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_ATTRIBUTE_ID_MISMATCH);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SetTypographyStyleAttributeDoubleArray0300",
+        "invalid id returns errorCode: %{public}d", errorCode);
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+    typoStyle = nullptr;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+/**
+ * @tc.name   testOHDrawingGetTypographyStyleAttributeDoubleArray0300
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetTypographyStyleAttributeDoubleArray_0300
+ * @tc.desc   test OH_Drawing_GetTypographyStyleAttributeDoubleArray with invalid attribute id
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0300(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_TypographyStyle* typoStyle = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT(env, typoStyle != nullptr, "typoStyle is nullptr, create error");
+    double* getArray = nullptr;
+    size_t getLen = 0;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_GetTypographyStyleAttributeDoubleArray(typoStyle,
+        static_cast<OH_Drawing_TypographyStyleAttributeId>(INVALID_ATTRIBUTE_ID), &getArray, &getLen);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_ATTRIBUTE_ID_MISMATCH);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetTypographyStyleAttributeDoubleArray0300",
+        "invalid id returns errorCode: %{public}d", errorCode);
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+    typoStyle = nullptr;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+/**
+ * @tc.name   testOHDrawingSetTypographyStyleAttributeDoubleArray0400
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyStyleAttributeDoubleArray_0400
+ * @tc.desc   test OH_Drawing_SetTypographyStyleAttributeDoubleArray with line tail indent
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+napi_value OHDrawingSetTypographyStyleAttributeDoubleArray0400(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_TypographyStyle* typoStyle = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT(env, typoStyle != nullptr, "typoStyle is nullptr, create error");
+    const size_t arrayLen = TWO;
+    double tailValues[TWO] = {15.0, 25.0};
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyStyleAttributeDoubleArray(typoStyle,
+        TYPOGRAPHY_STYLE_ATTR_DA_LINE_TAIL_INDENT, tailValues, arrayLen);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+    double* getArray = nullptr;
+    size_t getLen = 0;
+    errorCode = OH_Drawing_GetTypographyStyleAttributeDoubleArray(typoStyle,
+        TYPOGRAPHY_STYLE_ATTR_DA_LINE_TAIL_INDENT, &getArray, &getLen);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+    NAPI_ASSERT_NO_MES(getArray != nullptr);
+    NAPI_ASSERT_NO_MES(getLen == arrayLen);
+    NAPI_ASSERT_NO_MES(getArray[0] == tailValues[0]);
+    NAPI_ASSERT_NO_MES(getArray[1] == tailValues[1]);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SetTypographyStyleAttributeDoubleArray0400",
+        "getLen: %{public}zu, values: %{public}f %{public}f", getLen, getArray[0], getArray[1]);
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+    typoStyle = nullptr;
+    getArray = nullptr;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+/**
+ * @tc.name   testOHDrawingGetTypographyStyleAttributeDoubleArray0400
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetTypographyStyleAttributeDoubleArray_0400
+ * @tc.desc   test OH_Drawing_GetTypographyStyleAttributeDoubleArray with line tail indent
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0400(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_TypographyStyle* typoStyle = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT(env, typoStyle != nullptr, "typoStyle is nullptr, create error");
+    const size_t arrayLen = TWO;
+    double tailValues[TWO] = {15.0, 25.0};
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyStyleAttributeDoubleArray(typoStyle,
+        TYPOGRAPHY_STYLE_ATTR_DA_LINE_TAIL_INDENT, tailValues, arrayLen);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+    double* getArray = nullptr;
+    size_t getLen = 0;
+    errorCode = OH_Drawing_GetTypographyStyleAttributeDoubleArray(typoStyle,
+        TYPOGRAPHY_STYLE_ATTR_DA_LINE_TAIL_INDENT, &getArray, &getLen);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+    NAPI_ASSERT_NO_MES(getArray != nullptr);
+    NAPI_ASSERT_NO_MES(getLen == arrayLen);
+    NAPI_ASSERT_NO_MES(getArray[0] == tailValues[0]);
+    NAPI_ASSERT_NO_MES(getArray[1] == tailValues[1]);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetTypographyStyleAttributeDoubleArray0400",
+        "getLen: %{public}zu, values: %{public}f %{public}f", getLen, getArray[0], getArray[1]);
+    NAPI_ASSERT_NO_MES(getArray[0] == tailValues[0]);
+    NAPI_ASSERT_NO_MES(getArray[1] == tailValues[1]);
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+    typoStyle = nullptr;
+    getArray = nullptr;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+/**
+ * @tc.name   testOHDrawingSetTypographyStyleAttributeDoubleArray0500
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyStyleAttributeDoubleArray_0500
+ * @tc.desc   test OH_Drawing_SetTypographyStyleAttributeDoubleArray with unsupported attribute id
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+napi_value OHDrawingSetTypographyStyleAttributeDoubleArray0500(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_TypographyStyle* typoStyle = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT(env, typoStyle != nullptr, "typoStyle is nullptr, create error");
+    const size_t arrayLen = ONE;
+    double value = 10.0;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyStyleAttributeDoubleArray(typoStyle,
+        TYPOGRAPHY_STYLE_ATTR_D_LINE_HEIGHT_MAXIMUM, &value, arrayLen);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SetTypographyStyleAttributeDoubleArray0500",
+        "unsupported id returns errorCode: %{public}d", errorCode);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_ATTRIBUTE_ID_MISMATCH);
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+    typoStyle = nullptr;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+/**
+ * @tc.name   testOHDrawingGetTypographyStyleAttributeDoubleArray0500
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetTypographyStyleAttributeDoubleArray_0500
+ * @tc.desc   test OH_Drawing_GetTypographyStyleAttributeDoubleArray with unsupported attribute id
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0500(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_TypographyStyle* typoStyle = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT(env, typoStyle != nullptr, "typoStyle is nullptr, create error");
+    double* getArray = nullptr;
+    size_t getLen = 0;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_GetTypographyStyleAttributeDoubleArray(typoStyle,
+        TYPOGRAPHY_STYLE_ATTR_D_LINE_HEIGHT_MAXIMUM, &getArray, &getLen);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetTypographyStyleAttributeDoubleArray0500",
+        "unsupported id returns errorCode: %{public}d", errorCode);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_ATTRIBUTE_ID_MISMATCH);
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+    typoStyle = nullptr;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+/**
+ * @tc.name   testOHDrawingGetTypographyStyleAttributeDoubleArray0600
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetTypographyStyleAttributeDoubleArray_0600
+ * @tc.desc   test OH_Drawing_GetTypographyStyleAttributeDoubleArray without prior set
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0600(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_TypographyStyle* typoStyle = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT(env, typoStyle != nullptr, "typoStyle is nullptr, create error");
+    double* getArray = nullptr;
+    size_t getLen = 0;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_GetTypographyStyleAttributeDoubleArray(typoStyle,
+        TYPOGRAPHY_STYLE_ATTR_DA_LINE_HEAD_INDENT, &getArray, &getLen);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetTypographyStyleAttributeDoubleArray0600",
+        "getLen without set: %{public}zu, getArray: %{public}p", getLen, getArray);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+    typoStyle = nullptr;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+/**
+ * @tc.name   testOHDrawingGetTypographyStyleAttributeDoubleArray0700
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetTypographyStyleAttributeDoubleArray_0700
+ * @tc.desc   test OH_Drawing_GetTypographyStyleAttributeDoubleArray with nullptr arrayValue out param
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0700(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_TypographyStyle* typoStyle = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT(env, typoStyle != nullptr, "typoStyle is nullptr, create error");
+    const size_t arrayLen = ONE;
+    double setValue = 10.0;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyStyleAttributeDoubleArray(typoStyle,
+        TYPOGRAPHY_STYLE_ATTR_DA_LINE_HEAD_INDENT, &setValue, arrayLen);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+    size_t getLen = 0;
+    errorCode = OH_Drawing_GetTypographyStyleAttributeDoubleArray(typoStyle,
+        TYPOGRAPHY_STYLE_ATTR_DA_LINE_HEAD_INDENT, nullptr, &getLen);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetTypographyStyleAttributeDoubleArray0700",
+        "nullptr arrayValue returns errorCode: %{public}d", errorCode);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_INVALID_PARAMETER);
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+    typoStyle = nullptr;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+/**
+ * @tc.name   testOHDrawingGetTypographyStyleAttributeDoubleArray0800
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetTypographyStyleAttributeDoubleArray_0800
+ * @tc.desc   test OH_Drawing_GetTypographyStyleAttributeDoubleArray with nullptr arrayLength out param
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0800(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_TypographyStyle* typoStyle = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT(env, typoStyle != nullptr, "typoStyle is nullptr, create error");
+    const size_t arrayLen = ONE;
+    double setValue = 10.0;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyStyleAttributeDoubleArray(typoStyle,
+        TYPOGRAPHY_STYLE_ATTR_DA_LINE_HEAD_INDENT, &setValue, arrayLen);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+    double* getArray = nullptr;
+    errorCode = OH_Drawing_GetTypographyStyleAttributeDoubleArray(typoStyle,
+        TYPOGRAPHY_STYLE_ATTR_DA_LINE_HEAD_INDENT, &getArray, nullptr);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetTypographyStyleAttributeDoubleArray0800",
+        "nullptr arrayLength returns errorCode: %{public}d", errorCode);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_INVALID_PARAMETER);
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+    typoStyle = nullptr;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+/**
+ * @tc.name   testOHDrawingGetTypographyStyleAttributeDoubleArray0900
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingGetTypographyStyleAttributeDoubleArray_0900
+ * @tc.desc   test OH_Drawing_GetTypographyStyleAttributeDoubleArray with both out params nullptr
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
+napi_value OHDrawingGetTypographyStyleAttributeDoubleArray0900(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_TypographyStyle* typoStyle = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT(env, typoStyle != nullptr, "typoStyle is nullptr, create error");
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_GetTypographyStyleAttributeDoubleArray(typoStyle,
+        TYPOGRAPHY_STYLE_ATTR_DA_LINE_HEAD_INDENT, nullptr, nullptr);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "GetTypographyStyleAttributeDoubleArray0900",
+        "both out params nullptr returns errorCode: %{public}d", errorCode);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_ERROR_INVALID_PARAMETER);
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+    typoStyle = nullptr;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+/**
+ * @tc.name   testOHDrawingSetTypographyStyleAttributeDoubleFirstLineHeadIndent0100
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_Font_OHDrawingSetTypographyStyleAttributeDoubleFirstLineHeadIndent_0100
+ * @tc.desc   test OH_Drawing_SetTypographyStyleAttributeDouble with FIRST_LINE_HEAD_INDENT
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+napi_value OHDrawingSetTypographyStyleAttributeDoubleFirstLineHeadIndent0100(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_Drawing_TypographyStyle* typoStyle = OH_Drawing_CreateTypographyStyle();
+    NAPI_ASSERT(env, typoStyle != nullptr, "typoStyle is nullptr, create error");
+    const double indentValue = 50.0;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_SetTypographyStyleAttributeDouble(typoStyle,
+        TYPOGRAPHY_STYLE_ATTR_D_FIRST_LINE_HEAD_INDENT, indentValue);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SetTypographyStyleAttributeDoubleFirstLineHeadIndent0100",
+        "set FIRST_LINE_HEAD_INDENT value: %{public}f", indentValue);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+    double getValue = 0.0;
+    errorCode = OH_Drawing_GetTypographyStyleAttributeDouble(typoStyle,
+        TYPOGRAPHY_STYLE_ATTR_D_FIRST_LINE_HEAD_INDENT, &getValue);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "SetTypographyStyleAttributeDoubleFirstLineHeadIndent0100",
+        "get FIRST_LINE_HEAD_INDENT value: %{public}f", getValue);
+    NAPI_ASSERT_NO_MES(errorCode == OH_DRAWING_SUCCESS);
+    NAPI_ASSERT_NO_MES(getValue == indentValue);
+    OH_Drawing_DestroyTypographyStyle(typoStyle);
+    typoStyle = nullptr;
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }

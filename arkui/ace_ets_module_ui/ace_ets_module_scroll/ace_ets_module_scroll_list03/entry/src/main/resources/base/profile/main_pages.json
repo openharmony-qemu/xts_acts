@@ -49,6 +49,8 @@
         "MainAbility/pages/emptyBranch/listRepeatUn",
         "MainAbility/pages/emptyBranch/listRepeatNull",
         "MainAbility/pages/List/editModeList",
-        "MainAbility/pages/List/editBadgeList"
+        "MainAbility/pages/List/editBadgeList",
+        "MainAbility/pages/List/backPressBehaviorList",
+        "MainAbility/pages/ListItemGroup/headerFooterStyle"
     ]
 }

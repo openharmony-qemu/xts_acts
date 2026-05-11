@@ -143,7 +143,7 @@ export default function atomicsIsLockFreeTest() {
      */
     it('atomicsIsLockFreeTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const elementSize = 2.5; // Invalid: non-integer
-      const result = Atomics.isLockFree(elementSize as int);
+      const result = Atomics.isLockFree(elementSize.toInt());
       expect(result).assertEqual(true);
     });
 
@@ -344,14 +344,14 @@ export default function atomicsIsLockFreeTest() {
 
       // Lock-free toggle with conflict resolution (simulate concurrent access)
       let current: number = Atomics.load(ia, 0);
-      while (Atomics.compareExchange(ia, 0, current as long, current ^ 1) !== current) {
+      while (Atomics.compareExchange(ia, 0, current.toLong(), current ^ 1) !== current) {
         current = Atomics.load(ia, 0);
       }
 
       expect(Atomics.load(ia, 0)).assertEqual(1);
       // Toggle back lock-free
       current = 1;
-      while (Atomics.compareExchange(ia, 0, current as long, current ^ 1) !== current) {
+      while (Atomics.compareExchange(ia, 0, current.toLong(), current ^ 1) !== current) {
         current = Atomics.load(ia, 0);
       }
       expect(Atomics.load(ia, 0)).assertEqual(0);
@@ -420,7 +420,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      expect(Atomics.isLockFree(Number.MAX_VALUE as int)).assertEqual(false);
+      expect(Atomics.isLockFree(Number.MAX_VALUE.toInt())).assertEqual(false);
     });
 
     /**
@@ -483,7 +483,7 @@ export default function atomicsIsLockFreeTest() {
      */
     it('atomicsIsLockFreeTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const maxSafeInt = Number.MAX_SAFE_INTEGER; // 9007199254740991
-      const result = Atomics.isLockFree(maxSafeInt as int);
+      const result = Atomics.isLockFree(maxSafeInt.toInt());
       expect(result).assertEqual(false);
     });
 
@@ -497,7 +497,7 @@ export default function atomicsIsLockFreeTest() {
      */
     it('atomicsIsLockFreeTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const minSafeInt = Number.MIN_SAFE_INTEGER; // -9007199254740991
-      const result = Atomics.isLockFree(minSafeInt as int);
+      const result = Atomics.isLockFree(minSafeInt.toInt());
       expect(result).assertEqual(false);
     });
 
@@ -510,7 +510,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const result = Atomics.isLockFree(NaN as int);
+      const result = Atomics.isLockFree(NaN.toInt());
       expect(result).assertEqual(false);
     });
 
@@ -523,7 +523,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const result = Atomics.isLockFree(Infinity as int);
+      const result = Atomics.isLockFree(Infinity.toInt());
       expect(result).assertEqual(false);
     });
 
@@ -536,7 +536,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const result = Atomics.isLockFree(-Infinity as int);
+      const result = Atomics.isLockFree(-Infinity.toInt());
       expect(result).assertEqual(false);
     });
 
@@ -754,7 +754,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      expect(Atomics.isLockFree(Number.EPSILON as int)).assertEqual(false);
+      expect(Atomics.isLockFree(Number.EPSILON.toInt())).assertEqual(false);
     });
 
     /**
@@ -803,7 +803,7 @@ export default function atomicsIsLockFreeTest() {
       };
 
       const size = await mockFetchSize();
-      const result = Atomics.isLockFree(size as int);
+      const result = Atomics.isLockFree(size.toInt());
       expect(size).assertEqual(4);
       expect(typeof result).assertEqual('boolean');
     });
@@ -1265,7 +1265,7 @@ export default function atomicsIsLockFreeTest() {
     it('atomicsIsLockFreeTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const asyncNaNCheck = async () => {
         try {
-          const result = Atomics.isLockFree(NaN as int);
+          const result = Atomics.isLockFree(NaN.toInt());
           // Verify result and log (isLockFree returns false for NaN)
           return result;
         } catch (err) {
@@ -1327,7 +1327,7 @@ export default function atomicsIsLockFreeTest() {
         await new Promise<void>((resolve) => {
           setTimeout(() => {
             resolve(undefined)
-          }, Math.random() * 5 as int)
+          }, (Math.random() * 5).toInt())
         }); // Random small delay
         return Atomics.isLockFree(1);
       });
@@ -1514,7 +1514,7 @@ export default function atomicsIsLockFreeTest() {
               resolve(undefined)
             }, 3)
           });
-          const result = Atomics.isLockFree(-Infinity as int);
+          const result = Atomics.isLockFree(-Infinity.toInt());
           flowLog.push('try-success');
           expect(result).assertEqual(false);
           return flowLog;
@@ -1665,7 +1665,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      expect(Atomics.isLockFree(Number.MIN_VALUE as int)).assertEqual(false);
+      expect(Atomics.isLockFree(Number.MIN_VALUE.toInt())).assertEqual(false);
     });
 
     /**
@@ -1878,7 +1878,7 @@ export default function atomicsIsLockFreeTest() {
      * @tc.level  LEVEL2
      */
     it('atomicsIsLockFreeTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      expect(Atomics.isLockFree(Number.POSITIVE_INFINITY as int)).assertEqual(false);
+      expect(Atomics.isLockFree(Number.POSITIVE_INFINITY.toInt())).assertEqual(false);
     });
 
     /**

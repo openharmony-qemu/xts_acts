@@ -74,10 +74,10 @@ export default function UIPickerOnScrollStopTest() {
       let bottom = rect.bottom;
       console.info("rectValue is" + left + " --" + right + "--" + top + "--" + bottom);
       await driver.swipe(
-        Math.round((left + right) / 2) as int,
-        Math.round((top + bottom) / 2) as int,
-        Math.round((left + right) / 2) as int,
-        Math.round((top + bottom) / 4) as int,600
+        Math.round((left + right) / 2).toInt(),
+        Math.round((top + bottom) / 2).toInt(),
+        Math.round((left + right) / 2).toInt(),
+        Math.round((top + bottom) / 4).toInt(),600
       );
       await Utils.sleep(SLEEP_TIME_L);
       let strJson = inspector.getInspectorByKey('OnScrollStop1');

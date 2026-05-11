@@ -19,6 +19,7 @@
 int GetitimerTime64Test();
 int LibcCurrentSigrtmaxTest();
 int LibcCurrentSigrtminTest();
+int SetitimerTest();
 int SetitimerTime64Test();
 int SigholdTest();
 int SigpauseTest();

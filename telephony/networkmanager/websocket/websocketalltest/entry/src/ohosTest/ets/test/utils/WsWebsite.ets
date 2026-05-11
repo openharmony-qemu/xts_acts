@@ -31,6 +31,14 @@ let  testWsAbility:() => void = async ()=>{
         current_url = URLARRAY[websiteIndex]
       }
     });
+    ws.on('openInfo', (err: BusinessError, value: webSocket.WebSocketOpenInfo) => {
+      console.info(`${caseName} : ${URLARRAY[websiteIndex]}   onopeninfo err is ${JSON.stringify(err)} , and value is ${JSON.stringify(value)}`);
+      const status: number = (value as OutValue).status;
+      if(status == 101){
+        isNetSuccess = 1;
+        current_url = URLARRAY[websiteIndex]
+      }
+    });
     ws.connect(URLARRAY[websiteIndex], (err: BusinessError, value: boolean) => {
       console.info(`${caseName} :connect start execute url is  ${URLARRAY[websiteIndex]}`)
       if (err) {

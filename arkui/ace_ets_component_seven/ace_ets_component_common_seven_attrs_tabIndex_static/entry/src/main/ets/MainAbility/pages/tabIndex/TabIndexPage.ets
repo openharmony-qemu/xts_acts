@@ -1161,7 +1161,7 @@ struct TabIndexPage {
 			if (this.targetView == 'Button') {
 				Button('button1')
 					.attributeModifier(this._tabIndexButtonModifier)
-					.commonStyleButton(this.componentKey, this._tabIndex.tabIndex as Int)
+					.commonStyleButton(this.componentKey, this._tabIndex.tabIndex.toInt())
 			}
 			if (this.targetView == 'Blank') {
 				Blank()
@@ -1220,7 +1220,7 @@ struct TabIndexPage {
 				Marquee({ 
 					start: true,
 					step: 50,
-					loop: Infinity as Int,
+					loop: Infinity.toInt(),
 					fromStart: true,
 					src: 'Running Marquee starts rolling'
 				})

@@ -15,7 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import dlpPermission from '@ohos.dlpPermission';
-import { common } from '@kit.AbilityKit';
+import { common, Want } from '@kit.AbilityKit';
 
 const TAG = "DLP_XTS ";
 interface ERRCODE{
@@ -544,6 +544,53 @@ export default function dlpErrorCodeTest() {
         }); // 打开DLP权限管理应用。
       } catch (err) {
         console.error(curTag, 'startDLPManagerForResult 2undefined err:' + err.code + err.message);
+        expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
+      }
+
+      console.info(curTag, "end");
+    })
+
+    /**
+     * @tc.name   SUB_Security_DLP_generateDlpFileForEnterprise_0100
+     * @tc.number SUB_Security_DLP_generateDlpFileForEnterprise_0100
+     * @tc.desc   test generateDlpFileForEnterprise 19100001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_DLP_generateDlpFileForEnterprise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let curTag = TAG + "SUB_Security_DLP_generateDlpFileForEnterprise_0100";
+      console.info(curTag, "start");
+      let dlpProperty: dlpPermission.DLPProperty = {
+        ownerAccount: 'accountInfo.domainInfo.accountName',
+        ownerAccountType: dlpPermission.AccountType.ENTERPRISE_ACCOUNT,
+        authUserList: [{
+          authAccount: 'zhangsan',
+          authAccountType: 4,
+          dlpFileAccess: 3,
+          permExpiryTime: 666666666666666,
+        }],
+        contactAccount: 'zhangsan',
+        offlineAccess: false,
+        ownerAccountID: 'zhangsan',
+        everyoneAccessList: [],
+        expireTime: 666666666666666,
+        actionUponExpiry: dlpPermission.ActionType.NOT_OPEN,
+        fileId: 'xx123456789123456789',
+      };
+
+      let customProperty: dlpPermission.CustomProperty = {
+        enterprise: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+        options: {
+          classificationLabel: 'label1'
+        }
+      };
+
+      try {
+        await dlpPermission.generateDlpFileForEnterprise(0, 0, dlpProperty, customProperty);
+        expect(null).assertFail();
+      } catch (err) {
+        console.error(curTag, `generateDlpFileForEnterprise failed Code is ${err.code}, message is ${err.message}`);
         expect(err.code).assertEqual(DLPErrCode.ERR_JS_INVALID_PARAMETER);
       }
 

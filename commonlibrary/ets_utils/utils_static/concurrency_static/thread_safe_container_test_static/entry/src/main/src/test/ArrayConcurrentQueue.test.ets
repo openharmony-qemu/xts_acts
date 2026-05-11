@@ -1854,10 +1854,13 @@ export default function ArrayConcurrentQueuetest() {
          */
         it("ArrayConcurrentQueueConstructorWith_Test_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
-                const queue: containers.stackless.ArrayConcurrentQueue<int> =
-                    new containers.stackless.ArrayConcurrentQueue<int>(1, thousandElementsArray);
-                expect(queue.size).assertEqual(1);
-                expect(queue.capacity).assertEqual(1);
+                try {
+                    const queue: containers.stackless.ArrayConcurrentQueue<int> =
+                        new containers.stackless.ArrayConcurrentQueue<int>(1, thousandElementsArray);
+                    expect().assertFail();
+                } catch (error) {
+                    expect(error instanceof RangeError).assertTrue();
+                }
                 done();
             });
 

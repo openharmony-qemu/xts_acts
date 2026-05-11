@@ -839,7 +839,7 @@ export default function actslocationTest() {
       done();
   })
 
-      /**
+    /**
      * @tc.name   SUB_Location_nop_offCachedGnssLocationsChange_0100
      * @tc.number SUB_Location_nop_offCachedGnssLocationsChange_0100
      * @tc.desc   Using the offCachedGnssLocationsChange method without permission
@@ -866,6 +866,47 @@ export default function actslocationTest() {
       console.info('SUB_Location_nop_offCachedGnssLocationsChange_0100 end');
       done();
     })
+
+    /**
+     * @tc.number  SUB_Location_nop_setLocationSwitchIgnored_0100
+     * @tc.name  SUB_Location_nop_setLocationSwitchIgnored_0100
+     * @tc.desc  setLocationSwitchIgnored(isIgnored: boolean): void
+     * @tc.level  Level 0
+     * @tc.type  Function
+     * @tc.size  MEDIUMTEST
+     */
+    it('SUB_Location_nop_setLocationSwitchIgnored_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        geoLocationManager.setLocationSwitchIgnored(true);
+        expect().assertFail();
+      } catch (err) {
+        console.info('---SUB_Location_nop_setLocationSwitchIgnored_0100 catch end---' + err.code);
+        expect(err.code).assertEqual(201);
+      }
+      await Utils.msSleep(1000);
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_Location_nop_enableLocationMock_0100
+     * @tc.name  SUB_Location_nop_enableLocationMock_0100
+     * @tc.desc  enableLocationMock(): void
+     * @tc.level  Level 0
+     * @tc.type  Function
+     * @tc.size  MEDIUMTEST
+     */
+    it('SUB_Location_nop_enableLocationMock_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        geoLocationManager.enableLocationMock();
+        expect().assertFail();
+      } catch (err) {
+        console.info('---SUB_Location_nop_enableLocationMock_0100 catch end---' + err.code);
+        expect(err.code).assertEqual(201);
+      }
+      await Utils.msSleep(1000);
+      done();
+    })
+
 
 
 

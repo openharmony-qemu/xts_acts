@@ -18,4 +18,5 @@
 
 napi_value TestHiCollieSetFreezeCallback(napi_env env, napi_callback_info info);
 napi_value TestHiCollieAssociateProcessReport(napi_env env, napi_callback_info info);
+napi_value TestHiCollieAssociateProcessReport1(napi_env env, napi_callback_info info);
 #endif // HICOLLIETEST_H

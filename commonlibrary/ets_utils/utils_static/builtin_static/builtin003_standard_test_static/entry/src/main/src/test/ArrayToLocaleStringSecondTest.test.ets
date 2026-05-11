@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2025 HiHope Open Source Organization.
+* Copyright (C) 2025-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -60,8 +60,8 @@ export default function ArrayToLocaleStringSecondTest() {
         const caseName = 'ArrayToLocaleStringSecondTest0100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          6.6 as float,
-          10.1 as float
+          6.6.toFloat(),
+          10.1.toFloat()
         ];
         const result = toLocaleString(arr);
         expect(result).assertEqual('6.6,10.1');
@@ -83,8 +83,8 @@ export default function ArrayToLocaleStringSecondTest() {
         const caseName = 'ArrayToLocaleStringSecondTest0200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          -6.6 as float,
-          -10.1 as float
+          -6.6.toFloat(),
+          -10.1.toFloat()
         ];
         const result = toLocaleString(arr);
         expect(result).assertEqual('-6.6,-10.1');
@@ -105,7 +105,7 @@ export default function ArrayToLocaleStringSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToLocaleStringSecondTest0300';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [9.88e+6 as float];
+        const arr: FixedArray<float> = [(9.88e+6).toFloat()];
         const result = toLocaleString(arr);
         expect(result).assertEqual('9,880,000');
         console.info(`${caseName}, test end`);
@@ -125,7 +125,7 @@ export default function ArrayToLocaleStringSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToLocaleStringSecondTest0400';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1.22e-5 as float];
+        const arr: FixedArray<float> = [(1.22e-5).toFloat()];
         const result = toLocaleString(arr);
         expect(result).assertEqual('0');
         console.info(`${caseName}, test end`);
@@ -145,7 +145,7 @@ export default function ArrayToLocaleStringSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToLocaleStringSecondTest0500';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [0.0 as float];
+        const arr: FixedArray<float> = [0.0.toFloat()];
         const result = toLocaleString(arr);
         expect(result).assertEqual('0');
         console.info(`${caseName}, test end`);
@@ -165,7 +165,7 @@ export default function ArrayToLocaleStringSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToLocaleStringSecondTest0600';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1000000.0 as float];
+        const arr: FixedArray<float> = [1000000.0.toFloat()];
         const result = toLocaleString(arr);
         expect(result).assertEqual('1,000,000');
         console.info(`${caseName}, test end`);
@@ -186,8 +186,8 @@ export default function ArrayToLocaleStringSecondTest() {
         const caseName = 'ArrayToLocaleStringSecondTest0700';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          6.6 as float,
-          10.1 as float
+          6.6.toFloat(),
+          10.1.toFloat()
         ];
         const locales: object = {};
         let errorOccurred: boolean = false;
@@ -218,8 +218,8 @@ export default function ArrayToLocaleStringSecondTest() {
         const caseName = 'ArrayToLocaleStringSecondTest0800';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          -6.6 as float,
-          -10.1 as float
+          -6.6.toFloat(),
+          -10.1.toFloat()
         ];
         const locales: object = {};
         let errorOccurred: boolean = false;
@@ -249,7 +249,7 @@ export default function ArrayToLocaleStringSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToLocaleStringSecondTest0900';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [9.88e+6 as float];
+        const arr: FixedArray<float> = [(9.88e+6).toFloat()];
         const locales: object = {};
         let errorOccurred: boolean = false;
         let errorContainsKeyword: boolean = false;
@@ -278,7 +278,7 @@ export default function ArrayToLocaleStringSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToLocaleStringSecondTest1000';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1.22e-5 as float];
+        const arr: FixedArray<float> = [(1.22e-5).toFloat()];
         const locales: object = {};
         let errorOccurred: boolean = false;
         let errorContainsKeyword: boolean = false;
@@ -307,7 +307,7 @@ export default function ArrayToLocaleStringSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToLocaleStringSecondTest1100';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [0.0 as float];
+        const arr: FixedArray<float> = [0.0.toFloat()];
         const locales: object = {};
         let errorOccurred: boolean = false;
         let errorContainsKeyword: boolean = false;
@@ -336,7 +336,7 @@ export default function ArrayToLocaleStringSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToLocaleStringSecondTest1200';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1000000.0 as float];
+        const arr: FixedArray<float> = [1000000.0.toFloat()];
         const locales: object = {};
         let errorOccurred: boolean = false;
         let errorContainsKeyword: boolean = false;
@@ -366,8 +366,8 @@ export default function ArrayToLocaleStringSecondTest() {
         const caseName = 'ArrayToLocaleStringSecondTest1300';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          6.6 as float,
-          10.1 as float
+          6.6.toFloat(),
+          10.1.toFloat()
         ];
         const locales: object = {};
         const options: object = {};
@@ -399,8 +399,8 @@ export default function ArrayToLocaleStringSecondTest() {
         const caseName = 'ArrayToLocaleStringSecondTest1400';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          -6.6 as float,
-          -10.1 as float
+          -6.6.toFloat(),
+          -10.1.toFloat()
         ];
         const locales: object = {};
         const options: object = {};
@@ -431,7 +431,7 @@ export default function ArrayToLocaleStringSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToLocaleStringSecondTest1500';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [9.88e+6 as float];
+        const arr: FixedArray<float> = [(9.88e+6).toFloat()];
         const locales: object = {};
         const options: object = {};
         let errorOccurred: boolean = false;
@@ -461,7 +461,7 @@ export default function ArrayToLocaleStringSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToLocaleStringSecondTest1600';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1.22e-5 as float];
+        const arr: FixedArray<float> = [(1.22e-5).toFloat()];
         const locales: object = {};
         const options: object = {};
         let errorOccurred: boolean = false;
@@ -491,7 +491,7 @@ export default function ArrayToLocaleStringSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToLocaleStringSecondTest1700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [0.0 as float];
+        const arr: FixedArray<float> = [0.0.toFloat()];
         const locales: object = {};
         const options: object = {};
         let errorOccurred: boolean = false;
@@ -521,7 +521,7 @@ export default function ArrayToLocaleStringSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToLocaleStringSecondTest1800';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1000000.0 as float];
+        const arr: FixedArray<float> = [1000000.0.toFloat()];
         const locales: object = {};
         const options: object = {};
         let errorOccurred: boolean = false;

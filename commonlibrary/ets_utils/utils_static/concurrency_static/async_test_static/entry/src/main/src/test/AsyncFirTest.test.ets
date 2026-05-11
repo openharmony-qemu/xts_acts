@@ -1740,7 +1740,7 @@ export default function asyncFirTest(): void {
       ): Promise<string[]> => {
         const processItem = async (item: string): Promise<string> => {
           const prefixed = await Promise.resolve(config.prefix + item);
-          const repeated = await Promise.resolve(prefixed.repeat(config.multiplier as int));
+          const repeated = await Promise.resolve(prefixed.repeat(config.multiplier.toInt()));
           return config.uppercase ? repeated.toUpperCase() : repeated;
         };
 

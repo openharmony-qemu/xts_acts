@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -4032,7 +4032,7 @@ export default function builtinsJsonTest() {
       const elem: jsonx.JsonElement = JSON.parseJsonElement(jsonStr, (key: string, value: jsonx.JsonElement): jsonx.JsonElement => {
         if (key === '') return value;
         if (value.jsonType === jsonx.JsonType.JsonNumber) {
-          const idx: int = parseInt(key) as int;
+          const idx: int = parseInt(key).toInt();
           const num: int | undefined = value.tryAsInteger();
           if (num !== undefined && idx % 2 === 0) {
             return jsonx.JsonElement.createInteger(num * 10);

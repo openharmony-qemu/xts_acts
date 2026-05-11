@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -108,9 +108,9 @@ it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_static_0290', Level.LEVEL0, async (don
       const winLeft = AppStorage.get<number>('winLeft') ?? 0;
       const winTop = AppStorage.get<number>('winTop as Int') ?? 0;
 
-      await driver.swipe((winLeft + Math.round(btRight)) as Int, (winTop as Int + Math.round(btBottom / 2)) as Int,
-        (winLeft + Math.round(btRight) - Math.round(UIContext.resolveUIContext()!.vp2px(20))) as Int,
-        (winTop as Int + Math.round(btBottom / 2)) as Int);
+      await driver.swipe((winLeft + Math.round(btRight)).toInt(), (winTop.toInt() + Math.round(btBottom / 2)).toInt(),
+        (winLeft + Math.round(btRight) - Math.round(UIContext.resolveUIContext()!.vp2px(20))).toInt(),
+        (winTop.toInt() + Math.round(btBottom / 2)).toInt());
       // await CommonFunc.sleep(3000);
 
       // get the component of text_10, scroll distance is to short can not slow

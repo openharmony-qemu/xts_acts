@@ -112,26 +112,27 @@ export async function exclusiveMultiWorkerTest() {
   let p1 = new Promise<void>((resolve, reject) => {
     let worker = new EAWorker()
     worker.start()
-    let job1 = worker.run<string>((): string => {
-      return (async () => {
-        let flag = ''
-        let result: Promise<void> | null = null;
-        result = exclusiveMultiWorkerJob(data.lockName, data.timeout, data.tidBuf, data.tid);
-        await result.then(():void => {
-          flag = 'PASSED'
-        }, (e: Error):void => {
-          flag = 'FAILED: ' + e.message
-        });
-        return flag
-      })().awaitSync()
+    let job1 = worker.run<string>(async () => {
+      let flag = ''
+      let result = exclusiveMultiWorkerJob(data.lockName, data.timeout, data.tidBuf, data.tid);
+      await result.then(():void => {
+        flag = 'PASSED'
+      }, (e: Error):void => {
+        flag = 'FAILED: ' + e.message
+      });
+      return flag
     })
-    let workerresult = job1.Await()
-    worker.join()
-    if (workerresult === 'PASSED') {
-      resolve(undefined);
-    } else {
-      reject(Error(workerresult));
-    }
+    job1.then((workerresult: string): void => {
+      worker.join()
+      if (workerresult === 'PASSED') {
+        resolve(undefined);
+      } else {
+        reject(Error(workerresult));
+      }
+    }).catch((err: Error): void => {
+      worker.join()
+      reject(err);
+    });
   });
   let p2 = exclusiveMultiJob(lockName, Number(100), tidBuf, Number(1));
   return check('exclusiveMultiWorkerTest', Promise.all([p1, p2]));
@@ -215,13 +216,17 @@ export async function sharedMultiWorkerTest() {
         return flag
       })().awaitSync()
     })
-    let workerresult = job1.Await()
-    worker.join()
-    if (workerresult === 'PASSED') {
-      resolve(undefined);
-    } else {
-      reject(Error(workerresult));
-    }
+    job1.then((workerresult: string): void => {
+      worker.join()
+      if (workerresult === 'PASSED') {
+        resolve(undefined);
+      } else {
+        reject(Error(workerresult));
+      }
+    }).catch((err: Error): void => {
+      worker.join()
+      reject(err);
+    });
   });
   return check('sharedMultiWorkerTest', Promise.all([p1, p2]));
 }
@@ -596,7 +601,7 @@ export async function sequentialLockWorkerTest() {
   let flagBuf = createInt();
   flagBuf[0] = 0;
   let data:lockType_sequentialLockWorkerTest ={ test: 'sequentialLockWorkerTest', lockName: lockNameB, timeout: Number(100), flagBuf: flagBuf }
-  let p1 = new Promise<void>((resolve) => {
+  let p1 = new Promise<void>((resolve, reject) => {
     let worker = new EAWorker()
     worker.start()
     let job1 = worker.run<string>((): string => {
@@ -612,9 +617,17 @@ export async function sequentialLockWorkerTest() {
         return flag
       })().awaitSync()
     })
-    job1.Await()
-    worker.join()
-    resolve(undefined);
+    job1.then((workerresult: string): void => {
+      worker.join()
+      if (workerresult === 'PASSED') {
+        resolve(undefined);
+      } else {
+        reject(Error(workerresult));
+      }
+    }).catch((err: Error): void => {
+      worker.join()
+      reject(err);
+    });
   });
   let p = new Promise<void>((resolve, reject) => {
     let lockA = new AsyncLock();
@@ -1043,15 +1056,19 @@ export async function setDelayRequestAndCloseWorkerInstantlyTest(): Promise<stri
         return flag
       })().awaitSync()
     })
-    let workerresult: string = job.Await()
-    if (workerresult === 'PASSED') {
+    job.then((workerresult: string): void => {
       worker.join()
-      resolve(undefined);
-    } else {
-      reject(Error(workerresult));
-    }
+      if (workerresult === 'PASSED') {
+        resolve(undefined);
+      } else {
+        reject(Error(workerresult));
+      }
+    }).catch((err: Error): void => {
+      worker.join()
+      reject(err);
+    });
   });
- 
+
   let p0 = lock.lockAsync(async (): Promise<void> => {
     await new Promise<void>(resolve => {
       setTimeout(() => {
@@ -1148,4 +1165,3 @@ export async function pendingSharedRequestAfterGC(): Promise<string> {
   let p0: Promise<Promise<void>> = lockAsyncPromise(AsyncLockMode.SHARED);
   return check('pendingSharedRequestAfterGC', Promise.all([p, p0]));
 }
-

@@ -47,7 +47,12 @@ export default function BuiltinsArrayReduceTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayReduceTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       const result = arr.reduce((previousValue: number, currentValue: number, index: int, array: Array<number>): number => {
         return previousValue + currentValue;
@@ -85,7 +90,12 @@ export default function BuiltinsArrayReduceTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReduceTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       const result = arr.reduce((previousValue: number, currentValue: number, index: int, array: Array<number>): number => {
         return previousValue + currentValue;
@@ -104,7 +114,7 @@ export default function BuiltinsArrayReduceTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReduceTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
 
       const result = arr.reduce((previousValue: number, currentValue: number, index: int, array: Array<number>): number => {
         return previousValue + currentValue;
@@ -123,7 +133,7 @@ export default function BuiltinsArrayReduceTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReduceTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<string>('Hello', ' ', 'World', '!');
+      const arr: string[] = ['Hello', ' ', 'World', '!'];
 
       const result = arr.reduce((previousValue: string, currentValue: string, index: int, array: Array<string>): string => {
         return previousValue + currentValue;
@@ -142,7 +152,12 @@ export default function BuiltinsArrayReduceTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReduceTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       const result = arr.reduce((previousValue: string, currentValue: number, index: int, array: Array<number>): string => {
         return previousValue + currentValue.toString();
@@ -161,7 +176,7 @@ export default function BuiltinsArrayReduceTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayReduceTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<string>('a', 'b', 'c');
+      const arr: string[] = ['a', 'b', 'c'];
 
       const result = arr.reduce((previousValue: Record<string, number>, currentValue: string, index: int, array: Array<string>): Record<string, number> => {
         previousValue[currentValue] = index;

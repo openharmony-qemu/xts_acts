@@ -47,7 +47,12 @@ export default function BuiltinsArrayIndexOfTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayIndexOfTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       const result = arr.indexOf(1);
       const expected = 0;
@@ -64,7 +69,12 @@ export default function BuiltinsArrayIndexOfTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayIndexOfTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       const result = arr.indexOf(3);
       const expected = 2;
@@ -81,7 +91,12 @@ export default function BuiltinsArrayIndexOfTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayIndexOfTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       const result = arr.indexOf(5);
       const expected = 4;
@@ -98,7 +113,12 @@ export default function BuiltinsArrayIndexOfTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayIndexOfTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       const result = arr.indexOf(6);
       const expected = -1;
@@ -115,7 +135,7 @@ export default function BuiltinsArrayIndexOfTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayIndexOfTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
 
       const result = arr.indexOf(1);
       const expected = -1;
@@ -132,7 +152,12 @@ export default function BuiltinsArrayIndexOfTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayIndexOfTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 2, 1);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 2;
+      arr[4] = 1;
 
       const result = arr.indexOf(2, 2);
       const expected = 3;
@@ -149,7 +174,12 @@ export default function BuiltinsArrayIndexOfTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayIndexOfTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       const result = arr.indexOf(2, 3);
       const expected = -1;
@@ -166,7 +196,12 @@ export default function BuiltinsArrayIndexOfTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayIndexOfTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       const result = arr.indexOf(1, 5);
       const expected = -1;
@@ -183,7 +218,12 @@ export default function BuiltinsArrayIndexOfTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayIndexOfTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       const result = arr.indexOf(4, -2);
       const expected = 3;
@@ -200,7 +240,12 @@ export default function BuiltinsArrayIndexOfTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayIndexOfTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 1;
+      arr[1] = 2;
+      arr[2] = 3;
+      arr[3] = 4;
+      arr[4] = 5;
 
       const result = arr.indexOf(3, undefined);
       const expected = 2;
@@ -217,7 +262,7 @@ export default function BuiltinsArrayIndexOfTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayIndexOfTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<string>("apple", "banana", "cherry", "date");
+      const arr: string[] = ["apple", "banana", "cherry", "date"];
 
       const result = arr.indexOf("cherry");
       const expected = 2;
@@ -234,7 +279,7 @@ export default function BuiltinsArrayIndexOfTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayIndexOfTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<boolean>(true, false, true, false);
+      const arr: boolean[] = [true, false, true, false];
 
       const result = arr.indexOf(false, 1);
       const expected = 1;

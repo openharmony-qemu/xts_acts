@@ -8,6 +8,10 @@ interface ModifyRule {
   expectValueDNG: number | string | Array<number> | Array<number | null> | null;
 }
 
+interface ReadOnlyMetaDataRuleWithType {
+  type: string,
+  newExpectValue: string | object | boolean | number | number[] | number[][];
+}
 interface ReadOnlyMetaDataRule {
   newExpectValue: string | object | boolean | number | number[] | number[][];
 }
@@ -30,6 +34,31 @@ interface WebPPropertyTypeConfig {
   rules: Map<image.WebPPropertyKey, ReadOnlyMetaDataRule>;
 }
 
+interface GifPropertyTypeConfig {
+  keys: Array<image.GifPropertyKey>;
+  rules: Map<image.GifPropertyKey, ReadOnlyMetaDataRuleWithType>;
+}
+
+interface HeifsPropertyTypeConfig {
+  keys: Array<image.HeifsPropertyKey>;
+  rules: Map<image.HeifsPropertyKey, ReadOnlyMetaDataRuleWithType>;
+}
+
+interface PngPropertyTypeConfig {
+  keys: Array<image.PngPropertyKey>;
+  rules: Map<image.PngPropertyKey, ReadOnlyMetaDataRuleWithType>;
+}
+
+interface TiffPropertyTypeConfig {
+  keys: Array<image.TiffPropertyKey>;
+  rules: Map<image.TiffPropertyKey, ReadOnlyMetaDataRuleWithType>;
+}
+
+interface JfifPropertyTypeConfig {
+  keys: Array<image.JfifPropertyKey>;
+  rules: Map<image.JfifPropertyKey, ReadOnlyMetaDataRuleWithType>;
+}
+
 interface PropertyTypeConfig2 {
   keys: Array<image.PropertyKey>;
   rules: Map<image.PropertyKey, ModifyRule2>;
@@ -45,6 +74,11 @@ interface ImagePropertyConfigType {
   arrayBuffer: PropertyTypeConfig;
   string: PropertyTypeConfig;
   webpMetadatas: WebPPropertyTypeConfig;
+  gifMetadatas: GifPropertyTypeConfig;
+  heifsMetadatas: HeifsPropertyTypeConfig;
+  pngMetadatas: PngPropertyTypeConfig;
+  jfifMetadatas: JfifPropertyTypeConfig;
+  tiffMetadatas: TiffPropertyTypeConfig;
   arrayBufferOnly: PropertyTypeConfig;
   shortModify: PropertyTypeConfig2;
   longModify: PropertyTypeConfig2;
@@ -64,6 +98,8 @@ const testArrayBufferUint8_1: Uint8Array = new Uint8Array([1]);
 const testExifArrayBuffer_1: ArrayBuffer = testArrayBufferUint8_1.buffer as ArrayBuffer;
 const testArrayBufferUint8_2: Uint8Array = new Uint8Array([5, 6]);
 const testExifArrayBuffer_2: ArrayBuffer = testArrayBufferUint8_2.buffer as ArrayBuffer;
+const TRANSFER_FUNCTION_STRING : string = "0,257,514,771,1028,1285,1542,1799,2056,2313,2570,2827,3084,3341,3598,3855,4112,4369,4626,4883,5140,5397,5654,5911,6168,6425,6682,6939,7196,7453,7710,7967,8224,8481,8738,8995,9252,9509,9766,10023,10280,10537,10794,11051,11308,11565,11822,12079,12336,12593,12850,13107,13364,13621,13878,14135,14392,14649,14906,15163,15420,15677,15934,16191,16448,16705,16962,17219,17476,17733,17990,18247,18504,18761,19018,19275,19532,19789,20046,20303,20560,20817,21074,21331,21588,21845,22102,22359,22616,22873,23130,23387,23644,23901,24158,24415,24672,24929,25186,25443,25700,25957,26214,26471,26728,26985,27242,27499,27756,28013,28270,28527,28784,29041,29298,29555,29812,30069,30326,30583,30840,31097,31354,31611,31868,32125,32382,32639,32896,33153,33410,33667,33924,34181,34438,34695,34952,35209,35466,35723,35980,36237,36494,36751,37008,37265,37522,37779,38036,38293,38550,38807,39064,39321,39578,39835,40092,40349,40606,40863,41120,41377,41634,41891,42148,42405,42662,42919,43176,43433,43690,43947,44204,44461,44718,44975,45232,45489,45746,46003,46260,46517,46774,47031,47288,47545,47802,48059,48316,48573,48830,49087,49344,49601,49858,50115,50372,50629,50886,51143,51400,51657,51914,52171,52428,52685,52942,53199,53456,53713,53970,54227,54484,54741,54998,55255,55512,55769,56026,56283,56540,56797,57054,57311,57568,57825,58082,58339,58596,58853,59110,59367,59624,59881,60138,60395,60652,60909,61166,61423,61680,61937,62194,62451,62708,62965,63222,63479,63736,63993,64250,64507,64764,65021,65278,65535,0,257,514,771,1028,1285,1542,1799,2056,2313,2570,2827,3084,3341,3598,3855,4112,4369,4626,4883,5140,5397,5654,5911,6168,6425,6682,6939,7196,7453,7710,7967,8224,8481,8738,8995,9252,9509,9766,10023,10280,10537,10794,11051,11308,11565,11822,12079,12336,12593,12850,13107,13364,13621,13878,14135,14392,14649,14906,15163,15420,15677,15934,16191,16448,16705,16962,17219,17476,17733,17990,18247,18504,18761,19018,19275,19532,19789,20046,20303,20560,20817,21074,21331,21588,21845,22102,22359,22616,22873,23130,23387,23644,23901,24158,24415,24672,24929,25186,25443,25700,25957,26214,26471,26728,26985,27242,27499,27756,28013,28270,28527,28784,29041,29298,29555,29812,30069,30326,30583,30840,31097,31354,31611,31868,32125,32382,32639,32896,33153,33410,33667,33924,34181,34438,34695,34952,35209,35466,35723,35980,36237,36494,36751,37008,37265,37522,37779,38036,38293,38550,38807,39064,39321,39578,39835,40092,40349,40606,40863,41120,41377,41634,41891,42148,42405,42662,42919,43176,43433,43690,43947,44204,44461,44718,44975,45232,45489,45746,46003,46260,46517,46774,47031,47288,47545,47802,48059,48316,48573,48830,49087,49344,49601,49858,50115,50372,50629,50886,51143,51400,51657,51914,52171,52428,52685,52942,53199,53456,53713,53970,54227,54484,54741,54998,55255,55512,55769,56026,56283,56540,56797,57054,57311,57568,57825,58082,58339,58596,58853,59110,59367,59624,59881,60138,60395,60652,60909,61166,61423,61680,61937,62194,62451,62708,62965,63222,63479,63736,63993,64250,64507,64764,65021,65278,65535,0,257,514,771,1028,1285,1542,1799,2056,2313,2570,2827,3084,3341,3598,3855,4112,4369,4626,4883,5140,5397,5654,5911,6168,6425,6682,6939,7196,7453,7710,7967,8224,8481,8738,8995,9252,9509,9766,10023,10280,10537,10794,11051,11308,11565,11822,12079,12336,12593,12850,13107,13364,13621,13878,14135,14392,14649,14906,15163,15420,15677,15934,16191,16448,16705,16962,17219,17476,17733,17990,18247,18504,18761,19018,19275,19532,19789,20046,20303,20560,20817,21074,21331,21588,21845,22102,22359,22616,22873,23130,23387,23644,23901,24158,24415,24672,24929,25186,25443,25700,25957,26214,26471,26728,26985,27242,27499,27756,28013,28270,28527,28784,29041,29298,29555,29812,30069,30326,30583,30840,31097,31354,31611,31868,32125,32382,32639,32896,33153,33410,33667,33924,34181,34438,34695,34952,35209,35466,35723,35980,36237,36494,3675"
+
 
 const ImagePropertyConfig: ImagePropertyConfigType = {
   short: {
@@ -422,6 +458,141 @@ const ImagePropertyConfig: ImagePropertyConfigType = {
       [image.WebPPropertyKey.UNCLAMPED_DELAY_TIME,  { newExpectValue: 100 }],
       [image.WebPPropertyKey.LOOP_COUNT,            { newExpectValue: 9   }],
     ])
+  },
+  gifMetadatas: {
+    keys: [
+        image.GifPropertyKey.GIF_DELAY_TIME,
+        image.GifPropertyKey.GIF_DISPOSAL_TYPE,
+        image.GifPropertyKey.GIF_HAS_GLOBAL_COLOR_MAP,
+        image.GifPropertyKey.GIF_CANVAS_WIDTH, 
+        image.GifPropertyKey.GIF_CANVAS_HEIGHT, 
+        image.GifPropertyKey.GIF_LOOP_COUNT, 
+        image.GifPropertyKey.GIF_UNCLAMPED_DELAY_TIME
+    ],
+    rules: new Map<image.GifPropertyKey, ReadOnlyMetaDataRuleWithType>([
+      [image.GifPropertyKey.GIF_DELAY_TIME,                   { type: 'short',newExpectValue: 100  }],
+      [image.GifPropertyKey.GIF_DISPOSAL_TYPE,                { type: 'short',newExpectValue: 1  }],
+      [image.GifPropertyKey.GIF_HAS_GLOBAL_COLOR_MAP,         { type: 'short',newExpectValue: 1 }],
+      [image.GifPropertyKey.GIF_CANVAS_WIDTH,                 { type: 'short',newExpectValue: 480 }],
+      [image.GifPropertyKey.GIF_CANVAS_HEIGHT,                { type: 'short',newExpectValue: 270   }],
+      [image.GifPropertyKey.GIF_LOOP_COUNT,                   { type: 'short',newExpectValue: 0   }],
+      [image.GifPropertyKey.GIF_UNCLAMPED_DELAY_TIME,         { type: 'short',newExpectValue: 40   }]
+    ])
+  },
+  heifsMetadatas: {
+    keys: [
+        image.HeifsPropertyKey.HEIFS_DELAY_TIME,
+        image.HeifsPropertyKey.HEIFS_UNCLAMPED_DELAY_TIME,
+        image.HeifsPropertyKey.HEIFS_CANVAS_HEIGHT,
+        image.HeifsPropertyKey.HEIFS_CANVAS_WIDTH 
+    ],
+    rules: new Map<image.HeifsPropertyKey, ReadOnlyMetaDataRuleWithType>([
+      [image.HeifsPropertyKey.HEIFS_DELAY_TIME,                   { type: 'short',newExpectValue: 20  }],
+      [image.HeifsPropertyKey.HEIFS_UNCLAMPED_DELAY_TIME,         { type: 'short',newExpectValue: 20  }],
+      [image.HeifsPropertyKey.HEIFS_CANVAS_HEIGHT,                { type: 'short',newExpectValue: 720 }],
+      [image.HeifsPropertyKey.HEIFS_CANVAS_WIDTH,                 { type: 'short',newExpectValue: 1280 }],
+      ])
+    },
+  jfifMetadatas: {
+      keys: [
+          image.JfifPropertyKey.DENSITY_UNIT,
+          image.JfifPropertyKey.X_DENSITY,
+          image.JfifPropertyKey.Y_DENSITY,
+          image.JfifPropertyKey.VERSION, 
+          image.JfifPropertyKey.IS_PROGRESSIVE        
+      ],
+      rules: new Map<image.JfifPropertyKey, ReadOnlyMetaDataRuleWithType>([
+        [image.JfifPropertyKey.DENSITY_UNIT,                 { type: 'short',newExpectValue: 1  }],
+        [image.JfifPropertyKey.X_DENSITY,               {  type: 'short',newExpectValue: 72  }],
+        [image.JfifPropertyKey.Y_DENSITY,         { type: 'short',newExpectValue: 72 }],
+        [image.JfifPropertyKey.VERSION,                  {  type: 'short',newExpectValue: 1 }],
+        [image.JfifPropertyKey.IS_PROGRESSIVE,                 { type: 'intArray',newExpectValue: [0] }],
+      ])
+  },
+  pngMetadatas: {
+      keys: [
+          image.PngPropertyKey.X_PIXELS_PER_METER,
+          image.PngPropertyKey.MODIFICATION_TIME,
+          image.PngPropertyKey.SOFTWARE,
+          image.PngPropertyKey.COPYRIGHT, 
+          image.PngPropertyKey.CREATION_TIME,
+          image.PngPropertyKey.SRGB_INTENT,
+          image.PngPropertyKey.AUTHOR,
+          image.PngPropertyKey.INTERLACE_TYPE,
+          image.PngPropertyKey.WARNING,
+          image.PngPropertyKey.Y_PIXELS_PER_METER, 
+          image.PngPropertyKey.GAMMA,
+          image.PngPropertyKey.CHROMATICITIES,
+          image.PngPropertyKey.DESCRIPTION,
+          image.PngPropertyKey.TITLE,
+          image.PngPropertyKey.COMMENT,
+          image.PngPropertyKey.DISCLAIMER, 
+          image.PngPropertyKey.CHROMATICITIES         
+      ],
+      rules: new Map<image.PngPropertyKey, ReadOnlyMetaDataRuleWithType>([
+        [image.PngPropertyKey.X_PIXELS_PER_METER,{ type: 'short',newExpectValue: 3780  }],
+        [image.PngPropertyKey.MODIFICATION_TIME,{ type: 'string',newExpectValue: "2026-03-19 10:05:00"  }],
+        [image.PngPropertyKey.SOFTWARE,{ type: 'string',newExpectValue: "Python pypng Script" }],
+        [image.PngPropertyKey.COPYRIGHT,{ type: 'string',newExpectValue: "Copyright (C) 2026 QA Team" }],
+        [image.PngPropertyKey.CREATION_TIME,{ type: 'string',newExpectValue: "2026-03-19 10:00:00"  }],
+        [image.PngPropertyKey.SRGB_INTENT,{ type: 'short',newExpectValue: 0  }],
+        [image.PngPropertyKey.AUTHOR,{ type: 'string',newExpectValue: "Test Engineer" }],
+        [image.PngPropertyKey.INTERLACE_TYPE,{ type: 'short',newExpectValue: 0 }],
+        [image.PngPropertyKey.WARNING,{ type: 'string',newExpectValue: "Do not modify this metadata!"  }],
+        [image.PngPropertyKey.Y_PIXELS_PER_METER,               { type: 'short',newExpectValue: 3780  }],
+        [image.PngPropertyKey.GAMMA,{ type: 'double',newExpectValue: 0.45455 }],
+        [image.PngPropertyKey.CHROMATICITIES,{ type: 'doubleArray',newExpectValue: [0.3127,0.329,0.64,0.33,0.3,0.6,0.15,0.06] }],
+        [image.PngPropertyKey.DESCRIPTION,{ type: 'string',newExpectValue: "This image contains all possible metadata fields"  }],
+        [image.PngPropertyKey.TITLE,{ type: 'string',newExpectValue: "Complete Test Image"   }],
+        [image.PngPropertyKey.COMMENT,{ type: 'string',newExpectValue: "Generated for testing purposes" }],
+        [image.PngPropertyKey.DISCLAIMER,{ type: 'string',newExpectValue: "For internal use only" }],
+      ])
+  },
+  tiffMetadatas: {
+      keys: [
+          image.TiffPropertyKey.DOCUMENT_NAME,
+          image.TiffPropertyKey.PHOTOMETRIC_INTERPRETATION,
+          image.TiffPropertyKey.SOFTWARE,
+          image.TiffPropertyKey.ORIENTATION,
+          image.TiffPropertyKey.RESOLUTION_UNIT,
+          image.TiffPropertyKey.COPYRIGHT,
+          image.TiffPropertyKey.DATE_TIME,
+          image.TiffPropertyKey.IMAGE_DESCRIPTION,
+          image.TiffPropertyKey.Y_RESOLUTION, 
+          image.TiffPropertyKey.X_RESOLUTION,
+          image.TiffPropertyKey.WHITE_POINT,
+          image.TiffPropertyKey.TILE_LENGTH,
+          image.TiffPropertyKey.TRANSFER_FUNCTION,
+          image.TiffPropertyKey.TILE_WIDTH,
+          image.TiffPropertyKey.MAKE, 
+          image.TiffPropertyKey.MODEL,
+          image.TiffPropertyKey.HOST_COMPUTER,
+          image.TiffPropertyKey.COMPRESSION,
+          image.TiffPropertyKey.PRIMARY_CHROMATICITIES,
+          image.TiffPropertyKey.ARTIST
+      ],
+      rules: new Map<image.TiffPropertyKey, ReadOnlyMetaDataRuleWithType>([
+        [image.TiffPropertyKey.DOCUMENT_NAME, { type: 'string',newExpectValue: 7700202 }],
+        [image.TiffPropertyKey.PHOTOMETRIC_INTERPRETATION, { type: 'short',newExpectValue: 2  }],
+        [image.TiffPropertyKey.SOFTWARE,{ type: 'string',newExpectValue: "Adobe Photoshop Lightroom Classic 7.4 (Macintosh)" }],
+        [image.TiffPropertyKey.ORIENTATION,{ type: 'short',newExpectValue: 7700202 }],
+        [image.TiffPropertyKey.RESOLUTION_UNIT,{ type: 'short',newExpectValue: 2  }],
+        [image.TiffPropertyKey.COPYRIGHT,{ type: 'string',newExpectValue: 7700202 }],
+        [image.TiffPropertyKey.DATE_TIME,{ type: 'string',newExpectValue: "2018:10:27 16:20:29" }],
+        [image.TiffPropertyKey.IMAGE_DESCRIPTION,{ type: 'string',newExpectValue: 7700202 }],
+        [image.TiffPropertyKey.Y_RESOLUTION,{ type: 'short',newExpectValue: 7700202 }],
+        [image.TiffPropertyKey.X_RESOLUTION,{ type: 'short',newExpectValue: 7700202}],
+        [image.TiffPropertyKey.WHITE_POINT,{type: 'doubleArray', newExpectValue: 7700202 }],
+        [image.TiffPropertyKey.TILE_LENGTH,{ type: 'short',newExpectValue: 7700202 }],
+        [image.TiffPropertyKey.TRANSFER_FUNCTION,{type: 'string', newExpectValue: 7700202}],
+        [image.TiffPropertyKey.TILE_WIDTH,{ type: 'short',newExpectValue: 7700202}],
+        [image.TiffPropertyKey.MAKE,{ type: 'string',newExpectValue: "Canon" }],        
+        [image.TiffPropertyKey.MODEL,{ type: 'string',newExpectValue: "Canon EOS Rebel T6" }],
+        [image.TiffPropertyKey.HOST_COMPUTER,{type: 'string', newExpectValue: 7700202 }],
+        [image.TiffPropertyKey.COMPRESSION,{ type: 'short',newExpectValue: 1 }],
+        [image.TiffPropertyKey.PRIMARY_CHROMATICITIES,{ type: 'doubleArray',newExpectValue: 7700202 }],
+        [image.TiffPropertyKey.ARTIST,{ type: 'string',newExpectValue: 7700202 }],
+        ])
   },
   shortModify: {
     keys: [

@@ -1019,6 +1019,7 @@ export default function abilityTest() {
  	       accessibility.isSeniorModeEnabled().then((result) => {
  	         console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_4200 result: ${result}`);
  	         expect(typeof (result)).assertEqual('boolean');
+           expect(result).assertEqual(false);
  	         done();
  	       }).catch((err: Error) => {
  	         console.error(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_static_4200 has error: ${err.code},msg: ${err.message}`);

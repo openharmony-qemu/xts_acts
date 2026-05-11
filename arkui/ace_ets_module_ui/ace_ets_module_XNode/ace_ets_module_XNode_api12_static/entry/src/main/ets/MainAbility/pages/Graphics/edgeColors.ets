@@ -65,8 +65,8 @@ struct edgeColorsExample {
         .onClick((e:ClickEvent) => {
           renderNode.borderColor = edgeColors(0xFF0000FF.toInt())
           renderNode.invalidate()
-          this.edgeColorsValue = renderNode!.borderColor!.left as long
-          console.log('+++++++++',renderNode!.borderColor!.left  as long)//-16776961 转16进制 0xFF0000FF
+          this.edgeColorsValue = renderNode!.borderColor!.left.toLong()
+          console.log('+++++++++',renderNode!.borderColor!.left.toLong())//-16776961 转16进制 0xFF0000FF
         })
     }
   }

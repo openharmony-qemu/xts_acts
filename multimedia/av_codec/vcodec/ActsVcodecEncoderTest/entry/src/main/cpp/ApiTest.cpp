@@ -969,6 +969,70 @@ int VideoEncodeApiAdd0050()
     }
 }
 
+int VideoEncodeApiDual0100()
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (cap) {
+        const char *mime = nullptr;
+        OH_AVCodec *vencCodec = nullptr;
+        ASSERT_EQ(AV_ERR_INVALID_VAL, OH_VideoEncoder_CreatePrimaryWithPreproc(mime, &vencCodec));
+        ASSERT_EQ(nullptr, vencCodec);
+        return 0;
+    } else {
+        return 0;
+    }
+}
+
+int VideoEncodeApiDual0200()
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (cap) {
+        OH_AVCodec *vencCodec = nullptr;
+        ASSERT_EQ(AV_ERR_OK, OH_VideoEncoder_CreatePrimaryWithPreproc(OH_AVCODEC_MIMETYPE_VIDEO_AVC, &vencCodec));
+        ASSERT_NE(nullptr, vencCodec);
+        OH_VideoEncoder_Destroy(vencCodec);
+        return 0;
+    } else {
+        return 0;
+    }
+}
+
+int VideoEncodeApiDual0300()
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (cap) {
+        OH_AVCodec *primaryVencCodec = nullptr;
+        OH_AVCodec *vencCodec = nullptr;
+        ASSERT_EQ(AV_ERR_INVALID_VAL, OH_VideoEncoder_CreateSecondaryFromPrimary(primaryVencCodec, &vencCodec));
+        ASSERT_EQ(nullptr, vencCodec);
+        return 0;
+    } else {
+        return 0;
+    }
+}
+
+int VideoEncodeApiDual0400()
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (cap) {
+        OH_AVCodec *primaryVencCodec = nullptr;
+        ASSERT_EQ(AV_ERR_OK,
+            OH_VideoEncoder_CreatePrimaryWithPreproc(
+                OH_AVCODEC_MIMETYPE_VIDEO_AVC, &primaryVencCodec));
+        ASSERT_NE(nullptr, primaryVencCodec);
+        OH_AVCodec *vencCodec = nullptr;
+        ASSERT_EQ(AV_ERR_OK,
+            OH_VideoEncoder_CreateSecondaryFromPrimary(
+                primaryVencCodec, &vencCodec));
+        ASSERT_NE(nullptr, vencCodec);
+        OH_VideoEncoder_Destroy(primaryVencCodec);
+        OH_VideoEncoder_Destroy(vencCodec);
+        return 0;
+    } else {
+        return 0;
+    }
+}
+
 void InitApiTest()
 {
     TestSetUpTestCase();

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -78,7 +78,7 @@ it('Navigation_L0_4_static_0100', Level.LEVEL0, async (done: () => void): Promis
 
       let list = CommonFunc.getComponentRect('Navigation_L0_4_list');
       await CommonFunc.sleep(1000);
-      await driver.swipe( Math.round(list.left + (list.right - list.left) / 2) as int,Math.round(list.top + (list.bottom - list.top) / 4 * 3) as int ,Math.round(list.left + (list.right - list.left) / 2) as int ,Math.round(list.top + (list.bottom -  list.top) / 4) as int);
+      await driver.swipe( Math.round(list.left + (list.right - list.left) / 2).toInt(),Math.round(list.top + (list.bottom - list.top) / 4 * 3).toInt() ,Math.round(list.left + (list.right - list.left) / 2).toInt() ,Math.round(list.top + (list.bottom -  list.top) / 4).toInt());
 
       await CommonFunc.sleep(1000);
 

@@ -86,9 +86,9 @@ export default function SelectionMenuOptions() {
         let point: Point = await (richEditor?.getBoundsCenter() as Promise<Point>);
         await CommonFunc.sleep(500);
         await driver.mouseDrag({
-          x: Math.round(point.x - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))) as int, y: Math.round(point.y) as int
+          x: Math.round(point.x - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))).toInt(), y: Math.round(point.y).toInt()
         }, {
-          x: Math.round(point.x + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))) as int, y: Math.round(point.y) as int
+          x: Math.round(point.x + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))).toInt(), y: Math.round(point.y).toInt()
         }, 600);
         await CommonFunc.sleep(2000);
         try{
@@ -122,9 +122,9 @@ export default function SelectionMenuOptions() {
         let point: Point = await (image?.getBoundsCenter() as Promise<Point>);
         await CommonFunc.sleep(500);
         await driver.mouseDrag({
-          x: Math.round(point.x + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(24))) as int, y: Math.round(point.y) as int
+          x: Math.round(point.x + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(24))).toInt(), y: Math.round(point.y).toInt()
         }, {
-          x: Math.round(point.x - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(26))) as int, y: Math.round(point.y) as int
+          x: Math.round(point.x - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(26))).toInt(), y: Math.round(point.y).toInt()
         }, 600);
         await CommonFunc.sleep(2000);
         try{
@@ -158,9 +158,9 @@ export default function SelectionMenuOptions() {
       let point: Point = await (mixed?.getBoundsCenter() as Promise<Point>);
       await CommonFunc.sleep(500);
       await driver.mouseDrag({
-        x: Math.round(point.x - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))) as int, y: Math.round(point.y) as int
+        x: Math.round(point.x - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20))).toInt(), y: Math.round(point.y).toInt()
       }, {
-        x: Math.round(point.x + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) as int, y: Math.round(point.y) as int
+        x: Math.round(point.x + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))).toInt(), y: Math.round(point.y).toInt()
       }, 600);
       await CommonFunc.sleep(2000);
 

@@ -5,7 +5,7 @@ import { Entry, Text, Column, Component, TextArea, ColumnOptions, ClickEvent, Bu
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class TextAreaModifierUndefined implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifierUndefined implements AttributeModifier<TextAreaAttribute> {
   applyNormalAttribute(instance: TextAreaAttribute): void {
     instance
       .border({ width: 1 } as BorderOptions).padding(10).height(30)
@@ -14,7 +14,7 @@ class TextAreaModifierUndefined implements AttributeModifier<TextAreaAttribute> 
 }
 
 @Observed
-class TextAreaModifierDynamicSwitch implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifierDynamicSwitch implements AttributeModifier<TextAreaAttribute> {
   public isMaxLengthDefined: boolean = true;
 
   applyNormalAttribute(instance: TextAreaAttribute): void {

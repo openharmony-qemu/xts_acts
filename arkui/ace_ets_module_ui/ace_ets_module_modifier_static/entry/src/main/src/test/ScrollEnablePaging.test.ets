@@ -88,7 +88,7 @@ it('ArkUI_Stage_scrollEnablePaging_static_01', Level.LEVEL0, async (done: () => 
       let x = Utils.getRectHorizontalCenterX(scrollRect)
       let y = Utils.getRectVerticalCenterY(scrollRect)
       let driver = Driver.create();
-      await driver.swipe(Math.floor(x) as int, Math.floor(scrollRect.bottom) - 50 as int, Math.floor(x) as int, (Math.floor(scrollRect.top) + 50)  as int);
+      await driver.swipe(Math.floor(x).toInt(), (Math.floor(scrollRect.bottom) - 50).toInt(), Math.floor(x).toInt(), (Math.floor(scrollRect.top) + 50) .toInt());
       console.info('[ArkUI_Stage_scrollEnablePaging_static_01] driver.swipe end');
      await UtilsTest.msSleep(2000)
       try {
@@ -111,7 +111,7 @@ it('ArkUI_Stage_scrollEnablePaging_static_01', Level.LEVEL0, async (done: () => 
       } catch (err) {
         console.info(`ArkUI_Stage_scrollEnablePaging_static_01 err:` + JSON.stringify(err));
       }
-      await driver.click(x as int , y as int);
+      await driver.click(x.toInt() , y.toInt());
     });
   })
 }

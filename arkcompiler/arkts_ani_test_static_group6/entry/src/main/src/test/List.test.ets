@@ -14,7 +14,11 @@
  */
 
 import versionInfoTest from "./ActsVersionInfo.test";
+import boxUnBoxPrimitiveTest from "./BoxUnBoxPrimitive.test";
+import AttachThreadTest from './ActsAttachThread.test'
 
-export default function testsuite() {
+export default function testsuite() :void{
     versionInfoTest();
+    boxUnBoxPrimitiveTest();
+    AttachThreadTest();
 }

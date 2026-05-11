@@ -43,7 +43,7 @@ import {
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 
-class MyCheckboxGroupStyle implements ContentModifier<CheckBoxGroupConfiguration> {
+export class MyCheckboxGroupStyle implements ContentModifier<CheckBoxGroupConfiguration> {
   public selectedColor: Color = Color.Black;
   public checkBoxGroupName: string = 'CheckboxGroup';
 
@@ -168,7 +168,7 @@ struct CheckboxGroupIndex {
           .onChange((itemName: CheckboxGroupResult) => {
             console.info('CheckboxGroup onChange: ' + JSON.stringify(itemName));
             AppStorage.setOrCreate<string>('checkboxGroupOnChangeNames', JSON.stringify(itemName.name));
-            AppStorage.setOrCreate<number>('checkboxGroupOnChangeStatus', itemName.status as number);
+            AppStorage.setOrCreate<number>('checkboxGroupOnChangeStatus', itemName.status.valueOf().toDouble());
           })
 
         Row() {

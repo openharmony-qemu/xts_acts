@@ -204,6 +204,9 @@
  	    },
       {
         "name": "ohos.permission.ACQUIRE_LOCAL_ACCOUNT_AUTHORIZATION"
+      },
+      {
+        "name": "ohos.permission.ENTERPRISE_ACTIVATE_DEVICE_ADMIN"
       }
     ]
   }

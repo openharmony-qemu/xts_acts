@@ -371,7 +371,7 @@ export default function ImageColorSpaceTransferTest() {
         whitePointX: 0.31271,
         whitePointY: 0.32902
       }
-      let gamma: int | undefined = 2.4 as int;
+      let gamma: int | undefined = 2.4.toInt();
       let checkColorSpace = (colorSpaceName:colorSpaceManager.ColorSpace)=> {
         expect(colorSpaceName == CUSTOM).assertTrue();
       }
@@ -462,7 +462,7 @@ export default function ImageColorSpaceTransferTest() {
         whitePointX: 0.31271,
         whitePointY: 0.32902
       }
-      let gamma: int = 2.4 as int;
+      let gamma: int = 2.4.toInt();
       let checkColorSpace = (colorSpaceName:colorSpaceManager.ColorSpace)=> {
         expect(colorSpaceName == CUSTOM).assertTrue();
       }
@@ -553,7 +553,7 @@ export default function ImageColorSpaceTransferTest() {
         whitePointX: 0.31271,
         whitePointY: 0.32902
       }
-      let gamma: int = 2.4 as int;
+      let gamma: int = 2.4.toInt();
       let checkColorSpace = (colorSpaceName:colorSpaceManager.ColorSpace)=> {
         expect(colorSpaceName == CUSTOM).assertTrue();
       }
@@ -644,7 +644,7 @@ export default function ImageColorSpaceTransferTest() {
         whitePointX: 0.31271,
         whitePointY: 0.32902
       }
-      let gamma: int = 2.4 as int;
+      let gamma: int = 2.4.toInt();
       let checkColorSpace = (colorSpaceName:colorSpaceManager.ColorSpace)=> {
         expect(colorSpaceName == CUSTOM).assertTrue();
       }

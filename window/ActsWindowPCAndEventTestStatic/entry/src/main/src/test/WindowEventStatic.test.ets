@@ -1306,8 +1306,8 @@ export default function WindowEventStatic() {
         hilog.info(domain, tag, msgStr + 'windowRect: ' + JSON.stringify(windowRect));
 
         if(isFreeWindowMode){
-          let x: int = Math.floor(windowRect.width) as int;
-          let y: int = Math.floor(windowRect.height) as int;
+          let x: int = Math.floor(windowRect.width).toInt();
+          let y: int = Math.floor(windowRect.height).toInt();
           let windowNumber: int = 0;
           window.getWindowsByCoordinate(displayId, windowNumber, x + 10, y + 10).then((data: Array<window.Window>) => {
             hilog.info(domain, tag, msgStr + 'Succeeded in getting windows. Data: ' + JSON.stringify(data));
@@ -1326,8 +1326,8 @@ export default function WindowEventStatic() {
           });
           done();
         }else{
-          let x: int = Math.floor(windowRect.width / 2) as int;
-          let y: int = Math.floor(windowRect.height / 2) as int;
+          let x: int = Math.floor(windowRect.width / 2).toInt();
+          let y: int = Math.floor(windowRect.height / 2).toInt();
           let windowNumber: int = 0;
           window.getWindowsByCoordinate(displayId, windowNumber, x, y).then((data: Array<window.Window>) => {
             hilog.info(domain, tag, msgStr + 'Succeeded in getting windows. Data: ' + JSON.stringify(data));

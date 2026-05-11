@@ -36,6 +36,13 @@ import promptActionShowDialogTest from './promptaction/PromptActionShowDialogTes
 import LevelOrderClampNullUndefinedTest from './promptaction/LevelOrderClampNullUndefined.test';
 import PromptActionMethodNullUndefinedTest from './promptaction/PromptActionMethodNullUndefined.test';
 
+import ActionMenuOptionsSystemMaterialTest from './dialogSystemMaterial/ActionMenuOptionsSystemMaterial.test';
+import ActionSheetOptionsSystemMaterialTest from './dialogSystemMaterial/ActionSheetOptionsSystemMaterial.test';
+import AlertDialogSystemMaterialTest from './dialogSystemMaterial/AlertDialogSystemMaterial.test';
+import BaseDialogOptionsSystemMaterialTest from './dialogSystemMaterial/BaseDialogOptionsSystemMaterial.test';
+import CustomDialogControllerOptionsSystemMaterialTest from './dialogSystemMaterial/CustomDialogControllerOptionsSystemMaterial.test';
+import ShowDialogOptionsSystemMaterialTest from './dialogSystemMaterial/ShowDialogOptionsSystemMaterial.test';
+
 export default function testsuite() {
   AlertDialogAJsunit();
   AlertDialog1();
@@ -59,5 +66,12 @@ export default function testsuite() {
   ShowAlertDialogNullUndefinedTest();
  	LevelOrderClampNullUndefinedTest();
  	PromptActionMethodNullUndefinedTest();
+
+  ActionMenuOptionsSystemMaterialTest();
+  ActionSheetOptionsSystemMaterialTest();
+  AlertDialogSystemMaterialTest();
+  BaseDialogOptionsSystemMaterialTest();
+  CustomDialogControllerOptionsSystemMaterialTest();
+  ShowDialogOptionsSystemMaterialTest();
   
 }

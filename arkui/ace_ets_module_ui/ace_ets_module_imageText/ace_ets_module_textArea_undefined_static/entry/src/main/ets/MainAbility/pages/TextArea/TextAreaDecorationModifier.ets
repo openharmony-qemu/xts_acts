@@ -9,7 +9,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
 
 @Observed
-class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
 
   public option1: TextDecorationOptions = {
     type: undefined, color: Color.Blue, style: TextDecorationStyle.DOUBLE} as TextDecorationOptions;

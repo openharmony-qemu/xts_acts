@@ -896,7 +896,7 @@ export default function PlainArrayTest2() {
         let plainArray: PlainArray<string> = new PlainArray<string>();
         plainArray.add(1, "squirrel");
         plainArray.add(2, "sparrow");
-        let result = plainArray.removeRangeFrom(1, Math.floor(7.5) as int);
+        let result = plainArray.removeRangeFrom(1, Math.floor(7.5).toInt());
         expect(String(result)).assertEqual('1');
       } catch (err) {
         err = err as BusinessError;

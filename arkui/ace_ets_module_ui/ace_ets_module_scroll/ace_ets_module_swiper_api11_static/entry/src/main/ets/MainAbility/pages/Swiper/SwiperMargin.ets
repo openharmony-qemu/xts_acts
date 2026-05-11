@@ -65,7 +65,7 @@ struct SwiperMargin {
   private swiperController2: SwiperController = new SwiperController()
   private swiperController3: SwiperController = new SwiperController()
   private swiperController4: SwiperController = new SwiperController()
-  private arr: int[] = Array.from(Array(6).keys()).map((item: int) => item)
+  private arr: int[] = Array.from(Array.create<double>(6, 0).keys()).map((item: int) => item)
 
   build() {
     Scroll() {

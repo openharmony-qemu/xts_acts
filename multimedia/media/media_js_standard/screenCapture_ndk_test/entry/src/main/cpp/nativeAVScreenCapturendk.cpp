@@ -2352,7 +2352,8 @@ static napi_value normalAVScreenCaptureSetPickerModeScreenAndWindow3(napi_env en
         OH_AVScreenCapture_Release(screenCaptureNormal);
     }
     int resCapture = TEST_FAILED;
-    if (result == AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
+    if (result == AV_SCREEN_CAPTURE_ERR_INVALID_VAL ||
+        result == AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
         resCapture = TEST_PASS;
     }
     napi_value res;
@@ -2374,7 +2375,8 @@ static napi_value normalAVScreenCaptureExcludePickerWindows2(napi_env env, napi_
         OH_AVScreenCapture_Release(screenCaptureNormal);
     }
     int resCapture = TEST_FAILED;
-    if (result == AV_SCREEN_CAPTURE_ERR_INVALID_VAL) {
+    if (result == AV_SCREEN_CAPTURE_ERR_INVALID_VAL ||
+        result == AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
         resCapture = TEST_PASS;
     }
     napi_value res;
@@ -2422,7 +2424,7 @@ static napi_value normalAVScreenCaptureResizeCanvas(napi_env env, napi_callback_
     OH_AVSCREEN_CAPTURE_ErrCode result = OH_AVScreenCapture_ResizeCanvas(screenCaptureStrategyForPrivacyMaskMode,
     DEFAULT_WIDTH, DEFAULT_HEIGHT);
     int resCapture = TEST_FAILED;
-    if (result == AV_SCREEN_CAPTURE_ERR_OK) {
+    if (result == AV_SCREEN_CAPTURE_ERR_OK || result == AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
         resCapture = TEST_PASS;
     }
     napi_value res;

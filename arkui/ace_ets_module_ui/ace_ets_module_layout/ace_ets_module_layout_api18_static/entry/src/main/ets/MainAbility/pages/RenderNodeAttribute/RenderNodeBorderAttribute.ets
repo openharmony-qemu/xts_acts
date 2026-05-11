@@ -44,7 +44,7 @@ const borderWidth = renderNode2.borderWidth;
 const renderNode3 = new RenderNode();
 renderNode3.frame = { x: 0, y: 0, width: 20, height: 20 };
 renderNode3.borderWidth = { top: 5, bottom: 0, left: 0, right: 0 };
-renderNode3.borderColor = { top: 0XFF00FF00 as Int, bottom: 0, left: 0, right: 0 };
+renderNode3.borderColor = { top: 0XFF00FF00.toInt(), bottom: 0, left: 0, right: 0 };
 const borderColor = renderNode3.borderColor;
 
 // borderRadius test

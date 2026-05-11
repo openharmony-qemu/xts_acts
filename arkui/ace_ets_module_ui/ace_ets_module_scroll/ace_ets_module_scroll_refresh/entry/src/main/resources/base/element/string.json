@@ -87,6 +87,22 @@
     {
       "name": "Refresh_Numbers",
       "value": "123456"
+    },
+    {
+      "name": "refreshOffset_Normal",
+      "value": "50"
+    },
+    {
+      "name": "refreshOffset_Error",
+      "value": "这是一个错误的资源值"
+    },
+    {
+      "name": "maxPullDownDistance_Normal",
+      "value": "200"
+    },
+    {
+      "name": "maxPullDownDistance_Error",
+      "value": "-200"
     }
   ]
 }

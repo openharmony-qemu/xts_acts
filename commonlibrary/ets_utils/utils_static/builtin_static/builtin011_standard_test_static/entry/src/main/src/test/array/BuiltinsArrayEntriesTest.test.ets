@@ -36,7 +36,12 @@ export default function BuiltinsArrayEntriesTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayEntriesTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>(10, 20, 30, 40, 50);
+      const arr: number[] = Array.create<number>(5, 0);
+      arr[0] = 10;
+      arr[1] = 20;
+      arr[2] = 30;
+      arr[3] = 40;
+      arr[4] = 50;
       const iterator = arr.entries();
 
       const first = iterator.next();
@@ -82,7 +87,7 @@ export default function BuiltinsArrayEntriesTest(): void {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayEntriesTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<string>();
+      const arr: string[] = [];
       const iterator = arr.entries();
 
       const result = iterator.next();
@@ -99,7 +104,10 @@ export default function BuiltinsArrayEntriesTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayEntriesTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<string>('hello', 'world', 'test');
+      const arr: string[] = Array.create<string>(3, '');
+      arr[0] = 'hello';
+      arr[1] = 'world';
+      arr[2] = 'test';
       const iterator = arr.entries();
       let count = 0;
       let current = iterator.next();
@@ -130,7 +138,11 @@ export default function BuiltinsArrayEntriesTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayEntriesTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<boolean>(true, false, true, false);
+      const arr: boolean[] = Array.create<boolean>(4, false);
+      arr[0] = true;
+      arr[1] = false;
+      arr[2] = true;
+      arr[3] = false;
       const iterator = arr.entries();
 
       const first = iterator.next();
@@ -170,7 +182,10 @@ export default function BuiltinsArrayEntriesTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayEntriesTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(5, 10, 15);
+      const arr: number[] = Array.create<number>(3, 0);
+      arr[0] = 5;
+      arr[1] = 10;
+      arr[2] = 15;
       const entriesIterator = arr.entries();
 
       const first = entriesIterator.next();
@@ -204,7 +219,7 @@ export default function BuiltinsArrayEntriesTest(): void {
      * @tc.level   LEVEL1
      */
     it('builtinsArrayEntriesTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(1, 2);
+      const arr: number[] = [1, 2];
       const iterator = arr.entries();
 
       const first = iterator.next();

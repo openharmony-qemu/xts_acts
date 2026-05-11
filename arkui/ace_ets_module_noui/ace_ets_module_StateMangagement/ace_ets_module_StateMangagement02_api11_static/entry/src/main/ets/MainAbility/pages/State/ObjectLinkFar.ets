@@ -124,7 +124,7 @@ struct ObjectLinkFarClassAAA {
 
 @Component
 struct ObjectLinkSonClassBBB {
-  @ObjectLink  classB: ClassBBB = new ClassBBB(1)
+  @ObjectLink classB: ClassBBB;
 
   build() {
     Column() {

@@ -1099,7 +1099,7 @@ export default function SpecTypeTest() {
       let parsedNum: number = parseInt("456");
       expect(parsedNum).assertEqual(456);
       
-      let floatToInt: int = Math.floor(3.7) as int;
+      let floatToInt: int = Math.floor(3.7).toInt();
       expect(floatToInt).assertEqual(3);
     });
 

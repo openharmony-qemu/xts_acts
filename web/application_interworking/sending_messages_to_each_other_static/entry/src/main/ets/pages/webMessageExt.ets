@@ -939,59 +939,59 @@ struct webMessageExt {
                 } else if (this.listening_flag == 1) {
                   let value = result.getType()
                   console.info(`The postTypeToApp() return value is: ${value}`)
-                  Utils.emitEvent(value, this.listening_port as Long)
+                  Utils.emitEvent(value, this.listening_port.toLong())
                 } else if (this.listening_flag == 2) {
                   let value = result.getType()
                   console.info(`The postTypeToApp() return value is: ${value}`)
-                  Utils.emitEvent(value, this.listening_port as Long)
+                  Utils.emitEvent(value, this.listening_port.toLong())
                 } else if (this.listening_flag == 3) {
                   let value = result.getType()
                   console.info(`The postTypeToApp() return value is: ${value}`)
-                  Utils.emitEvent(value, this.listening_port as Long)
+                  Utils.emitEvent(value, this.listening_port.toLong())
                 } else if (this.listening_flag == 4) {
                   let value = result.getType()
                   console.info(`The postTypeToApp() return value is: ${value}`)
-                  Utils.emitEvent(value, this.listening_port as Long)
+                  Utils.emitEvent(value, this.listening_port.toLong())
                 } else if (this.listening_flag == 5) {
                   let value = result.getType()
                   console.info(`The postTypeToApp() return value is: ${value}`)
-                  Utils.emitEvent(value, this.listening_port as Long)
+                  Utils.emitEvent(value, this.listening_port.toLong())
                 } else if (this.listening_flag == 6) {
                   let value = result.getType()
                   console.info(`The postTypeToApp() return value is: ${value}`)
-                  Utils.emitEvent(value, this.listening_port as Long)
+                  Utils.emitEvent(value, this.listening_port.toLong())
                 } else if (this.listening_flag == 10) {
                   let value = result.getString()
                   console.info(`The postStringToApp() return value is: ${value}`)
-                  Utils.emitEvent(value, this.listening_port as Long)
+                  Utils.emitEvent(value, this.listening_port.toLong())
                 } else if (this.listening_flag == 11) {
                   let value = result.getNumber()
                   console.info(`The postNumberToApp() return value is: ${value}`)
-                  Utils.emitEvent(value, this.listening_port as Long)
+                  Utils.emitEvent(value, this.listening_port.toLong())
                 } else if (this.listening_flag == 12) {
                   let value = result.getBoolean()
                   console.info(`The postBooleanToApp() return value is: ${value}`)
-                  Utils.emitEvent(value, this.listening_port as Long)
+                  Utils.emitEvent(value, this.listening_port.toLong())
                 } else if (this.listening_flag == 13) {
                   let value = result.getBoolean()
                   console.info(`The postBooleanFalseToApp() return value is: ${value}`)
-                  Utils.emitEvent(value, this.listening_port as Long)
+                  Utils.emitEvent(value, this.listening_port.toLong())
                 } else if (this.listening_flag == 14) {
                   let value = 'result getArrayBuffer byteLength:' + result.getArrayBuffer().byteLength
                   console.info(`The postArrayBufferToApp() return value is: ${value}`)
-                  Utils.emitEvent(value, this.listening_port as Long)
+                  Utils.emitEvent(value, this.listening_port.toLong())
                 } else if (this.listening_flag == 15) {
                   let value = result.getArray()
                   console.info(`The postArrayToApp() return value is: ${value[0]}`)
-                  Utils.emitEvent(value[0], this.listening_port as Long)
+                  Utils.emitEvent(value[0], this.listening_port.toLong())
                 } else if (this.listening_flag == 16) {
                   let value = result.getError().message
                   console.info(`The postErrorToApp() return value is: ${value}`)
-                  Utils.emitEvent(value, this.listening_port as Long)
+                  Utils.emitEvent(value, this.listening_port.toLong())
                 }
               } catch (resError) {
                 console.log(`error code: ${resError.code}, Message: ${resError.message}`);
-                Utils.emitEvent(resError.code, this.listening_port as Long)
+                Utils.emitEvent(resError.code, this.listening_port.toLong())
               }
             });
             console.log('url:' + event.url)

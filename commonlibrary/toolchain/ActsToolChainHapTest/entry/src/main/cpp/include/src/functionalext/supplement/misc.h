@@ -19,4 +19,30 @@
 int A64lTest();
 int EndmntentTest();
 
+int A64lTest();
+int EndmntentTest();
+int FfsTest();
+int FfslTest();
+int FfsllTest();
+int ForkptyTest();
+int GetauxvalTest();
+int GetdomainnameTest();
+int GetentropyTest();
+int GetmntentTest();
+int GetmntentRTest();
+int GetoptTest();
+int GetoptLongTest();
+int GetoptLongOnlyTest();
+int GetresuidTest();
+int GetrlimitTest();
+int GetrusageTest();
+int GetsuboptTest();
+int HasmntoptTest();
+int IoctlTest();
+int LockfTest();
+int LoginTtyTest();
+int PtsnameTest();
+int RealpathTest();
+int SetlogmaskTest();
+int UnameTest();
 #endif // SRC_FUNCTIONALEXT_SUPPLEMENT_MISC_H_H

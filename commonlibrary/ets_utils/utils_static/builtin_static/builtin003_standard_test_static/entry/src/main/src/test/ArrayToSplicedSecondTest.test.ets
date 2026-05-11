@@ -1543,16 +1543,16 @@ export default function ArrayToSplicedSecondTest() {
         const caseName = 'ArrayToSplicedSecondTest5700';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          11.1 as float,
-          12.2 as float,
-          13.3 as float,
-          15.5 as float
+          11.1.toFloat(),
+          12.2.toFloat(),
+          13.3.toFloat(),
+          15.5.toFloat()
         ];
         const result = toSpliced(arr, 3);
         const expected: FixedArray<double> = [
-          11.1 as float,
-          12.2 as float,
-          13.3 as float,
+          11.1.toFloat(),
+          12.2.toFloat(),
+          13.3.toFloat(),
         ];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
@@ -1576,10 +1576,10 @@ export default function ArrayToSplicedSecondTest() {
         const caseName = 'ArrayToSplicedSecondTest5800';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          11.1 as float,
-          12.2 as float,
-          13.3 as float,
-          15.5 as float
+          11.1.toFloat(),
+          12.2.toFloat(),
+          13.3.toFloat(),
+          15.5.toFloat()
         ];
         const result = toSpliced(arr, 0);
         expect(result.length).assertEqual(0);
@@ -1601,17 +1601,17 @@ export default function ArrayToSplicedSecondTest() {
         const caseName = 'ArrayToSplicedSecondTest5900';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          11.1 as float,
-          12.2 as float,
-          13.3 as float,
-          15.5 as float
+          11.1.toFloat(),
+          12.2.toFloat(),
+          13.3.toFloat(),
+          15.5.toFloat()
         ];
         const result = toSpliced(arr, 6);
         const expected: FixedArray<double> = [
-          11.1 as float,
-          12.2 as float,
-          13.3 as float,
-          15.5 as float
+          11.1.toFloat(),
+          12.2.toFloat(),
+          13.3.toFloat(),
+          15.5.toFloat()
         ];
         expect(result.length).assertEqual(4);
         expect(result[0]).assertEqual(expected[0]);
@@ -1636,10 +1636,10 @@ export default function ArrayToSplicedSecondTest() {
         const caseName = 'ArrayToSplicedSecondTest6000';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          11.1 as float,
-          12.2 as float,
-          13.3 as float,
-          15.5 as float
+          11.1.toFloat(),
+          12.2.toFloat(),
+          13.3.toFloat(),
+          15.5.toFloat()
         ];
         const result = toSpliced(arr, -6);
         expect(result.length).assertEqual(0);
@@ -1661,15 +1661,15 @@ export default function ArrayToSplicedSecondTest() {
         const caseName = 'ArrayToSplicedSecondTest6100';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          -11.1 as float,
-          -12.2 as float,
-          -13.3 as float,
-          -15.5 as float
+          -11.1.toFloat(),
+          -12.2.toFloat(),
+          -13.3.toFloat(),
+          -15.5.toFloat()
         ];
         const result = toSpliced(arr, 2);
         const expected: FixedArray<double> = [
-          -11.1 as float,
-          -12.2 as float
+          -11.1.toFloat(),
+          -12.2.toFloat()
         ];
         expect(result.length).assertEqual(2);
         expect(result[0]).assertEqual(expected[0]);
@@ -1692,15 +1692,15 @@ export default function ArrayToSplicedSecondTest() {
         const caseName = 'ArrayToSplicedSecondTest6200';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          Float.MAX_VALUE as float,
-          0.0 as float,
-          Float.MIN_VALUE as float,
-          0.0 as float
+          Float.MAX_VALUE.toFloat(),
+          0.0.toFloat(),
+          Float.MIN_VALUE.toFloat(),
+          0.0.toFloat()
         ];
         const result = toSpliced(arr, 2);
         const expected: FixedArray<double> = [
-          Float.MAX_VALUE as float,
-          0.0 as float
+          Float.MAX_VALUE.toFloat(),
+          0.0.toFloat()
         ];
         expect(result.length).assertEqual(2);
         expect(result[0]).assertEqual(expected[0]);
@@ -1723,16 +1723,16 @@ export default function ArrayToSplicedSecondTest() {
         const caseName = 'ArrayToSplicedSecondTest6300';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          Float.MAX_VALUE as float,
-          0.0 as float,
-          Float.MIN_VALUE as float,
-          0.0 as float
+          Float.MAX_VALUE.toFloat(),
+          0.0.toFloat(),
+          Float.MIN_VALUE.toFloat(),
+          0.0.toFloat()
         ];
         const result = toSpliced(arr, -1);
         const expected: FixedArray<double> = [
-          Float.MAX_VALUE as float,
-          0.0 as float,
-          Float.MIN_VALUE as float
+          Float.MAX_VALUE.toFloat(),
+          0.0.toFloat(),
+          Float.MIN_VALUE.toFloat()
         ];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
@@ -1756,14 +1756,14 @@ export default function ArrayToSplicedSecondTest() {
         const caseName = 'ArrayToSplicedSecondTest6400';
         console.info(`${caseName}, test start`);
         const arr: FixedArray<float> = [
-          2222.2 as float,
-          -1111.1 as float,
-          -3333.3 as float
+          2222.2.toFloat(),
+          -1111.1.toFloat(),
+          -3333.3.toFloat()
         ];
         const result = toSpliced(arr, 2);
         const expected: FixedArray<float> = [
-          2222.2 as float,
-          -1111.1 as float
+          2222.2.toFloat(),
+          -1111.1.toFloat()
         ];
         expect(result.length).assertEqual(2);
         expect(result[0]).assertEqual(expected[0]);
@@ -1785,12 +1785,12 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest6500';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float];
-        const items: FixedArray<float> = [1.1 as float, 2.2 as float];
+        const arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat()];
+        const items: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat()];
         const s: int = 0;
         const d: int = 3;
         const result = toSpliced(arr, s, d, ...items);
-        const expected: FixedArray<float> = [1.1 as float, 2.2 as float];
+        const expected: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat()];
         expect(result.length).assertEqual(2);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1811,12 +1811,12 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest6600';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float];
-        const items: FixedArray<float> = [1.1 as float, 2.2 as float];
+        const arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat()];
+        const items: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat()];
         const s: int = 1;
         const d: int = 3;
         const result = toSpliced(arr, s, d, ...items);
-        const expected: FixedArray<float> = [1.1 as float, 1.1 as float, 2.2 as float];
+        const expected: FixedArray<float> = [1.1.toFloat(), 1.1.toFloat(), 2.2.toFloat()];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1838,12 +1838,12 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest6700';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float];
-        const items: FixedArray<float> = [1.1 as float, 2.2 as float];
+        const arr: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat()];
+        const items: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat()];
         const s: int = 3;
         const d: int = 6;
         const result = toSpliced(arr, s, d, ...items);
-        const expected: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float, 1.1 as float, 2.2 as float];
+        const expected: FixedArray<float> = [1.1.toFloat(), 2.2.toFloat(), 3.3.toFloat(), 1.1.toFloat(), 2.2.toFloat()];
         expect(result.length).assertEqual(5);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1867,12 +1867,12 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest6800';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [-1.1 as float, -2.2 as float];
-        const items: FixedArray<float> = [-1.1 as float, -2.2 as float];
+        const arr: FixedArray<float> = [-1.1.toFloat(), -2.2.toFloat()];
+        const items: FixedArray<float> = [-1.1.toFloat(), -2.2.toFloat()];
         const s: int = 0;
         const d: int = 2;
         const result = toSpliced(arr, s, d, ...items);
-        const expected: FixedArray<float> = [-1.1 as float, -2.2 as float];
+        const expected: FixedArray<float> = [-1.1.toFloat(), -2.2.toFloat()];
         expect(result.length).assertEqual(2);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1893,12 +1893,12 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest6900';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [-1.1 as float, -2.2 as float];
-        const items: FixedArray<float> = [-1.1 as float, -2.2 as float];
+        const arr: FixedArray<float> = [-1.1.toFloat(), -2.2.toFloat()];
+        const items: FixedArray<float> = [-1.1.toFloat(), -2.2.toFloat()];
         const s: int = 0;
         const d: int = 6;
         const result = toSpliced(arr, s, d, ...items);
-        const expected: FixedArray<float> = [-1.1 as float, -2.2 as float];
+        const expected: FixedArray<float> = [-1.1.toFloat(), -2.2.toFloat()];
         expect(result.length).assertEqual(2);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1919,12 +1919,12 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest7000';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [1111.1 as float, 2222.2 as float, 3333.3 as float, 4444.4 as float];
-        const items: FixedArray<float> = [-2222.2 as float, -3333.3 as float];
+        const arr: FixedArray<float> = [1111.1.toFloat(), 2222.2.toFloat(), 3333.3.toFloat(), 4444.4.toFloat()];
+        const items: FixedArray<float> = [-2222.2.toFloat(), -3333.3.toFloat()];
         const s: int = 1;
         const d: int = 2;
         const result = toSpliced(arr, s, d, ...items);
-        const expected: FixedArray<float> = [1111.1 as float, -2222.2 as float, -3333.3 as float, 4444.4 as float];
+        const expected: FixedArray<float> = [1111.1.toFloat(), -2222.2.toFloat(), -3333.3.toFloat(), 4444.4.toFloat()];
         expect(result.length).assertEqual(4);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1947,12 +1947,12 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest7100';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [0.0 as float, Float.MAX_VALUE as float, Float.MIN_VALUE as float];
-        const items: FixedArray<float> = [0.0 as float, 0.0 as float];
+        const arr: FixedArray<float> = [0.0.toFloat(), Float.MAX_VALUE.toFloat(), Float.MIN_VALUE.toFloat()];
+        const items: FixedArray<float> = [0.0.toFloat(), 0.0.toFloat()];
         const s: int = 1;
         const d: int = 2;
         const result = toSpliced(arr, s, d, ...items);
-        const expected: FixedArray<float> = [0.0 as float, 0.0 as float, 0.0 as float];
+        const expected: FixedArray<float> = [0.0.toFloat(), 0.0.toFloat(), 0.0.toFloat()];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1974,12 +1974,12 @@ export default function ArrayToSplicedSecondTest() {
       async (Done: () => void):Promise<void> => {
         const caseName = 'ArrayToSplicedSecondTest7200';
         console.info(`${caseName}, test start`);
-        const arr: FixedArray<float> = [9.9 as float, 9.9 as float, 9.9 as float];
-        const items: FixedArray<float> = [9.9 as float];
+        const arr: FixedArray<float> = [9.9.toFloat(), 9.9.toFloat(), 9.9.toFloat()];
+        const items: FixedArray<float> = [9.9.toFloat()];
         const s: int = 0;
         const d: int = 2;
         const result = toSpliced(arr, s, d, ...items);
-        const expected: FixedArray<float> = [9.9 as float, 9.9 as float];
+        const expected: FixedArray<float> = [9.9.toFloat(), 9.9.toFloat()];
         expect(result.length).assertEqual(2);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);

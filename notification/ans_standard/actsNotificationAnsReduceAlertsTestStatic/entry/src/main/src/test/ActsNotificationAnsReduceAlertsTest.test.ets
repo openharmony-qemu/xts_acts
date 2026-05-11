@@ -87,7 +87,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         let TAG: string = 'Sub_Notification_Ans_Reduce_alerts_static_007'
 
         let notificationRequest: notificationManager.NotificationRequest = {
-          id: getRandomNumber(1, 1000) as int,
+          id: getRandomNumber(1, 1000).toInt(),
           notificationFlags: {
             soundEnabled: notificationManager.NotificationFlagStatus.TYPE_NONE,
             vibrationEnabled: notificationManager.NotificationFlagStatus.TYPE_NONE,
@@ -151,7 +151,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         let TAG: string = 'Sub_Notification_Ans_Reduce_alerts_static_008'
 
         let notificationRequest: notificationManager.NotificationRequest = {
-          id: getRandomNumber(1, 1000) as int,
+          id: getRandomNumber(1, 1000).toInt(),
           notificationFlags: {
             soundEnabled: notificationManager.NotificationFlagStatus.TYPE_OPEN,
             vibrationEnabled: notificationManager.NotificationFlagStatus.TYPE_OPEN,
@@ -215,7 +215,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         let TAG: string = 'Sub_Notification_Ans_Reduce_alerts_static_009'
 
         let notificationRequest: notificationManager.NotificationRequest = {
-          id: getRandomNumber(1, 1000) as int,
+          id: getRandomNumber(1, 1000).toInt(),
           notificationFlags: {
             soundEnabled: notificationManager.NotificationFlagStatus.TYPE_CLOSE,
             vibrationEnabled: notificationManager.NotificationFlagStatus.TYPE_CLOSE,
@@ -279,7 +279,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
         let TAG: string = 'Sub_Notification_Ans_Reduce_alerts_static_003'
 
         let notificationRequest: notificationManager.NotificationRequest = {
-          id: getRandomNumber(1, 1000) as int,
+          id: getRandomNumber(1, 1000).toInt(),
           notificationFlags: {
             soundEnabled: undefined,
             vibrationEnabled: undefined,

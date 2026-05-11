@@ -45,7 +45,7 @@ static int TestSignalHold(int sig)
     }
 
     sigset_t set = {0};
-    result = sigprocmask(SIG_SETMASK, NULL, &set);
+    result = sigprocmask(SIG_SETMASK, nullptr, &set);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
         return result;
@@ -82,7 +82,7 @@ static void TestSignalPause(int sig)
 static void TestSignalRelease(int sig)
 {
     sigset_t set = {0};
-    int result = sigprocmask(SIG_SETMASK, NULL, &set);
+    int result = sigprocmask(SIG_SETMASK, nullptr, &set);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -97,7 +97,7 @@ static void TestSignalRelease(int sig)
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
-    result = sigprocmask(SIG_SETMASK, NULL, &set);
+    result = sigprocmask(SIG_SETMASK, nullptr, &set);
     if (result != 0) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
@@ -160,6 +160,6 @@ static int SigrelseTestImpl(int argc, char *argv[])
 int SigrelseTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, NULL };
+    char *libcArgv[] = { libcProg, nullptr };
     return SigrelseTestImpl(1, libcArgv);
 }

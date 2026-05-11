@@ -5,7 +5,7 @@ import { Entry, Text, Column, Component, TextArea, ColumnOptions, ClickEvent, Bu
 import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
-class TextAreaModifierUndefined implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifierUndefined implements AttributeModifier<TextAreaAttribute> {
   applyNormalAttribute(instance: TextAreaAttribute): void {
     instance
       .minFontScale(undefined)
@@ -13,7 +13,7 @@ class TextAreaModifierUndefined implements AttributeModifier<TextAreaAttribute> 
 }
 
 @Observed
-class TextAreaModifierDynamicSwitch implements AttributeModifier<TextAreaAttribute> {
+export class TextAreaModifierDynamicSwitch implements AttributeModifier<TextAreaAttribute> {
   public isFontScaleDefined: boolean = true;
 
   applyNormalAttribute(instance: TextAreaAttribute): void {

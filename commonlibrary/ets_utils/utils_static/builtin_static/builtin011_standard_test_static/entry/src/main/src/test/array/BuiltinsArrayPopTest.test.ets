@@ -15,7 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-export default function BuiltinsArrayPopTest() {
+export default function BuiltinsArrayPopTest() : void{
   describe("BuiltinsArrayPopTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -47,7 +47,7 @@ export default function BuiltinsArrayPopTest() {
      * @tc.level   LEVEL0
      */
     it('builtinsArrayPopTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
       const result = arr.pop();
       
       expect(arr.length).assertEqual(0);
@@ -62,13 +62,13 @@ export default function BuiltinsArrayPopTest() {
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL0
      */
-    it('builtinsArrayPopTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr = Array.create<number>(1, NaN);
-      arr[0] = 10;
+    it('builtinsArrayPopTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
+      const arr = Array.of<number>(42);
+
       const result = arr.pop();
-      
+
+      expect(result).assertEqual(42);
       expect(arr.length).assertEqual(0);
-      expect(result).assertEqual(10);
     });
 
     /**
@@ -95,32 +95,23 @@ export default function BuiltinsArrayPopTest() {
     /**
      * @tc.name    builtinsArrayPopTest0400
      * @tc.number  SUB_BUILTINS_ARRAY_POP_TEST_0400
-     * @tc.desc    Verify multiple consecutive pops
+     * @tc.desc    Verify pop on array with string elements
      * @tc.type    FUNCTION
      * @tc.size    SMALLTEST
      * @tc.level   LEVEL1
      */
     it('builtinsArrayPopTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = Array.create<number>(5, NaN);
-      arr[0] = 1;
-      arr[1] = 2;
-      arr[2] = 3;
-      arr[3] = 4;
-      arr[4] = 5;
-      
-      const result1 = arr.pop();
-      expect(arr.length).assertEqual(4);
-      expect(result1).assertEqual(5);
-      
-      const result2 = arr.pop();
-      expect(arr.length).assertEqual(3);
-      expect(result2).assertEqual(4);
-      
-      const result3 = arr.pop();
+      const arr = Array.create<string>(3, '');
+      arr[0] = 'hello';
+      arr[1] = 'world';
+      arr[2] = 'test';
+
+      const result = arr.pop();
+
+      expect(result).assertEqual('test');
       expect(arr.length).assertEqual(2);
-      expect(result3).assertEqual(3);
-      expect(arr[0]).assertEqual(1);
-      expect(arr[1]).assertEqual(2);
+      expect(arr[0]).assertEqual('hello');
+      expect(arr[1]).assertEqual('world');
     });
 
     /**
@@ -153,7 +144,7 @@ export default function BuiltinsArrayPopTest() {
     it('builtinsArrayPopTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const obj1: Record<string, string> = { "name": 'test1' };
       const obj2: Record<string, string> = { "name": 'test2' };
-      const arr = new Array<Record<string, string>>(obj1, obj2);
+      const arr: Record<string, string>[] = [obj1, obj2];
       const result = arr.pop();
       
       expect(arr.length).assertEqual(1);

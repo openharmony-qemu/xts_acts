@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -766,7 +766,7 @@ function getPlaybackPosition(avPlayer: media.AVPlayer | null, done: () => void) 
           break;
         }
         avPlayer?.play()
-        playbackPosition = avPlayer!!.getPlaybackPosition();
+        playbackPosition = avPlayer!!.getPlaybackPosition().toDouble();
         console.info(`AVPlayer getPlaybackPosition == ${playbackPosition} ms`);
         expect(playbackPosition).assertLargerOrEqual(0 as number);
         break;
@@ -1585,6 +1585,88 @@ async function testMetricsListening(src: media.AVFileDescriptor,
     }
   });
 }
+
+async function timedMetaDataON(avPlayer: media.AVPlayer | undefined, done: () => void) {
+  avPlayer!.onTimedMetaData((metaData: media.AVTimedMetaData) => {
+    if (metaData) {
+      console.info('onTimedMetaData info: AVTimedMetaData=' + JSON.stringify(metaData));
+      expect(metaData.start).assertLargerOrEqual(0);
+      expect(metaData.duration).assertLargerOrEqual(0);
+      if (metaData.contents) {
+        console.info('onTimedMetaData contents: ' + JSON.stringify(metaData.contents));
+      }
+      avPlayer!.offTimedMetaData();
+    } else {
+      console.info('onTimedMetaData info is null');
+      expect(false).assertTrue();
+      done();
+    }
+  })
+}
+
+function timedMetaDataOFF(avPlayer: media.AVPlayer | undefined, done: () => void) {
+  avPlayer!.onStateChange((state: media.AVPlayerState, reason: media.StateChangeReason) => {
+    switch (state) {
+      case INITIALIZED:
+        if (!avPlayer) {
+          console.info(`avPlayer is null`);
+          break;
+        }
+        console.info(`case INITIALIZED`);
+        expect(avPlayer!.state).assertEqual(INITIALIZED);
+        avPlayer?.prepare((err) => {
+          console.info('case prepare called' + err);
+          if (err != null) {
+            console.error(`case prepare error, errMessage is ${err!!.message}`);
+            expect().assertFail();
+            done();
+          } else if (avPlayer) {
+            console.info('case avPlayer.duration: ' + avPlayer!!.duration);
+          }
+        });
+        break;
+      case PREPARED:
+        avPlayer?.play();
+        break;
+      case COMPLETED:
+        avPlayer?.offTimedMetaData();
+        avPlayer?.release()
+        break;
+      case RELEASED:
+        avPlayer = undefined;
+        done();
+        break;
+      case ERROR:
+        expect().assertFail();
+        avPlayer?.release().then(() =>{
+        }).catch(mediaTestBase.catchCallback);
+        avPlayer = undefined;
+        break;
+      default:
+        break;
+    }
+  })
+}
+
+async function testTimedMetaDataListening(src: media.AVFileDescriptor,
+  avPlayer: media.AVPlayer | undefined, done: () => void) {
+  console.info(`case media source: ${src}`)
+  media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
+    console.info(`case media err: ${err}`)
+    if (video) {
+      console.info('case createAVPlayer success');
+      avPlayer = video;
+      timedMetaDataOFF(avPlayer!, done);
+      timedMetaDataON(avPlayer!, done);
+      avPlayer!.fdSrc = src;
+    }
+    if (err!!.code != 0) {
+      console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
+      expect().assertFail();
+      done();
+    }
+  });
+}
 export default function AVPlayerLocalTest() {
   describe('AVPlayerLocalTest', () => {
     beforeAll(async () => {
@@ -2056,10 +2138,25 @@ export default function AVPlayerLocalTest() {
       * @tc.size   MEDIUMTEST
       * @tc.level  LEVEL0
       */
-      it('SUB_MULTIMEDIA_MEDIA_VIDEO_METRICS_ON_0100', Level.LEVEL0,async (done: () => void) => {
+      it('SUB_MULTIMEDIA_MEDIA_VIDEO_METRICS_ON_0100', Level.LEVEL0, async (done: () => void) => {
         expect(fileDescriptor).not().assertNull();
         if (fileDescriptor && subtitleFdSrc) {
           testMetricsListening(fileDescriptor!, avPlayer, done);
+        }
+      });
+
+      /**
+      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_TIMEDMETADATA_ON_0100
+      * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_TIMEDMETADATA_ON_0100
+      * @tc.desc   Local Video timedMetaData control test
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+      it('SUB_MULTIMEDIA_MEDIA_VIDEO_TIMEDMETADATA_ON_0100', Level.LEVEL0, async (done: () => void) => {
+        expect(fileDescriptor).not().assertNull();
+        if (fileDescriptor) {
+          testTimedMetaDataListening(fileDescriptor!, avPlayer, done);
         }
       });
   })

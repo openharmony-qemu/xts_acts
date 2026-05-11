@@ -15,7 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-export default function BuiltinsArraySliceTest() {
+export default function BuiltinsArraySliceTest() : void{
   describe("BuiltinsArraySliceTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -196,7 +196,7 @@ export default function BuiltinsArraySliceTest() {
      * @tc.level   LEVEL1
      */
     it('builtinsArraySliceTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>();
+      const arr: number[] = Array.create<number>(0, 0);
       
       const result = arr.slice(0);
       

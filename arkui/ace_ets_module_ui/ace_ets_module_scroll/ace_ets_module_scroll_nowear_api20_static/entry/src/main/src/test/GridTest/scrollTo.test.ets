@@ -66,7 +66,7 @@ export default function scrollToTest() {
       let bottom1 = rect1.bottom;
       console.info('test_scrollTo bottom' + JSON.stringify(bottom));
       console.info('test_scrollTo bottom1' + JSON.stringify(bottom1));
-      expect((Math.round(bottom - bottom1) as Int) >= 200)
+      expect((Math.round(bottom - bottom1).toInt()) >= 200)
         .assertEqual(true);
       done();
     })

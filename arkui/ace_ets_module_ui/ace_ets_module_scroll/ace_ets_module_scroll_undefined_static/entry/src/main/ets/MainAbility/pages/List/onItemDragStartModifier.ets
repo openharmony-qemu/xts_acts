@@ -30,7 +30,7 @@ import { MyDataSource } from './MyDataSource';
 
 
 @Observed
-class MyEnableModifier implements AttributeModifier<ListAttribute> {
+export class MyEnableModifier implements AttributeModifier<ListAttribute> {
   // 外部传入控制值，可以是 boolean | undefined
   @State public isChange: boolean = true
   @State public text: String = '';

@@ -150,7 +150,7 @@ import { LengthUnit, typeNode } from '@ohos.arkui.node'
 
 import { BusinessError } from '@kit.BasicServicesKit'
 
-class MaxPullDownDistanceModifier implements AttributeModifier<RefreshAttribute> {
+export class MaxPullDownDistanceModifier implements AttributeModifier<RefreshAttribute> {
   public val: Double | undefined = 150 as Double
 
   constructor(val: Double | undefined) {

@@ -919,7 +919,7 @@ export default function Array_02Test() {
       const TAG = "testMapByte0001";
       try {
         const input: FixedArray<byte> = [10, 20, 30] as FixedArray<byte>;
-        const increment = (val: byte): byte => val + 5 as byte;
+        const increment = (val: byte): byte => (val + 5).toByte();
         const result = map(input, increment);
         const expected: FixedArray<byte> = [15, 25, 35] as FixedArray<byte>;
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
@@ -965,7 +965,7 @@ export default function Array_02Test() {
       const TAG = "testMapByte0003";
       try {
         const input: FixedArray<byte> = [10, 20, 30] as FixedArray<byte>;
-        const increment = (val: byte): byte => val - 5 as byte;
+        const increment = (val: byte): byte => (val - 5).toByte();
         const result = map(input, increment);
         const expected: FixedArray<byte> = [5, 15, 25] as FixedArray<byte>;
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
@@ -1387,7 +1387,7 @@ export default function Array_02Test() {
       const TAG = "testMapShort0001";
       try {
         const input: FixedArray<short> = [100, 200, 300] as FixedArray<short>;
-        const increment = (val: short): short => val + 50 as short;
+        const increment = (val: short): short => (val + 50).toShort();
         const result = map(input, increment);
         const expected: FixedArray<short> = [150, 250, 350] as FixedArray<short>;
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));
@@ -1433,7 +1433,7 @@ export default function Array_02Test() {
       const TAG = "testMapShort0003";
       try {
         const input: FixedArray<short> = [500, 1000, 1500] as FixedArray<short>;
-        const decrement = (val: short): short => val - 100 as short;
+        const decrement = (val: short): short => (val - 100).toShort();
         const result = map(input, decrement);
         const expected: FixedArray<short> = [400, 900, 1400] as FixedArray<short>;
         expect(JSON.stringify(result)).assertEqual(JSON.stringify(expected));

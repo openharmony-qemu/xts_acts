@@ -81,7 +81,7 @@ export default function bindWaterFlowController() {
       let width: Int = right - left;
       let height: Int = bottom -top;
       console.log(`bindWaterFlowController_static_001  left : ${left} top : ${top} right : ${right} bottom : ${bottom}`)
-      await driver.swipe(Math.round(left + width*0.5) as Int,Math.round(bottom - height/4) as Int,Math.round(left + width*0.5) as Int,Math.round(bottom - height/2) as Int);
+      await driver.swipe(Math.round(left + width*0.5).toInt(),Math.round(bottom - height/4).toInt(),Math.round(left + width*0.5).toInt(),Math.round(bottom - height/2).toInt());
       await CommonFunc.sleep(1000);
       let strJson1 = inspector.getInspectorByKey('setOnDidScroll');
       let obj1 = JSON.parseJsonElement(strJson1);

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -78,7 +78,7 @@ it('navigation_add4_1_static_0100', Level.LEVEL0, async (done: () => void): Prom
 
   let navigation = CommonFunc.getComponentRect('navigation_add4_1_navigation');
 
-  await driver.swipe( (Math.round(navigation.left + (navigation.right - navigation.left) / 4 * 3)) as int ,(Math.round(navigation.top + (navigation.bottom - navigation.top) / 2)) as int ,(Math.round(navigation.left + (navigation.right - navigation.left) / 4 * 1)) as int ,(Math.round(navigation.top + (navigation.bottom -  navigation.top) / 2)) as int);
+  await driver.swipe( (Math.round(navigation.left + (navigation.right - navigation.left) / 4 * 3)).toInt() ,(Math.round(navigation.top + (navigation.bottom - navigation.top) / 2)).toInt() ,(Math.round(navigation.left + (navigation.right - navigation.left) / 4 * 1)).toInt() ,(Math.round(navigation.top + (navigation.bottom -  navigation.top) / 2)).toInt());
   await CommonFunc.sleep(1000);
 
   let btn1 = await driver.findComponent(ON.id('navigation_add4_1_pageTwo_btn1'));

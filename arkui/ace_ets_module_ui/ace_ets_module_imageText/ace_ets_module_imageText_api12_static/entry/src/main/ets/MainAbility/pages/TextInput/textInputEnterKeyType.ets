@@ -23,7 +23,7 @@ import {
 import { State,StoragePropRef,Observed } from '@ohos.arkui.stateManagement'
 import { RecordData } from '@ohos.base';
 @Observed
-class TextInputEnterKeyTypeModifier  implements AttributeModifier<TextInputAttribute> {
+export class TextInputEnterKeyTypeModifier  implements AttributeModifier<TextInputAttribute> {
   enterKeyType: EnterKeyType = EnterKeyType.Go;
   applyNormalAttribute(instance: TextInputAttribute): void {
     instance.enterKeyType( this.enterKeyType );

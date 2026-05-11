@@ -1269,7 +1269,7 @@ export function PrimitiveTypesTest048(): void {
     throw new Error("Test failed: parsedNum === 456");
   }
 
-  let floatToInt: int = Math.floor(3.7) as int;
+  let floatToInt: int = Math.floor(3.7).toInt();
   if (!(floatToInt === 3)) {
     console.info(`${caseName} Task execution failed： floatToInt === 3`);
     throw new Error("Test failed: floatToInt === 3");

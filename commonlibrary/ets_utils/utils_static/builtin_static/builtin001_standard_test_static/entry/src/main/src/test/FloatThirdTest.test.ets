@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2025 HiHope Open Source Organization.
+* Copyright (C) 2025-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the 'License');
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -203,7 +203,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest0900';
         console.info(`${caseName}, test start`);
-        expect(Float.compare(1.23 as float, 1.23 as float)).assertEqual(true);
+        expect(Float.compare(1.23.toFloat(), 1.23.toFloat())).assertEqual(true);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -220,7 +220,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest1000';
         console.info(`${caseName}, test start`);
-        expect(Float.compare(1.0 as float, (1.0 + Float.DELTA) as float)).assertEqual(true);
+        expect(Float.compare(1.0.toFloat(), (1.0 + Float.DELTA).toFloat())).assertEqual(true);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -237,7 +237,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest1100';
         console.info(`${caseName}, test start`);
-        expect(Float.compare(2.0 as float, (2.0 + Float.DELTA / 2) as float)).assertEqual(true);
+        expect(Float.compare(2.0.toFloat(), (2.0 + Float.DELTA / 2).toFloat())).assertEqual(true);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -254,7 +254,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest1200';
         console.info(`${caseName}, test start`);
-        expect(Float.compare(3.0 as float, (3.0 + Float.DELTA * 2) as float)).assertEqual(false);
+        expect(Float.compare(3.0.toFloat(), (3.0 + Float.DELTA * 2).toFloat())).assertEqual(false);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -271,7 +271,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest1300';
         console.info(`${caseName}, test start`);
-        expect(Float.compare(0.0 as float, -0.0 as float)).assertEqual(true);
+        expect(Float.compare(0.0.toFloat(), -0.0.toFloat())).assertEqual(true);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -288,7 +288,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest1400';
         console.info(`${caseName}, test start`);
-        expect(Float.compare(Number.POSITIVE_INFINITY as float, Number.POSITIVE_INFINITY as float)).assertEqual(false);
+        expect(Float.compare(Number.POSITIVE_INFINITY.toFloat(), Number.POSITIVE_INFINITY.toFloat())).assertEqual(false);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -305,7 +305,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest1500';
         console.info(`${caseName}, test start`);
-        expect(Float.compare(NaN as float, NaN as float)).assertEqual(false);
+        expect(Float.compare(NaN.toFloat(), NaN.toFloat())).assertEqual(false);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -322,7 +322,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest1600';
         console.info(`${caseName}, test start`);
-        expect(Float.compare(Number.POSITIVE_INFINITY as float, Number.NEGATIVE_INFINITY as float)).assertEqual(false);
+        expect(Float.compare(Number.POSITIVE_INFINITY.toFloat(), Number.NEGATIVE_INFINITY.toFloat())).assertEqual(false);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -339,7 +339,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest1700';
         console.info(`${caseName}, test start`);
-        expect(Float.isFinite(1.23 as float)).assertEqual(true);
+        expect(Float.isFinite(1.23.toFloat())).assertEqual(true);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -356,7 +356,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest1800';
         console.info(`${caseName}, test start`);
-        expect(Float.isFinite(0.0 as float)).assertEqual(true);
+        expect(Float.isFinite(0.0.toFloat())).assertEqual(true);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -373,7 +373,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest1900';
         console.info(`${caseName}, test start`);
-        expect(Float.isFinite(-0.0 as float)).assertEqual(true);
+        expect(Float.isFinite(-0.0.toFloat())).assertEqual(true);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -390,7 +390,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest2000';
         console.info(`${caseName}, test start`);
-        expect(Float.isFinite(Number.POSITIVE_INFINITY as float)).assertEqual(false);
+        expect(Float.isFinite(Number.POSITIVE_INFINITY.toFloat())).assertEqual(false);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -407,7 +407,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest2100';
         console.info(`${caseName}, test start`);
-        expect(Float.isFinite(Number.NEGATIVE_INFINITY as float)).assertEqual(false);
+        expect(Float.isFinite(Number.NEGATIVE_INFINITY.toFloat())).assertEqual(false);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -424,7 +424,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest2200';
         console.info(`${caseName}, test start`);
-        expect(Float.isFinite(NaN as float)).assertEqual(false);
+        expect(Float.isFinite(NaN.toFloat())).assertEqual(false);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -441,7 +441,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest2300';
         console.info(`${caseName}, test start`);
-        expect(Float.isFinite(Float.MAX_VALUE as float)).assertEqual(true);
+        expect(Float.isFinite(Float.MAX_VALUE.toFloat())).assertEqual(true);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -458,7 +458,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest2400';
         console.info(`${caseName}, test start`);
-        expect(Float.isFinite(Number.MIN_VALUE as float)).assertEqual(true);
+        expect(Float.isFinite(Number.MIN_VALUE.toFloat())).assertEqual(true);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -475,7 +475,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest2500';
         console.info(`${caseName}, test start`);
-        expect(Float.isInteger(123.0 as float)).assertEqual(true);
+        expect(Float.isInteger(123.0.toFloat())).assertEqual(true);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -492,7 +492,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest2600';
         console.info(`${caseName}, test start`);
-        expect(Float.isInteger(-456.0 as float)).assertEqual(true);
+        expect(Float.isInteger(-456.0.toFloat())).assertEqual(true);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -509,7 +509,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest2700';
         console.info(`${caseName}, test start`);
-        expect(Float.isInteger(123.456 as float)).assertEqual(false);
+        expect(Float.isInteger(123.456.toFloat())).assertEqual(false);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -526,7 +526,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest2800';
         console.info(`${caseName}, test start`);
-        expect(Float.isInteger(-456.789 as float)).assertEqual(false);
+        expect(Float.isInteger(-456.789.toFloat())).assertEqual(false);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -543,7 +543,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest2900';
         console.info(`${caseName}, test start`);
-        expect(Float.isInteger(0.0 as float)).assertEqual(true);
+        expect(Float.isInteger(0.0.toFloat())).assertEqual(true);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -560,7 +560,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest3000';
         console.info(`${caseName}, test start`);
-        expect(Float.isInteger(-0.0 as float)).assertEqual(true);
+        expect(Float.isInteger(-0.0.toFloat())).assertEqual(true);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -577,8 +577,8 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest3100';
         console.info(`${caseName}, test start`);
-        expect(Float.isInteger(Number.POSITIVE_INFINITY as float)).assertEqual(false);
-        expect(Float.isInteger(Number.NEGATIVE_INFINITY as float)).assertEqual(false);
+        expect(Float.isInteger(Number.POSITIVE_INFINITY.toFloat())).assertEqual(false);
+        expect(Float.isInteger(Number.NEGATIVE_INFINITY.toFloat())).assertEqual(false);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -595,7 +595,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest3200';
         console.info(`${caseName}, test start`);
-        expect(Float.isInteger(NaN as float)).assertEqual(false);
+        expect(Float.isInteger(NaN.toFloat())).assertEqual(false);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -612,7 +612,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest3300';
         console.info(`${caseName}, test start`);
-        expect(Float.isNaN(NaN as float)).assertEqual(true);
+        expect(Float.isNaN(NaN.toFloat())).assertEqual(true);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -629,7 +629,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest3400';
         console.info(`${caseName}, test start`);
-        expect(Float.isNaN(1.23 as float)).assertEqual(false);
+        expect(Float.isNaN(1.23.toFloat())).assertEqual(false);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -646,7 +646,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest3500';
         console.info(`${caseName}, test start`);
-        expect(Float.isNaN(0.0 as float)).assertEqual(false);
+        expect(Float.isNaN(0.0.toFloat())).assertEqual(false);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -663,7 +663,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest3600';
         console.info(`${caseName}, test start`);
-        expect(Float.isNaN(-0.0 as float)).assertEqual(false);
+        expect(Float.isNaN(-0.0.toFloat())).assertEqual(false);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -680,7 +680,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest3700';
         console.info(`${caseName}, test start`);
-        expect(Float.isNaN(Number.POSITIVE_INFINITY as float)).assertEqual(false);
+        expect(Float.isNaN(Number.POSITIVE_INFINITY.toFloat())).assertEqual(false);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -697,7 +697,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest3800';
         console.info(`${caseName}, test start`);
-        expect(Float.isNaN(Number.NEGATIVE_INFINITY as float)).assertEqual(false);
+        expect(Float.isNaN(Number.NEGATIVE_INFINITY.toFloat())).assertEqual(false);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -714,7 +714,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest3900';
         console.info(`${caseName}, test start`);
-        expect(Float.isNaN(Float.MAX_VALUE as float)).assertEqual(false);
+        expect(Float.isNaN(Float.MAX_VALUE.toFloat())).assertEqual(false);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -731,7 +731,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest4000';
         console.info(`${caseName}, test start`);
-        expect(Float.isNaN((0.0 / 0.0)as float)).assertEqual(true);
+        expect(Float.isNaN((0.0 / 0.0).toFloat())).assertEqual(true);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -748,7 +748,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest4100';
         console.info(`${caseName}, test start`);
-        expect(Float.isSafeInteger(Float.MAX_SAFE_INTEGER as float)).assertEqual(true); // Float.MAX_SAFE_INTEGER
+        expect(Float.isSafeInteger(Float.MAX_SAFE_INTEGER.toFloat())).assertEqual(true); // Float.MAX_SAFE_INTEGER
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -765,7 +765,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest4200';
         console.info(`${caseName}, test start`);
-        expect(Float.isSafeInteger(-Float.MAX_SAFE_INTEGER as float)).assertEqual(true); // -Float.MAX_SAFE_INTEGER
+        expect(Float.isSafeInteger(-Float.MAX_SAFE_INTEGER.toFloat())).assertEqual(true); // -Float.MAX_SAFE_INTEGER
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -816,7 +816,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest4500';
         console.info(`${caseName}, test start`);
-        expect(Float.isSafeInteger(0.0 as float)).assertEqual(true);
+        expect(Float.isSafeInteger(0.0.toFloat())).assertEqual(true);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -833,7 +833,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest4600';
         console.info(`${caseName}, test start`);
-        expect(Float.isSafeInteger(-0.0 as float)).assertEqual(true);
+        expect(Float.isSafeInteger(-0.0.toFloat())).assertEqual(true);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -850,7 +850,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest4700';
         console.info(`${caseName}, test start`);
-        expect(Float.isSafeInteger(1.23 as float)).assertEqual(false);
+        expect(Float.isSafeInteger(1.23.toFloat())).assertEqual(false);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -867,9 +867,9 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest4800';
         console.info(`${caseName}, test start`);
-        expect(Float.isSafeInteger(NaN as float)).assertEqual(false);
-        expect(Float.isSafeInteger(Number.POSITIVE_INFINITY as float)).assertEqual(false);
-        expect(Float.isSafeInteger(Number.NEGATIVE_INFINITY as float)).assertEqual(false);
+        expect(Float.isSafeInteger(NaN.toFloat())).assertEqual(false);
+        expect(Float.isSafeInteger(Number.POSITIVE_INFINITY.toFloat())).assertEqual(false);
+        expect(Float.isSafeInteger(Number.NEGATIVE_INFINITY.toFloat())).assertEqual(false);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -886,7 +886,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest4900';
         console.info(`${caseName}, test start`);
-        expect(Float.toString(10.5 as float, 10 as int)).assertEqual('10.5');
+        expect(Float.toString(10.5.toFloat(), 10 as int)).assertEqual('10.5');
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -903,7 +903,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest5000';
         console.info(`${caseName}, test start`);
-        expect(Float.toString(10.5 as float, 2 as int)).assertEqual('1010.1');
+        expect(Float.toString(10.5.toFloat(), 2 as int)).assertEqual('1010.1');
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -920,7 +920,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest5100';
         console.info(`${caseName}, test start`);
-        expect(Float.toString(10.5 as float, 8 as int)).assertEqual('12.4');
+        expect(Float.toString(10.5.toFloat(), 8 as int)).assertEqual('12.4');
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -937,7 +937,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest5200';
         console.info(`${caseName}, test start`);
-        expect(Float.toString(10.5 as float, 16 as int)).assertEqual('a.8');
+        expect(Float.toString(10.5.toFloat(), 16 as int)).assertEqual('a.8');
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -954,7 +954,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest5300';
         console.info(`${caseName}, test start`);
-        expect(Float.toString(-10.5 as float, 10 as int)).assertEqual('-10.5');
+        expect(Float.toString(-10.5.toFloat(), 10 as int)).assertEqual('-10.5');
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -971,7 +971,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest5400';
         console.info(`${caseName}, test start`);
-        expect(Float.toString(0.0 as float, 10 as int)).assertEqual('0');
+        expect(Float.toString(0.0.toFloat(), 10 as int)).assertEqual('0');
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -988,7 +988,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest5500';
         console.info(`${caseName}, test start`);
-        expect(Float.toString(NaN as float, 10 as int)).assertEqual('NaN');
+        expect(Float.toString(NaN.toFloat(), 10 as int)).assertEqual('NaN');
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1005,8 +1005,8 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest5600';
         console.info(`${caseName}, test start`);
-        expect(Float.toString(Number.POSITIVE_INFINITY as float, 10 as int)).assertEqual('Infinity');
-        expect(Float.toString(Number.NEGATIVE_INFINITY as float, 10 as int)).assertEqual('-Infinity');
+        expect(Float.toString(Number.POSITIVE_INFINITY.toFloat(), 10 as int)).assertEqual('Infinity');
+        expect(Float.toString(Number.NEGATIVE_INFINITY.toFloat(), 10 as int)).assertEqual('-Infinity');
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1161,7 +1161,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest6500';
         console.info(`${caseName}, test start`);
-        expect(Float.bitCastToInt(0.0 as float)).assertEqual(0x00000000);
+        expect(Float.bitCastToInt(0.0.toFloat())).assertEqual(0x00000000);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1178,7 +1178,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest6600';
         console.info(`${caseName}, test start`);
-        expect(Float.bitCastToInt(1.401298464324817e-45 as float)).assertEqual(0x00000001);
+        expect(Float.bitCastToInt((1.401298464324817e-45).toFloat())).assertEqual(0x00000001);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1195,7 +1195,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest6700';
         console.info(`${caseName}, test start`);
-        expect(Float.bitCastToInt(1.0 as float)).assertEqual(0x3F800000);
+        expect(Float.bitCastToInt(1.0.toFloat())).assertEqual(0x3F800000);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1229,7 +1229,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest6900';
         console.info(`${caseName}, test start`);
-        expect(Float.bitCastToInt(Number.POSITIVE_INFINITY as float)).assertEqual(0x7F800000);
+        expect(Float.bitCastToInt(Number.POSITIVE_INFINITY.toFloat())).assertEqual(0x7F800000);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1263,7 +1263,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest7100';
         console.info(`${caseName}, test start`);
-        expect(Float.bitCastToInt(NaN as float)).assertEqual(0x7FC00000);
+        expect(Float.bitCastToInt(NaN.toFloat())).assertEqual(0x7FC00000);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1298,7 +1298,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest7300';
         console.info(`${caseName}, test start`);
-        expect(Float.toString(123.456 as float)).assertEqual('123.456');
+        expect(Float.toString(123.456.toFloat())).assertEqual('123.456');
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1315,7 +1315,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest7400';
         console.info(`${caseName}, test start`);
-        expect(Float.toString(-123.456 as float)).assertEqual('-123.456');
+        expect(Float.toString(-123.456.toFloat())).assertEqual('-123.456');
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1332,7 +1332,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest7500';
         console.info(`${caseName}, test start`);
-        expect(Float.toString(0.0 as float)).assertEqual('0');
+        expect(Float.toString(0.0.toFloat())).assertEqual('0');
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1349,7 +1349,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest7600';
         console.info(`${caseName}, test start`);
-        expect(Float.toString(-0.0 as float)).assertEqual('0');
+        expect(Float.toString(-0.0.toFloat())).assertEqual('0');
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1366,7 +1366,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest7700';
         console.info(`${caseName}, test start`);
-        expect(Float.toString(NaN as float)).assertEqual('NaN');
+        expect(Float.toString(NaN.toFloat())).assertEqual('NaN');
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1383,7 +1383,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest7800';
         console.info(`${caseName}, test start`);
-        expect(Float.toString(Number.POSITIVE_INFINITY as float)).assertEqual('Infinity');
+        expect(Float.toString(Number.POSITIVE_INFINITY.toFloat())).assertEqual('Infinity');
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1400,7 +1400,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest7900';
         console.info(`${caseName}, test start`);
-        expect(Float.toString(Number.NEGATIVE_INFINITY as float)).assertEqual('-Infinity');
+        expect(Float.toString(Number.NEGATIVE_INFINITY.toFloat())).assertEqual('-Infinity');
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1417,8 +1417,8 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest8000';
         console.info(`${caseName}, test start`);
-        expect(Float.toString(Float.MAX_VALUE as float)).assertEqual(Float.MAX_VALUE.toString());
-        expect(Float.toString(Float.MIN_VALUE as float)).assertEqual(Float.MIN_VALUE.toString());
+        expect(Float.toString(Float.MAX_VALUE.toFloat())).assertEqual(Float.MAX_VALUE.toString());
+        expect(Float.toString(Float.MIN_VALUE.toFloat())).assertEqual(Float.MIN_VALUE.toString());
         console.info(`${caseName}, test end`);
         Done();
       })
