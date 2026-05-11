@@ -30,7 +30,7 @@ struct webViewIncognitoMode {
   @State imageAccess: boolean = true;
   @State onlineImageAccess: boolean = true;
   @State databaseAccess: boolean = true;
-  @State isPrivacy: boolean = false;
+  @State isPrivacy: boolean = true;
   @State geolocationAccess: boolean = true;
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
