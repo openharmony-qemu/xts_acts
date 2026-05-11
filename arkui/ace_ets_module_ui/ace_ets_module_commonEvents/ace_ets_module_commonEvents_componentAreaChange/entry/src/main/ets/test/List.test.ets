@@ -24,6 +24,8 @@ import measureFromViewportTest from "./onVisiable/measureFromViewport.test";
 import measureFromViewportOnVisibleTest from './measureFromViewport/measureFromViewportOnVisible.test';
 import onVisibleAreaApproximateChangeNullAndUndefinedTest from './OnVisibleAreaApproximateChange/onVisibleAreaApproximateChangeNullAndUndefinedTest.test';
 import expectedUpdateInterval from './onAreaChangeTest/expectedUpdateInterval.test';
+import expectedUpdateIntervalNull from './onAreaChangeTest/expectedUpdateIntervalNull.test';
+import expectedUpdateIntervalUndefined from './onAreaChangeTest/expectedUpdateIntervalUndefined.test';
 
 export default function testsuite() {
   appearJsunit();
@@ -36,4 +38,6 @@ export default function testsuite() {
   measureFromViewportOnVisibleTest();
   onVisibleAreaApproximateChangeNullAndUndefinedTest();
   expectedUpdateInterval();
+  expectedUpdateIntervalNull();
+  expectedUpdateIntervalUndefined();
 }
