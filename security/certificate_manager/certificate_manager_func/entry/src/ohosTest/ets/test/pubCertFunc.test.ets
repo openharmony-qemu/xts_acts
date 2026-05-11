@@ -166,7 +166,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_PubCertJsApi_Func_0600
      * @tc.number SUB_Security_CertManager_PubCertJsApi_Func_0600
-     * @tc.desc   Call getPublicCertificate interface with length of keyUri is 255 return 17500002
+     * @tc.desc   Call getPublicCertificate interface with length of keyUri is 255 return 17500001
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -181,7 +181,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       }
       catch (err) {
         console.log("SUB_Security_CertManager_PubCertJsApi_Func_0600：e.code = " + err.code);
-        expect(err.code).assertEqual(17500002);
+        expect(err.code).assertEqual(17500001);
       }
       console.info("SUB_Security_CertManager_PubCertJsApi_Func_0600: end.");
       done();
@@ -1186,6 +1186,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     it('SUB_Security_CertManager_OpenInstallCertificateDialog_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("SUB_Security_CertManager_OpenInstallCertificateDialog_0011: started ");
       const context :common.Context = GlobalContext.getContext();
+      let isSupport = certManagerDialog.supportsCACertDialog();
       let certificateType: certManagerDialog.CertificateType = certManagerDialog.CertificateType.CA_CERT;
       let certificateScope: certManagerDialog.CertificateScope = certManagerDialog.CertificateScope.GLOBAL_USER;
       try {
@@ -1195,11 +1196,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
         if (!canIUse('SystemCapability.Security.CertificateManagerDialog')) {
           expect(err.code).assertEqual(801);
         } else {
-          if (err.code == 29700004) {
-            expect(err.code).assertEqual(29700004);
+          if (isSupport) {
+            console.log("SUB_Security_CertManager_OpenInstallCertificateDialog_0011: the device supports CACertDialog. e.code" + err.code);
+            expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_NOT_COMPLY_SECURITY_POLICY);
           } else {
-            console.log("SUB_Security_CertManager_OpenInstallCertificateDialog_0011: e.code " + err.code);
-            expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
+            console.log("SUB_Security_CertManager_OpenInstallCertificateDialog_0011: the device don't supports CACertDialog. e.code " + err.code);
+            expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_DEVICE_NOT_SUPPORTED);
           }
         }
       }
@@ -1468,6 +1470,33 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
         }
       }
       console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1400 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_1500
+     * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_1500
+     * @tc.desc   import USB key certificate with PURPOSE_ALL, return error code 17500011.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_ImportUkeyCertificate_Func_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1500 start');
+      let keyUri: string = 'test';
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      let ukeyInfo: certManager.UkeyInfo = {
+        certPurpose: certManager.CertificatePurpose.PURPOSE_ALL,
+      };
+      try {
+        await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+        expect(null).assertFail();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1500 failed. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(17500011);
+      }
+      console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1500 end');
       done();
     });
   })
