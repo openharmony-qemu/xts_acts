@@ -27,7 +27,7 @@ const InvisibleErrorCode = 17000004;
 const waitUiReadyMs = 1000;
 const ErrorCode = 401;
 
-export default function uitestUiWindowErrorTest() {
+export default function uitestUiWindowErrorTest(): void {
   describe('UitestUiWindowErrorTest', (): void => {
     beforeAll(async () : Promise<void> => {
       hilog.info(domain, tag, "UitestUiWindowErrorTest loadup start!!!!!")

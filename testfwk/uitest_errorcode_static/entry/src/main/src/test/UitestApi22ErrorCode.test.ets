@@ -36,7 +36,7 @@ function sleep(count:int) : Promise<int> {
 })
 }
 
-export default function uitestDriverErrorTest() {
+export default function uitestDriverErrorTest(): void {
   describe('uitestApi22ErrorTest', (): void => {
     let driver: Driver | undefined;
     beforeAll(async () : Promise<void> => {
