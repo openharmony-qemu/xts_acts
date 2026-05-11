@@ -4951,12 +4951,10 @@ export default function TextPicker() {
         console.info('SUB_PHOTO_PICKER_TEST_0400 ═══ ROUND 1: select 2 photos and confirm ═══');
         const round1Promise = openPickerAndCollect('R1');
         const R1Selected = await selectTwoPhotos('R1');
-        console.info('SUB_PHOTO_PICKER_TEST_0400 Error11 '+ R1Selected);
         if (!R1Selected) {
           await endTest();
           return;
         }
-        await selectTwoPhotos('R1');
         await clickComplete('R1');
         originalUris = await round1Promise;
         printUris('R1 ORIGINAL', originalUris);
@@ -4968,7 +4966,6 @@ export default function TextPicker() {
           await endTest();
           return;
         }
-        await selectTwoPhotos('R2');
         await openBrowserMode('R2');
         const reordered: boolean = await reorderFirstTwoThumbnails('R2');
         await clickComplete('R2');
