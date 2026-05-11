@@ -1703,7 +1703,7 @@ export default function TextPicker() {
             try {
               await driveFn();
               hasHandledPermission = true;
-            } catch (err: Error) {
+            } catch (err) {
               console.info("testPicker25 driveFn info for case " + i + ": " + err.message);
             }
           }
