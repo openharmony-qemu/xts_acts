@@ -13,7 +13,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
+import time
 from devicetest.core.test_case import TestCase, Step
 from cameraAiTestComFun import logger, find_files, check_image, video_to_images
 import os
@@ -37,14 +37,14 @@ class ActsCameraVideoAiTest(TestCase):
         videoDir = './VideoDir'
         for videoFile in find_files(folder_path):
             if videoFile.lower().endswith((".mp4")):
-                output_folder, image_count = video_to_images(videoFile, videoDir)
-                if image_count <= 1:
+                image_count = video_to_images(videoFile, videoDir)
+                if image_count <= 2:
                     logger.info(f"{videoFile} 当前视频帧数过少，帧数为{image_count}，视频可能为空视频")
                     assert False, f"{videoFile} 当前视频帧数过少，帧数为{image_count}，视频可能为空视频"
-
         for videoImageFile in find_files(videoDir):
             CheckRes = check_image(videoImageFile)
             checkARray.append(CheckRes)
+            time.sleep(2)
         for checkItem in checkARray:
             assert checkItem["code"] == 0, checkItem["msg"]
         logger.info("----------结束检测录像出图是否是绿图花图黑图----------")
