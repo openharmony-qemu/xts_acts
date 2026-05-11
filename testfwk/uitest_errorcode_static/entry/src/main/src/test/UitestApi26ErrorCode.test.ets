@@ -64,9 +64,7 @@ export default function uitestApi26ErrorTest(): void {
       await sleep(waitUiReadyMs * 8);
       console.log(`${TestTag}, testDriverClickAtErrorConcurrentCallWithPressure end`);
     });
-
-
-
+    
      /**
        * @tc.name   testDriverClickAtErrorSpeedTooSmall
        * @tc.number SUB_testfwk_UITEST_CLICKAT_ERROR_0400
@@ -449,10 +447,6 @@ export default function uitestApi26ErrorTest(): void {
       console.info(`${TestTag}, testDriverSwipeBetweenConcurrentCall end`);
     });
 
-
-
-
-
     /**
      * @tc.name   testDriverDragBetweenConcurrentCalls
      * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_0100
@@ -626,18 +620,6 @@ export default function uitestApi26ErrorTest(): void {
       }
       console.info(`${TestTag}, testDriverDragBetweenDisplayIdDiff end`);
     });
-
-
-
-
-
-
-
-
-
-
-
-
 
     /**
      * @tc.name   testDriverDumpLayoutErrorConcurrentCall
@@ -909,10 +891,6 @@ export default function uitestApi26ErrorTest(): void {
       console.log(`${TestTag}, testDriverMouseDragErrorDisplayIdDiff end`);
     });
 
-
-
-
-
     /**
      * @tc.name   testDriverTriggerPenKeyAirMouseWithoutPoint
      * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_ERROR_0100
@@ -932,15 +910,6 @@ export default function uitestApi26ErrorTest(): void {
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseWithoutPoint over');
     });
-
-
-
-
-
-
-
-
-
 
     /**
      * @tc.name   testDriverTriggerPenKeyConcurrentCalls
