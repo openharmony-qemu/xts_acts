@@ -392,6 +392,80 @@ export default function AudioRoutingManagerTest() {
       }
     });
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_PRE_DEVICES_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_PRE_DEVICES_STATIC_0100
+     * @tc.desc   preDevices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_PRE_DEVICES_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager = audio.getAudioManager();
+      let audioSessionManager = audioManager!.getSessionManager();
+      try {
+        audioSessionManager!.offCurrentOutputDeviceChanged();
+        let currentOutputDeviceChangedEventCallback = (currentOutputDeviceChangedEvent: audio.CurrentOutputDeviceChangedEvent) => {
+          console.info(`${Tag} currentOutputDeviceChangedEventCallback : ${JSON.stringify(currentOutputDeviceChangedEvent)}`);
+          expect(currentOutputDeviceChangedEvent.preDevices).assertLargerOrEqual(0);
+          expect(currentOutputDeviceChangedEvent.devices).assertLargerOrEqual(0);
+          expect(currentOutputDeviceChangedEvent.changeReason).assertLessOrEqual(0);
+          expect(currentOutputDeviceChangedEvent.recommendedAction).assertLessOrEqual(0);
+        };
+        audioSessionManager!.onCurrentOutputDeviceChanged(currentOutputDeviceChangedEventCallback);
+        audioSessionManager!.offCurrentOutputDeviceChanged(currentOutputDeviceChangedEventCallback);
+      } catch (err) {
+        console.log(`${Tag} on currentOutputDeviceChanged err : ${err.message}, Code:${err.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+      done();
+    });
+    
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_RENDERER_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_RENDERER_STATIC_0100
+     * @tc.desc   preDevices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_RENDERER_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
+      let flag: boolean = false;
+      try {
+        audioRenderer!.offOutputDeviceChangeWithInfo();
+        let outputDeviceChangeWithInfoCallback = (audioStreamDeviceChangeInfo: audio.AudioStreamDeviceChangeInfo) => {
+          console.info(`${Tag} outputDeviceChangeWithInfo event received: ${JSON.stringify(audioStreamDeviceChangeInfo)}`);
+          expect(audioStreamDeviceChangeInfo.preDevices).assertLargerOrEqual(0);
+          expect(audioStreamDeviceChangeInfo.devices).assertLargerOrEqual(0);
+          expect(audioStreamDeviceChangeInfo.changeReason).assertLessOrEqual(0);
+        };
+        audioRenderer!.onOutputDeviceChangeWithInfo(outputDeviceChangeWithInfoCallback);
+        audioRenderer!.offOutputDeviceChangeWithInfo(outputDeviceChangeWithInfoCallback);
+        await audioRenderer!.release();
+        flag = true;
+      } catch(error){
+        console.log(`SUB_MULTIMEDIA_AUDIO_PRE_DEVICES_RENDERER_STATIC_0100 error : ${error.message}, Code:${error.code}`);
+        expect(false).assertTrue();
+      }
+      expect(flag).assertTrue();
+      done();
+    })
 
     /**
     * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0800
