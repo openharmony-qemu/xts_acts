@@ -35,6 +35,12 @@ import LinkedListTest1 from "./LinkedList/LinkedList1.test";
 import QueueTest1 from "./Queue/Queue1.test";
 import StackTest1 from "./Stack/Stack1.test";
 
+import HashMapTest01Test from "./HashMap/HashMapTest01.test";
+import HashMapTest02Test from "./HashMap/HashMapTest02.test";
+import HashMapTest03Test from "./HashMap/HashMapTest03.test";
+import HashMapTest04Test from "./HashMap/HashMapTest04.test";
+import HashMapTest05Test from "./HashMap/HashMapTest05.test";
+
 
 export default function testsuite() {
   ArraylistTest1();
@@ -59,6 +65,10 @@ export default function testsuite() {
   QueueTest1();
   StackTest1();
 
-  
+  HashMapTest01Test();
+  HashMapTest02Test();
+  HashMapTest03Test();
+  HashMapTest04Test();
+  HashMapTest05Test();
 
 }
