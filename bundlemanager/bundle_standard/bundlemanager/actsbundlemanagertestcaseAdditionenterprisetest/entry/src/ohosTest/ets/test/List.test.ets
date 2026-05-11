@@ -18,11 +18,12 @@
 import ErrcodeTest from './ErrorCodeTest.test.ets';
 
 import getApplicationLabel from './GetApplicationLabel.test.ets';
-import getInstalledBundleList from './getInstalledBundleList.test.ets';
+import getInstalledBundleList from './GetInstalledBundleList.test.ets';
 export default function testsuite() {
 
   ErrcodeTest();
   getApplicationLabel();
   getInstalledBundleList();
+
 
 }
