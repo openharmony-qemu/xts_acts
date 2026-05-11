@@ -501,11 +501,11 @@ export default function SecurityCryptoFwMLKeyConvertTestUnit() {
           expect(converted1.pubKey !== null).assertTrue();
           expect(converted1.priKey !== null).assertTrue();
           let converted2: cryptoFramework.KeyPair = await new Promise<cryptoFramework.KeyPair>((resolve, reject) => {
-            gen2.convertKey({data: pubKeyData}, {data: seedData}, (error, keyPair) => {
-              if (error) {
-                reject(error);
+            gen2.convertKey({data: pubKeyData}, {data: seedData}, (error: BusinessError<void>|null, keyPair: cryptoFramework.KeyPair|undefined) => {
+              if (error || keyPair === undefined) {
+                reject(error as Error);
               } else {
-                resolve(keyPair);
+                resolve(keyPair as cryptoFramework.KeyPair);
               }
             });
           });
