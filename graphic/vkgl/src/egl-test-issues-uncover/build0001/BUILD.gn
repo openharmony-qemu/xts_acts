@@ -153,7 +153,7 @@ ohos_moduletest_suite("ActsEglTestSuite0001") {
     "../functional/Eglmultithread_pixmap_single_windowTestCase.cpp",
     "../functional/Eglmultithread_pixmap_single_window_contextTestCase.cpp",
     "../functional/Eglimage_modifyTestCase.cpp",
-    "../functional/Eglcolor_clears_*TestCase.cpp", ]
+    "../functional/Eglcolor_clears_allTestCase.cpp", ]
 
   include_dirs = common_include
   include_dirs += [
