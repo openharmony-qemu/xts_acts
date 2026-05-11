@@ -1476,7 +1476,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_1500
      * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_1500
-     * @tc.desc   import USB key certificate with PURPOSE_ALL without real USB key, return error code 17500010 on PC device or 801 on non-PC device
+     * @tc.desc   import USB key certificate with PURPOSE_ALL without real USB key, return error code 801
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1488,22 +1488,12 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       let ukeyInfo: certManager.UkeyInfo = {
         certPurpose: certManager.CertificatePurpose.PURPOSE_ALL,
       };
-      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
-        try {
-          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
-          expect(null).assertFail();
-        } catch (err) {
-          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1500 failed. Code: ${err.code}, message: ${err.message}`);
-          expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_PARAMETER_VALIDATION_FAILED);
-        }
-      } else {
-        try {
-          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
-          expect(null).assertFail();
-        } catch (err) {
-          console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1500 failed. Code: ${err.code}, message: ${err.message}`);
-          expect(err.code).assertEqual(801);
-        }
+      try {
+        await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+        expect(null).assertFail();
+      } catch (err) {
+        console.error(`SUB_Security_CertManager_ImportUkeyCertificate_Func_1500 failed. Code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(801);
       }
       console.info('SUB_Security_CertManager_ImportUkeyCertificate_Func_1500 end');
       done();
