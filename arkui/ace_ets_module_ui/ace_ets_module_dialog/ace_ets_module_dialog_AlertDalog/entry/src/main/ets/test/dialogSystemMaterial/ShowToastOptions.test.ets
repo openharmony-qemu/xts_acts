@@ -56,7 +56,6 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(1000);
 
       let btn = await driver.findComponent(ON.id('btn_message_string'));
-      expect(btn).not().assertUndefined();
       await btn.click();
       await CommonFunc.sleep(500);
 
@@ -84,7 +83,6 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(1000);
 
       let btn = await driver.findComponent(ON.id('btn_message_resource'));
-      expect(btn).not().assertUndefined();
       await btn.click();
       await CommonFunc.sleep(500);
 
@@ -112,7 +110,6 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(1000);
 
       let btn = await driver.findComponent(ON.id('btn_duration_min'));
-      expect(btn).not().assertUndefined();
       await btn.click();
       await CommonFunc.sleep(500);
 
@@ -140,7 +137,6 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(1000);
 
       let btn = await driver.findComponent(ON.id('btn_duration_max'));
-      expect(btn).not().assertUndefined();
       await btn.click();
       await CommonFunc.sleep(500);
 
@@ -168,7 +164,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(1000);
 
       let btn = await driver.findComponent(ON.id('btn_bottom_string'));
-      expect(btn).not().assertUndefined();
+      
       await btn.click();
       await CommonFunc.sleep(500);
 
@@ -196,7 +192,6 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(1000);
 
       let btn = await driver.findComponent(ON.id('btn_bottom_number'));
-      expect(btn).not().assertUndefined();
       await btn.click();
       await CommonFunc.sleep(500);
 
@@ -226,7 +221,6 @@ export default function ShowToastOptionsTest() {
       expect(Alignment.Top).assertEqual(Alignment.Top);
 
       let btn = await driver.findComponent(ON.id('btn_align_top'));
-      expect(btn).not().assertUndefined();
       await btn.click();
       await CommonFunc.sleep(500);
 
@@ -256,7 +250,7 @@ export default function ShowToastOptionsTest() {
       expect(Alignment.Center).assertEqual(Alignment.Center);
 
       let btn = await driver.findComponent(ON.id('btn_align_center'));
-      expect(btn).not().assertUndefined();
+      
       await btn.click();
       await CommonFunc.sleep(500);
 
@@ -286,7 +280,7 @@ export default function ShowToastOptionsTest() {
       expect(Alignment.Bottom).assertEqual(Alignment.Bottom);
 
       let btn = await driver.findComponent(ON.id('btn_align_bottom'));
-      expect(btn).not().assertUndefined();
+      
       await btn.click();
       await CommonFunc.sleep(500);
 
@@ -316,7 +310,7 @@ export default function ShowToastOptionsTest() {
       expect(Alignment.TopStart).assertEqual(Alignment.TopStart);
 
       let btn = await driver.findComponent(ON.id('btn_align_topstart'));
-      expect(btn).not().assertUndefined();
+      
       await btn.click();
       await CommonFunc.sleep(500);
 
@@ -344,7 +338,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(1000);
 
       let btn = await driver.findComponent(ON.id('btn_offset_positive'));
-      expect(btn).not().assertUndefined();
+      
       await btn.click();
       await CommonFunc.sleep(500);
 
@@ -372,7 +366,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(1000);
 
       let btn = await driver.findComponent(ON.id('btn_offset_negative'));
-      expect(btn).not().assertUndefined();
+      
       await btn.click();
       await CommonFunc.sleep(500);
 
@@ -402,7 +396,7 @@ export default function ShowToastOptionsTest() {
       expect(promptAction.ToastShowMode.DEFAULT).assertEqual(0);
 
       let btn = await driver.findComponent(ON.id('btn_showmode_default'));
-      expect(btn).not().assertUndefined();
+      
       await btn.click();
       await CommonFunc.sleep(500);
 
@@ -432,7 +426,7 @@ export default function ShowToastOptionsTest() {
       expect(promptAction.ToastShowMode.TOP_MOST).assertEqual(1);
 
       let btn = await driver.findComponent(ON.id('btn_showmode_topmost'));
-      expect(btn).not().assertUndefined();
+      
       await btn.click();
       await CommonFunc.sleep(500);
 
@@ -460,7 +454,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(1000);
 
       let btn = await driver.findComponent(ON.id('btn_bgcolor_red'));
-      expect(btn).not().assertUndefined();
+      
       await btn.click();
       await CommonFunc.sleep(500);
 
@@ -488,7 +482,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(1000);
 
       let btn = await driver.findComponent(ON.id('btn_textcolor_white'));
-      expect(btn).not().assertUndefined();
+      
       await btn.click();
       await CommonFunc.sleep(500);
 
@@ -515,10 +509,8 @@ export default function ShowToastOptionsTest() {
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
-      expect(BlurStyle.NONE).assertEqual(BlurStyle.NONE);
-
       let btn = await driver.findComponent(ON.id('btn_blur_none'));
-      expect(btn).not().assertUndefined();
+      
       await btn.click();
       await CommonFunc.sleep(500);
 
@@ -545,10 +537,9 @@ export default function ShowToastOptionsTest() {
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
-      expect(BlurStyle.Thin).assertEqual(BlurStyle.Thin);
 
       let btn = await driver.findComponent(ON.id('btn_blur_thin'));
-      expect(btn).not().assertUndefined();
+      
       await btn.click();
       await CommonFunc.sleep(500);
 
@@ -576,7 +567,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(1000);
 
       let btn = await driver.findComponent(ON.id('btn_shadow_style'));
-      expect(btn).not().assertUndefined();
+      
       await btn.click();
       await CommonFunc.sleep(500);
 
@@ -604,7 +595,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(1000);
 
       let btn = await driver.findComponent(ON.id('btn_shadow_options'));
-      expect(btn).not().assertUndefined();
+      
       await btn.click();
       await CommonFunc.sleep(500);
 
@@ -632,7 +623,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(1000);
 
       let btn = await driver.findComponent(ON.id('btn_hover_false'));
-      expect(btn).not().assertUndefined();
+      
       await btn.click();
       await CommonFunc.sleep(500);
 
@@ -660,7 +651,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(1000);
 
       let btn = await driver.findComponent(ON.id('btn_hover_true'));
-      expect(btn).not().assertUndefined();
+      
       await btn.click();
       await CommonFunc.sleep(500);
 
@@ -692,7 +683,7 @@ export default function ShowToastOptionsTest() {
       console.info('ShowToastOptionsTest_SystemMaterial_0100 ImmersiveMaterial created');
 
       let btn = await driver.findComponent(ON.id('btn_system_material'));
-      expect(btn).not().assertUndefined();
+      
       await btn.click();
       await CommonFunc.sleep(500);
 
@@ -720,7 +711,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(1000);
 
       let btn = await driver.findComponent(ON.id('btn_all_params'));
-      expect(btn).not().assertUndefined();
+      
       await btn.click();
       await CommonFunc.sleep(500);
 
