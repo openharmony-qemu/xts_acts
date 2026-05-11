@@ -136,7 +136,7 @@ ohos_moduletest_suite("ActsEglTestSuite0001") {
   part_name = "graphic_2d"
   sources = [ 
     "../ActsEgl0001TestSuite.cpp",
-    "../functional/Eglimage_*TestCase.cpp", ]
+    "../functional/Eglimage_allTestCase.cpp", ]
 
   include_dirs = common_include
   include_dirs += [
