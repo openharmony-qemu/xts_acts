@@ -575,8 +575,6 @@ export default function ShowToastOptionsTest() {
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
-      expect(ShadowStyle.OUTER_DEFAULT_MD).assertEqual(ShadowStyle.OUTER_DEFAULT_MD);
-
       let btn = await driver.findComponent(ON.id('btn_shadow_style'));
       expect(btn).not().assertUndefined();
       await btn.click();
