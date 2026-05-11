@@ -26,10 +26,10 @@ interface FetchedSize {
     height: number;
 }
 
-let videoSource = "demo.mp4"
+let videoSource = "H264_AAC.mp4"
 let avFd: media.AVFileDescriptor
-let orgWidth: number = 1024
-let orgHeight: number = 1280
+let orgWidth: number = 720
+let orgHeight: number = 480
 let defaultQueryOption: media.AVImageQueryOptions = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC
 let MaxUint32Num = 4294967295
 let avImageGenerator: media.AVImageGenerator | undefined = undefined
