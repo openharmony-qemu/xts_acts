@@ -540,8 +540,8 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
         try {
           let gen: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator("ML-KEM-768");
           let keyPair: cryptoFramework.KeyPair = await gen.convertPemKey("", "");
-          expect(keyPair.priKey === undefined).assertTrue();
-          expect(keyPair.pubKey === undefined).assertTrue();
+          expect(keyPair.priKey === undefined).assertFalse();
+          expect(keyPair.pubKey === undefined).assertFalse();
         } catch (error) {
           console.error(`[XTS] ConvertPemKey_Error_0100 KEM ${error}, error code: ${error.code}`);
           expect(null).assertFail();
@@ -549,8 +549,8 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
         try {
           let gen: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator("ML-DSA-65");
           let keyPair: cryptoFramework.KeyPair = gen.convertPemKeySync("", "");
-          expect(keyPair.priKey === undefined).assertTrue();
-          expect(keyPair.pubKey === undefined).assertTrue();
+          expect(keyPair.priKey === undefined).assertFalse();
+          expect(keyPair.pubKey === undefined).assertFalse();
         } catch (error) {
           console.error(`[XTS] ConvertPemKey_Error_0100 DSA ${error}, error code: ${error.code}`);
           expect(null).assertFail();

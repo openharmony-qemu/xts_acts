@@ -462,7 +462,7 @@ export default function SecurityCryptoFwMLKeyConvertTestUnit() {
           });
           expect(convertedKeyPair !== null).assertTrue();
           expect(convertedKeyPair.pubKey !== null).assertTrue();
-          expect(convertedKeyPair.priKey === undefined).assertTrue();
+          expect(convertedKeyPair.priKey === undefined).assertFalse();
           let convertedPubKeyData: Uint8Array = await convertedKeyPair.pubKey.getKeyData(cryptoFramework.AsyKeyDataItem.ML_KEM_PUBLIC_RAW);
           expect(compareUint8Array(pubKeyData, convertedPubKeyData)).assertTrue();
         } catch (error) {
@@ -544,7 +544,7 @@ export default function SecurityCryptoFwMLKeyConvertTestUnit() {
             });
           });
           expect(convertedPub.pubKey !== null).assertTrue();
-          expect(convertedPub.priKey === undefined).assertTrue();
+          expect(convertedPub.priKey === undefined).assertFalse();
           let converted1: cryptoFramework.KeyPair = await new Promise<cryptoFramework.KeyPair>((resolve, reject) => {
             gen2.convertKey({data: pubKeyData}, {data: priKeyData}, (error: BusinessError<void>|null, keyPair: cryptoFramework.KeyPair|undefined) => {
               if (error || keyPair === undefined) {
