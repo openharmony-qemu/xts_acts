@@ -37,6 +37,8 @@ import TextCommonTextComputing9 from './MeasureTest/TextCommonTextComputing9.tes
 import TextGetParagraphsTest from './MeasureTest/TextGetParagraphsTest.test';
 import MeasureTextTest from './MeasureTest/MeasureText.test';
 
+import EditDecorationThicknessScaleTest from './EditCommonTest/EditDecorationThicknessScale.test';
+
 import BindSelectionMenuTest from './BindSelectionMenuTest.test';
 import KeyboardAvoidModeTest from './KeyboardAvoidMode.test';
 import ResourceModifierTest from './ResourceModifier.test';
@@ -101,6 +103,9 @@ export default function testsuite() {
   TextCommonTextComputing9() 
   TextGetParagraphsTest()
   MeasureTextTest()
+
+  EditDecorationThicknessScaleTest()
+  
   BindSelectionMenuTest()
   KeyboardAvoidModeTest()
   ResourceModifierTest()
