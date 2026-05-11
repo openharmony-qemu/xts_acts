@@ -497,7 +497,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1500
      * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1500
-     * @tc.desc   import USB key certificate with PURPOSE_ALL without real USB key, return error 801
+     * @tc.desc   import USB key certificate with PURPOSE_ALL, return error 17500011
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -509,24 +509,13 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       let ukeyInfo: certManager.UkeyInfo = {
         certPurpose: certManager.CertificatePurpose.PURPOSE_ALL,
       };
-      if (canIUse('SystemCapability.Security.Huks.CryptoExtension')) {
-        try {
-          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
-          expect(null).assertFail();
-        } catch (err) {
-          let error: BusinessError = err as BusinessError;
-          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1500 failed. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(17500010);
-        }
-      } else {
-        try {
-          await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
-          expect(null).assertFail();
-        } catch (err) {
-          let error: BusinessError = err as BusinessError;
-          hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1500 failed. Code: ${error.code}, message: ${error.message}`);
-          expect(error.code).assertEqual(801);
-        }
+      try {
+        await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+        expect(null).assertFail();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1500 failed. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(17500011);
       }
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1500 end');
       done();
