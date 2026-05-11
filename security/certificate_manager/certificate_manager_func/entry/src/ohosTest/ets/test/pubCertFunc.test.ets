@@ -166,7 +166,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
     /**
      * @tc.name   SUB_Security_CertManager_PubCertJsApi_Func_0600
      * @tc.number SUB_Security_CertManager_PubCertJsApi_Func_0600
-     * @tc.desc   Call getPublicCertificate interface with length of keyUri is 255 return 17500002
+     * @tc.desc   Call getPublicCertificate interface with length of keyUri is 255 return 17500001
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -181,7 +181,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       }
       catch (err) {
         console.log("SUB_Security_CertManager_PubCertJsApi_Func_0600：e.code = " + err.code);
-        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_FOUND);
+        expect(err.code).assertEqual(17500001);
       }
       console.info("SUB_Security_CertManager_PubCertJsApi_Func_0600: end.");
       done();
