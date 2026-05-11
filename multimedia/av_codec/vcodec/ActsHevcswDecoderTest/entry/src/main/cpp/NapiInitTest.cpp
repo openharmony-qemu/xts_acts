@@ -33,7 +33,16 @@ struct AsyncWorkData {
 static const std::vector<TestFunction> funcTestFunctions = {
     VideoDecodeSyncSs265Func0010Test,
     VideoDecodeSyncSs265Func0020Test,
-    VideoSwdecH265BlankFrame0010Test
+    VideoSwdecH265BlankFrame0010Test,
+    VideoSwdecH265Speed0010Test,
+    VideoSwdecH265Speed0020Test,
+    VideoSwdecH265Speed0030Test,
+    VideoSwdecH265Speed0040Test,
+    VideoSwdecH265Speed0050Test,
+    VideoSwdecH265Speed0060Test,
+    VideoSwdecH265Speed0070Test,
+    VideoSwdecH265Speed0080Test,
+    VideoSwdecH265Speed0090Test
 };
 
 static void ExecuteWork(napi_env env, void* data)
