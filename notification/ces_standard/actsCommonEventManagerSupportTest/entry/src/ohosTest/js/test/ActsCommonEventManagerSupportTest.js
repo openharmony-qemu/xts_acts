@@ -308,6 +308,7 @@ export default function ActsCommonEventManagerSupportTest() {
       expect(commonEventManager.Support.COMMON_EVENT_BLUETOOTH_HOST_REQ_ENABLE).assertEqual('usual.event.bluetooth.host.REQ_ENABLE')
       expect(commonEventManager.Support.COMMON_EVENT_BLUETOOTH_HOST_REQ_DISABLE).assertEqual('usual.event.bluetooth.host.REQ_DISABLE')
       expect(commonEventManager.Support.COMMON_EVENT_BLUETOOTH_HOST_SCAN_MODE_UPDATE).assertEqual('usual.event.bluetooth.host.SCAN_MODE_UPDATE')
+      expect(commonEventManager.Support.COMMON_EVENT_BLUETOOTH_HOST_SCAN_MODE_CHANGE).assertEqual('usual.event.bluetooth.host.SCAN_MODE_CHANGE')
       expect(commonEventManager.Support.COMMON_EVENT_BLUETOOTH_HOST_DISCOVERY_STARTED).assertEqual('usual.event.bluetooth.host.DISCOVERY_STARTED')
       expect(commonEventManager.Support.COMMON_EVENT_BLUETOOTH_HOST_DISCOVERY_FINISHED).assertEqual('usual.event.bluetooth.host.DISCOVERY_FINISHED')
       expect(commonEventManager.Support.COMMON_EVENT_BLUETOOTH_HOST_NAME_UPDATE).assertEqual('usual.event.bluetooth.host.NAME_UPDATE')
