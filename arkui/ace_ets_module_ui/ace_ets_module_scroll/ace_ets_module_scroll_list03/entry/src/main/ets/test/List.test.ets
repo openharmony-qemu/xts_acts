@@ -62,6 +62,8 @@ import listRepeatUn from './emptyBranch/listRepeatUn.test';
 import listRepeatNull from './emptyBranch/listRepeatNull.test';
 import editModeList from './List/editModeList.test';
 import editBadgeList from './List/editBadgeList.test';
+import backPressBehaviorList from './List/backPressBehaviorList.test';
+import headerFooterStyle from './ListItemGroup/headerFooterStyle.test';
 
 export default function testsuite() {
   headerListJsunit()
@@ -113,4 +115,6 @@ export default function testsuite() {
   listRepeatNull()
   editModeList()
   editBadgeList()
+  backPressBehaviorList()
+  headerFooterStyle()
 }

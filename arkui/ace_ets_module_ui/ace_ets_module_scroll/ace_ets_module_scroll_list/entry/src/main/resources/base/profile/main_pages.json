@@ -76,6 +76,8 @@
         "MainAbility/pages/List_divider/List_divider_resource",
         "MainAbility/pages/ListItem_SwipeActionItem/listTest",
         "MainAbility/pages/ListItem_SwipeActionItem/listTestNoOnAction",
+        "MainAbility/pages/List/ListScrollBarWidth",
+        "MainAbility/pages/List/ListSpaceWidth",
         "MainAbility/pages/ListItem_SwipeActionItem/listTest06",
         "MainAbility/pages/ListItem_SwipeActionItem/listEndTest",
         "MainAbility/pages/ListItem_SwipeActionItem/listTest12",

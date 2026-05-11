@@ -71,7 +71,6 @@ napi_value SwiperOnContentDidScrollTest::CreateNativeNode(napi_env env, napi_cal
     auto text_start = std::make_shared<TextComponent>();
     text_start->SetTextContent("test");
     auto swiper = CreateSwiperNode("SwiperOnContentDidScroll");
-    nodeAPI->setLengthMetricUnit(swiper->GetComponent(), ARKUI_LENGTH_METRIC_UNIT_PX);
 
     swiper->RegisterOnDidScrollContext([swiper](ArkUI_NodeEvent *event) {
         ArkUI_NodeComponentEvent *result = OH_ArkUI_NodeEvent_GetNodeComponentEvent(event);

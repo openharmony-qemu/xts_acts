@@ -25,6 +25,8 @@
     "MainAbility/pages/getHistoricalPoints/getHistoricalPoints_globalDisplayX",
     "MainAbility/pages/getHistoricalPoints/getHistoricalPoints_globalDisplayY",
     "MainAbility/pages/getHistoricalPoints/Marquee",
-    "MainAbility/pages/getSizeLimitation/GetSizeLimitation"
+    "MainAbility/pages/getSizeLimitation/GetSizeLimitation",
+    "MainAbility/pages/setCustomCursor/setCustomCursor",
+    "MainAbility/pages/setCustomCursor/setCustomCursor_undefined"
   ]
 }

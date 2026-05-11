@@ -52,6 +52,11 @@ interface ReadOnlyMetaDataRule {
   newExpectValue: string | object | boolean | number | number[] | number[][];
 }
 
+interface ReadOnlyMetaDataRuleWithType {
+  type: string,
+  newExpectValue: string | object | boolean | number | number[] | number[][];
+}
+
 const testArrayBufferU8: Uint8Array = new Uint8Array([1, 2, 2, 3]);
 const testArrayBuffer: ArrayBuffer = testArrayBufferU8.buffer as ArrayBuffer;
 
@@ -59,7 +64,7 @@ const testArrayBuffer: ArrayBuffer = testArrayBufferU8.buffer as ArrayBuffer;
 async function getPropertyValue(
   fd: number,
   type: string,
-  key: image.PropertyKey | image.DngPropertyKey | image.WebPPropertyKey
+  key: image.PropertyKey | image.DngPropertyKey | image.WebPPropertyKey | image.GifPropertyKey | image.HeifsPropertyKey | image.PngPropertyKey | image.TiffPropertyKey | image.JfifPropertyKey
 ): Promise<number | Array<number> | Array<number | null> | ArrayBuffer | string> {
   let task = new taskpool.Task(getPropertyValueTest, fd, type, key);
   let ret = (await taskpool.execute(task)) as number | Array<number> | Array<number | null> | ArrayBuffer | string;
@@ -140,12 +145,15 @@ export default function ImageExifGetModifyByTypeNDK() {
     ): boolean => {
       if (Array.isArray(actual) && Array.isArray(expected)) {
         if (actual.length !== expected.length) return false;
+        console.info(`dsh 1 compareValues actual is ${actual} , expected is ${expected}, actual type ${typeof actual}, expected type ${typeof expected}`);
         return actual.every((val: number | null, index: number) => {
           const expectedVal: number | null = expected[index] as number | null;
+          console.info(`dsh compareValues val is ${val} , expectedVal is ${expectedVal}, val type ${typeof val}, expectedVal type ${typeof expectedVal}`);
           if (val === null || expectedVal === null) return true;
           return val === expectedVal;
         });
       }
+      console.info(`dsh 1 compareValues actual is ${actual} , expected is ${expected}, actual type ${typeof actual}, expected type ${typeof expected}`);
       return actual === expected;
     }
 
@@ -280,7 +288,7 @@ export default function ImageExifGetModifyByTypeNDK() {
     const TestGetImagePropertyByTypeError = async (
       testNum: string,
       fileName: string,
-      Key: image.PropertyKey | image.DngPropertyKey | image.WebPPropertyKey,
+      Key: image.PropertyKey | image.DngPropertyKey | image.WebPPropertyKey | image.GifPropertyKey | image.HeifsPropertyKey | image.PngPropertyKey | image.JfifPropertyKey | image.TiffPropertyKey,
       type: string,
       errorCode: number
     ): Promise<boolean> => {
@@ -5885,18 +5893,18 @@ export default function ImageExifGetModifyByTypeNDK() {
       expect(result).assertEqual(7700204);
       done();
     });
-
-    /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_SHORT_WEBP_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_SHORT_WEBP_0100
-     * @tc.desc        Verify reading WEBP metadata as short type
-     *                 1.Create image source from WEBP file (loop_count_9.webp) using fd
-     *                 2.Iterate all keys in ImagePropertyConfig.webpMetadatas and read each key as short type
-     *                 3.Verify each actual value equals rule.newExpectValue
-     * @tc.size        MEDIUM
-     * @tc.type        Functional
-     * @tc.level       Level 0
-     */
+    
+	/**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_SHORT_WEBP_0100
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_SHORT_WEBP_0100
+      * @tc.desc        Verify reading WEBP metadata as short type
+      *                 1.Create image source from WEBP file (loop_count_9.webp) using fd
+      *                 2.Iterate all keys in ImagePropertyConfig.webpMetadatas and read each key as short type
+      *                 3.Verify each actual value equals rule.newExpectValue
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_SHORT_WEBP_0100", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_SHORT_WEBP_0100";
       let result: boolean = true;
@@ -5922,17 +5930,17 @@ export default function ImageExifGetModifyByTypeNDK() {
       done();
     });
 
-    /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LONG_WEBP_0200
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LONG_WEBP_0200
-     * @tc.desc        Verify reading WEBP metadata as long type
-     *                 1.Create image source from WEBP file (loop_count_9.webp) using fd
-     *                 2.Iterate all keys in ImagePropertyConfig.webpMetadatas and read each key as long type
-     *                 3.Verify each actual value equals rule.newExpectValue
-     * @tc.size        MEDIUM
-     * @tc.type        Functional
-     * @tc.level       Level 0
-     */
+     /**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LONG_WEBP_0200
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LONG_WEBP_0200
+      * @tc.desc        Verify reading WEBP metadata as long type
+      *                 1.Create image source from WEBP file (loop_count_9.webp) using fd
+      *                 2.Iterate all keys in ImagePropertyConfig.webpMetadatas and read each key as long type
+      *                 3.Verify each actual value equals rule.newExpectValue
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LONG_WEBP_0200", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_LONG_WEBP_0200";
       let result: boolean = true;
@@ -5958,17 +5966,17 @@ export default function ImageExifGetModifyByTypeNDK() {
       done();
     });
 
-    /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_0300
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_0300
-     * @tc.desc        Verify reading WEBP metadata as intArray type
-     *                 1.Create image source from WEBP file (loop_count_9.webp) using fd
-     *                 2.Iterate all keys in ImagePropertyConfig.webpMetadatas and read each key as intArray type
-     *                 3.Verify each actual value equals [rule.newExpectValue]
-     * @tc.size        MEDIUM
-     * @tc.type        Functional
-     * @tc.level       Level 0
-     */
+     /**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_0300
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_0300
+      * @tc.desc        Verify reading WEBP metadata as intArray type
+      *                 1.Create image source from WEBP file (loop_count_9.webp) using fd
+      *                 2.Iterate all keys in ImagePropertyConfig.webpMetadatas and read each key as intArray type
+      *                 3.Verify each actual value equals [rule.newExpectValue]
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_0300", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_0300";
       let result: boolean = true;
@@ -5993,18 +6001,417 @@ export default function ImageExifGetModifyByTypeNDK() {
       expect(result).assertTrue();
       done();
     });
+    
+    /**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_GIF_0100
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_GIF_0100
+      * @tc.desc        Verify reading gif metadata as short type
+      *                 1.Create image source from gif file (test6.gif) using fd
+      *                 2.Iterate all keys in ImagePropertyConfig.gifMetadatas and read each key as short type
+      *                 3.Verify each actual value equals rule.newExpectValue
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_GIF_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_GIF_0100";
+      let result: boolean = true;
+      let propertyKeys: Array<image.GifPropertyKey> = ImagePropertyConfig.gifMetadatas.keys;
+      let gifRules: Map<image.GifPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.gifMetadatas.rules;
+      let fd: number = await getFd("test6.gif");
+      for (const key of propertyKeys) {
+        const rule = gifRules.get(key);
+        if (!rule) {
+          console.info(`${result} No rule found for key: ${key}`);
+          continue;
+        }
+        let expectedValue = rule.newExpectValue;
+        let type = rule.type;
+        const actualValue = await getPropertyValue(fd, type, key);
+        console.info(`${testTag} dhs Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        if (!compareValues(actualValue, expectedValue)) {
+          console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+          result = false;
+        }
+      }
+      console.info(`${testTag} gif metadata TestGetImageProperty Short result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0100
-     * @tc.desc        Verify reading WEBP property with wrong type returns READ_FAILED
-     *                 1.Create image source from WEBP file (loop_count_9.webp)
-     *                 2.Read CANVAS_WIDTH using unsupported type double
-     *                 3.Verify API returns READ_FAILED
-     * @tc.size        MEDIUM
-     * @tc.type        Functional
-     * @tc.level       Level 0
-     */
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_GIF_0200
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_GIF_0200
+      * @tc.desc        Verify reading gif metadata as short type
+      *                 1.Create image source from gif file (test6.gif) using fd
+      *                 2.Iterate all keys in ImagePropertyConfig.gifMetadatas and read each key as short type
+      *                 3.Verify each actual value equals rule.newExpectValue
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_GIF_0200", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_GIF_0200";
+      let result: boolean = true;
+      let propertyKeys: Array<image.GifPropertyKey> = ImagePropertyConfig.gifMetadatas.keys;
+      let gifRules: Map<image.GifPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.gifMetadatas.rules;
+      let fd: number = await getFd("test6.gif");
+      for (const key of propertyKeys) {
+        const rule = gifRules.get(key);
+        if (!rule) {
+          console.info(`${result} No rule found for key: ${key}`);
+          continue;
+        }
+        let expectedValue = rule.newExpectValue;
+        let type = rule.type;
+        if(type == 'short'){
+          type = 'long'
+        }
+        const actualValue = await getPropertyValue(fd, type, key);
+        console.info(`${testTag} dhs Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        if (!compareValues(actualValue, expectedValue)) {
+          console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+          result = false;
+        }
+      }
+      console.info(`${testTag} gif metadata TestGetImageProperty Short result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_HEIFS_0100
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_HEIFS_0100
+      * @tc.desc        Verify reading HEIFS metadata as short type
+      *                 1.Create image source from heifs file (C027.heic) using fd
+      *                 2.Iterate all keys in ImagePropertyConfig.heifsMetadatas and read each key as short type
+      *                 3.Verify each actual value equals rule.newExpectValue
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_HEIFS_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_HEIFS_0100";
+      let result: boolean = true;
+      let isSupportHEIFDecode: boolean = image.createImageSource(uiContext.filesDir + '/' + "test.jpg").supportedFormats.includes("image/heic");
+      if (!isSupportHEIFDecode) {
+        console.info(`${testTag} device is not support decode heif!`);
+        expect(result).assertTrue();
+        done();
+        return;
+      }  
+      let propertyKeys: Array<image.HeifsPropertyKey> = ImagePropertyConfig.heifsMetadatas.keys;
+      let heifsRules: Map<image.HeifsPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.heifsMetadatas.rules;
+      let fd: number = await getFd("C027.heic");
+      for (const key of propertyKeys) {
+        const rule = heifsRules.get(key);
+        if (!rule) {
+          console.info(`${result} No rule found for key: ${key}`);
+          continue;
+        }
+        let expectedValue = rule.newExpectValue;
+        let type = rule.type;
+        const actualValue = await getPropertyValue(fd, type, key);
+        console.info(`${testTag} dhs Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        if (!compareValues(actualValue, expectedValue)) {
+          console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+          result = false;
+        }
+      }
+      console.info(`${testTag} heifs metadata TestGetImageProperty Short result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_HEIFS_0200
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_HEIFS_0200
+      * @tc.desc        Verify reading HEIFS metadata as short type
+      *                 1.Create image source from heifs file (C027.heic) using fd
+      *                 2.Iterate all keys in ImagePropertyConfig.heifsMetadatas and read each key as short type
+      *                 3.Verify each actual value equals rule.newExpectValue
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_HEIFS_0200", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_HEIFS_0200";
+      let result: boolean = true;
+      let isSupportHEIFDecode: boolean = image.createImageSource(uiContext.filesDir + '/' + "test.jpg").supportedFormats.includes("image/heic");
+      if (!isSupportHEIFDecode) {
+        console.info(`${testTag} device is not support decode heif!`);
+        expect(result).assertTrue();
+        done();
+        return;
+      } 
+      let propertyKeys: Array<image.HeifsPropertyKey> = ImagePropertyConfig.heifsMetadatas.keys;
+      let heifsRules: Map<image.HeifsPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.heifsMetadatas.rules;
+      let fd: number = await getFd("C027.heic");
+      for (const key of propertyKeys) {
+        const rule = heifsRules.get(key);
+        if (!rule) {
+          console.info(`${result} No rule found for key: ${key}`);
+          continue;
+        }
+        let expectedValue = rule.newExpectValue;
+        let type = rule.type;
+        if(type == 'short'){
+          type = 'long'
+        }
+        const actualValue = await getPropertyValue(fd, type, key);
+        console.info(`${testTag} dhs Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        if (!compareValues(actualValue, expectedValue)) {
+          console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+          result = false;
+        }
+      }
+      console.info(`${testTag} heifs metadata TestGetImageProperty Short result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PNG_0100
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PNG_0100
+      * @tc.desc        Verify reading PNG metadata as short type
+      *                 1.Create image source from PNG file (test_reladeMetadata.png) using fd
+      *                 2.Iterate all keys in ImagePropertyConfig.pngMetadatas and read each key as short type
+      *                 3.Verify each actual value equals rule.newExpectValue
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PNG_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PNG_0100";
+      let result: boolean = true;
+      let propertyKeys: Array<image.PngPropertyKey> = ImagePropertyConfig.pngMetadatas.keys;
+      let pngRules: Map<image.PngPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.pngMetadatas.rules;
+      let fd: number = await getFd("test_reladeMetadata.png");
+      for (const key of propertyKeys) {
+        const rule = pngRules.get(key);
+        if (!rule) {
+          console.info(`${result} No rule found for key: ${key}`);
+          continue;
+        }
+        let expectedValue = rule.newExpectValue;
+        let type = rule.type;
+        const actualValue = await getPropertyValue(fd, type, key);
+        console.info(`${testTag} dhs Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        if (!compareValues(actualValue, expectedValue)) {
+          console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+          result = false;
+        }
+      }
+      console.info(`${testTag} png metadata TestGetImageProperty Short result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+/**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PNG_0200
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PNG_0200
+      * @tc.desc        Verify reading PNG metadata as short type
+      *                 1.Create image source from PNG file (test_reladeMetadata.png) using fd
+      *                 2.Iterate all keys in ImagePropertyConfig.pngMetadatas and read each key as short type
+      *                 3.Verify each actual value equals rule.newExpectValue
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PNG_0200", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_PNG_0200";
+      let result: boolean = true;
+      let propertyKeys: Array<image.PngPropertyKey> = ImagePropertyConfig.pngMetadatas.keys;
+      let pngRules: Map<image.PngPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.pngMetadatas.rules;
+      let fd: number = await getFd("test_reladeMetadata.png");
+      for (const key of propertyKeys) {
+        const rule = pngRules.get(key);
+        if (!rule) {
+          console.info(`${result} No rule found for key: ${key}`);
+          continue;
+        }
+        let expectedValue = rule.newExpectValue;
+        let type = rule.type;
+        if(type == 'short'){
+          type = 'long';
+        }
+        const actualValue = await getPropertyValue(fd, type, key);
+        console.info(`${testTag} dhs Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        if (!compareValues(actualValue, expectedValue)) {
+          console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+          result = false;
+        }
+      }
+      console.info(`${testTag} png metadata TestGetImageProperty Short result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_JFIF_0100
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_JFIF_0100
+      * @tc.desc        Verify reading HEIFS metadata as short type
+      *                 1.Create image source from jfif file (sample2.jfif) using fd
+      *                 2.Iterate all keys in ImagePropertyConfig.jfifMetadatas and read each key as short type
+      *                 3.Verify each actual value equals rule.newExpectValue
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_JFIF_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_JFIF_0100";
+      let result: boolean = true;
+      let propertyKeys: Array<image.JfifPropertyKey> = ImagePropertyConfig.jfifMetadatas.keys;
+      let jfifRules: Map<image.JfifPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.jfifMetadatas.rules;
+      let fd: number = await getFd("sample2.jfif");
+      for (const key of propertyKeys) {
+        const rule = jfifRules.get(key);
+        if (!rule) {
+          console.info(`${result} No rule found for key: ${key}`);
+          continue;
+        }
+        let expectedValue = rule.newExpectValue;
+        let type = rule.type;
+        const actualValue = await getPropertyValue(fd, type, key);
+        console.info(`${testTag} dhs Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        if (!compareValues(actualValue, expectedValue)) {
+          console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+          result = false;
+        }
+      }
+      console.info(`${testTag} jfif metadata TestGetImageProperty Short result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_JFIF_0200
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_JFIF_0200
+      * @tc.desc        Verify reading HEIFS metadata as short type
+      *                 1.Create image source from jfif file (sample2.jfif) using fd
+      *                 2.Iterate all keys in ImagePropertyConfig.jfifMetadatas and read each key as short type
+      *                 3.Verify each actual value equals rule.newExpectValue
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_JFIF_0200", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_JFIF_0200";
+      let result: boolean = true;
+      let propertyKeys: Array<image.JfifPropertyKey> = ImagePropertyConfig.jfifMetadatas.keys;
+      let jfifRules: Map<image.JfifPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.jfifMetadatas.rules;
+      let fd: number = await getFd("sample2.jfif");
+      for (const key of propertyKeys) {
+        const rule = jfifRules.get(key);
+        if (!rule) {
+          console.info(`${result} No rule found for key: ${key}`);
+          continue;
+        }
+        let expectedValue = rule.newExpectValue;
+        let type = rule.type;
+        if(type == 'short'){
+          type = 'long'
+        }
+        const actualValue = await getPropertyValue(fd, type, key);
+        console.info(`${testTag} dhs Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        if (!compareValues(actualValue, expectedValue)) {
+          console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+          result = false;
+        }
+      }
+      console.info(`${testTag} jfif metadata TestGetImageProperty Short result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_TIFF_0100
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_TIFF_0100
+      * @tc.desc        Verify reading tiff metadata as short type
+      *                 1.Create image source from tiff file (test.tiff) using fd
+      *                 2.Iterate all keys in ImagePropertyConfig.tiffMetadatas and read each key as short type
+      *                 3.Verify each actual value equals rule.newExpectValue
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_TIFF_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_TIFF_0100";
+      let result: boolean = true;
+      let propertyKeys: Array<image.TiffPropertyKey> = ImagePropertyConfig.tiffMetadatas.keys;
+      let tiffRules: Map<image.TiffPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.tiffMetadatas.rules;
+      let fd: number = await getFd("tiff_xmp.tiff");
+      for (const key of propertyKeys) {
+        const rule = tiffRules.get(key);
+        if (!rule) {
+          console.info(`${result} No rule found for key: ${key}`);
+          continue;
+        }
+        let expectedValue = rule.newExpectValue;
+        let type = rule.type;
+        const actualValue = await getPropertyValue(fd, type, key);
+        console.info(`${testTag} dhs Verification 1  failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        if (!compareValues(actualValue, expectedValue)) {
+          console.info(`${testTag} Verification 2 failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+          result = false;
+        }
+      }
+      console.info(`${testTag} tiff metadata TestGetImageProperty Short result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+/**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_TIFF_0200
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_TIFF_0200
+      * @tc.desc        Verify reading tiff metadata as short type
+      *                 1.Create image source from tiff file (test.tiff) using fd
+      *                 2.Iterate all keys in ImagePropertyConfig.tiffMetadatas and read each key as short type
+      *                 3.Verify each actual value equals rule.newExpectValue
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
+    it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_TIFF_0200", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_TIFF_0200";
+      let result: boolean = true;
+      let propertyKeys: Array<image.TiffPropertyKey> = ImagePropertyConfig.tiffMetadatas.keys;
+      let tiffRules: Map<image.TiffPropertyKey, ReadOnlyMetaDataRuleWithType> = ImagePropertyConfig.tiffMetadatas.rules;
+      let fd: number = await getFd("tiff_xmp.tiff");
+      for (const key of propertyKeys) {
+        const rule = tiffRules.get(key);
+        if (!rule) {
+          console.info(`${result} No rule found for key: ${key}`);
+          continue;
+        }
+        let expectedValue = rule.newExpectValue;
+        let type = rule.type;
+        if(type == 'short'){
+          type = 'long'
+        }
+        const actualValue = await getPropertyValue(fd, type, key);
+        console.info(`${testTag} dhs Verification 1 failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+        if (!compareValues(actualValue, expectedValue)) {
+          console.info(`${testTag} Verification 2 failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+          result = false;
+        }
+      }
+      console.info(`${testTag} tiff metadata TestGetImageProperty Short result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+     /**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0100
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0100
+      * @tc.desc        Verify reading WEBP property with wrong type returns READ_FAILED
+      *                 1.Create image source from WEBP file (loop_count_9.webp)
+      *                 2.Read CANVAS_WIDTH using unsupported type double
+      *                 3.Verify API returns READ_FAILED
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0100", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0100";
       let result: boolean = true;
@@ -6015,17 +6422,17 @@ export default function ImageExifGetModifyByTypeNDK() {
       done();
     });
 
-    /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0200
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0200
-     * @tc.desc        Verify reading WEBP property with wrong type returns READ_FAILED
-     *                 1.Create image source from WEBP file (loop_count_9.webp)
-     *                 2.Read CANVAS_HEIGHT using unsupported type string
-     *                 3.Verify API returns READ_FAILED
-     * @tc.size        MEDIUM
-     * @tc.type        Functional
-     * @tc.level       Level 0
-     */
+     /**
+      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0200
+      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0200
+      * @tc.desc        Verify reading WEBP property with wrong type returns READ_FAILED
+      *                 1.Create image source from WEBP file (loop_count_9.webp)
+      *                 2.Read CANVAS_HEIGHT using unsupported type string
+      *                 3.Verify API returns READ_FAILED
+      * @tc.size        MEDIUM
+      * @tc.type        Functional
+      * @tc.level       Level 0
+      */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0200", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0200";
       let result: boolean = true;
@@ -6037,16 +6444,16 @@ export default function ImageExifGetModifyByTypeNDK() {
     });
 
     /**
-    * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0300
-    * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0300
-    * @tc.desc        Verify reading WEBP property with wrong type returns READ_FAILED
-    *                 1.Create image source from WEBP file (loop_count_9.webp)
-    *                 2.Read DELAY_TIME using unsupported type doubleArray
-    *                 3.Verify API returns READ_FAILED
-    * @tc.size        MEDIUM
-    * @tc.type        Functional
-    * @tc.level       Level 0
-    */
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0300
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0300
+     * @tc.desc        Verify reading WEBP property with wrong type returns READ_FAILED
+     *                 1.Create image source from WEBP file (loop_count_9.webp)
+     *                 2.Read DELAY_TIME using unsupported type doubleArray
+     *                 3.Verify API returns READ_FAILED
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0300", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0300";
       let result: boolean = true;
@@ -6058,16 +6465,16 @@ export default function ImageExifGetModifyByTypeNDK() {
     });
 
     /**
-    * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0400
-    * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0400
-    * @tc.desc        Verify reading WEBP property with wrong type returns READ_FAILED
-    *                 1.Create image source from WEBP file (loop_count_9.webp)
-    *                 2.Read DELAY_TIME using unsupported type arrayBuffer
-    *                 3.Verify API returns READ_FAILED
-    * @tc.size        MEDIUM
-    * @tc.type        Functional
-    * @tc.level       Level 0
-    */
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0400
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0400
+     * @tc.desc        Verify reading WEBP property with wrong type returns READ_FAILED
+     *                 1.Create image source from WEBP file (loop_count_9.webp)
+     *                 2.Read DELAY_TIME using unsupported type arrayBuffer
+     *                 3.Verify API returns READ_FAILED
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
     it("SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0400", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_GETIMAGEPROPERTIES_INTARRAY_WEBP_ERROR_0400";
       let result: boolean = true;
@@ -6077,6 +6484,6 @@ export default function ImageExifGetModifyByTypeNDK() {
       expect(result).assertTrue();
       done();
     });
-    
+
   })
 }

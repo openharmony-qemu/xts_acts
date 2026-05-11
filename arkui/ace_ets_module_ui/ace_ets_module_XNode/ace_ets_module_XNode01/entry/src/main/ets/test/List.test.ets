@@ -117,6 +117,7 @@ import builderNodeInheritFreezeOptionsFalseTest from './BuilderNodeTest/builderN
 import componentContentUpdateNullUndefinedTest from './ComponentContentTest/componentContentUpdateNullUndefinedTest.test';
 import ComponentContentInheritFreezeOptionsFalseTest from './ComponentContentTest/ComponentContentInheritFreezeOptionsFalseTest.test';
 import NodeAdapterApiNullUndefinedTest from './NodeAdapter/NodeAdapterApiNullUndefinedTest.test';
+import RenderNodeBlurTest from './RenderNodeTest/RenderNodeBlurTest.test';
 
 export default function testsuite() {
   arkuiNodeTest();
@@ -223,5 +224,5 @@ export default function testsuite() {
   componentContentUpdateNullUndefinedTest();
   ComponentContentInheritFreezeOptionsFalseTest();
   NodeAdapterApiNullUndefinedTest();
-
+  RenderNodeBlurTest();
 }

@@ -103,6 +103,8 @@ import listSwipe06Jsunit from './ListItem_SwipeActionItem/listSwipe06.test'
 import listSwipeActionEndJsunit from './ListItem_SwipeActionItem/listSwipeActionEnd.test'
 import listSwipeAction12EndJsunit from './ListItem_SwipeActionItem/listSwipeAction12End.test'
 import listSwipeAction13EndJsunit from './ListItem_SwipeActionItem/listSwipeAction13End.test'
+import ListScrollBarWidthTest from './List/ListScrollBarWidth.test'
+import ListSpaceWidthTest from './List/ListSpaceWidth.test'
 import listSwipeAction15Jsunit from './ListItem_SwipeActionItem/listSwipeAction15.test'
 import listSwipeAction19Jsunit from './ListItem_SwipeActionItem/listSwipeAction19.test'
 import listSwipeAction20Jsunit from './ListItem_SwipeActionItem/listSwipeAction20.test'
@@ -116,6 +118,8 @@ import listSwipeAction41Jsunit from './ListItem_SwipeActionItem/listSwipeAction4
 import listSwipeAction43Jsunit from './ListItem_SwipeActionItem/listSwipeAction43.test'
 
 export default function testsuite() {
+  ListScrollBarWidthTest();
+  ListSpaceWidthTest();
   ListTestJsunit()
   ListItemJsunit()
   ListCrownTest()

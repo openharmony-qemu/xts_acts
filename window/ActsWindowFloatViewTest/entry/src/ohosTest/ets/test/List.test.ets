@@ -16,6 +16,7 @@ import ActsWindowFloatViewTest from './FloatView.test';
 import ActsWindowFloatViewPermissionTest from './FloatViewNoPermission.test';
 
 
+
 export default function testsuite() {
   ActsWindowFloatViewPermissionTest();
   ActsWindowFloatViewTest();

@@ -58,6 +58,7 @@ export default function SegBtnItemTest0010() {
       let btn0: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
         .$children[0]
         .$children[0]
+        .$children[0]
         .$children[2]
         .$children[0]
       console.info("[SegBtnItemTest0010_001] btn0.$attrs.accessibilityLevel is: " +
@@ -70,6 +71,7 @@ export default function SegBtnItemTest0010() {
       let btn1: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
         .$children[0]
         .$children[0]
+        .$children[0]
         .$children[2]
         .$children[1]
       console.info("[SegBtnItemTest0010_001] btn1.$attrs.accessibilityLevel is: " +
@@ -79,6 +81,7 @@ export default function SegBtnItemTest0010() {
       let btn2: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
         .$children[0]
         .$children[0]
+        .$children[0]
         .$children[2]
         .$children[2]
       console.info("[SegBtnItemTest0010_001] btn2.$attrs.accessibilityLevel is: " +
@@ -86,6 +89,7 @@ export default function SegBtnItemTest0010() {
       expect(btn2.$attrs.accessibilityLevel).assertEqual('yes');
       await CommonFunc.sleep(500);
       let btn3: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
+        .$children[0]
         .$children[0]
         .$children[0]
         .$children[2]
@@ -111,6 +115,7 @@ export default function SegBtnItemTest0010() {
       let btn0: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
         .$children[0]
         .$children[1]
+        .$children[0]
         .$children[2]
         .$children[0]
       console.info("[SegBtnItemTest0010_001] btn0.$attrs.accessibilityLevel is: " +
@@ -123,6 +128,7 @@ export default function SegBtnItemTest0010() {
       let btn1: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
         .$children[0]
         .$children[1]
+        .$children[0]
         .$children[2]
         .$children[1]
       console.info("[SegBtnItemTest0010_001] btn1.$attrs.accessibilityLevel is: " +
@@ -132,6 +138,7 @@ export default function SegBtnItemTest0010() {
       let btn2: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
         .$children[0]
         .$children[1]
+        .$children[0]
         .$children[2]
         .$children[2]
       console.info("[SegBtnItemTest0010_001] btn2.$attrs.accessibilityLevel is: " +
@@ -141,6 +148,7 @@ export default function SegBtnItemTest0010() {
       let btn3: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
         .$children[0]
         .$children[1]
+        .$children[0]
         .$children[2]
         .$children[3]
       console.info("[SegBtnItemTest0010_001] btn3.$attrs.accessibilityLevel is: " +
@@ -150,6 +158,7 @@ export default function SegBtnItemTest0010() {
       let icon0: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
         .$children[0]
         .$children[1]
+        .$children[0]
         .$children[2]
         .$children[0]
         .$children[0]
@@ -165,6 +174,7 @@ export default function SegBtnItemTest0010() {
       let icon1: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
         .$children[0]
         .$children[1]
+        .$children[0]
         .$children[2]
         .$children[1]
         .$children[0]

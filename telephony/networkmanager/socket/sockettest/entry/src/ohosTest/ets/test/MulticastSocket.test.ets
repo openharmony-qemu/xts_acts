@@ -31,6 +31,50 @@ let addr: socket.NetAddress = {
   family: 1
 };
 
+const REUSE_ADDRESS_TEST_PORT: number = 45678;
+
+interface ReuseAddressMulticastSocket extends socket.MulticastSocket {
+  setReuseAddress(reuse: boolean): void;
+}
+
+function constructReuseAddressMulticastSocket(): ReuseAddressMulticastSocket {
+  return socket.constructMulticastSocketInstance() as ReuseAddressMulticastSocket;
+}
+
+function createReuseAddressBindAddr(): socket.NetAddress {
+  return {
+    address: '0.0.0.0',
+    port: REUSE_ADDRESS_TEST_PORT,
+    family: 1
+  };
+}
+
+async function bindAndGetLocalPort(caseName: string, socketName: string,
+  multicast: socket.MulticastSocket): Promise<number> {
+  try {
+    await multicast.bind(createReuseAddressBindAddr());
+    const localAddress: socket.NetAddress = await multicast.getLocalAddress();
+    const localPort: number = localAddress.port ?? -1;
+    console.info(`${caseName} ${socketName} localAddress: ${JSON.stringify(localAddress)}`);
+    return localPort;
+  } catch (err) {
+    console.info(`${caseName} ${socketName} bindAndGetLocalPort err: ${JSON.stringify(err)}`);
+    return -1;
+  }
+}
+
+async function closeReuseAddressSocket(caseName: string, socketName: string,
+  multicast?: socket.MulticastSocket): Promise<void> {
+  if (!multicast) {
+    return;
+  }
+  try {
+    await multicast.close();
+  } catch (err) {
+    console.info(`${caseName} ${socketName} close err: ${JSON.stringify(err)}`);
+  }
+}
+
 export default function MulticastSocket() {
   describe('MulticastSocket', () => {
 
@@ -2375,6 +2419,139 @@ export default function MulticastSocket() {
         console.info(`${caseName} test end`);
         done();
       }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketMulticastSocketSetReuseAddress0100
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_SetReuseAddress_0100
+     * @tc.desc   Verify that only the socket with reuse enabled binds the target port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketMulticastSocketSetReuseAddress0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketSetReuseAddress0100';
+      let socketA: ReuseAddressMulticastSocket | undefined = undefined;
+      let socketB: ReuseAddressMulticastSocket | undefined = undefined;
+      console.info(`${caseName} test start`);
+      try {
+        socketA = constructReuseAddressMulticastSocket();
+        socketB = constructReuseAddressMulticastSocket();
+        socketA.setReuseAddress(true);
+        const portA: number = await bindAndGetLocalPort(caseName, 'socketA', socketA);
+        const portB: number = await bindAndGetLocalPort(caseName, 'socketB', socketB);
+        expectEqual(portA, REUSE_ADDRESS_TEST_PORT);
+        expectTrue(portB !== REUSE_ADDRESS_TEST_PORT);
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectFail();
+        done();
+      }
+      await closeReuseAddressSocket(caseName, 'socketB', socketB);
+      await closeReuseAddressSocket(caseName, 'socketA', socketA);
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketMulticastSocketSetReuseAddress0200
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_SetReuseAddress_0200
+     * @tc.desc   Verify that a later socket cannot reuse the port when the first one did not enable reuse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketMulticastSocketSetReuseAddress0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketSetReuseAddress0200';
+      let socketA: ReuseAddressMulticastSocket | undefined = undefined;
+      let socketB: ReuseAddressMulticastSocket | undefined = undefined;
+      console.info(`${caseName} test start`);
+      try {
+        socketA = constructReuseAddressMulticastSocket();
+        socketB = constructReuseAddressMulticastSocket();
+        const portA: number = await bindAndGetLocalPort(caseName, 'socketA', socketA);
+        socketB.setReuseAddress(true);
+        const portB: number = await bindAndGetLocalPort(caseName, 'socketB', socketB);
+        expectEqual(portA, REUSE_ADDRESS_TEST_PORT);
+        expectTrue(portB !== REUSE_ADDRESS_TEST_PORT);
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectFail();
+        done();
+      }
+      await closeReuseAddressSocket(caseName, 'socketB', socketB);
+      await closeReuseAddressSocket(caseName, 'socketA', socketA);
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketMulticastSocketSetReuseAddress0300
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_SetReuseAddress_0300
+     * @tc.desc   Verify that enabling reuse after bind updates the reuse state for later sockets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketMulticastSocketSetReuseAddress0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketSetReuseAddress0300';
+      let socketA: ReuseAddressMulticastSocket | undefined = undefined;
+      let socketB: ReuseAddressMulticastSocket | undefined = undefined;
+      console.info(`${caseName} test start`);
+      try {
+        socketA = constructReuseAddressMulticastSocket();
+        socketB = constructReuseAddressMulticastSocket();
+        const portA: number = await bindAndGetLocalPort(caseName, 'socketA', socketA);
+        socketA.setReuseAddress(true);
+        socketB.setReuseAddress(true);
+        const portB: number = await bindAndGetLocalPort(caseName, 'socketB', socketB);
+        expectEqual(portA, REUSE_ADDRESS_TEST_PORT);
+        expectEqual(portB, REUSE_ADDRESS_TEST_PORT);
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectFail();
+      }
+      await closeReuseAddressSocket(caseName, 'socketB', socketB);
+      await closeReuseAddressSocket(caseName, 'socketA', socketA);
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketMulticastSocketSetReuseAddress0400
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_SetReuseAddress_0400
+     * @tc.desc   Verify that a recreated socket can bind the target port after enabling reuse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketMulticastSocketSetReuseAddress0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketSetReuseAddress0400';
+      let socketA: ReuseAddressMulticastSocket | undefined = undefined;
+      let socketB: ReuseAddressMulticastSocket | undefined = undefined;
+      console.info(`${caseName} test start`);
+      try {
+        socketA = constructReuseAddressMulticastSocket();
+        socketB = constructReuseAddressMulticastSocket();
+        socketA.setReuseAddress(true);
+        const portA: number = await bindAndGetLocalPort(caseName, 'socketA', socketA);
+        const firstPortB: number = await bindAndGetLocalPort(caseName, 'socketB-first', socketB);
+        await closeReuseAddressSocket(caseName, 'socketB-first', socketB);
+        socketB = constructReuseAddressMulticastSocket();
+        socketB.setReuseAddress(true);
+        const secondPortB: number = await bindAndGetLocalPort(caseName, 'socketB-second', socketB);
+        expectEqual(portA, REUSE_ADDRESS_TEST_PORT);
+        expectTrue(firstPortB !== REUSE_ADDRESS_TEST_PORT);
+        expectEqual(secondPortB, REUSE_ADDRESS_TEST_PORT);
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectFail();
+        done();
+      }
+      await closeReuseAddressSocket(caseName, 'socketB', socketB);
+      await closeReuseAddressSocket(caseName, 'socketA', socketA);
+      console.info(`${caseName} test end`);
+      done();
     });
   });
 }

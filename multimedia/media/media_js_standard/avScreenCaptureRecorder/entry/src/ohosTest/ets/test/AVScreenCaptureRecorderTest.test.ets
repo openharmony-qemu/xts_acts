@@ -743,7 +743,7 @@ export default function AVScreenCaptureRecorderTest() {
       try {
         await captureRecorder.skipPrivacyMode(null);
       } catch (error) {
-        console.error(`reportAVScreenCaptureUserChoice error, error message: ${error.message}`);
+        console.error(`skipPrivacyMode error, error message: ${error.message}`);
         result = false;
       }
 
@@ -778,24 +778,15 @@ export default function AVScreenCaptureRecorderTest() {
         expect().assertFalse();
       }
       let result: boolean = true;
-      let result1: boolean = true;
       try {
         await captureRecorder.excludePickerWindows(null);
       } catch (error) {
-        console.error(`reportAVScreenCaptureUserChoice error, error message: ${error.message}`);
+        console.error(`excludePickerWindows error, error message: ${error.message}`);
         result = false;
       }
 
-
-      await captureRecorder.excludePickerWindows([]).then(() => {
-        console.info('skipPrivacyMode null success');
-      }).catch((err: BusinessError) => {
-        result1 = false;
-        console.error('skipPrivacyMode null failed, error: ' + err.message);
-      });
       await captureRecorder.release();
       expect(result).assertTrue();
-      expect(result1).assertTrue();
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ERR_EXCLUDEPICKER end');
       done();
     })

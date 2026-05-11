@@ -66,6 +66,7 @@
         "MainAbility/pages/GridCase",
         "MainAbility/pages/GridItem2",
         "MainAbility/pages/GridJC",
+        "MainAbility/pages/GridScrollBarWidth",
         "MainAbility/pages/GridScrollBar",
         "MainAbility/pages/GridTestPage",
         "MainAbility/pages/grid3Page"

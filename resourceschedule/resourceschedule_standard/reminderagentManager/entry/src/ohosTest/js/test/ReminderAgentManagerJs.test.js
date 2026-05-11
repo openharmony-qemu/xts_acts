@@ -1578,6 +1578,371 @@ export default function ReminderAgentManagerTest() {
                 done();
             }
         })
+
+        /**
+         * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0100
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0100
+         * @tc.desc   test publishReminder timer with repeatInterval and repeatCount normal parameters (callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0100", Level.LEVEL3, async function (done) {
+            console.info('----------------------SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0100---------------------------');
+            let timer = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
+                triggerTimeInSeconds: 10,
+                repeatInterval: 86400,
+                repeatCount: 5
+            }
+            try {
+                reminderAgent.publishReminder(timer, (err, reminderId) => {
+                    if (err) {
+                        console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0100 callback err.code is :' + err.code);
+                        expect(false).assertTrue();
+                        done();
+                    } else {
+                        console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0100 callback reminderId = ' + reminderId);
+                        expect(reminderId).assertLarger(0);
+                        done();
+                    }
+                })
+            } catch (error) {
+                console.log("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0100 publishReminder error.code:" + error.code);
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0200
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0200
+         * @tc.desc   test publishReminder timer with repeatInterval and repeatCount normal parameters (promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0200", Level.LEVEL3, async function (done) {
+            console.info('----------------------SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0200---------------------------');
+            let timer = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
+                triggerTimeInSeconds: 10,
+                repeatInterval: 86400,
+                repeatCount: 3
+            }
+            try {
+                reminderAgent.publishReminder(timer).then((reminderId) => {
+                    console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0200 promise reminderId = ' + reminderId);
+                    expect(reminderId).assertLarger(0);
+                    done();
+                }).catch((err) => {
+                    console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0200 promise err.code is :' + err.code);
+                    expect(false).assertTrue();
+                    done();
+                });
+            } catch (error) {
+                console.info("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0200 publishReminder error.code:" + error.code);
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0300
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0300
+         * @tc.desc   test publishReminder timer with repeatInterval boundary value 86400 (minimum valid value)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0300", Level.LEVEL3, async function (done) {
+            console.info('----------------------SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0300---------------------------');
+            let timer = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
+                triggerTimeInSeconds: 10,
+                repeatInterval: 86400,
+                repeatCount: 1
+            }
+            try {
+                reminderAgent.publishReminder(timer, (err, reminderId) => {
+                    if (err) {
+                        console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0300 callback err.code is :' + err.code);
+                        expect(false).assertTrue();
+                        done();
+                    } else {
+                        console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0300 callback reminderId = ' + reminderId);
+                        expect(reminderId).assertLarger(0);
+                        done();
+                    }
+                })
+            } catch (error) {
+                console.log("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0300 publishReminder error.code:" + error.code);
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0400
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0400
+         * @tc.desc   test publishReminder timer with repeatCount boundary value 0 (infinite repeat)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0400", Level.LEVEL3, async function (done) {
+            console.info('----------------------SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0400---------------------------');
+            let timer = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
+                triggerTimeInSeconds: 10,
+                repeatInterval: 86400,
+                repeatCount: 0
+            }
+            try {
+                reminderAgent.publishReminder(timer, (err, reminderId) => {
+                    if (err) {
+                        console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0400 callback err.code is :' + err.code);
+                        expect(false).assertTrue();
+                        done();
+                    } else {
+                        console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0400 callback reminderId = ' + reminderId);
+                        expect(reminderId).assertLarger(0);
+                        done();
+                    }
+                })
+            } catch (error) {
+                console.log("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0400 publishReminder error.code:" + error.code);
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0500
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0500
+         * @tc.desc   test publishReminder timer with repeatInterval invalid value (less than 86400) returns error code 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0500", Level.LEVEL3, async function (done) {
+            console.info('----------------------SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0500---------------------------');
+            let timer = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
+                triggerTimeInSeconds: 10,
+                repeatInterval: 86399,
+                repeatCount: 5
+            }
+            try {
+                reminderAgent.publishReminder(timer, (err, reminderId) => {
+                    if (err) {
+                        console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0500 callback err.code is :' + err.code);
+                        expect(err.code).assertEqual("401");
+                        done();
+                    } else {
+                        console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0500 callback reminderId = ' + reminderId);
+                        expect(false).assertTrue();
+                        done();
+                    }
+                })
+            } catch (error) {
+                console.log("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0500 publishReminder error.code:" + error.code);
+                expect(error.code).assertEqual("401");
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0600
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0600
+         * @tc.desc   test publishReminder timer with repeatCount invalid value (less than 0) returns error code 401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0600", Level.LEVEL3, async function (done) {
+            console.info('----------------------SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0600---------------------------');
+            let timer = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
+                triggerTimeInSeconds: 10,
+                repeatInterval: 86400,
+                repeatCount: -1
+            }
+            try {
+                reminderAgent.publishReminder(timer, (err, reminderId) => {
+                    if (err) {
+                        console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0600 callback err.code is :' + err.code);
+                        expect(err.code).assertEqual("401");
+                        done();
+                    } else {
+                        console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0600 callback reminderId = ' + reminderId);
+                        expect(false).assertTrue();
+                        done();
+                    }
+                })
+            } catch (error) {
+                console.log("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0600 publishReminder error.code:" + error.code);
+                expect(error.code).assertEqual("401");
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0700
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0700
+         * @tc.desc   test publishReminder timer with repeatInterval large value and repeatCount large value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0700", Level.LEVEL3, async function (done) {
+            console.info('----------------------SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0700---------------------------');
+            let timer = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
+                triggerTimeInSeconds: 10,
+                repeatInterval: 172800,
+                repeatCount: 100
+            }
+            try {
+                reminderAgent.publishReminder(timer, (err, reminderId) => {
+                    if (err) {
+                        console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0700 callback err.code is :' + err.code);
+                        expect(false).assertTrue();
+                        done();
+                    } else {
+                        console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0700 callback reminderId = ' + reminderId);
+                        expect(reminderId).assertLarger(0);
+                        done();
+                    }
+                })
+            } catch (error) {
+                console.log("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0700 publishReminder error.code:" + error.code);
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0800
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0800
+         * @tc.desc   test getAllValidReminders to verify repeatInterval and repeatCount values after publishReminder
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0800", Level.LEVEL3, async function (done) {
+            console.info('----------------------SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0800---------------------------');
+            let timer = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
+                triggerTimeInSeconds: 10,
+                repeatInterval: 86400,
+                repeatCount: 7
+            }
+            try {
+                reminderAgent.publishReminder(timer).then((reminderId) => {
+                    console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0800 publishReminder promise reminderId = ' + reminderId);
+                    expect(reminderId).assertLarger(0);
+                    reminderAgent.getAllValidReminders().then((reminders) => {
+                        console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0800 getAllValidReminders reminders.length = ' + reminders.length);
+                        expect(reminders.length).assertLarger(0);
+                        let found = false;
+                        for (let i = 0; i < reminders.length; i++) {
+                            console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0800 checking reminder: ' + JSON.stringify(reminders[i]) + ' (type: ' + typeof reminders[i] + ')');
+                            if (reminders[i].reminderId === reminderId) {
+                                console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0800 found reminder, reminderReq = ' + JSON.stringify(reminders[i].reminderReq));
+                                if (reminders[i].reminderReq.repeatInterval !== undefined && reminders[i].reminderReq.repeatCount !== undefined) {
+                                    console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0800 found reminder, repeatInterval = ' + reminders[i].reminderReq.repeatInterval);
+                                    console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0800 found reminder, repeatCount = ' + reminders[i].reminderReq.repeatCount);
+                                    expect(reminders[i].reminderReq.repeatInterval).assertEqual(86400);
+                                    expect(reminders[i].reminderReq.repeatCount).assertEqual(7);
+                                }
+                                found = true;
+                                break;
+                            }
+                        }
+                        expect(found).assertTrue();
+                        done();
+                    }).catch((err) => {
+                        console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0800 getAllValidReminders err.code is :' + err.code);
+                        expect(false).assertTrue();
+                        done();
+                    });
+                }).catch((err) => {
+                    console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0800 publishReminder err.code is :' + err.code);
+                    expect(false).assertTrue();
+                    done();
+                });
+            } catch (error) {
+                console.info("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0800 error.code:" + error.code);
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.name   SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0900
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0900
+         * @tc.desc   test updateReminder with repeatInterval and repeatCount normal parameters (promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0900", Level.LEVEL3, async function (done) {
+            console.info('----------------------SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0900---------------------------');
+            let timer = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
+                triggerTimeInSeconds: 10
+            }
+            try {
+                reminderAgent.publishReminder(timer).then((reminderId) => {
+                    console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0900 publishReminder promise reminderId = ' + reminderId);
+                    expect(reminderId).assertLarger(0);
+                    let updateTimer = {
+                        reminderType: reminderAgent.ReminderType.REMINDER_TYPE_TIMER,
+                        triggerTimeInSeconds: 20,
+                        repeatInterval: 86400,
+                        repeatCount: 5
+                    }
+                    reminderAgent.updateReminder(reminderId, updateTimer).then(() => {
+                        console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0900 updateReminder promise success');
+                        reminderAgent.getAllValidReminders().then((reminders) => {
+                            console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0900 getAllValidReminders reminders.length = ' + reminders.length);
+                            let found = false;
+                            for (let i = 0; i < reminders.length; i++) {
+                                if (reminders[i].reminderId === reminderId) {
+                                    if (reminders[i].reminderReq.repeatInterval !== undefined && reminders[i].reminderReq.repeatCount !== undefined) {
+                                        console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0900 found reminder, repeatInterval = ' + reminders[i].reminderReq.repeatInterval);
+                                        console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0900 found reminder, repeatCount = ' + reminders[i].reminderReq.repeatCount);
+                                        expect(reminders[i].reminderReq.repeatInterval).assertEqual(86400);
+                                        expect(reminders[i].reminderReq.repeatCount).assertEqual(5);
+                                    }
+                                    found = true;
+                                    break;
+                                }
+                            }
+                            expect(found).assertTrue();
+                            done();
+                        }).catch((err) => {
+                            console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0900 getAllValidReminders err.code is :' + err.code);
+                            expect(false).assertTrue();
+                            done();
+                        });
+                    }).catch((err) => {
+                        console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0900 updateReminder err.code is :' + err.code);
+                        expect(false).assertTrue();
+                        done();
+                    });
+                }).catch((err) => {
+                    console.info('SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0900 publishReminder err.code is :' + err.code);
+                    expect(false).assertTrue();
+                    done();
+                });
+            } catch (error) {
+                console.info("SUB_RESOURCESCHEDULE_REMINDERAGENT_TASK_XTS_0900 error.code:" + error.code);
+                expect(false).assertTrue();
+                done();
+            }
+        })
         
     })
 }

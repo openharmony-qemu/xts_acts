@@ -22,6 +22,7 @@
     "MainAbility/pages/Prefetcher/BasicPrefetcherMethods",
     "MainAbility/pages/Prefetcher/IDataSourcePrefetchingMethods",
     "MainAbility/pages/ReuseObject/ReuseObjectRaw",
-    "MainAbility/pages/LazyForeach/LazyForEachReleaseStrategy"
+    "MainAbility/pages/LazyForeach/LazyForEachReleaseStrategy",
+    "MainAbility/pages/LazyForeach/LazyForEachCustomComponentFreezeModeStatic"
   ]
 }

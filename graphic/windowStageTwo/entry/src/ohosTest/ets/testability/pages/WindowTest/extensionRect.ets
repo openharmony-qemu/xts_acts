@@ -125,6 +125,40 @@ struct Extension {
             this.testNum = err.code
           }
         })
+
+      Button('onRectChange1300002')
+        .id('onRectChange1300002')
+        .fontSize(8).onClick(() => {
+          let session: UIExtensionContentSession | undefined = storage.get<UIExtensionContentSession>('session1');
+          let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
+          let cb = (data: uiExtension.RectChangeOptions) => {}
+          try {
+            extensionWindow?.on('rectChange', uiExtension.RectChangeReason.HOST_WINDOW_RECT_CHANGE, cb)
+            extensionWindow?.on('rectChange', uiExtension.RectChangeReason.HOST_WINDOW_RECT_CHANGE, cb)
+            extensionWindow?.off('rectChange')
+          } catch (err) {
+            console.log('testUIExtensionHostOffRectChange02: err in page, err : ' + JSON.stringify(err))
+            this.message = err.code + ''
+            this.testNum = err.code
+          }
+        })
+
+      Button('offRectChange1300002')
+        .id('offRectChange1300002')
+        .fontSize(8).onClick(() => {
+          let session: UIExtensionContentSession | undefined = storage.get<UIExtensionContentSession>('session1');
+          let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
+          let cb = (data: uiExtension.RectChangeOptions) => {}
+          try {
+            extensionWindow?.off('rectChange', cb)
+            extensionWindow?.off('rectChange')
+          } catch (err) {
+            console.log('testUIExtensionHostOffRectChange02: err in page, err : ' + JSON.stringify(err))
+            this.message = err.code + ''
+            this.testNum = err.code
+          }
+        })
+
     }.width('100%').height('100%')
   }
 }

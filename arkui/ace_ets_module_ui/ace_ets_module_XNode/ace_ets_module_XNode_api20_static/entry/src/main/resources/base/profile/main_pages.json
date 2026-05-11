@@ -44,6 +44,7 @@
     "MainAbility/pages/FrameNode/FrameNodeCreateToggleNode",
     "MainAbility/pages/FrameNode/FrameNodeCreateWaterFlowNode",
     "MainAbility/pages/FrameNode/FrameNodeCreateFlowItemNode",
-    "MainAbility/pages/FrameNode/FrameNodeConstructor"
+    "MainAbility/pages/FrameNode/FrameNodeConstructor",
+    "MainAbility/pages/FrameNode/CrossLanguageOptionsSupportFiveMethodsStatic"
   ]
 }

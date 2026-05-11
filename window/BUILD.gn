@@ -39,6 +39,7 @@ group("window") {
     "ActsWindowPiPWindowTestStatic:ActsWindowPiPWindowTestStaticTest",
     "ActsWindowFloatViewTest:ActsWindowFloatViewTest",
     "ActsWindowImmersiveTestStatic:ActsWindowImmersiveTestStaticTest",
-    "ActsWindowLayoutTestStatic:ActsWindowLayoutTestStaticTest"
+    "ActsWindowLayoutTestStatic:ActsWindowLayoutTestStaticTest",
+    "ActsWindowFloatViewTestStatic:ActsWindowFloatViewTestStaticTest"
   ]
 }

@@ -4,6 +4,10 @@
     "MainAbility/pages/listItemSwipeManager/listItemSwipeManager",
     "MainAbility/pages/listScrollApi/listScrollApi",
     "MainAbility/pages/scrollBarAttribute/scrollBarAttribute",
-    "MainAbility/pages/scrollScrollableChain/scrollScrollableChain"
+    "MainAbility/pages/scrollScrollableChain/scrollScrollableChain",
+    "MainAbility/pages/FrameNode/getFrameNodeScroller",
+    "MainAbility/pages/LazyVGridLayout/onVisibleIndexesChangeTest",
+    "MainAbility/pages/WaterFlow/waterFlowEmptyLazy",
+    "MainAbility/pages/scroll/scrollPropertiesTest"
   ]
 }

@@ -36,6 +36,7 @@ import BasicPrefetcherMethods from './Prefetcher/BasicPrefetcherMethods.test';
 import IDataSourcePrefetchingMethods from './Prefetcher/IDataSourcePrefetchingMethods.test';
 import ReuseObjectRawTest from './ReuseObject/ReuseObjectRawTest.test';
 import LazyForEachReleaseStrategyTest from './LazyForeach/LazyForEachReleaseStrategy.test';
+import LazyForEachCustomComponentFreezeModeStaticTest from './LazyForeach/LazyForEachCustomComponentFreezeModeStaticTest.test';
 
 export default function testsuite() {
   ArrayLikeStringTest(); 
@@ -60,4 +61,5 @@ export default function testsuite() {
   IDataSourcePrefetchingMethods();
   ReuseObjectRawTest(); 
   LazyForEachReleaseStrategyTest();
+  LazyForEachCustomComponentFreezeModeStaticTest();
 }

@@ -35,7 +35,13 @@ import {
   exifWriteExpectedValueRules,
   ReadOnlyMetaDataRule,
   dngMetadataMap,
-  webpMetadataMap
+  webpMetadataMap,
+  gifMetadataMap,
+  heifsMetadataMap,
+  pngMetadataMap,
+  jfifMetadataMap,
+  tiffMetadataMap,
+  avisMetadataMap
 } from './ImagePropertyByType.test'
 
 interface ModifyRule1 {
@@ -210,10 +216,14 @@ export default function imageExifGetModifyByTypeTest() {
       actual: string | number | object | number[] | undefined | null | boolean,
       expected: string | number | object | number[] | undefined | null | boolean
     ): boolean => {
+      console.info(`dsh 1 compareValues actual is ${actual} , expected is ${expected}, actual type ${typeof actual}, expected type ${typeof expected}`);
       if (Array.isArray(actual) && Array.isArray(expected)) {
+        console.info(`dsh 1 compareValues actual is ${actual} , expected is ${expected}, actual type ${typeof actual}, expected type ${typeof expected}`);
         if (actual.length !== expected.length) return false;
+        console.info(`dsh 1 compareValues actual is ${actual} , expected is ${expected}, actual type ${typeof actual}, expected type ${typeof expected}`);
         return actual.every((val: number, index: number) => val == expected[index]);
       }
+      console.info(`dsh 1 compareValues actual is ${actual} , expected is ${expected}, actual type ${typeof actual}, expected type ${typeof expected}`);
       return actual === expected;
     }
 
@@ -351,6 +361,42 @@ export default function imageExifGetModifyByTypeTest() {
         }
       }
       return ret;
+    }
+
+    const verifyreadMetadataByType = <k>(
+      testTag: string,
+      exifValue: image.ImageMetadata,
+      keys: k[],
+      expectedIndex: number,
+      rulesMap: Map<k, ReadOnlyMetaDataRule>,
+      metadataType: string
+    ): boolean => {
+      let result: boolean = true;
+      if (exifValue[metadataType] == undefined) {
+        console.info(`${testTag} Not meeting the conditions.`);
+        return false;
+      }
+      for (let i = 0; i < keys.length; i++) {
+        const key = keys[i];
+        const rule = rulesMap.get(key);
+        if (!rule) {
+          console.info(`${result} No rule found for key: ${key}`);
+          continue;
+        }
+        try {
+          let ruleExpectedValue = rule.newExpectValue;
+          let expectedValue: MetadataScalar = Array.isArray(ruleExpectedValue) ? ruleExpectedValue : ruleExpectedValue;
+          let actualValue: MetadataScalar = exifValue[metadataType]![rule.key!];
+          if (!compareValues(actualValue, expectedValue)) {
+            console.info(`${testTag} Verification failed for key: ${key}, Expected: ${JSON.stringify(expectedValue)}, Actual: ${JSON.stringify(actualValue)}`);
+            result = false;
+          }
+        } catch (error) {
+          console.error(`${testTag} Error processing key ${key}: ${error}`);
+          result = false;
+        }
+      }
+      return result;
     }
 
     const verifyMultipleFramesMetadata = <k>(
@@ -614,7 +660,7 @@ export default function imageExifGetModifyByTypeTest() {
         let exifValue: Record<string, string | null> = await metadata.getProperties(camelCaseMetadataKeys);
         if (exifValue != undefined) {
           camelCaseMetadataKeys.forEach((key) => {
-            console.info(`${testNum} getProperties read success for key: ${key}, exifValue: ${exifValue[key]}}`);
+            console.info(`${testNum} getProperties read success for key: ${key}, exifValue: ${exifValue[key]}`);
           });
         }
         
@@ -694,7 +740,7 @@ export default function imageExifGetModifyByTypeTest() {
         let exifValue: Record<string, string | null> = await metadata.getProperties(camelCaseMetadataKeys);
         if (exifValue != undefined) {
           camelCaseMetadataKeys.forEach((key) => {
-            console.info(`${testNum} getProperties read success for key: ${key}, exifValue: ${exifValue[key]}}`);
+            console.info(`${testNum} getProperties read success for key: ${key}, exifValue: ${exifValue[key]}`);
           });
         }
         
@@ -4900,6 +4946,7 @@ export default function imageExifGetModifyByTypeTest() {
       done();
     });
 
+
     /**
      * @tc.number      SUB_MULTIMEDIA_IMAGE_GETDELAYTIMELIST_WEBP_METADATA_0100
      * @tc.name        SUB_MULTIMEDIA_IMAGE_GETDELAYTIMELIST_WEBP_METADATA_0100
@@ -5009,6 +5056,388 @@ export default function imageExifGetModifyByTypeTest() {
         await imageSourceApi?.release();
       }
       console.info(`${testTag} readImageMetadata getAllProperties result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_GIF_METADATA_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_GIF_METADATA_0100
+      * @tc.desc        Verify Gif metadata reading with default parameters
+      *                 1.Create image source from Gif file (test6.gif) using fd
+      *                 2.Read metadata using readImageMetadata()
+      *                 3.Verify Gif metadata values against gifMetadataMap at frame index 0
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_GIF_METADATA_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_GIF_METADATA_0100";
+      let result: boolean = true;
+      let keys: image.GifPropertyKey[] = Array.from(gifMetadataMap.keys());
+      const imageSourceApi = await getImageSource("test6.gif", "fd");
+      try {
+        const exifValue: image.ImageMetadata = await imageSourceApi.readImageMetadataByType();
+        if (!verifyMultipleFramesMetadata(testTag, exifValue, keys, 0, gifMetadataMap, "gifMetadata")) {
+          result = false;
+        }
+      } catch (err) {
+        console.error(`${testTag} Error processing err: ${err}`);
+        result = false;
+      } finally {
+        await imageSourceApi?.release();
+      }
+      console.info(`${testTag} gif metadata readImageMetadataByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HEIFS_METADATA_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HEIFS_METADATA_0100
+      * @tc.desc        Verify HEIFS metadata reading with default parameters
+      *                 1.Create image source from HEIFS file (C027.heic) using fd
+      *                 2.Read metadata using readImageMetadata()
+      *                 3.Verify HEIFS metadata values against heifspMetadataMap at frame index 0
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HEIFS_METADATA_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_HEIFS_METADATA_0100";
+      let result: boolean = true;
+      let isSupportHEIFDecode: boolean = image.createImageSource(AppStorage.get('pathDir') + '/' + "test.jpg").supportedFormats.includes("image/heic");
+      let keys: image.HeifsPropertyKey[] = Array.from(heifsMetadataMap.keys());
+      if (!isSupportHEIFDecode) {
+        console.info(`${testTag} device is not support decode heif!`);
+        expect(result).assertTrue();
+        done();
+        return;
+      }
+      const imageSourceApi = await getImageSource("C027.heic", "fd");
+      try {
+        const exifValue: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        if (!verifyMultipleFramesMetadata(testTag, exifValue, keys, 0, heifsMetadataMap, "heifsMetadata")) {
+          result = false;
+        }
+      } catch (err) {
+        console.error(`${testTag} Error processing err: ${err}`);
+        result = false;
+      } finally {
+        await imageSourceApi?.release();
+      }
+      console.info(`${testTag} heifs metadata readImageMetadataByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+  
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_AVIS_METADATA_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_AVIS_METADATA_0100
+      * @tc.desc        Verify HEIFS metadata reading with default parameters
+      *                 1.Create image source from AVIS file (bird_8bit_I420_599x359_fps10.avif) using fd
+      *                 2.Read metadata using readImageMetadata()
+      *                 3.Verify AVIS metadata values against avisMetadataMap at frame index 0
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_AVIS_METADATA_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_AVIS_METADATA_0100";
+      let result: boolean = true;
+      let keys: image.AvisPropertyKey[] = Array.from(avisMetadataMap.keys());
+      const imageSourceApi = await getImageSource("bird_8bit_I420_599x359_fps10.avif", "fd");
+      try {
+        const exifValue: image.ImageMetadata = await imageSourceApi.readImageMetadata();
+        if (!verifyMultipleFramesMetadata(testTag, exifValue, keys, 0, avisMetadataMap, "avisMetadata")) {
+          result = false;
+        }
+      } catch (err) {
+        console.error(`${testTag} Error processing err: ${err}`);
+        result = false;
+      } finally {
+        await imageSourceApi?.release();
+      }
+      console.info(`${testTag} avis metadata readImageMetadataByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_PNG_METADATA_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_PNG_METADATA_0100
+      * @tc.desc        Verify PNG metadata reading with default parameters
+      *                 1.Create image source from PNG file (test_reladeMetadata.png) using fd
+      *                 2.Read metadata using readImageMetadata()
+      *                 3.Verify PNG metadata values against pngMetadataMap at frame index 0
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_PNG_METADATA_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_PNG_METADATA_0100";
+      try {
+        let keys: image.PngPropertyKey[] = Array.from(pngMetadataMap.keys());
+        console.info(`${testTag} PNG metadata keys to read: ${keys}`);
+        const ret = await verifyMetadataProperties(testTag, "test_reladeMetadata.png", "fd", "pngMetadata", keys, pngMetadataMap);
+        expect(ret).assertTrue();
+      } catch (err) {
+        console.error(`${testTag} Error processing err: ${err}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_JFIF_METADATA_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_JFIF_METADATA_0100
+      * @tc.desc        Verify JFIF metadata reading with default parameters
+      *                 1.Create image source from JFIF file (sample2.jfif) using fd
+      *                 2.Read metadata using readImageMetadata()
+      *                 3.Verify JFIF metadata values against jfifMetadataMap at frame index 0
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_JFIF_METADATA_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_JFIF_METADATA_0100";
+      try {
+        let keys: image.JfifPropertyKey[] = Array.from(jfifMetadataMap.keys());
+        console.info(`${testTag} JFIF metadata keys to read: ${keys}`);
+        const ret = await verifyMetadataProperties(testTag, "sample2.jfif", "fd", "jfifMetadata", keys, jfifMetadataMap);
+        expect(ret).assertTrue();
+      } catch (err) {
+        console.error(`${testTag} Error processing err: ${err}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_TIFF_METADATA_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_TIFF_METADATA_0100
+      * @tc.desc        Verify TIFF metadata reading with default parameters
+      *                 1.Create image source from TIFF file (test.tiff) using fd
+      *                 2.Read metadata using readImageMetadata()
+      *                 3.Verify TIFF metadata values against tiffMetadataMap at frame index 0
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_TIFF_METADATA_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_TIFF_METADATA_0100";
+      try {
+        let keys: image.TiffPropertyKey[] = Array.from(tiffMetadataMap.keys());
+        console.info(`${testTag} TIFF metadata keys to read: ${keys}`);
+        const ret = await verifyMetadataProperties(testTag, "tiff_xmp.tiff", "fd", "tiffMetadata", keys, tiffMetadataMap);
+        expect(ret).assertTrue();
+      } catch (err) {
+        console.error(`${testTag} Error processing err: ${err}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_GIF_METADATA_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_GIF_METADATA_0100
+      * @tc.desc        Verify Gif metadata reading by type with default parameters
+     *                 1.Create image source from Gif file (test6.gif) using fd
+      *                 2.Read metadata using readImageMetadataByType()
+      *                 3.Verify Gif metadata values against gifMetadataMap at frame index 0
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_GIF_METADATA_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_GIF_METADATA_0100";
+      let result: boolean = true;
+      let keys: image.GifPropertyKey[] = Array.from(gifMetadataMap.keys());
+      const imageSourceApi = await getImageSource("test6.gif", "fd");
+      try {
+        const exifValue: image.ImageMetadata = await imageSourceApi.readImageMetadataByType();
+        if (!verifyMultipleFramesMetadata(testTag, exifValue, keys, 0, gifMetadataMap, "gifMetadata")) {
+          result = false;
+        }
+      } catch (err) {
+        console.error(`${testTag} Error processing err: ${err}`);
+        result = false;
+      } finally {
+        await imageSourceApi?.release();
+      }
+      console.info(`${testTag} gif metadata readImageMetadataByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_HEIFS_METADATA_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_HEIFS_METADATA_0100
+      * @tc.desc        Verify HEIFS metadata reading by type with default parameters
+     *                 1.Create image source from HEIFS file (C027.heic) using fd
+      *                 2.Read metadata using readImageMetadataByType()
+      *                 3.Verify HEIFS metadata values against heifsMetadataMap at frame index 0
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_HEIFS_METADATA_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_HEIFS_METADATA_0100";
+      let result: boolean = true;
+      let isSupportHEIFDecode: boolean = image.createImageSource(AppStorage.get('pathDir') + '/' + "test.jpg").supportedFormats.includes("image/heic");
+      let keys: image.HeifsPropertyKey[] = Array.from(heifsMetadataMap.keys());
+      if (!isSupportHEIFDecode) {
+        console.info(`${testTag} device is not support decode heif!`);
+        expect(result).assertTrue();
+        done();
+        return;
+      } 
+      const imageSourceApi = await getImageSource("C027.heic", "fd");
+      try {
+        const exifValue: image.ImageMetadata = await imageSourceApi.readImageMetadataByType();
+        if (!verifyMultipleFramesMetadata(testTag, exifValue, keys, 0, heifsMetadataMap, "heifsMetadata")) {
+          result = false;
+        }
+      } catch (err) {
+        console.error(`${testTag} Error processing err: ${err}`);
+        result = false;
+      } finally {
+        await imageSourceApi?.release();
+      }
+      console.info(`${testTag} heifs metadata readImageMetadataByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_AVIS_METADATA_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_AVIS_METADATA_0100
+      * @tc.desc        Verify AVIS metadata reading by type with default parameters
+     *                 1.Create image source from AVIS file (bird_8bit_I420_599x359_fps10.avif) using fd
+      *                 2.Read metadata using readImageMetadataByType()
+      *                 3.Verify AVIS metadata values against avisMetadataMap at frame index 0
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_AVIS_METADATA_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_AVIS_METADATA_0100";
+      let result: boolean = true;
+      console.info(`${testTag} result is: ${result}`);
+      let keys: image.AvisPropertyKey[] = Array.from(avisMetadataMap.keys());
+      console.info(`${testTag} keys is: ${keys}`);
+      const imageSourceApi = await getImageSource("bird_8bit_I420_599x359_fps10.avif", "fd");
+      console.info(`${testTag} imageSourceApi is: ${imageSourceApi}`);
+      try {
+        const exifValue: image.ImageMetadata = await imageSourceApi.readImageMetadataByType();
+        if (!verifyMultipleFramesMetadata(testTag, exifValue, keys, 0, avisMetadataMap, "avisMetadata")) {
+          result = false;
+        }
+      } catch (err) {
+        console.error(`${testTag} Error processing err: ${err}`);
+        result = false;
+      } finally {
+        await imageSourceApi?.release();
+      }
+      console.info(`${testTag} heifs metadata readImageMetadataByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PNG_METADATA_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PNG_METADATA_0100
+      * @tc.desc        Verify PNG metadata reading by type with default parameters
+     *                 1.Create image source from PNG file (test_reladeMetadata.png) using fd
+      *                 2.Read metadata using readImageMetadataByType()
+      *                 3.Verify PNG metadata values against pngMetadataMap at frame index 0
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PNG_METADATA_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_PNG_METADATA_0100";
+      let result: boolean = true;
+      let keys: image.PngPropertyKey[] = Array.from(pngMetadataMap.keys());
+      const imageSourceApi = await getImageSource("test_reladeMetadata.png", "fd");
+      try {
+        const exifValue: image.ImageMetadata = await imageSourceApi.readImageMetadataByType();
+        console.info(`${testTag} exifValue is: ${exifValue}`);
+        if (!verifyreadMetadataByType(testTag, exifValue, keys, 0, pngMetadataMap, "pngMetadata")) {
+          result = false;
+        }
+      } catch (err) {
+        console.error(`${testTag} Error processing err: ${err}`);
+        result = false;
+      } finally {
+        await imageSourceApi?.release();
+      }
+      console.info(`${testTag} png metadata readImageMetadataByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_JFIF_METADATA_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_JFIF_METADATA_0100
+      * @tc.desc        Verify JFIF metadata reading by type with default parameters
+     *                 1.Create image source from JFIF file (sample2.jfif) using fd
+      *                 2.Read metadata using readImageMetadataByType()
+      *                 3.Verify JFIF metadata values against jfifMetadataMap at frame index 0
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_JFIF_METADATA_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_JFIF_METADATA_0100";
+      let result: boolean = true;
+      let keys: image.JfifPropertyKey[] = Array.from(jfifMetadataMap.keys());
+      const imageSourceApi = await getImageSource("sample2.jfif", "fd");
+      try {
+        const exifValue: image.ImageMetadata = await imageSourceApi.readImageMetadataByType();
+        if (!verifyreadMetadataByType(testTag, exifValue, keys, 0, jfifMetadataMap, "jfifMetadata")) {
+          result = false;
+        }
+      } catch (err) {
+        console.error(`${testTag} Error processing err: ${err}`);
+        result = false;
+      } finally {
+        await imageSourceApi?.release();
+      }
+      console.info(`${testTag} jfif metadata readImageMetadataByType result is: ${result}`);
+      expect(result).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_TIFF_METADATA_0100
+     * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_TIFF_METADATA_0100
+      * @tc.desc        Verify TIFF metadata reading by type with default parameters
+     *                 1.Create image source from TIFF file (test.tiff) using fd
+      *                 2.Read metadata using readImageMetadataByType()
+      *                 3.Verify TIFF metadata values against tiffMetadataMap at frame index 0
+     * @tc.size        MEDIUM
+     * @tc.type        Functional
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_TIFF_METADATA_0100", Level.LEVEL0, async (done:() => void)=>{
+      const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_TIFF_METADATA_0100";
+      let result: boolean = true;
+      let keys: image.TiffPropertyKey[] = Array.from(tiffMetadataMap.keys());
+      const imageSourceApi = await getImageSource("tiff_xmp.tiff", "fd");
+      try {
+        const exifValue: image.ImageMetadata = await imageSourceApi.readImageMetadataByType();
+        if (!verifyreadMetadataByType(testTag, exifValue, keys, 0, tiffMetadataMap, "tiffMetadata")) {
+          result = false;
+        }
+      } catch (err) {
+        console.error(`${testTag} Error processing err: ${err}`);
+        result = false;
+      } finally {
+        await imageSourceApi?.release();
+      }
+      console.info(`${testTag} tiff metadata readImageMetadataByType result is: ${result}`);
       expect(result).assertTrue();
       done();
     });
