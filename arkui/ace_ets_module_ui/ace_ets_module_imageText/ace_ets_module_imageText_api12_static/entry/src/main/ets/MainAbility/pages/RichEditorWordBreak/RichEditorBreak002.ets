@@ -58,7 +58,7 @@ build() {
     Column() {
       Column() {
 
-        Text('' + this.wordBreak).id('word_break_text');
+        Text('' + this.wordBreak).id('word_break_text').height('5%').clip(true);
 
         Button('updateParagraphStyle').onClick((e: ClickEvent) => {
           this.controller!.updateParagraphStyle({
