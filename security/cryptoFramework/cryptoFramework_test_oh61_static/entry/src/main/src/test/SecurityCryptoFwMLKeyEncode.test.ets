@@ -331,7 +331,7 @@ export default function SecurityCryptoFwMLKeyEncodeTestUnit() {
         expect(null).assertFail();
       } catch (error) {
         console.error(`[XTS] PriKey_EncryptPem_Error_0200_256 ${error}, error code: ${(error as BusinessError).code}`);
-        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
       }
       try {
         let gen: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator("ML-DSA-65");
@@ -344,7 +344,7 @@ export default function SecurityCryptoFwMLKeyEncodeTestUnit() {
         expect(null).assertFail();
       } catch (error) {
         console.error(`[XTS] PriKey_EncryptPem_Error_0200_128 ${error}, error code: ${(error as BusinessError).code}`);
-        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
       }
       done();
     });
