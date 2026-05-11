@@ -96,7 +96,7 @@ static void onEncInputBufferAvailable(OH_AVCodec *codec, uint32_t index, OH_AVBu
 {
     VEncAPI11Signal *signal = static_cast<VEncAPI11Signal *>(userData);
     unique_lock<mutex> lock(signal->inMutex_);
-    if (enableRoi) {
+    if (g_encSample->enableRoi) {
         if (g_encSample == nullptr || g_encSample->roiInfo == nullptr) {
             cout << "g_encSample or roiInfo is null" << endl;
             return;
@@ -128,7 +128,7 @@ static void onEncOutputBufferAvailable(OH_AVCodec *codec, uint32_t index, OH_AVB
 
 static void onEncInputParam(OH_AVCodec *codec, uint32_t index, OH_AVFormat *parameter, void *userData)
 {
-    if (enableRoi) {
+    if (g_encSample->enableRoi) {
         if (g_encSample == nullptr || g_encSample->roiInfo == nullptr) {
             cout << "g_encSample or roiInfo is null" << endl;
             return;
