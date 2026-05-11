@@ -1688,6 +1688,8 @@ export default function TextPicker() {
         { title: 'test', fileNameExtension: 'jpg', photoType: photoAccessHelper.PhotoType.IMAGE, subtype: photoAccessHelper.PhotoSubtype.BURST },
       ];
 
+      let hasHandledPermission = false;
+
       for (let i = 0; i < cases.length; i++) {
         let item = cases[i];
         console.log(`testPicker25 index = ${i}`)
@@ -1697,9 +1699,14 @@ export default function TextPicker() {
           
           await new Promise<void>(resolve => setTimeout(resolve, 500));
           
-          driveFn().catch((err: Error) => {
-            console.info("testPicker25 driveFn info for case " + i + ": " + err.message);
-          });
+          if (!hasHandledPermission) {
+            try {
+              await driveFn();
+              hasHandledPermission = true;
+            } catch (err: Error) {
+              console.info("testPicker25 driveFn info for case " + i + ": " + err.message);
+            }
+          }
 
           let result = await createPromise;
           console.log(`testPicker25 result = ${JSON.stringify(result)}`)
@@ -1711,8 +1718,7 @@ export default function TextPicker() {
           expect(isValidErrorCode).assertTrue();
         }
 
-        let driver = Driver.create();
-        await driver.delayMs(500);
+        await CommonFunc.sleep(300);
       }
       console.info("testPicker25 finish");
       done();
