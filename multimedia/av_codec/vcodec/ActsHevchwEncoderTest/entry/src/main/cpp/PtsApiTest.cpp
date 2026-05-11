@@ -34,6 +34,8 @@ const char* CODEC_NAME = "";
 constexpr double DEFAULT_FRAME_RATE = 30.0;
 constexpr uint32_t DEFAULT_KEY_FRAME_INTERVAL = 2000;
 constexpr uint32_t OHPRINTF_VALUE = 1024;
+const char *INP_DIR_1080 = "/data/storage/el2/base/files/1080_1920_nv12.yuv";
+const char *OUTPUT = "/data/storage/el2/base/files/1080_1920.h265";
 } // namespace
 
 namespace OHOS {
@@ -77,12 +79,8 @@ int VIDEO_HW_ENCODE_PTS_FUNC_001()
     VEncAPI11Sample::EncoderConfig config;
     vEncSample->LoadTimeStampData(timeStampFilePath, config);
     vEncSample->maxbiteEnable = true;
-    char *input = new char[OHPRINTF_VALUE];
-    char *output = new char[OHPRINTF_VALUE];
-    OHPrintf(input, OHPRINTF_VALUE, "%s", config.inputDir.c_str());
-    OHPrintf(output, OHPRINTF_VALUE, "%s", config.outputDir.c_str());
-    vEncSample->inpDir = input;
-    vEncSample->outDir = output;
+    vEncSample->inpDir = INP_DIR_1080;
+    vEncSample->outDir = OUTPUT;
     vEncSample->defaultWidth = config.width;
     vEncSample->defaultHeight = config.height;
     vEncSample->defaultBitrateMode = config.bitrateMode;
@@ -96,8 +94,6 @@ int VIDEO_HW_ENCODE_PTS_FUNC_001()
     EXPECT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
     vEncSample->WaitForEOS();
     EXPECT_EQ(AV_ERR_OK, vEncSample->errCount);
-    delete[] input;
-    delete[] output;
     return 0;
 }
 
@@ -112,12 +108,8 @@ int VIDEO_HW_ENCODE_PTS_FUNC_002()
     VEncAPI11Sample::EncoderConfig config;
     vEncSample->LoadTimeStampData(timeStampFilePath, config);
     vEncSample->maxbiteEnable = true;
-    char *input = new char[OHPRINTF_VALUE];
-    char *output = new char[OHPRINTF_VALUE];
-    OHPrintf(input, OHPRINTF_VALUE, "%s", config.inputDir.c_str());
-    OHPrintf(output, OHPRINTF_VALUE, "%s", config.outputDir.c_str());
-    vEncSample->inpDir = input;
-    vEncSample->outDir = output;
+    vEncSample->inpDir = INP_DIR_1080;
+    vEncSample->outDir = OUTPUT;
     vEncSample->defaultWidth = config.width;
     vEncSample->defaultHeight = config.height;
     vEncSample->defaultBitrateMode = config.bitrateMode;
@@ -132,8 +124,6 @@ int VIDEO_HW_ENCODE_PTS_FUNC_002()
     EXPECT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
     vEncSample->WaitForEOS();
     EXPECT_EQ(AV_ERR_OK, vEncSample->errCount);
-    delete[] input;
-    delete[] output;
     return 0;
 }
 
@@ -148,12 +138,8 @@ int VIDEO_HW_ENCODE_PTS_FUNC_003()
     VEncAPI11Sample::EncoderConfig config;
     vEncSample->LoadTimeStampData(timeStampFilePath, config);
     vEncSample->maxbiteEnable = true;
-    char *input = new char[OHPRINTF_VALUE];
-    char *output = new char[OHPRINTF_VALUE];
-    OHPrintf(input, OHPRINTF_VALUE, "%s", config.inputDir.c_str());
-    OHPrintf(output, OHPRINTF_VALUE, "%s", config.outputDir.c_str());
-    vEncSample->inpDir = input;
-    vEncSample->outDir = output;
+    vEncSample->inpDir = INP_DIR_1080;
+    vEncSample->outDir = OUTPUT;
     vEncSample->defaultWidth = config.width;
     vEncSample->defaultHeight = config.height;
     vEncSample->defaultBitrateMode = config.bitrateMode;
@@ -168,8 +154,6 @@ int VIDEO_HW_ENCODE_PTS_FUNC_003()
     EXPECT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
     vEncSample->WaitForEOS();
     EXPECT_EQ(AV_ERR_OK, vEncSample->errCount);
-    delete[] input;
-    delete[] output;
     return 0;
 }
 
@@ -184,12 +168,8 @@ int VIDEO_HW_ENCODE_PTS_FUNC_004()
     VEncAPI11Sample::EncoderConfig config;
     vEncSample->LoadTimeStampData(timeStampFilePath, config);
     vEncSample->maxbiteEnable = true;
-    char *input = new char[OHPRINTF_VALUE];
-    char *output = new char[OHPRINTF_VALUE];
-    OHPrintf(input, OHPRINTF_VALUE, "%s", config.inputDir.c_str());
-    OHPrintf(output, OHPRINTF_VALUE, "%s", config.outputDir.c_str());
-    vEncSample->inpDir = input;
-    vEncSample->outDir = output;
+    vEncSample->inpDir = INP_DIR_1080;
+    vEncSample->outDir = OUTPUT;
     vEncSample->defaultWidth = config.width;
     vEncSample->defaultHeight = config.height;
     vEncSample->defaultBitrateMode = config.bitrateMode;
@@ -204,8 +184,6 @@ int VIDEO_HW_ENCODE_PTS_FUNC_004()
     EXPECT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
     vEncSample->WaitForEOS();
     EXPECT_EQ(AV_ERR_OK, vEncSample->errCount);
-    delete[] input;
-    delete[] output;
     return 0;
 }
 
@@ -220,12 +198,8 @@ int VIDEO_HW_ENCODE_PTS_FUNC_005()
     VEncAPI11Sample::EncoderConfig config;
     vEncSample->LoadTimeStampData(timeStampFilePath, config);
     vEncSample->maxbiteEnable = true;
-    char *input = new char[OHPRINTF_VALUE];
-    char *output = new char[OHPRINTF_VALUE];
-    OHPrintf(input, OHPRINTF_VALUE, "%s", config.inputDir.c_str());
-    OHPrintf(output, OHPRINTF_VALUE, "%s", config.outputDir.c_str());
-    vEncSample->inpDir = input;
-    vEncSample->outDir = output;
+    vEncSample->inpDir = INP_DIR_1080;
+    vEncSample->outDir = OUTPUT;
     vEncSample->defaultWidth = config.width;
     vEncSample->defaultHeight = config.height;
     vEncSample->defaultBitrateMode = config.bitrateMode;
@@ -240,8 +214,6 @@ int VIDEO_HW_ENCODE_PTS_FUNC_005()
     EXPECT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
     vEncSample->WaitForEOS();
     EXPECT_EQ(AV_ERR_OK, vEncSample->errCount);
-    delete[] input;
-    delete[] output;
     return 0;
 }
 
@@ -256,12 +228,8 @@ int VIDEO_HW_ENCODE_PTS_FUNC_006()
     VEncAPI11Sample::EncoderConfig config;
     vEncSample->LoadTimeStampData(timeStampFilePath, config);
     vEncSample->maxbiteEnable = true;
-    char *input = new char[OHPRINTF_VALUE];
-    char *output = new char[OHPRINTF_VALUE];
-    OHPrintf(input, OHPRINTF_VALUE, "%s", config.inputDir.c_str());
-    OHPrintf(output, OHPRINTF_VALUE, "%s", config.outputDir.c_str());
-    vEncSample->inpDir = input;
-    vEncSample->outDir = output;
+    vEncSample->inpDir = INP_DIR_1080;
+    vEncSample->outDir = OUTPUT;
     vEncSample->defaultWidth = config.width;
     vEncSample->defaultHeight = config.height;
     vEncSample->defaultBitrateMode = config.bitrateMode;
@@ -276,8 +244,6 @@ int VIDEO_HW_ENCODE_PTS_FUNC_006()
     EXPECT_EQ(AV_ERR_OK, vEncSample->StartVideoEncoder());
     vEncSample->WaitForEOS();
     EXPECT_EQ(AV_ERR_OK, vEncSample->errCount);
-    delete[] input;
-    delete[] output;
     return 0;
 }
 } // namespace Media

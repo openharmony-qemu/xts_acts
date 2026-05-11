@@ -51,7 +51,6 @@ constexpr uint32_t TWO = 2;
 constexpr uint32_t THREE = 3;
 constexpr uint32_t FOUR = 4;
 constexpr uint32_t FIVE = 5;
-constexpr uint32_t SIX = 6;
 OH_NativeImage* cNativeImage = {};
 OH_NativeImage* pNativeImage = {};
 VEncAPI11Sample* g_encSample = nullptr;
@@ -97,20 +96,22 @@ static void onEncInputBufferAvailable(OH_AVCodec *codec, uint32_t index, OH_AVBu
 {
     VEncAPI11Signal *signal = static_cast<VEncAPI11Signal *>(userData);
     unique_lock<mutex> lock(signal->inMutex_);
-    if (g_encSample == nullptr || g_encSample->roiInfo == nullptr) {
-        cout << "g_encSample or roiInfo is null" << endl;
-        return;
+    if (enableRoi) {
+        if (g_encSample == nullptr || g_encSample->roiInfo == nullptr) {
+            cout << "g_encSample or roiInfo is null" << endl;
+            return;
+        }
+        OH_AVFormat *parameter = OH_AVFormat_Create();
+        if (parameter == nullptr) {
+            cout << "Failed to create OH_AVFormat!" << endl;
+            return;
+        }
+        bool ret = OH_AVFormat_SetStringValue(parameter, OH_MD_KEY_VIDEO_ENCODER_ROI_PARAMS, g_encSample->roiInfo);
+        cout << "ret = " << ret << endl;
+        cout << "roiInfo = " << g_encSample->roiInfo << endl;
+        OH_AVBuffer_SetParameter(buffer, parameter);
+        OH_AVFormat_Destroy(parameter);
     }
-    OH_AVFormat *parameter = OH_AVFormat_Create();
-    if (parameter == nullptr) {
-        cout << "Failed to create OH_AVFormat!" << endl;
-        return;
-    }
-    bool ret = OH_AVFormat_SetStringValue(parameter, OH_MD_KEY_VIDEO_ENCODER_ROI_PARAMS, g_encSample->roiInfo);
-    cout << "ret = " << ret << endl;
-    cout << "roiInfo = " << g_encSample->roiInfo << endl;
-    OH_AVBuffer_SetParameter(buffer, parameter);
-    OH_AVFormat_Destroy(parameter);
     signal->inIdxQueue_.push(index);
     signal->inBufferQueue_.push(buffer);
     signal->inCond_.notify_all();
@@ -127,15 +128,17 @@ static void onEncOutputBufferAvailable(OH_AVCodec *codec, uint32_t index, OH_AVB
 
 static void onEncInputParam(OH_AVCodec *codec, uint32_t index, OH_AVFormat *parameter, void *userData)
 {
-    if (g_encSample == nullptr || g_encSample->roiInfo == nullptr) {
-        cout << "g_encSample or roiInfo is null" << endl;
-        return;
+    if (enableRoi) {
+        if (g_encSample == nullptr || g_encSample->roiInfo == nullptr) {
+            cout << "g_encSample or roiInfo is null" << endl;
+            return;
+        }
+        OH_AVFormat_SetStringValue(parameter, OH_MD_KEY_VIDEO_ENCODER_ROI_PARAMS, g_encSample->roiInfo);
+        if (!parameter || !userData) {
+            return;
+        }
+        OH_VideoEncoder_PushInputParameter(codec, index);
     }
-    OH_AVFormat_SetStringValue(parameter, OH_MD_KEY_VIDEO_ENCODER_ROI_PARAMS, g_encSample->roiInfo);
-    if (!parameter || !userData) {
-        return;
-    }
-    OH_VideoEncoder_PushInputParameter(codec, index);
 }
 
 int64_t VEncAPI11Sample::GetSystemTimeUs()
@@ -957,26 +960,18 @@ int32_t VEncAPI11Sample::LoadTimeStampData(std::string filePath, EncoderConfig &
     while (getline(file, temp)) {
         switch (num) {
             case ZERO:
-                trim(temp);
-                config.inputDir = temp;
-                break;
-            case ONE:
-                trim(temp);
-                config.outputDir = temp;
-                break;
-            case TWO:
                 config.width = stoi(temp);
                 break;
-            case THREE:
+            case ONE:
                 config.height = stoi(temp);
                 break;
-            case FOUR:
+            case TWO:
                 config.bitrateMode = stoi(temp);
                 break;
-            case FIVE:
+            case THREE:
                 config.bitRate = stoi(temp);
                 break;
-            case SIX:
+            case FOUR:
                 config.surfaceMode = stoi(temp) == 1;
                 break;
             default:
