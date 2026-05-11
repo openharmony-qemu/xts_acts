@@ -65,9 +65,19 @@ export default function windowPropertiesTest3() {
      */
     it('testSetTouchableAreas_singleRect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let message = 'testSetTouchableAreas_singleRect';
+      let currentWindowRect = mainWindowClass.getWindowProperties().windowRect;
+      console.info(`${message} currentWindowRect: ${JSON.stringify(currentWindowRect)}`);
+      
+      let rectWidth = Math.floor(currentWindowRect.width / 3);
+      let rectHeight = Math.floor(currentWindowRect.height / 3);
+      let rectLeft = Math.floor(currentWindowRect.width / 3);
+      let rectTop = Math.floor(currentWindowRect.height / 3);
+      
       let touchableRects: Array<window.Rect> = [
-        { left: 100, top: 100, width: 200, height: 200 }
+        { left: rectLeft, top: rectTop, width: rectWidth, height: rectHeight }
       ];
+      console.info(`${message} touchableRects: ${JSON.stringify(touchableRects)}`);
+      
       try {
         await mainWindowClass.setTouchableAreas(touchableRects);
         console.info(`${message} Succeeded in setting touchable areas.`);
@@ -101,11 +111,31 @@ export default function windowPropertiesTest3() {
      */
     it('testSetTouchableAreas_multipleRects', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let message = 'testSetTouchableAreas_multipleRects';
+      let currentWindowRect = mainWindowClass.getWindowProperties().windowRect;
+      console.info(`${message} currentWindowRect: ${JSON.stringify(currentWindowRect)}`);
+      
       let touchableRects: Array<window.Rect> = [
-        { left: 100, top: 100, width: 200, height: 200 },
-        { left: 0, top: 50, width: 150, height: 200 },
-        { left: 300, top: 300, width: 100, height: 100 }
+        { 
+          left: Math.floor(currentWindowRect.width / 3),
+          top: Math.floor(currentWindowRect.height / 3),
+          width: Math.floor(currentWindowRect.width / 3),
+          height: Math.floor(currentWindowRect.height / 3)
+        },
+        { 
+          left: 0,
+          top: Math.floor(currentWindowRect.height / 6),
+          width: Math.floor(currentWindowRect.width / 4),
+          height: Math.floor(currentWindowRect.height / 3)
+        },
+        { 
+          left: Math.floor(currentWindowRect.width * 2 / 3),
+          top: Math.floor(currentWindowRect.height * 2 / 3),
+          width: Math.floor(currentWindowRect.width / 3),
+          height: Math.floor(currentWindowRect.height / 3)
+        }
       ];
+      console.info(`${message} touchableRects: ${JSON.stringify(touchableRects)}`);
+      
       try {
         await mainWindowClass.setTouchableAreas(touchableRects);
         console.info(`${message} Succeeded in setting touchable areas.`);
@@ -139,10 +169,23 @@ export default function windowPropertiesTest3() {
      */
     it('testSetTouchableAreas_maxRects', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let message = 'testSetTouchableAreas_maxRects';
+      let currentWindowRect = mainWindowClass.getWindowProperties().windowRect;
+      console.info(`${message} currentWindowRect: ${JSON.stringify(currentWindowRect)}`);
+      
+      let rectWidth = Math.floor(currentWindowRect.width / 10);
+      let rectHeight = Math.floor(currentWindowRect.height / 10);
       let touchableRects: Array<window.Rect> = [];
+      
       for (let i = 0; i < 10; i++) {
-        touchableRects.push({ left: i * 50, top: i * 50, width: 100, height: 100 });
+        touchableRects.push({
+          left: Math.floor(currentWindowRect.width * i / 10),
+          top: Math.floor(currentWindowRect.height * i / 10),
+          width: rectWidth,
+          height: rectHeight
+        });
       }
+      console.info(`${message} touchableRects: ${JSON.stringify(touchableRects)}`);
+      
       try {
         await mainWindowClass.setTouchableAreas(touchableRects);
         console.info(`${message} Succeeded in setting touchable areas.`);
@@ -345,9 +388,20 @@ export default function windowPropertiesTest3() {
      */
     it('testSetTouchableAreas_floatParams', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let message = 'testSetTouchableAreas_floatParams';
+      let currentWindowRect = mainWindowClass.getWindowProperties().windowRect;
+      console.info(`${message} currentWindowRect: ${JSON.stringify(currentWindowRect)}`);
+      
+      let rectWidth = 10.5;
+      let rectHeight = 10.5;
+      let rectLeft = 0;
+      let rectTop = 0;
+      
       let touchableRects: Array<window.Rect> = [
-        { left: 100.5, top: 100.5, width: 200.5, height: 200.5 }
+        { left: rectLeft, top: rectTop, width: rectWidth, height: rectHeight }
       ];
+      console.info(`${message} touchableRects: ${JSON.stringify(touchableRects)}`);
+      console.info(`${message} Verify float params: left=${rectLeft}, top=${rectTop}, width=${rectWidth}, height=${rectHeight}`);
+      
       try {
         await mainWindowClass.setTouchableAreas(touchableRects);
         console.info(`${message} Succeeded in setting touchable areas.`);
@@ -417,9 +471,6 @@ export default function windowPropertiesTest3() {
      */
     it('testSetTouchableAreas_windowDestroyed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let message = 'testSetTouchableAreas_windowDestroyed';
-      let touchableRects: Array<window.Rect> = [
-        { left: 100, top: 100, width: 200, height: 200 }
-      ];
       let config: window.Configuration = {
         name: 'testSetTouchableAreas_windowDestroyed',
         windowType: window.WindowType.TYPE_DIALOG,
@@ -428,6 +479,19 @@ export default function windowPropertiesTest3() {
       };
       try {
         let testWindow = await window.createWindow(config);
+        let testWindowRect = testWindow.getWindowProperties().windowRect;
+        console.info(`${message} testWindowRect: ${JSON.stringify(testWindowRect)}`);
+        
+        let rectWidth = Math.floor(testWindowRect.width / 3);
+        let rectHeight = Math.floor(testWindowRect.height / 3);
+        let rectLeft = Math.floor(testWindowRect.width / 3);
+        let rectTop = Math.floor(testWindowRect.height / 3);
+        
+        let touchableRects: Array<window.Rect> = [
+          { left: rectLeft, top: rectTop, width: rectWidth, height: rectHeight }
+        ];
+        console.info(`${message} touchableRects: ${JSON.stringify(touchableRects)}`);
+        
         await testWindow.destroyWindow();
         await sleep(500);
         try {
