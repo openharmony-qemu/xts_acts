@@ -79,6 +79,8 @@ export default function BindMenuWithResponse() {
       await CommonFunc.sleep(1000);
       let menu: Component = await driver.findComponent(ON.type('Menu'));
       expect(menu !== null).assertTrue();
+      await menu?.click();
+      await Utils.sleep(1000);
       let hideBtn = await driver.findComponent(ON.id('hideId'));
       await hideBtn?.click();
       console.info('[BindMenuWithResponse_0100] hideBtn click');
