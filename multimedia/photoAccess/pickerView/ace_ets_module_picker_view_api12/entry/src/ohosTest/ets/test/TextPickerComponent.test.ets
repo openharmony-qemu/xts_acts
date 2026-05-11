@@ -4865,8 +4865,14 @@ export default function TextPicker() {
           });
         });
       };
+      const endTest = async () => {
+        const closeBtn: Component | null = await driver.findComponent(ON.id('Third_Select_PickerClose'));
+        await closeBtn?.click();
+        console.info("SUB_PHOTO_PICKER_TEST_0400 finish");
+        done();
+      }
       // ── Helper: select 2 photos via Selector_0 and Selector_1 ──
-      const selectTwoPhotos = async (label: string): Promise<void> => {
+      const selectTwoPhotos = async (label: string): Promise<boolean> => {
         await CommonFunc.sleep(500);
         const firstCheckbox: Component | null = await driver.findComponent(ON.id('Selector_0'));
         if (firstCheckbox) {
@@ -4875,6 +4881,7 @@ export default function TextPicker() {
           await CommonFunc.sleep(500);
         } else {
           console.error(`SUB_PHOTO_PICKER_TEST_0400 [${label}] Selector_0 not found`);
+          return false;
         }
         const secondCheckbox: Component | null = await driver.findComponent(ON.id('Selector_1'));
         if (secondCheckbox) {
@@ -4883,7 +4890,9 @@ export default function TextPicker() {
           await CommonFunc.sleep(500);
         } else {
           console.error(`SUB_PHOTO_PICKER_TEST_0400 [${label}] Selector_1 not found`);
+          return false;
         }
+        return true;
       };
       // ── Helper: click Complete (Done) button ──
       const clickComplete = async (label: string): Promise<void> => {
@@ -4941,6 +4950,12 @@ export default function TextPicker() {
       try {
         console.info('SUB_PHOTO_PICKER_TEST_0400 ═══ ROUND 1: select 2 photos and confirm ═══');
         const round1Promise = openPickerAndCollect('R1');
+        const R1Selected = await selectTwoPhotos('R1');
+        console.info('SUB_PHOTO_PICKER_TEST_0400 Error11 '+ R1Selected);
+        if (!R1Selected) {
+          await endTest();
+          return;
+        }
         await selectTwoPhotos('R1');
         await clickComplete('R1');
         originalUris = await round1Promise;
@@ -4948,6 +4963,11 @@ export default function TextPicker() {
         await CommonFunc.sleep(500);
         console.info('SUB_PHOTO_PICKER_TEST_0400 ═══ ROUND 2: select 2 photos, reorder, confirm ═══');
         const round2Promise = openPickerAndCollect('R2');
+        const R2Selected = await selectTwoPhotos('R2');
+        if (!R2Selected) {
+          await endTest();
+          return;
+        }
         await selectTwoPhotos('R2');
         await openBrowserMode('R2');
         const reordered: boolean = await reorderFirstTwoThumbnails('R2');
@@ -4975,10 +4995,7 @@ export default function TextPicker() {
         console.error(`SUB_PHOTO_PICKER_TEST_0400 error: ${err.code}, ${err.message}`);
         expect(false).assertTrue();
       }
-      const closeBtn: Component | null = await driver.findComponent(ON.id('Third_Select_PickerClose'));
-      await closeBtn?.click();
-      console.info("SUB_PHOTO_PICKER_TEST_0400 finish");
-      done();
+      await endTest();
     });
   })
 }
