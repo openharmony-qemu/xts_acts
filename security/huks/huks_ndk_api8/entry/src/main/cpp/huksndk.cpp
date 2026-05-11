@@ -69,15 +69,26 @@ static napi_value OHHuksGetSdkVersion(napi_env env, napi_callback_info info)
     int returnValue = FAIL;
     napi_value result = nullptr;
     const uint32_t sdkSize = 32;
-    struct OH_Huks_Blob *gkeyAlias = (struct OH_Huks_Blob *)malloc(sizeof(struct OH_Huks_Blob));
+    struct OH_Huks_Blob *gkeyAlias = nullptr;
+    uint8_t *data = nullptr;
+
+    gkeyAlias = (struct OH_Huks_Blob *)malloc(sizeof(struct OH_Huks_Blob));
     if (gkeyAlias != nullptr) {
-        gkeyAlias->data = static_cast<uint8_t *>(malloc(sdkSize));
-        gkeyAlias->size = sdkSize;
+        gkeyAlias->data = nullptr;
+        gkeyAlias->size = 0;
+        
+        data = static_cast<uint8_t *>(malloc(sdkSize));
+        if (data != nullptr) {
+            gkeyAlias->data = data;
+            gkeyAlias->size = sdkSize;
+            struct OH_Huks_Result resultSt = OH_Huks_GetSdkVersion(gkeyAlias);
+            if (resultSt.errorCode == (int32_t)OH_HUKS_SUCCESS) {
+                returnValue = SUCCESS;
+            }
+        }
     }
-    struct OH_Huks_Result resultSt = OH_Huks_GetSdkVersion(gkeyAlias);
-    if (resultSt.errorCode == (int32_t)OH_HUKS_SUCCESS) {
-        returnValue = SUCCESS;
-    }
+    if (data != nullptr) free(data);
+    free(gkeyAlias);
     napi_create_int32(env, returnValue, &result);
     return result;
 }
