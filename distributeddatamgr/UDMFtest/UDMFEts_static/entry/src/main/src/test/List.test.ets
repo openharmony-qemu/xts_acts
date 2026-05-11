@@ -37,5 +37,5 @@ export default function testsuite() {
     UtdFileNameTest();
     UDMFDragBigDataPartJsApiTest();
     UDMFAddApiStaticTest();
-    UriPermissionTest()；
+    UriPermissionTest();
 }
