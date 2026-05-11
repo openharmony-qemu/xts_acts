@@ -77,8 +77,10 @@ static napi_value OHHuksGetSdkVersion(napi_env env, napi_callback_info info)
             gkeyAlias = nullptr;
         }
     }
+    struct OH_Huks_Result resultSt;
+    resultSt.errorCode = OH_HUKS_ERR_CODE_ILLEGAL_ARGUMENT;
     if (gkeyAlias != nullptr) {
-        struct OH_Huks_Result resultSt = OH_Huks_GetSdkVersion(gkeyAlias);
+        resultSt = OH_Huks_GetSdkVersion(gkeyAlias);
     }
     if (resultSt.errorCode == (int32_t)OH_HUKS_SUCCESS) {
         returnValue = SUCCESS;
@@ -86,6 +88,7 @@ static napi_value OHHuksGetSdkVersion(napi_env env, napi_callback_info info)
     napi_create_int32(env, returnValue, &result);
     return result;
 }
+
 
 static napi_value OHHuksGetSdkVersionErr(napi_env env, napi_callback_info info)
 {
