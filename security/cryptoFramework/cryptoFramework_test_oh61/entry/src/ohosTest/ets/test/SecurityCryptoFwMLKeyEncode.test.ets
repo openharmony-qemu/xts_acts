@@ -374,7 +374,7 @@ export default function SecurityCryptoFwMLKeyEncodeTestUnit() {
         expect(null).assertFail();
       } catch (error) {
         console.error(`[XTS] ConvertPemKey_Encrypt_Error_0100_async ${error}, error code: ${error.code}`);
-        expect(error.code).assertEqual(cryptoFramework.Result.NOT_SUPPORT);
+        expect(error.code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
       }
       done();
     });
@@ -404,7 +404,7 @@ export default function SecurityCryptoFwMLKeyEncodeTestUnit() {
         expect(null).assertFail();
       } catch (error) {
         console.error(`[XTS] ConvertPemKey_Encrypt_Error_0200 ${error}, error code: ${error.code}`);
-        expect(error.code).assertEqual(cryptoFramework.Result.NOT_SUPPORT);
+        expect(error.code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
       }
       done();
     });
@@ -428,7 +428,7 @@ export default function SecurityCryptoFwMLKeyEncodeTestUnit() {
         expect(null).assertFail();
       } catch (error) {
         console.error(`[XTS] ConvertPemKey_Encrypt_Error_0300_mlkem ${error}, error code: ${error.code}`);
-        expect(error.code).assertEqual(cryptoFramework.Result.NOT_SUPPORT);
+        expect(error.code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
       }
       try {
         let mldsaGen: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator("ML-DSA-65");
@@ -439,7 +439,7 @@ export default function SecurityCryptoFwMLKeyEncodeTestUnit() {
         expect(null).assertFail();
       } catch (error) {
         console.error(`[XTS] ConvertPemKey_Encrypt_Error_0300_mldsa ${error}, error code: ${error.code}`);
-        expect(error.code).assertEqual(cryptoFramework.Result.NOT_SUPPORT);
+        expect(error.code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
       }
       done();
     });

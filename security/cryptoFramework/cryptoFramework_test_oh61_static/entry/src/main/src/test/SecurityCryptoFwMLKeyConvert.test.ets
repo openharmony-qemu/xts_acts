@@ -213,16 +213,11 @@ export default function SecurityCryptoFwMLKeyConvertTestUnit() {
           let keyPair: cryptoFramework.KeyPair = await gen1.generateKeyPair();
           let pubKeyData: Uint8Array = await keyPair.pubKey.getKeyData(cryptoFramework.AsyKeyDataItem.ML_DSA_PUBLIC_RAW);
           let priKeyData: Uint8Array = await keyPair.priKey.getKeyData(cryptoFramework.AsyKeyDataItem.ML_DSA_PRIVATE_RAW);
-          let convertKeyPair: cryptoFramework.KeyPair = await gen2.convertKey({data: pubKeyData}, {data: priKeyData});
-          let pubKeyRaw: Uint8Array = await convertKeyPair.pubKey.getKeyData(cryptoFramework.AsyKeyDataItem.ML_DSA_PUBLIC_RAW);
-          expect(pubKeyRaw.length).assertEqual(1952);
-          let priKeyRaw: Uint8Array = await convertKeyPair.priKey.getKeyData(cryptoFramework.AsyKeyDataItem.ML_DSA_PRIVATE_RAW);
-          expect(priKeyRaw.length).assertEqual(4032);
-          let seed: Uint8Array = await convertKeyPair.priKey.getKeyData(cryptoFramework.AsyKeyDataItem.ML_DSA_PRIVATE_SEED);
-          expect(seed.length).assertEqual(32);
-        } catch (error) {
-          console.error(`[XTS] Convert_Async_Func_0200 ${error}, error code: ${error.code}`);
+          await gen2.convertKey({data: pubKeyData}, {data: priKeyData});
           expect(null).assertFail();
+        } catch (error) {
+          console.error(`[XTS] ML_DSA_Convert_Async_Func_0200 ${error}, error code: ${error.code}`);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -242,17 +237,12 @@ export default function SecurityCryptoFwMLKeyConvertTestUnit() {
           let gen2: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator("ML-KEM-1024");
           let keyPair: cryptoFramework.KeyPair = await gen1.generateKeyPair();
           let pubKeyData: Uint8Array = await keyPair.pubKey.getKeyData(cryptoFramework.AsyKeyDataItem.ML_KEM_PUBLIC_RAW);
-          let priKeyData: Uint8Array = await keyPair.priKey.getKeyData(cryptoFramework.AsyKeyDataItem.ML_KEM_PRIVATE_SEED);
-          let convertKeyPair: cryptoFramework.KeyPair = await gen2.convertKey({data: pubKeyData}, {data: priKeyData});
-          let pubKeyRaw: Uint8Array = await convertKeyPair.pubKey.getKeyData(cryptoFramework.AsyKeyDataItem.ML_KEM_PUBLIC_RAW);
-          expect(pubKeyRaw.length).assertEqual(1184);
-          let priKeyRaw: Uint8Array = await convertKeyPair.priKey.getKeyData(cryptoFramework.AsyKeyDataItem.ML_KEM_PRIVATE_RAW);
-          expect(priKeyRaw.length).assertEqual(2400);
-          let seed: Uint8Array = await convertKeyPair.priKey.getKeyData(cryptoFramework.AsyKeyDataItem.ML_KEM_PRIVATE_SEED);
-          expect(seed.length).assertEqual(64);
-        } catch (error) {
-          console.error(`[XTS] Convert_Async_Func_0200 ${error}, error code: ${error.code}`);
+          let priKeyData: Uint8Array = await keyPair.priKey.getKeyData(cryptoFramework.AsyKeyDataItem.ML_KEM_PRIVATE_RAW);
+          await gen2.convertKey({data: pubKeyData}, {data: priKeyData});
           expect(null).assertFail();
+        } catch (error) {
+          console.error(`[XTS] ML_KEM_Convert_Async_Func_0300 ${error}, error code: ${error.code}`);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       });

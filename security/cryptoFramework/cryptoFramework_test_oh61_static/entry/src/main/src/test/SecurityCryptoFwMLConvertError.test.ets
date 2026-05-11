@@ -130,7 +130,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
         expect(null).assertFail();
       } catch (error) {
         console.error(`[XTS] Convert_Error_0400_1 ${error}, error code: ${(error as BusinessError).code}`);
-        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
       }
       try {
         let gen1: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator("ML-DSA-65");
@@ -141,7 +141,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
         expect(null).assertFail();
       } catch (error) {
         console.error(`[XTS] Convert_Error_0400_2 ${error}, error code: ${(error as BusinessError).code}`);
-        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
       }
       done();
     });
@@ -165,7 +165,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
         expect(null).assertFail();
       } catch (error) {
         console.error(`[XTS] Convert_Error_0500_32 ${error}, error code: ${(error as BusinessError).code}`);
-        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
       }
       try {
         let gen: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator("ML-KEM-768");
@@ -176,7 +176,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
         expect(null).assertFail();
       } catch (error) {
         console.error(`[XTS] Convert_Error_0500_128 ${error}, error code: ${(error as BusinessError).code}`);
-        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
       }
       done();
     });
@@ -200,7 +200,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
         expect(null).assertFail();
       } catch (error) {
         console.error(`[XTS] Convert_Error_0600_16 ${error}, error code: ${(error as BusinessError).code}`);
-        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
       }
       try {
         let gen: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator("ML-DSA-65");
@@ -211,7 +211,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
         expect(null).assertFail();
       } catch (error) {
         console.error(`[XTS] Convert_Error_0600_64 ${error}, error code: ${(error as BusinessError).code}`);
-        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
+        expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
       }
       done();
     });
@@ -238,7 +238,7 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
           expect(null).assertFail();
         } catch (error) {
           console.error(`[XTS] Convert_Error_0700 ${error}, error code: ${(error as BusinessError).code}`);
-          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
         }
         done();
       });
@@ -399,6 +399,32 @@ export default function SecurityCryptoFwMLConvertErrorTestUnit() {
         } catch (error) {
           console.error(`[XTS] GetEncodedPem_Error_0200_mldsa_pkcs1 ${error}, error code: ${(error as BusinessError).code}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
+        }
+        try {
+          let gen: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator("ML-DSA-65");
+          let keyPair: cryptoFramework.KeyPair = await gen.generateKeyPair();
+          let config: cryptoFramework.KeyEncodingConfig = {
+            password: "123456",
+            cipherName: "AES-256-CBC"
+          }
+          keyPair.priKey.getEncodedPem("PKCS8", config);
+          expect(null).assertFail();
+        } catch (error) {
+          console.error(`[XTS] GetEncodedPem_Error_0200_mldsa_enc ${error}, error code: ${(error as BusinessError).code}`);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
+        }
+        try {
+          let gen: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator("ML-KEM-768");
+          let keyPair: cryptoFramework.KeyPair = await gen.generateKeyPair();
+          let config: cryptoFramework.KeyEncodingConfig = {
+            password: "123456",
+            cipherName: "AES-256-CBC"
+          }
+          keyPair.priKey.getEncodedPem("PKCS8", config);
+          expect(null).assertFail();
+        } catch (error) {
+          console.error(`[XTS] GetEncodedPem_Error_0200_mldkem_enc ${error}, error code: ${(error as BusinessError).code}`);
+          expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_INVALID_CALL);
         }
         done();
       });
