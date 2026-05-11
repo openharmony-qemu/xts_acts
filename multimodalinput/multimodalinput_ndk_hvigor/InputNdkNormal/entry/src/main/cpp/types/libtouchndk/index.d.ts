@@ -87,3 +87,4 @@ export const GetTouchEventDownTime: () => number;
 export const SetTouchEventToolType1: () => number;
 export const SetTouchEventToolType2: () => number;
 export const GetTouchEventToolType: () => number;
+export const BindInputDeviceToDisplay: () => number;

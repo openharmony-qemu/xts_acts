@@ -17,10 +17,14 @@ import MultimodalInputDeviceTest from './MultimodalInputDevice.test';
 import MultimodalInputConsumerTest from './MultimodalInputConsumer.test';
 import MultimodalMouseEventTest from './MultimodalMouseEvent.test';
 import MultimodalGestureEventTest from './MultimodalGestureEvent.test';
+import MultimodalTouchEventTest from './MultimodalTouchEvent.test';
+import MultimodalEventClientTest from './MultimodalEventClient.test';
 
 export default function testsuite() {
   MultimodalInputDeviceTest();
   MultimodalInputConsumerTest();
   MultimodalMouseEventTest();
   MultimodalGestureEventTest();
+  MultimodalTouchEventTest();
+  MultimodalEventClientTest();
 }
