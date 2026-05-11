@@ -40,7 +40,7 @@ export default function uitestApi26ErrorTest(): void {
     })
 
      /**
-       * @tc.name   testDriverClickAtErrorSpeedTooSmall
+       * @tc.name   testDriverClickAtErrorSpeedTooSmall_static
        * @tc.number SUB_testfwk_UITEST_CLICKAT_ERROR_0400
        * @tc.desc   Test clickAt with speed=199 (less than minimum 200), should throw 17000007
        * @tc.type   FUNCTION
@@ -60,7 +60,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
      /**
-       * @tc.name   testDriverClickAtErrorSpeedTooLarge
+       * @tc.name   testDriverClickAtErrorSpeedTooLarge_static
        * @tc.number SUB_testfwk_UITEST_CLICKAT_ERROR_0500
        * @tc.desc   Test clickAt with speed=40001 (greater than maximum 40000), should throw 17000007
        * @tc.type   FUNCTION
@@ -80,7 +80,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
      /**
-      * @tc.name   testDriverClickAtErrorPressureTooSmall
+      * @tc.name   testDriverClickAtErrorPressureTooSmall_static
       * @tc.number SUB_testfwk_UITEST_CLICKAT_ERROR_0600
       * @tc.desc   Test clickAt with pressure=-0.1 (less than minimum 0), should throw 17000007
       * @tc.type   FUNCTION
@@ -101,7 +101,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
      /**
-      * @tc.name   testDriverClickAtErrorPressureTooLarge
+      * @tc.name   testDriverClickAtErrorPressureTooLarge_static
       * @tc.number SUB_testfwk_UITEST_CLICKAT_ERROR_0700
       * @tc.desc   Test clickAt with pressure=1.5 (greater than maximum 1), should throw 17000007
       * @tc.type   FUNCTION
@@ -123,7 +123,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
      /**
-      * @tc.name   testDriverClickAtUnsupportedDurationBelowMin
+      * @tc.name   testDriverClickAtUnsupportedDurationBelowMin_static
       * @tc.number SUB_testfwk_UITEST_CLICKAT_ERROR_0800
       * @tc.desc   Test clickAt with duration=1000 (below minimum 1500, not supported), should throw 17000007
       * @tc.type   FUNCTION
@@ -144,7 +144,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
      /**
-      * @tc.name   testDriverClickAtUnsupportedDurationZero
+      * @tc.name   testDriverClickAtUnsupportedDurationZero_static
       * @tc.number SUB_testfwk_UITEST_CLICKAT_ERROR_0900
       * @tc.desc   Test clickAt with duration=0 (zero value, not supported), should throw 17000007
       * @tc.type   FUNCTION
@@ -165,7 +165,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
     /**
-     * @tc.name   testDriverLongClickAtErrorDurationTooSmall
+     * @tc.name   testDriverLongClickAtErrorDurationTooSmall_static
      * @tc.number SUB_testfwk_UITEST_LONGCLICKAT_ERROR_0100
      * @tc.desc   Test longClickAt with duration=1499 (less than minimum 1500), should throw 17000007
      * @tc.type   FUNCTION
@@ -185,7 +185,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
     /**
-     * @tc.name   testDriverLongClickAtErrorPressureTooSmall
+     * @tc.name   testDriverLongClickAtErrorPressureTooSmall_static
      * @tc.number SUB_testfwk_UITEST_LONGCLICKAT_ERROR_0200
      * @tc.desc   Test longClickAt with pressure=-0.1 (less than minimum 0), should throw 17000007
      * @tc.type   FUNCTION
@@ -205,7 +205,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
     /**
-     * @tc.name   testDriverLongClickAtErrorPressureTooLarge
+     * @tc.name   testDriverLongClickAtErrorPressureTooLarge_static
      * @tc.number SUB_testfwk_UITEST_LONGCLICKAT_ERROR_0300
      * @tc.desc   Test longClickAt with pressure=1.1 (greater than maximum 1), should throw 17000007
      * @tc.type   FUNCTION
@@ -225,7 +225,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
     /**
-     * @tc.name   testDriverLongClickAtErrorSpeedTooSmall
+     * @tc.name   testDriverLongClickAtErrorSpeedTooSmall_static
      * @tc.number SUB_testfwk_UITEST_LONGCLICKAT_ERROR_0400
      * @tc.desc   Test longClickAt with speed=199 (less than minimum 200), should throw 17000007
      * @tc.type   FUNCTION
@@ -245,7 +245,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
     /**
-     * @tc.name   testDriverLongClickAtErrorSpeedTooLarge
+     * @tc.name   testDriverLongClickAtErrorSpeedTooLarge_static
      * @tc.number SUB_testfwk_UITEST_LONGCLICKAT_ERROR_0500
      * @tc.desc   Test longClickAt with speed=40001 (greater than maximum 40000), should throw 17000007
      * @tc.type   FUNCTION
@@ -265,7 +265,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
     /**
-     * @tc.name   testDriverLongClickAtErrorSpeedNegative
+     * @tc.name   testDriverLongClickAtErrorSpeedNegative_static
      * @tc.number SUB_testfwk_UITEST_LONGCLICKAT_ERROR_0600
      * @tc.desc   Test longClickAt with speed=-100 (negative), should throw 17000007
      * @tc.type   FUNCTION
@@ -285,7 +285,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
     /**
-     * @tc.name   testDriverSwipeBetweenSpeedNegative
+     * @tc.name   testDriverSwipeBetweenSpeedNegative_static
      * @tc.number SUB_testfwk_UITEST_SWIPEBETWEEN_ERROR_0100
      * @tc.desc   Test swipeBetween with negative speed, expecting error 17000007
      * @tc.type   FUNCTION
@@ -306,7 +306,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
     /**
-     * @tc.name   testDriverSwipeBetweenPressureOutOfRangeLow
+     * @tc.name   testDriverSwipeBetweenPressureOutOfRangeLow_static
      * @tc.number SUB_testfwk_UITEST_SWIPEBETWEEN_ERROR_0200
      * @tc.desc   Test swipeBetween with pressure out of range (< 0), expecting error 17000007
      * @tc.type   FUNCTION
@@ -327,7 +327,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
     /**
-     * @tc.name   testDriverSwipeBetweenPressureOutOfRangeHigh
+     * @tc.name   testDriverSwipeBetweenPressureOutOfRangeHigh_static
      * @tc.number SUB_testfwk_UITEST_SWIPEBETWEEN_ERROR_0300
      * @tc.desc   Test swipeBetween with pressure out of range (> 1), expecting error 17000007
      * @tc.type   FUNCTION
@@ -348,7 +348,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
     /**
-     * @tc.name   testDriverSwipeBetweenDisplayIdDiff
+     * @tc.name   testDriverSwipeBetweenDisplayIdDiff_static
      * @tc.number SUB_testfwk_UITEST_SWIPEBETWEEN_ERROR_0400
      * @tc.desc   Test swipeBetween with speed out of range (> 40000), expecting error 17000007
      * @tc.type   FUNCTION
@@ -370,7 +370,7 @@ export default function uitestApi26ErrorTest(): void {
 
 
     /**
-     * @tc.name   testDriverDragBetweenWithNegativeSpeed
+     * @tc.name   testDriverDragBetweenWithNegativeSpeed_static
      * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_0200
      * @tc.desc   Test dragBetween with negative speed, expecting error 17000007
      * @tc.type   FUNCTION
@@ -392,7 +392,7 @@ export default function uitestApi26ErrorTest(): void {
 
 
     /**
-     * @tc.name   testDriverDragBetweenWithDurationLessThanMin
+     * @tc.name   testDriverDragBetweenWithDurationLessThanMin_static
      * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_0300
      * @tc.desc   Test dragBetween with duration < 1500, expecting error 17000007
      * @tc.type   FUNCTION
@@ -413,7 +413,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
      /**
-       * @tc.name   testDriverDragBetweenErrorSpeedTooLarge
+       * @tc.name   testDriverDragBetweenErrorSpeedTooLarge_static
        * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_0700
        * @tc.desc   Test dragBetween with speed greater than 40000, expecting error 17000007
        * @tc.type   FUNCTION
@@ -435,7 +435,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
      /**
-       * @tc.name   testDriverDragBetweenErrorSpeedTooSmall
+       * @tc.name   testDriverDragBetweenErrorSpeedTooSmall_static
        * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_0800
        * @tc.desc   Test dragBetween with speed less than 200, expecting error 17000007
        * @tc.type   FUNCTION
@@ -457,7 +457,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
     /**
-     * @tc.name   testDriverDragBetweenWithNegativePressure
+     * @tc.name   testDriverDragBetweenWithNegativePressure_static
      * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_0400
      * @tc.desc   Test dragBetween with negative pressure, expecting error 17000007
      * @tc.type   FUNCTION
@@ -478,7 +478,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
     /**
-     * @tc.name   testDriverDragBetweenWithPressureGreaterThanOne
+     * @tc.name   testDriverDragBetweenWithPressureGreaterThanOne_static
      * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_0500
      * @tc.desc   Test dragBetween with pressure > 1, expecting error 17000007
      * @tc.type   FUNCTION
@@ -499,7 +499,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
     /**
-     * @tc.name   testDriverDragBetweenDisplayIdDiff
+     * @tc.name   testDriverDragBetweenDisplayIdDiff_static
      * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_0600
      * @tc.desc   Test dragBetween displayId diff, expecting error 17000007
      * @tc.type   FUNCTION
@@ -520,7 +520,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
     /**
-     * @tc.name   testDriverDumpLayoutErrorEmptyPath
+     * @tc.name   testDriverDumpLayoutErrorEmptyPath_static
      * @tc.number SUB_testfwk_UITEST_DUMPLAYOUT_ERROR_0200
      * @tc.desc   Test dumpLayout with empty savePath parameter, expecting error 17000007
      * @tc.type   FUNCTION
@@ -541,7 +541,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
     /**
-     * @tc.name   testDriverDumpLayoutErrorInvalidPath
+     * @tc.name   testDriverDumpLayoutErrorInvalidPath_static
      * @tc.number SUB_testfwk_UITEST_DUMPLAYOUT_ERROR_0300
      * @tc.desc   Test dumpLayout with path outside sandbox, expecting error 17000007
      * @tc.type   FUNCTION
@@ -562,7 +562,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
     /**
-     * @tc.name   testDriverDumpLayoutErrorNegativeDisplayId
+     * @tc.name   testDriverDumpLayoutErrorNegativeDisplayId_static
      * @tc.number SUB_testfwk_UITEST_DUMPLAYOUT_ERROR_0400
      * @tc.desc   Test dumpLayout with negative displayId parameter, expecting error 17000007
      * @tc.type   FUNCTION
@@ -584,7 +584,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
     /**
-     * @tc.name   testDriverMouseDragPressureMinimum
+     * @tc.name   testDriverMouseDragPressureMinimum_static
      * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_BOUNDARY_0500
      * @tc.desc   Test mouseDrag with minimum pressure value (0)
      * @tc.type   FUNCTION
@@ -605,7 +605,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
     /**
-     * @tc.name   testDriverMouseDragPressureMaximum
+     * @tc.name   testDriverMouseDragPressureMaximum_static
      * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_BOUNDARY_0400
      * @tc.desc   Test mouseDrag with maximum pressure value (1)
      * @tc.type   FUNCTION
@@ -626,9 +626,9 @@ export default function uitestApi26ErrorTest(): void {
     });
 
     /**
-     * @tc.name   testDriverMouseDragErrorSpeedNegative
+     * @tc.name   testDriverMouseDragErrorSpeedNegative_static
      * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_ERROR_0200
-       @tc.desc   Test mouseDrag with negative speed, expecting error 17000002
+     * @tc.desc   Test mouseDrag with negative speed, expecting error 17000002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -649,12 +649,12 @@ export default function uitestApi26ErrorTest(): void {
     });
 
     /**
-     * @tc.name   testDriverMouseDragErrorDurationTooSmall
+     * @tc.name   testDriverMouseDragErrorDurationTooSmall_static
      * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_ERROR_0500
-     @tc.desc   Test mouseDrag with duration less than 1500, expecting error 17000007
-     @tc.type   FUNCTION
+     * @tc.desc   Test mouseDrag with duration less than 1500, expecting error 17000007
+     * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     @tc.level  LEVEL3
+     * @tc.level  LEVEL3
      */
     it('testDriverMouseDragErrorDurationTooSmall_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, testDriverMouseDragErrorDurationTooSmall start`);
@@ -672,10 +672,10 @@ export default function uitestApi26ErrorTest(): void {
     });
 
     /**
-     * @tc.name   testDriverMouseDragErrorPressureTooSmall
+     * @tc.name   testDriverMouseDragErrorPressureTooSmall_static
      * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_ERROR_0600
-     @tc.desc   Test mouseDrag with pressure greater than1, expecting error 17000007
-     @tc.type   FUNCTION
+     * @tc.desc   Test mouseDrag with pressure greater than1, expecting error 17000007
+     * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
@@ -695,7 +695,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
     /**
-     * @tc.name   testDriverMouseDragErrorPressureTooLarge
+     * @tc.name   testDriverMouseDragErrorPressureTooLarge_static
      * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_ERROR_0700
      * @tc.desc   Test mouseDrag with pressure greater than1, expecting error 17000007
      * @tc.type   FUNCTION
@@ -718,7 +718,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
     /**
-     * @tc.name   testDriverMouseDragErrorDisplayIdDiff
+     * @tc.name   testDriverMouseDragErrorDisplayIdDiff_static
      * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_ERROR_0800
      * @tc.desc   Test mouseDrag with displayId diff
      * @tc.type   FUNCTION
@@ -741,7 +741,7 @@ export default function uitestApi26ErrorTest(): void {
     });
 
     /**
-     * @tc.name   testDriverTriggerPenKeyAirMouseWithoutPoint
+     * @tc.name   testDriverTriggerPenKeyAirMouseWithoutPoint_static
      * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_ERROR_0100
      * @tc.desc   Test Driver.triggerPenKey with AIR_MOUSE mode without point in options
      * @tc.type   FUNCTION
