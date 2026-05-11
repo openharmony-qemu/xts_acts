@@ -1,48 +1,49 @@
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed on an 'AS IS' BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import router from '@ohos.router';
-import { describe, beforeEach, afterEach, it, expect, Level } from "@ohos/hypium"
-import { Driver, ON } from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/common/Common'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { Driver, ON, Component } from '@ohos.UiTest';
+import { router } from '@kit.ArkUI';
+import Utils from '../../MainAbility/common/Utils';
+import CommonFunc from '../../MainAbility/common/Common';
 import { promptAction, uiMaterial } from '@kit.ArkUI';
 
 export default function ShowToastOptionsTest() {
   describe('ShowToastOptionsTest', () => {
-
     beforeEach(async (done: Function) => {
+      console.info('ShowToastOptionsTest beforeEach start');
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/promptAction/ShowToastOptionsTestPage',
+        url: 'MainAbility/pages/dialogSystemMaterial/ShowToastOptionsTestPage',
       }
-      router.clear();
-      let pages = router.getState();
-      console.info('get ShowToastOptionsTestPage state success ' + JSON.stringify(pages));
-      if (!('ShowToastOptionsTestPage' == pages.name)) {
-        let result = await router.pushUrl(options)
-        await CommonFunc.sleep(2000);
-        console.info('push ShowToastOptionsTestPage page success ' + JSON.stringify(result));
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info('get ShowToastOptionsTest state pages:' + JSON.stringify(pages));
+        if (!('ShowToastOptionsTestPage' == pages.name)) {
+          console.info('get ShowToastOptionsTest pages.name:' + JSON.stringify(pages.name));
+          let result = await router.push(options);
+          await Utils.sleep(2500);
+          console.info('push ShowToastOptionsTest page result:' + JSON.stringify(result));
+        }
+      } catch (err) {
+        console.error('push ShowToastOptionsTest page error:' + err);
       }
-      done()
+      console.info('ShowToastOptionsTest beforeEach end');
+      done();
     });
 
-    afterEach(async () => {
-      await CommonFunc.sleep(500);
-      console.info("ShowToastOptionsTest after each called");
-    });
-
-    /**
+	/**
      * @tc.name   ShowToastOptionsTest_Message_0100
      * @tc.number SUB_ARKUI_API_ShowToastOptions_Message_0100
      * @tc.desc   Test ShowToastOptions message parameter with string type
@@ -796,5 +797,7 @@ export default function ShowToastOptionsTest() {
       console.info('ShowToastOptionsTest_ImmersiveStyle_0100 END');
       done();
     });
+    
+
   })
 }
