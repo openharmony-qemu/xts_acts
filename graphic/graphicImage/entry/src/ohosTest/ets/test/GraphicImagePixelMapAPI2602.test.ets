@@ -1527,7 +1527,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.UNKNOWN
+          pixelFormat: image.PixelMapFormat.UNKNOWN,
+          srcPixelFormat: image.PixelMapFormat.UNKNOWN
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1557,7 +1558,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.ARGB_8888
+          pixelFormat: image.PixelMapFormat.ARGB_8888,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1589,7 +1591,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.RGB_565
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          srcPixelFormat: image.PixelMapFormat.RGB_565
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1621,7 +1624,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.RGBA_8888
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          srcPixelFormat: image.PixelMapFormat.RGBA_8888
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1653,7 +1657,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.BGRA_8888
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          srcPixelFormat: image.PixelMapFormat.BGRA_8888
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1685,7 +1690,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.RGB_888
+          pixelFormat: image.PixelMapFormat.RGB_888,
+          srcPixelFormat: image.PixelMapFormat.RGB_888
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1717,7 +1723,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.ALPHA_8
+          pixelFormat: image.PixelMapFormat.ALPHA_8,
+          srcPixelFormat: image.PixelMapFormat.ALPHA_8
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1749,7 +1756,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.RGBA_F16
+          pixelFormat: image.PixelMapFormat.RGBA_F16,
+          srcPixelFormat: image.PixelMapFormat.RGBA_F16
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1781,7 +1789,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.NV21
+          pixelFormat: image.PixelMapFormat.NV21,
+          srcPixelFormat: image.PixelMapFormat.NV21
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1813,7 +1822,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.NV12
+          pixelFormat: image.PixelMapFormat.NV12,
+          srcPixelFormat: image.PixelMapFormat.NV12
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1845,7 +1855,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.RGBA_1010102
+          pixelFormat: image.PixelMapFormat.RGBA_1010102,
+          srcPixelFormat: image.PixelMapFormat.RGBA_1010102
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1877,7 +1888,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.YCBCR_P010
+          pixelFormat: image.PixelMapFormat.YCBCR_P010,
+          srcPixelFormat: image.PixelMapFormat.YCBCR_P010
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1909,7 +1921,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.YCRCB_P010
+          pixelFormat: image.PixelMapFormat.YCRCB_P010,
+          srcPixelFormat: image.PixelMapFormat.YCRCB_P010
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1941,7 +1954,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.ALPHA_U8
+          pixelFormat: image.PixelMapFormat.ALPHA_U8,
+          srcPixelFormat: image.PixelMapFormat.ALPHA_U8
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1973,7 +1987,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.ASTC_4x4
+          pixelFormat: image.PixelMapFormat.ASTC_4x4,
+          srcPixelFormat: image.PixelMapFormat.ASTC_4x4
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
