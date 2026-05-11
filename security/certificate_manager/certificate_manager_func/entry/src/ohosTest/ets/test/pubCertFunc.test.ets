@@ -181,7 +181,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       }
       catch (err) {
         console.log("SUB_Security_CertManager_PubCertJsApi_Func_0600：e.code = " + err.code);
-        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_GENERIC);
+        expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_FOUND);
       }
       console.info("SUB_Security_CertManager_PubCertJsApi_Func_0600: end.");
       done();
