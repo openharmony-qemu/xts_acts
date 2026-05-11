@@ -1127,6 +1127,94 @@ static napi_value OH_UdsFileUri_SetAuthPolicy_007(napi_env env, napi_callback_in
     return result;
 }
 
+static napi_value OH_UdmfProperty_SetAuthPermission_001(napi_env env, napi_callback_info info)
+{
+    int ret;
+    OH_UdmfRecord *record = OH_UdmfRecord_Create();
+    OH_UdsFileUri *fileUri = OH_UdsFileUri_Create();
+    OH_UdsFileUri_SetFileUri(fileUri, "fileuri");
+    OH_UdsFileUri_SetFileType(fileUri, "general.file");
+    OH_UdmfRecord_AddFileUri(record, fileUri);
+    OH_UdmfData *data = OH_UdmfData_Create();
+    OH_UdmfData_AddRecord(data, record);
+    OH_UdmfProperty* pro = OH_UdmfProperty_Create(data);
+    int permPro = Udmf_AuthPermission::UDMF_PERM_READ | Udmf_AuthPermission::UDMF_PERM_WRITE | Udmf_AuthPermission::UDMF_PERM_PERSIST;
+    ret = OH_UdmfProperty_SetAuthPermission(pro, permPro);
+    napi_value result = nullptr;
+    napi_create_int32(env, ret == UDMF_E_OK, &result);
+    OH_UdmfProperty_Destroy(pro);
+    OH_UdmfData_Destroy(data);
+    OH_UdsFileUri_Destroy(fileUri);
+    OH_UdmfRecord_Destroy(record);
+    return result;
+}
+
+static napi_value OH_UdmfProperty_SetAuthPermission_002(napi_env env, napi_callback_info info)
+{
+    int ret;
+    OH_UdmfRecord *record = OH_UdmfRecord_Create();
+    OH_UdsFileUri *fileUri = OH_UdsFileUri_Create();
+    OH_UdsFileUri_SetFileUri(fileUri, "fileuri");
+    OH_UdsFileUri_SetFileType(fileUri, "general.file");
+    OH_UdmfRecord_AddFileUri(record, fileUri);
+    OH_UdmfData *data = OH_UdmfData_Create();
+    OH_UdmfData_AddRecord(data, record);
+    OH_UdmfProperty* pro = OH_UdmfProperty_Create(data);
+    int permPro = Udmf_AuthPermission::UDMF_PERM_READ | Udmf_AuthPermission::UDMF_PERM_WRITE | Udmf_AuthPermission::UDMF_PERM_PERSIST;
+    ret = OH_UdmfProperty_SetAuthPermission(nullptr, permPro);
+    napi_value result = nullptr;
+    napi_create_int32(env, ret == UDMF_E_INVALID_PARAM, &result);
+    OH_UdmfProperty_Destroy(pro);
+    OH_UdmfData_Destroy(data);
+    OH_UdsFileUri_Destroy(fileUri);
+    OH_UdmfRecord_Destroy(record);
+    return result;
+}
+
+static napi_value OH_UdmfProperty_SetAuthPermission_003(napi_env env, napi_callback_info info)
+{
+    int ret;
+    OH_UdmfRecord *record = OH_UdmfRecord_Create();
+    OH_UdsFileUri *fileUri = OH_UdsFileUri_Create();
+    OH_UdsFileUri_SetFileUri(fileUri, "fileuri");
+    OH_UdsFileUri_SetFileType(fileUri, "general.file");
+    OH_UdmfRecord_AddFileUri(record, fileUri);
+    OH_UdmfData *data = OH_UdmfData_Create();
+    OH_UdmfData_AddRecord(data, record);
+    OH_UdmfProperty* pro = OH_UdmfProperty_Create(data);
+    int permPro = Udmf_AuthPermission::UDMF_PERM_NONE;
+    ret = OH_UdmfProperty_SetAuthPermission(pro, permPro);
+    napi_value result = nullptr;
+    napi_create_int32(env, ret == UDMF_E_OK, &result);
+    OH_UdmfProperty_Destroy(pro);
+    OH_UdmfData_Destroy(data);
+    OH_UdsFileUri_Destroy(fileUri);
+    OH_UdmfRecord_Destroy(record);
+    return result;
+}
+
+static napi_value OH_UdmfProperty_SetAuthPermission_004(napi_env env, napi_callback_info info)
+{
+    int ret;
+    OH_UdmfRecord *record = OH_UdmfRecord_Create();
+    OH_UdsFileUri *fileUri = OH_UdsFileUri_Create();
+    OH_UdsFileUri_SetFileUri(fileUri, "fileuri");
+    OH_UdsFileUri_SetFileType(fileUri, "general.file");
+    OH_UdmfRecord_AddFileUri(record, fileUri);
+    OH_UdmfData *data = OH_UdmfData_Create();
+    OH_UdmfData_AddRecord(data, record);
+    OH_UdmfProperty* pro = OH_UdmfProperty_Create(data);
+    int permPro = Udmf_AuthPermission::UDMF_PERM_NONE;
+    ret = OH_UdmfProperty_SetAuthPermission(nullptr, permPro);
+    napi_value result = nullptr;
+    napi_create_int32(env, ret == UDMF_E_INVALID_PARAM, &result);
+    OH_UdmfProperty_Destroy(pro);
+    OH_UdmfData_Destroy(data);
+    OH_UdsFileUri_Destroy(fileUri);
+    OH_UdmfRecord_Destroy(record);
+    return result;
+}
+
 //========================================================================
 
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
@@ -1199,6 +1287,10 @@ EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
         {"OH_UdsFileUri_SetAuthPolicy_005", nullptr, OH_UdsFileUri_SetAuthPolicy_005, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"OH_UdsFileUri_SetAuthPolicy_006", nullptr, OH_UdsFileUri_SetAuthPolicy_006, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"OH_UdsFileUri_SetAuthPolicy_007", nullptr, OH_UdsFileUri_SetAuthPolicy_007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OH_UdmfProperty_SetAuthPermission_001", nullptr, OH_UdmfProperty_SetAuthPermission_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OH_UdmfProperty_SetAuthPermission_002", nullptr, OH_UdmfProperty_SetAuthPermission_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OH_UdmfProperty_SetAuthPermission_003", nullptr, OH_UdmfProperty_SetAuthPermission_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"OH_UdmfProperty_SetAuthPermission_004", nullptr, OH_UdmfProperty_SetAuthPermission_004, nullptr, nullptr, nullptr, napi_default, nullptr},
 
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

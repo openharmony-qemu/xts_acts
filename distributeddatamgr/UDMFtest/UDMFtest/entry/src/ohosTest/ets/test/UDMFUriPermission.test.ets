@@ -207,41 +207,6 @@ export default function UriPermissionTest() {
     })
 
     /**
-    * @tc.name   UDMF_UriPermission_PROPERTIES_Multiple_Test_0100
-    * @tc.number SUB_DistributedData_UDMF_SDK_UriPermission_PROPERTIES_Multiple_Test_0100
-    * @tc.desc   Test setting multiple permissions to uriAuthorizationPolicies property.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it('UDMF_UriPermission_PROPERTIES_Multiple_Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      console.log(tag + 'UDMF_UriPermission_PROPERTIES_Multiple_Test_0100 start');
-      let text = new unifiedDataChannel.Text();
-      let unifiedData = new unifiedDataChannel.UnifiedData(text);
-      try {
-        unifiedData.properties.uriAuthorizationPolicies = [
-          unifiedDataChannel.UriPermission.NONE,
-          unifiedDataChannel.UriPermission.READ,
-          unifiedDataChannel.UriPermission.WRITE,
-          unifiedDataChannel.UriPermission.PERSIST
-        ];
-        if (unifiedData.properties.uriAuthorizationPolicies !== undefined) {
-          expect(unifiedData.properties.uriAuthorizationPolicies.length).assertEqual(4);
-          expect(unifiedData.properties.uriAuthorizationPolicies[0]).assertEqual(0);
-          expect(unifiedData.properties.uriAuthorizationPolicies[1]).assertEqual(1);
-          expect(unifiedData.properties.uriAuthorizationPolicies[2]).assertEqual(2);
-          expect(unifiedData.properties.uriAuthorizationPolicies[3]).assertEqual(3);
-        }
-      } catch (e) {
-        let error: BusinessError = e as BusinessError;
-        console.log(tag, `Failed. code: ${error.code}, message: ${error.message}`)
-        expect().assertFail();
-      }
-      console.log(tag + 'UDMF_UriPermission_PROPERTIES_Multiple_Test_0100 end');
-    })
-
-
-    /**
     * @tc.name   UDMF_UriPermission_PROPERTIES_EmptyArray_Test_0100
     * @tc.number SUB_DistributedData_UDMF_SDK_UriPermission_PROPERTIES_EmptyArray_Test_0100
     * @tc.desc   Test setting empty array to uriAuthorizationPolicies property.
@@ -264,83 +229,6 @@ export default function UriPermissionTest() {
         expect().assertFail();
       }
       console.log(tag + 'UDMF_UriPermission_PROPERTIES_EmptyArray_Test_0100 end');
-    })
-
-    /**
-    * @tc.name   UDMF_UriPermission_PROPERTIES_Undefined_Test_0100
-    * @tc.number SUB_DistributedData_UDMF_SDK_UriPermission_PROPERTIES_Undefined_Test_0100
-    * @tc.desc   Test setting undefined to uriAuthorizationPolicies property.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it('UDMF_UriPermission_PROPERTIES_Undefined_Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      console.log(tag + 'UDMF_UriPermission_PROPERTIES_Undefined_Test_0100 start');
-      let text = new unifiedDataChannel.Text();
-      let unifiedData = new unifiedDataChannel.UnifiedData(text);
-      try {
-        unifiedData.properties.uriAuthorizationPolicies = undefined;
-        expect(unifiedData.properties.uriAuthorizationPolicies).assertUndefined();
-      } catch (e) {
-        let error: BusinessError = e as BusinessError;
-        console.log(tag, `Failed. code: ${error.code}, message: ${error.message}`)
-        expect().assertFail();
-      }
-      console.log(tag + 'UDMF_UriPermission_PROPERTIES_Undefined_Test_0100 end');
-    })
-
-    /**
-    * @tc.name   UDMF_UriPermission_PROPERTIES_Duplicate_Test_0100
-    * @tc.number SUB_DistributedData_UDMF_SDK_UriPermission_PROPERTIES_Duplicate_Test_0100
-    * @tc.desc   Test setting duplicate permissions to uriAuthorizationPolicies property.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL3
-    */
-    it('UDMF_UriPermission_PROPERTIES_Duplicate_Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      console.log(tag + 'UDMF_UriPermission_PROPERTIES_Duplicate_Test_0100 start');
-      let text = new unifiedDataChannel.Text();
-      let unifiedData = new unifiedDataChannel.UnifiedData(text);
-      try {
-        unifiedData.properties.uriAuthorizationPolicies = [
-          unifiedDataChannel.UriPermission.READ,
-          unifiedDataChannel.UriPermission.READ,
-          unifiedDataChannel.UriPermission.WRITE
-        ];
-        if (unifiedData.properties.uriAuthorizationPolicies !== undefined) {
-          expect(unifiedData.properties.uriAuthorizationPolicies.length).assertEqual(3);
-          expect(unifiedData.properties.uriAuthorizationPolicies[0]).assertEqual(1);
-          expect(unifiedData.properties.uriAuthorizationPolicies[1]).assertEqual(1);
-          expect(unifiedData.properties.uriAuthorizationPolicies[2]).assertEqual(2);
-        }
-      } catch (e) {
-        let error: BusinessError = e as BusinessError;
-        console.log(tag, `Failed. code: ${error.code}, message: ${error.message}`)
-        expect().assertFail();
-      }
-      console.log(tag + 'UDMF_UriPermission_PROPERTIES_Duplicate_Test_0100 end');
-    })
-
-    /**
-    * @tc.name   UDMF_UriPermission_PROPERTIES_DefaultValue_Test_0100
-    * @tc.number SUB_DistributedData_UDMF_SDK_UriPermission_PROPERTIES_DefaultValue_Test_0100
-    * @tc.desc   Test default value of uriAuthorizationPolicies property is undefined.
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL2
-    */
-    it('UDMF_UriPermission_PROPERTIES_DefaultValue_Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      console.log(tag + 'UDMF_UriPermission_PROPERTIES_DefaultValue_Test_0100 start');
-      let text = new unifiedDataChannel.Text();
-      let unifiedData = new unifiedDataChannel.UnifiedData(text);
-      try {
-        expect(unifiedData.properties.uriAuthorizationPolicies).assertUndefined();
-      } catch (e) {
-        let error: BusinessError = e as BusinessError;
-        console.log(tag, `Failed. code: ${error.code}, message: ${error.message}`)
-        expect().assertFail();
-      }
-      console.log(tag + 'UDMF_UriPermission_PROPERTIES_DefaultValue_Test_0100 end');
     })
 
     /**

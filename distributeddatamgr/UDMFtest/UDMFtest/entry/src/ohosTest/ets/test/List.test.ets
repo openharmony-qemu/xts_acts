@@ -39,7 +39,7 @@ export default function testsuite() {
     UDMFSupportClipboardApiTest()
     UDMFEntryTest()
     UDMFAddAPITest()
-	UriPermissionTest()
+	  UriPermissionTest()
   } else {
     EmptyTest()
   } 

@@ -24,6 +24,7 @@ import UtdFileNameTest from "./UtdFileNameExtentions.test";
 import UDMFDragBigDataJsApiTest from "./UDMFDragBigDataJsApi.test";
 import UDMFDragBigDataPartJsApiTest from "./UDMFDragBigDataJsApiPart.test";
 import UDMFAddApiStaticTest from "./UDMFAddStatic.test.ets";
+import UriPermissionTest from './UDMFUriPermission.test';
 export default function testsuite() {
     UDMFApiTest();
     UDMFApiDescriptorTest();
@@ -36,4 +37,5 @@ export default function testsuite() {
     UtdFileNameTest();
     UDMFDragBigDataPartJsApiTest();
     UDMFAddApiStaticTest();
+    UriPermissionTest()；
 }
