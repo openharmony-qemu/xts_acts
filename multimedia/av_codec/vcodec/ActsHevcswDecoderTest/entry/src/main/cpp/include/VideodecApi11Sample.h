@@ -94,6 +94,13 @@ public:
     int64_t syncOutputWaitTime = -1;
     bool queryOutputBufferEOS = false;
     bool queryInputBufferEOS = false;
+    bool retentionModeSet = false;
+    bool retentionRatioSet = false;
+    bool decoderSpeedSet = false;
+    bool enableHash = true;
+    int32_t defaultRetentionMode = 0;
+    int32_t defaultRetentionRadio = 0;
+    int32_t defaultDecoderSpeed = 0;
 
     int32_t Start();
     int32_t Stop();
