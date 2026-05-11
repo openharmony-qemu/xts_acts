@@ -1666,25 +1666,6 @@ export default function TextPicker() {
     });
 
     /**
-     * @tc.name   testPicker25
-     * @tc.number testPicker25
-     * @tc.desc   Testing createAssetWithShortTermPermission
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testPicker25', Level.LEVEL0, async (done: Function) => {
-      if (!isExecutePicker) {
-        done();
-        return;
-      }
-
-      
-      console.info("testPicker25 finish");
-      done();
-    });
-
-    /**
      * @tc.name   testPicker26
      * @tc.number testPicker26
      * @tc.desc   Testing PhotoPickerComponent grid margin and browser margin
