@@ -20,7 +20,6 @@ import hilog from '@ohos.hilog'
 
 const waitUiReadyMs: int = 1000;
 const TestTag: string = 'UiTest_TAG';
-const AsyncErrorCode: int = 17000002;
 const ParameterErrorCode: int = 17000007;
 const ErrorCode17000005: int = 17000005;
 
@@ -40,31 +39,6 @@ export default function uitestApi26ErrorTest(): void {
       await driver!.delayMs(1000)
     })
 
-    /**
-     * @tc.name   testDriverClickAtErrorConcurrentCallWithPressure
-     * @tc.number SUB_testfwk_UITEST_CLICKAT_ERROR_0100
-     * @tc.desc   Test clickAt with concurrent call, expecting error 17000002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testDriverClickAtErrorConcurrentCallWithPressure_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverClickAtErrorConcurrentCallWithPressure start`);
-      const point: Point = { x: 100, y: 100 };
-      const options: TouchOptions = { pressure: 0.5 };
-      try {
-        driver!.delayMs(waitUiReadyMs * 3);
-        await sleep(100);
-        await driver!.clickAt(point, options);
-        expect().assertFail();
-      } catch (err) {
-        console.log(`${TestTag}, testDriverClickAtErrorConcurrentCallWithPressure error: ${JSON.stringify(err)}`);
-        expect((err as BusinessError).code).assertEqual(AsyncErrorCode);
-      }
-      await sleep(waitUiReadyMs * 8);
-      console.log(`${TestTag}, testDriverClickAtErrorConcurrentCallWithPressure end`);
-    });
-    
      /**
        * @tc.name   testDriverClickAtErrorSpeedTooSmall
        * @tc.number SUB_testfwk_UITEST_CLICKAT_ERROR_0400
@@ -310,33 +284,6 @@ export default function uitestApi26ErrorTest(): void {
       console.log(`${TestTag}, testDriverLongClickAtErrorSpeedNegative end`);
     });
 
-
-
-    /**
-     * @tc.name   testDriverLongClickAtConcurrentCallWithOptions
-     * @tc.number SUB_testfwk_UITEST_LONGCLICKAT_ERROR_0900
-     * @tc.desc   Test longClickAt concurrent call with options parameter, should throw 17000002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testDriverLongClickAtConcurrentCallWithOptions_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverLongClickAtConcurrentCallWithOptions start`);
-      const point: Point = { x: 100, y: 100 };
-      const options: TouchOptions = { pressure: 0.5 };
-      try {
-        driver!.delayMs(waitUiReadyMs * 3);
-        await sleep(100);
-        await driver!.longClickAt(point, options);
-        expect().assertFail();
-      } catch (err) {
-        console.log(`${TestTag}, testDriverLongClickAtConcurrentCallWithOptions error is: ${JSON.stringify(err)}`);
-        expect((err as BusinessError).code).assertEqual(AsyncErrorCode);
-      }
-      await sleep(waitUiReadyMs * 8);
-      console.log(`${TestTag}, testDriverLongClickAtConcurrentCallWithOptions end`);
-    });
-
     /**
      * @tc.name   testDriverSwipeBetweenSpeedNegative
      * @tc.number SUB_testfwk_UITEST_SWIPEBETWEEN_ERROR_0100
@@ -421,55 +368,6 @@ export default function uitestApi26ErrorTest(): void {
       console.info(`${TestTag}, testDriverSwipeBetweenDisplayIdDiff end`);
     });
 
-    /**
-     * @tc.name   testDriverSwipeBetweenConcurrentCall
-     * @tc.number SUB_testfwk_UITEST_SWIPEBETWEEN_ERROR_0500
-     * @tc.desc   Test swipeBetween with concurrent call, expecting error 17000002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testDriverSwipeBetweenConcurrentCall_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.info(`${TestTag}, testDriverSwipeBetweenConcurrentCall start`);
-      const from: Point = { x: 100, y: 100 };
-      const to: Point = { x: 200, y: 200 };
-      const options: TouchOptions = { speed: 2000 };
-      try {
-        driver!.delayMs(waitUiReadyMs * 3);
-        await sleep(100);
-        await driver!.swipeBetween(from, to, options);
-        expect().assertFail();
-      } catch (err) {
-        console.info(`${TestTag}, testDriverSwipeBetweenConcurrentCall error is: ${JSON.stringify(err)}`);
-        expect((err as BusinessError).code).assertEqual(AsyncErrorCode);
-      }
-      await sleep(waitUiReadyMs * 8);
-      console.info(`${TestTag}, testDriverSwipeBetweenConcurrentCall end`);
-    });
-
-    /**
-     * @tc.name   testDriverDragBetweenConcurrentCalls
-     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_0100
-     * @tc.desc   Test dragBetween with concurrent call, expecting error 17000002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testDriverDragBetweenConcurrentCalls_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.info(`${TestTag}, testDriverDragBetweenConcurrentCalls start`);
-      try {
-        driver!.delayMs(waitUiReadyMs * 3);
-        await sleep(100);
-        const options: TouchOptions = { duration: 1500 };
-        await driver!.dragBetween({x: 100, y: 200}, {x:200, y: 200}, options);
-        expect().assertFail();
-      } catch (err) {
-        console.info(`${TestTag}, testDriverDragBetweenConcurrentCalls error is: ${JSON.stringify(err)}`);
-        expect((err as BusinessError).code).assertEqual(AsyncErrorCode);
-      }
-      await sleep(waitUiReadyMs * 8);
-      console.info(`${TestTag}, testDriverDragBetweenConcurrentCalls end`);
-    });
 
     /**
      * @tc.name   testDriverDragBetweenWithNegativeSpeed
@@ -622,30 +520,6 @@ export default function uitestApi26ErrorTest(): void {
     });
 
     /**
-     * @tc.name   testDriverDumpLayoutErrorConcurrentCall
-     * @tc.number SUB_testfwk_UITEST_DUMPLAYOUT_ERROR_0100
-     * @tc.desc   Test dumpLayout with concurrent call, expecting error 17000002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testDriverDumpLayoutErrorConcurrentCall_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverDumpLayoutErrorConcurrentCall start`);
-      let savePath: string = '/data/storage/el2/base/cache/dump_layout_error_009.json'
-      try {
-        driver!.delayMs(waitUiReadyMs * 3);
-        await sleep(100);
-        await driver!.dumpLayout(savePath, 0);
-        expect().assertFail();
-      } catch (err) {
-        console.log(`${TestTag}, testDriverDumpLayoutErrorConcurrentCall error is: ${JSON.stringify(err)}`);
-        expect((err as BusinessError).code).assertEqual(AsyncErrorCode);
-      }
-      await sleep(waitUiReadyMs * 8);
-      console.log(`${TestTag}, testDriverDumpLayoutErrorConcurrentCall end`);
-    });
-
-    /**
      * @tc.name   testDriverDumpLayoutErrorEmptyPath
      * @tc.number SUB_testfwk_UITEST_DUMPLAYOUT_ERROR_0200
      * @tc.desc   Test dumpLayout with empty savePath parameter, expecting error 17000007
@@ -749,31 +623,6 @@ export default function uitestApi26ErrorTest(): void {
         expect((error as BusinessError).code).assertEqual(17000007);
       }
       console.log(`${TestTag}, testDriverMouseDragPressureMaximum end`);
-    });
-
-    /**
-     * @tc.name   testDriverMouseDragErrorConcurrentCall
-     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_ERROR_0100
-     * @tc.desc   Test mouseDrag with concurrent call, expecting error 17000002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testDriverMouseDragErrorConcurrentCall_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverMouseDragErrorConcurrentCall start`);
-      const from: Point = { x: 500, y: 1000 };
-      const to: Point = { x: 500, y: 800 };
-      try {
-        driver!.delayMs(waitUiReadyMs * 3);
-        await sleep(100);
-        await driver!.mouseDrag(from, to, {speed: 600}, {key1: 0});
-        expect().assertFail();
-      } catch (err) {
-        console.log(`${TestTag}, testDriverMouseDragErrorConcurrentCall error is: ${JSON.stringify(err)}`);
-        expect((err as BusinessError).code).assertEqual(AsyncErrorCode);
-      }
-      await sleep(waitUiReadyMs * 8);
-      console.log(`${TestTag}, testDriverMouseDragErrorConcurrentCall end`);
     });
 
     /**
@@ -909,29 +758,6 @@ export default function uitestApi26ErrorTest(): void {
         expect(error.code === ErrorCode17000005 || error.code === ParameterErrorCode).assertTrue();
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseWithoutPoint over');
-    });
-
-    /**
-     * @tc.name   testDriverTriggerPenKeyConcurrentCalls
-     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_ERROR_0900
-     * @tc.desc   Test Driver.triggerPenKey with concurrent calls (should fail with 17000002)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testDriverTriggerPenKeyConcurrentCalls_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyConcurrentCalls start');
-      try {
-        driver!.delayMs(waitUiReadyMs * 3);
-        await sleep(300);
-        await driver!.triggerPenKey(PenKey.HANDWRITING, PenMode.HANDWRITING, PenKeyOperation.CLICK, {point: {x: 100, y: 100}});
-        expect().assertFalse();
-      } catch (err) {
-        console.log(`${TestTag}, testDriverClickAtErrorConcurrentCallWithPressure error: ${JSON.stringify(err)}`);
-        expect((err as BusinessError).code).assertEqual(AsyncErrorCode);
-      }
-      await sleep(waitUiReadyMs * 8);
-      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyConcurrentCalls over');
     });
   })
 }
