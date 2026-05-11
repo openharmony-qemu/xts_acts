@@ -59,8 +59,7 @@ export default function ShowToastOptionsTest() {
       await btn.click();
       await CommonFunc.sleep(500);
 
-      let resultText = await driver.findComponent(ON.id('result_text'));
-      expect(resultText).not().assertUndefined();
+      let resultText = await driver.findComponent(ON.id('result_text'));     
       let text = await resultText.getText();
       expect(text.indexOf('ToastId')).assertLarger(-1);
       console.info('ShowToastOptionsTest_Message_0100 result: ' + text);
@@ -87,7 +86,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(500);
 
       let resultText = await driver.findComponent(ON.id('result_text'));
-      expect(resultText).not().assertUndefined();
+      
       let text = await resultText.getText();
       expect(text.indexOf('ToastId')).assertLarger(-1);
       console.info('ShowToastOptionsTest_Message_0200 result: ' + text);
@@ -114,7 +113,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(500);
 
       let resultText = await driver.findComponent(ON.id('result_text'));
-      expect(resultText).not().assertUndefined();
+      
       let text = await resultText.getText();
       expect(text.indexOf('ToastId')).assertLarger(-1);
       console.info('ShowToastOptionsTest_Duration_0100 result: ' + text);
@@ -141,7 +140,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(500);
 
       let resultText = await driver.findComponent(ON.id('result_text'));
-      expect(resultText).not().assertUndefined();
+      
       let text = await resultText.getText();
       expect(text.indexOf('ToastId')).assertLarger(-1);
       console.info('ShowToastOptionsTest_Duration_0200 result: ' + text);
@@ -169,7 +168,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(500);
 
       let resultText = await driver.findComponent(ON.id('result_text'));
-      expect(resultText).not().assertUndefined();
+      
       let text = await resultText.getText();
       expect(text.indexOf('ToastId')).assertLarger(-1);
       console.info('ShowToastOptionsTest_Bottom_0100 result: ' + text);
@@ -196,7 +195,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(500);
 
       let resultText = await driver.findComponent(ON.id('result_text'));
-      expect(resultText).not().assertUndefined();
+      
       let text = await resultText.getText();
       expect(text.indexOf('ToastId')).assertLarger(-1);
       console.info('ShowToastOptionsTest_Bottom_0200 result: ' + text);
@@ -218,14 +217,12 @@ export default function ShowToastOptionsTest() {
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
-      expect(Alignment.Top).assertEqual(Alignment.Top);
-
       let btn = await driver.findComponent(ON.id('btn_align_top'));
       await btn.click();
       await CommonFunc.sleep(500);
 
       let resultText = await driver.findComponent(ON.id('result_text'));
-      expect(resultText).not().assertUndefined();
+      
       let text = await resultText.getText();
       expect(text.indexOf('ToastId')).assertLarger(-1);
       console.info('ShowToastOptionsTest_Alignment_0100 result: ' + text);
@@ -247,7 +244,6 @@ export default function ShowToastOptionsTest() {
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
-      expect(Alignment.Center).assertEqual(Alignment.Center);
 
       let btn = await driver.findComponent(ON.id('btn_align_center'));
       
@@ -255,7 +251,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(500);
 
       let resultText = await driver.findComponent(ON.id('result_text'));
-      expect(resultText).not().assertUndefined();
+      
       let text = await resultText.getText();
       expect(text.indexOf('ToastId')).assertLarger(-1);
       console.info('ShowToastOptionsTest_Alignment_0200 result: ' + text);
@@ -277,7 +273,6 @@ export default function ShowToastOptionsTest() {
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
-      expect(Alignment.Bottom).assertEqual(Alignment.Bottom);
 
       let btn = await driver.findComponent(ON.id('btn_align_bottom'));
       
@@ -285,7 +280,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(500);
 
       let resultText = await driver.findComponent(ON.id('result_text'));
-      expect(resultText).not().assertUndefined();
+      
       let text = await resultText.getText();
       expect(text.indexOf('ToastId')).assertLarger(-1);
       console.info('ShowToastOptionsTest_Alignment_0300 result: ' + text);
@@ -307,15 +302,13 @@ export default function ShowToastOptionsTest() {
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
-      expect(Alignment.TopStart).assertEqual(Alignment.TopStart);
-
       let btn = await driver.findComponent(ON.id('btn_align_topstart'));
       
       await btn.click();
       await CommonFunc.sleep(500);
 
       let resultText = await driver.findComponent(ON.id('result_text'));
-      expect(resultText).not().assertUndefined();
+      
       let text = await resultText.getText();
       expect(text.indexOf('ToastId')).assertLarger(-1);
       console.info('ShowToastOptionsTest_Alignment_0400 result: ' + text);
@@ -343,7 +336,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(500);
 
       let resultText = await driver.findComponent(ON.id('result_text'));
-      expect(resultText).not().assertUndefined();
+      
       let text = await resultText.getText();
       expect(text.indexOf('ToastId')).assertLarger(-1);
       console.info('ShowToastOptionsTest_Offset_0100 result: ' + text);
@@ -371,7 +364,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(500);
 
       let resultText = await driver.findComponent(ON.id('result_text'));
-      expect(resultText).not().assertUndefined();
+      
       let text = await resultText.getText();
       expect(text.indexOf('ToastId')).assertLarger(-1);
       console.info('ShowToastOptionsTest_Offset_0200 result: ' + text);
@@ -401,7 +394,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(500);
 
       let resultText = await driver.findComponent(ON.id('result_text'));
-      expect(resultText).not().assertUndefined();
+      
       let text = await resultText.getText();
       expect(text.indexOf('ToastId')).assertLarger(-1);
       console.info('ShowToastOptionsTest_ShowMode_0100 result: ' + text);
@@ -431,7 +424,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(500);
 
       let resultText = await driver.findComponent(ON.id('result_text'));
-      expect(resultText).not().assertUndefined();
+      
       let text = await resultText.getText();
       expect(text.indexOf('ToastId')).assertLarger(-1);
       console.info('ShowToastOptionsTest_ShowMode_0200 result: ' + text);
@@ -459,7 +452,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(500);
 
       let resultText = await driver.findComponent(ON.id('result_text'));
-      expect(resultText).not().assertUndefined();
+      
       let text = await resultText.getText();
       expect(text.indexOf('ToastId')).assertLarger(-1);
       console.info('ShowToastOptionsTest_BackgroundColor_0100 result: ' + text);
@@ -487,7 +480,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(500);
 
       let resultText = await driver.findComponent(ON.id('result_text'));
-      expect(resultText).not().assertUndefined();
+      
       let text = await resultText.getText();
       expect(text.indexOf('ToastId')).assertLarger(-1);
       console.info('ShowToastOptionsTest_TextColor_0100 result: ' + text);
@@ -515,7 +508,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(500);
 
       let resultText = await driver.findComponent(ON.id('result_text'));
-      expect(resultText).not().assertUndefined();
+      
       let text = await resultText.getText();
       expect(text.indexOf('ToastId')).assertLarger(-1);
       console.info('ShowToastOptionsTest_BackgroundBlurStyle_0100 result: ' + text);
@@ -544,7 +537,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(500);
 
       let resultText = await driver.findComponent(ON.id('result_text'));
-      expect(resultText).not().assertUndefined();
+      
       let text = await resultText.getText();
       expect(text.indexOf('ToastId')).assertLarger(-1);
       console.info('ShowToastOptionsTest_BackgroundBlurStyle_0200 result: ' + text);
@@ -572,7 +565,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(500);
 
       let resultText = await driver.findComponent(ON.id('result_text'));
-      expect(resultText).not().assertUndefined();
+      
       let text = await resultText.getText();
       expect(text.indexOf('ToastId')).assertLarger(-1);
       console.info('ShowToastOptionsTest_Shadow_0100 result: ' + text);
@@ -600,7 +593,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(500);
 
       let resultText = await driver.findComponent(ON.id('result_text'));
-      expect(resultText).not().assertUndefined();
+      
       let text = await resultText.getText();
       expect(text.indexOf('ToastId')).assertLarger(-1);
       console.info('ShowToastOptionsTest_Shadow_0200 result: ' + text);
@@ -628,7 +621,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(500);
 
       let resultText = await driver.findComponent(ON.id('result_text'));
-      expect(resultText).not().assertUndefined();
+      
       let text = await resultText.getText();
       expect(text.indexOf('ToastId')).assertLarger(-1);
       console.info('ShowToastOptionsTest_EnableHoverMode_0100 result: ' + text);
@@ -656,7 +649,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(500);
 
       let resultText = await driver.findComponent(ON.id('result_text'));
-      expect(resultText).not().assertUndefined();
+      
       let text = await resultText.getText();
       expect(text.indexOf('ToastId')).assertLarger(-1);
       console.info('ShowToastOptionsTest_EnableHoverMode_0200 result: ' + text);
@@ -688,7 +681,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(500);
 
       let resultText = await driver.findComponent(ON.id('result_text'));
-      expect(resultText).not().assertUndefined();
+      
       let text = await resultText.getText();
       expect(text.indexOf('ToastId')).assertLarger(-1);
       console.info('ShowToastOptionsTest_SystemMaterial_0100 result: ' + text);
@@ -716,7 +709,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(500);
 
       let resultText = await driver.findComponent(ON.id('result_text'));
-      expect(resultText).not().assertUndefined();
+      
       let text = await resultText.getText();
       expect(text.indexOf('ToastId')).assertLarger(-1);
       console.info('ShowToastOptionsTest_AllParameters_0100 result: ' + text);
@@ -744,7 +737,7 @@ export default function ShowToastOptionsTest() {
       await CommonFunc.sleep(500);
 
       let resultText = await driver.findComponent(ON.id('result_text'));
-      expect(resultText).not().assertUndefined();
+      
       let text = await resultText.getText();
       expect(text.indexOf('ToastId')).assertLarger(-1);
 
