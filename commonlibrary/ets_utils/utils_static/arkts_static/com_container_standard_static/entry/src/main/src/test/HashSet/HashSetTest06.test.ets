@@ -342,7 +342,7 @@ export default function HashSet06Test(): void {
       console.log(TAG + ' start');
 
       const hashSet = new HashSet<string>();
-      expect(true).assertTrue();
+      expect(hashSet.length).assertEqual(0);
 
       for (let i: int = 0; i < 5; i++) {
         hashSet.add("value" + i);
@@ -466,7 +466,7 @@ export default function HashSet06Test(): void {
       let count: int = 0;
       hashSet.forEach((value: Uint8Array, key: Uint8Array): void => {
         count++;
-        expect(true).assertTrue();
+        expect(value !== null && value !== undefined).assertTrue();
       });
 
       expect(count).assertEqual(2);
@@ -528,7 +528,7 @@ export default function HashSet06Test(): void {
       let count: int = 0;
       hashSet.forEach((value: Int8Array, key: Int8Array): void => {
         count++;
-        expect(true).assertTrue();
+        expect(value !== null && value !== undefined).assertTrue();
       });
 
       expect(count).assertEqual(3);

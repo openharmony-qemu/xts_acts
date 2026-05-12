@@ -1041,7 +1041,7 @@ export default function HashSet02Test(): void {
         const result6: boolean = hashSet.has(undefined as MixedType);
         expect(result6).assertFalse();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e !== undefined).assertTrue();
       }
 
       const result7: boolean = hashSet.has(NaN);

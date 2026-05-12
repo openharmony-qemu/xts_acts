@@ -240,7 +240,7 @@ export default function HashSet07Test(): void {
       let idSum: int = 0;
       hashSet.forEach((value: ObjectWithPromise07, key: ObjectWithPromise07): void => {
         idSum += value.id;
-        expect(true).assertTrue();
+        expect(value !== null && value !== undefined).assertTrue();
       });
 
       expect(idSum).assertEqual(3);
@@ -356,7 +356,7 @@ export default function HashSet07Test(): void {
       console.log(TAG + ' start');
 
       const hashSet = new HashSet<number>();
-      expect(true).assertTrue();
+      expect(hashSet.length).assertEqual(0);
       hashSet.add(1);
       hashSet.add(2);
       hashSet.add(3);
@@ -384,7 +384,7 @@ export default function HashSet07Test(): void {
         const err = error as Error;
         errorMessage = err.message;
         console.log("Behavior during iteration: " + errorMessage);
-        expect(true).assertTrue();
+        expect(errorMessage.length > 0).assertTrue();
       }
 
       if (errorCaught) {
@@ -405,7 +405,7 @@ export default function HashSet07Test(): void {
       console.log(TAG + ' start');
 
       const hashSet = new HashSet<string>();
-      expect(true).assertTrue();
+      expect(hashSet.length).assertEqual(0);
       hashSet.add("apple");
       hashSet.add("banana");
       hashSet.add("cherry");
@@ -434,7 +434,7 @@ export default function HashSet07Test(): void {
         const err = error as Error;
         errorMessage = err.message;
         console.log("Behavior during iteration: " + errorMessage);
-        expect(true).assertTrue();
+        expect(errorMessage.length > 0).assertTrue();
       }
 
       if (errorCaught) {
@@ -455,7 +455,7 @@ export default function HashSet07Test(): void {
       console.log(TAG + ' start');
 
       const hashSet = new HashSet<number>();
-      expect(true).assertTrue();
+      expect(hashSet.length).assertEqual(0);
 
       for (let i: int = 0; i < 5; i++) {
         hashSet.add(i);
@@ -481,7 +481,7 @@ export default function HashSet07Test(): void {
         const err = error as Error;
         errorMessage = err.message;
         console.log("Behavior during iteration: " + errorMessage);
-        expect(true).assertTrue();
+        expect(errorMessage.length > 0).assertTrue();
       }
 
       if (errorCaught) {
@@ -502,7 +502,7 @@ export default function HashSet07Test(): void {
       console.log(TAG + ' start');
 
       const hashSet = new HashSet<string>();
-      expect(true).assertTrue();
+      expect(hashSet.length).assertEqual(0);
       hashSet.add("initial1");
       hashSet.add("initial2");
       hashSet.add("initial3");
@@ -542,7 +542,7 @@ export default function HashSet07Test(): void {
         const err = error as Error;
         errorMessage = err.message;
         console.log("Behavior during complex iteration: " + errorMessage);
-        expect(true).assertTrue();
+        expect(errorMessage.length > 0).assertTrue();
       }
 
       if (errorCaught) {
@@ -563,7 +563,7 @@ export default function HashSet07Test(): void {
       console.log(TAG + ' start');
 
       const hashSet = new HashSet<number>();
-      expect(true).assertTrue();
+      expect(hashSet.length).assertEqual(0);
       hashSet.add(100);
       hashSet.add(200);
       hashSet.add(300);
@@ -597,7 +597,7 @@ export default function HashSet07Test(): void {
         const err = error as Error;
         errorMessage = err.message;
         console.log("Behavior with thisArg and modification: " + errorMessage);
-        expect(true).assertTrue();
+        expect(errorMessage.length > 0).assertTrue();
       }
 
       if (errorCaught) {
@@ -618,7 +618,7 @@ export default function HashSet07Test(): void {
       console.log(TAG + ' start');
 
       const hashSet = new HashSet<number>();
-      expect(true).assertTrue();
+      expect(hashSet.length).assertEqual(0);
       hashSet.add(1);
       expect(hashSet.length).assertEqual(1);
 
@@ -643,7 +643,7 @@ export default function HashSet07Test(): void {
         const err = error as Error;
         errorMessage = err.message;
         console.log("Infinite loop prevention: " + errorMessage);
-        expect(true).assertTrue();
+        expect(errorMessage.length > 0).assertTrue();
       }
 
       if (errorCaught) {
@@ -1368,7 +1368,7 @@ export default function HashSet07Test(): void {
       console.log(TAG + ' start');
 
       const hashSet = new HashSet<string>();
-      expect(true).assertTrue();
+      expect(hashSet.length).assertEqual(0);
       hashSet.add("test");
       expect(hashSet.length).assertEqual(1);
 
@@ -1392,7 +1392,7 @@ export default function HashSet07Test(): void {
         let errorCode: number = err.code != undefined ? err.code! : 0;
         errorMessage = err.message != undefined ? err.message! : '';
         console.log("Error occurred: " + errorMessage);
-        expect(true).assertTrue();
+        expect(errorMessage.length > 0).assertTrue();
       }
 
       if (errorCaught) {
@@ -1671,7 +1671,7 @@ export default function HashSet07Test(): void {
       hashSet.add(array2);
       let count: int = 0;
       for (const item of hashSet) {
-        expect(true).assertTrue();
+        expect(item !== null && item !== undefined).assertTrue();
         count++;
       }
       expect(count).assertEqual(2);
@@ -1695,7 +1695,7 @@ export default function HashSet07Test(): void {
       hashSet.add(array2);
       let count: int = 0;
       for (const item of hashSet) {
-        expect(true).assertTrue();
+        expect(item !== null && item !== undefined).assertTrue();
         count++;
       }
       expect(count).assertEqual(2);
@@ -1719,7 +1719,7 @@ export default function HashSet07Test(): void {
       hashSet.add(array2);
       let count: int = 0;
       for (const item of hashSet) {
-        expect(true).assertTrue();
+        expect(item !== null && item !== undefined).assertTrue();
         count++;
       }
       expect(count).assertEqual(2);
@@ -1743,7 +1743,7 @@ export default function HashSet07Test(): void {
       hashSet.add(array2);
       let count: int = 0;
       for (const item of hashSet) {
-        expect(true).assertTrue();
+        expect(item !== null && item !== undefined).assertTrue();
         count++;
       }
       expect(count).assertEqual(2);
@@ -1767,7 +1767,7 @@ export default function HashSet07Test(): void {
       hashSet.add(array2);
       let count: int = 0;
       for (const item of hashSet) {
-        expect(true).assertTrue();
+        expect(item !== null && item !== undefined).assertTrue();
         count++;
       }
       expect(count).assertEqual(2);
@@ -1791,7 +1791,7 @@ export default function HashSet07Test(): void {
       hashSet.add(array2);
       let count: int = 0;
       for (const item of hashSet) {
-        expect(true).assertTrue();
+        expect(item !== null && item !== undefined).assertTrue();
         count++;
       }
       expect(count).assertEqual(2);
@@ -1815,7 +1815,7 @@ export default function HashSet07Test(): void {
       hashSet.add(array2);
       let count: int = 0;
       for (const item of hashSet) {
-        expect(true).assertTrue();
+        expect(item !== null && item !== undefined).assertTrue();
         count++;
       }
       expect(count).assertEqual(2);
@@ -1839,7 +1839,7 @@ export default function HashSet07Test(): void {
       hashSet.add(array2);
       let count: int = 0;
       for (const item of hashSet) {
-        expect(true).assertTrue();
+        expect(item !== null && item !== undefined).assertTrue();
         count++;
       }
       expect(count).assertEqual(2);
