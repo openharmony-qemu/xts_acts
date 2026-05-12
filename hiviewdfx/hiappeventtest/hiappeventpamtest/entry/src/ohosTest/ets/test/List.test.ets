@@ -18,6 +18,7 @@ import HiAppEventconfigEventPolicy from './HiAppEventconfigEventPolicy.test'
 import HiAppEventMtbf from './HiAppEventMtbf.test';
 import ConfigEventPolicyPage from './ConfigEventPolicyPage.test';
 import HiappEventFuGaiLv from './HiappEventFuGaiLv.test'
+import HiAppEventConfigTest from './HiAppEventConfigTest.test'
 
 export default function testsuite() {
   HiAppEventPamTest();
@@ -26,4 +27,5 @@ export default function testsuite() {
   HiAppEventMtbf();
   ConfigEventPolicyPage();
   HiappEventFuGaiLv();
+  HiAppEventConfigTest();
 }
