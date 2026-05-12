@@ -1952,5 +1952,515 @@ export default function bluetoothConnectionTest() {
         }
         done();
       })
+
+      /**
+       * @tc.number SUB_Communication_BP_PairDevice_Callback_DeviceId_Empty_001
+       * @tc.name subCommunicationBpPairDeviceCallbackDeviceIdEmpty001
+       * @tc.desc Test pairDevice(callback) with empty string deviceId
+       * @tc.level Level 0
+       * @tc.type Function
+       * @tc.size MEDIUMTEST
+       */
+      it("subCommunicationBpPairDeviceCallbackDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+          let caseName = "SUB_Communication_BP_PairDevice_Callback_DeviceId_Empty_001";
+          hilog.info(domain, tag, `${caseName} test start`);
+          try {
+              connection.pairDevice("", (err: BusinessError | null) => {
+                  if (err) {
+                      hilog.info(domain, tag, `${caseName} pairDevice callback error: ${err.code}, ${err.message}`);
+                      expect(err.code).assertEqual(401);
+                  } else {
+                      hilog.info(domain, tag, `${caseName} pairDevice callback success`);
+                      expect().assertFail();
+                  }
+              });
+          } catch (err) {
+              err = err as BusinessError;
+              hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
+              hilog.info(domain, tag, `${caseName} errCode: ${err.code}, errMessage: ${err.message}`);
+              expect(err.code).assertEqual(401);
+          }
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+      })
+
+      /**
+       * @tc.number SUB_Communication_BP_PairDevice_Promise_DeviceId_Empty_001
+       * @tc.name subCommunicationBpPairDevicePromiseDeviceIdEmpty001
+       * @tc.desc Test pairDevice(promise) with empty string deviceId
+       * @tc.level Level 0
+       * @tc.type Function
+       * @tc.size MEDIUMTEST
+       */
+      it("subCommunicationBpPairDevicePromiseDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+          let caseName = "SUB_Communication_BP_PairDevice_Promise_DeviceId_Empty_001";
+          hilog.info(domain, tag, `${caseName} test start`);
+          try {
+              await connection.pairDevice("").then(() => {
+                  hilog.info(domain, tag, `${caseName} pairDevice promise success`);
+                  expect().assertFail();
+              });
+          } catch (err) {
+              err = err as BusinessError;
+              hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
+              hilog.info(domain, tag, `${caseName} errCode: ${err.code}, errMessage: ${err.message}`);
+              expect(err.code).assertEqual(401);
+          }
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+      })
+
+      /**
+       * @tc.number SUB_Communication_BP_GetRemoteDeviceName_DeviceId_Empty_001
+       * @tc.name subCommunicationBpGetRemoteDeviceNameDeviceIdEmpty001
+       * @tc.desc Test getRemoteDeviceName with empty string deviceId
+       * @tc.level Level 0
+       * @tc.type Function
+       * @tc.size MEDIUMTEST
+       */
+      it("subCommunicationBpGetRemoteDeviceNameDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+          let caseName = "SUB_Communication_BP_GetRemoteDeviceName_DeviceId_Empty_001";
+          hilog.info(domain, tag, `${caseName} test start`);
+          try {
+              let name: string = connection.getRemoteDeviceName("");
+              hilog.info(domain, tag, `${caseName} getRemoteDeviceName result: ${name}`);
+              expect().assertFail();
+          } catch (err) {
+              err = err as BusinessError;
+              hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
+              hilog.info(domain, tag, `${caseName} errCode: ${err.code}, errMessage: ${err.message}`);
+              expect(err.code).assertEqual(401);
+          }
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+      })
+
+      /**
+       * @tc.number SUB_Communication_BP_GetRemoteDeviceClass_DeviceId_Empty_001
+       * @tc.name subCommunicationBpGetRemoteDeviceClassDeviceIdEmpty001
+       * @tc.desc Test getRemoteDeviceClass with empty string deviceId
+       * @tc.level Level 0
+       * @tc.type Function
+       * @tc.size MEDIUMTEST
+       */
+      it("subCommunicationBpGetRemoteDeviceClassDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+          let caseName = "SUB_Communication_BP_GetRemoteDeviceClass_DeviceId_Empty_001";
+          hilog.info(domain, tag, `${caseName} test start`);
+          try {
+              let deviceClass: connection.DeviceClass = connection.getRemoteDeviceClass("");
+              hilog.info(domain, tag, `${caseName} getRemoteDeviceClass result: ${JSON.stringify(deviceClass)}`);
+              expect().assertFail();
+          } catch (err) {
+              err = err as BusinessError;
+              hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
+              hilog.info(domain, tag, `${caseName} errCode: ${err.code}, errMessage: ${err.message}`);
+              expect(err.code).assertEqual(401);
+          }
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+      })
+
+      /**
+       * @tc.number SUB_Communication_BP_GetPairState_DeviceId_Empty_001
+       * @tc.name subCommunicationBpGetPairStateDeviceIdEmpty001
+       * @tc.desc Test getPairState with empty string deviceId
+       * @tc.level Level 0
+       * @tc.type Function
+       * @tc.size MEDIUMTEST
+       */
+      it("subCommunicationBpGetPairStateDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+          let caseName = "SUB_Communication_BP_GetPairState_DeviceId_Empty_001";
+          hilog.info(domain, tag, `${caseName} test start`);
+          try {
+              let state: connection.BondState = connection.getPairState("");
+              hilog.info(domain, tag, `${caseName} getPairState result: ${state}`);
+              expect().assertFail();
+          } catch (err) {
+              err = err as BusinessError;
+              hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
+              hilog.info(domain, tag, `${caseName} errCode: ${err.code}, errMessage: ${err.message}`);
+              expect(err.code).assertEqual(401);
+          }
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+      })
+
+      /**
+       * @tc.number SUB_Communication_BP_SetDevicePairingConfirmation_DeviceId_Empty_001
+       * @tc.name subCommunicationBpSetDevicePairingConfirmationDeviceIdEmpty001
+       * @tc.desc Test setDevicePairingConfirmation with empty string deviceId
+       * @tc.level Level 0
+       * @tc.type Function
+       * @tc.size MEDIUMTEST
+       */
+      it("subCommunicationBpSetDevicePairingConfirmationDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+          let caseName = "SUB_Communication_BP_SetDevicePairingConfirmation_DeviceId_Empty_001";
+          hilog.info(domain, tag, `${caseName} test start`);
+          try {
+              connection.setDevicePairingConfirmation("", false);
+              hilog.info(domain, tag, `${caseName} setDevicePairingConfirmation success`);
+              expect().assertFail();
+          } catch (err) {
+              err = err as BusinessError;
+              hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
+              hilog.info(domain, tag, `${caseName} errCode: ${err.code}, errMessage: ${err.message}`);
+              expect(err.code).assertEqual(401);
+          }
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+      })
+
+      /**
+       * @tc.number SUB_Communication_BP_SetDevicePinCode_Callback_DeviceId_Empty_001
+       * @tc.name subCommunicationBpSetDevicePinCodeCallbackDeviceIdEmpty001
+       * @tc.desc Test setDevicePinCode(callback) with empty string deviceId
+       * @tc.level Level 0
+       * @tc.type Function
+       * @tc.size MEDIUMTEST
+       */
+      it("subCommunicationBpSetDevicePinCodeCallbackDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+          let caseName = "SUB_Communication_BP_SetDevicePinCode_Callback_DeviceId_Empty_001";
+          hilog.info(domain, tag, `${caseName} test start`);
+          try {
+              connection.setDevicePinCode("", "12345", (err: BusinessError | null) => {
+                  if (err) {
+                      hilog.info(domain, tag, `${caseName} setDevicePinCode callback error: ${err.code}, ${err.message}`);
+                      expect(err.code).assertEqual(401);
+                  } else {
+                      hilog.info(domain, tag, `${caseName} setDevicePinCode callback success`);
+                      expect().assertFail();
+                  }
+              });
+          } catch (err) {
+              err = err as BusinessError;
+              hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
+              hilog.info(domain, tag, `${caseName} errCode: ${err.code}, errMessage: ${err.message}`);
+              expect(err.code).assertEqual(401);
+          }
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+      })
+
+      /**
+       * @tc.number SUB_Communication_BP_SetDevicePinCode_Promise_DeviceId_Empty_001
+       * @tc.name subCommunicationBpSetDevicePinCodePromiseDeviceIdEmpty001
+       * @tc.desc Test setDevicePinCode(promise) with empty string deviceId
+       * @tc.level Level 0
+       * @tc.type Function
+       * @tc.size MEDIUMTEST
+       */
+      it("subCommunicationBpSetDevicePinCodePromiseDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+          let caseName = "SUB_Communication_BP_SetDevicePinCode_Promise_DeviceId_Empty_001";
+          hilog.info(domain, tag, `${caseName} test start`);
+          try {
+              await connection.setDevicePinCode("", "12345").then(() => {
+                  hilog.info(domain, tag, `${caseName} setDevicePinCode promise success`);
+                  expect().assertFail();
+              });
+          } catch (err) {
+              err = err as BusinessError;
+              hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
+              hilog.info(domain, tag, `${caseName} errCode: ${err.code}, errMessage: ${err.message}`);
+              expect(err.code).assertEqual(401);
+          }
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+      })
+
+      /**
+       * @tc.number SUB_Communication_BP_SetDevicePinCode_Callback_Code_Empty_001
+       * @tc.name subCommunicationBpSetDevicePinCodeCallbackCodeEmpty001
+       * @tc.desc Test setDevicePinCode(callback) with empty string pinCode
+       * @tc.level Level 0
+       * @tc.type Function
+       * @tc.size MEDIUMTEST
+       */
+      it("subCommunicationBpSetDevicePinCodeCallbackCodeEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+          let caseName = "SUB_Communication_BP_SetDevicePinCode_Callback_Code_Empty_001";
+          hilog.info(domain, tag, `${caseName} test start`);
+          try {
+              connection.setDevicePinCode(deviceId, "", (err: BusinessError | null) => {
+                  if (err) {
+                      hilog.info(domain, tag, `${caseName} setDevicePinCode callback error: ${err.code}, ${err.message}`);
+                      expect(err.code).assertEqual(2900099);
+                  } else {
+                      hilog.info(domain, tag, `${caseName} setDevicePinCode callback success`);
+                      expect().assertFail();
+                  }
+              });
+              await Utils.msSleep(500)
+          } catch (err) {
+              err = err as BusinessError;
+              hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
+              hilog.info(domain, tag, `${caseName} errCode: ${err.code}, errMessage: ${err.message}`);
+              expect(err.code).assertEqual(2900099);
+          }
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+      })
+
+      /**
+       * @tc.number SUB_Communication_BP_SetDevicePinCode_Promise_Code_Empty_001
+       * @tc.name subCommunicationBpSetDevicePinCodePromiseCodeEmpty001
+       * @tc.desc Test setDevicePinCode(promise) with empty string pinCode
+       * @tc.level Level 0
+       * @tc.type Function
+       * @tc.size MEDIUMTEST
+       */
+      it("subCommunicationBpSetDevicePinCodePromiseCodeEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+          let caseName = "SUB_Communication_BP_SetDevicePinCode_Promise_Code_Empty_001";
+          hilog.info(domain, tag, `${caseName} test start`);
+          try {
+              await connection.setDevicePinCode(deviceId, "").then(() => {
+                  hilog.info(domain, tag, `${caseName} setDevicePinCode promise success`);
+                  expect().assertFail();
+              });
+          } catch (err) {
+              err = err as BusinessError;
+              hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
+              hilog.info(domain, tag, `${caseName} errCode: ${err.code}, errMessage: ${err.message}`);
+              expect(err.code).assertEqual(2900099);
+          }
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+      })
+
+      /**
+       * @tc.number SUB_Communication_BP_GetRemoteProfileUuids_Callback_DeviceId_Empty_001
+       * @tc.name subCommunicationBpGetRemoteProfileUuidsCallbackDeviceIdEmpty001
+       * @tc.desc Test getRemoteProfileUuids(callback) with empty string deviceId
+       * @tc.level Level 0
+       * @tc.type Function
+       * @tc.size MEDIUMTEST
+       */
+      it("subCommunicationBpGetRemoteProfileUuidsCallbackDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+          let caseName = "SUB_Communication_BP_GetRemoteProfileUuids_Callback_DeviceId_Empty_001";
+          hilog.info(domain, tag, `${caseName} test start`);
+          try {
+              connection.getRemoteProfileUuids("", (err: BusinessError | null, data: Array<connection.ProfileUuids> | undefined) => {
+                  if (err) {
+                      hilog.info(domain, tag, `${caseName} getRemoteProfileUuids callback error: ${err.code}, ${err.message}`);
+                      expect(err.code).assertEqual(401);
+                  } else {
+                      hilog.info(domain, tag, `${caseName} getRemoteProfileUuids callback success`);
+                      expect().assertFail();
+                  }
+              });
+              await Utils.msSleep(500)
+          } catch (err) {
+              err = err as BusinessError;
+              hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
+              hilog.info(domain, tag, `${caseName} errCode: ${err.code}, errMessage: ${err.message}`);
+              expect(err.code).assertEqual(401);
+          }
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+      })
+
+      /**
+       * @tc.number SUB_Communication_BP_GetRemoteProfileUuids_Promise_DeviceId_Empty_001
+       * @tc.name subCommunicationBpGetRemoteProfileUuidsPromiseDeviceIdEmpty001
+       * @tc.desc Test getRemoteProfileUuids(promise) with empty string deviceId
+       * @tc.level Level 0
+       * @tc.type Function
+       * @tc.size MEDIUMTEST
+       */
+      it("subCommunicationBpGetRemoteProfileUuidsPromiseDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+          let caseName = "SUB_Communication_BP_GetRemoteProfileUuids_Promise_DeviceId_Empty_001";
+          hilog.info(domain, tag, `${caseName} test start`);
+          try {
+              await connection.getRemoteProfileUuids("").then((data: connection.ProfileUuids[]) => {
+                  hilog.info(domain, tag, `${caseName} getRemoteProfileUuids promise success`);
+                  expect().assertFail();
+              });
+          } catch (err) {
+              err = err as BusinessError;
+              hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
+              hilog.info(domain, tag, `${caseName} errCode: ${err.code}, errMessage: ${err.message}`);
+              expect(err.code).assertEqual(401);
+          }
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+      })
+
+      /**
+       * @tc.number SUB_Communication_BP_ConnectAllowedProfiles_Callback_DeviceId_Empty_001
+       * @tc.name subCommunicationBpConnectAllowedProfilesCallbackDeviceIdEmpty001
+       * @tc.desc Test connectAllowedProfiles(callback) with empty string deviceId
+       * @tc.level Level 0
+       * @tc.type Function
+       * @tc.size MEDIUMTEST
+       */
+      it("subCommunicationBpConnectAllowedProfilesCallbackDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+          let caseName = "SUB_Communication_BP_ConnectAllowedProfiles_Callback_DeviceId_Empty_001";
+          hilog.info(domain, tag, `${caseName} test start`);
+          try {
+              connection.connectAllowedProfiles("", (err: BusinessError | null) => {
+                  if (err) {
+                      hilog.info(domain, tag, `${caseName} connectAllowedProfiles callback error: ${err.code}, ${err.message}`);
+                      expect(err.code).assertEqual(401);
+                  } else {
+                      hilog.info(domain, tag, `${caseName} connectAllowedProfiles callback success`);
+                      expect().assertFail();
+                  }
+              });
+              await Utils.msSleep(500)
+          } catch (err) {
+              err = err as BusinessError;
+              hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
+              hilog.info(domain, tag, `${caseName} errCode: ${err.code}, errMessage: ${err.message}`);
+              expect(err.code).assertEqual(401);
+          }
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+      })
+
+      /**
+       * @tc.number SUB_Communication_BP_ConnectAllowedProfiles_Promise_DeviceId_Empty_001
+       * @tc.name subCommunicationBpConnectAllowedProfilesPromiseDeviceIdEmpty001
+       * @tc.desc Test connectAllowedProfiles(promise) with empty string deviceId
+       * @tc.level Level 0
+       * @tc.type Function
+       * @tc.size MEDIUMTEST
+       */
+      it("subCommunicationBpConnectAllowedProfilesPromiseDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+          let caseName = "SUB_Communication_BP_ConnectAllowedProfiles_Promise_DeviceId_Empty_001";
+          hilog.info(domain, tag, `${caseName} test start`);
+          try {
+              await connection.connectAllowedProfiles("").then(() => {
+                  hilog.info(domain, tag, `${caseName} connectAllowedProfiles promise success`);
+                  expect().assertFail();
+              });
+          } catch (err) {
+              err = err as BusinessError;
+              hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
+              hilog.info(domain, tag, `${caseName} errCode: ${err.code}, errMessage: ${err.message}`);
+              expect(err.code).assertEqual(401);
+          }
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+      })
+
+      /**
+       * @tc.number SUB_Communication_BP_GetRemoteDeviceBatteryInfo_DeviceId_Empty_001
+       * @tc.name subCommunicationBpGetRemoteDeviceBatteryInfoDeviceIdEmpty001
+       * @tc.desc Test getRemoteDeviceBatteryInfo with empty string deviceId
+       * @tc.level Level 0
+       * @tc.type Function
+       * @tc.size MEDIUMTEST
+       */
+      it("subCommunicationBpGetRemoteDeviceBatteryInfoDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+          let caseName = "SUB_Communication_BP_GetRemoteDeviceBatteryInfo_DeviceId_Empty_001";
+          hilog.info(domain, tag, `${caseName} test start`);
+          try {
+              await connection.getRemoteDeviceBatteryInfo("").then((data: connection.BatteryInfo) => {
+                  hilog.info(domain, tag, `${caseName} getRemoteDeviceBatteryInfo promise success`);
+                  expect().assertFail();
+              });
+          } catch (err) {
+              err = err as BusinessError;
+              hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
+              hilog.info(domain, tag, `${caseName} errCode: ${err.code}, errMessage: ${err.message}`);
+              expect(err.code).assertEqual(401);
+          }
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+      })
+
+      /**
+       * @tc.number SUB_Communication_BP_SetRemoteDeviceName_DeviceId_Empty_001
+       * @tc.name subCommunicationBpSetRemoteDeviceNameDeviceIdEmpty001
+       * @tc.desc Test setRemoteDeviceName with empty string deviceId
+       * @tc.level Level 0
+       * @tc.type Function
+       * @tc.size MEDIUMTEST
+       */
+      it("subCommunicationBpSetRemoteDeviceNameDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+          let caseName = "SUB_Communication_BP_SetRemoteDeviceName_DeviceId_Empty_001";
+          hilog.info(domain, tag, `${caseName} test start`);
+          try {
+              await connection.setRemoteDeviceName("", "NewDeviceName").then(() => {
+                  hilog.info(domain, tag, `${caseName} setRemoteDeviceName promise success`);
+                  expect().assertFail();
+              });
+          } catch (err) {
+              err = err as BusinessError;
+              hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
+              hilog.info(domain, tag, `${caseName} errCode: ${err.code}, errMessage: ${err.message}`);
+              expect(err.code).assertEqual(401);
+          }
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+      })
+
+      /**
+       * @tc.number SUB_Communication_BP_SetRemoteDeviceName_Name_Empty_001
+       * @tc.name subCommunicationBpSetRemoteDeviceNameNameEmpty001
+       * @tc.desc Test setRemoteDeviceName with empty string name
+       * @tc.level Level 0
+       * @tc.type Function
+       * @tc.size MEDIUMTEST
+       */
+      it("subCommunicationBpSetRemoteDeviceNameNameEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+          let caseName = "SUB_Communication_BP_SetRemoteDeviceName_Name_Empty_001";
+          hilog.info(domain, tag, `${caseName} test start`);
+          try {
+              await connection.setRemoteDeviceName(deviceId, "").then(() => {
+                  hilog.info(domain, tag, `${caseName} setRemoteDeviceName promise success`);
+                  expect().assertFail();
+              });
+          } catch (err) {
+              err = err as BusinessError;
+              hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
+              hilog.info(domain, tag, `${caseName} errCode: ${err.code}, errMessage: ${err.message}`);
+              expect(err.code).assertEqual(401);
+          }
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+      })
+
+      /**
+       * @tc.number SUB_Communication_BP_GetLastConnectionTime_DeviceId_Empty_001
+       * @tc.name subCommunicationBpGetLastConnectionTimeDeviceIdEmpty001
+       * @tc.desc Test getLastConnectionTime with empty string deviceId
+       * @tc.level Level 0
+       * @tc.type Function
+       * @tc.size MEDIUMTEST
+       */
+      it("subCommunicationBpGetLastConnectionTimeDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+          let caseName = "SUB_Communication_BP_GetLastConnectionTime_DeviceId_Empty_001";
+          hilog.info(domain, tag, `${caseName} test start`);
+          try {
+              await connection.getLastConnectionTime("").then((time: long) => {
+                  hilog.info(domain, tag, `${caseName} getLastConnectionTime promise success`);
+                  expect().assertFail();
+              });
+          } catch (err) {
+              err = err as BusinessError;
+              hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
+              hilog.info(domain, tag, `${caseName} errCode: ${err.code}, errMessage: ${err.message}`);
+              expect(err.code).assertEqual(401);
+          }
+          hilog.info(domain, tag, `${caseName} test end`);
+          done();
+      })
   })
 }
