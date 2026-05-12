@@ -32,7 +32,7 @@ export default function ArrayCopyWithin2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_TWO_0100
      * @tc.name testArrayCopyWithin2001
      * @tc.desc Verify copyWithin accepts three int parameters
      * @tc.size MediumTest
@@ -50,7 +50,7 @@ export default function ArrayCopyWithin2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_2_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_TWO_0200
      * @tc.name testArrayCopyWithin2002
      * @tc.desc Verify all parameters can be provided as int variables
      * @tc.size MediumTest
@@ -67,7 +67,7 @@ export default function ArrayCopyWithin2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_2_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_TWO_0300
      * @tc.name testArrayCopyWithin2003
      * @tc.desc Verify copyWithin returns the array instance itself
      * @tc.size MediumTest
@@ -81,7 +81,7 @@ export default function ArrayCopyWithin2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_2_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_TWO_0400
      * @tc.name testArrayCopyWithin2004
      * @tc.desc Verify copyWithin mutates the original array while preserving length
      * @tc.size MediumTest
@@ -98,7 +98,7 @@ export default function ArrayCopyWithin2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_2_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_TWO_0500
      * @tc.name testArrayCopyWithin2005
      * @tc.desc Verify an end value larger than int range is clamped to the array length
      * @tc.size MediumTest
@@ -114,7 +114,7 @@ export default function ArrayCopyWithin2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_2_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_TWO_0600
      * @tc.name testArrayCopyWithin2006
      * @tc.desc Verify the end index is excluded from the copied range
      * @tc.size MediumTest
@@ -130,7 +130,7 @@ export default function ArrayCopyWithin2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_2_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_TWO_0700
      * @tc.name testArrayCopyWithin2007
      * @tc.desc Verify copyWithin can duplicate the first two elements to the end portion of the array
      * @tc.size MediumTest

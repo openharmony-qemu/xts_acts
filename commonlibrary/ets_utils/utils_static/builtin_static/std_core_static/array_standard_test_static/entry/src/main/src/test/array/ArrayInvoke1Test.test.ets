@@ -70,7 +70,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_0100
      * @tc.name testArrayInvoke1001
      * @tc.desc Verify this invoke overload accepts no parameters
      * @tc.size MediumTest
@@ -83,7 +83,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_0200
      * @tc.name testArrayInvoke1002
      * @tc.desc Verify passing parameters selects other array overloads
      * @tc.size MediumTest
@@ -102,7 +102,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_0300
      * @tc.name testArrayInvoke1003
      * @tc.desc Verify array invoke returns a new empty array instance
      * @tc.size MediumTest
@@ -116,7 +116,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_0400
      * @tc.name testArrayInvoke1004
      * @tc.desc Verify array invoke returns empty arrays for different generic types
      * @tc.size MediumTest
@@ -138,7 +138,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_0500
      * @tc.name testArrayInvoke1005
      * @tc.desc Verify the return value is an array instance
      * @tc.size MediumTest
@@ -151,7 +151,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_0600
      * @tc.name testArrayInvoke1006
      * @tc.desc Verify the generic array keeps the expected element type usage
      * @tc.size MediumTest
@@ -175,7 +175,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_0700
      * @tc.name testArrayInvoke1007
      * @tc.desc Verify the static invoke form can be reached through array construction
      * @tc.size MediumTest
@@ -188,7 +188,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_0800
      * @tc.name testArrayInvoke1008
      * @tc.desc Verify explicit generic syntax creates empty arrays as objects
      * @tc.size MediumTest
@@ -206,7 +206,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_0900
      * @tc.name testArrayInvoke1009
      * @tc.desc Verify a newly created array starts with length zero
      * @tc.size MediumTest
@@ -219,7 +219,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_1000
      * @tc.name testArrayInvoke1010
      * @tc.desc Verify empty array element access keeps safe behavior
      * @tc.size MediumTest
@@ -237,7 +237,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_1100
      * @tc.name testArrayInvoke1011
      * @tc.desc Verify push can add elements into an empty array
      * @tc.size MediumTest
@@ -258,7 +258,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_1200
      * @tc.name testArrayInvoke1012
      * @tc.desc Verify unshift inserts elements at the beginning of an empty array
      * @tc.size MediumTest
@@ -278,7 +278,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_1300
      * @tc.name testArrayInvoke1013
      * @tc.desc Verify an empty array can grow dynamically by push operations
      * @tc.size MediumTest
@@ -299,7 +299,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_1400
      * @tc.name testArrayInvoke1014
      * @tc.desc Verify an empty number array can be created and used
      * @tc.size MediumTest
@@ -315,7 +315,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_1500
      * @tc.name testArrayInvoke1015
      * @tc.desc Verify an empty string array can be created and used
      * @tc.size MediumTest
@@ -331,7 +331,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_1600
      * @tc.name testArrayInvoke1016
      * @tc.desc Verify an empty boolean array can be created and used
      * @tc.size MediumTest
@@ -347,7 +347,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_1700
      * @tc.name testArrayInvoke1017
      * @tc.desc Verify an empty array of a custom class type can be created
      * @tc.size MediumTest
@@ -363,7 +363,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_1800
      * @tc.name testArrayInvoke1018
      * @tc.desc Verify an empty interface typed array can be created
      * @tc.size MediumTest
@@ -380,7 +380,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_1900
      * @tc.name testArrayInvoke1019
      * @tc.desc Verify an empty union typed array can be created
      * @tc.size MediumTest
@@ -401,7 +401,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_2000
      * @tc.name testArrayInvoke1020
      * @tc.desc Verify an empty nested array can be created
      * @tc.size MediumTest
@@ -421,7 +421,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_2100
      * @tc.name testArrayInvoke1021
      * @tc.desc Verify an empty array supports unknown size collection scenarios
      * @tc.size MediumTest
@@ -443,7 +443,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_2200
      * @tc.name testArrayInvoke1022
      * @tc.desc Verify an empty array can be used as a temporary container
      * @tc.size MediumTest
@@ -457,7 +457,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_2300
      * @tc.name testArrayInvoke1023
      * @tc.desc Verify an empty array can be passed into a function and filled
      * @tc.size MediumTest
@@ -474,7 +474,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_2400
      * @tc.name testArrayInvoke1024
      * @tc.desc Verify common methods behave correctly on an empty array
      * @tc.size MediumTest
@@ -499,7 +499,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_2500
      * @tc.name testArrayInvoke1025
      * @tc.desc Verify iterator style methods behave correctly on an empty array
      * @tc.size MediumTest
@@ -533,7 +533,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_2600
      * @tc.name testArrayInvoke1026
      * @tc.desc Verify search methods behave correctly on an empty array
      * @tc.size MediumTest
@@ -551,7 +551,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_2700
      * @tc.name testArrayInvoke1027
      * @tc.desc Verify predicate methods behave correctly on an empty array
      * @tc.size MediumTest
@@ -565,7 +565,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_2800
      * @tc.name testArrayInvoke1028
      * @tc.desc Verify invoke without parameters matches constructor behavior
      * @tc.size MediumTest
@@ -581,7 +581,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_2900
      * @tc.name testArrayInvoke1029
      * @tc.desc Verify parameter count selects the expected array overload
      * @tc.size MediumTest
@@ -600,7 +600,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_3000
      * @tc.name testArrayInvoke1030
      * @tc.desc Verify explicit usage supports expected type inference scenarios
      * @tc.size MediumTest
@@ -618,7 +618,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_3100
      * @tc.name testArrayInvoke1031
      * @tc.desc Verify sequential push operations can start from an empty array
      * @tc.size MediumTest
@@ -635,7 +635,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_3200
      * @tc.name testArrayInvoke1032
      * @tc.desc Verify empty arrays can be created repeatedly
      * @tc.size MediumTest
@@ -652,7 +652,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_3300
      * @tc.name testArrayInvoke1033
      * @tc.desc Verify an empty array keeps the smallest initialized length state
      * @tc.size MediumTest
@@ -668,7 +668,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_3400
      * @tc.name testArrayInvoke1034
      * @tc.desc Verify the native invoke path creates a usable empty array
      * @tc.size MediumTest
@@ -684,7 +684,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_3500
      * @tc.name testArrayInvoke1035
      * @tc.desc Verify number arrays accept matching generic values
      * @tc.size MediumTest
@@ -698,7 +698,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_3600
      * @tc.name testArrayInvoke1036
      * @tc.desc Verify empty array operations remain safe at runtime
      * @tc.size MediumTest
@@ -720,7 +720,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_3700
      * @tc.name testArrayInvoke1037
      * @tc.desc Verify new Array with no arguments behaves like invoke with no arguments
      * @tc.size MediumTest
@@ -736,7 +736,7 @@ export default function ArrayInvoke1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_1_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_ONE_3800
      * @tc.name testArrayInvoke1038
      * @tc.desc Verify empty array construction suits dynamic and temporary container scenarios
      * @tc.size MediumTest

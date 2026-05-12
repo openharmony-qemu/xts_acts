@@ -495,7 +495,7 @@ export default function ArrayGetTest(): void {
         const val = arr[999999999];
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 

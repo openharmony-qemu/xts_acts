@@ -491,7 +491,7 @@ export default function ArraySetTest(): void {
         arr[5] = 100;
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 

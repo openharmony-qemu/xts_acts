@@ -3,7 +3,7 @@
     "driver": {
         "type": "OHJSUnitTest",
         "test-timeout": "180000",
-        "bundle-name": "array.standard.test.static",
+        "bundle-name": "com.example.array_standard_test_static",
         "module-name": "entry",
         "shell-timeout": "600000",
         "testcase-timeout": "180000"

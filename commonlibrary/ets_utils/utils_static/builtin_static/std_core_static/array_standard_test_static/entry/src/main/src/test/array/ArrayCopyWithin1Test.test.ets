@@ -36,7 +36,7 @@ export default function ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_1_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_0100
      * @tc.name testArrayCopyWithin1001
      * @tc.desc Verify copyWithin accepts target start and end parameters
      * @tc.size MediumTest
@@ -51,7 +51,7 @@ export default function ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_1_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_0200
      * @tc.name testArrayCopyWithin1002
      * @tc.desc Verify copyWithin defaults end to the array length when only target and start are provided
      * @tc.size MediumTest
@@ -66,7 +66,7 @@ export default function ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_1_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_0300
      * @tc.name testArrayCopyWithin1003
      * @tc.desc Verify copyWithin defaults start to zero and end to the array length when only target is provided
      * @tc.size MediumTest
@@ -81,7 +81,7 @@ export default function ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_1_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_0400
      * @tc.name testArrayCopyWithin1004
      * @tc.desc Verify the target parameter determines the destination index
      * @tc.size MediumTest
@@ -96,7 +96,7 @@ export default function ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_1_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_0500
      * @tc.name testArrayCopyWithin1005
      * @tc.desc Verify the start parameter determines the source start index
      * @tc.size MediumTest
@@ -112,7 +112,7 @@ export default function ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_1_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_0600
      * @tc.name testArrayCopyWithin1006
      * @tc.desc Verify the end parameter limits the copied source range
      * @tc.size MediumTest
@@ -128,7 +128,7 @@ export default function ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_1_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_0700
      * @tc.name testArrayCopyWithin1007
      * @tc.desc Verify an undefined end parameter is treated as the array length
      * @tc.size MediumTest
@@ -143,7 +143,7 @@ export default function ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_1_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_0800
      * @tc.name testArrayCopyWithin1008
      * @tc.desc Verify negative indexes are resolved from the end of the array
      * @tc.size MediumTest
@@ -158,7 +158,7 @@ export default function ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_1_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_0900
      * @tc.name testArrayCopyWithin1009
      * @tc.desc Verify out-of-range parameters are clamped by the runtime
      * @tc.size MediumTest
@@ -175,7 +175,7 @@ export default function ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_1_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_1000
      * @tc.name testArrayCopyWithin1010
      * @tc.desc Verify copyWithin returns the modified array itself
      * @tc.size MediumTest
@@ -189,7 +189,7 @@ export default function ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_1_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_1100
      * @tc.name testArrayCopyWithin1011
      * @tc.desc Verify copyWithin supports chained calls
      * @tc.size MediumTest
@@ -204,7 +204,7 @@ export default function ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_1_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_1200
      * @tc.name testArrayCopyWithin1012
      * @tc.desc Verify copyWithin mutates the original array
      * @tc.size MediumTest
@@ -219,7 +219,7 @@ export default function ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_1_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_1300
      * @tc.name testArrayCopyWithin1013
      * @tc.desc Verify copyWithin does not change the array length
      * @tc.size MediumTest
@@ -234,7 +234,7 @@ export default function ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_1_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_1400
      * @tc.name testArrayCopyWithin1014
      * @tc.desc Verify copyWithin uses shallow copies for object elements
      * @tc.size MediumTest
@@ -254,7 +254,7 @@ export default function ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_1_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_1500
      * @tc.name testArrayCopyWithin1015
      * @tc.desc Verify copyWithin on an empty array returns an empty array
      * @tc.size MediumTest
@@ -268,7 +268,7 @@ export default function ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_1_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_1600
      * @tc.name testArrayCopyWithin1016
      * @tc.desc Verify copyWithin on a single-element array keeps the element unchanged
      * @tc.size MediumTest
@@ -283,7 +283,7 @@ export default function ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_1_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_1700
      * @tc.name testArrayCopyWithin1017
      * @tc.desc Verify copyWithin can move elements to another location inside the same array
      * @tc.size MediumTest
@@ -298,7 +298,7 @@ export default function ArrayCopyWithin1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_1_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_ONE_1800
      * @tc.name testArrayCopyWithin1018
      * @tc.desc Verify copyWithin can duplicate a source segment to another position
      * @tc.size MediumTest

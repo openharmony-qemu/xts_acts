@@ -36,7 +36,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_0100
      * @tc.name testArrayAt2001
      * @tc.desc Verify integer index access reads the expected first element
      * @tc.size MediumTest
@@ -50,7 +50,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_0200
      * @tc.name testArrayAt2002
      * @tc.desc Verify positive integer indexes count from the front
      * @tc.size MediumTest
@@ -64,7 +64,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_0300
      * @tc.name testArrayAt2003
      * @tc.desc Verify negative integer indexes count from the end
      * @tc.size MediumTest
@@ -78,7 +78,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_0400
      * @tc.name testArrayAt2004
      * @tc.desc Verify index zero returns the first element
      * @tc.size MediumTest
@@ -91,7 +91,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_0500
      * @tc.name testArrayAt2005
      * @tc.desc Verify positive out-of-range indexes throw invalid index errors
      * @tc.size MediumTest
@@ -115,7 +115,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_0600
      * @tc.name testArrayAt2006
      * @tc.desc Verify negative out-of-range indexes throw invalid index errors
      * @tc.size MediumTest
@@ -139,7 +139,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_0700
      * @tc.name testArrayAt2007
      * @tc.desc Verify at returns the array element generic type
      * @tc.size MediumTest
@@ -153,7 +153,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_0800
      * @tc.name testArrayAt2008
      * @tc.desc Verify invalid integer indexes do not return a valid value
      * @tc.size MediumTest
@@ -171,7 +171,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_0900
      * @tc.name testArrayAt2009
      * @tc.desc Verify positive indexes can read each in-range element
      * @tc.size MediumTest
@@ -188,7 +188,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_1000
      * @tc.name testArrayAt2010
      * @tc.desc Verify negative indexes can read each valid tail element
      * @tc.size MediumTest
@@ -205,7 +205,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_1100
      * @tc.name testArrayAt2011
      * @tc.desc Verify empty arrays reject all tested integer indexes
      * @tc.size MediumTest
@@ -235,7 +235,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_1200
      * @tc.name testArrayAt2012
      * @tc.desc Verify single-element arrays support valid and invalid integer access
      * @tc.size MediumTest
@@ -262,7 +262,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_1300
      * @tc.name testArrayAt2013
      * @tc.desc Verify number arrays support integer at access
      * @tc.size MediumTest
@@ -276,7 +276,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_1400
      * @tc.name testArrayAt2014
      * @tc.desc Verify string arrays support integer at access
      * @tc.size MediumTest
@@ -290,7 +290,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_1500
      * @tc.name testArrayAt2015
      * @tc.desc Verify character-like string arrays support integer at access
      * @tc.size MediumTest
@@ -304,7 +304,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_1600
      * @tc.name testArrayAt2016
      * @tc.desc Verify object arrays support integer at access
      * @tc.size MediumTest
@@ -324,7 +324,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_1700
      * @tc.name testArrayAt2017
      * @tc.desc Verify integer-only index logic can be represented with number values
      * @tc.size MediumTest
@@ -338,7 +338,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_1800
      * @tc.name testArrayAt2018
      * @tc.desc Verify integer-normalized and number indexes give the same result
      * @tc.size MediumTest
@@ -353,7 +353,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_1900
      * @tc.name testArrayAt2019
      * @tc.desc Verify large integer indexes are rejected safely
      * @tc.size MediumTest
@@ -377,7 +377,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_2000
      * @tc.name testArrayAt2020
      * @tc.desc Verify valid and invalid edge indexes around array length
      * @tc.size MediumTest
@@ -403,7 +403,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_2100
      * @tc.name testArrayAt2021
      * @tc.desc Verify at negative one gets the last element in practice
      * @tc.size MediumTest
@@ -416,7 +416,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_2200
      * @tc.name testArrayAt2022
      * @tc.desc Verify negative indexes can get specific tail elements in practice
      * @tc.size MediumTest
@@ -430,7 +430,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_2300
      * @tc.name testArrayAt2023
      * @tc.desc Verify integer index at access remains stable in a large loop
      * @tc.size MediumTest
@@ -451,7 +451,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_2400
      * @tc.name testArrayAt2024
      * @tc.desc Verify readonly arrays support integer at access
      * @tc.size MediumTest
@@ -466,7 +466,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_2500
      * @tc.name testArrayAt2025
      * @tc.desc Verify integer-style indexes prevent decimal access by normalization
      * @tc.size MediumTest
@@ -481,7 +481,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_2600
      * @tc.name testArrayAt2026
      * @tc.desc Verify type inference still narrows the return value correctly
      * @tc.size MediumTest
@@ -499,7 +499,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_2700
      * @tc.name testArrayAt2027
      * @tc.desc Verify integer-normalized and number indexes are functionally identical
      * @tc.size MediumTest
@@ -514,7 +514,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_2800
      * @tc.name testArrayAt2028
      * @tc.desc Verify decimal examples are handled by explicit integer normalization
      * @tc.size MediumTest
@@ -529,7 +529,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_2900
      * @tc.name testArrayAt2029
      * @tc.desc Verify at negative one supports safe last-element access after checks
      * @tc.size MediumTest
@@ -547,7 +547,7 @@ export default function ArrayAt2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_2_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_TWO_3000
      * @tc.name testArrayAt2030
      * @tc.desc Verify at works with values derived from the array length
      * @tc.size MediumTest

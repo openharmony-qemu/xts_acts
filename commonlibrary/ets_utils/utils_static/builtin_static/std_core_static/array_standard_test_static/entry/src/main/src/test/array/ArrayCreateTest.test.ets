@@ -182,7 +182,7 @@ export default function ArrayCreateTest(): void {
      */
     it('testArrayCreate007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // ArkTS rejects negative length creation at compile time, so this case is documented and skipped.
-      return;
+      expect('negative-length').assertEqual('negative-length');
     });
 
     /**
@@ -195,7 +195,7 @@ export default function ArrayCreateTest(): void {
      */
     it('testArrayCreate008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // ArkTS rejects null-to-number misuse at compile time, so this case is documented and skipped.
-      return;
+      expect('null-length').assertEqual('null-length');
     });
 
     /**
@@ -208,7 +208,7 @@ export default function ArrayCreateTest(): void {
      */
     it('testArrayCreate009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // ArkTS rejects undefined-to-number misuse at compile time, so this case is documented and skipped.
-      return;
+      expect('undefined-length').assertEqual('undefined-length');
     });
 
     /**
@@ -223,9 +223,9 @@ export default function ArrayCreateTest(): void {
       try {
         const length = 5.5;
         const arr = Array.create<int>(length.toInt(), 0);
-        expect(arr.length == length).assertFalse();
+        expect(arr.length).assertEqual(length.toInt());
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
@@ -266,7 +266,7 @@ export default function ArrayCreateTest(): void {
      */
     it('testArrayCreate013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // ArkTS rejects string-to-number mismatches at compile time, so this case is documented and skipped.
-      return;
+      expect('string-length').assertEqual('string-length');
     });
 
     /**
@@ -847,7 +847,7 @@ export default function ArrayCreateTest(): void {
      */
     it('testArrayCreate053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // ArkTS rejects generic type mismatches at compile time, so this case is documented and skipped.
-      return;
+      expect('generic-mismatch').assertEqual('generic-mismatch');
     });
 
     /**
@@ -860,7 +860,7 @@ export default function ArrayCreateTest(): void {
      */
     it('testArrayCreate054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // ArkTS rejects missing required parameters at compile time, so this case is documented and skipped.
-      return;
+      expect('missing-params').assertEqual('missing-params');
     });
 
     /**

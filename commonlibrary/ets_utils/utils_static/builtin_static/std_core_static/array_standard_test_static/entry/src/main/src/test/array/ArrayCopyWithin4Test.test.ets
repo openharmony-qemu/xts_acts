@@ -32,7 +32,7 @@ export default function ArrayCopyWithin4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_4_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_FOUR_0100
      * @tc.name testArrayCopyWithin4001
      * @tc.desc Verify copyWithin accepts a single target parameter
      * @tc.size MediumTest
@@ -49,7 +49,7 @@ export default function ArrayCopyWithin4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_4_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_FOUR_0200
      * @tc.name testArrayCopyWithin4002
      * @tc.desc Verify copyWithin defaults start to zero and end to the array length
      * @tc.size MediumTest
@@ -66,7 +66,7 @@ export default function ArrayCopyWithin4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_4_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_FOUR_0300
      * @tc.name testArrayCopyWithin4003
      * @tc.desc Verify copyWithin returns the original array instance
      * @tc.size MediumTest
@@ -80,7 +80,7 @@ export default function ArrayCopyWithin4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_4_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_FOUR_0400
      * @tc.name testArrayCopyWithin4004
      * @tc.desc Verify copyWithin mutates the original array when using one parameter
      * @tc.size MediumTest
@@ -96,7 +96,7 @@ export default function ArrayCopyWithin4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_4_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_FOUR_0500
      * @tc.name testArrayCopyWithin4005
      * @tc.desc Verify copyWithin keeps the array unchanged when target is zero
      * @tc.size MediumTest
@@ -110,7 +110,7 @@ export default function ArrayCopyWithin4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_4_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_FOUR_0600
      * @tc.name testArrayCopyWithin4006
      * @tc.desc Verify copyWithin performs no operation when target exceeds the array length
      * @tc.size MediumTest
@@ -125,7 +125,7 @@ export default function ArrayCopyWithin4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_4_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_FOUR_0700
      * @tc.name testArrayCopyWithin4007
      * @tc.desc Verify copyWithin counts a negative target from the end of the array
      * @tc.size MediumTest
@@ -140,7 +140,7 @@ export default function ArrayCopyWithin4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_4_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_FOUR_0800
      * @tc.name testArrayCopyWithin4008
      * @tc.desc Verify copyWithin can duplicate the full leading segment to another position
      * @tc.size MediumTest

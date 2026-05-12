@@ -73,7 +73,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_0100
      * @tc.name testArrayConstructor3001
      * @tc.desc Verify the element-initializing overload accepts one non-number element or multiple elements
      * @tc.size MediumTest
@@ -90,7 +90,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_0200
      * @tc.name testArrayConstructor3002
      * @tc.desc Verify the first element can be initialized with common primitive types
      * @tc.size MediumTest
@@ -109,7 +109,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_0300
      * @tc.name testArrayConstructor3003
      * @tc.desc Verify zero can be used as the first initialized element when multiple arguments are present
      * @tc.size MediumTest
@@ -122,7 +122,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_0400
      * @tc.name testArrayConstructor3004
      * @tc.desc Verify an empty string can be used as the first initialized element
      * @tc.size MediumTest
@@ -135,7 +135,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_0500
      * @tc.name testArrayConstructor3005
      * @tc.desc Verify false can be used as the first initialized element
      * @tc.size MediumTest
@@ -148,7 +148,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_0600
      * @tc.name testArrayConstructor3006
      * @tc.desc Verify negative numbers can be used as initialized elements
      * @tc.size MediumTest
@@ -161,7 +161,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_0700
      * @tc.name testArrayConstructor3007
      * @tc.desc Verify null can be used as an initialized element in a nullable array
      * @tc.size MediumTest
@@ -174,7 +174,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_0800
      * @tc.name testArrayConstructor3008
      * @tc.desc Verify undefined can be used as an initialized element in an optional array
      * @tc.size MediumTest
@@ -187,7 +187,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_0900
      * @tc.name testArrayConstructor3009
      * @tc.desc Verify NaN can be used as an initialized numeric element
      * @tc.size MediumTest
@@ -200,7 +200,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_1000
      * @tc.name testArrayConstructor3010
      * @tc.desc Verify Infinity can be used as an initialized numeric element
      * @tc.size MediumTest
@@ -213,7 +213,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_1100
      * @tc.name testArrayConstructor3011
      * @tc.desc Verify negative Infinity can be used as an initialized numeric element
      * @tc.size MediumTest
@@ -226,7 +226,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_1200
      * @tc.name testArrayConstructor3012
      * @tc.desc Verify Number.MAX_VALUE can be used as an initialized numeric element
      * @tc.size MediumTest
@@ -239,7 +239,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_1300
      * @tc.name testArrayConstructor3013
      * @tc.desc Verify Number.MIN_VALUE can be used as an initialized numeric element
      * @tc.size MediumTest
@@ -252,7 +252,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_1400
      * @tc.name testArrayConstructor3014
      * @tc.desc Verify object instances can be used as initialized elements
      * @tc.size MediumTest
@@ -265,7 +265,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_1500
      * @tc.name testArrayConstructor3015
      * @tc.desc Verify interface-based objects can be used as initialized elements
      * @tc.size MediumTest
@@ -279,7 +279,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_1600
      * @tc.name testArrayConstructor3016
      * @tc.desc Verify nested arrays can be passed as initialized elements
      * @tc.size MediumTest
@@ -293,7 +293,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_1700
      * @tc.name testArrayConstructor3017
      * @tc.desc Verify the variadic parameter list preserves all provided elements
      * @tc.size MediumTest
@@ -308,7 +308,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_1800
      * @tc.name testArrayConstructor3018
      * @tc.desc Verify omitting rest parameters still creates a one-element array for non-number first values
      * @tc.size MediumTest
@@ -322,7 +322,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_1900
      * @tc.name testArrayConstructor3019
      * @tc.desc Verify a single initialized element is equivalent to an empty rest parameter list
      * @tc.size MediumTest
@@ -336,7 +336,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_2000
      * @tc.name testArrayConstructor3020
      * @tc.desc Verify union-typed variadic parameters preserve mixed values in order
      * @tc.size MediumTest
@@ -352,7 +352,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_2100
      * @tc.name testArrayConstructor3021
      * @tc.desc Verify null values can appear inside variadic initialized arrays
      * @tc.size MediumTest
@@ -367,7 +367,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_2200
      * @tc.name testArrayConstructor3022
      * @tc.desc Verify undefined values can appear inside variadic initialized arrays
      * @tc.size MediumTest
@@ -382,7 +382,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_2300
      * @tc.name testArrayConstructor3023
      * @tc.desc Verify zero values can appear inside variadic initialized arrays
      * @tc.size MediumTest
@@ -395,7 +395,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_2400
      * @tc.name testArrayConstructor3024
      * @tc.desc Verify empty strings can appear inside variadic initialized arrays
      * @tc.size MediumTest
@@ -408,7 +408,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_2500
      * @tc.name testArrayConstructor3025
      * @tc.desc Verify false values can appear inside variadic initialized arrays
      * @tc.size MediumTest
@@ -421,7 +421,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_2600
      * @tc.name testArrayConstructor3026
      * @tc.desc Verify the variadic constructor handles a larger fixed set of initialized elements
      * @tc.size MediumTest
@@ -437,7 +437,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_2700
      * @tc.name testArrayConstructor3027
      * @tc.desc Verify the variadic constructor handles exactly two elements
      * @tc.size MediumTest
@@ -452,7 +452,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_2800
      * @tc.name testArrayConstructor3028
      * @tc.desc Verify the variadic constructor returns an Array instance containing every argument
      * @tc.size MediumTest
@@ -468,7 +468,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_2900
      * @tc.name testArrayConstructor3029
      * @tc.desc Verify the variadic constructor returns different lengths based on argument count
      * @tc.size MediumTest
@@ -487,7 +487,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_3000
      * @tc.name testArrayConstructor3030
      * @tc.desc Verify the variadic constructor preserves declared generic element types
      * @tc.size MediumTest
@@ -504,7 +504,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_3100
      * @tc.name testArrayConstructor3031
      * @tc.desc Verify multiple initialized elements preserve order and values
      * @tc.size MediumTest
@@ -520,7 +520,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_3200
      * @tc.name testArrayConstructor3032
      * @tc.desc Verify arrays can be initialized with identical repeated element values
      * @tc.size MediumTest
@@ -536,7 +536,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_3300
      * @tc.name testArrayConstructor3033
      * @tc.desc Verify number arrays can be initialized directly with element lists
      * @tc.size MediumTest
@@ -549,7 +549,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_3400
      * @tc.name testArrayConstructor3034
      * @tc.desc Verify string arrays can be initialized directly with element lists
      * @tc.size MediumTest
@@ -564,7 +564,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_3500
      * @tc.name testArrayConstructor3035
      * @tc.desc Verify boolean arrays can be initialized directly with element lists
      * @tc.size MediumTest
@@ -579,7 +579,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_3600
      * @tc.name testArrayConstructor3036
      * @tc.desc Verify custom class arrays can be initialized directly with object lists
      * @tc.size MediumTest
@@ -595,7 +595,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_3700
      * @tc.name testArrayConstructor3037
      * @tc.desc Verify interface arrays can be initialized directly with object lists
      * @tc.size MediumTest
@@ -610,7 +610,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_3800
      * @tc.name testArrayConstructor3038
      * @tc.desc Verify union arrays can be initialized directly with mixed element lists
      * @tc.size MediumTest
@@ -627,7 +627,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_3900
      * @tc.name testArrayConstructor3039
      * @tc.desc Verify two-dimensional arrays can be initialized directly with nested arrays
      * @tc.size MediumTest
@@ -644,7 +644,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_4000
      * @tc.name testArrayConstructor3040
      * @tc.desc Verify three-dimensional arrays can be initialized directly with nested arrays
      * @tc.size MediumTest
@@ -658,7 +658,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_4100
      * @tc.name testArrayConstructor3041
      * @tc.desc Verify constructor behavior changes predictably as the argument count increases
      * @tc.size MediumTest
@@ -678,7 +678,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_4200
      * @tc.name testArrayConstructor3042
      * @tc.desc Verify the variadic constructor accepts elements expanded from an existing array
      * @tc.size MediumTest
@@ -693,7 +693,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_4300
      * @tc.name testArrayConstructor3043
      * @tc.desc Verify the variadic constructor accepts a mix of expanded arrays and direct elements
      * @tc.size MediumTest
@@ -711,7 +711,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_4400
      * @tc.name testArrayConstructor3044
      * @tc.desc Verify multiple numeric parameters are treated as initialized elements rather than a length
      * @tc.size MediumTest
@@ -725,7 +725,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_4500
      * @tc.name testArrayConstructor3045
      * @tc.desc Verify a single numeric argument selects the length overload while multiple numeric arguments select element initialization
      * @tc.size MediumTest
@@ -742,7 +742,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_4600
      * @tc.name testArrayConstructor3046
      * @tc.desc Verify union element types allow mixed values while preserving order
      * @tc.size MediumTest
@@ -755,7 +755,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_4700
      * @tc.name testArrayConstructor3047
      * @tc.desc Verify overload selection differs for zero arguments, one numeric argument, and multiple arguments
      * @tc.size MediumTest
@@ -774,7 +774,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_4800
      * @tc.name testArrayConstructor3048
      * @tc.desc Verify arrays can be initialized directly when all element values are already known
      * @tc.size MediumTest
@@ -788,7 +788,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_4900
      * @tc.name testArrayConstructor3049
      * @tc.desc Verify element-initializing constructor usage remains type-safe at compile time
      * @tc.size MediumTest
@@ -803,7 +803,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_5000
      * @tc.name testArrayConstructor3050
      * @tc.desc Verify all initialized elements must match the declared generic type
      * @tc.size MediumTest
@@ -816,7 +816,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_5100
      * @tc.name testArrayConstructor3051
      * @tc.desc Verify the variadic constructor can accept a large expanded list of initial values
      * @tc.size MediumTest
@@ -831,7 +831,7 @@ export default function ArrayConstructor3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_3_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_THREE_5200
      * @tc.name testArrayConstructor3052
      * @tc.desc Verify arrays can be initialized directly with multiple complex objects
      * @tc.size MediumTest

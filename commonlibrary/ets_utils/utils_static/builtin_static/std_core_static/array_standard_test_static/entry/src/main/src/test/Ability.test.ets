@@ -9,12 +9,12 @@ export default function abilityTest(): void {
     describe("abilityTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
         /*
-         * @tc.number: SUB_Ability_Ability_Static_0100
-         * @tc.name: SUB_Ability_Ability_Static_0100
-         * @tc.desc:  Check start ability by bundl
-         * @tc.level: LEVEL1
-         * @tc.size: MEDIUMTEST
-         * @tc.type: FUNCTION
+         * @tc.number SUB_ABILITY_ABILITY_STATIC_0100
+         * @tc.name SUB_Ability_Ability_Static_0100
+         * @tc.desc Check start ability by bundl
+         * @tc.level LEVEL1
+         * @tc.size MEDIUMTEST
+         * @tc.type FUNCTION
         */
         it("SUB_Ability_Ability_Static_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000)

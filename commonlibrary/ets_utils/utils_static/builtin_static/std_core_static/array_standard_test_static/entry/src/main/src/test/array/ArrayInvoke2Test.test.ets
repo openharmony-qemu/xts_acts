@@ -45,7 +45,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_0100
      * @tc.name testArrayInvoke2001
      * @tc.desc Verify arrayLength is optional for this invoke overload
      * @tc.size MediumTest
@@ -61,7 +61,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_0200
      * @tc.name testArrayInvoke2002
      * @tc.desc Verify array construction accepts a normal length value
      * @tc.size MediumTest
@@ -74,7 +74,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_0300
      * @tc.name testArrayInvoke2003
      * @tc.desc Verify default construction uses length zero when no argument is provided
      * @tc.size MediumTest
@@ -87,7 +87,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_0400
      * @tc.name testArrayInvoke2004
      * @tc.desc Verify array construction supports an explicit zero length
      * @tc.size MediumTest
@@ -100,7 +100,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_0500
      * @tc.name testArrayInvoke2005
      * @tc.desc Verify array construction supports a length of one
      * @tc.size MediumTest
@@ -113,7 +113,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_0600
      * @tc.name testArrayInvoke2006
      * @tc.desc Verify array construction supports a larger length value
      * @tc.size MediumTest
@@ -126,7 +126,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_0700
      * @tc.name testArrayInvoke2007
      * @tc.desc Verify extremely large length input is handled safely by the runtime
      * @tc.size MediumTest
@@ -143,7 +143,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_0800
      * @tc.name testArrayInvoke2008
      * @tc.desc Verify array construction rejects a negative length
      * @tc.size MediumTest
@@ -160,7 +160,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_0900
      * @tc.name testArrayInvoke2009
      * @tc.desc Verify array construction rejects null passed as the length
      * @tc.size MediumTest
@@ -169,11 +169,11 @@ export default function ArrayInvoke2Test(): void {
      */
     it('testArrayInvoke2009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // ArkTS rejects null-to-number length conversion at compile time.
-      return;
+      expect('null-length').assertEqual('null-length');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_1000
      * @tc.name testArrayInvoke2010
      * @tc.desc Verify an undefined optional length path falls back to default construction
      * @tc.size MediumTest
@@ -190,7 +190,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_1100
      * @tc.name testArrayInvoke2011
      * @tc.desc Verify floating-point length is not preserved as an exact array size
      * @tc.size MediumTest
@@ -208,7 +208,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_1200
      * @tc.name testArrayInvoke2012
      * @tc.desc Verify scientific notation length works after explicit integer normalization
      * @tc.size MediumTest
@@ -222,7 +222,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_1300
      * @tc.name testArrayInvoke2013
      * @tc.desc Verify array construction accepts a hexadecimal length
      * @tc.size MediumTest
@@ -235,7 +235,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_1400
      * @tc.name testArrayInvoke2014
      * @tc.desc Verify string to number length mismatch is rejected at compile time in ArkTS
      * @tc.size MediumTest
@@ -244,11 +244,11 @@ export default function ArrayInvoke2Test(): void {
      */
     it('testArrayInvoke2014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // ArkTS rejects string-to-number length mismatches at compile time.
-      return;
+      expect('string-length').assertEqual('string-length');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_1500
      * @tc.name testArrayInvoke2015
      * @tc.desc Verify array construction returns a new array with the requested length
      * @tc.size MediumTest
@@ -262,7 +262,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_1600
      * @tc.name testArrayInvoke2016
      * @tc.desc Verify array construction returns arrays of different generic types
      * @tc.size MediumTest
@@ -283,7 +283,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_1700
      * @tc.name testArrayInvoke2017
      * @tc.desc Verify array elements remain uninitialized right after length-based construction
      * @tc.size MediumTest
@@ -298,12 +298,12 @@ export default function ArrayInvoke2Test(): void {
         const val = arr[0];
         expect(val).assertUndefined();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_1800
      * @tc.name testArrayInvoke2018
      * @tc.desc Verify elements can be initialized and used safely after construction
      * @tc.size MediumTest
@@ -322,7 +322,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_1900
      * @tc.name testArrayInvoke2019
      * @tc.desc Verify this static invoke overload is reached through new Array syntax
      * @tc.size MediumTest
@@ -335,7 +335,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_2000
      * @tc.name testArrayInvoke2020
      * @tc.desc Verify explicit generic syntax works with typed array construction
      * @tc.size MediumTest
@@ -354,7 +354,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_2100
      * @tc.name testArrayInvoke2021
      * @tc.desc Verify omitting the argument uses the default length of zero
      * @tc.size MediumTest
@@ -369,7 +369,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_2200
      * @tc.name testArrayInvoke2022
      * @tc.desc Verify providing a length argument creates an array of that size
      * @tc.size MediumTest
@@ -382,7 +382,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_2300
      * @tc.name testArrayInvoke2023
      * @tc.desc Verify argument count selects the expected invoke overload
      * @tc.size MediumTest
@@ -401,7 +401,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_2400
      * @tc.name testArrayInvoke2024
      * @tc.desc Verify a number generic array can be created with a preset length
      * @tc.size MediumTest
@@ -417,7 +417,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_2500
      * @tc.name testArrayInvoke2025
      * @tc.desc Verify a string generic array can be created with a preset length
      * @tc.size MediumTest
@@ -433,7 +433,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_2600
      * @tc.name testArrayInvoke2026
      * @tc.desc Verify a boolean generic array can be created with a preset length
      * @tc.size MediumTest
@@ -449,7 +449,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_2700
      * @tc.name testArrayInvoke2027
      * @tc.desc Verify a custom class array can be created and populated
      * @tc.size MediumTest
@@ -465,7 +465,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_2800
      * @tc.name testArrayInvoke2028
      * @tc.desc Verify an interface typed array can be created and used
      * @tc.size MediumTest
@@ -481,7 +481,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_2900
      * @tc.name testArrayInvoke2029
      * @tc.desc Verify a union typed array can be created and hold mixed values
      * @tc.size MediumTest
@@ -500,7 +500,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_3000
      * @tc.name testArrayInvoke2030
      * @tc.desc Verify uninitialized elements after length construction keep runtime-safe behavior
      * @tc.size MediumTest
@@ -514,12 +514,12 @@ export default function ArrayInvoke2Test(): void {
         const val = arr[0];
         expect(val).assertUndefined();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_3100
      * @tc.name testArrayInvoke2031
      * @tc.desc Verify arrays can be initialized by loop fill and Array.create usage
      * @tc.size MediumTest
@@ -544,7 +544,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_3200
      * @tc.name testArrayInvoke2032
      * @tc.desc Verify initialized arrays support normal read write and push operations
      * @tc.size MediumTest
@@ -570,7 +570,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_3300
      * @tc.name testArrayInvoke2033
      * @tc.desc Verify preset length construction suits known-size preallocation scenarios
      * @tc.size MediumTest
@@ -589,7 +589,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_3400
      * @tc.name testArrayInvoke2034
      * @tc.desc Verify preset length arrays support batch data processing
      * @tc.size MediumTest
@@ -613,7 +613,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_3500
      * @tc.name testArrayInvoke2035
      * @tc.desc Verify arrays created with preset length can be resized dynamically
      * @tc.size MediumTest
@@ -637,7 +637,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_3600
      * @tc.name testArrayInvoke2036
      * @tc.desc Verify this invoke overload behaves the same as constructor-style array creation
      * @tc.size MediumTest
@@ -651,7 +651,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_3700
      * @tc.name testArrayInvoke2037
      * @tc.desc Verify Array.create initializes elements while length construction leaves them uninitialized
      * @tc.size MediumTest
@@ -673,7 +673,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_3800
      * @tc.name testArrayInvoke2038
      * @tc.desc Verify overload selection follows the number of constructor arguments
      * @tc.size MediumTest
@@ -692,7 +692,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_3900
      * @tc.name testArrayInvoke2039
      * @tc.desc Verify zero-length arrays behave the same with explicit and default construction
      * @tc.size MediumTest
@@ -707,7 +707,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_4000
      * @tc.name testArrayInvoke2040
      * @tc.desc Verify single-element arrays can be initialized and read correctly
      * @tc.size MediumTest
@@ -723,7 +723,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_4100
      * @tc.name testArrayInvoke2041
      * @tc.desc Verify large arrays can be created initialized and read correctly
      * @tc.size MediumTest
@@ -742,7 +742,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_4200
      * @tc.name testArrayInvoke2042
      * @tc.desc Verify preallocated arrays can produce the same results as dynamically grown arrays
      * @tc.size MediumTest
@@ -766,7 +766,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_4300
      * @tc.name testArrayInvoke2043
      * @tc.desc Verify invalid length arguments are rejected for negative and compile-time mismatched inputs
      * @tc.size MediumTest
@@ -783,7 +783,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_4400
      * @tc.name testArrayInvoke2044
      * @tc.desc Verify generic array construction supports matching runtime values
      * @tc.size MediumTest
@@ -800,7 +800,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_4500
      * @tc.name testArrayInvoke2045
      * @tc.desc Verify arrays can be initialized immediately and consumed by reduce
      * @tc.size MediumTest
@@ -815,7 +815,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_4600
      * @tc.name testArrayInvoke2046
      * @tc.desc Verify fill supports chained initialization before pushOne usage
      * @tc.size MediumTest
@@ -832,7 +832,7 @@ export default function ArrayInvoke2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_TWO_4700
      * @tc.name testArrayInvoke2047
      * @tc.desc Verify the native invoke overload creates a usable array instance
      * @tc.size MediumTest

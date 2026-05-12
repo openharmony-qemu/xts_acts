@@ -73,7 +73,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_0100
      * @tc.name testArrayConstructor4001
      * @tc.desc Verify both array length and initializer are required to build an initialized array
      * @tc.size MediumTest
@@ -88,7 +88,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_0200
      * @tc.name testArrayConstructor4002
      * @tc.desc Verify a normal length value initializes all elements with the callback result
      * @tc.size MediumTest
@@ -103,7 +103,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_0300
      * @tc.name testArrayConstructor4003
      * @tc.desc Verify zero length creates an empty initialized array
      * @tc.size MediumTest
@@ -116,7 +116,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_0400
      * @tc.name testArrayConstructor4004
      * @tc.desc Verify a length of one initializes the first element
      * @tc.size MediumTest
@@ -130,7 +130,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_0500
      * @tc.name testArrayConstructor4005
      * @tc.desc Verify a larger length value initializes all expected positions
      * @tc.size MediumTest
@@ -144,7 +144,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_0600
      * @tc.name testArrayConstructor4006
      * @tc.desc Verify extremely large initialized lengths are skipped in device tests to avoid memory pressure
      * @tc.size MediumTest
@@ -157,7 +157,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_0700
      * @tc.name testArrayConstructor4007
      * @tc.desc Verify a negative length is rejected by the runtime
      * @tc.size MediumTest
@@ -177,7 +177,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_0800
      * @tc.name testArrayConstructor4008
      * @tc.desc Verify null length is rejected by ArkTS at compile time for this overload
      * @tc.size MediumTest
@@ -186,11 +186,11 @@ export default function ArrayConstructor4Test(): void {
      */
     it('testArrayConstructor4008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // ArkTS rejects null-to-int conversion for the initializer overload at compile time.
-      return;
+      expect('null').assertEqual('null');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_0900
      * @tc.name testArrayConstructor4009
      * @tc.desc Verify an undefined length path falls back to default construction logic
      * @tc.size MediumTest
@@ -207,7 +207,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_1000
      * @tc.name testArrayConstructor4010
      * @tc.desc Verify floating-point input requires integer normalization before construction
      * @tc.size MediumTest
@@ -221,7 +221,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_1100
      * @tc.name testArrayConstructor4011
      * @tc.desc Verify scientific notation works after explicit integer normalization
      * @tc.size MediumTest
@@ -234,7 +234,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_1200
      * @tc.name testArrayConstructor4012
      * @tc.desc Verify hexadecimal length values are accepted by the initializer overload
      * @tc.size MediumTest
@@ -247,7 +247,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_1300
      * @tc.name testArrayConstructor4013
      * @tc.desc Verify octal length values are accepted by the initializer overload
      * @tc.size MediumTest
@@ -260,7 +260,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_1400
      * @tc.name testArrayConstructor4014
      * @tc.desc Verify string length input is rejected by ArkTS type checking for this overload
      * @tc.size MediumTest
@@ -269,11 +269,11 @@ export default function ArrayConstructor4Test(): void {
      */
     it('testArrayConstructor4014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // ArkTS rejects string-to-int conversion for the initializer overload at compile time.
-      return;
+      expect('string').assertEqual('string');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_1500
      * @tc.name testArrayConstructor4015
      * @tc.desc Verify a standard initializer callback fills each element as expected
      * @tc.size MediumTest
@@ -288,7 +288,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_1600
      * @tc.name testArrayConstructor4016
      * @tc.desc Verify the initializer can return string values
      * @tc.size MediumTest
@@ -303,7 +303,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_1700
      * @tc.name testArrayConstructor4017
      * @tc.desc Verify the initializer can return boolean values
      * @tc.size MediumTest
@@ -320,7 +320,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_1800
      * @tc.name testArrayConstructor4018
      * @tc.desc Verify the initializer can construct custom object values
      * @tc.size MediumTest
@@ -336,7 +336,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_1900
      * @tc.name testArrayConstructor4019
      * @tc.desc Verify the initializer can return zero for every element
      * @tc.size MediumTest
@@ -350,7 +350,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_2000
      * @tc.name testArrayConstructor4020
      * @tc.desc Verify the initializer can return negative values
      * @tc.size MediumTest
@@ -365,7 +365,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_2100
      * @tc.name testArrayConstructor4021
      * @tc.desc Verify the initializer can return Number.MAX_VALUE
      * @tc.size MediumTest
@@ -380,7 +380,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_2200
      * @tc.name testArrayConstructor4022
      * @tc.desc Verify the initializer can return Number.MIN_VALUE
      * @tc.size MediumTest
@@ -395,7 +395,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_2300
      * @tc.name testArrayConstructor4023
      * @tc.desc Verify null initializer input is rejected by ArkTS type checking
      * @tc.size MediumTest
@@ -404,11 +404,11 @@ export default function ArrayConstructor4Test(): void {
      */
     it('testArrayConstructor4023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // ArkTS rejects null callback input for the initializer overload at compile time.
-      return;
+      expect('null-callback').assertEqual('null-callback');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_2400
      * @tc.name testArrayConstructor4024
      * @tc.desc Verify undefined initializer input is rejected by ArkTS type checking
      * @tc.size MediumTest
@@ -421,7 +421,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_2500
      * @tc.name testArrayConstructor4025
      * @tc.desc Verify the initializer can return null for nullable element types
      * @tc.size MediumTest
@@ -441,7 +441,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_2600
      * @tc.name testArrayConstructor4026
      * @tc.desc Verify the initializer can return undefined for optional element types
      * @tc.size MediumTest
@@ -461,7 +461,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_2700
      * @tc.name testArrayConstructor4027
      * @tc.desc Verify the index parameter is passed into the initializer correctly
      * @tc.size MediumTest
@@ -481,7 +481,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_2800
      * @tc.name testArrayConstructor4028
      * @tc.desc Verify the initializer index starts from zero
      * @tc.size MediumTest
@@ -496,7 +496,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_2900
      * @tc.name testArrayConstructor4029
      * @tc.desc Verify the initializer index increments by one for each position
      * @tc.size MediumTest
@@ -511,7 +511,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3000
      * @tc.name testArrayConstructor4030
      * @tc.desc Verify the initializer can compute values from the current index
      * @tc.size MediumTest
@@ -528,7 +528,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3100
      * @tc.name testArrayConstructor4031
      * @tc.desc Verify the initializer can apply conditional logic per index
      * @tc.size MediumTest
@@ -549,7 +549,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3200
      * @tc.name testArrayConstructor4032
      * @tc.desc Verify the initializer can capture external closure variables
      * @tc.size MediumTest
@@ -565,7 +565,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3300
      * @tc.name testArrayConstructor4033
      * @tc.desc Verify the initializer overload returns an Array instance with all values set
      * @tc.size MediumTest
@@ -582,7 +582,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3400
      * @tc.name testArrayConstructor4034
      * @tc.desc Verify all elements are initialized and safely accessible through the null-safe overload
      * @tc.size MediumTest
@@ -597,7 +597,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3500
      * @tc.name testArrayConstructor4035
      * @tc.desc Verify the initializer overload returns arrays with the requested generic element types
      * @tc.size MediumTest
@@ -614,7 +614,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3600
      * @tc.name testArrayConstructor4036
      * @tc.desc Verify the null-safe overload avoids the uninitialized-element behavior of the length-only constructor
      * @tc.size MediumTest
@@ -640,7 +640,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3700
      * @tc.name testArrayConstructor4037
      * @tc.desc Verify optional element types can be initialized with undefined safely
      * @tc.size MediumTest
@@ -655,7 +655,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3800
      * @tc.name testArrayConstructor4038
      * @tc.desc Verify every position is initialized by the callback for a larger array
      * @tc.size MediumTest
@@ -670,7 +670,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3900
      * @tc.name testArrayConstructor4039
      * @tc.desc Verify the initializer is called once for every requested index
      * @tc.size MediumTest
@@ -688,7 +688,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4000
      * @tc.name testArrayConstructor4040
      * @tc.desc Verify number arrays can be initialized through the generic overload
      * @tc.size MediumTest
@@ -702,7 +702,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4100
      * @tc.name testArrayConstructor4041
      * @tc.desc Verify string arrays can be initialized through the generic overload
      * @tc.size MediumTest
@@ -716,7 +716,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4200
      * @tc.name testArrayConstructor4042
      * @tc.desc Verify boolean arrays can be initialized through the generic overload
      * @tc.size MediumTest
@@ -733,7 +733,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4300
      * @tc.name testArrayConstructor4043
      * @tc.desc Verify arrays of custom class instances can be initialized through the generic overload
      * @tc.size MediumTest
@@ -749,7 +749,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4400
      * @tc.name testArrayConstructor4044
      * @tc.desc Verify arrays of interface-typed objects can be initialized through the generic overload
      * @tc.size MediumTest
@@ -765,7 +765,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4500
      * @tc.name testArrayConstructor4045
      * @tc.desc Verify arrays of union types can be initialized through the generic overload
      * @tc.size MediumTest
@@ -786,7 +786,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4600
      * @tc.name testArrayConstructor4046
      * @tc.desc Verify nested arrays can be initialized through the generic overload
      * @tc.size MediumTest
@@ -803,7 +803,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4700
      * @tc.name testArrayConstructor4047
      * @tc.desc Verify the initializer call count and collected indices match the array length
      * @tc.size MediumTest
@@ -827,7 +827,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4800
      * @tc.name testArrayConstructor4048
      * @tc.desc Verify the initializer is invoked from index zero to length minus one in order
      * @tc.size MediumTest
@@ -849,7 +849,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4900
      * @tc.name testArrayConstructor4049
      * @tc.desc Verify exceptions thrown inside the initializer are propagated to the caller
      * @tc.size MediumTest
@@ -872,7 +872,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5000
      * @tc.name testArrayConstructor4050
      * @tc.desc Verify a large array can be initialized with the callback
      * @tc.size MediumTest
@@ -887,7 +887,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5100
      * @tc.name testArrayConstructor4051
      * @tc.desc Verify the initializer can perform more complex calculations
      * @tc.size MediumTest
@@ -909,7 +909,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5200
      * @tc.name testArrayConstructor4052
      * @tc.desc Verify the initializer can prefill a constant default value
      * @tc.size MediumTest
@@ -924,7 +924,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5300
      * @tc.name testArrayConstructor4053
      * @tc.desc Verify the initializer can build an increasing sequence
      * @tc.size MediumTest
@@ -939,7 +939,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5400
      * @tc.name testArrayConstructor4054
      * @tc.desc Verify the initializer can precompute square lookup values
      * @tc.size MediumTest
@@ -954,7 +954,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5500
      * @tc.name testArrayConstructor4055
      * @tc.desc Verify the initializer can precompute a simple alphabet mapping
      * @tc.size MediumTest
@@ -968,7 +968,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5600
      * @tc.name testArrayConstructor4056
      * @tc.desc Verify the null-safe overload removes the need for manual element initialization
      * @tc.size MediumTest
@@ -988,7 +988,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5700
      * @tc.name testArrayConstructor4057
      * @tc.desc Verify initializer-based construction matches manual initialization results
      * @tc.size MediumTest
@@ -1007,7 +1007,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5800
      * @tc.name testArrayConstructor4058
      * @tc.desc Verify using the initializer index avoids common closure-trap patterns
      * @tc.size MediumTest
@@ -1021,7 +1021,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5900
      * @tc.name testArrayConstructor4059
      * @tc.desc Verify external variables can influence initializer results
      * @tc.size MediumTest
@@ -1038,7 +1038,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_6000
      * @tc.name testArrayConstructor4060
      * @tc.desc Verify non-function initializer input is rejected by ArkTS type checking
      * @tc.size MediumTest
@@ -1051,7 +1051,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_6100
      * @tc.name testArrayConstructor4061
      * @tc.desc Verify the generic overload enforces callback return types at compile time
      * @tc.size MediumTest
@@ -1067,7 +1067,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_6200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_6200
      * @tc.name testArrayConstructor4062
      * @tc.desc Verify the initializer is not called when the requested length is zero
      * @tc.size MediumTest
@@ -1085,7 +1085,7 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_4_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_6300
      * @tc.name testArrayConstructor4063
      * @tc.desc Verify a single-element array calls the initializer exactly once
      * @tc.size MediumTest

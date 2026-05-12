@@ -43,7 +43,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_0100
      * @tc.name testArrayAt1001
      * @tc.desc Verify positive integer index counts from the front
      * @tc.size MediumTest
@@ -57,7 +57,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_0200
      * @tc.name testArrayAt1002
      * @tc.desc Verify negative integer index counts from the end
      * @tc.size MediumTest
@@ -71,7 +71,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_0300
      * @tc.name testArrayAt1003
      * @tc.desc Verify index zero returns the first element
      * @tc.size MediumTest
@@ -85,7 +85,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_0400
      * @tc.name testArrayAt1004
      * @tc.desc Verify index greater than or equal to length returns undefined
      * @tc.size MediumTest
@@ -103,7 +103,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_0500
      * @tc.name testArrayAt1005
      * @tc.desc Verify negative index beyond array length returns undefined
      * @tc.size MediumTest
@@ -121,7 +121,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_0600
      * @tc.name testArrayAt1006
      * @tc.desc Verify decimal index is converted with integer semantics
      * @tc.size MediumTest
@@ -136,7 +136,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_0700
      * @tc.name testArrayAt1007
      * @tc.desc Verify NaN index is treated as zero
      * @tc.size MediumTest
@@ -152,7 +152,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_0800
      * @tc.name testArrayAt1008
      * @tc.desc Verify Infinity index returns undefined
      * @tc.size MediumTest
@@ -171,7 +171,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_0900
      * @tc.name testArrayAt1009
      * @tc.desc Verify negative Infinity index returns undefined
      * @tc.size MediumTest
@@ -190,7 +190,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1000
      * @tc.name testArrayAt1010
      * @tc.desc Verify the returned element keeps the array generic type
      * @tc.size MediumTest
@@ -204,7 +204,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1100
      * @tc.name testArrayAt1011
      * @tc.desc Verify invalid index returns undefined
      * @tc.size MediumTest
@@ -222,7 +222,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1200
      * @tc.name testArrayAt1012
      * @tc.desc Verify positive indexes can read multiple elements
      * @tc.size MediumTest
@@ -239,7 +239,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1300
      * @tc.name testArrayAt1013
      * @tc.desc Verify negative indexes can read multiple elements from the end
      * @tc.size MediumTest
@@ -256,7 +256,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1400
      * @tc.name testArrayAt1014
      * @tc.desc Verify at negative one returns the last element
      * @tc.size MediumTest
@@ -270,7 +270,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1500
      * @tc.name testArrayAt1015
      * @tc.desc Verify at zero returns the first element
      * @tc.size MediumTest
@@ -284,7 +284,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1600
      * @tc.name testArrayAt1016
      * @tc.desc Verify length minus one is the last valid positive index
      * @tc.size MediumTest
@@ -298,7 +298,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1700
      * @tc.name testArrayAt1017
      * @tc.desc Verify negative length is the first valid negative index
      * @tc.size MediumTest
@@ -312,7 +312,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1800
      * @tc.name testArrayAt1018
      * @tc.desc Verify index equal to length returns undefined
      * @tc.size MediumTest
@@ -330,7 +330,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1900
      * @tc.name testArrayAt1019
      * @tc.desc Verify index smaller than negative length returns undefined
      * @tc.size MediumTest
@@ -348,7 +348,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2000
      * @tc.name testArrayAt1020
      * @tc.desc Verify empty array returns undefined for all tested indexes
      * @tc.size MediumTest
@@ -378,7 +378,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2100
      * @tc.name testArrayAt1021
      * @tc.desc Verify single-element array supports front and negative access
      * @tc.size MediumTest
@@ -394,18 +394,18 @@ export default function ArrayAt1Test(): void {
         arr.at(1);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
       try {
         arr.at(-2);
         expect().assertFail();
       } catch (e) {
-        expect(e == null).assertFalse();
+        expect(e !== null && e !== undefined).assertTrue();
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2200
      * @tc.name testArrayAt1022
      * @tc.desc Verify two-element array supports both positive and negative access
      * @tc.size MediumTest
@@ -421,7 +421,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2300
      * @tc.name testArrayAt1023
      * @tc.desc Verify number arrays support at access
      * @tc.size MediumTest
@@ -434,7 +434,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2400
      * @tc.name testArrayAt1024
      * @tc.desc Verify string arrays support at access
      * @tc.size MediumTest
@@ -448,7 +448,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2500
      * @tc.name testArrayAt1025
      * @tc.desc Verify boolean arrays support at access
      * @tc.size MediumTest
@@ -462,7 +462,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2600
      * @tc.name testArrayAt1026
      * @tc.desc Verify single-character string arrays can cover char-like access
      * @tc.size MediumTest
@@ -476,7 +476,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2700
      * @tc.name testArrayAt1027
      * @tc.desc Verify object arrays support at access
      * @tc.size MediumTest
@@ -501,7 +501,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2800
      * @tc.name testArrayAt1028
      * @tc.desc Verify union type arrays support at access
      * @tc.size MediumTest
@@ -515,7 +515,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2900
      * @tc.name testArrayAt1029
      * @tc.desc Verify arrays containing null elements return null at the matching position
      * @tc.size MediumTest
@@ -530,7 +530,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3000
      * @tc.name testArrayAt1030
      * @tc.desc Verify arrays containing undefined elements return undefined at the matching position
      * @tc.size MediumTest
@@ -545,7 +545,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3100
      * @tc.name testArrayAt1031
      * @tc.desc Verify arrays containing zero elements return zero correctly
      * @tc.size MediumTest
@@ -558,7 +558,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3200
      * @tc.name testArrayAt1032
      * @tc.desc Verify arrays containing false elements return false correctly
      * @tc.size MediumTest
@@ -571,7 +571,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3300
      * @tc.name testArrayAt1033
      * @tc.desc Verify arrays containing empty strings return empty strings correctly
      * @tc.size MediumTest
@@ -585,7 +585,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3400
      * @tc.name testArrayAt1034
      * @tc.desc Verify at negative indexes match direct indexing of translated positions
      * @tc.size MediumTest
@@ -599,7 +599,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3500
      * @tc.name testArrayAt1035
      * @tc.desc Verify at and bracket notation match for positive indexes and at stays convenient for tail access
      * @tc.size MediumTest
@@ -613,7 +613,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3600
      * @tc.name testArrayAt1036
      * @tc.desc Verify repeated positive at access remains stable in a large array
      * @tc.size MediumTest
@@ -634,7 +634,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3700
      * @tc.name testArrayAt1037
      * @tc.desc Verify repeated negative at access remains stable in a large array
      * @tc.size MediumTest
@@ -655,7 +655,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3800
      * @tc.name testArrayAt1038
      * @tc.desc Verify at negative one is suitable for getting the last element
      * @tc.size MediumTest
@@ -669,7 +669,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3900
      * @tc.name testArrayAt1039
      * @tc.desc Verify negative indexes can get multiple elements from the tail
      * @tc.size MediumTest
@@ -685,7 +685,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4000
      * @tc.name testArrayAt1040
      * @tc.desc Verify at can avoid out-of-bounds direct index assumptions
      * @tc.size MediumTest
@@ -703,7 +703,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4100
      * @tc.name testArrayAt1041
      * @tc.desc Verify readonly arrays support at access
      * @tc.size MediumTest
@@ -718,7 +718,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4200
      * @tc.name testArrayAt1042
      * @tc.desc Verify very large positive indexes return undefined
      * @tc.size MediumTest
@@ -744,7 +744,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4300
      * @tc.name testArrayAt1043
      * @tc.desc Verify very small numeric indexes follow integer conversion semantics
      * @tc.size MediumTest
@@ -765,7 +765,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4400
      * @tc.name testArrayAt1044
      * @tc.desc Verify another decimal index also follows integer conversion semantics
      * @tc.size MediumTest
@@ -780,7 +780,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4500
      * @tc.name testArrayAt1045
      * @tc.desc Verify scientific notation indexes are accepted
      * @tc.size MediumTest
@@ -795,7 +795,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4600
      * @tc.name testArrayAt1046
      * @tc.desc Verify return type can be narrowed from T or undefined
      * @tc.size MediumTest
@@ -813,7 +813,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4700
      * @tc.name testArrayAt1047
      * @tc.desc Verify type guard logic handles undefined results
      * @tc.size MediumTest
@@ -836,7 +836,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4800
      * @tc.name testArrayAt1048
      * @tc.desc Verify repeated at calls can read different elements continuously
      * @tc.size MediumTest
@@ -852,7 +852,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4900
      * @tc.name testArrayAt1049
      * @tc.desc Verify at does not modify the array while pop removes the tail element
      * @tc.size MediumTest
@@ -872,7 +872,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_5000
      * @tc.name testArrayAt1050
      * @tc.desc Verify at returns one element while slice returns an array
      * @tc.size MediumTest
@@ -890,7 +890,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_5100
      * @tc.name testArrayAt1051
      * @tc.desc Verify at can be used in follow-up calculations after null checks
      * @tc.size MediumTest
@@ -909,7 +909,7 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_1_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_5200
      * @tc.name testArrayAt1052
      * @tc.desc Verify at combines with nullable array processing
      * @tc.size MediumTest

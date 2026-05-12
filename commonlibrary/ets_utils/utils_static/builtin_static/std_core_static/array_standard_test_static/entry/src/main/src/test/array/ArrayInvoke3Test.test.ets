@@ -81,7 +81,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_0100
      * @tc.name testArrayInvoke3001
      * @tc.desc Verify varargs overload supports zero and multiple item inputs
      * @tc.size MediumTest
@@ -100,7 +100,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_0200
      * @tc.name testArrayInvoke3002
      * @tc.desc Verify varargs overload accepts element values of multiple basic types
      * @tc.size MediumTest
@@ -119,7 +119,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_0300
      * @tc.name testArrayInvoke3003
      * @tc.desc Verify varargs overload preserves zero values in the created array
      * @tc.size MediumTest
@@ -133,7 +133,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_0400
      * @tc.name testArrayInvoke3004
      * @tc.desc Verify varargs overload preserves empty string values
      * @tc.size MediumTest
@@ -147,7 +147,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_0500
      * @tc.name testArrayInvoke3005
      * @tc.desc Verify varargs overload preserves false boolean values
      * @tc.size MediumTest
@@ -161,7 +161,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_0600
      * @tc.name testArrayInvoke3006
      * @tc.desc Verify varargs overload preserves negative number values
      * @tc.size MediumTest
@@ -175,7 +175,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_0700
      * @tc.name testArrayInvoke3007
      * @tc.desc Verify varargs overload preserves max and min number values
      * @tc.size MediumTest
@@ -191,7 +191,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_0800
      * @tc.name testArrayInvoke3008
      * @tc.desc Verify varargs overload preserves null values in union arrays
      * @tc.size MediumTest
@@ -206,7 +206,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_0900
      * @tc.name testArrayInvoke3009
      * @tc.desc Verify varargs overload preserves undefined values in union arrays
      * @tc.size MediumTest
@@ -221,7 +221,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_1000
      * @tc.name testArrayInvoke3010
      * @tc.desc Verify varargs overload preserves NaN values
      * @tc.size MediumTest
@@ -236,7 +236,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_1100
      * @tc.name testArrayInvoke3011
      * @tc.desc Verify varargs overload preserves infinity values
      * @tc.size MediumTest
@@ -251,7 +251,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_1200
      * @tc.name testArrayInvoke3012
      * @tc.desc Verify varargs overload accepts custom object values
      * @tc.size MediumTest
@@ -269,7 +269,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_1300
      * @tc.name testArrayInvoke3013
      * @tc.desc Verify varargs overload accepts interface values
      * @tc.size MediumTest
@@ -287,7 +287,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_1400
      * @tc.name testArrayInvoke3014
      * @tc.desc Verify varargs overload accepts nested array values
      * @tc.size MediumTest
@@ -302,7 +302,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_1500
      * @tc.name testArrayInvoke3015
      * @tc.desc Verify varargs overload preserves script-like string inputs
      * @tc.size MediumTest
@@ -316,7 +316,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_1600
      * @tc.name testArrayInvoke3016
      * @tc.desc Verify varargs overload preserves Unicode string values
      * @tc.size MediumTest
@@ -331,7 +331,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_1700
      * @tc.name testArrayInvoke3017
      * @tc.desc Verify varargs overload preserves zero-width space values
      * @tc.size MediumTest
@@ -344,7 +344,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_1800
      * @tc.name testArrayInvoke3018
      * @tc.desc Verify varargs overload preserves extra long strings
      * @tc.size MediumTest
@@ -358,7 +358,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_1900
      * @tc.name testArrayInvoke3019
      * @tc.desc Verify varargs overload supports construction without passing parameters
      * @tc.size MediumTest
@@ -371,7 +371,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2000
      * @tc.name testArrayInvoke3020
      * @tc.desc Verify omitting parameters is the runtime-safe way to represent an empty item list
      * @tc.size MediumTest
@@ -384,7 +384,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2100
      * @tc.name testArrayInvoke3021
      * @tc.desc Verify varargs overload returns an array containing all passed items
      * @tc.size MediumTest
@@ -401,7 +401,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2200
      * @tc.name testArrayInvoke3022
      * @tc.desc Verify argument count determines the returned array length
      * @tc.size MediumTest
@@ -420,7 +420,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2300
      * @tc.name testArrayInvoke3023
      * @tc.desc Verify generic array construction returns proper array instances
      * @tc.size MediumTest
@@ -438,7 +438,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2400
      * @tc.name testArrayInvoke3024
      * @tc.desc Verify single-parameter construction follows runtime overload behavior
      * @tc.size MediumTest
@@ -455,7 +455,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2500
      * @tc.name testArrayInvoke3025
      * @tc.desc Verify varargs overload accepts mixed values under a union type
      * @tc.size MediumTest
@@ -472,7 +472,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2600
      * @tc.name testArrayInvoke3026
      * @tc.desc Verify varargs overload supports arrays whose elements are all the same
      * @tc.size MediumTest
@@ -488,7 +488,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2700
      * @tc.name testArrayInvoke3027
      * @tc.desc Verify varargs overload can initialize arrays from many values
      * @tc.size MediumTest
@@ -507,7 +507,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2800
      * @tc.name testArrayInvoke3028
      * @tc.desc Verify varargs overload creates number arrays with the expected values
      * @tc.size MediumTest
@@ -523,7 +523,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2900
      * @tc.name testArrayInvoke3029
      * @tc.desc Verify varargs overload creates string arrays with the expected values
      * @tc.size MediumTest
@@ -538,7 +538,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3000
      * @tc.name testArrayInvoke3030
      * @tc.desc Verify varargs overload creates boolean arrays with the expected values
      * @tc.size MediumTest
@@ -554,7 +554,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3100
      * @tc.name testArrayInvoke3031
      * @tc.desc Verify varargs overload creates arrays of custom class instances
      * @tc.size MediumTest
@@ -574,7 +574,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3200
      * @tc.name testArrayInvoke3032
      * @tc.desc Verify varargs overload creates arrays of interface values
      * @tc.size MediumTest
@@ -594,7 +594,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3300
      * @tc.name testArrayInvoke3033
      * @tc.desc Verify varargs overload creates arrays under a union element type
      * @tc.size MediumTest
@@ -611,7 +611,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3400
      * @tc.name testArrayInvoke3034
      * @tc.desc Verify varargs overload creates arrays of arrays
      * @tc.size MediumTest
@@ -632,7 +632,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3500
      * @tc.name testArrayInvoke3035
      * @tc.desc Verify varargs overload creates three-dimensional arrays
      * @tc.size MediumTest
@@ -656,7 +656,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3600
      * @tc.name testArrayInvoke3036
      * @tc.desc Verify varargs overload handles argument counts from zero to many
      * @tc.size MediumTest
@@ -678,7 +678,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3700
      * @tc.name testArrayInvoke3037
      * @tc.desc Verify spread syntax can reuse existing array items as constructor inputs
      * @tc.size MediumTest
@@ -694,7 +694,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3800
      * @tc.name testArrayInvoke3038
      * @tc.desc Verify spread syntax can be mixed with directly passed items
      * @tc.size MediumTest
@@ -711,7 +711,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3900
      * @tc.name testArrayInvoke3039
      * @tc.desc Verify varargs overload suits initialization with known element values
      * @tc.size MediumTest
@@ -735,7 +735,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4000
      * @tc.name testArrayInvoke3040
      * @tc.desc Verify varargs overload can quickly build test data sets
      * @tc.size MediumTest
@@ -755,7 +755,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4100
      * @tc.name testArrayInvoke3041
      * @tc.desc Verify varargs overload can create configuration item arrays
      * @tc.size MediumTest
@@ -774,7 +774,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4200
      * @tc.name testArrayInvoke3042
      * @tc.desc Verify constructor arguments select the expected Array overload
      * @tc.size MediumTest
@@ -794,7 +794,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4300
      * @tc.name testArrayInvoke3043
      * @tc.desc Verify explicit generic types influence single-parameter array behavior
      * @tc.size MediumTest
@@ -812,7 +812,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4400
      * @tc.name testArrayInvoke3044
      * @tc.desc Verify compile-time type checks reject mismatched varargs element types
      * @tc.size MediumTest
@@ -831,7 +831,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4500
      * @tc.name testArrayInvoke3045
      * @tc.desc Verify all varargs items must conform to the declared generic type
      * @tc.size MediumTest
@@ -851,7 +851,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4600
      * @tc.name testArrayInvoke3046
      * @tc.desc Verify a single number argument follows the length overload while other types stay as items
      * @tc.size MediumTest
@@ -871,7 +871,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4700
      * @tc.name testArrayInvoke3047
      * @tc.desc Verify omitting all arguments is equivalent to default construction
      * @tc.size MediumTest
@@ -884,7 +884,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4800
      * @tc.name testArrayInvoke3048
      * @tc.desc Verify varargs overload can accept many explicit initial values
      * @tc.size MediumTest
@@ -910,7 +910,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4900
      * @tc.name testArrayInvoke3049
      * @tc.desc Verify varargs overload supports constructing arrays of complex objects
      * @tc.size MediumTest
@@ -931,7 +931,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_5000
      * @tc.name testArrayInvoke3050
      * @tc.desc Verify the native varargs overload creates usable array instances
      * @tc.size MediumTest
@@ -945,7 +945,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_5100
      * @tc.name testArrayInvoke3051
      * @tc.desc Verify varargs-style construction is functionally equivalent for item initialization
      * @tc.size MediumTest
@@ -961,7 +961,7 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_3_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_5200
      * @tc.name testArrayInvoke3052
      * @tc.desc Verify arrays created by the varargs overload support immediate chained operations
      * @tc.size MediumTest

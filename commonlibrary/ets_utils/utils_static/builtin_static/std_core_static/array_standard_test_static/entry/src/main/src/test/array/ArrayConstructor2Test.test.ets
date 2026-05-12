@@ -67,7 +67,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_0100
      * @tc.name testArrayConstructor2001
      * @tc.desc Verify the no-argument constructor creates an empty array
      * @tc.size MediumTest
@@ -80,7 +80,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_0200
      * @tc.name testArrayConstructor2002
      * @tc.desc Verify passing arguments selects other constructor overloads
      * @tc.size MediumTest
@@ -99,7 +99,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_0300
      * @tc.name testArrayConstructor2003
      * @tc.desc Verify the no-argument constructor returns a new empty Array instance
      * @tc.size MediumTest
@@ -113,7 +113,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_0400
      * @tc.name testArrayConstructor2004
      * @tc.desc Verify the no-argument constructor supports different generic empty arrays
      * @tc.size MediumTest
@@ -135,7 +135,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_0500
      * @tc.name testArrayConstructor2005
      * @tc.desc Verify the returned value from the no-argument constructor is an Array instance
      * @tc.size MediumTest
@@ -148,7 +148,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_0600
      * @tc.name testArrayConstructor2006
      * @tc.desc Verify the declared generic type controls what values can be pushed into empty arrays
      * @tc.size MediumTest
@@ -172,7 +172,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_0700
      * @tc.name testArrayConstructor2007
      * @tc.desc Verify new empty arrays have length zero
      * @tc.size MediumTest
@@ -185,7 +185,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_0800
      * @tc.name testArrayConstructor2008
      * @tc.desc Verify empty arrays reject indexed access before elements are added
      * @tc.size MediumTest
@@ -203,7 +203,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_0900
      * @tc.name testArrayConstructor2009
      * @tc.desc Verify push operations grow an initially empty array
      * @tc.size MediumTest
@@ -224,7 +224,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1000
      * @tc.name testArrayConstructor2010
      * @tc.desc Verify unshift inserts elements at the front of an initially empty array
      * @tc.size MediumTest
@@ -244,7 +244,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1100
      * @tc.name testArrayConstructor2011
      * @tc.desc Verify an empty array can be built dynamically with repeated pushes
      * @tc.size MediumTest
@@ -264,7 +264,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1200
      * @tc.name testArrayConstructor2012
      * @tc.desc Verify Array<number> starts empty and accepts numeric values
      * @tc.size MediumTest
@@ -280,7 +280,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1300
      * @tc.name testArrayConstructor2013
      * @tc.desc Verify Array<string> starts empty and accepts string values
      * @tc.size MediumTest
@@ -296,7 +296,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1400
      * @tc.name testArrayConstructor2014
      * @tc.desc Verify Array<boolean> starts empty and accepts boolean values
      * @tc.size MediumTest
@@ -312,7 +312,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1500
      * @tc.name testArrayConstructor2015
      * @tc.desc Verify empty arrays of custom class instances accept pushed objects
      * @tc.size MediumTest
@@ -328,7 +328,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1600
      * @tc.name testArrayConstructor2016
      * @tc.desc Verify empty arrays of interface-based objects accept pushed values
      * @tc.size MediumTest
@@ -345,7 +345,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1700
      * @tc.name testArrayConstructor2017
      * @tc.desc Verify empty arrays with union element types accept mixed valid values
      * @tc.size MediumTest
@@ -366,7 +366,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1800
      * @tc.name testArrayConstructor2018
      * @tc.desc Verify nested empty arrays can collect array elements dynamically
      * @tc.size MediumTest
@@ -386,7 +386,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1900
      * @tc.name testArrayConstructor2019
      * @tc.desc Verify empty arrays are suitable for dynamically sized collections
      * @tc.size MediumTest
@@ -407,7 +407,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2000
      * @tc.name testArrayConstructor2020
      * @tc.desc Verify empty arrays can be used as temporary data containers
      * @tc.size MediumTest
@@ -421,7 +421,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2100
      * @tc.name testArrayConstructor2021
      * @tc.desc Verify an empty array can be passed to a function and filled there
      * @tc.size MediumTest
@@ -438,7 +438,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2200
      * @tc.name testArrayConstructor2022
      * @tc.desc Verify common array methods behave correctly on an initially empty array
      * @tc.size MediumTest
@@ -464,7 +464,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2300
      * @tc.name testArrayConstructor2023
      * @tc.desc Verify iterator-style methods on an empty array return empty or neutral results
      * @tc.size MediumTest
@@ -498,7 +498,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2400
      * @tc.name testArrayConstructor2024
      * @tc.desc Verify search methods return empty-array defaults when no elements exist
      * @tc.size MediumTest
@@ -516,7 +516,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2500
      * @tc.name testArrayConstructor2025
      * @tc.desc Verify predicate methods on an empty array follow standard vacuous truth behavior
      * @tc.size MediumTest
@@ -530,7 +530,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2600
      * @tc.name testArrayConstructor2026
      * @tc.desc Verify empty arrays can be populated step by step instead of chaining pushOne calls
      * @tc.size MediumTest
@@ -546,7 +546,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2700
      * @tc.name testArrayConstructor2027
      * @tc.desc Verify generic empty arrays work with helper functions that return the same type
      * @tc.size MediumTest
@@ -565,7 +565,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2800
      * @tc.name testArrayConstructor2028
      * @tc.desc Verify repeated empty-array creation remains valid across many iterations
      * @tc.size MediumTest
@@ -582,7 +582,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2900
      * @tc.name testArrayConstructor2029
      * @tc.desc Verify empty arrays represent the minimal array state compared with preallocated arrays
      * @tc.size MediumTest
@@ -598,7 +598,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_3000
      * @tc.name testArrayConstructor2030
      * @tc.desc Verify different array constructor overloads serve different use cases
      * @tc.size MediumTest
@@ -618,7 +618,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_3100
      * @tc.name testArrayConstructor2031
      * @tc.desc Verify constructor choice can match dynamic, fixed-size, and preinitialized scenarios
      * @tc.size MediumTest
@@ -643,7 +643,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_3200
      * @tc.name testArrayConstructor2032
      * @tc.desc Verify generic type safety is preserved for empty arrays before and after pushes
      * @tc.size MediumTest
@@ -657,7 +657,7 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_2_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_3300
      * @tc.name testArrayConstructor2033
      * @tc.desc Verify basic operations on an empty array remain runtime-safe when guarded properly
      * @tc.size MediumTest

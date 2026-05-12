@@ -1,6 +1,6 @@
 {
   "app": {
-    "bundleName": "array.standard.test.static",
+    "bundleName": "com.example.array_standard_test_static",
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",
