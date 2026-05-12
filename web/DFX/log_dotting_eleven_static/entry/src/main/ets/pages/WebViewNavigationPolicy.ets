@@ -64,6 +64,8 @@ struct NewWebViewComp {
   }
 }
 
+let startAbilityForResultTestMode: boolean = false;
+
 export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAbility {
   onConnectNative(info: ConnectionInfo): void {
     const abilityWant : Want = {
@@ -72,8 +74,19 @@ export class MyWebNativeMessagingExtension extends WebNativeMessagingExtensionAb
     };
     try {
       const context = this.context; // Obtain the WebNativeMessagingExtensionContext instance.
-      context.startAbility(abilityWant);
-      console.info('Ability started successfully');
+      if (startAbilityForResultTestMode) {
+        startAbilityForResultTestMode = false;
+        context.startAbilityForResult(abilityWant).then((result) => {
+          console.info('startAbilityForResult success, result: ' + JSON.stringify(result));
+          Utils.emitEvent(0, 20260401);
+        }).catch((err: BusinessError) => {
+          console.error(`startAbilityForResult failed. Code: ${err.code}, Message: ${err.message}`);
+          Utils.emitEvent(err.code, 20260401);
+        });
+      } else {
+        context.startAbility(abilityWant);
+        console.info('Ability started successfully');
+      }
     } catch (err) {
       console.error(`Failed to start ability. Code: ${err.code}, Message: ${err.message}`);
     }
@@ -525,6 +538,19 @@ struct Index {
                 }, 3000)
               } catch (error) {
                 console.error('ErrorCode: ${error.code}, Message: ${error.message}');
+              }
+              break;
+            }
+
+            case 'emitStartAbilityForResultStatic001': {
+              try {
+                startAbilityForResultTestMode = true;
+                setTimeout(() => {
+                  this.controller.runJavaScript('connectNative()');
+                  console.log('connectNative for startAbilityForResult 已调用');
+                }, 1000);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
               }
               break;
             }

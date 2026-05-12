@@ -129,6 +129,22 @@ struct webViewController {
               }
               break;
             }
+            case "emitPauseMicrophoneStatic001": {
+              try {
+                this.controller.pauseMicrophone();
+                Utils.emitEvent(true, 20260501);
+              } catch (error) {
+                error = error as BusinessError;
+                const e = error as BusinessError;
+                console.error(`pauseMicrophone ErrorCode: ${e.code},  Message: ${e.message}`);
+                if (Number((error as BusinessError).code) === 17100001) {
+                  Utils.emitEvent(true, 20260501);
+                } else {
+                  Utils.emitEvent(false, 20260501);
+                }
+              }
+              break;
+            }
 
           }
         })

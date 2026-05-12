@@ -43,13 +43,14 @@ export default function ActsAceWebViewOnMicrophoneCaptureStateChangeTest() {
 
     /**
      * @tc.name   testOnMicrophoneCaptureStateChangeState001
-     * @tc.number SUB_ACE_WEBVIEW_ONMICROPHONECAPTURESTATECHANGE_0001
+     * @tc.number SUB_ACE_WEBVIEW_ONMICROPHONECAPTURESTATECHANGE_0100
      * @tc.desc   test OnMicrophoneCaptureStateChange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEXT
      * @tc.level  LEVEL3
      */
-    it('testOnMicrophoneCaptureStateChangeState001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testOnMicrophoneCaptureStateChangeState001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
       let buttonOne = await driver.findComponent(ON.text('开启麦克风'));
       if(buttonOne)
       {
@@ -67,13 +68,14 @@ export default function ActsAceWebViewOnMicrophoneCaptureStateChangeTest() {
     })
     /**
      * @tc.name   testOnMicrophoneCaptureStateChangeStatic002
-     * @tc.number SUB_ACE_WEBVIEW_ONMICROPHONECAPTURESTATECHANGE_0002
+     * @tc.number SUB_ACE_WEBVIEW_ONMICROPHONECAPTURESTATECHANGE_0200
      * @tc.desc   test OnMicrophoneCaptureStateChange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEXT
      * @tc.level  LEVEL3
      */
-    it('testOnMicrophoneCaptureStateChangeStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testOnMicrophoneCaptureStateChangeStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitOnMicrophoneCaptureStateChange002", 10)
       await Utils.msSleep(2000);
       Utils.registerEvent("testOnMicrophoneCaptureStateChange002", MicrophoneCaptureState.PAUSED, 20251229, done);
@@ -84,14 +86,14 @@ export default function ActsAceWebViewOnMicrophoneCaptureStateChangeTest() {
     })
     /**
      * @tc.name   testOnMicrophoneCaptureStateChangeStatic003
-     * @tc.number SUB_ACE_WEBVIEW_ONMICROPHONECAPTURESTATECHANGE_API_0003
+     * @tc.number SUB_ACE_WEBVIEW_ONMICROPHONECAPTURESTATECHANGE_0300
      * @tc.desc   test OnMicrophoneCaptureStateChange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEXT
      * @tc.level  LEVEL3
      */
-    it('testOnMicrophoneCaptureStateChangeStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      Utils.emitEvent("emitOnMicrophoneCaptureStateChange003", 10)
+    it('testOnMicrophoneCaptureStateChangeStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
       Utils.registerEvent("testOnMicrophoneCaptureStateChange003", MicrophoneCaptureState.ACTIVE, 20251230, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webViewOnMicrophoneCaptureStateChangeButton', 10, '');
@@ -100,13 +102,14 @@ export default function ActsAceWebViewOnMicrophoneCaptureStateChangeTest() {
     })
     /**
      * @tc.name   testOnMicrophoneCaptureStateChangeStatic004
-     * @tc.number SUB_ACE_WEBVIEW_ONMICROPHONECAPTURESTATECHANGE_API_0004
+     * @tc.number SUB_ACE_WEBVIEW_ONMICROPHONECAPTURESTATECHANGE_0400
      * @tc.desc   test OnMicrophoneCaptureStateChange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEXT
      * @tc.level  LEVEL3
      */
-    it('testOnMicrophoneCaptureStateChangeStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testOnMicrophoneCaptureStateChangeStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitOnMicrophoneCaptureStateChange004", 10)
       await Utils.msSleep(2000);
       Utils.registerEvent("testOnMicrophoneCaptureStateChange004", MicrophoneCaptureState.NONE, 20251231, done);
@@ -115,5 +118,26 @@ export default function ActsAceWebViewOnMicrophoneCaptureStateChangeTest() {
       await Utils.msSleep(2000);
       done()
     })
+
+    /**
+     * @tc.name   testPauseMicrophoneStatic001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_PAUSEMICROPHONE_0100
+     * @tc.desc   test WebviewController pauseMicrophone unconditionally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPauseMicrophoneStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.registerEvent('testPauseMicrophoneStatic001', true, 20260501, done);
+      await Utils.msSleep(2000);
+      Utils.emitEvent("emitPauseMicrophoneStatic001", 10)
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webViewOnMicrophoneCaptureStateChangeButton', 10, '');
+      await Utils.msSleep(4000);
+      done()
+    })
+
   })
 }

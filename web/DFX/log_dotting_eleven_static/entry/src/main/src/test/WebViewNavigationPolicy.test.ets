@@ -629,6 +629,29 @@ export default function webViewController() {
     });
 
     /**
+     * @tc.name   testStartAbilityForResultStatic001
+     * @tc.number SUB_WEB_WEBNATIVEMESSAGING_STARTABILITYFORRESULT_0100
+     * @tc.desc   test WebNativeMessagingExtensionContext startAbilityForResult
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStartAbilityForResultStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testStartAbilityForResultStatic001', 201, 20260401, done);
+        Utils.emitEvent('emitStartAbilityForResultStatic001', 10);
+        let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'));
+        await Utils.msSleep(2000);
+        if (keyButton) {
+          await keyButton.click();
+          console.info('keyButton.click');
+        }
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
      * @tc.name        SwitchNextPageStatic
      * @tc.number      testWebViewWindowFeatures010
      * @tc.desc        onWindowNewExt
