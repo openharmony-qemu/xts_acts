@@ -4961,14 +4961,14 @@ export default function settingUiJsunit() {
     });
 
   /**
-   * @tc.name   SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_100
-   * @tc.number SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_100
+   * @tc.name   SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_0100
+   * @tc.number SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_0100
    * @tc.desc   MediumTest
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL0
    */
-  it('SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_100',
+  it('SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_0100',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: Function) => {
       if (!isDeviceSupportDoubleClick()) {
@@ -4987,14 +4987,14 @@ export default function settingUiJsunit() {
     });
 
   /**
-   * @tc.name   SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_undefined_200
-   * @tc.number SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_undefined_200
+   * @tc.name   SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_undefined_0200
+   * @tc.number SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_undefined_0200
    * @tc.desc   MediumTest
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL0
    */
-  it('SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_undefined_200',
+  it('SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_undefined_0200',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: Function) => {
       if (!isDeviceSupportDoubleClick()) {
@@ -5013,14 +5013,14 @@ export default function settingUiJsunit() {
     });
 
   /**
-   * @tc.name   SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_applicationContext_300
-   * @tc.number SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_applicationContext_300
+   * @tc.name   SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_applicationContext_0300
+   * @tc.number SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_applicationContext_0300
    * @tc.desc   MediumTest
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL0
    */
-  it('SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_applicationContext_300',
+  it('SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_applicationContext_0300',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: Function) => {
       if (!isDeviceSupportDoubleClick()) {
@@ -5039,14 +5039,14 @@ export default function settingUiJsunit() {
     });
 
   /**
-   * @tc.name   SUB_Applications_Settings_openDoubleClickSettingsPage_valid_param_400
-   * @tc.number SUB_Applications_Settings_openDoubleClickSettingsPage_valid_param_400
+   * @tc.name   SUB_Applications_Settings_openDoubleClickSettingsPage_valid_param_0400
+   * @tc.number SUB_Applications_Settings_openDoubleClickSettingsPage_valid_param_0400
    * @tc.desc   MediumTest
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL0
    */
-  it('SUB_Applications_Settings_openDoubleClickSettingsPage_valid_param_400',
+  it('SUB_Applications_Settings_openDoubleClickSettingsPage_valid_param_0400',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: Function) => {
       if (!isDeviceSupportDoubleClick()) {
@@ -5066,14 +5066,14 @@ export default function settingUiJsunit() {
     });
 
   /**
-   * @tc.name   SUB_Applications_Settings_isDoubleClickAppForSelf_false_return_100
-   * @tc.number SUB_Applications_Settings_isDoubleClickAppForSelf_false_return_100
+   * @tc.name   SUB_Applications_Settings_isDoubleClickAppForSelf_false_return_0100
+   * @tc.number SUB_Applications_Settings_isDoubleClickAppForSelf_false_return_0100
    * @tc.desc   MediumTest
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST
    * @tc.level  LEVEL0
    */
-  it('SUB_Applications_Settings_isDoubleClickAppForSelf_false_return_100',
+  it('SUB_Applications_Settings_isDoubleClickAppForSelf_false_return_0100',
     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
     async (done: Function) => {
       if (!isDeviceSupportDoubleClick()) {
