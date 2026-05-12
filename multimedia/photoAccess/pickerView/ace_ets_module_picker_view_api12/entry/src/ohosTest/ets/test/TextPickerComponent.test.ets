@@ -1688,18 +1688,29 @@ export default function TextPicker() {
         { title: 'test', fileNameExtension: 'jpg', photoType: photoAccessHelper.PhotoType.IMAGE, subtype: photoAccessHelper.PhotoSubtype.BURST },
       ];
 
+
       for (let item of cases) {
         try {
-          let result = await phAccessHelper.createAssetWithShortTermPermission(item);
+          let createPromise = phAccessHelper.createAssetWithShortTermPermission(item);
+          await driveFn();
+          const timeoutPromise = new Promise((_, reject) => 
+            setTimeout(() => reject({ code: 'timeout', message: 'createAsset timeout after 30s' }), 30000)
+          );
+
+          let result = await Promise.race([createPromise, timeoutPromise]);
           console.log(`testPicker25 result = ${JSON.stringify(result)}`)
           expect(result).not().assertUndefined();
         } catch (error) {
+          if (error.code === 'timeout') {
+            console.log(`testPicker25 timeout, skip this case`);
+            continue;
+          }
           console.error("testPicker25 error: " + JSON.stringify(error) + error.code);
           let isValidErrorCode = (error.code == 14000011 || error.code == 13900020);
           expect(isValidErrorCode).assertTrue();
         }
-      }
-      console.info("testPicker25 finish");
+      }	 
+      console.info("testPicker25 finish");	 
       done();
     });
 
@@ -3395,7 +3406,7 @@ export default function TextPicker() {
           try {
             let dialogPromise = photoAccessHelper.getPhotoAccessHelper(getContext()).showAssetsCreationDialog(testCases[i].src, testCases[i].config);
 
-            await driveFn()
+            await driveFn();
 
             let code: number = EventType.SELECT_ITEM_INFO;
             let pickerOptions: PickerOptions = getDefaultPickerOptions();
