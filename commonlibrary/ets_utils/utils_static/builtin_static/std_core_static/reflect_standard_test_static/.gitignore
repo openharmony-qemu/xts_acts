@@ -1,0 +1,46 @@
+/node_modules
+/oh_modules
+/local.properties
+/.idea
+**/build
+**/hypium
+/.hvigor
+.cxx
+/.clangd
+/.clang-format
+/.clang-tidy
+**/.test
+/.appanalyzer
+/Test.json
+/syscap.json
+/StaticMethod
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor/IDE
+*.swp
+*.swo
+*~
+.vscode/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Claude AI
+.claude/
+.StaticMethod/
+# Preview
+.preview
