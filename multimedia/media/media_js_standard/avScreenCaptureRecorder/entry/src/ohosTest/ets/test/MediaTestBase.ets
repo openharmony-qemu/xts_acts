@@ -196,6 +196,10 @@ export default class MediaTestBase {
             await avScreenCaptureRecorder?.setPickerMode(media.PickerMode.WINDOW_ONLY);
             await avScreenCaptureRecorder?.setPickerMode(media.PickerMode.SCREEN_ONLY);
             await avScreenCaptureRecorder?.setPickerMode(media.PickerMode.SCREEN_AND_WINDOW);
+            await avScreenCaptureRecorder?.setPickerMode(media.PickerMode.APP_ONLY);
+            await avScreenCaptureRecorder?.setPickerMode(media.PickerMode.WINDOW_AND_APP);
+            await avScreenCaptureRecorder?.setPickerMode(media.PickerMode.SCREEN_AND_APP);
+            await avScreenCaptureRecorder?.setPickerMode(media.PickerMode.SCREEN_WINDOW_AND_APP);
             console.info('avScreenCaptureRecorder setPickerMode success');
           } catch (error) {
             console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + error.message);
