@@ -17,6 +17,7 @@
 #include "gestureIntercept/GestureErrorCodeTest.cpp"
 #include "scroll/scrollWithMouseTest.cpp"
 #include "scroll/autoAdjustMarginTest.cpp"
+#include "list/listBackBehaviorTest.cpp"
 #include "inspectorLabel/InspectorLabelTest.cpp"
 
 namespace ArkUICapiTest {
