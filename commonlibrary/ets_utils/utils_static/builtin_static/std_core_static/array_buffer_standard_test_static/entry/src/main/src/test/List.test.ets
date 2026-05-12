@@ -1,4 +1,9 @@
-import AbilityTest from "./Ability.test";
+import arrayBufferAtTest from "./arrayBuffer/ArrayBufferAtTest.test";
+import arrayBufferBytesLengthTest from "./arrayBuffer/ArrayBufferBytesLengthTest.test";
+import arrayBufferPropertyTest from "./arrayBuffer/ArrayBufferPropertyTest.test";
+
 export default function testsuite(): void {
-  AbilityTest();
+  arrayBufferPropertyTest();
+  arrayBufferAtTest();
+  arrayBufferBytesLengthTest();
 }
