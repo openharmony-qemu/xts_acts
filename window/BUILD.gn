@@ -40,6 +40,7 @@ group("window") {
     "ActsWindowFloatViewTest:ActsWindowFloatViewTest",
     "ActsWindowImmersiveTestStatic:ActsWindowImmersiveTestStaticTest",
     "ActsWindowLayoutTestStatic:ActsWindowLayoutTestStaticTest",
-    "ActsWindowFloatViewTestStatic:ActsWindowFloatViewTestStaticTest"
+    "ActsWindowFloatViewTestStatic:ActsWindowFloatViewTestStaticTest",
+    "WindowKeyBorad:ActsWindowKeyBoradTest" 
   ]
 }
