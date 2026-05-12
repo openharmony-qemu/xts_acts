@@ -352,7 +352,7 @@ export default function observerManagerSimStateTest1() {
         try {
           let slotId: int = 1;
           console.info(`${caseName} 000000`);
-          await sim.activateSim(slotId);
+          await sim.deactivateSim(slotId);
           console.info(`${caseName} 11111111`);
           observer.onGetSimActiveState(slotId, (data: boolean | undefined) => {
             console.info(`${caseName} data: ${data}`);
@@ -368,6 +368,7 @@ export default function observerManagerSimStateTest1() {
         console.info(`${caseName} This device is a single-card device`);
         done();
       }  
+      await sim.activateSim(slotId);
       console.info(`${caseName} test end`);
     });
 
