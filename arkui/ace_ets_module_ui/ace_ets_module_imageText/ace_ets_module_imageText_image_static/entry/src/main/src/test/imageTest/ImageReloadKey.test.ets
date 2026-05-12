@@ -58,7 +58,7 @@ export default function ImageReloadKeyTest() {
       console.info("ImageReloadKeyTest after each called");
     });
     /**
-     * @tc.number   ImageReloadKeyTest_static_001
+     * @tc.number   SUB_ARKUI_IMAGE_RELOAD_PARAM_0100
      * @tc.name     ImageReloadKeyTest_static_001
      * @tc.desc     Test Image reloadKey constructor parameter with normal string value
      * @tc.level    Level.LEVEL1
@@ -73,7 +73,7 @@ export default function ImageReloadKeyTest() {
       done();
     })
     /**
-     * @tc.number   ImageReloadKeyTest_static_002
+     * @tc.number   SUB_ARKUI_IMAGE_RELOAD_PARAM_0200
      * @tc.name     ImageReloadKeyTest_static_002
      * @tc.desc     Test Image reloadKey constructor parameter with different string value
      * @tc.level    Level.LEVEL1
@@ -88,7 +88,7 @@ export default function ImageReloadKeyTest() {
       done();
     })
     /**
-     * @tc.number   ImageReloadKeyTest_static_003
+     * @tc.number   SUB_ARKUI_IMAGE_RELOAD_PARAM_0300
      * @tc.name     ImageReloadKeyTest_static_003
      * @tc.desc     Test Image reloadKey constructor parameter with empty string
      * @tc.level    Level.LEVEL2
@@ -103,7 +103,7 @@ export default function ImageReloadKeyTest() {
       done();
     })
     /**
-     * @tc.number   ImageReloadKeyTest_static_004
+     * @tc.number   SUB_ARKUI_IMAGE_RELOAD_PARAM_0400
      * @tc.name     ImageReloadKeyTest_static_004
      * @tc.desc     Test Image reloadKey dynamic change via state variable
      * @tc.level    Level.LEVEL1
@@ -129,7 +129,7 @@ export default function ImageReloadKeyTest() {
       done();
     })
     /**
-     * @tc.number   ImageReloadKeyTest_static_005
+     * @tc.number   SUB_ARKUI_IMAGE_RELOAD_PARAM_0500
      * @tc.name     ImageReloadKeyTest_static_005
      * @tc.desc     Test Image reloadKey with AttributeModifier dynamic change
      * @tc.level    Level.LEVEL2
@@ -155,7 +155,7 @@ export default function ImageReloadKeyTest() {
       done();
     })
     /**
-     * @tc.number   ImageReloadKeyTest_static_006
+     * @tc.number   SUB_ARKUI_IMAGE_RELOAD_PARAM_0600
      * @tc.name     ImageReloadKeyTest_static_006
      * @tc.desc     Test Image without reloadKey parameter (default value should be empty)
      * @tc.level    Level.LEVEL2
