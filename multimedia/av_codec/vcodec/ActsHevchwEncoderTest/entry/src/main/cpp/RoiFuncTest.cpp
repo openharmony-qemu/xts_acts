@@ -219,7 +219,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_006()
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->roiInfo = "10,10-100,100=-8;100,10-200,200=-4;"
                         "300,350-430,440=-4;510,540-650,690=-4;"
-                        "700,710-80,1000=-4";
+                        "700,710-800,1000=-8";
     vEncSample->outDir = OUT_DIR;
     vEncSample->enableRoi = true;
     vEncSample->surfInput = true;
@@ -267,7 +267,8 @@ int VIDEO_HW_ENCODE_ROI_FUNC_008()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
-    vEncSample->roiInfo = "10,10-100,100=-4;100,100-200,200=-4;350,300-400,430=-4;540,510-690,750=51";
+    vEncSample->roiInfo = "10,10-100,100=-4;100,100-200,200=-4;"
+                        "350,300-400,430=-4;540,510-690,750=-8";
     vEncSample->outDir = OUT_DIR;
     vEncSample->enableRoi = true;
     vEncSample->surfInput = true;
