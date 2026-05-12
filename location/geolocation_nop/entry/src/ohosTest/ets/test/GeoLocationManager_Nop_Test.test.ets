@@ -1917,7 +1917,7 @@ export default function geoLocationManager_nop_test() {
           console.info('[lbs_js] SUB_Location_findMatchingWlan_0500 res: ' + JSON.stringify(res));
           expect().assertFail();
           done();
-      }).catch((err) => {
+      }).catch((err: BusinessError) => {
           console.info('[lbs_js] SUB_Location_findMatchingWlan_0500 error: ' + JSON.stringify(err));
           if (err.code === 801) {
               expect(err.code === 801).assertTrue();
