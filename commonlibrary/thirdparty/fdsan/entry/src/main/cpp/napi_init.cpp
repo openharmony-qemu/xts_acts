@@ -253,7 +253,6 @@ static napi_value FdsanExchangeOwnerTagMismatch(napi_env env, napi_callback_info
     fdsan_exchange_owner_tag(fd, 0, tagA);
     fdsan_exchange_owner_tag(fd, tagB, 0);
     int32_t ret = fdsan_close_with_tag(fd, tagA);
-
     if (ret != 0) {
         close(fd);
         fd = -1;
