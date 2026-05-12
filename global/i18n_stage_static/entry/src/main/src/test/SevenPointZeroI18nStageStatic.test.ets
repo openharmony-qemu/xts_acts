@@ -2082,7 +2082,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
       let expectedValue: string[] = ["10", ":", "08", ":", "00", " ", "AM", " " ,"Central Standard Time"];
       let expectedType: string[] = ["hour", "literal", "minute", "literal", "second", "literal", "dayPeriod", "literal" ,"timeZoneName"];
       let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
-      let dateFormat: Intl.DateTimeFormatPart[] = symbolFormat.formatRangeToParts(date, date2);
+      let dateFormat: Array<Intl.DateTimeRangeFormatPart> = symbolFormat.formatRangeToParts(date, date2);
       console.log('test_SymbolDateTimeFormat_static_0900 result:', JSON.stringify(dateFormat));
       for (let i = 0; i < dateFormat.length; i++) {
         expect(dateFormat[i].value).assertEqual(expectedValue[i]);
@@ -2167,7 +2167,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
       let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
       let expectedValue: string[] = ["B", "100", " – ", "B", "101"];
       let expectedType: string[] = ["plusSign", "integer", "literal", "plusSign", "integer"];
-      let numberFormat: Intl.NumberFormatPart[] = symbolFormat.formatRangeToParts(100, 101);
+      let numberFormat: Array<Intl.NumberFormatPart> = symbolFormat.formatRangeToParts(100, 101);
       console.log('test_SymbolNumberFormat_static_2900 result:' + JSON.stringify(numberFormat));
       for (let i = 0; i < numberFormat.length; i++) {
         expect(numberFormat[i].value).assertEqual(expectedValue[i]);
