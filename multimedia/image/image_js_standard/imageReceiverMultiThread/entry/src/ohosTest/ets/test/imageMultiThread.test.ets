@@ -338,12 +338,13 @@ async function permissionClick() {
   console.info(`UiDriver start`);
   let button1 = await driver.findComponent(BY.text('允许'));
   let button2 = await driver.findComponent(BY.text('始终允许'));
+  console.info(`button1 is ${JSON.stringify(button1)}`);
+  console.info(`button2 is ${JSON.stringify(button2)}`);
   if (button1 == null && button2 == null) {
     let delegator = abilityDelegatorRegistry.getAbilityDelegator();
     let cmd = "hidumper -s WindowManagerService -a'-a'"
     await delegator.executeShellCommand(cmd);
   }
-  console.info(`button is ${JSON.stringify(button)}`);
   await sleep(100);
   await button1?.click();
   await button2?.click();
