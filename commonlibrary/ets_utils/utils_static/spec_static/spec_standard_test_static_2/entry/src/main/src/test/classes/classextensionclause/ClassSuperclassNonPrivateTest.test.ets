@@ -1226,8 +1226,5 @@ export default function ClassSuperclassNonPrivateTest():void {
       const child = new Child32();
       expect(child.callGrandParentGreet()).assertEqual("Hello from GrandParent! And Hello from Parent!");
     });
-
-
-
   })
 }

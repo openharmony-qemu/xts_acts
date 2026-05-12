@@ -75,8 +75,5 @@ export default function AbstractMethodsTest():void {
       let i: I = y;
       expect(i.foo()).assertEqual(11);
     });
-
-
-
   })
 }

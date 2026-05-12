@@ -785,8 +785,6 @@ export default function InheritanceTest():void {
       const TAG = 'testInheritance0025';
       let instance: B12 = new B12();
       expect( instance.fee()).assertEqual(2);
-
-
     });
 
     /**
@@ -801,8 +799,6 @@ export default function InheritanceTest():void {
       const TAG = 'testInheritance0026';
       let instance: C19 = new C19();
       expect( instance.fee()).assertEqual(1);
-
-
     });
 
     /**
@@ -817,8 +813,6 @@ export default function InheritanceTest():void {
       const TAG = 'testInheritance0027';
       let instance: B14 = new B14();
       expect( instance.fee()).assertEqual(1);
-
-
     });
 
     /**
@@ -833,8 +827,6 @@ export default function InheritanceTest():void {
       const TAG = 'testInheritance0028';
       let instance: B15 = new B15();
       expect( instance.fee()).assertEqual(1);
-
-
     });
 
     /**
@@ -849,8 +841,6 @@ export default function InheritanceTest():void {
       const TAG = 'testInheritance0029';
       let instance: B16 = new B16();
       expect( instance.fee()).assertEqual(1);
-
-
     });
 
     /**
@@ -865,8 +855,6 @@ export default function InheritanceTest():void {
       const TAG = 'testInheritance0030';
       let instance: B17 = new B17();
       expect( instance.fee()).assertEqual(1);
-
-
     });
   })
 }

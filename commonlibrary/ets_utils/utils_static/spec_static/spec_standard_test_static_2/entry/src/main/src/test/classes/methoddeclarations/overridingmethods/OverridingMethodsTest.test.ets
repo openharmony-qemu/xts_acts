@@ -149,8 +149,6 @@ export default function OverridingMethodsTest():void {
       const TAG = 'testOverridingByInstanceMethods0001';
       let instance: A = getB();
       expect(instance.foo()).assertEqual(5);
-
-
     });
 
     /**
@@ -274,8 +272,5 @@ export default function OverridingMethodsTest():void {
       expect(instance.foo()).assertEqual(5)
 
     });
-
-
-
   })
 }

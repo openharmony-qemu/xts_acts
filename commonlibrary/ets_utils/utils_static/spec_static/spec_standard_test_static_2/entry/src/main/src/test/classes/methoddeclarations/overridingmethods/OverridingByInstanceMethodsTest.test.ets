@@ -118,8 +118,6 @@ export default function OverridingByInstanceMethodsTest():void {
       const TAG = 'testOverridingByInstanceMethods0001';
       let b: A = new B();
       expect(b.run()).assertEqual(10);
-
-
     });
 
     /**
@@ -135,9 +133,6 @@ export default function OverridingByInstanceMethodsTest():void {
       let instance: C = new C();
       expect( instance.m() == 5 ).assertTrue();
       expect( instance.superm() == 1 ).assertTrue();
-
-
-
     });
 
     /**
@@ -152,8 +147,6 @@ export default function OverridingByInstanceMethodsTest():void {
       const TAG = 'testOverridingByInstanceMethods0003';
       let instance: A2 = new C1() as A2;
       expect( instance.m() == 5 ).assertTrue();
-
-
     });
 
     /**
@@ -168,9 +161,6 @@ export default function OverridingByInstanceMethodsTest():void {
       const TAG = 'testOverridingByInstanceMethods0004';
       let instance: C2 = new C2();
       expect( instance.m() == 5 ).assertTrue();
-
-
-
     });
 
     /**
@@ -185,8 +175,6 @@ export default function OverridingByInstanceMethodsTest():void {
       const TAG = 'testOverridingByInstanceMethods0005';
       let instance: C3 = new C3();
       expect( instance.m() == 5 ).assertTrue();
-
-
     });
 
     /**
@@ -201,11 +189,6 @@ export default function OverridingByInstanceMethodsTest():void {
       const TAG = 'testOverridingByInstanceMethods0006';
       let instance: C4 = new C4();
       expect( instance.m() == 5 ).assertTrue();
-
-
     });
-
-
-
   })
 }

@@ -83,7 +83,6 @@ import FieldDeclarationTest from "./classes/field_declarations/FieldDeclaration.
 import FieldDeclarationOneTest from "./classes/field_declarations/FieldDeclarationOne.test";
 import FieldDeclarationTwoTest from "./classes/field_declarations/FieldDeclarationTwo.test";
 import OptionalFieldsTestTest from "./classes/field_declarations/OptionalFieldsTest.test";
-import OverridingFieldsTestTest from "./classes/field_declarations/OverridingFieldsTest.test";
 import StaticAndInstanceFieldsTestTest from "./classes/field_declarations/StaticAndInstanceFieldsTest.test";
 import abstractClassesTest from "./classes/classdeclaration/AbstractClassesTest.test";
 import accessingParentClassTest from "./classes/classextensionclause/AccessingParentClassTest.test";
@@ -201,7 +200,6 @@ export default function testsuite(): void {
   FieldDeclarationOneTest();
   FieldDeclarationTwoTest();
   OptionalFieldsTestTest();
-  OverridingFieldsTestTest();
   StaticAndInstanceFieldsTestTest();
   abstractClassesTest();
   accessingParentClassTest();

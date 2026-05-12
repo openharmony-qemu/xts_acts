@@ -151,7 +151,7 @@ export default function MethodsDeclarationsTest():void {
     })
 
     /**
-     * @tc.number    SUB_METHODS_DECLARATIONSTEST_0100
+     * @tc.number    SUB_METHODS_DECLARATIONS_TEST_0100
      * @tc.name      testMethodsDeclarations0001
      * @tc.desc      Method call by his name
      * @tc.size      MediumTest
@@ -162,12 +162,10 @@ export default function MethodsDeclarationsTest():void {
       const TAG = 'testAbstractMethods0001';
       let instance: A = new A();
       expect(instance.run()).assertEqual(5);
-
-
     });
 
     /**
-     * @tc.number    SUB_METHODS_DECLARATIONSTEST_0200
+     * @tc.number    SUB_METHODS_DECLARATIONS_TEST_0200
      * @tc.name      testMethodsDeclarations0002
      * @tc.desc      Super method call
      * @tc.size      MediumTest
@@ -178,12 +176,10 @@ export default function MethodsDeclarationsTest():void {
       const TAG = 'testMethodsDeclarations0002';
       let instance: FilledRectangle = new FilledRectangle(5, 5, "color");
       expect( instance.draw()).assertEqual(true );
-
-
     });
 
     /**
-     * @tc.number    SUB_METHODS_DECLARATIONSTEST_0300
+     * @tc.number    SUB_METHODS_DECLARATIONS_TEST_0300
      * @tc.name      testMethodsDeclarations0003
      * @tc.desc      Super method call
      * @tc.size      MediumTest
@@ -194,12 +190,10 @@ export default function MethodsDeclarationsTest():void {
       const TAG = 'testMethodsDeclarations0003';
       let instance: FilledRectangle1 = new FilledRectangle1(5, 5, "color");
       expect( instance.draw()).assertEqual(true );
-
-
     });
 
     /**
-     * @tc.number    SUB_METHODS_DECLARATIONSTEST_0400
+     * @tc.number    SUB_METHODS_DECLARATIONS_TEST_0400
      * @tc.name      testMethodsDeclarations0004
      * @tc.desc      The first form contains an expression that specifies a default value. It is called a parameter
      * with default value. The value of the parameter is set to the default value if the argument corresponding to that
@@ -221,7 +215,7 @@ export default function MethodsDeclarationsTest():void {
     });
 
     /**
-     * @tc.number    SUB_METHODS_DECLARATIONSTEST_0500
+     * @tc.number    SUB_METHODS_DECLARATIONS_TEST_0500
      * @tc.name      testMethodsDeclarations0005
      * @tc.desc      The first form contains an expression that specifies a default value. It is called a parameter
      * with default value. The value of the parameter is set to the default value if the argument corresponding to that
@@ -244,7 +238,7 @@ export default function MethodsDeclarationsTest():void {
     });
 
     /**
-     * @tc.number    SUB_METHODS_DECLARATIONSTEST_0600
+     * @tc.number    SUB_METHODS_DECLARATIONS_TEST_0600
      * @tc.name      testMethodsDeclarations0006
      * @tc.desc      Super method call
      * @tc.size      MediumTest
@@ -259,13 +253,10 @@ export default function MethodsDeclarationsTest():void {
         () => {})).assertTrue();
       expect(TA.foo('', '', '', ((): boolean | undefined => flag)() ? undefined : () => {}, undefined, undefined,
         () => {})).assertTrue();
-
-
-
     });
 
     /**
-     * @tc.number    SUB_METHODS_DECLARATIONSTEST_0700
+     * @tc.number    SUB_METHODS_DECLARATIONS_TEST_0700
      * @tc.name      testMethodsDeclarations0007
      * @tc.desc      Super method call
      * @tc.size      MediumTest
@@ -277,13 +268,10 @@ export default function MethodsDeclarationsTest():void {
       let flag: boolean | undefined
       const test: TwoOptionalLambdasInMethod = new TwoOptionalLambdasInMethod();
       expect(test.foo('', '', '', flag ? undefined : () => {}, undefined)).assertTrue();
-
-
-
     });
 
     /**
-     * @tc.number    SUB_METHODS_DECLARATIONSTEST_0800
+     * @tc.number    SUB_METHODS_DECLARATIONS_TEST_0800
      * @tc.name      testMethodsDeclarations0008
      * @tc.desc      Conditional expression compile bug
      * @tc.size      MediumTest
@@ -293,14 +281,11 @@ export default function MethodsDeclarationsTest():void {
     it("testMethodsDeclarations0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testMethodsDeclarations0008';
       let flag: boolean | undefined
-
       expect(TA1.foo('', '', '', flag ? undefined : () => {}, undefined)).assertTrue();
-
-
     });
 
     /**
-     * @tc.number    SUB_METHODS_DECLARATIONSTEST_0900
+     * @tc.number    SUB_METHODS_DECLARATIONS_TEST_0900
      * @tc.name      testMethodsDeclarations0009
      * @tc.desc      Conditional expression compile bug
      * @tc.size      MediumTest
@@ -310,14 +295,7 @@ export default function MethodsDeclarationsTest():void {
     it("testMethodsDeclarations0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testMethodsDeclarations0009';
       let flag: boolean | undefined
-
       expect(TA1.foo('', '', '',  ((): boolean | undefined => flag)() ? undefined : () => {}, undefined)).assertTrue();
-
-
-
     });
-
-
-
   })
 }

@@ -162,7 +162,7 @@ export default function AbstractClassesTest():void {
     })
 
     /**
-     * @tc.number    SUB_ABSTRACT_CLASSESTEST_0100
+     * @tc.number    SUB_ABSTRACT_CLASSES_TEST_0100
      * @tc.name      testAbstractClasses0001
      * @tc.desc      Field initializers for non-static fields of an abstract class are executed when
      * a non-abstract subclass is instantiated.
@@ -177,7 +177,7 @@ export default function AbstractClassesTest():void {
     });
 
     /**
-     * @tc.number    SUB_ABSTRACT_CLASSESTEST_0200
+     * @tc.number    SUB_ABSTRACT_CLASSES_TEST_0200
      * @tc.name      testAbstractClasses0002
      * @tc.desc      Instantiate abstract class with object literal
      * @tc.size      MediumTest
@@ -196,7 +196,7 @@ export default function AbstractClassesTest():void {
     });
 
     /**
-     * @tc.number    SUB_ABSTRACT_CLASSESTEST_0300
+     * @tc.number    SUB_ABSTRACT_CLASSES_TEST_0300
      * @tc.name      testAbstractClasses0003
      * @tc.desc      Instantiate abstract class with object literal
      * @tc.size      MediumTest
@@ -217,7 +217,7 @@ export default function AbstractClassesTest():void {
     });
 
     /**
-     * @tc.number    SUB_ABSTRACT_CLASSESTEST_0400
+     * @tc.number    SUB_ABSTRACT_CLASSES_TEST_0400
      * @tc.name      testAbstractClasses0004
      * @tc.desc      Accessing static fields and methods of abstract class with shadowing
      * @tc.size      MediumTest
@@ -233,7 +233,7 @@ export default function AbstractClassesTest():void {
     });
 
     /**
-     * @tc.number    SUB_ABSTRACT_CLASSESTEST_0500
+     * @tc.number    SUB_ABSTRACT_CLASSES_TEST_0500
      * @tc.name      testAbstractClasses0005
      * @tc.desc      Accessing static fields and methods of abstract class with shadowing
      * @tc.size      MediumTest
@@ -249,7 +249,7 @@ export default function AbstractClassesTest():void {
     });
 
     /**
-     * @tc.number    SUB_ABSTRACT_CLASSESTEST_0600
+     * @tc.number    SUB_ABSTRACT_CLASSES_TEST_0600
      * @tc.name      testAbstractClasses0006
      * @tc.desc      Accessing static fields and methods of abstract class with shadowing
      * @tc.size      MediumTest
@@ -265,7 +265,7 @@ export default function AbstractClassesTest():void {
     });
 
     /**
-     * @tc.number    SUB_ABSTRACT_CLASSESTEST_0700
+     * @tc.number    SUB_ABSTRACT_CLASSES_TEST_0700
      * @tc.name      testAbstractClasses0007
      * @tc.desc      Accessing static fields and methods of abstract class with shadowing
      * @tc.size      MediumTest
@@ -281,7 +281,7 @@ export default function AbstractClassesTest():void {
     });
 
     /**
-     * @tc.number    SUB_ABSTRACT_CLASSESTEST_0800
+     * @tc.number    SUB_ABSTRACT_CLASSES_TEST_0800
      * @tc.name      testAbstractClasses0008
      * @tc.desc      "Subclasses of an abstract class can be non-abstract or in turn abstract. A\
      * \ non-abstract subclass of an abstract superclass can be instantiated. As a result,\

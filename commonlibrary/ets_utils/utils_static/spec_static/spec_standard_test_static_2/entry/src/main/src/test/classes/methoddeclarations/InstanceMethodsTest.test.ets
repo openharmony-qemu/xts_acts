@@ -89,8 +89,6 @@ export default function InstanceMethodsTest():void {
       // When called on p2, 'this' refers to p2
       let dist2: number = p2.distanceBetween(p1);
       expect(dist2).assertEqual(5);
-
-
     });
 
 

@@ -1328,7 +1328,7 @@ export default function MultiLevelInheritanceTest():void {
     })
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_0100
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_0100
      * @tc.name      tesMultiLevelInheritance0001
      * @tc.desc      Members of the triple inheritance number type
      * @tc.size      MediumTest
@@ -1342,7 +1342,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_0200
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_0200
      * @tc.name      tesMultiLevelInheritance0002
      * @tc.desc      Test whether class c can correctly obtain the initial value of the public variable _publicVar
      * in class a after indirectly inheriting class a from class b
@@ -1357,7 +1357,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_0300
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_0300
      * @tc.name      tesMultiLevelInheritance0003
      * @tc.desc      Members of the triple inheritance number type
      * @tc.size      MediumTest
@@ -1371,7 +1371,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_0400
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_0400
      * @tc.name      tesMultiLevelInheritance0004
      * @tc.desc      To verify whether the instance of class c can accurately obtain the initial value of the public
      * variable _publicVar in class a after class c indirectly inherits class a through class b
@@ -1386,7 +1386,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_0500
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_0500
      * @tc.name      tesMultiLevelInheritance0005
      * @tc.desc      Test whether class d indirectly inherits class b through class c to correctly obtain the initial
      * value of the public variable _publicVar in class b
@@ -1401,7 +1401,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_0600
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_0600
      * @tc.name      tesMultiLevelInheritance0006
      * @tc.desc      Demonstrate the rewriting of member variables and the verification of final values in a multi-level
      * inheritance structure
@@ -1416,7 +1416,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_0700
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_0700
      * @tc.name      tesMultiLevelInheritance0007
      * @tc.desc      Check whether the instance of class f can accurately obtain the initial value of the public
      * variable _publicVar in class a after multiple layers of inheritance
@@ -1431,7 +1431,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_0800
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_0800
      * @tc.name      tesMultiLevelInheritance0008
      * @tc.desc      Verify that the instance of class b inherits from class a can correctly obtain the initial string
      * value of the public variable _publicVar in class a
@@ -1446,7 +1446,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_0900
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_0900
      * @tc.name      tesMultiLevelInheritance0009
      * @tc.desc      Multi-level inheritance verifies that the public member variable _publicVar in class a is passed
      * correctly in subclass c and maintains its initial value
@@ -1461,7 +1461,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_1000
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_1000
      * @tc.name      tesMultiLevelInheritance0010
      * @tc.desc      Multi-level inheritance verifies that the public member variable _publicVar in class b is
      * correctly initialized to a specific string value in subclass d
@@ -1476,7 +1476,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_1100
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_1100
      * @tc.name      tesMultiLevelInheritance0011
      * @tc.desc      Demonstrate the rewriting and initialization verification of member variables in a multi-level
      * inheritance structure
@@ -1490,7 +1490,7 @@ export default function MultiLevelInheritanceTest():void {
       expect(test._publicVar).assertEqual('aaa');
     });
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_1200
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_1200
      * @tc.name      tesMultiLevelInheritance0012
      * @tc.desc      Demonstrate the passing and initial verification of member variables in multi-level inheritance
      * structure
@@ -1505,7 +1505,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_1300
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_1300
      * @tc.name      tesMultiLevelInheritance0013
      * @tc.desc      Demonstrate the initialization and access verification of member variables in the inheritance
      * structure
@@ -1520,7 +1520,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_1400
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_1400
      * @tc.name      tesMultiLevelInheritance0014
      * @tc.desc      Verify that the public member variable _publicVar inherited from class a is correctly initialized
      * to null in subclass c
@@ -1535,7 +1535,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_1500
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_1500
      * @tc.name      tesMultiLevelInheritance0015
      * @tc.desc      Class d inherits class c and indirectly inherits class b can the actual instance correctly obtain
      * the initial null value of the public variable _publicVar in class b
@@ -1550,7 +1550,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_1600
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_1600
      * @tc.name      tesMultiLevelInheritance0016
      * @tc.desc      Verify that the instance of class e can correctly obtain the null value of the variable after
      * multiple layers of inheritance and class d resets the value of the inherited variable
@@ -1565,7 +1565,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_1800
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_1800
      * @tc.name      tesMultiLevelInheritance0018
      * @tc.desc      Check whether the instance of class b inherits class a and class b can accurately obtain the
      * initial value of the public variable _publicVar in class a
@@ -1580,7 +1580,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_1900
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_1900
      * @tc.name      tesMultiLevelInheritance0019
      * @tc.desc      To verify that class c indirectly inherits class a from class b and can correctly obtain the
      * initial value of the public variable _publicVar defined by class a
@@ -1595,7 +1595,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_2000
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_2000
      * @tc.name      tesMultiLevelInheritance0020
      * @tc.desc      Test whether class d can correctly obtain the initial value of the public variable _publicVar
      * defined in class b by inheriting class C
@@ -1610,7 +1610,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_2100
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_2100
      * @tc.name      tesMultiLevelInheritance0021
      * @tc.desc      Test whether the instance of class e can obtain the overridden value of the variable _public_var
      * inherited from class a by overriding the multi-layer inheritance class d
@@ -1625,7 +1625,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_2200
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_2200
      * @tc.name      tesMultiLevelInheritance0022
      * @tc.desc      Verify that the instance of the multi-layer inheritance class f can correctly access and obtain
      * the initial value of the public boolean variable _publicVar defined in class a
@@ -1640,7 +1640,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_2300
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_2300
      * @tc.name      tesMultiLevelInheritance0023
      * @tc.desc      Test whether class b can correctly access the public variable _publicVar defined in class a and
      * obtain the value of its first element after inheriting class a
@@ -1655,7 +1655,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_2400
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_2400
      * @tc.name      tesMultiLevelInheritance0024
      * @tc.desc      Test whether class c can correctly access the public variable _publicVar defined in class a and
      * obtain the value of its first element after inheriting class b and indirectly inheriting class a
@@ -1670,7 +1670,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_2500
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_2500
      * @tc.name      tesMultiLevelInheritance0025
      * @tc.desc      Test whether class d can correctly access the public variable _publicVar defined in class b and
      * obtain the value of its first element after inheriting from class b
@@ -1685,7 +1685,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_2600
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_2600
      * @tc.name      tesMultiLevelInheritance0026
      * @tc.desc      This test scenario is to verify whether an instance of class e in the inheritance chain can
      * correctly inherit the initialization setting of the first element of the _publicVar array to 0 in the
@@ -1701,7 +1701,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_2700
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_2700
      * @tc.name      tesMultiLevelInheritance0027
      * @tc.desc      Demonstrates the consistency and accessibility of member variables in a multi-level inheritance
      * structure
@@ -1716,7 +1716,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_2800
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_2800
      * @tc.name      tesMultiLevelInheritance0028
      * @tc.desc      Demonstrates the effectiveness of using inheritance and modifiers together and the protected
      * access modifier
@@ -1731,7 +1731,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_2900
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_2900
      * @tc.name      tesMultiLevelInheritance0029
      * @tc.desc      Demonstrates the effectiveness of using inheritance and modifiers together
      * @tc.size      MediumTest
@@ -1745,7 +1745,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_3000
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_3000
      * @tc.name      tesMultiLevelInheritance0030
      * @tc.desc      Verify and enhance the correct initialization and access of protected member variables in the
      * inheritance chain
@@ -1760,7 +1760,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_3100
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_3100
      * @tc.name      tesMultiLevelInheritance0031
      * @tc.desc      Multi-level inheritance verifies the correctness of the protected array member variable _publicVar
      * inherited from parent class A after being overridden in subclass D
@@ -1775,7 +1775,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_3200
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_3200
      * @tc.name      tesMultiLevelInheritance0032
      * @tc.desc      The consistency and accessibility of member variables in the inheritance chain and demonstrates
      * the effectiveness of the combination of inheritance and modifiers
@@ -1790,7 +1790,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_3300
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_3300
      * @tc.name      tesMultiLevelInheritance0033
      * @tc.desc      Modifiers enhance method functionality and ensure the correctness of member variables in the
      * inheritance chain
@@ -1805,7 +1805,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_3400
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_3400
      * @tc.name      tesMultiLevelInheritance0034
      * @tc.desc      Make sure that the public member variable _publicVar is properly initialized in base class a and
      * that the value remains unchanged in the lowest subclass c
@@ -1820,7 +1820,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_3500
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_3500
      * @tc.name      tesMultiLevelInheritance0035
      * @tc.desc      Ensure that their class design and inheritance structure work as expected and handle complex class
      * hierarchies and member variables
@@ -1835,7 +1835,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_3600
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_3600
      * @tc.name      tesMultiLevelInheritance0036
      * @tc.desc      An example of verifying that subclasses can correctly override and access public member variables
      * defined in the parent class under a multi-level inheritance structure
@@ -1850,7 +1850,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_3700
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_3700
      * @tc.name      tesMultiLevelInheritance0037
      * @tc.desc      It is used to verify the correct initialization and access of public member variables in a
      * multi-level inheritance structure, demonstrating how to use inheritance mechanisms to share state between classes
@@ -1866,7 +1866,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_3800
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_3800
      * @tc.name      tesMultiLevelInheritance0038
      * @tc.desc      Used to verify the concept of class inheritance in object-oriented programming and different access
      * levels such as protected and public
@@ -1881,7 +1881,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_3900
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_3900
      * @tc.name      tesMultiLevelInheritance0039
      * @tc.desc      Verify that the protected member variable _public_var, inherited from the parent class a,
      * is correctly initialized to null
@@ -1896,7 +1896,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_4000
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_4000
      * @tc.name      tesMultiLevelInheritance0040
      * @tc.desc      Create an inheritance chain a -> b -> c and verify that the protected property _public_var
      * inherited from class a is null in the test method of class c
@@ -1911,7 +1911,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_4100
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_4100
      * @tc.name      tesMultiLevelInheritance0041
      * @tc.desc      Verify that class d inherits from class c and accesses the protected property _public_var with a
      * value of null through class b
@@ -1926,7 +1926,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_4200
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_4200
      * @tc.name      tesMultiLevelInheritance0042
      * @tc.desc      Verify that class e inherits from class d and accesses the protected property _public_var through
      * the inheritance chain to be null
@@ -1941,7 +1941,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_4300
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_4300
      * @tc.name      tesMultiLevelInheritance0043
      * @tc.desc      Whether the public member variable _public_var passed from class a to class f through a
      * multi-level inheritance chain is correctly initialized to null
@@ -1957,7 +1957,7 @@ export default function MultiLevelInheritanceTest():void {
 
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_4400
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_4400
      * @tc.name      tesMultiLevelInheritance0044
      * @tc.desc       Verify that the protected member variable _public_var, which is inherited from the parent class a,
      * is correctly initialized to the string'multi-level inheritance'
@@ -1973,7 +1973,7 @@ export default function MultiLevelInheritanceTest():void {
 
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_4500
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_4500
      * @tc.name      tesMultiLevelInheritance0045
      * @tc.desc      Verify that the protected property _public_var inherited from class a is'multi-level inheritance'
      * in the test method of class c
@@ -1989,7 +1989,7 @@ export default function MultiLevelInheritanceTest():void {
 
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_4600
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_4600
      * @tc.name      tesMultiLevelInheritance0046
      * @tc.desc      Whether the protected member variable _public_var passed from class b to class d in the multi-level
      * inheritance chain is correctly initialized to the string'multi-level inheritance'
@@ -2005,7 +2005,7 @@ export default function MultiLevelInheritanceTest():void {
 
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_4700
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_4700
      * @tc.name      tesMultiLevelInheritance0047
      * @tc.desc      Change the protected property _public_var inherited from class a to'aa' in class d, and verify
      * that the property value is'aa' in the test method of class e
@@ -2020,7 +2020,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_4800
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_4800
      * @tc.name      tesMultiLevelInheritance0048
      * @tc.desc      Verify that the protected member variable _public_var inherited from class a to class f is
      * correctly initialized to the string'multi-level inheritance' after multi-level inheritance
@@ -2036,7 +2036,7 @@ export default function MultiLevelInheritanceTest():void {
 
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_4900
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_4900
      * @tc.name      tesMultiLevelInheritance0049
      * @tc.desc      Verify that the protected property _public_var inherited from class a is two in the test method
      * of class b
@@ -2051,7 +2051,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_5000
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_5000
      * @tc.name      tesMultiLevelInheritance0050
      * @tc.desc      Verify that the protected member variable _public_var, inherited from the parent class a,
      * is correctly initialized to the value two
@@ -2066,7 +2066,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_5100
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_5100
      * @tc.name      tesMultiLevelInheritance0051
      * @tc.desc      Whether the protected member variable _public_var passed from class b to class d through a
      * multi-level inheritance chain is correctly initialized to the value two
@@ -2081,7 +2081,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_5200
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_5200
      * @tc.name      tesMultiLevelInheritance0052
      * @tc.desc      This test scenario verifies that subclasses d and e correctly reinitialize the protected member
      * variable _public_var to the number 20 in a multi-level inheritance chain
@@ -2096,7 +2096,7 @@ export default function MultiLevelInheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_MULTI_LEVEL_INHERITANCENTEST_5300
+     * @tc.number    SUB_MULTI_LEVEL_INHERITANCE_TEST_5300
      * @tc.name      tesMultiLevelInheritance0053
      * @tc.desc      Verify that the protected property _public_var inherited from class a is two
     in the test method of class f

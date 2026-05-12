@@ -722,7 +722,7 @@ export default function ConstructorDeclarationTest():void {
     })
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_0100
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_0100
      * @tc.name      testConstructorDeclaration0001
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -739,7 +739,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_0200
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_0200
      * @tc.name      testConstructorDeclaration0002
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -756,7 +756,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_0300
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_0300
      * @tc.name      testConstructorDeclaration0003
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -787,7 +787,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_0400
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_0400
      * @tc.name      testConstructorDeclaration0004
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -808,7 +808,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_0500
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_0500
      * @tc.name      testConstructorDeclaration0005
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -827,7 +827,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_0600
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_0600
      * @tc.name      testConstructorDeclaration0006
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -848,7 +848,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_0700
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_0700
      * @tc.name      testConstructorDeclaration0007
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -867,7 +867,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_0800
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_0800
      * @tc.name      testConstructorDeclaration0008
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -888,7 +888,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_0900
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_0900
      * @tc.name      testConstructorDeclaration0009
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -907,7 +907,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_1000
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_1000
      * @tc.name      testConstructorDeclaration0010
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -924,7 +924,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_1100
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_1100
      * @tc.name      testConstructorDeclaration0011
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -941,7 +941,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_1200
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_1200
      * @tc.name      testConstructorDeclaration0012
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -959,7 +959,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_1300
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_1300
      * @tc.name      testConstructorDeclaration0013
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -976,7 +976,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_1400
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_1400
      * @tc.name      testConstructorDeclaration0014
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -996,7 +996,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_1500
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_1500
      * @tc.name      testConstructorDeclaration0015
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1015,7 +1015,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_1600
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_1600
      * @tc.name      testConstructorDeclaration0016
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1034,7 +1034,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_1700
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_1700
      * @tc.name      testConstructorDeclaration0017
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1052,7 +1052,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_1800
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_1800
      * @tc.name      testConstructorDeclaration0018
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1070,7 +1070,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_1900
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_1900
      * @tc.name      testConstructorDeclaration0019
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1089,7 +1089,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_2000
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_2000
      * @tc.name      testConstructorDeclaration0020
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1106,7 +1106,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_2100
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_2100
      * @tc.name      testConstructorDeclaration0021
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1132,7 +1132,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_2200
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_2200
      * @tc.name      testConstructorDeclaration0022
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1153,7 +1153,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_2300
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_2300
      * @tc.name      testConstructorDeclaration0023
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1191,7 +1191,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_2400
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_2400
      * @tc.name      testConstructorDeclaration0024
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1208,7 +1208,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_2500
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_2500
      * @tc.name      testConstructorDeclaration0025
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1233,7 +1233,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_2600
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_2600
      * @tc.name      testConstructorDeclaration0026
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1263,7 +1263,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_2700
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_2700
      * @tc.name      testConstructorDeclaration0027
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1280,7 +1280,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_2800
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_2800
      * @tc.name      testConstructorDeclaration0028
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1297,7 +1297,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_2900
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_2900
      * @tc.name      testConstructorDeclaration0029
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1315,7 +1315,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_3000
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_3000
      * @tc.name      testConstructorDeclaration0030
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1335,7 +1335,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_3100
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_3100
      * @tc.name      testConstructorDeclaration0031
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1353,7 +1353,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_3200
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_3200
      * @tc.name      testConstructorDeclaration0032
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1373,7 +1373,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_3300
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_3300
      * @tc.name      testConstructorDeclaration0033
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1390,7 +1390,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_3400
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_3400
      * @tc.name      testConstructorDeclaration0034
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1407,7 +1407,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_3500
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_3500
      * @tc.name      testConstructorDeclaration0035
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1424,7 +1424,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_3600
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_3600
      * @tc.name      testConstructorDeclaration0036
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1442,7 +1442,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_3700
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_3700
      * @tc.name      testConstructorDeclaration0037
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1462,7 +1462,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_3800
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_3800
      * @tc.name      testConstructorDeclaration0038
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1481,7 +1481,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_3900
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_3900
      * @tc.name      testConstructorDeclaration0039
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1498,7 +1498,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_4000
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_4000
      * @tc.name      testConstructorDeclaration0040
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1517,7 +1517,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_4100
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_4100
      * @tc.name      testConstructorDeclaration0041
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1535,7 +1535,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_4200
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_4200
      * @tc.name      testConstructorDeclaration0042
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1553,7 +1553,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_4300
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_4300
      * @tc.name      testConstructorDeclaration0043
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1572,7 +1572,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_4400
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_4400
      * @tc.name      testConstructorDeclaration0044
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1589,7 +1589,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_4500
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_4500
      * @tc.name      testConstructorDeclaration0045
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1615,7 +1615,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_4600
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_4600
      * @tc.name      testConstructorDeclaration0046
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1634,7 +1634,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_4700
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_4700
      * @tc.name      testConstructorDeclaration0047
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1672,7 +1672,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_4800
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_4800
      * @tc.name      testConstructorDeclaration0048
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1689,7 +1689,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_4900
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_4900
      * @tc.name      testConstructorDeclaration0049
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1714,7 +1714,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_5000
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_5000
      * @tc.name      testConstructorDeclaration0050
      * @tc.desc      The syntax and semantics of a constructor's formal parameters are identical to
      *               those of a method.
@@ -1734,7 +1734,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_5100
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_5100
      * @tc.name      testConstructorDeclaration0051
      * @tc.desc      A constructor is used in the creation of an object that is an instance of a
      *               class.
@@ -1763,7 +1763,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_5200
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_5200
      * @tc.name      testConstructorDeclaration0052
      * @tc.desc      A constructor is used in the creation of an object that is an instance of a
      *               class.
@@ -1806,7 +1806,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_5300
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_5300
      * @tc.name      testConstructorDeclaration0053
      * @tc.desc      A constructor is used in the creation of an object that is an instance of a
      *               class. Private constructor.
@@ -1821,7 +1821,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_5400
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_5400
      * @tc.name      testConstructorDeclaration0054
      * @tc.desc      A constructor is used in the creation of an object that is an instance of a
      *               class. Private constructor.
@@ -1836,7 +1836,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_5500
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_5500
      * @tc.name      testConstructorDeclaration0055
      * @tc.desc      Class constructor declaration
      * @tc.size      MediumTest
@@ -1851,7 +1851,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_5600
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_5600
      * @tc.name      testConstructorDeclaration0056
      * @tc.desc      Class constructor declaration
      * @tc.size      MediumTest
@@ -1866,7 +1866,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_5700
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_5700
      * @tc.name      testConstructorDeclaration0057
      * @tc.desc      A constructor is used in the creation of an object that is an instance of a
      *               class. Private constructor.
@@ -1886,7 +1886,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_5800
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_5800
      * @tc.name      testConstructorDeclaration0058
      * @tc.desc      A constructor is used in the creation of an object that is an instance of a
      *               class. Protected constructor.
@@ -1906,7 +1906,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_5900
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_5900
      * @tc.name      testConstructorDeclaration0059
      * @tc.desc      A constructor is used in the creation of an object that is an instance of a
      *               class. Private constructor.
@@ -1924,7 +1924,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_6000
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_6000
      * @tc.name      testConstructorDeclaration0060
      * @tc.desc      A constructor is used in the creation of an object that is an instance of a
      *               class. Private constructor.
@@ -1944,7 +1944,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_6100
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_6100
      * @tc.name      testConstructorDeclaration0061
      * @tc.desc      A constructor is used in the creation of an object that is an instance of a
      *               class. Protected constructor.
@@ -1964,7 +1964,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_6200
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_6200
      * @tc.name      testConstructorDeclaration0062
      * @tc.desc      Class constructor declaration
      * @tc.size      MediumTest
@@ -1980,7 +1980,7 @@ export default function ConstructorDeclarationTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_6300
+     * @tc.number    SUB_CONSTRUCTOR_DECLARATION_TEST_6300
      * @tc.name      testConstructorDeclaration0063
      * @tc.desc      Class constructor declaration
      * @tc.size      MediumTest

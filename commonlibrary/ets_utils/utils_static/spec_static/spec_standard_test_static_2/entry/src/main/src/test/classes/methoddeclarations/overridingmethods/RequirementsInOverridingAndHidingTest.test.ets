@@ -151,8 +151,5 @@ export default function RequirementsInOverridingAndHidingTest():void {
       expect(c.test()).assertEqual(5)
 
     });
-
-
-
   })
 }
