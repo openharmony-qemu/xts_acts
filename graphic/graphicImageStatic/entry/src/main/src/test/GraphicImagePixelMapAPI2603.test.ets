@@ -1929,7 +1929,7 @@ export default function GraphicImagePixelMapAPI2603() {
 
     /**
      * @tc.name   graphicImagePixelMapAPI2603_static_5900
-     * @tc.number SUB_GRAPHIC_image_createEmptyPixelMap_static_5900
+     * @tc.number SUB_GRAPHIC_image_createEmptyPixelMap_ALPHA_static_5900
      * @tc.desc   createEmptyPixelMap ALPHA_F16 format success test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
