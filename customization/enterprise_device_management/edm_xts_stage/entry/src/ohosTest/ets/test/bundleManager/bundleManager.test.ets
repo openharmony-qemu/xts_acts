@@ -34,7 +34,9 @@ import {
   bundleNamesInit,
   bundleNamesOneRealInit,
   BUNDLE_NAME_ONE_REAL_200,
-  BUNDLE_NAME_201
+  BUNDLE_NAME_201,
+  EMPTY_HAP_FILE_PATH,
+  TEST_REAL_APP_ID_2
 } from '../commom.ets';
 
 import adminManager from '@ohos.enterprise.adminManager';
@@ -6215,6 +6217,634 @@ export default function bundleManagerTest() {
       }
       done();
       console.info(' --- test_getInstalledBundleStorageStats_1600  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_installForResult_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALLFORRESULT_0100
+     * @tc.desc   test installForResult method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_0100", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_installForResult_0100  -------- START --------');
+      try {
+        await bundleManager.installForResult(SELFWANT, HAP_FILE_PATH, EDM_INSTALL_PARAM);
+        console.info(' --- test_installForResult_0100 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_installForResult_0100 error 9200001 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+      done();
+      console.info(' --- test_installForResult_0100  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_installForResult_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALLFORRESULT_0200
+     * @tc.desc   test installForResult method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_0200", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_installForResult_0200  -------- START --------');
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+        await bundleManager.installForResult(SELFWANT, HAP_FILE_PATH, EDM_INSTALL_PARAM);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_installForResult_0200 error 9200002 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+      console.info(' --- test_installForResult_0200  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_installForResult_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALLFORRESULT_0300
+     * @tc.desc   test installForResult method with super admin and null hapFilePaths
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_0300", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_installForResult_0300  -------- START --------');
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        await bundleManager.installForResult(SELFWANT, null);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_installForResult_0300 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_installForResult_0300  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_installForResult_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALLFORRESULT_0400
+     * @tc.desc   test installForResult method with super admin and undefined hapFilePaths
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_0400", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_installForResult_0400  -------- START --------');
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        await bundleManager.installForResult(SELFWANT, undefined);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_installForResult_0400 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_installForResult_0400  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_installForResult_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALLFORRESULT_0500
+     * @tc.desc   test installForResult method with super admin and null InstallParam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_0500", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_installForResult_0500  -------- START --------');
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        await bundleManager.installForResult(SELFWANT, HAP_FILE_PATH, null);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_installForResult_0500 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_installForResult_0500  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_installForResult_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALLFORRESULT_0600
+     * @tc.desc   test installForResult method with super admin and undefined InstallParam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_0600", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_installForResult_0600  -------- START --------');
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        await bundleManager.installForResult(SELFWANT, HAP_FILE_PATH, undefined);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_installForResult_0600 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_installForResult_0600  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_installForResult_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALLFORRESULT_0700
+     * @tc.desc   test installForResult method with super admin and undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_0700", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_installForResult_0700  -------- START --------');
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        await bundleManager.installForResult(undefined, HAP_FILE_PATH, EDM_INSTALL_PARAM);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_installForResult_0700 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_installForResult_0700  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_installForResult_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALLFORRESULT_0800
+     * @tc.desc   test installForResult method with super admin and null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_0800", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_installForResult_0800  -------- START --------');
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        await bundleManager.installForResult(null, HAP_FILE_PATH, EDM_INSTALL_PARAM);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_installForResult_0800 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_installForResult_0800  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_installForResult_0900
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALLFORRESULT_0900
+     * @tc.desc   test installForResult method with super admin success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_0900", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_installForResult_0900  -------- START --------');
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        await bundleManager.installForResult(SELFWANT, HAP_FILE_PATH, EDM_INSTALL_PARAM);
+        const EDM_INSTALL_PARAM_WITH_FLAG_1 : bundleManager.InstallParam = {
+          userId: 100,
+          installFlag: 1,
+        };
+        await bundleManager.installForResult(SELFWANT, HAP_FILE_PATH, EDM_INSTALL_PARAM_WITH_FLAG_1);
+        await bundleManager.uninstall(SELFWANT, BUNDLENAME1, DEFAULT_USER_ID, true);
+      } catch (error) {
+        console.info(' --- test_installForResult_0900 error is not expected, actually catch: ' + error.code);
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_installForResult_0900  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_installForResult_1000
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALLFORRESULT_1000
+     * @tc.desc   test installForResult method with unActive admin without installParam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_1000", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_installForResult_1000  -------- START --------');
+      try {
+        await bundleManager.installForResult(SELFWANT, HAP_FILE_PATH);
+        console.info(' --- test_installForResult_1000 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_installForResult_1000 error 9200001 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+      done();
+      console.info(' --- test_installForResult_1000  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_installForResult_1100
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALLFORRESULT_1100
+     * @tc.desc   test installForResult method with byod admin without installParam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_1100", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_installForResult_1100  -------- START --------');
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+        await bundleManager.installForResult(SELFWANT, HAP_FILE_PATH);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_installForResult_1100 error 9200002 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+      console.info(' --- test_installForResult_1100  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_installForResult_1200
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALLFORRESULT_1200
+     * @tc.desc   test installForResult method with super admin and null hapFilePaths without installParam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_1200", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_installForResult_1200  -------- START --------');
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        await bundleManager.installForResult(SELFWANT, null);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_installForResult_1200 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_installForResult_1200  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_installForResult_1300
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALLFORRESULT_1300
+     * @tc.desc   test installForResult method with error hap path (error code 9201026)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_1300", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_installForResult_1300  -------- START --------');
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        await bundleManager.installForResult(SELFWANT, HAP_FILE_PATH_ERROR, EDM_INSTALL_PARAM);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_installForResult_1300 error 9201026 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9201026).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_installForResult_1300  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_installForResult_1400
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALLFORRESULT_1400
+     * @tc.desc   test installForResult method with error hap path without installParam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_1400", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_installForResult_1400  -------- START --------');
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        await bundleManager.installForResult(SELFWANT, HAP_FILE_PATH_ERROR);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_installForResult_1400 error 9201026 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9201026).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_installForResult_1400  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_installForResult_1500
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALLFORRESULT_1500
+     * @tc.desc   test installForResult method with enterprise device and for all user
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_1500", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_installForResult_1500  -------- START --------');
+      let isEnterprise: string = systemparameter.getSync('const.edm.is_enterprise_device');
+      if (isEnterprise != 'true') {
+        console.log('the device is not enterprise');
+        done();
+        return;
+      }
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        await bundleManager.installForResult(SELFWANT, HAP_FILE_PATH, EDM_INSTALL_PARAM_FOR_ALL_USER);
+        await bundleManager.uninstall(SELFWANT, BUNDLENAME1);
+      } catch (error) {
+        console.info(' --- test_installForResult_1500 error is not expected, actually catch: ' + error.code);
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_installForResult_1500  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_installForResult_1600
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALLFORRESULT_1600
+     * @tc.desc   test installForResult method with empty hapFilePaths array (error code 401)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_1600", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_installForResult_1600  -------- START --------');
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let hapFilePaths: Array<string> = [];
+        await bundleManager.installForResult(SELFWANT, hapFilePaths, EDM_INSTALL_PARAM);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_installForResult_1600 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_installForResult_1600  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_installForResult_1700
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALLFORRESULT_1700
+     * @tc.desc   test installForResult method with null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_1700", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_installForResult_1700  -------- START --------');
+      try {
+        await bundleManager.installForResult(null, HAP_FILE_PATH, EDM_INSTALL_PARAM);
+        console.info(' --- test_installForResult_1700 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_installForResult_1700 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- test_installForResult_1700  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_installForResult_1800
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALLFORRESULT_1800
+     * @tc.desc   test installForResult method with undefined admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_1800", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_installForResult_1800  -------- START --------');
+      try {
+        await bundleManager.installForResult(undefined, HAP_FILE_PATH, EDM_INSTALL_PARAM);
+        console.info(' --- test_installForResult_1800 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_installForResult_1800 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- test_installForResult_1800  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_installForResult_1900
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALLFORRESULT_1900
+     * @tc.desc   test installForResult method with null hapFilePaths
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_1900", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_installForResult_1900  -------- START --------');
+      try {
+        await bundleManager.installForResult(SELFWANT, null, EDM_INSTALL_PARAM);
+        console.info(' --- test_installForResult_1900 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_installForResult_1900 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- test_installForResult_1900  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_installForResult_2000
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALLFORRESULT_2000
+     * @tc.desc   test installForResult method with undefined hapFilePaths
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_2000", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_installForResult_2000  -------- START --------');
+      try {
+        await bundleManager.installForResult(SELFWANT, undefined, EDM_INSTALL_PARAM);
+        console.info(' --- test_installForResult_2000 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_installForResult_2000 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- test_installForResult_2000  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_installForResult_2100
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALLFORRESULT_2100
+     * @tc.desc   test installForResult method with null installParam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_2100", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_installForResult_2100  -------- START --------');
+      try {
+        await bundleManager.installForResult(SELFWANT, HAP_FILE_PATH, null);
+        console.info(' --- test_installForResult_2100 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_installForResult_2100 error 401 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- test_installForResult_2100  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_installForResult_2200
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALLFORRESULT_2200
+     * @tc.desc   test installForResult method with undefined installParam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_2200", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_installForResult_2200  -------- START --------');
+      try {
+        await bundleManager.installForResult(SELFWANT, HAP_FILE_PATH, undefined);
+        console.info(' --- test_installForResult_2200 success is expected.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_installForResult_2200 error is not expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+      console.info(' --- test_installForResult_2200  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_installForResult_2300
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALLFORRESULT_2300
+     * @tc.desc   test installForResult method with invalid userId (error code 9201032)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_2300", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_installForResult_2300  -------- START --------');
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let installParam: bundleManager.InstallParam = {
+          userId: INVALID_USER_ID,
+          installFlag: 0,
+        };
+        await bundleManager.installForResult(SELFWANT, HAP_FILE_PATH, installParam);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_installForResult_2300 error 9201032 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9201032).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_installForResult_2300  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_installForResult_2400
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALLFORRESULT_2400
+     * @tc.desc   test installForResult method with invalid hap path (error code 9201026)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_2400", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_installForResult_2400  -------- START --------');
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let invalidHapPath: Array<string> = ['/invalid/path/to/hap.hap'];
+        await bundleManager.installForResult(SELFWANT, invalidHapPath, EDM_INSTALL_PARAM);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_installForResult_2400 error 9201026 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9201026).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_installForResult_2400  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_installForResult_2500
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALLFORRESULT_2500
+     * @tc.desc   test installForResult method with empty hap file path (error code 9201002)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_2500", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_installForResult_2500  -------- START --------');
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        await bundleManager.installForResult(SELFWANT, EMPTY_HAP_FILE_PATH, EDM_INSTALL_PARAM);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_installForResult_2500 error 9201002 is expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9201002).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_installForResult_2500  -------- END --------');
+    })
+
+    /**
+     * @tc.name   test_installForResult_2600
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALLFORRESULT_2600
+     * @tc.desc   test installForResult method success with edm disallow install(error code 9201023)
+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_2600", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- test_installForResult_2600  -------- START --------');
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        bundleManager.addDisallowedInstallBundlesSync(SELFWANT, [TEST_REAL_APP_ID_2], DEFAULT_USER_ID);
+        await bundleManager.installForResult(SELFWANT, HAP_FILE_PATH);
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- test_installForResult_2600 error is not expected, actually catch: ' + error.code);
+        expect(Number(error.code) === 9201023).assertTrue();
+      } finally {
+        bundleManager.removeAllowedInstallBundlesSync(SELFWANT, [TEST_REAL_APP_ID_2], DEFAULT_USER_ID);
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- test_installForResult_2600  -------- END --------');
     })
   })
 }

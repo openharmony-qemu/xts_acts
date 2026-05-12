@@ -538,6 +538,48 @@ export default function bundleManagerTest() {
     })
 
     /**
+     * @tc.name   test_installForResult_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_FOR_RESULT_0100
+     * @tc.desc   test installForResult method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await bundleManager.installForResult(SELFWANT, HAP_FILE_PATH, EDM_INSTALL_PARAM);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 201).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_installForResult_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_FOR_RESULT_0200
+     * @tc.desc   test installForResult method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_installForResult_0200", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await bundleManager.installForResult(SELFWANT, HAP_FILE_PATH);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 201).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
      * @tc.name   test_get_installed_bundle_list_001
      * @tc.number SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_001
      * @tc.desc   test get installed bundle list method with normal admin
