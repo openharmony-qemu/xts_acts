@@ -17,6 +17,7 @@ group("std_core_static") {
   testonly = true
   if (is_standard_system) {
     deps = [
+        "std_core_static:ActsArrayBufferStaticTest",
     ]
   }
 }
