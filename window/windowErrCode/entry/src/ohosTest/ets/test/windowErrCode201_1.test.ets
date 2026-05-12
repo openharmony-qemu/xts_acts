@@ -215,6 +215,8 @@ export default function windowErrCode201_1() {
     it('setImageForRecent_201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'setImageForRecent_201';
       console.log( caseName +' begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
       let color = new ArrayBuffer(512 * 512 * 4); // 创建一个ArrayBuffer对象，用于存储图像像素。该对象的大小为（height * width * 4）字节。
       let pixelMap: image.PixelMap;
       let bufferArr = new Uint8Array(color);
@@ -237,8 +239,13 @@ export default function windowErrCode201_1() {
             done()
           }).catch((err: BusinessError) => {
             console.error(caseName +` Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
-            expect(err.code).assertEqual(201);
-            done();
+            if (!canIUseRes) {
+              expect(err.code).assertEqual(801);
+              done();
+            } else {
+              expect(err.code).assertEqual(201);
+              done();
+            }
           });
         } catch (exception) {
           console.error(caseName +` Failed to set image for recent.`);
@@ -260,6 +267,8 @@ export default function windowErrCode201_1() {
     it('removeImageForRecent_201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'removeImageForRecent_201';
       console.log( caseName +' begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
       try {
         let promise = windowStage.removeImageForRecent();
         promise.then(() => {
@@ -268,8 +277,13 @@ export default function windowErrCode201_1() {
           done()
         }).catch((err: BusinessError) => {
           console.error(caseName +`Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
-          expect(err.code).assertEqual(201);
-          done();
+          if (!canIUseRes) {
+            expect(err.code).assertEqual(801);
+            done();
+          } else {
+            expect(err.code).assertEqual(201);
+            done();
+          }
         });
       } catch (exception) {
         console.error(caseName +` Failed to remove image for recent.`);
@@ -277,6 +291,7 @@ export default function windowErrCode201_1() {
         done()
       }
     })
+
 
   })
 }
