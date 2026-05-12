@@ -21,6 +21,8 @@ import RefreshMaxPullDownDistanceTest from './Refresh/RefreshMaxPullDownDistance
 import RefreshRefreshOffsetTest from './Refresh/RefreshRefreshOffset.test'
 import ScrollScrollBarWidthTest from './Scroll/ScrollScrollBarWidth.test'
 import WaterFlowScrollBarWidthTest from './WaterFlow/WaterFlowScrollBarWidth.test'
+import backPressBehaviorList from './List/backPressBehaviorList.test'
+import headerFooterStyle from './ListItemGroup/headerFooterStyle.test'
 
 export default function testsuite() {
   GridScrollBarWidthTest();
@@ -30,4 +32,6 @@ export default function testsuite() {
   RefreshRefreshOffsetTest();
   ScrollScrollBarWidthTest();
   WaterFlowScrollBarWidthTest();
+  backPressBehaviorList();
+  headerFooterStyle();
 }
