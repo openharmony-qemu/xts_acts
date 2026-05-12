@@ -2818,5 +2818,459 @@ export default function SevenPointZeroI18nStageTest() {
       }
     })
 
+    /**
+     * @tc.name test_SymbolDateTimeFormat_0800
+     * @tc.number test_SymbolDateTimeFormat_0800
+     * @tc.desc test SymbolDateTimeFormat with custom AM character
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolDateTimeFormat_0800', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
+      let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": ["test1", "test2"], "timeStyle": "full" };
+      let date: Date = new Date(2026, 2, 18, 10, 8);
+      let date: Date2 = new Date(2027, 2, 18, 10, 8);
+      let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
+      let dateFormat = symbolFormat.formatRange(date, date2);
+      console.log('test_SymbolDateTimeFormat_0800 result:', dateFormat);
+      expect(dateFormat).assertEqual("3/18/2026, 10:08:00 AM Central Standard Time – 3/18/2027, 10:08:00 AM Central Standard Time");
+    })
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_0900
+     * @tc.number test_SymbolDateTimeFormat_0900
+     * @tc.desc test SymbolDateTimeFormat with custom AM character
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolDateTimeFormat_0900', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
+      let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": ["test1", "test2"], "timeStyle": "full" };
+      let date: Date = new Date(2026, 2, 18, 10, 8);
+      let date: Date2 = new Date(2026, 2, 18, 10, 8);
+      let expectedSource: string[] = ["shared", "shared", "shared", "shared", "shared", "shared", "shared" ,"shared" ,"shared"];
+      let expectedValue: string[] = ["10", ":", "08", ":", "00", " ", "AM", " " ,"Central Standard Time"];
+      let expectedType: string[] = ["hour", "literal", "minute", "literal", "second", "literal", "dayPeriod", "literal" ,"timeZoneName"];
+      let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
+      let dateFormat: Intl.DateTimeFormatPart[] = symbolFormat.formatRangeToParts(date, date2);
+      console.log('test_SymbolDateTimeFormat_0900 result:', JSON.stringify(dateFormat));
+      for (let i = 0; i < dateFormat.length; i++) {
+        expect(dateFormat[i].source).assertEqual(expectedSource[i]);
+        expect(dateFormat[i].value).assertEqual(expectedValue[i]);
+        expect(dateFormat[i].type).assertEqual(expectedType[i]);
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_1000
+     * @tc.number test_SymbolDateTimeFormat_1000
+     * @tc.desc test SymbolDateTimeFormat with custom AM character
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolDateTimeFormat_1000', Level.LEVEL2, () => {
+      let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
+      let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": ["test1", "test2"], "timeStyle": "full" };
+      let date: Date = new Date(2026, 2, 18, 10, 8);
+      let expectedValue: string[] = ["10", ":", "08", ":", "00", " ", "test1", " " ,"Central Standard Time"];
+      let expectedType: string[] = ["hour", "literal", "minute", "literal", "second", "literal", "dayPeriod", "literal" ,"timeZoneName"];
+      let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
+      let dateFormat: Intl.DateTimeFormatPart[] = symbolFormat.formatToParts(date);
+      console.log('test_SymbolDateTimeFormat_1000 result:', JSON.stringify(dateFormat));
+      for (let i = 0; i < dateFormat.length; i++) {
+        expect(dateFormat[i].value).assertEqual(expectedValue[i]);
+        expect(dateFormat[i].type).assertEqual(expectedType[i]);
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_1100
+     * @tc.number test_SymbolDateTimeFormat_1100
+     * @tc.desc test SymbolDateTimeFormat with custom AM character
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolDateTimeFormat_1100', Level.LEVEL2, () => {
+      try{
+        let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
+        let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": ["test1", "test2"], "timeStyle": "full" };
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
+        let dateFormat = symbolFormat.formatRange(null, null);
+        console.log('test_SymbolDateTimeFormat_1100 result:', dateFormat);
+      } catch (e) {
+        console.log('test_SymbolDateTimeFormat_1100 code&message:', + e.code +e.message);
+        expect(Number(e.code)).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_1200
+     * @tc.number test_SymbolDateTimeFormat_1200
+     * @tc.desc test SymbolDateTimeFormat with custom AM character
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolDateTimeFormat_1200', Level.LEVEL2, () => {
+      try{
+        let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
+        let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": ["test1", "test2"], "timeStyle": "full" };
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
+        let dateFormat: Intl.DateTimeFormatPart[] = symbolFormat.formatRangeToParts(null, null);
+        console.log('test_SymbolDateTimeFormat_1200 result:', dateFormat);
+      } catch (e) {
+        console.log('test_SymbolDateTimeFormat_1200 code&message:', + e.code +e.message);
+        expect(Number(e.code)).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_1300
+     * @tc.number test_SymbolDateTimeFormat_1300
+     * @tc.desc test SymbolDateTimeFormat with custom AM character
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolDateTimeFormat_1300', Level.LEVEL2, () => {
+      try{
+        let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
+        let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": ["test1", "test2"], "timeStyle": "full" };
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
+        let dateFormat: Intl.DateTimeFormatPart[] = symbolFormat.formatToParts(null);
+        console.log('test_SymbolDateTimeFormat_1300 result:', dateFormat);
+      } catch (e) {
+        console.log('test_SymbolDateTimeFormat_1300 code&message:', + e.code +e.message);
+        expect(Number(e.code)).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_1400
+     * @tc.number test_SymbolDateTimeFormat_1400
+     * @tc.desc test SymbolDateTimeFormat with custom AM character
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolDateTimeFormat_1400', Level.LEVEL2, () => {
+      try{
+        let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
+        let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": ["test1", "test2"], "timeStyle": "full" };
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
+        let dateFormat = symbolFormat.formatRange(undefined, undefined);
+        console.log('test_SymbolDateTimeFormat_1400 result:', dateFormat);
+      } catch (e) {
+        console.log('test_SymbolDateTimeFormat_1400 code&message:', + e.code +e.message);
+        expect(Number(e.code)).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_1500
+     * @tc.number test_SymbolDateTimeFormat_1500
+     * @tc.desc test SymbolDateTimeFormat with custom AM character
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolDateTimeFormat_1500', Level.LEVEL2, () => {
+      try{
+        let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
+        let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": ["test1", "test2"], "timeStyle": "full" };
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
+        let dateFormat: Intl.DateTimeFormatPart[] = symbolFormat.formatRangeToParts(undefined, undefined);
+        console.log('test_SymbolDateTimeFormat_1500 result:', dateFormat);
+      } catch (e) {
+        console.log('test_SymbolDateTimeFormat_1500 code&message:', + e.code +e.message);
+        expect(Number(e.code)).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_1600
+     * @tc.number test_SymbolDateTimeFormat_1600
+     * @tc.desc test SymbolDateTimeFormat with custom AM character
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolDateTimeFormat_1600', Level.LEVEL2, () => {
+      try{
+        let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
+        let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": ["test1", "test2"], "timeStyle": "full" };
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
+        let dateFormat: Intl.DateTimeFormatPart[] = symbolFormat.formatToParts(undefined);
+        console.log('test_SymbolDateTimeFormat_1600 result:', dateFormat);
+      } catch (e) {
+        console.log('test_SymbolDateTimeFormat_1600 code&message:', + e.code +e.message);
+        expect(Number(e.code)).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_1700
+     * @tc.number test_SymbolDateTimeFormat_1700
+     * @tc.desc test SymbolDateTimeFormat with custom AM character
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolDateTimeFormat_1700', Level.LEVEL2, () => {
+      try{
+        let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
+        let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": ["test1", "test2"], "timeStyle": "full" };
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
+        let dateFormat: Intl.DateTimeFormatPart[] = symbolFormat.format(null);
+        console.log('test_SymbolDateTimeFormat_1700 result:', dateFormat);
+      } catch (e) {
+        console.log('test_SymbolDateTimeFormat_1700 code&message:', + e.code +e.message);
+        expect(Number(e.code)).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolDateTimeFormat_1800
+     * @tc.number test_SymbolDateTimeFormat_1800
+     * @tc.desc test SymbolDateTimeFormat with custom AM character
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolDateTimeFormat_1800', Level.LEVEL2, () => {
+      try{
+        let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
+        let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": ["test1", "test2"], "timeStyle": "full" };
+        let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
+        let dateFormat: Intl.DateTimeFormatPart[] = symbolFormat.format(undefined);
+        console.log('test_SymbolDateTimeFormat_1800 result:', dateFormat);
+      } catch (e) {
+        console.log('test_SymbolDateTimeFormat_1800 code&message:', + e.code +e.message);
+        expect(Number(e.code)).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_2700
+     * @tc.number test_SymbolNumberFormat_2700
+     * @tc.desc test SymbolNumberFormat with custom plusSign param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_2700', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US', { 'numberingSystem': 'latn' });
+      let customSymbol: i18n.SymbolNumberFormatOptions = {'plusSign': 'B', signDisplay: 'always'};
+      let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+      let numberFormat = symbolFormat.formatRange(100, 101);
+      console.log('test_SymbolNumberFormat_1500 result:' + numberFormat);
+      expect(numberFormat).assertEqual('B100 – B101');
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_2800
+     * @tc.number test_SymbolNumberFormat_2800
+     * @tc.desc test SymbolNumberFormat with custom plusSign param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_2800', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US', { 'numberingSystem': 'latn' });
+      let customSymbol: i18n.SymbolNumberFormatOptions = {'plusSign': 'B', signDisplay: 'always'};
+      let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+      let expectedValue: string[] = ["B", "100"];
+      let expectedType: string[] = ["plusSign", "integer"];
+      let numberFormat: Intl.NumberFormatPart[] = symbolFormat.formatToParts(100);
+      console.log('test_SymbolNumberFormat_2800 result:' + JSON.stringify(numberFormat));
+      for (let i = 0; i < numberFormat.length; i++) {
+        expect(numberFormat[i].value).assertEqual(expectedValue[i]);
+        expect(numberFormat[i].type).assertEqual(expectedType[i]);
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_2900
+     * @tc.number test_SymbolNumberFormat_2900
+     * @tc.desc test SymbolNumberFormat with custom plusSign param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_2900', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US', { 'numberingSystem': 'latn' });
+      let customSymbol: i18n.SymbolNumberFormatOptions = {'plusSign': 'B', signDisplay: 'always'};
+      let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+      let expectedValue: string[] = ["B", "100", "–", "B", "101"];
+      let expectedType: string[] = ["plusSign", "integer", "literal", "plusSign", "integer"];
+      let numberFormat: Intl.NumberFormatPart[] = symbolFormat.formatRangeToParts(100, 101);
+      console.log('test_SymbolNumberFormat_2900 result:' + JSON.stringify(numberFormat));
+      for (let i = 0; i < numberFormat.length; i++) {
+        expect(numberFormat[i].value).assertEqual(expectedValue[i]);
+        expect(numberFormat[i].type).assertEqual(expectedType[i]);
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_3000
+     * @tc.number test_SymbolNumberFormat_3000
+     * @tc.desc test SymbolNumberFormat with custom plusSign param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_3000', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US', { 'numberingSystem': 'latn' });
+      let customSymbol: i18n.SymbolNumberFormatOptions = {'plusSign': 'B', signDisplay: 'always'};
+      let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+      let numberFormat = symbolFormat.formatRange(null, null);
+      console.log('test_SymbolNumberFormat_3000 result:' + numberFormat);
+      expect(numberFormat).assertEqual('~B101');
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_3100
+     * @tc.number test_SymbolNumberFormat_3100
+     * @tc.desc test SymbolNumberFormat with custom plusSign param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_3100', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US', { 'numberingSystem': 'latn' });
+      let customSymbol: i18n.SymbolNumberFormatOptions = {'plusSign': 'B', signDisplay: 'always'};
+      let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+      let expectedValue: string[] = ["B", "0"];
+      let expectedType: string[] = ["plusSign", "integer"];
+      let numberFormat: Intl.NumberFormatPart[] = symbolFormat.formatToParts(null);
+      console.log('test_SymbolNumberFormat_3100 result:' + JSON.stringify(numberFormat));
+      for (let i = 0; i < numberFormat.length; i++) {
+        expect(numberFormat[i].value).assertEqual(expectedValue[i]);
+        expect(numberFormat[i].type).assertEqual(expectedType[i]);
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_3200
+     * @tc.number test_SymbolNumberFormat_3200
+     * @tc.desc test SymbolNumberFormat with custom plusSign param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_3200', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US', { 'numberingSystem': 'latn' });
+      let customSymbol: i18n.SymbolNumberFormatOptions = {'plusSign': 'B', signDisplay: 'always'};
+      let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+      let expectedValue: string[] = ["~", "B", "0"];
+      let expectedType: string[] = ["approximate", "plusSign", "integer"];
+      let numberFormat: Intl.NumberFormatPart[] = symbolFormat.formatRangeToParts(null, null);
+      console.log('test_SymbolNumberFormat_3200 result:' + JSON.stringify(numberFormat));
+      for (let i = 0; i < numberFormat.length; i++) {
+        expect(numberFormat[i].value).assertEqual(expectedValue[i]);
+        expect(numberFormat[i].type).assertEqual(expectedType[i]);
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_3300
+     * @tc.number test_SymbolNumberFormat_3300
+     * @tc.desc test SymbolNumberFormat with custom plusSign param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_3300', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US', { 'numberingSystem': 'latn' });
+      let customSymbol: i18n.SymbolNumberFormatOptions = { 'plusSign': 'B', signDisplay: 'always' };
+      let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+      let numberFormat = symbolFormat.formatRangeToParts(undefined, undefined);
+      console.log('test_SymbolNumberFormat_3300 result:' + numberFormat);
+      expect(numberFormat).assertEqual('~B0');
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_3400
+     * @tc.number test_SymbolNumberFormat_3400
+     * @tc.desc test SymbolNumberFormat with custom plusSign param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_3400', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US', { 'numberingSystem': 'latn' });
+      let customSymbol: i18n.SymbolNumberFormatOptions = { 'plusSign': 'B', signDisplay: 'always' };
+      let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+      let expectedValue: string[] = ['B', "NaN"];
+      let expectedType: string[] = ['plusSign', "integer"];
+      let numberFormat: Intl.NumberFormatPart[] = symbolFormat.formatRangeToParts(undefined);
+      console.log('test_SymbolNumberFormat_3400 result:' + JSON.stringify(numberFormat));
+      for (let i = 0; i < numberFormat.length; i++) {
+        expect(numberFormat[i].value).assertEqual(expectedValue[i]);
+        expect(numberFormat[i].type).assertEqual(expectedType[i]);
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_3500
+     * @tc.number test_SymbolNumberFormat_3500
+     * @tc.desc test SymbolNumberFormat with custom plusSign param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_3500', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US', { 'numberingSystem': 'latn' });
+      let customSymbol: i18n.SymbolNumberFormatOptions = { 'plusSign': 'B', signDisplay: 'always' };
+      let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+      let numberFormat: Intl.NumberFormatPart[] = symbolFormat.formatRangeToParts(undefined, undefined);
+      let expectedValue: string[] = ['~', 'B', "NaN"];
+      let expectedType: string[] = ['approximatelySign', 'plusSign', "integer"];
+      console.log('test_SymbolNumberFormat_3500 result:' + numberFormat);
+      for (let i = 0; i < numberFormat.length; i++) {
+        expect(numberFormat[i].value).assertEqual(expectedValue[i]);
+        expect(numberFormat[i].type).assertEqual(expectedType[i]);
+      }
+    })
+
+    /**
+     * @tc.name test_SymbolNumberFormat_3600
+     * @tc.number test_SymbolNumberFormat_3600
+     * @tc.desc test SymbolNumberFormat with custom plusSign param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_3600', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US', { 'numberingSystem': 'latn' });
+      let customSymbol: i18n.SymbolNumberFormatOptions = { 'zero': 'B'};
+      let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+      let numberFormat = symbolFormat.format(null);
+      console.log('test_SymbolNumberFormat_3600 result:' + numberFormat);
+      expect(numberFormat).assertEqual('B');
+    })
+
+
+    /**
+     * @tc.name test_SymbolNumberFormat_3700
+     * @tc.number test_SymbolNumberFormat_3700
+     * @tc.desc test SymbolNumberFormat with custom plusSign param
+     * @tc.type FUNCTION
+     * @tc.size MEDIUM
+     * @tc.level LEVEL2
+     */
+    it('test_SymbolNumberFormat_3700', Level.LEVEL2, () => {
+      let locale = new Intl.Locale('en-US', { 'numberingSystem': 'latn' });
+      let customSymbol: i18n.SymbolNumberFormatOptions = { 'zero': 'B'};
+      let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
+      let numberFormat = symbolFormat.format(undefined);
+      console.log('test_SymbolNumberFormat_3700 result:' + numberFormat);
+      expect(numberFormat).assertEqual('NaN');
+    })
+
   })
 }
