@@ -336,17 +336,17 @@ async function permissionClick() {
   console.info(`driver is ${JSON.stringify(driver)}`);
   await sleep(100);
   console.info(`UiDriver start`);
-  let button = await driver.findComponent(BY.text('允许'));
-  if (button == null) {
+  let button1 = await driver.findComponent(BY.text('允许'));
+  let button2 = await driver.findComponent(BY.text('始终允许'));
+  if (button1 == null && button2 == null) {
     let delegator = abilityDelegatorRegistry.getAbilityDelegator();
     let cmd = "hidumper -s WindowManagerService -a'-a'"
     await delegator.executeShellCommand(cmd);
   }
   console.info(`button is ${JSON.stringify(button)}`);
   await sleep(100);
-  if (button != null && button != undefined) {
-    await button.click();
-  }
+  await button1?.click();
+  await button2?.click();
   await sleep(1000);
 }
 
