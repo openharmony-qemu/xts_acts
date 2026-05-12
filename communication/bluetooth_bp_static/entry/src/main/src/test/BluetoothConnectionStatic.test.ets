@@ -1954,14 +1954,14 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_PairDevice_Callback_DeviceId_Empty_001
-       * @tc.name subCommunicationBpPairDeviceCallbackDeviceIdEmpty001
+       * @tc.number SUB_Communication_BP_PairDevice_Callback_DeviceId_Empty_0100
+       * @tc.name subCommunicationBpPairDeviceCallbackDeviceIdEmpty0100
        * @tc.desc Test pairDevice(callback) with empty string deviceId
        * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
-      it("subCommunicationBpPairDeviceCallbackDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      it("subCommunicationBpPairDeviceCallbackDeviceIdEmpty0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
           let caseName = "SUB_Communication_BP_PairDevice_Callback_DeviceId_Empty_001";
           hilog.info(domain, tag, `${caseName} test start`);
@@ -1986,14 +1986,14 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_PairDevice_Promise_DeviceId_Empty_001
-       * @tc.name subCommunicationBpPairDevicePromiseDeviceIdEmpty001
+       * @tc.number SUB_Communication_BP_PairDevice_Promise_DeviceId_Empty_0100
+       * @tc.name subCommunicationBpPairDevicePromiseDeviceIdEmpty0100
        * @tc.desc Test pairDevice(promise) with empty string deviceId
        * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
-      it("subCommunicationBpPairDevicePromiseDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      it("subCommunicationBpPairDevicePromiseDeviceIdEmpty0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
           let caseName = "SUB_Communication_BP_PairDevice_Promise_DeviceId_Empty_001";
           hilog.info(domain, tag, `${caseName} test start`);
@@ -2013,14 +2013,14 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_GetRemoteDeviceName_DeviceId_Empty_001
-       * @tc.name subCommunicationBpGetRemoteDeviceNameDeviceIdEmpty001
+       * @tc.number SUB_Communication_BP_GetRemoteDeviceName_DeviceId_Empty_0100
+       * @tc.name subCommunicationBpGetRemoteDeviceNameDeviceIdEmpty0100
        * @tc.desc Test getRemoteDeviceName with empty string deviceId
        * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
-      it("subCommunicationBpGetRemoteDeviceNameDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      it("subCommunicationBpGetRemoteDeviceNameDeviceIdEmpty0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
           let caseName = "SUB_Communication_BP_GetRemoteDeviceName_DeviceId_Empty_001";
           hilog.info(domain, tag, `${caseName} test start`);
@@ -2039,14 +2039,14 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_GetRemoteDeviceClass_DeviceId_Empty_001
-       * @tc.name subCommunicationBpGetRemoteDeviceClassDeviceIdEmpty001
+       * @tc.number SUB_Communication_BP_GetRemoteDeviceClass_DeviceId_Empty_0100
+       * @tc.name subCommunicationBpGetRemoteDeviceClassDeviceIdEmpty0100
        * @tc.desc Test getRemoteDeviceClass with empty string deviceId
        * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
-      it("subCommunicationBpGetRemoteDeviceClassDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      it("subCommunicationBpGetRemoteDeviceClassDeviceIdEmpty0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
           let caseName = "SUB_Communication_BP_GetRemoteDeviceClass_DeviceId_Empty_001";
           hilog.info(domain, tag, `${caseName} test start`);
@@ -2065,14 +2065,14 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_GetPairState_DeviceId_Empty_001
-       * @tc.name subCommunicationBpGetPairStateDeviceIdEmpty001
+       * @tc.number SUB_Communication_BP_GetPairState_DeviceId_Empty_0100
+       * @tc.name subCommunicationBpGetPairStateDeviceIdEmpty0100
        * @tc.desc Test getPairState with empty string deviceId
        * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
-      it("subCommunicationBpGetPairStateDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      it("subCommunicationBpGetPairStateDeviceIdEmpty0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
           let caseName = "SUB_Communication_BP_GetPairState_DeviceId_Empty_001";
           hilog.info(domain, tag, `${caseName} test start`);
@@ -2091,14 +2091,14 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_SetDevicePairingConfirmation_DeviceId_Empty_001
-       * @tc.name subCommunicationBpSetDevicePairingConfirmationDeviceIdEmpty001
+       * @tc.number SUB_Communication_BP_SetDevicePairingConfirmation_DeviceId_Empty_0100
+       * @tc.name subCommunicationBpSetDevicePairingConfirmationDeviceIdEmpty0100
        * @tc.desc Test setDevicePairingConfirmation with empty string deviceId
        * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
-      it("subCommunicationBpSetDevicePairingConfirmationDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      it("subCommunicationBpSetDevicePairingConfirmationDeviceIdEmpty0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
           let caseName = "SUB_Communication_BP_SetDevicePairingConfirmation_DeviceId_Empty_001";
           hilog.info(domain, tag, `${caseName} test start`);
@@ -2117,14 +2117,14 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_SetDevicePinCode_Callback_DeviceId_Empty_001
-       * @tc.name subCommunicationBpSetDevicePinCodeCallbackDeviceIdEmpty001
+       * @tc.number SUB_Communication_BP_SetDevicePinCode_Callback_DeviceId_Empty_0100
+       * @tc.name subCommunicationBpSetDevicePinCodeCallbackDeviceIdEmpty0100
        * @tc.desc Test setDevicePinCode(callback) with empty string deviceId
        * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
-      it("subCommunicationBpSetDevicePinCodeCallbackDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      it("subCommunicationBpSetDevicePinCodeCallbackDeviceIdEmpty0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
           let caseName = "SUB_Communication_BP_SetDevicePinCode_Callback_DeviceId_Empty_001";
           hilog.info(domain, tag, `${caseName} test start`);
@@ -2149,14 +2149,14 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_SetDevicePinCode_Promise_DeviceId_Empty_001
-       * @tc.name subCommunicationBpSetDevicePinCodePromiseDeviceIdEmpty001
+       * @tc.number SUB_Communication_BP_SetDevicePinCode_Promise_DeviceId_Empty_0100
+       * @tc.name subCommunicationBpSetDevicePinCodePromiseDeviceIdEmpty0100
        * @tc.desc Test setDevicePinCode(promise) with empty string deviceId
        * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
-      it("subCommunicationBpSetDevicePinCodePromiseDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      it("subCommunicationBpSetDevicePinCodePromiseDeviceIdEmpty0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
           let caseName = "SUB_Communication_BP_SetDevicePinCode_Promise_DeviceId_Empty_001";
           hilog.info(domain, tag, `${caseName} test start`);
@@ -2176,14 +2176,14 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_SetDevicePinCode_Callback_Code_Empty_001
-       * @tc.name subCommunicationBpSetDevicePinCodeCallbackCodeEmpty001
+       * @tc.number SUB_Communication_BP_SetDevicePinCode_Callback_Code_Empty_0100
+       * @tc.name subCommunicationBpSetDevicePinCodeCallbackCodeEmpty0100
        * @tc.desc Test setDevicePinCode(callback) with empty string pinCode
        * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
-      it("subCommunicationBpSetDevicePinCodeCallbackCodeEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      it("subCommunicationBpSetDevicePinCodeCallbackCodeEmpty0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
           let caseName = "SUB_Communication_BP_SetDevicePinCode_Callback_Code_Empty_001";
           hilog.info(domain, tag, `${caseName} test start`);
@@ -2209,14 +2209,14 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_SetDevicePinCode_Promise_Code_Empty_001
-       * @tc.name subCommunicationBpSetDevicePinCodePromiseCodeEmpty001
+       * @tc.number SUB_Communication_BP_SetDevicePinCode_Promise_Code_Empty_0100
+       * @tc.name subCommunicationBpSetDevicePinCodePromiseCodeEmpty0100
        * @tc.desc Test setDevicePinCode(promise) with empty string pinCode
        * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
-      it("subCommunicationBpSetDevicePinCodePromiseCodeEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      it("subCommunicationBpSetDevicePinCodePromiseCodeEmpty0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
           let caseName = "SUB_Communication_BP_SetDevicePinCode_Promise_Code_Empty_001";
           hilog.info(domain, tag, `${caseName} test start`);
@@ -2236,14 +2236,14 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_GetRemoteProfileUuids_Callback_DeviceId_Empty_001
-       * @tc.name subCommunicationBpGetRemoteProfileUuidsCallbackDeviceIdEmpty001
+       * @tc.number SUB_Communication_BP_GetRemoteProfileUuids_Callback_DeviceId_Empty_0100
+       * @tc.name subCommunicationBpGetRemoteProfileUuidsCallbackDeviceIdEmpty0100
        * @tc.desc Test getRemoteProfileUuids(callback) with empty string deviceId
        * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
-      it("subCommunicationBpGetRemoteProfileUuidsCallbackDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      it("subCommunicationBpGetRemoteProfileUuidsCallbackDeviceIdEmpty0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
           let caseName = "SUB_Communication_BP_GetRemoteProfileUuids_Callback_DeviceId_Empty_001";
           hilog.info(domain, tag, `${caseName} test start`);
@@ -2269,14 +2269,14 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_GetRemoteProfileUuids_Promise_DeviceId_Empty_001
-       * @tc.name subCommunicationBpGetRemoteProfileUuidsPromiseDeviceIdEmpty001
+       * @tc.number SUB_Communication_BP_GetRemoteProfileUuids_Promise_DeviceId_Empty_0100
+       * @tc.name subCommunicationBpGetRemoteProfileUuidsPromiseDeviceIdEmpty0100
        * @tc.desc Test getRemoteProfileUuids(promise) with empty string deviceId
        * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
-      it("subCommunicationBpGetRemoteProfileUuidsPromiseDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      it("subCommunicationBpGetRemoteProfileUuidsPromiseDeviceIdEmpty0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
           let caseName = "SUB_Communication_BP_GetRemoteProfileUuids_Promise_DeviceId_Empty_001";
           hilog.info(domain, tag, `${caseName} test start`);
@@ -2296,14 +2296,14 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_ConnectAllowedProfiles_Callback_DeviceId_Empty_001
-       * @tc.name subCommunicationBpConnectAllowedProfilesCallbackDeviceIdEmpty001
+       * @tc.number SUB_Communication_BP_ConnectAllowedProfiles_Callback_DeviceId_Empty_0100
+       * @tc.name subCommunicationBpConnectAllowedProfilesCallbackDeviceIdEmpty0100
        * @tc.desc Test connectAllowedProfiles(callback) with empty string deviceId
        * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
-      it("subCommunicationBpConnectAllowedProfilesCallbackDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      it("subCommunicationBpConnectAllowedProfilesCallbackDeviceIdEmpty0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
           let caseName = "SUB_Communication_BP_ConnectAllowedProfiles_Callback_DeviceId_Empty_001";
           hilog.info(domain, tag, `${caseName} test start`);
@@ -2329,14 +2329,14 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_ConnectAllowedProfiles_Promise_DeviceId_Empty_001
-       * @tc.name subCommunicationBpConnectAllowedProfilesPromiseDeviceIdEmpty001
+       * @tc.number SUB_Communication_BP_ConnectAllowedProfiles_Promise_DeviceId_Empty_0100
+       * @tc.name subCommunicationBpConnectAllowedProfilesPromiseDeviceIdEmpty0100
        * @tc.desc Test connectAllowedProfiles(promise) with empty string deviceId
        * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
-      it("subCommunicationBpConnectAllowedProfilesPromiseDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      it("subCommunicationBpConnectAllowedProfilesPromiseDeviceIdEmpty0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
           let caseName = "SUB_Communication_BP_ConnectAllowedProfiles_Promise_DeviceId_Empty_001";
           hilog.info(domain, tag, `${caseName} test start`);
@@ -2356,14 +2356,14 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_GetRemoteDeviceBatteryInfo_DeviceId_Empty_001
-       * @tc.name subCommunicationBpGetRemoteDeviceBatteryInfoDeviceIdEmpty001
+       * @tc.number SUB_Communication_BP_GetRemoteDeviceBatteryInfo_DeviceId_Empty_0100
+       * @tc.name subCommunicationBpGetRemoteDeviceBatteryInfoDeviceIdEmpty0100
        * @tc.desc Test getRemoteDeviceBatteryInfo with empty string deviceId
        * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
-      it("subCommunicationBpGetRemoteDeviceBatteryInfoDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      it("subCommunicationBpGetRemoteDeviceBatteryInfoDeviceIdEmpty0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
           let caseName = "SUB_Communication_BP_GetRemoteDeviceBatteryInfo_DeviceId_Empty_001";
           hilog.info(domain, tag, `${caseName} test start`);
@@ -2383,14 +2383,14 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_SetRemoteDeviceName_DeviceId_Empty_001
-       * @tc.name subCommunicationBpSetRemoteDeviceNameDeviceIdEmpty001
+       * @tc.number SUB_Communication_BP_SetRemoteDeviceName_DeviceId_Empty_0100
+       * @tc.name subCommunicationBpSetRemoteDeviceNameDeviceIdEmpty0100
        * @tc.desc Test setRemoteDeviceName with empty string deviceId
        * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
-      it("subCommunicationBpSetRemoteDeviceNameDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      it("subCommunicationBpSetRemoteDeviceNameDeviceIdEmpty0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
           let caseName = "SUB_Communication_BP_SetRemoteDeviceName_DeviceId_Empty_001";
           hilog.info(domain, tag, `${caseName} test start`);
@@ -2410,14 +2410,14 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_SetRemoteDeviceName_Name_Empty_001
-       * @tc.name subCommunicationBpSetRemoteDeviceNameNameEmpty001
+       * @tc.number SUB_Communication_BP_SetRemoteDeviceName_Name_Empty_0100
+       * @tc.name subCommunicationBpSetRemoteDeviceNameNameEmpty0100
        * @tc.desc Test setRemoteDeviceName with empty string name
        * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
-      it("subCommunicationBpSetRemoteDeviceNameNameEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      it("subCommunicationBpSetRemoteDeviceNameNameEmpty0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
           let caseName = "SUB_Communication_BP_SetRemoteDeviceName_Name_Empty_001";
           hilog.info(domain, tag, `${caseName} test start`);
@@ -2437,14 +2437,14 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_GetLastConnectionTime_DeviceId_Empty_001
-       * @tc.name subCommunicationBpGetLastConnectionTimeDeviceIdEmpty001
+       * @tc.number SUB_Communication_BP_GetLastConnectionTime_DeviceId_Empty_0100
+       * @tc.name subCommunicationBpGetLastConnectionTimeDeviceIdEmpty0100
        * @tc.desc Test getLastConnectionTime with empty string deviceId
        * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
-      it("subCommunicationBpGetLastConnectionTimeDeviceIdEmpty001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      it("subCommunicationBpGetLastConnectionTimeDeviceIdEmpty0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
           let caseName = "SUB_Communication_BP_GetLastConnectionTime_DeviceId_Empty_001";
           hilog.info(domain, tag, `${caseName} test start`);
