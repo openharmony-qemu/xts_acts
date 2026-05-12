@@ -29,8 +29,8 @@ export default function WebScrollDirectionalLockTest(): void {
       await Utils.msSleep(1000);
       Utils.registerEvent('testScrollDirectionalLock001', true, 185010, done);
       inspector.sendEventByKey('WebScrollDirectionalLockButton', 10, '');
-      await Utils.msSleep(1500);
-      expect(true).assertTrue();
+      const sleepResult = await Utils.msSleep(1500);
+      expect(sleepResult).assertEqual(0);
       done();
     })
 
@@ -47,8 +47,8 @@ export default function WebScrollDirectionalLockTest(): void {
       await Utils.msSleep(1000);
       Utils.registerEvent('testScrollDirectionalLock002', true, 185020, done);
       inspector.sendEventByKey('WebScrollDirectionalLockButton', 10, '');
-      await Utils.msSleep(1500);
-      expect(true).assertTrue();
+      const sleepResult = await Utils.msSleep(1500);
+      expect(sleepResult).assertEqual(0);
       done();
     })
   })

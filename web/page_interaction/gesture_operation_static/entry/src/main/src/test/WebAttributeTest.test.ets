@@ -39,8 +39,8 @@ export default function webAttributeTest(): void {
         await Utils.msSleep(1000);
         Utils.registerEvent('webKeyboardAppearanceModeNoneStatic001', true, 2026051101, done);
         inspector.sendEventByKey('webAttributeButton', 10, '');
-        await Utils.msSleep(2000);
-        expect(true).assertTrue();
+        const sleepResult = await Utils.msSleep(2000);
+        expect(sleepResult).assertEqual(0);
         done();
       })
 
@@ -58,8 +58,8 @@ export default function webAttributeTest(): void {
         await Utils.msSleep(1000);
         Utils.registerEvent('webKeyboardAppearanceModeImmersiveStatic002', true, 2026051102, done);
         inspector.sendEventByKey('webAttributeButton', 10, '');
-        await Utils.msSleep(2000);
-        expect(true).assertTrue();
+        const sleepResult = await Utils.msSleep(2000);
+        expect(sleepResult).assertEqual(0);
         done();
       })
 
@@ -77,8 +77,8 @@ export default function webAttributeTest(): void {
         await Utils.msSleep(1000);
         Utils.registerEvent('webKeyboardAppearanceModeLightStatic003', true, 2026051103, done);
         inspector.sendEventByKey('webAttributeButton', 10, '');
-        await Utils.msSleep(2000);
-        expect(true).assertTrue();
+        const sleepResult = await Utils.msSleep(2000);
+        expect(sleepResult).assertEqual(0);
         done();
       })
 
@@ -96,8 +96,8 @@ export default function webAttributeTest(): void {
         await Utils.msSleep(1000);
         Utils.registerEvent('webKeyboardAppearanceModeDarkStatic004', true, 2026051104, done);
         inspector.sendEventByKey('webAttributeButton', 10, '');
-        await Utils.msSleep(2000);
-        expect(true).assertTrue();
+        const sleepResult = await Utils.msSleep(2000);
+        expect(sleepResult).assertEqual(0);
         done();
       })
 
@@ -115,8 +115,8 @@ export default function webAttributeTest(): void {
         await Utils.msSleep(1000);
         Utils.registerEvent('webEnableDragStatic005', true, 2026051105, done);
         inspector.sendEventByKey('webAttributeButton', 10, '');
-        await Utils.msSleep(2000);
-        expect(true).assertTrue();
+        const sleepResult = await Utils.msSleep(2000);
+        expect(sleepResult).assertEqual(0);
         done();
       })
 
@@ -134,8 +134,8 @@ export default function webAttributeTest(): void {
         await Utils.msSleep(1000);
         Utils.registerEvent('webScrollbarLayoutPolicyStatic006', true, 2026051106, done);
         inspector.sendEventByKey('webAttributeButton', 10, '');
-        await Utils.msSleep(2000);
-        expect(true).assertTrue();
+        const sleepResult = await Utils.msSleep(2000);
+        expect(sleepResult).assertEqual(0);
         done();
       })
 
@@ -153,8 +153,8 @@ export default function webAttributeTest(): void {
         await Utils.msSleep(1000);
         Utils.registerEvent('webEnableScrollDirectionalLockStatic007', true, 2026051107, done);
         inspector.sendEventByKey('webAttributeButton', 10, '');
-        await Utils.msSleep(2000);
-        expect(true).assertTrue();
+        const sleepResult = await Utils.msSleep(2000);
+        expect(sleepResult).assertEqual(0);
         done();
       })
 
@@ -172,8 +172,8 @@ export default function webAttributeTest(): void {
         await Utils.msSleep(1000);
         Utils.registerEvent('webAiSessionOptionsStatic008', true, 2026051108, done);
         inspector.sendEventByKey('webAttributeButton', 10, '');
-        await Utils.msSleep(2000);
-        expect(true).assertTrue();
+        const sleepResult = await Utils.msSleep(2000);
+        expect(sleepResult).assertEqual(0);
         done();
       })
 
@@ -191,8 +191,8 @@ export default function webAttributeTest(): void {
         await Utils.msSleep(1000);
         Utils.registerEvent('webOnInputmethodAttachedStatic009', true, 2026051109, done);
         inspector.sendEventByKey('webAttributeButton', 10, '');
-        await Utils.msSleep(2000);
-        expect(true).assertTrue();
+        const sleepResult = await Utils.msSleep(2000);
+        expect(sleepResult).assertEqual(0);
         done();
       })
 
@@ -210,8 +210,8 @@ export default function webAttributeTest(): void {
         await Utils.msSleep(1000);
         Utils.registerEvent('webKeyboardAppearanceSwitchStatic010', true, 2026051111, done);
         inspector.sendEventByKey('webAttributeButton', 10, '');
-        await Utils.msSleep(2000);
-        expect(true).assertTrue();
+        const sleepResult = await Utils.msSleep(2000);
+        expect(sleepResult).assertEqual(0);
         done();
       })
   })

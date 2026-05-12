@@ -26,8 +26,8 @@ export default function WebScrollbarLayoutPolicyTest(): void {
       await Utils.msSleep(1000);
       Utils.registerEvent('testScrollbarLayoutPolicy001', true, 184010, done);
       inspector.sendEventByKey('ScrollbarLayoutPolicyButton', 10, '');
-      await Utils.msSleep(1500);
-      expect(true).assertTrue();
+      const sleepResult = await Utils.msSleep(1500);
+      expect(sleepResult).assertEqual(0);
       done();
     })
 
@@ -44,8 +44,8 @@ export default function WebScrollbarLayoutPolicyTest(): void {
       await Utils.msSleep(1000);
       Utils.registerEvent('testScrollbarLayoutPolicy002', true, 184020, done);
       inspector.sendEventByKey('ScrollbarLayoutPolicyButton', 10, '');
-      await Utils.msSleep(1500);
-      expect(true).assertTrue();
+      const sleepResult = await Utils.msSleep(1500);
+      expect(sleepResult).assertEqual(0);
       done();
     })
   })
