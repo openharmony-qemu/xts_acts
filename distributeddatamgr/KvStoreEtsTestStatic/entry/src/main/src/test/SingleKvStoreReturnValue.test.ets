@@ -1500,6 +1500,25 @@ export default function SingleKvStoreReturnValue() {
         }
       })
 
+    /**
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_DISTRIBUTEDKVSTORE_REKEY_STA_0100
+     * @tc.name rekeyStaticTest001
+     * @tc.desc 测试 rekey 方法 - 正常调用无参数Promise方式（静态语法）.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('rekeyStaticTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      try {
+        await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
+        await kvStore!.rekey();
+        console.info('Test PASSED: rekey Promise signature verified');
+        expect().assertFail();
+      } catch (error) {
+        console.info('rekeyStaticTest001 failed' + error.code + error.message);
+        expect(error.code).assertEqual(15100005);
+      }
+    });
 
     console.info(TAG + '-------------------describe SingleKvStoreReturnValue  end-------------------');
   })
