@@ -145,7 +145,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_PARAMETERS_NUM_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETERS_NUM_0100
      * @tc.name testStaticMethodGetParametersNum001
      * @tc.desc Verify getParametersNum() call with no parameters
      * @tc.size MediumTest
@@ -161,7 +161,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_PARAMETERS_NUM_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETERS_NUM_0200
      * @tc.name testStaticMethodGetParametersNum002
      * @tc.desc Verify getParametersNum() returns correct count for method with multiple parameters
      * @tc.size MediumTest
@@ -179,7 +179,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_PARAMETERS_NUM_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETERS_NUM_0300
      * @tc.name testStaticMethodGetParametersNum003
      * @tc.desc Verify getParametersNum() returns 0 for method without parameters
      * @tc.size MediumTest
@@ -196,7 +196,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_PARAMETERS_NUM_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETERS_NUM_0400
      * @tc.name testStaticMethodGetParametersNum004
      * @tc.desc Verify getParametersNum() returns 1 for method with single parameter
      * @tc.size MediumTest
@@ -213,7 +213,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_PARAMETERS_NUM_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETERS_NUM_0500
      * @tc.name testStaticMethodGetParametersNum005
      * @tc.desc Verify getParametersNum() for method with multiple different parameter types
      * @tc.size MediumTest
@@ -230,7 +230,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_PARAMETERS_NUM_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETERS_NUM_0600
      * @tc.name testStaticMethodGetParametersNum006
      * @tc.desc Verify getParametersNum() for method with optional parameters
      * @tc.size MediumTest
@@ -247,7 +247,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_PARAMETERS_NUM_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETERS_NUM_0700
      * @tc.name testStaticMethodGetParametersNum007
      * @tc.desc Verify getParametersNum() for method with variadic parameters
      * @tc.size MediumTest
@@ -264,7 +264,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_PARAMETERS_NUM_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETERS_NUM_0800
      * @tc.name testStaticMethodGetParametersNum008
      * @tc.desc Verify getParametersNum() for method with generic parameters
      * @tc.size MediumTest
@@ -281,7 +281,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_PARAMETERS_NUM_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETERS_NUM_0900
      * @tc.name testStaticMethodGetParametersNum009
      * @tc.desc Verify getParametersNum() returns 1 for setter method
      * @tc.size MediumTest
@@ -298,7 +298,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_PARAMETERS_NUM_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETERS_NUM_1000
      * @tc.name testStaticMethodGetParametersNum010
      * @tc.desc Verify getParametersNum() returns 0 for getter method
      * @tc.size MediumTest
@@ -315,7 +315,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_PARAMETERS_NUM_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETERS_NUM_1100
      * @tc.name testStaticMethodGetParametersNum011
      * @tc.desc Verify getParametersNum() return type is number and integer
      * @tc.size MediumTest
@@ -332,7 +332,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_PARAMETERS_NUM_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETERS_NUM_1200
      * @tc.name testStaticMethodGetParametersNum012
      * @tc.desc Verify getParametersNum() return value is not negative
      * @tc.size MediumTest
@@ -349,7 +349,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_PARAMETERS_NUM_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETERS_NUM_1300
      * @tc.name testStaticMethodGetParametersNum013
      * @tc.desc Verify getParametersNum() returns 0 for no-parameter method as boundary
      * @tc.size MediumTest
@@ -363,7 +363,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_PARAMETERS_NUM_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETERS_NUM_1400
      * @tc.name testStaticMethodGetParametersNum014
      * @tc.desc Verify getParametersNum() for method with many parameters
      * @tc.size MediumTest
@@ -380,7 +380,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_PARAMETERS_NUM_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETERS_NUM_1500
      * @tc.name testStaticMethodGetParametersNum015
      * @tc.desc Verify getParametersNum() for method with all primitive type parameters
      * @tc.size MediumTest
@@ -397,7 +397,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_PARAMETERS_NUM_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETERS_NUM_1600
      * @tc.name testStaticMethodGetParametersNum016
      * @tc.desc Verify getParametersNum() does not throw exception
      * @tc.size MediumTest
@@ -413,7 +413,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_PARAMETERS_NUM_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETERS_NUM_1700
      * @tc.name testStaticMethodGetParametersNum017
      * @tc.desc Verify getParametersNum() for methods with different modifiers
      * @tc.size MediumTest
@@ -435,7 +435,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_PARAMETERS_NUM_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETERS_NUM_1800
      * @tc.name testStaticMethodGetParametersNum018
      * @tc.desc Verify getParametersNum() for async static method
      * @tc.size MediumTest
@@ -452,7 +452,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_PARAMETERS_NUM_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETERS_NUM_1900
      * @tc.name testStaticMethodGetParametersNum019
      * @tc.desc Verify getParametersNum() for abstract and final class static methods
      * @tc.size MediumTest
@@ -470,7 +470,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_PARAMETERS_NUM_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETERS_NUM_2000
      * @tc.name testStaticMethodGetParametersNum020
      * @tc.desc Verify getParametersNum() for getter and setter methods
      * @tc.size MediumTest
@@ -495,7 +495,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_PARAMETERS_NUM_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETERS_NUM_2100
      * @tc.name testStaticMethodGetParametersNum021
      * @tc.desc Verify getParametersNum() for multiple static methods in same class
      * @tc.size MediumTest
@@ -514,7 +514,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_PARAMETERS_NUM_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_PARAMETERS_NUM_2200
      * @tc.name testStaticMethodGetParametersNum022
      * @tc.desc Verify getParametersNum() is consistent with getParameterTypes().length
      * @tc.size MediumTest
