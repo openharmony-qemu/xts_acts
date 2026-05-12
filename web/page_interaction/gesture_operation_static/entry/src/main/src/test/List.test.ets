@@ -14,7 +14,9 @@
  */
 import getLastHitTest from './getLastHitTest.test'
 import onTouchIconUrlReceived from './OnTouchIconUrlReceivedTest.test'
+import webAttributeTest from './WebAttributeTest.test'
 export default function testsuite() {
   getLastHitTest();
   onTouchIconUrlReceived();
+  webAttributeTest();
 }

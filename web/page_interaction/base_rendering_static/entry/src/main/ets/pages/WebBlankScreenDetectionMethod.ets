@@ -137,6 +137,19 @@ struct WebComponent {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   Utils.emitEvent(error, 20260315)
                 }
+                break;
+              }
+              case "emitSwitchToWebViewAISessionTypePage": {
+                try {
+                  let uiContext: UIContext = this.getUIContext();
+                  let router: Router = uiContext.getRouter();
+                  router.pushUrl({ url: 'pages/WebViewAISessionType' })
+                  console.info("emitSwitchToWebViewAISessionTypePage success");
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                }
+                break;
               }
             }
           })

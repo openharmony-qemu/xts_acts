@@ -1,6 +1,7 @@
 {
   "src": [
     "pages/getLastHitTest",
-    "pages/OnTouchIconUrlReceivedTest"
+    "pages/OnTouchIconUrlReceivedTest",
+    "pages/WebAttributeTest"
   ]
 }
