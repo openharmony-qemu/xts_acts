@@ -31,7 +31,7 @@ struct IntervalExample {
         .onAreaChange((oldValue: Area, newValue: Area) => {
           console.info(`Ace: on area change, oldValue is ${JSON.stringify(oldValue)} value is ${JSON.stringify(newValue)}`)
           this.count ++
-        },{expectedUpdateInterval:3000})
+        },{expectedUpdateInterval:8000})
       Text(String(this.count)).id('IntervalText2').height('10%')
     }
     .width('60%').height('60%')
