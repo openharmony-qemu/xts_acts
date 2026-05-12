@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, describe, it, TestType, Size, Level } from '../../../hypium/index';
+import { beforeAll, describe, it, TestType, Size, Level, expect } from '../../../hypium/index';
 import Utils from '../../src/test/Util.test';
 import inspector from '@ohos.arkui.inspector';
 

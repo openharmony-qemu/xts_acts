@@ -3,7 +3,7 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  */
 
-import { beforeAll, describe, it, TestType, Size, Level } from '../../../hypium/index';
+import { beforeAll, describe, it, TestType, Size, Level, expect } from '../../../hypium/index';
 import Utils from './Util.test';
 import inspector from '@ohos.arkui.inspector';
 
