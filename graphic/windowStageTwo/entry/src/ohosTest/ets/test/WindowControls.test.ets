@@ -587,7 +587,6 @@ export default function windowControlsTest() {
           promise.then(() => {
             console.info(caseName +` Succeeded in setting image for recent`);
             if (deviceInfo.deviceType === '2in1') {
-              expect(true).assertTrue();
               done();
             } else {
               expect(false).assertTrue();
@@ -643,7 +642,6 @@ export default function windowControlsTest() {
         promise.then(() => {
           console.info(caseName +` Succeeded in setting image for recent`);
           if (deviceInfo.deviceType === '2in1') {
-            expect(true).assertTrue();
             done();
           } else {
             expect(false).assertTrue();
