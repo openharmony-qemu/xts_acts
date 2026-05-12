@@ -1533,7 +1533,7 @@ export default function GraphicImagePixelMapAPI2602() {
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
           expect(pixelMap !== undefined).assertTrue();
-          pixelMap.release();
+          await pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
           done();
@@ -1566,7 +1566,7 @@ export default function GraphicImagePixelMapAPI2602() {
           expect(pixelMap !== undefined).assertTrue();
           let imgInfo: image.ImageInfo = pixelMap.getImageInfoSync();
           expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.ARGB_8888);
-          pixelMap.release();
+          await pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
           done();
@@ -1599,7 +1599,7 @@ export default function GraphicImagePixelMapAPI2602() {
           expect(pixelMap !== undefined).assertTrue();
           let imgInfo: image.ImageInfo = pixelMap.getImageInfoSync();
           expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.RGB_565);
-          pixelMap.release();
+          await pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
           done();
@@ -1632,7 +1632,7 @@ export default function GraphicImagePixelMapAPI2602() {
           expect(pixelMap !== undefined).assertTrue();
           let imgInfo: image.ImageInfo = pixelMap.getImageInfoSync();
           expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.RGBA_8888);
-          pixelMap.release();
+          await pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
           done();
@@ -1665,7 +1665,7 @@ export default function GraphicImagePixelMapAPI2602() {
           expect(pixelMap !== undefined).assertTrue();
           let imgInfo: image.ImageInfo = pixelMap.getImageInfoSync();
           expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.BGRA_8888);
-          pixelMap.release();
+          await pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
           done();
@@ -1698,7 +1698,7 @@ export default function GraphicImagePixelMapAPI2602() {
           expect(pixelMap !== undefined).assertTrue();
           let imgInfo: image.ImageInfo = pixelMap.getImageInfoSync();
           expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.RGB_888);
-          pixelMap.release();
+          await pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
           done();
@@ -1731,7 +1731,7 @@ export default function GraphicImagePixelMapAPI2602() {
           expect(pixelMap !== undefined).assertTrue();
           let imgInfo: image.ImageInfo = pixelMap.getImageInfoSync();
           expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.ALPHA_8);
-          pixelMap.release();
+          await pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
           done();
@@ -1764,7 +1764,7 @@ export default function GraphicImagePixelMapAPI2602() {
           expect(pixelMap !== undefined).assertTrue();
           let imgInfo: image.ImageInfo = pixelMap.getImageInfoSync();
           expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.RGBA_F16);
-          pixelMap.release();
+          await pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
           done();
@@ -1797,7 +1797,7 @@ export default function GraphicImagePixelMapAPI2602() {
           expect(pixelMap !== undefined).assertTrue();
           let imgInfo: image.ImageInfo = pixelMap.getImageInfoSync();
           expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.NV21);
-          pixelMap.release();
+          await pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
           done();
@@ -1830,7 +1830,7 @@ export default function GraphicImagePixelMapAPI2602() {
           expect(pixelMap !== undefined).assertTrue();
           let imgInfo: image.ImageInfo = pixelMap.getImageInfoSync();
           expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.NV12);
-          pixelMap.release();
+          await pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
           done();
@@ -1863,7 +1863,7 @@ export default function GraphicImagePixelMapAPI2602() {
           expect(pixelMap !== undefined).assertTrue();
           let imgInfo: image.ImageInfo = pixelMap.getImageInfoSync();
           expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.RGBA_1010102);
-          pixelMap.release();
+          await pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
           done();
@@ -1896,7 +1896,7 @@ export default function GraphicImagePixelMapAPI2602() {
           expect(pixelMap !== undefined).assertTrue();
           let imgInfo: image.ImageInfo = pixelMap.getImageInfoSync();
           expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.YCBCR_P010);
-          pixelMap.release();
+          await pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
           done();
@@ -1929,7 +1929,7 @@ export default function GraphicImagePixelMapAPI2602() {
           expect(pixelMap !== undefined).assertTrue();
           let imgInfo: image.ImageInfo = pixelMap.getImageInfoSync();
           expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.YCRCB_P010);
-          pixelMap.release();
+          await pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
           done();
@@ -1962,7 +1962,7 @@ export default function GraphicImagePixelMapAPI2602() {
           expect(pixelMap !== undefined).assertTrue();
           let imgInfo: image.ImageInfo = pixelMap.getImageInfoSync();
           expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.ALPHA_U8);
-          pixelMap.release();
+          await pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
           done();
@@ -1995,7 +1995,7 @@ export default function GraphicImagePixelMapAPI2602() {
           expect(pixelMap !== undefined).assertTrue();
           let imgInfo: image.ImageInfo = pixelMap.getImageInfoSync();
           expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.RGBA_8888);
-          pixelMap.release();
+          await pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
           done();
@@ -2025,7 +2025,7 @@ export default function GraphicImagePixelMapAPI2602() {
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
           expect(pixelMap !== undefined).assertTrue();
-          pixelMap.release();
+          await pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
           done();
@@ -2055,7 +2055,7 @@ export default function GraphicImagePixelMapAPI2602() {
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
           expect(pixelMap !== undefined).assertTrue();
-          pixelMap.release();
+          await pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
           done();
@@ -2085,7 +2085,7 @@ export default function GraphicImagePixelMapAPI2602() {
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
           expect(pixelMap !== undefined).assertTrue();
-          pixelMap.release();
+          await pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
           done();
@@ -2115,7 +2115,7 @@ export default function GraphicImagePixelMapAPI2602() {
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
           expect(pixelMap !== undefined).assertTrue();
-          pixelMap.release();
+          await pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
           done();
@@ -2145,7 +2145,7 @@ export default function GraphicImagePixelMapAPI2602() {
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
           expect(pixelMap !== undefined).assertTrue();
-          pixelMap.release();
+          await pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
           done();
@@ -2175,7 +2175,7 @@ export default function GraphicImagePixelMapAPI2602() {
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
           expect(pixelMap !== undefined).assertTrue();
-          pixelMap.release();
+          await pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
           done();
@@ -2206,7 +2206,7 @@ export default function GraphicImagePixelMapAPI2602() {
           let pixelMap = image.createEmptyPixelMap(opts);
           expect(pixelMap !== undefined).assertTrue();
           expect(pixelMap.isEditable).assertTrue();
-          pixelMap.release();
+          await pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
           done();
@@ -2237,7 +2237,7 @@ export default function GraphicImagePixelMapAPI2602() {
           let pixelMap = image.createEmptyPixelMap(opts);
           expect(pixelMap !== undefined).assertTrue();
           expect(pixelMap.isEditable).assertFalse();
-          pixelMap.release();
+          await pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
           done();
@@ -2267,7 +2267,7 @@ export default function GraphicImagePixelMapAPI2602() {
           let pixelMap = image.createEmptyPixelMap(opts);
           expect(pixelMap !== undefined).assertTrue();
           expect(typeof pixelMap.isStrideAlignment).assertEqual('boolean');
-          pixelMap.release();
+          await pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
           done();
@@ -2299,7 +2299,7 @@ export default function GraphicImagePixelMapAPI2602() {
           expect(pixelMap !== undefined).assertTrue();
           let imgInfo: image.ImageInfo = pixelMap.getImageInfoSync();
           expect(imgInfo.pixelFormat).assertEqual(opts.pixelFormat);
-          pixelMap.release();
+          await pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
           done();
