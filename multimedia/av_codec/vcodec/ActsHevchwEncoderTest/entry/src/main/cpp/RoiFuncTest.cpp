@@ -265,7 +265,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_008()
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_CBR);
     bool access = access("/system/lib64/media/", 0);
     if (!isSupported && access) {
-        return 0;   
+        return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
