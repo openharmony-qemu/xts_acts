@@ -30,9 +30,11 @@
 
 static constexpr int32_t K_THREAD_SLEEP_MS = 50;
 static constexpr int32_t K_THREAD_LONG_SLEEP_MS = 100;
+static constexpr int32_t K_THREAD_CLOSE_WAIT_MS = 1020;
 static constexpr useconds_t K_POLL_INTERVAL_US = 10000;
 static constexpr int32_t K_INVALID_ERROR_LEVEL = -1;
 static constexpr int32_t K_MAX_ERROR_LEVEL = 100;
+static constexpr int32_t K_INVALID_OWNER_TYPE = 99;
 
 static napi_value FdsanSetErrorLevelWarnAlways(napi_env env, napi_callback_info info)
 {
@@ -80,9 +82,9 @@ static napi_value FdsanSetErrorLevelDisabled(napi_env env, napi_callback_info in
 
 static napi_value FdsanSetErrorLevelInvalidEnum(napi_env env, napi_callback_info info)
 {
-    enum fdsan_error_level invalidLevel = static_cast<enum fdsan_error_level>(100);
+    enum fdsan_error_level invalidLevel = static_cast<enum fdsan_error_level>(K_MAX_ERROR_LEVEL);
     enum fdsan_error_level oldLevel = fdsan_set_error_level(invalidLevel);
-    bool success = (oldLevel != static_cast<enum fdsan_error_level>(-1));
+    bool success = (oldLevel != static_cast<enum fdsan_error_level>(K_INVALID_ERROR_LEVEL));
     napi_value napiResult;
     napi_get_boolean(env, success, &napiResult);
     return napiResult;
@@ -109,7 +111,7 @@ static napi_value FdsanCreateOwnerTagZero(napi_env env, napi_callback_info info)
 
 static napi_value FdsanCreateOwnerTagInvalidType(napi_env env, napi_callback_info info)
 {
-    uint64_t tag = fdsan_create_owner_tag(static_cast<enum fdsan_owner_type>(99), 0x1234);
+    uint64_t tag = fdsan_create_owner_tag(static_cast<enum fdsan_owner_type>(K_INVALID_OWNER_TYPE), 0x1234);
     const char *typeName = fdsan_get_tag_type(tag);
     uint64_t value = fdsan_get_tag_value(tag);
     bool success = (typeName != nullptr && value == 0x1234);
@@ -130,6 +132,7 @@ static napi_value FdsanGetOwnerTagWithTagSet(napi_env env, napi_callback_info in
     fdsan_exchange_owner_tag(fd, 0, expectedTag);
     uint64_t actualTag = fdsan_get_owner_tag(fd);
     close(fd);
+    fd = -1;
     bool success = (actualTag == expectedTag);
     napi_value result;
     napi_get_boolean(env, success, &result);
@@ -146,6 +149,7 @@ static napi_value FdsanGetOwnerTagNoTagSet(napi_env env, napi_callback_info info
     }
     uint64_t tag = fdsan_get_owner_tag(fd);
     close(fd);
+    fd = -1;
     const char *typeName = fdsan_get_tag_type(tag);
     bool success = (typeName != nullptr);
     napi_value result;
@@ -184,17 +188,17 @@ static napi_value FdsanExchangeOwnerTagZeroToNew(napi_env env, napi_callback_inf
     uint64_t newTag = fdsan_create_owner_tag(FDSAN_OWNER_TYPE_FILE, 0xA);
     if (newTag == 0) {
         close(fd);
+        fd = -1;
         napi_value result;
         napi_get_boolean(env, false, &result);
         return result;
     }
     fdsan_exchange_owner_tag(fd, 0, newTag);
     int32_t ret = fdsan_close_with_tag(fd, newTag);
-
     if (ret != 0) {
         close(fd);
+        fd = -1;
     }
-
     napi_value result;
     napi_get_boolean(env, ret == 0, &result);
     return result;
@@ -219,7 +223,6 @@ static napi_value FdsanExchangeOwnerTagOldToNew(napi_env env, napi_callback_info
     fdsan_exchange_owner_tag(fd, 0, oldTag);
     fdsan_exchange_owner_tag(fd, oldTag, newTag);
     int32_t ret = fdsan_close_with_tag(fd, newTag);
-
     if (ret != 0) {
         close(fd);
     }
@@ -242,6 +245,7 @@ static napi_value FdsanExchangeOwnerTagMismatch(napi_env env, napi_callback_info
 
     if (tagA == 0 || tagB == 0) {
         close(fd);
+        fd = -1;
         napi_value result;
         napi_get_boolean(env, false, &result);
         return result;
@@ -252,6 +256,7 @@ static napi_value FdsanExchangeOwnerTagMismatch(napi_env env, napi_callback_info
 
     if (ret != 0) {
         close(fd);
+        fd = -1;
     }
 
     napi_value result;
@@ -294,6 +299,7 @@ static napi_value FdsanCloseWithTagMismatch(napi_env env, napi_callback_info inf
 {
     enum fdsan_error_level originalLevel = fdsan_get_error_level();
     fdsan_set_error_level(FDSAN_ERROR_LEVEL_WARN_ALWAYS);
+    
     int fd = open("/dev/null", O_RDONLY);
     if (fd < 0) {
         fdsan_set_error_level(originalLevel);
@@ -301,15 +307,17 @@ static napi_value FdsanCloseWithTagMismatch(napi_env env, napi_callback_info inf
         napi_get_boolean(env, false, &result);
         return result;
     }
+    
     uint64_t tag = fdsan_create_owner_tag(FDSAN_OWNER_TYPE_FILE, 0x12345678);
     uint64_t wrongTag = fdsan_create_owner_tag(FDSAN_OWNER_TYPE_FILE, 0xFFFFFFFF);
     fdsan_exchange_owner_tag(fd, 0, tag);
+    
     int32_t ret = fdsan_close_with_tag(fd, wrongTag);
     if (ret != 0) {
-        fdsan_close_with_tag(fd, tag);
-    } else {
-        close(fd);
+        ret = fdsan_close_with_tag(fd, tag);
     }
+    fd = -1;
+    
     fdsan_set_error_level(originalLevel);
     bool success = (ret == 0);
     napi_value result;
@@ -369,7 +377,7 @@ static napi_value FdsanSetErrorLevelNegativeOrOverRange(napi_env env, napi_callb
 
 static napi_value FdsanCreateOwnerTagTypeOutOfRange(napi_env env, napi_callback_info info)
 {
-    enum fdsan_owner_type invalidType = static_cast<enum fdsan_owner_type>(99);
+    enum fdsan_owner_type invalidType = static_cast<enum fdsan_owner_type>(K_INVALID_OWNER_TYPE);
     uint64_t tag = fdsan_create_owner_tag(invalidType, 0x1234);
     bool success = (tag != 0);
     const char *typeName = fdsan_get_tag_type(tag);
@@ -500,7 +508,7 @@ static napi_value FdsanComNestedErrorLevelFatal(napi_env env, napi_callback_info
 }
 
 struct ThreadData {
-    int32_t fd;
+    int fd;
     uint64_t tag;
     std::atomic<bool> *fdClosed;
     std::mutex *fdMutex;
@@ -552,35 +560,50 @@ static napi_value FdsanComMultiThreadMixedOperation(napi_env env, napi_callback_
     uint64_t tagA = fdsan_create_owner_tag(FDSAN_OWNER_TYPE_FILE, 0xA);
     uint64_t tagB = fdsan_create_owner_tag(FDSAN_OWNER_TYPE_FILE, 0xB);
     if (fd < 0 || tagA == 0 || tagB == 0) {
-        if (fd >= 0) close(fd);
+        if (fd >= 0) {
+            close(fd);
+        }
         fdsan_set_error_level(originalLevel);
-        napi_value result; napi_get_boolean(env, false, &result);
+        napi_value result;
+        napi_get_boolean(env, false, &result);
         return result;
     }
-    std::atomic<bool> fdClosed{false}, shouldStop{false};
+    std::atomic<bool> fdClosed{false};
+    std::atomic<bool> shouldStop{false};
     std::mutex fdMutex;
     ThreadData *d1 = new ThreadData{fd, tagA, &fdClosed, &fdMutex, &shouldStop};
     ThreadData *d2 = new ThreadData{fd, tagB, nullptr, &fdMutex, &shouldStop};
-    pthread_t t1, t2;
+    pthread_t t1;
+    pthread_t t2;
     bool ok1 = (pthread_create(&t1, nullptr, ThreadFunc1, d1) == 0);
     bool ok2 = (pthread_create(&t2, nullptr, ThreadFunc2, d2) == 0);
     if (!ok1 || !ok2) {
-        if (ok1) pthread_join(t1, nullptr);
-        delete d1; delete d2; close(fd);
+        if (ok1) {
+            pthread_join(t1, nullptr);
+        }
+        delete d1;
+        delete d2;
+        close(fd);
         fdsan_set_error_level(originalLevel);
-        napi_value result; napi_get_boolean(env, false, &result);
+        napi_value result;
+        napi_get_boolean(env, false, &result);
         return result;
     }
-    pthread_join(t1, nullptr); pthread_join(t2, nullptr);
+    pthread_join(t1, nullptr);
+    pthread_join(t2, nullptr);
     bool closed = false;
-    { std::lock_guard<std::mutex> lock(fdMutex); closed = fdClosed.load() ? true : (close(fd) == 0); }
+    {
+        std::lock_guard<std::mutex> lock(fdMutex);
+        closed = fdClosed.load() ? true : (close(fd) == 0);
+    }
     fdsan_set_error_level(originalLevel);
-    napi_value result; napi_get_boolean(env, closed, &result);
+    napi_value result;
+    napi_get_boolean(env, closed, &result);
     return result;
 }
 
 struct DoubleCloseData {
-    int32_t fd;
+    int fd;
     uint64_t tag;
     std::mutex mtx;
     std::condition_variable cv;
@@ -785,14 +808,15 @@ static void *ThreadCloseFileFunc(void *arg)
     if (file == nullptr) {
         return nullptr;
     }
-    
-    std::this_thread::sleep_for(std::chrono::milliseconds(100));
-    
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(K_THREAD_CLOSE_WAIT_MS));
+
     int fd = fileno(file);
     if (fd >= 0) {
         close(fd);
+        fd = -1;
     }
-    
+
     return nullptr;
 }
 
@@ -819,10 +843,10 @@ static napi_value FdsanStdlibFopenFclose(napi_env env, napi_callback_info info)
     }
 
     int joinRet = pthread_join(closeThread, nullptr);
-    fclose(file);
+    int fcloseRet = fclose(file);
     fdsan_set_error_level(originalLevel);
 
-    bool success = (ret == 0 && joinRet == 0);
+    bool success = (ret == 0 && joinRet == 0 && fcloseRet != 0);
     napi_value result;
     napi_get_boolean(env, success, &result);
     return result;
@@ -839,9 +863,11 @@ static napi_value FdsanStdlibFdopen(napi_env env, napi_callback_info info)
     FILE *file = fdopen(fd, "w");
     bool success = (file != nullptr);
     if (file != nullptr) {
-        fclose(file);
+        int fcloseRet = fclose(file);
+        success = (success && fcloseRet == 0);
     } else {
-        close(fd);
+        int closeRet = close(fd);
+        success = (success && closeRet == 0);
     }
     napi_value result;
     napi_get_boolean(env, success, &result);
@@ -858,7 +884,8 @@ static napi_value FdsanSignalSafety(napi_env env, napi_callback_info info)
 {
     enum fdsan_error_level originalLevel = fdsan_set_error_level(FDSAN_ERROR_LEVEL_WARN_ALWAYS);
 
-    sigset_t mask, oldMask;
+    sigset_t mask;
+    sigset_t oldMask;
     sigemptyset(&mask);
     sigaddset(&mask, SIGUSR1);
     pthread_sigmask(SIG_BLOCK, &mask, &oldMask);
