@@ -102,7 +102,7 @@ export default function StaticMethodGetNameTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_NAME_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0100
      * @tc.name testStaticMethodGetName001
      * @tc.desc Verify getName() call with no parameters
      * @tc.size MediumTest
@@ -118,7 +118,7 @@ export default function StaticMethodGetNameTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_NAME_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0200
      * @tc.name testStaticMethodGetName002
      * @tc.desc Verify standard return value — returns method name string
      * @tc.size MediumTest
@@ -136,7 +136,7 @@ export default function StaticMethodGetNameTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_NAME_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0300
      * @tc.name testStaticMethodGetName003
      * @tc.desc Verify getName() returns correct names for multiple different static methods
      * @tc.size MediumTest
@@ -153,7 +153,7 @@ export default function StaticMethodGetNameTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_NAME_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0400
      * @tc.name testStaticMethodGetName004
      * @tc.desc Verify getName() returns special method names for getter and setter
      * @tc.size MediumTest
@@ -172,7 +172,7 @@ export default function StaticMethodGetNameTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_NAME_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0500
      * @tc.name testStaticMethodGetName005
      * @tc.desc Verify getName() return type is string
      * @tc.size MediumTest
@@ -189,7 +189,7 @@ export default function StaticMethodGetNameTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_NAME_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0600
      * @tc.name testStaticMethodGetName006
      * @tc.desc Verify getName() returns non-empty string
      * @tc.size MediumTest
@@ -206,7 +206,7 @@ export default function StaticMethodGetNameTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_NAME_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0700
      * @tc.name testStaticMethodGetName007
      * @tc.desc Verify getName() for single-character method name
      * @tc.size MediumTest
@@ -223,7 +223,7 @@ export default function StaticMethodGetNameTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_NAME_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0800
      * @tc.name testStaticMethodGetName008
      * @tc.desc Verify getName() for very long method name
      * @tc.size MediumTest
@@ -239,7 +239,7 @@ export default function StaticMethodGetNameTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_NAME_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0900
      * @tc.name testStaticMethodGetName009
      * @tc.desc Verify getName() does not throw exception
      * @tc.size MediumTest
@@ -255,7 +255,7 @@ export default function StaticMethodGetNameTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_NAME_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1000
      * @tc.name testStaticMethodGetName010
      * @tc.desc Verify getName() for methods with different modifiers
      * @tc.size MediumTest
@@ -271,7 +271,7 @@ export default function StaticMethodGetNameTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_NAME_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1100
      * @tc.name testStaticMethodGetName011
      * @tc.desc Verify getName() for async static method
      * @tc.size MediumTest
@@ -287,7 +287,7 @@ export default function StaticMethodGetNameTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_NAME_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1200
      * @tc.name testStaticMethodGetName012
      * @tc.desc Verify getName() for static methods from different classes
      * @tc.size MediumTest
@@ -305,7 +305,7 @@ export default function StaticMethodGetNameTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_NAME_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1300
      * @tc.name testStaticMethodGetName013
      * @tc.desc Verify getName() in inheritance scenario with parent and child class methods
      * @tc.size MediumTest

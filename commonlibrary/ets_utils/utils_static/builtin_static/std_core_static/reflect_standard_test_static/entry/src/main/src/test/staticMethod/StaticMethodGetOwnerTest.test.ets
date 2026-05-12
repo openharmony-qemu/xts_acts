@@ -131,7 +131,7 @@ export default function StaticMethodGetOwnerTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_OWNER_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_0100
      * @tc.name testStaticMethodGetOwner001
      * @tc.desc Verify getOwner() call with no parameters
      * @tc.size MediumTest
@@ -147,7 +147,7 @@ export default function StaticMethodGetOwnerTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_OWNER_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_0200
      * @tc.name testStaticMethodGetOwner002
      * @tc.desc Verify getOwner() returns Class object with correct class name
      * @tc.size MediumTest
@@ -165,7 +165,7 @@ export default function StaticMethodGetOwnerTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_OWNER_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_0300
      * @tc.name testStaticMethodGetOwner003
      * @tc.desc Verify getOwner() returns correct Class object for different classes
      * @tc.size MediumTest
@@ -183,7 +183,7 @@ export default function StaticMethodGetOwnerTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_OWNER_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_0400
      * @tc.name testStaticMethodGetOwner004
      * @tc.desc Verify getOwner() for parent and child class static methods
      * @tc.size MediumTest
@@ -201,7 +201,7 @@ export default function StaticMethodGetOwnerTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_OWNER_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_0500
      * @tc.name testStaticMethodGetOwner005
      * @tc.desc Verify getOwner() for classes with special names
      * @tc.size MediumTest
@@ -217,7 +217,7 @@ export default function StaticMethodGetOwnerTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_OWNER_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_0600
      * @tc.name testStaticMethodGetOwner006
      * @tc.desc Verify getOwner() return type is object with getName method
      * @tc.size MediumTest
@@ -235,7 +235,7 @@ export default function StaticMethodGetOwnerTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_OWNER_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_0700
      * @tc.name testStaticMethodGetOwner007
      * @tc.desc Verify getOwner() returns Class object with complete set of methods
      * @tc.size MediumTest
@@ -254,7 +254,7 @@ export default function StaticMethodGetOwnerTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_OWNER_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_0800
      * @tc.name testStaticMethodGetOwner008
      * @tc.desc Verify getOwner() for generic class static method
      * @tc.size MediumTest
@@ -270,7 +270,7 @@ export default function StaticMethodGetOwnerTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_OWNER_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_0900
      * @tc.name testStaticMethodGetOwner009
      * @tc.desc Verify getOwner() for class implementing multiple interfaces
      * @tc.size MediumTest
@@ -286,7 +286,7 @@ export default function StaticMethodGetOwnerTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_OWNER_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_1000
      * @tc.name testStaticMethodGetOwner010
      * @tc.desc Verify getOwner() does not throw exception
      * @tc.size MediumTest
@@ -302,7 +302,7 @@ export default function StaticMethodGetOwnerTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_OWNER_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_1100
      * @tc.name testStaticMethodGetOwner011
      * @tc.desc Verify getOwner() for methods with different modifiers
      * @tc.size MediumTest
@@ -324,7 +324,7 @@ export default function StaticMethodGetOwnerTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_OWNER_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_1200
      * @tc.name testStaticMethodGetOwner012
      * @tc.desc Verify getOwner() for async static method
      * @tc.size MediumTest
@@ -340,7 +340,7 @@ export default function StaticMethodGetOwnerTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_OWNER_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_1300
      * @tc.name testStaticMethodGetOwner013
      * @tc.desc Verify getOwner() for abstract, final, and normal class static methods
      * @tc.size MediumTest
@@ -361,7 +361,7 @@ export default function StaticMethodGetOwnerTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_OWNER_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_1400
      * @tc.name testStaticMethodGetOwner014
      * @tc.desc Verify getOwner() for getter and setter static methods
      * @tc.size MediumTest
@@ -380,7 +380,7 @@ export default function StaticMethodGetOwnerTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_GET_OWNER_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_1500
      * @tc.name testStaticMethodGetOwner015
      * @tc.desc Verify getOwner() returns the same Class object for all static methods in a class
      * @tc.size MediumTest
