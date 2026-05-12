@@ -368,7 +368,7 @@ export default function observerManagerSimStateTest1() {
         console.info(`${caseName} This device is a single-card device`);
         done();
       }  
-      await sim.activateSim(slotId);
+      await sim.activateSim(1);
       console.info(`${caseName} test end`);
     });
 
