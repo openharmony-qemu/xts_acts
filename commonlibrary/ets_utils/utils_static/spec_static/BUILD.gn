@@ -20,6 +20,7 @@ group("spec_static") {
       "spec_standard_test_static:ActsSpecStaticTest",
       "spec_standard_test_static_1:ActsSpecStaticTest1",
       "spec_standard_test_static_2:ActsSpecStaticTest2",
+	  "spec_standard_test_static_3:ActsSpecStaticTest3",
       "concurrency_spec_standard_test_static:ActsConcurrencySpecStaticTest",
     ]
   }
