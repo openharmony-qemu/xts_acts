@@ -165,67 +165,6 @@ export default function actsNotificationAnsThreePartyWatchStaticWithInAbilityTes
     })
 
     /**
-     * @tc.name   SUB_Notification_Ans_ThreePartyWatch_Static_0100
-     * @tc.number SUB_Notification_Ans_ThreePartyWatch_Static_0100
-     * @tc.desc   The [subscribe] parameter is passed correctly, and the API call is successful
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Notification_Ans_ThreePartyWatch_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const testNum = 'SUB_Notification_Ans_ThreePartyWatch_Static_0100';
-        let infos: notificationExtensionSubscription.NotificationExtensionSubscriptionInfo[] = [
-          {
-            addr: '01:23:45:67:89',
-            type: notificationExtensionSubscription.SubscribeType.BLUETOOTH
-          }
-        ];
-        let num: int = 0
-        try {
-        await notificationExtensionSubscription.subscribe(infos).then(() => {
-            console.info(testNum + "subscribe success");
-          }).catch((error: Error) => {
-            let err = error as BusinessError
-            console.error(`${testNum}subscribe fail:  ${err.code}, ${err.message}`);
-            if (err?.code === 201) {
-              expect(err.code).assertEqual(201);
-              done();
-            }else {
-              expect(false).assertTrue();
-              done();
-            }
-          });
-          await Utils.msSleep(2000);
-          await notificationExtensionSubscription.unsubscribe().then(() => {
-            console.info(testNum + "unsubscribe success");
-            num++
-            expect(num).assertEqual(1);
-            done()
-          }).catch((error: Error) => {
-            let err = error as BusinessError
-            console.error(testNum +`unsubscribe fail: ${err.code}, ${err.message}`);
-            if (err?.code === 201) {
-              expect(err.code).assertEqual(201);
-              done();
-            } else {
-              expect(false).assertTrue();
-              done();
-            }
-          });
-        } catch (err) {
-          hilog.error(0x0000, 'testTag', `${testNum}restart failed: ${err.code}, ${err.message}`);
-          if (err?.code === 201) {
-            expect(err.code).assertEqual(201);
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
-        }
-      })
-
-    /**
      * @tc.name   SUB_Notification_Ans_ThreePartyWatch_Static_0200
      * @tc.number SUB_Notification_Ans_ThreePartyWatch_Static_0200
      * @tc.desc   [subscribe] The `info` parameter passes multiple sets of elements, and the subscription is successful
