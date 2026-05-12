@@ -1691,15 +1691,17 @@ export default function TextPicker() {
 
       for (let item of cases) {
         try {
-          let createPromise = phAccessHelper.createAssetWithShortTermPermission(item);
+          let createPromise: Promise<string> = phAccessHelper.createAssetWithShortTermPermission(item);
+
           await driveFn();
-          const timeoutPromise: Promise<photoAccessHelper.FileAsset> = new Promise<photoAccessHelper.FileAsset>((_: resolve, reject: (reason: Error) => void) => {
+
+          const timeoutPromise: Promise<string | undefined> = new Promise<string | undefined>((resolve: (value: string | undefined) => void, reject: (reason: Error) => void) => {
             setTimeout(() => {
               reject(new Error('createAsset timeout after 30s'));
             }, 30000);
           });
 
-          let result: photoAccessHelper.FileAsset | undefined = await Promise.race<photoAccessHelper.FileAsset | undefined>([createPromise, timeoutPromise]);
+          let result: string | undefined = await Promise.race<string | undefined>([createPromise, timeoutPromise]);
           console.log(`testPicker25 result = ${JSON.stringify(result)}`)
           expect(result).not().assertUndefined();
         } catch (error) {
