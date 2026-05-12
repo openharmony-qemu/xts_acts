@@ -1666,6 +1666,44 @@ export default function TextPicker() {
     });
 
     /**
+     * @tc.name   testPicker25
+     * @tc.number testPicker25
+     * @tc.desc   Testing createAssetWithShortTermPermission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPicker25', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+
+      let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
+
+      let cases: AssetCreateOption[] = [
+        { title: 'test', fileNameExtension: 'jpg', photoType: photoAccessHelper.PhotoType.IMAGE, subtype: photoAccessHelper.PhotoSubtype.DEFAULT },
+        { title: 'test', fileNameExtension: 'mp4', photoType: photoAccessHelper.PhotoType.VIDEO, subtype: photoAccessHelper.PhotoSubtype.DEFAULT },
+        { title: 'test', fileNameExtension: 'jpg', photoType: photoAccessHelper.PhotoType.IMAGE, subtype: photoAccessHelper.PhotoSubtype.MOVING_PHOTO },
+        { title: 'test', fileNameExtension: 'jpg', photoType: photoAccessHelper.PhotoType.IMAGE, subtype: photoAccessHelper.PhotoSubtype.BURST },
+      ];
+
+      for (let item of cases) {
+        try {
+          let result = await phAccessHelper.createAssetWithShortTermPermission(item);
+          console.log(`testPicker25 result = ${JSON.stringify(result)}`)
+          expect(result).not().assertUndefined();
+        } catch (error) {
+          console.error("testPicker25 error: " + JSON.stringify(error) + error.code);
+          let isValidErrorCode = (error.code == 14000011 || error.code == 13900020);
+          expect(isValidErrorCode).assertTrue();
+        }
+      }
+      console.info("testPicker25 finish");
+      done();
+    });
+
+    /**
      * @tc.name   testPicker26
      * @tc.number testPicker26
      * @tc.desc   Testing PhotoPickerComponent grid margin and browser margin
