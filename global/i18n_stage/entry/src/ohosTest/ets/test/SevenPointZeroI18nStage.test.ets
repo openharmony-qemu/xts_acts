@@ -2830,7 +2830,7 @@ export default function SevenPointZeroI18nStageTest() {
       let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
       let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": ["test1", "test2"], "timeStyle": "full" };
       let date: Date = new Date(2026, 2, 18, 10, 8);
-      let date: Date2 = new Date(2027, 2, 18, 10, 8);
+      let date2: Date = new Date(2027, 2, 18, 10, 8);
       let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
       let dateFormat = symbolFormat.formatRange(date, date2);
       console.log('test_SymbolDateTimeFormat_0800 result:', dateFormat);
@@ -2849,7 +2849,7 @@ export default function SevenPointZeroI18nStageTest() {
       let locale = new Intl.Locale("en-US", { "hourCycle": "h12" });
       let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": ["test1", "test2"], "timeStyle": "full" };
       let date: Date = new Date(2026, 2, 18, 10, 8);
-      let date: Date2 = new Date(2026, 2, 18, 10, 8);
+      let date2: Date = new Date(2026, 2, 18, 10, 8);
       let expectedValue: string[] = ["10", ":", "08", ":", "00", " ", "AM", " " ,"Central Standard Time"];
       let expectedType: string[] = ["hour", "literal", "minute", "literal", "second", "literal", "dayPeriod", "literal" ,"timeZoneName"];
       let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
