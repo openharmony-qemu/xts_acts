@@ -1868,8 +1868,7 @@ export default function audioRendererTest() {
       console.info(`${TagFrmwkRender}: File size : Removing header: ${totalSize}`);
       await Utils.msSleep(100);
       let waitTime: int;
-      let samplingRateValue: int = samplingRate as int;
-      switch (samplingRateValue) {
+      switch (samplingRate as int) {
         case 44100:
           waitTime = 45;
           break;
