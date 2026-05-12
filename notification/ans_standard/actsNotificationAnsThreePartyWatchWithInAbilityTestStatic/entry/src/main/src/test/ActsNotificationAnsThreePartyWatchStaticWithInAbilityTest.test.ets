@@ -175,8 +175,6 @@ export default function actsNotificationAnsThreePartyWatchStaticWithInAbilityTes
     it('SUB_Notification_Ans_ThreePartyWatch_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const testNum = 'SUB_Notification_Ans_ThreePartyWatch_Static_0100';
-        let testContext: common.UIAbilityContext =
-          AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
         let infos: notificationExtensionSubscription.NotificationExtensionSubscriptionInfo[] = [
           {
             addr: '01:23:45:67:89',
@@ -185,11 +183,8 @@ export default function actsNotificationAnsThreePartyWatchStaticWithInAbilityTes
         ];
         let num: int = 0
         try {
-          notificationExtensionSubscription.subscribe(infos).then(() => {
-            num=0
+        await notificationExtensionSubscription.subscribe(infos).then(() => {
             console.info(testNum + "subscribe success");
-            num++
-            expect(num).assertEqual(1);
           }).catch((error: Error) => {
             let err = error as BusinessError
             console.error(`${testNum}subscribe fail:  ${err.code}, ${err.message}`);
@@ -202,8 +197,7 @@ export default function actsNotificationAnsThreePartyWatchStaticWithInAbilityTes
             }
           });
           await Utils.msSleep(2000);
-          notificationExtensionSubscription.unsubscribe().then(() => {
-            num=0
+          await notificationExtensionSubscription.unsubscribe().then(() => {
             console.info(testNum + "unsubscribe success");
             num++
             expect(num).assertEqual(1);
