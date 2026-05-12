@@ -3170,3 +3170,939 @@ export default function FieldDeclarationTest(): void {
       expect(typeof a.field!!.data).assertEqual('int')
       expect(a.field!.data).assertEqual(5)
     })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_4100
+     * @tc.name      testFieldDeclaration0041
+     * @tc.desc      Checking for initialization protected optional field with explicit type with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F041 = new A_F041()
+      expect(typeof a.field).assertEqual("undefined")
+      expect(a.field).assertEqual(undefined)
+      a.field = 5
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_4200
+     * @tc.name      testFieldDeclaration0042
+     * @tc.desc      Checking for initialization protected optional field with explicit type with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F042 = new A_F042()
+      expect(a.field instanceof C_F042 | undefined).assertTrue()
+      expect(a.field).assertEqual(undefined)
+      a.field = new C_F042()
+      a.field!.data = 5
+      expect(a.field instanceof C_F042 | undefined).assertTrue()
+      expect(typeof a.field!!.data).assertEqual('int')
+      expect(a.field!.data).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_4300
+     * @tc.name      testFieldDeclaration0043
+     * @tc.desc      Checking for initialization protected optional field with explicit type with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F043 = new A_F043()
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_4400
+     * @tc.name      testFieldDeclaration0044
+     * @tc.desc      Checking for initialization protected optional field with explicit type with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F044 = new A_F044()
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(0)
+      a.field = 5
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_4500
+     * @tc.name      testFieldDeclaration0045
+     * @tc.desc      Checking for initialization protected optional field with explicit type with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F045 = new A_F045()
+      expect(a.field instanceof C_F045 | undefined).assertTrue()
+      expect(typeof a.field!!.data).assertEqual('int')
+      expect(a.field!.data).assertEqual(4)
+      a.field = new C_F045()
+      a.field!.data = 5
+      expect(a.field instanceof C_F045 | undefined).assertTrue()
+      expect(typeof a.field!!.data).assertEqual('int')
+      expect(a.field!.data).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_4600
+     * @tc.name      testFieldDeclaration0046
+     * @tc.desc      Checking for initialization protected optional field with explicit type with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F046 = new A_F046()
+      expect(a.field instanceof C_F046 | undefined).assertTrue()
+      expect(typeof a.field!!.data).assertEqual('int')
+      expect(a.field!.data).assertEqual(0)
+      a.field = new C_F046()
+      a.field!.data = 5
+      expect(a.field instanceof C_F046 | undefined).assertTrue()
+      expect(typeof a.field!!.data).assertEqual('int')
+      expect(a.field!.data).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_4700
+     * @tc.name      testFieldDeclaration0047
+     * @tc.desc      Checking for initialization public optional field with explicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F047 = new A_F047()
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_4800
+     * @tc.name      testFieldDeclaration0048
+     * @tc.desc      Checking for initialization public optional field with explicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F048 = new A_F048()
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(0)
+      a.field = 5
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_4900
+     * @tc.name      testFieldDeclaration0049
+     * @tc.desc      Checking for initialization public optional field with explicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F049 = new A_F049()
+      expect(a.field instanceof C_F049 | undefined).assertTrue()
+      expect(typeof a.field!!.data).assertEqual('int')
+      expect(a.field!.data).assertEqual(4)
+      a.field = new C_F049()
+      a.field!.data = 5
+      expect(a.field instanceof C_F049 | undefined).assertTrue()
+      expect(typeof a.field!!.data).assertEqual('int')
+      expect(a.field!.data).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_5000
+     * @tc.name      testFieldDeclaration0050
+     * @tc.desc      Checking for initialization public optional field with explicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F050 = new A_F050()
+      expect(a.field instanceof C_F050 | undefined).assertTrue()
+      expect(typeof a.field!!.data).assertEqual('int')
+      expect(a.field!.data).assertEqual(0)
+      a.field = new C_F050()
+      a.field!.data = 5
+      expect(a.field instanceof C_F050 | undefined).assertTrue()
+      expect(typeof a.field!!.data).assertEqual('int')
+      expect(a.field!.data).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_5100
+     * @tc.name      testFieldDeclaration0051
+     * @tc.desc      Checking for initialization private optional field with explicit type with default
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F051 = new A_F051()
+      expect(typeof a.field).assertEqual("undefined")
+      expect(a.field).assertEqual(undefined)
+      a.field = 5
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_5200
+     * @tc.name      testFieldDeclaration0052
+     * @tc.desc      Checking for initialization private optional field with explicit type with default
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F052 = new A_F052()
+      expect(a.field instanceof C_F052 | undefined).assertTrue()
+      expect(a.field).assertEqual(undefined)
+      a.field = new C_F052()
+      a.field!.data = 5
+      expect(a.field instanceof C_F052 | undefined).assertTrue()
+      expect(typeof a.field!!.data).assertEqual('int')
+      expect(a.field!.data).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_5300
+     * @tc.name      testFieldDeclaration0053
+     * @tc.desc      Checking for initialization private optional field with explicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F053 = new A_F053()
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_5400
+     * @tc.name      testFieldDeclaration0054
+     * @tc.desc      Checking for initialization private optional field with explicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F054 = new A_F054()
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(0)
+      a.field = 5
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_5500
+     * @tc.name      testFieldDeclaration0055
+     * @tc.desc      Checking for initialization public optional field with implicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F055 = new A_F055()
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_5600
+     * @tc.name      testFieldDeclaration0056
+     * @tc.desc      Checking for initialization public optional field with implicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F056 = new A_F056()
+      expect(typeof a.field).assertEqual("number")
+      expect(a.field).assertEqual(0)
+      a.field = 5
+      expect(typeof a.field).assertEqual("number")
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_5700
+     * @tc.name      testFieldDeclaration0057
+     * @tc.desc      Checking for initialization protected optional field with implicit type with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F057 = new A_F057()
+      expect(a.field instanceof C_F057 | undefined).assertTrue()
+      expect(typeof a.field!!.data).assertEqual('int')
+      expect(a.field!.data).assertEqual(4)
+      a.field = new C_F057(5)
+      expect(a.field instanceof C_F057 | undefined).assertTrue()
+      expect(typeof a.field!!.data).assertEqual('int')
+      expect(a.field!.data).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_5800
+     * @tc.name      testFieldDeclaration0058
+     * @tc.desc      Checking for initialization public optional field with implicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F059 = new A_F059()
+      expect(a.field instanceof C_F059 | undefined).assertTrue()
+      expect(typeof a.field!!.data).assertEqual('int')
+      expect(a.field!.data).assertEqual(4)
+      a.field = new C_F059(5)
+      expect(a.field instanceof C_F059 | undefined).assertTrue()
+      expect(typeof a.field!!.data).assertEqual('int')
+      expect(a.field!.data).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_5900
+     * @tc.name      testFieldDeclaration0059
+     * @tc.desc      Checking for initialization private optional field with implicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F061 = new A_F061()
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(0)
+      a.field = 5
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_6000
+     * @tc.name      testFieldDeclaration0060
+     * @tc.desc      Checking for initialization private optional field with implicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F062 = new A_F062()
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(0)
+      a.field = 5
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_6100
+     * @tc.name      testFieldDeclaration0061
+     * @tc.desc      Checking for initialization private optional field with implicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F063 = new A_F063()
+      expect(a.field instanceof C_F063 | undefined).assertTrue()
+      expect(typeof a.field!!.data).assertEqual('int')
+      expect(a.field!.data).assertEqual(4)
+      a.field = new C_F063(5)
+      expect(a.field instanceof C_F063 | undefined).assertTrue()
+      expect(typeof a.field!!.data).assertEqual('int')
+      expect(a.field!.data).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_6200
+     * @tc.name      testFieldDeclaration0062
+     * @tc.desc      Checking for initialization protected optional field with implicit type with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F065 = new A_F065()
+      expect(typeof a.field).assertEqual("undefined")
+      expect(a.field).assertEqual(undefined)
+      a.field = 5
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_6300
+     * @tc.name      testFieldDeclaration0063
+     * @tc.desc      Checking for initialization protected optional field with implicit type with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F066 = new A_F066()
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(0)
+      a.field = 5
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_6400
+     * @tc.name      testFieldDeclaration0064
+     * @tc.desc      Checking for initialization public field with explicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F067 = new A_F067()
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_6500
+     * @tc.name      testFieldDeclaration0065
+     * @tc.desc      Checking for initialization public field with explicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F068 = new A_F068()
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(0)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_6600
+     * @tc.name      testFieldDeclaration0066
+     * @tc.desc      Checking for initialization protected field with explicit type with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F069 = new A_F069()
+      expect(a.field instanceof C_F069).assertTrue()
+      expect(typeof a.field!.data).assertEqual('int')
+      expect(a.field.data).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_6700
+     * @tc.name      testFieldDeclaration0067
+     * @tc.desc      Checking for initialization protected field with explicit type with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F070 = new A_F070()
+      expect(a.field instanceof C_F070).assertTrue()
+      expect(typeof a.field!.data).assertEqual('int')
+      expect(a.field.data).assertEqual(0)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_6800
+     * @tc.name      testFieldDeclaration0068
+     * @tc.desc      Checking for initialization public field with explicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F071 = new A_F071()
+      expect(a.field instanceof C_F071).assertTrue()
+      expect(typeof a.field!.data).assertEqual('int')
+      expect(a.field.data).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_6900
+     * @tc.name      testFieldDeclaration0069
+     * @tc.desc      Checking for initialization public field with explicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F072 = new A_F072()
+      expect(a.field instanceof C_F072).assertTrue()
+      expect(typeof a.field!.data).assertEqual('int')
+      expect(a.field.data).assertEqual(0)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_7000
+     * @tc.name      testFieldDeclaration0070
+     * @tc.desc      Checking for initialization private field with explicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F073 = new A_F073()
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_7100
+     * @tc.name      testFieldDeclaration0071
+     * @tc.desc      Checking for initialization private field with explicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F074 = new A_F074()
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(0)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_7200
+     * @tc.name      testFieldDeclaration0072
+     * @tc.desc      Checking for initialization private field with explicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F075 = new A_F075()
+      expect(a.field instanceof C_F075).assertTrue()
+      expect(typeof a.field!.data).assertEqual('int')
+      expect(a.field.data).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_7300
+     * @tc.name      testFieldDeclaration0073
+     * @tc.desc      Checking for initialization private field with explicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F076 = new A_F076()
+      expect(a.field instanceof C_F076).assertTrue()
+      expect(typeof a.field!.data).assertEqual('int')
+      expect(a.field.data).assertEqual(0)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_7400
+     * @tc.name      testFieldDeclaration0074
+     * @tc.desc      Checking for initialization protected field with explicit type with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F077 = new A_F077()
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_7500
+     * @tc.name      testFieldDeclaration0075
+     * @tc.desc      Checking for initialization protected field with explicit type with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F078 = new A_F078()
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(0)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_7600
+     * @tc.name      testFieldDeclaration0076
+     * @tc.desc      Checking for initialization public field with implicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F079 = new A_F079()
+      expect(typeof a.field).assertEqual("number")
+      expect(a.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_7700
+     * @tc.name      testFieldDeclaration0077
+     * @tc.desc      Checking for initialization public field with implicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F080 = new A_F080()
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(0)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_7800
+     * @tc.name      testFieldDeclaration0078
+     * @tc.desc      Checking for initialization protected field with implicit type with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F081 = new A_F081()
+      expect(a.field instanceof C_F081).assertTrue()
+      expect(typeof a.field!.data).assertEqual('int')
+      expect(a.field.data).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_7900
+     * @tc.name      testFieldDeclaration0079
+     * @tc.desc      Checking for initialization protected field with implicit type with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F082 = new A_F082()
+      expect(a.field instanceof C_F082).assertTrue()
+      expect(typeof a.field!.data).assertEqual('int')
+      expect(a.field.data).assertEqual(0)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_8000
+     * @tc.name      testFieldDeclaration0080
+     * @tc.desc      Checking for initialization public field with implicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F083 = new A_F083()
+      expect(a.field instanceof C_F083).assertTrue()
+      expect(typeof a.field!.data).assertEqual('int')
+      expect(a.field.data).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_8100
+     * @tc.name      testFieldDeclaration0081
+     * @tc.desc      Checking for initialization public field with implicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F084 = new A_F084()
+      expect(a.field instanceof C_F084).assertTrue()
+      expect(typeof a.field!.data).assertEqual('int')
+      expect(a.field.data).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_8200
+     * @tc.name      testFieldDeclaration0082
+     * @tc.desc      Checking for initialization private field with implicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F085 = new A_F085()
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_8300
+     * @tc.name      testFieldDeclaration0083
+     * @tc.desc      Checking for initialization private field with implicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F086 = new A_F086()
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(0)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_8400
+     * @tc.name      testFieldDeclaration0084
+     * @tc.desc      Checking for initialization private field with implicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F087 = new A_F087()
+      expect(a.field instanceof C_F087).assertTrue()
+      expect(typeof a.field!.data).assertEqual('int')
+      expect(a.field.data).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_8500
+     * @tc.name      testFieldDeclaration0085
+     * @tc.desc      Checking for initialization private field with implicit type with field
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F088 = new A_F088()
+      expect(a.field instanceof C_F088).assertTrue()
+      expect(typeof a.field!.data).assertEqual('int')
+      expect(a.field.data).assertEqual(0)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_8600
+     * @tc.name      testFieldDeclaration0086
+     * @tc.desc      Checking for initialization protected field with implicit type with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F089 = new A_F089()
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_8700
+     * @tc.name      testFieldDeclaration0087
+     * @tc.desc      Checking for initialization protected field with implicit type with
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F090 = new A_F090()
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(0)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_8800
+     * @tc.name      testFieldDeclaration0088
+     * @tc.desc      Checking for initialization public optional field with explicit type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F091 = new A_F091()
+      expect(typeof a.field).assertEqual("undefined")
+      expect(a.field).assertEqual(undefined)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_8900
+     * @tc.name      testFieldDeclaration0089
+     * @tc.desc      Checking for initialization public optional field with explicit type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F092 = new A_F092()
+      expect(a.field instanceof C_F092 | undefined).assertTrue()
+      expect(a.field).assertEqual(undefined)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_9000
+     * @tc.name      testFieldDeclaration0090
+     * @tc.desc      Checking for initialization private optional field with explicit type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F093 = new A_F093()
+      expect(a.field instanceof C_F093 | undefined).assertTrue()
+      expect(typeof a.field!!.data).assertEqual('int')
+      expect(a.field!.data).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_9100
+     * @tc.name      testFieldDeclaration0091
+     * @tc.desc      Checking for initialization private optional field with explicit type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F094 = new A_F094()
+      expect(a.field instanceof C_F094 | undefined).assertTrue()
+      expect(typeof a.field!!.data).assertEqual('int')
+      expect(a.field!.data).assertEqual(0)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_9200
+     * @tc.name      testFieldDeclaration0092
+     * @tc.desc      Checking for initialization protected optional field with explicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F095 = new A_F095()
+      expect(typeof a.field).assertEqual("undefined")
+      expect(a.field).assertEqual(undefined)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_9300
+     * @tc.name      testFieldDeclaration0093
+     * @tc.desc      Checking for initialization protected optional field with explicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F096 = new A_F096()
+      expect(a.field instanceof C_F096 | undefined).assertTrue()
+      expect(a.field).assertEqual(undefined)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_9400
+     * @tc.name      testFieldDeclaration0094
+     * @tc.desc      Checking for initialization protected optional field with explicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F097 = new A_F097()
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_9500
+     * @tc.name      testFieldDeclaration0095
+     * @tc.desc      Checking for initialization protected optional field with explicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F098 = new A_F098()
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(0)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_9600
+     * @tc.name      testFieldDeclaration0096
+     * @tc.desc      Checking for initialization protected optional field with explicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F099 = new A_F099()
+      expect(a.field instanceof C_F099 | undefined).assertTrue()
+      expect(typeof a.field!!.data).assertEqual('int')
+      expect(a.field!.data).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_9700
+     * @tc.name      testFieldDeclaration0097
+     * @tc.desc      Checking for initialization protected optional field with explicit
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F100 = new A_F100()
+      expect(a.field instanceof C_F100 | undefined).assertTrue()
+      expect(typeof a.field!!.data).assertEqual('int')
+      expect(a.field!.data).assertEqual(0)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_9800
+     * @tc.name      testFieldDeclaration0098
+     * @tc.desc      Checking for initialization public optional field with explicit type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F101 = new A_F101()
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_DECLARATION_TEST_9900
+     * @tc.name      testFieldDeclaration0099
+     * @tc.desc      Checking for initialization public optional field with explicit type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldDeclaration0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F102 = new A_F102()
+      expect(typeof a.field).assertEqual("int")
+      expect(a.field).assertEqual(0)
+    })
+
+  })
+}
