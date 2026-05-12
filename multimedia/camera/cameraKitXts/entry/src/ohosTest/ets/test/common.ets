@@ -107,7 +107,6 @@ export async function driveFn(): Promise<void> {
     await allowButton1?.click();
     await allowButton2?.click();
     await sleep(COMMON_WAIT_DURATION);
-    }
   } catch (err) {
     let businessError = err as BusinessError;
     console.warn(TAG + 'driveFn non-fatal exception (continuing): code='
