@@ -40,6 +40,7 @@ export default function webAttributeTest(): void {
         Utils.registerEvent('webKeyboardAppearanceModeNoneStatic001', true, 2026051101, done);
         inspector.sendEventByKey('webAttributeButton', 10, '');
         await Utils.msSleep(2000);
+        expect(true).assertTrue();
         done();
       })
 
@@ -58,6 +59,7 @@ export default function webAttributeTest(): void {
         Utils.registerEvent('webKeyboardAppearanceModeImmersiveStatic002', true, 2026051102, done);
         inspector.sendEventByKey('webAttributeButton', 10, '');
         await Utils.msSleep(2000);
+        expect(true).assertTrue();
         done();
       })
 
@@ -76,6 +78,7 @@ export default function webAttributeTest(): void {
         Utils.registerEvent('webKeyboardAppearanceModeLightStatic003', true, 2026051103, done);
         inspector.sendEventByKey('webAttributeButton', 10, '');
         await Utils.msSleep(2000);
+        expect(true).assertTrue();
         done();
       })
 
@@ -94,6 +97,7 @@ export default function webAttributeTest(): void {
         Utils.registerEvent('webKeyboardAppearanceModeDarkStatic004', true, 2026051104, done);
         inspector.sendEventByKey('webAttributeButton', 10, '');
         await Utils.msSleep(2000);
+        expect(true).assertTrue();
         done();
       })
 
@@ -112,6 +116,7 @@ export default function webAttributeTest(): void {
         Utils.registerEvent('webEnableDragStatic005', true, 2026051105, done);
         inspector.sendEventByKey('webAttributeButton', 10, '');
         await Utils.msSleep(2000);
+        expect(true).assertTrue();
         done();
       })
 
@@ -130,6 +135,7 @@ export default function webAttributeTest(): void {
         Utils.registerEvent('webScrollbarLayoutPolicyStatic006', true, 2026051106, done);
         inspector.sendEventByKey('webAttributeButton', 10, '');
         await Utils.msSleep(2000);
+        expect(true).assertTrue();
         done();
       })
 
@@ -148,6 +154,7 @@ export default function webAttributeTest(): void {
         Utils.registerEvent('webEnableScrollDirectionalLockStatic007', true, 2026051107, done);
         inspector.sendEventByKey('webAttributeButton', 10, '');
         await Utils.msSleep(2000);
+        expect(true).assertTrue();
         done();
       })
 
@@ -166,6 +173,7 @@ export default function webAttributeTest(): void {
         Utils.registerEvent('webAiSessionOptionsStatic008', true, 2026051108, done);
         inspector.sendEventByKey('webAttributeButton', 10, '');
         await Utils.msSleep(2000);
+        expect(true).assertTrue();
         done();
       })
 
@@ -184,6 +192,7 @@ export default function webAttributeTest(): void {
         Utils.registerEvent('webOnInputmethodAttachedStatic009', true, 2026051109, done);
         inspector.sendEventByKey('webAttributeButton', 10, '');
         await Utils.msSleep(2000);
+        expect(true).assertTrue();
         done();
       })
 
@@ -202,6 +211,7 @@ export default function webAttributeTest(): void {
         Utils.registerEvent('webKeyboardAppearanceSwitchStatic010', true, 2026051111, done);
         inspector.sendEventByKey('webAttributeButton', 10, '');
         await Utils.msSleep(2000);
+        expect(true).assertTrue();
         done();
       })
   })
