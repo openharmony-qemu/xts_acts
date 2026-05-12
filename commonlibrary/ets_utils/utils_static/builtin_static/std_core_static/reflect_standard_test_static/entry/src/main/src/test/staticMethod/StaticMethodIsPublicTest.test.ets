@@ -146,7 +146,7 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_PUBLIC_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0100
      * @tc.name testStaticMethodIsPublic001
      * @tc.desc Verify isPublic() call with no parameters
      * @tc.size MediumTest
@@ -162,7 +162,7 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_PUBLIC_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0200
      * @tc.name testStaticMethodIsPublic002
      * @tc.desc Verify isPublic() returns true for public static method
      * @tc.size MediumTest
@@ -180,7 +180,7 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_PUBLIC_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0300
      * @tc.name testStaticMethodIsPublic003
      * @tc.desc Verify isPublic() returns false for private static method
      * @tc.size MediumTest
@@ -195,7 +195,7 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_PUBLIC_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0400
      * @tc.name testStaticMethodIsPublic004
      * @tc.desc Verify isPublic() returns false for protected static method
      * @tc.size MediumTest
@@ -210,7 +210,7 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_PUBLIC_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0500
      * @tc.name testStaticMethodIsPublic005
      * @tc.desc Verify isPublic() for method with default access level
      * @tc.size MediumTest
@@ -226,7 +226,7 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_PUBLIC_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0600
      * @tc.name testStaticMethodIsPublic006
      * @tc.desc Verify isPublic() for async public static method
      * @tc.size MediumTest
@@ -242,7 +242,7 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_PUBLIC_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0700
      * @tc.name testStaticMethodIsPublic007
      * @tc.desc Verify isPublic() for final public static method
      * @tc.size MediumTest
@@ -257,7 +257,7 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_PUBLIC_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0800
      * @tc.name testStaticMethodIsPublic008
      * @tc.desc Verify isPublic() returns false for private async method
      * @tc.size MediumTest
@@ -271,7 +271,7 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_PUBLIC_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0900
      * @tc.name testStaticMethodIsPublic009
      * @tc.desc Verify isPublic() return type is boolean
      * @tc.size MediumTest
@@ -289,7 +289,7 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_PUBLIC_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1000
      * @tc.name testStaticMethodIsPublic010
      * @tc.desc Verify isPublic() returns only true or false
      * @tc.size MediumTest
@@ -306,7 +306,7 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_PUBLIC_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1100
      * @tc.name testStaticMethodIsPublic011
      * @tc.desc Verify mutual exclusivity between isPublic, isPrivate, and isProtected
      * @tc.size MediumTest
@@ -324,7 +324,7 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_PUBLIC_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1200
      * @tc.name testStaticMethodIsPublic012
      * @tc.desc Verify isPublic() for abstract class public method
      * @tc.size MediumTest
@@ -339,7 +339,7 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_PUBLIC_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1300
      * @tc.name testStaticMethodIsPublic013
      * @tc.desc Verify isPublic() for final class public method
      * @tc.size MediumTest
@@ -354,7 +354,7 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_PUBLIC_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1400
      * @tc.name testStaticMethodIsPublic014
      * @tc.desc Verify isPublic() for getter and setter methods which are usually public
      * @tc.size MediumTest
@@ -373,7 +373,7 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_PUBLIC_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1500
      * @tc.name testStaticMethodIsPublic015
      * @tc.desc Verify isPublic() does not throw exception
      * @tc.size MediumTest
@@ -389,7 +389,7 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_PUBLIC_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1600
      * @tc.name testStaticMethodIsPublic016
      * @tc.desc Verify isPublic() for public+final modifier combination
      * @tc.size MediumTest
@@ -404,7 +404,7 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_PUBLIC_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1700
      * @tc.name testStaticMethodIsPublic017
      * @tc.desc Verify isPublic() for public+async modifier combination
      * @tc.size MediumTest
@@ -420,7 +420,7 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_PUBLIC_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1800
      * @tc.name testStaticMethodIsPublic018
      * @tc.desc Verify isPublic() for Deprecated public method
      * @tc.size MediumTest
@@ -435,7 +435,7 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_PUBLIC_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1900
      * @tc.name testStaticMethodIsPublic019
      * @tc.desc Verify isPublic() for async public method
      * @tc.size MediumTest
@@ -451,7 +451,7 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_PUBLIC_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_2000
      * @tc.name testStaticMethodIsPublic020
      * @tc.desc Verify isPublic() returns false for async private method
      * @tc.size MediumTest
@@ -465,7 +465,7 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_PUBLIC_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_2100
      * @tc.name testStaticMethodIsPublic021
      * @tc.desc Verify isPublic() for normal, abstract, and final class public methods
      * @tc.size MediumTest
@@ -486,7 +486,7 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_PUBLIC_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_2200
      * @tc.name testStaticMethodIsPublic022
      * @tc.desc Verify isPublic() for factory method
      * @tc.size MediumTest
@@ -501,7 +501,7 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_PUBLIC_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_2300
      * @tc.name testStaticMethodIsPublic023
      * @tc.desc Verify isPublic() counts public methods in a class with mixed access levels
      * @tc.size MediumTest
@@ -522,7 +522,7 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_PUBLIC_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_2400
      * @tc.name testStaticMethodIsPublic024
      * @tc.desc Verify isPublic() combined with other method property checks
      * @tc.size MediumTest
@@ -541,7 +541,7 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_PUBLIC_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_2500
      * @tc.name testStaticMethodIsPublic025
      * @tc.desc Verify filtering public methods from all static methods
      * @tc.size MediumTest
