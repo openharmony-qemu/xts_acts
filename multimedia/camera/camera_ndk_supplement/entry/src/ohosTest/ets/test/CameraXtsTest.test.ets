@@ -60,10 +60,10 @@ function sleep(ms: number) {
 
 let driveFn = async () => {
   let dr = Driver.create();
-  await sleep(SLEEP_500);
-  let power1 = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), SLEEP_500);
-  let power2 = await dr?.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), SLEEP_500);
-  await sleep(SLEEP_500);
+  await sleep(SLEEP_TIME);
+  let power1 = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), SLEEP_TIME);
+  let power2 = await dr?.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), SLEEP_TIME);
+  await sleep(SLEEP_TIME);
   await power1?.click();
   await power2?.click();
 }
