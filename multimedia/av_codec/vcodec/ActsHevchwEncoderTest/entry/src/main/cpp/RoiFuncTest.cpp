@@ -212,8 +212,10 @@ int VIDEO_HW_ENCODE_ROI_FUNC_005()
 int VIDEO_HW_ENCODE_ROI_FUNC_006()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_CBR);
-    bool access = access("/system/lib64/media/", 0);
-    if (!isSupported && access) {
+    if (!isSupported) {
+        return 0;
+    }
+    if (access("/system/lib64/media/", 0) != 0) {
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
@@ -263,8 +265,10 @@ int VIDEO_HW_ENCODE_ROI_FUNC_007()
 int VIDEO_HW_ENCODE_ROI_FUNC_008()
 {
     bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(g_capHevc, BITRATE_MODE_CBR);
-    bool access = access("/system/lib64/media/", 0);
-    if (!isSupported && access) {
+    if (!isSupported) {
+        return 0;
+    }
+    if (access("/system/lib64/media/", 0) != 0) {
         return 0;
     }
     auto vEncSample = make_unique<VEncAPI11Sample>();
