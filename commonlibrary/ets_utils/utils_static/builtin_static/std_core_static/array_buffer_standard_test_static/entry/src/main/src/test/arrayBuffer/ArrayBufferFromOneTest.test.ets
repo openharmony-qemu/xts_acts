@@ -15,10 +15,19 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
+class ArrayBufferFromOnePlainRecordFor0042 {
+  a: int = 1
+}
+
+function arrayBufferFromOneArrayAsValueArray(raw: Array<byte>): ValueArray<byte> {
+  let bridge: ESObject = raw as ESObject
+  return bridge as ValueArray<byte>
+}
+
 function arrayBufferFromOneBuild1024Bytes(): Array<byte> {
   let a: Array<byte> = new Array<byte>()
   for (let i: int = 0; i < 1024; i++) {
-    a.pushOne((i % 256) as byte)
+    a.pushOne(Int.toByte(i % 256))
   }
   return a
 }
@@ -380,18 +389,19 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_2400
-     * @tc.desc Verify large 1024-byte source: mindmap uses fixed-size loop; ArkTS uses Array<byte> pushOne fill then from; byteLength 1024 and sample at bounds match (i%256) as byte.
+     * @tc.desc Verify large 1024-byte source: mindmap uses fixed-size loop; ArkTS fills Array<byte> with pushOne(Int.toByte(i%256)), bridges to ValueArray via ESObject for STA from(ValueArray<byte>); byteLength 1024 and bounds match raw array.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromOne0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Array<byte> = arrayBufferFromOneBuild1024Bytes()
+      let raw: Array<byte> = arrayBufferFromOneBuild1024Bytes()
+      let arr: ValueArray<byte> = arrayBufferFromOneArrayAsValueArray(raw)
       let result = ArrayBuffer.from(arr)
       expect(result.byteLength).assertEqual(1024)
-      expect(result.at(0)).assertEqual(0 as byte)
-      let lastIndex: int = (arr.length as int) - 1
-      expect(result.at(lastIndex)).assertEqual(arr[lastIndex])
+      expect(result.at(0)).assertEqual(Int.toByte(0))
+      let lastIndex: int = (raw.length as int) - 1
+      expect(result.at(lastIndex)).assertEqual(raw[lastIndex])
     });
 
     /**
@@ -524,11 +534,12 @@ export default function arrayBufferFromOneTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromOne0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Array<byte> = new Array<byte>(1 as byte, 2 as byte, 3 as byte)
+      let raw: Array<byte> = new Array<byte>(Int.toByte(1), Int.toByte(2), Int.toByte(3))
+      let arr: ValueArray<byte> = arrayBufferFromOneArrayAsValueArray(raw)
       let result = ArrayBuffer.from(arr)
       let z0: int = 0
-      arr[z0] = 99 as byte
-      expect(result.at(0)).assertEqual(1 as byte)
+      raw[z0] = Int.toByte(99)
+      expect(result.at(0)).assertEqual(Int.toByte(1))
     });
 
     /**
@@ -540,11 +551,12 @@ export default function arrayBufferFromOneTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromOne0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Array<byte> = new Array<byte>(10 as byte, 20 as byte, 30 as byte)
+      let raw: Array<byte> = new Array<byte>(Int.toByte(10), Int.toByte(20), Int.toByte(30))
+      let arr: ValueArray<byte> = arrayBufferFromOneArrayAsValueArray(raw)
       let result = ArrayBuffer.from(arr)
-      arr.length = 0
+      raw.length = 0
       expect(result.byteLength).assertEqual(3)
-      expect(result.at(0)).assertEqual(10 as byte)
+      expect(result.at(0)).assertEqual(Int.toByte(10))
     });
 
     /**
@@ -573,12 +585,13 @@ export default function arrayBufferFromOneTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromOne0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Array<byte> = new Array<byte>(1 as byte, 2 as byte, 3 as byte)
+      let raw: Array<byte> = new Array<byte>(Int.toByte(1), Int.toByte(2), Int.toByte(3))
+      let arr: ValueArray<byte> = arrayBufferFromOneArrayAsValueArray(raw)
       let result = ArrayBuffer.from(arr)
       let z0: int = 0
-      arr[z0] = 100 as byte
-      expect(result.at(0)).assertEqual(1 as byte)
-      expect(arr[z0]).assertEqual(100 as byte)
+      raw[z0] = Int.toByte(100)
+      expect(result.at(0)).assertEqual(Int.toByte(1))
+      expect(raw[z0]).assertEqual(Int.toByte(100))
     });
 
     /**
@@ -687,7 +700,8 @@ export default function arrayBufferFromOneTest(): void {
      */
     it('testArrayBufferFromOne0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let o: ESObject = { a: 1 } as ESObject
+        let plain: ArrayBufferFromOnePlainRecordFor0042 = new ArrayBufferFromOnePlainRecordFor0042()
+        let o: ESObject = plain as ESObject
         let bad: ValueArray<byte> = o as ValueArray<byte>
         ArrayBuffer.from(bad)
         expect(true).assertFail()

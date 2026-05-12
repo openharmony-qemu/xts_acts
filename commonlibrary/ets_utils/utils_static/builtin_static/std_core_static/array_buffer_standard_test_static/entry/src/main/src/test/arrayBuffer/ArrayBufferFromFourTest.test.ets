@@ -502,7 +502,7 @@ export default function arrayBufferFromFourTest(): void {
       let arr: double[] = [1.0, 2.0, 3.0]
       let buffer = ArrayBuffer.from(arr)
       for (let j: int = 0; j < 3; j++) {
-        expect(buffer.at(j)).assertEqual((j + 1) as byte)
+        expect(buffer.at(j)).assertEqual(Int.toByte(j + 1))
       }
     });
 
@@ -550,8 +550,8 @@ export default function arrayBufferFromFourTest(): void {
     it('testArrayBufferFromFour0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: double[] = [1.0, 2.0, 3.0]
       let buffer = ArrayBuffer.from(arr)
-      let buffer = ArrayBuffer.from(arr)
-      buffer.set(0, 99 as byte)
+      buffer.set(0, Int.toByte(99))
+      expect(buffer.at(0)).assertEqual(Int.toByte(99))
       let b2 = ArrayBuffer.from(arr)
       expect(b2.at(0)).assertEqual(1 as byte)
     });

@@ -138,7 +138,7 @@ export default function arrayBufferFromThreeTest(): void {
      */
     it('testArrayBufferFromThree0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(1)
-      ab.set(0, 255 as byte)
+      ab.set(0, Int.toByte(255))
       let u8 = new Uint8Array(ab)
       let result = ArrayBuffer.from(u8)
       expect(result.byteLength).assertEqual(1)
@@ -155,7 +155,7 @@ export default function arrayBufferFromThreeTest(): void {
     it('testArrayBufferFromThree0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(1024)
       for (let j: int = 0; j < 1024; j++) {
-        ab.set(j, (j % 256) as byte)
+        ab.set(j, Int.toByte(j % 256))
       }
       let u8 = new Uint8Array(ab)
       let result = ArrayBuffer.from(u8)
@@ -175,7 +175,7 @@ export default function arrayBufferFromThreeTest(): void {
     it('testArrayBufferFromThree0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(10)
       for (let j: int = 0; j < 10; j++) {
-        buf.set(j, j as byte)
+        buf.set(j, Int.toByte(j))
       }
       let u8 = new Uint8Array(buf, 3, 5)
       let result = ArrayBuffer.from(u8)
@@ -212,12 +212,12 @@ export default function arrayBufferFromThreeTest(): void {
      */
     it('testArrayBufferFromThree0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(3)
-      ab.set(0, 255 as byte)
-      ab.set(1, 255 as byte)
-      ab.set(2, 255 as byte)
+      ab.set(0, Int.toByte(255))
+      ab.set(1, Int.toByte(255))
+      ab.set(2, Int.toByte(255))
       let u8 = new Uint8Array(ab)
       let result = ArrayBuffer.from(u8)
-      expect(result.at(1)).assertEqual(255 as byte)
+      expect(result.at(1)).assertEqual(Int.toByte(255))
     });
 
     /**
@@ -534,7 +534,7 @@ export default function arrayBufferFromThreeTest(): void {
       let u8 = new Uint8Array(ab)
       let result = ArrayBuffer.from(u8)
       for (let j: int = 0; j < 3; j++) {
-        expect(result.at(j)).assertEqual(u8[j] as byte)
+        expect(result.at(j)).assertEqual(Double.toByte(u8[j]))
       }
     });
 
@@ -554,7 +554,7 @@ export default function arrayBufferFromThreeTest(): void {
       let u8 = new Uint8Array(ab)
       let result = ArrayBuffer.from(u8)
       for (let j: int = 0; j < 3; j++) {
-        expect(result.at(j)).assertEqual(u8[j] as byte)
+        expect(result.at(j)).assertEqual(Double.toByte(u8[j]))
       }
     });
 
@@ -569,10 +569,10 @@ export default function arrayBufferFromThreeTest(): void {
     it('testArrayBufferFromThree0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(2)
       ab.set(0, 0 as byte)
-      ab.set(1, 255 as byte)
+      ab.set(1, Int.toByte(255))
       let u8 = new Uint8Array(ab)
       let result = ArrayBuffer.from(u8)
-      expect(result.at(1)).assertEqual(255 as byte)
+      expect(result.at(1)).assertEqual(Int.toByte(255))
     });
 
     /**
@@ -586,7 +586,7 @@ export default function arrayBufferFromThreeTest(): void {
     it('testArrayBufferFromThree0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(64)
       for (let j: int = 0; j < 64; j++) {
-        ab.set(j, (j % 256) as byte)
+        ab.set(j, Int.toByte(j % 256))
       }
       let u8 = new Uint8Array(ab)
       let result = ArrayBuffer.from(u8)

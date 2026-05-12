@@ -55,7 +55,7 @@ export default function arrayBufferFromSevenTest(): void {
     it('testArrayBufferFromSeven0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(4)
       for (let j: int = 0; j < 4; j++) {
-        buf.set(j, j as byte)
+        buf.set(j, Int.toByte(j))
       }
       let r = ArrayBuffer.from(buf, 2 as number)
       expect(r.byteLength).assertEqual(2)
