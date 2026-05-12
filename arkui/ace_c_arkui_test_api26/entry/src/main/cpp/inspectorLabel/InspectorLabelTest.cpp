@@ -27,8 +27,8 @@ napi_value InspectorLabelTest::InspectorLabelTest_001(napi_env env, napi_callbac
     auto ret = nodeAPI->setAttribute(column, NODE_INSPECTOR_LABEL, &item);
     ASSERT_EQ(ret, SUCCESS);
     
-    auto result = nodeAPI->getAttribute(column, NODE_INSPECTOR_LABEL)->value[PARAM_0].i32;
-    ASSERT_EQ(strncmp(result, "testInspectorLabel");
+    auto result = nodeAPI->getAttribute(column, NODE_INSPECTOR_LABEL);
+    ASSERT_EQ(strcmp(result->string, "testInspectorLabel"), 0);
     
     NAPI_END;
 }
@@ -41,8 +41,8 @@ napi_value InspectorLabelTest::InspectorLabelTest_002(napi_env env, napi_callbac
     auto ret = nodeAPI->setAttribute(column, NODE_INSPECTOR_LABEL, &item);
     ASSERT_EQ(ret, SUCCESS);
     
-    auto result = nodeAPI->getAttribute(column, NODE_INSPECTOR_LABEL)->value[PARAM_0].i32;
-    ASSERT_EQ(result, "");
+    auto result = nodeAPI->getAttribute(column, NODE_INSPECTOR_LABEL);
+    ASSERT_EQ(strcmp(result->string, ""), 0);
     NAPI_END;
 }
 
