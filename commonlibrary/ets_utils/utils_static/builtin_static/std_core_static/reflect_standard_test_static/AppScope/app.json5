@@ -1,6 +1,6 @@
 {
   "app": {
-    "bundleName": "com.example.helloworld",
+    "bundleName": "com.reflect.StaticMethod.static",
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",
