@@ -31,7 +31,7 @@ import cloudData from '@ohos.data.cloudData';
 export default function CloudDataAutoSyncTrigger(): void {
   describe('CloudDataAutoSyncTrigger', () => {
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_CLOUDDATA_AUTOSYNCTRIGGERMODE_ENUM_001
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_CLOUDDATA_AUTOSYNCTRIGGERMODE_ENUM_0100
      * @tc.name enumBoundaryTest001
      * @tc.desc 测试 AutoSyncTriggerMode 枚举 - ACCOUNT_LOGIN(0).
      * @tc.type FUNCTION
@@ -44,7 +44,7 @@ export default function CloudDataAutoSyncTrigger(): void {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_CLOUDDATA_AUTOSYNCTRIGGERMODE_ENUM_002
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_CLOUDDATA_AUTOSYNCTRIGGERMODE_ENUM_0200
      * @tc.name enumBoundaryTest002
      * @tc.desc 测试 AutoSyncTriggerMode 枚举 - CLOUD_SWITCH_ON(1).
      * @tc.type FUNCTION
@@ -57,7 +57,7 @@ export default function CloudDataAutoSyncTrigger(): void {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_CLOUDDATA_AUTOSYNCTRIGGERMODE_ENUM_003
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_CLOUDDATA_AUTOSYNCTRIGGERMODE_ENUM_0300
      * @tc.name enumBoundaryTest003
      * @tc.desc 测试 AutoSyncTriggerMode 枚举 - NETWORK_RECOVER(2).
      * @tc.type FUNCTION
@@ -70,7 +70,7 @@ export default function CloudDataAutoSyncTrigger(): void {
     });
   
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_CLOUDDATA_AUTOSYNCTRIGGERMODE_ENUM_004
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_CLOUDDATA_AUTOSYNCTRIGGERMODE_ENUM_0400
      * @tc.name enumBoundaryTest004
      * @tc.desc 测试 AutoSyncTriggerMode 枚举 - CLOUD_DATA_CHANGE(3).
      * @tc.type FUNCTION
@@ -83,7 +83,7 @@ export default function CloudDataAutoSyncTrigger(): void {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_CLOUDDATA_AUTOSYNCTRIGGERMODE_ENUM_005
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_CLOUDDATA_AUTOSYNCTRIGGERMODE_ENUM_0500
      * @tc.name enumBoundaryTest005
      * @tc.desc 测试 AutoSyncTriggerMode 枚举 - USER_CHANGE(4).
      * @tc.type FUNCTION
@@ -96,7 +96,7 @@ export default function CloudDataAutoSyncTrigger(): void {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_CLOUDDATA_ONAUTOSYNCTRIGGER_PARAM_001
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_CLOUDDATA_ONAUTOSYNCTRIGGER_PARAM_0100
      * @tc.name normalParamTest001
      * @tc.desc 测试 onAutoSyncTrigger 方法 - 正常参数测试，传入回调函数.
      * @tc.type FUNCTION
@@ -118,7 +118,7 @@ export default function CloudDataAutoSyncTrigger(): void {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_CLOUDDATA_OFFAUTOSYNCTRIGGER_PARAM_001
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_CLOUDDATA_OFFAUTOSYNCTRIGGER_PARAM_0200
      * @tc.name normalParamTest002
      * @tc.desc 测试 offAutoSyncTrigger 方法 - 正常参数测试，传入注册的回调函数.
      * @tc.type FUNCTION
@@ -143,7 +143,7 @@ export default function CloudDataAutoSyncTrigger(): void {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_CLOUDDATA_OFFAUTOSYNCTRIGGER_PARAM_002
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_CLOUDDATA_OFFAUTOSYNCTRIGGER_PARAM_0300
      * @tc.name noParamTest001
      * @tc.desc 测试 offAutoSyncTrigger 方法 - 无参数测试，取消所有订阅.
      * @tc.type FUNCTION
@@ -173,7 +173,7 @@ export default function CloudDataAutoSyncTrigger(): void {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_CLOUDDATA_ONAUTOSYNCTRIGGER_ERROR_801_001
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_CLOUDDATA_ONAUTOSYNCTRIGGER_ERROR_801_0100
      * @tc.name errorCode801Test001
      * @tc.desc 测试 onAutoSyncTrigger 方法 - 错误码测试801，Capability not supported.
      * @tc.type FUNCTION
@@ -200,7 +200,7 @@ export default function CloudDataAutoSyncTrigger(): void {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_CLOUDDATA_OFFAUTOSYNCTRIGGER_ERROR_801_001
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_CLOUDDATA_OFFAUTOSYNCTRIGGER_ERROR_801_0100
      * @tc.name errorCode801Test002
      * @tc.desc 测试 offAutoSyncTrigger 方法 - 错误码测试801，Capability not supported.
      * @tc.type FUNCTION

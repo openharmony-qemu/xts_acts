@@ -1351,7 +1351,7 @@ export default function SingleKvStoreReturnValue(){
     })
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_DISTRIBUTEDKVSTORE_REKEY_PARAM_001
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_DISTRIBUTEDKVSTORE_REKEY_PARAM_0100
      * @tc.name rekeyParamTest001
      * @tc.desc 测试 rekey 方法 - 正常调用无参数Promise方式.
      * @tc.type FUNCTION

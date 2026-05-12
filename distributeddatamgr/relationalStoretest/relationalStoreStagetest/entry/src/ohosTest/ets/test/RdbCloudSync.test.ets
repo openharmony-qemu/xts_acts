@@ -38,7 +38,7 @@ export default function RelationalStoreCloudSyncTest() {
         await relationalStore.deleteRdbStore(context, "RdbTest.db");
     })
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_ASSETSTATUS_ASSET_TO_DOWNLOAD_001
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_ASSETSTATUS_ASSET_TO_DOWNLOAD_0100
      * @tc.name assetToDownloadEnumTest001
      * @tc.desc 测试 AssetStatus.ASSET_TO_DOWNLOAD 枚举值等于6.
      * @tc.type FUNCTION
@@ -51,7 +51,7 @@ export default function RelationalStoreCloudSyncTest() {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_PROGRESSCODE_STOP_CLOUD_SYNC_001
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_PROGRESSCODE_STOP_CLOUD_SYNC_0100
      * @tc.name stopCloudSyncEnumTest001
      * @tc.desc 测试 ProgressCode.STOP_CLOUD_SYNC 枚举值等于8.
      * @tc.type FUNCTION
@@ -64,7 +64,7 @@ export default function RelationalStoreCloudSyncTest() {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_CLOUDSYNC_FUNC_002
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_CLOUDSYNC_FUNC_0200
      * @tc.name cloudSyncFuncTest002
      * @tc.desc 测试 ProgressDetails.message字段（since 26.0.0）.
      * @tc.type FUNCTION
@@ -84,7 +84,7 @@ export default function RelationalStoreCloudSyncTest() {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_ASSETCONFLICTPOLICY_DEFAULT_001
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_ASSETCONFLICTPOLICY_DEFAULT_0100
      * @tc.name conflictPolicyDefaultEnumTest001
      * @tc.desc 测试 AssetConflictPolicy.CONFLICT_POLICY_DEFAULT 枚举值等于0.
      * @tc.type FUNCTION
@@ -97,7 +97,7 @@ export default function RelationalStoreCloudSyncTest() {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_ASSETCONFLICTPOLICY_TIME_FIRST_001
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_ASSETCONFLICTPOLICY_TIME_FIRST_0100
      * @tc.name conflictPolicyTimeFirstEnumTest001
      * @tc.desc 测试 AssetConflictPolicy.CONFLICT_POLICY_TIME_FIRST 枚举值等于1.
      * @tc.type FUNCTION
@@ -110,7 +110,7 @@ export default function RelationalStoreCloudSyncTest() {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_ASSETCONFLICTPOLICY_TEMP_PATH_001
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_ASSETCONFLICTPOLICY_TEMP_PATH_0100
      * @tc.name conflictPolicyTempPathEnumTest001
      * @tc.desc 测试 AssetConflictPolicy.CONFLICT_POLICY_TEMP_PATH 枚举值等于2.
      * @tc.type FUNCTION
@@ -123,7 +123,7 @@ export default function RelationalStoreCloudSyncTest() {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_DISTRIBUTEDCONFIG_ASSETCONFLICTPOLICY_001
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_DISTRIBUTEDCONFIG_ASSETCONFLICTPOLICY_0100
      * @tc.name assetConflictPolicyPropTest001
      * @tc.desc 测试 DistributedConfig.assetConflictPolicy 属性设置.
      * @tc.type FUNCTION
@@ -140,7 +140,7 @@ export default function RelationalStoreCloudSyncTest() {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_DISTRIBUTEDCONFIG_ASSETCONFLICTPOLICY_002
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_DISTRIBUTEDCONFIG_ASSETCONFLICTPOLICY_0100
      * @tc.name assetConflictPolicyPropTest002
      * @tc.desc 测试 DistributedConfig.assetConflictPolicy 各枚举值设置.
      * @tc.type FUNCTION
@@ -163,7 +163,7 @@ export default function RelationalStoreCloudSyncTest() {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_DISTRIBUTEDCONFIG_ASSETTEMPATH_001
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_DISTRIBUTEDCONFIG_ASSETTEMPATH_0100
      * @tc.name assetTempPathPropTest001
      * @tc.desc 测试 DistributedConfig.assetTempPath 属性设置.
      * @tc.type FUNCTION
@@ -180,7 +180,7 @@ export default function RelationalStoreCloudSyncTest() {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_DISTRIBUTEDCONFIG_ASSETTEMPATH_002
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_DISTRIBUTEDCONFIG_ASSETTEMPATH_0200
      * @tc.name assetTempPathPropTest002
      * @tc.desc 测试 DistributedConfig.assetTempPath 空字符串.
      * @tc.type FUNCTION
@@ -197,7 +197,7 @@ export default function RelationalStoreCloudSyncTest() {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_DISTRIBUTEDCONFIG_ASSETDOWNLOADONDEMAND_001
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_DISTRIBUTEDCONFIG_ASSETDOWNLOADONDEMAND_0100
      * @tc.name assetDownloadOnDemandPropTest001
      * @tc.desc 测试 DistributedConfig.assetDownloadOnDemand 属性设置为true.
      * @tc.type FUNCTION
@@ -214,7 +214,7 @@ export default function RelationalStoreCloudSyncTest() {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_DISTRIBUTEDCONFIG_ASSETDOWNLOADONDEMAND_002
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_DISTRIBUTEDCONFIG_ASSETDOWNLOADONDEMAND_0200
      * @tc.name assetDownloadOnDemandPropTest002
      * @tc.desc 测试 DistributedConfig.assetDownloadOnDemand 属性设置为false.
      * @tc.type FUNCTION
@@ -231,7 +231,7 @@ export default function RelationalStoreCloudSyncTest() {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_DISTRIBUTEDCONFIG_AUTOSYNCSWITCH_001
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_DISTRIBUTEDCONFIG_AUTOSYNCSWITCH_0100
      * @tc.name autoSyncSwitchPropTest001
      * @tc.desc 测试 DistributedConfig.autoSyncSwitch 属性设置为true.
      * @tc.type FUNCTION
@@ -248,7 +248,7 @@ export default function RelationalStoreCloudSyncTest() {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_DISTRIBUTEDCONFIG_AUTOSYNCSWITCH_002
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_DISTRIBUTEDCONFIG_AUTOSYNCSWITCH_0200
      * @tc.name autoSyncSwitchPropTest002
      * @tc.desc 测试 DistributedConfig.autoSyncSwitch 属性设置为false.
      * @tc.type FUNCTION
@@ -265,7 +265,7 @@ export default function RelationalStoreCloudSyncTest() {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_CLOUDSYNCCONFIG_MODE_001
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_CLOUDSYNCCONFIG_MODE_0100
      * @tc.name cloudSyncConfigModeTest001
      * @tc.desc 测试 CloudSyncConfig.mode 属性设置为SYNC_MODE_PUSH.
      * @tc.type FUNCTION
@@ -281,7 +281,7 @@ export default function RelationalStoreCloudSyncTest() {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_CLOUDSYNCCONFIG_MODE_002
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_CLOUDSYNCCONFIG_MODE_0200
      * @tc.name cloudSyncConfigModeTest002
      * @tc.desc 测试 CloudSyncConfig.mode 各SyncMode值设置.
      * @tc.type FUNCTION
@@ -307,7 +307,7 @@ export default function RelationalStoreCloudSyncTest() {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_CLOUDSYNCCONFIG_ENABLEPREDICATE_001
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_CLOUDSYNCCONFIG_ENABLEPREDICATE_0100
      * @tc.name cloudSyncConfigEnablePredicateTest001
      * @tc.desc 测试 CloudSyncConfig.enablePredicate 属性设置为true.
      * @tc.type FUNCTION
@@ -324,7 +324,7 @@ export default function RelationalStoreCloudSyncTest() {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_CLOUDSYNCCONFIG_ENABLEPREDICATE_002
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_CLOUDSYNCCONFIG_ENABLEPREDICATE_0200
      * @tc.name cloudSyncConfigEnablePredicateTest002
      * @tc.desc 测试 CloudSyncConfig.enablePredicate 属性设置为false.
      * @tc.type FUNCTION
@@ -341,7 +341,7 @@ export default function RelationalStoreCloudSyncTest() {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_CLOUDSYNCCONFIG_PREDICATE_001
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_CLOUDSYNCCONFIG_PREDICATE_0100
      * @tc.name cloudSyncConfigPredicateTest001
      * @tc.desc 测试 CloudSyncConfig.predicate 属性设置.
      * @tc.type FUNCTION
@@ -361,7 +361,7 @@ export default function RelationalStoreCloudSyncTest() {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_SETDISTRIBUTEDTABLES_PARAM_001
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_SETDISTRIBUTEDTABLES_PARAM_0100
      * @tc.name setDistributedTablesParamTest001
      * @tc.desc 测试 setDistributedTables 方法 - Promise方式正常参数.
      * @tc.type FUNCTION
@@ -409,7 +409,7 @@ export default function RelationalStoreCloudSyncTest() {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_SETDISTRIBUTEDTABLES_PARAM_002
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_SETDISTRIBUTEDTABLES_PARAM_0200
      * @tc.name setDistributedTablesParamTest002
      * @tc.desc 测试 setDistributedTables 方法 - Callback方式正常参数.
      * @tc.type FUNCTION
@@ -466,7 +466,7 @@ export default function RelationalStoreCloudSyncTest() {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_CLOUDSYNC_PARAM_001
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_CLOUDSYNC_PARAM_0100
      * @tc.name cloudSyncParamTest001
      * @tc.desc 测试 cloudSync 方法 - Promise方式正常参数.
      * @tc.type FUNCTION
@@ -575,7 +575,7 @@ export default function RelationalStoreCloudSyncTest() {
         }
     });
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_STOPCLOUDSYNC_PARAM_001
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_STOPCLOUDSYNC_PARAM_0100
      * @tc.name stopCloudSyncParamTest001
      * @tc.desc 测试 stopCloudSync 方法 - 正常调用Promise方式.
      * @tc.type FUNCTION
@@ -599,7 +599,7 @@ export default function RelationalStoreCloudSyncTest() {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_STOPCLOUDSYNC_ERROR_14800014_001
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_STOPCLOUDSYNC_ERROR_14800014_0100
      * @tc.name stopCloudSyncError14800014Test001
      * @tc.desc 测试 stopCloudSync 方法 - 错误码14800014已关闭.
      * @tc.type FUNCTION

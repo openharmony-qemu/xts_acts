@@ -1501,7 +1501,7 @@ export default function SingleKvStoreReturnValue() {
       })
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_DISTRIBUTEDKVSTORE_REKEY_STA_001
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_DISTRIBUTEDKVSTORE_REKEY_STA_0100
      * @tc.name rekeyStaticTest001
      * @tc.desc 测试 rekey 方法 - 正常调用无参数Promise方式（静态语法）.
      * @tc.type FUNCTION
@@ -1519,7 +1519,7 @@ export default function SingleKvStoreReturnValue() {
         expect(error.code).assertEqual(15100005);
       }
     });
-    
+
     console.info(TAG + '-------------------describe SingleKvStoreReturnValue  end-------------------');
   })
 
