@@ -1946,3 +1946,719 @@ export default function FieldInitializationTestOne(): void {
       expect(a.field instanceof int).assertTrue()
       expect(a.field).assertEqual(5)
     })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0157
+     * @tc.name      testFieldInit0157
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0157", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F157 = new A_F157()
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0158
+     * @tc.name      testFieldInit0158
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0158", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F158 = new A_F158()
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0159
+     * @tc.name      testFieldInit0159
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0159", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F159 = new A_F159()
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 7.3
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(7.3)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0160
+     * @tc.name      testFieldInit0160
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0160", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F160 = new A_F160()
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0161
+     * @tc.name      testFieldInit0161
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0161", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F161 = new A_F161()
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(4.5f)
+      a.field = 7.3f
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(7.3f)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0162
+     * @tc.name      testFieldInit0162
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0162", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F162 = new A_F162()
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(4n)
+      a.field = 5n
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(5n)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0163
+     * @tc.name      testFieldInit0163
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0163", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F163 = new A_F163()
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("abc")
+      a.field = "efg"
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("efg")
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0164
+     * @tc.name      testFieldInit0164
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0164", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F164 = new A_F164()
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'a')
+      a.field = c'b'
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'b')
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0165
+     * @tc.name      testFieldInit0165
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0165", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F165 = new A_F165()
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(false)
+      a.field = true
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(true)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0166
+     * @tc.name      testFieldInit0166
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0166", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F166 = new A_F166()
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0167
+     * @tc.name      testFieldInit0167
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0167", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F167 = new A_F167()
+      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field).assertEqual(undefined)
+      a.field = 5
+      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0168
+     * @tc.name      testFieldInit0168
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0168", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F168 = new A_F168()
+      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0169
+     * @tc.name      testFieldInit0169
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0169", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F169 = new A_F169()
+      expect(a.field instanceof Any).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof Any).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0170
+     * @tc.name      testFieldInit0170
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0170", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F170 = new A_F170()
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0171
+     * @tc.name      testFieldInit0171
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0171", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F171 = new A_F171()
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0172
+     * @tc.name      testFieldInit0172
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0172", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F172 = new A_F172()
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0173
+     * @tc.name      testFieldInit0173
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0173", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F173 = new A_F173()
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0174
+     * @tc.name      testFieldInit0174
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0174", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F174 = new A_F174()
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 7.3
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(7.3)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0175
+     * @tc.name      testFieldInit0175
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0175", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F175 = new A_F175()
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0176
+     * @tc.name      testFieldInit0176
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0176", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F176 = new A_F176()
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(4.5f)
+      a.field = 7.3f
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(7.3f)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0177
+     * @tc.name      testFieldInit0177
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0177", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F177 = new A_F177()
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(4n)
+      a.field = 5n
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(5n)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0178
+     * @tc.name      testFieldInit0178
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0178", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F178 = new A_F178()
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("abc")
+      a.field = "efg"
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("efg")
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0179
+     * @tc.name      testFieldInit0179
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0179", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F179 = new A_F179()
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'a')
+      a.field = c'b'
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'b')
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0180
+     * @tc.name      testFieldInit0180
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0180", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F180 = new A_F180()
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(false)
+      a.field = true
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(true)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0181
+     * @tc.name      testFieldInit0181
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0181", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F181 = new A_F181()
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0182
+     * @tc.name      testFieldInit0182
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0182", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F182 = new A_F182()
+      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field).assertEqual(undefined)
+      a.field = 5
+      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0183
+     * @tc.name      testFieldInit0183
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0183", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F183 = new A_F183()
+      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0184
+     * @tc.name      testFieldInit0184
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0184", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F184 = new A_F184()
+      expect(a.field instanceof Any).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof Any).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0185
+     * @tc.name      testFieldInit0185
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0185", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F185 = new A_F185()
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0186
+     * @tc.name      testFieldInit0186
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0186", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F186 = new A_F186()
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0187
+     * @tc.name      testFieldInit0187
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0187", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F187 = new A_F187()
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0188
+     * @tc.name      testFieldInit0188
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0188", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F188 = new A_F188()
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0189
+     * @tc.name      testFieldInit0189
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0189", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F189 = new A_F189()
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 7.3
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(7.3)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0190
+     * @tc.name      testFieldInit0190
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0190", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F190 = new A_F190()
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0191
+     * @tc.name      testFieldInit0191
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0191", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F191 = new A_F191()
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(4.5f)
+      a.field = 7.3f
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(7.3f)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0192
+     * @tc.name      testFieldInit0192
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0192", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F192 = new A_F192()
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(4n)
+      a.field = 5n
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(5n)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0193
+     * @tc.name      testFieldInit0193
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0193", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F193 = new A_F193()
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("abc")
+      a.field = "efg"
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("efg")
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0194
+     * @tc.name      testFieldInit0194
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0194", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F194 = new A_F194()
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'a')
+      a.field = c'b'
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'b')
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0195
+     * @tc.name      testFieldInit0195
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0195", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F195 = new A_F195()
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(false)
+      a.field = true
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(true)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0196
+     * @tc.name      testFieldInit0196
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0196", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F196 = new A_F196()
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0197
+     * @tc.name      testFieldInit0197
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0197", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F197 = new A_F197()
+      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field).assertEqual(undefined)
+      a.field = 5
+      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0198
+     * @tc.name      testFieldInit0198
+     * @tc.desc      Checking for changing field by setter.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0198", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F198 = new A_F198()
+      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+  })
+}
