@@ -159,13 +159,12 @@ export default function WebEngineVersion() {
     it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(1000);
-        Utils.registerEvent('SwitchNextPageStatic', true, 2026030936, done);
-        await Utils.msSleep(1000);
         Utils.emitEvent('SwitchNextPageStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerEvent('SwitchNextPageStatic', true, 2026030936, done);
         await Utils.msSleep(1000);
         inspector.sendEventByKey('ArkWebEngineVersion', 10, '');
         await Utils.msSleep(4000);
-        done();
       })
   })
 }
