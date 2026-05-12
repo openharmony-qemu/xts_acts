@@ -90,7 +90,7 @@ export default function backPressBehaviorList() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('backPressBehaviorList_0300', Level.LEVEL0, async () => {
+    it('backPressBehaviorList_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[backPressBehaviorList_0300] START');
       let strJsonDefault: string = getInspectorByKey('list_backPressBehavior_true');
       let objDefault: Record<string, ESObject> = JSON.parse(strJsonDefault);

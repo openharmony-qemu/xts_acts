@@ -52,7 +52,7 @@ export default function headerFooterStyle() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('listItemGroupHeaderStyle_0100', Level.LEVEL0, async () => {
+    it('listItemGroupHeaderStyle_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[listItemGroupHeaderStyle_0100] START');
       let strJson: string = getInspectorByKey('list_headerStyle_none');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
@@ -75,7 +75,7 @@ export default function headerFooterStyle() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('listItemGroupHeaderStyle_0200', Level.LEVEL0, async () => {
+    it('listItemGroupHeaderStyle_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[listItemGroupHeaderStyle_0200] START');
       let strJson: string = getInspectorByKey('list_headerStyle_floating');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
@@ -99,7 +99,7 @@ export default function headerFooterStyle() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('listItemGroupHeaderStyle_0300', Level.LEVEL0, async () => {
+    it('listItemGroupHeaderStyle_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[listItemGroupHeaderStyle_0300] START');
       let strJsonDefault: string = getInspectorByKey('list_headerStyle_none');
       let objDefault: Record<string, ESObject> = JSON.parse(strJsonDefault);
@@ -123,7 +123,7 @@ export default function headerFooterStyle() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('listItemGroupHeaderStyle_0400', Level.LEVEL0, async () => {
+    it('listItemGroupHeaderStyle_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[listItemGroupHeaderStyle_0400] START');
 
       let strJsonDefault: string = getInspectorByKey('list_headerStyle_none');
@@ -148,7 +148,7 @@ export default function headerFooterStyle() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('listItemGroupFooterStyle_0100', Level.LEVEL0, async () => {
+    it('listItemGroupFooterStyle_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[listItemGroupFooterStyle_0100] START');
       let strJson: string = getInspectorByKey('list_footerStyle_none');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
@@ -171,7 +171,7 @@ export default function headerFooterStyle() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('listItemGroupFooterStyle_0200', Level.LEVEL0, async () => {
+    it('listItemGroupFooterStyle_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[listItemGroupFooterStyle_0200] START');
 
       let strJson: string = getInspectorByKey('list_footerStyle_floating');
@@ -195,7 +195,7 @@ export default function headerFooterStyle() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('listItemGroupFooterStyle_0300', Level.LEVEL0, async () => {
+    it('listItemGroupFooterStyle_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[listItemGroupFooterStyle_0300] START');
       let strJsonDefault: string = getInspectorByKey('list_footerStyle_none');
       let objDefault: Record<string, ESObject> = JSON.parse(strJsonDefault);
@@ -219,7 +219,7 @@ export default function headerFooterStyle() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('listItemGroupFooterStyle_0400', Level.LEVEL0, async () => {
+    it('listItemGroupFooterStyle_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[listItemGroupFooterStyle_0400] START');
       let strJsonDefault: string = getInspectorByKey('list_footerStyle_none');
       let objDefault: Record<string, ESObject> = JSON.parse(strJsonDefault);
