@@ -1068,6 +1068,718 @@ export default function windowEventTest() {
 
     })
 
+    /**
+     * @tc.name   testSetWindowMaskWithAlpha_subWindow_normal_param
+     * @tc.number SUB_WINDOW_SETEVENTMASKWITHALPHA_PARAM_0100
+     * @tc.desc   验证子窗口上使用合法参数设置窗口掩码成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetWindowMaskWithAlpha_subWindow_normal_param', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testSetWindowMaskWithAlpha_subWindow_normal_param';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+
+      let subWindow = await windowStage.createSubWindow('testSetWindowMaskWithAlpha_subWindow_normal_param');
+      console.info(caseName + ' createSubWindow success');
+      await subWindow.setUIContent('testability/pages/Index1');
+      console.info(caseName + ' setUIContent success');
+      await subWindow.showWindow();
+      console.info(caseName + ' showWindow success');
+      await sleep(300);
+
+      try {
+        let windowLimits = subWindow.getWindowLimits();
+        let minWidth = windowLimits.minWidth as number;
+        let minHeight = windowLimits.minHeight as number;
+        console.info(caseName + ' getWindowLimits: minWidth=' + minWidth + ', minHeight=' + minHeight);
+        await subWindow.resize(minWidth, minHeight);
+        console.info(caseName + ' resize success: ' + minWidth + ' x ' + minHeight);
+        await sleep(500);
+
+        let maskWidth = subWindow.getWindowProperties().windowRect.width;
+        let maskHeight = subWindow.getWindowProperties().windowRect.height;
+        console.info(caseName + ' getWindowProperties: maskWidth=' + maskWidth + ', maskHeight=' + maskHeight);
+
+        let windowMask = new Uint8Array(maskWidth * maskHeight);
+        for (let i = 0; i < maskHeight; i++) {
+          for (let j = 0; j < maskWidth; j++) {
+            windowMask[i * maskWidth + j] = (i + j) > (maskWidth + maskHeight) / 2 ? 255 : 0;
+          }
+        }
+        console.info(caseName + ' create Uint8Array windowMask success, length=' + windowMask.length);
+
+        await subWindow.setWindowMaskWithAlpha(windowMask, maskWidth, maskHeight);
+        console.info(caseName + ' setWindowMaskWithAlpha success');
+        await subWindow.destroyWindow();
+        console.info(caseName + ' destroyWindow success');
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+        await subWindow.destroyWindow();
+        console.info(caseName + ' destroyWindow in catch');
+        if (err.code === 801) {
+          if (!canIUseRes) {
+            expect(err.code).assertEqual(801);
+          } else {
+            expect().assertFail();
+          }
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetWindowMaskWithAlpha_floatWindow_normal_param
+     * @tc.number SUB_WINDOW_SETEVENTMASKWITHALPHA_PARAM_0200
+     * @tc.desc   验证全局悬浮窗上使用合法参数设置窗口掩码成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowMaskWithAlpha_floatWindow_normal_param', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetWindowMaskWithAlpha_floatWindow_normal_param';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+
+      let config: window.Configuration = {
+        name: "testSetWindowMaskWithAlpha_floatWindow_normal_param",
+        windowType: window.WindowType.TYPE_FLOAT,
+        ctx: context
+      };
+
+      let subWindow: window.Window;
+      subWindow = await window.createWindow(config);
+      console.info(caseName + ' createWindow success');
+      try {
+        await subWindow.setUIContent('testability/pages/Index1');
+        console.info(caseName + ' setUIContent success');
+        await subWindow.showWindow();
+        console.info(caseName + ' showWindow success');
+        await sleep(300);
+
+        let windowLimits = subWindow.getWindowLimits();
+        let minWidth = windowLimits.minWidth as number;
+        let minHeight = windowLimits.minHeight as number;
+        console.info(caseName + ' getWindowLimits: minWidth=' + minWidth + ', minHeight=' + minHeight);
+        await subWindow.resize(minWidth, minHeight);
+        console.info(caseName + ' resize success: ' + minWidth + ' x ' + minHeight);
+        await sleep(500);
+
+        let maskWidth = subWindow.getWindowProperties().windowRect.width;
+        let maskHeight = subWindow.getWindowProperties().windowRect.height;
+        console.info(caseName + ' getWindowProperties: maskWidth=' + maskWidth + ', maskHeight=' + maskHeight);
+
+        let windowMask = new Uint8Array(maskWidth * maskHeight);
+        for (let i = 0; i < maskHeight; i++) {
+          for (let j = 0; j < maskWidth; j++) {
+            windowMask[i * maskWidth + j] = (i + j) > (maskWidth + maskHeight) / 2 ? 255 : 0;
+          }
+        }
+        console.info(caseName + ' create Uint8Array windowMask success, length=' + windowMask.length);
+
+        await subWindow.setWindowMaskWithAlpha(windowMask, maskWidth, maskHeight);
+        console.info(caseName + ' setWindowMaskWithAlpha success');
+        await subWindow.destroyWindow();
+        console.info(caseName + ' destroyWindow success');
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+        if (subWindow) {
+          await subWindow.destroyWindow();
+          console.info(caseName + ' destroyWindow in catch');
+        }
+        if (err.code === 801) {
+          if (!canIUseRes) {
+            expect(err.code).assertEqual(801);
+          } else {
+            expect().assertFail();
+          }
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetWindowMaskWithAlpha_alpha_all_transparent
+     * @tc.number SUB_WINDOW_SETEVENTMASKWITHALPHA_PARAM_0300
+     * @tc.desc   验证所有像素alpha值为0时设置窗口掩码成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowMaskWithAlpha_alpha_all_transparent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetWindowMaskWithAlpha_alpha_all_transparent';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+
+      let subWindow = await windowStage.createSubWindow('testSetWindowMaskWithAlpha_alpha_all_transparent');
+      console.info(caseName + ' createSubWindow success');
+      await subWindow.setUIContent('testability/pages/Index1');
+      console.info(caseName + ' setUIContent success');
+      await subWindow.showWindow();
+      console.info(caseName + ' showWindow success');
+      await sleep(300);
+
+      try {
+        let windowLimits = subWindow.getWindowLimits();
+        let minWidth = windowLimits.minWidth as number;
+        let minHeight = windowLimits.minHeight as number;
+        console.info(caseName + ' getWindowLimits: minWidth=' + minWidth + ', minHeight=' + minHeight);
+        await subWindow.resize(minWidth, minHeight);
+        console.info(caseName + ' resize success: ' + minWidth + ' x ' + minHeight);
+        await sleep(500);
+
+        let maskWidth = subWindow.getWindowProperties().windowRect.width;
+        let maskHeight = subWindow.getWindowProperties().windowRect.height;
+        console.info(caseName + ' getWindowProperties: maskWidth=' + maskWidth + ', maskHeight=' + maskHeight);
+
+        let windowMask = new Uint8Array(maskWidth * maskHeight);
+        console.info(caseName + ' create Uint8Array windowMask success, length=' + windowMask.length);
+        windowMask.fill(0);
+
+        await subWindow.setWindowMaskWithAlpha(windowMask, maskWidth, maskHeight);
+        console.info(caseName + ' setWindowMaskWithAlpha success');
+        await subWindow.destroyWindow();
+        console.info(caseName + ' destroyWindow success');
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+        await subWindow.destroyWindow();
+        console.info(caseName + ' destroyWindow in catch');
+        if (err.code === 801) {
+          if (!canIUseRes) {
+            expect(err.code).assertEqual(801);
+          } else {
+            expect().assertFail();
+          }
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetWindowMaskWithAlpha_alpha_all_opaque
+     * @tc.number SUB_WINDOW_SETEVENTMASKWITHALPHA_PARAM_0400
+     * @tc.desc   验证所有像素alpha值为255时设置窗口掩码成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowMaskWithAlpha_alpha_all_opaque', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetWindowMaskWithAlpha_alpha_all_opaque';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+
+      let subWindow = await windowStage.createSubWindow('testSetWindowMaskWithAlpha_alpha_all_opaque');
+      console.info(caseName + ' createSubWindow success');
+      await subWindow.setUIContent('testability/pages/Index1');
+      console.info(caseName + ' setUIContent success');
+      await subWindow.showWindow();
+      console.info(caseName + ' showWindow success');
+      await sleep(300);
+
+      try {
+        let windowLimits = subWindow.getWindowLimits();
+        let minWidth = windowLimits.minWidth as number;
+        let minHeight = windowLimits.minHeight as number;
+        console.info(caseName + ' getWindowLimits: minWidth=' + minWidth + ', minHeight=' + minHeight);
+        await subWindow.resize(minWidth, minHeight);
+        console.info(caseName + ' resize success: ' + minWidth + ' x ' + minHeight);
+        await sleep(500);
+
+        let maskWidth = subWindow.getWindowProperties().windowRect.width;
+        let maskHeight = subWindow.getWindowProperties().windowRect.height;
+        console.info(caseName + ' getWindowProperties: maskWidth=' + maskWidth + ', maskHeight=' + maskHeight);
+
+        let windowMask = new Uint8Array(maskWidth * maskHeight);
+        console.info(caseName + ' create Uint8Array windowMask success, length=' + windowMask.length);
+        windowMask.fill(255);
+
+        await subWindow.setWindowMaskWithAlpha(windowMask, maskWidth, maskHeight);
+        console.info(caseName + ' setWindowMaskWithAlpha success');
+        await subWindow.destroyWindow();
+        console.info(caseName + ' destroyWindow success');
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+        await subWindow.destroyWindow();
+        console.info(caseName + ' destroyWindow in catch');
+        if (err.code === 801) {
+          if (!canIUseRes) {
+            expect(err.code).assertEqual(801);
+          } else {
+            expect().assertFail();
+          }
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetWindowMaskWithAlpha_alpha_mixed_values
+     * @tc.number SUB_WINDOW_SETEVENTMASKWITHALPHA_PARAM_0500
+     * @tc.desc   验证使用不同alpha值（0-255范围内的多种值）设置窗口掩码成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowMaskWithAlpha_alpha_mixed_values', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetWindowMaskWithAlpha_alpha_mixed_values';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+
+      let subWindow = await windowStage.createSubWindow('testSetWindowMaskWithAlpha_alpha_mixed_values');
+      console.info(caseName + ' createSubWindow success');
+      await subWindow.setUIContent('testability/pages/Index1');
+      console.info(caseName + ' setUIContent success');
+      await subWindow.showWindow();
+      console.info(caseName + ' showWindow success');
+      await sleep(300);
+
+      try {
+        let windowLimits = subWindow.getWindowLimits();
+        let minWidth = windowLimits.minWidth as number;
+        let minHeight = windowLimits.minHeight as number;
+        console.info(caseName + ' getWindowLimits: minWidth=' + minWidth + ', minHeight=' + minHeight);
+        await subWindow.resize(minWidth, minHeight);
+        console.info(caseName + ' resize success: ' + minWidth + ' x ' + minHeight);
+        await sleep(500);
+
+        let maskWidth = subWindow.getWindowProperties().windowRect.width;
+        let maskHeight = subWindow.getWindowProperties().windowRect.height;
+        console.info(caseName + ' getWindowProperties: maskWidth=' + maskWidth + ', maskHeight=' + maskHeight);
+
+        let windowMask = new Uint8Array(maskWidth * maskHeight);
+        console.info(caseName + ' create Uint8Array windowMask success, length=' + windowMask.length);
+        let alphaValues = [0, 64, 128, 192, 255];
+        for (let i = 0; i < windowMask.length; i++) {
+          windowMask[i] = alphaValues[i % alphaValues.length];
+        }
+
+        await subWindow.setWindowMaskWithAlpha(windowMask, maskWidth, maskHeight);
+        console.info(caseName + ' setWindowMaskWithAlpha success');
+        await subWindow.destroyWindow();
+        console.info(caseName + ' destroyWindow success');
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+        await subWindow.destroyWindow();
+        console.info(caseName + ' destroyWindow in catch');
+        if (err.code === 801) {
+          if (!canIUseRes) {
+            expect(err.code).assertEqual(801);
+          } else {
+            expect().assertFail();
+          }
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetWindowMaskWithAlpha_maskWidth_not_match
+     * @tc.number SUB_WINDOW_SETEVENTMASKWITHALPHA_PARAM_0600
+     * @tc.desc   验证maskWidth不等于窗口宽度时抛出错误码1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSetWindowMaskWithAlpha_maskWidth_not_match', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'testSetWindowMaskWithAlpha_maskWidth_not_match';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+
+      let subWindow = await windowStage.createSubWindow('testSetWindowMaskWithAlpha_maskWidth_not_match');
+      console.info(caseName + ' createSubWindow success');
+      await subWindow.setUIContent('testability/pages/Index1');
+      console.info(caseName + ' setUIContent success');
+      await subWindow.showWindow();
+      console.info(caseName + ' showWindow success');
+      await sleep(300);
+
+      try {
+        let maskWidth = subWindow.getWindowProperties().windowRect.width;
+        let maskHeight = subWindow.getWindowProperties().windowRect.height;
+        console.info(caseName + ' getWindowProperties: maskWidth=' + maskWidth + ', maskHeight=' + maskHeight);
+
+        let windowMask = new Uint8Array(maskWidth * maskHeight);
+        console.info(caseName + ' create Uint8Array windowMask success, length=' + windowMask.length);
+        windowMask.fill(128);
+
+        await subWindow.setWindowMaskWithAlpha(windowMask, maskWidth + 10, maskHeight);
+        console.info(caseName + ' setWindowMaskWithAlpha success');
+        await subWindow.destroyWindow();
+        console.info(caseName + ' destroyWindow success');
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+        await subWindow.destroyWindow();
+        console.info(caseName + ' destroyWindow in catch');
+        if (err.code === 1300016) {
+          expect(err.code).assertEqual(1300016);
+        } else if (err.code === 801) {
+          if (!canIUseRes) {
+            expect(err.code).assertEqual(801);
+          } else {
+            expect().assertFail();
+          }
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetWindowMaskWithAlpha_maskHeight_not_match
+     * @tc.number SUB_WINDOW_SETEVENTMASKWITHALPHA_PARAM_0700
+     * @tc.desc   验证maskHeight不等于窗口高度时抛出错误码1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSetWindowMaskWithAlpha_maskHeight_not_match', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'testSetWindowMaskWithAlpha_maskHeight_not_match';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+
+      let subWindow = await windowStage.createSubWindow('testSetWindowMaskWithAlpha_maskHeight_not_match');
+      console.info(caseName + ' createSubWindow success');
+      await subWindow.setUIContent('testability/pages/Index1');
+      console.info(caseName + ' setUIContent success');
+      await subWindow.showWindow();
+      console.info(caseName + ' showWindow success');
+      await sleep(300);
+
+      try {
+        let maskWidth = subWindow.getWindowProperties().windowRect.width;
+        let maskHeight = subWindow.getWindowProperties().windowRect.height;
+        console.info(caseName + ' getWindowProperties: maskWidth=' + maskWidth + ', maskHeight=' + maskHeight);
+
+        let windowMask = new Uint8Array(maskWidth * maskHeight);
+        console.info(caseName + ' create Uint8Array windowMask success, length=' + windowMask.length);
+        windowMask.fill(128);
+
+        await subWindow.setWindowMaskWithAlpha(windowMask, maskWidth, maskHeight + 10);
+        console.info(caseName + ' setWindowMaskWithAlpha success');
+        await subWindow.destroyWindow();
+        console.info(caseName + ' destroyWindow success');
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+        await subWindow.destroyWindow();
+        console.info(caseName + ' destroyWindow in catch');
+        if (err.code === 1300016) {
+          expect(err.code).assertEqual(1300016);
+        } else if (err.code === 801) {
+          if (!canIUseRes) {
+            expect(err.code).assertEqual(801);
+          } else {
+            expect().assertFail();
+          }
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetWindowMaskWithAlpha_array_length_not_match
+     * @tc.number SUB_WINDOW_SETEVENTMASKWITHALPHA_PARAM_0800
+     * @tc.desc   验证windowMask数组长度不等于maskWidth×maskHeight时抛出错误码1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSetWindowMaskWithAlpha_array_length_not_match', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'testSetWindowMaskWithAlpha_array_length_not_match';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+
+      let subWindow = await windowStage.createSubWindow('testSetWindowMaskWithAlpha_array_length_not_match');
+      console.info(caseName + ' createSubWindow success');
+      await subWindow.setUIContent('testability/pages/Index1');
+      console.info(caseName + ' setUIContent success');
+      await subWindow.showWindow();
+      console.info(caseName + ' showWindow success');
+      await sleep(300);
+
+      try {
+        let maskWidth = subWindow.getWindowProperties().windowRect.width;
+        let maskHeight = subWindow.getWindowProperties().windowRect.height;
+        console.info(caseName + ' getWindowProperties: maskWidth=' + maskWidth + ', maskHeight=' + maskHeight);
+
+        let windowMask = new Uint8Array(maskWidth * maskHeight - 10);
+        console.info(caseName + ' create Uint8Array windowMask success, length=' + windowMask.length);
+        windowMask.fill(128);
+
+        await subWindow.setWindowMaskWithAlpha(windowMask, maskWidth, maskHeight);
+        console.info(caseName + ' setWindowMaskWithAlpha success');
+        await subWindow.destroyWindow();
+        console.info(caseName + ' destroyWindow success');
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+        await subWindow.destroyWindow();
+        console.info(caseName + ' destroyWindow in catch');
+        if (err.code === 1300016) {
+          expect(err.code).assertEqual(1300016);
+        } else if (err.code === 801) {
+          if (!canIUseRes) {
+            expect(err.code).assertEqual(801);
+          } else {
+            expect().assertFail();
+          }
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetWindowMaskWithAlpha_mainWindow_1300004
+     * @tc.number SUB_WINDOW_SETEVENTMASKWITHALPHA_ERROR_0100
+     * @tc.desc   验证在主窗口上调用抛出错误码1300004（未授权操作）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSetWindowMaskWithAlpha_mainWindow_1300004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'testSetWindowMaskWithAlpha_mainWindow_1300004';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+
+      try {
+        let maskWidth = windowClass.getWindowProperties().windowRect.width;
+        let maskHeight = windowClass.getWindowProperties().windowRect.height;
+        console.info(caseName + ' getWindowProperties: maskWidth=' + maskWidth + ', maskHeight=' + maskHeight);
+
+        let windowMask = new Uint8Array(maskWidth * maskHeight);
+        console.info(caseName + ' create Uint8Array windowMask success, length=' + windowMask.length);
+        windowMask.fill(128);
+
+        await windowClass.setWindowMaskWithAlpha(windowMask, maskWidth, maskHeight);
+        console.info(caseName + ' setWindowMaskWithAlpha success');
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+        if (err.code === 1300004) {
+          expect(err.code).assertEqual(1300004);
+        } else if (err.code === 801) {
+          if (!canIUseRes) {
+            expect(err.code).assertEqual(801);
+          } else {
+            expect().assertFail();
+          }
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetWindowMaskWithAlpha_destroyedWindow_1300002
+     * @tc.number SUB_WINDOW_SETEVENTMASKWITHALPHA_ERROR_0200
+     * @tc.desc   验证在已销毁的窗口上调用抛出错误码1300002（窗口状态异常）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSetWindowMaskWithAlpha_destroyedWindow_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = 'testSetWindowMaskWithAlpha_destroyedWindow_1300002';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+
+      let subWindow = await windowStage.createSubWindow('testSetWindowMaskWithAlpha_destroyedWindow_1300002');
+      console.info(caseName + ' createSubWindow success');
+      let maskWidth = subWindow.getWindowProperties().windowRect.width;
+      let maskHeight = subWindow.getWindowProperties().windowRect.height;
+      console.info(caseName + ' getWindowProperties: maskWidth=' + maskWidth + ', maskHeight=' + maskHeight);
+      await subWindow.destroyWindow();
+      console.info(caseName + ' destroyWindow success');
+      await sleep(500);
+
+      try {
+        let windowMask = new Uint8Array(maskWidth * maskHeight);
+        console.info(caseName + ' create Uint8Array windowMask success, length=' + windowMask.length);
+        windowMask.fill(128);
+
+        await subWindow.setWindowMaskWithAlpha(windowMask, maskWidth, maskHeight);
+        console.info(caseName + ' setWindowMaskWithAlpha success');
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+        expect(err.code).assertEqual(1300002);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetWindowMaskWithAlpha_and_clearWindowMask
+     * @tc.number SUB_WINDOW_SETEVENTMASKWITHALPHA_FUNCTION_0300
+     * @tc.desc   验证setWindowMaskWithAlpha与clearWindowMask配合使用清除掩码成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetWindowMaskWithAlpha_and_clearWindowMask', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testSetWindowMaskWithAlpha_and_clearWindowMask';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+
+      let subWindow = await windowStage.createSubWindow('testSetWindowMaskWithAlpha_and_clearWindowMask');
+      console.info(caseName + ' createSubWindow success');
+      await subWindow.setUIContent('testability/pages/Index1');
+      console.info(caseName + ' setUIContent success');
+      await subWindow.showWindow();
+      console.info(caseName + ' showWindow success');
+      await sleep(300);
+
+      try {
+        let windowLimits = subWindow.getWindowLimits();
+        let minWidth = windowLimits.minWidth as number;
+        let minHeight = windowLimits.minHeight as number;
+        console.info(caseName + ' getWindowLimits: minWidth=' + minWidth + ', minHeight=' + minHeight);
+        await subWindow.resize(minWidth, minHeight);
+        console.info(caseName + ' resize success: ' + minWidth + ' x ' + minHeight);
+        await sleep(500);
+
+        let maskWidth = subWindow.getWindowProperties().windowRect.width;
+        let maskHeight = subWindow.getWindowProperties().windowRect.height;
+        console.info(caseName + ' getWindowProperties: maskWidth=' + maskWidth + ', maskHeight=' + maskHeight);
+
+        let windowMask = new Uint8Array(maskWidth * maskHeight);
+        console.info(caseName + ' create Uint8Array windowMask success, length=' + windowMask.length);
+        for (let i = 0; i < maskHeight; i++) {
+          for (let j = 0; j < maskWidth; j++) {
+            windowMask[i * maskWidth + j] = (i + j) > (maskWidth + maskHeight) / 2 ? 255 : 0;
+          }
+        }
+
+        await subWindow.setWindowMaskWithAlpha(windowMask, maskWidth, maskHeight);
+        console.info(caseName + ' setWindowMaskWithAlpha success');
+
+        await subWindow.clearWindowMask();
+        console.info(caseName + ' clearWindowMask success');
+        await subWindow.destroyWindow();
+        console.info(caseName + ' destroyWindow success');
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+        await subWindow.destroyWindow();
+        console.info(caseName + ' destroyWindow in catch');
+        if (err.code === 801) {
+          if (!canIUseRes) {
+            expect(err.code).assertEqual(801);
+          } else {
+            expect().assertFail();
+          }
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetWindowMaskWithAlpha_largeWindowSize
+     * @tc.number SUB_WINDOW_SETEVENTMASKWITHALPHA_BOUNDARY_0200
+     * @tc.desc   验证在大尺寸窗口时设置掩码成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowMaskWithAlpha_largeWindowSize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetWindowMaskWithAlpha_largeWindowSize';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+
+      let subWindow = await windowStage.createSubWindow('testSetWindowMaskWithAlpha_largeWindowSize');
+      console.info(caseName + ' createSubWindow success');
+      await subWindow.setUIContent('testability/pages/Index1');
+      console.info(caseName + ' setUIContent success');
+      await subWindow.showWindow();
+      console.info(caseName + ' showWindow success');
+      await sleep(300);
+
+      try {
+        let displayInfo = display.getDefaultDisplaySync();
+        let largeWidth = Math.floor(displayInfo.width * 0.8);
+        let largeHeight = Math.floor(displayInfo.height * 0.6);
+        console.info(caseName + ' largeWidth:' + largeWidth + ', largeHeight:' + largeHeight);
+
+        await subWindow.resize(largeWidth, largeHeight);
+        console.info(caseName + ' resize success: ' + largeWidth + ' x ' + largeHeight);
+        await sleep(500);
+
+        let maskWidth = subWindow.getWindowProperties().windowRect.width;
+        let maskHeight = subWindow.getWindowProperties().windowRect.height;
+        console.info(caseName + ' getWindowProperties: maskWidth=' + maskWidth + ', maskHeight=' + maskHeight);
+
+        let windowMask = new Uint8Array(maskWidth * maskHeight);
+        console.info(caseName + ' create Uint8Array windowMask success, length=' + windowMask.length);
+        windowMask.fill(128);
+
+        await subWindow.setWindowMaskWithAlpha(windowMask, maskWidth, maskHeight);
+        console.info(caseName + ' setWindowMaskWithAlpha success');
+        await subWindow.destroyWindow();
+        console.info(caseName + ' destroyWindow success');
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+        await subWindow.destroyWindow();
+        console.info(caseName + ' destroyWindow in catch');
+        if (err.code === 801) {
+          if (!canIUseRes) {
+            expect(err.code).assertEqual(801);
+          } else {
+            expect().assertFail();
+          }
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    })
 
 
   })
