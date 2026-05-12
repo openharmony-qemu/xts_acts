@@ -190,7 +190,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_0100
      * @tc.name testStaticMethodInvoke001
      * @tc.desc Verify invoke() call with no arguments on void method
      * @tc.size MediumTest
@@ -206,7 +206,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_0200
      * @tc.name testStaticMethodInvoke002
      * @tc.desc Verify invoke() with arguments on method with parameter
      * @tc.size MediumTest
@@ -222,7 +222,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_0300
      * @tc.name testStaticMethodInvoke003
      * @tc.desc Verify invoke() with correct type and number of arguments
      * @tc.size MediumTest
@@ -238,7 +238,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_0400
      * @tc.name testStaticMethodInvoke004
      * @tc.desc Verify invoke() passing null as argument
      * @tc.size MediumTest
@@ -253,7 +253,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_0500
      * @tc.name testStaticMethodInvoke005
      * @tc.desc Verify invoke() passing undefined as argument
      * @tc.size MediumTest
@@ -268,7 +268,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_0600
      * @tc.name testStaticMethodInvoke006
      * @tc.desc Verify invoke() throws error for mismatched parameter type
      * @tc.size MediumTest
@@ -288,7 +288,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_0700
      * @tc.name testStaticMethodInvoke007
      * @tc.desc Verify invoke() throws error for insufficient arguments
      * @tc.size MediumTest
@@ -308,7 +308,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_0800
      * @tc.name testStaticMethodInvoke008
      * @tc.desc Verify invoke() throws error for excess arguments
      * @tc.size MediumTest
@@ -328,7 +328,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_0900
      * @tc.name testStaticMethodInvoke009
      * @tc.desc Verify invoke() returns int value correctly
      * @tc.size MediumTest
@@ -342,7 +342,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_1000
      * @tc.name testStaticMethodInvoke010
      * @tc.desc Verify invoke() returns string value correctly
      * @tc.size MediumTest
@@ -356,7 +356,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_1100
      * @tc.name testStaticMethodInvoke011
      * @tc.desc Verify invoke() returns boolean value correctly
      * @tc.size MediumTest
@@ -370,7 +370,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_1200
      * @tc.name testStaticMethodInvoke012
      * @tc.desc Verify invoke() on void method returns undefined
      * @tc.size MediumTest
@@ -386,7 +386,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_1300
      * @tc.name testStaticMethodInvoke013
      * @tc.desc Verify invoke() returns object correctly
      * @tc.size MediumTest
@@ -401,7 +401,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_1400
      * @tc.name testStaticMethodInvoke014
      * @tc.desc Verify invoke() on async method returns Promise
      * @tc.size MediumTest
@@ -417,7 +417,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_1500
      * @tc.name testStaticMethodInvoke015
      * @tc.desc Verify invoke() returns null correctly
      * @tc.size MediumTest
@@ -433,7 +433,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_1600
      * @tc.name testStaticMethodInvoke016
      * @tc.desc Verify invoke() returns undefined correctly
      * @tc.size MediumTest
@@ -449,7 +449,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_1700
      * @tc.name testStaticMethodInvoke017
      * @tc.desc Verify invoke() returns 0 correctly
      * @tc.size MediumTest
@@ -463,7 +463,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_1800
      * @tc.name testStaticMethodInvoke018
      * @tc.desc Verify invoke() returns false correctly
      * @tc.size MediumTest
@@ -477,7 +477,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_1900
      * @tc.name testStaticMethodInvoke019
      * @tc.desc Verify invoke() return value type is correct
      * @tc.size MediumTest
@@ -495,7 +495,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_2000
      * @tc.name testStaticMethodInvoke020
      * @tc.desc Verify invoke() return value can be type cast correctly
      * @tc.size MediumTest
@@ -511,7 +511,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_2100
      * @tc.name testStaticMethodInvoke021
      * @tc.desc Verify invoke() returns boundary int values
      * @tc.size MediumTest
@@ -526,7 +526,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_2200
      * @tc.name testStaticMethodInvoke022
      * @tc.desc Verify invoke() returns large complex object
      * @tc.size MediumTest
@@ -542,7 +542,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_2300
      * @tc.name testStaticMethodInvoke023
      * @tc.desc Verify invoke() catches TypeError for mismatched parameter type
      * @tc.size MediumTest
@@ -562,7 +562,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_2400
      * @tc.name testStaticMethodInvoke024
      * @tc.desc Verify invoke() catches TypeError for wrong number of arguments
      * @tc.size MediumTest
@@ -582,7 +582,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_2500
      * @tc.name testStaticMethodInvoke025
      * @tc.desc Verify invoke() propagates exception thrown by called method
      * @tc.size MediumTest
@@ -602,7 +602,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_2600
      * @tc.name testStaticMethodInvoke026
      * @tc.desc Verify invoke() on public method
      * @tc.size MediumTest
@@ -618,7 +618,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_2700
      * @tc.name testStaticMethodInvoke027
      * @tc.desc Verify invoke() on async method
      * @tc.size MediumTest
@@ -634,7 +634,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_2800
      * @tc.name testStaticMethodInvoke028
      * @tc.desc Verify invoke() on async method with parameters
      * @tc.size MediumTest
@@ -650,7 +650,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_2900
      * @tc.name testStaticMethodInvoke029
      * @tc.desc Verify invoke() on async method that throws error
      * @tc.size MediumTest
@@ -666,7 +666,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_3000
      * @tc.name testStaticMethodInvoke030
      * @tc.desc Verify invoke() on abstract class static method
      * @tc.size MediumTest
@@ -681,7 +681,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_3100
      * @tc.name testStaticMethodInvoke031
      * @tc.desc Verify invoke() on final class static method
      * @tc.size MediumTest
@@ -696,7 +696,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_3200
      * @tc.name testStaticMethodInvoke032
      * @tc.desc Verify invoke() on getter and setter methods
      * @tc.size MediumTest
@@ -717,7 +717,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_3300
      * @tc.name testStaticMethodInvoke033
      * @tc.desc Verify batch invoke of multiple static methods
      * @tc.size MediumTest
@@ -737,7 +737,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_3400
      * @tc.name testStaticMethodInvoke034
      * @tc.desc Verify chained invoke calls using setValue and getValue
      * @tc.size MediumTest
@@ -756,7 +756,7 @@ export default function StaticMethodInvokeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_INVOKE_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INVOKE_3500
      * @tc.name testStaticMethodInvoke035
      * @tc.desc Verify invoke() consistency across multiple calls
      * @tc.size MediumTest
