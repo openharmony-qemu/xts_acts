@@ -104,6 +104,7 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
               continuousTaskRequest.wantAgent = want;
               continuousTaskRequest.combinedTaskNotification = false;
               continuousTaskRequest.continuousTaskId = -1;
+              let callbackFlag = 1;
               backgroundTaskManager.startBackgroundRunning(ability.context, continuousTaskRequest).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0200 startBackgroundRunning promise run success.');
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0200 startBackgroundRunning promise res: %{public}s', JSON.stringify(res));
@@ -119,6 +120,8 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
 
                   backgroundTaskManager.stopBackgroundRunning(ability.context).then(() => {
                     hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0200 stopBackgroundRunning promise run success.');
+                    expect(callbackFlag).assertEqual(1);
+                    done();
                   }).catch((error: Error) => {
                     console.error(`SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_0200 stopBackgroundRunning failed. code is ${error.code} message is ${error.message}`);
                     done();
