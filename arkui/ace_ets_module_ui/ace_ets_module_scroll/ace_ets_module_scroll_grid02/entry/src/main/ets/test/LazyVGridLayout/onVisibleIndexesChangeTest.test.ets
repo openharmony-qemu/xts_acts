@@ -65,6 +65,7 @@ export default function onVisibleIndexesChangeTest() {
       expect(obj.$type).assertEqual('LazyVGridLayout');
 
       console.info('[onVisibleIndexesChangeTest_0100] END');
+      done();
     })
 
     /**
@@ -88,6 +89,7 @@ export default function onVisibleIndexesChangeTest() {
       console.info("[onVisibleIndexesChangeTest_0200] content: " + content);
       expect(content).assertContain('Start: 0');
       console.info('[onVisibleIndexesChangeTest_0200] END');
+      done();
     })
 
     /**
@@ -111,6 +113,7 @@ export default function onVisibleIndexesChangeTest() {
       console.info("[onVisibleIndexesChangeTest_0300] content: " + content);
       expect(content).assertContain('End: 5');
       console.info('[onVisibleIndexesChangeTest_0300] END');
+      done();
     })
 
     /**
@@ -144,6 +147,7 @@ export default function onVisibleIndexesChangeTest() {
       expect(content2).assertContain('End: -1');
 
       console.info('[onVisibleIndexesChangeTest_0400] END');
+      done();
     })
 
     /**
@@ -174,6 +178,7 @@ export default function onVisibleIndexesChangeTest() {
 
       expect(startIndex <= endIndex).assertTrue();
       console.info('[onVisibleIndexesChangeTest_0500] END');
+      done();
     })
   })
 }

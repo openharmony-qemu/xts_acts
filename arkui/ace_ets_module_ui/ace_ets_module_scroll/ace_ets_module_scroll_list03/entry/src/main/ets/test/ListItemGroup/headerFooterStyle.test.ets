@@ -63,6 +63,7 @@ export default function headerFooterStyle() {
       console.info('listItemGroupHeaderStyle_0100 NONE: ' + ListItemGroupHeaderFooterStyle.NONE);
       expect(ListItemGroupHeaderFooterStyle.NONE).assertEqual(0);
       console.info('[listItemGroupHeaderStyle_0100] END');
+      done();
     })
 
     /**
@@ -86,6 +87,7 @@ export default function headerFooterStyle() {
       expect(ListItemGroupHeaderFooterStyle.FLOATING).assertEqual(1);
 
       console.info('[listItemGroupHeaderStyle_0200] END');
+      done();
     })
 
     /**
@@ -109,6 +111,7 @@ export default function headerFooterStyle() {
       expect(obj.$type).assertEqual('ListItemGroup');
       expect(obj.$attrs.headerStyle).assertEqual(objDefault.$attrs.headerStyle);
       console.info('[listItemGroupHeaderStyle_0300] END');
+      done();
     })
 
     /**
@@ -133,6 +136,7 @@ export default function headerFooterStyle() {
       expect(obj.$type).assertEqual('ListItemGroup');
       expect(obj.$attrs.headerStyle).assertEqual(objDefault.$attrs.headerStyle);
       console.info('[listItemGroupHeaderStyle_0400] END');
+      done();
     })
 
     /**
@@ -155,6 +159,7 @@ export default function headerFooterStyle() {
       console.info('ListItemGroupArea_0200 NONE: ' + ListItemGroupHeaderFooterStyle.NONE);
       expect(ListItemGroupHeaderFooterStyle.NONE).assertEqual(0);
       console.info('[listItemGroupFooterStyle_0100] END');
+      done();
     })
 
     /**
@@ -178,6 +183,7 @@ export default function headerFooterStyle() {
       console.info('ListItemGroupArea_0200 NONE: ' + ListItemGroupHeaderFooterStyle.NONE);
       expect(ListItemGroupHeaderFooterStyle.FLOATING).assertEqual(1);
       console.info('[listItemGroupFooterStyle_0200] END');
+      done();
     })
 
     /**
@@ -201,6 +207,7 @@ export default function headerFooterStyle() {
       expect(obj.$type).assertEqual('ListItemGroup');
       expect(obj.$attrs.footerStyle).assertEqual(objDefault.$attrs.footerStyle);
       console.info('[listItemGroupFooterStyle_0300] END');
+      done();
     })
 
     /**
@@ -224,6 +231,7 @@ export default function headerFooterStyle() {
       expect(obj.$type).assertEqual('ListItemGroup');
       expect(obj.$attrs.footerStyle).assertEqual(objDefault.$attrs.footerStyle);
       console.info('[listItemGroupFooterStyle_0400] END');
+      done();
     })
   })
 }

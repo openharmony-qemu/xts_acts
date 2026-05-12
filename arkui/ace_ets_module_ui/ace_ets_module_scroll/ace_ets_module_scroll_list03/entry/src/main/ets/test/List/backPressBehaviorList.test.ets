@@ -102,6 +102,7 @@ export default function backPressBehaviorList() {
       expect(obj.$type).assertEqual('List');
       expect(obj.$attrs.backPressBehavior).assertEqual(objDefault.$attrs.backPressBehavior);
       console.info('[backPressBehaviorList_0300] END');
+      done();
     })
   })
 }
