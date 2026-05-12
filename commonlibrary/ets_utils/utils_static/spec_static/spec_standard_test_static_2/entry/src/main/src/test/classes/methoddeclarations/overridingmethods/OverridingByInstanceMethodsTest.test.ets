@@ -1,0 +1,211 @@
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
+
+
+async function sleep(time: int): Promise<int> {
+  return new Promise<int>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(0);
+    }, time);
+  });
+}
+
+abstract class A {
+  abstract run(): number;
+}
+
+class B extends A {
+  override run(): number {
+    let result = 5 + 5;
+    return result;
+  };
+}
+
+
+class A1 {
+  public m(): int {
+    return 1;
+  }
+}
+
+final class C extends A1 {
+  override m(): int {
+    return 5;
+  }
+
+  superm(): int {
+    return super.m();
+  }
+}
+
+class A2 {
+  public m(): int {
+    return 1;
+  }
+}
+
+final class C1 extends A2 {
+  override m(): int {
+    return 5;
+  }
+}
+
+class A3 {
+  public m(): int {
+    return 1;
+  }
+}
+
+final class C2 extends A3 {
+  override m(): int {
+    return 5;
+  }
+}
+
+class A4 {
+  protected m(): int {
+    return 1;
+  }
+}
+
+final class C3 extends A4 {
+  override m(): int {
+    return 5;
+  }
+}
+
+interface I {
+  m(): int;
+}
+
+class C4 implements I {
+  override m(): int {
+    return 5;
+  }
+}
+
+export default function OverridingByInstanceMethodsTest():void {
+  describe('OverridingByInstanceMethodsTest', () => {
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    })
+    beforeEach(async () => {
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
+      await sleep(30);
+    })
+    afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+    afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
+
+    /**
+     * @tc.number    SUB_OVERRIDING_BY_INSTANCE_METHODSTEST_0100
+     * @tc.name      testOverridingByInstanceMethods0001
+     * @tc.desc      Overriding abstract method
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingByInstanceMethods0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testOverridingByInstanceMethods0001';
+      let b: A = new B();
+      expect(b.run()).assertEqual(10);
+
+
+    });
+
+    /**
+     * @tc.number    SUB_OVERRIDING_BY_INSTANCE_METHODSTEST_0200
+     * @tc.name      testOverridingByInstanceMethods0002
+     * @tc.desc      Access to overridden method of superclass
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingByInstanceMethods0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testOverridingByInstanceMethods0002';
+      let instance: C = new C();
+      expect( instance.m() == 5 ).assertTrue();
+      expect( instance.superm() == 1 ).assertTrue();
+
+
+
+    });
+
+    /**
+     * @tc.number    SUB_OVERRIDING_BY_INSTANCE_METHODSTEST_0300
+     * @tc.name      testOverridingByInstanceMethods0003
+     * @tc.desc      Cast to superclass for access to overridden method
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingByInstanceMethods0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testOverridingByInstanceMethods0003';
+      let instance: A2 = new C1() as A2;
+      expect( instance.m() == 5 ).assertTrue();
+
+
+    });
+
+    /**
+     * @tc.number    SUB_OVERRIDING_BY_INSTANCE_METHODSTEST_0400
+     * @tc.name      testOverridingByInstanceMethods0004
+     * @tc.desc      Overriding method of superclass
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingByInstanceMethods0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testOverridingByInstanceMethods0004';
+      let instance: C2 = new C2();
+      expect( instance.m() == 5 ).assertTrue();
+
+
+
+    });
+
+    /**
+     * @tc.number    SUB_OVERRIDING_BY_INSTANCE_METHODSTEST_0500
+     * @tc.name      testOverridingByInstanceMethods0005
+     * @tc.desc      Overriding method of superclass
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingByInstanceMethods0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testOverridingByInstanceMethods0005';
+      let instance: C3 = new C3();
+      expect( instance.m() == 5 ).assertTrue();
+
+
+    });
+
+    /**
+     * @tc.number    SUB_OVERRIDING_BY_INSTANCE_METHODSTEST_0600
+     * @tc.name      testOverridingByInstanceMethods0006
+     * @tc.desc      Overriding method of superinterface
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testOverridingByInstanceMethods0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testOverridingByInstanceMethods0006';
+      let instance: C4 = new C4();
+      expect( instance.m() == 5 ).assertTrue();
+
+
+    });
+
+
+
+  })
+}
