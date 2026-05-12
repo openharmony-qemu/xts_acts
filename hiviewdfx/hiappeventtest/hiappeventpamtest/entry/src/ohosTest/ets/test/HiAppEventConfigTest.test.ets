@@ -633,53 +633,55 @@ export default function HiAppEventConfigTest() {
 
 
     /**
-     * @tc.name setEventConfig1.1_success_test
-     * @tc.desc setEventConfig1.1_success_test
+     * @tc.number  setEventConfig_success_test
+     * @tc.name setEventConfig_success_test
+     * @tc.desc setEventConfig_success_test
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('setEventConfig1.1_success_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('setEventConfig_success_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info("====> configEventPolicy1.1_401_test start");
       for (let i = 0; i < config_true.length; i++) {
         const entries = Object.entries(config_true[i]);
-        console.info("setEventConfig1.1_success_test Successfully set event policy111, index:", i);
+        console.info("setEventConfig_success_test Successfully set event policy111, index:", i);
         for (let j = 0; j < entries.length; j++) {
           const eventName = entries[j][0];
           const params = entries[j][1];
           await hiAppEvent.setEventConfig(eventName, params).then(() => {
-            console.info("setEventConfig1.1_success_test config_true Successfully set event policy, index:", i);
+            console.info("setEventConfig_success_test config_true Successfully set event policy, index:", i);
           }).catch((err: BusinessError) => {
             hilog.error(0x0000, 'configEventPolicy1.1',
               `Failed to set event policy. Code: ${err?.code}, message: ${err?.message}`);
-            console.info("setEventConfig1.1_success_test config_true Failed to set event policy, index:", i);
+            console.info("setEventConfig_success_test config_true Failed to set event policy, index:", i);
             expect(false).assertEqual(true);
           });
         }
       }
       done();
-      console.info("====> setEventConfig1.1_success_test end");
+      console.info("====> setEventConfig_success_test end");
     });
 
     /**
-     * @tc.name setEventConfig1.1_401_test
-     * @tc.desc setEventConfig1.1_401_test
+     * @tc.number  setEventConfig_401_test
+     * @tc.name setEventConfig_401_test
+     * @tc.desc setEventConfig_401_test
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('setEventConfig1.1_401_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info("====> setEventConfig1.1_401_test start");
+    it('setEventConfig_401_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info("====> setEventConfig_401_test start");
       for (let i = 0; i < config_401.length; i++) {
         const entries = Object.entries(config_401[i]);
-        console.info("setEventConfig1.1_401_test Successfully set event policy111, index:", i);
+        console.info("setEventConfig_401_test Successfully set event policy111, index:", i);
         for (let j = 0; j < entries.length; j++) {
           const eventName = entries[j][0];
           const params = entries[j][1];
           await hiAppEvent.setEventConfig(eventName, params).then(() => {
-            console.info("setEventConfig1.1_401_test config_401 Successfully set event policy, index:", i);
+            console.info("setEventConfig_401_test config_401 Successfully set event policy, index:", i);
           }).catch((err: BusinessError) => {
-            hilog.error(0x0000, 'setEventConfig1.1_401_test',
+            hilog.error(0x0000, 'setEventConfig_401_test',
               `Failed to set event policy. Code: ${err?.code}, message: ${err?.message}`);
             console.info("configEventPolicy1.1_401_test config_401 Failed to set event policy, index:", i);
             expect(Number(err.code) === 401).assertEqual(true);
@@ -691,36 +693,38 @@ export default function HiAppEventConfigTest() {
     });
 
     /**
-     * @tc.name configEventPolicy1.1_success_test
-     * @tc.desc configEventPolicy1.1_success_test
+     * @tc.number   configEventPolicy_success_test
+     * @tc.name configEventPolicy_success_test
+     * @tc.desc configEventPolicy_success_test
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('configEventPolicy1.1_success_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
-      console.info("====> configEventPolicy1.1_success_test start");
+    it('configEventPolicy_success_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
+      console.info("====> configEventPolicy_success_test start");
       for (let i = 0; i < policies_true.length; i++) {
         const policy = policies_true[i];
         await hiAppEvent.configEventPolicy(policy).then(() => {
-          console.info("configEventPolicy1.1_success_test policies_true Successfully set event policy222, index:", i);
+          console.info("configEventPolicy_success_test policies_true Successfully set event policy222, index:", i);
         }).catch((err: BusinessError) => {
           hilog.error(0x0000, 'configEventPolicy1.1', `Failed to set event policy. Code: ${err?.code}, message: ${err?.message}`);
           expect(false).assertEqual(true);
         });
       }
       done();
-      console.info("====> configEventPolicy1.1_success_test end");
+      console.info("====> configEventPolicy_success_test end");
     });
 
     /**
-     * @tc.name configEventPolicy1.1_hilog_test
-     * @tc.desc configEventPolicy1.1_hilog_test
+     * @tc.number   configEventPolicy_hilog_test
+     * @tc.name configEventPolicy_hilog_test
+     * @tc.desc configEventPolicy_hilog_test
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('configEventPolicy1.1_hilog_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
-      console.info("====> configEventPolicy1.1_hilog_test start");
+    it('configEventPolicy_hilog_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
+      console.info("====> configEventPolicy_hilog_test start");
       for (let i = 0; i < policies_hilog.length; i++) {
         const policy = policies_hilog[i];
         await hiAppEvent.configEventPolicy(policy).then(() => {
@@ -730,25 +734,26 @@ export default function HiAppEventConfigTest() {
         });
       }
       done();
-      console.info("====> configEventPolicy1.1_hilog_test end");
+      console.info("====> configEventPolicy_hilog_test end");
     });
 
     /**
-     * @tc.name configEventPolicy1.1_401_test
-     * @tc.desc configEventPolicy1.1_401_test
+     * @tc.number   configEventPolicy_401_test
+     * @tc.name configEventPolicy_401_test
+     * @tc.desc configEventPolicy_401_test
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL0
      */
-    it('configEventPolicy1.1_401_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
-      console.info("====> configEventPolicy1.1_401_test start");
+    it('configEventPolicy_401_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
+      console.info("====> configEventPolicy_401_test start");
       for (let i = 0; i < policies_401.length; i++) {
         const policy = policies_401[i];
         await hiAppEvent.configEventPolicy(policy).then(() => {
-          console.info("configEventPolicy1.1_401_test policies_401 Successfully set event policy, index:", i);
+          console.info("configEventPolicy_401_test policies_401 Successfully set event policy, index:", i);
         }).catch((err: BusinessError) => {
           hilog.error(0x0000, 'configEventPolicy1.1', `Failed to set event policy. Code: ${err?.code}, message: ${err?.message}`);
-          console.info("configEventPolicy1.1_401_test policies_401 Failed to set event policy, index:", i);
+          console.info("configEventPolicy_401_test policies_401 Failed to set event policy, index:", i);
           expect(Number(err.code) === 401).assertEqual(true);
         });
       }
