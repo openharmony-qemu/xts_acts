@@ -127,5 +127,45 @@ export default function WebEngineVersion() {
         await Utils.msSleep(2000);
         done();
       })
+
+    /**
+     * @tc.name        testActiveWebEngineVersionStatic005
+     * @tc.number      SUB_WEB_ACTIVE_WEB_ENGINE_VERSION_0500
+     * @tc.desc        test ArkWebEngineVersion M144
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('testActiveWebEngineVersionStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000)
+        Utils.registerEvent("testActiveWebEngineVersion005", 3, 2026030935, done);
+        await Utils.msSleep(2000)
+        Utils.emitEvent("emitActiveWebEngineVersion005", 10)
+        await Utils.msSleep(2000)
+        inspector.sendEventByKey('ArkWebEngineVersion', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
+    /**
+     * @tc.name        SwitchNextPageStatic
+     * @tc.number      SUB_WEB_ACTIVE_WEB_ENGINE_VERSION_0600
+     * @tc.desc        navigate to EnableAdvancedSecurityMode page
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 3
+     */
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.registerEvent('SwitchNextPageStatic', true, 2026030936, done);
+        await Utils.msSleep(1000);
+        Utils.emitEvent('SwitchNextPageStatic', 10)
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('ArkWebEngineVersion', 10, '');
+        await Utils.msSleep(4000);
+        done();
+      })
   })
 }
