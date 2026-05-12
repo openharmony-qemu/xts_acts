@@ -139,7 +139,6 @@ export default function ImplementingOptionalInterfacePropertiesTest():void {
       const TAG = 'testImplementingOptionalInterfaceProperties0001';
       let c = new C()
       expect(c.n).assertEqual(undefined)
-
     });
 
     /**
@@ -213,9 +212,6 @@ export default function ImplementingOptionalInterfacePropertiesTest():void {
       expect(a.n).assertEqual(1)
       a.n = 41
       expect(a.n).assertEqual(1)
-
-
-
     });
 
     /**

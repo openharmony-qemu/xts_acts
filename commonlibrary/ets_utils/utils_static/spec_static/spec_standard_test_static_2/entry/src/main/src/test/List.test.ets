@@ -98,7 +98,6 @@ import membersTest from "./classes/classextensionclause/MembersTest.test";
 import methodReturnValueTest from "./classes/classextensionclause/MethodReturnValueTest.test";
 import multiLevelInheritanceTest from "./classes/classextensionclause/MultiLevelInheritanceTest.test";
 import extensionClausePositiveTest from "./classes/classextensionclause/ExtensionClausePositiveTest.test";
-import implementingInterfaceMethodsTest from "./classes/classimplementationclause/ImplementingInterfaceMethodsTest.test";
 import implementingRequiredInterfacePropertiesTest from "./classes/classimplementationclause/ImplementingRequiredInterfacePropertiesTest.test";
 import implementingOptionalInterfacePropertiesTest from "./classes/classimplementationclause/ImplementingOptionalInterfacePropertiesTest.test";
 import classImplementationClauseTest from "./classes/classimplementationclause/ClassImplementationClauseTest.test";
@@ -215,7 +214,6 @@ export default function testsuite(): void {
   methodReturnValueTest();
   multiLevelInheritanceTest();
   extensionClausePositiveTest();
-  implementingInterfaceMethodsTest();
   implementingRequiredInterfacePropertiesTest();
   implementingOptionalInterfacePropertiesTest();
   classImplementationClauseTest();

@@ -251,7 +251,7 @@ export default function AccessorDeclarationsTest():void {
     })
 
     /**
-     * @tc.number    SUB_ACCESSOR_DECLARATIONSTEST_0100
+     * @tc.number    SUB_ACCESSOR_DECLARATIONS_TEST_0100
      * @tc.name      testAccessorDeclarations0001
      * @tc.desc      In the process of inheriting and overriding, accessors behave as methods. The getter parameter
      * type follows the covariance pattern, and the setter parameter type follows the contravariance pattern
@@ -265,7 +265,7 @@ export default function AccessorDeclarationsTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSOR_DECLARATIONSTEST_0200
+     * @tc.number    SUB_ACCESSOR_DECLARATIONS_TEST_0200
      * @tc.name      testAccessorDeclarations0002
      * @tc.desc      Getter throw error
      * @tc.size      MediumTest
@@ -284,7 +284,7 @@ export default function AccessorDeclarationsTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCESSOR_DECLARATIONSTEST_0300
+     * @tc.number    SUB_ACCESSOR_DECLARATIONS_TEST_0300
      * @tc.name      testAccessorDeclarations0003
      * @tc.desc      Field getter inheritance by child class
      * @tc.size      MediumTest
@@ -298,7 +298,7 @@ export default function AccessorDeclarationsTest():void {
     })
 
     /**
-     * @tc.number    SUB_ACCESSOR_DECLARATIONSTEST_0400
+     * @tc.number    SUB_ACCESSOR_DECLARATIONS_TEST_0400
      * @tc.name      testAccessorDeclarations0004
      * @tc.desc      Field getter with override modifier
      * @tc.size      MediumTest
@@ -314,7 +314,7 @@ export default function AccessorDeclarationsTest():void {
     })
 
     /**
-     * @tc.number    SUB_ACCESSOR_DECLARATIONSTEST_0500
+     * @tc.number    SUB_ACCESSOR_DECLARATIONS_TEST_0500
      * @tc.name      testAccessorDeclarations0005
      * @tc.desc      Field getter with private modifier call in class
      * @tc.size      MediumTest
@@ -328,7 +328,7 @@ export default function AccessorDeclarationsTest():void {
     })
 
     /**
-     * @tc.number    SUB_ACCESSOR_DECLARATIONSTEST_0600
+     * @tc.number    SUB_ACCESSOR_DECLARATIONS_TEST_0600
      * @tc.name      testAccessorDeclarations0006
      * @tc.desc      Field getter and setter declaration with value type
      * @tc.size      MediumTest
@@ -343,7 +343,7 @@ export default function AccessorDeclarationsTest():void {
     })
 
     /**
-     * @tc.number    SUB_ACCESSOR_DECLARATIONSTEST_0700
+     * @tc.number    SUB_ACCESSOR_DECLARATIONS_TEST_0700
      * @tc.name      testAccessorDeclarations0007
      * @tc.desc      Field getter with static modifier
      * @tc.size      MediumTest
@@ -356,7 +356,7 @@ export default function AccessorDeclarationsTest():void {
     })
 
     /**
-     * @tc.number    SUB_ACCESSOR_DECLARATIONSTEST_0800
+     * @tc.number    SUB_ACCESSOR_DECLARATIONS_TEST_0800
      * @tc.name      testAccessorDeclarations0008
      * @tc.desc      Field getter declaration with reference type
      * @tc.size      MediumTest
@@ -370,7 +370,7 @@ export default function AccessorDeclarationsTest():void {
     })
 
     /**
-     * @tc.number    SUB_ACCESSOR_DECLARATIONSTEST_0900
+     * @tc.number    SUB_ACCESSOR_DECLARATIONS_TEST_0900
      * @tc.name      testAccessorDeclarations0009
      * @tc.desc      Field getter declaration with value type
      * @tc.size      MediumTest
@@ -384,7 +384,7 @@ export default function AccessorDeclarationsTest():void {
     })
 
     /**
-     * @tc.number    SUB_ACCESSOR_DECLARATIONSTEST_1000
+     * @tc.number    SUB_ACCESSOR_DECLARATIONS_TEST_1000
      * @tc.name      testAccessorDeclarations0010
      * @tc.desc      Setter throw error
      * @tc.size      MediumTest
@@ -403,7 +403,7 @@ export default function AccessorDeclarationsTest():void {
     })
 
     /**
-     * @tc.number    SUB_ACCESSOR_DECLARATIONSTEST_1100
+     * @tc.number    SUB_ACCESSOR_DECLARATIONS_TEST_1100
      * @tc.name      testAccessorDeclarations0011
      * @tc.desc      Field setter with override modifier
      * @tc.size      MediumTest
@@ -421,7 +421,7 @@ export default function AccessorDeclarationsTest():void {
     })
 
     /**
-     * @tc.number    SUB_ACCESSOR_DECLARATIONSTEST_1200
+     * @tc.number    SUB_ACCESSOR_DECLARATIONS_TEST_1200
      * @tc.name      testAccessorDeclarations0012
      * @tc.desc      Field setter with private modifier call in class
      * @tc.size      MediumTest
@@ -436,7 +436,7 @@ export default function AccessorDeclarationsTest():void {
     })
 
     /**
-     * @tc.number    SUB_ACCESSOR_DECLARATIONSTEST_1300
+     * @tc.number    SUB_ACCESSOR_DECLARATIONS_TEST_1300
      * @tc.name      testAccessorDeclarations0013
      * @tc.desc      Field setter with static modifier
      * @tc.size      MediumTest
@@ -450,7 +450,7 @@ export default function AccessorDeclarationsTest():void {
     })
 
     /**
-     * @tc.number    SUB_ACCESSOR_DECLARATIONSTEST_1400
+     * @tc.number    SUB_ACCESSOR_DECLARATIONS_TEST_1400
      * @tc.name      testAccessorDeclarations0014
      * @tc.desc      Field setter declaration with reference type
      * @tc.size      MediumTest
@@ -465,7 +465,7 @@ export default function AccessorDeclarationsTest():void {
     })
 
     /**
-     * @tc.number    SUB_ACCESSOR_DECLARATIONSTEST_1500
+     * @tc.number    SUB_ACCESSOR_DECLARATIONS_TEST_1500
      * @tc.name      testAccessorDeclarations0015
      * @tc.desc      Field setter declaration with value type
      * @tc.size      MediumTest

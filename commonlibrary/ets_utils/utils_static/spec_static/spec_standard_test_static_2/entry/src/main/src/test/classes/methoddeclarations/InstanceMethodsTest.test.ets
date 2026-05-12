@@ -81,7 +81,7 @@ export default function InstanceMethodsTest():void {
     })
 
     /**
-     * @tc.number    SUB_INSTANCE_METHODSTEST_0100
+     * @tc.number    SUB_INSTANCE_METHODS_TEST_0100
      * @tc.name      testInstanceMethods0001
      * @tc.desc      Instance method call
      * @tc.size      MediumTest
@@ -95,7 +95,7 @@ export default function InstanceMethodsTest():void {
     });
 
     /**
-     * @tc.number    SUB_INSTANCE_METHODSTEST_0200
+     * @tc.number    SUB_INSTANCE_METHODS_TEST_0200
      * @tc.name      testInstanceMethods0002
      * @tc.desc      An instance method is always called with respect to an object that becomes the current object
      * which the keyword this refers to during method execution
@@ -108,20 +108,11 @@ export default function InstanceMethodsTest():void {
       let p1: Point = new Point(0, 0);
       let p2: Point = new Point(3, 4);
 
-      // When called on p1, 'this' refers to p1
       let dist1: number = p1.distanceBetween(p2);
       expect(dist1).assertEqual(5);
 
-      // When called on p2, 'this' refers to p2
       let dist2: number = p2.distanceBetween(p1);
       expect(dist2).assertEqual(5);
     });
-
-
-
-
-
-
-
   })
 }

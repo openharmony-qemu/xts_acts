@@ -83,7 +83,7 @@ export default function AbstractMethodsTest():void {
     })
 
     /**
-     * @tc.number    SUB_ABSTRACT_METHODSTEST_0100
+     * @tc.number    SUB_ABSTRACT_METHODS_TEST_0100
      * @tc.name      testAbstractMethods0001
      * @tc.desc      An abstract method can override non-abstract methods inherited from base classes or base interfaces
      * @tc.size      MediumTest

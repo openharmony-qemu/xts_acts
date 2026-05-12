@@ -1581,7 +1581,7 @@ export default function InitializeMembersTest():void {
       const TAG = 'testInitializeMembers0047';
       let child = new Child44();
       let x: number = child.constructorPublicVar;
-      arktest.assertEQ(x, 200);
+      expect(x).assertEqual(200);
     });
 
     /**

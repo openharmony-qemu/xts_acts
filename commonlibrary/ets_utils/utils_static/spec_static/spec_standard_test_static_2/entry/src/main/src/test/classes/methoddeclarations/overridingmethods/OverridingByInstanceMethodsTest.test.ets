@@ -133,7 +133,7 @@ export default function OverridingByInstanceMethodsTest():void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_BY_INSTANCE_METHODSTEST_0100
+     * @tc.number    SUB_OVERRIDING_BY_INSTANCE_METHODS_TEST_0100
      * @tc.name      testOverridingByInstanceMethods0001
      * @tc.desc      Overriding abstract method
      * @tc.size      MediumTest
@@ -147,7 +147,7 @@ export default function OverridingByInstanceMethodsTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_BY_INSTANCE_METHODSTEST_0200
+     * @tc.number    SUB_OVERRIDING_BY_INSTANCE_METHODS_TEST_0200
      * @tc.name      testOverridingByInstanceMethods0002
      * @tc.desc      Access to overridden method of superclass
      * @tc.size      MediumTest
@@ -162,7 +162,7 @@ export default function OverridingByInstanceMethodsTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_BY_INSTANCE_METHODSTEST_0300
+     * @tc.number    SUB_OVERRIDING_BY_INSTANCE_METHODS_TEST_0300
      * @tc.name      testOverridingByInstanceMethods0003
      * @tc.desc      Cast to superclass for access to overridden method
      * @tc.size      MediumTest
@@ -176,7 +176,7 @@ export default function OverridingByInstanceMethodsTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_BY_INSTANCE_METHODSTEST_0400
+     * @tc.number    SUB_OVERRIDING_BY_INSTANCE_METHODS_TEST_0400
      * @tc.name      testOverridingByInstanceMethods0004
      * @tc.desc      Overriding method of superclass
      * @tc.size      MediumTest
@@ -190,7 +190,7 @@ export default function OverridingByInstanceMethodsTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_BY_INSTANCE_METHODSTEST_0500
+     * @tc.number    SUB_OVERRIDING_BY_INSTANCE_METHODS_TEST_0500
      * @tc.name      testOverridingByInstanceMethods0005
      * @tc.desc      Overriding method of superclass
      * @tc.size      MediumTest
@@ -204,7 +204,7 @@ export default function OverridingByInstanceMethodsTest():void {
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_BY_INSTANCE_METHODSTEST_0600
+     * @tc.number    SUB_OVERRIDING_BY_INSTANCE_METHODS_TEST_0600
      * @tc.name      testOverridingByInstanceMethods0006
      * @tc.desc      Overriding method of superinterface
      * @tc.size      MediumTest

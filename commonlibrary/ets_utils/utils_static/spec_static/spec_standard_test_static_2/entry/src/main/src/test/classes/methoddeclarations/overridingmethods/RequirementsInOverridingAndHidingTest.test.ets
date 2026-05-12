@@ -131,7 +131,6 @@ export default function RequirementsInOverridingAndHidingTest():void {
       const TAG = 'testRequirementsInOverridingAndHiding0001';
       let c = new C()
       expect(c.test()).assertEqual(5)
-
     });
 
     /**
@@ -146,7 +145,6 @@ export default function RequirementsInOverridingAndHidingTest():void {
       const TAG = 'testRequirementsInOverridingAndHiding0002';
       let c = new C1()
       expect(c.test()).assertEqual(5)
-
     });
 
     /**
@@ -175,7 +173,6 @@ export default function RequirementsInOverridingAndHidingTest():void {
       const TAG = 'testRequirementsInOverridingAndHiding0004';
       let c = new C3()
       expect(c.test()).assertEqual(5)
-
     });
   })
 }

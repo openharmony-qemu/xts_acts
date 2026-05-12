@@ -164,139 +164,129 @@ export default function OverridingMethodsTest():void {
     })
 
     /**
-     * @tc.number    SUB_OVERRIDING_BY_INSTANCE_METHODSTEST_0100
-     * @tc.name      testOverridingByInstanceMethods0001
+     * @tc.number    SUB_OVERRIDING_METHODS_TEST_0100
+     * @tc.name      testOverridingMethods0001
      * @tc.desc      Override method declaration
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingByInstanceMethods0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOverridingByInstanceMethods0001';
+    it("testOverridingMethods0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testOverridingMethods0001';
       let instance: A = getB();
       expect(instance.foo()).assertEqual(5);
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_BY_INSTANCE_METHODSTEST_0200
-     * @tc.name      testOverridingByInstanceMethods0002
+     * @tc.number    SUB_OVERRIDING_METHODS_TEST_0200
+     * @tc.name      testOverridingMethods0002
      * @tc.desc      Override method declaration with keyword final
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingByInstanceMethods0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOverridingByInstanceMethods0002';
+    it("testOverridingMethods0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testOverridingMethods0002';
       let a: A1 = (() => new B1)()
       expect(a.foo()).assertEqual(5)
-
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_BY_INSTANCE_METHODSTEST_0300
-     * @tc.name      testOverridingByInstanceMethods0003
+     * @tc.number    SUB_OVERRIDING_METHODS_TEST_0300
+     * @tc.name      testOverridingMethods0003
      * @tc.desc      Overriding methods with default parameters
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingByInstanceMethods0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOverridingByInstanceMethods0003';
+    it("testOverridingMethods0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testOverridingMethods0003';
       let b: A2 = new B2()
       expect(b.foo()).assertEqual(2)
-
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_BY_INSTANCE_METHODSTEST_0400
-     * @tc.name      testOverridingByInstanceMethods0004
+     * @tc.number    SUB_OVERRIDING_METHODS_TEST_0400
+     * @tc.name      testOverridingMethods0004
      * @tc.desc      Overriding methods with default parameters
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingByInstanceMethods0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOverridingByInstanceMethods0004';
+    it("testOverridingMethods0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testOverridingMethods0004';
       let b: A3 = new B3()
       expect(b.foo(5)).assertEqual(5)
-
-
-
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_BY_INSTANCE_METHODSTEST_0500
-     * @tc.name      testOverridingByInstanceMethods0005
+     * @tc.number    SUB_OVERRIDING_METHODS_TEST_0500
+     * @tc.name      testOverridingMethods0005
      * @tc.desc      Overriding methods with default parameters
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingByInstanceMethods0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOverridingByInstanceMethods0005';
+    it("testOverridingMethods0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testOverridingMethods0005';
       let b: A4 = new B4()
       expect(b.foo()).assertEqual(undefined)
-
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_BY_INSTANCE_METHODSTEST_0600
-     * @tc.name      testOverridingByInstanceMethods0006
+     * @tc.number    SUB_OVERRIDING_METHODS_TEST_0600
+     * @tc.name      testOverridingMethods0006
      * @tc.desc      Overriding methods with default parameters
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingByInstanceMethods0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOverridingByInstanceMethods0006';
+    it("testOverridingMethods0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testOverridingMethods0006';
       let b: A4 = new B4()
       expect(b.foo(5)).assertEqual(5)
-
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_BY_INSTANCE_METHODSTEST_0700
-     * @tc.name      testOverridingByInstanceMethods0007
+     * @tc.number    SUB_OVERRIDING_METHODS_TEST_0700
+     * @tc.name      testOverridingMethods0007
      * @tc.desc      Overriding methods with default parameters
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingByInstanceMethods0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOverridingByInstanceMethods0007';
+    it("testOverridingMethods0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testOverridingMethods0007';
       let b: A5 = new B5()
       expect(b.foo()).assertEqual(undefined)
-
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_BY_INSTANCE_METHODSTEST_0800
-     * @tc.name      testOverridingByInstanceMethods0008
+     * @tc.number    SUB_OVERRIDING_METHODS_TEST_0800
+     * @tc.name      testOverridingMethods0008
      * @tc.desc      Overriding methods with default parameters
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingByInstanceMethods0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOverridingByInstanceMethods0008';
+    it("testOverridingMethods0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testOverridingMethods0008';
       let b: A6 = new B6()
       expect(b.foo()).assertEqual(undefined)
-
     });
 
     /**
-     * @tc.number    SUB_OVERRIDING_BY_INSTANCE_METHODSTEST_0900
-     * @tc.name      testOverridingByInstanceMethods0009
+     * @tc.number    SUB_OVERRIDING_METHODS_TEST_0900
+     * @tc.name      testOverridingMethods0009
      * @tc.desc      Overriding methods with default parameters
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testOverridingByInstanceMethods0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testOverridingByInstanceMethods0009';
+    it("testOverridingMethods0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testOverridingMethods0009';
       let instance: A7 = getB1()
       expect(instance.foo()).assertEqual(5)
-
     });
   })
 }

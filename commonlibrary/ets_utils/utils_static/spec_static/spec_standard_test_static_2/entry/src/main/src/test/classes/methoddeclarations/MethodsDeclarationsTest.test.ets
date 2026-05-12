@@ -237,7 +237,6 @@ export default function MethodsDeclarationsTest():void {
       expect(a.meth(['x'], undefined)).assertEqual('x1')
       expect(a.meth(undefined, [42.0])).assertEqual('a42')
       expect(a.meth(undefined, undefined)).assertEqual('a1')
-
     });
 
     /**
