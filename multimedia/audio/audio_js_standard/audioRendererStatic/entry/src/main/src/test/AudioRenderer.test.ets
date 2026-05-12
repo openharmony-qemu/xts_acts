@@ -35,7 +35,6 @@ export default function audioRendererTest() {
     let fdPath: string;
     let filePath: string = '';
     let stringParameter = "invalid_parameter";
-
     let LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
     let LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
     console.info(`${TagFrmwkRender}: Create AudioManger Object JS Framework`);
