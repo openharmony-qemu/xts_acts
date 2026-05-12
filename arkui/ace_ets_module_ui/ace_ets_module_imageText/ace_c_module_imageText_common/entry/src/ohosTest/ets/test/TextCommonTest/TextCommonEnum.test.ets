@@ -360,5 +360,145 @@ export default function TextEnumTest() {
       expect(nativeFunc.TextEnumTest_024()).assertEqual(0)
       console.info('SUB_ARKUI_OH_ArkUI_LineSpacingStyle_GetOnlyBetweenLines_2400 END');
     });
+
+    /**
+     * @tc.name   SUB_ARKUI_OH_ArkUI_SpanStyle_SetLineSpacingStyle_2500
+     * @tc.number SUB_ARKUI_OH_ArkUI_SpanStyle_SetLineSpacingStyle_2500
+     * @tc.desc   Test OH_ArkUI_SpanStyle_SetLineSpacingStyle: ARKUI_ERROR_CODE_PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_OH_ArkUI_SpanStyle_SetLineSpacingStyle_2500', Level.LEVEL1, async () => {
+      console.info('SUB_ARKUI_OH_ArkUI_SpanStyle_SetLineSpacingStyle_2500 START');
+      expect(nativeFunc.TextEnumTest_025()).assertEqual(0)
+      console.info('SUB_ARKUI_OH_ArkUI_SpanStyle_SetLineSpacingStyle_2500 END');
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_OH_ArkUI_SpanStyle_SetLineSpacingStyle_2600
+     * @tc.number SUB_ARKUI_OH_ArkUI_SpanStyle_SetLineSpacingStyle_2600
+     * @tc.desc   Test OH_ArkUI_SpanStyle_SetLineSpacingStyle: ARKUI_ERROR_CODE_PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_OH_ArkUI_SpanStyle_SetLineSpacingStyle_2600', Level.LEVEL1, async () => {
+      console.info('SUB_ARKUI_OH_ArkUI_SpanStyle_SetLineSpacingStyle_2600 START');
+      expect(nativeFunc.TextEnumTest_026()).assertEqual(0)
+      console.info('SUB_ARKUI_OH_ArkUI_SpanStyle_SetLineSpacingStyle_2600 END');
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_OH_ArkUI_SpanStyle_SetLineSpacingStyle_2700
+     * @tc.number SUB_ARKUI_OH_ArkUI_SpanStyle_SetLineSpacingStyle_2700
+     * @tc.desc   Test OH_ArkUI_SpanStyle_SetLineSpacingStyle: ARKUI_ERROR_CODE_PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_OH_ArkUI_SpanStyle_SetLineSpacingStyle_2700', Level.LEVEL1, async () => {
+      console.info('SUB_ARKUI_OH_ArkUI_SpanStyle_SetLineSpacingStyle_2700 START');
+      expect(nativeFunc.TextEnumTest_027()).assertEqual(0)
+      console.info('SUB_ARKUI_OH_ArkUI_SpanStyle_SetLineSpacingStyle_2700 END');
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_OH_ArkUI_SpanStyle_SetStart_2800
+     * @tc.number SUB_ARKUI_OH_ArkUI_SpanStyle_SetStart_2800
+     * @tc.desc   Test OH_ArkUI_SpanStyle_SetStart: ARKUI_ERROR_CODE_PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_OH_ArkUI_SpanStyle_SetStart_2800', Level.LEVEL1, async () => {
+      console.info('SUB_ARKUI_OH_ArkUI_SpanStyle_SetStart_2800 START');
+      expect(nativeFunc.TextEnumTest_028()).assertEqual(0)
+      console.info('SUB_ARKUI_OH_ArkUI_SpanStyle_SetStart_2800 END');
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_OH_ArkUI_SpanStyle_SetLength_2900
+     * @tc.number SUB_ARKUI_OH_ArkUI_SpanStyle_SetLength_2900
+     * @tc.desc   Test OH_ArkUI_SpanStyle_SetLength: ARKUI_ERROR_CODE_PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_OH_ArkUI_SpanStyle_SetLength_2900', Level.LEVEL1, async () => {
+      console.info('SUB_ARKUI_OH_ArkUI_SpanStyle_SetLength_2900 START');
+      expect(nativeFunc.TextEnumTest_029()).assertEqual(0)
+      console.info('SUB_ARKUI_OH_ArkUI_SpanStyle_SetLength_2900 END');
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_OH_ArkUI_LineHeightStyle_SetLineHeight_3000
+     * @tc.number SUB_ARKUI_OH_ArkUI_LineHeightStyle_SetLineHeight_3000
+     * @tc.desc   Test OH_ArkUI_LineHeightStyle_SetLineHeight: ARKUI_ERROR_CODE_PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_OH_ArkUI_LineHeightStyle_SetLineHeight_3000', Level.LEVEL1, async () => {
+      console.info('SUB_ARKUI_OH_ArkUI_LineHeightStyle_SetLineHeight_3000 START');
+      expect(nativeFunc.TextEnumTest_030().assertEqual(0)
+      console.info('SUB_ARKUI_OH_ArkUI_LineHeightStyle_SetLineHeight_3000 END');
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_OH_ArkUI_SpanStyle_GetLineSpacingStyle_3100
+     * @tc.number SUB_ARKUI_OH_ArkUI_SpanStyle_GetLineSpacingStyle_3100
+     * @tc.desc   Test OH_ArkUI_SpanStyle_GetLineSpacingStyle: ARKUI_ERROR_CODE_PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_OH_ArkUI_SpanStyle_GetLineSpacingStyle_3100', Level.LEVEL1, async () => {
+      console.info('SUB_ARKUI_OH_ArkUI_SpanStyle_GetLineSpacingStyle_3100 START');
+      expect(nativeFunc.TextEnumTest_031()).assertEqual(0)
+      console.info('SUB_ARKUI_OH_ArkUI_SpanStyle_GetLineSpacingStyle_3100 END');
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_OH_ArkUI_SpanStyle_GetLineSpacingStyle_3200
+     * @tc.number SUB_ARKUI_OH_ArkUI_SpanStyle_GetLineSpacingStyle_3200
+     * @tc.desc   Test OH_ArkUI_SpanStyle_GetLineSpacingStyle: ARKUI_ERROR_CODE_PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_OH_ArkUI_SpanStyle_GetLineSpacingStyle_3200', Level.LEVEL1, async () => {
+      console.info('SUB_ARKUI_OH_ArkUI_SpanStyle_GetLineSpacingStyle_3200 START');
+      expect(nativeFunc.TextEnumTest_032()).assertEqual(0)
+      console.info('SUB_ARKUI_OH_ArkUI_SpanStyle_GetLineSpacingStyle_3200 END');
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_OH_ArkUI_SpanStyle_GetLineSpacingStyle_3300
+     * @tc.number SUB_ARKUI_OH_ArkUI_SpanStyle_GetLineSpacingStyle_3300
+     * @tc.desc   Test OH_ArkUI_SpanStyle_GetLineSpacingStyle: ARKUI_ERROR_CODE_PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_OH_ArkUI_SpanStyle_GetLineSpacingStyle_3300', Level.LEVEL1, async () => {
+      console.info('SUB_ARKUI_OH_ArkUI_SpanStyle_GetLineSpacingStyle_3300 START');
+      expect(nativeFunc.TextEnumTest_033()).assertEqual(0)
+      console.info('SUB_ARKUI_OH_ArkUI_SpanStyle_GetLineSpacingStyle_3300 END');
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_OH_ArkUI_SpanStyle_GetLineSpacingStyle_3400
+     * @tc.number SUB_ARKUI_OH_ArkUI_SpanStyle_GetLineSpacingStyle_3400
+     * @tc.desc   Test OH_ArkUI_SpanStyle_GetLineSpacingStyle: ARKUI_ERROR_CODE_PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_ARKUI_OH_ArkUI_SpanStyle_GetLineSpacingStyle_3400', Level.LEVEL1, async () => {
+      console.info('SUB_ARKUI_OH_ArkUI_SpanStyle_GetLineSpacingStyle_3400 START');
+      expect(nativeFunc.TextEnumTest_034()).assertEqual(0)
+      console.info('SUB_ARKUI_OH_ArkUI_SpanStyle_GetLineSpacingStyle_3400 END');
+    });
   });
 }
