@@ -2166,7 +2166,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
       let customSymbol: i18n.SymbolNumberFormatOptions = {'plusSign': 'B', signDisplay: 'always'};
       let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
       let expectedValue: string[] = ["B", "100", " – ", "B", "101"];
-      let expectedType: string[] = ["plusSign", "integer", "literal", "plusSign", "integer"];
+      let expectedType: string[] = ["plusSign", "integer", "literal", "plusSign", "integer"]
       let numberFormat: Array<Intl.NumberFormatPart> = symbolFormat.formatRangeToParts(100, 101);
       console.log('test_SymbolNumberFormat_static_2900 result:' + JSON.stringify(numberFormat));
       for (let i = 0; i < numberFormat.length; i++) {
