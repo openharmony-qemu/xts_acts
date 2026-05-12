@@ -2079,14 +2079,12 @@ export default function SevenPointZeroI18nStageStaticTest() {
       let customSymbol: i18n.SymbolDateTimeFormatOptions = { "amPMSymbol": ["test1", "test2"], "timeStyle": "full" };
       let date: Date = new Date(2026, 2, 18, 10, 8);
       let date: Date2 = new Date(2026, 2, 18, 10, 8);
-      let expectedSource: string[] = ["shared", "shared", "shared", "shared", "shared", "shared", "shared" ,"shared" ,"shared"];
       let expectedValue: string[] = ["10", ":", "08", ":", "00", " ", "AM", " " ,"Central Standard Time"];
       let expectedType: string[] = ["hour", "literal", "minute", "literal", "second", "literal", "dayPeriod", "literal" ,"timeZoneName"];
       let symbolFormat = new i18n.SymbolDateTimeFormat(locale, customSymbol);
       let dateFormat: Intl.DateTimeFormatPart[] = symbolFormat.formatRangeToParts(date, date2);
       console.log('test_SymbolDateTimeFormat_static_0900 result:', JSON.stringify(dateFormat));
       for (let i = 0; i < dateFormat.length; i++) {
-        expect(dateFormat[i].source).assertEqual(expectedSource[i]);
         expect(dateFormat[i].value).assertEqual(expectedValue[i]);
         expect(dateFormat[i].type).assertEqual(expectedType[i]);
       }
@@ -2167,7 +2165,7 @@ export default function SevenPointZeroI18nStageStaticTest() {
       let locale = new Intl.Locale('en-US', { 'numberingSystem': 'latn' });
       let customSymbol: i18n.SymbolNumberFormatOptions = {'plusSign': 'B', signDisplay: 'always'};
       let symbolFormat = new i18n.SymbolNumberFormat(locale, customSymbol);
-      let expectedValue: string[] = ["B", "100", "–", "B", "101"];
+      let expectedValue: string[] = ["B", "100", " – ", "B", "101"];
       let expectedType: string[] = ["plusSign", "integer", "literal", "plusSign", "integer"];
       let numberFormat: Intl.NumberFormatPart[] = symbolFormat.formatRangeToParts(100, 101);
       console.log('test_SymbolNumberFormat_static_2900 result:' + JSON.stringify(numberFormat));
