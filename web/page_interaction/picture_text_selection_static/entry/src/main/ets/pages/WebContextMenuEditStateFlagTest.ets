@@ -22,7 +22,7 @@ import events_emitter from '@ohos.events.emitter';
 import { BusinessError, Callback, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { canIUse } from '@internal.full.global'
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -24,7 +24,7 @@ import { State } from '@ohos.arkui.stateManagement'
 import emitter from '@ohos.events.emitter';
 import { Callback, RecordData } from '@ohos.base'
 
-class testObj {
+export class testObj {
   constructor() {
   }
 
@@ -38,7 +38,7 @@ class testObj {
   }
 }
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 

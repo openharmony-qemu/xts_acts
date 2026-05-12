@@ -47,7 +47,7 @@ export default function GraphicImagePixelMapErrorCode() {
         } catch(error) {
           console.error(msgStr + 'failed', error.code);
           console.info(msgStr + 'end');
-          expect(error.code).assertEqual(7600305)
+          expect(error.code).assertEqual(7600301)
           done();
         }
       })
@@ -1160,6 +1160,72 @@ export default function GraphicImagePixelMapErrorCode() {
         } catch(error) {
           console.error(msgStr + 'failed', error.code);
           expect(error.code).assertEqual(7600106);
+          done();
+        } finally {
+          await pixelMap.release();
+        }
+      })
+
+    /**
+     * @tc.name   GraphicImagePixelMapErrorCode_3300
+     * @tc.number SUB_GRAPHIC_image_graphicImagePixelMapErrorCode_3300
+     * @tc.desc   applyScale error code 7600206.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('GraphicImagePixelMapErrorCode_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data GraphicImagePixelMapErrorCode_3300 ';
+        console.info(msgStr + 'begin');
+        let buffer: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: true,
+          size: { height: 4, width: 6 },
+          pixelFormat: image.PixelMapFormat.RGBA_8888
+        }
+        let pixelMap = await image.createPixelMapFromPixels(buffer, opts);
+        try {
+          await pixelMap.applyScale(0, 1.0);
+          console.info(msgStr + 'failed, expected error');
+          expect().assertFail();
+          done();
+        } catch(error) {
+          console.info(msgStr + 'caught error', error.code);
+          expect(error.code === 7600206).assertTrue();
+          done();
+        } finally {
+          await pixelMap.release();
+        }
+      })
+
+    /**
+     * @tc.name   GraphicImagePixelMapErrorCode_3400
+     * @tc.number SUB_GRAPHIC_image_graphicImagePixelMapErrorCode_3400
+     * @tc.desc   applyScale error code 7600206.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('GraphicImagePixelMapErrorCode_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data GraphicImagePixelMapErrorCode_3400 ';
+        console.info(msgStr + 'begin');
+        let buffer: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: true,
+          size: { height: 4, width: 6 },
+          pixelFormat: image.PixelMapFormat.RGBA_8888
+        }
+        let pixelMap = await image.createPixelMapFromPixels(buffer, opts);
+        try {
+          pixelMap.applyScaleSync(0, 1.0);
+          console.info(msgStr + 'failed, expected error');
+          expect().assertFail();
+          done();
+        } catch(error) {
+          console.info(msgStr + 'caught error', error.code);
+          expect(error.code === 7600206).assertTrue();
           done();
         } finally {
           await pixelMap.release();

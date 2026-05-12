@@ -1902,6 +1902,7 @@ export default function applicationManagerTest() {
         let result: Array<string> = applicationManager.getAllowedDistributeAbilityConnBundles(SELFWANT, applicationManager.ServiceType.COLLABORATION_SERVICE, DEFAULT_USER_ID);
         expect(Array.isArray(result)).assertTrue();
         expect(result.length ===0).assertTrue();
+        restrictions.setDisallowedPolicyForAccount(SELFWANT, 'distributedTransmissionOutgoing', true, DEFAULT_USER_ID);
         applicationManager.addAllowedDistributeAbilityConnBundles(SELFWANT, APP_IDS_1, applicationManager.ServiceType.COLLABORATION_SERVICE, DEFAULT_USER_ID);
         result = applicationManager.getAllowedDistributeAbilityConnBundles(SELFWANT, applicationManager.ServiceType.COLLABORATION_SERVICE, DEFAULT_USER_ID);
         expect(result.length === APP_IDS_1.length).assertTrue();

@@ -45,6 +45,14 @@ function isDevicePC(): boolean {
   return deviceType === '2in1';
 }
 
+function isDevicewearable(): boolean {
+  return deviceType === 'wearable';
+}
+
+function isDeviceSupportDoubleClick(): boolean {
+  return isDevicewearable();
+}
+
 function isDeviceSupportInputMethod(): boolean {
   return isDevicePhone() || isDeviceTablet();
 }
@@ -4951,5 +4959,138 @@ export default function settingUiJsunit() {
       }
       done();
     });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_0100
+   * @tc.number SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_0100
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: Function) => {
+      if (!isDeviceSupportDoubleClick()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openDoubleClickSettingsPage(null);
+      } catch (err) {
+        console.error("[openDoubleClickSettingsPage_invalid_context] error = " + err);
+        code = err?.code;
+      }
+      expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_undefined_0200
+   * @tc.number SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_undefined_0200
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_undefined_0200',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: Function) => {
+      if (!isDeviceSupportDoubleClick()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openDoubleClickSettingsPage(undefined);
+      } catch (err) {
+        console.error("[openDoubleClickSettingsPage_invalid_context_undefined] error = " + err);
+        code = err?.code;
+      }
+      expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_applicationContext_0300
+   * @tc.number SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_applicationContext_0300
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openDoubleClickSettingsPage_invalid_context_applicationContext_0300',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: Function) => {
+      if (!isDeviceSupportDoubleClick()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openDoubleClickSettingsPage(mContext?.getApplicationContext());
+      } catch (err) {
+        console.error("[openDoubleClickSettingsPage_invalid_context_applicationContext] error = " + err);
+        code = err?.code;
+      }
+      expect(code).assertEqual(SETTINGS_PARAM_INVALID_CODE);
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openDoubleClickSettingsPage_valid_param_0400
+   * @tc.number SUB_Applications_Settings_openDoubleClickSettingsPage_valid_param_0400
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openDoubleClickSettingsPage_valid_param_0400',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: Function) => {
+      if (!isDeviceSupportDoubleClick()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openDoubleClickSettingsPage(mContext);
+        expect(code).assertEqual(0);
+      } catch (err) {
+        console.error("[openDoubleClickSettingsPage_valid_param] error = " + err);
+        code = err?.code;
+        expect(code).assertEqual(16900020);
+      }
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_isDoubleClickAppForSelf_false_return_0100
+   * @tc.number SUB_Applications_Settings_isDoubleClickAppForSelf_false_return_0100
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_isDoubleClickAppForSelf_false_return_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: Function) => {
+      if (!isDeviceSupportDoubleClick()) {
+        done();
+        return;
+      }
+      let re = false;
+      let code = 0;
+      try {
+        re = await settings.isDoubleClickAppForSelf();
+        expect(re).assertEqual(false);
+      } catch (err) {
+        console.error("[isDoubleClickAppForSelf_false_return] error = " + err);
+        expect(code).assertEqual(0);
+      }
+      done();
+    });
+
   })
 }

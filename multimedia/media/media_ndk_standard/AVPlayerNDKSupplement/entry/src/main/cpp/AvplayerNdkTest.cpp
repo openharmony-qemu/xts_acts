@@ -964,6 +964,52 @@ static napi_value NAPI_TestSetTargetVideoWindowSize(napi_env env, napi_callback_
     return result;
 }
 
+static napi_value NAPI_TestSetTargetVideoWindowSizeErr(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    napi_create_object(env, &result);
+    size_t argc = 4;
+    napi_value args[PARAM_4] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t fd = 0;
+    int64_t offset;
+    int64_t size;
+    ExtractFileDescriptor(env, args[PARAM_0], fd, offset, size);
+    int32_t width;
+    int32_t height;
+    napi_get_value_int32(env, args[PARAM_1], &width);
+    napi_get_value_int32(env, args[PARAM_2], &height);
+    bool isEnable = false;
+    napi_get_value_bool(env, args[PARAM_3], &isEnable);
+    NdkAVPlayerUser *ndkAVPlayerUser = new NdkAVPlayerUser();
+    ndkAVPlayerUser->width = width;
+    ndkAVPlayerUser->height = height;
+    ndkAVPlayerUser->stateChangeFuncs_ = {
+        { AV_INITIALIZED,
+            [ndkAVPlayerUser, isEnable]() {
+                ndkAVPlayerUser->playbackStrategy = OH_AVPlaybackStrategy_Create();
+                OH_AVErrCode ret = OH_AVPlaybackStrategy_SetSuperResolutionEnable(
+                    ndkAVPlayerUser->playbackStrategy, isEnable);
+                LOG("SetSuperResolutionEnable ret:%{public}d", ret);
+                ret = OH_AVPlayer_SetPlaybackStrategy(ndkAVPlayerUser->player, ndkAVPlayerUser->playbackStrategy);
+                LOG("SetPlaybackStrategy ret:%{public}d", ret);
+                ret = OH_AVPlayer_SetVideoSuperResolutionEnable(ndkAVPlayerUser->player, true);
+                LOG("SetVideoSuperResolutionEnable in INITIALIZED ret:%{public}d", ret);
+            }
+        },
+        { AV_PLAYING,
+            [ndkAVPlayerUser, isEnable]() {
+                ndkAVPlayerUser->errorCode = OH_AVPlayer_SetTargetVideoWindowSize(ndkAVPlayerUser->player,
+                    ndkAVPlayerUser->width, ndkAVPlayerUser->height);
+            }
+        },
+    };
+    ndkAVPlayerUser->InitAVPlayer(fd, offset, size);
+    SetInt32NamedProperty(env, result, "result", SUCCESS);
+    SetUserDataProperty(env, result, "userData", &ndkAVPlayerUser);
+    return result;
+}
+
 static napi_value NAPI_TestSetTargetVideoWindowSizeStatusIdle(napi_env env, napi_callback_info info)
 {
     napi_value result;
@@ -3078,6 +3124,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testSetVideoSuperResolutionForStatusIdle", nullptr, NAPI_TestSetVideoSuperResolutionStatusIdle, nullptr,
             nullptr, nullptr, napi_default, nullptr},
         {"testSetTargetVideoWindowSize", nullptr, NAPI_TestSetTargetVideoWindowSize, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"testSetTargetVideoWindowSizeErr", nullptr, NAPI_TestSetTargetVideoWindowSizeErr, nullptr, nullptr, nullptr,
             napi_default, nullptr},
         {"releaseUserData", nullptr, NAPI_ReleaseUserData, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testSetTargetVideoWindowSizeError", nullptr, NAPI_TestSetTargetVideoWindowSizeError, nullptr, nullptr,

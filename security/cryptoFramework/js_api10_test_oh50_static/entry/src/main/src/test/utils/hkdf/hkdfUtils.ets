@@ -257,6 +257,7 @@ export {
   hkdfSpec,
   getMdLen,
   mdData,
+  kdfVector,
   HKDF_DIGEST_SPEC,
   HKDF_MODE_SPEC,
   KAT_VECTOR_DATA

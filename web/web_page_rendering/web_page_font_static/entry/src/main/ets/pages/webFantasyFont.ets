@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,14 +22,14 @@ import { Callback } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { CopyOptions,WebMediaOptions,Entry, Component, Column, Row, Button,Text,ClickEvent, Web } from "@ohos.arkui.component";
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
 @Entry
 @Component
 struct webFantasyFont {
-  stringObj: StringFields  = new StringFields ();
+  stringObj: StringFields  = new StringFields();
   @State minFontSize: number = 8
   @State defaultFontSize: number = 13
   @State minLogicalFontSize: number = 8

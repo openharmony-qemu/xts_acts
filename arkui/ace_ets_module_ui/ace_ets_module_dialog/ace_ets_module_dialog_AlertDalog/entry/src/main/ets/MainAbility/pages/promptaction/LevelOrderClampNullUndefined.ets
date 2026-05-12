@@ -24,6 +24,7 @@
  	 
  	   build() {
  	     Column() {
+		 	Button('close').id('closeToast')
  	       Button('OpenToast1')
  	         .height(100)
  	         .type(ButtonType.Capsule)

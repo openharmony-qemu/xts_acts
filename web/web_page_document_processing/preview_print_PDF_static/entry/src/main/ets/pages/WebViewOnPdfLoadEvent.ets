@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -24,14 +24,14 @@ import { RecordData } from '@ohos.base';
 import { Driver, ON } from '@ohos.UiTest';
 import {canIUse} from '@internal.full.global'
 
-class StringFields {
+export class StringFields {
   str: string = '';
 }
 
 @Entry
 @Component
 struct WebComponent {
-  stringObj: StringFields  = new StringFields ();
+  stringObj: StringFields  = new StringFields();
   controller: webview.WebviewController = new webview.WebviewController(undefined);
   @State eventInfoUrl:string = '';
   @State result:number = 0;

@@ -2241,6 +2241,58 @@ export default function CameraPhotoSessionTest() {
       }
     })
 
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0500
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0500
+     * @tc.desc      test sub multimedia camera session trigger exposureState callback
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0500', Level.LEVEL1, async (done: Function) => {
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info("Enter SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0500")
+        createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
+        await startCameraSession(0);
+        let isExposureStart = false;
+        let isExposureFinish = false;
+
+        //--------------------------------------------测试过程------------------------------------------------------
+        mCameraSession.onExposureStateChange((state: camera.ExposureState) => {
+          console.info(`on exposureStateChange, state: ${state}`)
+          if (state == camera.ExposureState.EXPOSURE_STATE_SCAN) {
+            isExposureStart = true
+          } else if (state == camera.ExposureState.EXPOSURE_STATE_CONVERGED) {
+            isExposureFinish = true
+          }
+        });
+
+        mCameraSession.start()
+
+        let startTime = Date.now()
+        while (!isExposureFinish) {
+          await sleep(100);
+          if (Date.now() - startTime > 5000) {
+            break;
+          }
+        }
+        expect(isExposureStart).assertTrue();
+        expect(isExposureFinish).assertTrue();
+
+        mCameraSession.offExposureStateChange()
+
+      } catch (error) {
+        console.error(`SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0500 failed: ${JSON.stringify(error)}`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------后置处理------------------------------------------------------
+        console.info("Exit SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0500")
+        done()
+        await stopCameraSession();
+      }
+    })
+
     // ===========================================================【相机框架】支持色调调节========================================================
 
     /**
@@ -2590,6 +2642,36 @@ export default function CameraPhotoSessionTest() {
       } finally {
       //--------------------------------------------后置处理------------------------------------------------------
         console.info("Exit SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_1000")
+        done()
+        await stopCameraSession();
+      }
+    })
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_1100
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_1100
+     * @tc.desc      test sub multimedia camera session range of colorTint is not empty
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_1100', Level.LEVEL0, async (done: Function) => {
+      try {
+        //--------------------------------------------预置条件------------------------------------------------------
+        console.info("SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_1100")
+        createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
+        await startCameraSession(0);
+
+        //--------------------------------------------测试过程------------------------------------------------------
+        let range = mCameraSession.getColorTintRange()
+        console.info(`camera session getColorTintRange, range: ${range}`)
+        expect(range.length > 0).assertTrue()
+      } catch (error) {
+        console.error(`getColorTintRange failed, ${JSON.stringify(error)}`)
+        expect().assertFail()
+      } finally {
+      //--------------------------------------------后置处理------------------------------------------------------
+        console.info("Exit SUB_MULTIMEDIA_CAMERA_TONE_CONTROL_1100")
         done()
         await stopCameraSession();
       }
