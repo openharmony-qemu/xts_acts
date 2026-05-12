@@ -102,10 +102,11 @@ export async function driveFn(): Promise<void> {
   try {
     let driver = Driver.create();
     await sleep(COMMON_WAIT_DURATION);
-    let allowButton = await driver?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), COMMON_WAIT_DURATION);
-    if (!isEmpty(allowButton)) {
-      await allowButton?.click();
-      await sleep(COMMON_WAIT_DURATION);
+    let allowButton1 = await driver?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), COMMON_WAIT_DURATION);
+    let allowButton2 = await driver?.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), COMMON_WAIT_DURATION);
+    await allowButton1?.click();
+    await allowButton2?.click();
+    await sleep(COMMON_WAIT_DURATION);
     }
   } catch (err) {
     let businessError = err as BusinessError;
