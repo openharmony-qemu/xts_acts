@@ -1610,5 +1610,415 @@ export default function PlainArray07Test(): void {
       }
     });
 
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_TESTSEVEN_6400
+     * @tc.name      testPlainArray07Chapter0064
+     * @tc.desc      Set value at valid index with string type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0064';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<string> = new PlainArray<string>();
+      plainArray.add(1, "initial");
+      plainArray.setValueAt(0, "updated");
+      expect(plainArray.getValueAt(0)).assertEqual("updated");
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_TESTSEVEN_6500
+     * @tc.name      testPlainArray07Chapter0065
+     * @tc.desc      Set value at index 0 with number type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0065';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<number> = new PlainArray<number>();
+      plainArray.add(1, 100);
+      plainArray.setValueAt(0, 200);
+      expect(plainArray.getValueAt(0)).assertEqual(200);
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_TESTSEVEN_6600
+     * @tc.name      testPlainArray07Chapter0066
+     * @tc.desc      Set value at last index with boolean type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0066';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<boolean> = new PlainArray<boolean>();
+      plainArray.add(1, false);
+      plainArray.add(2, true);
+      plainArray.setValueAt(1, false);
+      expect(plainArray.getValueAt(1)).assertEqual(false);
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_TESTSEVEN_6700
+     * @tc.name      testPlainArray07Chapter0067
+     * @tc.desc      Set value at valid index with object type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0067';
+      console.log(TAG + ' start');
+
+      let plainArray: PlainArray<TestObject> = new PlainArray<TestObject>();
+      let initialObj: TestObject = { a: 1 };
+      plainArray.add(1, initialObj);
+      let newObj: TestObject = { b: 2, c: "test" };
+      plainArray.setValueAt(0, newObj);
+      let result: TestObject = plainArray.getValueAt(0);
+      expect(result.a).assertEqual(undefined);
+      expect(result.b).assertEqual(2);
+      expect(result.c).assertEqual("test");
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_TESTSEVEN_6800
+     * @tc.name      testPlainArray07Chapter0068
+     * @tc.desc      Set value at valid index with array type
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0068';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<Array<number>> = new PlainArray<Array<number>>();
+      let initialArr: Array<number> = [1, 2, 3];
+      plainArray.add(1, initialArr);
+      let newArr: Array<number> = [4, 5, 6];
+      plainArray.setValueAt(0, newArr);
+      expect(plainArray.getValueAt(0)).assertDeepEquals(newArr);
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_TESTSEVEN_6900
+     * @tc.name      testPlainArray07Chapter0069
+     * @tc.desc      Set value at out of range index
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0069';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<string> = new PlainArray<string>();
+      plainArray.add(1, "data");
+      try {
+        plainArray.setValueAt(5, "invalid");
+
+        expect(plainArray.getValueAt(0)).assertEqual("data");
+      } catch (err) {
+        const error = err as BusinessError;
+        expect(error.code).assertEqual(10200001);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_TESTSEVEN_7000
+     * @tc.name      testPlainArray07Chapter0070
+     * @tc.desc      Set value at negative index
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0070';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<number> = new PlainArray<number>();
+      plainArray.add(1, 100);
+      try {
+        plainArray.setValueAt(-1, 200);
+
+        expect(plainArray.getValueAt(0)).assertEqual(100);
+      } catch (err) {
+        const error = err as BusinessError;
+        expect(error.code).assertEqual(10200001);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_TESTSEVEN_7100
+     * @tc.name      testPlainArray07Chapter0071
+     * @tc.desc      Set value with index as undefined parameter
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0071';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<boolean> = new PlainArray<boolean>();
+      plainArray.add(1, true);
+      try {
+        plainArray.setValueAt(5, false);
+
+        expect(plainArray.getValueAt(0)).assertEqual(true);
+      } catch (err) {
+        const error = err as BusinessError;
+        expect(error.code).assertEqual(10200001);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_TESTSEVEN_7200
+     * @tc.name      testPlainArray07Chapter0072
+     * @tc.desc      Set value with value as undefined parameter
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0072';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<string | undefined> = new PlainArray<string | undefined>();
+      plainArray.add(1, "defined");
+      try {
+        plainArray.setValueAt(0, undefined);
+        expect(plainArray.getValueAt(0)).assertUndefined();
+      } catch (err) {
+        expect(plainArray.length).assertEqual(1);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_TESTSEVEN_7300
+     * @tc.name      testPlainArray07Chapter0073
+     * @tc.desc      Set value with value as null parameter
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0073';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<string | null> = new PlainArray<string | null>();
+      plainArray.add(1, "not null");
+      try {
+        plainArray.setValueAt(0, null);
+        expect(plainArray.getValueAt(0)).assertNull();
+      } catch (err) {
+        expect(plainArray.length).assertEqual(1);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_TESTSEVEN_7400
+     * @tc.name      testPlainArray07Chapter0074
+     * @tc.desc      Set value with index exceeding int32 max
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0074';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<string> = new PlainArray<string>();
+      plainArray.add(1, "test");
+      try {
+        plainArray.setValueAt(5, "overflow");
+
+        expect(plainArray.getValueAt(0)).assertEqual("test");
+      } catch (err) {
+        const error = err as BusinessError;
+        expect(error.code).assertEqual(10200001);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_TESTSEVEN_7500
+     * @tc.name      testPlainArray07Chapter0075
+     * @tc.desc      Set value with index as NaN
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0075';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<number> = new PlainArray<number>();
+      plainArray.add(1, 10);
+      try {
+        plainArray.setValueAt(5, 20);
+
+        expect(plainArray.getValueAt(0)).assertEqual(10);
+      } catch (err) {
+        const error = err as BusinessError;
+        expect(error.code).assertEqual(10200001);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_TESTSEVEN_7600
+     * @tc.name      testPlainArray07Chapter0076
+     * @tc.desc      Set value with value as NaN for number type PlainArray
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0076';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<number> = new PlainArray<number>();
+      plainArray.add(1, 100);
+      plainArray.setValueAt(0, NaN);
+      expect(isNaN(plainArray.getValueAt(0) as number)).assertTrue();
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_TESTSEVEN_7700
+     * @tc.name      testPlainArray07Chapter0077
+     * @tc.desc      Set value with value as Infinity for number type PlainArray
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0077';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<number> = new PlainArray<number>();
+      plainArray.add(1, 50);
+      plainArray.setValueAt(0, Infinity);
+      expect(plainArray.getValueAt(0)).assertEqual(Infinity);
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_TESTSEVEN_7800
+     * @tc.name      testPlainArray07Chapter0078
+     * @tc.desc      Set value with value as -Infinity for number type PlainArray
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0078';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<number> = new PlainArray<number>();
+      plainArray.add(1, 75);
+      plainArray.setValueAt(0, -Infinity);
+      expect(plainArray.getValueAt(0)).assertEqual(-Infinity);
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_TESTSEVEN_7900
+     * @tc.name      testPlainArray07Chapter0079
+     * @tc.desc      Set value with value as TypedArray for object type PlainArray
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0079';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<Int8Array> = new PlainArray<Int8Array>();
+      let initialArray: Int8Array = new Int8Array([0, 0, 0]);
+      plainArray.add(1, initialArray);
+      let typedArray: Int8Array = new Int8Array([-128, 0, 127]);
+      plainArray.setValueAt(0, typedArray);
+      expect(plainArray.getValueAt(0)).assertDeepEquals(typedArray);
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_TESTSEVEN_8000
+     * @tc.name      testPlainArray07Chapter0080
+     * @tc.desc      Set value with value as bigint for bigint type PlainArray
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0080';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<bigint> = new PlainArray<bigint>();
+      plainArray.add(1, BigInt(0));
+      let bigIntVal: bigint = BigInt(9007199254740991);
+      plainArray.setValueAt(0, bigIntVal);
+      expect(plainArray.getValueAt(0)).assertEqual(bigIntVal);
+    });
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_TESTSEVEN_8100
+     * @tc.name      testPlainArray07Chapter0081
+     * @tc.desc      Set value with value as string containing all special characters
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0081';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<string> = new PlainArray<string>();
+      plainArray.add(1, "initial");
+      let specialChars: string = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+      plainArray.setValueAt(0, specialChars);
+      expect(plainArray.getValueAt(0)).assertEqual(specialChars);
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_TESTSEVEN_8200
+     * @tc.name      testPlainArray07Chapter0082
+     * @tc.desc      Set value with value as string containing ASCII characters
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0082';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<string> = new PlainArray<string>();
+      plainArray.add(1, "test");
+      let asciiStr: string =
+        "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
+      plainArray.setValueAt(0, asciiStr);
+      expect(plainArray.getValueAt(0)).assertEqual(asciiStr);
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_TESTSEVEN_8300
+     * @tc.name      testPlainArray07Chapter0083
+     * @tc.desc      Set value with value as string containing special escape characters
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0083';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<string> = new PlainArray<string>();
+      plainArray.add(1, "test");
+      let escapeStr: string = "\\a\\b\\f\\n\\r\\t\\v\\\\\\'\\\"\\?\\0\\x41";
+      plainArray.setValueAt(0, escapeStr);
+      expect(plainArray.getValueAt(0)).assertEqual(escapeStr);
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_PLAINARRAY_TESTSEVEN_8400
+     * @tc.name      testPlainArray07Chapter0084
+     * @tc.desc      Set value with value as string containing emoji characters
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testPlainArray07Chapter0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testPlainArray07Chapter0084';
+      console.log(TAG + ' start');
+      let plainArray: PlainArray<string> = new PlainArray<string>();
+      plainArray.add(1, "test");
+      let emojiStr: string = "👆👿👀💯🎅😼🔧💇🤼‍♂️🛢🀄🏴";
+      plainArray.setValueAt(0, emojiStr);
+      expect(plainArray.getValueAt(0)).assertEqual(emojiStr);
+    });
   })
 }
