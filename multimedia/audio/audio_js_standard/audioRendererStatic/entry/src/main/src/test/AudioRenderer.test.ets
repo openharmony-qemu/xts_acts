@@ -1809,7 +1809,7 @@ export default function audioRendererTest() {
       }
       console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      let samplingRate: audio.AudioSamplingRate | int;
+      let samplingRate: audio.AudioSamplingRate | int = 0;
       try {
         let audioParamsGet = await audioRen!.getStreamInfo();
         console.info(`${TagFrmwkRender}: Renderer getStreamInfo: ${JSON.stringify(audioParamsGet)}`);
