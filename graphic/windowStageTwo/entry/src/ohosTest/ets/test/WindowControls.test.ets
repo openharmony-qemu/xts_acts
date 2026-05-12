@@ -446,9 +446,9 @@ export default function windowControlsTest() {
      * @tc.desc   testsetImageForRecent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testsetImageForRecent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+    it('testsetImageForRecent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testsetImageForRecent';
       console.log( caseName +' begin');
       if (deviceInfo.deviceType == '2in1') {
@@ -527,9 +527,9 @@ export default function windowControlsTest() {
      * @tc.desc   testremoveImageForRecent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testremoveImageForRecent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+    it('testremoveImageForRecent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = 'testremoveImageForRecent';
       console.log( caseName +' begin');
       if (deviceInfo.deviceType == '2in1') {
@@ -561,78 +561,40 @@ export default function windowControlsTest() {
      * @tc.desc   testsetImageForRecent
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
     it('testsetImageForRecent_801_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testsetImageForRecent_801_0100';
       console.log( caseName +' begin');
       let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
       console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
-        let color = new ArrayBuffer(512 * 512 * 4); // 创建一个ArrayBuffer对象，用于存储图像像素。该对象的大小为（height * width * 4）字节。
-        let pixelMap: image.PixelMap;
-        let bufferArr = new Uint8Array(color);
-        for (let i = 0; i < bufferArr.length; i += 4) {
-          bufferArr[i] = 255;
-          bufferArr[i+1] = 0;
-          bufferArr[i+2] = 122;
-          bufferArr[i+3] = 255;
-        }
-        image.createPixelMap(color, {
-          editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 512, width: 512 }
-        }).then((data:image.PixelMap) => {
-          pixelMap = data;
-          console.info(caseName +` Succeeded in creating pixelMap`);
-          try {
-            let promise = windowStage.setImageForRecent(pixelMap, ImageFit.Fill);
-            promise.then(() => {
-              console.info(caseName +` Succeeded in setting image for recent`);
-              done()
-            }).catch((err: BusinessError) => {
-              console.error(caseName +` Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
-              if (!canIUseRes) {
-                if (err.code === 801) {
-                  done();
-                } else {
-                  expect(false).assertTrue();
-                  done();
-                }
-              } else {
-                if (err.code === 201) {
-                  done();
-                } else {
-                  expect(false).assertTrue();
-                  done();
-                }
-              }
-            });
-          } catch (exception) {
-            console.error(caseName +` Failed to set image for recent.`);
-            expect(false).assertTrue();
-            done()
-          }
-        })
-    })
-
-    /**
-     * @tc.name   testremoveImageForRecent_801_0100
-     * @tc.number SUB_BASIC_WMS_removeImageForRecent_0400
-     * @tc.desc   testremoveImageForRecent
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testremoveImageForRecent_801_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
-      let caseName = 'testremoveImageForRecent_801_0100';
-      console.log( caseName +' begin');
-      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
-      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let color = new ArrayBuffer(512 * 512 * 4); // 创建一个ArrayBuffer对象，用于存储图像像素。该对象的大小为（height * width * 4）字节。
+      let pixelMap: image.PixelMap;
+      let bufferArr = new Uint8Array(color);
+      for (let i = 0; i < bufferArr.length; i += 4) {
+        bufferArr[i] = 255;
+        bufferArr[i+1] = 0;
+        bufferArr[i+2] = 122;
+        bufferArr[i+3] = 255;
+      }
+      image.createPixelMap(color, {
+        editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 512, width: 512 }
+      }).then((data:image.PixelMap) => {
+        pixelMap = data;
+        console.info(caseName +` Succeeded in creating pixelMap`);
         try {
-          let promise = windowStage.removeImageForRecent();
+          let promise = windowStage.setImageForRecent(pixelMap, ImageFit.Fill);
           promise.then(() => {
             console.info(caseName +` Succeeded in setting image for recent`);
-            done()
+            if (deviceInfo.deviceType === '2in1') {
+              expect(true).assertTrue();
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
           }).catch((err: BusinessError) => {
-            console.error(caseName +` Failed to remove image for recent. Cause code: ${err.code}, message: ${err.message}`);
+            console.error(caseName +` Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
             if (!canIUseRes) {
               if (err.code === 801) {
                 done();
@@ -641,19 +603,81 @@ export default function windowControlsTest() {
                 done();
               }
             } else {
+              if (deviceInfo.deviceType !== '2in1') {
+                if (err.code === 201) {
+                  done();
+                } else {
+                  expect(false).assertTrue();
+                  done();
+                }
+              } else {
+                expect(false).assertTrue();
+                done();
+              }
+
+            }
+          });
+        } catch (exception) {
+          console.error(caseName +` Failed to set image for recent.`);
+          expect(false).assertTrue();
+          done()
+        }
+      })
+    })
+
+    /**
+     * @tc.name   testremoveImageForRecent_801_0100
+     * @tc.number SUB_BASIC_WMS_removeImageForRecent_0400
+     * @tc.desc   testremoveImageForRecent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testremoveImageForRecent_801_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let caseName = 'testremoveImageForRecent_801_0100';
+      console.log( caseName +' begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      try {
+        let promise = windowStage.removeImageForRecent();
+        promise.then(() => {
+          console.info(caseName +` Succeeded in setting image for recent`);
+          if (deviceInfo.deviceType === '2in1') {
+            expect(true).assertTrue();
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+          done()
+        }).catch((err: BusinessError) => {
+          console.error(caseName +` Failed to remove image for recent. Cause code: ${err.code}, message: ${err.message}`);
+          if (!canIUseRes) {
+            if (err.code === 801) {
+              done();
+            } else {
+              expect(false).assertTrue();
+              done();
+            }
+          } else {
+            if (deviceInfo.deviceType !== '2in1') {
               if (err.code === 201) {
                 done();
               } else {
                 expect(false).assertTrue();
                 done();
               }
+            } else {
+              expect(false).assertTrue();
+              done();
             }
-          });
-        } catch (exception) {
-          console.error(caseName +` Failed to remove image for recent.`);
-          expect(false).assertTrue();
-          done()
-        }
+          }
+        });
+      } catch (exception) {
+        console.error(caseName +` Failed to remove image for recent.`);
+        expect(false).assertTrue();
+        done()
+      }
     })
 
   })
