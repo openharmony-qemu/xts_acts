@@ -1693,8 +1693,6 @@ export default function TextPicker() {
         try {
           let createPromise: Promise<string> = phAccessHelper.createAssetWithShortTermPermission(item);
 
-          await driveFn();
-
           const timeoutPromise: Promise<string | undefined> = new Promise<string | undefined>((resolve: (value: string | undefined) => void, reject: (reason: Error) => void) => {
             setTimeout(() => {
               reject(new Error('createAsset timeout after 30s'));
