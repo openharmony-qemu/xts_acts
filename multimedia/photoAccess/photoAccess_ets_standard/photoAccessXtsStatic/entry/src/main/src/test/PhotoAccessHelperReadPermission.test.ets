@@ -54,10 +54,10 @@ export default function photoAccessHelperReadPermissionStaticTest() {
                 });
                 await sleep(2000);
                 let dr = Driver.create();
-                let power = await dr.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
-                if (power != null) {
-                    await power.click();
-                }
+                let power1 = await dr.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
+                let power2 = await dr.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 500);
+                await power1?.click();
+                await power2?.click();
             } catch (error) {
                 console.info(TAG, 'getPermission failed. err.code: ' + error?.code + ', err.message: '+ error?.message);
             }
