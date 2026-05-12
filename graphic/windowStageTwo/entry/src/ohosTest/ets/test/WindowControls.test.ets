@@ -461,7 +461,6 @@ export default function windowControlsTest() {
           bufferArr[i+2] = 122;
           bufferArr[i+3] = 255;
         }
-        let support = canIUse('SystemCapability.Window.SessionManager');
         image.createPixelMap(color, {
           editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 512, width: 512 }
         }).then((data:image.PixelMap) => {
@@ -474,15 +473,8 @@ export default function windowControlsTest() {
               done()
             }).catch((err: BusinessError) => {
               console.error(caseName +` Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
-              if(support){
-                expect(err.code).assertEqual(801);
-                expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.')
-                done();
-              }else{
-                expect(false).assertTrue();
-                done();
-              }
-
+              expect(false).assertTrue();
+              done();
             });
           } catch (exception) {
             console.error(caseName +` Failed to set image for recent.`);
@@ -541,7 +533,6 @@ export default function windowControlsTest() {
       let caseName = 'testremoveImageForRecent';
       console.log( caseName +' begin');
       if (deviceInfo.deviceType == '2in1') {
-        let support = canIUse('SystemCapability.Window.SessionManager');
         try {
           let promise = windowStage.removeImageForRecent();
           promise.then(() => {
@@ -549,15 +540,8 @@ export default function windowControlsTest() {
             done()
           }).catch((err: BusinessError) => {
             console.error(caseName +` Failed to remove image for recent. Cause code: ${err.code}, message: ${err.message}`);
-            if(support){
-              expect(err.code).assertEqual(801);
-              expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.')
-              done();
-            }else{
-              expect(false).assertTrue();
-              done();
-            }
-
+            expect(false).assertTrue();
+            done();
           });
         } catch (exception) {
           console.error(caseName +` Failed to remove image for recent.`);
