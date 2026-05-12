@@ -30,7 +30,6 @@
 #define DRAWING_NUMBER_1080 1080
 #define DRAWING_NUMBER_1090 1090
 #define DRAWING_NUMBER_1100 1100
-#define DRAWING_NUMBER_0XFF0000FF 0xFF0000FF
 
 namespace OHOS {
 namespace Rosen {
@@ -325,7 +324,7 @@ int TestCanvasDrawGlyphsMultipleCalls()
     };
     for (int i = 0; i < DRAWING_NUMBER_10; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawGlyphs(
-             canvas, glyphIds, DRAWING_NUMBER_3, 0, positions, DRAWING_NUMBER_3, 0, DRAWING_NUMBER_3, font);
+            canvas, glyphIds, DRAWING_NUMBER_3, 0, positions, DRAWING_NUMBER_3, 0, DRAWING_NUMBER_3, font);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     }
     OH_Drawing_CanvasDestroy(canvas);
