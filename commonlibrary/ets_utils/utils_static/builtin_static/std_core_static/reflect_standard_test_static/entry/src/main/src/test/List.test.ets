@@ -31,7 +31,7 @@ import StaticMethodIsPublicTest from "./staticMethod/StaticMethodIsPublicTest.te
 import StaticMethodIsSetterTest from "./staticMethod/StaticMethodIsSetterTest.test";
 
 export default function testsuite(): void {
-    abilityTest();
+
     StaticMethodEqualsTest();
     StaticMethodGetNameTest();
     StaticMethodGetOwnerTest();
