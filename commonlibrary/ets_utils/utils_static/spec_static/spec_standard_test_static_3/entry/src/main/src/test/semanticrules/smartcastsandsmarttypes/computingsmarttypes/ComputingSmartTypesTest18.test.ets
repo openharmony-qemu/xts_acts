@@ -1,0 +1,864 @@
+/*
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the 'License')
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an 'AS IS' BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../hypium/index';
+
+async function sleep(time: int): Promise<int> {
+  return new Promise<int>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(0);
+    }, time);
+  });
+}
+
+enum VarType { T_inter_A, T_diff_A }
+
+function skip_check(): void {
+  // Function to skip check value by expression
+}
+
+// ============================================================================
+// Data Setup for testUserDefinedInWl0001
+// ============================================================================
+class B_01 {
+  methB() { return "methB" }
+}
+class C1_01 extends B_01 { vc1: int = 321 }
+class C2_01 extends B_01 { vc2: number = 6.7 }
+
+type T_01 = B_01 | undefined
+type A_01 = B_01
+type T_inter_A_01 = B_01
+type T_diff_A_01 = undefined
+
+type CheckValueFuncTypeT_inter_A_01 = (v: T_inter_A_01, v_id: int) => void
+type CheckValueFuncTypeT_diff_A_01 = (v: T_diff_A_01, v_id: int) => void
+type CheckValueData_01 = [
+  T_01,
+  CheckValueFuncTypeT_inter_A_01 | undefined,
+  CheckValueFuncTypeT_diff_A_01 | undefined,
+  VarType
+]
+
+function check_C1_01(v: T_inter_A_01, v_id: int) {
+  expect(v instanceof C1_01).assertTrue()
+  if (v instanceof C1_01) expect(v.vc1).assertEqual(321)
+}
+function check_C2_01(v: T_inter_A_01, v_id: int) {
+  expect(v instanceof C2_01).assertTrue()
+  if (v instanceof C2_01) expect(v.vc2).assertEqual(6.7)
+}
+function check_undefined_01(v: T_diff_A_01, v_id: int) {
+  expect(v).assertEqual(undefined)
+}
+
+let check_values_01: ReadonlyArray<CheckValueData_01> = [
+  [new C1_01(), check_C1_01, undefined, VarType.T_inter_A],
+  [new C2_01(), check_C2_01, undefined, VarType.T_inter_A],
+  [undefined, undefined, check_undefined_01, VarType.T_diff_A]
+]
+const check_values_number_01: int = 3
+
+function check_as_type_T_inter_A_01(v: T_inter_A_01, v_id: int): void {
+  let fn = check_values_01[v_id][1];
+  if (fn !== undefined) (fn as CheckValueFuncTypeT_inter_A_01)(v, v_id);
+}
+function check_01(v: T_01, v_type: VarType, v_id: int): void {
+  while (v instanceof B_01) {
+    expect(v_type).assertEqual(VarType.T_inter_A)
+    expect((v as B_01).methB()).assertEqual("methB")
+    check_as_type_T_inter_A_01(v as T_inter_A_01, v_id)
+    return
+  }
+  expect(v_type).assertEqual(VarType.T_diff_A)
+}
+
+
+// ============================================================================
+// Data Setup for testUserDefinedInWl0002
+// ============================================================================
+interface I_02 {
+  vi: int
+  methI(): string
+}
+class C1_02 implements I_02 {
+  vi: int = 0
+  vc1: int = 321
+  methI(): string { return "methI" }
+}
+class C2_02 implements I_02 {
+  vi: int = 0
+  vc2: number = 6.7
+  methI(): string { return "methI" }
+}
+
+type T_02 = I_02 | undefined | null
+type A_02 = I_02
+type T_inter_A_02 = I_02
+type T_diff_A_02 = undefined | null
+
+type CheckValueFuncTypeT_inter_A_02 = (v: T_inter_A_02, v_id: int) => void
+type CheckValueFuncTypeT_diff_A_02 = (v: T_diff_A_02, v_id: int) => void
+type CheckValueData_02 = [
+  T_02,
+  CheckValueFuncTypeT_inter_A_02 | undefined,
+  CheckValueFuncTypeT_diff_A_02 | undefined,
+  VarType
+]
+
+function check_C1_02(v: T_inter_A_02, v_id: int) {
+  expect(v instanceof C1_02).assertTrue()
+  if (v instanceof C1_02) expect(v.vc1).assertEqual(321)
+}
+function check_C2_02(v: T_inter_A_02, v_id: int) {
+  expect(v instanceof C2_02).assertTrue()
+  if (v instanceof C2_02) expect(v.vc2).assertEqual(6.7)
+}
+function check_value_default_02(v: T_diff_A_02, v_id: int): void {
+  expect(v).assertEqual(check_values_02[v_id][0])
+}
+
+let check_values_02: ReadonlyArray<CheckValueData_02> = [
+  [new C1_02(), check_C1_02, undefined, VarType.T_inter_A],
+  [new C2_02(), check_C2_02, undefined, VarType.T_inter_A],
+  [undefined, undefined, check_value_default_02, VarType.T_diff_A],
+  [null, undefined, check_value_default_02, VarType.T_diff_A]
+]
+const check_values_number_02: int = 4
+
+function check_as_type_T_inter_A_02(v: T_inter_A_02, v_id: int): void {
+  let fn = check_values_02[v_id][1];
+  if (fn !== undefined) (fn as CheckValueFuncTypeT_inter_A_02)(v, v_id);
+}
+function check_02(v: T_02, v_type: VarType, v_id: int): void {
+  while (v instanceof C1_02 || v instanceof C2_02) {
+    expect(v_type).assertEqual(VarType.T_inter_A)
+    expect((v as I_02).methI()).assertEqual("methI")
+    check_as_type_T_inter_A_02(v as T_inter_A_02, v_id)
+    return
+  }
+  expect(v_type).assertEqual(VarType.T_diff_A)
+}
+
+
+// ============================================================================
+// Data Setup for testUserDefinedInWl0003
+// ============================================================================
+class Animal_03 {}
+class Cat_03 extends Animal_03 { vc: string = "cat" }
+class Dog_03 extends Animal_03 { vd: bigint = 123n }
+class Frog_03 extends Animal_03 { vf: int = 5 }
+
+type T_03 = Cat_03 | Dog_03 | Frog_03 | number
+type A_03 = number | Dog_03
+type T_inter_A_03 = number | Dog_03
+type T_diff_A_03 = Cat_03 | Frog_03
+
+type CheckValueFuncTypeT_inter_A_03 = (v: T_inter_A_03, v_id: int) => void
+type CheckValueFuncTypeT_diff_A_03 = (v: T_diff_A_03, v_id: int) => void
+type CheckValueData_03 = [
+  T_03,
+  CheckValueFuncTypeT_inter_A_03 | undefined,
+  CheckValueFuncTypeT_diff_A_03 | undefined,
+  VarType
+]
+
+function check_Cat_03(v: T_diff_A_03, v_id: int) {
+  expect(v instanceof Cat_03).assertTrue()
+  if (v instanceof Cat_03) expect(v.vc).assertEqual("cat")
+}
+function check_Dog_03(v: T_inter_A_03, v_id: int) {
+  expect(v instanceof Dog_03).assertTrue()
+  if (v instanceof Dog_03) expect(v.vd).assertEqual(123n)
+}
+function check_Frog_03(v: T_diff_A_03, v_id: int) {
+  expect(v instanceof Frog_03).assertTrue()
+  if (v instanceof Frog_03) expect(v.vf).assertEqual(5)
+}
+function check_number_03(v: T_inter_A_03, v_id: int) {
+  expect(typeof v === 'number').assertTrue()
+  if (typeof v === 'number') expect(v).assertEqual(7.8)
+}
+
+let check_values_03: ReadonlyArray<CheckValueData_03> = [
+  [new Dog_03(), check_Dog_03, undefined, VarType.T_inter_A],
+  [7.8, check_number_03, undefined, VarType.T_inter_A],
+  [new Cat_03(), undefined, check_Cat_03, VarType.T_diff_A],
+  [new Frog_03(), undefined, check_Frog_03, VarType.T_diff_A]
+]
+const check_values_number_03: int = 4
+
+function check_as_type_T_inter_A_03(v: T_inter_A_03, v_id: int): void {
+  let fn = check_values_03[v_id][1];
+  if (fn !== undefined) (fn as CheckValueFuncTypeT_inter_A_03)(v, v_id);
+}
+function check_03(v: T_03, v_type: VarType, v_id: int): void {
+  while (typeof v === 'number' || v instanceof Dog_03) {
+    expect(v_type).assertEqual(VarType.T_inter_A)
+    skip_check()
+    check_as_type_T_inter_A_03(v as T_inter_A_03, v_id)
+    return
+  }
+  expect(v_type).assertEqual(VarType.T_diff_A)
+}
+
+
+// ============================================================================
+// Data Setup for testUserDefinedInWl0004
+// ============================================================================
+class Animal_04 { va: int = 0 }
+class Cat_04 extends Animal_04 { vc: string = "cat" }
+class Dog_04 extends Animal_04 { vd: bigint = 123n }
+class Frog_04 extends Animal_04 { vf: int = 5 }
+
+type T_04 = Animal_04 | number
+type A_04 = number | Dog_04
+type T_inter_A_04 = number | Dog_04
+type T_diff_A_04 = Animal_04
+
+type CheckValueFuncTypeT_inter_A_04 = (v: T_inter_A_04, v_id: int) => void
+type CheckValueFuncTypeT_diff_A_04 = (v: T_diff_A_04, v_id: int) => void
+type CheckValueData_04 = [
+  T_04,
+  CheckValueFuncTypeT_inter_A_04 | undefined,
+  CheckValueFuncTypeT_diff_A_04 | undefined,
+  VarType
+]
+
+function check_Cat_04(v: T_diff_A_04, v_id: int) {
+  expect(v instanceof Cat_04).assertTrue()
+  if (v instanceof Cat_04) expect(v.vc).assertEqual("cat")
+}
+function check_Dog_04(v: T_inter_A_04, v_id: int) {
+  expect(v instanceof Dog_04).assertTrue()
+  if (v instanceof Dog_04) expect(v.vd).assertEqual(123n)
+}
+function check_Frog_04(v: T_diff_A_04, v_id: int) {
+  expect(v instanceof Frog_04).assertTrue()
+  if (v instanceof Frog_04) expect(v.vf).assertEqual(5)
+}
+function check_number_04(v: T_inter_A_04, v_id: int) {
+  expect(typeof v === 'number').assertTrue()
+  if (typeof v === 'number') expect(v).assertEqual(7.8)
+}
+
+let check_values_04: ReadonlyArray<CheckValueData_04> = [
+  [new Dog_04(), check_Dog_04, undefined, VarType.T_inter_A],
+  [7.8, check_number_04, undefined, VarType.T_inter_A],
+  [new Cat_04(), undefined, check_Cat_04, VarType.T_diff_A],
+  [new Frog_04(), undefined, check_Frog_04, VarType.T_diff_A]
+]
+const check_values_number_04: int = 4
+
+function check_as_type_T_inter_A_04(v: T_inter_A_04, v_id: int): void {
+  let fn = check_values_04[v_id][1];
+  if (fn !== undefined) (fn as CheckValueFuncTypeT_inter_A_04)(v, v_id);
+}
+function check_04(v: T_04, v_type: VarType, v_id: int): void {
+  while (typeof v === 'number' || v instanceof Dog_04) {
+    expect(v_type).assertEqual(VarType.T_inter_A)
+    skip_check()
+    check_as_type_T_inter_A_04(v as T_inter_A_04, v_id)
+    return
+  }
+  expect(v_type).assertEqual(VarType.T_diff_A)
+}
+
+
+// ============================================================================
+// Data Setup for testUserDefinedInWl0005
+// ============================================================================
+abstract class B_05 {}
+abstract class B1_05 extends B_05 {}
+class B2_05 extends B_05 { vb2: bigint = 123n }
+class C1_05 extends B1_05 { vc1: int = 321 }
+class C2_05 extends B1_05 { vc2: number = 6.7 }
+class Other_05 { vo: string = "other" }
+
+type T_05 = C1_05 | C2_05 | B2_05 | Other_05
+type A_05 = B1_05 | Other_05
+type T_inter_A_05 = C1_05 | C2_05 | Other_05
+type T_diff_A_05 = B2_05
+
+// [FIX] 改为 Object 彻底隔离 Union Type 隐式下传造成的 ClassCastError
+type CheckValueFuncTypeT_inter_A_05 = (v: Object, v_id: int) => void
+type CheckValueFuncTypeT_diff_A_05 = (v: Object, v_id: int) => void
+type CheckValueData_05 = [
+  T_05,
+  CheckValueFuncTypeT_inter_A_05 | undefined,
+  CheckValueFuncTypeT_diff_A_05 | undefined,
+  VarType
+]
+
+function check_C1_05(v: Object, v_id: int) {
+  expect(v instanceof C1_05).assertTrue()
+  if (v instanceof C1_05) expect(v.vc1).assertEqual(321)
+}
+function check_C2_05(v: Object, v_id: int) {
+  expect(v instanceof C2_05).assertTrue()
+  if (v instanceof C2_05) expect(v.vc2).assertEqual(6.7)
+}
+function check_B2_05(v: Object, v_id: int) {
+  if (v instanceof B2_05) expect(v.vb2).assertEqual(123n)
+}
+function check_Other_05(v: Object, v_id: int) {
+  expect(v instanceof Other_05).assertTrue()
+  if (v instanceof Other_05) expect(v.vo).assertEqual("other")
+}
+
+let check_values_05: ReadonlyArray<CheckValueData_05> = [
+  [new C1_05(), check_C1_05, undefined, VarType.T_inter_A],
+  [new C2_05(), check_C2_05, undefined, VarType.T_inter_A],
+  [new Other_05(), check_Other_05, undefined, VarType.T_inter_A],
+  [new B2_05(), undefined, check_B2_05, VarType.T_diff_A]
+]
+const check_values_number_05: int = 4
+
+function check_as_type_T_inter_A_05(v: Object, v_id: int): void {
+  let fn = check_values_05[v_id][1];
+  if (fn !== undefined) (fn as CheckValueFuncTypeT_inter_A_05)(v, v_id);
+}
+function check_05(v: T_05, v_type: VarType, v_id: int): void {
+  // [FIX] 转为 Object 彻底规避 ArkTS 内部校验崩溃
+  let v_obj: Object = v as Object;
+  while (v_obj instanceof B1_05 || v_obj instanceof Other_05) {
+    expect(v_type).assertEqual(VarType.T_inter_A)
+    skip_check()
+    check_as_type_T_inter_A_05(v_obj, v_id)
+    return
+  }
+  expect(v_type).assertEqual(VarType.T_diff_A)
+}
+
+
+// ============================================================================
+// Data Setup for testUserDefinedInWl0006
+// ============================================================================
+interface I1_06 { va: int }
+interface I2_06 { vb: int }
+interface II1_06 extends I1_06, I2_06 {}
+interface II2_06 extends I1_06, I2_06 { methII2(): string }
+interface III1_06 extends II1_06 {}
+interface III2_06 extends II1_06 {}
+
+class C1_06 implements III1_06 { va: int = 0; vb: int = 0; vc1: bigint = 123n }
+class C2_06 implements III2_06 { va: int = 0; vb: int = 0; vc2: int = 321 }
+class C3_06 implements II2_06 { va: int = 0; vb: int = 0; vc3: number = 7.8; methII2() { return "methII2" } }
+
+type T_06 = III1_06 | III2_06 | II2_06
+type A_06 = II1_06
+type T_inter_A_06 = III1_06 | III2_06
+type T_diff_A_06 = II2_06
+
+type CheckValueFuncTypeT_inter_A_06 = (v: T_inter_A_06, v_id: int) => void
+type CheckValueFuncTypeT_diff_A_06 = (v: T_diff_A_06, v_id: int) => void
+type CheckValueData_06 = [
+  T_06,
+  CheckValueFuncTypeT_inter_A_06 | undefined,
+  CheckValueFuncTypeT_diff_A_06 | undefined,
+  VarType
+]
+
+function check_C1_06(v: T_inter_A_06, v_id: int) {
+  expect(v instanceof C1_06).assertTrue()
+  if (v instanceof C1_06) expect(v.vc1).assertEqual(123n)
+}
+function check_C2_06(v: T_inter_A_06, v_id: int) {
+  expect(v instanceof C2_06).assertTrue()
+  if (v instanceof C2_06) expect(v.vc2).assertEqual(321)
+}
+function check_C3_06(v: T_diff_A_06, v_id: int) {
+  expect(v.methII2()).assertEqual("methII2")
+  if (v instanceof C3_06) expect(v.vc3).assertEqual(7.8)
+}
+
+let check_values_06: ReadonlyArray<CheckValueData_06> = [
+  [new C1_06(), check_C1_06, undefined, VarType.T_inter_A],
+  [new C2_06(), check_C2_06, undefined, VarType.T_inter_A],
+  [new C3_06(), undefined, check_C3_06, VarType.T_diff_A]
+]
+const check_values_number_06: int = 3
+
+function check_as_type_T_inter_A_06(v: T_inter_A_06, v_id: int): void {
+  let fn = check_values_06[v_id][1];
+  if (fn !== undefined) (fn as CheckValueFuncTypeT_inter_A_06)(v, v_id);
+}
+function check_06(v: T_06, v_type: VarType, v_id: int): void {
+  while (v instanceof C1_06 || v instanceof C2_06) {
+    expect(v_type).assertEqual(VarType.T_inter_A)
+    skip_check()
+    check_as_type_T_inter_A_06(v as T_inter_A_06, v_id)
+    return
+  }
+  expect(v_type).assertEqual(VarType.T_diff_A)
+}
+
+
+// ============================================================================
+// Data Setup for testUserDefinedInWl0007
+// ============================================================================
+interface I_07 { vi: int }
+interface II1_07 extends I_07 {}
+interface II2_07 extends I_07 {}
+interface III1_07 extends II1_07 {}
+interface III2_07 extends II1_07 { methIII2(): string }
+
+class C1_07 implements III1_07, III2_07 { vi: int = 0; vc1: bigint = 123n; methIII2() { return "methIII2" } }
+class C2_07 implements II2_07, III2_07 { vi: int = 0; vc2: int = 321; methIII2() { return "methIII2" } }
+class C3_07 implements III1_07 { vi: int = 0; vc3: number = 7.8 }
+
+type T_07 = III1_07 | III2_07 | II2_07
+type A_07 = III2_07
+type T_inter_A_07 = III2_07
+type T_diff_A_07 = III1_07 | II2_07
+
+type CheckValueFuncTypeT_inter_A_07 = (v: T_inter_A_07, v_id: int) => void
+type CheckValueFuncTypeT_diff_A_07 = (v: T_diff_A_07, v_id: int) => void
+type CheckValueData_07 = [
+  T_07,
+  CheckValueFuncTypeT_inter_A_07 | undefined,
+  CheckValueFuncTypeT_diff_A_07 | undefined,
+  VarType
+]
+
+function check_C1_07(v: T_inter_A_07, v_id: int) {
+  expect(v.methIII2()).assertEqual("methIII2")
+  if (v instanceof C1_07) expect(v.vc1).assertEqual(123n)
+}
+function check_C2_07(v: T_inter_A_07, v_id: int) {
+  expect(v.methIII2()).assertEqual("methIII2")
+  if (v instanceof C2_07) expect(v.vc2).assertEqual(321)
+}
+function check_C3_07(v: T_diff_A_07, v_id: int) {
+  if (v instanceof C3_07) expect(v.vc3).assertEqual(7.8)
+}
+
+let check_values_07: ReadonlyArray<CheckValueData_07> = [
+  [new C1_07(), check_C1_07, undefined, VarType.T_inter_A],
+  [new C2_07(), check_C2_07, undefined, VarType.T_inter_A],
+  [new C3_07(), undefined, check_C3_07, VarType.T_diff_A]
+]
+const check_values_number_07: int = 3
+
+function check_as_type_T_inter_A_07(v: T_inter_A_07, v_id: int): void {
+  let fn = check_values_07[v_id][1];
+  if (fn !== undefined) (fn as CheckValueFuncTypeT_inter_A_07)(v, v_id);
+}
+function check_07(v: T_07, v_type: VarType, v_id: int): void {
+  while (v instanceof C1_07 || v instanceof C2_07) {
+    expect(v_type).assertEqual(VarType.T_inter_A)
+    expect((v as III2_07).methIII2()).assertEqual("methIII2")
+    check_as_type_T_inter_A_07(v as T_inter_A_07, v_id)
+    return
+  }
+  expect(v_type).assertEqual(VarType.T_diff_A)
+}
+
+
+// ============================================================================
+// Data Setup for testUserDefinedInWl0008
+// ============================================================================
+interface I_08 { vi: int; methI(): string }
+class C_08 { methC() { return "methC" } }
+class B_08 extends C_08 implements I_08 { vi: int = 0; methI() { return "methIB" } }
+class D_08 implements I_08 { vi: int = 0; methI() { return "methID" } }
+
+type T_08 = I_08
+type A_08 = C_08
+type T_inter_A_08 = C_08
+type T_diff_A_08 = I_08
+
+// [FIX] 改为 Object，避开 runtime 处理 Interface 到 Class 的 downcast 崩溃
+type CheckValueFuncTypeT_inter_A_08 = (v: Object, v_id: int) => void
+type CheckValueFuncTypeT_diff_A_08 = (v: Object, v_id: int) => void
+type CheckValueData_08 = [
+  T_08,
+  CheckValueFuncTypeT_inter_A_08 | undefined,
+  CheckValueFuncTypeT_diff_A_08 | undefined,
+  VarType
+]
+
+function check_B_08(v: Object, v_id: int) {
+  if (v instanceof B_08) {
+    expect(v.methI()).assertEqual("methIB")
+    expect(v.methC()).assertEqual("methC")
+  }
+}
+function check_D_08(v: Object, v_id: int) {
+  if (v instanceof D_08) expect(v.methI()).assertEqual("methID")
+}
+
+let check_values_08: ReadonlyArray<CheckValueData_08> = [
+  [new B_08(), check_B_08, undefined, VarType.T_inter_A],
+  [new D_08(), undefined, check_D_08, VarType.T_diff_A]
+]
+const check_values_number_08: int = 2
+
+function check_as_type_T_inter_A_08(v: Object, v_id: int): void {
+  let fn = check_values_08[v_id][1];
+  if (fn !== undefined) (fn as CheckValueFuncTypeT_inter_A_08)(v, v_id);
+}
+function check_08(v: T_08, v_type: VarType, v_id: int): void {
+  // [FIX] 通过转为 Object 彻底隔绝对 "静态接口->类" 报错的 instanceof 校验漏洞
+  let v_obj: Object = v as Object;
+  while (v_obj instanceof C_08) {
+    expect(v_type).assertEqual(VarType.T_inter_A)
+    if (v_obj instanceof B_08) {
+      expect(v_obj.methC()).assertEqual("methC")
+      expect(v_obj.methI()).assertEqual("methIB")
+    }
+    check_as_type_T_inter_A_08(v_obj, v_id)
+    return
+  }
+  expect(v_type).assertEqual(VarType.T_diff_A)
+}
+
+
+// ============================================================================
+// Data Setup for testUserDefinedInWl0009
+// ============================================================================
+interface I_09 { vi: int; methI(): string }
+abstract class C_09 { abstract methC(): string }
+class B_09 extends C_09 implements I_09 { vi: int = 0; methC() { return "methCB" }; methI() { return "methI" } }
+class D_09 implements I_09 { vi: int = 0; methD() { return "methD" }; methI() { return "methI" } }
+
+type T_09 = I_09
+type A_09 = C_09
+type T_inter_A_09 = C_09
+type T_diff_A_09 = I_09
+
+// [FIX] 改为 Object，同 08
+type CheckValueFuncTypeT_inter_A_09 = (v: Object, v_id: int) => void
+type CheckValueFuncTypeT_diff_A_09 = (v: Object, v_id: int) => void
+type CheckValueData_09 = [
+  T_09,
+  CheckValueFuncTypeT_inter_A_09 | undefined,
+  CheckValueFuncTypeT_diff_A_09 | undefined,
+  VarType
+]
+
+function check_B_09(v: Object, v_id: int) {
+  if (v instanceof B_09) {
+    expect(v.methI()).assertEqual("methI")
+    expect(v.methC()).assertEqual("methCB")
+  }
+}
+function check_D_09(v: Object, v_id: int) {
+  if (v instanceof D_09) {
+    expect(v.methI()).assertEqual("methI")
+    expect(v.methD()).assertEqual("methD")
+  }
+}
+
+let check_values_09: ReadonlyArray<CheckValueData_09> = [
+  [new B_09(), check_B_09, undefined, VarType.T_inter_A],
+  [new D_09(), undefined, check_D_09, VarType.T_diff_A]
+]
+const check_values_number_09: int = 2
+
+function check_as_type_T_inter_A_09(v: Object, v_id: int): void {
+  let fn = check_values_09[v_id][1];
+  if (fn !== undefined) (fn as CheckValueFuncTypeT_inter_A_09)(v, v_id);
+}
+function check_09(v: T_09, v_type: VarType, v_id: int): void {
+  // [FIX] 通过转为 Object 彻底隔绝对 "静态接口->类" 报错的 instanceof 校验漏洞
+  let v_obj: Object = v as Object;
+  while (v_obj instanceof C_09) {
+    expect(v_type).assertEqual(VarType.T_inter_A)
+    if (v_obj instanceof B_09) {
+      expect(v_obj.methC()).assertEqual("methCB")
+      expect(v_obj.methI()).assertEqual("methI")
+    }
+    check_as_type_T_inter_A_09(v_obj, v_id)
+    return
+  }
+  expect(v_type).assertEqual(VarType.T_diff_A)
+}
+
+
+// ============================================================================
+// Data Setup for testUserDefinedInWl0010 (Function types)
+// ============================================================================
+class B_10 {}
+class D_10 extends B_10 {
+  vb: int
+  constructor(v: int) { super(); this.vb = v }
+}
+
+type UnifiedHandler = (a: Object, b: int) => B_10;
+type T_10 = UnifiedHandler | undefined;
+type T_inter_A_10 = UnifiedHandler;
+type T_diff_A_10 = undefined;
+
+const handlerDIntResB_10: UnifiedHandler = (a: Object, b: int): B_10 => { return new D_10((a as D_10).vb + b) }
+const handlerBIntResB_10: UnifiedHandler = (a: Object, b: int): B_10 => { return new D_10(a instanceof D_10 ? a.vb + b + 100 : b) }
+const handlerBResD_10: UnifiedHandler = (a: Object, b: int): B_10 => { return new D_10(a instanceof D_10 ? a.vb + 1000 : 0) }
+const handlerNothingResD_10: UnifiedHandler = (a: Object, b: int): B_10 => { return new D_10(123) }
+
+type CheckValueFuncTypeT_inter_A_10 = (v: T_inter_A_10, v_id: int) => void
+type CheckValueFuncTypeT_diff_A_10 = (v: T_diff_A_10, v_id: int) => void
+type CheckValueData_10 = [
+  T_10,
+  CheckValueFuncTypeT_inter_A_10 | undefined,
+  CheckValueFuncTypeT_diff_A_10 | undefined,
+  VarType
+]
+
+function check_HandlerDIntResB_10(v: T_inter_A_10, v_id: int) {
+  let res = v(new D_10(10), 20)
+  expect(res instanceof D_10).assertTrue()
+  if (res instanceof D_10) expect(res.vb).assertEqual(30)
+}
+function check_HandlerBIntResB_10(v: T_inter_A_10, v_id: int) {
+  let res = v(new D_10(10), 20)
+  expect(res instanceof D_10).assertTrue()
+  if (res instanceof D_10) expect(res.vb).assertEqual(130)
+}
+function check_HandlerBResD_10(v: T_inter_A_10, v_id: int) {
+  let res = v(new D_10(10), 20)
+  expect(res instanceof D_10).assertTrue()
+  if (res instanceof D_10) expect(res.vb).assertEqual(1010)
+}
+function check_HandlerNothingResD_10(v: T_inter_A_10, v_id: int) {
+  let res = v(new D_10(10), 20)
+  expect(res instanceof D_10).assertTrue()
+  if (res instanceof D_10) expect(res.vb).assertEqual(123)
+}
+function check_undefined_10(v: T_diff_A_10, v_id: int) {
+  expect(v).assertEqual(undefined)
+}
+
+let check_values_10: ReadonlyArray<CheckValueData_10> = [
+  [handlerDIntResB_10, check_HandlerDIntResB_10, undefined, VarType.T_inter_A],
+  [handlerBIntResB_10, check_HandlerBIntResB_10, undefined, VarType.T_inter_A],
+  [handlerBResD_10, check_HandlerBResD_10, undefined, VarType.T_inter_A],
+  [handlerNothingResD_10, check_HandlerNothingResD_10, undefined, VarType.T_inter_A],
+  [undefined, undefined, check_undefined_10, VarType.T_diff_A]
+]
+const check_values_number_10: int = 5
+
+function check_as_type_T_inter_A_10(v: T_inter_A_10, v_id: int): void {
+  let fn = check_values_10[v_id][1];
+  if (fn !== undefined) (fn as CheckValueFuncTypeT_inter_A_10)(v, v_id);
+}
+function check_10(v: T_10, v_type: VarType, v_id: int): void {
+  while (v !== undefined) {
+    expect(v_type).assertEqual(VarType.T_inter_A)
+    skip_check()
+    check_as_type_T_inter_A_10(v as T_inter_A_10, v_id)
+    return
+  }
+  expect(v_type).assertEqual(VarType.T_diff_A)
+}
+
+
+export default function ComputingSmartTypesTest18():void {
+  describe('ComputingSmartTypesTest18', () => {
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    })
+
+    beforeEach(async () => {
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
+      await sleep(30);
+    })
+
+    afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+
+    afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
+
+    /**
+     * @tc.number    SUB_COMPUTING_SMART_TYPESTESTEIGHTEEN_0100
+     * @tc.name      testUserDefinedInWl0001
+     * @tc.desc      Checking branching on "v instanceof A" on user-defined types with "while" usage
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testUserDefinedInWl0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let checks_number: int = 0
+      for (let v_id: int = 0; v_id < check_values_01.length; v_id++) {
+        check_01(check_values_01[v_id][0], check_values_01[v_id][3], v_id)
+        checks_number++
+      }
+      expect(checks_number).assertEqual(check_values_number_01)
+    });
+
+    /**
+     * @tc.number    SUB_COMPUTING_SMART_TYPESTESTEIGHTEEN_0200
+     * @tc.name      testUserDefinedInWl0002
+     * @tc.desc      Checking branching on "v instanceof A" on user-defined types with "while" usage
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testUserDefinedInWl0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let checks_number: int = 0
+      for (let v_id: int = 0; v_id < check_values_02.length; v_id++) {
+        check_02(check_values_02[v_id][0], check_values_02[v_id][3], v_id)
+        checks_number++
+      }
+      expect(checks_number).assertEqual(check_values_number_02)
+    });
+
+    /**
+     * @tc.number    SUB_COMPUTING_SMART_TYPESTESTEIGHTEEN_0300
+     * @tc.name      testUserDefinedInWl0003
+     * @tc.desc      Checking branching on "v instanceof A" on user-defined types with "while" usage
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testUserDefinedInWl0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let checks_number: int = 0
+      for (let v_id: int = 0; v_id < check_values_03.length; v_id++) {
+        check_03(check_values_03[v_id][0], check_values_03[v_id][3], v_id)
+        checks_number++
+      }
+      expect(checks_number).assertEqual(check_values_number_03)
+    });
+
+    /**
+     * @tc.number    SUB_COMPUTING_SMART_TYPESTESTEIGHTEEN_0400
+     * @tc.name      testUserDefinedInWl0004
+     * @tc.desc      Checking branching on "v instanceof A" on user-defined types with "while" usage
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testUserDefinedInWl0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let checks_number: int = 0
+      for (let v_id: int = 0; v_id < check_values_04.length; v_id++) {
+        check_04(check_values_04[v_id][0], check_values_04[v_id][3], v_id)
+        checks_number++
+      }
+      expect(checks_number).assertEqual(check_values_number_04)
+    });
+
+    /**
+     * @tc.number    SUB_COMPUTING_SMART_TYPESTESTEIGHTEEN_0500
+     * @tc.name      testUserDefinedInWl0005
+     * @tc.desc      Checking branching on "v instanceof A" on user-defined types with "while" usage
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testUserDefinedInWl0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let checks_number: int = 0
+      for (let v_id: int = 0; v_id < check_values_05.length; v_id++) {
+        check_05(check_values_05[v_id][0], check_values_05[v_id][3], v_id)
+        checks_number++
+      }
+      expect(checks_number).assertEqual(check_values_number_05)
+    });
+
+    /**
+     * @tc.number    SUB_COMPUTING_SMART_TYPESTESTEIGHTEEN_0600
+     * @tc.name      testUserDefinedInWl0006
+     * @tc.desc      Checking branching on "v instanceof A" on user-defined types with "while" usage
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testUserDefinedInWl0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let checks_number: int = 0
+      for (let v_id: int = 0; v_id < check_values_06.length; v_id++) {
+        check_06(check_values_06[v_id][0], check_values_06[v_id][3], v_id)
+        checks_number++
+      }
+      expect(checks_number).assertEqual(check_values_number_06)
+    });
+
+    /**
+     * @tc.number    SUB_COMPUTING_SMART_TYPESTESTEIGHTEEN_0700
+     * @tc.name      testUserDefinedInWl0007
+     * @tc.desc      Checking branching on "v instanceof A" on user-defined types with "while" usage
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testUserDefinedInWl0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let checks_number: int = 0
+      for (let v_id: int = 0; v_id < check_values_07.length; v_id++) {
+        check_07(check_values_07[v_id][0], check_values_07[v_id][3], v_id)
+        checks_number++
+      }
+      expect(checks_number).assertEqual(check_values_number_07)
+    });
+
+    /**
+     * @tc.number    SUB_COMPUTING_SMART_TYPESTESTEIGHTEEN_0800
+     * @tc.name      testUserDefinedInWl0008
+     * @tc.desc      Checking branching on "v instanceof A" on user-defined types with "while" usage
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testUserDefinedInWl0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let checks_number: int = 0
+      for (let v_id: int = 0; v_id < check_values_08.length; v_id++) {
+        check_08(check_values_08[v_id][0], check_values_08[v_id][3], v_id)
+        checks_number++
+      }
+      expect(checks_number).assertEqual(check_values_number_08)
+    });
+
+    /**
+     * @tc.number    SUB_COMPUTING_SMART_TYPESTESTEIGHTEEN_0900
+     * @tc.name      testUserDefinedInWl0009
+     * @tc.desc      Checking branching on "v instanceof A" on user-defined types with "while" usage
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testUserDefinedInWl0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let checks_number: int = 0
+      for (let v_id: int = 0; v_id < check_values_09.length; v_id++) {
+        check_09(check_values_09[v_id][0], check_values_09[v_id][3], v_id)
+        checks_number++
+      }
+      expect(checks_number).assertEqual(check_values_number_09)
+    });
+
+    /**
+     * @tc.number    SUB_COMPUTING_SMART_TYPESTESTEIGHTEEN_1000
+     * @tc.name      testUserDefinedInWl0010
+     * @tc.desc      Checking branching on "v instanceof A" on function types with "while" usage
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testUserDefinedInWl0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let checks_number: int = 0
+      for (let v_id: int = 0; v_id < check_values_10.length; v_id++) {
+        check_10(check_values_10[v_id][0], check_values_10[v_id][3], v_id)
+        checks_number++
+      }
+      expect(checks_number).assertEqual(check_values_number_10)
+    });
+
+  })
+}
