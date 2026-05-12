@@ -1957,7 +1957,7 @@ export default function bluetoothConnectionTest() {
        * @tc.number SUB_Communication_BP_PairDevice_Callback_DeviceId_Empty_001
        * @tc.name subCommunicationBpPairDeviceCallbackDeviceIdEmpty001
        * @tc.desc Test pairDevice(callback) with empty string deviceId
-       * @tc.level Level 0
+       * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
@@ -1989,7 +1989,7 @@ export default function bluetoothConnectionTest() {
        * @tc.number SUB_Communication_BP_PairDevice_Promise_DeviceId_Empty_001
        * @tc.name subCommunicationBpPairDevicePromiseDeviceIdEmpty001
        * @tc.desc Test pairDevice(promise) with empty string deviceId
-       * @tc.level Level 0
+       * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
@@ -2016,7 +2016,7 @@ export default function bluetoothConnectionTest() {
        * @tc.number SUB_Communication_BP_GetRemoteDeviceName_DeviceId_Empty_001
        * @tc.name subCommunicationBpGetRemoteDeviceNameDeviceIdEmpty001
        * @tc.desc Test getRemoteDeviceName with empty string deviceId
-       * @tc.level Level 0
+       * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
@@ -2042,7 +2042,7 @@ export default function bluetoothConnectionTest() {
        * @tc.number SUB_Communication_BP_GetRemoteDeviceClass_DeviceId_Empty_001
        * @tc.name subCommunicationBpGetRemoteDeviceClassDeviceIdEmpty001
        * @tc.desc Test getRemoteDeviceClass with empty string deviceId
-       * @tc.level Level 0
+       * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
@@ -2068,7 +2068,7 @@ export default function bluetoothConnectionTest() {
        * @tc.number SUB_Communication_BP_GetPairState_DeviceId_Empty_001
        * @tc.name subCommunicationBpGetPairStateDeviceIdEmpty001
        * @tc.desc Test getPairState with empty string deviceId
-       * @tc.level Level 0
+       * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
@@ -2094,7 +2094,7 @@ export default function bluetoothConnectionTest() {
        * @tc.number SUB_Communication_BP_SetDevicePairingConfirmation_DeviceId_Empty_001
        * @tc.name subCommunicationBpSetDevicePairingConfirmationDeviceIdEmpty001
        * @tc.desc Test setDevicePairingConfirmation with empty string deviceId
-       * @tc.level Level 0
+       * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
@@ -2120,7 +2120,7 @@ export default function bluetoothConnectionTest() {
        * @tc.number SUB_Communication_BP_SetDevicePinCode_Callback_DeviceId_Empty_001
        * @tc.name subCommunicationBpSetDevicePinCodeCallbackDeviceIdEmpty001
        * @tc.desc Test setDevicePinCode(callback) with empty string deviceId
-       * @tc.level Level 0
+       * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
@@ -2152,7 +2152,7 @@ export default function bluetoothConnectionTest() {
        * @tc.number SUB_Communication_BP_SetDevicePinCode_Promise_DeviceId_Empty_001
        * @tc.name subCommunicationBpSetDevicePinCodePromiseDeviceIdEmpty001
        * @tc.desc Test setDevicePinCode(promise) with empty string deviceId
-       * @tc.level Level 0
+       * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
@@ -2179,7 +2179,7 @@ export default function bluetoothConnectionTest() {
        * @tc.number SUB_Communication_BP_SetDevicePinCode_Callback_Code_Empty_001
        * @tc.name subCommunicationBpSetDevicePinCodeCallbackCodeEmpty001
        * @tc.desc Test setDevicePinCode(callback) with empty string pinCode
-       * @tc.level Level 0
+       * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
@@ -2212,7 +2212,7 @@ export default function bluetoothConnectionTest() {
        * @tc.number SUB_Communication_BP_SetDevicePinCode_Promise_Code_Empty_001
        * @tc.name subCommunicationBpSetDevicePinCodePromiseCodeEmpty001
        * @tc.desc Test setDevicePinCode(promise) with empty string pinCode
-       * @tc.level Level 0
+       * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
@@ -2239,7 +2239,7 @@ export default function bluetoothConnectionTest() {
        * @tc.number SUB_Communication_BP_GetRemoteProfileUuids_Callback_DeviceId_Empty_001
        * @tc.name subCommunicationBpGetRemoteProfileUuidsCallbackDeviceIdEmpty001
        * @tc.desc Test getRemoteProfileUuids(callback) with empty string deviceId
-       * @tc.level Level 0
+       * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
@@ -2272,7 +2272,7 @@ export default function bluetoothConnectionTest() {
        * @tc.number SUB_Communication_BP_GetRemoteProfileUuids_Promise_DeviceId_Empty_001
        * @tc.name subCommunicationBpGetRemoteProfileUuidsPromiseDeviceIdEmpty001
        * @tc.desc Test getRemoteProfileUuids(promise) with empty string deviceId
-       * @tc.level Level 0
+       * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
@@ -2299,7 +2299,7 @@ export default function bluetoothConnectionTest() {
        * @tc.number SUB_Communication_BP_ConnectAllowedProfiles_Callback_DeviceId_Empty_001
        * @tc.name subCommunicationBpConnectAllowedProfilesCallbackDeviceIdEmpty001
        * @tc.desc Test connectAllowedProfiles(callback) with empty string deviceId
-       * @tc.level Level 0
+       * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
@@ -2332,7 +2332,7 @@ export default function bluetoothConnectionTest() {
        * @tc.number SUB_Communication_BP_ConnectAllowedProfiles_Promise_DeviceId_Empty_001
        * @tc.name subCommunicationBpConnectAllowedProfilesPromiseDeviceIdEmpty001
        * @tc.desc Test connectAllowedProfiles(promise) with empty string deviceId
-       * @tc.level Level 0
+       * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
@@ -2359,7 +2359,7 @@ export default function bluetoothConnectionTest() {
        * @tc.number SUB_Communication_BP_GetRemoteDeviceBatteryInfo_DeviceId_Empty_001
        * @tc.name subCommunicationBpGetRemoteDeviceBatteryInfoDeviceIdEmpty001
        * @tc.desc Test getRemoteDeviceBatteryInfo with empty string deviceId
-       * @tc.level Level 0
+       * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
@@ -2386,7 +2386,7 @@ export default function bluetoothConnectionTest() {
        * @tc.number SUB_Communication_BP_SetRemoteDeviceName_DeviceId_Empty_001
        * @tc.name subCommunicationBpSetRemoteDeviceNameDeviceIdEmpty001
        * @tc.desc Test setRemoteDeviceName with empty string deviceId
-       * @tc.level Level 0
+       * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
@@ -2413,7 +2413,7 @@ export default function bluetoothConnectionTest() {
        * @tc.number SUB_Communication_BP_SetRemoteDeviceName_Name_Empty_001
        * @tc.name subCommunicationBpSetRemoteDeviceNameNameEmpty001
        * @tc.desc Test setRemoteDeviceName with empty string name
-       * @tc.level Level 0
+       * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
@@ -2440,7 +2440,7 @@ export default function bluetoothConnectionTest() {
        * @tc.number SUB_Communication_BP_GetLastConnectionTime_DeviceId_Empty_001
        * @tc.name subCommunicationBpGetLastConnectionTimeDeviceIdEmpty001
        * @tc.desc Test getLastConnectionTime with empty string deviceId
-       * @tc.level Level 0
+       * @tc.level LEVEL0
        * @tc.type Function
        * @tc.size MEDIUMTEST
        */
