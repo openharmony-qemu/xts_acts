@@ -675,8 +675,11 @@ export default function uitestUiWindowErrorTest(): void {
     it('test_UiWindow_moveTo_401_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_moveTo_401_static start`);
       let driver = Driver.create();
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver.delayMs(waitUiReadyMs);
+      let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'});
+      await driver.delayMs(waitUiReadyMs);
       try {
-        let window = await driver.findWindow({active: true});
         if (window != null) {
           await window.moveTo(-1, 100);
         }
@@ -686,7 +689,6 @@ export default function uitestUiWindowErrorTest(): void {
         expect((e as BusinessError).code).assertEqual(ErrorCode);
       }
       try {
-        let window = await driver.findWindow({active: true});
         if (window != null) {
           await window.moveTo(100, -1);
         }
@@ -695,6 +697,7 @@ export default function uitestUiWindowErrorTest(): void {
         console.log(`${TestTag}, test_UiWindow_moveTo_401_static y = -1 is: ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ErrorCode);
       }
+      await stopApplication('com.uitestScene.acts');
       console.log(`${TestTag}, test_UiWindow_moveTo_401_static end`);
     })
 
@@ -709,7 +712,10 @@ export default function uitestUiWindowErrorTest(): void {
     it('test_UiWindow_resize_401_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_resize_401_static start`);
       let driver = Driver.create();
-      let window = await driver.findWindow({active: true});
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver.delayMs(waitUiReadyMs);
+      let window = await driver.findWindow({bundleName: 'com.uitestScene.acts'});
+      await driver.delayMs(waitUiReadyMs);
       try {
         if (window != null) {
           await window.resize(-1, 100, ResizeDirection.RIGHT_DOWN);
@@ -728,6 +734,7 @@ export default function uitestUiWindowErrorTest(): void {
         console.log(`${TestTag}, test_UiWindow_resize_401_static y = -1 is: ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ErrorCode);
       }
+      await stopApplication('com.uitestScene.acts');
       console.log(`${TestTag}, test_UiWindow_resize_401_static end`);
     })
   })
