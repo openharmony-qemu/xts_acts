@@ -83,6 +83,8 @@
  	       let btn = await driver.findComponent(ON.id('promptActionShowToast1'));
  	       await Utils.sleep(200);
  	       await btn.click()
+		   await Utils.sleep(200);
+ 	       await btn.click()
  	       await Utils.sleep(200);
  	       expect(AppStorage.get('promptActionShowToast1')).assertEqual(true)
  	       console.log('PromptActionMethodNullUndefinedTest_001 END')
