@@ -326,7 +326,7 @@ export default function observerManagerSimStateTest1() {
         await sim.deactivateSim(slotId);
         observer.onGetSimActiveState(slotId, (data: boolean | undefined) => {
           console.info(`${caseName} data: ${data}`);
-          await ExpectTrue(data === true);
+          ExpectTrue(data === true);
           done();
         });
       } catch (error) {
@@ -435,7 +435,7 @@ export default function observerManagerSimStateTest1() {
         let callback: ((data: boolean | undefined) => void) | undefined = undefined;
         callback = (data: boolean | undefined) => {
           console.info(`${caseName} data: ${data}`);
-          await ExpectTrue(data === true);
+          ExpectTrue(data === true);
           observer.offGetSimActiveState(callback);
           done();
         }
