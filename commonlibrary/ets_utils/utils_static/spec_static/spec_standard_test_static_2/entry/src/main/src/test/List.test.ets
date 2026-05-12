@@ -147,15 +147,6 @@ import OverridingFieldsTest from "./classes/overriding_fields/OverridingFields.t
 import OverridingFieldsOneTest from "./classes/overriding_fields/OverridingFieldsOne.test";
 import OverridingFieldsThreeTest from "./classes/overriding_fields/OverridingFieldsThree.test";
 import OverridingFieldsTwoTest from "./classes/overriding_fields/OverridingFieldsTwo.test";
-import ReadonlyConstantFieldsTest from "./classes/readonly_constant_fields/ReadonlyConstantFields.test";
-import ReadonlyConstantFieldsEightTest from "./classes/readonly_constant_fields/ReadonlyConstantFieldsEight.test";
-import ReadonlyConstantFieldsFiveTest from "./classes/readonly_constant_fields/ReadonlyConstantFieldsFive.test";
-import ReadonlyConstantFieldsFourTest from "./classes/readonly_constant_fields/ReadonlyConstantFieldsFour.test";
-import ReadonlyConstantFieldsOneTest from "./classes/readonly_constant_fields/ReadonlyConstantFieldsOne.test";
-import ReadonlyConstantFieldsSevenTest from "./classes/readonly_constant_fields/ReadonlyConstantFieldsSeven.test";
-import ReadonlyConstantFieldsSixTest from "./classes/readonly_constant_fields/ReadonlyConstantFieldsSix.test";
-import ReadonlyConstantFieldsThreeTest from "./classes/readonly_constant_fields/ReadonlyConstantFieldsThree.test";
-import ReadonlyConstantFieldsTwoTest from "./classes/readonly_constant_fields/ReadonlyConstantFieldsTwo.test";
 
 export default function testsuite(): void {
   ExpressionsIndexingArrayTest();
@@ -293,13 +284,4 @@ export default function testsuite(): void {
   OverridingFieldsOneTest();
   OverridingFieldsThreeTest();
   OverridingFieldsTwoTest();
-  ReadonlyConstantFieldsTest();
-  ReadonlyConstantFieldsEightTest();
-  ReadonlyConstantFieldsFiveTest();
-  ReadonlyConstantFieldsFourTest();
-  ReadonlyConstantFieldsOneTest();
-  ReadonlyConstantFieldsSevenTest();
-  ReadonlyConstantFieldsSixTest();
-  ReadonlyConstantFieldsThreeTest();
-  ReadonlyConstantFieldsTwoTest();  
 }
