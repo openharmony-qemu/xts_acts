@@ -667,17 +667,13 @@ export default function geolocationTest_geo8() {
                 if (err.code === 801) {
                     expect(err.code === 801).assertTrue();
                 } else {
-                    expect(err.code === 201).assertTrue();
+                    expect(err.code === 3301100).assertTrue();
                 }
                 done();
             });
         } catch (error) {
             console.info('[lbs_js] SUB_Location_findMatchingWlan_0500 try err: ' + JSON.stringify(error));
-            if (error.code === 801) {
-                expect(error.code === 801).assertTrue();
-            } else {
-                expect(error.code === 201).assertTrue();
-            }
+            expect().assertFail()
             done();
         }
     })
