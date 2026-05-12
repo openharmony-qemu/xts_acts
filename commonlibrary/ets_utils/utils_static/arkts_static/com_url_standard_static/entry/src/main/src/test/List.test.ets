@@ -19,11 +19,16 @@ import urlTest3 from "./url/Emoji_Url.test.ets";
 import urlTest4 from "./url/Escape_Url.test.ets";
 import urlTest5 from './url/Url3.test';
 
+import URL01Test from './url/URLTest01.test';
+import URL02Test from './url/URLTest02.test';
+
 export default function testsuite() {
     urlTest1();
     urlTest2();
     urlTest3();
     urlTest4();
     urlTest5();
-  
+
+    URL01Test();
+    URL02Test();
 }
