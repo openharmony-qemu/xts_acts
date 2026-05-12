@@ -497,17 +497,17 @@ export default function geolocationTest_geo8() {
         });
 
         /**
-         * @tc.name   SUB_Location_findMatchingWlan_0100
-         * @tc.number SUB_Location_findMatchingWlan_0100
+         * @tc.name   SUB_Location_findMatchingWlan_promiss_0100
+         * @tc.number SUB_Location_findMatchingWlan_promiss_0100
          * @tc.desc   Test findMatchingWlan with real BSSID from getCurrentWifiBssidForLocating
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL1
          */
-        it('SUB_Location_findMatchingWlan_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        it('SUB_Location_findMatchingWlan_promiss_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             try {
                 let bssid = geolocationm.getCurrentWifiBssidForLocating();
-                console.info('[lbs_js] SUB_Location_findMatchingWlan_0100: ' + bssid);
+                console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0100: ' + bssid);
                 
                 if (bssid === '' || bssid === undefined || bssid === null) {
                     console.info('[lbs_js] No BSSID available, skip test');
@@ -520,7 +520,7 @@ export default function geolocationTest_geo8() {
                 let needStartScan = true;
                 
                 geolocationm.findMatchingWlan(wlanBssidArray, rssiThreshold, needStartScan).then((result) => {
-                    console.info('[lbs_js] SUB_Location_findMatchingWlan_0100 result: ' + JSON.stringify(result));
+                    console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0100 result: ' + JSON.stringify(result));
                     expect(result instanceof Array).assertTrue();
                     if (result.length > 0) {
                         console.info('[lbs_js] result[0].index: ' + result[0].index);
@@ -534,117 +534,117 @@ export default function geolocationTest_geo8() {
                     }
                     done();
                 }).catch((err) => {
-                    console.info('[lbs_js] SUB_Location_findMatchingWlan_0100 error: ' + JSON.stringify(err));
+                    console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0100 error: ' + JSON.stringify(err));
                     expect(err.code === 801).assertTrue();
                     done();
                 });
             } catch (error) {
-                console.info('[lbs_js] SUB_Location_findMatchingWlan_0100 try err: ' + JSON.stringify(error));
+                console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0100 try err: ' + JSON.stringify(error));
                 expect(err.code === 801).assertTrue();
                 done();
             }
         });
 
         /**
-         * @tc.name   SUB_Location_findMatchingWlan_0200
-         * @tc.number SUB_Location_findMatchingWlan_0200
+         * @tc.name   SUB_Location_findMatchingWlan_promiss_0200
+         * @tc.number SUB_Location_findMatchingWlan_promiss_0200
          * @tc.desc   Test findMatchingWlan with empty BSSID array
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL1
          */
-        it('SUB_Location_findMatchingWlan_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        it('SUB_Location_findMatchingWlan_promiss_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             try {
                 let wlanBssidArray = [];
                 let rssiThreshold = -70;
                 let needStartScan = true;
                 
                 geolocationm.findMatchingWlan(wlanBssidArray, rssiThreshold, needStartScan).then((result) => {
-                    console.info('[lbs_js] SUB_Location_findMatchingWlan_0200 result: ' + JSON.stringify(result));
+                    console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0200 result: ' + JSON.stringify(result));
                     expect(result instanceof Array).assertTrue();
                     expect(result.length === 0).assertTrue();
                     done();
                 }).catch((err) => {
-                    console.info('[lbs_js] SUB_Location_findMatchingWlan_0200 error: ' + JSON.stringify(err));
+                    console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0200 error: ' + JSON.stringify(err));
                     expect(err.code === 801).assertTrue();
                     done();
                 });
             } catch (error) {
-                console.info('[lbs_js] SUB_Location_findMatchingWlan_0200 try err: ' + JSON.stringify(error));
+                console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0200 try err: ' + JSON.stringify(error));
                 expect(error.code === 801).assertTrue();
                 done();
             }
         });
 
         /**
-         * @tc.name   SUB_Location_findMatchingWlan_0300
-         * @tc.number SUB_Location_findMatchingWlan_0300
+         * @tc.name   SUB_Location_findMatchingWlan_promiss_0300
+         * @tc.number SUB_Location_findMatchingWlan_promiss_0300
          * @tc.desc   Test findMatchingWlan with multiple BSSIDs
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL1
          */
-        it('SUB_Location_findMatchingWlan_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        it('SUB_Location_findMatchingWlan_promiss_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             try {
                 let wlanBssidArray = ['AA:BB:CC:DD:EE:FF', '11:22:33:44:55:66', 'FE:DC:BA:98:76:54'];
                 let rssiThreshold = -80;
                 let needStartScan = true;
                 
                 geolocationm.findMatchingWlan(wlanBssidArray, rssiThreshold, needStartScan).then((result) => {
-                    console.info('[lbs_js] SUB_Location_findMatchingWlan_0300 result: ' + JSON.stringify(result));
+                    console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0300 result: ' + JSON.stringify(result));
                     expect(result instanceof Array).assertTrue();
                     done();
                 }).catch((err) => {
-                    console.info('[lbs_js] SUB_Location_findMatchingWlan_0300 error: ' + JSON.stringify(err));
+                    console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0300 error: ' + JSON.stringify(err));
                     expect(err.code === 801).assertTrue();
                     done();
                 });
             } catch (error) {
-                console.info('[lbs_js] SUB_Location_findMatchingWlan_0300 try err: ' + JSON.stringify(error));
+                console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0300 try err: ' + JSON.stringify(error));
                 expect(error.code === 801).assertTrue();
                 done();
             }
         });
 
         /**
-         * @tc.name   SUB_Location_findMatchingWlan_0400
-         * @tc.number SUB_Location_findMatchingWlan_0400
+         * @tc.name   SUB_Location_findMatchingWlan_promiss_0400
+         * @tc.number SUB_Location_findMatchingWlan_promiss_0400
          * @tc.desc   Test findMatchingWlan with different rssiThreshold values
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL1
          */
-        it('SUB_Location_findMatchingWlan_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        it('SUB_Location_findMatchingWlan_promiss_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             try {
                 let wlanBssidArray = ['AA:BB:CC:DD:EE:FF'];
                 let rssiThreshold = -1000;
                 let needStartScan = false;
                 
                 geolocationm.findMatchingWlan(wlanBssidArray, rssiThreshold, needStartScan).then((result) => {
-                    console.info('[lbs_js] SUB_Location_findMatchingWlan_0400 result: ' + JSON.stringify(result));
+                    console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0400 result: ' + JSON.stringify(result));
                     expect(result instanceof Array).assertTrue();
                     done();
                 }).catch((err) => {
-                    console.info('[lbs_js] SUB_Location_findMatchingWlan_0400 error: ' + JSON.stringify(err));
+                    console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0400 error: ' + JSON.stringify(err));
                     expect(err.code === 801).assertTrue();
                     done();
                 });
             } catch (error) {
-                console.info('[lbs_js] SUB_Location_findMatchingWlan_0400 try err: ' + JSON.stringify(error));
+                console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0400 try err: ' + JSON.stringify(error));
                 expect(error.code === 801).assertTrue();
                 done();
             }
         })
 
         /**
-     * @tc.name   SUB_Location_findMatchingWlan_0500
-     * @tc.number SUB_Location_findMatchingWlan_0500
+     * @tc.name   SUB_Location_findMatchingWlan_promiss_0500
+     * @tc.number SUB_Location_findMatchingWlan_promiss_0500
      * @tc.desc   Test findMatchingWlan error code 3301100 (location switch off)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_Location_findMatchingWlan_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+    it('SUB_Location_findMatchingWlan_promiss_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         try {
             await geolocationm.disableLocation();
             await sleep(1000);
@@ -660,10 +660,10 @@ export default function geolocationTest_geo8() {
             let needStartScan = true;
             
             geolocationm.findMatchingWlan(wlanBssidArray, rssiThreshold, needStartScan).then((result) => {
-                console.info('[lbs_js] SUB_Location_findMatchingWlan_0500 result: ' + JSON.stringify(result));
+                console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0500 result: ' + JSON.stringify(result));
                 done();
             }).catch((err) => {
-                console.info('[lbs_js] SUB_Location_findMatchingWlan_0500 error: ' + JSON.stringify(err));
+                console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0500 error: ' + JSON.stringify(err));
                 if (err.code === 801) {
                     expect(err.code === 801).assertTrue();
                 } else {
@@ -672,7 +672,7 @@ export default function geolocationTest_geo8() {
                 done();
             });
         } catch (error) {
-            console.info('[lbs_js] SUB_Location_findMatchingWlan_0500 try err: ' + JSON.stringify(error));
+            console.info('[lbs_js] SUB_Location_findMatchingWlan_promiss_0500 try err: ' + JSON.stringify(error));
             expect().assertFail()
             done();
         }
