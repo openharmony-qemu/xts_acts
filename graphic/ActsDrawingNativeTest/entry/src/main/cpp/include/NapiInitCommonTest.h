@@ -145,6 +145,8 @@
  constexpr size_t CANVAS_PART5_DRAW_PIXEL_MAP_RECT_CONSTRAINT_HANDLER_COUNT = 4;
  constexpr size_t CANVAS_PART5_DRAW_PIXEL_MAP_MESH_HANDLER_COUNT = 11;
  constexpr size_t CANVAS_PART6_RESET_CLIP_HANDLER_COUNT = 3;
+ constexpr size_t CANVAS_PART6_DRAW_GLYPHS_HANDLER_COUNT = 4;
+ constexpr size_t CANVAS_PART6_IS_OPAQUE_HANDLER_COUNT = 3;
  constexpr size_t BITMAP_HANDLER_COUNT = 26;
  constexpr size_t COLOR_FILTER_CREATE_BLEND_MODE_HANDLER_COUNT = 5;
  constexpr size_t COLOR_FILTER_CREATE_COMPOSE_HANDLER_COUNT = 3;
@@ -516,5 +518,6 @@ napi_value DrawingCanvasDrawPixelMapNine(napi_env env, napi_callback_info info);
 napi_value DrawingCanvasCreateWithPixelMap(napi_env env, napi_callback_info info);
 napi_value DrawingCanvasDrawPixelMapRectConstraint(napi_env env, napi_callback_info info);
 napi_value DrawingCanvasDrawPixelMapMesh(napi_env env, napi_callback_info info);
-
+napi_value DrawingCanvasDrawGlyphs(napi_env env, napi_callback_info info);
+napi_value DrawingCanvasIsOpaque(napi_env env, napi_callback_info info);
 #endif // NAPI_INIT_COMMON_TEST_H
