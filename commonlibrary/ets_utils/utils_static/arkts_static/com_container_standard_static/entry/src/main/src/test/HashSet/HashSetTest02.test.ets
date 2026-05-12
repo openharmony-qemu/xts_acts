@@ -1796,7 +1796,7 @@ export default function HashSet02Test(): void {
         const result5: boolean = hashSet.has(undefined as MixedPerformanceType);
         expect(result5).assertFalse();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e !== undefined).assertTrue();
       }
 
       const testObj: SimpleObj = { id: 5, name: "obj_5" };

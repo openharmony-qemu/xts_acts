@@ -1073,7 +1073,7 @@ export default function HashSet06Test(): void {
       console.log(TAG + ' start');
 
       const hashSet = new HashSet<number>();
-      expect(true).assertTrue();
+      expect(hashSet.length).assertEqual(0);
 
       for (let i: int = 0; i < 5; i++) {
         hashSet.add(i);

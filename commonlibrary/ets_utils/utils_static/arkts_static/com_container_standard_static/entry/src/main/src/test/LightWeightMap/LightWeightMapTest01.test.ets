@@ -117,7 +117,7 @@ export default function testLightWeightMapTest01(): void {
       const TAG = 'testLightWeightMapTest01Chapter0400';
       console.log(TAG + 'start');
       const lightWeightMap = new LightWeightMap<number, string>();
-      expect("LightWeightMap").assertEqual("LightWeightMap");
+      expect(lightWeightMap.length).assertEqual(0);
       console.log(TAG + 'end');
 
     });

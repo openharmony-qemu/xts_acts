@@ -1505,7 +1505,7 @@ export default function Queue01Test(): void {
         let result: number = queue.pop();
         expect(result).assertUndefined();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e !== undefined).assertTrue();
       }
     });
 

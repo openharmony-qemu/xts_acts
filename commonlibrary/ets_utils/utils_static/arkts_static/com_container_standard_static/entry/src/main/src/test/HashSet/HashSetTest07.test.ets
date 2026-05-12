@@ -1863,7 +1863,7 @@ export default function HashSet07Test(): void {
       hashSet.add(array2);
       let count: int = 0;
       for (const item of hashSet) {
-        expect(true).assertTrue();
+        expect(item !== null && item !== undefined).assertTrue();
         count++;
       }
       expect(count).assertEqual(2);
