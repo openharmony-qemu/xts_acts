@@ -781,7 +781,7 @@ export default function windowKeyBorad() {
 
     /**
      * @tc.name   testWindowAnimationCurveEnum
-     * @tc.number testWindowAnimationCurve_0100
+     * @tc.number SUB_BASIC_WMS_testWindowAnimationCurve_0100
      * @tc.desc   Test the function value of WindowAnimationCurve
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
