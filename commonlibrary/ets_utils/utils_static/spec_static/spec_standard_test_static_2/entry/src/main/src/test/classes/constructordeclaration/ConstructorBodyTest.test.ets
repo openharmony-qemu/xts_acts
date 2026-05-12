@@ -1,4 +1,30 @@
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../hypium/index';
+/*---
+ * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import {
+  expect,
+  describe,
+  beforeAll,
+  beforeEach,
+  afterEach,
+  afterAll,
+  it,
+  TestType,
+  Size,
+  Level
+} from '../../../../../hypium/index';
 
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {
@@ -555,7 +581,7 @@ class A19 {
     if (a == '1') {
       throw new Error('1')
     }
-    // 2. Mandatory call to a superconstructor (N/A19, no superclass)
+    // 2. Mandatory call to a super constructor (N/A19, no superclass)
     // 3. Mandatory execution of field initializers (if any) in the order they appear in
     // a class body implicitly added by the compiler.
     // 4. Optional arbitrary code that avoids usage of non-initialized fields.
@@ -634,7 +660,7 @@ class B16 extends A20 {
     if (a == '1') {
       throw new Error('1')
     }
-    // 2. Mandatory call to a superconstructor
+    // 2. Mandatory call to a super constructor
     // calling default implicit super constructor
     // 3. Mandatory execution of field initializers (if any) in the order they appear in
     // a class body implicitly added by the compiler.
@@ -714,7 +740,7 @@ class B17 extends A21 {
     if (a == '1') {
       throw new Error('1')
     }
-    // 2. Mandatory call to a superconstructor
+    // 2. Mandatory call to a super constructor
     super()
     // 3. Mandatory execution of field initializers (if any) in the order they appear in
     // a class body implicitly added by the compiler.
@@ -799,7 +825,7 @@ class B18 extends A22 {
     if (a == '1') {
       throw new Error('1')
     }
-    // 2. Mandatory call to a superconstructor
+    // 2. Mandatory call to a super constructor
     super(a)
     // 3. Mandatory execution of field initializers (if any) in the order they appear in
     // a class body implicitly added by the compiler.
@@ -842,7 +868,7 @@ class B18 extends A22 {
     if (a == '4') {
       throw new Error('4')
     }
-    // 2. Mandatory call to a superconstructor
+    // 2. Mandatory call to a super constructor
     super(a)
     // 3. Mandatory execution of field initializers (if any) in the order they appear in
     // a class body implicitly added by the compiler.
@@ -914,7 +940,7 @@ class B19 extends A23 {
     if (a == '1') {
       throw new Error('1')
     }
-    // 2. Mandatory call to a superconstructor
+    // 2. Mandatory call to a super constructor
     super(a, 1)
     // 3. Mandatory execution of field initializers (if any) in the order they appear in
     // a class body implicitly added by the compiler.
@@ -957,7 +983,7 @@ class B19 extends A23 {
     if (a == '4') {
       throw new Error('4')
     }
-    // 2. Mandatory call to a superconstructor
+    // 2. Mandatory call to a super constructor
     super(a, 1)
     // 3. Mandatory execution of field initializers (if any) in the order they appear in
     // a class body implicitly added by the compiler.
@@ -1895,7 +1921,7 @@ export default function ConstructorBodyTest():void {
     })
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_0100
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_0100
      * @tc.name      testConstructorBody0001
      * @tc.desc      Ensure that a field is initialized once
      * @tc.size      MediumTest
@@ -1917,7 +1943,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_0200
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_0200
      * @tc.name      testConstructorBody0002
      * @tc.desc      Ensure that a field is initialized once
      * @tc.size      MediumTest
@@ -1939,7 +1965,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_0300
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_0300
      * @tc.name      testConstructorBody0003
      * @tc.desc      Ensure that a field is initialized once
      * @tc.size      MediumTest
@@ -1961,7 +1987,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_0400
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_0400
      * @tc.name      testConstructorBody0004
      * @tc.desc      Ensure that a field is initialized once
      * @tc.size      MediumTest
@@ -1983,7 +2009,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_0500
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_0500
      * @tc.name      testConstructorBody0005
      * @tc.desc      Ensure that a field is initialized once
      * @tc.size      MediumTest
@@ -2005,7 +2031,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_0600
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_0600
      * @tc.name      testConstructorBody0006
      * @tc.desc      Ensure that all fields are initialized in order they appear in a class body
      * @tc.size      MediumTest
@@ -2014,7 +2040,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0006'
-
       cnt = 0
       let a = new A5('x') // call primary constructor
       expect(a.f00).assertEqual(0)
@@ -2025,7 +2050,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_0700
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_0700
      * @tc.name      testConstructorBody0007
      * @tc.desc      Ensure that all fields are initialized in order they appear in a class body
      * @tc.size      MediumTest
@@ -2034,7 +2059,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0007'
-
       cnt1 = 0
       let a = new A6() // call secondary constructor
       expect(a.f00).assertEqual(0)
@@ -2045,7 +2069,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_0800
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_0800
      * @tc.name      testConstructorBody0008
      * @tc.desc      Ensure that all fields are initialized in order they appear in a class body
      * @tc.size      MediumTest
@@ -2054,7 +2078,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0008'
-
       cnt2 = 0
       let b = new B4('x') // call primary constructor
       expect(b.f00).assertEqual(0)
@@ -2065,7 +2088,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_0900
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_0900
      * @tc.name      testConstructorBody0009
      * @tc.desc      Ensure that all fields are initialized in order they appear in a class body
      * @tc.size      MediumTest
@@ -2074,7 +2097,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0009'
-
       cnt3 = 0
       let b = new B5('x') // call primary constructor
       expect(b.f00).assertEqual(5)
@@ -2085,7 +2107,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_1000
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_1000
      * @tc.name      testConstructorBody0010
      * @tc.desc      Ensure that all fields are initialized in order they appear in a class body
      * @tc.size      MediumTest
@@ -2094,7 +2116,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0010'
-
       cnt4 = 0
       let b = new B6('x') // call primary constructor
       expect(b.f00).assertEqual(0)
@@ -2105,7 +2126,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_1100
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_1100
      * @tc.name      testConstructorBody0011
      * @tc.desc      Ensure that all fields are initialized in order they appear in a class body
      * @tc.size      MediumTest
@@ -2114,7 +2135,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0011'
-
       cnt5 = 0
       let b = new B7() // call secondary constructor
       expect(b.f00).assertEqual(0)
@@ -2125,7 +2145,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_1200
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_1200
      * @tc.name      testConstructorBody0012
      * @tc.desc      Ensure that all fields are initialized in order they appear in a class body
      * @tc.size      MediumTest
@@ -2134,7 +2154,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0012'
-
       cnt6 = 0
       let b = new B8() // call secondary constructor
       expect(b.f00).assertEqual(5)
@@ -2145,7 +2164,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_1300
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_1300
      * @tc.name      testConstructorBody0013
      * @tc.desc      Ensure that all fields are initialized in order they appear in a class body
      * @tc.size      MediumTest
@@ -2154,7 +2173,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0013'
-
       cnt7 = 0
       let b = new B9() // call secondary constructor
       expect(b.f00).assertEqual(0)
@@ -2165,7 +2183,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_1400
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_1400
      * @tc.name      testConstructorBody0014
      * @tc.desc      Ensure that all fields are initialized in order they appear in a class body
      * @tc.size      MediumTest
@@ -2174,9 +2192,8 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0014'
-
       cnt8 = 0
-      let b = new B10('x') // call primary to primary constructor
+      let b = new B10('x')
       expect(b.f00).assertEqual(0)
       expect(b.f01).assertEqual(1)
       expect(b.f02).assertEqual(2)
@@ -2185,7 +2202,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_1500
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_1500
      * @tc.name      testConstructorBody0015
      * @tc.desc      Ensure that all fields are initialized in order they appear in a class body
      * @tc.size      MediumTest
@@ -2194,9 +2211,8 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0015'
-
       cnt9 = 0
-      let b = new B11('x') // call primary to primary constructor
+      let b = new B11('x')
       expect(b.f00).assertEqual(5)
       expect(b.f01).assertEqual(6)
       expect(b.f02).assertEqual(7)
@@ -2205,7 +2221,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_1600
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_1600
      * @tc.name      testConstructorBody0016
      * @tc.desc      Ensure that all fields are initialized in order they appear in a class body
      * @tc.size      MediumTest
@@ -2214,9 +2230,8 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0016'
-
       cnt10 = 0
-      let b = new B12('x') // call primary to primary constructor
+      let b = new B12('x')
       expect(b.f00).assertEqual(0)
       expect(b.f01).assertEqual(1)
       expect(b.f02).assertEqual(2)
@@ -2225,7 +2240,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_1700
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_1700
      * @tc.name      testConstructorBody0017
      * @tc.desc      Ensure that all fields are initialized in order they appear in a class body
      * @tc.size      MediumTest
@@ -2234,9 +2249,8 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0017'
-
       cnt11 = 0
-      let b = new B13() // call primary to secondary constructor
+      let b = new B13()
       expect(b.f00).assertEqual(0)
       expect(b.f01).assertEqual(1)
       expect(b.f02).assertEqual(2)
@@ -2245,7 +2259,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_1800
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_1800
      * @tc.name      testConstructorBody0018
      * @tc.desc      Ensure that all fields are initialized in order they appear in a class body
      * @tc.size      MediumTest
@@ -2254,9 +2268,8 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0018'
-
       cnt12 = 0
-      let b = new B14() // call primary to secondary constructor
+      let b = new B14()
       expect(b.f00).assertEqual(5)
       expect(b.f01).assertEqual(6)
       expect(b.f02).assertEqual(7)
@@ -2265,7 +2278,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_1900
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_1900
      * @tc.name      testConstructorBody0019
      * @tc.desc      Ensure that all fields are initialized in order they appear in a class body
      * @tc.size      MediumTest
@@ -2274,9 +2287,8 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0019'
-
       cnt13 = 0
-      let b = new B15() // call primary to secondary constructor
+      let b = new B15()
       expect(b.f00).assertEqual(0)
       expect(b.f01).assertEqual(1)
       expect(b.f02).assertEqual(2)
@@ -2285,7 +2297,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_2000
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_2000
      * @tc.name      testConstructorBody0020
      * @tc.desc      Ensure that all fields are initialized in the specified scenario
      * @tc.size      MediumTest
@@ -2294,13 +2306,10 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0020'
-
-      // call primary constructor
       let a: A19 = new A19('x')
       arktest.expectError(() => { a = new A19('1') }, '1')
       arktest.expectError(() => { a = new A19('2') }, '2')
       arktest.expectError(() => { a = new A19('3') }, '3')
-      // call secondary constructor
       a = new A19('x', 1)
       arktest.expectError(() => { a = new A19('1', 1) }, '1')
       arktest.expectError(() => { a = new A19('2', 1) }, '2')
@@ -2310,7 +2319,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_2100
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_2100
      * @tc.name      testConstructorBody0021
      * @tc.desc      Ensure that all fields are initialized in the specified scenario
      * @tc.size      MediumTest
@@ -2319,13 +2328,10 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0021'
-
-      // call primary constructor
       let b: B16 = new B16('x')
       arktest.expectError(() => { b = new B16('1') }, '1')
       arktest.expectError(() => { b = new B16('2') }, '2')
       arktest.expectError(() => { b = new B16('3') }, '3')
-      // call secondary constructor
       b = new B16('x', 1)
       arktest.expectError(() => { b = new B16('1', 1) }, '1')
       arktest.expectError(() => { b = new B16('2', 1) }, '2')
@@ -2335,7 +2341,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_2200
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_2200
      * @tc.name      testConstructorBody0022
      * @tc.desc      Ensure that all fields are initialized in the specified scenario
      * @tc.size      MediumTest
@@ -2344,13 +2350,10 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0022'
-
-      // call primary constructor
       let b: B17 = new B17('x')
       arktest.expectError(() => { b = new B17('1') }, '1')
       arktest.expectError(() => { b = new B17('2') }, '2')
       arktest.expectError(() => { b = new B17('3') }, '3')
-      // call secondary constructor
       b = new B17('x', 1)
       arktest.expectError(() => { b = new B17('1', 1) }, '1')
       arktest.expectError(() => { b = new B17('2', 1) }, '2')
@@ -2360,7 +2363,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_2300
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_2300
      * @tc.name      testConstructorBody0023
      * @tc.desc      Ensure that all fields are initialized in the specified scenario
      * @tc.size      MediumTest
@@ -2369,13 +2372,10 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0023'
-
-      // call 1st primary constructor
       let b: B18 = new B18('x')
       arktest.expectError(() => { b = new B18('1') }, '1')
       arktest.expectError(() => { b = new B18('2') }, '2')
       arktest.expectError(() => { b = new B18('3') }, '3')
-      // call 2nd primary constructor
       b = new B18('1', 1)
       arktest.expectError(() => { b = new B18('4', 1) }, '4')
       arktest.expectError(() => { b = new B18('5', 1) }, '5')
@@ -2383,7 +2383,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_2400
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_2400
      * @tc.name      testConstructorBody0024
      * @tc.desc      Ensure that all fields are initialized in the specified scenario
      * @tc.size      MediumTest
@@ -2392,13 +2392,10 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0024'
-
-      // call 1st primary constructor
       let b: B19 = new B19('x')
       arktest.expectError(() => { b = new B19('1') }, '1')
       arktest.expectError(() => { b = new B19('2') }, '2')
       arktest.expectError(() => { b = new B19('3') }, '3')
-      // call 2nd primary constructor
       b = new B19('x', 1)
       arktest.expectError(() => { b = new B19('4', 1) }, '4')
       arktest.expectError(() => { b = new B19('5', 1) }, '5')
@@ -2406,7 +2403,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_2500
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_2500
      * @tc.name      testConstructorBody0025
      * @tc.desc      A return statement may be used in the body of a constructor if it does not
      *               include an expression.
@@ -2416,14 +2413,13 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0025'
-
       expect(new A24(Color.Red).x).assertEqual(11)
       expect(new A24(Color.Green).x).assertEqual(22)
       expect(new A24(Color.Blue).x).assertEqual(0)
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_2600
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_2600
      * @tc.name      testConstructorBody0026
      * @tc.desc      A return statement may be used in the body of a constructor if it does not
      *               include an expression.
@@ -2433,13 +2429,12 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0026'
-
       expect(new A25(42).x).assertEqual(43)
       expect(new A25(0).x).assertEqual(0)
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_2700
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_2700
      * @tc.name      testConstructorBody0027
      * @tc.desc      A return statement may be used in the body of a constructor if it does not
      *               include an expression.
@@ -2449,13 +2444,12 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0027'
-
       expect(new X().res).assertEqual(0)
       expect(new X(new A26()).res).assertEqual(4)
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_2800
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_2800
      * @tc.name      testConstructorBody0028
      * @tc.desc      Check that superclass construct implicitly invoked.
      * @tc.size      MediumTest
@@ -2464,13 +2458,12 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0028'
-
       let instance: B20 = new B20();
       expect(instance.x).assertEqual(5);
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_2900
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_2900
      * @tc.name      testConstructorBody0029
      * @tc.desc      Invocation constructor of same class.
      * @tc.size      MediumTest
@@ -2479,13 +2472,12 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0029'
-
       expect(new A28().x).assertEqual(5);
       expect(A28.fromInt(1).x).assertEqual(1);
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_3000
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_3000
      * @tc.name      testConstructorBody0030
      * @tc.desc      Invocation constructor of same class.
      * @tc.size      MediumTest
@@ -2494,13 +2486,12 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0030'
-
       expect(new A29().x).assertEqual(5)
       expect(new A29(1).x).assertEqual(1)
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_3100
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_3100
      * @tc.name      testConstructorBody0031
      * @tc.desc      Invocation constructor of superclass.
      * @tc.size      MediumTest
@@ -2509,7 +2500,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0031'
-
       expect(new A30(42).x).assertEqual(42)
       expect(new B21().x).assertEqual(5)
       let b: B21 = {}
@@ -2517,7 +2507,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_3200
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_3200
      * @tc.name      testConstructorBody0032
      * @tc.desc      Invocation constructor of superclass.
      * @tc.size      MediumTest
@@ -2526,7 +2516,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0032'
-
       expect(new A31(42).x).assertEqual(42)
       expect(new B22(33).x).assertEqual(33)
       expect(new B22().x).assertEqual(5)
@@ -2537,7 +2526,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_3300
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_3300
      * @tc.name      testConstructorBody0033
      * @tc.desc      Invocation constructor of abstract superclass.
      * @tc.size      MediumTest
@@ -2546,8 +2535,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0033'
-
-      // 测试
       expect(new B23().x).assertEqual(43);
       expect(new B23(5).x).assertEqual(7);
       expect(B23.fromInt(5).x).assertEqual(7);
@@ -2556,7 +2543,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_3400
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_3400
      * @tc.name      testConstructorBody0034
      * @tc.desc      Invocation constructor of abstract superclass.
      * @tc.size      MediumTest
@@ -2565,7 +2552,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0034'
-
       expect(new B24().x).assertEqual(43)
       expect(new B24(5).x).assertEqual(7)
       let b: B24 = {}
@@ -2575,7 +2561,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_3500
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_3500
      * @tc.name      testConstructorBody0035
      * @tc.desc      Invocation constructor of abstract superclass.
      * @tc.size      MediumTest
@@ -2584,7 +2570,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0035'
-
       let c: C = {}
       c = new C();
       expect(c.x).assertEqual(46)
@@ -2593,7 +2578,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_3600
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_3600
      * @tc.name      testConstructorBody0036
      * @tc.desc      Invocation constructor of abstract superclass.
      * @tc.size      MediumTest
@@ -2602,7 +2587,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0036'
-
       let c: C1 = {}
       expect(c.x).assertEqual(45)
       c = new C1(1)
@@ -2612,7 +2596,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_3700
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_3700
      * @tc.name      testConstructorBody0037
      * @tc.desc      Invocation constructor of abstract superclass.
      * @tc.size      MediumTest
@@ -2624,18 +2608,16 @@ export default function ConstructorBodyTest():void {
       let c: C2;
       c = C2.fromInt(1);
       expect(c.x).assertEqual(4);
-
       c = C2.noArgs();
       expect(c.x).assertEqual(45);
-
-      c = C2.withX(-1);  // 使用工厂方法
+      c = C2.withX(-1);
       expect(c.x).assertEqual(-1);
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_3800
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_3800
      * @tc.name      testConstructorBody0038
-     * @tc.desc      Mandatory call to a superconstructor if a class has an extension clause on all
+     * @tc.desc      Mandatory call to a super constructor if a class has an extension clause on all
      *               execution paths of the constructor body.
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -2643,7 +2625,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0038'
-
       let b: B28
       expect(() => { b = new B28('') }).assertThrow('empty');
       b = new B28('1')
@@ -2654,9 +2635,9 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_3900
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_3900
      * @tc.name      testConstructorBody0039
-     * @tc.desc      Mandatory call to a superconstructor if a class has an extension clause on all
+     * @tc.desc      Mandatory call to a super constructor if a class has an extension clause on all
      *               execution paths of the constructor body.
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -2664,7 +2645,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0039'
-
       res5 = 0
       let b: B29
       expect(() => { b = new B29('') }).assertThrow('empty');
@@ -2678,9 +2658,9 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_4000
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_4000
      * @tc.name      testConstructorBody0040
-     * @tc.desc      Mandatory call to a superconstructor if a class has an extension clause on all
+     * @tc.desc      Mandatory call to a super constructor if a class has an extension clause on all
      *               execution paths of the constructor body.
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -2688,7 +2668,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0040'
-
       res6 = 0
       let b = new B30(1)
       expect(res6).assertEqual(1)
@@ -2705,9 +2684,9 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_4100
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_4100
      * @tc.name      testConstructorBody0041
-     * @tc.desc      Mandatory call to a superconstructor if a class has an extension clause on all
+     * @tc.desc      Mandatory call to a super constructor if a class has an extension clause on all
      *               execution paths of the constructor body.
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -2728,9 +2707,9 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_4200
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_4200
      * @tc.name      testConstructorBody0042
-     * @tc.desc      Mandatory call to a superconstructor if a class has an extension clause on all
+     * @tc.desc      Mandatory call to a super constructor if a class has an extension clause on all
      *               execution paths of the constructor body.
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -2738,7 +2717,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0042'
-
       let b = new B32()
       expect(b.x).assertEqual('a')
       expect(b.y).assertEqual('b')
@@ -2746,9 +2724,9 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_4300
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_4300
      * @tc.name      testConstructorBody0043
-     * @tc.desc      Mandatory call to a superconstructor if a class has an extension clause on all
+     * @tc.desc      Mandatory call to a super constructor if a class has an extension clause on all
      *               execution paths of the constructor body.
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -2756,7 +2734,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0043'
-
       let b: B33 = { y: 'b' }
       expect(b.x).assertEqual('a')
       expect(b.y).assertEqual('b')
@@ -2764,9 +2741,9 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_4400
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_4400
      * @tc.name      testConstructorBody0044
-     * @tc.desc      Mandatory call to a superconstructor if a class has an extension clause on all
+     * @tc.desc      Mandatory call to a super constructor if a class has an extension clause on all
      *               execution paths of the constructor body.
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -2774,7 +2751,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0044'
-
       let b: A43 | undefined
       arktest.expectThrow(() => { b = new B34 })
       arktest.expectThrow(() => { res9 = b!.toString() })
@@ -2782,9 +2758,9 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_4500
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_4500
      * @tc.name      testConstructorBody0045
-     * @tc.desc      Mandatory call to a superconstructor if a class has an extension clause on all
+     * @tc.desc      Mandatory call to a super constructor if a class has an extension clause on all
      *               execution paths of the constructor body.
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -2792,7 +2768,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0045'
-
       let b = new B35()
       expect(b.x).assertEqual('a')
       expect(b.y).assertEqual('b')
@@ -2800,9 +2775,9 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_4600
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_4600
      * @tc.name      testConstructorBody0046
-     * @tc.desc      Mandatory call to a superconstructor if a class has an extension clause on all
+     * @tc.desc      Mandatory call to a super constructor if a class has an extension clause on all
      *               execution paths of the constructor body.
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -2810,7 +2785,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0046'
-
       let b: B36 = { y: 'b' }
       expect(b.x).assertEqual('a')
       expect(b.y).assertEqual('b')
@@ -2818,9 +2792,9 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_4700
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_4700
      * @tc.name      testConstructorBody0047
-     * @tc.desc      Mandatory call to a superconstructor if a class has an extension clause on all
+     * @tc.desc      Mandatory call to a super constructor if a class has an extension clause on all
      *               execution paths of the constructor body.
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -2828,7 +2802,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0047'
-
       let b: A46 | undefined
       arktest.expectThrow(() => { b = new B37() })
       arktest.expectThrow(() => { res12 = b!.toString() })
@@ -2836,9 +2809,9 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_4800
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_4800
      * @tc.name      testConstructorBody0048
-     * @tc.desc      Mandatory call to a superconstructor if a class has an extension clause on all
+     * @tc.desc      Mandatory call to a super constructor if a class has an extension clause on all
      *               execution paths of the constructor body.
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -2846,7 +2819,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0048'
-
       let b: B38
       arktest.expectError(() => { b = new B38(0) }, 'zero')
       b = new B38(1)
@@ -2857,9 +2829,9 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_4900
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_4900
      * @tc.name      testConstructorBody0049
-     * @tc.desc      Mandatory call to a superconstructor if a class has an extension clause on all
+     * @tc.desc      Mandatory call to a super constructor if a class has an extension clause on all
      *               execution paths of the constructor body.
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -2867,7 +2839,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0049'
-
       let b: B39
       expect(() => { b = B39.fromInt(0) }).assertThrow('zero');
       b = B39.fromInt(1)
@@ -2878,9 +2849,9 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_5000
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_5000
      * @tc.name      testConstructorBody0050
-     * @tc.desc      Mandatory call to a superconstructor if a class has an extension clause on all
+     * @tc.desc      Mandatory call to a super constructor if a class has an extension clause on all
      *               execution paths of the constructor body.
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -2888,7 +2859,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0050'
-
       let b: B40
       expect(() => { b = new B40(0) }).assertThrow('zero');
       b = new B40(1)
@@ -2900,9 +2870,9 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_5100
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_5100
      * @tc.name      testConstructorBody0051
-     * @tc.desc      Mandatory call to a superconstructor if a class has an extension clause on all
+     * @tc.desc      Mandatory call to a super constructor if a class has an extension clause on all
      *               execution paths of the constructor body.
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -2910,7 +2880,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0051'
-
       let b: B41
       expect(() => { b = B41.fromInt(0) }).assertThrow('zero');
       b =  B41.fromInt(1)
@@ -2922,9 +2891,9 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_5200
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_5200
      * @tc.name      testConstructorBody0052
-     * @tc.desc      Mandatory call to a superconstructor if a class has an extension clause on all
+     * @tc.desc      Mandatory call to a super constructor if a class has an extension clause on all
      *               execution paths of the constructor body.
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -2932,7 +2901,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0052'
-
       let b = B42.fromInt(1)
       expect(b.fldA).assertEqual('e1')
       b = B42.fromInt(2)
@@ -2944,9 +2912,9 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_5300
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_5300
      * @tc.name      testConstructorBody0053
-     * @tc.desc      Mandatory call to a superconstructor if a class has an extension clause on all
+     * @tc.desc      Mandatory call to a super constructor if a class has an extension clause on all
      *               execution paths of the constructor body.
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -2954,7 +2922,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0053'
-
       let b = B43.fromInt(1)
       expect(b.fldA).assertEqual('e1')
       b = B43.fromInt(2)
@@ -2966,9 +2933,9 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_5400
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_5400
      * @tc.name      testConstructorBody0054
-     * @tc.desc      Mandatory call to a superconstructor if a class has an extension clause on all
+     * @tc.desc      Mandatory call to a super constructor if a class has an extension clause on all
      *               execution paths of the constructor body.
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -2976,7 +2943,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0054'
-
       let b = B44.fromInt(0)
       expect(b.fldA).assertEqual('valid color = Red')
       b = B44.fromInt(1)
@@ -2988,9 +2954,9 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_5500
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_5500
      * @tc.name      testConstructorBody0055
-     * @tc.desc      Mandatory call to a superconstructor if a class has an extension clause on all
+     * @tc.desc      Mandatory call to a super constructor if a class has an extension clause on all
      *               execution paths of the constructor body.
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -2998,7 +2964,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0055'
-
       let b =  B45.fromInt(0)
       expect(b.fldA).assertEqual('valid color = Red')
       b =  B45.fromInt(1)
@@ -3010,9 +2975,9 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_5600
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_5600
      * @tc.name      testConstructorBody0056
-     * @tc.desc      Mandatory call to a superconstructor if a class has an extension clause on all
+     * @tc.desc      Mandatory call to a super constructor if a class has an extension clause on all
      *               execution paths of the constructor body.
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -3020,7 +2985,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0056'
-
       let black = new BWPoint(1.0, 11.0, true)
       expect(black instanceof BWPoint)
       expect(black.color).assertEqual(1)
@@ -3034,9 +2998,9 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_5700
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_5700
      * @tc.name      testConstructorBody0057
-     * @tc.desc      Mandatory call to a superconstructor if a class has an extension clause on all
+     * @tc.desc      Mandatory call to a super constructor if a class has an extension clause on all
      *               execution paths of the constructor body.
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -3057,9 +3021,9 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_5800
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_5800
      * @tc.name      testConstructorBody0058
-     * @tc.desc      Mandatory call to a superconstructor if a class has an extension clause on all
+     * @tc.desc      Mandatory call to a super constructor if a class has an extension clause on all
      *               execution paths of the constructor body.
      * @tc.size      MediumTest
      * @tc.type      Function
@@ -3067,7 +3031,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0058'
-
       let b: Base = new Base()
       expect(b.x.toString() instanceof string)
       arktest.expectThrow(
@@ -3077,7 +3040,7 @@ export default function ConstructorBodyTest():void {
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_5900
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_5900
      * @tc.name      testConstructorBody0059
      * @tc.desc      this can be passed as an argument only after each object field receives an
      *               initial value
@@ -3087,13 +3050,12 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0059'
-
       expect(new A55().n).assertEqual(4)
       expect(new A55().s).assertEqual('abcd')
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTOR_BODY_6000
+     * @tc.number    SUB_CONSTRUCTOR_BODY_TEST_6000
      * @tc.name      testConstructorBody0060
      * @tc.desc      this can be passed as an argument only after each object field receives an
      *               initial value
@@ -3103,7 +3065,6 @@ export default function ConstructorBodyTest():void {
      */
     it("testConstructorBody0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructorBody0060'
-
       expect(new A56().n).assertEqual(6)
       expect(new A56().s).assertEqual('a')
     });

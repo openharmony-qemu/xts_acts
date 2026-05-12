@@ -1,4 +1,30 @@
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../hypium/index';
+/*---
+ * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import {
+  expect,
+  describe,
+  beforeAll,
+  beforeEach,
+  afterEach,
+  afterAll,
+  it,
+  TestType,
+  Size,
+  Level
+} from '../../../../../hypium/index';
 
 
 async function sleep(time: int): Promise<int> {
@@ -35,23 +61,32 @@ class A1 {
 }
 
 abstract class X {
-  static foo() : int {return 1};
+  static foo(): int {
+    return 1
+  };
 }
 
 abstract class X1 {
-  static foo() : int {return 1};
-  abstract bar() : int;
+  static foo(): int {
+    return 1
+  };
+
+  abstract bar(): int;
 }
 
 class Y extends X1 {
-  bar() : int {return 2};
+  bar(): int {
+    return 2
+  };
 }
 
 class C {
   protected count: number
+
   constructor(count: number) {
     this.count = count
   }
+
   static getCount(c: C): number {
     return c.count
   }
@@ -59,14 +94,17 @@ class C {
 
 class B1 {
   protected count: number
+
   constructor(count: number) {
     this.count = count
   }
 }
+
 class C1 extends B1 {
   constructor(count: number) {
     super(count)
   }
+
   static getCount(c: C1): number {
     return c.count
   }
@@ -74,13 +112,16 @@ class C1 extends B1 {
 
 class B2 {
   protected count: number
+
   constructor(count: number) {
     this.count = count
   }
+
   static getCount(c: C2): number {
     return c.count
   }
 }
+
 class C2 extends B2 {
   constructor(count: number) {
     super(count)
@@ -89,25 +130,30 @@ class C2 extends B2 {
 
 class C3 {
   protected count: number
+
   constructor(count: number) {
     this.count = count
   }
+
   static getCount(i: number): number {
-    let c: C3 = new C3(i+1)
+    let c: C3 = new C3(i + 1)
     return c.count
   }
 }
 
 class B3 {
   protected count: number
+
   constructor(count: number) {
     this.count = count
   }
+
   static getCount(i: number): number {
-    let c: C4 = new C4(i+1)
+    let c: C4 = new C4(i + 1)
     return c.count
   }
 }
+
 class C4 extends B3 {
   constructor(count: number) {
     super(count)
@@ -116,9 +162,11 @@ class C4 extends B3 {
 
 class C5 {
   private count: number
+
   constructor(count: number) {
     this.count = count
   }
+
   static getCount(c: C5): number {
     return c.count
   }
@@ -126,13 +174,16 @@ class C5 {
 
 class B4 {
   private count: number
+
   constructor(count: number) {
     this.count = count
   }
+
   static getCount(c: C6): number {
     return c.count
   }
 }
+
 class C6 extends B4 {
   constructor(count: number) {
     super(count)
@@ -141,25 +192,30 @@ class C6 extends B4 {
 
 class C7 {
   private count: number
+
   constructor(count: number) {
     this.count = count
   }
+
   static getCount(i: number): number {
-    let c: C7 = new C7(i+1)
+    let c: C7 = new C7(i + 1)
     return c.count
   }
 }
 
 class B5 {
   private count: number
+
   constructor(count: number) {
     this.count = count
   }
+
   static getCount(i: number): number {
-    let c: C8 = new C8(i+1)
+    let c: C8 = new C8(i + 1)
     return c.count
   }
 }
+
 class C8 extends B5 {
   constructor(count: number) {
     super(count)
@@ -170,6 +226,7 @@ class C9 {
   protected count(): number {
     return 1
   }
+
   static getCount(c: C9): number {
     return c.count()
   }
@@ -180,6 +237,7 @@ class B6 {
     return 1
   }
 }
+
 class C10 extends B6 {
   static getCount(c: C10): number {
     return c.count()
@@ -190,16 +248,20 @@ class B7 {
   protected count(): number {
     return 1
   }
+
   static getCount(c: C11): number {
     return c.count()
   }
 }
-class C11 extends B7 { }
+
+class C11 extends B7 {
+}
 
 class C12 {
   protected count(): number {
     return 1
   }
+
   static getCount(i: number): number {
     let c: C12 = new C12()
     return c.count() + i
@@ -221,6 +283,7 @@ class C14 {
   private count(): number {
     return 1
   }
+
   static getCount(c: C14): number {
     return c.count()
   }
@@ -240,6 +303,7 @@ class C16 {
   private count(): number {
     return 1
   }
+
   static getCount(i: number): number {
     let c: C16 = new C16()
     return c.count() + i
@@ -257,7 +321,7 @@ class C16 {
 // }
 // class C17 extends B10 { }
 
-export default function StaticMethodsTest():void {
+export default function StaticMethodsTest(): void {
   describe('StaticMethodsTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -291,7 +355,7 @@ export default function StaticMethodsTest():void {
     it("testStaticMethods0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStaticMethods0001';
       let instance: B = new B();
-      expect( instance.bar() == 10 ).assertTrue();
+      expect(instance.bar() == 10).assertTrue();
     });
 
     /**
@@ -497,22 +561,6 @@ export default function StaticMethodsTest():void {
 
     });
 
-    // /**
-    //  * @tc.number    SUB_STATIC_METHODSTEST_1800
-    //  * @tc.name      testStaticMethods0018
-    //  * @tc.desc      Class static methods may access protected or private members of the same class type or derived one
-    //  * represented as parameters or local variables Access derived protected method from local variable
-    //  * @tc.size      MediumTest
-    //  * @tc.type      Function
-    //  * @tc.level     Level 2
-    //  */
-    // it("testStaticMethods0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   const TAG = 'testStaticMethods0018';
-    //
-    //   expect(C13.getCount(2)).assertEqual(3)
-    //
-    // });
-
     /**
      * @tc.number    SUB_STATIC_METHODSTEST_1900
      * @tc.name      testStaticMethods0019
@@ -526,25 +574,6 @@ export default function StaticMethodsTest():void {
       const TAG = 'testStaticMethods0019';
       let c: C14 = new C14()
       expect(C14.getCount(c)).assertEqual(1)
-
-
-    });
-
-    // /**
-    //  * @tc.number    SUB_STATIC_METHODSTEST_2000
-    //  * @tc.name      testStaticMethods0020
-    //  * @tc.desc      Class static methods may access protected or private members of the same class type or derived one
-    //  * represented as parameters or local variables Access private method by derived class instance
-    //  * @tc.size      MediumTest
-    //  * @tc.type      Function
-    //  * @tc.level     Level 2
-    //  */
-    // it("testStaticMethods0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   const TAG = 'testStaticMethods0020';
-    //
-    //   let c: C15 = new C15()
-    //   expect(B9.getCount(c)).assertEqual(1)
-
     });
 
     /**
@@ -559,23 +588,6 @@ export default function StaticMethodsTest():void {
     it("testStaticMethods0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testStaticMethods0021';
       expect(C16.getCount(2)).assertEqual(3)
-
     });
-
-    // /**
-    //  * @tc.number    SUB_STATIC_METHODSTEST_2200
-    //  * @tc.name      testStaticMethods0022
-    //  * @tc.desc      Class static methods may access protected or private members of the same class type or derived one
-    //  * represented as parameters or local variables Access derived private method from local variable
-    //  * @tc.size      MediumTest
-    //  * @tc.type      Function
-    //  * @tc.level     Level 2
-    //  */
-    // it("testStaticMethods0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-    //   const TAG = 'testStaticMethods0022';
-    //
-    //   expect(C17.getCount(2)).assertEqual(3)
-    //
-    // });
-
+  })
 }

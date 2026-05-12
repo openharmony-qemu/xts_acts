@@ -1,4 +1,30 @@
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../hypium/index';
+/*---
+ * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import {
+  expect,
+  describe,
+  beforeAll,
+  beforeEach,
+  afterEach,
+  afterAll,
+  it,
+  TestType,
+  Size,
+  Level
+} from '../../../../../hypium/index';
 
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {
@@ -299,7 +325,7 @@ export default function MembersTest():void {
     })
 
     /**
-     * @tc.number    SUB_MEMBERSTEST_0100
+     * @tc.number    SUB_MEMBERS_ONE_TEST_0100
      * @tc.name      testMembers0001
      * @tc.desc      Testing access to member variables in the case of polymorphism. Access member variables of
      * the base class
@@ -314,7 +340,7 @@ export default function MembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_MEMBERSTEST_0200
+     * @tc.number    SUB_MEMBERS_ONE_TEST_0200
      * @tc.name      testMembers0002
      * @tc.desc      Testing access to member variables in the case of polymorphism. Polymorphism - accessing subclass
      * methods through base class references
@@ -330,7 +356,7 @@ export default function MembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_MEMBERSTEST_0300
+     * @tc.number    SUB_MEMBERS_ONE_TEST_0300
      * @tc.name      testMembers0003
      * @tc.desc      Testing access to member variables in the case of polymorphism. Access member variables of
      * the base class
@@ -345,7 +371,7 @@ export default function MembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_MEMBERSTEST_0400
+     * @tc.number    SUB_MEMBERS_ONE_TEST_0400
      * @tc.name      testMembers0004
      * @tc.desc      Testing access to member variables in the case of polymorphism. Polymorphism - accessing member
      * variables of a subclass through a base class reference
@@ -360,7 +386,7 @@ export default function MembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_MEMBERSTEST_0500
+     * @tc.number    SUB_MEMBERS_ONE_TEST_0500
      * @tc.name      testMembers0005
      * @tc.desc      Testing access to member variables in the case of polymorphism. Protected member
      * variable - polymorphism
@@ -375,7 +401,7 @@ export default function MembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_MEMBERSTEST_0600
+     * @tc.number    SUB_MEMBERS_ONE_TEST_0600
      * @tc.name      testMembers0006
      * @tc.desc      Testing access to member variables in the case of polymorphism. Private member
      * variable - polymorphism
@@ -390,7 +416,7 @@ export default function MembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_MEMBERSTEST_0700
+     * @tc.number    SUB_MEMBERS_ONE_TEST_0700
      * @tc.name      testMembers0007
      * @tc.desc      Testing access to member variables in the case of polymorphism. Multiple inheritance
      * hierarchies - polymorphism
@@ -406,7 +432,7 @@ export default function MembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_MEMBERSTEST_0800
+     * @tc.number    SUB_MEMBERS_ONE_TEST_0800
      * @tc.name      testMembers0008
      * @tc.desc      Testing access to member variables in the case of polymorphism. Test member variable access when
      * combining interfaces and polymorphism
@@ -421,7 +447,7 @@ export default function MembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_MEMBERSTEST_0900
+     * @tc.number    SUB_MEMBERS_ONE_TEST_0900
      * @tc.name      testMembers0009
      * @tc.desc      Testing access to member variables in the case of polymorphism. Member variable access when
      * testing abstract classes combined with polymorphism
@@ -436,7 +462,7 @@ export default function MembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_MEMBERSTEST_1000
+     * @tc.number    SUB_MEMBERS_ONE_TEST_1000
      * @tc.name      testMembers0010
      * @tc.desc      Testing access to member variables in the case of polymorphism. Testing polymorphism and access
      * to member variables when rewriting methods
@@ -452,7 +478,7 @@ export default function MembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_MEMBERSTEST_1100
+     * @tc.number    SUB_MEMBERS_ONE_TEST_1100
      * @tc.name      testMembers0011
      * @tc.desc      Testing access to member variables in the case of polymorphism. Under testing polymorphism,
      * subclasses override parent class's property accessors
@@ -467,6 +493,5 @@ export default function MembersTest():void {
       const animal: Animal10 = new Dog4(5);
       expect((animal as Dog4).age).assertEqual( 35);
     });
-
   })
 }

@@ -1,4 +1,30 @@
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../hypium/index';
+/*---
+ * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import {
+  expect,
+  describe,
+  beforeAll,
+  beforeEach,
+  afterEach,
+  afterAll,
+  it,
+  TestType,
+  Size,
+  Level
+} from '../../../../../hypium/index';
 
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {
@@ -366,7 +392,7 @@ export default function InheritanceTest():void {
     })
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_0100
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_0100
      * @tc.name      testInheritance0001
      * @tc.desc      Inheritance method multiple level with overriding
      * @tc.size      MediumTest
@@ -383,7 +409,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_0200
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_0200
      * @tc.name      testInheritance0002
      * @tc.desc      Inheritance method multiple level with overriding
      * @tc.size      MediumTest
@@ -400,7 +426,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_0300
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_0300
      * @tc.name      testInheritance0003
      * @tc.desc      Inheritance method multiple level with overriding
      * @tc.size      MediumTest
@@ -417,7 +443,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_0400
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_0400
      * @tc.name      testInheritance0004
      * @tc.desc      Inheritance method multiple level with overriding
      * @tc.size      MediumTest
@@ -434,7 +460,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_0500
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_0500
      * @tc.name      testInheritance0005
      * @tc.desc      Inheritance method multiple level with overriding
      * @tc.size      MediumTest
@@ -451,7 +477,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_0600
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_0600
      * @tc.name      testInheritance0006
      * @tc.desc      Inheritance method multiple level with overriding
      * @tc.size      MediumTest
@@ -468,7 +494,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_0700
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_0700
      * @tc.name      testInheritance0007
      * @tc.desc      Inheritance method multiple level with overriding
      * @tc.size      MediumTest
@@ -485,7 +511,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_0800
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_0800
      * @tc.name      testInheritance0008
      * @tc.desc      Inheritance method multiple level with overriding
      * @tc.size      MediumTest
@@ -502,7 +528,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_0900
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_0900
      * @tc.name      testInheritance0009
      * @tc.desc      Inheritance method multiple level with overriding
      * @tc.size      MediumTest
@@ -519,7 +545,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_1000
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_1000
      * @tc.name      testInheritance0010
      * @tc.desc      Inheritance method multiple level with overriding
      * @tc.size      MediumTest
@@ -536,7 +562,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_1100
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_1100
      * @tc.name      testInheritance0011
      * @tc.desc      Inheritance method multiple level with overriding
      * @tc.size      MediumTest
@@ -553,7 +579,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_1200
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_1200
      * @tc.name      testInheritance0012
      * @tc.desc      Inheritance method multiple level with overriding
      * @tc.size      MediumTest
@@ -570,7 +596,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_1300
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_1300
      * @tc.name      testInheritance0013
      * @tc.desc      Inheritance method multiple level with overriding
      * @tc.size      MediumTest
@@ -587,7 +613,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_1400
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_1400
      * @tc.name      testInheritance0014
      * @tc.desc      Inheritance method multiple level with overriding
      * @tc.size      MediumTest
@@ -604,7 +630,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_1500
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_1500
      * @tc.name      testInheritance0015
      * @tc.desc      Inheritance method multiple level with overriding
      * @tc.size      MediumTest
@@ -621,7 +647,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_1600
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_1600
      * @tc.name      testInheritance0016
      * @tc.desc      Inheritance method multiple level with overriding
      * @tc.size      MediumTest
@@ -638,7 +664,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_1700
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_1700
      * @tc.name      testInheritance0017
      * @tc.desc      Inheritance method multiple level with overriding
      * @tc.size      MediumTest
@@ -655,7 +681,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_1800
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_1800
      * @tc.name      testInheritance0018
      * @tc.desc      Inheritance method multiple level with overriding
      * @tc.size      MediumTest
@@ -672,7 +698,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_1900
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_1900
      * @tc.name      testInheritance0019
      * @tc.desc      Inheritance method multiple level with overriding
      * @tc.size      MediumTest
@@ -689,7 +715,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_2000
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_2000
      * @tc.name      testInheritance0020
      * @tc.desc      Inheritance method multiple level with overriding
      * @tc.size      MediumTest
@@ -706,7 +732,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_2100
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_2100
      * @tc.name      testInheritance0021
      * @tc.desc      Inheritance method multiple level with overriding
      * @tc.size      MediumTest
@@ -723,7 +749,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_2200
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_2200
      * @tc.name      testInheritance0022
      * @tc.desc      Inheritance method multiple level with overriding
      * @tc.size      MediumTest
@@ -740,7 +766,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_2300
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_2300
      * @tc.name      testInheritance0023
      * @tc.desc      Inheritance method multiple level with overriding
      * @tc.size      MediumTest
@@ -757,7 +783,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_2400
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_2400
      * @tc.name      testInheritance0024
      * @tc.desc      Inheritance method multiple level with overriding
      * @tc.size      MediumTest
@@ -774,7 +800,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_2500
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_2500
      * @tc.name      testInheritance0025
      * @tc.desc      Inheritance abstract method of superclass and default methods from superinterface
      * @tc.size      MediumTest
@@ -788,7 +814,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_2600
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_2600
      * @tc.name      testInheritance0026
      * @tc.desc      Inheritance method of superclass that not a member of direct superclass
      * @tc.size      MediumTest
@@ -802,7 +828,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_2700
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_2700
      * @tc.name      testInheritance0027
      * @tc.desc      Inheritance abstract method of superclass and default methods from superinterface
      * @tc.size      MediumTest
@@ -816,7 +842,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_2800
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_2800
      * @tc.name      testInheritance0028
      * @tc.desc      Inheritance method of superclass
      * @tc.size      MediumTest
@@ -830,7 +856,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_2900
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_2900
      * @tc.name      testInheritance0029
      * @tc.desc      Inheritance static method of superclass
      * @tc.size      MediumTest
@@ -844,7 +870,7 @@ export default function InheritanceTest():void {
     });
 
     /**
-     * @tc.number    SUB_INHERITANCETEST_3000
+     * @tc.number    SUB_INHERITANCE_ONE_TEST_3000
      * @tc.name      testInheritance0030
      * @tc.desc      Inheritance static method of superclass
      * @tc.size      MediumTest

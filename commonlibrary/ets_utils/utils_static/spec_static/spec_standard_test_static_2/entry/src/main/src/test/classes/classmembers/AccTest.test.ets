@@ -1,4 +1,30 @@
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../hypium/index';
+/*---
+ * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import {
+  expect,
+  describe,
+  beforeAll,
+  beforeEach,
+  afterEach,
+  afterAll,
+  it,
+  TestType,
+  Size,
+  Level
+} from '../../../../../hypium/index';
 import { A } from './file_A.ets'
 import { B } from './file_B2.ets'
 import { B1 } from './file_B.ets'
@@ -38,7 +64,7 @@ export default function AccTest():void {
     })
 
     /**
-     * @tc.number    SUB_ACCTEST_0100
+     * @tc.number    SUB_ACC_ONE_TEST_0100
      * @tc.name      testAcc0001
      * @tc.desc      Class members declared internal are accessible within the package the current class resides in.
      * @tc.size      MediumTest
@@ -55,7 +81,7 @@ export default function AccTest():void {
     });
 
     /**
-     * @tc.number    SUB_ACCTEST_0200
+     * @tc.number    SUB_ACC_ONE_TEST_0200
      * @tc.name      testAcc0002
      * @tc.desc      Class members declared internal are accessible within the package the current class resides in.
      * @tc.size      MediumTest
@@ -64,15 +90,13 @@ export default function AccTest():void {
      */
     it("testAcc0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testAcc0002';
-
-      // separate module, positive case with public accessor, from subclass
       let b = new B
       b.foo = 42
       expect(b.foo).assertEqual(44)
     });
 
     /**
-     * @tc.number    SUB_ACCTEST_0300
+     * @tc.number    SUB_ACC_ONE_TEST_0300
      * @tc.name      testAcc0003
      * @tc.desc      Class members declared internal are accessible within the package the current class resides in.
      * @tc.size      MediumTest
@@ -81,8 +105,6 @@ export default function AccTest():void {
      */
     it("testAcc0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testAcc0003';
-
-      // separate module, positive case with protected accessor, from subclass
       let b = new B1
       b.foo = 42
       expect(b.foo).assertEqual(44)

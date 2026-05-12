@@ -1,4 +1,30 @@
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../hypium/index';
+/*---
+ * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import {
+  expect,
+  describe,
+  beforeAll,
+  beforeEach,
+  afterEach,
+  afterAll,
+  it,
+  TestType,
+  Size,
+  Level
+} from '../../../../../hypium/index';
 
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {
@@ -310,7 +336,7 @@ export default function ClassInitializerTest():void {
     })
 
     /**
-     * @tc.number    SUB_CLASS_INITIALIZERTEST_0100
+     * @tc.number    SUB_CLASS_INITIALIZER_TEST_0100
      * @tc.name      testClassInitializer0001
      * @tc.desc      When a class is initialized, the class initializer declared in the class is executed.
      * Abstract class case
@@ -324,7 +350,7 @@ export default function ClassInitializerTest():void {
     });
 
     /**
-     * @tc.number    SUB_CLASS_INITIALIZERTEST_0200
+     * @tc.number    SUB_CLASS_INITIALIZER_TEST_0200
      * @tc.name      testClassInitializer0002
      * @tc.desc      When a class is initialized, the class initializer declared in the class is executed
      * @tc.size      MediumTest
@@ -337,7 +363,7 @@ export default function ClassInitializerTest():void {
     });
 
     /**
-     * @tc.number    SUB_CLASS_INITIALIZERTEST_0300
+     * @tc.number    SUB_CLASS_INITIALIZER_TEST_0300
      * @tc.name      testClassInitializer0003
      * @tc.desc      When a class is initialized, the class initializer declared in the class is executed
      * @tc.size      MediumTest
@@ -350,7 +376,7 @@ export default function ClassInitializerTest():void {
     });
 
     /**
-     * @tc.number    SUB_CLASS_INITIALIZERTEST_0400
+     * @tc.number    SUB_CLASS_INITIALIZER_TEST_0400
      * @tc.name      testClassInitializer0004
      * @tc.desc      When a class is initialized, the class initializer declared in the class is executed
      * @tc.size      MediumTest
@@ -363,7 +389,7 @@ export default function ClassInitializerTest():void {
     });
 
     /**
-     * @tc.number    SUB_CLASS_INITIALIZERTEST_0500
+     * @tc.number    SUB_CLASS_INITIALIZER_TEST_0500
      * @tc.name      testClassInitializer0005
      * @tc.desc      When a class is initialized, the class initializer declared in the class is executed
      * @tc.size      MediumTest
@@ -376,7 +402,7 @@ export default function ClassInitializerTest():void {
     });
 
     /**
-     * @tc.number    SUB_CLASS_INITIALIZERTEST_0600
+     * @tc.number    SUB_CLASS_INITIALIZER_TEST_0600
      * @tc.name      testClassInitializer0006
      * @tc.desc      When a class is initialized, the class initializer declared in the class is executed
      * @tc.size      MediumTest
@@ -389,7 +415,7 @@ export default function ClassInitializerTest():void {
     });
 
     /**
-     * @tc.number    SUB_CLASS_INITIALIZERTEST_0700
+     * @tc.number    SUB_CLASS_INITIALIZER_TEST_0700
      * @tc.name      testClassInitializer0007
      * @tc.desc      When a class is initialized, the class initializer declared in the class is executed
      * @tc.size      MediumTest
@@ -402,7 +428,7 @@ export default function ClassInitializerTest():void {
     });
 
     /**
-     * @tc.number    SUB_CLASS_INITIALIZERTEST_0800
+     * @tc.number    SUB_CLASS_INITIALIZER_TEST_0800
      * @tc.name      testClassInitializer0008
      * @tc.desc      Class initializer could be declared before declaring fields it works with
      * @tc.size      MediumTest
@@ -415,7 +441,7 @@ export default function ClassInitializerTest():void {
     });
 
     /**
-     * @tc.number    SUB_CLASS_INITIALIZERTEST_0900
+     * @tc.number    SUB_CLASS_INITIALIZER_TEST_0900
      * @tc.name      testClassInitializer0009
      * @tc.desc      When a class is initialized, the class initializer declared in the class is executed
      * @tc.size      MediumTest
@@ -428,7 +454,7 @@ export default function ClassInitializerTest():void {
     });
 
     /**
-     * @tc.number    SUB_CLASS_INITIALIZERTEST_1000
+     * @tc.number    SUB_CLASS_INITIALIZER_TEST_1000
      * @tc.name      testClassInitializer0010
      * @tc.desc      When a class is initialized, the class initializer declared in the class is executed
      * @tc.size      MediumTest
@@ -441,7 +467,7 @@ export default function ClassInitializerTest():void {
     });
 
     /**
-     * @tc.number    SUB_CLASS_INITIALIZERTEST_1100
+     * @tc.number    SUB_CLASS_INITIALIZER_TEST_1100
      * @tc.name      testClassInitializer0011
      * @tc.desc      When a class is initialized, the class initializer declared in the class is executed
      * @tc.size      MediumTest
@@ -454,7 +480,7 @@ export default function ClassInitializerTest():void {
     });
 
     /**
-     * @tc.number    SUB_CLASS_INITIALIZERTEST_1200
+     * @tc.number    SUB_CLASS_INITIALIZER_TEST_1200
      * @tc.name      testClassInitializer0012
      * @tc.desc      When a class is initialized, the class initializer declared in the class is executed
      * @tc.size      MediumTest
@@ -467,7 +493,7 @@ export default function ClassInitializerTest():void {
     });
 
     /**
-     * @tc.number    SUB_CLASS_INITIALIZERTEST_1300
+     * @tc.number    SUB_CLASS_INITIALIZER_TEST_1300
      * @tc.name      testClassInitializer0013
      * @tc.desc      When a class is initialized, the class initializer declared in the class is executed
      * @tc.size      MediumTest
@@ -480,7 +506,7 @@ export default function ClassInitializerTest():void {
     })
 
     /**
-     * @tc.number    SUB_CLASS_INITIALIZERTEST_1400
+     * @tc.number    SUB_CLASS_INITIALIZER_TEST_1400
      * @tc.name      testClassInitializer0014
      * @tc.desc      When a class is initialized, the class initializer declared in the class is executed
      * @tc.size      MediumTest
@@ -493,7 +519,7 @@ export default function ClassInitializerTest():void {
     })
 
     /**
-     * @tc.number    SUB_CLASS_INITIALIZERTEST_1500
+     * @tc.number    SUB_CLASS_INITIALIZER_TEST_1500
      * @tc.name      testClassInitializer0015
      * @tc.desc      When a class is initialized, the class initializer declared in the class is executed
      * @tc.size      MediumTest
@@ -506,11 +532,10 @@ export default function ClassInitializerTest():void {
     })
 
     /**
-     * @tc.number    SUB_CLASS_INITIALIZERTEST_1600
+     * @tc.number    SUB_CLASS_INITIALIZER_TEST_1600
      * @tc.name      testClassInitializer0016
      * @tc.desc      When a class is initialized, the class initializer declared in the class is executed along with
-     * all class initializers of all superclasses. The order of execution is from the top superclass to the current
-     * class
+     * all class initializers of all superclasses.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -522,11 +547,10 @@ export default function ClassInitializerTest():void {
     })
 
     /**
-     * @tc.number    SUB_CLASS_INITIALIZERTEST_1700
+     * @tc.number    SUB_CLASS_INITIALIZER_TEST_1700
      * @tc.name      testClassInitializer0017
      * @tc.desc      When a class is initialized, the class initializer declared in the class is executed along with
-     * all class initializers of all superclasses. The order of execution is from the top superclass to the current
-     * class
+     * all class initializers of all superclasses.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -537,13 +561,11 @@ export default function ClassInitializerTest():void {
       expect(res).assertEqual("AB");
     })
 
-
     /**
-     * @tc.number    SUB_CLASS_INITIALIZERTEST_2000
+     * @tc.number    SUB_CLASS_INITIALIZER_TEST_2000
      * @tc.name      testClassInitializer0020
      * @tc.desc      When a class is initialized, the class initializer declared in the class is executed along with
-     * all class initializers of all superclasses. The order of execution is from the top superclass to the current
-     * class
+     * all class initializers of all superclasses.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -555,11 +577,10 @@ export default function ClassInitializerTest():void {
     })
 
     /**
-     * @tc.number    SUB_CLASS_INITIALIZERTEST_2100
+     * @tc.number    SUB_CLASS_INITIALIZER_TEST_2100
      * @tc.name      testClassInitializer0021
      * @tc.desc      When a class is initialized, the class initializer declared in the class is executed along with
-     * all class initializers of all superclasses. The order of execution is from the top superclass to the current
-     * class
+     * all class initializers of all superclasses.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -571,11 +592,10 @@ export default function ClassInitializerTest():void {
     })
 
     /**
-     * @tc.number    SUB_CLASS_INITIALIZERTEST_2200
+     * @tc.number    SUB_CLASS_INITIALIZER_TEST_2200
      * @tc.name      testClassInitializer0022
      * @tc.desc      When a class is initialized, the class initializer declared in the class is executed along with
-     * all class initializers of all superclasses. The order of execution is from the top superclass to the current
-     * class
+     * all class initializers of all superclasses.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
@@ -585,7 +605,5 @@ export default function ClassInitializerTest():void {
       expect(G1.g).assertEqual(7);
       expect(res1).assertEqual("EFG");
     })
-
-
   })
 }

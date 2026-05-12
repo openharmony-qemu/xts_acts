@@ -1,8 +1,33 @@
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../hypium/index';
+/*---
+ * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import {
+  expect,
+  describe,
+  beforeAll,
+  beforeEach,
+  afterEach,
+  afterAll,
+  it,
+  TestType,
+  Size,
+  Level
+} from '../../../../../hypium/index';
 import { A } from './file_A3.ets'
 import { B } from './file_B4.ets'
 import { B1 } from './file_B5.ets'
-
 
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {
@@ -11,8 +36,6 @@ async function sleep(time: int): Promise<int> {
     }, time);
   });
 }
-
-
 
 export default function ConstructorTest():void {
   describe('ConstructorTest', () => {
@@ -38,7 +61,7 @@ export default function ConstructorTest():void {
     })
 
     /**
-     * @tc.number    SUB_CONSTRUCTORTEST_0100
+     * @tc.number    SUB_CONSTRUCTOR_ONE_TEST_0100
      * @tc.name      testConstructor0001
      * @tc.desc      Class members declared internal are accessible within the package the current class resides in.
      * @tc.size      MediumTest
@@ -47,13 +70,11 @@ export default function ConstructorTest():void {
      */
     it("testConstructor0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructor0001';
-
-      // separate module, positive case with public constructor
       expect(new A(42).fld).assertEqual(42)
     });
 
     /**
-     * @tc.number    SUB_CONSTRUCTORTEST_0200
+     * @tc.number    SUB_CONSTRUCTOR_ONE_TEST_0200
      * @tc.name      testConstructor0002
      * @tc.desc      Class members declared internal are accessible within the package the current class resides in.
      * @tc.size      MediumTest
@@ -62,13 +83,11 @@ export default function ConstructorTest():void {
      */
     it("testConstructor0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testConstructor0002';
-
-      // separate module, positive case with public accessor, from subclass
       expect(new B(42).fld).assertEqual(43)
     });
 
     /**
-     * @tc.number    SUB_ACCTEST_0300
+     * @tc.number    SUB_CONSTRUCTOR_ONE_TEST_0300
      * @tc.name      testAcc0003
      * @tc.desc      Class members declared internal are accessible within the package the current class resides in.
      * @tc.size      MediumTest
@@ -77,8 +96,6 @@ export default function ConstructorTest():void {
      */
     it("testAcc0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testAcc0003';
-
-      // separate module, positive case with protected constructor, from subclass
       expect(new B1(42).fld).assertEqual(43)
     });
   })

@@ -1,4 +1,30 @@
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../hypium/index';
+/*---
+ * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import {
+  expect,
+  describe,
+  beforeAll,
+  beforeEach,
+  afterEach,
+  afterAll,
+  it,
+  TestType,
+  Size,
+  Level
+} from '../../../../../hypium/index';
 
 async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {
@@ -811,7 +837,7 @@ export default function InitializeMembersTest():void {
     })
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_0100
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_0100
      * @tc.name      testInitializeMembers0001
      * @tc.desc      Create a subclass instance and initialize its member variables
      * @tc.size      MediumTest
@@ -827,7 +853,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_0200
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_0200
      * @tc.name      testInitializeMembers0002
      * @tc.desc      To verify that the parent class member variables whose type is string are correctly initialized
      * @tc.size      MediumTest
@@ -844,7 +870,7 @@ export default function InitializeMembersTest():void {
 
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_0300
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_0300
      * @tc.name      testInitializeMembers0003
      * @tc.desc       The subclass initializes member variables in the constructor, with the modifier being public and
      * the type being string
@@ -861,7 +887,7 @@ export default function InitializeMembersTest():void {
 
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_0400
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_0400
      * @tc.name      testInitializeMembers0004
      * @tc.desc      The subclass initializes member variables in the constructor, with the modifier being public and
      * the type being number[]
@@ -879,7 +905,7 @@ export default function InitializeMembersTest():void {
 
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_0500
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_0500
      * @tc.name      testInitializeMembers0005
      * @tc.desc      The subclass initializes member variables in the constructor, with the modifier being public and
      * the type being undefined
@@ -896,7 +922,7 @@ export default function InitializeMembersTest():void {
 
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_0600
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_0600
      * @tc.name      testInitializeMembers0006
      * @tc.desc      The subclass initializes member variables in the constructor, with the modifier being public and
      * the type being boolean[]
@@ -914,7 +940,7 @@ export default function InitializeMembersTest():void {
 
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_0700
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_0700
      * @tc.name      testInitializeMembers0007
      * @tc.desc      To verify that the parent class member variable (type int) is correctly initialized
      * @tc.size      MediumTest
@@ -929,7 +955,7 @@ export default function InitializeMembersTest():void {
 
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_0800
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_0800
      * @tc.name      testInitializeMembers0008
      * @tc.desc      To verify that the parent class member variable (type number[]) is correctly initialized
      * @tc.size      MediumTest
@@ -946,7 +972,7 @@ export default function InitializeMembersTest():void {
 
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_0900
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_0900
      * @tc.name      testInitializeMembers0009
      * @tc.desc      To verify that the parent class member variable (type string[]) is correctly initialized
      * @tc.size      MediumTest
@@ -963,7 +989,7 @@ export default function InitializeMembersTest():void {
 
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_1000
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_1000
      * @tc.name      testInitializeMembers0010
      * @tc.desc      To verify that the parent class member variable (type undefined) is correctly initialized
      * @tc.size      MediumTest
@@ -977,7 +1003,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_1100
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_1100
      * @tc.name      testInitializeMembers0011
      * @tc.desc      To verify that the parent class member variable (type boolean[]) is correctly initialized
      * @tc.size      MediumTest
@@ -993,7 +1019,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_1200
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_1200
      * @tc.name      testInitializeMembers0012
      * @tc.desc      To verify that the parent class member variable (type null) is correctly initialized
      * @tc.size      MediumTest
@@ -1007,7 +1033,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_1300
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_1300
      * @tc.name      testInitializeMembers0013
      * @tc.desc      To verify that the parent class member variable (type number) is correctly initialized
      * @tc.size      MediumTest
@@ -1021,7 +1047,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_1400
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_1400
      * @tc.name      testInitializeMembers0014
      * @tc.desc      To verify that the parent class member variable (type Date) is correctly initialized
      * @tc.size      MediumTest
@@ -1036,7 +1062,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_1500
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_1500
      * @tc.name      testInitializeMembers0015
      * @tc.desc      To verify that the parent class member variable (type Custom class object array) is correctly
      * initialized
@@ -1053,7 +1079,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_1600
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_1600
      * @tc.name      testInitializeMembers0016
      * @tc.desc      To verify that the parent class member variable (type Interface object array) is correctly
      * initialized
@@ -1070,7 +1096,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_1700
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_1700
      * @tc.name      testInitializeMembers0017
      * @tc.desc      To verify that the parent class member variable (type boolean) is correctly initialized
      * @tc.size      MediumTest
@@ -1084,7 +1110,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_1800
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_1800
      * @tc.name      testInitializeMembers0018
      * @tc.desc      To verify that the parent class member variable (type Date) is correctly initialized
      * @tc.size      MediumTest
@@ -1098,7 +1124,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_1900
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_1900
      * @tc.name      testInitializeMembers0019
      * @tc.desc      To verify that the parent class member variable (type custom class object) is correctly initialized
      * @tc.size      MediumTest
@@ -1112,7 +1138,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_2000
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_2000
      * @tc.name      testInitializeMembers0020
      * @tc.desc      Subclass overwrites the initial value of the parent class member variable (type number)
      * @tc.size      MediumTest
@@ -1127,7 +1153,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_2100
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_2100
      * @tc.name      testInitializeMembers0021
      * @tc.desc      The parent class directly initializes member variables, with the modifier being public and the
      * type being number
@@ -1143,7 +1169,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_2200
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_2200
      * @tc.name      testInitializeMembers0022
      * @tc.desc      The parent class initializes member variables in the constructor, with the modifier being public
      * and the type being number
@@ -1159,7 +1185,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_2300
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_2300
      * @tc.name      testInitializeMembers0023
      * @tc.desc      The parent class directly initializes member variables, with the modifier being protected and
      * the type being number
@@ -1175,7 +1201,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_2400
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_2400
      * @tc.name      testInitializeMembers0024
      * @tc.desc      The parent class initializes member variables in the constructor, with the modifier being
      * protected and the type being number
@@ -1191,7 +1217,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_2500
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_2500
      * @tc.name      testInitializeMembers0025
      * @tc.desc      The parent class directly initializes member variables, with the modifier being private and
      * the type being number
@@ -1207,7 +1233,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_2600
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_2600
      * @tc.name      testInitializeMembers0026
      * @tc.desc      The parent class initializes member variables in the constructor, with the modifier being private
      * and the type being number
@@ -1223,7 +1249,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_2700
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_2700
      * @tc.name      testInitializeMembers0027
      * @tc.desc      The parent class directly initializes member variables, with the modifier being internal and the
      * type being number
@@ -1239,7 +1265,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_2800
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_2800
      * @tc.name      testInitializeMembers0028
      * @tc.desc      The parent class initializes member variables in the constructor, with the modifier being internal
      * and the type being number
@@ -1255,7 +1281,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_2900
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_2900
      * @tc.name      testInitializeMembers0029
      * @tc.desc      The parent class modifies the value of the directly initialized member variable in the constructor
      * function. The modifier is public and the type is number
@@ -1271,7 +1297,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_3000
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_3000
      * @tc.name      testInitializeMembers0030
      * @tc.desc      The subclass directly initializes member variables, with the modifier being public and the type
      * being number
@@ -1287,7 +1313,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_3100
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_3100
      * @tc.name      testInitializeMembers0031
      * @tc.desc      The subclass hides the initial value of the field with the same name of the parent class.
      * The modifier is public and the type is number
@@ -1303,7 +1329,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_3200
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_3200
      * @tc.name      testInitializeMembers0032
      * @tc.desc      The subclass initializes member variables in the constructor, with the modifier public and type
      * number
@@ -1319,7 +1345,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_3300
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_3300
      * @tc.name      testInitializeMembers0033
      * @tc.desc      The subclass directly initializes its own member variables. The modifier is public and the type is
      * number
@@ -1335,7 +1361,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_3400
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_3400
      * @tc.name      testInitializeMembers0034
      * @tc.desc      The subclass directly initializes its own member variables. The modifier is public and the type is
      * number
@@ -1351,7 +1377,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_3500
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_3500
      * @tc.name      testInitializeMembers0035
      * @tc.desc      The subclass directly initializes its own member variables. The modifier is public and the type is
      * number
@@ -1367,7 +1393,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_3600
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_3600
      * @tc.name      testInitializeMembers0036
      * @tc.desc      The subclass directly initializes its own member variables. The modifier is public and the type is
      * number
@@ -1383,7 +1409,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_3700
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_3700
      * @tc.name      testInitializeMembers0037
      * @tc.desc      The subclass directly initializes its own member variables. The modifier is public and the type is
      * number
@@ -1399,7 +1425,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_3800
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_3800
      * @tc.name      testInitializeMembers0038
      * @tc.desc      The subclass directly initializes its own member variables. The modifier is public and the type is
      * number
@@ -1415,7 +1441,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_3900
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_3900
      * @tc.name      testInitializeMembers0039
      * @tc.desc      The subclass directly initializes its own member variables. The modifier is public and the type is
      * number
@@ -1431,7 +1457,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_4000
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_4000
      * @tc.name      testInitializeMembers0040
      * @tc.desc      The subclass directly initializes its own member variables. The modifier is public and the type is
      * number
@@ -1447,7 +1473,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_4100
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_4100
      * @tc.name      testInitializeMembers0041
      * @tc.desc      The subclass directly initializes its own member variables. The modifier is public and the type is
      * number
@@ -1463,7 +1489,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_4200
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_4200
      * @tc.name      testInitializeMembers0042
      * @tc.desc      The subclass hides the initial value of the field with the same name of the parent class.
      * The modifier is protected and the type is number
@@ -1479,7 +1505,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_4300
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_4300
      * @tc.name      testInitializeMembers0043
      * @tc.desc      The subclass initializes member variables in the constructor, with the modifier as protected and
      * the type as number
@@ -1495,7 +1521,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_4400
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_4400
      * @tc.name      testInitializeMembers0044
      * @tc.desc      The subclass directly initializes its own member variables, the modifier is protected, and
      * the type is number
@@ -1511,7 +1537,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_4500
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_4500
      * @tc.name      testInitializeMembers0045
      * @tc.desc      The subclass initializes its own member variables in the constructor, with the modifier being
      * protected and the type being number
@@ -1527,7 +1553,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_4600
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_4600
      * @tc.name      testInitializeMembers0046
      * @tc.desc      The subclass modifies the value of the directly initialized member variable in the constructor.
      * The modifier is protected and the type is number
@@ -1543,7 +1569,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_4700
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_4700
      * @tc.name      testInitializeMembers0047
      * @tc.desc      The subclass modifies the value of the directly initialized member variable in the constructor.
      * The modifier is protected and the type is number
@@ -1559,7 +1585,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_4800
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_4800
      * @tc.name      testInitializeMembers0048
      * @tc.desc      The subclass directly initializes its own member variables. The modifier is public and the type is
      * number
@@ -1575,7 +1601,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_4900
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_4900
      * @tc.name      testInitializeMembers0049
      * @tc.desc      The subclass modifies the value of the parent class constructor and the member variables directly
      * initialized by the parent class and the subclass in the constructor. The modifier is protected and the type is
@@ -1592,7 +1618,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_5000
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_5000
      * @tc.name      testInitializeMembers0050
      * @tc.desc      The subclass directly initializes its own member variables. The modifier is public and the type is
      * number
@@ -1608,7 +1634,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_5100
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_5100
      * @tc.name      testInitializeMembers0051
      * @tc.desc      The subclass directly initializes its own member variables. The modifier is public and the type is
      * number
@@ -1624,7 +1650,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_5200
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_5200
      * @tc.name      testInitializeMembers0052
      * @tc.desc      The subclass hides the initial value of the field with the same name of the parent class.
      * The modifier is private and the type is number
@@ -1640,7 +1666,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_5300
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_5300
      * @tc.name      testInitializeMembers0053
      * @tc.desc      The subclass initializes its own member variables in the constructor, with the modifier private
      * and type number
@@ -1656,7 +1682,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_5400
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_5400
      * @tc.name      testInitializeMembers0054
      * @tc.desc      The subclass modifies the value of its own member variable that is directly initialized in the
      * constructor. The modifier is private and the type is number
@@ -1672,7 +1698,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_5500
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_5500
      * @tc.name      testInitializeMembers0055
      * @tc.desc       In the constructor function, the subclass calls the parent class constructor function and passes
      * in the initial value. The modifier is private and the type is number
@@ -1688,7 +1714,7 @@ export default function InitializeMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_INITIALIZE_MEMBERSTEST_5600
+     * @tc.number    SUB_INITIALIZE_MEMBERS_TEST_5600
      * @tc.name      testInitializeMembers0056
      * @tc.desc      The subclass directly initializes member variables, with the modifier being internal and the type
      * being number
