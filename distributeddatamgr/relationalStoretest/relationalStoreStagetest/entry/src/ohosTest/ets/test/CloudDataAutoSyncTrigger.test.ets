@@ -237,7 +237,7 @@ export default function CloudDataAutoSyncTrigger() {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_CLOUDDATA_ONAUTOSYNCTRIGGER_ERROR_801_0100
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_CLOUDDATA_ONAUTOSYNCTRIGGER_ERROR_0100
      * @tc.name errorCode801Test001
      * @tc.desc 测试 onAutoSyncTrigger 方法 - 错误码测试801，Capability not supported.
      * @tc.type FUNCTION
@@ -264,7 +264,7 @@ export default function CloudDataAutoSyncTrigger() {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_CLOUDDATA_OFFAUTOSYNCTRIGGER_ERROR_801_0200
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_CLOUDDATA_OFFAUTOSYNCTRIGGER_ERROR_0200
      * @tc.name errorCode801Test002
      * @tc.desc 测试 offAutoSyncTrigger 方法 - 错误码测试801，Capability not supported.
      * @tc.type FUNCTION

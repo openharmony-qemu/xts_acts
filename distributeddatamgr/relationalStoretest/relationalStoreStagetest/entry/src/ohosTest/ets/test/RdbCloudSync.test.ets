@@ -140,7 +140,7 @@ export default function RelationalStoreCloudSyncTest() {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_DISTRIBUTEDCONFIG_ASSETCONFLICTPOLICY_0100
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_DISTRIBUTEDCONFIG_ASSETCONFLICTPOLICY_0200
      * @tc.name assetConflictPolicyPropTest002
      * @tc.desc 测试 DistributedConfig.assetConflictPolicy 各枚举值设置.
      * @tc.type FUNCTION
@@ -599,7 +599,7 @@ export default function RelationalStoreCloudSyncTest() {
     });
 
     /**
-     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_STOPCLOUDSYNC_ERROR_14800014_0100
+     * @tc.number SUB_DISTRIBUTEDDATAMGR_RELATIONALSTORE_STOPCLOUDSYNC_ERROR_0100
      * @tc.name stopCloudSyncError14800014Test001
      * @tc.desc 测试 stopCloudSync 方法 - 错误码14800014已关闭.
      * @tc.type FUNCTION
