@@ -1,0 +1,1985 @@
+/*
+ * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import {
+  expect,
+  describe,
+  beforeAll,
+  beforeEach,
+  afterEach,
+  afterAll,
+  it,
+  TestType,
+  Size,
+  Level
+} from "../../../../../hypium";
+
+
+async function sleep(time: int): Promise<int> {
+  return new Promise<int>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(0);
+    }, time);
+  });
+}
+
+class C_F595 {data: int = 0}
+  class A_F595 {
+    field: C_F595 = {data: 4}
+    constructor () {
+      this.field = {data: 4}
+    }
+  }
+
+class Animal_F596 {
+    name: string = ""
+  }
+  class Dog_F596 extends Animal_F596 {
+    constructor () {
+      super()
+      this.name = "dog"
+    }
+  }
+  class Cat_F596 extends Animal_F596 {
+    constructor () {
+      super()
+      this.name = "cat"
+    }
+  }
+  class C_F596 {
+    field: Animal_F596 = new Animal_F596
+  }
+
+class Animal_F597 {
+    name: string = ""
+  }
+  class Dog_F597 extends Animal_F597 {
+    constructor () {
+      super()
+      this.name = "dog"
+    }
+  }
+  class Cat_F597 extends Animal_F597 {
+    constructor () {
+      super()
+      this.name = "cat"
+    }
+  }
+  class C_F597 {
+    field: Animal_F597 = new Dog_F597
+  }
+
+class Animal_F598 {
+    name: string = ""
+  }
+  class Dog_F598 extends Animal_F598 {
+    constructor () {
+      super()
+      this.name = "dog"
+    }
+  }
+  class Cat_F598 extends Animal_F598 {
+    constructor () {
+      super()
+      this.name = "cat"
+    }
+  }
+  class C_F598 {
+    field: Animal_F598 = new Cat_F598
+  }
+
+class Animal_F599 {
+    name: string = ""
+  }
+  class Dog_F599 extends Animal_F599 {
+    constructor () {
+      super()
+      this.name = "dog"
+    }
+  }
+  class Cat_F599 extends Animal_F599 {
+    constructor () {
+      super()
+      this.name = "cat"
+    }
+  }
+  class C_F599 {
+    field: Animal_F599
+    constructor() {
+       this.field = new Animal_F599
+    }
+  }
+
+class Animal_F600 {
+    name: string = ""
+  }
+  class Dog_F600 extends Animal_F600 {
+    constructor () {
+      super()
+      this.name = "dog"
+    }
+  }
+  class Cat_F600 extends Animal_F600 {
+    constructor () {
+      super()
+      this.name = "cat"
+    }
+  }
+  class C_F600 {
+    field: Animal_F600
+    constructor() {
+       this.field = new Dog_F600
+    }
+  }
+
+class Animal_F601 {
+    name: string = ""
+  }
+  class Dog_F601 extends Animal_F601 {
+    constructor () {
+      super()
+      this.name = "dog"
+    }
+  }
+  class Cat_F601 extends Animal_F601 {
+    constructor () {
+      super()
+      this.name = "cat"
+    }
+  }
+  class C_F601 {
+    field: Animal_F601
+    constructor() {
+       this.field = new Cat_F601
+    }
+  }
+
+class A_F602 {
+    v: int
+    constructor(v: int = 0) {
+      this.v = v
+    }
+  }
+  class B_F602 extends A_F602 {
+    constructor(v: int = 0) {
+      super(-v)
+    }
+    field(): int {
+      return 13
+    }
+  }
+  type HandlerBInt_F602 = (a: B_F602, b: int) => A_F602
+  type HandlerAInt_F602 = (a: A_F602, b: int) => B_F602
+  const handlerAInt: HandlerAInt_F602 = (a: A_F602, b: int): B_F602 => {
+    if (a instanceof B_F602){
+      return new B_F602(a.field() + b)
+    } else {
+      return new B_F602(b)
+    }
+  }
+  type HandlerA_F602 = (a: A_F602) => A_F602
+  const handlerA: HandlerA_F602 = (a: A_F602): A_F602 => {
+    if (a instanceof B_F602){
+      return new A_F602(a.field())
+    } else {
+      return new A_F602
+    }
+  }
+  type HandlerNothing_F602 = () => B_F602
+  const handlerNothing: HandlerNothing_F602 = (): B_F602 => {
+    return new B_F602(567)
+  }
+  class C_F602 {
+    field: HandlerBInt_F602 = handlerNothing
+  }
+
+class A_F603 {
+    v: int
+    constructor(v: int = 0) {
+      this.v = v
+    }
+  }
+  class B_F603 extends A_F603 {
+    constructor(v: int = 0) {
+      super(-v)
+    }
+    field(): int {
+      return 13
+    }
+  }
+  type HandlerBInt_F603 = (a: B_F603, b: int) => A_F603
+  type HandlerAInt_F603 = (a: A_F603, b: int) => B_F603
+  const handlerAInt: HandlerAInt_F603 = (a: A_F603, b: int): B_F603 => {
+    if (a instanceof B_F603){
+      return new B_F603(a.field() + b)
+    } else {
+      return new B_F603(b)
+    }
+  }
+  type HandlerA_F603 = (a: A_F603) => A_F603
+  const handlerA: HandlerA_F603 = (a: A_F603): A_F603 => {
+    if (a instanceof B_F603){
+      return new A_F603(a.field())
+    } else {
+      return new A_F603
+    }
+  }
+  type HandlerNothing_F603 = () => B_F603
+  const handlerNothing: HandlerNothing_F603 = (): B_F603 => {
+    return new B_F603(567)
+  }
+  class C_F603 {
+    field: HandlerBInt_F603 = handlerA
+  }
+
+class A_F604 {
+    v: int
+    constructor(v: int = 0) {
+      this.v = v
+    }
+  }
+  class B_F604 extends A_F604 {
+    constructor(v: int = 0) {
+      super(-v)
+    }
+    field(): int {
+      return 13
+    }
+  }
+  type HandlerBInt_F604 = (a: B_F604, b: int) => A_F604
+  type HandlerAInt_F604 = (a: A_F604, b: int) => B_F604
+  const handlerAInt: HandlerAInt_F604 = (a: A_F604, b: int): B_F604 => {
+    if (a instanceof B_F604){
+      return new B_F604(a.field() + b)
+    } else {
+      return new B_F604(b)
+    }
+  }
+  type HandlerA_F604 = (a: A_F604) => A_F604
+  const handlerA: HandlerA_F604 = (a: A_F604): A_F604 => {
+    if (a instanceof B_F604){
+      return new A_F604(a.field())
+    } else {
+      return new A_F604
+    }
+  }
+  type HandlerNothing_F604 = () => B_F604
+  const handlerNothing: HandlerNothing_F604 = (): B_F604 => {
+    return new B_F604(567)
+  }
+  class C_F604 {
+    field: HandlerBInt_F604 = handlerAInt
+  }
+
+class A_F605 {
+    v: int
+    constructor(v: int = 0) {
+      this.v = v
+    }
+  }
+  class B_F605 extends A_F605 {
+    constructor(v: int = 0) {
+      super(-v)
+    }
+    field(): int {
+      return 13
+    }
+  }
+  type HandlerBInt_F605 = (a: B_F605, b: int) => A_F605
+  type HandlerAInt_F605 = (a: A_F605, b: int) => B_F605
+  const handlerAInt: HandlerAInt_F605 = (a: A_F605, b: int): B_F605 => {
+    if (a instanceof B_F605){
+      return new B_F605(a.field() + b)
+    } else {
+      return new B_F605(b)
+    }
+  }
+  type HandlerA_F605 = (a: A_F605) => A_F605
+  const handlerA: HandlerA_F605 = (a: A_F605): A_F605 => {
+    if (a instanceof B_F605){
+      return new A_F605(a.field())
+    } else {
+      return new A_F605
+    }
+  }
+  type HandlerNothing_F605 = () => B_F605
+  const handlerNothing: HandlerNothing_F605 = (): B_F605 => {
+    return new B_F605(567)
+  }
+  class C_F605 {
+    field: HandlerBInt_F605
+    constructor() {
+       this.field = handlerNothing
+    }
+  }
+
+class A_F606 {
+    v: int
+    constructor(v: int = 0) {
+      this.v = v
+    }
+  }
+  class B_F606 extends A_F606 {
+    constructor(v: int = 0) {
+      super(-v)
+    }
+    field(): int {
+      return 13
+    }
+  }
+  type HandlerBInt_F606 = (a: B_F606, b: int) => A_F606
+  type HandlerAInt_F606 = (a: A_F606, b: int) => B_F606
+  const handlerAInt: HandlerAInt_F606 = (a: A_F606, b: int): B_F606 => {
+    if (a instanceof B_F606){
+      return new B_F606(a.field() + b)
+    } else {
+      return new B_F606(b)
+    }
+  }
+  type HandlerA_F606 = (a: A_F606) => A_F606
+  const handlerA: HandlerA_F606 = (a: A_F606): A_F606 => {
+    if (a instanceof B_F606){
+      return new A_F606(a.field())
+    } else {
+      return new A_F606
+    }
+  }
+  type HandlerNothing_F606 = () => B_F606
+  const handlerNothing: HandlerNothing_F606 = (): B_F606 => {
+    return new B_F606(567)
+  }
+  class C_F606 {
+    field: HandlerBInt_F606
+    constructor() {
+       this.field = handlerA
+    }
+  }
+
+class A_F607 {
+    v: int
+    constructor(v: int = 0) {
+      this.v = v
+    }
+  }
+  class B_F607 extends A_F607 {
+    constructor(v: int = 0) {
+      super(-v)
+    }
+    field(): int {
+      return 13
+    }
+  }
+  type HandlerBInt_F607 = (a: B_F607, b: int) => A_F607
+  type HandlerAInt_F607 = (a: A_F607, b: int) => B_F607
+  const handlerAInt: HandlerAInt_F607 = (a: A_F607, b: int): B_F607 => {
+    if (a instanceof B_F607){
+      return new B_F607(a.field() + b)
+    } else {
+      return new B_F607(b)
+    }
+  }
+  type HandlerA_F607 = (a: A_F607) => A_F607
+  const handlerA: HandlerA_F607 = (a: A_F607): A_F607 => {
+    if (a instanceof B_F607){
+      return new A_F607(a.field())
+    } else {
+      return new A_F607
+    }
+  }
+  type HandlerNothing_F607 = () => B_F607
+  const handlerNothing: HandlerNothing_F607 = (): B_F607 => {
+    return new B_F607(567)
+  }
+  class C_F607 {
+    field: HandlerBInt_F607
+    constructor() {
+       this.field = handlerAInt
+    }
+  }
+
+class A_F608<T> {
+    field: T
+    constructor(a: T) {
+       this.field = a
+    }
+  }
+
+class A_F609<T> {
+    field: T
+    constructor(a: T) {
+       this.field = a
+    }
+  }
+
+class A_F610<T> {
+    field: T
+    constructor(a: T) {
+       this.field = a
+    }
+  }
+
+class A_F611<T> {
+    field: T
+    constructor(a: T) {
+       this.field = a
+    }
+  }
+
+class A_F612<T> {
+    field: T
+    constructor(a: T) {
+       this.field = a
+    }
+  }
+
+class A_F613<T> {
+    field: T
+    constructor(a: T) {
+       this.field = a
+    }
+  }
+
+class A_F614<T> {
+    field: T
+    constructor(a: T) {
+       this.field = a
+    }
+  }
+
+class A_F615<T> {
+    field: T
+    constructor(a: T) {
+       this.field = a
+    }
+  }
+
+class A_F616<T> {
+    field: T
+    constructor(a: T) {
+       this.field = a
+    }
+  }
+
+class A_F617<T> {
+    field: T
+    constructor(a: T) {
+       this.field = a
+    }
+  }
+
+class A_F618<T> {
+    field: T
+    constructor(a: T) {
+       this.field = a
+    }
+  }
+
+class A_F619<T> {
+    field: T
+    constructor(a: T) {
+       this.field = a
+    }
+  }
+
+class A_F620<T> {
+    field: T
+    constructor(a: T) {
+       this.field = a
+    }
+  }
+
+class A_F621<T> {
+    field: T
+    constructor(a: T) {
+       this.field = a
+    }
+  }
+
+class A_F622<T> {
+    field: T
+    constructor(a: T) {
+       this.field = a
+    }
+  }
+
+let v: long = 5
+  function foo(): long {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F623 {
+    field: long = foo()
+  }
+
+let v: int = 5
+  function foo(): int {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F624 {
+    field: int = foo()
+  }
+
+let v: byte = 5
+  function foo(): byte {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F625 {
+    field: byte = foo()
+  }
+
+let v: short = 5
+  function foo(): short {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F626 {
+    field: short = foo()
+  }
+
+let v: double = 5
+  function foo(): double {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F627 {
+    field: double = foo()
+  }
+
+let v: int = 5
+  function foo(): number {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F628 {
+    field: number = foo()
+  }
+
+let v: float = 5.0f
+  function foo(): float {
+    let res = v
+    v += 1.0f
+    return res
+  }
+  class A_F629 {
+    field: float = foo()
+  }
+
+let v: bigint = 5n
+  function foo(): bigint {
+    let res = v
+    v += 1n
+    return res
+  }
+  class A_F630 {
+    field: bigint = foo()
+  }
+
+let v: string = "v"
+  function foo(): string {
+    let res = v
+    v += "n"
+    return res
+  }
+  class A_F631 {
+    field: string = foo()
+  }
+
+let v: int = 5
+  function foo(): int {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F632 {
+    field: Object = foo()
+  }
+
+let v: int = 5
+  function foo(): int {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F633 {
+    field: Object | null = foo()
+  }
+
+let v: int = 5
+  function foo(): int {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F634 {
+    field: Object | undefined = foo()
+  }
+
+let v: int = 5
+  function foo(): int {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F635 {
+    field: Object | undefined | null = foo()
+  }
+
+let v: int = 5
+  function foo(): int {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F636 {
+    field: Any = foo()
+  }
+
+let v: long = 5
+  function foo(): long {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F637 {
+    field: long
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+let v: int = 5
+  function foo(): int {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F638 {
+    field: int
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+let v: byte = 5
+  function foo(): byte {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F639 {
+    field: byte
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+let v: short = 5
+  function foo(): short {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F640 {
+    field: short
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+let v: double = 5
+  function foo(): double {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F641 {
+    field: double
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+let v: int = 5
+  function foo(): number {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F642 {
+    field: number
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+let v: float = 5.0f
+  function foo(): float {
+    let res = v
+    v += 1.0f
+    return res
+  }
+  class A_F643 {
+    field: float
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+let v: bigint = 5n
+  function foo(): bigint {
+    let res = v
+    v += 1n
+    return res
+  }
+  class A_F644 {
+    field: bigint
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+let v: string = "v"
+  function foo(): string {
+    let res = v
+    v += "n"
+    return res
+  }
+  class A_F645 {
+    field: string
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+let v: int = 5
+  function foo(): int {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F646 {
+    field: Object
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+let v: int = 5
+  function foo(): int {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F647 {
+    field: Object | null
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+let v: int = 5
+  function foo(): int {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F648 {
+    field: Object | undefined
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+let v: int = 5
+  function foo(): int {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F649 {
+    field: Object | undefined | null
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+let v: int = 5
+  function foo(): int {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F650 {
+    field: Any
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+let v: long = 5
+  function foo(): long {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F651 {
+    field: long = 5
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+let v: int = 5
+  function foo(): int {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F652 {
+    field: int = 5
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+let v: byte = 5
+  function foo(): byte {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F653 {
+    field: byte = 5
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+let v: short = 5
+  function foo(): short {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F654 {
+    field: short = 5
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+let v: double = 5
+  function foo(): double {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F655 {
+    field: double = 5
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+let v: int = 5
+  function foo(): number {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F656 {
+    field: number = 5
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+let v: float = 5.0f
+  function foo(): float {
+    let res = v
+    v += 1.0f
+    return res
+  }
+  class A_F657 {
+    field: float = 5.0f
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+let v: bigint = 5n
+  function foo(): bigint {
+    let res = v
+    v += 1n
+    return res
+  }
+  class A_F658 {
+    field: bigint = 5n
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+let v: string = "v"
+  function foo(): string {
+    let res = v
+    v += "n"
+    return res
+  }
+  class A_F659 {
+    field: string = "v"
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+let v: int = 5
+  function foo(): int {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F660 {
+    field: Object = 5
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+let v: int = 5
+  function foo(): int {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F661 {
+    field: Object | null = 5
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+let v: int = 5
+  function foo(): int {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F662 {
+    field: Object | undefined = 5
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+let v: int = 5
+  function foo(): int {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F663 {
+    field: Object | undefined | null = 5
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+let v: int = 5
+  function foo(): int {
+    let res = v
+    v += 1
+    return res
+  }
+  class A_F664 {
+    field: Any = 5
+    constructor () {
+      this.field = foo()
+    }
+  }
+
+namespace ns {
+    export class A_F665 {
+      field: long
+      constructor () {
+        this.field = 4
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F666 {
+      field: int
+      constructor () {
+        this.field = 4
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F667 {
+      field: byte
+      constructor () {
+        this.field = 4
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F668 {
+      field: short
+      constructor () {
+        this.field = 4
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F669 {
+      field: double
+      constructor () {
+        this.field = 4
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F670 {
+      field: number
+      constructor () {
+        this.field = 4
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F671 {
+      field: float
+      constructor () {
+        this.field = 4.5f
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F672 {
+      field: bigint
+      constructor () {
+        this.field = 4n
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F673 {
+      field: string
+      constructor () {
+        this.field = "abc"
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F674 {
+      field: char
+      constructor () {
+        this.field = c'a'
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F675 {
+      field: boolean
+      constructor () {
+        this.field = false
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F676 {
+      field: Object
+      constructor () {
+        this.field = 4
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F677 {
+      field: Object | undefined | null
+      constructor () {
+        this.field = 4
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F678 {
+      field: Any
+      constructor () {
+        this.field = 4
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F679 {
+      field: long
+      constructor (arg: long = 4) {
+        this.field = arg
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F680 {
+      field: int
+      constructor (arg: int = 4) {
+        this.field = arg
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F681 {
+      field: byte
+      constructor (arg: byte = 4) {
+        this.field = arg
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F682 {
+      field: short
+      constructor (arg: short = 4) {
+        this.field = arg
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F683 {
+      field: double
+      constructor (arg: double = 4) {
+        this.field = arg
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F684 {
+      field: number
+      constructor (arg: int = 4) {
+        this.field = arg
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F685 {
+      field: float
+      constructor (arg: float = 4.5f) {
+        this.field = arg
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F686 {
+      field: bigint
+      constructor (arg: bigint = 4n) {
+        this.field = arg
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F687 {
+      field: string
+      constructor (arg: string = "abc") {
+        this.field = arg
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F688 {
+      field: char
+      constructor (arg: char = c'a') {
+        this.field = arg
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F689 {
+      field: boolean
+      constructor (arg: boolean = false) {
+        this.field = arg
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F690 {
+      field: Object
+      constructor (arg: Object = 4) {
+        this.field = arg
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F691 {
+      field: Object | undefined | null
+      constructor (arg: Object | undefined | null = 4) {
+        this.field = arg
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F692 {
+      field: Any
+      constructor (arg: Any = 4) {
+        this.field = arg
+      }
+    }
+  }
+
+namespace ns {
+    export class A_F693 {
+      field: long
+      constructor (...args: Any[]) {
+        this.field = 4
+      }
+    }
+  }
+
+export default function FieldInitializationTestSix(): void {
+  describe("FieldInitializationTestSix", () => {
+    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    beforeAll(() => {
+      // Presets an action, which is performed only once before all test cases of the test suite start.
+      // This API supports only one parameter: preset action function.
+    })
+    beforeEach(async () => {
+      // Presets an action, which is performed before each unit test case starts.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: preset action function.
+      await sleep(30);
+    })
+    afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+    afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0595
+     * @tc.name      testFieldInit0595
+     * @tc.desc      Checking for initialization from object literal.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0595", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F595 = {field: {data: 5}}
+      expect(a.field instanceof C_F595).assertTrue()
+      expect(a.field.data instanceof int).assertTrue()
+      expect(a.field.data).assertEqual(5)
+      a.field = {data: 4}
+      expect(a.field instanceof C_F595).assertTrue()
+      expect(a.field.data instanceof int).assertTrue()
+      expect(a.field.data).assertEqual(4)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0596
+     * @tc.name      testFieldInit0596
+     * @tc.desc      Checking for initialization with different covariant subtype values usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0596", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: C_F596 = new C_F596()
+      expect(a.field instanceof Animal_F596).assertTrue()
+      expect(a.field.name).assertEqual("")
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0597
+     * @tc.name      testFieldInit0597
+     * @tc.desc      Checking for initialization with different covariant subtype values usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0597", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: C_F597 = new C_F597()
+      expect(a.field instanceof Dog_F597).assertTrue()
+      expect(a.field.name).assertEqual("dog")
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0598
+     * @tc.name      testFieldInit0598
+     * @tc.desc      Checking for initialization with different covariant subtype values usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0598", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: C_F598 = new C_F598()
+      expect(a.field instanceof Cat_F598).assertTrue()
+      expect(a.field.name).assertEqual("cat")
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0599
+     * @tc.name      testFieldInit0599
+     * @tc.desc      Checking for initialization with different covariant subtype values usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0599", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: C_F599 = new C_F599()
+      expect(a.field instanceof Animal_F599).assertTrue()
+      expect(a.field.name).assertEqual("")
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0600
+     * @tc.name      testFieldInit0600
+     * @tc.desc      Checking for initialization with different covariant subtype values usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: C_F600 = new C_F600()
+      expect(a.field instanceof Dog_F600).assertTrue()
+      expect(a.field.name).assertEqual("dog")
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0601
+     * @tc.name      testFieldInit0601
+     * @tc.desc      Checking for initialization with different covariant subtype values usage.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0601", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: C_F601 = new C_F601()
+      expect(a.field instanceof Cat_F601).assertTrue()
+      expect(a.field.name).assertEqual("cat")
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0602
+     * @tc.name      testFieldInit0602
+     * @tc.desc      Checking for initialization with different covariant function subtype values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0602", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: C_F602 = new C_F602()
+      expect(a.field instanceof HandlerNothing_F602).assertTrue()
+      expect(a.field(new B_F602, 7).v).assertEqual(-567)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0603
+     * @tc.name      testFieldInit0603
+     * @tc.desc      Checking for initialization with different covariant function subtype values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0603", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: C_F603 = new C_F603()
+      expect(a.field instanceof HandlerA_F603).assertTrue()
+      expect(a.field(new B_F603, 7).v).assertEqual(13)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0604
+     * @tc.name      testFieldInit0604
+     * @tc.desc      Checking for initialization with different covariant function subtype values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0604", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: C_F604 = new C_F604()
+      expect(a.field instanceof HandlerAInt_F604).assertTrue()
+      expect(a.field(new B_F604, 7).v).assertEqual(-20)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0605
+     * @tc.name      testFieldInit0605
+     * @tc.desc      Checking for initialization with different covariant function subtype values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0605", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: C_F605 = new C_F605()
+      expect(a.field instanceof HandlerNothing_F605).assertTrue()
+      expect(a.field(new B_F605, 7).v).assertEqual(-567)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0606
+     * @tc.name      testFieldInit0606
+     * @tc.desc      Checking for initialization with different covariant function subtype values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0606", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: C_F606 = new C_F606()
+      expect(a.field instanceof HandlerA_F606).assertTrue()
+      expect(a.field(new B_F606, 7).v).assertEqual(13)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0607
+     * @tc.name      testFieldInit0607
+     * @tc.desc      Checking for initialization with different covariant function subtype values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0607", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: C_F607 = new C_F607()
+      expect(a.field instanceof HandlerAInt_F607).assertTrue()
+      expect(a.field(new B_F607, 7).v).assertEqual(-20)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0608
+     * @tc.name      testFieldInit0608
+     * @tc.desc      Checking for initialization field in generic class.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0608", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F608<long> = new A_F608<long>(4)
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof long).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0609
+     * @tc.name      testFieldInit0609
+     * @tc.desc      Checking for initialization field in generic class.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0609", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F609<int> = new A_F609<int>(4)
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof int).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0610
+     * @tc.name      testFieldInit0610
+     * @tc.desc      Checking for initialization field in generic class.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0610", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F610<byte> = new A_F610<byte>(4)
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof byte).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0611
+     * @tc.name      testFieldInit0611
+     * @tc.desc      Checking for initialization field in generic class.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0611", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F611<short> = new A_F611<short>(4)
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof short).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0612
+     * @tc.name      testFieldInit0612
+     * @tc.desc      Checking for initialization field in generic class.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0612", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F612<double> = new A_F612<double>(4)
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 7.3
+      expect(a.field instanceof double).assertTrue()
+      expect(a.field).assertEqual(7.3)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0613
+     * @tc.name      testFieldInit0613
+     * @tc.desc      Checking for initialization field in generic class.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0613", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F613<number> = new A_F613<number>(4)
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof number).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0614
+     * @tc.name      testFieldInit0614
+     * @tc.desc      Checking for initialization field in generic class.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0614", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F614<float> = new A_F614<float>(4.5f)
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(4.5f)
+      a.field = 7.3f
+      expect(a.field instanceof float).assertTrue()
+      expect(a.field).assertEqual(7.3f)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0615
+     * @tc.name      testFieldInit0615
+     * @tc.desc      Checking for initialization field in generic class.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0615", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F615<bigint> = new A_F615<bigint>(4n)
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(4n)
+      a.field = 5n
+      expect(a.field instanceof bigint).assertTrue()
+      expect(a.field).assertEqual(5n)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0616
+     * @tc.name      testFieldInit0616
+     * @tc.desc      Checking for initialization field in generic class.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0616", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F616<string> = new A_F616<string>("abc")
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("abc")
+      a.field = "efg"
+      expect(a.field instanceof string).assertTrue()
+      expect(a.field).assertEqual("efg")
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0617
+     * @tc.name      testFieldInit0617
+     * @tc.desc      Checking for initialization field in generic class.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0617", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F617<char> = new A_F617<char>(c'a')
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'a')
+      a.field = c'b'
+      expect(a.field instanceof char).assertTrue()
+      expect(a.field).assertEqual(c'b')
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0618
+     * @tc.name      testFieldInit0618
+     * @tc.desc      Checking for initialization field in generic class.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0618", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F618<boolean> = new A_F618<boolean>(false)
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(false)
+      a.field = true
+      expect(a.field instanceof boolean).assertTrue()
+      expect(a.field).assertEqual(true)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0619
+     * @tc.name      testFieldInit0619
+     * @tc.desc      Checking for initialization field in generic class.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0619", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F619<Object> = new A_F619<Object>(4)
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof Object).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0620
+     * @tc.name      testFieldInit0620
+     * @tc.desc      Checking for initialization field in generic class.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0620", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F620<Object | undefined> = new A_F620<Object | undefined>(undefined)
+      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field).assertEqual(undefined)
+      a.field = 5
+      expect(a.field instanceof Object | undefined).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0621
+     * @tc.name      testFieldInit0621
+     * @tc.desc      Checking for initialization field in generic class.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0621", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F621<Object | undefined | null> = new A_F621<Object | undefined | null>(4)
+      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof Object | undefined | null).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0622
+     * @tc.name      testFieldInit0622
+     * @tc.desc      Checking for initialization field in generic class.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0622", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let a: A_F622<Any> = new A_F622<Any>(4)
+      expect(a.field instanceof Any).assertTrue()
+      expect(a.field).assertEqual(4)
+      a.field = 5
+      expect(a.field instanceof Any).assertTrue()
+      expect(a.field).assertEqual(5)
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0623
+     * @tc.name      testFieldInit0623
+     * @tc.desc      The assignment is performed each time an instance of the class is created.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0623", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: long = 5
+          for (let i: int = 0; i < 5; i++) {
+            let a: A_F623 = new A_F623()
+        expect(a.field instanceof long).assertTrue()
+        expect(a.field instanceof long).assertTrue()
+        expect(a.field).assertEqual(val)
+            val += 1
+          }
+          v = 5
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0624
+     * @tc.name      testFieldInit0624
+     * @tc.desc      The assignment is performed each time an instance of the class is created.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0624", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: int = 5
+          for (let i: int = 0; i < 5; i++) {
+            let a: A_F624 = new A_F624()
+        expect(a.field instanceof int).assertTrue()
+        expect(a.field instanceof int).assertTrue()
+        expect(a.field).assertEqual(val)
+            val += 1
+          }
+          v = 5
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0625
+     * @tc.name      testFieldInit0625
+     * @tc.desc      The assignment is performed each time an instance of the class is created.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0625", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: byte = 5
+          for (let i: int = 0; i < 5; i++) {
+            let a: A_F625 = new A_F625()
+        expect(a.field instanceof byte).assertTrue()
+        expect(a.field instanceof byte).assertTrue()
+        expect(a.field).assertEqual(val)
+            val += 1
+          }
+          v = 5
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0626
+     * @tc.name      testFieldInit0626
+     * @tc.desc      The assignment is performed each time an instance of the class is created.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0626", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: short = 5
+          for (let i: int = 0; i < 5; i++) {
+            let a: A_F626 = new A_F626()
+        expect(a.field instanceof short).assertTrue()
+        expect(a.field instanceof short).assertTrue()
+        expect(a.field).assertEqual(val)
+            val += 1
+          }
+          v = 5
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0627
+     * @tc.name      testFieldInit0627
+     * @tc.desc      The assignment is performed each time an instance of the class is created.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0627", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: double = 5
+          for (let i: int = 0; i < 5; i++) {
+            let a: A_F627 = new A_F627()
+        expect(a.field instanceof double).assertTrue()
+        expect(a.field instanceof double).assertTrue()
+        expect(a.field).assertEqual(val)
+            val += 1
+          }
+          v = 5
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0628
+     * @tc.name      testFieldInit0628
+     * @tc.desc      The assignment is performed each time an instance of the class is created.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0628", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: int = 5
+          for (let i: int = 0; i < 5; i++) {
+            let a: A_F628 = new A_F628()
+        expect(a.field instanceof number).assertTrue()
+        expect(a.field instanceof number).assertTrue()
+        expect(a.field).assertEqual(val)
+            val += 1
+          }
+          v = 5
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0629
+     * @tc.name      testFieldInit0629
+     * @tc.desc      The assignment is performed each time an instance of the class is created.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0629", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: float = 5.0f
+          for (let i: int = 0; i < 5; i++) {
+            let a: A_F629 = new A_F629()
+        expect(a.field instanceof float).assertTrue()
+        expect(a.field instanceof float).assertTrue()
+        expect(a.field).assertEqual(val)
+            val += 1.0f
+          }
+          v = 5.0f
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0630
+     * @tc.name      testFieldInit0630
+     * @tc.desc      The assignment is performed each time an instance of the class is created.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0630", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: bigint = 5n
+          for (let i: int = 0; i < 5; i++) {
+            let a: A_F630 = new A_F630()
+        expect(a.field instanceof bigint).assertTrue()
+        expect(a.field instanceof bigint).assertTrue()
+        expect(a.field).assertEqual(val)
+            val += 1n
+          }
+          v = 5n
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0631
+     * @tc.name      testFieldInit0631
+     * @tc.desc      The assignment is performed each time an instance of the class is created.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0631", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: string = "v"
+          for (let i: int = 0; i < 5; i++) {
+            let a: A_F631 = new A_F631()
+        expect(a.field instanceof string).assertTrue()
+        expect(a.field instanceof string).assertTrue()
+        expect(a.field).assertEqual(val)
+            val += "n"
+          }
+          v = "v"
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0632
+     * @tc.name      testFieldInit0632
+     * @tc.desc      The assignment is performed each time an instance of the class is created.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0632", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: int = 5
+          for (let i: int = 0; i < 5; i++) {
+            let a: A_F632 = new A_F632()
+        expect(a.field instanceof Object).assertTrue()
+        expect(a.field instanceof int).assertTrue()
+        expect(a.field).assertEqual(val)
+            val += 1
+          }
+          v = 5
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0633
+     * @tc.name      testFieldInit0633
+     * @tc.desc      The assignment is performed each time an instance of the class is created.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0633", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: int = 5
+          for (let i: int = 0; i < 5; i++) {
+            let a: A_F633 = new A_F633()
+        expect(a.field instanceof Object | null).assertTrue()
+        expect(a.field instanceof int).assertTrue()
+        expect(a.field).assertEqual(val)
+            val += 1
+          }
+          v = 5
+    })
+
+    /**
+     * @tc.number    SUB_FIELD_INIT_TEST_0634
+     * @tc.name      testFieldInit0634
+     * @tc.desc      The assignment is performed each time an instance of the class is created.
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it("testFieldInit0634", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let val: int = 5
+          for (let i: int = 0; i < 5; i++) {
+            let a: A_F634 = new A_F634()
+        expect(a.field instanceof Object | undefined).assertTrue()
+        expect(a.field instanceof int).assertTrue()
+        expect(a.field).assertEqual(val)
+            val += 1
+          }
+          v = 5
+    })
