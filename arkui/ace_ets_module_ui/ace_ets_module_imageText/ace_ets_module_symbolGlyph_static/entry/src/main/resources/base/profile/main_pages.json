@@ -2,6 +2,7 @@
   "src": [
     "MainAbility/pages/index/index",
     "MainAbility/pages/SymbolGlyph/SymbolGlyphIndex",
-    "MainAbility/pages/SymbolGlyph/SymbolGlyphSymbolColor"
+    "MainAbility/pages/SymbolGlyph/SymbolGlyphSymbolColor",
+ 	  "MainAbility/pages/SymbolGlyph/SymbolGlyphFontWeight"
   ]
 }
