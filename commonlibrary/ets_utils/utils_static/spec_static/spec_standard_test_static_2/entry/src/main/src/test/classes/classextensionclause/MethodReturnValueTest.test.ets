@@ -696,7 +696,7 @@ export default function MethodReturnValueTest():void {
         let parentValue: never = parent.getValue();
       } catch (error) {
         if (error instanceof Error) {
-          expect(error.message).assertEqual('This method always throws an error');
+      expect(error.message).assertEqual('This method always throws an error');
         } else {
           throw new Error('Unexpected error type');
         }
@@ -706,7 +706,7 @@ export default function MethodReturnValueTest():void {
         let childValue: never = child.getValue();
       } catch (error) {
         if (error instanceof Error) {
-          expect(error.message).assertEqual('This method always throws an error');
+      expect(error.message).assertEqual('This method always throws an error');
         } else {
           throw new Error('Unexpected error type');
         }

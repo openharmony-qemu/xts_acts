@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -210,144 +210,144 @@ class A_F916 {
     }
   }
 
-function foo(): long {
+function foo_F916(): long {
     let res = A_F917.v
     A_F917.v += 1
     return res
   }
   class A_F917 {
     static v: long = 5
-    field: long = foo()
+    field: long = foo_F917()
   }
 
-function foo(): int {
+function foo_F917(): int {
     let res = A_F918.v
     A_F918.v += 1
     return res
   }
   class A_F918 {
     static v: int = 5
-    field: int = foo()
+    field: int = int(foo_F918())
   }
 
-function foo(): byte {
+function foo_F918(): byte {
     let res = A_F919.v
     A_F919.v += 1
     return res
   }
   class A_F919 {
     static v: byte = 5
-    field: byte = foo()
+    field: byte = byte(foo_F919())
   }
 
-function foo(): short {
+function foo_F919(): short {
     let res = A_F920.v
     A_F920.v += 1
     return res
   }
   class A_F920 {
     static v: short = 5
-    field: short = foo()
+    field: short = short(foo_F920())
   }
 
-function foo(): double {
+function foo_F920(): double {
     let res = A_F921.v
     A_F921.v += 1
     return res
   }
   class A_F921 {
     static v: double = 5
-    field: double = foo()
+    field: double = foo_F921()
   }
 
-function foo(): number {
+function foo_F921(): number {
     let res = A_F922.v
     A_F922.v += 1
     return res
   }
   class A_F922 {
     static v: number = 5
-    field: number = foo()
+    field: number = foo_F922()
   }
 
-function foo(): float {
+function foo_F922(): float {
     let res = A_F923.v
     A_F923.v += 1.0f
     return res
   }
   class A_F923 {
     static v: float = 5.0f
-    field: float = foo()
+    field: float = foo_F923()
   }
 
-function foo(): bigint {
+function foo_F923(): bigint {
     let res = A_F924.v
     A_F924.v += 1n
     return res
   }
   class A_F924 {
     static v: bigint = 5n
-    field: bigint = foo()
+    field: bigint = bigint(foo_F924())
   }
 
-function foo(): string {
+function foo_F924(): string {
     let res = A_F925.v
     A_F925.v += "n"
     return res
   }
   class A_F925 {
     static v: string = "v"
-    field: string = foo()
+    field: string = string(foo_F925())
   }
 
-function foo(): int {
+function foo_F925(): int {
     let res = A_F926.v
     A_F926.v += 1
     return res
   }
   class A_F926 {
     static v: int = 5
-    field: Object = foo()
+    field: Object = foo_F926()
   }
 
-function foo(): int {
+function foo_F926(): int {
     let res = A_F927.v
     A_F927.v += 1
     return res
   }
   class A_F927 {
     static v: int = 5
-    field: Object | null = foo()
+    field: Object | null = foo_F927()
   }
 
-function foo(): int {
+function foo_F927(): int {
     let res = A_F928.v
     A_F928.v += 1
     return res
   }
   class A_F928 {
     static v: int = 5
-    field: Object | undefined = foo()
+    field: Object | undefined = foo_F928()
   }
 
-function foo(): int {
+function foo_F928(): int {
     let res = A_F929.v
     A_F929.v += 1
     return res
   }
   class A_F929 {
     static v: int = 5
-    field: Object | undefined | null = foo()
+    field: Object | undefined | null = foo_F929()
   }
 
-function foo(): int {
+function foo_F929(): int {
     let res = A_F930.v
     A_F930.v += 1
     return res
   }
   class A_F930 {
     static v: int = 5
-    field: Any = foo()
+    field: Any = foo_F930()
   }
 
 class A_F931 {

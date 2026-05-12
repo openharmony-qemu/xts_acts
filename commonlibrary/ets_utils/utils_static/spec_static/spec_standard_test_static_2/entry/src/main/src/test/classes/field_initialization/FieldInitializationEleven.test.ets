@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -708,128 +708,128 @@ namespace ns {
   }
 
 namespace ns {
-    function foo(): long {
+    function foo_F1171(): long {
       return 4
     }
     export class A_F1172 {
-      static field: long = foo()
+      static field: long = foo_F1172()
     }
   }
 
 namespace ns {
-    function foo(): int {
+    function foo_F1172(): int {
       return 4
     }
     export class A_F1173 {
-      static field: int = foo()
+      static field: int = int(foo_F1173())
     }
   }
 
 namespace ns {
-    function foo(): byte {
+    function foo_F1173(): byte {
       return 4
     }
     export class A_F1174 {
-      static field: byte = foo()
+      static field: byte = byte(foo_F1174())
     }
   }
 
 namespace ns {
-    function foo(): short {
+    function foo_F1174(): short {
       return 4
     }
     export class A_F1175 {
-      static field: short = foo()
+      static field: short = short(foo_F1175())
     }
   }
 
 namespace ns {
-    function foo(): double {
+    function foo_F1175(): double {
       return 4
     }
     export class A_F1176 {
-      static field: double = foo()
+      static field: double = foo_F1176()
     }
   }
 
 namespace ns {
-    function foo(): number {
+    function foo_F1176(): number {
       return 4
     }
     export class A_F1177 {
-      static field: number = foo()
+      static field: number = foo_F1177()
     }
   }
 
 namespace ns {
-    function foo(): float {
+    function foo_F1177(): float {
       return 4.5f
     }
     export class A_F1178 {
-      static field: float = foo()
+      static field: float = foo_F1178()
     }
   }
 
 namespace ns {
-    function foo(): bigint {
+    function foo_F1178(): bigint {
       return 4n
     }
     export class A_F1179 {
-      static field: bigint = foo()
+      static field: bigint = bigint(foo_F1179())
     }
   }
 
 namespace ns {
-    function foo(): string {
+    function foo_F1179(): string {
       return "abc"
     }
     export class A_F1180 {
-      static field: string = foo()
+      static field: string = string(foo_F1180())
     }
   }
 
 namespace ns {
-    function foo(): char {
+    function foo_F1180(): char {
       return c'a'
     }
     export class A_F1181 {
-      static field: char = foo()
+      static field: char = char(foo_F1181())
     }
   }
 
 namespace ns {
-    function foo(): boolean {
+    function foo_F1181(): boolean {
       return false
     }
     export class A_F1182 {
-      static field: boolean = foo()
+      static field: boolean = boolean(foo_F1182())
     }
   }
 
 namespace ns {
-    function foo(): Object {
+    function foo_F1182(): Object {
       return 4
     }
     export class A_F1183 {
-      static field: Object = foo()
+      static field: Object = foo_F1183()
     }
   }
 
 namespace ns {
-    function foo(): Object | undefined | null {
+    function foo_F1183(): Object | undefined | null {
       return 4
     }
     export class A_F1184 {
-      static field: Object | undefined | null = foo()
+      static field: Object | undefined | null = foo_F1184()
     }
   }
 
 namespace ns {
-    function foo(): Any {
+    function foo_F1184(): Any {
       return 4
     }
     export class A_F1185 {
-      static field: Any = foo()
+      static field: Any = foo_F1185()
     }
   }
 

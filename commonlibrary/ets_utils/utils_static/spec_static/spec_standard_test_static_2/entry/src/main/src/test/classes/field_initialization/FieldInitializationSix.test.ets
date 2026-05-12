@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -182,7 +182,7 @@ class A_F602 {
   }
   type HandlerBInt_F602 = (a: B_F602, b: int) => A_F602
   type HandlerAInt_F602 = (a: A_F602, b: int) => B_F602
-  const handlerAInt: HandlerAInt_F602 = (a: A_F602, b: int): B_F602 => {
+  const handlerAInt_F602: HandlerAInt_F602 = (a: A_F602, b: int): B_F602 => {
     if (a instanceof B_F602){
       return new B_F602(a.field() + b)
     } else {
@@ -190,7 +190,7 @@ class A_F602 {
     }
   }
   type HandlerA_F602 = (a: A_F602) => A_F602
-  const handlerA: HandlerA_F602 = (a: A_F602): A_F602 => {
+  const handlerA_F602: HandlerA_F602 = (a: A_F602): A_F602 => {
     if (a instanceof B_F602){
       return new A_F602(a.field())
     } else {
@@ -198,11 +198,11 @@ class A_F602 {
     }
   }
   type HandlerNothing_F602 = () => B_F602
-  const handlerNothing: HandlerNothing_F602 = (): B_F602 => {
+  const handlerNothing_F602: HandlerNothing_F602 = (): B_F602 => {
     return new B_F602(567)
   }
   class C_F602 {
-    field: HandlerBInt_F602 = handlerNothing
+    field: HandlerBInt_F602 = handlerNothing_F602
   }
 
 class A_F603 {
@@ -221,7 +221,7 @@ class A_F603 {
   }
   type HandlerBInt_F603 = (a: B_F603, b: int) => A_F603
   type HandlerAInt_F603 = (a: A_F603, b: int) => B_F603
-  const handlerAInt: HandlerAInt_F603 = (a: A_F603, b: int): B_F603 => {
+  const handlerAInt_F603: HandlerAInt_F603 = (a: A_F603, b: int): B_F603 => {
     if (a instanceof B_F603){
       return new B_F603(a.field() + b)
     } else {
@@ -229,7 +229,7 @@ class A_F603 {
     }
   }
   type HandlerA_F603 = (a: A_F603) => A_F603
-  const handlerA: HandlerA_F603 = (a: A_F603): A_F603 => {
+  const handlerA_F603: HandlerA_F603 = (a: A_F603): A_F603 => {
     if (a instanceof B_F603){
       return new A_F603(a.field())
     } else {
@@ -237,11 +237,11 @@ class A_F603 {
     }
   }
   type HandlerNothing_F603 = () => B_F603
-  const handlerNothing: HandlerNothing_F603 = (): B_F603 => {
+  const handlerNothing_F603: HandlerNothing_F603 = (): B_F603 => {
     return new B_F603(567)
   }
   class C_F603 {
-    field: HandlerBInt_F603 = handlerA
+    field: HandlerBInt_F603 = handlerA_F603
   }
 
 class A_F604 {
@@ -260,7 +260,7 @@ class A_F604 {
   }
   type HandlerBInt_F604 = (a: B_F604, b: int) => A_F604
   type HandlerAInt_F604 = (a: A_F604, b: int) => B_F604
-  const handlerAInt: HandlerAInt_F604 = (a: A_F604, b: int): B_F604 => {
+  const handlerAInt_F604: HandlerAInt_F604 = (a: A_F604, b: int): B_F604 => {
     if (a instanceof B_F604){
       return new B_F604(a.field() + b)
     } else {
@@ -268,7 +268,7 @@ class A_F604 {
     }
   }
   type HandlerA_F604 = (a: A_F604) => A_F604
-  const handlerA: HandlerA_F604 = (a: A_F604): A_F604 => {
+  const handlerA_F604: HandlerA_F604 = (a: A_F604): A_F604 => {
     if (a instanceof B_F604){
       return new A_F604(a.field())
     } else {
@@ -276,11 +276,11 @@ class A_F604 {
     }
   }
   type HandlerNothing_F604 = () => B_F604
-  const handlerNothing: HandlerNothing_F604 = (): B_F604 => {
+  const handlerNothing_F604: HandlerNothing_F604 = (): B_F604 => {
     return new B_F604(567)
   }
   class C_F604 {
-    field: HandlerBInt_F604 = handlerAInt
+    field: HandlerBInt_F604 = handlerAInt_F604
   }
 
 class A_F605 {
@@ -299,7 +299,7 @@ class A_F605 {
   }
   type HandlerBInt_F605 = (a: B_F605, b: int) => A_F605
   type HandlerAInt_F605 = (a: A_F605, b: int) => B_F605
-  const handlerAInt: HandlerAInt_F605 = (a: A_F605, b: int): B_F605 => {
+  const handlerAInt_F605: HandlerAInt_F605 = (a: A_F605, b: int): B_F605 => {
     if (a instanceof B_F605){
       return new B_F605(a.field() + b)
     } else {
@@ -307,7 +307,7 @@ class A_F605 {
     }
   }
   type HandlerA_F605 = (a: A_F605) => A_F605
-  const handlerA: HandlerA_F605 = (a: A_F605): A_F605 => {
+  const handlerA_F605: HandlerA_F605 = (a: A_F605): A_F605 => {
     if (a instanceof B_F605){
       return new A_F605(a.field())
     } else {
@@ -315,13 +315,13 @@ class A_F605 {
     }
   }
   type HandlerNothing_F605 = () => B_F605
-  const handlerNothing: HandlerNothing_F605 = (): B_F605 => {
+  const handlerNothing_F605: HandlerNothing_F605 = (): B_F605 => {
     return new B_F605(567)
   }
   class C_F605 {
     field: HandlerBInt_F605
     constructor() {
-       this.field = handlerNothing
+       this.field = handlerNothing_F605
     }
   }
 
@@ -341,7 +341,7 @@ class A_F606 {
   }
   type HandlerBInt_F606 = (a: B_F606, b: int) => A_F606
   type HandlerAInt_F606 = (a: A_F606, b: int) => B_F606
-  const handlerAInt: HandlerAInt_F606 = (a: A_F606, b: int): B_F606 => {
+  const handlerAInt_F606: HandlerAInt_F606 = (a: A_F606, b: int): B_F606 => {
     if (a instanceof B_F606){
       return new B_F606(a.field() + b)
     } else {
@@ -349,7 +349,7 @@ class A_F606 {
     }
   }
   type HandlerA_F606 = (a: A_F606) => A_F606
-  const handlerA: HandlerA_F606 = (a: A_F606): A_F606 => {
+  const handlerA_F606: HandlerA_F606 = (a: A_F606): A_F606 => {
     if (a instanceof B_F606){
       return new A_F606(a.field())
     } else {
@@ -357,13 +357,13 @@ class A_F606 {
     }
   }
   type HandlerNothing_F606 = () => B_F606
-  const handlerNothing: HandlerNothing_F606 = (): B_F606 => {
+  const handlerNothing_F606: HandlerNothing_F606 = (): B_F606 => {
     return new B_F606(567)
   }
   class C_F606 {
     field: HandlerBInt_F606
     constructor() {
-       this.field = handlerA
+       this.field = handlerA_F606
     }
   }
 
@@ -383,7 +383,7 @@ class A_F607 {
   }
   type HandlerBInt_F607 = (a: B_F607, b: int) => A_F607
   type HandlerAInt_F607 = (a: A_F607, b: int) => B_F607
-  const handlerAInt: HandlerAInt_F607 = (a: A_F607, b: int): B_F607 => {
+  const handlerAInt_F607: HandlerAInt_F607 = (a: A_F607, b: int): B_F607 => {
     if (a instanceof B_F607){
       return new B_F607(a.field() + b)
     } else {
@@ -391,7 +391,7 @@ class A_F607 {
     }
   }
   type HandlerA_F607 = (a: A_F607) => A_F607
-  const handlerA: HandlerA_F607 = (a: A_F607): A_F607 => {
+  const handlerA_F607: HandlerA_F607 = (a: A_F607): A_F607 => {
     if (a instanceof B_F607){
       return new A_F607(a.field())
     } else {
@@ -399,13 +399,13 @@ class A_F607 {
     }
   }
   type HandlerNothing_F607 = () => B_F607
-  const handlerNothing: HandlerNothing_F607 = (): B_F607 => {
+  const handlerNothing_F607: HandlerNothing_F607 = (): B_F607 => {
     return new B_F607(567)
   }
   class C_F607 {
     field: HandlerBInt_F607
     constructor() {
-       this.field = handlerAInt
+       this.field = handlerAInt_F607
     }
   }
 
@@ -514,507 +514,507 @@ class A_F622<T> {
     }
   }
 
-let v: long = 5
-  function foo(): long {
-    let res = v
-    v += 1
+let v_F622: long = 5
+  function foo_F622(): long {
+    let res = v_F622
+    v_F622 += 1
     return res
   }
   class A_F623 {
-    field: long = foo()
+    field: long = foo_F623()
   }
 
-let v: int = 5
-  function foo(): int {
-    let res = v
-    v += 1
-    return res
+let v_F623: int = 5
+  function foo_F623(): int {
+    let res = v_F623
+    v_F623 += 1
+    return Int(res)
   }
   class A_F624 {
-    field: int = foo()
+    field: int = int(foo_F624())
   }
 
-let v: byte = 5
-  function foo(): byte {
-    let res = v
-    v += 1
-    return res
+let v_F624: byte = 5
+  function foo_F624(): byte {
+    let res = v_F624
+    v_F624 += 1
+    return Byte(res)
   }
   class A_F625 {
-    field: byte = foo()
+    field: byte = byte(foo_F625())
   }
 
-let v: short = 5
-  function foo(): short {
-    let res = v
-    v += 1
-    return res
+let v_F625: short = 5
+  function foo_F625(): short {
+    let res = v_F625
+    v_F625 += 1
+    return Short(res)
   }
   class A_F626 {
-    field: short = foo()
+    field: short = short(foo_F626())
   }
 
-let v: double = 5
-  function foo(): double {
-    let res = v
-    v += 1
+let v_F626: double = 5
+  function foo_F626(): double {
+    let res = v_F626
+    v_F626 += 1
     return res
   }
   class A_F627 {
-    field: double = foo()
+    field: double = foo_F627()
   }
 
-let v: int = 5
-  function foo(): number {
-    let res = v
-    v += 1
+let v_F627: int = 5
+  function foo_F627(): number {
+    let res = v_F627
+    v_F627 += 1
     return res
   }
   class A_F628 {
-    field: number = foo()
+    field: number = foo_F628()
   }
 
-let v: float = 5.0f
-  function foo(): float {
-    let res = v
-    v += 1.0f
+let v_F628: float = 5.0f
+  function foo_F628(): float {
+    let res = v_F628
+    v_F628 += 1.0f
     return res
   }
   class A_F629 {
-    field: float = foo()
+    field: float = foo_F629()
   }
 
-let v: bigint = 5n
-  function foo(): bigint {
-    let res = v
-    v += 1n
-    return res
+let v_F629: bigint = 5n
+  function foo_F629(): bigint {
+    let res = v_F629
+    v_F629 = v_F629 + BigInt(1)
+    return BigInt(res)
   }
   class A_F630 {
-    field: bigint = foo()
+    field: bigint = bigint(foo_F630())
   }
 
-let v: string = "v"
-  function foo(): string {
-    let res = v
-    v += "n"
-    return res
+let v_F630: string = "v"
+  function foo_F630(): string {
+    let res = v_F630
+    v_F630 += "n"
+    return String(res)
   }
   class A_F631 {
-    field: string = foo()
+    field: string = string(foo_F631())
   }
 
-let v: int = 5
-  function foo(): int {
-    let res = v
-    v += 1
-    return res
+let v_F631: int = 5
+  function foo_F631(): int {
+    let res = v_F631
+    v_F631 += 1
+    return Int(res)
   }
   class A_F632 {
-    field: Object = foo()
+    field: Object = foo_F632()
   }
 
-let v: int = 5
-  function foo(): int {
-    let res = v
-    v += 1
-    return res
+let v_F632: int = 5
+  function foo_F632(): int {
+    let res = v_F632
+    v_F632 += 1
+    return Int(res)
   }
   class A_F633 {
-    field: Object | null = foo()
+    field: Object | null = foo_F633()
   }
 
-let v: int = 5
-  function foo(): int {
-    let res = v
-    v += 1
-    return res
+let v_F633: int = 5
+  function foo_F633(): int {
+    let res = v_F633
+    v_F633 += 1
+    return Int(res)
   }
   class A_F634 {
-    field: Object | undefined = foo()
+    field: Object | undefined = foo_F634()
   }
 
-let v: int = 5
-  function foo(): int {
-    let res = v
-    v += 1
-    return res
+let v_F634: int = 5
+  function foo_F634(): int {
+    let res = v_F634
+    v_F634 += 1
+    return Int(res)
   }
   class A_F635 {
-    field: Object | undefined | null = foo()
+    field: Object | undefined | null = foo_F635()
   }
 
-let v: int = 5
-  function foo(): int {
-    let res = v
-    v += 1
-    return res
+let v_F635: int = 5
+  function foo_F635(): int {
+    let res = v_F635
+    v_F635 += 1
+    return Int(res)
   }
   class A_F636 {
-    field: Any = foo()
+    field: Any = foo_F636()
   }
 
-let v: long = 5
-  function foo(): long {
-    let res = v
-    v += 1
+let v_F636: long = 5
+  function foo_F636(): long {
+    let res = v_F636
+    v_F636 += 1
     return res
   }
   class A_F637 {
     field: long
     constructor () {
-      this.field = foo()
+      this.field = foo_F637()
     }
   }
 
-let v: int = 5
-  function foo(): int {
-    let res = v
-    v += 1
-    return res
+let v_F637: int = 5
+  function foo_F637(): int {
+    let res = v_F637
+    v_F637 += 1
+    return Int(res)
   }
   class A_F638 {
     field: int
     constructor () {
-      this.field = foo()
+      this.field = foo_F638()
     }
   }
 
-let v: byte = 5
-  function foo(): byte {
-    let res = v
-    v += 1
-    return res
+let v_F638: byte = 5
+  function foo_F638(): byte {
+    let res = v_F638
+    v_F638 += 1
+    return Byte(res)
   }
   class A_F639 {
     field: byte
     constructor () {
-      this.field = foo()
+      this.field = foo_F639()
     }
   }
 
-let v: short = 5
-  function foo(): short {
-    let res = v
-    v += 1
-    return res
+let v_F639: short = 5
+  function foo_F639(): short {
+    let res = v_F639
+    v_F639 += 1
+    return Short(res)
   }
   class A_F640 {
     field: short
     constructor () {
-      this.field = foo()
+      this.field = foo_F640()
     }
   }
 
-let v: double = 5
-  function foo(): double {
-    let res = v
-    v += 1
+let v_F640: double = 5
+  function foo_F640(): double {
+    let res = v_F640
+    v_F640 += 1
     return res
   }
   class A_F641 {
     field: double
     constructor () {
-      this.field = foo()
+      this.field = foo_F641()
     }
   }
 
-let v: int = 5
-  function foo(): number {
-    let res = v
-    v += 1
+let v_F641: int = 5
+  function foo_F641(): number {
+    let res = v_F641
+    v_F641 += 1
     return res
   }
   class A_F642 {
     field: number
     constructor () {
-      this.field = foo()
+      this.field = foo_F642()
     }
   }
 
-let v: float = 5.0f
-  function foo(): float {
-    let res = v
-    v += 1.0f
+let v_F642: float = 5.0f
+  function foo_F642(): float {
+    let res = v_F642
+    v_F642 += 1.0f
     return res
   }
   class A_F643 {
     field: float
     constructor () {
-      this.field = foo()
+      this.field = foo_F643()
     }
   }
 
-let v: bigint = 5n
-  function foo(): bigint {
-    let res = v
-    v += 1n
-    return res
+let v_F643: bigint = 5n
+  function foo_F643(): bigint {
+    let res = v_F643
+    v_F643 = v_F643 + BigInt(1)
+    return BigInt(res)
   }
   class A_F644 {
     field: bigint
     constructor () {
-      this.field = foo()
+      this.field = foo_F644()
     }
   }
 
-let v: string = "v"
-  function foo(): string {
-    let res = v
-    v += "n"
-    return res
+let v_F644: string = "v"
+  function foo_F644(): string {
+    let res = v_F644
+    v_F644 += "n"
+    return String(res)
   }
   class A_F645 {
     field: string
     constructor () {
-      this.field = foo()
+      this.field = foo_F645()
     }
   }
 
-let v: int = 5
-  function foo(): int {
-    let res = v
-    v += 1
-    return res
+let v_F645: int = 5
+  function foo_F645(): int {
+    let res = v_F645
+    v_F645 += 1
+    return Int(res)
   }
   class A_F646 {
     field: Object
     constructor () {
-      this.field = foo()
+      this.field = foo_F646()
     }
   }
 
-let v: int = 5
-  function foo(): int {
-    let res = v
-    v += 1
-    return res
+let v_F646: int = 5
+  function foo_F646(): int {
+    let res = v_F646
+    v_F646 += 1
+    return Int(res)
   }
   class A_F647 {
     field: Object | null
     constructor () {
-      this.field = foo()
+      this.field = foo_F647()
     }
   }
 
-let v: int = 5
-  function foo(): int {
-    let res = v
-    v += 1
-    return res
+let v_F647: int = 5
+  function foo_F647(): int {
+    let res = v_F647
+    v_F647 += 1
+    return Int(res)
   }
   class A_F648 {
     field: Object | undefined
     constructor () {
-      this.field = foo()
+      this.field = foo_F648()
     }
   }
 
-let v: int = 5
-  function foo(): int {
-    let res = v
-    v += 1
-    return res
+let v_F648: int = 5
+  function foo_F648(): int {
+    let res = v_F648
+    v_F648 += 1
+    return Int(res)
   }
   class A_F649 {
     field: Object | undefined | null
     constructor () {
-      this.field = foo()
+      this.field = foo_F649()
     }
   }
 
-let v: int = 5
-  function foo(): int {
-    let res = v
-    v += 1
-    return res
+let v_F649: int = 5
+  function foo_F649(): int {
+    let res = v_F649
+    v_F649 += 1
+    return Int(res)
   }
   class A_F650 {
     field: Any
     constructor () {
-      this.field = foo()
+      this.field = foo_F650()
     }
   }
 
-let v: long = 5
-  function foo(): long {
-    let res = v
-    v += 1
+let v_F650: long = 5
+  function foo_F650(): long {
+    let res = v_F650
+    v_F650 += 1
     return res
   }
   class A_F651 {
     field: long = 5
     constructor () {
-      this.field = foo()
+      this.field = foo_F651()
     }
   }
 
-let v: int = 5
-  function foo(): int {
-    let res = v
-    v += 1
-    return res
+let v_F651: int = 5
+  function foo_F651(): int {
+    let res = v_F651
+    v_F651 += 1
+    return Int(res)
   }
   class A_F652 {
     field: int = 5
     constructor () {
-      this.field = foo()
+      this.field = foo_F652()
     }
   }
 
-let v: byte = 5
-  function foo(): byte {
-    let res = v
-    v += 1
-    return res
+let v_F652: byte = 5
+  function foo_F652(): byte {
+    let res = v_F652
+    v_F652 += 1
+    return Byte(res)
   }
   class A_F653 {
     field: byte = 5
     constructor () {
-      this.field = foo()
+      this.field = foo_F653()
     }
   }
 
-let v: short = 5
-  function foo(): short {
-    let res = v
-    v += 1
-    return res
+let v_F653: short = 5
+  function foo_F653(): short {
+    let res = v_F653
+    v_F653 += 1
+    return Short(res)
   }
   class A_F654 {
     field: short = 5
     constructor () {
-      this.field = foo()
+      this.field = foo_F654()
     }
   }
 
-let v: double = 5
-  function foo(): double {
-    let res = v
-    v += 1
+let v_F654: double = 5
+  function foo_F654(): double {
+    let res = v_F654
+    v_F654 += 1
     return res
   }
   class A_F655 {
     field: double = 5
     constructor () {
-      this.field = foo()
+      this.field = foo_F655()
     }
   }
 
-let v: int = 5
-  function foo(): number {
-    let res = v
-    v += 1
+let v_F655: int = 5
+  function foo_F655(): number {
+    let res = v_F655
+    v_F655 += 1
     return res
   }
   class A_F656 {
     field: number = 5
     constructor () {
-      this.field = foo()
+      this.field = foo_F656()
     }
   }
 
-let v: float = 5.0f
-  function foo(): float {
-    let res = v
-    v += 1.0f
+let v_F656: float = 5.0f
+  function foo_F656(): float {
+    let res = v_F656
+    v_F656 += 1.0f
     return res
   }
   class A_F657 {
     field: float = 5.0f
     constructor () {
-      this.field = foo()
+      this.field = foo_F657()
     }
   }
 
-let v: bigint = 5n
-  function foo(): bigint {
-    let res = v
-    v += 1n
-    return res
+let v_F657: bigint = 5n
+  function foo_F657(): bigint {
+    let res = v_F657
+    v_F657 = v_F657 + BigInt(1)
+    return BigInt(res)
   }
   class A_F658 {
     field: bigint = 5n
     constructor () {
-      this.field = foo()
+      this.field = foo_F658()
     }
   }
 
-let v: string = "v"
-  function foo(): string {
-    let res = v
-    v += "n"
-    return res
+let v_F658: string = "v"
+  function foo_F658(): string {
+    let res = v_F658
+    v_F658 += "n"
+    return String(res)
   }
   class A_F659 {
     field: string = "v"
     constructor () {
-      this.field = foo()
+      this.field = foo_F659()
     }
   }
 
-let v: int = 5
-  function foo(): int {
-    let res = v
-    v += 1
-    return res
+let v_F659: int = 5
+  function foo_F659(): int {
+    let res = v_F659
+    v_F659 += 1
+    return Int(res)
   }
   class A_F660 {
     field: Object = 5
     constructor () {
-      this.field = foo()
+      this.field = foo_F660()
     }
   }
 
-let v: int = 5
-  function foo(): int {
-    let res = v
-    v += 1
-    return res
+let v_F660: int = 5
+  function foo_F660(): int {
+    let res = v_F660
+    v_F660 += 1
+    return Int(res)
   }
   class A_F661 {
     field: Object | null = 5
     constructor () {
-      this.field = foo()
+      this.field = foo_F661()
     }
   }
 
-let v: int = 5
-  function foo(): int {
-    let res = v
-    v += 1
-    return res
+let v_F661: int = 5
+  function foo_F661(): int {
+    let res = v_F661
+    v_F661 += 1
+    return Int(res)
   }
   class A_F662 {
     field: Object | undefined = 5
     constructor () {
-      this.field = foo()
+      this.field = foo_F662()
     }
   }
 
-let v: int = 5
-  function foo(): int {
-    let res = v
-    v += 1
-    return res
+let v_F662: int = 5
+  function foo_F662(): int {
+    let res = v_F662
+    v_F662 += 1
+    return Int(res)
   }
   class A_F663 {
     field: Object | undefined | null = 5
     constructor () {
-      this.field = foo()
+      this.field = foo_F663()
     }
   }
 
-let v: int = 5
-  function foo(): int {
-    let res = v
-    v += 1
-    return res
+let v_F663: int = 5
+  function foo_F663(): int {
+    let res = v_F663
+    v_F663 += 1
+    return Int(res)
   }
   class A_F664 {
     field: Any = 5
     constructor () {
-      this.field = foo()
+      this.field = foo_F664()
     }
   }
 

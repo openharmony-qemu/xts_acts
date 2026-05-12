@@ -4103,6 +4103,5 @@ export default function FieldDeclarationTest(): void {
       expect(typeof a.field).assertEqual("int")
       expect(a.field).assertEqual(0)
     })
-
   })
 }

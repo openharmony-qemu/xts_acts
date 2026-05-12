@@ -4243,6 +4243,5 @@ export default function FieldDeclarationOneTest(): void {
       expect(typeof A_F209.field).assertEqual("int")
       expect(A_F209.field).assertEqual(0)
     })
-
   })
 }

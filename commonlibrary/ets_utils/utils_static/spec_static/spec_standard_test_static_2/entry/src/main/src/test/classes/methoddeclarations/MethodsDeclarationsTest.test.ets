@@ -184,8 +184,8 @@ export default function MethodsDeclarationsTest():void {
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testAbstractMethods0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAbstractMethods0001';
+    it("testMethodsDeclarations0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testMethodsDeclarations0001';
       let instance: A = new A();
       expect(instance.run()).assertEqual(5);
     });

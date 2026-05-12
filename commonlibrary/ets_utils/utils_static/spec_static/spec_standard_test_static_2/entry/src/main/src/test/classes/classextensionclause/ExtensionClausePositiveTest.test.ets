@@ -401,28 +401,28 @@ export default function ExtensionClausePositiveTest():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENSION_CLAUSE_POSITIVE_0800
-     * @tc.name      testExtensionClausePositive0008
+     * @tc.number    SUB_EXTENSION_CLAUSE_POSITIVE_0900
+     * @tc.name      testExtensionClausePositive0009
      * @tc.desc      type arguments in classes with extends clause
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testExtensionClausePositive0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testExtensionClausePositive0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testExtensionClausePositive0008';
       let b: B5<D8> = new B5<D8>(new F5())
       expect(b.value.value).assertEqual(11)
     });
 
     /**
-     * @tc.number    SUB_EXTENSION_CLAUSE_POSITIVE_0800
-     * @tc.name      testExtensionClausePositive0008
+     * @tc.number    SUB_EXTENSION_CLAUSE_POSITIVE_1000
+     * @tc.name      testExtensionClausePositive0010
      * @tc.desc      type arguments in classes with extends clause
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testExtensionClausePositive0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("testExtensionClausePositive0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testExtensionClausePositive0008';
       let b: B6<D9> = new B6<D9>(new F6())
       expect(b.value.value).assertEqual(11)

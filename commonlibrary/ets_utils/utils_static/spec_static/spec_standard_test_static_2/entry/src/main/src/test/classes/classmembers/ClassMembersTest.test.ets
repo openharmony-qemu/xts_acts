@@ -201,7 +201,7 @@ export default function ClassMembersTest():void {
     })
 
     /**
-     * @tc.number    SUB_CLASS_MEMBERSTEST_0100
+     * @tc.number    SUB_CLASS_MEMBERS_TEST_0100
      * @tc.name      testClassMembers0001
      * @tc.desc      class members
      * @tc.size      MediumTest
@@ -215,7 +215,7 @@ export default function ClassMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_CLASS_MEMBERSTEST_0200
+     * @tc.number    SUB_CLASS_MEMBERS_TEST_0200
      * @tc.name      testClassMembers0002
      * @tc.desc      class members
      * @tc.size      MediumTest
@@ -229,7 +229,7 @@ export default function ClassMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_CLASS_MEMBERSTEST_0300
+     * @tc.number    SUB_CLASS_MEMBERS_TEST_0300
      * @tc.name      testClassMembers0003
      * @tc.desc      class members
      * @tc.size      MediumTest
@@ -243,7 +243,7 @@ export default function ClassMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_CLASS_MEMBERSTEST_0400
+     * @tc.number    SUB_CLASS_MEMBERS_TEST_0400
      * @tc.name      testClassMembers0004
      * @tc.desc      class members
      * @tc.size      MediumTest
@@ -257,7 +257,7 @@ export default function ClassMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_CLASS_MEMBERSTEST_0500
+     * @tc.number    SUB_CLASS_MEMBERS_TEST_0500
      * @tc.name      testClassMembers0005
      * @tc.desc      class members
      * @tc.size      MediumTest
@@ -271,7 +271,7 @@ export default function ClassMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_CLASS_MEMBERSTEST_0600
+     * @tc.number    SUB_CLASS_MEMBERS_TEST_0600
      * @tc.name      testClassMembers0006
      * @tc.desc      class members
      * @tc.size      MediumTest
@@ -285,7 +285,7 @@ export default function ClassMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_CLASS_MEMBERSTEST_0700
+     * @tc.number    SUB_CLASS_MEMBERS_TEST_0700
      * @tc.name      testClassMembers0007
      * @tc.desc      class members
      * @tc.size      MediumTest
@@ -299,7 +299,7 @@ export default function ClassMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_CLASS_MEMBERSTEST_0800
+     * @tc.number    SUB_CLASS_MEMBERS_TEST_0800
      * @tc.name      testClassMembers0008
      * @tc.desc      class members
      * @tc.size      MediumTest
@@ -313,7 +313,7 @@ export default function ClassMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_CLASS_MEMBERSTEST_0900
+     * @tc.number    SUB_CLASS_MEMBERS_TEST_0900
      * @tc.name      testClassMembers0009
      * @tc.desc      class members
      * @tc.size      MediumTest
@@ -327,7 +327,7 @@ export default function ClassMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_CLASS_MEMBERSTEST_1000
+     * @tc.number    SUB_CLASS_MEMBERS_TEST_1000
      * @tc.name      testClassMembers0010
      * @tc.desc      class members
      * @tc.size      MediumTest
@@ -342,7 +342,7 @@ export default function ClassMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_CLASS_MEMBERSTEST_1100
+     * @tc.number    SUB_CLASS_MEMBERS_TEST_1100
      * @tc.name      testClassMembers0011
      * @tc.desc      class members
      * @tc.size      MediumTest
@@ -356,7 +356,7 @@ export default function ClassMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_CLASS_MEMBERSTEST_1200
+     * @tc.number    SUB_CLASS_MEMBERS_TEST_1200
      * @tc.name      testClassMembers0012
      * @tc.desc      class members
      * @tc.size      MediumTest
@@ -371,7 +371,7 @@ export default function ClassMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_CLASS_MEMBERSTEST_1300
+     * @tc.number    SUB_CLASS_MEMBERS_TEST_1300
      * @tc.name      testClassMembers0013
      * @tc.desc      Constructors and class initializers are not members and are not inherited
      * @tc.size      MediumTest
@@ -385,7 +385,7 @@ export default function ClassMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_CLASS_MEMBERSTEST_1400
+     * @tc.number    SUB_CLASS_MEMBERS_TEST_1400
      * @tc.name      testClassMembers0014
      * @tc.desc      Constructors and class initializers are not members and are not inherited
      * @tc.size      MediumTest
@@ -406,7 +406,7 @@ export default function ClassMembersTest():void {
     });
 
     /**
-     * @tc.number    SUB_CLASS_MEMBERSTEST_1500
+     * @tc.number    SUB_CLASS_MEMBERS_TEST_1500
      * @tc.name      testClassMembers0015
      * @tc.desc      All names in both static and non-static class declaration scopes (see Scopes) must be unique,
      * i.e., fields and methods cannot have the same name

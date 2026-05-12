@@ -825,24 +825,24 @@ export default function ExplicitConstructorCallTest():void {
             const TAG = 'testExplicitConstructorCall0001'
 
             let b = new B(1)
-            expect(String(b.p1)).assertEqual('1')
-            expect(String(b.p2)).assertEqual('2')
+        expect(String(b.p1)).assertEqual('1')
+        expect(String(b.p2)).assertEqual('2')
 
             b = new B(1 as long)
-            expect(String(b.p1)).assertEqual('1')
-            expect(String(b.p2)).assertEqual('3')
+        expect(String(b.p1)).assertEqual('1')
+        expect(String(b.p2)).assertEqual('3')
 
             b = new B(1f)
-            expect(String(b.p1)).assertEqual('1')
-            expect(String(b.p2)).assertEqual('4')
+        expect(String(b.p1)).assertEqual('1')
+        expect(String(b.p2)).assertEqual('4')
 
             b = new B(new Error)
-            expect(b.p1 instanceof Error).assertTrue()
-            expect(String(b.p2)).assertEqual('null')
+        expect(b.p1 instanceof Error).assertTrue()
+        expect(String(b.p2)).assertEqual('null')
 
             b = new B(['abc', undefined])
-            expect(String(b.p1)).assertEqual('abc')
-            expect(String(b.p2)).assertEqual('undefined')
+        expect(String(b.p1)).assertEqual('abc')
+        expect(String(b.p2)).assertEqual('undefined')
         });
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_0200
@@ -856,31 +856,31 @@ export default function ExplicitConstructorCallTest():void {
             const TAG = 'testExplicitConstructorCall0002';
 
             let b = new B1(1)
-            expect(b.fld.length).assertEqual(4)
-            expect(b.fld[0]).assertEqual('a')
-            expect(b.fld[3]).assertEqual('d')
+        expect(b.fld.length).assertEqual(4)
+        expect(b.fld[0]).assertEqual('a')
+        expect(b.fld[3]).assertEqual('d')
 
             b = new B1('')
-            expect(b.fld.length).assertEqual(5)
-            expect(b.fld[0]).assertEqual(1)
-            expect(b.fld[1]).assertEqual('a')
-            expect(b.fld[2]).assertEqual(true)
-            expect(b.fld[3]).assertEqual(false)
-            expect(b.fld[4]).assertEqual('b')
+        expect(b.fld.length).assertEqual(5)
+        expect(b.fld[0]).assertEqual(1)
+        expect(b.fld[1]).assertEqual('a')
+        expect(b.fld[2]).assertEqual(true)
+        expect(b.fld[3]).assertEqual(false)
+        expect(b.fld[4]).assertEqual('b')
 
             b = new B1(1f)
-            expect(b.fld.length).assertEqual(4)
-            expect(b.fld[0]).assertEqual(1f)
-            expect(b.fld[1]).assertEqual(1f)
-            expect(b.fld[2]).assertEqual(true)
-            expect(b.fld[3]).assertEqual(false)
+        expect(b.fld.length).assertEqual(4)
+        expect(b.fld[0]).assertEqual(1f)
+        expect(b.fld[1]).assertEqual(1f)
+        expect(b.fld[2]).assertEqual(true)
+        expect(b.fld[3]).assertEqual(false)
 
             b = new B1(true)
-            expect(b.fld.length).assertEqual(4)
-            expect(b.fld[0]).assertEqual(true)
-            expect(b.fld[1]).assertEqual(false)
-            expect(b.fld[2]).assertEqual(1f)
-            expect(b.fld[3]).assertEqual(2f)
+        expect(b.fld.length).assertEqual(4)
+        expect(b.fld[0]).assertEqual(true)
+        expect(b.fld[1]).assertEqual(false)
+        expect(b.fld[2]).assertEqual(1f)
+        expect(b.fld[3]).assertEqual(2f)
         });
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_0300
@@ -895,22 +895,22 @@ export default function ExplicitConstructorCallTest():void {
 
             let t: [string, Object, int, boolean] = ['a', 'b', 1, true]
             let b = new B2(1, t)
-            expect(b.fld[0]).assertEqual('a')
-            expect(b.fld[1]).assertEqual('b')
-            expect(b.fld[2]).assertEqual(1)
-            expect(b.fld[3]).assertEqual(true)
+        expect(b.fld[0]).assertEqual('a')
+        expect(b.fld[1]).assertEqual('b')
+        expect(b.fld[2]).assertEqual(1)
+        expect(b.fld[3]).assertEqual(true)
 
             b = new B2('b')
-            expect(b.fld[0]).assertEqual('b')
-            expect(b.fld[1]).assertEqual('b')
-            expect(b.fld[2]).assertEqual(1)
-            expect(b.fld[3]).assertEqual(false)
+        expect(b.fld[0]).assertEqual('b')
+        expect(b.fld[1]).assertEqual('b')
+        expect(b.fld[2]).assertEqual(1)
+        expect(b.fld[3]).assertEqual(false)
 
             b = new B2(2)
-            expect(b.fld[0]).assertEqual('c')
-            expect(b.fld[1]).assertEqual('d')
-            expect(b.fld[2]).assertEqual(2)
-            expect(b.fld[3]).assertEqual(true)
+        expect(b.fld[0]).assertEqual('c')
+        expect(b.fld[1]).assertEqual('d')
+        expect(b.fld[2]).assertEqual(2)
+        expect(b.fld[3]).assertEqual(true)
         });
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_0400
@@ -924,10 +924,10 @@ export default function ExplicitConstructorCallTest():void {
             const TAG = 'testExplicitConstructorCall0004';
 
             let b = new B3(1)
-            expect(b.fld[0]).assertEqual('a')
-            expect(b.fld[1]).assertEqual('b')
-            expect(b.fld[2]).assertEqual(1)
-            expect(b.fld[3]).assertEqual(1)
+        expect(b.fld[0]).assertEqual('a')
+        expect(b.fld[1]).assertEqual('b')
+        expect(b.fld[2]).assertEqual(1)
+        expect(b.fld[3]).assertEqual(1)
         });
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_0500
@@ -941,10 +941,10 @@ export default function ExplicitConstructorCallTest():void {
             const TAG = 'testExplicitConstructorCall0005';
 
             let b = new B4(1)
-            expect(b.fld[0]).assertEqual('a')
-            expect(b.fld[1]).assertEqual('b')
-            expect(b.fld[2]).assertEqual(1)
-            expect(b.fld[3]).assertEqual(11)
+        expect(b.fld[0]).assertEqual('a')
+        expect(b.fld[1]).assertEqual('b')
+        expect(b.fld[2]).assertEqual(1)
+        expect(b.fld[3]).assertEqual(11)
 
         });
         /**
@@ -961,8 +961,8 @@ export default function ExplicitConstructorCallTest():void {
         it("testExplicitConstructorCall0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const TAG = 'testExplicitConstructorCall0006';
 
-            expect(new A5('abc').fld).assertEqual('abc')
-            expect(new A5().fld).assertEqual('hello')
+        expect(new A5('abc').fld).assertEqual('abc')
+        expect(new A5().fld).assertEqual('hello')
 
         });
         /**
@@ -979,9 +979,9 @@ export default function ExplicitConstructorCallTest():void {
         it("testExplicitConstructorCall0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const TAG = 'testExplicitConstructorCall0007';
 
-            expect(new A6('abc').fld).assertEqual('abc')
-            expect(new A6().fld).assertEqual('42')
-            expect(new A6(3.14).fld).assertEqual('3.14')
+        expect(new A6('abc').fld).assertEqual('abc')
+        expect(new A6().fld).assertEqual('42')
+        expect(new A6(3.14).fld).assertEqual('3.14')
         });
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_0800
@@ -997,9 +997,9 @@ export default function ExplicitConstructorCallTest():void {
         it("testExplicitConstructorCall0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const TAG = 'testExplicitConstructorCall0008';
 
-            expect(new B5().fld).assertEqual('0')
-            expect(new B5(42.0).fld).assertEqual('42')
-            expect(B5.withInt(12345).fld).assertEqual('12346')
+        expect(new B5().fld).assertEqual('0')
+        expect(new B5(42.0).fld).assertEqual('42')
+        expect(B5.withInt(12345).fld).assertEqual('12346')
         });
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_0900
@@ -1015,11 +1015,11 @@ export default function ExplicitConstructorCallTest():void {
         it("testExplicitConstructorCall0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             const TAG = 'testExplicitConstructorCall0009';
 
-            expect(new C(null).fld).assertEqual('')
-            expect(new C(undefined).fld).assertEqual('')
-            expect(new C(true).fld).assertEqual('')
-            expect(new C('abc').fld).assertEqual('abc')
-            expect(new C(42.0).fld).assertEqual('43')
+        expect(new C(null).fld).assertEqual('')
+        expect(new C(undefined).fld).assertEqual('')
+        expect(new C(true).fld).assertEqual('')
+        expect(new C('abc').fld).assertEqual('abc')
+        expect(new C(42.0).fld).assertEqual('43')
 
         });
         /**
@@ -1037,20 +1037,20 @@ export default function ExplicitConstructorCallTest():void {
             const TAG = 'testExplicitConstructorCall0010';
 
             let b = new B7()
-            expect(b.p).assertEqual(undefined)
-            expect(b.s.length).assertEqual(0)
+        expect(b.p).assertEqual(undefined)
+        expect(b.s.length).assertEqual(0)
 
             b = new B7('a')
-            expect(b.p).assertEqual(undefined)
-            expect(b.s.length).assertEqual(1)
-            expect(b.s[0]).assertEqual('a')
+        expect(b.p).assertEqual(undefined)
+        expect(b.s.length).assertEqual(1)
+        expect(b.s[0]).assertEqual('a')
 
             b = new B7('a', 'b', 'c')
-            expect(b.p).assertEqual(undefined)
-            expect(b.s.length).assertEqual(3)
-            expect(b.s[0]).assertEqual('a')
-            expect(b.s[1]).assertEqual('b')
-            expect(b.s[2]).assertEqual('c')
+        expect(b.p).assertEqual(undefined)
+        expect(b.s.length).assertEqual(3)
+        expect(b.s[0]).assertEqual('a')
+        expect(b.s[1]).assertEqual('b')
+        expect(b.s[2]).assertEqual('c')
 
         });
         /**
@@ -1068,20 +1068,20 @@ export default function ExplicitConstructorCallTest():void {
             const TAG = 'testExplicitConstructorCall0011';
 
             let b = new B8()
-            expect(b.p).assertEqual(undefined)
-            expect(b.s.length).assertEqual(0)
+        expect(b.p).assertEqual(undefined)
+        expect(b.s.length).assertEqual(0)
 
             b = new B8('a')
-            expect(b.p).assertEqual(undefined)
-            expect(b.s.length).assertEqual(1)
-            expect(b.s[0]).assertEqual('a')
+        expect(b.p).assertEqual(undefined)
+        expect(b.s.length).assertEqual(1)
+        expect(b.s[0]).assertEqual('a')
 
             b = new B8('a', 'b', 'c')
-            expect(b.p).assertEqual(undefined)
-            expect(b.s.length).assertEqual(3)
-            expect(b.s[0]).assertEqual('a')
-            expect(b.s[1]).assertEqual('b')
-            expect(b.s[2]).assertEqual('c')
+        expect(b.p).assertEqual(undefined)
+        expect(b.s.length).assertEqual(3)
+        expect(b.s[0]).assertEqual('a')
+        expect(b.s[1]).assertEqual('b')
+        expect(b.s[2]).assertEqual('c')
 
         });
         /**
@@ -1099,20 +1099,20 @@ export default function ExplicitConstructorCallTest():void {
             const TAG = 'testExplicitConstructorCall0012';
 
             let b = new B9()
-            expect(b.p).assertEqual('super')
-            expect(b.s.length).assertEqual(0)
+        expect(b.p).assertEqual('super')
+        expect(b.s.length).assertEqual(0)
 
             b = new B9('a')
-            expect(b.p).assertEqual('super')
-            expect(b.s.length).assertEqual(1)
-            expect(b.s[0]).assertEqual('a')
+        expect(b.p).assertEqual('super')
+        expect(b.s.length).assertEqual(1)
+        expect(b.s[0]).assertEqual('a')
 
             b = new B9('a', 'b', 'c')
-            expect(b.p).assertEqual('super')
-            expect(b.s.length).assertEqual(3)
-            expect(b.s[0]).assertEqual('a')
-            expect(b.s[1]).assertEqual('b')
-            expect(b.s[2]).assertEqual('c')
+        expect(b.p).assertEqual('super')
+        expect(b.s.length).assertEqual(3)
+        expect(b.s[0]).assertEqual('a')
+        expect(b.s[1]).assertEqual('b')
+        expect(b.s[2]).assertEqual('c')
         });
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_1300
@@ -1129,9 +1129,9 @@ export default function ExplicitConstructorCallTest():void {
             const TAG = 'testExplicitConstructorCall0013';
 
             let b = new B10('a', 'b')
-            expect(b.s.length).assertEqual(2)
-            expect(b.s[0]).assertEqual('a')
-            expect(b.s[1]).assertEqual('b')
+        expect(b.s.length).assertEqual(2)
+        expect(b.s[0]).assertEqual('a')
+        expect(b.s[1]).assertEqual('b')
 
         });
         /**
@@ -1149,19 +1149,19 @@ export default function ExplicitConstructorCallTest():void {
             const TAG = 'testExplicitConstructorCall0014';
 
             let b = new B11('a')
-            expect(b.s.length).assertEqual(2)
-            expect(b.s[0]).assertEqual('a')
-            expect(b.s[1]).assertEqual('b')
+        expect(b.s.length).assertEqual(2)
+        expect(b.s[0]).assertEqual('a')
+        expect(b.s[1]).assertEqual('b')
 
             b = new B11('a', undefined)
-            expect(b.s.length).assertEqual(2)
-            expect(b.s[0]).assertEqual('a')
-            expect(b.s[1]).assertEqual('b')
+        expect(b.s.length).assertEqual(2)
+        expect(b.s[0]).assertEqual('a')
+        expect(b.s[1]).assertEqual('b')
 
             b = new B11('a', 'c')
-            expect(b.s.length).assertEqual(2)
-            expect(b.s[0]).assertEqual('a')
-            expect(b.s[1]).assertEqual('c')
+        expect(b.s.length).assertEqual(2)
+        expect(b.s[0]).assertEqual('a')
+        expect(b.s[1]).assertEqual('c')
 
         });
         /**
@@ -1179,19 +1179,19 @@ export default function ExplicitConstructorCallTest():void {
             const TAG = 'testExplicitConstructorCall0015';
 
             let b = new B12()
-            expect(b.s.length).assertEqual(2)
-            expect(b.s[0]).assertEqual('x')
-            expect(b.s[1]).assertEqual('b')
+        expect(b.s.length).assertEqual(2)
+        expect(b.s[0]).assertEqual('x')
+        expect(b.s[1]).assertEqual('b')
 
             b = new B12('y')
-            expect(b.s.length).assertEqual(2)
-            expect(b.s[0]).assertEqual('y')
-            expect(b.s[1]).assertEqual('b')
+        expect(b.s.length).assertEqual(2)
+        expect(b.s[0]).assertEqual('y')
+        expect(b.s[1]).assertEqual('b')
 
             b = new B12('y', 'z')
-            expect(b.s.length).assertEqual(2)
-            expect(b.s[0]).assertEqual('y')
-            expect(b.s[1]).assertEqual('z')
+        expect(b.s.length).assertEqual(2)
+        expect(b.s[0]).assertEqual('y')
+        expect(b.s[1]).assertEqual('z')
         });
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_1600
@@ -1208,9 +1208,9 @@ export default function ExplicitConstructorCallTest():void {
             const TAG = 'testExplicitConstructorCall0016';
 
             let b = new B13('a', 'b')
-            expect(b.s.length).assertEqual(2)
-            expect(b.s[0]).assertEqual('a')
-            expect(b.s[1]).assertEqual('b')
+        expect(b.s.length).assertEqual(2)
+        expect(b.s[0]).assertEqual('a')
+        expect(b.s[1]).assertEqual('b')
 
         });
         /**
@@ -1228,12 +1228,12 @@ export default function ExplicitConstructorCallTest():void {
             const TAG = 'testExplicitConstructorCall0017';
 
             let b = new B14()
-            expect(b.s.length).assertEqual(0)
+        expect(b.s.length).assertEqual(0)
 
             b = new B14('a', 'b', 'c')
-            expect(b.s[0]).assertEqual('a')
-            expect(b.s[1]).assertEqual('b')
-            expect(b.s[2]).assertEqual('c')
+        expect(b.s[0]).assertEqual('a')
+        expect(b.s[1]).assertEqual('b')
+        expect(b.s[2]).assertEqual('c')
         });
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_1800
@@ -1250,11 +1250,11 @@ export default function ExplicitConstructorCallTest():void {
             const TAG = 'testExplicitConstructorCall0018';
 
             let b = new B15('a', 'b', 'c')
-            expect(b.p1.length).assertEqual(3)
-            expect(b.p2.length).assertEqual(0)
+        expect(b.p1.length).assertEqual(3)
+        expect(b.p2.length).assertEqual(0)
             b = new B15()
-            expect(b.p1.length).assertEqual(0)
-            expect(b.p2.length).assertEqual(0)
+        expect(b.p1.length).assertEqual(0)
+        expect(b.p2.length).assertEqual(0)
         });
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_1900
@@ -1271,12 +1271,12 @@ export default function ExplicitConstructorCallTest():void {
             const TAG = 'testExplicitConstructorCall0019';
 
             let b = new B16('a', 'b', 'c')
-            expect(b.p1.length).assertEqual(3)
-            expect(b.p2.length).assertEqual(0)
+        expect(b.p1.length).assertEqual(3)
+        expect(b.p2.length).assertEqual(0)
             b = new B16()
 
-            expect(b.p1.length).assertEqual(0)
-            expect(b.p2.length).assertEqual(0)
+        expect(b.p1.length).assertEqual(0)
+        expect(b.p2.length).assertEqual(0)
         });
 
         /**
@@ -1294,12 +1294,12 @@ export default function ExplicitConstructorCallTest():void {
             const TAG = 'testExplicitConstructorCall0020';
 
             let b = new B17('a', 'b', 'c')
-            expect(b.p1.length).assertEqual(0)
-            expect(b.p2.length).assertEqual(3)
+        expect(b.p1.length).assertEqual(0)
+        expect(b.p2.length).assertEqual(3)
 
             b = new B17()
-            expect(b.p1.length).assertEqual(0)
-            expect(b.p2.length).assertEqual(0)
+        expect(b.p1.length).assertEqual(0)
+        expect(b.p2.length).assertEqual(0)
         });
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_2100
@@ -1316,11 +1316,11 @@ export default function ExplicitConstructorCallTest():void {
             const TAG = 'testExplicitConstructorCall0021';
 
             let a1 = new A20('1', '2', '3')
-            expect(a1.k1).assertEqual('1')
-            expect(a1.k2).assertEqual('2')
-            expect(a1.k3).assertEqual('3')
-            expect(a1.lambda1).assertEqual(undefined)
-            expect(a1.lambda2).assertEqual(undefined);
+        expect(a1.k1).assertEqual('1')
+        expect(a1.k2).assertEqual('2')
+        expect(a1.k3).assertEqual('3')
+        expect(a1.lambda1).assertEqual(undefined)
+        expect(a1.lambda2).assertEqual(undefined);
         });
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_2200
@@ -1338,12 +1338,12 @@ export default function ExplicitConstructorCallTest():void {
 
             let x = ''
             let a1 = new A21(1, 2, 3, undefined, () => { x = 'x' })
-            expect(a1.k1).assertEqual('1')
-            expect(a1.k2).assertEqual('2')
-            expect(a1.k3).assertEqual('3')
-            expect(a1.lambda1).assertEqual(undefined)
+        expect(a1.k1).assertEqual('1')
+        expect(a1.k2).assertEqual('2')
+        expect(a1.k3).assertEqual('3')
+        expect(a1.lambda1).assertEqual(undefined)
             a1.lambda2!()
-            expect(x).assertEqual('x');
+        expect(x).assertEqual('x');
         });
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_2300
@@ -1361,13 +1361,13 @@ export default function ExplicitConstructorCallTest():void {
 
             let x: string = ''
             let b1 = new B18('0', '1', '2', '3', () => { x = 'x' })
-            expect(b1.k0).assertEqual('0')
-            expect(b1.k1).assertEqual('1')
-            expect(b1.k2).assertEqual('2')
-            expect(b1.k3).assertEqual('3')
+        expect(b1.k0).assertEqual('0')
+        expect(b1.k1).assertEqual('1')
+        expect(b1.k2).assertEqual('2')
+        expect(b1.k3).assertEqual('3')
             b1.lambda1!()
-            expect(x).assertEqual('x')
-            expect(b1.lambda2).assertEqual(undefined)
+        expect(x).assertEqual('x')
+        expect(b1.lambda2).assertEqual(undefined)
         });
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_2400
@@ -1393,17 +1393,17 @@ export default function ExplicitConstructorCallTest():void {
                 () => { v1 += 'lambda2' },
                 () => { v1 += 'lambda3' }
             )
-            expect(a2.k1).assertEqual('1')
-            expect(a2.k2).assertEqual('2')
-            expect(a2.k3).assertEqual('3')
+        expect(a2.k1).assertEqual('1')
+        expect(a2.k2).assertEqual('2')
+        expect(a2.k3).assertEqual('3')
             a2.lambda1()
             a2.lambda2!()
             a2.lambda3!()
-            expect(a1!.k1).assertEqual('5')
-            expect(a1!.k2).assertEqual('6')
-            expect(a1!.k3).assertEqual('7')
+        expect(a1!.k1).assertEqual('5')
+        expect(a1!.k2).assertEqual('6')
+        expect(a1!.k3).assertEqual('7')
             a1!.lambda1()
-            expect(v1).assertEqual('lambda2lambda3lambda1')
+        expect(v1).assertEqual('lambda2lambda3lambda1')
         });
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_2500
@@ -1428,15 +1428,15 @@ export default function ExplicitConstructorCallTest():void {
                 (p: boolean) => '' + p,
                 () => { a1 = new A24('5', '6', '7', () => { v1 += 'lambda1' }) },
             )
-            expect(a2.k1).assertEqual('1')
-            expect(a2.k2).assertEqual('2')
-            expect(a2.k3).assertEqual('true')
+        expect(a2.k1).assertEqual('1')
+        expect(a2.k2).assertEqual('2')
+        expect(a2.k3).assertEqual('true')
             a2.lambda1()
-            expect(a1!.k1).assertEqual('5')
-            expect(a1!.k2).assertEqual('6')
-            expect(a1!.k3).assertEqual('7')
+        expect(a1!.k1).assertEqual('5')
+        expect(a1!.k2).assertEqual('6')
+        expect(a1!.k3).assertEqual('7')
             a1!.lambda1()
-            expect(v1).assertEqual('lambda1')
+        expect(v1).assertEqual('lambda1')
         });
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_2600
@@ -1464,18 +1464,18 @@ export default function ExplicitConstructorCallTest():void {
                 () => { v1 += 'lambda2' },
                 () => { v1 += 'lambda3' }
             )
-            expect(b2.lambda0('abc')).assertEqual('@abc')
-            expect(b2.k1).assertEqual('1')
-            expect(b2.k2).assertEqual('2')
-            expect(b2.k3).assertEqual('3')
+        expect(b2.lambda0('abc')).assertEqual('@abc')
+        expect(b2.k1).assertEqual('1')
+        expect(b2.k2).assertEqual('2')
+        expect(b2.k3).assertEqual('3')
             b2.lambda1()
             b2.lambda2!()
             b2.lambda3!()
-            expect(a1!.k1).assertEqual('5')
-            expect(a1!.k2).assertEqual('6')
-            expect(a1!.k3).assertEqual('7')
+        expect(a1!.k1).assertEqual('5')
+        expect(a1!.k2).assertEqual('6')
+        expect(a1!.k3).assertEqual('7')
             a1!.lambda1()
-            expect(v1).assertEqual('lambda2lambda3lambda1')
+        expect(v1).assertEqual('lambda2lambda3lambda1')
         });
 
         /**
@@ -1503,25 +1503,25 @@ export default function ExplicitConstructorCallTest():void {
                 [1.0, 2.0, 3.0],
                 () => { s = 'called' }
             )
-            expect(a.p1()).assertEqual(42.0)
-            expect(a.p2).assertEqual('abc')
+        expect(a.p1()).assertEqual(42.0)
+        expect(a.p2).assertEqual('abc')
             let tuple = a.p3(144)
-            expect(tuple[0]).assertEqual(144)
-            expect(tuple[1]).assertEqual(true)
-            expect(tuple[2]).assertEqual('144')
-            expect(a.p4[0]).assertEqual(127)
-            expect(a.p4[1]).assertEqual(-128)
+        expect(tuple[0]).assertEqual(144)
+        expect(tuple[1]).assertEqual(true)
+        expect(tuple[2]).assertEqual('144')
+        expect(a.p4[0]).assertEqual(127)
+        expect(a.p4[1]).assertEqual(-128)
             let tuple2 = a.p5;
-            expect(tuple2[0]).assertEqual('A')
-            expect(tuple2[1]).assertEqual('B')
+        expect(tuple2[0]).assertEqual('A')
+        expect(tuple2[1]).assertEqual('B')
             let stringArray = a.p6('hello')
-            expect(stringArray.every((e: string, i: int, a: Array<string>) => e == 'hello')).assertTrue();
+        expect(stringArray.every((e: string, i: int, a: Array<string>) => e == 'hello')).assertTrue();
             let doubleArray = a.p7!
-            expect(doubleArray.every((e: double, i: int, a: Array<double>) => i + 1 == e)).assertTrue();
-            a.p8!()
-            expect(s).assertEqual('called')
-            expect(a.p9!['1']).assertEqual(10)
-            expect(a.p10).assertEqual(Color.Blue)
+        expect(doubleArray.every((e: double, i: int, a: Array<double>) => i + 1 == e)).assertTrue();
+        a.p8!()
+        expect(s).assertEqual('called')
+        expect(a.p9!['1']).assertEqual(10)
+        expect(a.p10).assertEqual(Color.Blue)
         });
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_2800
@@ -1546,25 +1546,25 @@ export default function ExplicitConstructorCallTest():void {
                 [1.0, 2.0, 3.0],
                 () => { s = 'called' }
             )
-            expect(a.p1()).assertEqual(43.0)
-            expect(a.p2).assertEqual('abcdef')
+        expect(a.p1()).assertEqual(43.0)
+        expect(a.p2).assertEqual('abcdef')
             let tuple = a.p3(12)
-            expect(tuple[0]).assertEqual(12)
-            expect(tuple[1]).assertEqual(true)
-            expect(tuple[2]).assertEqual('12')
-            expect(a.p4[0]).assertEqual(127)
-            expect(a.p4[1]).assertEqual(-128)
+        expect(tuple[0]).assertEqual(12)
+        expect(tuple[1]).assertEqual(true)
+        expect(tuple[2]).assertEqual('12')
+        expect(a.p4[0]).assertEqual(127)
+        expect(a.p4[1]).assertEqual(-128)
             let tuple2 = a.p5;
-            expect(tuple2[0]).assertEqual('A')
-            expect(tuple2[1]).assertEqual('B')
+        expect(tuple2[0]).assertEqual('A')
+        expect(tuple2[1]).assertEqual('B')
             let stringArray = a.p6('hello')
-            expect(stringArray.every((e: string, i: int, a: Array<string>) => e == 'hello')).assertTrue();
+        expect(stringArray.every((e: string, i: int, a: Array<string>) => e == 'hello')).assertTrue();
             let doubleArray = a.p7!
-            expect(doubleArray.every((e: double, i: int, a: Array<double>) => i + 1 == e)).assertTrue();
-            a.p8!()
-            expect(s).assertEqual('called')
-            expect(a.p9!['2']).assertEqual(20)
-            expect(a.p10).assertEqual(Color.Blue);
+        expect(doubleArray.every((e: double, i: int, a: Array<double>) => i + 1 == e)).assertTrue();
+        a.p8!()
+        expect(s).assertEqual('called')
+        expect(a.p9!['2']).assertEqual(20)
+        expect(a.p10).assertEqual(Color.Blue);
         });
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_2900
@@ -1592,26 +1592,26 @@ export default function ExplicitConstructorCallTest():void {
                 () => { s = 'called' },
                 { '2': 2 }
             )
-            expect(b.p1()).assertEqual(42.0)
-            expect(b.p2).assertEqual('abc')
+        expect(b.p1()).assertEqual(42.0)
+        expect(b.p2).assertEqual('abc')
             let tuple = b.p3(144)
-            expect(tuple[0]).assertEqual(144)
-            expect(tuple[1]).assertEqual(true)
-            expect(tuple[2]).assertEqual('144')
-            expect(b.p4[0]).assertEqual(127)
-            expect(b.p4[1]).assertEqual(-128)
+        expect(tuple[0]).assertEqual(144)
+        expect(tuple[1]).assertEqual(true)
+        expect(tuple[2]).assertEqual('144')
+        expect(b.p4[0]).assertEqual(127)
+        expect(b.p4[1]).assertEqual(-128)
             let tuple2 = b.p5;
-            expect(tuple2[0]).assertEqual('A')
-            expect(tuple2[1]).assertEqual('B')
+        expect(tuple2[0]).assertEqual('A')
+        expect(tuple2[1]).assertEqual('B')
             let stringArray = b.p6('hello')
-            expect(stringArray.every((e: string, i: int, a: Array<string>) => e == 'hello')).assertTrue();
+        expect(stringArray.every((e: string, i: int, a: Array<string>) => e == 'hello')).assertTrue();
             let doubleArray = b.p7!
-            expect(doubleArray.every((e: double, i: int, a: Array<double>) => i + 1 == e)).assertTrue();
+        expect(doubleArray.every((e: double, i: int, a: Array<double>) => i + 1 == e)).assertTrue();
             b.p8!()
-            expect(s).assertEqual('called')
+        expect(s).assertEqual('called')
             let rec: Record<string, int> = b.p9!
-            expect(rec['2']).assertEqual(2)
-            expect(b.p10!).assertEqual(Color.Blue);
+        expect(rec['2']).assertEqual(2)
+        expect(b.p10!).assertEqual(Color.Blue);
         });
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_3000
@@ -1630,25 +1630,25 @@ export default function ExplicitConstructorCallTest():void {
             let a = new A29(
                 [() => 'abc']
             )
-            expect(a.p1![0]()).assertEqual('abc')
-            expect(a.p2.length).assertEqual(0)
-            expect(a.p3).assertEqual(undefined)
-            expect(a.p4['']).assertEqual(0)
-            expect(a.p5).assertEqual(undefined)
+        expect(a.p1![0]()).assertEqual('abc')
+        expect(a.p2.length).assertEqual(0)
+        expect(a.p3).assertEqual(undefined)
+        expect(a.p4['']).assertEqual(0)
+        expect(a.p5).assertEqual(undefined)
 
             a = new A29(
                 [() => 'abc'],
                 [() => 1.0, () => 2.0, () => 3.0],
                 ['abc', 3.5]
             )
-            expect(a.p1![0]()).assertEqual('abc')
-            expect(a.p2[0]()).assertEqual(1.0)
-            expect(a.p2[1]()).assertEqual(2.0)
-            expect(a.p2[2]()).assertEqual(3.0)
-            expect(a.p3![0]).assertEqual('abc')
-            expect(a.p3![1]).assertEqual(3.5)
-            expect(a.p4['']).assertEqual(0)
-            expect(a.p5).assertEqual(undefined)
+        expect(a.p1![0]()).assertEqual('abc')
+        expect(a.p2[0]()).assertEqual(1.0)
+        expect(a.p2[1]()).assertEqual(2.0)
+        expect(a.p2[2]()).assertEqual(3.0)
+        expect(a.p3![0]).assertEqual('abc')
+        expect(a.p3![1]).assertEqual(3.5)
+        expect(a.p4['']).assertEqual(0)
+        expect(a.p5).assertEqual(undefined)
 
             a = new A29(
                 undefined,
@@ -1657,12 +1657,12 @@ export default function ExplicitConstructorCallTest():void {
                 { '1': 1, '2': 2 },
                 ['a', 'b', 'c']
             )
-            expect(a.p1).assertEqual(undefined)
-            expect(a.p2.length).assertEqual(0)
-            expect(a.p3).assertEqual(undefined)
-            expect(a.p4['1']).assertEqual(1)
-            expect(a.p4['2']).assertEqual(2)
-            expect(a.p5!.reduce((acc: string, curr: string) => acc + curr, '')).assertEqual('abc');
+        expect(a.p1).assertEqual(undefined)
+        expect(a.p2.length).assertEqual(0)
+        expect(a.p3).assertEqual(undefined)
+        expect(a.p4['1']).assertEqual(1)
+        expect(a.p4['2']).assertEqual(2)
+        expect(a.p5!.reduce((acc: string, curr: string) => acc + curr, '')).assertEqual('abc');
         });
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_3100
@@ -1679,11 +1679,11 @@ export default function ExplicitConstructorCallTest():void {
             const TAG = 'testExplicitConstructorCall0031';
 
             let a = new A30('a', 'b', 'c', 'd')
-            expect(a.p1).assertEqual(undefined)
-            expect(a.p2.length).assertEqual(0)
-            expect(a.p3).assertEqual(undefined)
-            expect(a.p4['']).assertEqual(0)
-            expect(a.p5!.reduce((acc: string, curr: string) => acc + curr, '')).assertEqual('abcd');
+        expect(a.p1).assertEqual(undefined)
+        expect(a.p2.length).assertEqual(0)
+        expect(a.p3).assertEqual(undefined)
+        expect(a.p4['']).assertEqual(0)
+        expect(a.p5!.reduce((acc: string, curr: string) => acc + curr, '')).assertEqual('abcd');
 
         });
         /**
@@ -1701,11 +1701,11 @@ export default function ExplicitConstructorCallTest():void {
             const TAG = 'testExplicitConstructorCall0032';
 
             let b = new B21('a', 'b', 'c', 'd')
-            expect(b.p1).assertEqual(undefined)
-            expect(b.p2.length).assertEqual(0)
-            expect(b.p3).assertEqual(undefined)
-            expect(b.p4['']).assertEqual(0)
-            expect(b.p5!.reduce((acc: string, curr: string) => acc + curr, '')).assertEqual('abcd');
+        expect(b.p1).assertEqual(undefined)
+        expect(b.p2.length).assertEqual(0)
+        expect(b.p3).assertEqual(undefined)
+        expect(b.p4['']).assertEqual(0)
+        expect(b.p5!.reduce((acc: string, curr: string) => acc + curr, '')).assertEqual('abcd');
         });
         /**
          * @tc.number    SUB_EXPLICIT_CONSTRUCTOR_CALLTEST_3300
@@ -1722,11 +1722,11 @@ export default function ExplicitConstructorCallTest():void {
             const TAG = 'testExplicitConstructorCall0033';
 
             let b = new B22('a', 'b', 'c', 'd')
-            expect(b.s[0]).assertEqual('aa')
-            expect(b.s[1]).assertEqual('b')
-            expect(b.s[2]).assertEqual('c')
-            expect(b.s[3]).assertEqual('d')
-            expect(b.s.length).assertEqual(4);
+        expect(b.s[0]).assertEqual('aa')
+        expect(b.s[1]).assertEqual('b')
+        expect(b.s[2]).assertEqual('c')
+        expect(b.s[3]).assertEqual('d')
+        expect(b.s.length).assertEqual(4);
         });
 
         /**
@@ -1742,10 +1742,10 @@ export default function ExplicitConstructorCallTest():void {
             const TAG = 'testExplicitConstructorCall0034';
 
             let i1: B23 = new B23();
-            expect(i1.x).assertEqual(8)
+        expect(i1.x).assertEqual(8)
 
             i1 = new B23(1.0f);
-            expect(i1.x).assertEqual(4)
+        expect(i1.x).assertEqual(4)
         });
 
         /**
@@ -1760,10 +1760,10 @@ export default function ExplicitConstructorCallTest():void {
             const TAG = 'testExplicitConstructorCall0035';
 
             let i1: A34 = new A34();
-            expect(i1.x).assertEqual(8)
+        expect(i1.x).assertEqual(8)
 
             i1 = new A34(new Error);
-            expect(i1.x).assertEqual(3)
+        expect(i1.x).assertEqual(3)
         });
 
     })

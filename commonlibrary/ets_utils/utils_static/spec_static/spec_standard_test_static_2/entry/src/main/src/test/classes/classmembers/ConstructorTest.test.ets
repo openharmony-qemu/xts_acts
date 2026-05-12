@@ -88,14 +88,14 @@ export default function ConstructorTest():void {
 
     /**
      * @tc.number    SUB_CONSTRUCTOR_ONE_TEST_0300
-     * @tc.name      testAcc0003
+     * @tc.name      testConstructor0003
      * @tc.desc      Class members declared internal are accessible within the package the current class resides in.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2
      */
-    it("testAcc0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testAcc0003';
+    it("testConstructor0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const TAG = 'testConstructor0003';
       expect(new B1(42).fld).assertEqual(43)
     });
   })

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,105 +37,105 @@ async function sleep(time: int): Promise<int> {
 
 class A_F001 {
     field: long = 4
-    foo(): void {
+    foo_F001(): void {
       this.field = 5
     }
   }
 
 class A_F002 {
     field: int = 4
-    foo(): void {
+    foo_F002(): void {
       this.field = 5
     }
   }
 
 class A_F003 {
     field: byte = 4
-    foo(): void {
+    foo_F003(): void {
       this.field = 5
     }
   }
 
 class A_F004 {
     field: short = 4
-    foo(): void {
+    foo_F004(): void {
       this.field = 5
     }
   }
 
 class A_F005 {
     field: double = 4
-    foo(): void {
+    foo_F005(): void {
       this.field = 7.3
     }
   }
 
 class A_F006 {
     field: number = 4
-    foo(): void {
+    foo_F006(): void {
       this.field = 5
     }
   }
 
 class A_F007 {
     field: float = 4.5f
-    foo(): void {
+    foo_F007(): void {
       this.field = 7.3f
     }
   }
 
 class A_F008 {
     field: bigint = 4n
-    foo(): void {
+    foo_F008(): void {
       this.field = 5n
     }
   }
 
 class A_F009 {
     field: string = "abc"
-    foo(): void {
+    foo_F009(): void {
       this.field = "efg"
     }
   }
 
 class A_F010 {
     field: char = c'a'
-    foo(): void {
+    foo_F010(): void {
       this.field = c'b'
     }
   }
 
 class A_F011 {
     field: boolean = false
-    foo(): void {
+    foo_F011(): void {
       this.field = true
     }
   }
 
 class A_F012 {
     field: Object = 4
-    foo(): void {
+    foo_F012(): void {
       this.field = 5
     }
   }
 
 class A_F013 {
     field: Object | undefined = undefined
-    foo(): void {
+    foo_F013(): void {
       this.field = 5
     }
   }
 
 class A_F014 {
     field: Object | undefined | null = 4
-    foo(): void {
+    foo_F014(): void {
       this.field = 5
     }
   }
 
 class A_F015 {
     field: Any = 4
-    foo(): void {
+    foo_F015(): void {
       this.field = 5
     }
   }
@@ -368,210 +368,210 @@ class A_F060 {
 class A_F061 {
     field: long = 4
   }
-  function foo(a: A_F061): void {
+  function foo_F061(a: A_F061): void {
     a.field = 5
   }
 
 class A_F062 {
     field: int = 4
   }
-  function foo(a: A_F062): void {
+  function foo_F062(a: A_F062): void {
     a.field = 5
   }
 
 class A_F063 {
     field: byte = 4
   }
-  function foo(a: A_F063): void {
+  function foo_F063(a: A_F063): void {
     a.field = 5
   }
 
 class A_F064 {
     field: short = 4
   }
-  function foo(a: A_F064): void {
+  function foo_F064(a: A_F064): void {
     a.field = 5
   }
 
 class A_F065 {
     field: double = 4
   }
-  function foo(a: A_F065): void {
+  function foo_F065(a: A_F065): void {
     a.field = 7.3
   }
 
 class A_F066 {
     field: number = 4
   }
-  function foo(a: A_F066): void {
+  function foo_F066(a: A_F066): void {
     a.field = 5
   }
 
 class A_F067 {
     field: float = 4.5f
   }
-  function foo(a: A_F067): void {
+  function foo_F067(a: A_F067): void {
     a.field = 7.3f
   }
 
 class A_F068 {
     field: bigint = 4n
   }
-  function foo(a: A_F068): void {
+  function foo_F068(a: A_F068): void {
     a.field = 5n
   }
 
 class A_F069 {
     field: string = "abc"
   }
-  function foo(a: A_F069): void {
+  function foo_F069(a: A_F069): void {
     a.field = "efg"
   }
 
 class A_F070 {
     field: char = c'a'
   }
-  function foo(a: A_F070): void {
+  function foo_F070(a: A_F070): void {
     a.field = c'b'
   }
 
 class A_F071 {
     field: boolean = false
   }
-  function foo(a: A_F071): void {
+  function foo_F071(a: A_F071): void {
     a.field = true
   }
 
 class A_F072 {
     field: Object = 4
   }
-  function foo(a: A_F072): void {
+  function foo_F072(a: A_F072): void {
     a.field = 5
   }
 
 class A_F073 {
     field: Object | undefined = undefined
   }
-  function foo(a: A_F073): void {
+  function foo_F073(a: A_F073): void {
     a.field = 5
   }
 
 class A_F074 {
     field: Object | undefined | null = 4
   }
-  function foo(a: A_F074): void {
+  function foo_F074(a: A_F074): void {
     a.field = 5
   }
 
 class A_F075 {
     field: Any = 4
   }
-  function foo(a: A_F075): void {
+  function foo_F075(a: A_F075): void {
     a.field = 5
   }
 
 class A_F076 {
     field: long = 4
   }
-  function foo(fb: () => void): void {
+  function foo_F076(fb: () => void): void {
     fb()
   }
 
 class A_F077 {
     field: int = 4
   }
-  function foo(fb: () => void): void {
+  function foo_F077(fb: () => void): void {
     fb()
   }
 
 class A_F078 {
     field: byte = 4
   }
-  function foo(fb: () => void): void {
+  function foo_F078(fb: () => void): void {
     fb()
   }
 
 class A_F079 {
     field: short = 4
   }
-  function foo(fb: () => void): void {
+  function foo_F079(fb: () => void): void {
     fb()
   }
 
 class A_F080 {
     field: double = 4
   }
-  function foo(fb: () => void): void {
+  function foo_F080(fb: () => void): void {
     fb()
   }
 
 class A_F081 {
     field: number = 4
   }
-  function foo(fb: () => void): void {
+  function foo_F081(fb: () => void): void {
     fb()
   }
 
 class A_F082 {
     field: float = 4.5f
   }
-  function foo(fb: () => void): void {
+  function foo_F082(fb: () => void): void {
     fb()
   }
 
 class A_F083 {
     field: bigint = 4n
   }
-  function foo(fb: () => void): void {
+  function foo_F083(fb: () => void): void {
     fb()
   }
 
 class A_F084 {
     field: string = "abc"
   }
-  function foo(fb: () => void): void {
+  function foo_F084(fb: () => void): void {
     fb()
   }
 
 class A_F085 {
     field: char = c'a'
   }
-  function foo(fb: () => void): void {
+  function foo_F085(fb: () => void): void {
     fb()
   }
 
 class A_F086 {
     field: boolean = false
   }
-  function foo(fb: () => void): void {
+  function foo_F086(fb: () => void): void {
     fb()
   }
 
 class A_F087 {
     field: Object = 4
   }
-  function foo(fb: () => void): void {
+  function foo_F087(fb: () => void): void {
     fb()
   }
 
 class A_F088 {
     field: Object | undefined = undefined
   }
-  function foo(fb: () => void): void {
+  function foo_F088(fb: () => void): void {
     fb()
   }
 
 class A_F089 {
     field: Object | undefined | null = 4
   }
-  function foo(fb: () => void): void {
+  function foo_F089(fb: () => void): void {
     fb()
   }
 
 class A_F090 {
     field: Any = 4
   }
-  function foo(fb: () => void): void {
+  function foo_F090(fb: () => void): void {
     fb()
   }
 
@@ -638,7 +638,7 @@ class Animal_F093 {
   class Dog_F093 extends Animal_F093 {
     field: number = 5
   }
-  function foo(a: Animal_F093) {
+  function foo_F092(a: Animal_F093) {
     if (a instanceof Dog_F093) {
       a.field = 3
     }
@@ -649,7 +649,7 @@ class Animal_F094 {
   class Dog_F094 extends Animal_F094 {
     field: number = 5
   }
-  function foo(a: Animal_F094) {
+  function foo_F092_2(a: Animal_F094) {
     (a as Dog_F094).field = 3
   }
 
