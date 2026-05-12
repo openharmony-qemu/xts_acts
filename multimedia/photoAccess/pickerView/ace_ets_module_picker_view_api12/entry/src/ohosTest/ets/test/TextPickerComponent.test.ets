@@ -1693,20 +1693,23 @@ export default function TextPicker() {
         try {
           let createPromise = phAccessHelper.createAssetWithShortTermPermission(item);
           await driveFn();
-          const timeoutPromise = new Promise((_, reject) => 
-            setTimeout(() => reject({ code: 'timeout', message: 'createAsset timeout after 30s' }), 30000)
-          );
+          const timeoutPromise: Promise<photoAccessHelper.FileAsset> = new Promise<photoAccessHelper.FileAsset>((_: resolve, reject: (reason: Error) => void) => {
+            setTimeout(() => {
+              reject(new Error('createAsset timeout after 30s'));
+            }, 30000);
+          });
 
-          let result = await Promise.race([createPromise, timeoutPromise]);
+          let result: photoAccessHelper.FileAsset | undefined = await Promise.race<photoAccessHelper.FileAsset | undefined>([createPromise, timeoutPromise]);
           console.log(`testPicker25 result = ${JSON.stringify(result)}`)
           expect(result).not().assertUndefined();
         } catch (error) {
-          if (error.code === 'timeout') {
+          if (error instanceof Error && error.message === 'createAsset timeout after 30s') {
             console.log(`testPicker25 timeout, skip this case`);
             continue;
           }
-          console.error("testPicker25 error: " + JSON.stringify(error) + error.code);
-          let isValidErrorCode = (error.code == 14000011 || error.code == 13900020);
+          let err = error as BusinessError;
+          console.error("testPicker25 error: " + JSON.stringify(err) + err.code);
+          let isValidErrorCode = (err.code == 14000011 || err.code == 13900020);
           expect(isValidErrorCode).assertTrue();
         }
       }	 
