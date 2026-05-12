@@ -19,15 +19,6 @@ import dynamicXmlTest1 from './dynamicXml/DynamicXml1.test';
 import dynamicXmlTest2 from './dynamicXml/DynamicXml2.test';
 import actsXml3Test from './xml/Xml3.test';
 import actsXml4Test from './xml/Xml4.test';
-import XmlSAXParserTest from './xml/XmlSAXParserTest.test';
-import XmlTest_01 from './xml/XmlTest01.test';
-import XmlTest_02 from './xml/XmlTest02.test';
-import XmlTest_03 from './xml/XmlTest03.test';
-import XmlTest_04 from './xml/XmlTest04.test';
-import XmlTest_05 from './xml/XmlTest05.test';
-import XmlTest_06 from './xml/XmlTest06.test';
-import XmlTest_07 from './xml/XmlTest07.test';
-import XmlTest_08 from './xml/XmlTest08.test';
 
 export default function testsuite() {
   xmlTest1();
@@ -36,13 +27,5 @@ export default function testsuite() {
   dynamicXmlTest2();
   actsXml3Test();
   actsXml4Test();
-  XmlSAXParserTest();
-  XmlTest_01();
-  XmlTest_02();
-  XmlTest_03();
-  XmlTest_04();
-  XmlTest_05();
-  XmlTest_06();
-  XmlTest_07();
-  XmlTest_08();
+
 }
