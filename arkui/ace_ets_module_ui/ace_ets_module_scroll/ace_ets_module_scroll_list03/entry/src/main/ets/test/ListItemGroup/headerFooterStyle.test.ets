@@ -52,7 +52,7 @@ export default function headerFooterStyle() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('listItemGroupHeaderStyle_0100', Level.LEVEL0, async () => {
+    it('listItemGroupHeaderStyle_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[listItemGroupHeaderStyle_0100] START');
       let strJson: string = getInspectorByKey('list_headerStyle_none');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
@@ -63,6 +63,7 @@ export default function headerFooterStyle() {
       console.info('listItemGroupHeaderStyle_0100 NONE: ' + ListItemGroupHeaderFooterStyle.NONE);
       expect(ListItemGroupHeaderFooterStyle.NONE).assertEqual(0);
       console.info('[listItemGroupHeaderStyle_0100] END');
+      done();
     })
 
     /**
@@ -74,7 +75,7 @@ export default function headerFooterStyle() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('listItemGroupHeaderStyle_0200', Level.LEVEL0, async () => {
+    it('listItemGroupHeaderStyle_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[listItemGroupHeaderStyle_0200] START');
       let strJson: string = getInspectorByKey('list_headerStyle_floating');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
@@ -86,6 +87,7 @@ export default function headerFooterStyle() {
       expect(ListItemGroupHeaderFooterStyle.FLOATING).assertEqual(1);
 
       console.info('[listItemGroupHeaderStyle_0200] END');
+      done();
     })
 
     /**
@@ -97,7 +99,7 @@ export default function headerFooterStyle() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('listItemGroupHeaderStyle_0300', Level.LEVEL0, async () => {
+    it('listItemGroupHeaderStyle_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[listItemGroupHeaderStyle_0300] START');
       let strJsonDefault: string = getInspectorByKey('list_headerStyle_none');
       let objDefault: Record<string, ESObject> = JSON.parse(strJsonDefault);
@@ -109,6 +111,7 @@ export default function headerFooterStyle() {
       expect(obj.$type).assertEqual('ListItemGroup');
       expect(obj.$attrs.headerStyle).assertEqual(objDefault.$attrs.headerStyle);
       console.info('[listItemGroupHeaderStyle_0300] END');
+      done();
     })
 
     /**
@@ -120,7 +123,7 @@ export default function headerFooterStyle() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('listItemGroupHeaderStyle_0400', Level.LEVEL0, async () => {
+    it('listItemGroupHeaderStyle_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[listItemGroupHeaderStyle_0400] START');
 
       let strJsonDefault: string = getInspectorByKey('list_headerStyle_none');
@@ -133,6 +136,7 @@ export default function headerFooterStyle() {
       expect(obj.$type).assertEqual('ListItemGroup');
       expect(obj.$attrs.headerStyle).assertEqual(objDefault.$attrs.headerStyle);
       console.info('[listItemGroupHeaderStyle_0400] END');
+      done();
     })
 
     /**
@@ -144,7 +148,7 @@ export default function headerFooterStyle() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('listItemGroupFooterStyle_0100', Level.LEVEL0, async () => {
+    it('listItemGroupFooterStyle_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[listItemGroupFooterStyle_0100] START');
       let strJson: string = getInspectorByKey('list_footerStyle_none');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
@@ -155,6 +159,7 @@ export default function headerFooterStyle() {
       console.info('ListItemGroupArea_0200 NONE: ' + ListItemGroupHeaderFooterStyle.NONE);
       expect(ListItemGroupHeaderFooterStyle.NONE).assertEqual(0);
       console.info('[listItemGroupFooterStyle_0100] END');
+      done();
     })
 
     /**
@@ -166,7 +171,7 @@ export default function headerFooterStyle() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('listItemGroupFooterStyle_0200', Level.LEVEL0, async () => {
+    it('listItemGroupFooterStyle_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[listItemGroupFooterStyle_0200] START');
 
       let strJson: string = getInspectorByKey('list_footerStyle_floating');
@@ -178,6 +183,7 @@ export default function headerFooterStyle() {
       console.info('ListItemGroupArea_0200 NONE: ' + ListItemGroupHeaderFooterStyle.NONE);
       expect(ListItemGroupHeaderFooterStyle.FLOATING).assertEqual(1);
       console.info('[listItemGroupFooterStyle_0200] END');
+      done();
     })
 
     /**
@@ -189,7 +195,7 @@ export default function headerFooterStyle() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('listItemGroupFooterStyle_0300', Level.LEVEL0, async () => {
+    it('listItemGroupFooterStyle_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[listItemGroupFooterStyle_0300] START');
       let strJsonDefault: string = getInspectorByKey('list_footerStyle_none');
       let objDefault: Record<string, ESObject> = JSON.parse(strJsonDefault);
@@ -201,6 +207,7 @@ export default function headerFooterStyle() {
       expect(obj.$type).assertEqual('ListItemGroup');
       expect(obj.$attrs.footerStyle).assertEqual(objDefault.$attrs.footerStyle);
       console.info('[listItemGroupFooterStyle_0300] END');
+      done();
     })
 
     /**
@@ -212,7 +219,7 @@ export default function headerFooterStyle() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('listItemGroupFooterStyle_0400', Level.LEVEL0, async () => {
+    it('listItemGroupFooterStyle_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[listItemGroupFooterStyle_0400] START');
       let strJsonDefault: string = getInspectorByKey('list_footerStyle_none');
       let objDefault: Record<string, ESObject> = JSON.parse(strJsonDefault);
@@ -224,6 +231,7 @@ export default function headerFooterStyle() {
       expect(obj.$type).assertEqual('ListItemGroup');
       expect(obj.$attrs.footerStyle).assertEqual(objDefault.$attrs.footerStyle);
       console.info('[listItemGroupFooterStyle_0400] END');
+      done();
     })
   })
 }

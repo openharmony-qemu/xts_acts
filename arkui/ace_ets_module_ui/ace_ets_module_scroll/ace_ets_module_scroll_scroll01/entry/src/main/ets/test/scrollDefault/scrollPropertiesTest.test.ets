@@ -57,7 +57,7 @@ export default function scrollPropertiesTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('autoAdjustScrollBarMargin_0100', Level.LEVEL0, async () => {
+    it('autoAdjustScrollBarMargin_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[autoAdjustScrollBarMargin_0100] START');
 
       let strJson: string = getInspectorByKey('scroll_autoAdjust_true');
@@ -71,6 +71,7 @@ export default function scrollPropertiesTest() {
       expect(obj.$attrs.autoAdjustScrollBarMargin).assertEqual('true');
 
       console.info('[autoAdjustScrollBarMargin_0100] END');
+      done();
     })
 
     /**
@@ -82,7 +83,7 @@ export default function scrollPropertiesTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('autoAdjustScrollBarMargin_0200', Level.LEVEL0, async () => {
+    it('autoAdjustScrollBarMargin_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[autoAdjustScrollBarMargin_0200] START');
 
       let strJson: string = getInspectorByKey('scroll_autoAdjust_false');
@@ -95,6 +96,7 @@ export default function scrollPropertiesTest() {
       expect(obj.$attrs.autoAdjustScrollBarMargin).assertEqual('false');
 
       console.info('[autoAdjustScrollBarMargin_0200] END');
+      done();
     })
 
     /**
@@ -106,7 +108,7 @@ export default function scrollPropertiesTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('autoAdjustScrollBarMargin_0300', Level.LEVEL0, async () => {
+    it('autoAdjustScrollBarMargin_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[autoAdjustScrollBarMargin_0300] START');
 
       let strJson: string = getInspectorByKey('scroll_autoAdjust_undefined');
@@ -119,6 +121,7 @@ export default function scrollPropertiesTest() {
       expect(obj.$attrs.autoAdjustScrollBarMargin).assertEqual('false');
 
       console.info('[autoAdjustScrollBarMargin_0300] END');
+      done();
     })
 
     /**
@@ -130,7 +133,7 @@ export default function scrollPropertiesTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('autoAdjustScrollBarMargin_0400', Level.LEVEL0, async () => {
+    it('autoAdjustScrollBarMargin_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[autoAdjustScrollBarMargin_0400] START');
 
       let strJson: string = getInspectorByKey('scroll_autoAdjust_null');
@@ -143,6 +146,7 @@ export default function scrollPropertiesTest() {
       expect(obj.$attrs.autoAdjustScrollBarMargin).assertEqual('false');
 
       console.info('[autoAdjustScrollBarMargin_0400] END');
+      done();
     })
 
     /**
@@ -154,7 +158,7 @@ export default function scrollPropertiesTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('enableScrollWithMouse_0100', Level.LEVEL0, async () => {
+    it('enableScrollWithMouse_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[enableScrollWithMouse_0100] START');
 
       let strJson: string = getInspectorByKey('scroll_enableMouse_true');
@@ -168,6 +172,7 @@ export default function scrollPropertiesTest() {
       expect(obj.$attrs.enableScrollWithMouse).assertEqual(true);
 
       console.info('[enableScrollWithMouse_0100] END');
+      done();
     })
 
     /**
@@ -179,7 +184,7 @@ export default function scrollPropertiesTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('enableScrollWithMouse_0200', Level.LEVEL0, async () => {
+    it('enableScrollWithMouse_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[enableScrollWithMouse_0200] START');
 
       let strJson: string = getInspectorByKey('scroll_enableMouse_false');
@@ -192,6 +197,7 @@ export default function scrollPropertiesTest() {
       expect(obj.$attrs.enableScrollWithMouse).assertEqual(false);
 
       console.info('[enableScrollWithMouse_0200] END');
+      done();
     })
 
     /**
@@ -203,7 +209,7 @@ export default function scrollPropertiesTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('enableScrollWithMouse_0300', Level.LEVEL0, async () => {
+    it('enableScrollWithMouse_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[enableScrollWithMouse_0300] START');
 
       let strJson: string = getInspectorByKey('scroll_enableMouse_undefined');
@@ -216,6 +222,7 @@ export default function scrollPropertiesTest() {
       expect(obj.$attrs.enableScrollWithMouse).assertEqual(false);
 
       console.info('[enableScrollWithMouse_0300] END');
+      done();
     })
 
     /**
@@ -227,7 +234,7 @@ export default function scrollPropertiesTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('enableScrollWithMouse_0400', Level.LEVEL0, async () => {
+    it('enableScrollWithMouse_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[enableScrollWithMouse_0400] START');
 
       let strJson: string = getInspectorByKey('scroll_enableMouse_null');
@@ -240,6 +247,7 @@ export default function scrollPropertiesTest() {
       expect(obj.$attrs.enableScrollWithMouse).assertEqual(false);
 
       console.info('[enableScrollWithMouse_0400] END');
+      done();
     })
   })
 }
