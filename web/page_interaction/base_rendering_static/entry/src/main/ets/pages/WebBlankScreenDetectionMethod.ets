@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 
-import { Text,BlurOnKeyboardHideMode,$rawfile,OnConsoleEvent,Entry, Component, Column, Row, Button, ClickEvent, Web, BlankScreenDetectionMethod, DetectedBlankScreenReason, BlankScreenDetectionEventInfo, State, UIContext, Router } from "@kit.ArkUI"
+import { Text,BlurOnKeyboardHideMode,$rawfile,OnConsoleEvent,Entry, Component, Column, Row, Button, ClickEvent, Web, BlankScreenDetectionMethod, DetectedBlankScreenReason, BlankScreenDetectionEventInfo } from "@ohos.arkui.component"	 
+import { State } from "@ohos.arkui.stateManagement" 
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 import web_webview from '@ohos.web.webview';
 import Utils from '../../src/test/Util.test';
 import { BusinessError, RecordData } from '@ohos.base';
