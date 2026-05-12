@@ -189,7 +189,7 @@ export default function StaticMethodIsGetterTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_GETTER_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_GETTER_0100
      * @tc.name testStaticMethodIsGetter001
      * @tc.desc Verify isGetter() call with no parameters
      * @tc.size MediumTest
@@ -205,7 +205,7 @@ export default function StaticMethodIsGetterTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_GETTER_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_GETTER_0200
      * @tc.name testStaticMethodIsGetter002
      * @tc.desc Verify isGetter() returns true for getter method
      * @tc.size MediumTest
@@ -223,7 +223,7 @@ export default function StaticMethodIsGetterTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_GETTER_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_GETTER_0300
      * @tc.name testStaticMethodIsGetter003
      * @tc.desc Verify isGetter() returns false for normal method
      * @tc.size MediumTest
@@ -240,7 +240,7 @@ export default function StaticMethodIsGetterTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_GETTER_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_GETTER_0400
      * @tc.name testStaticMethodIsGetter004
      * @tc.desc Verify isGetter() returns false for setter method
      * @tc.size MediumTest
@@ -256,7 +256,7 @@ export default function StaticMethodIsGetterTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_GETTER_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_GETTER_0500
      * @tc.name testStaticMethodIsGetter005
      * @tc.desc Verify isGetter() for public getter
      * @tc.size MediumTest
@@ -272,7 +272,7 @@ export default function StaticMethodIsGetterTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_GETTER_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_GETTER_0600
      * @tc.name testStaticMethodIsGetter006
      * @tc.desc Verify isGetter() for private getter
      * @tc.size MediumTest
@@ -286,7 +286,7 @@ export default function StaticMethodIsGetterTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_GETTER_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_GETTER_0700
      * @tc.name testStaticMethodIsGetter007
      * @tc.desc Verify isGetter() for protected getter
      * @tc.size MediumTest
@@ -300,7 +300,7 @@ export default function StaticMethodIsGetterTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_GETTER_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_GETTER_0800
      * @tc.name testStaticMethodIsGetter008
      * @tc.desc Verify isGetter() for getters returning different types
      * @tc.size MediumTest
@@ -316,7 +316,7 @@ export default function StaticMethodIsGetterTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_GETTER_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_GETTER_0900
      * @tc.name testStaticMethodIsGetter009
      * @tc.desc Verify isGetter() for computed property getter
      * @tc.size MediumTest
@@ -331,7 +331,7 @@ export default function StaticMethodIsGetterTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_GETTER_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_GETTER_1000
      * @tc.name testStaticMethodIsGetter010
      * @tc.desc Verify isGetter() return type is boolean
      * @tc.size MediumTest
@@ -349,7 +349,7 @@ export default function StaticMethodIsGetterTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_GETTER_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_GETTER_1100
      * @tc.name testStaticMethodIsGetter011
      * @tc.desc Verify isGetter() returns only true or false
      * @tc.size MediumTest
@@ -366,7 +366,7 @@ export default function StaticMethodIsGetterTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_GETTER_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_GETTER_1200
      * @tc.name testStaticMethodIsGetter012
      * @tc.desc Verify getter method has zero parameters
      * @tc.size MediumTest
@@ -382,7 +382,7 @@ export default function StaticMethodIsGetterTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_GETTER_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_GETTER_1300
      * @tc.name testStaticMethodIsGetter013
      * @tc.desc Verify getter and setter are mutually exclusive
      * @tc.size MediumTest
@@ -401,7 +401,7 @@ export default function StaticMethodIsGetterTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_GETTER_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_GETTER_1400
      * @tc.name testStaticMethodIsGetter014
      * @tc.desc Verify isGetter() for abstract class getter
      * @tc.size MediumTest
@@ -416,7 +416,7 @@ export default function StaticMethodIsGetterTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_GETTER_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_GETTER_1500
      * @tc.name testStaticMethodIsGetter015
      * @tc.desc Verify isGetter() for final class getter
      * @tc.size MediumTest
@@ -431,7 +431,7 @@ export default function StaticMethodIsGetterTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_GETTER_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_GETTER_1600
      * @tc.name testStaticMethodIsGetter016
      * @tc.desc Verify isGetter() for readonly property with only getter
      * @tc.size MediumTest
@@ -446,7 +446,7 @@ export default function StaticMethodIsGetterTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_GETTER_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_GETTER_1700
      * @tc.name testStaticMethodIsGetter017
      * @tc.desc Verify getter method name starts with %%get- prefix
      * @tc.size MediumTest
@@ -462,7 +462,7 @@ export default function StaticMethodIsGetterTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_GETTER_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_GETTER_1800
      * @tc.name testStaticMethodIsGetter018
      * @tc.desc Verify isGetter() does not throw exception
      * @tc.size MediumTest
@@ -478,7 +478,7 @@ export default function StaticMethodIsGetterTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_GETTER_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_GETTER_1900
      * @tc.name testStaticMethodIsGetter019
      * @tc.desc Verify isGetter() for public getter with annotation
      * @tc.size MediumTest
@@ -494,7 +494,7 @@ export default function StaticMethodIsGetterTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_GETTER_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_GETTER_2000
      * @tc.name testStaticMethodIsGetter020
      * @tc.desc Verify isGetter() for normal, abstract, and final class getters
      * @tc.size MediumTest
@@ -515,7 +515,7 @@ export default function StaticMethodIsGetterTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_GETTER_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_GETTER_2100
      * @tc.name testStaticMethodIsGetter021
      * @tc.desc Verify isGetter() counts getters in a class correctly
      * @tc.size MediumTest
@@ -536,7 +536,7 @@ export default function StaticMethodIsGetterTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_GETTER_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_GETTER_2200
      * @tc.name testStaticMethodIsGetter022
      * @tc.desc Verify isGetter() combined with other method property checks
      * @tc.size MediumTest
@@ -554,7 +554,7 @@ export default function StaticMethodIsGetterTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_GETTER_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_GETTER_2300
      * @tc.name testStaticMethodIsGetter023
      * @tc.desc Verify filtering getter methods from all static methods
      * @tc.size MediumTest
@@ -575,7 +575,7 @@ export default function StaticMethodIsGetterTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_GETTER_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_GETTER_2400
      * @tc.name testStaticMethodIsGetter024
      * @tc.desc Verify getter and setter pairing — some properties may have only getter
      * @tc.size MediumTest

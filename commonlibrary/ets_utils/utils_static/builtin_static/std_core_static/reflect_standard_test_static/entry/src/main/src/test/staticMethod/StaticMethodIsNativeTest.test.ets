@@ -124,7 +124,7 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_NATIVE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_NATIVE_0100
      * @tc.name testStaticMethodIsNative001
      * @tc.desc Verify isNative() call with no parameters
      * @tc.size MediumTest
@@ -140,7 +140,7 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_NATIVE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_NATIVE_0200
      * @tc.name testStaticMethodIsNative002
      * @tc.desc Verify isNative() returns false for normal user-defined static method
      * @tc.size MediumTest
@@ -158,7 +158,7 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_NATIVE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_NATIVE_0300
      * @tc.name testStaticMethodIsNative003
      * @tc.desc Verify isNative() returns false for user-defined class method
      * @tc.size MediumTest
@@ -174,7 +174,7 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_NATIVE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_NATIVE_0400
      * @tc.name testStaticMethodIsNative004
      * @tc.desc Verify isNative() returns false for abstract class static method
      * @tc.size MediumTest
@@ -189,7 +189,7 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_NATIVE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_NATIVE_0500
      * @tc.name testStaticMethodIsNative005
      * @tc.desc Verify isNative() returns false for final class static method
      * @tc.size MediumTest
@@ -204,7 +204,7 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_NATIVE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_NATIVE_0600
      * @tc.name testStaticMethodIsNative006
      * @tc.desc Verify isNative() returns false for async static method
      * @tc.size MediumTest
@@ -219,7 +219,7 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_NATIVE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_NATIVE_0700
      * @tc.name testStaticMethodIsNative007
      * @tc.desc Verify isNative() returns false for getter and setter methods
      * @tc.size MediumTest
@@ -238,7 +238,7 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_NATIVE_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_NATIVE_0800
      * @tc.name testStaticMethodIsNative008
      * @tc.desc Verify isNative() return type is boolean
      * @tc.size MediumTest
@@ -256,7 +256,7 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_NATIVE_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_NATIVE_0900
      * @tc.name testStaticMethodIsNative009
      * @tc.desc Verify isNative() returns only true or false
      * @tc.size MediumTest
@@ -273,7 +273,7 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_NATIVE_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_NATIVE_1000
      * @tc.name testStaticMethodIsNative010
      * @tc.desc Verify isNative() returns false for all access level methods
      * @tc.size MediumTest
@@ -291,7 +291,7 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_NATIVE_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_NATIVE_1100
      * @tc.name testStaticMethodIsNative011
      * @tc.desc Verify isNative() returns false for annotated methods
      * @tc.size MediumTest
@@ -310,7 +310,7 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_NATIVE_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_NATIVE_1200
      * @tc.name testStaticMethodIsNative012
      * @tc.desc Verify isNative() does not throw exception
      * @tc.size MediumTest
@@ -326,7 +326,7 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_NATIVE_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_NATIVE_1300
      * @tc.name testStaticMethodIsNative013
      * @tc.desc Verify isNative() for methods with different modifiers
      * @tc.size MediumTest
@@ -348,7 +348,7 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_NATIVE_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_NATIVE_1400
      * @tc.name testStaticMethodIsNative014
      * @tc.desc Verify isNative() returns false for async method
      * @tc.size MediumTest
@@ -364,7 +364,7 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_NATIVE_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_NATIVE_1500
      * @tc.name testStaticMethodIsNative015
      * @tc.desc Verify isNative() for normal, abstract, and final class methods
      * @tc.size MediumTest
@@ -385,7 +385,7 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_NATIVE_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_NATIVE_1600
      * @tc.name testStaticMethodIsNative016
      * @tc.desc Verify isNative() for getter and setter static methods
      * @tc.size MediumTest
@@ -404,7 +404,7 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_NATIVE_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_NATIVE_1700
      * @tc.name testStaticMethodIsNative017
      * @tc.desc Verify isNative() returns false for all user-defined static methods in a class
      * @tc.size MediumTest
@@ -422,7 +422,7 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_NATIVE_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_NATIVE_1800
      * @tc.name testStaticMethodIsNative018
      * @tc.desc Verify isNative() combined with other method property checks
      * @tc.size MediumTest
@@ -439,7 +439,7 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_NATIVE_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_NATIVE_1900
      * @tc.name testStaticMethodIsNative019
      * @tc.desc Verify isNative() on built-in Array methods
      * @tc.size MediumTest
@@ -456,7 +456,7 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number STATIC_METHOD_TEST_IS_NATIVE_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_NATIVE_2000
      * @tc.name testStaticMethodIsNative020
      * @tc.desc Verify isNative() comparison between built-in and user-defined methods
      * @tc.size MediumTest
