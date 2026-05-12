@@ -79,6 +79,9 @@ import ExpressionsPrefixDecrementTest from "./expressions/unary_expressions/pref
 import ExpressionsPrefixIncrementTest from "./expressions/unary_expressions/prefix_increment/ExpressionsPrefixIncrement.test";
 import ExpressionsUnaryMinusTest from "./expressions/unary_expressions/unary_minus/ExpressionsUnaryMinus.test";
 import ExpressionsUnaryPlusTest from "./expressions/unary_expressions/unary_plus/ExpressionsUnaryPlus.test";
+import FieldDeclarationTest from "./classes/FieldDeclaration.test";
+import FieldDeclarationOneTest from "./classes/FieldDeclarationOne.test";
+import FieldDeclarationTwoTest from "./classes/FieldDeclarationTwo.test";
 
 export default function testsuite(): void {
   ExpressionsIndexingArrayTest();
@@ -148,4 +151,7 @@ export default function testsuite(): void {
   ExpressionsPrefixIncrementTest();
   ExpressionsUnaryMinusTest();
   ExpressionsUnaryPlusTest();
+  FieldDeclarationTest();
+  FieldDeclarationOneTest();
+  FieldDeclarationTwoTest();  
 }
