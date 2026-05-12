@@ -16,6 +16,8 @@
 
 
 import TextPickerTextStyleTest from './textPickerTest/TextPickerTextStyleTest.test'
+import TextPickerSelectedBackgroundStyleTest from './textPickerTest/TextPickerSelectedBackgroundStyle.test'
 export default function testsuite() {
   TextPickerTextStyleTest();
+  TextPickerSelectedBackgroundStyleTest();
 }
