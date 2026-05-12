@@ -14,8 +14,7 @@
  * limitations under the License.
  */
 
-import { Entry, Component, Column, Row, Button, ClickEvent, Web, AISessionEvent, AISessionType, AISessionResultType, OnAISessionCallback } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
+import { Entry, Component, Column, Row, Button, ClickEvent, Web, AISessionEvent, AISessionType, AISessionResultType, OnAISessionCallback, State } from '@kit.ArkUI'
 import web_webview from '@ohos.web.webview';
 import Utils from '../../src/test/Util.test';
 import { BusinessError, RecordData } from '@ohos.base';
