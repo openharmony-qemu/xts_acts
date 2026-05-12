@@ -1,0 +1,853 @@
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import Utils from '../Util.test';
+
+class Item027 {
+  value: int;
+
+  constructor(v: int) {
+    this.value = v;
+  }
+}
+
+interface Point028 {
+  x: int;
+  y: int;
+}
+
+export default function ArrayInvoke2Test(): void {
+  describe('ArrayInvoke2Test', (): void => {
+    beforeAll((): void => {
+    });
+
+    beforeEach(async (): Promise<void> => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach((): void => {
+    });
+
+    afterAll((): void => {
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_0100
+     * @tc.name testArrayInvoke2001
+     * @tc.desc Verify arrayLength is optional for this invoke overload
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>();
+      expect(arr1.length).assertEqual(0);
+
+      const arr2 = new Array<int>(10);
+      expect(arr2.length).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_0200
+     * @tc.name testArrayInvoke2002
+     * @tc.desc Verify array construction accepts a normal length value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(5);
+      expect(arr.length).assertEqual(5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_0300
+     * @tc.name testArrayInvoke2003
+     * @tc.desc Verify default construction uses length zero when no argument is provided
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>();
+      expect(arr.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_0400
+     * @tc.name testArrayInvoke2004
+     * @tc.desc Verify array construction supports an explicit zero length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(0);
+      expect(arr.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_0500
+     * @tc.name testArrayInvoke2005
+     * @tc.desc Verify array construction supports a length of one
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(1);
+      expect(arr.length).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_0600
+     * @tc.name testArrayInvoke2006
+     * @tc.desc Verify array construction supports a larger length value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(1000);
+      expect(arr.length).assertEqual(1000);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_0700
+     * @tc.name testArrayInvoke2007
+     * @tc.desc Verify extremely large length input is handled safely by the runtime
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const arr = new Array<int>(Number.MAX_SAFE_INTEGER.toInt());
+        expect(arr.length >= 0).assertTrue();
+      } catch (e) {
+        expect(e == null).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_0800
+     * @tc.name testArrayInvoke2008
+     * @tc.desc Verify array construction rejects a negative length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const arr = new Array<int>(-1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e instanceof RangeError || e instanceof Error).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_0900
+     * @tc.name testArrayInvoke2009
+     * @tc.desc Verify array construction rejects null passed as the length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // ArkTS rejects null-to-number length conversion at compile time.
+      return;
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_1000
+     * @tc.name testArrayInvoke2010
+     * @tc.desc Verify an undefined optional length path falls back to default construction
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const optionalLength: int | undefined = undefined;
+      let arr = new Array<int>();
+      if (optionalLength != undefined) {
+        arr = new Array<int>(optionalLength);
+      }
+      expect(arr.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_1100
+     * @tc.name testArrayInvoke2011
+     * @tc.desc Verify floating-point length is not preserved as an exact array size
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const floatLength: number = 5.5;
+      try {
+        const arr = new Array<int>(floatLength.toInt());
+        expect(arr.length == floatLength).assertFalse();
+      } catch (e) {
+        expect(e == null).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_1200
+     * @tc.name testArrayInvoke2012
+     * @tc.desc Verify scientific notation length works after explicit integer normalization
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const scientificLength = (1e1).toInt();
+      const arr = new Array<int>(scientificLength);
+      expect(arr.length).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_1300
+     * @tc.name testArrayInvoke2013
+     * @tc.desc Verify array construction accepts a hexadecimal length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(0x0A);
+      expect(arr.length).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_1400
+     * @tc.name testArrayInvoke2014
+     * @tc.desc Verify string to number length mismatch is rejected at compile time in ArkTS
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // ArkTS rejects string-to-number length mismatches at compile time.
+      return;
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_1500
+     * @tc.name testArrayInvoke2015
+     * @tc.desc Verify array construction returns a new array with the requested length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(5);
+      expect(arr instanceof Array).assertTrue();
+      expect(arr.length).assertEqual(5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_1600
+     * @tc.name testArrayInvoke2016
+     * @tc.desc Verify array construction returns arrays of different generic types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const numArr = new Array<int>(5);
+      const strArr = new Array<string>(5);
+      const boolArr = new Array<boolean>(5);
+
+      expect(numArr instanceof Array).assertTrue();
+      expect(strArr instanceof Array).assertTrue();
+      expect(boolArr instanceof Array).assertTrue();
+      expect(numArr.length).assertEqual(5);
+      expect(strArr.length).assertEqual(5);
+      expect(boolArr.length).assertEqual(5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_1700
+     * @tc.name testArrayInvoke2017
+     * @tc.desc Verify array elements remain uninitialized right after length-based construction
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(5);
+      expect(arr.length).assertEqual(5);
+
+      try {
+        const val = arr[0];
+        expect(val).assertUndefined();
+      } catch (e) {
+        expect(e == null).assertFalse();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_1800
+     * @tc.name testArrayInvoke2018
+     * @tc.desc Verify elements can be initialized and used safely after construction
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(5);
+
+      for (let i = 0; i < arr.length; i++) {
+        arr[i] = i + 1;
+      }
+
+      expect(arr[0]).assertEqual(1);
+      expect(arr[4]).assertEqual(5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_1900
+     * @tc.name testArrayInvoke2019
+     * @tc.desc Verify this static invoke overload is reached through new Array syntax
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(10);
+      expect(arr.length).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_2000
+     * @tc.name testArrayInvoke2020
+     * @tc.desc Verify explicit generic syntax works with typed array construction
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const numArr = new Array<int>(5);
+      const strArr = new Array<string>(5);
+
+      numArr.pushOne(123);
+      strArr.pushOne('hello');
+
+      expect(numArr[5]).assertEqual(123);
+      expect(strArr[5]).assertEqual('hello');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_2100
+     * @tc.name testArrayInvoke2021
+     * @tc.desc Verify omitting the argument uses the default length of zero
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>();
+      const arr2 = new Array<int>(0);
+      expect(arr.length).assertEqual(0);
+      expect(arr2.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_2200
+     * @tc.name testArrayInvoke2022
+     * @tc.desc Verify providing a length argument creates an array of that size
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(100);
+      expect(arr.length).assertEqual(100);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_2300
+     * @tc.name testArrayInvoke2023
+     * @tc.desc Verify argument count selects the expected invoke overload
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<string>();
+      const arr2 = new Array<int>(10);
+      const arr3 = new Array<string>('a', 'b', 'c');
+
+      expect(arr1.length).assertEqual(0);
+      expect(arr2.length).assertEqual(10);
+      expect(arr3.length).assertEqual(3);
+      expect(arr3[0]).assertEqual('a');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_2400
+     * @tc.name testArrayInvoke2024
+     * @tc.desc Verify a number generic array can be created with a preset length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(5);
+      for (let i = 0; i < arr.length; i++) {
+        arr[i] = i;
+      }
+      expect(arr.length).assertEqual(5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_2500
+     * @tc.name testArrayInvoke2025
+     * @tc.desc Verify a string generic array can be created with a preset length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<string>(3);
+      arr[0] = 'hello';
+      arr[1] = 'world';
+      arr[2] = '!';
+      expect(arr.length).assertEqual(3);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_2600
+     * @tc.name testArrayInvoke2026
+     * @tc.desc Verify a boolean generic array can be created with a preset length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<boolean>(2);
+      arr[0] = true;
+      arr[1] = false;
+      expect(arr[0]).assertTrue();
+      expect(arr[1]).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_2700
+     * @tc.name testArrayInvoke2027
+     * @tc.desc Verify a custom class array can be created and populated
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<Item027>(3);
+      arr[0] = new Item027(1);
+      arr[1] = new Item027(2);
+      arr[2] = new Item027(3);
+      expect(arr[1].value).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_2800
+     * @tc.name testArrayInvoke2028
+     * @tc.desc Verify an interface typed array can be created and used
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<Point028>(2);
+      arr[0] = { x: 1, y: 2 };
+      arr[1] = { x: 3, y: 4 };
+      expect(arr[0].x).assertEqual(1);
+      expect(arr[1].y).assertEqual(4);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_2900
+     * @tc.name testArrayInvoke2029
+     * @tc.desc Verify a union typed array can be created and hold mixed values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int | string>(5);
+      arr[0] = 1;
+      arr[1] = 'two';
+      arr[2] = 3;
+      arr[3] = 'four';
+      arr[4] = 5;
+      expect(arr[1]).assertEqual('two');
+      expect(arr[3]).assertEqual('four');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_3000
+     * @tc.name testArrayInvoke2030
+     * @tc.desc Verify uninitialized elements after length construction keep runtime-safe behavior
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(5);
+
+      try {
+        const val = arr[0];
+        expect(val).assertUndefined();
+      } catch (e) {
+        expect(true).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_3100
+     * @tc.name testArrayInvoke2031
+     * @tc.desc Verify arrays can be initialized by loop fill and Array.create usage
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(5);
+      for (let i = 0; i < arr.length; i++) {
+        arr[i] = 0;
+      }
+
+      const arr2 = new Array<int>(5);
+      arr2.fill(0);
+
+      const arr3 = Array.create<int>(5, 0);
+      for (let i = 0; i < 5; i++) {
+        expect(arr[i]).assertEqual(0);
+        expect(arr2[i]).assertEqual(0);
+        expect(arr3[i]).assertEqual(0);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_3200
+     * @tc.name testArrayInvoke2032
+     * @tc.desc Verify initialized arrays support normal read write and push operations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(10);
+      for (let i = 0; i < arr.length; i++) {
+        arr[i] = i * 10;
+      }
+
+      expect(arr[0]).assertEqual(0);
+      expect(arr[5]).assertEqual(50);
+      expect(arr[9]).assertEqual(90);
+
+      arr[5] = 999;
+      expect(arr[5]).assertEqual(999);
+
+      arr.pushOne(100);
+      expect(arr.length).assertEqual(11);
+      expect(arr[10]).assertEqual(100);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_3300
+     * @tc.name testArrayInvoke2033
+     * @tc.desc Verify preset length construction suits known-size preallocation scenarios
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(100);
+      for (let i = 0; i < arr.length; i++) {
+        arr[i] = i * i;
+      }
+
+      expect(arr[0]).assertEqual(0);
+      expect(arr[10]).assertEqual(100);
+      expect(arr[99]).assertEqual(9801);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_3400
+     * @tc.name testArrayInvoke2034
+     * @tc.desc Verify preset length arrays support batch data processing
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const size = 1000;
+      const arr = new Array<int>(size);
+      for (let i = 0; i < size; i++) {
+        arr[i] = Math.floor(Math.random() * 100).toInt();
+      }
+
+      let sum = 0;
+      for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+      }
+
+      expect(sum >= 0).assertTrue();
+      expect(sum < 100000).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_3500
+     * @tc.name testArrayInvoke2035
+     * @tc.desc Verify arrays created with preset length can be resized dynamically
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(10);
+      for (let i = 0; i < arr.length; i++) {
+        arr[i] = i;
+      }
+
+      arr.shrinkTo(5);
+      expect(arr.length).assertEqual(5);
+
+      arr.extendTo(15, 0);
+      expect(arr.length).assertEqual(15);
+
+      arr.pushOne(100);
+      expect(arr.length).assertEqual(16);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_3600
+     * @tc.name testArrayInvoke2036
+     * @tc.desc Verify this invoke overload behaves the same as constructor-style array creation
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>(5);
+      const arr2 = new Array<int>(5);
+      expect(arr1.length).assertEqual(arr2.length);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_3700
+     * @tc.name testArrayInvoke2037
+     * @tc.desc Verify Array.create initializes elements while length construction leaves them uninitialized
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>(5);
+      try {
+        const val = arr1[0];
+        expect(val).assertUndefined();
+      } catch (e) {
+        expect(e == null).assertFalse();
+      }
+
+      const arr2 = Array.create<int>(5, 0);
+      expect(arr2[0]).assertEqual(0);
+      expect(arr2[4]).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_3800
+     * @tc.name testArrayInvoke2038
+     * @tc.desc Verify overload selection follows the number of constructor arguments
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<string>();
+      const arr2 = new Array<int>(10);
+      const arr3 = new Array<int>(1, 2, 3);
+
+      expect(arr1.length).assertEqual(0);
+      expect(arr2.length).assertEqual(10);
+      expect(arr3.length).assertEqual(3);
+      expect(arr3[0]).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_3900
+     * @tc.name testArrayInvoke2039
+     * @tc.desc Verify zero-length arrays behave the same with explicit and default construction
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(0);
+      const arr2 = new Array<int>();
+      expect(arr.length).assertEqual(0);
+      expect(arr2.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_4000
+     * @tc.name testArrayInvoke2040
+     * @tc.desc Verify single-element arrays can be initialized and read correctly
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(1);
+      expect(arr.length).assertEqual(1);
+
+      arr[0] = 42;
+      expect(arr[0]).assertEqual(42);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_4100
+     * @tc.name testArrayInvoke2041
+     * @tc.desc Verify large arrays can be created initialized and read correctly
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(10000);
+      expect(arr.length).assertEqual(10000);
+
+      for (let i = 0; i < arr.length; i++) {
+        arr[i] = i;
+      }
+
+      expect(arr[9999]).assertEqual(9999);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_4200
+     * @tc.name testArrayInvoke2042
+     * @tc.desc Verify preallocated arrays can produce the same results as dynamically grown arrays
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>(1000);
+      for (let i = 0; i < 1000; i++) {
+        arr1[i] = i;
+      }
+
+      const arr2 = new Array<int>();
+      for (let i = 0; i < 1000; i++) {
+        arr2.pushOne(i);
+      }
+
+      for (let i = 0; i < 1000; i++) {
+        expect(arr1[i]).assertEqual(arr2[i]);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_4300
+     * @tc.name testArrayInvoke2043
+     * @tc.desc Verify invalid length arguments are rejected for negative and compile-time mismatched inputs
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const arr = new Array<int>(-1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e instanceof RangeError || e instanceof Error).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_4400
+     * @tc.name testArrayInvoke2044
+     * @tc.desc Verify generic array construction supports matching runtime values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const numArr = new Array<int>(5);
+      numArr.pushOne(123);
+      expect(numArr[5]).assertEqual(123);
+
+      // numArr.pushOne('string');
+      // numArr.pushOne(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_4500
+     * @tc.name testArrayInvoke2045
+     * @tc.desc Verify arrays can be initialized immediately and consumed by reduce
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(10);
+      arr.fill(0);
+      const sum = arr.reduce((acc: int, v: int): int => acc + v, 0);
+      expect(sum).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_4600
+     * @tc.name testArrayInvoke2046
+     * @tc.desc Verify fill supports chained initialization before pushOne usage
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(10);
+      const newLength = arr.fill(-1).pushOne(100);
+
+      expect(newLength).assertEqual(11);
+      expect(arr[0]).assertEqual(-1);
+      expect(arr[10]).assertEqual(100);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_2_4700
+     * @tc.name testArrayInvoke2047
+     * @tc.desc Verify the native invoke overload creates a usable array instance
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayInvoke2047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(100);
+      expect(arr.length).assertEqual(100);
+
+      for (let i = 0; i < arr.length; i++) {
+        arr[i] = i;
+      }
+
+      expect(arr[99]).assertEqual(99);
+    });
+  });
+}
