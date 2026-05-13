@@ -11,7 +11,7 @@
     "kits": [
         {
             "test-file-name": [
-                "reflectStaticMethodTest.hap"
+                "ActsReflectStaticMethodTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
