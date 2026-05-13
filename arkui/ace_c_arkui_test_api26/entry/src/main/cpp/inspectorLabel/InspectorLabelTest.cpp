@@ -19,7 +19,7 @@
 
 namespace ArkUICapiTest {
 
-napi_value InspectorLabelTest::InspectorLabelTest_001(napi_env env, napi_callback_info info)
+napi_value InspectorLabelTest_001(napi_env env, napi_callback_info info)
 {
     NAPI_START(column, ARKUI_NODE_COLUMN);
     
@@ -33,7 +33,7 @@ napi_value InspectorLabelTest::InspectorLabelTest_001(napi_env env, napi_callbac
     NAPI_END;
 }
 
-napi_value InspectorLabelTest::InspectorLabelTest_002(napi_env env, napi_callback_info info)
+napi_value InspectorLabelTest_002(napi_env env, napi_callback_info info)
 {
     NAPI_START(column, ARKUI_NODE_COLUMN);
     
@@ -46,7 +46,7 @@ napi_value InspectorLabelTest::InspectorLabelTest_002(napi_env env, napi_callbac
     NAPI_END;
 }
 
-napi_value InspectorLabelTest::InspectorLabelTest_003(napi_env env, napi_callback_info info)
+napi_value InspectorLabelTest_003(napi_env env, napi_callback_info info)
 {
     NAPI_START(column, ARKUI_NODE_COLUMN);
     
