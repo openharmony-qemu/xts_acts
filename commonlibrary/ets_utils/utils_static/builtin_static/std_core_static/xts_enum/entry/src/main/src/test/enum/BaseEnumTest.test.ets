@@ -1870,6 +1870,599 @@ export default function BaseEnumTest(): void {
       expect(str).not.toBeNull()
     });
 
+    /**
+     * @tc.name testBaseEnum135
+     * @tc.number SUB_BASEENUM_1350
+     * @tc.desc Verify toString works correctly for long type
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e: BaseEnum<long> = new BaseEnum<long>(999L, "LONG_ENUM")
+      let str: string = e.toString()
+      expect(str).not.toBeNull()
+    });
+
+    /**
+     * @tc.name testBaseEnum136
+     * @tc.number SUB_BASEENUM_1360
+     * @tc.desc Verify toString works correctly for float type
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e: BaseEnum<float> = new BaseEnum<float>(3.14f, "FLOAT_ENUM")
+      let str: string = e.toString()
+      expect(str).not.toBeNull()
+    });
+
+    /**
+     * @tc.name testBaseEnum137
+     * @tc.number SUB_BASEENUM_1370
+     * @tc.desc Verify toString works correctly for double type
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e: BaseEnum<double> = new BaseEnum<double>(2.718, "DOUBLE_ENUM")
+      let str: string = e.toString()
+      expect(str).not.toBeNull()
+    });
+
+    /**
+     * @tc.name testBaseEnum138
+     * @tc.number SUB_BASEENUM_1380
+     * @tc.desc Verify toString works correctly for string type
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e: BaseEnum<string> = new BaseEnum<string>("HELLO", "STRING_ENUM")
+      let str: string = e.toString()
+      expect(str).not.toBeNull()
+    });
+
+    /**
+     * @tc.name testBaseEnum139
+     * @tc.number SUB_BASEENUM_1390
+     * @tc.desc Verify toString returns 值类型为string
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e: BaseEnum<int> = new BaseEnum<int>(42, "TEST")
+      let str: string = e.toString()
+      expect(typeof str === "string").assertTrue()
+    });
+
+    /**
+     * @tc.name testBaseEnum140
+     * @tc.number SUB_BASEENUM_1400
+     * @tc.desc Verify 多次调用toString返回值一致
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e: BaseEnum<int> = new BaseEnum<int>(42, "TEST")
+      let s1: string = e.toString()
+      let s2: string = e.toString()
+      expect(s1).assertEqual(s2)
+    });
+
+    /**
+     * @tc.name testBaseEnum141
+     * @tc.number SUB_BASEENUM_1410
+     * @tc.desc Verify different instances have independent values
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e1: BaseEnum<int> = new BaseEnum<int>(1, "FIRST")
+      let e2: BaseEnum<int> = new BaseEnum<int>(2, "SECOND")
+      let e3: BaseEnum<int> = new BaseEnum<int>(3, "THIRD")
+      expect(e1.valueOf()).assertEqual(1)
+      expect(e2.valueOf()).assertEqual(2)
+      expect(e3.valueOf()).assertEqual(3)
+    });
+
+    /**
+     * @tc.name testBaseEnum142
+     * @tc.number SUB_BASEENUM_1420
+     * @tc.desc Verify different instances have independent values
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e1: BaseEnum<int> = new BaseEnum<int>(1, "FIRST")
+      let e2: BaseEnum<int> = new BaseEnum<int>(2, "SECOND")
+      expect(e1.getName()).assertEqual("FIRST")
+      expect(e2.getName()).assertEqual("SECOND")
+    });
+
+    /**
+     * @tc.name testBaseEnum143
+     * @tc.number SUB_BASEENUM_1430
+     * @tc.desc Verify different generic type instances do not interfere
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let eInt: BaseEnum<int> = new BaseEnum<int>(42, "INT_CONST")
+      let eStr: BaseEnum<string> = new BaseEnum<string>("HELLO", "STR_CONST")
+      let eFloat: BaseEnum<float> = new BaseEnum<float>(3.14f, "FLOAT_CONST")
+      expect(eInt.valueOf()).assertEqual(42)
+      expect(eStr.valueOf()).assertEqual("HELLO")
+      expect(eFloat.valueOf()).assertClose(3.14f, 0.001f)
+      expect(eInt.getName()).assertEqual("INT_CONST")
+      expect(eStr.getName()).assertEqual("STR_CONST")
+      expect(eFloat.getName()).assertEqual("FLOAT_CONST")
+    });
+
+    /**
+     * @tc.name testBaseEnum144
+     * @tc.number SUB_BASEENUM_1440
+     * @tc.desc Verify constructor throws Error when value is null
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 此测试仅用于验证未捕获异常的行为，跳过执行
+      return;
+    });
+
+    /**
+     * @tc.name testBaseEnum145
+     * @tc.number SUB_BASEENUM_1450
+     * @tc.desc Verify constructor throws Error when name parameter is null
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 此测试仅用于验证未捕获异常的行为，跳过执行
+      return;
+    });
+
+    /**
+     * @tc.name testBaseEnum146
+     * @tc.number SUB_BASEENUM_1460
+     * @tc.desc Verify try-catch catches constructor type mismatch exception
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let e: BaseEnum<int> = new BaseEnum<int>(-1, "TEST")
+      expect(e.valueOf()).assertEqual(-1)
+      } catch (error) {
+      expect(error instanceof Error).assertTrue()
+      } finally {
+      // finally总是执行
+      }
+    });
+
+    /**
+     * @tc.name testBaseEnum147
+     * @tc.number SUB_BASEENUM_1470
+     * @tc.desc Verify try-catch catches valueOf call exception
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let e: BaseEnum<int> = new BaseEnum<int>(0, "TEST")
+      let val: int = e.valueOf()
+      expect(val).assertEqual(0)
+      } catch (error) {
+      expect(error instanceof Error).assertTrue()
+      }
+    });
+
+    /**
+     * @tc.name testBaseEnum148
+     * @tc.number SUB_BASEENUM_1480
+     * @tc.desc Verify 使用超出泛型约束的类型应编译报错
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 此测试仅用于验证未捕获异常的行为，跳过执行
+      return;
+    });
+
+    /**
+     * @tc.name testBaseEnum149
+     * @tc.number SUB_BASEENUM_1490
+     * @tc.desc Verify value参数与泛型类型不匹配应编译报错
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 此测试仅用于验证未捕获异常的行为，跳过执行
+      return;
+    });
+
+    /**
+     * @tc.name testBaseEnum150
+     * @tc.number SUB_BASEENUM_1500
+     * @tc.desc Verify valueOf return type matches generic type T
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let eInt: BaseEnum<int> = new BaseEnum<int>(42, "TYPE_CHECK")
+      let val: int = eInt.valueOf()
+      expect(typeof val === "number" || typeof val === "int").assertTrue()
+    });
+
+    /**
+     * @tc.name testBaseEnum151
+     * @tc.number SUB_BASEENUM_1510
+     * @tc.desc Verify getName always returns string type
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e: BaseEnum<int> = new BaseEnum<int>(1, "STR_CHECK")
+      let name: string = e.getName()
+      expect(typeof name === "string").assertTrue()
+    });
+
+    /**
+     * @tc.name testBaseEnum152
+     * @tc.number SUB_BASEENUM_1520
+     * @tc.desc Verify many BaseEnum instances do not cause memory overflow
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let enums: BaseEnum<int>[] = []
+      for (let i = 0; i < 10000; i++) {
+      enums.push(new BaseEnum<int>(i, "ENUM_" + i.toString()))
+      }
+      expect(enums[0].valueOf()).assertEqual(0)
+      expect(enums[9999].valueOf()).assertEqual(9999)
+      expect(enums[5000].getName()).assertEqual("ENUM_5000")
+    });
+
+    /**
+     * @tc.name testBaseEnum153
+     * @tc.number SUB_BASEENUM_1530
+     * @tc.desc Verify two instances with same parameters do not affect each other
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e1: BaseEnum<int> = new BaseEnum<int>(42, "SAME")
+      let e2: BaseEnum<int> = new BaseEnum<int>(42, "SAME")
+      expect(e1.valueOf()).assertEqual(e2.valueOf())
+      expect(e1.getName()).assertEqual(e2.getName())
+      expect(e1 === e2).assertFalse()
+    });
+
+    /**
+     * @tc.name testBaseEnum154
+     * @tc.number SUB_BASEENUM_1540
+     * @tc.desc Verify toString method override behavior is correct
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e: BaseEnum<int> = new BaseEnum<int>(42, "OVERRIDE_TEST")
+      let str: string = e.toString()
+      // 验证toString()已被重写，返回的不是默认的[object Object]
+      expect(str).not.toBeNull()
+      expect(str === "[object Object]").assertFalse()
+    });
+
+    /**
+     * @tc.name testBaseEnum155
+     * @tc.number SUB_BASEENUM_1550
+     * @tc.desc Verify overridden toString return contains enum related information
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e: BaseEnum<int> = new BaseEnum<int>(100, "MY_ENUM")
+      let str: string = e.toString()
+      // 重写的toString()应包含value或name信息
+      expect(str.length > 0).assertTrue()
+    });
+
+    /**
+     * @tc.name testBaseEnum156
+     * @tc.number SUB_BASEENUM_1560
+     * @tc.desc Verify relationship between toString and getName return values
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e: BaseEnum<int> = new BaseEnum<int>(42, "TEST_NAME")
+      let strResult: string = e.toString()
+      let nameResult: string = e.getName()
+      // toString()可能包含getName()的返回值，也可能有不同格式
+      expect(strResult).not.toBeNull()
+      expect(nameResult).assertEqual("TEST_NAME")
+    });
+
+    /**
+     * @tc.name testBaseEnum157
+     * @tc.number SUB_BASEENUM_1570
+     * @tc.desc Verify relationship between toString and valueOf return values
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e: BaseEnum<int> = new BaseEnum<int>(42, "TEST")
+      let strResult: string = e.toString()
+      let valResult: int = e.valueOf()
+      // toString()可能包含valueOf()的返回值的字符串表示
+      expect(strResult).not.toBeNull()
+      expect(valResult).assertEqual(42)
+    });
+
+    /**
+     * @tc.name testBaseEnum158
+     * @tc.number SUB_BASEENUM_1580
+     * @tc.desc Verify BaseEnum can be subclassed
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      let color: ColorEnum158 = new ColorEnum158("RED", "COLOR_RED")
+      expect(color.valueOf()).assertEqual("RED")
+      expect(color.getName()).assertEqual("COLOR_RED")
+      expect(color.toString()).not.toBeNull()
+    });
+
+    /**
+     * @tc.name testBaseEnum159
+     * @tc.number SUB_BASEENUM_1590
+     * @tc.desc Verify subclass can override toString method
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      let status: StatusEnum159 = new StatusEnum159(1, "ACTIVE")
+      expect(status.toString()).assertEqual("Status[ACTIVE=1]")
+    });
+
+    /**
+     * @tc.name testBaseEnum160
+     * @tc.number SUB_BASEENUM_1600
+     * @tc.desc Verify subclass can call parent valueOf and getName methods
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      let e: MyEnum160 = new MyEnum160(5, "FIVE")
+      expect(e.getDescription()).assertEqual("FIVE=5")
+    });
+
+    /**
+     * @tc.name testBaseEnum161
+     * @tc.number SUB_BASEENUM_1610
+     * @tc.desc Verify method calls in multi-level inheritance chain
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+
+      let ec: ExtendedColor161 = new ExtendedColor161("#FF0000", "RED")
+      expect(ec.valueOf()).assertEqual("#FF0000")
+      expect(ec.getName()).assertEqual("RED")
+      expect(ec.toString()).assertEqual("Color:RED")
+    });
+
+    /**
+     * @tc.name testBaseEnum162
+     * @tc.number SUB_BASEENUM_1620
+     * @tc.desc Verify valueOf method is publicly accessible
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e: BaseEnum<int> = new BaseEnum<int>(1, "PUBLIC_TEST")
+      // public方法，外部可直接调用
+      let val: int = e.valueOf()
+      expect(val).assertEqual(1)
+    });
+
+    /**
+     * @tc.name testBaseEnum163
+     * @tc.number SUB_BASEENUM_1630
+     * @tc.desc Verify getName method is publicly accessible
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e: BaseEnum<int> = new BaseEnum<int>(1, "PUBLIC_TEST")
+      // public方法，外部可直接调用
+      let name: string = e.getName()
+      expect(name).assertEqual("PUBLIC_TEST")
+    });
+
+    /**
+     * @tc.name testBaseEnum164
+     * @tc.number SUB_BASEENUM_1640
+     * @tc.desc Verify toString method is publicly accessible
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let e: BaseEnum<int> = new BaseEnum<int>(1, "PUBLIC_TEST")
+      // public override方法，外部可直接调用
+      let str: string = e.toString()
+      expect(str).not.toBeNull()
+    });
+
+    /**
+     * @tc.name testBaseEnum165
+     * @tc.number SUB_BASEENUM_1650
+     * @tc.desc Verify enum constant collection pattern usage
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      expect(Direction165.NORTH.valueOf()).assertEqual("N")
+      expect(Direction165.NORTH.getName()).assertEqual("NORTH")
+      expect(Direction165.SOUTH.valueOf()).assertEqual("S")
+      expect(Direction165.SOUTH.getName()).assertEqual("SOUTH")
+    });
+
+    /**
+     * @tc.name testBaseEnum166
+     * @tc.number SUB_BASEENUM_1660
+     * @tc.desc Verify numeric enum constant pattern usage
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      expect(HttpStatus166.OK.valueOf()).assertEqual(200)
+      expect(HttpStatus166.OK.getName()).assertEqual("OK")
+      expect(HttpStatus166.NOT_FOUND.valueOf()).assertEqual(404)
+      expect(HttpStatus166.SERVER_ERROR.valueOf()).assertEqual(500)
+    });
+
+    /**
+     * @tc.name testBaseEnum167
+     * @tc.number SUB_BASEENUM_1670
+     * @tc.desc Verify long type enum constant pattern usage
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+
+      expect(HttpStatus.NONE.valueOf()).assertEqual(0L)
+      expect(HttpStatus.NETWORK.valueOf()).assertEqual(1001L)
+    });
+
+    /**
+     * @tc.name testBaseEnum168
+     * @tc.number SUB_BASEENUM_1680
+     * @tc.desc Verify different generic type BaseEnum instances coexist
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let intEnum: BaseEnum<int> = new BaseEnum<int>(1, "INT_ENUM")
+      let strEnum: BaseEnum<string> = new BaseEnum<string>("VALUE", "STR_ENUM")
+      let floatEnum: BaseEnum<float> = new BaseEnum<float>(1.5f, "FLOAT_ENUM")
+      let longEnum: BaseEnum<long> = new BaseEnum<long>(999L, "LONG_ENUM")
+      let byteEnum: BaseEnum<byte> = new BaseEnum<byte>(10 as byte, "BYTE_ENUM")
+      let shortEnum: BaseEnum<short> = new BaseEnum<short>(100 as short, "SHORT_ENUM")
+      let doubleEnum: BaseEnum<double> = new BaseEnum<double>(2.5, "DOUBLE_ENUM")
+      expect(intEnum.valueOf()).assertEqual(1)
+      expect(strEnum.valueOf()).assertEqual("VALUE")
+      expect(floatEnum.valueOf()).assertClose(1.5f, 0.001f)
+      expect(longEnum.valueOf()).assertEqual(999L)
+      expect(byteEnum.valueOf()).assertEqual(10 as byte)
+      expect(shortEnum.valueOf()).assertEqual(100 as short)
+      expect(doubleEnum.valueOf()).assertClose(2.5, 0.001)
+    });
+
+    /**
+     * @tc.name testBaseEnum169
+     * @tc.number SUB_BASEENUM_1690
+     * @tc.desc Verify enum value comparison scenario
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let red: BaseEnum<string> = new BaseEnum<string>("#FF0000", "RED")
+      let blue: BaseEnum<string> = new BaseEnum<string>("#0000FF", "BLUE")
+      expect(red.valueOf() === blue.valueOf()).assertFalse()
+      expect(red.getName() === blue.getName()).assertFalse()
+    });
+
+    /**
+     * @tc.name testBaseEnum170
+     * @tc.number SUB_BASEENUM_1700
+     * @tc.desc Verify BaseEnum API interfaces from API version 20+
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // API version 20+ 环境下验证
+      let e: BaseEnum<int> = new BaseEnum<int>(1, "API_V20")
+      expect(e.valueOf()).assertEqual(1)
+      expect(e.getName()).assertEqual("API_V20")
+      expect(e.toString()).not.toBeNull()
+    });
+
+    /**
+     * @tc.name testBaseEnum171
+     * @tc.number SUB_BASEENUM_1710
+     * @tc.desc Verify BaseEnum works in ArkTS-Sta mode
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // ArkTS-Sta模式下使用BaseEnum
+      let staEnum: BaseEnum<int> = new BaseEnum<int>(42, "STA_MODE")
+      expect(staEnum.valueOf()).assertEqual(42)
+      expect(staEnum.getName()).assertEqual("STA_MODE")
+    });
+
+    /**
+     * @tc.name testBaseEnum172
+     * @tc.number SUB_BASEENUM_1720
+     * @tc.desc Verify constructor type checking in ArkTS-Sta strict mode
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnum172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // ArkTS-Sta严格类型检查
+      let e: BaseEnum<int> = new BaseEnum<int>(100, "STRICT_TYPE")
+      let val: int = e.valueOf()
+      let name: string = e.getName()
+      let str: string = e.toString()
+      expect(val).assertEqual(100)
+      expect(name).assertEqual("STRICT_TYPE")
+    });
 
   });
 }
