@@ -188,25 +188,21 @@ static napi_value TestRenderNodeBlurStyleOption013(napi_env env, napi_callback_i
     OH_ArkUI_RenderNodeUtils_AddRenderNode(Custom, rsNode);
 
     ArkUI_RenderBlurStyleOption* option = OH_ArkUI_RenderNodeUtils_CreateBlurStyleOption();
-    auto ret = OH_ArkUI_RenderNodeUtils_SetBlurStyleOptionRadius(nullptr, 50.2);
+    auto ret = OH_ArkUI_RenderNodeUtils_SetBlurStyleOptionRadius(nullptr, 0);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk OH_ArkUI_RenderNodeUtils_SetBlurStyleOptionRadius ret=%{public}d", ret);
-//    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
 
     ret = OH_ArkUI_RenderNodeUtils_SetBlurStyleOptionRadius(option, -1);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk OH_ArkUI_RenderNodeUtils_SetBlurStyleOptionRadius -1 ret=%{public}d", ret);
-//    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
 
     ret = OH_ArkUI_RenderNodeUtils_SetBlurStyleOptionRadius(option, 0);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk OH_ArkUI_RenderNodeUtils_SetBlurStyleOptionRadius 0 ret=%{public}d", ret);
-//    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
 
     ret = OH_ArkUI_RenderNodeUtils_SetBlurStyleOptionRadius(option, 1);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk OH_ArkUI_RenderNodeUtils_SetBlurStyleOptionRadius 1 ret=%{public}d", ret);
-//    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
 
     auto result = OH_ArkUI_RenderNodeUtils_SetContentBlurOption(rsNode, option);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
@@ -255,8 +251,8 @@ static napi_value TestRenderNodeBlurStyleOption014(napi_env env, napi_callback_i
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
         "kkk TestRenderNodeBlurStyleOption014 result6=%{public}d", result6);
     OH_ArkUI_RenderNodeUtils_DisposeBlurStyleOption(option);
+
     ASSERT_EQ(result6, ARKUI_ERROR_CODE_NO_ERROR);
-    
 }
 
 static napi_value TestRenderNodeBlurStyleOption015(napi_env env, napi_callback_info info)
