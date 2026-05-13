@@ -56,8 +56,10 @@ namespace PtsApiTest {
 void SetUpTestCase()
 {
     g_capEnc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    CODEC_NAME = OH_AVCapability_GetName(g_capEnc);
-    cout << "CODEC_NAME: " << CODEC_NAME << endl;
+    if (g_capEnc != nullptr) {
+        CODEC_NAME = OH_AVCapability_GetName(g_capEnc);
+        cout << "CODEC_NAME: " << CODEC_NAME << endl;
+    }
 }
 void TearDown()
 {

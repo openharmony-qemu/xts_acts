@@ -72,11 +72,16 @@ namespace RoiFuncTest {
 void SetUpTestCase()
 {
     g_cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
-    CODEC_NAME = OH_AVCapability_GetName(g_cap);
-    cout << "codecname: " << CODEC_NAME << endl;
+    if (g_cap != nullptr) {
+        CODEC_NAME = OH_AVCapability_GetName(g_cap);
+        cout << "codecname: " << CODEC_NAME << endl;
+    }
     g_capHevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    CODEC_HEVC = OH_AVCapability_GetName(g_capHevc);
-    cout << "codecname_hevc: " << CODEC_HEVC << endl;
+    if (g_capHevc != nullptr) {
+        CODEC_HEVC = OH_AVCapability_GetName(g_capHevc);
+        cout << "codecname_hevc: " << CODEC_HEVC << endl;
+    }
+
 }
 void TearDown()
 {
